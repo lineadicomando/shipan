@@ -2,6 +2,7 @@
   import ColorSchemeToggle from '$lib/components/ColorSchemeToggle.svelte';
   import GlyphRain from '$lib/components/GlyphRain.svelte';
   import LanguageSwitch from '$lib/components/LanguageSwitch.svelte';
+  import RainToggle from '$lib/components/RainToggle.svelte';
   import SectionsNav from '$lib/components/SectionsNav.svelte';
   import { rain } from '$lib/rain.svelte';
 
@@ -10,7 +11,7 @@
 </script>
 
 <!-- Mounted only while it falls, so that the page ships with no canvas, no
-     loop and no listeners until somebody has gone looking. -->
+     loop and no listeners until somebody presses for them. -->
 {#if rain.falling}
   <GlyphRain />
 {/if}
@@ -28,18 +29,24 @@
       </span>
     </a>
 
-    <!-- One line for both: where the reader can go, and the two settings that
-         say how they are reading it. The switches earn the end of that line
-         rather than a row of their own, now that they are two letters and a
+    <!-- One line for both: where the reader can go, and the three settings
+         that say how they are reading it. The switches earn the end of that
+         line rather than a row of their own, being two letters, a glyph and a
          circle — and they keep it on a phone, where the sections fold and they
-         do not: two letters and a circle cost the line almost nothing, and an
-         appearance buried behind a press is harder to reach than it is now. -->
+         do not: three small marks cost the line almost nothing, and an
+         appearance buried behind a press is harder to reach than it is now.
+
+         The rain sits between the language and the appearance, on the side
+         the appearance button used to hide it behind. -->
     <div class="bar">
       <SectionsNav {t} />
 
       <div class="controls">
         <LanguageSwitch {t} />
-        <ColorSchemeToggle {t} />
+        <div class="switches">
+          <RainToggle {t} />
+          <ColorSchemeToggle {t} />
+        </div>
       </div>
     </div>
   </header>
@@ -98,7 +105,7 @@
    * said as the baseline rather than as the foot, which is what it used to
    * say. A foot is the same thing as a baseline only while the nav is one
    * line: folded open on a phone the nav is eight, its foot is under `Ba Zi`,
-   * and the two switches went down there with it. The baseline is the first
+   * and the switches went down there with it. The baseline is the first
    * one either way, which is the button when there is a button and the first
    * section when there is not.
    */
@@ -164,7 +171,20 @@
     .mark { position: static; width: fit-content; flex-direction: row; margin: 0 auto 0.6rem; }
     .mark img { height: 34px; }
   }
-  .controls { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  /*
+   * Two groups, spaced as two.
+   *
+   * A language is chosen once and an appearance is chosen once, but they are
+   * not the same kind of thing: the codes are words to read, the other two are
+   * marks to press. Set at one even gap the row read as four items at random
+   * distances from each other. The two marks close up into a pair — near
+   * enough to be one control with two faces — and the air goes where the
+   * change of kind is.
+   */
+  .controls { display: flex; align-items: center; gap: 1.75rem; flex-wrap: wrap; }
+  /* Each button carries 0.25rem of its own padding, so the gap here is half
+     of what stands between the glyph and the circle. */
+  .switches { display: flex; align-items: center; gap: 0.15rem; }
 
   /*
    * Centred, and across the whole shell.

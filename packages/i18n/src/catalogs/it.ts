@@ -797,6 +797,8 @@ export const it: Record<MessageKey, string> = {
   'scheme.dark': 'scuro',
   'scheme.switch': 'Aspetto: {current}. Passa a {next}.',
 
+  'rain.label': 'Pioggia di glifi dietro la pagina',
+
   'lang.en': 'Inglese',
   'lang.it': 'Italiano',
   'lang.switch': 'Leggi questa pagina in {language}',

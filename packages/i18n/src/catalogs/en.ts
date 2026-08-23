@@ -862,6 +862,12 @@ export const en = {
   'scheme.dark': 'dark',
   'scheme.switch': 'Appearance: {current}. Switch to {next}.',
 
+  // The button beside the appearance one, whose face is 雨 and nothing else.
+  // A glyph says nothing to a reader who does not read one, so the name here
+  // carries the whole of what the control is: not the character, which needs
+  // no gloss to work as a mark, but what pressing it does to the page.
+  'rain.label': 'Glyph rain behind the page',
+
   'lang.en': 'English',
   'lang.it': 'Italian',
   'lang.switch': 'Read this page in {language}',

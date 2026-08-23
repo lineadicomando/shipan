@@ -115,11 +115,16 @@ because a route would have to be told the question. See `docs/readings.md`.
 
 ## The one thing here that is not the work
 
-Three presses on the appearance button, quickly, and a rain of glyphs falls
-behind the page. There are three appearances, so three presses end on the one
-they started from: the gesture costs the reader nothing, which is what lets a
-button that already has a meaning carry a second one. The same three put it
-away. It is not announced, in the label or anywhere else.
+A button in the header — 雨, beside the one for the appearance — and a rain of
+glyphs falls behind the page. The same button puts it away, and `aria-pressed`
+says which way it is set.
+
+**The glyph is a mark and not a name.** Everywhere else here a hanzi arrives
+with a gloss and a reading, because it is something the engine computed with
+and the reader has to be able to say it; this one stands for what the button
+does, the way the circle beside it stands for how much light the page has.
+What a reader operates it from is `rain.label`, in their own language on the
+tooltip and to a screen reader.
 
 **It falls in the engine's own vocabulary and in nothing else.** The names are
 in `apps/web/src/lib/glyphs.ts` — the stems and branches, the twenty-four
@@ -139,8 +144,9 @@ Three things it does not do. It does not print — whatever else it is, it is
 not something to put on a sheet. It does not move for a reader who asked for
 `prefers-reduced-motion`, who gets the picture drawn once and no loop at all.
 And it is not remembered: **the privacy note says one thing is kept in the
-browser, and it stays one.** A setting is remembered because somebody chose
-it; this is not a setting, and a reload puts the page back the way it ships.
+browser, and it stays one.** The appearance is stored because a reader who
+wants a dark page wants it before the first paint; this is one press away in
+the header on every page, and a reload puts it back the way the page ships.
 
 It draws in `--ink` and `--edge`, read back out of the stylesheet each frame,
 so it follows the reader from light to dark without holding a colour of its
