@@ -891,8 +891,16 @@ export const en = {
     'Ask a question, give a birth or name a year. Six Chinese divinatory boards, cast from an ephemeris and handed to an AI as a prompt you can paste.',
   'meta.intro.consult.a':
     '式盤 shìpán is the diviner\'s board itself — the round heaven turning on the square earth. Six of them are laid here: 奇門遁甲 qímén dùnjiǎ, 大六壬 dà liùrén, 太乙神數 tàiyǐ shénshù, 紫微斗數 zǐwēi dǒushù, the four pillars and 七政四餘 qīzhèng sìyú, each computed from an ephemeris rather than recalled.',
+  // **The reader does the pasting, and the wording has to make that the
+  // reader's own act.** This said «the board travels to ChatGPT» and was
+  // wrong in the one way this project cannot afford: it describes a site that
+  // sends something to an AI, and the privacy note two pages away promises in
+  // both languages that this one talks to none and sends nothing. What it
+  // hands over is text, into a clipboard, and where that goes afterwards is
+  // between the reader and whoever receives it. `consult.lead` — the line
+  // this paragraph absorbed — had the verb right and said «ready to paste».
   'meta.intro.consult.b':
-    'What comes out is a prompt, not a reading. Ask a question, give a birth or name a year, and the board travels to ChatGPT, Claude or another assistant already cast — with the terms it has to be read under attached to it.',
+    'What comes out is a prompt, not a reading. Ask a question, give a birth or name a year, and you get a block of text to copy — the board already cast inside it, with the terms it has to be read under — for you to paste into ChatGPT, Claude or another assistant.',
 
   'meta.title.moments': 'Choosing a time — Qi Men Dun Jia',
   'meta.description.moments':

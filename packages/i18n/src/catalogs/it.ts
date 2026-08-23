@@ -819,11 +819,17 @@ export const it: Record<MessageKey, string> = {
 
   'meta.title.consult': 'Le tavole divinatorie cinesi, calcolate',
   'meta.description.consult':
-    'Poni una domanda, dai una nascita o indica un anno. Sei tavole divinatorie cinesi, poste a partire da un\'effemeride e consegnate a un\'IA come prompt.',
+    'Poni una domanda, dai una nascita o indica un anno. Sei tavole divinatorie cinesi, calcolate da un\'effemeride, in un prompt da incollare nel tuo assistente IA.',
   'meta.intro.consult.a':
     '式盤 shìpán è la tavola del divinatore: il cielo rotondo che gira sulla terra quadrata. Qui se ne stendono sei — 奇門遁甲 qímén dùnjiǎ, 大六壬 dà liùrén, 太乙神數 tàiyǐ shénshù, 紫微斗數 zǐwēi dǒushù, i quattro pilastri e 七政四餘 qīzhèng sìyú — ognuna calcolata da un\'effemeride, non ricordata.',
+  // **È il lettore a incollare, e la frase deve dirlo come atto suo.** Qui
+  // c'era «la tavola arriva a ChatGPT», sbagliato nell'unico modo che questo
+  // progetto non può permettersi: descrive un sito che manda qualcosa a
+  // un'IA, e la nota sulla privacy promette in entrambe le lingue che questo
+  // non parla con nessuna e non manda niente. Quel che consegna è testo, in
+  // una clipboard; dove finisca poi è fra il lettore e chi lo riceve.
   'meta.intro.consult.b':
-    'Quello che ne esce è un prompt, non una lettura. Poni una domanda, dai una nascita o indica un anno, e la tavola arriva a ChatGPT, Claude o un altro assistente già posta — con addosso i termini in cui va letta.',
+    'Quello che ne esce è un prompt, non una lettura. Poni una domanda, dai una nascita o indica un anno, e ottieni un testo da copiare — con la tavola già posta dentro e i termini in cui va letta — da incollare tu in ChatGPT, Claude o un altro assistente.',
 
   'meta.title.moments': 'Scegliere il momento — Qi Men Dun Jia',
   'meta.description.moments':
