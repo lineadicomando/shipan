@@ -5,7 +5,9 @@
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import FormPanel from '$lib/components/FormPanel.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
+  import PageHead from '$lib/components/PageHead.svelte';
   import QizhengReading from '$lib/components/QizhengReading.svelte';
+  import SectionIntro from '$lib/components/SectionIntro.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
 
@@ -87,9 +89,14 @@
   }
 </script>
 
-<svelte:head><title>{t('cli.heading.qizheng')}</title></svelte:head>
+<PageHead {t} />
 
 <h1 class="offscreen">{t('cli.heading.qizheng')}</h1>
+
+<!-- What this section is, said above the form to somebody who has not met the
+     art — the heading above being spoken and not seen. Two paragraphs, two
+     columns: see `SectionIntro`. -->
+<SectionIntro {t} />
 
 <FormPanel {t} bind:this={panel} closable={board !== undefined} onsubmit={submit}>
   {#snippet fields()}

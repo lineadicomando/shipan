@@ -5,6 +5,8 @@
   import { sayFailure } from '$lib/moment';
   import type { Unit } from '$lib/step';
   import MomentSteps from '$lib/components/MomentSteps.svelte';
+  import PageHead from '$lib/components/PageHead.svelte';
+  import SectionIntro from '$lib/components/SectionIntro.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
   import TaiyiReading from '$lib/components/TaiyiReading.svelte';
 
@@ -121,10 +123,15 @@
   }
 </script>
 
-<svelte:head><title>{t('taiyi.title')}</title></svelte:head>
+<PageHead {t} />
 
 <!-- Named, not shown: the nav says which section this is — see `.offscreen`. -->
 <h1 class="offscreen">{t('taiyi.title')}</h1>
+
+<!-- What this section is, said above the form to somebody who has not met the
+     art — the heading above being spoken and not seen. Two paragraphs, two
+     columns: see `SectionIntro`. -->
+<SectionIntro {t} />
 
 <!--
   The whole of the form, dressed and laid out as what the other sections leave

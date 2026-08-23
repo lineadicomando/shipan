@@ -3,6 +3,8 @@
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
+  import PageHead from '$lib/components/PageHead.svelte';
+  import SectionIntro from '$lib/components/SectionIntro.svelte';
   import ZiweiReading from '$lib/components/ZiweiReading.svelte';
   import { ziweiSeatBoxes } from '@shipan/plate';
   import FormPanel from '$lib/components/FormPanel.svelte';
@@ -186,10 +188,15 @@
   }
 </script>
 
-<svelte:head><title>{t('cli.heading.ziwei')}</title></svelte:head>
+<PageHead {t} />
 
 <!-- Named, not shown: the nav says which section this is — see `.offscreen`. -->
 <h1 class="offscreen">{t('cli.heading.ziwei')}</h1>
+
+<!-- What this section is, said above the form to somebody who has not met the
+     art — the heading above being spoken and not seen. Two paragraphs, two
+     columns: see `SectionIntro`. -->
+<SectionIntro {t} />
 
 <FormPanel {t} bind:this={panel} closable={result !== undefined} onsubmit={submit}>
   {#snippet fields()}

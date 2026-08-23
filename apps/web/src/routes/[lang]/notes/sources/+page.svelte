@@ -20,6 +20,7 @@
 -->
 <script lang="ts">
   import type { MessageKey } from '@shipan/i18n';
+  import PageHead from '$lib/components/PageHead.svelte';
   import { INSTRUMENTS } from '$lib/instruments';
 
   let { data } = $props();
@@ -33,7 +34,7 @@
   const key = (rung: string): string => (rung === '-' ? 'none' : rung);
 </script>
 
-<svelte:head><title>{t('notes.sources.title')}</title></svelte:head>
+<PageHead {t} />
 
 <article>
   <h1>{t('notes.sources.title')}</h1>

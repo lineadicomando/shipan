@@ -5,6 +5,8 @@
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import { step, type Unit, type Wall } from '$lib/step';
   import ChartReading from '$lib/components/ChartReading.svelte';
+  import PageHead from '$lib/components/PageHead.svelte';
+  import SectionIntro from '$lib/components/SectionIntro.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
   import FormPanel from '$lib/components/FormPanel.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
@@ -181,10 +183,15 @@
   }
 </script>
 
-<svelte:head><title>{t('cli.heading.qimen')}</title></svelte:head>
+<PageHead {t} />
 
 <!-- Named, not shown: the nav says which section this is — see `.offscreen`. -->
 <h1 class="offscreen">{t('cli.heading.qimen')}</h1>
+
+<!-- What this section is, said above the form to somebody who has not met the
+     art — the heading above being spoken and not seen. Two paragraphs, two
+     columns: see `SectionIntro`. -->
+<SectionIntro {t} />
 
 <FormPanel {t} bind:this={panel} closable={chart !== undefined} onsubmit={submit}>
   {#snippet fields()}

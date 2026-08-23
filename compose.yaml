@@ -9,6 +9,13 @@ x-runtime: &runtime
   image: shipan:latest
   environment:
     GEONAMES_DB_PATH: /data/geonames.db
+    # The address this site is served at, and the one thing here that cannot
+    # be worked out from the inside. `adapter-node` builds `event.url` from
+    # it, and the canonical, the alternates, the sitemap and every card are
+    # built from that — so behind a proxy, an unset or wrong `ORIGIN` is a
+    # site telling search engines it lives somewhere it does not. Override it
+    # for a real deployment; the default is what `npm start` answers at.
+    ORIGIN: "${WEB_ORIGIN:-http://localhost:3000}"
 
 services:
   # The interface and the REST API. http://localhost:3000

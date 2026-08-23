@@ -235,6 +235,13 @@ docker compose up -d                                 # http://localhost:3000
 docker compose run --rm -T mcp                       # MCP on stdio
 ```
 
+`WEB_ORIGIN` is the address the site is actually served at, and behind a
+proxy it has to be set: the canonical link, the `hreflang` alternates, the
+sitemap and every social card are built from the request's origin, and nothing
+in this repository holds a domain. Unset it defaults to
+`http://localhost:3000`, which is right for a laptop and wrong for anywhere a
+search engine can reach.
+
 One image serves all three; only the command differs. The runtime image
 installs `fonts-noto-cjk` on purpose: a chart is nine palaces of Chinese
 characters, and without a font that can draw them the PNG renders a grid of

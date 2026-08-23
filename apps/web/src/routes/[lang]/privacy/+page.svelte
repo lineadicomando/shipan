@@ -1,10 +1,11 @@
 <script lang="ts">
   import { COLOR_SCHEME_KEY } from '$lib/color-scheme';
+  import PageHead from '$lib/components/PageHead.svelte';
   let { data } = $props();
   const t = $derived(data.t);
 </script>
 
-<svelte:head><title>{t('privacy.title')}</title></svelte:head>
+<PageHead {t} />
 
 <article>
   <h1>{t('privacy.title')}</h1>

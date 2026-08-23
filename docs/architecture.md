@@ -113,6 +113,56 @@ cannot wait for a picture.
 **The consultation prints from the page and never from a route of its own**,
 because a route would have to be told the question. See `docs/readings.md`.
 
+## Found by a search, and what may never be found
+
+The interface is public and meant to be found. What is on it is not: an
+address here is frequently a board cast for somebody, with the date, the time
+and the place of birth written into the query string.
+
+**Two rules, in two files, failing closed in opposite directions.**
+`lib/cacheable.ts` decides what a browser may write to disk and its guard is a
+*prefix* — nothing under `/api`, ever, so a seventh board is refused the day it
+lands rather than the day somebody remembers. `lib/indexable.ts` decides what a
+crawler may put in an index and its guard is an *allowlist*: an address is
+indexable only when it is a page the registries declare and carries no query at
+all. There the danger was a hole; here it is a leak, and «closed» is not the
+same word.
+
+| | |
+|---|---|
+| a section, a note, the privacy page | canonical, the full set of `hreflang`, a description, a card, one piece of structured data |
+| the same address carrying a question | `noindex, follow`, and none of the above |
+| anything under `/api` | `Disallow` in `robots.txt`, and `X-Robots-Tag: noindex` from `hooks.server.ts` |
+| `/[lang]/offline` | absent from the sitemap: an apology for a page nobody asked for is not a destination |
+
+A `noindex` page carries **no** canonical and no alternates. The two together
+are a contradiction a search engine resolves by guessing, and what it would be
+guessing about is an address with a birth in it. For the same reason
+`robots.txt` deliberately leaves those addresses crawlable: a crawler told not
+to fetch one never reads the refusal on it, and stays free to index the address
+from a link alone.
+
+**`/robots.txt` and `/sitemap.xml` are routes and not files in `static/`.**
+Both have to name an absolute address, and this project holds no domain
+anywhere — the origin arrives with the request. In production that means
+`ORIGIN` must be set, which is what `adapter-node` builds `event.url` from
+behind a proxy; `compose.yaml` sets it. Set it wrong and the canonical points
+at the wrong site, which is the one failure here that is invisible from the
+inside.
+
+The sitemap is derived from `SECTIONS` and `NOTE_PAGES`, so a board that lands
+in the nav is listed the same day. It carries no `lastmod`, `changefreq` or
+`priority`: nothing in this repository knows when a page's content changed, and
+the other two are ignored.
+
+**What a page says it is lives in `lib/meta.ts`** — a title, a description, and
+the two paragraphs a section opens with, set in two columns above the form
+where the heading is not. That file is *written* rather than derived, which is
+the exception `docs/notes.md` allows: what may never be written is what changes
+when a board lands, and an account of what 六壬 is for, addressed to somebody
+who has never heard of it, is not a fact about the computation.
+`apps/web/test/meta.test.ts` holds it to the addresses in both directions.
+
 ## Installed, and what an installed copy cannot do
 
 The site can be installed: a manifest, an icon, its own window. **It is not the

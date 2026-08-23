@@ -831,9 +831,11 @@ export const en = {
   //
   // Not "Reading" and not "Oracle": both would have this project claim the
   // one thing it declines to do, and the footer says on every page that it
-  // does not. What comes out is a prompt, and `consult.lead` — the first line
-  // of the page — says so before anybody types into it. That line carries the
-  // word this label gave up.
+  // does not. What comes out is a prompt, and `meta.intro.consult.b` — the
+  // second of the two paragraphs the section opens with — says so before
+  // anybody types into it. That paragraph carries the word this label gave
+  // up; it used to be `consult.lead`, a single line standing where a heading
+  // would, and it was absorbed when every section gained an introduction.
   'nav.consult': 'Consultation',
   'nav.sections': 'Sections',
 
@@ -853,8 +855,122 @@ export const en = {
   'form.copyTaiyi': 'Copy the board as text',
 
   'moments.title': 'Choosing a time — Qi Men',
-  'moments.lead':
-    'Every hour between two dates is cast as a Qi Men chart, and the ones answering what you name below are listed. Criteria, not recommendations: what makes an hour worth acting in is a reading, and it is yours.',
+
+  // What a page says it is, to a reader who has not arrived yet.
+  //
+  // Three kinds of string and one subject. A `title` is what a tab and a
+  // search result show, cut short because both cut it anyway; a
+  // `description` is the line under that result and the line a messaging
+  // application shows when the address is pasted; the two `intro` paragraphs
+  // are the only one of the three the reader actually reads on the page.
+  //
+  // **None of them may promise a reading.** They are the sentences most
+  // likely to be met by somebody who never opens the site, which makes them
+  // the worst place here to imply the one thing this project refuses — see
+  // `docs/refusals.md`. What they say is what is computed and what is handed
+  // over, in the same register the footer's disclaimer is set in.
+  //
+  // **The names carry their readings, and that is not decoration in this
+  // block.** A reader looking for these arts is looking for 奇門遁甲, for
+  // `qimen dunjia`, or for `Qi Men Dun Jia`, and which of the three they type
+  // is not something this project gets to decide. The paragraphs say the name
+  // whole, once, the way the interface says it everywhere else.
+  //
+  // The two paragraphs answer two questions and not one. The first: what this
+  // art is, and what the board is made of. The second: what this page wants
+  // from the reader, and what it will not do with it. `lib/meta.ts`.
+  // The one description of the card in `static/og.png`, for a reader whose
+  // preview does not draw images and for a screen reader reading a link
+  // somebody pasted. It says what is on it — a seal, a name, six names — and
+  // not what the site is: that is the description, which travels beside it.
+  'meta.card.alt':
+    'The shipan seal in cinnabar, the name 式盤 shìpán beside it, and the names of the six arts: Qi Men Dun Jia, Da Liu Ren, Tai Yi Shen Shu, Qi Zheng Si Yu, Zi Wei Dou Shu and Ba Zi.',
+
+  'meta.title.consult': 'The Chinese divinatory boards, computed',
+  'meta.description.consult':
+    'Ask a question, give a birth or name a year. Six Chinese divinatory boards, cast from an ephemeris and handed to an AI as a prompt you can paste.',
+  'meta.intro.consult.a':
+    '式盤 shìpán is the diviner\'s board itself — the round heaven turning on the square earth. Six of them are laid here: 奇門遁甲 qímén dùnjiǎ, 大六壬 dà liùrén, 太乙神數 tàiyǐ shénshù, 紫微斗數 zǐwēi dǒushù, the four pillars and 七政四餘 qīzhèng sìyú, each computed from an ephemeris rather than recalled.',
+  'meta.intro.consult.b':
+    'What comes out is a prompt, not a reading. Ask a question, give a birth or name a year, and the board travels to ChatGPT, Claude or another assistant already cast — with the terms it has to be read under attached to it.',
+
+  'meta.title.moments': 'Choosing a time — Qi Men Dun Jia',
+  'meta.description.moments':
+    'Every hour between two dates cast as a Qi Men Dun Jia chart, and the ones matching what you name listed with the direction each stands in.',
+  'meta.intro.moments.a':
+    'Every hour between two dates is cast as a 奇門遁甲 qímén dùnjiǎ chart, and the ones that answer what you name below are listed — each with the direction it stands in, which is half of the answer and never reported without it.',
+  'meta.intro.moments.b':
+    'Criteria, not recommendations. What makes an hour worth acting in is a reading, and it is yours: this says where a gate, a star or a spirit actually falls in the hours you asked about, and stops there.',
+
+  'meta.title.qimen': 'Qi Men Dun Jia — cast a chart',
+  'meta.description.qimen':
+    'Cast a Qi Men Dun Jia chart for any instant and place: nine palaces, earth and heaven plates, the eight stars, gates and spirits, with the ju by chaibu.',
+  'meta.intro.qimen.a':
+    '奇門遁甲 qímén dùnjiǎ divides an instant into nine palaces: an earth plate fixed by the ju, a heaven plate turned onto the hour, and the eight stars, eight gates and eight spirits standing over them.',
+  'meta.intro.qimen.b':
+    'Give a moment and a place, or leave the form empty for the present one. No school is implicit here — the ju is determined by 拆補 chāibǔ, every divergence is a named option, and the options that produced a chart travel in its address.',
+
+  'meta.title.liuren': 'Da Liu Ren — cast a board',
+  'meta.description.liuren':
+    'Cast a Da Liu Ren board for any instant and place: the twelve branches turned by the general of the month, the four lessons, and the three transmissions.',
+  'meta.intro.liuren.a':
+    '大六壬 dà liùrén turns the twelve branches by the general of the month, reads four lessons off the turn, and draws three transmissions out of the four by nine named rules.',
+  'meta.intro.liuren.b':
+    'Give a moment and a place. No birth is asked for and none is placed: the querent already stands on the day stem, and a second name for one person is how a reading acquires a relation that was never there.',
+
+  'meta.title.taiyi': 'Tai Yi Shen Shu — the board of a year',
+  'meta.description.taiyi':
+    'The Tai Yi Shen Shu board of a year: sixteen gods in nine palaces, with the counts of host and guest. A year is its whole subject — nobody is on it.',
+  'meta.intro.taiyi.a':
+    '太乙神數 tàiyǐ shénshù lays a year: sixteen gods in nine palaces, and the counts that decide host and guest. Its palaces are numbered one seat off the 洛書 luòshū, and every surface printing it says so.',
+  'meta.intro.taiyi.b':
+    'Nobody is on this board. No question, no person, no place and no hour enter it — the subject is the year everybody is standing in, and the whole of the form below is one number.',
+
+  'meta.title.qizheng': 'Qi Zheng Si Yu — a chart of a birth',
+  'meta.description.qizheng':
+    'Qi Zheng Si Yu for a birth: the seven governors and three of the four remainders, placed against the twenty-eight lodges and the twelve palaces.',
+  'meta.intro.qizheng.a':
+    '七政四餘 qīzhèng sìyú places the seven governors and three of the four remainders against the twenty-eight lodges and the twelve palaces — the positions read off an ephemeris rather than a table.',
+  'meta.intro.qizheng.b':
+    'Give a birth: an instant and a place. The longitude moves the board and the latitude enters no calculation here — the one method that would read it is declared and refused rather than quietly approximated.',
+
+  'meta.title.ziwei': 'Zi Wei Dou Shu — the twelve seats',
+  'meta.description.ziwei':
+    'A Zi Wei Dou Shu board for a birth: twelve seats counted from the lunar month and the hour, the stars the book places in them, and the grade of each.',
+  'meta.intro.ziwei.a':
+    '紫微斗數 zǐwēi dǒushù counts twelve seats from the lunar month and the hour, places in them the stars the book assigns, and gives each the grade the book gives it.',
+  'meta.intro.ziwei.b':
+    'Give a birth, and a sex where a ring is walked in a direction. The lunar calendar under it is reckoned on 120°E, as a published almanac is: the same instant carries the same lunar date in Rome and in Beijing.',
+
+  'meta.title.bazi': 'Ba Zi — the four pillars of a birth',
+  'meta.description.bazi':
+    'The four pillars of a birth read out: concealed stems, ten gods, twelve stages, nayin images, luck cycles and a count of the five elements.',
+  'meta.intro.bazi.a':
+    '八字 bāzì reads a birth as four pillars — year, month, day and hour — and opens each of them out: the concealed stems, the ten gods, the twelve stages and the images of 納音 nàyīn.',
+  'meta.intro.bazi.b':
+    'The luck cycles run from a sex, and the five elements arrive counted, zeroes included. The count is not a verdict: whether a chart is strong or weak is a step of method, and this is not where it is taken.',
+
+  // The notes and the privacy note have no `intro`: both carry a visible
+  // heading and their own opening line, and a page that is already prose does
+  // not want a preface to its preface.
+  'meta.title.notes': 'Notes — what this engine computes',
+  'meta.description.notes':
+    'What this engine computes, what each number stands on, and how strongly. An account of the instrument, and not a reading.',
+  'meta.title.notes.instruments': 'The instruments and their parameters',
+  'meta.description.notes.instruments':
+    'Every board this engine lays, what each is computed from, and every school divergence as a named parameter with its declared default.',
+  'meta.title.notes.sources': 'Sources — what every number stands on',
+  'meta.description.notes.sources':
+    'Every quantity the engine computes, the text or the measurement it stands on, and the rung of evidence it was weighed on.',
+  'meta.title.notes.refusals': 'What this project will not compute',
+  'meta.description.notes.refusals':
+    'What is deliberately absent here — the yongshen, a ranking of hours, a dated outcome — who asks for it, and why it is not computed.',
+  'meta.title.notes.readings': 'Handing a board to a model',
+  'meta.description.notes.readings':
+    'What happens when a board reaches a model: one board and never two, computed and never a date, and what a prompt commissions and forbids.',
+  'meta.title.privacy': 'Privacy — nothing is stored',
+  'meta.description.privacy':
+    'No account, no cookies and no analytics. Nothing you ask is stored, and no chart is written to this browser. What the address holds, and why.',
 
   'scheme.label': 'Appearance',
   'scheme.auto': 'automatic',
@@ -1073,8 +1189,6 @@ export const en = {
   // it. What was cut from here was the statement of the stance — that lives in
   // the footer, in the privacy note and in the notes — and not this, which is
   // the only thing a newcomer needs before they start typing.
-  'consult.lead':
-    'Ask a question, give a birth, or name a year, and get a prompt ready to paste into ChatGPT, Claude or another assistant.',
   'consult.cast': 'Put the question',
   // The press under a board of 命, where there is no question to put. It says
   // the act the way `consult.cast` does, and it is a different act: one is

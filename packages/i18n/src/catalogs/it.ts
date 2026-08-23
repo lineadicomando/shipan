@@ -788,8 +788,120 @@ export const it: Record<MessageKey, string> = {
   'form.copyTaiyi': 'Copia la tavola come testo',
 
   'moments.title': 'Scegliere il momento — Qi Men',
-  'moments.lead':
-    'Ogni ora fra due date viene posta come carta Qi Men, e sono elencate quelle che rispondono a ciò che indichi qui sotto. Criteri, non raccomandazioni: cosa renda un\'ora buona per agire è una lettura, ed è tua.',
+
+  // Che cosa dice di sé una pagina, a chi non ci è ancora arrivato.
+  //
+  // Tre generi di stringa e un solo soggetto. Un `title` è ciò che mostrano
+  // una scheda e un risultato di ricerca, tenuto corto perché entrambi lo
+  // tagliano comunque; una `description` è la riga sotto quel risultato, e
+  // quella che compare quando l'indirizzo viene incollato in una chat; i due
+  // paragrafi di `intro` sono gli unici tre che il lettore legge davvero
+  // sulla pagina.
+  //
+  // **Nessuno dei tre può promettere una lettura.** Sono le frasi che più
+  // probabilmente incontra chi il sito non lo aprirà mai, ed è quindi il
+  // posto peggiore per lasciar intendere l'unica cosa che questo progetto si
+  // rifiuta di fare. Dicono che cosa viene calcolato e che cosa viene
+  // consegnato, nel registro in cui è scritta l'avvertenza in fondo a ogni
+  // pagina.
+  //
+  // **I nomi portano con sé la loro lettura, e qui non è ornamento.** Chi
+  // cerca queste arti cerca 奇門遁甲, oppure `qimen dunjia`, oppure `Qi Men
+  // Dun Jia`, e quale delle tre digiti non lo decide questo progetto. I
+  // paragrafi dicono il nome per intero, una volta, come lo dice l'interfaccia
+  // dappertutto.
+  // L'unica descrizione della card in `static/og.png`, per un lettore la cui
+  // anteprima non disegna immagini e per uno screen reader che legge un link
+  // incollato. Dice che cosa c'è sopra — un sigillo, un nome, sei nomi — e non
+  // che cos'è il sito: quello lo dice la description, che le viaggia accanto.
+  'meta.card.alt':
+    'Il sigillo shipan in cinabro, accanto il nome 式盤 shìpán, e i nomi delle sei arti: Qi Men Dun Jia, Da Liu Ren, Tai Yi Shen Shu, Qi Zheng Si Yu, Zi Wei Dou Shu e Ba Zi.',
+
+  'meta.title.consult': 'Le tavole divinatorie cinesi, calcolate',
+  'meta.description.consult':
+    'Poni una domanda, dai una nascita o indica un anno. Sei tavole divinatorie cinesi, poste a partire da un\'effemeride e consegnate a un\'IA come prompt.',
+  'meta.intro.consult.a':
+    '式盤 shìpán è la tavola del divinatore: il cielo rotondo che gira sulla terra quadrata. Qui se ne stendono sei — 奇門遁甲 qímén dùnjiǎ, 大六壬 dà liùrén, 太乙神數 tàiyǐ shénshù, 紫微斗數 zǐwēi dǒushù, i quattro pilastri e 七政四餘 qīzhèng sìyú — ognuna calcolata da un\'effemeride, non ricordata.',
+  'meta.intro.consult.b':
+    'Quello che ne esce è un prompt, non una lettura. Poni una domanda, dai una nascita o indica un anno, e la tavola arriva a ChatGPT, Claude o un altro assistente già posta — con addosso i termini in cui va letta.',
+
+  'meta.title.moments': 'Scegliere il momento — Qi Men Dun Jia',
+  'meta.description.moments':
+    'Ogni ora fra due date posta come carta Qi Men Dun Jia, e l\'elenco di quelle che rispondono a ciò che indichi, con la direzione in cui ognuna sta.',
+  'meta.intro.moments.a':
+    'Ogni ora fra due date viene posta come carta 奇門遁甲 qímén dùnjiǎ, e sono elencate quelle che rispondono a ciò che indichi qui sotto — ciascuna con la direzione in cui sta, che è metà della risposta e non si riferisce mai da sola.',
+  'meta.intro.moments.b':
+    'Criteri, non raccomandazioni. Che cosa renda un\'ora buona per agire è una lettura, ed è tua: qui si dice dove cadano davvero una porta, una stella o uno spirito nelle ore che hai chiesto, e ci si ferma lì.',
+
+  'meta.title.qimen': 'Qi Men Dun Jia — poni una carta',
+  'meta.description.qimen':
+    'Poni una carta Qi Men Dun Jia per un istante e un luogo qualsiasi: nove palazzi, quadro di terra e di cielo, otto stelle, porte e spiriti, ju per chaibu.',
+  'meta.intro.qimen.a':
+    '奇門遁甲 qímén dùnjiǎ divide un istante in nove palazzi: un quadro di terra fissato dal ju, un quadro di cielo ruotato sull\'ora, e le otto stelle, le otto porte e gli otto spiriti che vi stanno sopra.',
+  'meta.intro.qimen.b':
+    'Dai un momento e un luogo, o lascia il modulo vuoto per quello presente. Nessuna scuola è sottintesa: il ju è determinato per 拆補 chāibǔ, ogni divergenza è un\'opzione dichiarata, e le opzioni che hanno prodotto una carta viaggiano nel suo indirizzo.',
+
+  'meta.title.liuren': 'Da Liu Ren — stendi un quadro',
+  'meta.description.liuren':
+    'Stendi un quadro Da Liu Ren per un istante e un luogo qualsiasi: i dodici rami girati dal generale del mese, le quattro lezioni e le tre trasmissioni.',
+  'meta.intro.liuren.a':
+    '大六壬 dà liùrén gira i dodici rami secondo il generale del mese, legge quattro lezioni sulla rotazione, e ne trae tre trasmissioni per mezzo di nove regole nominate.',
+  'meta.intro.liuren.b':
+    'Dai un momento e un luogo. Non si chiede nessuna nascita e non se ne colloca alcuna: chi domanda sta già sul tronco del giorno, e un secondo nome per una sola persona è il modo in cui una lettura acquista una relazione che non c\'era.',
+
+  'meta.title.taiyi': 'Tai Yi Shen Shu — la tavola di un anno',
+  'meta.description.taiyi':
+    'La tavola Tai Yi Shen Shu di un anno: sedici divinità in nove palazzi, con i conti di ospite e ospitante. Il soggetto è l\'anno — non c\'è nessuno sopra.',
+  'meta.intro.taiyi.a':
+    '太乙神數 tàiyǐ shénshù stende un anno: sedici divinità in nove palazzi, e i conti che decidono ospitante e ospite. I suoi palazzi sono numerati con uno scarto di un posto rispetto al 洛書 luòshū, e ogni superficie che li stampa lo dice.',
+  'meta.intro.taiyi.b':
+    'Su questa tavola non c\'è nessuno. Non vi entrano né una domanda, né una persona, né un luogo, né un\'ora: il soggetto è l\'anno in cui tutti stiamo, e tutto il modulo qui sotto è un numero.',
+
+  'meta.title.qizheng': 'Qi Zheng Si Yu — una carta di nascita',
+  'meta.description.qizheng':
+    'Qi Zheng Si Yu per una nascita: i sette governatori e tre dei quattro residui, collocati contro le ventotto dimore e i dodici palazzi.',
+  'meta.intro.qizheng.a':
+    '七政四餘 qīzhèng sìyú colloca i sette governatori e tre dei quattro residui contro le ventotto dimore e i dodici palazzi — posizioni lette da un\'effemeride e non da una tavola.',
+  'meta.intro.qizheng.b':
+    'Dai una nascita: un istante e un luogo. La longitudine muove il quadro, la latitudine non entra in nessun calcolo — l\'unico metodo che la leggerebbe è dichiarato e rifiutato, non approssimato di nascosto.',
+
+  'meta.title.ziwei': 'Zi Wei Dou Shu — i dodici seggi',
+  'meta.description.ziwei':
+    'Un quadro Zi Wei Dou Shu per una nascita: dodici seggi contati dal mese lunare e dall\'ora, le stelle che il libro vi colloca, e il grado di ciascuna.',
+  'meta.intro.ziwei.a':
+    '紫微斗數 zǐwēi dǒushù conta dodici seggi a partire dal mese lunare e dall\'ora, vi colloca le stelle che il libro assegna, e dà a ciascuna il grado che il libro le dà.',
+  'meta.intro.ziwei.b':
+    'Dai una nascita, e un sesso dove un anello si percorre in una direzione. Il calendario lunare sotto di essa è computato su 120°E, come in un almanacco stampato: lo stesso istante porta la stessa data lunare a Roma e a Pechino.',
+
+  'meta.title.bazi': 'Ba Zi — i quattro pilastri di una nascita',
+  'meta.description.bazi':
+    'I quattro pilastri di una nascita, aperti: tronchi nascosti, dieci divinità, dodici stadi, immagini nayin, cicli di fortuna e conteggio dei cinque elementi.',
+  'meta.intro.bazi.a':
+    '八字 bāzì legge una nascita come quattro pilastri — anno, mese, giorno e ora — e apre ciascuno di essi: i tronchi nascosti, le dieci divinità, i dodici stadi e le immagini di 納音 nàyīn.',
+  'meta.intro.bazi.b':
+    'I cicli di fortuna corrono a partire da un sesso, e i cinque elementi arrivano contati, zeri compresi. Il conteggio non è un verdetto: che una carta sia forte o debole è un passo di metodo, e non è qui che lo si compie.',
+
+  // Le note e la nota sulla privacy non hanno `intro`: portano entrambe un
+  // titolo visibile e la propria riga d'apertura, e una pagina che è già
+  // prosa non vuole una prefazione alla prefazione.
+  'meta.title.notes': 'Note — che cosa calcola questo motore',
+  'meta.description.notes':
+    'Che cosa calcola questo motore, su che cosa si regge ogni numero e con quanta forza. Il resoconto dello strumento, e non una lettura.',
+  'meta.title.notes.instruments': 'Gli strumenti e i loro parametri',
+  'meta.description.notes.instruments':
+    'Ogni tavola che questo motore stende, da che cosa è calcolata, e ogni divergenza di scuola come parametro dichiarato con il proprio valore predefinito.',
+  'meta.title.notes.sources': 'Fonti — su che cosa si regge ogni numero',
+  'meta.description.notes.sources':
+    'Ogni quantità calcolata dal motore, il testo o la misura su cui si regge, e il gradino di evidenza su cui è stata pesata.',
+  'meta.title.notes.refusals': 'Che cosa questo progetto non calcola',
+  'meta.description.notes.refusals':
+    'Che cosa manca qui deliberatamente — lo yongshen, una classifica delle ore, una data per un esito — chi lo chiede, e perché non viene calcolato.',
+  'meta.title.notes.readings': 'Consegnare una tavola a un modello',
+  'meta.description.notes.readings':
+    'Che cosa succede quando una tavola arriva a un modello: una sola tavola e mai due, calcolata e mai una data, e che cosa un prompt commissiona e vieta.',
+  'meta.title.privacy': 'Privacy — non si conserva nulla',
+  'meta.description.privacy':
+    'Nessun account, nessun cookie, nessuna analitica. Nulla di ciò che chiedi viene conservato e nessuna carta è scritta in questo browser: qui è spiegato perché.',
 
   'scheme.label': 'Aspetto',
   'scheme.auto': 'automatico',
@@ -910,8 +1022,6 @@ export const it: Record<MessageKey, string> = {
   'consult.birthGender': 'Sesso — ne dipende solo il verso del conteggio dello 行年',
   'consult.birthNote':
     'La carta resta posta per l\'istante in cui chiedi. Quello che la nascita aggiunge è dove cade dentro di essa — 本命 běnmìng, l\'anno in cui sei nato, e 行年 xíngnián, l\'anno che stai vivendo.',
-  'consult.lead':
-    'Poni una domanda, dai una nascita, oppure indica un anno, e ottieni un prompt pronto — da incollare in ChatGPT, Claude o un altro assistente.',
   'consult.cast': 'Poni la domanda',
   'consult.lay': 'Stendi il quadro',
   'consult.year': 'L\'anno su cui il quadro è steso',

@@ -6,7 +6,9 @@
   import CalendarAndAlmanac from '$lib/components/CalendarAndAlmanac.svelte';
   import FormPanel from '$lib/components/FormPanel.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
+  import PageHead from '$lib/components/PageHead.svelte';
   import PillarPlate from '$lib/components/PillarPlate.svelte';
+  import SectionIntro from '$lib/components/SectionIntro.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
 
@@ -89,10 +91,15 @@
   }
 </script>
 
-<svelte:head><title>{t('cli.heading.pillars')}</title></svelte:head>
+<PageHead {t} />
 
 <!-- Named, not shown: the nav says which section this is — see `.offscreen`. -->
 <h1 class="offscreen">{t('cli.heading.pillars')}</h1>
+
+<!-- What this section is, said above the form to somebody who has not met the
+     art — the heading above being spoken and not seen. Two paragraphs, two
+     columns: see `SectionIntro`. -->
+<SectionIntro {t} />
 
 <FormPanel {t} bind:this={panel} closable={result !== undefined} onsubmit={submit}>
   {#snippet fields()}

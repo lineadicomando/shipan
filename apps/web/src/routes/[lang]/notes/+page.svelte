@@ -11,6 +11,7 @@
 -->
 <script lang="ts">
   import { NOTE_PAGES } from '$lib/notes';
+  import PageHead from '$lib/components/PageHead.svelte';
 
   let { data } = $props();
   const t = $derived(data.t);
@@ -19,7 +20,7 @@
   const rest = NOTE_PAGES.filter((note) => note.slug);
 </script>
 
-<svelte:head><title>{t('notes.title')}</title></svelte:head>
+<PageHead {t} />
 
 <article>
   <h1>{t('notes.title')}</h1>

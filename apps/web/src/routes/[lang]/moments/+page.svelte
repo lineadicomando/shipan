@@ -32,7 +32,9 @@
   import FormPanel from '$lib/components/FormPanel.svelte';
   import LocationSearch from '$lib/components/LocationSearch.svelte';
   import MomentTable from '$lib/components/MomentTable.svelte';
+  import PageHead from '$lib/components/PageHead.svelte';
   import PlateDialog from '$lib/components/PlateDialog.svelte';
+  import SectionIntro from '$lib/components/SectionIntro.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
 
   let { data } = $props();
@@ -359,7 +361,7 @@
   ].filter(Boolean));
 </script>
 
-<svelte:head><title>{t('moments.title')}</title></svelte:head>
+<PageHead {t} />
 
 <!-- Named, not shown: the nav says which section this is — see `.offscreen`.
      Named here with the art, which the nav label cannot carry: every criterion
@@ -367,8 +369,10 @@
      they were read off. -->
 <h1 class="offscreen">{t('moments.title')}</h1>
 
-<!-- The one line that says what this walks, before anybody narrows it. -->
-<p class="lead">{t('moments.lead')}</p>
+<!-- What this section is, said above the form to somebody who has not met the
+     art — the heading above being spoken and not seen. Two paragraphs, two
+     columns: see `SectionIntro`. -->
+<SectionIntro {t} />
 
 <FormPanel
   {t}
@@ -636,7 +640,6 @@
 {/if}
 
 <style>
-  .lead { margin: 0 0 1rem; color: var(--faint); font-size: 0.9rem; line-height: 1.55; }
   .failure { color: var(--alarm); }
   /* As many per row as the panel has room for, one when it has none: the
      criteria are `select`s holding words of very uneven length, and a fixed

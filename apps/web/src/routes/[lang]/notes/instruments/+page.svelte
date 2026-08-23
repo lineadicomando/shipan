@@ -14,6 +14,7 @@
 -->
 <script lang="ts">
   import type { MessageKey } from '@shipan/i18n';
+  import PageHead from '$lib/components/PageHead.svelte';
   import { glyph } from '$lib/glyph';
   import { INSTRUMENTS } from '$lib/instruments';
 
@@ -32,7 +33,7 @@
     INSTRUMENTS.find((instrument) => instrument.id === id)?.name;
 </script>
 
-<svelte:head><title>{t('notes.instruments.title')}</title></svelte:head>
+<PageHead {t} />
 
 <article>
   <h1>{t('notes.instruments.title')}</h1>

@@ -151,6 +151,20 @@ the engine falls back to Moshier, which needs no files.
   somebody's date, time and place of birth. The rule is
   `lib/cacheable.ts`, where a test reads it, and there is no notification of
   any kind. → [`docs/architecture.md`](docs/architecture.md)
+- **An address that carries somebody's board is refused an index, and the
+  refusal has to be readable to be obeyed.** A section address is the page and
+  carries the canonical, the alternates and a card; the same address with a
+  question on it carries `noindex` and nothing else, since a canonical over a
+  `noindex` is a contradiction resolved by guessing. `robots.txt` therefore
+  forbids `/api` and *not* the chart addresses: a crawler told not to fetch one
+  never reads the refusal. The rule is `lib/cacheable.ts`'s twin,
+  `lib/indexable.ts`, and a test reads it. → [`docs/architecture.md`](docs/architecture.md)
+- **A page says what it is, and `lib/meta.ts` is the one place it is said.**
+  The title, the description and the two paragraphs a section opens with — in
+  two columns, above the form, where the heading is spoken and not seen. It is
+  the written half and stays short for the reason that half always does: every
+  line doubles with every vernacular. Held to the addresses in both directions
+  by a test. → [`docs/architecture.md`](docs/architecture.md)
 - **A chart prints, and paper is the fourth appearance** — not light, which is
   a paper-*coloured* screen. Each component says whether it belongs on a
   sheet, and the drawn board is the exception CSS cannot reach. →

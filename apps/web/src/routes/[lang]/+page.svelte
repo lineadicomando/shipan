@@ -67,6 +67,8 @@
   import { momentQuery, sayFailure, sayPlace, type Failure, type MomentInput } from '$lib/moment';
   import BaziReading from '$lib/components/BaziReading.svelte';
   import ChartReading from '$lib/components/ChartReading.svelte';
+  import PageHead from '$lib/components/PageHead.svelte';
+  import SectionIntro from '$lib/components/SectionIntro.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
   import FormPanel from '$lib/components/FormPanel.svelte';
   import LiurenReading from '$lib/components/LiurenReading.svelte';
@@ -671,7 +673,7 @@
   let at = $state('');
 </script>
 
-<svelte:head><title>{t('consult.title')}</title></svelte:head>
+<PageHead {t} />
 
 <!--
   The two ways out of this page, written once and rendered twice: among the
@@ -705,11 +707,10 @@
   <!-- Named, not shown: the nav says which section this is, as on the chart. -->
   <h1 class="offscreen">{t('consult.title')}</h1>
 
-  <!-- The one line that says what comes out of this, before anybody types
-       into it. It stands where a heading would, under one that is spoken and
-       not seen — and it carries the word the nav gave up when the section
-       stopped being named after the artefact it produces. -->
-  <p class="lead">{t('consult.lead')}</p>
+  <!-- What this section is, said above the form to somebody who has not met the
+       art — the heading above being spoken and not seen. Two paragraphs, two
+       columns: see `SectionIntro`. -->
+  <SectionIntro {t} />
 
   <!--
     The fields, which withdraw once they have answered.
@@ -1225,7 +1226,6 @@
      the line that says what pressing it sends. Neither line is a step of the
      form, and at the column's own gap both read as one. */
   .captioned { display: grid; gap: 0.4rem; }
-  .lead { margin: 0 0 1rem; color: var(--faint); font-size: 0.9rem; line-height: 1.55; }
   .note { margin: 0; color: var(--faint); font-size: 0.8rem; line-height: 1.55; max-width: 62ch; }
   /*
    * The measure for prose, lifted for the one line that is not prose.
@@ -1381,7 +1381,6 @@
    * the top where a title goes.
    */
   @media print {
-    .lead { display: none; }
       .stale { opacity: 1; }
     /*
      * Blocks, not a grid.

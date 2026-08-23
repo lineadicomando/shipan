@@ -52,7 +52,16 @@ const CACHE = `shipan-${version}`;
  * saves bytes at install and costs the one thing an installed copy is for: a
  * reader who installs from the front page and opens the application on a
  * train would otherwise find the offline page unstyled, its stylesheet never
- * having been asked for. The whole of it is the client bundle and four icons.
+ * having been asked for. The whole of it is the client bundle, four icons and
+ * the social card.
+ *
+ * **The card is the one thing in here no reader will ever ask for.** It is
+ * fetched by whatever unfurls a pasted link — somebody else's server, on
+ * somebody else's network — and never by this browser. It is in `static/`,
+ * which is what `files` is, so it arrives in the precache by the same rule
+ * that brings the icons; the cost is known and it is one file. Taking it out
+ * would mean serving it from a route to hide it from a list, which is a route
+ * added to save an installer forty kilobytes.
  */
 const PRECACHE = [...build, ...files, ...prerendered];
 

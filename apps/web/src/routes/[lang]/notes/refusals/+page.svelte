@@ -13,6 +13,7 @@
   that is missing from it.
 -->
 <script lang="ts">
+  import PageHead from '$lib/components/PageHead.svelte';
   import WrittenNotes from '$lib/components/WrittenNotes.svelte';
   import { REFUSALS } from '$lib/notes';
 
@@ -20,7 +21,7 @@
   const t = $derived(data.t);
 </script>
 
-<svelte:head><title>{t('notes.refusals.title')}</title></svelte:head>
+<PageHead {t} />
 
 <article>
   <h1>{t('notes.refusals.title')}</h1>

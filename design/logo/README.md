@@ -19,6 +19,7 @@ name, as the queru seal carried 闕.
 | `mark-maskable.svg` | the same glyph, field bled to the edge, glyph inside the safe circle | the app icon a launcher is allowed to cut |
 | `seal-vertical.svg` | 2:3 field, glyph unweighted at native size | print, colophon, anywhere unconstrained |
 | `lockup.svg` | seal, wordmark, and the reading | the primary lockup |
+| `make-card.ts` | the same three, over the names of the six arts | `npm run card` → `apps/web/static/og.png`, 1200×630 |
 
 **The small mark is a character here, not a device.** 闕 had 18 strokes and
 turned to mush below 64px, which is why queru needed an abstract gate; 式 has

@@ -17,7 +17,8 @@
     "test": "npm run test --workspaces --if-present",
     "typecheck": "npm run build -w @shipan/i18n && npm run typecheck --workspaces --if-present",
     "prepare": "npm run build -w @shipan/i18n -w @shipan/plate -w @shipan/geo -w @shipan/core && npm run build -w @shipan/mcp -w @shipan/web",
-    "icons": "node design/logo/make-icons.ts"
+    "icons": "node design/logo/make-icons.ts",
+    "card": "node design/logo/make-card.ts"
   },
   "devDependencies": {
     "@resvg/resvg-js": "^2.6.2",

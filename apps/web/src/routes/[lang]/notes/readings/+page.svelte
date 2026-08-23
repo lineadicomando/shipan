@@ -8,6 +8,7 @@
   browser at all.
 -->
 <script lang="ts">
+  import PageHead from '$lib/components/PageHead.svelte';
   import WrittenNotes from '$lib/components/WrittenNotes.svelte';
   import { READINGS } from '$lib/notes';
 
@@ -15,7 +16,7 @@
   const t = $derived(data.t);
 </script>
 
-<svelte:head><title>{t('notes.readings.title')}</title></svelte:head>
+<PageHead {t} />
 
 <article>
   <h1>{t('notes.readings.title')}</h1>
