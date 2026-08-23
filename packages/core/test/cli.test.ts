@@ -406,7 +406,7 @@ describe('--prompt on a board of 命', () => {
 
     expect(out).toContain('用神');
     expect(out).toContain('this engine does not choose');
-    expect(out).toContain('food for thought and entertainment');
+    expect(out).toContain('inner enquiry and personal enrichment');
   });
 
   it('wraps the 七政四餘 board in how its twelve seats are read', async () => {

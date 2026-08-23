@@ -138,7 +138,7 @@ describe('the prompt', () => {
     const at = moment();
     const text = readingPrompt(at, computeQimenChart(at, DEFAULT_OPTIONS), en);
 
-    expect(text).toContain('food for thought and entertainment');
+    expect(text).toContain('inner enquiry and personal enrichment');
     // Not a softer way of saying nothing: the line has to deny that a reading
     // settles what is the case, which is what somebody asking about another
     // person's feelings will otherwise take from it.
@@ -266,7 +266,7 @@ describe('the prompt with a 年命 in it', () => {
     expect(text).toContain('用神');
     expect(text).toContain('The question asked is');
     expect(text).toContain('Do not rank the palaces');
-    expect(text).toContain('food for thought and entertainment');
+    expect(text).toContain('inner enquiry and personal enrichment');
   });
 
   it('says nothing about a 年命 when none was placed', () => {
@@ -499,7 +499,7 @@ describe('the prompt for a board of 命', () => {
     const at = moment();
 
     for (const text of [qizhengReadingPrompt(at, board(), en), baziReadingPrompt(at, pillars(), en)]) {
-      expect(text).toContain('food for thought and entertainment');
+      expect(text).toContain('inner enquiry and personal enrichment');
       expect(text).toContain('The reading is yours');
       // The birth time, which is load-bearing on both and on neither of the
       // two boards of 卜: those are cast at an instant somebody was present for.
@@ -714,8 +714,8 @@ describe('the prompt for a board of 天', () => {
 
   it('carries the bounds every prompt has, in either locale', () => {
     for (const [t, opening] of [
-      [en, 'food for thought and entertainment'],
-      [createTranslator('it'), 'spunto di riflessione'],
+      [en, 'inner enquiry and personal enrichment'],
+      [createTranslator('it'), 'ricerca interiore'],
     ] as const) {
       const text = taiyiReadingPrompt(board(), t);
 

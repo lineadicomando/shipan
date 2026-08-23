@@ -1160,7 +1160,7 @@ export const en = {
   // inherit the standing of the first: what is exact here is where the Sun
   // was, never what follows from it for anybody.
   'footer.disclaimer':
-    'This site exists only to offer food for thought and entertainment; in no case is it a substitute for professional advice on medical, legal, financial or other matters.',
+    'This site is a space for inner enquiry and personal enrichment; in no case is it a substitute for professional advice on medical, legal, financial or other matters.',
   'footer.data': 'Astronomical data {ephemeris} · places {geonames} (CC BY 4.0)',
   'footer.licence': 'Source code under AGPL-3.0',
   'footer.privacy': 'Privacy',
@@ -1373,10 +1373,10 @@ export const en = {
     'A reading is for a matter, and a matter is not a question: it names what is being looked at — a field of view with two sides in it, which is what the two counts are counts of. Without one the prompt reads the figure and says the assignment was never made, rather than sending a model to invent a pair of parties. The register is descriptive and never predictive, and every surface printing this board says that its nine palaces are numbered one seat off the 洛書 luòshū.',
   'notes.readings.staysOut.title': 'What stays out of a prompt',
   'notes.readings.staysOut.body':
-    'How sure each number is stays in the documentation an agent can look up. Pasted into a prompt it became a paragraph the model recited unasked, beside a disclaimer that already says this is entertainment. The exception is a bound on a quantity the prompt is already telling a model how to read: a caution arriving with the instruction that governs it is part of the instruction. The test is whether removing the line would leave an instruction a model could follow confidently and wrongly.',
+    'How sure each number is stays in the documentation an agent can look up. Pasted into a prompt it became a paragraph the model recited unasked, beside a disclaimer that already says what this is and what it is not. The exception is a bound on a quantity the prompt is already telling a model how to read: a caution arriving with the instruction that governs it is part of the instruction. The test is whether removing the line would leave an instruction a model could follow confidently and wrongly.',
   'notes.readings.disclaimer.title': 'The disclaimer travels',
   'notes.readings.disclaimer.body':
-    'The prompt carries the disclaimer this site’s footer carries, as an instruction to say it: this is food for thought and entertainment, it is no substitute for professional advice on anything, and the power over a person’s choices and their path stays theirs. A prompt travels, and a disclaimer left behind on the page it was copied from was written for somebody who is no longer there.',
+    'The prompt carries the disclaimer this site’s footer carries, as an instruction to say it: this is a space for inner enquiry and personal enrichment, it is no substitute for professional advice on anything, and the power over a person’s choices and their path stays theirs. A prompt travels, and a disclaimer left behind on the page it was copied from was written for somebody who is no longer there.',
 
   'notes.sources.title': 'Where the numbers come from',
   'notes.sources.lead':
@@ -1482,7 +1482,7 @@ export const en = {
   // conversation whether it already said it. A closing line has no such
   // test, so it comes back under every answer until nobody reads it.
   'prompt.disclaimer':
-    'Open your first reply with this line, before anything else you write: "Take this as food for thought and entertainment, not as a source of absolute truths. In no case is this reading a substitute for professional advice on medical, legal, financial or other matters. Free will is a precious instrument and is to be cultivated deliberately: the power over your choices and your path is always yours." Those words and no others. Do not fit it to the question, do not name the person or the matter inside it, do not add to it and do not explain it. Then never again: it opens the conversation and it stands for all of it. Every later reply begins with the answer and carries no notice at the top or the bottom — not a reminder, not a shortened version, not a sentence that does its job in other words. If the line is already somewhere in this conversation, you have said it: go straight to the answer.',
+    'Open your first reply with this line, before anything else you write: "Take this as a contribution to inner enquiry and personal enrichment, not as a source of absolute truths. In no case is this reading a substitute for professional advice on medical, legal, financial or other matters. Free will is a precious instrument and is to be cultivated deliberately: the power over your choices and your path is always yours." Those words and no others. Do not fit it to the question, do not name the person or the matter inside it, do not add to it and do not explain it. Then never again: it opens the conversation and it stands for all of it. Every later reply begins with the answer and carries no notice at the top or the bottom — not a reminder, not a shortened version, not a sentence that does its job in other words. If the line is already somewhere in this conversation, you have said it: go straight to the answer.',
   // 年命 — a birth placed inside a chart of a moment, which is the classical
   // direction and the one thing that had to be said around it. The natal
   // frame this replaced could offer a warning and nothing else; this can

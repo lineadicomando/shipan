@@ -164,7 +164,7 @@ the data but an instruction governing every position below it.
 
 **How sure each number is stays in `docs/agent-prompt.md`**, for an agent that
 can look it up. In the pasted prompt it was a paragraph the model recited
-unasked, beside a disclaimer that already says this is entertainment.
+unasked, beside a disclaimer that already says what this is and what it is not.
 
 **The exception is a bound on a quantity the prompt is already telling a model
 how to read.** The direction the twelve 人事宮 are numbered in travels inside
@@ -185,7 +185,8 @@ follows it.
 ## The disclaimer travels
 
 The prompt carries the disclaimer the site's footer carries, as an instruction
-to say it: this is food for thought and entertainment, it is no substitute for
-professional advice on anything, and the power over a person's choices and
-their path stays theirs. **A prompt travels, and a disclaimer left behind on
-the page it was copied from was written for somebody who is no longer there.**
+to say it: this is a space for inner enquiry and personal enrichment, it is no
+substitute for professional advice on anything, and the power over a person's
+choices and their path stays theirs. **A prompt travels, and a disclaimer left
+behind on the page it was copied from was written for somebody who is no longer
+there.**

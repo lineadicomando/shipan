@@ -245,6 +245,6 @@ export const READINGS: readonly WrittenEntry[] = [
   reading('bu', '2026-08-22'),
   reading('ming', '2026-08-22'),
   reading('tian', '2026-08-22'),
-  reading('staysOut', '2026-08-22'),
-  reading('disclaimer', '2026-08-22'),
+  reading('staysOut', '2026-08-23'),
+  reading('disclaimer', '2026-08-23'),
 ];
