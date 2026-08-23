@@ -821,7 +821,7 @@ export const it: Record<MessageKey, string> = {
   'meta.description.consult':
     'Poni una domanda, dai una nascita o indica un anno. Sei tavole divinatorie cinesi, calcolate da un\'effemeride, in un prompt da incollare nel tuo assistente IA.',
   'meta.intro.consult.a':
-    '式盤 shìpán è la tavola del divinatore: il cielo rotondo che gira sulla terra quadrata. Qui se ne stendono sei — 奇門遁甲 qímén dùnjiǎ, 大六壬 dà liùrén, 太乙神數 tàiyǐ shénshù, 紫微斗數 zǐwēi dǒushù, i quattro pilastri e 七政四餘 qīzhèng sìyú — ognuna calcolata da un\'effemeride, non ricordata.',
+    '式盤 shìpán è la tavola del divinatore: il cielo rotondo che gira sulla terra quadrata. Qui se ne stendono sei, ognuna calcolata da un\'effemeride; scegline una qui sotto.',
   // **È il lettore a incollare, e la frase deve dirlo come atto suo.** Qui
   // c'era «la tavola arriva a ChatGPT», sbagliato nell'unico modo che questo
   // progetto non può permettersi: descrive un sito che manda qualcosa a
@@ -829,15 +829,15 @@ export const it: Record<MessageKey, string> = {
   // non parla con nessuna e non manda niente. Quel che consegna è testo, in
   // una clipboard; dove finisca poi è fra il lettore e chi lo riceve.
   'meta.intro.consult.b':
-    'Quello che ne esce è un prompt, non una lettura. Poni una domanda, dai una nascita o indica un anno, e ottieni un testo da copiare — con la tavola già posta dentro e i termini in cui va letta — da incollare tu in ChatGPT, Claude o un altro assistente.',
+    'Quello che ne esce è un prompt, non una lettura: un testo con la tavola già posta, pronto da incollare in ChatGPT, Claude o un altro assistente.',
 
   'meta.title.moments': 'Scegliere il momento — Qi Men Dun Jia',
   'meta.description.moments':
     'Ogni ora fra due date posta come carta Qi Men Dun Jia, e l\'elenco di quelle che rispondono a ciò che indichi, con la direzione in cui ognuna sta.',
   'meta.intro.moments.a':
-    'Ogni ora fra due date viene posta come carta 奇門遁甲 qímén dùnjiǎ, e sono elencate quelle che rispondono a ciò che indichi qui sotto — ciascuna con la direzione in cui sta, che è metà della risposta e non si riferisce mai da sola.',
+    'Ogni ora fra due date viene posta come carta 奇門遁甲 qímén dùnjiǎ, e sono elencate quelle che rispondono a ciò che indichi, ciascuna con la sua direzione.',
   'meta.intro.moments.b':
-    'Criteri, non raccomandazioni. Che cosa renda un\'ora buona per agire è una lettura, ed è tua: qui si dice dove cadano davvero una porta, una stella o uno spirito nelle ore che hai chiesto, e ci si ferma lì.',
+    'Criteri, non raccomandazioni: che cosa renda un\'ora buona per agire è una lettura, ed è tua.',
 
   'meta.title.qimen': 'Qi Men Dun Jia — poni una carta',
   'meta.description.qimen':
@@ -845,47 +845,47 @@ export const it: Record<MessageKey, string> = {
   'meta.intro.qimen.a':
     '奇門遁甲 qímén dùnjiǎ divide un istante in nove palazzi: un quadro di terra fissato dal ju, un quadro di cielo ruotato sull\'ora, e le otto stelle, le otto porte e gli otto spiriti che vi stanno sopra.',
   'meta.intro.qimen.b':
-    'Dai un momento e un luogo, o lascia il modulo vuoto per quello presente. Nessuna scuola è sottintesa: il ju è determinato per 拆補 chāibǔ, ogni divergenza è un\'opzione dichiarata, e le opzioni che hanno prodotto una carta viaggiano nel suo indirizzo.',
+    'Dai un momento e un luogo, o lascia il modulo vuoto per adesso. Nessuna scuola è sottintesa: il ju si determina per 拆補 chāibǔ, e ogni opzione che ha prodotto una carta è nel suo indirizzo.',
 
   'meta.title.liuren': 'Da Liu Ren — stendi un quadro',
   'meta.description.liuren':
     'Stendi un quadro Da Liu Ren per un istante e un luogo qualsiasi: i dodici rami girati dal generale del mese, le quattro lezioni e le tre trasmissioni.',
   'meta.intro.liuren.a':
-    '大六壬 dà liùrén gira i dodici rami secondo il generale del mese, legge quattro lezioni sulla rotazione, e ne trae tre trasmissioni per mezzo di nove regole nominate.',
+    '大六壬 dà liùrén gira i dodici rami secondo il generale del mese, legge quattro lezioni sulla rotazione e ne trae tre trasmissioni per mezzo di nove regole nominate.',
   'meta.intro.liuren.b':
-    'Dai un momento e un luogo. Non si chiede nessuna nascita e non se ne colloca alcuna: chi domanda sta già sul tronco del giorno, e un secondo nome per una sola persona è il modo in cui una lettura acquista una relazione che non c\'era.',
+    'Dai un momento e un luogo. Non si chiede nessuna nascita: chi domanda sta già sul tronco del giorno, e un secondo nome per la stessa persona inventa una relazione che non c\'è.',
 
   'meta.title.taiyi': 'Tai Yi Shen Shu — la tavola di un anno',
   'meta.description.taiyi':
     'La tavola Tai Yi Shen Shu di un anno: sedici divinità in nove palazzi, con i conti di ospite e ospitante. Il soggetto è l\'anno — non c\'è nessuno sopra.',
   'meta.intro.taiyi.a':
-    '太乙神數 tàiyǐ shénshù stende un anno: sedici divinità in nove palazzi, e i conti che decidono ospitante e ospite. I suoi palazzi sono numerati con uno scarto di un posto rispetto al 洛書 luòshū, e ogni superficie che li stampa lo dice.',
+    '太乙神數 tàiyǐ shénshù stende un anno: sedici divinità in nove palazzi, e i conti che decidono ospitante e ospite. I palazzi sono sfalsati di un posto rispetto al 洛書 luòshū.',
   'meta.intro.taiyi.b':
-    'Su questa tavola non c\'è nessuno. Non vi entrano né una domanda, né una persona, né un luogo, né un\'ora: il soggetto è l\'anno in cui tutti stiamo, e tutto il modulo qui sotto è un numero.',
+    'Su questa tavola non c\'è nessuno: né domanda, né persona, né luogo, né ora. Il soggetto è l\'anno in cui tutti stiamo, e il modulo qui sotto è un numero.',
 
   'meta.title.qizheng': 'Qi Zheng Si Yu — una carta di nascita',
   'meta.description.qizheng':
     'Qi Zheng Si Yu per una nascita: i sette governatori e tre dei quattro residui, collocati contro le ventotto dimore e i dodici palazzi.',
   'meta.intro.qizheng.a':
-    '七政四餘 qīzhèng sìyú colloca i sette governatori e tre dei quattro residui contro le ventotto dimore e i dodici palazzi — posizioni lette da un\'effemeride e non da una tavola.',
+    '七政四餘 qīzhèng sìyú colloca i sette governatori e tre dei quattro residui sulle ventotto dimore e sui dodici palazzi, con posizioni lette da un\'effemeride e non da una tavola.',
   'meta.intro.qizheng.b':
-    'Dai una nascita: un istante e un luogo. La longitudine muove il quadro, la latitudine non entra in nessun calcolo — l\'unico metodo che la leggerebbe è dichiarato e rifiutato, non approssimato di nascosto.',
+    'Dai una nascita: un istante e un luogo. La longitudine muove il quadro, la latitudine non entra in nessun calcolo, e l\'unico metodo che la leggerebbe è rifiutato.',
 
   'meta.title.ziwei': 'Zi Wei Dou Shu — i dodici seggi',
   'meta.description.ziwei':
     'Un quadro Zi Wei Dou Shu per una nascita: dodici seggi contati dal mese lunare e dall\'ora, le stelle che il libro vi colloca, e il grado di ciascuna.',
   'meta.intro.ziwei.a':
-    '紫微斗數 zǐwēi dǒushù conta dodici seggi a partire dal mese lunare e dall\'ora, vi colloca le stelle che il libro assegna, e dà a ciascuna il grado che il libro le dà.',
+    '紫微斗數 zǐwēi dǒushù conta dodici seggi dal mese lunare e dall\'ora, vi colloca le stelle che il libro assegna e dà a ciascuna il grado che il libro le dà.',
   'meta.intro.ziwei.b':
-    'Dai una nascita, e un sesso dove un anello si percorre in una direzione. Il calendario lunare sotto di essa è computato su 120°E, come in un almanacco stampato: lo stesso istante porta la stessa data lunare a Roma e a Pechino.',
+    'Dai una nascita, e un sesso dove un anello si percorre in una direzione. Il calendario lunare si computa su 120°E: lo stesso istante è la stessa data lunare ovunque.',
 
   'meta.title.bazi': 'Ba Zi — i quattro pilastri di una nascita',
   'meta.description.bazi':
     'I quattro pilastri di una nascita, aperti: tronchi nascosti, dieci divinità, dodici stadi, immagini nayin, cicli di fortuna e conteggio dei cinque elementi.',
   'meta.intro.bazi.a':
-    '八字 bāzì legge una nascita come quattro pilastri — anno, mese, giorno e ora — e apre ciascuno di essi: i tronchi nascosti, le dieci divinità, i dodici stadi e le immagini di 納音 nàyīn.',
+    '八字 bāzì legge una nascita come quattro pilastri — anno, mese, giorno e ora — e apre ciascuno: i tronchi nascosti, le dieci divinità, i dodici stadi e le immagini di 納音 nàyīn.',
   'meta.intro.bazi.b':
-    'I cicli di fortuna corrono a partire da un sesso, e i cinque elementi arrivano contati, zeri compresi. Il conteggio non è un verdetto: che una carta sia forte o debole è un passo di metodo, e non è qui che lo si compie.',
+    'I cicli di fortuna corrono da un sesso, e i cinque elementi arrivano contati, zeri compresi. Un conteggio non è un verdetto: forte o debole è un passo di metodo, e qui non si compie.',
 
   // Le note e la nota sulla privacy non hanno `intro`: portano entrambe un
   // titolo visibile e la propria riga d'apertura, e una pagina che è già

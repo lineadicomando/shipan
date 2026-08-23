@@ -890,7 +890,7 @@ export const en = {
   'meta.description.consult':
     'Ask a question, give a birth or name a year. Six Chinese divinatory boards, cast from an ephemeris and handed to an AI as a prompt you can paste.',
   'meta.intro.consult.a':
-    '式盤 shìpán is the diviner\'s board itself — the round heaven turning on the square earth. Six of them are laid here: 奇門遁甲 qímén dùnjiǎ, 大六壬 dà liùrén, 太乙神數 tàiyǐ shénshù, 紫微斗數 zǐwēi dǒushù, the four pillars and 七政四餘 qīzhèng sìyú, each computed from an ephemeris rather than recalled.',
+    '式盤 shìpán is the diviner\'s board: the round heaven turning on the square earth. Six of them are laid here, each computed from an ephemeris — choose one below.',
   // **The reader does the pasting, and the wording has to make that the
   // reader's own act.** This said «the board travels to ChatGPT» and was
   // wrong in the one way this project cannot afford: it describes a site that
@@ -900,47 +900,47 @@ export const en = {
   // between the reader and whoever receives it. `consult.lead` — the line
   // this paragraph absorbed — had the verb right and said «ready to paste».
   'meta.intro.consult.b':
-    'What comes out is a prompt, not a reading. Ask a question, give a birth or name a year, and you get a block of text to copy — the board already cast inside it, with the terms it has to be read under — for you to paste into ChatGPT, Claude or another assistant.',
+    'What comes out is a prompt, not a reading: a text with the board already cast in it, ready to paste into ChatGPT, Claude or another assistant.',
 
   'meta.title.moments': 'Choosing a time — Qi Men Dun Jia',
   'meta.description.moments':
     'Every hour between two dates cast as a Qi Men Dun Jia chart, and the ones matching what you name listed with the direction each stands in.',
   'meta.intro.moments.a':
-    'Every hour between two dates is cast as a 奇門遁甲 qímén dùnjiǎ chart, and the ones that answer what you name below are listed — each with the direction it stands in, which is half of the answer and never reported without it.',
+    'Every hour between two dates is cast as a 奇門遁甲 qímén dùnjiǎ chart, and the ones answering what you name below are listed, each with its direction.',
   'meta.intro.moments.b':
-    'Criteria, not recommendations. What makes an hour worth acting in is a reading, and it is yours: this says where a gate, a star or a spirit actually falls in the hours you asked about, and stops there.',
+    'Criteria, not recommendations: what makes an hour worth acting in is a reading, and it is yours.',
 
   'meta.title.qimen': 'Qi Men Dun Jia — cast a chart',
   'meta.description.qimen':
     'Cast a Qi Men Dun Jia chart for any instant and place: nine palaces, earth and heaven plates, the eight stars, gates and spirits, with the ju by chaibu.',
   'meta.intro.qimen.a':
-    '奇門遁甲 qímén dùnjiǎ divides an instant into nine palaces: an earth plate fixed by the ju, a heaven plate turned onto the hour, and the eight stars, eight gates and eight spirits standing over them.',
+    '奇門遁甲 qímén dùnjiǎ divides an instant into nine palaces: an earth plate fixed by the ju, a heaven plate turned onto the hour, and the eight stars, gates and spirits over them.',
   'meta.intro.qimen.b':
-    'Give a moment and a place, or leave the form empty for the present one. No school is implicit here — the ju is determined by 拆補 chāibǔ, every divergence is a named option, and the options that produced a chart travel in its address.',
+    'Give a moment and a place, or leave the form empty for now. No school is implicit: the ju is by 拆補 chāibǔ, and every option that produced a chart is in its address.',
 
   'meta.title.liuren': 'Da Liu Ren — cast a board',
   'meta.description.liuren':
     'Cast a Da Liu Ren board for any instant and place: the twelve branches turned by the general of the month, the four lessons, and the three transmissions.',
   'meta.intro.liuren.a':
-    '大六壬 dà liùrén turns the twelve branches by the general of the month, reads four lessons off the turn, and draws three transmissions out of the four by nine named rules.',
+    '大六壬 dà liùrén turns the twelve branches by the general of the month, reads four lessons off the turn, and draws three transmissions from them by nine named rules.',
   'meta.intro.liuren.b':
-    'Give a moment and a place. No birth is asked for and none is placed: the querent already stands on the day stem, and a second name for one person is how a reading acquires a relation that was never there.',
+    'Give a moment and a place. No birth is asked for: the querent already stands on the day stem, and a second name for one person invents a relation.',
 
   'meta.title.taiyi': 'Tai Yi Shen Shu — the board of a year',
   'meta.description.taiyi':
     'The Tai Yi Shen Shu board of a year: sixteen gods in nine palaces, with the counts of host and guest. A year is its whole subject — nobody is on it.',
   'meta.intro.taiyi.a':
-    '太乙神數 tàiyǐ shénshù lays a year: sixteen gods in nine palaces, and the counts that decide host and guest. Its palaces are numbered one seat off the 洛書 luòshū, and every surface printing it says so.',
+    '太乙神數 tàiyǐ shénshù lays a year: sixteen gods in nine palaces, and the counts that decide host and guest. Its palaces are numbered one seat off the 洛書 luòshū.',
   'meta.intro.taiyi.b':
-    'Nobody is on this board. No question, no person, no place and no hour enter it — the subject is the year everybody is standing in, and the whole of the form below is one number.',
+    'Nobody is on this board: no question, no person, no place, no hour. The subject is the year everybody is standing in, and the form below is one number.',
 
   'meta.title.qizheng': 'Qi Zheng Si Yu — a chart of a birth',
   'meta.description.qizheng':
     'Qi Zheng Si Yu for a birth: the seven governors and three of the four remainders, placed against the twenty-eight lodges and the twelve palaces.',
   'meta.intro.qizheng.a':
-    '七政四餘 qīzhèng sìyú places the seven governors and three of the four remainders against the twenty-eight lodges and the twelve palaces — the positions read off an ephemeris rather than a table.',
+    '七政四餘 qīzhèng sìyú places the seven governors and three of the four remainders on the twenty-eight lodges and the twelve palaces, read off an ephemeris rather than a table.',
   'meta.intro.qizheng.b':
-    'Give a birth: an instant and a place. The longitude moves the board and the latitude enters no calculation here — the one method that would read it is declared and refused rather than quietly approximated.',
+    'Give a birth: an instant and a place. The longitude moves the board; the latitude enters no calculation, and the one method that would read it is refused.',
 
   'meta.title.ziwei': 'Zi Wei Dou Shu — the twelve seats',
   'meta.description.ziwei':
@@ -948,15 +948,15 @@ export const en = {
   'meta.intro.ziwei.a':
     '紫微斗數 zǐwēi dǒushù counts twelve seats from the lunar month and the hour, places in them the stars the book assigns, and gives each the grade the book gives it.',
   'meta.intro.ziwei.b':
-    'Give a birth, and a sex where a ring is walked in a direction. The lunar calendar under it is reckoned on 120°E, as a published almanac is: the same instant carries the same lunar date in Rome and in Beijing.',
+    'Give a birth, and a sex where a ring is walked in a direction. The lunar calendar under it is reckoned on 120°E: the same instant is the same lunar date everywhere.',
 
   'meta.title.bazi': 'Ba Zi — the four pillars of a birth',
   'meta.description.bazi':
     'The four pillars of a birth read out: concealed stems, ten gods, twelve stages, nayin images, luck cycles and a count of the five elements.',
   'meta.intro.bazi.a':
-    '八字 bāzì reads a birth as four pillars — year, month, day and hour — and opens each of them out: the concealed stems, the ten gods, the twelve stages and the images of 納音 nàyīn.',
+    '八字 bāzì reads a birth as four pillars — year, month, day and hour — and opens each out: the concealed stems, the ten gods, the twelve stages and the images of 納音 nàyīn.',
   'meta.intro.bazi.b':
-    'The luck cycles run from a sex, and the five elements arrive counted, zeroes included. The count is not a verdict: whether a chart is strong or weak is a step of method, and this is not where it is taken.',
+    'The luck cycles run from a sex, and the five elements arrive counted, zeroes included. A count is not a verdict: strong or weak is a step of method, not taken here.',
 
   // The notes and the privacy note have no `intro`: both carry a visible
   // heading and their own opening line, and a page that is already prose does
