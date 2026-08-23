@@ -4,6 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- iOS reads none of the manifest's icons for a home screen and takes
+         this one instead. The plain mark rather than the maskable one: it
+         applies no mask, it lays its own rounded rectangle over whatever it
+         is given, and a maskable icon there would be a small glyph adrift in
+         a large field. The manifest itself is linked from the layout under
+         `[lang]`, because there is one per language. -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <!-- The browser bar on mobile has to be told twice, because the page has
          two grounds: declaring one leaves a pale strip above a dark page. -->
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fdfcfa" />

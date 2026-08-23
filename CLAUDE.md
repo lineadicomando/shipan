@@ -144,6 +144,13 @@ the engine falls back to Moshier, which needs no files.
   date, time and place of birth. The solar terms are `public`, and so is a
   太乙 年計 board and its prompt — they are about the sky and a year, and hold
   nobody's data. → [`docs/readings.md`](docs/readings.md)
+- **The site installs, and an installed copy keeps the site and nothing that
+  was asked of it.** No board can be laid without a network — the engine is on
+  the server and the offline page says so, in the reader's language. The
+  service worker never touches `/api` and never writes a page back: both are
+  somebody's date, time and place of birth. The rule is
+  `lib/cacheable.ts`, where a test reads it, and there is no notification of
+  any kind. → [`docs/architecture.md`](docs/architecture.md)
 - **A chart prints, and paper is the fourth appearance** — not light, which is
   a paper-*coloured* screen. Each component says whether it belongs on a
   sheet, and the drawn board is the exception CSS cannot reach. →

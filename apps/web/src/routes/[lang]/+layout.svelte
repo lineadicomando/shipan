@@ -10,6 +10,21 @@
   const t = $derived(data.t);
 </script>
 
+<!--
+  The manifest is per language, so it is linked from under the language and
+  not from `app.html`.
+
+  It could nearly have gone there — `hooks.server.ts` already substitutes the
+  locale into that file — except that it does so with `replace`, which takes
+  the first `%lang%` and leaves a second standing as literal text. Linking it
+  here also puts it exactly where it is true: every page a reader could
+  install from is under this layout, and the pages that are not (the root
+  redirect, an error before a language is known) have no language to name.
+-->
+<svelte:head>
+  <link rel="manifest" href="/{t.locale}/manifest.webmanifest" />
+</svelte:head>
+
 <!-- Mounted only while it falls, so that the page ships with no canvas, no
      loop and no listeners until somebody presses for them. -->
 {#if rain.falling}

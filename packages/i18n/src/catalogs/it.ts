@@ -957,6 +957,26 @@ export const it: Record<MessageKey, string> = {
   'footer.privacy': 'Privacy',
   'footer.notes': 'Note',
 
+  // «calcolate» e non «calcolati»: il soggetto sono le tavole. E «calcolate
+  // qui, non ricordate» è la frase che questo progetto ripete ovunque — vale
+  // la pena che sia la prima cosa che si legge anche fuori dal sito.
+  'manifest.description':
+    'Le tavole delle arti divinatorie cinesi, calcolate qui e non ricordate: Qi Men Dun Jia, Da Liu Ren, Tai Yi Shen Shu, i quattro pilastri, Zi Wei Dou Shu e Qi Zheng Si Yu.',
+
+  // «Nessuna connessione» e non «Sei offline»: il secondo è un'etichetta
+  // sull'utente, il primo dice che cosa manca. E niente «riprova più tardi»
+  // nel corpo — l'attesa non porta qui un calcolo che sta su un server.
+  'offline.title': 'Nessuna connessione',
+  'offline.lead':
+    'Questa pagina non è raggiungibile, e senza connessione non si può posare nessuna tavola.',
+  // «effemeridi» è il termine, non una traduzione di comodo: è la parola che
+  // il lettore ritrova nel piè di pagina, dove la fonte è citata per nome.
+  'offline.why':
+    'Una tavola è calcolata, non cercata in un elenco: servono le effemeridi di dove il Sole e la Luna erano davvero, e un archivio di località per fissare l\'ora. Stanno tutte e due sul server e nessuna delle due gira in un browser — quello che c\'è qui è la porta d\'ingresso, non il lavoro.',
+  'offline.kept':
+    'Non si è perso niente, perché niente era stato conservato. Nessuna carta, data, ora o località è mai stata salvata in questo browser: quello che tiene è il codice di queste pagine e, se l\'hai scelto, l\'aspetto.',
+  'offline.retry': 'Riprova',
+
   'notes.title': 'Note',
   'notes.lead':
     'Che cosa calcola questo motore, su che cosa si regge ogni numero, e con quanta forza. Niente in questa sezione è una lettura: è il resoconto dello strumento.',
@@ -1200,8 +1220,16 @@ export const it: Record<MessageKey, string> = {
     'Poiché i parametri stanno nell\'indirizzo, il collegamento a una carta si porta dietro una data, un\'ora e un luogo — e se hai dato delle coordinate si porta dietro quelle, che nominano una soglia di casa e non una città. Condividilo solo con qualcuno a cui diresti quelle cose.',
   'privacy.prompt':
     'La domanda che scrivi per un prompt non esce dal tuo browser. Al server viene detto che una domanda esiste — perché il prompt possa finire sulla riga che la introduce — e mai quale sia; la frase la aggiunge il browser prima di mettere il tutto negli appunti. Questo sito non parla con nessuna AI e non le manda niente — dove lo incolli poi è cosa fra te e chi lo riceve.',
+  // «Una cosa sola» non regge più: le cose sono due. Cade il «sola» e cade
+  // «solo se la chiedi», che serviva a distinguerla da un'altra che non c'era.
   'privacy.storage':
-    'Una cosa sola resta nel tuo browser, e solo se la chiedi: l\'aspetto che hai scelto, sotto la chiave {key}. Riportare l\'aspetto su automatico la cancella.',
+    'Una cosa resta nel tuo browser perché l\'hai chiesta: l\'aspetto che hai scelto, sotto la chiave {key}. Riportare l\'aspetto su automatico la cancella.',
+  // «carta» e non «grafico»: è la parola che il sito usa dappertutto per
+  // quello che posa. E l'elenco è al negativo di proposito — chi legge che un
+  // sito si installa e funziona senza rete dà per scontato che si sia tenuto
+  // una copia di quello che ci ha fatto.
+  'privacy.offline':
+    'L\'altra è il sito stesso. Questa pagina si può installare e tenere sul dispositivo, quindi il codice, il foglio di stile e le icone restano nel browser, insieme alla pagina che vedi quando non c\'è connessione. Fra queste non c\'è nessuna carta: né una data, né un\'ora, né un luogo, né una domanda, né l\'immagine di una tavola. Niente di quello che hai chiesto viene scritto sul dispositivo, e disinstallare il sito o cancellarne i dati rimuove ciò che c\'è.',
   'privacy.cookies': 'Non viene impostato alcun cookie, e non c\'è alcuna analisi di traffico.',
 
   'prompt.heading': 'Leggere una carta di Qi Men Dun Jia',

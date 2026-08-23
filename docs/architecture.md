@@ -80,7 +80,7 @@ above the boards.
 |---|---|
 | CLI | `shipan`, nine commands: `qimen` `liuren` `qizheng` `taiyi` `bazi` `ziwei` `terms` `calendar` `scan` |
 | REST | 26 GET endpoints under `/api`. Six boards × (board, `plate`, `text`, `prompt`), plus `/api/locations`, `/api/terms`, `/api/moments` — and `/api/bazi` has no `plate` |
-| Web | eight sections at `/en` and `/it`: two acts, six instruments. See `apps/web/src/lib/navigation.ts`. Under the footer, five notes pages and a privacy page, which are not sections and are not addressed by an art |
+| Web | eight sections at `/en` and `/it`: two acts, six instruments. See `apps/web/src/lib/navigation.ts`. Under the footer, five notes pages and a privacy page, which are not sections and are not addressed by an art; and a page nothing links to, `/[lang]/offline` |
 | MCP | 12 tools and 4 reference resources, stdio. See `packages/mcp/src/server.ts` |
 
 Those four counts are asserted against the code by
@@ -113,6 +113,58 @@ cannot wait for a picture.
 **The consultation prints from the page and never from a route of its own**,
 because a route would have to be told the question. See `docs/readings.md`.
 
+## Installed, and what an installed copy cannot do
+
+The site can be installed: a manifest, an icon, its own window. **It is not the
+work carried offline, and nothing here is arranged as though it could be.**
+
+**No board can be laid without a network, and that is architecture rather than
+an omission.** A chart is computed from the Swiss Ephemeris, a native module
+and ninety megabytes of place names — the three things `vite.config.ts` marks
+`ssr.external` precisely so that they never reach a browser. The client imports
+only types from `core`. An installed copy is therefore the way in: it starts
+from disk, it survives a bad connection on the way to a chart, and when there
+is no connection it says so.
+
+**`/[lang]/offline` is where it says so, and it says the true thing.** One
+prerendered page per language — the only prerendered pages here, everything
+else being a chart of somebody's instant — telling the reader that a chart is
+computed elsewhere and that no wait will bring it here. It stands outside the
+language layout, because `SectionsNav` reads `page.url.search` to carry the
+moment between sections and a prerendered page has no query string; that
+collision arrived as a build error and was the right answer, a header of links
+to charts that cannot load being a worse page than one live sentence.
+
+**The manifest is served per language and is not under `/api`.** It holds a
+name, a description and a language, and the vernacular in it lives in the
+catalogs like every other; a file in `static/` would have had to keep a second
+copy of two strings somewhere `docs/i18n.md` forbids. Its **scope is `/` and
+not the language** — the switch is in the header of every page, and a narrower
+scope would put the reader in a browser tab the first time they pressed `IT`.
+Which language was installed is said by `id`, `lang` and `start_url`.
+
+**`display: standalone`, and the cost is paid knowingly.** In an installed
+window there is no address bar, and on this site the address *is* the chart:
+somebody who wants to share the board in front of them has to go through the
+system menu to reach its URL. The remedy, if it ever becomes one, is an
+affordance on the page rather than a weaker display mode.
+
+**The service worker keeps the site and nothing that was asked of it.** It
+precaches what the build produced — the client bundle, the icons and the two
+offline pages, about 215 KiB over the wire — and `addAll` at install is the
+only write it ever makes. Nothing under `/api` is touched, and no page is ever
+written back: both are somebody's date, time and place of birth, which on this
+site are in the address. **That rule lives in `lib/cacheable.ts` and not in the
+worker**, because a service worker is a module no test can import — worker
+globals, listeners at the top level, no exports — and the privacy note makes a
+promise in two languages that must not depend on somebody remembering it.
+
+**There is no notification of any kind**, and that too is a decision: no push,
+no `showNotification`, no background sync. This site is asked a question when
+somebody has one and has nothing to tell anybody first, so a permission prompt
+for a capability it would never use would be asked in bad faith.
+`apps/web/test/service-worker.test.ts` holds both halves.
+
 ## The one thing here that is not the work
 
 A button in the header — 雨, beside the one for the appearance — and a rain of
@@ -143,10 +195,13 @@ common is that this project owns them outright, because it computes with them.
 Three things it does not do. It does not print — whatever else it is, it is
 not something to put on a sheet. It does not move for a reader who asked for
 `prefers-reduced-motion`, who gets the picture drawn once and no loop at all.
-And it is not remembered: **the privacy note says one thing is kept in the
-browser, and it stays one.** The appearance is stored because a reader who
-wants a dark page wants it before the first paint; this is one press away in
-the header on every page, and a reload puts it back the way the page ships.
+And it is not remembered: **the privacy note enumerates what is kept in the
+browser, and this does not join the list.** The appearance is stored because a
+reader who wants a dark page wants it before the first paint; this is one press
+away in the header on every page, and a reload puts it back the way the page
+ships. The list is two entries long — the appearance, and the site's own code
+once it has been installed — and the test of anything proposing to be third is
+the one applied here: whether a reader would have to be told.
 
 It draws in `--ink` and `--edge`, read back out of the stylesheet each frame,
 so it follows the reader from light to dark without holding a colour of its

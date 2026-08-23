@@ -11,7 +11,12 @@
   <p>{t('privacy.nothing')}</p>
   <p>{t('privacy.address')}</p>
   <p>{t('privacy.prompt')}</p>
+  <!-- Two things are kept, and they are kept for different reasons: the first
+       because the reader asked for it, the second because the site can be
+       installed. The second paragraph is mostly a list of what is *not* in
+       it, which is the half a reader actually wants. -->
   <p>{t('privacy.storage', { key: COLOR_SCHEME_KEY })}</p>
+  <p>{t('privacy.offline')}</p>
   <p>{t('privacy.cookies')}</p>
 </article>
 

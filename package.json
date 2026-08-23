@@ -16,9 +16,11 @@
     "build": "npm run build -w @shipan/i18n -w @shipan/plate -w @shipan/geo -w @shipan/core && npm run build -w @shipan/mcp -w @shipan/web",
     "test": "npm run test --workspaces --if-present",
     "typecheck": "npm run build -w @shipan/i18n && npm run typecheck --workspaces --if-present",
-    "prepare": "npm run build -w @shipan/i18n -w @shipan/plate -w @shipan/geo -w @shipan/core && npm run build -w @shipan/mcp -w @shipan/web"
+    "prepare": "npm run build -w @shipan/i18n -w @shipan/plate -w @shipan/geo -w @shipan/core && npm run build -w @shipan/mcp -w @shipan/web",
+    "icons": "node design/logo/make-icons.ts"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@types/node": "^24.7.0",
     "typescript": "^5.9.3",
     "vitest": "^3.2.4"

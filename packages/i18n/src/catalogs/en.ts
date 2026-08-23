@@ -1172,6 +1172,24 @@ export const en = {
   'footer.privacy': 'Privacy',
   'footer.notes': 'Notes',
 
+  // The one line of this site that is read outside it: in the dialog that
+  // offers to install, and afterwards in a list of applications. It says what
+  // the thing does and stops there — a description that promised a reading
+  // would promise the one thing this project refuses.
+  'manifest.description':
+    'The boards of the Chinese divinatory arts, computed rather than recalled: Qi Men Dun Jia, Da Liu Ren, Tai Yi Shen Shu, the four pillars, Zi Wei Dou Shu and Qi Zheng Si Yu.',
+
+  // What a reader is told when a navigation could not reach the network. It
+  // says what cannot be done and why, rather than «try again» — the site is a
+  // calculation on a server, and no wait makes it available here.
+  'offline.title': 'No connection',
+  'offline.lead': 'This page could not be reached, and no board can be laid without a connection.',
+  'offline.why':
+    'A chart is computed rather than looked up: it takes an ephemeris of where the Sun and the Moon actually were, and a dataset of places to fix the hour by. Both are on the server, and neither runs in a browser — so what you have here is the way in, not the work.',
+  'offline.kept':
+    'Nothing was lost, because nothing was kept. No chart, date, time or place has ever been stored in this browser; what it holds is the code of these pages and, if you chose one, the appearance.',
+  'offline.retry': 'Try again',
+
   // The section a reader arrives at having come to check rather than to read.
   // It is several pages about one subject, which is why it has a nav of its
   // own, and the two halves of it are kept apart on purpose: what is derived
@@ -1428,8 +1446,15 @@ export const en = {
   // The one thing on this site somebody types that is not a date or a place.
   'privacy.prompt':
     'The question you write for a prompt does not leave your browser. The server is told that a question exists, so that the prompt can end on the line that introduces one, and never what it is; the browser adds the sentence itself before putting the whole thing in your clipboard. This site talks to no AI and sends nothing to one — where you paste it afterwards is between you and whoever receives it.',
+  // Two things now, where this said one for a long time. The count is the
+  // whole point of the sentence, so it moves when the number does.
   'privacy.storage':
-    'One thing is kept in your browser, and only if you ask for it: the appearance you chose, under the key {key}. Setting the appearance back to automatic deletes it.',
+    'One thing is kept in your browser because you asked for it: the appearance you chose, under the key {key}. Setting the appearance back to automatic deletes it.',
+  // The second, and the paragraph is mostly about what it is not. Somebody
+  // who reads that a site can be installed and works without a connection
+  // reasonably assumes it took a copy of what they did there.
+  'privacy.offline':
+    'The other is the site itself. This page can be installed and kept on your device, so the code, the stylesheet and the icons are stored by your browser, along with the page you see when there is no connection. No chart is among them: not a date, not a time, not a place, not a question, not the picture of a board. Nothing you asked for is written to your device, and uninstalling the site or clearing its data removes what is.',
   'privacy.cookies': 'No cookies are set, and there is no analytics of any kind.',
 
   // The prompt: the only text in this project written to be obeyed by a

@@ -16,6 +16,7 @@ name, as the queru seal carried 闕.
 |---|---|---|
 | `seal.svg` | 白文 seal: the name cut in white out of a cinnabar field | 64px and up — header, README, social card, print |
 | `mark.svg` | 式 in a tighter field, narrower border | below 64px — favicon, app icon |
+| `mark-maskable.svg` | the same glyph, field bled to the edge, glyph inside the safe circle | the app icon a launcher is allowed to cut |
 | `seal-vertical.svg` | 2:3 field, glyph unweighted at native size | print, colophon, anywhere unconstrained |
 | `lockup.svg` | seal, wordmark, and the reading | the primary lockup |
 
@@ -25,6 +26,27 @@ six and holds at 24px, and at 32px — what a tab actually uses on a HiDPI
 screen — it is crisp. It gets a tighter field and a narrower border than the
 seal proper, because at that size every pixel spent on margin is one the
 strokes do not get.
+
+**A launcher cuts the icon, and only the maskable one survives it.** What a
+home screen guarantees to keep is the circle 80% of the width across;
+everything outside it may be masked away. `mark.svg` puts its border at 8/256
+and its glyph nearly to that border, so masked it loses the border on every
+side and the strokes at the corners. `mark-maskable.svg` is the same outline
+at the same uniform scale — no stretching, no retouching, the same terms the
+rest of this directory is bound by — with the field bled to the edge and the
+glyph brought inside that circle, so the mask cuts ground and never character.
+Both go in the manifest, each declared for the `purpose` it is for: shown
+unmasked the maskable one is a small glyph in a large field, which is not what
+a tab or a bookmark wants.
+
+```sh
+npm run icons   # rasterises both marks into apps/web/static/
+```
+
+That command needs no font. The glyph in either mark is an embedded outline,
+and the renderer is the one `@shipan/plate` already draws boards with — which
+is why the app icons cost no dependency that was not already here, and why
+regenerating them does not require the font `make-marks.py` does.
 
 `studies/` keeps the rejected drafts from the 闕如 round, including the one that
 read as a Christian cross and the one that split the seal in half. The abstract
