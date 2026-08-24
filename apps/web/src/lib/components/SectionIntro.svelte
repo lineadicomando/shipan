@@ -75,8 +75,21 @@
      * paragraphs want between them without costing the wide layout anything.
      * At the column gap they read as one block with an accidental break.
      */
-    gap: 0.9rem 2.5rem;
-    margin: 0 0 1.5rem;
+    gap: 0.9rem 1.6rem;
+    /*
+     * Pulled up into the header's own 2rem, rather than taking that 2rem
+     * down: the rule under the nav is the whole site's and pages with no
+     * introduction sit against it too. What is tightened here is this block's
+     * band and nobody else's.
+     */
+    margin: -0.4rem 0 1.15rem;
+    /*
+     * A container so the separator can be asked for at exactly the width the
+     * tracks appear at — see it below. `inline-size` contains nothing this
+     * block was relying on: a grid of two text columns is as wide as its
+     * parent either way.
+     */
+    container-type: inline-size;
   }
 
   /*
@@ -93,6 +106,45 @@
     /* The tracks are already at a measure; this keeps the single-column case
        from stretching to the width of the shell. */
     max-width: 44rem;
+  }
+
+  /*
+   * The gutter, said with a mark rather than with distance.
+   *
+   * Closing the columns up to 1.6rem is what makes the two paragraphs read as
+   * one block above the form instead of two things adrift in the shell — and
+   * at that distance alone they would start to read as one paragraph broken
+   * mid-line, which is what the wider gap was buying. A hairline in `--rule`
+   * buys it back for a tenth of the width: `--rule` and not `--edge` because
+   * this separates two columns of a page and is not the boundary of anything
+   * a reader clicks into — see the palette.
+   *
+   * Fixed at 1.375rem and centred, not stretched to the tracks. A rule as tall
+   * as the taller paragraph would draw a box, and the two paragraphs are of
+   * different lengths in every vernacular, so a full-height rule is a
+   * different mark in English and in Italian. Short and centred is the same
+   * mark in both.
+   *
+   * The condition is the grid's own arithmetic and not a guessed breakpoint:
+   * `auto-fit` gives a second track when the content box holds two 24rem
+   * minimums and the 1.6rem between them, which is 49.6rem. Below it the
+   * paragraphs stack, there is no gutter, and there is nothing to draw in it.
+   */
+  @container (min-width: 49.6rem) {
+    .intro p + p {
+      position: relative;
+    }
+
+    .intro p + p::before {
+      content: '';
+      position: absolute;
+      left: -0.8rem;
+      top: 50%;
+      width: 1px;
+      height: 1.375rem;
+      margin-top: -0.6875rem;
+      background: var(--rule);
+    }
   }
 
   @media print {
