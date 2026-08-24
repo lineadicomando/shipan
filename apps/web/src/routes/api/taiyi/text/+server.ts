@@ -38,7 +38,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     });
     return new Response(
       taiyiTranscript(taiyiBoard({ year }, DEFAULT_TAIYI_OPTIONS), t, {
-        source: pageAddress(url, locale, 'taiyi'),
+        source: pageAddress(url, locale, 'taiyi', { year: String(year) }),
       }),
       { headers: { 'content-type': 'text/plain; charset=utf-8' } },
     );

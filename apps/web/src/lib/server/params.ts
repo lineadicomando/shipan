@@ -201,7 +201,18 @@ function readCoordinate(name: string, value: string): number {
 }
 
 /**
- * The address of the page a chart is read at, built from the API's own.
+ * The instant a board was laid at, as an address says it.
+ *
+ * What `pageAddress` pins when the request left the instant open — see there
+ * for why an address that says nothing is an address that answers with
+ * something else.
+ */
+export function laidAt(moment: Moment): Record<string, string> {
+  return { date: moment.input.date, time: moment.input.time };
+}
+
+/**
+ * The address of the page a board is read at, built from the API's own.
  *
  * The one place here that writes an address rather than reading one, and it
  * is the same promise from the other side: the interface and the API take the
@@ -210,15 +221,30 @@ function readCoordinate(name: string, value: string): number {
  * gets copied, so that a reading pasted into a conversation somewhere else
  * still says which chart it was made from — and so that anybody can cast it
  * again and see whether it says what the reading claimed.
+ *
+ * **Every board cites the section that holds it, and the consultation holds
+ * none.** A section is an address: `/[lang]/liuren` reads the instant, the
+ * place and the divergences out of the query string and lays the board again,
+ * so the sentence this address travels inside — «the board is at {url}» — is
+ * true there and nowhere else. The two boards of 卜 pointed at `/[lang]`
+ * instead, on the argument that a board cast at the instant of asking belongs
+ * to the form that would cast it again; what that produced was a link to a
+ * consultation standing uncast, on whichever instrument the address named —
+ * which for a 六壬 prompt is Qi Men, since a link that carries no instrument
+ * opens on the default. The instant is in the query string either way: the
+ * consultation pins the one it cast rather than the fields it cast from.
+ * Which is why `section` takes no default. There is no board here whose
+ * honest address is the root, and a default is how the omission repeated
+ * itself across four endpoints.
  */
-export function pageAddress(url: URL, locale: Locale, section = ''): string {
+export function pageAddress(
+  url: URL,
+  locale: Locale,
+  section: string,
+  pinned: Record<string, string> = {},
+): string {
   const page = new URL(url);
-  // The language root by default, which is the consultation: a board of 卜 is
-  // cast at the instant of the asking, so the honest link is to the form that
-  // would cast it again rather than to an address claiming to hold it. A board
-  // laid on a birth is a pure function of that birth and its section does hold
-  // it, so those name one and the reader lands on the board itself.
-  page.pathname = section ? `/${locale}/${section}` : `/${locale}`;
+  page.pathname = `/${locale}/${section}`;
   // The parameters only the API answers to — and the birth, which the chart
   // section does not take and which nobody's address should carry: the link
   // is there so the chart can be cast again and checked, and the chart is the
@@ -230,6 +256,19 @@ export function pageAddress(url: URL, locale: Locale, section = ''): string {
   // and must not.
   for (const only of ['lang', 'asked', 'about', 'born', 'bornTime', 'bornTz', 'gender', 'years']) {
     page.searchParams.delete(only);
+  }
+  // What the board is a function of, where the request left it unsaid — and
+  // only there. `/api/liuren/prompt?locationId=3169070` means now, and an
+  // address as silent as the request would lay whatever board is standing when
+  // somebody follows it: the same sentence, a different board, and no way to
+  // tell from either end. Written here rather than at the callers so that the
+  // one endpoint whose board is a function of a year says it the same way.
+  //
+  // An address that already fixes it is left alone. The request said it, the
+  // page reads it, and rewriting `date=2024-06-15` as noon of that date would
+  // be this function correcting a caller who was right.
+  for (const [name, value] of Object.entries(pinned)) {
+    if (!page.searchParams.has(name)) page.searchParams.set(name, value);
   }
   return page.toString();
 }

@@ -2,6 +2,7 @@ import { DEFAULT_ZIWEI_OPTIONS, computeZiwei, ziweiReadingPrompt } from '@shipan
 import { createTranslator } from '@shipan/i18n';
 import {
   momentIsFixed,
+  laidAt,
   pageAddress,
   readLocale,
   readMoment,
@@ -40,7 +41,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     });
     return new Response(
       ziweiReadingPrompt(moment, board, createTranslator(locale), {
-        source: pageAddress(url, locale, 'ziwei'),
+        source: pageAddress(url, locale, 'ziwei', laidAt(moment)),
       }),
       { headers: { 'content-type': 'text/plain; charset=utf-8' } },
     );

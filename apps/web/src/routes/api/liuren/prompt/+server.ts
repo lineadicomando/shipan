@@ -5,7 +5,7 @@ import {
   type LiurenOptions,
 } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
-import { momentIsFixed, pageAddress, readLocale, readMoment } from '$lib/server/params';
+import { laidAt, momentIsFixed, pageAddress, readLocale, readMoment } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
 
@@ -50,7 +50,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     });
     return new Response(
       liurenReadingPrompt(moment, board, createTranslator(locale), {
-        source: pageAddress(url, locale),
+        source: pageAddress(url, locale, 'liuren', laidAt(moment)),
         ...(url.searchParams.get('asked') === 'true' ? { question: '' } : {}),
       }),
       { headers: { 'content-type': 'text/plain; charset=utf-8' } },

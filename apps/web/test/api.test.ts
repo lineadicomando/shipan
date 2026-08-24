@@ -7,6 +7,8 @@ import { GET as prompt } from '../src/routes/api/qimen/prompt/+server';
 import { GET as text_ } from '../src/routes/api/qimen/text/+server';
 import { GET as bazi } from '../src/routes/api/bazi/+server';
 import { GET as liuren } from '../src/routes/api/liuren/+server';
+import { GET as liurenPrompt } from '../src/routes/api/liuren/prompt/+server';
+import { GET as liurenText } from '../src/routes/api/liuren/text/+server';
 import { GET as baziPrompt } from '../src/routes/api/bazi/prompt/+server';
 import { GET as baziText } from '../src/routes/api/bazi/text/+server';
 import { GET as qizheng } from '../src/routes/api/qizheng/+server';
@@ -23,6 +25,7 @@ import { GET as taiyiText } from '../src/routes/api/taiyi/text/+server';
 import { GET as terms } from '../src/routes/api/terms/+server';
 import { GET as locations } from '../src/routes/api/locations/+server';
 import { GET as moments } from '../src/routes/api/moments/+server';
+import { INSTRUMENTS, type InstrumentId } from '../src/lib/instruments';
 
 /**
  * The endpoints are called as SvelteKit calls them, with a URL and a request.
@@ -464,17 +467,6 @@ describe('the prompts for a board of 命', () => {
       expect(plain.text).not.toContain('The question asked is');
       expect(plain.text).toContain('none is needed');
     }
-  });
-
-  it('cites the section that holds the board, not the consultation', async () => {
-    // A board of 卜 links to the form that would cast it again, since it
-    // belongs to the instant it was asked at. These are a pure function of a
-    // birth, and their sections do hold them — so the link lands on the board.
-    const { text } = await call(qizhengPrompt, `${BIRTH}&lang=en`);
-    const pillars = await call(baziText, `${BIRTH}&lang=en`);
-
-    expect(text).toContain('http://localhost/en/qizheng?date=1968-03-12');
-    expect(pillars.text).toContain('http://localhost/en/bazi?date=1968-03-12');
   });
 
   it('says the four pillars in words, as the terminal prints them', async () => {
@@ -1063,7 +1055,7 @@ describe('GET /api/qimen/text', () => {
     // is the address of the other with the section's path.
     const { text } = await call(text_, `${MOMENT}&lang=it`);
 
-    expect(text).toContain('http://localhost/it?date=2024-06-15&time=14%3A00');
+    expect(text).toContain('http://localhost/it/qimen?date=2024-06-15&time=14%3A00');
     expect(text).not.toContain('lang=it');
   });
 
@@ -1102,7 +1094,7 @@ describe('GET /api/qimen/prompt', () => {
   it('leaves the parameters only the API answers to out of the address it cites', async () => {
     const { text } = await call(prompt, `${MOMENT}&lang=en&asked=true`);
 
-    expect(text).toContain('http://localhost/en?date=2024-06-15');
+    expect(text).toContain('http://localhost/en/qimen?date=2024-06-15');
     expect(text).not.toContain('asked=true');
   });
 
@@ -1148,7 +1140,7 @@ describe('GET /api/qimen/prompt', () => {
     // somebody's birthday into whatever the reading is pasted into.
     const { text } = await call(prompt, `${MOMENT}&lang=en&born=1990-06-01&gender=male`);
 
-    expect(text).toContain('http://localhost/en?date=2024-06-15');
+    expect(text).toContain('http://localhost/en/qimen?date=2024-06-15');
     expect(text).not.toContain('born=');
     expect(text).not.toContain('gender=');
   });
@@ -1269,5 +1261,127 @@ describe('GET /api/moments', () => {
     for (const word of ['lucky', 'favourable', 'auspicious', 'best', 'avoid', 'score']) {
       expect(text.toLowerCase()).not.toContain(word);
     }
+  });
+});
+
+/**
+ * The sentence a transcript and a prompt both end on is «the board is at
+ * {url}», and it is a claim about an address rather than a courtesy.
+ *
+ * Two things have to hold for it to be true, and neither of them held for the
+ * two boards of 卜. **The address has to be the section that lays this art** —
+ * `/[lang]/liuren` reads the instant, the place and the divergences out of the
+ * query string and lays the board again, where `/[lang]` is the consultation
+ * and lays nothing until somebody presses the button, on whichever instrument
+ * the address named. **And it has to say what the board is a function of**,
+ * even where the request did not: `/api/liuren/prompt?locationId=3169070`
+ * means now, and an address as silent as the request lays a different board
+ * every time it is followed.
+ *
+ * Written as a table over the registry rather than as a case per endpoint, and
+ * the last test here is why: a seventh art fails this file until its two
+ * endpoints are in it. The four that were wrong were wrong because nothing
+ * asserted the rule — `/api/liuren/text` and `/api/liuren/prompt` had no test
+ * of any kind.
+ */
+describe('the address every board cites', () => {
+  const AN_INSTANT = 'date=2024-06-15&time=14:00&timezone=Asia/Shanghai';
+  const A_BIRTH = 'date=1968-03-12&time=14:30&timezone=Asia/Shanghai';
+  /** The same request with the instant left out, which is what «now» is. */
+  const OPEN = 'timezone=Asia/Shanghai';
+
+  /**
+   * The one address in the message. Asserted on rather than on the whole
+   * text, which is full of dates a bare `toContain('date=')` would meet
+   * halfway.
+   */
+  function cited(text: string): string {
+    const found = /http:\/\/localhost\S*/.exec(text);
+    expect(found, 'the message cites no address at all').not.toBeNull();
+    return (found as RegExpExecArray)[0];
+  }
+
+  const CITED: {
+    id: InstrumentId;
+    /** The section the board is read in, which the address has to name. */
+    slug: string;
+    handlers: Handler[];
+    /** A request that fixes what the board is a function of. */
+    fixed: string;
+    /** The same one leaving it open, and the parameter the address must pin. */
+    open: { query: string; pins: string };
+  }[] = [
+    {
+      id: 'qimen',
+      slug: 'qimen',
+      handlers: [text_, prompt],
+      fixed: AN_INSTANT,
+      open: { query: OPEN, pins: 'date=' },
+    },
+    {
+      id: 'liuren',
+      slug: 'liuren',
+      handlers: [liurenText, liurenPrompt],
+      fixed: AN_INSTANT,
+      open: { query: OPEN, pins: 'date=' },
+    },
+    {
+      id: 'taiyi',
+      slug: 'taiyi',
+      handlers: [taiyiText, taiyiPrompt],
+      fixed: 'year=2026',
+      // A 年計 board has no instant under it at all: an address that names no
+      // year is the year being lived, and it is the year that gets pinned.
+      open: { query: '', pins: 'year=' },
+    },
+    {
+      id: 'qizheng',
+      slug: 'qizheng',
+      handlers: [qizhengText, qizhengPrompt],
+      fixed: A_BIRTH,
+      open: { query: OPEN, pins: 'date=' },
+    },
+    {
+      id: 'ziwei',
+      slug: 'ziwei',
+      handlers: [ziweiText, ziweiPrompt],
+      fixed: A_BIRTH,
+      open: { query: OPEN, pins: 'date=' },
+    },
+    {
+      id: 'bazi',
+      slug: 'bazi',
+      handlers: [baziText, baziPrompt],
+      fixed: A_BIRTH,
+      open: { query: OPEN, pins: 'date=' },
+    },
+  ];
+
+  for (const board of CITED) {
+    it(`names the section that holds a ${board.id} board`, async () => {
+      for (const handler of board.handlers) {
+        const { text } = await call(handler, `${board.fixed}&lang=en`);
+
+        // The consultation holds no board, so a root address here — which is
+        // what the two boards of 卜 cited — is the sentence being false.
+        expect(cited(text).startsWith(`http://localhost/en/${board.slug}?`)).toBe(true);
+      }
+    });
+
+    it(`fixes what a ${board.id} board is a function of, where the request did not`, async () => {
+      for (const handler of board.handlers) {
+        const query = board.open.query ? `${board.open.query}&lang=en` : 'lang=en';
+        const address = cited((await call(handler, query)).text);
+
+        expect(address.startsWith(`http://localhost/en/${board.slug}?`)).toBe(true);
+        expect(address).toContain(board.open.pins);
+      }
+    });
+  }
+
+  it('has a row for every instrument the interface offers', () => {
+    expect(CITED.map((board) => board.id).sort()).toEqual(
+      INSTRUMENTS.map((instrument) => instrument.id).sort(),
+    );
   });
 });

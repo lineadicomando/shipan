@@ -3,6 +3,7 @@ import { createTranslator } from '@shipan/i18n';
 import {
   ephemerisContext,
   momentIsFixed,
+  laidAt,
   pageAddress,
   readInteger,
   readLocale,
@@ -47,7 +48,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     });
     return new Response(
       baziTranscript(moment, bazi, createTranslator(locale), {
-        source: pageAddress(url, locale, 'bazi'),
+        source: pageAddress(url, locale, 'bazi', laidAt(moment)),
       }),
       { headers: { 'content-type': 'text/plain; charset=utf-8' } },
     );

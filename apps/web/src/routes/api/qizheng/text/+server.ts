@@ -8,6 +8,7 @@ import { createTranslator } from '@shipan/i18n';
 import {
   ephemerisContext,
   momentIsFixed,
+  laidAt,
   pageAddress,
   readLocale,
   readMoment,
@@ -51,7 +52,9 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       vary: 'Accept-Language',
     });
     return new Response(
-      qizhengTranscript(moment, board, t, { source: pageAddress(url, locale, 'qizheng') }),
+      qizhengTranscript(moment, board, t, {
+        source: pageAddress(url, locale, 'qizheng', laidAt(moment)),
+      }),
       { headers: { 'content-type': 'text/plain; charset=utf-8' } },
     );
   } catch (cause) {

@@ -2,6 +2,7 @@ import { chartTranscript, computeQimenChart, nianmingOf } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import {
   momentIsFixed,
+  laidAt,
   pageAddress,
   readLocale,
   readMoment,
@@ -34,7 +35,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     });
     return new Response(
       chartTranscript(moment, chart, createTranslator(locale), {
-        source: pageAddress(url, locale),
+        source: pageAddress(url, locale, 'qimen', laidAt(moment)),
         // Inside the transcript, where it belongs: a 年命 is placed in this
         // chart, and the two copied apart could be paired wrongly later.
         ...(birth

@@ -94,6 +94,25 @@ prompt goes to a clipboard.
 **The consultation prints from the page and never from a route of its own**,
 for the same reason: a route would have to be told the question.
 
+## A prompt cites the section of its own art
+
+Every transcript and every prompt ends on «the board is at {url}», which is a
+claim and has to be true. It is true of a **section**: `/[lang]/liuren` reads
+the instant, the place and the divergences out of the query string and lays
+the board again, so anybody handed the reading can go and see whether the
+board says what was claimed of it. It is not true of the consultation, which
+lays nothing until somebody presses the button, and which opens on whichever
+instrument the address names.
+
+**The address says what the board is a function of, even where the request did
+not.** An instant for the five boards that have one, a year for 太乙: a request
+that leaves it out means «now», and an address as silent as the request lays a
+different board every time it is followed. The consultation pins the instant it
+cast rather than the fields it cast from, so a prompt copied there has always
+carried one; a request made straight to the API need not, and the address is
+fixed for both. The birth stays out — see `pageAddress`, which is where both
+halves are written.
+
 ## What a 卜 prompt commissions
 
 A chart **withholds the 用神** and says so: which palace bears on the question

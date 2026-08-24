@@ -195,6 +195,12 @@ read it before changing a prompt.
 - **A section is addressed by the art it lays out, and so is its endpoint.**
   `/api/qimen` answers a `qimen`. The consultation is the exception, having no
   art of its own; `/[lang]/consult` is its *name*, not a second address.
+- **What is handed over says where the board is, and that address is the
+  section of its own art — with what the board is a function of written into
+  it.** «The board is at {url}» is a claim: a section lays the board again from
+  the query string, the consultation lays nothing until somebody presses, and
+  an address that leaves the instant unsaid means whenever it is followed.
+  `pageAddress` is the one place it is built.
 - **A 命 prompt asks for a reading of the person, and every choice travels
   signed.** The themes are commissioned in it, titled for a theme and never a
   factor; a school's method arrives named as that school's; the 用神 stays

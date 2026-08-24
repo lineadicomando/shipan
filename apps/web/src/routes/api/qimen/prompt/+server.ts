@@ -2,6 +2,7 @@ import { computeQimenChart, nianmingOf, readingPrompt } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import {
   momentIsFixed,
+  laidAt,
   pageAddress,
   readLocale,
   readMoment,
@@ -50,7 +51,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
         chart,
         createTranslator(locale),
         {
-          source: pageAddress(url, locale),
+          source: pageAddress(url, locale, 'qimen', laidAt(moment)),
           ...(url.searchParams.get('asked') === 'true' ? { question: '' } : {}),
           ...(birth
             ? { nianming: nianmingOf(chart, birth, readNianmingOptions(url.searchParams)) }

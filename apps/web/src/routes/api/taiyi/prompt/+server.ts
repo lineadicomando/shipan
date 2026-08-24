@@ -72,10 +72,11 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
         // An empty string, never the text: the caller is saying a matter exists
         // and that it will append it. See `TaiyiReadingRequest.matter`.
         ...(url.searchParams.get('about') === 'true' ? { matter: '' } : {}),
-        // The section, which for this board really does hold what it names: a
-        // 年計 board is a pure function of a year, so the link lands on the
-        // board itself rather than on the form that would lay it again.
-        source: pageAddress(url, locale, 'taiyi'),
+        // The year is written into the address even where the request left it
+        // out, which is the whole of what this board is a function of. Silent,
+        // it would mean «the year being lived» at both ends and name a
+        // different board on either side of New Year.
+        source: pageAddress(url, locale, 'taiyi', { year: String(year) }),
       }),
       { headers: { 'content-type': 'text/plain; charset=utf-8' } },
     );
