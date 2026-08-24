@@ -113,6 +113,28 @@ carried one; a request made straight to the API need not, and the address is
 fixed for both. The birth stays out — see `pageAddress`, which is where both
 halves are written.
 
+**What leaves the address is a birth put inside somebody else's board, not a
+parameter the section might not read.** The 年命 of a 奇門 chart — `born` with
+its hour, its zone and the count its 行年 steps by — belongs to the section
+that asked for it and is written out in words in the transcript the link
+travels inside. Everything the board is a function of stays, including the
+divergences a reader moved. `gender` is the one name with both readings: half
+of that birth under 奇門, and a parameter of the board itself under 八字 and
+紫微斗數, where it runs the 大運 and the 大限. Dropped there, the address opened
+a board two kilobytes smaller than the one it was cited under.
+
+**`genderBelongsToBoard` tells the two apart, for every surface that asks.**
+The address a prompt cites, and the setup the nav carries from one section to
+the next: a reader going from 八字 to 紫微斗數 meets the board they asked for
+rather than the field they already filled, and one going to 奇門 carries no
+half of a birth. It reads `takesBirth` and `takesGender` together rather than
+standing as a third column, which could contradict the two it comes from.
+
+The property is asserted rather than the list: **the address lays the board the
+message printed**, checked per art in `apps/web/test/api.test.ts`, with the
+年命 the one declared difference. A list holds until somebody adds a parameter
+to one of the six boards and to nothing else.
+
 ## What a 卜 prompt commissions
 
 A chart **withholds the 用神** and says so: which palace bears on the question

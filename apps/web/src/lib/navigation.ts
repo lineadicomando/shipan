@@ -1,4 +1,5 @@
 import type { MessageKey } from '@shipan/i18n';
+import { genderBelongsToBoard } from '$lib/instruments';
 
 /**
  * The sections, in the order the header lists them, and in two kinds.
@@ -105,7 +106,8 @@ export function href(locale: string, slug: string, search = ''): string {
 }
 
 /**
- * The search string a section link may carry across.
+ * The search string a section link may carry across, which turns on where the
+ * link goes.
  *
  * The moment travels — that is what carrying `search` is for — and the birth
  * does not. `born` and its companions are the parameters `pageAddress` keeps
@@ -114,14 +116,24 @@ export function href(locale: string, slug: string, search = ''): string {
  * that hauled them along would write them into the address of every section
  * visited after a consultation.
  *
+ * `gender` is the one that reads differently by destination, which is why this
+ * takes one. Under 八字 and 紫微斗數 it is a parameter of the board, so a
+ * reader who set it in one and clicks the other meets the board they asked for
+ * instead of an empty field they already filled; under 奇門 it is the
+ * direction a 年命's 行年 counts and travels only with the birth it is half
+ * of. `genderBelongsToBoard` settles it, and settles it for `pageAddress` in
+ * the same words — one parameter, one reading, both surfaces.
+ *
  * `instrument` is dropped for a different reason and the same effect: which
  * board a question is put to is the consultation's own setup and means
  * nothing in a section that is one board already. Carried, it would write a
  * parameter into every address that reads it that nothing there reads.
  */
-export function carriedSearch(search: string): string {
+export function carriedSearch(search: string, section: string): string {
   const params = new URLSearchParams(search);
-  for (const only of ['born', 'bornTime', 'bornTz', 'gender', 'years', 'instrument']) {
+  const dropped = ['born', 'bornTime', 'bornTz', 'years', 'instrument'];
+  if (!genderBelongsToBoard(section)) dropped.push('gender');
+  for (const only of dropped) {
     params.delete(only);
   }
   const query = params.toString();

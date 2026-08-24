@@ -1301,6 +1301,15 @@ describe('the address every board cites', () => {
     return (found as RegExpExecArray)[0];
   }
 
+  /**
+   * The board without the person looked up inside it — the one thing the
+   * address is meant to drop. Everything else has to match.
+   */
+  function withoutNianming(body: unknown): unknown {
+    const { nianming: _dropped, ...answer } = body as Record<string, unknown>;
+    return answer;
+  }
+
   const CITED: {
     id: InstrumentId;
     /** The section the board is read in, which the address has to name. */
@@ -1310,6 +1319,14 @@ describe('the address every board cites', () => {
     fixed: string;
     /** The same one leaving it open, and the parameter the address must pin. */
     open: { query: string; pins: string };
+    /** The endpoint that lays the board, for laying it again at the address. */
+    board: Handler;
+    /**
+     * Everything this board reads beyond the instant — the divergences a
+     * reader may move, and the sex where it is the board's own. All of it has
+     * to survive into the address, or the address names a smaller board.
+     */
+    reads: string;
   }[] = [
     {
       id: 'qimen',
@@ -1317,6 +1334,12 @@ describe('the address every board cites', () => {
       handlers: [text_, prompt],
       fixed: AN_INSTANT,
       open: { query: OPEN, pins: 'date=' },
+      board: qimen,
+      // The one thing an address is meant to lose: a birth looked up inside
+      // somebody else's chart. The chart is the chart of its moment either
+      // way, and the 年命 is written out in the transcript this link travels
+      // inside — so the comparison below drops it from both sides.
+      reads: 'method=chaibu&yuan=futou&born=1990-06-01&gender=male',
     },
     {
       id: 'liuren',
@@ -1324,6 +1347,8 @@ describe('the address every board cites', () => {
       handlers: [liurenText, liurenPrompt],
       fixed: AN_INSTANT,
       open: { query: OPEN, pins: 'date=' },
+      board: liuren,
+      reads: 'guiren=wei',
     },
     {
       id: 'taiyi',
@@ -1333,6 +1358,8 @@ describe('the address every board cites', () => {
       // A 年計 board has no instant under it at all: an address that names no
       // year is the year being lived, and it is the year that gets pinned.
       open: { query: '', pins: 'year=' },
+      board: taiyi,
+      reads: '',
     },
     {
       id: 'qizheng',
@@ -1340,6 +1367,8 @@ describe('the address every board cites', () => {
       handlers: [qizhengText, qizhengPrompt],
       fixed: A_BIRTH,
       open: { query: OPEN, pins: 'date=' },
+      board: qizheng,
+      reads: 'luohou=ascending',
     },
     {
       id: 'ziwei',
@@ -1347,6 +1376,8 @@ describe('the address every board cites', () => {
       handlers: [ziweiText, ziweiPrompt],
       fixed: A_BIRTH,
       open: { query: OPEN, pins: 'date=' },
+      board: ziwei,
+      reads: 'gender=female',
     },
     {
       id: 'bazi',
@@ -1354,6 +1385,8 @@ describe('the address every board cites', () => {
       handlers: [baziText, baziPrompt],
       fixed: A_BIRTH,
       open: { query: OPEN, pins: 'date=' },
+      board: bazi,
+      reads: 'gender=female',
     },
   ];
 
@@ -1366,6 +1399,34 @@ describe('the address every board cites', () => {
         // what the two boards of 卜 cited — is the sentence being false.
         expect(cited(text).startsWith(`http://localhost/en/${board.slug}?`)).toBe(true);
       }
+    });
+
+    /**
+     * The property the two tests above are halves of, and the one worth
+     * asserting on its own: **the address lays the board the message printed**.
+     *
+     * Not that it names the right section, not that it carries some parameter
+     * somebody remembered — that the board at the other end is this board.
+     * `gender` is why this exists: it left every address on the argument that
+     * it is half of a birth, which is true under 奇門 and false under 八字 and
+     * 紫微斗數, where it runs the 大運 and the 大限. The link opened a board
+     * two and a half kilobytes smaller than the one it was cited under, and
+     * every test then written passed, because each one checked a parameter
+     * somebody had thought of.
+     *
+     * The one difference allowed is declared, and it is the 年命: a birth put
+     * inside the chart of another instant leaves the address on purpose, and
+     * the transcript writes it out in words instead.
+     */
+    it(`lays the same ${board.id} board at the address it cites`, async () => {
+      const asked = [board.fixed, board.reads, 'lang=en'].filter(Boolean).join('&');
+      const address = new URL(cited((await call(board.handlers[0], asked)).text));
+
+      const printed = await call(board.board, asked);
+      const again = await call(board.board, address.search.slice(1));
+
+      expect(again.status).toBe(200);
+      expect(withoutNianming(again.body)).toEqual(withoutNianming(printed.body));
     });
 
     it(`fixes what a ${board.id} board is a function of, where the request did not`, async () => {

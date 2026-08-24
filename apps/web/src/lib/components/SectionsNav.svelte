@@ -97,7 +97,7 @@
            folded, the same space is measured downwards. -->
       <li class:opens={index > 0 && SECTIONS[index - 1].group !== section.group}>
         <a
-          href={href(t.locale, section.slug, carriedSearch(page.url.search))}
+          href={href(t.locale, section.slug, carriedSearch(page.url.search, section.slug))}
           aria-current={current ? 'page' : undefined}
           class:current
         >

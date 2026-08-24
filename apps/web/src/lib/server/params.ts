@@ -33,6 +33,7 @@ import {
   type StrengthId,
 } from '@shipan/core';
 import { getLocation } from '@shipan/geo';
+import { genderBelongsToBoard, type InstrumentId } from '$lib/instruments';
 import { resolveLocale, type Locale } from '@shipan/i18n';
 import { error } from '@sveltejs/kit';
 
@@ -240,21 +241,33 @@ export function laidAt(moment: Moment): Record<string, string> {
 export function pageAddress(
   url: URL,
   locale: Locale,
-  section: string,
+  section: InstrumentId,
   pinned: Record<string, string> = {},
 ): string {
   const page = new URL(url);
   page.pathname = `/${locale}/${section}`;
-  // The parameters only the API answers to — and the birth, which the chart
-  // section does not take and which nobody's address should carry: the link
-  // is there so the chart can be cast again and checked, and the chart is the
-  // chart of its moment. The 年命 is already written out in the transcript
-  // this address travels inside.
-  // `about` joins `asked` here: both are booleans the prompt endpoints read and
-  // neither is a parameter of a board. A link back to a section carrying one
-  // would say the section knows what somebody was looking at, which it does not
-  // and must not.
-  for (const only of ['lang', 'asked', 'about', 'born', 'bornTime', 'bornTz', 'gender', 'years']) {
+  // What leaves is of two kinds and neither is «a parameter the section might
+  // not read»: a section reads what its board is a function of, and dropping
+  // any of that is how an address comes to name a smaller board than the one
+  // it is cited under.
+  //
+  // The parameters only the API answers to. `about` joins `asked` because both
+  // are booleans a prompt endpoint reads and neither is a parameter of a board:
+  // a link back to a section carrying one would say the section knows what
+  // somebody was looking at, which it does not and must not.
+  //
+  // And the **birth put inside somebody else's board** — the 年命, which is
+  // `born` with its hour, its zone, the count its 行年 steps by, and the sex
+  // that gives that count its direction. The section does not take it, nobody's
+  // address should carry it, and the transcript this link travels inside has
+  // already written it out. `gender` is the one of those five that is not
+  // always half of a birth: under 八字 and 紫微斗數 it is a parameter of the
+  // board itself and stays, or the address opens on a chart with no 大運 under
+  // the sentence saying the board is there. `genderBelongsToBoard` is where
+  // the two readings are told apart, for this surface and for the nav alike.
+  const dropped = ['lang', 'asked', 'about', 'born', 'bornTime', 'bornTz', 'years'];
+  if (!genderBelongsToBoard(section)) dropped.push('gender');
+  for (const only of dropped) {
     page.searchParams.delete(only);
   }
   // What the board is a function of, where the request left it unsaid — and

@@ -315,3 +315,34 @@ export function readInstrument(value: string | null): InstrumentId {
 export function instrumentOf(id: InstrumentId): Instrument {
   return INSTRUMENTS.find((instrument) => instrument.id === id) ?? INSTRUMENTS[0];
 }
+
+/**
+ * Whose sex `gender=` is, in a section's address — the board's, or a birth put
+ * inside somebody else's board.
+ *
+ * The parameter has two readings and the name has one, which is what made it
+ * a defect. Under 八字 and 紫微斗數 the sex is a parameter **of the board**: it
+ * runs the 大運 and the 大限, and an address without it opens a smaller board
+ * than the one that was handed over. Under 奇門 it belongs to `born` — the
+ * direction the 行年 counts for a person looked up *inside* the chart of
+ * another instant — and it leaves every shareable address along with the
+ * birth it is half of.
+ *
+ * Read off `takesBirth` and `takesGender` rather than added as a third column,
+ * because it is not a third reason: it is those two read together, and a
+ * column that can contradict the two it is derived from is a column that
+ * eventually does.
+ *
+ * Two surfaces ask, and they must not answer differently: `pageAddress`, which
+ * writes the address a prompt cites, and `carriedSearch`, which carries the
+ * setup from one section to the next. Taking it from 八字 to 紫微斗數 is a
+ * reader who set it once meeting the board they asked for; taking it to 奇門
+ * would be half a birth in an address nobody typed.
+ *
+ * A section that is not an instrument — the consultation, choosing a time —
+ * gets `false`, which is the safe side: it holds its own setup already.
+ */
+export function genderBelongsToBoard(section: string): boolean {
+  const instrument = INSTRUMENTS.find((candidate) => candidate.id === section);
+  return instrument !== undefined && instrument.takesGender && !instrument.takesBirth;
+}
