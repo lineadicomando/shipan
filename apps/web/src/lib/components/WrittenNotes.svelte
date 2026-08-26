@@ -13,6 +13,14 @@
   a paragraph carrying the day it was last checked is a weaker claim than one
   that does not, and weaker is what a written page should be beside the two
   derived ones. See `docs/notes.md`.
+
+  **Two at a time, in the tracks the page opened in.** These are not one text
+  to be read through: they are fifteen entries and nine, each answering its own
+  question and each finished at its own heading — which is what makes a second
+  column safe here and would not make it safe in a running argument. The page
+  is halved in height, a reader scanning for the one refusal they came for
+  passes twice as many headings a screen, and the measure inside a track is the
+  measure `NoteLeads` set two blocks above.
 -->
 <script lang="ts">
   import Named from './Named.svelte';
@@ -39,22 +47,57 @@
     new Intl.DateTimeFormat(t.locale, { dateStyle: 'long' }).format(new Date(`${iso}T00:00`));
 </script>
 
-{#each entries as entry (entry.id)}
-  <section>
-    <h2>{t(entry.title)}</h2>
-    {#if entry.asks}
-      <p class="asked">
-        <span class="label">{t('notes.askedBy')}</span>
-        <Named text={t(entry.asks)} />
-      </p>
-    {/if}
-    <p><Named text={t(entry.body)} /></p>
-    <p class="checked">{t('notes.checked', { date: said(entry.checked) })}</p>
-  </section>
-{/each}
+<div class="entries">
+  {#each entries as entry (entry.id)}
+    <section>
+      <h2>{t(entry.title)}</h2>
+      {#if entry.asks}
+        <p class="asked">
+          <span class="label">{t('notes.askedBy')}</span>
+          <Named text={t(entry.asks)} />
+        </p>
+      {/if}
+      <p><Named text={t(entry.body)} /></p>
+      <p class="checked">{t('notes.checked', { date: said(entry.checked) })}</p>
+    </section>
+  {/each}
+</div>
 
 <style>
-  section { margin-top: 2.2rem; max-width: 40rem; }
+  /*
+   * The same grid as `NoteLeads`, and deliberately the same numbers: 24rem a
+   * track and 1.6rem between them, so the entries stand in the columns the
+   * page's opening pair stood in rather than in a second arrangement that
+   * happens to also be two of something. It collapses at the same width for
+   * the same reason, which is why a sheet gets one column and needs no rule
+   * saying so.
+   *
+   * `align-items: start` and not the default stretch. A row is as tall as its
+   * longer entry and these are of every length; stretched, a two-line refusal
+   * would carry its date eight lines below itself, at the foot of a box drawn
+   * around nothing. Started, the white is simply where the shorter entry
+   * stopped — which is what it is.
+   *
+   * No hairline in the gutter, and that is the difference from the opening
+   * pair. There it divides two paragraphs that would otherwise read as one
+   * broken mid-line; here every entry begins with a heading and ends with a
+   * date, and a mark between two things already that clearly separated would
+   * be drawing a table.
+   *
+   * The row gap is what stood between the entries when they were stacked, so
+   * nothing about the vertical rhythm of the page moves.
+   */
+  .entries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    gap: 2.2rem 1.6rem;
+    align-items: start;
+    margin-top: 2.2rem;
+  }
+
+  /* Binding only where the tracks have collapsed to one: inside a track the
+     measure is the track's, and this is what it was before there were two. */
+  section { max-width: 40rem; }
   h2 { margin: 0 0 0.5rem; font-size: 1.05rem; font-weight: 500; }
   p { margin: 0.6rem 0; }
   .asked { color: var(--faint); font-size: 0.9rem; }

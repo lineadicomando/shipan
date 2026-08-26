@@ -99,7 +99,10 @@ export interface PageMeta {
    * Absent on the notes and on the privacy note, which are read rather than
    * operated: those pages carry a visible `h1` and their own opening line,
    * and a second introduction over a page that is already prose would be a
-   * preface to a preface.
+   * preface to a preface. What a page of the notes does borrow is the
+   * arrangement — its own pair stands in the same two tracks, through
+   * `NoteLeads` — and not the entry: the shape is worth keeping across the
+   * site, and nothing is served by filing a page's first paragraph twice.
    */
   readonly intro?: readonly [MessageKey, MessageKey];
 }

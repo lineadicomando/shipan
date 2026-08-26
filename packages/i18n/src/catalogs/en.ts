@@ -1369,17 +1369,12 @@ export const en = {
     'What this engine computes, what each number stands on, and how strongly. Nothing in this section is a reading: it is an account of the instrument.',
   'notes.claim':
     'Every quantity here was checked against something outside itself, and not everything was checked against something equally good. Which is which is the whole of what this section says — a solar term and a transmitted table are not the same kind of fact, and a reader who cannot tell them apart has been misled by the presentation rather than by the data.',
-  // The one page the section does not have, and its absence is a decision:
-  // the interface has to be usable without a glossary, and one that became
-  // the answer to «where do I look this up» would be the sign that a control
-  // somewhere is failing. The fix would then be upstream of it.
-  'notes.building':
-    'There is no glossary here, and that is deliberate: this interface has to be usable without one. Every name is said where it is used — the glyph, the reading and the word — and a glossary that became the place to look things up would be the sign that something else on this site had stopped explaining itself.',
   // Not decoration: it is the line the whole section is arranged by. A derived
-  // page cannot fall behind the engine; a written one can, and will carry the
-  // date it was last checked for that reason.
+  // page cannot fall behind the engine, and saying so is the whole of what the
+  // label does. The other half of the division wears no label, because a
+  // written page carries the date it was last checked — which says everything
+  // a word beside its title would have said, and says it where it counts.
   'notes.kind.derived': 'derived',
-  'notes.kind.written': 'written',
   'notes.answers.instruments':
     'What is computed, layer by layer: what each is laid on, and every point where the schools diverge.',
   'notes.answers.sources':

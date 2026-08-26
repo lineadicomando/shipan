@@ -15,6 +15,7 @@
 <script lang="ts">
   import Named from '$lib/components/Named.svelte';
   import type { MessageKey } from '@shipan/i18n';
+  import NoteLeads from '$lib/components/NoteLeads.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import { glyph } from '$lib/glyph';
   import { INSTRUMENTS } from '$lib/instruments';
@@ -38,11 +39,10 @@
 
 <article>
   <h1>{t('notes.instruments.title')}</h1>
-  <p class="lead"><Named text={t('notes.instruments.lead')} /></p>
-  <!-- The reason the nav is shorter than this page, said rather than left to
-       be noticed: what a consultation may be laid on is a narrower question
-       than what is computed here. -->
-  <p class="lead"><Named text={t('notes.instruments.wider')} /></p>
+  <!-- The second of them is the reason the nav is shorter than this page, said
+       rather than left to be noticed: what a consultation may be laid on is a
+       narrower question than what is computed here. -->
+  <NoteLeads {t} leads={['notes.instruments.lead', 'notes.instruments.wider']} />
 
   {#each data.layers as layer (layer.id)}
     {@const name = layer.name ?? nameOf(layer.id)}
@@ -112,7 +112,6 @@
 <style>
   article { max-width: 52rem; }
   h1 { font-size: 1.25rem; font-weight: 500; }
-  .lead { margin: 1rem 0; max-width: 40rem; }
 
   /*
    * The margin above is also what a jump has to clear.

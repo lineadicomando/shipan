@@ -1175,10 +1175,7 @@ export const it: Record<MessageKey, string> = {
     'Che cosa calcola questo motore, su che cosa si regge ogni numero, e con quanta forza. Niente in questa sezione è una lettura: è il resoconto dello strumento.',
   'notes.claim':
     'Ogni quantità qui dentro è stata verificata su qualcosa di esterno a sé, e non tutte su qualcosa di ugualmente solido. Dire quali sono le une e quali le altre è tutto ciò che questa sezione fa: un termine solare e una tavola tramandata non sono lo stesso genere di fatto, e un lettore che non possa distinguerli è stato fuorviato dalla presentazione più che dai dati.',
-  'notes.building':
-    'Qui non c’è un glossario, ed è deliberato: questa interfaccia deve essere utilizzabile senza. Ogni nome è detto dove viene usato – il glifo, la lettura e la parola – e un glossario che diventasse il posto dove andare a cercare sarebbe il segno che qualcos’altro su questo sito ha smesso di spiegarsi.',
   'notes.kind.derived': 'derivata',
-  'notes.kind.written': 'scritta',
   'notes.answers.instruments':
     'Che cosa viene calcolato, strato per strato: su che cosa si posa ciascuno, e ogni punto in cui le scuole divergono.',
   'notes.answers.sources':
