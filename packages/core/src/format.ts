@@ -204,7 +204,10 @@ export function formatAlmanac(page: Almanac, t: Translator): string {
     `  ${pad(t('cli.field.jianchu'), 20)}${officer(page, t)}`,
     ...(seasonal ? [`  ${pad(t('cli.field.shensha'), 20)}  ${seasonal}`] : []),
     `  ${pad(t('cli.field.monthGods'), 20)}  ${virtues}`,
-    `  ${pad(t('cli.field.yearGods'), 20)}${page.year.hanzi} — ${gods}`,
+    // The year's own pillar, then the gods that stand on it. A middle dot
+    // and not a dash: the pillar is hanzi and the mark sits against it, and
+    // `→` is spoken for one level down, where each god names its seat.
+    `  ${pad(t('cli.field.yearGods'), 20)}${page.year.hanzi} · ${gods}`,
   ].join('\n');
 }
 
@@ -529,7 +532,7 @@ export function formatLiuren(board: LiurenBoard, t: Translator): string {
         [
           t('cli.field.yuejiang'),
           `${named(board.yuejiang, `label.yuejiang.${board.yuejiang.id}` as MessageKey, t)} · ` +
-            `${glyph(board.yuejiang.branch)} — ${named(board.yuejiang.term, `label.term.${board.yuejiang.term.id}` as MessageKey, t)}`,
+            `${glyph(board.yuejiang.branch)} · ${named(board.yuejiang.term, `label.term.${board.yuejiang.term.id}` as MessageKey, t)}`,
         ],
         [
           t('cli.field.half'),
@@ -866,7 +869,11 @@ export function formatTaiyi(board: TaiyiBoard, t: Translator): string {
             ? [`  ${line}`]
             : [
                 `  ${line}`,
-                `      ${meaning} — ${t(`label.taiyimeaning.${said}` as MessageKey)}`,
+                // The chapter's own sentence, then what it says. A middle dot
+                // and not a colon: three of the six glosses carry a colon of
+                // their own — «prigionia: il senso dell’usurpazione» — and two
+                // of them in one line is one too many.
+                `      ${meaning} · ${t(`label.taiyimeaning.${said}` as MessageKey)}`,
               ];
         },
       ),
@@ -883,7 +890,7 @@ function taiyiGod(god: TaiyiGod, t: Translator): string {
   const seat =
     god.seat.kind === 'branch' ? glyph(god.seat.branch) : glyph(god.seat.palace);
   const at = god.palace === undefined ? '' : ` ${god.palace}`;
-  return `${named(god, `label.taiyishen.${god.id}` as MessageKey, t)} — ${seat}${at}`;
+  return `${named(god, `label.taiyishen.${god.id}` as MessageKey, t)} → ${seat}${at}`;
 }
 
 /** A count and the two generals it seats. The adjutant can be absent. */
