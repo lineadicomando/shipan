@@ -177,6 +177,11 @@ the engine falls back to Moshier, which needs no files.
   `lib/source.ts`, read from `PUBLIC_SOURCE_URL` so a fork points at itself,
   and set after the anchor on paper, where an anchor offers nothing. →
   [`docs/architecture.md`](docs/architecture.md)
+- **A link that leaves opens beside the page and carries no referrer.**
+  `lib/external.ts` is the whole rule, spread onto the anchor: the page a
+  reader is on is a board they are reading, and the address of it is
+  frequently somebody's birth. A test derives the links rather than listing
+  them. → [`docs/architecture.md`](docs/architecture.md)
 
 ### Handing a board over
 

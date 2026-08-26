@@ -52,7 +52,9 @@ describe('the footer', () => {
    * where it is has stated half an obligation.
    */
   it('carries the licence line as a link to the source', () => {
-    expect(MARKUP).toMatch(/<a class="source" href=\{SOURCE_URL\}>\{t\('footer\.licence'\)\}<\/a>/);
+    expect(MARKUP).toMatch(
+      /<a class="source" href=\{SOURCE_URL\}[^>]*>\{t\('footer\.licence'\)\}<\/a>/,
+    );
     expect(LAYOUT).toContain("import { SOURCE_URL } from '$lib/source'");
   });
 

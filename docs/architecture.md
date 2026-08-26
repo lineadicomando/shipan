@@ -321,3 +321,27 @@ and it is the copy most likely to be read by somebody who never had the site.
 
 `apps/web/test/source.test.ts` holds all of it: the variable, the fallback,
 the anchor, and the address appearing in no second place.
+
+## A link that leaves
+
+Only one does today — the source in the footer — and the rule is written once,
+in `apps/web/src/lib/external.ts`, so that the second one inherits it rather
+than repeating it. `EXTERNAL` is spread onto the anchor: `target="_blank"` and
+`rel="noopener noreferrer"`.
+
+**Beside the page and not over it.** A reader here is looking at a board cast
+for a moment they chose, or at a prompt they are part-way through assembling.
+Nothing on this site is a step in a flow somebody should be taken out of, and
+what a replaced page costs on the way back is the scroll position they left.
+
+**`noreferrer` is the rule the rest of the site already obeys, applied on the
+way out.** An address in this interface is frequently somebody's date, time and
+place of birth in a query string — the reason a chart is cacheable `private`
+and refused an index. A referrer hands that whole address to whoever is at the
+other end of the link. Browsers today send only the origin across sites, and
+«today» is not what a person's birth should rest on.
+
+`apps/web/test/external.test.ts` derives the list rather than keeping one: an
+external address is a constant in `lib/` holding an absolute `http(s)` address,
+and every anchor naming one is held to the spread. A hand-kept list of links is
+right until somebody adds the twelfth.

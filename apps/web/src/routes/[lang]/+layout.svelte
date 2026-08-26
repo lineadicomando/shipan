@@ -4,6 +4,7 @@
   import LanguageSwitch from '$lib/components/LanguageSwitch.svelte';
   import RainToggle from '$lib/components/RainToggle.svelte';
   import SectionsNav from '$lib/components/SectionsNav.svelte';
+  import { EXTERNAL } from '$lib/external';
   import { rain } from '$lib/rain.svelte';
   import { SOURCE_URL } from '$lib/source';
 
@@ -80,11 +81,14 @@
          leaves it because the licence says it must: the line already named
          AGPL-3.0, and a licence that obliges an offer of the source obliges
          an address to collect it at. The catalogs are untouched — the
-         sentence they hold is already the name of what it now points to. -->
+         sentence they hold is already the name of what it now points to.
+
+         Leaving is what `EXTERNAL` describes: beside the page and carrying no
+         referrer, since the address it would carry is somebody's birth. -->
     <p>
       <a href="/{t.locale}/notes">{t('footer.notes')}</a> ·
       <a href="/{t.locale}/privacy">{t('footer.privacy')}</a> ·
-      <a class="source" href={SOURCE_URL}>{t('footer.licence')}</a>
+      <a class="source" href={SOURCE_URL} {...EXTERNAL}>{t('footer.licence')}</a>
     </p>
   </footer>
 </div>
