@@ -880,8 +880,13 @@ export const it: Record<MessageKey, string> = {
     'Ogni ora fra due date posta come carta Qi Men Dun Jia, e l’elenco di quelle che rispondono a ciò che indichi, con la direzione in cui ognuna sta.',
   'meta.intro.moments.a':
     'Ogni ora fra due date viene posta come carta 奇門遁甲 qímén dùnjiǎ, e sono elencate quelle che rispondono a ciò che indichi, ciascuna con la sua direzione.',
+  // Apre con quello che la pagina chiede, come ogni altro secondo paragrafo,
+  // e questo non era: diceva solo che cosa la sezione si rifiuta di fare. Il
+  // modulo qui sotto ha due gambe, «L’intervallo e il luogo» e «Che cosa
+  // cercare», e la seconda colonna era alta un quarto della prima perché ne
+  // nominava una sola.
   'meta.intro.moments.b':
-    'Criteri, non raccomandazioni: che cosa renda un’ora buona per agire è una lettura, ed è tua.',
+    'Dai due date e un luogo, e nomina ciò che cerchi. Criteri, non raccomandazioni: che cosa renda un’ora buona per agire è una lettura, ed è tua.',
 
   'meta.title.qimen': 'Qi Men Dun Jia: poni una carta',
   'meta.description.qimen':

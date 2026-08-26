@@ -931,8 +931,13 @@ export const en = {
     'Every hour between two dates cast as a Qi Men Dun Jia chart, and the ones matching what you name listed with the direction each stands in.',
   'meta.intro.moments.a':
     'Every hour between two dates is cast as a 奇門遁甲 qímén dùnjiǎ chart, and the ones answering what you name below are listed, each with its direction.',
+  // It opens on what the page asks for, as every other second paragraph does
+  // and this one did not: it said only what the section declines to do. The
+  // form under it has two legs — the interval and the place, and what to look
+  // for — and the right-hand column stood a quarter the height of the left
+  // because it named one of them.
   'meta.intro.moments.b':
-    'Criteria, not recommendations: what makes an hour worth acting in is a reading, and it is yours.',
+    'Give two dates and a place, and name what you are looking for. Criteria, not recommendations: what makes an hour worth acting in is a reading, and it is yours.',
 
   'meta.title.qimen': 'Qi Men Dun Jia — cast a chart',
   'meta.description.qimen':
