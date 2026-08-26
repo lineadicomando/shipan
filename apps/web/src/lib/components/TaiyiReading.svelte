@@ -92,7 +92,7 @@
             <!-- Absent where the count reduced to the centre, which is on no
                  ring. The text states no rotation from there and none is
                  invented here. -->
-            <td>{one.side.assistant ? seat(one.side.assistant) : '—'}</td>
+            <td>{one.side.assistant ? seat(one.side.assistant) : t('cli.none')}</td>
           </tr>
         {/each}
       </tbody>

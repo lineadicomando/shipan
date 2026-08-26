@@ -1646,7 +1646,7 @@ export const en = {
   // it declines to do in code.
   'prompt.heading': 'Reading a Qi Men Dun Jia chart',
   'prompt.role':
-    'A chart is set out below. It was computed by an ephemeris, not by you: read it exactly as it stands, and add nothing to it. No palace, no gate, no star, no configuration that is not written there. If something you need is missing, say it is missing.',
+    'A chart is set out below. It was computed by an ephemeris, not by you: read it exactly as it stands, and add nothing to it. No palace, no gate, no star, no configuration that is not written there. The centre has no gate and no spirit, which is the method and not a gap: a cell marked n/a there is nothing to report. If something else you need is missing, say it is missing.',
   'prompt.language': 'Answer in English.',
   'prompt.yongshen':
     'Which palace bears on the question is the 用神 yòngshén, and it is chosen by the reader for the question asked. Nothing below chooses it, and the software that produced this does not know the question. Say which palace you are reading, and why that one.',
@@ -2008,6 +2008,24 @@ export const en = {
   'form.guiren.chou': '甲 with 戊 and 庚, at 丑 and 未',
   'form.guiren.wei': '甲 apart, at 未 and 丑',
   'form.guiren.note': 'It moves the twelve generals and leaves the three transmissions alone.',
+  // The mark in a cell of a computed table where the board has nothing to put.
+  //
+  // **«n/a» and not a dash, because a dash beside hanzi is read as 一.** The
+  // argument is `catalogs.test.ts`'s: 一 is a character this engine prints,
+  // and in the text transcript a lone `—` sits three spaces from 天禽 in a row
+  // of them. That rule is bounded to the catalogs and cannot reach a table
+  // assembled in `format.ts`, so the mark is changed here instead.
+  //
+  // **It is read as *not applicable*, which is what these cells are.** The
+  // centre of a Qi Men chart has no gate and no spirit by rule, not by
+  // accident — `dunjia/palaces.ts` states it — and the same is true of a day
+  // pillar with no ten-god and a month god with no seat. Nothing is missing
+  // in any of them. `prompt.role` says the centre has none so that a model
+  // told to report what is missing does not report these.
+  //
+  // Only cells. A form's summary bar before anybody has typed a date keeps
+  // its dash: nothing is unavailable there, it has not been asked for yet.
+  'cli.none': 'n/a',
   'cli.column.general': 'general',
   // 七政四餘. `lodge` and `ci` head degrees, so both say what the degrees are
   // measured from: one from a star, the other from the edge of a palace.

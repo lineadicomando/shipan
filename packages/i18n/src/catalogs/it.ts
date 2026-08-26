@@ -1453,7 +1453,7 @@ export const it: Record<MessageKey, string> = {
 
   'prompt.heading': 'Leggere una carta di Qi Men Dun Jia',
   'prompt.role':
-    'Qui sotto è disposta una carta. L’ha calcolata un’effemeride, non tu: leggila esattamente com’è, e non aggiungerci nulla. Nessun palazzo, nessuna porta, nessuna stella, nessuna configurazione che non sia scritta lì. Se ti manca qualcosa, di’ che manca.',
+    'Qui sotto è disposta una carta. L’ha calcolata un’effemeride, non tu: leggila esattamente com’è, e non aggiungerci nulla. Nessun palazzo, nessuna porta, nessuna stella, nessuna configurazione che non sia scritta lì. Il centro non ha porta né spirito, ed è il metodo e non una lacuna: una cella segnata n/a lì non è niente da segnalare. Se ti manca qualcos’altro, di’ che manca.',
   'prompt.language': 'Rispondi in italiano.',
   'prompt.yongshen':
     'Quale palazzo riguardi la domanda è lo 用神 yòngshén, e lo sceglie il lettore per la domanda posta. Nulla qui sotto lo sceglie, e il programma che ha prodotto questa carta non conosce la domanda. Di’ quale palazzo stai leggendo, e perché quello.',
@@ -1680,6 +1680,14 @@ export const it: Record<MessageKey, string> = {
   'form.guiren.chou': '甲 con 戊 e 庚, a 丑 e 未',
   'form.guiren.wei': '甲 da solo, a 未 e 丑',
   'form.guiren.note': 'Muove i dodici generali e lascia stare le tre trasmissioni.',
+  // Resta «n/a» e non diventa «n/d», che è la sigla italiana.
+  //
+  // Non è una parola tradotta a metà: è un codice, come lo sono `CC BY 4.0` e
+  // `AGPL-3.0` due righe più in basso nel piede, che nessuno traduce. E vive
+  // qui e non dentro `format.ts` perché è la sigla di due parole e non un
+  // segno d'interpunzione — passando dal catalogo, il giorno in cui «n/d»
+  // sembrasse la scelta giusta sarebbe una riga e non una modifica al motore.
+  'cli.none': 'n/a',
   'cli.column.general': 'generale',
   // 七政四餘. `lodge` e `ci` intestano dei gradi, quindi entrambi dicono da
   // che cosa i gradi sono misurati: uno da una stella, l'altro dal bordo di
