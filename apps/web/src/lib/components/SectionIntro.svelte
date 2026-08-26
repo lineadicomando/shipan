@@ -4,7 +4,7 @@
   import { metaOf } from '$lib/meta';
   import { SECTIONS } from '$lib/navigation';
   import { layerOfSection } from '$lib/notes';
-  import { saidApart } from '$lib/said';
+  import Named from './Named.svelte';
 
   /**
    * What a section opens with: its heading, and the two paragraphs under it.
@@ -118,13 +118,10 @@
   <div class="intro">
     {#if here}<h1>{t(here.heading)}</h1>{/if}
     {#each intro as paragraph (paragraph)}
-      <!-- The reading beside a name, set apart from the sentence it stands in
-           — `$lib/said` is the whole of the rule, and the heading above is
-           what makes the glyphs a reasonable thing to open a paragraph on.
-           Written without a break anywhere inside: whitespace between these
-           tags is whitespace in the sentence, and the segments are the
-           sentence cut up rather than a list of things. -->
-      <p>{#each saidApart(t(paragraph)) as segment, index (index)}{#if segment.said}<i>{segment.text}</i>{:else}{segment.text}{/if}{/each}</p>
+      <!-- The names in it set apart — `Named` is the whole of the rule, and
+           the heading above is what makes the glyphs a reasonable thing to
+           open a paragraph on. -->
+      <p><Named text={t(paragraph)} /></p>
     {/each}
     <a href="/{t.locale}/notes/instruments{layer ? `#${layer.id}` : ''}">
       {layer ? t('intro.computed') : t('intro.computed.all')}

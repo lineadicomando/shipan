@@ -1,9 +1,10 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { LOCALES, createTranslator, type MessageKey } from '@shipan/i18n';
 import { PAGES } from '../src/lib/meta';
-import { saidApart } from '../src/lib/said';
+import { namesApart } from '../src/lib/names';
 
 /**
  * The readings set apart from the sentences they stand in.
@@ -44,6 +45,12 @@ const READINGS: Readonly<Record<string, string>> = {
   納音: 'nàyīn',
 };
 
+const walk = (dir: string): string[] =>
+  readdirSync(dir).flatMap((entry) => {
+    const path = join(dir, entry);
+    return statSync(path).isDirectory() ? walk(path) : path.endsWith('.svelte') ? [path] : [];
+  });
+
 /** Every paragraph a section opens with, in one vernacular. */
 const introsOf = (locale: (typeof LOCALES)[number]): { key: MessageKey; text: string }[] => {
   const t = createTranslator(locale);
@@ -57,7 +64,7 @@ describe('a reading standing inside a sentence', () => {
     for (const locale of LOCALES) {
       for (const { key, text } of introsOf(locale)) {
         expect(
-          saidApart(text)
+          namesApart(text)
             .map((segment) => segment.text)
             .join(''),
           `${locale} · ${key}`,
@@ -69,8 +76,8 @@ describe('a reading standing inside a sentence', () => {
   it('marks the reading of every name, and marks nothing else', () => {
     for (const locale of LOCALES) {
       for (const { key, text } of introsOf(locale)) {
-        const marked = saidApart(text)
-          .filter((segment) => segment.said)
+        const marked = namesApart(text)
+          .filter((segment) => segment.part === 'said')
           .map((segment) => segment.text);
         const expected = Object.entries(READINGS)
           .filter(([glyphs]) => text.includes(glyphs))
@@ -81,33 +88,54 @@ describe('a reading standing inside a sentence', () => {
     }
   });
 
-  it('leaves an Italian word behind a name alone', () => {
-    // The case the rule is narrow for, kept as its own line so that what fails
-    // when it breaks says which of the two it was.
-    const [glyphs, said, rest] = saidApart('式盤 shìpán è la tavola del divinatore');
-    expect(glyphs?.text).toBe('式盤 ');
-    expect(said).toEqual({ text: 'shìpán', said: true });
-    expect(rest?.text).toBe(' è la tavola del divinatore');
+  it('cuts a name into its two halves and the space between them', () => {
+    // The case the rule is narrow for — «è» stands behind the reading and is
+    // an Italian word, not a third syllable — kept as its own line so that
+    // what fails when it breaks says which part of it went.
+    expect(namesApart('式盤 shìpán è la tavola del divinatore')).toEqual([
+      { text: '式盤', part: 'glyph' },
+      { text: ' ', part: 'plain' },
+      { text: 'shìpán', part: 'said' },
+      { text: ' è la tavola del divinatore', part: 'plain' },
+    ]);
+  });
+
+  it('marks glyphs standing without a reading beside them', () => {
+    // A name is not always read out in the clause it appears in, and the
+    // glyphs want their face either way.
+    expect(namesApart('sul 洛書 e basta')).toEqual([
+      { text: 'sul ', part: 'plain' },
+      { text: '洛書', part: 'glyph' },
+      { text: ' e basta', part: 'plain' },
+    ]);
   });
 
   it('finds nothing in a sentence with no name in it', () => {
     const plain = 'Criteri, non raccomandazioni: e questo è tutto.';
-    expect(saidApart(plain)).toEqual([{ text: plain, said: false }]);
+    expect(namesApart(plain)).toEqual([{ text: plain, part: 'plain' }]);
   });
 
-  it('leaves glyphs with no reading beside them unmarked', () => {
-    // 120°E and the glyphs in `intro.b` that stand alone: a name is not always
-    // followed by its reading in the same clause, and nothing may be invented.
-    expect(saidApart('sul 洛書 e basta').filter((segment) => segment.said)).toEqual([]);
+  it('invents no reading where the sentence gives none', () => {
+    expect(namesApart('sul 洛書 e basta').filter((segment) => segment.part === 'said')).toEqual([]);
   });
 });
 
 describe('the component that sets them apart', () => {
-  it('is the only place the rule is spread', () => {
-    // `said.ts` returns data and never markup; a second reader of it building
-    // its own `<i>` is how two paragraphs on one site start disagreeing.
-    const src = fileURLToPath(new URL('../src/', import.meta.url));
-    const intro = readFileSync(`${src}lib/components/SectionIntro.svelte`, 'utf8');
-    expect(intro).toContain('<i>{segment.text}</i>');
+  const src = fileURLToPath(new URL('../src/', import.meta.url));
+  const named = readFileSync(`${src}lib/components/Named.svelte`, 'utf8');
+
+  it('draws both halves of a name', () => {
+    expect(named).toContain('<span class="glyph">{segment.text}</span>');
+    expect(named).toContain('<i>{segment.text}</i>');
+  });
+
+  it('is the only reader of the rule', () => {
+    // `names.ts` returns data and never markup, so a second component building
+    // its own spans is how two paragraphs on one site start disagreeing.
+    const others = walk(`${src}lib`)
+      .concat(walk(`${src}routes`))
+      .filter((file) => !file.endsWith('Named.svelte'))
+      .filter((file) => readFileSync(file, 'utf8').includes('namesApart'));
+    expect(others).toEqual([]);
   });
 });

@@ -10,6 +10,7 @@
   why it is the written ones that will carry a date.
 -->
 <script lang="ts">
+  import Named from '$lib/components/Named.svelte';
   import { NOTE_PAGES } from '$lib/notes';
   import PageHead from '$lib/components/PageHead.svelte';
 
@@ -24,8 +25,8 @@
 
 <article>
   <h1>{t('notes.title')}</h1>
-  <p>{t('notes.lead')}</p>
-  <p>{t('notes.claim')}</p>
+  <p><Named text={t('notes.lead')} /></p>
+  <p><Named text={t('notes.claim')} /></p>
 
   <ul>
     {#each rest as note (note.slug)}
@@ -40,7 +41,7 @@
   <!-- The section is not finished, and saying so is not an apology: the
        reader here is the one who came to check, and a page that let them
        assume the account was complete would mislead exactly them. -->
-  <p class="building">{t('notes.building')}</p>
+  <p class="building"><Named text={t('notes.building')} /></p>
 </article>
 
 <style>

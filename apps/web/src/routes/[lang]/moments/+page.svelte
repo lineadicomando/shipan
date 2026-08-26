@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Named from '$lib/components/Named.svelte';
   import { glyph } from '$lib/glyph';
   import { goto, replaceState } from '$app/navigation';
   import { page } from '$app/state';
@@ -420,7 +421,7 @@
           {/each}
         </select>
       </label>
-      <p class="note">{t('form.purposeNote')}</p>
+      <p class="note"><Named text={t('form.purposeNote')} /></p>
 
       <!-- The four together in one row: they are asked of the same palace,
            and where there is room for four they are read as one question. -->
@@ -503,7 +504,7 @@
         {t('consult.birthDate')}
         <input type="date" bind:value={looking.born} />
       </label>
-      <p class="note">{t('form.benmingNote')}</p>
+      <p class="note"><Named text={t('form.benmingNote')} /></p>
 
       <p class="note">{t('form.criteriaNote')}</p>
     </fieldset>

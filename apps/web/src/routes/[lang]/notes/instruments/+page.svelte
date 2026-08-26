@@ -13,6 +13,7 @@
   and they are the half that doubles with every language.
 -->
 <script lang="ts">
+  import Named from '$lib/components/Named.svelte';
   import type { MessageKey } from '@shipan/i18n';
   import PageHead from '$lib/components/PageHead.svelte';
   import { glyph } from '$lib/glyph';
@@ -37,11 +38,11 @@
 
 <article>
   <h1>{t('notes.instruments.title')}</h1>
-  <p class="lead">{t('notes.instruments.lead')}</p>
+  <p class="lead"><Named text={t('notes.instruments.lead')} /></p>
   <!-- The reason the nav is shorter than this page, said rather than left to
        be noticed: what a consultation may be laid on is a narrower question
        than what is computed here. -->
-  <p class="lead">{t('notes.instruments.wider')}</p>
+  <p class="lead"><Named text={t('notes.instruments.wider')} /></p>
 
   {#each data.layers as layer (layer.id)}
     {@const name = layer.name ?? nameOf(layer.id)}
@@ -59,8 +60,8 @@
           {t(layer.title)}
         {/if}
       </h2>
-      <p class="does">{t(layer.does)}</p>
-      <p class="takes"><span class="label">{t('notes.takes')}</span> {t(layer.takes)}</p>
+      <p class="does"><Named text={t(layer.does)} /></p>
+      <p class="takes"><span class="label">{t('notes.takes')}</span> <Named text={t(layer.takes)} /></p>
 
       {#if layer.parameters.length}
         <table>
@@ -75,7 +76,7 @@
               <tr>
                 <th scope="row">
                   <code>{parameter.id}</code>
-                  <span class="decides">{t(`notes.parameter.${parameter.id}` as MessageKey)}</span>
+                  <span class="decides"><Named text={t(`notes.parameter.${parameter.id}` as MessageKey)} /></span>
                 </th>
                 <td>
                   <ul>

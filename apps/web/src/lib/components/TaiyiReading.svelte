@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Named from './Named.svelte';
   import type { MessageKey, Translator } from '@shipan/i18n';
   import type { TaiyiBoard, TaiyiFief, TaiyiPalace } from '@shipan/core';
   import { glyph } from '$lib/glyph';
@@ -177,7 +178,7 @@
     engine knows about its own footing; the transcript still carries it, since
     a transcript travels to where no notes page follows it.
   -->
-  <p class="note">{t('cli.value.taiyiPalaces')}</p>
+  <p class="note"><Named text={t('cli.value.taiyiPalaces')} /></p>
 </div>
 
 <style>

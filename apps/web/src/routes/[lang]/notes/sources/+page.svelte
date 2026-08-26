@@ -19,6 +19,7 @@
   without being told why has met a bug.
 -->
 <script lang="ts">
+  import Named from '$lib/components/Named.svelte';
   import type { MessageKey } from '@shipan/i18n';
   import PageHead from '$lib/components/PageHead.svelte';
   import { INSTRUMENTS } from '$lib/instruments';
@@ -38,11 +39,11 @@
 
 <article>
   <h1>{t('notes.sources.title')}</h1>
-  <p class="lead">{t('notes.sources.lead')}</p>
+  <p class="lead"><Named text={t('notes.sources.lead')} /></p>
 
   <section class="ladder">
     <h2>{t('notes.ladder.title')}</h2>
-    <p>{t('notes.ladder.lead')}</p>
+    <p><Named text={t('notes.ladder.lead')} /></p>
     <dl>
       {#each RUNGS as rung (rung)}
         {@const held = data.tally.find((entry) => entry.rung === rung)?.count ?? 0}
@@ -51,14 +52,14 @@
           {t(`notes.rung.${key(rung)}` as MessageKey)}
           <span class="held">{t('notes.held', { count: held })}</span>
         </dt>
-        <dd>{t(`notes.rung.${key(rung)}.means` as MessageKey)}</dd>
+        <dd><Named text={t(`notes.rung.${key(rung)}.means` as MessageKey)} /></dd>
       {/each}
     </dl>
     <!-- The two things a rung is not, both of which a reader will otherwise
          supply for themselves: it is not a verdict on the quantity, and it is
          not a property of it either — it moves when the shelf does. -->
-    <p class="caveat">{t('notes.ladder.notAVerdict')}</p>
-    <p class="caveat">{t('notes.ladder.quoted')}</p>
+    <p class="caveat"><Named text={t('notes.ladder.notAVerdict')} /></p>
+    <p class="caveat"><Named text={t('notes.ladder.quoted')} /></p>
   </section>
 
   {#each data.layers as layer (layer.id)}

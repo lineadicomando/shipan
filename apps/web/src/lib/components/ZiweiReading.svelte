@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Named from './Named.svelte';
   import type { MessageKey, Translator } from '@shipan/i18n';
   import type { Moment, ZiweiBoard } from '@shipan/core';
   import CalendarAndAlmanac from './CalendarAndAlmanac.svelte';
@@ -196,7 +197,7 @@
   <!-- Which book every placement above came out of, and where its tables part
        from the modern ones. Said where a reader is looking at the seats,
        because that is where it would be checked. -->
-  <p class="note">{t('cli.value.ziweiSource')}</p>
+  <p class="note"><Named text={t('cli.value.ziweiSource')} /></p>
 </div>
 
 <style>

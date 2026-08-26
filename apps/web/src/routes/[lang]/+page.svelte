@@ -60,6 +60,7 @@
   somebody else has to say what was asked, or it is a chart of nothing.
 -->
 <script lang="ts">
+  import Named from '$lib/components/Named.svelte';
   import { replaceState } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
@@ -999,14 +1000,14 @@
               <input type="date" autocomplete="bday" bind:value={born} />
             </label>
             <label class="birthField">
-              {t('consult.birthGender')}
+              <Named text={t('consult.birthGender')} />
               <select bind:value={gender} disabled={!born}>
                 <option value="">{t('form.gender.unset')}</option>
                 <option value="male">{t('form.gender.male')}</option>
                 <option value="female">{t('form.gender.female')}</option>
               </select>
             </label>
-            <p class="note">{t('consult.birthNote')}</p>
+            <p class="note"><Named text={t('consult.birthNote')} /></p>
             {/if}
           {/snippet}
         </MomentForm>

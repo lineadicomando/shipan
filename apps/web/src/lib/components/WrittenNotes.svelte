@@ -15,6 +15,7 @@
   derived ones. See `docs/notes.md`.
 -->
 <script lang="ts">
+  import Named from './Named.svelte';
   import type { Translator } from '@shipan/i18n';
   import type { WrittenEntry } from '$lib/notes';
 
@@ -44,10 +45,10 @@
     {#if entry.asks}
       <p class="asked">
         <span class="label">{t('notes.askedBy')}</span>
-        {t(entry.asks)}
+        <Named text={t(entry.asks)} />
       </p>
     {/if}
-    <p>{t(entry.body)}</p>
+    <p><Named text={t(entry.body)} /></p>
     <p class="checked">{t('notes.checked', { date: said(entry.checked) })}</p>
   </section>
 {/each}
