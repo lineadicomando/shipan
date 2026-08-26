@@ -1145,6 +1145,7 @@ export const it: Record<MessageKey, string> = {
   'footer.disclaimer':
     'Questo sito è uno spazio dedicato alla ricerca interiore e all’arricchimento personale e in nessun caso sostituisce il parere di professionisti per questioni mediche, legali, finanziarie o altro.',
   'footer.data': 'Dati astronomici {ephemeris} · località {geonames} (CC BY 4.0)',
+  'footer.author': 'Scritto da {author}',
   'footer.licence': 'Codice sorgente sotto licenza AGPL-3.0',
   'footer.privacy': 'Privacy',
   'footer.notes': 'Note',

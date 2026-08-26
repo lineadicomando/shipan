@@ -1,4 +1,5 @@
 import type { MessageKey, Translator } from '@shipan/i18n';
+import { AUTHOR } from './author';
 import { SITE, type PageMeta } from './meta';
 import { NOTE_PAGES, READINGS, REFUSALS } from './notes';
 import { REFERENCES } from './references';
@@ -21,16 +22,27 @@ import { REFERENCES } from './references';
  * an expression inside a template. `PageHead` gained the whole of this as an
  * inline `$derived.by` and it was already the longest thing in the file.
  *
- * **Nobody is named.** Schema has `author` and `publisher` and this site
- * fills in neither: the anonymity is a decision and not an omission, and
- * `docs/architecture.md` is where it will be revised when there is a name to
- * put there. What is claimed instead is what can be checked — a licence, that
- * it is free to read, and for the sources page the nine programs the register
+ * **The author is named, and named where a reader sees it too.** `author.ts`
+ * holds the handle and the footer prints it: a byline that exists only in the
+ * markup answers the question to a crawler and not to the person who asked
+ * it. `publisher` stays empty, and that is the same rule from the other side
+ * — a publisher is an organisation, there is none, and filling the field
+ * would be inventing one to satisfy a validator.
+ *
+ * What is claimed beyond the name is what can be checked: a licence, that it
+ * is free to read, and for the sources page the nine programs the register
  * was run against.
  */
 
 /** The address of the AGPL, which is the licence every page of this is under. */
 const LICENCE = 'https://www.gnu.org/licenses/agpl-3.0.html';
+
+/**
+ * A `Person` and not an `Organization`, a handle being what somebody signs
+ * with rather than what a body is called. Built once: the same node stands
+ * under the site and under each of its documents, which is true.
+ */
+const BY = { '@type': 'Person', name: AUTHOR } as const;
 
 /** A step of the trail, as `meta.ts` builds it. */
 export interface Step {
@@ -87,6 +99,7 @@ export function structuredFor({ t, meta, here, origin, trail, crumb }: Built): o
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         name: SITE,
+        author: BY,
         url: here,
         description: t(meta.description),
         inLanguage: t.locale,
@@ -126,6 +139,7 @@ export function structuredFor({ t, meta, here, origin, trail, crumb }: Built): o
     // publishing readings would declare, which is the thing this is not.
     '@type': 'TechArticle',
     headline: t(meta.title),
+    author: BY,
     description: t(meta.description),
     inLanguage: t.locale,
     mainEntityOfPage: here,

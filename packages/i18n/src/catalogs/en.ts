@@ -1333,6 +1333,10 @@ export const en = {
   'footer.disclaimer':
     'This site is a space for inner enquiry and personal enrichment; in no case is it a substitute for professional advice on medical, legal, financial or other matters.',
   'footer.data': 'Astronomical data {ephemeris} · places {geonames} (CC BY 4.0)',
+  // The name arrives from `author.ts` rather than from here: a handle is a
+  // name and a name does not translate, so what a catalog holds is the
+  // sentence around it. `footer.data` names its two sources the same way.
+  'footer.author': 'Written by {author}',
   'footer.licence': 'Source code under AGPL-3.0',
   'footer.privacy': 'Privacy',
   'footer.notes': 'Notes',

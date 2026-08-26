@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { LOCALES, createTranslator } from '@shipan/i18n';
+import { AUTHOR } from '../src/lib/author';
 import { crumbOf, metaOf, trailOf } from '../src/lib/meta';
 import { NOTE_PAGES, READINGS, REFUSALS } from '../src/lib/notes';
 import { REFERENCES } from '../src/lib/references';
@@ -21,6 +22,8 @@ import { pagesOf } from '../src/lib/indexable';
  * address that is not one fails here.
  */
 const ORIGIN = 'https://example.test';
+
+const t = (locale: (typeof LOCALES)[number]) => createTranslator(locale);
 
 const nodesAt = (path: string, locale: (typeof LOCALES)[number]) => {
   const meta = metaOf(path);
@@ -65,15 +68,31 @@ describe('what a page declares itself to be', () => {
         }
       });
 
-      it('says nothing under a name, nobody being named here', () => {
-        // The anonymity is a decision, and schema is the one surface that
-        // would let it be undone by filling in a field.
+      it('signs what somebody wrote, and invents no publisher', () => {
+        // The name is `author.ts`'s and the footer prints the same constant, so
+        // a byline cannot come out one way for a reader and another for a
+        // crawler. `publisher` stays empty everywhere: a publisher is an
+        // organisation, there is none, and a field filled to satisfy a
+        // validator is a claim nobody made.
+        //
+        // A trail is nobody's work. `BreadcrumbList` says where an address
+        // sits, which is a fact about the site's shape rather than a document
+        // with an author, and signing it would put a name on the arrangement
+        // of a nav.
         for (const path of pagesOf(locale)) {
           for (const node of nodesAt(path, locale)) {
-            expect(node.author, path).toBeUndefined();
+            const signed = node['@type'] !== 'BreadcrumbList';
+            expect(node.author, `${path} · ${String(node['@type'])}`).toEqual(
+              signed ? { '@type': 'Person', name: AUTHOR } : undefined,
+            );
             expect(node.publisher, path).toBeUndefined();
           }
         }
+      });
+
+      it('says the name to a reader as well as to a machine', () => {
+        // The half of a byline that answers the question it was asked.
+        expect(t(locale)('footer.author', { author: AUTHOR })).toContain(AUTHOR);
       });
 
       it('dates a written page and never a derived one', () => {
