@@ -367,7 +367,7 @@
      Named here with the art, which the nav label cannot carry: every criterion
      below is a Qi Men one, and somebody reading the results has to know what
      they were read off. -->
-<h1 class="offscreen">{t('moments.title')}</h1>
+<h1 class="offscreen">{t('h1.moments')}</h1>
 
 <!-- What this section is, said above the form to somebody who has not met the
      art — the heading above being spoken and not seen. Two paragraphs, two

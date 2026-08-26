@@ -839,22 +839,54 @@ export const en = {
   'nav.consult': 'Consultation',
   'nav.sections': 'Sections',
 
-  // The section that walks Qi Men charts, named with the art it walks. The nav
-  // label cannot carry it — a header says where things are, not what they are
-  // made of — and this is where somebody reading results needs to know.
-  // The 太乙 section. The title glosses the name the nav can only print, and
-  // it is said to a tab and to a screen reader rather than set over the
-  // board: the nav already says which section this is, as it does for every
-  // other board here. The paragraph that stood under it — what this board is
-  // a function of, and what it refuses to name — was a preface over a picture
-  // somebody came to look at, and where that account belongs is the notes.
-  'taiyi.title': 'Tai Yi — the board of a year',
-  // On the bar under the board, which is the whole of the form: a 年計 board
-  // is a function of the year and of nothing else.
+  // On the bar under the 太乙 board, which is the whole of the form: a 年計
+  // board is a function of the year and of nothing else.
   'form.year': 'Year',
   'form.copyTaiyi': 'Copy the board as text',
 
-  'moments.title': 'Choosing a time — Qi Men',
+  // The heading of a section, spoken and not seen.
+  //
+  // **A section has one first-level heading, and on five of the eight it was
+  // a heading written for the terminal.** `cli.heading.pillars` is «Four
+  // Pillars», which is the right phrase over four columns of a CLI and the
+  // wrong one as the whole of what the 八字 page calls itself: the art has a
+  // name, the title beside this one says it, and the heading — the single
+  // line anything reading the page without eyes is handed as the subject —
+  // dropped it. Those keys stay where they are and keep printing charts; what
+  // was wrong was the borrowing, not the strings.
+  //
+  // **Not seen, and that is the design rather than an apology for it.** The
+  // nav says which section this is, and a line of ink repeating it says
+  // nothing — `SectionIntro` is what stands where a heading would — so this
+  // is set `offscreen`. What it is set offscreen *for* is the reader who has
+  // none of the page's other signals: a screen reader, a crawler, a model
+  // handed the page. That is also why the name is here at full length and as
+  // the transcription rather than the glyphs, which is the one place on this
+  // site the hanzi do not follow the name. A glyph read aloud by a voice set
+  // to English is silence or a stumble, and there is no gloss beside it here
+  // to recover from either.
+  //
+  // Distinct from the `title` in `meta.*`, and not by oversight. A title is
+  // written to stand alone in a search result and says what the page is
+  // *for*; a heading names what is laid out under it.
+  //
+  // The consultation is the one that names no art, having none of its own,
+  // and so names the kind instead. Two errands that do not overlap are laid
+  // here — a question asked now, and a birth read as a life — and neither is
+  // the other: a birth with a question on it would be a third thing this
+  // project has already declined, which is a natal chart held against the
+  // chart of a moment. See `docs/refusals.md`.
+  'h1.consult': 'Asking an AI to read a Chinese divinatory board',
+  // The section that walks Qi Men charts, named with the art it walks. The
+  // nav label cannot carry it — a header says where things are, not what they
+  // are made of — and this is where somebody reading results needs it.
+  'h1.moments': 'Choosing an hour by Qi Men Dun Jia',
+  'h1.qimen': 'Qi Men Dun Jia — the chart of an instant',
+  'h1.liuren': 'Da Liu Ren — the board of an instant',
+  'h1.taiyi': 'Tai Yi Shen Shu — the board of a year',
+  'h1.qizheng': 'Qi Zheng Si Yu — the seven governors and the four remainders',
+  'h1.ziwei': 'Zi Wei Dou Shu — the twelve seats of a birth',
+  'h1.bazi': 'Ba Zi — a birth as four pillars',
 
   // What a page says it is, to a reader who has not arrived yet.
   //
@@ -1190,12 +1222,6 @@ export const en = {
   'form.copyFallback': 'The text, to copy by hand',
   'form.copyUnread': 'The chart could not be read again.',
 
-  // The section where a chart is posed in order to be taken away. Two errands
-  // that do not overlap: a question asked now, and a chart of a birth read as
-  // a chart of a life. Neither is the other, and a chart of a birth with a
-  // question on it would be a third thing this project has already declined —
-  // comparing a natal chart against the chart of a moment.
-  'consult.title': 'Asking an AI to read a board',
   // The birth, offered beside the question rather than instead of it. What it
   // produces is a 年命: the chart stays the chart of the moment and the birth
   // is looked up inside it, which is what 《遁甲演義》 prescribes and the

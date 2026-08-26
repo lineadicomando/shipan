@@ -774,20 +774,33 @@ export const it: Record<MessageKey, string> = {
   'nav.consult': 'Consultazione',
   'nav.sections': 'Sezioni',
 
-  // La sezione che percorre carte Qi Men, nominata con l'arte che percorre.
-  // L'etichetta della nav non può portarlo — un'intestazione dice dove stanno
-  // le cose, non di cosa sono fatte — e qui serve a chi legge i risultati.
-  // La sezione di 太乙. Il titolo glossa il nome che la barra può solo
-  // stampare, e va al tab e a chi legge con uno screen reader anziché sopra la
-  // tavola: quale sia la sezione lo dice già la nav, come per ogni altra
-  // tavola. Il paragrafo che stava sotto — di che cosa questa tavola è
-  // funzione, e che cosa si rifiuta di dire — era una prefazione davanti a
-  // un'immagine che si è venuti a guardare, e il suo posto sono le note.
-  'taiyi.title': 'Tai Yi — la tavola di un anno',
+  // Sulla barra sotto la tavola di 太乙, che è tutto il modulo: una tavola
+  // 年計 è funzione dell'anno e di nient'altro.
   'form.year': 'Anno',
   'form.copyTaiyi': 'Copia la tavola come testo',
 
-  'moments.title': 'Scegliere il momento — Qi Men',
+  // The heading of a section, spoken and not seen. The argument is in `en.ts`:
+  // five of the eight were headings written for the terminal, and a heading is
+  // the one line anything reading the page without eyes is handed as the
+  // subject. What is settled here is the wording.
+  //
+  // «IA» e non «AI», che è la sigla con cui questa frase è arrivata. La
+  // descrizione della stessa pagina dice già «assistente IA», e le due
+  // stavano a due righe di distanza dicendo la stessa cosa in due modi. La
+  // sigla italiana è quella che un lettore italiano cerca, ed è anche quella
+  // che si legge ad alta voce senza cambiare lingua — cosa che questa riga,
+  // scritta per chi la sente e non la vede, deve poter sopportare.
+  'h1.consult': "Chiedere a un'IA di leggere una tavola divinatoria cinese",
+  // La sezione che percorre carte Qi Men, nominata con l'arte che percorre.
+  // L'etichetta della nav non può portarlo — un'intestazione dice dove stanno
+  // le cose, non di cosa sono fatte — e qui serve a chi legge i risultati.
+  'h1.moments': "Scegliere un'ora con il Qi Men Dun Jia",
+  'h1.qimen': 'Qi Men Dun Jia — la carta di un istante',
+  'h1.liuren': 'Da Liu Ren — il quadro di un istante',
+  'h1.taiyi': 'Tai Yi Shen Shu — la tavola di un anno',
+  'h1.qizheng': 'Qi Zheng Si Yu — i sette governatori e i quattro residui',
+  'h1.ziwei': 'Zi Wei Dou Shu — i dodici seggi di una nascita',
+  'h1.bazi': 'Ba Zi — una nascita in quattro pilastri',
 
   // Che cosa dice di sé una pagina, a chi non ci è ancora arrivato.
   //
@@ -1034,7 +1047,6 @@ export const it: Record<MessageKey, string> = {
   'form.copyFallback': 'Il testo, da copiare a mano',
   'form.copyUnread': 'Non è stato possibile rileggere la carta.',
 
-  'consult.title': "Chiedere a un'AI di leggere un quadro",
   // La nascita, offerta accanto alla domanda e non al suo posto. Quello che
   // produce è un 年命: la carta resta quella dell'istante e la nascita vi si
   // cerca dentro, che è ciò che prescrive il 《遁甲演義》 ed è il rovescio di

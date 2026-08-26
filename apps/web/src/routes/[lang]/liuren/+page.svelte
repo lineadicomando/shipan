@@ -88,7 +88,7 @@
 
 <PageHead {t} />
 
-<h1 class="offscreen">{t('cli.heading.liuren')}</h1>
+<h1 class="offscreen">{t('h1.liuren')}</h1>
 
 <!-- What this section is, said above the form to somebody who has not met the
      art — the heading above being spoken and not seen. Two paragraphs, two

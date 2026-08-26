@@ -126,7 +126,7 @@
 <PageHead {t} />
 
 <!-- Named, not shown: the nav says which section this is — see `.offscreen`. -->
-<h1 class="offscreen">{t('taiyi.title')}</h1>
+<h1 class="offscreen">{t('h1.taiyi')}</h1>
 
 <!-- What this section is, said above the form to somebody who has not met the
      art — the heading above being spoken and not seen. Two paragraphs, two
