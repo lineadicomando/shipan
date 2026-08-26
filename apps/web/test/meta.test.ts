@@ -132,13 +132,27 @@ describe('in every vernacular', () => {
       });
 
       it('keeps a description inside what is shown', () => {
-        // Google shows around 155 characters and truncates the rest mid-word.
-        // The floor is the other half of the same claim: a description of
-        // forty characters is a field that was filled in rather than written.
+        /**
+         * A search result shows about 155 characters and truncates the rest
+         * mid-word. The floor is the other half of the same claim: a
+         * description of forty characters is a field that was filled in rather
+         * than written.
+         *
+         * **The bound is the number the comment states, which it was not.**
+         * It stood at 160 under a line saying 155, and five characters of
+         * quiet slack is how three Italian descriptions came to be written
+         * past the cut — every one of them a translation that ran longer than
+         * the English it was made from, which is the direction they always run
+         * and the reason this bound exists at all.
+         *
+         * Tight against the longest by two characters, and that is correct
+         * here rather than fragile: 155 is where the words stop being shown,
+         * not a proxy for it, so a translation that overruns should fail.
+         */
         for (const { path, meta } of every) {
           const said = t(meta.description);
           expect(said.length, `${path}: "${said}"`).toBeGreaterThan(90);
-          expect(said.length, `${path}: "${said}"`).toBeLessThanOrEqual(160);
+          expect(said.length, `${path}: "${said}"`).toBeLessThanOrEqual(155);
         }
       });
 

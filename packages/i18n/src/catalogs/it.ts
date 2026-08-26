@@ -847,7 +847,7 @@ export const it: Record<MessageKey, string> = {
 
   'meta.title.consult': 'Le tavole divinatorie cinesi, calcolate',
   'meta.description.consult':
-    'Poni una domanda, dai una nascita o indica un anno. Sei tavole divinatorie cinesi, calcolate da un’effemeride, in un prompt da incollare nel tuo assistente IA.',
+    'Una domanda, una nascita o un anno: sei tavole divinatorie cinesi, calcolate da un’effemeride, in un prompt da incollare nel tuo assistente IA.',
   // **L'articolo davanti al nome, che l'inglese non mette e l'italiano
   // vuole.** «奇門遁甲 qímén dùnjiǎ divide un istante» è la costruzione
   // inglese portata di peso: in italiano un nome d'arte in posizione di
@@ -930,7 +930,7 @@ export const it: Record<MessageKey, string> = {
 
   'meta.title.bazi': 'Ba Zi: i quattro pilastri di una nascita',
   'meta.description.bazi':
-    'I quattro pilastri di una nascita, aperti: tronchi nascosti, dieci divinità, dodici stadi, immagini nayin, cicli di fortuna e conteggio dei cinque elementi.',
+    'I quattro pilastri di una nascita, aperti: tronchi nascosti, dieci divinità, dodici stadi, immagini nayin, cicli di fortuna e i cinque elementi contati.',
   'meta.intro.bazi.a':
     'Il 八字 bāzì legge una nascita come quattro pilastri – anno, mese, giorno e ora – e apre ciascuno: i tronchi nascosti, le dieci divinità, i dodici stadi e le immagini di 納音 nàyīn.',
   'meta.intro.bazi.b':
@@ -984,7 +984,7 @@ export const it: Record<MessageKey, string> = {
     'Che cosa succede quando una tavola arriva a un modello: una sola tavola e mai due, calcolata e mai una data, e che cosa un prompt commissiona e vieta.',
   'meta.title.privacy': 'Privacy: non si conserva nulla',
   'meta.description.privacy':
-    'Nessun account, nessun cookie, nessuna analitica. Nulla di ciò che chiedi viene conservato e nessuna carta è scritta in questo browser: qui è spiegato perché.',
+    'Nessun account, nessun cookie, nessuna analitica. Nulla di ciò che chiedi è conservato e nessuna carta è scritta in questo browser: qui il perché.',
 
   'scheme.label': 'Aspetto',
   'scheme.auto': 'automatico',
