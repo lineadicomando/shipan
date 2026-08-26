@@ -40,6 +40,30 @@ const ADDRESSES = walk(join(SRC, 'lib'), '.ts')
   .flatMap((code) => [...code.matchAll(/export const (\w+)[^=]*=[^;]*'https?:\/\//g)])
   .map((match) => match[1]);
 
+/**
+ * How an outward address may be spelled in the anchor that carries it.
+ *
+ * **One of them stopped being findable in the tag.** `SOURCE_URL` is written
+ * into its own anchor, so pairing each address with the tag that names it was
+ * the whole of this test. `REFERENCES` is a list of nine rendered in an
+ * `{#each}`, and what its anchor names is `reference.where` — a field of an
+ * item of the constant, which nothing matching on the tag alone ties back to
+ * it.
+ *
+ * The binding is derivable, so it is derived: whatever an `{#each}` over an
+ * address constant calls its item is another spelling of that address. A list
+ * of nine links therefore arrives covered by the same rule as one link, which
+ * is what deriving is for.
+ */
+const OUTWARD = ADDRESSES.flatMap((name) => [
+  name,
+  ...COMPONENTS.flatMap(({ code }) =>
+    [...code.matchAll(new RegExp(`\\{#each\\s+${name}\\s+as\\s+(\\w+)`, 'g'))].map(
+      (match) => `${match[1] as string}.`,
+    ),
+  ),
+]);
+
 /** Every `<a …>` opening tag in a component, with the file it came from. */
 const ANCHORS = COMPONENTS.flatMap(({ path, code }) =>
   [...code.matchAll(/<a\s[^>]*>/g)].map((match) => ({ path, tag: match[0] })),
@@ -66,10 +90,22 @@ describe('a link that leaves the site', () => {
   });
 
   it('opens beside the page and carries no referrer', () => {
-    const leaving = ANCHORS.filter(({ tag }) => ADDRESSES.some((name) => tag.includes(name)));
-    expect(leaving.length).toBe(ADDRESSES.length);
+    const leaving = ANCHORS.filter(({ tag }) => OUTWARD.some((name) => tag.includes(name)));
+    expect(leaving.length).toBeGreaterThanOrEqual(ADDRESSES.length);
     for (const { path, tag } of leaving) {
       expect(tag, path).toContain('{...EXTERNAL}');
+    }
+  });
+
+  it('reaches every address this project keeps', () => {
+    // An address in `lib/` that no anchor arrives at has outlived the link it
+    // was written for, which is the other half of deriving the list.
+    for (const name of ADDRESSES) {
+      const reached = OUTWARD.filter((spelling) => spelling === name || spelling.endsWith('.'));
+      expect(
+        ANCHORS.some(({ tag }) => reached.some((spelling) => tag.includes(spelling))),
+        `${name} is an address no anchor arrives at`,
+      ).toBe(true);
     }
   });
 

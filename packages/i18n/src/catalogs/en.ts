@@ -1598,6 +1598,13 @@ export const en = {
     'A rung is not a verdict. It says what could go wrong unnoticed, which is a different thing from how wrong anything is: the frame of the twenty-eight lodges is carried on over-determination and is right to a seventieth of the narrowest question it is ever asked. Nor is a rung a property of the quantity — it moves when the shelf does, in either direction, and a source that only confirms moves it as surely as one that contradicts.',
   'notes.ladder.quoted':
     'The table below is quoted rather than translated. It is a register of citations — the quantities as the engine names them, editions, chapters, the programs each was measured against and the spans they were run over — and this project keeps it in English, the language of its source. What is translated is everything you decide from: the rungs above, what each of them means, and what each layer is.',
+  // The way back to what the register was checked on, under the tables that
+  // name it. Two lines and nine addresses: what each program was run over is
+  // in the rows above, and saying it again here would be the register printed
+  // twice.
+  'notes.references.title': 'The programs it was checked on',
+  'notes.references.lead':
+    'Independent implementations, each somebody else’s work, run over the spans the rows above state. The texts cited beside them are not linked: an address for one is a claim about which edition.',
   'notes.column.quantity': 'Quantity',
   'notes.column.rung': 'Rung',
   'notes.column.standsOn': 'Stands on',
