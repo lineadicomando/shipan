@@ -903,18 +903,26 @@ export const it: Record<MessageKey, string> = {
   // Il nome apre e la domanda segue, dove l'inglese piega invece la frase
   // attorno al nome.
   //
-  // «Come si calcola Qi Men Dun Jia» è corretto e sarebbe stata la lettura
-  // letterale, ma sotterra l'unica parola che chi scorre otto sezioni sta
-  // cercando dietro tre che in tutte e otto sono le stesse.
+  // «Come viene calcolato Qi Men Dun Jia» è corretto e sarebbe stata la
+  // lettura letterale, ma sotterra l'unica parola che chi scorre otto sezioni
+  // sta cercando dietro tre che in tutte e otto sono le stesse.
   //
-  // **«si calcola» non concorda con niente, e qui non è un vezzo.** Questi
-  // otto link portano a una «carta» sotto 奇門, a un «quadro» sotto 六壬 e
-  // 紫微斗數, a una «tavola» sotto 太乙 e a quattro «pilastri» sotto 八字: per
-  // ogni arte il catalogo prende la parola della sua letteratura, ed è giusto
-  // così. Un participio in questa frase sarebbe quindi sbagliato su metà di
-  // loro, e l'impersonale è l'unica costruzione giusta su tutt'e quattro.
-  'intro.computed': '{art}: come si calcola',
-  'intro.computed.all': 'Come si calcolano queste tavole',
+  // **«come viene calcolato» e non «come si calcola», che qui dice un'altra
+  // cosa.** L'impersonale in italiano promette istruzioni: «come si calcola»
+  // è la formula di chi insegna a fare il conto a mano, e la pagina in fondo
+  // al link non insegna a farlo — espone da che cosa il motore lo ricava, e i
+  // punti in cui le scuole divergono. Il passivo dice quello, e dice anche
+  // che il calcolo lo fa qualcun altro, che è metà del senso di andarci.
+  //
+  // Concorda al maschile perché il soggetto è l'arte e non la tavola: il Qi
+  // Men Dun Jia, il Da Liu Ren, il Tai Yi Shen Shu, il Qi Zheng Si Yu, lo Zi
+  // Wei Dou Shu, il Ba Zi. Sono tutti maschili, e l'articolo non compare
+  // nella frase, quindi la concordanza tiene su tutte e sei senza che il
+  // nome debba portarne uno.
+  'intro.computed': '{art}: come viene calcolato',
+  // Qui il soggetto sono le tavole, perché la consultazione non nomina
+  // un'arte e la frase non ha altro a cui appoggiarsi.
+  'intro.computed.all': 'Come vengono calcolate queste tavole',
 
   // Le note e la nota sulla privacy non hanno `intro`: portano entrambe un
   // titolo visibile e la propria riga d'apertura, e una pagina che è già
