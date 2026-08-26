@@ -3,6 +3,7 @@
   import { LOCALES, type Translator } from '@shipan/i18n';
   import { alternates, canonical, mayIndex } from '$lib/indexable';
   import { CARD, OG_LOCALES, SITE, TITLE_SEPARATOR, crumbOf, metaOf, trailOf } from '$lib/meta';
+  import { structuredFor } from '$lib/structured';
 
   /**
    * The head of a page: what it is called, what it says it holds, where it
@@ -72,51 +73,25 @@
   /**
    * What this page is, said to a machine rather than to a reader.
    *
-   * **The root of a language describes the site; everything under it
-   * describes where it sits.** They are two different statements and only one
-   * of them is true of any given address: a `WebSite` repeated on fourteen
-   * pages is one claim made fourteen times, and a breadcrumb on the root is a
-   * trail of one, which is not a trail.
-   *
-   * Nothing here is a second copy of anything. The name, the description and
-   * the language are the ones already in the head above; the trail is the
-   * address walked. What is added is the two things a page cannot say in
-   * prose — that this is one site in two vernaculars, and that it is free to
-   * use and under a licence that says so.
+   * The rule is `lib/structured.ts` and a test reads it; what is here is the
+   * head printing what that returns. Nothing in it is a second copy of
+   * anything — the name, the description and the language are the ones above,
+   * and the trail is the address walked.
    */
   const trail = $derived(trailOf(page.url.pathname));
 
-  const structured = $derived.by(() => {
-    if (!meta || !indexed || !here) return undefined;
-
-    if (trail.length < 2) {
-      return {
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        name: SITE,
-        url: here,
-        description: t(meta.description),
-        inLanguage: t.locale,
-        license: 'https://www.gnu.org/licenses/agpl-3.0.html',
-        isAccessibleForFree: true,
-      };
-    }
-
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: trail.map((step, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        // The root of a language is the site itself, and it is the one step
-        // of a trail with no page name at all. The rest are called what the
-        // nav and the notes call them: a crumb stands in a row of crumbs,
-        // where a title would read as a headline with an arrow after it.
-        name: step.tail ? t(crumbOf(step.tail) ?? step.meta.title) : SITE,
-        item: new URL(`/${t.locale}${step.tail ? `/${step.tail}` : ''}`, page.url.origin).href,
-      })),
-    };
-  });
+  const structured = $derived.by(() =>
+    meta && indexed && here
+      ? structuredFor({
+          t,
+          meta,
+          here,
+          origin: page.url.origin,
+          trail,
+          crumb: crumbOf,
+        })
+      : undefined,
+  );
 </script>
 
 <svelte:head>

@@ -1,0 +1,121 @@
+import { describe, expect, it } from 'vitest';
+import { LOCALES, createTranslator } from '@shipan/i18n';
+import { crumbOf, metaOf, trailOf } from '../src/lib/meta';
+import { NOTE_PAGES, READINGS, REFUSALS } from '../src/lib/notes';
+import { REFERENCES } from '../src/lib/references';
+import { structuredFor } from '../src/lib/structured';
+import { pagesOf } from '../src/lib/indexable';
+
+/**
+ * What every page declares itself to be, held to the pages that exist.
+ *
+ * **The failure this guards against is a page that describes itself as less
+ * than it is.** The root of a language declared the site and everything under
+ * it declared its breadcrumbs, which are alternatives — so the four pages
+ * carrying the most content on this site were the ones saying least about
+ * what that content was. A page of the notes is both a step in a trail and a
+ * document, and both are now said.
+ *
+ * Derived from the same registries the pages are built from, in both
+ * directions: a fifth note arrives already declared, and a type claimed for an
+ * address that is not one fails here.
+ */
+const ORIGIN = 'https://example.test';
+
+const nodesAt = (path: string, locale: (typeof LOCALES)[number]) => {
+  const meta = metaOf(path);
+  if (!meta) return [];
+  return structuredFor({
+    t: createTranslator(locale),
+    meta,
+    here: new URL(path, ORIGIN).href,
+    origin: ORIGIN,
+    trail: trailOf(path),
+    crumb: crumbOf,
+  }) as Record<string, unknown>[];
+};
+
+const typesAt = (path: string, locale: (typeof LOCALES)[number]) =>
+  nodesAt(path, locale).map((node) => node['@type']);
+
+/** Every address of the notes, the index included. */
+const NOTES = NOTE_PAGES.map((note) => `notes${note.slug ? `/${note.slug}` : ''}`);
+
+describe('what a page declares itself to be', () => {
+  for (const locale of LOCALES) {
+    describe(locale, () => {
+      it('declares the site at the root of a vernacular, and only there', () => {
+        expect(typesAt(`/${locale}`, locale)).toEqual(['WebSite']);
+        for (const path of pagesOf(locale).filter((page) => page !== `/${locale}`)) {
+          expect(typesAt(path, locale), path).not.toContain('WebSite');
+        }
+      });
+
+      it('walks a trail on every page under it', () => {
+        for (const path of pagesOf(locale).filter((page) => page !== `/${locale}`)) {
+          expect(typesAt(path, locale), path).toContain('BreadcrumbList');
+        }
+      });
+
+      it('declares a document on the notes and nowhere else', () => {
+        for (const path of pagesOf(locale)) {
+          const tail = path.split('/').slice(2).join('/');
+          const expected = NOTES.includes(tail);
+          expect(typesAt(path, locale).includes('TechArticle'), path).toBe(expected);
+        }
+      });
+
+      it('says nothing under a name, nobody being named here', () => {
+        // The anonymity is a decision, and schema is the one surface that
+        // would let it be undone by filling in a field.
+        for (const path of pagesOf(locale)) {
+          for (const node of nodesAt(path, locale)) {
+            expect(node.author, path).toBeUndefined();
+            expect(node.publisher, path).toBeUndefined();
+          }
+        }
+      });
+
+      it('dates a written page and never a derived one', () => {
+        // The date is the freshest paragraph's, read off the registry the page
+        // prints it from. A derived page is a function of the engine and a
+        // date on it would be a claim about prose that nobody keeps.
+        const dated = (tail: string) =>
+          nodesAt(`/${locale}/${tail}`, locale).find((node) => node['@type'] === 'TechArticle')
+            ?.dateModified;
+
+        expect(dated('notes/refusals')).toBe([...REFUSALS.map((e) => e.checked)].sort().at(-1));
+        expect(dated('notes/readings')).toBe([...READINGS.map((e) => e.checked)].sort().at(-1));
+        expect(dated('notes/sources')).toBeUndefined();
+        expect(dated('notes/instruments')).toBeUndefined();
+      });
+
+      it('cites the programs on the page that was checked on them', () => {
+        const cited = (tail: string) =>
+          nodesAt(`/${locale}/${tail}`, locale).find((node) => node['@type'] === 'TechArticle')
+            ?.citation;
+
+        expect(cited('notes/sources')).toEqual(REFERENCES.map((reference) => reference.where));
+        for (const tail of NOTES.filter((note) => note !== 'notes/sources')) {
+          expect(cited(tail), tail).toBeUndefined();
+        }
+      });
+
+      it('gives every node a context and an address on this origin', () => {
+        for (const path of pagesOf(locale)) {
+          for (const node of nodesAt(path, locale)) {
+            expect(node['@context'], path).toBe('https://schema.org');
+            if (typeof node.url === 'string') expect(node.url, path).toContain(ORIGIN);
+          }
+        }
+      });
+    });
+  }
+
+  it('declares nothing at an address a board was cast at', () => {
+    // `PageHead` asks `mayIndex` before it builds any of this, so a chart
+    // carrying somebody's birth never reaches here — belt and braces, since
+    // the shape of the key is the address.
+    expect(nodesAt('/en/qimen?date=1984-03-11', 'en')).toEqual([]);
+  });
+});
