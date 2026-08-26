@@ -294,3 +294,30 @@ identifier alone.
 See `docs/parameters.md` for the options themselves, `docs/i18n.md` for what
 crosses the language boundary, and `docs/refusals.md` for where the engine
 stops.
+
+## The licence asks for an address, not a sentence
+
+AGPL-3.0-or-later, imposed by Swiss Ephemeris, and §13 is the clause a website
+answers to: somebody who interacts with this over a network is owed the
+Corresponding Source of **the copy they are talking to**. That is more than
+naming the licence. The footer's third line names it and links it, on every
+page under `[lang]`, and the sentence the catalogs already held — «Source code
+under AGPL-3.0», «Codice sorgente sotto licenza AGPL-3.0» — is the label of
+the link rather than a new string, so a third vernacular costs nothing here.
+
+The address is written once, in `apps/web/src/lib/source.ts`, and read from
+`PUBLIC_SOURCE_URL` per request. **Per request because of forks.** A copy
+deployed with changes owes its readers *its own* source, and a footer pointing
+at this repository is a host in violation until it is corrected — which should
+be a variable to set, not a build to redo. Unset, it falls back to this
+project's repository, the true answer for every unmodified copy: an offer that
+vanishes when a variable is missing is the outcome the licence does not allow.
+Nothing carrying the footer is prerendered, which is what leaves a per-request
+read available at all — `[lang]/offline` is built ahead of time and wears none.
+
+**On paper the anchor stops being an offer**, so the print rules set the
+address after it. A printed chart travels furthest from the page that cast it,
+and it is the copy most likely to be read by somebody who never had the site.
+
+`apps/web/test/source.test.ts` holds all of it: the variable, the fallback,
+the anchor, and the address appearing in no second place.

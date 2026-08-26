@@ -5,6 +5,7 @@
   import RainToggle from '$lib/components/RainToggle.svelte';
   import SectionsNav from '$lib/components/SectionsNav.svelte';
   import { rain } from '$lib/rain.svelte';
+  import { SOURCE_URL } from '$lib/source';
 
   let { data, children } = $props();
   const t = $derived(data.t);
@@ -75,10 +76,15 @@
     <p>
       {t('footer.data', { ephemeris: 'Swiss Ephemeris', geonames: 'GeoNames' })}
     </p>
+    <!-- The third of them is the only link here that leaves the site, and it
+         leaves it because the licence says it must: the line already named
+         AGPL-3.0, and a licence that obliges an offer of the source obliges
+         an address to collect it at. The catalogs are untouched — the
+         sentence they hold is already the name of what it now points to. -->
     <p>
       <a href="/{t.locale}/notes">{t('footer.notes')}</a> ·
       <a href="/{t.locale}/privacy">{t('footer.privacy')}</a> ·
-      {t('footer.licence')}
+      <a class="source" href={SOURCE_URL}>{t('footer.licence')}</a>
     </p>
   </footer>
 </div>
@@ -248,5 +254,10 @@
        lines and half a disclaimer is worse than none. Tight, because it is
        what decides whether a report runs to one sheet more than it needs. */
     footer { margin-top: 0.8rem; break-inside: avoid; }
+    /* The one link on the sheet that has to survive not being a link. A
+       printed chart travels furthest from the page that cast it, and «source
+       code under AGPL-3.0» with nowhere to go is exactly the offer the
+       licence is not satisfied by. So the address is set, once, after it. */
+    .source::after { content: ' — ' attr(href); }
   }
 </style>

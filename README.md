@@ -50,6 +50,10 @@ written, and the name as it is said. None of the three is optional — see
 **Licence AGPL-3.0-or-later**, imposed by Swiss Ephemeris. Every dependency
 must be compatible with it. The GeoNames data is CC BY 4.0.
 
+A copy put online owes its readers its own source, so the footer links to it:
+set `PUBLIC_SOURCE_URL` to your repository if you deploy a modified one. See
+[`docs/architecture.md`](docs/architecture.md).
+
 ## What it computes
 
 | | |

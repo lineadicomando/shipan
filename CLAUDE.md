@@ -171,6 +171,12 @@ the engine falls back to Moshier, which needs no files.
   [`docs/architecture.md`](docs/architecture.md)
 - **Licence AGPL-3.0-or-later**, imposed by Swiss Ephemeris. Every new
   dependency must be compatible with it.
+- **A licence that obliges an offer obliges an address, and the footer carries
+  it.** §13 owes a reader the source of the copy they are talking to, so the
+  line naming AGPL-3.0 links to it; the address is written once, in
+  `lib/source.ts`, read from `PUBLIC_SOURCE_URL` so a fork points at itself,
+  and set after the anchor on paper, where an anchor offers nothing. →
+  [`docs/architecture.md`](docs/architecture.md)
 
 ### Handing a board over
 
