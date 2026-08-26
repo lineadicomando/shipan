@@ -108,7 +108,7 @@
   /*
    * What the page is read off while the rain falls behind it.
    *
-   * Not a panel with an edge — a ground laid over the weather, ten per cent
+   * Not a panel with an edge — a ground laid over the weather, twenty per cent
    * short of opaque, so the glyphs are perceptible under the text without
    * competing with it. The measure of it is the disclaimer: the quietest
    * thing in the shell is `--faint` on `--ground`, and a veil thin enough to
@@ -119,7 +119,7 @@
    * where the rain is actually visible — and where nothing is being read.
    */
   .veiled {
-    background: color-mix(in srgb, var(--ground) 90%, transparent);
+    background: color-mix(in srgb, var(--ground) 80%, transparent);
   }
 
   header { margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule); }

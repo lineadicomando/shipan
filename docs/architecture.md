@@ -278,7 +278,7 @@ the one applied here: whether a reader would have to be told.
 
 It draws in `--ink` and `--edge`, read back out of the stylesheet each frame,
 so it follows the reader from light to dark without holding a colour of its
-own — and the shell takes a ground ten per cent short of opaque while it
+own — and the shell takes a ground twenty per cent short of opaque while it
 falls, which leaves the glyphs perceptible under the text and plainly visible
 in the margins outside it.
 
