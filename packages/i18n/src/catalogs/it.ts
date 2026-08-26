@@ -833,8 +833,24 @@ export const it: Record<MessageKey, string> = {
   'meta.title.consult': 'Le tavole divinatorie cinesi, calcolate',
   'meta.description.consult':
     'Poni una domanda, dai una nascita o indica un anno. Sei tavole divinatorie cinesi, calcolate da un\'effemeride, in un prompt da incollare nel tuo assistente IA.',
+  // **L'articolo davanti al nome, che l'inglese non mette e l'italiano
+  // vuole.** «奇門遁甲 qímén dùnjiǎ divide un istante» è la costruzione
+  // inglese portata di peso: in italiano un nome d'arte in posizione di
+  // soggetto prende l'articolo come lo prendono il tango, lo yoga, il taijí.
+  // Senza, la frase parte come un'etichetta e non come una proposizione, e il
+  // lettore incespica prima ancora di arrivare al verbo.
+  //
+  // **Si accorda con la lettura e non con il glifo, perché è la lettura che
+  // si pronuncia.** Da qui «lo» davanti a 紫微斗數 zǐwēi dǒushù e a 式盤
+  // shìpán — «z» e «sh» iniziali vogliono l'articolo che vuole lo zaino e
+  // vuole lo show — e «il» davanti alle altre cinque. È la regola dell'ultima
+  // riga di `docs/i18n.md`: il nome viaggia con la sua lettura, e qui la
+  // lettura decide anche la parola che gli sta davanti.
+  //
+  // Solo dove il nome è soggetto. In `meta.intro.moments.a` sta dentro
+  // «carta 奇門遁甲 qímén dùnjiǎ», che è un'apposizione e non ne vuole.
   'meta.intro.consult.a':
-    '式盤 shìpán è la tavola del divinatore: il cielo rotondo che gira sulla terra quadrata. Qui se ne stendono sei, ognuna calcolata da un\'effemeride; scegline una qui sotto.',
+    'Lo 式盤 shìpán è la tavola del divinatore: il cielo rotondo che gira sulla terra quadrata. Qui se ne stendono sei, ognuna calcolata da un\'effemeride; scegline una qui sotto.',
   // **È il lettore a incollare, e la frase deve dirlo come atto suo.** Qui
   // c'era «la tavola arriva a ChatGPT», sbagliato nell'unico modo che questo
   // progetto non può permettersi: descrive un sito che manda qualcosa a
@@ -856,7 +872,7 @@ export const it: Record<MessageKey, string> = {
   'meta.description.qimen':
     'Poni una carta Qi Men Dun Jia per un istante e un luogo qualsiasi: nove palazzi, tavola di terra e di cielo, otto stelle, porte e spiriti, ju per chaibu.',
   'meta.intro.qimen.a':
-    '奇門遁甲 qímén dùnjiǎ divide un istante in nove palazzi: una tavola di terra fissata dal ju, una tavola di cielo ruotata sull\'ora, e le otto stelle, porte e spiriti che vi stanno sopra.',
+    'Il 奇門遁甲 qímén dùnjiǎ divide un istante in nove palazzi: una tavola di terra fissata dal ju, una tavola di cielo ruotata sull\'ora, e le otto stelle, porte e spiriti che vi stanno sopra.',
   'meta.intro.qimen.b':
     'Dai un momento e un luogo, o lascia il modulo vuoto per adesso. Nessuna scuola è sottintesa: il ju si determina per 拆補 chāibǔ, e ogni opzione che ha prodotto una carta è nel suo indirizzo.',
 
@@ -864,7 +880,7 @@ export const it: Record<MessageKey, string> = {
   'meta.description.liuren':
     'Stendi un quadro Da Liu Ren per un istante e un luogo qualsiasi: i dodici rami girati dal generale del mese, le quattro lezioni e le tre trasmissioni.',
   'meta.intro.liuren.a':
-    '大六壬 dà liùrén gira i dodici rami secondo il generale del mese, legge quattro lezioni sulla rotazione e ne trae tre trasmissioni per mezzo di nove regole nominate.',
+    'Il 大六壬 dà liùrén gira i dodici rami secondo il generale del mese, legge quattro lezioni sulla rotazione e ne trae tre trasmissioni per mezzo di nove regole nominate.',
   'meta.intro.liuren.b':
     'Dai un momento e un luogo. Non si chiede nessuna nascita: chi domanda sta già sul tronco del giorno, e un secondo nome per la stessa persona inventa una relazione che non c\'è.',
 
@@ -872,7 +888,7 @@ export const it: Record<MessageKey, string> = {
   'meta.description.taiyi':
     'La tavola Tai Yi Shen Shu di un anno: sedici divinità in nove palazzi, con i conti di ospite e ospitante. Il soggetto è l\'anno — non c\'è nessuno sopra.',
   'meta.intro.taiyi.a':
-    '太乙神數 tàiyǐ shénshù stende un anno: sedici divinità in nove palazzi, e i conti che decidono ospitante e ospite. I palazzi sono sfalsati di un posto rispetto al 洛書 luòshū.',
+    'Il 太乙神數 tàiyǐ shénshù stende un anno: sedici divinità in nove palazzi, e i conti che decidono ospitante e ospite. I palazzi sono sfalsati di un posto rispetto al 洛書 luòshū.',
   'meta.intro.taiyi.b':
     'Su questa tavola non c\'è nessuno: né domanda, né persona, né luogo, né ora. Il soggetto è l\'anno in cui tutti stiamo, e il modulo qui sotto è un numero.',
 
@@ -880,7 +896,7 @@ export const it: Record<MessageKey, string> = {
   'meta.description.qizheng':
     'Qi Zheng Si Yu per una nascita: i sette governatori e tre dei quattro residui, collocati sulle ventotto dimore e sui dodici palazzi.',
   'meta.intro.qizheng.a':
-    '七政四餘 qīzhèng sìyú colloca i sette governatori e tre dei quattro residui sulle ventotto dimore e sui dodici palazzi, con posizioni lette da un\'effemeride e non da una tavola.',
+    'Il 七政四餘 qīzhèng sìyú colloca i sette governatori e tre dei quattro residui sulle ventotto dimore e sui dodici palazzi, con posizioni lette da un\'effemeride e non da una tavola.',
   'meta.intro.qizheng.b':
     'Dai una nascita: un istante e un luogo. La longitudine muove il quadro, la latitudine non entra in nessun calcolo, e l\'unico metodo che la leggerebbe è rifiutato.',
 
@@ -888,7 +904,7 @@ export const it: Record<MessageKey, string> = {
   'meta.description.ziwei':
     'Un quadro Zi Wei Dou Shu per una nascita: dodici seggi contati dal mese lunare e dall\'ora, le stelle che il libro vi colloca, e il grado di ciascuna.',
   'meta.intro.ziwei.a':
-    '紫微斗數 zǐwēi dǒushù conta dodici seggi dal mese lunare e dall\'ora, vi colloca le stelle che il libro assegna e dà a ciascuna il grado che il libro le dà.',
+    'Lo 紫微斗數 zǐwēi dǒushù conta dodici seggi dal mese lunare e dall\'ora, vi colloca le stelle che il libro assegna e dà a ciascuna il grado che il libro le dà.',
   'meta.intro.ziwei.b':
     'Dai una nascita, e un sesso dove un anello si percorre in una direzione. Il calendario lunare si computa su 120°E: lo stesso istante è la stessa data lunare ovunque.',
 
@@ -896,7 +912,7 @@ export const it: Record<MessageKey, string> = {
   'meta.description.bazi':
     'I quattro pilastri di una nascita, aperti: tronchi nascosti, dieci divinità, dodici stadi, immagini nayin, cicli di fortuna e conteggio dei cinque elementi.',
   'meta.intro.bazi.a':
-    '八字 bāzì legge una nascita come quattro pilastri — anno, mese, giorno e ora — e apre ciascuno: i tronchi nascosti, le dieci divinità, i dodici stadi e le immagini di 納音 nàyīn.',
+    'Il 八字 bāzì legge una nascita come quattro pilastri — anno, mese, giorno e ora — e apre ciascuno: i tronchi nascosti, le dieci divinità, i dodici stadi e le immagini di 納音 nàyīn.',
   'meta.intro.bazi.b':
     'I cicli di fortuna corrono da un sesso, e i cinque elementi arrivano contati, zeri compresi. Un conteggio non è un verdetto: forte o debole è un passo di metodo, e qui non si compie.',
 
