@@ -1197,7 +1197,23 @@ export const it: Record<MessageKey, string> = {
   'notes.column.parameter': 'Parametro',
   'notes.column.values': 'Valori',
   'notes.default': 'predefinito',
-  'notes.refused': 'rifiutato',
+  // **«non implementato» e non «rifiutato».** In italiano «rifiutato» porta
+  // un giudizio che qui non c'è: il segno sta accanto a un valore che il
+  // motore dichiara e non calcola, e dice che cosa il motore fa, non che cosa
+  // vale il metodo. 拆補 è predefinito e 置閏 non è implementato; nessuna
+  // delle due è una sentenza su una scuola, e la seconda letta come rifiuto
+  // ne pronuncia una che il progetto non pronuncia. Che chiedere quel valore
+  // dia errore anziché la carta più vicina resta vero e si dice altrove: qui
+  // c'è una cella di tabella.
+  //
+  // È anche la parola che il resto della sezione usa già. «Sta nell'elenco di
+  // ciò che è dichiarato e non implementato» sta in
+  // `notes.refusals.maoshan.body` da prima di questa riga, e il segno diceva
+  // l'altra: due parole per lo stesso fatto in due pagine che si leggono di
+  // seguito. L'inglese tiene «refused» perché in inglese quella parola dice
+  // il comportamento e non la condanna — un catalogo argomenta la propria
+  // lingua, e `docs/refusals.md` resta il registro che possiede il termine.
+  'notes.refused': 'non implementato',
   'notes.noParameters':
     'Nessuna divergenza propria: si regge interamente sullo strato calendariale, e sono i parametri qui sopra a spostarlo.',
   'notes.parameter.method': 'Come si stabilisce il ju.',
@@ -1297,7 +1313,7 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.latitude.title': 'La latitudine, in qualunque calcolo',
   'notes.refusals.latitude.asks': 'chi dà per scontato che una carta usi entrambe le coordinate.',
   'notes.refusals.latitude.body':
-    'È la longitudine a spostare una tavola. La latitudine viene portata e stampata e non entra in alcun calcolo. L’unico metodo che la leggerebbe — tagliare i dodici palazzi del 七政四餘 per case — è un parametro dichiarato con quel valore rifiutato. Il limite è detto qui e non nel modulo: un controllo che si apre apposta per digitarci una longitudine lo apre chi sa che cosa sia.',
+    'È la longitudine a spostare una tavola. La latitudine viene portata e stampata e non entra in alcun calcolo. L’unico metodo che la leggerebbe — tagliare i dodici palazzi del 七政四餘 per case — è un parametro dichiarato con quel valore non implementato. Il limite è detto qui e non nel modulo: un controllo che si apre apposta per digitarci una longitudine lo apre chi sa che cosa sia.',
   'notes.refusals.twoBoards.title': 'Due tavole di uno stesso istante, in un solo prompt',
   'notes.refusals.twoBoards.asks': 'la richiesta di funzionalità più ovvia.',
   'notes.refusals.twoBoards.body':
