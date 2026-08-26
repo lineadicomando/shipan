@@ -36,6 +36,29 @@ it detects it, and the runtime image installs both.
 **The client imports only types from `core`.** A value import would drag the
 ephemerides and a native module into the browser bundle.
 
+### What the dev server is looking at
+
+Every package above resolves to its `dist/`, and `vite dev` does not build
+them. So a message edited in `packages/i18n/src` does not reach
+`http://localhost:5173` until somebody compiles it, and what stands on the
+screen in the meantime is the last build — which looks exactly like a change
+that did not work. It cost an afternoon once: a catalog was edited, the page
+was reloaded, the old string came back, and the edit was hunted for in the
+component that prints it.
+
+`npm run dev -w @shipan/web` therefore runs `predev` first and builds the four
+packages the app depends on. Two and a half seconds, and the dev server is
+never showing yesterday's output. Two things it does not do, both on purpose:
+it does not watch, so a package edited *during* a session still wants a build
+or a restart; and it does not alias the packages to their sources, which
+would fix the watching and open a worse hole — the browser bundle would read
+`src` while `core`, which is external to the SSR bundle and resolves through
+node, would go on reading `dist`, so the two halves of one page could print
+two versions of the same message.
+
+The tests are not affected: `npm test` builds along the way, and every test
+that reads a catalog reads the source.
+
 ## Inside `core`
 
 ```
