@@ -27,6 +27,37 @@ describe('catalog parity', () => {
   });
 
   /**
+   * One apostrophe, and it is the one an apostrophe is.
+   *
+   * **The split this closes was visible and nobody could see it.** The notes
+   * were written with `’` and everything else with `'`, so a reader crossing
+   * from a section's introduction to the register that explains it — which is
+   * the path `SectionIntro` now puts a link on — watched the apostrophe change
+   * shape halfway. Neither half was wrong on its own, which is why it lasted:
+   * a page is consistent with itself and a site is not.
+   *
+   * `’` U+2019 is the apostrophe; `'` U+0027 is the typewriter's stand-in for
+   * it, and in a serif face at a reading size the difference is not subtle.
+   * Italian spends one every few words, so the choice is made several hundred
+   * times a page.
+   *
+   * It also takes the escapes out. In a single-quoted TypeScript string `'`
+   * arrives written `\'`, and 175 Italian messages carried them; none of the
+   * ones written with `’` did. The right character is the one the source is
+   * easier to read in, which is a coincidence worth banking.
+   *
+   * Values only. A key is an identifier, and a comment is not read by anybody
+   * the interface is for.
+   */
+  it('spells an apostrophe as an apostrophe', () => {
+    for (const [locale, catalog] of Object.entries(catalogs)) {
+      for (const [key, message] of Object.entries(catalog)) {
+        expect(message, `${locale} / ${key}`).not.toContain("'");
+      }
+    }
+  });
+
+  /**
    * A reading of 命 is addressed to the person the board was laid on, and the
    * board is told their gender. The prompt must not presume it instead.
    *
