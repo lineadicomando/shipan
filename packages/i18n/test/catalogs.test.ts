@@ -27,6 +27,48 @@ describe('catalog parity', () => {
   });
 
   /**
+   * A dash does not stand next to a glyph.
+   *
+   * **一 is a character, and a dash is the shape of it.** U+4E00 is `yī`,
+   * one, a single horizontal stroke — and this engine prints it: 知一 is one
+   * of the nine rules that draw the transmissions of 六壬. Beside hanzi, at
+   * the size a browser falls back to for CJK, `—` and `–` are read as members
+   * of the run rather than as punctuation, so «命 mìng — 八字, 七政四餘,
+   * 紫微斗數 — takes a birth» arrives as a line of characters with two of them
+   * unfamiliar.
+   *
+   * The reader this is for does not read Chinese and is meeting the names for
+   * the first time, which is what makes it worse rather than better: somebody
+   * fluent would know 一 does not belong there, and somebody learning the
+   * shapes has no way to tell which of them are words.
+   *
+   * **This is about the writing system and not about a language**, so it
+   * holds in both catalogs. Where the two met, an inciso became a pair of
+   * parentheses and an introducing dash became a colon — neither of which
+   * resembles anything in either script.
+   *
+   * Eight characters, not ten. Every one of the forty-nine that had to be
+   * changed sat within eight; the nearest line that legitimately keeps a dash
+   * is eleven away, `七政四餘 per case –`, where a Latin word stands between.
+   * A bound at ten would pass today with one character of clearance, which is
+   * not a bound, it is a coincidence waiting to be edited into a failure.
+   *
+   * What this cannot reach is the markup: `ChartReading` joins a name to its
+   * palace and the mark there is a middle dot, argued where it is written.
+   */
+  it('keeps a dash away from a glyph', () => {
+    const hanzi = /[㐀-鿿]/;
+    for (const [locale, catalog] of Object.entries(catalogs)) {
+      for (const [key, message] of Object.entries(catalog)) {
+        for (const dash of message.matchAll(/[—–]/g)) {
+          const around = message.slice(Math.max(0, dash.index - 8), dash.index + 9);
+          expect(hanzi.test(around), `${locale} / ${key}: …${around}…`).toBe(false);
+        }
+      }
+    }
+  });
+
+  /**
    * One apostrophe, and it is the one an apostrophe is.
    *
    * **The split this closes was visible and nobody could see it.** The notes
