@@ -152,6 +152,16 @@ function registerReferences(server: McpServer): void {
   }
 }
 
+/**
+ * The mark for a cell of a reference table the engine has nothing to put in.
+ *
+ * Read off the catalog rather than written here, so the transcript a board
+ * arrives in and the reference a model looks it up in cannot say absence two
+ * ways. English because this whole surface is: an agent is not a reader in a
+ * vernacular, and every line of prose in this file is written out in it.
+ */
+const none = (): string => createTranslator('en')('cli.none');
+
 function palaceReference(): string {
   return [
     '# The nine palaces',
@@ -164,7 +174,7 @@ function palaceReference(): string {
     '|---|---|---|---|',
     ...PALACES.map(
       (palace) =>
-        `| ${palace.number} | ${palace.hanzi} ${palace.pinyin} \`${palace.id}\` | ${palace.element} | ${palace.direction ?? '—'} |`,
+        `| ${palace.number} | ${palace.hanzi} ${palace.pinyin} \`${palace.id}\` | ${palace.element} | ${palace.direction ?? none()} |`,
     ),
   ].join('\n');
 }
@@ -257,7 +267,7 @@ function termReference(): string {
     '|---|---|---|---|',
     ...SOLAR_TERMS.map(
       (term) =>
-        `| ${term.hanzi} ${term.pinyin} \`${term.id}\` | ${term.longitude}° | ${term.kind} | ${term.monthBranch ?? '—'} |`,
+        `| ${term.hanzi} ${term.pinyin} \`${term.id}\` | ${term.longitude}° | ${term.kind} | ${term.monthBranch ?? none()} |`,
     ),
   ].join('\n');
 }

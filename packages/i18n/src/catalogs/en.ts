@@ -680,7 +680,7 @@ export const en = {
   'label.yeargod.suizhide': 'the branch virtue of the year',
 
   'label.yeargod.suide': 'the virtue of the year',
-  'label.yeargod.suidehe': 'the virtue\'s companion',
+  'label.yeargod.suidehe': 'the virtue’s companion',
 
   'label.yeargod.zoushu': 'the memorialist',
   'label.yeargod.boshi': 'the erudite',
@@ -691,9 +691,9 @@ export const en = {
   'label.yeargod.jinshen': 'the metal spirit',
 
   'label.monthgod.tiande': 'the virtue of heaven',
-  'label.monthgod.tiandehe': 'heaven\'s virtue joined',
+  'label.monthgod.tiandehe': 'heaven’s virtue joined',
   'label.monthgod.yuede': 'the virtue of the month',
-  'label.monthgod.yuedehe': 'the month\'s virtue joined',
+  'label.monthgod.yuedehe': 'the month’s virtue joined',
 
 
   'label.shensha.sanhe': 'the threefold union',
@@ -733,7 +733,7 @@ export const en = {
   'label.keti.shehai': 'wading the harm',
   'label.keti.haoshi': 'the reed arrow',
   'label.keti.tanshe': 'the pellet shot',
-  'label.keti.hushi': "the tiger's gaze",
+  'label.keti.hushi': 'the tiger’s gaze',
   'label.keti.dongshe': 'the winter snake, eyes covered',
   'label.keti.bieze': 'the separate charge',
   'label.keti.bazhuan': 'the eight concentrated',
@@ -790,38 +790,14 @@ export const en = {
   'nav.qizheng': 'Qi Zheng',
   'nav.ziwei': 'Zi Wei',
   'nav.taiyi': 'Tai Yi',
-  // The longer form of a name, worn by the section being read and by no other.
+  // Every one of these is cut in the bar and says so once: 奇門遁甲 stands as
+  // `Qi Men`, 大六壬 as `Liu Ren`, 七政四餘 as `Qi Zheng`, 紫微斗數 as
+  // `Zi Wei` and 太乙神數 as `Tai Yi`, the way they are cut in speech. A row
+  // of six full names is six phrases where a reader is looking for one. 八字
+  // is not cut, two characters leaving nothing to cut.
   //
-  // Four of the six names are cut in the bar: 奇門遁甲 stands as `Qi Men`,
-  // 大六壬 as `Liu Ren`, 七政四餘 as `Qi Zheng` and 紫微斗數 as `Zi Wei`, the
-  // way they are cut in speech. A list of six full names is six phrases where
-  // the reader is looking for one, and the two longest were the two that had
-  // never been cut.
-  //
-  // The current section says the whole of its name instead, which is where a
-  // name is worth its length: the reader is on that board, the label is no
-  // longer one option among six, and what it costs to read it is what it costs
-  // to read a title. It is also the only mark this list carries besides the
-  // underline, and the two say the same thing in two registers.
-  //
-  // One section has no entry here and it is not an omission: 八字 is two
-  // characters and cutting it would leave nothing to cut.
-  //
-  // 太乙 has one, and it is `Tai Yi Shen Shu`. 神數 names the transmission
-  // this art is met under, which is the name the consultation already sets at
-  // the head of its card — `instruments.ts` carries 太乙神數 Tài Yǐ Shén
-  // Shù — and a bar that stopped at `Tai Yi` was the one surface here calling
-  // the section something no reader would have gone looking for it under. That
-  // 神數 also names a later branch around 《太乙統宗寶鑑》, a book with a
-  // different 上元積年 which `docs/sources.md` records as unread and which
-  // `epoch` declines, is a fact about a 上元積年 and not about a name. It is
-  // said where a reader can act on it — in the notes, and in what `epoch`
-  // refuses — rather than by withholding the name from a label.
-  'nav.qimen.full': 'Qi Men Dun Jia',
-  'nav.liuren.full': 'Da Liu Ren',
-  'nav.qizheng.full': 'Qi Zheng Si Yu',
-  'nav.ziwei.full': 'Zi Wei Dou Shu',
-  'nav.taiyi.full': 'Tai Yi Shen Shu',
+  // Where the whole of a name is said is `h1.*`, at the top of the page it
+  // belongs to.
   'nav.moments': 'Choosing a time',
   // Named by the act, which is the one this section is built around: a
   // question put at an instant, and the chart cast for that instant. It was
@@ -839,22 +815,70 @@ export const en = {
   'nav.consult': 'Consultation',
   'nav.sections': 'Sections',
 
-  // The section that walks Qi Men charts, named with the art it walks. The nav
-  // label cannot carry it — a header says where things are, not what they are
-  // made of — and this is where somebody reading results needs to know.
-  // The 太乙 section. The title glosses the name the nav can only print, and
-  // it is said to a tab and to a screen reader rather than set over the
-  // board: the nav already says which section this is, as it does for every
-  // other board here. The paragraph that stood under it — what this board is
-  // a function of, and what it refuses to name — was a preface over a picture
-  // somebody came to look at, and where that account belongs is the notes.
-  'taiyi.title': 'Tai Yi — the board of a year',
-  // On the bar under the board, which is the whole of the form: a 年計 board
-  // is a function of the year and of nothing else.
+  // On the bar under the 太乙 board, which is the whole of the form: a 年計
+  // board is a function of the year and of nothing else.
   'form.year': 'Year',
   'form.copyTaiyi': 'Copy the board as text',
 
-  'moments.title': 'Choosing a time — Qi Men',
+  // The heading a section is met by, at the top of its own page.
+  //
+  // **A section has one first-level heading, and on five of the eight it was
+  // a heading written for the terminal.** `cli.heading.pillars` is «Four
+  // Pillars», which is the right phrase over four columns of a CLI and the
+  // wrong one as the whole of what the 八字 page calls itself: the art has a
+  // name, the title beside this one says it, and the heading dropped it.
+  // Those keys stay where they are and keep printing charts; what was wrong
+  // was the borrowing, not the strings.
+  //
+  // **Read, and that is what it is now for.** These were `offscreen` — said
+  // to a screen reader, a crawler and a model, and to nobody looking at the
+  // page — on the argument that the nav already said which section this was.
+  // The nav paid for that by growing the current item out to the full name,
+  // which made the one row on this site that changes width as a reader moves
+  // along it. Said once at the top of the page it serves all four readers and
+  // costs the bar nothing. `SectionIntro` sets it at the size of the
+  // paragraphs under it and marks it by weight, since what is loud on a
+  // section page should be the board.
+  //
+  // The name arrives at full length and as the transcription rather than the
+  // glyphs, which is the one place on this site the hanzi do not follow the
+  // name — the paragraph immediately under this one opens on them, and a
+  // heading that opened on them too would put the glyph before the gloss on a
+  // page whose reader does not read Chinese. See `docs/i18n.md`.
+  //
+  // **太乙 is met as 太乙神數, and the heading is where that is settled.**
+  // 神數 names the transmission this art is met under — `instruments.ts`
+  // carries 太乙神數 Tài Yǐ Shén Shù, and the consultation already sets it at
+  // the head of its card — so a surface stopping at `Tai Yi` calls the
+  // section something no reader would have gone looking for it under. The bar
+  // stops there because a bar cuts every name it carries; this does not.
+  // That 神數 also names a later branch around 《太乙統宗寶鑑》, a book with a
+  // different 上元積年 which `docs/sources.md` records as unread and which
+  // `epoch` declines, is a fact about a 上元積年 and not about a name. It is
+  // said where a reader can act on it — in the notes, and in what `epoch`
+  // refuses — rather than by withholding the name from a heading.
+  //
+  // Distinct from the `title` in `meta.*`, and not by oversight. A title is
+  // written to stand alone in a search result and says what the page is
+  // *for*; a heading names what is laid out under it.
+  //
+  // The consultation is the one that names no art, having none of its own,
+  // and so names the kind instead. Two errands that do not overlap are laid
+  // here — a question asked now, and a birth read as a life — and neither is
+  // the other: a birth with a question on it would be a third thing this
+  // project has already declined, which is a natal chart held against the
+  // chart of a moment. See `docs/refusals.md`.
+  'h1.consult': 'Asking an AI to read a Chinese divinatory board',
+  // The section that walks Qi Men charts, named with the art it walks. The
+  // nav label cannot carry it — a header says where things are, not what they
+  // are made of — and this is where somebody reading results needs it.
+  'h1.moments': 'Choosing an hour by Qi Men Dun Jia',
+  'h1.qimen': 'Qi Men Dun Jia — the chart of an instant',
+  'h1.liuren': 'Da Liu Ren — the board of an instant',
+  'h1.taiyi': 'Tai Yi Shen Shu — the board of a year',
+  'h1.qizheng': 'Qi Zheng Si Yu — the seven governors and the four remainders',
+  'h1.ziwei': 'Zi Wei Dou Shu — the twelve seats of a birth',
+  'h1.bazi': 'Ba Zi — a birth as four pillars',
 
   // What a page says it is, to a reader who has not arrived yet.
   //
@@ -890,7 +914,7 @@ export const en = {
   'meta.description.consult':
     'Ask a question, give a birth or name a year. Six Chinese divinatory boards, cast from an ephemeris and handed to an AI as a prompt you can paste.',
   'meta.intro.consult.a':
-    '式盤 shìpán is the diviner\'s board: the round heaven turning on the square earth. Six of them are laid here, each computed from an ephemeris — choose one below.',
+    '式盤 shìpán is the diviner’s board: the round heaven turning on the square earth. Six of them are laid here, each computed from an ephemeris — choose one below.',
   // **The reader does the pasting, and the wording has to make that the
   // reader's own act.** This said «the board travels to ChatGPT» and was
   // wrong in the one way this project cannot afford: it describes a site that
@@ -907,8 +931,13 @@ export const en = {
     'Every hour between two dates cast as a Qi Men Dun Jia chart, and the ones matching what you name listed with the direction each stands in.',
   'meta.intro.moments.a':
     'Every hour between two dates is cast as a 奇門遁甲 qímén dùnjiǎ chart, and the ones answering what you name below are listed, each with its direction.',
+  // It opens on what the page asks for, as every other second paragraph does
+  // and this one did not: it said only what the section declines to do. The
+  // form under it has two legs — the interval and the place, and what to look
+  // for — and the right-hand column stood a quarter the height of the left
+  // because it named one of them.
   'meta.intro.moments.b':
-    'Criteria, not recommendations: what makes an hour worth acting in is a reading, and it is yours.',
+    'Give two dates and a place, and name what you are looking for. Criteria, not recommendations: what makes an hour worth acting in is a reading, and it is yours.',
 
   'meta.title.qimen': 'Qi Men Dun Jia — cast a chart',
   'meta.description.qimen':
@@ -957,6 +986,26 @@ export const en = {
     '八字 bāzì reads a birth as four pillars — year, month, day and hour — and opens each out: the concealed stems, the ten gods, the twelve stages and the images of 納音 nàyīn.',
   'meta.intro.bazi.b':
     'The luck cycles run from a sex, and the five elements arrive counted, zeroes included. A count is not a verdict: strong or weak is a step of method, not taken here.',
+
+  // The line under the two paragraphs, and the only link a section page has.
+  //
+  // **It named the art and now does not, because the heading above it does.**
+  // This was «How Qi Men Dun Jia is computed», written when the heading was
+  // `offscreen` and the link was met with none of the prose around it — a
+  // link that says «here» eight times over eight sections says it eight times
+  // to nobody. What changed is that the name is now the first line of the
+  // page, four lines above this one and inside the same block: a reader
+  // running a screen reader down the links passes the heading on the way, and
+  // a reader looking at the page sees the two together. Said twice in four
+  // lines it stopped being anchor text and became a repetition.
+  //
+  // «this» and not «this board»: the scan lays no board, and the one word
+  // that would cover all eight is the one the heading already supplied.
+  'intro.computed': 'How this is computed',
+  // The consultation is laid on whichever of the six the reader picks, so it
+  // has no name to put in the sentence and no layer to land on — the register
+  // whole is what it is a way into. See `layerOfSection`.
+  'intro.computed.all': 'How each of these boards is computed',
 
   // The notes and the privacy note have no `intro`: both carry a visible
   // heading and their own opening line, and a page that is already prose does
@@ -1046,11 +1095,11 @@ export const en = {
   'form.dayBoundary.zishi': 'at the hour of the Rat 子時, 23:00',
   'form.dayBoundary.midnight': 'at midnight, 00:00',
   'form.method': 'The ju is determined',
-  'form.method.chaibu': 'by thirds of the term — chaibu 拆補',
-  'form.method.zhirun': 'by whole blocks, with the leap — zhirun 置閏',
+  'form.method.chaibu': 'by thirds of the term: chaibu 拆補',
+  'form.method.zhirun': 'by whole blocks, with the leap: zhirun 置閏',
   'form.yuan': 'Under chaibu, the third of the term is counted',
   'form.yuan.term': 'from the instant the term began',
-  'form.yuan.futou': 'from the day, by five-day stretches — futou 符頭',
+  'form.yuan.futou': 'from the day, by five-day stretches: futou 符頭',
   'form.gender': 'Sex — only the direction of the luck cycles depends on it',
   'form.gender.unset': 'not given',
   'form.gender.male': 'male',
@@ -1077,7 +1126,7 @@ export const en = {
   // person's, never which hour is good.
   'form.benming': 'Whose year is to stand there',
   'form.benmingNote':
-    'With a date of birth, only the palaces that person\'s year pillar (本命 běnmìng) stands on are reported — 《遁甲演義》 has a reading consider it before anything else. It narrows what is shown and weighs nothing: what makes a palace worth standing in is what you asked for above.',
+    'With a date of birth, only the palaces that person’s year pillar (本命 běnmìng) stands on are reported: 《遁甲演義》 has a reading consider it before anything else. It narrows what is shown and weighs nothing: what makes a palace worth standing in is what you asked for above.',
   'form.criteriaNote':
     'These are arrangements, not recommendations. The engine reports where each one stands; whether it is a good hour to act is a reading, and it is yours to make.',
   'form.scan': 'Scan the interval',
@@ -1175,12 +1224,6 @@ export const en = {
   'form.copyFallback': 'The text, to copy by hand',
   'form.copyUnread': 'The chart could not be read again.',
 
-  // The section where a chart is posed in order to be taken away. Two errands
-  // that do not overlap: a question asked now, and a chart of a birth read as
-  // a chart of a life. Neither is the other, and a chart of a birth with a
-  // question on it would be a third thing this project has already declined —
-  // comparing a natal chart against the chart of a moment.
-  'consult.title': 'Asking an AI to read a board',
   // The birth, offered beside the question rather than instead of it. What it
   // produces is a 年命: the chart stays the chart of the moment and the birth
   // is looked up inside it, which is what 《遁甲演義》 prescribes and the
@@ -1191,7 +1234,7 @@ export const en = {
   // Why the question is above the moment and not below the chart. The order
   // is the whole of it: the instant of asking is the instant that is cast.
   'consult.birthNote':
-    'The chart is still cast for the instant you ask. What the birth adds is where it falls inside it — 本命 běnmìng, the year you were born in, and 行年 xíngnián, the year you are living.',
+    'The chart is still cast for the instant you ask. What the birth adds is where it falls inside it: 本命 běnmìng, the year you were born in, and 行年 xíngnián, the year you are living.',
   // The page explains itself here and nowhere else, in one line: the nav says
   // which section this is, and the form says nothing about what comes out of
   // it. What was cut from here was the statement of the stance — that lives in
@@ -1290,6 +1333,10 @@ export const en = {
   'footer.disclaimer':
     'This site is a space for inner enquiry and personal enrichment; in no case is it a substitute for professional advice on medical, legal, financial or other matters.',
   'footer.data': 'Astronomical data {ephemeris} · places {geonames} (CC BY 4.0)',
+  // The name arrives from `author.ts` rather than from here: a handle is a
+  // name and a name does not translate, so what a catalog holds is the
+  // sentence around it. `footer.data` names its two sources the same way.
+  'footer.author': 'Written by {author}',
   'footer.licence': 'Source code under AGPL-3.0',
   'footer.privacy': 'Privacy',
   'footer.notes': 'Notes',
@@ -1501,7 +1548,7 @@ export const en = {
     'A consultation takes one instrument, chosen before the press and at no point after it. The boards overlap: a chart of dunjia and a 六壬 liùrén board share the day pillar, the decade, the void branches and five of the eight spirits; the twelve palaces of 七政四餘 are the ring a 六壬 general is seated on; the four pillars are the substrate the others are built from. No transmitted rule combines the three 式 shì. 太乙 overlaps none of them and the rule holds for it anyway, because a model handed a board of a year beside a board of a person reads the year onto the person.',
   'notes.readings.threeKinds.title': 'Three kinds, and the kind decides what you are asked for',
   'notes.readings.threeKinds.body':
-    '卜 bǔ — 奇門 and 六壬 — takes a question, and the board is cast at the instant of the press: the question comes before the casting, or it is a caption on a board that was already there. 命 mìng — 八字, 七政四餘, 紫微斗數 — takes a birth and asks nothing of you. 天 tiān, which is 太乙 alone, takes a year and a matter: no question, no person, no place and no hour.',
+    '卜 bǔ (奇門 and 六壬) takes a question, and the board is cast at the instant of the press: the question comes before the casting, or it is a caption on a board that was already there. 命 mìng (八字, 七政四餘, 紫微斗數) takes a birth and asks nothing of you. 天 tiān, which is 太乙 alone, takes a year and a matter: no question, no person, no place and no hour.',
   'notes.readings.questionStays.title': 'The question never reaches the server',
   'notes.readings.questionStays.body':
     'A prompt endpoint is told that a question exists and never what it is: the prompt ends on the line that introduces one, and your browser appends the text before the whole thing goes to your clipboard. A matter travels the same way. This project talks to no model, holds no key, and sends nothing anywhere.',
@@ -1555,6 +1602,13 @@ export const en = {
     'A rung is not a verdict. It says what could go wrong unnoticed, which is a different thing from how wrong anything is: the frame of the twenty-eight lodges is carried on over-determination and is right to a seventieth of the narrowest question it is ever asked. Nor is a rung a property of the quantity — it moves when the shelf does, in either direction, and a source that only confirms moves it as surely as one that contradicts.',
   'notes.ladder.quoted':
     'The table below is quoted rather than translated. It is a register of citations — the quantities as the engine names them, editions, chapters, the programs each was measured against and the spans they were run over — and this project keeps it in English, the language of its source. What is translated is everything you decide from: the rungs above, what each of them means, and what each layer is.',
+  // The way back to what the register was checked on, under the tables that
+  // name it. Two lines and nine addresses: what each program was run over is
+  // in the rows above, and saying it again here would be the register printed
+  // twice.
+  'notes.references.title': 'The programs it was checked on',
+  'notes.references.lead':
+    'Independent implementations, each somebody else’s work, run over the spans the rows above state. The texts cited beside them are not linked: an address for one is a claim about which edition.',
   'notes.column.quantity': 'Quantity',
   'notes.column.rung': 'Rung',
   'notes.column.standsOn': 'Stands on',
@@ -1592,7 +1646,7 @@ export const en = {
   // it declines to do in code.
   'prompt.heading': 'Reading a Qi Men Dun Jia chart',
   'prompt.role':
-    'A chart is set out below. It was computed by an ephemeris, not by you: read it exactly as it stands, and add nothing to it. No palace, no gate, no star, no configuration that is not written there. If something you need is missing, say it is missing.',
+    'A chart is set out below. It was computed by an ephemeris, not by you: read it exactly as it stands, and add nothing to it. No palace, no gate, no star, no configuration that is not written there. The centre has no gate and no spirit, which is the method and not a gap: a cell marked n/a there is nothing to report. If something else you need is missing, say it is missing.',
   'prompt.language': 'Answer in English.',
   'prompt.yongshen':
     'Which palace bears on the question is the 用神 yòngshén, and it is chosen by the reader for the question asked. Nothing below chooses it, and the software that produced this does not know the question. Say which palace you are reading, and why that one.',
@@ -1611,7 +1665,7 @@ export const en = {
   'prompt.noScore':
     'Do not count 吉 jí against 凶 xiōng and call the result a score for the hour. That arithmetic is not in the tradition and the chart does not license it. Do not rank the palaces, and do not rank the hours.',
   'prompt.noAdvice':
-    'A palace marked 凶 xiōng does not mean "avoid this time". A fortune is a property of the arrangement — 門迫 ménpò is oppression, and the sources name it and weigh it in one breath — and not a verdict about the person, the day, or the undertaking.',
+    'A palace marked 凶 xiōng does not mean "avoid this time". A fortune is a property of the arrangement (門迫 ménpò is oppression, and the sources name it and weigh it in one breath), and not a verdict about the person, the day, or the undertaking.',
   'prompt.yours':
     'The reading is yours, and it must be given as yours. What the software did was lay out the plates and name what it found; everything past that is you, and the person asking is entitled to know which is which.',
   // The reading rule of the whole project, said to the one surface that
@@ -1641,7 +1695,7 @@ export const en = {
   // frame this replaced could offer a warning and nothing else; this can
   // offer where two pairs fell, and still refuse the mapping.
   'prompt.nianming':
-    'The transcript carries a 年命 niánmìng: the year pillar of the person asking (本命 běnmìng) and, where it was given, the year they are living (行年 xíngnián), each looked up inside this chart. **It is who is asking, and not a second reading.** Do not give it a section of its own, and do not list its palace, star, gate, spirit and image back to the reader — the tables above already say all of that. Use it where it bears on the question: where the person stands in relation to the palace you chose for the matter, whether the two are the same palace, whether one generates or controls the other, whether the person stands in the palace the matter has to pass through. That relation is what the pair adds; everything else about it is already on the board. 遁甲演義 dùnjiǎ yǎnyì, the treatise this comes from, has a reading weigh 本命 and 行年 before anything else and looks for the person\'s year to ride a palace where a good star and a good gate stand in strength — that is the tradition\'s criterion, said as theirs, and it is a thing to weigh and not a score to compute. This is not a chart of a birth and no life is to be read from it: nothing here says which palace stands for which part of a life, and none is implied — that mapping is where the schools diverge most and where most of what circulates is one lineage\'s teaching material. If you go further, say plainly that the step is yours.',
+    'The transcript carries a 年命 niánmìng: the year pillar of the person asking (本命 běnmìng) and, where it was given, the year they are living (行年 xíngnián), each looked up inside this chart. **It is who is asking, and not a second reading.** Do not give it a section of its own, and do not list its palace, star, gate, spirit and image back to the reader — the tables above already say all of that. Use it where it bears on the question: where the person stands in relation to the palace you chose for the matter, whether the two are the same palace, whether one generates or controls the other, whether the person stands in the palace the matter has to pass through. That relation is what the pair adds; everything else about it is already on the board. 遁甲演義 dùnjiǎ yǎnyì, the treatise this comes from, has a reading weigh 本命 and 行年 before anything else and looks for the person’s year to ride a palace where a good star and a good gate stand in strength — that is the tradition’s criterion, said as theirs, and it is a thing to weigh and not a score to compute. This is not a chart of a birth and no life is to be read from it: nothing here says which palace stands for which part of a life, and none is implied — that mapping is where the schools diverge most and where most of what circulates is one lineage’s teaching material. If you go further, say plainly that the step is yours.',
   // The other 式, and its own conditions. The instructions it shares with the
   // chart — the language, asking before reading, what may be asked for, whose
   // the reading is, the names, the disclaimer — are the same keys; what is
@@ -1655,12 +1709,12 @@ export const en = {
   'prompt.liuren.drawn':
     'The three transmissions 三傳 sānchuán were drawn by procedure — the nine rules 九宗門 jiǔzōngmén, applied in their stated order to the four courses — and the rule that drew them is named in the transcript. Do not re-derive them, do not reorder them, and do not substitute a rule you would have applied instead. They are data, exactly as the plate is.',
   'prompt.liuren.yongshen':
-    'That the transmissions arrive drawn does not mean the board has read itself. Which of the four courses 四課 sìkè bears on what was asked is the reader\'s choice, and the software that produced this does not know the question. The first two courses stand on the day stem, which is the person asking; the third and fourth stand on the day branch, which is the matter or the other party. Say which you are reading from, and why that one.',
+    'That the transmissions arrive drawn does not mean the board has read itself. Which of the four courses 四課 sìkè bears on what was asked is the reader’s choice, and the software that produced this does not know the question. The first two courses stand on the day stem, which is the person asking; the third and fourth stand on the day branch, which is the matter or the other party. Say which you are reading from, and why that one.',
   'prompt.liuren.noScore':
     'Do not weigh the twelve generals against one another and call the result a verdict on the hour. Do not rank the three transmissions — they are a beginning, a middle and an end, in that order because the procedure produced them in it, and not a first, second and third place. Do not rank the hours.',
   // The 課體 are `Pattern` by another name, and the same rule governs them.
   'prompt.liuren.keti':
-    'The named course 課體 kètǐ — 元首 yuánshǒu, 重審 zhòngshěn, 涉害 shèhài and the rest — is a name for the shape the board fell into, in the way a configuration of the nine palaces is. It is not a verdict on the matter and not a fortune for the person. Where the transcript gives a name, report it as a name.',
+    'The named course 課體 kètǐ (元首 yuánshǒu, 重審 zhòngshěn, 涉害 shèhài and the rest) is a name for the shape the board fell into, in the way a configuration of the nine palaces is. It is not a verdict on the matter and not a fortune for the person. Where the transcript gives a name, report it as a name.',
   'prompt.liuren.unverified':
     'This board was drawn by 返吟 fǎnyín, the one rule here no independent implementation covers. It is not unchecked: 《六壬大全》 names every day this rule can draw a board on and every opening it gives, and this engine returns those and no others. Weigh it as a rule checked against a text rather than against something that runs.',
   'prompt.liuren.board': 'The board',
@@ -1674,7 +1728,7 @@ export const en = {
   // a place to look, and a list of bounds with nothing above it reads as an
   // instruction to withhold.
   'prompt.ming.configuration':
-    'A reading is not the transcript said again in sentences, and its subject is not the pillars: it is the person they were laid on. Start from who they are — how this arrangement inclines them to feel, what they need in order to stand in the world, how they defend themselves when exposed, what they desire and what they fear to desire, where they look for a sense that exceeds them — and let what is printed below arrive as evidence, after the sentence it supports. The meanings are transmitted: the sources say what it is to meet a given god in a given pillar, for a branch to be void, for two bodies to gather in one palace, and reading them onto this person is the reading. Where you take a step this transcript does not carry — a school\'s method, a meaning not printed here — say that you are taking it and whose it is. **A chart wants nothing**: the one who wants is the person it was laid on.',
+    'A reading is not the transcript said again in sentences, and its subject is not the pillars: it is the person they were laid on. Start from who they are — how this arrangement inclines them to feel, what they need in order to stand in the world, how they defend themselves when exposed, what they desire and what they fear to desire, where they look for a sense that exceeds them — and let what is printed below arrive as evidence, after the sentence it supports. The meanings are transmitted: the sources say what it is to meet a given god in a given pillar, for a branch to be void, for two bodies to gather in one palace, and reading them onto this person is the reading. Where you take a step this transcript does not carry — a school’s method, a meaning not printed here — say that you are taking it and whose it is. **A chart wants nothing**: the one who wants is the person it was laid on.',
   // The shape of the reply, said before it is asked for: five steps in order,
   // because a model that has read every rule below still has not been told
   // what a reading looks like.
@@ -1724,7 +1778,7 @@ export const en = {
   // cycle words and not sentences, the practicable is allowed where it rests
   // on the reader, and the professions the disclaimer names stay out.
   'prompt.ming.limits':
-    'A name the tradition gives a phase — 死 sǐ, 囚 qiú, 絕 jué — is its word for a stage in a cycle, in the way winter is a word for a stage in a year, and not a sentence passed on a life. Where a source\'s own verdict is printed, report it as that source\'s and say whose it is. What may be offered is practicable and rests on what depends on the person reading; what may not be offered at all: predictions with dates on them, medical, psychiatric, legal or financial counsel, lucky days or numbers, and any pronouncement on games of chance. If asked whether any of this is true, answer honestly: it has no scientific standing — the computation is astronomically exact, and the reading is a symbolic language.',
+    'A name the tradition gives a phase (死 sǐ, 囚 qiú, 絕 jué) is its word for a stage in a cycle, in the way winter is a word for a stage in a year, and not a sentence passed on a life. Where a source’s own verdict is printed, report it as that source’s and say whose it is. What may be offered is practicable and rests on what depends on the person reading; what may not be offered at all: predictions with dates on them, medical, psychiatric, legal or financial counsel, lucky days or numbers, and any pronouncement on games of chance. If asked whether any of this is true, answer honestly: it has no scientific standing — the computation is astronomically exact, and the reading is a symbolic language.',
 
   'prompt.ziwei.heading': 'Reading a Zi Wei Dou Shu board',
   // The rule this board needs and the other two 命 boards never did. It leads
@@ -1735,22 +1789,22 @@ export const en = {
   // qizheng prompt carries, and it bites harder here because these names are
   // blunter.
   'prompt.ziwei.houses':
-    'The twelve seats carry the names 《紫微斗數全書》 gives them — 命宮, 兄弟, 妻妾, 子女, 財帛, 疾厄, 遷移, 奴僕, 官祿, 田宅, 福德, 父母. **A name is not an assignment.** That a seat is called 妻妾 does not make what stands there a statement about somebody\'s marriage, and the older names are blunter than a modern reader expects: read 妻妾 as the seat of the closest tie, 奴僕 as the seat of those one works with or through, 官祿 as the seat of standing and work. Which theme you read from which seat is your choice: say it as you make it.',
+    'The twelve seats carry the names 《紫微斗數全書》 gives them: 命宮, 兄弟, 妻妾, 子女, 財帛, 疾厄, 遷移, 奴僕, 官祿, 田宅, 福德, 父母. **A name is not an assignment.** That a seat is called 妻妾 does not make what stands there a statement about somebody’s marriage, and the older names are blunter than a modern reader expects: read 妻妾 as the seat of the closest tie, 奴僕 as the seat of those one works with or through, 官祿 as the seat of standing and work. Which theme you read from which seat is your choice: say it as you make it.',
   // The grades are the text's own weighing, and they are still not a score.
   'prompt.ziwei.brightness':
-    'Where a star carries a grade — 廟, 旺, 得地, 利益, 平和, 不得地, 落陷 — the grade is the book\'s own, and it says how well that star sits on that branch. It is not a score: do not add grades up, do not average them, do not rank the seats by them, and do not turn 落陷 into a misfortune or 廟 into a promise. Twenty-one stars are graded and the rest are not; an ungraded star is one the book says nothing about, not a weak one.',
+    'Where a star carries a grade (廟, 旺, 得地, 利益, 平和, 不得地, 落陷), the grade is the book’s own, and it says how well that star sits on that branch. It is not a score: do not add grades up, do not average them, do not rank the seats by them, and do not turn 落陷 into a misfortune or 廟 into a promise. Twenty-one stars are graded and the rest are not; an ungraded star is one the book says nothing about, not a weak one.',
   'prompt.ziwei.sihua':
-    'The 四化 — 化祿, 化權, 化科, 化忌 — are worked by the stem of the birth year on four of the stars already seated. This board uses the table 《全書》 prints, which parts from later ones at 戊, 庚 and 壬; if you know another table, this is not it, and the divergence is the book\'s rather than an error. 化忌 is not a curse and 化祿 is not a reward.',
+    'The 四化 (化祿, 化權, 化科, 化忌) are worked by the stem of the birth year on four of the stars already seated. This board uses the table 《全書》 prints, which parts from later ones at 戊, 庚 and 壬; if you know another table, this is not it, and the divergence is the book’s rather than an error. 化忌 is not a curse and 化祿 is not a reward.',
   // The one-board rule, sharpened for the board it overlaps most.
   'prompt.ziwei.substrate':
     'This board and a 八字 are built from the same birth, and the year stem that carries the 四化, 祿存, 天魁 and 天鉞 here is the same year stem that carries the gods there. If you have both, you have one fact twice and not two witnesses. You have one board here; read it.',
   'prompt.ziwei.limits':
-    'Where the 大限 are shown, each seat holds a decade of years and the run opens in the seat beside the 命宮, which is this book\'s reading and not every school\'s. The 小限 shows the age at which it first reaches a seat, returning every twelfth year. These locate a stretch of life on the board. They do not date an event, and nothing here says what will happen in one.',
+    'Where the 大限 are shown, each seat holds a decade of years and the run opens in the seat beside the 命宮, which is this book’s reading and not every school’s. The 小限 shows the age at which it first reaches a seat, returning every twelfth year. These locate a stretch of life on the board. They do not date an event, and nothing here says what will happen in one.',
   'prompt.ziwei.board': 'The board',
   'prompt.ziwei.opening':
     'Open by situating the birth in a sentence or two of your own words — when and where, what the bureau is and what seat the life falls on — so the reader knows what is being read before it is read.',
   'prompt.ziwei.read':
-    'What to look at, and it is a list to draw on rather than to walk: which stars sit on the 命宮 and on the 身宮, and whether the two share a seat; where 紫微 and 天府 stand and how far apart; seats that are crowded and seats that are empty, an empty seat being read through the one opposite it; where the four transformations fell; where the graded stars stand well and poorly; where 祿存 sits with 擎羊 and 陀羅 about it. What any of this means toward a life is not shipped with the board: where you draw on a tradition, name it as that tradition\'s.',
+    'What to look at, and it is a list to draw on rather than to walk: which stars sit on the 命宮 and on the 身宮, and whether the two share a seat; where 紫微 and 天府 stand and how far apart; seats that are crowded and seats that are empty, an empty seat being read through the one opposite it; where the four transformations fell; where the graded stars stand well and poorly; where 祿存 sits with 擎羊 and 陀羅 about it. What any of this means toward a life is not shipped with the board: where you draw on a tradition, name it as that tradition’s.',
 
   'prompt.qizheng.heading': 'Reading a Qi Zheng Si Yu board',
   'prompt.qizheng.role':
@@ -1767,9 +1821,9 @@ export const en = {
   // document: this board's weakest quantity and its unverifiable frame are
   // both things a model will otherwise recite as fact.
   'prompt.qizheng.direction':
-    'How the twelve seats are numbered rests on weaker ground than anything else here, and you should say so if you use them. No consulted source states which direction the counting runs in terms another could be held against. It is carried on one source and three derivations: that the twelve are the Hellenistic houses in the Hellenistic order, that they are not 紫微斗數 zǐwēidǒushù\'s twelve, that only one direction puts 田宅 tiánzhái where the sky is deepest and 官祿 guānlù where it is highest, and that the separately transmitted 運限 yùnxiàn walk the other way. That is an argument, not a reference implementation. Say it where you use the seats and not before you begin: it is a bound on a quantity, and a bound recited as an opening section is a preamble the reader skips.',
+    'How the twelve seats are numbered rests on weaker ground than anything else here, and you should say so if you use them. No consulted source states which direction the counting runs in terms another could be held against. It is carried on one source and three derivations: that the twelve are the Hellenistic houses in the Hellenistic order, that they are not 紫微斗數 zǐwēidǒushù’s twelve, that only one direction puts 田宅 tiánzhái where the sky is deepest and 官祿 guānlù where it is highest, and that the separately transmitted 運限 yùnxiàn walk the other way. That is an argument, not a reference implementation. Say it where you use the seats and not before you begin: it is a bound on a quantity, and a bound recited as an opening section is a preamble the reader skips.',
   'prompt.qizheng.frame':
-    'Which 宿 xiù a body is in, and at what degree, is measured from the determinative stars 距星 jùxīng themselves, placed at the instant of this board. No 曆 lì\'s table is copied and no epoch is assumed, which is what makes the frame right in the eleventh century and the twenty-third alike — and it also means there is nothing published to check it against. It stands on over-determination: twenty-eight widths each with a transmitted shape, a ring that must close on 360°, and 觜 zī as a one-degree needle only the right pair of stars threads. Weigh it as that, and not as a table somebody printed — and weigh it where a degree is doing work in what you write, not in a section of its own before the reading starts.',
+    'Which 宿 xiù a body is in, and at what degree, is measured from the determinative stars 距星 jùxīng themselves, placed at the instant of this board. No 曆 lì’s table is copied and no epoch is assumed, which is what makes the frame right in the eleventh century and the twenty-third alike — and it also means there is nothing published to check it against. It stands on over-determination: twenty-eight widths each with a transmitted shape, a ring that must close on 360°, and 觜 zī as a one-degree needle only the right pair of stars threads. Weigh it as that, and not as a table somebody printed — and weigh it where a degree is doing work in what you write, not in a section of its own before the reading starts.',
   'prompt.qizheng.board': 'The board',
   // In the model's own words, situating and nothing else: the frame a reading
   // needs is where and when, and anything more is preamble.
@@ -1787,11 +1841,11 @@ export const en = {
   // it is chosen, and this engine does not choose. What changed is the verb —
   // the choice is commissioned rather than tolerated, and it travels signed.
   'prompt.bazi.yongshen':
-    'What is **not** below is the favourable element — 用神 yòngshén, 喜用神 xǐyòngshén — and no structure 格局 géjú is named either: the schools divide on how they are chosen, and this engine does not choose. The choice is yours to make, and where a theme needs it — how what is missing is compensated is this choice under another name — make it: say which element you take, why, and by whose method, as a step of yours and not as something the pillars handed you.',
+    'What is **not** below is the favourable element (用神 yòngshén, 喜用神 xǐyòngshén), and no structure 格局 géjú is named either: the schools divide on how they are chosen, and this engine does not choose. The choice is yours to make, and where a theme needs it — how what is missing is compensated is this choice under another name — make it: say which element you take, why, and by whose method, as a step of yours and not as something the pillars handed you.',
   'prompt.bazi.gods':
-    'The ten gods 十神 shíshén printed against each pillar name a **relation to the day master**: 正官 zhèngguān is the stem that controls it in the opposite polarity, 食神 shíshén the one it produces in the same. The tradition also reads each of them toward the matters of a life, and those readings are a school\'s rather than this transcript\'s: where a theme leans on one, bring the meaning as a teaching you are naming — say whose — and not as something printed here.',
+    'The ten gods 十神 shíshén printed against each pillar name a **relation to the day master**: 正官 zhèngguān is the stem that controls it in the opposite polarity, 食神 shíshén the one it produces in the same. The tradition also reads each of them toward the matters of a life, and those readings are a school’s rather than this transcript’s: where a theme leans on one, bring the meaning as a teaching you are naming — say whose — and not as something printed here.',
   'prompt.bazi.stages':
-    'The stage 十二長生 shí\'èrchángshēng against each pillar — 長生 chángshēng, 帝旺 dìwàng, 死 sǐ, 墓 mù and the rest — is a position in a twelve-part cycle, named after the phases of a life because that is the metaphor the cycle was built on. It is not a statement about the person\'s life, their health, or its length. 旺 wàng is not good news and 死 sǐ is not bad news.',
+    'The stage 十二長生 shí’èrchángshēng against each pillar (長生 chángshēng, 帝旺 dìwàng, 死 sǐ, 墓 mù and the rest) is a position in a twelve-part cycle, named after the phases of a life because that is the metaphor the cycle was built on. It is not a statement about the person’s life, their health, or its length. 旺 wàng is not good news and 死 sǐ is not bad news.',
   'prompt.bazi.luck':
     'The decade cycles 大運 dàyùn are the sequence of pillars the life walks into and the age each begins at, computed from the month pillar and the direction the count runs. They are a timeline **of pillars** and not a timeline of events: read them as direction — which element a decade brings and how it stands to what the pillars already carry, a movement to work with and never a timetable. Do not date events to them — not an illness, not a marriage, not a windfall, not a loss — and promise no decade to anybody as the good one or the bad one.',
   // The count is printed, so the one thing left to forbid is redoing it — and
@@ -1805,7 +1859,7 @@ export const en = {
   // In the model's own words, situating and nothing else: the frame a reading
   // needs is where and when, and anything more is preamble.
   'prompt.bazi.opening':
-    'Then situate the birth, in a sentence or two of your own: what is in front of them — a birth written in a calendar, its year, its month, its day and its hour as eight characters 八字 bāzì — and when it was laid. Situate and move on: no paragraph on what the art is, what fate is, or what you are about to do.',
+    'Then situate the birth, in a sentence or two of your own: what is in front of them (a birth written in a calendar, its year, its month, its day and its hour as eight characters 八字 bāzì), and when it was laid. Situate and move on: no paragraph on what the art is, what fate is, or what you are about to do.',
   // The inspection list, working outward from the day master.
   'prompt.bazi.read':
     'Where to look for all of that — the order you look, never the order you write: work outward from the day master; which of the ten gods stand in the four pillars and which are nowhere in them; what the branches conceal against what the stems show; which branches are void and whether anything of the birth falls in one; where the day master finds itself in the cycle of twelve at each pillar; the four images 納音 nàyīn; the count of the five elements; and the decades, where they are printed, as the direction the pillars walk. Say what the tradition holds each thing you use to be, and use it where it carries a theme.',
@@ -1817,11 +1871,11 @@ export const en = {
   // doctrine — which state falls, which year an army breaks — stays out.
   'prompt.taiyi.heading': 'Reading a Tai Yi board',
   'prompt.taiyi.role':
-    'A 太乙神數 tàiyǐshénshù board is set out below, in the register of the year — 年計 niánjì. It places 太乙 tàiyǐ itself, which walks eight palaces and never the centre; the two eyes, 文昌 wénchāng below and 始擊 shǐjī above; 計神 jìshén and 合神 héshén; the two counts and the generals they seat; the gate on duty; and the longer circuits. It was computed from the 太乙金鏡式經 tàiyǐ jīnjìngshìjīng (王希明 Wáng Xīmíng, 唐 Táng, c. 730), not by you: read it exactly as it stands and add nothing. No position, no count, no condition that is not written there. If something you need is missing, say it is missing.',
+    'A 太乙神數 tàiyǐshénshù board is set out below, in the register of the year: 年計 niánjì. It places 太乙 tàiyǐ itself, which walks eight palaces and never the centre; the two eyes, 文昌 wénchāng below and 始擊 shǐjī above; 計神 jìshén and 合神 héshén; the two counts and the generals they seat; the gate on duty; and the longer circuits. It was computed from the 太乙金鏡式經 tàiyǐ jīnjìngshìjīng (王希明 Wáng Xīmíng, 唐 Táng, c. 730), not by you: read it exactly as it stands and add nothing. No position, no count, no condition that is not written there. If something you need is missing, say it is missing.',
   // The subject first, as it is first under both boards of 命: a list of
   // bounds with nothing above it reads as an instruction to say nothing.
   'prompt.taiyi.subject':
-    'What is in front of you is **a year**, not a person and not a question. 太乙主天 tàiyǐ zhǔ tiān: this board is laid on the year the world is standing in, and nobody\'s birth, hour or place went into it — it is a pure function of a number. So there is no querent here and no native. Read the figure: say how this year stands, what it is organised around, where it is even and where it is under strain. The meanings are transmitted, and the sources say what it is for 太乙 to stand in a given palace, for an eye to fall where it falls, for a count to be a given number. Reading those onto this year is the reading.',
+    'What is in front of you is **a year**, not a person and not a question. 太乙主天 tàiyǐ zhǔ tiān: this board is laid on the year the world is standing in, and nobody’s birth, hour or place went into it — it is a pure function of a number. So there is no querent here and no native. Read the figure: say how this year stands, what it is organised around, where it is even and where it is under strain. The meanings are transmitted, and the sources say what it is for 太乙 to stand in a given palace, for an eye to fall where it falls, for a count to be a given number. Reading those onto this year is the reading.',
   // The 用神 rule, arriving on the board that needs it most. The engine
   // assigns neither party and will not; the model does, and says so.
   'prompt.taiyi.hostguest':
@@ -1832,7 +1886,7 @@ export const en = {
   // matter at the end of the message, and pointing at something that is not
   // there is exactly the defect this pair was split to fix.
   'prompt.taiyi.hostguestNoMatter':
-    'Who is 主 zhǔ, the host, and who is 客 kè, the guest, is **not** below and never will be: identifying the two parties is the first interpretive act this system asks for, and it is chosen for the matter being looked at, exactly as a 用神 yòngshén is chosen for a question. **No matter was given here**, so there is nothing to choose it for: do not invent a pair in order to have one. Read the two counts as two quantities of one configuration, say plainly that the assignment is the reader\'s and has not been made, and say what each way round would mean for the figure. 主算 zhǔsuàn and 客算 kèsuàn are numbers from a counting procedure either way.',
+    'Who is 主 zhǔ, the host, and who is 客 kè, the guest, is **not** below and never will be: identifying the two parties is the first interpretive act this system asks for, and it is chosen for the matter being looked at, exactly as a 用神 yòngshén is chosen for a question. **No matter was given here**, so there is nothing to choose it for: do not invent a pair in order to have one. Read the two counts as two quantities of one configuration, say plainly that the assignment is the reader’s and has not been made, and say what each way round would mean for the figure. 主算 zhǔsuàn and 客算 kèsuàn are numbers from a counting procedure either way.',
   // The matter, which is what turned this prompt from a caption into a reading.
   // It is **not** a question and the difference is load-bearing: a question
   // asks what will happen and puts the person asking inside a figure they are
@@ -1846,17 +1900,17 @@ export const en = {
   // among the instructions rather than beside them: the rules above and below
   // tell a model how to read positions it would otherwise read one seat out.
   'prompt.taiyi.palaces':
-    'The nine palaces of this board are **not numbered as a Qi Men chart numbers them**. 卷二 juàn èr says 九宮皆差一位 jiǔgōng jiē chā yī wèi — every number has moved one seat so that 一 yī reaches 乾 qián — so 一宮 yīgōng is the north-west here and the north there, and all eight are one seat off the 洛書 luòshū. Read the numbers as this board\'s own. If you know the Luoshu arrangement, do not carry it across, and do not "correct" anything below to it.',
+    'The nine palaces of this board are **not numbered as a Qi Men chart numbers them**. 卷二 juàn èr says 九宮皆差一位 jiǔgōng jiē chā yī wèi (every number has moved one seat so that 一 yī reaches 乾 qián), so 一宮 yīgōng is the north-west here and the north there, and all eight are one seat off the 洛書 luòshū. Read the numbers as this board’s own. If you know the Luoshu arrangement, do not carry it across, and do not "correct" anything below to it.',
   'prompt.taiyi.counts':
     '主算 zhǔsuàn and 客算 kèsuàn are the output of a counting procedure — seats told off around the ring from the two eyes — and not scores of good and bad. A larger count is not a better one. Do not add them, do not subtract one from the other and call the difference an outcome, and do not rank the palaces or the sixteen seats. What the counts do carry is the named conditions below, which is where the sources put the weight.',
   'prompt.taiyi.conditions':
-    'The conditions named below — 掩 yǎn, 迫 pò, 囚 qiú, 擊 jī, 關 guān, 格 gé, 對 duì — are attributes of the configuration in the words of 卷三 juàn sān, each with the fortune that chapter gives it. They belong to the figure and not to anybody\'s situation, and the fortune is the source\'s and not a verdict of yours. **Each is printed with the chapter\'s own sentence saying what it is** — read that, use it, and leave it there. What the chapter also says will *befall the realm* when a condition falls is not printed, deliberately: it is the dynastic layer, and its absence is not an invitation to reconstruct it.',
+    'The conditions named below (掩 yǎn, 迫 pò, 囚 qiú, 擊 jī, 關 guān, 格 gé, 對 duì) are attributes of the configuration in the words of 卷三 juàn sān, each with the fortune that chapter gives it. They belong to the figure and not to anybody’s situation, and the fortune is the source’s and not a verdict of yours. **Each is printed with the chapter’s own sentence saying what it is** — read that, use it, and leave it there. What the chapter also says will *befall the realm* when a condition falls is not printed, deliberately: it is the dynastic layer, and its absence is not an invitation to reconstruct it.',
   // The load-bearing refusal, and the reason this board waited for a designed
   // register rather than an adapted one.
   'prompt.taiyi.noDoctrine':
     'The received readings of this board are **dynastic** — which state falls, which year an army breaks, which reign changes hands — and they are not here and must not be supplied. Do not predict events, and do not date anything: no war, no election, no epidemic, no famine, no market, no disaster, no fate of any country, company or public person. An epochal reading is falsifiable by nobody and travels as commentary on real events, which makes it the most dangerous thing this board could be turned into. Describe the configuration; say nothing about what will happen in it.',
   'prompt.taiyi.notPersonal':
-    'And it is not the reader\'s year. Nothing on this board is about the person reading it — they are not in it, no seat here stands for a part of their life, and there is no place to put them. Do not turn it into a forecast for them, do not tell them what the year holds for their work, their health, their money or their relations, and do not offer it as a personal chart under another name. If they want a board laid on themselves, that is a different instrument. **This holds when the matter they named is their own**, which it often will be — «the company I work for», «the town I live in». Read the matter, never the person inside it: the figure describes how the year stands around a thing, and the reader standing in that thing does not put them on the board.',
+    'And it is not the reader’s year. Nothing on this board is about the person reading it — they are not in it, no seat here stands for a part of their life, and there is no place to put them. Do not turn it into a forecast for them, do not tell them what the year holds for their work, their health, their money or their relations, and do not offer it as a personal chart under another name. If they want a board laid on themselves, that is a different instrument. **This holds when the matter they named is their own**, which it often will be — «the company I work for», «the town I live in». Read the matter, never the person inside it: the figure describes how the year stands around a thing, and the reader standing in that thing does not put them on the board.',
   // A sibling of `prompt.ming.register` rather than a reuse: that one is
   // written at a person throughout, and there is no person here.
   'prompt.taiyi.register':
@@ -1877,9 +1931,9 @@ export const en = {
   // under a heading.
   'prompt.taiyi.about': 'What is being looked at this year is:',
   'prompt.taiyi.sections':
-    'Then the figure in short sections, each under a title that names a part of it — "Where Tai Yi stands this year", "The two eyes" — with continuous prose inside. What to traverse: the palace 太乙 tàiyǐ occupies and how far through its three years it is; the two eyes, 文昌 wénchāng and 始擊 shǐjī, and what the sources read from where each fell; the two counts under the assignment you declared, and the balance or imbalance between them; the conditions the board named, each said as what it is; and the longer circuits — the 三基 sānjī, the 五福 wǔfú, the 大遊 dàyóu, the gate on duty — which move on scales of decades and are what places this year inside a longer figure. Each section says what the configuration **is**. None of them says what will happen.',
+    'Then the figure in short sections, each under a title that names a part of it — "Where Tai Yi stands this year", "The two eyes" — with continuous prose inside. What to traverse: the palace 太乙 tàiyǐ occupies and how far through its three years it is; the two eyes, 文昌 wénchāng and 始擊 shǐjī, and what the sources read from where each fell; the two counts under the assignment you declared, and the balance or imbalance between them; the conditions the board named, each said as what it is; and the longer circuits (the 三基 sānjī, the 五福 wǔfú, the 大遊 dàyóu, the gate on duty) which move on scales of decades and are what places this year inside a longer figure. Each section says what the configuration **is**. None of them says what will happen.',
   'prompt.taiyi.read':
-    'Where to look for all of that — the order you look, never the order you write: the palace 太乙 tàiyǐ stands in and the year it is at within it; the 局 jú and the 紀 jì the count has reached; where the two eyes fell and what stands with them; the two counts and the generals each seats; every condition the board names; the 計神 jìshén and 合神 héshén; and the longer circuits with the year each is at in its own period. What a **position** means — a palace, a seat, an eye where it fell — is not printed here and this engine ships none of it: where a section draws on the tradition for one, name what you are drawing on and, where it is a school\'s reading rather than the text\'s, say whose. The **conditions** are the exception and the only one: each is printed with the sentence 卷三 juàn sān uses to say what it is, so there use the words that are there and do not reach past them.',
+    'Where to look for all of that — the order you look, never the order you write: the palace 太乙 tàiyǐ stands in and the year it is at within it; the 局 jú and the 紀 jì the count has reached; where the two eyes fell and what stands with them; the two counts and the generals each seats; every condition the board names; the 計神 jìshén and 合神 héshén; and the longer circuits with the year each is at in its own period. What a **position** means — a palace, a seat, an eye where it fell — is not printed here and this engine ships none of it: where a section draws on the tradition for one, name what you are drawing on and, where it is a school’s reading rather than the text’s, say whose. The **conditions** are the exception and the only one: each is printed with the sentence 卷三 juàn sān uses to say what it is, so there use the words that are there and do not reach past them.',
   'prompt.taiyi.invite':
     'End by opening rather than by closing. Say briefly what could be looked at next and what you would need to be told in order to look at it — a part of the figure you set aside, the host and guest assignment you made and what would change it, a circuit you declined to read. Do not ask more than two questions, and do not put questions in place of the reading. This is an invitation, not a form.',
 
@@ -1954,6 +2008,24 @@ export const en = {
   'form.guiren.chou': '甲 with 戊 and 庚, at 丑 and 未',
   'form.guiren.wei': '甲 apart, at 未 and 丑',
   'form.guiren.note': 'It moves the twelve generals and leaves the three transmissions alone.',
+  // The mark in a cell of a computed table where the board has nothing to put.
+  //
+  // **«n/a» and not a dash, because a dash beside hanzi is read as 一.** The
+  // argument is `catalogs.test.ts`'s: 一 is a character this engine prints,
+  // and in the text transcript a lone `—` sits three spaces from 天禽 in a row
+  // of them. That rule is bounded to the catalogs and cannot reach a table
+  // assembled in `format.ts`, so the mark is changed here instead.
+  //
+  // **It is read as *not applicable*, which is what these cells are.** The
+  // centre of a Qi Men chart has no gate and no spirit by rule, not by
+  // accident — `dunjia/palaces.ts` states it — and the same is true of a day
+  // pillar with no ten-god and a month god with no seat. Nothing is missing
+  // in any of them. `prompt.role` says the centre has none so that a model
+  // told to report what is missing does not report these.
+  //
+  // Only cells. A form's summary bar before anybody has typed a date keeps
+  // its dash: nothing is unavailable there, it has not been asked for yet.
+  'cli.none': 'n/a',
   'cli.column.general': 'general',
   // 七政四餘. `lodge` and `ci` head degrees, so both say what the degrees are
   // measured from: one from a star, the other from the edge of a palace.
@@ -2013,10 +2085,10 @@ export const en = {
   'cli.field.lunarDate': 'the lunar date',
   // Said once, where a reader can weigh it. See `docs/history/` phase 23.
   'cli.value.ziweiSource':
-    'placed by 《紫微斗數全書》 卷二 throughout — the fourteen-star transmission, and not the eighteen-star 十八飛星 line that 《全集》 and 《捷覽》 carry; where its tables part from the modern ones — 火星 and 鈴星 off the hour, 魁鉞 at 丙丁辛, 解神 off the year, 壬 giving 科 to 天府 — this book is followed and the divergence is recorded',
+    'placed by 《紫微斗數全書》 卷二 throughout: the fourteen-star transmission, and not the eighteen-star 十八飛星 line that 《全集》 and 《捷覽》 carry; where its tables part from the modern ones (火星 and 鈴星 off the hour, 魁鉞 at 丙丁辛, 解神 off the year, 壬 giving 科 to 天府), this book is followed and the divergence is recorded',
   'form.luohou': 'Which node is 羅睺',
-  'form.luohou.descending': 'the descending node — the astrologers\u2019 law',
-  'form.luohou.ascending': 'the ascending node — 湯若望 and the 時憲曆',
+  'form.luohou.descending': 'the descending node: the astrologers’ law',
+  'form.luohou.ascending': 'the ascending node: 湯若望 and the 時憲曆',
   'form.copyStars': 'Copy the board',
   'form.luohou.note':
     'It swaps the two names and moves nothing else: the two nodes are the ends of one line, half a turn apart. The default is what the astrologers kept, which is the reverse of the Indian convention.',
@@ -2133,7 +2205,7 @@ export const en = {
   'cli.value.leapTerm': 'intercalated {term}',
 
   'cli.note.yuanFutou':
-    'The yuan is read from the day\'s place in the fifteen-day futou cycle, not from the instant the term began. It is a divergence inside chaibu, and it moves the ju on most days.',
+    'The yuan is read from the day’s place in the fifteen-day futou cycle, not from the instant the term began. It is a divergence inside chaibu, and it moves the ju on most days.',
   'cli.note.method':
     'Cast by the {method} method. Other schools lay out other charts from the same instant.',
 
@@ -2166,7 +2238,7 @@ export const en = {
   // other seven it is not a design decision about the board but a flag that is
   // simply not theirs — said plainly, and pointed at the one that takes it.
   'cli.error.notAbout':
-    'The command "{command}" does not take "--about". A matter is the field of view a 太乙 board of a year is read inside — what is being looked at, which is what says who is 主 and who is 客 — and `taiyi` is the command that lays that board. A board of 卜 is cast for a question ("--ask") instead, and a board of 命 is laid on a person and asked nothing.',
+    'The command "{command}" does not take "--about". A matter is the field of view a 太乙 board of a year is read inside (what is being looked at, which is what says who is 主 and who is 客), and `taiyi` is the command that lays that board. A board of 卜 is cast for a question ("--ask") instead, and a board of 命 is laid on a person and asked nothing.',
   // The plain refusal, for a command where the flag was never a question about
   // the board: `terms` prints a table of the sky and `scan` searches hours.
   'cli.error.notCarried': 'The command "{command}" does not take "{option}".',

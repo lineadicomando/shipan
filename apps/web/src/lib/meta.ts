@@ -55,6 +55,13 @@ export const SITE = 'shipan 式盤';
  * gloss, and a title with two of them reads as one long phrase instead of a
  * page and the site it is on. The footer separates its links with the same
  * mark.
+ *
+ * That argument is about the English titles and holds for them. In Italian
+ * the same join is a colon — `Ba Zi: i quattro pilastri di una nascita`, the
+ * em dash being an Anglo-American convention that the Italian catalog was
+ * carrying because the English one has it — so the mark this stands between
+ * differs by vernacular and this one does not. A dot outside the sentence
+ * reads against a colon inside it as cleanly as it reads against a dash.
  */
 export const TITLE_SEPARATOR = ' · ';
 

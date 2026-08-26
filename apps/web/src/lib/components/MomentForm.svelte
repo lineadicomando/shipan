@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Named from './Named.svelte';
   import type { Snippet } from 'svelte';
   import type { MessageKey, Translator } from '@shipan/i18n';
   import type { Location } from '$lib/moment';
@@ -202,13 +203,13 @@
 
   {#if guiren !== undefined}
     <label>
-      {t('form.guiren')}
+      <Named text={t('form.guiren')} />
       <select bind:value={guiren}>
         <option value="chou">{t('form.guiren.chou')}</option>
         <option value="wei">{t('form.guiren.wei')}</option>
       </select>
     </label>
-    <p class="note">{t('form.guiren.note')}</p>
+    <p class="note"><Named text={t('form.guiren.note')} /></p>
   {/if}
 
   <!-- The one 七政四餘 divergence a reader might move. The options lead in
@@ -218,13 +219,13 @@
        round. See `form.luohou.note`. -->
   {#if luohou !== undefined}
     <label>
-      {t('form.luohou')}
+      <Named text={t('form.luohou')} />
       <select bind:value={luohou}>
         <option value="descending">{t('form.luohou.descending')}</option>
         <option value="ascending">{t('form.luohou.ascending')}</option>
       </select>
     </label>
-    <p class="note">{t('form.luohou.note')}</p>
+    <p class="note"><Named text={t('form.luohou.note')} /></p>
   {/if}
 {/snippet}
 
@@ -268,7 +269,7 @@
           <div class="row pair">{@render moment()}</div>
           <!-- Under the two fields and tied to them: a date input has no
                placeholder to say what empty means, so the sentence has to. -->
-          <p class="note" id="{uid}-now">{t('form.momentNote')}</p>
+          <p class="note" id="{uid}-now"><Named text={t('form.momentNote')} /></p>
           <!-- Only here, and only while there is an instant to leave: under a
                birth there is no now to go back to, and over empty fields the
                button would press to nothing. Named for the state it restores —

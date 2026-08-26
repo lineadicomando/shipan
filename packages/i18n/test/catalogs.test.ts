@@ -27,6 +27,79 @@ describe('catalog parity', () => {
   });
 
   /**
+   * A dash does not stand next to a glyph.
+   *
+   * **一 is a character, and a dash is the shape of it.** U+4E00 is `yī`,
+   * one, a single horizontal stroke — and this engine prints it: 知一 is one
+   * of the nine rules that draw the transmissions of 六壬. Beside hanzi, at
+   * the size a browser falls back to for CJK, `—` and `–` are read as members
+   * of the run rather than as punctuation, so «命 mìng — 八字, 七政四餘,
+   * 紫微斗數 — takes a birth» arrives as a line of characters with two of them
+   * unfamiliar.
+   *
+   * The reader this is for does not read Chinese and is meeting the names for
+   * the first time, which is what makes it worse rather than better: somebody
+   * fluent would know 一 does not belong there, and somebody learning the
+   * shapes has no way to tell which of them are words.
+   *
+   * **This is about the writing system and not about a language**, so it
+   * holds in both catalogs. Where the two met, an inciso became a pair of
+   * parentheses and an introducing dash became a colon — neither of which
+   * resembles anything in either script.
+   *
+   * Eight characters, not ten. Every one of the forty-nine that had to be
+   * changed sat within eight; the nearest line that legitimately keeps a dash
+   * is eleven away, `七政四餘 per case –`, where a Latin word stands between.
+   * A bound at ten would pass today with one character of clearance, which is
+   * not a bound, it is a coincidence waiting to be edited into a failure.
+   *
+   * What this cannot reach is the markup: `ChartReading` joins a name to its
+   * palace and the mark there is a middle dot, argued where it is written.
+   */
+  it('keeps a dash away from a glyph', () => {
+    const hanzi = /[㐀-鿿]/;
+    for (const [locale, catalog] of Object.entries(catalogs)) {
+      for (const [key, message] of Object.entries(catalog)) {
+        for (const dash of message.matchAll(/[—–]/g)) {
+          const around = message.slice(Math.max(0, dash.index - 8), dash.index + 9);
+          expect(hanzi.test(around), `${locale} / ${key}: …${around}…`).toBe(false);
+        }
+      }
+    }
+  });
+
+  /**
+   * One apostrophe, and it is the one an apostrophe is.
+   *
+   * **The split this closes was visible and nobody could see it.** The notes
+   * were written with `’` and everything else with `'`, so a reader crossing
+   * from a section's introduction to the register that explains it — which is
+   * the path `SectionIntro` now puts a link on — watched the apostrophe change
+   * shape halfway. Neither half was wrong on its own, which is why it lasted:
+   * a page is consistent with itself and a site is not.
+   *
+   * `’` U+2019 is the apostrophe; `'` U+0027 is the typewriter's stand-in for
+   * it, and in a serif face at a reading size the difference is not subtle.
+   * Italian spends one every few words, so the choice is made several hundred
+   * times a page.
+   *
+   * It also takes the escapes out. In a single-quoted TypeScript string `'`
+   * arrives written `\'`, and 175 Italian messages carried them; none of the
+   * ones written with `’` did. The right character is the one the source is
+   * easier to read in, which is a coincidence worth banking.
+   *
+   * Values only. A key is an identifier, and a comment is not read by anybody
+   * the interface is for.
+   */
+  it('spells an apostrophe as an apostrophe', () => {
+    for (const [locale, catalog] of Object.entries(catalogs)) {
+      for (const [key, message] of Object.entries(catalog)) {
+        expect(message, `${locale} / ${key}`).not.toContain("'");
+      }
+    }
+  });
+
+  /**
    * A reading of 命 is addressed to the person the board was laid on, and the
    * board is told their gender. The prompt must not presume it instead.
    *

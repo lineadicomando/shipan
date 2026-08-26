@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { AUTHOR } from '$lib/author';
   import ColorSchemeToggle from '$lib/components/ColorSchemeToggle.svelte';
   import GlyphRain from '$lib/components/GlyphRain.svelte';
   import LanguageSwitch from '$lib/components/LanguageSwitch.svelte';
@@ -77,6 +78,12 @@
     <p>
       {t('footer.data', { ephemeris: 'Swiss Ephemeris', geonames: 'GeoNames' })}
     </p>
+    <!-- Who made it, on the page and not only in the structured data. The
+         first question the helpful-content guide asks is who wrote this, and
+         a byline a crawler can read and a reader cannot is that question
+         answered to the wrong party. `author.ts` is the one place the name
+         is written. -->
+    <p>{t('footer.author', { author: AUTHOR })}</p>
     <!-- The third of them is the only link here that leaves the site, and it
          leaves it because the licence says it must: the line already named
          AGPL-3.0, and a licence that obliges an offer of the source obliges

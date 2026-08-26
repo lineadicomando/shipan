@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Named from './Named.svelte';
   import type { MessageKey, Translator } from '@shipan/i18n';
   import type { Moment, QizhengBoard } from '@shipan/core';
   import CalendarAndAlmanac from './CalendarAndAlmanac.svelte';
@@ -113,8 +114,8 @@
        first answers whoever counted three names and expected four; the
        second answers whoever is holding an almanac open beside this and is
        about to conclude the degrees are wrong. -->
-  <p class="note">{t('cli.value.threeRemainders')}</p>
-  <p class="note">{t('cli.value.qizhengFrame')}</p>
+  <p class="note"><Named text={t('cli.value.threeRemainders')} /></p>
+  <p class="note"><Named text={t('cli.value.qizhengFrame')} /></p>
 </div>
 
 <style>

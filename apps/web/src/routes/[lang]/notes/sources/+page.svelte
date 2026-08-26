@@ -19,6 +19,9 @@
   without being told why has met a bug.
 -->
 <script lang="ts">
+  import Named from '$lib/components/Named.svelte';
+  import { EXTERNAL } from '$lib/external';
+  import { REFERENCES } from '$lib/references';
   import type { MessageKey } from '@shipan/i18n';
   import PageHead from '$lib/components/PageHead.svelte';
   import { INSTRUMENTS } from '$lib/instruments';
@@ -38,11 +41,11 @@
 
 <article>
   <h1>{t('notes.sources.title')}</h1>
-  <p class="lead">{t('notes.sources.lead')}</p>
+  <p class="lead"><Named text={t('notes.sources.lead')} /></p>
 
   <section class="ladder">
     <h2>{t('notes.ladder.title')}</h2>
-    <p>{t('notes.ladder.lead')}</p>
+    <p><Named text={t('notes.ladder.lead')} /></p>
     <dl>
       {#each RUNGS as rung (rung)}
         {@const held = data.tally.find((entry) => entry.rung === rung)?.count ?? 0}
@@ -51,14 +54,14 @@
           {t(`notes.rung.${key(rung)}` as MessageKey)}
           <span class="held">{t('notes.held', { count: held })}</span>
         </dt>
-        <dd>{t(`notes.rung.${key(rung)}.means` as MessageKey)}</dd>
+        <dd><Named text={t(`notes.rung.${key(rung)}.means` as MessageKey)} /></dd>
       {/each}
     </dl>
     <!-- The two things a rung is not, both of which a reader will otherwise
          supply for themselves: it is not a verdict on the quantity, and it is
          not a property of it either — it moves when the shelf does. -->
-    <p class="caveat">{t('notes.ladder.notAVerdict')}</p>
-    <p class="caveat">{t('notes.ladder.quoted')}</p>
+    <p class="caveat"><Named text={t('notes.ladder.notAVerdict')} /></p>
+    <p class="caveat"><Named text={t('notes.ladder.quoted')} /></p>
   </section>
 
   {#each data.layers as layer (layer.id)}
@@ -99,6 +102,23 @@
       </table>
     </section>
   {/each}
+
+  <!-- The way back to what the column above says each quantity was checked on.
+       A page that names nine programs and leads to none of them is a page
+       whose central claim only its author can repeat: what agreeing with
+       `liuren-ts-lib` is worth is a question a reader has to be able to go and
+       answer. The texts cited beside them are deliberately not here — a link
+       to one is a claim about which edition, and `docs/sources.md` spends
+       whole sections on that question rather than settling it in a list. -->
+  <section class="references">
+    <h2>{t('notes.references.title')}</h2>
+    <p><Named text={t('notes.references.lead')} /></p>
+    <ul>
+      {#each REFERENCES as reference (reference.name)}
+        <li><a href={reference.where} {...EXTERNAL}>{reference.name}</a></li>
+      {/each}
+    </ul>
+  </section>
 </article>
 
 <style>
@@ -118,6 +138,25 @@
   }
   .glyph { font-size: 0.85rem; color: var(--faint); font-weight: 400; }
   .said { letter-spacing: 0.01em; }
+
+  /*
+   * A list and not a table, and not prose either. Nine names with nothing to
+   * say about them apiece — what each was run over is in the rows above, and
+   * repeating it here would be the register printed twice — so what is wanted
+   * is the shortest thing that can hold nine links, laid across the width
+   * rather than down it because a column of nine short lines is a page of
+   * whitespace beside a paragraph.
+   */
+  .references { max-width: 44rem; }
+  .references ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.4rem;
+    margin: 0.8rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .references p { margin: 0.6rem 0 0; max-width: 40rem; }
 
   .ladder { max-width: 44rem; }
   .ladder p { margin: 0.6rem 0; }

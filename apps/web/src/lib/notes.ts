@@ -96,6 +96,32 @@ export function layerOf(id: string): Layer | undefined {
 }
 
 /**
+ * The layer a *section* is laid on, for the introduction that points at it.
+ *
+ * **A section opens by saying what its art is made of, and the account of
+ * that is one page away with nothing leading to it.** Every introduction
+ * names something this register explains at length — the ju by 拆補, the
+ * latitude that enters no calculation, the palaces numbered one seat off the
+ * 洛書 —
+ * and until there was a link the only way to reach any of it was the word
+ * «Notes» in the footer, which says where the section is and not that it
+ * answers the sentence just read. `SectionIntro` spends this on an anchor.
+ *
+ * **A slug is a layer identifier six times out of eight, and the two that
+ * differ are the two acts.** The instruments are addressed by the art they
+ * lay out and this register keys by the same name, so they meet without a
+ * table. Choosing a time is named by what a reader *does* and walks 奇門
+ * charts and only those — `navigation.ts` argues at length that no flat list
+ * can carry that, and this is the one place the fact has to be written down
+ * rather than said in prose. The consultation is laid on whichever of the six
+ * the reader picks, so it has no layer at all: `undefined` here is not a gap,
+ * it is the answer, and the introduction reads it as «the page whole».
+ */
+export function layerOfSection(slug: string): Layer | undefined {
+  return layerOf(slug === 'moments' ? 'qimen' : slug);
+}
+
+/**
  * The pages of the section, in the order the index leads to them.
  *
  * `kind` is not decoration: it is the line the whole section is arranged by.

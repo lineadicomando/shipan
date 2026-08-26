@@ -137,7 +137,7 @@
                   ? god.seat.kind === 'stem'
                     ? t(`label.stem.${god.seat.stem.id}` as MessageKey)
                     : t(`label.palace.${god.seat.trigram.id}` as MessageKey)
-                  : '—'}
+                  : t('cli.none')}
               </span>
             {/each}
           </dd>

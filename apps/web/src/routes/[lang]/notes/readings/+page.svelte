@@ -8,6 +8,7 @@
   browser at all.
 -->
 <script lang="ts">
+  import Named from '$lib/components/Named.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import WrittenNotes from '$lib/components/WrittenNotes.svelte';
   import { READINGS } from '$lib/notes';
@@ -20,8 +21,8 @@
 
 <article>
   <h1>{t('notes.readings.title')}</h1>
-  <p class="lead">{t('notes.readings.lead')}</p>
-  <p class="lead">{t('notes.readings.computed')}</p>
+  <p class="lead"><Named text={t('notes.readings.lead')} /></p>
+  <p class="lead"><Named text={t('notes.readings.computed')} /></p>
 
   <WrittenNotes {t} entries={READINGS} />
 </article>

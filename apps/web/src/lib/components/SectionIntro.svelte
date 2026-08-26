@@ -2,17 +2,38 @@
   import { page } from '$app/state';
   import type { Translator } from '@shipan/i18n';
   import { metaOf } from '$lib/meta';
+  import { SECTIONS } from '$lib/navigation';
+  import { layerOfSection } from '$lib/notes';
+  import Named from './Named.svelte';
 
   /**
-   * The two paragraphs a section opens with, side by side above the form.
+   * What a section opens with: its heading, and the two paragraphs under it.
    *
-   * **They are here because the heading is not.** Every section of this site
-   * carries an `h1` that is spoken and not seen — the nav already says which
-   * section this is, and a line of ink repeating it says nothing — which
-   * leaves the top of a section as a form with no words above it. Somebody
-   * who has met 六壬 knows what they are looking at; somebody who has not has
-   * arrived at a date field and a place field and no account of what will
-   * happen when they press. These are that account.
+   * **The heading is here because this is where a section begins.** It used
+   * to be `offscreen` on each page, on the argument that the nav already said
+   * which section this was — and the nav paid for that by growing the current
+   * item out to the full name, which made the one row on this site that
+   * changes width as a reader moves along it. Said once, at the top of the
+   * page, it costs the bar nothing and is legible without being aimed at.
+   *
+   * **It is the same size as the paragraphs under it, and bold.** A section
+   * page is a form and a board; a heading set at heading size would be the
+   * loudest thing above the fold and would be announcing what the reader
+   * chose one click ago. What it has to do is name the art whole — `Zi Wei
+   * Dou Shu — i dodici seggi di una nascita`, where the bar could only say
+   * `Zi Wei` — and weight does that at any size.
+   *
+   * **What it buys is the paragraph under it.** An introduction may now open
+   * on 紫微斗數 zǐwēi dǒushù, glyph first, because the reader has just been
+   * told in their own language what this page is: the name arrives as the
+   * name of something already named, rather than as the first thing they meet
+   * on a page whose language they cannot yet see. That is the one rule this
+   * arrangement is here to keep — see `docs/i18n.md`.
+   *
+   * **The paragraphs say what the heading cannot.** Somebody who has met 六壬
+   * knows what they are looking at; somebody who has not has arrived at a
+   * date field and a place field and no account of what will happen when they
+   * press. These are that account.
    *
    * **Two columns, and the shape is the argument.** Set as one column across
    * a 72rem shell these would run to a single line of enormous measure, which
@@ -34,22 +55,77 @@
    * readable measures fit, the tracks become one and the paragraphs stack in
    * the order they are written.
    *
-   * **Not on paper.** A printed sheet is a chart somebody is handing on, and
-   * what has to travel with it is the board, the moment it was cast at and
-   * the disclaimer. An introduction to a section is written for a reader
-   * deciding whether to use it, which is a decision already taken by the time
-   * anything is printed.
+   * **The heading goes on paper and the rest does not.** A printed sheet is a
+   * chart somebody is handing on, and what has to travel with it is the
+   * board, the moment it was cast at and the disclaimer. An introduction is
+   * written for a reader deciding whether to use the section, which is a
+   * decision already taken by the time anything is printed — but a sheet with
+   * no line saying which art drew it is a sheet the person receiving it has
+   * to identify from the drawing.
    */
   let { t }: { t: Translator } = $props();
 
   const intro = $derived(metaOf(page.url.pathname)?.intro);
+
+  /**
+   * The section being read, said the way `meta.ts` says it: the language is
+   * cut off the front and what is left is the slug, so nothing here has to
+   * know how many vernaculars there are.
+   */
+  const slug = $derived(
+    page.url.pathname
+      .replace(/\/$/, '')
+      .split('/')
+      .slice(2)
+      .join('/'),
+  );
+
+  /**
+   * Where the account of this art is, and what to call it on the way.
+   *
+   * **The link is the third thing in the block and it is not a third
+   * paragraph.** What the two paragraphs do is say what the art is and what
+   * this page will not do; both raise questions they are the wrong length to
+   * answer — what 拆補 is, why the latitude is refused, what else could have
+   * been asked for — and the register that answers them was, until now,
+   * reachable only through the word «Notes» in the footer. A reader who has
+   * just read that the ju is by 拆補 is the one reader on this site who will
+   * follow a link to the page that lists it beside the value it was chosen
+   * over.
+   *
+   * **The anchor text says the errand and leaves the name to the heading.**
+   * It used to carry the art — «How Qi Men Dun Jia is computed» — written
+   * when the heading was `offscreen` and a link was met with none of the
+   * prose around it, which is the case that makes «read more» useless: eight
+   * sections sharing one line say it eight times to nobody. The heading is
+   * now four lines above this and inside the same block, so a reader passes
+   * the name on the way to the link whether they are looking at the page or
+   * running a screen reader down it. Said twice that close, it stopped being
+   * anchor text and became a repetition.
+   *
+   * The consultation still gets a wording of its own, and a fragment is the
+   * one thing it does not get: the whole register is what it is laid on, and
+   * «how each of these boards is computed» is a different sentence from «how
+   * this one is».
+   */
+  const layer = $derived(layerOfSection(slug));
+
+  /** The section this is, for the heading it wears. */
+  const here = $derived(SECTIONS.find((section) => section.slug === slug));
 </script>
 
 {#if intro}
   <div class="intro">
+    {#if here}<h1>{t(here.heading)}</h1>{/if}
     {#each intro as paragraph (paragraph)}
-      <p>{t(paragraph)}</p>
+      <!-- The names in it set apart — `Named` is the whole of the rule, and
+           the heading above is what makes the glyphs a reasonable thing to
+           open a paragraph on. -->
+      <p><Named text={t(paragraph)} /></p>
     {/each}
+    <a href="/{t.locale}/notes/instruments{layer ? `#${layer.id}` : ''}">
+      {layer ? t('intro.computed') : t('intro.computed.all')}
+    </a>
   </div>
 {/if}
 
@@ -70,10 +146,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
     /*
-     * The row gap is only ever spent in the stacked case, there being one row
-     * while there are two columns — which is why it can be the gap two
-     * paragraphs want between them without costing the wide layout anything.
-     * At the column gap they read as one block with an accidental break.
+     * The row gap is spent twice and wants the same number both times: under
+     * the paragraphs, where the link to the notes stands across both tracks,
+     * and between the paragraphs themselves once the tracks have collapsed to
+     * one. It used to be spent only in the stacked case — there was one row
+     * while there were two columns — and 0.9rem was chosen as what two
+     * paragraphs want between them; a paragraph and the line under it want
+     * the same, so the link cost the comment and not the value.
+     *
+     * The column gap stays its own number. At the row's distance the two
+     * paragraphs read as one block with an accidental break.
      */
     gap: 0.9rem 1.6rem;
     /*
@@ -93,6 +175,30 @@
   }
 
   /*
+   * The heading, across both tracks and at the size of what it heads.
+   *
+   * **The size of the paragraphs, and not a heading size.** The browser's own
+   * `h1` is 2em and bold, which on a page whose subject is a form and a board
+   * would be the loudest thing above the fold — announcing, at the top of the
+   * page, what the reader chose one click ago. Set at 0.9rem it is the same
+   * line as the two under it and reads as the first of the three, which is
+   * what it is. Weight is what marks it as a heading, and weight does that at
+   * any size; `--ink` against the `--faint` of the paragraphs finishes it.
+   *
+   * The margin under it is its own and pulls against the grid's row gap. A
+   * heading belongs to what follows it, and 0.9rem — the distance set between
+   * two paragraphs that are read separately — reads as a gap rather than as
+   * attachment.
+   */
+  .intro h1 {
+    grid-column: 1 / -1;
+    margin: 0 0 -0.25rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /*
    * The register the leads were set in: quiet, but not discardable. Nothing
    * on this site is set in `--faint` that a reader is not meant to read —
    * see the palette — and this is the one block on a section page that a
@@ -106,6 +212,29 @@
     /* The tracks are already at a measure; this keeps the single-column case
        from stretching to the width of the shell. */
     max-width: 44rem;
+  }
+
+  /*
+   * Across both tracks, under both paragraphs.
+   *
+   * Not a third column: `auto-fit` would give it one at the width two
+   * paragraphs already fill, and a link set beside prose in a track of its own
+   * reads as a third thing the section is about rather than as the way out of
+   * the two above it. Spanning, it sits where a reader is when they have
+   * finished reading — which is the only place a link forward is any use.
+   *
+   * `justify-self` keeps it the width of its own words. A grid item stretches
+   * by default, and a stretched anchor is a click target as wide as the shell
+   * with an underline under one end of it.
+   */
+  .intro a {
+    grid-column: 1 / -1;
+    justify-self: start;
+    font-size: 0.9rem;
+    /* The paragraphs above are `--faint` and this is not: what is quiet here
+       is the account, and the way to the rest of it is the one line in the
+       block a reader is being asked to act on. */
+    text-underline-offset: 0.15em;
   }
 
   /*
@@ -147,7 +276,12 @@
     }
   }
 
+  /* The heading travels with the sheet and the account does not: what the
+     person receiving a printed chart needs is the name of the art that drew
+     it, not the case for using the section they were not in. */
   @media print {
-    .intro { display: none; }
+    .intro p,
+    .intro a { display: none; }
+    .intro h1 { margin: 0 0 0.6rem; }
   }
 </style>

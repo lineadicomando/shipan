@@ -5,6 +5,7 @@
   "license": "AGPL-3.0-or-later",
   "type": "module",
   "scripts": {
+    "predev": "npm run build -w @shipan/core -w @shipan/geo -w @shipan/i18n -w @shipan/plate",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",

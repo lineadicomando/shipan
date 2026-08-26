@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import { LOCALES, createTranslator } from '@shipan/i18n';
 import { CARD, OG_LOCALES, SITE, TITLE_SEPARATOR, PAGES, metaOf, trailOf } from '../src/lib/meta';
 import { pagesOf } from '../src/lib/indexable';
+import { SECTIONS } from '../src/lib/navigation';
+import { LAYERS, layerOfSection } from '../src/lib/notes';
 
 /**
  * What every page says it is, held to the pages that exist.
@@ -57,6 +59,38 @@ describe('what a section opens with', () => {
     }
   });
 
+  it('leads every section to the layer its art is on', () => {
+    // The link under the two paragraphs is built from `layerOfSection`, and
+    // what it can silently become is a fragment for an anchor that is not on
+    // the page — a link that works, scrolls nowhere, and tells nobody. Six of
+    // the eight are their own slug and would never drift; the two that are
+    // not are the two acts, and both are exactly the kind of fact that goes
+    // stale when a section is renamed.
+    const anchors = new Set(LAYERS.map((layer) => layer.id));
+    for (const path of sections) {
+      const slug = TAIL(path);
+      const layer = layerOfSection(slug);
+      // The consultation is laid on whichever board is picked and lands on
+      // the register whole. Every other section names one.
+      if (slug === '') expect(layer, path).toBeUndefined();
+      else expect(anchors.has(layerOfSection(slug)?.id ?? ''), path).toBe(true);
+    }
+  });
+
+  it('names the art every one of those links points at', () => {
+    // The anchor text is `{art}`, read off the nav's long form. A section
+    // whose layer no entry of `SECTIONS` is keyed by would fall through to
+    // the consultation's wording and tell a reader on 六壬 that this is how
+    // «each of these boards» is computed.
+    for (const path of sections.filter((page) => TAIL(page) !== '')) {
+      const layer = layerOfSection(TAIL(path));
+      expect(
+        SECTIONS.some((section) => section.slug === layer?.id),
+        path,
+      ).toBe(true);
+    }
+  });
+
   it('gives the notes and the privacy note none', () => {
     // Both carry a visible heading and their own opening line. A page that is
     // already prose does not want a preface to its preface.
@@ -98,13 +132,27 @@ describe('in every vernacular', () => {
       });
 
       it('keeps a description inside what is shown', () => {
-        // Google shows around 155 characters and truncates the rest mid-word.
-        // The floor is the other half of the same claim: a description of
-        // forty characters is a field that was filled in rather than written.
+        /**
+         * A search result shows about 155 characters and truncates the rest
+         * mid-word. The floor is the other half of the same claim: a
+         * description of forty characters is a field that was filled in rather
+         * than written.
+         *
+         * **The bound is the number the comment states, which it was not.**
+         * It stood at 160 under a line saying 155, and five characters of
+         * quiet slack is how three Italian descriptions came to be written
+         * past the cut — every one of them a translation that ran longer than
+         * the English it was made from, which is the direction they always run
+         * and the reason this bound exists at all.
+         *
+         * Tight against the longest by two characters, and that is correct
+         * here rather than fragile: 155 is where the words stop being shown,
+         * not a proxy for it, so a translation that overruns should fail.
+         */
         for (const { path, meta } of every) {
           const said = t(meta.description);
           expect(said.length, `${path}: "${said}"`).toBeGreaterThan(90);
-          expect(said.length, `${path}: "${said}"`).toBeLessThanOrEqual(160);
+          expect(said.length, `${path}: "${said}"`).toBeLessThanOrEqual(155);
         }
       });
 

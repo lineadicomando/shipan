@@ -184,7 +184,7 @@ export function formatAlmanac(page: Almanac, t: Translator): string {
   // this day is one of them.
   const virtues = page.monthGods
     .map((god) => {
-      const seat = god.seat ? seatOf(god.seat, t) : '—';
+      const seat = god.seat ? seatOf(god.seat, t) : t('cli.none');
       return `${god.hanzi} ${god.pinyin} → ${seat}${god.onDay ? ' ·' : ''}`;
     })
     .join('   ');
@@ -204,7 +204,10 @@ export function formatAlmanac(page: Almanac, t: Translator): string {
     `  ${pad(t('cli.field.jianchu'), 20)}${officer(page, t)}`,
     ...(seasonal ? [`  ${pad(t('cli.field.shensha'), 20)}  ${seasonal}`] : []),
     `  ${pad(t('cli.field.monthGods'), 20)}  ${virtues}`,
-    `  ${pad(t('cli.field.yearGods'), 20)}${page.year.hanzi} — ${gods}`,
+    // The year's own pillar, then the gods that stand on it. A middle dot
+    // and not a dash: the pillar is hanzi and the mark sits against it, and
+    // `→` is spoken for one level down, where each god names its seat.
+    `  ${pad(t('cli.field.yearGods'), 20)}${page.year.hanzi} · ${gods}`,
   ].join('\n');
 }
 
@@ -350,7 +353,7 @@ export function formatQimenChart(chart: QimenChart, t: Translator): string {
   ];
 
   const strong = (state: { id: string } | undefined): string =>
-    state ? t(`label.strength.${state.id}` as MessageKey) : '—';
+    state ? t(`label.strength.${state.id}` as MessageKey) : t('cli.none');
   // How it stands to the ground it is on, after how it stands to the season.
   // The two are different questions of the same thing and are told apart by
   // the glyph, which names the second and never the first.
@@ -405,10 +408,10 @@ export function formatQimenChart(chart: QimenChart, t: Translator): string {
       ...chart.palaces.map((cell) => [
         where(cell, false),
         named(cell.star, `label.star.${cell.star.id}` as MessageKey, t),
-        cell.gate ? named(cell.gate, `label.gate.${cell.gate.id}` as MessageKey, t) : '—',
+        cell.gate ? named(cell.gate, `label.gate.${cell.gate.id}` as MessageKey, t) : t('cli.none'),
         cell.spirit
           ? named(cell.spirit, `label.spirit.${cell.spirit.id}` as MessageKey, t)
-          : '—',
+          : t('cli.none'),
       ]),
     ]),
     '',
@@ -418,7 +421,7 @@ export function formatQimenChart(chart: QimenChart, t: Translator): string {
       ...chart.palaces.map((cell) => [
         where(cell, false),
         `${strong(cell.starStrength)}${stands(cell.starRelation)}`,
-        cell.gate ? `${strong(cell.gateStrength)}${stands(cell.gateRelation)}` : '—',
+        cell.gate ? `${strong(cell.gateStrength)}${stands(cell.gateRelation)}` : t('cli.none'),
       ]),
     ]),
   );
@@ -427,12 +430,15 @@ export function formatQimenChart(chart: QimenChart, t: Translator): string {
     lines.push(
       '',
       `${t('cli.heading.patterns')}`,
+      // A middle dot and not a dash, which is what `ChartReading` prints for
+      // this same join: `copy.svelte.ts` keeps the transcript and the page one
+      // text, and a configuration stands beside a palace whose name is hanzi.
       ...table(
         chart.patterns.map((pattern) => {
           const where = pattern.palace
-            ? `— ${palaceOf(chart, pattern.palace, t)}`
+            ? `· ${palaceOf(chart, pattern.palace, t)}`
             : pattern.layer
-              ? `— ${t(`label.layer.${pattern.layer}` as MessageKey)}`
+              ? `· ${t(`label.layer.${pattern.layer}` as MessageKey)}`
               : '';
           return [
             t(`label.pattern.${pattern.id}` as MessageKey),
@@ -526,7 +532,7 @@ export function formatLiuren(board: LiurenBoard, t: Translator): string {
         [
           t('cli.field.yuejiang'),
           `${named(board.yuejiang, `label.yuejiang.${board.yuejiang.id}` as MessageKey, t)} · ` +
-            `${glyph(board.yuejiang.branch)} — ${named(board.yuejiang.term, `label.term.${board.yuejiang.term.id}` as MessageKey, t)}`,
+            `${glyph(board.yuejiang.branch)} · ${named(board.yuejiang.term, `label.term.${board.yuejiang.term.id}` as MessageKey, t)}`,
         ],
         [
           t('cli.field.half'),
@@ -863,7 +869,11 @@ export function formatTaiyi(board: TaiyiBoard, t: Translator): string {
             ? [`  ${line}`]
             : [
                 `  ${line}`,
-                `      ${meaning} — ${t(`label.taiyimeaning.${said}` as MessageKey)}`,
+                // The chapter's own sentence, then what it says. A middle dot
+                // and not a colon: three of the six glosses carry a colon of
+                // their own — «prigionia: il senso dell’usurpazione» — and two
+                // of them in one line is one too many.
+                `      ${meaning} · ${t(`label.taiyimeaning.${said}` as MessageKey)}`,
               ];
         },
       ),
@@ -880,7 +890,7 @@ function taiyiGod(god: TaiyiGod, t: Translator): string {
   const seat =
     god.seat.kind === 'branch' ? glyph(god.seat.branch) : glyph(god.seat.palace);
   const at = god.palace === undefined ? '' : ` ${god.palace}`;
-  return `${named(god, `label.taiyishen.${god.id}` as MessageKey, t)} — ${seat}${at}`;
+  return `${named(god, `label.taiyishen.${god.id}` as MessageKey, t)} → ${seat}${at}`;
 }
 
 /** A count and the two generals it seats. The adjutant can be absent. */
@@ -1062,7 +1072,7 @@ export function formatBazi(bazi: Bazi, t: Translator): string {
         glyph(pillar.ganzhi),
         pillar.stemGod
           ? named(pillar.stemGod, `label.god.${pillar.stemGod.id}` as MessageKey, t)
-          : '—',
+          : t('cli.none'),
         named(pillar.stage, `label.stage.${pillar.stage.id}` as MessageKey, t),
         // 納音, computed for every pillar since the day this table existed and
         // printed by nobody but `formatNianming`. A pair carries its image
@@ -1213,9 +1223,9 @@ export function formatScan(matches: readonly ScanMatch[], t: Translator): string
         // is a change to how a scan reads and not to what it says.
         cell.gate
           ? `${t(`label.gate.${cell.gate.id}` as MessageKey)}${strong(cell.gateStrength)}`
-          : '—',
+          : t('cli.none'),
         `${t(`label.star.${cell.star.id}` as MessageKey)}${strong(cell.starStrength)}`,
-        cell.spirit ? t(`label.spirit.${cell.spirit.id}` as MessageKey) : '—',
+        cell.spirit ? t(`label.spirit.${cell.spirit.id}` as MessageKey) : t('cli.none'),
       ]);
     }
   }

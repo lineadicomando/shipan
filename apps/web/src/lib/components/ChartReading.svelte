@@ -146,7 +146,12 @@
       {t(`label.horse.${horse.from}` as MessageKey)}:
       {t(`label.branch.${horse.branch.id}` as MessageKey)}
       <span class="glyph">{glyph(horse.branch)}</span>
-      — {horse.palace}
+      <!-- A middle dot and not a dash, because what stands on the other side
+           of it is a glyph. A dash beside hanzi is read as one of them — 一 is
+           a character this engine prints, inside 知一 — and the mark is here
+           joining a name to the palace it stands in, where nothing is lost by
+           using the separator the footer and the titles already use. -->
+      · {horse.palace}
     </li>
   {/each}
 </ul>
@@ -163,7 +168,8 @@
     {#each chart.patterns as pattern}
       <li>
         {t(`label.pattern.${pattern.id}` as MessageKey)}
-        {#if pattern.palace}— {pattern.palace}{/if}
+        <!-- A middle dot, for the reason the horses above carry one. -->
+        {#if pattern.palace}· {pattern.palace}{/if}
         <span class="glyph">{glyph(pattern)}</span>
         <!--
           Written in words and in no colour. The fortune is an attribute of the
