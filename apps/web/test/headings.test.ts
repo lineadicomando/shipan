@@ -1,94 +1,110 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
-import { LOCALES, createTranslator, type MessageKey } from '@shipan/i18n';
+import { LOCALES, createTranslator } from '@shipan/i18n';
 import { SECTIONS } from '../src/lib/navigation';
 
 /**
  * The one first-level heading a section carries, held to the section.
  *
  * **What this guards against is a heading borrowed from somewhere else.**
- * Five of the eight sections used to set their `h1` from `cli.heading.*` —
- * the strings the terminal prints over a board — and «Four Pillars» is right
- * over four columns of a CLI and wrong as the whole of what the 八字 page
- * calls itself. It went unnoticed for as long as it did because the heading
- * is `offscreen` by design: the nav says which section this is, so nobody
- * reading the page with their eyes ever saw the line that was wrong.
+ * Five of the eight sections set their `h1` from `cli.heading.*` — the strings
+ * the terminal prints over a board — and «Four Pillars» is right over four
+ * columns of a CLI and wrong as the whole of what the 八字 page calls itself.
+ * It went unnoticed for as long as it did because the heading was `offscreen`:
+ * the nav said which section this was, so nobody reading the page with their
+ * eyes ever met the line that was wrong.
  *
- * That is also what makes it worth a test rather than a look. The readers
- * this line is set offscreen *for* — a screen reader, a crawler, a model
- * handed the page — are exactly the readers nobody checks by opening the
- * site, and a heading that drifts back to a borrowed string would look no
- * different in a browser than a heading that did not.
+ * **And against a second one arriving.** The heading now lives in
+ * `SectionIntro`, which every section renders once, so an `h1` written into a
+ * page would be a second first-level heading on that page — the outline says
+ * two things are the subject and neither is. The pages are read here for that,
+ * and it is the reason this file reads files at all rather than only the
+ * registry.
  *
  * Derived from `SECTIONS` in both directions: a ninth section arrives already
- * covered, and a key for a section that no longer exists fails here.
+ * covered, and a heading for a section that no longer exists fails here.
  */
-const ROUTES = fileURLToPath(new URL('../src/routes/[lang]/', import.meta.url));
+const SRC = fileURLToPath(new URL('../src/', import.meta.url));
+const ROUTES = join(SRC, 'routes/[lang]/');
 
 /** The page of a section. The consultation is the root of a vernacular. */
 const pageOf = (slug: string): string =>
-  readFileSync(`${ROUTES}${slug ? `${slug}/` : ''}+page.svelte`, 'utf8');
+  readFileSync(join(ROUTES, slug, '+page.svelte'), 'utf8');
 
-/** Every `<h1 …>…</h1>` on a page, comments stripped — this project argues in them. */
-const headings = (source: string): string[] =>
-  [...source.replace(/<!--[\s\S]*?-->/g, '').matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/g)].map(
-    (match) => match[1] as string,
-  );
+/** Markup only: this project argues at length in its comments. */
+const markup = (source: string): string => source.replace(/<!--[\s\S]*?-->/g, '');
 
-describe('the heading a section carries', () => {
-  it('gives every section exactly one', () => {
-    for (const { slug } of SECTIONS) {
-      expect(headings(pageOf(slug)), slug || '(the consultation)').toHaveLength(1);
-    }
+const walk = (dir: string): string[] =>
+  readdirSync(dir).flatMap((entry) => {
+    const path = join(dir, entry);
+    return statSync(path).isDirectory() ? walk(path) : path.endsWith('.svelte') ? [path] : [];
   });
 
-  it('sets it from the key named for the section', () => {
+describe('the heading a section carries', () => {
+  it('writes it in one place, from the registry', () => {
+    const intro = markup(readFileSync(join(SRC, 'lib/components/SectionIntro.svelte'), 'utf8'));
+    expect(intro).toContain('<h1>{t(here.heading)}</h1>');
+  });
+
+  it('leaves none on the pages themselves', () => {
     for (const { slug } of SECTIONS) {
-      const [heading] = headings(pageOf(slug));
-      expect(heading?.trim(), slug || '(the consultation)').toBe(
-        `{t('h1.${slug || 'consult'}')}`,
+      expect(markup(pageOf(slug)).match(/<h1[\s>]/g) ?? [], slug || '(the consultation)').toEqual(
+        [],
       );
     }
   });
 
-  it('keeps it out of sight', () => {
-    // The nav already says which section this is, and a line of ink repeating
-    // it says nothing. `SectionIntro` is what stands where a heading would.
-    for (const { slug } of SECTIONS) {
-      const source = pageOf(slug).replace(/<!--[\s\S]*?-->/g, '');
-      expect(/<h1 class="offscreen">/.test(source), slug || '(the consultation)').toBe(true);
+  it('keeps the headings written for the terminal out of the interface', () => {
+    // `cli.heading.*` still prints charts, and a form's submit button still
+    // reads one — «Cast a Qi Men chart» is the button's own words. What must
+    // not come back is one of them standing as a heading.
+    for (const path of walk(SRC)) {
+      const code = markup(readFileSync(path, 'utf8'));
+      for (const match of code.matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/g)) {
+        expect(match[1], path).not.toContain('cli.heading');
+      }
     }
   });
 
   for (const locale of LOCALES) {
     describe(locale, () => {
       const t = createTranslator(locale);
-      const key = (slug: string) => `h1.${slug || 'consult'}` as MessageKey;
 
       it('says something under every section', () => {
-        for (const { slug } of SECTIONS) {
+        for (const { slug, heading } of SECTIONS) {
           // `translate` falls back to the key itself when a catalog is missing
           // one, which is a heading that names a variable.
-          expect(t(key(slug)), slug || '(the consultation)').not.toBe(key(slug));
-          expect(t(key(slug)).trim(), slug || '(the consultation)').not.toBe('');
+          expect(t(heading), slug || '(the consultation)').not.toBe(heading);
+          expect(t(heading).trim(), slug || '(the consultation)').not.toBe('');
         }
       });
 
       it('names the art the section lays out', () => {
         /**
-         * The whole of the change this file was written for. An instrument is
-         * *named*, the nav keeps the name at full length for the section being
-         * read, and the heading is where a reader who cannot see the nav is
-         * told which art this is. The two acts are exempt for the reason they
-         * are acts: a consultation has no art of its own, and choosing a time
-         * is named by what a reader does — it says «Qi Men Dun Jia» all the
-         * same, because it walks those charts and only those, but it says it
-         * as a section of prose rather than as a name this test can look up.
+         * The whole of what this file was written for. An instrument is
+         * *named*, the registry keeps the name at full length, and the heading
+         * is the line that tells a reader which art they are looking at now
+         * that the bar no longer grows to say it. The two acts are exempt for
+         * the reason they are acts: a consultation has no art of its own, and
+         * choosing a time is named by what a reader does — it says «Qi Men Dun
+         * Jia» all the same, because it walks those charts and only those, but
+         * it says it as a section of prose rather than as a name this test can
+         * look up.
          */
-        for (const { slug, label, full, group } of SECTIONS) {
+        for (const { slug, label, full, heading, group } of SECTIONS) {
           if (group !== 'instrument') continue;
-          expect(t(key(slug)), slug).toContain(t(full ?? label));
+          expect(t(heading), slug).toContain(t(full ?? label));
+        }
+      });
+
+      it('says more than the bar does', () => {
+        // The heading exists because the label cannot carry the name: if the
+        // two ever came out the same string, the line at the top of the page
+        // would be the nav item printed twice.
+        for (const { slug, label, heading } of SECTIONS) {
+          expect(t(heading), slug || '(the consultation)').not.toBe(t(label));
         }
       });
     });

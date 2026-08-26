@@ -363,15 +363,8 @@
 
 <PageHead {t} />
 
-<!-- Named, not shown: the nav says which section this is — see `.offscreen`.
-     Named here with the art, which the nav label cannot carry: every criterion
-     below is a Qi Men one, and somebody reading the results has to know what
-     they were read off. -->
-<h1 class="offscreen">{t('h1.moments')}</h1>
-
-<!-- What this section is, said above the form to somebody who has not met the
-     art — the heading above being spoken and not seen. Two paragraphs, two
-     columns: see `SectionIntro`. -->
+<!-- The heading, and under it what this section is, said to somebody who has
+     not met the art. Two paragraphs, two columns: see `SectionIntro`. -->
 <SectionIntro {t} />
 
 <FormPanel

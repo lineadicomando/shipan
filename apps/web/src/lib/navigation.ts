@@ -60,31 +60,62 @@ export const SECTIONS: readonly {
   slug: string;
   label: MessageKey;
   /**
-   * The name at full length, worn only while this section is the one being
-   * read — and absent where there is no longer form to wear.
+   * The name at full length, said inside a sentence — and absent where there
+   * is no longer form to wear.
    *
-   * A name is cut in a list and said whole in a title, and that is the
-   * distinction the two keys carry. Which four have one, and why 八字 and
+   * A name is cut in a list and said whole where there is room, and that is
+   * the distinction the two keys carry. Which four have one, and why 八字 and
    * 太乙 do not, is argued in the catalogs beside the strings themselves: the
    * reason is about the names and not about this list, and it would be a
    * paragraph of Chinese bibliography in a file about where links go.
+   *
+   * **The bar is no longer where it is spent.** A nav item used to grow to
+   * the full name while its section was the one being read, which made the
+   * one row on this site that changes width as a reader moves along it: the
+   * items after the current one shifted, so the target a reader was aiming at
+   * moved between the decision and the click. What that growth was for — a
+   * reader knowing which board they are looking at — is now a heading at the
+   * top of the page, where it can be read without being aimed at.
+   *
+   * What is left is `SectionIntro`, which spends it on the link into the
+   * notes: «Qi Men Dun Jia: come viene calcolato» is a sentence, and a
+   * sentence has room for a name.
    *
    * Only an instrument has one, and that follows from the division above
    * rather than being a second rule: an act is described rather than named,
    * and a description does not have a long form and a short one.
    */
   full?: MessageKey;
+  /**
+   * The heading the section is met by: the name at full length, and what the
+   * page lays out under it.
+   *
+   * **Three names and not one, because three registers ask for three
+   * lengths.** A label has a bar eight items wide to fit into; `full` is the
+   * name said inside a sentence, where the sentence supplies everything else;
+   * this is the line at the top of the page, which is the only one of the
+   * three that has to stand alone and so is the only one that carries a
+   * gloss. `Ba Zi` in the bar, `Ba Zi` in the link to the notes, `Ba Zi — una
+   * nascita in quattro pilastri` over the form.
+   *
+   * Listed here rather than built as `` `h1.${slug}` `` where it is read:
+   * `catalog-keys.test.ts` finds a templated key live by the prefix in front
+   * of the interpolation, so a component composing this from a slug would
+   * hide sixteen messages from the one test that notices when a message has
+   * gone dead.
+   */
+  heading: MessageKey;
   /** Which of the two kinds it is, for the break the header sets between them. */
   group: 'act' | 'instrument';
 }[] = [
-  { slug: '', label: 'nav.consult', group: 'act' },
-  { slug: 'moments', label: 'nav.moments', group: 'act' },
-  { slug: 'qimen', label: 'nav.qimen', full: 'nav.qimen.full', group: 'instrument' },
-  { slug: 'liuren', label: 'nav.liuren', full: 'nav.liuren.full', group: 'instrument' },
-  { slug: 'taiyi', label: 'nav.taiyi', full: 'nav.taiyi.full', group: 'instrument' },
-  { slug: 'qizheng', label: 'nav.qizheng', full: 'nav.qizheng.full', group: 'instrument' },
-  { slug: 'ziwei', label: 'nav.ziwei', full: 'nav.ziwei.full', group: 'instrument' },
-  { slug: 'bazi', label: 'nav.bazi', group: 'instrument' },
+  { slug: '', label: 'nav.consult', heading: 'h1.consult', group: 'act' },
+  { slug: 'moments', label: 'nav.moments', heading: 'h1.moments', group: 'act' },
+  { slug: 'qimen', label: 'nav.qimen', full: 'nav.qimen.full', heading: 'h1.qimen', group: 'instrument' },
+  { slug: 'liuren', label: 'nav.liuren', full: 'nav.liuren.full', heading: 'h1.liuren', group: 'instrument' },
+  { slug: 'taiyi', label: 'nav.taiyi', full: 'nav.taiyi.full', heading: 'h1.taiyi', group: 'instrument' },
+  { slug: 'qizheng', label: 'nav.qizheng', full: 'nav.qizheng.full', heading: 'h1.qizheng', group: 'instrument' },
+  { slug: 'ziwei', label: 'nav.ziwei', full: 'nav.ziwei.full', heading: 'h1.ziwei', group: 'instrument' },
+  { slug: 'bazi', label: 'nav.bazi', heading: 'h1.bazi', group: 'instrument' },
 ];
 
 /**

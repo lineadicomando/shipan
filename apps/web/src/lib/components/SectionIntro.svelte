@@ -6,15 +6,33 @@
   import { layerOfSection } from '$lib/notes';
 
   /**
-   * The two paragraphs a section opens with, side by side above the form.
+   * What a section opens with: its heading, and the two paragraphs under it.
    *
-   * **They are here because the heading is not.** Every section of this site
-   * carries an `h1` that is spoken and not seen — the nav already says which
-   * section this is, and a line of ink repeating it says nothing — which
-   * leaves the top of a section as a form with no words above it. Somebody
-   * who has met 六壬 knows what they are looking at; somebody who has not has
-   * arrived at a date field and a place field and no account of what will
-   * happen when they press. These are that account.
+   * **The heading is here because this is where a section begins.** It used
+   * to be `offscreen` on each page, on the argument that the nav already said
+   * which section this was — and the nav paid for that by growing the current
+   * item out to the full name, which made the one row on this site that
+   * changes width as a reader moves along it. Said once, at the top of the
+   * page, it costs the bar nothing and is legible without being aimed at.
+   *
+   * **It is the same size as the paragraphs under it, and bold.** A section
+   * page is a form and a board; a heading set at heading size would be the
+   * loudest thing above the fold and would be announcing what the reader
+   * chose one click ago. What it has to do is name the art whole — `Zi Wei
+   * Dou Shu — i dodici seggi di una nascita`, where the bar could only say
+   * `Zi Wei` — and weight does that at any size.
+   *
+   * **What it buys is the paragraph under it.** An introduction may now open
+   * on 紫微斗數 zǐwēi dǒushù, glyph first, because the reader has just been
+   * told in their own language what this page is: the name arrives as the
+   * name of something already named, rather than as the first thing they meet
+   * on a page whose language they cannot yet see. That is the one rule this
+   * arrangement is here to keep — see `docs/i18n.md`.
+   *
+   * **The paragraphs say what the heading cannot.** Somebody who has met 六壬
+   * knows what they are looking at; somebody who has not has arrived at a
+   * date field and a place field and no account of what will happen when they
+   * press. These are that account.
    *
    * **Two columns, and the shape is the argument.** Set as one column across
    * a 72rem shell these would run to a single line of enormous measure, which
@@ -36,11 +54,13 @@
    * readable measures fit, the tracks become one and the paragraphs stack in
    * the order they are written.
    *
-   * **Not on paper.** A printed sheet is a chart somebody is handing on, and
-   * what has to travel with it is the board, the moment it was cast at and
-   * the disclaimer. An introduction to a section is written for a reader
-   * deciding whether to use it, which is a decision already taken by the time
-   * anything is printed.
+   * **The heading goes on paper and the rest does not.** A printed sheet is a
+   * chart somebody is handing on, and what has to travel with it is the
+   * board, the moment it was cast at and the disclaimer. An introduction is
+   * written for a reader deciding whether to use the section, which is a
+   * decision already taken by the time anything is printed — but a sheet with
+   * no line saying which art drew it is a sheet the person receiving it has
+   * to identify from the drawing.
    */
   let { t }: { t: Translator } = $props();
 
@@ -88,10 +108,14 @@
   const layer = $derived(layerOfSection(slug));
   const named = $derived(SECTIONS.find((section) => section.slug === layer?.id));
   const art = $derived(named ? t(named.full ?? named.label) : undefined);
+
+  /** The section this is, for the heading it wears. */
+  const here = $derived(SECTIONS.find((section) => section.slug === slug));
 </script>
 
 {#if intro}
   <div class="intro">
+    {#if here}<h1>{t(here.heading)}</h1>{/if}
     {#each intro as paragraph (paragraph)}
       <p>{t(paragraph)}</p>
     {/each}
@@ -144,6 +168,30 @@
      * parent either way.
      */
     container-type: inline-size;
+  }
+
+  /*
+   * The heading, across both tracks and at the size of what it heads.
+   *
+   * **The size of the paragraphs, and not a heading size.** The browser's own
+   * `h1` is 2em and bold, which on a page whose subject is a form and a board
+   * would be the loudest thing above the fold — announcing, at the top of the
+   * page, what the reader chose one click ago. Set at 0.9rem it is the same
+   * line as the two under it and reads as the first of the three, which is
+   * what it is. Weight is what marks it as a heading, and weight does that at
+   * any size; `--ink` against the `--faint` of the paragraphs finishes it.
+   *
+   * The margin under it is its own and pulls against the grid's row gap. A
+   * heading belongs to what follows it, and 0.9rem — the distance set between
+   * two paragraphs that are read separately — reads as a gap rather than as
+   * attachment.
+   */
+  .intro h1 {
+    grid-column: 1 / -1;
+    margin: 0 0 -0.25rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ink);
   }
 
   /*
@@ -224,7 +272,12 @@
     }
   }
 
+  /* The heading travels with the sheet and the account does not: what the
+     person receiving a printed chart needs is the name of the art that drew
+     it, not the case for using the section they were not in. */
   @media print {
-    .intro { display: none; }
+    .intro p,
+    .intro a { display: none; }
+    .intro h1 { margin: 0 0 0.6rem; }
   }
 </style>

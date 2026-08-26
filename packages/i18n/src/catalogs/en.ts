@@ -844,27 +844,31 @@ export const en = {
   'form.year': 'Year',
   'form.copyTaiyi': 'Copy the board as text',
 
-  // The heading of a section, spoken and not seen.
+  // The heading a section is met by, at the top of its own page.
   //
   // **A section has one first-level heading, and on five of the eight it was
   // a heading written for the terminal.** `cli.heading.pillars` is «Four
   // Pillars», which is the right phrase over four columns of a CLI and the
   // wrong one as the whole of what the 八字 page calls itself: the art has a
-  // name, the title beside this one says it, and the heading — the single
-  // line anything reading the page without eyes is handed as the subject —
-  // dropped it. Those keys stay where they are and keep printing charts; what
-  // was wrong was the borrowing, not the strings.
+  // name, the title beside this one says it, and the heading dropped it.
+  // Those keys stay where they are and keep printing charts; what was wrong
+  // was the borrowing, not the strings.
   //
-  // **Not seen, and that is the design rather than an apology for it.** The
-  // nav says which section this is, and a line of ink repeating it says
-  // nothing — `SectionIntro` is what stands where a heading would — so this
-  // is set `offscreen`. What it is set offscreen *for* is the reader who has
-  // none of the page's other signals: a screen reader, a crawler, a model
-  // handed the page. That is also why the name is here at full length and as
-  // the transcription rather than the glyphs, which is the one place on this
-  // site the hanzi do not follow the name. A glyph read aloud by a voice set
-  // to English is silence or a stumble, and there is no gloss beside it here
-  // to recover from either.
+  // **Read, and that is what it is now for.** These were `offscreen` — said
+  // to a screen reader, a crawler and a model, and to nobody looking at the
+  // page — on the argument that the nav already said which section this was.
+  // The nav paid for that by growing the current item out to the full name,
+  // which made the one row on this site that changes width as a reader moves
+  // along it. Said once at the top of the page it serves all four readers and
+  // costs the bar nothing. `SectionIntro` sets it at the size of the
+  // paragraphs under it and marks it by weight, since what is loud on a
+  // section page should be the board.
+  //
+  // The name arrives at full length and as the transcription rather than the
+  // glyphs, which is the one place on this site the hanzi do not follow the
+  // name — the paragraph immediately under this one opens on them, and a
+  // heading that opened on them too would put the glyph before the gloss on a
+  // page whose reader does not read Chinese. See `docs/i18n.md`.
   //
   // Distinct from the `title` in `meta.*`, and not by oversight. A title is
   // written to stand alone in a search result and says what the page is

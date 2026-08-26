@@ -29,8 +29,9 @@
 
   What the fold does *not* say is which section is being read: closed, it reads
   `Sections` and not the name of the current one. Each page carries its own
-  `h1` — that is why the wordmark above can stay the same on all of them — and
-  a reader who wants to know where they are is looking at it already.
+  `h1`, at the top of what is below — that is why the wordmark above can stay
+  the same on all of them — and a reader who wants to know where they are is
+  looking at it already.
 -->
 <script lang="ts">
   import { afterNavigate } from '$app/navigation';
@@ -101,14 +102,15 @@
           aria-current={current ? 'page' : undefined}
           class:current
         >
-          <!-- Whole where the reader is, cut everywhere else. The name is the
-               second mark on the current section and the underline is the
-               first: one says which board this is, the other where it stands
-               in the row, and a reader coming to the bar from the page below
-               reads the name before they look for a rule under it. Five of the
-               six have a long form; `full` is absent on 八字, which is two
-               characters, and the label answers for that case too. -->
-          {t(current && section.full ? section.full : section.label)}
+          <!-- Cut, on every item, including the one being read. The name used
+               to grow to its full length here and that made a row that
+               changes width as a reader moves along it: opening 七政四餘 out
+               to `Qi Zheng Si Yu` pushed the two items after it sideways, so
+               what a reader was aiming at moved between the decision and the
+               click. The underline is what marks the section they are on, and
+               it costs the row nothing. Which board it is now stands at the
+               top of the page as a heading — see `SectionIntro`. -->
+          {t(section.label)}
         </a>
       </li>
     {/each}

@@ -779,17 +779,17 @@ export const it: Record<MessageKey, string> = {
   'form.year': 'Anno',
   'form.copyTaiyi': 'Copia la tavola come testo',
 
-  // The heading of a section, spoken and not seen. The argument is in `en.ts`:
-  // five of the eight were headings written for the terminal, and a heading is
-  // the one line anything reading the page without eyes is handed as the
-  // subject. What is settled here is the wording.
+  // The heading a section is met by, at the top of its own page. The argument
+  // is in `en.ts`: five of the eight were headings written for the terminal,
+  // and a heading is the first line a reader is handed as the subject. What
+  // is settled here is the wording.
   //
   // «IA» e non «AI», che è la sigla con cui questa frase è arrivata. La
   // descrizione della stessa pagina dice già «assistente IA», e le due
   // stavano a due righe di distanza dicendo la stessa cosa in due modi. La
   // sigla italiana è quella che un lettore italiano cerca, ed è anche quella
-  // che si legge ad alta voce senza cambiare lingua — cosa che questa riga,
-  // scritta per chi la sente e non la vede, deve poter sopportare.
+  // che si legge ad alta voce senza cambiare lingua: questa riga è letta a
+  // voce da chi usa uno screen reader, e vista da tutti gli altri.
   'h1.consult': "Chiedere a un'IA di leggere una tavola divinatoria cinese",
   // La sezione che percorre carte Qi Men, nominata con l'arte che percorre.
   // L'etichetta della nav non può portarlo — un'intestazione dice dove stanno
