@@ -887,6 +887,22 @@ export const it: Record<MessageKey, string> = {
   'meta.intro.bazi.b':
     'I cicli di fortuna corrono da un sesso, e i cinque elementi arrivano contati, zeri compresi. Un conteggio non è un verdetto: forte o debole è un passo di metodo, e qui non si compie.',
 
+  // Il nome apre e la domanda segue, dove l'inglese piega invece la frase
+  // attorno al nome.
+  //
+  // «Come si calcola Qi Men Dun Jia» è corretto e sarebbe stata la lettura
+  // letterale, ma sotterra l'unica parola che chi scorre otto sezioni sta
+  // cercando dietro tre che in tutte e otto sono le stesse.
+  //
+  // **«si calcola» non concorda con niente, e qui non è un vezzo.** Questi
+  // otto link portano a una «carta» sotto 奇門, a un «quadro» sotto 六壬 e
+  // 紫微斗數, a una «tavola» sotto 太乙 e a quattro «pilastri» sotto 八字: per
+  // ogni arte il catalogo prende la parola della sua letteratura, ed è giusto
+  // così. Un participio in questa frase sarebbe quindi sbagliato su metà di
+  // loro, e l'impersonale è l'unica costruzione giusta su tutt'e quattro.
+  'intro.computed': '{art}: come si calcola',
+  'intro.computed.all': 'Come si calcolano queste tavole',
+
   // Le note e la nota sulla privacy non hanno `intro`: portano entrambe un
   // titolo visibile e la propria riga d'apertura, e una pagina che è già
   // prosa non vuole una prefazione alla prefazione.

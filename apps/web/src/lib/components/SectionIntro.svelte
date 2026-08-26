@@ -2,6 +2,8 @@
   import { page } from '$app/state';
   import type { Translator } from '@shipan/i18n';
   import { metaOf } from '$lib/meta';
+  import { SECTIONS } from '$lib/navigation';
+  import { layerOfSection } from '$lib/notes';
 
   /**
    * The two paragraphs a section opens with, side by side above the form.
@@ -43,6 +45,49 @@
   let { t }: { t: Translator } = $props();
 
   const intro = $derived(metaOf(page.url.pathname)?.intro);
+
+  /**
+   * The section being read, said the way `meta.ts` says it: the language is
+   * cut off the front and what is left is the slug, so nothing here has to
+   * know how many vernaculars there are.
+   */
+  const slug = $derived(
+    page.url.pathname
+      .replace(/\/$/, '')
+      .split('/')
+      .slice(2)
+      .join('/'),
+  );
+
+  /**
+   * Where the account of this art is, and what to call it on the way.
+   *
+   * **The link is the third thing in the block and it is not a third
+   * paragraph.** What the two paragraphs do is say what the art is and what
+   * this page will not do; both raise questions they are the wrong length to
+   * answer — what 拆補 is, why the latitude is refused, what else could have
+   * been asked for — and the register that answers them was, until now,
+   * reachable only through the word «Notes» in the footer. A reader who has
+   * just read that the ju is by 拆補 is the one reader on this site who will
+   * follow a link to the page that lists it beside the value it was chosen
+   * over.
+   *
+   * **The anchor text is the name of the art and not «read more».** A link
+   * says where it goes, and «here» said eight times over eight sections says
+   * it eight times to nobody — least of all to a reader running a screen
+   * reader through the links of a page, or to anything else reading this site
+   * without eyes. The name is taken from the nav, which already keeps a long
+   * form for exactly this: a name said whole while the section it belongs to
+   * is the one being read.
+   *
+   * The consultation has no art of its own and so gets neither — no fragment,
+   * because the whole register is what it is laid on, and a wording of its
+   * own, because «how each of these is computed» is a different sentence from
+   * «how this one is».
+   */
+  const layer = $derived(layerOfSection(slug));
+  const named = $derived(SECTIONS.find((section) => section.slug === layer?.id));
+  const art = $derived(named ? t(named.full ?? named.label) : undefined);
 </script>
 
 {#if intro}
@@ -50,6 +95,9 @@
     {#each intro as paragraph (paragraph)}
       <p>{t(paragraph)}</p>
     {/each}
+    <a href="/{t.locale}/notes/instruments{layer ? `#${layer.id}` : ''}">
+      {art ? t('intro.computed', { art }) : t('intro.computed.all')}
+    </a>
   </div>
 {/if}
 
@@ -70,10 +118,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
     /*
-     * The row gap is only ever spent in the stacked case, there being one row
-     * while there are two columns — which is why it can be the gap two
-     * paragraphs want between them without costing the wide layout anything.
-     * At the column gap they read as one block with an accidental break.
+     * The row gap is spent twice and wants the same number both times: under
+     * the paragraphs, where the link to the notes stands across both tracks,
+     * and between the paragraphs themselves once the tracks have collapsed to
+     * one. It used to be spent only in the stacked case — there was one row
+     * while there were two columns — and 0.9rem was chosen as what two
+     * paragraphs want between them; a paragraph and the line under it want
+     * the same, so the link cost the comment and not the value.
+     *
+     * The column gap stays its own number. At the row's distance the two
+     * paragraphs read as one block with an accidental break.
      */
     gap: 0.9rem 1.6rem;
     /*
@@ -106,6 +160,29 @@
     /* The tracks are already at a measure; this keeps the single-column case
        from stretching to the width of the shell. */
     max-width: 44rem;
+  }
+
+  /*
+   * Across both tracks, under both paragraphs.
+   *
+   * Not a third column: `auto-fit` would give it one at the width two
+   * paragraphs already fill, and a link set beside prose in a track of its own
+   * reads as a third thing the section is about rather than as the way out of
+   * the two above it. Spanning, it sits where a reader is when they have
+   * finished reading — which is the only place a link forward is any use.
+   *
+   * `justify-self` keeps it the width of its own words. A grid item stretches
+   * by default, and a stretched anchor is a click target as wide as the shell
+   * with an underline under one end of it.
+   */
+  .intro a {
+    grid-column: 1 / -1;
+    justify-self: start;
+    font-size: 0.9rem;
+    /* The paragraphs above are `--faint` and this is not: what is quiet here
+       is the account, and the way to the rest of it is the one line in the
+       block a reader is being asked to act on. */
+    text-underline-offset: 0.15em;
   }
 
   /*

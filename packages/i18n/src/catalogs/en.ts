@@ -958,6 +958,21 @@ export const en = {
   'meta.intro.bazi.b':
     'The luck cycles run from a sex, and the five elements arrive counted, zeroes included. A count is not a verdict: strong or weak is a step of method, not taken here.',
 
+  // The line under the two paragraphs, and the only link a section page has.
+  //
+  // **`{art}` is the name said whole, and that is the whole point of the
+  // placeholder.** Eight sections sharing one message would otherwise share
+  // one sentence, and «read more» said eight times says it eight times to
+  // nobody — least of all to somebody running a screen reader down the links
+  // of a page, where a link is met with none of the prose that was above it.
+  // The long form comes from the nav, which keeps one for exactly this
+  // situation: a name at full length while the section is the one being read.
+  'intro.computed': 'How {art} is computed',
+  // The consultation is laid on whichever of the six the reader picks, so it
+  // has no name to put in the sentence and no layer to land on — the register
+  // whole is what it is a way into. See `layerOfSection`.
+  'intro.computed.all': 'How each of these boards is computed',
+
   // The notes and the privacy note have no `intro`: both carry a visible
   // heading and their own opening line, and a page that is already prose does
   // not want a preface to its preface.

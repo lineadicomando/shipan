@@ -45,7 +45,12 @@
 
   {#each data.layers as layer (layer.id)}
     {@const name = layer.name ?? nameOf(layer.id)}
-    <section>
+    <!-- The identifier is the anchor, so that a section's introduction can
+         send a reader to the layer their own art is on rather than to the top
+         of nine of them. It is the engine's own name for the board — the same
+         string the address of that section is — which is why no id is written
+         here: `layerOfSection` in `$lib/notes` is the whole of the mapping. -->
+    <section id={layer.id}>
       <h2>
         {#if name}
           <span class="said">{name.pinyin}</span>
@@ -108,7 +113,17 @@
   h1 { font-size: 1.25rem; font-weight: 500; }
   .lead { margin: 1rem 0; max-width: 40rem; }
 
-  section { margin-top: 2.4rem; }
+  /*
+   * The margin above is also what a jump has to clear.
+   *
+   * A reader arriving on `#qimen` from a section's introduction lands with
+   * the heading against the top of the window and the 2.4rem separating it
+   * from the layer before scrolled away, so the layer reads as though it
+   * began mid-air. `scroll-margin-top` puts that band back, and it is the
+   * same number rather than a guessed one: what the eye wants above a
+   * heading it has just jumped to is what the page already puts above it.
+   */
+  section { margin-top: 2.4rem; scroll-margin-top: 2.4rem; }
   h2 {
     display: flex;
     align-items: baseline;

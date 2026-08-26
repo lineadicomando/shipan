@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import { LOCALES, createTranslator } from '@shipan/i18n';
 import { CARD, OG_LOCALES, SITE, TITLE_SEPARATOR, PAGES, metaOf, trailOf } from '../src/lib/meta';
 import { pagesOf } from '../src/lib/indexable';
+import { SECTIONS } from '../src/lib/navigation';
+import { LAYERS, layerOfSection } from '../src/lib/notes';
 
 /**
  * What every page says it is, held to the pages that exist.
@@ -54,6 +56,38 @@ describe('what a section opens with', () => {
   it('gives every section two paragraphs', () => {
     for (const path of sections) {
       expect(metaOf(path)?.intro, path).toHaveLength(2);
+    }
+  });
+
+  it('leads every section to the layer its art is on', () => {
+    // The link under the two paragraphs is built from `layerOfSection`, and
+    // what it can silently become is a fragment for an anchor that is not on
+    // the page — a link that works, scrolls nowhere, and tells nobody. Six of
+    // the eight are their own slug and would never drift; the two that are
+    // not are the two acts, and both are exactly the kind of fact that goes
+    // stale when a section is renamed.
+    const anchors = new Set(LAYERS.map((layer) => layer.id));
+    for (const path of sections) {
+      const slug = TAIL(path);
+      const layer = layerOfSection(slug);
+      // The consultation is laid on whichever board is picked and lands on
+      // the register whole. Every other section names one.
+      if (slug === '') expect(layer, path).toBeUndefined();
+      else expect(anchors.has(layerOfSection(slug)?.id ?? ''), path).toBe(true);
+    }
+  });
+
+  it('names the art every one of those links points at', () => {
+    // The anchor text is `{art}`, read off the nav's long form. A section
+    // whose layer no entry of `SECTIONS` is keyed by would fall through to
+    // the consultation's wording and tell a reader on 六壬 that this is how
+    // «each of these boards» is computed.
+    for (const path of sections.filter((page) => TAIL(page) !== '')) {
+      const layer = layerOfSection(TAIL(path));
+      expect(
+        SECTIONS.some((section) => section.slug === layer?.id),
+        path,
+      ).toBe(true);
     }
   });
 
