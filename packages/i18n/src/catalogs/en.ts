@@ -790,38 +790,14 @@ export const en = {
   'nav.qizheng': 'Qi Zheng',
   'nav.ziwei': 'Zi Wei',
   'nav.taiyi': 'Tai Yi',
-  // The longer form of a name, worn by the section being read and by no other.
+  // Every one of these is cut in the bar and says so once: 奇門遁甲 stands as
+  // `Qi Men`, 大六壬 as `Liu Ren`, 七政四餘 as `Qi Zheng`, 紫微斗數 as
+  // `Zi Wei` and 太乙神數 as `Tai Yi`, the way they are cut in speech. A row
+  // of six full names is six phrases where a reader is looking for one. 八字
+  // is not cut, two characters leaving nothing to cut.
   //
-  // Four of the six names are cut in the bar: 奇門遁甲 stands as `Qi Men`,
-  // 大六壬 as `Liu Ren`, 七政四餘 as `Qi Zheng` and 紫微斗數 as `Zi Wei`, the
-  // way they are cut in speech. A list of six full names is six phrases where
-  // the reader is looking for one, and the two longest were the two that had
-  // never been cut.
-  //
-  // The current section says the whole of its name instead, which is where a
-  // name is worth its length: the reader is on that board, the label is no
-  // longer one option among six, and what it costs to read it is what it costs
-  // to read a title. It is also the only mark this list carries besides the
-  // underline, and the two say the same thing in two registers.
-  //
-  // One section has no entry here and it is not an omission: 八字 is two
-  // characters and cutting it would leave nothing to cut.
-  //
-  // 太乙 has one, and it is `Tai Yi Shen Shu`. 神數 names the transmission
-  // this art is met under, which is the name the consultation already sets at
-  // the head of its card — `instruments.ts` carries 太乙神數 Tài Yǐ Shén
-  // Shù — and a bar that stopped at `Tai Yi` was the one surface here calling
-  // the section something no reader would have gone looking for it under. That
-  // 神數 also names a later branch around 《太乙統宗寶鑑》, a book with a
-  // different 上元積年 which `docs/sources.md` records as unread and which
-  // `epoch` declines, is a fact about a 上元積年 and not about a name. It is
-  // said where a reader can act on it — in the notes, and in what `epoch`
-  // refuses — rather than by withholding the name from a label.
-  'nav.qimen.full': 'Qi Men Dun Jia',
-  'nav.liuren.full': 'Da Liu Ren',
-  'nav.qizheng.full': 'Qi Zheng Si Yu',
-  'nav.ziwei.full': 'Zi Wei Dou Shu',
-  'nav.taiyi.full': 'Tai Yi Shen Shu',
+  // Where the whole of a name is said is `h1.*`, at the top of the page it
+  // belongs to.
   'nav.moments': 'Choosing a time',
   // Named by the act, which is the one this section is built around: a
   // question put at an instant, and the chart cast for that instant. It was
@@ -869,6 +845,18 @@ export const en = {
   // name — the paragraph immediately under this one opens on them, and a
   // heading that opened on them too would put the glyph before the gloss on a
   // page whose reader does not read Chinese. See `docs/i18n.md`.
+  //
+  // **太乙 is met as 太乙神數, and the heading is where that is settled.**
+  // 神數 names the transmission this art is met under — `instruments.ts`
+  // carries 太乙神數 Tài Yǐ Shén Shù, and the consultation already sets it at
+  // the head of its card — so a surface stopping at `Tai Yi` calls the
+  // section something no reader would have gone looking for it under. The bar
+  // stops there because a bar cuts every name it carries; this does not.
+  // That 神數 also names a later branch around 《太乙統宗寶鑑》, a book with a
+  // different 上元積年 which `docs/sources.md` records as unread and which
+  // `epoch` declines, is a fact about a 上元積年 and not about a name. It is
+  // said where a reader can act on it — in the notes, and in what `epoch`
+  // refuses — rather than by withholding the name from a heading.
   //
   // Distinct from the `title` in `meta.*`, and not by oversight. A title is
   // written to stand alone in a search result and says what the page is
@@ -996,14 +984,19 @@ export const en = {
 
   // The line under the two paragraphs, and the only link a section page has.
   //
-  // **`{art}` is the name said whole, and that is the whole point of the
-  // placeholder.** Eight sections sharing one message would otherwise share
-  // one sentence, and «read more» said eight times says it eight times to
-  // nobody — least of all to somebody running a screen reader down the links
-  // of a page, where a link is met with none of the prose that was above it.
-  // The long form comes from the nav, which keeps one for exactly this
-  // situation: a name at full length while the section is the one being read.
-  'intro.computed': 'How {art} is computed',
+  // **It named the art and now does not, because the heading above it does.**
+  // This was «How Qi Men Dun Jia is computed», written when the heading was
+  // `offscreen` and the link was met with none of the prose around it — a
+  // link that says «here» eight times over eight sections says it eight times
+  // to nobody. What changed is that the name is now the first line of the
+  // page, four lines above this one and inside the same block: a reader
+  // running a screen reader down the links passes the heading on the way, and
+  // a reader looking at the page sees the two together. Said twice in four
+  // lines it stopped being anchor text and became a repetition.
+  //
+  // «this» and not «this board»: the scan lays no board, and the one word
+  // that would cover all eight is the one the heading already supplied.
+  'intro.computed': 'How this is computed',
   // The consultation is laid on whichever of the six the reader picks, so it
   // has no name to put in the sentence and no layer to land on — the register
   // whole is what it is a way into. See `layerOfSection`.

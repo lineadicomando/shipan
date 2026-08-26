@@ -84,18 +84,20 @@ describe('the heading a section carries', () => {
       it('names the art the section lays out', () => {
         /**
          * The whole of what this file was written for. An instrument is
-         * *named*, the registry keeps the name at full length, and the heading
-         * is the line that tells a reader which art they are looking at now
-         * that the bar no longer grows to say it. The two acts are exempt for
-         * the reason they are acts: a consultation has no art of its own, and
+         * *named*, and the heading is the line that tells a reader which art
+         * they are looking at now that the bar no longer grows to say it: it
+         * opens on the name the bar cuts — `Zi Wei` in the row, `Zi Wei Dou
+         * Shu` here — so the label is what it must contain. The two acts are
+         * exempt for the reason they are acts: a consultation has no art of
+         * its own, and
          * choosing a time is named by what a reader does — it says «Qi Men Dun
          * Jia» all the same, because it walks those charts and only those, but
          * it says it as a section of prose rather than as a name this test can
          * look up.
          */
-        for (const { slug, label, full, heading, group } of SECTIONS) {
+        for (const { slug, label, heading, group } of SECTIONS) {
           if (group !== 'instrument') continue;
-          expect(t(heading), slug).toContain(t(full ?? label));
+          expect(t(heading), slug).toContain(t(label));
         }
       });
 

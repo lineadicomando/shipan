@@ -93,22 +93,22 @@
    * follow a link to the page that lists it beside the value it was chosen
    * over.
    *
-   * **The anchor text is the name of the art and not «read more».** A link
-   * says where it goes, and «here» said eight times over eight sections says
-   * it eight times to nobody — least of all to a reader running a screen
-   * reader through the links of a page, or to anything else reading this site
-   * without eyes. The name is taken from the nav, which already keeps a long
-   * form for exactly this: a name said whole while the section it belongs to
-   * is the one being read.
+   * **The anchor text says the errand and leaves the name to the heading.**
+   * It used to carry the art — «How Qi Men Dun Jia is computed» — written
+   * when the heading was `offscreen` and a link was met with none of the
+   * prose around it, which is the case that makes «read more» useless: eight
+   * sections sharing one line say it eight times to nobody. The heading is
+   * now four lines above this and inside the same block, so a reader passes
+   * the name on the way to the link whether they are looking at the page or
+   * running a screen reader down it. Said twice that close, it stopped being
+   * anchor text and became a repetition.
    *
-   * The consultation has no art of its own and so gets neither — no fragment,
-   * because the whole register is what it is laid on, and a wording of its
-   * own, because «how each of these is computed» is a different sentence from
-   * «how this one is».
+   * The consultation still gets a wording of its own, and a fragment is the
+   * one thing it does not get: the whole register is what it is laid on, and
+   * «how each of these boards is computed» is a different sentence from «how
+   * this one is».
    */
   const layer = $derived(layerOfSection(slug));
-  const named = $derived(SECTIONS.find((section) => section.slug === layer?.id));
-  const art = $derived(named ? t(named.full ?? named.label) : undefined);
 
   /** The section this is, for the heading it wears. */
   const here = $derived(SECTIONS.find((section) => section.slug === slug));
@@ -127,7 +127,7 @@
       <p>{#each saidApart(t(paragraph)) as segment, index (index)}{#if segment.said}<i>{segment.text}</i>{:else}{segment.text}{/if}{/each}</p>
     {/each}
     <a href="/{t.locale}/notes/instruments{layer ? `#${layer.id}` : ''}">
-      {art ? t('intro.computed', { art }) : t('intro.computed.all')}
+      {layer ? t('intro.computed') : t('intro.computed.all')}
     </a>
   </div>
 {/if}

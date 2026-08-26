@@ -759,17 +759,11 @@ export const it: Record<MessageKey, string> = {
   'nav.qizheng': 'Qi Zheng',
   'nav.ziwei': 'Zi Wei',
   'nav.taiyi': 'Tai Yi',
-  // La forma lunga di un nome, portata dalla sezione che si sta leggendo e da
-  // nessun'altra. Cinque dei sei nomi stanno accorciati nella barra, come si
-  // accorciano parlando; la sezione corrente dice invece il proprio nome per
-  // intero, che è dove un nome vale la sua lunghezza. 八字 non si allunga
-  // perché non si era accorciato: si veda il catalogo inglese per la ragione
-  // di quello, e per quella della forma lunga di 太乙.
-  'nav.qimen.full': 'Qi Men Dun Jia',
-  'nav.liuren.full': 'Da Liu Ren',
-  'nav.qizheng.full': 'Qi Zheng Si Yu',
-  'nav.ziwei.full': 'Zi Wei Dou Shu',
-  'nav.taiyi.full': 'Tai Yi Shen Shu',
+  // Ogni nome sta accorciato nella barra, come si accorcia parlando: una
+  // fila di sei nomi per intero sono sei locuzioni dove il lettore ne cerca
+  // una. 八字 non è accorciato perché due caratteri non lasciano niente da
+  // accorciare. Dove il nome si dice per intero è `h1.*`, in testa alla
+  // pagina che gli appartiene; le ragioni stanno nel catalogo inglese.
   'nav.moments': 'Scegliere il momento',
   'nav.consult': 'Consultazione',
   'nav.sections': 'Sezioni',
@@ -916,12 +910,10 @@ export const it: Record<MessageKey, string> = {
   'meta.intro.bazi.b':
     'I cicli di fortuna corrono da un sesso, e i cinque elementi arrivano contati, zeri compresi. Un conteggio non è un verdetto: forte o debole è un passo di metodo, e qui non si compie.',
 
-  // Il nome apre e la domanda segue, dove l'inglese piega invece la frase
-  // attorno al nome.
-  //
-  // «Come viene calcolato Qi Men Dun Jia» è corretto e sarebbe stata la
-  // lettura letterale, ma sotterra l'unica parola che chi scorre otto sezioni
-  // sta cercando dietro tre che in tutte e otto sono le stesse.
+  // Il nome è sparito da qui perché lo dice il titolo, quattro righe sopra e
+  // dentro lo stesso blocco: «Qi Men Dun Jia: come viene calcolato» sotto
+  // «Qi Men Dun Jia — la carta di un istante» non era più testo d'ancora, era
+  // una ripetizione. La ragione per cui c'era sta nel catalogo inglese.
   //
   // **«come viene calcolato» e non «come si calcola», che qui dice un'altra
   // cosa.** L'impersonale in italiano promette istruzioni: «come si calcola»
@@ -932,10 +924,10 @@ export const it: Record<MessageKey, string> = {
   //
   // Concorda al maschile perché il soggetto è l'arte e non la tavola: il Qi
   // Men Dun Jia, il Da Liu Ren, il Tai Yi Shen Shu, il Qi Zheng Si Yu, lo Zi
-  // Wei Dou Shu, il Ba Zi. Sono tutti maschili, e l'articolo non compare
-  // nella frase, quindi la concordanza tiene su tutte e sei senza che il
-  // nome debba portarne uno.
-  'intro.computed': '{art}: come viene calcolato',
+  // Wei Dou Shu, il Ba Zi. Sono tutti maschili, e il titolo qui sopra li ha
+  // appena nominati, quindi il participio ha di che accordarsi anche ora che
+  // il nome non sta più nella frase.
+  'intro.computed': 'Come viene calcolato',
   // Qui il soggetto sono le tavole, perché la consultazione non nomina
   // un'arte e la frase non ha altro a cui appoggiarsi.
   'intro.computed.all': 'Come vengono calcolate queste tavole',
