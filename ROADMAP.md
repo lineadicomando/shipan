@@ -230,13 +230,18 @@ quadrant sums close against their own entries, and against each other on
 365.2575, which is the 曆's own 周天分. That is the standard's second clause
 met by one text.
 
-It still does not land the value, and what is left is no longer research. The
-remaining cells want transcribing at the resolution that settled 虛 — which
-read as 「九七一」 at 400 dpi and as 「九　七十五秒」 at 600, a difference of
-seven tenths of a degree and of whether the quadrant closes at all — and the
-option has to carry an epoch as well as a table, because the source makes its
-own numbers a function of the 歲差 at a chosen moment. The argument is in
-`docs/sources.md`, in the frame section.
+It still does not land the value, and the transcription has made what stands
+in the way enumerable rather than vague. **參 is not printed** — the western
+group carries six lodges where its own sum counts seven, and the missing
+10.28 can be had by subtraction, which is a derivation and not a witness.
+**鬼 and 柳 cannot be separated by their own quadrant**, which closes on 2.11
+with 13.00 and equally on 2.21 with 12.90. And the option has to carry an
+epoch as well as a table, because the source makes its own numbers a function
+of the 歲差 at a chosen moment.
+
+So the errand that remains is a second copy of the 授時 table for one lodge, a
+crop for one pair, and a decision about the parameter's shape. The argument is
+in `docs/sources.md`, in the frame section.
 
 ## 3. Spanish, once the engine has stopped moving
 

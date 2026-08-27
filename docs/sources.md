@@ -1763,8 +1763,8 @@ register should not go on citing only the second.
 **What the source also says is that the table is not a constant**, and that is
 a fact about the parameter's shape rather than about the numbers:
 「各得當時宿度」 makes 授時's 黃道宿度 a function of the 歲差 at a chosen
-moment, so `xiudu: shoushi` cannot be a table without also being an epoch. **And the table checks itself twice, which is the standard's own words.** The
-four quadrant sums are printed — 東方 七十八度一十二分, 北方 九十四度一十分
+moment, so `xiudu: shoushi` cannot be a table without also being an epoch. **And the table checks itself, which is the standard's own words — three
+quadrants of four, and the whole circle.** The four quadrant sums are printed — 東方 七十八度一十二分, 北方 九十四度一十分
 七十五秒, 西方 八十三度九十五分, 南方 一百〇九度八分 — and each closes against
 its own seven entries. The northern is the one that shows what the checking is
 worth: read at 400 dpi its seven come to 94.81 against a printed 94.1075, and
@@ -1776,9 +1776,23 @@ exactly. **Then the four sums close on the circle**: 78.12 + 94.1075 + 83.95 +
 constant the 曆 is built on, from its own printed parts, is checking itself in
 the way rung 4 asks for.
 
-So the value stays refused for one reason only, and it is now a mechanical one:
-the remaining cells want transcribing at the resolution that settled 虛, and
-the option's shape has to carry an epoch as well as a table, because the source
+**Transcribing the rest found a defect in the copy, which is what
+transcribing is for.** The western group prints six lodges where its own sum
+counts seven: 奎 17.87, 婁 12.36, 胃 15.81, 昴 11.08, 畢 16.50, 觜 初五分, which
+come to 73.67 against a printed 八十三度九十五分. The difference is 10.28, and
+參 — the seventh of the western seven — appears nowhere between 觜 and the sum,
+nor after it, where the southern group begins at 井. So the sum is right and
+the list is a line short on this copy. 10.28 is *recoverable* from the
+subtraction and that is a derivation and not a witness; the entry has to be
+read on another copy before it can be used.
+
+Two cells of the southern seven are under-determined for a different reason:
+the quadrant closes at 109.08 on 鬼 2.11 with 柳 13.00 and equally on 鬼 2.21
+with 柳 12.90, so its own sum cannot choose between them and a crop must.
+
+So the value stays refused, and what stands in the way is now enumerable: one
+lodge missing from this print, one pair its arithmetic cannot separate, and an
+option shape that has to carry an epoch as well as a table, because the source
 makes its own numbers a function of a moment. Read on the plate 2026-08-27. The 考成 column is the one that
 could be checked without leaving this shelf, since 《儀象考成》 卷一~卷十六 is
 held and its 距星 are the ends of exactly these intervals; that collation has
