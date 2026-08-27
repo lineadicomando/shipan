@@ -461,7 +461,8 @@ The same happens at 刑格 and 戰格, and at the two 甲/庚 pairings K names
 伏宮格 · 飛宮格 where B names 天乙伏宮 · 值符飛宮. Where the sources name a
 pairing differently the classical verse decides — it is the text the others
 descend from — and the divergence is recorded here rather than resolved in
-silence. **T and Y widen the spread without moving a single pairing**: every
+silence. **That rule has one known limit and it is 庚 over 壬**, where the
+verse is transmitted two ways; see the twelfth-pairing note below. **T and Y widen the spread without moving a single pairing**: every
 cell either of them carries is a cell the shipped table already has, at the
 same two stems, and 丙 over 庚 alone now answers to four names across five
 witnesses — 熒入白, 熒入太白, 火入金鄉, 織女尋牛郎. The verse still decides.
@@ -494,12 +495,22 @@ p. 3089 prints 「**上格○天盤庚加地盤壬也，一名小隔，不宜出
 「大格○天盤庚加地盤癸也，忌出師遠行，主車破馬死，人財破散」. 不宜出師 is a
 verdict and not a neighbourhood, and it is in print.
 
-**What that costs is the name.** This work calls the pairing 上格 and glosses
-it 一名小隔 — 隔 and not 格 — where 統宗 and 秘笈大全 have 小格, K has 小格 and
-B has 太白退位. Four namings for one condition, all of them 庚 over 壬. So the
-entry, when it is written, has a hanzi to choose and a note to carry about the
-three it does not choose; the condition and the valence are no longer the open
-part. Read on the plate 2026-08-27. It no longer stands on a leaf this shelf lacks:
+**What that costs is the name, and the rule that decides names cannot decide
+this one.** This file settles a disputed naming by the classical verse, «it is
+the text the others descend from». Here the verse is itself split. The
+Wikisource recension of 煙波釣叟歌 reads 「庚加癸兮為大格，加己為刑最不宜。
+**加壬之時為上格**，又嫌歲月日時逢」, and 闡秘前編's prose agrees with it —
+上格, glossed 一名小隔, with 隔 and not 格. But the verse as the 統宗 and the
+秘笈大全 quote it reads 「加壬之時為**小格**」, and their prose follows their
+verse. K has 小格 and B has 太白退位.
+
+So one condition, 庚 over 壬, carries four namings across the witnesses, and
+**two of them are two readings of the same line**. That is a variant in the
+deciding text and not a disagreement the deciding text can settle, which makes
+it the first pairing in this survey where the rule runs out. The entry, when it
+is written, chooses a hanzi knowing that; the condition and the valence are no
+longer the open part. Read on the plate 2026-08-27, verse checked against the
+Wikisource recension held here. It no longer stands on a leaf this shelf lacks:
 《遁甲集成》第六冊's 統宗 prints it, per the note below. **This is a decision
 that is now waiting, not a refusal.** 三奇得使 is no longer its precedent: there the sources disagree,
 which is a different thing from there being only one, and only the second was
