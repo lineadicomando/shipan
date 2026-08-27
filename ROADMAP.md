@@ -51,7 +51,12 @@ says which reckoning it computes, and what the type does not yet carry is a
 implementing it, since a value is declared when the engine is ready to refuse
 it by name — which is what 太乙's `ji` did when 卷一 was read.
 
-- 紫微斗數 `sihua` — 《紫微斗數全書》's own table, until a lineage has been read.
+- 紫微斗數 `sihua` — 《紫微斗數全書》's own table. **The errand this was waiting
+  on is finished and it did not produce a second value**: two modern schools on
+  the shelf, the 中州派 manual and 北派, each move a single cell — 壬's 科 to
+  左輔 — and agree with the received table everywhere else. A lineage's own ten
+  stems is not what is there, so what would declare a second value is a
+  different find from the one that was being looked for. See `docs/sources.md`.
 - 曆注 `shensha` — what 《協紀辨方書》 ratifies, until a named lineage has been.
 
 `method: maoshan` is in the table and is not expected to leave it: there is no
@@ -68,10 +73,16 @@ and nothing here depends on it: what a source establishes is in
 ## 2. Reading the scans on the shelf
 
 Forty of the seventy PDFs in `texts/` are photographic and carry no text
-layer, and most of them have never been turned into an extract — on the order
-of ten thousand unread pages. Several of the values
-in § 1 are waiting on some of them, and nothing else about this section is
-urgent — an unread scan costs nothing until somebody claims it says something.
+layer. **Sixteen of them were extracted in one pass and the shelf's register
+records what each is worth**; what is left unextracted is what should be, being
+woodblock or handwriting. Several of the values in § 1 are waiting on some of
+them, and nothing else about this section is urgent — an unread scan costs
+nothing until somebody claims it says something.
+
+**An extract is not a reading and the two are counted separately here.** The
+pass above made about ten thousand pages searchable; a handful of them have
+since been read, and the register says which. The rest is a way of finding a
+page and nothing more.
 
 **A phase is finished by the register, not by the extract.** An OCR run that
 leaves a `.txt` nobody has read moves nothing: a file is not a source until
@@ -85,7 +96,10 @@ negative is only re-checkable while the paper is still on the shelf.
 file, which would need maintaining and would drift: `texts/<art>/.txt/` says
 what has been extracted, `docs/sources.md` says what has been read, and
 `docs/provenance.tsv` says what is held and what it is. Reading those three is
-how the next phase finds its starting point.
+how the next phase finds its starting point. `texts/README.md` holds the
+per-file measurements — what a given extract turned out to be worth, and which
+characters it loses — and is the fourth thing to read before planning around a
+file.
 
 **How a scan is read is not decided here.** `docs/scans.md` owns it: which of
 the two ways in a file takes, what an extract is for, why a search returning
@@ -96,28 +110,37 @@ assumes that page.
 The toolchain the phases below assume: tesseract 5.5.3 with `chi_sim`,
 `chi_tra` and the two `_vert` models, `ocrmypdf` 16, `unpaper` 7 and Pillow for
 cutting a sheet into its book-pages, and `pdftoppm`, `pdfimages`, `qpdf` and
-`gs` for rendering a plate and taking a file apart.
+`gs` for rendering a plate and taking a file apart. All of it was present on the
+machine this was last run on bar `qpdf`.
+
+**Three scripts at the top of `texts/` do the extracting**, one for each shape
+of sheet: `ocr-1up.sh` takes a language and a psm and goes through poppler,
+`ocr-2up.sh` takes two book-pages — `lr` for side by side, `tb` for stacked —
+and `ocr-4up.sh` takes four. Each writes a `.nospace.txt` beside the extract,
+which is the one to grep.
 
 ### Phase 1 — the dunjia scans, for `plate`, `centreLodging` and `system`
 
-The largest block and the least prepared — eleven files, some three and a half
-thousand pages. **The extent pass is done and it changed the block**: 御定奇門
-寶鑑 is one 冊 of eight, the third 遁甲演義 is 卷一 alone, and the three 故宮
-volumes carry a 新編目錄 on their last leaves, which is how to survey them
+The largest block — eleven files, some three and a half thousand pages, of
+which one is extracted and two are surveyed. **The extent pass changed it**:
+御定奇門寶鑑 is one 冊 of eight, the third 遁甲演義 is 卷一 alone, and the three
+故宮 volumes carry a 新編目錄 on their last leaves, which is how to survey them
 cheaply.
 
 **And it answered the `system` question on the way.** 《遁甲演義》卷一 states
 年家, 月家 and 日家 entire — see `docs/sources.md` § 年命 — so what those three
-values wait on is a second witness and no longer a text. **A second work has
-since turned up and it is not a second witness**: 《奇門闡秘前編》卷之三, in
-第六冊, says 「凡年月日家各有奇門」 and prints a 年家八節三奇定局 — but its
-chapter is titled 選擇, and the table gives eight settings to a year, one per
-節, where 遁甲演義 lays one board a year off a 三元 division. A table of where
-乙丙丁 stand is not a rule for laying a board, so the two cannot confirm or
-contradict each other. What it witnesses is that the four-fold division is
-transmitted and used. The witness to the procedure is still missing. It also showed that
+values wait on is a second witness and no longer a text. It also showed that
 they cannot move alone: those boards are flown where the 時家 is turned, so
 `plate: fei` and `system` are one errand.
+
+**A second work has since turned up and it is not a second witness.**
+《奇門闡秘前編》卷之三, in 第六冊, says 「凡年月日家各有奇門」 and prints a
+年家八節三奇定局 — but its chapter is titled 選擇, and the table gives eight
+settings to a year, one per 節, where 遁甲演義 lays one board a year off a 三元
+division. A table of where 乙丙丁 stand is not a rule for laying a board, so
+the two cannot confirm or contradict each other. What it witnesses is that the
+four-fold division is transmitted and used. **The witness to the procedure is
+still missing, and it is the single thing this phase most wants.**
 
 What is left of this phase is 飛盤 proper and `centreLodging`. **The searchable
 face of it exists and the rest is plates**, which is a shorter list than the
@@ -156,11 +179,20 @@ one this section used to carry and a slower one:
    for confirmation of a passage already located elsewhere rather than for
    searching.
 
-**What the extent pass covered, so the next one does not repeat it**: page
-counts and pixel metrics for all eleven, the closing leaf of ten — 圖解 is a
-modern book and has none — and 卷一 of the 四庫 遁甲演義. The sections of the
-nine unopened files have not been surveyed; the three 故宮 volumes' 新編目錄
-is where that starts.
+**What has been covered, so the next pass does not repeat it.** The extent
+pass took page counts and pixel metrics for all eleven, the closing leaf of ten
+— 圖解 is a modern book and has none — and 卷一 of the 四庫 遁甲演義. Since
+then: 圖解 is extracted and read for both values; 第二冊 is surveyed by contact
+sheet between its sheets 40 and 115, which located 奇門占驗's end and the work
+after it; and 第六冊 is surveyed across its whole extent, which is what turned
+up the 統宗 and 闡秘前編 inside it, its 四十格 at sheets 9–10, its 歌註 around
+sheet 131 and its 格局 at sheet 142.
+
+**Not yet surveyed**: 第三冊 entire, the second half of 第二冊 beyond sheet 115,
+and the three 故宮 volumes, whose 新編目錄 on their last leaves is where that
+starts. A contact sheet of the top strip of both book-pages, ten to sixteen
+sheets sampled, is what these three passes were made of; the running title in
+the 版心 is what decided two of them.
 
 ### Phase 2 — 《中國絕學》, for a school's name
 
@@ -185,43 +217,32 @@ which is what a set nobody had opened was missing. Search around 祿, which
 those scans lose without collapsing onto anything: 化祿 and 祿存 score zero on
 volumes that print them constantly.
 
-**第七冊 has been searched and three of its pages read, and it moved `sihua`
-without settling it.** It uses 庚's 忌 on 天相 in one part and on 天同 — the
-received value — in another, which is what an anthology of three schools does,
-and it puts 壬's 科 on 左輔 in a worked example that is decidable only on that
-reading. So the second value is closer and still not liftable: it would have to
-come from a named school inside the volume, which means reading which part
-belongs to whom.
+**The errand this phase was opened for is finished, and it closed rather than
+landed.** 紫微斗數 `sihua` was waiting on a lineage carrying its own ten stems.
+That is not what the set holds. 第七冊's parts number their own pages, so which
+stretch belongs to which school is a thing the plates say: 庚's 忌 stands on
+天相 under a 【占驗派】 heading and on 天同 in a part opening on 《紫微斗數
+北派》, 恭鑑老人 著. 北派's table has then been read across six stems, eleven
+cells, and every one of them is 《全書》's **except 壬's 科, which it puts on
+左輔** — the same single cell the 中州派 manual moves. Two modern schools moving
+one cell each is a smaller thing than a second table, and what would declare a
+second value is now a different find from the one that was being looked for.
 
-**第六冊 answered two of the other three refusals, and neither answer is the
-kind that lands.** It prints `huoling: hour` whole at its p. 406 and
-`daxian: ming` whole at its p. 437, each as a procedure and a diagram, so both
-values stop being things nobody states and become things one modern school
-manual states. That is one witness where the standard asks for two transmitted
-ones, and the received book says otherwise, so both stay refused — but the
-`huoling` pair turns out to share every seat and part only on the count, which
-is a smaller divergence than the parameter's shape suggested. The arguments,
-with the pages, are in `docs/sources.md`.
+**第六冊 answered two of the other refusals and neither answer lands.** It
+prints `huoling: hour` whole at its p. 406 and `daxian: ming` whole at its
+p. 437, each as a procedure and a diagram, so both stop being things nobody
+states and become things one modern school manual states — one witness where
+the standard asks for two transmitted ones, against a received book that says
+otherwise. The `huoling` pair turns out to share every seat and to part only on
+whether the hour is counted on, which is a narrower divergence than the
+parameter's shape suggested.
 
-**And 第七冊's own question has been answered.** Its parts number their own
-pages, so which stretch belongs to which school is a thing the plates say
-rather than a thing to infer: 庚's 忌 goes to 天相 under a 【占驗派】 heading
-and to 天同 in a part that opens on 《紫微斗數 北派》, 恭鑑老人 著, and 壬's 科
-goes to 左輔 in that same 北派. The cells now carry a school's name, which is
-what this phase was held for.
+Every argument above, with its pages, is in `docs/sources.md`.
 
-**And 北派's table has been read, which closes the errand rather than
-advancing it.** Eleven cells over six stems, off its own plates, and every one
-of them is 《全書》's except 壬's 科, which it puts on 左輔 — the same single
-cell the 中州派 manual moves. So the thing this phase was looking for, a
-lineage carrying its own ten stems, is not what is there: two modern schools
-move one cell each and agree with the received table everywhere else. `sihua`
-stays at one value, and it stays there for a better reason than before. The
-argument is in `docs/sources.md`, under 「天府 taking 化科 at 壬」.
-
-What is left of this phase is 第一冊, which is the manuscript, and 第十冊,
-whose extract is the weak one and which is therefore a plate errand whatever
-else happens. Neither is under a value in § 1.
+What is left of this phase is 第一冊, which is the manuscript, and 第十冊, whose
+extract is the weak one — 96 dpi to the sheet, 紫微 once in the whole volume —
+and which is therefore a plate errand whatever else happens. **Neither is under
+a value in § 1**, so neither is urgent.
 
 ### Phase 3 — 紫微斗數全書, 明南陽堂 woodblock
 
@@ -233,39 +254,42 @@ transcriptions disagree on.
 
 ### Phase 4 — the remainder, read behind no citation
 
-《協紀辨方書》 卷七~卷八 四庫 woodblock, the third 遁甲演義 scan, 大六壬指南 —
-which is not a woodblock facsimile but a 1990 typesetting in simplified
-characters, opens on 《大六壬心印賦》 rather than on the work it is filed under,
-and carries in that 增注 a witness the register was citing from elsewhere —
-大六壬課經
-集, 大六壬神課金口訣, 中國古代天文與曆法, and 祖傳年家太乙神數. None of them
-is under a value in § 1. They are read when a phase above sends somebody to
-them, or not at all.
+《協紀辨方書》卷七~卷八 四庫 woodblock, the third 遁甲演義 scan, 大六壬課經集,
+大六壬神課金口訣, 中國古代天文與曆法, and 祖傳年家太乙神數. They are read when
+a phase above sends somebody to them, or not at all.
 
-**One of them turned out to be, which is what «read behind no citation» is
-for.** 《授時曆故》 was extracted with the rest and searched on the way past,
-and its 卷二 carries the whole 授時 黃道宿次 with the epoch the `xiudu:
-shoushi` refusal had been waiting on — 至元辛巳, said by the work. **And the table checks itself**: its four
-quadrant sums close against their own entries, and against each other on
-365.2575, which is the 曆's own 周天分. That is the standard's second clause
-met by one text.
+**Two of them stopped belonging here, which is what this list is for.**
 
-It still does not land the value, and the transcription has made what stands
-in the way enumerable rather than vague. **參 is not printed** — the western
-group carries six lodges where its own sum counts seven, and the missing
-10.28 can be had by subtraction, which is a derivation and not a witness.
-**鬼 and 柳 cannot be separated by their own quadrant**, which closes on 2.11
-with 13.00 and equally on 2.21 with 12.90. And the option has to carry an
-epoch as well as a table, because the source makes its own numbers a function
-of the 歲差 at a chosen moment.
+《大六壬指南》 is a 1990 typesetting in simplified characters and not the
+woodblock facsimile it was filed as, it stacks its two book-pages rather than
+setting them side by side, and **it opens on another work**: 《大六壬心印賦》
+with 陳良謨公獻's 增注, which is one of the two witnesses `docs/sources.md`
+counts for the 月將 turning at the 中氣. That witness had been cited from
+elsewhere as a phrase; here it is a complete procedure, twelve months with
+their 中氣, their 次, their palace and their general's name. It is extracted —
+55 344 characters, 三傳 47, 貴人 33 — and confirming a shipped default is all
+it does, which is a finished outcome and not a lesser one.
 
-The pair has since been settled by a crop — 「鬼二　一十一　柳十三」 — so
-twenty-seven of the twenty-eight are read. **The second copy this shelf holds
-cannot supply the twenty-eighth**: 《曆法通志》's table has no 授時 column, only
-a 紀元 one standing in for it under an identification 授時曆故 undercuts. So
-the errand that remains is a copy of the 授時 table this shelf does not have,
-and a decision about the parameter's shape. The argument is in
-`docs/sources.md`, in the frame section.
+《授時曆故》 carries the whole 授時 黃道宿次 in its 卷二 with the epoch the
+`xiudu: shoushi` refusal had been waiting on, 至元辛巳, and **the table checks
+itself**: each quadrant sum closes on its own seven entries, and the four close
+on 365.2575, the 曆's own 周天分. Twenty-seven of the twenty-eight lodges are
+read off the plate. What stands between it and the value is two things and
+neither is research:
+
+- **參 is not printed.** The western group carries six lodges where its own sum
+  counts seven, and the missing 10.28 can be had by subtraction, which is a
+  derivation and not a witness. The other copy this shelf holds cannot supply
+  it: 《曆法通志》's comparative table has no 授時 column, only a 紀元 one
+  standing in for it under an identification 授時曆故 undercuts. **So this
+  wants a copy of the 授時 table that is not here** — an acquisition, not a
+  reading.
+- **The option would have to carry an epoch as well as a table**, because the
+  source makes its own numbers a function of the 歲差 at a chosen moment —
+  「各得當時宿度」. That is a decision about the parameter's shape and the only
+  part of this that touches code.
+
+The argument for both is in `docs/sources.md`, in the frame section.
 
 ## 3. Spanish, once the engine has stopped moving
 
