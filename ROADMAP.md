@@ -109,12 +109,13 @@ cheaply.
 **And it answered the `system` question on the way.** 《遁甲演義》卷一 states
 年家, 月家 and 日家 entire — see `docs/sources.md` § 年命 — so what those three
 values wait on is a second witness and no longer a text. **A second work has
-since turned up and it is not yet a second witness**: 《奇門闡秘前編》卷之三,
-in 第六冊, says 「凡年月日家各有奇門」 and prints a 年家八節三奇定局 placing
-乙丙丁 by the eight 節, where 遁甲演義 divides a hundred and eighty years into
-三元 and flies the 六儀. Two procedures that differ do not confirm each other
-by both being about the 年家; running the one against the other is arithmetic,
-and it is the next thing this phase owes. It also showed that
+since turned up and it is not a second witness**: 《奇門闡秘前編》卷之三, in
+第六冊, says 「凡年月日家各有奇門」 and prints a 年家八節三奇定局 — but its
+chapter is titled 選擇, and the table gives eight settings to a year, one per
+節, where 遁甲演義 lays one board a year off a 三元 division. A table of where
+乙丙丁 stand is not a rule for laying a board, so the two cannot confirm or
+contradict each other. What it witnesses is that the four-fold division is
+transmitted and used. The witness to the procedure is still missing. It also showed that
 they cannot move alone: those boards are flown where the 時家 is turned, so
 `plate: fei` and `system` are one errand.
 

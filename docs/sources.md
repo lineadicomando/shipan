@@ -585,14 +585,24 @@ p. 3124, says the division outright — 「凡年月日家各有奇門，陰陽�
 丙 the same run, 丁 坤離巽中艮坎乾中, against 立春·立夏·立秋·立冬 and
 冬至·春分·夏至·秋分.
 
-**That is a second work and not yet a second witness**, and the distinction is
-the whole of it. 遁甲演義's 年家 is a 三元 division of a hundred and eighty
-years — 「上元一宮起甲子 … 俱逆飛六儀，順布三奇」 — where this places the three
-奇 by the eight nodal terms within a year. They are not the same procedure on
-their face, and two procedures that differ do not confirm each other by both
-being about the 年家. What would settle it is running this table against the
-other rule, which is arithmetic and not searching, and which has not been
-done. Found by contact sheet and read on the plate 2026-08-27.
+**It is a second work and not a second witness, and the two are not even
+commensurable.** The next leaf, p. 3125, shows the table's shape: each group
+of years gets three rows, 乙, 丙 and 丁, of *eight* palaces apiece — 巳亥年 has
+丙 離兌坤震坎震艮兌 and 丁 坎艮震巽離坤兌乾, and the neighbouring group repeats
+those runs one row up. Eight settings to a year, one for each 節, with the
+years grouped rather than each taking its own board. 遁甲演義's 年家 lays **one**
+board a year off a hundred-and-eighty-year 三元 division, flying the 六儀 and
+laying the three 奇 on it.
+
+And the volume files its own chapter: the running title reads
+**奇門闡秘前編 卷之三 選擇**. This is a selection table — where the three 奇
+stand at each node of a year, for choosing a direction — and not the 年家
+board. So no arithmetic is owed after all: the two are different objects, and
+a table of where 乙丙丁 stand cannot confirm or contradict a rule for laying a
+board. What it does witness is that the four-fold 年·月·日·時 division is
+transmitted and used, which 遁甲演義 already said. The second witness to the
+*procedure* is still missing. Found by contact sheet and read on the plate
+2026-08-27.
 
 **The section the plan expected to ground it does not, and the reason is a
 word.** 《遁甲集成》第二冊 carries 十八活盤詳注, which had been written down here
