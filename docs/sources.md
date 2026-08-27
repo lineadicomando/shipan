@@ -504,13 +504,21 @@ Wikisource recension of 煙波釣叟歌 reads 「庚加癸兮為大格，加己�
 秘笈大全 quote it reads 「加壬之時為**小格**」, and their prose follows their
 verse. K has 小格 and B has 太白退位.
 
+**And the variant is old and printed, not an artefact of a web transcription.**
+闡秘前編's 卷之一 歌註 engraves the verse at its p. 3066 as 「庚加癸兮為大格，
+加己為刑，惹是非；**加壬之時為上格**，又嫌歲月日時歸」, and its 謹按 under it
+enumerates what 六庚 makes — 「曰伏干、曰飛干、曰天乙伏、曰天乙飛、曰大格、
+曰刑格，皆六庚之所加也」 — so the reading is the editor's and carried twice in
+one volume, in the verse and in the 格局 chapter.
+
 So one condition, 庚 over 壬, carries four namings across the witnesses, and
-**two of them are two readings of the same line**. That is a variant in the
-deciding text and not a disagreement the deciding text can settle, which makes
-it the first pairing in this survey where the rule runs out. The entry, when it
-is written, chooses a hanzi knowing that; the condition and the valence are no
-longer the open part. Read on the plate 2026-08-27, verse checked against the
-Wikisource recension held here. It no longer stands on a leaf this shelf lacks:
+**two of them are two readings of the same line, each with a printed verse
+behind it**: 上格 in the Wikisource recension and in a Qing engraving read
+here, 小格 in the 統宗's and the 秘笈大全's quotations of the same couplet. That
+is a variant in the deciding text and not a disagreement the deciding text can
+settle, which makes it the first pairing in this survey where the rule runs
+out. The entry, when it is written, chooses a hanzi knowing that; the condition
+and the valence are no longer the open part. Read on the plate 2026-08-27. It no longer stands on a leaf this shelf lacks:
 《遁甲集成》第六冊's 統宗 prints it, per the note below. **This is a decision
 that is now waiting, not a refusal.** 三奇得使 is no longer its precedent: there the sources disagree,
 which is a different thing from there being only one, and only the second was
