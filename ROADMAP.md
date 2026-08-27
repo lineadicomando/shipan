@@ -185,10 +185,19 @@ ones, and the received book says otherwise, so both stay refused — but the
 is a smaller divergence than the parameter's shape suggested. The arguments,
 with the pages, are in `docs/sources.md`.
 
+**And 第七冊's own question has been answered.** Its parts number their own
+pages, so which stretch belongs to which school is a thing the plates say
+rather than a thing to infer: 庚's 忌 goes to 天相 under a 【占驗派】 heading
+and to 天同 in a part that opens on 《紫微斗數 北派》, 恭鑑老人 著, and 壬's 科
+goes to 左輔 in that same 北派. The cells now carry a school's name, which is
+what this phase was held for. What they do not yet carry is a *table*: a
+second value of `sihua` is ten stems, and what has been read is three cells
+across two schools.
+
 What is left of this phase is 第一冊, which is the manuscript, 第十冊, whose
 extract is the weak one and which is therefore a plate errand whatever else
-happens, and the question 第七冊 raised: which part of it belongs to which of
-its three schools.
+happens, and 北派's ten stems, which is now a bounded errand in a known part
+of a known volume rather than a search.
 
 ### Phase 3 — 紫微斗數全書, 明南陽堂 woodblock
 
