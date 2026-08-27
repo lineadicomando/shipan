@@ -576,6 +576,30 @@ before either moves.
 What is still missing is a second witness. Three copies of 遁甲演義 are held and
 two of them are the same recension; a copy of a work is not a witness to it.
 
+**The modern manual is not it, and searching it is how that was settled.**
+《圖解奇門遁甲大全》 was made searchable and asked for 飛盤, 轉盤, 排宮 and
+飛宮; the pages it returned were read, and what it carries is a classification
+and no procedure. Its 推演方法 branch, at its pp. 40–41, prints
+「排宮法：又稱轉盤奇門遁甲，是模擬天地形體的運轉排盤」 against
+「飛宮法：又稱飛盤奇門遁甲，是用天地感應之氣的流轉排盤，與風水之玄空派可謂同出
+一轍」 — the two names, an image for each, and nothing that could lay a board.
+So `plate: fei` is where it was: 遁甲演義 states that the three systems fly and
+the manual confirms only that the division has a name. Read on the plate
+2026-08-27.
+
+**Its 月家 line carries an attribute 遁甲演義 does not**, and it is recorded
+rather than used: 「月家奇門：用奇門遁甲預測一月內發生的事情，此種預測術中只用
+陽遁，不用陰遁」. 卷一 gives the 月家's 三元分局, its 直符 and its
+「隨月支飛泊」 and says nothing about the polarity being fixed. A modern
+divulgation asserting alone what a transmitted text is silent on is a lead and
+not a witness — but the absence of the sentence here would read as ignorance of
+it, which is the reason the 八門 section keeps what it cut.
+
+**The search that found this also found the trap the method exists for.** 飛宮
+scores thirty-one times in the extract and twenty-eight of them are 天乙飛宮格,
+a pattern of the 四十格 and not an arrangement of the board. An extract locates
+and the plate decides which of two things a word was.
+
 ---
 
 ## 八門 — what each gate is chosen for
@@ -3081,7 +3105,7 @@ calendrical layer settles. Recorded as a passage read and not used.
 | 茅山 | no reference at all. `METHOD_NOT_IMPLEMENTED` rather than a silent substitution |
 | 飛盤 | a whole family. `OPTION_NOT_IMPLEMENTED`, and not separable from `system`: the 年家, 月家 and 日家 boards 《遁甲演義》 states are flown, not turned |
 | 日家 · 月家 · 年家 | 《遁甲演義》卷一 states all three entire, and they are 飛盤 where the 時家 is 轉盤, so the two parameters move together. One work in three copies, two of them one recension, is not two witnesses. See the 年命 section |
-| 寄宮 `dun` | the parameter exists and the second value is refused rather than guessed |
+| 寄宮 `dun` | the parameter exists and the second value is refused rather than guessed. The first witness searched for it does not know it: 《圖解奇門遁甲大全》 states the lodging with no condition on it — 「中宮無位：無論是奇門遁甲圓盤還是方盤，中五宮都無位，所以在中五宮的星和門都寄於坤二宮」 — and then applies it inside 陰遁, in a passage it quotes rather than writes: 「假令陰七局，甲己之日丙寅時 … 值使在五宮寄二宮西南」. A witness that lodges the 值使 in 坤二 in a yin board is evidence for `kun` and none at all for the divergence, which still has no text. Read on the plate 2026-08-27 |
 | 六壬 `yuejiang` `jieqi` · `true` | the 四庫 verse's own table turns the general at the 中氣, both references read it so, and two further transmitted witnesses say it in words — 陳公獻's 增注 to the 《心印賦》 and 《六壬視斯》's 「中氣後過宮」. 《大六壬精解》 prints the 節 and the 氣 of every month side by side, which pins what `jieqi` would be without endorsing it. Nothing yet states either. See the 六壬 section |
 | 六壬 `zhouye` `solar` | the divergence is transmitted and the rule is not: 《大六壬精解》 p. 26 gives the branch division with a worked example and then says 「古來亦有更嚴格地准星之出沒或日之出沒而分晝夜者」. That names no text, works no example, and bundles 星之出沒 with 日之出沒 as one option, which they are not. Refused for want of a procedure rather than for want of a school. `OPTION_NOT_IMPLEMENTED` |
 | the 涉害 復等 clause | implemented, measured, and dropped: it moves none of the 8 640 boards under any of three readings, because the order of the courses already gives what it asks for. See the 六壬 section |
@@ -3096,7 +3120,7 @@ calendrical layer settles. Recorded as a passage read and not used.
 | 紫微斗數 `huoling` `hour` | the widespread practice counts 火星 and 鈴星 on from the year's seats by the birth hour. No verse in 卷二 does, and agreement with a reference that does falls to exactly the quarter of a sample whose hour offset is zero. `OPTION_NOT_IMPLEMENTED` |
 | 紫微斗數 `leapMonth` `current` · `split` | 「凡有閏月俱要依此為例」 counts a leap month as the one after it. The other two readings are other schools' and neither is in this book |
 | 紫微斗數 `daxian` `ming` | 「陽男陰女從命前一宮起順行 是父母宮」 opens the run *beside* the 命宮, in both copies verbatim. Opening it in the 命宮 is now traceable — it is the 十八飛星 transmission's rule, in both witnesses of it — and that makes the refusal firmer rather than looser: there the spans are a flat ten years on a board with **no 五行局**, so the rule inherits no starting age, while the variant asked for here keeps the bureau's. Not the same rule, and not this book's |
-| 紫微斗數 `sihua` | one value, and the divergent lineage now has a name without having a text. A 中州派 manual on the shelf reports that it is **王亭之's branch** that departs from the received table at 戊, 庚 and 壬, and names what it rests on — 『紫微星訣』, unpublished. That manual's *own* table agrees with this book at 戊 and 庚 and parts from it at 壬 alone (科 to 左輔, not 天府), so the three-stem table that would be the second value is still unread. A lineage named is not yet a lineage read: the `tongzong` precedent holds, and what would overturn it is now a findable book rather than a rumour |
+| 紫微斗數 `sihua` | one value, and the divergent lineage now has a name without having a text. A 中州派 manual on the shelf reports that it is **王亭之's branch** that departs from the received table at 戊, 庚 and 壬, and names what it rests on — 『紫微星訣』, unpublished. That manual's *own* table agrees with this book at 戊 and 庚 and parts from it at 壬 alone (科 to 左輔, not 天府), so the three-stem table that would be the second value is still unread. A lineage named is not yet a lineage read: the `tongzong` precedent holds, and what would overturn it is now a findable book rather than a rumour. **A second book now uses the departing cells, and it uses both sides of one of them.** 《中國絕學》第七冊 (斗數秘儀四化飛伏斷訣 · 占驗派、南派、北派, 方外人, 臺北金林文化 1986) prints 「大限之疾厄爲庚，天相化忌」 at its p. 252 and 「（流日的）庚天同化忌入夫妻」 at its p. 四—二一〇, with a diagram — 庚's 忌 to 天相 in one part and to 天同, this book's own value, in another. The volume is an anthology of three schools and says so on its title page, so that is a divergence between the lineages it collects and not a slip, and it is why a table cannot be lifted from it: the second value of `sihua` would have to be taken from a *named* school inside it, which would mean reading which part is whose. At 壬 it does not divide — 「干壬左輔化科入戌照辰」 and 「壬武曲化忌在亥」, p. 四—一八二 — which puts 科 on 左輔 with the 中州派 manual and against this book's 天府. **That one is checkable and it checks.** 左輔 is placed from the lunar month alone, 辰 forward, so a 七月 birth puts it in 戌 with no day given; 天府 needs the day, through 紫微 and the 五行局, and the example gives a year, a month and an hour and no day. The worked example is decidable only on the reading it states. Read on the plate 2026-08-27 |
 | the 流年 layer of 紫微斗數 | placement 卷二 states, postponed rather than refused: its subject is a year laid on a person, and what that would be handed over for has not been designed |
 | the per-palace readings and fu of 紫微斗數全書 | prose-verdict doctrine, declined on the ground 《果老星宗》 is declined on. What is carried is what the book names and weighs in one line: a brightness grade, a transformation |
 

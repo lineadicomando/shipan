@@ -116,10 +116,16 @@ What is left of this phase is 飛盤 proper and `centreLodging`. **The searchabl
 face of it exists and the rest is plates**, which is a shorter list than the
 one this section used to carry and a slower one:
 
-1. 《圖解奇門遁甲大全》 — 598 pages, extracted: 274 000 characters, 值符 802
-   times, 值使 316, 超神 37, 接氣 23. Divulgation, so a lead and never a
-   witness, and the place a passage is located before it is read anywhere
-   else. Search 通 for 遁, which the extract loses entire.
+1. 《圖解奇門遁甲大全》 — 598 pages, extracted and **read for both values**,
+   which is what makes it a finished piece rather than a download: it carries
+   neither. It names the 轉盤/飛盤 division in a classification and prints no
+   procedure, and it states the centre's lodging as 坤二 with no condition on
+   it, applying that inside 陰遁 in a passage it quotes. Both negatives are
+   written up in `docs/sources.md`, which is where a phase is finished.
+   Divulgation, so a lead and never a witness, and still the place a passage
+   is located before it is read anywhere else — 值符 802 times, 值使 316,
+   超神 37, 接氣 23. Search 通 for 遁, which the extract loses entire, and
+   read 飛宮 twice: twenty-eight of its thirty-one hits are 天乙飛宮格.
 2. 《遁甲集成》 第二・三・六冊 — **block-printed facsimile and not the modern
    typesetting this section claimed**, which is what opening them settled: the
    廣陵古籍刻印社 series photographs its originals, and only stretches of 第二冊
@@ -157,11 +163,19 @@ handwriting on squared paper, which no model here reads and which the eye reads
 easily, so the one volume of the four carrying 紫微斗數 that is a manuscript is
 the one that has to be read by plate. What the other nine cost is in the
 shelf's register; what they are worth is **that they can be searched at all**,
-which is what a set nobody had opened was missing. 第七冊 is the one the `sihua`
-errand goes to first — 斗數秘儀四化飛伏斷訣, and 化忌 683 times, 化權 252,
-化科 159 in the extract. Search around 祿, which that scan loses without
-collapsing onto anything: 化祿 and 祿存 both score zero on a volume that prints
-them constantly.
+which is what a set nobody had opened was missing. Search around 祿, which
+those scans lose without collapsing onto anything: 化祿 and 祿存 score zero on
+volumes that print them constantly.
+
+**第七冊 has been searched and three of its pages read, and it moved `sihua`
+without settling it.** It uses 庚's 忌 on 天相 in one part and on 天同 — the
+received value — in another, which is what an anthology of three schools does,
+and it puts 壬's 科 on 左輔 in a worked example that is decidable only on that
+reading. So the second value is closer and still not liftable: it would have to
+come from a named school inside the volume, which means reading which part
+belongs to whom. The argument, with the pages, is in `docs/sources.md`. What
+is left of this phase is 第一冊, 第六冊 and 第十冊 — and 第十冊's extract is
+the weak one, so it is a plate errand whatever else happens.
 
 ### Phase 3 — 紫微斗數全書, 明南陽堂 woodblock
 
