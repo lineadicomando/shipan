@@ -130,8 +130,13 @@ one this section used to carry and a slower one:
    typesetting this section claimed**, which is what opening them settled: the
    廣陵古籍刻印社 series photographs its originals, and only stretches of 第二冊
    are movable type. Read by plate. 第二冊 carries 煙波釣叟歌直辨, the Qing
-   commentary on the verse the 十干克應 table is pinned to, and 十八活盤詳注,
-   which is the moving-plate ground `plate: fei` stands on.
+   commentary on the verse the 十干克應 table is pinned to — **and 十八活盤詳注,
+   which this section used to call the ground `plate: fei` stands on and which
+   is not.** Surveyed by contact sheet: 奇門占驗 ends at its sheet 70,
+   陰陽二十四氣三元總圖 opens what follows, the plates are octagonal 全卦圖 in
+   the 八卦 arrangement and the tables assign the 局 by term and 元. 活盤 is the
+   *turning* plate — 排宮法又稱轉盤 against 飛宮法又稱飛盤, in the manual read
+   above — so reading 活 as 飛 is what put the section under this parameter.
 3. 《御定奇門寶鑑》 and 《奇門遁甲統宗》 — clean Qing printing, read by plate.
 4. The three 故宮珍本叢刊 volumes — colour, but about 1000×1500 pixels to the
    book-page, which is the low end for dense block printing. Read by plate,

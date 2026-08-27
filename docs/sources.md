@@ -576,6 +576,21 @@ before either moves.
 What is still missing is a second witness. Three copies of 遁甲演義 are held and
 two of them are the same recension; a copy of a work is not a witness to it.
 
+**The section the plan expected to ground it does not, and the reason is a
+word.** 《遁甲集成》第二冊 carries 十八活盤詳注, which had been written down here
+as the moving-plate ground `plate: fei` would stand on. Surveyed by contact
+sheet — sixteen sampled sheets over its extent, with two read whole — it is a
+commentary on the eighteen 局: 奇門占驗終 closes at its sheet 70 and
+陰陽二十四氣三元總圖 opens what follows, its plates are octagonal 全卦圖 in the
+八卦 arrangement (sheet 71, p. 626), and its tables assign the 局 by solar term
+and 元 — 冬至下, 驚蟄下, 清明上, 立夏上 against 陽遁 numbers, and the same for
+陰遁. That is 轉盤 material throughout. **活盤 is the turning plate**, the one
+that moves against the fixed 地盤, and the manual searched above equates the
+pair outright: 排宮法又稱轉盤 against 飛宮法又稱飛盤. Reading 活 as 飛 is what
+put this section under this parameter, and it does not belong there. Sixteen
+sheets is a survey and not a reading, so what this establishes is where not to
+look next rather than that the volume is silent. Read on the plate 2026-08-27.
+
 **The modern manual is not it, and searching it is how that was settled.**
 《圖解奇門遁甲大全》 was made searchable and asked for 飛盤, 轉盤, 排宮 and
 飛宮; the pages it returned were read, and what it carries is a classification
