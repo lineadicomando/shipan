@@ -296,14 +296,20 @@ export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
     ],
     default: 'jinjing',
   },
-  // 月計, 日計 and 時計 are the registers this one is the first of, and they
-  // are absent here because they are absent from the type: a value is
-  // declared when the engine is ready to refuse it by name, and until then
-  // what the option says is that there is a choice to be made and one
-  // reckoning of it. See `docs/parameters.md`.
+  // 月計, 日計 and 時計 are the registers this one is the first of, and the
+  // engine is now ready to refuse them by name: 太乙金鏡式經 卷一 prints all
+  // three procedures, so what they are is no longer a guess, and what stops
+  // each of them is a constant that fails a check the text itself supplies.
+  // A value is declared when the engine can refuse it by name, not when it
+  // can compute it. See `docs/sources.md` § 太乙.
   ji: {
     board: 'taiyi',
-    values: [{ id: 'nianji', name: { hanzi: '年計', pinyin: 'niánjì' }, implemented: true }],
+    values: [
+      { id: 'nianji', name: { hanzi: '年計', pinyin: 'niánjì' }, implemented: true },
+      { id: 'yueji', name: { hanzi: '月計', pinyin: 'yuèjì' }, implemented: false },
+      { id: 'riji', name: { hanzi: '日計', pinyin: 'rìjì' }, implemented: false },
+      { id: 'shiji', name: { hanzi: '時計', pinyin: 'shíjì' }, implemented: false },
+    ],
     default: 'nianji',
   },
   yearBoundary: {

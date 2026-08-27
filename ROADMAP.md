@@ -35,7 +35,7 @@ writing code.
 | 奇門 | `method: maoshan`, `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `ziqi: yinianyisu`, `minggong: ascendant`, `gong: ci` |
-| 太乙 | `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
+| 太乙 | `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
 | 紫微斗數 | `leapMonth: current`, `leapMonth: split`, `huoling: hour`, `daxian: ming` |
 
 `apps/web/test/docs.test.ts` holds this table to the engine, both ways: a
@@ -44,14 +44,13 @@ that suite, and so does a refusal the engine gains and this table does not
 name. It is checked for the reason the counts are — a hand-kept list of what
 the code does is a list that drifts.
 
-**Three parameters carry one value and no second one to refuse.** That is a
+**Two parameters carry one value and no second one to refuse.** That is a
 different state and not a lesser one: the divergence is declared, the engine
 says which reckoning it computes, and what the type does not yet carry is a
 *name* for the alternative. Declaring one belongs to the same errand as
 implementing it, since a value is declared when the engine is ready to refuse
-it by name.
+it by name — which is what 太乙's `ji` did when 卷一 was read.
 
-- 太乙 `ji` — 年計 is computed; 月計, 日計 and 時計 are not in the type.
 - 紫微斗數 `sihua` — 《紫微斗數全書》's own table, until a lineage has been read.
 - 曆注 `shensha` — what 《協紀辨方書》 ratifies, until a named lineage has been.
 
@@ -96,38 +95,36 @@ already established — so what a woodblock is read by is the plate, page by
 page, and the extract that comes out of it is a quotation and not a file. The
 scans that need cutting into quadrants first have `texts/qizheng/ocr-4up.sh`.
 
-### Phase 0 — the toolchain
+**And a third consideration that outranks both: the scan's own resolution.**
+`ocrmypdf` on the right layout at the wrong resolution produces a file that
+looks like an extract and is not one. What the run is worth is measured on the
+file before anything is quoted out of it — `texts/README.md` § "`.txt/` and
+OCR" is where the measurements and the confusion classes are kept.
 
-`tesseract` and `ocrmypdf` are not installed, and `ocr-4up.sh` needs both plus
-Pillow. Nothing below runs until they are back: tesseract 5.x with `chi_sim`,
-`chi_tra` and the two `_vert` models. `pdftoppm`, `pdfimages` and `gs` are
-present.
+The toolchain the phases below assume: tesseract 5.5.3 with `chi_sim`,
+`chi_tra` and the two `_vert` models, `ocrmypdf` 16, Pillow for the quadrant
+cutting, and `pdftoppm`, `pdfimages` and `gs` for rendering a plate.
 
-### Phase 1 — 太乙金鏡式經, for the three registers 太乙 does not compute
-
-The 四庫 woodblock, 66 sheets at 600 dpi, two book-pages to the sheet, and
-legible by eye without OCR. **Its 卷一 carries the 推 procedures for the other
-three registers** — 推日計法 with 日法四十九 · 朔策二十九 · 小餘三十六 ·
-紀法六十, 推積月朔法, 推日計差法, the 月計 formula, and 推時計差法 with 求加時法
-after it. The engine already stands on this text for `epoch: jinjing`, so the
-register that is computed and the three that are not come off the same juan.
-
-Ends in: 月計, 日計 and 時計 declared as values of `ji` and refused by name, or
-the finding that one of them cannot be reconstructed from what is printed —
-which is equally a result, and says so in `docs/refusals.md`.
-
-### Phase 2 — 大六壬精解, for 六壬's three refusals
+### Phase 1 — 大六壬精解, for 六壬's three refusals
 
 753 pages, modern horizontal simplified typesetting, one page to the page:
-**the cheapest OCR on the whole shelf**, `ocrmypdf -l chi_sim` straight
-through, the way the 協紀辨方書 modern edition went. It is the only extended
-六壬 manual held and nothing in `liuren.ts` stands on it.
+the easiest layout on the shelf, `ocrmypdf -l chi_sim` straight through, the
+way the 協紀辨方書 modern edition went. It is the only extended 六壬 manual
+held and nothing in `liuren.ts` stands on it.
+
+**The easy layout sits on a hundred-dpi scan, and the extract is a finding aid
+and not a text.** Measured, it comes out around four characters in five, and
+the fifth is disproportionately a branch — 巳 for 己 for 已, 亥, 丑, 辰 — which
+is the class of character a 六壬 rule is made of. Oversampling does not help,
+because the information is not in the file. So the run is worth making and
+what it buys is a way to *find* the passage; the passage itself is read off
+the plate, and every line quoted says so.
 
 Read for `yuejiang: jieqi` and `true`, and `zhouye: solar`. A modern manual is
 not a witness on its own — it is where the divergence gets named and the older
 text it cites gets found.
 
-### Phase 3 — 御定星歷考原, for the 神煞
+### Phase 2 — 御定星歷考原, for the 神煞
 
 184 sheets of 四庫 woodblock at 600 dpi, read by plate. It is the work
 《協紀辨方書》 was commissioned to revise and quotes by name throughout, and the
@@ -141,7 +138,7 @@ correcting 曹震圭 on the 天乙貴神, which is `guiren`'s ground.
 Ends in: rows moved for what it confirms or contradicts, and — if a lineage is
 named cleanly enough to be followed — the second value of `shensha`.
 
-### Phase 4 — the 曆 substrate, for `xiudu`
+### Phase 3 — the 曆 substrate, for `xiudu`
 
 《曆法通志》 (1934, 311 pages, vertical traditional but *movable type*, which
 `chi_tra_vert` handles far better than a block) and 《授時曆故》 (174 sheets,
@@ -154,7 +151,7 @@ The likeliest outcome is another documented negative, and the register already
 holds one: the only 授時 lodge table on the shelf is the 赤道 one, which is the
 wrong frame. Say so again rather than quietly not looking.
 
-### Phase 5 — the dunjia scans, for `plate`, `centreLodging` and `system`
+### Phase 4 — the dunjia scans, for `plate`, `centreLodging` and `system`
 
 The largest block and the least prepared — eleven files, some three and a half
 thousand pages — so it is ordered by what reads easiest:
@@ -173,7 +170,7 @@ thousand pages — so it is ordered by what reads easiest:
 Ends in whatever it ends in. 年家, 月家 and 日家 奇門 are three systems and not
 one, and a source for one of them lands one value.
 
-### Phase 6 — 《中國絕學》, for a school's name
+### Phase 5 — 《中國絕學》, for a school's name
 
 Eleven volumes, 方外人, 臺北金林文化 1986, about four thousand one hundred
 pages, image-only, twentieth-century school teaching. **Supporting a refusal is
@@ -187,7 +184,7 @@ The volumes that carry 紫微斗數 are the first, sixth, seventh and tenth. The
 rest of the set is 鐵版神數, 奇門易數, 邵子神數, 皇極天書 and 玄空金口訣 —
 arts this project does not compute, read only far enough to say so.
 
-### Phase 7 — 紫微斗數全書, 明南陽堂 woodblock
+### Phase 6 — 紫微斗數全書, 明南陽堂 woodblock
 
 528 pages, one book-page to the page, high-contrast block printing: legible by
 eye, hopeless for OCR. `docs/sources.md` calls it the adjudicator between the
@@ -195,7 +192,7 @@ transcriptions and has already read it in places. This phase is the rest of
 it — collation, against the copies already held, of the passages the two
 transcriptions disagree on.
 
-### Phase 8 — the remainder, read behind no citation
+### Phase 7 — the remainder, read behind no citation
 
 《協紀辨方書》 卷七~卷八 四庫 woodblock, the third 遁甲演義 scan, 大六壬指南 —
 which is not a woodblock facsimile but a 1990 typesetting in simplified

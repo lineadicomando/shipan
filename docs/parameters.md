@@ -60,7 +60,7 @@ almanac takes none of these at all. Both are below.
 | 七政四餘 | `minggong` | `yuejiang` (立命 by 加時, the hour laid on the palace of the 月將 yuèjiàng), `ascendant` (the true rising degree) | `yuejiang` |
 | 七政四餘 | `gong` | where the twelve 宮 are cut: `zhongqi` (太陽過宮 at the 中氣 zhōngqì), `ci` (the 次 cì as stretches of 宿度) | `zhongqi` |
 | 太乙 | `epoch` | which 上元積年 the count runs from: `jinjing` (《太乙金鏡式經》 tàiyǐjīnjìngshìjīng) | `jinjing` |
-| 太乙 | `ji` | which register: `nianji` (年計 niánjì), later `yueji` · `riji` · `shiji` | `nianji` |
+| 太乙 | `ji` | which register the board is laid in: `nianji` (年計 niánjì), `yueji` (月計 yuèjì), `riji` (日計 rìjì), `shiji` (時計 shíjì) | `nianji` |
 | 太乙 | `yearBoundary` | where the counted year begins: `lichun` (立春 lìchūn), `dongzhi` (冬至 dōngzhì), `chunjie` (正月初一 zhēngyuèchūyī) | `lichun` |
 | 紫微斗數 | `leapMonth` | what a birth in an intercalary month counts as: `following` (the month after it, which is the book's), `current`, `split` | `following` |
 | 紫微斗數 | `sihua` | which table of the 四化: `quanshu` (《紫微斗數全書》 zǐwēidǒushùquánshū's own), later a lineage that has been read | `quanshu` |

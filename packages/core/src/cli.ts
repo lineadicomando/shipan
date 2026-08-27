@@ -906,13 +906,16 @@ function liurenOptionsFrom(options: Options): LiurenOptions {
 }
 
 /**
- * The 七政四餘 options, of which one is settable and four are not yet.
+ * The 太乙 options, of which one is settable and two are not.
  *
- * `--luohou` is exposed because both values are implemented and because a
- * reader who has the name the other way round has no way to discover that
- * from the output: the board would simply be labelled wrong. The rest —
- * `xiudu`, `ziqi`, `minggong`, `gong` — have one implemented value each, so a
- * flag for them could only offer a refusal.
+ * `--year-boundary` is exposed because it decides which year the board is of,
+ * and a reader who wants the other reckoning has to be able to ask and be
+ * told no by name. `epoch` and `ji` have one implemented value each and get
+ * no flag, on the same rule the board below states: a flag over a parameter
+ * with one implemented value could only offer a refusal. **`ji` gained three
+ * refused values without gaining a flag**, which is the rule working rather
+ * than an omission — what changed is what the engine can refuse by name, not
+ * what it can compute.
  */
 function taiyiOptionsFrom(options: Options): TaiyiOptions {
   const taiyi: TaiyiOptions = { ...DEFAULT_TAIYI_OPTIONS };
@@ -932,6 +935,15 @@ function taiyiOptionsFrom(options: Options): TaiyiOptions {
   return taiyi;
 }
 
+/**
+ * The 七政四餘 options, of which one is settable and four are not yet.
+ *
+ * `--luohou` is exposed because both values are implemented and because a
+ * reader who has the name the other way round has no way to discover that
+ * from the output: the board would simply be labelled wrong. The rest —
+ * `xiudu`, `ziqi`, `minggong`, `gong` — have one implemented value each, so a
+ * flag for them could only offer a refusal.
+ */
 function qizhengOptionsFrom(options: Options): QizhengOptions {
   const qizheng: QizhengOptions = { ...DEFAULT_QIZHENG_OPTIONS };
   if (options.luohou !== undefined) {

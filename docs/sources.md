@@ -2011,7 +2011,48 @@ public for a week.
 `ji` is the register. 卷二 推太乙用式不同法 sorts the four by subject —
 「王者用嵗計，卿士惟月計，師尹惟日計，故時通上下」 — and this engine computes
 年計. The other three run the same placements over a count of months, days or
-hours.
+hours, and all four are declared. What stops the three is below.
+
+### The three registers this engine does not compute
+
+**卷一 prints their procedures entire**, which is why they are declared values
+rather than an absence: 推太乙月計差法, 推日計差法 and 推時計差法 each state
+their constants and are followed by the 推 steps that consume them, in the same
+juan and the same form as the 年計 procedure this engine already stands on. The
+structure is not in doubt.
+
+**What is in doubt is the arithmetic, and in each of the three the doubt is one
+character wide.** The 四庫 text was reconstituted from 《永樂大典》, and the
+large calendrical constants are where that shows. Read off the plate, at 400
+dpi, of the 四庫 woodblock:
+
+| register | as printed | what it yields | what one character would yield |
+|---|---|---|---|
+| 月計 | 章歲六百五十七, 章月八千七百二十六 | 8726 ÷ 657 = **13.28 months to the year** | 八千**一**百二十六 → 12.36834, against a true 12.368266 |
+| 日計 | 日法四十九, 月法二千四百四十七, 朔策二十九, 小餘三十六 | 2447 ÷ 49 = **49.94 days to the month**, and 49×29+36 = 1457 ≠ 2447 | **一**千四百四十七 with 小餘二十**六** → 1447 ÷ 49 = 29.53061, against a true 29.53059, and 49×29+26 = 1447 exactly |
+| 時計 | 辰法三千六百八十二, 半辰法一千三百四十一 | 3682 ÷ 2 = 1841 ≠ 1341, and 1341 × 2 = 2682 ≠ 3682 | either numeral repairs the pair, and **the text does not say which** |
+
+**The 年計 constants on the same pages are sound, and that is the control.**
+周紀法三百六十, 元法七十二, 太乙小周法二十四, 天目周法十八, 紀法六十 are small
+structural integers that divide into one another, they are what this engine
+computes with, and none of them fails a check. The corruption is confined to
+the large numbers, which is the corruption profile a 大典 reconstitution
+predicts and not a property of the reading.
+
+**So the refusal is not «no text says this» — it is «this text says it and
+cannot be trusted to the digit».** Emending 八千七百二十六 to 八千一百二十六
+because 12.368 is the right number would be casting the correction from modern
+astronomy into a Tang witness, which is the direction this register does not
+work in: the rule is that a source is checked against an independent
+implementation, not repaired by one. The 時計 pair is worse and is the clearest
+case, because there astronomy cannot even choose — 3682 and 1341 disagree, one
+of them is wrong, and nothing on the page adjudicates.
+
+**A second witness lifts all three at once**, since one collation would settle
+five numerals. 《太乙統宗寶鑑》 is the obvious place and is not on the shelf;
+neither is any other 太乙 text carrying 卷一's constants. Until one is,
+`yueji`, `riji` and `shiji` are declared, refused by name, and this is the
+entry saying why.
 
 ### The nine palaces, which are not the nine palaces
 

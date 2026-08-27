@@ -57,8 +57,15 @@ export interface TaiyiOptions {
    * the one 卷二 assigns to the highest subject — 王者用嵗計. 月計, 日計 and
    * 時計 run the same placements over a count of months, days or hours; the
    * text states all four and this engine computes one.
+   *
+   * The other three are declared and refused because 卷一 prints their
+   * procedures entire and prints constants that do not check: in each of the
+   * three the failure is one character wide, and correcting it would mean
+   * emending a Tang text from modern astronomy rather than from a witness.
+   * See `docs/sources.md` § 太乙 — "The three registers this engine does not
+   * compute". A second witness lifts all three at once.
    */
-  ji: 'nianji';
+  ji: 'nianji' | 'yueji' | 'riji' | 'shiji';
 
   /**
    * Where the counted year begins.
