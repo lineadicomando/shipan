@@ -62,6 +62,7 @@ phase.
 | 26 | [The frame a caller reads first](26-the-frame-a-caller-reads.md) | done — supersedes phase 25's last section |
 | 27 | [The notes get built](27-notes-built.md) | done — revises phase 17: the registries it assumed did not exist, and the ladder moves into `docs/` |
 | 28 | [The site installs](28-installed-on-a-phone.md) | done — installable, and refusing to pretend it computes offline |
+| 29 | [The terminology pass](29-the-terminology-pass.md) | done — every glyph a person reads is said, and a test that fails the day one is not |
 
 ## The rest of the record
 

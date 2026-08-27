@@ -45,9 +45,9 @@ export const en = {
   'core.error.UNKNOWN_IDENTIFIER':
     '"{value}" is not a {parameter} the engine knows. Left unchecked it would match nothing, which reads exactly like an arrangement that never occurred.',
   'core.error.BIRTH_AFTER_CHART':
-    'The birth falls after the chart, so there are no years to count: a 行年 steps forward from a birth and cannot be asked for before one.',
+    'The birth falls after the chart, so there are no years to count: a 行年 xíngnián steps forward from a birth and cannot be asked for before one.',
   'core.error.YEARS_OUT_OF_RANGE':
-    '{years} is not a count of years a 行年 can be taken for: the count opens at one, in the year of the birth itself.',
+    '{years} is not a count of years a 行年 xíngnián can be taken for: the count opens at one, in the year of the birth itself.',
   'core.error.TOO_MANY_YEARS':
     'A run of {years} year pillars is longer than the {maximum} that can be asked for at once.',
 
@@ -1092,14 +1092,14 @@ export const en = {
   'form.calculation': 'How it is computed',
   'form.trueSolarTime': 'Correct to true solar time',
   'form.dayBoundary': 'The day begins',
-  'form.dayBoundary.zishi': 'at the hour of the Rat 子時, 23:00',
+  'form.dayBoundary.zishi': 'at the hour of the Rat 子時 zǐshí, 23:00',
   'form.dayBoundary.midnight': 'at midnight, 00:00',
   'form.method': 'The ju is determined',
-  'form.method.chaibu': 'by thirds of the term: chaibu 拆補',
-  'form.method.zhirun': 'by whole blocks, with the leap: zhirun 置閏',
+  'form.method.chaibu': 'by thirds of the term: 拆補 chāibǔ',
+  'form.method.zhirun': 'by whole blocks, with the leap: 置閏 zhìrùn',
   'form.yuan': 'Under chaibu, the third of the term is counted',
   'form.yuan.term': 'from the instant the term began',
-  'form.yuan.futou': 'from the day, by five-day stretches: futou 符頭',
+  'form.yuan.futou': 'from the day, by five-day stretches: 符頭 fútóu',
   'form.gender': 'Sex — only the direction of the luck cycles depends on it',
   'form.gender.unset': 'not given',
   'form.gender.male': 'male',
@@ -1126,7 +1126,7 @@ export const en = {
   // person's, never which hour is good.
   'form.benming': 'Whose year is to stand there',
   'form.benmingNote':
-    'With a date of birth, only the palaces that person’s year pillar (本命 běnmìng) stands on are reported: 《遁甲演義》 has a reading consider it before anything else. It narrows what is shown and weighs nothing: what makes a palace worth standing in is what you asked for above.',
+    'With a date of birth, only the palaces that person’s year pillar (本命 běnmìng) stands on are reported: 《遁甲演義》 dùnjiǎ yǎnyì has a reading consider it before anything else. It narrows what is shown and weighs nothing: what makes a palace worth standing in is what you asked for above.',
   'form.criteriaNote':
     'These are arrangements, not recommendations. The engine reports where each one stands; whether it is a good hour to act is a reading, and it is yours to make.',
   'form.scan': 'Scan the interval',
@@ -1230,7 +1230,7 @@ export const en = {
   // reverse of a natal chart.
   'consult.birth': 'Your birth, if you want it in the chart',
   'consult.birthDate': 'Date of birth',
-  'consult.birthGender': 'Sex — only the direction of the 行年 count depends on it',
+  'consult.birthGender': 'Sex — only the direction of the 行年 xíngnián count depends on it',
   // Why the question is above the moment and not below the chart. The order
   // is the whole of it: the instant of asking is the instant that is cast.
   'consult.birthNote':
@@ -1406,13 +1406,13 @@ export const en = {
   'notes.does.taiyi':
     'The board of a year: sixteen gods in nine palaces, and the counts of host and guest. Nobody is on it.',
   'notes.does.qizheng':
-    'The seven governors and three of the four remainders, placed against the twenty-eight lodges and the twelve palaces.',
+    'The seven governors and three of the four remainders, placed against the twenty-eight lodges 宿 xiù and the twelve palaces.',
   'notes.does.ziwei':
     'Twelve seats counted from the lunar month and the hour, the stars the book places in them, and the grade it gives each.',
   'notes.does.bazi':
     'The four pillars read out: the concealed stems, the ten gods, the twelve stages, the images of 納音 nàyīn, the luck cycles, and a count of the five elements.',
   'notes.does.almanac':
-    'The page an almanac prints for a date: the officer of the day, the lodge holding it, the twelve gods, the bearings the year fixes, and the shensha a day carries or does not.',
+    'The page an almanac prints for a date: the officer of the day 建除 jiànchú, the lodge holding it, the twelve gods, the bearings the year fixes, and the 神煞 shénshà a day carries or does not.',
   'notes.does.nianming':
     'Where a person stands inside a chart of a moment — the pillar of their birth year, and the pillar of the year they are living.',
 
@@ -1439,12 +1439,12 @@ export const en = {
   'notes.parameter.trueSolarTime': 'Whether clock time is corrected to the Sun at the place.',
   'notes.parameter.yearBoundary': 'Where the counted year begins.',
   'notes.parameter.dayBoundary': 'Where the day turns over.',
-  'notes.parameter.shensha': 'Which register of shensha the almanac’s page carries.',
+  'notes.parameter.shensha': 'Which register of 神煞 shénshà the almanac’s page carries.',
   'notes.parameter.yuejiang':
     'When the Sun changes palace, which is what seats the general of the month.',
   'notes.parameter.guiren': 'Which transmission of the verse seats the noble.',
   'notes.parameter.zhouye': 'Where the day is cut, for the noble’s day and night seats.',
-  'notes.parameter.xiudu': 'Where the twenty-eight lodges begin.',
+  'notes.parameter.xiudu': 'Where the twenty-eight lodges 宿 xiù begin.',
   'notes.parameter.ziqi': 'Whether 紫氣 zǐqì enters, and by which transmission.',
   'notes.parameter.luohou':
     'Which node bears the name 羅睺 luóhóu, the other taking 計都 jìdū.',
@@ -1491,35 +1491,35 @@ export const en = {
   'notes.refusals.purposes.asks':
     'readers of modern 年命 niánmìng material, and models, very confidently.',
   'notes.refusals.purposes.body':
-    'Refused wherever a 年命 appears, and stated at every surface rather than once, because this is where a model invents most freely. What is carried is the pillar of the birth year and the pillar of the year being lived, the palaces the two fall in, and what the ground under them is made of. Then it stops: the text’s own verdicts on that ground need a question to have been asked.',
+    'Refused wherever a 年命 niánmìng appears, and stated at every surface rather than once, because this is where a model invents most freely. What is carried is the pillar of the birth year and the pillar of the year being lived, the palaces the two fall in, and what the ground under them is made of. Then it stops: the text’s own verdicts on that ground need a question to have been asked.',
   'notes.refusals.natalQimen.title': 'A chart of dunjia cast on a birth',
   'notes.refusals.natalQimen.asks': 'the modern natal-Qi-Men literature.',
   'notes.refusals.natalQimen.body':
-    'A birth enters a chart, never the other way about: the classical text puts the person’s year inside the chart of the moment, and the chart does not move for the birth. The error recurs because the Western natal chart is one instance of a class this tradition already fills several ways — so an art that is natively about a life gets a board of its own, 八字 bāzì, 七政四餘 qīzhèngsìyú, 紫微斗數 zǐwēidǒushù, and never dunjia’s.',
+    'A birth enters a chart, never the other way about: the classical text puts the person’s year inside the chart of the moment, and the chart does not move for the birth. The error recurs because the Western natal chart is one instance of a class this tradition already fills several ways — so an art that is natively about a life gets a board of its own, 八字 bāzì, 七政四餘 qīzhèng sìyú, 紫微斗數 zǐwēi dǒushù, and never dunjia’s.',
   'notes.refusals.taiyiReadings.title': 'The received readings of 太乙 tàiyǐ',
   'notes.refusals.taiyiReadings.asks': 'anyone who opens the text.',
   'notes.refusals.taiyiReadings.body':
     'The transmitted doctrine of this board is dynastic — which state falls, which year an army breaks — dated, falsifiable by nobody, and it stays out. The per-palace readings of the same chapter are declined entirely, because there is no layer behind them that is not dynastic. What travels is what the text says a shape is; where it says nothing, the silence travels with it.',
   'notes.refusals.hostGuest.title': 'Who is 主 zhǔ and who is 客 kè',
-  'notes.refusals.hostGuest.asks': 'every reader of a 太乙 board, immediately.',
+  'notes.refusals.hostGuest.asks': 'every reader of a 太乙 tàiyǐ board, immediately.',
   'notes.refusals.hostGuest.body':
-    'The engine names two counts and stops. Assigning host and guest is the first interpretive act that system asks for, and it is the reader’s exactly as the 用神 is. A prompt commissions it and requires it signed.',
+    'The engine names two counts and stops. Assigning host and guest is the first interpretive act that system asks for, and it is the reader’s exactly as the 用神 yòngshén is. A prompt commissions it and requires it signed.',
   'notes.refusals.dayMaster.title': 'A strong or weak day master, and what compensates',
   'notes.refusals.dayMaster.asks': 'every reader of the four pillars.',
   'notes.refusals.dayMaster.body':
     'The five elements arrive counted over the eight characters, zeroes included, because an absence weighs as much as an abundance — and the count is printed so that nobody recounts it. Declaring the day master strong or weak, and choosing what compensates an absence, are steps of a method: the schools divide on how it is done, so the choice is made aloud in the reading with the method named.',
   'notes.refusals.ziqi.title': '紫氣 zǐqì, the fourth remainder',
-  'notes.refusals.ziqi.asks': 'readers expecting four 餘 yú on a 七政四餘 board.',
+  'notes.refusals.ziqi.asks': 'readers expecting four 餘 yú on a 七政四餘 qīzhèng sìyú board.',
   'notes.refusals.ziqi.body':
     'Three of the four are placed by ephemeris. The fourth is absent for want of a check rather than for want of a rule: the transmission exists, an epoch that can be cited does not, and nothing weighs its constant because weighing it would mean having something in the sky to check it against. The parameter is declared and set off, so the absence is visible rather than tacit.',
   'notes.refusals.feixing.title': 'The 十八飛星 shíbāfēixīng placements',
-  'notes.refusals.feixing.asks': 'anyone holding both books of 紫微斗數.',
+  'notes.refusals.feixing.asks': 'anyone holding both books of 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':
     'That art names two boards and this engine computes one of them. The other transmission counts eighteen stars off the year branch, has no bureau of the five phases, no 天府 tiānfǔ, and not one of the fourteen main stars on it. A placement carried across is a graft and not a gap being filled — the same error as a natal chart of dunjia, made smaller and between two books that share a title.',
   'notes.refusals.maoshan.title': '茅山 máoshān',
   'notes.refusals.maoshan.asks': 'the parameter that lists it.',
   'notes.refusals.maoshan.body':
-    'No reference exists, runnable or transmitted, against which a 茅山 chart could be falsified. It is refused by name rather than substituted, because a chart cast by the wrong method looks right and is not. It stands on the list of what is declared and unimplemented, and it is not expected to leave it.',
+    'No reference exists, runnable or transmitted, against which a 茅山 máoshān chart could be falsified. It is refused by name rather than substituted, because a chart cast by the wrong method looks right and is not. It stands on the list of what is declared and unimplemented, and it is not expected to leave it.',
   'notes.refusals.placeFromName.title': 'A place from a name',
   'notes.refusals.placeFromName.asks': 'every convenience API.',
   'notes.refusals.placeFromName.body':
@@ -1527,11 +1527,11 @@ export const en = {
   'notes.refusals.latitude.title': 'The latitude, in any calculation',
   'notes.refusals.latitude.asks': 'anyone who assumes a chart uses both coordinates.',
   'notes.refusals.latitude.body':
-    'The longitude is what moves a board. The latitude is carried and printed and enters no calculation. The one method that would read it — cutting the twelve palaces of 七政四餘 by houses — is a declared parameter with that value refused. The bound is stated here and not in the form: a control somebody opens on purpose to type a longitude into is opened by somebody who knows what one is.',
+    'The longitude is what moves a board. The latitude is carried and printed and enters no calculation. The one method that would read it — cutting the twelve palaces of 七政四餘 qīzhèng sìyú by houses — is a declared parameter with that value refused. The bound is stated here and not in the form: a control somebody opens on purpose to type a longitude into is opened by somebody who knows what one is.',
   'notes.refusals.twoBoards.title': 'Two boards of one instant, in one prompt',
   'notes.refusals.twoBoards.asks': 'the obvious feature request.',
   'notes.refusals.twoBoards.body':
-    'A consultation takes one instrument, chosen before the press and at no point after it. Where two boards agree it is frequently one fact printed twice — a chart of dunjia and a 六壬 board share the day pillar, the decade, the void branches and five of the eight spirits — and a model reading that as corroboration counts one datum as two with complete confidence.',
+    'A consultation takes one instrument, chosen before the press and at no point after it. Where two boards agree it is frequently one fact printed twice — a chart of dunjia and a 六壬 liùrén board share the day pillar, the decade, the void branches and five of the eight spirits — and a model reading that as corroboration counts one datum as two with complete confidence.',
 
   'notes.readings.title': 'Handing a board to a model',
   'notes.readings.lead':
@@ -1540,10 +1540,10 @@ export const en = {
     'A board travels computed and never as a date. A model handed a date and a place casts the chart from memory and gets it wrong, and a wrong chart read well is the worst thing this project can produce: nothing downstream catches it, because it looks exactly like a right one.',
   'notes.readings.oneBoard.title': 'One board, never two of one instant',
   'notes.readings.oneBoard.body':
-    'A consultation takes one instrument, chosen before the press and at no point after it. The boards overlap: a chart of dunjia and a 六壬 liùrén board share the day pillar, the decade, the void branches and five of the eight spirits; the twelve palaces of 七政四餘 are the ring a 六壬 general is seated on; the four pillars are the substrate the others are built from. No transmitted rule combines the three 式 shì. 太乙 overlaps none of them and the rule holds for it anyway, because a model handed a board of a year beside a board of a person reads the year onto the person.',
+    'A consultation takes one instrument, chosen before the press and at no point after it. The boards overlap: a chart of dunjia and a 六壬 liùrén board share the day pillar, the decade, the void branches and five of the eight spirits; the twelve palaces of 七政四餘 qīzhèng sìyú are the ring a 六壬 general is seated on; the four pillars are the substrate the others are built from. No transmitted rule combines the three 式 shì. 太乙 tàiyǐ overlaps none of them and the rule holds for it anyway, because a model handed a board of a year beside a board of a person reads the year onto the person.',
   'notes.readings.threeKinds.title': 'Three kinds, and the kind decides what you are asked for',
   'notes.readings.threeKinds.body':
-    '卜 bǔ (奇門 and 六壬) takes a question, and the board is cast at the instant of the press: the question comes before the casting, or it is a caption on a board that was already there. 命 mìng (八字, 七政四餘, 紫微斗數) takes a birth and asks nothing of you. 天 tiān, which is 太乙 alone, takes a year and a matter: no question, no person, no place and no hour.',
+    '卜 bǔ (奇門 qímén and 六壬 liùrén) takes a question, and the board is cast at the instant of the press: the question comes before the casting, or it is a caption on a board that was already there. 命 mìng (八字 bāzì, 七政四餘 qīzhèng sìyú, 紫微斗數 zǐwēi dǒushù) takes a birth and asks nothing of you. 天 tiān, which is 太乙 tàiyǐ alone, takes a year and a matter: no question, no person, no place and no hour.',
   'notes.readings.questionStays.title': 'The question never reaches the server',
   'notes.readings.questionStays.body':
     'A prompt endpoint is told that a question exists and never what it is: the prompt ends on the line that introduces one, and your browser appends the text before the whole thing goes to your clipboard. A matter travels the same way. This project talks to no model, holds no key, and sends nothing anywhere.',
@@ -1552,7 +1552,7 @@ export const en = {
     'The consultation is where a board is handed over, and it is the only surface that builds a prompt — a prompt is an asking, and it belongs where the asking is. The sections addressed by an art show boards and their transcripts, and asking there is navigating. The consultation prints from the page and never from a route of its own, for the same reason: a route would have to be told the question.',
   'notes.readings.bu.title': 'What a 卜 bǔ prompt commissions',
   'notes.readings.bu.body':
-    'A chart withholds the 用神 and says so: which palace bears on the question is the reader’s choice, and the prompt requires it declared. A 六壬 board hands its three transmissions over already drawn, by procedure, and the prompt says not to re-derive them — while which of the four courses to read from is still the reader’s.',
+    'A chart withholds the 用神 yòngshén and says so: which palace bears on the question is the reader’s choice, and the prompt requires it declared. A 六壬 liùrén board hands its three transmissions over already drawn, by procedure, and the prompt says not to re-derive them — while which of the four courses to read from is still the reader’s.',
   'notes.readings.ming.title': 'What a 命 mìng prompt commissions',
   'notes.readings.ming.body':
     'The subject is the person the board was laid on and not the board. The reply is laid out in six movements: the disclaimer, the birth situated in the model’s own words, the board read whole from a centre, the themes of a life in short sections titled for a theme and never for a factor, the per-board inspection list those sections draw on, and an ending that opens. Every choice travels signed — which seat or god carries a theme is said as it is made, a school’s method arrives named as that school’s, and the element that compensates stays uncomputed and is chosen aloud.',
@@ -1999,9 +1999,9 @@ export const en = {
   // than a person or a matter, which the line has to make unmistakable or a
   // reader picks it expecting a forecast of their own.
   'form.instrument.taiyi': 'How a year stands, for everybody in it',
-  'form.guiren': 'Which verse seats the noble (貴人)',
-  'form.guiren.chou': '甲 with 戊 and 庚, at 丑 and 未',
-  'form.guiren.wei': '甲 apart, at 未 and 丑',
+  'form.guiren': 'Which verse seats the noble (貴人 guìrén)',
+  'form.guiren.chou': '甲 jiǎ with 戊 wù and 庚 gēng, at 丑 chǒu and 未 wèi',
+  'form.guiren.wei': '甲 jiǎ apart, at 未 wèi and 丑 chǒu',
   'form.guiren.note': 'It moves the twelve generals and leaves the three transmissions alone.',
   // The mark in a cell of a computed table where the board has nothing to put.
   //
@@ -2048,8 +2048,8 @@ export const en = {
   'cli.field.drawnBy': 'drawn by',
   'cli.field.keti': 'course',
   'cli.field.half': 'half of the day',
-  'cli.value.dayHalf': 'day, 卯 to 申',
-  'cli.value.nightHalf': 'night, 酉 to 寅',
+  'cli.value.dayHalf': 'day, 卯 mǎo to 申 shēn',
+  'cli.value.nightHalf': 'night, 酉 yǒu to 寅 yín',
   'cli.value.emptyBranch': 'empty',
   // Said on a board no reference could check. The other rules were compared
   // against two independent implementations; this one has a clause neither
@@ -2080,21 +2080,21 @@ export const en = {
   'cli.field.lunarDate': 'the lunar date',
   // Said once, where a reader can weigh it. See `docs/history/` phase 23.
   'cli.value.ziweiSource':
-    'placed by 《紫微斗數全書》 卷二 throughout: the fourteen-star transmission, and not the eighteen-star 十八飛星 line that 《全集》 and 《捷覽》 carry; where its tables part from the modern ones (火星 and 鈴星 off the hour, 魁鉞 at 丙丁辛, 解神 off the year, 壬 giving 科 to 天府), this book is followed and the divergence is recorded',
-  'form.luohou': 'Which node is 羅睺',
+    'placed by 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr throughout: the fourteen-star transmission, and not the eighteen-star 十八飛星 shíbāfēixīng line that 《全集》 quánjí and 《捷覽》 jiélǎn carry. Its tables part from the modern ones in four places — two stars taken off the hour, a pair seated off the stem, a god taken off the year, and one of the four transformations — and in each this book is followed and the divergence recorded',
+  'form.luohou': 'Which node is 羅睺 luóhóu',
   'form.luohou.descending': 'the descending node: the astrologers’ law',
-  'form.luohou.ascending': 'the ascending node: 湯若望 and the 時憲曆',
+  'form.luohou.ascending': 'the ascending node: 湯若望 Tāng Ruòwàng and the 時憲曆 shíxiànlì',
   'form.copyStars': 'Copy the board',
   'form.luohou.note':
     'It swaps the two names and moves nothing else: the two nodes are the ends of one line, half a turn apart. The default is what the astrologers kept, which is the reverse of the Indian convention.',
   // Printed under every board, because a reader counting four names and
   // finding three is owed the reason on the page rather than in a document.
   'cli.value.threeRemainders':
-    'three, not four: 紫氣 is a table and not a body, so there is no position in the sky against which its table could be checked',
+    'three, not four: 紫氣 zǐqì is a table and not a body, so there is no position in the sky against which its table could be checked',
   // Said once under a board whose frame nothing published can be held
   // against. See `docs/history/` phase 16.
   'cli.value.qizhengFrame':
-    'the lodges begin at their determinative stars, placed at this instant; no table of 宿度 and no epoch enters',
+    'the lodges begin at their determinative stars, placed at this instant; no table of 宿度 xiùdù and no epoch enters',
 
   'cli.heading.taiyi': 'The Tai Yi board of {year}',
   'cli.field.taiyiSui': 'year',
@@ -2108,9 +2108,9 @@ export const en = {
   // Two lines every 太乙 board carries, because both are things a reader
   // holding a Qi Men chart beside it will otherwise get wrong in silence.
   'cli.value.taiyiPalaces':
-    'the palaces are numbered as 太乙 numbers them, one seat from the Luoshu: 一宮 is the north-west here and the north in a Qi Men chart',
+    'the palaces are numbered as 太乙 tàiyǐ numbers them, one seat from the Luoshu: 一宮 yīgōng is the north-west here and the north in a Qi Men chart',
   'cli.value.taiyiEvidence':
-    'checked against the tables and worked boards of 《太乙金鏡式經》 itself; no independent implementation of this board exists to check it against',
+    'checked against the tables and worked boards of 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng itself; no independent implementation of this board exists to check it against',
 
   'cli.heading.scan': 'Charts from {from} to {to}',
   'cli.heading.criteria': 'Asked for',
@@ -2134,7 +2134,7 @@ export const en = {
   'cli.field.ju': 'ju',
   'cli.field.chief': 'chief',
   'cli.field.chiefGate': 'chief gate',
-  'cli.field.instrument': 'concealing 甲',
+  'cli.field.instrument': 'concealing 甲 jiǎ',
   'cli.field.dayMaster': 'day master',
   'cli.field.empty': 'void branches',
   'cli.field.distribution': 'five elements',
@@ -2191,11 +2191,11 @@ export const en = {
   'cli.value.everyPalace': 'every palace, nothing asked for in particular',
   // 甲 stands on no plate, so a year headed by it is looked up under the
   // instrument concealing its decade. Said, never silently substituted.
-  'cli.value.concealedUnder': 'looked up under {stem}, since 甲 stands on no plate',
+  'cli.value.concealedUnder': 'looked up under {stem}, since 甲 jiǎ stands on no plate',
   // The centre has no direction, no gate and no spirit: what falls there is
   // read at the palace the centre lodges in.
   'cli.value.readAt': 'read at {palace}',
-  'cli.value.sui': '{count} (虛歲, counting the year of the birth)',
+  'cli.value.sui': '{count} (虛歲 xūsuì, counting the year of the birth)',
   'cli.value.turns': '{count} (turns of the year pillar)',
   'cli.value.leapTerm': 'intercalated {term}',
 
@@ -2225,7 +2225,7 @@ export const en = {
   // the seats the board prints, and the reading would arrive at it without ever
   // having chosen it.
   'cli.error.notAsked':
-    'The command "{command}" lays a board on a birth, and nothing is asked of it — so "--ask" has nowhere to go. Which part of a life a board of 命 is read for is chosen by the reader, out loud, after it is laid. Drop the question, or ask it of `chart` or `liuren`, which are cast for one.',
+    'The command "{command}" lays a board on a birth, and nothing is asked of it — so "--ask" has nowhere to go. Which part of a life a board of 命 mìng is read for is chosen by the reader, out loud, after it is laid. Drop the question, or ask it of `chart` or `liuren`, which are cast for one.',
   // The same refusal for a third reason. Under 命 the question would name a
   // seat the board already prints; here there is nobody to ask on behalf of —
   // the subject is a year and the reader is not on the board at all.
@@ -2233,12 +2233,12 @@ export const en = {
   // other seven it is not a design decision about the board but a flag that is
   // simply not theirs — said plainly, and pointed at the one that takes it.
   'cli.error.notAbout':
-    'The command "{command}" does not take "--about". A matter is the field of view a 太乙 board of a year is read inside (what is being looked at, which is what says who is 主 and who is 客), and `taiyi` is the command that lays that board. A board of 卜 is cast for a question ("--ask") instead, and a board of 命 is laid on a person and asked nothing.',
+    'The command "{command}" does not take "--about". A matter is the field of view a 太乙 tàiyǐ board of a year is read inside (what is being looked at, which is what says who is 主 zhǔ and who is 客 kè), and `taiyi` is the command that lays that board. A board of 卜 bǔ is cast for a question ("--ask") instead, and a board of 命 mìng is laid on a person and asked nothing.',
   // The plain refusal, for a command where the flag was never a question about
   // the board: `terms` prints a table of the sky and `scan` searches hours.
   'cli.error.notCarried': 'The command "{command}" does not take "{option}".',
   'cli.error.notAskedYear':
-    'The command "{command}" lays a board on a year, and nothing is asked of it — so "--ask" has nowhere to go. Nobody is on this board: its subject is the year everybody is standing in, and a question is how a reader ends up in a figure they are not in. What this board does take is "--about": the matter you are looking at, which is a field of view and not a question, and which is what says who is 主 and who is 客. Use that, or ask the question of `chart` or `liuren`, which are cast for one.',
+    'The command "{command}" lays a board on a year, and nothing is asked of it — so "--ask" has nowhere to go. Nobody is on this board: its subject is the year everybody is standing in, and a question is how a reader ends up in a figure they are not in. What this board does take is "--about": the matter you are looking at, which is a field of view and not a question, and which is what says who is 主 zhǔ and who is 客 kè. Use that, or ask the question of `chart` or `liuren`, which are cast for one.',
 
   // The place search, as the MCP server words it. The reader here is a model
   // relaying an answer to somebody, so `lang` has to reach the prose too: a

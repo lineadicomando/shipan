@@ -56,9 +56,9 @@ export const it: Record<MessageKey, string> = {
   'core.error.UNKNOWN_IDENTIFIER':
     '"{value}" non è un {parameter} che il motore conosce. Se non venisse controllato non corrisponderebbe a nulla, il che si legge esattamente come una disposizione che non si è mai presentata.',
   'core.error.BIRTH_AFTER_CHART':
-    'La nascita cade dopo la carta, quindi non ci sono anni da contare: lo 行年 avanza da una nascita e non si può chiedere prima di essa.',
+    'La nascita cade dopo la carta, quindi non ci sono anni da contare: lo 行年 xíngnián avanza da una nascita e non si può chiedere prima di essa.',
   'core.error.YEARS_OUT_OF_RANGE':
-    '{years} non è un conto di anni per cui si possa prendere uno 行年: il conto si apre a uno, nell’anno stesso della nascita.',
+    '{years} non è un conto di anni per cui si possa prendere uno 行年 xíngnián: il conto si apre a uno, nell’anno stesso della nascita.',
   'core.error.TOO_MANY_YEARS':
     'Una serie di {years} pilastri dell’anno supera i {maximum} che si possono chiedere in una volta.',
 
@@ -1019,14 +1019,14 @@ export const it: Record<MessageKey, string> = {
   'form.calculation': 'Come si calcola',
   'form.trueSolarTime': 'Correggi all’ora solare vera',
   'form.dayBoundary': 'Il giorno comincia',
-  'form.dayBoundary.zishi': 'all’ora del Topo 子時, alle 23:00',
+  'form.dayBoundary.zishi': 'all’ora del Topo 子時 zǐshí, alle 23:00',
   'form.dayBoundary.midnight': 'a mezzanotte, alle 00:00',
   'form.method': 'Il ju si determina',
-  'form.method.chaibu': 'per terzi del termine: chaibu 拆補',
-  'form.method.zhirun': 'per blocchi interi, con l’intercalazione: zhirun 置閏',
+  'form.method.chaibu': 'per terzi del termine: 拆補 chāibǔ',
+  'form.method.zhirun': 'per blocchi interi, con l’intercalazione: 置閏 zhìrùn',
   'form.yuan': 'Con chaibu, il terzo del termine si conta',
   'form.yuan.term': 'dall’istante in cui il termine è cominciato',
-  'form.yuan.futou': 'dal giorno, per tratti di cinque: futou 符頭',
+  'form.yuan.futou': 'dal giorno, per tratti di cinque: 符頭 fútóu',
   'form.gender': 'Sesso: ne dipende solo la direzione dei cicli decennali',
   'form.gender.unset': 'non indicato',
   'form.gender.male': 'maschile',
@@ -1049,7 +1049,7 @@ export const it: Record<MessageKey, string> = {
   // quella persona, mai quale ora sia buona.
   'form.benming': 'Di chi è l’anno che deve starci',
   'form.benmingNote':
-    'Con una data di nascita vengono riportati soltanto i palazzi su cui sta il pilastro dell’anno di quella persona (本命 běnmìng): il 《遁甲演義》 vuole che una lettura lo consideri prima di ogni altra cosa. Restringe quello che si vede e non pesa nulla: che cosa renda un palazzo degno di esserci è quanto hai chiesto qui sopra.',
+    'Con una data di nascita vengono riportati soltanto i palazzi su cui sta il pilastro dell’anno di quella persona (本命 běnmìng): il 《遁甲演義》 dùnjiǎ yǎnyì vuole che una lettura lo consideri prima di ogni altra cosa. Restringe quello che si vede e non pesa nulla: che cosa renda un palazzo degno di esserci è quanto hai chiesto qui sopra.',
   'form.criteriaNote':
     'Sono disposizioni, non raccomandazioni. Il motore riferisce dove ciascuna si trova; se sia un buon momento per agire è una lettura, e spetta a te farla.',
   'form.scan': 'Scandisci l’intervallo',
@@ -1101,7 +1101,7 @@ export const it: Record<MessageKey, string> = {
   // una carta natale.
   'consult.birth': 'La tua nascita, se la vuoi nella carta',
   'consult.birthDate': 'Data di nascita',
-  'consult.birthGender': 'Sesso: ne dipende solo il verso del conteggio dello 行年',
+  'consult.birthGender': 'Sesso: ne dipende solo il verso del conteggio dello 行年 xíngnián',
   'consult.birthNote':
     'La carta resta posta per l’istante in cui chiedi. Quello che la nascita aggiunge è dove cade dentro di essa: 本命 běnmìng, l’anno in cui sei nato, e 行年 xíngnián, l’anno che stai vivendo.',
   'consult.cast': 'Poni la domanda',
@@ -1203,13 +1203,13 @@ export const it: Record<MessageKey, string> = {
   'notes.does.taiyi':
     'La tavola di un anno: sedici divinità in nove palazzi, e i conti dell’ospite e dell’ospitante. Non c’è nessuno sopra.',
   'notes.does.qizheng':
-    'I sette governatori e tre dei quattro residui, collocati sulle ventotto dimore e sui dodici palazzi.',
+    'I sette governatori e tre dei quattro residui, collocati sulle ventotto dimore 宿 xiù e sui dodici palazzi.',
   'notes.does.ziwei':
     'Dodici seggi contati dal mese lunare e dall’ora, le stelle che il libro vi colloca, e il grado che dà a ciascuna.',
   'notes.does.bazi':
     'I quattro pilastri letti per esteso: gli steli nascosti, le dieci divinità, i dodici stadi, le immagini del 納音 nàyīn, i cicli di fortuna e un conteggio dei cinque elementi.',
   'notes.does.almanac':
-    'La pagina che un almanacco stampa per una data: l’ufficiale del giorno, la dimora che lo tiene, le dodici divinità, gli orientamenti che l’anno fissa, e gli shensha che un giorno porta o non porta.',
+    'La pagina che un almanacco stampa per una data: l’ufficiale del giorno 建除 jiànchú, la dimora che lo tiene, le dodici divinità, gli orientamenti che l’anno fissa, e i 神煞 shénshà che un giorno porta o non porta.',
   'notes.does.nianming':
     'Dove una persona sta dentro una carta del momento: il pilastro del suo anno di nascita, e il pilastro dell’anno che sta vivendo.',
 
@@ -1250,12 +1250,12 @@ export const it: Record<MessageKey, string> = {
     'Se l’ora dell’orologio venga corretta sul Sole del luogo.',
   'notes.parameter.yearBoundary': 'Dove comincia l’anno contato.',
   'notes.parameter.dayBoundary': 'Dove il giorno cambia.',
-  'notes.parameter.shensha': 'Quale registro di shensha porta la pagina dell’almanacco.',
+  'notes.parameter.shensha': 'Quale registro di 神煞 shénshà porta la pagina dell’almanacco.',
   'notes.parameter.yuejiang':
     'Quando il Sole cambia palazzo, che è ciò che insedia il generale del mese.',
   'notes.parameter.guiren': 'Quale trasmissione del verso insedia il nobile.',
   'notes.parameter.zhouye': 'Dove si taglia il giorno, per i seggi diurno e notturno del nobile.',
-  'notes.parameter.xiudu': 'Dove cominciano le ventotto dimore.',
+  'notes.parameter.xiudu': 'Dove cominciano le ventotto dimore 宿 xiù.',
   'notes.parameter.ziqi': 'Se 紫氣 zǐqì entri, e per quale trasmissione.',
   'notes.parameter.luohou':
     'Quale nodo porta il nome 羅睺 luóhóu, e all’altro tocca 計都 jìdū.',
@@ -1301,35 +1301,35 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.purposes.asks':
     'i lettori del materiale moderno sul 年命 niánmìng, e i modelli, con molta sicurezza.',
   'notes.refusals.purposes.body':
-    'Rifiutato ovunque compaia un 年命, e detto su ogni superficie anziché una volta sola, perché è qui che un modello inventa più liberamente. Ciò che viene portato è il pilastro dell’anno di nascita e il pilastro dell’anno che si sta vivendo, i palazzi in cui i due cadono, e di che cosa è fatto il terreno sotto di loro. Poi si ferma: i verdetti che il testo dà su quel terreno hanno bisogno che una domanda sia stata posta.',
+    'Rifiutato ovunque compaia un 年命 niánmìng, e detto su ogni superficie anziché una volta sola, perché è qui che un modello inventa più liberamente. Ciò che viene portato è il pilastro dell’anno di nascita e il pilastro dell’anno che si sta vivendo, i palazzi in cui i due cadono, e di che cosa è fatto il terreno sotto di loro. Poi si ferma: i verdetti che il testo dà su quel terreno hanno bisogno che una domanda sia stata posta.',
   'notes.refusals.natalQimen.title': 'Una carta di dunjia tratta su una nascita',
   'notes.refusals.natalQimen.asks': 'la letteratura moderna sul Qi Men natale.',
   'notes.refusals.natalQimen.body':
-    'Una nascita entra in una carta, mai il contrario: il testo classico mette l’anno della persona dentro la carta del momento, e la carta non si sposta per la nascita. L’errore ricorre perché la carta natale occidentale è un caso di una classe che questa tradizione riempie già in più modi, perciò un’arte che nasce sulla vita ha una tavola propria, 八字 bāzì, 七政四餘 qīzhèngsìyú, 紫微斗數 zǐwēidǒushù, e mai quella del dunjia.',
+    'Una nascita entra in una carta, mai il contrario: il testo classico mette l’anno della persona dentro la carta del momento, e la carta non si sposta per la nascita. L’errore ricorre perché la carta natale occidentale è un caso di una classe che questa tradizione riempie già in più modi, perciò un’arte che nasce sulla vita ha una tavola propria, 八字 bāzì, 七政四餘 qīzhèng sìyú, 紫微斗數 zǐwēi dǒushù, e mai quella del dunjia.',
   'notes.refusals.taiyiReadings.title': 'Le letture ricevute del 太乙 tàiyǐ',
   'notes.refusals.taiyiReadings.asks': 'chiunque apra il testo.',
   'notes.refusals.taiyiReadings.body':
     'La dottrina tramandata di questa tavola è dinastica – quale stato cade, in quale anno un esercito si spezza – è datata, nessuno può falsificarla, e resta fuori. Le letture palazzo per palazzo dello stesso capitolo sono declinate per intero, perché dietro di esse non c’è alcuno strato che non sia dinastico. Ciò che viaggia è quel che il testo dice che una figura è; dove non dice nulla, viaggia il silenzio.',
   'notes.refusals.hostGuest.title': 'Chi è 主 zhǔ e chi è 客 kè',
-  'notes.refusals.hostGuest.asks': 'ogni lettore di una tavola di 太乙, subito.',
+  'notes.refusals.hostGuest.asks': 'ogni lettore di una tavola di 太乙 tàiyǐ, subito.',
   'notes.refusals.hostGuest.body':
-    'Il motore nomina due conti e si ferma. Assegnare ospitante e ospite è il primo atto interpretativo che quel sistema richiede, ed è del lettore esattamente come lo 用神. Un prompt lo commissiona e ne esige la firma.',
+    'Il motore nomina due conti e si ferma. Assegnare ospitante e ospite è il primo atto interpretativo che quel sistema richiede, ed è del lettore esattamente come lo 用神 yòngshén. Un prompt lo commissiona e ne esige la firma.',
   'notes.refusals.dayMaster.title': 'Un signore del giorno forte o debole, e ciò che compensa',
   'notes.refusals.dayMaster.asks': 'ogni lettore dei quattro pilastri.',
   'notes.refusals.dayMaster.body':
     'I cinque elementi arrivano contati sugli otto caratteri, zeri compresi, perché un’assenza pesa quanto un’abbondanza, e il conteggio è stampato perché nessuno lo rifaccia. Dichiarare il signore del giorno forte o debole, e scegliere che cosa compensi un’assenza, sono passi di un metodo: le scuole divergono su come si faccia, perciò la scelta si compie ad alta voce nella lettura, con il metodo nominato.',
   'notes.refusals.ziqi.title': '紫氣 zǐqì, il quarto residuo',
-  'notes.refusals.ziqi.asks': 'chi si aspetta quattro 餘 yú su una tavola di 七政四餘.',
+  'notes.refusals.ziqi.asks': 'chi si aspetta quattro 餘 yú su una tavola di 七政四餘 qīzhèng sìyú.',
   'notes.refusals.ziqi.body':
     'Tre dei quattro sono collocati dalle effemeridi. Il quarto manca per mancanza di una verifica e non di una regola: la trasmissione esiste, un’epoca citabile no, e nulla soppesa la sua costante perché soppesarla vorrebbe dire avere qualcosa in cielo con cui confrontarla. Il parametro è dichiarato e spento, così l’assenza è visibile invece che tacita.',
   'notes.refusals.feixing.title': 'Le collocazioni delle 十八飛星 shíbāfēixīng',
-  'notes.refusals.feixing.asks': 'chi ha in mano entrambi i libri del 紫微斗數.',
+  'notes.refusals.feixing.asks': 'chi ha in mano entrambi i libri del 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':
     'Quell’arte nomina due tavole e questo motore ne calcola una. L’altra trasmissione conta diciotto stelle a partire dal ramo dell’anno, non ha ufficio dei cinque elementi, non ha 天府 tiānfǔ, e non porta nessuna delle quattordici stelle principali. Una collocazione portata da una all’altra è un innesto e non una lacuna colmata: lo stesso errore della carta natale di dunjia, più piccolo e fra due libri che condividono il titolo.',
   'notes.refusals.maoshan.title': '茅山 máoshān',
   'notes.refusals.maoshan.asks': 'il parametro che lo elenca.',
   'notes.refusals.maoshan.body':
-    'Non esiste alcun riferimento, eseguibile o tramandato, su cui una carta 茅山 possa essere falsificata. È rifiutato per nome anziché sostituito, perché una carta tratta con il metodo sbagliato sembra giusta e non lo è. Sta nell’elenco di ciò che è dichiarato e non implementato, e non ci si aspetta che ne esca.',
+    'Non esiste alcun riferimento, eseguibile o tramandato, su cui una carta 茅山 máoshān possa essere falsificata. È rifiutato per nome anziché sostituito, perché una carta tratta con il metodo sbagliato sembra giusta e non lo è. Sta nell’elenco di ciò che è dichiarato e non implementato, e non ci si aspetta che ne esca.',
   'notes.refusals.placeFromName.title': 'Un luogo da un nome',
   'notes.refusals.placeFromName.asks': 'ogni API di comodo.',
   'notes.refusals.placeFromName.body':
@@ -1337,11 +1337,11 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.latitude.title': 'La latitudine, in qualunque calcolo',
   'notes.refusals.latitude.asks': 'chi dà per scontato che una carta usi entrambe le coordinate.',
   'notes.refusals.latitude.body':
-    'È la longitudine a spostare una tavola. La latitudine viene portata e stampata e non entra in alcun calcolo. L’unico metodo che la leggerebbe – tagliare i dodici palazzi del 七政四餘 per case – è un parametro dichiarato con quel valore non implementato. Il limite è detto qui e non nel modulo: un controllo che si apre apposta per digitarci una longitudine lo apre chi sa che cosa sia.',
+    'È la longitudine a spostare una tavola. La latitudine viene portata e stampata e non entra in alcun calcolo. L’unico metodo che la leggerebbe – tagliare i dodici palazzi del 七政四餘 qīzhèng sìyú per case – è un parametro dichiarato con quel valore non implementato. Il limite è detto qui e non nel modulo: un controllo che si apre apposta per digitarci una longitudine lo apre chi sa che cosa sia.',
   'notes.refusals.twoBoards.title': 'Due tavole di uno stesso istante, in un solo prompt',
   'notes.refusals.twoBoards.asks': 'la richiesta di funzionalità più ovvia.',
   'notes.refusals.twoBoards.body':
-    'Una consultazione prende un solo strumento, scelto prima della pressione e in nessun momento dopo. Dove due tavole concordano è spesso un fatto solo stampato due volte – una carta di dunjia e un quadro di 六壬 condividono il pilastro del giorno, la decade, i rami vuoti e cinque degli otto spiriti – e un modello che lo legga come conferma conta un dato per due con assoluta sicurezza.',
+    'Una consultazione prende un solo strumento, scelto prima della pressione e in nessun momento dopo. Dove due tavole concordano è spesso un fatto solo stampato due volte – una carta di dunjia e un quadro di 六壬 liùrén condividono il pilastro del giorno, la decade, i rami vuoti e cinque degli otto spiriti – e un modello che lo legga come conferma conta un dato per due con assoluta sicurezza.',
 
   'notes.readings.title': 'Consegnare una tavola a un modello',
   'notes.readings.lead':
@@ -1350,10 +1350,10 @@ export const it: Record<MessageKey, string> = {
     'Una tavola viaggia calcolata e mai come data. Un modello a cui si consegnino una data e un luogo trae la carta a memoria e la sbaglia, e una carta sbagliata letta bene è la cosa peggiore che questo progetto possa produrre: niente a valle la intercetta, perché è identica a una giusta.',
   'notes.readings.oneBoard.title': 'Una tavola sola, mai due dello stesso istante',
   'notes.readings.oneBoard.body':
-    'Una consultazione prende un solo strumento, scelto prima della pressione e in nessun momento dopo. Le tavole si sovrappongono: una carta di dunjia e un quadro di 六壬 liùrén condividono il pilastro del giorno, la decade, i rami vuoti e cinque degli otto spiriti; i dodici palazzi del 七政四餘 sono l’anello su cui siede un generale di 六壬; i quattro pilastri sono il substrato da cui le altre sono costruite. Nessuna regola tramandata combina i tre 式 shì. Il 太乙 non si sovrappone a nessuna e la regola vale lo stesso, perché un modello a cui si dia una tavola di un anno accanto a una di una persona legge l’anno sulla persona.',
+    'Una consultazione prende un solo strumento, scelto prima della pressione e in nessun momento dopo. Le tavole si sovrappongono: una carta di dunjia e un quadro di 六壬 liùrén condividono il pilastro del giorno, la decade, i rami vuoti e cinque degli otto spiriti; i dodici palazzi del 七政四餘 qīzhèng sìyú sono l’anello su cui siede un generale di 六壬; i quattro pilastri sono il substrato da cui le altre sono costruite. Nessuna regola tramandata combina i tre 式 shì. Il 太乙 tàiyǐ non si sovrappone a nessuna e la regola vale lo stesso, perché un modello a cui si dia una tavola di un anno accanto a una di una persona legge l’anno sulla persona.',
   'notes.readings.threeKinds.title': 'Tre generi, e il genere decide che cosa ti viene chiesto',
   'notes.readings.threeKinds.body':
-    '卜 bǔ (奇門 e 六壬) prende una domanda, e la tavola è tratta nell’istante della pressione: la domanda viene prima della trazione, o è una didascalia su una tavola che c’era già. 命 mìng (八字, 七政四餘, 紫微斗數) prende una nascita e non ti chiede nulla. 天 tiān, che è il solo 太乙, prende un anno e una materia: nessuna domanda, nessuna persona, nessun luogo e nessuna ora.',
+    '卜 bǔ (奇門 qímén e 六壬 liùrén) prende una domanda, e la tavola è tratta nell’istante della pressione: la domanda viene prima della trazione, o è una didascalia su una tavola che c’era già. 命 mìng (八字 bāzì, 七政四餘 qīzhèng sìyú, 紫微斗數 zǐwēi dǒushù) prende una nascita e non ti chiede nulla. 天 tiān, che è il solo 太乙 tàiyǐ, prende un anno e una materia: nessuna domanda, nessuna persona, nessun luogo e nessuna ora.',
   'notes.readings.questionStays.title': 'La domanda non raggiunge mai il server',
   'notes.readings.questionStays.body':
     'A un endpoint di prompt viene detto che una domanda esiste e mai quale sia: il prompt finisce sulla riga che la introduce, e il tuo browser aggiunge il testo prima che il tutto finisca negli appunti. Una materia viaggia allo stesso modo. Questo progetto non parla con nessun modello, non tiene alcuna chiave e non manda niente da nessuna parte.',
@@ -1362,7 +1362,7 @@ export const it: Record<MessageKey, string> = {
     'La consultazione è dove una tavola viene consegnata, ed è l’unica superficie che costruisca un prompt: un prompt è un chiedere, e sta dove si chiede. Le sezioni intitolate a un’arte mostrano tavole e le loro trascrizioni, e chiedere lì è navigare. La consultazione stampa dalla pagina e mai da un indirizzo proprio, per la stessa ragione: a un indirizzo bisognerebbe dire qual è la domanda.',
   'notes.readings.bu.title': 'Che cosa commissiona un prompt di 卜 bǔ',
   'notes.readings.bu.body':
-    'Una carta trattiene lo 用神 e lo dichiara: quale palazzo riguardi la domanda è scelta del lettore, e il prompt ne esige la dichiarazione. Un quadro di 六壬 consegna le sue tre trasmissioni già tratte, per procedura, e il prompt dice di non riderivarle, mentre da quale delle quattro lezioni leggere resta del lettore.',
+    'Una carta trattiene lo 用神 yòngshén e lo dichiara: quale palazzo riguardi la domanda è scelta del lettore, e il prompt ne esige la dichiarazione. Un quadro di 六壬 liùrén consegna le sue tre trasmissioni già tratte, per procedura, e il prompt dice di non riderivarle, mentre da quale delle quattro lezioni leggere resta del lettore.',
   'notes.readings.ming.title': 'Che cosa commissiona un prompt di 命 mìng',
   'notes.readings.ming.body':
     'Il soggetto è la persona su cui la tavola è stata posata, non la tavola. La risposta è disposta in sei movimenti: l’avvertenza, la nascita situata con parole del modello, la tavola letta intera a partire da un centro, i temi di una vita in sezioni brevi intitolate a un tema e mai a un fattore, l’elenco di ispezione da cui quelle sezioni attingono, e una chiusura che apre. Ogni scelta viaggia firmata: quale seggio o divinità porti un tema si dice nel momento in cui lo si sceglie, il metodo di una scuola arriva nominato come di quella scuola, e l’elemento che compensa resta non calcolato e viene scelto ad alta voce.',
@@ -1673,9 +1673,9 @@ export const it: Record<MessageKey, string> = {
   'form.instrument.ziwei': 'I seggi in cui una vita è contata',
   'form.instrument.bazi': 'Di che cosa è fatta una vita, all’ora di una nascita',
   'form.instrument.taiyi': 'Come sta un anno, per tutti quelli che ci stanno dentro',
-  'form.guiren': 'Quale verso insedia il nobile (貴人)',
-  'form.guiren.chou': '甲 con 戊 e 庚, a 丑 e 未',
-  'form.guiren.wei': '甲 da solo, a 未 e 丑',
+  'form.guiren': 'Quale verso insedia il nobile (貴人 guìrén)',
+  'form.guiren.chou': '甲 jiǎ con 戊 wù e 庚 gēng, a 丑 chǒu e 未 wèi',
+  'form.guiren.wei': '甲 jiǎ da solo, a 未 wèi e 丑 chǒu',
   'form.guiren.note': 'Muove i dodici generali e lascia stare le tre trasmissioni.',
   // Resta «n/a» e non diventa «n/d», che è la sigla italiana.
   //
@@ -1713,8 +1713,8 @@ export const it: Record<MessageKey, string> = {
   'cli.field.drawnBy': 'tratto per',
   'cli.field.keti': 'figura',
   'cli.field.half': 'metà del giorno',
-  'cli.value.dayHalf': 'giorno, da 卯 a 申',
-  'cli.value.nightHalf': 'notte, da 酉 a 寅',
+  'cli.value.dayHalf': 'giorno, da 卯 mǎo a 申 shēn',
+  'cli.value.nightHalf': 'notte, da 酉 yǒu a 寅 yín',
   'cli.value.emptyBranch': 'vuoto',
   'cli.value.liurenUnverified':
     'nessuna implementazione di riferimento copre questa regola; il testo classico enumera ogni quadro che essa può trarre, e questo motore li restituisce tutti',
@@ -1742,21 +1742,21 @@ export const it: Record<MessageKey, string> = {
   'cli.field.lunarDate': 'la data lunare',
   // Detto una volta, dove chi legge può soppesarlo. Si veda `docs/history/`, fase 23.
   'cli.value.ziweiSource':
-    'collocazioni dal 《紫微斗數全書》 卷二 in ogni punto – la trasmissione delle quattordici stelle, non quella delle diciotto, i 十八飛星 del 《全集》 e del 《捷覽》; dove le sue tavole si scostano da quelle moderne: 火星 e 鈴星 slegate dall’ora, 魁鉞 a 丙丁辛, 解神 preso dall’anno, 壬 che dà 科 a 天府; si segue questo libro e lo scostamento è registrato',
-  'form.luohou': 'Quale nodo è 羅睺',
+    'collocazioni dal 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr in ogni punto: la trasmissione delle quattordici stelle, non quella delle diciotto, i 十八飛星 shíbāfēixīng che portano 《全集》 quánjí e 《捷覽》 jiélǎn. Le sue tavole si scostano da quelle moderne in quattro luoghi – due stelle slegate dall’ora, una coppia insediata dallo stelo, una divinità presa dall’anno e una delle quattro trasformazioni – e in ognuno si segue questo libro, con lo scostamento registrato',
+  'form.luohou': 'Quale nodo è 羅睺 luóhóu',
   'form.luohou.descending': 'il nodo discendente: la legge degli astrologi',
-  'form.luohou.ascending': 'il nodo ascendente: 湯若望 e il 時憲曆',
+  'form.luohou.ascending': 'il nodo ascendente: 湯若望 Tāng Ruòwàng e il 時憲曆 shíxiànlì',
   'form.copyStars': 'Copia la tavola',
   'form.luohou.note':
     'Scambia i due nomi e non muove altro: i due nodi sono i capi di una sola linea, a mezzo giro l’uno dall’altro. Il default è quello che gli astrologi hanno tenuto, che è il rovescio della convenzione indiana.',
   // Stampato sotto ogni tavola, perché a chi conta quattro nomi e ne trova
   // tre la ragione è dovuta sulla pagina, non in un documento.
   'cli.value.threeRemainders':
-    'tre, non quattro: 紫氣 è una tavola e non un corpo, quindi non esiste una posizione in cielo con cui verificarne la tavola',
+    'tre, non quattro: 紫氣 zǐqì è una tavola e non un corpo, quindi non esiste una posizione in cielo con cui verificarne la tavola',
   // Detto una volta sotto una tavola il cui quadro non ha nulla di pubblicato
   // contro cui essere verificato. Vedi `docs/history/`, fase 16.
   'cli.value.qizhengFrame':
-    'le dimore cominciano alle loro stelle di riferimento, collocate a questo istante; nessuna tavola di 宿度 e nessuna epoca vi entra',
+    'le dimore cominciano alle loro stelle di riferimento, collocate a questo istante; nessuna tavola di 宿度 xiùdù e nessuna epoca vi entra',
 
   'cli.heading.taiyi': 'La tavola di Tai Yi del {year}',
   'cli.field.taiyiSui': 'anno',
@@ -1771,9 +1771,9 @@ export const it: Record<MessageKey, string> = {
   // lettore che le tenga accanto a una carta di Qi Men sbaglierebbe in
   // silenzio.
   'cli.value.taiyiPalaces':
-    'i palazzi sono numerati come li numera 太乙, a un seggio dal 洛書: qui 一宮 è il nord-ovest, in una carta di Qi Men il nord',
+    'i palazzi sono numerati come li numera 太乙 tàiyǐ, a un seggio dal 洛書 luòshū: qui 一宮 yīgōng è il nord-ovest, in una carta di Qi Men il nord',
   'cli.value.taiyiEvidence':
-    'verificata sulle tavole e sulle carte svolte del 《太乙金鏡式經》 stesso; di questa tavola non esiste alcuna implementazione indipendente su cui controllarla',
+    'verificata sulle tavole e sulle carte svolte del 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng stesso; di questa tavola non esiste alcuna implementazione indipendente su cui controllarla',
 
   'cli.heading.scan': 'Carte dal {from} al {to}',
   'cli.heading.criteria': 'Richiesto',
@@ -1797,7 +1797,7 @@ export const it: Record<MessageKey, string> = {
   'cli.field.ju': 'ju',
   'cli.field.chief': 'capo',
   'cli.field.chiefGate': 'porta del capo',
-  'cli.field.instrument': 'cela 甲',
+  'cli.field.instrument': 'cela 甲 jiǎ',
   'cli.field.dayMaster': 'padrone del giorno',
   'cli.field.empty': 'rami vuoti',
   'cli.field.distribution': 'cinque elementi',
@@ -1850,11 +1850,11 @@ export const it: Record<MessageKey, string> = {
   'cli.value.everyPalace': 'ogni palazzo, nessuna richiesta particolare',
   // 甲 non sta su nessun piatto, quindi un anno che ne è retto si cerca sotto
   // lo strumento che ne cela la decade. Detto, mai sostituito in silenzio.
-  'cli.value.concealedUnder': 'cercato sotto {stem}, poiché 甲 non sta su alcun piatto',
+  'cli.value.concealedUnder': 'cercato sotto {stem}, poiché 甲 jiǎ non sta su alcun piatto',
   // Il centro non ha direzione, né porta, né spirito: ciò che vi cade si legge
   // nel palazzo in cui il centro alloggia.
   'cli.value.readAt': 'si legge in {palace}',
-  'cli.value.sui': '{count} (虛歲, contando l’anno stesso della nascita)',
+  'cli.value.sui': '{count} (虛歲 xūsuì, contando l’anno stesso della nascita)',
   'cli.value.turns': '{count} (giri del pilastro dell’anno)',
   'cli.value.leapTerm': '{term} intercalato',
 
@@ -1876,12 +1876,12 @@ export const it: Record<MessageKey, string> = {
   'cli.error.genderRequired':
     'I cicli decennali richiedono --gender, perché la tradizione ne trae la direzione. Senza, i pilastri restano comunque completi.',
   'cli.error.notAsked':
-    'Il comando "{command}" stende un quadro su una nascita, e ad esso non si chiede nulla, quindi "--ask" non ha dove andare. Per quale parte di una vita si legga un quadro di 命 lo sceglie il lettore, ad alta voce, dopo che è stato steso. Togli la domanda, oppure ponila a `chart` o a `liuren`, che sono posti per una.',
+    'Il comando "{command}" stende un quadro su una nascita, e ad esso non si chiede nulla, quindi "--ask" non ha dove andare. Per quale parte di una vita si legga un quadro di 命 mìng lo sceglie il lettore, ad alta voce, dopo che è stato steso. Togli la domanda, oppure ponila a `chart` o a `liuren`, che sono posti per una.',
   'cli.error.notAbout':
-    'Il comando "{command}" non prende "--about". Una faccenda è il campo visivo dentro cui si legge un quadro 太乙 di un anno (ciò che si sta guardando, che è quanto dice chi è 主 e chi è 客), e `taiyi` è il comando che stende quel quadro. Un quadro di 卜 si pone invece per una domanda ("--ask"), e un quadro di 命 si stende su una persona e non chiede nulla.',
+    'Il comando "{command}" non prende "--about". Una faccenda è il campo visivo dentro cui si legge un quadro 太乙 tàiyǐ di un anno (ciò che si sta guardando, che è quanto dice chi è 主 zhǔ e chi è 客 kè), e `taiyi` è il comando che stende quel quadro. Un quadro di 卜 bǔ si pone invece per una domanda ("--ask"), e un quadro di 命 mìng si stende su una persona e non chiede nulla.',
   'cli.error.notCarried': 'Il comando "{command}" non prende "{option}".',
   'cli.error.notAskedYear':
-    'Il comando "{command}" stende un quadro su un anno, e ad esso non si chiede nulla, quindi "--ask" non ha dove andare. Su questo quadro non c’è nessuno: il suo soggetto è l’anno in cui tutti si trovano, e una domanda è il modo in cui chi legge finisce dentro una figura in cui non è. Quello che questo quadro prende è "--about": la faccenda che stai guardando, che è un campo visivo e non una domanda, ed è ciò che dice chi è 主 e chi è 客. Usa quello, oppure poni la domanda a `chart` o a `liuren`, che sono posti per una.',
+    'Il comando "{command}" stende un quadro su un anno, e ad esso non si chiede nulla, quindi "--ask" non ha dove andare. Su questo quadro non c’è nessuno: il suo soggetto è l’anno in cui tutti si trovano, e una domanda è il modo in cui chi legge finisce dentro una figura in cui non è. Quello che questo quadro prende è "--about": la faccenda che stai guardando, che è un campo visivo e non una domanda, ed è ciò che dice chi è 主 zhǔ e chi è 客 kè. Usa quello, oppure poni la domanda a `chart` o a `liuren`, che sono posti per una.',
 
   'search.none': 'Nessun luogo trovato per "{query}".',
   'search.coverage':

@@ -29,20 +29,36 @@
  * **What reads this is `Named.svelte` and nothing else.** What comes back is
  * data, never markup, so a second reader building its own spans is the way two
  * paragraphs on one site start disagreeing. A control's label is the one place
- * this cannot reach: an `<option>` is text and holds no elements, so the names
- * in `form.method.chaibu` and its neighbours stay as they are.
+ * this cannot reach: an `<option>` is text and holds no elements, so
+ * `form.method.chaibu` and its neighbours carry the name and the reading as
+ * plain words, in the order every other surface prints them, and get no face
+ * of their own.
  *
  * **What is located is narrow on purpose.** A reading here always stands
  * immediately after the glyphs it reads — that is the house rule, kept on
- * every surface — so nothing is searched for on its own: a run of hanzi is
- * found first, and what may follow it is the words that could be its reading
- * and nothing beyond them. `test/names.test.ts` holds every name in both
- * catalogs to that, so a paragraph that puts a reading somewhere else fails a
- * test rather than shipping with an Italian word in italic.
+ * every surface — so nothing is searched for on its own: a run of glyphs is
+ * found first, with the brackets a book wears, and what may follow it is the
+ * words that could be its reading and nothing beyond them.
+ * `test/names.test.ts` holds every name in both catalogs to that, so a
+ * paragraph that puts a reading somewhere else fails a test rather than
+ * shipping with an Italian word in italic.
  */
 
 /** The glyphs, as a name is written. */
 const HANZI = '\\u3400-\\u9FFF';
+
+/**
+ * The brackets a book wears, which belong to the glyphs and not to the
+ * sentence.
+ *
+ * 《遁甲演義》 is a title and a title is a name: the reading stands behind the
+ * closing bracket, so a rule that stopped at the glyphs would find no reading
+ * there and leave one of the two halves unmarked. They want the CJK face for
+ * the same reason the characters do — a Latin serif holds neither, and 《 left
+ * to a fallback is a bracket of a different weight and width from the one on
+ * every board.
+ */
+const MARKS = ['《〈', '》〉'];
 
 /**
  * The marked vowels a reading is spelled with.
@@ -54,8 +70,20 @@ const HANZI = '\\u3400-\\u9FFF';
  */
 const TONES = 'āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüńňǹḿ';
 
-/** A run of glyphs, and the lowercase words that may be reading it. */
-const NAMED = new RegExp(`([${HANZI}]+)((?:\\s+[a-z${TONES}]+)*)`, 'gu');
+/**
+ * A run of glyphs, and the words that may be reading it.
+ *
+ * The capital is for the one kind of name that carries one: a person. 湯若望
+ * is Tāng Ruòwàng and 王希明 is Wáng Xīmíng, because a man's name is
+ * capitalised in the alphabet it is being written into — nothing else this
+ * project prints is. It widens what may be mistaken for a reading by exactly
+ * the words a sentence capitalises, and every one of those is held to the
+ * reading it is supposed to be by `names.test.ts`.
+ */
+const NAMED = new RegExp(
+  `([${MARKS[0]}]?[${HANZI}]+[${MARKS[1]}]?)((?:\\s+[A-Za-z${TONES}]+)*)`,
+  'gu',
+);
 
 const TONED = new RegExp(`[${TONES}]`, 'u');
 
