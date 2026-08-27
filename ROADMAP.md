@@ -190,14 +190,20 @@ pages, so which stretch belongs to which school is a thing the plates say
 rather than a thing to infer: 庚's 忌 goes to 天相 under a 【占驗派】 heading
 and to 天同 in a part that opens on 《紫微斗數 北派》, 恭鑑老人 著, and 壬's 科
 goes to 左輔 in that same 北派. The cells now carry a school's name, which is
-what this phase was held for. What they do not yet carry is a *table*: a
-second value of `sihua` is ten stems, and what has been read is three cells
-across two schools.
+what this phase was held for.
 
-What is left of this phase is 第一冊, which is the manuscript, 第十冊, whose
-extract is the weak one and which is therefore a plate errand whatever else
-happens, and 北派's ten stems, which is now a bounded errand in a known part
-of a known volume rather than a search.
+**And 北派's table has been read, which closes the errand rather than
+advancing it.** Eleven cells over six stems, off its own plates, and every one
+of them is 《全書》's except 壬's 科, which it puts on 左輔 — the same single
+cell the 中州派 manual moves. So the thing this phase was looking for, a
+lineage carrying its own ten stems, is not what is there: two modern schools
+move one cell each and agree with the received table everywhere else. `sihua`
+stays at one value, and it stays there for a better reason than before. The
+argument is in `docs/sources.md`, under 「天府 taking 化科 at 壬」.
+
+What is left of this phase is 第一冊, which is the manuscript, and 第十冊,
+whose extract is the weak one and which is therefore a plate errand whatever
+else happens. Neither is under a value in § 1.
 
 ### Phase 3 — 紫微斗數全書, 明南陽堂 woodblock
 
