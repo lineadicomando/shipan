@@ -82,7 +82,9 @@ export interface ZiweiOptions {
    * `fixed` is all 卷二 states: a seat apiece from the triplicity of the
    * birth year, with the hour nowhere in the verse. `hour` names the
    * widespread practice of counting on from those seats by the birth hour,
-   * which no text on this shelf supports.
+   * and it now has one witness — a modern school manual, which is not what
+   * the standard asks for. The two agree on the seats and part on the count.
+   * See `docs/sources.md`.
    */
   huoling: 'fixed' | 'hour';
   /**

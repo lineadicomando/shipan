@@ -173,9 +173,22 @@ received value — in another, which is what an anthology of three schools does,
 and it puts 壬's 科 on 左輔 in a worked example that is decidable only on that
 reading. So the second value is closer and still not liftable: it would have to
 come from a named school inside the volume, which means reading which part
-belongs to whom. The argument, with the pages, is in `docs/sources.md`. What
-is left of this phase is 第一冊, 第六冊 and 第十冊 — and 第十冊's extract is
-the weak one, so it is a plate errand whatever else happens.
+belongs to whom.
+
+**第六冊 answered two of the other three refusals, and neither answer is the
+kind that lands.** It prints `huoling: hour` whole at its p. 406 and
+`daxian: ming` whole at its p. 437, each as a procedure and a diagram, so both
+values stop being things nobody states and become things one modern school
+manual states. That is one witness where the standard asks for two transmitted
+ones, and the received book says otherwise, so both stay refused — but the
+`huoling` pair turns out to share every seat and part only on the count, which
+is a smaller divergence than the parameter's shape suggested. The arguments,
+with the pages, are in `docs/sources.md`.
+
+What is left of this phase is 第一冊, which is the manuscript, 第十冊, whose
+extract is the weak one and which is therefore a plate errand whatever else
+happens, and the question 第七冊 raised: which part of it belongs to which of
+its three schools.
 
 ### Phase 3 — 紫微斗數全書, 明南陽堂 woodblock
 
