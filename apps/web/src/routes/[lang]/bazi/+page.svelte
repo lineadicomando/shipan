@@ -126,7 +126,7 @@
     {#if result}
       <!-- The same corner the other sections keep them in: nothing here is
            worth stepping, but a cast board is worth taking away. -->
-      <Takeaway {t} copyLabel="form.copyPillars" copyUrl="/api/bazi/text?{address}" />
+      <Takeaway {t} copyLabel="form.copyPillars" copyUrl="/api/bazi/text?{address}" {address} />
     {/if}
   {/snippet}
   {#snippet summary()}

@@ -113,6 +113,16 @@ carried one; a request made straight to the API need not, and the address is
 fixed for both. The birth stays out — see `pageAddress`, which is where both
 halves are written.
 
+**A section hands its own address over too, and the browser must not read it
+off the bar.** The row of buttons a board leaves behind offers the link beside
+the transcript and the sheet, and `pageLink` builds it from the query string
+the page cast with — the same one its drawing and its transcript are asked for.
+The address in the bar is not that string: a reader who opened `/it/qimen` bare
+is looking at this hour, and the bar says nothing about which. Copying it would
+hand on a link to whenever it is followed, under the same words. Only `lang`
+comes out, because the path already says it; `pageAddress` and this make the
+same promise from the two ends of the wire.
+
 **What leaves the address is a birth put inside somebody else's board, not a
 parameter the section might not read.** The 年命 of a 奇門 chart — `born` with
 its hour, its zone and the count its 行年 steps by — belongs to the section

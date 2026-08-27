@@ -110,7 +110,7 @@
   {/snippet}
   {#snippet controls()}
     {#if board}
-      <Takeaway {t} copyLabel="form.copyBoard" copyUrl="/api/liuren/text?{address}" />
+      <Takeaway {t} copyLabel="form.copyBoard" copyUrl="/api/liuren/text?{address}" {address} />
     {/if}
   {/snippet}
 

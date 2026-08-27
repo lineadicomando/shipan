@@ -113,7 +113,7 @@
   {/snippet}
   {#snippet controls()}
     {#if board}
-      <Takeaway {t} copyLabel="form.copyStars" copyUrl="/api/qizheng/text?{address}" />
+      <Takeaway {t} copyLabel="form.copyStars" copyUrl="/api/qizheng/text?{address}" {address} />
     {/if}
   {/snippet}
 

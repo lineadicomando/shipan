@@ -1087,6 +1087,10 @@ export const it: Record<MessageKey, string> = {
   'form.copyBoard': 'Copia il quadro come testo',
   'form.copyPillars': 'Copia i pilastri come testo',
   'form.copyPrompt': 'Copia il prompt',
+  // «Link» e non «collegamento»: la parola inglese è quella che un lettore
+  // italiano usa e legge da trent'anni, e «collegamento» qui sposterebbe la
+  // fatica sul lettore per salvare una purezza che nessuno gli ha chiesto.
+  'form.copyLink': 'Copia il link',
   'form.print': 'Stampa',
   'form.copied': 'Copiato',
   'form.copying': 'Preparo…',

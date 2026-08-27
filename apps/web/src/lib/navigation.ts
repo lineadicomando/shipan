@@ -176,3 +176,32 @@ export function isCurrent(locale: string, slug: string, pathname: string): boole
   const target = href(locale, slug);
   return slug ? pathname === target || pathname.startsWith(`${target}/`) : pathname === target;
 }
+
+/**
+ * The address a board is read at, written from the browser rather than the
+ * server: what the copy-the-link button puts in the clipboard.
+ *
+ * The twin of `pageAddress` in `lib/server/params.ts`, and it says the same
+ * thing from the other end — the sentence a link stands for is «the board is
+ * at {url}», and a board is at an address only if that address lays *this*
+ * board again. Which is why what it takes is not `page.url` but the query
+ * string the page already built for its own drawing and its own transcript:
+ * that one is **pinned**, and the address in the bar frequently is not. A
+ * reader who opened `/it/qimen` bare is looking at the hour it is now, and
+ * handing that link on would hand on whichever hour it is when somebody
+ * follows it — the same sentence, a different board, and nothing at either
+ * end to say so.
+ *
+ * Only `lang` comes out, and it is not an exception to the rule that a board's
+ * parameters stay: the path says the language, so a copy in the query is a
+ * second answer to a question already settled. The API-only parameters
+ * `pageAddress` drops do not arise here, because nothing on a section page
+ * puts them in `address` — a section reads what its board is a function of,
+ * and that is what it asks its own endpoints for.
+ */
+export function pageLink(url: URL, address: string): string {
+  const link = new URL(url);
+  link.search = address;
+  link.searchParams.delete('lang');
+  return link.toString();
+}

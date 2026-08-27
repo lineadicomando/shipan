@@ -1210,6 +1210,15 @@ export const en = {
   // reader looking for the nine palaces.
   'form.copyPillars': 'Copy the pillars as text',
   'form.copyPrompt': 'Copy the prompt',
+  // The third way out, and the only one that is of no use to whoever presses
+  // it: what it copies is the address this board is at, for somebody else. It
+  // says «the link» and not «the link to this chart» because the six sections
+  // call what they hold three different things — a chart, a board, a set of
+  // pillars — and an address is an address in all three. What the address
+  // carries is argued at `pageLink`: the instant pinned, so that a link sent
+  // today opens the board that was on screen and not the one standing when it
+  // is followed.
+  'form.copyLink': 'Copy the link',
   // The other way out of a cast chart, and the one that needs no account
   // anywhere: the sheet carries the question, the board, the four pillars and
   // the reading, and can be handed to somebody who reads charts.

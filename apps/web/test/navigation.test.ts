@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { carriedSearch, href, isCurrent, SECTIONS } from '../src/lib/navigation';
+import { carriedSearch, href, isCurrent, pageLink, SECTIONS } from '../src/lib/navigation';
 import { INSTRUMENTS } from '../src/lib/instruments';
 
 /**
@@ -77,5 +77,39 @@ describe('what a section link carries across', () => {
     expect(isCurrent('it', '', '/it/bazi')).toBe(false);
     expect(isCurrent('it', 'bazi', '/it/bazi')).toBe(true);
     expect(href('it', '', '?date=2024-06-15')).toBe('/it?date=2024-06-15');
+  });
+});
+
+/**
+ * The link a reader hands on, which has to lay the board they were looking at.
+ *
+ * `pageAddress` makes the same promise on the server and is tested through the
+ * endpoints that call it; this is the browser's half, and the failure it exists
+ * to catch is the tempting one — copying `page.url`, which on a board of the
+ * present says nothing about the instant and therefore means whenever.
+ */
+describe('the link that carries a board', () => {
+  const HERE = new URL('https://shipan.example/it/qimen');
+
+  it('says the instant the address in the bar left open', () => {
+    const link = new URL(pageLink(HERE, 'date=2026-08-27&time=10:28&locationId=3169070&lang=it'));
+
+    expect(link.pathname).toBe('/it/qimen');
+    expect(link.searchParams.get('date')).toBe('2026-08-27');
+    expect(link.searchParams.get('time')).toBe('10:28');
+    expect(link.searchParams.get('locationId')).toBe('3169070');
+  });
+
+  it('leaves the language to the path, which already says it', () => {
+    expect(pageLink(HERE, 'year=2026&lang=it')).toBe('https://shipan.example/it/qimen?year=2026');
+  });
+
+  it('replaces whatever the bar was showing rather than adding to it', () => {
+    // The address a reader arrived at and the one the board was cast for are
+    // two different things whenever a step has moved: `replaceState` keeps the
+    // bar in step, but the board's own query string is the one that answers.
+    const stale = new URL('https://shipan.example/it/taiyi?year=1984');
+
+    expect(pageLink(stale, 'year=2026&lang=en')).toBe('https://shipan.example/it/taiyi?year=2026');
   });
 });

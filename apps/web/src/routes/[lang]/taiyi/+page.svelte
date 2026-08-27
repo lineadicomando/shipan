@@ -166,7 +166,7 @@
   <!-- The same corner in every section: finding them once is finding them
        everywhere. Only where there is something to take away. -->
   {#if board}
-    <Takeaway {t} copyLabel="form.copyTaiyi" copyUrl="/api/taiyi/text?{address}" />
+    <Takeaway {t} copyLabel="form.copyTaiyi" copyUrl="/api/taiyi/text?{address}" {address} />
   {/if}
 </div>
 

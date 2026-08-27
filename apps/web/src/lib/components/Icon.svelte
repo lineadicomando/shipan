@@ -2,12 +2,12 @@
   A mark beside a word, and never in place of one.
 
   The buttons this draws for are the ones a reader looks for rather than reads
-  — copy, copied, print, and the one that unfolds the header's sections — and
-  a mark is what makes them findable at a glance once known. It does not make
-  them legible: a control whose face is a shape is a control only somebody who
-  already knows it can use on purpose, which is the same rule `CLAUDE.md`
-  states for a glyph, and a `title` does not rescue it because nobody hovers
-  what they cannot recognise.
+  — copy, copied, link, print, and the one that unfolds the header's sections
+  — and a mark is what makes them findable at a glance once known. It does
+  not make them legible: a control whose face is a shape is a control only
+  somebody who already knows it can use on purpose, which is the same rule
+  `CLAUDE.md` states for a glyph, and a `title` does not rescue it because
+  nobody hovers what they cannot recognise.
 
   So every one of these travels with its word, and this is `aria-hidden`: to a
   screen reader the button is its label and this is nothing at all.
@@ -22,7 +22,7 @@
   has to weigh would still be the thing `CLAUDE.md` refuses.
 -->
 <script lang="ts">
-  let { name }: { name: 'copy' | 'copied' | 'print' | 'menu' | 'up' } = $props();
+  let { name }: { name: 'copy' | 'copied' | 'link' | 'print' | 'menu' | 'up' } = $props();
 </script>
 
 <svg
@@ -46,6 +46,13 @@
     <!-- Up, because the board is above the table and that is the whole of
          what this does. -->
     <path d="M8 13.5V3.5M3.5 8 8 3.5 12.5 8" />
+  {:else if name === 'link'}
+    <!-- Two halves of a chain, which is the shape an address has been drawn
+         as for as long as there have been addresses to copy. The bar between
+         them is what makes it a chain and not two brackets. -->
+    <path d="M6.6 9.4 9.4 6.6" />
+    <path d="M9.1 4.9 10.6 3.4a2.6 2.6 0 0 1 3.7 3.7l-1.5 1.5" />
+    <path d="M6.9 11.1 5.4 12.6a2.6 2.6 0 0 1-3.7-3.7l1.5-1.5" />
   {:else if name === 'print'}
     <path d="M4.5 6.5v-5h7v5" />
     <rect x="1.5" y="6.5" width="13" height="5.5" rx="1.3" />

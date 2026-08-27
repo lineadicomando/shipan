@@ -233,7 +233,7 @@
     <!-- The same corner in every section: finding them once is finding them
          everywhere. Only where there is something to take away. -->
     {#if chart}
-      <Takeaway {t} copyLabel="form.copyChart" copyUrl="/api/qimen/text?{address}" />
+      <Takeaway {t} copyLabel="form.copyChart" copyUrl="/api/qimen/text?{address}" {address} />
     {/if}
   {/snippet}
 </FormPanel>

@@ -211,10 +211,12 @@ read it before changing a prompt.
   it.** «The board is at {url}» is a claim: a section lays the board again from
   the query string, the consultation lays nothing until somebody presses, and
   an address that leaves the instant unsaid means whenever it is followed.
-  `pageAddress` is the one place it is built. What leaves it is **a birth put
-  inside somebody else's board** — never a parameter the board is a function
-  of, and `gender` is both depending on the art (`genderBelongsToBoard`, read
-  by the nav in the same words). → [`docs/readings.md`](docs/readings.md)
+  `pageAddress` builds it on the server, `pageLink` in the browser where a
+  section offers its own, and neither reads the address bar. What leaves it is
+  **a birth put inside somebody else's board** — never a parameter the board is
+  a function of, and `gender` is both depending on the art
+  (`genderBelongsToBoard`, read by the nav in the same words). →
+  [`docs/readings.md`](docs/readings.md)
 - **A 命 prompt asks for a reading of the person, and every choice travels
   signed.** The themes are commissioned in it, titled for a theme and never a
   factor; a school's method arrives named as that school's; the 用神 stays
