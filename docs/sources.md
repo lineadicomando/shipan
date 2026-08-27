@@ -403,9 +403,30 @@ before the gap are 龍回首 · 鳥跌穴 · the nine 遁 · 龍逃走 · 虎猖
 六儀受制 · 地羅遮蔽 · 天網四張 · 尺寸高低. **The leaf that is gone is the one
 carrying 大格, 刑格, 小格, 太白入熒 and 火入金鄉** — which is to say every T
 cell the survey above leans on that is not also in the verse, and the whole of
-the 小格 finding. Those five stand on the ctext transcription alone, from a
-complete copy this shelf does not hold. The six that survive the gap are
-confirmed in print, and so are 三奇入墓 and 六儀擊刑 above.
+the 小格 finding. Those five stood on the ctext transcription alone, from a
+complete copy this shelf was thought not to hold. The six that survive the gap
+are confirmed in print, and so are 三奇入墓 and 六儀擊刑 above.
+
+**Three of the five have since been found in print, in a copy nobody had
+opened.** 《遁甲集成》第六冊 was catalogued here as 奇門遁甲集成 and 奇門闡秘前
+編; its running title says otherwise, and its first work is **奇門遁甲統宗**,
+卷一 through 卷十二 — a third edition of the text this register already leans
+on. At its p. 2822, 卷一 carries a two-column conspectus of the 格 with each
+condition beside its name, and three of the lost five are in it:
+
+| | as this print gives it |
+|---|---|
+| 火入金鄉 | 丙奇加六庚金，又丙奇加驚門直符之庚辛 |
+| 小格 | 庚臨壬 |
+| 太白入熒 | 六庚加丙奇，又庚加卯日時酉丁 |
+
+Beside them on the same leaf stand 時格 庚臨時干, 伏宮 庚臨直符, 飛干格 日干臨
+庚, 伏干 庚臨日干, 反吟 星加對宮, 伏吟 本星加本宮, 五不遇 時干剋日干, and the
+六儀擊刑 pairs — which is a second printed witness to entries the survey above
+had from one. **大格 and 刑格 are not on this page**, so two of the five are
+still transcription-only, and where this conspectus stands relative to the
+四十格 proper has not been established: it is a summary and the 四十格 is prose.
+Read on the plate 2026-08-27.
 
 **Y covers 甲, 乙 and 丙 over all nine and stops.** Twenty-seven cells of the
 eighty-one, of which the nine under 甲 are cells this engine has no place for.
