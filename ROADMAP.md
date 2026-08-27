@@ -146,9 +146,11 @@ one this section used to carry and a slower one:
    above — so reading 活 as 飛 is what put the section under this parameter.
 3. 《御定奇門寶鑑》 and 《奇門遁甲統宗》 — clean Qing printing, read by plate.
    **A third edition of the 統宗 turned out to be 第六冊's first work**, by its
-   own running title, and its 卷一 p. 2822 supplies 火入金鄉, 小格 and 太白入熒
-   — three of the five the 故宮 print loses with its missing leaf. See
-   `docs/sources.md` § 十干克應. 大格 and 刑格 are still transcription-only.
+   own running title, and its 卷一 supplies the whole of what the 故宮 print
+   loses with its missing leaf: 奇門四十格 entire at p. 2821, with 大格 and
+   刑格 in it, and the conspectus at p. 2822 with 小格, 太白入熒 and 火入金鄉.
+   Every T reading in the 十干克應 table has been checked against it and they
+   agree. See `docs/sources.md` § 十干克應.
 4. The three 故宮珍本叢刊 volumes — colour, but about 1000×1500 pixels to the
    book-page, which is the low end for dense block printing. Read by plate,
    for confirmation of a passage already located elsewhere rather than for

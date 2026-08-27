@@ -407,8 +407,8 @@ the 小格 finding. Those five stood on the ctext transcription alone, from a
 complete copy this shelf was thought not to hold. The six that survive the gap
 are confirmed in print, and so are 三奇入墓 and 六儀擊刑 above.
 
-**Three of the five have since been found in print, in a copy nobody had
-opened.** 《遁甲集成》第六冊 was catalogued here as 奇門遁甲集成 and 奇門闡秘前
+**All five have since been found in print, in a copy nobody had opened, and
+the whole column with them.** 《遁甲集成》第六冊 was catalogued here as 奇門遁甲集成 and 奇門闡秘前
 編; its running title says otherwise, and its first work is **奇門遁甲統宗**,
 卷一 through 卷十二 — a third edition of the text this register already leans
 on. At its p. 2822, 卷一 carries a two-column conspectus of the 格 with each
@@ -422,10 +422,22 @@ condition beside its name, and three of the lost five are in it:
 
 Beside them on the same leaf stand 時格 庚臨時干, 伏宮 庚臨直符, 飛干格 日干臨
 庚, 伏干 庚臨日干, 反吟 星加對宮, 伏吟 本星加本宮, 五不遇 時干剋日干, and the
-六儀擊刑 pairs — which is a second printed witness to entries the survey above
-had from one. **大格 and 刑格 are not on this page**, so two of the five are
-still transcription-only, and where this conspectus stands relative to the
-四十格 proper has not been established: it is a summary and the 四十格 is prose.
+六儀擊刑 pairs.
+
+**And the leaf before it carries the 四十格 entire**, headed 奇門四十格 at
+p. 2821, with 大格 庚臨六癸 and 刑格 庚臨六己 in it, beside 歲格 庚臨歲干,
+月格 庚臨月干 and 日格 庚臨日干. So the two leaves together supply the whole of
+what the 故宮 print loses.
+
+**Every T reading the table above carries has now been checked against this
+print, and they agree**: 大格 庚臨六癸, 刑格 庚臨六己, 小格 庚臨壬,
+太白入熒 六庚加丙奇, 火入金鄉 丙奇加六庚金, 蛇妖矯 癸見丁奇, 雀投江 丁奇見癸,
+龍逃走 乙奇遇辛, 虎猖狂 辛遇乙奇, 龍回首 中直符加地盤丙丁, 鳥跌穴 丙奇加地盤
+甲直符 — the last naming the 直符 where the table names 戊, which is the same
+cell said the other way round. **This is not a new witness**: it is the same
+work in a third edition, and a copy of a work is not a witness to it. It is
+the thing the note above said could not be had — the transcription confirmed
+against print, cell by cell, including the five that had no print at all.
 Read on the plate 2026-08-27.
 
 **Y covers 甲, 乙 and 丙 over all nine and stops.** Twenty-seven cells of the
@@ -462,9 +474,9 @@ standard this file sets — two independent sources, the same thing the same way
 makes a pairing eligible and not what adds it: a twelfth entry needs an id, a
 hanzi, a reading, a valence and a line in `test/stem-pairs.test.ts`, and it
 needs the 凶 it would carry to be read off a source rather than assumed from
-its neighbours in the list. And it stands on the leaf the printed copy here is
-missing, per the note below. **This is a decision that is now waiting, not a
-refusal.** 三奇得使 is no longer its precedent: there the sources disagree,
+its neighbours in the list. It no longer stands on a leaf this shelf lacks:
+《遁甲集成》第六冊's 統宗 prints it, per the note below. **This is a decision
+that is now waiting, not a refusal.** 三奇得使 is no longer its precedent: there the sources disagree,
 which is a different thing from there being only one, and only the second was
 ever true here.
 
