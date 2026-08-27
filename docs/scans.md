@@ -119,7 +119,8 @@ contact, read on the page.
 rule the four readings behind this page produced most expensively, because
 checking it costs seconds and not checking it cost a phase its purpose.
 
-Of six works opened, four were not what the shelf recorded:
+These are the works opened while this page was being written that turned out
+not to be what the shelf recorded:
 
 | recorded as | what it is |
 |---|---|
@@ -127,15 +128,24 @@ Of six works opened, four were not what the shelf recorded:
 | 《御定星歷考原》, and the second witness for the 神煞 | 卷一 of six, carrying no 神煞 at all |
 | 《授時曆故》, 黃宗羲 | a 1982 reprint binding that title with three others |
 | 《大六壬指南》, a reprint of the woodblock | a modern typesetting in simplified characters |
+| 《御定奇門寶鑑》 第一冊 | one 冊 of eight, which its own record page states |
+| 《遁甲演義》, a third scanned edition | 卷一 alone, which its closing leaf states |
 
-The second of those is the case that matters: the work had been acquired **in
-order to** be a second witness for about seventy quantities, and the copy held
-cannot be one. Nothing about the way it was catalogued would have revealed that
-without opening it.
+**《御定星歷考原》 is the case that matters**, because the work had been
+acquired *in order to* be a second witness for about seventy quantities and the
+copy held cannot be one. Nothing about the way it was catalogued would have
+revealed that without opening it.
+
+Not every file is wrong: 《曆法通志》 and 《太乙金鏡式經》 were exactly as
+catalogued. The point is that which of the two a file is cannot be known from
+the entry, and costs a minute to establish.
 
 So, before a file is planned around: **`pdfinfo` for the page count, the last
 leaf for the colophon, `pdfimages -list` for what the pixels actually are, and
-a contact sheet for what the sections are.** Four commands, under a minute, and
+a contact sheet for what the sections are.** The third of those can lie: on a
+file whose pages are JPEG 2000 streams it reported 654×945 at 32 dpi where the
+renderer produced 3063×4430, so where it disagrees with the eye, believe the
+render. Four commands, under a minute, and
 they establish extent — which is the thing a plan is a function of. A work in
 six juan and a file with one of them are different objects and only one of them
 is on the shelf.

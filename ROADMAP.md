@@ -125,8 +125,11 @@ reads easiest:
    for confirmation of a passage already located elsewhere rather than for
    searching.
 
-Ends in whatever it ends in. 年家, 月家 and 日家 奇門 are three systems and not
-one, and a source for one of them lands one value.
+**What the extent pass covered, so the next one does not repeat it**: page
+counts and pixel metrics for all eleven, the closing leaf of ten — 圖解 is a
+modern book and has none — and 卷一 of the 四庫 遁甲演義. The sections of the
+nine unopened files have not been surveyed; the three 故宮 volumes' 新編目錄
+is where that starts.
 
 ### Phase 2 — 《中國絕學》, for a school's name
 
