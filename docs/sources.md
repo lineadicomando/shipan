@@ -1736,7 +1736,40 @@ than the numbers:
 
 So the numbers exist and the refusal stands, on firmer ground than before: not
 «the table has not been found» but «the table is an inheritance of a
-conversion, and nobody has said as of when». The 考成 column is the one that
+conversion, and nobody has said as of when».
+
+**A primary has since answered the third objection and unsettled the first.**
+《授時曆故》, 黃宗羲, carries the complete 黃道宿次 for all twenty-eight lodges
+in its 卷二 — the eastern seven summed at 七十八度一十二分, the northern at
+九十四度一十分七十五秒, the western at 八十三度九十五分, the southern at
+一百〇九度八分 — and beside it prints how the table is made:
+「**授時黃道宿度依赤道及冬至歲差所在算定，若上下考驗歲差每移一度，依術推變，
+各得當時宿度。凡上下消長皆從虛度。**」 The worked step under it is anchored —
+「元辛巳歲前冬至後赤道距後度四十分…如赤道率一度〇八六五而一」 — and the
+work's own 提要 says what that means: 「授時術不用積年日法，憑本年實測所得氣閏
+諸應，上考下求，**即以至元辛巳為元**」.
+
+Three things follow and they do not all point the same way. **The epoch
+objection is answered**: 至元辛巳, 1281, stated by the work and not inferred
+from it. **The conversion objection is confirmed from the primary side**,
+which is worth more than 朱文鑫 saying it — 依赤道…算定 is the text's own
+account of its method. **And the inheritance claim sits awkwardly**: 朱文鑫
+writes 「元授時黃道度與宋紀元同」, where 授時曆故 presents the table as computed
+from the 赤道 degrees and the solstitial 歲差 rather than taken over. A primary
+describing a derivation and a secondary describing an inheritance are not
+flatly contradictory — a derivation can reproduce what it inherits — but the
+register should not go on citing only the second.
+
+**What the source also says is that the table is not a constant**, and that is
+a fact about the parameter's shape rather than about the numbers:
+「各得當時宿度」 makes 授時's 黃道宿度 a function of the 歲差 at a chosen
+moment, so `xiudu: shoushi` cannot be a table without also being an epoch. The
+value stays refused, and now for a reason nobody had reached: not that the
+epoch is missing, but that the numbers have not been read cell by cell. On a
+first reading two of the four quadrant sums close against their own entries —
+the eastern at 78.12 and the southern at 109.08, both exactly — and the
+northern does not, which on a woodblock at this size is a reading to settle
+with crops before anything stands on it. Read on the plate 2026-08-27. The 考成 column is the one that
 could be checked without leaving this shelf, since 《儀象考成》 卷一~卷十六 is
 held and its 距星 are the ends of exactly these intervals; that collation has
 not been run.
@@ -3113,7 +3146,7 @@ calendrical layer settles. Recorded as a passage read and not used.
 | the 宜忌 of the twelve officers | the largest thing in the 協紀 and the clearest refusal here: 宜 and 忌 are advice — ordering days, dating an act — which is `purposes.ts`'s line in a second place |
 | the verse's clause order in 涉害 | 「孟深仲淺季當休」 read as evaluation order scores 98.19 % where the grouping this engine uses scores 99.58 %. Both references take the deeper 季; the divergence is recorded rather than resolved by preference |
 | 紫氣 | the rate is settled and 《張果星宗》 and 《三辰通載》 both give a procedure carrying an epoch constant, so the refusal is not for want of a rule. Calibrated together at 1300, the same table's 羅睺 holds to 0.25° through 2026 and its 月孛 drifts to 69°, and nothing weighs 紫氣's own constant because weighing it means having a referent, which is the one thing it lacks. The error on a modern 紫氣 is unbounded in principle rather than merely unknown. See the 四餘 section |
-| 七政四餘 `xiudu` `shixian` · `shoushi` | the boundaries are taken from the 距星 themselves, so no epoch is chosen. The two 曆 tables are declared and refused until one arrives with an epoch that can be cited, and 《曆法通志》's complete eight-曆 table does not: it attaches no epoch to any column, says the 授時's 黃道 degrees are the 紀元曆's inherited, and says the tables are 「非盡由實測，大抵皆由赤道度比例推算」. See the frame section |
+| 七政四餘 `xiudu` `shixian` · `shoushi` | the boundaries are taken from the 距星 themselves, so no epoch is chosen. The two 曆 tables are declared and refused until one arrives with an epoch that can be cited, and 《曆法通志》's complete eight-曆 table does not. **《授時曆故》 does**: 至元辛巳, said by the work, with the whole 黃道宿次 in its 卷二 and the text's own rule for carrying it — 「依赤道及冬至歲差所在算定 … 各得當時宿度」. So `shoushi` is refused now for a different reason, and a narrower one: the numbers have not been read cell by cell, one of the four quadrant sums does not close on a first reading, and the source says the table is a function of a moment rather than a constant, which the option's shape does not yet allow for. `shixian` is where it was. See the frame section |
 | 七政四餘 `minggong` `ascendant` | 立命 by 加時 is what the texts state and gives a palace. The rising degree is a second method, not a sharper reading of the first. `OPTION_NOT_IMPLEMENTED` |
 | 七政四餘 `gong` `ci` | the 次 as stretches of 宿度 needs the same table `xiudu` is waiting for |
 | 留 | a station is a threshold on the daily motion and no source consulted states one. The speed travels in the output instead |

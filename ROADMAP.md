@@ -222,6 +222,18 @@ characters, and therefore easier than the shelf's own README says — 大六壬�
 is under a value in § 1. They are read when a phase above sends somebody to
 them, or not at all.
 
+**One of them turned out to be, which is what «read behind no citation» is
+for.** 《授時曆故》 was extracted with the rest and searched on the way past,
+and its 卷二 carries the whole 授時 黃道宿次 with the epoch the `xiudu:
+shoushi` refusal had been waiting on — 至元辛巳, said by the work. It does not
+land the value: the numbers want reading cell by cell, one quadrant sum does
+not close on a first reading, and the source says the table is a function of
+the 歲差 at a chosen moment rather than a constant, which is a thing the
+option's shape would have to allow for. The argument is in `docs/sources.md`,
+in the frame section. **The errand it leaves is the first in this list that is
+worth doing on its own**: read the twenty-eight cells off the plates at a
+resolution that settles them.
+
 ## 3. Spanish, once the engine has stopped moving
 
 The interface is read in a vernacular and there are two of them, which is a
