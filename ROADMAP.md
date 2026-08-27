@@ -105,21 +105,7 @@ The toolchain the phases below assume: tesseract 5.5.3 with `chi_sim`,
 `chi_tra` and the two `_vert` models, `ocrmypdf` 16, Pillow for the quadrant
 cutting, and `pdftoppm`, `pdfimages` and `gs` for rendering a plate.
 
-### Phase 1 — 御定星歷考原, for the 神煞
-
-184 sheets of 四庫 woodblock at 600 dpi, read by plate. It is the work
-《協紀辨方書》 was commissioned to revise and quotes by name throughout, and the
-layer's ~70 quantities have one witness each. Where the two agree a 神煞 has
-two; where they disagree the disagreement is the finding, and both directions
-move `docs/sources.tsv`.
-
-It also touches 六壬 from the side: the 提要 to 六壬大全 credits it with
-correcting 曹震圭 on the 天乙貴神, which is `guiren`'s ground.
-
-Ends in: rows moved for what it confirms or contradicts, and — if a lineage is
-named cleanly enough to be followed — the second value of `shensha`.
-
-### Phase 2 — the 曆 substrate, for `xiudu`
+### Phase 1 — the 曆 substrate, for `xiudu`
 
 《曆法通志》 (1934, 311 pages, vertical traditional but *movable type*, which
 `chi_tra_vert` handles far better than a block) and 《授時曆故》 (174 sheets,
@@ -132,7 +118,7 @@ The likeliest outcome is another documented negative, and the register already
 holds one: the only 授時 lodge table on the shelf is the 赤道 one, which is the
 wrong frame. Say so again rather than quietly not looking.
 
-### Phase 3 — the dunjia scans, for `plate`, `centreLodging` and `system`
+### Phase 2 — the dunjia scans, for `plate`, `centreLodging` and `system`
 
 The largest block and the least prepared — eleven files, some three and a half
 thousand pages — so it is ordered by what reads easiest:
@@ -151,7 +137,7 @@ thousand pages — so it is ordered by what reads easiest:
 Ends in whatever it ends in. 年家, 月家 and 日家 奇門 are three systems and not
 one, and a source for one of them lands one value.
 
-### Phase 4 — 《中國絕學》, for a school's name
+### Phase 3 — 《中國絕學》, for a school's name
 
 Eleven volumes, 方外人, 臺北金林文化 1986, about four thousand one hundred
 pages, image-only, twentieth-century school teaching. **Supporting a refusal is
@@ -165,7 +151,7 @@ The volumes that carry 紫微斗數 are the first, sixth, seventh and tenth. The
 rest of the set is 鐵版神數, 奇門易數, 邵子神數, 皇極天書 and 玄空金口訣 —
 arts this project does not compute, read only far enough to say so.
 
-### Phase 5 — 紫微斗數全書, 明南陽堂 woodblock
+### Phase 4 — 紫微斗數全書, 明南陽堂 woodblock
 
 528 pages, one book-page to the page, high-contrast block printing: legible by
 eye, hopeless for OCR. `docs/sources.md` calls it the adjudicator between the
@@ -173,7 +159,7 @@ transcriptions and has already read it in places. This phase is the rest of
 it — collation, against the copies already held, of the passages the two
 transcriptions disagree on.
 
-### Phase 6 — the remainder, read behind no citation
+### Phase 5 — the remainder, read behind no citation
 
 《協紀辨方書》 卷七~卷八 四庫 woodblock, the third 遁甲演義 scan, 大六壬指南 —
 which is not a woodblock facsimile but a 1990 typesetting in simplified

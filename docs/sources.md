@@ -1003,6 +1003,11 @@ is now carried by two transmitted sources that agree and are not each other,
 which is the standard, on top of the two runnable references that read it the
 same way.
 
+The **assignment** underneath it — which general belongs to which month — has
+a witness from outside this art as well. 《御定星歷考原》 卷一 derives the 六合
+from it and works the first two months out: 正月建寅 月將在亥, 二月建卯 月將在
+戌. See the 曆注 section.
+
 **And the table pins what the refused value would be.** `yuejiang: jieqi` is
 「half a term earlier」, which is an abstraction until something prints both
 columns; these rows print them, so the variant is the same table read off the
@@ -1396,7 +1401,7 @@ nothing at all. They are the first entries under the `shensha` parameter of
 | 五合 · 五離 | 「五合者寅夘日也」 and 「反此則為申酉」 | nothing — the day branch alone |
 | 三合 | 考原:「各與其月建㑹成三合局也」, and 卷六's own twelve-month list | the month's triad, two days in twelve |
 | 臨日 | 「陽建之月在三合前辰，隂建之月在三合後辰」, the 按 naming them 定日 and 成日 | the month, one branch |
-| 六合 | 「正月在亥，逆行十二辰」, and 考原's 「月建與月將相合也」 | the month's own 六合 partner |
+| 六合 | 「正月在亥，逆行十二辰」, and 考原's 「月建與月將相合也」 — now read on 考原 卷一 itself, where it carries its mechanism and a worked first two months | the month's own 六合 partner |
 | 天倉 | 「正月起寅，逆行十二辰」 | the month, one branch |
 | 大時 | 「正月起夘，逆行四仲」, and 曹震圭's 「月建三合五行沐浴之辰」 | the 沐浴 of the month's triad |
 | 遊禍 | 「正月起巳，逆行四孟」, and 「三合五行臨官之神」 | the 臨官 of the month's triad |
@@ -1511,6 +1516,55 @@ the rule.
 eighteen days before each season closes, when 土 rules — which this engine does
 not compute. A 母倉 without them would be right for most of a year and silently
 wrong for seventy-two days of it, which is worse than not having one.
+
+### 《御定星歷考原》, and the sixth of it that arrived
+
+**The second witness for the 神煞 is a six-juan book, and what is held is
+卷一.** 御定星歷考原 (李光地 et al., 康熙五十二年) is the work the 協紀辨方書
+was commissioned to revise, and the 協紀 quotes it by name throughout — this
+register carries four of those quotations at second hand, under 三合, 六合,
+劫煞·災煞·歲煞 and 歲德合. The obvious errand was to check them on the source
+and to give the ~70 quantities of the 神煞 block a second witness. **That
+errand cannot be run on this copy.** Its own 提要 states 六卷; its last leaf
+closes 卷一; and 卷一 is 象數考原 — the cosmology, the 二十四氣 and 七十二候,
+八卦 and 納甲, 干支五行, 納音, and, at the end, 三合, 五合 and 六合. The 神煞
+are in 卷二 onward. **The rungs of the 曆注 rows are unchanged**, and the
+missing five juan are now the most wanted thing on this shelf.
+
+**One of the four quotations is in 卷一, and the source says more than the
+quotation did.** The register carried 考原's 六合 as 「月建與月將相合也」. The
+plate reads:
+
+> 按六合者，以月建與月將為相合也。如正月建寅，月將在亥，故寅與亥合；二月建
+> 卯，月將在戌，故卯與戌合。月建從天道而左旋，月將從日行而右轉，順逆相值，
+> 故為六合。
+
+The clause that did not survive into the 協紀's citation is the mechanism —
+the month's establishment running left with the heavens, the general running
+right with the Sun, and the pairing being where the two counter-running orders
+meet. A derivation checked on the work it is attributed to, and fuller there.
+
+**And it puts a Qing imperial treatise behind a 六壬 assignment.** 正月建寅 →
+月將亥 and 二月建卯 → 月將戌 are the first two rows of the same table
+《六壬大全》 and 《大六壬精解》 carry, arrived at here from outside the 六壬
+literature entirely, as a by-product of deriving the 六合. It says nothing
+about *when* the general turns, which is the parameter; it witnesses **which**
+general belongs to which month, which until now had witnesses only inside the
+art that uses it.
+
+**The other two derivations 卷一 grounds.** 三合 is given as 生·旺·墓 —
+「水生於申，旺於子，墓於辰，故申子辰合水局也」 through all four — which is the
+ground under the 三合 the layer computes, though not the 「各與其月建㑹成三合
+局也」 the register quotes, that being a 月事 statement from a juan not held.
+五合 is derived from the 河圖 pairs: 「五合者即五位相得而各有合也。河圖一與六、
+二與七、三與八、四與九、五與十皆各有合，以十干之次言之，第一為甲，第六為己，
+故甲與己合」 — which is what 歲德合's 「歲德五合之干是也」 rests on.
+
+**The 提要 argues where the 神煞 came from, which is context and not a rule.**
+It traces the doctrine to 《易緯乾鑿度》's 太乙行九宮 and to the 漢志's
+陰陽家 and 兵家陰陽 — 「鬼神則神煞之說自漢代已盛行矣」. Nothing in this engine
+turns on it and it is recorded because a reader who wants to know why the layer
+is shaped as it is will look for exactly this.
 
 ### What the source refuses, and what that cost
 
