@@ -225,14 +225,18 @@ them, or not at all.
 **One of them turned out to be, which is what «read behind no citation» is
 for.** 《授時曆故》 was extracted with the rest and searched on the way past,
 and its 卷二 carries the whole 授時 黃道宿次 with the epoch the `xiudu:
-shoushi` refusal had been waiting on — 至元辛巳, said by the work. It does not
-land the value: the numbers want reading cell by cell, one quadrant sum does
-not close on a first reading, and the source says the table is a function of
-the 歲差 at a chosen moment rather than a constant, which is a thing the
-option's shape would have to allow for. The argument is in `docs/sources.md`,
-in the frame section. **The errand it leaves is the first in this list that is
-worth doing on its own**: read the twenty-eight cells off the plates at a
-resolution that settles them.
+shoushi` refusal had been waiting on — 至元辛巳, said by the work. **And the table checks itself**: its four
+quadrant sums close against their own entries, and against each other on
+365.2575, which is the 曆's own 周天分. That is the standard's second clause
+met by one text.
+
+It still does not land the value, and what is left is no longer research. The
+remaining cells want transcribing at the resolution that settled 虛 — which
+read as 「九七一」 at 400 dpi and as 「九　七十五秒」 at 600, a difference of
+seven tenths of a degree and of whether the quadrant closes at all — and the
+option has to carry an epoch as well as a table, because the source makes its
+own numbers a function of the 歲差 at a chosen moment. The argument is in
+`docs/sources.md`, in the frame section.
 
 ## 3. Spanish, once the engine has stopped moving
 
