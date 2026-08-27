@@ -217,7 +217,9 @@ transcriptions disagree on.
 
 《協紀辨方書》 卷七~卷八 四庫 woodblock, the third 遁甲演義 scan, 大六壬指南 —
 which is not a woodblock facsimile but a 1990 typesetting in simplified
-characters, and therefore easier than the shelf's own README says — 大六壬課經
+characters, opens on 《大六壬心印賦》 rather than on the work it is filed under,
+and carries in that 增注 a witness the register was citing from elsewhere —
+大六壬課經
 集, 大六壬神課金口訣, 中國古代天文與曆法, and 祖傳年家太乙神數. None of them
 is under a value in § 1. They are read when a phase above sends somebody to
 them, or not at all.
