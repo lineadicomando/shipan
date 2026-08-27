@@ -73,6 +73,7 @@ export const PATTERN_IDS = [
   'dage',
   'xingge',
   'zhange',
+  'shangge',
   'tengsheyaojiao',
   'zhuquetoujiang',
   'qinglongtaozou',

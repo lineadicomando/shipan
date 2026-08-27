@@ -471,11 +471,12 @@ witnesses — 熒入白, 熒入太白, 火入金鄉, 織女尋牛郎. The verse 
 庚 over 壬 was 小格 in K alone. 《統宗》卷一 prints 「小格　庚臨壬」, which is a
 classical witness naming it what the Japanese tradition names it, and the
 standard this file sets — two independent sources, the same thing the same way
-— **is met.** It is still not shipped, because meeting the standard is what
-makes a pairing eligible and not what adds it: a twelfth entry needs an id, a
-hanzi, a reading, a valence and a line in `test/stem-pairs.test.ts`, and it
-needed the 凶 it would carry to be read off a source rather than assumed from
-its neighbours in the list.
+— **is met.** It was not shipped at once, because meeting the standard is
+what makes a pairing eligible and not what adds it: a twelfth entry needs an
+id, a hanzi, a reading, a valence and a line in `test/stem-pairs.test.ts`, and
+it needed the 凶 it would carry to be read off a source rather than assumed
+from its neighbours in the list. **It is shipped now, as 上格**, and the rest
+of this note is what that decision was made on.
 
 **That last condition is now met, by two works and not by proximity.**
 《奇門遁甲秘笈大全》, whose text layer is the PDF's own, says it twice and in
@@ -517,8 +518,11 @@ behind it**: 上格 in the Wikisource recension and in a Qing engraving read
 here, 小格 in the 統宗's and the 秘笈大全's quotations of the same couplet. That
 is a variant in the deciding text and not a disagreement the deciding text can
 settle, which makes it the first pairing in this survey where the rule runs
-out. The entry, when it is written, chooses a hanzi knowing that; the condition
-and the valence are no longer the open part. Read on the plate 2026-08-27. It no longer stands on a leaf this shelf lacks:
+out. **The table carries 上格**, which is the reading of the verse as the Qing
+engraving here prints it and as the work that grades the pairing uses it; the
+three namings it does not carry are recorded above rather than dropped, and a
+reader who knows the pairing as 小格 finds it here by its stems. Read on the
+plate 2026-08-27. It no longer stands on a leaf this shelf lacks:
 《遁甲集成》第六冊's 統宗 prints it, per the note below. **This is a decision
 that is now waiting, not a refusal.** 三奇得使 is no longer its precedent: there the sources disagree,
 which is a different thing from there being only one, and only the second was

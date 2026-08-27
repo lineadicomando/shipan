@@ -224,6 +224,7 @@ export const en = {
   'label.pattern.dage': 'the great barrier',
   'label.pattern.xingge': 'the barrier of punishment',
   'label.pattern.zhange': 'the barrier of battle',
+  'label.pattern.shangge': 'the upper barrier',
   'label.pattern.tengsheyaojiao': 'the serpent writhes',
   'label.pattern.zhuquetoujiang': 'the vermilion bird throws itself in the river',
   'label.pattern.qinglongtaozou': 'the dragon runs away',

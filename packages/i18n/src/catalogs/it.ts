@@ -227,6 +227,7 @@ export const it: Record<MessageKey, string> = {
   'label.pattern.dage': 'la grande barriera',
   'label.pattern.xingge': 'la barriera della punizione',
   'label.pattern.zhange': 'la barriera della battaglia',
+  'label.pattern.shangge': 'la barriera superiore',
   'label.pattern.tengsheyaojiao': 'il serpente si contorce',
   'label.pattern.zhuquetoujiang': 'la fenice si getta nel fiume',
   'label.pattern.qinglongtaozou': 'il drago fugge',

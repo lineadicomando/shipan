@@ -22,6 +22,7 @@ export type PatternId =
   | 'dage'
   | 'xingge'
   | 'zhange'
+  | 'shangge'
   | 'tengsheyaojiao'
   | 'zhuquetoujiang'
   | 'qinglongtaozou'
@@ -92,6 +93,7 @@ const CONFIGURATIONS: Record<PatternId, { hanzi: string; pinyin: string; valence
   dage: { hanzi: '大格', pinyin: 'dàgé', valence: 'xiong' },
   xingge: { hanzi: '刑格', pinyin: 'xínggé', valence: 'xiong' },
   zhange: { hanzi: '戰格', pinyin: 'zhàngé', valence: 'xiong' },
+  shangge: { hanzi: '上格', pinyin: 'shànggé', valence: 'xiong' },
   tengsheyaojiao: { hanzi: '螣蛇夭矯', pinyin: 'téngshéyāojiǎo', valence: 'xiong' },
   zhuquetoujiang: { hanzi: '朱雀投江', pinyin: 'zhūquètóujiāng', valence: 'xiong' },
   qinglongtaozou: { hanzi: '青龍逃走', pinyin: 'qīnglóngtáozǒu', valence: 'xiong' },
@@ -224,7 +226,7 @@ export interface PatternInput {
  *
  * Not implemented: 三奇得使. The sources consulted do not agree on which
  * pairings count, and a rule guessed at would be worse than a rule absent.
- * Nor is the whole of 十干克應 — eleven of its eighty-one cells are here and
+ * Nor is the whole of 十干克應 — twelve of its eighty-one cells are here and
  * the rest await a second source; see `STEM_PAIRS` and `docs/sources.md`.
  */
 export function findPatterns(input: PatternInput): Pattern[] {
@@ -310,7 +312,7 @@ function struckInstruments(earth: ByPalace<Stem>): Pattern[] {
  * 十干克應 — the stem above standing over the stem below.
  *
  * The whole table has eighty-one cells, nine stems over nine, and this holds
- * eleven of them. **The rest are absent on purpose**, and the reason is the
+ * twelve of them. **The rest are absent on purpose**, and the reason is the
  * project's standing one: a pairing enters here only when at least two
  * independent sources name it the same way. Which sources, and what each of
  * these was checked against one by one, is in `docs/sources.md`.
@@ -325,10 +327,15 @@ function struckInstruments(earth: ByPalace<Stem>): Pattern[] {
  *   name a pairing differently, the classical verse decides — it is the text
  *   the others descend from — and the divergence is recorded in the sources
  *   document rather than silently resolved.
- * - **一 pairing was excluded for exactly this reason.** 庚 over 壬 is named
- *   小格 by one source alone; the verse fetched does not carry it and the
- *   other sources call it something else. One source is not enough for a
- *   table that cannot be derived, and 三奇得使 is the precedent.
+ * - **One pairing is here under a name its own witnesses disagree about.**
+ *   庚 over 壬 was held out for a while as 小格 on one source; it now has
+ *   several, and they divide over the couplet rather than over the pairing.
+ *   The verse reads 加壬之時為上格 in the Wikisource recension and in the Qing
+ *   engraving of 《奇門闡秘前編》, which also grades it — 上格，一名小隔，不宜
+ *   出師 — where 《統宗》 and 《奇門遁甲秘笈大全》 quote the same line as
+ *   加壬之時為小格. So the rule above, that the verse decides a name, meets
+ *   its first case where the verse is transmitted two ways. 上格 is what this
+ *   table carries and `docs/sources.md` says what it carries it against.
  *
  * 甲 never appears on a plate — it is concealed by the instrument of its
  * decade — so the verse's 丙加甲 and 甲加丙 are read here as 丙 over 戊 and
@@ -344,6 +351,8 @@ const STEM_PAIRS: readonly { above: string; below: string; id: PatternId }[] = [
   // 庚加癸兮為大格，加己為刑最不宜 — 煙波釣叟歌
   { above: 'geng', below: 'gui', id: 'dage' },
   { above: 'geng', below: 'ji', id: 'xingge' },
+  // 加壬之時為上格 — 煙波釣叟歌, in the recension that reads 上格; see above.
+  { above: 'geng', below: 'ren', id: 'shangge' },
   // 戰格: not in the verse fetched; named alike by two independent sources.
   { above: 'geng', below: 'geng', id: 'zhange' },
   // 六癸加丁蛇夭矯，六丁加癸雀投江 — 煙波釣叟歌

@@ -63,6 +63,7 @@ phase.
 | 27 | [The notes get built](27-notes-built.md) | done — revises phase 17: the registries it assumed did not exist, and the ladder moves into `docs/` |
 | 28 | [The site installs](28-installed-on-a-phone.md) | done — installable, and refusing to pretend it computes offline |
 | 29 | [The terminology pass](29-the-terminology-pass.md) | done — every glyph a person reads is said, and a test that fails the day one is not |
+| 30 | [The shelf answers](30-the-shelf-answers.md) | done — ten thousand unread pages made searchable, seven files found to be other than catalogued, and a twelfth 十干克應 pairing shipped where the verse divides |
 
 ## The rest of the record
 

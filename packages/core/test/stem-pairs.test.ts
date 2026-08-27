@@ -66,6 +66,10 @@ describe('十干克應 — the stem above over the stem below', { timeout: 30_00
     ['六丙加庚熒入白', 'bing', 'geng', 'yingrutaibai'],
     ['庚加癸兮為大格', 'geng', 'gui', 'dage'],
     ['加己為刑最不宜', 'geng', 'ji', 'xingge'],
+    // The one line the recensions divide over: 上格 here and in the Qing
+    // engraving of 《奇門闡秘前編》, 小格 where 《統宗》 quotes it. See
+    // `docs/sources.md`; the pairing is agreed and only the name is not.
+    ['加壬之時為上格', 'geng', 'ren', 'shangge'],
     ['六癸加丁蛇夭矯', 'gui', 'ding', 'tengsheyaojiao'],
     ['六丁加癸雀投江', 'ding', 'gui', 'zhuquetoujiang'],
     ['六乙加辛龍逃走', 'yi', 'xin', 'qinglongtaozou'],
