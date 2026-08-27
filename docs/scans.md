@@ -29,9 +29,21 @@ of the lines:
   block-printed 四庫 page return so little that a search against the result is
   evidence of nothing: 觜 was found on no page of a document where it is
   legible by eye on many.
-- **Four book-pages to the sheet** — the quadrants have to be cut apart first,
-  or the two columns of book-pages interleave line by line and the reading
-  order is lost. The shelf carries a script for it.
+- **More than one book-page to the sheet** — they have to be cut apart first,
+  or the reading order is lost: four to the sheet and the two columns of
+  book-pages interleave line by line, two to the sheet and a column of one
+  lands in the middle of the other. The shelf carries a script for each.
+
+**And the cut is `unpaper`'s, not a line down the middle.** A half sheet
+carries the gutter, the facing page's edge and the black band a photocopier
+leaves down the fold, and the layout analysis reads all three as columns.
+`unpaper --layout double` cuts to the printed frame, deskews and drops the
+band: on one page of 中國絕學 第六冊 that is the difference between about half
+the characters and about nine in ten. It earns none of that where there is no
+band to drop — over 大六壬指南, whose two book-pages are stacked rather than
+side by side, its border detection ate the outermost columns and the same page
+fell from 330 characters to 110. So: `unpaper` where the sheet was
+photographed open, a plain cut where it was not.
 
 **Resolution is a separate axis and it decides what the first choice is
 worth.** A page can have the easiest layout on the shelf and still yield an
@@ -68,6 +80,14 @@ a source.
 
 Recurring confusions to search around, from the shelf's own runs: **孛 reads as
 李**, 躔 as 嘿 or 蛀, 戌 as 成 or 皮, 寅 as 賓 or 宇. Search both forms.
+
+**A character can go missing everywhere at once, and 遁 is the case.** In
+274 000 characters off 《圖解奇門遁甲大全》, which is printed in simplified
+characters, 遁 appears zero times: 通甲 stands where 遁甲 should 560 times and
+奇门适甲 105 more, 阴通 216 and 阳通 313 where 阴遁 and 阳遁 should. A search
+for the word on the cover of the book returns nothing. The character rate says
+nothing about this — the extract is a good one — so the check is to search the
+term and then search what it could have become.
 
 **A `.nospace` companion is the one to search.** tesseract puts a space between
 Chinese characters often enough that 二十八宿 matches zero times in the raw
@@ -149,6 +169,17 @@ render. Four commands, under a minute, and
 they establish extent — which is the thing a plan is a function of. A work in
 six juan and a file with one of them are different objects and only one of them
 is on the shelf.
+
+**A tool that believes the metadata fails silently, and `ocrmypdf` believes
+it.** It sizes its raster from what the PDF says its images are, so over
+《圖解奇門遁甲大全》 — the same JPEG 2000 case — it announced «page image will
+be rendered at 48.0 DPI» and returned thirty characters a page for 598 pages,
+reporting no error of any kind. `--oversample` corrects the size and not the
+decode: ghostscript then reports «invalid JPX header» and hands tesseract
+noise, where poppler renders the same page clean. **On a JPEG 2000 file, then:
+`pdftoppm` and `tesseract`, and no text layer written back into the PDF.**
+Through poppler those 598 pages give 274 000 characters — 值符 802 times,
+值使 316, 超神 37, 接氣 23.
 
 ## What the two cost
 

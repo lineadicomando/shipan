@@ -94,8 +94,9 @@ pixels are — is settled before a phase is planned around it. Every phase below
 assumes that page.
 
 The toolchain the phases below assume: tesseract 5.5.3 with `chi_sim`,
-`chi_tra` and the two `_vert` models, `ocrmypdf` 16, Pillow for the quadrant
-cutting, and `pdftoppm`, `pdfimages` and `gs` for rendering a plate.
+`chi_tra` and the two `_vert` models, `ocrmypdf` 16, `unpaper` 7 and Pillow for
+cutting a sheet into its book-pages, and `pdftoppm`, `pdfimages`, `qpdf` and
+`gs` for rendering a plate and taking a file apart.
 
 ### Phase 1 — the dunjia scans, for `plate`, `centreLodging` and `system`
 
@@ -111,14 +112,20 @@ values wait on is a second witness and no longer a text. It also showed that
 they cannot move alone: those boards are flown where the 時家 is turned, so
 `plate: fei` and `system` are one errand.
 
-What is left of this phase is 飛盤 proper and `centreLodging`, ordered by what
-reads easiest:
+What is left of this phase is 飛盤 proper and `centreLodging`. **The searchable
+face of it exists and the rest is plates**, which is a shorter list than the
+one this section used to carry and a slower one:
 
-1. 《遁甲集成》 第二・三・六冊 — modern typeset traditional, 2-up. 第二冊 carries
-   煙波釣叟歌直辨, the Qing commentary on the verse the 十干克應 table is pinned
-   to, and 十八活盤詳注, which is the moving-plate ground `plate: fei` stands on.
-2. 《圖解奇門遁甲大全》 — 598 pages, modern horizontal simplified, trivial OCR.
-   Divulgation, so a lead and never a witness: it is the searchable face.
+1. 《圖解奇門遁甲大全》 — 598 pages, extracted: 274 000 characters, 值符 802
+   times, 值使 316, 超神 37, 接氣 23. Divulgation, so a lead and never a
+   witness, and the place a passage is located before it is read anywhere
+   else. Search 通 for 遁, which the extract loses entire.
+2. 《遁甲集成》 第二・三・六冊 — **block-printed facsimile and not the modern
+   typesetting this section claimed**, which is what opening them settled: the
+   廣陵古籍刻印社 series photographs its originals, and only stretches of 第二冊
+   are movable type. Read by plate. 第二冊 carries 煙波釣叟歌直辨, the Qing
+   commentary on the verse the 十干克應 table is pinned to, and 十八活盤詳注,
+   which is the moving-plate ground `plate: fei` stands on.
 3. 《御定奇門寶鑑》 and 《奇門遁甲統宗》 — clean Qing printing, read by plate.
 4. The three 故宮珍本叢刊 volumes — colour, but about 1000×1500 pixels to the
    book-page, which is the low end for dense block printing. Read by plate,
@@ -144,6 +151,17 @@ that has been read, and a school manual is where a school's name lives.
 The volumes that carry 紫微斗數 are the first, sixth, seventh and tenth. The
 rest of the set is 鐵版神數, 奇門易數, 邵子神數, 皇極天書 and 玄空金口訣 —
 arts this project does not compute, read only far enough to say so.
+
+**Ten of the eleven are extracted and the eleventh cannot be.** 第一冊 is
+handwriting on squared paper, which no model here reads and which the eye reads
+easily, so the one volume of the four carrying 紫微斗數 that is a manuscript is
+the one that has to be read by plate. What the other nine cost is in the
+shelf's register; what they are worth is **that they can be searched at all**,
+which is what a set nobody had opened was missing. 第七冊 is the one the `sihua`
+errand goes to first — 斗數秘儀四化飛伏斷訣, and 化忌 683 times, 化權 252,
+化科 159 in the extract. Search around 祿, which that scan loses without
+collapsing onto anything: 化祿 and 祿存 both score zero on a volume that prints
+them constantly.
 
 ### Phase 3 — 紫微斗數全書, 明南陽堂 woodblock
 
