@@ -973,6 +973,82 @@ The **十二天將** carry five-phase assignments the tradition transmits, and t
 drawing leaves them in neutral ink for the reason this whole file exists: no
 source is registered for them here. They stay uncoloured until one is.
 
+### 《大六壬精解》, and the one refusal it moves
+
+**Not a manual, on its own account.** 曹福倞・張月明 編著, 黑龍江人民出版社
+1995, and its 編著採用書目及有關說明 names every work it draws on with the
+edition it took each from: 《六壬大全》 off the 文淵閣四庫全書 影印本 collated
+against other editions, 《大六壬類聚》·《龍首經》·《五變中黃經》·《六壬金口》 off
+the 民國二十三年 中華書局 影印 《古今圖書集成》, 《大六壬指南》 (陳公獻, and
+its 神煞指南 by 莊公遠) off the 民國元年 江東書局 印本 collated against a
+清刻本, then 紀大奎's 《六壬類聚》, 葉悔亭's 《六壬視斯》, 金鎔's
+《大六壬易簡》, and a little of 韋千里 and 袁樹珊. Each section marks which of
+them it is out of. That makes the passages below quotations with an address,
+not a modern author's summary — and it also means the 六壬大全 material in it
+is **not independent** of what this register already stands on.
+
+**Two named witnesses for the 中氣, neither of them 六壬大全.** Page 3, opening
+月將及其起法: 「月將即日宿太陽。視太陽入何宮，即為何將。太陽於每月中氣過宮，
+故月將亦逢中氣而換。」 — and then the rule quoted from 陳公獻's 增注 to the
+《心印賦》, month by month, followed by the compiler's own twelve rows, which
+name the 節 and the 氣 separately in every one of them:
+
+> 正月建寅，立春節，雨水氣。雨水後月將為亥。
+> 二月建卯，驚蟄節，春分氣。春分後月將為戌。
+> …十二月建丑，小寒節，大寒氣。大寒後月將為子。
+
+Page 302 has the second, under 論月將 and attributed to 《六壬視斯》:
+「月將，太陽星君也…**中氣後過宮**。」 So the turning point the engine computes
+is now carried by two transmitted sources that agree and are not each other,
+which is the standard, on top of the two runnable references that read it the
+same way.
+
+**And the table pins what the refused value would be.** `yuejiang: jieqi` is
+「half a term earlier」, which is an abstraction until something prints both
+columns; these rows print them, so the variant is the same table read off the
+節 instead of the 氣. Nothing here endorses that reading. What is worth
+recording is the seam in the book's own reasoning: it *defines* the 月將 as
+where the Sun is — 「月將即日宿太陽」 — and then computes it from the 中氣
+「故」, because that is where the Sun was held to change 宮. `yuejiang: true` is
+what that definition becomes once the identity it rests on has drifted, and no
+source consulted has yet noticed it drifting.
+
+**The 貴人 seat, which this register had never entered.** Page 26 prints the
+verse — 「甲戊庚牛羊，乙己鼠猴鄉。丙丁豬雞位，壬癸蛇兔藏。六辛逢馬虎，永定貴
+人方。」 — and glosses it: 甲戊庚 晝丑夜未, 乙己 晝子夜申, 丙丁 晝亥夜酉, 壬癸
+晝巳夜卯, 辛 晝午夜寅. That is `guiren: chou` entire. **The 六壬大全 already
+on the shelf carries the same verse with the branches interlined** — 「甲戊庚牛
+羊丑未，乙己鼠猴鄉子申，丙丁豬雞位亥酉，壬癸蛇兔藏巳卯，…午寅」 — so the seat
+table has two transmitted witnesses agreeing.
+
+They disagree on one character, and the text adjudicates itself: the 精校本
+prints 「六**壬**逢馬虎」 where the 精解 prints 「六**辛**逢馬虎」. 壬 cannot be
+right, having been placed two lines above at 巳卯, and the interlinear 午寅
+settles it. The engine's table has 辛 at 午/寅, which is the reading the gloss
+forces.
+
+**The one refusal that moves is `zhouye`.** The same page states the branch
+division outright, with a worked example — 「占時為卯、辰、巳、午、未、申者屬
+晝時，占時為酉、戌、亥、子、丑、寅者屬夜時。例如甲子日，占時為卯，卯為晝時，
+甲日晝貴在丑，丑即貴人也。」 — and then does not stop there:
+
+> 不過，古來亦有更嚴格地准星之出沒或日之出沒而分晝夜者。
+
+**So «no source consulted cuts the day at the actual sunrise» is no longer
+true**, and the entry in the refusals table below says the new thing instead.
+What the sentence gives is that the divergence is transmitted and old; what it
+does not give is a rule. It names no text, works no example, and bundles
+**星之出沒** with 日之出沒 as though they were one option, which they are not
+and which the engine does not declare. `zhouye: solar` therefore stays refused
+for a better reason than it had: not for want of a school, but for want of a
+procedure — and whoever supplies one has to say which of the two risings the
+old practice meant.
+
+**六壬大全 states neither.** It carries the 貴人 verse and the 晝順夜逆 rule —
+「此貴神晝順行，夜逆行，不坐辰戌牢獄之地」, and 癸's 「晝寄丑宮，夜寄未宮」 —
+and nowhere says which hours are 晝. The division the engine computes rests on
+this one book.
+
 ---
 
 ## 曆注 — the almanac's page, and the block its own source refuses
@@ -2879,8 +2955,8 @@ calendrical layer settles. Recorded as a passage read and not used.
 | 飛盤 | a whole family. `OPTION_NOT_IMPLEMENTED` |
 | 日家 · 月家 · 年家 | same |
 | 寄宮 `dun` | the parameter exists and the second value is refused rather than guessed |
-| 六壬 `yuejiang` `jieqi` · `true` | the 四庫 verse's own table turns the general at the 中氣, and both references read it so. The other two values exist in the type and are refused rather than guessed |
-| 六壬 `zhouye` `solar` | no source consulted cuts the day at the actual sunrise. `OPTION_NOT_IMPLEMENTED` |
+| 六壬 `yuejiang` `jieqi` · `true` | the 四庫 verse's own table turns the general at the 中氣, both references read it so, and two further transmitted witnesses say it in words — 陳公獻's 增注 to the 《心印賦》 and 《六壬視斯》's 「中氣後過宮」. 《大六壬精解》 prints the 節 and the 氣 of every month side by side, which pins what `jieqi` would be without endorsing it. Nothing yet states either. See the 六壬 section |
+| 六壬 `zhouye` `solar` | the divergence is transmitted and the rule is not: 《大六壬精解》 p. 26 gives the branch division with a worked example and then says 「古來亦有更嚴格地准星之出沒或日之出沒而分晝夜者」. That names no text, works no example, and bundles 星之出沒 with 日之出沒 as one option, which they are not. Refused for want of a procedure rather than for want of a school. `OPTION_NOT_IMPLEMENTED` |
 | the 涉害 復等 clause | implemented, measured, and dropped: it moves none of the 8 640 boards under any of three readings, because the order of the courses already gives what it asks for. See the 六壬 section |
 | 二十八宿值日's 宜忌 | 《協紀辨方書》卷三十六 辨訛 rejects the lodge-day selection outright as an import: 來自西域, 並不可從. The count may still travel; the doctrine attached to it may not, and the epoch takes its warrant elsewhere |
 | the 宜忌 of the twelve officers | the largest thing in the 協紀 and the clearest refusal here: 宜 and 忌 are advice — ordering days, dating an act — which is `purposes.ts`'s line in a second place |

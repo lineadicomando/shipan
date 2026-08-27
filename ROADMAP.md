@@ -68,8 +68,8 @@ and nothing here depends on it: what a source establishes is in
 ## 2. Reading the scans on the shelf
 
 Forty of the seventy PDFs in `texts/` are photographic and carry no text
-layer. Four of those have been turned into an extract; thirty-six have not,
-which is on the order of eleven thousand unread pages. Several of the values
+layer, and most of them have never been turned into an extract — on the order
+of ten thousand unread pages. Several of the values
 in § 1 are waiting on some of them, and nothing else about this section is
 urgent — an unread scan costs nothing until somebody claims it says something.
 
@@ -105,26 +105,7 @@ The toolchain the phases below assume: tesseract 5.5.3 with `chi_sim`,
 `chi_tra` and the two `_vert` models, `ocrmypdf` 16, Pillow for the quadrant
 cutting, and `pdftoppm`, `pdfimages` and `gs` for rendering a plate.
 
-### Phase 1 — 大六壬精解, for 六壬's three refusals
-
-753 pages, modern horizontal simplified typesetting, one page to the page:
-the easiest layout on the shelf, `ocrmypdf -l chi_sim` straight through, the
-way the 協紀辨方書 modern edition went. It is the only extended 六壬 manual
-held and nothing in `liuren.ts` stands on it.
-
-**The easy layout sits on a hundred-dpi scan, and the extract is a finding aid
-and not a text.** Measured, it comes out around four characters in five, and
-the fifth is disproportionately a branch — 巳 for 己 for 已, 亥, 丑, 辰 — which
-is the class of character a 六壬 rule is made of. Oversampling does not help,
-because the information is not in the file. So the run is worth making and
-what it buys is a way to *find* the passage; the passage itself is read off
-the plate, and every line quoted says so.
-
-Read for `yuejiang: jieqi` and `true`, and `zhouye: solar`. A modern manual is
-not a witness on its own — it is where the divergence gets named and the older
-text it cites gets found.
-
-### Phase 2 — 御定星歷考原, for the 神煞
+### Phase 1 — 御定星歷考原, for the 神煞
 
 184 sheets of 四庫 woodblock at 600 dpi, read by plate. It is the work
 《協紀辨方書》 was commissioned to revise and quotes by name throughout, and the
@@ -138,7 +119,7 @@ correcting 曹震圭 on the 天乙貴神, which is `guiren`'s ground.
 Ends in: rows moved for what it confirms or contradicts, and — if a lineage is
 named cleanly enough to be followed — the second value of `shensha`.
 
-### Phase 3 — the 曆 substrate, for `xiudu`
+### Phase 2 — the 曆 substrate, for `xiudu`
 
 《曆法通志》 (1934, 311 pages, vertical traditional but *movable type*, which
 `chi_tra_vert` handles far better than a block) and 《授時曆故》 (174 sheets,
@@ -151,7 +132,7 @@ The likeliest outcome is another documented negative, and the register already
 holds one: the only 授時 lodge table on the shelf is the 赤道 one, which is the
 wrong frame. Say so again rather than quietly not looking.
 
-### Phase 4 — the dunjia scans, for `plate`, `centreLodging` and `system`
+### Phase 3 — the dunjia scans, for `plate`, `centreLodging` and `system`
 
 The largest block and the least prepared — eleven files, some three and a half
 thousand pages — so it is ordered by what reads easiest:
@@ -170,7 +151,7 @@ thousand pages — so it is ordered by what reads easiest:
 Ends in whatever it ends in. 年家, 月家 and 日家 奇門 are three systems and not
 one, and a source for one of them lands one value.
 
-### Phase 5 — 《中國絕學》, for a school's name
+### Phase 4 — 《中國絕學》, for a school's name
 
 Eleven volumes, 方外人, 臺北金林文化 1986, about four thousand one hundred
 pages, image-only, twentieth-century school teaching. **Supporting a refusal is
@@ -184,7 +165,7 @@ The volumes that carry 紫微斗數 are the first, sixth, seventh and tenth. The
 rest of the set is 鐵版神數, 奇門易數, 邵子神數, 皇極天書 and 玄空金口訣 —
 arts this project does not compute, read only far enough to say so.
 
-### Phase 6 — 紫微斗數全書, 明南陽堂 woodblock
+### Phase 5 — 紫微斗數全書, 明南陽堂 woodblock
 
 528 pages, one book-page to the page, high-contrast block printing: legible by
 eye, hopeless for OCR. `docs/sources.md` calls it the adjudicator between the
@@ -192,7 +173,7 @@ transcriptions and has already read it in places. This phase is the rest of
 it — collation, against the copies already held, of the passages the two
 transcriptions disagree on.
 
-### Phase 7 — the remainder, read behind no citation
+### Phase 6 — the remainder, read behind no citation
 
 《協紀辨方書》 卷七~卷八 四庫 woodblock, the third 遁甲演義 scan, 大六壬指南 —
 which is not a woodblock facsimile but a 1990 typesetting in simplified
