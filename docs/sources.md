@@ -473,8 +473,21 @@ standard this file sets — two independent sources, the same thing the same way
 — **is met.** It is still not shipped, because meeting the standard is what
 makes a pairing eligible and not what adds it: a twelfth entry needs an id, a
 hanzi, a reading, a valence and a line in `test/stem-pairs.test.ts`, and it
-needs the 凶 it would carry to be read off a source rather than assumed from
-its neighbours in the list. It no longer stands on a leaf this shelf lacks:
+needed the 凶 it would carry to be read off a source rather than assumed from
+its neighbours in the list.
+
+**That last condition is now met, by two works and not by proximity.**
+《奇門遁甲秘笈大全》, whose text layer is the PDF's own, says it twice and in
+two registers: 「加壬之時為小格，又嫌年月日時逢，**當此之時最不吉，舉動行師
+皆不宜**」 in the verse, and 「大格者，萍迹四海。**小格者，暫時清貧**」 in the
+prose that glosses it. And the 統宗 does not leave the class to be inferred —
+「庚加癸為大格，庚加壬為小格，庚加己為刑格，奇儀入墓，天網四張，擊刑、自刑
+**諸凶格**逢之，俱有刑傷阻格」 — naming 小格 inside a list it calls 諸凶格
+itself, and elsewhere 「刑格大格小格遇此者，車破馬倒，慎勿追趕，反格其咎」.
+The 統宗 lines are located in the transcription and not yet read on a plate,
+which is the one thing outstanding before the entry is written; the 秘笈大全
+ones are print-backed as they stand. What is left after that is ordinary work
+and not a question about sources. It no longer stands on a leaf this shelf lacks:
 《遁甲集成》第六冊's 統宗 prints it, per the note below. **This is a decision
 that is now waiting, not a refusal.** 三奇得使 is no longer its precedent: there the sources disagree,
 which is a different thing from there being only one, and only the second was
