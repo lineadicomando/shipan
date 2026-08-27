@@ -576,6 +576,24 @@ before either moves.
 What is still missing is a second witness. Three copies of 遁甲演義 are held and
 two of them are the same recension; a copy of a work is not a witness to it.
 
+**A second work treating the three has now been found, and whether it agrees
+is a separate question.** 《奇門闡秘前編》卷之三, in 《遁甲集成》第六冊 at its
+p. 3124, says the division outright — 「凡年月日家各有奇門，陰陽家稱為三奇帝
+星，能制伏一切凶神惡煞。凡神煞之起於年月日者，即以年月日家之奇門制之 … 今立
+成局於後」 — and then prints 年家八節三奇定局, a table giving the palaces of
+乙, 丙 and 丁 at the eight 節 for each year of a cycle: 乙 坎艮震巽離坤兌乾,
+丙 the same run, 丁 坤離巽中艮坎乾中, against 立春·立夏·立秋·立冬 and
+冬至·春分·夏至·秋分.
+
+**That is a second work and not yet a second witness**, and the distinction is
+the whole of it. 遁甲演義's 年家 is a 三元 division of a hundred and eighty
+years — 「上元一宮起甲子 … 俱逆飛六儀，順布三奇」 — where this places the three
+奇 by the eight nodal terms within a year. They are not the same procedure on
+their face, and two procedures that differ do not confirm each other by both
+being about the 年家. What would settle it is running this table against the
+other rule, which is arithmetic and not searching, and which has not been
+done. Found by contact sheet and read on the plate 2026-08-27.
+
 **The section the plan expected to ground it does not, and the reason is a
 word.** 《遁甲集成》第二冊 carries 十八活盤詳注, which had been written down here
 as the moving-plate ground `plate: fei` would stand on. Surveyed by contact
