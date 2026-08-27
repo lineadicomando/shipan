@@ -534,6 +534,48 @@ since replaced with a different one they attribute to nobody. It is recorded
 here because it exists and because the absence would otherwise read as
 ignorance of it — not because anything imports it.
 
+### The three systems the same juan states, and what they are made of
+
+**卷一 of the same text carries 年家奇門, 月家奇門 and 日家奇門 in full**, which
+are the three values of `system` this engine declares and refuses. They were
+found while establishing what the 四庫 file on the shelf actually is, and they
+are on the plate of the edition this register cites, at PDF p. 4 of the SKQS
+scan; the Wikisource transcription carries the same passages and agrees with
+the plate where the two have been collated.
+
+Each is a complete procedure, not a mention:
+
+- **年家** — 「上元一宮起甲子，中元四宮起甲子，下元七宮起甲子。俱逆飛六儀，
+  順布三奇」, then the 直符 by the year's 甲頭 and the 直使 above it, with the
+  three 元 of sixty years laid on 陰遁 1, 4 and 7. It dates itself:
+  「自嘉靖四十三年甲子起杜門，十年一移，萬曆甲午年移休」.
+- **月家** — 三元分局 by whether the 甲己 year falls on a 孟, 仲 or 季 branch,
+  starting in palace 1, 7 or 4, 「每一元管五年」, the 直符 taken from the month's
+  establishment and 「符上之門為直使，隨月支飛泊」. Two worked dates fifty years
+  apart, 嘉靖四十二年十一月甲子 and 萬曆四十一年十一月甲子, both 起休門在坎.
+- **日家** — 「分陰陽二遁，按節推排，三日一局，順行六甲，周而復始」, a mnemonic
+  couplet for the eight starting palaces, and then the whole sixty-day
+  enumeration written out: 甲子乙丑丙寅 in 坎, 丁卯戊辰己巳 in 坤, and so on.
+
+**Two things follow, and the second is the one nobody would have guessed from
+the parameter list.** The first is that `system` is no longer refused for want
+of a text: this is one work rather than two, but it is a work that checks
+itself in the way rung 4 asks for — the 日家's enumeration can be run against
+its own stated rule, and the 年家 and 月家 each carry dated examples that fix
+the phase of a cycle.
+
+The second is that **these boards fly**. 「俱逆飛六儀」 for the 年家, 「隨月支
+飛泊」 for the 月家, 「飛八方，不入中五」 for the 日家 — the three systems are
+natively 飛盤, where the 時家 this engine computes is 轉盤. So `system` and
+`plate` are not independent axes, whatever the parameter table's shape
+suggests: implementing 年家 means implementing a flying board, and a reading
+that took the 時家's rotation into them would be casting a chart nobody
+transmitted. That is a fact about the two parameters and it is written here
+before either moves.
+
+What is still missing is a second witness. Three copies of 遁甲演義 are held and
+two of them are the same recension; a copy of a work is not a witness to it.
+
 ---
 
 ## 八門 — what each gate is chosen for
@@ -3037,8 +3079,8 @@ calendrical layer settles. Recorded as a passage read and not used.
 | the month pillar a 春節 almanac prints | 五虎遁 reads the year stem, so `chunjie` moves the month with the year and reports a pillar no lichun almanac carries. Whether an almanac counting by the lunar new year prints that one or the solar one, no source consulted says. The rule is applied as stated and the consequence is pinned by a test, so that changing it has to be deliberate |
 | the other 70 cells of 十干克應 | complete tables exist but each is a single uncited source; two are needed |
 | 茅山 | no reference at all. `METHOD_NOT_IMPLEMENTED` rather than a silent substitution |
-| 飛盤 | a whole family. `OPTION_NOT_IMPLEMENTED` |
-| 日家 · 月家 · 年家 | same |
+| 飛盤 | a whole family. `OPTION_NOT_IMPLEMENTED`, and not separable from `system`: the 年家, 月家 and 日家 boards 《遁甲演義》 states are flown, not turned |
+| 日家 · 月家 · 年家 | 《遁甲演義》卷一 states all three entire, and they are 飛盤 where the 時家 is 轉盤, so the two parameters move together. One work in three copies, two of them one recension, is not two witnesses. See the 年命 section |
 | 寄宮 `dun` | the parameter exists and the second value is refused rather than guessed |
 | 六壬 `yuejiang` `jieqi` · `true` | the 四庫 verse's own table turns the general at the 中氣, both references read it so, and two further transmitted witnesses say it in words — 陳公獻's 增注 to the 《心印賦》 and 《六壬視斯》's 「中氣後過宮」. 《大六壬精解》 prints the 節 and the 氣 of every month side by side, which pins what `jieqi` would be without endorsing it. Nothing yet states either. See the 六壬 section |
 | 六壬 `zhouye` `solar` | the divergence is transmitted and the rule is not: 《大六壬精解》 p. 26 gives the branch division with a worked example and then says 「古來亦有更嚴格地准星之出沒或日之出沒而分晝夜者」. That names no text, works no example, and bundles 星之出沒 with 日之出沒 as one option, which they are not. Refused for want of a procedure rather than for want of a school. `OPTION_NOT_IMPLEMENTED` |

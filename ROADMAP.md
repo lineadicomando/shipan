@@ -100,7 +100,19 @@ cutting, and `pdftoppm`, `pdfimages` and `gs` for rendering a plate.
 ### Phase 1 — the dunjia scans, for `plate`, `centreLodging` and `system`
 
 The largest block and the least prepared — eleven files, some three and a half
-thousand pages — so it is ordered by what reads easiest:
+thousand pages. **The extent pass is done and it changed the block**: 御定奇門
+寶鑑 is one 冊 of eight, the third 遁甲演義 is 卷一 alone, and the three 故宮
+volumes carry a 新編目錄 on their last leaves, which is how to survey them
+cheaply.
+
+**And it answered the `system` question on the way.** 《遁甲演義》卷一 states
+年家, 月家 and 日家 entire — see `docs/sources.md` § 年命 — so what those three
+values wait on is a second witness and no longer a text. It also showed that
+they cannot move alone: those boards are flown where the 時家 is turned, so
+`plate: fei` and `system` are one errand.
+
+What is left of this phase is 飛盤 proper and `centreLodging`, ordered by what
+reads easiest:
 
 1. 《遁甲集成》 第二・三・六冊 — modern typeset traditional, 2-up. 第二冊 carries
    煙波釣叟歌直辨, the Qing commentary on the verse the 十干克應 table is pinned
