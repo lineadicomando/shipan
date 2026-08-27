@@ -484,10 +484,22 @@ prose that glosses it. And the 統宗 does not leave the class to be inferred �
 「庚加癸為大格，庚加壬為小格，庚加己為刑格，奇儀入墓，天網四張，擊刑、自刑
 **諸凶格**逢之，俱有刑傷阻格」 — naming 小格 inside a list it calls 諸凶格
 itself, and elsewhere 「刑格大格小格遇此者，車破馬倒，慎勿追趕，反格其咎」.
-The 統宗 lines are located in the transcription and not yet read on a plate,
-which is the one thing outstanding before the entry is written; the 秘笈大全
-ones are print-backed as they stand. What is left after that is ordinary work
-and not a question about sources. It no longer stands on a leaf this shelf lacks:
+The 統宗 lines are located in the transcription and not read on a plate.
+
+**And a third work settles it on the plate, in a chapter that grades what it
+lists.** 《奇門闡秘前編》卷之二 格局 — bound after the 統宗 in 《遁甲集成》第六冊
+— gives each 格 as 天盤 over 地盤 with its verdict beside it, and at its
+p. 3089 prints 「**上格○天盤庚加地盤壬也，一名小隔，不宜出師**」, between
+「刑格○天盤庚加地盤己也，主有隱患，凡事不宜，尤忌出師遠行」 and
+「大格○天盤庚加地盤癸也，忌出師遠行，主車破馬死，人財破散」. 不宜出師 is a
+verdict and not a neighbourhood, and it is in print.
+
+**What that costs is the name.** This work calls the pairing 上格 and glosses
+it 一名小隔 — 隔 and not 格 — where 統宗 and 秘笈大全 have 小格, K has 小格 and
+B has 太白退位. Four namings for one condition, all of them 庚 over 壬. So the
+entry, when it is written, has a hanzi to choose and a note to carry about the
+three it does not choose; the condition and the valence are no longer the open
+part. Read on the plate 2026-08-27. It no longer stands on a leaf this shelf lacks:
 《遁甲集成》第六冊's 統宗 prints it, per the note below. **This is a decision
 that is now waiting, not a refusal.** 三奇得使 is no longer its precedent: there the sources disagree,
 which is a different thing from there being only one, and only the second was
