@@ -2402,13 +2402,15 @@ because the two disagree in places where neither notes an emendation. Its 卷四
 is not reproduced — «由於本卷均為實際案例» — which costs nothing, that juan
 being worked 批命 and exactly the material this project declines.
 
-**What is on the shelf and is not a source.** A 456-page 心一堂 facsimile of
-the 《紫微斗數捷覽》 (明刊孤本, 1581) with its 點校本 was retrieved and is
+**What was retrieved and is not a source.** What a 456-page 心一堂 facsimile of
+the 《紫微斗數捷覽》 (明刊孤本, 1581) with its 點校本 turned out to be is
 **39 watermarked pages drawn at random from it**, sold as a teaser for the
 rest. The pages are genuine facsimile of the Ming block and would be worth
 having whole — 捷覽 belongs to the *other* transmission, the one 《全集》
 belongs to — but a random ninth of a book, with no text layer and the plates
-rotated, settles nothing. It has a row in `docs/provenance.tsv` saying so.
+rotated, settles nothing, and the copy is no longer held. Its row in
+`docs/provenance.tsv` stays, saying what it was: the row is what stops the
+same upload being fetched a second time under the title of the whole book.
 **That transmission is no longer the gap it was**: two witnesses of it arrived
 and have a section to themselves below.
 

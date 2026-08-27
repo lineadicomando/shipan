@@ -299,3 +299,61 @@ describe('docs/sources.tsv', () => {
     }
   });
 });
+
+/**
+ * `ROADMAP.md` § 1 names what the engine refuses, and the engine is what says.
+ *
+ * This is the counts rule applied to a list: a table of what the code does,
+ * kept by hand, drifts the moment the code moves, and it drifted — two values
+ * were still listed as open after they had landed. So the table is asserted
+ * both ways. A value's name is written there as `` `parameter: value` ``,
+ * which is how a caller passes it, and that is the whole grammar this reads.
+ *
+ * An `id` is unique only within its board, so a pair that is refused on one
+ * board and computed on another says nothing on its own and is skipped for
+ * the second assertion — `yearBoundary: chunjie` is 太乙's refusal and the
+ * pillars' default at once.
+ */
+describe('ROADMAP.md says what the engine refuses', () => {
+  const SECTION = /^## 1\..*?$([\s\S]*?)^## /m;
+
+  const section = (): string => {
+    const found = SECTION.exec(read('ROADMAP.md'));
+    expect(found, 'ROADMAP.md has no § 1 to read').not.toBeNull();
+    return (found as RegExpExecArray)[1] as string;
+  };
+
+  /** Every declared value as the pair a caller would pass, with its verdict. */
+  const pairs = (): Map<string, Set<boolean>> => {
+    const verdicts = new Map<string, Set<boolean>>();
+    for (const parameter of PARAMETERS) {
+      for (const value of parameter.values) {
+        if (typeof value.id !== 'string') continue;
+        const pair = `${parameter.id}: ${value.id}`;
+        const seen = verdicts.get(pair) ?? new Set<boolean>();
+        seen.add(value.implemented);
+        verdicts.set(pair, seen);
+      }
+    }
+    return verdicts;
+  };
+
+  it('names every value the engine refuses', () => {
+    const open = section();
+    for (const [pair, verdicts] of pairs()) {
+      if (verdicts.has(true)) continue;
+      expect(open.includes(`\`${pair}\``), `ROADMAP.md § 1 does not name ${pair}`).toBe(true);
+    }
+  });
+
+  it('names nothing the engine has started computing', () => {
+    const open = section();
+    for (const [pair, verdicts] of pairs()) {
+      if (verdicts.has(false)) continue;
+      expect(
+        open.includes(`\`${pair}\``),
+        `ROADMAP.md § 1 still calls ${pair} refused, and the engine computes it`,
+      ).toBe(false);
+    }
+  });
+});
