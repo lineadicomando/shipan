@@ -87,13 +87,15 @@ what has been extracted, `docs/sources.md` says what has been read, and
 `docs/provenance.tsv` says what is held and what it is. Reading those three is
 how the next phase finds its starting point.
 
-**Two ways in, and the choice is made per file.** A horizontal simplified
-typesetting goes through `ocrmypdf -l chi_sim` and comes out searchable. A
-vertical woodblock does not — the `_vert` models read those poorly enough that
-a grep against the result is evidence of nothing, which the 儀象考成 attempt
-already established — so what a woodblock is read by is the plate, page by
-page, and the extract that comes out of it is a quotation and not a file. The
-scans that need cutting into quadrants first have `texts/qizheng/ocr-4up.sh`.
+**Two ways in, and the choice is made per file.** A *typeset* page goes
+through `ocrmypdf` and comes out searchable, horizontal under `chi_sim` and
+vertical under `chi_tra_vert` — the second works, on movable type, and it was
+the vertical 1934 typesetting that found the lodge table. A **woodblock** does
+not: the `_vert` models read those poorly enough that a grep against the result
+is evidence of nothing, which the 儀象考成 attempt established, so what a
+woodblock is read by is the plate, page by page, and the extract that comes out
+of it is a quotation and not a file. The scans that need cutting into quadrants
+first have `texts/qizheng/ocr-4up.sh`.
 
 **And a third consideration that outranks both: the scan's own resolution.**
 `ocrmypdf` on the right layout at the wrong resolution produces a file that
@@ -105,20 +107,7 @@ The toolchain the phases below assume: tesseract 5.5.3 with `chi_sim`,
 `chi_tra` and the two `_vert` models, `ocrmypdf` 16, Pillow for the quadrant
 cutting, and `pdftoppm`, `pdfimages` and `gs` for rendering a plate.
 
-### Phase 1 — the 曆 substrate, for `xiudu`
-
-《曆法通志》 (1934, 311 pages, vertical traditional but *movable type*, which
-`chi_tra_vert` handles far better than a block) and 《授時曆故》 (174 sheets,
-woodblock, numerical tables). Both are read for one thing: a 黃道宿度 table
-with a citable epoch. 《萬年曆 中西對照》 is in this phase as an instrument
-rather than a doctrine — a third leg under the pillars, beside
-`lunar-javascript`.
-
-The likeliest outcome is another documented negative, and the register already
-holds one: the only 授時 lodge table on the shelf is the 赤道 one, which is the
-wrong frame. Say so again rather than quietly not looking.
-
-### Phase 2 — the dunjia scans, for `plate`, `centreLodging` and `system`
+### Phase 1 — the dunjia scans, for `plate`, `centreLodging` and `system`
 
 The largest block and the least prepared — eleven files, some three and a half
 thousand pages — so it is ordered by what reads easiest:
@@ -137,7 +126,7 @@ thousand pages — so it is ordered by what reads easiest:
 Ends in whatever it ends in. 年家, 月家 and 日家 奇門 are three systems and not
 one, and a source for one of them lands one value.
 
-### Phase 3 — 《中國絕學》, for a school's name
+### Phase 2 — 《中國絕學》, for a school's name
 
 Eleven volumes, 方外人, 臺北金林文化 1986, about four thousand one hundred
 pages, image-only, twentieth-century school teaching. **Supporting a refusal is
@@ -151,7 +140,7 @@ The volumes that carry 紫微斗數 are the first, sixth, seventh and tenth. The
 rest of the set is 鐵版神數, 奇門易數, 邵子神數, 皇極天書 and 玄空金口訣 —
 arts this project does not compute, read only far enough to say so.
 
-### Phase 4 — 紫微斗數全書, 明南陽堂 woodblock
+### Phase 3 — 紫微斗數全書, 明南陽堂 woodblock
 
 528 pages, one book-page to the page, high-contrast block printing: legible by
 eye, hopeless for OCR. `docs/sources.md` calls it the adjudicator between the
@@ -159,7 +148,7 @@ transcriptions and has already read it in places. This phase is the rest of
 it — collation, against the copies already held, of the passages the two
 transcriptions disagree on.
 
-### Phase 5 — the remainder, read behind no citation
+### Phase 4 — the remainder, read behind no citation
 
 《協紀辨方書》 卷七~卷八 四庫 woodblock, the third 遁甲演義 scan, 大六壬指南 —
 which is not a woodblock facsimile but a 1990 typesetting in simplified

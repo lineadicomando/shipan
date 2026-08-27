@@ -1644,6 +1644,37 @@ alike. `xiudu` keeps `shixian` and `shoushi` as declared values, refused with
 `OPTION_NOT_IMPLEMENTED`, for whenever one of those tables arrives with an
 epoch that can be cited.
 
+**The tables have now been seen, and what they show is why they stay
+refused.** 朱文鑫's 《曆法通志》 (商務印書館 1934), pp. 273–275, prints
+二十八宿黃道距度 for eight 曆 side by side — 漢四分, 隋皇極, 唐麟德, 唐大衍,
+宋應天, 宋紀元, 明大統·新法, 清考成 — all twenty-eight lodges, with the note
+that the 新法 and 考成 columns carry 分 beneath the 度. It is the first complete
+黃道 lodge table of any 曆 on this shelf. Three things it says are worth more
+than the numbers:
+
+- **「元授時黃道度與宋紀元同」.** The 授時曆 did not measure its own 黃道 table;
+  it took the 紀元曆's, which is 1106. So `xiudu: shoushi` would be a table
+  inherited across a hundred and seventy-five years into a 曆 whose whole claim
+  was that it had measured afresh — and the epoch that would have to be cited
+  for it is not the 曆's own.
+- **「非盡由實測，大抵皆由赤道度比例推算也」.** The differences between these
+  tables are not mostly observations disagreeing. They are conversions: 赤道
+  degrees carried into 黃道 by proportion. A 黃道宿度 table is therefore, in
+  general, a derived object twice over — measured on one circle, computed onto
+  another, then inherited.
+- **No epoch is attached to any column.** The refusal names exactly this
+  — «for whenever one of those tables arrives with an epoch that can be cited»
+  — and a comparative table in a 1934 history, however complete, does not
+  supply one. It is also a secondary: 朱文鑫 reading the 志, with nothing here
+  to read beside him.
+
+So the numbers exist and the refusal stands, on firmer ground than before: not
+«the table has not been found» but «the table is an inheritance of a
+conversion, and nobody has said as of when». The 考成 column is the one that
+could be checked without leaving this shelf, since 《儀象考成》 卷一~卷十六 is
+held and its 距星 are the ends of exactly these intervals; that collation has
+not been run.
+
 **A source inside the tradition makes the same argument.** 曹仁麟's
 《星度指南》 prints a 同治甲子黃道新尺歌 — the lodges against the twelve palaces,
 laid for an epoch of 1864 — and then annotates its own table: 「按各宿度，歷數
@@ -3016,7 +3047,7 @@ calendrical layer settles. Recorded as a passage read and not used.
 | the 宜忌 of the twelve officers | the largest thing in the 協紀 and the clearest refusal here: 宜 and 忌 are advice — ordering days, dating an act — which is `purposes.ts`'s line in a second place |
 | the verse's clause order in 涉害 | 「孟深仲淺季當休」 read as evaluation order scores 98.19 % where the grouping this engine uses scores 99.58 %. Both references take the deeper 季; the divergence is recorded rather than resolved by preference |
 | 紫氣 | the rate is settled and 《張果星宗》 and 《三辰通載》 both give a procedure carrying an epoch constant, so the refusal is not for want of a rule. Calibrated together at 1300, the same table's 羅睺 holds to 0.25° through 2026 and its 月孛 drifts to 69°, and nothing weighs 紫氣's own constant because weighing it means having a referent, which is the one thing it lacks. The error on a modern 紫氣 is unbounded in principle rather than merely unknown. See the 四餘 section |
-| 七政四餘 `xiudu` `shixian` · `shoushi` | the boundaries are taken from the 距星 themselves, so no epoch is chosen. The two 曆 tables are declared and refused until one arrives with an epoch that can be cited |
+| 七政四餘 `xiudu` `shixian` · `shoushi` | the boundaries are taken from the 距星 themselves, so no epoch is chosen. The two 曆 tables are declared and refused until one arrives with an epoch that can be cited, and 《曆法通志》's complete eight-曆 table does not: it attaches no epoch to any column, says the 授時's 黃道 degrees are the 紀元曆's inherited, and says the tables are 「非盡由實測，大抵皆由赤道度比例推算」. See the frame section |
 | 七政四餘 `minggong` `ascendant` | 立命 by 加時 is what the texts state and gives a palace. The rising degree is a second method, not a sharper reading of the first. `OPTION_NOT_IMPLEMENTED` |
 | 七政四餘 `gong` `ci` | the 次 as stretches of 宿度 needs the same table `xiudu` is waiting for |
 | 留 | a station is a threshold on the daily motion and no source consulted states one. The speed travels in the output instead |
