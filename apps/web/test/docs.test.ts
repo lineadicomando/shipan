@@ -153,6 +153,21 @@ describe('the documents point where they say they point', () => {
       .filter((target) => !target.startsWith('http'));
   };
 
+  /**
+   * `docs/README.md` is the index, and an index that misses a page is worse
+   * than none: the page it misses is the one nobody finds and everybody
+   * duplicates. The link check below says the table points at files that
+   * exist; this says the files that exist are in the table.
+   */
+  it('docs/README.md lists every page in docs/', () => {
+    const index = read('docs/README.md');
+    for (const entry of readdirSync(join(ROOT, 'docs'))) {
+      if (entry === 'README.md' || entry === 'history') continue;
+      if (!/\.(md|tsv)$/.test(entry)) continue;
+      expect(index.includes(`(${entry})`), `docs/README.md does not list ${entry}`).toBe(true);
+    }
+  });
+
   for (const source of ['CLAUDE.md', 'README.md', 'ROADMAP.md', 'docs/README.md']) {
     it(`${source} links only to files that exist`, () => {
       for (const target of linked(source)) {

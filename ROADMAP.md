@@ -87,21 +87,11 @@ what has been extracted, `docs/sources.md` says what has been read, and
 `docs/provenance.tsv` says what is held and what it is. Reading those three is
 how the next phase finds its starting point.
 
-**Two ways in, and the choice is made per file.** A *typeset* page goes
-through `ocrmypdf` and comes out searchable, horizontal under `chi_sim` and
-vertical under `chi_tra_vert` — the second works, on movable type, and it was
-the vertical 1934 typesetting that found the lodge table. A **woodblock** does
-not: the `_vert` models read those poorly enough that a grep against the result
-is evidence of nothing, which the 儀象考成 attempt established, so what a
-woodblock is read by is the plate, page by page, and the extract that comes out
-of it is a quotation and not a file. The scans that need cutting into quadrants
-first have `texts/qizheng/ocr-4up.sh`.
-
-**And a third consideration that outranks both: the scan's own resolution.**
-`ocrmypdf` on the right layout at the wrong resolution produces a file that
-looks like an extract and is not one. What the run is worth is measured on the
-file before anything is quoted out of it — `texts/README.md` § "`.txt/` and
-OCR" is where the measurements and the confusion classes are kept.
+**How a scan is read is not decided here.** `docs/scans.md` owns it: which of
+the two ways in a file takes, what an extract is for, why a search returning
+nothing is not a negative, and why what a file *is* — how many juan, what the
+pixels are — is settled before a phase is planned around it. Every phase below
+assumes that page.
 
 The toolchain the phases below assume: tesseract 5.5.3 with `chi_sim`,
 `chi_tra` and the two `_vert` models, `ocrmypdf` 16, Pillow for the quadrant

@@ -1,0 +1,170 @@
+# Reading a scan
+
+Most of what this engine stands on was read off a photograph of a page. The
+photographs are not here — `texts/` is excluded, and `docs/sources.md` cites by
+title and never by path — but **the method is, because a method is the part of
+a shelf that is worth sharing.** Somebody who assembles the same files from
+`docs/provenance.tsv` gets the paper and would otherwise have to learn all of
+this again.
+
+This page owns the procedure. What a particular file turned out to be worth —
+this scan is a hundred dots to the inch, this extract loses its branches — is a
+fact about that paper and lives beside it, in the shelf's own register. The
+split is the one `docs/sources.md` already keeps: the argument here, the
+provenance there.
+
+## Two ways in, and a third axis
+
+**A typeset page goes through OCR. A woodblock does not.** That is the whole
+first decision and it is not about the language, the century or the direction
+of the lines:
+
+- **Typeset, horizontal, simplified** — `ocrmypdf -l chi_sim`. The
+  《協紀辨方書》 modern edition and the 《大六壬精解》 both go straight through.
+- **Typeset, vertical, traditional** — `ocrmypdf -l chi_tra_vert+chi_tra`.
+  This works. Over 311 pages of 1934 movable type it returns about three
+  hundred CJK characters to the page with the vocabulary intact, and it is
+  what located a lodge table nobody had opened.
+- **Woodblock, any direction** — do not run it. The `_vert` models over a
+  block-printed 四庫 page return so little that a search against the result is
+  evidence of nothing: 觜 was found on no page of a document where it is
+  legible by eye on many.
+- **Four book-pages to the sheet** — the quadrants have to be cut apart first,
+  or the two columns of book-pages interleave line by line and the reading
+  order is lost. The shelf carries a script for it.
+
+**Resolution is a separate axis and it decides what the first choice is
+worth.** A page can have the easiest layout on the shelf and still yield an
+extract that cannot be quoted. What matters is not the nominal dpi but **how
+many pixels a character gets**, since page sizes differ:
+
+| | pixels to a character | what the extract is |
+|---|---|---|
+| a 1-bit stencil at ~100 dpi | ~25 | four characters in five, and clauses go missing |
+| movable type at 300 dpi | ~70 | a usable index; the tables still come out as noise |
+
+Two measurements do not fix a boundary, and the boundary is somewhere between
+them. What they do fix is the shape: **below about forty pixels a character the
+extract is a finding aid at best, and it can fail in a way the character rate
+does not predict.**
+
+Oversampling does not help. `--oversample 300` and `600` on the hundred-dot
+scan moved the density of expected terms from 5.6 % to 5.3 % to 5.0 %:
+upsampling adds no information the file does not hold.
+
+## An extract locates a passage. It never quotes one.
+
+This is the rule the rest of the page serves. Every line this project has
+quoted out of a scan was read off the plate afterwards, including the lines
+that were found by searching an extract, and including the ones the extract
+appeared to render correctly.
+
+The reason is not the character rate but **where the errors fall**. On the
+hundred-dot scan they concentrate on the branches — 巳 · 己 · 已 read for each
+other, 亥 as 玄 or 诡, 丑 as 开 or 恬, 辰 as 诬 — and on 占 read as 点, 凶 as 内.
+Those are the characters a 六壬 rule is made of. An eighty-per-cent extract of
+a domain whose vocabulary lives in the missing fifth is not eighty per cent of
+a source.
+
+Recurring confusions to search around, from the shelf's own runs: **孛 reads as
+李**, 躔 as 嘿 or 蛀, 戌 as 成 or 皮, 寅 as 賓 or 宇. Search both forms.
+
+**A `.nospace` companion is the one to search.** tesseract puts a space between
+Chinese characters often enough that 二十八宿 matches zero times in the raw
+extract and twelve times with the spaces stripped.
+
+## A search returning nothing is not a negative
+
+**The failure that matters is silent.** An extract can lose a whole clause, not
+merely garble it, and a search that comes back empty then reads as «the text
+does not say this» — which is a finished phase, wrongly.
+
+It has happened here, on the sentence a whole phase existed to find.
+《大六壬精解》 p. 26 prints 「古來亦有更嚴格地准星之出沒或日之出沒而分晝夜者」,
+which is the only attestation on this shelf that the day-and-night division has
+a second school. The extract of that page does not contain the clause at all:
+`日之出没` scores zero against a page that prints it, on a run whose measured
+character rate was four in five.
+
+So a negative result taken from an extract is not a result. **A negative is
+established on the plate**, by looking at the pages the search should have
+found, or by establishing that the section is not in the file at all — which is
+what the next rule is for.
+
+## Reading a plate
+
+Rendering is cheap: `pdftoppm` at 300 dpi runs at about two pages a second,
+which is the same order as OCR. **What costs is the reading**, one page to one
+look, so the method is about spending those looks well.
+
+**A resolution ladder, because one setting does not do both jobs.** At 110–150
+dpi prose is reliable and numerals are not. Twice in four readings this project
+has turned on a single character — 七 against 一 in a calendrical constant, 壬
+against 辛 in a verse — and both were settled only at **400 dpi with the region
+cropped and enlarged threefold**. Prose at 130, numbers at 400, and a crop
+whenever one character decides something.
+
+**A contact sheet is what makes a woodblock affordable.** Eight to twelve pages
+rendered small, the heading corner of each cropped, tiled into one image: one
+look covers ten pages and answers «what section is this», which is the question
+a survey asks. It is how two documented negatives on this shelf were
+established. Its limit is exactly its purpose — **it locates approximately**;
+a section attributed to a page from a contact sheet was twenty pages out, and
+the error appeared the moment the real page was rendered. Locate on the
+contact, read on the page.
+
+## What a file is, before what it says
+
+**A shelf's description of a file is not evidence about the file.** This is the
+rule the four readings behind this page produced most expensively, because
+checking it costs seconds and not checking it cost a phase its purpose.
+
+Of six works opened, four were not what the shelf recorded:
+
+| recorded as | what it is |
+|---|---|
+| 《大六壬精解》, a modern manual | an anthology with a declared bibliography, marking its source per section |
+| 《御定星歷考原》, and the second witness for the 神煞 | 卷一 of six, carrying no 神煞 at all |
+| 《授時曆故》, 黃宗羲 | a 1982 reprint binding that title with three others |
+| 《大六壬指南》, a reprint of the woodblock | a modern typesetting in simplified characters |
+
+The second of those is the case that matters: the work had been acquired **in
+order to** be a second witness for about seventy quantities, and the copy held
+cannot be one. Nothing about the way it was catalogued would have revealed that
+without opening it.
+
+So, before a file is planned around: **`pdfinfo` for the page count, the last
+leaf for the colophon, `pdfimages -list` for what the pixels actually are, and
+a contact sheet for what the sections are.** Four commands, under a minute, and
+they establish extent — which is the thing a plan is a function of. A work in
+six juan and a file with one of them are different objects and only one of them
+is on the shelf.
+
+## What the two cost
+
+Measured on twelve cores, over equal page counts:
+
+| | throughput |
+|---|---|
+| `ocrmypdf -l chi_sim` | 1.7 pages a second |
+| `ocrmypdf -l chi_tra_vert` | 1.35 pages a second |
+| `pdftoppm -r 300` | 1.9 pages a second |
+| a page read off the plate | two to four a minute |
+
+**The bottleneck is not the paper.** Rendering a plate costs what OCR costs;
+what costs is that a plate is read one page at a time while an extract is made
+unattended. On raw page throughput the ratio is between twenty-five and fifty
+to one.
+
+**Which is why they are a sequence and not a choice.** The reading that
+produced the 六壬 entries went: 753 pages to an extract in seven unattended
+minutes, the extract narrowed them to four candidate pages, four plates were
+read, the finding came off the plates. Without the extract, the same coverage
+needs about seventy-five contact sheets. Without the plates, the finding is
+wrong or absent — and on one of those four pages, the sentence that mattered
+was not in the extract at all.
+
+The two failure modes are not symmetric, and that asymmetry is the reason the
+order is fixed rather than a preference. **An extract fails silently**: nothing
+found reads as nothing there. **A plate fails loudly**: an illegible crop is
+visibly illegible, and the answer is to crop again.

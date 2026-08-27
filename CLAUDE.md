@@ -99,6 +99,12 @@ the engine falls back to Moshier, which needs no files.
   pillar in the tests was checked against `lunar-javascript` over two
   centuries. Recalled almanac values were wrong more often than not. →
   [`docs/sources.md`](docs/sources.md)
+- **An extract locates a passage and never quotes one, and a search returning
+  nothing is not a negative.** Text recovered from a photograph is a finding
+  aid: it fails hardest on the characters a rule is made of, and it can lose a
+  clause whole, so a negative is established on the plate or not at all. What a
+  file *is* — how many juan, what the pixels are — is settled before anything
+  is planned around it. → [`docs/scans.md`](docs/scans.md)
 - **A quantity added without an entry in `docs/sources.md` is a quantity
   nobody can weigh, and a row in `docs/sources.tsv` is the other half of the
   entry.** The prose argues it; the row says which rung it stands on, so that

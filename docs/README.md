@@ -13,6 +13,7 @@ or an agent — must be able to tell at a glance whether a page binds them.
 | [`sources.md`](sources.md) | where every number comes from, what it was checked against, and what the checks disagreed about. The register, with licences |
 | [`refusals.md`](refusals.md) | what is deliberately not computed, who asks for it, and why it is not here |
 | [`readings.md`](readings.md) | what happens when a board reaches a model: the three kinds, the one-board rule, what a prompt commissions and forbids |
+| [`scans.md`](scans.md) | how a photograph of a page becomes evidence: which of the two ways in it takes, what an extract is for and is not, and why a search returning nothing is not a negative |
 | [`notes.md`](notes.md) | what this project claims and how the claim is kept honest: the ladder a quantity is weighed on, derived against written, and the date a written entry shows |
 | [`agent-prompt.md`](agent-prompt.md) | the contract a model calling this project has to read first — through MCP or through the REST API |
 | [`sources.tsv`](sources.tsv) | the register as a table: one row a quantity, the rung it stands on, what it was checked against, and the section of `sources.md` that argues it |
