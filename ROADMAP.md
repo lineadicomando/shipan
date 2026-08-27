@@ -239,9 +239,13 @@ with 13.00 and equally on 2.21 with 12.90. And the option has to carry an
 epoch as well as a table, because the source makes its own numbers a function
 of the 歲差 at a chosen moment.
 
-So the errand that remains is a second copy of the 授時 table for one lodge, a
-crop for one pair, and a decision about the parameter's shape. The argument is
-in `docs/sources.md`, in the frame section.
+The pair has since been settled by a crop — 「鬼二　一十一　柳十三」 — so
+twenty-seven of the twenty-eight are read. **The second copy this shelf holds
+cannot supply the twenty-eighth**: 《曆法通志》's table has no 授時 column, only
+a 紀元 one standing in for it under an identification 授時曆故 undercuts. So
+the errand that remains is a copy of the 授時 table this shelf does not have,
+and a decision about the parameter's shape. The argument is in
+`docs/sources.md`, in the frame section.
 
 ## 3. Spanish, once the engine has stopped moving
 

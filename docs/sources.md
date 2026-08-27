@@ -1786,14 +1786,30 @@ the list is a line short on this copy. 10.28 is *recoverable* from the
 subtraction and that is a derivation and not a witness; the entry has to be
 read on another copy before it can be used.
 
-Two cells of the southern seven are under-determined for a different reason:
-the quadrant closes at 109.08 on 鬼 2.11 with 柳 13.00 and equally on 鬼 2.21
-with 柳 12.90, so its own sum cannot choose between them and a crop must.
+Two cells of the southern seven were under-determined for a different reason
+— the quadrant closes at 109.08 on 鬼 2.11 with 柳 13.00 and equally on 鬼 2.21
+with 柳 12.90, so its own sum cannot choose — and the crop chose:
+「鬼二　一十一　柳十三　星六」, so 鬼 is 2.11 and 柳 is thirteen degrees with the
+分 place empty. Twenty-seven of the twenty-eight are now read off the plate,
+and the three quadrants that print all their lodges each close on their own
+entries.
 
-So the value stays refused, and what stands in the way is now enumerable: one
-lodge missing from this print, one pair its arithmetic cannot separate, and an
-option shape that has to carry an epoch as well as a table, because the source
-makes its own numbers a function of a moment. Read on the plate 2026-08-27. The 考成 column is the one that
+**The other copy on the shelf cannot supply it**, and the reason is structural
+rather than a matter of reading. 《曆法通志》's comparative table at its p. 274
+carries eight 曆 and 授時 is not one of them; what stands for it is the 紀元
+column, under 朱文鑫's own 「元授時黃道度與宋紀元同」 — the identification this
+work undercuts by describing its 黃道 degrees as computed rather than taken
+over. Reading 參 out of that column would be borrowing a number across an
+equation the primary disputes, which is the derivation problem again with one
+more step in it. The cells spot-checked there do differ from 授時曆故's, by the
+small amounts a conversion would produce, but that is a comparison read at
+survey resolution and it is recorded as a reason not to lean on the column
+rather than as a measurement.
+
+So the value stays refused, and what stands in the way is now two things and
+not three: 參, which this print does not carry and this shelf cannot supply,
+and an option shape that has to hold an epoch as well as a table, because the
+source makes its own numbers a function of a moment. Read on the plate 2026-08-27. The 考成 column is the one that
 could be checked without leaving this shelf, since 《儀象考成》 卷一~卷十六 is
 held and its 距星 are the ends of exactly these intervals; that collation has
 not been run.
