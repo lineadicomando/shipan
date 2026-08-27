@@ -390,7 +390,7 @@
     <fieldset>
       <legend>{t('form.interval')}</legend>
 
-      <div class="row">
+      <div class="row interval">
         <label>
           {t('form.from')}
           <input type="date" bind:value={asked.from} required />
@@ -651,10 +651,25 @@
        note in `MomentForm`. */
     min-inline-size: 0;
   }
+  /*
+   * The interval is not three fields of one width.
+   *
+   * A date is eight characters whatever the panel does, and the two of them
+   * held a fifth of the row each for no reason; a place is a name somebody is
+   * typing, and it is the one of the three that gains anything from the room.
+   * They still wrap one to a line where three do not fit, which is what the
+   * columns above were for.
+   */
+  .interval { display: flex; flex-wrap: wrap; }
+  .interval > label { flex: 0 1 13rem; }
+  .interval > :global(.search) { flex: 0 1 24rem; min-inline-size: 0; }
   /* Fields hang from the top of the row, whatever grows below one of them. */
   .row > :global(*) { align-self: start; }
   label { display: grid; gap: 0.2rem; font-size: 0.9em; color: var(--faint); }
   label :global(input), label :global(select) { color: var(--ink); }
+  /* Eight characters go in it. The width of the same field in every other
+     form on this site, and not the width of the fieldset it stands in. */
+  .birth { max-width: 13rem; }
   fieldset {
     border: 1px solid var(--rule);
     /* The border is inset by a rem on a page that may have three to spare. */
