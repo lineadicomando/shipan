@@ -289,8 +289,9 @@ volumes alternates sides. Every survey in phases 30 to 32 was made of it.
 
 The largest block — eleven files, some three and a half thousand pages, of
 which one is extracted and **all are now surveyed**. Two passes changed what
-this section is: the extent pass found 御定奇門寶鑑 to be one 冊 of eight and the
-third 遁甲演義 to be 卷一 alone, and the survey that followed it read the three
+this section is: the extent pass found 御定奇門寶鑑 to be one 冊 of eight — **which
+opening it has since corrected to one of two** — and the third 遁甲演義 to be
+卷一 alone, and the survey that followed it read the three
 故宮 volumes' 新編目錄 off their last leaves and took a contact sheet across the
 three 遁甲集成 volumes.
 
@@ -442,13 +443,17 @@ two and not alone.
 eighteen are the whole 三元定局 printed inside out — seventy-two cells, all read
 and all agreeing with the table `ju.ts` ships. Its 陰遁 boards give the centre's
 decade 坤二's 死門, which is the first witness for `centreLodging: kun` that is a
-yin board rather than a rule stated without a condition, and `dun` is still what
-nobody states. And its 卷之五 opens on a 三元訣 whose first line is cut 坤 where
+yin board rather than a rule stated without a condition. **`dun` was what
+nobody stated and 《御定奇門寶鑑》 states it** — see below. And its 卷之五 opens on
+a 三元訣 whose first line is cut 坤 where
 the parallel with 仲 and 季 wants 孟 — on the only reading that parses it gives
 the yuan the anchor 遁甲演義 assigns to its 月家 and not the one that book gives
 its 時家, which is what this engine computes. **Nothing moves on the third**: it
 is one leaf against a prose statement and two implementations, and it is written
-down so that a second witness has somewhere to arrive.
+down so that a second witness has somewhere to arrive. **It has arrived, and it
+closes the question rather than leaving it unmoved**: 《御定奇門寶鑑》卷二 定三元法
+states 子午卯酉上元 · 寅申巳亥中元 · 辰戌丑未下元 in prose and works the five-day
+count under it.
 
 **And it dissents on the 八神 too, differently from 第429冊 and differently from
 what its 目錄 suggested.** That 目錄 gives a juan each to eight spirits — 直符
@@ -511,12 +516,26 @@ PDF offset and the block layout.
   campaign, a journey — which is the reading layer this project refuses. Not an
   errand except for the 八神 sweep named above.
 
+**《御定奇門寶鑑》 has been opened and it was worth the errand, which is where
+this phase now ends.** It was last on the list because the shelf had it as one
+冊 of eight; its title page says 共二冊 and its 新編目錄 says the half held is
+卷一至卷六 entire — all the prose, and only twelve of the eighteen tables
+missing. 卷二's 起例 paid three things at once: 「陽遁陰遁俱寄坤宮。一本陰遁寄
+艮」, which is the plainest `centreLodging: kun` on the shelf **and the first
+attestation of the value the parameter refuses**; 「甲辰在中宮，寄於坤二，天禽為
+本旬直符」, which lodges the 符 and 使 out of the fifth palace and is the
+counter-witness 《金鏡寶鑑》's palace 5 did not have; and 定三元法 in prose, which
+closes the 三元訣 question above. Its 八神 are a fifth convention — eight names in
+both dun, the yin counted backwards, and 「朱雀下有元武，勾陳下有白虎」 as a
+gloss — pairing the seats as this engine does for the third time in print.
+Everything is in `docs/sources.md`. **What is left in it is 卷二's remaining
+起例 entries**, which is where a 飛 procedure would be if it had one; 卷三 to
+卷六 are 斷 material by their headings.
+
 **What is unopened, so the next pass starts rather than reconstructs.** Every
 volume above has been surveyed and its sections named; these are the works
 inside them that nobody has read a page of, largest first:
 
-- 《御定奇門寶鑑》 第一冊, 373 pages of Qing imperial woodblock — one 冊 of
-  eight, so a procedure that runs across the set may not be in the part held.
 - 第429冊's other three: 奇門遁甲 十卷 (to its p. 128), 奇門遁甲備覽, 奇門遁甲
   捷要. The 全局 in the same volume was read and carries no procedure, which is
   weak evidence about its neighbours and not none.

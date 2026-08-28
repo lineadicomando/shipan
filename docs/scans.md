@@ -187,7 +187,7 @@ first six of them while this page was being written:
 | 《御定星歷考原》, and the second witness for the 神煞 | 卷一 of six, carrying no 神煞 at all |
 | 《授時曆故》, 黃宗羲 | a 1982 reprint binding that title with three others |
 | 《大六壬指南》, a reprint of the woodblock | a modern typesetting in simplified characters |
-| 《御定奇門寶鑑》 第一冊 | one 冊 of eight, which its own record page states |
+| 《御定奇門寶鑑》 第一冊 | one 冊 of **two**, which its title page states. The record page's «全8冊» is the price line for the reprint series' subject group, and the shelf read it as the work's own division — an entry can be wrong about a file *from* the file |
 | 《遁甲演義》, a third scanned edition | 卷一 alone, which its closing leaf states |
 | 《奇門遁甲秘笈大全》, 故宮珍本叢刊 第427冊 | that work in 二十三卷, and then a second the entry did not name: 《諸葛武侯行兵遁甲金函玉鏡》 in 六卷, a cursive manuscript hand |
 | 《遁甲集成》第三冊, «奇門遁甲» | 遁甲符應經 from its p. 1136, and 年家 · 月家 · 日家 tables under no title leaf, dated to the Kangxi reign |

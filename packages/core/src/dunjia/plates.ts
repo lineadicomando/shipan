@@ -97,9 +97,12 @@ export type SpiritId =
  * 《奇門遁甲金鏡寶鑑》 pairs the seats exactly as this file does — 勾陳 with
  * 白虎, 朱雀 with 玄武 — and then decides between the two names by **what is
  * being asked** rather than by the dun: 「如占病、占賊，則勾、雀二神可換虎、
- * 武用」, stated once for each dun. So the disagreement is not over which eight
- * names exist but over which fact selects the middle pair, and a parameter
- * naming rosters would not express it. Two readers draw different boards from
+ * 武用」, stated once for each dun. 《御定奇門寶鑑》卷二 pairs them the same way
+ * again — 「朱雀下有元武。勾陳下有白虎」 — and needs no trigger at all: its eight
+ * names stand in both dun and the yin board only reverses the order they are
+ * counted in, which lands on the seats this ring lands on. So the disagreement
+ * is not over which eight names exist but over which fact selects the middle
+ * pair, and a parameter naming rosters would not express it. Two readers draw different boards from
  * the same instant and nothing in the output says which convention drew this
  * one, which `CLAUDE.md`'s rule forbids. Declaring it costs a field in this
  * board's input type; `ROADMAP.md` § 1 carries the debt and `docs/sources.md`
