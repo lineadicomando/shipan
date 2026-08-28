@@ -100,6 +100,9 @@ make late — so they are named here and paid together, not one at a time.
   that it is «a divergence this engine does not yet expose». Other traditions
   keep one pair in both dun, and 《奇門遁甲全局》 — read on the plate, see
   `docs/sources.md` — is a third: 白虎 at the fifth seat and 勾陳 at the sixth.
+  **And 《奇門遁甲金鏡寶鑑》 is the «other traditions» named**: its 目錄 gives a
+  juan each to 直符 螣蛇 太陰 六合 勾陳 朱雀 九地 九天, with 白虎 and 玄武 nowhere
+  in it and no clause anywhere about which dun the board is.
 - 奇門, **where earth's season begins**. `seasonElement` gives the four months
   that close the seasons — 辰, 未, 戌, 丑 — to earth entire, and `strength.ts`
   records that other schools give earth only the last eighteen days of each
@@ -138,6 +141,15 @@ engine leaves them at the centre. The outer eight agree either way.
   itself, which is the second thing the standard accepts. A print is wanted
   before the value is implemented; the parameter can be declared and refused
   before that, and it shares 奇門's input type with the two above.
+  **The print has arrived.** 《奇門遁甲金鏡寶鑑》 — 故宮 第426冊, Qing imperial
+  woodblock, opened for a different errand — tabulates all eighteen 局 as a
+  起星訣 and a 起門訣, and states the same side as a rule for every hour rather
+  than as an assumption in a worked chart: the 直符 star stands at 五 when the
+  hour's stem is the centre's, the 直使 gate lands on 五, and 天禽 leaves the
+  centre and travels the whole 甲辰壬 decade. 陽遁一局 was read whole and run
+  against the engine — all six stars and all six gates agree by name, and every
+  one of the twenty palace disagreements is that one fact. See § 2 phase 1 and
+  `docs/sources.md`.
 
 So the field 奇門 owes is not one but three values' worth of divergence, and
 that is the argument for paying them in one movement.
@@ -157,9 +169,10 @@ earth plate, the heaven plate and the nine stars — including all 147 charts
 where a stem sits in the centre.** This engine's convention has a runnable
 second, tested where the question arises rather than incidentally.
 
-The value is still owed and can still be declared and refused, since one
-transmitted worked example states the other side. It is further from being
-implemented than it looked.
+The value is still owed and can still be declared and refused, and what states
+the other side is no longer one transmitted worked example: a Qing imperial
+print states it as a table. Both sides are now attested by something that is
+not an implementation's preference, which is what a parameter is for.
 
 `method: maoshan` is in the table and is not expected to leave it: there is no
 reference against which a 茅山 chart could be falsified. See
@@ -359,13 +372,41 @@ read** — a character in them gets about fifteen pixels where `docs/scans.md`
 sets forty as the floor — so the wholesale check this line used to promise is
 not something the file can support. Both are in `docs/sources.md`.
 
+**And the biggest of them has been opened, which is where this phase now
+stands.** 《奇門遁甲金鏡寶鑑》, 十六卷, 郁離子伯溫 輯, in 故宮 第426冊 from its
+p. 259 — the one a 飛盤 procedure was likeliest to be in. **It states the
+turning instead**, in so many words: 卷之三 has 「以星為直符加時干而轉天盤九星…
+隨時轉運變化無窮」, 轉 twice and 飛 nowhere. So the value's likeliest
+volume is a documented negative and a witness for what this engine does.
+
+**What it paid instead is the palace-5 value, and it paid it in the coin that
+was asked for.** 卷五 to 卷八 tabulate all eighteen 局 as a 起星訣 and a 起門訣 —
+each decade's 直符 star or 直使 gate by name, then the ten hours with the palace
+each stands in — and 陽遁一局 was read whole and run against the engine: all six
+stars and all six gates agree by name, **and every one of the twenty palace
+disagreements is one fact**. This print counts the centre as a station a moving
+plate can stand in. The 直符 star goes to 五 when the hour's stem is the one the
+ju puts there, the 直使 gate lands on 五 when its count reaches it, and 天禽
+**leaves** the centre and travels the whole 甲辰壬 decade with the hour's stem.
+That last is the 元靈經 reading, and this line used to say a print was wanted
+before the value was implemented. This is that print — a Qing imperial
+woodblock, stating as a table for every hour of every 局 what 元靈經 assumes in
+two worked examples. The value is still declared and refused, for the reason it
+always was: it is a field in 奇門's input type, and it is paid with the other
+two and not alone.
+
+**And it dissents on the 八神 too, differently from 第429冊.** Its 目錄 gives a
+juan each to eight spirits — 直符 螣蛇 太陰 六合 勾陳 朱雀 九地 九天 — with no
+白虎 and no 玄武 anywhere in it, and the chapters are written for a spirit over a
+gate with no clause about which dun the board is. So three conventions on the
+middle pair are now held: this engine's, 全局's, and one set of eight used in
+both. Three is what makes it a divergence between practitioners rather than a
+preference. Everything above is in `docs/sources.md`.
+
 **What is unopened, so the next pass starts rather than reconstructs.** Every
 volume above has been surveyed and its sections named; these are the works
 inside them that nobody has read a page of, largest first:
 
-- 《奇門遁甲金鏡寶鑑》, 十六卷, in 故宮 第426冊 from its p. 259. The biggest
-  unopened dunjia work on the shelf, and the one a 飛盤 procedure is likeliest
-  to be in if it is anywhere here.
 - 《御定奇門寶鑑》 第一冊, 373 pages of Qing imperial woodblock — one 冊 of
   eight, so a procedure that runs across the set may not be in the part held.
 - 第429冊's other three: 奇門遁甲 十卷 (to its p. 128), 奇門遁甲備覽, 奇門遁甲

@@ -228,6 +228,14 @@ make 元靈經 wrong — it makes the other side better attested than the regist
 could previously say. The value can be declared and refused on the strength of
 one witness; it is further than ever from being implemented. Run 2026-08-28.
 
+**A print has since arrived on 元靈經's side and the witness is no longer
+single.** 《奇門遁甲金鏡寶鑑》 tabulates 值符隨時干 for every hour of every 局,
+carrying the star into the centre and out of it; two sections below says what
+that is worth. It does not undo the run above — an engine and a runnable
+reference still agree over the 147 charts — and it does move the divergence from
+one transcription against two implementations to a transcription and a Qing
+imperial woodblock against them.
+
 *Three conventions it does not share, none of them a defect in either*: it
 merges 天芮 and 天禽 into one cell and leaves the centre starless where this
 engine keeps 天禽 at the centre; it writes 白虎 and 玄武 in both dun where this
@@ -306,6 +314,113 @@ palace 1 of that ju. That is one cell of nine and it is reported as one cell of
 nine. **The file cannot support the wholesale check the roadmap expected of
 it**, and the prose beside each chart is what it can support instead. Read on
 the plate 2026-08-28.
+
+### The imperial print that states the turn, and counts the centre in
+
+《奇門遁甲金鏡寶鑑》, 十六卷, 郁離子伯溫 輯 — 故宮珍本叢刊 第426冊, from that
+volume's page 259, bound behind the photographic 統宗 read above. It was the
+largest unopened dunjia work on the shelf, and what sent somebody to it was
+`plate: fei`. **It does not carry a flying procedure.** 卷之三 states how a
+board is laid, and states it as a turning:
+
+> 奇門遁甲之法，依三元經，按七十二候，用九宮排山九宮掌訣。每以甲己為符頭，
+> 陰陽分布，以求奇儀。以星為直符，加時干而轉天盤九星；以門為直使，加時支
+> 而定八門。隨時轉運，變化無窮。
+
+That is 轉 twice and 飛 nowhere, in the work a flight was likeliest to be in if
+it were anywhere on this shelf. A documented negative for the value, and a
+transmitted witness for the turn this engine performs. Series p. 293.
+
+**The same leaf names all six decades, and the centre's is among them.** 「如甲
+子時起坎一宮，即以天蓬為直符，休門為直使」 and so through 甲戌 坤二 天芮 死門,
+甲申 四巽 天輔 杜門, 甲寅 六乾 天心 開門 — and, in the middle of the list with
+no remark on it, 「甲辰時起中五宮，則以天禽為直符，死門為直使」. The centre's
+decade takes 天禽 for its star and 坤's 死門 for its gate, which is this engine's
+pair and the pair 《統宗》 and 《秘笈大全》 give. A third transmitted voice, and
+the first to say it inside an enumeration of all six rather than as a remark
+about the centre.
+
+**And then it tabulates, which is what makes it collatable.** 卷之五 to 卷之八
+give each of the eighteen 局 a 起星訣 and a 起門訣: for each of the six decades,
+the 直符 star or the 直使 gate by name, then the ten hours of the decade each
+with the palace it stands in. Sixty numbers to a table, two tables to a 局.
+陽遁一局 was read whole off series pp. 317–319 and run against the engine.
+
+| | agree | differ | of |
+|---|---|---|---|
+| 直符 star, by name | 6 | 0 | 6 |
+| 直使 gate, by name | 6 | 0 | 6 |
+| the 直符 star's palace | 47 | 13 | 60 |
+| the 直使 gate's palace | 53 | 7 | 60 |
+
+**Every one of the twenty disagreements is the same fact, and one of them is a
+cutting error.** This print counts palace 5 as a place a moving plate can stand
+in; this engine reads a palace named as the centre at its host 坤二 and never
+lets the turn reach the ninth seat. So:
+
+- Where the hour's stem is the one the ju puts in the centre — 壬 in 陽遁一局 —
+  the text stands the 直符 star at **五** and this engine stands it at 二.
+  Five hours of the sixty, once in each decade that is not the centre's.
+- Where the count of the 直使 gate lands on the centre, the same: 戊辰五, 丁丑五,
+  丙戌五, 乙未五, 壬戌五, and the centre decade opening on 甲辰五. Six hours,
+  and this engine lodges all six into 二.
+- **And the centre's decade empties.** 天禽 is the 直符 of the 甲辰壬 decade and
+  stands at 五 at 甲辰時 — then 乙巳九, 丙午八, 丁未七, through the whole decade,
+  travelling to the hour stem's palace like any other star. This engine holds
+  天禽 at the centre for all ten hours. Eight of the thirteen star disagreements
+  are that one decade.
+
+That third bullet **is the 元靈經 reading, in print.** 《奇門遁甲元靈經》 states
+it in two worked examples, and the register weighs that witness as what it is —
+a transcription of unstated provenance which checks itself. `ROADMAP.md` said a
+print was wanted before the value was implemented. This is that print — a Qing
+imperial woodblock, stating the same thing not once in a worked chart but as a
+table covering every hour of every 局. The two halves of the divergence turn
+out to be one rule stated at both ends: 值符隨時干 holding unconditionally
+carries the star **into** the centre when the hour's stem is there and **out**
+of it when the 符頭 is, and this engine's ring of eight does neither.
+
+**What moves is the evidence and not the code.** The value is still declared
+and refused, because implementing it changes what 值符, 值使, the heaven plate
+and the star plate report on every chart where the question arises, and that is
+a board's input type gaining a field — see `ROADMAP.md` § 1, which pays it with
+the two other 奇門 divergences and not alone. What has changed is that the
+witness is no longer single and no longer a transcription.
+
+**The 八神 are named once and there are eight names.** 卷之九 to 卷之十六 give a
+juan each to a spirit — 直符, 螣蛇, 太陰, 六合, 勾陳, 朱雀, 九地, 九天 — and the
+work's own 目錄 enumerates exactly those eight. 白虎 and 玄武 are in neither the
+目錄 nor any chapter heading, and the chapters are written for a spirit standing
+over a gate with no clause anywhere about which dun the board is: 卷之九 opens
+「天乙直符，三軍司命，乃天醫大神」 and goes straight to 直符臨休門. So a board of
+either dun read with this book has only 勾陳 and 朱雀 available where this engine
+writes 白虎 and 玄武 in a yin chart. Whether the prose of 卷一~卷三 anywhere
+gives the alternative names is **not established** — that would be a negative,
+and a negative is established by sweeping the plate, which has not been done.
+What the 目錄 does establish is the shape: one set of eight, and this is which
+eight.
+
+That makes three conventions on the middle pair now held in print or code —
+this engine's 陰陽異名, 《奇門遁甲全局》's yang board keeping 白虎 and shifting
+勾陳 a seat, and this work's single set of eight with the 勾陳/朱雀 pair in both
+dun. Three is what `CLAUDE.md`'s narrowed rule calls a divergence between
+practitioners.
+
+**What the print's own defects are worth saying.** The 陽遁一局 起門訣 closes its
+甲辰 decade on 癸丑**八** where the run gives 五, read at 600 dpi and not a
+rendering artefact: a cut number, and the one disagreement in the collation
+above that is neither convention nor engine. The 起星訣 of the same 局 cuts
+丙**子** for 丙午 and carries the 午 written in beside it by hand, so the copy
+photographed had a reader. Two slips in a hundred and twenty cells is what a
+wholesale collation of the other seventeen 局 would have to be read against.
+
+**And the file supports that collation, which 第429冊 did not.** One book-page
+to the block, two blocks to the sheet, 983 × 1530 at 300 dpi, and a table
+character gets well over the forty pixels `docs/scans.md` sets as the floor —
+every number quoted above was confirmed on a 600 dpi crop. The 版心 carries
+**奇門大全** and the juan on every leaf, which is not the title on the title
+page and is the running title the survey was navigated by. Read on the plate
+2026-08-28.
 
 ### 置閏 has a dated worked example, and it moves the pin by a day
 

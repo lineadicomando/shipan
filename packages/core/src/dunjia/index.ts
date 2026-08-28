@@ -64,13 +64,16 @@ export interface PalaceContents {
    * decides. It is said here in the second place it is read, and not moved
    * out of the first: `palace 5` still carries it.
    *
-   * **That divergence now has a witness and owes a parameter.**
+   * **That divergence now has two witnesses and owes a parameter.**
    * 《奇門遁甲元靈經》 works two examples out in full; both agree with this
    * engine on the earth plate palace for palace and on the 值符 star and the
    * 值使 gate, and where the 符頭 stands in the centre the text carries its
    * stem and its star to the hour's palace — 「以中宮之癸加兌宮丙上為值符…
    * 又以天禽加兌」 — where this engine leaves them at the centre. The outer
-   * eight agree either way. `ROADMAP.md` § 1 carries the debt and
+   * eight agree either way. 《奇門遁甲金鏡寶鑑》 then states the same side as a
+   * rule rather than an example: its 起星訣 stands the 值符 at 五 whenever the
+   * hour's stem is the centre's, and walks 天禽 out of the centre through the
+   * whole decade it heads. `ROADMAP.md` § 1 carries the debt and
    * `docs/sources.md` the collation.
    */
   lodged?: Stem;

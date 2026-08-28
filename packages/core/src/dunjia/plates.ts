@@ -92,9 +92,11 @@ export type SpiritId =
  * half of the year runs, 白虎 and 玄武 while the yin half does.
  *
  * **Other traditions do it otherwise, and this is a divergence between
- * practitioners, so it owes a parameter it does not have.** Some keep one pair
- * in both dun; 《奇門遁甲全局》, read on the plate, is a third reading, holding
- * 白虎 at the fifth seat and putting 勾陳 at the sixth. Two readers draw
+ * practitioners, so it owes a parameter it does not have.** 《奇門遁甲金鏡寶鑑》
+ * keeps one pair in both dun, giving a juan each to 直符 螣蛇 太陰 六合 勾陳
+ * 朱雀 九地 九天 and naming 白虎 and 玄武 nowhere; 《奇門遁甲全局》, read on the
+ * plate, is a third reading, holding 白虎 at the fifth seat and putting 勾陳 at
+ * the sixth. Two readers draw
  * different boards from the same instant and nothing in the output says which
  * convention drew this one, which `CLAUDE.md`'s rule forbids. Declaring it
  * costs a field in this board's input type; `ROADMAP.md` § 1 carries the debt
