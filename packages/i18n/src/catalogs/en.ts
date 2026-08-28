@@ -896,7 +896,13 @@ export const en = {
   // would name the same object with each other's word. What is tactical about
   // it is what the art was made for, and the paragraph under this says so.
   'h1.qimen': 'Qi Men Dun Jia — the spatio-temporal tactical chart',
-  'h1.liuren': 'Da Liu Ren — the board of an instant',
+  // **«Board», where the line arrived saying «oracle».** That word is refused
+  // in the head of every page by `meta.test.ts`, on the argument in
+  // `docs/refusals.md`: what is laid here is an arrangement, and what is made
+  // of it is the reader's. A heading is not the `<title>` and the test does
+  // not reach it, which is the reason to hold it to the same word rather than
+  // the reason not to — this line is also the one that goes on paper.
+  'h1.liuren': 'Da Liu Ren — the board of human affairs and events',
   'h1.taiyi': 'Tai Yi Shen Shu — the board of a year',
   'h1.qizheng': 'Qi Zheng Si Yu — the seven governors and the four remainders',
   'h1.ziwei': 'Zi Wei Dou Shu — the twelve seats of a birth',
@@ -1012,10 +1018,20 @@ export const en = {
   'meta.title.liuren': 'Da Liu Ren — cast a board',
   'meta.description.liuren':
     'Cast a Da Liu Ren board for any instant and place: the twelve branches turned by the general of the month, the four lessons, and the three transmissions.',
+  // **Four lessons and three transmissions, which is what the board under
+  // this calls them.** The paragraph arrived with «the Four Stems (Four
+  // Columns)» and «the Three Passes»: 四課 are not columns — 四柱 are, and
+  // those are the four pillars of a 八字 — so a reader given one word here
+  // and another on the board has been handed two arts folded into one, which
+  // is the error this project names in every other place it could occur.
   'meta.intro.liuren.a':
-    '大六壬 dà liùrén turns the twelve branches by the general of the month, reads four lessons off the turn, and draws three transmissions from them by nine named rules.',
+    'Belonging to the triad of the Three Arts 三式 sānshì, 大六壬 dà liùrén is the discipline for understanding human affairs and everyday matters in fine detail. By reading the heaven plate turned over the earth, the four lessons and the three transmissions, it shows the origin, the development and the final outcome of a situation.',
+  // What it no longer says is that no birth is asked for. The form does not
+  // ask for one, so nothing on the page implies the graft the sentence was
+  // declining — and `docs/refusals.md` and the notes are where the argument
+  // lives. What is said here is what the reader does with a board.
   'meta.intro.liuren.b':
-    'Give a moment and a place. No birth is asked for: the querent already stands on the day stem, and a second name for one person invents a relation.',
+    'Generate a Liu Ren board here to examine the hidden dynamics of an event, a relationship or a practical question.',
 
   'meta.title.taiyi': 'Tai Yi Shen Shu — the board of a year',
   'meta.description.taiyi':

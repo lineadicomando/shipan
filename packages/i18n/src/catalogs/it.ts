@@ -825,7 +825,12 @@ export const it: Record<MessageKey, string> = {
   // contiene due tavole è un lettore che rilegge la frase. L'inglese fa lo
   // stesso scambio per una ragione diversa, argomentata in `en.ts`.
   'h1.qimen': 'Qi Men Dun Jia: la carta tattica spazio-temporale',
-  'h1.liuren': 'Da Liu Ren: il quadro di un istante',
+  // «Quadro», dove la riga è arrivata dicendo «oracolo»: la parola è rifiutata
+  // in testa a ogni pagina, e la ragione sta in `en.ts` e in
+  // `docs/refusals.md`. «Quadro» è anche la parola con cui questo catalogo
+  // chiama la tavola del 六壬 dappertutto — la description la usa, il modulo
+  // la usa, la pagina la stampa sopra il disegno.
+  'h1.liuren': 'Da Liu Ren: il quadro delle relazioni e degli eventi umani',
   'h1.taiyi': 'Tai Yi Shen Shu: la tavola di un anno',
   'h1.qizheng': 'Qi Zheng Si Yu: i sette governatori e i quattro residui',
   'h1.ziwei': 'Zi Wei Dou Shu: i dodici seggi di una nascita',
@@ -951,10 +956,20 @@ export const it: Record<MessageKey, string> = {
   'meta.title.liuren': 'Da Liu Ren: stendi un quadro',
   'meta.description.liuren':
     'Stendi un quadro Da Liu Ren per un istante e un luogo qualsiasi: i dodici rami girati dal generale del mese, le quattro lezioni e le tre trasmissioni.',
+  // Quattro lezioni e tre trasmissioni, che è come le chiama il quadro qui
+  // sotto: la frase è arrivata con «le Quattro Colonne» e «i Tre Passaggi»,
+  // e le colonne sono i quattro pilastri del 八字. L'argomento per esteso sta
+  // in `en.ts`. «Tavola di cielo» e «tavola di terra» per la stessa ragione:
+  // sono le parole della sezione 奇門遁甲 e della riga «cielo sopra terra» che
+  // il quadro stampa, e un piatto sarebbe la terza parola per la stessa cosa.
   'meta.intro.liuren.a':
-    'Il 大六壬 dà liùrén gira i dodici rami secondo il generale del mese, legge quattro lezioni sulla rotazione e ne trae tre trasmissioni per mezzo di nove regole nominate.',
+    'Appartenente alla triade dei Tre Sistemi 三式 sānshì, il 大六壬 dà liùrén è la disciplina dedicata alla comprensione dettagliata delle vicende umane e della vita quotidiana. Attraverso la lettura della tavola di cielo girata su quella di terra, delle quattro lezioni e delle tre trasmissioni, mostra la genesi, lo sviluppo e l’esito finale di una situazione.',
+  // Quel che non dice più è che non si chiede nessuna nascita. Il modulo non
+  // la chiede, quindi niente sulla pagina lascia intendere l'innesto che
+  // quella frase rifiutava, e l'argomento sta in `docs/refusals.md` e nelle
+  // note. Qui si dice che cosa ne fa chi legge.
   'meta.intro.liuren.b':
-    'Dai un momento e un luogo. Non si chiede nessuna nascita: chi domanda sta già sul tronco del giorno, e un secondo nome per la stessa persona inventa una relazione che non c’è.',
+    'Genera qui il quadro per analizzare le dinamiche nascoste di un evento, una relazione o una questione pratica.',
 
   'meta.title.taiyi': 'Tai Yi Shen Shu: la tavola di un anno',
   'meta.description.taiyi':
