@@ -1619,24 +1619,98 @@ export const en = {
   'notes.column.standsOn': 'Stands on',
   'notes.column.checkedAgainst': 'Checked against',
 
-  'privacy.title': 'Privacy',
-  'privacy.nothing':
-    'Nothing you type is stored. Dates, times and places — including a date of birth, if you give one so that a chart can say where it falls — travel in the address of the page, are used to compute an answer, and are not written to any database or log kept by this site.',
-  'privacy.address':
-    'Because the parameters are in the address, a link to a chart carries a date, a time and a place with it — and if you gave coordinates, it carries those, which name a doorstep rather than a town. Share one only with someone you would tell those things to.',
-  // The one thing on this site somebody types that is not a date or a place.
-  'privacy.prompt':
-    'The question you write for a prompt does not leave your browser. The server is told that a question exists, so that the prompt can end on the line that introduces one, and never what it is; the browser adds the sentence itself before putting the whole thing in your clipboard. This site talks to no AI and sends nothing to one — where you paste it afterwards is between you and whoever receives it.',
-  // Two things now, where this said one for a long time. The count is the
-  // whole point of the sentence, so it moves when the number does.
-  'privacy.storage':
-    'One thing is kept in your browser because you asked for it: the appearance you chose, under the key {key}. Setting the appearance back to automatic deletes it.',
-  // The second, and the paragraph is mostly about what it is not. Somebody
-  // who reads that a site can be installed and works without a connection
+  // The privacy note, and it is the one page here written to be held against a
+  // regulation rather than read for pleasure. It is numbered, sectioned and
+  // headed because that is the shape somebody checking a GDPR obligation comes
+  // looking for; what it must not become is a shape that says something untrue
+  // to fit the form. Two places where the form pulls that way are answered
+  // below, at `inputs.local` and at `controller.who`.
+  'privacy.title': 'Privacy and data protection',
+  'privacy.gdpr':
+    'Under the General Data Protection Regulation (EU 2016/679), this page states how this site handles the privacy and the security of the data of whoever reads it.',
+  // The whole page in three lines, for the reader who wants the answer and not
+  // the argument. Everything under it is this sentence with its workings shown.
+  'privacy.summary':
+    'In short: it is built to keep nothing. No personal data, no date of birth, no place and no text you type is written to a server here or to any database.',
+
+  'privacy.controller.title': '1. Who the controller is',
+  // «Whoever runs this copy» and not a name. The address under it is read from
+  // `PUBLIC_SOURCE_URL` so that a fork points at itself — and a fork's reader
+  // is owed the controller of the copy they are talking to, who is not this
+  // project's author. `lib/author.ts` refuses the same graft in the other
+  // direction, and for the same reason.
+  'privacy.controller.who':
+    'The controller is whoever runs this copy of shipan, an open-source project. For anything to do with privacy, the channels are the ones named in the source of the copy you are talking to:',
+  'privacy.controller.repository': 'the source of this copy',
+
+  'privacy.data.title': '2. What is asked for, and what becomes of it',
+
+  'privacy.inputs.title': 'A. What a board is cast from: dates, times and places',
+  'privacy.inputs.lead':
+    'Everything you enter for a board to be laid — the date, the hour and the minute, and the place as coordinates:',
+  // **Not «processed locally», which would be false here.** The engine is on
+  // the server: the parameters reach it in the query string, and this site
+  // cannot lay a board without a connection — the offline page says so in two
+  // languages. What is true is the second half, that none of it is kept, and a
+  // privacy note that overstated the first half would be worth nothing on the
+  // second. Said plainly, since a reader who finds out otherwise is entitled
+  // to stop believing the rest of the page.
+  'privacy.inputs.local': 'Computed, and not kept',
+  'privacy.inputs.local.means':
+    'It travels in the address of the page to the server, which computes a board from it and keeps none of it. The engine runs there and not in your browser, which is why no board can be laid without a connection.',
+  'privacy.inputs.stored': 'Written nowhere',
+  'privacy.inputs.stored.means':
+    'None of it is written to a database, to a system log, or to any other server.',
+  'privacy.inputs.address': 'It is in the address',
+  'privacy.inputs.address.means':
+    'The parameters are encoded in the URL so that a board can be bookmarked or shared, which means that sharing the link shares the coordinates and the hour that produced it — and coordinates name a doorstep rather than a town. Share one only with someone you would tell those things to.',
+
+  'privacy.prompt.title': 'B. The question you write for a prompt',
+  'privacy.prompt.device':
+    'The question, or the matter, that you write for a prompt stays whole on your device.',
+  'privacy.prompt.server':
+    'The server never receives, never reads and never logs the text you type. It is told that a question exists, so that the prompt can end on the line that introduces one, and never what it is; the browser adds the sentence itself before the whole thing goes to your clipboard.',
+  'privacy.prompt.thirdParty':
+    'This site sends nothing to any provider of artificial intelligence — not OpenAI, not Anthropic, not any other. What you do with the prompt once it is in your clipboard is your own decision, and between you and whoever receives it.',
+
+  'privacy.browser.title': '3. Cookies, and what is kept in the browser',
+
+  'privacy.cookies.title': 'Cookies and tracking',
+  'privacy.cookies.none': 'No cookies',
+  'privacy.cookies.none.means':
+    'No profiling cookies, no third-party cookies, and no advertising script of any kind.',
+  'privacy.cookies.analytics': 'No analytics',
+  'privacy.cookies.analytics.means':
+    'No behavioural tracking and no third-party analytics run on this site.',
+
+  'privacy.storage.title': 'Local storage and cache',
+  // Two things, and the count is the point of the sentence: it moves when the
+  // number does. `docs/architecture.md` applies the test for a third — whether
+  // a reader would have to be told — and the rain fails it.
+  'privacy.storage.lead':
+    'Two things are kept in your browser, and each of them can be checked:',
+  'privacy.storage.scheme': 'The appearance you chose',
+  'privacy.storage.scheme.means':
+    'Light, dark or automatic, under the key {key}. Setting the appearance back to automatic deletes it.',
+  // Mostly a list of what is *not* in it, which is the half a reader wants:
+  // somebody who reads that a site installs and works without a connection
   // reasonably assumes it took a copy of what they did there.
-  'privacy.offline':
-    'The other is the site itself. This page can be installed and kept on your device, so the code, the stylesheet and the icons are stored by your browser, along with the page you see when there is no connection. No chart is among them: not a date, not a time, not a place, not a question, not the picture of a board. Nothing you asked for is written to your device, and uninstalling the site or clearing its data removes what is.',
-  'privacy.cookies': 'No cookies are set, and there is no analytics of any kind.',
+  'privacy.storage.offline': 'The site itself, once installed',
+  'privacy.storage.offline.means':
+    'The code, the stylesheet and the icons are cached so that the site opens without a connection, along with the page you see when there is none. No board is among them: not a date, not a time, not a place, not a question, not the picture of a board.',
+  'privacy.storage.clearing':
+    'You can remove both at any time by clearing the browsing data of your browser, or by uninstalling the site from your device.',
+
+  'privacy.rights.title': '4. Your rights (Articles 15–22 GDPR)',
+  'privacy.rights.none':
+    'Because nothing about you is collected, kept or handled here on a server or in a database, there is no archive of personal data from which anything of yours could be extracted, corrected or erased.',
+  'privacy.rights.exercise':
+    'Erasure and rectification are therefore yours alone to exercise: clearing the cache and the local storage of your browser removes everything this site has.',
+
+  'privacy.licence.title': '5. Licence, and what can be checked',
+  'privacy.licence.body':
+    'shipan is open source, under AGPL-3.0-or-later. Everything above — how it works, and that it tracks nothing — is not a promise you have to take on trust: it is readable in the source of the copy you are talking to.',
+  'privacy.licence.source': 'read the source of this copy',
 
   // The prompt: the only text in this project written to be obeyed by a
   // machine rather than read by a person.

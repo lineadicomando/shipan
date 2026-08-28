@@ -1434,24 +1434,100 @@ export const it: Record<MessageKey, string> = {
   // lettore lo avrebbe letto più spesso di ogni altra riga.
   'notes.column.checkedAgainst': 'Verificata su',
 
-  'privacy.title': 'Privacy',
-  'privacy.nothing':
-    'Nulla di ciò che digiti viene conservato. Date, ore e luoghi – compresa una data di nascita, se ne indichi una perché una carta dica dove cade – viaggiano nell’indirizzo della pagina, servono a calcolare una risposta, e non vengono scritti in alcuna base di dati né in alcun registro tenuto da questo sito.',
-  'privacy.address':
-    'Poiché i parametri stanno nell’indirizzo, il collegamento a una carta si porta dietro una data, un’ora e un luogo, e se hai dato delle coordinate si porta dietro quelle, che nominano una soglia di casa e non una città. Condividilo solo con qualcuno a cui diresti quelle cose.',
-  'privacy.prompt':
-    'La domanda che scrivi per un prompt non esce dal tuo browser. Al server viene detto che una domanda esiste – perché il prompt possa finire sulla riga che la introduce – e mai quale sia; la frase la aggiunge il browser prima di mettere il tutto negli appunti. Questo sito non parla con nessuna AI e non le manda niente: dove lo incolli poi è cosa fra te e chi lo riceve.',
-  // «Una cosa sola» non regge più: le cose sono due. Cade il «sola» e cade
-  // «solo se la chiedi», che serviva a distinguerla da un'altra che non c'era.
-  'privacy.storage':
-    'Una cosa resta nel tuo browser perché l’hai chiesta: l’aspetto che hai scelto, sotto la chiave {key}. Riportare l’aspetto su automatico la cancella.',
+  // La nota sulla privacy, ed è l'unica pagina qui scritta per essere
+  // confrontata con un regolamento e non per essere letta. È numerata, divisa
+  // in sezioni e intestata perché è la forma che cerca chi sta verificando un
+  // obbligo GDPR; quello che non deve diventare è una forma che, per tornare,
+  // dica il falso. I due punti in cui tira da quella parte hanno una risposta
+  // qui sotto, a `inputs.local` e a `controller.who`.
+  'privacy.title': 'Privacy e protezione dei dati',
+  'privacy.gdpr':
+    'In conformità al Regolamento generale sulla protezione dei dati (GDPR, Regolamento UE 2016/679), questa pagina dice come questo sito tratta la riservatezza e la sicurezza dei dati di chi lo consulta.',
+  // Tutta la pagina in tre righe, per chi vuole la risposta e non
+  // l'argomentazione. Quello che segue è questa frase con i conti in vista.
+  'privacy.summary':
+    'In breve: è costruito per non conservare niente. Nessun dato personale, nessuna data di nascita, nessun luogo e nessun testo che digiti viene scritto su un server di questo sito né in alcuna base di dati.',
+
+  'privacy.controller.title': '1. Chi è il titolare del trattamento',
+  // «Chi gestisce questa copia» e non un nome. L'indirizzo lì sotto si legge
+  // da `PUBLIC_SOURCE_URL`, perché una fork punti a se stessa — e a chi legge
+  // una fork è dovuto il titolare della copia con cui sta parlando, che non è
+  // l'autore di questo progetto. `lib/author.ts` rifiuta lo stesso innesto
+  // nella direzione opposta, e per la stessa ragione.
+  'privacy.controller.who':
+    'Il titolare del trattamento è chi gestisce questa copia di shipan, progetto open source. Per qualsiasi chiarimento o richiesta in materia di privacy i riferimenti sono i canali indicati nel codice sorgente della copia con cui stai parlando:',
+  'privacy.controller.repository': 'il codice sorgente di questa copia',
+
+  'privacy.data.title': '2. Che cosa viene chiesto, e che fine fa',
+
+  'privacy.inputs.title': 'A. Ciò da cui si calcola una carta: date, ore e luoghi',
+  'privacy.inputs.lead':
+    'Tutto quello che inserisci perché una carta venga posata – la data, l’ora e il minuto, e il luogo in coordinate:',
+  // **Non «elaborazione locale», che qui sarebbe falso.** Il motore sta sul
+  // server: i parametri ci arrivano nella query string, e senza connessione
+  // questo sito non posa nessuna carta — la pagina offline lo dice in due
+  // lingue. Vera è la seconda metà, che non se ne conserva niente, e una nota
+  // sulla privacy che gonfiasse la prima non varrebbe più niente sulla
+  // seconda. Detto chiaro, perché chi scoprisse il contrario avrebbe tutto il
+  // diritto di smettere di credere al resto della pagina.
+  'privacy.inputs.local': 'Calcolato, e non conservato',
+  'privacy.inputs.local.means':
+    'Viaggia nell’indirizzo della pagina fino al server, che ne calcola una carta e non ne conserva niente. Il motore gira lì e non nel tuo browser, ed è il motivo per cui senza connessione nessuna carta si posa.',
+  'privacy.inputs.stored': 'Scritto da nessuna parte',
+  'privacy.inputs.stored.means':
+    'Niente di tutto ciò viene scritto in una base di dati, in un registro di sistema o su un altro server.',
+  'privacy.inputs.address': 'Sta nell’indirizzo',
+  'privacy.inputs.address.means':
+    'I parametri sono codificati nell’URL perché una carta si possa mettere fra i segnalibri o condividere: condividere il collegamento significa quindi condividere le coordinate e l’ora che l’hanno prodotta – e delle coordinate nominano una soglia di casa, non una città. Passalo solo a qualcuno a cui diresti quelle cose.',
+
+  'privacy.prompt.title': 'B. La domanda che scrivi per un prompt',
+  'privacy.prompt.device':
+    'La domanda, o la materia, che scrivi per un prompt resta intera sul tuo dispositivo.',
+  'privacy.prompt.server':
+    'Il testo che digiti al server non arriva mai: non lo legge e non lo registra. Gli viene detto che una domanda esiste – perché il prompt possa finire sulla riga che la introduce – e mai quale sia; la frase la aggiunge il browser prima di mettere il tutto negli appunti.',
+  'privacy.prompt.thirdParty':
+    'Questo sito non manda niente a nessun fornitore di intelligenza artificiale: né OpenAI, né Anthropic, né altri. Che cosa fai del prompt una volta che è negli appunti è una tua decisione, ed è cosa fra te e chi lo riceve.',
+
+  'privacy.browser.title': '3. Cookie e ciò che resta nel browser',
+
+  'privacy.cookies.title': 'Cookie e tracciamento',
+  'privacy.cookies.none': 'Nessun cookie',
+  'privacy.cookies.none.means':
+    'Nessun cookie di profilazione, nessun cookie di terze parti, nessuno script pubblicitario.',
+  'privacy.cookies.analytics': 'Nessuna analisi di traffico',
+  'privacy.cookies.analytics.means':
+    'Su questo sito non gira alcun tracciamento del comportamento né alcuna analitica di terze parti.',
+
+  'privacy.storage.title': 'Archiviazione locale e cache',
+  // Le cose sono due, e il numero è il punto della frase: si muove quando si
+  // muove il numero. `docs/architecture.md` applica a un eventuale terzo la
+  // prova che vale qui — se chi legge dovrebbe esserne avvertito — e la
+  // pioggia non la passa.
+  'privacy.storage.lead':
+    'Nel tuo browser restano due cose, e di entrambe si può verificare il perché:',
+  'privacy.storage.scheme': 'L’aspetto che hai scelto',
+  'privacy.storage.scheme.means':
+    'Chiaro, scuro o automatico, sotto la chiave {key}. Riportare l’aspetto su automatico la cancella.',
   // «carta» e non «grafico»: è la parola che il sito usa dappertutto per
   // quello che posa. E l'elenco è al negativo di proposito — chi legge che un
   // sito si installa e funziona senza rete dà per scontato che si sia tenuto
   // una copia di quello che ci ha fatto.
-  'privacy.offline':
-    'L’altra è il sito stesso. Questa pagina si può installare e tenere sul dispositivo, quindi il codice, il foglio di stile e le icone restano nel browser, insieme alla pagina che vedi quando non c’è connessione. Fra queste non c’è nessuna carta: né una data, né un’ora, né un luogo, né una domanda, né l’immagine di una tavola. Niente di quello che hai chiesto viene scritto sul dispositivo, e disinstallare il sito o cancellarne i dati rimuove ciò che c’è.',
-  'privacy.cookies': 'Non viene impostato alcun cookie, e non c’è alcuna analisi di traffico.',
+  'privacy.storage.offline': 'Il sito stesso, una volta installato',
+  'privacy.storage.offline.means':
+    'Il codice, il foglio di stile e le icone restano in cache perché il sito si apra anche senza connessione, insieme alla pagina che vedi quando non ce n’è. Fra queste non c’è nessuna carta: né una data, né un’ora, né un luogo, né una domanda, né l’immagine di una tavola.',
+  'privacy.storage.clearing':
+    'Puoi rimuoverle in qualsiasi momento cancellando i dati di navigazione del browser, o disinstallando il sito dal dispositivo.',
+
+  'privacy.rights.title': '4. I tuoi diritti (art. 15–22 GDPR)',
+  'privacy.rights.none':
+    'Poiché qui non si raccoglie, non si conserva e non si tratta alcun dato personale su server o in basi di dati, non esiste alcun archivio da cui estrarre, rettificare o cancellare qualcosa che ti riguardi.',
+  'privacy.rights.exercise':
+    'Cancellazione e rettifica restano quindi soltanto in mano tua: cancellare la cache e l’archiviazione locale del browser rimuove tutto quello che questo sito ha.',
+
+  'privacy.licence.title': '5. Licenza, e che cosa si può verificare',
+  'privacy.licence.body':
+    'shipan è open source, con licenza AGPL-3.0-or-later. Tutto quello che c’è scritto qui sopra – come funziona, e che non traccia niente – non è una promessa da prendere sulla fiducia: si legge nel codice sorgente della copia con cui stai parlando.',
+  'privacy.licence.source': 'leggi il codice sorgente di questa copia',
 
   'prompt.heading': 'Leggere una carta di Qi Men Dun Jia',
   'prompt.role':
