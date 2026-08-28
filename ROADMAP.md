@@ -226,10 +226,18 @@ three times and a second witness to it would move `plate: fei` on its own; 第�
 lays all three boards and never says how — the 局 by 元 or by term, an octagonal
 diagram, an enumeration, and 「以陰遁一局而推」 for the manner. The one word in
 that stretch that could have borne on it, 輪, names the printed round and not a
-turning plate. So the places left to look are the ones the list above names, and
-the shortest of them is 第429冊's 奇門遁甲全局: the eighteen 局 written out at
-about eighteen pages each, where an arrangement can be checked wholesale against
-what this engine already computes.
+turning plate. So the places left to look are the ones the list above names.
+
+**第429冊's 奇門遁甲全局 was the shortest of them and it has been opened.** It is
+the eighteen 局 written out, four charts to the page, each with its nine palaces
+in prose beside a circular plate — the first printed board this project has
+collated cell by cell, and it carries no 飛盤 procedure either. What it produced
+instead is a dissent on a shipped name: the yin board agrees with this engine on
+all eight spirits, and the yang board keeps 白虎 where this engine renames it
+勾陳 and writes 勾陳 where this engine writes 朱雀. **And its rings cannot be
+read** — a character in them gets about fifteen pixels where `docs/scans.md`
+sets forty as the floor — so the wholesale check this line used to promise is
+not something the file can support. Both are in `docs/sources.md`.
 
 ### Phase 2 — 《中國絕學》, for a school's name
 

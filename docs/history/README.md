@@ -64,7 +64,7 @@ phase.
 | 28 | [The site installs](28-installed-on-a-phone.md) | done — installable, and refusing to pretend it computes offline |
 | 29 | [The terminology pass](29-the-terminology-pass.md) | done — every glyph a person reads is said, and a test that fails the day one is not |
 | 30 | [The shelf answers](30-the-shelf-answers.md) | done — ten thousand unread pages made searchable, seven files found to be other than catalogued, and a twelfth 十干克應 pairing shipped where the verse divides |
-| 31 | [The third volume](31-the-third-volume.md) | done — 遁甲符應經 lodges the centre in 坤, the 年家's second witness contradicts the first, and the dunjia survey closes |
+| 31 | [The third volume](31-the-third-volume.md) | done — 遁甲符應經 lodges the centre in 坤, the 年家's second witness contradicts the first, and a printed board dissents on a spirit's name |
 
 ## The rest of the record
 

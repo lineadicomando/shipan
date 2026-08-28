@@ -135,6 +135,64 @@ year field stops at 2020 while it will cast any year it is handed.
 piecewise: the four 符頭 heads, the solstice anchor, the 195-day leap. An
 independent tradition, which is what makes it valuable.
 
+
+### The printed board, and the one seat it names differently
+
+Every check above is against code. 《奇門遁甲全局》 — 故宮珍本叢刊 第429冊, from
+its p. 129 — is the first **printed** board this file has collated cell by
+cell: eighteen 局 at about eighteen pages each, four charts to the page, and
+each chart a circular nine-palace plate with its nine palaces written out
+beside it, palace by palace, as 宮 + 門 + 星 + 神 with the term-and-yuan heading
+above and the 孤虛 below.
+
+Four charts read on the plate — 陽遁一局 at 甲子, 乙丑 and 丙寅時, all 冬至上元,
+and 陰遁一局 at 甲子時, 處暑中元. The 直符 falls in a different palace in each of
+the four, which is what makes the reading a test of the flight rather than of
+one arrangement.
+
+**The yin board agrees with this engine on all eight spirits and their order.**
+It gives 坎 直符天乙, 乾 螣蛇, 兌 太陰, 坤 六合, 離 白虎, 巽 玄武, 震 九地, 艮
+九天 — the counterclockwise ring from the 直符's palace, and the names this
+engine writes in a yin chart. That is a transmitted witness for a quantity that
+had only runnable ones.
+
+**The yang board parts, at one seat and in one direction.** This engine follows
+the 陰陽異名 convention and renames both of the middle pair in a yang chart,
+白虎 → 勾陳 and 玄武 → 朱雀. This print renames only the second: 白虎 stays 白虎
+and 玄武 becomes **勾陳**.
+
+| seat | this engine, yin | this engine, yang | 全局, yin | 全局, yang |
+|---|---|---|---|---|
+| 5 | 白虎 | 勾陳 | 白虎 | **白虎** |
+| 6 | 玄武 | 朱雀 | 玄武 | **勾陳** |
+
+The three yang charts put the 直符 in 坎, 離 and 艮 in turn, and in all three
+the spirit after 六合 is 白虎 and the one after it 勾陳 — 「離景英伏吟白虎」 and
+「坤死芮勾陳伏吟」 at 甲子, 「坎杜英白虎」 and 「艮景芮勾陳」 at 乙丑, 「坤杜英
+白虎」 and 「兌景芮勾陳」 at 丙寅. Three palaces, one pair of seats: a system and
+not a slip.
+
+**Nothing moves, and that is the point of writing it down.** One printed
+witness against a convention this file already calls «one convention among
+several» does not settle which convention to ship, and the six spirits either
+side of the pair, the eight seats, the flight's direction and the whole yin
+board are confirmed rather than contradicted. What changes is the evidence:
+the naming was a choice weighed against two implementations, and it is now a
+choice with a Qing imperial print dissenting from half of it, by name and in
+one direction. It also names the 直符 **天乙** — 「直符天乙」 in the yin chart,
+「艮開蓬天乙」 in the yang — which is the same spirit and the glyph the 四十格's
+天乙伏宮 and 天乙飛宮 are built on.
+
+**What was not collated is the rings.** The charts' concentric circles carry
+the earth plate, and at 983 × 1530 pixels to a page holding four of them a
+character in the outer rings gets perhaps fifteen — under half of what
+`docs/scans.md` sets as the floor. One sector was legible and it agrees:
+陽遁一局's 坎 reads 坎一 · 戊 · 甲子 · 休 · 直使, and this engine puts 戊 in
+palace 1 of that ju. That is one cell of nine and it is reported as one cell of
+nine. **The file cannot support the wholesale check the roadmap expected of
+it**, and the prose beside each chart is what it can support instead. Read on
+the plate 2026-08-28.
+
 ### 置閏 has a dated worked example, and it moves the pin by a day
 
 《奇門遁甲統宗》卷一 置閏法 states the method and then works it, by name and

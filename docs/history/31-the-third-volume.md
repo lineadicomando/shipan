@@ -159,6 +159,43 @@ term group, draws the resulting board, enumerates, and says 「以陰遁一局�
 Seven leaves of pp. 1160–1217 read whole. The procedure is not where it would
 be expected, beside the tables it governs, and `plate: fei` is where it was.
 
+## Then the printed board, which was supposed to be a formality
+
+The roadmap's next line, written the day before out of a table of contents, said
+第429冊's 奇門遁甲全局 was «where an arrangement can be checked wholesale against
+what this engine already computes». Opening it corrected that sentence twice.
+
+**It cannot be checked wholesale.** Each page carries four charts, each chart a
+circular plate whose concentric rings hold the earth stems — at 983 × 1530
+pixels to the page a ring character gets about fifteen, where `docs/scans.md`
+puts the floor at forty. One sector was legible: 陽遁一局's 坎 reads 坎一 · 戊 ·
+甲子 · 休 · 直使, and the engine puts 戊 in palace 1 of that ju. One cell of
+nine, reported as one cell of nine. The rule that a shelf's description of a
+file is not evidence about the file had bitten this project's own writing, one
+day old.
+
+**What the file can support is the prose**, and the prose is a complete board:
+each chart lists its nine palaces as 宮 + 門 + 星 + 神 with the term and yuan
+above and the 孤虛 below. Four charts were read — 陽遁一局 at 甲子, 乙丑 and
+丙寅時, and 陰遁一局 at 甲子時 — with the 直符 in a different palace in each, so
+the reading tests the flight and not one arrangement.
+
+The yin board agrees with this engine on all eight spirits and their
+counterclockwise order. Every check this file had for the spirits was against
+code; this is the first transmitted one, and it confirms.
+
+The yang board parts, at one seat and in one direction. This engine follows the
+陰陽異名 convention and renames both of the middle pair in a yang chart, 白虎 →
+勾陳 and 玄武 → 朱雀. The print renames only the second: 白虎 stays, and 玄武
+becomes 勾陳. Three yang charts, three different 直符 palaces, the same two
+seats each time — a system and not a slip.
+
+Nothing in the engine moved. A convention this register already called «one
+convention among several» now has a Qing imperial print dissenting from half of
+it, by name and in one direction, and the other half is confirmed. That is what
+the evidence looks like after a source arrives, and the point of writing it down
+is that it is now weighable.
+
 ## What this phase did not do
 
 It did not settle `plate: fei`, and the negative above is at survey strength:
