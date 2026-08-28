@@ -887,9 +887,7 @@ export const it: Record<MessageKey, string> = {
   // Dice che cosa fa la sezione, che è il mestiere di ogni secondo paragrafo.
   // Il modulo qui sotto ha due gambe, «L’intervallo e il luogo» e «Che cosa
   // cercare»: la frase le tiene tutte e due implicite — il flusso temporale è
-  // la prima, i criteri indicati sono la seconda — e sta corta, che è la
-  // ragione per cui l'inglese accanto è più lungo di lei e non un
-  // disallineamento fra i due cataloghi.
+  // la prima, i criteri indicati sono la seconda.
   //
   // **Criteri, e mai una classifica di ore.** La frase è arrivata dicendo che
   // la sezione individua le ore «che offrono il massimo supporto e la minore

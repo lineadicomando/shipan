@@ -962,24 +962,22 @@ export const en = {
   // it, and that is the one that has to be exact.
   'meta.intro.moments.a':
     'In classical Eastern thought, time is not a uniform flow but a sequence of differing energetic qualities. The discipline of 擇日 zérì makes it possible to identify the most propitious window in which to begin an activity, make a decision or launch a project.',
-  // It opens on what the page asks for, as every other second paragraph does
-  // and this one did not: it said only what the section declines to do. The
-  // form under it has two legs — the interval and the place, and what to look
-  // for — and the right-hand column stood a quarter the height of the left
-  // because it named one of them.
+  // It says what the section does, which is what every second paragraph is
+  // for. The form under it has two legs — the interval and the place, and
+  // what to look for — and the sentence keeps both implicit: the temporal
+  // flow is the first and the criteria given are the second.
   //
   // **Criteria, and never a ranking of hours.** This arrived saying the
   // section finds the hours «offering maximum support and minimal
-  // resistance», which is the ordering of hours `docs/refusals.md` declines:
-  // what happens here is that an interval is walked and the hours answering
-  // the criteria the reader named are listed, each with its direction, and
-  // then it stops. The art is named here rather than above it, since this is
-  // the sentence about what the section does — and it walks 奇門遁甲 charts
-  // and only those, which is also why no plural of the 三式 belongs in either
-  // paragraph. The last line is where the refusal is said, and it is the same
-  // line the footer holds on every page.
+  // resistance», which is the ordering of hours `docs/refusals.md` declines.
+  // What is left is «answer the criteria you gave»: the criteria are the
+  // reader's, the listing is of what answers them, and which of them is worth
+  // acting in is said by nobody here. The art is named in this sentence
+  // rather than in the one above it, since this is the sentence about what
+  // the section does — and it walks 奇門遁甲 charts and only those, which is
+  // also why no plural of the 三式 belongs in either paragraph.
   'meta.intro.moments.b':
-    'Use this section to walk an interval of dates from a place and name what you are looking for: the hours and days whose 奇門遁甲 qímén dùnjiǎ configurations answer the criteria you gave are listed, each with the direction it stands in. What makes an hour worth acting in is a reading, and it is yours.',
+    'Use this section to analyse the temporal flow and pinpoint the hours and days when the configurations of 奇門遁甲 qímén dùnjiǎ answer the criteria you gave.',
 
   'meta.title.qimen': 'Qi Men Dun Jia — cast a chart',
   'meta.description.qimen':
