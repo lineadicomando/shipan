@@ -724,8 +724,9 @@ that took the 時家's rotation into them would be casting a chart nobody
 transmitted. That is a fact about the two parameters and it is written here
 before either moves.
 
-What is still missing is a second witness. Three copies of 遁甲演義 are held and
-two of them are the same recension; a copy of a work is not a witness to it.
+What was missing was a second witness. Three copies of 遁甲演義 are held and two
+of them are the same recension; a copy of a work is not a witness to it. One has
+since arrived and it contradicts; the note two paragraphs down says how.
 
 **A second work treating the three has now been found, and whether it agrees
 is a separate question.** 《奇門闡秘前編》卷之三, in 《遁甲集成》第六冊 at its
@@ -751,9 +752,8 @@ stand at each node of a year, for choosing a direction — and not the 年家
 board. So no arithmetic is owed after all: the two are different objects, and
 a table of where 乙丙丁 stand cannot confirm or contradict a rule for laying a
 board. What it does witness is that the four-fold 年·月·日·時 division is
-transmitted and used, which 遁甲演義 already said. The second witness to the
-*procedure* is still missing. Found by contact sheet and read on the plate
-2026-08-27.
+transmitted and used, which 遁甲演義 already said, and not the procedure. Found
+by contact sheet and read on the plate 2026-08-27.
 
 **A second treatment of all three has now been found, and it contradicts.**
 《遁甲集成》第三冊 carries, across its series pp. 1160–1216, 上元 · 中元 · 下元
@@ -3069,16 +3069,17 @@ received table at 戊, 庚 and 壬. That is the first name this section has been
 able to put to a divergence it refuses an option for, and the refusal is
 restated below in those terms.
 
-**The adjudicator, held and not yet read.** The Ming 南陽堂 woodblock —
+**The adjudicator, and what it has answered so far.** The Ming 南陽堂 woodblock —
 《新鐫希夷陳先生紫微斗數全書》, 題 宋 陳摶 撰, 明 潘希尹 補輯, in seven juan —
 was fetched from shuge.org, which took it from the 日本内閣文庫 copy.
 **528 pages, image-only, and the block is clean enough to read by eye.** It is
 a *different recension* under the same title, and the only witness on this
 shelf that is neither a transcription nor descended from one.
 
-Nothing in this section depends on it, and that sentence has changed meaning:
-it used to describe a book nobody owned and now describes work nobody has
-done. It is the standing adjudicator for every question this section leaves
+Nothing in this section depends on it, and that sentence has now changed
+meaning twice: it described a book nobody owned, then work nobody had done, and
+the work has begun. It is the standing adjudicator for every question this
+section leaves
 open, and the list is short enough to write down — **struck through as it is
 answered.**
 

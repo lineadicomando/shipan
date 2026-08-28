@@ -125,6 +125,36 @@ for character, and so are five of the six 身主 lines and all four 火鈴 seats
 from a witness that is neither a transcription nor descended from one. That is
 the quiet half of the phase and the larger one.
 
+## The audit, which found the day's own drift
+
+The session ended with a sweep of the four documents the roadmap names as where
+the state is kept, asking whether a cold start would find the truth in them. It
+would not have, and the drift was hours old rather than months.
+
+Two edits made earlier in the same session had silently not applied — a script
+that replaced several passages at once and checked each one had thrown on a
+later check and written nothing, so the two earlier replacements were lost with
+it and the failure looked like a success. What survived was 《紫微斗數全書》's
+adjudicator described as «held and not yet read» on a day it had been read
+three times, and 遁甲演義's second witness called «still missing» four
+paragraphs above the note that reported it arriving.
+
+Two further entries had drifted from phase 30 and nobody had noticed: the
+`juexue` shelf still read «eleven volumes, none opened» after nine had been
+extracted and several read, and the woodblock's own row in the shelf register
+still described it as a book to be consulted rather than one being read.
+
+The check is mechanical — sweep for the phrases that assert a state, and read
+each hit against what the code and the register now say — and the roadmap now
+says to run it before a session ends rather than at the start of the next one.
+
+One gap was structural rather than textual. Every survey in phases 30 to 32 was
+made with a contact-sheet script that lived in a temporary directory and would
+have died with the session, so the next reader would have written it again.
+It is now `texts/contact.py`, with the three strips those phases actually
+needed, and `docs/scans.md` states the three conditions under which a book can
+be navigated without it.
+
 ## What is left
 
 解神 off the year; the two repaired grid cells; and the starting age of the 大限.

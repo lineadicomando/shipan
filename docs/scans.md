@@ -133,14 +133,31 @@ a section attributed to a page from a contact sheet was twenty pages out, and
 the error appeared the moment the real page was rendered. Locate on the
 contact, read on the page.
 
+**A contact sheet is not always the cheapest way in, and three things decide
+it.** Where a book has a 目錄 at the front *in section order*, a 版心 naming the
+juan on every leaf, and a block clean enough that the top of it reads at a
+hundred dots to the inch, a named section is reached by arithmetic and one
+contact sheet rather than by sweeping. The Ming 南陽堂 《紫微斗數全書》 is the
+case: 528 pages, and a named verse was landed on in four passes — the 目錄, one
+margin crop to fix the juan, one sheet of eight leaves to bracket it, one of
+four to land. Check for the three before planning a sweep, because the sweep is
+what costs.
+
+**And a running title is not something a facsimile owes you.** 遁甲集成 第三冊's
+版心 carries only modern hand numbering, so the method that named two works
+inside 第六冊 by their running titles cannot be run on it at all. There a
+section is identified by the heading of the first table on the leaf — which
+names a table and not a work, and is why one finding off that volume carries
+its attribution open.
+
 ## What a file is, before what it says
 
 **A shelf's description of a file is not evidence about the file.** This is the
 rule the four readings behind this page produced most expensively, because
 checking it costs seconds and not checking it cost a phase its purpose.
 
-These are the works opened while this page was being written that turned out
-not to be what the shelf recorded:
+The works opened so far that turned out not to be what the shelf recorded, the
+first six of them while this page was being written:
 
 | recorded as | what it is |
 |---|---|
@@ -150,6 +167,8 @@ not to be what the shelf recorded:
 | 《大六壬指南》, a reprint of the woodblock | a modern typesetting in simplified characters |
 | 《御定奇門寶鑑》 第一冊 | one 冊 of eight, which its own record page states |
 | 《遁甲演義》, a third scanned edition | 卷一 alone, which its closing leaf states |
+| 《奇門遁甲秘笈大全》, 故宮珍本叢刊 第427冊 | that work in 二十三卷, and then a second the entry did not name: 《諸葛武侯行兵遁甲金函玉鏡》 in 六卷, a cursive manuscript hand |
+| 《遁甲集成》第三冊, «奇門遁甲» | 遁甲符應經 from its p. 1136, and 年家 · 月家 · 日家 tables under no title leaf, dated to the Kangxi reign |
 
 **《御定星歷考原》 is the case that matters**, because the work had been
 acquired *in order to* be a second witness for about seventy quantities and the
@@ -169,6 +188,20 @@ render. Four commands, under a minute, and
 they establish extent — which is the thing a plan is a function of. A work in
 six juan and a file with one of them are different objects and only one of them
 is on the shelf.
+
+**The printed page numbers say how many book-pages a sheet carries, and the
+check is one subtraction.** 遁甲集成 第三冊 shows series page 1019 on its second
+sheet and 1626 on its 306th: 304 sheets spanning 607 pages is two book-pages to
+the sheet, where its sibling volumes carry one. Getting that backwards halves
+the coverage of every contact sheet planned after it.
+
+**Count pixels against what a page holds, not against the page.** The measure
+above is pixels to a character, and the sheet's dimensions do not give it: a
+故宮 leaf of 983 × 1530 carries *four* complete charts, so a character in their
+rings gets about fifteen — under half the floor — while the prose beside them is
+legible at the same nominal resolution. What a file can support is a question
+about the densest thing on it that has to be read, and that is settled by
+cropping one and looking.
 
 **A tool that believes the metadata fails silently, and `ocrmypdf` believes
 it.** It sizes its raster from what the PDF says its images are, so over

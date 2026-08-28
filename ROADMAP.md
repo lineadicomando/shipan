@@ -56,7 +56,14 @@ it by name — which is what 太乙's `ji` did when 卷一 was read.
   the shelf, the 中州派 manual and 北派, each move a single cell — 壬's 科 to
   左輔 — and agree with the received table everywhere else. A lineage's own ten
   stems is not what is there, so what would declare a second value is a
-  different find from the one that was being looked for. See `docs/sources.md`.
+  different find from the one that was being looked for.
+  **A third table has since been read and it does not change that shape**: the
+  Ming 南陽堂 recension moves one cell too, a different one, giving 庚's 科 to
+  天同 and its 忌 to 天相. Single cells moving is what this shelf keeps finding.
+  What it does raise, and this file does not decide, is *what a second value
+  would be named for* — the 中州派 and 北派 readings would name a school, and a
+  recension of 《全書》 itself would name an edition, which is a different kind
+  of parameter. See `docs/sources.md`.
 - 曆注 `shensha` — what 《協紀辨方書》 ratifies, until a named lineage has been.
 
 `method: maoshan` is in the table and is not expected to leave it: there is no
@@ -97,9 +104,18 @@ file, which would need maintaining and would drift: `texts/<art>/.txt/` says
 what has been extracted, `docs/sources.md` says what has been read, and
 `docs/provenance.tsv` says what is held and what it is. Reading those three is
 how the next phase finds its starting point. `texts/README.md` holds the
-per-file measurements — what a given extract turned out to be worth, and which
-characters it loses — and is the fourth thing to read before planning around a
-file.
+per-file measurements — what a given extract turned out to be worth, which
+characters it loses, and which leaf a section was found on — and is the fourth
+thing to read before planning around a file.
+
+**Those four drift inside a session and not only between them**, which is what
+an audit at the end of one found: a value shipped in the morning left three
+sentences behind that still called it unshipped, and a book read at noon was
+still «held and not yet read» at four. The check is cheap and mechanical —
+sweep the four for the phrases that assert a state («not yet read», «still
+missing», «none opened») and read each hit against what the code and the
+register now say. Do it before the session ends, not at the start of the next
+one.
 
 **How a scan is read is not decided here.** `docs/scans.md` owns it: which of
 the two ways in a file takes, what an extract is for, why a search returning
@@ -118,6 +134,15 @@ of sheet: `ocr-1up.sh` takes a language and a psm and goes through poppler,
 `ocr-2up.sh` takes two book-pages — `lr` for side by side, `tb` for stacked —
 and `ocr-4up.sh` takes four. Each writes a `.nospace.txt` beside the extract,
 which is the one to grep.
+
+**A fourth does the surveying, which is what the woodblocks need instead.**
+`contact.py` tiles a strip of each of a list of pages into one image, and has
+three strips because a survey asks three questions: `top` for the head of the
+printed block, where a section heading sits; `margin` for both outer edges,
+where a 版心 carries the running title and the juan; `full` for when the layout
+itself is the question. It crops from the ink bounding box rather than fixed
+coordinates, because a facsimile's block wanders on the sheet and on some
+volumes alternates sides. Every survey in phases 30 to 32 was made of it.
 
 ### Phase 1 — the dunjia scans, for `plate`, and what `centreLodging` and `system` cost
 
@@ -305,10 +330,9 @@ divergence, and the shipped one is the only one two voices agree on. See
 `docs/sources.md`.
 
 **It is cheaper to work than the estimate feared**, and that is the finding to
-carry into the next four: the block reads at a hundred dots to the inch, its
-版心 carries the juan on every leaf, and its 目錄 sits at the front in section
-order — so a line is located by margin and heading, not by contact sheet. Leaf
-151 was found in four passes.
+carry into what is left: this book meets all three of the conditions
+`docs/scans.md` now names for reaching a section without sweeping, so a line is
+located by margin and heading. Leaf 151 was found in four passes.
 
 The same leaf carries 安火鈴二星訣, and leaf 160 carries 安身主. The first is a
 heading and four half-lines of seats with **no clause counting on by the hour**,
