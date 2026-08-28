@@ -92,15 +92,18 @@ export type SpiritId =
  * half of the year runs, 白虎 and 玄武 while the yin half does.
  *
  * **Other traditions do it otherwise, and this is a divergence between
- * practitioners, so it owes a parameter it does not have.** 《奇門遁甲金鏡寶鑑》
- * keeps one pair in both dun, giving a juan each to 直符 螣蛇 太陰 六合 勾陳
- * 朱雀 九地 九天 and naming 白虎 and 玄武 nowhere; 《奇門遁甲全局》, read on the
- * plate, is a third reading, holding 白虎 at the fifth seat and putting 勾陳 at
- * the sixth. Two readers draw
- * different boards from the same instant and nothing in the output says which
- * convention drew this one, which `CLAUDE.md`'s rule forbids. Declaring it
- * costs a field in this board's input type; `ROADMAP.md` § 1 carries the debt
- * and `docs/sources.md` carries the witnesses.
+ * practitioners, so it owes a parameter it does not have.** 《奇門遁甲全局》,
+ * read on the plate, holds 白虎 at the fifth seat and puts 勾陳 at the sixth.
+ * 《奇門遁甲金鏡寶鑑》 pairs the seats exactly as this file does — 勾陳 with
+ * 白虎, 朱雀 with 玄武 — and then decides between the two names by **what is
+ * being asked** rather than by the dun: 「如占病、占賊，則勾、雀二神可換虎、
+ * 武用」, stated once for each dun. So the disagreement is not over which eight
+ * names exist but over which fact selects the middle pair, and a parameter
+ * naming rosters would not express it. Two readers draw different boards from
+ * the same instant and nothing in the output says which convention drew this
+ * one, which `CLAUDE.md`'s rule forbids. Declaring it costs a field in this
+ * board's input type; `ROADMAP.md` § 1 carries the debt and `docs/sources.md`
+ * carries the witnesses.
  */
 export const SPIRITS_YANG: readonly Spirit[] = [
   { id: 'zhifu', hanzi: '值符', pinyin: 'zhífú' },

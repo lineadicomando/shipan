@@ -90,9 +90,11 @@ make a school implicit», the 課體 that names nothing where the sources disagr
 `leapMonth` and `huoling` and `centreLodging` each declared with their
 alternatives refused. Three things were not.
 
-**Two are divergences nothing exposes.** They need a field in a board's input
-type, which is the breaking change `docs/parameters.md` opens by saying not to
-make late — so they are named here and paid together, not one at a time.
+**Two are divergences nothing exposes, and a third arrived after the audit.**
+The first two need a field in a board's input type, which is the breaking
+change `docs/parameters.md` opens by saying not to make late — so they are
+named here and paid together, not one at a time. The third came off the
+金鏡寶鑑 sweep and is cheaper, having a parameter to land on already.
 
 - 奇門, the **八神's naming**. This engine follows the 陰陽異名 convention and
   renames the middle pair in a yang chart, 白虎 → 勾陳 and 玄武 → 朱雀;
@@ -100,13 +102,27 @@ make late — so they are named here and paid together, not one at a time.
   that it is «a divergence this engine does not yet expose». Other traditions
   keep one pair in both dun, and 《奇門遁甲全局》 — read on the plate, see
   `docs/sources.md` — is a third: 白虎 at the fifth seat and 勾陳 at the sixth.
-  **And 《奇門遁甲金鏡寶鑑》 is the «other traditions» named**: its 目錄 allots a
-  juan each to 直符 螣蛇 太陰 六合 勾陳 朱雀 九地 九天 and 白虎 and 玄武 are in
-  neither the 目錄 nor any chapter heading, and 卷之九 opens on 直符臨休門 with no
-  clause about which dun the board is. **That the work names the pair nowhere is
-  not established** — it would be a negative, and a negative is established by
-  sweeping the plate. The prose of 卷一~卷三 is where it would have to be swept;
-  see § 2 phase 1.
+  **《奇門遁甲金鏡寶鑑》 was read as a fourth and the sweep reversed it.** Its
+  目錄 allots a juan each to 直符 螣蛇 太陰 六合 勾陳 朱雀 九地 九天 with 白虎 and
+  玄武 in no heading, which invited «the work names the pair nowhere» — and that
+  was written down as not established, because a negative is established on the
+  plate. The plate has now been swept, 卷一~卷三 entire, and **it names them**:
+  「如占病、占賊，則勾、雀二神可換虎、武用」, said once for each dun. The pairing
+  is this engine's; what differs is that the choice between the two names of a
+  seat is keyed to **the matter asked** and not to the dun. So the parameter
+  this owes is not a roster of eight names — it is a field saying *what decides
+  the middle pair*, and there are now four answers to that. See
+  `docs/sources.md`.
+- 奇門, **where the 置閏 leap block goes**, found by the same sweep and new to
+  this list. `method` carries 拆補, 置閏 and 茅山, and 置閏 silently means the
+  《統宗》's placement: the repeated block is 芒種 or 大雪. 《奇門遁甲金鏡寶鑑》
+  卷之一 repeats instead whichever term the year's leap month falls under, works
+  it twice by date — 1678 閏三月 and 1691 閏七月, both confirmed against this
+  engine's lunar calendar — and rejects the solstice placement as a convenience,
+  「於理法都不是」. Two practitioners, opposite sides, and the chart does not say
+  which it followed. Unlike the two above it needs no new field: it is a value
+  on `method`, or a modifier of `zhirun`, and that is the one design question to
+  settle before it is declared.
 - 奇門, **where earth's season begins**. `seasonElement` gives the four months
   that close the seasons — 辰, 未, 戌, 丑 — to earth entire, and `strength.ts`
   records that other schools give earth only the last eighteen days of each
@@ -386,6 +402,12 @@ p. 259 — the one a 飛盤 procedure was likeliest to be in. **It states the
 turning instead**, in so many words: 卷之三 has 「以星為直符加時干而轉天盤九星…
 隨時轉運變化無窮」, 轉 twice and 飛 nowhere. So the value's likeliest
 volume is a documented negative and a witness for what this engine does.
+**And the prose sweep that followed made the negative as strong as it can
+get**: 飛 is in the work five times over — a rhyme, a heaven-plate stem, two
+格 names against their 伏 twins, the eight spirits' direction, and 「八宅弔星…
+以次順飛」, which is the flying-palace operation itself, named 飛 and spent on
+八宅. A work that lacks the vocabulary proves little; one that has it, uses it,
+and still turns the board proves as much as a text can without saying so.
 
 **What it paid instead is the palace-5 value, and it paid it in the coin that
 was asked for.** 卷五 to 卷八 tabulate all eighteen 局 as a 起星訣 and a 起門訣 —
@@ -416,28 +438,47 @@ its 時家, which is what this engine computes. **Nothing moves on the third**: 
 is one leaf against a prose statement and two implementations, and it is written
 down so that a second witness has somewhere to arrive.
 
-**And it dissents on the 八神 too, differently from 第429冊.** Its 目錄 gives a
-juan each to eight spirits — 直符 螣蛇 太陰 六合 勾陳 朱雀 九地 九天 — with no
-白虎 and no 玄武 anywhere in it, and the chapters are written for a spirit over a
-gate with no clause about which dun the board is. So three conventions on the
-middle pair are now held: this engine's, 全局's, and one set of eight used in
-both. Three is what makes it a divergence between practitioners rather than a
-preference. Everything above is in `docs/sources.md`.
+**And it dissents on the 八神 too, differently from 第429冊 and differently from
+what its 目錄 suggested.** That 目錄 gives a juan each to eight spirits — 直符
+螣蛇 太陰 六合 勾陳 朱雀 九地 九天 — with 白虎 and 玄武 in no heading, and the
+chapters are written for a spirit over a gate with no clause about which dun the
+board is; read alone it says one set of eight, used in both dun. **The prose
+says otherwise and the prose has now been read**: 卷之二 offers 虎 and 武 as
+alternates for 勾 and 雀 when the matter asked is 占病 or 占賊, once for each dun.
+So what is held is not a fourth roster but a fourth rule for choosing between two
+names of one seat — and it is the only one keyed to the question rather than to
+the board. Everything above is in `docs/sources.md`.
 
 **What is read inside the 金鏡寶鑑 and what is not**, because «opened» is not
 «read» and the next pass should not have to find this out again. Series page
 numbers, which is what the volume prints; the shelf's own register holds the
 PDF offset and the block layout.
 
-- **卷之一~卷之三 奇門辯釋口訣.** One leaf read, p. 293, and it is the leaf every
-  finding above about the procedure comes from. The rest is unread prose, and it
-  is the only place two open questions could still be answered: whether the work
-  names 白虎 and 玄武 anywhere — the 八神 negative § 1 says is not established —
-  and whether anything qualifies the turn or the centre. **This is the errand
-  with a value behind it.**
-- **卷之四 奇門撮要 and the head of 卷之五. Unread**, and procedural by its title.
-  The 三元訣 at the head of 卷之五 was read and is the open question above; what
-  comes before it was not.
+- **卷之一~卷之二 奇門辯釋口訣 and 卷之三 奇門撮要. Swept whole, and the errand
+  that sent somebody there is finished.** Note the correction while reading the
+  rest of this section: the works divide 卷一~二 and 卷三~四, not 卷一~三 and
+  卷四~五 — the 目錄 and every section heading say so, and the earlier boundary
+  came off a contact sheet. Forty-three sheets, eighty-six leaves, read on the
+  plate at 300 dpi with fourteen crops at 600. It answered both open questions
+  and produced a third finding nobody was looking for:
+  - **The 八神.** The work names 白虎 and 玄武 — 「如占病、占賊，則勾、雀二神可換
+    虎、武用」 and 「雀、勾可換武、虎」, pp. 286 and 287 — so the negative § 1 left
+    open is closed the other way. See § 1.
+  - **The centre.** Stated as a rule and not only tabulated: 「二五同宮，其志不同。
+    行活局，符使不必寄於二，徑排入中宮」 (p. 266) and 「只順宮不隨干行，亦入中五」
+    (p. 267). It also carries the condition — 行活局 — and separates the star's
+    lodging from the moving 符 and 使. The turn is nowhere qualified; what
+    qualifies the centre is a valence, 「直使加中五宮為死」 and 「符入中宮不可用」,
+    which is the reading layer.
+  - **置閏**, which nobody asked for. p. 265 repeats the term the year's leap
+    month falls under and rejects the solstice placement. New entry in § 1.
+  - **And 飛 is in the work, five times, never for this board** — including
+    「八宅弔星…以次順飛」 at p. 290, which is the flying-palace operation named and
+    spent on 八宅. That is as strong as the `plate: fei` negative can get without
+    the work saying so.
+- **卷之四 奇門撮要, the second half. Unread**, and procedural by its title. The
+  三元訣 at the head of 卷之五 was read and is the open question above; what comes
+  before it was not. This is what is left of the prose.
 - **卷之五~卷之八, the eighteen 局.** All eighteen headings read — that is the
   三元定局 and it is finished. **陽遁一局 alone is collated**, 120 cells; the
   other seventeen are about 2040 cells and the file supports reading them, which

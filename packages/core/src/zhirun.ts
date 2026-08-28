@@ -73,7 +73,16 @@ const MAX_CHAOSHEN = 8;
  * one-block window fixes every block between two consecutive solstices:
  * twelve blocks serve the twelve terms in order, and a thirteenth, when the
  * window forces one, is the intercalation — it repeats the term before the
- * solstice, 芒種 or 大雪, which is the only place the tradition allows it.
+ * solstice, 芒種 or 大雪.
+ *
+ * **Where the repeated block goes is itself contested, and this is one side of
+ * it.** 《奇門遁甲統宗》卷一 puts it at the solstices and works it by date;
+ * 《奇門遁甲金鏡寶鑑》卷之一 repeats instead whichever term the year's *leap
+ * month* falls under, works that twice by date, and calls the solstice
+ * placement 「於理法都不是」 — a convenience adopted because the leap month was
+ * hard to reckon. That is a divergence between practitioners and `method` has
+ * no name for it: 置閏 means the 統宗's placement here without saying so.
+ * `docs/sources.md` § 置閏 has both, and `ROADMAP.md` § 1 carries the debt.
  */
 export function zhirunAssignment(args: {
   /** Julian Day Number the day pillar was read from. */

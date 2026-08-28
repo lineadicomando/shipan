@@ -111,6 +111,15 @@ established on the plate**, by looking at the pages the search should have
 found, or by establishing that the section is not in the file at all — which is
 what the next rule is for.
 
+**And a plate can be searched for a character it was forbidden to print.** A
+Qing imperial edition observes the reign taboos, so 玄 is set 元 throughout:
+《奇門遁甲金鏡寶鑑》 writes 元女 for 玄女, and a sweep of it looking for 玄武 is
+looking for a character the block does not carry. The pair was found under the
+one-character abbreviation 武 and would have been found in full as 元武. This
+costs nothing to check — one known taboo character, read on any leaf — and it
+is the difference between a negative and a missed passage, which is the same
+failure the rest of this section is about arriving by a different road.
+
 ## Reading a plate
 
 Rendering is cheap: `pdftoppm` at 300 dpi runs at about two pages a second,

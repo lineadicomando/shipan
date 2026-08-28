@@ -335,6 +335,28 @@ That is 轉 twice and 飛 nowhere, in the work a flight was likeliest to be in i
 it were anywhere on this shelf. A documented negative for the value, and a
 transmitted witness for the turn this engine performs. Series p. 293.
 
+**The negative is stronger than «the word is absent», because the word is
+not.** 卷一~卷三 were swept whole afterwards, and the work uses 飛 five ways,
+none of them a way of laying this board: as a rhyme in the 撼龍訣 (「小寒二八五
+局飛」); for the heaven plate's stem in 「天上飛干臨地墓」; as the name of two of
+the 格, which 卷之三 defines — 飛干格 日干加庚, 飛宮格 直符加庚, each against its
+伏 twin; for the direction the eight spirits circulate in (「八神陽順去」 against
+「陰遁符頭合逆飛」); and, decisively, for the flying-palace operation itself —
+「八宅弔星，如坎宅即弔一白入中，以次順飛；坤宅即弔二黑入中」, series p. 290,
+read at 600 dpi. **The work knows the operation, names it 飛, and spends it on
+八宅 rather than on the board.** A source that lacked the vocabulary would be a
+weak negative; one that has it, uses it four sentences away, and still lays the
+dunjia board by 轉 is the strongest form the negative can take short of the
+work saying so.
+
+**What the work is, corrected.** Its 目錄 and its own section headings put
+卷之一 and 卷之二 under 奇門辯釋口訣 and 卷之三 and 卷之四 under 奇門撮要 — not
+卷一~三 and 卷四~五, which is how the shelf had it and how the boundary was
+first read off a contact sheet. The passage above is therefore 奇門撮要's
+opening statement of method and not 奇門辯釋口訣's, which matters only in that
+a reader looking for it under the wrong title will not find it. 卷之五~卷之八
+carry the eighteen 局 and 卷之九~卷之十六 the eight spirits, both as recorded.
+
 **The same leaf names all six decades, and the centre's is among them.** 「如甲
 子時起坎一宮，即以天蓬為直符，休門為直使」 and so through 甲戌 坤二 天芮 死門,
 甲申 四巽 天輔 杜門, 甲寅 六乾 天心 開門 — and, in the middle of the list with
@@ -384,6 +406,39 @@ out to be one rule stated at both ends: 值符隨時干 holding unconditionally
 carries the star **into** the centre when the hour's stem is there and **out**
 of it when the 符頭 is, and this engine's ring of eight does neither.
 
+**And the tables are not the only place it is said. 卷之一 states it as a
+rule**, which the sweep of the prose found and which is what a table cannot
+supply: the tables show that the centre is occupied, the prose says why and
+under what condition.
+
+> 天符廉貞五黃，其星寄。二五同宮，其志不同。行活局，符使不必寄於二，徑排入
+> 中宮。
+
+Series p. 266, 卷之一 leaf 5, read at 600 dpi. It separates exactly the two
+things this engine merges: **the star's lodging** — 其星寄, the 天禽/天符 of the
+fifth palace hosted at 坤 — from **the moving 符 and 使**, which 「不必寄於二」
+and go into the fifth palace itself. 「二五同宮，其志不同」 is the whole
+divergence in six characters, and 「行活局」 is its condition: it is stated of
+the *turning* board, which is the board this engine lays.
+
+The next leaf says the same of the 直使 alone, in the middle of counting a
+decade out: 「甲子時休一宮，乙丑時休二宮，丙寅時休三宮，只順宮不隨干行，**亦
+入中五**，亦十時換一時。甲戌時則死二宮，乙亥死三宮，丙子死四宮」 — series
+p. 267, read at 600 dpi. So the rule is stated for the 符 and the 使 together,
+then for the 使 by itself, then applied across all eighteen 局 in the tables,
+then met once more in 卷之三's enumeration of the six decades. Four statements,
+three of them prose, and they do not disagree with each other.
+
+**What the work adds that the engine could not carry anyway is a valence.**
+Twice it judges the centre rather than placing it: 「使入中宮須避五遊三…直使加
+中五宮為死，切須避之。加震三宮雖生焉」 (series p. 268) and 「符入中宮不可用」
+(series p. 289). Both are read here as judgements of a placement and not as a
+second lodging rule — the gloss puts 加中五宮 and 加震三宮 in the same
+construction, so 三 is a comparison and not a destination — and either way they
+presuppose what they judge: the 符 and the 使 are in the fifth palace to be
+warned about. That half is the reading layer and stops at this file; see
+`docs/refusals.md`.
+
 **What moves is the evidence and not the code.** The value is still declared
 and refused, because implementing it changes what 值符, 值使, the heaven plate
 and the star plate report on every chart where the question arises, and that is
@@ -391,24 +446,46 @@ a board's input type gaining a field — see `ROADMAP.md` § 1, which pays it wi
 the two other 奇門 divergences and not alone. What has changed is that the
 witness is no longer single and no longer a transcription.
 
-**The 八神 are named once and there are eight names.** 卷之九 to 卷之十六 give a
-juan each to a spirit — 直符, 螣蛇, 太陰, 六合, 勾陳, 朱雀, 九地, 九天 — and the
-work's own 目錄 enumerates exactly those eight. 白虎 and 玄武 are in neither the
-目錄 nor any chapter heading, and the chapters are written for a spirit standing
-over a gate with no clause anywhere about which dun the board is: 卷之九 opens
-「天乙直符，三軍司命，乃天醫大神」 and goes straight to 直符臨休門. So a board of
-either dun read with this book has only 勾陳 and 朱雀 available where this engine
-writes 白虎 and 玄武 in a yin chart. Whether the prose of 卷一~卷三 anywhere
-gives the alternative names is **not established** — that would be a negative,
-and a negative is established by sweeping the plate, which has not been done.
-What the 目錄 does establish is the shape: one set of eight, and this is which
-eight.
+**The 八神 chapters name eight, and the prose names ten.** 卷之九 to 卷之十六
+give a juan each to a spirit — 直符, 螣蛇, 太陰, 六合, 勾陳, 朱雀, 九地, 九天 —
+and the work's own 目錄 enumerates exactly those eight, with 白虎 and 玄武 in
+neither the 目錄 nor any chapter heading. That was read first and it invited the
+obvious conclusion: one set of eight, the 勾陳/朱雀 pair in both dun, and the
+other two names absent from the work. **Sweeping 卷一~卷三 on the plate refutes
+it**, which is why the negative was never allowed to stand on the 目錄. The
+prose states the pair twice, once for each dun, as an *exchange*:
 
-That makes three conventions on the middle pair now held in print or code —
-this engine's 陰陽異名, 《奇門遁甲全局》's yang board keeping 白虎 and shifting
-勾陳 a seat, and this work's single set of eight with the 勾陳/朱雀 pair in both
-dun. Three is what `CLAUDE.md`'s narrowed rule calls a divergence between
-practitioners.
+> 符、朱、陰、合、九天、地、蛇、勾，八神陽順去。如占病、占賊，則勾、雀二神
+> 可換虎、武用。
+
+> 陰遁符頭合逆飛，地、雀、蛇、陰、天、勾。雀、勾可換武、虎。
+
+Series pp. 286 and 287, 卷之二 leaves 18 and 19, both read at 600 dpi.
+
+**Three things follow, and the third is the one that matters.** The names are
+in the work, so the negative § 1 wanted is closed the other way. The pairing is
+**this engine's**: 勾陳 is the seat 白虎 also names and 朱雀 the seat 玄武 also
+names, said twice in the two orders. And what the exchange turns on is not the
+dun — it is **what is being asked**. 占病 and 占賊 take 虎 and 武; the roster
+otherwise stands at 勾 and 朱, in a yang board and a yin one alike, which is
+what the eight juan of 斷 material are written for and what 卷之三's 「凶符：
+朱雀、勾陳、螣蛇」 repeats.
+
+So the work is not a fourth roster. It is a fourth **rule for choosing between
+two names of one seat**, and it is the only one of the four that keys the choice
+to the question rather than to the board. That makes the conventions now held:
+this engine's 陰陽異名, keyed to the dun; 《奇門遁甲全局》's yang board, which
+keeps 白虎 at the fifth seat and puts 勾陳 at the sixth; this work's, keyed to
+the matter; and the eight-juan roster that ignores the alternates entirely.
+Four is well past what `CLAUDE.md`'s narrowed rule calls a divergence between
+practitioners, and it sharpens what the missing parameter has to carry: not a
+list of eight names, but **which fact decides the middle pair**.
+
+**And the abbreviation is why a search for 玄武 would have missed it.** This is
+a Qing imperial print and the 玄 taboo is in force in it — 卷之一 writes 「元女
+以生門為一吉」 for 玄女, read at 600 dpi on series p. 275. A sweep looking for
+玄武 in such a print is looking for a character the print does not set; what it
+sets here is the one-character 武, and what it would set in full is 元武.
 
 **And the eighteen 局 headings are the whole 三元定局, printed inside out.** Each
 局's section opens by naming the four term-and-yuan slots that take it — 陽遁一局
@@ -547,6 +624,40 @@ before 庚辰, which is a gap of one and an inclusive count of two. Three
 instances inside the worked computation count inclusively and this remark does
 not. It is left standing rather than reconciled, because the three that decide
 the rule agree with each other and this one decides nothing.
+
+**And a second text contradicts it about where the 閏 goes at all**, which is a
+larger disagreement than the pin and was found by sweeping 卷之一 of 《奇門遁甲
+金鏡寶鑑》 for something else. It states its own rule, works it twice by date,
+and then names the 統宗's placement and rejects it:
+
+> 按是年閏月在何節氣下，即於其節氣中重用三局。如今戊午年閏三月，當重用穀雨
+> 閏三局；辛未年閏七月，當重處暑閏三局也。閏法不可不講。蓋古法以後人難推閏
+> 月，故至于二至陰陽交代之際置閏，然於理法都不是。至于拆局補局之說，更無
+> 論矣。
+
+Series p. 265, read at 600 dpi. The rule is: the intercalated block repeats
+**whichever term the year's leap month falls under**, not 芒種 or 大雪. The
+argument against the received placement is that it was adopted 「以後人難推閏
+月」 — because the leap month was hard to reckon — which the text treats as a
+convenience and not a reason, 「於理法都不是」. 拆補 is dismissed in the same
+breath.
+
+**Its two worked examples check out here, and they date it.** 戊午 with a
+閏三月 and 辛未 with a 閏七月 are 1678 and 1691 — 康熙十七年 and 康熙三十年 — and
+of the candidate 戊午 and 辛未 years within reach of one compiler's lifetime
+they are the only pair that carries those leap months, this engine's own lunar
+calendar being what says so and each year carrying exactly one leap month. So
+「如今戊午年」 places the redaction at about 1678, which fits a 故宮 imperial
+print and fits the 玄 taboo the work observes throughout.
+
+**What this moves is the register and not `zhirun.ts`.** Where the leap block
+goes is a divergence *between practitioners* and not a disagreement between
+witnesses to one text, so by `CLAUDE.md`'s rule it owes a name — and it does
+not have one: `method` carries 拆補, 置閏 and 茅山, and 置閏 means the 統宗's
+placement here without saying so. The engine keeps that placement, which is
+what the runnable reference and the worked example both do; `zhirun.ts` used to
+call 芒種 and 大雪 「the only place the tradition allows it」 and that sentence is
+now false and has been corrected. `ROADMAP.md` § 1 carries the debt.
 
 ---
 
