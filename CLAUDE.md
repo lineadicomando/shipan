@@ -118,6 +118,11 @@ the engine falls back to Moshier, which needs no files.
   — the `implemented` flag where it unlocks a refused value, and the date a
   written entry shows. Confirming counts as much as contradicting, and nothing
   is quietly rewritten. → [`docs/sources.md`](docs/sources.md)
+- **A second copy of one text settles the text and never the doctrine.** A
+  collation retires one risk — the copy is corrupt, the character misread — and
+  no other: it moves three things instead of four, never the rung. What an
+  edited edition must show to count as that witness, and when a lone reading of
+  one may be followed, is settled once. → [`docs/sources.md`](docs/sources.md)
 - **What changes when a board lands is not written, it is derived.** Wanting to
   hand-write a paragraph about a new board is the signal that a descriptor is
   missing a field, and the fix is upstream of the page. Where a paragraph is

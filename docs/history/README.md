@@ -67,6 +67,7 @@ phase.
 | 31 | [The third volume](31-the-third-volume.md) | done — 遁甲符應經 lodges the centre in 坤, the 年家's second witness contradicts the first, and a printed board dissents on a spirit's name |
 | 32 | [The adjudicator speaks](32-the-adjudicator-speaks.md) | done — the Ming woodblock settles 壬, the 丑/午 variant and a graph, prints a third reading at 庚, and cannot settle 身主 |
 | 33 | [A school can be followed](33-a-school-can-be-followed.md) | done — narrows «every divergence is a parameter»; the audit finds three faults, claims two candidates as one, and a verification run corrects the register and weakens the case it tested |
+| 34 | [A collation settles the text](34-a-collation-settles-the-text.md) | done — answers what an agreement between two witnesses to one text is worth, admits a lone reading of an edited edition, and leaves one contested rung standing |
 
 ## The rest of the record
 

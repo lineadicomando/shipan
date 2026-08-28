@@ -34,7 +34,10 @@ moves; `packages/core/src/parameters.ts` is where it is declared.
 
 Implementing one is a matter of finding a source that meets the standard —
 two transmitted witnesses agreeing, or one text that checks itself — not of
-writing code.
+writing code. **Another copy of a work already held is not that**, however well
+edited: it collates the text and adds no witness to the doctrine, so no value
+below is waiting on one. `docs/sources.md` § "What a second copy of one text
+buys".
 
 | Board | Refused today |
 |---|---|

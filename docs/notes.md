@@ -64,6 +64,19 @@ register's `checked_against` column says what was run and how far, so that a
 reader who wants the difference has it in the row; the argument is in the
 section the row's last column names.
 
+**And it does not carry whether the text is sound, which is the other thing
+that can go wrong.** The ladder orders one risk: that a rule handed down is the
+one lineage's own. A second witness to the *same* text answers a different one —
+that the copy is corrupt, or misread at the character the rule turns on — and it
+answers it for a quantity at any rung. So a collation is not a rung and is not
+on this ladder at all, for the reason rung 0 is not one of the five: filed as a
+rung it would claim an independence it does not have, and filed nowhere it is
+what the register cannot say about the several arguments in `sources.md` that
+turn on a single character. It travels in `checked_against`, in words, and moves
+no rung by itself. [`sources.md`](sources.md) § "What a second copy of one text
+buys" is the argument, and it says when an edited edition counts as that second
+witness.
+
 ## The register
 
 `docs/sources.tsv` — one row a quantity, six columns, tab-separated, sitting

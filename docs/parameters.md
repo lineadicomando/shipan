@@ -43,6 +43,12 @@ being able to hide behind the same word. If two practitioners would draw
 different boards, the divergence owes a parameter, whatever else is true about
 it. `ROADMAP.md` § 1 carries what that costs today.
 
+**This section settles what a disagreement between witnesses becomes, and the
+other half of the question is not here.** What an *agreement* between them is
+worth — a collation establishes the text and never the doctrine, so it moves no
+rung — belongs to the register, and
+[`sources.md`](sources.md) § "What a second copy of one text buys" states it.
+
 ## Three questions, which is how a divergence is tested
 
 The audit that followed the narrowing put every admission of divergence in

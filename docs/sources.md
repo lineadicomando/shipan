@@ -4017,6 +4017,18 @@ establishing before it could be drawn, because a colour on these sheets is an
 assertion. Three passages of 卷二 carry it, and both editions agree on all
 three word for word.
 
+**What that agreement is and is not, now that the file says so.** Two editions
+agreeing collate the text; they do not make a second transmission out of one, and
+what carries the phases is three passages of one juan, the 卷一 case worked
+between two stars in a seat, and the 太微賦 — one work, redundant about itself.
+**So this row's rung is contested by the rule stated below**: rung 2 says two
+transmitted sources agreeing and there are not two, where rung 4 says one text
+checking itself and there is exactly that. It is written down and left standing
+rather than moved in the commit that wrote the rule, because a colour on every
+one of these sheets is not a thing to restate in passing — and the reader this
+register is for is better served by a rung that says it is disputed than by one
+quietly corrected. See § "What a second copy of one text buys".
+
 **The stars have phases, and the book tabulates them.**
 「論諸星分屬南北斗化吉凶並分屬五行」 gives one to every star it places bar
 thirteen: 紫微屬土, 天機屬木, 太陽屬火, 武曲屬金, 廉貞屬火, 天府屬土,
@@ -4026,7 +4038,9 @@ thirteen: 紫微屬土, 天機屬木, 太陽屬火, 武曲屬金, 廉貞屬火, 
 天同屬水金, 貪狼屬水木, 七殺屬火金 — and both travel, because the book means
 both. **輔弼二星屬土 is the second edition's**: the Wikisource text drops the
 two characters and prints only 「輔弼二星北斗善住雨令星」, so 左輔 and 右弼
-have a colour on the sheet because a second witness supplied it.
+have a colour on the sheet because an editor who collated printed what the other
+copy had lost. That is a **lone reading followed**, which § "What a second copy
+of one text buys" admits by name and counts as no kind of agreement.
 
 **And the book says what to do with the table**, which is what parts this from
 mere filing:
@@ -4062,8 +4076,8 @@ assertions in one glyph.
 
 The 身主 line reads 「子午人火玲星」, where 玲 is 鈴, **and both editions print
 it that way** — so the defect is the work's rather than one copyist's, and the
-second witness that was expected to resolve it instead confirms there is
-nothing to resolve it with. Every other line of that
+collation that was expected to resolve it instead confirms there is nothing to
+resolve it with — which is the whole of what a collation can do here. Every other line of that
 table names **one** star for a pair of opposite branches, in a six-character
 slot; this one fills the same slot with 火鈴, which is the name of no star.
 
@@ -4197,6 +4211,58 @@ Wikisource one of them is an `oldid`, which names the revision that was read
 and cannot change under it. Where a printed edition was consulted, **that** is
 the citation: an edition and a page number outlive every URL here.
 
+### What a second copy of one text buys, which is not the second source
+
+Two things can go wrong in a rule that was read rather than measured, and the
+standard above retires one of them. The rule may be the idiosyncrasy of the one
+lineage that transmits it — that is what two agreeing sources answer. Or the
+copy in hand may be corrupt, or misread at the character the rule turns on, and
+**no number of independent works answers that**, because none of them is a
+witness to this text. A second witness *to the same text* is.
+
+So a collation **establishes the text and never the doctrine**. It cannot make
+two agreeing sources out of one, and a quantity standing on a single work stays
+on rung 4 or rung 5 however many copies of that work have been compared. What
+changes is that the register can now say which of the two risks was retired,
+which is a thing it had no way to say: several arguments in this file turn on a
+single character — 己 for 巳 in the 六壬大全, 陰同 against 同陰 at 庚, 丑卯
+against 午卯 in the 火鈴 seats, 玲 for 鈴 in the 身主 line, a 坤 under a cut slip
+— and whether that character was collated is exactly what a reader weighing them
+needs.
+
+**This is not the recension rule and does not touch it.**
+[`parameters.md`](parameters.md) § "What is not a parameter" settles what a
+*disagreement* between witnesses to one text becomes: never a parameter, always
+an entry here. This settles what an *agreement* between them is worth. The two
+questions are separate and were being answered with one sentence.
+
+**When an edited edition is admissible as a witness to the text.** Three
+conditions, and the first is the one that bites.
+
+1. **Its base is not the other witness's lineage**, argued and not assumed. Two
+   transcriptions of one recension are one witness — three copies of 遁甲演義 are
+   held and two of them are the same recension, which is why this file says a
+   copy of a work is not a witness to it.
+2. **The intervention is inspectable**: the original printed beside the
+   correction, or an apparatus. An edition that emends silently is a copy whose
+   errors have been redistributed.
+3. **The reading leaned on is named as that edition's**, in the entry.
+
+《紫微斗數全書》(前三卷), 周宣屹 整編 is the worked case. Its 166 notes of the form
+「'庚'（古文為'甲'）」 satisfy the second; its 卷四 and its unnoted disagreements
+with the Wikisource text satisfy the first; its base edition is unnamed, which is
+why the third has to be done by hand in every entry that uses it and why nothing
+here rests on it alone.
+
+**A lone reading of such an edition may be followed**, and that is the one thing
+this admits which the standard did not. Where an editor has collated and the
+other witness has dropped what he prints, following him is preferring the copy
+that did the work — not resolving a divergence by preference, which stays
+forbidden. It is registered as a lone reading and never counted as an agreement.
+輔弼二星屬土 is the instance: the Wikisource text prints
+「輔弼二星北斗善住雨令星」 without 屬土, and 左輔 and 右弼 carry 土 in `stars.ts`
+on the second edition's authority alone.
+
 ---
 
 ## When a source arrives later
@@ -4232,6 +4298,13 @@ the shipped answer is still the default.
 where there was one is the difference between rung 5 and rung 2, and it costs
 a row and a paragraph. The register is as much for what got firmer as for what
 got shakier.
+
+**A copy that only confirms is a different arrival and moves three things, not
+four.** It moves the argument, the `checked_against` and the date; it does not
+move the rung, because collating a text is not finding a second one. The section
+above says why. What it does move is a reader's ground for trusting the
+character the entry turns on, and an entry that leans on a collation says which
+edition did it.
 
 **Nothing here is quietly rewritten.** An entry that a later source overturns
 says so, in the entry, with what it used to stand on: the reader this file is
