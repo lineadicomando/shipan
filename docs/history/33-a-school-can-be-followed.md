@@ -179,12 +179,36 @@ pairing where palace 5 is one end or the other. A 260-chart comparison would
 have met that many times over. So either the comparison did not reach the centre
 cell, or «the nine stars» meant the eight outer palaces.
 
-That is the audit's most uncomfortable result, and it is not about the shelf. It
-means the evidence behind a shipped derivation is weaker than the register
-claims, and it puts a verification step in front of the parameter: re-run both
-runnable references on the palace-5 cases before any value is named. Declaring a
-divergence on top of a comparison that may not have tested it would be the same
-mistake in a new place.
+That is the audit's most uncomfortable result, and it is not about the shelf. So
+the verification was run rather than scheduled.
+
+## The verification, and how it turned out
+
+`qimen-dunjia` is on the shelf as a tarball with a row in `docs/provenance.tsv`,
+so it can be run. It was, over 666 charts across 2024 — six hours a day, every
+third day — cast on 120°E with no true-solar correction and the day turned at
+子時, which is how it reads a time.
+
+The ju agreed on all 666, and the earth plate, the heaven plate and the nine
+stars agreed on all 666: 519 where neither stem is in the centre, 64 where the
+hour's is, 74 where the 符首's is, 9 where both are. **The 147 charts that put a
+stem in the centre are the ones the question is about, and they agree.**
+
+The run also measured the thing that had looked like it might be a rule. Does
+the 值符 star land on the hour stem's palace? In the reference it does in 519 of
+519 where neither stem is in the centre, in 9 of 9 where both are, and **in none
+of the 138 where exactly one is** — which is what this engine does. So the
+reading that 值符隨時干 holds unconditionally is what the 元靈經's worked example
+assumes and what neither runnable implementation does.
+
+**The verification weakened the case it was run to test, which is the right way
+round.** Before it, one worked example stood against an engine whose evidence
+was in doubt. After it, the same worked example stands against an engine and a
+runnable reference that agree over 147 charts of exactly this case. 元靈經 is not
+made wrong by that; the other side is made better attested than the register
+could previously say. And the register's overstatement is corrected where it
+stood: a reference that leaves the centre starless cannot have agreed about the
+ninth star, so what those 260 charts confirm is the eight.
 
 ## What this phase did not decide
 

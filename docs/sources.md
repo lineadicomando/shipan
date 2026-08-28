@@ -101,8 +101,11 @@ a block.
 
 *What it confirmed*: cast under `chaibu` with `yuan: 'futou'`, all 260 charts
 whose ju agrees agree cell for cell — earth plate including the lodged stem,
-the turn of the heaven plate, the nine stars, the eight gates, the eight
-spirits, 值符, 值使, 旬首, 空亡 and 驛馬. The disagreement about the ju had
+the turn of the heaven plate, **the eight outer stars**, the eight gates, the
+eight spirits, 值符, 值使, 旬首, 空亡 and 驛馬. That said «the nine stars» until
+2026-08-28, which it could not have: the same entry records this reference as
+leaving the centre starless, and a reference with no star there cannot have
+agreed about the ninth. The disagreement about the ju had
 been masking a complete agreement about everything else, which is the argument
 for comparing a chart layer by layer rather than as a whole.
 
@@ -186,17 +189,44 @@ fengshui-hacks is recorded as agreeing with this engine «cell for cell — eart
 plate including the lodged stem, the turn of the heaven plate, **the nine
 stars**» over 260 charts, and, four paragraphs later, as a reference that
 «merges 天芮 and 天禽 into one cell and **leaves the centre starless** where this
-engine keeps 天禽 at the centre». Both cannot be true as written. Measured
-against the engine, the two conventions part in **192 of the 972 pairings of a
-符頭 with an hour stem**, every one of them a pairing where palace 5 is one end
-or the other — so a 260-chart comparison would have met the case many times over
-unless it was comparing the eight outer palaces and calling them the nine.
+engine keeps 天禽 at the centre». Both cannot be true as written: a reference
+with no star in the centre cannot have agreed about the ninth. **The nine is an
+overstatement of the eight**, and it is corrected here rather than left for
+somebody to trip over — what those 260 charts confirm is the eight outer
+palaces.
 
-**Which is why nothing here is declared yet.** Before a value is named for this,
-the comparison wants re-running on the cases where palace 5 is the 符頭's or the
-hour's, against both runnable references — the one held on the shelf as a
-tarball and the one behind the CGI. That is verification and not reading, and it
-comes before the parameter rather than after it.
+### The palace-5 cases, run against the reference on the shelf
+
+That correction says what one reference did not test. **`qimen-dunjia` was then
+run to test it**, from the tarball `docs/provenance.tsv` records, over 666 charts
+across 2024 at six hours a day every third day, cast on 120°E with no true-solar
+correction and the day turned at 子時 to match how it reads a time.
+
+| | charts | earth plate | heaven plate | nine stars |
+|---|---|---|---|---|
+| neither stem in the centre | 519 | 519 | 519 | 519 |
+| hour stem in the centre | 64 | 64 | 64 | 64 |
+| 符首 in the centre | 74 | 74 | 74 | 74 |
+| both | 9 | 9 | 9 | 9 |
+
+**Complete agreement, and the ju agreed on all 666.** So this engine's
+convention — the centre out of the turn, 天禽 staying — has a runnable second,
+tested on the 147 charts where the question arises rather than incidentally.
+
+The same run measured the thing that had looked like a rule: whether the 值符
+star lands on the hour stem's palace. In the reference it does in 519 of 519
+where neither stem is in the centre, in 9 of 9 where both are, **and in none of
+the 138 where exactly one is** — which is what this engine does, and is not a
+defect in either. The reading that 值符隨時干 holds unconditionally is what the
+worked example in 元靈經 assumes and what neither runnable reference does.
+
+**So the verification narrows the divergence and weakens the case for it.**
+Before it, one worked example stood against an engine whose evidence was in
+doubt; after it, the same worked example stands against an engine and a
+runnable reference agreeing over 147 charts of exactly this case. That does not
+make 元靈經 wrong — it makes the other side better attested than the register
+could previously say. The value can be declared and refused on the strength of
+one witness; it is further than ever from being implemented. Run 2026-08-28.
 
 *Three conventions it does not share, none of them a defect in either*: it
 merges 天芮 and 天禽 into one cell and leaves the centre starless where this
