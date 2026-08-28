@@ -294,7 +294,7 @@ a value in § 1**, so neither is urgent.
 528 pages, one book-page to the page, high-contrast block printing: legible by
 eye, hopeless for OCR. `docs/sources.md` calls it the adjudicator between the
 transcriptions. This phase is collation, against the copies already held, of
-the passages the two transcriptions disagree on. **Two of them are answered.**
+the passages the two transcriptions disagree on. **Most of them are answered.**
 
 The 四化 verse is at 卷之三 leaf 151. Nine of its ten lines are the table this
 engine ships, character for character; 壬 gives 科 to 天府, confirming the
@@ -310,9 +310,16 @@ carry into the next four: the block reads at a hundred dots to the inch, its
 order — so a line is located by margin and heading, not by contact sheet. Leaf
 151 was found in four passes.
 
-What is left: the defective 火玲 line of 安身主, 火星 and 鈴星 off the hour,
-解神 off the year, the two repaired grid cells, and the starting age of the
-大限. The 目錄 names a section for each.
+The same leaf carries 安火鈴二星訣, and leaf 160 carries 安身主. The first is a
+heading and four half-lines of seats with **no clause counting on by the hour**,
+which is what the shipped default rests on, and it reads 寅午戌人**丑**卯方 —
+closing the variant the second edition opened. The second prints the same
+defective line both transcriptions do, 子午人火鈴星 in a slot every other line
+fills with one star, so the adjudicator cannot settle it; it does correct the
+graph to 鈴.
+
+What is left: 解神 off the year, the two repaired grid cells, and the starting
+age of the 大限. The 目錄 names a section for the first only.
 
 ### Phase 4 — the remainder, read behind no citation
 

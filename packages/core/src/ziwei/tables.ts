@@ -226,15 +226,21 @@ export const TIANMA: Record<BranchId, BranchId> = {
  * 亥卯未人酉戌房」, 火星 first and 鈴星 second.
  *
  * **The birth hour does not enter.** Every widespread modern practice counts
- * on from these seats by the hour; **neither edition of this book says so**,
- * and a rule this engine cannot cite is a rule it does not have. That is what
- * the `huoling` option names, and why its second value is refused rather than
- * quietly made the default.
+ * on from these seats by the hour; **no edition of this book says so**, the
+ * Ming 南陽堂 recension included — its 卷之三 leaf 151 gives the heading and
+ * four half-lines of seats and stops. A rule this engine cannot cite is a rule
+ * it does not have. That is what the `huoling` option names, and why its
+ * second value is refused rather than quietly made the default. Three
+ * recensions silent about the hour is a stronger silence than two and still a
+ * silence: the seats are shared by both readings, so a verse that gives seats
+ * and stops is consistent with either, and what carries the default is that
+ * nobody states the count.
  *
  * The second edition prints 寅午戌人**午**卯方 where this one prints 丑卯,
  * and the 丑 is kept: 午 already stands as a triplicity head two characters
  * earlier, the received seats are 丑 and 卯, and an independent implementation
- * counts from those. Recorded so the variant is not met twice.
+ * counts from those. **The woodblock settles it** — 寅午戌人丑卯方, read on
+ * the plate — so the 午 is the second edition's own and the variant is closed.
  */
 export const HUOLING: Record<BranchId, readonly [BranchId, BranchId]> = {
   yin: ['chou', 'mao'], wu: ['chou', 'mao'], xu: ['chou', 'mao'],
@@ -268,9 +274,13 @@ export const LIFE_MASTER: Record<BranchId, ZiweiStarId> = {
  * sibling rule above makes tempting, since 安命主 leaves 子 and 午 standing
  * alone where it pairs the other ten.
  *
- * **Both editions print the same defective line**, so the ambiguity is the
- * work's and not one copyist's — which removes the last hope that a second
- * witness would simply resolve it.
+ * **All three editions print the same defective line**, so the ambiguity is
+ * the work's and not one copyist's — which removes the last hope that a
+ * further witness would simply resolve it. The Ming 南陽堂 recension, at its
+ * 卷之三 leaf 160, prints 子午人火鈴星 beside 丑未人天相星, 寅申人天梁星,
+ * 卯酉人天同星, 辰戌人文昌星 and 巳亥人天機主 — one star to every other slot,
+ * two in this one. It does correct the graph: 鈴 and not the 玲 both
+ * transcriptions carry, which is theirs and not the work's.
  *
  * The compressed reading was taken first and is withdrawn. It rested on the
  * shape of the line and on nothing else — no worked instance in this book
@@ -281,7 +291,9 @@ export const LIFE_MASTER: Record<BranchId, ZiweiStarId> = {
  * no witness, one with a witness and no argument: the witness carries it, and
  * the other reading is written down in `docs/sources.md` rather than lost, so
  * whoever finds an edition that prints the line whole can overturn this in a
- * line.
+ * line. **The adjudicator has been asked and does not print it whole**, which
+ * is the strongest form that condition can fail in: the one witness expected
+ * to be able to settle it, cannot.
  */
 export const BODY_MASTER: Record<BranchId, ZiweiStarId> = {
   zi: 'huoxing', wu: 'huoxing',

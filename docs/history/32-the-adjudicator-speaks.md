@@ -63,6 +63,48 @@ register had already met without knowing what it was: 《中國絕學》第七�
 a twentieth-century school manual, arrived by different roads, printing the same
 cell.
 
+## 火星 and 鈴星, and a variant closed
+
+The block's 安火鈴二星訣 stands at the head of the same leaf as the 四化. It is a
+heading and four half-lines:
+
+> 寅午戌人丑卯方　申子辰人寅戌場　亥卯未人酉戌房　巳酉丑人卯戌位
+
+**丑, not 午.** The second edition prints 寅午戌人**午**卯方 and the register
+kept 丑 on an argument about the line's shape — 午 already stands as a
+triplicity head two characters earlier. The block agrees, so the variant is
+closed and the 午 is that edition's own.
+
+And there is no clause after the seats. Every widespread modern practice counts
+on from them by the birth hour; a third recension of a different lineage does
+not say so either. That silence is what the shipped default rests on — and it
+must be reported as silence and not as a statement, because the two readings
+share every seat and part only on whether one counts on. A verse that gives
+seats and stops is consistent with either. Three recensions silent is a stronger
+silence than two, and no more than that.
+
+## 安身主, asked and unable
+
+The 身主 line is the one defect in that table: 「子午人火玲星」, where every other
+line names one star for a pair of opposite branches in the same six-character
+slot. Both editions on the shelf print it identically, so the defect is the
+work's; the register had taken a compressed reading, then withdrawn it, and left
+a condition — «an edition printing the line whole overturns this in one commit».
+
+The block prints, at 卷之三 leaf 160:
+
+> ○安身主
+> 子午人火鈴星　丑未人天相星　寅申人天梁星
+> 卯酉人天同星　辰戌人文昌星　巳亥人天機主
+
+One star to every other slot, two in this one. The adjudicator cannot settle it,
+which is the strongest form that condition can fail in: the one witness expected
+to be able to, is not able to. The entry stops being a waiting one.
+
+It does correct the graph. 鈴 with 金, where both transcriptions carry 玲 with
+王 — so that much was theirs and not the work's, and the register had been
+reading it by sense.
+
 ## Nothing moved, and why that is the finding
 
 The temptation with an adjudicator is to let it adjudicate. It cannot here, and
@@ -78,14 +120,15 @@ school as tiebreaker. After: three forms, one of them printed in the Ming and
 corroborated by a named modern school, and the shipped one identified as the
 only one two voices agree on. That is weighable where the old state was not.
 
-Nine of the ten lines, meanwhile, are the table this engine ships character for
-character, from a witness that is neither a transcription nor descended from
-one. That is the quiet half of the phase and the larger one.
+Nine of the ten 四化 lines, meanwhile, are the table this engine ships character
+for character, and so are five of the six 身主 lines and all four 火鈴 seats,
+from a witness that is neither a transcription nor descended from one. That is
+the quiet half of the phase and the larger one.
 
 ## What is left
 
-The defective 火玲 line of 安身主; 火星 and 鈴星 off the hour; 解神 off the year;
-the two repaired grid cells; and the starting age of the 大限. The 目錄 names a
-section for each of the first three, and the method above finds a section in
-four passes. The last two are not sections and will not be found that way: one
-is a grid, and one is nowhere a sentence in either edition.
+解神 off the year; the two repaired grid cells; and the starting age of the 大限.
+The 目錄 names a section for the first — 安天德月德解神訣, in 卷之三 — and the
+method above finds a section in four passes. The other two are not sections and
+will not be found that way: one is a grid, and one is nowhere a sentence in any
+edition.
