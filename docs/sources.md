@@ -542,6 +542,78 @@ every number quoted above was confirmed on a 600 dpi crop. The 版心 carries
 page and is the running title the survey was navigated by. Read on the plate
 2026-08-28.
 
+**卷之四 was swept after the rest, and it is where the work states its own
+五行 bookkeeping — transposed from the one this engine computes.** The 九星吉凶斷
+gives every star its palace, its phase and its five seasonal states by month,
+and then states the rule they come from:
+
+> 九星休旺者，旺于同類月，相于我生月，休于生我月，囚于官鬼月，死于妻財月。
+> 日時皆同。
+
+Series pp. 307–308, read at 600 dpi. **「我」 is the star**, and that is the
+whole difference. The classical formula `strength.ts` computes reads the five
+relations *from the season*: what the season generates is 相, what generates the
+season is 休, what controls the season is 囚, what the season controls is 死.
+Read from the star instead, both pairs swap. The two agree on 旺 and part on the
+other four.
+
+**Its own table is the check, and the table is consistent with the rule.**
+天蓬, water: 「亥子月旺，寅卯月相，申酉月休，辰戌丑未月囚，巳午月死」. 天芮,
+earth: 「辰戌丑未月旺，申酉月相，巳午月休，寅卯月囚，亥子月死」. 天冲, wood:
+寅卯 旺, 巳午 相, 亥子 休, 申酉 囚, 辰戌丑未 死. Three stars, three phases, and
+each reproduces 我生 · 生我 · 官鬼 · 妻財 read outward from the star. Against
+this engine that is water 相 in spring where the engine says 休, and earth 囚 in
+spring where the engine says 死.
+
+| | this engine, from the season | 金鏡寶鑑, from the star |
+|---|---|---|
+| 相 | what the season generates | what the star generates |
+| 休 | what generates the season | what generates the star |
+| 囚 | what controls the season | what controls the star |
+| 死 | what the season controls | what the star controls |
+
+**What this is worth, stated carefully.** It is one text, and its table
+confirms its rule rather than confirming the rule's truth — internal
+consistency is not a second witness, and a compiler who transposed the formula
+once would have tabulated the transpose nine times without noticing. Against it
+stands the season-centric reading, which is the ordinary 五行 statement and what
+`strengthOf` calls «stateable in a sentence». **So nothing moves in the code**,
+and what the register gains is that a shipped quantity now has a transmitted
+text against it rather than nothing. `ROADMAP.md` § 1 carries it: two
+practitioners can hold opposite sides here, and no chart says which side drew
+it.
+
+**And it extends the reading past the month, which this engine does not.**
+「日時皆同」 — the day's branch and the hour's are read the same way. `dunjia`
+takes `moment.pillars.month.branch` and nothing else, so what a surface shows is
+the monthly state alone. That is a narrower claim rather than a wrong one, and
+it is written down here so the narrowing is visible.
+
+**Two confirmations came off the same juan, and both are the plain kind.** The
+六儀擊刑 palaces are printed for all six — 甲子加三, 甲戌加二, 甲申加八, 甲午加九,
+甲辰加四, 甲寅加四 — which is `patterns.ts`'s `STRIKE` cell for cell, and it is a
+second print beside 《統宗》's 四十格. And 五不遇時 is stated as a rule with its
+condition, 「時干剋日干。陽忌陽，陰忌陰。如甲忌庚，乙忌辛之類」, where the
+register had the ten pairings and a derivation that reproduced them: the
+polarity clause the engine carries is now transmitted in so many words and not
+only inferred from the list. Series pp. 309 and 310.
+
+**And the 格 are defined a second time inside the same work, 天盤 against 地盤**,
+agreeing with 卷之三 throughout: 伏宮格 庚加直符, 飛宮格 直符加庚, 伏干格 庚加
+日干, 飛干格 日干加庚, 大格 庚加癸, 刑格 庚加己, 龍逃走 乙加辛, 虎猖狂 辛加乙,
+蛇夭矯 癸加丁, 悖格 丙加日干. A work agreeing with itself is not a second
+witness; it is recorded because a reader collating either list against this one
+will want to know the other exists. Series pp. 308–309.
+
+**One worked case shows how the print holds its two centres together.** 「如陽五
+遁，甲己日戊辰時，甲子帶戊在中，寄坤。此方出行舉事乃吉」 — series p. 314, read
+at 600 dpi. 在中 and 寄坤 in five characters: the thing **stands** in the fifth
+palace and **lodges** at 坤, and 坤 is the direction taken from it. That is
+卷之一's 「二五同宮，其志不同」 applied to a case, and it is a third kind of
+witness for `centreLodging: kun` — not a rule stated without a condition, and
+not a gate printed in a table, but a worked hour naming the palace a reader is
+sent to.
+
 ### 置閏 has a dated worked example, and it moves the pin by a day
 
 《奇門遁甲統宗》卷一 置閏法 states the method and then works it, by name and
@@ -676,7 +748,7 @@ independent sources naming the same thing the same way**.
 | 五不遇時 | the hour's stem controls the day's, same polarity | the ten transmitted pairings — and the rule found the mnemonic **incomplete**: on two days in ten the condition strikes twice and the mnemonic names one |
 | 驛馬 | the branch facing the triad's 長生 | 申子辰馬在寅 and its three fellows |
 | the earth plate | count the instruments and marvels through the Luoshu | all eighteen published arrangements |
-| 旺相休囚死 | the five-phase reckoning against the season | stateable in a sentence and checked against it |
+| 旺相休囚死 | the five-phase reckoning against the season | stateable in a sentence and checked against it — and **contradicted in print**, 《奇門遁甲金鏡寶鑑》卷之四 reading the same five relations outward from the star and transposing two pairs; see above |
 | 門宮 · 星宮 | the five relations of the phases | 門迫 is one of the five, and a test asserts the two never disagree |
 
 **The list that tests 門迫 is two cells shorter than the rule.** 《統宗》卷一

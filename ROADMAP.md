@@ -90,11 +90,12 @@ make a school implicit», the 課體 that names nothing where the sources disagr
 `leapMonth` and `huoling` and `centreLodging` each declared with their
 alternatives refused. Three things were not.
 
-**Two are divergences nothing exposes, and a third arrived after the audit.**
-The first two need a field in a board's input type, which is the breaking
-change `docs/parameters.md` opens by saying not to make late — so they are
-named here and paid together, not one at a time. The third came off the
-金鏡寶鑑 sweep and is cheaper, having a parameter to land on already.
+**Two are divergences nothing exposes, and the 金鏡寶鑑 sweep added two more.**
+The audit's two need a field in a board's input type, which is the breaking
+change `docs/parameters.md` opens by saying not to make late — so they are named
+here and paid together, not one at a time. Of the two the sweep added, 置閏 is
+cheaper, having a parameter to land on already; the seasonal relations are a
+field like the first two and are paid with them.
 
 - 奇門, the **八神's naming**. This engine follows the 陰陽異名 convention and
   renames the middle pair in a yang chart, 白虎 → 勾陳 and 玄武 → 朱雀;
@@ -123,6 +124,17 @@ named here and paid together, not one at a time. The third came off the
   which it followed. Unlike the two above it needs no new field: it is a value
   on `method`, or a modifier of `zhirun`, and that is the one design question to
   settle before it is declared.
+- 奇門, **which way the five seasonal relations are read**, found in the
+  金鏡寶鑑 sweep. `strengthOf` reads them from the season, which is the ordinary
+  五行 statement: what the season generates is 相, what generates it 休, what
+  controls it 囚, what it controls 死. 卷之四 of that work reads the same four
+  from the **star** and tabulates all nine that way, which swaps 相 with 休 and
+  囚 with 死 and leaves only 旺 in common. It is one text and its table checks
+  its own rule rather than the rule, so nothing moves — but 旺相休囚死 is
+  reported for every star and every gate on every board, and no chart says which
+  way it was read. The same passage reads the states off the day and the hour
+  too, 「日時皆同」, where this engine passes the month branch alone; that is a
+  narrowing rather than a divergence and is recorded with it.
 - 奇門, **where earth's season begins**. `seasonElement` gives the four months
   that close the seasons — 辰, 未, 戌, 丑 — to earth entire, and `strength.ts`
   records that other schools give earth only the last eighteen days of each
@@ -476,9 +488,18 @@ PDF offset and the block layout.
     「八宅弔星…以次順飛」 at p. 290, which is the flying-palace operation named and
     spent on 八宅. That is as strong as the `plate: fei` negative can get without
     the work saying so.
-- **卷之四 奇門撮要, the second half. Unread**, and procedural by its title. The
-  三元訣 at the head of 卷之五 was read and is the open question above; what comes
-  before it was not. This is what is left of the prose.
+- **卷之四 奇門撮要. Read whole**, ten sheets, twenty leaves, pp. 306–315. **The
+  prose of this work is now finished.** It is where the book states its own
+  五行 bookkeeping, and that is the one thing in it that moves anything:
+  「九星休旺者，旺于同類月，相于我生月，休于生我月，囚于官鬼月，死于妻財月。
+  日時皆同」, with a nine-star table consistent with it. 我 is the star, so the
+  reading is transposed from the season-centric one `strength.ts` computes; new
+  entry in § 1. Everything else in the juan confirms or repeats — 六儀擊刑 for
+  all six decades cell for cell with `patterns.ts`, 五不遇時 stated with its
+  polarity condition, the 格 defined a second time 天盤 against 地盤 — except one
+  worked case worth the reading on its own: 「甲子帶戊在中，寄坤。此方出行舉事
+  乃吉」, which is 在中 and 寄坤 in one breath and a third kind of witness for
+  `centreLodging: kun`.
 - **卷之五~卷之八, the eighteen 局.** All eighteen headings read — that is the
   三元定局 and it is finished. **陽遁一局 alone is collated**, 120 cells; the
   other seventeen are about 2040 cells and the file supports reading them, which

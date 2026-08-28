@@ -66,6 +66,17 @@ export function seasonElement(monthBranch: Branch): Element {
  * Some Qi Men schools assign the nine stars a different set of states from
  * the one their element would take. This engine reports the five-phase
  * reckoning, which is stateable in a sentence and checkable against it.
+ *
+ * **And which way the sentence points is itself contested.** The relations
+ * here are read *from the season*, which is the ordinary five-phase statement.
+ * 《奇門遁甲金鏡寶鑑》卷之四 reads them from the **star** — 「旺于同類月，相于
+ * 我生月，休于生我月，囚于官鬼月，死于妻財月」 — and tabulates all nine stars
+ * that way, which transposes 相 with 休 and 囚 with 死 and agrees only on 旺.
+ * One text against the ordinary reading is not a reason to move, and its own
+ * table confirms its rule rather than the rule's truth; `docs/sources.md` has
+ * the argument and `ROADMAP.md` § 1 carries it as a divergence nothing exposes.
+ * The same passage reads the states off the day and the hour as well as the
+ * month — 「日時皆同」 — where `dunjia` passes the month branch alone.
  */
 export function strengthOf(element: Element, season: Element): Strength {
   const id = idOf(element, season);
