@@ -832,8 +832,9 @@ export const it: Record<MessageKey, string> = {
   // la usa, la pagina la stampa sopra il disegno.
   'h1.liuren': 'Da Liu Ren: il quadro delle relazioni e degli eventi umani',
   // L'anno esce da questa riga e resta sulla pagina: lo dice la description,
-  // lo dice il secondo paragrafo, e la tavola stampa l'anno per cui è stata
-  // stesa. Qui si dice invece di che cosa parla un anno di questa tavola.
+  // il modulo qui sotto è un campo solo ed è l'anno, e la tavola stampa
+  // l'anno per cui è stata stesa. Qui si dice invece di che cosa parla un
+  // anno di questa tavola.
   // L'argomento per esteso sta in `en.ts`.
   'h1.taiyi': 'Tai Yi Shen Shu: i grandi cicli e i cambiamenti macrocosmici',
   'h1.qizheng': 'Qi Zheng Si Yu: i sette governatori e i quattro residui',
@@ -984,12 +985,13 @@ export const it: Record<MessageKey, string> = {
   // `en.ts`.
   'meta.intro.taiyi.a':
     'Il 太乙神數 tàiyǐ shénshù è il vertice della divinazione cosmologica imperiale. A differenza dei sistemi centrati sull’individuo, è concepito per osservare le grandi tendenze storiche, i mutamenti ambientali e sociali e le dinamiche collettive di lungo periodo.',
-  // Su questa tavola non c'è nessuno, e la frase che lo diceva con quelle
-  // parole è adesso l'ultima riga: un modulo che è un anno non chiede né
-  // persona né luogo né ora, e dire che cosa chiede dice che cosa non chiede.
-  // La description tiene la frase piana per chi non arriva mai.
+  // Su questa tavola non c'è nessuno, e non lo dice nessuna frase di qui. Il
+  // modulo sotto questo paragrafo è un campo solo ed è l'anno: né persona, né
+  // luogo, né ora, davanti a un lettore che lo vede. Dirlo anche a parole
+  // aggiungeva una proposizione a un fatto già sullo schermo. La description
+  // tiene la frase piana, per chi non arriva mai.
   'meta.intro.taiyi.b':
-    'Questa sezione stende la tavola per esaminare l’architettura dei grandi cicli temporali e comprendere le forze di fondo che muovono i contesti complessi. Il modulo qui sotto è un anno e nient’altro.',
+    'Questa sezione stende la tavola per esaminare l’architettura dei grandi cicli temporali e comprendere le forze di fondo che muovono i contesti complessi.',
 
   'meta.title.qizheng': 'Qi Zheng Si Yu: una carta di nascita',
   'meta.description.qizheng':

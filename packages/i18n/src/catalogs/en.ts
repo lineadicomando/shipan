@@ -904,8 +904,8 @@ export const en = {
   // the reason not to — this line is also the one that goes on paper.
   'h1.liuren': 'Da Liu Ren — the board of human affairs and events',
   // A year leaves this line and stays on the page: the description says the
-  // board is of a year, the second paragraph says the form is a year and
-  // nothing else, and the board prints the year it was laid for. What the
+  // board is of a year, the form under it is one field and that field is a
+  // year, and the board prints the year it was laid for. What the
   // heading says instead is what a year of this board is *about* — which is
   // the one thing eight sections of nav and one word of label cannot carry.
   'h1.taiyi': 'Tai Yi Shen Shu — macrocosmic cycles and global trends',
@@ -1051,12 +1051,13 @@ export const en = {
   // reader about to read a palace wrong.
   'meta.intro.taiyi.a':
     '太乙神數 tàiyǐ shénshù is the apex of imperial cosmological divination. Unlike systems focused on the individual, it is made to observe broad historical trends, environmental and societal shifts, and long-term collective dynamics.',
-  // Nobody is on this board, and the sentence that said it in those words is
-  // now the last clause: a form that is one year asks for no person, no place
-  // and no hour, so saying what it asks for says what it does not. The
-  // description keeps the plain statement for whoever never arrives.
+  // Nobody is on this board, and no sentence here says so. The form under
+  // this paragraph is one field and that field is a year: no person, no
+  // place, no hour, in front of a reader who can see it. Saying it in words
+  // as well made a second clause out of a fact already on the screen. The
+  // description keeps the plain statement, for whoever never arrives.
   'meta.intro.taiyi.b':
-    'This section lays the board to examine the architecture of the great temporal cycles and the underlying forces at work in complex contexts. The form below is a year and nothing else.',
+    'This section lays the board to examine the architecture of the great temporal cycles and the underlying forces at work in complex contexts.',
 
   'meta.title.qizheng': 'Qi Zheng Si Yu — a chart of a birth',
   'meta.description.qizheng':
