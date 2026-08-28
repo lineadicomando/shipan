@@ -891,7 +891,11 @@ export const en = {
   // whole, and a heading that opened on glyphs would put them before the
   // gloss on a page whose reader does not read Chinese.
   'h1.moments': 'Ze Ri — choosing an auspicious moment by Qi Men Dun Jia',
-  'h1.qimen': 'Qi Men Dun Jia — the chart of an instant',
+  // «Chart» and not «board», which is the word the heading arrived with: a
+  // 大六壬 board is what this site calls a 六壬 one, and the two sections
+  // would name the same object with each other's word. What is tactical about
+  // it is what the art was made for, and the paragraph under this says so.
+  'h1.qimen': 'Qi Men Dun Jia — the spatio-temporal tactical chart',
   'h1.liuren': 'Da Liu Ren — the board of an instant',
   'h1.taiyi': 'Tai Yi Shen Shu — the board of a year',
   'h1.qizheng': 'Qi Zheng Si Yu — the seven governors and the four remainders',
@@ -980,12 +984,31 @@ export const en = {
     'Use this section to analyse the temporal flow and pinpoint the hours and days when the configurations of 奇門遁甲 qímén dùnjiǎ answer the criteria you gave.',
 
   'meta.title.qimen': 'Qi Men Dun Jia — cast a chart',
+  // **Nine stars, and eight of the other two.** Both of these lines said
+  // «the eight stars, gates and spirits», which is one count borrowed by
+  // three registries and wrong for the first: `STARS` holds nine, and a chart
+  // seats every one of them, because 天禽 stands in the centre — where there
+  // is no gate and no spirit to stand beside it, as `PalaceContents` says by
+  // making those two optional and the star not. What the interface draws is
+  // nine rows with `n/a` twice on the fifth, so the count a reader is given
+  // before they arrive should be the count they meet.
   'meta.description.qimen':
-    'Cast a Qi Men Dun Jia chart for any instant and place: nine palaces, earth and heaven plates, the eight stars, gates and spirits, with the ju by chaibu.',
+    'Cast a Qi Men Dun Jia chart for any instant and place: nine palaces, earth and heaven plates, the nine stars, eight gates and spirits, the ju by chaibu.',
   'meta.intro.qimen.a':
-    '奇門遁甲 qímén dùnjiǎ divides an instant into nine palaces: an earth plate fixed by the ju, a heaven plate turned onto the hour, and the eight stars, gates and spirits over them.',
+    'Considered among the most sophisticated systems of ancient Chinese imperial divination, 奇門遁甲 qímén dùnjiǎ maps the interaction between Space, Time and Action. Developed for military strategy, it integrates the influence of the nine stars, eight gates, eight spirits and the celestial stems of its two plates, earth and heaven, over geographic and temporal coordinates.',
+  // **The school stays, and it is the shortest sentence here that could not
+  // be dropped.** `CLAUDE.md` has no school implicit and every option that
+  // produced a chart in its address; this is where the section says which one
+  // it is standing on, and a reader who never opens the notes meets 拆補
+  // nowhere else on the page.
+  //
+  // What it does not say is which direction is the good one. The paragraph
+  // arrived offering «the most favorable strategic direction», and the
+  // superlative is the reading — see `docs/refusals.md`. Weighing one is
+  // something the reader does with a chart, which is why the verb has them as
+  // its subject and the chart as its instrument.
   'meta.intro.qimen.b':
-    'Give a moment and a place, or leave the form empty for now. No school is implicit: the ju is by 拆補 chāibǔ, and every option that produced a chart is in its address.',
+    'Use this section to cast the chart of an upcoming decision, or to weigh the strategic direction of a given moment. No school is implicit: the ju is by 拆補 chāibǔ, and every option that produced a chart is in its address.',
 
   'meta.title.liuren': 'Da Liu Ren — cast a board',
   'meta.description.liuren':

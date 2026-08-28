@@ -819,7 +819,12 @@ export const it: Record<MessageKey, string> = {
   // quale arte ha posto quelle ore. 擇日 sta qui come «Ze Ri» e non come
   // glifi, per la regola argomentata in `en.ts` sopra `h1.consult`.
   'h1.moments': 'Ze Ri: scegliere il momento favorevole con il Qi Men Dun Jia',
-  'h1.qimen': 'Qi Men Dun Jia: la carta di un istante',
+  // «Carta» e non «tavola», che è la parola con cui la riga è arrivata: qui
+  // «tavola» è già una delle due tavole della carta, quella di terra e quella
+  // di cielo, e il paragrafo sotto le nomina tutte e due. Una tavola che
+  // contiene due tavole è un lettore che rilegge la frase. L'inglese fa lo
+  // stesso scambio per una ragione diversa, argomentata in `en.ts`.
+  'h1.qimen': 'Qi Men Dun Jia: la carta tattica spazio-temporale',
   'h1.liuren': 'Da Liu Ren: il quadro di un istante',
   'h1.taiyi': 'Tai Yi Shen Shu: la tavola di un anno',
   'h1.qizheng': 'Qi Zheng Si Yu: i sette governatori e i quattro residui',
@@ -902,8 +907,10 @@ export const it: Record<MessageKey, string> = {
     'Attraverso questa sezione puoi analizzare il flusso temporale e individuare le ore e i giorni in cui le configurazioni del 奇門遁甲 qímén dùnjiǎ rispondono ai criteri che hai indicato.',
 
   'meta.title.qimen': 'Qi Men Dun Jia: poni una carta',
+  // Nove stelle e otto delle altre due: il conteggio sbagliato che stava qui e
+  // nel paragrafo sotto è argomentato in `en.ts`.
   'meta.description.qimen':
-    'Poni una carta Qi Men Dun Jia per un istante e un luogo qualsiasi: nove palazzi, tavola di terra e di cielo, otto stelle, porte e spiriti, ju per chaibu.',
+    'Poni una carta Qi Men Dun Jia per un istante e un luogo: nove palazzi, tavola di terra e di cielo, nove stelle, otto porte e spiriti, ju per chaibu.',
   // **L'articolo davanti al nome, che l'inglese non mette e l'italiano
   // vuole.** «奇門遁甲 qímén dùnjiǎ divide un istante» è la costruzione
   // inglese portata di peso: in italiano un nome d'arte in posizione di
@@ -922,9 +929,21 @@ export const it: Record<MessageKey, string> = {
   // «carta 奇門遁甲 qímén dùnjiǎ» e in `meta.intro.consult.a` dentro «il
   // termine 式盤 shìpán», che sono apposizioni e non ne vogliono.
   'meta.intro.qimen.a':
-    'Il 奇門遁甲 qímén dùnjiǎ divide un istante in nove palazzi: una tavola di terra fissata dal ju, una tavola di cielo ruotata sull’ora, e le otto stelle, porte e spiriti che vi stanno sopra.',
+    'Considerato fra i sistemi più articolati dell’antica divinazione imperiale cinese, il 奇門遁甲 qímén dùnjiǎ mappa l’interazione fra Spazio, Tempo e Azione. Nato per la strategia militare, integra l’influenza delle nove stelle, delle otto porte, degli otto spiriti e dei tronchi celesti delle sue due tavole, di terra e di cielo, sulle coordinate geografiche e temporali.',
+  // «Nato» al maschile perché il soggetto è l'arte: è la stessa concordanza
+  // di `intro.computed`, dove sta la ragione per esteso. E «tronchi celesti»
+  // perché 干 in questo catalogo è un tronco — `meta.intro.bazi.a` legge i
+  // tronchi nascosti e `meta.intro.liuren.b` mette chi domanda sul tronco del
+  // giorno; un gambo sarebbe la terza parola per la stessa cosa.
+  //
+  // La scuola resta, ed è la frase più corta qui che non si poteva lasciar
+  // cadere: `CLAUDE.md` non sottintende nessuna scuola, e questo è il punto
+  // in cui la sezione dice su quale sta. Quel che non dice è quale direzione
+  // sia quella buona — il superlativo con cui la frase è arrivata, «la
+  // direzione strategica più favorevole», è la lettura, e valutarla è un atto
+  // di chi legge: perciò il verbo ha lui per soggetto e la carta per mezzo.
   'meta.intro.qimen.b':
-    'Dai un momento e un luogo, o lascia il modulo vuoto per adesso. Nessuna scuola è sottintesa: il ju si determina per 拆補 chāibǔ, e ogni opzione che ha prodotto una carta è nel suo indirizzo.',
+    'Usa questa sezione per stendere la carta di una decisione imminente, o per valutare la direzione strategica di un dato momento. Nessuna scuola è sottintesa: il ju si determina per 拆補 chāibǔ, e ogni opzione che ha prodotto una carta è nel suo indirizzo.',
 
   'meta.title.liuren': 'Da Liu Ren: stendi un quadro',
   'meta.description.liuren':
