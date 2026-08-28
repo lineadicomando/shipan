@@ -837,7 +837,10 @@ export const it: Record<MessageKey, string> = {
   // anno di questa tavola.
   // L'argomento per esteso sta in `en.ts`.
   'h1.taiyi': 'Tai Yi Shen Shu: i grandi cicli e i cambiamenti macrocosmici',
-  'h1.qizheng': 'Qi Zheng Si Yu: i sette governatori e i quattro residui',
+  // Il nome glossato, e poi quel che la glossa lascia fuori: l'anello su cui
+  // gli undici si leggono. «Dimore» è la parola che `label.lodge.*` usa per
+  // tutte e ventotto.
+  'h1.qizheng': 'Qi Zheng Si Yu: l’astrologia planetaria e le ventotto dimore lunari',
   'h1.ziwei': 'Zi Wei Dou Shu: i dodici seggi di una nascita',
   'h1.bazi': 'Ba Zi: una nascita in quattro pilastri',
 
@@ -996,10 +999,22 @@ export const it: Record<MessageKey, string> = {
   'meta.title.qizheng': 'Qi Zheng Si Yu: una carta di nascita',
   'meta.description.qizheng':
     'Qi Zheng Si Yu per una nascita: i sette governatori e tre dei quattro residui, collocati sulle ventotto dimore e sui dodici palazzi.',
+  // Tre dei quattro, e il paragrafo dice tre: 紫氣 zǐqì sta nel vocabolario e
+  // su nessuna carta, e dei tre stampati due sono nodi e il terzo è l'apogeo
+  // lunare. La frase è arrivata con «i 4 punti ombra (nodi lunari ed
+  // eclittici)», due errori in una parentesi; l'argomento sta in `en.ts` e le
+  // note lo portano per intero.
+  //
+  // «Governatori» e non «pianeti», per la ragione che ha fatto nascere la
+  // parola: due dei sette sono il Sole e la Luna, che stanno fuori dal conto
+  // di cinque che i pianeti sono.
   'meta.intro.qizheng.a':
-    'Il 七政四餘 qīzhèng sìyú colloca i sette governatori e tre dei quattro residui sulle ventotto dimore e sui dodici palazzi, con posizioni lette da un’effemeride e non da una tavola.',
+    'Il 七政四餘 qīzhèng sìyú è la forma classica dell’astrologia oroscopica cinese, fondata sul movimento effettivo dei corpi celesti. Porta il percorso dei sette governatori — il Sole, la Luna e i cinque pianeti — e di tre dei quattro residui, i due nodi lunari e l’apogeo della Luna, attraverso le ventotto dimore 宿 xiù.',
+  // Quel che non dice più è che la latitudine non entra in nessun calcolo.
+  // Lo dicono le note, sotto un rifiuto tutto suo, che è dove `CLAUDE.md` lo
+  // vuole: nella documentazione e non nel modulo.
   'meta.intro.qizheng.b':
-    'Dai una nascita: un istante e un luogo. La longitudine muove il quadro, la latitudine non entra in nessun calcolo, e l’unico metodo che la leggerebbe è rifiutato.',
+    'Stendi la carta per osservare la mappa del cielo reale e le sue corrispondenze con una nascita o con il momento osservato.',
 
   'meta.title.ziwei': 'Zi Wei Dou Shu: i dodici seggi',
   'meta.description.ziwei':

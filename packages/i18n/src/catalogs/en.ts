@@ -909,7 +909,12 @@ export const en = {
   // heading says instead is what a year of this board is *about* — which is
   // the one thing eight sections of nav and one word of label cannot carry.
   'h1.taiyi': 'Tai Yi Shen Shu — macrocosmic cycles and global trends',
-  'h1.qizheng': 'Qi Zheng Si Yu — the seven governors and the four remainders',
+  // The name glossed, and then what the gloss leaves out: the ring the eleven
+  // are read against. «Lodges» and not «mansions», which is what this line
+  // arrived saying — `label.lodge.*` names all twenty-eight, and a reader
+  // given one word here and another under the board has to work out that they
+  // are the same twenty-eight.
+  'h1.qizheng': 'Qi Zheng Si Yu — planetary astrology and the twenty-eight lunar lodges',
   'h1.ziwei': 'Zi Wei Dou Shu — the twelve seats of a birth',
   'h1.bazi': 'Ba Zi — a birth as four pillars',
 
@@ -1062,10 +1067,24 @@ export const en = {
   'meta.title.qizheng': 'Qi Zheng Si Yu — a chart of a birth',
   'meta.description.qizheng':
     'Qi Zheng Si Yu for a birth: the seven governors and three of the four remainders, placed against the twenty-eight lodges and the twelve palaces.',
+  // **Three of the four, and the paragraph says three.** It arrived offering
+  // «the 4 shadow points (lunar and ecliptic nodes)», which is two errors in
+  // one parenthesis: 紫氣 is in the vocabulary and on no board — a rule for it
+  // survives and there is nothing in the sky to check that rule against, so it
+  // is left out rather than guessed at — and of the three that are printed
+  // only two are nodes, the third standing at the lunar apogee. The notes
+  // carry the whole of it, and `qizheng.ts` is where it is decided.
+  //
+  // «Governors» and not «planets», for the reason the tradition has the word
+  // at all: two of the seven are the Sun and the Moon, which stand outside
+  // the count of five that the planets are.
   'meta.intro.qizheng.a':
-    '七政四餘 qīzhèng sìyú places the seven governors and three of the four remainders on the twenty-eight lodges and the twelve palaces, read off an ephemeris rather than a table.',
+    '七政四餘 qīzhèng sìyú is the classical form of Chinese horoscopic astrology, founded on the actual movement of the celestial bodies. It carries the paths of the seven governors — the Sun, the Moon and the five planets — and of three of the four remainders, the two lunar nodes and the lunar apogee, through the twenty-eight lodges 宿 xiù.',
+  // What it no longer says is that the latitude enters no calculation. That
+  // is stated in the notes, under a refusal of its own, which is where
+  // `CLAUDE.md` puts it: in the documentation and not in the form.
   'meta.intro.qizheng.b':
-    'Give a birth: an instant and a place. The longitude moves the board; the latitude enters no calculation, and the one method that would read it is refused.',
+    'Cast the chart to map the physical sky and observe its correspondences with a birth or with the moment observed.',
 
   'meta.title.ziwei': 'Zi Wei Dou Shu — the twelve seats',
   'meta.description.ziwei':
