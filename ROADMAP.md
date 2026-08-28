@@ -60,11 +60,37 @@ it by name — which is what 太乙's `ji` did when 卷一 was read.
   **A third table has since been read and it does not change that shape**: the
   Ming 南陽堂 recension moves one cell too, a different one, giving 庚's 科 to
   天同 and its 忌 to 天相. Single cells moving is what this shelf keeps finding.
-  What it does raise, and this file does not decide, is *what a second value
-  would be named for* — the 中州派 and 北派 readings would name a school, and a
-  recension of 《全書》 itself would name an edition, which is a different kind
-  of parameter. See `docs/sources.md`.
+  It raised the question of what a second value would be *named* for, and that
+  question is now answered: a school, never a recension — so the 南陽堂's 庚 is
+  a reading of 《全書》 that the register settles and not a value this parameter
+  will ever carry. See `docs/parameters.md` § "What is not a parameter".
 - 曆注 `shensha` — what 《協紀辨方書》 ratifies, until a named lineage has been.
+
+**And one divergence owes a parameter it does not have.** That is a third state
+and the worst of the three, because nothing refuses it by name: the chart comes
+back without saying which convention drew it.
+
+`CLAUDE.md`'s rule was narrowed on 2026-08-28 — every divergence *between
+practitioners* is a parameter, a disagreement between witnesses to one text is
+not — and the narrowing is what makes this visible. See `docs/parameters.md`
+§ "What is not a parameter".
+
+- 奇門, the **八神's naming**. This engine follows the 陰陽異名 convention and
+  renames the middle pair in a yang chart, 白虎 → 勾陳 and 玄武 → 朱雀;
+  `plates.ts` says so above `SPIRITS_YANG` and says, in as many words, that it
+  is «a divergence this engine does not yet expose». Other traditions keep one
+  pair in both dun, and 《奇門遁甲全局》 — read on the plate, see
+  `docs/sources.md` — is a third: 白虎 at the fifth seat and 勾陳 at the sixth.
+  Two practitioners hold different boards here, so this is a parameter's job.
+  It costs a field in 奇門's input type, which is what makes it a step of its
+  own rather than something done in passing.
+
+Two more are candidates and are not claimed. Whether **天禽 stands at the
+centre** or rides merged with 天芮 divides implementations and probably divides
+traditions; whether the **lodged stem turns with its host** on the heaven plate
+is called a divergence in `docs/sources.md` and may yet turn out to be one
+library's choice rather than a school's. Each needs establishing before it is
+declared, which is reading and not code.
 
 `method: maoshan` is in the table and is not expected to leave it: there is no
 reference against which a 茅山 chart could be falsified. See

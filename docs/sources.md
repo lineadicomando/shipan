@@ -179,7 +179,10 @@ side of the pair, the eight seats, the flight's direction and the whole yin
 board are confirmed rather than contradicted. What changes is the evidence:
 the naming was a choice weighed against two implementations, and it is now a
 choice with a Qing imperial print dissenting from half of it, by name and in
-one direction. It also names the 直符 **天乙** — 「直符天乙」 in the yin chart,
+one direction. **And a third reading is what turned this from a note into a
+debt**: two conventions could be called one implementation's preference, three
+cannot, and `CLAUDE.md`'s rule as narrowed on 2026-08-28 says a divergence
+between practitioners owes a parameter. `ROADMAP.md` § 1 carries it. It also names the 直符 **天乙** — 「直符天乙」 in the yin chart,
 「艮開蓬天乙」 in the yang — which is the same spirit and the glyph the 四十格's
 天乙伏宮 and 天乙飛宮 are built on.
 

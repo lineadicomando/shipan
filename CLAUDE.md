@@ -77,10 +77,13 @@ the engine falls back to Moshier, which needs no files.
   dating an outcome, advising. Such an attribute travels as an identifier and
   a glyph, **never as prose**. → [`docs/refusals.md`](docs/refusals.md)
 - **No school is implicit, and a chart carries the options that produced it.**
-  Every divergence is an explicit parameter with a declared default, present
-  in the input type from the start; an unimplemented value is refused, never
-  substituted. No function in `core` reads a global default. →
-  [`docs/parameters.md`](docs/parameters.md)
+  Every divergence *between practitioners* is an explicit parameter with a
+  declared default, present in the input type from the start; an unimplemented
+  value is refused, never substituted. **A disagreement between witnesses to
+  one text is not one of those** — which reading the engine follows is settled
+  once in the register, and no value is ever named for a recension. **A school
+  can be followed; an edition can only be preferred.** No function in `core`
+  reads a global default. → [`docs/parameters.md`](docs/parameters.md)
 - **An art natively about a life gets a board of its own, never dunjia's**, and
   **a birth enters a chart, never the other way about.** Both are the same
   refusal: the natal-Qimen graft. Each board arrives with its own input type,

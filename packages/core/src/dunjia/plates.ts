@@ -88,9 +88,17 @@ export type SpiritId =
  * The eight spirits, in the order they are laid out from the chief.
  *
  * The fifth and sixth differ between a yang chart and a yin one in the
- * convention followed here: 勾陳 and 朱雀 preside while the yang half of the
- * year runs, 白虎 and 玄武 while the yin half does. Other traditions use one
- * pair throughout, which is a divergence this engine does not yet expose.
+ * convention followed here — 陰陽異名: 勾陳 and 朱雀 preside while the yang
+ * half of the year runs, 白虎 and 玄武 while the yin half does.
+ *
+ * **Other traditions do it otherwise, and this is a divergence between
+ * practitioners, so it owes a parameter it does not have.** Some keep one pair
+ * in both dun; 《奇門遁甲全局》, read on the plate, is a third reading, holding
+ * 白虎 at the fifth seat and putting 勾陳 at the sixth. Two readers draw
+ * different boards from the same instant and nothing in the output says which
+ * convention drew this one, which `CLAUDE.md`'s rule forbids. Declaring it
+ * costs a field in this board's input type; `ROADMAP.md` § 1 carries the debt
+ * and `docs/sources.md` carries the witnesses.
  */
 export const SPIRITS_YANG: readonly Spirit[] = [
   { id: 'zhifu', hanzi: '值符', pinyin: 'zhífú' },

@@ -66,6 +66,7 @@ phase.
 | 30 | [The shelf answers](30-the-shelf-answers.md) | done — ten thousand unread pages made searchable, seven files found to be other than catalogued, and a twelfth 十干克應 pairing shipped where the verse divides |
 | 31 | [The third volume](31-the-third-volume.md) | done — 遁甲符應經 lodges the centre in 坤, the 年家's second witness contradicts the first, and a printed board dissents on a spirit's name |
 | 32 | [The adjudicator speaks](32-the-adjudicator-speaks.md) | done — the Ming woodblock settles 壬, the 丑/午 variant and a graph, prints a third reading at 庚, and cannot settle 身主 |
+| 33 | [A school can be followed](33-a-school-can-be-followed.md) | done — narrows «every divergence is a parameter», and the narrowing finds a debt the code had already confessed |
 
 ## The rest of the record
 

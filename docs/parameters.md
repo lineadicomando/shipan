@@ -11,6 +11,38 @@ already exists in the type and an unimplemented value is **refused rather than
 silently substituted** — `METHOD_NOT_IMPLEMENTED` exists because a chart cast
 by the wrong method looks right and is not.
 
+## What is not a parameter, which the rule above used not to say
+
+«Every divergence» was too wide, and the practice was always narrower. Two
+copies of one work disagree at a character, an editor emends and prints the
+original beside it, a Ming block reads 同相 where a transcription reads 陰同 —
+those are divergences and none of them is a parameter. The engine settles them
+once, argues the settlement in `docs/sources.md`, and hands the caller a chart.
+The 六壬 case is the plain one: the 四庫 text writes 己 and 巳 for each other,
+this engine reads there as the sense requires, and no option was ever offered
+for it.
+
+**The test is whether somebody could hold the other side.** A school can be
+followed — a person says «I cast by 拆補», «I follow 中州派», and means it as a
+commitment they could defend. An edition can only be preferred, and preferring
+one is the work of whoever assembled the shelf. That is why **no value here is
+ever named for a recension**: a caller has no ground to choose between two
+witnesses to one text, and offering the choice would be the engine declining a
+job that is its own.
+
+**A value named for a work is not a counter-example.** `sihua: quanshu` names
+《紫微斗數全書》 and `xiudu` names two 曆, because in those places the work *is*
+the method — a 七政四餘 practitioner really does cast by 授時 degrees or by
+時憲 ones. What the name never means is «this copy rather than that copy of the
+same work».
+
+**Narrowing the rule makes its first half bite harder, and that is the point.**
+Once an editorial settlement is named as the thing that is *not* a parameter, a
+convention this engine follows and another living tradition does not stops
+being able to hide behind the same word. If two practitioners would draw
+different boards, the divergence owes a parameter, whatever else is true about
+it. `ROADMAP.md` § 1 carries what that costs today.
+
 **Each board carries its own input type. None inherits a default from
 dunjia's.**
 
