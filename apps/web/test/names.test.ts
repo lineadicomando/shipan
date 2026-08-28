@@ -39,15 +39,17 @@ import { namesApart } from '../src/lib/names';
  * stem and a parameter's value all travel with their reading on them, so
  * `SAID` below takes those from the engine and this list stays at what prose
  * names and no board seats: the arts said in short (奇門, 六壬, 太乙) and the
- * three of them taken together (三式), the things this project refuses to
- * compute (用神, 年命, 主, 客), the three kinds of instrument (卜, 命, 天), two
- * books, one man, and the collective names of two almanac layers whose
- * *members* the engine knows one by one.
+ * three of them taken together (三式), the discipline a section performs
+ * (擇日), the things this project refuses to compute (用神, 年命, 主, 客), the
+ * three kinds of instrument (卜, 命, 天), two books, one man, and the
+ * collective names of two almanac layers whose *members* the engine knows one
+ * by one.
  */
 const READINGS: Readonly<Record<string, string>> = {
   式盤: 'shìpán',
   式: 'shì',
   三式: 'sānshì',
+  擇日: 'zérì',
   奇門遁甲: 'qímén dùnjiǎ',
   奇門: 'qímén',
   遁甲演義: 'dùnjiǎ yǎnyì',

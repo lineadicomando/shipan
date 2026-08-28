@@ -808,10 +808,17 @@ export const it: Record<MessageKey, string> = {
   // stacca dalla sua glossa con i due punti dove l'inglese mette la lineetta:
   // una convenzione anglo-americana portata di peso dal catalogo accanto.
   'h1.consult': 'Generatore di tavole divinatorie e cosmologiche cinesi',
-  // La sezione che percorre carte Qi Men, nominata con l'arte che percorre.
-  // L'etichetta della nav non può portarlo — un'intestazione dice dove stanno
-  // le cose, non di cosa sono fatte — e qui serve a chi legge i risultati.
-  'h1.moments': 'Scegliere un’ora con il Qi Men Dun Jia',
+  // La sezione che percorre carte Qi Men, nominata con la disciplina che
+  // compie e con l'arte con cui la compie. L'etichetta della nav non può
+  // portarle — un'intestazione dice dove stanno le cose, non di cosa sono
+  // fatte — e qui servono a chi legge i risultati.
+  //
+  // L'arte resta nella riga perché è la riga che va sulla carta: `SectionIntro`
+  // stampa l'intestazione e lascia cadere i paragrafi sotto, e un foglio
+  // intitolato alla sola disciplina arriverebbe a chi lo riceve senza dire
+  // quale arte ha posto quelle ore. 擇日 sta qui come «Ze Ri» e non come
+  // glifi, per la regola argomentata in `en.ts` sopra `h1.consult`.
+  'h1.moments': 'Ze Ri: scegliere il momento favorevole con il Qi Men Dun Jia',
   'h1.qimen': 'Qi Men Dun Jia: la carta di un istante',
   'h1.liuren': 'Da Liu Ren: il quadro di un istante',
   'h1.taiyi': 'Tai Yi Shen Shu: la tavola di un anno',
@@ -872,15 +879,29 @@ export const it: Record<MessageKey, string> = {
   'meta.title.moments': 'Scegliere il momento: Qi Men Dun Jia',
   'meta.description.moments':
     'Ogni ora fra due date posta come carta Qi Men Dun Jia, e l’elenco di quelle che rispondono a ciò che indichi, con la direzione in cui ognuna sta.',
+  // «Dello 擇日 zérì», che è la regola dell'articolo scritta sopra
+  // `meta.intro.qimen.a`: si accorda con la lettura, e una «z» iniziale vuole
+  // l'articolo che vuole lo zaino.
   'meta.intro.moments.a':
-    'Ogni ora fra due date viene posta come carta 奇門遁甲 qímén dùnjiǎ, e sono elencate quelle che rispondono a ciò che indichi, ciascuna con la sua direzione.',
+    'Nel pensiero classico orientale il tempo non è un flusso uniforme, ma una successione di qualità energetiche differenti. La disciplina dello 擇日 zérì permette di individuare la finestra temporale più propizia per iniziare un’attività, prendere una decisione o avviare un progetto.',
   // Apre con quello che la pagina chiede, come ogni altro secondo paragrafo,
   // e questo non era: diceva solo che cosa la sezione si rifiuta di fare. Il
   // modulo qui sotto ha due gambe, «L’intervallo e il luogo» e «Che cosa
   // cercare», e la seconda colonna era alta un quarto della prima perché ne
   // nominava una sola.
+  //
+  // **Criteri, e mai una classifica di ore.** La frase è arrivata dicendo che
+  // la sezione individua le ore «che offrono il massimo supporto e la minore
+  // resistenza», che è l'ordinamento di ore rifiutato in `docs/refusals.md`:
+  // qui si percorre un intervallo, si elencano le ore che rispondono ai
+  // criteri nominati dal lettore, ciascuna con la sua direzione, e ci si
+  // ferma. L'arte è nominata qui e non nel paragrafo sopra, perché questa è
+  // la frase su ciò che la sezione fa — e percorre carte 奇門遁甲 e nient'altro,
+  // che è anche il motivo per cui in nessuno dei due paragrafi compaiono i
+  // 三式 al plurale. L'ultima riga dice il rifiuto, ed è la stessa riga che il
+  // fondo di ogni pagina tiene.
   'meta.intro.moments.b':
-    'Dai due date e un luogo, e nomina ciò che cerchi. Criteri, non raccomandazioni: che cosa renda un’ora buona per agire è una lettura, ed è tua.',
+    'Attraverso questa sezione percorri un intervallo di date da un luogo e nomini ciò che cerchi: sono elencate le ore e i giorni in cui le configurazioni del 奇門遁甲 qímén dùnjiǎ rispondono ai criteri che hai indicato, ciascuna con la direzione in cui sta. Che cosa renda un’ora buona per agire è una lettura, ed è tua.',
 
   'meta.title.qimen': 'Qi Men Dun Jia: poni una carta',
   'meta.description.qimen':

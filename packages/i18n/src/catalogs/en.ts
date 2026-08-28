@@ -876,10 +876,21 @@ export const en = {
   // board. What is made of one afterwards is theirs — which is the same line
   // the footer holds on every page of this site.
   'h1.consult': 'Chinese Divination and Cosmological Chart Generator',
-  // The section that walks Qi Men charts, named with the art it walks. The
-  // nav label cannot carry it — a header says where things are, not what they
-  // are made of — and this is where somebody reading results needs it.
-  'h1.moments': 'Choosing an hour by Qi Men Dun Jia',
+  // The section that walks Qi Men charts, named with the discipline it
+  // performs and with the art it performs it by. The nav label cannot carry
+  // either — a header says where things are, not what they are made of — and
+  // this is where somebody reading results needs them.
+  //
+  // **The art stays in the line because this line is the one that prints.**
+  // `SectionIntro` keeps the heading on paper and drops the paragraphs under
+  // it, so a sheet headed by the discipline alone would reach the person
+  // receiving it without saying which art laid the hours on it.
+  //
+  // 擇日 arrives as `Ze Ri` and not as its glyphs, by the rule stated over
+  // `h1.consult`: the paragraphs under a heading are where a name is written
+  // whole, and a heading that opened on glyphs would put them before the
+  // gloss on a page whose reader does not read Chinese.
+  'h1.moments': 'Ze Ri — choosing an auspicious moment by Qi Men Dun Jia',
   'h1.qimen': 'Qi Men Dun Jia — the chart of an instant',
   'h1.liuren': 'Da Liu Ren — the board of an instant',
   'h1.taiyi': 'Tai Yi Shen Shu — the board of a year',
@@ -942,15 +953,33 @@ export const en = {
   'meta.title.moments': 'Choosing a time — Qi Men Dun Jia',
   'meta.description.moments':
     'Every hour between two dates cast as a Qi Men Dun Jia chart, and the ones matching what you name listed with the direction each stands in.',
+  // **The discipline is named, and what a discipline is for is said in the
+  // discipline's own register.** 擇日 is the tradition's word for weighing a
+  // day as the occasion of an undertaking, and choosing a time is where this
+  // project settled that a purpose may expand into criteria that can be seen
+  // — see `docs/history/15-almanac-layer.md`. A sentence saying what 擇日
+  // promises describes 擇日. What *this section* does is the paragraph under
+  // it, and that is the one that has to be exact.
   'meta.intro.moments.a':
-    'Every hour between two dates is cast as a 奇門遁甲 qímén dùnjiǎ chart, and the ones answering what you name below are listed, each with its direction.',
+    'In classical Eastern thought, time is not a uniform flow but a sequence of differing energetic qualities. The discipline of 擇日 zérì makes it possible to identify the most propitious window in which to begin an activity, make a decision or launch a project.',
   // It opens on what the page asks for, as every other second paragraph does
   // and this one did not: it said only what the section declines to do. The
   // form under it has two legs — the interval and the place, and what to look
   // for — and the right-hand column stood a quarter the height of the left
   // because it named one of them.
+  //
+  // **Criteria, and never a ranking of hours.** This arrived saying the
+  // section finds the hours «offering maximum support and minimal
+  // resistance», which is the ordering of hours `docs/refusals.md` declines:
+  // what happens here is that an interval is walked and the hours answering
+  // the criteria the reader named are listed, each with its direction, and
+  // then it stops. The art is named here rather than above it, since this is
+  // the sentence about what the section does — and it walks 奇門遁甲 charts
+  // and only those, which is also why no plural of the 三式 belongs in either
+  // paragraph. The last line is where the refusal is said, and it is the same
+  // line the footer holds on every page.
   'meta.intro.moments.b':
-    'Give two dates and a place, and name what you are looking for. Criteria, not recommendations: what makes an hour worth acting in is a reading, and it is yours.',
+    'Use this section to walk an interval of dates from a place and name what you are looking for: the hours and days whose 奇門遁甲 qímén dùnjiǎ configurations answer the criteria you gave are listed, each with the direction it stands in. What makes an hour worth acting in is a reading, and it is yours.',
 
   'meta.title.qimen': 'Qi Men Dun Jia — cast a chart',
   'meta.description.qimen':
