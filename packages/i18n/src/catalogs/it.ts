@@ -831,7 +831,11 @@ export const it: Record<MessageKey, string> = {
   // chiama la tavola del 六壬 dappertutto — la description la usa, il modulo
   // la usa, la pagina la stampa sopra il disegno.
   'h1.liuren': 'Da Liu Ren: il quadro delle relazioni e degli eventi umani',
-  'h1.taiyi': 'Tai Yi Shen Shu: la tavola di un anno',
+  // L'anno esce da questa riga e resta sulla pagina: lo dice la description,
+  // lo dice il secondo paragrafo, e la tavola stampa l'anno per cui è stata
+  // stesa. Qui si dice invece di che cosa parla un anno di questa tavola.
+  // L'argomento per esteso sta in `en.ts`.
+  'h1.taiyi': 'Tai Yi Shen Shu: i grandi cicli e i cambiamenti macrocosmici',
   'h1.qizheng': 'Qi Zheng Si Yu: i sette governatori e i quattro residui',
   'h1.ziwei': 'Zi Wei Dou Shu: i dodici seggi di una nascita',
   'h1.bazi': 'Ba Zi: una nascita in quattro pilastri',
@@ -974,10 +978,18 @@ export const it: Record<MessageKey, string> = {
   'meta.title.taiyi': 'Tai Yi Shen Shu: la tavola di un anno',
   'meta.description.taiyi':
     'La tavola Tai Yi Shen Shu di un anno: sedici divinità in nove palazzi, con i conti di ospite e ospitante. Il soggetto è l’anno: non c’è nessuno sopra.',
+  // Il seggio di cui i palazzi sono sfalsati esce da qui e non esce dalla
+  // pagina: lo stampa `TaiyiReading` sotto la tavola, con
+  // `cli.value.taiyiPalaces`, dove il lettore sta contando. L'argomento sta in
+  // `en.ts`.
   'meta.intro.taiyi.a':
-    'Il 太乙神數 tàiyǐ shénshù stende un anno: sedici divinità in nove palazzi, e i conti che decidono ospitante e ospite. I palazzi sono sfalsati di un posto rispetto al 洛書 luòshū.',
+    'Il 太乙神數 tàiyǐ shénshù è il vertice della divinazione cosmologica imperiale. A differenza dei sistemi centrati sull’individuo, è concepito per osservare le grandi tendenze storiche, i mutamenti ambientali e sociali e le dinamiche collettive di lungo periodo.',
+  // Su questa tavola non c'è nessuno, e la frase che lo diceva con quelle
+  // parole è adesso l'ultima riga: un modulo che è un anno non chiede né
+  // persona né luogo né ora, e dire che cosa chiede dice che cosa non chiede.
+  // La description tiene la frase piana per chi non arriva mai.
   'meta.intro.taiyi.b':
-    'Su questa tavola non c’è nessuno: né domanda, né persona, né luogo, né ora. Il soggetto è l’anno in cui tutti stiamo, e il modulo qui sotto è un numero.',
+    'Questa sezione stende la tavola per esaminare l’architettura dei grandi cicli temporali e comprendere le forze di fondo che muovono i contesti complessi. Il modulo qui sotto è un anno e nient’altro.',
 
   'meta.title.qizheng': 'Qi Zheng Si Yu: una carta di nascita',
   'meta.description.qizheng':
