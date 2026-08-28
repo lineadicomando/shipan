@@ -152,6 +152,40 @@ kind of passage rather than the copy: a text checking itself, which is the
 second of the two things the standard accepts. A print is still wanted before
 the value is implemented.
 
+## The corroboration, and what it found in the register
+
+The witness was a transcription, so two classical ones were asked to stand
+beside it. They corroborate everything around the divergence and not the
+divergence: 《統宗》 states the lodging twice and gives the centre's decade
+「天禽為符，死門為使」, which is what this engine computes; 《秘笈大全》 says
+「惟天禽則無定位，寄西南而屬中宮」, which is both of this engine's positions in
+one clause. Neither says what the turn does with the centre's occupants.
+
+The fused name settled nothing either, exactly as `docs/scans.md` says an
+extract cannot: 芮禽 appears in 元靈經's omen verses as one name for the pair and
+in the 圖解 extract as a chart cell, including in a 伏吟 board — and a board
+drawn without a separate centre cell shows 芮禽 together under either
+convention, because this engine reads the centre at its host too.
+
+**What the pass did find was in `docs/sources.md`.** One reference is recorded
+there as agreeing with this engine «cell for cell — the turn of the heaven
+plate, the nine stars» over 260 charts, and four paragraphs later as one that
+«merges 天芮 and 天禽 into one cell and leaves the centre starless where this
+engine keeps 天禽 at the centre». Both cannot be true as written.
+
+Measured across every pairing of a 符頭 with an hour stem, the engine's 值符 star
+fails to land on the hour's palace in **192 of 972** — every one of them a
+pairing where palace 5 is one end or the other. A 260-chart comparison would
+have met that many times over. So either the comparison did not reach the centre
+cell, or «the nine stars» meant the eight outer palaces.
+
+That is the audit's most uncomfortable result, and it is not about the shelf. It
+means the evidence behind a shipped derivation is weaker than the register
+claims, and it puts a verification step in front of the parameter: re-run both
+runnable references on the palace-5 cases before any value is named. Declaring a
+divergence on top of a comparison that may not have tested it would be the same
+mistake in a new place.
+
 ## What this phase did not decide
 
 Whether to pay any of it. The 全局 reading is a day old and rests on one print,

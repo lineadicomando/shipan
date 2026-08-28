@@ -156,6 +156,48 @@ and its 值使 — a text checking itself, which is the second of the two things
 standard accepts. A print would still be wanted before the value is
 implemented. Run against the engine 2026-08-28.
 
+**Two classical transcriptions were then asked, and they corroborate everything
+around the divergence and not the divergence.** 《統宗》 states the lodging twice
+— 「中宮，寄坤宮也，即易之坤為母也」 — and states what the centre's decade gets:
+「甲辰在中宮，寄於坤二，**天禽為符，死門為使**」, which is what this engine
+computes, 天禽 by the centre's own star and 死門 borrowed from the host. It works
+a gate flight through the same lodging: 「則本日在中宮，兌宮驚門值事，即以驚門加
+中五寄坤，便知開在兌，休在乾，生在坎也」. And 《秘笈大全》 says of the centre's
+star what no other text on this shelf says outright — 「惟天禽則無定位，寄西南而
+屬中宮」 — 天禽 has no fixed seat, lodges in the south-west, belongs to the
+centre. Both engine positions, corroborated.
+
+**What neither states is what the turn does with the centre's occupants**, which
+is the one thing at issue. So the divergence is narrowed to a point and the
+point still rests on one worked example.
+
+**And the fused name settles nothing, which `docs/scans.md` predicts.** 芮禽
+appears six times in 元靈經 and ten in the 圖解 extract and nowhere in the other
+two. All six of 元靈經's are omen verses naming the pair as one — 「芮禽若也到休
+門」, 「廟宇溪溝在芮禽」 — and all ten of 圖解's are chart cells rendered 天芮禽,
+including in a 伏吟 board where every star is at home. Neither can decide whether
+the centre is starless, because a board drawn without a separate centre cell
+shows 芮禽 together under *either* convention: this engine reads the centre at
+its host too. An extract locates and does not decide, and the plate is where
+this one would be settled.
+
+**The audit found a contradiction in this file, and it sits in the entry above.**
+fengshui-hacks is recorded as agreeing with this engine «cell for cell — earth
+plate including the lodged stem, the turn of the heaven plate, **the nine
+stars**» over 260 charts, and, four paragraphs later, as a reference that
+«merges 天芮 and 天禽 into one cell and **leaves the centre starless** where this
+engine keeps 天禽 at the centre». Both cannot be true as written. Measured
+against the engine, the two conventions part in **192 of the 972 pairings of a
+符頭 with an hour stem**, every one of them a pairing where palace 5 is one end
+or the other — so a 260-chart comparison would have met the case many times over
+unless it was comparing the eight outer palaces and calling them the nine.
+
+**Which is why nothing here is declared yet.** Before a value is named for this,
+the comparison wants re-running on the cases where palace 5 is the 符頭's or the
+hour's, against both runnable references — the one held on the shelf as a
+tarball and the one behind the CGI. That is verification and not reading, and it
+comes before the parameter rather than after it.
+
 *Three conventions it does not share, none of them a defect in either*: it
 merges 天芮 and 天禽 into one cell and leaves the centre starless where this
 engine keeps 天禽 at the centre; it writes 白虎 and 玄武 in both dun where this

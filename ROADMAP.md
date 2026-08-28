@@ -136,6 +136,22 @@ engine leaves them at the centre. The outer eight agree either way.
 So the field 奇門 owes is not one but three values' worth of divergence, and
 that is the argument for paying them in one movement.
 
+**One of the three has a precondition, and it is not reading.** The
+corroboration pass asked two classical transcriptions and got the apparatus
+confirmed and the divergence untouched: 《統宗》 gives the centre's decade 天禽 as
+符 and 坤's 死門 as 使, exactly as this engine computes, and 《秘笈大全》 says
+「惟天禽則無定位，寄西南而屬中宮」 — both engine positions. Neither says what the
+turn does with the centre's occupants.
+
+What the pass did turn up is a contradiction inside `docs/sources.md`: the same
+reference is recorded as agreeing cell for cell on «the nine stars» over 260
+charts and as leaving the centre starless where this engine keeps 天禽 there.
+Measured, the two conventions part in **192 of the 972 pairings of a 符頭 with an
+hour stem** — every one involving palace 5 — so a 260-chart comparison met the
+case unless it was comparing eight palaces and calling them nine. **Re-running
+both runnable references on the palace-5 cases comes before declaring this
+value**, and it is verification rather than shelf work.
+
 `method: maoshan` is in the table and is not expected to leave it: there is no
 reference against which a 茅山 chart could be falsified. See
 `docs/refusals.md`.
