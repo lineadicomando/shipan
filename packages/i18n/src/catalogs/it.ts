@@ -884,24 +884,24 @@ export const it: Record<MessageKey, string> = {
   // l'articolo che vuole lo zaino.
   'meta.intro.moments.a':
     'Nel pensiero classico orientale il tempo non è un flusso uniforme, ma una successione di qualità energetiche differenti. La disciplina dello 擇日 zérì permette di individuare la finestra temporale più propizia per iniziare un’attività, prendere una decisione o avviare un progetto.',
-  // Apre con quello che la pagina chiede, come ogni altro secondo paragrafo,
-  // e questo non era: diceva solo che cosa la sezione si rifiuta di fare. Il
-  // modulo qui sotto ha due gambe, «L’intervallo e il luogo» e «Che cosa
-  // cercare», e la seconda colonna era alta un quarto della prima perché ne
-  // nominava una sola.
+  // Dice che cosa fa la sezione, che è il mestiere di ogni secondo paragrafo.
+  // Il modulo qui sotto ha due gambe, «L’intervallo e il luogo» e «Che cosa
+  // cercare»: la frase le tiene tutte e due implicite — il flusso temporale è
+  // la prima, i criteri indicati sono la seconda — e sta corta, che è la
+  // ragione per cui l'inglese accanto è più lungo di lei e non un
+  // disallineamento fra i due cataloghi.
   //
   // **Criteri, e mai una classifica di ore.** La frase è arrivata dicendo che
   // la sezione individua le ore «che offrono il massimo supporto e la minore
-  // resistenza», che è l'ordinamento di ore rifiutato in `docs/refusals.md`:
-  // qui si percorre un intervallo, si elencano le ore che rispondono ai
-  // criteri nominati dal lettore, ciascuna con la sua direzione, e ci si
-  // ferma. L'arte è nominata qui e non nel paragrafo sopra, perché questa è
-  // la frase su ciò che la sezione fa — e percorre carte 奇門遁甲 e nient'altro,
-  // che è anche il motivo per cui in nessuno dei due paragrafi compaiono i
-  // 三式 al plurale. L'ultima riga dice il rifiuto, ed è la stessa riga che il
-  // fondo di ogni pagina tiene.
+  // resistenza», che è l'ordinamento di ore rifiutato in `docs/refusals.md`.
+  // Quel che resta è «rispondono ai criteri che hai indicato»: i criteri sono
+  // del lettore, l'elenco è di chi risponde, e chi valga la pena non è detto
+  // da nessuno qui. L'arte è nominata in questa frase e non nel paragrafo
+  // sopra, perché questa è la frase su ciò che la sezione fa — e percorre
+  // carte 奇門遁甲 e nient'altro, che è anche il motivo per cui in nessuno dei
+  // due paragrafi compaiono i 三式 al plurale.
   'meta.intro.moments.b':
-    'Attraverso questa sezione percorri un intervallo di date da un luogo e nomini ciò che cerchi: sono elencate le ore e i giorni in cui le configurazioni del 奇門遁甲 qímén dùnjiǎ rispondono ai criteri che hai indicato, ciascuna con la direzione in cui sta. Che cosa renda un’ora buona per agire è una lettura, ed è tua.',
+    'Attraverso questa sezione puoi analizzare il flusso temporale e individuare le ore e i giorni in cui le configurazioni del 奇門遁甲 qímén dùnjiǎ rispondono ai criteri che hai indicato.',
 
   'meta.title.qimen': 'Qi Men Dun Jia: poni una carta',
   'meta.description.qimen':
