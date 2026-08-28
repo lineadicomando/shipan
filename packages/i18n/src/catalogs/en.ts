@@ -996,19 +996,18 @@ export const en = {
     'Cast a Qi Men Dun Jia chart for any instant and place: nine palaces, earth and heaven plates, the nine stars, eight gates and spirits, the ju by chaibu.',
   'meta.intro.qimen.a':
     'Considered among the most sophisticated systems of ancient Chinese imperial divination, 奇門遁甲 qímén dùnjiǎ maps the interaction between Space, Time and Action. Developed for military strategy, it integrates the influence of the nine stars, eight gates, eight spirits and the celestial stems of its two plates, earth and heaven, over geographic and temporal coordinates.',
-  // **The school stays, and it is the shortest sentence here that could not
-  // be dropped.** `CLAUDE.md` has no school implicit and every option that
-  // produced a chart in its address; this is where the section says which one
-  // it is standing on, and a reader who never opens the notes meets 拆補
-  // nowhere else on the page.
+  // The school is not named here, and is no more implicit for that: the
+  // description carries «the ju by chaibu», the form under this carries the
+  // method among its options, and the address of every chart carries all of
+  // them. What this paragraph says is what the reader does with one.
   //
-  // What it does not say is which direction is the good one. The paragraph
-  // arrived offering «the most favorable strategic direction», and the
-  // superlative is the reading — see `docs/refusals.md`. Weighing one is
-  // something the reader does with a chart, which is why the verb has them as
-  // its subject and the chart as its instrument.
+  // And it does not say which direction is the good one. It arrived offering
+  // «the most favorable strategic direction», and the superlative is the
+  // reading `docs/refusals.md` declines. Weighing one is something the reader
+  // does with a chart, which is why the verb has them as its subject and the
+  // chart as its instrument.
   'meta.intro.qimen.b':
-    'Use this section to cast the chart of an upcoming decision, or to weigh the strategic direction of a given moment. No school is implicit: the ju is by 拆補 chāibǔ, and every option that produced a chart is in its address.',
+    'Use this section to cast the chart of an upcoming decision, or to weigh the strategic direction of a given moment.',
 
   'meta.title.liuren': 'Da Liu Ren — cast a board',
   'meta.description.liuren':

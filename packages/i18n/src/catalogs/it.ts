@@ -936,14 +936,17 @@ export const it: Record<MessageKey, string> = {
   // tronchi nascosti e `meta.intro.liuren.b` mette chi domanda sul tronco del
   // giorno; un gambo sarebbe la terza parola per la stessa cosa.
   //
-  // La scuola resta, ed è la frase più corta qui che non si poteva lasciar
-  // cadere: `CLAUDE.md` non sottintende nessuna scuola, e questo è il punto
-  // in cui la sezione dice su quale sta. Quel che non dice è quale direzione
-  // sia quella buona — il superlativo con cui la frase è arrivata, «la
-  // direzione strategica più favorevole», è la lettura, e valutarla è un atto
-  // di chi legge: perciò il verbo ha lui per soggetto e la carta per mezzo.
+  // La scuola non è nominata qui, e non per questo resta sottintesa: la
+  // description dice «ju per chaibu», il modulo qui sotto porta il metodo fra
+  // le sue opzioni, e l'indirizzo di ogni carta le porta tutte. Questo
+  // paragrafo dice che cosa ne fa chi legge.
+  //
+  // E non dice quale direzione sia quella buona. Il superlativo con cui la
+  // frase è arrivata, «la direzione strategica più favorevole», è la lettura
+  // rifiutata in `docs/refusals.md`, e valutarla è un atto di chi legge:
+  // perciò il verbo ha lui per soggetto e la carta per mezzo.
   'meta.intro.qimen.b':
-    'Usa questa sezione per stendere la carta di una decisione imminente, o per valutare la direzione strategica di un dato momento. Nessuna scuola è sottintesa: il ju si determina per 拆補 chāibǔ, e ogni opzione che ha prodotto una carta è nel suo indirizzo.',
+    'Usa questa sezione per stendere la carta di una decisione imminente, o per valutare la direzione strategica di un dato momento.',
 
   'meta.title.liuren': 'Da Liu Ren: stendi un quadro',
   'meta.description.liuren':
