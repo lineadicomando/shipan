@@ -220,8 +220,16 @@ them and cannot always be relied on**: it named 第六冊's and 第二冊's work
 第三冊's 版心 carries no printed title at all, so there the heading of the first
 table on a leaf is the only thing that says what section it is.
 
-What is left of this phase is not a survey. It is 飛盤, and the places to look
-are named in the list above.
+What is left of this phase is not a survey. It is 飛盤, and **the volume that
+looked likeliest has been asked and does not answer.** 遁甲演義 names the flight
+three times and a second witness to it would move `plate: fei` on its own; 第三冊
+lays all three boards and never says how — the 局 by 元 or by term, an octagonal
+diagram, an enumeration, and 「以陰遁一局而推」 for the manner. The one word in
+that stretch that could have borne on it, 輪, names the printed round and not a
+turning plate. So the places left to look are the ones the list above names, and
+the shortest of them is 第429冊's 奇門遁甲全局: the eighteen 局 written out at
+about eighteen pages each, where an arrangement can be checked wholesale against
+what this engine already computes.
 
 ### Phase 2 — 《中國絕學》, for a school's name
 

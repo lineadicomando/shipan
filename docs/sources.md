@@ -719,6 +719,18 @@ then prints the three, a leaf of tables to each: 上元一局, 「中元年家�
 甲子起」. Both readings were taken at 400 and 450 dpi with the region cropped
 and enlarged, because 四 against 七 is the whole of it.
 
+**And the sequence is not a heading's slip, because the work states it twice
+and dates it seven times.** Its p. 1162 puts the same rule in prose —
+「三元甲子則奇儀星門之理：遇上元甲子則以陰遁一局而推，中元甲子則以陰遁七局而推，
+下元甲子則[以陰遁四局而推]」 — under a chain of epochs it walks out one 甲子 at a
+time: 元泰定元年 上元, 明洪武十七年 中元, 正統九年 下元, 弘治十七年 上元,
+嘉靖四十三年 中元, 天啟四年 下元, and 「今康熙二十二年癸亥盡了，下元又是上元，
+康熙二十三年甲子起」. Sixty years to an 元 and a hundred and eighty to the cycle,
+closing on itself. So the prose rule, the three table headings and the epoch
+chain agree with each other, which is the self-check the standard asks for —
+and it is a self-check of the reading that contradicts, not of the one that
+ships.
+
 **一七四 is not an arbitrary third answer: it is the sequence 遁甲演義 gives its
 月家.** 卷一's 三元分局 puts 甲己遇四孟 in 一宮, 四仲 in 七宮 and 四季 in 四宮.
 The two works therefore agree on the 月家's palaces and part on the 年家's,
@@ -744,6 +756,21 @@ method that settled two sections of 第六冊 cannot be run on this volume at al
 Whether these leaves are a Qing editor's addition to 符應經 or a work bound
 after it bears on nothing above: a Qing table contradicting a Ming one is a
 disagreement whichever work it sits in. Read on the plate 2026-08-28.
+
+**And it does not say whether those boards fly, which was the other thing worth
+asking it.** 遁甲演義 states the flight three times — 「俱逆飛六儀」 for the 年家,
+「隨月支飛泊」 for the 月家, 「飛八方，不入中五」 for the 日家 — and a second
+witness to *that* would move `plate: fei` even while the two disagree about the
+三元. It is not here. The section gives the 局 by 元 or by term group, prints an
+octagonal diagram of the resulting board with 中宮天禽 in its header, and then
+enumerates the years or the days; the prose that would name a manner of laying
+says only 「以陰遁一局而推」. The one word in the stretch that could have borne on
+it is 輪, and it does not — 「總在此輪」 at p. 1161 and 「六十日總輪」 in every 局
+header name the printed round and the cycle it carries, not a plate turning
+against a fixed one. Seven leaves of pp. 1160–1217 read whole, which is a survey
+and not an exhaustive reading: what it establishes is that the procedure is not
+where it would be expected, beside the tables it governs, and that `plate: fei`
+is where it was. Read on the plate 2026-08-28.
 
 **The section the plan expected to ground it does not, and the reason is a
 word.** 《遁甲集成》第二冊 carries 十八活盤詳注, which had been written down here

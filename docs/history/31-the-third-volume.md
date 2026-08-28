@@ -138,12 +138,35 @@ own example of what does not get imported, and it is not 十干克應 under a
 variant name. Worth a paragraph only because 剋應 is the search term, and a
 search across this shelf lands there.
 
+## Then the flight, asked for and not given
+
+`plate: fei` is what is left of the roadmap's first phase, and 第三冊 was the
+best remaining chance at it. 遁甲演義 names the flight three times — 「俱逆飛六
+儀」, 「隨月支飛泊」, 「飛八方，不入中五」 — and a second witness to *that* would
+move the value on its own, even with the 三元 in dispute.
+
+The lead that looked strongest was a word. p. 1161 closes its 年家 with
+「總在此輪」, 輪 where 遁甲演義 has 飛, and if the 集成's boards turned rather
+than flew that would be a divergence on `plate` itself. Read on the plate the
+lead does not hold: 輪 there names the octagonal diagram printed above the line
+and the sixty years read off it, and every 局 header in the 日家 stretch ends
+「六十日總輪」 in the same sense — the round and its cycle, not a plate turning
+against a fixed one. The character is 捴, the common variant of 總, which is
+what the 400 dpi crop was for.
+
+So the section states no manner of laying at all. It gives the 局 by 元 or by
+term group, draws the resulting board, enumerates, and says 「以陰遁一局而推」.
+Seven leaves of pp. 1160–1217 read whole. The procedure is not where it would
+be expected, beside the tables it governs, and `plate: fei` is where it was.
+
 ## What this phase did not do
 
-It did not settle `plate: fei`, which is now the whole of what is left of the
-roadmap's first phase. The 年家 and 日家 boards in 第三冊 are given as tables of
-finished positions rather than as a flying procedure, and whether that volume
-states the flight anywhere was not established — the survey located sections
-and four pages were read whole, which is a survey and not a reading. The same
-holds for the two negatives above: three leaves of 金函玉鏡 and one of 奇門秘要
-say what those works are, not what every leaf of them contains.
+It did not settle `plate: fei`, and the negative above is at survey strength:
+seven leaves of one section say the rule is not there, not that no leaf of the
+volume carries it. The same holds for the other two negatives — three leaves of
+金函玉鏡 and one of 奇門秘要 say what those works are, not what every leaf of
+them contains.
+
+The shortest thing left is named in the roadmap: 第429冊's 奇門遁甲全局, the
+eighteen 局 written out at about eighteen pages each, where an arrangement can
+be checked wholesale against what this engine already computes.
