@@ -158,6 +158,10 @@ complete worked examples, each stating its 局, its whole earth plate, its 值�
 and its 值使 — a text checking itself, which is the second of the two things the
 standard accepts. A print would still be wanted before the value is
 implemented. Run against the engine 2026-08-28.
+**That print has since been read**, and it states the same side as a rule for
+every hour of every 局 rather than as an assumption in two charts — see
+"The imperial print that states the turn, and counts the centre in" below.
+This paragraph is what the witness was worth when it was the only one.
 
 **Two classical transcriptions were then asked, and they corroborate everything
 around the divergence and not the divergence.** 《統宗》 states the lodging twice

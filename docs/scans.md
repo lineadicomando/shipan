@@ -143,12 +143,25 @@ margin crop to fix the juan, one sheet of eight leaves to bracket it, one of
 four to land. Check for the three before planning a sweep, because the sweep is
 what costs.
 
+**The second case cost less still, and it is why the three are worth checking
+first.** 《奇門遁甲金鏡寶鑑》 has all three, and one 目錄 leaf plus five
+contact sheets located every section of sixteen juan across 211 pages — the
+three-page rhythm of its 局 sections being readable off a full-page contact,
+which is what made eighteen headings one errand instead of eighteen.
+
 **And a running title is not something a facsimile owes you.** 遁甲集成 第三冊's
 版心 carries only modern hand numbering, so the method that named two works
 inside 第六冊 by their running titles cannot be run on it at all. There a
 section is identified by the heading of the first table on the leaf — which
 names a table and not a work, and is why one finding off that volume carries
 its attribution open.
+
+**And where a facsimile does carry one, it need not carry the title on the
+title page.** 《奇門遁甲金鏡寶鑑》's 版心 reads 奇門大全 and the juan, on every
+leaf of all sixteen. That is what a survey navigates by and it is not what the
+work is catalogued as, so a search of the shelf's register for the running
+title finds nothing and a reader who trusts the 版心 names the wrong book.
+Read both, and let the title page settle what the work is.
 
 ## What a file is, before what it says
 

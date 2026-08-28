@@ -100,9 +100,13 @@ make late — so they are named here and paid together, not one at a time.
   that it is «a divergence this engine does not yet expose». Other traditions
   keep one pair in both dun, and 《奇門遁甲全局》 — read on the plate, see
   `docs/sources.md` — is a third: 白虎 at the fifth seat and 勾陳 at the sixth.
-  **And 《奇門遁甲金鏡寶鑑》 is the «other traditions» named**: its 目錄 gives a
-  juan each to 直符 螣蛇 太陰 六合 勾陳 朱雀 九地 九天, with 白虎 and 玄武 nowhere
-  in it and no clause anywhere about which dun the board is.
+  **And 《奇門遁甲金鏡寶鑑》 is the «other traditions» named**: its 目錄 allots a
+  juan each to 直符 螣蛇 太陰 六合 勾陳 朱雀 九地 九天 and 白虎 and 玄武 are in
+  neither the 目錄 nor any chapter heading, and 卷之九 opens on 直符臨休門 with no
+  clause about which dun the board is. **That the work names the pair nowhere is
+  not established** — it would be a negative, and a negative is established by
+  sweeping the plate. The prose of 卷一~卷三 is where it would have to be swept;
+  see § 2 phase 1.
 - 奇門, **where earth's season begins**. `seasonElement` gives the four months
   that close the seasons — 辰, 未, 戌, 丑 — to earth entire, and `strength.ts`
   records that other schools give earth only the last eighteen days of each
@@ -147,15 +151,16 @@ engine leaves them at the centre. The outer eight agree either way.
   than as an assumption in a worked chart: the 直符 star stands at 五 when the
   hour's stem is the centre's, the 直使 gate lands on 五, and 天禽 leaves the
   centre and travels the whole 甲辰壬 decade. 陽遁一局 was read whole and run
-  against the engine — all six stars and all six gates agree by name, and every
-  one of the twenty palace disagreements is that one fact. See § 2 phase 1 and
-  `docs/sources.md`.
+  against the engine — all six stars and all six gates agree by name, and all
+  twenty palace disagreements are that one fact, one of them carrying a cut
+  slip on top of it. See § 2 phase 1 and `docs/sources.md`.
 
 So the field 奇門 owes is not one but three values' worth of divergence, and
 that is the argument for paying them in one movement.
 
-**One of the three is verified, and the verification weakened it.** The
-corroboration pass asked two classical transcriptions and got the apparatus
+**One of the three was verified, the verification weakened it, and a print has
+since arrived on the other side.** The corroboration pass asked two classical
+transcriptions and got the apparatus
 confirmed and the divergence untouched — 《統宗》 gives the centre's decade 天禽 as
 符 and 坤's 死門 as 使, 《秘笈大全》 says 「惟天禽則無定位，寄西南而屬中宮」, both
 engine positions — and it caught `docs/sources.md` claiming a reference had
@@ -331,7 +336,10 @@ used to carry and a slower one:
    軒轅 · 招搖 · 咸池 and not 天蓬 through 天英, so it is another art under this
    art's name and not the flying board — the entry is in `docs/sources.md`.
    第429冊's 奇門遁甲全局 is the eighteen 局 written out, about eighteen pages to
-   each, which is where a 轉盤 arrangement could be checked wholesale.
+   each, and this line used to call it the place a 轉盤 arrangement could be
+   checked wholesale. **It is not**: its rings give a character about fifteen
+   pixels and the check the line promised is not something that file can
+   support. 第426冊's 金鏡寶鑑 is where that check lives instead — see below.
 
 **What has been covered, so the next pass does not repeat it.** The extent
 pass took page counts and pixel metrics for all eleven, the closing leaf of ten
@@ -383,8 +391,8 @@ volume is a documented negative and a witness for what this engine does.
 was asked for.** 卷五 to 卷八 tabulate all eighteen 局 as a 起星訣 and a 起門訣 —
 each decade's 直符 star or 直使 gate by name, then the ten hours with the palace
 each stands in — and 陽遁一局 was read whole and run against the engine: all six
-stars and all six gates agree by name, **and every one of the twenty palace
-disagreements is one fact**. This print counts the centre as a station a moving
+stars and all six gates agree by name, **and all twenty palace disagreements are
+one fact**, one of them with a cut slip on top of it. This print counts the centre as a station a moving
 plate can stand in. The 直符 star goes to 五 when the hour's stem is the one the
 ju puts there, the 直使 gate lands on 五 when its count reaches it, and 天禽
 **leaves** the centre and travels the whole 甲辰壬 decade with the hour's stem.
@@ -415,6 +423,31 @@ gate with no clause about which dun the board is. So three conventions on the
 middle pair are now held: this engine's, 全局's, and one set of eight used in
 both. Three is what makes it a divergence between practitioners rather than a
 preference. Everything above is in `docs/sources.md`.
+
+**What is read inside the 金鏡寶鑑 and what is not**, because «opened» is not
+«read» and the next pass should not have to find this out again. Series page
+numbers, which is what the volume prints; the shelf's own register holds the
+PDF offset and the block layout.
+
+- **卷之一~卷之三 奇門辯釋口訣.** One leaf read, p. 293, and it is the leaf every
+  finding above about the procedure comes from. The rest is unread prose, and it
+  is the only place two open questions could still be answered: whether the work
+  names 白虎 and 玄武 anywhere — the 八神 negative § 1 says is not established —
+  and whether anything qualifies the turn or the centre. **This is the errand
+  with a value behind it.**
+- **卷之四 奇門撮要 and the head of 卷之五. Unread**, and procedural by its title.
+  The 三元訣 at the head of 卷之五 was read and is the open question above; what
+  comes before it was not.
+- **卷之五~卷之八, the eighteen 局.** All eighteen headings read — that is the
+  三元定局 and it is finished. **陽遁一局 alone is collated**, 120 cells; the
+  other seventeen are about 2040 cells and the file supports reading them, which
+  第429冊's could not. Two cut slips in the 120 is the rate a wholesale pass
+  would be read against. Nothing is waiting on it: the divergence it would
+  measure is already stated and already paid for.
+- **卷之九~卷之十六, the 八神加八門斷章.** The 目錄 and 卷之九's opening read. The
+  rest is 斷 material — what a spirit over a gate means for 天時, 地利, 人和, a
+  campaign, a journey — which is the reading layer this project refuses. Not an
+  errand except for the 八神 sweep named above.
 
 **What is unopened, so the next pass starts rather than reconstructs.** Every
 volume above has been surveyed and its sections named; these are the works
