@@ -333,8 +333,8 @@ refuses to rasterise a reading no font on the machine can draw.
 ## 十干克應 — what was checked, one pairing at a time
 
 The table has eighty-one cells: nine stems on the heaven plate over nine on
-the earth plate, 甲 excluded because it never stands on a plate. **Eleven are
-implemented.** The other seventy are absent, and the reason is below.
+the earth plate, 甲 excluded because it never stands on a plate. **Twelve are
+implemented.** The other sixty-nine are absent, and the reason is below.
 
 ### The sources consulted
 
@@ -388,11 +388,12 @@ this engine had to supply, arriving stated.
 | 丁 + 癸 | 雀投江 | 雀投江 | — | 朱雀投江 | 朱雀投江 | **朱雀投江** 凶 |
 | 乙 + 辛 | 龍逃走 | 龍逃走 | 青龍逃走 | 青龍逃走 | 青龙逃走 | **青龍逃走** 凶 |
 | 辛 + 乙 | 虎猖狂 | 虎猖狂 | — | 白虎猖狂 | 白虎猖狂 | **白虎猖狂** 凶 |
-| 庚 + 壬 | — | 小格 | — | 小格 | 太白退位 | **not shipped — and see below** |
+| 庚 + 壬 | 上格 | 小格 | — | 小格 | 太白退位 | **上格** 凶 — and see below |
 
 `test/stem-pairs.test.ts` states each couplet of the verse as data and asserts
-the engine reproduces it. Ten of the eleven are pinned to a line of the song;
-戰格 is pinned to K and H agreeing.
+the engine reproduces it. Eleven of the twelve are pinned to a line of the
+song — one of them, 上格, to a line the recensions divide over; 戰格 is pinned
+to K and H agreeing.
 
 **T is read off a transcription, and the printed copy here cannot confirm it.**
 The photographic edition on the shelf — 故宮珍本叢刊 第426冊 — carries the
@@ -523,8 +524,8 @@ engraving here prints it and as the work that grades the pairing uses it; the
 three namings it does not carry are recorded above rather than dropped, and a
 reader who knows the pairing as 小格 finds it here by its stems. Read on the
 plate 2026-08-27. It no longer stands on a leaf this shelf lacks:
-《遁甲集成》第六冊's 統宗 prints it, per the note below. **This is a decision
-that is now waiting, not a refusal.** 三奇得使 is no longer its precedent: there the sources disagree,
+《遁甲集成》第六冊's 統宗 prints it, per the note below. 三奇得使 is not its
+precedent: there the sources disagree,
 which is a different thing from there being only one, and only the second was
 ever true here.
 
@@ -533,6 +534,17 @@ ever true here.
 classical one to write it out in full. T writes 龍**回**首 for the same cell,
 which is the variant to know when collating: 回 and 返 both say the dragon
 turns its head, and no source seen puts a different configuration there.
+
+**克應 names another thing on this shelf, and the search for it lands there.**
+《奇門遁甲秘要》, the second half of 《遁甲集成》第二冊 by its running title
+奇門秘要, prints 剋應 in bulk — and its 剋應 answers a *gate over a palace*, not
+a stem over a stem. At its pp. 810–811 it gives 驚加乾用法, 驚加坎用法, 驚加艮
+用法, each with a 剋應 under it: 「主老少不和，宅舍生非，陰人為禍…在物主空鳴
+鍾磬之聲，或金銀人物、鴛鴦鳥獸之物」. That is an omen told to a querent, which
+is the register's own example of what does not get imported, and it is not the
+table above under a variant name. Written down because the word is the search
+term, and eight sampled sheets of that half returned it and nothing else.
+Surveyed and one leaf read on the plate 2026-08-28.
 
 **A name in Y belongs to a pairing the engine gives to another.** Its 乙 row
 has 乙加地盤丁　朱雀入江格, where 朱雀投江 is shipped for 丁 over 癸 on the
@@ -684,6 +696,54 @@ board. What it does witness is that the four-fold 年·月·日·時 division is
 transmitted and used, which 遁甲演義 already said. The second witness to the
 *procedure* is still missing. Found by contact sheet and read on the plate
 2026-08-27.
+
+**A second treatment of all three has now been found, and it contradicts.**
+《遁甲集成》第三冊 carries, across its series pp. 1160–1216, 上元 · 中元 · 下元
+年家奇門定局, 月家奇門 tables, and a stated 起日奇 rule with 日家 tables under
+it. Its 年家 is the same object as 遁甲演義's and not a selection table: one
+board to an 元, each 元 running sixty years — 「起上元年家奇門，陰遁一局，管上元
+六十年，總在此輪」 — cast in 陰遁, with the 直符 and the 直使 given per year. And
+it assigns the three 元 differently:
+
+| | 遁甲演義 卷一 | 遁甲集成 第三冊 |
+|---|---|---|
+| 上元 | 陰遁一局 | 陰遁一局 |
+| 中元 | 陰遁**四**局 | 陰遁**七**局 |
+| 下元 | 陰遁**七**局 | 陰遁**四**局 |
+
+遁甲演義 states it 「三元年遁：上元六十年以陰遁一局加之，中元六十年以陰遁四局
+加之，下元六十年以陰遁七局加之」. The 集成 announces its own in the heading of
+the first table — 「上元起年家奇門奇儀星門所在之宮定位，**以一七四為法**」 — and
+then prints the three, a leaf of tables to each: 上元一局, 「中元年家奇門定局…
+中元七局」, 「下元年家奇門定局…下元四局」. It dates itself 「今康熙二十三年交上元
+甲子起」. Both readings were taken at 400 and 450 dpi with the region cropped
+and enlarged, because 四 against 七 is the whole of it.
+
+**一七四 is not an arbitrary third answer: it is the sequence 遁甲演義 gives its
+月家.** 卷一's 三元分局 puts 甲己遇四孟 in 一宮, 四仲 in 七宮 and 四季 in 四宮.
+The two works therefore agree on the 月家's palaces and part on the 年家's,
+which is what makes this a disagreement rather than two unrelated tables: the
+same three numbers over the same three 元, in a different order.
+
+**What that does to the parameter.** `system: nianjia` was refused for want of
+a second witness. It has one, and the witness contradicts, so the value stays
+refused — for a stated reason and no longer for want of a text. The standard
+this file sets is two witnesses agreeing or one text that checks itself; two
+witnesses disagreeing meets neither, and preferring the older or the
+better-printed would be this engine choosing a school in silence. **The errand
+this phase most wanted is finished, and it finished as a negative**, which is
+a documented outcome and not a lesser one.
+
+**Whose the tables are is not established, and it does not have to be.** They
+stand under no title leaf this survey found: 《遁甲符應經》 opens at the volume's
+p. 1136 and its 天象分野圖 closes at p. 1159, and p. 1160 begins the 年家 with no
+break but a change of subject — while the 康熙二十三年 here and the 康熙二十七年
+in the 月家 tables cannot be a Song work's own. The reproduction's 版心 carries
+no printed running title, only modern hand numbering, so the running-title
+method that settled two sections of 第六冊 cannot be run on this volume at all.
+Whether these leaves are a Qing editor's addition to 符應經 or a work bound
+after it bears on nothing above: a Qing table contradicting a Ming one is a
+disagreement whichever work it sits in. Read on the plate 2026-08-28.
 
 **The section the plan expected to ground it does not, and the reason is a
 word.** 《遁甲集成》第二冊 carries 十八活盤詳注, which had been written down here
@@ -3300,9 +3360,9 @@ calendrical layer settles. Recorded as a passage read and not used.
 | the month pillar a 春節 almanac prints | 五虎遁 reads the year stem, so `chunjie` moves the month with the year and reports a pillar no lichun almanac carries. Whether an almanac counting by the lunar new year prints that one or the solar one, no source consulted says. The rule is applied as stated and the consequence is pinned by a test, so that changing it has to be deliberate |
 | the other 70 cells of 十干克應 | complete tables exist but each is a single uncited source; two are needed |
 | 茅山 | no reference at all. `METHOD_NOT_IMPLEMENTED` rather than a silent substitution |
-| 飛盤 | a whole family. `OPTION_NOT_IMPLEMENTED`, and not separable from `system`: the 年家, 月家 and 日家 boards 《遁甲演義》 states are flown, not turned |
-| 日家 · 月家 · 年家 | 《遁甲演義》卷一 states all three entire, and they are 飛盤 where the 時家 is 轉盤, so the two parameters move together. One work in three copies, two of them one recension, is not two witnesses. See the 年命 section |
-| 寄宮 `dun` | the parameter exists and the second value is refused rather than guessed. The first witness searched for it does not know it: 《圖解奇門遁甲大全》 states the lodging with no condition on it — 「中宮無位：無論是奇門遁甲圓盤還是方盤，中五宮都無位，所以在中五宮的星和門都寄於坤二宮」 — and then applies it inside 陰遁, in a passage it quotes rather than writes: 「假令陰七局，甲己之日丙寅時 … 值使在五宮寄二宮西南」. A witness that lodges the 值使 in 坤二 in a yin board is evidence for `kun` and none at all for the divergence, which still has no text. Read on the plate 2026-08-27 |
+| 飛盤 | a whole family. `OPTION_NOT_IMPLEMENTED`, and not separable from `system`: the 年家, 月家 and 日家 boards 《遁甲演義》 states are flown, not turned. **The work whose name most invites being read as this one is not this board at all.** 《諸葛武侯行兵遁甲金函玉鏡》, six 卷 in 故宮珍本叢刊 第427冊 from its p. 251, lays nine stars per day — 「假如甲子日巳上起太乙」, and its diagrams name 太乙, 攝提, 軒轅, 招搖 and 咸池 — where this board's nine are 天蓬 through 天英 turned with the 值符, and what stands beside them is an hour table grading the twelve hours 黃道 and 黑道 by the day gods. Another art under the 奇門遁甲 name, the relation 金口訣 has to 六壬. Surveyed and three leaves read on the plate 2026-08-28 |
+| 日家 · 月家 · 年家 | 《遁甲演義》卷一 states all three entire, and they are 飛盤 where the 時家 is 轉盤, so the two parameters move together. The second witness has since arrived — 《遁甲集成》第三冊 — and it puts the 年家's three 元 on palaces 一, 七 and 四 where 遁甲演義 puts them on 一, 四 and 七. Two witnesses disagreeing is neither of the two things the standard accepts, so this is refused on a reading and no longer for want of one. See the 年命 section |
+| 寄宮 `dun` | the parameter exists and the second value is refused rather than guessed. The first witness searched for it does not know it: 《圖解奇門遁甲大全》 states the lodging with no condition on it — 「中宮無位：無論是奇門遁甲圓盤還是方盤，中五宮都無位，所以在中五宮的星和門都寄於坤二宮」 — and then applies it inside 陰遁, in a passage it quotes rather than writes: 「假令陰七局，甲己之日丙寅時 … 值使在五宮寄二宮西南」. A witness that lodges the 值使 in 坤二 in a yin board is evidence for `kun` and none at all for the divergence, which still has no text. Read on the plate 2026-08-27. **A transmitted text has since said the same thing, which is what that row was missing.** 《遁甲符應經》, in 《遁甲集成》第三冊 at its p. 1137, derives the lodging from the 洛書 in one clause — 「以靈龜出洛，戴九履一，左三右七，二四為肩，六八為足，五在中央者，土火之子、金之母，**所寄理於西南坤之位也**」 — with no condition on the 遁 and no second position named anywhere near it. So `kun` no longer stands on a divulgation alone, and `dun` is still what nobody states. Read on the plate at 400 dpi 2026-08-28 |
 | 六壬 `yuejiang` `jieqi` · `true` | the 四庫 verse's own table turns the general at the 中氣, both references read it so, and two further transmitted witnesses say it in words — 陳公獻's 增注 to the 《心印賦》 and 《六壬視斯》's 「中氣後過宮」. **The first of those has since been read on the plate and it says it entire**, not in passing: 「以月將加占時之上。月將即日宿太陽也」, and then twelve months enumerated — 正月雨水後日躔娵訾之次入亥宮乃登明將, 二月春分入戌乃河魁, 三月穀雨入酉乃從魁, 四月小滿入申乃傳送, 五月夏至入未乃小吉, 六月大暑入午乃勝光, 七月處暑入巳乃太乙, 八月秋分入辰乃天罡, 九月霜降入卯乃太衝, 十月小雪入寅乃功曹, 十一月冬至入丑乃大吉, 十二月大寒入子乃神后. Twelve 中氣 and not one 節氣, with the 次, the palace and the general's name beside each, which is an enumeration that checks itself against its own order. It is the same witness rather than a new one — the same man, in his own 增注 — and what changed is that it is now a complete procedure on this shelf instead of a phrase cited from elsewhere. Read on the plate 2026-08-27. 《大六壬精解》 prints the 節 and the 氣 of every month side by side, which pins what `jieqi` would be without endorsing it. Nothing yet states either. See the 六壬 section |
 | 六壬 `zhouye` `solar` | the divergence is transmitted and the rule is not: 《大六壬精解》 p. 26 gives the branch division with a worked example and then says 「古來亦有更嚴格地准星之出沒或日之出沒而分晝夜者」. That names no text, works no example, and bundles 星之出沒 with 日之出沒 as one option, which they are not. Refused for want of a procedure rather than for want of a school. `OPTION_NOT_IMPLEMENTED` |
 | the 涉害 復等 clause | implemented, measured, and dropped: it moves none of the 8 640 boards under any of three readings, because the order of the courses already gives what it asks for. See the 六壬 section |

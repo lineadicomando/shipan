@@ -119,19 +119,21 @@ of sheet: `ocr-1up.sh` takes a language and a psm and goes through poppler,
 and `ocr-4up.sh` takes four. Each writes a `.nospace.txt` beside the extract,
 which is the one to grep.
 
-### Phase 1 — the dunjia scans, for `plate`, `centreLodging` and `system`
+### Phase 1 — the dunjia scans, for `plate`, and what `centreLodging` and `system` cost
 
 The largest block — eleven files, some three and a half thousand pages, of
-which one is extracted and two are surveyed. **The extent pass changed it**:
-御定奇門寶鑑 is one 冊 of eight, the third 遁甲演義 is 卷一 alone, and the three
-故宮 volumes carry a 新編目錄 on their last leaves, which is how to survey them
-cheaply.
+which one is extracted and **all are now surveyed**. Two passes changed what
+this section is: the extent pass found 御定奇門寶鑑 to be one 冊 of eight and the
+third 遁甲演義 to be 卷一 alone, and the survey that followed it read the three
+故宮 volumes' 新編目錄 off their last leaves and took a contact sheet across the
+three 遁甲集成 volumes.
 
-**And it answered the `system` question on the way.** 《遁甲演義》卷一 states
-年家, 月家 and 日家 entire — see `docs/sources.md` § 年命 — so what those three
-values wait on is a second witness and no longer a text. It also showed that
-they cannot move alone: those boards are flown where the 時家 is turned, so
-`plate: fei` and `system` are one errand.
+**And it answered the `system` question on the way, and the answer has since
+turned negative.** 《遁甲演義》卷一 states 年家, 月家 and 日家 entire — see
+`docs/sources.md` § 年命 — so what those three values waited on was a second
+witness and not a text. It also showed that they cannot move alone: those
+boards are flown where the 時家 is turned, so `plate: fei` and `system` are one
+errand.
 
 **A second work has since turned up and it is not a second witness.**
 《奇門闡秘前編》卷之三, in 第六冊, says 「凡年月日家各有奇門」 and prints a
@@ -139,12 +141,19 @@ they cannot move alone: those boards are flown where the 時家 is turned, so
 settings to a year, one per 節, where 遁甲演義 lays one board a year off a 三元
 division. A table of where 乙丙丁 stand is not a rule for laying a board, so
 the two cannot confirm or contradict each other. What it witnesses is that the
-four-fold division is transmitted and used. **The witness to the procedure is
-still missing, and it is the single thing this phase most wants.**
+four-fold division is transmitted and used.
 
-What is left of this phase is 飛盤 proper and `centreLodging`. **The searchable
-face of it exists and the rest is plates**, which is a shorter list than the
-one this section used to carry and a slower one:
+**The witness to the procedure has since arrived, and it contradicts the
+first.** 第三冊 carries 上元·中元·下元 年家奇門定局 laying one board to an 元 of
+sixty years in 陰遁 — the same object 遁甲演義 lays — and puts the three 元 on
+palaces 一, 七 and 四 where 遁甲演義 puts them on 一, 四 and 七. Two witnesses
+disagreeing is neither of the two things the standard accepts, so `system`
+stays refused; what has changed is that it is refused for a reason that is
+written down. The argument is in `docs/sources.md` § 年命.
+
+What is left of this phase is 飛盤 proper. **The searchable face of it exists
+and the rest is plates**, which is a shorter list than the one this section
+used to carry and a slower one:
 
 1. 《圖解奇門遁甲大全》 — 598 pages, extracted and **read for both values**,
    which is what makes it a finished piece rather than a download: it carries
@@ -167,6 +176,12 @@ one this section used to carry and a slower one:
    the 八卦 arrangement and the tables assign the 局 by term and 元. 活盤 is the
    *turning* plate — 排宮法又稱轉盤 against 飛宮法又稱飛盤, in the manual read
    above — so reading 活 as 飛 is what put the section under this parameter.
+   **第三冊 is the volume that paid**, and it is two book-pages to the sheet
+   where the other two are one: 《遁甲符應經》 from its p. 1136, whose 九星所直
+   lodges the centre in 坤 with no condition on it, and 年家 · 月家 · 日家
+   tables from p. 1160 that contradict 遁甲演義 on the 年家's three 元. Both
+   are written up in `docs/sources.md`. Its 版心 carries no printed running
+   title, so the method that named 第六冊's works cannot be run here.
 3. 《御定奇門寶鑑》 and 《奇門遁甲統宗》 — clean Qing printing, read by plate.
    **A third edition of the 統宗 turned out to be 第六冊's first work**, by its
    own running title, and its 卷一 supplies the whole of what the 故宮 print
@@ -177,7 +192,13 @@ one this section used to carry and a slower one:
 4. The three 故宮珍本叢刊 volumes — colour, but about 1000×1500 pixels to the
    book-page, which is the low end for dense block printing. Read by plate,
    for confirmation of a passage already located elsewhere rather than for
-   searching.
+   searching. **Their 新編目錄 have been read and they name eleven works between
+   them**, one of which the shelf had not recorded: 《諸葛武侯行兵遁甲金函玉鏡》,
+   六卷, filling the second third of 第427冊. Its nine stars are 太乙 · 攝提 ·
+   軒轅 · 招搖 · 咸池 and not 天蓬 through 天英, so it is another art under this
+   art's name and not the flying board — the entry is in `docs/sources.md`.
+   第429冊's 奇門遁甲全局 is the eighteen 局 written out, about eighteen pages to
+   each, which is where a 轉盤 arrangement could be checked wholesale.
 
 **What has been covered, so the next pass does not repeat it.** The extent
 pass took page counts and pixel metrics for all eleven, the closing leaf of ten
@@ -186,13 +207,21 @@ then: 圖解 is extracted and read for both values; 第二冊 is surveyed by con
 sheet between its sheets 40 and 115, which located 奇門占驗's end and the work
 after it; and 第六冊 is surveyed across its whole extent, which is what turned
 up the 統宗 and 闡秘前編 inside it, its 四十格 at sheets 9–10, its 歌註 around
-sheet 131 and its 格局 at sheet 142.
+sheet 131 and its 格局 at sheet 142; and 第三冊 is surveyed across its whole
+extent at twenty-sheet intervals, then narrowed twice, which found 符應經, the
+centre's lodging and the 年家 tables, and four pages of it are read whole.
 
-**Not yet surveyed**: 第三冊 entire, the second half of 第二冊 beyond sheet 115,
-and the three 故宮 volumes, whose 新編目錄 on their last leaves is where that
-starts. A contact sheet of the top strip of both book-pages, ten to sixteen
-sheets sampled, is what these three passes were made of; the running title in
-the 版心 is what decided two of them.
+**The survey is now complete for all eleven**, and the last two pieces of it
+were 第二冊 beyond sheet 115 — 奇門秘要 to the end, whose 剋應 answers a gate over
+a palace and is not the table of that name — and the three 故宮 volumes' 新編目錄.
+A contact sheet of the top strip of both book-pages, ten to sixteen sheets
+sampled, is what these passes were made of. **The running title decided most of
+them and cannot always be relied on**: it named 第六冊's and 第二冊's works, and
+第三冊's 版心 carries no printed title at all, so there the heading of the first
+table on a leaf is the only thing that says what section it is.
+
+What is left of this phase is not a survey. It is 飛盤, and the places to look
+are named in the list above.
 
 ### Phase 2 — 《中國絕學》, for a school's name
 
