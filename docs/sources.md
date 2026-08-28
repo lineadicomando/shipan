@@ -117,6 +117,45 @@ plate, where that reference turns the lodged stem with its host and this one
 leaves the centre out of the turn — a divergence in the derivation of the
 plate, not in the lodging.
 
+**That divergence now has a transmitted witness, and it turns out to be one
+divergence and not two.** 《奇門遁甲元靈經》 works two examples out in full, and
+they were run against this engine cell for cell:
+
+- 芒種後癸亥日丙辰時, 陽遁九局. 「順布六儀（甲子戊在離…甲寅癸在中宮），逆布三奇
+  （乙奇在艮，丙奇在兌，丁奇在乾），是為地盤」 — **the earth plate agrees
+  palace for palace.** 「丙辰係甲寅符頭，故以中宮之癸加兌宮丙上為值符…又以天禽
+  加兌…即借坤宮死門加於兌宮，為值使」.
+- 霜降後甲寅日辛未時, 陰遁八局, earth plate again agreeing palace for palace.
+  「故以艮宮戊加中宮辛為值符，依次逆布，又以天任加中…即以艮宮生門加於坎為值使」.
+
+**Both agree with this engine on the 值符 star and on the 值使 gate and its
+palace**, and the second agrees entirely: 「艮宮戊加中宮辛」 and 「天任加中」 is
+this engine's 戊 and 天任 arriving at 坤二 with 辛 lodged there — the same board
+said the other way, since the centre is read at its host.
+
+The first parts, at one thing. Where the *符頭* stands in the centre, the text
+carries the centre's 癸 and its 天禽 to 兌 with their host; this engine leaves
+them at the centre and carries only 坤's own 庚 and 天芮. The outer eight
+palaces agree either way, so what the two conventions dispute is whether the
+lodged stem and star travel on the heaven plate — which is exactly what
+`PalaceContents.lodged` already said schools dispute, now with somebody stating
+the other side in a worked example rather than an implementation choosing it.
+
+**And it subsumes the other candidate.** A reference that «merges 天芮 and 天禽
+into one cell and leaves the centre starless» is what this convention looks like
+from outside: if the centre's occupants travel with their host, the centre ends
+empty and the host's destination carries two. The two things listed apart in
+`ROADMAP.md` are one parameter's worth of divergence.
+
+**What the witness is worth, said plainly.** 元靈經 is held as a transcription
+of unstated editorial provenance from an archive that no longer exists at the
+address it was taken from, and this file already places it one degree below
+print for that reason. What raises it here is the *kind* of passage: two
+complete worked examples, each stating its 局, its whole earth plate, its 值符
+and its 值使 — a text checking itself, which is the second of the two things the
+standard accepts. A print would still be wanted before the value is
+implemented. Run against the engine 2026-08-28.
+
 *Three conventions it does not share, none of them a defect in either*: it
 merges 天芮 and 天禽 into one cell and leaves the centre starless where this
 engine keeps 天禽 at the centre; it writes 白虎 and 玄武 in both dun where this

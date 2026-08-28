@@ -115,6 +115,43 @@ builds out of them. The divergence is honoured and the registry does not know
 it, which is a smaller fault than the other two and a differently-shaped one.
 Fixing it is additive; fixing them is breaking.
 
+## The two candidates, claimed the same day
+
+Phase 33 left two things named and not claimed — whether 天禽 stands at the
+centre, and whether the lodged stem turns with its host — each waiting on a
+witness. A probe of the searchable dunjia texts found one before the session
+ended, and it was cheaper than any plate: 《奇門遁甲元靈經》 works two examples
+out in full, with the 局, the whole earth plate, the 值符 and the 值使 for each.
+
+Run against the engine cell for cell, the earth plates agree palace for palace
+and both examples agree on the 值符 star and on the 值使 gate and its palace.
+The second agrees entirely: 「艮宮戊加中宮辛為值符…又以天任加中」 is this engine's
+戊 and 天任 arriving at 坤二 with 辛 lodged there, which is the same board said
+the other way round.
+
+The first parts, at one thing. Where the 符頭 stands in the centre — 陽九局,
+甲寅癸在中宮 — the text carries the centre's 癸 and its 天禽 to 兌 with their
+host, and this engine leaves them at the centre and carries only 坤's own 庚 and
+天芮. The outer eight agree either way.
+
+**So it is not a defect**, which was the possibility worth ruling out first: the
+engine's behaviour is deliberate, self-consistent and already written down in
+`PalaceContents.lodged`, which says in as many words that schools who glue the
+lodged stem to its host derive a different plate. What is new is somebody
+stating the other side rather than an implementation choosing it.
+
+**And the two candidates are one.** A board whose centre empties and whose host
+palace carries a second stem and a second star is what «天芮 and 天禽 merged into
+one cell, the centre starless» looks like from outside. One parameter covers
+both, and 奇門's owed field now has three values' worth of divergence behind it
+— which is the argument for paying them together rather than one at a time.
+
+The witness is a transcription of unstated provenance from a defunct archive,
+and the register weighs it as it weighed it before. What raises it here is the
+kind of passage rather than the copy: a text checking itself, which is the
+second of the two things the standard accepts. A print is still wanted before
+the value is implemented.
+
 ## What this phase did not decide
 
 Whether to pay any of it. The 全局 reading is a day old and rests on one print,

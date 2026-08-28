@@ -111,12 +111,30 @@ builds out of them. The divergence is honoured and the registry does not know
 it. Fixing it is additive rather than breaking: a registry entry, a row in the
 parameters page, and a label in each catalog.
 
-**Two are candidates and are not claimed.** Whether **天禽 stands at the centre**
-or rides merged with 天芮 divides implementations and probably divides
-traditions; whether the **lodged stem turns with its host** on the heaven plate
-is called a divergence in `docs/sources.md` and may yet turn out to be one
-library's choice rather than a school's. Each needs a witness before it is
-declared, which is reading and not code.
+**And the two candidates are claimed, and turn out to be one.** They were listed
+apart — whether **天禽 stands at the centre** or rides merged with 天芮, and
+whether the **lodged stem turns with its host** on the heaven plate — and each
+was to wait for a witness. 《奇門遁甲元靈經》 supplies it in two complete worked
+examples, run against the engine cell for cell: the earth plates agree palace
+for palace, the 值符 star and the 值使 gate and its palace agree in both, and the
+two part at one thing only. Where the 符頭 stands in the centre, the text
+carries the centre's stem and star to the hour's palace with their host; this
+engine leaves them at the centre. The outer eight agree either way.
+
+- 奇門, **whether the lodged stem and star travel**. One divergence, not two: a
+  board whose centre empties and whose host palace carries a second stem and a
+  second star is the same board seen from outside as «天禽 merged with 天芮 and
+  the centre starless». `PalaceContents.lodged` had already written the
+  divergence down and said this field does not decide it; what is new is
+  somebody stating the other side in a worked example rather than an
+  implementation choosing it silently. The witness is a transcription of
+  unstated provenance and the register weighs it accordingly — but it checks
+  itself, which is the second thing the standard accepts. A print is wanted
+  before the value is implemented; the parameter can be declared and refused
+  before that, and it shares 奇門's input type with the two above.
+
+So the field 奇門 owes is not one but three values' worth of divergence, and
+that is the argument for paying them in one movement.
 
 `method: maoshan` is in the table and is not expected to leave it: there is no
 reference against which a 茅山 chart could be falsified. See

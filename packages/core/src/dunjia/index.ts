@@ -63,6 +63,15 @@ export interface PalaceContents {
    * elsewhere — a divergence in how the plate is derived, not one this field
    * decides. It is said here in the second place it is read, and not moved
    * out of the first: `palace 5` still carries it.
+   *
+   * **That divergence now has a witness and owes a parameter.**
+   * 《奇門遁甲元靈經》 works two examples out in full; both agree with this
+   * engine on the earth plate palace for palace and on the 值符 star and the
+   * 值使 gate, and where the 符頭 stands in the centre the text carries its
+   * stem and its star to the hour's palace — 「以中宮之癸加兌宮丙上為值符…
+   * 又以天禽加兌」 — where this engine leaves them at the centre. The outer
+   * eight agree either way. `ROADMAP.md` § 1 carries the debt and
+   * `docs/sources.md` the collation.
    */
   lodged?: Stem;
 }
