@@ -13,9 +13,10 @@ import { namesApart } from '../src/lib/names';
  * **The rule in `said.ts` finds rather than is told**, which is the only way
  * to keep markup out of the catalogs and is also the way to get it wrong
  * quietly: a reading is a run of romanised syllables carrying tone marks, and
- * Italian is a language of accented vowels. «è» stands directly behind 式盤
- * shìpán in the consultation's opening line, and there is nothing in its shape
- * that says it is not a third syllable of the name.
+ * Italian is a language of accented vowels. «Lo 式盤 shìpán è la tavola del
+ * divinatore» opened the consultation for as long as it did, and there is
+ * nothing in the shape of «è» that says it is not a third syllable of the
+ * name.
  *
  * So the guard is here rather than in a list of words in the module. Every
  * name either catalog prints in an introduction is held to the reading this
@@ -37,14 +38,16 @@ import { namesApart } from '../src/lib/names';
  * **What is here is what the engine cannot say.** A gate, a lodge, a star, a
  * stem and a parameter's value all travel with their reading on them, so
  * `SAID` below takes those from the engine and this list stays at what prose
- * names and no board seats: the arts said in short (奇門, 六壬, 太乙), the
- * things this project refuses to compute (用神, 年命, 主, 客), the three kinds
- * of instrument (卜, 命, 天), two books, one man, and the collective names of
- * two almanac layers whose *members* the engine knows one by one.
+ * names and no board seats: the arts said in short (奇門, 六壬, 太乙) and the
+ * three of them taken together (三式), the things this project refuses to
+ * compute (用神, 年命, 主, 客), the three kinds of instrument (卜, 命, 天), two
+ * books, one man, and the collective names of two almanac layers whose
+ * *members* the engine knows one by one.
  */
 const READINGS: Readonly<Record<string, string>> = {
   式盤: 'shìpán',
   式: 'shì',
+  三式: 'sānshì',
   奇門遁甲: 'qímén dùnjiǎ',
   奇門: 'qímén',
   遁甲演義: 'dùnjiǎ yǎnyì',
@@ -213,7 +216,9 @@ describe('a reading standing inside a sentence', () => {
   it('cuts a name into its two halves and the space between them', () => {
     // The case the rule is narrow for — «è» stands behind the reading and is
     // an Italian word, not a third syllable — kept as its own line so that
-    // what fails when it breaks says which part of it went.
+    // what fails when it breaks says which part of it went. Written out here
+    // rather than read off a catalog: the sentence it was found in has since
+    // been rewritten, and the collision it stands for has not gone anywhere.
     expect(namesApart('式盤 shìpán è la tavola del divinatore')).toEqual([
       { text: '式盤', part: 'glyph' },
       { text: ' ', part: 'plain' },

@@ -800,13 +800,14 @@ export const it: Record<MessageKey, string> = {
   // and a heading is the first line a reader is handed as the subject. What
   // is settled here is the wording.
   //
-  // «IA» e non «AI», che è la sigla con cui questa frase è arrivata. La
-  // descrizione della stessa pagina dice già «assistente IA», e le due
-  // stavano a due righe di distanza dicendo la stessa cosa in due modi. La
-  // sigla italiana è quella che un lettore italiano cerca, ed è anche quella
-  // che si legge ad alta voce senza cambiare lingua: questa riga è letta a
-  // voce da chi usa uno screen reader, e vista da tutti gli altri.
-  'h1.consult': 'Chiedere a un’IA di leggere una tavola divinatoria cinese',
+  // Maiuscola alla prima parola e basta. La riga è arrivata con l'iniziale
+  // maiuscola su ogni parola piena, che è la convenzione dei titoli inglesi —
+  // l'intestazione gemella, in `en.ts`, la porta di diritto — e in italiano
+  // un titolo maiuscolato parola per parola si legge come un'insegna e non
+  // come una frase. È la stessa ragione per cui qui il nome di una sezione si
+  // stacca dalla sua glossa con i due punti dove l'inglese mette la lineetta:
+  // una convenzione anglo-americana portata di peso dal catalogo accanto.
+  'h1.consult': 'Generatore di tavole divinatorie e cosmologiche cinesi',
   // La sezione che percorre carte Qi Men, nominata con l'arte che percorre.
   // L'etichetta della nav non può portarlo — un'intestazione dice dove stanno
   // le cose, non di cosa sono fatte — e qui serve a chi legge i risultati.
@@ -849,32 +850,24 @@ export const it: Record<MessageKey, string> = {
   'meta.title.consult': 'Le tavole divinatorie cinesi, calcolate',
   'meta.description.consult':
     'Una domanda, una nascita o un anno: sei tavole divinatorie cinesi, calcolate da un’effemeride, in un prompt da incollare nel tuo assistente IA.',
-  // **L'articolo davanti al nome, che l'inglese non mette e l'italiano
-  // vuole.** «奇門遁甲 qímén dùnjiǎ divide un istante» è la costruzione
-  // inglese portata di peso: in italiano un nome d'arte in posizione di
-  // soggetto prende l'articolo come lo prendono il tango, lo yoga, il taijí.
-  // Senza, la frase parte come un'etichetta e non come una proposizione, e il
-  // lettore incespica prima ancora di arrivare al verbo.
-  //
-  // **Si accorda con la lettura e non con il glifo, perché è la lettura che
-  // si pronuncia.** Da qui «lo» davanti a 紫微斗數 zǐwēi dǒushù e a 式盤
-  // shìpán — «z» e «sh» iniziali vogliono l'articolo che vuole lo zaino e
-  // vuole lo show — e «il» davanti alle altre cinque. È la regola dell'ultima
-  // riga di `docs/i18n.md`: il nome viaggia con la sua lettura, e qui la
-  // lettura decide anche la parola che gli sta davanti.
-  //
-  // Solo dove il nome è soggetto. In `meta.intro.moments.a` sta dentro
-  // «carta 奇門遁甲 qímén dùnjiǎ», che è un'apposizione e non ne vuole.
   'meta.intro.consult.a':
-    'Lo 式盤 shìpán è la tavola del divinatore: il cielo rotondo che gira sulla terra quadrata. Qui se ne stendono sei, ognuna calcolata da un’effemeride; scegline una qui sotto.',
-  // **È il lettore a incollare, e la frase deve dirlo come atto suo.** Qui
-  // c'era «la tavola arriva a ChatGPT», sbagliato nell'unico modo che questo
-  // progetto non può permettersi: descrive un sito che manda qualcosa a
-  // un'IA, e la nota sulla privacy promette in entrambe le lingue che questo
-  // non parla con nessuna e non manda niente. Quel che consegna è testo, in
-  // una clipboard; dove finisca poi è fra il lettore e chi lo riceve.
+    'Il termine 式盤 shìpán indica la tavola del divinatore: la rappresentazione simbolica del Cielo rotondo che ruota sulla Terra quadrata. shipan.it calcola con precisione astronomica le strutture tradizionali della cosmologia e della divinazione cinese — dai Tre Sistemi 三式 sānshì all’astrologia dei pilastri e delle stelle.',
+  // **L'assistente è qualcosa che usa il lettore, non qualcuno con cui questo
+  // sito parla.** Qui c'era «la tavola arriva a ChatGPT», sbagliato nell'unico
+  // modo che questo progetto non può permettersi: descrive un sito che manda
+  // qualcosa a un'IA, e la nota sulla privacy promette in entrambe le lingue
+  // che questo non parla con nessuna e non manda niente. Quel che ne esce è
+  // testo; a chi venga mostrato poi è fra il lettore e chi lo riceve, ed è
+  // per questo che l'analisi è «tramite assistenti IA» e i due nomi fra
+  // parentesi sono un esempio e non una destinazione.
+  //
+  // «IA» e non «AI», che è la sigla con cui questa frase è arrivata. La
+  // description della stessa pagina dice già «assistente IA», e le due
+  // starebbero a poche righe di distanza dicendo la stessa cosa in due modi.
+  // La sigla italiana è quella che un lettore italiano cerca, ed è anche
+  // quella che si legge ad alta voce senza cambiare lingua.
   'meta.intro.consult.b':
-    'Quello che ne esce è un prompt, non una lettura: un testo con la tavola già posta, pronto da incollare in ChatGPT, Claude o un altro assistente.',
+    'Seleziona un sistema per generare istantaneamente il quadro cosmologico completo per la tua data o il momento presente. La tavola generata è strutturata in un formato ottimizzato e pronto per la lettura, la conservazione o l’analisi interpretativa avanzata tramite assistenti IA (ChatGPT, Claude).',
 
   'meta.title.moments': 'Scegliere il momento: Qi Men Dun Jia',
   'meta.description.moments':
@@ -892,6 +885,23 @@ export const it: Record<MessageKey, string> = {
   'meta.title.qimen': 'Qi Men Dun Jia: poni una carta',
   'meta.description.qimen':
     'Poni una carta Qi Men Dun Jia per un istante e un luogo qualsiasi: nove palazzi, tavola di terra e di cielo, otto stelle, porte e spiriti, ju per chaibu.',
+  // **L'articolo davanti al nome, che l'inglese non mette e l'italiano
+  // vuole.** «奇門遁甲 qímén dùnjiǎ divide un istante» è la costruzione
+  // inglese portata di peso: in italiano un nome d'arte in posizione di
+  // soggetto prende l'articolo come lo prendono il tango, lo yoga, il taijí.
+  // Senza, la frase parte come un'etichetta e non come una proposizione, e il
+  // lettore incespica prima ancora di arrivare al verbo.
+  //
+  // **Si accorda con la lettura e non con il glifo, perché è la lettura che
+  // si pronuncia.** Da qui «lo» davanti a 紫微斗數 zǐwēi dǒushù, e lo stesso
+  // varrebbe per 式盤 shìpán — «z» e «sh» iniziali vogliono l'articolo che
+  // vuole lo zaino e vuole lo show — e «il» davanti alle altre. È la regola
+  // dell'ultima riga di `docs/i18n.md`: il nome viaggia con la sua lettura, e
+  // qui la lettura decide anche la parola che gli sta davanti.
+  //
+  // Solo dove il nome è soggetto: in `meta.intro.moments.a` sta dentro
+  // «carta 奇門遁甲 qímén dùnjiǎ» e in `meta.intro.consult.a` dentro «il
+  // termine 式盤 shìpán», che sono apposizioni e non ne vogliono.
   'meta.intro.qimen.a':
     'Il 奇門遁甲 qímén dùnjiǎ divide un istante in nove palazzi: una tavola di terra fissata dal ju, una tavola di cielo ruotata sull’ora, e le otto stelle, porte e spiriti che vi stanno sopra.',
   'meta.intro.qimen.b':

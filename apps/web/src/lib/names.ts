@@ -96,8 +96,9 @@ const TONED = new RegExp(`[${TONES}]`, 'u');
  * this project prints is written with them. That alone would take «è», «già»
  * and «più» along with it, which are Italian words that happen to be spelled
  * out of the same letters — so a word of one character is refused, and that
- * is exactly the case that occurs: «è» stands behind 式盤 shìpán in the
- * consultation's opening line and is the only collision either catalog has.
+ * is exactly the case that occurred: «Lo 式盤 shìpán è la tavola del
+ * divinatore» opened the consultation, and «è» is an Italian word standing
+ * where a third syllable would.
  *
  * The rest of the guard is the test, and deliberately so. `names.test.ts` reads
  * every message with a name in it and holds the readings found to the readings

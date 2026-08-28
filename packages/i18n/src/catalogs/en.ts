@@ -864,12 +864,18 @@ export const en = {
   // *for*; a heading names what is laid out under it.
   //
   // The consultation is the one that names no art, having none of its own,
-  // and so names the kind instead. Two errands that do not overlap are laid
-  // here — a question asked now, and a birth read as a life — and neither is
-  // the other: a birth with a question on it would be a third thing this
-  // project has already declined, which is a natal chart held against the
-  // chart of a moment. See `docs/refusals.md`.
-  'h1.consult': 'Asking an AI to read a Chinese divinatory board',
+  // and so names what it lays instead: the boards, and the act of casting
+  // one. Two errands that do not overlap are laid here — a question asked
+  // now, and a birth read as a life — and neither is the other: a birth with
+  // a question on it would be a third thing this project has already
+  // declined, which is a natal chart held against the chart of a moment. See
+  // `docs/refusals.md`.
+  //
+  // **«Chart», and never «reading».** A heading is the first line a reader is
+  // handed as the subject of the page, and what this page generates is a
+  // board. What is made of one afterwards is theirs — which is the same line
+  // the footer holds on every page of this site.
+  'h1.consult': 'Chinese Divination and Cosmological Chart Generator',
   // The section that walks Qi Men charts, named with the art it walks. The
   // nav label cannot carry it — a header says where things are, not what they
   // are made of — and this is where somebody reading results needs it.
@@ -914,18 +920,24 @@ export const en = {
   'meta.title.consult': 'The Chinese divinatory boards, computed',
   'meta.description.consult':
     'Ask a question, give a birth or name a year. Six Chinese divinatory boards, cast from an ephemeris and handed to an AI as a prompt you can paste.',
+  // **The one line that names the deployment, and it names it as a word
+  // rather than as an address.** Nothing else here writes where this copy is
+  // served from — the source link reads `PUBLIC_SOURCE_URL` so a fork points
+  // at itself — and a sentence saying which site the reader is on is not that
+  // link. It is the word somebody typed to arrive, answered in the first
+  // place they look.
   'meta.intro.consult.a':
-    '式盤 shìpán is the diviner’s board: the round heaven turning on the square earth. Six of them are laid here, each computed from an ephemeris — choose one below.',
-  // **The reader does the pasting, and the wording has to make that the
-  // reader's own act.** This said «the board travels to ChatGPT» and was
-  // wrong in the one way this project cannot afford: it describes a site that
-  // sends something to an AI, and the privacy note two pages away promises in
-  // both languages that this one talks to none and sends nothing. What it
-  // hands over is text, into a clipboard, and where that goes afterwards is
-  // between the reader and whoever receives it. `consult.lead` — the line
-  // this paragraph absorbed — had the verb right and said «ready to paste».
+    'The term 式盤 shìpán refers to the diviner’s board: a symbolic representation of the round Heaven rotating above the square Earth. shipan.it computes traditional structures of Chinese cosmology and divination with astronomical precision — from the Three Arts 三式 sānshì to stellar and pillar-based astrology systems.',
+  // **The assistant is something the reader uses, never something this site
+  // talks to.** This once said «the board travels to ChatGPT» and was wrong
+  // in the one way this project cannot afford: it describes a site that sends
+  // something to an AI, and the privacy note two pages away promises in both
+  // languages that this one talks to none and sends nothing. What comes out
+  // is text; whom it is shown to afterwards is between the reader and
+  // whoever receives it, which is why the analysis is «using AI assistants»
+  // and the naming of two of them is an example and not a destination.
   'meta.intro.consult.b':
-    'What comes out is a prompt, not a reading: a text with the board already cast in it, ready to paste into ChatGPT, Claude or another assistant.',
+    'Select a system below to instantly generate the complete cosmological chart for your specific date or the present moment. The resulting chart is generated in a structured, clean format ready for reading, archiving, or advanced interpretative analysis using AI assistants such as ChatGPT or Claude.',
 
   'meta.title.moments': 'Choosing a time — Qi Men Dun Jia',
   'meta.description.moments':
