@@ -395,6 +395,19 @@ two worked examples. The value is still declared and refused, for the reason it
 always was: it is a field in 奇門's input type, and it is paid with the other
 two and not alone.
 
+**And three more things came off it, two of them confirmations.** Its eighteen
+局 headings each name the four term-and-yuan slots that take that 局, so the
+eighteen are the whole 三元定局 printed inside out — seventy-two cells, all read
+and all agreeing with the table `ju.ts` ships. Its 陰遁 boards give the centre's
+decade 坤二's 死門, which is the first witness for `centreLodging: kun` that is a
+yin board rather than a rule stated without a condition, and `dun` is still what
+nobody states. And its 卷之五 opens on a 三元訣 whose first line is cut 坤 where
+the parallel with 仲 and 季 wants 孟 — on the only reading that parses it gives
+the yuan the anchor 遁甲演義 assigns to its 月家 and not the one that book gives
+its 時家, which is what this engine computes. **Nothing moves on the third**: it
+is one leaf against a prose statement and two implementations, and it is written
+down so that a second witness has somewhere to arrive.
+
 **And it dissents on the 八神 too, differently from 第429冊.** Its 目錄 gives a
 juan each to eight spirits — 直符 螣蛇 太陰 六合 勾陳 朱雀 九地 九天 — with no
 白虎 and no 玄武 anywhere in it, and the chapters are written for a spirit over a

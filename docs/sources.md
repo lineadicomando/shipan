@@ -406,6 +406,45 @@ this engine's 陰陽異名, 《奇門遁甲全局》's yang board keeping 白虎
 dun. Three is what `CLAUDE.md`'s narrowed rule calls a divergence between
 practitioners.
 
+**And the eighteen 局 headings are the whole 三元定局, printed inside out.** Each
+局's section opens by naming the four term-and-yuan slots that take it — 陽遁一局
+is headed 冬至上 驚蟄上 清明中 立夏中, 陰遁一局 大暑中 處暑上 秋分中 大雪下 —
+and eighteen 局 at four slots each is seventy-two, which is twenty-four terms at
+three yuan. **All eighteen were read and all seventy-two cells agree** with the
+table `ju.ts` ships, cell for cell, differing only in the order the four are
+listed in. That table had implementations behind it and now has a Qing imperial
+print as well, entire rather than sampled. Series pp. 316, 319, 322, 325, 328,
+332, 335, 338, 341, 344, 347, 350, 353, 356, 360, 363, 366 and 369.
+
+**The yin boards lodge the centre in 坤 too, which is what `centreLodging` was
+missing.** 陰遁一局起門訣 runs 休門 甲子一, 景門 甲戌九, 生門 甲申八, 驚門 甲午七,
+開門 甲辰六 — and then 「死門 甲寅五」, read at 600 dpi. In 陰遁一局 it is 癸 that
+the ju puts in the centre, so 甲寅癸 is the centre's decade, and its 直使 is
+坤二's 死門 where the refused `centreLodging: dun` would give it 艮八's 生門.
+Every witness for `kun` before this one was either a rule stated without a
+condition or a rule applied inside a quoted example; this is a yin board with
+坤's gate printed in it, in a table that names the gate of all six decades.
+
+**One thing was read that moves nothing and is written down because it does
+not.** 卷之五 opens on a 三元訣, a four-line 七言 giving the yuan from the 符頭:
+「甲己臨坤上元天。若是臨仲作中元。臨季下元為定局。此名遁甲混三元。」 The first
+line's fourth character is cut **坤** — read at 400 dpi, 土 and 申, and not the
+孟 the parallel with 仲 and 季 wants. On the only reading that parses, the verse
+gives 孟 the upper yuan, 仲 the middle and 季 the lower.
+
+**That is not the anchor this engine's `yuan: futou` uses, and 遁甲演義 assigns
+it to a different system.** 卷一 states the hour system's cut in prose and
+states it completely — 「自甲子至戊辰五日六十時，足為上局；己巳至癸酉又五日
+六十時，足為中局；甲戌至戊寅又五日六十時，足為下局」 — which puts 甲子, a 仲
+branch, at the head of the upper, and is what `ju.ts` computes and what two
+implementations were checked against over thousands of days. The 孟-first
+anchor is the one 遁甲演義 gives its **月家** in the same juan: 「甲己遇四孟，
+為上元…甲己遇四仲，為中元…甲己遇四季，為下元」. So a verse in an hour-system
+book carries the month system's anchor, or carries a cut character, and this
+file cannot tell which from one leaf. **Nothing moves**: the shipped rule has a
+prose statement and two implementations behind it, and what this leaf produces
+is a question with an address, not a divergence. Read on the plate 2026-08-28.
+
 **What the print's own defects are worth saying.** The 陽遁一局 起門訣 closes its
 甲辰 decade on 癸丑**八** where the run gives 五, read at 600 dpi and not a
 rendering artefact: a cut number, and the one disagreement in the collation
@@ -3750,7 +3789,7 @@ calendrical layer settles. Recorded as a passage read and not used.
 | 茅山 | no reference at all. `METHOD_NOT_IMPLEMENTED` rather than a silent substitution |
 | 飛盤 | a whole family. `OPTION_NOT_IMPLEMENTED`, and not separable from `system`: the 年家, 月家 and 日家 boards 《遁甲演義》 states are flown, not turned. **The work whose name most invites being read as this one is not this board at all.** 《諸葛武侯行兵遁甲金函玉鏡》, six 卷 in 故宮珍本叢刊 第427冊 from its p. 251, lays nine stars per day — 「假如甲子日巳上起太乙」, and its diagrams name 太乙, 攝提, 軒轅, 招搖 and 咸池 — where this board's nine are 天蓬 through 天英 turned with the 值符, and what stands beside them is an hour table grading the twelve hours 黃道 and 黑道 by the day gods. Another art under the 奇門遁甲 name, the relation 金口訣 has to 六壬. Surveyed and three leaves read on the plate 2026-08-28 |
 | 日家 · 月家 · 年家 | 《遁甲演義》卷一 states all three entire, and they are 飛盤 where the 時家 is 轉盤, so the two parameters move together. The second witness has since arrived — 《遁甲集成》第三冊 — and it puts the 年家's three 元 on palaces 一, 七 and 四 where 遁甲演義 puts them on 一, 四 and 七. Two witnesses disagreeing is neither of the two things the standard accepts, so this is refused on a reading and no longer for want of one. See the 年命 section |
-| 寄宮 `dun` | the parameter exists and the second value is refused rather than guessed. The first witness searched for it does not know it: 《圖解奇門遁甲大全》 states the lodging with no condition on it — 「中宮無位：無論是奇門遁甲圓盤還是方盤，中五宮都無位，所以在中五宮的星和門都寄於坤二宮」 — and then applies it inside 陰遁, in a passage it quotes rather than writes: 「假令陰七局，甲己之日丙寅時 … 值使在五宮寄二宮西南」. A witness that lodges the 值使 in 坤二 in a yin board is evidence for `kun` and none at all for the divergence, which still has no text. Read on the plate 2026-08-27. **A transmitted text has since said the same thing, which is what that row was missing.** 《遁甲符應經》, in 《遁甲集成》第三冊 at its p. 1137, derives the lodging from the 洛書 in one clause — 「以靈龜出洛，戴九履一，左三右七，二四為肩，六八為足，五在中央者，土火之子、金之母，**所寄理於西南坤之位也**」 — with no condition on the 遁 and no second position named anywhere near it. So `kun` no longer stands on a divulgation alone, and `dun` is still what nobody states. Read on the plate at 400 dpi 2026-08-28 |
+| 寄宮 `dun` | the parameter exists and the second value is refused rather than guessed. The first witness searched for it does not know it: 《圖解奇門遁甲大全》 states the lodging with no condition on it — 「中宮無位：無論是奇門遁甲圓盤還是方盤，中五宮都無位，所以在中五宮的星和門都寄於坤二宮」 — and then applies it inside 陰遁, in a passage it quotes rather than writes: 「假令陰七局，甲己之日丙寅時 … 值使在五宮寄二宮西南」. A witness that lodges the 值使 in 坤二 in a yin board is evidence for `kun` and none at all for the divergence, which still has no text. Read on the plate 2026-08-27. **A transmitted text has since said the same thing, which is what that row was missing.** 《遁甲符應經》, in 《遁甲集成》第三冊 at its p. 1137, derives the lodging from the 洛書 in one clause — 「以靈龜出洛，戴九履一，左三右七，二四為肩，六八為足，五在中央者，土火之子、金之母，**所寄理於西南坤之位也**」 — with no condition on the 遁 and no second position named anywhere near it. So `kun` no longer stands on a divulgation alone, and `dun` is still what nobody states. Read on the plate at 400 dpi 2026-08-28. **And a yin board has since been read with 坤's gate printed in it**: 《奇門遁甲金鏡寶鑑》's 陰遁一局起門訣 names the 直使 of all six decades and gives the centre's — 甲寅癸 — 「死門 甲寅五」, where `dun` would give it 艮八's 生門. That is the first witness for `kun` that is a board rather than a rule, and it is a yin one, which is the half `dun` would change. Read on the plate at 600 dpi 2026-08-28 |
 | 六壬 `yuejiang` `jieqi` · `true` | the 四庫 verse's own table turns the general at the 中氣, both references read it so, and two further transmitted witnesses say it in words — 陳公獻's 增注 to the 《心印賦》 and 《六壬視斯》's 「中氣後過宮」. **The first of those has since been read on the plate and it says it entire**, not in passing: 「以月將加占時之上。月將即日宿太陽也」, and then twelve months enumerated — 正月雨水後日躔娵訾之次入亥宮乃登明將, 二月春分入戌乃河魁, 三月穀雨入酉乃從魁, 四月小滿入申乃傳送, 五月夏至入未乃小吉, 六月大暑入午乃勝光, 七月處暑入巳乃太乙, 八月秋分入辰乃天罡, 九月霜降入卯乃太衝, 十月小雪入寅乃功曹, 十一月冬至入丑乃大吉, 十二月大寒入子乃神后. Twelve 中氣 and not one 節氣, with the 次, the palace and the general's name beside each, which is an enumeration that checks itself against its own order. It is the same witness rather than a new one — the same man, in his own 增注 — and what changed is that it is now a complete procedure on this shelf instead of a phrase cited from elsewhere. Read on the plate 2026-08-27. 《大六壬精解》 prints the 節 and the 氣 of every month side by side, which pins what `jieqi` would be without endorsing it. Nothing yet states either. See the 六壬 section |
 | 六壬 `zhouye` `solar` | the divergence is transmitted and the rule is not: 《大六壬精解》 p. 26 gives the branch division with a worked example and then says 「古來亦有更嚴格地准星之出沒或日之出沒而分晝夜者」. That names no text, works no example, and bundles 星之出沒 with 日之出沒 as one option, which they are not. Refused for want of a procedure rather than for want of a school. `OPTION_NOT_IMPLEMENTED` |
 | the 涉害 復等 clause | implemented, measured, and dropped: it moves none of the 8 640 boards under any of three readings, because the order of the courses already gives what it asks for. See the 六壬 section |
