@@ -310,6 +310,19 @@ division. A table of where 乙丙丁 stand is not a rule for laying a board, so
 the two cannot confirm or contradict each other. What it witnesses is that the
 four-fold division is transmitted and used.
 
+**A third witness has since arrived and it changes the shape of the
+refusal.** 《御定奇門寶鑑》卷二 起例 states all three families with a worked
+example, puts the 年家's three 元 on 一, 四 and 七 — two to one for 遁甲演義 — and
+**supplies the second witness to the flight that this section said would move
+`plate: fei`**: it turns the hour board and, in the same juan, flies the others,
+enumerating the month board's palaces 離九·坎一·坤二·震三·巽四·中五·乾六·兌七·艮八,
+which is through the centre and not a ring of eight. Then it argues against
+itself — three competing day methods, two 又一本 variants, and a compiler's note
+saying 「諸說紛紜，全無定見。恐是後人附會穿鑿…非奇門所急也」. **So what blocks
+`system` is no longer one contradicting table but a plural transmission its own
+best witness disowns**, and what would move it is a lineage holding one reading
+rather than another statement of the method. `docs/sources.md` § 年命 has it.
+
 **The witness to the procedure has since arrived, and it contradicts the
 first.** 第三冊 carries 上元·中元·下元 年家奇門定局 laying one board to an 元 of
 sixty years in 陰遁 — the same object 遁甲演義 lays — and puts the three 元 on
@@ -528,9 +541,16 @@ counter-witness 《金鏡寶鑑》's palace 5 did not have; and 定三元法 in 
 closes the 三元訣 question above. Its 八神 are a fifth convention — eight names in
 both dun, the yin counted backwards, and 「朱雀下有元武，勾陳下有白虎」 as a
 gloss — pairing the seats as this engine does for the third time in print.
-Everything is in `docs/sources.md`. **What is left in it is 卷二's remaining
-起例 entries**, which is where a 飛 procedure would be if it had one; 卷三 to
-卷六 are 斷 material by their headings.
+Its 起例 was then read to its end and paid twice more: the 年家 · 月家 · 日家
+families entire, which is the `system` finding above, and **a 飛 procedure at
+last** — 「順飛九宮」 for the day board's stars and the month board's palaces
+enumerated through 中五 — laid beside the hour board's turn in the same juan.
+That is the second witness to «these boards are flown where the 時家 is turned»,
+which this file had as an inference. Everything is in `docs/sources.md`.
+**What is left unread in it is 卷三 to 卷六**, which are 斷 material by their
+headings — 門神提要部, 八門臨時斷訣, 十干剋應歌, 元機賦上下 — and the reading
+layer this project refuses, and the 局 tables from p. 187, which are the object
+《金鏡寶鑑》's 卷五~八 supply and were collated there.
 
 **What is unopened, so the next pass starts rather than reconstructs.** Every
 volume above has been surveyed and its sections named; these are the works
