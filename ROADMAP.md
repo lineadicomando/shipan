@@ -181,7 +181,10 @@ engine leaves them at the centre. The outer eight agree either way.
   centre and travels the whole 甲辰壬 decade. 陽遁一局 was read whole and run
   against the engine — all six stars and all six gates agree by name, and all
   twenty palace disagreements are that one fact, one of them carrying a cut
-  slip on top of it. See § 2 phase 1 and `docs/sources.md`.
+  slip on top of it. **And the other side is in print too**, in the second
+  imperial volume: 《御定奇門寶鑑》 lodges the centre's decade out — 「甲辰在中宮，
+  寄於坤二」 — so the divergence has a Qing woodblock on each side and this
+  engine's behaviour is one of them. `docs/sources.md` has both.
 
 So the field 奇門 owes is not one but three values' worth of divergence, and
 that is the argument for paying them in one movement.
@@ -287,284 +290,64 @@ volumes alternates sides. Every survey in phases 30 to 32 was made of it.
 
 ### Phase 1 — the dunjia scans, for `plate`, and what `centreLodging` and `system` cost
 
-The largest block — eleven files, some three and a half thousand pages, of
-which one is extracted and **all are now surveyed**. Two passes changed what
-this section is: the extent pass found 御定奇門寶鑑 to be one 冊 of eight — **which
-opening it has since corrected to one of two** — and the third 遁甲演義 to be
-卷一 alone, and the survey that followed it read the three
-故宮 volumes' 新編目錄 off their last leaves and took a contact sheet across the
-three 遁甲集成 volumes.
+Eleven files, some three and a half thousand pages. **All eleven are surveyed
+and their sections named**, one is extracted, and six works inside them have
+been read on the plate. What each turned out to say is in `docs/sources.md` —
+this section says only what state the phase is in and what is left.
 
-**And it answered the `system` question on the way, and the answer has since
-turned negative.** 《遁甲演義》卷一 states 年家, 月家 and 日家 entire — see
-`docs/sources.md` § 年命 — so what those three values waited on was a second
-witness and not a text. It also showed that they cannot move alone: those
-boards are flown where the 時家 is turned, so `plate: fei` and `system` are one
-errand.
+**The three values this phase exists for, and what each now waits on.**
 
-**A second work has since turned up and it is not a second witness.**
-《奇門闡秘前編》卷之三, in 第六冊, says 「凡年月日家各有奇門」 and prints a
-年家八節三奇定局 — but its chapter is titled 選擇, and the table gives eight
-settings to a year, one per 節, where 遁甲演義 lays one board a year off a 三元
-division. A table of where 乙丙丁 stand is not a rule for laying a board, so
-the two cannot confirm or contradict each other. What it witnesses is that the
-four-fold division is transmitted and used.
+- **`plate: fei`** — a documented negative wherever it has been asked. Both
+  imperial prints lay the *hour* board by turning and say so; 《金鏡寶鑑》 uses
+  飛 five times for other things, including the flying-palace operation itself
+  spent on 八宅, which is as strong as the negative gets short of a denial.
+  What would move it is a text flying the **hour** board, and no file left on
+  this shelf is a likely place for one.
+- **`centreLodging: dun`** — no longer what nobody states. 《御定奇門寶鑑》
+  prints 「陽遁陰遁俱寄坤宮。一本陰遁寄艮」, which names both readings and flags
+  the second as a variant copy. An edition can only be preferred, so what would
+  move it is a school holding 艮, not another copy reading it.
+- **`system: rijia · yuejia · nianjia`** — three witnesses now state the
+  families entire and they do not agree; the fullest of them prints three
+  competing day methods and a compiler's note calling the whole layer 後人附會
+  穿鑿. What would move it is a lineage holding one reading. `plate: fei` and
+  `system` remain one errand, and that pairing is now stated in a text rather
+  than inferred.
 
-**A third witness has since arrived and it changes the shape of the
-refusal.** 《御定奇門寶鑑》卷二 起例 states all three families with a worked
-example, puts the 年家's three 元 on 一, 四 and 七 — two to one for 遁甲演義 — and
-**supplies the second witness to the flight that this section said would move
-`plate: fei`**: it turns the hour board and, in the same juan, flies the others,
-enumerating the month board's palaces 離九·坎一·坤二·震三·巽四·中五·乾六·兌七·艮八,
-which is through the centre and not a ring of eight. Then it argues against
-itself — three competing day methods, two 又一本 variants, and a compiler's note
-saying 「諸說紛紜，全無定見。恐是後人附會穿鑿…非奇門所急也」. **So what blocks
-`system` is no longer one contradicting table but a plural transmission its own
-best witness disowns**, and what would move it is a lineage holding one reading
-rather than another statement of the method. `docs/sources.md` § 年命 has it.
+**What has been read, so «opened» is not confused with «read».** Page numbers
+are each volume's own; `texts/README.md` holds the PDF offsets, the block
+layouts and the pixel metrics.
 
-**The witness to the procedure has since arrived, and it contradicts the
-first.** 第三冊 carries 上元·中元·下元 年家奇門定局 laying one board to an 元 of
-sixty years in 陰遁 — the same object 遁甲演義 lays — and puts the three 元 on
-palaces 一, 七 and 四 where 遁甲演義 puts them on 一, 四 and 七. Two witnesses
-disagreeing is neither of the two things the standard accepts, so `system`
-stays refused; what has changed is that it is refused for a reason that is
-written down. The argument is in `docs/sources.md` § 年命.
+| | |
+|---|---|
+| 《圖解奇門遁甲大全》 | extracted and read for both values; carries neither. Divulgation, so a lead and never a witness — but the place a passage is located before it is read elsewhere |
+| 《奇門遁甲金鏡寶鑑》, 故宮 第426冊 | **all four juan of prose read whole** (卷一~二 辯釋口訣, 卷三~四 撮要), the eighteen 局 headings read, 陽遁一局 collated at 120 cells. 卷九~十六 are 斷 material and stay unread |
+| 《御定奇門寶鑑》, 故宮 第431冊 | 卷一 and the whole of 卷二's 起例 read. 卷三~卷六 are 斷 material by their headings; the 局 tables from p. 187 are the object 《金鏡寶鑑》 already supplied |
+| 《遁甲集成》 第二・三・六冊 | surveyed entire. 第三冊 paid — 符應經's centre, the 年家 tables — and four of its pages are read whole; 第六冊 yielded the 統宗 and 闡秘前編 inside it; 第二冊's 活盤詳注 is *turning*-plate material and never belonged under this parameter |
+| 《奇門遁甲統宗》, three editions | 卷一 read for 置閏 and 四十格; every 十干克應 reading checked against 第六冊's copy |
+| 第429冊's 奇門遁甲全局 | opened and collated as far as the file allows — about fifteen pixels to a character in its rings, so no wholesale check is possible on it |
 
-What is left of this phase is 飛盤 proper. **The searchable face of it exists
-and the rest is plates**, which is a shorter list than the one this section
-used to carry and a slower one:
-
-1. 《圖解奇門遁甲大全》 — 598 pages, extracted and **read for both values**,
-   which is what makes it a finished piece rather than a download: it carries
-   neither. It names the 轉盤/飛盤 division in a classification and prints no
-   procedure, and it states the centre's lodging as 坤二 with no condition on
-   it, applying that inside 陰遁 in a passage it quotes. Both negatives are
-   written up in `docs/sources.md`, which is where a phase is finished.
-   Divulgation, so a lead and never a witness, and still the place a passage
-   is located before it is read anywhere else — 值符 802 times, 值使 316,
-   超神 37, 接氣 23. Search 通 for 遁, which the extract loses entire, and
-   read 飛宮 twice: twenty-eight of its thirty-one hits are 天乙飛宮格.
-2. 《遁甲集成》 第二・三・六冊 — **block-printed facsimile and not the modern
-   typesetting this section claimed**, which is what opening them settled: the
-   廣陵古籍刻印社 series photographs its originals, and only stretches of 第二冊
-   are movable type. Read by plate. 第二冊 carries 煙波釣叟歌直辨, the Qing
-   commentary on the verse the 十干克應 table is pinned to — **and 十八活盤詳注,
-   which this section used to call the ground `plate: fei` stands on and which
-   is not.** Surveyed by contact sheet: 奇門占驗 ends at its sheet 70,
-   陰陽二十四氣三元總圖 opens what follows, the plates are octagonal 全卦圖 in
-   the 八卦 arrangement and the tables assign the 局 by term and 元. 活盤 is the
-   *turning* plate — 排宮法又稱轉盤 against 飛宮法又稱飛盤, in the manual read
-   above — so reading 活 as 飛 is what put the section under this parameter.
-   **第三冊 is the volume that paid**, and it is two book-pages to the sheet
-   where the other two are one: 《遁甲符應經》 from its p. 1136, whose 九星所直
-   lodges the centre in 坤 with no condition on it, and 年家 · 月家 · 日家
-   tables from p. 1160 that contradict 遁甲演義 on the 年家's three 元. Both
-   are written up in `docs/sources.md`. Its 版心 carries no printed running
-   title, so the method that named 第六冊's works cannot be run here.
-3. 《御定奇門寶鑑》 and 《奇門遁甲統宗》 — clean Qing printing, read by plate.
-   **A third edition of the 統宗 turned out to be 第六冊's first work**, by its
-   own running title, and its 卷一 supplies the whole of what the 故宮 print
-   loses with its missing leaf: 奇門四十格 entire at p. 2821, with 大格 and
-   刑格 in it, and the conspectus at p. 2822 with 小格, 太白入熒 and 火入金鄉.
-   Every T reading in the 十干克應 table has been checked against it and they
-   agree. See `docs/sources.md` § 十干克應.
-4. The three 故宮珍本叢刊 volumes — colour, but about 1000×1500 pixels to the
-   book-page, which is the low end for dense block printing. Read by plate,
-   for confirmation of a passage already located elsewhere rather than for
-   searching. **Their 新編目錄 have been read and they name eleven works between
-   them**, one of which the shelf had not recorded: 《諸葛武侯行兵遁甲金函玉鏡》,
-   六卷, filling the second third of 第427冊. Its nine stars are 太乙 · 攝提 ·
-   軒轅 · 招搖 · 咸池 and not 天蓬 through 天英, so it is another art under this
-   art's name and not the flying board — the entry is in `docs/sources.md`.
-   第429冊's 奇門遁甲全局 is the eighteen 局 written out, about eighteen pages to
-   each, and this line used to call it the place a 轉盤 arrangement could be
-   checked wholesale. **It is not**: its rings give a character about fifteen
-   pixels and the check the line promised is not something that file can
-   support. 第426冊's 金鏡寶鑑 is where that check lives instead — see below.
-
-**What has been covered, so the next pass does not repeat it.** The extent
-pass took page counts and pixel metrics for all eleven, the closing leaf of ten
-— 圖解 is a modern book and has none — and 卷一 of the 四庫 遁甲演義. Since
-then: 圖解 is extracted and read for both values; 第二冊 is surveyed by contact
-sheet between its sheets 40 and 115, which located 奇門占驗's end and the work
-after it; and 第六冊 is surveyed across its whole extent, which is what turned
-up the 統宗 and 闡秘前編 inside it, its 四十格 at sheets 9–10, its 歌註 around
-sheet 131 and its 格局 at sheet 142; and 第三冊 is surveyed across its whole
-extent at twenty-sheet intervals, then narrowed twice, which found 符應經, the
-centre's lodging and the 年家 tables, and four pages of it are read whole.
-
-**The survey is now complete for all eleven**, and the last two pieces of it
-were 第二冊 beyond sheet 115 — 奇門秘要 to the end, whose 剋應 answers a gate over
-a palace and is not the table of that name — and the three 故宮 volumes' 新編目錄.
-A contact sheet of the top strip of both book-pages, ten to sixteen sheets
-sampled, is what these passes were made of. **The running title decided most of
-them and cannot always be relied on**: it named 第六冊's and 第二冊's works, and
-第三冊's 版心 carries no printed title at all, so there the heading of the first
-table on a leaf is the only thing that says what section it is.
-
-What is left of this phase is not a survey. It is 飛盤, and **the volume that
-looked likeliest has been asked and does not answer.** 遁甲演義 names the flight
-three times and a second witness to it would move `plate: fei` on its own; 第三冊
-lays all three boards and never says how — the 局 by 元 or by term, an octagonal
-diagram, an enumeration, and 「以陰遁一局而推」 for the manner. The one word in
-that stretch that could have borne on it, 輪, names the printed round and not a
-turning plate. So the places left to look are the ones the list above names.
-
-**第429冊's 奇門遁甲全局 was the shortest of them and it has been opened.** It is
-the eighteen 局 written out, four charts to the page, each with its nine palaces
-in prose beside a circular plate — the first printed board this project has
-collated cell by cell, and it carries no 飛盤 procedure either. What it produced
-instead is a dissent on a shipped name: the yin board agrees with this engine on
-all eight spirits, and the yang board keeps 白虎 where this engine renames it
-勾陳 and writes 勾陳 where this engine writes 朱雀. **And its rings cannot be
-read** — a character in them gets about fifteen pixels where `docs/scans.md`
-sets forty as the floor — so the wholesale check this line used to promise is
-not something the file can support. Both are in `docs/sources.md`.
-
-**And the biggest of them has been opened, which is where this phase now
-stands.** 《奇門遁甲金鏡寶鑑》, 十六卷, 郁離子伯溫 輯, in 故宮 第426冊 from its
-p. 259 — the one a 飛盤 procedure was likeliest to be in. **It states the
-turning instead**, in so many words: 卷之三 has 「以星為直符加時干而轉天盤九星…
-隨時轉運變化無窮」, 轉 twice and 飛 nowhere. So the value's likeliest
-volume is a documented negative and a witness for what this engine does.
-**And the prose sweep that followed made the negative as strong as it can
-get**: 飛 is in the work five times over — a rhyme, a heaven-plate stem, two
-格 names against their 伏 twins, the eight spirits' direction, and 「八宅弔星…
-以次順飛」, which is the flying-palace operation itself, named 飛 and spent on
-八宅. A work that lacks the vocabulary proves little; one that has it, uses it,
-and still turns the board proves as much as a text can without saying so.
-
-**What it paid instead is the palace-5 value, and it paid it in the coin that
-was asked for.** 卷五 to 卷八 tabulate all eighteen 局 as a 起星訣 and a 起門訣 —
-each decade's 直符 star or 直使 gate by name, then the ten hours with the palace
-each stands in — and 陽遁一局 was read whole and run against the engine: all six
-stars and all six gates agree by name, **and all twenty palace disagreements are
-one fact**, one of them with a cut slip on top of it. This print counts the centre as a station a moving
-plate can stand in. The 直符 star goes to 五 when the hour's stem is the one the
-ju puts there, the 直使 gate lands on 五 when its count reaches it, and 天禽
-**leaves** the centre and travels the whole 甲辰壬 decade with the hour's stem.
-That last is the 元靈經 reading, and this line used to say a print was wanted
-before the value was implemented. This is that print — a Qing imperial
-woodblock, stating as a table for every hour of every 局 what 元靈經 assumes in
-two worked examples. The value is still declared and refused, for the reason it
-always was: it is a field in 奇門's input type, and it is paid with the other
-two and not alone.
-
-**And three more things came off it, two of them confirmations.** Its eighteen
-局 headings each name the four term-and-yuan slots that take that 局, so the
-eighteen are the whole 三元定局 printed inside out — seventy-two cells, all read
-and all agreeing with the table `ju.ts` ships. Its 陰遁 boards give the centre's
-decade 坤二's 死門, which is the first witness for `centreLodging: kun` that is a
-yin board rather than a rule stated without a condition. **`dun` was what
-nobody stated and 《御定奇門寶鑑》 states it** — see below. And its 卷之五 opens on
-a 三元訣 whose first line is cut 坤 where
-the parallel with 仲 and 季 wants 孟 — on the only reading that parses it gives
-the yuan the anchor 遁甲演義 assigns to its 月家 and not the one that book gives
-its 時家, which is what this engine computes. **Nothing moves on the third**: it
-is one leaf against a prose statement and two implementations, and it is written
-down so that a second witness has somewhere to arrive. **It has arrived, and it
-closes the question rather than leaving it unmoved**: 《御定奇門寶鑑》卷二 定三元法
-states 子午卯酉上元 · 寅申巳亥中元 · 辰戌丑未下元 in prose and works the five-day
-count under it.
-
-**And it dissents on the 八神 too, differently from 第429冊 and differently from
-what its 目錄 suggested.** That 目錄 gives a juan each to eight spirits — 直符
-螣蛇 太陰 六合 勾陳 朱雀 九地 九天 — with 白虎 and 玄武 in no heading, and the
-chapters are written for a spirit over a gate with no clause about which dun the
-board is; read alone it says one set of eight, used in both dun. **The prose
-says otherwise and the prose has now been read**: 卷之二 offers 虎 and 武 as
-alternates for 勾 and 雀 when the matter asked is 占病 or 占賊, once for each dun.
-So what is held is not a fourth roster but a fourth rule for choosing between two
-names of one seat — and it is the only one keyed to the question rather than to
-the board. Everything above is in `docs/sources.md`.
-
-**What is read inside the 金鏡寶鑑 and what is not**, because «opened» is not
-«read» and the next pass should not have to find this out again. Series page
-numbers, which is what the volume prints; the shelf's own register holds the
-PDF offset and the block layout.
-
-- **卷之一~卷之二 奇門辯釋口訣 and 卷之三 奇門撮要. Swept whole, and the errand
-  that sent somebody there is finished.** Note the correction while reading the
-  rest of this section: the works divide 卷一~二 and 卷三~四, not 卷一~三 and
-  卷四~五 — the 目錄 and every section heading say so, and the earlier boundary
-  came off a contact sheet. Forty-three sheets, eighty-six leaves, read on the
-  plate at 300 dpi with fourteen crops at 600. It answered both open questions
-  and produced a third finding nobody was looking for:
-  - **The 八神.** The work names 白虎 and 玄武 — 「如占病、占賊，則勾、雀二神可換
-    虎、武用」 and 「雀、勾可換武、虎」, pp. 286 and 287 — so the negative § 1 left
-    open is closed the other way. See § 1.
-  - **The centre.** Stated as a rule and not only tabulated: 「二五同宮，其志不同。
-    行活局，符使不必寄於二，徑排入中宮」 (p. 266) and 「只順宮不隨干行，亦入中五」
-    (p. 267). It also carries the condition — 行活局 — and separates the star's
-    lodging from the moving 符 and 使. The turn is nowhere qualified; what
-    qualifies the centre is a valence, 「直使加中五宮為死」 and 「符入中宮不可用」,
-    which is the reading layer.
-  - **置閏**, which nobody asked for. p. 265 repeats the term the year's leap
-    month falls under and rejects the solstice placement. New entry in § 1.
-  - **And 飛 is in the work, five times, never for this board** — including
-    「八宅弔星…以次順飛」 at p. 290, which is the flying-palace operation named and
-    spent on 八宅. That is as strong as the `plate: fei` negative can get without
-    the work saying so.
-- **卷之四 奇門撮要. Read whole**, ten sheets, twenty leaves, pp. 306–315. **The
-  prose of this work is now finished.** It is where the book states its own
-  五行 bookkeeping, and that is the one thing in it that moves anything:
-  「九星休旺者，旺于同類月，相于我生月，休于生我月，囚于官鬼月，死于妻財月。
-  日時皆同」, with a nine-star table consistent with it. 我 is the star, so the
-  reading is transposed from the season-centric one `strength.ts` computes; new
-  entry in § 1. Everything else in the juan confirms or repeats — 六儀擊刑 for
-  all six decades cell for cell with `patterns.ts`, 五不遇時 stated with its
-  polarity condition, the 格 defined a second time 天盤 against 地盤 — except one
-  worked case worth the reading on its own: 「甲子帶戊在中，寄坤。此方出行舉事
-  乃吉」, which is 在中 and 寄坤 in one breath and a third kind of witness for
-  `centreLodging: kun`.
-- **卷之五~卷之八, the eighteen 局.** All eighteen headings read — that is the
-  三元定局 and it is finished. **陽遁一局 alone is collated**, 120 cells; the
-  other seventeen are about 2040 cells and the file supports reading them, which
-  第429冊's could not. Two cut slips in the 120 is the rate a wholesale pass
-  would be read against. Nothing is waiting on it: the divergence it would
-  measure is already stated and already paid for.
-- **卷之九~卷之十六, the 八神加八門斷章.** The 目錄 and 卷之九's opening read. The
-  rest is 斷 material — what a spirit over a gate means for 天時, 地利, 人和, a
-  campaign, a journey — which is the reading layer this project refuses. Not an
-  errand except for the 八神 sweep named above.
-
-**《御定奇門寶鑑》 has been opened and it was worth the errand, which is where
-this phase now ends.** It was last on the list because the shelf had it as one
-冊 of eight; its title page says 共二冊 and its 新編目錄 says the half held is
-卷一至卷六 entire — all the prose, and only twelve of the eighteen tables
-missing. 卷二's 起例 paid three things at once: 「陽遁陰遁俱寄坤宮。一本陰遁寄
-艮」, which is the plainest `centreLodging: kun` on the shelf **and the first
-attestation of the value the parameter refuses**; 「甲辰在中宮，寄於坤二，天禽為
-本旬直符」, which lodges the 符 and 使 out of the fifth palace and is the
-counter-witness 《金鏡寶鑑》's palace 5 did not have; and 定三元法 in prose, which
-closes the 三元訣 question above. Its 八神 are a fifth convention — eight names in
-both dun, the yin counted backwards, and 「朱雀下有元武，勾陳下有白虎」 as a
-gloss — pairing the seats as this engine does for the third time in print.
-Its 起例 was then read to its end and paid twice more: the 年家 · 月家 · 日家
-families entire, which is the `system` finding above, and **a 飛 procedure at
-last** — 「順飛九宮」 for the day board's stars and the month board's palaces
-enumerated through 中五 — laid beside the hour board's turn in the same juan.
-That is the second witness to «these boards are flown where the 時家 is turned»,
-which this file had as an inference. Everything is in `docs/sources.md`.
-**What is left unread in it is 卷三 to 卷六**, which are 斷 material by their
-headings — 門神提要部, 八門臨時斷訣, 十干剋應歌, 元機賦上下 — and the reading
-layer this project refuses, and the 局 tables from p. 187, which are the object
-《金鏡寶鑑》's 卷五~八 supply and were collated there.
-
-**What is unopened, so the next pass starts rather than reconstructs.** Every
-volume above has been surveyed and its sections named; these are the works
-inside them that nobody has read a page of, largest first:
+**What is unopened, so the next pass starts rather than reconstructs**, largest
+first — and none of it is a likely place for what § 1 still wants:
 
 - 第429冊's other three: 奇門遁甲 十卷 (to its p. 128), 奇門遁甲備覽, 奇門遁甲
-  捷要. The 全局 in the same volume was read and carries no procedure, which is
-  weak evidence about its neighbours and not none.
-- 《大統皇曆經世》, 三卷, in 第426冊 — calendrical rather than dunjia, and named
-  here only so the volume's contents are accounted for.
+  捷要. Their neighbour 全局 was read and carries no procedure, which is weak
+  evidence about them and not none.
+- 《大統皇曆經世》, 三卷, in 第426冊 — calendrical rather than dunjia, named here
+  only so the volume's contents are accounted for.
+- 《御定奇門寶鑑》 第二冊 is **not held**: it carries twelve of the eighteen 局
+  tables and no prose, so nothing above waits on it.
 
-第427冊's 秘笈大全 is a photographic edition of a text this shelf already has as
-a transcription, so opening it is collation and not discovery; its 金函玉鏡 is
+第427冊's 秘笈大全 is a photographic edition of a text held here as a
+transcription, so opening it is collation and not discovery; its 金函玉鏡 is
 another art under this art's name and is not a place to look.
+
+**So this phase is finished except for acquisitions.** Everything on the shelf
+that could bear on its three values has been asked, and each value is now
+refused for a written reason rather than for want of a text. The two prints
+read this session are the reason § 1 grew instead of shrinking: reading a shelf
+finds divergences at least as often as it settles them.
+
 
 ### Phase 2 — 《中國絕學》, for a school's name
 
