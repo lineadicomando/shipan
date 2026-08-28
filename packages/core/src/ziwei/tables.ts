@@ -108,16 +108,21 @@ export const BRIGHTNESS: Partial<Record<ZiweiStarId, Partial<Record<BranchId, Br
  * to 右弼 where others give it to 太陽; 庚 gives 科 to 太陰 and 忌 to 天同
  * where others swap them or hand 科 to 天府; 壬 gives 科 to 天府 where
  * others give it to 左輔. 壬's reading is the one two editions of this work
- * agree on and an independent implementation contradicts, which is what a
- * book-against-the-moderns divergence looks like from inside.
+ * agree on, the Ming woodblock confirms and an independent implementation
+ * contradicts, which is what a book-against-the-moderns divergence looks like
+ * from inside.
  *
- * **庚 is the one line the two editions themselves disagree about.** This
- * text reads 庚日武**陰同**為首 — 科 to 太陰, 忌 to 天同 — where the second
- * edition reads 庚日武**同陰**為首, swapping the two. That transposition is
- * the famous split at 庚, and it is carried here as a variant rather than
- * settled: the reading kept is the one an independent implementation also
- * computes, and the other is written down in `docs/sources.md` so nobody has
- * to rediscover that the line has two forms.
+ * **庚 is the one line the editions themselves disagree about, and there are
+ * three of them.** This text reads 庚日武**陰同**為首 — 科 to 太陰, 忌 to
+ * 天同 — where the second edition reads 庚日武**同陰**為首, swapping the two.
+ * That transposition is the famous split at 庚. The Ming 南陽堂 recension,
+ * read on the plate at its 卷之三 leaf 151, prints neither: 庚日武**同相**為者,
+ * siding with the second edition on the 科 and giving the 忌 to 天相.
+ *
+ * The line is carried here as a variant rather than settled, and the reading
+ * kept is the one two voices agree on — this text and a 中州派 manual. The
+ * other two forms are in `docs/sources.md`, so nobody has to rediscover that
+ * the line has three.
  */
 export const SIHUA: Record<StemId, readonly [ZiweiStarId, ZiweiStarId, ZiweiStarId, ZiweiStarId]> = {
   jia: ['lianzhen', 'pojun', 'wuqu', 'taiyang'],

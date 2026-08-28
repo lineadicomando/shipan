@@ -293,9 +293,26 @@ a value in § 1**, so neither is urgent.
 
 528 pages, one book-page to the page, high-contrast block printing: legible by
 eye, hopeless for OCR. `docs/sources.md` calls it the adjudicator between the
-transcriptions and has already read it in places. This phase is the rest of
-it — collation, against the copies already held, of the passages the two
-transcriptions disagree on.
+transcriptions. This phase is collation, against the copies already held, of
+the passages the two transcriptions disagree on. **Two of them are answered.**
+
+The 四化 verse is at 卷之三 leaf 151. Nine of its ten lines are the table this
+engine ships, character for character; 壬 gives 科 to 天府, confirming the
+shipped reading against two modern schools; and 庚 prints a **third** form,
+庚日武同相為者 — 科 天同, 忌 天相 — where the two transcriptions read 陰同 and
+同陰. Nothing moved: three readings each with something behind them is a
+divergence, and the shipped one is the only one two voices agree on. See
+`docs/sources.md`.
+
+**It is cheaper to work than the estimate feared**, and that is the finding to
+carry into the next four: the block reads at a hundred dots to the inch, its
+版心 carries the juan on every leaf, and its 目錄 sits at the front in section
+order — so a line is located by margin and heading, not by contact sheet. Leaf
+151 was found in four passes.
+
+What is left: the defective 火玲 line of 安身主, 火星 and 鈴星 off the hour,
+解神 off the year, the two repaired grid cells, and the starting age of the
+大限. The 目錄 names a section for each.
 
 ### Phase 4 — the remainder, read behind no citation
 

@@ -3083,17 +3083,70 @@ open, and the list is short enough to write down. The defective 火玲 line of
 安身主, which both editions in hand print identically and neither can settle.
 The 庚 line of the 四化, where the two editions read 陰同 against 同陰 and the
 split is carried as a variant rather than resolved. 火星 and 鈴星 off the hour,
-解神 off the year, and 壬 giving 科 to 天府 — each standing on two witnesses of
-one lineage, which is not the same as two lineages. The two repaired grid
+解神 off the year, and ~~壬 giving 科 to 天府~~ **— 壬 is confirmed on the
+block —** each standing on two witnesses of one lineage, which is not the same
+as two lineages. The two repaired grid
 cells, forced by arithmetic and confirmed by a transcription. And the starting
 age of the 大限, which is nowhere a sentence in either edition and is induced
 from the opening words of the bureau verses. A seven-juan recension also
 carries the 批命 material the three-juan one lacks, which is the part this
 project declines and would not read.
 
+**The adjudicator has been opened, and it answers two of the questions below.**
+《新鐫希夷陳先生紫微斗數全書》, the Ming 南陽堂 woodblock in seven juan, carries
+its 四化 at 卷之三 leaf 151, headed 「○安祿權科忌四星變化訣　論生年干挨次而化」
+and set three verse lines to a column, 甲乙丙 · 丁戊己 · 庚辛壬 · 癸. The tenth
+line runs onto the next leaf with the gloss that fixes the reading order —
+「如甲生人廉貞化祿，破軍化權…餘倣此」.
+
+**Nine of its ten lines are the table this engine ships, character for
+character**: 甲廉破武陽, 乙機梁紫月, 丙同機昌廉, 丁月同機巨, 戊貪月弼機,
+己武貪梁曲, 辛巨陽曲昌, 壬梁紫府武, 癸破巨陰貪. Which is a fourth witness for
+eight of the lines and the first that is neither a transcription nor descended
+from one.
+
+**壬 is confirmed, and that closes a question.** 「壬梁紫府武宿是」: 科 to 天府,
+where the 中州派 manual and 北派 both move it to 左輔. A Ming block against two
+modern schools is what the shipped reading now stands on.
+
+**庚 is answered and the answer is a third reading.** The block prints
+「**庚日武同相為者**」 — 祿 太陽, 權 武曲, 科 天同, 忌 **天相** — where the
+Wikisource recension has 庚日武**陰同**為首 and the second edition 庚日武**同陰**
+為首. Read at full resolution with the column cropped, because the whole finding
+is one character: 相 carries 木 and 目 and is not 陰.
+
+So the block half-decides the famous split and then steps outside it. On the 科
+it sides with the second edition, 天同 against 太陰. On the 忌 it agrees with
+neither, and the star it names is one this register has already met: 中國絕學
+第七冊's 【占驗派】 part puts 庚's 忌 on 天相 too. A Ming woodblock and a
+twentieth-century school manual, arrived by different roads, printing the same
+cell.
+
+| | 祿 | 權 | 科 | 忌 |
+|---|---|---|---|---|
+| Wikisource 《全書》 — **shipped** | 太陽 | 武曲 | 太陰 | 天同 |
+| the second edition | 太陽 | 武曲 | 天同 | 太陰 |
+| 南陽堂 woodblock | 太陽 | 武曲 | 天同 | **天相** |
+
+**Nothing moves, and the reason is the standard and not caution.** The shipped
+reading has two voices agreeing — the Wikisource recension and the 中州派
+manual — and the 南陽堂 is a *different recension of the same title*, which is
+what makes it an adjudicator and also what stops it from simply overruling one.
+Three readings of one line, each with something behind it, is a divergence and
+not an error to correct; and this file's rule is that a divergence is declared
+and refused by name rather than resolved in silence. What has changed is that
+the line's third form is now known, printed, and dated, where before it was a
+two-way split with a modern school as a tiebreaker. Read on the plate
+2026-08-28.
+
 **Reading it is the largest thing outstanding on this board**, and it is not
 cheap: 528 pages of woodblock with no text layer, to adjudicate perhaps eight
-lines. Recorded as a debt with a price on it, not as a plan.
+lines. It is cheaper than that estimate feared, and why is worth recording: the
+block reads at a hundred dots to the inch, its 版心 carries the juan on every
+leaf, and its 目錄 sits at the front in section order — so a line is located by
+margin and heading rather than by contact sheet, and leaf 151 was found in four
+passes. The struck-through entries above say what is left, and the debt is a
+plan with a method attached.
 
 ### The other transmission, and why having it changes two stars and no rule
 
@@ -3281,7 +3334,7 @@ they were mine.** What follows is the whole of it, after collation.
 | 火星 · 鈴星 | 25.0 % | **stands, and both editions agree.** Each takes a seat from the year's triplicity and the birth hour never enters, where the widespread practice counts on from those seats by the hour — which is why agreement is exactly the quarter of the sample whose hour offset is zero. `huoling` names it. The second edition prints 寅午戌人**午**卯方 where the first prints 丑卯, and 丑 is kept: 午 already stands as a triplicity head two characters earlier, and the received seats are 丑 and 卯 |
 | 解神 | 10.3 % | **stands, and both editions agree.** 「解神從戌上起子，逆數至當生年太歲上是也」 — placed off the **birth year**. What modern software carries under this name is the 月系 star, placed off the month. Two quantities wearing one name |
 | 天府 taking 化科 at 壬 | 0 % | **stands, with two witnesses behind it.** Both editions read 「壬梁紫府武宿是」. Later lineages give 科 to 左輔, and two of them are now on the shelf with names on them — the 中州派 manual above prints 「壬梁紫輔武宿是」, and 《紫微斗數 北派》, 恭鑑老人, uses 左輔 twice in worked examples. **What the second one settles is the size of the divergence, not its side.** Eleven of 北派's cells have been read off its plates, over six stems — 甲忌太陽, 戊忌天機, 己祿武曲, 庚祿太陽·科太陰·忌天同, 癸祿破軍, and 壬's row drawn entire as 天梁祿·紫微權·左輔科·武曲忌 — and every one of them is this book's except that 科. So 北派 is not a different table; it is this table with one cell moved, which is a smaller claim than «a lineage's own 四化» and a sharper one. It contradicts itself there once, writing 「生年壬紫微化科入限」 at 四—二〇〇 where 四—一八八 draws 紫微 with 權 and 左輔 with 科; the reading that appears twice is the drawn one. Read on the plate 2026-08-27 |
-| 化科 and 化忌 at 庚 | — | **the one line the two editions disagree about.** This text reads 庚日武**陰同**為首 (科 to 太陰, 忌 to 天同); the second reads 庚日武**同陰**為首, swapping them. That is the famous split at 庚, and it is carried as a variant rather than settled — the reading kept is the one the reference also computes, and the other is written here so nobody rediscovers that the line has two forms. **A third party has since sided with the reading kept**: the 中州派 manual described above prints 「庚日武阴同为首」 and a table to match, which is a school agreeing rather than a witness, and is worth exactly that much |
+| 化科 and 化忌 at 庚 | — | **the one line the two editions disagree about.** This text reads 庚日武**陰同**為首 (科 to 太陰, 忌 to 天同); the second reads 庚日武**同陰**為首, swapping them. That is the famous split at 庚, and it is carried as a variant rather than settled — the reading kept is the one the reference also computes, and the other is written here so nobody rediscovers that the line has two forms. **A third party has since sided with the reading kept**: the 中州派 manual described above prints 「庚日武阴同为首」 and a table to match, which is a school agreeing rather than a witness, and is worth exactly that much. **And the adjudicator has since printed a third form.** The Ming 南陽堂 recension reads 庚日武**同相**為者 — 科 天同, 忌 天相 — siding with the second edition on the 科 and with neither on the 忌, and naming the star 中國絕學 第七冊's 【占驗派】 part also puts the 忌 on. Three readings of one line, each with something behind it, and the shipped one is the only one two voices agree on |
 | 命宮 in a leap month | excluded | this book counts a leap month as the month **after** it (「凡有閏月俱要依此為例」); `iztro` splits the month at its middle. `leapMonth` names all three readings and implements the book's |
 
 After the two corrections the comparison stands at **fifty-nine of
