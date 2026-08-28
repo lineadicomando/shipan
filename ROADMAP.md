@@ -75,21 +75,47 @@ practitioners* is a parameter, a disagreement between witnesses to one text is
 not — and the narrowing is what makes this visible. See `docs/parameters.md`
 § "What is not a parameter".
 
+The audit that followed the narrowing swept every module of `core` and the
+register for admissions of divergence, and passed each through three questions:
+does it change what the chart shows, could two practitioners hold opposite
+sides, and is it exposed. Most of what it found was the rule already working —
+the 用神 mapping refused in `scan.ts` because «putting one of them here would
+make a school implicit», the 課體 that names nothing where the sources disagree,
+`leapMonth` and `huoling` and `centreLodging` each declared with their
+alternatives refused. Three things were not.
+
+**Two are divergences nothing exposes.** They need a field in a board's input
+type, which is the breaking change `docs/parameters.md` opens by saying not to
+make late — so they are named here and paid together, not one at a time.
+
 - 奇門, the **八神's naming**. This engine follows the 陰陽異名 convention and
   renames the middle pair in a yang chart, 白虎 → 勾陳 and 玄武 → 朱雀;
-  `plates.ts` says so above `SPIRITS_YANG` and says, in as many words, that it
-  is «a divergence this engine does not yet expose». Other traditions keep one
-  pair in both dun, and 《奇門遁甲全局》 — read on the plate, see
+  `plates.ts` says so above `SPIRITS_YANG` and said, before this was written,
+  that it is «a divergence this engine does not yet expose». Other traditions
+  keep one pair in both dun, and 《奇門遁甲全局》 — read on the plate, see
   `docs/sources.md` — is a third: 白虎 at the fifth seat and 勾陳 at the sixth.
-  Two practitioners hold different boards here, so this is a parameter's job.
-  It costs a field in 奇門's input type, which is what makes it a step of its
-  own rather than something done in passing.
+- 奇門, **where earth's season begins**. `seasonElement` gives the four months
+  that close the seasons — 辰, 未, 戌, 丑 — to earth entire, and `strength.ts`
+  records that other schools give earth only the last eighteen days of each
+  instead. That is not a gloss: `seasonElement` feeds `strengthOf`, so the
+  reading decides 旺相休囚死 for every star and every gate on the board, and the
+  two answers part for the first two-thirds of each of those four months.
 
-Two more are candidates and are not claimed. Whether **天禽 stands at the
-centre** or rides merged with 天芮 divides implementations and probably divides
+**One is exposed and unregistered, which is a smaller fault and a different
+one.** 八字's `luckGranularity` — `shichen` against `minute`, «they disagree by
+up to ten days on when the first cycle opens» — is an option on `BaziOptions`
+with a declared default, so no chart is cast without the caller being able to
+say which reading produced it. But there is no `BAZI_PARAMETERS`, so it is
+absent from `PARAMETERS`, from `docs/parameters.md` and from anything a surface
+builds out of them. The divergence is honoured and the registry does not know
+it. Fixing it is additive rather than breaking: a registry entry, a row in the
+parameters page, and a label in each catalog.
+
+**Two are candidates and are not claimed.** Whether **天禽 stands at the centre**
+or rides merged with 天芮 divides implementations and probably divides
 traditions; whether the **lodged stem turns with its host** on the heaven plate
 is called a divergence in `docs/sources.md` and may yet turn out to be one
-library's choice rather than a school's. Each needs establishing before it is
+library's choice rather than a school's. Each needs a witness before it is
 declared, which is reading and not code.
 
 `method: maoshan` is in the table and is not expected to leave it: there is no

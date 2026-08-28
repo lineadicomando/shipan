@@ -43,6 +43,29 @@ being able to hide behind the same word. If two practitioners would draw
 different boards, the divergence owes a parameter, whatever else is true about
 it. `ROADMAP.md` § 1 carries what that costs today.
 
+## Three questions, which is how a divergence is tested
+
+The audit that followed the narrowing put every admission of divergence in
+`core` and in the register through the same three:
+
+1. **Does it change what the chart shows?** A difference in derivation that
+   lands on the same cells is not one a caller can see, and a difference in a
+   *name* — 上格 against 小格 for one pairing of 十干克應 — is a variant the
+   register records rather than an option.
+2. **Could two practitioners hold opposite sides?** Not two libraries: two
+   people, each able to say which they follow and why. This is what parts a
+   school from an implementation detail, and it is why two candidates the audit
+   met are named and not claimed — a witness is owed first.
+3. **Is it exposed, and is it registered?** Those are two questions and the
+   second is easy to fail: an option can sit on a board's input type with a
+   declared default and still be absent from `PARAMETERS`, in which case the
+   chart can say what produced it and nothing a surface builds can.
+
+Most of what the audit met was the rule already working. The 用神 mapping is
+refused in `scan.ts` in as many words; 六壬's 課體 reports nothing where the
+sources disagree; `leapMonth`, `huoling` and `centreLodging` each carry their
+alternatives declared and refused. What it found is in `ROADMAP.md` § 1.
+
 **Each board carries its own input type. None inherits a default from
 dunjia's.**
 

@@ -83,8 +83,40 @@ stands at the centre or rides merged with 天芮, and whether the lodged stem
 turns with its host on the heaven plate. The second may be one library's choice
 rather than a school's, and establishing which is reading and not code.
 
+## The audit, run in the same session
+
+Declaring one debt is not evidence about how many there are, so the sharpened
+rule was turned on the whole engine before the session ended: every admission of
+divergence in `core` and in the register, through three questions — does it
+change what the chart shows, could two practitioners hold opposite sides, is it
+exposed and is it registered. `docs/parameters.md` now states those three.
+
+Most of what it met was the rule already working, and that is worth recording
+too: the 用神 mapping refused in `scan.ts` because «putting one of them here
+would make a school implicit in the engine», 六壬's 課體 reporting nothing where
+the sources disagree, `leapMonth` and `huoling` and `centreLodging` each carrying
+their alternatives declared and refused. The engine was not sloppy; it had one
+blind spot and the rule had been written wide enough to cover it.
+
+**A second unexposed divergence, in a place nobody was looking.**
+`dunjia/strength.ts` gives the four months that close the seasons — 辰, 未, 戌,
+丑 — to earth entire, and records that other schools give earth only the last
+eighteen days of each. The comment called that «the boundary and not the idea»,
+which was true and beside the point: `seasonElement` feeds `strengthOf`, so the
+choice decides 旺相休囚死 for every star and every gate, and the two readings
+part for the first two-thirds of each of those four months. Nothing in a chart
+says which drew it.
+
+**And a third fault of a different kind.** 八字's `luckGranularity` — `shichen`
+against `minute`, ten days apart on when the first decade opens — *is* exposed,
+on `BaziOptions`, with a default. But there is no `BAZI_PARAMETERS`: it is
+absent from `PARAMETERS`, from the parameters page and from anything a surface
+builds out of them. The divergence is honoured and the registry does not know
+it, which is a smaller fault than the other two and a differently-shaped one.
+Fixing it is additive; fixing them is breaking.
+
 ## What this phase did not decide
 
-Whether to pay the debt now. The 全局 reading is a day old and rests on one
-print; the roadmap holds the errand and the next session can weigh it against
-carrying on with the shelf.
+Whether to pay any of it. The 全局 reading is a day old and rests on one print,
+and the two input-type changes want to land together rather than one at a time.
+The roadmap holds all three, sorted by what they cost.

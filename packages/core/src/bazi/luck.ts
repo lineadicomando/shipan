@@ -47,6 +47,12 @@ export interface LuckCycles {
 /**
  * How finely the distance to the solar term is measured.
  *
+ * This is a divergence between practitioners and it is exposed, as the rule
+ * asks — but only on `BaziOptions`. There is no `BAZI_PARAMETERS`, so it is
+ * absent from `PARAMETERS` and from everything a surface builds out of that:
+ * the chart can say which reading produced it and the registry cannot. See
+ * `ROADMAP.md` § 1.
+ *
  * Both readings start from the same rule — three days of the calendar answer
  * to one year lived, a day to four months, a double hour to ten days — and
  * differ on where to stop:
