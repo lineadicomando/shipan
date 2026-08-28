@@ -5,17 +5,23 @@ is not work at all. The record of how everything else got here is in
 [`docs/history/`](docs/history/README.md); what holds today is in
 [`docs/`](docs/README.md).
 
-**The open edge of this project is the shelf, not the code.** The boards, the
-almanac layer and the calendrical layer under them are built, checked and
-documented, and the section of notes that accounts for them is written. What
-is left below is a list of values waiting on a source and a third language
-waiting for the engine to stop moving. Neither is blocked on architecture.
-What will change this engine from here is a **text** — one that adds a
-quantity, confirms one already shipped, or contradicts it — and that is an
-ordinary change with a stated procedure: `docs/sources.md`
-§ "When a source arrives later" says what moves and in what order. Reading the
-shelf is therefore the work, and writing code is what happens afterwards. § 2
-is that reading, cut into pieces that can be put down.
+**The open edge of this project was the shelf and is now two things.** The
+boards, the almanac layer and the calendrical layer under them are built,
+checked and documented, and the section of notes that accounts for them is
+written.
+
+Most of what is left is still a **text** — one that adds a quantity, confirms
+one already shipped, or contradicts it — and that is an ordinary change with a
+stated procedure: `docs/sources.md` § "When a source arrives later" says what
+moves and in what order. § 2 is that reading, cut into pieces that can be put
+down, and a third language waits on the engine rather than on anything below.
+
+**But an audit on 2026-08-28 found divergences the engine decides in silence,
+and those are not waiting on a source.** They are in § 1 under the parameters,
+they have their witnesses already, and what they want is a field in an input
+type and the decision to break an API once rather than three times. That is
+code work with nothing to read first, and it is the one part of this file where
+«read the shelf, then write the code» is the wrong order.
 
 ## 1. Parameters that are declared and refused
 
@@ -352,6 +358,25 @@ all eight spirits, and the yang board keeps 白虎 where this engine renames it
 read** — a character in them gets about fifteen pixels where `docs/scans.md`
 sets forty as the floor — so the wholesale check this line used to promise is
 not something the file can support. Both are in `docs/sources.md`.
+
+**What is unopened, so the next pass starts rather than reconstructs.** Every
+volume above has been surveyed and its sections named; these are the works
+inside them that nobody has read a page of, largest first:
+
+- 《奇門遁甲金鏡寶鑑》, 十六卷, in 故宮 第426冊 from its p. 259. The biggest
+  unopened dunjia work on the shelf, and the one a 飛盤 procedure is likeliest
+  to be in if it is anywhere here.
+- 《御定奇門寶鑑》 第一冊, 373 pages of Qing imperial woodblock — one 冊 of
+  eight, so a procedure that runs across the set may not be in the part held.
+- 第429冊's other three: 奇門遁甲 十卷 (to its p. 128), 奇門遁甲備覽, 奇門遁甲
+  捷要. The 全局 in the same volume was read and carries no procedure, which is
+  weak evidence about its neighbours and not none.
+- 《大統皇曆經世》, 三卷, in 第426冊 — calendrical rather than dunjia, and named
+  here only so the volume's contents are accounted for.
+
+第427冊's 秘笈大全 is a photographic edition of a text this shelf already has as
+a transcription, so opening it is collation and not discovery; its 金函玉鏡 is
+another art under this art's name and is not a place to look.
 
 ### Phase 2 — 《中國絕學》, for a school's name
 
