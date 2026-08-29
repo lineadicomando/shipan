@@ -115,6 +115,89 @@ export interface ChartOptions {
   centreLodging: 'kun' | 'dun';
 
   /**
+   * What decides the two names the fifth and sixth spirits wear.
+   *
+   * The ring is the same ring under every answer: eight seats, and the middle
+   * pair differs in the **name** and in nothing else — same star, same gate,
+   * same stem, same palace. What the schools part over is which fact selects
+   * the name.
+   *
+   * `dun` is the 陰陽異名 convention this engine follows: 勾陳 and 朱雀
+   * preside while the yang half of the year runs, 白虎 and 玄武 while the yin
+   * half does. `fixed` is 《御定奇門寶鑑》's — the eight names stand in both
+   * dun and only the order they are counted in reverses. `baihu` is the
+   * seating 《奇門遁甲全局》 holds, 白虎 at the fifth seat and 勾陳 at the
+   * sixth.
+   *
+   * **A fourth answer exists and is deliberately not a value here.**
+   * 《奇門遁甲金鏡寶鑑》 keys the choice to what is being divined —
+   * 「如占病、占賊，則勾、雀二神可換虎、武用」 — which is a licence granted to
+   * the reader at the moment of reading and not a rule that lays a different
+   * board. `docs/refusals.md` § "The middle pair named by the matter" argues
+   * it: a chart is a function of its instant, the question enters at the 用神,
+   * and a parameter here would be that first interpretive act computed.
+   */
+  spirits: 'dun' | 'fixed' | 'baihu';
+
+  /**
+   * Where the repeated block goes under 置閏.
+   *
+   * `solstice` is 《奇門遁甲統宗》's placement, which this engine computes: the
+   * block repeated to pay off the drift is 芒種 or 大雪. `runyue` is
+   * 《奇門遁甲金鏡寶鑑》's, which repeats instead whichever term the year's
+   * leap month falls under and rejects the solstice placement as a
+   * convenience — 「於理法都不是」.
+   *
+   * A divergence **inside** 置閏, as `yuan` is inside 拆補, and declared the
+   * same way rather than as a fourth `method`: what parts these two is not how
+   * the ju is established but where one method puts its own repetition.
+   */
+  leap: 'solstice' | 'runyue';
+
+  /**
+   * What the five seasonal states are read from.
+   *
+   * `season` is the ordinary 五行 statement and what this engine computes:
+   * what the season generates is 相, what generates it 休, what controls it
+   * 囚, what it controls 死. `star` is 《奇門遁甲金鏡寶鑑》卷之四's, which reads
+   * the same four from the star instead and tabulates all nine that way —
+   * swapping 相 with 休 and 囚 with 死, and leaving only 旺 in common.
+   *
+   * It is reported for every star and every gate on every board, so the two
+   * readings part on nearly every cell of the answer.
+   */
+  strengths: 'season' | 'star';
+
+  /**
+   * Where earth's season begins.
+   *
+   * `quarters` gives the four months that close the seasons — 辰, 未, 戌, 丑 —
+   * to earth entire, which is what `seasonElement` computes. `eighteen` gives
+   * earth only the last eighteen days of each and leaves the first two-thirds
+   * to the season that is ending.
+   *
+   * It feeds the states above, so it decides 旺相休囚死 for every star and
+   * every gate on the board, and the two answers part for two-thirds of each
+   * of those four months.
+   */
+  earth: 'quarters' | 'eighteen';
+
+  /**
+   * Whether the lodged stem and star travel with their host.
+   *
+   * Where the 符頭 stands in the centre, `stay` leaves the centre's stem and
+   * star where they are and `travel` carries them to the hour's palace with
+   * the host — which is the same board seen from outside as «天禽 merged with
+   * 天芮 and the centre starless». The outer eight agree either way.
+   *
+   * Both sides are in print. 《奇門遁甲金鏡寶鑑》 tabulates all eighteen 局
+   * with the centre travelling; 《御定奇門寶鑑》 lodges the centre's decade out
+   * — 「甲辰在中宮，寄於坤二」. This engine computes the second and declares
+   * the first.
+   */
+  centreTravel: 'stay' | 'travel';
+
+  /**
    * Which register of 神煞 the almanac's page carries (曆注).
    *
    * `xieji` is the only value implemented: what 《協紀辨方書》 ratifies, cut to
@@ -151,6 +234,11 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   dayBoundary: 'zishi',
   system: 'shijia',
   centreLodging: 'kun',
+  spirits: 'dun',
+  leap: 'solstice',
+  strengths: 'season',
+  earth: 'quarters',
+  centreTravel: 'stay',
   shensha: 'xieji',
 });
 

@@ -1,6 +1,7 @@
 import type { MessageKey } from '@shipan/i18n';
 import { ChartError } from './errors.js';
 import type { LiurenOptions } from './liuren.js';
+import type { BaziOptions } from './bazi/index.js';
 import type { NianmingOptions } from './nianming.js';
 import type { QizhengOptions } from './qizheng.js';
 import type { TaiyiOptions } from './taiyi.js';
@@ -49,6 +50,8 @@ import type { ZiweiOptions } from './ziwei/index.js';
 /** Which layer of the engine a divergence belongs to. */
 export type ParameterBoard =
   | 'qimen'
+  /** 八字, which shares the pillars' three and decides one thing for itself. */
+  | 'bazi'
   | 'liuren'
   | 'qizheng'
   | 'taiyi'
@@ -284,6 +287,54 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     ],
     default: 'zishi',
   },
+  spirits: {
+    board: 'qimen',
+    values: [
+      {
+        id: 'dun',
+        name: { hanzi: '陰陽異名', pinyin: 'yīnyángyìmíng' },
+        implemented: true,
+      },
+      { id: 'fixed', implemented: false },
+      { id: 'baihu', name: { hanzi: '白虎', pinyin: 'báihǔ' }, implemented: false },
+    ],
+    default: 'dun',
+  },
+  leap: {
+    board: 'qimen',
+    values: [
+      { id: 'solstice', implemented: true },
+      { id: 'runyue', name: { hanzi: '閏月', pinyin: 'rùnyuè' }, implemented: false },
+    ],
+    default: 'solstice',
+    // Inside 置閏 as `yuan` is inside 拆補: under 拆補 nothing is repeated, so
+    // there is no block to place and this decides nothing.
+    inside: { id: 'method', value: 'zhirun' },
+  },
+  strengths: {
+    board: 'qimen',
+    values: [
+      { id: 'season', implemented: true },
+      { id: 'star', implemented: false },
+    ],
+    default: 'season',
+  },
+  earth: {
+    board: 'qimen',
+    values: [
+      { id: 'quarters', implemented: true },
+      { id: 'eighteen', implemented: false },
+    ],
+    default: 'quarters',
+  },
+  centreTravel: {
+    board: 'qimen',
+    values: [
+      { id: 'stay', implemented: true },
+      { id: 'travel', implemented: false },
+    ],
+    default: 'stay',
+  },
   shensha: {
     board: 'almanac',
     values: [
@@ -517,6 +568,45 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
   },
 };
 
+/**
+ * 八字's, and the whole of it is one row.
+ *
+ * **The board with three divergences it shares and one of its own.** The
+ * pillars' `trueSolarTime`, `yearBoundary` and `dayBoundary` are declared with
+ * `ChartOptions`, where they belong: they say how an instant is read into the
+ * four, and every board built on them inherits the answer. What is here is the
+ * one thing 八字 decides for itself, which is how the distance to the term is
+ * measured when the run of decades is placed.
+ *
+ * It existed on `BaziOptions` before it existed here, with a declared default
+ * and both readings computed, so no chart was ever cast without a caller being
+ * able to say which produced it. What it was missing was the second half of
+ * the rule — `docs/parameters.md` § "Three questions", the third of them: an
+ * option can sit on an input type and still be absent from `PARAMETERS`, and
+ * then the chart can say what produced it and nothing a surface builds can.
+ */
+export const BAZI_PARAMETERS: ParameterSet<Pick<BaziOptions, 'luckGranularity'>> = {
+  luckGranularity: {
+    board: 'bazi',
+    label: 'form.bazi.luckGranularity',
+    values: [
+      {
+        id: 'shichen',
+        name: { hanzi: '時辰', pinyin: 'shíchén' },
+        says: 'form.bazi.luckGranularity.shichen',
+        implemented: true,
+      },
+      {
+        id: 'minute',
+        says: 'form.bazi.luckGranularity.minute',
+        note: 'form.bazi.luckGranularity.note',
+        implemented: true,
+      },
+    ],
+    default: 'shichen',
+  },
+};
+
 export const NIANMING_PARAMETERS: ParameterSet<NianmingOptions> = {
   count: {
     board: 'nianming',
@@ -559,6 +649,7 @@ export const PARAMETERS: readonly ParameterEntry[] = [
   ...entriesOf(QIZHENG_PARAMETERS),
   ...entriesOf(TAIYI_PARAMETERS),
   ...entriesOf(ZIWEI_PARAMETERS),
+  ...entriesOf(BAZI_PARAMETERS),
   ...entriesOf(NIANMING_PARAMETERS),
 ];
 

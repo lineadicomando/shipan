@@ -414,6 +414,7 @@ export {
 // refusals inside the engine read it, and a surface that prints what is
 // computed reads the same table rather than a copy of it.
 export {
+  BAZI_PARAMETERS,
   CHART_PARAMETERS,
   LIUREN_PARAMETERS,
   NIANMING_PARAMETERS,

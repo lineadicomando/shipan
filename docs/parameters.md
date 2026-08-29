@@ -173,6 +173,11 @@ dunjia's.**
 | `plate` | `zhuan` (轉盤 zhuànpán), `fei` (飛盤 fēipán) | `zhuan` |
 | `centreLodging` | `kun` (寄坤二), `dun` (陽遁寄二 · 陰遁寄八) | `kun` |
 | `system` | `shijia` (時家 shíjiā), later `rijia` (日家 rìjiā), `yuejia` (月家 yuèjiā), `nianjia` (年家 niánjiā) | `shijia` |
+| `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat) | `dun` |
+| `leap` | where 置閏 repeats its block — inside 置閏: `solstice` (芒種 or 大雪), `runyue` (閏月 rùnyuè, the term the year's leap month falls under) | `solstice` |
+| `strengths` | what 旺相休囚死 are read from: `season`, `star` | `season` |
+| `earth` | where earth's season begins: `quarters` (the four closing months entire), `eighteen` (their last eighteen days) | `quarters` |
+| `centreTravel` | whether the lodged stem and star go with their host: `stay`, `travel` | `stay` |
 
 `method` and `yuan` are the two most divisive and neither is optional. 茅山 has
 no reference at all and is refused.
@@ -217,7 +222,17 @@ almanac takes none of these at all. Both are below.
 | 紫微斗數 | `huoling` | how 火星 and 鈴星 are placed: `fixed` (a seat apiece from the year's triplicity, which is all 卷二 states), `hour` | `fixed` |
 | 紫微斗數 | `daxian` | where the first decade opens: `adjacent` (the palace beside the 命宮), `ming` (命宮 mìnggōng itself) | `adjacent` |
 | 紫微斗數 | `yearBoundary` | which reckoning gives the year its stem and branch: `lichun` (立春 lìchūn), `chunjie` (正月初一 zhēngyuèchūyī) | `chunjie` |
+| 八字 | `luckGranularity` | how finely the distance to the 節 is measured when the 大運 are placed: `shichen` (時辰 shíchén, whole days and whole double hours), `minute` | `shichen` |
 | 年命 | `count` | how the years lived are counted: `sui` (虛歲 xūsuì), `turns` (the turns of the year pillar alone) | `sui` |
+
+**八字's one row is the board's own, and the three above it are not.** The
+pillars' `trueSolarTime`, `yearBoundary` and `dayBoundary` say how an instant
+is read into the four, and this says how the distance to the 節 is counted when
+the decades are placed — three days of the calendar to a year lived, and the
+two readings part on where to stop, by up to ten days on when the first cycle
+opens. It was on `BaziOptions` with a declared default and both readings
+computed long before it was here; what it was missing is the third of the three
+questions, which is the easy one to fail.
 
 **The 曆注 are not a board**, and take nothing from the layer above: the
 almanac is a page of a published book, a pure function of the civil date
@@ -252,6 +267,17 @@ with the rest of it. 《紫微斗數全書》 says nothing either way, which is
 precisely why it is a parameter — the year stem carries the 四化, 祿存, 天魁
 and 天鉞, so a birth in the weeks between the two lays out two different
 boards and only one of them can be printed.
+
+**奇門 owes five and they were paid together.** `spirits`, `leap`, `strengths`,
+`earth` and `centreTravel` were divergences the engine decided in silence: the
+naming of the middle pair, where 置閏 repeats its block, what the five states
+are read from, where earth's season begins, and whether the lodged stem and
+star travel. Four of them want a field in this board's input type, which is the
+breaking change this page opens by saying not to make late — so they were made
+in one movement rather than one at a time, each shipping with what the engine
+already computed and the other side declared and refused by name. Three of them
+— the states, the earth and the travelling centre — reach every cell of the
+answer, which is why they were the most expensive to leave unsaid.
 
 **`sihua` is the first value declared under the standard rather than under a
 reading of it.** What the shelf carries is one cell: 《紫微斗數全書》 gives 壬 its

@@ -1,6 +1,8 @@
 import { computeBazi } from '@shipan/core';
 import { json } from '@sveltejs/kit';
-import { ephemerisContext, momentIsFixed, readInteger, readMoment } from '$lib/server/params';
+import { ephemerisContext, momentIsFixed, readInteger, readMoment,
+  readBaziOptions,
+} from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
 
@@ -15,10 +17,8 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
   try {
     const { moment, label } = readMoment(url.searchParams);
 
-    const gender = url.searchParams.get('gender');
     const cycles = readInteger(url.searchParams, 'cycles');
-    const options: Parameters<typeof computeBazi>[1] = {};
-    if (gender === 'male' || gender === 'female') options.gender = gender;
+    const options = readBaziOptions(url.searchParams);
     if (cycles !== undefined) options.cycles = Math.min(12, Math.max(1, cycles));
 
     const bazi = computeBazi(moment, options, ephemerisContext());

@@ -1158,6 +1158,12 @@ export const it: Record<MessageKey, string> = {
   'form.pillars.yearBoundary.chunjie':
     'a 正月初一 zhēngyuèchūyī, il primo giorno dell’anno lunare',
   'label.contested': 'qui le scuole divergono',
+  'form.bazi.luckGranularity': 'La serie dei decenni si colloca contando',
+  'form.bazi.luckGranularity.shichen':
+    'giorni interi e doppie ore intere 時辰 shíchén, lasciando cadere il resto — la lettura classica',
+  'form.bazi.luckGranularity.minute': 'fino al minuto',
+  'form.bazi.luckGranularity.note':
+    'Tre giorni di calendario rispondono a un anno vissuto, un giorno a quattro mesi, una doppia ora a dieci giorni. Le due letture partono da quella regola e si dividono su dove fermarsi, quindi divergono fino a dieci giorni su quando si apre il primo decennio — e quella classica dà giorni d’inizio in multipli di dieci perché è stata letta su un orologio che non aveva minuti.',
   'form.ziwei.sihua': 'Le quattro trasformazioni seguono',
   'form.ziwei.sihua.quanshu': 'il 《紫微斗數全書》 zǐwēidǒushùquánshū, che dà a 壬 rén il suo 科 kē a 天府 tiānfǔ',
   'form.ziwei.sihua.zuofu': 'la lettura che insegnano due scuole moderne, che sposta quel 科 kē a 左輔 zuǒfǔ',
@@ -1422,6 +1428,12 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.sihua': 'Quale tavola delle quattro trasformazioni.',
   'notes.parameter.huoling': 'Come si collocano 火星 huǒxīng e 鈴星 língxīng.',
   'notes.parameter.daxian': 'Dove si apre il primo decennio dei grandi limiti.',
+  'notes.parameter.spirits': 'Che cosa nomina il quinto e il sesto spirito.',
+  'notes.parameter.leap': 'Dove il 置閏 zhìrùn ripete il proprio blocco.',
+  'notes.parameter.strengths': 'Da che cosa si leggono i cinque stati stagionali.',
+  'notes.parameter.earth': 'Dove comincia la stagione della terra.',
+  'notes.parameter.centreTravel': 'Se lo stelo e la stella alloggiati vanno con il loro ospite.',
+  'notes.parameter.luckGranularity': 'Con quale finezza si conta la distanza dal termine.',
   'notes.parameter.count': 'Come si contano gli anni vissuti.',
 
   'notes.answers.refusals':

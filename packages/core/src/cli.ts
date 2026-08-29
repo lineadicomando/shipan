@@ -472,7 +472,7 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
       // wants the layer for this instant is asking, not being shown.
       formatMoment(moment, t, {
         almanac: false,
-        divergences: { board: 'bazi', options: moment.options },
+        divergences: { board: 'bazi', options: bazi.options },
       }),
       '',
       formatBazi(bazi, t),

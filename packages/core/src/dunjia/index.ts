@@ -129,7 +129,17 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   // are is `CHART_PARAMETERS`'s to say — the lodging in particular decides
   // which palace the chief and the chief gate are read from, so its two
   // values are two different charts and neither may stand in for the other.
-  requireImplemented(CHART_PARAMETERS, options, 'plate', 'system', 'centreLodging');
+  requireImplemented(
+    CHART_PARAMETERS,
+    options,
+    'plate',
+    'system',
+    'centreLodging',
+    'spirits',
+    'strengths',
+    'earth',
+    'centreTravel',
+  );
 
   const ju = determineJu(moment, options);
   const earth = earthPlate(ju.yang, ju.number);

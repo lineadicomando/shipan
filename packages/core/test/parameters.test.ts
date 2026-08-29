@@ -2,7 +2,12 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
+import { beforeAll } from 'vitest';
+import { computeQimenChart } from '../src/dunjia/index.js';
+import { initEphemeris, type EphemerisContext } from '../src/ephemeris.js';
+import { resolveMoment, type Moment } from '../src/pillars.js';
 import {
+  BAZI_PARAMETERS,
   BRANCHES,
   CHART_PARAMETERS,
   DEFAULT_LIUREN_OPTIONS,
@@ -74,15 +79,18 @@ describe('the parameters the engine declares', () => {
       ...Object.keys(QIZHENG_PARAMETERS),
       ...Object.keys(TAIYI_PARAMETERS),
       ...Object.keys(ZIWEI_PARAMETERS),
+      ...Object.keys(BAZI_PARAMETERS),
       ...Object.keys(NIANMING_PARAMETERS),
     ]);
 
     // Six boards, the calendrical layer under them, the almanac beside them,
-    // and the birth placed inside a chart of a moment. 八字 is absent because
-    // it has no divergence of its own: it stands on `pillars` entire, which
-    // is the fact that made `pillars` a board here.
+    // and the birth placed inside a chart of a moment. 八字 was absent from
+    // this list for as long as its one divergence was on its options type and
+    // in no registry: it stands on `pillars` entire *and* decides how finely
+    // the distance to the 節 is counted when its decades are placed.
     expect([...new Set(PARAMETERS.map((parameter) => parameter.board))].sort()).toEqual([
       'almanac',
+      'bazi',
       'liuren',
       'nianming',
       'pillars',
@@ -196,6 +204,70 @@ describe('what refuses an option the engine does not compute', () => {
       expect((error as { code: string }).code).toBe('OPTION_NOT_IMPLEMENTED');
       expect((error as { params: Record<string, string> }).params.value).toBe('banana');
     }
+  });
+});
+
+let context: EphemerisContext;
+
+beforeAll(() => {
+  context = initEphemeris();
+});
+
+const moment = (): Moment =>
+  resolveMoment(
+    { date: '2024-06-15', time: '14:00', timezone: 'Asia/Shanghai' },
+    { latitude: 39.9075, longitude: 116.3972, timezone: 'Asia/Shanghai' },
+    DEFAULT_OPTIONS,
+    context,
+  );
+
+describe('what 奇門 decided in silence', () => {
+  /**
+   * The five paid in one movement, and what the movement bought.
+   *
+   * Each was a divergence between practitioners the engine settled without
+   * saying so: which fact names the middle pair, where 置閏 repeats its block,
+   * what the five states are read from, where earth's season begins, and
+   * whether the lodged stem and star travel. Declaring them costs a field
+   * apiece and buys the thing `docs/parameters.md` opens by asking for — that
+   * a value this engine does not compute comes back refused **by name**
+   * instead of answered by the nearest rule it does have.
+   */
+  const REFUSED = [
+    ['spirits', 'fixed'],
+    ['spirits', 'baihu'],
+    ['leap', 'runyue'],
+    ['strengths', 'star'],
+    ['earth', 'eighteen'],
+    ['centreTravel', 'travel'],
+  ] as const;
+
+  it('refuses every value it declares and does not compute', () => {
+    for (const [id, value] of REFUSED) {
+      // The code and not the sentence: a surface translates `messageKey`, and
+      // what a caller keys on is `code`.
+      let refused: unknown;
+      try {
+        computeQimenChart(moment(), { ...DEFAULT_OPTIONS, [id]: value }, context);
+      } catch (cause) {
+        refused = cause;
+      }
+
+      expect(refused, `${id}: ${value}`).toMatchObject({
+        code: 'OPTION_NOT_IMPLEMENTED',
+        params: { option: id, value },
+      });
+    }
+  });
+
+  it('computes what it ships, and says so in the chart', () => {
+    const chart = computeQimenChart(moment(), DEFAULT_OPTIONS, context);
+
+    expect(chart.options.spirits).toBe('dun');
+    expect(chart.options.strengths).toBe('season');
+    expect(chart.options.earth).toBe('quarters');
+    expect(chart.options.centreTravel).toBe('stay');
+    expect(chart.options.leap).toBe('solstice');
   });
 });
 

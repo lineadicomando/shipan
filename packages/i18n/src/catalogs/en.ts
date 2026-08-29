@@ -1257,6 +1257,15 @@ export const en = {
   // Where the declared tables part, marked on the seat it lands on. Both
   // sides of the cell carry it: the default is a school like the other.
   'label.contested': 'the schools part here',
+  // 八字's one divergence of its own: how finely the distance to the term is
+  // measured when the run of decades is placed. Both readings are computed and
+  // they disagree by up to ten days on when the first cycle opens.
+  'form.bazi.luckGranularity': 'The run of decades is placed by counting',
+  'form.bazi.luckGranularity.shichen':
+    'whole days and whole double hours 時辰 shíchén, dropping the remainder — the classical reading',
+  'form.bazi.luckGranularity.minute': 'down to the minute',
+  'form.bazi.luckGranularity.note':
+    'Three days of the calendar answer to one year lived, a day to four months, a double hour to ten days. The two readings start from that rule and part on where to stop, so they disagree by up to ten days on when the first decade opens — and the classical one yields starting days in multiples of ten because it was read off a clock that had no minutes.',
   'form.ziwei.sihua': 'The four transformations follow',
   'form.ziwei.sihua.quanshu': '《紫微斗數全書》 zǐwēidǒushùquánshū, which gives 壬 rén its 科 kē to 天府 tiānfǔ',
   'form.ziwei.sihua.zuofu': 'the reading two modern schools teach, which moves that 科 kē to 左輔 zuǒfǔ',
@@ -1642,6 +1651,12 @@ export const en = {
   'notes.parameter.sihua': 'Which table of the four transformations.',
   'notes.parameter.huoling': 'How 火星 huǒxīng and 鈴星 língxīng are placed.',
   'notes.parameter.daxian': 'Where the first decade of the great limits opens.',
+  'notes.parameter.spirits': 'What names the fifth and sixth spirits.',
+  'notes.parameter.leap': 'Where 置閏 zhìrùn repeats its block.',
+  'notes.parameter.strengths': 'What the five seasonal states are read from.',
+  'notes.parameter.earth': 'Where earth’s season begins.',
+  'notes.parameter.centreTravel': 'Whether the lodged stem and star go with their host.',
+  'notes.parameter.luckGranularity': 'How finely the distance to the term is counted.',
   'notes.parameter.count': 'How the years lived are counted.',
 
   'notes.answers.refusals':

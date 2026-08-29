@@ -245,7 +245,7 @@ export function registerComputeBazi(server: McpServer, context: ToolContext): vo
             `${t('cli.field.place')}: ${label}`,
             '',
             formatMoment(moment, t, {
-              divergences: { board: 'bazi', options: moment.options },
+              divergences: { board: 'bazi', options: bazi.options },
             }),
             '',
             formatBazi(bazi, t),

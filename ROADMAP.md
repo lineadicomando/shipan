@@ -41,7 +41,7 @@ buys".
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `method: maoshan`, `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia` |
+| 奇門 | `method: maoshan`, `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia`, `spirits: fixed`, `spirits: baihu`, `leap: runyue`, `strengths: star`, `earth: eighteen`, `centreTravel: travel` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `ziqi: yinianyisu`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
@@ -98,71 +98,37 @@ here and paid together, not one at a time. Of the two the sweep added, 置閏 is
 cheaper, having a parameter to land on already; the seasonal relations are a
 field like the first two and are paid with them.
 
-- 奇門, the **八神's naming**. This engine follows the 陰陽異名 convention and
-  renames the middle pair in a yang chart, 白虎 → 勾陳 and 玄武 → 朱雀;
-  `plates.ts` says so above `SPIRITS_YANG` and said, before this was written,
-  that it is «a divergence this engine does not yet expose». Other traditions
-  keep one pair in both dun, and 《奇門遁甲全局》 — read on the plate, see
-  `docs/sources.md` — is a third: 白虎 at the fifth seat and 勾陳 at the sixth.
-  **《奇門遁甲金鏡寶鑑》 was read as a fourth and the sweep reversed it.** Its
-  目錄 allots a juan each to 直符 螣蛇 太陰 六合 勾陳 朱雀 九地 九天 with 白虎 and
-  玄武 in no heading, which invited «the work names the pair nowhere» — and that
-  was written down as not established, because a negative is established on the
-  plate. The plate has now been swept, 卷一~卷三 entire, and **it names them**:
-  「如占病、占賊，則勾、雀二神可換虎、武用」, said once for each dun. The pairing
-  is this engine's; what differs is that the choice between the two names of a
-  seat is keyed to **the matter asked** and not to the dun. So the parameter
-  this owes is not a roster of eight names — it is a field saying *what decides
-  the middle pair*, and there are now four answers to that. See
-  `docs/sources.md`.
-- 奇門, **where the 置閏 leap block goes**, found by the same sweep and new to
-  this list. `method` carries 拆補, 置閏 and 茅山, and 置閏 silently means the
-  《統宗》's placement: the repeated block is 芒種 or 大雪. 《奇門遁甲金鏡寶鑑》
-  卷之一 repeats instead whichever term the year's leap month falls under, works
-  it twice by date — 1678 閏三月 and 1691 閏七月, both confirmed against this
-  engine's lunar calendar — and rejects the solstice placement as a convenience,
-  「於理法都不是」. Two practitioners, opposite sides, and the chart does not say
-  which it followed. Unlike the two above it needs no new field: it is a value
-  on `method`, or a modifier of `zhirun`, and that is the one design question to
-  settle before it is declared.
-- 奇門, **which way the five seasonal relations are read**, found in the
-  金鏡寶鑑 sweep. `strengthOf` reads them from the season, which is the ordinary
-  五行 statement: what the season generates is 相, what generates it 休, what
-  controls it 囚, what it controls 死. 卷之四 of that work reads the same four
-  from the **star** and tabulates all nine that way, which swaps 相 with 休 and
-  囚 with 死 and leaves only 旺 in common. It is one text and its table checks
-  its own rule rather than the rule, so nothing moves — but 旺相休囚死 is
-  reported for every star and every gate on every board, and no chart says which
-  way it was read. The same passage reads the states off the day and the hour
-  too, 「日時皆同」, where this engine passes the month branch alone; that is a
-  narrowing rather than a divergence and is recorded with it.
-- 奇門, **where earth's season begins**. `seasonElement` gives the four months
-  that close the seasons — 辰, 未, 戌, 丑 — to earth entire, and `strength.ts`
-  records that other schools give earth only the last eighteen days of each
-  instead. That is not a gloss: `seasonElement` feeds `strengthOf`, so the
-  reading decides 旺相休囚死 for every star and every gate on the board, and the
-  two answers part for the first two-thirds of each of those four months.
+**All five are declared, on 2026-08-29, and paid in one movement as this said
+they had to be.** `spirits`, `leap`, `strengths`, `earth` and `centreTravel`
+are on 奇門's input type with what the engine computes as the default and the
+other side refused by name; `docs/parameters.md` carries the rows and the table
+above carries the refusals. What each is waiting on to be *implemented* is
+below, and it is what it always was — a reading, or a second witness.
 
-**One is exposed and unregistered, which is a smaller fault and a different
-one.** 八字's `luckGranularity` — `shichen` against `minute`, «they disagree by
-up to ten days on when the first cycle opens» — is an option on `BaziOptions`
-with a declared default, so no chart is cast without the caller being able to
-say which reading produced it. But there is no `BAZI_PARAMETERS`, so it is
-absent from `PARAMETERS`, from `docs/parameters.md` and from anything a surface
-builds out of them. The divergence is honoured and the registry does not know
-it. Fixing it is additive rather than breaking: a registry entry, a row in the
-parameters page, and a label in each catalog.
-
-**And the two candidates are claimed, and turn out to be one.** They were listed
-apart — whether **天禽 stands at the centre** or rides merged with 天芮, and
-whether the **lodged stem turns with its host** on the heaven plate — and each
-was to wait for a witness. 《奇門遁甲元靈經》 supplies it in two complete worked
-examples, run against the engine cell for cell: the earth plates agree palace
-for palace, the 值符 star and the 值使 gate and its palace agree in both, and the
-two part at one thing only. Where the 符頭 stands in the centre, the text
-carries the centre's stem and star to the hour's palace with their host; this
-engine leaves them at the centre. The outer eight agree either way.
-
+- 奇門, `spirits: fixed` and `spirits: baihu`. The engine follows 陰陽異名 and
+  renames the middle pair in a yang chart. 《御定奇門寶鑑》卷二 keeps the eight
+  names in both dun — 「朱雀下有元武。勾陳下有白虎」 — and 《奇門遁甲全局》 seats
+  白虎 fifth and 勾陳 sixth. Both are readings of the plate and both wait on the
+  check, not on a witness. **The fourth answer is not a value and will not
+  become one**: 《奇門遁甲金鏡寶鑑》 keys the choice to what is being divined,
+  which is a licence to read rather than a rule for laying — see
+  `docs/refusals.md` § "The middle pair named by the matter".
+- 奇門, `leap: runyue`. 置閏 has meant 《統宗》's placement — the block repeated
+  is 芒種 or 大雪. 《奇門遁甲金鏡寶鑑》 卷之一 repeats whichever term the
+  year's leap month falls under, works it twice by date — 1678 閏三月 and 1691
+  閏七月, both confirmed against this engine's lunar calendar — and rejects the
+  solstice placement as a convenience, 「於理法都不是」. Declared **inside**
+  置閏, as `yuan` is inside 拆補: under 拆補 nothing is repeated.
+- 奇門, `strengths: star`. `strengthOf` reads 旺相休囚死 from the season, which
+  is the ordinary 五行 statement. 卷之四 of that work reads the same four from
+  the **star** and tabulates all nine that way, swapping 相 with 休 and 囚 with
+  死 and leaving only 旺 in common. One text whose table checks its own rule
+  rather than the rule, so it waits — and it is reported for every star and
+  every gate on every board, which is why it could not wait undeclared.
+- 奇門, `earth: eighteen`. `seasonElement` gives the four months that close the
+  seasons to earth entire; other schools give earth only their last eighteen
+  days. It feeds the states above, so it decides 旺相休囚死 for every cell, and
+  the two answers part for two-thirds of each of those four months.
 - 奇門, **whether the lodged stem and star travel**. One divergence, not two: a
   board whose centre empties and whose host palace carries a second stem and a
   second star is the same board seen from outside as «天禽 merged with 天芮 and
