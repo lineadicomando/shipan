@@ -1,3 +1,4 @@
+import type { MessageKey } from '@shipan/i18n';
 import { ChartError } from './errors.js';
 import type { LiurenOptions } from './liuren.js';
 import type { NianmingOptions } from './nianming.js';
@@ -88,6 +89,22 @@ export type ParameterBoard =
  */
 export interface ParameterValue<V> {
   readonly id: V;
+  /**
+   * What this value is called, where the parameter carries a `label`.
+   *
+   * One per implemented value: what a surface offers is a choice, and a value
+   * that can only come back a 501 is not one.
+   */
+  readonly says?: MessageKey;
+  /**
+   * A line printed under the block when this value is the one in force.
+   *
+   * 符頭 has one — it is a divergence inside 拆補 and it moves the ju on most
+   * days — and the two methods carry the general caution between them. Most
+   * values need none: the words above say what was followed, and what a school
+   * *means* is doctrine this engine does not hold.
+   */
+  readonly note?: MessageKey;
   readonly name?: { readonly hanzi: string; readonly pinyin: string };
   /**
    * Whether the engine computes it.
@@ -104,6 +121,32 @@ export interface ParameterValue<V> {
 
 export interface Parameter<V> {
   readonly board: ParameterBoard;
+  /**
+   * What the divergence is called, where a reader can be offered a choice.
+   *
+   * Present on the parameters the engine computes **more than one** value of,
+   * and absent on the rest: a divergence declared and refused is not a choice,
+   * and a word for it would be a word nobody is shown. `docs/parameters.md`
+   * § "A declared default is not a hidden school" is why it is here at all —
+   * the value in force travels on every surface, so the words for it belong to
+   * the declaration and not to one of them.
+   *
+   * A key and not a string, because the engine does not localise: the catalogs
+   * hold the wording and this holds which wording. `trueSolarTime` is the one
+   * contested parameter with no words here — it is a boolean, and what it
+   * moves is already said in the correction printed under the hour.
+   */
+  readonly label?: MessageKey;
+  /**
+   * A divergence *inside* another one, in force only where that one stands on
+   * a value.
+   *
+   * One parameter uses it and it is doctrine rather than presentation: the
+   * yuan divides 拆補, so under 置閏 the third of the term is the 符頭's
+   * because that is what the method is. Reported beside a zhirun chart it
+   * would name a choice the method had already made.
+   */
+  readonly inside?: { readonly id: string; readonly value: string };
   readonly values: readonly ParameterValue<V>[];
   /** What the engine assumes when a caller says nothing. */
   readonly default: V;
@@ -134,9 +177,22 @@ export type ParameterSet<O> = { readonly [K in keyof O]-?: Parameter<O[K]> };
 export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   method: {
     board: 'qimen',
+    label: 'form.qimen.method',
     values: [
-      { id: 'chaibu', name: { hanzi: '拆補', pinyin: 'chāibǔ' }, implemented: true },
-      { id: 'zhirun', name: { hanzi: '置閏', pinyin: 'zhìrùn' }, implemented: true },
+      {
+        id: 'chaibu',
+        name: { hanzi: '拆補', pinyin: 'chāibǔ' },
+        says: 'form.qimen.method.chaibu',
+        note: 'cli.note.method',
+        implemented: true,
+      },
+      {
+        id: 'zhirun',
+        name: { hanzi: '置閏', pinyin: 'zhìrùn' },
+        says: 'form.qimen.method.zhirun',
+        note: 'cli.note.method',
+        implemented: true,
+      },
       { id: 'maoshan', name: { hanzi: '茅山', pinyin: 'máoshān' }, implemented: false },
     ],
     default: 'chaibu',
@@ -144,9 +200,17 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   yuan: {
     board: 'qimen',
+    label: 'form.qimen.yuan',
+    inside: { id: 'method', value: 'chaibu' },
     values: [
-      { id: 'term', implemented: true },
-      { id: 'futou', name: { hanzi: '符頭', pinyin: 'fútóu' }, implemented: true },
+      { id: 'term', says: 'form.qimen.yuan.term', implemented: true },
+      {
+        id: 'futou',
+        name: { hanzi: '符頭', pinyin: 'fútóu' },
+        says: 'form.qimen.yuan.futou',
+        note: 'cli.note.yuanFutou',
+        implemented: true,
+      },
     ],
     default: 'term',
   },
@@ -189,17 +253,34 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   yearBoundary: {
     board: 'pillars',
+    label: 'form.pillars.yearBoundary',
     values: [
-      { id: 'lichun', name: { hanzi: '立春', pinyin: 'lìchūn' }, implemented: true },
-      { id: 'chunjie', name: { hanzi: '正月初一', pinyin: 'zhēngyuèchūyī' }, implemented: true },
+      {
+        id: 'lichun',
+        name: { hanzi: '立春', pinyin: 'lìchūn' },
+        says: 'form.pillars.yearBoundary.lichun',
+        implemented: true,
+      },
+      {
+        id: 'chunjie',
+        name: { hanzi: '正月初一', pinyin: 'zhēngyuèchūyī' },
+        says: 'form.pillars.yearBoundary.chunjie',
+        implemented: true,
+      },
     ],
     default: 'lichun',
   },
   dayBoundary: {
     board: 'pillars',
+    label: 'form.pillars.dayBoundary',
     values: [
-      { id: 'zishi', name: { hanzi: '子時', pinyin: 'zǐshí' }, implemented: true },
-      { id: 'midnight', implemented: true },
+      {
+        id: 'zishi',
+        name: { hanzi: '子時', pinyin: 'zǐshí' },
+        says: 'form.pillars.dayBoundary.zishi',
+        implemented: true,
+      },
+      { id: 'midnight', says: 'form.pillars.dayBoundary.midnight', implemented: true },
     ],
     default: 'zishi',
   },
@@ -224,9 +305,22 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
   },
   guiren: {
     board: 'liuren',
+    label: 'form.liuren.guiren',
     values: [
-      { id: 'chou', name: { hanzi: '丑', pinyin: 'chǒu' }, implemented: true },
-      { id: 'wei', name: { hanzi: '未', pinyin: 'wèi' }, implemented: true },
+      {
+        id: 'chou',
+        name: { hanzi: '丑', pinyin: 'chǒu' },
+        says: 'form.liuren.guiren.chou',
+        note: 'form.liuren.guiren.note',
+        implemented: true,
+      },
+      {
+        id: 'wei',
+        name: { hanzi: '未', pinyin: 'wèi' },
+        says: 'form.liuren.guiren.wei',
+        note: 'form.liuren.guiren.note',
+        implemented: true,
+      },
     ],
     default: 'chou',
   },
@@ -260,9 +354,20 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
   },
   luohou: {
     board: 'qizheng',
+    label: 'form.qizheng.luohou',
     values: [
-      { id: 'descending', implemented: true },
-      { id: 'ascending', implemented: true },
+      {
+        id: 'descending',
+        says: 'form.qizheng.luohou.descending',
+        note: 'form.qizheng.luohou.note',
+        implemented: true,
+      },
+      {
+        id: 'ascending',
+        says: 'form.qizheng.luohou.ascending',
+        note: 'form.qizheng.luohou.note',
+        implemented: true,
+      },
     ],
     default: 'descending',
   },
@@ -372,9 +477,22 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
     // one. The book says nothing either way and the two lay different boards
     // for a birth in the weeks between them, so neither could be chosen on
     // its behalf.
+    label: 'form.ziwei.yearBoundary',
     values: [
-      { id: 'lichun', name: { hanzi: '立春', pinyin: 'lìchūn' }, implemented: true },
-      { id: 'chunjie', name: { hanzi: '正月初一', pinyin: 'zhēngyuèchūyī' }, implemented: true },
+      {
+        id: 'lichun',
+        name: { hanzi: '立春', pinyin: 'lìchūn' },
+        says: 'form.ziwei.yearBoundary.lichun',
+        note: 'form.ziwei.yearBoundary.note',
+        implemented: true,
+      },
+      {
+        id: 'chunjie',
+        name: { hanzi: '正月初一', pinyin: 'zhēngyuèchūyī' },
+        says: 'form.ziwei.yearBoundary.chunjie',
+        note: 'form.ziwei.yearBoundary.note',
+        implemented: true,
+      },
     ],
     default: 'chunjie',
   },
@@ -470,4 +588,57 @@ export function requireImplemented<O extends object, K extends keyof O & string>
       implemented: implementedValues(parameter).map(String).join(', '),
     });
   }
+}
+
+/**
+ * The divergences in force on a board, in the words a reader is owed.
+ *
+ * Every parameter of that board and of the layers under it that the engine
+ * computes **more than one** value of — which is what makes it a choice
+ * somebody made rather than the only thing this engine can do. The value is
+ * looked for in the board's own options first and in the moment's after, since
+ * a board carries its own and stands on the pillars'.
+ *
+ * **The board is a string and not a `ParameterBoard`**, because the boards
+ * that have divergences and the boards that are laid are two lists that nearly
+ * agree: 八字 has no parameter of its own — it *is* the pillars, and it shares
+ * all three of theirs — so it is named here and declares nothing, and asking
+ * for it returns the layers'.
+ *
+ * `docs/parameters.md` § "A declared default is not a hidden school" is the
+ * rule: what is in force travels whether or not anybody moved it, because a
+ * default nobody moved is still the school the board was laid by. What a
+ * surface does with the list is the surface's business; that there is one, and
+ * that it is derived from the declaration rather than written per board, is
+ * how a school landing later gets said without anybody remembering to say it.
+ */
+export function divergencesInForce(
+  board: string,
+  options: object,
+  layers: object = options,
+): readonly { parameter: ParameterEntry; value: ParameterValue<string | boolean> }[] {
+  // One cast, here, for the reason `requireImplemented` has one: an options
+  // type is keyed to its own board so that a declaration cannot drift, and
+  // reading it back by the parameter's name is the one place that precision
+  // cannot be carried through.
+  const bag = options as Record<string, unknown>;
+  const under = layers as Record<string, unknown>;
+
+  const inForce = [];
+  for (const parameter of PARAMETERS) {
+    if (parameter.label === undefined) continue;
+    if (parameter.board !== board && parameter.board !== 'pillars') continue;
+    if (implementedValues(parameter).length < 2) continue;
+    if (parameter.inside && bag[parameter.inside.id] !== parameter.inside.value) continue;
+
+    // Read out of the bag the parameter belongs to, and never out of both.
+    // `yearBoundary` is the pillars' and 紫微斗數's at once, and a board that
+    // carries its own would answer for the layer's under a merge — which is
+    // the collision the wire names apart, arriving from the inside.
+    const from = parameter.board === 'pillars' ? under : bag;
+    const chosen = from[parameter.id] ?? parameter.default;
+    const value = parameter.values.find((candidate) => candidate.id === chosen);
+    if (value?.says !== undefined) inForce.push({ parameter, value });
+  }
+  return inForce;
 }

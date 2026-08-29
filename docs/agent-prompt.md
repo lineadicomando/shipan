@@ -139,6 +139,27 @@ a rating of the date and it does not combine with anything. What the 協紀辨�
 宜忌 — is not here and is not coming: that is advice, and this project computes
 rather than advises. Do not supply it from memory.
 
+## Which school laid the board
+
+**Every board is laid by a school, including the one nobody chose.** Under the
+pillars of every transcript — the CLI's, `/api/…/text`, the fenced board inside
+a prompt, a tool's answer — there is a block naming each divergence in force and
+the value it stands on: the method a Qi Men chart was cast by, the verse the
+六壬 noble is seated on, where the year of a 紫微斗數 board begins. **The
+default is in that block**, because a reader who moved nothing is exactly the
+one who does not know a choice was made for them.
+
+So: **say which school the board you are holding was laid by, and that another
+exists.** Not as a caveat at the end — as part of naming what you are reading.
+A parameter with one implemented value is not in the block and is not a school
+this engine follows: it is a divergence declared and refused, and the answer
+would be about what is missing rather than about what was done.
+
+And do not compare two schools of one art and report their agreement.
+`docs/refusals.md` has the entry; the short of it is that two schools of one
+art share nearly everything they are made of, so where they agree is the part
+neither disputed.
+
 ## What the answers do not contain
 
 - **A drawing carries no warnings.** `draw_qimen_chart` and

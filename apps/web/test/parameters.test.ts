@@ -123,9 +123,44 @@ describe('what a form offers', () => {
    */
   it('hides a divergence whose method has been left behind', () => {
     const yuan = DIVERGENCES.find((row) => row.id === 'yuan');
-    expect(yuan?.only).toEqual({ id: 'method', value: 'chaibu' });
+    expect(yuan?.inside).toEqual({ id: 'method', value: 'chaibu' });
     expect(shown(yuan!, { 'qimen.method': 'chaibu' })).toBe(true);
     expect(shown(yuan!, { 'qimen.method': 'zhirun' })).toBe(false);
+  });
+
+  /**
+   * The words, held to the engine's copy of them.
+   *
+   * `parameters.ts` in `core` carries the same three fields now, because the
+   * transcript prints the block too and the two surfaces must not name one
+   * divergence two ways. This is the same bargain the values already have: the
+   * client keeps a copy because it cannot import one, and a test is what stops
+   * the copy from becoming a second opinion.
+   */
+  it('says each divergence in the words the engine declares', () => {
+    for (const row of DIVERGENCES) {
+      const parameter = PARAMETERS.find(
+        (candidate) => candidate.id === row.id && candidate.board === row.board,
+      );
+      const where = `${row.board}.${row.id}`;
+
+      expect(row.label, where).toBe(parameter?.label);
+      expect(row.inside, where).toEqual(parameter?.inside);
+
+      const says = Object.fromEntries(
+        (parameter?.values ?? [])
+          .filter((value) => value.says !== undefined)
+          .map((value) => [String(value.id), value.says]),
+      );
+      expect(row.says ?? {}, where).toEqual(says);
+
+      const notes = Object.fromEntries(
+        (parameter?.values ?? [])
+          .filter((value) => value.note !== undefined)
+          .map((value) => [String(value.id), value.note]),
+      );
+      expect(row.notes ?? {}, where).toEqual(notes);
+    }
   });
 
   it('reads what an address says and writes back only what was moved', () => {

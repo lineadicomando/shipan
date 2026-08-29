@@ -15,6 +15,7 @@ import {
 } from './liuren.js';
 import { NIANMING_NAMES, type Nianming, type Placement, type Seat } from './nianming.js';
 import type { Moment } from './pillars.js';
+import { divergencesInForce } from './parameters.js';
 import {
   MOTIONS,
   type Placement as QizhengPlacement,
@@ -257,7 +258,21 @@ function officer(page: Almanac, t: Translator): string {
 export function formatMoment(
   moment: Moment,
   t: Translator,
-  { almanac = true }: { almanac?: boolean } = {},
+  {
+    almanac = true,
+    divergences,
+  }: {
+    almanac?: boolean;
+    /**
+     * The board this instant is being read for, and its own options.
+     *
+     * Given wherever a board is being printed, which is everywhere but the
+     * bare calendar: the block under the pillars says which schools laid it.
+     * The moment's own options are added to these, since a board carries its
+     * own divergences and stands on the pillars'.
+     */
+    divergences?: { board: string; options: object };
+  } = {},
 ): string {
   const zone = moment.input.timezone;
   const fields: string[][] = [
@@ -302,6 +317,59 @@ export function formatMoment(
     '',
     `${t('cli.heading.pillars')}`,
     ...table(pillars),
+    ...(divergences ? ['', formatDivergences(divergences.board, divergences.options, moment, t)] : []),
+  ].join('\n');
+}
+
+/**
+ * Which schools the board was laid by, whether or not anybody chose them.
+ *
+ * **The default is in here.** A reader who moved nothing is exactly the reader
+ * who does not know a choice was made on their behalf, and a board handed to a
+ * model without this is a board that reads as *the* board of its instant. See
+ * `docs/parameters.md` § "A declared default is not a hidden school" and
+ * `docs/readings.md` § "The school travels with the board".
+ *
+ * **Derived, and that is the whole of why it is here rather than written into
+ * six formatters.** What appears is every divergence of this board and of the
+ * layers under it that the engine computes more than one value of; a school
+ * landing in `parameters.ts` says itself on every surface the same day, and
+ * nothing in this file knows which schools exist.
+ *
+ * A parameter with one implemented value says nothing: what would be reported
+ * is not a school but the absence of a second one, which is `ROADMAP.md` § 1's
+ * business and not a board's.
+ */
+export function formatDivergences(
+  board: string,
+  options: object,
+  moment: Moment,
+  t: Translator,
+): string {
+  const inForce = divergencesInForce(board, options, moment.options);
+  if (inForce.length === 0) return '';
+
+  const rows = inForce.map(({ parameter, value }) => [
+    t(parameter.label as MessageKey),
+    t(value.says as MessageKey),
+  ]);
+
+  // The notes under the block, each said once however many values carry it:
+  // both methods point at the same caution, and printing it twice would be
+  // this engine saying a thing twice for the shape of the table.
+  const notes = [
+    ...new Set(inForce.filter(({ value }) => value.note).map(({ value }) => value.note)),
+  ].map((note, index) => {
+    const carrying = inForce.find(({ value }) => value.note === note);
+    return `  ${t(note as MessageKey, {
+      [carrying?.parameter.id ?? 'value']: String(carrying?.value.id ?? ''),
+    })}`;
+  });
+
+  return [
+    `${t('cli.heading.divergences')}`,
+    ...table(rows),
+    ...(notes.length ? ['', ...notes] : []),
   ].join('\n');
 }
 
@@ -468,13 +536,11 @@ export function formatQimenChart(chart: QimenChart, t: Translator): string {
     );
   }
 
-  lines.push(`  ${t('cli.note.method', { method: chart.options.method })}`);
-  // Said only when it is not the default, and only under the method it bears
-  // on: a line about the futou beside a zhirun chart would read as a choice
-  // where the method has already made one.
-  if (chart.options.method === 'chaibu' && chart.options.yuan === 'futou') {
-    lines.push(`  ${t('cli.note.yuanFutou')}`);
-  }
+  // The method and the yuan used to be said here, in two lines this file
+  // wrote by hand. They are in the block under the pillars now, with every
+  // other divergence in force and with the boards that have their own — a
+  // caution attached to dunjia's method alone was a caution six boards did
+  // without.
   return lines.join('\n');
 }
 

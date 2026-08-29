@@ -183,7 +183,9 @@ export function registerComputeQimenChart(server: McpServer, context: ToolContex
           [
             `${t('cli.field.place')}: ${label}`,
             '',
-            formatMoment(moment, t),
+            formatMoment(moment, t, {
+              divergences: { board: 'qimen', options: chart.options },
+            }),
             '',
             formatQimenChart(chart, t),
             nianming ? `\n${formatNianming(nianming, t)}` : '',
@@ -241,7 +243,9 @@ export function registerComputeBazi(server: McpServer, context: ToolContext): vo
           [
             `${t('cli.field.place')}: ${label}`,
             '',
-            formatMoment(moment, t),
+            formatMoment(moment, t, {
+              divergences: { board: 'bazi', options: moment.options },
+            }),
             '',
             formatBazi(bazi, t),
             args.gender ? '' : `\n  ${t('cli.error.genderRequired')}`,
@@ -307,7 +311,9 @@ export function registerComputeLiuren(server: McpServer, context: ToolContext): 
           [
             `${t('cli.field.place')}: ${label}`,
             '',
-            formatMoment(moment, t),
+            formatMoment(moment, t, {
+              divergences: { board: 'liuren', options: board.options },
+            }),
             '',
             formatLiuren(board, t),
             formatWarnings(moment, t),
@@ -379,7 +385,9 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
           [
             `${t('cli.field.place')}: ${label}`,
             '',
-            formatMoment(moment, t),
+            formatMoment(moment, t, {
+              divergences: { board: 'qizheng', options: board.options },
+            }),
             '',
             formatQizheng(board, t),
             formatWarnings(moment, t),
@@ -453,7 +461,10 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
             '',
             // The almanac's line stays out, as it does under 八字: this is the
             // moment read as a person.
-            formatMoment(moment, t, { almanac: false }),
+            formatMoment(moment, t, {
+              almanac: false,
+              divergences: { board: 'ziwei', options: board.options },
+            }),
             '',
             formatZiwei(board, t),
             formatWarnings(moment, t),

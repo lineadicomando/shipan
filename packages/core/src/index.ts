@@ -419,6 +419,7 @@ export {
   QIZHENG_PARAMETERS,
   TAIYI_PARAMETERS,
   ZIWEI_PARAMETERS,
+  divergencesInForce,
   implementedValues,
   requireImplemented,
   type Parameter,

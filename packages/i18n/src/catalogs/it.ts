@@ -1869,6 +1869,9 @@ export const it: Record<MessageKey, string> = {
   'cli.heading.weighed': 'Come vi stanno',
   'cli.heading.reading': 'Lettura',
   'cli.heading.luck': 'Cicli decennali',
+  // «Seguite» e non «usate»: una scuola si segue, ed è un impegno che chi la
+  // segue potrebbe difendere. Il default è nell'elenco come gli altri.
+  'cli.heading.divergences': 'Scuole seguite',
   'cli.heading.terms': 'Termini solari del {year}',
   'cli.heading.calendar': 'Data lunare',
   'cli.heading.patterns': 'Configurazioni',

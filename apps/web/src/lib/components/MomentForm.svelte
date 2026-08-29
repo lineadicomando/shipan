@@ -188,9 +188,10 @@
           {/each}
         </select>
       </label>
-      {#if row.note && (row.note.when === undefined || row.note.when === chosen[wire(row)])}
+      {@const note = row.notes?.[chosen[wire(row)] ?? row.fallback]}
+      {#if note}
         <p class="note">
-          <Named text={t(row.note.key, { [row.id]: chosen[wire(row)] ?? row.fallback })} />
+          <Named text={t(note, { [row.id]: chosen[wire(row)] ?? row.fallback })} />
         </p>
       {/if}
     {/if}

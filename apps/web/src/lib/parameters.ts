@@ -51,21 +51,21 @@ export interface Divergence {
   readonly label?: MessageKey;
   readonly says?: Readonly<Record<string, MessageKey>>;
   /**
-   * A line under the control saying what moving it does.
+   * A line under the control, per value, saying what standing there does.
    *
-   * `when` names the value it belongs to, where it is about one of them: 符頭
-   * has a consequence worth stating and the term does not.
+   * Keyed by value because that is how the engine declares it: 符頭 has a
+   * consequence worth stating where the term has none, and the two methods
+   * point at one caution between them.
    */
-  readonly note?: { readonly key: MessageKey; readonly when?: string };
+  readonly notes?: Readonly<Record<string, MessageKey>>;
   /**
-   * Shown only where another divergence of the same board stands on a value.
-   *
-   * One row uses it and it is doctrine rather than layout: the yuan is a
-   * divergence *inside* 拆補, so under 置閏 the third of the term is the
-   * 符頭's because that is what the method is, and a control that changed
-   * nothing would read as a choice where none is left.
+   * A divergence *inside* another one, shown only where that one stands on a
+   * value — the engine's `inside`, and doctrine rather than layout: the yuan
+   * divides 拆補, so under 置閏 the third of the term is the 符頭's because
+   * that is what the method is, and a control that changed nothing would read
+   * as a choice where none is left.
    */
-  readonly only?: { readonly id: string; readonly value: string };
+  readonly inside?: { readonly id: string; readonly value: string };
 }
 
 /**
@@ -84,7 +84,7 @@ export const DIVERGENCES: readonly Divergence[] = [
     fallback: 'chaibu',
     label: 'form.qimen.method',
     says: { chaibu: 'form.qimen.method.chaibu', zhirun: 'form.qimen.method.zhirun' },
-    note: { key: 'cli.note.method' },
+    notes: { chaibu: 'cli.note.method', zhirun: 'cli.note.method' },
   },
   {
     id: 'yuan',
@@ -94,8 +94,8 @@ export const DIVERGENCES: readonly Divergence[] = [
     fallback: 'term',
     label: 'form.qimen.yuan',
     says: { term: 'form.qimen.yuan.term', futou: 'form.qimen.yuan.futou' },
-    note: { key: 'cli.note.yuanFutou', when: 'futou' },
-    only: { id: 'method', value: 'chaibu' },
+    notes: { futou: 'cli.note.yuanFutou' },
+    inside: { id: 'method', value: 'chaibu' },
   },
   {
     id: 'plate',
@@ -164,7 +164,7 @@ export const DIVERGENCES: readonly Divergence[] = [
     fallback: 'chou',
     label: 'form.liuren.guiren',
     says: { chou: 'form.liuren.guiren.chou', wei: 'form.liuren.guiren.wei' },
-    note: { key: 'form.liuren.guiren.note' },
+    notes: { chou: 'form.liuren.guiren.note', wei: 'form.liuren.guiren.note' },
   },
   {
     id: 'zhouye',
@@ -198,7 +198,10 @@ export const DIVERGENCES: readonly Divergence[] = [
       descending: 'form.qizheng.luohou.descending',
       ascending: 'form.qizheng.luohou.ascending',
     },
-    note: { key: 'form.qizheng.luohou.note' },
+    notes: {
+      descending: 'form.qizheng.luohou.note',
+      ascending: 'form.qizheng.luohou.note',
+    },
   },
   {
     id: 'minggong',
@@ -284,7 +287,10 @@ export const DIVERGENCES: readonly Divergence[] = [
       lichun: 'form.ziwei.yearBoundary.lichun',
       chunjie: 'form.ziwei.yearBoundary.chunjie',
     },
-    note: { key: 'form.ziwei.yearBoundary.note' },
+    notes: {
+      lichun: 'form.ziwei.yearBoundary.note',
+      chunjie: 'form.ziwei.yearBoundary.note',
+    },
   },
   {
     id: 'count',
@@ -391,8 +397,8 @@ export function chosenFields(chosen: Chosen): Record<string, string | undefined>
 
 /** Whether a divergence is shown at all, given what else is set. */
 export function shown(row: Divergence, chosen: Chosen): boolean {
-  if (!row.only) return true;
-  return chosen[named(row.board, row.only.id)] === row.only.value;
+  if (!row.inside) return true;
+  return chosen[named(row.board, row.inside.id)] === row.inside.value;
 }
 
 /**

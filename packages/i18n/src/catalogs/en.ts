@@ -2199,6 +2199,10 @@ export const en = {
   'cli.heading.weighed': 'How each of them stands',
   'cli.heading.reading': 'Read out',
   'cli.heading.luck': 'Luck cycles',
+  // What was followed, printed under every board that has a choice on it —
+  // the default included, since a reader who moved nothing is the one who does
+  // not know a choice was made for them.
+  'cli.heading.divergences': 'Schools followed',
   'cli.heading.terms': 'Solar terms of {year}',
   'cli.heading.calendar': 'Lunar date',
   'cli.heading.patterns': 'Configurations',
