@@ -79,6 +79,13 @@ export function createServer(context: ToolContext = {}): McpServer {
         'stands over a palace whose element it controls, and it will not tell you what that ' +
         'means. Interpretation, if the person asks for one, is yours — and so is the ' +
         'responsibility for it. ' +
+        'EVERY BOARD IS LAID BY A SCHOOL, INCLUDING THE ONE NOBODY CHOSE. Under the pillars ' +
+        'of every answer there is a block naming each divergence in force and the value it ' +
+        'stands on — the default included, because whoever chose nothing is exactly who does ' +
+        'not know a choice was made for them. Say which school laid the board you are ' +
+        'reporting, and that another exists. And do not lay one board twice under two schools ' +
+        'and report their agreement: two schools of one art share nearly everything they are ' +
+        'made of, so where they agree is the part neither disputed. ' +
         'Qi Men charts are cast by the chaibu method unless the method parameter chooses ' +
         'zhirun; the two are different schools and lay out different charts from the same ' +
         'instant, so never switch method between charts you are comparing. maoshan is not ' +

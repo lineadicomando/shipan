@@ -270,6 +270,15 @@ export interface PlateLiurenOptions {
   size?: number;
   scheme?: 'light' | 'dark' | 'auto';
   labels?: PlateLiurenLabels;
+  /**
+   * The lines saying which schools laid this board, written whole.
+   *
+   * Given draws them under everything else; left out, the drawing says
+   * nothing about how it was cast. Not in `captions` and not derived from the
+   * board, because this package redeclares what is *drawn* and how a board was
+   * cast is not on it — see `schools.ts`.
+   */
+  schools?: readonly string[];
   /** A line over the board — the moment it was laid for, usually. */
   heading?: string;
   /**
@@ -289,6 +298,15 @@ export interface PlateLiurenOptions {
 }
 
 export interface PlateOptions {
+  /**
+   * The lines saying which schools laid this board, written whole.
+   *
+   * Given draws them under everything else; left out, the drawing says
+   * nothing about how it was cast. Not in `captions` and not derived from the
+   * board, because this package redeclares what is *drawn* and how a board was
+   * cast is not on it — see `schools.ts`.
+   */
+  schools?: readonly string[];
   /**
    * Side of the square, in pixels. Default 900.
    *
@@ -388,6 +406,15 @@ export interface PlateQizhengOptions {
   size?: number;
   scheme?: 'light' | 'dark' | 'auto';
   labels?: PlateQizhengLabels;
+  /**
+   * The lines saying which schools laid this board, written whole.
+   *
+   * Given draws them under everything else; left out, the drawing says
+   * nothing about how it was cast. Not in `captions` and not derived from the
+   * board, because this package redeclares what is *drawn* and how a board was
+   * cast is not on it — see `schools.ts`.
+   */
+  schools?: readonly string[];
   /** A line over the board — the moment it was laid for, usually. */
   heading?: string;
   /**
@@ -498,6 +525,15 @@ export interface PlateZiweiOptions {
   size?: number;
   scheme?: 'light' | 'dark' | 'auto';
   labels?: PlateZiweiLabels;
+  /**
+   * The lines saying which schools laid this board, written whole.
+   *
+   * Given draws them under everything else; left out, the drawing says
+   * nothing about how it was cast. Not in `captions` and not derived from the
+   * board, because this package redeclares what is *drawn* and how a board was
+   * cast is not on it — see `schools.ts`.
+   */
+  schools?: readonly string[];
   heading?: string;
   /** The heading over the band where the names are said aloud. */
   readings?: string;
@@ -602,6 +638,15 @@ export interface PlateTaiyiOptions {
   size?: number;
   scheme?: 'light' | 'dark' | 'auto';
   labels?: PlateTaiyiLabels;
+  /**
+   * The lines saying which schools laid this board, written whole.
+   *
+   * Given draws them under everything else; left out, the drawing says
+   * nothing about how it was cast. Not in `captions` and not derived from the
+   * board, because this package redeclares what is *drawn* and how a board was
+   * cast is not on it — see `schools.ts`.
+   */
+  schools?: readonly string[];
   heading?: string;
   /** The heading over the band where the sixteen are said aloud. */
   readings?: string;

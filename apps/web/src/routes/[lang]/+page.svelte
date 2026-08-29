@@ -76,6 +76,7 @@
   import MomentForm from '$lib/components/MomentForm.svelte';
   import PillarPlate from '$lib/components/PillarPlate.svelte';
   import QizhengReading from '$lib/components/QizhengReading.svelte';
+  import Schools from '$lib/components/Schools.svelte';
   import ZiweiReading from '$lib/components/ZiweiReading.svelte';
   import StrengthLegend from '$lib/components/StrengthLegend.svelte';
   import TaiyiReading from '$lib/components/TaiyiReading.svelte';
@@ -971,9 +972,8 @@
           bind:longitude={asked.longitude}
           bind:timezone={asked.timezone}
           bind:trueSolarTime={asked.trueSolarTime}
-          bind:dayBoundary={asked.dayBoundary}
-          bind:method={asked.method}
-          bind:yuan={asked.yuan}
+          bind:chosen={asked.chosen}
+          board={instrument.id}
           extraLegend={instrument.takesBirth ? 'consult.birth' : undefined}
           extraSet={instrument.takesBirth && born ? 1 : 0}
         >
@@ -1190,6 +1190,15 @@
         {:else}
           <ChartReading chart={chart.board} {t} wide />
         {/if}
+        <!-- Which schools laid it, under whichever of the six was laid. One
+             line rather than an arm apiece: the board's own options are on the
+             board and the layer's are on the moment, whatever art it is. -->
+        <Schools
+          {t}
+          board={chart.id}
+          options={(chart.board as { options?: object }).options ?? {}}
+          layers={castMoment?.options ?? {}}
+        />
       </div>
     </section>
   {/if}

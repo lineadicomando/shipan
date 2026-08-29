@@ -1,5 +1,6 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
+  divergenceLines,
   DEFAULT_LIUREN_OPTIONS,
   DEFAULT_QIZHENG_OPTIONS,
   DEFAULT_ZIWEI_OPTIONS,
@@ -183,7 +184,9 @@ export function registerComputeQimenChart(server: McpServer, context: ToolContex
           [
             `${t('cli.field.place')}: ${label}`,
             '',
-            formatMoment(moment, t),
+            formatMoment(moment, t, {
+              divergences: { board: 'qimen', options: chart.options },
+            }),
             '',
             formatQimenChart(chart, t),
             nianming ? `\n${formatNianming(nianming, t)}` : '',
@@ -241,7 +244,9 @@ export function registerComputeBazi(server: McpServer, context: ToolContext): vo
           [
             `${t('cli.field.place')}: ${label}`,
             '',
-            formatMoment(moment, t),
+            formatMoment(moment, t, {
+              divergences: { board: 'bazi', options: moment.options },
+            }),
             '',
             formatBazi(bazi, t),
             args.gender ? '' : `\n  ${t('cli.error.genderRequired')}`,
@@ -307,7 +312,9 @@ export function registerComputeLiuren(server: McpServer, context: ToolContext): 
           [
             `${t('cli.field.place')}: ${label}`,
             '',
-            formatMoment(moment, t),
+            formatMoment(moment, t, {
+              divergences: { board: 'liuren', options: board.options },
+            }),
             '',
             formatLiuren(board, t),
             formatWarnings(moment, t),
@@ -379,7 +386,9 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
           [
             `${t('cli.field.place')}: ${label}`,
             '',
-            formatMoment(moment, t),
+            formatMoment(moment, t, {
+              divergences: { board: 'qizheng', options: board.options },
+            }),
             '',
             formatQizheng(board, t),
             formatWarnings(moment, t),
@@ -453,7 +462,10 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
             '',
             // The almanac's line stays out, as it does under 八字: this is the
             // moment read as a person.
-            formatMoment(moment, t, { almanac: false }),
+            formatMoment(moment, t, {
+              almanac: false,
+              divergences: { board: 'ziwei', options: board.options },
+            }),
             '',
             formatZiwei(board, t),
             formatWarnings(moment, t),
@@ -636,6 +648,9 @@ export function registerDrawQimenChart(server: McpServer, context: ToolContext):
 
         const svg = renderChartSvg(chart, {
           size: args.size ?? 900,
+          // Which schools laid it, on the picture: this is the half of a board
+          // that travels with no transcript beside it.
+          schools: divergenceLines('qimen', chart.options, moment, t),
           // The palaces are written in words, each beside the name it
           // renders — the same drawing the web surface serves.
           labels,
@@ -707,6 +722,7 @@ export function registerDrawLiuren(server: McpServer, context: ToolContext): voi
         return ok(
           renderLiurenSvg(board, {
             size: args.size ?? 900,
+            schools: divergenceLines('liuren', board.options, moment, t),
             labels: liurenLabels(t),
             heading:
               `${sayGanzhi(board.day, t)} ${board.day.hanzi} · ${board.hour.hanzi} · ` +

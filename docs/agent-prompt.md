@@ -139,6 +139,27 @@ a rating of the date and it does not combine with anything. What the 協紀辨�
 宜忌 — is not here and is not coming: that is advice, and this project computes
 rather than advises. Do not supply it from memory.
 
+## Which school laid the board
+
+**Every board is laid by a school, including the one nobody chose.** Under the
+pillars of every transcript — the CLI's, `/api/…/text`, the fenced board inside
+a prompt, a tool's answer — there is a block naming each divergence in force and
+the value it stands on: the method a Qi Men chart was cast by, the verse the
+六壬 noble is seated on, where the year of a 紫微斗數 board begins. **The
+default is in that block**, because a reader who moved nothing is exactly the
+one who does not know a choice was made for them.
+
+So: **say which school the board you are holding was laid by, and that another
+exists.** Not as a caveat at the end — as part of naming what you are reading.
+A parameter with one implemented value is not in the block and is not a school
+this engine follows: it is a divergence declared and refused, and the answer
+would be about what is missing rather than about what was done.
+
+And do not compare two schools of one art and report their agreement.
+`docs/refusals.md` has the entry; the short of it is that two schools of one
+art share nearly everything they are made of, so where they agree is the part
+neither disputed.
+
 ## What the answers do not contain
 
 - **A drawing carries no warnings.** `draw_qimen_chart` and
@@ -455,15 +476,27 @@ GET /api/ziwei?date=1984-05-05&time=14:30&locationId=1816670&gender=male
 GET /api/ziwei/text?date=1984-05-05&time=14:30&locationId=1816670&gender=male
 GET /api/ziwei/plate?date=1984-05-05&time=14:30&locationId=1816670&gender=male
 GET /api/ziwei/prompt?date=1984-05-05&time=14:30&locationId=1816670&gender=male
+GET /api/ziwei?date=1983-02-08&time=09:00&locationId=1816670&ziwei.yearBoundary=lichun
 GET /api/terms?year=2024&timezone=Asia/Shanghai
 GET /api/qimen/plate?date=2024-06-15&time=14:00&locationId=1816670
 GET /api/moments?from=2026-09-01&to=2026-09-08&locationId=3169070&gate=kaimen&towards=se,s
 GET /api/qimen/text?date=2024-06-15&time=14:00&locationId=1816670
 GET /api/qimen/prompt?date=2024-06-15&time=14:00&locationId=1816670&asked=true
+GET /api/qimen?date=2024-06-15&time=14:00&locationId=1816670&qimen.method=zhirun
+GET /api/liuren?date=2024-06-15&time=14:00&locationId=1816670&liuren.guiren=wei
 GET /api/qimen?date=2024-06-15&time=14:00&locationId=1816670&born=1968-03-12&gender=female
 GET /api/qimen?date=2024-06-15&time=14:00&latitude=39.9075&longitude=116.3972&timezone=Asia/Shanghai
 GET /api/qimen?date=2024-06-15&time=14:00&locationId=1816670&latitude=39.8000&longitude=116.6000
 ```
+
+**A board's own parameter is written under the board's name** —
+`qimen.method`, `qimen.yuan`, `liuren.guiren`, `qizheng.luohou`,
+`nianming.count` — because one query string is shared by every board and three
+of them declare a `yearBoundary` with different values. What stays bare is the
+layer under all of them, `trueSolarTime`, `yearBoundary` and `dayBoundary`, and
+the almanac's `shensha` beside them. **A tool takes it bare**: `compute_ziwei`
+answers for one board, so its arguments need no prefix, and it is the address
+that does.
 
 A place is a `locationId`, or a `latitude` and a `longitude` with a
 `timezone`, or a `locationId` **refined by** coordinates — the last of those

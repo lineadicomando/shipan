@@ -1172,6 +1172,9 @@ export const en = {
   'meta.title.notes.refusals': 'What this project will not compute',
   'meta.description.notes.refusals':
     'What is deliberately absent here — the yongshen, a ranking of hours, a dated outcome — who asks for it, and why it is not computed.',
+  'meta.title.notes.schools': 'Schools, and what it takes to name one',
+  'meta.description.notes.schools':
+    'Every board here is laid by a school, including the one nobody chose. What such a value claims, and what the shelf owes before one may be declared.',
   'meta.title.notes.readings': 'Handing a board to a model',
   'meta.description.notes.readings':
     'What happens when a board reaches a model: one board and never two, computed and never a date, and what a prompt commissions and forbids.',
@@ -1241,15 +1244,39 @@ export const en = {
   'form.momentNow': 'Back to now',
   'form.calculation': 'How it is computed',
   'form.trueSolarTime': 'Correct to true solar time',
-  'form.dayBoundary': 'The day begins',
-  'form.dayBoundary.zishi': 'at the hour of the Rat 子時 zǐshí, 23:00',
-  'form.dayBoundary.midnight': 'at midnight, 00:00',
-  'form.method': 'The ju is determined',
-  'form.method.chaibu': 'by thirds of the term: 拆補 chāibǔ',
-  'form.method.zhirun': 'by whole blocks, with the leap: 置閏 zhìrùn',
-  'form.yuan': 'Under chaibu, the third of the term is counted',
-  'form.yuan.term': 'from the instant the term began',
-  'form.yuan.futou': 'from the day, by five-day stretches: 符頭 fútóu',
+  // The year the pillars are cut at, and the year *this* board is cut at, which
+  // are two questions with one word. Both labels name whose year it is, since
+  // on `/ziwei` the two controls stand one above the other.
+  'form.pillars.yearBoundary': 'The year of the pillars begins',
+  'form.pillars.yearBoundary.lichun': 'at 立春 lìchūn, where the solar year turns',
+  'form.pillars.yearBoundary.chunjie':
+    'at 正月初一 zhēngyuèchūyī, the first day of the lunar year',
+  // The 四化 sìhuà, and the first parameter here to carry a second school.
+  // The label names the table and the values name what parts them, because
+  // what parts them is one cell: 壬's 科 on 天府 or on 左輔.
+  // Where the declared tables part, marked on the seat it lands on. Both
+  // sides of the cell carry it: the default is a school like the other.
+  'label.contested': 'the schools part here',
+  'form.ziwei.sihua': 'The four transformations follow',
+  'form.ziwei.sihua.quanshu': '《紫微斗數全書》 zǐwēidǒushùquánshū, which gives 壬 rén its 科 kē to 天府 tiānfǔ',
+  'form.ziwei.sihua.zuofu': 'the reading two modern schools teach, which moves that 科 kē to 左輔 zuǒfǔ',
+  'form.ziwei.sihua.note':
+    'One cell of ten, and the whole of what the shelf attests: the 中州派 zhōngzhōupài manual prints it, and a 北派 běipài manual draws it twice in worked examples — against a reading both editions of the 《全書》 quánshū and the Ming recension carry. Everything else on the table is the book’s under either value.',
+  'form.ziwei.yearBoundary': 'The year of this board begins',
+  'form.ziwei.yearBoundary.lichun': 'at 立春 lìchūn, where the solar year turns',
+  'form.ziwei.yearBoundary.chunjie':
+    'at 正月初一 zhēngyuèchūyī, the first day of the lunar year',
+  'form.ziwei.yearBoundary.note':
+    'Two boards on one page cut the year in two places and neither is a mistake. The pillars turn at 立春 lìchūn because that is what an almanac printing four pillars does; this board counts its month and its day on the lunar calendar, so the year that opened at 正月初一 zhēngyuèchūyī is the reckoning coherent with the rest of it. A birth in the weeks between the two lays out two different boards, the stem of the year being what seats the four transformations.',
+  'form.pillars.dayBoundary': 'The day begins',
+  'form.pillars.dayBoundary.zishi': 'at the hour of the Rat 子時 zǐshí, 23:00',
+  'form.pillars.dayBoundary.midnight': 'at midnight, 00:00',
+  'form.qimen.method': 'The ju is determined',
+  'form.qimen.method.chaibu': 'by thirds of the term: 拆補 chāibǔ',
+  'form.qimen.method.zhirun': 'by whole blocks, with the leap: 置閏 zhìrùn',
+  'form.qimen.yuan': 'Under chaibu, the third of the term is counted',
+  'form.qimen.yuan.term': 'from the instant the term began',
+  'form.qimen.yuan.futou': 'from the day, by five-day stretches: 符頭 fútóu',
   'form.gender': 'Sex — only the direction of the luck cycles depends on it',
   'form.gender.unset': 'not given',
   'form.gender.male': 'male',
@@ -1625,6 +1652,14 @@ export const en = {
   // The one thing a written entry must always show. See `docs/notes.md`.
   'notes.checked': 'Last checked against the engine on {date}.',
 
+  'notes.refusals.twoSchools.title': 'Two schools of one art, in one reading',
+  'notes.refusals.twoSchools.asks': 'anyone who has just been given the choice.',
+  'notes.refusals.twoSchools.body':
+    'Two schools of one art laid on one instant are not two witnesses: they share the pillars, the ju or the seats, and nearly everything they are made of, so what they agree about is the part neither of them ever disputed. A board is cast by one school and read as that school’s. Comparing two is a real thing to do — it is the reason the choice exists — and it is done by laying each and reading each, not by merging them or by offering their agreement as evidence.',
+  'notes.refusals.schoolDoctrine.title': 'A school’s doctrine, in this engine’s voice',
+  'notes.refusals.schoolDoctrine.asks': 'every reader who wants to know what the board they chose means.',
+  'notes.refusals.schoolDoctrine.body':
+    'A school teaches what an arrangement is for, and the temptation is to ship that beside the values it moved. What may travel is what already travels for the conditions of 太乙 tàiyǐ, under the same four bounds: the source’s own words, a clause and not a paragraph, always glossed, and always attached to something the engine computed. A verdict in this engine’s own prose is a verdict nothing can test, where a quotation is testable twice over — it is in the text or it is not, and it is that school’s or it is not.',
   'notes.refusals.title': 'What is not computed',
   'notes.refusals.lead':
     'The engine answers no question, which is not the same as saying nothing. What follows is one entry each: what is refused, who asks for it, and why it is not here.',
@@ -1692,6 +1727,36 @@ export const en = {
   'notes.refusals.twoBoards.body':
     'A consultation takes one instrument, chosen before the press and at no point after it. Where two boards agree it is frequently one fact printed twice — a chart of dunjia and a 六壬 liùrén board share the day pillar, the decade, the void branches and five of the eight spirits — and a model reading that as corroboration counts one datum as two with complete confidence.',
 
+  // The schools page. The written half of a subject whose derived half is the
+  // instruments page: what a value named for a school claims, and what the
+  // shelf owes before one may be declared.
+  'notes.answers.schools':
+    'What a school is here, what it takes to name one, and which one laid the board you are looking at.',
+  'notes.schools.title': 'Schools, and what it takes to name one',
+  'notes.schools.lead':
+    'Different schools draw different boards from the same instant. Every divergence between practitioners is a parameter with a declared default, present in the input type from the first release, and a value this engine has not implemented is refused by name rather than quietly replaced with the one it has.',
+  'notes.schools.implicit':
+    'Which means every board is laid by a school, including the one nobody chose. What was followed is stated under the board, on the picture, in the transcript and inside a prompt — the default with the rest, because a reader who moved nothing is exactly the reader who does not know a choice was made for them.',
+
+  'notes.schools.claim.title': 'What a value named for a school claims',
+  'notes.schools.claim.body':
+    'Not that the school is right. That this is what the school teaches, and that the engine transcribes it. Those are the two ways such a value can be wrong — the lineage misnamed, the table miscopied — and neither of them needs a second tradition to catch. Which is why the demand made of a quantity this engine presents as the answer is not the demand made of one it presents as somebody’s.',
+  'notes.schools.standard.title': 'What the shelf owes before one is declared',
+  'notes.schools.standard.body':
+    'A witness that is the school’s own, or that states that school’s teaching and says so; the reading named as that school’s, in the same words the value carries; what it moves, exactly, set against what the engine already computes; and a rung, which weighs the transcription and not the doctrine. A modern summary with no text behind it is none of those. The size of the disagreement is not one of them either: a lineage that moves a single cell and keeps the rest still draws a different board, and two practitioners still hold opposite sides of it.',
+  'notes.schools.rung.title': 'Whose a rule is, beside how well it is attested',
+  'notes.schools.rung.body':
+    'The ladder of evidence orders one risk: that a rule handed down is the one lineage’s own. Whose the rule is answers a different question, and it cannot be a rung without claiming a kind of check it does not have. So the register carries it in a column of its own, beside the rung and never inside it — and most rows read as a dash, which is a claim rather than a blank: the quantity is carried as the tradition’s own and not as one party’s reading of it.',
+  'notes.schools.default.title': 'A declared default is not a hidden school',
+  'notes.schools.default.body':
+    'Every divergence has a default and has to: an address naming no method still answers, and so does a bare section. What does not follow is that the default may be silent. Where the engine computes more than one value, the one in force is stated wherever the board is — under it on the page, under the grid on the drawing, under the pillars in the transcript, in the answer over the API — whether or not anybody moved it. The controls stay where a reader opens them on purpose; it is the reading that must not be able to pass for schoolless.',
+  'notes.schools.axes.title': 'A school is axes, never a bundle',
+  'notes.schools.axes.body':
+    'A school usually touches more than one of these at once, and the convenient shape is a single name that sets the rest. The engine refuses it: a bundle is a table, a table can be edited, and a board carrying the bundle’s name rather than the values it stood for would reproduce differently the day the table moved without its own output saying so. A form may offer the shortcut and fill the fields with it — what leaves the form is still the fields, and a reader can see what was set and move any one of them.',
+  'notes.schools.state.title': 'How many there are is a state, not a design',
+  'notes.schools.state.body':
+    'Nothing here is written as though a board had one method. What a school costs to add is a value in the engine’s declaration, a gloss in every language, a row in the register and an argument for it — and no control, since what a form offers is read off the declaration. A school that would need a paragraph written by hand is a school whose declaration is missing a field, and the fix is upstream of this page.',
+
   'notes.readings.title': 'Handing a board to a model',
   'notes.readings.lead':
     'What a prompt commissions, what it forbids, and what never leaves your browser.',
@@ -1754,6 +1819,11 @@ export const en = {
     'The engine carries the quantity and no source stands behind it. Where that happens the drawing says so too — those names are left uncoloured until one does.',
   'notes.ladder.notAVerdict':
     'A rung is not a verdict. It says what could go wrong unnoticed, which is a different thing from how wrong anything is: the frame of the twenty-eight lodges is carried on over-determination and is right to a seventieth of the narrowest question it is ever asked. Nor is a rung a property of the quantity — it moves when the shelf does, in either direction, and a source that only confirms moves it as surely as one that contradicts.',
+  // Attribution beside the evidence, and the dash is the part that needs
+  // saying: a reader meeting a column of them will read «not filled in» unless
+  // told it is a claim.
+  'notes.ladder.attributed':
+    'The school column says which declared value a quantity stands under, in the words a caller passes them — huoling: fixed, yuan: futou. A dash says the quantity is carried as the tradition’s own rather than as one party’s reading of it, which is a claim and not an empty cell. Whose a rule is and how well it is attested are different questions, so the two columns stand side by side and neither moves the other.',
   'notes.ladder.quoted':
     'The table below is quoted rather than translated. It is a register of citations — the quantities as the engine names them, editions, chapters, the programs each was measured against and the spans they were run over — and this project keeps it in English, the language of its source. What is translated is everything you decide from: the rungs above, what each of them means, and what each layer is.',
   // The way back to what the register was checked on, under the tables that
@@ -1764,6 +1834,7 @@ export const en = {
   'notes.references.lead':
     'Independent implementations, each somebody else’s work, run over the spans the rows above state. The texts cited beside them are not linked: an address for one is a claim about which edition.',
   'notes.column.quantity': 'Quantity',
+  'notes.column.school': 'School',
   'notes.column.rung': 'Rung',
   'notes.column.standsOn': 'Stands on',
   'notes.column.checkedAgainst': 'Checked against',
@@ -2180,6 +2251,10 @@ export const en = {
   'cli.heading.weighed': 'How each of them stands',
   'cli.heading.reading': 'Read out',
   'cli.heading.luck': 'Luck cycles',
+  // What was followed, printed under every board that has a choice on it —
+  // the default included, since a reader who moved nothing is the one who does
+  // not know a choice was made for them.
+  'cli.heading.divergences': 'Schools followed',
   'cli.heading.terms': 'Solar terms of {year}',
   'cli.heading.calendar': 'Lunar date',
   'cli.heading.patterns': 'Configurations',
@@ -2232,10 +2307,10 @@ export const en = {
   // than a person or a matter, which the line has to make unmistakable or a
   // reader picks it expecting a forecast of their own.
   'form.instrument.taiyi': 'How a year stands, for everybody in it',
-  'form.guiren': 'Which verse seats the noble (貴人 guìrén)',
-  'form.guiren.chou': '甲 jiǎ with 戊 wù and 庚 gēng, at 丑 chǒu and 未 wèi',
-  'form.guiren.wei': '甲 jiǎ apart, at 未 wèi and 丑 chǒu',
-  'form.guiren.note': 'It moves the twelve generals and leaves the three transmissions alone.',
+  'form.liuren.guiren': 'Which verse seats the noble (貴人 guìrén)',
+  'form.liuren.guiren.chou': '甲 jiǎ with 戊 wù and 庚 gēng, at 丑 chǒu and 未 wèi',
+  'form.liuren.guiren.wei': '甲 jiǎ apart, at 未 wèi and 丑 chǒu',
+  'form.liuren.guiren.note': 'It moves the twelve generals and leaves the three transmissions alone.',
   // The mark in a cell of a computed table where the board has nothing to put.
   //
   // **«n/a» and not a dash, because a dash beside hanzi is read as 一.** The
@@ -2314,11 +2389,11 @@ export const en = {
   // Said once, where a reader can weigh it. See `docs/history/` phase 23.
   'cli.value.ziweiSource':
     'placed by 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr throughout: the fourteen-star transmission, and not the eighteen-star 十八飛星 shíbāfēixīng line that 《全集》 quánjí and 《捷覽》 jiélǎn carry. Its tables part from the modern ones in four places — two stars taken off the hour, a pair seated off the stem, a god taken off the year, and one of the four transformations — and in each this book is followed and the divergence recorded',
-  'form.luohou': 'Which node is 羅睺 luóhóu',
-  'form.luohou.descending': 'the descending node: the astrologers’ law',
-  'form.luohou.ascending': 'the ascending node: 湯若望 Tāng Ruòwàng and the 時憲曆 shíxiànlì',
+  'form.qizheng.luohou': 'Which node is 羅睺 luóhóu',
+  'form.qizheng.luohou.descending': 'the descending node: the astrologers’ law',
+  'form.qizheng.luohou.ascending': 'the ascending node: 湯若望 Tāng Ruòwàng and the 時憲曆 shíxiànlì',
   'form.copyStars': 'Copy the board',
-  'form.luohou.note':
+  'form.qizheng.luohou.note':
     'It swaps the two names and moves nothing else: the two nodes are the ends of one line, half a turn apart. The default is what the astrologers kept, which is the reverse of the Indian convention.',
   // Printed under every board, because a reader counting four names and
   // finding three is owed the reason on the page rather than in a document.

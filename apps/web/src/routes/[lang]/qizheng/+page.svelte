@@ -6,6 +6,7 @@
   import FormPanel from '$lib/components/FormPanel.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
+  import Schools from '$lib/components/Schools.svelte';
   import QizhengReading from '$lib/components/QizhengReading.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
@@ -17,10 +18,8 @@
   // svelte-ignore state_referenced_locally
   let asked = $state<MomentInput>({ ...data.moment });
   // svelte-ignore state_referenced_locally
-  let luohou = $state(data.luohou);
   $effect(() => {
     asked = { ...data.moment };
-    luohou = data.luohou;
   });
 
   const board = $derived(data.result?.qizheng);
@@ -48,7 +47,7 @@
         date: moment?.input.date ?? data.moment.date,
         time: moment?.input.time ?? data.moment.time,
       },
-      { luohou: data.luohou, lang: t.locale },
+      { lang: t.locale },
     ),
   );
 
@@ -76,7 +75,7 @@
     event.preventDefault();
     busy = true;
     try {
-      const query = momentQuery(asked, { luohou });
+      const query = momentQuery(asked);
       await goto(`${page.url.pathname}${query ? `?${query}` : ''}`, {
         replaceState: true,
         noScroll: true,
@@ -106,8 +105,8 @@
       bind:longitude={asked.longitude}
       bind:timezone={asked.timezone}
       bind:trueSolarTime={asked.trueSolarTime}
-      bind:dayBoundary={asked.dayBoundary}
-      bind:luohou
+      bind:chosen={asked.chosen}
+      board="qizheng"
     />
     <SubmitButton {t} label="cli.heading.qizheng" {busy} />
   {/snippet}
@@ -143,6 +142,7 @@
 
     <div>
       <QizhengReading {board} {t} {moment} />
+      <Schools {t} board="qizheng" options={board.options} layers={moment.options} />
     </div>
   </div>
 {/if}

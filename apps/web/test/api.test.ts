@@ -297,7 +297,7 @@ describe('GET /api/qizheng', () => {
     const kept = (await call(qizheng, MOMENT)).body as {
       qizheng: { remainders: { longitude: number }[] };
     };
-    const flipped = (await call(qizheng, `${MOMENT}&luohou=ascending`)).body as {
+    const flipped = (await call(qizheng, `${MOMENT}&qizheng.luohou=ascending`)).body as {
       qizheng: { remainders: { longitude: number }[] };
     };
 
@@ -690,7 +690,7 @@ describe('GET /api/qimen', () => {
     // 15 June 2024 is ten days into 芒種, lower yuan of a yang chart under
     // chaibu — but its 庚戌 day stands in a block already serving 夏至, six
     // days before the Sun gets there (超神), and 夏至 opens the yin half.
-    const { body } = await call(qimen, `${MOMENT}&method=zhirun`);
+    const { body } = await call(qimen, `${MOMENT}&qimen.method=zhirun`);
     const answer = body as { qimen: { ju: Record<string, unknown>; options: { method: string } } };
 
     expect(answer.qimen.options.method).toBe('zhirun');
@@ -701,12 +701,12 @@ describe('GET /api/qimen', () => {
   it('refuses a method it has never heard of', async () => {
     // Ignoring it instead would cast a chaibu chart under whatever name the
     // address misspelt, and it would look exactly like the chart asked for.
-    const { status, body } = await call(qimen, `${MOMENT}&method=zhirn`);
+    const { status, body } = await call(qimen, `${MOMENT}&qimen.method=zhirn`);
 
     expect(status).toBe(400);
     expect(body).toMatchObject({
       code: 'UNKNOWN_IDENTIFIER',
-      params: { parameter: 'method', value: 'zhirn' },
+      params: { parameter: 'qimen.method', value: 'zhirn' },
     });
   });
 
@@ -724,24 +724,24 @@ describe('GET /api/qimen', () => {
 
     expect((await ju(at)).ju).toMatchObject({ yang: true, number: 2, yuan: 'shang' });
 
-    const futou = await ju(`${at}&yuan=futou`);
+    const futou = await ju(`${at}&qimen.yuan=futou`);
     expect(futou.options.yuan).toBe('futou');
     expect(futou.ju).toMatchObject({ yang: true, number: 8, yuan: 'zhong' });
     expect(futou.ju['term']).toMatchObject({ id: 'xiaohan' });
   });
 
   it('refuses a yuan it has never heard of', async () => {
-    const { status, body } = await call(qimen, `${MOMENT}&yuan=futuo`);
+    const { status, body } = await call(qimen, `${MOMENT}&qimen.yuan=futuo`);
 
     expect(status).toBe(400);
     expect(body).toMatchObject({
       code: 'UNKNOWN_IDENTIFIER',
-      params: { parameter: 'yuan', value: 'futuo' },
+      params: { parameter: 'qimen.yuan', value: 'futuo' },
     });
   });
 
   it('answers maoshan with a refusal, not a substitute', async () => {
-    const { status, body } = await call(qimen, `${MOMENT}&method=maoshan`);
+    const { status, body } = await call(qimen, `${MOMENT}&qimen.method=maoshan`);
 
     expect(status).toBe(501);
     expect(body).toMatchObject({ code: 'METHOD_NOT_IMPLEMENTED' });
@@ -782,6 +782,48 @@ describe('GET /api/ziwei', () => {
     const { body } = await call(ziwei, MOMENT);
 
     expect((body as { ziwei: { options: { sihua: string } } }).ziwei.options.sihua).toBe('quanshu');
+  });
+
+  /**
+   * The one divergence of this board a reader can move, and the reason it is
+   * spelt with the board's name in front of it.
+   *
+   * 1983 cut at 立春 on 4 February and at 正月初一 on the 13th, so a birth
+   * between the two dates belongs to 癸亥 by one reckoning and to 壬戌 by the
+   * other — and the year stem is what seats the four transformations, 祿存,
+   * 天魁 and 天鉞. A control that could not move this would be a control that
+   * decides nothing; a bare `yearBoundary` would move the pillars instead.
+   */
+  it('cuts its own year where the address says, and not where the pillars are cut', async () => {
+    const between = 'date=1983-02-08&time=09:00&timezone=Asia/Shanghai&gender=male';
+    const year = async (query: string) =>
+      (
+        (await call(ziwei, query)).body as {
+          ziwei: { yearPillar: { hanzi: string }; options: { yearBoundary: string } };
+        }
+      ).ziwei;
+
+    const lunar = await year(between);
+    const solar = await year(`${between}&ziwei.yearBoundary=lichun`);
+
+    expect(lunar.options.yearBoundary).toBe('chunjie');
+    expect(solar.options.yearBoundary).toBe('lichun');
+    expect(lunar.yearPillar.hanzi).not.toBe(solar.yearPillar.hanzi);
+
+    // And the pillars printed beside the board are cut where the pillars are
+    // cut: two questions, two parameters, one of them not this one.
+    const pillars = (await call(ziwei, between)).body as { moment: { pillars: { year: { hanzi: string } } } };
+    expect(pillars.moment.pillars.year.hanzi).toBe(solar.yearPillar.hanzi);
+  });
+
+  it('refuses a boundary it has never heard of', async () => {
+    const { status, body } = await call(ziwei, `${MOMENT}&ziwei.yearBoundary=liqiu`);
+
+    expect(status).toBe(400);
+    expect(body).toMatchObject({
+      code: 'UNKNOWN_IDENTIFIER',
+      params: { parameter: 'ziwei.yearBoundary', value: 'liqiu' },
+    });
   });
 
   it('says the board in words, with the line that places it', async () => {
@@ -1339,7 +1381,7 @@ describe('the address every board cites', () => {
       // somebody else's chart. The chart is the chart of its moment either
       // way, and the 年命 is written out in the transcript this link travels
       // inside — so the comparison below drops it from both sides.
-      reads: 'method=chaibu&yuan=futou&born=1990-06-01&gender=male',
+      reads: 'qimen.method=chaibu&qimen.yuan=futou&born=1990-06-01&gender=male',
     },
     {
       id: 'liuren',
@@ -1348,7 +1390,7 @@ describe('the address every board cites', () => {
       fixed: AN_INSTANT,
       open: { query: OPEN, pins: 'date=' },
       board: liuren,
-      reads: 'guiren=wei',
+      reads: 'liuren.guiren=wei',
     },
     {
       id: 'taiyi',
@@ -1368,7 +1410,7 @@ describe('the address every board cites', () => {
       fixed: A_BIRTH,
       open: { query: OPEN, pins: 'date=' },
       board: qizheng,
-      reads: 'luohou=ascending',
+      reads: 'qizheng.luohou=ascending',
     },
     {
       id: 'ziwei',

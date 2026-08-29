@@ -470,7 +470,10 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
       // `docs/history/` phase 15. The JSON above still carries it,
       // because a caller who
       // wants the layer for this instant is asking, not being shown.
-      formatMoment(moment, t, { almanac: false }),
+      formatMoment(moment, t, {
+        almanac: false,
+        divergences: { board: 'bazi', options: moment.options },
+      }),
       '',
       formatBazi(bazi, t),
       gender ? '' : `\n  ${t('cli.error.genderRequired')}`,
@@ -497,7 +500,11 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
       });
     }
 
-    const parts = [formatMoment(moment, t), '', formatLiuren(board, t)];
+    const parts = [
+      formatMoment(moment, t, { divergences: { board: 'liuren', options: board.options } }),
+      '',
+      formatLiuren(board, t),
+    ];
     const warnings = warningsOf(moment, t);
     if (warnings !== '') parts.push(warnings);
     return parts.join('\n');
@@ -519,7 +526,14 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
     // The almanac's line is left out for the reason `bazi` leaves it out: this
     // is the moment read as a person, and 曆注 weighs a day as the occasion of
     // an undertaking.
-    const parts = [formatMoment(moment, t, { almanac: false }), '', formatZiwei(board, t)];
+    const parts = [
+      formatMoment(moment, t, {
+        almanac: false,
+        divergences: { board: 'ziwei', options: board.options },
+      }),
+      '',
+      formatZiwei(board, t),
+    ];
     const warnings = warningsOf(moment, t);
     if (warnings !== '') parts.push(warnings);
     return parts.join('\n');
@@ -537,7 +551,11 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
 
     if (options.prompt) return qizhengReadingPrompt(moment, board, t);
 
-    const parts = [formatMoment(moment, t), '', formatQizheng(board, t)];
+    const parts = [
+      formatMoment(moment, t, { divergences: { board: 'qizheng', options: board.options } }),
+      '',
+      formatQizheng(board, t),
+    ];
     const warnings = warningsOf(moment, t);
     if (warnings !== '') parts.push(warnings);
     return parts.join('\n');

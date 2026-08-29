@@ -137,6 +137,41 @@ export const SIHUA: Record<StemId, readonly [ZiweiStarId, ZiweiStarId, ZiweiStar
   gui: ['pojun', 'jumen', 'taiyin', 'tanlang'],
 };
 
+/**
+ * 壬's 科 on 左輔, which is where two modern lineages part from this book.
+ *
+ * One cell, and the whole of the divergence the shelf attests. 《全書》 prints
+ * 「壬梁紫府武宿是」 — 科 to 天府 — in both editions, and the Ming 南陽堂
+ * recension confirms it. The 中州派 manual prints 「壬梁紫輔武宿是」 instead,
+ * and 《紫微斗數 北派》 draws 左輔 with 科 twice in worked examples, one of
+ * them decidable on that reading alone: 左輔 is placed from the lunar month
+ * and the example gives no day, so 天府 could not have been meant.
+ *
+ * **Named for the cell and not for either school**, because two of them hold
+ * it and neither's ten stems are on this shelf. `futou` is the precedent — a
+ * value named for the rule that parts two schools of 拆補 rather than for one
+ * of them. `docs/sources.md` argues it; `docs/parameters.md` § "What a school
+ * value must show" is the standard it was declared under.
+ */
+export const SIHUA_ZUOFU: typeof SIHUA = {
+  ...SIHUA,
+  ren: ['tianliang', 'ziwei', 'zuofu', 'wuqu'],
+};
+
+/**
+ * The tables a caller may ask for, which is what parts a contested cell from a
+ * settled one.
+ *
+ * Beside `sihuaTable` and moving with it: a reading added to one and not the
+ * other would either be unreachable or would stop marking the cells it moves.
+ */
+export const SIHUA_READINGS = ['quanshu', 'zuofu'] as const;
+
+/** The table a chart's `sihua` asks for. */
+export function sihuaTable(reading: 'quanshu' | 'zuofu'): typeof SIHUA {
+  return reading === 'zuofu' ? SIHUA_ZUOFU : SIHUA;
+}
+
 /** 起五行寅例 — the stem that stands on 寅 for each year stem (五虎遁). */
 export const YIN_STEM: Record<StemId, StemId> = {
   jia: 'bing', ji: 'bing',

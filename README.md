@@ -312,9 +312,10 @@ quantity, each carrying the rung of evidence it stands on —
 section of the site that says the same thing to a reader who came to check
 rather than to read: what is computed layer by layer with every school
 divergence under it, what each quantity stands on and how strongly, what is
-deliberately not computed, and what happens when a board is handed to a model.
-The first two are derived from the engine and cannot fall behind it; the other
-two are written, and every entry shows the day it was last checked.
+deliberately not computed, what a school is here and what it takes to name one,
+and what happens when a board is handed to a model. The first two are derived
+from the engine and cannot fall behind it; the other three are written, and
+every entry shows the day it was last checked.
 
 Working from memory was tried and abandoned: recalled almanac values were
 wrong more often than not, and the tests only became trustworthy once every
@@ -342,10 +343,13 @@ language: 休門 is xiūmén on `/it` and on `/en` alike.
 
 A consequence worth having: the drawing is almost entirely
 locale-independent, because the palaces carry hanzi. Only its captions, the
-eight directions around its frame and the two bands under it are text in a
+eight directions around its frame and what stands under it are text in a
 language — a band of glosses, since 吉 alone in a palace would be a name with
-no gloss, and a band where every name on the board is said aloud, since the
-picture is the half of this that travels and has no table beside it.
+no gloss; a band where every name on the board is said aloud, since the picture
+is the half of this that travels and has no table beside it; and, under both,
+the schools the board was laid by, for the same reason and with the same
+force — a picture that said nothing about how it was cast would be the one copy
+of a board that reads as *the* board of its instant.
 
 More: [`docs/i18n.md`](docs/i18n.md).
 

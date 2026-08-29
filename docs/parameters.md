@@ -72,6 +72,95 @@ refused in `scan.ts` in as many words; 六壬's 課體 reports nothing where the
 sources disagree; `leapMonth`, `huoling` and `centreLodging` each carry their
 alternatives declared and refused. What it found is in `ROADMAP.md` § 1.
 
+## What a school value must show
+
+The three questions say *whether* a divergence owes a value. This says what has
+to be true before one can be declared — and it is a lower bar than the one in
+`docs/sources.md`, on purpose.
+
+**A value named for a school claims attribution, not doctrine.** It does not
+assert that the school is right; it asserts that this is what the school
+teaches and that the engine transcribes it. That claim fails in two ways only,
+the lineage misnamed and the table miscopied, and neither wants a second
+tradition to catch it — so the standard's demand for two agreeing witnesses is
+the demand on a quantity the engine presents as the answer, and it is not the
+demand here. `docs/sources.md` § "What a value named for a school must show"
+states what stands in its place, and `docs/notes.md` says why attribution is
+not a rung.
+
+**Completeness is not the test, and it was being used as one.** A lineage that
+moves a single cell and keeps the rest was read, for a while, as not having a
+table of its own, and no value was declared for it. But a moved cell changes
+what the board shows and two practitioners hold opposite sides of it: the three
+questions admit it, and the size of a disagreement is not one of them. What a
+school owes is a witness saying what it teaches, not a whole apparatus rebuilt
+from nothing.
+
+## How many schools there are is a state and not a design
+
+The twin of what [`i18n.md`](i18n.md) says about the vernaculars, and for the
+same reason. Nothing here may be written as though a board had one method, and
+a sentence saying «the engine computes X» where X is one of several is a
+sentence that goes false the day the second lands rather than one that is wrong
+today.
+
+What a school costs to add is the honest measure of anything built around the
+parameters: a value in `parameters.ts`, a gloss in every catalog, a row in the
+register, an argument in `docs/sources.md` — and no control, because the form
+is built from the declaration. A school that would need a paragraph written by
+hand is a school whose descriptor is missing a field, which is
+[`notes.md`](notes.md) § "Derived beats written" arriving here.
+
+## A school is axes, never a bundle
+
+A school usually touches more than one row at once, and the convenient shape is
+a single `school:` value presetting the rest. Inside `core` it is refused.
+
+A preset is a table and a table can be edited. A chart carrying the name of a
+bundle rather than the values it expanded to would reproduce differently the
+day the bundle changed, and its own output would not say so — which is the
+guarantee this page exists for: a chart is a pure function of its input and of
+the options that produced it, and no function in `core` reads a global default.
+What travels is always the expanded values.
+
+**A bundle at a surface is a different thing and is allowed.** A form may offer
+«as such-and-such a school casts it» and fill the fields with it, because what
+leaves the form is still the fields: the reader sees what was set and can move
+any one of them afterwards. Nothing downstream of the form ever receives the
+name of the bundle.
+
+## A declared default is not a hidden school
+
+Every row here has a default and has to: an address naming no method still
+answers, and so do a tool call, a command and a bare section. What does not
+follow is that the default may be silent.
+
+**Where a parameter has more than one implemented value, the value in force
+travels — always, and whether or not anybody moved it.** It is stated under the
+board in the interface, under the pillars of every transcript and inside a
+prompt's fence, and under the grid of every drawing; over the REST API and MCP
+it is in the answer, and the instructions tell a caller to report it. A reader
+who did not choose is exactly the reader who has to be told, and «no school is
+implicit» is a claim about what the software does *for* them and not only about
+what the type declares.
+
+**Stated where the board is read, and moved where the options are.** The
+controls stay under the disclosure a reader opens on purpose — a form that put
+four `select`s in front of somebody who came to ask a question would be
+charging every reader for the one who changes them — and what stands in the
+open is the statement, beside the board it is about. The two are not the same
+surface and the requirement is only on one of them: it is the reading that must
+not be able to pass for schoolless, not the form.
+
+**And the picture is not enough, wherever there is one.** A board on a page is
+an `<img>` with `alt=""`: uncopyable, unreadable to a screen reader, gone when
+pictures are off. The drawing carries the block because it travels alone; the
+page carries the same block in words because the reader is there.
+
+Where a parameter has one implemented value there is nothing to be aware of and
+nothing is said: what would be reported is not a school but the absence of a
+second one, which is `ROADMAP.md` § 1's business.
+
 **Each board carries its own input type. None inherits a default from
 dunjia's.**
 
@@ -124,7 +213,7 @@ almanac takes none of these at all. Both are below.
 | 太乙 | `ji` | which register the board is laid in: `nianji` (年計 niánjì), `yueji` (月計 yuèjì), `riji` (日計 rìjì), `shiji` (時計 shíjì) | `nianji` |
 | 太乙 | `yearBoundary` | where the counted year begins: `lichun` (立春 lìchūn), `dongzhi` (冬至 dōngzhì), `chunjie` (正月初一 zhēngyuèchūyī) | `lichun` |
 | 紫微斗數 | `leapMonth` | what a birth in an intercalary month counts as: `following` (the month after it, which is the book's), `current`, `split` | `following` |
-| 紫微斗數 | `sihua` | which table of the 四化: `quanshu` (《紫微斗數全書》 zǐwēidǒushùquánshū's own), later a lineage that has been read | `quanshu` |
+| 紫微斗數 | `sihua` | which table of the 四化: `quanshu` (《紫微斗數全書》 zǐwēidǒushùquánshū's own), `zuofu` (左輔 zuǒfǔ — that table with 壬's 科 moved, as two modern schools read it) | `quanshu` |
 | 紫微斗數 | `huoling` | how 火星 and 鈴星 are placed: `fixed` (a seat apiece from the year's triplicity, which is all 卷二 states), `hour` | `fixed` |
 | 紫微斗數 | `daxian` | where the first decade opens: `adjacent` (the palace beside the 命宮), `ming` (命宮 mìnggōng itself) | `adjacent` |
 | 紫微斗數 | `yearBoundary` | which reckoning gives the year its stem and branch: `lichun` (立春 lìchūn), `chunjie` (正月初一 zhēngyuèchūyī) | `chunjie` |
@@ -164,6 +253,18 @@ precisely why it is a parameter — the year stem carries the 四化, 祿存, �
 and 天鉞, so a birth in the weeks between the two lays out two different
 boards and only one of them can be printed.
 
+**`sihua` is the first value declared under the standard rather than under a
+reading of it.** What the shelf carries is one cell: 《紫微斗數全書》 gives 壬 its
+科 to 天府 in both editions and the Ming recension agrees, where the 中州派
+manual prints 左輔 and a 北派 manual draws 左輔 twice in worked examples, one of
+them decidable on that reading alone. A lineage's whole ten stems was being
+asked for, and that is a completeness test rather than the one this page
+states: the board changes, two practitioners hold opposite sides, and the size
+of the disagreement is not a question. **It is named for the cell and not for
+either school**, because two of them hold it and neither's table is here — the
+`futou` precedent, where a value names the rule that parts two schools of 拆補
+rather than one of them.
+
 **`xiudu` gained `juxing`, and `gong` did not exist until the board was
 written.** Both are the same discovery arriving twice: the 宿度 and the 十二次
 are one question and the sources answer it in two frames. `juxing` is the
@@ -171,6 +272,37 @@ answer that commits to no epoch, which is why it is the default and why the
 two 曆 tables can wait. `gong` had to exist because the palaces can be cut by
 the seasons or by the stars and precession has parted the two by weeks — which
 is exactly the breakage this page opens by describing.
+
+## A board's parameters travel under the board's name
+
+**A parameter of a board travels prefixed with it** — `qimen.method`,
+`qizheng.luohou`, `ziwei.leapMonth` — and a parameter of a *layer* travels bare.
+The layers are two: the pillars, whose `trueSolarTime`, `yearBoundary` and
+`dayBoundary` say how an instant is read into the four that every board stands
+on, and the 曆注, whose `shensha` names the register of a page every chart is
+read against. Neither is a board, both are under or beside all of them, and
+their names collide with nothing.
+
+A name is unique inside a type and not on a wire. `yearBoundary` is declared
+three times on this page with three different sets of values and two different
+defaults, because the pillars, 太乙 and 紫微斗數 each cut a year and disagree
+about where; the types keep them apart because each board carries its own, and a
+flat query string does not. Written bare, `?yearBoundary=chunjie` would mean two
+things on two pages, and the setup a reader carries from one section to the next
+would write one board's answer into another's.
+
+**Where the board is already named, the prefix is not.** A CLI command lays one
+board and an MCP tool answers for one, so `shipan ziwei --year-boundary lichun`
+and a `compute_ziwei` argument are unambiguous by construction; it is the query
+string, and every address built from one, where all the boards share a
+namespace. `apps/web/src/lib/parameters.ts` is the one place the naming is
+written, `wire` and `named` are how it is asked for, and
+`apps/web/test/parameters.test.ts` holds the client's copy of these rows to the
+engine's declaration.
+
+It also makes the carrying derivable rather than listed: a parameter prefixed
+with a board is dropped when the reader leaves that board, and nothing has to
+remember which ones those were.
 
 ## The derived constraint
 

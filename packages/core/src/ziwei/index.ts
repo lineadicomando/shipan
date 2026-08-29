@@ -24,7 +24,8 @@ import {
   KUIYUE,
   LIFE_MASTER,
   LUCUN,
-  SIHUA,
+  SIHUA_READINGS,
+  sihuaTable,
   TIANMA,
   XIAOXIAN_START,
   YIN_STEM,
@@ -47,7 +48,16 @@ import {
 } from './stars.js';
 
 export * from './stars.js';
-export { BRIGHTNESS, KUIYUE, LUCUN, SIHUA, TIANMA, ZIWEI_BY_DAY } from './tables.js';
+export {
+  BRIGHTNESS,
+  KUIYUE,
+  LUCUN,
+  SIHUA,
+  SIHUA_ZUOFU,
+  TIANMA,
+  ZIWEI_BY_DAY,
+  sihuaTable,
+} from './tables.js';
 
 export interface ZiweiOptions {
   /**
@@ -71,11 +81,18 @@ export interface ZiweiOptions {
   /**
    * Which table of the four transformations.
    *
-   * One value, and it is 《紫微斗數全書》's own. The tables that differ at
-   * 戊, 庚 and 壬 belong to lineages nobody here has read, and a lineage
-   * nobody has read is not a value — the `tongzong` precedent.
+   * `quanshu` is 《紫微斗數全書》's own, which both editions and the Ming
+   * recension carry. `zuofu` is that table with 壬's 科 moved to 左輔, which
+   * is where the 中州派 manual and 《紫微斗數 北派》 both part from it — one
+   * cell, which is the whole of what the shelf attests and enough to owe a
+   * value: it changes what the board shows, and two practitioners hold
+   * opposite sides of it.
+   *
+   * The tables that differ at 戊 and 庚 belong to lineages nobody here has
+   * read, and a lineage nobody has read is not a value — the `tongzong`
+   * precedent, which is about a text and not about the size of a divergence.
    */
-  sihua: 'quanshu';
+  sihua: 'quanshu' | 'zuofu';
   /**
    * How 火星 and 鈴星 are placed.
    *
@@ -129,6 +146,18 @@ export interface ZiweiSeat {
   brightness: Brightness | null;
   /** The transformation the birth year's stem works on it, if any. */
   transform: Transform | null;
+  /**
+   * Whether this is a seat the declared tables disagree about.
+   *
+   * True on both sides of a divergence and not on the one that was moved:
+   * under `quanshu` it is 天府 that carries a contested 科 at 壬, under
+   * `zuofu` it is 左輔, and a mark that appeared only on the second would be
+   * this engine calling its own default the plain reading. What it says is
+   * that a school is standing here — `docs/parameters.md` § "A declared
+   * default is not a hidden school" — and it is absent on every board whose
+   * year stem no table parts over, which is nine stems in ten.
+   */
+  contested?: boolean;
 }
 
 export interface ZiweiPalace {
@@ -337,11 +366,24 @@ export function computeZiwei(moment: Moment, options: ZiweiOptions): ZiweiBoard 
   }
 
   // 四化: the birth year's stem transforms four of the stars already seated.
-  const transforms = SIHUA[yearStem.id];
+  const transforms = sihuaTable(options.sihua)[yearStem.id];
+  // And which of the four the declared tables part over at this stem, derived
+  // from the tables themselves so that one landing later marks its own cells.
+  // Both sides carry the mark: under `quanshu` it is 天府 that holds a
+  // contested 科 at 壬 and under `zuofu` it is 左輔, and a mark on the second
+  // alone would be this engine calling its own default the plain reading.
+  const contested = new Set(
+    transforms.filter((starId, at) =>
+      SIHUA_READINGS.some((reading) => sihuaTable(reading)[yearStem.id][at] !== starId),
+    ),
+  );
   for (const [n, starId] of transforms.entries()) {
     for (const list of seats.values()) {
       for (const seat of list) {
-        if (seat.star.id === starId) seat.transform = TRANSFORMS[n];
+        if (seat.star.id === starId) {
+          seat.transform = TRANSFORMS[n];
+          if (contested.has(starId)) seat.contested = true;
+        }
       }
     }
   }

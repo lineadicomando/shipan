@@ -23,12 +23,20 @@ import { REFERENCES } from '../src/lib/references';
  */
 const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 
-/** The column of the register that says what a quantity was checked on. */
-const CHECKED = readFileSync(join(ROOT, 'docs/sources.tsv'), 'utf8')
-  .split('\n')
-  .slice(1)
-  .map((line) => line.split('\t')[4] ?? '')
-  .join('\n');
+/**
+ * The column of the register that says what a quantity was checked on, found
+ * by its name in the header.
+ *
+ * By name and not by position: this was the fifth column until `school` was
+ * added before it, and a hard-coded index in a second file is the drift this
+ * suite exists to catch, arriving in the suite itself.
+ */
+const CHECKED = ((): string => {
+  const [header = '', ...rows] = readFileSync(join(ROOT, 'docs/sources.tsv'), 'utf8').split('\n');
+  const column = header.split('\t').indexOf('checked_against');
+  expect(column, 'docs/sources.tsv has no checked_against column').toBeGreaterThan(-1);
+  return rows.map((line) => line.split('\t')[column] ?? '').join('\n');
+})();
 
 describe('the programs the sources page links to', () => {
   it('names each one the way the register names it', () => {

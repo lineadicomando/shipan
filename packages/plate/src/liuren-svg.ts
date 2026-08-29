@@ -1,6 +1,7 @@
 import { broken, escape, fitted, round } from './fit.js';
 import { FONT_STACK, styleSheet } from './palette.js';
 import { drawReadingColumns, readingDepth, said, type Said } from './readings.js';
+import { drawSchools, schoolDepth } from './schools.js';
 import type {
   PlateCourse,
   PlateLiuren,
@@ -108,7 +109,9 @@ export function renderLiurenSvg(board: PlateLiuren, options: PlateLiurenOptions 
   // palace rather than as something said about the twelve.
   const band = bandLines ? size * 0.05 + readingStep * bandLines + size * 0.012 : 0;
 
-  const height = margin + headingRoom + upper + ring + band + margin + foot;
+  const schools = options.schools ?? [];
+  const schoolBand = schoolDepth(schools, readingStep, size * 0.026);
+  const height = margin + headingRoom + upper + ring + band + schoolBand + margin + foot;
 
   const ringTop = margin + headingRoom + upper;
 
@@ -154,9 +157,27 @@ export function renderLiurenSvg(board: PlateLiuren, options: PlateLiurenOptions 
     );
   }
 
+  if (schools.length > 0) {
+    parts.push(
+      ...drawSchools(schools, {
+        x: margin,
+        first: ringTop + ring + band + size * 0.026,
+        step: readingStep,
+        size: reading,
+        maxWidth: ring,
+      }),
+    );
+  }
+
   if (foot > 0) {
     parts.push(
-      text(size / 2, ringTop + ring + band + margin + foot * 0.5, labels.unverified as string, size * 0.024, 'faint'),
+      text(
+        size / 2,
+        ringTop + ring + band + schoolBand + margin + foot * 0.5,
+        labels.unverified as string,
+        size * 0.024,
+        'faint',
+      ),
     );
   }
 

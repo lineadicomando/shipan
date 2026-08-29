@@ -132,6 +132,13 @@ export interface Instrument {
    * table and a table of four is not a picture. What stands in its place on
    * the page is `PillarPlate`, a component rather than an image, so nothing
    * here has a size to declare.
+   *
+   * **A hint and not a promise.** The drawings grow downward by what they have
+   * to say — a chart with six configurations is taller than one with two, and
+   * every board grew again when the block naming the schools landed under it —
+   * so what is written here is the measure a typical board comes out at, which
+   * is what the `<img>` needs to reserve the right shape before the picture
+   * arrives.
    */
   readonly plate?: {
     readonly width: number;
@@ -222,7 +229,7 @@ export const INSTRUMENTS: readonly Instrument[] = [
     takesBirth: true,
     takesGender: true,
     strengths: true,
-    plate: { width: 900, height: 1466 },
+    plate: { width: 900, height: 1560 },
     option: 'form.instrument.qimen',
     asks: 'form.questionPlaceholder.qimen',
     name: { hanzi: '奇門遁甲', pinyin: 'Qí Mén Dùn Jiǎ' },
@@ -234,7 +241,7 @@ export const INSTRUMENTS: readonly Instrument[] = [
     takesBirth: false,
     takesGender: false,
     strengths: false,
-    plate: { width: 900, height: 1445 },
+    plate: { width: 900, height: 1531 },
     option: 'form.instrument.liuren',
     asks: 'form.questionPlaceholder.liuren',
     name: { hanzi: '大六壬', pinyin: 'Dà Liù Rén' },
@@ -263,7 +270,7 @@ export const INSTRUMENTS: readonly Instrument[] = [
     takesBirth: false,
     takesGender: false,
     strengths: false,
-    plate: { width: 900, height: 1710 },
+    plate: { width: 900, height: 1796 },
     option: 'form.instrument.qizheng',
     name: { hanzi: '七政四餘', pinyin: 'Qī Zhèng Sì Yú' },
   },
@@ -280,7 +287,7 @@ export const INSTRUMENTS: readonly Instrument[] = [
     strengths: false,
     // Taller than it is wide, and that is the band of readings: a board of
     // this art names forty things and every one of them has to be sayable.
-    plate: { width: 900, height: 1535 },
+    plate: { width: 900, height: 1662 },
     option: 'form.instrument.ziwei',
     name: { hanzi: '紫微斗數', pinyin: 'Zǐ Wēi Dǒu Shù' },
   },

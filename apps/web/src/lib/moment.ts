@@ -2,6 +2,7 @@ import type { Location } from '@shipan/geo';
 import type { MessageKey, MessageParams, Translator } from '@shipan/i18n';
 // Types only: a value import would put the engine in the browser bundle.
 import type { Ganzhi, Ju, PalaceContents, Pattern } from '@shipan/core';
+import { chosenFields, readChosen, type Chosen } from './parameters';
 
 /**
  * The moment, as it travels in the address.
@@ -60,14 +61,16 @@ export interface MomentInput extends PlaceInput {
   /** `HH:mm`. */
   time: string;
   trueSolarTime: boolean;
-  dayBoundary: string;
-  /** How the ju is determined. Carried verbatim: the server refuses a value
-   * it does not know, where a silent fallback would cast a chaibu chart under
-   * whatever name the address had misspelt. */
-  method: string;
-  /** Where the third of the term is counted from, under chaibu. Carried
-   * verbatim for the same reason as `method`. */
-  yuan: string;
+  /**
+   * Every other divergence in force, keyed by the name it travels under.
+   *
+   * Carried verbatim, misspellings included: the server refuses a value it
+   * does not know, where a silent fallback would cast a chaibu chart under
+   * whatever name the address had misspelt. Which ones are in here is the
+   * board's business and `readChosen` decides it — this type has not named a
+   * school since there were four of them.
+   */
+  chosen: Chosen;
 }
 
 /** A failure as it crosses HTTP: a code with parameters, never prose. */
@@ -164,7 +167,10 @@ export function sayPlace(input: PlaceInput): string {
 }
 
 /** What the address says, before the place has a name. */
-export function readMoment(url: URL): {
+export function readMoment(
+  url: URL,
+  board?: string,
+): {
   input: Omit<MomentInput, 'place'>;
   locationId: string | null;
 } {
@@ -175,9 +181,7 @@ export function readMoment(url: URL): {
       time: params.get('time') ?? '',
       ...readPlaceInput(params),
       trueSolarTime: params.get('trueSolarTime') !== 'false',
-      dayBoundary: params.get('dayBoundary') === 'midnight' ? 'midnight' : 'zishi',
-      method: params.get('method') ?? 'chaibu',
-      yuan: params.get('yuan') ?? 'term',
+      chosen: readChosen(params, board),
     },
     locationId: params.get('locationId'),
   };
@@ -198,11 +202,12 @@ export function momentQuery(
   if (input.date) params.set('date', input.date);
   if (input.time) params.set('time', input.time);
   if (!input.trueSolarTime) params.set('trueSolarTime', 'false');
-  if (input.dayBoundary !== 'zishi') params.set('dayBoundary', input.dayBoundary);
-  if (input.method && input.method !== 'chaibu') params.set('method', input.method);
-  if (input.yuan && input.yuan !== 'term') params.set('yuan', input.yuan);
 
-  for (const [key, value] of Object.entries({ ...placeFields(input), ...extra })) {
+  for (const [key, value] of Object.entries({
+    ...chosenFields(input.chosen),
+    ...placeFields(input),
+    ...extra,
+  })) {
     if (value) params.set(key, value);
   }
   return params.toString();

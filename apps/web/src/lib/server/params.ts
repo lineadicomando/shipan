@@ -1,4 +1,5 @@
 import {
+  DEFAULT_ZIWEI_OPTIONS,
   ChartError,
   DEFAULT_TAIYI_OPTIONS,
   GATES,
@@ -31,9 +32,11 @@ import {
   type StarId,
   type StemId,
   type StrengthId,
+  type ZiweiOptions,
 } from '@shipan/core';
 import { getLocation } from '@shipan/geo';
 import { genderBelongsToBoard, type InstrumentId } from '$lib/instruments';
+import { belongsTo, named } from '$lib/parameters';
 import { resolveLocale, type Locale } from '@shipan/i18n';
 import { error } from '@sveltejs/kit';
 
@@ -265,10 +268,20 @@ export function pageAddress(
   // board itself and stays, or the address opens on a chart with no 大運 under
   // the sentence saying the board is there. `genderBelongsToBoard` is where
   // the two readings are told apart, for this surface and for the nav alike.
-  const dropped = ['lang', 'asked', 'about', 'born', 'bornTime', 'bornTz', 'years'];
+  //
+  // A parameter of *another* board is the third kind, and it is dropped by its
+  // name rather than by a list: `qimen.method` in an address that says the
+  // board is at `/it/liuren` is a parameter that section does not read, and
+  // `belongsTo` is the whole of the test. `nianming.count` belongs to no
+  // section and leaves with the birth it is half of, which is why it is not in
+  // the list below any more.
+  const dropped = ['lang', 'asked', 'about', 'born', 'bornTime', 'bornTz'];
   if (!genderBelongsToBoard(section)) dropped.push('gender');
   for (const only of dropped) {
     page.searchParams.delete(only);
+  }
+  for (const name of [...page.searchParams.keys()]) {
+    if (!belongsTo(name, section)) page.searchParams.delete(name);
   }
   // What the board is a function of, where the request left it unsaid — and
   // only there. `/api/liuren/prompt?locationId=3169070` means now, and an
@@ -399,19 +412,22 @@ export function readOptions(params: URLSearchParams): ChartOptions {
   // Strict, unlike the three above: their misspellings fall back to defaults
   // that show in the answer, but a chart cast by the wrong method looks right
   // and is not. maoshan passes through and the engine refuses it with a 501.
-  const method = params.get('method');
+  const method = params.get(named('qimen', 'method'));
   if (method !== null) {
     if (method !== 'chaibu' && method !== 'zhirun' && method !== 'maoshan') {
-      throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: 'method', value: method });
+      throw new ChartError('UNKNOWN_IDENTIFIER', {
+        parameter: named('qimen', 'method'),
+        value: method,
+      });
     }
     options.method = method;
   }
 
   // Strict for the same reason: it moves the ju on most days.
-  const yuan = params.get('yuan');
+  const yuan = params.get(named('qimen', 'yuan'));
   if (yuan !== null) {
     if (yuan !== 'term' && yuan !== 'futou') {
-      throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: 'yuan', value: yuan });
+      throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: named('qimen', 'yuan'), value: yuan });
     }
     options.yuan = yuan;
   }
@@ -421,12 +437,63 @@ export function readOptions(params: URLSearchParams): ChartOptions {
   // different 神煞 under the same address, so the parameter has to travel in
   // the URL from before there is a second. The engine refuses anything else
   // with a 501 rather than quietly serving 協紀's.
+  // Bare, like the pillars' three and unlike a board's: the almanac is not a
+  // board. It is a page a chart is read *against*, printed beside every one of
+  // them, so its register belongs to no section in particular and collides
+  // with nothing.
   const shensha = params.get('shensha');
   if (shensha !== null) {
     if (shensha !== 'xieji') {
       throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: 'shensha', value: shensha });
     }
     options.shensha = shensha;
+  }
+
+  return options;
+}
+
+/**
+ * The 紫微斗數 divergences an address states, with the board's own defaults.
+ *
+ * One reader for four endpoints, which is what the 六壬 and 七政四餘 halves of
+ * this already do at their own: a board that came back cut at 立春 through
+ * `/text` and at 正月初一 through `/api` would be two boards under one address.
+ *
+ * `yearBoundary` is the one a reader can move, and it is not the pillars'. The
+ * pillars are cut at 立春 because that is what an almanac printing four
+ * pillars does; this board counts its month and its day on the lunar calendar,
+ * so the year that opened at 正月初一 is the reckoning coherent with the rest
+ * of it — and the year stem is what seats the four transformations, so a birth
+ * in the weeks between the two lays out two different boards. Hence the prefix
+ * on the wire: `ziwei.yearBoundary` and the pillars' `yearBoundary` are two
+ * questions that were one word.
+ */
+export function readZiweiOptions(params: URLSearchParams): ZiweiOptions {
+  const options: ZiweiOptions = { ...DEFAULT_ZIWEI_OPTIONS };
+
+  const gender = params.get('gender');
+  if (gender === 'male' || gender === 'female') options.gender = gender;
+
+  const table = params.get(named('ziwei', 'sihua'));
+  if (table !== null) {
+    if (table !== 'quanshu' && table !== 'zuofu') {
+      throw new ChartError('UNKNOWN_IDENTIFIER', {
+        parameter: named('ziwei', 'sihua'),
+        value: table,
+      });
+    }
+    options.sihua = table;
+  }
+
+  const cut = params.get(named('ziwei', 'yearBoundary'));
+  if (cut !== null) {
+    if (cut !== 'lichun' && cut !== 'chunjie') {
+      throw new ChartError('UNKNOWN_IDENTIFIER', {
+        parameter: named('ziwei', 'yearBoundary'),
+        value: cut,
+      });
+    }
+    options.yearBoundary = cut;
   }
 
   return options;
@@ -508,9 +575,12 @@ export function readNianming(
     throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: 'gender', value: gender });
   }
 
-  const count = params.get('years');
+  const count = params.get(named('nianming', 'count'));
   if (count !== null && count !== 'sui' && count !== 'turns') {
-    throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: 'years', value: count });
+    throw new ChartError('UNKNOWN_IDENTIFIER', {
+      parameter: named('nianming', 'count'),
+      value: count,
+    });
   }
   const options: NianmingOptions = { count: count ?? 'sui' };
 
@@ -522,7 +592,7 @@ export function readNianming(
 
 /** The count of years the 行年 steps by, read the same way everywhere. */
 export function readNianmingOptions(params: URLSearchParams): NianmingOptions {
-  const count = params.get('years');
+  const count = params.get(named('nianming', 'count'));
   return { count: count === 'turns' ? 'turns' : 'sui' };
 }
 

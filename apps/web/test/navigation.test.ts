@@ -44,12 +44,12 @@ describe('what a section link carries across', () => {
   });
 
   it('carries no birth put inside another board, wherever it goes', () => {
-    const setup = `${SETUP}&born=1990-06-01&bornTime=03:15&bornTz=Europe/Rome&years=turns`;
+    const setup = `${SETUP}&born=1990-06-01&bornTime=03:15&bornTz=Europe/Rome&nianming.count=turns`;
 
     for (const section of SECTIONS) {
       const carried = carriedSearch(setup, section.slug);
 
-      for (const kept of ['born=', 'bornTime=', 'bornTz=', 'years=']) {
+      for (const kept of ['born=', 'bornTime=', 'bornTz=', 'nianming.count=']) {
         expect(carried, `${section.slug} carries ${kept}`).not.toContain(kept);
       }
     }

@@ -2,10 +2,12 @@
   import { goto, invalidateAll } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
+  import { carried } from '$lib/parameters';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import { step, type Unit, type Wall } from '$lib/step';
   import ChartReading from '$lib/components/ChartReading.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
+  import Schools from '$lib/components/Schools.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
   import FormPanel from '$lib/components/FormPanel.svelte';
@@ -103,7 +105,9 @@
    * handed over under one boundary and read under another would come back
    * with a different day pillar than the chart was cast on.
    */
-  const pillars = $derived(momentQuery({ ...data.moment, ...cast, method: '', yuan: '' }));
+  const pillars = $derived(
+    momentQuery({ ...data.moment, ...cast, chosen: carried(data.moment.chosen, 'bazi') }),
+  );
 
   /**
    * Where each step stands, shown on the step that moves it.
@@ -200,9 +204,8 @@
       bind:longitude={asked.longitude}
       bind:timezone={asked.timezone}
       bind:trueSolarTime={asked.trueSolarTime}
-      bind:dayBoundary={asked.dayBoundary}
-      bind:method={asked.method}
-      bind:yuan={asked.yuan}
+      bind:chosen={asked.chosen}
+      board="qimen"
     />
     <!-- Nothing here can be missing: a chart of no date is the chart of now. -->
     <SubmitButton {t} label="cli.heading.qimen" {busy} />
@@ -315,6 +318,7 @@
         signpost to a door in the same room is furniture.
       -->
       <ChartReading {chart} {t} wide />
+      <Schools {t} board="qimen" options={chart.options} layers={chart.moment.options} />
     </div>
   </section>
 {/if}

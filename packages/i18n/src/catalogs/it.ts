@@ -1111,6 +1111,9 @@ export const it: Record<MessageKey, string> = {
   'meta.title.notes.refusals': 'Che cosa questo progetto non calcola',
   'meta.description.notes.refusals':
     'Che cosa manca qui deliberatamente – lo yongshen, una classifica delle ore, una data per un esito – chi lo chiede, e perché non viene calcolato.',
+  'meta.title.notes.schools': 'Le scuole, e che cosa serve per nominarne una',
+  'meta.description.notes.schools':
+    'Ogni tavola è stesa da una scuola, compresa quella che nessuno ha scelto. Che cosa afferma un valore così, e che cosa deve lo scaffale per dichiararlo.',
   'meta.title.notes.readings': 'Consegnare una tavola a un modello',
   'meta.description.notes.readings':
     'Che cosa succede quando una tavola arriva a un modello: una sola tavola e mai due, calcolata e mai una data, e che cosa un prompt commissiona e vieta.',
@@ -1150,15 +1153,31 @@ export const it: Record<MessageKey, string> = {
   'form.momentNow': 'Torna ad adesso',
   'form.calculation': 'Come si calcola',
   'form.trueSolarTime': 'Correggi all’ora solare vera',
-  'form.dayBoundary': 'Il giorno comincia',
-  'form.dayBoundary.zishi': 'all’ora del Topo 子時 zǐshí, alle 23:00',
-  'form.dayBoundary.midnight': 'a mezzanotte, alle 00:00',
-  'form.method': 'Il ju si determina',
-  'form.method.chaibu': 'per terzi del termine: 拆補 chāibǔ',
-  'form.method.zhirun': 'per blocchi interi, con l’intercalazione: 置閏 zhìrùn',
-  'form.yuan': 'Con chaibu, il terzo del termine si conta',
-  'form.yuan.term': 'dall’istante in cui il termine è cominciato',
-  'form.yuan.futou': 'dal giorno, per tratti di cinque: 符頭 fútóu',
+  'form.pillars.yearBoundary': 'L’anno dei pilastri comincia',
+  'form.pillars.yearBoundary.lichun': 'a 立春 lìchūn, dove gira l’anno solare',
+  'form.pillars.yearBoundary.chunjie':
+    'a 正月初一 zhēngyuèchūyī, il primo giorno dell’anno lunare',
+  'label.contested': 'qui le scuole divergono',
+  'form.ziwei.sihua': 'Le quattro trasformazioni seguono',
+  'form.ziwei.sihua.quanshu': 'il 《紫微斗數全書》 zǐwēidǒushùquánshū, che dà a 壬 rén il suo 科 kē a 天府 tiānfǔ',
+  'form.ziwei.sihua.zuofu': 'la lettura che insegnano due scuole moderne, che sposta quel 科 kē a 左輔 zuǒfǔ',
+  'form.ziwei.sihua.note':
+    'Una cella su dieci, ed è tutto ciò che lo scaffale attesta: il manuale 中州派 zhōngzhōupài la stampa, e un manuale 北派 běipài la traccia due volte in esempi svolti — contro una lettura che entrambe le edizioni del 《全書》 quánshū e la recensione Ming portano. Tutto il resto della tavola è quello del libro sotto l’uno o l’altro valore.',
+  'form.ziwei.yearBoundary': 'L’anno di questa tavola comincia',
+  'form.ziwei.yearBoundary.lichun': 'a 立春 lìchūn, dove gira l’anno solare',
+  'form.ziwei.yearBoundary.chunjie':
+    'a 正月初一 zhēngyuèchūyī, il primo giorno dell’anno lunare',
+  'form.ziwei.yearBoundary.note':
+    'Due tavole sulla stessa pagina tagliano l’anno in due punti, e nessuno dei due è uno sbaglio. I pilastri girano a 立春 lìchūn, come fa ogni almanacco che stampa quattro pilastri; questa tavola conta il mese e il giorno sul calendario lunare, e l’anno aperto a 正月初一 zhēngyuèchūyī, il computo coerente con il resto. Una nascita nelle settimane fra i due dispone due tavole diverse, dato che è il tronco dell’anno a insediare le quattro trasformazioni.',
+  'form.pillars.dayBoundary': 'Il giorno comincia',
+  'form.pillars.dayBoundary.zishi': 'all’ora del Topo 子時 zǐshí, alle 23:00',
+  'form.pillars.dayBoundary.midnight': 'a mezzanotte, alle 00:00',
+  'form.qimen.method': 'Il ju si determina',
+  'form.qimen.method.chaibu': 'per terzi del termine: 拆補 chāibǔ',
+  'form.qimen.method.zhirun': 'per blocchi interi, con l’intercalazione: 置閏 zhìrùn',
+  'form.qimen.yuan': 'Con chaibu, il terzo del termine si conta',
+  'form.qimen.yuan.term': 'dall’istante in cui il termine è cominciato',
+  'form.qimen.yuan.futou': 'dal giorno, per tratti di cinque: 符頭 fútóu',
   'form.gender': 'Sesso: ne dipende solo la direzione dei cicli decennali',
   'form.gender.unset': 'non indicato',
   'form.gender.male': 'maschile',
@@ -1412,6 +1431,14 @@ export const it: Record<MessageKey, string> = {
   'notes.askedBy': 'Lo chiede',
   'notes.checked': 'Ultima verifica sul motore il {date}.',
 
+  'notes.refusals.twoSchools.title': 'Due scuole di un’arte, in una lettura',
+  'notes.refusals.twoSchools.asks': 'chiunque abbia appena ricevuto la scelta.',
+  'notes.refusals.twoSchools.body':
+    'Due scuole di un’arte stese sullo stesso istante non sono due testimoni: condividono i pilastri, il ju o i seggi, e quasi tutto ciò di cui sono fatte, quindi ciò su cui concordano è la parte che nessuna delle due ha mai discusso. Una tavola è tirata da una scuola e letta come sua. Confrontarne due è una cosa vera da fare — è la ragione per cui la scelta esiste — e si fa stendendo ciascuna e leggendo ciascuna, non fondendole né offrendo il loro accordo come prova.',
+  'notes.refusals.schoolDoctrine.title': 'La dottrina di una scuola, nella voce di questo motore',
+  'notes.refusals.schoolDoctrine.asks': 'chiunque voglia sapere che cosa significa la tavola che ha scelto.',
+  'notes.refusals.schoolDoctrine.body':
+    'Una scuola insegna a che cosa serve una configurazione, e la tentazione è spedirlo accanto ai valori che ha mosso. Ciò che può viaggiare è quello che già viaggia per le condizioni del 太乙 tàiyǐ, entro gli stessi quattro limiti: le parole della fonte, una clausola e non un paragrafo, sempre glossata, e sempre attaccata a qualcosa che il motore ha calcolato. Un verdetto nella prosa di questo motore è un verdetto che niente può mettere alla prova, mentre una citazione è verificabile due volte: o è nel testo o non c’è, ed è di quella scuola o non lo è.',
   'notes.refusals.title': 'Che cosa non viene calcolato',
   'notes.refusals.lead':
     'Il motore non risponde a nessuna domanda, che non è come dire che non dica nulla. Quel che segue è una voce per ciascuno: che cosa viene rifiutato, chi lo chiede, e perché non è qui.',
@@ -1479,6 +1506,33 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.twoBoards.body':
     'Una consultazione prende un solo strumento, scelto prima della pressione e in nessun momento dopo. Dove due tavole concordano è spesso un fatto solo stampato due volte – una carta di dunjia e un quadro di 六壬 liùrén condividono il pilastro del giorno, la decade, i rami vuoti e cinque degli otto spiriti – e un modello che lo legga come conferma conta un dato per due con assoluta sicurezza.',
 
+  'notes.answers.schools':
+    'Che cos’è qui una scuola, che cosa serve per nominarne una, e quale ha steso la tavola che stai guardando.',
+  'notes.schools.title': 'Le scuole, e che cosa serve per nominarne una',
+  'notes.schools.lead':
+    'Scuole diverse traggono tavole diverse dallo stesso istante. Ogni divergenza fra praticanti è un parametro con un default dichiarato, presente nel tipo d’ingresso fin dalla prima versione, e un valore che questo motore non calcola viene rifiutato per nome invece che sostituito in silenzio con quello che ha.',
+  'notes.schools.implicit':
+    'Il che vuol dire che ogni tavola è stesa da una scuola, compresa quella che nessuno ha scelto. Ciò che è stato seguito è dichiarato sotto la tavola, sull’immagine, nel trascritto e dentro un prompt — il default insieme agli altri, perché chi non ha mosso niente è esattamente chi non sa che una scelta è stata fatta per lui.',
+
+  'notes.schools.claim.title': 'Che cosa afferma un valore intestato a una scuola',
+  'notes.schools.claim.body':
+    'Non che la scuola abbia ragione. Che questo è ciò che quella scuola insegna, e che il motore lo trascrive. Sono i due modi in cui un valore così può essere sbagliato — il lignaggio nominato male, la tavola copiata male — e nessuno dei due ha bisogno di una seconda tradizione per essere colto. Per questo la richiesta fatta a una quantità che il motore presenta come la risposta non è la richiesta fatta a una che presenta come quella di qualcuno.',
+  'notes.schools.standard.title': 'Che cosa deve lo scaffale prima che se ne dichiari una',
+  'notes.schools.standard.body':
+    'Un testimone che sia della scuola stessa, o che dichiari l’insegnamento di quella scuola e lo dica; la lettura intestata a quella scuola, nelle stesse parole con cui il valore la porta; che cosa muove, esattamente, messo accanto a ciò che il motore già calcola; e un rung, che pesa la trascrizione e non la dottrina. Un riassunto moderno senza un testo dietro non è nessuna di queste cose. E nemmeno l’ampiezza del disaccordo lo è: un lignaggio che sposta una cella sola e lascia stare il resto traccia comunque una tavola diversa, e due praticanti ne tengono comunque i lati opposti.',
+  'notes.schools.rung.title': 'Di chi è una regola, accanto a quanto è attestata',
+  'notes.schools.rung.body':
+    'La scala delle prove ordina un rischio: che una regola tramandata sia propria dell’unico lignaggio che la trasmette. Di chi sia la regola risponde a un’altra domanda, e non può diventare un rung senza rivendicare un tipo di controllo che non ha. Perciò il registro la porta in una colonna sua, accanto al rung e mai dentro — e la maggior parte delle righe legge un trattino, che è un’affermazione e non una casella vuota: la quantità è portata come propria della tradizione e non come la lettura di una parte.',
+  'notes.schools.default.title': 'Un default dichiarato non è una scuola nascosta',
+  'notes.schools.default.body':
+    'Ogni divergenza ha un default e deve averlo: un indirizzo che non nomina nessun metodo risponde lo stesso, e così una sezione nuda. Non ne segue che il default possa tacere. Dove il motore calcola più di un valore, quello in vigore è dichiarato ovunque sia la tavola — sotto di essa nella pagina, sotto la griglia nel disegno, sotto i pilastri nel trascritto, nella risposta via API — che qualcuno l’abbia mosso o no. I controlli restano dove un lettore li apre apposta; è la lettura che non deve poter passare per senza scuola.',
+  'notes.schools.axes.title': 'Una scuola è assi, mai un pacchetto',
+  'notes.schools.axes.body':
+    'Una scuola di solito tocca più di uno di questi assi insieme, e la forma comoda è un nome unico che imposta gli altri. Il motore la rifiuta: un pacchetto è una tabella, una tabella si può modificare, e una tavola che portasse il nome del pacchetto invece dei valori per cui stava si riprodurrebbe diversa il giorno in cui la tabella si muove, senza che il suo stesso risultato lo dica. Un modulo può offrire la scorciatoia e riempire i campi con essa: quello che esce dal modulo sono comunque i campi, e chi legge vede che cosa è stato impostato e può muovere ognuno di essi.',
+  'notes.schools.state.title': 'Quante sono è uno stato, non un disegno',
+  'notes.schools.state.body':
+    'Niente qui è scritto come se una tavola avesse un metodo solo. Quello che costa aggiungere una scuola è un valore nella dichiarazione del motore, una glossa in ogni lingua, una riga nel registro e un argomento che la regga — e nessun controllo, dato che ciò che un modulo offre si legge dalla dichiarazione. Una scuola che avesse bisogno di un paragrafo scritto a mano è una scuola la cui dichiarazione manca di un campo, e la correzione sta a monte di questa pagina.',
+
   'notes.readings.title': 'Consegnare una tavola a un modello',
   'notes.readings.lead':
     'Che cosa un prompt commissiona, che cosa vieta, e che cosa non esce mai dal tuo browser.',
@@ -1541,12 +1595,17 @@ export const it: Record<MessageKey, string> = {
     'Il motore porta la quantità e nessuna fonte la sostiene. Dove accade lo dice anche il disegno: quei nomi restano senza colore finché una non arriva.',
   'notes.ladder.notAVerdict':
     'Un rung non è un verdetto. Dice che cosa potrebbe andare storto senza che nessuno se ne accorga, che è cosa diversa da quanto storto sia qualcosa: il telaio delle ventotto dimore è retto da sovradeterminazione ed è esatto a un settantesimo della domanda più stretta che gli si ponga mai. E un rung non è nemmeno una proprietà della quantità: si sposta quando si sposta lo scaffale, in entrambe le direzioni, e una fonte che si limita a confermare lo sposta quanto una che contraddice.',
+  'notes.ladder.attributed':
+    'La colonna della scuola dice sotto quale valore dichiarato sta una quantità, nelle parole con cui lo si passa: huoling: fixed, yuan: futou. Un trattino dice che la quantità è portata come propria della tradizione e non come la lettura di una parte, ed è un’affermazione, non una casella lasciata vuota. Di chi sia una regola e quanto sia attestata sono domande diverse, perciò le due colonne stanno accanto e nessuna delle due sposta l’altra.',
   'notes.ladder.quoted':
     'La tavola qui sotto è citata e non tradotta. È un registro di citazioni – le quantità come le nomina il motore, edizioni, capitoli, i programmi su cui ciascuna è stata misurata e gli intervalli su cui sono stati eseguiti – e questo progetto lo tiene in inglese, la lingua del suo codice sorgente. Ciò che è tradotto è tutto quello da cui si decide: i rung qui sopra, che cosa significa ciascuno, e che cos’è ogni strato.',
   'notes.references.title': 'I programmi su cui è stato verificato',
   'notes.references.lead':
     'Implementazioni indipendenti, ciascuna lavoro di qualcun altro, eseguite sugli intervalli che le righe qui sopra dichiarano. I testi citati accanto non sono collegati: dare un indirizzo a un testo è dire quale edizione.',
   'notes.column.quantity': 'Quantità',
+  // «Scuola» e non «tradizione»: quello che la colonna dichiara è di chi è la
+  // regola, e chi la segue lo dice come un impegno che potrebbe difendere.
+  'notes.column.school': 'Scuola',
   // «Piolo» è la traduzione giusta di rung ed è la parola sbagliata qui. La
   // scala è un'immagine che si legge da sé in entrambe le lingue — una scala
   // ha pioli — ma il rung è il termine che il lettore va a cercare, e lo
@@ -1854,6 +1913,9 @@ export const it: Record<MessageKey, string> = {
   'cli.heading.weighed': 'Come vi stanno',
   'cli.heading.reading': 'Lettura',
   'cli.heading.luck': 'Cicli decennali',
+  // «Seguite» e non «usate»: una scuola si segue, ed è un impegno che chi la
+  // segue potrebbe difendere. Il default è nell'elenco come gli altri.
+  'cli.heading.divergences': 'Scuole seguite',
   'cli.heading.terms': 'Termini solari del {year}',
   'cli.heading.calendar': 'Data lunare',
   'cli.heading.patterns': 'Configurazioni',
@@ -1885,10 +1947,10 @@ export const it: Record<MessageKey, string> = {
   'form.instrument.ziwei': 'I seggi in cui una vita è contata',
   'form.instrument.bazi': 'Di che cosa è fatta una vita, all’ora di una nascita',
   'form.instrument.taiyi': 'Come sta un anno, per tutti quelli che ci stanno dentro',
-  'form.guiren': 'Quale verso insedia il nobile (貴人 guìrén)',
-  'form.guiren.chou': '甲 jiǎ con 戊 wù e 庚 gēng, a 丑 chǒu e 未 wèi',
-  'form.guiren.wei': '甲 jiǎ da solo, a 未 wèi e 丑 chǒu',
-  'form.guiren.note': 'Muove i dodici generali e lascia stare le tre trasmissioni.',
+  'form.liuren.guiren': 'Quale verso insedia il nobile (貴人 guìrén)',
+  'form.liuren.guiren.chou': '甲 jiǎ con 戊 wù e 庚 gēng, a 丑 chǒu e 未 wèi',
+  'form.liuren.guiren.wei': '甲 jiǎ da solo, a 未 wèi e 丑 chǒu',
+  'form.liuren.guiren.note': 'Muove i dodici generali e lascia stare le tre trasmissioni.',
   // Resta «n/a» e non diventa «n/d», che è la sigla italiana.
   //
   // Non è una parola tradotta a metà: è un codice, come lo sono `CC BY 4.0` e
@@ -1955,11 +2017,11 @@ export const it: Record<MessageKey, string> = {
   // Detto una volta, dove chi legge può soppesarlo. Si veda `docs/history/`, fase 23.
   'cli.value.ziweiSource':
     'collocazioni dal 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr in ogni punto: la trasmissione delle quattordici stelle, non quella delle diciotto, i 十八飛星 shíbāfēixīng che portano 《全集》 quánjí e 《捷覽》 jiélǎn. Le sue tavole si scostano da quelle moderne in quattro luoghi – due stelle slegate dall’ora, una coppia insediata dallo stelo, una divinità presa dall’anno e una delle quattro trasformazioni – e in ognuno si segue questo libro, con lo scostamento registrato',
-  'form.luohou': 'Quale nodo è 羅睺 luóhóu',
-  'form.luohou.descending': 'il nodo discendente: la legge degli astrologi',
-  'form.luohou.ascending': 'il nodo ascendente: 湯若望 Tāng Ruòwàng e il 時憲曆 shíxiànlì',
+  'form.qizheng.luohou': 'Quale nodo è 羅睺 luóhóu',
+  'form.qizheng.luohou.descending': 'il nodo discendente: la legge degli astrologi',
+  'form.qizheng.luohou.ascending': 'il nodo ascendente: 湯若望 Tāng Ruòwàng e il 時憲曆 shíxiànlì',
   'form.copyStars': 'Copia la tavola',
-  'form.luohou.note':
+  'form.qizheng.luohou.note':
     'Scambia i due nomi e non muove altro: i due nodi sono i capi di una sola linea, a mezzo giro l’uno dall’altro. Il default è quello che gli astrologi hanno tenuto, che è il rovescio della convenzione indiana.',
   // Stampato sotto ogni tavola, perché a chi conta quattro nomi e ne trova
   // tre la ragione è dovuta sulla pagina, non in un documento.

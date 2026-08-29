@@ -145,6 +145,27 @@ message printed**, checked per art in `apps/web/test/api.test.ts`, with the
 年命 the one declared difference. A list holds until somebody adds a parameter
 to one of the six boards and to nothing else.
 
+## The school travels with the board
+
+A board cast by a school and handed over without saying so is the failure
+`docs/refusals.md` describes from the other end: a model told this is *the*
+board of an instant reasons about it as though no choice had been made, and a
+reader holding the transcript has no way back to what produced it.
+
+So the value in force on every parameter with more than one implemented value
+is written into the transcript, inside the fence, with the board — the default
+included, because a default nobody moved is still the school the board was laid
+by. It is named as the parameter's own name and the value's, the way everything
+else here is named, and it is **derived from the declaration rather than
+written per board**: a school that lands gains its line without anybody
+remembering to add one. `docs/parameters.md` § "A declared default is not a
+hidden school" is the rule; this is where it reaches a prompt.
+
+**And a prompt carries one school as it carries one board.** Two boards of one
+instant are refused because their agreement is one fact printed twice; two
+schools of one art are refused for the sharper form of the same reason, since
+what they share is not most of a reading but nearly all of it.
+
 ## What a 卜 prompt commissions
 
 A chart **withholds the 用神** and says so: which palace bears on the question

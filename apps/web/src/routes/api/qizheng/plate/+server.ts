@@ -1,4 +1,5 @@
 import {
+  divergenceLines,
   DEFAULT_QIZHENG_OPTIONS,
   qizhengBoard,
   qizhengLabels,
@@ -15,6 +16,7 @@ import {
 } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
+import { named } from '$lib/parameters';
 
 /**
  * `GET /api/qizheng/plate?date=1968-03-12&time=14:30&locationId=3169070`
@@ -37,7 +39,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const { moment } = readMoment(url.searchParams);
 
     const options: QizhengOptions = { ...DEFAULT_QIZHENG_OPTIONS };
-    const luohou = url.searchParams.get('luohou');
+    const luohou = url.searchParams.get(named('qizheng', 'luohou'));
     if (luohou === 'descending' || luohou === 'ascending') options.luohou = luohou;
 
     const board = qizhengBoard(
@@ -49,6 +51,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const { size, scheme } = readPlateOptions(url.searchParams);
 
     const svg = renderQizhengSvg(board, {
+      schools: divergenceLines('qizheng', options, moment, t),
       size,
       scheme,
       labels: qizhengLabels(t),

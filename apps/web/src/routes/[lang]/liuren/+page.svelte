@@ -7,6 +7,7 @@
   import MomentForm from '$lib/components/MomentForm.svelte';
   import LiurenReading from '$lib/components/LiurenReading.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
+  import Schools from '$lib/components/Schools.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
@@ -17,10 +18,8 @@
   // svelte-ignore state_referenced_locally
   let asked = $state<MomentInput>({ ...data.moment });
   // svelte-ignore state_referenced_locally
-  let guiren = $state(data.guiren);
   $effect(() => {
     asked = { ...data.moment };
-    guiren = data.guiren;
   });
 
   const board = $derived(data.result?.liuren);
@@ -44,7 +43,7 @@
   const address = $derived(
     momentQuery(
       { ...data.moment, date: moment?.input.date ?? data.moment.date, time: moment?.input.time ?? data.moment.time },
-      { guiren: data.guiren, lang: t.locale },
+      { lang: t.locale },
     ),
   );
 
@@ -72,7 +71,7 @@
     event.preventDefault();
     busy = true;
     try {
-      const query = momentQuery(asked, { guiren });
+      const query = momentQuery(asked);
       await goto(`${page.url.pathname}${query ? `?${query}` : ''}`, {
         replaceState: true,
         noScroll: true,
@@ -103,8 +102,8 @@
       bind:longitude={asked.longitude}
       bind:timezone={asked.timezone}
       bind:trueSolarTime={asked.trueSolarTime}
-      bind:dayBoundary={asked.dayBoundary}
-      bind:guiren
+      bind:chosen={asked.chosen}
+      board="liuren"
     />
     <SubmitButton {t} label="cli.heading.liuren" {busy} />
   {/snippet}
@@ -140,6 +139,7 @@
 
     <div>
       <LiurenReading {board} {t} {moment} />
+      <Schools {t} board="liuren" options={board.options} layers={moment.options} />
 
     </div>
   </div>

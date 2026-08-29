@@ -7,6 +7,7 @@
   import FormPanel from '$lib/components/FormPanel.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
+  import Schools from '$lib/components/Schools.svelte';
   import PillarPlate from '$lib/components/PillarPlate.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
@@ -108,7 +109,8 @@
       bind:longitude={asked.longitude}
       bind:timezone={asked.timezone}
       bind:trueSolarTime={asked.trueSolarTime}
-      bind:dayBoundary={asked.dayBoundary}
+      bind:chosen={asked.chosen}
+      board="bazi"
     />
     <label>
       <!-- Asked for, never assumed: only the direction of the cycles needs
@@ -145,6 +147,7 @@
     <!-- The four pillars at a glance, then the same four read out in full. -->
     <PillarPlate pillars={result.bazi.pillars} {t} />
     <BaziReading bazi={result.bazi} {t} />
+    <Schools {t} board="bazi" layers={result.moment.options} />
 
     <!--
       The calendar the pillars were cast from, and here the case is stronger

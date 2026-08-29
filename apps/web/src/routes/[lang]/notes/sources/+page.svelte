@@ -62,6 +62,7 @@
          not a property of it either — it moves when the shelf does. -->
     <p class="caveat"><Named text={t('notes.ladder.notAVerdict')} /></p>
     <p class="caveat"><Named text={t('notes.ladder.quoted')} /></p>
+    <p class="caveat"><Named text={t('notes.ladder.attributed')} /></p>
   </section>
 
   {#each data.layers as layer (layer.id)}
@@ -80,6 +81,7 @@
         <thead>
           <tr>
             <th scope="col">{t('notes.column.quantity')}</th>
+            <th scope="col">{t('notes.column.school')}</th>
             <th scope="col" class="numeric">{t('notes.column.rung')}</th>
             <th scope="col">{t('notes.column.standsOn')}</th>
             <th scope="col">{t('notes.column.checkedAgainst')}</th>
@@ -89,6 +91,10 @@
           {#each layer.quantities as row (row.quantity)}
             <tr>
               <th scope="row" lang="en">{row.quantity}</th>
+              <!-- The pair as the register writes it, which is the pair a
+                   caller passes. Glossed here it would be a third name for one
+                   commitment. -->
+              <td class="school" lang="en">{row.school}</td>
               <td class="numeric">
                 <span class="rung" title={t(`notes.rung.${key(row.rung)}` as MessageKey)}>
                   {row.rung}
@@ -189,6 +195,10 @@
   tbody tr { border-bottom: 1px solid var(--rule); }
   tbody th { font-weight: 500; width: 22%; }
   .numeric { width: 3.5rem; }
+  /* Narrow, and faint where it says nothing: most quantities stand under no
+     declared value and a column of dashes should not read as a column of
+     data. */
+  .school { width: 9rem; color: var(--faint); }
 
   /*
    * It belongs on a sheet, and it is the page of this section most likely to

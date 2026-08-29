@@ -13,21 +13,17 @@ import type { PageLoad } from './$types';
  */
 export const load: PageLoad = async ({ url, fetch, parent }) => {
   const { locale } = await parent();
-  const { input, locationId } = readMoment(url);
+  const { input, locationId } = readMoment(url, 'qizheng');
   const { place, failure: unknownPlace } = await lookupPlace(fetch, locationId, locale);
   const moment = { ...input, place };
 
-  // The one divergence a reader might move, read from the address like every
-  // other, so that a board is a link.
-  const asked = url.searchParams.get('luohou');
-  const luohou = asked === 'ascending' ? 'ascending' : 'descending';
 
-  if (unknownPlace) return { moment, luohou, result: undefined, failure: unknownPlace };
+  if (unknownPlace) return { moment, result: undefined, failure: unknownPlace };
 
-  const response = await fetch(`/api/qizheng?${momentQuery(moment, { luohou, lang: locale })}`);
+  const response = await fetch(`/api/qizheng?${momentQuery(moment, { lang: locale })}`);
   const body = await response.json();
 
   return response.ok
-    ? { moment, luohou, result: body, failure: undefined }
-    : { moment, luohou, result: undefined, failure: body as Failure };
+    ? { moment, result: body, failure: undefined }
+    : { moment, result: undefined, failure: body as Failure };
 };

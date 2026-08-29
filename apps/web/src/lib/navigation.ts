@@ -1,5 +1,6 @@
 import type { MessageKey } from '@shipan/i18n';
 import { genderBelongsToBoard } from '$lib/instruments';
+import { belongsTo } from '$lib/parameters';
 
 /**
  * The sections, in the order the header lists them, and in two kinds.
@@ -137,13 +138,25 @@ export function href(locale: string, slug: string, search = ''): string {
  * board a question is put to is the consultation's own setup and means
  * nothing in a section that is one board already. Carried, it would write a
  * parameter into every address that reads it that nothing there reads.
+ *
+ * **And a divergence somebody moved on another board is dropped by its name.**
+ * `qimen.method` means nothing on `/it/liuren`, and it used to travel there
+ * and be ignored — harmless while the names were bare and each was one board's
+ * anyway, and not harmless now that three boards declare a `yearBoundary` with
+ * two different defaults. `belongsTo` is the test, so nothing here has to keep
+ * a list of what each section reads: a bare name is a layer's and belongs to
+ * every board, a prefixed one belongs to the board it names, and the pillars'
+ * three cross with the moment as they always did.
  */
 export function carriedSearch(search: string, section: string): string {
   const params = new URLSearchParams(search);
-  const dropped = ['born', 'bornTime', 'bornTz', 'years', 'instrument'];
+  const dropped = ['born', 'bornTime', 'bornTz', 'instrument'];
   if (!genderBelongsToBoard(section)) dropped.push('gender');
   for (const only of dropped) {
     params.delete(only);
+  }
+  for (const name of [...params.keys()]) {
+    if (!belongsTo(name, section)) params.delete(name);
   }
   const query = params.toString();
   return query ? `?${query}` : '';

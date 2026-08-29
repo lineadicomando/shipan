@@ -145,7 +145,10 @@ export function chartTranscript(
 ): string {
   const warnings = formatWarnings(moment, t);
   return [
-    formatMoment(moment, t, { almanac: false }),
+    formatMoment(moment, t, {
+      almanac: false,
+      divergences: { board: 'qimen', options: chart.options },
+    }),
     '',
     formatQimenChart(chart, t),
     // Inside the transcript and not beside it: a 年命 is placed *in* this
@@ -188,7 +191,10 @@ export function liurenTranscript(
 ): string {
   const warnings = formatWarnings(moment, t);
   return [
-    formatMoment(moment, t, { almanac: false }),
+    formatMoment(moment, t, {
+      almanac: false,
+      divergences: { board: 'liuren', options: board.options },
+    }),
     '',
     formatLiuren(board, t),
     ...(warnings ? ['', warnings] : []),
@@ -345,7 +351,10 @@ export function qizhengTranscript(
 ): string {
   const warnings = formatWarnings(moment, t);
   return [
-    formatMoment(moment, t, { almanac: false }),
+    formatMoment(moment, t, {
+      almanac: false,
+      divergences: { board: 'qizheng', options: board.options },
+    }),
     '',
     formatQizheng(board, t),
     ...(warnings ? ['', warnings] : []),
@@ -619,7 +628,10 @@ export function ziweiTranscript(
 ): string {
   const warnings = formatWarnings(moment, t);
   return [
-    formatMoment(moment, t, { almanac: false }),
+    formatMoment(moment, t, {
+      almanac: false,
+      divergences: { board: 'ziwei', options: board.options },
+    }),
     '',
     formatZiwei(board, t),
     ...(warnings ? ['', warnings] : []),
@@ -730,7 +742,10 @@ export function baziTranscript(
 ): string {
   const warnings = formatWarnings(moment, t);
   return [
-    formatMoment(moment, t, { almanac: false }),
+    formatMoment(moment, t, {
+      almanac: false,
+      divergences: { board: 'bazi', options: moment.options },
+    }),
     '',
     formatBazi(bazi, t),
     ...(warnings ? ['', warnings] : []),

@@ -80,23 +80,13 @@ export const PATTERN_IDS = [
   'baihuchangkuang',
 ] as const;
 
-/**
- * The methods a form offers, which are the ones the engine implements.
- *
- * `maoshan` exists in the engine's type and is deliberately not here: an
- * option that can only ever come back as an error is not a choice, and the
- * address still accepts it for whoever asks the API directly.
+/*
+ * The school divergences used to be here too, as two lists — the methods a
+ * form offers and the two readings of the yuan. They are in
+ * `$lib/parameters`, with every other one, because what a form offers is now
+ * read off a declaration rather than written per board: a list of two was
+ * exactly as long as the day dunjia was the only board with a choice on it.
  */
-export const METHODS = ['chaibu', 'zhirun'] as const;
-
-/**
- * Where the third of the term is counted from, under 拆補.
- *
- * Offered only beside `chaibu`: under 置閏 the yuan is the 符頭's because
- * that is what the method is, and a control that changed nothing would be
- * one nobody could use on purpose.
- */
-export const YUAN_READINGS = ['term', 'futou'] as const;
 
 /** The eight outward directions. The centre faces none and is not offered. */
 export const DIRECTIONS = ['n', 'ne', 'e', 'se', 's', 'sw', 'w', 'nw'] as const;
