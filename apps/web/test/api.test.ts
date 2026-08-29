@@ -297,7 +297,7 @@ describe('GET /api/qizheng', () => {
     const kept = (await call(qizheng, MOMENT)).body as {
       qizheng: { remainders: { longitude: number }[] };
     };
-    const flipped = (await call(qizheng, `${MOMENT}&luohou=ascending`)).body as {
+    const flipped = (await call(qizheng, `${MOMENT}&qizheng.luohou=ascending`)).body as {
       qizheng: { remainders: { longitude: number }[] };
     };
 
@@ -690,7 +690,7 @@ describe('GET /api/qimen', () => {
     // 15 June 2024 is ten days into 芒種, lower yuan of a yang chart under
     // chaibu — but its 庚戌 day stands in a block already serving 夏至, six
     // days before the Sun gets there (超神), and 夏至 opens the yin half.
-    const { body } = await call(qimen, `${MOMENT}&method=zhirun`);
+    const { body } = await call(qimen, `${MOMENT}&qimen.method=zhirun`);
     const answer = body as { qimen: { ju: Record<string, unknown>; options: { method: string } } };
 
     expect(answer.qimen.options.method).toBe('zhirun');
@@ -701,12 +701,12 @@ describe('GET /api/qimen', () => {
   it('refuses a method it has never heard of', async () => {
     // Ignoring it instead would cast a chaibu chart under whatever name the
     // address misspelt, and it would look exactly like the chart asked for.
-    const { status, body } = await call(qimen, `${MOMENT}&method=zhirn`);
+    const { status, body } = await call(qimen, `${MOMENT}&qimen.method=zhirn`);
 
     expect(status).toBe(400);
     expect(body).toMatchObject({
       code: 'UNKNOWN_IDENTIFIER',
-      params: { parameter: 'method', value: 'zhirn' },
+      params: { parameter: 'qimen.method', value: 'zhirn' },
     });
   });
 
@@ -724,24 +724,24 @@ describe('GET /api/qimen', () => {
 
     expect((await ju(at)).ju).toMatchObject({ yang: true, number: 2, yuan: 'shang' });
 
-    const futou = await ju(`${at}&yuan=futou`);
+    const futou = await ju(`${at}&qimen.yuan=futou`);
     expect(futou.options.yuan).toBe('futou');
     expect(futou.ju).toMatchObject({ yang: true, number: 8, yuan: 'zhong' });
     expect(futou.ju['term']).toMatchObject({ id: 'xiaohan' });
   });
 
   it('refuses a yuan it has never heard of', async () => {
-    const { status, body } = await call(qimen, `${MOMENT}&yuan=futuo`);
+    const { status, body } = await call(qimen, `${MOMENT}&qimen.yuan=futuo`);
 
     expect(status).toBe(400);
     expect(body).toMatchObject({
       code: 'UNKNOWN_IDENTIFIER',
-      params: { parameter: 'yuan', value: 'futuo' },
+      params: { parameter: 'qimen.yuan', value: 'futuo' },
     });
   });
 
   it('answers maoshan with a refusal, not a substitute', async () => {
-    const { status, body } = await call(qimen, `${MOMENT}&method=maoshan`);
+    const { status, body } = await call(qimen, `${MOMENT}&qimen.method=maoshan`);
 
     expect(status).toBe(501);
     expect(body).toMatchObject({ code: 'METHOD_NOT_IMPLEMENTED' });
@@ -1339,7 +1339,7 @@ describe('the address every board cites', () => {
       // somebody else's chart. The chart is the chart of its moment either
       // way, and the 年命 is written out in the transcript this link travels
       // inside — so the comparison below drops it from both sides.
-      reads: 'method=chaibu&yuan=futou&born=1990-06-01&gender=male',
+      reads: 'qimen.method=chaibu&qimen.yuan=futou&born=1990-06-01&gender=male',
     },
     {
       id: 'liuren',
@@ -1348,7 +1348,7 @@ describe('the address every board cites', () => {
       fixed: AN_INSTANT,
       open: { query: OPEN, pins: 'date=' },
       board: liuren,
-      reads: 'guiren=wei',
+      reads: 'liuren.guiren=wei',
     },
     {
       id: 'taiyi',
@@ -1368,7 +1368,7 @@ describe('the address every board cites', () => {
       fixed: A_BIRTH,
       open: { query: OPEN, pins: 'date=' },
       board: qizheng,
-      reads: 'luohou=ascending',
+      reads: 'qizheng.luohou=ascending',
     },
     {
       id: 'ziwei',

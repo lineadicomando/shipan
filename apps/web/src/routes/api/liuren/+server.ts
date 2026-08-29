@@ -3,9 +3,10 @@ import { json } from '@sveltejs/kit';
 import { momentIsFixed, readMoment } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
+import { named } from '$lib/parameters';
 
 /**
- * `GET /api/liuren?date=2026-08-14&time=14:30&locationId=3169070&guiren=chou`
+ * `GET /api/liuren?date=2026-08-14&time=14:30&locationId=3169070&liuren.guiren=chou`
  *
  * The 大六壬 board for an instant — the second of the 三式, laid on the same
  * moment the first is. It takes the term and the pillars the moment already
@@ -21,7 +22,7 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
     const { moment, label } = readMoment(url.searchParams);
 
     const options: LiurenOptions = { ...DEFAULT_LIUREN_OPTIONS };
-    const guiren = url.searchParams.get('guiren');
+    const guiren = url.searchParams.get(named('liuren', 'guiren'));
     if (guiren === 'chou' || guiren === 'wei') options.guiren = guiren;
 
     const board = liurenBoard(

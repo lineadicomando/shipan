@@ -1,5 +1,6 @@
 import { lookupPlace, momentQuery, readMoment, type Failure } from '$lib/moment';
 import type { PageLoad } from './$types';
+import { named } from '$lib/parameters';
 
 /**
  * Laying is loading, as casting is for the chart.
@@ -18,12 +19,12 @@ export const load: PageLoad = async ({ url, fetch, parent }) => {
 
   // The one divergence a reader might move. Read from the address like every
   // other, so that a board is a link.
-  const asked = url.searchParams.get('guiren');
+  const asked = url.searchParams.get(named('liuren', 'guiren'));
   const guiren = asked === 'wei' ? 'wei' : 'chou';
 
   if (unknownPlace) return { moment, guiren, result: undefined, failure: unknownPlace };
 
-  const response = await fetch(`/api/liuren?${momentQuery(moment, { guiren, lang: locale })}`);
+  const response = await fetch(`/api/liuren?${momentQuery(moment, { [named('liuren', 'guiren')]: guiren, lang: locale })}`);
   const body = await response.json();
 
   return response.ok

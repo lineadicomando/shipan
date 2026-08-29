@@ -42,8 +42,12 @@ arrives through; the pages that link *inside* `docs/` were the ones nothing read
 
 ## The direction, and the nine decisions it forced
 
-The engine has seven parameters with more than one implemented value today, so
-a reader can already choose between schools in seven places. What is coming is
+The engine has eight parameters with more than one implemented value today —
+nine counting `trueSolarTime`, which is a boolean and a preference rather than a
+school — so a reader can already choose in eight places. The count was put at
+seven while this was being planned, and the row that was missed is the one the
+naming rule turns on: 紫微斗數 declares a `yearBoundary` of its own, both values
+computed, defaulting to 正月初一 where the pillars' defaults to 立春. What is coming is
 more of them — including elements a school brings that another does not — and
 the premise is that the choice must be **explicit and conscious** at every
 surface.
@@ -75,7 +79,11 @@ surface, where what leaves it is still the fields.
 `yearBoundary` is declared three times with three different sets of values; only
 the pillars' is settable over HTTP, which is the only reason nothing has broken.
 So a board's parameter is written prefixed with the board — `qimen.method` — and
-only the three of the calendrical layer stay bare. It makes what a section
+what stays bare is what belongs to a layer rather than a board: the pillars'
+three, and the almanac's `shensha`, which is the register of a page every chart
+is read against. A CLI command and an MCP tool need no prefix, each naming one
+board already; the rule was first written as though it covered them, and it
+covers the query string and the addresses built from one. It makes what a section
 carries to the next section derivable instead of listed. There is no
 compatibility to keep: nothing is in production.
 

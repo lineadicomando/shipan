@@ -1,4 +1,5 @@
 import { placeFields, readPlaceInput, type PlaceInput } from './moment.js';
+import { named } from './parameters.js';
 import { PALACES } from './vocabulary.js';
 
 /**
@@ -166,8 +167,8 @@ export function readInterval(url: URL): {
       ...readPlaceInput(params),
       trueSolarTime: params.get('trueSolarTime') !== 'false',
       dayBoundary: params.get('dayBoundary') === 'midnight' ? 'midnight' : 'zishi',
-      method: params.get('method') ?? 'chaibu',
-      yuan: params.get('yuan') ?? 'term',
+      method: params.get(named('qimen', 'method')) ?? 'chaibu',
+      yuan: params.get(named('qimen', 'yuan')) ?? 'term',
     },
     criteria: {
       gate: params.get('gate') ?? '',
@@ -213,8 +214,8 @@ export function intervalQuery(
   if (input.toTime) params.set('toTime', input.toTime);
   if (!input.trueSolarTime) params.set('trueSolarTime', 'false');
   if (input.dayBoundary !== 'zishi') params.set('dayBoundary', input.dayBoundary);
-  if (input.method && input.method !== 'chaibu') params.set('method', input.method);
-  if (input.yuan && input.yuan !== 'term') params.set('yuan', input.yuan);
+  if (input.method && input.method !== 'chaibu') params.set(named('qimen', 'method'), input.method);
+  if (input.yuan && input.yuan !== 'term') params.set(named('qimen', 'yuan'), input.yuan);
 
   for (const [key, value] of Object.entries({
     ...placeFields(input),
@@ -250,8 +251,8 @@ export function chartQuery(
   params.set('time', start.slice(11, 16));
   if (!input.trueSolarTime) params.set('trueSolarTime', 'false');
   if (input.dayBoundary !== 'zishi') params.set('dayBoundary', input.dayBoundary);
-  if (input.method && input.method !== 'chaibu') params.set('method', input.method);
-  if (input.yuan && input.yuan !== 'term') params.set('yuan', input.yuan);
+  if (input.method && input.method !== 'chaibu') params.set(named('qimen', 'method'), input.method);
+  if (input.yuan && input.yuan !== 'term') params.set(named('qimen', 'yuan'), input.yuan);
 
   for (const [key, value] of Object.entries({ ...placeFields(input), ...extra })) {
     if (value) params.set(key, value);

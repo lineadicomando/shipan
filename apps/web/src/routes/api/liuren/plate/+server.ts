@@ -10,6 +10,7 @@ import { renderLiurenSvg } from '@shipan/plate';
 import { momentIsFixed, readLocale, readMoment, readPlateOptions } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
+import { named } from '$lib/parameters';
 
 /**
  * `GET /api/liuren/plate?date=2026-08-14&time=14:30&locationId=3169070`
@@ -25,7 +26,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const { moment } = readMoment(url.searchParams);
 
     const options: LiurenOptions = { ...DEFAULT_LIUREN_OPTIONS };
-    const guiren = url.searchParams.get('guiren');
+    const guiren = url.searchParams.get(named('liuren', 'guiren'));
     if (guiren === 'chou' || guiren === 'wei') options.guiren = guiren;
 
     const board = liurenBoard(

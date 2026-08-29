@@ -3,9 +3,10 @@ import { json } from '@sveltejs/kit';
 import { ephemerisContext, momentIsFixed, readMoment } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
+import { named } from '$lib/parameters';
 
 /**
- * `GET /api/qizheng?date=2026-08-14&time=14:30&locationId=3169070&luohou=descending`
+ * `GET /api/qizheng?date=2026-08-14&time=14:30&locationId=3169070&qizheng.luohou=descending`
  *
  * The 七政四餘 board for an instant: eleven positions read off the ephemeris,
  * each said in both of the frames the board holds — the 宿 with its 入宿度 and
@@ -26,7 +27,7 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
     const { moment, label } = readMoment(url.searchParams);
 
     const options: QizhengOptions = { ...DEFAULT_QIZHENG_OPTIONS };
-    const luohou = url.searchParams.get('luohou');
+    const luohou = url.searchParams.get(named('qizheng', 'luohou'));
     if (luohou === 'descending' || luohou === 'ascending') options.luohou = luohou;
 
     const board = qizhengBoard(

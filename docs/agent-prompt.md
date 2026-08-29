@@ -460,10 +460,21 @@ GET /api/qimen/plate?date=2024-06-15&time=14:00&locationId=1816670
 GET /api/moments?from=2026-09-01&to=2026-09-08&locationId=3169070&gate=kaimen&towards=se,s
 GET /api/qimen/text?date=2024-06-15&time=14:00&locationId=1816670
 GET /api/qimen/prompt?date=2024-06-15&time=14:00&locationId=1816670&asked=true
+GET /api/qimen?date=2024-06-15&time=14:00&locationId=1816670&qimen.method=zhirun
+GET /api/liuren?date=2024-06-15&time=14:00&locationId=1816670&liuren.guiren=wei
 GET /api/qimen?date=2024-06-15&time=14:00&locationId=1816670&born=1968-03-12&gender=female
 GET /api/qimen?date=2024-06-15&time=14:00&latitude=39.9075&longitude=116.3972&timezone=Asia/Shanghai
 GET /api/qimen?date=2024-06-15&time=14:00&locationId=1816670&latitude=39.8000&longitude=116.6000
 ```
+
+**A board's own parameter is written under the board's name** —
+`qimen.method`, `qimen.yuan`, `liuren.guiren`, `qizheng.luohou`,
+`nianming.count` — because one query string is shared by every board and three
+of them declare a `yearBoundary` with different values. What stays bare is the
+layer under all of them, `trueSolarTime`, `yearBoundary` and `dayBoundary`, and
+the almanac's `shensha` beside them. **A tool takes it bare**: `compute_ziwei`
+answers for one board, so its arguments need no prefix, and it is the address
+that does.
 
 A place is a `locationId`, or a `latitude` and a `longitude` with a
 `timezone`, or a `locationId` **refined by** coordinates — the last of those

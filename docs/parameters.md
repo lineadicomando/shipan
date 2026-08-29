@@ -251,19 +251,30 @@ is exactly the breakage this page opens by describing.
 
 ## A board's parameters travel under the board's name
 
-Three of the rows above belong to the layer under every board and are written
-bare: `trueSolarTime`, `yearBoundary`, `dayBoundary`. **Every other parameter is
-a board's own and travels prefixed with it** — `qimen.method`, `qizheng.luohou`,
-`ziwei.leapMonth` — wherever it travels as a string rather than as a field: a
-query string, a shared address, a tool's arguments, a command's flag.
+**A parameter of a board travels prefixed with it** — `qimen.method`,
+`qizheng.luohou`, `ziwei.leapMonth` — and a parameter of a *layer* travels bare.
+The layers are two: the pillars, whose `trueSolarTime`, `yearBoundary` and
+`dayBoundary` say how an instant is read into the four that every board stands
+on, and the 曆注, whose `shensha` names the register of a page every chart is
+read against. Neither is a board, both are under or beside all of them, and
+their names collide with nothing.
 
 A name is unique inside a type and not on a wire. `yearBoundary` is declared
-three times on this page with three different sets of values, because the
-pillars, 太乙 and 紫微斗數 each cut a year and disagree about where; the types
-keep them apart because each board carries its own, and a flat query string does
-not. Settable at once and written bare, `?yearBoundary=chunjie` would mean two
+three times on this page with three different sets of values and two different
+defaults, because the pillars, 太乙 and 紫微斗數 each cut a year and disagree
+about where; the types keep them apart because each board carries its own, and a
+flat query string does not. Written bare, `?yearBoundary=chunjie` would mean two
 things on two pages, and the setup a reader carries from one section to the next
 would write one board's answer into another's.
+
+**Where the board is already named, the prefix is not.** A CLI command lays one
+board and an MCP tool answers for one, so `shipan ziwei --year-boundary lichun`
+and a `compute_ziwei` argument are unambiguous by construction; it is the query
+string, and every address built from one, where all the boards share a
+namespace. `apps/web/src/lib/parameters.ts` is the one place the naming is
+written, `wire` and `named` are how it is asked for, and
+`apps/web/test/parameters.test.ts` holds the client's copy of these rows to the
+engine's declaration.
 
 It also makes the carrying derivable rather than listed: a parameter prefixed
 with a board is dropped when the reader leaves that board, and nothing has to

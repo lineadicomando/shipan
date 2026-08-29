@@ -85,10 +85,10 @@ describe('the criteria as address fields', () => {
     // The page's `load` re-serializes the address it was opened with before
     // asking `/api/moments`, so a parameter the server honours and this type
     // dropped would make the scan answer a different question than the
-    // address states — `yuan=futou` moves the ju on most days, and the times
+    // address states — `qimen.yuan=futou` moves the ju on most days, and the times
     // of day move the two ends of the interval.
     const url = new URL(
-      'http://localhost/it/moments?from=2026-09-01&to=2026-09-08&fromTime=06:00&toTime=18:30&yuan=futou',
+      'http://localhost/it/moments?from=2026-09-01&to=2026-09-08&fromTime=06:00&toTime=18:30&qimen.yuan=futou',
     );
     const { input } = readInterval(url);
 
@@ -97,7 +97,7 @@ describe('the criteria as address fields', () => {
     expect(input.toTime).toBe('18:30');
 
     const out = new URLSearchParams(intervalQuery({ ...input }));
-    expect(out.get('yuan')).toBe('futou');
+    expect(out.get('qimen.yuan')).toBe('futou');
     expect(out.get('fromTime')).toBe('06:00');
     expect(out.get('toTime')).toBe('18:30');
   });
@@ -268,7 +268,7 @@ describe('a chart reached from a scan', () => {
     // the one thing that must survive the crossing between the two sections.
     expect(url.searchParams.get('trueSolarTime')).toBe('false');
     expect(url.searchParams.get('dayBoundary')).toBe('midnight');
-    expect(url.searchParams.get('yuan')).toBe('futou');
+    expect(url.searchParams.get('qimen.yuan')).toBe('futou');
   });
 
   it('carries nothing of the scan itself', () => {

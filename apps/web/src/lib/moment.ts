@@ -2,6 +2,7 @@ import type { Location } from '@shipan/geo';
 import type { MessageKey, MessageParams, Translator } from '@shipan/i18n';
 // Types only: a value import would put the engine in the browser bundle.
 import type { Ganzhi, Ju, PalaceContents, Pattern } from '@shipan/core';
+import { named } from './parameters';
 
 /**
  * The moment, as it travels in the address.
@@ -176,8 +177,8 @@ export function readMoment(url: URL): {
       ...readPlaceInput(params),
       trueSolarTime: params.get('trueSolarTime') !== 'false',
       dayBoundary: params.get('dayBoundary') === 'midnight' ? 'midnight' : 'zishi',
-      method: params.get('method') ?? 'chaibu',
-      yuan: params.get('yuan') ?? 'term',
+      method: params.get(named('qimen', 'method')) ?? 'chaibu',
+      yuan: params.get(named('qimen', 'yuan')) ?? 'term',
     },
     locationId: params.get('locationId'),
   };
@@ -199,8 +200,8 @@ export function momentQuery(
   if (input.time) params.set('time', input.time);
   if (!input.trueSolarTime) params.set('trueSolarTime', 'false');
   if (input.dayBoundary !== 'zishi') params.set('dayBoundary', input.dayBoundary);
-  if (input.method && input.method !== 'chaibu') params.set('method', input.method);
-  if (input.yuan && input.yuan !== 'term') params.set('yuan', input.yuan);
+  if (input.method && input.method !== 'chaibu') params.set(named('qimen', 'method'), input.method);
+  if (input.yuan && input.yuan !== 'term') params.set(named('qimen', 'yuan'), input.yuan);
 
   for (const [key, value] of Object.entries({ ...placeFields(input), ...extra })) {
     if (value) params.set(key, value);

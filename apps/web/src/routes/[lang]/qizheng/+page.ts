@@ -1,5 +1,6 @@
 import { lookupPlace, momentQuery, readMoment, type Failure } from '$lib/moment';
 import type { PageLoad } from './$types';
+import { named } from '$lib/parameters';
 
 /**
  * Placing is loading, as laying is for the 六壬 board.
@@ -19,12 +20,12 @@ export const load: PageLoad = async ({ url, fetch, parent }) => {
 
   // The one divergence a reader might move, read from the address like every
   // other, so that a board is a link.
-  const asked = url.searchParams.get('luohou');
+  const asked = url.searchParams.get(named('qizheng', 'luohou'));
   const luohou = asked === 'ascending' ? 'ascending' : 'descending';
 
   if (unknownPlace) return { moment, luohou, result: undefined, failure: unknownPlace };
 
-  const response = await fetch(`/api/qizheng?${momentQuery(moment, { luohou, lang: locale })}`);
+  const response = await fetch(`/api/qizheng?${momentQuery(moment, { [named('qizheng', 'luohou')]: luohou, lang: locale })}`);
   const body = await response.json();
 
   return response.ok

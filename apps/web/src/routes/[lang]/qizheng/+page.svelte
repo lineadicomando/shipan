@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { named } from '$lib/parameters';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
@@ -48,7 +49,7 @@
         date: moment?.input.date ?? data.moment.date,
         time: moment?.input.time ?? data.moment.time,
       },
-      { luohou: data.luohou, lang: t.locale },
+      { [named('qizheng', 'luohou')]: data.luohou, lang: t.locale },
     ),
   );
 
@@ -76,7 +77,7 @@
     event.preventDefault();
     busy = true;
     try {
-      const query = momentQuery(asked, { luohou });
+      const query = momentQuery(asked, { [named('qizheng', 'luohou')]: luohou });
       await goto(`${page.url.pathname}${query ? `?${query}` : ''}`, {
         replaceState: true,
         noScroll: true,
