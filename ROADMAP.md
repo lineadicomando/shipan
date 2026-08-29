@@ -73,6 +73,15 @@ it by name — which is what 太乙's `ji` did when 卷一 was read.
   question is now answered: a school, never a recension — so the 南陽堂's 庚 is
   a reading of 《全書》 that the register settles and not a value this parameter
   will ever carry. See `docs/parameters.md` § "What is not a parameter".
+  **What has since changed is the criterion, and it reverses the first half of
+  this.** A lineage's whole ten stems was being asked for where the test is
+  whether two practitioners would draw different boards: 中州派 moves 壬's 科 to
+  左輔 and a reader who follows that lineage draws a different 紫微斗數 board
+  from this one. So the divergence owes a value, named for the school that
+  teaches it, and what such a value must show is attribution rather than a
+  second agreeing witness — `docs/parameters.md` § "What a school value must
+  show". The 南陽堂 reading is untouched by this: a recension is still not a
+  school.
 - 曆注 `shensha` — what 《協紀辨方書》 ratifies, until a named lineage has been.
 
 **And one divergence owes a parameter it does not have.** That is a third state

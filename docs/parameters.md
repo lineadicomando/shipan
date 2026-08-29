@@ -72,6 +72,83 @@ refused in `scan.ts` in as many words; 六壬's 課體 reports nothing where the
 sources disagree; `leapMonth`, `huoling` and `centreLodging` each carry their
 alternatives declared and refused. What it found is in `ROADMAP.md` § 1.
 
+## What a school value must show
+
+The three questions say *whether* a divergence owes a value. This says what has
+to be true before one can be declared — and it is a lower bar than the one in
+`docs/sources.md`, on purpose.
+
+**A value named for a school claims attribution, not doctrine.** It does not
+assert that the school is right; it asserts that this is what the school
+teaches and that the engine transcribes it. That claim fails in two ways only,
+the lineage misnamed and the table miscopied, and neither wants a second
+tradition to catch it — so the standard's demand for two agreeing witnesses is
+the demand on a quantity the engine presents as the answer, and it is not the
+demand here. `docs/sources.md` § "What a value named for a school must show"
+states what stands in its place, and `docs/notes.md` says why attribution is
+not a rung.
+
+**Completeness is not the test, and it was being used as one.** A lineage that
+moves a single cell and keeps the rest was read, for a while, as not having a
+table of its own, and no value was declared for it. But a moved cell changes
+what the board shows and two practitioners hold opposite sides of it: the three
+questions admit it, and the size of a disagreement is not one of them. What a
+school owes is a witness saying what it teaches, not a whole apparatus rebuilt
+from nothing.
+
+## How many schools there are is a state and not a design
+
+The twin of what [`i18n.md`](i18n.md) says about the vernaculars, and for the
+same reason. Nothing here may be written as though a board had one method, and
+a sentence saying «the engine computes X» where X is one of several is a
+sentence that goes false the day the second lands rather than one that is wrong
+today.
+
+What a school costs to add is the honest measure of anything built around the
+parameters: a value in `parameters.ts`, a gloss in every catalog, a row in the
+register, an argument in `docs/sources.md` — and no control, because the form
+is built from the declaration. A school that would need a paragraph written by
+hand is a school whose descriptor is missing a field, which is
+[`notes.md`](notes.md) § "Derived beats written" arriving here.
+
+## A school is axes, never a bundle
+
+A school usually touches more than one row at once, and the convenient shape is
+a single `school:` value presetting the rest. Inside `core` it is refused.
+
+A preset is a table and a table can be edited. A chart carrying the name of a
+bundle rather than the values it expanded to would reproduce differently the
+day the bundle changed, and its own output would not say so — which is the
+guarantee this page exists for: a chart is a pure function of its input and of
+the options that produced it, and no function in `core` reads a global default.
+What travels is always the expanded values.
+
+**A bundle at a surface is a different thing and is allowed.** A form may offer
+«as such-and-such a school casts it» and fill the fields with it, because what
+leaves the form is still the fields: the reader sees what was set and can move
+any one of them afterwards. Nothing downstream of the form ever receives the
+name of the bundle.
+
+## A declared default is not a hidden school
+
+Every row here has a default and has to: an address naming no method still
+answers, and so do a tool call, a command and a bare section. What does not
+follow is that the default may be silent.
+
+**Where a parameter has more than one implemented value, the value in force
+travels — always, and whether or not anybody moved it.** In the form it stands
+in the open rather than under a disclosure, saying which school is on; in a
+transcript and inside a prompt's fence it is stated with the board; on a
+drawing it is written under the grid; over the REST API and MCP it is in the
+answer, and the instructions tell a caller to report it. A reader who did not
+choose is exactly the reader who has to be told, and «no school is implicit» is
+a claim about what the software does *for* them and not only about what the
+type declares.
+
+Where a parameter has one implemented value there is nothing to be aware of and
+nothing is said: what would be reported is not a school but the absence of a
+second one, which is `ROADMAP.md` § 1's business.
+
 **Each board carries its own input type. None inherits a default from
 dunjia's.**
 
@@ -171,6 +248,26 @@ answer that commits to no epoch, which is why it is the default and why the
 two 曆 tables can wait. `gong` had to exist because the palaces can be cut by
 the seasons or by the stars and precession has parted the two by weeks — which
 is exactly the breakage this page opens by describing.
+
+## A board's parameters travel under the board's name
+
+Three of the rows above belong to the layer under every board and are written
+bare: `trueSolarTime`, `yearBoundary`, `dayBoundary`. **Every other parameter is
+a board's own and travels prefixed with it** — `qimen.method`, `qizheng.luohou`,
+`ziwei.leapMonth` — wherever it travels as a string rather than as a field: a
+query string, a shared address, a tool's arguments, a command's flag.
+
+A name is unique inside a type and not on a wire. `yearBoundary` is declared
+three times on this page with three different sets of values, because the
+pillars, 太乙 and 紫微斗數 each cut a year and disagree about where; the types
+keep them apart because each board carries its own, and a flat query string does
+not. Settable at once and written bare, `?yearBoundary=chunjie` would mean two
+things on two pages, and the setup a reader carries from one section to the next
+would write one board's answer into another's.
+
+It also makes the carrying derivable rather than listed: a parameter prefixed
+with a board is dropped when the reader leaves that board, and nothing has to
+remember which ones those were.
 
 ## The derived constraint
 

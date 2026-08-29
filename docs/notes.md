@@ -86,6 +86,20 @@ no rung by itself. [`sources.md`](sources.md) § "What a second copy of one text
 buys" is the argument, and it says when an edited edition counts as that second
 witness.
 
+**And it does not carry whose the rule is, which is the third thing that can go
+wrong.** A quantity carried because a school teaches it makes a different claim
+from one carried because the tradition hands it down: not «this is the rule» but
+«this is that school's rule, and here it is transcribed». The ladder cannot
+order that, for the reason it cannot order a collation — filed as a rung it
+would claim a kind of check it does not have — and it does not need to. The two
+ways such a value goes wrong are that the lineage is misnamed and that the table
+is miscopied, and both are answered by naming the school and quoting the text,
+at whatever rung the transcription itself stands on. So attribution travels
+declared beside the quantity and moves no rung by itself.
+[`sources.md`](sources.md) § "What a value named for a school must show" is what
+the shelf owes such a value, and [`parameters.md`](parameters.md) § "What a
+school value must show" is the criterion for declaring one.
+
 ## The register
 
 `docs/sources.tsv` — one row a quantity, six columns, tab-separated, sitting

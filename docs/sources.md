@@ -4264,6 +4264,46 @@ forbidden. It is registered as a lone reading and never counted as an agreement.
 「輔弼二星北斗善住雨令星」 without 屬土, and 左輔 and 右弼 carry 土 in `stars.ts`
 on the second edition's authority alone.
 
+### What a value named for a school must show, which is a different claim
+
+The standard above is the demand made of a quantity this engine presents as
+**the** answer: two witnesses agreeing, or one text that checks itself. A value
+named for a school is not that, and holding it to that demand would refuse
+every school there is — a lineage has one witness by construction, and it is
+itself.
+
+**What such a value asserts is attribution and transcription.** `sihua:
+quanshu` does not say that 《全書》's table is right; it says that this is the
+table that work carries and that the engine reproduces it. Both halves are
+falsifiable without a second tradition: the lineage is named or misnamed, the
+table is copied or miscopied. So what the entry must show is not agreement but
+provenance, in four parts:
+
+1. **A witness that is the school's own**, or is stating that school's
+   teaching and says so — a manual of the lineage, a printed recension, an
+   editor reporting it as theirs. What it may never be is a modern summary
+   with no text behind it.
+2. **The reading named as that school's**, in the entry, in the same words the
+   parameter's value carries. The rule that no value is ever named for a
+   recension holds here from the other side: a value is named for whoever
+   *teaches* the reading, and the entry has to be able to say who that is.
+3. **What it moves, exactly** — the cells, the seats, the placement — set
+   against what the engine already computes, because a school that agrees
+   everywhere but one cell is the ordinary case and the entry is where that
+   cell is written down.
+4. **The rung it stands on, which weighs the transcription and not the
+   doctrine.** Whether the school is right is not a question this file asks or
+   could answer; whether its table has been read correctly is, and that is the
+   ordinary business of the ladder. [`notes.md`](notes.md) says why attribution
+   is not itself a rung.
+
+**And it is registered as one school among others.** An entry that argues a
+value into existence while leaving the received reading unnamed would make the
+default look like the truth and the alternative like an option, which is the
+thing `docs/parameters.md` opens by refusing.
+[`parameters.md`](parameters.md) § "What a school value must show" is where the
+criterion for declaring one is argued; this is what the shelf owes it.
+
 ---
 
 ## When a source arrives later

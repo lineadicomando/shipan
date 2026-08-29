@@ -218,6 +218,41 @@ where two boards agree it is frequently one fact printed twice, and a model
 reading that as corroboration counts one datum as two with complete
 confidence.
 
+## Two schools of one art, in one reading
+
+*Asked by:* anyone who has just been given the choice.
+
+The twin of the entry above, and the direction it guards is the same. Two
+schools of one art laid on one instant are not two witnesses: they share the
+pillars, the ju or the seats, and nearly everything they are made of — what
+they differ about is the cell somebody wrote a parameter for. Where they agree
+it is not corroboration, it is the part neither school ever disputed, printed
+twice, and the sharing is heavier here than between two arts.
+
+So a board is cast by one school and read as that school's. Comparing two is a
+legitimate thing to do — it is the reason the choice exists — and it is done by
+laying each and reading each, in the sections that are addresses, where nothing
+is being asked. What must not happen is one reading built on two, or an
+agreement between them offered as evidence.
+
+## A school's doctrine, in this engine's own voice
+
+*Asked by:* every reader who wants to know what the board they chose means.
+
+A school is not only a way of computing: it teaches what an arrangement is for,
+and the temptation is to ship that beside the values it moved. What may travel
+is what already travels for 太乙's conditions, under the same four bounds —
+**the source's own words**, a clause and not a paragraph, always glossed, and
+always attached to something the engine computed. Free-standing doctrine, a
+summary in this project's voice, and an inference from one school about a board
+cast by another all stay out.
+
+The reason is the rule at the top of this page. A verdict in this engine's
+prose is a verdict nothing can test, where a quotation is testable twice over:
+it is in the text or it is not, and it is that school's or it is not. So what
+is quoted is named for whoever holds it, in the register as well as on the
+page — `docs/sources.md` § "What a value named for a school must show".
+
 ---
 
 Every refusal above is enforced somewhere that runs. There is a test that
