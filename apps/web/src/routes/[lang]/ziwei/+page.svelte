@@ -4,6 +4,7 @@
   import { appearance } from '$lib/appearance.svelte';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import PageHead from '$lib/components/PageHead.svelte';
+  import Schools from '$lib/components/Schools.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
   import ZiweiReading from '$lib/components/ZiweiReading.svelte';
   import { ziweiSeatBoxes } from '@shipan/plate';
@@ -296,6 +297,12 @@
     </div>
 
     <div>
+      <Schools
+        {t}
+        board="ziwei"
+        options={result.ziwei.options}
+        layers={result.moment.options}
+      />
       <ZiweiReading
         board={result.ziwei}
         moment={result.moment}

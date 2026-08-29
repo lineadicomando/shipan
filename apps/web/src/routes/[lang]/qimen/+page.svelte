@@ -7,6 +7,7 @@
   import { step, type Unit, type Wall } from '$lib/step';
   import ChartReading from '$lib/components/ChartReading.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
+  import Schools from '$lib/components/Schools.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
   import FormPanel from '$lib/components/FormPanel.svelte';
@@ -317,6 +318,7 @@
         signpost to a door in the same room is furniture.
       -->
       <ChartReading {chart} {t} wide />
+      <Schools {t} board="qimen" options={chart.options} layers={chart.moment.options} />
     </div>
   </section>
 {/if}

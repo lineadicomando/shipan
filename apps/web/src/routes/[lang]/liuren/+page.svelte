@@ -7,6 +7,7 @@
   import MomentForm from '$lib/components/MomentForm.svelte';
   import LiurenReading from '$lib/components/LiurenReading.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
+  import Schools from '$lib/components/Schools.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
@@ -138,6 +139,7 @@
 
     <div>
       <LiurenReading {board} {t} {moment} />
+      <Schools {t} board="liuren" options={board.options} layers={moment.options} />
 
     </div>
   </div>

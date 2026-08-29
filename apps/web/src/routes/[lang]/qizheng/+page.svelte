@@ -6,6 +6,7 @@
   import FormPanel from '$lib/components/FormPanel.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
+  import Schools from '$lib/components/Schools.svelte';
   import QizhengReading from '$lib/components/QizhengReading.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
@@ -141,6 +142,7 @@
 
     <div>
       <QizhengReading {board} {t} {moment} />
+      <Schools {t} board="qizheng" options={board.options} layers={moment.options} />
     </div>
   </div>
 {/if}

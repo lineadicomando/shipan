@@ -101,6 +101,20 @@ describe('the instructions the server always sends', () => {
   it('says that one board is read and never two of one instant', () => {
     expect(client.getInstructions() ?? '').toContain('NEVER TWO OF ONE INSTANT');
   });
+
+  /**
+   * The rule that arrived with the schools: an agent holding a board is
+   * holding one school's board, and the one it did not choose is the one it
+   * will not think to name. `docs/parameters.md` § "A declared default is not
+   * a hidden school" owns the argument; the frame is where a caller meets it
+   * before it has seen an answer.
+   */
+  it('says that every board is laid by a school, the default included', () => {
+    const instructions = client.getInstructions() ?? '';
+
+    expect(instructions).toContain('INCLUDING THE ONE NOBODY CHOSE');
+    expect(instructions).toContain('two schools of one art');
+  });
 });
 
 /**

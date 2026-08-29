@@ -136,14 +136,26 @@ answers, and so do a tool call, a command and a bare section. What does not
 follow is that the default may be silent.
 
 **Where a parameter has more than one implemented value, the value in force
-travels — always, and whether or not anybody moved it.** In the form it stands
-in the open rather than under a disclosure, saying which school is on; in a
-transcript and inside a prompt's fence it is stated with the board; on a
-drawing it is written under the grid; over the REST API and MCP it is in the
-answer, and the instructions tell a caller to report it. A reader who did not
-choose is exactly the reader who has to be told, and «no school is implicit» is
-a claim about what the software does *for* them and not only about what the
-type declares.
+travels — always, and whether or not anybody moved it.** It is stated under the
+board in the interface, under the pillars of every transcript and inside a
+prompt's fence, and under the grid of every drawing; over the REST API and MCP
+it is in the answer, and the instructions tell a caller to report it. A reader
+who did not choose is exactly the reader who has to be told, and «no school is
+implicit» is a claim about what the software does *for* them and not only about
+what the type declares.
+
+**Stated where the board is read, and moved where the options are.** The
+controls stay under the disclosure a reader opens on purpose — a form that put
+four `select`s in front of somebody who came to ask a question would be
+charging every reader for the one who changes them — and what stands in the
+open is the statement, beside the board it is about. The two are not the same
+surface and the requirement is only on one of them: it is the reading that must
+not be able to pass for schoolless, not the form.
+
+**And the picture is not enough, wherever there is one.** A board on a page is
+an `<img>` with `alt=""`: uncopyable, unreadable to a screen reader, gone when
+pictures are off. The drawing carries the block because it travels alone; the
+page carries the same block in words because the reader is there.
 
 Where a parameter has one implemented value there is nothing to be aware of and
 nothing is said: what would be reported is not a school but the absence of a

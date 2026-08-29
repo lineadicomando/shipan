@@ -417,3 +417,49 @@ export function carried(chosen: Chosen, board?: string): Chosen {
   }
   return kept;
 }
+
+/**
+ * The divergences a laid board stands on, for the page that shows it.
+ *
+ * The engine's `divergencesInForce` said in the browser, and it is here for
+ * the reason the rows are: the client imports only types from `core`, so a
+ * value it needs it redeclares, and `test/parameters.test.ts` holds the two
+ * together over every board and every value.
+ *
+ * **Two bags and never one.** A board carries its own options and stands on
+ * the pillars', and 紫微斗數 has a `yearBoundary` of its own — merged, the
+ * board's would answer for the layer's, which is the collision the names on
+ * the wire exist to part.
+ *
+ * **No layers at all is a board that stands on no instant**, which is 太乙 and
+ * nothing else here: its subject is a year, no hour is read into pillars for
+ * it, and a block telling its reader where the day begins would be answering
+ * about a calendar this board never opened.
+ */
+export function inForce(
+  board: string,
+  options: object,
+  layers?: object,
+): readonly { row: Divergence; value: string }[] {
+  // Two casts, here, for the reason the engine's has one: an options type is
+  // keyed to its own board so that a declaration cannot drift, and reading it
+  // back by the parameter's name is the one place that precision cannot be
+  // carried through.
+  const own = options as Record<string, unknown>;
+  const under = layers as Record<string, unknown> | undefined;
+
+  const standing: { row: Divergence; value: string }[] = [];
+  for (const row of DIVERGENCES) {
+    if (row.label === undefined) continue;
+    if (row.board !== board && !LAYERS.includes(row.board)) continue;
+    if (LAYERS.includes(row.board) && under === undefined) continue;
+    if (row.implemented.length < 2) continue;
+    const bag = row.board === 'pillars' ? (under ?? {}) : own;
+    if (row.inside && bag[row.inside.id] !== row.inside.value) continue;
+
+    const from = LAYERS.includes(row.board) ? (under ?? {}) : own;
+    const value = String(from[row.id] ?? row.fallback);
+    if (row.says?.[value]) standing.push({ row, value });
+  }
+  return standing;
+}

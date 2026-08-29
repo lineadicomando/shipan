@@ -97,7 +97,12 @@ declaration rather than written per board.
 **A default that says nothing is the implicit school the first line of
 `parameters.md` refuses.** The form counts only what departs from the default,
 which was right when a divergence meant a technical preference and is wrong for
-a school. An axis with a real choice stands in the open.
+a school. Where that landed is not where it was aimed: the controls stayed
+under the disclosure — four `select`s in front of somebody who came to ask a
+question is a charge every reader pays for the one who moves them — and what
+came into the open is the *statement*, under the board, in words. Which is the
+better answer to the same requirement, because the board is what a reader
+reads.
 
 **Doctrine may travel, quoted.** A school teaches what an arrangement is for,
 and 太乙's conditions are the precedent: the source's own words, a clause and not

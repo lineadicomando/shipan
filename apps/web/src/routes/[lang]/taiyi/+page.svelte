@@ -6,6 +6,7 @@
   import type { Unit } from '$lib/step';
   import MomentSteps from '$lib/components/MomentSteps.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
+  import Schools from '$lib/components/Schools.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
   import TaiyiReading from '$lib/components/TaiyiReading.svelte';
@@ -189,6 +190,11 @@
 
     <div>
       <TaiyiReading {board} {t} />
+      <!-- Nothing to say today, and the mechanism saying it: 太乙's three
+           parameters have one implemented value apiece, and a board of a year
+           stands on no pillars. It is here so that the day 月計 lands the
+           reader is told which register they are looking at. -->
+      <Schools {t} board="taiyi" options={board.options} />
     </div>
   </div>
 {/if}

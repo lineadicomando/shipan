@@ -1,10 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { PARAMETERS } from '@shipan/core';
+import { PARAMETERS, divergencesInForce } from '@shipan/core';
 import {
   DIVERGENCES,
   belongsTo,
   carried,
   chosenFields,
+  inForce,
   named,
   offered,
   readChosen,
@@ -181,6 +182,62 @@ describe('what a form offers', () => {
 
     expect(carried(chosen, 'bazi')).toEqual({ dayBoundary: 'midnight' });
     expect(carried(chosen, 'qimen')).toEqual(chosen);
+  });
+});
+
+describe('what a laid board stands on', () => {
+  /**
+   * The client's reading of it against the engine's, board by board and value
+   * by value. Two implementations of one rule is what this file exists to
+   * prevent, and the rule is small enough that a copy looks harmless — which
+   * is exactly when one drifts.
+   */
+  /**
+   * 太乙 is the board that stands on no instant: its subject is a year, no
+   * hour is read into pillars for it, and a block telling its reader where the
+   * day begins would answer about a calendar this board never opened. The
+   * transcript says nothing there because nothing calls `formatMoment`; the
+   * page says nothing because it hands over no layers.
+   */
+  it('names no layer for a board laid on no instant', () => {
+    expect(inForce('taiyi', {})).toEqual([]);
+    expect(inForce('taiyi', {}, {}).map(({ row }) => row.id)).toEqual([
+      'yearBoundary',
+      'dayBoundary',
+    ]);
+  });
+
+  it('agrees with the engine over every board and every value', () => {
+    const boards = ['qimen', 'liuren', 'qizheng', 'ziwei', 'bazi', 'taiyi'];
+    const bags: Readonly<Record<string, unknown>>[] = [
+      {},
+      { method: 'zhirun' },
+      { method: 'chaibu', yuan: 'futou' },
+      { guiren: 'wei' },
+      { luohou: 'ascending' },
+      { yearBoundary: 'lichun' },
+      { yearBoundary: 'chunjie' },
+    ];
+    const layers: Readonly<Record<string, unknown>>[] = [
+      {},
+      { yearBoundary: 'chunjie' },
+      { dayBoundary: 'midnight' },
+    ];
+
+    for (const board of boards)
+      for (const own of bags)
+        for (const layer of layers) {
+          const theirs = divergencesInForce(board, own, layer).map(
+            ({ parameter, value }) => `${parameter.board}.${parameter.id}=${String(value.id)}`,
+          );
+          const ours = inForce(board, own, layer).map(
+            ({ row, value }) => `${row.board}.${row.id}=${value}`,
+          );
+
+          expect(ours, `${board} · ${JSON.stringify(own)} · ${JSON.stringify(layer)}`).toEqual(
+            theirs,
+          );
+        }
   });
 });
 
