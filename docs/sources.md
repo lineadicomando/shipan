@@ -3710,7 +3710,7 @@ received table at 戊, 庚 and 壬. That is the first name this section has been
 able to put to a divergence it refuses an option for, and the refusal is
 restated below in those terms.
 
-**The adjudicator, and what it has answered so far.** The Ming 南陽堂 woodblock —
+**The adjudicator, and everything it answered.** The Ming 南陽堂 woodblock —
 《新鐫希夷陳先生紫微斗數全書》, 題 宋 陳摶 撰, 明 潘希尹 補輯, in seven juan —
 was fetched from shuge.org, which took it from the 日本内閣文庫 copy.
 **528 pages, image-only, and the block is clean enough to read by eye.** It is

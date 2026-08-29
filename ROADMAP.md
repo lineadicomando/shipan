@@ -1,8 +1,10 @@
 # What is not built yet
 
 Three kinds of open work, open for different reasons, and a fourth list that
-is not work at all. The record of how everything else got here is in
-[`docs/history/`](docs/history/README.md); what holds today is in
+is not work at all. **§ "What is actually open" below sorts them by what they
+are waiting on**, which is the thing a reader wants first and the sections
+themselves are too long to give. The record of how everything else got here is
+in [`docs/history/`](docs/history/README.md); what holds today is in
 [`docs/`](docs/README.md).
 
 **The open edge of this project was the shelf and is now two things.** The
@@ -16,12 +18,28 @@ stated procedure: `docs/sources.md` § "When a source arrives later" says what
 moves and in what order. § 2 is that reading, cut into pieces that can be put
 down, and a third language waits on the engine rather than on anything below.
 
-**But an audit on 2026-08-28 found divergences the engine decides in silence,
-and those are not waiting on a source.** They are in § 1 under the parameters,
-they have their witnesses already, and what they want is a field in an input
-type and the decision to break an API once rather than three times. That is
-code work with nothing to read first, and it is the one part of this file where
-«read the shelf, then write the code» is the wrong order.
+**An audit on 2026-08-28 found divergences the engine was deciding in silence,
+and the field they wanted has since been added.** 奇門's input type carries all
+five, each with the engine's own answer as its declared default and the other
+side refused by name; `docs/history/36-the-five-qimen-owed.md` is the record,
+and the API break was paid once rather than five times. So that errand is
+closed, and what those values wait on now is what everything in § 1 waits on —
+a source, or in one case a shape.
+
+## What is actually open
+
+Three buckets, and they are not the same kind of work. Everything below expands
+one of them.
+
+| | | |
+|---|---|---|
+| **A shape in the engine** | `centreTravel: travel` — the only refused value not short of a witness. Both sides are in Qing print and the 金鏡寶鑑 side checks itself over 120 collated cells; what it asks is that a palace be able to carry two stems and two stars, since a centre that travels arrives somewhere already occupied | § 1 |
+| **A source that is not on this shelf** | every other value in the table below. Each is written against in § 1 or `docs/refusals.md`, and none of them is waiting on a file somebody could open today. Two are acquisitions with a named object: a 授時 lodge table that prints 參, and an epoch for 紫氣 | § 1, and phase 4 of § 2 |
+| **Two plates nobody has read** | 中國絕學 第一冊, which is handwriting and can only be read by eye, and 第十冊, whose extract is too weak to search. **Neither stands under a value in § 1**, which is why they are last | phase 2 of § 2 |
+
+**Nothing in § 2 is blocking anything.** Phases 1 and 3 are closed, phase 2 has
+landed its errand, and phase 4 is read on demand. An unread scan costs nothing
+until somebody claims it says something.
 
 ## 1. Parameters that are declared and refused
 
@@ -38,6 +56,11 @@ writing code. **Another copy of a work already held is not that**, however well
 edited: it collates the text and adds no witness to the doctrine, so no value
 below is waiting on one. `docs/sources.md` § "What a second copy of one text
 buys".
+
+**One value is the exception and it is worth naming here**, since the sentence
+above would otherwise send somebody looking for a text that has already
+arrived: `centreTravel: travel` has its witness and wants a shape instead. Its
+entry below says what shape.
 
 | Board | Refused today |
 |---|---|
@@ -66,9 +89,11 @@ it by name — which is what 太乙's `ji` did when 卷一 was read.
 movement because a field added late breaks the API, MCP, the CLI and every
 shared URL at once: what names the middle pair, where 置閏 repeats its block,
 what the five seasonal states are read from, where earth's season begins, and
-whether the lodged stem and star travel. Two of the five have since been
-implemented — `docs/history/36-the-five-qimen-owed.md` is the record — and what
-the rest wait on is below.
+whether the lodged stem and star travel. **That movement has landed** —
+`docs/history/36-the-five-qimen-owed.md` is the record — and one of the five
+came out of it with nothing left to refuse: `spirits` computes all three of its
+readings, the two alternatives having turned out to be waiting on the laying
+and not on a text. The four below are what is left of it.
 
 - 奇門, `leap: runyue`. 置閏 has meant 《統宗》's placement — the block repeated
   is 芒種 or 大雪. 《奇門遁甲金鏡寶鑑》 卷之一 repeats whichever term the
@@ -147,17 +172,25 @@ and nothing here depends on it: what a source establishes is in
 
 ## 2. Reading the scans on the shelf
 
-Forty of the seventy PDFs in `texts/` are photographic and carry no text
-layer. **Sixteen of them were extracted in one pass and the shelf's register
-records what each is worth**; what is left unextracted is what should be, being
-woodblock or handwriting. Several of the values in § 1 are waiting on some of
-them, and nothing else about this section is urgent — an unread scan costs
-nothing until somebody claims it says something.
+Rather more than half the PDFs on the shelf are photographic and carry no text
+layer, and rather less than half of *those* have been through OCR. **What is
+left unextracted is what should be**, being woodblock or handwriting, where the
+models return so little that a search against the result is evidence of
+nothing. Nothing in § 1 is waiting on an extract that could be made today.
+
+**The numbers are deliberately not written here.** `texts/` is excluded from
+the repository, so no test can hold a count of it to anything and a figure in
+this file is a figure that drifts — which is what happened: this paragraph said
+«forty of the seventy, sixteen extracted» for long enough that all three were
+wrong. What the shelf holds is counted by looking at the shelf. As of
+2026-08-30 that was 71 files, 39 of them photographic and 19 through OCR, and
+the only reason to write it down is to date it.
 
 **An extract is not a reading and the two are counted separately here.** The
-pass above made about ten thousand pages searchable; a handful of them have
-since been read, and the register says which. The rest is a way of finding a
-page and nothing more.
+OCR pass made something over ten thousand book-pages searchable — the sheet
+count is lower, since several of those files carry two book-pages to the sheet.
+A handful have since been read, and the register says which. The rest is a way
+of finding a page and nothing more.
 
 **A phase is finished by the register, not by the extract.** An OCR run that
 leaves a `.txt` nobody has read moves nothing: a file is not a source until
@@ -194,8 +227,9 @@ assumes that page.
 The toolchain the phases below assume: tesseract 5.5.3 with `chi_sim`,
 `chi_tra` and the two `_vert` models, `ocrmypdf` 16, `unpaper` 7 and Pillow for
 cutting a sheet into its book-pages, and `pdftoppm`, `pdfimages`, `qpdf` and
-`gs` for rendering a plate and taking a file apart. All of it was present on the
-machine this was last run on bar `qpdf`.
+`gs` for rendering a plate and taking a file apart. All of it was present on
+the machine this was last run on, `qpdf` included — it was the one gap and it
+has since been filled.
 
 **Three scripts at the top of `texts/` do the extracting**, one for each shape
 of sheet: `ocr-1up.sh` takes a language and a psm and goes through poppler,
@@ -210,7 +244,8 @@ printed block, where a section heading sits; `margin` for both outer edges,
 where a 版心 carries the running title and the juan; `full` for when the layout
 itself is the question. It crops from the ink bounding box rather than fixed
 coordinates, because a facsimile's block wanders on the sheet and on some
-volumes alternates sides. Every survey in phases 30 to 32 was made of it.
+volumes alternates sides. Every survey in `docs/history/` phases 30 to 32 was
+made of it, and every one in phase 3 below.
 
 ### Phase 1 — the dunjia scans, for `plate`, and what `centreLodging` and `system` cost
 
@@ -275,8 +310,11 @@ finds divergences at least as often as it settles them.
 
 ### Phase 2 — 《中國絕學》, for a school's name
 
-Eleven volumes, 方外人, 臺北金林文化 1986, about four thousand one hundred
-pages, image-only, twentieth-century school teaching. **Supporting a refusal is
+Eleven volumes, 方外人, 臺北金林文化 1986, four and a half thousand pages
+between them, image-only, twentieth-century school teaching. **Ten of the
+volumes sit in `texts/juexue/`; 第五冊 is filed under `texts/ziwei/`** for what
+it carries, which is why a page count taken off the one directory comes up a
+volume short. **Supporting a refusal is
 a first-class outcome of reading it**, not a consolation: the register already
 uses volume five's 《十八飛星策天紫微斗數全集》 to make the `daxian: ming`
 refusal firmer, and that is the shape the rest of the set is expected to take.
@@ -434,7 +472,10 @@ language needing plural rules, gender agreement or message syntax — see
 ## 4. What is refused and stays refused
 
 Not roadmap, and listed here only so nobody mistakes silence for an omission:
-the 用神, 格局, ranking, dating, advice, the 年命 purposes doctrine, a natal
-Qi Men chart, 太乙's dynastic readings, and the 十八飛星 placements grafted onto
-a 《全書》 board. Each has an entry in [`docs/refusals.md`](docs/refusals.md)
-saying who asks for it and why it is not here.
+the 用神, 格局, ranking, dating, advice, the 年命 purposes doctrine, who is 主
+and who is 客, a day master called strong or weak, a natal Qi Men chart, 太乙's
+dynastic readings, and the 十八飛星 placements grafted onto a 《全書》 board.
+Each has an entry in [`docs/refusals.md`](docs/refusals.md) saying who asks for
+it and why it is not here — and that file carries more than this list does,
+since several of its entries are rules about a surface rather than doctrine
+somebody asks for.
