@@ -32,6 +32,7 @@ import {
   type StarId,
   type StemId,
   type StrengthId,
+  type BaziOptions,
   type ZiweiOptions,
 } from '@shipan/core';
 import { getLocation } from '@shipan/geo';
@@ -494,6 +495,33 @@ export function readZiweiOptions(params: URLSearchParams): ZiweiOptions {
       });
     }
     options.yearBoundary = cut;
+  }
+
+  return options;
+}
+
+/**
+ * 八字's own divergence, read from the address as every other board's is.
+ *
+ * One reader for the four endpoints, for the reason the other two boards have
+ * one: a chart whose decades opened on one reading through `/api` and on
+ * another through `/text` would be two charts under one address.
+ */
+export function readBaziOptions(params: URLSearchParams): BaziOptions {
+  const options: BaziOptions = {};
+
+  const gender = params.get('gender');
+  if (gender === 'male' || gender === 'female') options.gender = gender;
+
+  const counting = params.get(named('bazi', 'luckGranularity'));
+  if (counting !== null) {
+    if (counting !== 'shichen' && counting !== 'minute') {
+      throw new ChartError('UNKNOWN_IDENTIFIER', {
+        parameter: named('bazi', 'luckGranularity'),
+        value: counting,
+      });
+    }
+    options.luckGranularity = counting;
   }
 
   return options;

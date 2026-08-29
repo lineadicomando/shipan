@@ -38,6 +38,18 @@ export interface Bazi {
   distribution: ElementCount;
   /** Absent unless a gender was given: the direction depends on it. */
   luck?: LuckCycles;
+  /**
+   * The divergence this board decides for itself, as it was decided.
+   *
+   * A chart is a pure function of its input **and of the options that produced
+   * it**, which it carries in its own output — and this board carried none,
+   * because the one option it has is read inside `luckCycles` and never came
+   * back out. A board that cannot say how its decades were placed is a board a
+   * surface cannot say it for either, which is what the block under every
+   * chart is for. The pillars' three are on the moment beside it, where every
+   * board reads them.
+   */
+  options: { luckGranularity: LuckGranularity };
 }
 
 export interface BaziOptions {
@@ -101,13 +113,14 @@ export function computeBazi(
     pillars,
     emptyBranches: empty,
     distribution: elementCount(order.map(([, ganzhi]) => ganzhi)),
+    options: { luckGranularity: options.luckGranularity ?? 'shichen' },
   };
   if (options.gender) {
     bazi.luck = luckCycles(
       moment,
       options.gender,
       options.cycles ?? 8,
-      options.luckGranularity ?? 'shichen',
+      bazi.options.luckGranularity,
       context,
     );
   }

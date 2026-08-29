@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import {
+  BAZI_PARAMETERS,
   BRANCHES,
   CHART_PARAMETERS,
   DEFAULT_LIUREN_OPTIONS,
@@ -74,15 +75,18 @@ describe('the parameters the engine declares', () => {
       ...Object.keys(QIZHENG_PARAMETERS),
       ...Object.keys(TAIYI_PARAMETERS),
       ...Object.keys(ZIWEI_PARAMETERS),
+      ...Object.keys(BAZI_PARAMETERS),
       ...Object.keys(NIANMING_PARAMETERS),
     ]);
 
     // Six boards, the calendrical layer under them, the almanac beside them,
-    // and the birth placed inside a chart of a moment. 八字 is absent because
-    // it has no divergence of its own: it stands on `pillars` entire, which
-    // is the fact that made `pillars` a board here.
+    // and the birth placed inside a chart of a moment. 八字 was absent from
+    // this list for as long as its one divergence was on its options type and
+    // in no registry: it stands on `pillars` entire *and* decides how finely
+    // the distance to the 節 is counted when its decades are placed.
     expect([...new Set(PARAMETERS.map((parameter) => parameter.board))].sort()).toEqual([
       'almanac',
+      'bazi',
       'liuren',
       'nianming',
       'pillars',

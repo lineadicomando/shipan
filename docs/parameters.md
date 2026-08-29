@@ -217,7 +217,17 @@ almanac takes none of these at all. Both are below.
 | 紫微斗數 | `huoling` | how 火星 and 鈴星 are placed: `fixed` (a seat apiece from the year's triplicity, which is all 卷二 states), `hour` | `fixed` |
 | 紫微斗數 | `daxian` | where the first decade opens: `adjacent` (the palace beside the 命宮), `ming` (命宮 mìnggōng itself) | `adjacent` |
 | 紫微斗數 | `yearBoundary` | which reckoning gives the year its stem and branch: `lichun` (立春 lìchūn), `chunjie` (正月初一 zhēngyuèchūyī) | `chunjie` |
+| 八字 | `luckGranularity` | how finely the distance to the 節 is measured when the 大運 are placed: `shichen` (時辰 shíchén, whole days and whole double hours), `minute` | `shichen` |
 | 年命 | `count` | how the years lived are counted: `sui` (虛歲 xūsuì), `turns` (the turns of the year pillar alone) | `sui` |
+
+**八字's one row is the board's own, and the three above it are not.** The
+pillars' `trueSolarTime`, `yearBoundary` and `dayBoundary` say how an instant
+is read into the four, and this says how the distance to the 節 is counted when
+the decades are placed — three days of the calendar to a year lived, and the
+two readings part on where to stop, by up to ten days on when the first cycle
+opens. It was on `BaziOptions` with a declared default and both readings
+computed long before it was here; what it was missing is the third of the three
+questions, which is the easy one to fail.
 
 **The 曆注 are not a board**, and take nothing from the layer above: the
 almanac is a page of a published book, a pure function of the civil date

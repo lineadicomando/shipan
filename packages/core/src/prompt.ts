@@ -744,7 +744,7 @@ export function baziTranscript(
   return [
     formatMoment(moment, t, {
       almanac: false,
-      divergences: { board: 'bazi', options: moment.options },
+      divergences: { board: 'bazi', options: bazi.options },
     }),
     '',
     formatBazi(bazi, t),

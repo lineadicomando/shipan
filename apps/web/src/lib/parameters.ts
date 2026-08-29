@@ -299,6 +299,19 @@ export const DIVERGENCES: readonly Divergence[] = [
     },
   },
   {
+    id: 'luckGranularity',
+    board: 'bazi',
+    values: ['shichen', 'minute'],
+    implemented: ['shichen', 'minute'],
+    fallback: 'shichen',
+    label: 'form.bazi.luckGranularity',
+    says: {
+      shichen: 'form.bazi.luckGranularity.shichen',
+      minute: 'form.bazi.luckGranularity.minute',
+    },
+    notes: { minute: 'form.bazi.luckGranularity.note' },
+  },
+  {
     id: 'count',
     board: 'nianming',
     values: ['sui', 'turns'],

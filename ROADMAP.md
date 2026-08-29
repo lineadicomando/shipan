@@ -143,15 +143,18 @@ field like the first two and are paid with them.
   reading decides 旺相休囚死 for every star and every gate on the board, and the
   two answers part for the first two-thirds of each of those four months.
 
-**One is exposed and unregistered, which is a smaller fault and a different
-one.** 八字's `luckGranularity` — `shichen` against `minute`, «they disagree by
-up to ten days on when the first cycle opens» — is an option on `BaziOptions`
-with a declared default, so no chart is cast without the caller being able to
-say which reading produced it. But there is no `BAZI_PARAMETERS`, so it is
-absent from `PARAMETERS`, from `docs/parameters.md` and from anything a surface
-builds out of them. The divergence is honoured and the registry does not know
-it. Fixing it is additive rather than breaking: a registry entry, a row in the
-parameters page, and a label in each catalog.
+**One was exposed and unregistered, which was a smaller fault and a different
+one, and it is fixed.** 八字's `luckGranularity` — `shichen` against `minute`,
+«they disagree by up to ten days on when the first cycle opens» — was an option
+on `BaziOptions` with a declared default and both readings computed, so no
+chart was ever cast without a caller being able to say which produced it. What
+it was missing was the third of the three questions: with no `BAZI_PARAMETERS`
+it was absent from `PARAMETERS`, from `docs/parameters.md` and from everything
+a surface builds out of them. It now has a set of its own, a row on the
+parameters page, a control the form derives, a line in the block under every
+八字 board, and a row in the register. **The board also carries it now**, which
+it did not: the option was read inside `luckCycles` and never came back out, so
+a board could not say how its own decades were placed.
 
 **And the two candidates are claimed, and turn out to be one.** They were listed
 apart — whether **天禽 stands at the centre** or rides merged with 天芮, and

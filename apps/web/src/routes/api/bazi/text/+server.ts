@@ -8,6 +8,7 @@ import {
   readInteger,
   readLocale,
   readMoment,
+  readBaziOptions,
 } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
@@ -34,10 +35,8 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const locale = readLocale(url.searchParams, request.headers.get('accept-language'));
     const { moment } = readMoment(url.searchParams);
 
-    const gender = url.searchParams.get('gender');
     const cycles = readInteger(url.searchParams, 'cycles');
-    const options: Parameters<typeof computeBazi>[1] = {};
-    if (gender === 'male' || gender === 'female') options.gender = gender;
+    const options = readBaziOptions(url.searchParams);
     if (cycles !== undefined) options.cycles = Math.min(12, Math.max(1, cycles));
 
     const bazi = computeBazi(moment, options, ephemerisContext());
