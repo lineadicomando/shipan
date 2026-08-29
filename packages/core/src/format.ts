@@ -393,14 +393,13 @@ export function formatDivergences(
   // The notes under the block, each said once however many values carry it:
   // both methods point at the same caution, and printing it twice would be
   // this engine saying a thing twice for the shape of the table.
-  const notes = [
-    ...new Set(inForce.filter(({ value }) => value.note).map(({ value }) => value.note)),
-  ].map((note, index) => {
-    const carrying = inForce.find(({ value }) => value.note === note);
-    return `  ${t(note as MessageKey, {
-      [carrying?.parameter.id ?? 'value']: String(carrying?.value.id ?? ''),
-    })}`;
-  });
+  const notes: string[] = [];
+  const said = new Set<MessageKey>();
+  for (const { parameter, value } of inForce) {
+    if (value.note === undefined || said.has(value.note)) continue;
+    said.add(value.note);
+    notes.push(`  ${t(value.note, { [parameter.id]: String(value.id) })}`);
+  }
 
   return [
     `${t('cli.heading.divergences')}`,

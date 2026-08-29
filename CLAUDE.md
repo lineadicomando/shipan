@@ -71,9 +71,9 @@ the engine falls back to Moshier, which needs no files.
 - **Hanzi are not a locale, and a name carries its reading.** 休門 is the name
   of the gate, not its Chinese rendering, and it is xiūmén to every reader.
   Both travel in the engine's output at all times bar one — a `prompt.`
-  message, whose reader is a model that need not pronounce anything; the
-  catalog supplies only the gloss. Identifiers are toneless pinyin, tone-numbered only where they
-  would collide (`jing1men`, `jing3men`). → [`docs/i18n.md`](docs/i18n.md)
+  message, whose reader is a model; the catalog supplies only the gloss.
+  Identifiers are toneless pinyin, tone-numbered only where they would collide
+  (`jing1men`, `jing3men`). → [`docs/i18n.md`](docs/i18n.md)
 - **The engine answers no question, which is not the same as saying nothing.**
   It carries an attribute the sources hand down concordantly when it belongs
   to the configuration rather than to somebody's situation — which is why
@@ -89,24 +89,18 @@ the engine falls back to Moshier, which needs no files.
   can be followed; an edition can only be preferred.** No function in `core`
   reads a global default. → [`docs/parameters.md`](docs/parameters.md)
 - **A school is axes and never a bundle, and a declared default is not a hidden
-  school.** Where a parameter has more than one implemented value, the value in
-  force travels on every surface — the form, the transcript, the prompt, the
-  drawing, the API, MCP — whether or not anybody moved it. A preset that fills
-  the fields may live at a surface; nothing downstream of it ever receives the
-  name of the bundle. → [`docs/parameters.md`](docs/parameters.md)
+  school.** Where a parameter has more than one implemented value, what is in
+  force is stated wherever the board is — moved or not. A preset may fill a
+  form's fields and never travel. → [`docs/parameters.md`](docs/parameters.md)
 - **How many schools there are is a state and not a design**, as with the
-  vernaculars, and what a school value must show is **attribution and
-  transcription** rather than two agreeing witnesses — the demand the standard
-  makes of a quantity presented as *the* answer is not the demand made of one
-  presented as somebody's. Attribution is not a rung.
-  → [`docs/parameters.md`](docs/parameters.md), [`docs/sources.md`](docs/sources.md)
-- **A board's parameters travel under the board's name** — `qimen.method`,
-  `ziwei.leapMonth`, `qizheng.luohou` — and only the three of the calendrical
-  layer are written bare. A name is unique inside a type and not on a wire.
-  → [`docs/parameters.md`](docs/parameters.md)
+  vernaculars. What a school value must show is **attribution and
+  transcription**, not two agreeing witnesses, and attribution is not a rung.
+  → [`docs/parameters.md`](docs/parameters.md), [`docs/notes.md`](docs/notes.md)
+- **A board's parameter travels under the board's name** — `qimen.method`,
+  `ziwei.yearBoundary` — and only a layer's is bare. A name is unique inside a
+  type and not on a wire. → [`docs/parameters.md`](docs/parameters.md)
 - **A school's doctrine travels quoted or not at all**: the source's own words,
-  a clause and not a paragraph, glossed, and attached to something the engine
-  computed. A verdict in this engine's prose is a verdict nothing can test.
+  a clause, glossed, attached to something computed.
   → [`docs/refusals.md`](docs/refusals.md)
 - **An art natively about a life gets a board of its own, never dunjia's**, and
   **a birth enters a chart, never the other way about.** Both are the same

@@ -64,7 +64,8 @@ export interface PalaceContents {
    * decides. It is said here in the second place it is read, and not moved
    * out of the first: `palace 5` still carries it.
    *
-   * **That divergence now has two witnesses and owes a parameter.**
+   * **That divergence is `centreTravel`**, declared on `ChartOptions` with
+   * `stay` computed and `travel` refused by name, and it has two witnesses.
    * 《奇門遁甲元靈經》 works two examples out in full; both agree with this
    * engine on the earth plate palace for palace and on the 值符 star and the
    * 值使 gate, and where the 符頭 stands in the centre the text carries its

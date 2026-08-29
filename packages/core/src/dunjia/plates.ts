@@ -92,22 +92,20 @@ export type SpiritId =
  * convention followed here — 陰陽異名: 勾陳 and 朱雀 preside while the yang
  * half of the year runs, 白虎 and 玄武 while the yin half does.
  *
- * **Other traditions do it otherwise, and this is a divergence between
- * practitioners, so it owes a parameter it does not have.** 《奇門遁甲全局》,
- * read on the plate, holds 白虎 at the fifth seat and puts 勾陳 at the sixth.
- * 《奇門遁甲金鏡寶鑑》 pairs the seats exactly as this file does — 勾陳 with
- * 白虎, 朱雀 with 玄武 — and then decides between the two names by **what is
- * being asked** rather than by the dun: 「如占病、占賊，則勾、雀二神可換虎、
- * 武用」, stated once for each dun. 《御定奇門寶鑑》卷二 pairs them the same way
- * again — 「朱雀下有元武。勾陳下有白虎」 — and needs no trigger at all: its eight
- * names stand in both dun and the yin board only reverses the order they are
- * counted in, which lands on the seats this ring lands on. So the disagreement
- * is not over which eight names exist but over which fact selects the middle
- * pair, and a parameter naming rosters would not express it. Two readers draw different boards from
- * the same instant and nothing in the output says which convention drew this
- * one, which `CLAUDE.md`'s rule forbids. Declaring it costs a field in this
- * board's input type; `ROADMAP.md` § 1 carries the debt and `docs/sources.md`
- * carries the witnesses.
+ * **Other traditions do it otherwise, and that is `spirits`.** Three readings,
+ * all three laid by `spiritRing` below and all three named in the block under
+ * every board: this one, 《御定奇門寶鑑》's eight standing in both dun, and
+ * 《奇門遁甲全局》's yang board, which holds 白虎 at the fifth seat and puts
+ * 勾陳 at the sixth.
+ *
+ * **What the schools part over is which fact selects the middle pair**, and not
+ * which eight names exist — a parameter naming rosters would not have expressed
+ * it. 《奇門遁甲金鏡寶鑑》 is the fourth answer and the one that is not a value:
+ * it pairs the seats as this file does and then chooses between the two names
+ * by **what is being asked** — 「如占病、占賊，則勾、雀二神可換虎、武用」, said
+ * once for each dun — which is a licence to read and not a rule for laying. See
+ * `docs/refusals.md` § "The middle pair named by the matter".
+ * `docs/sources.md` carries the witnesses.
  */
 export const SPIRITS_YANG: readonly Spirit[] = [
   { id: 'zhifu', hanzi: '值符', pinyin: 'zhífú' },

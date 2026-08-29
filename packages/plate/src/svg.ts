@@ -12,7 +12,7 @@ import {
 } from './geometry.js';
 import { FONT_STACK, styleSheet } from './palette.js';
 import { drawReadingColumns, readingDepth, said, type Said } from './readings.js';
-import { drawSchools, schoolDepth } from './schools.js';
+import { drawSchools } from './schools.js';
 import type {
   Named,
   PlateChart,

@@ -37,7 +37,7 @@ import {
 } from '@shipan/core';
 import { getLocation } from '@shipan/geo';
 import { genderBelongsToBoard, type InstrumentId } from '$lib/instruments';
-import { belongsTo, named } from '$lib/parameters';
+import { DIVERGENCES, belongsTo, named, wire } from '$lib/parameters';
 import { resolveLocale, type Locale } from '@shipan/i18n';
 import { error } from '@sveltejs/kit';
 
@@ -410,62 +410,38 @@ export function readOptions(params: URLSearchParams): ChartOptions {
   const yearBoundary = params.get('yearBoundary');
   if (yearBoundary === 'lichun' || yearBoundary === 'chunjie') options.yearBoundary = yearBoundary;
 
-  // Strict, unlike the three above: their misspellings fall back to defaults
-  // that show in the answer, but a chart cast by the wrong method looks right
-  // and is not. maoshan passes through and the engine refuses it with a 501.
-  const method = params.get(named('qimen', 'method'));
-  if (method !== null) {
-    if (method !== 'chaibu' && method !== 'zhirun' && method !== 'maoshan') {
-      throw new ChartError('UNKNOWN_IDENTIFIER', {
-        parameter: named('qimen', 'method'),
-        value: method,
-      });
-    }
-    options.method = method;
-  }
+  // **Strict, unlike the three above, and read off the declaration.** A
+  // misspelt boundary falls back to a default the answer shows; a misspelt
+  // school would cast a chart under a name nobody asked for, which looks right
+  // and is not. So every named value of every 奇門 parameter is checked here
+  // against the values the engine declares — an unknown one is a 400 saying no
+  // school is called that, a declared one the engine does not compute reaches
+  // `requireImplemented` and comes back a 501 saying so by name.
+  //
+  // The list is `DIVERGENCES`, not a copy of it: this used to name `method`
+  // and `yuan` by hand and read neither `plate` nor `system` nor
+  // `centreLodging` at all, so an address asking for 飛盤 was answered with a
+  // 轉盤 chart and nothing said otherwise — a value substituted in silence,
+  // which is the one thing `docs/parameters.md` says may never happen.
+  for (const row of DIVERGENCES) {
+    if (row.board !== 'qimen') continue;
 
-  // Strict for the same reason: it moves the ju on most days.
-  const yuan = params.get(named('qimen', 'yuan'));
-  if (yuan !== null) {
-    if (yuan !== 'term' && yuan !== 'futou') {
-      throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: named('qimen', 'yuan'), value: yuan });
-    }
-    options.yuan = yuan;
-  }
-
-  // Strict for the same reason again, and worth saying why it is here at all
-  // when only one register exists: a page cast under a second one would carry
-  // different 神煞 under the same address, so the parameter has to travel in
-  // the URL from before there is a second. The engine refuses anything else
-  // with a 501 rather than quietly serving 協紀's.
-  // The five 奇門 owed, read strictly for the reason `method` is: a value this
-  // engine declares and does not compute must come back a 501 by name, and a
-  // value nobody declares must come back a 400. Falling through to the default
-  // would answer with a chart nobody asked for.
-  for (const [id, values] of [
-    ['spirits', ['dun', 'fixed', 'baihu']],
-    ['leap', ['solstice', 'runyue']],
-    ['strengths', ['season', 'star']],
-    ['earth', ['quarters', 'eighteen']],
-    ['centreTravel', ['stay', 'travel']],
-  ] as const) {
-    const asked = params.get(named('qimen', id));
+    const asked = params.get(wire(row));
     if (asked === null) continue;
-    if (!(values as readonly string[]).includes(asked)) {
-      throw new ChartError('UNKNOWN_IDENTIFIER', {
-        parameter: named('qimen', id),
-        value: asked,
-      });
+    if (!row.values.includes(asked)) {
+      throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: wire(row), value: asked });
     }
-    // The cast is the one `requireImplemented` makes for the same reason: the
-    // value has been checked against the declaration a line above.
-    (options as unknown as Record<string, unknown>)[id] = asked;
+    // One cast, for the reason `requireImplemented` has one: the value has
+    // been checked against the declaration on the line above, and an options
+    // type is keyed to its own board so that the declaration cannot drift.
+    (options as unknown as Record<string, unknown>)[row.id] = asked;
   }
 
-  // Bare, like the pillars' three and unlike a board's: the almanac is not a
-  // board. It is a page a chart is read *against*, printed beside every one of
-  // them, so its register belongs to no section in particular and collides
-  // with nothing.
+  // The almanac's register is bare, like the pillars' three and unlike a
+  // board's: 曆注 is not a board. It is a page a chart is read *against*,
+  // printed beside every one of them, so its name collides with nothing — and
+  // it travels in the URL from before there is a second value, because a page
+  // cast under one would carry different 神煞 under the same address.
   const shensha = params.get('shensha');
   if (shensha !== null) {
     if (shensha !== 'xieji') {

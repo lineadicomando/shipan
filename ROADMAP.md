@@ -60,61 +60,16 @@ says which reckoning it computes, and what the type does not yet carry is a
 implementing it, since a value is declared when the engine is ready to refuse
 it by name — which is what 太乙's `ji` did when 卷一 was read.
 
-- ~~紫微斗數 `sihua`~~ — **landed on 2026-08-29, and it is the first value
-  declared under the standard rather than under a reading of it.** What the
-  shelf carries is one cell: 《全書》 gives 壬 its 科 to 天府 in both editions
-  and the Ming recension agrees, where the 中州派 manual prints 左輔 and a 北派
-  manual draws 左輔 twice in worked examples. A lineage's whole ten stems was
-  being asked for, which is a completeness test and not the one
-  `docs/parameters.md` states — the board changes, two practitioners hold
-  opposite sides, and the size of the disagreement is not one of the three
-  questions. It is named `zuofu`, for the cell and not for either school, since
-  two of them hold it and neither's table is here. The 南陽堂 reading is
-  untouched: a recension is still not a school.
 - 曆注 `shensha` — what 《協紀辨方書》 ratifies, until a named lineage has been.
 
-**And one divergence owes a parameter it does not have.** That is a third state
-and the worst of the three, because nothing refuses it by name: the chart comes
-back without saying which convention drew it.
+**Five more are declared and refused on 奇門's input type**, paid in one
+movement because a field added late breaks the API, MCP, the CLI and every
+shared URL at once: what names the middle pair, where 置閏 repeats its block,
+what the five seasonal states are read from, where earth's season begins, and
+whether the lodged stem and star travel. Two of the five have since been
+implemented — `docs/history/36-the-five-qimen-owed.md` is the record — and what
+the rest wait on is below.
 
-`CLAUDE.md`'s rule was narrowed on 2026-08-28 — every divergence *between
-practitioners* is a parameter, a disagreement between witnesses to one text is
-not — and the narrowing is what makes this visible. See `docs/parameters.md`
-§ "What is not a parameter".
-
-The audit that followed the narrowing swept every module of `core` and the
-register for admissions of divergence, and passed each through three questions:
-does it change what the chart shows, could two practitioners hold opposite
-sides, and is it exposed. Most of what it found was the rule already working —
-the 用神 mapping refused in `scan.ts` because «putting one of them here would
-make a school implicit», the 課體 that names nothing where the sources disagree,
-`leapMonth` and `huoling` and `centreLodging` each declared with their
-alternatives refused. Three things were not.
-
-**Two are divergences nothing exposes, and the 金鏡寶鑑 sweep added two more.**
-The audit's two need a field in a board's input type, which is the breaking
-change `docs/parameters.md` opens by saying not to make late — so they are named
-here and paid together, not one at a time. Of the two the sweep added, 置閏 is
-cheaper, having a parameter to land on already; the seasonal relations are a
-field like the first two and are paid with them.
-
-**All five are declared, on 2026-08-29, and paid in one movement as this said
-they had to be.** `spirits`, `leap`, `strengths`, `earth` and `centreTravel`
-are on 奇門's input type with what the engine computes as the default and the
-other side refused by name; `docs/parameters.md` carries the rows and the table
-above carries the refusals. What each is waiting on to be *implemented* is
-below, and it is what it always was — a reading, or a second witness.
-
-- ~~奇門, the two other namings of the middle pair~~ — **landed on
-  2026-08-29.**
-  Both were already collated cell by cell: 《御定奇門寶鑑》卷二 enumerates its
-  eight twice and reverses the count and not the names, and 《奇門遁甲全局》's
-  yang board keeps 白虎 at the fifth seat across three charts with the 直符 in
-  three palaces. Nothing was waiting but the laying. **The fourth answer is
-  still not a value and will not become one**: 《奇門遁甲金鏡寶鑑》 keys the
-  choice to what is being divined, which is a licence to read rather than a
-  rule for laying — see `docs/refusals.md` § "The middle pair named by the
-  matter".
 - 奇門, `leap: runyue`. 置閏 has meant 《統宗》's placement — the block repeated
   is 芒種 or 大雪. 《奇門遁甲金鏡寶鑑》 卷之一 repeats whichever term the
   year's leap month falls under, works it twice by date — 1678 閏三月 and 1691
@@ -131,7 +86,7 @@ below, and it is what it always was — a reading, or a second witness.
   seasons to earth entire; other schools give earth only their last eighteen
   days. It feeds the states above, so it decides 旺相休囚死 for every cell, and
   the two answers part for two-thirds of each of those four months.
-- 奇門, **whether the lodged stem and star travel**. One divergence, not two: a
+- 奇門, `centreTravel: travel`. One divergence, not two: a
   board whose centre empties and whose host palace carries a second stem and a
   second star is the same board seen from outside as «天禽 merged with 天芮 and
   the centre starless». `PalaceContents.lodged` had already written the
@@ -141,7 +96,7 @@ below, and it is what it always was — a reading, or a second witness.
   unstated provenance and the register weighs it accordingly — but it checks
   itself, which is the second thing the standard accepts. A print is wanted
   before the value is implemented; the parameter can be declared and refused
-  before that, and it shares 奇門's input type with the two above.
+  before that, and it was declared with the four above it.
   **The print has arrived.** 《奇門遁甲金鏡寶鑑》 — 故宮 第426冊, Qing imperial
   woodblock, opened for a different errand — tabulates all eighteen 局 as a
   起星訣 and a 起門訣, and states the same side as a rule for every hour rather
@@ -341,21 +296,12 @@ which is what a set nobody had opened was missing. Search around 祿, which
 those scans lose without collapsing onto anything: 化祿 and 祿存 score zero on
 volumes that print them constantly.
 
-**The errand this phase was opened for is finished, and it closed rather than
-landed.** 紫微斗數 `sihua` was waiting on a lineage carrying its own ten stems.
-That is not what the set holds. 第七冊's parts number their own pages, so which
-stretch belongs to which school is a thing the plates say: 庚's 忌 stands on
-天相 under a 【占驗派】 heading and on 天同 in a part opening on 《紫微斗數
-北派》, 恭鑑老人 著. 北派's table has then been read across six stems, eleven
-cells, and every one of them is 《全書》's **except 壬's 科, which it puts on
-左輔** — the same single cell the 中州派 manual moves. Two modern schools moving
-one cell each is a smaller thing than a second table, and it was written down
-here as not enough. **What was not enough was the criterion.** On 2026-08-29 it
-was settled that the test is the one `docs/parameters.md` states — the board
-changes, two practitioners hold opposite sides — and not whether a lineage
-brings a whole apparatus. `sihua: zuofu` was declared and computed the same
-day, named for the cell rather than for either school. So this errand landed
-after all, on the reading it had already produced.
+**The errand this phase was opened for landed**, and not as it was aimed. It
+was waiting on a lineage carrying its own ten stems; what the set holds is one
+cell, moved by two modern schools, and the criterion was corrected rather than
+the reading — `sihua: zuofu` is computed. `docs/sources.md` § 紫微斗數 carries
+the plates and the pages, and `docs/history/35-a-school-can-be-chosen.md` the
+decision.
 
 **第六冊 answered two of the other refusals and neither answer lands.** It
 prints `huoling: hour` whole at its p. 406 and `daxian: ming` whole at its

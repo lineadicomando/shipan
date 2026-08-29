@@ -730,6 +730,27 @@ describe('GET /api/qimen', () => {
     expect(futou.ju['term']).toMatchObject({ id: 'xiaohan' });
   });
 
+  /**
+   * The hole the declaration closed: a value the engine declares and does not
+   * compute used to be **ignored** where nothing read it. An address asking
+   * for 飛盤 was answered with a 轉盤 chart, under a URL that said otherwise —
+   * a substitution in silence, which is the one thing this project's rule on
+   * parameters forbids outright.
+   */
+  it('refuses every declared value it does not compute, and not only the two it reads by hand', async () => {
+    for (const [parameter, value] of [
+      ['qimen.plate', 'fei'],
+      ['qimen.system', 'rijia'],
+      ['qimen.centreLodging', 'dun'],
+      ['qimen.strengths', 'star'],
+    ] as const) {
+      const { status, body } = await call(qimen, `${MOMENT}&${parameter}=${value}`);
+
+      expect(status, parameter).toBe(501);
+      expect(body, parameter).toMatchObject({ code: 'OPTION_NOT_IMPLEMENTED' });
+    }
+  });
+
   it('refuses a yuan it has never heard of', async () => {
     const { status, body } = await call(qimen, `${MOMENT}&qimen.yuan=futuo`);
 

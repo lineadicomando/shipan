@@ -187,7 +187,7 @@ no reference at all and is refused.
 These three are declared in `ChartOptions` beside dunjia's own, because that
 is the type a chart carries, and they are not dunjia's. They say how an
 *instant* is read into pillars, and every board built on those pillars
-inherits the answer: 八字 has no divergence of its own and stands on these,
+inherits the answer: 八字 stands on these and adds one of its own,
 奇門 and 六壬 are cast at an hour these decide the stem of, and a board that
 read the day differently from the pillars printed beside it would be two
 calendars in one output.

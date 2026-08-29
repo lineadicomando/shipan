@@ -27,13 +27,13 @@ const STRENGTH: Record<StrengthId, { hanzi: string; pinyin: string }> = {
  * The four seasons take the four cardinal phases, and the four months that
  * close them — the branches of the tombs — are given to earth.
  *
- * **Other schools give earth only the last eighteen days of each season, and
- * that is a divergence between practitioners, so it owes a parameter it does
- * not have.** It moves the boundary and not the idea, but the boundary is what
- * this function returns: `strengthOf` reads it, so the choice decides
- * 旺相休囚死 for every star and every gate on the board, and the two readings
- * part for the first two-thirds of each of 辰, 未, 戌 and 丑. A caller cannot
- * see which one drew the chart. `ROADMAP.md` § 1 carries the debt.
+ * **Other schools give earth only the last eighteen days of each season**, and
+ * that is `earth` — declared on `ChartOptions`, `quarters` computed and
+ * `eighteen` refused by name. It moves the boundary and not the idea, but the
+ * boundary is what this function returns: `strengthOf` reads it, so the choice
+ * decides 旺相休囚死 for every star and every gate on the board, and the two
+ * readings part for the first two-thirds of each of 辰, 未, 戌 and 丑. What a
+ * caller could not see before the parameter is which one drew the chart.
  */
 export function seasonElement(monthBranch: Branch): Element {
   switch (monthBranch.index) {

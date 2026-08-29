@@ -175,6 +175,14 @@ neither disputed.
   `METHOD_NOT_IMPLEMENTED` rather than silently substituted, because a chart
   cast by the wrong method looks right and is not; if someone asks for it,
   say it is not available.
+- **The eight spirits are named three ways and the board says which.** The ring
+  is the same ring under all three — same star, same gate, same stem, same
+  palace — and what parts them is which fact names the fifth and sixth seats:
+  the half of the year (`qimen.spirits=dun`, the default), nothing at all
+  (`fixed`, where the same eight stand in both dun), or the half of the year
+  with 白虎 kept at the fifth seat (`baihu`). A fourth convention names them by
+  what is being divined; it is refused here, because that is a licence to read
+  and not a rule for laying, and you should not supply it either.
 - **拆補 itself splits in two, and `yuan` says which.** `term` counts the
   three fives from the instant the term began; `futou` reads them off the
   days, by where the day pillar stands in the fifteen-day cycle headed by 甲
