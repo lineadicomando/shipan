@@ -159,7 +159,7 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   const gate = chiefGate(earth, instrument);
   const gatePalaceNumber = chiefGatePalace(earth, instrument, hourGanzhi, ju.yang);
   const gates = gatePlate(gate, gatePalaceNumber);
-  const spirits = spiritPlate(chiefPalace, ju.yang);
+  const spirits = spiritPlate(chiefPalace, ju.yang, options.spirits);
 
   const season = seasonElement(moment.pillars.month.branch);
 

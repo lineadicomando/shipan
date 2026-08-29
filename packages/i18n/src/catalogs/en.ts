@@ -1283,6 +1283,16 @@ export const en = {
   'form.qimen.method': 'The ju is determined',
   'form.qimen.method.chaibu': 'by thirds of the term: 拆補 chāibǔ',
   'form.qimen.method.zhirun': 'by whole blocks, with the leap: 置閏 zhìrùn',
+  // The three readings of the ring of eight. They part at two seats and only
+  // in the name — same star, same gate, same stem, same palace — so the label
+  // says what selects the name and the values say what selects it *by*.
+  'form.qimen.spirits': 'The fifth and sixth spirits are named by',
+  'form.qimen.spirits.dun':
+    'the half of the year 陰陽異名 yīnyángyìmíng: 勾陳 gōuchén and 朱雀 zhūquè in a yang chart, 白虎 báihǔ and 玄武 xuánwǔ in a yin one',
+  'form.qimen.spirits.fixed':
+    'nothing: the same eight names stand in both dun, as 《御定奇門寶鑑》 yùdìngqíménbǎojiàn has them',
+  'form.qimen.spirits.baihu':
+    'the half of the year, with 白虎 báihǔ kept at the fifth seat in a yang chart: the board of 《奇門遁甲全局》 qíméndùnjiǎquánjú',
   'form.qimen.yuan': 'Under chaibu, the third of the term is counted',
   'form.qimen.yuan.term': 'from the instant the term began',
   'form.qimen.yuan.futou': 'from the day, by five-day stretches: 符頭 fútóu',

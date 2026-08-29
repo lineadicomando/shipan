@@ -1181,6 +1181,13 @@ export const it: Record<MessageKey, string> = {
   'form.qimen.method': 'Il ju si determina',
   'form.qimen.method.chaibu': 'per terzi del termine: 拆補 chāibǔ',
   'form.qimen.method.zhirun': 'per blocchi interi, con l’intercalazione: 置閏 zhìrùn',
+  'form.qimen.spirits': 'Il quinto e il sesto spirito sono nominati da',
+  'form.qimen.spirits.dun':
+    'la metà dell’anno 陰陽異名 yīnyángyìmíng: 勾陳 gōuchén e 朱雀 zhūquè in una carta yang, 白虎 báihǔ e 玄武 xuánwǔ in una yin',
+  'form.qimen.spirits.fixed':
+    'niente: gli stessi otto nomi stanno in entrambi i dun, come li ha il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
+  'form.qimen.spirits.baihu':
+    'la metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
   'form.qimen.yuan': 'Con chaibu, il terzo del termine si conta',
   'form.qimen.yuan.term': 'dall’istante in cui il termine è cominciato',
   'form.qimen.yuan.futou': 'dal giorno, per tratti di cinque: 符頭 fútóu',

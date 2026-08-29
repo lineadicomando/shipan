@@ -234,8 +234,6 @@ describe('what 奇門 decided in silence', () => {
    * instead of answered by the nearest rule it does have.
    */
   const REFUSED = [
-    ['spirits', 'fixed'],
-    ['spirits', 'baihu'],
     ['leap', 'runyue'],
     ['strengths', 'star'],
     ['earth', 'eighteen'],

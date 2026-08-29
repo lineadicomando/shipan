@@ -119,11 +119,41 @@ export const DIVERGENCES: readonly Divergence[] = [
     fallback: 'shijia',
   },
   {
+    id: 'yearBoundary',
+    board: 'pillars',
+    values: ['lichun', 'chunjie'],
+    implemented: ['lichun', 'chunjie'],
+    fallback: 'lichun',
+    label: 'form.pillars.yearBoundary',
+    says: {
+      lichun: 'form.pillars.yearBoundary.lichun',
+      chunjie: 'form.pillars.yearBoundary.chunjie',
+    },
+  },
+  {
+    id: 'dayBoundary',
+    board: 'pillars',
+    values: ['zishi', 'midnight'],
+    implemented: ['zishi', 'midnight'],
+    fallback: 'zishi',
+    label: 'form.pillars.dayBoundary',
+    says: {
+      zishi: 'form.pillars.dayBoundary.zishi',
+      midnight: 'form.pillars.dayBoundary.midnight',
+    },
+  },
+  {
     id: 'spirits',
     board: 'qimen',
     values: ['dun', 'fixed', 'baihu'],
-    implemented: ['dun'],
+    implemented: ['dun', 'fixed', 'baihu'],
     fallback: 'dun',
+    label: 'form.qimen.spirits',
+    says: {
+      dun: 'form.qimen.spirits.dun',
+      fixed: 'form.qimen.spirits.fixed',
+      baihu: 'form.qimen.spirits.baihu',
+    },
   },
   {
     id: 'leap',
@@ -153,30 +183,6 @@ export const DIVERGENCES: readonly Divergence[] = [
     values: ['stay', 'travel'],
     implemented: ['stay'],
     fallback: 'stay',
-  },
-  {
-    id: 'yearBoundary',
-    board: 'pillars',
-    values: ['lichun', 'chunjie'],
-    implemented: ['lichun', 'chunjie'],
-    fallback: 'lichun',
-    label: 'form.pillars.yearBoundary',
-    says: {
-      lichun: 'form.pillars.yearBoundary.lichun',
-      chunjie: 'form.pillars.yearBoundary.chunjie',
-    },
-  },
-  {
-    id: 'dayBoundary',
-    board: 'pillars',
-    values: ['zishi', 'midnight'],
-    implemented: ['zishi', 'midnight'],
-    fallback: 'zishi',
-    label: 'form.pillars.dayBoundary',
-    says: {
-      zishi: 'form.pillars.dayBoundary.zishi',
-      midnight: 'form.pillars.dayBoundary.midnight',
-    },
   },
   {
     id: 'shensha',

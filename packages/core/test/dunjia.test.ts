@@ -2,7 +2,7 @@ import { beforeAll, describe, expect, it } from 'vitest';
 import { computeQimenChart, type QimenChart } from '../src/dunjia/index.js';
 import { determineJu } from '../src/dunjia/ju.js';
 import { CENTRE_HOST, PALACES, RING_CLOCKWISE, lodge } from '../src/dunjia/palaces.js';
-import { GATES, STARS, earthPlate } from '../src/dunjia/plates.js';
+import { GATES, STARS, earthPlate, spiritPlate, spiritRing } from '../src/dunjia/plates.js';
 import { ChartError } from '../src/errors.js';
 import { initEphemeris, type EphemerisContext } from '../src/ephemeris.js';
 import { resolveMoment } from '../src/pillars.js';
@@ -433,5 +433,62 @@ describe('identifiers', () => {
     expect(new Set(GATES.map((g) => g.home)).size).toBe(8);
     expect(GATES.map((g) => g.home)).not.toContain(5);
     expect(new Set(STARS.map((s) => s.home)).size).toBe(9);
+  });
+});
+
+/**
+ * The three readings of the ring of eight.
+ *
+ * They part at two seats and only in the name — the star, the gate, the stem
+ * and the palace under either are the same — which is why this asserts the two
+ * seats and the six around them separately. Both alternates were collated cell
+ * by cell before they were laid: `docs/sources.md` § "The printed board, and
+ * the one seat it names differently" for 《奇門遁甲全局》, and the 御定 ring
+ * quoted in `plates.ts`.
+ */
+describe('八神 — which fact names the middle pair', () => {
+  const ring = (yang: boolean, naming: 'dun' | 'fixed' | 'baihu') =>
+    spiritRing(yang, naming).map((spirit) => spirit.hanzi);
+
+  it('follows the dun by default, renaming both seats in a yang chart', () => {
+    expect(ring(true, 'dun')).toEqual(['值符', '螣蛇', '太陰', '六合', '勾陳', '朱雀', '九地', '九天']);
+    expect(ring(false, 'dun')).toEqual(['值符', '螣蛇', '太陰', '六合', '白虎', '玄武', '九地', '九天']);
+  });
+
+  it('stands the same eight in both dun where 《御定奇門寶鑑》 does', () => {
+    // Its yin enumeration reverses the order it counts in and not the names,
+    // and against a counterclockwise ring that lands them on these seats.
+    expect(ring(true, 'fixed')).toEqual(ring(false, 'fixed'));
+    expect(ring(false, 'fixed')).toEqual(ring(true, 'dun'));
+  });
+
+  it('keeps 白虎 at the fifth seat in a yang chart, where 《全局》 does', () => {
+    // One seat renamed and not two: 白虎 stays and 玄武 becomes 勾陳. Three of
+    // its yang charts show the same pair with the 直符 in three palaces.
+    expect(ring(true, 'baihu')).toEqual(['值符', '螣蛇', '太陰', '六合', '白虎', '勾陳', '九地', '九天']);
+    // Its yin board agrees with this engine on all eight and their order.
+    expect(ring(false, 'baihu')).toEqual(ring(false, 'dun'));
+  });
+
+  it('moves nothing but the two names', () => {
+    for (const naming of ['fixed', 'baihu'] as const)
+      for (const yang of [true, false]) {
+        const other = ring(yang, naming);
+        const ours = ring(yang, 'dun');
+
+        expect(other.filter((_, seat) => seat !== 4 && seat !== 5)).toEqual(
+          ours.filter((_, seat) => seat !== 4 && seat !== 5),
+        );
+      }
+  });
+
+  it('lands them on the same palaces, whichever names them', () => {
+    // The plate is the ring: what a value changes is the word in the cell and
+    // never the cell it is in.
+    const palaces = (naming: 'dun' | 'fixed' | 'baihu') =>
+      Object.keys(spiritPlate(3, true, naming)).sort();
+
+    expect(palaces('fixed')).toEqual(palaces('dun'));
+    expect(palaces('baihu')).toEqual(palaces('dun'));
   });
 });

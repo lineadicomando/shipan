@@ -289,14 +289,25 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   spirits: {
     board: 'qimen',
+    // Three readings of one ring, parting at two seats and only in the name.
+    // What is *not* a value here is the fourth answer — the names following
+    // what is being divined — which is a licence to read: see
+    // `docs/refusals.md` § "The middle pair named by the matter".
+    label: 'form.qimen.spirits',
     values: [
       {
         id: 'dun',
         name: { hanzi: '陰陽異名', pinyin: 'yīnyángyìmíng' },
+        says: 'form.qimen.spirits.dun',
         implemented: true,
       },
-      { id: 'fixed', implemented: false },
-      { id: 'baihu', name: { hanzi: '白虎', pinyin: 'báihǔ' }, implemented: false },
+      { id: 'fixed', says: 'form.qimen.spirits.fixed', implemented: true },
+      {
+        id: 'baihu',
+        name: { hanzi: '白虎', pinyin: 'báihǔ' },
+        says: 'form.qimen.spirits.baihu',
+        implemented: true,
+      },
     ],
     default: 'dun',
   },

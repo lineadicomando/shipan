@@ -295,6 +295,15 @@ the spirit after 六合 is 白虎 and the one after it 勾陳 — 「離景英�
 白虎」 and 「兌景芮勾陳」 at 丙寅. Three palaces, one pair of seats: a system and
 not a slip.
 
+**Nothing moved for as long as this said nothing moves, and then the rule
+changed rather than the evidence.** What follows was written when the naming
+was a convention weighed against implementations; on 2026-08-29 `spirits`
+became a parameter with three computed values — this engine's 陰陽異名, the
+board below, and 《御定奇門寶鑑》's eight standing in both dun — and what had
+been «a choice with a Qing imperial print dissenting from half of it» became a
+choice a reader makes. The collation is unchanged and is what the value stands
+on.
+
 **Nothing moves, and that is the point of writing it down.** One printed
 witness against a convention this file already calls «one convention among
 several» does not settle which convention to ship, and the six spirits either

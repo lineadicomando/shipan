@@ -41,7 +41,7 @@ buys".
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `method: maoshan`, `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia`, `spirits: fixed`, `spirits: baihu`, `leap: runyue`, `strengths: star`, `earth: eighteen`, `centreTravel: travel` |
+| 奇門 | `method: maoshan`, `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen`, `centreTravel: travel` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `ziqi: yinianyisu`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
@@ -105,14 +105,16 @@ other side refused by name; `docs/parameters.md` carries the rows and the table
 above carries the refusals. What each is waiting on to be *implemented* is
 below, and it is what it always was — a reading, or a second witness.
 
-- 奇門, `spirits: fixed` and `spirits: baihu`. The engine follows 陰陽異名 and
-  renames the middle pair in a yang chart. 《御定奇門寶鑑》卷二 keeps the eight
-  names in both dun — 「朱雀下有元武。勾陳下有白虎」 — and 《奇門遁甲全局》 seats
-  白虎 fifth and 勾陳 sixth. Both are readings of the plate and both wait on the
-  check, not on a witness. **The fourth answer is not a value and will not
-  become one**: 《奇門遁甲金鏡寶鑑》 keys the choice to what is being divined,
-  which is a licence to read rather than a rule for laying — see
-  `docs/refusals.md` § "The middle pair named by the matter".
+- ~~奇門, the two other namings of the middle pair~~ — **landed on
+  2026-08-29.**
+  Both were already collated cell by cell: 《御定奇門寶鑑》卷二 enumerates its
+  eight twice and reverses the count and not the names, and 《奇門遁甲全局》's
+  yang board keeps 白虎 at the fifth seat across three charts with the 直符 in
+  three palaces. Nothing was waiting but the laying. **The fourth answer is
+  still not a value and will not become one**: 《奇門遁甲金鏡寶鑑》 keys the
+  choice to what is being divined, which is a licence to read rather than a
+  rule for laying — see `docs/refusals.md` § "The middle pair named by the
+  matter".
 - 奇門, `leap: runyue`. 置閏 has meant 《統宗》's placement — the block repeated
   is 芒種 or 大雪. 《奇門遁甲金鏡寶鑑》 卷之一 repeats whichever term the
   year's leap month falls under, works it twice by date — 1678 閏三月 and 1691
