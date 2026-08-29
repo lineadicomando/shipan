@@ -103,13 +103,15 @@ export interface Instrument {
   readonly takesBirth: boolean;
   /**
    * Whether a sex changes what is computed — and a third reason dividing the
-   * four, agreeing with neither of the two above.
+   * six, agreeing with neither of the two above.
    *
    * Under dunjia it sets the direction the 行年 count runs, and so is only
-   * meaningful beside a birth. Under 八字 it sets the direction the 大運 run,
-   * and there it stands alone because the birth is the board's own input.
-   * 六壬 and 七政四餘 have no use for it at all. Three fields, three reasons;
-   * folding any pair of them would hold until the fifth board.
+   * meaningful beside a birth. Under 八字 and 紫微斗數 it is a parameter of
+   * the board itself — the direction the 大運 and the 大限 run — and there it
+   * stands alone because the birth is the board's own input. 六壬 and 七政四餘
+   * have no use for it, and 太乙 has nobody on it to have one. Three fields,
+   * three reasons; that two of them agree across every row is not a reason to
+   * fold them, which is what `strengths` says below from the other side.
    */
   readonly takesGender: boolean;
   /**

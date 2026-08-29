@@ -40,6 +40,9 @@ packages/mcp/test/server.test.ts      obligatory
 
 README.md                             the description and the tables
 docs/sources.md                       where the number comes from — never skip
+docs/sources.tsv                      the other half of that entry: one row a
+                                      quantity, with its rung. `docs/notes.md`
+                                      says what a rung means
 docs/parameters.md                    if a school diverges
 docs/refusals.md                      if something is deliberately left out
 docs/readings.md                      if it reaches a prompt
@@ -67,7 +70,10 @@ change.
    `lib/server/params.ts` instead of rewriting the validation, and let the
    Svelte tables take the rows, not the chart.
 5. **The documentation**, last and never omitted. `docs/sources.md` first —
-   a quantity without an entry there is a quantity nobody can weigh.
+   a quantity without an entry there is a quantity nobody can weigh — and its
+   row in `docs/sources.tsv`, which is the other half: the argument is what a
+   reader follows, the row is what a surface reads. A row's `section` must be a
+   heading that exists, and a test says so.
 6. `npm test && npm run typecheck`. If the feature added an endpoint, a tool,
    a section or a command, `docs.test.ts` will fail until the count stated in
    `docs/architecture.md` is corrected. That is what it is for. A board adds a
@@ -108,8 +114,10 @@ Opens them over HTTP and says so in the README ...
 - **Verify against an independent implementation, not against memory.** This
   is the lesson of phases 1 to 3, learned the hard way more than once. A
   recalled almanac value has been wrong more often than right.
-- **Say how sure you are.** Three tiers: published astronomical fact, one
-  open implementation, a web source. Never let the third be read as the first.
+- **Say how sure you are.** Three kinds of check: a published astronomical
+  fact, an agreement with something that runs, a transmitted text read and
+  quoted. Never let the third be read as the first. What the register records
+  is the rung — `docs/notes.md` — and the two numberings are not one scale.
 - **No school is implicit.** If sources disagree, it is a parameter with a
   declared default — or, if they are too thin to choose from, it is left out
   and said to be left out. `三奇得使` is the precedent.
@@ -123,4 +131,6 @@ Opens them over HTTP and says so in the README ...
   field, add it to plate's own `types.ts` and let `test/types.test.ts` prove
   the two still agree.
 - **A chart is `private` in a cache, never `public`.** Its URL holds somebody's
-  date, time and place of birth.
+  date, time and place of birth. What is `public` is what holds nobody's: the
+  solar terms, and a 太乙 年計 board with its prompt, which are about the sky
+  and a year. `lib/cacheable.ts` is the rule and a test reads it.

@@ -521,8 +521,8 @@
       /**
        * The moment, from wherever this board keeps it.
        *
-       * Three of the four are handed it beside the board; a chart carries its
-       * own inside. Read only from `body.moment`, the chart's press threw on
+       * Four of the five are handed it beside the board; a chart carries its
+       * own inside, and 太乙 has no moment at all. Read only from `body.moment`, the chart's press threw on
        * every consultation from the day a second board arrived — the reading
        * came back, the moment did not, and the whole cast was reported as a
        * board that could not be laid. It failed silently in the sense that

@@ -14,18 +14,27 @@ TypeScript, AGPL-3.0-or-later.
 |---|---|---|
 | `packages/i18n` | nothing | message catalogs and locale negotiation. A leaf |
 | `packages/geo` | `i18n` | location lookup over a local GeoNames dataset (SQLite) |
-| `packages/core` | `i18n`, `geo` | the calculation engine and the `shipan` command |
+| `packages/core` | `i18n` | the calculation engine and the `shipan` command |
 | `packages/plate` | nothing | the drawings: SVG, and PNG at a separate entry point |
-| `packages/mcp` | `core`, `geo`, `i18n` | MCP server, stdio transport |
+| `packages/mcp` | `core`, `geo`, `i18n`, `plate` | MCP server, stdio transport |
 | `apps/web` | all of them | SvelteKit: the interface and the REST API |
 
-Three of the edges above are absences, and each is load-bearing.
+Four of the edges above are absences, and each is load-bearing.
+
+**`core` does not depend on `geo`.** The engine is handed a place already
+resolved — coordinates, a zone, and the options that were chosen — and never
+looks one up: turning a name into a place is a decision with a person in it,
+which is why it belongs to a surface and to `docs/refusals.md`. The CLI takes
+`--lat`, `--lon` and `--tz` for the same reason, and the ninety megabytes of
+place names stay where only the surfaces that offer a search can reach them.
 
 **`plate` imports nothing from `core`, not even types.** It redeclares the
 shape it needs — of a chart, of a 六壬 board, of a 太乙 grid alike — and
-`packages/plate/test/types.test.ts` asserts the copies still agree. The CLI
-lives in `core` and draws, so the other direction would close a cycle; and a
-drawing package that could reach the engine would end up computing.
+`packages/plate/test/types.test.ts` asserts the copies still agree. A drawing
+package that could reach the engine would end up computing; and the absence is
+what keeps the natural direction available, since the day the CLI prints a
+drawing it is `core` that imports `plate` and nothing has to be untangled
+first.
 
 **The PNG lives at `@shipan/plate/png`**, a separate entry point, because
 it pulls a native module that must never reach the browser. It also needs a

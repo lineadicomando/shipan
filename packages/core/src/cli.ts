@@ -238,16 +238,16 @@ Narrowing a scan
   --help
 
 Handing a board to a model
-  --prompt               for any of the five boards: it wrapped in the
+  --prompt               for any of the six boards: it wrapped in the
                          instructions for reading it, to paste into an
                          assistant that has no connection to this engine
   --ask "…"              the question it is to be read for; implies --prompt.
                          Without one the prompt says none was asked, which is
                          not the same as choosing a 用神 on nobody's behalf.
-                         For \`qimen\` and \`liuren\` only: \`bazi\` and
-                         \`qizheng\` are laid on a birth, \`taiyi\` on a year,
-                         all three are asked nothing, and they refuse it
-                         rather than dropping it
+                         For \`qimen\` and \`liuren\` only: \`bazi\`,
+                         \`qizheng\` and \`ziwei\` are laid on a birth,
+                         \`taiyi\` on a year, all four are asked nothing, and
+                         they refuse it rather than dropping it
   --about "…"            for \`taiyi\` only: the matter the year is read for,
                          and **not** a question — a field of view with two
                          parties in it, which is what tells a reader which side

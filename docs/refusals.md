@@ -196,9 +196,12 @@ asked for.
 *Asked by:* anyone who assumes a chart uses both coordinates.
 
 In this engine **the longitude is what moves a board**. The latitude is
-carried and printed and enters no calculation. 七政四餘's division of the 宮 by
-houses is the one method that would read it, and `qizheng.ts` declares that
-parameter and refuses that value.
+carried and printed and enters no calculation. `minggong: ascendant` is the one
+method that would read it — the 命宮 taken at the degree actually rising, where
+`yuejiang` lays the hour on the palace of the 月將 — and `qizheng.ts` declares
+that value and refuses it. It is not `gong`, which cuts the twelve palaces by
+the 中氣 or by the 次 and reads no latitude either way: two parameters about the
+palaces, one of them about the sky over a place.
 
 This bound is stated here and in the README and **not in the form**: nothing
 under that fold explains itself, on the ground that a control somebody opens

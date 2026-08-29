@@ -2170,7 +2170,7 @@ stays where the officers' 宜忌 stayed.
 The 四庫 text writes 元武 throughout, avoiding the 玄 of the reigning emperor's
 name. The god is 玄武, as the 六壬 board already has it.
 
-### 年神 — six bearings, and why six is a boundary and not a set
+### 年神 — twenty-six bearings, and why the number is a boundary and not a set
 
 The other axis. A chart chooses an hour **and a direction**, and the 年神 are
 what the almanac puts on the second — 卷三 describes each as 所理之地 or
@@ -2207,7 +2207,7 @@ completely, in its own entry, without leaning on a god defined elsewhere:
 text rather than from an implementation — which matters here more than
 elsewhere, because this is the one block of the layer with **no runnable
 reference to speak of**. `lunar-javascript` returns a direction for 太歲 and
-nothing for the other five, and 太歲 is the one that needs no checking, being
+for none of the others, and 太歲 is the one that needs no checking, being
 the year's branch by definition. So the evidence is tier 3: a text, quoted, and
 its own worked lists reproduced.
 
@@ -2238,7 +2238,8 @@ with the branch that controls or clashes with the 太歲 — 「太歲在午則�
 
 The 歲枝德 entry says it again, in general terms, of a branch that is three
 things at once: 「其辰又為死符又為小耗……然美惡不嫌同位，吉凶不嫌同名」. And
-大耗 stands where 歲破 does. So four of the eighteen share a seat with another
+大耗 stands where 歲破 does. So four of the eighteen that stand on a branch share
+a seat with another
 and one branch a year carries three names. **The engine reports all of them, on
 the one branch**, and a test holds each pair together across all twelve years.
 A table that quietly deduplicated them would be reporting a tidiness nobody

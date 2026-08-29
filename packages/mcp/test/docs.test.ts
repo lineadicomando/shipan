@@ -30,6 +30,8 @@ beforeAll(async () => {
 
 const architecture = (): string => readFileSync(join(ROOT, 'docs/architecture.md'), 'utf8');
 
+const contract = (): string => readFileSync(join(ROOT, 'docs/agent-prompt.md'), 'utf8');
+
 describe('the counts docs/architecture.md states about MCP', () => {
   it('names as many tools as the server offers', async () => {
     const { tools } = await client.listTools();
@@ -38,6 +40,23 @@ describe('the counts docs/architecture.md states about MCP', () => {
       architecture(),
       `docs/architecture.md should say "${tools.length} tools"`,
     ).toContain(`${tools.length} tools`);
+  });
+
+  /**
+   * The contract a caller reads before writing a prompt names them too, and
+   * the count above would not notice a tool missing from it: a page can say
+   * «twelve» in one sentence and describe eleven in the table below.
+   * `docs/agent-prompt.md` is where a model is told what a tool in particular
+   * invites it to get wrong, so a tool absent from it is a tool used without
+   * its warning.
+   */
+  it('is described tool by tool in the contract', async () => {
+    const { tools } = await client.listTools();
+    const document = contract();
+    expect(
+      tools.map((tool) => tool.name).filter((name) => !document.includes(name)),
+      'docs/agent-prompt.md does not name these tools.',
+    ).toEqual([]);
   });
 
   it('names as many reference resources as the server offers', async () => {

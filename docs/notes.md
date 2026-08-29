@@ -6,7 +6,7 @@ on, and what is deliberately absent. This page is what that section is built
 out of — the ladder a quantity is weighed on, the line between what is derived
 and what is written, and the one thing a written entry must always show.
 
-It binds whether or not the section is built. `docs/sources.tsv` already
+It binds the section rather than waiting on it. `docs/sources.tsv` already
 carries a `rung` for every quantity, and a column of numbers whose meaning
 lived in a phase file would be a column nobody could read: `docs/history/` is
 never normative, so what a rung *means* has to be here.
@@ -63,6 +63,15 @@ and `docs/sources.md` § "The three tiers" is where that distinction lives. The
 register's `checked_against` column says what was run and how far, so that a
 reader who wants the difference has it in the row; the argument is in the
 section the row's last column names.
+
+**Those tiers are not this ladder, and the two numberings run opposite ways.**
+`docs/sources.md` is built in three tiers — a published fact, a runnable
+reference, a transmitted text — which say what *kind* of check was available at
+all, and they are that file's chapters as well as its vocabulary. The rungs here
+say how strong the check actually run was, strongest first. Tier 1 is the strong
+end where rung 1 is the second, so a tier number is never a rung and neither is
+written in place of the other: what the register carries, and what a page owes a
+reader weighing one quantity against another, is the rung.
 
 **And it does not carry whether the text is sound, which is the other thing
 that can go wrong.** The ladder orders one risk: that a rule handed down is the

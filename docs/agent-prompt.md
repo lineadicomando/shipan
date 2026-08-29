@@ -293,7 +293,11 @@ rather than advises. Do not supply it from memory.
   the ten gods read off them. **A 紫微斗數 board is under it beside the 八字
   most of all**, and for the same reason turned around: it is built from that
   same birth, and the year stem carrying its 四化, 祿存, 天魁 and 天鉞 is the
-  year stem carrying the other's gods. Five boards, one to a reading.
+  year stem carrying the other's gods. **太乙 overlaps none of the five and is
+  under the rule anyway**, on the first half of it rather than the second: a
+  model handed a board of a year beside a board of a person reads the year onto
+  the person, which is the one thing that board's own prompt spends a paragraph
+  refusing. Six boards, one to a reading.
 
 ## How sure the numbers are
 
@@ -337,11 +341,11 @@ Not uniformly, and the difference matters when you are asked to justify one.
   人事宮** are weaker still — one source and three derivations, set out in
   `docs/sources.md`. If you are asked where the lodge boundaries come from,
   the honest answer is "the stars, computed", not "the 時憲曆".
-- **The 紫微斗數 board** — the only board here with **no tier-1 quantity in it
+- **The 紫微斗數 board** — the only board here with **no measured quantity in it
   at all**, and that is a fact about the art rather than a weakness of the
   computation. Nothing on it is astronomical: 紫微 is not a star, no name on
   the board has a position, and the whole construction is arithmetic on a
-  lunar date, an hour branch and a year pillar. The only tier-1 input is the
+  lunar date, an hour branch and a year pillar. The only measured input is the
   lunar calendar underneath it. Against that, the *transcription* is unusually
   well pinned: an arithmetic the tradition carries beside the printed tables
   reproduces 148 of their 150 cells and disagrees only at the two cells where
@@ -361,7 +365,7 @@ Not uniformly, and the difference matters when you are asked to justify one.
   twenty-eight 神煞, **three have no runnable reference of any kind** — no
   implementation consulted carries 兵禁, 四絕 or 四離 — though the last two rest
   on solar terms this project verifies to the second, where 兵禁 rests on a
-  table nothing checks. 地囊 has the weakest real agreement at 94.9 %. Both are in `docs/sources.md`; say so if you quote either. The **six 年神** are
+  table nothing checks. 地囊 has the weakest real agreement at 94.9 %. Both are in `docs/sources.md`; say so if you quote either. The **twenty-six 年神** are
   the exception in this layer: they have no runnable reference at all, and rest
   on 《協紀辨方書》卷三 with the source's own worked lists reproduced in tests.
   Say so if you quote a bearing.
@@ -381,8 +385,10 @@ Not uniformly, and the difference matters when you are asked to justify one.
   figures that differ by millions and agree modulo 360, which is the only
   residue the year board reads.
 
-If you are asked how the software knows something, say which of these three it
-is. Do not describe the third as though it were the first.
+If you are asked how the software knows something, say which of the three kinds
+it is: a published astronomical fact, an agreement with something that runs, or a
+transmitted text read and quoted. Do not describe the third as though it were the
+first.
 
 **Two of these lines are not only here**, and the exception says where the
 boundary runs. The direction the twelve 人事宮 are numbered in, and the frame
@@ -443,7 +449,12 @@ GET /api/taiyi/plate?year=2026
 GET /api/taiyi/prompt?year=2026&lang=en&about=true
 GET /api/qizheng?date=1968-03-12&time=14:30&locationId=3169070
 GET /api/qizheng/text?date=1968-03-12&time=14:30&locationId=3169070
+GET /api/qizheng/plate?date=1968-03-12&time=14:30&locationId=3169070
 GET /api/qizheng/prompt?date=1968-03-12&time=14:30&locationId=3169070
+GET /api/ziwei?date=1984-05-05&time=14:30&locationId=1816670&gender=male
+GET /api/ziwei/text?date=1984-05-05&time=14:30&locationId=1816670&gender=male
+GET /api/ziwei/plate?date=1984-05-05&time=14:30&locationId=1816670&gender=male
+GET /api/ziwei/prompt?date=1984-05-05&time=14:30&locationId=1816670&gender=male
 GET /api/terms?year=2024&timezone=Asia/Shanghai
 GET /api/qimen/plate?date=2024-06-15&time=14:00&locationId=1816670
 GET /api/moments?from=2026-09-01&to=2026-09-08&locationId=3169070&gate=kaimen&towards=se,s
@@ -484,17 +495,17 @@ ends on the line that introduces a question, for the caller to append; without
 it the prompt says plainly that none was asked. A question is somebody's own,
 and one in a query string is one written into every log along the way.
 
-**Only the two boards of 卜 answer to it.** `bazi/prompt`, `qizheng/prompt`
-and `taiyi/prompt` have no `asked`, and it is not an omission. The two boards of
-命 are laid on a birth and nothing is asked of them, so there is no line for a
-question to go on: the themes a reading traverses are commissioned in the prompt
-itself, and what the person wants to look at next belongs to the conversation
-that follows. The board of 天 is laid on a year and there is **nobody to ask on
-behalf of** — the reader is not on that board, and a question is how they get
-written into a figure they are not in. The CLI refuses `--ask` on all three
-commands rather than dropping it, with a message of its own for the year; over
-HTTP the parameter simply has nothing to reach, and the answer is the same
-either way.
+**Only the two boards of 卜 answer to it.** `bazi/prompt`, `qizheng/prompt`,
+`ziwei/prompt` and `taiyi/prompt` have no `asked`, and it is not an omission. The
+three boards of 命 are laid on a birth and nothing is asked of them, so there is
+no line for a question to go on: the themes a reading traverses are commissioned
+in the prompt itself, and what the person wants to look at next belongs to the
+conversation that follows. The board of 天 is laid on a year and there is
+**nobody to ask on behalf of** — the reader is not on that board, and a question
+is how they get written into a figure they are not in. The CLI refuses `--ask` on
+all four commands rather than dropping it, with a message of its own for the
+year; over HTTP the parameter simply has nothing to reach, and the answer is the
+same either way.
 
 **`about` is what a question is not, and only `taiyi/prompt` takes it.** A
 matter names what is being *looked at* — a field of view with two sides in it —

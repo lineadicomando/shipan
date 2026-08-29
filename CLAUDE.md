@@ -62,13 +62,17 @@ the engine falls back to Moshier, which needs no files.
   it sits above — an argument about an Italian word conducted in English
   quotes its own subject at every mention. Anything else a catalog comment
   says is English. → [`docs/i18n.md`](docs/i18n.md)
-- **The engine does not localise.** `core` returns identifiers, hanzi, pinyin
-  and numbers; readable text is produced at the surface. A function that
-  returns a translated string is a design error. → [`docs/i18n.md`](docs/i18n.md)
+- **The engine does not localise, and rendering is not localising.** A
+  calculation in `core` returns identifiers, hanzi, pinyin and numbers; the
+  printers beside it — `labels.ts`, `format.ts`, `prompt.ts` — are handed a
+  `Translator` and never choose one. A function in `core` that picks a
+  language is the design error; the CLI may, being a surface that happens to
+  live there. → [`docs/i18n.md`](docs/i18n.md)
 - **Hanzi are not a locale, and a name carries its reading.** 休門 is the name
   of the gate, not its Chinese rendering, and it is xiūmén to every reader.
-  Both travel in the engine's output at all times; the catalog supplies only
-  the gloss. Identifiers are toneless pinyin, tone-numbered only where they
+  Both travel in the engine's output at all times bar one — a `prompt.`
+  message, whose reader is a model that need not pronounce anything; the
+  catalog supplies only the gloss. Identifiers are toneless pinyin, tone-numbered only where they
   would collide (`jing1men`, `jing3men`). → [`docs/i18n.md`](docs/i18n.md)
 - **The engine answers no question, which is not the same as saying nothing.**
   It carries an attribute the sources hand down concordantly when it belongs
@@ -149,9 +153,10 @@ the engine falls back to Moshier, which needs no files.
   rule on every surface: `readPlace`, `resolvePlace`, `LocationSearch.svelte`.
   → [`docs/refusals.md`](docs/refusals.md)
 - **The longitude moves a board; the latitude enters no calculation.** It is
-  carried and printed. 七政四餘's 宮 division by houses is the one method that
-  would read it, and `qizheng.ts` declares and refuses it. Say so in the
-  documentation and **not in the form**.
+  carried and printed. 七政四餘's `minggong: ascendant` — the 命宮 taken at the
+  degree actually rising — is the one method that would read it, and
+  `qizheng.ts` declares and refuses that value. Say so in the documentation and
+  **not in the form**.
 - **Errors cross HTTP as `code` + `messageKey` + `params`.** The surface
   translates; nobody parses prose. See `lib/server/errors.ts`.
 - **A chart is cacheable `private`, never `public`.** Its URL holds somebody's
@@ -277,6 +282,10 @@ Domain identifiers are toneless pinyin where the domain is Chinese (`ganzhi`,
   ones that exist against the code, because the last hand-written count drifted.
 - **Say what holds, not what changed.** «It used to be X and now is Y» belongs
   in a phase file, not in `README.md` or in `docs/`.
+- **Where a rule points at the code, it names the code.** `minggong: ascendant`
+  and not «the 命宮 by the rising degree»: a paraphrase is unambiguous until a
+  parameter arrives whose name it fits better, and then it points at the wrong
+  one. The paraphrase stands beside the name, never instead of it.
 
 ## Adding a feature
 

@@ -123,6 +123,38 @@ describe('the counts the documents state', () => {
     expectCount('docs/architecture.md', NOTE_PAGES.length, 'notes pages');
   });
 
+  /**
+   * `docs/agent-prompt.md` is the one document written *to* a caller, and it
+   * had gone stale in the way a hand-kept list goes stale: 紫微斗數 landed, and
+   * the page went on naming `bazi/prompt`, `qizheng/prompt` and
+   * `taiyi/prompt` as the boards that take no question, with no `/api/ziwei`
+   * anywhere in it. Nothing could have noticed — every sentence was true when
+   * it was written.
+   *
+   * So the address list is asserted rather than trusted. What is checked is
+   * that each endpoint is *named*, not the shape of the example around it: a
+   * page free to explain an endpoint however it likes, and not free to leave
+   * one out.
+   */
+  it('names every endpoint an agent can call', () => {
+    const document = read('docs/agent-prompt.md');
+    const root = join(ROOT, 'apps/web/src/routes/api');
+
+    const paths = (directory: string, prefix = '/api'): string[] =>
+      readdirSync(directory).flatMap((entry) => {
+        const path = join(directory, entry);
+        if (statSync(path).isDirectory()) return paths(path, `${prefix}/${entry}`);
+        return entry === '+server.ts' ? [prefix] : [];
+      });
+
+    const named = paths(root);
+    expect(named.length).toBeGreaterThan(0);
+    expect(
+      named.filter((endpoint) => !document.includes(endpoint)),
+      'docs/agent-prompt.md does not name these endpoints.',
+    ).toEqual([]);
+  });
+
   it('lists the languages the project actually speaks', () => {
     /**
      * `docs/i18n.md` prints `LOCALES` in a code block, and how many there are
@@ -168,7 +200,26 @@ describe('the documents point where they say they point', () => {
     }
   });
 
-  for (const source of ['CLAUDE.md', 'README.md', 'ROADMAP.md', 'docs/README.md']) {
+  /**
+   * Every page that links, and not the four that were listed here.
+   *
+   * The check began at the files a reader arrives through, which is where the
+   * pointers were being added at the time. But `docs/` links inside itself —
+   * `notes.md` sends a reader to `sources.md` for what an agreement is worth,
+   * `parameters.md` sends them there for what a second copy of a text buys —
+   * and those were the pointers nothing read. The list is now derived, so a
+   * page added to `docs/` is covered the day it lands.
+   */
+  const linking = [
+    'CLAUDE.md',
+    'README.md',
+    'ROADMAP.md',
+    ...readdirSync(join(ROOT, 'docs'))
+      .filter((entry) => entry.endsWith('.md'))
+      .map((entry) => `docs/${entry}`),
+  ];
+
+  for (const source of linking) {
     it(`${source} links only to files that exist`, () => {
       for (const target of linked(source)) {
         const base = source.includes('/') ? source.slice(0, source.lastIndexOf('/') + 1) : '';
