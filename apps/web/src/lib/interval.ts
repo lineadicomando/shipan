@@ -1,5 +1,5 @@
 import { placeFields, readPlaceInput, type PlaceInput } from './moment.js';
-import { named } from './parameters.js';
+import { chosenFields, readChosen, type Chosen } from './parameters.js';
 import { PALACES } from './vocabulary.js';
 
 /**
@@ -32,12 +32,8 @@ export interface IntervalInput extends PlaceInput {
   fromTime: string;
   toTime: string;
   trueSolarTime: boolean;
-  dayBoundary: string;
-  /** How the ju is determined. Verbatim, as in `MomentInput`. */
-  method: string;
-  /** Where the third of the term is counted from, under chaibu. Carried
-   * verbatim, as in `MomentInput`: it moves the ju on most days. */
-  yuan: string;
+  /** Every other divergence in force, as in `MomentInput` and read the same way. */
+  chosen: Chosen;
 }
 
 /** What is being looked for, as identifiers the engine knows. */
@@ -166,9 +162,8 @@ export function readInterval(url: URL): {
       toTime: params.get('toTime') ?? '',
       ...readPlaceInput(params),
       trueSolarTime: params.get('trueSolarTime') !== 'false',
-      dayBoundary: params.get('dayBoundary') === 'midnight' ? 'midnight' : 'zishi',
-      method: params.get(named('qimen', 'method')) ?? 'chaibu',
-      yuan: params.get(named('qimen', 'yuan')) ?? 'term',
+      // A scan walks charts, so what it offers is dunjia's beside the layers'.
+      chosen: readChosen(params, 'qimen'),
     },
     criteria: {
       gate: params.get('gate') ?? '',
@@ -213,11 +208,9 @@ export function intervalQuery(
   if (input.fromTime) params.set('fromTime', input.fromTime);
   if (input.toTime) params.set('toTime', input.toTime);
   if (!input.trueSolarTime) params.set('trueSolarTime', 'false');
-  if (input.dayBoundary !== 'zishi') params.set('dayBoundary', input.dayBoundary);
-  if (input.method && input.method !== 'chaibu') params.set(named('qimen', 'method'), input.method);
-  if (input.yuan && input.yuan !== 'term') params.set(named('qimen', 'yuan'), input.yuan);
 
   for (const [key, value] of Object.entries({
+    ...chosenFields(input.chosen),
     ...placeFields(input),
     ...criteriaFields(criteria),
     ...extra,
@@ -250,11 +243,12 @@ export function chartQuery(
   params.set('date', start.slice(0, 10));
   params.set('time', start.slice(11, 16));
   if (!input.trueSolarTime) params.set('trueSolarTime', 'false');
-  if (input.dayBoundary !== 'zishi') params.set('dayBoundary', input.dayBoundary);
-  if (input.method && input.method !== 'chaibu') params.set(named('qimen', 'method'), input.method);
-  if (input.yuan && input.yuan !== 'term') params.set(named('qimen', 'yuan'), input.yuan);
 
-  for (const [key, value] of Object.entries({ ...placeFields(input), ...extra })) {
+  for (const [key, value] of Object.entries({
+    ...chosenFields(input.chosen),
+    ...placeFields(input),
+    ...extra,
+  })) {
     if (value) params.set(key, value);
   }
   return params.toString();

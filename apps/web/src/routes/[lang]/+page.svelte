@@ -971,9 +971,8 @@
           bind:longitude={asked.longitude}
           bind:timezone={asked.timezone}
           bind:trueSolarTime={asked.trueSolarTime}
-          bind:dayBoundary={asked.dayBoundary}
-          bind:method={asked.method}
-          bind:yuan={asked.yuan}
+          bind:chosen={asked.chosen}
+          board={instrument.id}
           extraLegend={instrument.takesBirth ? 'consult.birth' : undefined}
           extraSet={instrument.takesBirth && born ? 1 : 0}
         >

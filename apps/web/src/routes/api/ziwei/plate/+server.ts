@@ -1,4 +1,4 @@
-import { DEFAULT_ZIWEI_OPTIONS, computeZiwei, ziweiLabels } from '@shipan/core';
+import { computeZiwei, ziweiLabels } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import { renderZiweiSvg } from '@shipan/plate';
 import {
@@ -6,6 +6,7 @@ import {
   readLocale,
   readMoment,
   readPlateOptions,
+  readZiweiOptions,
 } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
@@ -35,9 +36,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const t = createTranslator(locale);
     const { moment } = readMoment(url.searchParams);
 
-    const gender = url.searchParams.get('gender');
-    const options = { ...DEFAULT_ZIWEI_OPTIONS };
-    if (gender === 'male' || gender === 'female') options.gender = gender;
+    const options = readZiweiOptions(url.searchParams);
 
     const board = computeZiwei(moment, options);
     const { size, scheme } = readPlateOptions(url.searchParams);

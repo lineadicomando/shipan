@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { named } from '$lib/parameters';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
@@ -18,10 +17,8 @@
   // svelte-ignore state_referenced_locally
   let asked = $state<MomentInput>({ ...data.moment });
   // svelte-ignore state_referenced_locally
-  let luohou = $state(data.luohou);
   $effect(() => {
     asked = { ...data.moment };
-    luohou = data.luohou;
   });
 
   const board = $derived(data.result?.qizheng);
@@ -49,7 +46,7 @@
         date: moment?.input.date ?? data.moment.date,
         time: moment?.input.time ?? data.moment.time,
       },
-      { [named('qizheng', 'luohou')]: data.luohou, lang: t.locale },
+      { lang: t.locale },
     ),
   );
 
@@ -77,7 +74,7 @@
     event.preventDefault();
     busy = true;
     try {
-      const query = momentQuery(asked, { [named('qizheng', 'luohou')]: luohou });
+      const query = momentQuery(asked);
       await goto(`${page.url.pathname}${query ? `?${query}` : ''}`, {
         replaceState: true,
         noScroll: true,
@@ -107,8 +104,8 @@
       bind:longitude={asked.longitude}
       bind:timezone={asked.timezone}
       bind:trueSolarTime={asked.trueSolarTime}
-      bind:dayBoundary={asked.dayBoundary}
-      bind:luohou
+      bind:chosen={asked.chosen}
+      board="qizheng"
     />
     <SubmitButton {t} label="cli.heading.qizheng" {busy} />
   {/snippet}

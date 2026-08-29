@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { named } from '$lib/parameters';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
@@ -18,10 +17,8 @@
   // svelte-ignore state_referenced_locally
   let asked = $state<MomentInput>({ ...data.moment });
   // svelte-ignore state_referenced_locally
-  let guiren = $state(data.guiren);
   $effect(() => {
     asked = { ...data.moment };
-    guiren = data.guiren;
   });
 
   const board = $derived(data.result?.liuren);
@@ -45,7 +42,7 @@
   const address = $derived(
     momentQuery(
       { ...data.moment, date: moment?.input.date ?? data.moment.date, time: moment?.input.time ?? data.moment.time },
-      { [named('liuren', 'guiren')]: data.guiren, lang: t.locale },
+      { lang: t.locale },
     ),
   );
 
@@ -73,7 +70,7 @@
     event.preventDefault();
     busy = true;
     try {
-      const query = momentQuery(asked, { [named('liuren', 'guiren')]: guiren });
+      const query = momentQuery(asked);
       await goto(`${page.url.pathname}${query ? `?${query}` : ''}`, {
         replaceState: true,
         noScroll: true,
@@ -104,8 +101,8 @@
       bind:longitude={asked.longitude}
       bind:timezone={asked.timezone}
       bind:trueSolarTime={asked.trueSolarTime}
-      bind:dayBoundary={asked.dayBoundary}
-      bind:guiren
+      bind:chosen={asked.chosen}
+      board="liuren"
     />
     <SubmitButton {t} label="cli.heading.liuren" {busy} />
   {/snippet}

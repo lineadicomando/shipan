@@ -1,6 +1,6 @@
-import { DEFAULT_ZIWEI_OPTIONS, computeZiwei } from '@shipan/core';
+import { computeZiwei } from '@shipan/core';
 import { json } from '@sveltejs/kit';
-import { momentIsFixed, readMoment } from '$lib/server/params';
+import { momentIsFixed, readMoment, readZiweiOptions } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
 
@@ -25,9 +25,7 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
   try {
     const { moment, label } = readMoment(url.searchParams);
 
-    const gender = url.searchParams.get('gender');
-    const options = { ...DEFAULT_ZIWEI_OPTIONS };
-    if (gender === 'male' || gender === 'female') options.gender = gender;
+    const options = readZiweiOptions(url.searchParams);
 
     const ziwei = computeZiwei(moment, options);
 

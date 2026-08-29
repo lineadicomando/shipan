@@ -1,4 +1,5 @@
 import {
+  DEFAULT_ZIWEI_OPTIONS,
   ChartError,
   DEFAULT_TAIYI_OPTIONS,
   GATES,
@@ -31,6 +32,7 @@ import {
   type StarId,
   type StemId,
   type StrengthId,
+  type ZiweiOptions,
 } from '@shipan/core';
 import { getLocation } from '@shipan/geo';
 import { genderBelongsToBoard, type InstrumentId } from '$lib/instruments';
@@ -445,6 +447,42 @@ export function readOptions(params: URLSearchParams): ChartOptions {
       throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: 'shensha', value: shensha });
     }
     options.shensha = shensha;
+  }
+
+  return options;
+}
+
+/**
+ * The 紫微斗數 divergences an address states, with the board's own defaults.
+ *
+ * One reader for four endpoints, which is what the 六壬 and 七政四餘 halves of
+ * this already do at their own: a board that came back cut at 立春 through
+ * `/text` and at 正月初一 through `/api` would be two boards under one address.
+ *
+ * `yearBoundary` is the one a reader can move, and it is not the pillars'. The
+ * pillars are cut at 立春 because that is what an almanac printing four
+ * pillars does; this board counts its month and its day on the lunar calendar,
+ * so the year that opened at 正月初一 is the reckoning coherent with the rest
+ * of it — and the year stem is what seats the four transformations, so a birth
+ * in the weeks between the two lays out two different boards. Hence the prefix
+ * on the wire: `ziwei.yearBoundary` and the pillars' `yearBoundary` are two
+ * questions that were one word.
+ */
+export function readZiweiOptions(params: URLSearchParams): ZiweiOptions {
+  const options: ZiweiOptions = { ...DEFAULT_ZIWEI_OPTIONS };
+
+  const gender = params.get('gender');
+  if (gender === 'male' || gender === 'female') options.gender = gender;
+
+  const cut = params.get(named('ziwei', 'yearBoundary'));
+  if (cut !== null) {
+    if (cut !== 'lichun' && cut !== 'chunjie') {
+      throw new ChartError('UNKNOWN_IDENTIFIER', {
+        parameter: named('ziwei', 'yearBoundary'),
+        value: cut,
+      });
+    }
+    options.yearBoundary = cut;
   }
 
   return options;

@@ -784,6 +784,48 @@ describe('GET /api/ziwei', () => {
     expect((body as { ziwei: { options: { sihua: string } } }).ziwei.options.sihua).toBe('quanshu');
   });
 
+  /**
+   * The one divergence of this board a reader can move, and the reason it is
+   * spelt with the board's name in front of it.
+   *
+   * 1983 cut at 立春 on 4 February and at 正月初一 on the 13th, so a birth
+   * between the two dates belongs to 癸亥 by one reckoning and to 壬戌 by the
+   * other — and the year stem is what seats the four transformations, 祿存,
+   * 天魁 and 天鉞. A control that could not move this would be a control that
+   * decides nothing; a bare `yearBoundary` would move the pillars instead.
+   */
+  it('cuts its own year where the address says, and not where the pillars are cut', async () => {
+    const between = 'date=1983-02-08&time=09:00&timezone=Asia/Shanghai&gender=male';
+    const year = async (query: string) =>
+      (
+        (await call(ziwei, query)).body as {
+          ziwei: { yearPillar: { hanzi: string }; options: { yearBoundary: string } };
+        }
+      ).ziwei;
+
+    const lunar = await year(between);
+    const solar = await year(`${between}&ziwei.yearBoundary=lichun`);
+
+    expect(lunar.options.yearBoundary).toBe('chunjie');
+    expect(solar.options.yearBoundary).toBe('lichun');
+    expect(lunar.yearPillar.hanzi).not.toBe(solar.yearPillar.hanzi);
+
+    // And the pillars printed beside the board are cut where the pillars are
+    // cut: two questions, two parameters, one of them not this one.
+    const pillars = (await call(ziwei, between)).body as { moment: { pillars: { year: { hanzi: string } } } };
+    expect(pillars.moment.pillars.year.hanzi).toBe(solar.yearPillar.hanzi);
+  });
+
+  it('refuses a boundary it has never heard of', async () => {
+    const { status, body } = await call(ziwei, `${MOMENT}&ziwei.yearBoundary=liqiu`);
+
+    expect(status).toBe(400);
+    expect(body).toMatchObject({
+      code: 'UNKNOWN_IDENTIFIER',
+      params: { parameter: 'ziwei.yearBoundary', value: 'liqiu' },
+    });
+  });
+
   it('says the board in words, with the line that places it', async () => {
     const { text, headers } = await call(ziweiText, MOMENT);
 

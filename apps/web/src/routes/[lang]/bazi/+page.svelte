@@ -108,7 +108,8 @@
       bind:longitude={asked.longitude}
       bind:timezone={asked.timezone}
       bind:trueSolarTime={asked.trueSolarTime}
-      bind:dayBoundary={asked.dayBoundary}
+      bind:chosen={asked.chosen}
+      board="bazi"
     />
     <label>
       <!-- Asked for, never assumed: only the direction of the cycles needs

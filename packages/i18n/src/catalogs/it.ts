@@ -1150,15 +1150,25 @@ export const it: Record<MessageKey, string> = {
   'form.momentNow': 'Torna ad adesso',
   'form.calculation': 'Come si calcola',
   'form.trueSolarTime': 'Correggi all’ora solare vera',
-  'form.dayBoundary': 'Il giorno comincia',
-  'form.dayBoundary.zishi': 'all’ora del Topo 子時 zǐshí, alle 23:00',
-  'form.dayBoundary.midnight': 'a mezzanotte, alle 00:00',
-  'form.method': 'Il ju si determina',
-  'form.method.chaibu': 'per terzi del termine: 拆補 chāibǔ',
-  'form.method.zhirun': 'per blocchi interi, con l’intercalazione: 置閏 zhìrùn',
-  'form.yuan': 'Con chaibu, il terzo del termine si conta',
-  'form.yuan.term': 'dall’istante in cui il termine è cominciato',
-  'form.yuan.futou': 'dal giorno, per tratti di cinque: 符頭 fútóu',
+  'form.pillars.yearBoundary': 'L’anno dei pilastri comincia',
+  'form.pillars.yearBoundary.lichun': 'a 立春 lìchūn, dove gira l’anno solare',
+  'form.pillars.yearBoundary.chunjie':
+    'a 正月初一 zhēngyuèchūyī, il primo giorno dell’anno lunare',
+  'form.ziwei.yearBoundary': 'L’anno di questa tavola comincia',
+  'form.ziwei.yearBoundary.lichun': 'a 立春 lìchūn, dove gira l’anno solare',
+  'form.ziwei.yearBoundary.chunjie':
+    'a 正月初一 zhēngyuèchūyī, il primo giorno dell’anno lunare',
+  'form.ziwei.yearBoundary.note':
+    'Due tavole sulla stessa pagina tagliano l’anno in due punti, e nessuno dei due è uno sbaglio. I pilastri girano a 立春 lìchūn, come fa ogni almanacco che stampa quattro pilastri; questa tavola conta il mese e il giorno sul calendario lunare, e l’anno aperto a 正月初一 zhēngyuèchūyī, il computo coerente con il resto. Una nascita nelle settimane fra i due dispone due tavole diverse, dato che è il tronco dell’anno a insediare le quattro trasformazioni.',
+  'form.pillars.dayBoundary': 'Il giorno comincia',
+  'form.pillars.dayBoundary.zishi': 'all’ora del Topo 子時 zǐshí, alle 23:00',
+  'form.pillars.dayBoundary.midnight': 'a mezzanotte, alle 00:00',
+  'form.qimen.method': 'Il ju si determina',
+  'form.qimen.method.chaibu': 'per terzi del termine: 拆補 chāibǔ',
+  'form.qimen.method.zhirun': 'per blocchi interi, con l’intercalazione: 置閏 zhìrùn',
+  'form.qimen.yuan': 'Con chaibu, il terzo del termine si conta',
+  'form.qimen.yuan.term': 'dall’istante in cui il termine è cominciato',
+  'form.qimen.yuan.futou': 'dal giorno, per tratti di cinque: 符頭 fútóu',
   'form.gender': 'Sesso: ne dipende solo la direzione dei cicli decennali',
   'form.gender.unset': 'non indicato',
   'form.gender.male': 'maschile',
@@ -1890,10 +1900,10 @@ export const it: Record<MessageKey, string> = {
   'form.instrument.ziwei': 'I seggi in cui una vita è contata',
   'form.instrument.bazi': 'Di che cosa è fatta una vita, all’ora di una nascita',
   'form.instrument.taiyi': 'Come sta un anno, per tutti quelli che ci stanno dentro',
-  'form.guiren': 'Quale verso insedia il nobile (貴人 guìrén)',
-  'form.guiren.chou': '甲 jiǎ con 戊 wù e 庚 gēng, a 丑 chǒu e 未 wèi',
-  'form.guiren.wei': '甲 jiǎ da solo, a 未 wèi e 丑 chǒu',
-  'form.guiren.note': 'Muove i dodici generali e lascia stare le tre trasmissioni.',
+  'form.liuren.guiren': 'Quale verso insedia il nobile (貴人 guìrén)',
+  'form.liuren.guiren.chou': '甲 jiǎ con 戊 wù e 庚 gēng, a 丑 chǒu e 未 wèi',
+  'form.liuren.guiren.wei': '甲 jiǎ da solo, a 未 wèi e 丑 chǒu',
+  'form.liuren.guiren.note': 'Muove i dodici generali e lascia stare le tre trasmissioni.',
   // Resta «n/a» e non diventa «n/d», che è la sigla italiana.
   //
   // Non è una parola tradotta a metà: è un codice, come lo sono `CC BY 4.0` e
@@ -1960,11 +1970,11 @@ export const it: Record<MessageKey, string> = {
   // Detto una volta, dove chi legge può soppesarlo. Si veda `docs/history/`, fase 23.
   'cli.value.ziweiSource':
     'collocazioni dal 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr in ogni punto: la trasmissione delle quattordici stelle, non quella delle diciotto, i 十八飛星 shíbāfēixīng che portano 《全集》 quánjí e 《捷覽》 jiélǎn. Le sue tavole si scostano da quelle moderne in quattro luoghi – due stelle slegate dall’ora, una coppia insediata dallo stelo, una divinità presa dall’anno e una delle quattro trasformazioni – e in ognuno si segue questo libro, con lo scostamento registrato',
-  'form.luohou': 'Quale nodo è 羅睺 luóhóu',
-  'form.luohou.descending': 'il nodo discendente: la legge degli astrologi',
-  'form.luohou.ascending': 'il nodo ascendente: 湯若望 Tāng Ruòwàng e il 時憲曆 shíxiànlì',
+  'form.qizheng.luohou': 'Quale nodo è 羅睺 luóhóu',
+  'form.qizheng.luohou.descending': 'il nodo discendente: la legge degli astrologi',
+  'form.qizheng.luohou.ascending': 'il nodo ascendente: 湯若望 Tāng Ruòwàng e il 時憲曆 shíxiànlì',
   'form.copyStars': 'Copia la tavola',
-  'form.luohou.note':
+  'form.qizheng.luohou.note':
     'Scambia i due nomi e non muove altro: i due nodi sono i capi di una sola linea, a mezzo giro l’uno dall’altro. Il default è quello che gli astrologi hanno tenuto, che è il rovescio della convenzione indiana.',
   // Stampato sotto ogni tavola, perché a chi conta quattro nomi e ne trova
   // tre la ragione è dovuta sulla pagina, non in un documento.

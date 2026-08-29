@@ -5,7 +5,7 @@
   import type { Location } from '$lib/moment';
   import LocationSearch from './LocationSearch.svelte';
 
-  import { METHODS, YUAN_READINGS } from '$lib/vocabulary';
+  import { offered, shown, wire, type Chosen } from '$lib/parameters';
 
   let {
     t,
@@ -16,11 +16,8 @@
     longitude = $bindable(''),
     timezone = $bindable(''),
     trueSolarTime = $bindable(true),
-    dayBoundary = $bindable('zishi'),
-    method = $bindable<string | undefined>(undefined),
-    yuan = $bindable<string | undefined>(undefined),
-    guiren = $bindable<string | undefined>(undefined),
-    luohou = $bindable<string | undefined>(undefined),
+    chosen = $bindable<Chosen>({}),
+    board = undefined,
     when = 'fields',
     openLegend,
     extra,
@@ -40,22 +37,32 @@
     latitude?: string;
     longitude?: string;
     timezone?: string;
-    trueSolarTime?: boolean;
-    dayBoundary?: string;
-    /** Bound only where a ju is cast: the pillars have no method to choose. */
-    method?: string | undefined;
-    /** Bound with `method`, and shown only beside chaibu. */
-    yuan?: string | undefined;
     /**
-     * Bound where a 六壬 board is laid, and nowhere else.
-     *
-     * It sits here rather than in the open because it is what the other two
-     * are: a divergence between schools, a refinement of how the same instant
-     * is read. What decides *which board* the instant is laid on is not one of
-     * these and is asked in the open — see the consultation.
+     * The one divergence that is not a list, and the one this asks for by
+     * name: a boolean is a checkbox, and `docs/parameters.md` says so where it
+     * says everything else is a value.
      */
-    guiren?: string | undefined;
-    luohou?: string | undefined;
+    trueSolarTime?: boolean;
+    /**
+     * Every other divergence in force, keyed by the name it travels under.
+     *
+     * One field rather than one per school. What is offered is read off the
+     * declaration in `$lib/parameters` — the board's own and the layers' —
+     * so a value that lands in the engine is a control here the same day, and
+     * the markup below has no idea which boards exist. It replaced four
+     * `$bindable` props, four `<select>` blocks with their options written out
+     * by hand, and four lines in the count on the summary.
+     */
+    chosen?: Chosen;
+    /**
+     * Which board's divergences to offer beside the layers' — the section's
+     * own, or the instrument a consultation is set to.
+     *
+     * Absent where the moment is not laid on a board at all: the scan asks for
+     * an interval and offers the pillars' two and dunjia's, since what it
+     * walks is charts.
+     */
+    board?: string | undefined;
     /**
      * A name for the fields this asks in the open, where they need one.
      *
@@ -116,11 +123,11 @@
       if (time) count += 1;
     }
     if (!trueSolarTime) count += 1;
-    if (dayBoundary !== 'zishi') count += 1;
-    if (method !== undefined && method !== 'chaibu') count += 1;
-    if (yuan !== undefined && yuan !== 'term') count += 1;
-    if (guiren !== undefined && guiren !== 'chou') count += 1;
-    if (luohou !== undefined && luohou !== 'descending') count += 1;
+    // Every divergence standing somewhere other than where the engine would
+    // have left it, counted off the declaration rather than named one by one.
+    for (const row of offered(board)) {
+      if (chosen[wire(row)] && chosen[wire(row)] !== row.fallback) count += 1;
+    }
     return count;
   }
 
@@ -162,71 +169,32 @@
     <input type="checkbox" bind:checked={trueSolarTime} />
     {t('form.trueSolarTime')}
   </label>
-  <label>
-    {t('form.dayBoundary')}
-    <!-- The values are the engine's and do not change; what is shown says
-         which hour each one is, for a reader who has never met 子時. -->
-    <select bind:value={dayBoundary}>
-      <option value="zishi">{t('form.dayBoundary.zishi')}</option>
-      <option value="midnight">{t('form.dayBoundary.midnight')}</option>
-    </select>
-  </label>
-  {#if method !== undefined}
-    <label>
-      {t('form.method')}
-      <!-- The word leads and the method's own name follows with its hanzi:
-           the thing named is Chinese, the choice must be readable without. -->
-      <select bind:value={method}>
-        {#each METHODS as id}
-          <option value={id}>{t(`form.method.${id}` as MessageKey)}</option>
-        {/each}
-      </select>
-    </label>
-    <p class="note">{t('cli.note.method', { method: method ?? 'chaibu' })}</p>
-    <!-- Only beside chaibu. Under zhirun the yuan is the futou's because
-         that is what the method is, and a control that changed nothing
-         would read as a choice where none is left. -->
-    {#if yuan !== undefined && method === 'chaibu'}
+  <!--
+    One block for every divergence, and it does not know which board it is on.
+
+    What is offered comes from `$lib/parameters`: the layers' rows wherever an
+    instant is read, the section's own beside them, and only where the engine
+    computes more than one value — a control with one option decides nothing.
+    The words come from the row too, so a school landing in the declaration
+    lands here, and nothing in this file has to be told about it.
+  -->
+  {#each offered(board) as row (wire(row))}
+    {#if shown(row, chosen)}
       <label>
-        {t('form.yuan')}
-        <select bind:value={yuan}>
-          {#each YUAN_READINGS as id}
-            <option value={id}>{t(`form.yuan.${id}` as MessageKey)}</option>
+        <Named text={t(row.label!)} />
+        <select bind:value={chosen[wire(row)]}>
+          {#each Object.entries(row.says!) as [value, said] (value)}
+            <option {value}>{t(said)}</option>
           {/each}
         </select>
       </label>
-      {#if yuan === 'futou'}
-        <p class="note">{t('cli.note.yuanFutou')}</p>
+      {#if row.note && (row.note.when === undefined || row.note.when === chosen[wire(row)])}
+        <p class="note">
+          <Named text={t(row.note.key, { [row.id]: chosen[wire(row)] ?? row.fallback })} />
+        </p>
       {/if}
     {/if}
-  {/if}
-
-  {#if guiren !== undefined}
-    <label>
-      <Named text={t('form.guiren')} />
-      <select bind:value={guiren}>
-        <option value="chou">{t('form.guiren.chou')}</option>
-        <option value="wei">{t('form.guiren.wei')}</option>
-      </select>
-    </label>
-    <p class="note"><Named text={t('form.guiren.note')} /></p>
-  {/if}
-
-  <!-- The one 七政四餘 divergence a reader might move. The options lead in
-       their own language and the hanzi stand beside what is named, because
-       what is named here is Chinese: 羅睺 is the name of the thing, and a
-       reader who has met it in an Indian source has met it the other way
-       round. See `form.luohou.note`. -->
-  {#if luohou !== undefined}
-    <label>
-      <Named text={t('form.luohou')} />
-      <select bind:value={luohou}>
-        <option value="descending">{t('form.luohou.descending')}</option>
-        <option value="ascending">{t('form.luohou.ascending')}</option>
-      </select>
-    </label>
-    <p class="note"><Named text={t('form.luohou.note')} /></p>
-  {/if}
+  {/each}
 {/snippet}
 
   <!-- What is asked in the open, side by side where there is room and stacked

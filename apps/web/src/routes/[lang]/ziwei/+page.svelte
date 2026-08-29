@@ -205,7 +205,8 @@
       bind:longitude={asked.longitude}
       bind:timezone={asked.timezone}
       bind:trueSolarTime={asked.trueSolarTime}
-      bind:dayBoundary={asked.dayBoundary}
+      bind:chosen={asked.chosen}
+      board="ziwei"
     />
     <label>
       <!-- Asked for, never assumed: only the 大限, the 小限 and the two rings

@@ -455,6 +455,7 @@ GET /api/ziwei?date=1984-05-05&time=14:30&locationId=1816670&gender=male
 GET /api/ziwei/text?date=1984-05-05&time=14:30&locationId=1816670&gender=male
 GET /api/ziwei/plate?date=1984-05-05&time=14:30&locationId=1816670&gender=male
 GET /api/ziwei/prompt?date=1984-05-05&time=14:30&locationId=1816670&gender=male
+GET /api/ziwei?date=1983-02-08&time=09:00&locationId=1816670&ziwei.yearBoundary=lichun
 GET /api/terms?year=2024&timezone=Asia/Shanghai
 GET /api/qimen/plate?date=2024-06-15&time=14:00&locationId=1816670
 GET /api/moments?from=2026-09-01&to=2026-09-08&locationId=3169070&gate=kaimen&towards=se,s

@@ -43,9 +43,7 @@ const INTERVAL: IntervalInput = {
   longitude: '',
   timezone: '',
   trueSolarTime: true,
-  dayBoundary: 'zishi',
-  method: 'chaibu',
-  yuan: 'term',
+  chosen: {},
 };
 
 const LOOKING: CriteriaInput = {
@@ -92,7 +90,7 @@ describe('the criteria as address fields', () => {
     );
     const { input } = readInterval(url);
 
-    expect(input.yuan).toBe('futou');
+    expect(input.chosen['qimen.yuan']).toBe('futou');
     expect(input.fromTime).toBe('06:00');
     expect(input.toTime).toBe('18:30');
 
@@ -259,8 +257,7 @@ describe('a chart reached from a scan', () => {
     const options: IntervalInput = {
       ...INTERVAL,
       trueSolarTime: false,
-      dayBoundary: 'midnight',
-      yuan: 'futou',
+      chosen: { dayBoundary: 'midnight', 'qimen.yuan': 'futou' },
     };
     const url = new URL(`http://localhost/en?${chartQuery('2026-09-03T08:00', options)}`);
 

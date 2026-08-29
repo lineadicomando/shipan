@@ -18,8 +18,10 @@
  * name".
  */
 
+import type { MessageKey } from '@shipan/i18n';
+
 /** The layers that stand under or beside every board, whose names are bare. */
-const LAYERS = ["pillars", "almanac"];
+const LAYERS = ['pillars', 'almanac'];
 
 export interface Divergence {
   /** The field, as the input type and the engine's declaration name it. */
@@ -32,6 +34,38 @@ export interface Divergence {
   readonly implemented: readonly string[];
   /** What the engine assumes when nobody says. */
   readonly fallback: string;
+  /**
+   * What the control is called, and what each value it offers is called.
+   *
+   * **Written out rather than built from the row**, which is the one thing
+   * here that costs a line per school. A component composing
+   * `` `form.${board}.${id}` `` would hide the whole `form.` family from
+   * `catalog-keys.test.ts`, which finds a templated key live by the literal
+   * prefix in front of the interpolation — the trap `notes.ts` names in as
+   * many words. So the keys stand where they can be read, and a value with no
+   * gloss does not compile.
+   *
+   * `says` carries the implemented values only: what a form offers is a
+   * choice, and an option that can only come back a 501 is not one.
+   */
+  readonly label?: MessageKey;
+  readonly says?: Readonly<Record<string, MessageKey>>;
+  /**
+   * A line under the control saying what moving it does.
+   *
+   * `when` names the value it belongs to, where it is about one of them: 符頭
+   * has a consequence worth stating and the term does not.
+   */
+  readonly note?: { readonly key: MessageKey; readonly when?: string };
+  /**
+   * Shown only where another divergence of the same board stands on a value.
+   *
+   * One row uses it and it is doctrine rather than layout: the yuan is a
+   * divergence *inside* 拆補, so under 置閏 the third of the term is the
+   * 符頭's because that is what the method is, and a control that changed
+   * nothing would read as a choice where none is left.
+   */
+  readonly only?: { readonly id: string; readonly value: string };
 }
 
 /**
@@ -43,165 +77,191 @@ export interface Divergence {
  */
 export const DIVERGENCES: readonly Divergence[] = [
   {
-    id: "method",
-    board: "qimen",
-    values: ["chaibu", "zhirun", "maoshan"],
-    implemented: ["chaibu", "zhirun"],
-    fallback: "chaibu",
+    id: 'method',
+    board: 'qimen',
+    values: ['chaibu', 'zhirun', 'maoshan'],
+    implemented: ['chaibu', 'zhirun'],
+    fallback: 'chaibu',
+    label: 'form.qimen.method',
+    says: { chaibu: 'form.qimen.method.chaibu', zhirun: 'form.qimen.method.zhirun' },
+    note: { key: 'cli.note.method' },
   },
   {
-    id: "yuan",
-    board: "qimen",
-    values: ["term", "futou"],
-    implemented: ["term", "futou"],
-    fallback: "term",
+    id: 'yuan',
+    board: 'qimen',
+    values: ['term', 'futou'],
+    implemented: ['term', 'futou'],
+    fallback: 'term',
+    label: 'form.qimen.yuan',
+    says: { term: 'form.qimen.yuan.term', futou: 'form.qimen.yuan.futou' },
+    note: { key: 'cli.note.yuanFutou', when: 'futou' },
+    only: { id: 'method', value: 'chaibu' },
   },
   {
-    id: "plate",
-    board: "qimen",
-    values: ["zhuan", "fei"],
-    implemented: ["zhuan"],
-    fallback: "zhuan",
+    id: 'plate',
+    board: 'qimen',
+    values: ['zhuan', 'fei'],
+    implemented: ['zhuan'],
+    fallback: 'zhuan',
   },
   {
-    id: "centreLodging",
-    board: "qimen",
-    values: ["kun", "dun"],
-    implemented: ["kun"],
-    fallback: "kun",
+    id: 'centreLodging',
+    board: 'qimen',
+    values: ['kun', 'dun'],
+    implemented: ['kun'],
+    fallback: 'kun',
   },
   {
-    id: "system",
-    board: "qimen",
-    values: ["shijia", "rijia", "yuejia", "nianjia"],
-    implemented: ["shijia"],
-    fallback: "shijia",
+    id: 'system',
+    board: 'qimen',
+    values: ['shijia', 'rijia', 'yuejia', 'nianjia'],
+    implemented: ['shijia'],
+    fallback: 'shijia',
   },
   {
-    id: "yearBoundary",
-    board: "pillars",
-    values: ["lichun", "chunjie"],
-    implemented: ["lichun", "chunjie"],
-    fallback: "lichun",
+    id: 'yearBoundary',
+    board: 'pillars',
+    values: ['lichun', 'chunjie'],
+    implemented: ['lichun', 'chunjie'],
+    fallback: 'lichun',
+    label: 'form.pillars.yearBoundary',
+    says: {
+      lichun: 'form.pillars.yearBoundary.lichun',
+      chunjie: 'form.pillars.yearBoundary.chunjie',
+    },
   },
   {
-    id: "dayBoundary",
-    board: "pillars",
-    values: ["zishi", "midnight"],
-    implemented: ["zishi", "midnight"],
-    fallback: "zishi",
+    id: 'dayBoundary',
+    board: 'pillars',
+    values: ['zishi', 'midnight'],
+    implemented: ['zishi', 'midnight'],
+    fallback: 'zishi',
+    label: 'form.pillars.dayBoundary',
+    says: {
+      zishi: 'form.pillars.dayBoundary.zishi',
+      midnight: 'form.pillars.dayBoundary.midnight',
+    },
   },
   {
-    id: "shensha",
-    board: "almanac",
-    values: ["xieji"],
-    implemented: ["xieji"],
-    fallback: "xieji",
+    id: 'shensha',
+    board: 'almanac',
+    values: ['xieji'],
+    implemented: ['xieji'],
+    fallback: 'xieji',
   },
   {
-    id: "yuejiang",
-    board: "liuren",
-    values: ["zhongqi", "jieqi", "true"],
-    implemented: ["zhongqi"],
-    fallback: "zhongqi",
+    id: 'yuejiang',
+    board: 'liuren',
+    values: ['zhongqi', 'jieqi', 'true'],
+    implemented: ['zhongqi'],
+    fallback: 'zhongqi',
   },
   {
-    id: "guiren",
-    board: "liuren",
-    values: ["chou", "wei"],
-    implemented: ["chou", "wei"],
-    fallback: "chou",
+    id: 'guiren',
+    board: 'liuren',
+    values: ['chou', 'wei'],
+    implemented: ['chou', 'wei'],
+    fallback: 'chou',
+    label: 'form.liuren.guiren',
+    says: { chou: 'form.liuren.guiren.chou', wei: 'form.liuren.guiren.wei' },
+    note: { key: 'form.liuren.guiren.note' },
   },
   {
-    id: "zhouye",
-    board: "liuren",
-    values: ["branch", "solar"],
-    implemented: ["branch"],
-    fallback: "branch",
+    id: 'zhouye',
+    board: 'liuren',
+    values: ['branch', 'solar'],
+    implemented: ['branch'],
+    fallback: 'branch',
   },
   {
-    id: "xiudu",
-    board: "qizheng",
-    values: ["juxing", "shixian", "shoushi"],
-    implemented: ["juxing"],
-    fallback: "juxing",
+    id: 'xiudu',
+    board: 'qizheng',
+    values: ['juxing', 'shixian', 'shoushi'],
+    implemented: ['juxing'],
+    fallback: 'juxing',
   },
   {
-    id: "ziqi",
-    board: "qizheng",
-    values: ["off", "yinianyisu"],
-    implemented: ["off"],
-    fallback: "off",
+    id: 'ziqi',
+    board: 'qizheng',
+    values: ['off', 'yinianyisu'],
+    implemented: ['off'],
+    fallback: 'off',
   },
   {
-    id: "luohou",
-    board: "qizheng",
-    values: ["descending", "ascending"],
-    implemented: ["descending", "ascending"],
-    fallback: "descending",
+    id: 'luohou',
+    board: 'qizheng',
+    values: ['descending', 'ascending'],
+    implemented: ['descending', 'ascending'],
+    fallback: 'descending',
+    label: 'form.qizheng.luohou',
+    says: {
+      descending: 'form.qizheng.luohou.descending',
+      ascending: 'form.qizheng.luohou.ascending',
+    },
+    note: { key: 'form.qizheng.luohou.note' },
   },
   {
-    id: "minggong",
-    board: "qizheng",
-    values: ["yuejiang", "ascendant"],
-    implemented: ["yuejiang"],
-    fallback: "yuejiang",
+    id: 'minggong',
+    board: 'qizheng',
+    values: ['yuejiang', 'ascendant'],
+    implemented: ['yuejiang'],
+    fallback: 'yuejiang',
   },
   {
-    id: "gong",
-    board: "qizheng",
-    values: ["zhongqi", "ci"],
-    implemented: ["zhongqi"],
-    fallback: "zhongqi",
+    id: 'gong',
+    board: 'qizheng',
+    values: ['zhongqi', 'ci'],
+    implemented: ['zhongqi'],
+    fallback: 'zhongqi',
   },
   {
-    id: "epoch",
-    board: "taiyi",
-    values: ["jinjing"],
-    implemented: ["jinjing"],
-    fallback: "jinjing",
+    id: 'epoch',
+    board: 'taiyi',
+    values: ['jinjing'],
+    implemented: ['jinjing'],
+    fallback: 'jinjing',
   },
   {
-    id: "ji",
-    board: "taiyi",
-    values: ["nianji", "yueji", "riji", "shiji"],
-    implemented: ["nianji"],
-    fallback: "nianji",
+    id: 'ji',
+    board: 'taiyi',
+    values: ['nianji', 'yueji', 'riji', 'shiji'],
+    implemented: ['nianji'],
+    fallback: 'nianji',
   },
   {
-    id: "yearBoundary",
-    board: "taiyi",
-    values: ["lichun", "dongzhi", "chunjie"],
-    implemented: ["lichun"],
-    fallback: "lichun",
+    id: 'yearBoundary',
+    board: 'taiyi',
+    values: ['lichun', 'dongzhi', 'chunjie'],
+    implemented: ['lichun'],
+    fallback: 'lichun',
   },
   {
-    id: "leapMonth",
-    board: "ziwei",
-    values: ["following", "current", "split"],
-    implemented: ["following"],
-    fallback: "following",
+    id: 'leapMonth',
+    board: 'ziwei',
+    values: ['following', 'current', 'split'],
+    implemented: ['following'],
+    fallback: 'following',
   },
   {
-    id: "sihua",
-    board: "ziwei",
-    values: ["quanshu"],
-    implemented: ["quanshu"],
-    fallback: "quanshu",
+    id: 'sihua',
+    board: 'ziwei',
+    values: ['quanshu'],
+    implemented: ['quanshu'],
+    fallback: 'quanshu',
   },
   {
-    id: "huoling",
-    board: "ziwei",
-    values: ["fixed", "hour"],
-    implemented: ["fixed"],
-    fallback: "fixed",
+    id: 'huoling',
+    board: 'ziwei',
+    values: ['fixed', 'hour'],
+    implemented: ['fixed'],
+    fallback: 'fixed',
   },
   {
-    id: "daxian",
-    board: "ziwei",
-    values: ["adjacent", "ming"],
-    implemented: ["adjacent"],
-    fallback: "adjacent",
+    id: 'daxian',
+    board: 'ziwei',
+    values: ['adjacent', 'ming'],
+    implemented: ['adjacent'],
+    fallback: 'adjacent',
   },
   /**
    * The second `yearBoundary`, and the reason this file has a naming rule.
@@ -214,18 +274,24 @@ export const DIVERGENCES: readonly Divergence[] = [
    * pillars' would be the same parameter.
    */
   {
-    id: "yearBoundary",
-    board: "ziwei",
-    values: ["lichun", "chunjie"],
-    implemented: ["lichun", "chunjie"],
-    fallback: "chunjie",
+    id: 'yearBoundary',
+    board: 'ziwei',
+    values: ['lichun', 'chunjie'],
+    implemented: ['lichun', 'chunjie'],
+    fallback: 'chunjie',
+    label: 'form.ziwei.yearBoundary',
+    says: {
+      lichun: 'form.ziwei.yearBoundary.lichun',
+      chunjie: 'form.ziwei.yearBoundary.chunjie',
+    },
+    note: { key: 'form.ziwei.yearBoundary.note' },
   },
   {
-    id: "count",
-    board: "nianming",
-    values: ["sui", "turns"],
-    implemented: ["sui", "turns"],
-    fallback: "sui",
+    id: 'count',
+    board: 'nianming',
+    values: ['sui', 'turns'],
+    implemented: ['sui', 'turns'],
+    fallback: 'sui',
   },
 ];
 
@@ -261,6 +327,87 @@ export function named(board: string, id: string): string {
  * board, and it leaves a shareable address with the rest of that birth.
  */
 export function belongsTo(name: string, section: string): boolean {
-  const dot = name.indexOf(".");
+  const dot = name.indexOf('.');
   return dot < 0 || name.slice(0, dot) === section;
+}
+
+/**
+ * The divergences a section offers, and the reason a form has no markup of its
+ * own for any of them.
+ *
+ * Two conditions. It has to be **the reader's board's, or a layer's** — the
+ * pillars stand under every board and their two are asked wherever an instant
+ * is; a board's own belong to its section and to the consultation while that
+ * instrument is chosen. And it has to have **more than one implemented value**,
+ * because everything else is a divergence the engine declares and refuses, and
+ * a control offering one option is a control that decides nothing.
+ *
+ * `docs/parameters.md` § "A declared default is not a hidden school" is what
+ * this list is for: an axis with a real choice on it is one the reader has to
+ * be able to see and to move.
+ */
+export function offered(board?: string): readonly Divergence[] {
+  return DIVERGENCES.filter(
+    (row) =>
+      row.implemented.length > 1 && (LAYERS.includes(row.board) || row.board === board),
+  );
+}
+
+/** What a reader has chosen, keyed by the name each one travels under. */
+export type Chosen = Readonly<Record<string, string>>;
+
+/**
+ * The divergences an address states, with the engine's own answer for the rest.
+ *
+ * **Carried verbatim**, misspellings included: the server refuses a value it
+ * does not know, where a silent fallback would cast a chaibu chart under
+ * whatever name the address had misspelt.
+ */
+export function readChosen(params: URLSearchParams, board?: string): Chosen {
+  const chosen: Record<string, string> = {};
+  for (const row of offered(board)) {
+    chosen[wire(row)] = params.get(wire(row)) ?? row.fallback;
+  }
+  return chosen;
+}
+
+/**
+ * The chosen values as address fields, defaults left out.
+ *
+ * The rule every other field here keeps: what the engine would have done
+ * anyway is not written into an address, so the plainest question keeps the
+ * plainest address. What the reader is told is a separate question and a
+ * separate surface — a board says which school laid it whether or not the
+ * address had to say so.
+ */
+export function chosenFields(chosen: Chosen): Record<string, string | undefined> {
+  const fields: Record<string, string | undefined> = {};
+  for (const row of DIVERGENCES) {
+    const value = chosen[wire(row)];
+    if (value && value !== row.fallback) fields[wire(row)] = value;
+  }
+  return fields;
+}
+
+/** Whether a divergence is shown at all, given what else is set. */
+export function shown(row: Divergence, chosen: Chosen): boolean {
+  if (!row.only) return true;
+  return chosen[named(row.board, row.only.id)] === row.only.value;
+}
+
+/**
+ * What a set of chosen values carries into another section.
+ *
+ * The same rule `carriedSearch` applies to an address, applied to the record
+ * before there is an address: the layers' divergences cross — both sections
+ * reckon the same day from the same boundary — and a board's own stay behind,
+ * since a link that took `qimen.method` to the pillars would put a setting in
+ * an address that never reads it.
+ */
+export function carried(chosen: Chosen, board?: string): Chosen {
+  const kept: Record<string, string> = {};
+  for (const [name, value] of Object.entries(chosen)) {
+    if (belongsTo(name, board ?? '')) kept[name] = value;
+  }
+  return kept;
 }

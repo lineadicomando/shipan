@@ -1,6 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import { PARAMETERS } from '@shipan/core';
-import { DIVERGENCES, belongsTo, named, wire } from '../src/lib/parameters';
+import {
+  DIVERGENCES,
+  belongsTo,
+  carried,
+  chosenFields,
+  named,
+  offered,
+  readChosen,
+  shown,
+  wire,
+} from '../src/lib/parameters';
 
 /**
  * The client's copy of the school divergences, held to the engine's.
@@ -62,6 +72,80 @@ describe('the divergences the client redeclares', () => {
       expect(row.implemented, `${row.board}.${row.id}`).toContain(row.fallback);
       expect(row.values, `${row.board}.${row.id}`).toContain(row.fallback);
     }
+  });
+});
+
+describe('what a form offers', () => {
+  /**
+   * The sections a board's divergences can be offered on, which is every
+   * instrument plus the two acts. `undefined` is the scan and the pillars,
+   * where only the layers' are asked.
+   */
+  const SECTIONS = [undefined, 'qimen', 'liuren', 'qizheng', 'ziwei', 'bazi', 'taiyi'];
+
+  it('offers a choice only where the engine computes one', () => {
+    for (const section of SECTIONS)
+      for (const row of offered(section)) {
+        expect(row.implemented.length, `${row.board}.${row.id}`).toBeGreaterThan(1);
+        expect(['pillars', 'almanac', section]).toContain(row.board);
+      }
+  });
+
+  it('offers the layers everywhere and a board only on its own section', () => {
+    expect(offered('liuren').map((row) => `${row.board}.${row.id}`)).toEqual([
+      'pillars.yearBoundary',
+      'pillars.dayBoundary',
+      'liuren.guiren',
+    ]);
+    expect(offered(undefined).map((row) => row.board)).toEqual(['pillars', 'pillars']);
+  });
+
+  /**
+   * Every control has words, in both vernaculars, for the label and for each
+   * option it can show. The types already say the keys exist; what this says
+   * is that the row carries one per implemented value, since a `select` with a
+   * value it cannot name is a `select` with a blank line in it.
+   */
+  it('has words for every choice it offers', () => {
+    for (const section of SECTIONS)
+      for (const row of offered(section)) {
+        expect(row.label, `${row.board}.${row.id}`).toBeDefined();
+        expect(Object.keys(row.says ?? {}).sort(), `${row.board}.${row.id}`).toEqual(
+          [...row.implemented].sort(),
+        );
+      }
+  });
+
+  /**
+   * The dependency between two of them, which is doctrine and not layout: the
+   * yuan is a divergence inside 拆補, and under 置閏 there is nothing left to
+   * choose.
+   */
+  it('hides a divergence whose method has been left behind', () => {
+    const yuan = DIVERGENCES.find((row) => row.id === 'yuan');
+    expect(yuan?.only).toEqual({ id: 'method', value: 'chaibu' });
+    expect(shown(yuan!, { 'qimen.method': 'chaibu' })).toBe(true);
+    expect(shown(yuan!, { 'qimen.method': 'zhirun' })).toBe(false);
+  });
+
+  it('reads what an address says and writes back only what was moved', () => {
+    const asked = new URLSearchParams('qimen.yuan=futou&dayBoundary=midnight');
+    const chosen = readChosen(asked, 'qimen');
+
+    expect(chosen['qimen.yuan']).toBe('futou');
+    expect(chosen['qimen.method']).toBe('chaibu');
+    expect(chosen['dayBoundary']).toBe('midnight');
+
+    // The engine's own answers stay out of the address, as every other field
+    // here does: the plainest question keeps the plainest address.
+    expect(chosenFields(chosen)).toEqual({ 'qimen.yuan': 'futou', dayBoundary: 'midnight' });
+  });
+
+  it('leaves a board’s own behind when the reader crosses to another', () => {
+    const chosen = { 'qimen.method': 'zhirun', dayBoundary: 'midnight' };
+
+    expect(carried(chosen, 'bazi')).toEqual({ dayBoundary: 'midnight' });
+    expect(carried(chosen, 'qimen')).toEqual(chosen);
   });
 });
 

@@ -1241,15 +1241,28 @@ export const en = {
   'form.momentNow': 'Back to now',
   'form.calculation': 'How it is computed',
   'form.trueSolarTime': 'Correct to true solar time',
-  'form.dayBoundary': 'The day begins',
-  'form.dayBoundary.zishi': 'at the hour of the Rat 子時 zǐshí, 23:00',
-  'form.dayBoundary.midnight': 'at midnight, 00:00',
-  'form.method': 'The ju is determined',
-  'form.method.chaibu': 'by thirds of the term: 拆補 chāibǔ',
-  'form.method.zhirun': 'by whole blocks, with the leap: 置閏 zhìrùn',
-  'form.yuan': 'Under chaibu, the third of the term is counted',
-  'form.yuan.term': 'from the instant the term began',
-  'form.yuan.futou': 'from the day, by five-day stretches: 符頭 fútóu',
+  // The year the pillars are cut at, and the year *this* board is cut at, which
+  // are two questions with one word. Both labels name whose year it is, since
+  // on `/ziwei` the two controls stand one above the other.
+  'form.pillars.yearBoundary': 'The year of the pillars begins',
+  'form.pillars.yearBoundary.lichun': 'at 立春 lìchūn, where the solar year turns',
+  'form.pillars.yearBoundary.chunjie':
+    'at 正月初一 zhēngyuèchūyī, the first day of the lunar year',
+  'form.ziwei.yearBoundary': 'The year of this board begins',
+  'form.ziwei.yearBoundary.lichun': 'at 立春 lìchūn, where the solar year turns',
+  'form.ziwei.yearBoundary.chunjie':
+    'at 正月初一 zhēngyuèchūyī, the first day of the lunar year',
+  'form.ziwei.yearBoundary.note':
+    'Two boards on one page cut the year in two places and neither is a mistake. The pillars turn at 立春 lìchūn because that is what an almanac printing four pillars does; this board counts its month and its day on the lunar calendar, so the year that opened at 正月初一 zhēngyuèchūyī is the reckoning coherent with the rest of it. A birth in the weeks between the two lays out two different boards, the stem of the year being what seats the four transformations.',
+  'form.pillars.dayBoundary': 'The day begins',
+  'form.pillars.dayBoundary.zishi': 'at the hour of the Rat 子時 zǐshí, 23:00',
+  'form.pillars.dayBoundary.midnight': 'at midnight, 00:00',
+  'form.qimen.method': 'The ju is determined',
+  'form.qimen.method.chaibu': 'by thirds of the term: 拆補 chāibǔ',
+  'form.qimen.method.zhirun': 'by whole blocks, with the leap: 置閏 zhìrùn',
+  'form.qimen.yuan': 'Under chaibu, the third of the term is counted',
+  'form.qimen.yuan.term': 'from the instant the term began',
+  'form.qimen.yuan.futou': 'from the day, by five-day stretches: 符頭 fútóu',
   'form.gender': 'Sex — only the direction of the luck cycles depends on it',
   'form.gender.unset': 'not given',
   'form.gender.male': 'male',
@@ -2238,10 +2251,10 @@ export const en = {
   // than a person or a matter, which the line has to make unmistakable or a
   // reader picks it expecting a forecast of their own.
   'form.instrument.taiyi': 'How a year stands, for everybody in it',
-  'form.guiren': 'Which verse seats the noble (貴人 guìrén)',
-  'form.guiren.chou': '甲 jiǎ with 戊 wù and 庚 gēng, at 丑 chǒu and 未 wèi',
-  'form.guiren.wei': '甲 jiǎ apart, at 未 wèi and 丑 chǒu',
-  'form.guiren.note': 'It moves the twelve generals and leaves the three transmissions alone.',
+  'form.liuren.guiren': 'Which verse seats the noble (貴人 guìrén)',
+  'form.liuren.guiren.chou': '甲 jiǎ with 戊 wù and 庚 gēng, at 丑 chǒu and 未 wèi',
+  'form.liuren.guiren.wei': '甲 jiǎ apart, at 未 wèi and 丑 chǒu',
+  'form.liuren.guiren.note': 'It moves the twelve generals and leaves the three transmissions alone.',
   // The mark in a cell of a computed table where the board has nothing to put.
   //
   // **«n/a» and not a dash, because a dash beside hanzi is read as 一.** The
@@ -2320,11 +2333,11 @@ export const en = {
   // Said once, where a reader can weigh it. See `docs/history/` phase 23.
   'cli.value.ziweiSource':
     'placed by 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr throughout: the fourteen-star transmission, and not the eighteen-star 十八飛星 shíbāfēixīng line that 《全集》 quánjí and 《捷覽》 jiélǎn carry. Its tables part from the modern ones in four places — two stars taken off the hour, a pair seated off the stem, a god taken off the year, and one of the four transformations — and in each this book is followed and the divergence recorded',
-  'form.luohou': 'Which node is 羅睺 luóhóu',
-  'form.luohou.descending': 'the descending node: the astrologers’ law',
-  'form.luohou.ascending': 'the ascending node: 湯若望 Tāng Ruòwàng and the 時憲曆 shíxiànlì',
+  'form.qizheng.luohou': 'Which node is 羅睺 luóhóu',
+  'form.qizheng.luohou.descending': 'the descending node: the astrologers’ law',
+  'form.qizheng.luohou.ascending': 'the ascending node: 湯若望 Tāng Ruòwàng and the 時憲曆 shíxiànlì',
   'form.copyStars': 'Copy the board',
-  'form.luohou.note':
+  'form.qizheng.luohou.note':
     'It swaps the two names and moves nothing else: the two nodes are the ends of one line, half a turn apart. The default is what the astrologers kept, which is the reverse of the Indian convention.',
   // Printed under every board, because a reader counting four names and
   // finding three is owed the reason on the page rather than in a document.
