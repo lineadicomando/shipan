@@ -815,6 +815,10 @@ export const en = {
   // would, and it was absorbed when every section gained an introduction.
   'nav.consult': 'Consultation',
   'nav.sections': 'Sections',
+  // Where it goes and not what it is: «Top» names a place, and the button is
+  // a movement. The word beside the arrow is the whole of what makes the
+  // arrow readable — see `Icon.svelte`.
+  'nav.top': 'Back to top',
 
   // On the bar under the 太乙 board, which is the whole of the form: a 年計
   // board is a function of the year and of nothing else.
@@ -1162,14 +1166,19 @@ export const en = {
   // not want a preface to its preface.
   'meta.title.notes': 'Notes — what this engine computes',
   'meta.description.notes':
-    'What this engine computes, what each number stands on, and how strongly. An account of the instrument, and not a reading.',
-  'meta.title.notes.instruments': 'The instruments and their parameters',
+    'This section describes what the engine computes and how strong the reference behind each number is. It is an account of the instrument, not a reading.',
+  // Every title in this section opens on the name its page wears in its
+  // heading and in the navigation, and spends the rest of the budget on what
+  // a search needs: a reader arriving from a result and a reader arriving
+  // from the menu have to recognise the same page. The instruments and their
+  // parameters are still said, after the name.
+  'meta.title.notes.instruments': 'What is computed, and with which parameters',
   'meta.description.notes.instruments':
     'Every board this engine lays, what each is computed from, and every school divergence as a named parameter with its declared default.',
-  'meta.title.notes.sources': 'Sources — what every number stands on',
+  'meta.title.notes.sources': 'Where the numbers come from: sources and checks',
   'meta.description.notes.sources':
     'Every quantity the engine computes, the text or the measurement it stands on, and the rung of evidence it was weighed on.',
-  'meta.title.notes.refusals': 'What this project will not compute',
+  'meta.title.notes.refusals': 'What is not computed, and why',
   'meta.description.notes.refusals':
     'What is deliberately absent here — the yongshen, a ranking of hours, a dated outcome — who asks for it, and why it is not computed.',
   'meta.title.notes.schools': 'Schools, and what it takes to name one',
@@ -1571,19 +1580,21 @@ export const en = {
   // with every one of them. See `docs/notes.md`.
   'notes.title': 'Notes',
   'notes.lead':
-    'What this engine computes, what each number stands on, and how strongly. Nothing in this section is a reading: it is an account of the instrument.',
+    'This section describes what the engine computes, what each number is based on, and how strong that basis is. It contains no interpretations or readings: it reports only how the instrument works.',
   'notes.claim':
-    'Every quantity here was checked against something outside itself, and not every check is equally strong. Saying which is which is what this section is for: a solar term and a transmitted table are two different kinds of fact, and a reader who cannot tell them apart has been misled by the presentation rather than by the data.',
+    'Every quantity here was checked against a reference outside itself, but not every reference is equally strong. This section says which is which. A solar term and a transmitted table, for example, are two different kinds of fact. Stating that difference is necessary, because otherwise the presentation of the instrument makes data of unequal strength look equivalent.',
   // Not decoration: it is the line the whole section is arranged by. A derived
   // page cannot fall behind the engine, and saying so is the whole of what the
   // label does. The other half of the division wears no label, because a
   // written page carries the date it was last checked — which says everything
   // a word beside its title would have said, and says it where it counts.
   'notes.kind.derived': 'derived',
+  // A caption adds to the title of its link rather than repeating it: these
+  // three opened on the same words as the link an inch above them.
   'notes.answers.instruments':
-    'What is computed, layer by layer: what each is laid on, and every point where the schools diverge.',
+    'The layers of the calculation, one at a time: what each is derived from, and every point where the schools diverge.',
   'notes.answers.sources':
-    'What each quantity stands on, what it was checked against, and how strongly it is held.',
+    'One row per quantity: the source the engine derives it from, the check it passed, and the rung it stands on.',
 
   // The layers. Six of the nine are instruments and are named in
   // `lib/instruments.ts`; two are named arts that are not instruments and are
@@ -1591,8 +1602,7 @@ export const en = {
   // described rather than named, so its heading is a message and theirs are not.
   'notes.layer.pillars': 'The calendrical layer',
   'notes.takes': 'Computed from',
-  'notes.takes.pillars':
-    'an instant and a place, with the two boundaries that say how an instant is read.',
+  'notes.takes.pillars': 'an instant and a place, read according to those two boundaries.',
   'notes.takes.qimen': 'an instant and a place.',
   'notes.takes.liuren': 'an instant and a place.',
   'notes.takes.taiyi': 'a year, and nothing else: no place, no hour, nobody.',
@@ -1603,7 +1613,7 @@ export const en = {
   'notes.takes.almanac': 'a civil date, reckoned on 120°E as the lunar calendar is.',
   'notes.takes.nianming': 'a birth, placed inside a chart already cast for a moment.',
   'notes.does.pillars':
-    'The solar terms, the lunar date and the four pillars — what every board below is built from, and the layer the two boundaries belong to.',
+    'The solar terms, the lunar date and the four pillars: what every board below is built from. Two boundaries belong to this layer as well — where the counted year begins, and where the day turns over.',
   'notes.does.qimen':
     'Nine palaces: an earth plate fixed by the ju, a heaven plate turned onto the hour, and the stars, gates and spirits standing over them.',
   'notes.does.liuren':
@@ -1623,9 +1633,9 @@ export const en = {
 
   'notes.instruments.title': 'What is computed',
   'notes.instruments.lead':
-    'Layer by layer, with the points where the schools diverge under each. Every one of those points is a parameter with a declared default: the value this engine takes is marked, the values it declares and will not compute are marked too, and nothing is chosen silently.',
+    'This page lists the layers the engine computes, and under each one the points where the schools diverge. Every point of divergence is a parameter with a declared default. The table marks the value this engine takes, and it marks the values the engine declares and refuses, so that no choice is left unstated.',
   'notes.instruments.wider':
-    'This list is longer than the one in the header, for a reason worth a sentence: what a consultation can be laid on is a narrower question than what is computed here. The almanac is a page of a published book rather than a board, the calendrical layer stands under all of them, and a 年命 niánmìng is a birth placed inside a chart cast for a moment.',
+    'This list is longer than the navigation at the top of the site, because the two answer different questions: the navigation names the arts a consultation can be laid on, and this page names everything the engine computes. What it carries beyond them is the almanac, which is a page of a published book rather than a board; the calendrical layer, which stands under every board here; and 年命 niánmìng, which is a birth placed inside a chart already cast for a moment.',
   'notes.column.parameter': 'Parameter',
   'notes.column.values': 'Values',
   'notes.default': 'default',
@@ -1633,7 +1643,7 @@ export const en = {
   // an error rather than a chart cast by the nearest rule the engine does have.
   'notes.refused': 'refused',
   'notes.noParameters':
-    'No divergence of its own: it stands entirely on the calendrical layer, and the parameters above are the ones that move it.',
+    'This layer has no divergence of its own: it is computed entirely from the calendrical layer, and the parameters that move it are the ones listed above.',
   'notes.parameter.method': 'How the ju is established.',
   'notes.parameter.yuan': 'Where the third of the term is counted from, under 拆補 chāibǔ.',
   'notes.parameter.plate': 'How the heaven plate is derived.',
@@ -1670,7 +1680,7 @@ export const en = {
   'notes.parameter.count': 'How the years lived are counted.',
 
   'notes.answers.refusals':
-    'What is deliberately not computed, who asks for it, and why it is not here.',
+    'One entry per refusal: what is missing, who asks for it, and why it is not here.',
   'notes.answers.readings':
     'What a prompt commissions and what it forbids, and what never leaves your browser.',
   'notes.askedBy': 'Asked by',
@@ -1687,9 +1697,9 @@ export const en = {
     'A school teaches what an arrangement is for, and the temptation is to ship that teaching beside the values it moved. What may travel is what already travels for the conditions of 太乙 tàiyǐ, under the same four bounds: the source’s own words, a clause rather than a paragraph, always glossed, and always attached to something the engine computed. A verdict in this engine’s own prose is a verdict nothing can test; a quotation can be tested twice over — it is in the text or it is not, and it is that school’s or it is not.',
   'notes.refusals.title': 'What is not computed',
   'notes.refusals.lead':
-    'The engine answers no question, which is not the same as saying nothing. What follows is one entry per refusal: what is refused, who asks for it, and why it is not here.',
+    'The engine answers no question, which is not the same as saying nothing. Below is one entry for every refusal, and each entry says three things: what is refused, who asks for it, and why it is not here.',
   'notes.refusals.carries':
-    'What it does carry is an attribute the sources hand down concordantly, when that attribute belongs to the configuration rather than to somebody’s situation. Even then it travels as an identifier and a glyph, never as prose: a verdict arriving inside a translated gloss is a verdict nothing can test.',
+    'What the engine does carry is an attribute the sources hand down concordantly, provided that attribute belongs to the configuration rather than to somebody’s situation. Even then the attribute travels as an identifier and a glyph, never as prose. A verdict written into a translated gloss could not be tested by anybody, where an identifier and a glyph can be held against the source they came from.',
   'notes.refusals.yongshen.title': 'The 用神 yòngshén',
   'notes.refusals.yongshen.asks': 'everyone who casts a chart for a question.',
   'notes.refusals.yongshen.body':
@@ -1704,8 +1714,13 @@ export const en = {
     'Choosing a time walks an interval and reports where in it each hour stands, against criteria you state. It does not rank what it finds, and its answers carry a direction as well as an hour: the direction is half of the answer, and the hour is never reported without it. Dating an outcome is refused outright: it is the prediction this project does not make.',
   'notes.refusals.advice.title': 'Advice',
   'notes.refusals.advice.asks': 'almost everybody, eventually.',
+  // The footer's one line, given the room a footer does not have. It is the
+  // same claim and not a second one: a reader who has just been refused an
+  // answer is owed what the refusal leaves them with, and «a space for inner
+  // enquiry» said in six words at the foot of the page is a phrase they can
+  // read without learning anything from it.
   'notes.refusals.advice.body':
-    'No reading here gives medical, psychiatric, legal or financial counsel, lucky numbers, gambling picks, a partner judged or a compatibility settled. Where a reading of a life is commissioned the verbs stay conditional — «tends to», never «you will» — and the power over a person’s choices and their path stays theirs.',
+    'What a board is for here is reflection: a reader looks at an arrangement, considers what it sets beside what, and decides for themselves what that is worth to them. It is not a source of professional advice, and it does not become one by being read carefully. No reading here gives medical, psychiatric, legal or financial counsel, lucky numbers, gambling picks, a partner judged or a compatibility settled. A question about a symptom, a contract or a sum of money belongs to somebody qualified to answer it, and nothing on this site is a reason to put off asking them. Where a reading of a life is commissioned the verbs stay conditional — «tends to», never «you will» — and the power over a person’s choices and their path stays theirs.',
   'notes.refusals.purposes.title': 'Which palace stands for which part of a life',
   'notes.refusals.purposes.asks':
     'readers of modern 年命 niánmìng material, and models, very confidently.',
@@ -1759,9 +1774,9 @@ export const en = {
     'What a school is here, what it takes to name one, and which one laid the board you are looking at.',
   'notes.schools.title': 'Schools, and what it takes to name one',
   'notes.schools.lead':
-    'Different schools draw different boards from the same instant. Every divergence between practitioners is a parameter with a declared default, present in the input type from the first release, and a value this engine has not implemented is refused by name rather than quietly replaced with the one it has.',
+    'Different schools draw different boards from the same instant. Every divergence between practitioners is a parameter here, with a declared default, present in the engine’s input type from the first release. A value the engine has not implemented is refused by name: it is never quietly replaced with the nearest value the engine does compute.',
   'notes.schools.implicit':
-    'Which means every board is laid by a school, including the one nobody chose. What was followed is stated under the board, on the picture, in the transcript and inside a prompt — the default along with the rest, because a reader who moved nothing is exactly the reader who does not know a choice was made for them.',
+    'Every board is therefore laid by a school, including the one nobody chose. The school that was followed is stated under the board, on the picture, in the transcript and inside a prompt, and the default is stated like every other value. That is deliberate: a reader who moved nothing is the reader least likely to know a choice was made for them.',
 
   'notes.schools.claim.title': 'What a value named for a school claims',
   'notes.schools.claim.body':
@@ -1784,9 +1799,9 @@ export const en = {
 
   'notes.readings.title': 'Handing a board to a model',
   'notes.readings.lead':
-    'What a prompt commissions, what it forbids, and what never leaves your browser.',
+    'This page says what a prompt commissions, what it forbids, and what never leaves your browser.',
   'notes.readings.computed':
-    'A board travels computed and never as a date. A model handed a date and a place casts the chart from memory and gets it wrong, and a wrong chart read well is the worst thing this project can produce: nothing downstream catches it, because it looks exactly like a right one.',
+    'A board travels computed and never as a date. A model handed a date and a place casts the chart from memory and gets it wrong. A wrong chart read well is the worst thing this project can produce, because no later check can catch it: it looks exactly like a right one, and reads exactly as well.',
   'notes.readings.oneBoard.title': 'One board, never two of one instant',
   'notes.readings.oneBoard.body':
     'A consultation takes one instrument, chosen before the press and at no point after it. The boards overlap: a chart of dunjia and a 六壬 liùrén board share the day pillar, the decade, the void branches and five of the eight spirits; the twelve palaces of 七政四餘 qīzhèng sìyú are the ring a 六壬 general is seated on; the four pillars are the substrate the others are built from. No transmitted rule combines the three 式 shì. 太乙 tàiyǐ overlaps none of them and the rule holds for it anyway, because a model handed a board of a year beside a board of a person reads the year onto the person.',
@@ -1817,10 +1832,10 @@ export const en = {
 
   'notes.sources.title': 'Where the numbers come from',
   'notes.sources.lead':
-    'One row per quantity: what the engine derives it from, what it was measured against, and which rung of the ladder below that puts it on.',
+    'This page gives one row to every quantity the engine computes, and each row says three things: what the engine derives it from, what it was checked against, and which rung of the ladder below that check puts it on.',
   'notes.ladder.title': 'The ladder of evidence',
   'notes.ladder.lead':
-    'Not everything was checked against something equally good, and knowing what a quantity stands on is not yet being able to weigh it against its neighbour. These are the rungs, strongest first, with the number of quantities held at each.',
+    'Not every quantity was checked against an equally good reference, and knowing what a quantity stands on is not yet being able to weigh it against its neighbour. The rungs below run from strongest to weakest, each with the number of quantities held at it.',
   'notes.held': '{count} in the register',
   'notes.rung.0': 'Measured',
   'notes.rung.0.means':
@@ -1857,7 +1872,7 @@ export const en = {
   // twice.
   'notes.references.title': 'The programs it was checked on',
   'notes.references.lead':
-    'Independent implementations, each somebody else’s work, run over the spans the rows above state. The texts cited beside them are not linked: an address for a text would be a claim about which edition.',
+    'Independent implementations, each somebody else’s work, run over the spans the rows above state. The texts cited beside them are not linked, because giving a text an address would be a claim about which edition is meant.',
   'notes.column.quantity': 'Quantity',
   'notes.column.school': 'School',
   'notes.column.rung': 'Rung',

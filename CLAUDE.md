@@ -153,8 +153,16 @@ the engine falls back to Moshier, which needs no files.
   vernacular of their own**, and must be usable without a glossary. Hanzi
   accompany the output, always beside a gloss and always beside the reading;
   everything the reader *operates* or *decides from* leads in their language.
-  A `title` attribute does not rescue a control whose face is a glyph. →
-  [`docs/i18n.md`](docs/i18n.md)
+  A `title` attribute does not rescue a control whose face is a glyph, or an
+  option that reads `zishi`. **The harm is a name printed as a shape, and a
+  face that names nothing is not one** — an arrow, a printer, a circle carry
+  their word as an accessible name and no more. → [`docs/i18n.md`](docs/i18n.md)
+- **Copy a reader reads is read once**, and the compressed register this file
+  is written in is not that. A headless list, a dropped verb, an unnamed
+  «l'altro» or a point delivered as a closing reversal all make the reader
+  start the sentence again. The diagnosis and the fix for each are in the
+  `reader-copy` skill; it governs the catalogs, `lib/meta.ts` and `README.md`,
+  and nothing in `docs/`.
 - **How many vernaculars there are is a state and not a design.** English and
   Italian today, Spanish when the engine has stopped moving; nothing may be
   written as though the set were closed at two, and what a third would cost is

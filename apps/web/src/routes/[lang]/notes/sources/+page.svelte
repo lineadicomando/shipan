@@ -23,6 +23,7 @@
   import { EXTERNAL } from '$lib/external';
   import { REFERENCES } from '$lib/references';
   import type { MessageKey } from '@shipan/i18n';
+  import NoteColumns from '$lib/components/NoteColumns.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import { INSTRUMENTS } from '$lib/instruments';
 
@@ -41,9 +42,33 @@
 
 <article>
   <h1>{t('notes.sources.title')}</h1>
-  <p class="lead"><Named text={t('notes.sources.lead')} /></p>
 
-  <section class="ladder">
+  <!--
+    The opening block: the paragraph, and the way down to every section of the
+    page. Every section and not only the layers — an index that skipped the
+    ladder would skip the one a reader jumps *back* to, the rungs being what
+    the column of figures below means.
+
+    The register is the longest page of this section, and a reader arrives at
+    it for one row of one of them. Only this block flows; the table under it
+    wants every column it can get.
+  -->
+  <NoteColumns
+    {t}
+    leads={['notes.sources.lead']}
+    label="notes.sources.title"
+    anchors={[
+      { id: 'ladder', title: 'notes.ladder.title' },
+      ...data.layers.map((layer) => ({
+        id: layer.id,
+        name: layer.name ?? nameOf(layer.id),
+        title: layer.title,
+      })),
+      { id: 'references', title: 'notes.references.title' },
+    ]}
+  />
+
+  <section class="ladder" id="ladder">
     <h2>{t('notes.ladder.title')}</h2>
     <p><Named text={t('notes.ladder.lead')} /></p>
     <dl>
@@ -67,7 +92,7 @@
 
   {#each data.layers as layer (layer.id)}
     {@const name = layer.name ?? nameOf(layer.id)}
-    <section>
+    <section id={layer.id}>
       <h2>
         {#if name}
           <span class="said">{name.pinyin}</span>
@@ -116,7 +141,7 @@
        answer. The texts cited beside them are deliberately not here — a link
        to one is a claim about which edition, and `docs/sources.md` spends
        whole sections on that question rather than settling it in a list. -->
-  <section class="references">
+  <section class="references" id="references">
     <h2>{t('notes.references.title')}</h2>
     <p><Named text={t('notes.references.lead')} /></p>
     <ul>
@@ -129,10 +154,14 @@
 
 <style>
   article { max-width: 62rem; }
-  h1 { font-size: 1.25rem; font-weight: 500; }
-  .lead { margin: 1rem 0; max-width: 40rem; }
+  h1 { margin-bottom: 1.4rem; font-size: 1.25rem; font-weight: 500; }
 
-  section { margin-top: 2.4rem; }
+  /*
+   * The margin above is also what a jump has to clear: a heading landing
+   * against the top of the window reads as a section that began mid-air, and
+   * what the eye wants above it is what the page already puts there.
+   */
+  section { margin-top: 2.4rem; scroll-margin-top: 2.4rem; }
   h2 {
     display: flex;
     align-items: baseline;

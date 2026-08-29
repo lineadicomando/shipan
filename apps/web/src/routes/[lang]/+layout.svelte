@@ -1,5 +1,6 @@
 <script lang="ts">
   import { AUTHOR } from '$lib/author';
+  import BackToTop from '$lib/components/BackToTop.svelte';
   import ColorSchemeToggle from '$lib/components/ColorSchemeToggle.svelte';
   import GlyphRain from '$lib/components/GlyphRain.svelte';
   import LanguageSwitch from '$lib/components/LanguageSwitch.svelte';
@@ -98,6 +99,10 @@
       <a class="source" href={SOURCE_URL} {...EXTERNAL}>{t('footer.licence')}</a>
     </p>
   </footer>
+
+  <!-- Last in the shell, being about the page rather than in it: a reader
+       tabbing through arrives at it after everything there was to read. -->
+  <BackToTop {t} />
 </div>
 
 <style>
@@ -235,7 +240,7 @@
     padding-top: 1rem;
     border-top: 1px solid var(--rule);
     color: var(--faint);
-    font-size: 0.85em;
+    font-size: 0.8em;
     text-align: center;
   }
   /* Darker than the two lines under it. A disclaimer set in the same grey as

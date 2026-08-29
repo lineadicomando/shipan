@@ -1,25 +1,27 @@
 <!--
-  A mark beside a word, and never in place of one.
+  A mark for what a control does, and never a name.
 
-  The buttons this draws for are the ones a reader looks for rather than reads
-  — copy, copied, link, print, and the one that unfolds the header's sections
-  — and a mark is what makes them findable at a glance once known. It does
-  not make them legible: a control whose face is a shape is a control only
-  somebody who already knows it can use on purpose, which is the same rule
-  `CLAUDE.md` states for a glyph, and a `title` does not rescue it because
-  nobody hovers what they cannot recognise.
+  **These are not glyphs, and the rule about glyphs does not reach them.**
+  That rule is about a name printed as a shape — 時辰 on a button is unsayable,
+  unsearchable and unaskable to the reader this is built for, and so is `zishi`
+  in a list of options. An arrow, a printer, two links of a chain and a folded
+  menu name nothing. Nobody pronounces them, nobody looks them up, and the
+  reader has met all of them in every interface they have ever used.
+  `docs/i18n.md` states the bound; this file only has to stay inside it.
 
-  So every one of these travels with its word, and this is `aria-hidden`: to a
-  screen reader the button is its label and this is nothing at all.
+  What is asked of a mark instead is that it be recognisable and that it carry
+  its word where somebody who cannot see it will get it. Every one of these is
+  `aria-hidden`: to a screen reader the button is its accessible name and this
+  is nothing at all. That name is never optional.
 
-  **One stands alone, and the exception is stated rather than taken.** `up` is
-  the return from a table to the picture above it, and it sits in a button
-  with no text — the way the colour-scheme toggle in the header does. What
-  makes that admissible is not the shape being obvious; it is that the control
-  is chrome rather than content. Nothing is being *decided* from it, the row
-  it sits in already names the seat in the reader's language, and the button
-  carries that name as its accessible label. A mark replacing a word a reader
-  has to weigh would still be the thing `CLAUDE.md` refuses.
+  **Where a word stands beside the mark, it is because the control is one a
+  reader has to weigh rather than one they look for.** Copy, copied, link,
+  print and the sections fold all sit in the flow of a page among things being
+  read, and there a mark alone would be a decision offered as a shape. `up`
+  does not: in Zi Wei's table it is chrome beside a row that already names the
+  seat in the reader's language, and in the corner of a long page it is the
+  return to the top, which is a movement and not a decision. Both carry the
+  word as `aria-label` and `title`.
 -->
 <script lang="ts">
   let { name }: { name: 'copy' | 'copied' | 'link' | 'print' | 'menu' | 'up' } = $props();
@@ -43,8 +45,9 @@
   {:else if name === 'copied'}
     <path d="M2.5 8.5 6 12l7.5-8" />
   {:else if name === 'up'}
-    <!-- Up, because the board is above the table and that is the whole of
-         what this does. -->
+    <!-- Up, which is the whole of what it does in both places it is drawn:
+         the board is above the table, and the top of the page is above the
+         page. -->
     <path d="M8 13.5V3.5M3.5 8 8 3.5 12.5 8" />
   {:else if name === 'link'}
     <!-- Two halves of a chain, which is the shape an address has been drawn

@@ -15,7 +15,7 @@
 <script lang="ts">
   import Named from '$lib/components/Named.svelte';
   import type { MessageKey } from '@shipan/i18n';
-  import NoteLeads from '$lib/components/NoteLeads.svelte';
+  import NoteColumns from '$lib/components/NoteColumns.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import { glyph } from '$lib/glyph';
   import { INSTRUMENTS } from '$lib/instruments';
@@ -39,10 +39,25 @@
 
 <article>
   <h1>{t('notes.instruments.title')}</h1>
-  <!-- The second of them is the reason the nav is shorter than this page, said
-       rather than left to be noticed: what a consultation may be laid on is a
-       narrower question than what is computed here. -->
-  <NoteLeads {t} leads={['notes.instruments.lead', 'notes.instruments.wider']} />
+
+  <!--
+    The opening block: the two paragraphs and the way down to the nine layers,
+    on `NoteColumns`' two tracks. The second paragraph is the reason this list
+    is longer than the site's navigation, said rather than left to be noticed.
+
+    Only this block. Everything under it is a heading, a sentence and a table,
+    each of which wants the full measure.
+  -->
+  <NoteColumns
+    {t}
+    leads={['notes.instruments.lead', 'notes.instruments.wider']}
+    label="notes.instruments.title"
+    anchors={data.layers.map((layer) => ({
+      id: layer.id,
+      name: layer.name ?? nameOf(layer.id),
+      title: layer.title,
+    }))}
+  />
 
   {#each data.layers as layer (layer.id)}
     {@const name = layer.name ?? nameOf(layer.id)}
@@ -111,7 +126,7 @@
 
 <style>
   article { max-width: 52rem; }
-  h1 { font-size: 1.25rem; font-weight: 500; }
+  h1 { margin-bottom: 1.4rem; font-size: 1.25rem; font-weight: 500; }
 
   /*
    * The margin above is also what a jump has to clear.

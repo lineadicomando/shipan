@@ -57,6 +57,17 @@ numbers, gambling picks, a partner judged or a compatibility settled. Under 命
 the verbs stay conditional — «tends to», never «you will». See
 `docs/readings.md`, and `prompt.ming.limits`.
 
+**The surface says what the refusal leaves the reader with, and it is the
+footer's line given room.** `footer.disclaimer` carries the claim in one
+sentence on every page — a space for reflection, and in no case a substitute
+for a professional — and `notes.refusals.advice.body` is where that sentence
+is long enough to be read for something rather than past. It adds no second
+claim: a board is looked at and weighed by the person looking, a question
+about a symptom, a contract or a sum of money belongs to somebody qualified to
+answer it, and nothing here is a reason to put off asking them. The two are
+one fact with two amounts of room, and the footer is where the wording is
+settled.
+
 ## Which palace stands for which part of a life
 
 *Asked by:* readers of modern 年命 material, and models, very confidently.

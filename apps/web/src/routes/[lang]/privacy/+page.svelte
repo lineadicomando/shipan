@@ -9,11 +9,12 @@
   which answer belongs to which heading. The three points that carry no label
   are a plain list, which is what they are.
 
-  **The whole of it flows through two columns, which is the one place on this
-  site where `column-count` is right.** Everywhere else two columns are a grid:
-  a pair of paragraphs answering each other, or two headed halves, each read
-  straight down its own track. This is neither — it is one document of five
-  numbered sections, read in the passages somebody came for rather than
+  **The whole of it flows through two columns, which is one of the two places
+  on this site where `column-count` is right** — the other being the index of
+  the notes, whose argument is written there. Everywhere else two columns are a
+  grid: a pair of paragraphs answering each other, or two headed halves, each
+  read straight down its own track. This is neither — it is one document of
+  five numbered sections, read in the passages somebody came for rather than
   through, and the shape it is checked against is a contract. Laid out as a
   grid it was two columns where a section happened to have two halves and one
   column where it did not, which is an arrangement that says nothing and looks
@@ -34,6 +35,23 @@
   import PageHead from '$lib/components/PageHead.svelte';
   let { data } = $props();
   const t = $derived(data.t);
+
+  /**
+   * The five numbered sections, in the order they are laid.
+   *
+   * Written here and not derived, which is the one place on this page where
+   * that is right: the sections are five numbered clauses of a document, not
+   * a list the engine produces, and the number a reader jumps to is printed
+   * in the heading itself. The identifier is the key prefix each section's
+   * strings already carry.
+   */
+  const SECTIONS = [
+    { id: 'controller', title: 'privacy.controller.title' },
+    { id: 'data', title: 'privacy.data.title' },
+    { id: 'browser', title: 'privacy.browser.title' },
+    { id: 'rights', title: 'privacy.rights.title' },
+    { id: 'licence', title: 'privacy.licence.title' },
+  ] as const;
 </script>
 
 <PageHead {t} />
@@ -43,11 +61,34 @@
        the first thing in the left one. -->
   <h1>{t('privacy.title')}</h1>
 
+  <!--
+    The five clauses, above the flow and not inside it.
+
+    This is the page somebody arrives at for one obligation — where the
+    controller is named, whether there are cookies, what rights they have —
+    and the flow is arranged for exactly that reader, who is looking for a
+    passage rather than reading through. An index is the shortest way to the
+    passage, and it is the shape a contract is checked against.
+
+    Outside the flow, because inside it the list would be five items broken
+    wherever the column happened to end, in the middle of a document whose
+    columns are already carrying prose across the gutter. Laid across the
+    width rather than down it: five numbered lines in a 24rem track would be a
+    column of text beside a column of nothing.
+  -->
+  <nav aria-label={t('privacy.title')}>
+    <ul class="contents">
+      {#each SECTIONS as section (section.id)}
+        <li><a href="#{section.id}">{t(section.title)}</a></li>
+      {/each}
+    </ul>
+  </nav>
+
   <div class="columns">
     <p class="lead">{t('privacy.gdpr')}</p>
     <p class="lead">{t('privacy.summary')}</p>
 
-    <section>
+    <section id="controller">
       <h2>{t('privacy.controller.title')}</h2>
       <p>
         {t('privacy.controller.who')}
@@ -55,7 +96,7 @@
       </p>
     </section>
 
-    <section>
+    <section id="data">
       <h2>{t('privacy.data.title')}</h2>
 
       <h3>{t('privacy.inputs.title')}</h3>
@@ -81,7 +122,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="browser">
       <h2>{t('privacy.browser.title')}</h2>
 
       <h3>{t('privacy.cookies.title')}</h3>
@@ -107,13 +148,13 @@
       <p>{t('privacy.storage.clearing')}</p>
     </section>
 
-    <section>
+    <section id="rights">
       <h2>{t('privacy.rights.title')}</h2>
       <p>{t('privacy.rights.none')}</p>
       <p>{t('privacy.rights.exercise')}</p>
     </section>
 
-    <section>
+    <section id="licence">
       <h2>{t('privacy.licence.title')}</h2>
       <p>
         {t('privacy.licence.body')}
@@ -134,6 +175,29 @@
    */
   article { max-width: 50rem; }
   h1 { margin-bottom: 1.4rem; font-size: 1.25rem; font-weight: 500; }
+
+  /*
+   * The five clauses across the width, in the row shape the register's list of
+   * programs uses: the shortest thing that can hold five links, wrapping where
+   * it must. The band under it is the band a section carries above its own
+   * heading, so the document below starts where it started before.
+   */
+  .contents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.4rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9rem;
+  }
+  .contents a { font-weight: 500; }
+
+  /* Nothing to press on paper, and the numbers are printed on the sections
+     themselves a few lines below. */
+  @media print {
+    nav { display: none; }
+  }
 
   /*
    * The flow, and the hairline in its gutter.
@@ -163,7 +227,9 @@
    * is what the two paragraphs are.
    */
   .lead { font-size: 1rem; }
-  section { font-size: 0.9rem; }
+  /* The band a jump has to clear is the one the heading carries above itself,
+     which a section landing at the head of a column has already given up. */
+  section { font-size: 0.9rem; scroll-margin-top: 2.4rem; }
 
   h2 { margin: 2.4rem 0 0.8rem; font-size: 1.05rem; font-weight: 500; }
   /*

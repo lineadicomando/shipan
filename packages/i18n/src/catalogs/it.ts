@@ -789,6 +789,11 @@ export const it: Record<MessageKey, string> = {
   'nav.moments': 'Scegliere il momento',
   'nav.consult': 'Consultazione',
   'nav.sections': 'Sezioni',
+  // «Torna su» e non «Torna all'inizio»: il primo è quello che si dice, il
+  // secondo è la traduzione di «back to top» fatta parola per parola. E non
+  // «Su» da solo, che accanto a una freccia in su non aggiunge la parola che
+  // rende leggibile la freccia — è il punto per cui la parola c'è.
+  'nav.top': 'Torna su',
 
   // Sulla barra sotto la tavola di 太乙, che è tutto il modulo: una tavola
   // 年計 è funzione dell'anno e di nient'altro.
@@ -1093,13 +1098,18 @@ export const it: Record<MessageKey, string> = {
   // Le note e la nota sulla privacy non hanno `intro`: portano entrambe un
   // titolo visibile e la propria riga d'apertura, e una pagina che è già
   // prosa non vuole una prefazione alla prefazione.
-  'meta.title.notes': 'Note: che cosa calcola questo motore',
+  'meta.title.notes': 'Note: cosa calcola questo motore',
   'meta.description.notes':
-    'Che cosa calcola questo motore, su che cosa si regge ogni numero e con quanta forza. Il resoconto dello strumento, e non una lettura.',
-  'meta.title.notes.instruments': 'Gli strumenti e i loro parametri',
+    'Questa sezione descrive che cosa calcola il motore e quanto è solido il riferimento di ogni numero. È il resoconto dello strumento, non una lettura.',
+  // Ogni titolo di questa sezione apre con il nome che la pagina porta in
+  // testa e nella navigazione, e spende il resto del budget su ciò che serve
+  // a trovarla: chi arriva da una ricerca e chi arriva dal menu devono
+  // riconoscere la stessa pagina. Gli strumenti e i parametri restano detti,
+  // ma dopo.
+  'meta.title.notes.instruments': 'Cosa viene calcolato, e con quali parametri',
   'meta.description.notes.instruments':
     'Ogni tavola che questo motore stende, da che cosa è calcolata, e ogni divergenza di scuola come parametro dichiarato con il proprio valore predefinito.',
-  'meta.title.notes.sources': 'Fonti: su che cosa si regge ogni numero',
+  'meta.title.notes.sources': 'Da dove vengono i numeri, e da quali fonti',
   // «Rung» e non «gradino», che è quello che questa riga diceva. La scelta è
   // argomentata sotto `notes.column.rung`: il termine resta inglese perché è
   // quello che il lettore ritrova nella colonna del registro, nella
@@ -1108,13 +1118,13 @@ export const it: Record<MessageKey, string> = {
   // senza aprire la pagina — e poi mai più.
   'meta.description.notes.sources':
     'Ogni quantità calcolata dal motore, il testo o la misura su cui si regge, e il rung della scala delle prove su cui è stata pesata.',
-  'meta.title.notes.refusals': 'Che cosa questo progetto non calcola',
+  'meta.title.notes.refusals': 'Cosa non viene calcolato, e perché',
   'meta.description.notes.refusals':
     'Che cosa manca qui deliberatamente (lo yongshen, una classifica delle ore, una data per un esito), chi lo chiede, e perché non viene calcolato.',
-  'meta.title.notes.schools': 'Le scuole, e che cosa serve per nominarne una',
+  'meta.title.notes.schools': 'Le scuole, e cosa serve per nominarne una',
   'meta.description.notes.schools':
     'Ogni tavola è stesa da una scuola, compresa quella che nessuno ha scelto. Che cosa afferma un valore così, e che cosa serve per dichiararne una nuova.',
-  'meta.title.notes.readings': 'Consegnare una tavola a un modello',
+  'meta.title.notes.readings': 'Prompt IA: consegnare una tavola a un modello',
   'meta.description.notes.readings':
     'Che cosa succede quando una tavola arriva a un modello: una sola tavola e mai due, calcolata e mai una data, e che cosa un prompt commissiona e vieta.',
   'meta.title.privacy': 'Privacy: non si conserva nulla',
@@ -1340,19 +1350,21 @@ export const it: Record<MessageKey, string> = {
 
   'notes.title': 'Note',
   'notes.lead':
-    'Che cosa calcola questo motore, su che cosa si regge ogni numero, e con quanta forza. Niente in questa sezione è una lettura: è il resoconto dello strumento.',
+    'Questa sezione descrive che cosa calcola il motore, su quali elementi si basa ciascun numero e quale grado di solidità ha il relativo riferimento. Non contiene interpretazioni o letture: riporta esclusivamente il funzionamento dello strumento.',
   'notes.claim':
-    'Ogni quantità qui dentro è stata verificata su qualcosa di esterno a sé, ma non tutte su qualcosa di ugualmente solido. Dire quali sono le une e quali le altre è il compito di questa sezione: un termine solare e una tavola tramandata sono due generi di fatto diversi, e un lettore che non riesca a distinguerli è stato fuorviato dalla presentazione, non dai dati.',
+    'Ogni quantità riportata è stata verificata attraverso un riferimento esterno, ma non tutti i riferimenti hanno lo stesso grado di solidità. Questa sezione serve a distinguerli. Un termine solare e una tavola tramandata, per esempio, appartengono a due categorie di dati differenti. Rendere chiara questa distinzione è necessario per evitare che la presentazione dello strumento faccia apparire come equivalenti dati che non lo sono.',
   'notes.kind.derived': 'derivata',
+  // Una didascalia aggiunge al titolo del link e non lo ripete: quando il
+  // titolo si è accorciato, queste tre aprivano con le stesse parole a un
+  // centimetro di distanza.
   'notes.answers.instruments':
-    'Che cosa viene calcolato, strato per strato: su che cosa si posa ciascuno, e ogni punto in cui le scuole divergono.',
+    'Gli strati del calcolo, uno per uno: da che cosa si ricava ciascuno, e ogni punto in cui le scuole divergono.',
   'notes.answers.sources':
-    'Su che cosa si regge ogni quantità, su che cosa è stata verificata, e quanto saldamente è tenuta.',
+    'Una riga per ogni quantità: la fonte da cui il motore la ricava, la verifica che ha superato, e il rung su cui sta.',
 
   'notes.layer.pillars': 'Lo strato calendariale',
   'notes.takes': 'Si calcola da',
-  'notes.takes.pillars':
-    'un istante e un luogo, con i due confini che dicono come si legge un istante.',
+  'notes.takes.pillars': 'un istante e un luogo, letti secondo quei due confini.',
   'notes.takes.qimen': 'un istante e un luogo.',
   'notes.takes.liuren': 'un istante e un luogo.',
   'notes.takes.taiyi': 'un anno, e nient’altro: nessun luogo, nessuna ora, nessuno.',
@@ -1363,7 +1375,7 @@ export const it: Record<MessageKey, string> = {
   'notes.takes.almanac': 'una data civile, calcolata su 120°E come lo è il calendario lunare.',
   'notes.takes.nianming': 'una nascita, collocata dentro una carta già tratta per un momento.',
   'notes.does.pillars':
-    'I termini solari, la data lunare e i quattro pilastri: ciò su cui è costruita ogni tavola qui sotto, e lo strato a cui appartengono i due confini.',
+    'I termini solari, la data lunare e i quattro pilastri: ciò su cui è costruita ogni tavola qui sotto. A questo strato appartengono anche due confini, quello dove comincia l’anno contato e quello dove cambia il giorno.',
   'notes.does.qimen':
     'Nove palazzi: una tavola di terra fissata dal ju, una tavola di cielo girata sull’ora, e le stelle, le porte e gli spiriti che vi stanno sopra.',
   'notes.does.liuren':
@@ -1381,11 +1393,11 @@ export const it: Record<MessageKey, string> = {
   'notes.does.nianming':
     'Dove una persona sta dentro una carta del momento: il pilastro del suo anno di nascita, e il pilastro dell’anno che sta vivendo.',
 
-  'notes.instruments.title': 'Che cosa viene calcolato',
+  'notes.instruments.title': 'Cosa viene calcolato',
   'notes.instruments.lead':
-    'Strato per strato, e sotto ciascuno i punti in cui le scuole divergono. Ognuno di quei punti è un parametro con un valore predefinito dichiarato: il valore che questo motore adotta è segnato, sono segnati anche quelli che dichiara e non calcola, e niente viene scelto in silenzio.',
+    'Questa pagina elenca gli strati che il motore calcola e, sotto ciascuno, i punti in cui le scuole divergono. Ogni punto di divergenza è un parametro con un valore predefinito dichiarato. La tabella segna il valore che questo motore adotta e segna anche i valori che il motore dichiara ma non implementa, in modo che nessuna scelta resti implicita.',
   'notes.instruments.wider':
-    'Questo elenco è più lungo di quello in testa alla pagina, per una ragione che merita una frase: su che cosa si possa posare una consultazione è una domanda più stretta di che cosa venga calcolato qui. L’almanacco è la pagina di un libro pubblicato e non una tavola, lo strato calendariale sta sotto tutte, e un 年命 niánmìng è una nascita collocata dentro una carta tratta per un momento.',
+    'Questo elenco è più lungo del menu in cima al sito, perché i due rispondono a domande diverse: il menu nomina le arti su cui si può posare una consultazione, mentre questa pagina nomina tutto ciò che il motore calcola. Compaiono qui e non nel menu l’almanacco, che è la pagina di un libro pubblicato e non una tavola; lo strato calendariale, che sta sotto tutte le tavole; e il 年命 niánmìng, che è una nascita collocata dentro una carta già tratta per un momento.',
   'notes.column.parameter': 'Parametro',
   'notes.column.values': 'Valori',
   'notes.default': 'predefinito',
@@ -1407,7 +1419,7 @@ export const it: Record<MessageKey, string> = {
   // lingua, e `docs/refusals.md` resta il registro che possiede il termine.
   'notes.refused': 'non implementato',
   'notes.noParameters':
-    'Nessuna divergenza propria: si regge interamente sullo strato calendariale, e sono i parametri qui sopra a spostarlo.',
+    'Questo strato non ha divergenze proprie: si calcola interamente dallo strato calendariale, e i parametri che lo spostano sono quelli elencati qui sopra.',
   'notes.parameter.method': 'Come si stabilisce il ju.',
   'notes.parameter.yuan': 'Da dove si conta il terzo del termine, sotto 拆補 chāibǔ.',
   'notes.parameter.plate': 'Come si ricava la tavola di cielo.',
@@ -1444,7 +1456,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.count': 'Come si contano gli anni vissuti.',
 
   'notes.answers.refusals':
-    'Che cosa deliberatamente non viene calcolato, chi lo chiede, e perché non è qui.',
+    'Una voce per ogni rifiuto: che cosa manca, chi lo chiede, e perché non è qui.',
   'notes.answers.readings':
     'Che cosa un prompt commissiona e che cosa vieta, e che cosa non esce mai dal tuo browser.',
   'notes.askedBy': 'Lo chiede',
@@ -1458,11 +1470,11 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.schoolDoctrine.asks': 'chiunque voglia sapere che cosa significa la tavola che ha scelto.',
   'notes.refusals.schoolDoctrine.body':
     'Una scuola insegna a che cosa serve una configurazione, e la tentazione è spedire quell’insegnamento accanto ai valori che ha mosso. Può viaggiare solo ciò che già viaggia per le condizioni del 太乙 tàiyǐ, entro gli stessi quattro limiti: le parole della fonte, una clausola e non un paragrafo, sempre glossata, e sempre attaccata a qualcosa che il motore ha calcolato. Un verdetto nella prosa di questo motore è un verdetto che niente può mettere alla prova; una citazione, invece, si può verificare due volte: o è nel testo o non c’è, ed è di quella scuola o non lo è.',
-  'notes.refusals.title': 'Che cosa non viene calcolato',
+  'notes.refusals.title': 'Cosa non viene calcolato',
   'notes.refusals.lead':
-    'Il motore non risponde a nessuna domanda, il che non vuol dire che non dica nulla. Quel che segue è una voce per ogni rifiuto: che cosa viene rifiutato, chi lo chiede, e perché non è qui.',
+    'Il motore non risponde a nessuna domanda, il che è diverso dal non dire niente. Qui sotto c’è una voce per ogni rifiuto, e ogni voce dice tre cose: che cosa viene rifiutato, chi lo chiede, e perché non è qui.',
   'notes.refusals.carries':
-    'Quello che porta, invece, è un attributo che le fonti tramandano concordi, quando quell’attributo appartiene alla configurazione e non alla situazione di qualcuno. Anche allora viaggia come identificatore e glifo, mai come prosa: un verdetto che arriva dentro una glossa tradotta è un verdetto che niente può mettere alla prova.',
+    'Il motore porta invece un attributo che le fonti tramandano concordi, purché quell’attributo appartenga alla configurazione e non alla situazione di qualcuno. Anche in quel caso l’attributo viaggia come identificatore e come glifo, mai come prosa. Un verdetto scritto dentro una glossa tradotta non si potrebbe verificare in nessun modo, mentre un identificatore e un glifo si possono confrontare con la fonte da cui vengono.',
   'notes.refusals.yongshen.title': 'Lo 用神 yòngshén',
   'notes.refusals.yongshen.asks': 'chiunque tragga una carta per una domanda.',
   'notes.refusals.yongshen.body':
@@ -1477,8 +1489,17 @@ export const it: Record<MessageKey, string> = {
     'Scegliere il momento vuol dire percorrere un intervallo e riferire dove, al suo interno, ogni ora stia rispetto ai criteri che sei tu a dichiarare. Non mette in classifica ciò che trova, e le sue risposte portano una direzione oltre a un’ora: la direzione è metà della risposta, e l’ora non viene mai riferita da sola. Datare un esito è rifiutato del tutto: è la previsione che questo progetto non fa.',
   'notes.refusals.advice.title': 'Consigli',
   'notes.refusals.advice.asks': 'quasi tutti, prima o poi.',
+  // La riga del piè di pagina, con lo spazio che un piè di pagina non ha. È
+  // la stessa affermazione e non una seconda: a chi si è appena visto
+  // rifiutare una risposta si deve dire che cosa gli lascia il rifiuto, e
+  // «uno spazio dedicato alla ricerca interiore» detto in sei parole in fondo
+  // alla pagina è una frase che si legge senza ricavarne niente.
+  //
+  // «Ricerca interiore» resta la formula del piè di pagina, che è quella con
+  // cui il sito si presenta: cambiarla qui vorrebbe dire dire due volte in
+  // due modi la cosa che il lettore verifica.
   'notes.refusals.advice.body':
-    'Nessuna lettura qui dà pareri medici, psichiatrici, legali o finanziari, numeri fortunati, pronostici di gioco, un partner giudicato o una compatibilità stabilita. Dove si commissiona la lettura di una vita i verbi restano condizionali («tende a», mai «accadrà»), e il potere sulle scelte di una persona e sul suo cammino resta suo.',
+    'Una tavola qui serve alla riflessione: chi legge guarda una configurazione, considera che cosa mette accanto a che cosa, e decide da sé quanto quella disposizione valga per lui. Non è una fonte di consulenza professionale e non lo diventa se la si legge con attenzione. Nessuna lettura qui dà pareri medici, psichiatrici, legali o finanziari, numeri fortunati, pronostici di gioco, un partner giudicato o una compatibilità stabilita. Una domanda su un sintomo, su un contratto o su una somma di denaro va rivolta a chi è qualificato per rispondere, e niente su questo sito è una ragione per rimandare quella domanda. Dove si commissiona la lettura di una vita i verbi restano condizionali («tende a», mai «accadrà»), e il potere sulle scelte di una persona e sul suo cammino resta suo.',
   'notes.refusals.purposes.title': 'Quale palazzo sta per quale parte di una vita',
   'notes.refusals.purposes.asks':
     'i lettori del materiale moderno sul 年命 niánmìng, e i modelli, con molta sicurezza.',
@@ -1527,11 +1548,11 @@ export const it: Record<MessageKey, string> = {
 
   'notes.answers.schools':
     'Che cos’è qui una scuola, che cosa serve per nominarne una, e quale ha steso la tavola che stai guardando.',
-  'notes.schools.title': 'Le scuole, e che cosa serve per nominarne una',
+  'notes.schools.title': 'Le scuole',
   'notes.schools.lead':
-    'Scuole diverse traggono tavole diverse dallo stesso istante. Ogni divergenza fra praticanti è un parametro con un valore predefinito dichiarato, presente nel tipo d’ingresso fin dalla prima versione, e un valore che questo motore non calcola viene rifiutato per nome invece che sostituito in silenzio con quello che ha.',
+    'Scuole diverse traggono tavole diverse dallo stesso istante. Ogni divergenza fra praticanti è qui un parametro con un valore predefinito dichiarato, presente nel tipo d’ingresso del motore fin dalla prima versione. Un valore che il motore non implementa viene rifiutato per nome: non viene mai sostituito in silenzio con il valore più vicino fra quelli che calcola.',
   'notes.schools.implicit':
-    'Il che vuol dire che ogni tavola è stesa da una scuola, compresa quella che nessuno ha scelto. Ciò che è stato seguito è dichiarato sotto la tavola, sull’immagine, nel trascritto e dentro un prompt, il predefinito insieme agli altri: chi non ha mosso niente è esattamente chi non sa che una scelta è stata fatta per lui.',
+    'Ogni tavola è quindi stesa da una scuola, compresa quella che nessuno ha scelto. La scuola seguita è dichiarata sotto la tavola, sull’immagine, nel trascritto e dentro un prompt, e il valore predefinito è dichiarato come tutti gli altri. La scelta è deliberata: chi non ha toccato nessun parametro è la persona che più facilmente ignora che una scelta è stata fatta al posto suo.',
 
   'notes.schools.claim.title': 'Che cosa afferma un valore intestato a una scuola',
   'notes.schools.claim.body':
@@ -1552,11 +1573,16 @@ export const it: Record<MessageKey, string> = {
   'notes.schools.state.body':
     'Niente qui è scritto come se una tavola avesse un metodo solo. Aggiungere una scuola costa un valore nella dichiarazione del motore, una glossa in ogni lingua, una riga nel registro e un argomento che la regga; nessun controllo, perché ciò che un modulo offre si legge dalla dichiarazione. Una scuola che avesse bisogno di un paragrafo scritto a mano è una scuola alla cui dichiarazione manca un campo, e la correzione sta a monte di questa pagina.',
 
-  'notes.readings.title': 'Consegnare una tavola a un modello',
+  // «IA» e non «AI», che è la sigla con cui questo titolo è arrivato — la
+  // stessa decisione presa sopra `meta.intro.consult.b`, dove l'argomento è
+  // scritto per esteso: è la sigla che un lettore italiano cerca, ed è quella
+  // che si legge ad alta voce senza cambiare lingua. Le due forme starebbero
+  // in due voci della stessa navigazione.
+  'notes.readings.title': 'Prompt IA',
   'notes.readings.lead':
-    'Che cosa un prompt commissiona, che cosa vieta, e che cosa non esce mai dal tuo browser.',
+    'Questa pagina dice che cosa un prompt commissiona, che cosa vieta, e che cosa non esce mai dal tuo browser.',
   'notes.readings.computed':
-    'Una tavola viaggia calcolata e mai come data. Un modello a cui si consegnino una data e un luogo trae la carta a memoria e la sbaglia, e una carta sbagliata letta bene è la cosa peggiore che questo progetto possa produrre: niente a valle la intercetta, perché è identica a una giusta.',
+    'Una tavola viaggia calcolata e mai come data. Un modello a cui si consegnino una data e un luogo trae la carta a memoria e la sbaglia. Una carta sbagliata letta bene è la cosa peggiore che questo progetto possa produrre, perché nessun controllo successivo può accorgersene: ha lo stesso aspetto di una carta giusta, e si legge altrettanto bene.',
   'notes.readings.oneBoard.title': 'Una tavola sola, mai due dello stesso istante',
   'notes.readings.oneBoard.body':
     'Una consultazione prende un solo strumento, scelto prima della pressione e in nessun momento dopo. Le tavole si sovrappongono: una carta di dunjia e un quadro di 六壬 liùrén condividono il pilastro del giorno, la decade, i rami vuoti e cinque degli otto spiriti; i dodici palazzi del 七政四餘 qīzhèng sìyú sono l’anello su cui siede un generale di 六壬; i quattro pilastri sono il substrato da cui le altre sono costruite. Nessuna regola tramandata combina i tre 式 shì. Il 太乙 tàiyǐ non si sovrappone a nessuna e la regola vale lo stesso, perché un modello a cui si dia una tavola di un anno accanto a una di una persona legge l’anno sulla persona.',
@@ -1587,10 +1613,10 @@ export const it: Record<MessageKey, string> = {
 
   'notes.sources.title': 'Da dove vengono i numeri',
   'notes.sources.lead':
-    'Una riga per quantità: da che cosa il motore la ricava, su che cosa è stata misurata, e su quale rung della scala qui sotto questo la colloca.',
+    'Questa pagina dedica una riga a ogni quantità che il motore calcola, e ogni riga dice tre cose: da che cosa il motore la ricava, rispetto a che cosa è stata verificata, e su quale rung della scala qui sotto quella verifica la colloca.',
   'notes.ladder.title': 'La scala delle prove',
   'notes.ladder.lead':
-    'Non tutto è stato verificato su qualcosa di ugualmente solido, e sapere su che cosa si regge una quantità non basta ancora a soppesarla accanto alla sua vicina. Questi sono i rung, dal più forte, con il numero di quantità tenute a ciascuno.',
+    'Non tutte le quantità sono state verificate con riferimenti ugualmente solidi, e sapere da dove viene una quantità non basta ancora a soppesarla accanto alla sua vicina. I rung qui sotto vanno dal più forte al più debole, e accanto a ciascuno c’è il numero di quantità che vi stanno.',
   'notes.held': '{count} nel registro',
   'notes.rung.0': 'Misurata',
   'notes.rung.0.means':
@@ -1620,7 +1646,7 @@ export const it: Record<MessageKey, string> = {
     'La tavola qui sotto è citata, non tradotta. È un registro di citazioni (le quantità come le nomina il motore, edizioni, capitoli, i programmi su cui ciascuna è stata misurata e gli intervalli su cui sono stati eseguiti) e questo progetto lo tiene in inglese, la lingua del suo codice sorgente. Ciò che è tradotto è tutto quello da cui si decide: i rung qui sopra, che cosa significa ciascuno, e che cos’è ogni strato.',
   'notes.references.title': 'I programmi su cui è stato verificato',
   'notes.references.lead':
-    'Implementazioni indipendenti, ciascuna lavoro di qualcun altro, eseguite sugli intervalli che le righe qui sopra dichiarano. I testi citati accanto non hanno un collegamento: dare un indirizzo a un testo sarebbe affermare quale edizione.',
+    'Implementazioni indipendenti, ciascuna lavoro di qualcun altro, eseguite sugli intervalli che le righe qui sopra dichiarano. I testi citati accanto non hanno un collegamento, perché dare un indirizzo a un testo significherebbe affermare quale edizione si sta citando.',
   'notes.column.quantity': 'Quantità',
   // «Scuola» e non «tradizione»: quello che la colonna dichiara è di chi è la
   // regola, e chi la segue lo dice come un impegno che potrebbe difendere.

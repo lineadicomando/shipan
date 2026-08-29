@@ -11,9 +11,13 @@
   code that enforces it; this says what is refused, who wants it, and why it is
   not here, to somebody who has just met a board and is looking for the thing
   that is missing from it.
+
+  **The index is the point of the block it opens.** A reader arrives holding
+  one board with one thing missing from it, and seventeen entries answered by
+  eight screens of scrolling is the page failing at the one errand it has.
 -->
 <script lang="ts">
-  import NoteLeads from '$lib/components/NoteLeads.svelte';
+  import NoteColumns from '$lib/components/NoteColumns.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import WrittenNotes from '$lib/components/WrittenNotes.svelte';
   import { REFUSALS } from '$lib/notes';
@@ -26,21 +30,23 @@
 
 <article>
   <h1>{t('notes.refusals.title')}</h1>
-  <!-- The second of them is the distinction the whole page rests on: an
+
+  <!-- The second of the two is the distinction the whole page rests on: an
        attribute of a configuration travels, an answer to somebody's situation
        does not. -->
-  <NoteLeads {t} leads={['notes.refusals.lead', 'notes.refusals.carries']} />
+  <NoteColumns
+    {t}
+    leads={['notes.refusals.lead', 'notes.refusals.carries']}
+    label="notes.refusals.title"
+    anchors={REFUSALS.map((refusal) => ({ id: refusal.id, title: refusal.title }))}
+  />
 
   <WrittenNotes {t} entries={REFUSALS} />
 </article>
 
 <style>
-  /*
-   * Wide enough for the two opening paragraphs to stand side by side, which
-   * is 49.6rem — see `NoteLeads`. What follows them keeps the measure it had:
-   * an entry of `WrittenNotes` caps itself at 40rem, so this width is spent
-   * on the block above and on nothing else.
-   */
+  /* An entry of `WrittenNotes` caps itself at 40rem inside a track of its
+     own, so this width is spent on the block above and on nothing else. */
   article { max-width: 50rem; }
-  h1 { font-size: 1.25rem; font-weight: 500; }
+  h1 { margin-bottom: 1.4rem; font-size: 1.25rem; font-weight: 500; }
 </style>

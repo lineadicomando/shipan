@@ -8,7 +8,7 @@
   browser at all.
 -->
 <script lang="ts">
-  import NoteLeads from '$lib/components/NoteLeads.svelte';
+  import NoteColumns from '$lib/components/NoteColumns.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import WrittenNotes from '$lib/components/WrittenNotes.svelte';
   import { READINGS } from '$lib/notes';
@@ -21,18 +21,20 @@
 
 <article>
   <h1>{t('notes.readings.title')}</h1>
-  <NoteLeads {t} leads={['notes.readings.lead', 'notes.readings.computed']} />
+
+  <NoteColumns
+    {t}
+    leads={['notes.readings.lead', 'notes.readings.computed']}
+    label="notes.readings.title"
+    anchors={READINGS.map((entry) => ({ id: entry.id, title: entry.title }))}
+  />
 
   <WrittenNotes {t} entries={READINGS} />
 </article>
 
 <style>
-  /*
-   * Wide enough for the two opening paragraphs to stand side by side, which
-   * is 49.6rem — see `NoteLeads`. What follows them keeps the measure it had:
-   * an entry of `WrittenNotes` caps itself at 40rem, so this width is spent
-   * on the block above and on nothing else.
-   */
+  /* An entry of `WrittenNotes` caps itself at 40rem inside a track of its
+     own, so this width is spent on the block above and on nothing else. */
   article { max-width: 50rem; }
-  h1 { font-size: 1.25rem; font-weight: 500; }
+  h1 { margin-bottom: 1.4rem; font-size: 1.25rem; font-weight: 500; }
 </style>

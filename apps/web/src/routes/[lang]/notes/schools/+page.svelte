@@ -15,7 +15,7 @@
   way and could have been laid another.
 -->
 <script lang="ts">
-  import NoteLeads from '$lib/components/NoteLeads.svelte';
+  import NoteColumns from '$lib/components/NoteColumns.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import WrittenNotes from '$lib/components/WrittenNotes.svelte';
   import { SCHOOLS } from '$lib/notes';
@@ -28,15 +28,23 @@
 
 <article>
   <h1>{t('notes.schools.title')}</h1>
+
   <!-- The second lead is the one the page rests on: a board is always laid by
        a school, and the reader who chose nothing is the one who has to be
        told which. -->
-  <NoteLeads {t} leads={['notes.schools.lead', 'notes.schools.implicit']} />
+  <NoteColumns
+    {t}
+    leads={['notes.schools.lead', 'notes.schools.implicit']}
+    label="notes.schools.title"
+    anchors={SCHOOLS.map((entry) => ({ id: entry.id, title: entry.title }))}
+  />
 
   <WrittenNotes {t} entries={SCHOOLS} />
 </article>
 
 <style>
+  /* An entry of `WrittenNotes` caps itself at 40rem inside a track of its
+     own, so this width is spent on the block above and on nothing else. */
   article { max-width: 50rem; }
-  h1 { font-size: 1.25rem; font-weight: 500; }
+  h1 { margin-bottom: 1.4rem; font-size: 1.25rem; font-weight: 500; }
 </style>

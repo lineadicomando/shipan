@@ -49,7 +49,11 @@
 
 <div class="entries">
   {#each entries as entry (entry.id)}
-    <section>
+    <!-- The entry's own identifier is the anchor, so a page opening on an
+         index of these can send a reader to the one they came for. It is the
+         same string `REFUSALS` and `SCHOOLS` are written with, which is why
+         none is written here. -->
+    <section id={entry.id}>
       <h2>{t(entry.title)}</h2>
       {#if entry.asks}
         <p class="asked">
@@ -96,8 +100,11 @@
   }
 
   /* Binding only where the tracks have collapsed to one: inside a track the
-     measure is the track's, and this is what it was before there were two. */
-  section { max-width: 40rem; }
+     measure is the track's, and this is what it was before there were two.
+     The band above is what a jump from the page's index has to clear — a
+     heading against the top of the window reads as an entry that began
+     mid-air. */
+  section { max-width: 40rem; scroll-margin-top: 2.2rem; }
   h2 { margin: 0 0 0.5rem; font-size: 1.05rem; font-weight: 500; }
   p { margin: 0.6rem 0; }
   .asked { color: var(--faint); font-size: 0.9rem; }
