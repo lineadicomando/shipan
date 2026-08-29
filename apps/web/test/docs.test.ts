@@ -298,7 +298,15 @@ describe('the documents point where they say they point', () => {
  * definition free to disagree with the first.
  */
 describe('docs/sources.tsv', () => {
-  const COLUMNS = ['board', 'quantity', 'rung', 'stands_on', 'checked_against', 'section'];
+  /**
+   * The columns are read out of `docs/notes.md`, for the reason the rungs are:
+   * that page defines the register and a test carrying its own copy would be a
+   * second definition free to disagree with the first. The table there is one
+   * row a column, the name in backticks in the first cell.
+   */
+  const COLUMNS = [...read('docs/notes.md').matchAll(/^\| `([a-z_]+)` \| /gm)].map(
+    (match) => match[1] as string,
+  );
 
   const register = (): Record<string, string>[] => {
     const [header, ...lines] = read('docs/sources.tsv').trim().split('\n');
@@ -337,6 +345,46 @@ describe('docs/sources.tsv', () => {
 
     for (const row of register()) {
       expect(declared.has(row.rung as string), `${row.quantity} is on rung ${row.rung}`).toBe(true);
+    }
+  });
+
+  /**
+   * Attribution travels in a column and the column has to be readable.
+   *
+   * `school` says which declared value a quantity stands under — `huoling:
+   * fixed`, `yuan: futou` — in the grammar a caller passes, which is the same
+   * grammar `ROADMAP.md` § 1 is held to. Written in prose it would be a second
+   * name for a commitment the engine already names, and the two would part:
+   * a value renamed in `parameters.ts` would leave the register pointing at a
+   * school nothing computes, silently, in a file nobody reads end to end.
+   *
+   * `—` is the other legal cell and means the quantity is carried as the
+   * tradition's own. It is a claim, which is why a blank does not pass for it.
+   */
+  it('attributes each quantity to a value the engine declares', () => {
+    const declared = new Map<string, string>(
+      PARAMETERS.flatMap((parameter) =>
+        parameter.values
+          .filter((value) => typeof value.id === 'string')
+          .map((value): [string, string] => [
+            `${parameter.id}: ${String(value.id)}`,
+            parameter.board,
+          ]),
+      ),
+    );
+
+    for (const row of register()) {
+      const school = row.school as string;
+      if (school === '—') continue;
+      expect(
+        declared.has(school),
+        `docs/sources.tsv attributes "${row.quantity}" to ${school}, which ` +
+          `packages/core/src/parameters.ts does not declare.`,
+      ).toBe(true);
+      expect(
+        declared.get(school),
+        `docs/sources.tsv puts ${school} on a ${row.board} row`,
+      ).toBe(row.board);
     }
   });
 

@@ -102,13 +102,14 @@ school value must show" is the criterion for declaring one.
 
 ## The register
 
-`docs/sources.tsv` — one row a quantity, six columns, tab-separated, sitting
+`docs/sources.tsv` — one row a quantity, seven columns, tab-separated, sitting
 beside `docs/provenance.tsv` and readable the same way.
 
 | | |
 |---|---|
 | `board` | which layer it belongs to: a board, `pillars` for the calendrical layer under all of them, `almanac`, `nianming` |
 | `quantity` | the thing computed, as a reader would ask for it |
+| `school` | the declared value the quantity stands under, written as a caller passes it — `yuan: futou`, `huoling: fixed` — or `—` where it stands under none |
 | `rung` | one of the values above |
 | `stands_on` | what the engine derives it from, or the text that states the rule |
 | `checked_against` | what it was actually measured against, and how far — counts, spans, percentages |
@@ -120,6 +121,20 @@ be sorted, counted and printed. The `section` column is the join, and
 `apps/web/test/docs.test.ts` asserts every one of them is a heading that
 exists — a row pointing at an argument that has been renamed is a row a reader
 cannot follow.
+
+**`school` is the column attribution travels in, and it is not a rung.** The
+paragraph above says why: whose a rule is fails in ways the ladder does not
+order, so it is recorded beside the rung rather than inside it. What goes in
+the cell is the parameter and the value in the grammar a caller passes, because
+that is the one name the engine, the address and this file can all be held to —
+a school named in prose here and as a value there would be two names for one
+commitment. `apps/web/test/docs.test.ts` holds every cell to a value
+`packages/core/src/parameters.ts` declares, on the board the row belongs to.
+
+Most cells read `—`, and that is a claim rather than a blank: the quantity is
+carried as the tradition's own and not as one party's reading of it. A row that
+should say a school and says `—` is the register describing a choice as a fact,
+which is the failure `docs/parameters.md` opens by refusing.
 
 **A quantity added without a row is a quantity nobody can weigh.** That is
 `CLAUDE.md`'s standing rule about the register, and it now has two halves: the

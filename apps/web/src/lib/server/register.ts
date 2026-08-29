@@ -11,7 +11,7 @@ import table from '../../../../../docs/sources.tsv?raw';
  * directory — which is the failure that would only appear in production.
  *
  * It stays on the server side for one reason: this is four columns of prose
- * over forty-odd rows, and the page renders it whole. Shipping it to the
+ * and two of vocabulary over forty-odd rows, and the page renders it whole. Shipping it to the
  * browser as data would send it twice, once as HTML and once as JSON.
  *
  * The parsing is a `split`, deliberately. A TSV whose fields are guaranteed
@@ -23,6 +23,16 @@ export interface RegisterRow {
   /** The layer, keyed as `ParameterBoard` and `LAYERS` key it. */
   board: string;
   quantity: string;
+  /**
+   * The declared value the quantity stands under — `huoling: fixed` — or `-`
+   * where it stands under none.
+   *
+   * Attribution rather than evidence, which is why it is beside the rung and
+   * not inside it: whose a rule is fails in ways the ladder does not order.
+   * `docs/notes.md` § "The register" argues it, and `docs.test.ts` holds every
+   * cell to a value `parameters.ts` declares.
+   */
+  school: string;
   /**
    * `0` to `5`, or `-` where nothing is registered.
    *
@@ -37,7 +47,15 @@ export interface RegisterRow {
   section: string;
 }
 
-const COLUMNS = ['board', 'quantity', 'rung', 'stands_on', 'checked_against', 'section'];
+const COLUMNS = [
+  'board',
+  'quantity',
+  'school',
+  'rung',
+  'stands_on',
+  'checked_against',
+  'section',
+];
 
 function rows(): RegisterRow[] {
   const [header, ...lines] = table.trim().split('\n');
@@ -46,9 +64,16 @@ function rows(): RegisterRow[] {
   }
 
   return lines.map((line) => {
-    const [board = '', quantity = '', rung = '', standsOn = '', checkedAgainst = '', section = ''] =
-      line.split('\t');
-    return { board, quantity, rung, standsOn, checkedAgainst, section };
+    const [
+      board = '',
+      quantity = '',
+      school = '',
+      rung = '',
+      standsOn = '',
+      checkedAgainst = '',
+      section = '',
+    ] = line.split('\t');
+    return { board, quantity, school, rung, standsOn, checkedAgainst, section };
   });
 }
 

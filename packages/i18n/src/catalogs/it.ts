@@ -1541,12 +1541,17 @@ export const it: Record<MessageKey, string> = {
     'Il motore porta la quantità e nessuna fonte la sostiene. Dove accade lo dice anche il disegno: quei nomi restano senza colore finché una non arriva.',
   'notes.ladder.notAVerdict':
     'Un rung non è un verdetto. Dice che cosa potrebbe andare storto senza che nessuno se ne accorga, che è cosa diversa da quanto storto sia qualcosa: il telaio delle ventotto dimore è retto da sovradeterminazione ed è esatto a un settantesimo della domanda più stretta che gli si ponga mai. E un rung non è nemmeno una proprietà della quantità: si sposta quando si sposta lo scaffale, in entrambe le direzioni, e una fonte che si limita a confermare lo sposta quanto una che contraddice.',
+  'notes.ladder.attributed':
+    'La colonna della scuola dice sotto quale valore dichiarato sta una quantità, nelle parole con cui lo si passa: huoling: fixed, yuan: futou. Un trattino dice che la quantità è portata come propria della tradizione e non come la lettura di una parte, ed è un’affermazione, non una casella lasciata vuota. Di chi sia una regola e quanto sia attestata sono domande diverse, perciò le due colonne stanno accanto e nessuna delle due sposta l’altra.',
   'notes.ladder.quoted':
     'La tavola qui sotto è citata e non tradotta. È un registro di citazioni – le quantità come le nomina il motore, edizioni, capitoli, i programmi su cui ciascuna è stata misurata e gli intervalli su cui sono stati eseguiti – e questo progetto lo tiene in inglese, la lingua del suo codice sorgente. Ciò che è tradotto è tutto quello da cui si decide: i rung qui sopra, che cosa significa ciascuno, e che cos’è ogni strato.',
   'notes.references.title': 'I programmi su cui è stato verificato',
   'notes.references.lead':
     'Implementazioni indipendenti, ciascuna lavoro di qualcun altro, eseguite sugli intervalli che le righe qui sopra dichiarano. I testi citati accanto non sono collegati: dare un indirizzo a un testo è dire quale edizione.',
   'notes.column.quantity': 'Quantità',
+  // «Scuola» e non «tradizione»: quello che la colonna dichiara è di chi è la
+  // regola, e chi la segue lo dice come un impegno che potrebbe difendere.
+  'notes.column.school': 'Scuola',
   // «Piolo» è la traduzione giusta di rung ed è la parola sbagliata qui. La
   // scala è un'immagine che si legge da sé in entrambe le lingue — una scala
   // ha pioli — ma il rung è il termine che il lettore va a cercare, e lo

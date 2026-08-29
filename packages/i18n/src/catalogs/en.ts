@@ -1754,6 +1754,11 @@ export const en = {
     'The engine carries the quantity and no source stands behind it. Where that happens the drawing says so too — those names are left uncoloured until one does.',
   'notes.ladder.notAVerdict':
     'A rung is not a verdict. It says what could go wrong unnoticed, which is a different thing from how wrong anything is: the frame of the twenty-eight lodges is carried on over-determination and is right to a seventieth of the narrowest question it is ever asked. Nor is a rung a property of the quantity — it moves when the shelf does, in either direction, and a source that only confirms moves it as surely as one that contradicts.',
+  // Attribution beside the evidence, and the dash is the part that needs
+  // saying: a reader meeting a column of them will read «not filled in» unless
+  // told it is a claim.
+  'notes.ladder.attributed':
+    'The school column says which declared value a quantity stands under, in the words a caller passes them — huoling: fixed, yuan: futou. A dash says the quantity is carried as the tradition’s own rather than as one party’s reading of it, which is a claim and not an empty cell. Whose a rule is and how well it is attested are different questions, so the two columns stand side by side and neither moves the other.',
   'notes.ladder.quoted':
     'The table below is quoted rather than translated. It is a register of citations — the quantities as the engine names them, editions, chapters, the programs each was measured against and the spans they were run over — and this project keeps it in English, the language of its source. What is translated is everything you decide from: the rungs above, what each of them means, and what each layer is.',
   // The way back to what the register was checked on, under the tables that
@@ -1764,6 +1769,7 @@ export const en = {
   'notes.references.lead':
     'Independent implementations, each somebody else’s work, run over the spans the rows above state. The texts cited beside them are not linked: an address for one is a claim about which edition.',
   'notes.column.quantity': 'Quantity',
+  'notes.column.school': 'School',
   'notes.column.rung': 'Rung',
   'notes.column.standsOn': 'Stands on',
   'notes.column.checkedAgainst': 'Checked against',
