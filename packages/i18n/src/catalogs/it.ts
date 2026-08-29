@@ -841,7 +841,11 @@ export const it: Record<MessageKey, string> = {
   // gli undici si leggono. «Dimore» è la parola che `label.lodge.*` usa per
   // tutte e ventotto.
   'h1.qizheng': 'Qi Zheng Si Yu: l’astrologia planetaria e le ventotto dimore lunari',
-  'h1.ziwei': 'Zi Wei Dou Shu: i dodici seggi di una nascita',
+  // «Seggi», e i dodici qui non sono palazzi: questo catalogo la parola l'ha
+  // già spesa due volte, sui nove palazzi di una carta Qi Men e sui dodici di
+  // un quadro 七政四餘, che sono un altro anello contato in un altro modo.
+  // L'argomento sta in `en.ts`; la tavola qui sotto stampa «i dodici seggi».
+  'h1.ziwei': 'Zi Wei Dou Shu: l’astrologia dei dodici seggi',
   'h1.bazi': 'Ba Zi: una nascita in quattro pilastri',
 
   // Che cosa dice di sé una pagina, a chi non ci è ancora arrivato.
@@ -1019,10 +1023,23 @@ export const it: Record<MessageKey, string> = {
   'meta.title.ziwei': 'Zi Wei Dou Shu: i dodici seggi',
   'meta.description.ziwei':
     'Un quadro Zi Wei Dou Shu per una nascita: dodici seggi contati dal mese lunare e dall’ora, le stelle che il libro vi colloca, e il grado di ciascuna.',
+  // «Lo», che è la regola dell'articolo scritta sopra `meta.intro.qimen.a`: si
+  // accorda con la lettura, e «zǐwēi» comincia per z. La frase è arrivata al
+  // femminile, «la Zi Wei Dou Shu», e qui i nomi d'arte sono tutti maschili —
+  // la stessa concordanza che `intro.computed` elenca per esteso.
+  //
+  // «La stella viola» nomina l'arte e «la tenuità purpurea» nomina la stella:
+  // il nome popolare dell'una e la glossa di `label.ziwei.ziwei` per l'altra
+  // sono giuste tutte e due, e non sono lo stesso oggetto.
   'meta.intro.ziwei.a':
-    'Lo 紫微斗數 zǐwēi dǒushù conta dodici seggi dal mese lunare e dall’ora, vi colloca le stelle che il libro assegna e dà a ciascuna il grado che il libro le dà.',
+    'Lo 紫微斗數 zǐwēi dǒushù, o astrologia della stella viola, è uno dei metodi più precisi per l’analisi di una nascita e del percorso personale. Disponendo le stelle nei dodici seggi, traccia una mappa del potenziale individuale e del decennio che ciascun seggio tiene.',
+  // Quel che il modulo chiede è una nascita, che è un istante *e un luogo*: la
+  // frase è arrivata chiedendo la data. Quel che non dice più è che il sesso
+  // lo leggono i grandi limiti e nient'altro, e che il calendario lunare
+  // sotto la tavola si computa su 120°E. Il primo sta nel modulo come
+  // un'opzione che si può lasciare vuota, il secondo nelle note.
   'meta.intro.ziwei.b':
-    'Dai una nascita, e un sesso dove un anello si percorre in una direzione. Il calendario lunare si computa su 120°E: lo stesso istante è la stessa data lunare ovunque.',
+    'Inserisci data, ora e luogo di nascita per generare il quadro completo dei seggi e delle stelle.',
 
   'meta.title.bazi': 'Ba Zi: i quattro pilastri di una nascita',
   'meta.description.bazi':

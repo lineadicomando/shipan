@@ -915,7 +915,13 @@ export const en = {
   // given one word here and another under the board has to work out that they
   // are the same twenty-eight.
   'h1.qizheng': 'Qi Zheng Si Yu — planetary astrology and the twenty-eight lunar lodges',
-  'h1.ziwei': 'Zi Wei Dou Shu — the twelve seats of a birth',
+  // **«Seats», and the twelve of them are not palaces here.** 十二宮 is
+  // «palaces» in the popular English of this art, and this catalog has spent
+  // that word twice already — the nine palaces of a Qi Men chart and the
+  // twelve of a 七政四餘 board, which are a different ring counted a different
+  // way. A reader carrying one word across three sections would be carrying
+  // the wrong ring; the board under this heading prints seats.
+  'h1.ziwei': 'Zi Wei Dou Shu — the twelve-seat chart of a life',
   'h1.bazi': 'Ba Zi — a birth as four pillars',
 
   // What a page says it is, to a reader who has not arrived yet.
@@ -1089,10 +1095,23 @@ export const en = {
   'meta.title.ziwei': 'Zi Wei Dou Shu — the twelve seats',
   'meta.description.ziwei':
     'A Zi Wei Dou Shu board for a birth: twelve seats counted from the lunar month and the hour, the stars the book places in them, and the grade of each.',
+  // «Purple Star» names the art and «the purple tenuity» names the star: the
+  // popular name of the one and `label.ziwei.ziwei`'s gloss of the other are
+  // both right, and they are not the same object.
+  //
+  // «The course of a life» where the sentence arrived saying «personal
+  // destiny». A word promising an outcome is refused in the head of every
+  // page — `meta.test.ts` fails on it — and what the runs do is put a stretch
+  // of a life on the board, which is not the same as saying what falls in it.
   'meta.intro.ziwei.a':
-    '紫微斗數 zǐwēi dǒushù counts twelve seats from the lunar month and the hour, places in them the stars the book assigns, and gives each the grade the book gives it.',
+    '紫微斗數 zǐwēi dǒushù, or Purple Star astrology, is one of the most precise methods for reading a birth and the course of a life. Distributing the stars across the twelve seats, it maps an individual’s potential and the ten-year run each seat holds.',
+  // What the form asks for is a birth, which is an instant *and a place* — the
+  // paragraph arrived asking for a date. What it no longer says is that the
+  // sex is read by the runs and by nothing else, and that the lunar calendar
+  // under the board is reckoned on 120°E. The form carries the first as an
+  // option that may be left unset, and the notes carry the second.
   'meta.intro.ziwei.b':
-    'Give a birth, and a sex where a ring is walked in a direction. The lunar calendar under it is reckoned on 120°E: the same instant is the same lunar date everywhere.',
+    'Enter the date, time and place of a birth to generate the complete board of seats and stars.',
 
   'meta.title.bazi': 'Ba Zi — the four pillars of a birth',
   'meta.description.bazi':
