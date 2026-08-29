@@ -922,7 +922,15 @@ export const en = {
   // way. A reader carrying one word across three sections would be carrying
   // the wrong ring; the board under this heading prints seats.
   'h1.ziwei': 'Zi Wei Dou Shu — the twelve-seat chart of a life',
-  'h1.bazi': 'Ba Zi — a birth as four pillars',
+  // **«Of a life», where the line arrived saying «of destiny».** That is the
+  // conventional English name of this art and it is also the one word the
+  // head of every page is tested against, on the argument in
+  // `docs/refusals.md`: four pillars are what a birth *is* here, and what
+  // becomes of the life on them is not something this engine says. The rest
+  // of the phrase is kept, since «the four pillars» is what everybody looking
+  // for 八字 in English types. `meta.title.bazi` keeps «of a birth», which is
+  // the other true half and the one a search result should carry.
+  'h1.bazi': 'Ba Zi — the four pillars of a life',
 
   // What a page says it is, to a reader who has not arrived yet.
   //
@@ -1117,9 +1125,17 @@ export const en = {
   'meta.description.bazi':
     'The four pillars of a birth read out: concealed stems, ten gods, twelve stages, nayin images, luck cycles and a count of the five elements.',
   'meta.intro.bazi.a':
-    '八字 bāzì reads a birth as four pillars — year, month, day and hour — and opens each out: the concealed stems, the ten gods, the twelve stages and the images of 納音 nàyīn.',
+    '八字 bāzì translates a moment of birth — year, month, day and hour — into the interactions of the five elements (wood, fire, earth, metal and water) and the combinations of the heavenly stems and the earthly branches.',
+  // **The verb has the reader as its subject, and that is the whole of what
+  // keeps this line inside what the engine does.** A balance is something a
+  // reader explores; the counts are what arrives, zeroes included, and
+  // declaring the day master strong or weak is a step of a method not taken
+  // here. The sentence that said so in those words has gone, and the refusal
+  // it stated is in the notes under a heading of its own — along with the
+  // other thing this paragraph no longer says, which is that the luck cycles
+  // run from a sex.
   'meta.intro.bazi.b':
-    'The luck cycles run from a sex, and the five elements arrive counted, zeroes included. A count is not a verdict: strong or weak is a step of method, not taken here.',
+    'Calculate the four pillars to explore the balance between the elements, the personal dynamics and the direction of the luck cycles.',
 
   // The line under the two paragraphs, and the only link a section page has.
   //

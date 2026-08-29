@@ -846,7 +846,11 @@ export const it: Record<MessageKey, string> = {
   // un quadro 七政四餘, che sono un altro anello contato in un altro modo.
   // L'argomento sta in `en.ts`; la tavola qui sotto stampa «i dodici seggi».
   'h1.ziwei': 'Zi Wei Dou Shu: l’astrologia dei dodici seggi',
-  'h1.bazi': 'Ba Zi: una nascita in quattro pilastri',
+  // «Di una vita», dove la riga è arrivata dicendo «del Destino»: è il nome
+  // convenzionale di quest'arte ed è anche la parola su cui è messa alla
+  // prova la testa di ogni pagina. L'argomento sta in `en.ts`. «I quattro
+  // pilastri» resta, che è quello che cerca chi cerca il 八字.
+  'h1.bazi': 'Ba Zi: i quattro pilastri di una vita',
 
   // Che cosa dice di sé una pagina, a chi non ci è ancora arrivato.
   //
@@ -1044,10 +1048,25 @@ export const it: Record<MessageKey, string> = {
   'meta.title.bazi': 'Ba Zi: i quattro pilastri di una nascita',
   'meta.description.bazi':
     'I quattro pilastri di una nascita, aperti: tronchi nascosti, dieci divinità, dodici stadi, immagini nayin, cicli di fortuna e i cinque elementi contati.',
+  // «Tronchi celesti» e non «gambi», che è la parola con cui la frase è
+  // arrivata: 干 in questo catalogo è un tronco dappertutto — i tronchi
+  // nascosti nella description, il tronco del giorno in `meta.intro.liuren.b`
+  // — e una terza parola per la stessa cosa è una cosa in più da imparare per
+  // chi legge. Minuscolo agli elementi e ai quattro pilastri, come li scrive
+  // in prosa la description due righe più su: la maiuscola è dell'etichetta,
+  // che sta in cima a una colonna.
   'meta.intro.bazi.a':
-    'Il 八字 bāzì legge una nascita come quattro pilastri – anno, mese, giorno e ora – e apre ciascuno: i tronchi nascosti, le dieci divinità, i dodici stadi e le immagini di 納音 nàyīn.',
+    'Il 八字 bāzì traduce un momento di nascita – anno, mese, giorno e ora – nelle interazioni dei cinque elementi (legno, fuoco, terra, metallo, acqua) e nelle combinazioni di tronchi celesti e rami terrestri.',
+  // **Il verbo ha per soggetto chi legge, ed è tutto ciò che tiene questa
+  // riga dentro quello che il motore fa.** Un equilibrio è qualcosa che il
+  // lettore esplora; quel che arriva sono i conteggi, zeri compresi, e
+  // dichiarare il signore del giorno forte o debole è un passo di un metodo
+  // che qui non si compie. La frase che lo diceva con quelle parole non c'è
+  // più, e il rifiuto sta nelle note sotto un titolo tutto suo — insieme
+  // all'altra cosa che questo paragrafo non dice più, cioè che i cicli di
+  // fortuna corrono da un sesso.
   'meta.intro.bazi.b':
-    'I cicli di fortuna corrono da un sesso, e i cinque elementi arrivano contati, zeri compresi. Un conteggio non è un verdetto: forte o debole è un passo di metodo, e qui non si compie.',
+    'Calcola la struttura dei quattro pilastri per esplorare l’equilibrio fra gli elementi, le dinamiche personali e le tendenze dei cicli di fortuna.',
 
   // Il nome è sparito da qui perché lo dice il titolo, quattro righe sopra e
   // dentro lo stesso blocco: «Qi Men Dun Jia: come viene calcolato» sotto
