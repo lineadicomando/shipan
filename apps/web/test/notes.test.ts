@@ -159,6 +159,7 @@ describe('what the two derived pages are handed', () => {
       'instruments',
       'sources',
       'refusals',
+      'schools',
       'readings',
     ]);
     expect(NOTE_PAGES.filter((note) => note.answers).length).toBe(NOTE_PAGES.length - 1);

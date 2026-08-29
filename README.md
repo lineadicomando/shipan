@@ -312,9 +312,10 @@ quantity, each carrying the rung of evidence it stands on —
 section of the site that says the same thing to a reader who came to check
 rather than to read: what is computed layer by layer with every school
 divergence under it, what each quantity stands on and how strongly, what is
-deliberately not computed, and what happens when a board is handed to a model.
-The first two are derived from the engine and cannot fall behind it; the other
-two are written, and every entry shows the day it was last checked.
+deliberately not computed, what a school is here and what it takes to name one,
+and what happens when a board is handed to a model. The first two are derived
+from the engine and cannot fall behind it; the other three are written, and
+every entry shows the day it was last checked.
 
 Working from memory was tried and abandoned: recalled almanac values were
 wrong more often than not, and the tests only became trustworthy once every

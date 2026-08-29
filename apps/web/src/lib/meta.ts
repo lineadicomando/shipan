@@ -168,6 +168,10 @@ export const PAGES: Readonly<Record<string, PageMeta>> = {
     title: 'meta.title.notes.refusals',
     description: 'meta.description.notes.refusals',
   },
+  'notes/schools': {
+    title: 'meta.title.notes.schools',
+    description: 'meta.description.notes.schools',
+  },
   'notes/readings': {
     title: 'meta.title.notes.readings',
     description: 'meta.description.notes.readings',

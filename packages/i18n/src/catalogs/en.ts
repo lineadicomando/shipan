@@ -1172,6 +1172,9 @@ export const en = {
   'meta.title.notes.refusals': 'What this project will not compute',
   'meta.description.notes.refusals':
     'What is deliberately absent here — the yongshen, a ranking of hours, a dated outcome — who asks for it, and why it is not computed.',
+  'meta.title.notes.schools': 'Schools, and what it takes to name one',
+  'meta.description.notes.schools':
+    'Every board here is laid by a school, including the one nobody chose. What such a value claims, and what the shelf owes before one may be declared.',
   'meta.title.notes.readings': 'Handing a board to a model',
   'meta.description.notes.readings':
     'What happens when a board reaches a model: one board and never two, computed and never a date, and what a prompt commissions and forbids.',
@@ -1638,6 +1641,14 @@ export const en = {
   // The one thing a written entry must always show. See `docs/notes.md`.
   'notes.checked': 'Last checked against the engine on {date}.',
 
+  'notes.refusals.twoSchools.title': 'Two schools of one art, in one reading',
+  'notes.refusals.twoSchools.asks': 'anyone who has just been given the choice.',
+  'notes.refusals.twoSchools.body':
+    'Two schools of one art laid on one instant are not two witnesses: they share the pillars, the ju or the seats, and nearly everything they are made of, so what they agree about is the part neither of them ever disputed. A board is cast by one school and read as that school’s. Comparing two is a real thing to do — it is the reason the choice exists — and it is done by laying each and reading each, not by merging them or by offering their agreement as evidence.',
+  'notes.refusals.schoolDoctrine.title': 'A school’s doctrine, in this engine’s voice',
+  'notes.refusals.schoolDoctrine.asks': 'every reader who wants to know what the board they chose means.',
+  'notes.refusals.schoolDoctrine.body':
+    'A school teaches what an arrangement is for, and the temptation is to ship that beside the values it moved. What may travel is what already travels for the conditions of 太乙 tàiyǐ, under the same four bounds: the source’s own words, a clause and not a paragraph, always glossed, and always attached to something the engine computed. A verdict in this engine’s own prose is a verdict nothing can test, where a quotation is testable twice over — it is in the text or it is not, and it is that school’s or it is not.',
   'notes.refusals.title': 'What is not computed',
   'notes.refusals.lead':
     'The engine answers no question, which is not the same as saying nothing. What follows is one entry each: what is refused, who asks for it, and why it is not here.',
@@ -1704,6 +1715,36 @@ export const en = {
   'notes.refusals.twoBoards.asks': 'the obvious feature request.',
   'notes.refusals.twoBoards.body':
     'A consultation takes one instrument, chosen before the press and at no point after it. Where two boards agree it is frequently one fact printed twice — a chart of dunjia and a 六壬 liùrén board share the day pillar, the decade, the void branches and five of the eight spirits — and a model reading that as corroboration counts one datum as two with complete confidence.',
+
+  // The schools page. The written half of a subject whose derived half is the
+  // instruments page: what a value named for a school claims, and what the
+  // shelf owes before one may be declared.
+  'notes.answers.schools':
+    'What a school is here, what it takes to name one, and which one laid the board you are looking at.',
+  'notes.schools.title': 'Schools, and what it takes to name one',
+  'notes.schools.lead':
+    'Different schools draw different boards from the same instant. Every divergence between practitioners is a parameter with a declared default, present in the input type from the first release, and a value this engine has not implemented is refused by name rather than quietly replaced with the one it has.',
+  'notes.schools.implicit':
+    'Which means every board is laid by a school, including the one nobody chose. What was followed is stated under the board, on the picture, in the transcript and inside a prompt — the default with the rest, because a reader who moved nothing is exactly the reader who does not know a choice was made for them.',
+
+  'notes.schools.claim.title': 'What a value named for a school claims',
+  'notes.schools.claim.body':
+    'Not that the school is right. That this is what the school teaches, and that the engine transcribes it. Those are the two ways such a value can be wrong — the lineage misnamed, the table miscopied — and neither of them needs a second tradition to catch. Which is why the demand made of a quantity this engine presents as the answer is not the demand made of one it presents as somebody’s.',
+  'notes.schools.standard.title': 'What the shelf owes before one is declared',
+  'notes.schools.standard.body':
+    'A witness that is the school’s own, or that states that school’s teaching and says so; the reading named as that school’s, in the same words the value carries; what it moves, exactly, set against what the engine already computes; and a rung, which weighs the transcription and not the doctrine. A modern summary with no text behind it is none of those. The size of the disagreement is not one of them either: a lineage that moves a single cell and keeps the rest still draws a different board, and two practitioners still hold opposite sides of it.',
+  'notes.schools.rung.title': 'Whose a rule is, beside how well it is attested',
+  'notes.schools.rung.body':
+    'The ladder of evidence orders one risk: that a rule handed down is the one lineage’s own. Whose the rule is answers a different question, and it cannot be a rung without claiming a kind of check it does not have. So the register carries it in a column of its own, beside the rung and never inside it — and most rows read as a dash, which is a claim rather than a blank: the quantity is carried as the tradition’s own and not as one party’s reading of it.',
+  'notes.schools.default.title': 'A declared default is not a hidden school',
+  'notes.schools.default.body':
+    'Every divergence has a default and has to: an address naming no method still answers, and so does a bare section. What does not follow is that the default may be silent. Where the engine computes more than one value, the one in force is stated wherever the board is — under it on the page, under the grid on the drawing, under the pillars in the transcript, in the answer over the API — whether or not anybody moved it. The controls stay where a reader opens them on purpose; it is the reading that must not be able to pass for schoolless.',
+  'notes.schools.axes.title': 'A school is axes, never a bundle',
+  'notes.schools.axes.body':
+    'A school usually touches more than one of these at once, and the convenient shape is a single name that sets the rest. The engine refuses it: a bundle is a table, a table can be edited, and a board carrying the bundle’s name rather than the values it stood for would reproduce differently the day the table moved without its own output saying so. A form may offer the shortcut and fill the fields with it — what leaves the form is still the fields, and a reader can see what was set and move any one of them.',
+  'notes.schools.state.title': 'How many there are is a state, not a design',
+  'notes.schools.state.body':
+    'Nothing here is written as though a board had one method. What a school costs to add is a value in the engine’s declaration, a gloss in every language, a row in the register and an argument for it — and no control, since what a form offers is read off the declaration. A school that would need a paragraph written by hand is a school whose declaration is missing a field, and the fix is upstream of this page.',
 
   'notes.readings.title': 'Handing a board to a model',
   'notes.readings.lead':

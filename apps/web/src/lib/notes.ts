@@ -165,6 +165,12 @@ export const NOTE_PAGES: readonly NotePage[] = [
     kind: 'written',
   },
   {
+    slug: 'schools',
+    title: 'notes.schools.title',
+    answers: 'notes.answers.schools',
+    kind: 'written',
+  },
+  {
     slug: 'readings',
     title: 'notes.readings.title',
     answers: 'notes.answers.readings',
@@ -260,6 +266,35 @@ export const REFUSALS: readonly WrittenEntry[] = [
   refusal('placeFromName', '2026-08-22'),
   refusal('latitude', '2026-08-22'),
   refusal('twoBoards', '2026-08-22'),
+  refusal('twoSchools', '2026-08-29'),
+  refusal('schoolDoctrine', '2026-08-29'),
+];
+
+const school = (id: string, checked: string): WrittenEntry => ({
+  id,
+  checked,
+  title: `notes.schools.${id}.title` as MessageKey,
+  body: `notes.schools.${id}.body` as MessageKey,
+});
+
+/**
+ * What a school is here, in `docs/parameters.md`'s order.
+ *
+ * **The half of this subject that is written, and it is the smaller half.**
+ * Which divergences exist, which values each one has, which of them the engine
+ * computes and which it assumes are declared in `packages/core/src/parameters.ts`
+ * and shown on the instruments page beside every board — a school that lands
+ * appears there without anybody writing a line. What cannot be derived is what
+ * a value named for a school *claims*, what the shelf owes before one may be
+ * declared, and why the number of them is a state rather than a design.
+ */
+export const SCHOOLS: readonly WrittenEntry[] = [
+  school('claim', '2026-08-29'),
+  school('standard', '2026-08-29'),
+  school('rung', '2026-08-29'),
+  school('default', '2026-08-29'),
+  school('axes', '2026-08-29'),
+  school('state', '2026-08-29'),
 ];
 
 /** What happens when a board is handed to a model, in `docs/readings.md`'s order. */
