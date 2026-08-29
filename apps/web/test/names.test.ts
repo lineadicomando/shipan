@@ -77,6 +77,10 @@ const READINGS: Readonly<Record<string, string>> = {
   湯若望: 'Tāng Ruòwàng',
   全集: 'quánjí',
   全書: 'quánshū',
+  // The two prints a value of `spirits` is named against, said where the form
+  // offers the choice. Neither is a board this engine seats.
+  御定奇門寶鑑: 'yùdìngqíménbǎojiàn',
+  奇門遁甲全局: 'qíméndùnjiǎquánjú',
   捷覽: 'jiélǎn',
   // The two lineages that move 壬's 科 to 左輔, named where a value of `sihua`
   // is argued. Neither is a board this engine seats, so neither can be dug

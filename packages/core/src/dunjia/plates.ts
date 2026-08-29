@@ -1,4 +1,5 @@
 import { STEMS, type Ganzhi, type Stem } from '../ganzhi.js';
+import type { ChartOptions } from '../types.js';
 import {
   FLIGHT_ASCENDING,
   FLIGHT_DESCENDING,
@@ -129,6 +130,51 @@ export const SPIRITS_YIN: readonly Spirit[] = [
   { id: 'jiudi', hanzi: '九地', pinyin: 'jiǔdì' },
   { id: 'jiutian', hanzi: '九天', pinyin: 'jiǔtiān' },
 ];
+
+/**
+ * 《御定奇門寶鑑》's ring, which is the yang names in both dun.
+ *
+ * 卷二 enumerates it twice — 「一直符。二螣蛇。三太陰。四六合。五勾陳。六朱雀。
+ * 七九地。八九天。此陽遁也。陰遁則一直符。二九天。三九地。四朱雀。五勾陳。
+ * 六六合。七太陰。八螣蛇」 — and what the yin dun reverses is the **order they
+ * are counted in**, not the names: read against the counterclockwise ring this
+ * file already lays, the two enumerations land the same eight names on the
+ * same eight seats. Its interlinear note pairs the alternates the way this
+ * file pairs them, 「朱雀下有元武。勾陳下有白虎」, and needs no trigger for
+ * either: nothing selects a name, because there is nothing to select.
+ */
+const SPIRITS_FIXED = SPIRITS_YANG;
+
+/**
+ * 《奇門遁甲全局》's, which renames one seat of the yang ring and not two.
+ *
+ * A Qing imperial print, collated cell by cell in `docs/sources.md`: its yin
+ * board agrees with this file's on all eight names and their order, and its
+ * yang board keeps 白虎 at the fifth seat where this file writes 勾陳, putting
+ * 勾陳 at the sixth where this file writes 朱雀. Three yang charts with the
+ * 直符 in three different palaces show the same pair, so it is a system and
+ * not a slip.
+ */
+const SPIRITS_BAIHU: readonly Spirit[] = SPIRITS_YANG.map((spirit, seat) =>
+  seat === 4 ? (SPIRITS_YIN[4] as Spirit) : seat === 5 ? (SPIRITS_YANG[4] as Spirit) : spirit,
+);
+
+/**
+ * Which eight names the ring carries, and what selects them.
+ *
+ * Three answers, and they part only at the fifth and sixth seats: the star,
+ * the gate, the stem and the palace under either are the same. `dun` is the
+ * 陰陽異名 convention, `fixed` is 《御定奇門寶鑑》's eight standing in both
+ * dun, `baihu` is 《奇門遁甲全局》's yang board. A fourth answer — the names
+ * following what is being divined — is refused rather than declared, because
+ * it is a licence to read and not a rule for laying: see
+ * `docs/refusals.md` § "The middle pair named by the matter".
+ */
+export function spiritRing(yang: boolean, spirits: ChartOptions['spirits']): readonly Spirit[] {
+  if (spirits === 'fixed') return SPIRITS_FIXED;
+  if (spirits === 'baihu') return yang ? SPIRITS_BAIHU : SPIRITS_YIN;
+  return yang ? SPIRITS_YANG : SPIRITS_YIN;
+}
 
 /**
  * Every spirit a chart can show, which is ten and not eight.
@@ -312,8 +358,12 @@ export function gatePlate(chief: Gate, chiefPalace: number): ByPalace<Gate> {
  * yin one — the one place in the whole layout where the two halves of the
  * year genuinely run in opposite directions.
  */
-export function spiritPlate(chiefPalace: number, yang: boolean): ByPalace<Spirit> {
-  const spirits = yang ? SPIRITS_YANG : SPIRITS_YIN;
+export function spiritPlate(
+  chiefPalace: number,
+  yang: boolean,
+  naming: ChartOptions['spirits'] = 'dun',
+): ByPalace<Spirit> {
+  const spirits = spiritRing(yang, naming);
   const ring = orbitFrom(yang ? RING_CLOCKWISE : RING_COUNTERCLOCKWISE, lodge(chiefPalace));
 
   const plate: ByPalace<Spirit> = {};

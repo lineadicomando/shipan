@@ -62,9 +62,26 @@ fail. It has a set of its own now, and the board carries the option it is a
 function of, which it did not: the value was read inside `luckCycles` and never
 came back out.
 
+## And two of them landed the same day
+
+`spirits: fixed` and `spirits: baihu` were not waiting on anything but the
+laying. Both were already collated cell by cell — 《御定奇門寶鑑》卷二
+enumerates its eight twice and reverses the count and not the names, and
+《奇門遁甲全局》's yang board keeps 白虎 at the fifth seat across three charts
+with the 直符 in three different palaces — so what the declaration exposed was
+that the engine could already have offered them.
+
+They part at two seats and only in the name, which is what makes them cheap and
+what makes them worth having: the ring, the star, the gate, the stem and the
+palace are the same under all three, and a reader who has met a board drawn one
+way can now draw it the other and see exactly what a school changes.
+
 ## What is left
 
-Implementing any of the five, which is a reading or a second witness apiece and
-is written against each in `ROADMAP.md` § 1. `centreTravel: travel` is the
-nearest: both sides are in Qing print, and what it wants is the engine able to
-lay the second.
+Implementing the other three, which is a second witness apiece and is written
+against each in `ROADMAP.md` § 1 — and `centreTravel: travel`, which is not
+short of witnesses but of a shape. Both sides are in Qing print; what it asks
+of the engine is that a palace carry two stems and two stars, since a centre
+that travels arrives somewhere already occupied. That is a change to what a
+board *is*, and it crosses `plate`, the components and the transcript rather
+than sitting inside `plates.ts`. It wants its own errand.
