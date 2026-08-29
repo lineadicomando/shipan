@@ -1174,7 +1174,7 @@ export const en = {
     'What is deliberately absent here — the yongshen, a ranking of hours, a dated outcome — who asks for it, and why it is not computed.',
   'meta.title.notes.schools': 'Schools, and what it takes to name one',
   'meta.description.notes.schools':
-    'Every board here is laid by a school, including the one nobody chose. What such a value claims, and what the shelf owes before one may be declared.',
+    'Every board here is laid by a school, including the one nobody chose. What such a value claims, and what it takes before a new one may be declared.',
   'meta.title.notes.readings': 'Handing a board to a model',
   'meta.description.notes.readings':
     'What happens when a board reaches a model: one board and never two, computed and never a date, and what a prompt commissions and forbids.',
@@ -1573,7 +1573,7 @@ export const en = {
   'notes.lead':
     'What this engine computes, what each number stands on, and how strongly. Nothing in this section is a reading: it is an account of the instrument.',
   'notes.claim':
-    'Every quantity here was checked against something outside itself, and not everything was checked against something equally good. Which is which is the whole of what this section says — a solar term and a transmitted table are not the same kind of fact, and a reader who cannot tell them apart has been misled by the presentation rather than by the data.',
+    'Every quantity here was checked against something outside itself, and not every check is equally strong. Saying which is which is what this section is for: a solar term and a transmitted table are two different kinds of fact, and a reader who cannot tell them apart has been misled by the presentation rather than by the data.',
   // Not decoration: it is the line the whole section is arranged by. A derived
   // page cannot fall behind the engine, and saying so is the whole of what the
   // label does. The other half of the division wears no label, because a
@@ -1598,7 +1598,7 @@ export const en = {
   'notes.takes.taiyi': 'a year, and nothing else: no place, no hour, nobody.',
   'notes.takes.qizheng': 'a birth — an instant and a place.',
   'notes.takes.ziwei':
-    'a birth, counted on the lunar calendar, and a sex where a ring is walked in a direction.',
+    'a birth, counted on the lunar calendar, and a sex where it decides the direction a ring is walked in.',
   'notes.takes.bazi': 'a birth, and a sex where the luck cycles need one.',
   'notes.takes.almanac': 'a civil date, reckoned on 120°E as the lunar calendar is.',
   'notes.takes.nianming': 'a birth, placed inside a chart already cast for a moment.',
@@ -1607,7 +1607,7 @@ export const en = {
   'notes.does.qimen':
     'Nine palaces: an earth plate fixed by the ju, a heaven plate turned onto the hour, and the stars, gates and spirits standing over them.',
   'notes.does.liuren':
-    'Twelve branches turned by the general of the month, four lessons read off the turn, and three transmissions drawn out of the four by nine named rules.',
+    'Twelve branches turned by the general of the month, the four lessons read off that turn, and three transmissions drawn from the four by nine named rules.',
   'notes.does.taiyi':
     'The board of a year: sixteen gods in nine palaces, and the counts of host and guest. Nobody is on it.',
   'notes.does.qizheng':
@@ -1623,9 +1623,9 @@ export const en = {
 
   'notes.instruments.title': 'What is computed',
   'notes.instruments.lead':
-    'Layer by layer, and under each the points where the schools diverge. Every one of them is a parameter with a declared default: the value this engine takes is marked, the values it declares and will not compute are marked too, and nothing is chosen silently.',
+    'Layer by layer, with the points where the schools diverge under each. Every one of those points is a parameter with a declared default: the value this engine takes is marked, the values it declares and will not compute are marked too, and nothing is chosen silently.',
   'notes.instruments.wider':
-    'This list is longer than the one in the header, and the difference is worth a sentence: what a consultation can be laid on is a narrower question than what is computed here. The almanac is a page of a published book rather than a board, the calendrical layer stands under all of them, and a 年命 niánmìng is a birth placed inside a chart cast for a moment.',
+    'This list is longer than the one in the header, for a reason worth a sentence: what a consultation can be laid on is a narrower question than what is computed here. The almanac is a page of a published book rather than a board, the calendrical layer stands under all of them, and a 年命 niánmìng is a birth placed inside a chart cast for a moment.',
   'notes.column.parameter': 'Parameter',
   'notes.column.values': 'Values',
   'notes.default': 'default',
@@ -1633,7 +1633,7 @@ export const en = {
   // an error rather than a chart cast by the nearest rule the engine does have.
   'notes.refused': 'refused',
   'notes.noParameters':
-    'No divergence of its own: it stands on the calendrical layer entire, and the parameters above are the ones that move it.',
+    'No divergence of its own: it stands entirely on the calendrical layer, and the parameters above are the ones that move it.',
   'notes.parameter.method': 'How the ju is established.',
   'notes.parameter.yuan': 'Where the third of the term is counted from, under 拆補 chāibǔ.',
   'notes.parameter.plate': 'How the heaven plate is derived.',
@@ -1680,28 +1680,28 @@ export const en = {
   'notes.refusals.twoSchools.title': 'Two schools of one art, in one reading',
   'notes.refusals.twoSchools.asks': 'anyone who has just been given the choice.',
   'notes.refusals.twoSchools.body':
-    'Two schools of one art laid on one instant are not two witnesses: they share the pillars, the ju or the seats, and nearly everything they are made of, so what they agree about is the part neither of them ever disputed. A board is cast by one school and read as that school’s. Comparing two is a real thing to do — it is the reason the choice exists — and it is done by laying each and reading each, not by merging them or by offering their agreement as evidence.',
+    'Two schools of one art laid on one instant are not two witnesses: they share the pillars, the ju or the seats, and nearly everything else they are made of, so what they agree on is precisely the part neither of them ever disputed. A board is cast by one school and read as that school’s. Comparing two is a real thing to do — it is the reason the choice exists — and it is done by laying each and reading each, not by merging them or by offering their agreement as evidence.',
   'notes.refusals.schoolDoctrine.title': 'A school’s doctrine, in this engine’s voice',
   'notes.refusals.schoolDoctrine.asks': 'every reader who wants to know what the board they chose means.',
   'notes.refusals.schoolDoctrine.body':
-    'A school teaches what an arrangement is for, and the temptation is to ship that beside the values it moved. What may travel is what already travels for the conditions of 太乙 tàiyǐ, under the same four bounds: the source’s own words, a clause and not a paragraph, always glossed, and always attached to something the engine computed. A verdict in this engine’s own prose is a verdict nothing can test, where a quotation is testable twice over — it is in the text or it is not, and it is that school’s or it is not.',
+    'A school teaches what an arrangement is for, and the temptation is to ship that teaching beside the values it moved. What may travel is what already travels for the conditions of 太乙 tàiyǐ, under the same four bounds: the source’s own words, a clause rather than a paragraph, always glossed, and always attached to something the engine computed. A verdict in this engine’s own prose is a verdict nothing can test; a quotation can be tested twice over — it is in the text or it is not, and it is that school’s or it is not.',
   'notes.refusals.title': 'What is not computed',
   'notes.refusals.lead':
-    'The engine answers no question, which is not the same as saying nothing. What follows is one entry each: what is refused, who asks for it, and why it is not here.',
+    'The engine answers no question, which is not the same as saying nothing. What follows is one entry per refusal: what is refused, who asks for it, and why it is not here.',
   'notes.refusals.carries':
-    'What it does carry is an attribute the sources hand down concordantly, where that attribute belongs to the configuration rather than to somebody’s situation — and it travels as an identifier and a glyph, never as prose. A verdict arriving inside a translated gloss is a verdict nothing can test.',
+    'What it does carry is an attribute the sources hand down concordantly, when that attribute belongs to the configuration rather than to somebody’s situation. Even then it travels as an identifier and a glyph, never as prose: a verdict arriving inside a translated gloss is a verdict nothing can test.',
   'notes.refusals.yongshen.title': 'The 用神 yòngshén',
   'notes.refusals.yongshen.asks': 'everyone who casts a chart for a question.',
   'notes.refusals.yongshen.body':
-    'Which palace bears on what is being asked is the reader’s choice, made for that question. Without one the board is a map with no pin — and choosing it is the first act of interpretation, not a lookup. A prompt commissions the choice and requires it declared; the engine never makes it.',
+    'Which palace bears on the question is the reader’s choice, made for that question. Without it the board is a map without a pin, and choosing it is the first act of interpretation, not a lookup. A prompt commissions the choice and requires it declared; the engine never makes it.',
   'notes.refusals.geju.title': 'Configurations ranked, and any best palace',
   'notes.refusals.geju.asks': 'anyone wanting to know which palace is the good one.',
   'notes.refusals.geju.body':
-    'The configurations themselves travel, with the fortune the sources hand down beside them: 門迫 ménpò is oppression in the text that names it, and an engine dropping that would be editing its sources. An order over them does not travel. A chart holding four inauspicious configurations is not a bad time to do anything — bad is a word about an undertaking, and no undertaking is known here.',
+    'The configurations themselves travel, with the fortune the sources hand down beside them: 門迫 ménpò is oppression in the text that names it, and an engine that dropped it would be editing its sources. What does not travel is an order over them. A chart holding four inauspicious configurations is not a bad time to do anything: bad is a word about an undertaking, and no undertaking is known here.',
   'notes.refusals.ordering.title': 'Ordering two hours, and dating an outcome',
   'notes.refusals.ordering.asks': 'anyone choosing a time, and anyone who wants to know when.',
   'notes.refusals.ordering.body':
-    'Choosing a time walks an interval and reports where in it a thing stands, against criteria you state. It does not rank what it finds, and its answers carry a direction as well as an hour — the direction is half of the answer and is never reported alone. Dating an outcome is refused outright: it is the prediction this project does not make.',
+    'Choosing a time walks an interval and reports where in it each hour stands, against criteria you state. It does not rank what it finds, and its answers carry a direction as well as an hour: the direction is half of the answer, and the hour is never reported without it. Dating an outcome is refused outright: it is the prediction this project does not make.',
   'notes.refusals.advice.title': 'Advice',
   'notes.refusals.advice.asks': 'almost everybody, eventually.',
   'notes.refusals.advice.body':
@@ -1710,15 +1710,15 @@ export const en = {
   'notes.refusals.purposes.asks':
     'readers of modern 年命 niánmìng material, and models, very confidently.',
   'notes.refusals.purposes.body':
-    'Refused wherever a 年命 niánmìng appears, and stated at every surface rather than once, because this is where a model invents most freely. What is carried is the pillar of the birth year and the pillar of the year being lived, the palaces the two fall in, and what the ground under them is made of. Then it stops: the text’s own verdicts on that ground need a question to have been asked.',
+    'Refused wherever a 年命 niánmìng appears, and stated at every surface rather than once, because this is where a model invents most freely. What is carried is the pillar of the birth year and the pillar of the year being lived, the palaces the two fall in, and what the ground under them is made of. There it stops: the text’s own verdicts on that ground need a question to have been asked.',
   'notes.refusals.natalQimen.title': 'A chart of dunjia cast on a birth',
   'notes.refusals.natalQimen.asks': 'the modern natal-Qi-Men literature.',
   'notes.refusals.natalQimen.body':
-    'A birth enters a chart, never the other way about: the classical text puts the person’s year inside the chart of the moment, and the chart does not move for the birth. The error recurs because the Western natal chart is one instance of a class this tradition already fills several ways — so an art that is natively about a life gets a board of its own, 八字 bāzì, 七政四餘 qīzhèng sìyú, 紫微斗數 zǐwēi dǒushù, and never dunjia’s.',
+    'A birth enters a chart, never the other way about: the classical text puts the person’s year inside the chart of the moment, and the chart does not move for the birth. The error recurs because the Western natal chart is one instance of a class this tradition already fills in several ways — an art natively about a life gets a board of its own, 八字 bāzì, 七政四餘 qīzhèng sìyú or 紫微斗數 zǐwēi dǒushù, and never dunjia’s.',
   'notes.refusals.taiyiReadings.title': 'The received readings of 太乙 tàiyǐ',
   'notes.refusals.taiyiReadings.asks': 'anyone who opens the text.',
   'notes.refusals.taiyiReadings.body':
-    'The transmitted doctrine of this board is dynastic — which state falls, which year an army breaks — dated, falsifiable by nobody, and it stays out. The per-palace readings of the same chapter are declined entirely, because there is no layer behind them that is not dynastic. What travels is what the text says a shape is; where it says nothing, the silence travels with it.',
+    'The transmitted doctrine of this board is dynastic — which state falls, in which year an army breaks — dated, falsifiable by nobody, and it stays out. The per-palace readings of the same chapter are declined entirely, because behind them there is no layer that is not dynastic. What travels is what the text says a shape is; where it says nothing, the silence travels with it.',
   'notes.refusals.hostGuest.title': 'Who is 主 zhǔ and who is 客 kè',
   'notes.refusals.hostGuest.asks': 'every reader of a 太乙 tàiyǐ board, immediately.',
   'notes.refusals.hostGuest.body':
@@ -1726,15 +1726,15 @@ export const en = {
   'notes.refusals.dayMaster.title': 'A strong or weak day master, and what compensates',
   'notes.refusals.dayMaster.asks': 'every reader of the four pillars.',
   'notes.refusals.dayMaster.body':
-    'The five elements arrive counted over the eight characters, zeroes included, because an absence weighs as much as an abundance — and the count is printed so that nobody recounts it. Declaring the day master strong or weak, and choosing what compensates an absence, are steps of a method: the schools divide on how it is done, so the choice is made aloud in the reading with the method named.',
+    'The five elements arrive counted over the eight characters, zeroes included, because an absence weighs as much as an abundance — and the count is printed so that nobody has to recount it. Declaring the day master strong or weak, and choosing what compensates an absence, are steps of a method: the schools divide on how it is done, so the choice is made aloud in the reading, with the method named.',
   'notes.refusals.ziqi.title': '紫氣 zǐqì, the fourth remainder',
   'notes.refusals.ziqi.asks': 'readers expecting four 餘 yú on a 七政四餘 qīzhèng sìyú board.',
   'notes.refusals.ziqi.body':
-    'Three of the four are placed by ephemeris. The fourth is absent for want of a check rather than for want of a rule: the transmission exists, an epoch that can be cited does not, and nothing weighs its constant because weighing it would mean having something in the sky to check it against. The parameter is declared and set off, so the absence is visible rather than tacit.',
+    'Three of the four are placed by ephemeris. The fourth is absent for want of a check rather than for want of a rule: the transmission exists, an epoch that can be cited does not, and nothing weighs its constant because there is nothing in the sky to check it against. The parameter is declared and switched off, so the absence is visible rather than tacit.',
   'notes.refusals.feixing.title': 'The 十八飛星 shíbāfēixīng placements',
   'notes.refusals.feixing.asks': 'anyone holding both books of 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':
-    'That art names two boards and this engine computes one of them. The other transmission counts eighteen stars off the year branch, has no bureau of the five phases, no 天府 tiānfǔ, and not one of the fourteen main stars on it. A placement carried across is a graft and not a gap being filled — the same error as a natal chart of dunjia, made smaller and between two books that share a title.',
+    'That art names two boards and this engine computes one of them. The other transmission counts eighteen stars off the year branch, has no bureau of the five phases, no 天府 tiānfǔ, and not one of the fourteen main stars. A placement carried across is a graft rather than a gap being filled — the same error as a natal chart of dunjia, made smaller and between two books that share a title.',
   'notes.refusals.maoshan.title': '茅山 máoshān',
   'notes.refusals.maoshan.asks': 'the parameter that lists it.',
   'notes.refusals.maoshan.body':
@@ -1761,26 +1761,26 @@ export const en = {
   'notes.schools.lead':
     'Different schools draw different boards from the same instant. Every divergence between practitioners is a parameter with a declared default, present in the input type from the first release, and a value this engine has not implemented is refused by name rather than quietly replaced with the one it has.',
   'notes.schools.implicit':
-    'Which means every board is laid by a school, including the one nobody chose. What was followed is stated under the board, on the picture, in the transcript and inside a prompt — the default with the rest, because a reader who moved nothing is exactly the reader who does not know a choice was made for them.',
+    'Which means every board is laid by a school, including the one nobody chose. What was followed is stated under the board, on the picture, in the transcript and inside a prompt — the default along with the rest, because a reader who moved nothing is exactly the reader who does not know a choice was made for them.',
 
   'notes.schools.claim.title': 'What a value named for a school claims',
   'notes.schools.claim.body':
-    'Not that the school is right. That this is what the school teaches, and that the engine transcribes it. Those are the two ways such a value can be wrong — the lineage misnamed, the table miscopied — and neither of them needs a second tradition to catch. Which is why the demand made of a quantity this engine presents as the answer is not the demand made of one it presents as somebody’s.',
-  'notes.schools.standard.title': 'What the shelf owes before one is declared',
+    'Not that the school is right — that this is what the school teaches, and that the engine transcribes it. Those are the two ways such a value can be wrong, the lineage misnamed or the table miscopied, and neither needs a second tradition to be caught. That is also why more is asked of a quantity this engine presents as the answer than of one it presents as somebody’s.',
+  'notes.schools.standard.title': 'What must be on the shelf before one is declared',
   'notes.schools.standard.body':
-    'A witness that is the school’s own, or that states that school’s teaching and says so; the reading named as that school’s, in the same words the value carries; what it moves, exactly, set against what the engine already computes; and a rung, which weighs the transcription and not the doctrine. A modern summary with no text behind it is none of those. The size of the disagreement is not one of them either: a lineage that moves a single cell and keeps the rest still draws a different board, and two practitioners still hold opposite sides of it.',
+    'Four things: a witness that is the school’s own, or that states that school’s teaching and says so; the reading named as that school’s, in the same words the value carries; exactly what it moves, set against what the engine already computes; and a rung, which weighs the transcription and not the doctrine. A modern summary with no text behind it is none of those. Nor is the size of the disagreement one of them: a lineage that moves a single cell and keeps the rest still draws a different board, and two practitioners still hold opposite sides of it.',
   'notes.schools.rung.title': 'Whose a rule is, beside how well it is attested',
   'notes.schools.rung.body':
-    'The ladder of evidence orders one risk: that a rule handed down is the one lineage’s own. Whose the rule is answers a different question, and it cannot be a rung without claiming a kind of check it does not have. So the register carries it in a column of its own, beside the rung and never inside it — and most rows read as a dash, which is a claim rather than a blank: the quantity is carried as the tradition’s own and not as one party’s reading of it.',
+    'The ladder of evidence orders one risk: that a rule handed down as the tradition’s is in fact one lineage’s own. Whose a rule is answers a different question, and it cannot be a rung without claiming a kind of check it does not have. So the register carries it in a column of its own, beside the rung and never inside it — and most rows show a dash there, which is a claim rather than a blank: the quantity is carried as the tradition’s own, not as one party’s reading of it.',
   'notes.schools.default.title': 'A declared default is not a hidden school',
   'notes.schools.default.body':
-    'Every divergence has a default and has to: an address naming no method still answers, and so does a bare section. What does not follow is that the default may be silent. Where the engine computes more than one value, the one in force is stated wherever the board is — under it on the page, under the grid on the drawing, under the pillars in the transcript, in the answer over the API — whether or not anybody moved it. The controls stay where a reader opens them on purpose; it is the reading that must not be able to pass for schoolless.',
+    'Every divergence has a default and has to: an address naming no method still answers, and so does a bare section. What does not follow is that the default may be silent. Where the engine computes more than one value, the one in force is stated wherever the board is — under it on the page, under the grid on the drawing, under the pillars in the transcript, in the answer over the API — whether or not anybody moved it. The controls stay where a reader opens them on purpose; it is the reading that must never be able to pass for schoolless.',
   'notes.schools.axes.title': 'A school is axes, never a bundle',
   'notes.schools.axes.body':
-    'A school usually touches more than one of these at once, and the convenient shape is a single name that sets the rest. The engine refuses it: a bundle is a table, a table can be edited, and a board carrying the bundle’s name rather than the values it stood for would reproduce differently the day the table moved without its own output saying so. A form may offer the shortcut and fill the fields with it — what leaves the form is still the fields, and a reader can see what was set and move any one of them.',
+    'A school usually touches more than one of these axes at once, and the convenient shape would be a single name that sets all the rest. The engine refuses it: a bundle is a table, a table can be edited, and a board carrying the bundle’s name rather than the values it stood for would reproduce differently the day the table changed, with nothing in its own output to say so. A form may offer the shortcut and fill the fields with it — what leaves the form is still the fields, and a reader can see what was set and move any one of them.',
   'notes.schools.state.title': 'How many there are is a state, not a design',
   'notes.schools.state.body':
-    'Nothing here is written as though a board had one method. What a school costs to add is a value in the engine’s declaration, a gloss in every language, a row in the register and an argument for it — and no control, since what a form offers is read off the declaration. A school that would need a paragraph written by hand is a school whose declaration is missing a field, and the fix is upstream of this page.',
+    'Nothing here is written as though a board had one method. What adding a school costs is a value in the engine’s declaration, a gloss in every language, a row in the register and an argument to stand behind it — and no control, since what a form offers is read off the declaration. A school that would need a paragraph written by hand is a school whose declaration is missing a field, and the fix belongs upstream of this page.',
 
   'notes.readings.title': 'Handing a board to a model',
   'notes.readings.lead':
@@ -1798,7 +1798,7 @@ export const en = {
     'A prompt endpoint is told that a question exists and never what it is: the prompt ends on the line that introduces one, and your browser appends the text before the whole thing goes to your clipboard. A matter travels the same way. This project talks to no model, holds no key, and sends nothing anywhere.',
   'notes.readings.consultationOnly.title': 'A prompt is built in one place only',
   'notes.readings.consultationOnly.body':
-    'The consultation is where a board is handed over, and it is the only surface that builds a prompt — a prompt is an asking, and it belongs where the asking is. The sections addressed by an art show boards and their transcripts, and asking there is navigating. The consultation prints from the page and never from a route of its own, for the same reason: a route would have to be told the question.',
+    'The consultation is where a board is handed over, and it is the only surface that builds a prompt: a prompt is an asking, and it belongs where the asking is. The sections addressed by an art show boards and their transcripts, and asking there means going to the consultation. The consultation prints from the page and never from a route of its own, for the same reason: a route would have to be told the question.',
   'notes.readings.bu.title': 'What a 卜 bǔ prompt commissions',
   'notes.readings.bu.body':
     'A chart withholds the 用神 yòngshén and says so: which palace bears on the question is the reader’s choice, and the prompt requires it declared. A 六壬 liùrén board hands its three transmissions over already drawn, by procedure, and the prompt says not to re-derive them — while which of the four courses to read from is still the reader’s.',
@@ -1807,17 +1807,17 @@ export const en = {
     'The subject is the person the board was laid on and not the board. The reply is laid out in six movements: the disclaimer, the birth situated in the model’s own words, the board read whole from a centre, the themes of a life in short sections titled for a theme and never for a factor, the per-board inspection list those sections draw on, and an ending that opens. Every choice travels signed — which seat or god carries a theme is said as it is made, a school’s method arrives named as that school’s, and the element that compensates stays uncomputed and is chosen aloud.',
   'notes.readings.tian.title': 'What a 天 tiān prompt commissions',
   'notes.readings.tian.body':
-    'A reading is for a matter, and a matter is not a question: it names what is being looked at — a field of view with two sides in it, which is what the two counts are counts of. Without one the prompt reads the figure and says the assignment was never made, rather than sending a model to invent a pair of parties. The register is descriptive and never predictive, and every surface printing this board says that its nine palaces are numbered one seat off the 洛書 luòshū.',
+    'A reading is for a matter, and a matter is not a question: it names what is being looked at — a field of view with two sides in it, which is what the two counts are counts of. Without one, the prompt reads the figure and says the assignment was never made, rather than sending a model to invent a pair of parties. The register is descriptive and never predictive, and every surface printing this board says that its nine palaces are numbered one seat off the 洛書 luòshū.',
   'notes.readings.staysOut.title': 'What stays out of a prompt',
   'notes.readings.staysOut.body':
-    'How sure each number is stays in the documentation an agent can look up. Pasted into a prompt it became a paragraph the model recited unasked, beside a disclaimer that already says what this is and what it is not. The exception is a bound on a quantity the prompt is already telling a model how to read: a caution arriving with the instruction that governs it is part of the instruction. The test is whether removing the line would leave an instruction a model could follow confidently and wrongly.',
+    'How sure each number is stays in the documentation an agent can look up. Pasted into a prompt, it became a paragraph the model recited unasked, beside a disclaimer that already says what this is and what it is not. The exception is a bound on a quantity the prompt is already telling a model how to read: a caution that arrives with the instruction it governs is part of the instruction. The test is whether removing the line would leave an instruction a model could follow confidently and wrongly.',
   'notes.readings.disclaimer.title': 'The disclaimer travels',
   'notes.readings.disclaimer.body':
     'The prompt carries the disclaimer this site’s footer carries, as an instruction to say it: this is a space for inner enquiry and personal enrichment, it is no substitute for professional advice on anything, and the power over a person’s choices and their path stays theirs. A prompt travels, and a disclaimer left behind on the page it was copied from was written for somebody who is no longer there.',
 
   'notes.sources.title': 'Where the numbers come from',
   'notes.sources.lead':
-    'One row a quantity: what the engine derives it from, what it was measured against, and which rung of the ladder below that puts it on.',
+    'One row per quantity: what the engine derives it from, what it was measured against, and which rung of the ladder below that puts it on.',
   'notes.ladder.title': 'The ladder of evidence',
   'notes.ladder.lead':
     'Not everything was checked against something equally good, and knowing what a quantity stands on is not yet being able to weigh it against its neighbour. These are the rungs, strongest first, with the number of quantities held at each.',
@@ -1843,12 +1843,12 @@ export const en = {
   'notes.rung.none.means':
     'The engine carries the quantity and no source stands behind it. Where that happens the drawing says so too — those names are left uncoloured until one does.',
   'notes.ladder.notAVerdict':
-    'A rung is not a verdict. It says what could go wrong unnoticed, which is a different thing from how wrong anything is: the frame of the twenty-eight lodges is carried on over-determination and is right to a seventieth of the narrowest question it is ever asked. Nor is a rung a property of the quantity — it moves when the shelf does, in either direction, and a source that only confirms moves it as surely as one that contradicts.',
+    'A rung is not a verdict. It says what could go wrong unnoticed, which is a different thing from how wrong anything is: the frame of the twenty-eight lodges is carried on over-determination and is accurate to a seventieth of the narrowest question it is ever asked. Nor is a rung a property of the quantity itself — it moves when the shelf moves, in either direction, and a source that merely confirms moves it as surely as one that contradicts.',
   // Attribution beside the evidence, and the dash is the part that needs
   // saying: a reader meeting a column of them will read «not filled in» unless
   // told it is a claim.
   'notes.ladder.attributed':
-    'The school column says which declared value a quantity stands under, in the words a caller passes them — huoling: fixed, yuan: futou. A dash says the quantity is carried as the tradition’s own rather than as one party’s reading of it, which is a claim and not an empty cell. Whose a rule is and how well it is attested are different questions, so the two columns stand side by side and neither moves the other.',
+    'The school column says which declared value a quantity stands under, in the words a caller passes them — huoling: fixed, yuan: futou. A dash says the quantity is carried as the tradition’s own rather than as one party’s reading of it, and that is a claim, not an empty cell. Whose a rule is and how well it is attested are different questions, so the two columns stand side by side and neither moves the other.',
   'notes.ladder.quoted':
     'The table below is quoted rather than translated. It is a register of citations — the quantities as the engine names them, editions, chapters, the programs each was measured against and the spans they were run over — and this project keeps it in English, the language of its source. What is translated is everything you decide from: the rungs above, what each of them means, and what each layer is.',
   // The way back to what the register was checked on, under the tables that
@@ -1857,7 +1857,7 @@ export const en = {
   // twice.
   'notes.references.title': 'The programs it was checked on',
   'notes.references.lead':
-    'Independent implementations, each somebody else’s work, run over the spans the rows above state. The texts cited beside them are not linked: an address for one is a claim about which edition.',
+    'Independent implementations, each somebody else’s work, run over the spans the rows above state. The texts cited beside them are not linked: an address for a text would be a claim about which edition.',
   'notes.column.quantity': 'Quantity',
   'notes.column.school': 'School',
   'notes.column.rung': 'Rung',

@@ -1107,13 +1107,13 @@ export const it: Record<MessageKey, string> = {
   // faceva incontrare tradotta proprio nella riga che si legge più spesso
   // senza aprire la pagina — e poi mai più.
   'meta.description.notes.sources':
-    'Ogni quantità calcolata dal motore, il testo o la misura su cui si regge, e il rung di evidenza su cui è stata pesata.',
+    'Ogni quantità calcolata dal motore, il testo o la misura su cui si regge, e il rung della scala delle prove su cui è stata pesata.',
   'meta.title.notes.refusals': 'Che cosa questo progetto non calcola',
   'meta.description.notes.refusals':
-    'Che cosa manca qui deliberatamente – lo yongshen, una classifica delle ore, una data per un esito – chi lo chiede, e perché non viene calcolato.',
+    'Che cosa manca qui deliberatamente (lo yongshen, una classifica delle ore, una data per un esito), chi lo chiede, e perché non viene calcolato.',
   'meta.title.notes.schools': 'Le scuole, e che cosa serve per nominarne una',
   'meta.description.notes.schools':
-    'Ogni tavola è stesa da una scuola, compresa quella che nessuno ha scelto. Che cosa afferma un valore così, e che cosa deve lo scaffale per dichiararlo.',
+    'Ogni tavola è stesa da una scuola, compresa quella che nessuno ha scelto. Che cosa afferma un valore così, e che cosa serve per dichiararne una nuova.',
   'meta.title.notes.readings': 'Consegnare una tavola a un modello',
   'meta.description.notes.readings':
     'Che cosa succede quando una tavola arriva a un modello: una sola tavola e mai due, calcolata e mai una data, e che cosa un prompt commissiona e vieta.',
@@ -1342,7 +1342,7 @@ export const it: Record<MessageKey, string> = {
   'notes.lead':
     'Che cosa calcola questo motore, su che cosa si regge ogni numero, e con quanta forza. Niente in questa sezione è una lettura: è il resoconto dello strumento.',
   'notes.claim':
-    'Ogni quantità qui dentro è stata verificata su qualcosa di esterno a sé, e non tutte su qualcosa di ugualmente solido. Dire quali sono le une e quali le altre è tutto ciò che questa sezione fa: un termine solare e una tavola tramandata non sono lo stesso genere di fatto, e un lettore che non possa distinguerli è stato fuorviato dalla presentazione più che dai dati.',
+    'Ogni quantità qui dentro è stata verificata su qualcosa di esterno a sé, ma non tutte su qualcosa di ugualmente solido. Dire quali sono le une e quali le altre è il compito di questa sezione: un termine solare e una tavola tramandata sono due generi di fatto diversi, e un lettore che non riesca a distinguerli è stato fuorviato dalla presentazione, non dai dati.',
   'notes.kind.derived': 'derivata',
   'notes.answers.instruments':
     'Che cosa viene calcolato, strato per strato: su che cosa si posa ciascuno, e ogni punto in cui le scuole divergono.',
@@ -1358,16 +1358,16 @@ export const it: Record<MessageKey, string> = {
   'notes.takes.taiyi': 'un anno, e nient’altro: nessun luogo, nessuna ora, nessuno.',
   'notes.takes.qizheng': 'una nascita: un istante e un luogo.',
   'notes.takes.ziwei':
-    'una nascita, contata sul calendario lunare, e un sesso dove un anello si percorre in una direzione.',
+    'una nascita, contata sul calendario lunare, e un sesso dove decide la direzione in cui si percorre un anello.',
   'notes.takes.bazi': 'una nascita, e un sesso dove i cicli di fortuna ne hanno bisogno.',
   'notes.takes.almanac': 'una data civile, calcolata su 120°E come lo è il calendario lunare.',
   'notes.takes.nianming': 'una nascita, collocata dentro una carta già tratta per un momento.',
   'notes.does.pillars':
     'I termini solari, la data lunare e i quattro pilastri: ciò su cui è costruita ogni tavola qui sotto, e lo strato a cui appartengono i due confini.',
   'notes.does.qimen':
-    'Nove palazzi: una tavola di terra fissata dal ju, una tavola di cielo ruotata sull’ora, e le stelle, le porte e gli spiriti che vi stanno sopra.',
+    'Nove palazzi: una tavola di terra fissata dal ju, una tavola di cielo girata sull’ora, e le stelle, le porte e gli spiriti che vi stanno sopra.',
   'notes.does.liuren':
-    'Dodici rami ruotati dal generale del mese, quattro lezioni lette dalla rotazione, e tre trasmissioni tratte dalle quattro secondo nove regole con un nome.',
+    'Dodici rami girati dal generale del mese, le quattro lezioni che se ne leggono, e tre trasmissioni tratte dalle quattro secondo nove regole con un nome.',
   'notes.does.taiyi':
     'La tavola di un anno: sedici divinità in nove palazzi, e i conti dell’ospite e dell’ospitante. Non c’è nessuno sopra.',
   'notes.does.qizheng':
@@ -1383,9 +1383,9 @@ export const it: Record<MessageKey, string> = {
 
   'notes.instruments.title': 'Che cosa viene calcolato',
   'notes.instruments.lead':
-    'Strato per strato, e sotto ciascuno i punti in cui le scuole divergono. Ognuno di essi è un parametro con un valore predefinito dichiarato: il valore che questo motore prende è segnato, quelli che dichiara e non calcolerà sono segnati anch’essi, e niente viene scelto in silenzio.',
+    'Strato per strato, e sotto ciascuno i punti in cui le scuole divergono. Ognuno di quei punti è un parametro con un valore predefinito dichiarato: il valore che questo motore adotta è segnato, sono segnati anche quelli che dichiara e non calcola, e niente viene scelto in silenzio.',
   'notes.instruments.wider':
-    'Questo elenco è più lungo di quello in testa alla pagina, e la differenza merita una frase: su che cosa si possa posare una consultazione è una domanda più stretta di che cosa venga calcolato qui. L’almanacco è la pagina di un libro pubblicato e non una tavola, lo strato calendariale sta sotto tutte, e un 年命 niánmìng è una nascita collocata dentro una carta tratta per un momento.',
+    'Questo elenco è più lungo di quello in testa alla pagina, per una ragione che merita una frase: su che cosa si possa posare una consultazione è una domanda più stretta di che cosa venga calcolato qui. L’almanacco è la pagina di un libro pubblicato e non una tavola, lo strato calendariale sta sotto tutte, e un 年命 niánmìng è una nascita collocata dentro una carta tratta per un momento.',
   'notes.column.parameter': 'Parametro',
   'notes.column.values': 'Valori',
   'notes.default': 'predefinito',
@@ -1453,45 +1453,45 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.twoSchools.title': 'Due scuole di un’arte, in una lettura',
   'notes.refusals.twoSchools.asks': 'chiunque abbia appena ricevuto la scelta.',
   'notes.refusals.twoSchools.body':
-    'Due scuole di un’arte stese sullo stesso istante non sono due testimoni: condividono i pilastri, il ju o i seggi, e quasi tutto ciò di cui sono fatte, quindi ciò su cui concordano è la parte che nessuna delle due ha mai discusso. Una tavola è tirata da una scuola e letta come sua. Confrontarne due è una cosa vera da fare — è la ragione per cui la scelta esiste — e si fa stendendo ciascuna e leggendo ciascuna, non fondendole né offrendo il loro accordo come prova.',
+    'Due scuole di un’arte stese sullo stesso istante non sono due testimoni: condividono i pilastri, il ju o i seggi, e quasi tutto il resto di cui sono fatte, quindi ciò su cui concordano è proprio la parte che nessuna delle due ha mai messo in discussione. Una tavola è tratta da una scuola e letta come sua. Confrontarne due è una cosa sensata, è la ragione per cui la scelta esiste, e si fa stendendo ciascuna e leggendo ciascuna: non fondendole, né offrendo il loro accordo come prova.',
   'notes.refusals.schoolDoctrine.title': 'La dottrina di una scuola, nella voce di questo motore',
   'notes.refusals.schoolDoctrine.asks': 'chiunque voglia sapere che cosa significa la tavola che ha scelto.',
   'notes.refusals.schoolDoctrine.body':
-    'Una scuola insegna a che cosa serve una configurazione, e la tentazione è spedirlo accanto ai valori che ha mosso. Ciò che può viaggiare è quello che già viaggia per le condizioni del 太乙 tàiyǐ, entro gli stessi quattro limiti: le parole della fonte, una clausola e non un paragrafo, sempre glossata, e sempre attaccata a qualcosa che il motore ha calcolato. Un verdetto nella prosa di questo motore è un verdetto che niente può mettere alla prova, mentre una citazione è verificabile due volte: o è nel testo o non c’è, ed è di quella scuola o non lo è.',
+    'Una scuola insegna a che cosa serve una configurazione, e la tentazione è spedire quell’insegnamento accanto ai valori che ha mosso. Può viaggiare solo ciò che già viaggia per le condizioni del 太乙 tàiyǐ, entro gli stessi quattro limiti: le parole della fonte, una clausola e non un paragrafo, sempre glossata, e sempre attaccata a qualcosa che il motore ha calcolato. Un verdetto nella prosa di questo motore è un verdetto che niente può mettere alla prova; una citazione, invece, si può verificare due volte: o è nel testo o non c’è, ed è di quella scuola o non lo è.',
   'notes.refusals.title': 'Che cosa non viene calcolato',
   'notes.refusals.lead':
-    'Il motore non risponde a nessuna domanda, che non è come dire che non dica nulla. Quel che segue è una voce per ciascuno: che cosa viene rifiutato, chi lo chiede, e perché non è qui.',
+    'Il motore non risponde a nessuna domanda, il che non vuol dire che non dica nulla. Quel che segue è una voce per ogni rifiuto: che cosa viene rifiutato, chi lo chiede, e perché non è qui.',
   'notes.refusals.carries':
-    'Ciò che invece porta è un attributo che le fonti tramandano concordi, dove quell’attributo appartiene alla configurazione e non alla situazione di qualcuno, e viaggia come identificatore e glifo, mai come prosa. Un verdetto che arriva dentro una glossa tradotta è un verdetto che niente può mettere alla prova.',
+    'Quello che porta, invece, è un attributo che le fonti tramandano concordi, quando quell’attributo appartiene alla configurazione e non alla situazione di qualcuno. Anche allora viaggia come identificatore e glifo, mai come prosa: un verdetto che arriva dentro una glossa tradotta è un verdetto che niente può mettere alla prova.',
   'notes.refusals.yongshen.title': 'Lo 用神 yòngshén',
   'notes.refusals.yongshen.asks': 'chiunque tragga una carta per una domanda.',
   'notes.refusals.yongshen.body':
-    'Quale palazzo riguardi ciò che si sta chiedendo è una scelta del lettore, fatta per quella domanda. Senza, la tavola è una mappa senza spillo, e sceglierlo è il primo atto interpretativo, non una consultazione. Un prompt commissiona la scelta e ne esige la dichiarazione; il motore non la compie mai.',
+    'Quale palazzo riguardi la domanda è una scelta del lettore, fatta per quella domanda. Senza, la tavola è una mappa senza spillo, e sceglierlo è il primo atto dell’interpretazione, non qualcosa che si cerca in una tabella. Un prompt commissiona la scelta e ne esige la dichiarazione; il motore non la compie mai.',
   'notes.refusals.geju.title': 'Le configurazioni messe in ordine, e il palazzo migliore',
   'notes.refusals.geju.asks': 'chiunque voglia sapere qual è il palazzo buono.',
   'notes.refusals.geju.body':
-    'Le configurazioni viaggiano, con la sorte che le fonti tramandano accanto a loro: 門迫 ménpò è oppressione nel testo che la nomina, e un motore che la lasciasse cadere starebbe redigendo le proprie fonti. Un ordine su di esse non viaggia. Una carta con quattro configurazioni infauste non è un cattivo momento per fare qualcosa: cattivo è una parola su un’impresa, e qui nessuna impresa è nota.',
+    'Le configurazioni viaggiano, con la sorte che le fonti tramandano accanto a loro: 門迫 ménpò è oppressione nel testo che la nomina, e un motore che la lasciasse cadere starebbe riscrivendo le proprie fonti. A non viaggiare è un ordine sopra di esse. Una carta con quattro configurazioni infauste non è un cattivo momento per fare qualcosa: cattivo è una parola che riguarda un’impresa, e qui nessuna impresa è nota.',
   'notes.refusals.ordering.title': 'Mettere in ordine due ore, e datare un esito',
   'notes.refusals.ordering.asks': 'chi sceglie un momento, e chiunque voglia sapere quando.',
   'notes.refusals.ordering.body':
-    'Scegliere il momento percorre un intervallo e riferisce dove al suo interno una cosa si trovi, secondo criteri che sei tu a dichiarare. Non mette in classifica ciò che trova, e le sue risposte portano una direzione oltre a un’ora: la direzione è metà della risposta e non va mai riferita da sola. Datare un esito è rifiutato del tutto: è la previsione che questo progetto non fa.',
+    'Scegliere il momento vuol dire percorrere un intervallo e riferire dove, al suo interno, ogni ora stia rispetto ai criteri che sei tu a dichiarare. Non mette in classifica ciò che trova, e le sue risposte portano una direzione oltre a un’ora: la direzione è metà della risposta, e l’ora non viene mai riferita da sola. Datare un esito è rifiutato del tutto: è la previsione che questo progetto non fa.',
   'notes.refusals.advice.title': 'Consigli',
   'notes.refusals.advice.asks': 'quasi tutti, prima o poi.',
   'notes.refusals.advice.body':
-    'Nessuna lettura qui dà pareri medici, psichiatrici, legali o finanziari, numeri fortunati, pronostici di gioco, un partner giudicato o una compatibilità stabilita. Dove si commissiona la lettura di una vita i verbi restano condizionali – «tende a», mai «accadrà» – e il potere sulle scelte di una persona e sul suo cammino resta suo.',
+    'Nessuna lettura qui dà pareri medici, psichiatrici, legali o finanziari, numeri fortunati, pronostici di gioco, un partner giudicato o una compatibilità stabilita. Dove si commissiona la lettura di una vita i verbi restano condizionali («tende a», mai «accadrà»), e il potere sulle scelte di una persona e sul suo cammino resta suo.',
   'notes.refusals.purposes.title': 'Quale palazzo sta per quale parte di una vita',
   'notes.refusals.purposes.asks':
     'i lettori del materiale moderno sul 年命 niánmìng, e i modelli, con molta sicurezza.',
   'notes.refusals.purposes.body':
-    'Rifiutato ovunque compaia un 年命 niánmìng, e detto su ogni superficie anziché una volta sola, perché è qui che un modello inventa più liberamente. Ciò che viene portato è il pilastro dell’anno di nascita e il pilastro dell’anno che si sta vivendo, i palazzi in cui i due cadono, e di che cosa è fatto il terreno sotto di loro. Poi si ferma: i verdetti che il testo dà su quel terreno hanno bisogno che una domanda sia stata posta.',
+    'Rifiutato ovunque compaia un 年命 niánmìng, e detto su ogni superficie anziché una volta sola, perché è qui che un modello inventa più liberamente. Quello che viene portato è il pilastro dell’anno di nascita e il pilastro dell’anno che si sta vivendo, i palazzi in cui i due cadono, e di che cosa è fatto il terreno sotto di loro. Lì si ferma: i verdetti che il testo dà su quel terreno hanno bisogno che una domanda sia stata posta.',
   'notes.refusals.natalQimen.title': 'Una carta di dunjia tratta su una nascita',
   'notes.refusals.natalQimen.asks': 'la letteratura moderna sul Qi Men natale.',
   'notes.refusals.natalQimen.body':
-    'Una nascita entra in una carta, mai il contrario: il testo classico mette l’anno della persona dentro la carta del momento, e la carta non si sposta per la nascita. L’errore ricorre perché la carta natale occidentale è un caso di una classe che questa tradizione riempie già in più modi, perciò un’arte che nasce sulla vita ha una tavola propria, 八字 bāzì, 七政四餘 qīzhèng sìyú, 紫微斗數 zǐwēi dǒushù, e mai quella del dunjia.',
+    'Una nascita entra in una carta, mai il contrario: il testo classico mette l’anno della persona dentro la carta del momento, e la carta non si sposta per la nascita. L’errore ricorre perché la carta natale occidentale è un caso di una classe che questa tradizione riempie già in più modi: un’arte che nasce sulla vita ha una tavola propria (八字 bāzì, 七政四餘 qīzhèng sìyú, 紫微斗數 zǐwēi dǒushù), mai quella del dunjia.',
   'notes.refusals.taiyiReadings.title': 'Le letture ricevute del 太乙 tàiyǐ',
   'notes.refusals.taiyiReadings.asks': 'chiunque apra il testo.',
   'notes.refusals.taiyiReadings.body':
-    'La dottrina tramandata di questa tavola è dinastica – quale stato cade, in quale anno un esercito si spezza – è datata, nessuno può falsificarla, e resta fuori. Le letture palazzo per palazzo dello stesso capitolo sono declinate per intero, perché dietro di esse non c’è alcuno strato che non sia dinastico. Ciò che viaggia è quel che il testo dice che una figura è; dove non dice nulla, viaggia il silenzio.',
+    'La dottrina tramandata di questa tavola è dinastica (quale stato cade, in quale anno un esercito si spezza): è datata, nessuno può falsificarla, e resta fuori. Le letture palazzo per palazzo dello stesso capitolo sono rifiutate per intero, perché dietro di esse non c’è nessuno strato che non sia dinastico. Ciò che viaggia è quel che il testo dice che una figura è; dove non dice nulla, viaggia il silenzio.',
   'notes.refusals.hostGuest.title': 'Chi è 主 zhǔ e chi è 客 kè',
   'notes.refusals.hostGuest.asks': 'ogni lettore di una tavola di 太乙 tàiyǐ, subito.',
   'notes.refusals.hostGuest.body':
@@ -1499,15 +1499,15 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.dayMaster.title': 'Un signore del giorno forte o debole, e ciò che compensa',
   'notes.refusals.dayMaster.asks': 'ogni lettore dei quattro pilastri.',
   'notes.refusals.dayMaster.body':
-    'I cinque elementi arrivano contati sugli otto caratteri, zeri compresi, perché un’assenza pesa quanto un’abbondanza, e il conteggio è stampato perché nessuno lo rifaccia. Dichiarare il signore del giorno forte o debole, e scegliere che cosa compensi un’assenza, sono passi di un metodo: le scuole divergono su come si faccia, perciò la scelta si compie ad alta voce nella lettura, con il metodo nominato.',
+    'I cinque elementi arrivano contati sugli otto caratteri, zeri compresi, perché un’assenza pesa quanto un’abbondanza, e il conteggio è stampato perché nessuno debba rifarlo. Dichiarare il signore del giorno forte o debole, e scegliere che cosa compensi un’assenza, sono passi di un metodo: le scuole divergono su come si faccia, perciò la scelta si compie ad alta voce nella lettura, con il metodo nominato.',
   'notes.refusals.ziqi.title': '紫氣 zǐqì, il quarto residuo',
   'notes.refusals.ziqi.asks': 'chi si aspetta quattro 餘 yú su una tavola di 七政四餘 qīzhèng sìyú.',
   'notes.refusals.ziqi.body':
-    'Tre dei quattro sono collocati dalle effemeridi. Il quarto manca per mancanza di una verifica e non di una regola: la trasmissione esiste, un’epoca citabile no, e nulla soppesa la sua costante perché soppesarla vorrebbe dire avere qualcosa in cielo con cui confrontarla. Il parametro è dichiarato e spento, così l’assenza è visibile invece che tacita.',
+    'Tre dei quattro sono collocati dalle effemeridi. Il quarto manca perché manca una verifica, non una regola: la trasmissione esiste, un’epoca citabile no, e niente pesa la sua costante perché in cielo non c’è nulla su cui confrontarla. Il parametro è dichiarato e spento, così l’assenza è visibile invece che tacita.',
   'notes.refusals.feixing.title': 'Le collocazioni delle 十八飛星 shíbāfēixīng',
   'notes.refusals.feixing.asks': 'chi ha in mano entrambi i libri del 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':
-    'Quell’arte nomina due tavole e questo motore ne calcola una. L’altra trasmissione conta diciotto stelle a partire dal ramo dell’anno, non ha ufficio dei cinque elementi, non ha 天府 tiānfǔ, e non porta nessuna delle quattordici stelle principali. Una collocazione portata da una all’altra è un innesto e non una lacuna colmata: lo stesso errore della carta natale di dunjia, più piccolo e fra due libri che condividono il titolo.',
+    'Quell’arte nomina due tavole e questo motore ne calcola una. L’altra trasmissione conta diciotto stelle a partire dal ramo dell’anno, non ha ufficio dei cinque elementi, non ha 天府 tiānfǔ e non porta nessuna delle quattordici stelle principali. Una collocazione portata da un libro all’altro è un innesto, non una lacuna colmata: lo stesso errore della carta natale di dunjia, più piccolo e fra due libri che condividono il titolo.',
   'notes.refusals.maoshan.title': '茅山 máoshān',
   'notes.refusals.maoshan.asks': 'il parametro che lo elenca.',
   'notes.refusals.maoshan.body':
@@ -1519,38 +1519,38 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.latitude.title': 'La latitudine, in qualunque calcolo',
   'notes.refusals.latitude.asks': 'chi dà per scontato che una carta usi entrambe le coordinate.',
   'notes.refusals.latitude.body':
-    'È la longitudine a spostare una tavola. La latitudine viene portata e stampata e non entra in alcun calcolo. L’unico metodo che la leggerebbe – tagliare i dodici palazzi del 七政四餘 qīzhèng sìyú per case – è un parametro dichiarato con quel valore non implementato. Il limite è detto qui e non nel modulo: un controllo che si apre apposta per digitarci una longitudine lo apre chi sa che cosa sia.',
+    'È la longitudine a spostare una tavola. La latitudine viene portata e stampata, e non entra in nessun calcolo. L’unico metodo che la leggerebbe, tagliare i dodici palazzi del 七政四餘 qīzhèng sìyú per case, è un parametro dichiarato con quel valore non implementato. Il limite è detto qui e non nel modulo: un controllo che si apre apposta per digitarci una longitudine lo apre chi sa che cosa sia.',
   'notes.refusals.twoBoards.title': 'Due tavole di uno stesso istante, in un solo prompt',
   'notes.refusals.twoBoards.asks': 'la richiesta di funzionalità più ovvia.',
   'notes.refusals.twoBoards.body':
-    'Una consultazione prende un solo strumento, scelto prima della pressione e in nessun momento dopo. Dove due tavole concordano è spesso un fatto solo stampato due volte – una carta di dunjia e un quadro di 六壬 liùrén condividono il pilastro del giorno, la decade, i rami vuoti e cinque degli otto spiriti – e un modello che lo legga come conferma conta un dato per due con assoluta sicurezza.',
+    'Una consultazione prende un solo strumento, scelto prima della pressione e in nessun momento dopo. Dove due tavole concordano è spesso un fatto solo, stampato due volte: una carta di dunjia e un quadro di 六壬 liùrén condividono il pilastro del giorno, la decade, i rami vuoti e cinque degli otto spiriti, e un modello che legga quell’accordo come conferma conta un dato per due, con assoluta sicurezza.',
 
   'notes.answers.schools':
     'Che cos’è qui una scuola, che cosa serve per nominarne una, e quale ha steso la tavola che stai guardando.',
   'notes.schools.title': 'Le scuole, e che cosa serve per nominarne una',
   'notes.schools.lead':
-    'Scuole diverse traggono tavole diverse dallo stesso istante. Ogni divergenza fra praticanti è un parametro con un default dichiarato, presente nel tipo d’ingresso fin dalla prima versione, e un valore che questo motore non calcola viene rifiutato per nome invece che sostituito in silenzio con quello che ha.',
+    'Scuole diverse traggono tavole diverse dallo stesso istante. Ogni divergenza fra praticanti è un parametro con un valore predefinito dichiarato, presente nel tipo d’ingresso fin dalla prima versione, e un valore che questo motore non calcola viene rifiutato per nome invece che sostituito in silenzio con quello che ha.',
   'notes.schools.implicit':
-    'Il che vuol dire che ogni tavola è stesa da una scuola, compresa quella che nessuno ha scelto. Ciò che è stato seguito è dichiarato sotto la tavola, sull’immagine, nel trascritto e dentro un prompt — il default insieme agli altri, perché chi non ha mosso niente è esattamente chi non sa che una scelta è stata fatta per lui.',
+    'Il che vuol dire che ogni tavola è stesa da una scuola, compresa quella che nessuno ha scelto. Ciò che è stato seguito è dichiarato sotto la tavola, sull’immagine, nel trascritto e dentro un prompt, il predefinito insieme agli altri: chi non ha mosso niente è esattamente chi non sa che una scelta è stata fatta per lui.',
 
   'notes.schools.claim.title': 'Che cosa afferma un valore intestato a una scuola',
   'notes.schools.claim.body':
-    'Non che la scuola abbia ragione. Che questo è ciò che quella scuola insegna, e che il motore lo trascrive. Sono i due modi in cui un valore così può essere sbagliato — il lignaggio nominato male, la tavola copiata male — e nessuno dei due ha bisogno di una seconda tradizione per essere colto. Per questo la richiesta fatta a una quantità che il motore presenta come la risposta non è la richiesta fatta a una che presenta come quella di qualcuno.',
-  'notes.schools.standard.title': 'Che cosa deve lo scaffale prima che se ne dichiari una',
+    'Non che la scuola abbia ragione: che questo è ciò che quella scuola insegna, e che il motore lo trascrive. Sono i due modi in cui un valore così può essere sbagliato (il lignaggio nominato male, la tavola copiata male) e nessuno dei due ha bisogno di una seconda tradizione per essere colto. Per questo a una quantità che il motore presenta come la risposta si chiede di più che a una presentata come quella di qualcuno.',
+  'notes.schools.standard.title': 'Che cosa deve esserci sullo scaffale prima di dichiararne una',
   'notes.schools.standard.body':
-    'Un testimone che sia della scuola stessa, o che dichiari l’insegnamento di quella scuola e lo dica; la lettura intestata a quella scuola, nelle stesse parole con cui il valore la porta; che cosa muove, esattamente, messo accanto a ciò che il motore già calcola; e un rung, che pesa la trascrizione e non la dottrina. Un riassunto moderno senza un testo dietro non è nessuna di queste cose. E nemmeno l’ampiezza del disaccordo lo è: un lignaggio che sposta una cella sola e lascia stare il resto traccia comunque una tavola diversa, e due praticanti ne tengono comunque i lati opposti.',
+    'Quattro cose: un testimone che sia della scuola stessa, o che ne dichiari l’insegnamento e lo dica; la lettura intestata a quella scuola, nelle stesse parole che il valore porta; che cosa muove, esattamente, messo accanto a ciò che il motore già calcola; e un rung, che pesa la trascrizione e non la dottrina. Un riassunto moderno senza un testo dietro non è nessuna di queste cose. E non lo è nemmeno l’ampiezza del disaccordo: un lignaggio che sposta una cella sola e lascia ferme le altre traccia comunque una tavola diversa, e due praticanti ne tengono comunque i lati opposti.',
   'notes.schools.rung.title': 'Di chi è una regola, accanto a quanto è attestata',
   'notes.schools.rung.body':
-    'La scala delle prove ordina un rischio: che una regola tramandata sia propria dell’unico lignaggio che la trasmette. Di chi sia la regola risponde a un’altra domanda, e non può diventare un rung senza rivendicare un tipo di controllo che non ha. Perciò il registro la porta in una colonna sua, accanto al rung e mai dentro — e la maggior parte delle righe legge un trattino, che è un’affermazione e non una casella vuota: la quantità è portata come propria della tradizione e non come la lettura di una parte.',
-  'notes.schools.default.title': 'Un default dichiarato non è una scuola nascosta',
+    'La scala delle prove ordina un rischio solo: che una regola tramandata come propria della tradizione sia in realtà di un solo lignaggio. Di chi sia una regola risponde a un’altra domanda, e non può diventare un rung senza rivendicare un tipo di controllo che non ha. Perciò il registro la porta in una colonna sua, accanto al rung e mai dentro. La maggior parte delle righe lì mostra un trattino, ed è un’affermazione, non una casella vuota: la quantità è portata come propria della tradizione, non come la lettura di una parte.',
+  'notes.schools.default.title': 'Un predefinito dichiarato non è una scuola nascosta',
   'notes.schools.default.body':
-    'Ogni divergenza ha un default e deve averlo: un indirizzo che non nomina nessun metodo risponde lo stesso, e così una sezione nuda. Non ne segue che il default possa tacere. Dove il motore calcola più di un valore, quello in vigore è dichiarato ovunque sia la tavola — sotto di essa nella pagina, sotto la griglia nel disegno, sotto i pilastri nel trascritto, nella risposta via API — che qualcuno l’abbia mosso o no. I controlli restano dove un lettore li apre apposta; è la lettura che non deve poter passare per senza scuola.',
+    'Ogni divergenza ha un valore predefinito, e deve averlo: un indirizzo che non nomina nessun metodo risponde lo stesso, e così una sezione nuda. Non ne segue che il predefinito possa tacere. Dove il motore calcola più di un valore, quello in vigore è dichiarato ovunque sia la tavola (sotto di essa nella pagina, sotto la griglia nel disegno, sotto i pilastri nel trascritto, nella risposta via API), che qualcuno l’abbia mosso o no. I controlli restano dove un lettore li apre apposta; è la lettura che non deve poter passare per senza scuola.',
   'notes.schools.axes.title': 'Una scuola è assi, mai un pacchetto',
   'notes.schools.axes.body':
-    'Una scuola di solito tocca più di uno di questi assi insieme, e la forma comoda è un nome unico che imposta gli altri. Il motore la rifiuta: un pacchetto è una tabella, una tabella si può modificare, e una tavola che portasse il nome del pacchetto invece dei valori per cui stava si riprodurrebbe diversa il giorno in cui la tabella si muove, senza che il suo stesso risultato lo dica. Un modulo può offrire la scorciatoia e riempire i campi con essa: quello che esce dal modulo sono comunque i campi, e chi legge vede che cosa è stato impostato e può muovere ognuno di essi.',
+    'Una scuola di solito tocca più di uno di questi assi insieme, e la forma comoda sarebbe un nome unico che imposta tutti gli altri. Il motore la rifiuta: un pacchetto è una tabella, una tabella si può modificare, e una tavola che portasse il nome del pacchetto invece dei valori per cui stava si riprodurrebbe diversa il giorno in cui la tabella cambia, senza che il suo stesso risultato lo dica. Un modulo può offrire la scorciatoia e riempirci i campi: quello che esce dal modulo sono comunque i campi, e chi legge vede che cosa è stato impostato e può muovere ognuno di essi.',
   'notes.schools.state.title': 'Quante sono è uno stato, non un disegno',
   'notes.schools.state.body':
-    'Niente qui è scritto come se una tavola avesse un metodo solo. Quello che costa aggiungere una scuola è un valore nella dichiarazione del motore, una glossa in ogni lingua, una riga nel registro e un argomento che la regga — e nessun controllo, dato che ciò che un modulo offre si legge dalla dichiarazione. Una scuola che avesse bisogno di un paragrafo scritto a mano è una scuola la cui dichiarazione manca di un campo, e la correzione sta a monte di questa pagina.',
+    'Niente qui è scritto come se una tavola avesse un metodo solo. Aggiungere una scuola costa un valore nella dichiarazione del motore, una glossa in ogni lingua, una riga nel registro e un argomento che la regga; nessun controllo, perché ciò che un modulo offre si legge dalla dichiarazione. Una scuola che avesse bisogno di un paragrafo scritto a mano è una scuola alla cui dichiarazione manca un campo, e la correzione sta a monte di questa pagina.',
 
   'notes.readings.title': 'Consegnare una tavola a un modello',
   'notes.readings.lead':
@@ -1562,25 +1562,25 @@ export const it: Record<MessageKey, string> = {
     'Una consultazione prende un solo strumento, scelto prima della pressione e in nessun momento dopo. Le tavole si sovrappongono: una carta di dunjia e un quadro di 六壬 liùrén condividono il pilastro del giorno, la decade, i rami vuoti e cinque degli otto spiriti; i dodici palazzi del 七政四餘 qīzhèng sìyú sono l’anello su cui siede un generale di 六壬; i quattro pilastri sono il substrato da cui le altre sono costruite. Nessuna regola tramandata combina i tre 式 shì. Il 太乙 tàiyǐ non si sovrappone a nessuna e la regola vale lo stesso, perché un modello a cui si dia una tavola di un anno accanto a una di una persona legge l’anno sulla persona.',
   'notes.readings.threeKinds.title': 'Tre generi, e il genere decide che cosa ti viene chiesto',
   'notes.readings.threeKinds.body':
-    '卜 bǔ (奇門 qímén e 六壬 liùrén) prende una domanda, e la tavola è tratta nell’istante della pressione: la domanda viene prima della trazione, o è una didascalia su una tavola che c’era già. 命 mìng (八字 bāzì, 七政四餘 qīzhèng sìyú, 紫微斗數 zǐwēi dǒushù) prende una nascita e non ti chiede nulla. 天 tiān, che è il solo 太乙 tàiyǐ, prende un anno e una materia: nessuna domanda, nessuna persona, nessun luogo e nessuna ora.',
+    '卜 bǔ (奇門 qímén e 六壬 liùrén) prende una domanda, e la tavola è tratta nell’istante della pressione: la domanda viene prima che la tavola sia tratta, o è una didascalia su una tavola che c’era già. 命 mìng (八字 bāzì, 七政四餘 qīzhèng sìyú, 紫微斗數 zǐwēi dǒushù) prende una nascita e non ti chiede nulla. 天 tiān, che è il solo 太乙 tàiyǐ, prende un anno e una materia: nessuna domanda, nessuna persona, nessun luogo e nessuna ora.',
   'notes.readings.questionStays.title': 'La domanda non raggiunge mai il server',
   'notes.readings.questionStays.body':
     'A un endpoint di prompt viene detto che una domanda esiste e mai quale sia: il prompt finisce sulla riga che la introduce, e il tuo browser aggiunge il testo prima che il tutto finisca negli appunti. Una materia viaggia allo stesso modo. Questo progetto non parla con nessun modello, non tiene alcuna chiave e non manda niente da nessuna parte.',
   'notes.readings.consultationOnly.title': 'Un prompt si costruisce in un solo posto',
   'notes.readings.consultationOnly.body':
-    'La consultazione è dove una tavola viene consegnata, ed è l’unica superficie che costruisca un prompt: un prompt è un chiedere, e sta dove si chiede. Le sezioni intitolate a un’arte mostrano tavole e le loro trascrizioni, e chiedere lì è navigare. La consultazione stampa dalla pagina e mai da un indirizzo proprio, per la stessa ragione: a un indirizzo bisognerebbe dire qual è la domanda.',
+    'La consultazione è dove una tavola viene consegnata, ed è l’unica superficie che costruisca un prompt: un prompt è un chiedere, e sta dove si chiede. Le sezioni intitolate a un’arte mostrano tavole e le loro trascrizioni; chiedere lì significa passare dalla consultazione. La consultazione stampa dalla pagina e mai da un indirizzo proprio, per la stessa ragione: a un indirizzo bisognerebbe dire qual è la domanda.',
   'notes.readings.bu.title': 'Che cosa commissiona un prompt di 卜 bǔ',
   'notes.readings.bu.body':
-    'Una carta trattiene lo 用神 yòngshén e lo dichiara: quale palazzo riguardi la domanda è scelta del lettore, e il prompt ne esige la dichiarazione. Un quadro di 六壬 liùrén consegna le sue tre trasmissioni già tratte, per procedura, e il prompt dice di non riderivarle, mentre da quale delle quattro lezioni leggere resta del lettore.',
+    'Una carta trattiene lo 用神 yòngshén e lo dichiara: quale palazzo riguardi la domanda è scelta del lettore, e il prompt ne esige la dichiarazione. Un quadro di 六壬 liùrén consegna le sue tre trasmissioni già tratte, per procedura, e il prompt dice di non ricavarle di nuovo; da quale delle quattro lezioni leggere, invece, resta scelta del lettore.',
   'notes.readings.ming.title': 'Che cosa commissiona un prompt di 命 mìng',
   'notes.readings.ming.body':
     'Il soggetto è la persona su cui la tavola è stata posata, non la tavola. La risposta è disposta in sei movimenti: l’avvertenza, la nascita situata con parole del modello, la tavola letta intera a partire da un centro, i temi di una vita in sezioni brevi intitolate a un tema e mai a un fattore, l’elenco di ispezione da cui quelle sezioni attingono, e una chiusura che apre. Ogni scelta viaggia firmata: quale seggio o divinità porti un tema si dice nel momento in cui lo si sceglie, il metodo di una scuola arriva nominato come di quella scuola, e l’elemento che compensa resta non calcolato e viene scelto ad alta voce.',
   'notes.readings.tian.title': 'Che cosa commissiona un prompt di 天 tiān',
   'notes.readings.tian.body':
-    'Una lettura è per una materia, e una materia non è una domanda: nomina ciò che si sta guardando – un campo visivo con due parti dentro, che è ciò di cui i due conti sono conti. Senza, il prompt legge la figura e dichiara che l’assegnazione non è mai stata fatta, invece di mandare un modello a inventarsi due parti. Il registro è descrittivo e mai predittivo, e ogni superficie che stampi questa tavola dice che i suoi nove palazzi sono numerati con uno scarto di un seggio rispetto al 洛書 luòshū.',
+    'Una lettura è per una materia, e una materia non è una domanda: nomina ciò che si sta guardando, un campo visivo con due parti dentro, che è ciò che i due conti contano. Senza, il prompt legge la figura e dice che l’assegnazione non è mai stata fatta, invece di mandare un modello a inventarsi due parti. Il registro è descrittivo e mai predittivo, e ogni superficie che stampi questa tavola dice che i suoi nove palazzi sono numerati con uno scarto di un seggio rispetto al 洛書 luòshū.',
   'notes.readings.staysOut.title': 'Che cosa resta fuori da un prompt',
   'notes.readings.staysOut.body':
-    'Quanto sia sicuro ogni numero resta nella documentazione che un agente può consultare. Incollato dentro un prompt diventava un paragrafo che il modello recitava senza che glielo si chiedesse, accanto a un’avvertenza che già dice che cos’è questo e che cosa non è. L’eccezione è un limite su una quantità che il prompt sta già dicendo a un modello come leggere: una cautela che arriva insieme all’istruzione che la governa è parte dell’istruzione. La prova è se, tolta quella riga, resti un’istruzione che un modello possa seguire con sicurezza e sbagliare.',
+    'Quanto sia sicuro ogni numero resta nella documentazione che un agente può consultare. Incollato in un prompt, diventava un paragrafo che il modello recitava senza che nessuno glielo chiedesse, accanto a un’avvertenza che già dice che cos’è questo e che cosa non è. L’eccezione è un limite su una quantità che il prompt sta già dicendo a un modello come leggere: una cautela che arriva insieme all’istruzione che la governa è parte dell’istruzione. La prova è se, tolta quella riga, resti un’istruzione che un modello possa seguire con sicurezza e sbagliare.',
   'notes.readings.disclaimer.title': 'L’avvertenza viaggia',
   'notes.readings.disclaimer.body':
     'Il prompt porta con sé l’avvertenza che porta il piede di pagina di questo sito, come istruzione a pronunciarla: questo è uno spazio di ricerca interiore e arricchimento personale, non sostituisce il parere di un professionista su nulla, e il potere sulle scelte di una persona e sul suo cammino resta suo. Un prompt viaggia, e un’avvertenza lasciata sulla pagina da cui è stato copiato era scritta per qualcuno che lì non c’è più.',
@@ -1588,16 +1588,16 @@ export const it: Record<MessageKey, string> = {
   'notes.sources.title': 'Da dove vengono i numeri',
   'notes.sources.lead':
     'Una riga per quantità: da che cosa il motore la ricava, su che cosa è stata misurata, e su quale rung della scala qui sotto questo la colloca.',
-  'notes.ladder.title': 'La scala dell’evidenza',
+  'notes.ladder.title': 'La scala delle prove',
   'notes.ladder.lead':
-    'Non tutto è stato verificato su qualcosa di ugualmente solido, e sapere su che cosa si regge una quantità non è ancora poterla soppesare accanto alla sua vicina. Questi sono i rung, dal più forte, con il numero di quantità tenute a ciascuno.',
+    'Non tutto è stato verificato su qualcosa di ugualmente solido, e sapere su che cosa si regge una quantità non basta ancora a soppesarla accanto alla sua vicina. Questi sono i rung, dal più forte, con il numero di quantità tenute a ciascuno.',
   'notes.held': '{count} nel registro',
   'notes.rung.0': 'Misurata',
   'notes.rung.0.means':
     'Una risposta delle effemeridi: si interroga il cielo e la risposta si legge. Non è affatto una regola tramandata, ed è per questo che sta sopra i rung sottostanti e non su di essi.',
   'notes.rung.1': 'Un riferimento eseguibile',
   'notes.rung.1.means':
-    'Un altro programma la calcola, indipendentemente da questo, ed è stato eseguito sull’intero dominio anziché per campione. Dove la materia è una tradizione controversa questo significa coerente con un’implementazione diffusa, mai verificata.',
+    'Un altro programma la calcola, indipendentemente da questo, ed è stato eseguito sull’intero dominio anziché a campione. Dove la materia è una tradizione controversa questo significa coerente con un’implementazione diffusa, mai verificata.',
   'notes.rung.2': 'Due testi che concordano',
   'notes.rung.2.means':
     'Due fonti tramandate, indipendenti l’una dall’altra, che nominano la stessa cosa allo stesso modo. È lo standard per tutto ciò che non si può derivare.',
@@ -1617,10 +1617,10 @@ export const it: Record<MessageKey, string> = {
   'notes.ladder.attributed':
     'La colonna della scuola dice sotto quale valore dichiarato sta una quantità, nelle parole con cui lo si passa: huoling: fixed, yuan: futou. Un trattino dice che la quantità è portata come propria della tradizione e non come la lettura di una parte, ed è un’affermazione, non una casella lasciata vuota. Di chi sia una regola e quanto sia attestata sono domande diverse, perciò le due colonne stanno accanto e nessuna delle due sposta l’altra.',
   'notes.ladder.quoted':
-    'La tavola qui sotto è citata e non tradotta. È un registro di citazioni – le quantità come le nomina il motore, edizioni, capitoli, i programmi su cui ciascuna è stata misurata e gli intervalli su cui sono stati eseguiti – e questo progetto lo tiene in inglese, la lingua del suo codice sorgente. Ciò che è tradotto è tutto quello da cui si decide: i rung qui sopra, che cosa significa ciascuno, e che cos’è ogni strato.',
+    'La tavola qui sotto è citata, non tradotta. È un registro di citazioni (le quantità come le nomina il motore, edizioni, capitoli, i programmi su cui ciascuna è stata misurata e gli intervalli su cui sono stati eseguiti) e questo progetto lo tiene in inglese, la lingua del suo codice sorgente. Ciò che è tradotto è tutto quello da cui si decide: i rung qui sopra, che cosa significa ciascuno, e che cos’è ogni strato.',
   'notes.references.title': 'I programmi su cui è stato verificato',
   'notes.references.lead':
-    'Implementazioni indipendenti, ciascuna lavoro di qualcun altro, eseguite sugli intervalli che le righe qui sopra dichiarano. I testi citati accanto non sono collegati: dare un indirizzo a un testo è dire quale edizione.',
+    'Implementazioni indipendenti, ciascuna lavoro di qualcun altro, eseguite sugli intervalli che le righe qui sopra dichiarano. I testi citati accanto non hanno un collegamento: dare un indirizzo a un testo sarebbe affermare quale edizione.',
   'notes.column.quantity': 'Quantità',
   // «Scuola» e non «tradizione»: quello che la colonna dichiara è di chi è la
   // regola, e chi la segue lo dice come un impegno che potrebbe difendere.
