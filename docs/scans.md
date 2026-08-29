@@ -127,11 +127,23 @@ which is the same order as OCR. **What costs is the reading**, one page to one
 look, so the method is about spending those looks well.
 
 **A resolution ladder, because one setting does not do both jobs.** At 110–150
-dpi prose is reliable and numerals are not. Twice in four readings this project
-has turned on a single character — 七 against 一 in a calendrical constant, 壬
-against 辛 in a verse — and both were settled only at **400 dpi with the region
-cropped and enlarged threefold**. Prose at 130, numbers at 400, and a crop
-whenever one character decides something.
+dpi prose is reliable and numerals are not. Findings here turn on a single
+character often enough that it is the normal case rather than the exception —
+七 against 一 in a calendrical constant, 壬 against 辛 in a verse, 相 against 陰
+in a 四化 line, 五 against 九 in a cell of a placement grid — and every one of
+them was settled only by **cropping the region and rendering it again at 400 to
+600 dpi**. Prose at 130, numbers at 400, and a crop whenever one character
+decides something.
+
+**A cell of a table is the densest thing on its page and wants the top of the
+ladder.** A grid gives a character a fraction of the space the prose beside it
+gets, and the characters it is made of are the ones that confuse: 五 against 九,
+午 against 五, 戊 against 戌. On the 南陽堂 block, whose prose reads at 300, two
+grid cells had to be cropped and rendered at 600 before either could be
+quoted — and the same leaf's verse turned on 歲 against 龍 at the same setting.
+This is the pixels-to-a-character rule arriving from the other side: what a page
+can support is a question about its densest content, not its nominal
+resolution.
 
 **A contact sheet is what makes a woodblock affordable.** Eight to twelve pages
 rendered small, the heading corner of each cropped, tiled into one image: one

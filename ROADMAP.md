@@ -324,7 +324,8 @@ a value in § 1**, so neither is urgent.
 528 pages, one book-page to the page, high-contrast block printing: legible by
 eye, hopeless for OCR. `docs/sources.md` calls it the adjudicator between the
 transcriptions. This phase is collation, against the copies already held, of
-the passages the two transcriptions disagree on. **Most of them are answered.**
+the passages the two transcriptions disagree on. **All of them are answered,
+and the phase is closed.**
 
 The 四化 verse is at 卷之三 leaf 151. Nine of its ten lines are the table this
 engine ships, character for character; 壬 gives 科 to 天府, confirming the
@@ -347,8 +348,26 @@ defective line both transcriptions do, 子午人火鈴星 in a slot every other 
 fills with one star, so the adjudicator cannot settle it; it does correct the
 graph to 鈴.
 
-What is left: 解神 off the year, the two repaired grid cells, and the starting
-age of the 大限. The 目錄 names a section for the first only.
+**The last three were asked on 2026-08-29 and the list is now empty.** 解神 is
+at leaf 157 and reads 「解神從戌上起子逆數至當生年太歲上是也」, the shipped line
+character for character — and its section places 天德 and 月德 off the 流年
+three lines above, so the block distinguishes the two years rather than leaving
+a reader to. The two grid cells are printed whole among the five 紫微 grids at
+leaves 167–171, and all 150 cells collate against the engine's table, which
+retires the arithmetic that had been standing in for a page. The 大限's
+starting age is a **documented negative**: 安大限訣 at leaf 158 is two lines
+long, gives the palace the run opens in and stops — so the age is still carried
+only by the bureau verses' opening words, which this block is the first witness
+to print as a complete series (二歲行 · 三歲遊 · 四歲花 · 五歲居 · 六歲奇, where
+both transcriptions break it at 土五). Every argument is in `docs/sources.md`.
+
+**So this phase is finished, and what it cost is the finding to keep.** All
+three questions were located off a single 目錄 leaf, bracketed with three
+contact sheets, and read on seven plates. That is the second time this book has
+been reached that way and the third time the three conditions `docs/scans.md`
+names have paid, and it is why the estimate that opened this phase — 528 pages
+of woodblock to adjudicate eight lines — was wrong by an order of magnitude in
+the cheap direction.
 
 ### Phase 4 — the remainder, read behind no citation
 
