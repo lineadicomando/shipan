@@ -340,6 +340,45 @@ export function formatMoment(
  * is not a school but the absence of a second one, which is `ROADMAP.md` § 1's
  * business and not a board's.
  */
+/**
+ * The divergences in force, said — a pair of words apiece.
+ *
+ * The block above sets them in two columns and the drawing writes them one to
+ * a line, so what is shared is the saying and not the setting. A surface that
+ * has room for a table gets a table; the picture, which travels furthest from
+ * the page that made it, gets the same words in the space it has.
+ */
+export function saidDivergences(
+  board: string,
+  options: object,
+  moment: Moment,
+  t: Translator,
+): readonly { label: string; said: string }[] {
+  return divergencesInForce(board, options, moment.options).map(({ parameter, value }) => ({
+    label: t(parameter.label as MessageKey),
+    said: t(value.says as MessageKey),
+  }));
+}
+
+/**
+ * The same, as finished lines — for a surface that draws rather than sets.
+ *
+ * The colon is here and not at four callers: a drawing writes what it is
+ * handed, so the one place that decides how a divergence reads on a picture is
+ * this one. `saidDivergences` stays beside it for a caller that has a table.
+ */
+export function divergenceLines(
+  board: string,
+  options: object,
+  moment: Moment,
+  t: Translator,
+): string[] {
+  // An em dash and not a colon: several of the glosses carry a colon of their
+  // own — «by thirds of the term: 拆補 chāibǔ» — and a line with two of them
+  // reads as a list of three things rather than as one thing said twice.
+  return saidDivergences(board, options, moment, t).map((row) => `${row.label} — ${row.said}`);
+}
+
 export function formatDivergences(
   board: string,
   options: object,
@@ -349,10 +388,7 @@ export function formatDivergences(
   const inForce = divergencesInForce(board, options, moment.options);
   if (inForce.length === 0) return '';
 
-  const rows = inForce.map(({ parameter, value }) => [
-    t(parameter.label as MessageKey),
-    t(value.says as MessageKey),
-  ]);
+  const rows = saidDivergences(board, options, moment, t).map((row) => [row.label, row.said]);
 
   // The notes under the block, each said once however many values carry it:
   // both methods point at the same caution, and printing it twice would be

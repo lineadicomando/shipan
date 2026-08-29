@@ -102,6 +102,21 @@ export interface Foot {
  */
 export type Aloud = Foot;
 
+/**
+ * The block naming the schools, under both bands.
+ *
+ * Three numbers where the bands have four: it has no heading of its own. The
+ * lines say what they are — «The ju is determined: …» — and a word over four
+ * of them would be a heading for a list a reader has already read.
+ */
+export interface Schools {
+  /** What the block adds to the paper. Zero where nothing was contested. */
+  band: number;
+  /** Baseline of the first line. */
+  first: number;
+  step: number;
+}
+
 export interface Layout {
   /**
    * The side of the square: the width of the paper, and the height of
@@ -124,6 +139,8 @@ export interface Layout {
   cell: number;
   /** The band the compass is written in. Zero where there is none. */
   compass: Compass;
+  /** The block the schools are named in. Zero where nothing was contested. */
+  schools: Schools;
   /** The band the configurations are listed in. Zero where there is none. */
   foot: Foot;
   /** The band the names are said aloud in, under it. Zero where there is none. */
@@ -161,6 +178,8 @@ export interface Around {
   compass?: boolean;
   /** How many configurations the band under the grid has to list. */
   configurations?: number;
+  /** How many lines the block naming the schools has to carry. */
+  schools?: number;
   /**
    * How many lines of readings go under that.
    *
@@ -212,18 +231,36 @@ export function layout(size: number, around: Around = {}): Layout {
     ? { band: size * 0.03 + aloudStep * lines + size * 0.012, heading: size * 0.024, first: size * 0.03 + aloudStep * 0.8, step: aloudStep }
     : { band: 0, heading: 0, first: 0, step: aloudStep };
 
-  // The square, and nothing but the square. Neither band comes into it: they
-  // are written on the paper the square grew, not out of the square.
+  // The schools under both bands, at the readings' rhythm: it is a list of
+  // the same kind — what was chosen rather than what was found — and a third
+  // rhythm on one sheet would be a third habit for a reader to learn.
+  const schoolLines = around.schools ?? 0;
+  const schools: Schools = schoolLines
+    ? {
+        band: size * 0.026 + aloudStep * schoolLines + size * 0.012,
+        first: 0,
+        step: aloudStep,
+      }
+    : { band: 0, first: 0, step: aloudStep };
+
+  // The square, and nothing but the square. No band comes into it: they are
+  // written on the paper the square grew, not out of the square.
   const cell = (size - margin * 2) / 3;
 
   return {
     size,
     margin,
-    height: size + foot.band + aloud.band,
+    height: size + foot.band + aloud.band + schools.band,
     cell,
     compass: { band, branch: band * 0.27, word: band * 0.76 },
     foot,
     aloud,
+    schools: {
+      ...schools,
+      // Measured once the margin and the two bands above are settled, which is
+      // why it is filled in here and not where the depth is worked out.
+      first: margin + ((size - margin * 2) / 3) * 3 + band + foot.band + aloud.band + size * 0.026,
+    },
     // Two columns, three registers each. On the left the board as it was
     // dealt — the two plates, then the palace itself; on the right what came
     // to stand over it — the spirit, the star, the gate. Every palace puts

@@ -1,5 +1,6 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
+  divergenceLines,
   DEFAULT_LIUREN_OPTIONS,
   DEFAULT_QIZHENG_OPTIONS,
   DEFAULT_ZIWEI_OPTIONS,
@@ -647,6 +648,9 @@ export function registerDrawQimenChart(server: McpServer, context: ToolContext):
 
         const svg = renderChartSvg(chart, {
           size: args.size ?? 900,
+          // Which schools laid it, on the picture: this is the half of a board
+          // that travels with no transcript beside it.
+          schools: divergenceLines('qimen', chart.options, moment, t),
           // The palaces are written in words, each beside the name it
           // renders — the same drawing the web surface serves.
           labels,
@@ -718,6 +722,7 @@ export function registerDrawLiuren(server: McpServer, context: ToolContext): voi
         return ok(
           renderLiurenSvg(board, {
             size: args.size ?? 900,
+            schools: divergenceLines('liuren', board.options, moment, t),
             labels: liurenLabels(t),
             heading:
               `${sayGanzhi(board.day, t)} ${board.day.hanzi} · ${board.hour.hanzi} · ` +

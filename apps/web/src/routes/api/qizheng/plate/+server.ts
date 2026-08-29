@@ -1,4 +1,5 @@
 import {
+  divergenceLines,
   DEFAULT_QIZHENG_OPTIONS,
   qizhengBoard,
   qizhengLabels,
@@ -50,6 +51,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const { size, scheme } = readPlateOptions(url.searchParams);
 
     const svg = renderQizhengSvg(board, {
+      schools: divergenceLines('qizheng', options, moment, t),
       size,
       scheme,
       labels: qizhengLabels(t),

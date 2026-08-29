@@ -8,6 +8,7 @@ import {
   said,
   type Said,
 } from './readings.js';
+import { drawSchools, schoolDepth } from './schools.js';
 import type {
   PlatePlacement,
   PlateQizheng,
@@ -136,7 +137,9 @@ export function renderQizhengSvg(board: PlateQizheng, options: PlateQizhengOptio
   const band = bandLines ? size * 0.05 + readingStep * bandLines + size * 0.012 : 0;
 
   const ringTop = margin + headingRoom + upper;
-  const height = ringTop + ring + band + margin + foot;
+  const schools = options.schools ?? [];
+  const schoolBand = schoolDepth(schools, readingStep, size * 0.026);
+  const height = ringTop + ring + band + schoolBand + margin + foot;
 
   const parts: string[] = [
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${round(height)}" ` +
@@ -186,11 +189,23 @@ export function renderQizhengSvg(board: PlateQizheng, options: PlateQizhengOptio
     );
   }
 
+  if (schools.length > 0) {
+    parts.push(
+      ...drawSchools(schools, {
+        x: margin,
+        first: ringTop + ring + band + size * 0.026,
+        step: readingStep,
+        size: reading,
+        maxWidth: ring,
+      }),
+    );
+  }
+
   notes.forEach((note, index) => {
     parts.push(
       text(
         size / 2,
-        ringTop + ring + band + margin + noteStep * (index + 0.8),
+        ringTop + ring + band + schoolBand + margin + noteStep * (index + 0.8),
         note,
         fitted(note, size * 0.019, ring),
         'faint',

@@ -1,4 +1,5 @@
 import {
+  divergenceLines,
   DEFAULT_LIUREN_OPTIONS,
   liurenBoard,
   liurenLabels,
@@ -37,6 +38,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const { size, scheme } = readPlateOptions(url.searchParams);
 
     const svg = renderLiurenSvg(board, {
+      schools: divergenceLines('liuren', options, moment, t),
       size,
       scheme,
       labels: liurenLabels(t),

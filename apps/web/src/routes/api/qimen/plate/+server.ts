@@ -1,4 +1,4 @@
-import { chartLabels, computeQimenChart, sayGanzhi } from '@shipan/core';
+import { divergenceLines, chartLabels, computeQimenChart, sayGanzhi } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import { renderChartSvg } from '@shipan/plate';
 import { momentIsFixed, readLocale, readMoment, readPlateOptions } from '$lib/server/params';
@@ -39,6 +39,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       .join(' / ');
 
     const svg = renderChartSvg(chart, {
+      schools: divergenceLines('qimen', moment.options, moment, t),
       size,
       scheme,
       labels,

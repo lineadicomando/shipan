@@ -736,3 +736,45 @@ describe('the band of readings', () => {
     expect(at('Said aloud')).toBeLessThan(at('chief Canopy'));
   });
 });
+
+describe('the block naming the schools', () => {
+  const SCHOOLS = ['The ju is determined — by thirds of the term: 拆補 chāibǔ', 'The day begins — at 23:00'];
+
+  it('is drawn only when it is given lines', () => {
+    expect(renderChartSvg(CHART, { captions: {} })).not.toContain('The ju is determined');
+    expect(renderChartSvg(CHART, { captions: {}, schools: SCHOOLS })).toContain(
+      'The ju is determined',
+    );
+  });
+
+  it('writes what it was handed and composes nothing', () => {
+    // The package holds no catalog and cannot know what a school is: the lines
+    // arrive finished, which is the same bargain every caption here makes.
+    const svg = renderChartSvg(CHART, { captions: {}, schools: SCHOOLS });
+
+    for (const line of SCHOOLS) expect(svg).toContain(line);
+  });
+
+  it('grows the paper downward and leaves the square alone', () => {
+    const bare = renderChartSvg(CHART, { captions: {} });
+    const named = renderChartSvg(CHART, { captions: {}, schools: SCHOOLS });
+    const box = (svg: string): number => Number(/viewBox="0 0 \d+ ([\d.]+)"/.exec(svg)?.[1]);
+
+    expect(box(named)).toBeGreaterThan(box(bare));
+    expect(layout(900, { schools: 0 }).schools.band).toBe(0);
+    expect(layout(900, { schools: 2 }).cell).toBeCloseTo(layout(900, {}).cell, 6);
+  });
+
+  it('stands under the readings, which is where a reader meets it last', () => {
+    // What the board is, then how to say it, then what laid it: the picture
+    // travels alone, so the last thing on it is the one a reader needs to know
+    // before they quote it.
+    const svg = renderChartSvg(CHART, {
+      captions: { readings: 'Said aloud' },
+      schools: SCHOOLS,
+      compass: { n: 'N' },
+    });
+
+    expect(svg.indexOf('Said aloud')).toBeLessThan(svg.indexOf('The ju is determined'));
+  });
+});

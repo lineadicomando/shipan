@@ -12,6 +12,7 @@ import {
 } from './geometry.js';
 import { FONT_STACK, styleSheet } from './palette.js';
 import { drawReadingColumns, readingDepth, said, type Said } from './readings.js';
+import { drawSchools, schoolDepth } from './schools.js';
 import type {
   Named,
   PlateChart,
@@ -119,7 +120,8 @@ export function renderChartSvg(chart: PlateChart, options: PlateOptions = {}): s
         columns: COLUMNS,
       })
     : 0;
-  const geometry = layout(size, { ...around, readings: bandLines });
+  const schools = options.schools ?? [];
+  const geometry = layout(size, { ...around, readings: bandLines, schools: schools.length });
   const byNumber = new Map(chart.palaces.map((palace) => [palace.palace.number, palace]));
   const marked = markedPalaces(chart);
 
@@ -171,6 +173,20 @@ export function renderChartSvg(chart: PlateChart, options: PlateOptions = {}): s
         heading: top + geometry.aloud.heading,
         first: top + geometry.aloud.first,
         step: geometry.aloud.step,
+        size: geometry.font.reading,
+        maxWidth: geometry.cell * 3,
+      }),
+    );
+  }
+  if (schools.length > 0) {
+    // Under everything the board says about itself and over the captions: what
+    // this chart is, then how to say it, then what laid it, then what the
+    // drawing is not.
+    parts.push(
+      ...drawSchools(schools, {
+        x: geometry.margin,
+        first: geometry.schools.first,
+        step: geometry.schools.step,
         size: geometry.font.reading,
         maxWidth: geometry.cell * 3,
       }),

@@ -8,6 +8,7 @@ import {
   said,
   type Said,
 } from './readings.js';
+import { drawSchools, schoolDepth } from './schools.js';
 import type {
   PlateZiwei,
   PlateZiweiLabels,
@@ -231,7 +232,9 @@ export function renderZiweiSvg(board: PlateZiwei, options: PlateZiweiOptions = {
     : 0;
   const band = bandLines ? size * 0.05 + readingStep * bandLines + size * 0.012 : 0;
 
-  const height = gridTop + grid + band + margin;
+  const schools = options.schools ?? [];
+  const schoolBand = schoolDepth(schools, readingStep, size * 0.026);
+  const height = gridTop + grid + band + schoolBand + margin;
 
   const parts: string[] = [
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${round(height)}" ` +
@@ -278,6 +281,18 @@ export function renderZiweiSvg(board: PlateZiwei, options: PlateZiweiOptions = {
         x: margin,
         heading: top,
         first: top + readingStep * 0.8,
+        step: readingStep,
+        size: reading,
+        maxWidth: grid,
+      }),
+    );
+  }
+
+  if (schools.length > 0) {
+    parts.push(
+      ...drawSchools(schools, {
+        x: margin,
+        first: gridTop + grid + band + size * 0.026,
         step: readingStep,
         size: reading,
         maxWidth: grid,

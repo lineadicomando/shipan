@@ -274,6 +274,8 @@ export {
   formatBazi,
   formatLiuren,
   formatMoment,
+  divergenceLines,
+  saidDivergences,
   formatNianming,
   formatQimenChart,
   formatQizheng,

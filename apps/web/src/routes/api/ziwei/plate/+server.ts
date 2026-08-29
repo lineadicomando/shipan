@@ -1,4 +1,4 @@
-import { computeZiwei, ziweiLabels } from '@shipan/core';
+import { computeZiwei, divergenceLines, ziweiLabels } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import { renderZiweiSvg } from '@shipan/plate';
 import {
@@ -42,6 +42,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const { size, scheme } = readPlateOptions(url.searchParams);
 
     const svg = renderZiweiSvg(board, {
+      schools: divergenceLines('ziwei', options, moment, t),
       size,
       scheme,
       labels: ziweiLabels(t),

@@ -8,6 +8,7 @@ import {
   said,
   type Said,
 } from './readings.js';
+import { drawSchools, schoolDepth } from './schools.js';
 import type {
   PlateTaiyi,
   PlateTaiyiGod,
@@ -173,7 +174,9 @@ export function renderTaiyiSvg(board: PlateTaiyi, options: PlateTaiyiOptions = {
   const band = bandLines ? size * 0.05 + readingStep * bandLines + size * 0.012 : 0;
 
   const gridTop = margin + headingRoom + upper;
-  const height = gridTop + grid + conditions + band + margin + foot;
+  const schools = options.schools ?? [];
+  const schoolBand = schoolDepth(schools, readingStep, size * 0.026);
+  const height = gridTop + grid + conditions + band + schoolBand + margin + foot;
 
   const parts: string[] = [
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${round(height)}" ` +
@@ -216,6 +219,18 @@ export function renderTaiyiSvg(board: PlateTaiyi, options: PlateTaiyiOptions = {
         x: margin,
         heading: top,
         first: top + readingStep * 0.8,
+        step: readingStep,
+        size: reading,
+        maxWidth: grid,
+      }),
+    );
+  }
+
+  if (schools.length > 0) {
+    parts.push(
+      ...drawSchools(schools, {
+        x: margin,
+        first: gridTop + grid + conditions + band + size * 0.026,
         step: readingStep,
         size: reading,
         maxWidth: grid,
