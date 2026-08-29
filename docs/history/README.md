@@ -69,6 +69,7 @@ phase.
 | 33 | [A school can be followed](33-a-school-can-be-followed.md) | done — narrows «every divergence is a parameter»; the audit finds three faults, claims two candidates as one, and a verification run corrects the register and weakens the case it tested |
 | 34 | [A collation settles the text](34-a-collation-settles-the-text.md) | done — answers what an agreement between two witnesses to one text is worth, admits a lone reading of an edited edition, and leaves one contested rung standing |
 | 35 | [A school can be chosen](35-a-school-can-be-chosen.md) | in progress — a review of the instructions finds six enumerations a board behind and three rules wider than their code; then the nine decisions that let a school be carried, named and chosen |
+| 36 | [The five 奇門 owed](36-the-five-qimen-owed.md) | done — declares the five divergences dunjia decided in silence, in one movement, and refuses the one that is a licence to read rather than a rule for laying |
 
 ## The rest of the record
 

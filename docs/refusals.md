@@ -218,6 +218,37 @@ where two boards agree it is frequently one fact printed twice, and a model
 reading that as corroboration counts one datum as two with complete
 confidence.
 
+## The middle pair named by the matter
+
+*Asked by:* the school that says the names follow what is being divined.
+
+《奇門遁甲金鏡寶鑑》 pairs the fifth and sixth seats exactly as this engine does
+— 勾陳 with 白虎, 朱雀 with 玄武 — and then decides which of the two names a
+seat wears by **what is being asked**: 「如占病、占賊，則勾、雀二神可換虎、武用」,
+said once for each dun. It is on the shelf, it is in print, and it is not a
+value of `spirits`.
+
+**Because it is a licence to read and not a rule for laying.** The clause is
+permissive and its object is use — 可換…用 — and what it moves is a *name*: the
+two rings differ at two seats and in nothing else, same star, same gate, same
+stem, same palace. In this art the board is a function of the instant and the
+question enters at the 用神; a parameter that let the matter select a name would
+be that first interpretive act computed, and two boards of one hour would
+differ because somebody classified their own question.
+
+**And it would ask a reader to classify before seeing anything.** The tradition
+classifies after the board is up. The text names two matters as examples — 占病,
+占賊, introduced by 如 — and no source read here closes that list or gives a rule
+for a matter it does not name, so the categories such a parameter would range
+over do not exist to be shipped. `purposes.ts` is not them: those eight are the
+gates read from the other side, a bijection over 擇時 and not a taxonomy of what
+is being divined, and neither of the two attested matters resolves onto one of
+them.
+
+What travels instead is what travels for every other school's reading: the
+licence, named as that school's, where a reading is commissioned rather than
+computed. See `docs/readings.md`.
+
 ## Two schools of one art, in one reading
 
 *Asked by:* anyone who has just been given the choice.

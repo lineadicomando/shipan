@@ -173,6 +173,11 @@ dunjia's.**
 | `plate` | `zhuan` (轉盤 zhuànpán), `fei` (飛盤 fēipán) | `zhuan` |
 | `centreLodging` | `kun` (寄坤二), `dun` (陽遁寄二 · 陰遁寄八) | `kun` |
 | `system` | `shijia` (時家 shíjiā), later `rijia` (日家 rìjiā), `yuejia` (月家 yuèjiā), `nianjia` (年家 niánjiā) | `shijia` |
+| `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat) | `dun` |
+| `leap` | where 置閏 repeats its block — inside 置閏: `solstice` (芒種 or 大雪), `runyue` (閏月 rùnyuè, the term the year's leap month falls under) | `solstice` |
+| `strengths` | what 旺相休囚死 are read from: `season`, `star` | `season` |
+| `earth` | where earth's season begins: `quarters` (the four closing months entire), `eighteen` (their last eighteen days) | `quarters` |
+| `centreTravel` | whether the lodged stem and star go with their host: `stay`, `travel` | `stay` |
 
 `method` and `yuan` are the two most divisive and neither is optional. 茅山 has
 no reference at all and is refused.
@@ -262,6 +267,17 @@ with the rest of it. 《紫微斗數全書》 says nothing either way, which is
 precisely why it is a parameter — the year stem carries the 四化, 祿存, 天魁
 and 天鉞, so a birth in the weeks between the two lays out two different
 boards and only one of them can be printed.
+
+**奇門 owes five and they were paid together.** `spirits`, `leap`, `strengths`,
+`earth` and `centreTravel` were divergences the engine decided in silence: the
+naming of the middle pair, where 置閏 repeats its block, what the five states
+are read from, where earth's season begins, and whether the lodged stem and
+star travel. Four of them want a field in this board's input type, which is the
+breaking change this page opens by saying not to make late — so they were made
+in one movement rather than one at a time, each shipping with what the engine
+already computed and the other side declared and refused by name. Three of them
+— the states, the earth and the travelling centre — reach every cell of the
+answer, which is why they were the most expensive to leave unsaid.
 
 **`sihua` is the first value declared under the standard rather than under a
 reading of it.** What the shelf carries is one cell: 《紫微斗數全書》 gives 壬 its

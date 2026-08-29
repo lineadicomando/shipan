@@ -120,11 +120,12 @@ what `i18n.md` says about the vernaculars.
 
 ## What this phase does not settle
 
-The three divergences 奇門 owes — the naming of the 八神, where the 置閏 leap
-block goes, and which way the five seasonal relations are read — are one field
-carrying three values' worth of disagreement, and `ROADMAP.md` § 1 argues they
-are paid in one movement. They are the first large use of everything above and
-they are not in this phase.
+The divergences 奇門 owes — the naming of the 八神, where the 置閏 leap block
+goes, which way the five seasonal relations are read, where earth's season
+begins, whether the lodged stem and star travel — want a field apiece on one
+input type, and `ROADMAP.md` § 1 argues they are paid in one movement. They are
+the first large use of everything above and they are not in this phase. Phase 36
+is that movement.
 
 ## What landed
 

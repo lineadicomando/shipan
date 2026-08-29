@@ -1651,6 +1651,11 @@ export const en = {
   'notes.parameter.sihua': 'Which table of the four transformations.',
   'notes.parameter.huoling': 'How 火星 huǒxīng and 鈴星 língxīng are placed.',
   'notes.parameter.daxian': 'Where the first decade of the great limits opens.',
+  'notes.parameter.spirits': 'What names the fifth and sixth spirits.',
+  'notes.parameter.leap': 'Where 置閏 zhìrùn repeats its block.',
+  'notes.parameter.strengths': 'What the five seasonal states are read from.',
+  'notes.parameter.earth': 'Where earth’s season begins.',
+  'notes.parameter.centreTravel': 'Whether the lodged stem and star go with their host.',
   'notes.parameter.luckGranularity': 'How finely the distance to the term is counted.',
   'notes.parameter.count': 'How the years lived are counted.',
 

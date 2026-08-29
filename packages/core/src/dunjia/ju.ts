@@ -123,7 +123,7 @@ export function determineJu(moment: Moment, options: ChartOptions): Ju {
   // other branch rather than an error — which is how `yuan` came to answer an
   // unrecognised reading with the term's, silently. The method keeps its own
   // error code, which `CHART_PARAMETERS` records and this call honours.
-  requireImplemented(CHART_PARAMETERS, options, 'method', 'yuan');
+  requireImplemented(CHART_PARAMETERS, options, 'method', 'yuan', 'leap');
 
   const daysIntoTerm = moment.julianDayUT - moment.solarTerm.julianDayUT;
 

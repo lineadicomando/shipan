@@ -287,6 +287,54 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     ],
     default: 'zishi',
   },
+  spirits: {
+    board: 'qimen',
+    values: [
+      {
+        id: 'dun',
+        name: { hanzi: '陰陽異名', pinyin: 'yīnyángyìmíng' },
+        implemented: true,
+      },
+      { id: 'fixed', implemented: false },
+      { id: 'baihu', name: { hanzi: '白虎', pinyin: 'báihǔ' }, implemented: false },
+    ],
+    default: 'dun',
+  },
+  leap: {
+    board: 'qimen',
+    values: [
+      { id: 'solstice', implemented: true },
+      { id: 'runyue', name: { hanzi: '閏月', pinyin: 'rùnyuè' }, implemented: false },
+    ],
+    default: 'solstice',
+    // Inside 置閏 as `yuan` is inside 拆補: under 拆補 nothing is repeated, so
+    // there is no block to place and this decides nothing.
+    inside: { id: 'method', value: 'zhirun' },
+  },
+  strengths: {
+    board: 'qimen',
+    values: [
+      { id: 'season', implemented: true },
+      { id: 'star', implemented: false },
+    ],
+    default: 'season',
+  },
+  earth: {
+    board: 'qimen',
+    values: [
+      { id: 'quarters', implemented: true },
+      { id: 'eighteen', implemented: false },
+    ],
+    default: 'quarters',
+  },
+  centreTravel: {
+    board: 'qimen',
+    values: [
+      { id: 'stay', implemented: true },
+      { id: 'travel', implemented: false },
+    ],
+    default: 'stay',
+  },
   shensha: {
     board: 'almanac',
     values: [

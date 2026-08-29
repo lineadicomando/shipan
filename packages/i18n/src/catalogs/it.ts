@@ -1428,6 +1428,11 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.sihua': 'Quale tavola delle quattro trasformazioni.',
   'notes.parameter.huoling': 'Come si collocano 火星 huǒxīng e 鈴星 língxīng.',
   'notes.parameter.daxian': 'Dove si apre il primo decennio dei grandi limiti.',
+  'notes.parameter.spirits': 'Che cosa nomina il quinto e il sesto spirito.',
+  'notes.parameter.leap': 'Dove il 置閏 zhìrùn ripete il proprio blocco.',
+  'notes.parameter.strengths': 'Da che cosa si leggono i cinque stati stagionali.',
+  'notes.parameter.earth': 'Dove comincia la stagione della terra.',
+  'notes.parameter.centreTravel': 'Se lo stelo e la stella alloggiati vanno con il loro ospite.',
   'notes.parameter.luckGranularity': 'Con quale finezza si conta la distanza dal termine.',
   'notes.parameter.count': 'Come si contano gli anni vissuti.',
 

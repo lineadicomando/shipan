@@ -438,6 +438,30 @@ export function readOptions(params: URLSearchParams): ChartOptions {
   // different 神煞 under the same address, so the parameter has to travel in
   // the URL from before there is a second. The engine refuses anything else
   // with a 501 rather than quietly serving 協紀's.
+  // The five 奇門 owed, read strictly for the reason `method` is: a value this
+  // engine declares and does not compute must come back a 501 by name, and a
+  // value nobody declares must come back a 400. Falling through to the default
+  // would answer with a chart nobody asked for.
+  for (const [id, values] of [
+    ['spirits', ['dun', 'fixed', 'baihu']],
+    ['leap', ['solstice', 'runyue']],
+    ['strengths', ['season', 'star']],
+    ['earth', ['quarters', 'eighteen']],
+    ['centreTravel', ['stay', 'travel']],
+  ] as const) {
+    const asked = params.get(named('qimen', id));
+    if (asked === null) continue;
+    if (!(values as readonly string[]).includes(asked)) {
+      throw new ChartError('UNKNOWN_IDENTIFIER', {
+        parameter: named('qimen', id),
+        value: asked,
+      });
+    }
+    // The cast is the one `requireImplemented` makes for the same reason: the
+    // value has been checked against the declaration a line above.
+    (options as unknown as Record<string, unknown>)[id] = asked;
+  }
+
   // Bare, like the pillars' three and unlike a board's: the almanac is not a
   // board. It is a page a chart is read *against*, printed beside every one of
   // them, so its register belongs to no section in particular and collides
