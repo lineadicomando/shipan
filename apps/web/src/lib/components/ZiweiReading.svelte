@@ -157,6 +157,15 @@
                       >· {t(`label.transform.${seat.transform.id}` as MessageKey)}
                       <span class="glyph">{seat.transform.hanzi}</span></span
                     >{/if}
+                  <!-- The one cell on this board a school is standing on. It
+                       is marked on both sides of the divergence, never on the
+                       moved one alone, or the mark would be this engine
+                       calling its own default the plain reading. Which school
+                       is in force is under the board; this says where it
+                       lands. -->
+                  {#if seat.contested}<span class="qualifier parted"
+                      >· {t('label.contested')}</span
+                    >{/if}
                 </span>
               {/each}
             </td>
@@ -287,6 +296,11 @@
      seat, which is a thing this engine does not write. */
   .one { display: block; }
   .one + .one { margin-block-start: 0.15em; }
+
+  /* Where a school is standing, set apart from the book's own weighing beside
+   * it: a reader has to be able to tell a thing this board says from a thing
+   * a choice put here. */
+  .parted { font-style: italic; }
 
   /* A grade and a transformation are the book's own weighing and are set
      subordinate to the name they qualify — smaller and fainter — because they

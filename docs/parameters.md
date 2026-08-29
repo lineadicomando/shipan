@@ -213,7 +213,7 @@ almanac takes none of these at all. Both are below.
 | 太乙 | `ji` | which register the board is laid in: `nianji` (年計 niánjì), `yueji` (月計 yuèjì), `riji` (日計 rìjì), `shiji` (時計 shíjì) | `nianji` |
 | 太乙 | `yearBoundary` | where the counted year begins: `lichun` (立春 lìchūn), `dongzhi` (冬至 dōngzhì), `chunjie` (正月初一 zhēngyuèchūyī) | `lichun` |
 | 紫微斗數 | `leapMonth` | what a birth in an intercalary month counts as: `following` (the month after it, which is the book's), `current`, `split` | `following` |
-| 紫微斗數 | `sihua` | which table of the 四化: `quanshu` (《紫微斗數全書》 zǐwēidǒushùquánshū's own), later a lineage that has been read | `quanshu` |
+| 紫微斗數 | `sihua` | which table of the 四化: `quanshu` (《紫微斗數全書》 zǐwēidǒushùquánshū's own), `zuofu` (左輔 zuǒfǔ — that table with 壬's 科 moved, as two modern schools read it) | `quanshu` |
 | 紫微斗數 | `huoling` | how 火星 and 鈴星 are placed: `fixed` (a seat apiece from the year's triplicity, which is all 卷二 states), `hour` | `fixed` |
 | 紫微斗數 | `daxian` | where the first decade opens: `adjacent` (the palace beside the 命宮), `ming` (命宮 mìnggōng itself) | `adjacent` |
 | 紫微斗數 | `yearBoundary` | which reckoning gives the year its stem and branch: `lichun` (立春 lìchūn), `chunjie` (正月初一 zhēngyuèchūyī) | `chunjie` |
@@ -252,6 +252,18 @@ with the rest of it. 《紫微斗數全書》 says nothing either way, which is
 precisely why it is a parameter — the year stem carries the 四化, 祿存, 天魁
 and 天鉞, so a birth in the weeks between the two lays out two different
 boards and only one of them can be printed.
+
+**`sihua` is the first value declared under the standard rather than under a
+reading of it.** What the shelf carries is one cell: 《紫微斗數全書》 gives 壬 its
+科 to 天府 in both editions and the Ming recension agrees, where the 中州派
+manual prints 左輔 and a 北派 manual draws 左輔 twice in worked examples, one of
+them decidable on that reading alone. A lineage's whole ten stems was being
+asked for, and that is a completeness test rather than the one this page
+states: the board changes, two practitioners hold opposite sides, and the size
+of the disagreement is not a question. **It is named for the cell and not for
+either school**, because two of them hold it and neither's table is here — the
+`futou` precedent, where a value names the rule that parts two schools of 拆補
+rather than one of them.
 
 **`xiudu` gained `juxing`, and `gong` did not exist until the board was
 written.** Both are the same discovery arriving twice: the 宿度 and the 十二次

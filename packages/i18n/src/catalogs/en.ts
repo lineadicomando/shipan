@@ -1251,6 +1251,17 @@ export const en = {
   'form.pillars.yearBoundary.lichun': 'at 立春 lìchūn, where the solar year turns',
   'form.pillars.yearBoundary.chunjie':
     'at 正月初一 zhēngyuèchūyī, the first day of the lunar year',
+  // The 四化 sìhuà, and the first parameter here to carry a second school.
+  // The label names the table and the values name what parts them, because
+  // what parts them is one cell: 壬's 科 on 天府 or on 左輔.
+  // Where the declared tables part, marked on the seat it lands on. Both
+  // sides of the cell carry it: the default is a school like the other.
+  'label.contested': 'the schools part here',
+  'form.ziwei.sihua': 'The four transformations follow',
+  'form.ziwei.sihua.quanshu': '《紫微斗數全書》 zǐwēidǒushùquánshū, which gives 壬 rén its 科 kē to 天府 tiānfǔ',
+  'form.ziwei.sihua.zuofu': 'the reading two modern schools teach, which moves that 科 kē to 左輔 zuǒfǔ',
+  'form.ziwei.sihua.note':
+    'One cell of ten, and the whole of what the shelf attests: the 中州派 zhōngzhōupài manual prints it, and a 北派 běipài manual draws it twice in worked examples — against a reading both editions of the 《全書》 quánshū and the Ming recension carry. Everything else on the table is the book’s under either value.',
   'form.ziwei.yearBoundary': 'The year of this board begins',
   'form.ziwei.yearBoundary.lichun': 'at 立春 lìchūn, where the solar year turns',
   'form.ziwei.yearBoundary.chunjie':

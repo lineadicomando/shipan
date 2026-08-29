@@ -126,6 +126,23 @@ carrying three values' worth of disagreement, and `ROADMAP.md` § 1 argues they
 are paid in one movement. They are the first large use of everything above and
 they are not in this phase.
 
+## What landed
+
+`sihua: zuofu`, on the last step, which is the whole errand tested on one cell.
+《全書》 gives 壬 its 科 to 天府 in both editions and the Ming recension agrees;
+the 中州派 manual prints 左輔 and a 北派 manual draws it twice, one of the two
+worked examples decidable on that reading alone. The register had all of that
+and had written «not a value to declare», on a completeness test standing in
+for the one this project states. The evidence did not move. The criterion did.
+
+Two things it settled that no smaller case would have. It is **named for the
+cell** — `zuofu` — because two schools hold the reading and neither's ten stems
+are on the shelf, which is `yuan: futou` again: a value may name the rule that
+parts two schools rather than one of them. And the seat it lands on is **marked
+on both sides**: under `quanshu` it is 天府 that carries a contested 科 at 壬,
+under `zuofu` it is 左輔, and a mark on the moved one alone would have been this
+engine calling its own default the plain reading.
+
 ## The order
 
 The doctrine first, because the instructions are what this phase is for. Then

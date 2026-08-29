@@ -474,6 +474,17 @@ export function readZiweiOptions(params: URLSearchParams): ZiweiOptions {
   const gender = params.get('gender');
   if (gender === 'male' || gender === 'female') options.gender = gender;
 
+  const table = params.get(named('ziwei', 'sihua'));
+  if (table !== null) {
+    if (table !== 'quanshu' && table !== 'zuofu') {
+      throw new ChartError('UNKNOWN_IDENTIFIER', {
+        parameter: named('ziwei', 'sihua'),
+        value: table,
+      });
+    }
+    options.sihua = table;
+  }
+
   const cut = params.get(named('ziwei', 'yearBoundary'));
   if (cut !== null) {
     if (cut !== 'lichun' && cut !== 'chunjie') {

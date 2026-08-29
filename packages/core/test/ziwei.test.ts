@@ -575,3 +575,58 @@ describe('a leap month counts as the month after it', () => {
     expect(b.countedMonth).toBe(5);
   });
 });
+
+/**
+ * The second table, and the first value here named under the standard rather
+ * than under a reading of it.
+ *
+ * What the shelf carries is one cell — 壬's 科, on 天府 in both editions of
+ * 《全書》 and on 左輔 in the 中州派 manual and a 北派 one — and one cell is
+ * enough: the board changes, and two practitioners hold opposite sides of it.
+ * `docs/sources.md` argues it and `docs/parameters.md` § "What a school value
+ * must show" is the standard.
+ */
+describe('四化 — the table two modern schools move one cell of', () => {
+  const at = (sihua: 'quanshu' | 'zuofu') => board('1982-05-05', '14:30', { sihua });
+
+  const transformed = (laid: ZiweiBoard) =>
+    laid.palaces
+      .flatMap((palace) => palace.stars)
+      .filter((seat) => seat.transform)
+      .map((seat) => `${seat.star.id}:${seat.transform?.id ?? ''}`)
+      .sort();
+
+  it('moves 壬 science to 左輔 and leaves the other three where they were', () => {
+    const book = transformed(at('quanshu'));
+    const schools = transformed(at('zuofu'));
+
+    expect(book).toContain('tianfu:huake');
+    expect(schools).toContain('zuofu:huake');
+    expect(schools).not.toContain('tianfu:huake');
+    // Three of four untouched: this is that table with one cell moved.
+    expect(schools.filter((entry) => book.includes(entry))).toHaveLength(3);
+  });
+
+  it('marks the parted cell on both sides and nothing else', () => {
+    for (const sihua of ['quanshu', 'zuofu'] as const) {
+      const marked = at(sihua)
+        .palaces.flatMap((palace) => palace.stars)
+        .filter((seat) => seat.contested);
+
+      expect(marked).toHaveLength(1);
+      expect(marked[0]?.transform?.id).toBe('huake');
+      expect(marked[0]?.star.id).toBe(sihua === 'zuofu' ? 'zuofu' : 'tianfu');
+    }
+  });
+
+  it('marks nothing on a stem no table parts over', () => {
+    // Nine stems in ten: the value is declared, and on those boards it decides
+    // nothing and says nothing.
+    const laid = board('1984-05-05', '14:30');
+
+    expect(laid.yearPillar.hanzi.startsWith('壬')).toBe(false);
+    expect(laid.palaces.flatMap((palace) => palace.stars).some((seat) => seat.contested)).toBe(
+      false,
+    );
+  });
+});

@@ -248,9 +248,15 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'sihua',
     board: 'ziwei',
-    values: ['quanshu'],
-    implemented: ['quanshu'],
+    values: ['quanshu', 'zuofu'],
+    implemented: ['quanshu', 'zuofu'],
     fallback: 'quanshu',
+    label: 'form.ziwei.sihua',
+    says: {
+      quanshu: 'form.ziwei.sihua.quanshu',
+      zuofu: 'form.ziwei.sihua.zuofu',
+    },
+    notes: { zuofu: 'form.ziwei.sihua.note' },
   },
   {
     id: 'huoling',

@@ -1157,6 +1157,12 @@ export const it: Record<MessageKey, string> = {
   'form.pillars.yearBoundary.lichun': 'a 立春 lìchūn, dove gira l’anno solare',
   'form.pillars.yearBoundary.chunjie':
     'a 正月初一 zhēngyuèchūyī, il primo giorno dell’anno lunare',
+  'label.contested': 'qui le scuole divergono',
+  'form.ziwei.sihua': 'Le quattro trasformazioni seguono',
+  'form.ziwei.sihua.quanshu': 'il 《紫微斗數全書》 zǐwēidǒushùquánshū, che dà a 壬 rén il suo 科 kē a 天府 tiānfǔ',
+  'form.ziwei.sihua.zuofu': 'la lettura che insegnano due scuole moderne, che sposta quel 科 kē a 左輔 zuǒfǔ',
+  'form.ziwei.sihua.note':
+    'Una cella su dieci, ed è tutto ciò che lo scaffale attesta: il manuale 中州派 zhōngzhōupài la stampa, e un manuale 北派 běipài la traccia due volte in esempi svolti — contro una lettura che entrambe le edizioni del 《全書》 quánshū e la recensione Ming portano. Tutto il resto della tavola è quello del libro sotto l’uno o l’altro valore.',
   'form.ziwei.yearBoundary': 'L’anno di questa tavola comincia',
   'form.ziwei.yearBoundary.lichun': 'a 立春 lìchūn, dove gira l’anno solare',
   'form.ziwei.yearBoundary.chunjie':

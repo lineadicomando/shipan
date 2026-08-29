@@ -76,7 +76,14 @@ const READINGS: Readonly<Record<string, string>> = {
   卷二: 'juàn èr',
   湯若望: 'Tāng Ruòwàng',
   全集: 'quánjí',
+  全書: 'quánshū',
   捷覽: 'jiélǎn',
+  // The two lineages that move 壬's 科 to 左輔, named where a value of `sihua`
+  // is argued. Neither is a board this engine seats, so neither can be dug
+  // out of it — and a school named in prose is exactly what this list is for.
+  中州派: 'zhōngzhōupài',
+  北派: 'běipài',
+  科: 'kē',
   餘: 'yú',
   卜: 'bǔ',
   命: 'mìng',

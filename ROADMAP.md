@@ -53,35 +53,24 @@ that suite, and so does a refusal the engine gains and this table does not
 name. It is checked for the reason the counts are — a hand-kept list of what
 the code does is a list that drifts.
 
-**Two parameters carry one value and no second one to refuse.** That is a
+**One parameter carries one value and no second one to refuse.** That is a
 different state and not a lesser one: the divergence is declared, the engine
 says which reckoning it computes, and what the type does not yet carry is a
 *name* for the alternative. Declaring one belongs to the same errand as
 implementing it, since a value is declared when the engine is ready to refuse
 it by name — which is what 太乙's `ji` did when 卷一 was read.
 
-- 紫微斗數 `sihua` — 《紫微斗數全書》's own table. **The errand this was waiting
-  on is finished and it did not produce a second value**: two modern schools on
-  the shelf, the 中州派 manual and 北派, each move a single cell — 壬's 科 to
-  左輔 — and agree with the received table everywhere else. A lineage's own ten
-  stems is not what is there, so what would declare a second value is a
-  different find from the one that was being looked for.
-  **A third table has since been read and it does not change that shape**: the
-  Ming 南陽堂 recension moves one cell too, a different one, giving 庚's 科 to
-  天同 and its 忌 to 天相. Single cells moving is what this shelf keeps finding.
-  It raised the question of what a second value would be *named* for, and that
-  question is now answered: a school, never a recension — so the 南陽堂's 庚 is
-  a reading of 《全書》 that the register settles and not a value this parameter
-  will ever carry. See `docs/parameters.md` § "What is not a parameter".
-  **What has since changed is the criterion, and it reverses the first half of
-  this.** A lineage's whole ten stems was being asked for where the test is
-  whether two practitioners would draw different boards: 中州派 moves 壬's 科 to
-  左輔 and a reader who follows that lineage draws a different 紫微斗數 board
-  from this one. So the divergence owes a value, named for the school that
-  teaches it, and what such a value must show is attribution rather than a
-  second agreeing witness — `docs/parameters.md` § "What a school value must
-  show". The 南陽堂 reading is untouched by this: a recension is still not a
-  school.
+- ~~紫微斗數 `sihua`~~ — **landed on 2026-08-29, and it is the first value
+  declared under the standard rather than under a reading of it.** What the
+  shelf carries is one cell: 《全書》 gives 壬 its 科 to 天府 in both editions
+  and the Ming recension agrees, where the 中州派 manual prints 左輔 and a 北派
+  manual draws 左輔 twice in worked examples. A lineage's whole ten stems was
+  being asked for, which is a completeness test and not the one
+  `docs/parameters.md` states — the board changes, two practitioners hold
+  opposite sides, and the size of the disagreement is not one of the three
+  questions. It is named `zuofu`, for the cell and not for either school, since
+  two of them hold it and neither's table is here. The 南陽堂 reading is
+  untouched: a recension is still not a school.
 - 曆注 `shensha` — what 《協紀辨方書》 ratifies, until a named lineage has been.
 
 **And one divergence owes a parameter it does not have.** That is a third state
@@ -368,8 +357,8 @@ pages, image-only, twentieth-century school teaching. **Supporting a refusal is
 a first-class outcome of reading it**, not a consolation: the register already
 uses volume five's 《十八飛星策天紫微斗數全集》 to make the `daxian: ming`
 refusal firmer, and that is the shape the rest of the set is expected to take.
-Where it does not refuse, it names — 紫微斗數 `sihua` is waiting on a lineage
-that has been read, and a school manual is where a school's name lives.
+Where it does not refuse, it names — which is how 紫微斗數 `sihua` came by its
+second value, since a school manual is where a school's reading lives.
 
 The volumes that carry 紫微斗數 are the first, sixth, seventh and tenth. The
 rest of the set is 鐵版神數, 奇門易數, 邵子神數, 皇極天書 and 玄空金口訣 —
@@ -392,8 +381,13 @@ stretch belongs to which school is a thing the plates say: 庚's 忌 stands on
 北派》, 恭鑑老人 著. 北派's table has then been read across six stems, eleven
 cells, and every one of them is 《全書》's **except 壬's 科, which it puts on
 左輔** — the same single cell the 中州派 manual moves. Two modern schools moving
-one cell each is a smaller thing than a second table, and what would declare a
-second value is now a different find from the one that was being looked for.
+one cell each is a smaller thing than a second table, and it was written down
+here as not enough. **What was not enough was the criterion.** On 2026-08-29 it
+was settled that the test is the one `docs/parameters.md` states — the board
+changes, two practitioners hold opposite sides — and not whether a lineage
+brings a whole apparatus. `sihua: zuofu` was declared and computed the same
+day, named for the cell rather than for either school. So this errand landed
+after all, on the reading it had already produced.
 
 **第六冊 answered two of the other refusals and neither answer lands.** It
 prints `huoling: hour` whole at its p. 406 and `daxian: ming` whole at its

@@ -450,8 +450,27 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
   },
   sihua: {
     board: 'ziwei',
+    // The first value named under the standard rather than under the old
+    // reading of it: what the shelf carries is one cell, held by two modern
+    // schools against a reading both editions and the Ming recension print.
+    // A lineage's whole ten stems was being asked for where the test is
+    // whether two practitioners would draw different boards. See
+    // `docs/parameters.md` § "What a school value must show".
+    label: 'form.ziwei.sihua',
     values: [
-      { id: 'quanshu', name: { hanzi: '紫微斗數全書', pinyin: 'zǐwēidǒushùquánshū' }, implemented: true },
+      {
+        id: 'quanshu',
+        name: { hanzi: '紫微斗數全書', pinyin: 'zǐwēidǒushùquánshū' },
+        says: 'form.ziwei.sihua.quanshu',
+        implemented: true,
+      },
+      {
+        id: 'zuofu',
+        name: { hanzi: '左輔', pinyin: 'zuǒfǔ' },
+        says: 'form.ziwei.sihua.zuofu',
+        note: 'form.ziwei.sihua.note',
+        implemented: true,
+      },
     ],
     default: 'quanshu',
   },
