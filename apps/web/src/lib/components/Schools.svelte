@@ -64,14 +64,35 @@
    */
   .schools { margin-top: 1.4rem; font-size: 0.85rem; color: var(--faint); }
   h2 { margin: 0 0 0.4rem; font-size: 0.85rem; font-weight: 500; }
+  /*
+   * A rule under each pair, because the two columns are far apart.
+   *
+   * The first column is as wide as the longest question in it, and one of them
+   * is a whole clause — «when the chief and the chief's gate fall on the
+   * central palace, they are read» — so the short questions ended a third of
+   * the page short of their answers. Nothing but distance said which answer
+   * belonged to which, and there are six of them stacked.
+   *
+   * The calendar and the almanac beside this are the same two columns and get
+   * no rule: their terms are a word or two apiece, so the gap is a dozen pixels
+   * and the eye crosses it unaided. A rule is drawn where it is needed and not
+   * wherever the shape recurs.
+   *
+   * The cell is the tables' — `.reading` in `app.css` — so this reads as the
+   * last of the page's rows rather than as a different kind of object, and the
+   * column gap goes into that padding: two borders with a gap between them are
+   * two rules, and what is wanted here is one that crosses.
+   */
   dl {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 0.2rem 0.9rem;
     margin: 0;
   }
-  dt { margin: 0; }
-  dd { margin: 0; }
+  dt, dd {
+    margin: 0;
+    padding: 0.35rem 0.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
 
   /* It belongs on a sheet: the paper copy travels furthest from the page. */
   @media print {
