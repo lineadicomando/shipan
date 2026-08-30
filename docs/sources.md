@@ -1296,6 +1296,18 @@ What was missing was a second witness. Three copies of 遁甲演義 are held and
 of them are the same recension; a copy of a work is not a witness to it. One has
 since arrived and it contradicts; the note two paragraphs down says how.
 
+**The third copy has been opened, and it does the one thing a third copy can.**
+It is the 《四庫全書珍本初集》 reprint — 子部 術數類, the 提要 and then 卷一
+alone, closing on 遁甲演義卷一 — so it is the 四庫 recension again and adds no
+witness. What it retires is the risk that the reading below was a misreading:
+its 年家 leaf prints 「三元年遁，上元六十年以陰遁**一**局加之，中元六十年以陰遁
+**四**局加之，下元六十年以陰遁**七**局加之」, read at 600 dpi with each numeral
+cropped, character for character with the 四庫全書 scan and the Wikisource
+transcription. 四 against 七 is the whole of the divergence with 遁甲集成, and
+it is now read on two plates of the recension and one transcription of it.
+Collation, not discovery, which is what `docs/sources.md` § "What a second copy
+of one text buys" says it would be. 2026-08-30.
+
 **A second work treating the three has now been found, and whether it agrees
 is a separate question.** 《奇門闡秘前編》卷之三, in 《遁甲集成》第六冊 at its
 p. 3124, says the division outright — 「凡年月日家各有奇門，陰陽家稱為三奇帝
@@ -1947,6 +1959,23 @@ line is `purposes.ts`'s and falls in the same place.
 The **十二天將** carry five-phase assignments the tradition transmits, and the
 drawing leaves them in neutral ink for the reason this whole file exists: no
 source is registered for them here. They stay uncoloured until one is.
+
+**And 金口訣 is not this board, which the shelf keeps a book to be able to
+show.** 《官板大六壬神課金口訣》, 金陵經正堂校梓 — the 故宮珍本叢刊 facsimile,
+at least six juan over 192 woodblock pages — carries 大六壬 in its title and
+the twelve generals in its rings, and its own 入式訣歌 parts from this board in
+its second line: 「入式之法妙通玄，**月將加時方上傳**。更看何神同一位，**日干
+須用五子元**」. The 月將 laid on the hour is shared; what the transmission is
+taken from is not. This board builds four courses on the day's stem and branch
+and draws three transmissions out of them; the 金口訣 takes its reading off the
+**方** — the direction the querent is in or points at — and completes it with a
+人元 遁 from the day stem, giving **四位** and not 四課三傳: 「四位相生百事吉，
+內有刑剋憂患纏」, and 「主剋客兮來索物，客剋主兮客空還」. Its 目錄 numbers its
+own 法 past 第五十七 (論十二將所主) and its later juan are 六十甲子鈴, 入式吉凶,
+金英課墓, 內外景, 地形 and 開墳. **A rule read out of it into `liuren.ts` would
+be this engine compounding two arts in silence**, which is the same refusal the
+natal-Qimen graft is; the book is held so that the boundary can be shown rather
+than asserted. Read on the plate 2026-08-30.
 
 ### 《大六壬精解》, and the one refusal it moves
 
@@ -3510,6 +3539,36 @@ come from the text.
   unrelated**, and a reader meeting both is owed the sentence. `liuren.ts:114`
   names the second `label.yuejiang.taiyi`; the catalogs are namespaced and
   nothing collides.
+
+### A second 上元, and what it turns out not to change
+
+**A different origin is not a different board**, and one file on this shelf
+says so by arithmetic. 《祖傳年家太乙神數教材》 — a teaching handout, printed by
+高俊波 off an 「阴阳先生祖传手抄本」, thirty numbered pages in simplified
+characters, naming no text and no lineage — carries an 積年 table of its own:
+甲子 of 1864 at 10 155 781, 1924 at 10 155 841, 1984 at 10 155 901, 2044 at
+10 155 961. This engine counts from 《太乙金鏡式經》's 開元十二年甲子 and
+1 937 281, which for 2010 gives 1 938 567 where the handout gives 10 155 927.
+
+**The two differ by 8 217 360, which is 22 826 × 360 and also 342 390 × 24.**
+Everything either count takes 「以三百六十去之」 — the 太歲, the 紀 — and
+everything it takes mod twenty-four — 太乙's own seat, three years to a palace
+round eight of them — therefore comes out the same in both. The handout's
+worked example is the proof: 10 155 961 ÷ 24 = 423 165 remainder 1, 「則太乙就在
+乾宮為1」, which is what `compute_taiyi(2044)` prints, 乾 1 · 1/3. Its four 甲子
+years are labelled 四紀 · 五紀 · 六紀 · 一紀 and the engine's era numbers for
+them are 4, 5, 6, 1. So an 上元積年 is a **choice of origin constrained to be
+congruent**, and two traditions eight million years apart lay one board.
+
+**Where it parts is the counting, and it parts as a different school and not
+as a variant.** Its 2010 board prints 主算 32 and 客算 32 where this engine
+computes 35 and 34, and a third count beside them the 金鏡式經 has no name for;
+its palaces carry 值符太乙, 定目, 定大將, 定參將 and a 直基 · 題基 · 民基 where
+the 金鏡 has 文昌, 始擊, 主大將, 客大將 and 君基 · 臣基 · 民基. 值符太乙 is a
+body 卷五 does place, on the ring of twelve this engine does not draw. A
+handout naming no source cannot contradict a text, so **nothing moves**: 大將
+and 參將 stay at rung 5, on 卷一, 卷六 and 卷九's worked boards, and this file
+is not a witness. Read on the plate 2026-08-30.
 
 ### What is not here
 

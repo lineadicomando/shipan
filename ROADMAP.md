@@ -34,16 +34,17 @@ one of them.
 | | | |
 |---|---|---|
 | **A shape in the engine** | `centreTravel: travel` — the only refused value not short of a witness. Both sides are in Qing print and the 金鏡寶鑑 side checks itself over 120 collated cells; what it asks is that a palace be able to carry two stems and two stars, since a centre that travels arrives somewhere already occupied | § 1 |
-| **A source that is not on this shelf** | every other value in the table below. Each is written against in § 1 or `docs/refusals.md`, and none of them is waiting on a file somebody could open today. Two are acquisitions with a named object: a 授時 lodge table that prints 參, and an epoch for 紫氣 | § 1, and phase 4 of § 2 |
+| **A source that is not on this shelf** | every other value in the table below. Each is written against in § 1 or `docs/refusals.md`, and **none of them is waiting on a file somebody could open today** — which is now a statement and not an estimate, the last unread scan having been opened on 2026-08-30. Two are acquisitions with a named object: a 授時 lodge table that prints 參, and an epoch for 紫氣 | § 1 |
 
 **There was a third bucket and it is empty.** The two plates nobody had read
 were read on 2026-08-30: 第一冊 confirms the 庚 line a fourth time and states
 nothing this engine did not already carry, and 第十冊 turned out not to be a
 紫微斗數 book at all. Neither stood under a value in § 1 and neither does now.
 
-**Nothing in § 2 is blocking anything.** Phases 1, 2 and 3 are closed, and
-phase 4 is read on demand. An unread scan costs nothing until somebody claims
-it says something.
+**§ 2 is closed.** All four phases are, and the reading it describes is
+finished: every photographic file on the shelf has been opened and said what it
+is. What that leaves § 2 as is a record of how the shelf was read and what the
+reading cost, which is why it is still here.
 
 ## 1. Parameters that are declared and refused
 
@@ -199,6 +200,13 @@ OCR pass made something over ten thousand book-pages searchable — the sheet
 count is lower, since several of those files carry two book-pages to the sheet.
 A handful have since been read, and the register says which. The rest is a way
 of finding a page and nothing more.
+
+**All four phases are finished, and the last file was opened on 2026-08-30.**
+What that means is narrow and worth stating plainly: every photographic file
+here has been opened far enough to say what it is, and what each establishes —
+including the ones that establish nothing — is written up. It does not mean the
+shelf has been *read*: most of these books are hundreds of woodblock pages and
+what has been read of them is the sections a question was put to.
 
 **A phase is finished by the register, not by the extract.** An OCR run that
 leaves a `.txt` nobody has read moves nothing: a file is not a source until
@@ -437,10 +445,12 @@ names have paid, and it is why the estimate that opened this phase — 528 pages
 of woodblock to adjudicate eight lines — was wrong by an order of magnitude in
 the cheap direction.
 
-### Phase 4 — the remainder, read behind no citation
+### Phase 4 — the remainder, and what it turned out to hold
 
-The third 遁甲演義 scan, 大六壬神課金口訣 and 祖傳年家太乙神數. They are read
-when a phase above sends somebody to them, or not at all.
+**This list is empty.** It held six files read behind no citation; all six
+have now been opened, and what each turned out to be is below. The rule it was
+written for stands — an unread scan costs nothing until somebody claims it says
+something — and the shelf simply no longer has one that nobody has looked at.
 
 **Two of them stopped belonging here, which is what this list is for.**
 
@@ -505,6 +515,32 @@ boundary is 卷三 and 卷七 rather than «what the 協紀 ratifies», the para
 says so in its own words, and what would carry 卷八 is entering twenty-four
 tables and their tests — work, not a text, and owed to no refusal.
 `docs/sources.md` § 義例五 and 義例六 is the argument.
+
+**The last three were opened on 2026-08-30 and none of them is a source.**
+
+《祖傳年家太乙神數》 is not the manuscript it was filed as: it is
+《祖傳年家太乙神數教材》, a teaching handout printed by 高俊波 off an
+「阴阳先生祖传手抄本」, thirty numbered pages in simplified characters, naming no
+text and no lineage. It cannot be the second witness 大將 and 參將 want, and
+they stay at rung 5. **What it is good for is one piece of arithmetic**: its
+積年 differs from 《太乙金鏡式經》's by 8 217 360, an exact multiple of both 360
+and 24, so its worked 2044 board — 「則太乙就在乾宮為1」 — is `compute_taiyi`'s
+乾 1 · 1/3 exactly. A different 上元 is not a different board. Where it parts is
+the counting, and it parts as a different school: 主算 32 and 客算 32 for 2010
+against 35 and 34, with a vocabulary the 金鏡 does not use.
+
+《官板大六壬神課金口訣》 is the boundary marker the shelf holds it as, and now
+the boundary can be shown instead of asserted. Its 入式訣歌 reads 「入式之法妙通
+玄，月將加時方上傳。更看何神同一位，日干須用五子元」 — the 月將 on the hour is
+shared with 六壬 and everything after it is not: the reading is taken off the
+**方**, the direction, and completed by a 人元 遁 from the day stem, giving
+四位 and not 四課三傳.
+
+The third 遁甲演義 scan is the 《四庫全書珍本初集》 reprint of the 四庫 recension,
+卷一 alone — a copy and not a witness, as the register already said. It does the
+one thing a copy can: its 年家 leaf reads 一 · 四 · 七 at 600 dpi with each
+numeral cropped, so the 四 that the 遁甲集成 divergence turns on is now read on
+two plates and one transcription.
 
 ## 3. Spanish, once the engine has stopped moving
 

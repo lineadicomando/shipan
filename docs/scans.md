@@ -240,6 +240,7 @@ first six of them while this page was being written:
 | 《奇門遁甲秘笈大全》, 故宮珍本叢刊 第427冊 | that work in 二十三卷, and then a second the entry did not name: 《諸葛武侯行兵遁甲金函玉鏡》 in 六卷, a cursive manuscript hand |
 | 《遁甲集成》第三冊, «奇門遁甲» | 遁甲符應經 from its p. 1136, and 年家 · 月家 · 日家 tables under no title leaf, dated to the Kangxi reign |
 | 《中國絕學》第十冊, three works, one of them 紫微斗數 | 《邵子易數講義》, 郭懿雲 講演, in eleven chapters and an 附錄, and no 紫微斗數 in it at all. Here the set's *own* 目錄 was the thing that was wrong, which is the failure one file down from the record page |
+| 《祖傳年家太乙神數》, «a manuscript or private transmission» | 《祖傳年家太乙神數教材》 — a modern teaching handout, photocopied off a handwritten notebook and printed by a named person, in simplified characters, with worked examples for 1984, 2010 and 2044 |
 | 《中國絕學》第一冊, handwriting no model reads | handwriting for seven eighths of it and movable type for the first, and the typeset eighth carries the 目錄 that navigates the rest |
 
 **A book's own 目錄 is a witness to it and can be wrong about it**, which is
