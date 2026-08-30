@@ -60,11 +60,18 @@
   somebody else has to say what was asked, or it is a chart of nothing.
 -->
 <script lang="ts">
+  import Choice from '$lib/components/Choice.svelte';
   import Named from '$lib/components/Named.svelte';
   import { replaceState } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { INSTRUMENTS, instrumentOf, type Instrument, type InstrumentId } from '$lib/instruments';
+  import {
+    INSTRUMENTS,
+    genderValues,
+    instrumentOf,
+    type Instrument,
+    type InstrumentId,
+  } from '$lib/instruments';
   import { momentQuery, sayFailure, sayPlace, type Failure, type MomentInput } from '$lib/moment';
   import BaziReading from '$lib/components/BaziReading.svelte';
   import ChartReading from '$lib/components/ChartReading.svelte';
@@ -997,17 +1004,29 @@
               {t('consult.birthDate')}
               <!-- What the browser knows to fill in, if it is this reader's own
                    birth and they have told it once. -->
-              <input type="date" autocomplete="bday" bind:value={born} />
+              <input
+                type="date"
+                autocomplete="bday"
+                bind:value={born}
+                aria-describedby="birthNote"
+              />
             </label>
-            <label class="birthField">
-              <Named text={t('consult.birthGender')} />
-              <select bind:value={gender} disabled={!born}>
-                <option value="">{t('form.gender.unset')}</option>
-                <option value="male">{t('form.gender.male')}</option>
-                <option value="female">{t('form.gender.female')}</option>
-              </select>
-            </label>
-            <p class="note"><Named text={t('consult.birthNote')} /></p>
+            <!-- Refused until there is a birth for it to be the sex of: a
+                 direction the 行年 counts in, with nothing to count from, is a
+                 field that can only be answered wrongly. The whole group at
+                 once, which is what a `fieldset` carries. -->
+            <Choice
+              ask={t('consult.birthGender')}
+              values={genderValues(t)}
+              chosen={gender}
+              onchoose={(value) => (gender = value)}
+              disabled={!born}
+            />
+            <!-- The group's note and not the sex's, which is why it stands
+                 under both fields rather than inside the second: what it says
+                 is what a birth adds to a chart cast for another instant. The
+                 date carries it, the sex being answered by its own question. -->
+            <p class="note" id="birthNote"><Named text={t('consult.birthNote')} /></p>
             {/if}
           {/snippet}
         </MomentForm>
@@ -1023,14 +1042,12 @@
           field sits when dunjia reads it for a 行年. See `sentGender`.
         -->
         {#if laidOnABirth && instrument.takesGender}
-          <label class="birthField">
-            {t('form.gender')}
-            <select bind:value={gender}>
-              <option value="">{t('form.gender.unset')}</option>
-              <option value="male">{t('form.gender.male')}</option>
-              <option value="female">{t('form.gender.female')}</option>
-            </select>
-          </label>
+          <Choice
+            ask={t('form.gender')}
+            values={genderValues(t)}
+            chosen={gender}
+            onchoose={(value) => (gender = value)}
+          />
         {/if}
 
         <!--
@@ -1302,11 +1319,13 @@
      instrument reads as the page having moved rather than the answer having.
      They share the measure and the axis; what is centred is the picture, and
      the words under it stay left-aligned inside themselves. */
-  /* The birth, rendered inside the options of `MomentForm`. A snippet is
-     styled where it is written, so its two fields are dressed here to match
-     the ones it stands among. What names the group is the `legend` over
-     there, which is a heading to a screen reader where a paragraph in bold
-     would have been a paragraph. */
+  /* The date this page asks for beyond the moment — a birth under 卜, a year
+     under 天 — rendered inside the options of `MomentForm`. A snippet is
+     styled where it is written, so the field is dressed here to match the
+     ones it stands among; the sex beside it is a `Choice` and carries its
+     own. What names the group is the `legend` over there, which is a heading
+     to a screen reader where a paragraph in bold would have been a
+     paragraph. */
   .birthField { display: grid; gap: 0.2rem; font-size: 0.9em; color: var(--faint); max-width: 26rem; }
   /* Eight characters go in it. The width of the same field in every other
      form on this site, and not the width of the sentence over it. */

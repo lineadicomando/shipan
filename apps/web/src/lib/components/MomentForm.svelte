@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Choice from './Choice.svelte';
   import Named from './Named.svelte';
   import type { Snippet } from 'svelte';
   import type { MessageKey, Translator } from '@shipan/i18n';
@@ -163,58 +164,25 @@
 {/snippet}
 
 <!--
-  One divergence, asked as the choice it is.
-
-  **Radios and not a list to drop down.** What each value says here is a
-  clause of doctrine — which palace the pair is read in, which book names the
-  fifth spirit — and a `select` shows one of them at a time, cut at the width
-  of the control: the reader was choosing between two sentences of which they
-  could see the first forty characters. Set out, every option is readable
-  before the reader moves anything, and the one in force is readable without
-  opening a menu.
-
-  The instrument chooser on the consultation made the same move for the same
-  reason and is the argument at length — see `/[lang]/+page.svelte`, where six
-  descriptions had to be readable side by side to be weighed. These are two or
-  three apiece and stay a column, cards being what six of them wanted.
-
-  **The sentence is the legend and the options finish it.** «The ju is
-  determined» + «by thirds of the term» is one sentence cut in two, and a
-  `legend` is what a screen reader says before every radio under it, so it
-  comes out as that sentence either way.
+  One divergence, handed to the control every choice on this site is asked
+  with. What is read off the row is the question, the values, and the note
+  standing under the one in force; the rest is `Choice`, where the argument
+  for radios and for the question being a `legend` is written.
 -->
 {#snippet divergence(row: Divergence)}
   {@const name = wire(row)}
   {@const value = chosen[name] ?? row.fallback}
   {@const note = row.notes?.[value]}
-  <fieldset class="choice">
-    <legend class="asks"><Named text={t(row.label!)} /></legend>
-    <div class="choices">
-      {#each Object.entries(row.says!) as [option, said] (option)}
-        <label class="check">
-          <input
-            type="radio"
-            name="{uid}-{name}"
-            value={option}
-            checked={value === option}
-            onchange={() => (chosen = { ...chosen, [name]: option })}
-            aria-describedby={note ? `${uid}-${name}-note` : undefined}
-          />
-          <!-- A span, because the sentence is several elements once a name
-               in it is set in its own face, and the flex box either side of
-               this would lay each of them out as a column of its own. -->
-          <span><Named text={t(said)} /></span>
-        </label>
-      {/each}
-    </div>
-    <!-- What standing on that value does, tied to the radios rather than left
-         beside them: read out with the choice it is about. -->
-    {#if note}
-      <p class="note" id="{uid}-{name}-note">
-        <Named text={t(note, { [row.id]: value })} />
-      </p>
-    {/if}
-  </fieldset>
+  <Choice
+    ask={t(row.label!)}
+    values={Object.entries(row.says!).map(([option, said]) => ({
+      value: option,
+      said: t(said),
+    }))}
+    chosen={value}
+    onchoose={(option) => (chosen = { ...chosen, [name]: option })}
+    note={note ? t(note, { [row.id]: value }) : undefined}
+  />
 {/snippet}
 
 <!--
@@ -386,20 +354,11 @@
   .row > :global(*) { align-self: start; }
   label { display: grid; gap: 0.2rem; font-size: 0.9em; color: var(--faint); }
   label :global(input) { color: var(--ink); }
-  /*
-   * A control and the words beside it, on one line where they fit and wrapped
-   * under themselves where they do not.
-   *
-   * `start` rather than `center`, which is what an option of three lines asks
-   * for: centred against a paragraph, the radio floated to the middle of it
-   * and stopped reading as the mark of the line it opens. The nudge under it
-   * is the difference between the top of a box and the top of a lowercase
-   * letter beside it.
-   */
+  /* The one divergence that is a checkbox, dressed like an answer inside a
+     `Choice` so that the group it stands at the head of reads as one list.
+     `start` for the same reason: the words may take two lines. */
   .check { display: flex; gap: 0.45rem; align-items: start; }
   .check input { margin-block-start: 0.2em; }
-  /* What is chosen, in the ink: the question is asked in the grey above it,
-     and the answer is the part of this the reader is deciding between. */
   .check span { color: var(--ink); }
   summary { cursor: pointer; color: var(--faint); font-size: 0.85em; }
   details { display: grid; gap: 0.6rem; }
@@ -407,33 +366,6 @@
      can come back from, however wide the panel is. */
   details label:not(.check) { max-width: 26rem; }
   .note { margin: 0; color: var(--faint); font-size: 0.8em; max-width: 42rem; }
-
-  /*
-   * One divergence: the question, the values under it, and the note last.
-   *
-   * A `fieldset` and not a `div`, because a set of radios that share a
-   * question is exactly what the element is for — and it is the `legend` that
-   * carries that question into what a screen reader says before each of them.
-   * Bounded at a measure a sentence can be read at: these run to a clause of
-   * doctrine and a book's title, and the panel is wider than any of them wants.
-   */
-  .choice { max-width: 38rem; }
-  /* On top of the stack's own gap, and small because of it: the choices want
-     to be a step further apart than two radios of one question, not a step
-     further apart than the groups they sit in. */
-  .choice + .choice { margin-top: 0.3rem; }
-  .choices { display: grid; gap: 0.35rem; }
-  /* The question, set like the label it replaced rather than like the name of
-     a group: it is one line inside a group that already has a name. */
-  .asks {
-    padding: 0 0 0.3rem;
-    font-size: 0.9em;
-    font-weight: normal;
-    color: var(--faint);
-  }
-  /* Under the values it belongs to, and indented past the radios: a paragraph
-     starting where the choices start reads as another choice. */
-  .choice .note { margin-top: 0.35rem; margin-inline-start: 1.4rem; }
 
   /* A link and not a block: it undoes a detour, it does not submit anything,
      and a filled button under the fields would outrank the one that asks. */

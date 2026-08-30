@@ -1,4 +1,4 @@
-import type { MessageKey } from '@shipan/i18n';
+import type { MessageKey, Translator } from '@shipan/i18n';
 
 /**
  * The instruments a consultation can be laid on, and everything that turns
@@ -351,6 +351,27 @@ export function instrumentOf(id: InstrumentId): Instrument {
  * A section that is not an instrument — the consultation, choosing a time —
  * gets `false`, which is the safe side: it holds its own setup already.
  */
+/**
+ * What the sex field offers, in the reader's language.
+ *
+ * Written once and read by all four places that ask — the two on the
+ * consultation, and 八字's and 紫微斗數's own sections — because the same three
+ * values written out four times is three chances for one of them to be
+ * spelled differently from the others. Not given leads and is a value like the
+ * two under it: a board laid without it is a board with no 大運 on it, which
+ * is an answer rather than a field left blank.
+ *
+ * `Choice` is what draws them, and takes finished prose: the keys stay written
+ * out here where `catalog-keys.test.ts` can read them.
+ */
+export function genderValues(t: Translator): { value: string; said: string }[] {
+  return [
+    { value: '', said: t('form.gender.unset') },
+    { value: 'male', said: t('form.gender.male') },
+    { value: 'female', said: t('form.gender.female') },
+  ];
+}
+
 export function genderBelongsToBoard(section: string): boolean {
   const instrument = INSTRUMENTS.find((candidate) => candidate.id === section);
   return instrument !== undefined && instrument.takesGender && !instrument.takesBirth;

@@ -9,8 +9,10 @@
   import ZiweiReading from '$lib/components/ZiweiReading.svelte';
   import { ziweiSeatBoxes } from '@shipan/plate';
   import FormPanel from '$lib/components/FormPanel.svelte';
+  import Choice from '$lib/components/Choice.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
+  import { genderValues } from '$lib/instruments';
   import Takeaway from '$lib/components/Takeaway.svelte';
 
   let { data } = $props();
@@ -209,16 +211,14 @@
       bind:chosen={asked.chosen}
       board="ziwei"
     />
-    <label>
-      <!-- Asked for, never assumed: only the 大限, the 小限 and the two rings
-           of twelve read it, and without it the seats are complete. -->
-      {t('form.gender')}
-      <select bind:value={gender}>
-        <option value="">{t('form.gender.unset')}</option>
-        <option value="male">{t('form.gender.male')}</option>
-        <option value="female">{t('form.gender.female')}</option>
-      </select>
-    </label>
+    <!-- Asked for, never assumed: only the 大限, the 小限 and the two rings of
+         twelve read it, and without it the seats are complete. -->
+    <Choice
+      ask={t('form.gender')}
+      values={genderValues(t)}
+      chosen={gender}
+      onchoose={(value) => (gender = value)}
+    />
     <SubmitButton {t} label="cli.heading.reading" {busy} {needed} />
   {/snippet}
   {#snippet controls()}
@@ -324,10 +324,9 @@
      that markup went: a style left behind here would be one nobody could find
      from the thing it styles. */
 
-  /* The one field the board asks for beyond the moment. Bounded: a `select`
-     of three words does not become clearer for being a panel wide. */
-  label { display: grid; gap: 0.3rem; max-width: 14rem; }
-  select { font: inherit; padding: 0.35rem 0.4rem; }
+  /* The one field the board asks for beyond the moment is a `Choice` now, and
+     dressed there: it is the same control the options are asked with, and a
+     copy of its measure here would be the one that drifts. */
 
   .failure { color: var(--warn); }
 

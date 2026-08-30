@@ -5,12 +5,14 @@
   import BaziReading from '$lib/components/BaziReading.svelte';
   import CalendarAndAlmanac from '$lib/components/CalendarAndAlmanac.svelte';
   import FormPanel from '$lib/components/FormPanel.svelte';
+  import Choice from '$lib/components/Choice.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import Schools from '$lib/components/Schools.svelte';
   import PillarPlate from '$lib/components/PillarPlate.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
+  import { genderValues } from '$lib/instruments';
   import Takeaway from '$lib/components/Takeaway.svelte';
 
   let { data } = $props();
@@ -112,16 +114,14 @@
       bind:chosen={asked.chosen}
       board="bazi"
     />
-    <label>
-      <!-- Asked for, never assumed: only the direction of the cycles needs
-           it, and the label says so rather than leaving it to be guessed. -->
-      {t('form.gender')}
-      <select bind:value={gender}>
-        <option value="">{t('form.gender.unset')}</option>
-        <option value="male">{t('form.gender.male')}</option>
-        <option value="female">{t('form.gender.female')}</option>
-      </select>
-    </label>
+    <!-- Asked for, never assumed: only the direction of the cycles needs it,
+         and the question says so rather than leaving it to be guessed. -->
+    <Choice
+      ask={t('form.gender')}
+      values={genderValues(t)}
+      chosen={gender}
+      onchoose={(value) => (gender = value)}
+    />
     <SubmitButton {t} label="cli.heading.reading" {busy} {needed} />
   {/snippet}
   {#snippet controls()}
@@ -177,10 +177,9 @@
   /* What is read *off* the pillars is dressed in `BaziReading`, which is where
      that markup went: a style left behind here would be one nobody could find
      from the thing it styles. */
-  /* The one field the pillars ask for beyond the moment. Bounded: a `select`
-     of three words does not become clearer for being a panel wide. */
-  label { display: grid; gap: 0.2rem; font-size: 0.9em; color: var(--faint); max-width: 26rem; }
-  label :global(select) { color: var(--ink); }
+  /* The one field the pillars ask for beyond the moment is a `Choice` now,
+     and dressed there: it is the same control the options are asked with, and
+     a copy of its measure here would be the one that drifts. */
   /* The reading's own measure, named again here because the calendar under it
      is a component and takes the width it is handed. `BaziReading` holds the
      other copy; they are one axis and have to move together. */
