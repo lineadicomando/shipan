@@ -212,6 +212,14 @@ the engine falls back to Moshier, which needs no files.
   the written half and stays short for the reason that half always does: every
   line doubles with every vernacular. Held to the addresses in both directions
   by a test. → [`docs/architecture.md`](docs/architecture.md)
+- **A section page has two measures: the board's and the page's.** The drawing
+  is centred at `--board`, and its caption with it; everything read off it —
+  the tables, the notes, the line naming the schools — runs wall to wall at the
+  page's own, which is `.reading` in `app.css` and carries the dressing of
+  those tables with it. A reading that invents a measure of its own is a fourth
+  left margin nobody can line anything up against. Slack in a table goes to one
+  column and is never shared out among them. →
+  [`docs/architecture.md`](docs/architecture.md)
 - **A chart prints, and paper is the fourth appearance** — not light, which is
   a paper-*coloured* screen. Each component says whether it belongs on a
   sheet, and the drawn board is the exception CSS cannot reach. →

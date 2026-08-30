@@ -41,7 +41,7 @@
   const gendered = $derived(board.palaces.some((palace) => palace.majorLimit !== null));
 </script>
 
-<div class="words">
+<div class="reading">
   <p class="caption">
     {t('cli.field.bureau')}:
     <strong>{t(`label.bureau.${board.bureau.id}` as MessageKey)}</strong>
@@ -70,11 +70,11 @@
     <table class="seats">
       <thead>
         <tr>
-          <th>{t('cli.column.seat')}</th>
-          <th>{t('cli.column.ground')}</th>
-          <th>{t('cli.column.starsThere')}</th>
-          <th>{t('cli.column.rings')}</th>
-          {#if gendered}<th>{t('cli.column.limit')}</th>{/if}
+          <th scope="col">{t('cli.column.seat')}</th>
+          <th scope="col">{t('cli.column.ground')}</th>
+          <th scope="col">{t('cli.column.starsThere')}</th>
+          <th scope="col">{t('cli.column.rings')}</th>
+          {#if gendered}<th scope="col">{t('cli.column.limit')}</th>{/if}
         </tr>
       </thead>
       <tbody>
@@ -197,11 +197,10 @@
 
   <!-- The lunar calendar this board is counted on, without the almanac: 曆注
        weighs a day as the occasion of an undertaking, and a birth is not one.
-       The same rule the pillars keep. Held at the reading measure, because it
-       is prose and the component carries no measure of its own. -->
-  <div class="prose">
-    <CalendarAndAlmanac {moment} {t} almanac={false} />
-  </div>
+       The same rule the pillars keep. It carries no measure of its own and
+       takes the one it is handed, which here is the reading's, which is the
+       page's. -->
+  <CalendarAndAlmanac {moment} {t} almanac={false} />
 
   <!-- Which book every placement above came out of, and where its tables part
        from the modern ones. Said where a reader is looking at the seats,
@@ -210,27 +209,19 @@
 </div>
 
 <style>
-  h2 { font-size: 1em; font-weight: 500; margin: 1.6rem 0 0.5rem; }
   /*
-   * Two measures, and the table gets the wider one.
+   * The measure, the cells, the heading, the caption and the note are
+   * `.reading` in `app.css`, and the frame a wide table slides in is
+   * `.scroller` beside it.
    *
-   * Prose wants a reading measure and a table wants the room its columns ask
-   * for, and this table asks for more than any other on the site: five
-   * columns, each carrying a word, a name and a reading. At 44rem it was
-   * cramped under a drawing half again as wide, which looked like the table
-   * had been forgotten. So the block takes the board's own measure and the
-   * prose inside it keeps 44rem — the caption, the two masters, the calendar
-   * and the note, which are sentences and not columns.
+   * This block used to carry three measures of its own — the board's for the
+   * table, 44rem for the caption, the masters and the note, and the second one
+   * again for the calendar — each centred inside the one above it, so a reader
+   * met three left edges inside one reading and none of them was the page's.
+   * The widest table on the site is what the middle one was bought for; at the
+   * page's own measure it has more room than either gave it.
    */
-  .words {
-    inline-size: var(--board);
-    max-inline-size: 100%;
-    margin-inline: auto;
-  }
-  .caption, .masters, .prose, .note { max-inline-size: 44rem; margin-inline: auto; }
-  .caption { margin: 0 0 1rem; }
   .glyph { color: var(--faint); font-size: 0.85em; }
-  .note { color: var(--faint); font-size: 0.85em; margin: 0.6rem 0 0; }
 
   .masters {
     display: grid;
@@ -269,15 +260,9 @@
   .masters dt { color: var(--faint); font-size: 0.85em; }
   .masters dd { margin: 0; }
 
-  .scroller { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; }
-  th, td {
-    text-align: left;
-    padding: 0.3rem 0.6rem;
-    border-bottom: 1px solid var(--rule);
-    vertical-align: baseline;
-  }
-  thead th { color: var(--faint); font-weight: 400; font-size: 0.85em; }
+  /* The two cells that hold one short thing each, in a table where the other
+     three may hold eleven names: this is the exception here, and wrapping is
+     the rule — see the two columns further down. */
   .ground, .limit { white-space: nowrap; }
   .limit { font-variant-numeric: tabular-nums; }
 
@@ -288,8 +273,24 @@
   /* Trimmed by a rem and a half between them when the seat's column grew to
      hold the mark: the table fits its measure at a desk width, and a table
      that spills is a table whose last column somebody never finds. */
-  .counted { min-width: 15rem; }
-  .rings { min-width: 8.5rem; }
+  .counted { min-inline-size: 15rem; }
+  .rings { min-inline-size: 8.5rem; }
+  /*
+   * The slack goes where it can be used, which on this table is not the end
+   * of it.
+   *
+   * `.reading` gives it to the last column, because on most tables the last
+   * column is the one holding a phrase and the ones before it hold a name
+   * apiece. Here the last is a decade — two years and a dash, tabular, the
+   * same width on every row — and the column that wants room is the third,
+   * where eleven names can stand in one seat and wrap four times over trying.
+   * Given to that one the table is a third shorter and nothing moves sideways.
+   */
+  .counted { inline-size: 100%; }
+  /* Named from the table down, for the reason `PalaceTable` names its own:
+     what this undoes is `.reading`'s, and a class on the table is one more
+     than that rule has. */
+  .seats .limit { inline-size: auto; }
 
   /* One named thing to a line. Down a column of eleven, a line each is what
      makes them countable; run together they read as a sentence about the
@@ -342,11 +343,7 @@
     tbody tr, tbody tr.found { transition: none; }
   }
 
-  /* On paper the table gives up its scrolling frame, as every other table
-     here does: one that still clipped would print three seats of twelve and
-     give no sign of the other nine. */
   @media print {
-    .scroller { overflow: visible; }
     /* A mark that says "you pressed here" is about a gesture, and no gesture
        reaches a sheet of paper. */
     tbody tr.found { background-color: transparent; }

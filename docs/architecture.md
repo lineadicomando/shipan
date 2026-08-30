@@ -126,6 +126,43 @@ and therefore keeps `/[lang]` — the root of a language. `/[lang]/consult` is
 the *name* of that section rather than a second address for it, and redirects
 there carrying the setup.
 
+## Two measures on a section page, and no more
+
+The drawing has one of its own and everything read off it has the page's.
+
+`--board` in `app.css` is the first: a picture as wide as the column allows,
+bounded by the window's own height, less a tenth so it does not touch the
+walls. Five sections draw a board at it and the sixth sets the four pillars out
+as a grid at the same width, so a reader who lays one board and then another
+watches nothing resize under an answer that did not change. The caption under a
+drawing takes that measure too — `wide` in `ChartReading` — because the plate of
+four pillars inside it is derived from the drawing's own geometry.
+
+`.reading`, beside it, is the second: no measure at all. The caption, the
+tables, the notes and the line naming the schools run from one wall of the
+shell to the other, which is where the heading and the form above them already
+stood. It carries the dressing of the tables with it — the cell, the rule under
+a row, the heading over one — so that six components reading six boards out are
+not six copies of one table drifting apart in the padding.
+
+Each of those readings used to cap itself instead, at a width invented where it
+stood: 46rem in the pillars, 44 in three others, 40 again on the tables inside
+them, and the whole block centred in the page. Boxes of different widths
+centred inside one another have no edge in common, so a reader met three or
+four left margins on the way down a section and none of them was the page's.
+
+**The slack a table has left over goes to one column, never shared out among
+them.** A table told to fill the shell spreads its columns to do it, which puts
+a name at one edge of the screen and the word rendering it at the other. The
+last column takes it by default, since that is where the phrases usually are;
+a board whose widest column is not the last says so where its own table is
+dressed, and a table whose columns already fill the page says that.
+
+Prose is not what any of this sets. What a reading holds is a caption, a table
+and a note — lines read at a glance, and columns. The one block on a section
+page read through is the introduction over the form, and it keeps a measure by
+being in two columns.
+
 ## Paper is the fourth appearance
 
 Not light: light is a paper-*coloured* screen, set against a lit surface.

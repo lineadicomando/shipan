@@ -34,7 +34,7 @@
   const degrees = (value: number): string => `${value.toFixed(2)}°`;
 </script>
 
-<div class="words">
+<div class="reading">
   <p class="caption">
     {t('cli.field.minggong')}:
     <strong>{t(`label.ci.${board.minggong.ci.id}` as MessageKey)}</strong>
@@ -46,10 +46,10 @@
     <table>
       <thead>
         <tr>
-          <th>{t('cli.column.body')}</th>
-          <th>{t('cli.column.inLodge')}</th>
-          <th>{t('cli.column.inPalace')}</th>
-          <th>{t('cli.column.motion')}</th>
+          <th scope="col">{t('cli.column.body')}</th>
+          <th scope="col">{t('cli.column.inLodge')}</th>
+          <th scope="col">{t('cli.column.inPalace')}</th>
+          <th scope="col">{t('cli.column.motion')}</th>
         </tr>
       </thead>
       <tbody>
@@ -76,9 +76,9 @@
     <table class="palaces">
       <thead>
         <tr>
-          <th>{t('cli.column.palace')}</th>
-          <th>{t('cli.column.house')}</th>
-          <th>{t('cli.column.standing')}</th>
+          <th scope="col">{t('cli.column.palace')}</th>
+          <th scope="col">{t('cli.column.house')}</th>
+          <th scope="col">{t('cli.column.standing')}</th>
         </tr>
       </thead>
       <tbody>
@@ -119,38 +119,22 @@
 </div>
 
 <style>
-  h2 { font-size: 1em; font-weight: 500; margin: 1.6rem 0 0.5rem; }
-  .words { max-width: 44rem; margin-inline: auto; }
-  .caption { margin: 0 0 1rem; }
+  /* The reading's measure, the cells, the heading, the caption and the note are
+     `.reading` in `app.css`, and the frame a wide table slides in is `.scroller`
+     beside it. What is here is this board's own. */
   .glyph { color: var(--faint); font-size: 0.85em; }
   .deg { font-variant-numeric: tabular-nums; }
   .way { color: var(--faint); }
-  .scroller { overflow-x: auto; }
-  table { width: 100%; min-width: max-content; max-width: 40rem; border-collapse: collapse; }
-  th, td {
-    text-align: left;
-    padding: 0.3rem 0.6rem;
-    border-bottom: 1px solid var(--rule);
-    vertical-align: baseline;
-    white-space: nowrap;
-  }
-  thead th { color: var(--faint); font-weight: 400; font-size: 0.85em; }
-  .note { color: var(--faint); font-size: 0.85em; margin: 0.6rem 0 0; }
+  /* Every cell holds one short thing and does not wrap, which is also what
+     keeps the table from being squeezed under its own content. */
+  th, td { white-space: nowrap; }
 
   /* The one column that wraps, and the one table that lets it.
-     Every other cell here holds one short thing, and `max-content` is what
-     keeps those from being squashed on a narrow screen. But a crowded palace
-     holds four bodies, and under `max-content` a cell that *may* wrap is
-     measured as though it never does — so the table went to its scrolling
-     frame for the sake of the one row in twelve that needed it. This table
-     gives up the floor and lets that column take the lines it takes. */
-  .palaces { min-width: 0; }
-  .palaces .standing { white-space: normal; min-width: 10rem; }
-
-  /* On paper the tables give up their scrolling frames, as the chart's table
-     of palaces does: one that still clipped would print four rows of eleven
-     and give no sign of the other seven. */
-  @media print {
-    .scroller { overflow: visible; }
-  }
+     Every other cell here holds one short thing and says so by not wrapping,
+     which is what keeps it from being squashed on a narrow screen. But a
+     crowded palace holds four bodies, and a cell that cannot wrap is measured
+     as though it never would — so the table went to its scrolling frame for the
+     sake of the one row in twelve that needed the room. This column takes the
+     lines it takes, and being the last one it takes the page's slack with them. */
+  .palaces .standing { white-space: normal; min-inline-size: 10rem; }
 </style>

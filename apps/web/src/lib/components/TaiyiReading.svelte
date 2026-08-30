@@ -57,7 +57,7 @@
   ]);
 </script>
 
-<div class="words">
+<div class="reading">
   <p class="caption">
     {t('label.taiyi.taiyi')}
     <strong>{seat(board.taiyi.palace)}</strong>
@@ -72,11 +72,11 @@
     <table>
       <thead>
         <tr>
-          <th></th>
-          <th>{t('cli.field.taiyiEyes')}</th>
-          <th>{t('cli.field.taiyiCounts')}</th>
-          <th>{t('label.taiyi.general')}</th>
-          <th>{t('label.taiyi.assistant')}</th>
+          <th scope="col"></th>
+          <th scope="col">{t('cli.field.taiyiEyes')}</th>
+          <th scope="col">{t('cli.field.taiyiCounts')}</th>
+          <th scope="col">{t('label.taiyi.general')}</th>
+          <th scope="col">{t('label.taiyi.assistant')}</th>
         </tr>
       </thead>
       <tbody>
@@ -182,27 +182,13 @@
 </div>
 
 <style>
-  h2 { font-size: 1em; font-weight: 500; margin: 1.6rem 0 0.5rem; }
-  .words { max-width: 44rem; margin-inline: auto; }
-  .caption { margin: 0 0 1rem; }
+  /* Every cell holds one short thing, and none of them wraps — which is also
+     what keeps the table from being squeezed under its own content, a cell
+     that cannot wrap being as narrow as it is wide. What slides on a narrow
+     screen is the frame, which is `.scroller` in `app.css`. The rest of the
+     dressing — the measure, the cells, the heading, the caption and the note —
+     is `.reading`, there too, and is the same on every board read out here. */
+  th, td { white-space: nowrap; }
   .glyph { color: var(--faint); font-size: 0.85em; }
   .count { font-variant-numeric: tabular-nums; }
-  .scroller { overflow-x: auto; }
-  table { width: 100%; min-width: max-content; max-width: 40rem; border-collapse: collapse; }
-  th, td {
-    text-align: left;
-    padding: 0.3rem 0.6rem;
-    border-bottom: 1px solid var(--rule);
-    vertical-align: baseline;
-    white-space: nowrap;
-  }
-  thead th { color: var(--faint); font-weight: 400; font-size: 0.85em; }
-  .note { color: var(--faint); font-size: 0.85em; margin: 0.6rem 0 0; }
-
-  /* On paper the tables give up their scrolling frames, as every other table
-     on this site does: one that still clipped would print three columns of
-     five and give no sign of the other two. */
-  @media print {
-    .scroller { overflow: visible; }
-  }
 </style>

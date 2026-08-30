@@ -224,7 +224,7 @@
              They fit: the plate asks the room it was given how many columns
              it can have, and in this column it takes two rows of two rather
              than four cells nobody could read. -->
-        <div class="said"><ChartReading chart={found} {t} palaces={false} /></div>
+        <div class="said reading"><ChartReading chart={found} {t} palaces={false} /></div>
         <!--
           Under the board and across the whole dialog, never beside it. See
           the note on the two columns below.

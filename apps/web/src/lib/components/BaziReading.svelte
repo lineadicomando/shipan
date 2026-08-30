@@ -38,17 +38,15 @@
 </script>
 
 <!--
-  The reading as one block, centred under the plate.
+  The reading as one block, at the page's own measure.
 
-  The same `.words` `LiurenReading` and `QizhengReading` have, and 八字 did
-  without it for as long as its plate stood at 46rem against the left margin:
-  the words under it began at the same edge, so there was one axis already.
-  The plate is a board's measure now and centred with the other three, and a
-  reading left at the margin under it reads as a caption that came loose.
-  Left-aligned inside itself, because a centred line of prose is a line nobody
-  can come back to.
+  `.reading` is that measure and the dressing of the tables in it, said once in
+  `app.css` for the components that read a board out. The plate above is centred
+  at a board's measure, as the other boards are; what is read off it runs from
+  one wall of the page to the other, which is where the form above and the
+  schools under it already stood.
 -->
-<div class="words">
+<div class="reading">
   <p class="master">
     {t('cli.field.dayMaster')}: {t(`label.stem.${bazi.dayMaster.id}` as MessageKey)}
     <span class="glyph">{glyph(bazi.dayMaster)}</span>
@@ -68,8 +66,11 @@
     <table>
       <thead>
         <tr>
-          <th></th><th>{t('cli.column.pillar')}</th><th>{t('cli.column.god')}</th>
-          <th>{t('cli.column.stage')}</th><th>{t('cli.column.nayin')}</th>
+          <th scope="col"></th>
+          <th scope="col">{t('cli.column.pillar')}</th>
+          <th scope="col">{t('cli.column.god')}</th>
+          <th scope="col">{t('cli.column.stage')}</th>
+          <th scope="col">{t('cli.column.nayin')}</th>
         </tr>
       </thead>
       <tbody>
@@ -118,7 +119,9 @@
     <table>
       <thead>
         <tr>
-          <th></th><th>{t('cli.column.stem')}</th><th>{t('cli.column.god')}</th>
+          <th scope="col"></th>
+          <th scope="col">{t('cli.column.stem')}</th>
+          <th scope="col">{t('cli.column.god')}</th>
         </tr>
       </thead>
       <!-- A tbody to the pillar, so the position is one header spanning its
@@ -162,22 +165,16 @@
 </div>
 
 <style>
-  h2 { font-size: 1em; font-weight: 500; margin: 1.5rem 0 0.5rem; }
   /* The order is the whole of what ranks the concealed stems, so it is said
      where they are and not in a note underneath. */
   h2 small { color: var(--faint); font-weight: 400; margin-left: 0.4rem; }
-  /* The measure of the words under a board, shared with the calendar the Four
-     Pillars section sets beside them — one axis under the plate or none. */
-  .words { max-width: 46rem; margin-inline: auto; }
-  table { width: 100%; min-width: max-content; border-collapse: collapse; }
-  th, td {
-    text-align: left;
-    padding: 0.35rem 0.5rem;
-    border-bottom: 1px solid var(--rule);
-    vertical-align: baseline;
-    white-space: nowrap;
-  }
-  thead th { color: var(--faint); font-weight: 400; font-size: 0.85em; }
+  /* Every cell here holds one name, and none of them wraps.
+     That is also what keeps the table from being squeezed under what is in it:
+     a cell that cannot wrap is as narrow as it is wide, so the table's own
+     floor is already its content. What slides on a narrow screen is the frame
+     around it — `.scroller`, on screen and unpicked on paper, in `app.css`,
+     where the rest of the dressing is too. */
+  th, td { white-space: nowrap; }
   .glyph { display: block; color: var(--faint); font-size: 0.8em; }
   .master { margin: 0 0 1rem; }
   .cycles {
@@ -189,12 +186,4 @@
     gap: 0.3rem 1rem;
   }
   .cycles small { color: var(--faint); margin-right: 0.4rem; }
-  .note { color: var(--faint); font-size: 0.85em; margin-top: 1rem; }
-  /* A table this wide scrolls inside its own frame on a narrow screen — but
-     never on paper, where a frame that still clips prints two columns of five
-     and gives no sign of the other three. */
-  .scroller { overflow-x: auto; }
-  @media print {
-    .scroller { overflow: visible; }
-  }
 </style>

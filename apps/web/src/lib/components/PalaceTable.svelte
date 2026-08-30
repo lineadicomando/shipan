@@ -14,15 +14,15 @@
   const gloss = (prefix: string, id: string): string => t(`label.${prefix}.${id}` as MessageKey);
 </script>
 
-<table>
+<table class="palaces">
   <thead>
     <tr>
-      <th>{t('cli.column.palace')}</th>
-      <th>{t('cli.column.earth')}</th>
-      <th>{t('cli.column.heaven')}</th>
-      <th>{t('cli.column.star')}</th>
-      <th>{t('cli.column.gate')}</th>
-      <th>{t('cli.column.spirit')}</th>
+      <th scope="col">{t('cli.column.palace')}</th>
+      <th scope="col">{t('cli.column.earth')}</th>
+      <th scope="col">{t('cli.column.heaven')}</th>
+      <th scope="col">{t('cli.column.star')}</th>
+      <th scope="col">{t('cli.column.gate')}</th>
+      <th scope="col">{t('cli.column.spirit')}</th>
     </tr>
   </thead>
   <tbody>
@@ -87,11 +87,21 @@
 </table>
 
 <style>
-  /* As wide as its content asks for inside a scrolling frame, and no
-     narrower: six columns squeezed into a phone break every name in two. */
-  table { width: 100%; min-width: max-content; border-collapse: collapse; }
-  th, td { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--rule); vertical-align: baseline; }
-  thead th { color: var(--faint); font-weight: 400; font-size: 0.85em; }
+  /* The measure and the cells are `.reading` in `app.css`, which is what the
+     two callers wrap this in. What is here is never being squeezed: six
+     columns pressed into a phone break every name in two, so the table asks
+     for the width its content needs and the frame around it slides.
+
+     And the last column keeps to its own width, where `.reading` would give it
+     whatever the page had left over. This is the one table on the site with no
+     slack to give away — six columns of two lines fill the shell and then some
+     — and the percentage would be a circular one besides: a cell asking for a
+     share of a table that is measuring itself against that cell. */
+  table { min-inline-size: max-content; }
+  /* Named from the table down, so that it outranks the rule it undoes rather
+     than tying with it and being settled by whichever sheet the bundler wrote
+     last — a class on the table is one more than `.reading` has. */
+  .palaces tr > :last-child { inline-size: auto; }
   /* The word leads; the name it renders sits under it, small. */
   th span:first-child, td span:first-child { display: block; }
   .glyph { display: block; color: var(--faint); font-size: 0.8em; }
@@ -108,8 +118,8 @@
    * and the name under it are one thing.
    */
   @media print {
-    table { min-width: 0; font-size: 0.78rem; }
-    th, td { padding: 0.2rem 0.3rem; }
+    table { min-inline-size: 0; font-size: 0.78rem; }
+    table :is(th, td) { padding: 0.2rem 0.3rem; }
     tr { break-inside: avoid; }
   }
 </style>

@@ -288,6 +288,86 @@ input[type='checkbox'], input[type='radio'] { accent-color: var(--ink); }
 }
 
 /*
+ * What is read off a board, and the measure it is read at.
+ *
+ * **A section page has two measures and not six.** The drawing has one of its
+ * own — `--board`, above, a picture bounded by the fold and centred in the
+ * page — and everything read off it takes the page's own, which is the shell's.
+ * That gives the heading, the form, the tables, the notes and the line naming
+ * the schools a single left edge and a single right one.
+ *
+ * It used to give them four. Each reading capped itself at a measure invented
+ * where it stood — 46rem in the pillars, 44 in three others, 40 again on the
+ * tables inside them — and centred what was left, so a page held three or four
+ * boxes of different widths nested inside one another with no edge in common.
+ * Nothing under the board lined up with anything above it, and the ragged left
+ * margin was the first thing a reader saw on every section.
+ *
+ * **Prose is not what is set here.** A reading is a caption, a table and a
+ * note: lines taken in at a glance, and columns. The measure that keeps a
+ * paragraph readable is about coming back from the end of one line to the
+ * start of the next, and none of this is read that way. The one block on a
+ * section page that *is* read through is the introduction over the form, and
+ * it keeps a measure — in two columns, where `SectionIntro` sets it.
+ *
+ * Said once here rather than in each of the six components that read a board
+ * out, which is how the four measures happened: the same table dressed six
+ * times drifted in the padding as well as in the width. What is peculiar to
+ * one board — a column that may wrap, a cell that must not — stays with that
+ * board, and is more specific than anything below.
+ */
+.reading table {
+  inline-size: 100%;
+  border-collapse: collapse;
+}
+
+/*
+ * The rules run the width of the page and the columns do not.
+ *
+ * A table told to fill the shell shares the slack out among its columns, which
+ * puts a name at one edge of the screen and the word rendering it at the other:
+ * the reader crosses a hand's width of nothing to pair two things that belong
+ * together, and does it again on every row. Given to the last column instead,
+ * the slack falls where there is nothing to read. The cells stay packed at the
+ * left in the order they were computed in, and the hairline under each row
+ * still reaches both edges — which is what makes a table look laid on the page
+ * rather than dropped on it.
+ */
+.reading tr > :last-child {
+  inline-size: 100%;
+}
+
+.reading :is(th, td) {
+  text-align: left;
+  padding: 0.35rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: baseline;
+}
+.reading thead th {
+  color: var(--faint);
+  font-weight: 400;
+  font-size: 0.85em;
+}
+/* The heading over a table, at the size of the words under it: what these
+   divide is one answer into its parts, and a heading louder than the answer
+   would be announcing a section of a page that has none. */
+.reading h2 {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 1.6rem 0 0.5rem;
+}
+/* The line that places the board, and the line qualifying what was read off
+   it. Neither is a finding, and both are set like the note under a drawing. */
+.reading .caption {
+  margin: 0 0 1rem;
+}
+.reading .note {
+  color: var(--faint);
+  font-size: 0.85em;
+  margin: 0.6rem 0 0;
+}
+
+/*
  * The fourth appearance, and the one nobody chose: paper.
  *
  * A consultation is printed to be shown to somebody else or kept, and neither

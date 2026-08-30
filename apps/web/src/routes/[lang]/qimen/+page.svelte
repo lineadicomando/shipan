@@ -302,7 +302,9 @@
       <StrengthLegend {t} />
     </div>
 
-    <div>
+    <!-- `reading`: the measure everything read off a board is set at, and the
+         dressing of the tables in it. Said once in `app.css`. -->
+    <div class="reading">
       <!-- `wide`: the board above has the page to itself, so what it was cast
            from is set as its caption — at the drawing's own measure, centred
            on it. See `ChartReading`. -->

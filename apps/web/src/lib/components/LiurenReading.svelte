@@ -58,7 +58,7 @@
   };
 </script>
 
-<div class="words">
+<div class="reading">
   <p class="caption">
     {t('cli.field.yuejiang')}:
     <strong>{t(`label.yuejiang.${board.yuejiang.id}` as MessageKey)}</strong>
@@ -114,9 +114,9 @@
     <table>
       <thead>
         <tr>
-          <th>{t('cli.column.earth')}</th>
-          <th>{t('cli.column.heaven')}</th>
-          <th>{t('cli.column.general')}</th>
+          <th scope="col">{t('cli.column.earth')}</th>
+          <th scope="col">{t('cli.column.heaven')}</th>
+          <th scope="col">{t('cli.column.general')}</th>
         </tr>
       </thead>
       <tbody>
@@ -163,11 +163,9 @@
 </div>
 
 <style>
-  h2 { font-size: 1em; font-weight: 500; margin: 1.6rem 0 0.5rem; }
-  /* A block centred under the picture, with its own text left-aligned:
-     they share an axis, and nothing inside is centred. */
-  .words { max-width: 44rem; margin-inline: auto; }
-  .caption { margin: 0 0 1rem; }
+  /* The reading's measure, the cells, the heading, the caption and the note are
+     `.reading` in `app.css`, and the frame a wide table slides in is `.scroller`
+     beside it. What is here is this board's own. */
   .caption .term { color: var(--faint); }
   .glyph { color: var(--faint); font-size: 0.85em; }
   .chuan, .ke { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.35rem; }
@@ -187,22 +185,8 @@
   .which { color: var(--faint); font-size: 0.85em; }
   .branch, .pair { font-size: 1.05em; }
   .stem em { font-style: normal; color: var(--faint); }
-  .scroller { overflow-x: auto; }
-  table { width: 100%; min-width: max-content; max-width: 40rem; border-collapse: collapse; }
-  th, td {
-    text-align: left;
-    padding: 0.3rem 0.6rem;
-    border-bottom: 1px solid var(--rule);
-    vertical-align: baseline;
-    white-space: nowrap;
-  }
-  thead th { color: var(--faint); font-weight: 400; font-size: 0.85em; }
+  /* Every cell holds one short thing and does not wrap, which is also what
+     keeps the table from being squeezed under its own content. */
+  th, td { white-space: nowrap; }
   .drawn { margin-top: 1.4rem; }
-  .note { color: var(--faint); font-size: 0.85em; }
-
-  /* On paper the table gives up its scrolling frame: one that still clipped
-     would print three rows of twelve and give no sign of the other nine. */
-  @media print {
-    .scroller { overflow: visible; }
-  }
 </style>

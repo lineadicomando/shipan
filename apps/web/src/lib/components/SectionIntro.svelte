@@ -209,9 +209,12 @@
     color: var(--faint);
     font-size: 0.9rem;
     line-height: 1.55;
-    /* The tracks are already at a measure; this keeps the single-column case
-       from stretching to the width of the shell. */
-    max-width: 44rem;
+    /* No measure of its own. The grid is the measure: two tracks of 24rem
+       apiece on a page wide enough for them, and on a page that is not, the
+       page. A cap here was a third width in a block that already had two, and
+       it showed — under a heading and over a link that both ran the whole
+       column, the paragraph stopped short of the right edge for the width of
+       one screen size and no other. */
   }
 
   /*

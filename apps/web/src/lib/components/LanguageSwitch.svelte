@@ -45,15 +45,29 @@
 </ul>
 
 <style>
-  ul { display: flex; gap: 0.75rem; list-style: none; margin: 0; padding: 0; }
+  /*
+   * The gap and the padding come to the three quarters of a rem that used to
+   * be gap alone, so nothing moves — see below for why the padding is there.
+   */
+  ul { display: flex; gap: 0.15rem; list-style: none; margin: 0; padding: 0; }
   /* The code, not a word: two letters carry the same fact in a quarter of the
      room, which is what lets the switch sit on the nav's own line. Lower case
      and unspaced, so it reads as the tag it is rather than as an initialism
-     shouted next to a nav set in words. */
+     shouted next to a nav set in words.
+
+     Two letters are also a target eight pixels wide, which is a third of what
+     WCAG asks a finger to be given and what the two marks beside them already
+     carry in padding of their own. So the box is padded out to the minimum and
+     the row is closed up by as much: the same two letters in the same place,
+     with something to press around them. */
   a {
     color: var(--faint);
     text-decoration: none;
     font-size: 0.9em;
+    display: inline-block;
+    padding: 0.25rem 0.3rem;
+    min-inline-size: 1.5rem;
+    text-align: center;
   }
   a.current { color: var(--ink); }
   a:hover { color: var(--ink); }

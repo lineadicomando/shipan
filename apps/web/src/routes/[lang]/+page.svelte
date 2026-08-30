@@ -1193,7 +1193,9 @@
         stops being an invariant somebody maintains and becomes one the
         compiler holds.
       -->
-      <div>
+      <!-- `reading`: the measure everything read off a board is set at, and the
+           dressing of the tables in it. Said once in `app.css`. -->
+      <div class="reading">
         {#if chart.id === 'liuren'}
           <LiurenReading board={chart.board} {t} moment={castMoment} />
         {:else if chart.id === 'qizheng'}
@@ -1350,16 +1352,12 @@
    * does the smaller job of saying which question the answer belongs to, now
    * that the field it was typed into has folded away.
    */
-  /* On the axis the fields were filled in on, and centred for the same reason
-     the board under it is. Left at the far margin it was the one thing on the
-     page off that axis — and it is the question, which is the last thing that
-     should look like it belongs to something else.
-
-     Sized and placed rather than given an auto margin: a grid item with one of
-     those turns stretch off and comes out as wide as its own content, which
-     for a question of four words is four words centred like a caption. The
-     words inside stay left-aligned; it is the box that moves. */
-  .posed { margin: 0; inline-size: min(100%, var(--ask)); justify-self: center; }
+  /* On the axis everything read off a board is on, which is the page's own —
+     see `.reading` in `app.css`. It used to be centred at the width the fields
+     were filled in at, on the argument that the question should not be the one
+     thing off the page's axis; the axis has since become the shell's, and the
+     box that was keeping it on the old one was what put it off the new. */
+  .posed { margin: 0; }
   .asked {
     margin: 0 0 0.3rem;
     font-size: 1.15rem;

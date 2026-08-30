@@ -167,16 +167,13 @@
       occasion of an undertaking; a birth is not one, and beside pillars read
       as a person the page would be read as a remark about the person.
 
-      On the axis the reading is on, and that is why it is wrapped rather than
-      set here as a sibling: it is the last thing under the plate, and one
-      block of the three left at the margin is the one the eye reads as
-      dropped. The component carries no measure of its own — it is laid out by
-      whatever holds it, on the chart at the full width of the page — so the
-      measure is the caller's to give.
+      The component carries no measure of its own — it is laid out by whatever
+      holds it, on the chart at the full width of the page — and here that is
+      the page too: the reading above it and the schools above that both run
+      wall to wall, so the last block under the plate needs no box to keep it
+      on their axis.
     -->
-    <div class="words">
-      <CalendarAndAlmanac moment={result.moment} {t} almanac={false} />
-    </div>
+    <CalendarAndAlmanac moment={result.moment} {t} almanac={false} />
   </div>
 {/if}
 
@@ -187,10 +184,8 @@
   /* The one field the pillars ask for beyond the moment is a `Choice` now,
      and dressed there: it is the same control the options are asked with, and
      a copy of its measure here would be the one that drifts. */
-  /* The reading's own measure, named again here because the calendar under it
-     is a component and takes the width it is handed. `BaziReading` holds the
-     other copy; they are one axis and have to move together. */
-  .words { max-width: 46rem; margin-inline: auto; }
+  /* The measure everything under the plate is set at is the page's, and is
+     `.reading` in `app.css`: nothing here has one of its own to name. */
   .result { transition: opacity 0.15s ease-out; }
   .stale { opacity: 0.5; }
   .failure { color: var(--alarm); }

@@ -235,7 +235,8 @@
     font-size: 0.9em;
     color: var(--faint);
   }
-  h2 { font-size: 1em; font-weight: 500; margin: 1.5rem 0 0.5rem; }
+  /* The heading over the configurations is `.reading h2` in `app.css`, with
+     the headings on every other board. */
   .patterns { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.25rem; }
   .glyph { margin-left: 0.5rem; color: var(--faint); font-size: 0.85em; }
   .valence { margin-left: 0.75rem; color: var(--faint); font-size: 0.9em; }
