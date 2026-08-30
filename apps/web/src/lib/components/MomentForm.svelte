@@ -5,7 +5,7 @@
   import type { Location } from '$lib/moment';
   import LocationSearch from './LocationSearch.svelte';
 
-  import { offered, shown, wire, type Chosen } from '$lib/parameters';
+  import { ofLayer, offered, shown, wire, type Chosen, type Divergence } from '$lib/parameters';
 
   let {
     t,
@@ -52,6 +52,10 @@
      * the markup below has no idea which boards exist. It replaced four
      * `$bindable` props, four `<select>` blocks with their options written out
      * by hand, and four lines in the count on the summary.
+     *
+     * Written back whole and never a key at a time: what a reader has chosen
+     * is a read-only record — an address is read into it and the engine is
+     * handed it — so choosing replaces it.
      */
     chosen?: Chosen;
     /**
@@ -134,9 +138,6 @@
   const changed = $derived(set());
   // svelte-ignore state_referenced_locally
   let open = $state(set() > 0);
-
-  /** Whether the options hold more than one thing, and want naming apart. */
-  const grouped = $derived(when === 'options' || extra !== undefined);
 </script>
 
 <!-- The date and the time, in whichever of the two places this section asks
@@ -161,41 +162,100 @@
   </label>
 {/snippet}
 
-<!-- How the moment is read, which is the same set of choices wherever the
-     moment came from. Last under the disclosure: it is what a reader changes
-     once, if ever, and never on the way to asking something. -->
-{#snippet reading()}
-  <label class="check">
-    <input type="checkbox" bind:checked={trueSolarTime} />
-    {t('form.trueSolarTime')}
-  </label>
-  <!--
-    One block for every divergence, and it does not know which board it is on.
+<!--
+  One divergence, asked as the choice it is.
 
-    What is offered comes from `$lib/parameters`: the layers' rows wherever an
-    instant is read, the section's own beside them, and only where the engine
-    computes more than one value — a control with one option decides nothing.
-    The words come from the row too, so a school landing in the declaration
-    lands here, and nothing in this file has to be told about it.
-  -->
-  {#each offered(board) as row (wire(row))}
-    {#if shown(row, chosen)}
-      <label>
-        <Named text={t(row.label!)} />
-        <select bind:value={chosen[wire(row)]}>
-          {#each Object.entries(row.says!) as [value, said] (value)}
-            <option {value}>{t(said)}</option>
-          {/each}
-        </select>
-      </label>
-      {@const note = row.notes?.[chosen[wire(row)] ?? row.fallback]}
-      {#if note}
-        <p class="note">
-          <Named text={t(note, { [row.id]: chosen[wire(row)] ?? row.fallback })} />
-        </p>
-      {/if}
+  **Radios and not a list to drop down.** What each value says here is a
+  clause of doctrine — which palace the pair is read in, which book names the
+  fifth spirit — and a `select` shows one of them at a time, cut at the width
+  of the control: the reader was choosing between two sentences of which they
+  could see the first forty characters. Set out, every option is readable
+  before the reader moves anything, and the one in force is readable without
+  opening a menu.
+
+  The instrument chooser on the consultation made the same move for the same
+  reason and is the argument at length — see `/[lang]/+page.svelte`, where six
+  descriptions had to be readable side by side to be weighed. These are two or
+  three apiece and stay a column, cards being what six of them wanted.
+
+  **The sentence is the legend and the options finish it.** «The ju is
+  determined» + «by thirds of the term» is one sentence cut in two, and a
+  `legend` is what a screen reader says before every radio under it, so it
+  comes out as that sentence either way.
+-->
+{#snippet divergence(row: Divergence)}
+  {@const name = wire(row)}
+  {@const value = chosen[name] ?? row.fallback}
+  {@const note = row.notes?.[value]}
+  <fieldset class="choice">
+    <legend class="asks"><Named text={t(row.label!)} /></legend>
+    <div class="choices">
+      {#each Object.entries(row.says!) as [option, said] (option)}
+        <label class="check">
+          <input
+            type="radio"
+            name="{uid}-{name}"
+            value={option}
+            checked={value === option}
+            onchange={() => (chosen = { ...chosen, [name]: option })}
+            aria-describedby={note ? `${uid}-${name}-note` : undefined}
+          />
+          <!-- A span, because the sentence is several elements once a name
+               in it is set in its own face, and the flex box either side of
+               this would lay each of them out as a column of its own. -->
+          <span><Named text={t(said)} /></span>
+        </label>
+      {/each}
+    </div>
+    <!-- What standing on that value does, tied to the radios rather than left
+         beside them: read out with the choice it is about. -->
+    {#if note}
+      <p class="note" id="{uid}-{name}-note">
+        <Named text={t(note, { [row.id]: value })} />
+      </p>
     {/if}
-  {/each}
+  </fieldset>
+{/snippet}
+
+<!--
+  How the moment is read, which is the same set of choices wherever the moment
+  came from. Last under the disclosure: it is what a reader changes once, if
+  ever, and never on the way to asking something.
+
+  **Two groups and not one list**, along the line `wire` already draws. A
+  board's divergences are that art's and are asked in its section alone; the
+  layers' say how an instant is read into pillars and are asked under every
+  board there is. Run together they came out interleaved — two Qi Men choices,
+  two about the calendar, two more Qi Men — and a reader had no way to see
+  which of the six belonged to the art they had come for. The section's own
+  lead, since that is what was opened; how the instant is read follows, being
+  the same question on every section.
+
+  Neither group knows which board it is on: what is in each comes from
+  `$lib/parameters`, so a school landing in the declaration lands here.
+-->
+{#snippet reading()}
+  {@const rows = offered(board).filter((row) => shown(row, chosen))}
+  {@const own = rows.filter((row) => !ofLayer(row))}
+  {@const layers = rows.filter((row) => ofLayer(row))}
+  {#if own.length > 0}
+    <fieldset>
+      <legend>{t('form.group.board')}</legend>
+      <div class="stack">
+        {#each own as row (wire(row))}{@render divergence(row)}{/each}
+      </div>
+    </fieldset>
+  {/if}
+  <fieldset>
+    <legend>{t('form.group.instant')}</legend>
+    <div class="stack">
+      <label class="check">
+        <input type="checkbox" bind:checked={trueSolarTime} />
+        <span>{t('form.trueSolarTime')}</span>
+      </label>
+      {#each layers as row (wire(row))}{@render divergence(row)}{/each}
+    </div>
+  </fieldset>
 {/snippet}
 
   <!-- What is asked in the open, side by side where there is room and stacked
@@ -259,16 +319,9 @@
       </fieldset>
     {/if}
 
-    {#if grouped}
-      <fieldset>
-        <legend>{t('form.calculation')}</legend>
-        <div class="stack">{@render reading()}</div>
-      </fieldset>
-    {:else}
-      <!-- The only thing in there. A box with a name of its own, under a
-           disclosure already called Options, would name it twice. -->
-      {@render reading()}
-    {/if}
+    <!-- Named boxes of its own, always: what is in here is two groups on
+         every section, and a name apiece is what says where one ends. -->
+    {@render reading()}
   </details>
 
 <style>
@@ -332,14 +385,55 @@
      beside it down along with it. */
   .row > :global(*) { align-self: start; }
   label { display: grid; gap: 0.2rem; font-size: 0.9em; color: var(--faint); }
-  label :global(input), label :global(select) { color: var(--ink); }
-  .check { display: flex; gap: 0.45rem; align-items: center; }
+  label :global(input) { color: var(--ink); }
+  /*
+   * A control and the words beside it, on one line where they fit and wrapped
+   * under themselves where they do not.
+   *
+   * `start` rather than `center`, which is what an option of three lines asks
+   * for: centred against a paragraph, the radio floated to the middle of it
+   * and stopped reading as the mark of the line it opens. The nudge under it
+   * is the difference between the top of a box and the top of a lowercase
+   * letter beside it.
+   */
+  .check { display: flex; gap: 0.45rem; align-items: start; }
+  .check input { margin-block-start: 0.2em; }
+  /* What is chosen, in the ink: the question is asked in the grey above it,
+     and the answer is the part of this the reader is deciding between. */
+  .check span { color: var(--ink); }
   summary { cursor: pointer; color: var(--faint); font-size: 0.85em; }
   details { display: grid; gap: 0.6rem; }
   /* The options are read, not filled in: a line of prose stays a line the eye
      can come back from, however wide the panel is. */
   details label:not(.check) { max-width: 26rem; }
   .note { margin: 0; color: var(--faint); font-size: 0.8em; max-width: 42rem; }
+
+  /*
+   * One divergence: the question, the values under it, and the note last.
+   *
+   * A `fieldset` and not a `div`, because a set of radios that share a
+   * question is exactly what the element is for — and it is the `legend` that
+   * carries that question into what a screen reader says before each of them.
+   * Bounded at a measure a sentence can be read at: these run to a clause of
+   * doctrine and a book's title, and the panel is wider than any of them wants.
+   */
+  .choice { max-width: 38rem; }
+  /* On top of the stack's own gap, and small because of it: the choices want
+     to be a step further apart than two radios of one question, not a step
+     further apart than the groups they sit in. */
+  .choice + .choice { margin-top: 0.3rem; }
+  .choices { display: grid; gap: 0.35rem; }
+  /* The question, set like the label it replaced rather than like the name of
+     a group: it is one line inside a group that already has a name. */
+  .asks {
+    padding: 0 0 0.3rem;
+    font-size: 0.9em;
+    font-weight: normal;
+    color: var(--faint);
+  }
+  /* Under the values it belongs to, and indented past the radios: a paragraph
+     starting where the choices start reads as another choice. */
+  .choice .note { margin-top: 0.35rem; margin-inline-start: 1.4rem; }
 
   /* A link and not a block: it undoes a detour, it does not submit anything,
      and a filled button under the fields would outrank the one that asks. */

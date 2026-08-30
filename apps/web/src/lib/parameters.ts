@@ -4,7 +4,7 @@
  * The engine declares them once, in `packages/core/src/parameters.ts`, and
  * that declaration is a **value**: importing it here would drag the
  * ephemerides and a native module into the browser bundle to name the choices
- * in a `select`. So they are written out again, exactly as `vocabulary.ts`
+ * in a form. So they are written out again, exactly as `vocabulary.ts`
  * writes out the gates and `@shipan/plate` writes out the shape of a chart,
  * and `test/parameters.test.ts` asserts that this and the engine's still
  * agree — values, defaults, and which of them are computed.
@@ -381,6 +381,20 @@ export function wire(divergence: Divergence): string {
   return LAYERS.includes(divergence.board)
     ? divergence.id
     : `${divergence.board}.${divergence.id}`;
+}
+
+/**
+ * Whether a divergence belongs to a layer rather than to one board.
+ *
+ * The same line `wire` draws, asked as a question: a layer's parameter says
+ * how an instant is read and is asked wherever there is an instant, a board's
+ * says how that board is laid and is asked in its section alone. The form
+ * reads it to put the two in separate groups, so that a reader opening the
+ * options of one art is not handed four things in a row without being told
+ * which of them are that art's.
+ */
+export function ofLayer(divergence: Divergence): boolean {
+  return LAYERS.includes(divergence.board);
 }
 
 /** The wire name of one board's parameter, without looking the row up. */

@@ -146,7 +146,7 @@ what the type declares.
 
 **Stated where the board is read, and moved where the options are.** The
 controls stay under the disclosure a reader opens on purpose — a form that put
-four `select`s in front of somebody who came to ask a question would be
+four sets of radios in front of somebody who came to ask a question would be
 charging every reader for the one who changes them — and what stands in the
 open is the statement, beside the board it is about. The two are not the same
 surface and the requirement is only on one of them: it is the reading that must

@@ -1161,7 +1161,8 @@ export const it: Record<MessageKey, string> = {
   'form.momentNote':
     'Lasciali vuoti e la carta è posta per l’istante in cui premi, nell’ora del luogo qui sopra, che è l’uso classico. Compilali per porre la domanda a un altro momento.',
   'form.momentNow': 'Torna ad adesso',
-  'form.calculation': 'Come si calcola',
+  'form.group.board': 'Come si stende questo quadro',
+  'form.group.instant': 'Come si legge l’istante',
   'form.trueSolarTime': 'Correggi all’ora solare vera',
   'form.pillars.yearBoundary': 'L’anno dei pilastri comincia',
   'form.pillars.yearBoundary.lichun': 'a 立春 lìchūn, dove gira l’anno solare',

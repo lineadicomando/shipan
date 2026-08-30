@@ -1251,7 +1251,12 @@ export const en = {
   // The action, named by the state it restores and not by what it deletes:
   // empty means now, and this is the one press back to it.
   'form.momentNow': 'Back to now',
-  'form.calculation': 'How it is computed',
+  // The two groups the options are read in, and the line between them is the
+  // one the wire already draws: a board's divergences are that art's and are
+  // asked in its section alone, the layers' say how an instant is read into
+  // pillars and are asked under every board there is.
+  'form.group.board': 'How this board is laid',
+  'form.group.instant': 'How the instant is read',
   'form.trueSolarTime': 'Correct to true solar time',
   // The year the pillars are cut at, and the year *this* board is cut at, which
   // are two questions with one word. Both labels name whose year it is, since
