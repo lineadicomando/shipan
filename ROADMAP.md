@@ -1,22 +1,25 @@
 # What is not built yet
 
-Three kinds of open work, open for different reasons, and a fourth list that
-is not work at all. **§ "What is actually open" below sorts them by what they
-are waiting on**, which is the thing a reader wants first and the sections
-themselves are too long to give. The record of how everything else got here is
-in [`docs/history/`](docs/history/README.md); what holds today is in
+Two kinds of open work, open for different reasons; a third section that is a
+closed record and not a plan; and a fourth list that is not work at all. **§
+"What is actually open" below sorts the first two by what they are waiting
+on**, which is the thing a reader wants first and the sections themselves are
+too long to give. The record of how everything else got here is in
+[`docs/history/`](docs/history/README.md); what holds today is in
 [`docs/`](docs/README.md).
 
-**The open edge of this project was the shelf and is now two things.** The
-boards, the almanac layer and the calendrical layer under them are built,
-checked and documented, and the section of notes that accounts for them is
-written.
+**The open edge of this project was the shelf, and the shelf has been read.**
+The boards, the almanac layer and the calendrical layer under them are built,
+checked and documented; the section of notes that accounts for them is written;
+and as of 2026-08-30 every photographic file here has been opened and said what
+it is. § 2 is the record of that reading rather than a plan for it.
 
-Most of what is left is still a **text** — one that adds a quantity, confirms
-one already shipped, or contradicts it — and that is an ordinary change with a
+What is left is still mostly a **text** — one that adds a quantity, confirms one
+already shipped, or contradicts it — and that is an ordinary change with a
 stated procedure: `docs/sources.md` § "When a source arrives later" says what
-moves and in what order. § 2 is that reading, cut into pieces that can be put
-down, and a third language waits on the engine rather than on anything below.
+moves and in what order. What has changed is that such a text is now something
+to **acquire** and no longer something to open, since nothing here is waiting to
+be read. A third language waits on the engine rather than on anything below.
 
 **An audit on 2026-08-28 found divergences the engine was deciding in silence,
 and the field they wanted has since been added.** 奇門's input type carries all
@@ -257,11 +260,13 @@ which is the one to grep.
 `contact.py` tiles a strip of each of a list of pages into one image, and has
 three strips because a survey asks three questions: `top` for the head of the
 printed block, where a section heading sits; `margin` for both outer edges,
-where a 版心 carries the running title and the juan; `full` for when the layout
-itself is the question. It crops from the ink bounding box rather than fixed
-coordinates, because a facsimile's block wanders on the sheet and on some
-volumes alternates sides. Every survey in `docs/history/` phases 30 to 32 was
-made of it, and every one in phase 3 below.
+where a 版心 carries the running title and the juan — **which assumes one
+book-page to the sheet**, and returns blank strips where a reprint stacks two;
+`full` for when the layout itself is the question. It crops from the ink
+bounding box rather than fixed coordinates, because a facsimile's block wanders
+on the sheet and on some volumes alternates sides. Every survey in
+`docs/history/` phases 30 to 32 was made of it, and every one in phases 2, 3 and
+4 below.
 
 ### Phase 1 — the dunjia scans, for `plate`, and what `centreLodging` and `system` cost
 

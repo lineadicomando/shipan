@@ -2233,7 +2233,7 @@ The other axis. A chart chooses an hour **and a direction**, and the 年神 are
 what the almanac puts on the second — 卷三 describes each as 所理之地 or
 所在之方, a bearing held for a year.
 
-Twenty-six are implemented, which is all of 卷三 but one. Each is one whose position 卷三 states outright and
+Twenty-six are implemented, which is all of 卷三 but one — the one being 日遊神, whose entry was empty in the copy read first and has since been read whole in another; § "What is not here" says what still keeps it out. Each of the twenty-six is one whose position 卷三 states outright and
 completely, in its own entry, without leaning on a god defined elsewhere:
 
 | | the source's words | |
@@ -2343,12 +2343,29 @@ weighed — the month pillars against `lunar-javascript` over two centuries, the
 納音 over 479 charts — so the only new thing is the selection, and the source's
 one worked year checks it: 甲己年 comes back 午未申酉, which is what 卷三 says.
 
-**日遊神 cannot be read from this source as it stands.** It is the last anchor
-of 卷三 and its body is **empty** in the Wikisource transcription — the heading
-is there and the text runs straight on to the chapter's 總論 — and the name
-appears nowhere in 卷四 to 卷八 either. So it is neither implemented nor
-refused: a printed edition would settle it and none was consulted. Recorded
-here rather than filled in, which is the whole habit this file exists to keep.
+**日遊神 was unreadable and is not any more, and what keeps it out is now a
+decision.** It is the last entry of 卷三 and its body is **empty** in the
+Wikisource transcription — the heading is there and the text runs straight on
+to the chapter's 總論 — which is why this paragraph used to say a printed
+edition would settle it and none had been consulted. One had: the 華齡
+typesetting on this shelf carries the entry whole at its p. 71, with the ring
+diagram and a 附 鶴神圖 after it. 《歷例》: 「癸巳至丁酉日在房內北，戊戌、己亥日
+在房內中，庚子、辛丑、壬寅日在房內南，癸卯日在房內西，甲辰至丁未日在房內東，
+戊申日又在中，己酉日出遊四十四日」 — sixteen days indoors by quarter and
+forty-four abroad, keyed to the day pillar and repeating on the sexagenary
+cycle. Read on the plate 2026-08-30.
+
+**It is still not computed, and for two reasons that are not «nobody states
+it».** The first is that what the source hangs on it is 宜忌 — 「遊神所在之方，
+不宜安產室、掃舍宇、設床帳」 — and the position without the advice is a
+direction nobody asked for; the second is that 房內北 is not one of the seats
+`YearGodSeat` has kinds for, being a quarter *inside a building* rather than a
+branch, a stem or a trigram, so carrying it would mean a fifth kind. The source
+is also candid that the rule has no account: 《歷例》 says 「其義未明」 and the 按
+adds 「自來未有為之說者，然俗所遵信」, tracing it no further back than
+明代承元《授時曆》. That is not the 蠶室 case — the 協紀 endorses the placement
+and argues for it at length — so this is a quantity that **could** be carried
+and has not been, which is a different state from one that could not be.
 
 **Twenty-six, and 卷三 is otherwise read**;
 some are stated only inside a discussion the source marks as one opinion among
@@ -3297,6 +3314,14 @@ from the first release so that reading it later cannot break a shared link.
 See `docs/parameters.md`, which says exactly this about every divergence and said it
 about this one before the reading.
 
+**And what reading it would have to establish first is congruence, not
+difference.** § "A second 上元, and what it turns out not to change" below is
+the case: a count eight million years from this one lays the identical board,
+because everything either takes is taken mod 360 or mod 24 and the two differ
+by an exact multiple of both. So a second 上元積年 is a second *value* only if
+it is incongruent, and a reading of 太乙統宗寶鑑 that stopped at «its number is
+different» would have established nothing.
+
 `yearBoundary` is a genuine divergence and stays one. The text nowhere says
 where its counted year begins; 立春 is the default because the pillars beside
 it turn there, and a board that cut the year elsewhere would be two calendars
@@ -3806,7 +3831,7 @@ an old personal backup, and recorded as **untraceable** rather than merely
 undeclared, which is a stronger statement and a worse one. None is a scan. The copies in hand may therefore share one lineage, and
 this section never rests on their agreement.
 
-**A shelf of school manuals, kept and not used.** 《中國絕學》 (方外人,
+**A shelf of school manuals, read and mostly not leant on.** 《中國絕學》 (方外人,
 臺北金林文化, 1986), eleven volumes, in `texts/juexue`. Volume five is the
 《全集》 described below and is filed with the 紫微斗數 texts instead. Three of
 the other ten carry 紫微斗數 material — 同步斷訣, 河洛歸元, 細說星情 and
