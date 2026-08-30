@@ -21,6 +21,7 @@
     board = undefined,
     when = 'fields',
     openLegend,
+    beside,
     extra,
     extraLegend,
     extraSet = 0,
@@ -90,6 +91,18 @@
      * where the tenth can find it, not in front of all of them.
      */
     when?: 'fields' | 'options';
+    /**
+     * Anything else a section asks for in the open, under the moment.
+     *
+     * The counterpart of `extra`, and the line between them is whether the
+     * board is a function of it. 八字 and 紫微斗數 read the sex to run the
+     * 大運 and the 大限, so a board laid without it is a smaller board than
+     * the one that was asked for: that is a field, and a field stands where
+     * the date and the place stand. Behind the fold it read as a refinement
+     * somebody could decline, and it stood under the options rather than over
+     * them, which put it after the one thing on the panel that can be shut.
+     */
+    beside?: Snippet;
     /**
      * Anything else a section wants under the same disclosure.
      *
@@ -244,6 +257,10 @@
       <LocationSearch {t} bind:selected={place} bind:latitude bind:longitude bind:timezone />
     </div>
   {/if}
+
+  <!-- What the section asks for beside the moment, in the open and above the
+       fold. See `beside`. -->
+  {@render beside?.()}
 
   <details bind:open>
     <!-- A label, not the note: what a disclosure is called has to say what

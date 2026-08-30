@@ -113,15 +113,22 @@
       bind:trueSolarTime={asked.trueSolarTime}
       bind:chosen={asked.chosen}
       board="bazi"
-    />
-    <!-- Asked for, never assumed: only the direction of the cycles needs it,
-         and the question says so rather than leaving it to be guessed. -->
-    <Choice
-      ask={t('form.gender')}
-      values={genderValues(t)}
-      chosen={gender}
-      onchoose={(value) => (gender = value)}
-    />
+    >
+      <!-- Asked for, never assumed: only the direction of the cycles needs it,
+           and the question says so rather than leaving it to be guessed.
+
+           In the open and over the fold, which is what `beside` is for: the
+           pillars run their decades from it, so it is a field of the birth
+           like the hour, and not a way of reading one. -->
+      {#snippet beside()}
+        <Choice
+          ask={t('form.gender')}
+          values={genderValues(t)}
+          chosen={gender}
+          onchoose={(value) => (gender = value)}
+        />
+      {/snippet}
+    </MomentForm>
     <SubmitButton {t} label="cli.heading.reading" {busy} {needed} />
   {/snippet}
   {#snippet controls()}
