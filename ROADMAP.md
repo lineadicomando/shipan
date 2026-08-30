@@ -28,18 +28,22 @@ a source, or in one case a shape.
 
 ## What is actually open
 
-Three buckets, and they are not the same kind of work. Everything below expands
+Two buckets, and they are not the same kind of work. Everything below expands
 one of them.
 
 | | | |
 |---|---|---|
 | **A shape in the engine** | `centreTravel: travel` — the only refused value not short of a witness. Both sides are in Qing print and the 金鏡寶鑑 side checks itself over 120 collated cells; what it asks is that a palace be able to carry two stems and two stars, since a centre that travels arrives somewhere already occupied | § 1 |
 | **A source that is not on this shelf** | every other value in the table below. Each is written against in § 1 or `docs/refusals.md`, and none of them is waiting on a file somebody could open today. Two are acquisitions with a named object: a 授時 lodge table that prints 參, and an epoch for 紫氣 | § 1, and phase 4 of § 2 |
-| **Two plates nobody has read** | 中國絕學 第一冊, which is handwriting and can only be read by eye, and 第十冊, whose extract is too weak to search. **Neither stands under a value in § 1**, which is why they are last | phase 2 of § 2 |
 
-**Nothing in § 2 is blocking anything.** Phases 1 and 3 are closed, phase 2 has
-landed its errand, and phase 4 is read on demand. An unread scan costs nothing
-until somebody claims it says something.
+**There was a third bucket and it is empty.** The two plates nobody had read
+were read on 2026-08-30: 第一冊 confirms the 庚 line a fourth time and states
+nothing this engine did not already carry, and 第十冊 turned out not to be a
+紫微斗數 book at all. Neither stood under a value in § 1 and neither does now.
+
+**Nothing in § 2 is blocking anything.** Phases 1, 2 and 3 are closed, and
+phase 4 is read on demand. An unread scan costs nothing until somebody claims
+it says something.
 
 ## 1. Parameters that are declared and refused
 
@@ -174,17 +178,21 @@ and nothing here depends on it: what a source establishes is in
 
 Rather more than half the PDFs on the shelf are photographic and carry no text
 layer, and rather less than half of *those* have been through OCR. **What is
-left unextracted is what should be**, being woodblock or handwriting, where the
-models return so little that a search against the result is evidence of
-nothing. Nothing in § 1 is waiting on an extract that could be made today.
+left unextracted is mostly what should be**, being woodblock or handwriting,
+where the models return so little that a search against the result is evidence
+of nothing — mostly, because a file can change hand partway and 中國絕學 第一冊
+did, its typeset eighth having been filed as unreadable along with the rest
+until 2026-08-30. `docs/scans.md` carries what that cost. Nothing in § 1 is
+waiting on an extract that could be made today.
 
 **The numbers are deliberately not written here.** `texts/` is excluded from
 the repository, so no test can hold a count of it to anything and a figure in
 this file is a figure that drifts — which is what happened: this paragraph said
 «forty of the seventy, sixteen extracted» for long enough that all three were
 wrong. What the shelf holds is counted by looking at the shelf. As of
-2026-08-30 that was 71 files, 39 of them photographic and 19 through OCR, and
-the only reason to write it down is to date it.
+2026-08-30 that was 71 files, 39 of them photographic and 20 through OCR — one
+of the twenty partly, that being 第一冊 — and the only reason to write it down
+is to date it.
 
 **An extract is not a reading and the two are counted separately here.** The
 OCR pass made something over ten thousand book-pages searchable — the sheet
@@ -321,18 +329,20 @@ refusal firmer, and that is the shape the rest of the set is expected to take.
 Where it does not refuse, it names — which is how 紫微斗數 `sihua` came by its
 second value, since a school manual is where a school's reading lives.
 
-The volumes that carry 紫微斗數 are the first, sixth, seventh and tenth. The
-rest of the set is 鐵版神數, 奇門易數, 邵子神數, 皇極天書 and 玄空金口訣 —
-arts this project does not compute, read only far enough to say so.
+The volumes that carry 紫微斗數 are the first, sixth and seventh. The tenth was
+expected to be a fourth and is not: it is 邵子's 易數, which is one of the arts
+this project does not compute, along with 鐵版神數, 奇門易數, 皇極天書 and
+玄空金口訣 — read only far enough to say so.
 
-**Ten of the eleven are extracted and the eleventh cannot be.** 第一冊 is
-handwriting on squared paper, which no model here reads and which the eye reads
-easily, so the one volume of the four carrying 紫微斗數 that is a manuscript is
-the one that has to be read by plate. What the other nine cost is in the
-shelf's register; what they are worth is **that they can be searched at all**,
-which is what a set nobody had opened was missing. Search around 祿, which
-those scans lose without collapsing onto anything: 化祿 and 祿存 score zero on
-volumes that print them constantly.
+**All eleven are extracted now, and the eleventh only in part.** 第一冊 was
+filed as a manuscript, and its first 103 printed pages are movable type —
+searchable, and now searched — while the remaining 787 are handwriting on
+squared paper over a printed 太極 that eats what crosses it. What the other
+nine cost is in the shelf's register; what they are worth is **that they can be
+searched at all**, which is what a set nobody had opened was missing. Search
+around 祿, which these scans lose without collapsing onto anything: it scores
+zero in 30 953 characters off 第一冊's typeset eighth, on pages printing 化祿,
+祿存 and 官祿宮 throughout, where 忌 scores 237 beside it.
 
 **The errand this phase was opened for landed**, and not as it was aimed. It
 was waiting on a lineage carrying its own ten stems; what the set holds is one
@@ -350,12 +360,32 @@ otherwise. The `huoling` pair turns out to share every seat and to part only on
 whether the hour is counted on, which is a narrower divergence than the
 parameter's shape suggested.
 
-Every argument above, with its pages, is in `docs/sources.md`.
+**第一冊 argues at 庚, and it argues for the reading that shipped.** It prints
+no ten-stem 四化 table — the doctrine is 生年四化 flying into the twelve palaces
+— but nine cells over seven stems can be read out of it and every one is
+《全書》's, including the two the line at 庚 is disputed over. Two of them are
+typeset and therefore quotable: 「命宮庚使天同化忌入官祿沖夫妻（死亡點）」 under
+a chart at p. 103, and the 目錄's heading for p. 821, 「庚陽武陰同，癸破巨陰貪，
+兩個化科，如何區別?」 — a section that exists only because 庚 and 癸 both put 科
+on 太陰. A fourth voice on a line with three readings, and a second school
+agreeing rather than a witness, so the rung does not move. It says nothing
+about 壬's 科, which is the cell still open.
 
-What is left of this phase is 第一冊, which is the manuscript, and 第十冊, whose
-extract is the weak one — 96 dpi to the sheet, 紫微 once in the whole volume —
-and which is therefore a plate errand whatever else happens. **Neither is under
-a value in § 1**, so neither is urgent.
+**And its 目錄 says there is no point asking it three other questions.**
+Typeset, complete and in section order across all four works, it carries no
+安星 section, no 起大限訣 and no 閏月 rule, because a 斷訣 manual presumes the
+board and teaches judgement from it. So `huoling: hour`, `daxian: ming` and
+`leapMonth` gain nothing here, and not for want of the volume being read.
+
+**第十冊 is not a 紫微斗數 book.** Recorded as three works, one of them
+逍遙子紫微郎秘訣, it is 《邵子易數講義》, 郭懿雲 講演, in eleven chapters and an
+附錄 of 元會運世 tables — established on its own typeset 目錄 and on contact
+sheets across all 145 leaves. The two occurrences of the name in its weak
+extract are a list of arts in a Q&A and a paragraph on where 鐵版神數 came
+from. The set's own 目錄, not just the record page, was wrong about a volume.
+
+Every argument above, with its pages, is in `docs/sources.md`. **This phase is
+closed.**
 
 ### Phase 3 — 紫微斗數全書, 明南陽堂 woodblock
 

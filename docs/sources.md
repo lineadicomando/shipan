@@ -3675,17 +3675,50 @@ this section never rests on their agreement.
 
 **A shelf of school manuals, kept and not used.** 《中國絕學》 (方外人,
 臺北金林文化, 1986), eleven volumes, in `texts/juexue`. Volume five is the
-《全集》 described below and is filed with the 紫微斗數 texts instead. Four of
+《全集》 described below and is filed with the 紫微斗數 texts instead. Three of
 the other ten carry 紫微斗數 material — 同步斷訣, 河洛歸元, 細說星情 and
 四化斷訣 in the first; 闡微, 析論 and 特例命譜 in the sixth; 四化飛伏斷訣 and
-the 占驗·南·北 schools in the seventh; 逍遙子紫微郎秘訣 in the tenth — and all
-of it is twentieth-century school teaching: 飛星 and 四化 method, worked
-verdicts, per-palace doctrine. **None of it is a source here**, on the ground
-《果老星宗》 is declined on. They are kept because a divergence may one day need
-a school's name attached to it, and a school manual is where a school's name
-lives. Each has a row in `docs/provenance.tsv` saying what it holds. The rest
+the 占驗·南·北 schools in the seventh — and all of it is twentieth-century
+school teaching: 飛星 and 四化 method, worked verdicts, per-palace doctrine.
+**A fourth was expected and is not there.** The set's own 目錄 gives the tenth
+volume three works, one of them 逍遙子紫微郎秘訣; the file is 《邵子易數講義》,
+郭懿雲 講演, in eleven chapters, and carries no 紫微斗數 at all bar two passing
+mentions of the name. Read on the plate 2026-08-30, on its own typeset 目錄 and
+on contact sheets across all 145 of its leaves.
+
+**No shipped quantity rests on a school manual, and one refused value now
+does not either.** They are kept because a divergence may one day need a
+school's name attached to it, and a school manual is where a school's name
+lives — which is what happened at 壬, where `sihua: zuofu` computes a reading
+two of them hold. What none of them is is a witness to the doctrine: the class
+is declined on the ground 《果老星宗》 is declined on, and a modern school
+agreeing with a transmitted line is worth what a school is worth and no rung
+more. Each has a row in `docs/provenance.tsv` saying what it holds. The rest
 of the set — 鐵版神數, 奇門易數, 邵子神數, 皇極天書, 玄空金口訣 — is arts this
 project does not compute.
+
+**The first volume has now been read, and it is the one that argues at 庚.**
+Its 目錄 runs to printed page 890, of which the first 103 are movable type and
+the rest handwriting on squared paper: the break falls exactly where the second
+of its four works reaches its 擂台第二階段, so a searchable eighth stands in front
+of a plate errand. What it states of the 四化 it
+states in worked examples rather than in a table — it prints no ten-stem table
+at all, the doctrine being 生年四化 flying into the twelve palaces — and nine
+cells over seven stems can be read out of it: 丁祿太陰, 戊忌天機, 己科天梁,
+庚祿太陽, 庚科太陰, 庚忌天同, 辛忌文昌, 壬忌武曲, 癸科太陰. **Every one of them
+is this book's**, and the two that matter are typeset: 「命宮庚使天同化忌入官祿
+沖夫妻（死亡點）」 at its p. 103, and the 目錄's own heading for p. 821,
+「庚陽武陰同，癸破巨陰貪，兩個化科，如何區別?」 — a section that exists because
+庚 and 癸 both put 科 on 太陰 and the manual wants them told apart. **What it
+does not say is anything about 壬's 科**, which is the cell a school could
+still move. Read on the plate 2026-08-30.
+
+**And it settles nothing about three refused values, which is a result.** Its
+目錄 is typeset, complete and in section order across all four works, and it
+carries no 安星 section, no 起大限訣 and no 閏月 rule: this is a 斷訣 manual,
+which presumes the board and teaches judgement from it. So `huoling: hour`,
+`daxian: ming` and `leapMonth` gain nothing here — not for want of the volume
+being read, but because a book of this kind never states them.
 
 **One manual kept for what it names.** Aloysius Han, *Zi Wei Dou Shu 紫微斗数*,
 fifth revision (2014), self-published in English, 341 pages, of declared
@@ -4111,7 +4144,7 @@ they were mine.** What follows is the whole of it, after collation.
 | 火星 · 鈴星 | 25.0 % | **stands, and both editions agree.** Each takes a seat from the year's triplicity and the birth hour never enters, where the widespread practice counts on from those seats by the hour — which is why agreement is exactly the quarter of the sample whose hour offset is zero. `huoling` names it, and **the Ming 南陽堂 recension is a third witness for both halves**: its 安火鈴二星訣 is a heading and four half-lines of seats with no hour clause after them. The second edition prints 寅午戌人**午**卯方 where the first prints 丑卯, and 丑 is kept: 午 already stands as a triplicity head two characters earlier, the received seats are 丑 and 卯, and the block reads 丑卯 — so the variant is closed and the 午 is that edition's own |
 | 解神 | 10.3 % | **stands, both editions agree, and the Ming 南陽堂 recension prints the line a third time character for character.** 「解神從戌上起子，逆數至當生年太歲上是也」 — placed off the **birth year**. What modern software carries under this name is the 月系 star, placed off the month: two quantities wearing one name, and the block is what stops that being an inference. Its 安天德月德解神訣 puts three stars in one section and places the first two 「至流年太歲上」, so 流年 and 當生年 stand three lines apart on one leaf |
 | 天府 taking 化科 at 壬 | 0 % | **stands as the default, with two witnesses behind it, and the other side is now a value.** `sihua: zuofu` computes the reading below rather than only recording it; the seat is marked on both sides of the divergence, since a mark on the moved one alone would be this engine calling its own default the plain reading. 2026-08-29. Both editions read 「壬梁紫府武宿是」. Later lineages give 科 to 左輔, and two of them are now on the shelf with names on them — the 中州派 manual above prints 「壬梁紫輔武宿是」, and 《紫微斗數 北派》, 恭鑑老人, uses 左輔 twice in worked examples. **What the second one settles is the size of the divergence, not its side.** Eleven of 北派's cells have been read off its plates, over six stems — 甲忌太陽, 戊忌天機, 己祿武曲, 庚祿太陽·科太陰·忌天同, 癸祿破軍, and 壬's row drawn entire as 天梁祿·紫微權·左輔科·武曲忌 — and every one of them is this book's except that 科. So 北派 is not a different table; it is this table with one cell moved, which is a smaller claim than «a lineage's own 四化» and a sharper one. It contradicts itself there once, writing 「生年壬紫微化科入限」 at 四—二〇〇 where 四—一八八 draws 紫微 with 權 and 左輔 with 科; the reading that appears twice is the drawn one. Read on the plate 2026-08-27 |
-| 化科 and 化忌 at 庚 | — | **the one line the two editions disagree about.** This text reads 庚日武**陰同**為首 (科 to 太陰, 忌 to 天同); the second reads 庚日武**同陰**為首, swapping them. That is the famous split at 庚, and it is carried as a variant rather than settled — the reading kept is the one the reference also computes, and the other is written here so nobody rediscovers that the line has two forms. **A third party has since sided with the reading kept**: the 中州派 manual described above prints 「庚日武阴同为首」 and a table to match, which is a school agreeing rather than a witness, and is worth exactly that much. **And the adjudicator has since printed a third form.** The Ming 南陽堂 recension reads 庚日武**同相**為者 — 科 天同, 忌 天相 — siding with the second edition on the 科 and with neither on the 忌, and naming the star 中國絕學 第七冊's 【占驗派】 part also puts the 忌 on. Three readings of one line, each with something behind it, and the shipped one is the only one two voices agree on |
+| 化科 and 化忌 at 庚 | — | **the one line the two editions disagree about.** This text reads 庚日武**陰同**為首 (科 to 太陰, 忌 to 天同); the second reads 庚日武**同陰**為首, swapping them. That is the famous split at 庚, and it is carried as a variant rather than settled — the reading kept is the one the reference also computes, and the other is written here so nobody rediscovers that the line has two forms. **A third party has since sided with the reading kept**: the 中州派 manual described above prints 「庚日武阴同为首」 and a table to match, which is a school agreeing rather than a witness, and is worth exactly that much. **And the adjudicator has since printed a third form.** The Ming 南陽堂 recension reads 庚日武**同相**為者 — 科 天同, 忌 天相 — siding with the second edition on the 科 and with neither on the 忌, and naming the star 中國絕學 第七冊's 【占驗派】 part also puts the 忌 on. Three readings of one line, each with something behind it, and the shipped one is the only one two voices agree on. **A second modern school has since sided with it too**, and in the form that is hardest to write by accident: 中國絕學 第一冊 works the reading rather than asserting it, printing 「命宮庚使天同化忌入官祿沖夫妻（死亡點）」 under a chart at its p. 103 and heading a section of its own 「庚陽武陰同，癸破巨陰貪，兩個化科，如何區別?」 at p. 821. That is a fourth voice on a line with three readings, and it changes the rung by nothing at all — two schools agreeing is still no transmitted witness — but it is where the count now stands. Read on the plate 2026-08-30 |
 | 命宮 in a leap month | excluded | this book counts a leap month as the month **after** it (「凡有閏月俱要依此為例」); `iztro` splits the month at its middle. `leapMonth` names all three readings and implements the book's |
 
 After the two corrections the comparison stands at **fifty-nine of

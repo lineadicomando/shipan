@@ -64,6 +64,17 @@ Oversampling does not help. `--oversample 300` and `600` on the hundred-dot
 scan moved the density of expected terms from 5.6 % to 5.3 % to 5.0 %:
 upsampling adds no information the file does not hold.
 
+**And the floor is necessary and not sufficient, which one file settles on its
+own.** 中國絕學 第一冊's typeset eighth is a 1-bit stencil at 400 dpi — about
+eighty pixels a character, twice the floor and above the movable-type row of
+the table — and its extract still comes back at 271 characters to a book-page
+on pages that hold half again as many. Where the loss falls is the familiar
+place: **祿 scores zero in 30 953 characters**, on pages printing 化祿, 祿存 and
+官祿宮 throughout, while 忌 scores 237 beside it; and it does not substitute,
+碌 and 綠 together taking seven of the hundreds it should be. One bit throws
+away the stroke weight the recogniser needs and the pixel count cannot put it
+back, so **a stencil is read as its own row of that table whatever its dpi**.
+
 ## An extract locates a passage. It never quotes one.
 
 This is the rule the rest of the page serves. Every line this project has
@@ -145,6 +156,17 @@ This is the pixels-to-a-character rule arriving from the other side: what a page
 can support is a question about its densest content, not its nominal
 resolution.
 
+**A device printed under the writing is a third thing to read through, and
+nothing removes it.** The squared paper 中國絕學 第一冊 is written on carries a
+太極 across the middle of its frame, covering about a third of the block with
+half of that solid: characters crossing the dark half are gone rather than
+faint, and a clause can be lost inside one. `unpaper` cannot help — the band it
+drops lies outside the printed frame and this lies inside it — and neither can
+resolution, since the ink is not thin but absent. What is left is the sentence's
+own grammar, and a heading that also stands in a 目錄 is quoted from the 目錄.
+This is the plate's version of the silent failure and the loud one at once: the
+device is visible, so a reader at least knows a character is missing.
+
 **A contact sheet is what makes a woodblock affordable.** Eight to twelve pages
 rendered small, the heading corner of each cropped, tiled into one image: one
 look covers ten pages and answers «what section is this», which is the question
@@ -203,6 +225,8 @@ first six of them while this page was being written:
 | 《遁甲演義》, a third scanned edition | 卷一 alone, which its closing leaf states |
 | 《奇門遁甲秘笈大全》, 故宮珍本叢刊 第427冊 | that work in 二十三卷, and then a second the entry did not name: 《諸葛武侯行兵遁甲金函玉鏡》 in 六卷, a cursive manuscript hand |
 | 《遁甲集成》第三冊, «奇門遁甲» | 遁甲符應經 from its p. 1136, and 年家 · 月家 · 日家 tables under no title leaf, dated to the Kangxi reign |
+| 《中國絕學》第十冊, three works, one of them 紫微斗數 | 《邵子易數講義》, 郭懿雲 講演, in eleven chapters and an 附錄, and no 紫微斗數 in it at all. Here the set's *own* 目錄 was the thing that was wrong, which is the failure one file down from the record page |
+| 《中國絕學》第一冊, handwriting no model reads | handwriting for seven eighths of it and movable type for the first, and the typeset eighth carries the 目錄 that navigates the rest |
 
 **《御定星歷考原》 is the case that matters**, because the work had been
 acquired *in order to* be a second witness for about seventy quantities and the
@@ -222,6 +246,16 @@ render. Four commands, under a minute, and
 they establish extent — which is the thing a plan is a function of. A work in
 six juan and a file with one of them are different objects and only one of them
 is on the shelf.
+
+**And a file need not have one hand, so the contact sheet has to cross the
+whole extent and not the middle of it.** 中國絕學 第一冊 was recorded as a
+manuscript and filed as unreadable on that ground; its first 103 printed pages
+are movable type and its remaining 787 are handwriting, and the boundary falls
+exactly where its second work begins. The cost of the sample being taken in one
+place was the searchable eighth going unsearched — and that eighth carried the
+volume's 目錄, which is what reaches a page in the other seven. The same holds
+for resolution: this volume is 400 dpi to its sheet 309 and 200 dpi after, which
+`pdfimages -list` says in one line and no sample says at all.
 
 **The printed page numbers say how many book-pages a sheet carries, and the
 check is one subtraction.** 遁甲集成 第三冊 shows series page 1019 on its second
