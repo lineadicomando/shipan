@@ -136,6 +136,12 @@ the engine falls back to Moshier, which needs no files.
   — the `implemented` flag where it unlocks a refused value, and the date a
   written entry shows. Confirming counts as much as contradicting, and nothing
   is quietly rewritten. → [`docs/sources.md`](docs/sources.md)
+- **A negative is a negative about the shelf that was asked, so a file arriving
+  reopens more than its own entry.** What the register closed for want of a text
+  was closed against the files held that day: an arrival is put to the questions
+  already standing, and the negatives already closed are put back to the
+  arrival. Bounded to those two, never a re-reading of everything. →
+  [`docs/sources.md`](docs/sources.md)
 - **A second copy of one text settles the text and never the doctrine.** A
   collation retires one risk — the copy is corrupt, the character misread — and
   no other: it moves three things instead of four, never the rung. What an

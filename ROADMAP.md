@@ -49,6 +49,14 @@ finished: every photographic file on the shelf has been opened and said what it
 is. What that leaves § 2 as is a record of how the shelf was read and what the
 reading cost, which is why it is still here.
 
+**Closed against a shelf, which is a state and not a finish.** Every negative
+in it — «no file left on this shelf», «this list is empty» — is a statement
+about the files held on 2026-08-30 and about nothing else. A file arriving
+reopens the part of it that named that file's class or its text;
+`docs/sources.md` § "What an arrival reopens" says which part and how far. So
+§ 2 stays as a record *and* as where a re-reading starts, which is why "where
+the state is kept" below is still the operative paragraph.
+
 ## 1. Parameters that are declared and refused
 
 Every one of these already exists in an input type, is validated, and throws

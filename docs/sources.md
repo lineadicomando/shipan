@@ -4673,3 +4673,43 @@ for is the one who wants to know how a thing came to be believed, and an
 argument silently replaced tells them nothing. The phase that makes the change
 says it revises the earlier one — `docs/history/README.md` § "How it went" is
 the convention — and the old phase file is left alone.
+
+### What an arrival reopens, which is more than its own entry
+
+The four rows above are the whole change **when the shelf is only larger**. It
+rarely is. Most of what is written as closed here was closed *for want of a
+text*, and that closure is indexed to the files held on the day it was written:
+**a documented negative is a negative about the shelf that was asked.**
+《大六壬課經集》 defines neither 晝貴 nor 夜貴, which settles `zhouye` against that
+book and against no other.
+
+So the reopening runs both ways, and the second way is the one that gets
+forgotten: the questions still standing are put to the arrival, **and the
+negatives already closed are put back to it**. The second direction reaches
+files that have been read, because a witness to a text already held moves what
+stands on that text.
+
+**Three questions, and they are the bound.** A shelf of some seventy files read
+at two to four plate-pages a minute cannot be re-read at every arrival, and a
+rule that asks for it is a rule that gets skipped.
+
+1. **What is standing?** `ROADMAP.md` § 1 says, per refused value, what would
+   move it — a school holding 艮, a text flying the hour board, a lineage
+   holding one reading, a 授時 table printing 參, an epoch for 紫氣. Those
+   clauses are the query put to the arrival, and they stay there rather than
+   being copied here.
+2. **What did this class of book already answer?** A negative that named a
+   *class* — a 斷 manual presumes the board and will not carry a procedure — is
+   either confirmed by an arrival of that class or overturned by it, and either
+   is worth a line.
+3. **Whom is it a witness to?** A second witness to a text already held moves
+   the entries standing on that text and only those: rung 4 or 5 becomes rung 2
+   where it agrees, a divergence where it does not. § "What a second copy of one
+   text buys" says which of the two an arrival is.
+
+**The closure sentences are the thing to sweep.** `ROADMAP.md` § 2 already names
+the phrases asserting an unfinished state — «not yet read», «still missing»,
+«none opened» — and an arrival falsifies the opposite ones: «this list is
+empty», «no file left on this shelf», «nothing here is waiting to be read», «an
+acquisition, not a reading». Sweeping those before the session ends is what
+keeps a paragraph from outliving the shelf it describes.
