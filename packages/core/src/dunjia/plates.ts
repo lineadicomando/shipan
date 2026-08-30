@@ -312,12 +312,19 @@ export function chiefGate(earth: ByPalace<Stem>, instrument: Stem): Gate {
 }
 
 /**
- * Where the chief gate comes to rest.
+ * Where the chief gate's count lands, before the centre is decided.
  *
  * Unlike the plates, the gates *fly*: from the instrument's palace they count
  * on through the Luoshu numbers, one step for each pair the hour stands into
  * its decade. Counting up in a yang chart and down in a yin one, and passing
  * through the centre, which the turning ring never does.
+ *
+ * **The landing is returned where it falls, the fifth palace included**, and
+ * the caller decides twice from it. The ring the eight gates are laid round is
+ * always the lodged seat, because `orbitFrom` has no place for the centre;
+ * whether the 值使 is *reported* there or in the centre it landed on is
+ * `centreTravel`'s to say. Lodging here would settle both at once and settle
+ * one of them wrongly.
  */
 export function chiefGatePalace(
   earth: ByPalace<Stem>,
@@ -328,7 +335,7 @@ export function chiefGatePalace(
   const flight = yang ? FLIGHT_ASCENDING : FLIGHT_DESCENDING;
   const from = palaceOf(earth, instrument);
   const within = hourGanzhi.index % 10;
-  return lodge(step(flight, from, within));
+  return step(flight, from, within);
 }
 
 /**

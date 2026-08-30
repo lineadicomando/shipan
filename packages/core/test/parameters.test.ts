@@ -237,7 +237,6 @@ describe('what 奇門 decided in silence', () => {
     ['leap', 'runyue'],
     ['strengths', 'star'],
     ['earth', 'eighteen'],
-    ['centreTravel', 'travel'],
   ] as const;
 
   it('refuses every value it declares and does not compute', () => {

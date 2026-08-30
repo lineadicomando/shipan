@@ -1302,6 +1302,15 @@ export const en = {
     'nothing: the same eight names stand in both dun, as 《御定奇門寶鑑》 yùdìngqíménbǎojiàn has them',
   'form.qimen.spirits.baihu':
     'the half of the year, with 白虎 báihǔ kept at the fifth seat in a yang chart: the board of 《奇門遁甲全局》 qíméndùnjiǎquánjú',
+  // The moving pair against the plate under it. 《金鏡寶鑑》 separates the two in
+  // one clause — 其星寄 for the star, 符使不必寄於二 for the 符 and the 使 — so
+  // the label asks about the pair and neither value promises a different board.
+  'form.qimen.centreTravel':
+    'When the chief 值符 zhífú and the chief gate 值使 zhíshǐ fall on the central palace, they are read',
+  'form.qimen.centreTravel.stay':
+    'at 坤 kūn, which is the palace the centre lodges in: 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
+  'form.qimen.centreTravel.travel':
+    'in the central palace itself: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
   'form.qimen.yuan': 'Under chaibu, the third of the term is counted',
   'form.qimen.yuan.term': 'from the instant the term began',
   'form.qimen.yuan.futou': 'from the day, by five-day stretches: 符頭 fútóu',
@@ -1675,7 +1684,7 @@ export const en = {
   'notes.parameter.leap': 'Where 置閏 zhìrùn repeats its block.',
   'notes.parameter.strengths': 'What the five seasonal states are read from.',
   'notes.parameter.earth': 'Where earth’s season begins.',
-  'notes.parameter.centreTravel': 'Whether the lodged stem and star go with their host.',
+  'notes.parameter.centreTravel': 'Where the chief and the chief gate are read when they fall on the central palace.',
   'notes.parameter.luckGranularity': 'How finely the distance to the term is counted.',
   'notes.parameter.count': 'How the years lived are counted.',
 

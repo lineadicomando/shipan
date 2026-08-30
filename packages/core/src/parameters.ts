@@ -340,9 +340,14 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   centreTravel: {
     board: 'qimen',
+    // Where the 值符 and the 值使 are read when the count puts them on the
+    // centre, and nothing else: 《金鏡寶鑑》 states the pair apart from the
+    // star in one clause — 其星寄 against 符使不必寄於二 — so neither value
+    // moves a plate. See `docs/sources.md`.
+    label: 'form.qimen.centreTravel',
     values: [
-      { id: 'stay', implemented: true },
-      { id: 'travel', implemented: false },
+      { id: 'stay', says: 'form.qimen.centreTravel.stay', implemented: true },
+      { id: 'travel', says: 'form.qimen.centreTravel.travel', implemented: true },
     ],
     default: 'stay',
   },

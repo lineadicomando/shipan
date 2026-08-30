@@ -1198,6 +1198,12 @@ export const it: Record<MessageKey, string> = {
     'niente: gli stessi otto nomi stanno in entrambi i dun, come li ha il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.spirits.baihu':
     'la metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
+  'form.qimen.centreTravel':
+    'Quando il capo 值符 zhífú e la porta del capo 值使 zhíshǐ cadono sul palazzo centrale, si leggono',
+  'form.qimen.centreTravel.stay':
+    'in 坤 kūn, che è il palazzo dove il centro alloggia: 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
+  'form.qimen.centreTravel.travel':
+    'nel palazzo centrale stesso: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
   'form.qimen.yuan': 'Con chaibu, il terzo del termine si conta',
   'form.qimen.yuan.term': 'dall’istante in cui il termine è cominciato',
   'form.qimen.yuan.futou': 'dal giorno, per tratti di cinque: 符頭 fútóu',
@@ -1451,7 +1457,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.leap': 'Dove il 置閏 zhìrùn ripete il proprio blocco.',
   'notes.parameter.strengths': 'Da che cosa si leggono i cinque stati stagionali.',
   'notes.parameter.earth': 'Dove comincia la stagione della terra.',
-  'notes.parameter.centreTravel': 'Se lo stelo e la stella alloggiati vanno con il loro ospite.',
+  'notes.parameter.centreTravel': 'Dove si leggono il capo e la porta del capo quando cadono sul palazzo centrale.',
   'notes.parameter.luckGranularity': 'Con quale finezza si conta la distanza dal termine.',
   'notes.parameter.count': 'Come si contano gli anni vissuti.',
 

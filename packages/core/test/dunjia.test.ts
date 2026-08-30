@@ -131,8 +131,13 @@ describe('a verified chart', () => {
   });
 
   it('finds the chief and the chief gate', () => {
+    // The hour's stem 癸 is the one the ju puts in the centre, so this is a
+    // chart the two prints answer differently. Under the declared default the
+    // pair lodges out to 坤二, which is where the star plate below carries
+    // 天蓬 — 《御定奇門寶鑑》's 「寄於坤二」. `travel` stands it in the fifth,
+    // and the case is asserted whole under § no school is implicit.
     expect(chart.chief.star.hanzi).toBe('天蓬');
-    expect(chart.chief.palace.hanzi).toBe('中');
+    expect(chart.chief.palace.hanzi).toBe('坤');
     expect(chart.chiefGate.gate.hanzi).toBe('休門');
     expect(chart.chiefGate.palace.hanzi).toBe('坎');
   });
@@ -407,6 +412,55 @@ describe('no school is implicit', () => {
         const [option, value] = Object.entries(overrides)[0] as [string, string];
         expect((error as ChartError).params['option']).toBe(option);
         expect((error as ChartError).params['value']).toBe(value);
+      }
+    }
+  });
+
+  it('stands the 符 and the 使 in the fifth palace, or lodges them out', () => {
+    // 《奇門遁甲金鏡寶鑑》 卷之一: 「行活局，符使不必寄於二，徑排入中宮」, against
+    // 《御定奇門寶鑑》 卷二: 「甲辰在中宮，寄於坤二」. Two Qing imperial prints,
+    // one on each side, which is what makes this a parameter and not a
+    // preference. 2024-06-15 14:00 is a chart they answer differently: the
+    // hour's stem 癸 is the one 陽遁九局 puts in the centre.
+    const moment = resolveMoment(
+      { date: '2024-06-15', time: '14:00', timezone: 'Asia/Shanghai' },
+      BEIJING,
+      CLOCK,
+      context,
+    );
+    const stay = computeQimenChart(moment, CLOCK);
+    const travel = computeQimenChart(moment, { ...CLOCK, centreTravel: 'travel' });
+
+    expect(stay.chief.palace.number).toBe(CENTRE_HOST);
+    expect(travel.chief.palace.number).toBe(5);
+    // Which star and which gate is not what parts. Both prints call 天蓬 the
+    // 值符 here; they part on where it is read.
+    expect(travel.chief.star.hanzi).toBe(stay.chief.star.hanzi);
+    expect(travel.chiefGate.gate.hanzi).toBe(stay.chiefGate.gate.hanzi);
+  });
+
+  it('moves no plate either way, because 其星寄 is the other half of the clause', () => {
+    // The divergence is stated of the moving pair alone — the same leaf lodges
+    // the *star* in the same breath. So a board laid under one value and under
+    // the other differs in what it names and in nothing it shows, which is why
+    // this cost `PalaceContents` no field and the drawing no cell.
+    const dates = ['2001-03-07', '2009-08-19', '2017-11-30', '2023-05-05'];
+    for (const date of dates) {
+      for (const hour of ['01:00', '07:00', '13:00', '19:00']) {
+        const moment = resolveMoment(
+          { date, time: hour, timezone: 'Asia/Shanghai' },
+          BEIJING,
+          CLOCK,
+          context,
+        );
+        const stay = computeQimenChart(moment, CLOCK);
+        const travel = computeQimenChart(moment, { ...CLOCK, centreTravel: 'travel' });
+
+        expect(travel.palaces).toEqual(stay.palaces);
+        expect(travel.patterns).toEqual(stay.patterns);
+        // And the two never part anywhere but over the centre.
+        expect(lodge(travel.chief.palace.number)).toBe(stay.chief.palace.number);
+        expect(lodge(travel.chiefGate.palace.number)).toBe(stay.chiefGate.palace.number);
       }
     }
   });

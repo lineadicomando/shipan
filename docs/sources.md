@@ -229,8 +229,15 @@ Before it, one worked example stood against an engine whose evidence was in
 doubt; after it, the same worked example stands against an engine and a
 runnable reference agreeing over 147 charts of exactly this case. That does not
 make 元靈經 wrong — it makes the other side better attested than the register
-could previously say. The value can be declared and refused on the strength of
-one witness; it is further than ever from being implemented. Run 2026-08-28.
+could previously say. Run 2026-08-28.
+
+**And it measured the star plate, which is not what the divergence turns out to
+be about.** 值符隨時干 holding unconditionally is a statement about where the
+值符 is *read*, and this engine's star plate is a statement about where the
+star is *carried*. The two prints part on the first and agree that the second
+lodges — 其星寄 — so the run above says less against 元靈經 than it looked to
+say, and the reference implementations were being asked a question neither side
+of the divergence puts to a plate. The section below settles it on the leaf.
 
 **A print has since arrived on 元靈經's side and the witness is no longer
 single.** 《奇門遁甲金鏡寶鑑》 tabulates 值符隨時干 for every hour of every 局,
@@ -448,12 +455,21 @@ presuppose what they judge: the 符 and the 使 are in the fifth palace to be
 warned about. That half is the reading layer and stops at this file; see
 `docs/refusals.md`.
 
-**What moves is the evidence and not the code.** The value is still declared
-and refused, because implementing it changes what 值符, 值使, the heaven plate
-and the star plate report on every chart where the question arises, and that is
-a board's input type gaining a field — see `ROADMAP.md` § 1, which pays it with
-the two other 奇門 divergences and not alone. What has changed is that the
-witness is no longer single and no longer a transcription.
+**Both values are computed, and the sentence above says what the collation was
+comparing.** The twenty disagreements were counted against the palace this
+engine's *star plate* carries the named star to. That is a fair comparison and
+it is not the parameter: the leaf quoted above separates the star from the
+moving pair in one clause, so what parts between the two prints is where the
+值符 and the 值使 are **read**, and no plate moves under either value. The
+engine had a third answer as well — a `chief` field naming a palace its own
+plates contradicted on 116 charts of 732 sampled — and reading the clause is
+what settled which of the three the divergence was about.
+
+So implementing it cost no field on `PalaceContents`, no cell in the drawing
+and no change to the heaven plate, the star plate, the gates or the spirits:
+`stay` lodges the pair out to 坤二 and `travel` stands it in the fifth palace,
+and that is the whole of it. `docs/history/37-the-pair-and-the-plate.md` is the
+record of expecting a larger shape and finding a smaller one.
 
 **The 八神 chapters name eight, and the prose names ten.** 卷之九 to 卷之十六
 give a juan each to a spirit — 直符, 螣蛇, 太陰, 六合, 勾陳, 朱雀, 九地, 九天 —

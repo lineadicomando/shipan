@@ -66,6 +66,9 @@ const READINGS: Readonly<Record<string, string>> = {
   年命: 'niánmìng',
   用神: 'yòngshén',
   門迫: 'ménpò',
+  // The chief gate. The engine seats 值符 as a spirit and so can say it; its
+  // twin is a compound prose names and no board carries.
+  值使: 'zhíshǐ',
   上元積年: 'shàngyuánjīnián',
   十八飛星: 'shíbāfēixīng',
   宿: 'xiù',
@@ -81,6 +84,9 @@ const READINGS: Readonly<Record<string, string>> = {
   // offers the choice. Neither is a board this engine seats.
   御定奇門寶鑑: 'yùdìngqíménbǎojiàn',
   奇門遁甲全局: 'qíméndùnjiǎquánjú',
+  // And the print the far side of `centreTravel` is named against. 御定奇門寶鑑
+  // above stands on the near side of that one too.
+  奇門遁甲金鏡寶鑑: 'qíméndùnjiǎjīnjìngbǎojiàn',
   捷覽: 'jiélǎn',
   // The two lineages that move 壬's 科 to 左輔, named where a value of `sihua`
   // is argued. Neither is a board this engine seats, so neither can be dug

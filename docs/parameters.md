@@ -177,7 +177,7 @@ dunjia's.**
 | `leap` | where 置閏 repeats its block — inside 置閏: `solstice` (芒種 or 大雪), `runyue` (閏月 rùnyuè, the term the year's leap month falls under) | `solstice` |
 | `strengths` | what 旺相休囚死 are read from: `season`, `star` | `season` |
 | `earth` | where earth's season begins: `quarters` (the four closing months entire), `eighteen` (their last eighteen days) | `quarters` |
-| `centreTravel` | whether the lodged stem and star go with their host: `stay`, `travel` | `stay` |
+| `centreTravel` | where the 值符 zhífú and the 值使 zhíshǐ are read when the count puts them on the centre: `stay` (lodged out to 坤, as 《御定奇門寶鑑》 has it), `travel` (in the fifth palace, as 《奇門遁甲金鏡寶鑑》 has it) | `stay` |
 
 `method` and `yuan` are the two most divisive and neither is optional. 茅山 has
 no reference at all and is refused.
@@ -271,13 +271,16 @@ boards and only one of them can be printed.
 **奇門 owes five and they were paid together.** `spirits`, `leap`, `strengths`,
 `earth` and `centreTravel` were divergences the engine decided in silence: the
 naming of the middle pair, where 置閏 repeats its block, what the five states
-are read from, where earth's season begins, and whether the lodged stem and
-star travel. Four of them want a field in this board's input type, which is the
-breaking change this page opens by saying not to make late — so they were made
-in one movement rather than one at a time, each shipping with what the engine
-already computed and the other side declared and refused by name. Three of them
-— the states, the earth and the travelling centre — reach every cell of the
-answer, which is why they were the most expensive to leave unsaid.
+are read from, where earth's season begins, and where the 值符 and the 值使 are
+read when the count puts them on the centre. Four of them want a field in this
+board's input type, which is the breaking change this page opens by saying not
+to make late — so they were made in one movement rather than one at a time,
+each shipping with what the engine already computed and the other side declared
+and refused by name. Two of them — the states and the earth — reach every cell
+of the answer, which is why they were the most expensive to leave unsaid.
+`centreTravel` was expected to be a third and is not: it moves two palace
+numbers and no cell, which is the finding of
+`docs/history/37-the-pair-and-the-plate.md`.
 
 **`sihua` is the first value declared under the standard rather than under a
 reading of it.** What the shelf carries is one cell: 《紫微斗數全書》 gives 壬 its

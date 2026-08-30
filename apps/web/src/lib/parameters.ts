@@ -181,8 +181,13 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'centreTravel',
     board: 'qimen',
     values: ['stay', 'travel'],
-    implemented: ['stay'],
+    implemented: ['stay', 'travel'],
     fallback: 'stay',
+    label: 'form.qimen.centreTravel',
+    says: {
+      stay: 'form.qimen.centreTravel.stay',
+      travel: 'form.qimen.centreTravel.travel',
+    },
   },
   {
     id: 'shensha',

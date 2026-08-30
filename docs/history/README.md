@@ -70,6 +70,7 @@ phase.
 | 34 | [A collation settles the text](34-a-collation-settles-the-text.md) | done — answers what an agreement between two witnesses to one text is worth, admits a lone reading of an edited edition, and leaves one contested rung standing |
 | 35 | [A school can be chosen](35-a-school-can-be-chosen.md) | in progress — a review of the instructions finds six enumerations a board behind and three rules wider than their code; then the nine decisions that let a school be carried, named and chosen |
 | 36 | [The five 奇門 owed](36-the-five-qimen-owed.md) | done — declares the five divergences dunjia decided in silence, in one movement, and refuses the one that is a licence to read rather than a rule for laying |
+| 37 | [The pair and the plate](37-the-pair-and-the-plate.md) | done — computes the last refusal that wanted a shape, finds the shape was inferred from a picture, and catches a field that had been contradicting the board under it |
 
 ## The rest of the record
 

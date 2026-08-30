@@ -64,18 +64,13 @@ export interface PalaceContents {
    * decides. It is said here in the second place it is read, and not moved
    * out of the first: `palace 5` still carries it.
    *
-   * **That divergence is `centreTravel`**, declared on `ChartOptions` with
-   * `stay` computed and `travel` refused by name, and it has two witnesses.
-   * 《奇門遁甲元靈經》 works two examples out in full; both agree with this
-   * engine on the earth plate palace for palace and on the 值符 star and the
-   * 值使 gate, and where the 符頭 stands in the centre the text carries its
-   * stem and its star to the hour's palace — 「以中宮之癸加兌宮丙上為值符…
-   * 又以天禽加兌」 — where this engine leaves them at the centre. The outer
-   * eight agree either way. 《奇門遁甲金鏡寶鑑》 then states the same side as a
-   * rule rather than an example: its 起星訣 stands the 值符 at 五 whenever the
-   * hour's stem is the centre's, and walks 天禽 out of the centre through the
-   * whole decade it heads. `ROADMAP.md` § 1 carries the debt and
-   * `docs/sources.md` the collation.
+   * **That divergence is `centreTravel`**, and it is not this field's: it
+   * moves where the 值符 and the 值使 are reported and leaves every plate
+   * alone. 《奇門遁甲金鏡寶鑑》 卷之一 states the two halves apart in one
+   * clause — 「其星寄」 for the star, 「符使不必寄於二，徑排入中宮」 for the
+   * moving pair — and 《御定奇門寶鑑》 lodges the pair out where that lodges it
+   * in. Both are Qing imperial prints, which is what a parameter is for.
+   * `docs/sources.md` carries the collation.
    */
   lodged?: Stem;
 }
@@ -88,9 +83,13 @@ export interface QimenChart {
   instrument: Stem;
   /** The hour's stem, or the instrument standing in for it when it is 甲. */
   hourStem: Stem;
-  /** The chief and its palace (值符). */
+  /**
+   * The chief and its palace (值符). The palace is the fifth only under
+   * `centreTravel: travel`; under `stay` it is where the star plate carries
+   * the star, which is the seat a reader can find it at.
+   */
   chief: { star: Star; palace: Palace };
-  /** The chief gate and where it came to rest (值使). */
+  /** The chief gate and where it came to rest (值使). `centreTravel` again. */
   chiefGate: { gate: Gate; palace: Palace };
   /** The nine palaces, in Luoshu order. */
   palaces: PalaceContents[];
@@ -155,12 +154,34 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   const stars = starPlate(earth, instrument, hourStem);
 
   const chief = chiefStar(earth, instrument);
-  const chiefPalace = palaceOf(earth, hourStem);
+  // Where 值符隨時干 and 值使隨時支 send the pair, before the centre is
+  // decided: the palace of the hour's stem, and the palace the gate's count
+  // falls on. Either can be the fifth, which is the whole of `centreTravel`.
+  const chiefLanding = palaceOf(earth, hourStem);
 
   const gate = chiefGate(earth, instrument);
-  const gatePalaceNumber = chiefGatePalace(earth, instrument, hourGanzhi, ju.yang);
-  const gates = gatePlate(gate, gatePalaceNumber);
-  const spirits = spiritPlate(chiefPalace, ju.yang, options.spirits);
+  const gateLanding = chiefGatePalace(earth, instrument, hourGanzhi, ju.yang);
+  // The eight gates ring from the lodged seat whatever the option says, and so
+  // do the spirits, which lodge inside `spiritPlate`. Neither ring has a place
+  // for the centre: what `centreTravel` moves is where the pair is *reported*,
+  // never where the other seven stand.
+  const gates = gatePlate(gate, lodge(gateLanding));
+  const spirits = spiritPlate(chiefLanding, ju.yang, options.spirits);
+
+  // 「行活局，符使不必寄於二，徑排入中宮」 — on the turning board the 符 and the
+  // 使 need not lodge at 坤二 but go into the fifth palace itself. The clause
+  // is the parameter: 「不必寄於二」 presupposes that lodging there is the
+  // other answer, and 《御定奇門寶鑑》 gives it — 「甲辰在中宮，寄於坤二」.
+  //
+  // It is stated of the pair alone. The same leaf lodges the *star* in the
+  // same breath — 其星寄 — so no plate moves under either value, and
+  // 「二五同宮，其志不同」 is the designation and the rendering coming apart on
+  // purpose. A chart under `stay` reads 值符 天禽 → 坤二, which is the second
+  // print's own sentence; under `travel` 天禽 goes to the hour's palace, which
+  // is the first's.
+  const travels = options.centreTravel === 'travel';
+  const chiefPalace = palace(travels ? chiefLanding : lodge(chiefLanding));
+  const gatePalace = palace(travels ? gateLanding : lodge(gateLanding));
 
   const season = seasonElement(moment.pillars.month.branch);
 
@@ -210,8 +231,8 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     ju,
     instrument,
     hourStem,
-    chief: { star: chief, palace: palace(chiefPalace) },
-    chiefGate: { gate, palace: palace(gatePalaceNumber) },
+    chief: { star: chief, palace: chiefPalace },
+    chiefGate: { gate, palace: gatePalace },
     palaces,
     season,
     // Both, and in the order the pillars are recited. Which of the two bears

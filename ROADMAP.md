@@ -1,10 +1,9 @@
 # What is not built yet
 
-Two kinds of open work, open for different reasons; a third section that is a
-closed record and not a plan; and a fourth list that is not work at all. **§
-"What is actually open" below sorts the first two by what they are waiting
-on**, which is the thing a reader wants first and the sections themselves are
-too long to give. The record of how everything else got here is in
+One kind of open work; a second section that is a closed record and not a
+plan; and a third list that is not work at all. **§ "What is actually open"
+below says what the first is waiting on**, which is the thing a reader wants
+first and the section itself is too long to give. The record of how everything else got here is in
 [`docs/history/`](docs/history/README.md); what holds today is in
 [`docs/`](docs/README.md).
 
@@ -26,17 +25,16 @@ and the field they wanted has since been added.** 奇門's input type carries al
 five, each with the engine's own answer as its declared default and the other
 side refused by name; `docs/history/36-the-five-qimen-owed.md` is the record,
 and the API break was paid once rather than five times. So that errand is
-closed, and what those values wait on now is what everything in § 1 waits on —
-a source, or in one case a shape.
+closed, and what those values wait on now is what everything in § 1 waits on:
+a source. The one that wanted a shape instead has it — see
+`docs/history/37-the-pair-and-the-plate.md`.
 
 ## What is actually open
 
-Two buckets, and they are not the same kind of work. Everything below expands
-one of them.
+One bucket now, and § 1 expands it.
 
 | | | |
 |---|---|---|
-| **A shape in the engine** | `centreTravel: travel` — the only refused value not short of a witness. Both sides are in Qing print and the 金鏡寶鑑 side checks itself over 120 collated cells; what it asks is that a palace be able to carry two stems and two stars, since a centre that travels arrives somewhere already occupied | § 1 |
 | **A source that is not on this shelf** | every other value in the table below. Each is written against in § 1 or `docs/refusals.md`, and **none of them is waiting on a file somebody could open today** — which is now a statement and not an estimate, the last unread scan having been opened on 2026-08-30. Two are acquisitions with a named object: a 授時 lodge table that prints 參, and an epoch for 紫氣 | § 1 |
 
 **There was a third bucket and it is empty.** The two plates nobody had read
@@ -73,14 +71,14 @@ edited: it collates the text and adds no witness to the doctrine, so no value
 below is waiting on one. `docs/sources.md` § "What a second copy of one text
 buys".
 
-**One value is the exception and it is worth naming here**, since the sentence
-above would otherwise send somebody looking for a text that has already
-arrived: `centreTravel: travel` has its witness and wants a shape instead. Its
-entry below says what shape.
+**There was a bucket above this one and it is empty.** `centreTravel`'s second
+value was in it: the one refusal that had its witnesses and was held up by a
+shape rather than by a text. It is computed, and what the shape turned out to
+be is the finding — see `docs/history/37-the-pair-and-the-plate.md`.
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `method: maoshan`, `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen`, `centreTravel: travel` |
+| 奇門 | `method: maoshan`, `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `ziqi: yinianyisu`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
@@ -105,11 +103,12 @@ it by name — which is what 太乙's `ji` did when 卷一 was read.
 movement because a field added late breaks the API, MCP, the CLI and every
 shared URL at once: what names the middle pair, where 置閏 repeats its block,
 what the five seasonal states are read from, where earth's season begins, and
-whether the lodged stem and star travel. **That movement has landed** —
-`docs/history/36-the-five-qimen-owed.md` is the record — and one of the five
-came out of it with nothing left to refuse: `spirits` computes all three of its
-readings, the two alternatives having turned out to be waiting on the laying
-and not on a text. The four below are what is left of it.
+where the 值符 and the 值使 are read when the count puts them on the centre.
+**That movement has landed** — `docs/history/36-the-five-qimen-owed.md` is the
+record — and two of the five have since come out of it with nothing left to
+refuse: `spirits` computes all three of its readings and `centreTravel` both of
+its two, neither having been waiting on a text. The three below are what is
+left of it.
 
 - 奇門, `leap: runyue`. 置閏 has meant 《統宗》's placement — the block repeated
   is 芒種 or 大雪. 《奇門遁甲金鏡寶鑑》 卷之一 repeats whichever term the
@@ -127,53 +126,27 @@ and not on a text. The four below are what is left of it.
   seasons to earth entire; other schools give earth only their last eighteen
   days. It feeds the states above, so it decides 旺相休囚死 for every cell, and
   the two answers part for two-thirds of each of those four months.
-- 奇門, `centreTravel: travel`. One divergence, not two: a
-  board whose centre empties and whose host palace carries a second stem and a
-  second star is the same board seen from outside as «天禽 merged with 天芮 and
-  the centre starless». `PalaceContents.lodged` had already written the
-  divergence down and said this field does not decide it; what is new is
-  somebody stating the other side in a worked example rather than an
-  implementation choosing it silently. The witness is a transcription of
-  unstated provenance and the register weighs it accordingly — but it checks
-  itself, which is the second thing the standard accepts. A print is wanted
-  before the value is implemented; the parameter can be declared and refused
-  before that, and it was declared with the four above it.
-  **The print has arrived.** 《奇門遁甲金鏡寶鑑》 — 故宮 第426冊, Qing imperial
-  woodblock, opened for a different errand — tabulates all eighteen 局 as a
-  起星訣 and a 起門訣, and states the same side as a rule for every hour rather
-  than as an assumption in a worked chart: the 直符 star stands at 五 when the
-  hour's stem is the centre's, the 直使 gate lands on 五, and 天禽 leaves the
-  centre and travels the whole 甲辰壬 decade. 陽遁一局 was read whole and run
-  against the engine — all six stars and all six gates agree by name, and all
-  twenty palace disagreements are that one fact, one of them carrying a cut
-  slip on top of it. **And the other side is in print too**, in the second
-  imperial volume: 《御定奇門寶鑑》 lodges the centre's decade out — 「甲辰在中宮，
-  寄於坤二」 — so the divergence has a Qing woodblock on each side and this
-  engine's behaviour is one of them. `docs/sources.md` has both.
+**The fourth of them has landed, and the shape it wanted was smaller than the
+shape it was written down as.** `centreTravel` computes both values.
+`docs/history/37-the-pair-and-the-plate.md` is the record and
+`docs/sources.md` the argument; what is worth carrying here is why this file
+had it wrong. The entry used to say the value needed a palace able to hold two
+stems and two stars, because the print that states it also *draws* its board
+with 天禽 and 天芮 in one cell and the centre empty. That is how 《金鏡寶鑑》
+presents a board, and the register had already filed it under the conventions
+that work does not share. The doctrine is a clause on the leaf before the
+tables — 「行活局，符使不必寄於二，徑排入中宮」 — and it moves the 值符 and the
+值使 alone, the same sentence lodging the star in the words 其星寄. So no plate
+moves under either value, no field was added, and the two sides differ in one
+palace number apiece.
 
-So the field 奇門 owes is not one but three values' worth of divergence, and
-that is the argument for paying them in one movement.
-
-**One of the three was verified, the verification weakened it, and a print has
-since arrived on the other side.** The corroboration pass asked two classical
-transcriptions and got the apparatus
-confirmed and the divergence untouched — 《統宗》 gives the centre's decade 天禽 as
-符 and 坤's 死門 as 使, 《秘笈大全》 says 「惟天禽則無定位，寄西南而屬中宮」, both
-engine positions — and it caught `docs/sources.md` claiming a reference had
-agreed about «the nine stars» while also recording that the same reference
-leaves the centre starless. The nine was an overstatement of the eight and is
-corrected there.
-
-So the palace-5 cases were run properly, against `qimen-dunjia` from the shelf:
-666 charts, the ju agreeing on all of them, and **complete agreement on the
-earth plate, the heaven plate and the nine stars — including all 147 charts
-where a stem sits in the centre.** This engine's convention has a runnable
-second, tested where the question arises rather than incidentally.
-
-The value is still owed and can still be declared and refused, and what states
-the other side is no longer one transmitted worked example: a Qing imperial
-print states it as a table. Both sides are now attested by something that is
-not an implementation's preference, which is what a parameter is for.
+**What the collation had been comparing was a third thing.** The twenty
+disagreements were counted against the palace this engine's *star plate*
+carries the named star to, and the engine also had a `chief` field answering
+the same question its own plates contradicted on 116 charts of 732 sampled.
+Reading the clause settled which of the two was the parameter's business. That
+correction is in `docs/sources.md`; the register's rung does not move, because
+no source arrived.
 
 `method: maoshan` is in the table and is not expected to leave it: there is no
 reference against which a 茅山 chart could be falsified. See
