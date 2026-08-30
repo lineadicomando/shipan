@@ -210,15 +210,23 @@
       bind:trueSolarTime={asked.trueSolarTime}
       bind:chosen={asked.chosen}
       board="ziwei"
-    />
-    <!-- Asked for, never assumed: only the 大限, the 小限 and the two rings of
-         twelve read it, and without it the seats are complete. -->
-    <Choice
-      ask={t('form.gender')}
-      values={genderValues(t)}
-      chosen={gender}
-      onchoose={(value) => (gender = value)}
-    />
+    >
+      <!-- Asked for, never assumed: only the 大限, the 小限 and the two rings
+           of twelve read it, and without it the seats are complete.
+
+           In the open and over the fold, which is what `beside` is for: the
+           board's own cycles run from it, so it is a field of the birth like
+           the hour, and not a way of reading one. 八字 asks for it in the same
+           place, the two sections asking one question. -->
+      {#snippet beside()}
+        <Choice
+          ask={t('form.gender')}
+          values={genderValues(t)}
+          chosen={gender}
+          onchoose={(value) => (gender = value)}
+        />
+      {/snippet}
+    </MomentForm>
     <SubmitButton {t} label="cli.heading.reading" {busy} {needed} />
   {/snippet}
   {#snippet controls()}
