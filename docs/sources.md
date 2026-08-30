@@ -2029,6 +2029,24 @@ old practice meant.
 and nowhere says which hours are 晝. The division the engine computes rests on
 this one book.
 
+**And a third has been asked and is silent in the same way.**
+《大六壬課經集》, 郭御青 彙輯, 五雲齋藏板 — the 故宮珍本叢刊 facsimile, four
+juan over 254 woodblock pages — uses 晝貴 and 夜貴 as working vocabulary and
+never defines either. Its 畢法賦 commentary says 「四季年占用夜貴逆布」 and
+「晝夜貴人拱年人命者赴試必中」 at series p. 386, which is the distinction being
+*used* and turns on the reader already knowing which hours are which. That is
+the shape of the whole book and not an oversight of one leaf: 卷一 is the
+畢法賦 in a hundred numbered rules with worked charts, 卷二 a catalogue of 課格
+(官爵, 富貴, 軒蓋, 鑄印, 斬輪, 引從, 亨通, 繁昌, 旺孕, 榮華, 德慶, 合歡, 和美,
+斬關, 閉口, 三交, 贅壻, 淫泆 …), 卷三 more of the same, 卷四 the 物類 — what a
+stem or a branch stands for, kin by kin. **It is a book of judgement and it
+presumes the board**, which is the class the answer to this question will not
+come from. Surveyed and read on the plate 2026-08-30, on its 畢法賦 目錄, its
+卷二 目錄, its 卷三 title leaf and forty-four of its 127 sheets. The 畢法賦's
+list closes on 「已災凶兆返無疑　一百」, so that juan is accounted for whole; the
+negative for 卷三 and 卷四, which print no 目錄 of their own, rests on the
+sampling and not on a list.
+
 ---
 
 ## 曆注 — the almanac's page, and the block its own source refuses
@@ -2703,6 +2721,16 @@ with 柳 12.90, so its own sum cannot choose — and the crop chose:
 分 place empty. Twenty-seven of the twenty-eight are now read off the plate,
 and the three quadrants that print all their lodges each close on their own
 entries.
+
+**And the third book on the shelf that could have been asked is the wrong
+size for the question.** 《中國古代天文與曆法》, 陳久金 · 楊怡, 中國國際廣播
+出版社 2010, is a 155-page popular survey in the 中國讀本 series, seventeen
+chapters ending on 「中國和歐洲古代天文學的異同」. It talks about 距度 and 歲差
+at length — that each 曆's lodge widths differ, that 郭守敬's measurements were
+the most accurate of them — and prints no lodge table of any kind. Its own
+colophon says 58 千字, and the extract holds 47 515: **the negative is a
+statement about what a book of that length can carry**, taken off the 目錄 on
+the plate, and not off a search. Established 2026-08-30.
 
 **The other copy on the shelf cannot supply it**, and the reason is structural
 rather than a matter of reading. 《曆法通志》's comparative table at its p. 274

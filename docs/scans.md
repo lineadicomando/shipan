@@ -75,6 +75,13 @@ place: **祿 scores zero in 30 953 characters**, on pages printing 化祿, 祿�
 away the stroke weight the recogniser needs and the pixel count cannot put it
 back, so **a stencil is read as its own row of that table whatever its dpi**.
 
+**And a modern book hands you the denominator, which nothing else on this page
+has had.** Every rate above is an extract counted against an *estimate* of what
+the page holds. A Chinese book printed after about 1950 states 字數 on its
+版權頁: 《中國古代天文與曆法》 says 58 千字, its extract holds 47 515 CJK
+characters, and 82 % is therefore measured rather than guessed. Look for the
+line before estimating one, and where it is there, quote it.
+
 ## An extract locates a passage. It never quotes one.
 
 This is the rule the rest of the page serves. Every line this project has
@@ -175,6 +182,13 @@ established. Its limit is exactly its purpose — **it locates approximately**;
 a section attributed to a page from a contact sheet was twenty pages out, and
 the error appeared the moment the real page was rendered. Locate on the
 contact, read on the page.
+
+**And `margin` mode assumes one book-page to the sheet.** It crops the two
+outer edges, where a 版心 sits when the leaf is printed alone; a reprint that
+stacks two half-leaves on one sheet puts each 版心 in the *middle* of it, and
+the crop returns twenty-two blank strips in a row. 大六壬課經集 is the case.
+Establish the layout before choosing the mode — which is the same subtraction
+on the printed page numbers that the section above is about.
 
 **A contact sheet is not always the cheapest way in, and three things decide
 it.** Where a book has a 目錄 at the front *in section order*, a 版心 naming the

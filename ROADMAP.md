@@ -439,9 +439,9 @@ the cheap direction.
 
 ### Phase 4 — the remainder, read behind no citation
 
-《協紀辨方書》卷七~卷八 四庫 woodblock, the third 遁甲演義 scan, 大六壬課經集,
-大六壬神課金口訣, 中國古代天文與曆法, and 祖傳年家太乙神數. They are read when
-a phase above sends somebody to them, or not at all.
+《協紀辨方書》卷七~卷八 四庫 woodblock, the third 遁甲演義 scan,
+大六壬神課金口訣 and 祖傳年家太乙神數. They are read when a phase above sends
+somebody to them, or not at all.
 
 **Two of them stopped belonging here, which is what this list is for.**
 
@@ -475,6 +475,24 @@ neither is research:
   part of this that touches code.
 
 The argument for both is in `docs/sources.md`, in the frame section.
+
+**And two more have been asked and answered nothing, which is the other way off
+this list and the commoner one.**
+
+大六壬課經集 was asked for the 晝夜 division — `zhouye`'s open question, and the
+one place a second witness would take a shipped quantity from rung 5 to rung 2.
+It is 《大六壬課經集》, 郭御青 彙輯, 五雲齋藏板, four juan over 254 woodblock
+pages: 卷一 the 畢法賦 in a hundred numbered rules, 卷二 a catalogue of 課格,
+卷三 the same, 卷四 the 物類. It uses 晝貴 and 夜貴 on every other leaf and
+defines neither, because **it is a book of judgement and presumes the board** —
+the shape 中國絕學 第一冊 also turned out to have, and the shape most of what is
+left unread here has. A refusal that wants a *procedure* will not be answered by
+this class of book, and that is worth knowing before the next one is opened.
+
+中國古代天文與曆法 was asked for the 授時 黃道宿次 table and the 參 it is short
+of. It is a 155-page popular survey in the 中國讀本 series, seventeen chapters,
+58 千字 by its own colophon, arguing 距度 and 歲差 in prose and printing no lodge
+table of any kind. The acquisition § 1 names stays an acquisition.
 
 ## 3. Spanish, once the engine has stopped moving
 
