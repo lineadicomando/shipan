@@ -242,6 +242,14 @@ first six of them while this page was being written:
 | 《中國絕學》第十冊, three works, one of them 紫微斗數 | 《邵子易數講義》, 郭懿雲 講演, in eleven chapters and an 附錄, and no 紫微斗數 in it at all. Here the set's *own* 目錄 was the thing that was wrong, which is the failure one file down from the record page |
 | 《中國絕學》第一冊, handwriting no model reads | handwriting for seven eighths of it and movable type for the first, and the typeset eighth carries the 目錄 that navigates the rest |
 
+**A book's own 目錄 is a witness to it and can be wrong about it**, which is
+the same rule one level down: it is a description, written by somebody, of the
+thing it sits in front of. 《協紀辨方書》卷七's contents leaf prints 八錄 for a
+section its own heading calls 八祿 — a radical apart, and settled by the entry
+being about the day's 祿 seat. So a section list read off a 目錄 is a map and
+not a transcription: a name taken from it is checked at the section before it
+is quoted, and a section the 目錄 omits is not thereby absent.
+
 **《御定星歷考原》 is the case that matters**, because the work had been
 acquired *in order to* be a second witness for about seventy quantities and the
 copy held cannot be one. Nothing about the way it was catalogued would have

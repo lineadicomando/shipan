@@ -439,9 +439,8 @@ the cheap direction.
 
 ### Phase 4 — the remainder, read behind no citation
 
-《協紀辨方書》卷七~卷八 四庫 woodblock, the third 遁甲演義 scan,
-大六壬神課金口訣 and 祖傳年家太乙神數. They are read when a phase above sends
-somebody to them, or not at all.
+The third 遁甲演義 scan, 大六壬神課金口訣 and 祖傳年家太乙神數. They are read
+when a phase above sends somebody to them, or not at all.
 
 **Two of them stopped belonging here, which is what this list is for.**
 
@@ -493,6 +492,19 @@ this class of book, and that is worth knowing before the next one is opened.
 of. It is a 155-page popular survey in the 中國讀本 series, seventeen chapters,
 58 千字 by its own colophon, arguing 距度 and 歲差 in prose and printing no lodge
 table of any kind. The acquisition § 1 names stays an acquisition.
+
+**And a third turned out to hold something, which is a boundary and not a
+source.** 《協紀辨方書》卷七~卷八 was opened against `shensha`, the one
+parameter carrying a value and no second one to refuse. It is 義例五 and
+義例六 — the last two juan of the source's own 義例 — and the 曆注 layer reads
+one section of the first and none of the second. 卷七 beyond the 十二神 is
+mostly *hours*, which the parameter's words already exclude; 卷八 is
+twenty-four bearings and no days, and the first of them, 歲祿, is stated
+exactly the way the twenty-six the engine does carry are stated. So the layer's
+boundary is 卷三 and 卷七 rather than «what the 協紀 ratifies», the parameter now
+says so in its own words, and what would carry 卷八 is entering twenty-four
+tables and their tests — work, not a text, and owed to no refusal.
+`docs/sources.md` § 義例五 and 義例六 is the argument.
 
 ## 3. Spanish, once the engine has stopped moving
 

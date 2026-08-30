@@ -2061,7 +2061,8 @@ to the day and the bearing — and anything else is refused with
 `OPTION_NOT_IMPLEMENTED` rather than quietly served this one. It travels in the
 URL, in the MCP schema and on the CLI from before there is a second register,
 for the reason `docs/parameters.md` gives: added later it would break every shared
-address at once.
+address at once. **What `xieji` cuts to is 卷三 through 卷七 and not the whole
+work**, which the section on 義例五 and 義例六 below states and bounds.
 
 The layer dunjia was read beside. It arrives one block at a time; **建除十二神
 is the first**, and it is the block whose one dangerous decision the source
@@ -2510,6 +2511,51 @@ the rule.
 eighteen days before each season closes, when 土 rules — which this engine does
 not compute. A 母倉 without them would be right for most of a year and silently
 wrong for seventy-two days of it, which is worse than not having one.
+
+### 義例五 and 義例六, which are the boundary this layer actually has
+
+The 協紀's 義例 runs from 卷三 to 卷八. This layer reads 卷三 for the year's
+bearings, 卷四 for 建除 and the 四德, 卷五 and 卷六 for the day 神煞, and 卷七
+for the 十二神 — and **卷七 has more in it than the 十二神, and 卷八 is not read
+at all.** Both were opened on the 四庫 woodblock on 2026-08-30, and what they
+hold is written here so that the boundary is a statement rather than an
+impression.
+
+**卷七 義例五**, after the 十二神: 天乙貴人, 天官貴人, 福星貴人, 喜神, 八祿,
+日建 · 日破 · 日合 · 日害 · 日刑, 四大吉時 and 四煞沒時, 貴登天門時, 五不遇時,
+九醜, 旬中空亡, 截路空亡. **Most of that is an hour and not a day**, which the
+parameter's own words already exclude — 四大吉時 chooses a 時 from the 月將,
+貴登天門時 and 五不遇時 and 截路空亡 are hours read off the day's stem. The four
+that are not hours are gods of the day's *stem* carrying a bearing, and they
+are excluded by nothing except that nobody has entered them.
+
+**卷八 義例六** is twenty-four bearings and no days at all: 歲祿, 飛天祿,
+飛天馬, 飛宮貴人, 通天竅, 走馬六壬, 四利三元, 蓋山黃道, 三元九星, 八節三奇,
+巡山羅睺, 坐煞向煞, 灸退, 獨火, 浮天空亡, 陰府太歲, 天官符, 飛天官符,
+飛地官符, 飛大煞, 小月建, 大月建, 丙丁獨火, 月遊火. **None of them travels, and
+the first of them shows that the criterion is not what excludes them.** 歲祿 is
+stated the way every 卷三 entry the engine carries is stated — 「甲年在寅，乙年
+在卯，丙戊年在巳，丁己年在午，庚年在申，辛年在酉，壬年在亥，癸年在子」 — with a
+按 giving the mechanism, 「歲祿者，歲干臨官方也」, and a closing clause in which
+the source accounts for its own asymmetry: 「日祿見本條，月神皆從支取，故獨無月
+祿例」. Outright, complete, in its own entry, leaning on nothing defined
+elsewhere. It passes the test the twenty-six passed and it is not here.
+
+So **the boundary is 卷三 and 卷七 and not «what the 協紀 ratifies»**, and
+`docs/parameters.md` says so in the parameter's own words. What would carry
+卷八 is not a source — the source is read, quoted and on the shelf — but the
+work of entering twenty-four more bearings and the tests that hold each to its
+enumeration, which is the same work the twenty-six cost and is not owed to any
+refusal. Recorded here so that a reader counting bearings knows what the count
+is a count of.
+
+**And this witness's own 目錄 is wrong about one of its sections.** 卷七's
+contents leaf prints 八**錄**, and the section it points at is headed 八**祿**
+on its own leaf, the difference being the radical; the entry is the day's 祿
+seat taken as an auspicious hour, which settles it as 祿 and not as a variant
+worth carrying. The modern 華齡 typesetting reads 八祿 in both places. A table
+of contents is a witness to its own book and can be wrong about it, which is
+`docs/scans.md`'s rule one level further down.
 
 ### 《御定星歷考原》, and the sixth of it that arrived
 
