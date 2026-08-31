@@ -118,13 +118,13 @@ file arriving can be put to them.
   飛 five times for other things, including the flying-palace operation itself
   spent on 八宅, which is as strong as the negative gets short of a denial.
   What would move it is a text flying the **hour** board. **The one place left
-  on this shelf has been read and states the negative.** 遁甲集成 第四冊's
-  《奇門寶鑑》 六卷 turned out to be the 故宮 print of the same work, and its
-  卷一 遁甲起例 — a section the imperial copy does not carry under that name —
-  lays the board by turning: 「順佈六儀逆飛三奇」 for the yang dun, its mirror
-  for the yin, and 飛 used of the marvels inside a turned ring and of 飛轉 for
-  the hour, which are the two senses already on file. No board on this shelf is
-  flown but the year's, the month's and the day's.
+  on this shelf has been read and it is not a new text.** 遁甲集成 第四冊's
+  《奇門寶鑑》 六卷 shares 故宮 第431冊's frame, and the 遁甲起例 its 卷一 carries
+  where the imperial copy has none is 《奇門遁甲統宗》卷一 reprinted. It lays the
+  board by turning — 「順佈六儀逆飛三奇」 and its mirror, with 飛 of the marvels
+  inside a turned ring and 飛轉 of the hour — so the negative gains a plate for a
+  text the register held off a transcription, and no witness. No board on this
+  shelf is flown but the year's, the month's and the day's.
 - **`centreLodging: dun`** — no longer what nobody states, and the work that
   states it now says why it does not follow it. 《御定奇門寶鑑》卷二 prints
   「陽遁陰遁俱寄坤宮。一本陰遁寄艮」; its 卷一 釋虛中合宮, read on both copies
@@ -273,15 +273,26 @@ could be is a bench of worked examples, and `texts/bench/` is where that would
 go rather than the register.
 
 **The line that headed this table is gone because it was read**, on 2026-08-31,
-and what it produced is in `docs/sources.md`: 遁甲集成 第四冊's 《奇門寶鑑》 六卷
-is 故宮 第431冊's 《御定奇門寶鑑》, so it was a collation and not a second
-witness. It moved no rung, which is what a collation cannot do. It settled three
-sentences — the 起例 turning the hour board, the hour family's 置閏 standing at
-芒種 and 大雪 with a reason, and the compiler's own verdict on the centre's
-lodging, 「其說於理尤為周備，但本多從前說，故遵之」 — and it found a section of the
-*other* copy that nobody had opened, 釋虛中合宮, because this print's contents
-leaf names what the imperial one groups. **A finer 目錄 on a second copy is a
-finding aid for the first**, which is the reusable part.
+and what it produced is in `docs/sources.md`. 遁甲集成 第四冊's 《奇門寶鑑》 六卷
+is a **composite**: 故宮 第431冊's 《御定奇門寶鑑》 at its frame, with
+《奇門遁甲統宗》卷一's 起例 · 超接 · 置閏 · 四十格 block spliced into its 卷一 and
+卷二. So it was a collation twice over and a witness neither time, and it moved
+no rung — which is what a collation cannot do.
+
+**Two things came out of it and one had to be taken back.** What stands is
+釋虛中合宮, a section of the frame that both copies carry and nobody had opened,
+where the compiler prints the refused lodging with a derivation and then says
+why he does not follow it — 「其說於理尤為周備，但本多從前說，故遵之」. What was
+taken back is a 置閏 finding: the 超接 and 置閏法 leaves read as this work's own
+statement of the solstitial placement are 統宗's, so the count that had briefly
+gone to two against one is one against one again. **What caught it was putting
+the passage to a transcription already on the shelf**, which cost minutes and
+would have cost a false entry.
+
+**And the reusable part is the 目錄.** A second copy whose contents leaf itemises
+what the first groups is a finding aid for the first: 御定's 目錄 names
+釋義四十四則 and 集成's names its thirty-odd items, which is the only reason
+釋虛中合宮 was ever looked for.
 
 **The count of what is unsurveyed is not written here**, for the reason no
 count of `texts/` is: it drifts and no test can hold it. As of 2026-08-31 ten
@@ -381,9 +392,10 @@ reason a line in that table exists or does not:
   boards, no 起例, no prose juan. The largest unopened dunjia file on the shelf
   is ruled out by its own contents leaf rather than by a sweep of it.
 - **遁甲集成 第四冊 has a 起例**, which is what § 1 wanted and what the shelf had
-  no unread instance of. Its 《奇門寶鑑》 六卷 **is** 故宮 第431冊's
-  《御定奇門寶鑑》 六卷 — settled on the plate 2026-08-31, both 卷一 opening on
-  奇門源流 word for word — so reading it was a collation. It is read; see
+  no unread instance of. It is read, and it belongs to neither of the two things
+  it could have been: the volume's 《奇門寶鑑》 六卷 shares 故宮 第431冊's
+  《御定奇門寶鑑》 frame — both 卷一 open on 奇門源流 word for word — and the
+  起例 itself is 《奇門遁甲統宗》卷一 spliced in. A collation on both counts. See
   § 2 and `docs/sources.md`.
 - **《星學大成》 is in SKQS vol. 809**, from the volume's p. 285 to its end, read
   off the 本册目次 on the plate as this section said it would have to be.

@@ -802,20 +802,55 @@ and what has changed is the quality of the reason — not «nobody states it» a
 not «a compiler chose against it», but «a compiler stated it, judged it sounder,
 and followed the other because more copies read that way».
 
-**遁甲起例 is 集成's own arrangement and lays the board by turning.** Series
-pp. 1662–1663, a 卷一 section 御定 does not carry under that name:
+**And the sections 御定 does not carry are not 寶鑑's at all.** This is the
+correction the reading owes itself, and it was caught by putting the 卷二
+置閏法 to a transcription already on the shelf. 集成's 卷一 carries a 遁甲起例,
+a 三奇趨神接氣秘訣 and an 奇門四十格 that the 故宮 copy's 卷一 does not, and its
+卷二 carries a 置閏法 御定's 起例三十三則 does not. **All four are 《奇門遁甲
+統宗》卷一, reprinted**, in 統宗's own order — 起例, 超接訣, 又訣, 置閏法,
+奇門四十格 — and word for word:
 
-> 洛書九宮，奇宮之祖，上法九宮，下應九州，中建八門以例八卦…自冬至陽生起坎一宮，
-> 坎艮震巽四卦統氣十二候…為陽遁，故順佈六儀逆飛三奇；自夏至氣降起離九宮…為陰遁，
-> 故逆佈六儀順飛三奇。以九星為直符，加時干佈八門…八門常為直使，隨直符亦十時一易。
-> 直儀隨時飛轉以定方位，出奇無窮。五日一元，遇甲己日為氣交，而非甲己則以起神接續
-> 之，即拆局補局之法。
+| | 集成 第四冊 | 《統宗》卷一 |
+|---|---|---|
+| 起例 | 1662–1663 | 自冬至陽生起坎一宮…故順布六儀逆飛三奇…值儀隨時飛轉，以定方位，出奇無窮 |
+| 超接 | 1671 | 其餘起法者，於逐年芒種節上，於大雪前尋之。蓋緣芒種節後是夏至，則儀逆奇順 |
+| 超接 | 1671 | 假如庚寅大雪節，自己卯至庚寅已超十二日，是過旬也…是謂之接也 |
+| 置閏法 | 1878–1880 | 置閏之法，在芒種、大雪二節之後…**去符頭甲午日共超七日**…宜先於芒種節上置閏 |
 
-Read on the plate at 400 dpi. 飛 appears twice and neither is a flown plate: once
-of the three 奇 running the other way round a turned ring, once in 飛轉 of the
-hour's revolution. That is the same pair of senses this file already records
-《金鏡寶鑑》 using, and the 起例 the roadmap had listed as the last unread one on
-this shelf turns out to state the negative rather than to break it.
+**So 遁甲集成 第四冊's 《奇門寶鑑》 is a composite and not a reprint**: 寶鑑's
+frame — 奇門源流, 遁甲總論, 凡例十則, the 釋義四十四則, 卷三 to 卷六 — with
+統宗 卷一's procedural block spliced into 卷一 and 卷二. Which is the reason its
+目錄 is finer than 御定's and, less happily, the reason its extra sections are
+worth nothing as witnesses. **A print can be the same work at its frame and
+another work at its filling**, and the contents leaf says neither.
+
+**What that costs and what it leaves.** It costs the reading its 置閏 finding,
+which is withdrawn below. It leaves two things. 統宗 卷一's 起例 has now been
+read on a plate rather than off ctext, and it lays the board by turning —
+順佈六儀逆飛三奇 and its mirror — with 飛 in the two senses this file already
+records 《金鏡寶鑑》 using, once of the marvels running the other way round a
+turned ring and once in 飛轉 of the hour's revolution. And the 置閏法 passage is
+collated: 集成 prints 統宗's Kangxi worked example verbatim **including
+「去符頭甲午日共超七日」**, the arithmetic slip this file records, so the slip is
+upstream of both prints and not either compiler's. Its variants are the ordinary
+kind — 正受 for 正授, 局過九日 for 超遇九日.
+
+**And it is why 釋虛中合宮 above is the reading that stands.** That section is
+in the frame and in both copies, which is what makes it 寶鑑's own.
+
+**The frame pays once more, on the sentence this file quotes.** 卷二's 九星
+entry — 集成 series p. 1859, 御定 series p. 40 — carries the centre's annotation
+longer here than there:
+
+> 中五天禽〈陽遁陰遁俱寄坤宮。**一本陰遁寄艮，陽遁寄坤**〉
+
+御定 stops at 一本陰遁寄艮 and leaves what the variant does with the *yang* board
+unsaid, which is a gap a reader could fill either way. 集成 says: 陰遁 to 艮,
+陽遁 to 坤. So the note and 釋虛中合宮's 「陽局中五寄於二，陰局中五合於八」 are one
+doctrine stated twice in one work, and 一本 cannot be read as both dun going to
+艮. **That is the whole of what a second copy is for**, and it is the only thing
+in this reading that came from collating rather than from opening something
+unread.
 
 ### 置閏 has a dated worked example, and it moves the pin by a day
 
@@ -934,31 +969,30 @@ what the runnable reference and the worked example both do; `zhirun.ts` used to
 call 芒種 and 大雪 「the only place the tradition allows it」 and that sentence is
 now false and has been corrected. `ROADMAP.md` § 1 carries the debt.
 
-**A third print states the placement, and it is two against one.**
-《御定奇門寶鑑》 gives the hour family's leap in its 三奇趨神接氣秘訣, a 卷一
-section the 故宮 copy's contents leaf does not name and the 遁甲集成 copy prints
-at its series p. 1671:
+**The passage has a second print and not a second witness, which was
+established the wrong way round first.** 遁甲集成 第四冊 prints this whole block
+twice over — the 超接 rule at its series p. 1671 and the 置閏法 with the Kangxi
+example at pp. 1878–1880 — inside a work catalogued as 《奇門寶鑑》, and it was
+written up here as a second text stating the placement. **It is this text**, word
+for word, 甲午 slip and all; see the 奇門寶鑑 section above for what that print
+turned out to be. So the count is unchanged: one statement of the solstitial
+placement, one of the leap-month placement, and 《金鏡寶鑑》 still alone on the
+other side.
 
-> 超法皆于逐年芒種節上、于大雪節前尋之。蓋緣芒種節後是夏至，則儀逆而奇順；大雪
-> 後是冬至，則儀順而奇逆，皆此也。如庚寅大雪節，自己卯至庚寅已超十二日，是過旬
-> 也，餘無再超之理，至此合用閏。閏者何也？自甲午至戊申十五日重復大雪局奇，唯十
-> 七日乙巳方用冬至節上局奇，是謂之接也。
+**What the second print does buy is the collation**, which is the thing a second
+copy can buy and the only thing. 「去符頭甲午日共超七日」 stands in it too, so the
+slip is upstream of both prints and neither compiler's; and the variants are the
+ordinary kind, 正受 for 正授 and 局過九日 for 超遇九日. Nothing in the pin moves:
+the engine is still one day loose against this passage, and it is still one
+passage.
 
-Read on the plate at 400 dpi. **It gives the placement a reason the 統宗 does
-not**: the leap is sought at 芒種 and before 大雪 because those are the two terms
-the polarity turns after — 夏至 follows one and 冬至 the other — so the repeated
-block sits where the instruments and the marvels change hands rather than in the
-middle of a run. That is an argument about the method, not the 「以後人難推閏月」
-convenience 《金鏡寶鑑》 accuses the placement of being.
-
-**What it moves and what it does not.** The register had this work for the
-*day* family's leap, 「凡甲子符頭超過三十日有奇，即宜置閏」, and said so; this is
-its *hour* family's, and it stands where `zhirun.ts` stands. So the shipped
-placement has two prints and the leap-month placement one — but `leap: runyue`
-was never waiting on a count. `docs/parameters.md` § "What a school value must
-show" asks for attribution and transcription, and 《金鏡寶鑑》 supplies the
-transcription and no lineage. A third statement of the majority reading does not
-supply the minority one a name.
+**And it does add the rule's own reason, which the register had not recorded.**
+The 超接訣 leaf gives a ground for the placement — 「其餘起法者，於逐年芒種節上，
+於大雪前尋之。蓋緣芒種節後是夏至，則儀逆奇順；大雪之後是冬至，則儀順而奇逆」 —
+the leap sits at the two terms the polarity turns after, where the instruments
+and the marvels change hands. That is an argument about the method rather than
+the 「以後人難推閏月」 convenience 《金鏡寶鑑》 accuses the placement of being, and
+it belongs beside the accusation.
 
 ---
 
