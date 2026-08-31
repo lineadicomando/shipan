@@ -72,6 +72,7 @@ phase.
 | 36 | [The five 奇門 owed](36-the-five-qimen-owed.md) | done — declares the five divergences dunjia decided in silence, in one movement, and refuses the one that is a licence to read rather than a rule for laying |
 | 37 | [The pair and the plate](37-the-pair-and-the-plate.md) | done — computes the last refusal that wanted a shape, finds the shape was inferred from a picture, and catches a field that had been contradicting the board under it |
 | 38 | [Reading the scans on the shelf](38-reading-the-scans-on-the-shelf.md) | done — `ROADMAP.md` § 2 as it stood when it closed: four phases that opened every photographic file on the shelf, and what each turned out to establish, including the ones that establish nothing |
+| 39 | [The 寶鑑, and what it was made of](39-the-baojian-and-what-it-was-made-of.md) | done — the survey of ten arrivals, and the volume it sent to the top of the list: a print that is one work at its frame and another at its filling, a refusal better argued, and a finding withdrawn the day it was made |
 
 ## The rest of the record
 

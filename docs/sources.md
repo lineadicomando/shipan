@@ -4912,8 +4912,8 @@ rule that asks for it is a rule that gets skipped.
    where it agrees, a divergence where it does not. § "What a second copy of one
    text buys" says which of the two an arrival is.
 
-**The closure sentences are the thing to sweep.** `ROADMAP.md` § 2 already names
-the phrases asserting an unfinished state — «not yet read», «still missing»,
+**The closure sentences are the thing to sweep.** `ROADMAP.md` § "Resuming
+cold" already names the phrases asserting an unfinished state — «not yet read», «still missing»,
 «none opened» — and an arrival falsifies the opposite ones: «this list is
 empty», «no file left on this shelf», «nothing here is waiting to be read», «an
 acquisition, not a reading». Sweeping those before the session ends is what
