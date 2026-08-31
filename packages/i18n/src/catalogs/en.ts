@@ -1170,17 +1170,17 @@ export const en = {
   // Every title in this section opens on the name its page wears in its
   // heading and in the navigation, and spends the rest of the budget on what
   // a search needs: a reader arriving from a result and a reader arriving
-  // from the menu have to recognise the same page. The instruments and their
-  // parameters are still said, after the name.
-  'meta.title.notes.instruments': 'What is computed, and with which parameters',
+  // from the menu have to recognise the same page. What the page holds — the
+  // layers, the parameters, the sources — is still said, after the name.
+  'meta.title.notes.instruments': 'Instruments: the layers, and their parameters',
   'meta.description.notes.instruments':
     'Every board this engine lays, what each is computed from, and every school divergence as a named parameter with its declared default.',
   'meta.title.notes.sources': 'Where the numbers come from: sources and checks',
   'meta.description.notes.sources':
     'Every quantity the engine computes, the text or the measurement it stands on, and the rung of evidence it was weighed on.',
-  'meta.title.notes.refusals': 'What is not computed, and why',
+  'meta.title.notes.refusals': 'Where the engine stops, and why',
   'meta.description.notes.refusals':
-    'What is deliberately absent here — the yongshen, a ranking of hours, a dated outcome — who asks for it, and why it is not computed.',
+    'The declared limits of this engine: the yongshen, the ordering of hours, the dating of an outcome. Who asks for each, and why the line falls there.',
   'meta.title.notes.schools': 'Schools, and what it takes to name one',
   'meta.description.notes.schools':
     'Every board here is laid by a school, including the one nobody chose. What such a value claims, and what it takes before a new one may be declared.',
@@ -1606,7 +1606,7 @@ export const en = {
   // A caption adds to the title of its link rather than repeating it: these
   // three opened on the same words as the link an inch above them.
   'notes.answers.instruments':
-    'The layers of the calculation, one at a time: what each is derived from, and every point where the schools diverge.',
+    'The layers the engine computes, and the points where the schools diverge.',
   'notes.answers.sources':
     'One row per quantity: the source the engine derives it from, the check it passed, and the rung it stands on.',
 
@@ -1645,7 +1645,7 @@ export const en = {
   'notes.does.nianming':
     'Where a person stands inside a chart of a moment — the pillar of their birth year, and the pillar of the year they are living.',
 
-  'notes.instruments.title': 'What is computed',
+  'notes.instruments.title': 'Instruments',
   'notes.instruments.lead':
     'This page lists the layers the engine computes, and under each one the points where the schools diverge. Every point of divergence is a parameter with a declared default. The table marks the value this engine takes, and it marks the values the engine declares and refuses, so that no choice is left unstated.',
   'notes.instruments.wider':
@@ -1694,7 +1694,7 @@ export const en = {
   'notes.parameter.count': 'How the years lived are counted.',
 
   'notes.answers.refusals':
-    'One entry per refusal: what is missing, who asks for it, and why it is not here.',
+    'One entry per declared boundary: what stands beyond it, who asks the engine for it, and why the line falls where it does.',
   'notes.answers.readings':
     'What a prompt commissions and what it forbids, and what never leaves your browser.',
   'notes.askedBy': 'Asked by',
@@ -1709,7 +1709,7 @@ export const en = {
   'notes.refusals.schoolDoctrine.asks': 'every reader who wants to know what the board they chose means.',
   'notes.refusals.schoolDoctrine.body':
     'A school teaches what an arrangement is for, and the temptation is to ship that teaching beside the values it moved. What may travel is what already travels for the conditions of 太乙 tàiyǐ, under the same four bounds: the source’s own words, a clause rather than a paragraph, always glossed, and always attached to something the engine computed. A verdict in this engine’s own prose is a verdict nothing can test; a quotation can be tested twice over — it is in the text or it is not, and it is that school’s or it is not.',
-  'notes.refusals.title': 'What is not computed',
+  'notes.refusals.title': 'Where the engine stops',
   'notes.refusals.lead':
     'The engine answers no question, which is not the same as saying nothing. Below is one entry for every refusal, and each entry says three things: what is refused, who asks for it, and why it is not here.',
   'notes.refusals.carries':

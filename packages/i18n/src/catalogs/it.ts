@@ -1104,9 +1104,9 @@ export const it: Record<MessageKey, string> = {
   // Ogni titolo di questa sezione apre con il nome che la pagina porta in
   // testa e nella navigazione, e spende il resto del budget su ciò che serve
   // a trovarla: chi arriva da una ricerca e chi arriva dal menu devono
-  // riconoscere la stessa pagina. Gli strumenti e i parametri restano detti,
-  // ma dopo.
-  'meta.title.notes.instruments': 'Cosa viene calcolato, e con quali parametri',
+  // riconoscere la stessa pagina. Ciò che la pagina contiene — gli strati, i
+  // parametri, le fonti — resta detto, ma dopo.
+  'meta.title.notes.instruments': 'Strumenti: gli strati, e i parametri di scuola',
   'meta.description.notes.instruments':
     'Ogni tavola che questo motore stende, da che cosa è calcolata, e ogni divergenza di scuola come parametro dichiarato con il proprio valore predefinito.',
   'meta.title.notes.sources': 'Da dove vengono i numeri, e da quali fonti',
@@ -1118,9 +1118,9 @@ export const it: Record<MessageKey, string> = {
   // senza aprire la pagina — e poi mai più.
   'meta.description.notes.sources':
     'Ogni quantità calcolata dal motore, il testo o la misura su cui si regge, e il rung della scala delle prove su cui è stata pesata.',
-  'meta.title.notes.refusals': 'Cosa non viene calcolato, e perché',
+  'meta.title.notes.refusals': 'Dove si ferma il motore, e perché',
   'meta.description.notes.refusals':
-    'Che cosa manca qui deliberatamente (lo yongshen, una classifica delle ore, una data per un esito), chi lo chiede, e perché non viene calcolato.',
+    'I limiti dichiarati di questo motore: lo yongshen, l’ordine delle ore, la data di un esito. Chi li chiede, e perché il confine passa di lì.',
   'meta.title.notes.schools': 'Le scuole, e cosa serve per nominarne una',
   'meta.description.notes.schools':
     'Ogni tavola è stesa da una scuola, compresa quella che nessuno ha scelto. Che cosa afferma un valore così, e che cosa serve per dichiararne una nuova.',
@@ -1365,7 +1365,7 @@ export const it: Record<MessageKey, string> = {
   // titolo si è accorciato, queste tre aprivano con le stesse parole a un
   // centimetro di distanza.
   'notes.answers.instruments':
-    'Gli strati del calcolo, uno per uno: da che cosa si ricava ciascuno, e ogni punto in cui le scuole divergono.',
+    'Gli strati che il motore calcola e i punti in cui le scuole divergono.',
   'notes.answers.sources':
     'Una riga per ogni quantità: la fonte da cui il motore la ricava, la verifica che ha superato, e il rung su cui sta.',
 
@@ -1400,7 +1400,7 @@ export const it: Record<MessageKey, string> = {
   'notes.does.nianming':
     'Dove una persona sta dentro una carta del momento: il pilastro del suo anno di nascita, e il pilastro dell’anno che sta vivendo.',
 
-  'notes.instruments.title': 'Cosa viene calcolato',
+  'notes.instruments.title': 'Strumenti',
   'notes.instruments.lead':
     'Questa pagina elenca gli strati che il motore calcola e, sotto ciascuno, i punti in cui le scuole divergono. Ogni punto di divergenza è un parametro con un valore predefinito dichiarato. La tabella segna il valore che questo motore adotta e segna anche i valori che il motore dichiara ma non implementa, in modo che nessuna scelta resti implicita.',
   'notes.instruments.wider':
@@ -1463,7 +1463,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.count': 'Come si contano gli anni vissuti.',
 
   'notes.answers.refusals':
-    'Una voce per ogni rifiuto: che cosa manca, chi lo chiede, e perché non è qui.',
+    'Una voce per ogni limite dichiarato: che cosa sta al di là, chi lo chiede al motore, e perché il confine passa proprio di lì.',
   'notes.answers.readings':
     'Che cosa un prompt commissiona e che cosa vieta, e che cosa non esce mai dal tuo browser.',
   'notes.askedBy': 'Lo chiede',
@@ -1477,7 +1477,7 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.schoolDoctrine.asks': 'chiunque voglia sapere che cosa significa la tavola che ha scelto.',
   'notes.refusals.schoolDoctrine.body':
     'Una scuola insegna a che cosa serve una configurazione, e la tentazione è spedire quell’insegnamento accanto ai valori che ha mosso. Può viaggiare solo ciò che già viaggia per le condizioni del 太乙 tàiyǐ, entro gli stessi quattro limiti: le parole della fonte, una clausola e non un paragrafo, sempre glossata, e sempre attaccata a qualcosa che il motore ha calcolato. Un verdetto nella prosa di questo motore è un verdetto che niente può mettere alla prova; una citazione, invece, si può verificare due volte: o è nel testo o non c’è, ed è di quella scuola o non lo è.',
-  'notes.refusals.title': 'Cosa non viene calcolato',
+  'notes.refusals.title': 'Dove si ferma il motore',
   'notes.refusals.lead':
     'Il motore non risponde a nessuna domanda, il che è diverso dal non dire niente. Qui sotto c’è una voce per ogni rifiuto, e ogni voce dice tre cose: che cosa viene rifiutato, chi lo chiede, e perché non è qui.',
   'notes.refusals.carries':
