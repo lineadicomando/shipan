@@ -119,6 +119,50 @@ a wall.
   tramandata, **per esempio**, appartengono a…» — without the marker the
   reader spends a clause deciding whether this is the general rule.
 
+## The stance: a limit is not a lack
+
+A boundary is a fact about the instrument, and it is half of what this project
+claims. Written as an absence — *what is missing*, *what is not computed*,
+*what this does not do* — it stops reading as a fact and starts reading as an
+excuse, so the reader supplies the fault the excuse implies. That reading is
+metacommunicative rather than grammatical or idiomatic: an unprompted denial
+looks like a defence, and it looks most like one where the boundary is most
+defensible.
+
+**A person is the one this applies to.** Metacommunication is what a reader
+does with a sentence nobody asked them to read: a model reading a `prompt.`
+message is being given directives, and a directive stated as a prohibition is
+read there as a bound rather than as a defence, so a prompt keeps «do not
+rank», «no question was asked», «nothing here is a verdict» exactly as they
+are. What does cross back is the model's *output*, which a person reads — a
+prompt that has the model recite what it will not do has moved the apology
+into somebody's reading, which is the whole reason `prompt.ming.rulesStayOut`
+forbids that opening.
+
+- before — «Cosa non viene calcolato» · «Una voce per ogni rifiuto: che cosa
+  manca, chi lo chiede, e perché non è qui.»
+- after — «Dove si ferma il motore» · «Una voce per ogni limite dichiarato:
+  che cosa sta al di là, chi lo chiede al motore, e perché il confine passa
+  proprio di lì.»
+
+The fix is never to hide the boundary. It is to give the sentence a subject
+the engine **has**, **does** or **hands over** — a declared limit, a line that
+falls somewhere, a choice that belongs to the reader, the next move the reader
+makes. The negation may follow as evidence; it may not lead. `README.md`
+already does this: «Everything runs locally. No third-party API is called at
+runtime» — the claim first, the three negations behind it as the proof.
+
+**Errors are the sharpest case**, because there the absence is attributed to
+the reader. «Manca ancora una data» says what they failed to supply; «Scegli
+una data» says what to do next. Same field, same state, no accusation.
+
+Two places where the negation still leads to a person:
+
+- the privacy inventory, where the absence is the thing the reader came to
+  check: «Nessun cookie» is the answer to a question they are asking.
+- a legal notice, and a term of art whose sense is privative — 不得地 bùdédì,
+  «senza terreno», is the name of a grade and not a complaint about one.
+
 ## Both catalogs, twice
 
 `en.ts` and `it.ts` are argued separately in the language of each — the same

@@ -169,6 +169,19 @@ the engine falls back to Moshier, which needs no files.
   start the sentence again. The diagnosis and the fix for each are in the
   `reader-copy` skill; it governs the catalogs, `lib/meta.ts` and `README.md`,
   and nothing in `docs/`.
+- **A limit is a property of the instrument, and copy names it as one.** What
+  the engine stops short of is stated plainly — it is half of what this project
+  claims — but the subject of the sentence is what the engine has, does or
+  hands over, and a negation follows as evidence rather than leading. «What is
+  missing», «what is not computed», «what you failed to enter»: each is read as
+  an apology for a fault the reader had not suspected, which is a
+  metacommunicative effect and survives every hedge. **It is a rule about a
+  sentence a person reads**, so a `prompt.` message keeps its prohibitions —
+  its reader is a model, being given directives — and what carries over there
+  is only that the reading a model writes must not recite them. The two
+  exceptions on a page are the privacy inventory and a legal notice. The
+  diagnosis and the fix are in the `reader-copy` skill, and this binds what
+  that skill binds.
 - **How many vernaculars there are is a state and not a design.** English and
   Italian today, Spanish when the engine has stopped moving; nothing may be
   written as though the set were closed at two, and what a third would cost is
