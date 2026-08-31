@@ -633,11 +633,14 @@ here, because each changes what is worth opening next:
   volume is 4185 × 5976 to the page, so it is the cheapest plate here to read.
 - **遁甲集成 第一冊 carries the typeset 總目錄 of all six volumes**, and it
   places 《遁甲符應經》 三卷 in 第一冊 at series p. 385, where this shelf reads it
-  in 第三冊 at p. 1136. 第一冊's leaves are not in doubt — the 四庫未收書提要,
-  宋仁宗's 御製序 and the work's own 目錄 are all there. `docs/sources.md` leans
-  on the 第三冊 attribution for `寄宮`'s 洛書 clause and already carried that
-  volume open for want of a running title. **The survey opened this and did not
-  close it**; closing it is a collation and the 目錄 says where to look.
+  in 第三冊 at p. 1136. **Two records say so and not one**: the archive of
+  provenance names the same two files 第一冊 …`DunJiaFuYingJing` and 第三冊
+  `QiMenDunJia`, which `texts/works/` had held all along under both names. And
+  第一冊's leaves are not in doubt — the 四庫未收書提要, 宋仁宗's 御製序 and the
+  work's own 目錄 are all there. `docs/sources.md` leans on the 第三冊
+  attribution for `寄宮`'s 洛書 clause and already carried that volume open for
+  want of a running title. **The survey opened this and did not close it**;
+  closing it is a collation and the 目錄 says where to look.
 
 Two standing negatives also gained a place to look rather than an answer.
 《六壬經緯》 is complete in six juan and one of them is 神煞 — the best-placed
