@@ -3556,7 +3556,8 @@ structure is not in doubt.
 **What is in doubt is the arithmetic, and in each of the three the doubt is one
 character wide.** The 四庫 text was reconstituted from 《永樂大典》, and the
 large calendrical constants are where that shows. Read off the plate, at 400
-dpi, of the 四庫 woodblock:
+dpi, of the 四庫 copy — **a manuscript hand and not a block**, the 四庫全書
+having been copied out rather than cut:
 
 | register | as printed | what it yields | what one character would yield |
 |---|---|---|---|
@@ -3592,6 +3593,14 @@ and forty pages, and the first 太乙 witness here besides the 金鏡式經. Whe
 it carries 卷一's constants is the question, and **nobody has asked it**: the
 volume is on the shelf and unread for this, so the refusals above stand exactly
 as they did. Last checked 2026-08-30.
+
+**A 四庫 volume was filed the same day, and it lifts nothing.**
+《景印文淵閣四庫全書》第810冊 carries 太乙金鏡式經 十卷 whole — and the plate the
+table above was read off is a cut of it, matched to the volume page for page on
+2026-08-31. So it is the copy already read, arriving a second time under its own
+covers: a collation of a witness with itself settles no numeral, and the five
+stay where they were. What it does settle is where that plate came from, which
+until then was recorded nowhere. Last checked 2026-08-31.
 
 ### The nine palaces, which are not the nine palaces
 
