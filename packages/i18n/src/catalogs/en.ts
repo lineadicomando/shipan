@@ -1788,7 +1788,7 @@ export const en = {
   // shelf owes before one may be declared.
   'notes.answers.schools':
     'What a school is here, what it takes to name one, and which one laid the board you are looking at.',
-  'notes.schools.title': 'Schools, and what it takes to name one',
+  'notes.schools.title': 'Schools',
   'notes.schools.lead':
     'Different schools draw different boards from the same instant. Every divergence between practitioners is a parameter here, with a declared default, present in the engine’s input type from the first release. A value the engine has not implemented is refused by name: it is never quietly replaced with the nearest value the engine does compute.',
   'notes.schools.implicit':

@@ -1121,7 +1121,7 @@ export const it: Record<MessageKey, string> = {
   'meta.title.notes.refusals': 'Dove si ferma il motore, e perché',
   'meta.description.notes.refusals':
     'I limiti dichiarati di questo motore: lo yongshen, l’ordine delle ore, la data di un esito. Chi li chiede, e perché il confine passa di lì.',
-  'meta.title.notes.schools': 'Le scuole, e cosa serve per nominarne una',
+  'meta.title.notes.schools': 'Scuole: che cosa serve per nominarne una',
   'meta.description.notes.schools':
     'Ogni tavola è stesa da una scuola, compresa quella che nessuno ha scelto. Che cosa afferma un valore così, e che cosa serve per dichiararne una nuova.',
   'meta.title.notes.readings': 'Prompt IA: consegnare una tavola a un modello',
@@ -1557,7 +1557,7 @@ export const it: Record<MessageKey, string> = {
 
   'notes.answers.schools':
     'Che cos’è qui una scuola, che cosa serve per nominarne una, e quale ha steso la tavola che stai guardando.',
-  'notes.schools.title': 'Le scuole',
+  'notes.schools.title': 'Scuole',
   'notes.schools.lead':
     'Scuole diverse traggono tavole diverse dallo stesso istante. Ogni divergenza fra praticanti è qui un parametro con un valore predefinito dichiarato, presente nel tipo d’ingresso del motore fin dalla prima versione. Un valore che il motore non implementa viene rifiutato per nome: non viene mai sostituito in silenzio con il valore più vicino fra quelli che calcola.',
   'notes.schools.implicit':

@@ -159,15 +159,15 @@ export const NOTE_PAGES: readonly NotePage[] = [
     kind: 'derived',
   },
   {
-    slug: 'refusals',
-    title: 'notes.refusals.title',
-    answers: 'notes.answers.refusals',
-    kind: 'written',
-  },
-  {
     slug: 'schools',
     title: 'notes.schools.title',
     answers: 'notes.answers.schools',
+    kind: 'written',
+  },
+  {
+    slug: 'refusals',
+    title: 'notes.refusals.title',
+    answers: 'notes.answers.refusals',
     kind: 'written',
   },
   {
