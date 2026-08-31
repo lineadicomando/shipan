@@ -305,6 +305,36 @@ noise, where poppler renders the same page clean. **On a JPEG 2000 file, then:
 Through poppler those 598 pages give 274 000 characters — 值符 802 times,
 值使 316, 超神 37, 接氣 23.
 
+## What does the work
+
+The toolchain this page assumes: tesseract 5.5.3 with `chi_sim`, `chi_tra` and
+the two `_vert` models, `ocrmypdf` 16, `unpaper` 7 and Pillow for cutting a
+sheet into its book-pages, and `pdftoppm`, `pdfimages`, `qpdf` and `gs` for
+rendering a plate and taking a file apart. `djvused` and `ddjvu` where the file
+is a DjVu rather than a PDF.
+
+**Three scripts at the top of `texts/` do the extracting**, one for each shape
+of sheet: `ocr-1up.sh` takes a language and a psm and goes through poppler,
+`ocr-2up.sh` takes two book-pages — `lr` for side by side, `tb` for stacked —
+and `ocr-4up.sh` takes four. Each writes a `.nospace.txt` beside the extract,
+which is the one to grep.
+
+**A fourth does the surveying, which is what the woodblocks need instead.**
+`contact.py` tiles a strip of each of a list of pages into one image, and has
+three strips because a survey asks three questions: `top` for the head of the
+printed block, where a section heading sits; `margin` for both outer edges,
+where a 版心 carries the running title and the juan — **which assumes one
+book-page to the sheet**, and returns blank strips where a reprint stacks two;
+`full` for when the layout itself is the question. It crops from the ink
+bounding box rather than fixed coordinates, because a facsimile's block wanders
+on the sheet and on some volumes alternates sides. Every survey recorded in
+`docs/history/` phases 30 to 32 and 38 was made of it.
+
+**None of it is versioned and none of it is depended on.** `texts/` is
+excluded from the repository, so these are the shelf's own instruments and no
+test, build or package reaches them — which is why they live beside the paper
+and not in a workspace.
+
 ## What the two cost
 
 Measured on twelve cores, over equal page counts:

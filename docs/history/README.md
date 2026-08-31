@@ -71,6 +71,7 @@ phase.
 | 35 | [A school can be chosen](35-a-school-can-be-chosen.md) | in progress — a review of the instructions finds six enumerations a board behind and three rules wider than their code; then the nine decisions that let a school be carried, named and chosen |
 | 36 | [The five 奇門 owed](36-the-five-qimen-owed.md) | done — declares the five divergences dunjia decided in silence, in one movement, and refuses the one that is a licence to read rather than a rule for laying |
 | 37 | [The pair and the plate](37-the-pair-and-the-plate.md) | done — computes the last refusal that wanted a shape, finds the shape was inferred from a picture, and catches a field that had been contradicting the board under it |
+| 38 | [Reading the scans on the shelf](38-reading-the-scans-on-the-shelf.md) | done — `ROADMAP.md` § 2 as it stood when it closed: four phases that opened every photographic file on the shelf, and what each turned out to establish, including the ones that establish nothing |
 
 ## The rest of the record
 

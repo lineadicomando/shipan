@@ -1510,7 +1510,7 @@ that an imperial compiler, printing it, calls 諸說紛紜 and 後人附會穿�
 parameter value names a school somebody follows. **The one text here that
 states these boards most fully is the one that says they are not what the art
 is about**, and this engine is not in a position to pick a school out of a set
-its own best witness disowns. `ROADMAP.md` § 2 carries what would change it: not
+its own best witness disowns. `ROADMAP.md` § 1 carries what would change it: not
 another statement of the method, of which there are now plenty, but a lineage
 that holds one of them.
 
