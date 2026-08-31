@@ -146,7 +146,7 @@ entry shows. Ordered by what a reading would move.
 | 《六壬經緯》's 神煞 juan | the five phases of the 十二天將, which the drawing leaves in neutral ink for want of a source | series pp. 1–92, one juan of six |
 | 《御定六壬直指》 卷上 起例 | 起貴人定十二天將法 and 十二月將名號 — the same question, second place | series pp. 5–33 |
 | 《中國恆星觀測史》 第七章第一節二 | the 授時 lodge values, if a modern reconstruction can stand where the 曆's own table would | printed p. 272 |
-| SKQS vol. 809, 《星學大成》 | what 七政四餘's neighbours have wanted; unweighed until read | volume pp. 285 to the end |
+| SKQS vol. 809, 《星學大成》 | what 七政四餘's neighbours have wanted; unweighed until read | volume pp. 285–870, 三十卷, both ends read on the plate |
 | 《太乙數統宗大全》, 故宮 第420冊 | 太乙's 卷一 constants, and the 月計 · 日計 · 時計 whose arithmetic is damaged in the edition held | **440 pages, no survey yet** — measured before it is planned around |
 
 **The two 六壬 lines are one question from two sides** and are the cheapest pair

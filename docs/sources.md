@@ -3597,7 +3597,8 @@ as they did. Last checked 2026-08-30.
 **A 四庫 volume was filed the same day, and it lifts nothing.**
 《景印文淵閣四庫全書》第810冊 carries 太乙金鏡式經 十卷 whole — and the plate the
 table above was read off is a cut of it, matched to the volume page for page on
-2026-08-31. So it is the copy already read, arriving a second time under its own
+2026-08-31 and agreeing with the volume's own 本冊目次, which puts the work at
+its printed p. 855. So it is the copy already read, arriving a second time under its own
 covers: a collation of a witness with itself settles no numeral, and the five
 stay where they were. What it does settle is where that plate came from, which
 until then was recorded nowhere. Last checked 2026-08-31.
