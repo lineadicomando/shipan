@@ -242,6 +242,19 @@ first six of them while this page was being written:
 | 《中國絕學》第十冊, three works, one of them 紫微斗數 | 《邵子易數講義》, 郭懿雲 講演, in eleven chapters and an 附錄, and no 紫微斗數 in it at all. Here the set's *own* 目錄 was the thing that was wrong, which is the failure one file down from the record page |
 | 《祖傳年家太乙神數》, «a manuscript or private transmission» | 《祖傳年家太乙神數教材》 — a modern teaching handout, photocopied off a handwritten notebook and printed by a named person, in simplified characters, with worked examples for 1984, 2010 and 2044 |
 | 《中國絕學》第一冊, handwriting no model reads | handwriting for seven eighths of it and movable type for the first, and the typeset eighth carries the 目錄 that navigates the rest |
+| 《遁甲集成》第四冊, 《奇門寶鑑》 六卷 | 故宮 第431冊's 《御定奇門寶鑑》 at its frame and 《奇門遁甲統宗》卷一 at its filling — the 起例, the 超接, the 置閏法 and the 四十格 are the other work, reprinted in its order and word for word |
+
+**A print can be one work at its frame and another at its filling**, and no
+contents leaf says so. 《遁甲集成》第四冊's 《奇門寶鑑》 opens 卷一 on
+《御定奇門寶鑑》's 奇門源流 word for word, carries its 釋義四十四則 and its 卷三 to
+卷六 — and the four procedural sections its 卷一 and 卷二 have that the imperial
+copy does not are 《奇門遁甲統宗》卷一, spliced in. Both identifications are
+right and neither is the whole answer. **So a passage that reads as this work's
+own is put to the transcriptions already held before it is written up**, which
+is a grep and not a reading: here it cost minutes and it caught a finding that
+had already been filed as a second witness to a rule the register carries. The
+test is cheapest exactly where it matters most — on the section a file was
+opened *for*, since that is the section somebody will quote.
 
 **A book's own 目錄 is a witness to it and can be wrong about it**, which is
 the same rule one level down: it is a description, written by somebody, of the
