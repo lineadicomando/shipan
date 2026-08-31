@@ -39,7 +39,7 @@ Three buckets, and the sections below expand them.
 |---|---|---|
 | **A section on this shelf that nobody has read** | the shortest way to move something, and the only bucket with named objects in it. Seven of them, each a section of a surveyed file and not a book | § 2 |
 | **A file on this shelf that nobody has measured** | most of the 2026-08-31 arrivals, the largest being 故宮 第420冊 at 440 pages — which two 太乙 refusals wait on. **Whether any stands under a value in § 1 is unknown**, and a survey is what makes that answerable | § 2, § 3 |
-| **A source that is not on this shelf** | every value in § 1's table that the first two buckets do not reach. Two are acquisitions with a named object: a 授時 lodge table that prints 參, and an epoch for 紫氣 | § 1 |
+| **A source that is not on this shelf** | every value in § 1's table that the first two buckets do not reach. One is an acquisition with a named object, an epoch for 紫氣; the 授時 lodge table that prints 參 was a second until a surveyed file turned out to have a section headed at it | § 1 |
 
 **The first bucket is new and it is the change worth seeing.** Until
 2026-08-31 the open edge was «a file nobody has opened», which is not work a
@@ -148,9 +148,12 @@ neither is research:
   counts seven, and the missing 10.28 can be had by subtraction, which is a
   derivation and not a witness. The other copy this shelf holds cannot supply
   it: 《曆法通志》's comparative table has no 授時 column, only a 紀元 one
-  standing in for it under an identification 授時曆故 undercuts. **So this
-  wants a copy of the 授時 table that is not here** — an acquisition, not a
-  reading.
+  standing in for it under an identification 授時曆故 undercuts. **It had been
+  written down as an acquisition and the survey of 2026-08-31 reopened that**:
+  《中國恆星觀測史》's 第七章第一節二, printed p. 272, is 至元年間的二十八宿觀測
+  — this 曆's own epoch, in a modern study nobody has read. It would not be the
+  same witness a printed 授時 table is, and what rung it could stand on is for
+  whoever reads it. It is § 2's fifth line.
 - **The option would have to carry an epoch as well as a table**, because the
   source makes its own numbers a function of the 歲差 at a chosen moment —
   「各得當時宿度」. That is a decision about the parameter's shape and the only

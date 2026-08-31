@@ -2000,7 +2000,14 @@ source is registered for them here. They stay uncoloured until one is.
 
 **Four 六壬 volumes reached the shelf on 2026-08-31 and none has been read for
 this.** 故宮珍本叢刊 第419冊 brings 六壬粹言, 六壬經緯 and 六壬類聚, and 第417冊
-the 御定六壬直指. The ink is what it was. Last checked 2026-08-30.
+the 御定六壬直指. **All four were surveyed on 2026-08-31 and the survey found
+where to ask rather than an answer**: 《六壬經緯》 is complete in six juan and
+its own 序 names them — 「其書六卷，曰演法、曰神煞、曰格局、曰斷占、曰類」 — so
+one of the six is 神煞 entire, at series pp. 1–92; and 《御定六壬直指》 卷上's
+目錄 carries 起貴人定十二天將法 beside 天干所屬 and 地支所屬, which is the
+shape an attribution would be printed in. Neither has been read. **A witness
+located is not a witness weighed** and the ink is what it was. Last checked
+2026-08-31.
 
 **And 金口訣 is not this board, which the shelf keeps a book to be able to
 show.** 《官板大六壬神課金口訣》, 金陵經正堂校梓 — the 故宮珍本叢刊 facsimile,
@@ -2878,10 +2885,21 @@ small amounts a conversion would produce, but that is a comparison read at
 survey resolution and it is recorded as a reason not to lean on the column
 rather than as a measurement.
 
+**And a fourth book on the shelf was surveyed after that negative was written,
+which is what reopens it.** 《中國恆星觀測史》, 潘鼐 — 498 pages, unopened until
+2026-08-31 and unread now — carries at its 第七章第一節二, printed p. 272,
+「至元年間的二十八宿觀測與元《郭守敬星表》拾遺」. 至元 is this 曆's own epoch and
+郭守敬 its author, so the one section on this shelf headed at the question is
+one nobody has read. **It would not be the same witness**: a modern
+reconstruction of an observation is not the 曆's printed table, and what rung it
+could stand on is a question for whoever reads it. What it does settle is that
+«this shelf cannot supply it» was a statement about the files opened by
+2026-08-27 and is not one about the files held.
+
 So the value stays refused, and what stands in the way is now two things and
-not three: 參, which this print does not carry and this shelf cannot supply,
-and an option shape that has to hold an epoch as well as a table, because the
-source makes its own numbers a function of a moment. Read on the plate 2026-08-27. The 考成 column is the one that
+not three: 參, which this print does not carry and no *read* file here
+supplies, and an option shape that has to hold an epoch as well as a table,
+because the source makes its own numbers a function of a moment. Read on the plate 2026-08-27. The 考成 column is the one that
 could be checked without leaving this shelf, since 《儀象考成》 卷一~卷十六 is
 held and its 距星 are the ends of exactly these intervals; that collation has
 not been run.
