@@ -160,12 +160,25 @@ export function styleSheet(scheme: 'light' | 'dark' | 'auto'): string {
  * empty grid rather than a wrong chart, which is the better failure of the
  * two but still a failure — and a silent one, so `png.ts` checks for it.
  *
- * The serif families come first because the chart reads better in one, and
- * the sans families follow because a bare `fonts-noto-cjk` installs those —
- * a stack that named only the serifs would fall through to a Latin default
- * with no Chinese coverage at all.
+ * **The Latin families come first, because a stack is resolved a character at
+ * a time and the CJK faces cover Latin punctuation too.** Behind them, an
+ * apostrophe is taken from a face that sets it a full em wide and centred in
+ * its own square — the width of 朱 — and `dell’anno` is drawn with a hole in
+ * it. No Latin family here holds a hanzi, so the glyphs fall through to
+ * the CJK ones by themselves and leading with Latin costs the drawing
+ * nothing. The first four are the page's own, in `app.css`, so a board and
+ * the prose around it are set alike; the three after them are what a Linux
+ * renderer actually holds, and without them the stack falls straight back
+ * into the fault the order exists to fix.
+ *
+ * Among the CJK families the serifs come first because the chart reads better
+ * in one, and the sans families follow because a bare `fonts-noto-cjk`
+ * installs those — a stack that named only the serifs would fall through to a
+ * Latin default with no Chinese coverage at all.
  */
 export const FONT_STACK =
+  "'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, " +
+  "'Noto Serif', 'Liberation Serif', 'DejaVu Serif', " +
   "'Noto Serif CJK SC', 'Noto Serif CJK TC', 'Source Han Serif', 'Songti SC', " +
   "'Noto Sans CJK SC', 'Noto Sans CJK TC', 'PingFang SC', 'Microsoft YaHei', " +
   "'WenQuanYi Zen Hei', serif";
