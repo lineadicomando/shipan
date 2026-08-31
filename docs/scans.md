@@ -186,9 +186,11 @@ contact, read on the page.
 **And `margin` mode assumes one book-page to the sheet.** It crops the two
 outer edges, where a 版心 sits when the leaf is printed alone; a reprint that
 stacks two half-leaves on one sheet puts each 版心 in the *middle* of it, and
-the crop returns twenty-two blank strips in a row. 大六壬課經集 is the case.
-Establish the layout before choosing the mode — which is the same subtraction
-on the printed page numbers that the section above is about.
+the crop returns twenty-two blank strips in a row. 大六壬課經集 is the case, and
+so is a 四庫 volume, whose leaf is printed flat and whole with the 版心 down its
+centre. **`banxin.py` is the tool for that layout** and `contact.py` has no mode
+for it. Establish the layout before choosing between them — which is the same
+subtraction on the printed page numbers that the section above is about.
 
 **A contact sheet is not always the cheapest way in, and three things decide
 it.** Where a book has a 目錄 at the front *in section order*, a 版心 naming the
@@ -342,6 +344,18 @@ book-page to the sheet**, and returns blank strips where a reprint stacks two;
 bounding box rather than fixed coordinates, because a facsimile's block wanders
 on the sheet and on some volumes alternates sides. Every survey recorded in
 `docs/history/` phases 30 to 32 and 38 was made of it.
+
+**And a fifth for the 版心 the fourth cannot reach.** `margin` looks at the
+outer edges, which is where a 版心 is when the leaf is printed alone; a
+facsimile that prints the leaf **flat and whole** puts it down the middle
+instead, between the two half-leaves, and `margin` over one of those returns a
+column of blank strips. `banxin.py` cuts that centre band, splits the sheet into
+the leaves stacked on it — `--leaves`, two by default — and rotates each strip
+so the column reads left to right. It renders DjVu as well as PDF, since the
+volumes that need it are DjVu. Both 四庫 volumes on this shelf are the case, and
+it locates approximately exactly as its sibling does: vol. 810's four 相書 were
+each bracketed a page early off these strips, and the volume's own 本冊目次
+corrected all four.
 
 **None of it is versioned and none of it is depended on.** `texts/` is
 excluded from the repository, so these are the shelf's own instruments and no
