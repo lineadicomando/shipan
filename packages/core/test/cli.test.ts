@@ -2,6 +2,7 @@ import { spawnSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { translate } from '@shipan/i18n';
 import { run } from '../src/cli.js';
 
 /**
@@ -587,7 +588,7 @@ describe('scan', () => {
   it('says that nothing answered rather than printing an empty table', async () => {
     expect(await run([...INTERVAL, '--gate', 'kaimen', '--star', 'tianpeng', '--spirit', 'zhifu'])).toBe(0);
     // Either something did answer, or it said so in words.
-    if (!out.includes('Open')) expect(out).toContain('No palace');
+    if (!out.includes('Open')) expect(out).toContain(translate('en', 'cli.value.nothingAnswered'));
   });
 
   it('expands an errand into a gate and says which', async () => {

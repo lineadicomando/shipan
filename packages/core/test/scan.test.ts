@@ -446,7 +446,7 @@ describe('formatScan', () => {
   it('says that nothing answered rather than printing an empty table', () => {
     const text = formatScan([], t);
 
-    expect(text).toContain('No palace');
+    expect(text).toContain(t('cli.value.nothingAnswered'));
     expect(text).not.toContain('until');
   });
 

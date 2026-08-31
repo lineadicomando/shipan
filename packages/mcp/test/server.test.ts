@@ -1,6 +1,7 @@
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { InMemoryTransport } from '@modelcontextprotocol/sdk/inMemory.js';
 import { beforeAll, describe, expect, it } from 'vitest';
+import { translate } from '@shipan/i18n';
 import { createServer, SERVER_NAME } from '../src/server.js';
 
 /**
@@ -458,7 +459,7 @@ describe('scan_moments', () => {
       min_strength: 'wang',
     });
 
-    if (!text.includes('Open')) expect(text).toMatch(/No palace/i);
+    if (!text.includes('Open')) expect(text).toContain(translate('en', 'cli.value.nothingAnswered'));
   });
 
   it('refuses an interval the engine will not walk', async () => {
