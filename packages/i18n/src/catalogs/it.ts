@@ -1127,9 +1127,9 @@ export const it: Record<MessageKey, string> = {
   'meta.title.notes.readings': 'Prompt IA: consegnare una tavola a un modello',
   'meta.description.notes.readings':
     'Che cosa succede quando una tavola arriva a un modello: una sola tavola e mai due, calcolata e mai una data, e che cosa un prompt commissiona e vieta.',
-  'meta.title.privacy': 'Privacy: non si conserva nulla',
+  'meta.title.privacy': 'Privacy: quello che chiedi resta tuo',
   'meta.description.privacy':
-    'Nessun account, nessun cookie, nessuna analitica. Nulla di ciò che chiedi è conservato e nessuna carta è scritta in questo browser: qui il perché.',
+    'Quello che chiedi resta tuo: nessun account, nessun cookie, nessuna analitica, e nessuna carta scritta in questo browser. Qui il perché.',
 
   'scheme.label': 'Aspetto',
   'scheme.auto': 'automatico',
@@ -1250,16 +1250,16 @@ export const it: Record<MessageKey, string> = {
     'La lista è nell’indirizzo di questa pagina: condividere l’indirizzo la condivide, e con essa le date e il luogo.',
 
   'form.working': 'Calcolo in corso…',
-  'form.needed.date': 'Manca ancora una data.',
-  'form.needed.interval': 'Mancano ancora le due date dell’intervallo.',
+  'form.needed.date': 'Scegli una data.',
+  'form.needed.interval': 'Scegli le due date dell’intervallo.',
   'form.needed.question':
-    'Manca ancora una domanda: il prompt è costruito perché la carta sia letta alla luce di una domanda.',
+    'Scrivi la domanda: il prompt è costruito perché la carta sia letta alla luce di una domanda.',
   'form.needed.birth':
-    'Manca ancora una data di nascita. Questo quadro è steso su una nascita, e una data vuota sarebbe oggi.',
+    'Indica la data di nascita: questo quadro è steso su una nascita, e una data vuota sarebbe oggi.',
   'form.needed.matter':
-    'Manca ancora ciò che stai guardando. Su questo quadro non c’è nessuno e ad esso non si chiede nulla, quindi senza una faccenda la lettura può solo descrivere la figura.',
+    'Indica la faccenda che stai guardando: il soggetto di questo quadro è l’anno e non una persona, e la faccenda è ciò che dà alla lettura una direzione.',
   'form.needed.gender':
-    'I cicli decennali richiedono il sesso, perché la tradizione ne trae la direzione. Senza, i pilastri restano comunque completi.',
+    'I cicli decennali richiedono il sesso, perché la tradizione ne trae la direzione. I pilastri restano completi in ogni caso.',
   'form.jumpDate': 'Il giorno per cui la carta è posta',
 
   'form.strengthLegend': 'Come stanno la stella e la porta rispetto alla stagione',
@@ -1278,7 +1278,7 @@ export const it: Record<MessageKey, string> = {
   'form.copyFailed':
     'Gli appunti non hanno accettato il testo: succede fuori da una connessione cifrata. Il testo è qui: selezionalo e copialo a mano.',
   'form.copyFallback': 'Il testo, da copiare a mano',
-  'form.copyUnread': 'Non è stato possibile rileggere la carta.',
+  'form.copyUnread': 'Riprova: la carta non è stata riletta.',
 
   // La nascita, offerta accanto alla domanda e non al suo posto. Quello che
   // produce è un 年命: la carta resta quella dell'istante e la nascita vi si
@@ -1297,7 +1297,7 @@ export const it: Record<MessageKey, string> = {
   'consult.changeMatter': 'Cambia ciò che stai guardando',
   'consult.change': 'Cambia la domanda',
   'consult.castAt': 'Posto per il {when}',
-  'consult.castFailed': 'Non è stato possibile porre il quadro.',
+  'consult.castFailed': 'Riprova: il quadro non è stato posto.',
 
 
 
@@ -1341,18 +1341,20 @@ export const it: Record<MessageKey, string> = {
   'manifest.description':
     'Le tavole delle arti divinatorie cinesi, calcolate qui e non ricordate: Qi Men Dun Jia, Da Liu Ren, Tai Yi Shen Shu, i quattro pilastri, Zi Wei Dou Shu e Qi Zheng Si Yu.',
 
-  // «Nessuna connessione» e non «Sei offline»: il secondo è un'etichetta
-  // sull'utente, il primo dice che cosa manca. E niente «riprova più tardi»
-  // nel corpo — l'attesa non porta qui un calcolo che sta su un server.
-  'offline.title': 'Nessuna connessione',
+  // «Serve una connessione» e non «Sei offline», che è un'etichetta
+  // sull'utente, né «Nessuna connessione», che apre su ciò che manca: la riga
+  // nomina quello che ci vuole perché la pagina faccia il suo lavoro. E
+  // niente «riprova più tardi» nel corpo — l'attesa non porta qui un calcolo
+  // che sta su un server.
+  'offline.title': 'Serve una connessione',
   'offline.lead':
-    'Questa pagina non è raggiungibile, e senza connessione non si può posare nessuna tavola.',
+    'La pagina che hai chiesto sta sul server, e lì stanno anche le tavole: per posarne una serve la connessione.',
   // «effemeridi» è il termine, non una traduzione di comodo: è la parola che
   // il lettore ritrova nel piè di pagina, dove la fonte è citata per nome.
   'offline.why':
     'Una tavola è calcolata, non cercata in un elenco: servono le effemeridi di dove il Sole e la Luna erano davvero, e un archivio di località per fissare l’ora. Stanno tutte e due sul server e nessuna delle due gira in un browser: quello che c’è qui è la porta d’ingresso, non il lavoro.',
   'offline.kept':
-    'Non si è perso niente, perché niente era stato conservato. Nessuna carta, data, ora o località è mai stata salvata in questo browser: quello che tiene è il codice di queste pagine e, se l’hai scelto, l’aspetto.',
+    'Questo browser tiene il codice di queste pagine e, se l’hai scelto, l’aspetto. Nessuna carta, data, ora o località è mai stata salvata qui, quindi non c’è niente da recuperare.',
   'offline.retry': 'Riprova',
 
   'notes.title': 'Note',
@@ -1479,7 +1481,7 @@ export const it: Record<MessageKey, string> = {
     'Una scuola insegna a che cosa serve una configurazione, e la tentazione è spedire quell’insegnamento accanto ai valori che ha mosso. Può viaggiare solo ciò che già viaggia per le condizioni del 太乙 tàiyǐ, entro gli stessi quattro limiti: le parole della fonte, una clausola e non un paragrafo, sempre glossata, e sempre attaccata a qualcosa che il motore ha calcolato. Un verdetto nella prosa di questo motore è un verdetto che niente può mettere alla prova; una citazione, invece, si può verificare due volte: o è nel testo o non c’è, ed è di quella scuola o non lo è.',
   'notes.refusals.title': 'Dove si ferma il motore',
   'notes.refusals.lead':
-    'Il motore non risponde a nessuna domanda, il che è diverso dal non dire niente. Qui sotto c’è una voce per ogni rifiuto, e ogni voce dice tre cose: che cosa viene rifiutato, chi lo chiede, e perché non è qui.',
+    'Questo motore calcola disposizioni e lascia l’interpretazione a chi legge, e il confine fra le due cose è dichiarato voce per voce. Ogni voce dice tre cose: che cosa sta al di là del confine, chi lo chiede, e perché il confine passa proprio di lì.',
   'notes.refusals.carries':
     'Il motore porta invece un attributo che le fonti tramandano concordi, purché quell’attributo appartenga alla configurazione e non alla situazione di qualcuno. Anche in quel caso l’attributo viaggia come identificatore e come glifo, mai come prosa. Un verdetto scritto dentro una glossa tradotta non si potrebbe verificare in nessun modo, mentre un identificatore e un glifo si possono confrontare con la fonte da cui vengono.',
   'notes.refusals.yongshen.title': 'Lo 用神 yòngshén',
@@ -1623,7 +1625,7 @@ export const it: Record<MessageKey, string> = {
     'Questa pagina dedica una riga a ogni quantità che il motore calcola, e ogni riga dice tre cose: da che cosa il motore la ricava, rispetto a che cosa è stata verificata, e su quale rung della scala qui sotto quella verifica la colloca.',
   'notes.ladder.title': 'La scala delle prove',
   'notes.ladder.lead':
-    'Non tutte le quantità sono state verificate con riferimenti ugualmente solidi, e sapere da dove viene una quantità non basta ancora a soppesarla accanto alla sua vicina. I rung qui sotto vanno dal più forte al più debole, e accanto a ciascuno c’è il numero di quantità che vi stanno.',
+    'Le quantità sono state verificate con riferimenti di solidità diversa, e sapere da dove viene una quantità è il primo passo per soppesarla accanto alla sua vicina. I rung qui sotto sono il secondo: vanno dal più forte al più debole, e accanto a ciascuno c’è il numero di quantità che vi stanno.',
   'notes.held': '{count} nel registro',
   'notes.rung.0': 'Misurata',
   'notes.rung.0.means':
@@ -1688,7 +1690,7 @@ export const it: Record<MessageKey, string> = {
   // Tutta la pagina in tre righe, per chi vuole la risposta e non
   // l'argomentazione. Quello che segue è questa frase con i conti in vista.
   'privacy.summary':
-    'In breve: è costruito per non conservare niente. Nessun dato personale, nessuna data di nascita, nessun luogo e nessun testo che digiti viene scritto su un server di questo sito né in alcuna base di dati.',
+    'In breve: quello che scrivi resta tuo. Nessun dato personale, nessuna data di nascita, nessun luogo e nessun testo che digiti viene scritto su un server di questo sito né in alcuna base di dati.',
 
   'privacy.controller.title': '1. Chi è il titolare del trattamento',
   // «Chi gestisce questa copia» e non un nome. L'indirizzo lì sotto si legge
@@ -2172,7 +2174,7 @@ export const it: Record<MessageKey, string> = {
   // Quanto dopo la nascita si aprono i cicli decennali: anni, mesi, giorni.
   'cli.value.luckStart': '{years}a {months}m {days}g',
   'cli.value.nothingAnswered':
-    'Nessun palazzo dell’intervallo risponde a quanto è stato chiesto. Questo dice che la disposizione non si è presentata, e nient’altro.',
+    'L’intervallo è stato percorso per intero, e la disposizione richiesta non vi compare. Questo dice che non si è presentata, e nient’altro.',
   'cli.value.everyPalace': 'ogni palazzo, nessuna richiesta particolare',
   // 甲 non sta su nessun piatto, quindi un anno che ne è retto si cerca sotto
   // lo strumento che ne cela la decade. Detto, mai sostituito in silenzio.

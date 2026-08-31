@@ -1187,9 +1187,9 @@ export const en = {
   'meta.title.notes.readings': 'Handing a board to a model',
   'meta.description.notes.readings':
     'What happens when a board reaches a model: one board and never two, computed and never a date, and what a prompt commissions and forbids.',
-  'meta.title.privacy': 'Privacy — nothing is stored',
+  'meta.title.privacy': 'Privacy — what you ask stays yours',
   'meta.description.privacy':
-    'No account, no cookies and no analytics. Nothing you ask is stored, and no chart is written to this browser. What the address holds, and why.',
+    'What you ask stays yours: no account, no cookies, no analytics, and no chart written to this browser. What the address holds, and why.',
 
   'scheme.label': 'Appearance',
   'scheme.auto': 'automatic',
@@ -1386,26 +1386,26 @@ export const en = {
   // end, and a colour on its own is not a message — it is invisible to a
   // screen reader and to a good part of the people who can see it.
   'form.working': 'Working…',
-  'form.needed.date': 'A date is still needed.',
-  'form.needed.interval': 'Both dates of the interval are still needed.',
-  'form.needed.question': 'A question is still needed: the prompt is built to be read towards one.',
+  'form.needed.date': 'Choose a date.',
+  'form.needed.interval': 'Choose both dates of the interval.',
+  'form.needed.question': 'Write the question: the prompt is built to be read towards one.',
   // The counterpart on a board of 命, and it says what an empty field would
   // otherwise quietly mean. Under the other two boards empty is the press and
   // the instant is now; here now is nobody's birth.
   'form.needed.birth':
-    'A date of birth is still needed. This board is laid on one, and an empty date would be today.',
+    'Give the date of birth: this board is laid on one, and an empty date would be today.',
   // The counterpart under 天, and the field that turned this instrument from a
   // caption into a reading. Not a question: a question about a year is how a
   // reader gets written into a figure they are not in. A matter is what is
   // being *looked at*, and it is what says which side is 主 and which is 客.
   'form.needed.matter':
-    'What you are looking at is still needed. Nobody is on this board and nothing is asked of it, so without a matter the reading can only describe the figure.',
+    'Name what you are looking at: the subject of this board is the year and not a person, and the matter is what gives the reading its direction.',
   // The hour, and not only the day. A Qi Men chart turns on the hour pillar,
   // so a birth without a time is not a rougher chart — it is a different one.
   // The same thing `cli.error.genderRequired` says, without naming a command
   // line option to somebody looking at a form.
   'form.needed.gender':
-    'The luck cycles need the sex, since the tradition takes their direction from it. Without it the pillars are still complete.',
+    'The luck cycles need the sex, since the tradition takes their direction from it. The pillars are complete either way.',
   // The date stays operable with the fields closed, so it needs a name of its
   // own: beside the steps there is no label above it to say what it sets.
   'form.jumpDate': 'The day the chart is cast for',
@@ -1450,7 +1450,7 @@ export const en = {
   'form.copyFailed':
     'The clipboard would not take it — that happens outside an encrypted connection. The text is here: select it and copy it by hand.',
   'form.copyFallback': 'The text, to copy by hand',
-  'form.copyUnread': 'The chart could not be read again.',
+  'form.copyUnread': 'Try again: the chart was not read.',
 
   // The birth, offered beside the question rather than instead of it. What it
   // produces is a 年命: the chart stays the chart of the moment and the birth
@@ -1499,7 +1499,7 @@ export const en = {
   'consult.castAt': 'Laid for {when}',
   // The request itself failed, so there is no code to translate. Not
   // `form.copyUnread`: on a first press nothing was ever cast to read again.
-  'consult.castFailed': 'The board could not be laid.',
+  'consult.castFailed': 'Try again: the board was not laid.',
 
 
 
@@ -1577,14 +1577,16 @@ export const en = {
     'The boards of the Chinese divinatory arts, computed rather than recalled: Qi Men Dun Jia, Da Liu Ren, Tai Yi Shen Shu, the four pillars, Zi Wei Dou Shu and Qi Zheng Si Yu.',
 
   // What a reader is told when a navigation could not reach the network. It
-  // says what cannot be done and why, rather than «try again» — the site is a
-  // calculation on a server, and no wait makes it available here.
-  'offline.title': 'No connection',
-  'offline.lead': 'This page could not be reached, and no board can be laid without a connection.',
+  // names what the page takes rather than what it lacks, and it is not «you
+  // are offline», which is a label on the reader. No «try again later» in the
+  // body either — the site is a calculation on a server, and no wait makes it
+  // available here.
+  'offline.title': 'A connection is needed',
+  'offline.lead': 'The page you asked for is on the server, and so is every board: laying one takes a connection.',
   'offline.why':
     'A chart is computed rather than looked up: it takes an ephemeris of where the Sun and the Moon actually were, and a dataset of places to fix the hour by. Both are on the server, and neither runs in a browser — so what you have here is the way in, not the work.',
   'offline.kept':
-    'Nothing was lost, because nothing was kept. No chart, date, time or place has ever been stored in this browser; what it holds is the code of these pages and, if you chose one, the appearance.',
+    'What this browser holds is the code of these pages and, if you chose one, the appearance. No chart, date, time or place has ever been stored here, so there is nothing to recover.',
   'offline.retry': 'Try again',
 
   // The section a reader arrives at having come to check rather than to read.
@@ -1711,7 +1713,7 @@ export const en = {
     'A school teaches what an arrangement is for, and the temptation is to ship that teaching beside the values it moved. What may travel is what already travels for the conditions of 太乙 tàiyǐ, under the same four bounds: the source’s own words, a clause rather than a paragraph, always glossed, and always attached to something the engine computed. A verdict in this engine’s own prose is a verdict nothing can test; a quotation can be tested twice over — it is in the text or it is not, and it is that school’s or it is not.',
   'notes.refusals.title': 'Where the engine stops',
   'notes.refusals.lead':
-    'The engine answers no question, which is not the same as saying nothing. Below is one entry for every refusal, and each entry says three things: what is refused, who asks for it, and why it is not here.',
+    'This engine computes arrangements and leaves the interpretation to the reader, and the line between the two is declared entry by entry. Each entry says three things: what stands beyond the line, who asks for it, and why the line falls where it does.',
   'notes.refusals.carries':
     'What the engine does carry is an attribute the sources hand down concordantly, provided that attribute belongs to the configuration rather than to somebody’s situation. Even then the attribute travels as an identifier and a glyph, never as prose. A verdict written into a translated gloss could not be tested by anybody, where an identifier and a glyph can be held against the source they came from.',
   'notes.refusals.yongshen.title': 'The 用神 yòngshén',
@@ -1849,7 +1851,7 @@ export const en = {
     'This page gives one row to every quantity the engine computes, and each row says three things: what the engine derives it from, what it was checked against, and which rung of the ladder below that check puts it on.',
   'notes.ladder.title': 'The ladder of evidence',
   'notes.ladder.lead':
-    'Not every quantity was checked against an equally good reference, and knowing what a quantity stands on is not yet being able to weigh it against its neighbour. The rungs below run from strongest to weakest, each with the number of quantities held at it.',
+    'Quantities were checked against references of differing strength, and knowing what a quantity stands on is the first step towards weighing it against its neighbour. The rungs below are the second: they run from strongest to weakest, each with the number of quantities held at it.',
   'notes.held': '{count} in the register',
   'notes.rung.0': 'Measured',
   'notes.rung.0.means':
@@ -1905,7 +1907,7 @@ export const en = {
   // The whole page in three lines, for the reader who wants the answer and not
   // the argument. Everything under it is this sentence with its workings shown.
   'privacy.summary':
-    'In short: it is built to keep nothing. No personal data, no date of birth, no place and no text you type is written to a server here or to any database.',
+    'In short: what you enter stays yours. No personal data, no date of birth, no place and no text you type is written to a server here or to any database.',
 
   'privacy.controller.title': '1. Who the controller is',
   // «Whoever runs this copy» and not a name. The address under it is read from
@@ -2549,7 +2551,7 @@ export const en = {
   // How long after the birth the luck cycles open, each unit abbreviated.
   'cli.value.luckStart': '{years}y {months}m {days}d',
   'cli.value.nothingAnswered':
-    'No palace in the interval answers what was asked. This says the arrangement did not occur, and nothing else.',
+    'The interval was walked in full, and the arrangement asked for does not stand in it. This says it did not occur, and nothing else.',
   'cli.value.everyPalace': 'every palace, nothing asked for in particular',
   // 甲 stands on no plate, so a year headed by it is looked up under the
   // instrument concealing its decade. Said, never silently substituted.
