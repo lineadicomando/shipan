@@ -1175,7 +1175,7 @@ export const en = {
   'meta.title.notes.instruments': 'Instruments: the layers, and their parameters',
   'meta.description.notes.instruments':
     'Every board this engine lays, what each is computed from, and every school divergence as a named parameter with its declared default.',
-  'meta.title.notes.sources': 'Where the numbers come from: sources and checks',
+  'meta.title.notes.sources': 'Sources: where each number comes from',
   'meta.description.notes.sources':
     'Every quantity the engine computes, the text or the measurement it stands on, and the rung of evidence it was weighed on.',
   'meta.title.notes.refusals': 'Where the engine stops, and why',
@@ -1846,7 +1846,7 @@ export const en = {
   'notes.readings.disclaimer.body':
     'The prompt carries the disclaimer this site’s footer carries, as an instruction to say it: this is a space for inner enquiry and personal enrichment, it is no substitute for professional advice on anything, and the power over a person’s choices and their path stays theirs. A prompt travels, and a disclaimer left behind on the page it was copied from was written for somebody who is no longer there.',
 
-  'notes.sources.title': 'Where the numbers come from',
+  'notes.sources.title': 'Sources',
   'notes.sources.lead':
     'This page gives one row to every quantity the engine computes, and each row says three things: what the engine derives it from, what it was checked against, and which rung of the ladder below that check puts it on.',
   'notes.ladder.title': 'The ladder of evidence',

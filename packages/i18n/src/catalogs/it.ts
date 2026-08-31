@@ -1109,7 +1109,7 @@ export const it: Record<MessageKey, string> = {
   'meta.title.notes.instruments': 'Strumenti: gli strati, e i parametri di scuola',
   'meta.description.notes.instruments':
     'Ogni tavola che questo motore stende, da che cosa è calcolata, e ogni divergenza di scuola come parametro dichiarato con il proprio valore predefinito.',
-  'meta.title.notes.sources': 'Da dove vengono i numeri, e da quali fonti',
+  'meta.title.notes.sources': 'Fonti: da dove viene ogni numero, e le prove',
   // «Rung» e non «gradino», che è quello che questa riga diceva. La scelta è
   // argomentata sotto `notes.column.rung`: il termine resta inglese perché è
   // quello che il lettore ritrova nella colonna del registro, nella
@@ -1620,7 +1620,7 @@ export const it: Record<MessageKey, string> = {
   'notes.readings.disclaimer.body':
     'Il prompt porta con sé l’avvertenza che porta il piede di pagina di questo sito, come istruzione a pronunciarla: questo è uno spazio di ricerca interiore e arricchimento personale, non sostituisce il parere di un professionista su nulla, e il potere sulle scelte di una persona e sul suo cammino resta suo. Un prompt viaggia, e un’avvertenza lasciata sulla pagina da cui è stato copiato era scritta per qualcuno che lì non c’è più.',
 
-  'notes.sources.title': 'Da dove vengono i numeri',
+  'notes.sources.title': 'Fonti',
   'notes.sources.lead':
     'Questa pagina dedica una riga a ogni quantità che il motore calcola, e ogni riga dice tre cose: da che cosa il motore la ricava, rispetto a che cosa è stata verificata, e su quale rung della scala qui sotto quella verifica la colloca.',
   'notes.ladder.title': 'La scala delle prove',
