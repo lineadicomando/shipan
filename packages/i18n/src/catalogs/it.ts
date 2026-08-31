@@ -889,7 +889,7 @@ export const it: Record<MessageKey, string> = {
   'meta.description.consult':
     'Una domanda, una nascita o un anno: sei tavole divinatorie cinesi, calcolate da un’effemeride, in un prompt da incollare nel tuo assistente IA.',
   'meta.intro.consult.a':
-    'Il termine 式盤 shìpán indica la tavola del divinatore: la rappresentazione simbolica del Cielo rotondo che ruota sulla Terra quadrata. shipan.it calcola con precisione astronomica le strutture tradizionali della cosmologia e della divinazione cinese — dai Tre Sistemi 三式 sānshì all’astrologia dei pilastri e delle stelle.',
+    'Il termine 式盤 shìpán indica la tavola del divinatore: la rappresentazione simbolica del Cielo rotondo che ruota sulla Terra quadrata. shipan.it calcola con precisione astronomica le strutture tradizionali della cosmologia e della divinazione cinese, dai Tre Sistemi 三式 sānshì all’astrologia dei pilastri e delle stelle.',
   // **L'assistente è qualcosa che usa il lettore, non qualcuno con cui questo
   // sito parla.** Qui c'era «la tavola arriva a ChatGPT», sbagliato nell'unico
   // modo che questo progetto non può permettersi: descrive un sito che manda
@@ -1022,7 +1022,7 @@ export const it: Record<MessageKey, string> = {
   // parola: due dei sette sono il Sole e la Luna, che stanno fuori dal conto
   // di cinque che i pianeti sono.
   'meta.intro.qizheng.a':
-    'Il 七政四餘 qīzhèng sìyú è la forma classica dell’astrologia oroscopica cinese, fondata sul movimento effettivo dei corpi celesti. Porta il percorso dei sette governatori — il Sole, la Luna e i cinque pianeti — e di tre dei quattro residui, i due nodi lunari e l’apogeo della Luna, attraverso le ventotto dimore 宿 xiù.',
+    'Il 七政四餘 qīzhèng sìyú è la forma classica dell’astrologia oroscopica cinese, fondata sul movimento effettivo dei corpi celesti. Porta il percorso dei sette governatori (il Sole, la Luna e i cinque pianeti) e di tre dei quattro residui, i due nodi lunari e l’apogeo della Luna, attraverso le ventotto dimore 宿 xiù.',
   // Quel che non dice più è che la latitudine non entra in nessun calcolo.
   // Lo dicono le note, sotto un rifiuto tutto suo, che è dove `CLAUDE.md` lo
   // vuole: nella documentazione e non nel modulo.
@@ -1061,7 +1061,7 @@ export const it: Record<MessageKey, string> = {
   // in prosa la description due righe più su: la maiuscola è dell'etichetta,
   // che sta in cima a una colonna.
   'meta.intro.bazi.a':
-    'Il 八字 bāzì traduce un momento di nascita – anno, mese, giorno e ora – nelle interazioni dei cinque elementi (legno, fuoco, terra, metallo, acqua) e nelle combinazioni di tronchi celesti e rami terrestri.',
+    'Il 八字 bāzì traduce un momento di nascita (anno, mese, giorno e ora) nelle interazioni dei cinque elementi (legno, fuoco, terra, metallo, acqua) e nelle combinazioni di tronchi celesti e rami terrestri.',
   // **Il verbo ha per soggetto chi legge, ed è tutto ciò che tiene questa
   // riga dentro quello che il motore fa.** Un equilibrio è qualcosa che il
   // lettore esplora; quel che arriva sono i conteggi, zeri compresi, e
@@ -1704,7 +1704,7 @@ export const it: Record<MessageKey, string> = {
 
   'privacy.inputs.title': 'A. Ciò da cui si calcola una carta: date, ore e luoghi',
   'privacy.inputs.lead':
-    'Tutto quello che inserisci perché una carta venga posata – la data, l’ora e il minuto, e il luogo in coordinate:',
+    'Tutto quello che inserisci perché una carta venga posata (la data, l’ora e il minuto, e il luogo in coordinate):',
   // **Non «elaborazione locale», che qui sarebbe falso.** Il motore sta sul
   // server: i parametri ci arrivano nella query string, e senza connessione
   // questo sito non posa nessuna carta — la pagina offline lo dice in due
@@ -1720,13 +1720,13 @@ export const it: Record<MessageKey, string> = {
     'Niente di tutto ciò viene scritto in una base di dati, in un registro di sistema o su un altro server.',
   'privacy.inputs.address': 'Sta nell’indirizzo',
   'privacy.inputs.address.means':
-    'I parametri sono codificati nell’URL perché una carta si possa mettere fra i segnalibri o condividere: condividere il collegamento significa quindi condividere le coordinate e l’ora che l’hanno prodotta – e delle coordinate nominano una soglia di casa, non una città. Passalo solo a qualcuno a cui diresti quelle cose.',
+    'I parametri sono codificati nell’URL perché una carta si possa mettere fra i segnalibri o condividere: condividere il collegamento significa quindi condividere le coordinate e l’ora che l’hanno prodotta; e delle coordinate nominano una soglia di casa, non una città. Passalo solo a qualcuno a cui diresti quelle cose.',
 
   'privacy.prompt.title': 'B. La domanda che scrivi per un prompt',
   'privacy.prompt.device':
     'La domanda, o la materia, che scrivi per un prompt resta intera sul tuo dispositivo.',
   'privacy.prompt.server':
-    'Il testo che digiti al server non arriva mai: non lo legge e non lo registra. Gli viene detto che una domanda esiste – perché il prompt possa finire sulla riga che la introduce – e mai quale sia; la frase la aggiunge il browser prima di mettere il tutto negli appunti.',
+    'Il testo che digiti al server non arriva mai: non lo legge e non lo registra. Gli viene detto che una domanda esiste (perché il prompt possa finire sulla riga che la introduce) e mai quale sia; la frase la aggiunge il browser prima di mettere il tutto negli appunti.',
   'privacy.prompt.thirdParty':
     'Questo sito non manda niente a nessun fornitore di intelligenza artificiale: né OpenAI, né Anthropic, né altri. Che cosa fai del prompt una volta che è negli appunti è una tua decisione, ed è cosa fra te e chi lo riceve.',
 
@@ -1768,7 +1768,7 @@ export const it: Record<MessageKey, string> = {
 
   'privacy.licence.title': '5. Licenza, e che cosa si può verificare',
   'privacy.licence.body':
-    'shipan è open source, con licenza AGPL-3.0-or-later. Tutto quello che c’è scritto qui sopra – come funziona, e che non traccia niente – non è una promessa da prendere sulla fiducia: si legge nel codice sorgente della copia con cui stai parlando.',
+    'shipan è open source, con licenza AGPL-3.0-or-later. Tutto quello che c’è scritto qui sopra (come funziona, e che non traccia niente) non è una promessa da prendere sulla fiducia: si legge nel codice sorgente della copia con cui stai parlando.',
   'privacy.licence.source': 'leggi il codice sorgente di questa copia',
 
   'prompt.heading': 'Leggere una carta di Qi Men Dun Jia',
