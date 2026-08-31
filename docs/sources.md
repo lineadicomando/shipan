@@ -1976,6 +1976,10 @@ The **十二天將** carry five-phase assignments the tradition transmits, and t
 drawing leaves them in neutral ink for the reason this whole file exists: no
 source is registered for them here. They stay uncoloured until one is.
 
+**Four 六壬 volumes reached the shelf on 2026-08-31 and none has been read for
+this.** 故宮珍本叢刊 第419冊 brings 六壬粹言, 六壬經緯 and 六壬類聚, and 第417冊
+the 御定六壬直指. The ink is what it was. Last checked 2026-08-30.
+
 **And 金口訣 is not this board, which the shelf keeps a book to be able to
 show.** 《官板大六壬神課金口訣》, 金陵經正堂校梓 — the 故宮珍本叢刊 facsimile,
 at least six juan over 192 woodblock pages — carries 大六壬 in its title and
@@ -3408,6 +3412,13 @@ neither is any other 太乙 text carrying 卷一's constants. Until one is,
 `yueji`, `riji` and `shiji` are declared, refused by name, and this is the
 entry saying why.
 
+**That negative was closed against the shelf of 2026-08-30, and a 太乙 volume
+arrived the next day.** 《太乙數統宗大全》, 故宮珍本叢刊 第420冊 — four hundred
+and forty pages, and the first 太乙 witness here besides the 金鏡式經. Whether
+it carries 卷一's constants is the question, and **nobody has asked it**: the
+volume is on the shelf and unread for this, so the refusals above stand exactly
+as they did. Last checked 2026-08-30.
+
 ### The nine palaces, which are not the nine palaces
 
 **The largest thing a reader can get wrong, and the output will never say so.**
@@ -3618,6 +3629,10 @@ is not a witness. Read on the plate 2026-08-30.
 accumulated count and 卷一's 日計 arithmetic is damaged in this edition
 (推時計差法 has a 闕 in the middle of a constant). `ji` is the parameter that
 waits for them.
+
+The volume named two sections above bears on both halves of that — a second
+witness for the counts, and a second reading for the 闕 — and has been read for
+neither. Last checked 2026-08-30.
 
 **四神, 天乙, 地乙 and 直符太乙.** 卷五 places all four, and they walk **twelve**
 palaces rather than eight — the nine plus 絳宮, 明堂 and 玉堂, which 卷八 gives

@@ -147,6 +147,12 @@ the engine falls back to Moshier, which needs no files.
   no other: it moves three things instead of four, never the rung. What an
   edited edition must show to count as that witness, and when a lone reading of
   one may be followed, is settled once. → [`docs/sources.md`](docs/sources.md)
+- **A transcribed corpus is a finding aid, and a rung moves only when the
+  register moves.** Passages filed by the question they answer say where to
+  look and how firmly each was established; a divergence they record is not yet
+  a parameter, and a witness located is not a witness weighed. Nothing in
+  `docs/` leans on a shelf a reader may not hold. →
+  [`docs/notes.md`](docs/notes.md)
 - **What changes when a board lands is not written, it is derived.** Wanting to
   hand-write a paragraph about a new board is the signal that a descriptor is
   missing a field, and the fix is upstream of the page. Where a paragraph is

@@ -7,11 +7,20 @@ first and the section itself is too long to give. The record of how everything e
 [`docs/history/`](docs/history/README.md); what holds today is in
 [`docs/`](docs/README.md).
 
-**The open edge of this project was the shelf, and the shelf has been read.**
-The boards, the almanac layer and the calendrical layer under them are built,
-checked and documented; the section of notes that accounts for them is written;
-and as of 2026-08-30 every photographic file here has been opened and said what
-it is. § 2 is the record of that reading rather than a plan for it.
+**The open edge of this project was the shelf, and on 2026-08-30 the shelf had
+been read.** The boards, the almanac layer and the calendrical layer under them
+are built, checked and documented; the section of notes that accounts for them
+is written; and every photographic file held that day had been opened and said
+what it is. § 2 is the record of that reading rather than a plan for it.
+
+**The shelf grew the next day, and that is § 3.** Thirty-seven files arrived on
+2026-08-31 out of the archive the older 故宮 and 遁甲集成 volumes came from —
+fourteen works this shelf did not have, and three more of works it held in
+part — together with a body of passages transcribed out of them and filed by
+the question they answer. Twenty-three of the files have been opened by
+nobody. What that costs is not a new kind of work — it is the
+procedure `docs/sources.md` § "When a source arrives later" already states, run
+over more texts than usual and in two directions at once.
 
 What is left is still mostly a **text** — one that adds a quantity, confirms one
 already shipped, or contradicts it — and that is an ordinary change with a
@@ -35,12 +44,15 @@ One bucket now, and § 1 expands it.
 
 | | | |
 |---|---|---|
-| **A source that is not on this shelf** | every other value in the table below. Each is written against in § 1 or `docs/refusals.md`, and **none of them is waiting on a file somebody could open today** — which is now a statement and not an estimate, the last unread scan having been opened on 2026-08-30. Two are acquisitions with a named object: a 授時 lodge table that prints 參, and an epoch for 紫氣 | § 1 |
+| **A source that is not on this shelf** | every other value in the table below. Each is written against in § 1 or `docs/refusals.md`. Two are acquisitions with a named object: a 授時 lodge table that prints 參, and an epoch for 紫氣 | § 1 |
+| **A file on this shelf that nobody has opened** | twenty-three of them, arrived 2026-08-31. **Whether any stands under a value in § 1 is unknown**, which is the plain difference between this table today and the same table on 2026-08-30: the second bucket was empty then and is not now | § 3 |
 
-**There was a third bucket and it is empty.** The two plates nobody had read
-were read on 2026-08-30: 第一冊 confirms the 庚 line a fourth time and states
-nothing this engine did not already carry, and 第十冊 turned out not to be a
-紫微斗數 book at all. Neither stood under a value in § 1 and neither does now.
+**The second bucket had been emptied once and has refilled.** The two plates
+nobody had read were read on 2026-08-30: 第一冊 confirms the 庚 line a fourth
+time and states nothing this engine did not already carry, and 第十冊 turned
+out not to be a 紫微斗數 book at all. Neither stood under a value in § 1 and
+neither does now — and that emptying is what the arrival of the next day
+undid.
 
 **§ 2 is closed.** All four phases are, and the reading it describes is
 finished: every photographic file on the shelf has been opened and said what it
@@ -528,7 +540,103 @@ one thing a copy can: its 年家 leaf reads 一 · 四 · 七 at 600 dpi with ea
 numeral cropped, so the 四 that the 遁甲集成 divergence turns on is now read on
 two plates and one transcription.
 
-## 3. Spanish, once the engine has stopped moving
+## 3. The sources that arrived, and the two readings they owe
+
+Thirty-seven files reached the shelf on 2026-08-31 out of the same archive of
+術數 texts the 故宮珍本叢刊 and 遁甲集成 volumes came from: fourteen works this
+shelf did not have, and three more files of works it held in part. With them
+came a body of passages already transcribed out of them and filed by the
+question each answers — somebody else's work, at a declared reliability, and a
+finding aid rather than a register. `docs/notes.md` § "The corpus, which
+is not the register" is that boundary, and `texts/README.md` says what is where.
+
+**This is one errand in two movements, and the order matters.** The first puts
+the arrivals to questions this project has already asked and answered; the
+second asks what the new texts say on their own account. Doing the second first
+would be reading four hundred pages without knowing which page was wanted.
+
+### The first movement — what the arrival reopens
+
+`docs/sources.md` § "What an arrival reopens" is the rule and it is bounded: an
+arrival is put to the questions already standing, and the negatives already
+closed are put back to the arrival. Not a re-reading of everything.
+
+**Three negatives in the register have already been reopened and none has been
+answered.** Each carries the date it was last checked and says plainly that the
+volume is on the shelf and unread for it:
+
+- **太乙's 卷一 constants**, which `yueji`, `riji` and `shiji` are refused for
+  want of. 《太乙數統宗大全》 (故宮珍本叢刊 第420冊, 440 pages) is the first 太乙
+  witness here besides the 金鏡式經. Whether it carries them is the question.
+- **太乙's 月計 · 日計 · 時計**, where 卷一's 日計 arithmetic is damaged in the
+  edition held. The same volume would answer both halves — a second count and a
+  second reading of the 闕.
+- **The five phases of the 十二天將**, which the drawing leaves in neutral ink
+  because no source is registered. 故宮珍本叢刊 第417冊 and 第419冊 bring four
+  六壬 volumes and none has been read for it.
+
+**And there is a list of where else a rung could move.** `texts/crosswalk.tsv`
+joins the corpus to `docs/sources.tsv`; `texts/shelf.py crosswalk --moves`
+prints the quantities standing at rung 4, 5 or — whose rule has gained a
+witness among the arrivals, and `--gaps` the registered quantities no
+transcribed passage reaches at all. Neither is a finding. **A witness located
+is not a witness weighed**, and what moves a rung is the argument written into
+`docs/sources.md` and the row added beside it.
+
+**The instrument that asks a text to contradict the engine is
+`texts/bench/`**, which runs the 147 worked examples the sources print for
+themselves. Two disagree today, both 六壬 and both on rules the corpus marks
+divergent: a 涉害 whose 三傳 come out differently, and a 返吟 whose four courses
+are displaced in a way that points at the 日干寄宮. **Each is a question and
+neither is a verdict** — settling one means reading the passage its citation
+names, and the passage is on the shelf. A hundred and twenty-four of the
+examples have no adapter yet; `bench/run.mjs --uncovered` prints the shapes
+still waiting, commonest first, and each line is one adapter's worth of work.
+
+### The second movement — what the new texts say
+
+**Twenty-three of the thirty-seven files have been opened by nobody**, and
+eleven of the twenty-four works are cited without a passage transcribed out of
+them. That is a return to the state § 2 was written to end, and the procedure
+is § 2's: say what a file *is* — how many juan, what the pixels are, which of
+the two ways in it takes — before planning anything around it.
+`docs/scans.md` is unchanged and still the rule.
+
+The largest of them, in the order the project stands on them: 《御定奇門真詮》
+(故宮 第430冊), 《御定六壬直指》 with its 析義 (第417冊), the three 六壬 works of
+第419冊, 遁甲集成 第一 · 第四 · 第五冊, and the 四庫全書 volume of the 命書 group
+(vol. 809, 876 pages, no text layer). That last one is where the 四庫 recension
+of 《星學大成》 sits, which § 1's neighbours have wanted; the question is
+answered by reading its 目錄 on the plate, not by grepping a file that has none.
+
+### What this movement may not do
+
+**A transcription is not a plate.** Of the passages that arrived, most were read
+on the facsimile character by character and a minority were not: twenty-two are
+the archive's own digital text, which nobody has read against an image. Nothing
+at that mark may close a question or establish a negative — `docs/scans.md` §
+"A search returning nothing is not a negative" is unchanged, and it was written
+for exactly this. The reliability mark travels with every passage and
+`texts/rules/README.md` says what each one means.
+
+**A divergence in the corpus is not a parameter.** The corpus flags a rule
+where two readings were found, which is a fact about texts;
+`docs/parameters.md` asks for a divergence *between practitioners*, with
+attribution and transcription, and its criterion is unchanged. Between them lie
+the species a flag cannot tell apart, and § 1 is where a value earns its name.
+
+### Where the state is kept
+
+On the shelf, because that is where the paper is: `texts/works/` for what each
+volume is and where its files sit, `texts/rules/` for what the passages answer,
+`texts/crosswalk.tsv` for the join to the register, `texts/manifest.json` for
+the coverage computed rather than written. **None of it is versioned**, and
+nothing in `docs/` leans on it. What this section owes the repository is the
+ordinary thing a source owes: the argument in `docs/sources.md`, the row in
+`docs/sources.tsv`, the rung that may fall as well as rise, and the date the
+entry was last checked.
+
+## 4. Spanish, once the engine has stopped moving
 
 The interface is read in a vernacular and there are two of them, which is a
 state and not a design — `docs/i18n.md` § "Who is reading" is where that is
@@ -551,7 +659,7 @@ The one thing that would change the design rather than the catalogs is a
 language needing plural rules, gender agreement or message syntax — see
 `docs/i18n.md` § "The catalog". Spanish needs none of the three.
 
-## 4. What is refused and stays refused
+## 5. What is refused and stays refused
 
 Not roadmap, and listed here only so nobody mistakes silence for an omission:
 the 用神, 格局, ranking, dating, advice, the 年命 purposes doctrine, who is 主

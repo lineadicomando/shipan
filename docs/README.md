@@ -14,7 +14,7 @@ or an agent — must be able to tell at a glance whether a page binds them.
 | [`refusals.md`](refusals.md) | what is deliberately not computed, who asks for it, and why it is not here |
 | [`readings.md`](readings.md) | what happens when a board reaches a model: the three kinds, the one-board rule, what a prompt commissions and forbids |
 | [`scans.md`](scans.md) | how a photograph of a page becomes evidence: which of the two ways in it takes, what an extract is for and is not, and why a search returning nothing is not a negative |
-| [`notes.md`](notes.md) | what this project claims and how the claim is kept honest: the ladder a quantity is weighed on, derived against written, and the date a written entry shows |
+| [`notes.md`](notes.md) | what this project claims and how the claim is kept honest: the ladder a quantity is weighed on, the corpus that is a finding aid and not the register, derived against written, and the date a written entry shows |
 | [`agent-prompt.md`](agent-prompt.md) | the contract a model calling this project has to read first — through MCP or through the REST API |
 | [`sources.tsv`](sources.tsv) | the register as a table: one row a quantity, the rung it stands on, what it was checked against, and the section of `sources.md` that argues it |
 | [`provenance.tsv`](provenance.tsv) | every file this project was read off that came from the network: URL, revision, date taken, sha256 |
@@ -57,6 +57,14 @@ which `.gitignore` excludes and whose own README lists what is on the shelf.
 `sources.md` therefore cites by title, edition and chapter — never by path —
 and every claim in it has to stand for a reader who has only the citation.
 
+**That shelf carries transcriptions as well as paper, and they are a finding
+aid.** Passages taken out of the scans and filed by the question they answer
+say which texts speak to which rule and how firmly each was established. They
+weigh nothing: a rung moves when `sources.md` argues it and `sources.tsv`
+records it, and not before. [`notes.md`](notes.md) § "The corpus, which is not
+the register" is that boundary, and it is where a divergence found in a text
+stops being a text's and starts being a parameter — or does not.
+
 **`sources.tsv` is that file read the other way.** `sources.md` argues one
 quantity at a time, at whatever length the argument takes; the register is the
 same claims as a table a reader can sort, count and print, with a `section`
@@ -80,8 +88,19 @@ awk -F'\t' 'NR>1 {print $5 "  " $1}' docs/provenance.tsv | sha256sum -c
 
 It covers what came off the network — Wikisource wikitext at its `oldid`,
 the ctext pages, three smaller sites, and the reference implementations this
-engine measures itself against, pinned to a version or a commit. It does not
-cover the bought scans, which have no URL and no revision; those are named in
-`texts/README.md` and cited by edition in `sources.md`. And it does not
-displace the rule at the foot of `sources.md`: a link is not the evidence, the
-extract is. This is provenance for the copies, not a substitute for quoting.
+engine measures itself against, pinned to a version or a commit.
+
+**And it covers a fund that never had a per-file URL, which is what the
+`revision` column is for.** The volumes out of a personal archive of 術數 texts
+arrived inside RAR anthologies, so no address ever pointed at one of them:
+their rows carry the host, the archive member, the day the file itself is
+stamped and the hash, and say in that column that a reader can confirm the
+bytes and cannot follow a link. **A handful of files have no row at all** —
+they reached the shelf with no origin recorded, and a row giving the day they
+were filed would say they were fetched on a day nobody fetched them. Those are
+named in `texts/README.md`, which says of each that its origin is not
+recorded, and cited by edition in `sources.md`.
+
+None of it displaces the rule at the foot of `sources.md`: a link is not the
+evidence, the extract is. This is provenance for the copies, not a substitute
+for quoting.

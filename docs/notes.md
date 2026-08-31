@@ -141,6 +141,44 @@ which is the failure `docs/parameters.md` opens by refusing.
 entry in `docs/sources.md`, which is the argument, and the row here, which is
 what a surface can read.
 
+## The corpus, which is not the register
+
+The shelf now carries a second thing beside the paper: passages transcribed out
+of it and filed **by the question they answer** as well as by the volume they
+came out of. Each carries the citation whole, the leaf in the facsimile, and
+the method by which it was established — read on the plate, corrected against
+it, or taken from an archive's digital text and read by nobody. It comes with
+the worked examples the texts print for themselves and with a map of the names
+that mean one thing and the names that mean several.
+
+**It is a finding aid, and this file is what a quantity stands on.** The corpus
+says which texts speak to which rule and how firmly each passage was
+established. It does not say what the engine claims, and a passage transcribed
+is a witness *located*, not a witness weighed. What moves a rung is what the
+section above says moves one: the argument written into `sources.md` and the
+row added here. Until both are written the rung is what it was.
+
+**A divergence recorded there is not a parameter.** The corpus flags a rule
+where two readings were found, which is a fact about the texts;
+[`parameters.md`](parameters.md) asks for something else — a divergence
+*between practitioners*, with attribution and transcription — and its criterion
+is unchanged. Between the two stand the species a flag cannot tell apart: a
+disagreement between witnesses to one text, which the register settles once and
+never names for a recension, and a difference that changes what is read without
+changing what is built.
+
+**And it is off the repository, which is the point.** The shelf is gitignored,
+most of it cannot be redistributed, and a register that could not be read
+without it would be one nobody else could check. So nothing here leans on it:
+every claim in `sources.md` stands on a citation naming an edition and a leaf,
+which a reader who holds neither the corpus nor the shelf can still follow.
+
+What the corpus is good for is knowing where to look next, and it answers that
+by joining itself to this register: which rows a text now speaks to, which
+parameter a divergence already travels under, and which quantities at the
+bottom of the ladder have gained a witness since they were weighed. That join
+is on the shelf and is rerun when either side moves.
+
 ## Derived beats written
 
 What changes when a board lands must not be written at all.
