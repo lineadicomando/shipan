@@ -1417,7 +1417,13 @@ gives 《遁甲符應經》三卷 to 第一冊 at series p. 385 and 第三冊 to
 《奇門遁甲》 — and the archive these files came from catalogued them the same
 way, naming 符應經 in 第一冊's filename and 第三冊's simply 奇門遁甲, so the
 disagreement has two independent voices on its side and not merely a contents
-leaf, which could be wrong about its own book. 第一冊 pp. 385–490 were read far enough on the plate the same day to
+leaf, which could be wrong about its own book. **That 總目錄 is in fact wrong
+about one thing two lines above**, printing 新鋟烟波釣徒 where the work's own
+frontespizio reads 新鐫煙波釣叟, so the weight here is the archive's naming and
+第一冊's 提要 leaf rather than the contents leaf. Its *page* numbers are
+corroborated: the transcribed corpus cites 第一冊 by facsimile page and its
+mapping and this one agree exactly. **The corpus is not a voice either way** —
+it transcribed nothing from 第三冊 and names 符應經 nowhere. 第一冊 pp. 385–490 were read far enough on the plate the same day to
 confirm it: the 四庫未收書提要 off 阮元's 揅經室外集 卷三, 宋仁宗's 御製序 naming
 楊維德 and the 景祐 commission, and the work's own 目錄 in section order across
 pp. 389–393. So the name this section and the 寄宮 row attach to 第三冊's leaves

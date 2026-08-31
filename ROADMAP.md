@@ -637,7 +637,11 @@ here, because each changes what is worth opening next:
   provenance names the same two files 第一冊 …`DunJiaFuYingJing` and 第三冊
   `QiMenDunJia`, which `texts/works/` had held all along under both names. And
   第一冊's leaves are not in doubt — the 四庫未收書提要, 宋仁宗's 御製序 and the
-  work's own 目錄 are all there. `docs/sources.md` leans on the 第三冊
+  work's own 目錄 are all there. The 總目錄 itself is a good witness to where a
+  work starts and a poor one to what it is called: its page numbers check
+  against the transcribed corpus's own facsimile citations exactly, and it
+  misreads a title two lines above 符應經. The corpus is silent on the question,
+  having transcribed nothing from 第三冊. `docs/sources.md` leans on the 第三冊
   attribution for `寄宮`'s 洛書 clause and already carried that volume open for
   want of a running title. **The survey opened this and did not close it**;
   closing it is a collation and the 目錄 says where to look.
