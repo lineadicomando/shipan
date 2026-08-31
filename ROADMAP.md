@@ -37,7 +37,7 @@ Three buckets, and the sections below expand them.
 
 | | | |
 |---|---|---|
-| **A section on this shelf that nobody has read** | the shortest way to move something, and the only bucket with named objects in it. Seven of them, each a section of a surveyed file and not a book | § 2 |
+| **A section on this shelf that nobody has read** | the shortest way to move something, and the only bucket with named objects in it. Six of them, each a section of a surveyed file and not a book | § 2 |
 | **A file on this shelf that nobody has measured** | most of the 2026-08-31 arrivals, the largest being 故宮 第420冊 at 440 pages — which two 太乙 refusals wait on. **Whether any stands under a value in § 1 is unknown**, and a survey is what makes that answerable | § 2, § 3 |
 | **A source that is not on this shelf** | every value in § 1's table that the first two buckets do not reach. One is an acquisition with a named object, an epoch for 紫氣; the 授時 lodge table that prints 參 was a second until a surveyed file turned out to have a section headed at it | § 1 |
 
@@ -117,17 +117,24 @@ file arriving can be put to them.
   imperial prints lay the *hour* board by turning and say so; 《金鏡寶鑑》 uses
   飛 five times for other things, including the flying-palace operation itself
   spent on 八宅, which is as strong as the negative gets short of a denial.
-  What would move it is a text flying the **hour** board. **One place left on
-  this shelf is now a likely one**: 遁甲集成 第四冊's 《奇門寶鑑》 六卷 carries a
-  遁甲起例 and a 釋虛中 under headings of their own, found by the survey of
-  2026-08-31 and read by nobody. It is the first line of § 2's table.
-- **`centreLodging: dun`** — no longer what nobody states. 《御定奇門寶鑑》
-  prints 「陽遁陰遁俱寄坤宮。一本陰遁寄艮」, which names both readings and flags
-  the second as a variant copy. An edition can only be preferred, so what would
-  move it is a school holding 艮, not another copy reading it. 遁甲集成 第四冊's
-  釋虛中 is the one unread section on this shelf headed for the question, and
-  whether that volume's 奇門寶鑑 六卷 is this same imperial work — which would
-  make it a copy and not a school — is itself unsettled.
+  What would move it is a text flying the **hour** board. **The one place left
+  on this shelf has been read and states the negative.** 遁甲集成 第四冊's
+  《奇門寶鑑》 六卷 turned out to be the 故宮 print of the same work, and its
+  卷一 遁甲起例 — a section the imperial copy does not carry under that name —
+  lays the board by turning: 「順佈六儀逆飛三奇」 for the yang dun, its mirror
+  for the yin, and 飛 used of the marvels inside a turned ring and of 飛轉 for
+  the hour, which are the two senses already on file. No board on this shelf is
+  flown but the year's, the month's and the day's.
+- **`centreLodging: dun`** — no longer what nobody states, and the work that
+  states it now says why it does not follow it. 《御定奇門寶鑑》卷二 prints
+  「陽遁陰遁俱寄坤宮。一本陰遁寄艮」; its 卷一 釋虛中合宮, read on both copies
+  2026-08-31, gives the variant a derivation from the 先天 trigrams and then
+  decides between them — 「其說於理尤為周備，但本多從前說，故遵之」. The
+  compiler judges the two-board lodging the sounder and keeps 坤 for both dun
+  because **more copies read that way**. 本 is an edition, and an edition can
+  only be preferred, so what would move the value is unchanged: a school
+  holding 艮. What has changed is that the refusal now rests on a stated reason
+  rather than on a bare 一本.
 - **`system: rijia · yuejia · nianjia`** — three witnesses now state the
   families entire and they do not agree; the fullest of them prints three
   competing day methods and a compiler's note calling the whole layer 後人附會
@@ -253,7 +260,6 @@ entry shows. Ordered by what a reading would move, not by size.
 
 | | what would move | where |
 |---|---|---|
-| 遁甲集成 第四冊, 《奇門寶鑑》 六卷 | `plate: fei`, `centreLodging: dun` — the only unread 起例 on this shelf | 遁甲起例, 釋虛中, 釋符頭, 三奇趨神接氣秘訣, at series pp. 1627–2329 |
 | 遁甲集成 第一冊, 《遁甲符應經》 三卷 | closes the volume attribution the register carries open, and 二遁直符合於中宮 is a second reading of the centre | series pp. 385–490; 目錄 at 389–393 |
 | 《六壬經緯》's 神煞 juan | the five phases of the 十二天將, which the drawing leaves in neutral ink for want of a source | series pp. 1–92, one juan of six |
 | 《太乙數統宗大全》, 故宮 第420冊 | 太乙's 卷一 constants, and the 月計 · 日計 · 時計 whose arithmetic is damaged in the edition held | **440 pages and no survey yet** — this one is measured before it is planned around |
@@ -265,6 +271,17 @@ entry shows. Ordered by what a reading would move, not by size.
 omission: 545 pages of it are 1080 hour boards with no 起例 in them. What it
 could be is a bench of worked examples, and `texts/bench/` is where that would
 go rather than the register.
+
+**The line that headed this table is gone because it was read**, on 2026-08-31,
+and what it produced is in `docs/sources.md`: 遁甲集成 第四冊's 《奇門寶鑑》 六卷
+is 故宮 第431冊's 《御定奇門寶鑑》, so it was a collation and not a second
+witness. It moved no rung, which is what a collation cannot do. It settled three
+sentences — the 起例 turning the hour board, the hour family's 置閏 standing at
+芒種 and 大雪 with a reason, and the compiler's own verdict on the centre's
+lodging, 「其說於理尤為周備，但本多從前說，故遵之」 — and it found a section of the
+*other* copy that nobody had opened, 釋虛中合宮, because this print's contents
+leaf names what the imperial one groups. **A finer 目錄 on a second copy is a
+finding aid for the first**, which is the reusable part.
 
 **The count of what is unsurveyed is not written here**, for the reason no
 count of `texts/` is: it drifts and no test can hold it. As of 2026-08-31 ten
@@ -363,10 +380,11 @@ reason a line in that table exists or does not:
   list and names the eighteen 局 and nothing else, thirty pages each: 1080 hour
   boards, no 起例, no prose juan. The largest unopened dunjia file on the shelf
   is ruled out by its own contents leaf rather than by a sweep of it.
-- **遁甲集成 第四冊 has a 起例**, which is what § 1 wants and what the shelf had
-  no unread instance of. Whether its 《奇門寶鑑》 六卷 is 故宮 第431冊's
-  《御定奇門寶鑑》 六卷 is unsettled, and it decides whether reading it is a
-  collation or a second witness.
+- **遁甲集成 第四冊 has a 起例**, which is what § 1 wanted and what the shelf had
+  no unread instance of. Its 《奇門寶鑑》 六卷 **is** 故宮 第431冊's
+  《御定奇門寶鑑》 六卷 — settled on the plate 2026-08-31, both 卷一 opening on
+  奇門源流 word for word — so reading it was a collation. It is read; see
+  § 2 and `docs/sources.md`.
 - **《星學大成》 is in SKQS vol. 809**, from the volume's p. 285 to its end, read
   off the 本册目次 on the plate as this section said it would have to be.
 - **遁甲集成 第一冊 carries the typeset 總目錄 of all six volumes**, and it
