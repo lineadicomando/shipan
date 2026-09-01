@@ -3289,13 +3289,24 @@ would reveal it.
 **紫氣 is off, and the output says 三餘 — but the reason is narrower than it
 looks, and one wrong version of it is worth stating so nobody re-derives it.**
 
-The rate is not in dispute. It arrives three ways and they are one motion:
+The rate arrives at twenty-eight years three ways, and they are one motion:
 
 | transmission | rate | round |
 |---|---|---|
 | 一年一宿, one lodge a year — the common statement, referred to the 閏法, since nineteen years take seven intercalations and twenty-eight about ten | 12.857 °/yr | 28.00 yr |
 | 一日行一度 over twenty-eight days — 劉定之 (1409–1469) 《雜志》, in a table of Babylonian goal-years; reported in Kotyk, *The Sinicization of Indo-Iranian Astrology in Medieval China*, Sino-Platonic Papers 282, pp. 54 and 79 | 12.857 °/yr | 28.00 yr |
-| 一日行三分五十七秒 — 《三辰通載》, quoted in 《古今圖書集成》 星命部 | 12.857 °/yr | 28.00 yr |
+| 一日行三分五十七秒, the 大數 procedure below — 《張果星宗》, whose 三辰通載 section opens it | 12.857 °/yr | 28.00 yr |
+
+**A fourth transmission says twenty-nine, and it is not a misprint.** Three
+witnesses print a 星曜行度 table of round numbers in which 「紫氣二十九日行一
+度，大約二十九月一宮，二十九年一周天」: 《古今圖書集成》 藝術典 星命部 卷565–577
+(read on the plate, 第468冊 leaf 23), 《星平集腋統宗》 at 故宮 423 p. 164 (道光壬辰
+1832), and 楊國正's 七政四餘論命術講義 p. 12, which reprints the 集成's wording
+including its closing clause. The three columns of each row check against each
+other — 29 × 365.25 = 10 592 days = 29.00 years — so one digit did not slip.
+**And the same work carries both numbers.** The 紫炁總論 that stands two columns
+from the 大數 procedure on the same leaf ends 「凡二十九年行一周」. Read on the
+plate 2026-09-01. What that settles is written below, under the layers.
 
 **The trap is the unit, and it is the reason this row exists.** A 度 is
 ¹⁄₃₆₅.₂₅ of the circle, not ¹⁄₃₆₀. Read "one degree every twenty-eight days"
@@ -3307,15 +3318,34 @@ arithmetically. The two are the same rate and always were. A 七政四餘天星�
 lecture giving 每日行兩分六秒 sexagesimally — 12.783 °/yr — is the same figure
 rounded, 2′07″ being the exact value.
 
-**It is stated as a procedure, with an epoch constant, in two independent
-lines.** 《古今圖書集成》 星命部 carries a 定度法 for each of the eleven under
-the heading 三辰通載·紫氣, and 《張果星宗》 卷八 氣星篇 carries the same one.
-Both read, character for character:
+**It is stated as a procedure, with an epoch constant, and this entry used to
+say two independent lines carried it. That was one line counted twice.** The
+claim was that 《古今圖書集成》 星命部 carried a 定度法 for each of the eleven
+under the heading 三辰通載·紫氣, and that 《張果星宗》 卷八 氣星篇 carried the
+same one. The 集成's own 卷目錄, read on the plate, says what the 集成 is
+reproducing:
 
+> 第五百八十卷目錄　星命部彙考十六　張果星宗十四　　太陽算法 日篇 …
+> 炁星篇　紫氣總論　紫氣躔度　紫氣歌斷　紫氣入宮　算法 孛星篇 …
+
+The eleven 算法 are 《張果星宗》, printed inside the 星命部彙考 — 張果星宗 十二
+through 十五 at 卷578 to 卷581 — and **三辰通載 is not a second work but the
+opening section of 張果星宗十二** at 卷578, which is why the vernacular
+abridgement files the procedure under that name. So the 集成 and 《張果星宗》 are
+one witness reproduced twice, not two agreeing witnesses, and this file's
+standard is not met by them. Read on the plate 2026-09-01, 第469冊 leaves 1, 19
+and 24 for the three 卷目錄 and leaf 24 for the procedure itself:
+
+> 紫氣筭法　炁星篇
 > 置積日減一千二百八十八。以一萬二百二十八大數除之。不盡爲殘分。轉一當十。以
 > 二百八十爲一度。二十八爲一分。次下除爲秒。平行：一日行三分五十七秒。
 
-Two witnesses, which is the count this file asks for everywhere else.
+**What the plate does buy is the text.** The procedure was known here only from
+`gujin-tushu-jicheng-xingming-baihua` p. 234, a modern vernacular abridgement
+photographed with a phone; it is now read at 300 dpi off the 中華書局 影印, and
+every character of it, the 大數 10228 and the offset 1288 included, stands as
+quoted. That is a collation and it moves the text, not the count — see § "What a
+second copy of one text buys".
 
 Take the accumulated days, **subtract 1288**, divide by the 大數 10228, take
 the residue tenfold, 280 to the 度 and 28 to the 分. The scheme closes on
@@ -3325,10 +3355,10 @@ is 3.57 分 at 一度百分, which is the 三分五十七秒 printed; and 10228 
 fourteenth-century almanac.
 
 **And the system it sits in is checkable, which is what gives it weight.** The
-same 定度法 series gives 羅睺 「置積日加五百六十，以六千七百九十四逆遊數除之」
-and 月孛 「置積日加一千二百三十五，以三千二百二十五大數除之」 — 月孛's also in
-both witnesses, 計都 being 「將羅睺定度加半周天數」 and so not independent.
-Against the sky:
+same series gives 羅睺 「置積日加五百六十，以六千七百九十四逆遊數除之」 at 卷581
+and 月孛 「置積日加一千二百三十五，以三千二百二十五大數除之」 on the 紫氣's own
+leaf, 計都 being 「將羅睺定度加半周天數」 and so not independent. Both read on the
+plate 2026-09-01, 第469冊 leaves 24 and 30. Against the sky:
 
 | | 大數 | true period | error |
 |---|---|---|---|
@@ -3339,6 +3369,34 @@ Against the sky:
 So this is not a table someone invented for a quantity with no referent: it is
 a working ephemeris whose two verifiable constants are right, carrying a third
 for a body that has none.
+
+**The tradition says 紫氣 has no referent, in its own words, and says the same
+of 月孛.** The 紫炁總論 that follows the procedure on the same leaf opens 「天乙
+紫炁。續木之餘。**在天無象**。以木德最厚。立此名以追步。其餘光用之。效久不
+廢。其行度無伏見遲留」 — in the heavens it has no figure; the name was instituted
+in order to track it; its residual light is used, and the effect has long endured
+undiminished; and its motion has no station and no retrogradation, which is the
+uniform prograde motion the procedure computes. The 月孛總論 on the same leaf
+opens the same way — 「太乙月孛乃水之餘。**在天無象**」 — for a body this engine
+does place, from `SE_MEAN_APOG`. **So «no referent» is this project's
+distinction and not the source's**, and stating it as the tradition's would be
+attributing to it a division it does not make. What is true is narrower: the
+apogee has a modern referent and 紫氣 has none, which is a fact about what
+astronomy recovered and not about how the four were transmitted.
+
+**The twenty-eight and the twenty-nine are layers of one text, which is now
+shown rather than inferred.** They stand two columns apart on one leaf, in one
+work, under one compiler: a 算法 whose 大數 is a computational constant, and a
+總論 whose 「凡二十九年行一周」 belongs with the 星曜行度 table of round numbers,
+where 月孛 is «nine» for 8.85 and the nodes «eighteen» for 18.6. **The round
+layer is gradeable against the sky on the two bodies that have a referent, and
+it fails**: propagated from 1886 to 2026 the mnemonic 月孛 is 98° out and the
+mnemonic nodes 87°, against 11.4° and 0.2° for the 大數. A layer that misses by
+three palaces on both checkable bodies is a table for remembering and not for
+computing, and this engine already declines it for the three it places. That is
+a divergence recorded, not a school declared: a layer is not a lineage, and
+`docs/parameters.md`'s rule that no value is ever named for a recension holds
+here for the same reason.
 
 **The origin those constants count from is not stated, and was solved for
 here — twice, both times inconclusively.** The offsets are all present, −1288
@@ -3374,13 +3432,28 @@ compounds to 69° over 726 years.
 
 紫氣's 大數 is 10228 and there is nothing to weigh it against. It might be a
 羅睺 and it might be a 月孛, and **the test that would say which is having a
-referent in the sky, which is the one thing 紫氣 does not have.** So the
-uncertainty on a modern 紫氣 is not a missing epoch that better sources would
-supply: it is unbounded in principle, somewhere between a quarter of a degree
-and a couple of palaces, and no source can close it because closing it is not
-a matter of transmission. `ziqi` keeps `off` as its default and `yinianyisu`
-as a named, refused value. The board reports three remainders rather than
-quietly printing four.
+referent in the sky, which is the one thing 紫氣 does not have.**
+
+**That much stands. What this entry used to draw from it does not, and the
+arithmetic is the reason.** It read «unbounded in principle, and no source can
+close it», which describes a quantity; what the table above measures is a
+quantity times a lever arm. The drift a rate error produces is ε × 360° × the
+circuits run since the anchor, so 0.20 % reaches 69° over the 726 years from
+1300 and 3.6° over the 4.97 circuits from 1886. **A rate error is bounded and an
+anchor's resolution is bounded, so their sum is**; what is unbounded is only the
+distance a calibration is carried. Both bounds are readings of the evidence and
+neither is a property of 紫氣. The 1886 board below is where an anchor would come
+from, and what it is worth is a palace: the error on a placement taken from it
+is that palace's ±15° plus about 4° of drift if 紫氣's constant is no worse than
+the worse of its two checkable siblings — and nothing establishes that it is not
+worse, which is the real residue and belongs in an output rather than in a
+refusal.
+
+`ziqi` keeps `off` as its default and `yinianyisu` as a named, refused value.
+The board reports three remainders rather than quietly printing four. **What
+holds that refusal today is one plate for the anchor and one work for the rate**
+— see the rungs below — and no longer the claim that no acquisition could
+change it.
 
 For what it is worth against a future check: 曹仁麟's 《星度指南》 (preface
 民國三十年, 1941) 第七篇 works a chart for 光緒丙戌年十月十一日寅時 —
@@ -3389,7 +3462,32 @@ For what it is worth against a future check: 曹仁麟's 《星度指南》 (pre
 計 in 巳宮 where the engine computes 羅睺 亥 3.55°, 月孛 亥 9.16°, 計都 巳
 3.55°. It fixes a palace and not a degree, ±15°, the plate that would carry
 the degree being a scan whose cells do not resolve — but it is an independent
-test any solved origin has to pass.
+test any solved origin has to pass. **It is also an epoch, in the sense the
+arithmetic needs**: a linear rule is fixed by a rate and any one dated position,
+and the 積日 origin the printed procedure asks for is redundant once a dated
+position is in hand. What was missing was never a citable epoch. What is missing
+is a second one.
+
+**Where the two quantities stand on the ladder, and it is the same rung.** The
+**rate** is one work — 《張果星宗》, in two impressions of itself — which
+contradicts itself between its 算法 and its 總論 and is graded only through its
+two siblings; a text that disagrees with itself about the quantity is not a text
+that checks itself, so it is rung 5 and not rung 4. The **anchor** is one plate,
+《星度指南》 1886, redundant about the chart and not about 紫氣: rung 4 can be
+argued and rung 5 can, and `docs/notes.md` says the register takes the weaker.
+Both at 5. **That is a fall**: this entry stood on «two witnesses, which is the
+count this file asks for», and the count was wrong. Nothing was overturned by a
+better source — the shelf grew and the reading of what was already on it
+corrected.
+
+**And the 講義 is a third impression rather than a third witness.** 楊國正's
+七政四餘論命術講義 p. 42 prints the 紫炁總論 word for word, including 「在天無
+象」 and the 廟旺 that follow, and its p. 12 prints the 星曜行度 table with the
+集成's own closing clause; where the 1832 《星平集腋統宗》 parts from both at the
+nodes — 廿日 against 十八日 — the 講義 sides with the 集成. Its 119 pages carry
+**no worked chart**: 命例, 排盤, 年生 and 民國 return nothing on its text layer,
+which locates no second anchor there and, the layer being an aid rather than a
+plate, closes nothing.
 
 ### 命宮 and the twelve 宮
 
@@ -4786,7 +4884,7 @@ calendrical layer settles. Recorded as a passage read and not used.
 | 二十八宿值日's 宜忌 | 《協紀辨方書》卷三十六 辨訛 rejects the lodge-day selection outright as an import: 來自西域, 並不可從. The count may still travel; the doctrine attached to it may not, and the epoch takes its warrant elsewhere |
 | the 宜忌 of the twelve officers | the largest thing in the 協紀 and the clearest refusal here: 宜 and 忌 are advice — ordering days, dating an act — which is `purposes.ts`'s line in a second place |
 | the verse's clause order in 涉害 | 「孟深仲淺季當休」 read as evaluation order scores 98.19 % where the grouping this engine uses scores 99.58 %. Both references take the deeper 季; the divergence is recorded rather than resolved by preference |
-| 紫氣 | the rate is settled and 《張果星宗》 and 《三辰通載》 both give a procedure carrying an epoch constant, so the refusal is not for want of a rule. Calibrated together at 1300, the same table's 羅睺 holds to 0.25° through 2026 and its 月孛 drifts to 69°, and nothing weighs 紫氣's own constant because weighing it means having a referent, which is the one thing it lacks. The error on a modern 紫氣 is unbounded in principle rather than merely unknown. See the 四餘 section |
+| 紫氣 | a procedure carrying an epoch constant exists, so the refusal is not for want of a rule, and a dated board exists that would anchor it. **Each half is one witness.** 《張果星宗》 and the 三辰通載 section the register used to count beside it are one work, read on the plate 2026-09-01, and that work's 總論 gives twenty-nine years where its 算法 gives twenty-eight; the anchor is 《星度指南》's single 1886 chart, good to a palace. Nothing weighs 紫氣's own constant, its two checkable siblings in the same table erring by 0.01 % and 0.20 %. Both halves at rung 5. See the 四餘 section |
 | 七政四餘 `xiudu` `shixian` · `shoushi` | the boundaries are taken from the 距星 themselves, so no epoch is chosen. The two 曆 tables are declared and refused until one arrives with an epoch that can be cited, and 《曆法通志》's complete eight-曆 table does not. **《授時曆故》 does**: 至元辛巳, said by the work, with the whole 黃道宿次 in its 卷二 and the text's own rule for carrying it — 「依赤道及冬至歲差所在算定 … 各得當時宿度」. So `shoushi` is refused now for a different reason, and a narrower one: **the table checks itself** — the four quadrant sums close against their entries, and against each other on 365.2575, the 曆's own 周天分 — so what is left is transcribing the remaining cells at a resolution that settles them, and giving the option an epoch as well as a table, because the source makes its numbers a function of a moment. `shixian` is where it was. See the frame section |
 | 七政四餘 `minggong` `ascendant` | 立命 by 加時 is what the texts state and gives a palace. The rising degree is a second method, not a sharper reading of the first. `OPTION_NOT_IMPLEMENTED` |
 | 七政四餘 `gong` `ci` | the 次 as stretches of 宿度 needs the same table `xiudu` is waiting for |

@@ -1794,7 +1794,7 @@ export const en = {
   'notes.refusals.ziqi.title': '紫氣 zǐqì, the fourth remainder',
   'notes.refusals.ziqi.asks': 'readers expecting four 餘 yú on a 七政四餘 qīzhèng sìyú board.',
   'notes.refusals.ziqi.body':
-    'Three of the four are placed by ephemeris. The fourth is absent for want of a check rather than for want of a rule: the transmission exists, an epoch that can be cited does not, and nothing weighs its constant because there is nothing in the sky to check it against. The parameter is declared and switched off, so the absence is visible rather than tacit.',
+    'Three of the four are placed by ephemeris. The fourth waits on a second witness: a rule for it is transmitted, and a chart worked in 1886 puts it in a palace, but the rate stands on one work that disagrees with itself and the position on that one board. A second dated chart would settle both at once. The parameter is declared and switched off, so the absence is visible rather than tacit.',
   'notes.refusals.feixing.title': 'The 十八飛星 shíbāfēixīng placements',
   'notes.refusals.feixing.asks': 'anyone holding both books of 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':

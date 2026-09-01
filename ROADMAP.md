@@ -125,8 +125,15 @@ are the query to put to an arriving text.
   observations and is § 2's fourth line. Separately, **the option would have to
   carry an epoch as well as a table** — 「各得當時宿度」 — which is the only part
   of this that touches code.
-- **`ziqi: yinianyisu`** — one citable fact, an epoch for 紫氣. See
-  [`docs/refusals.md`](docs/refusals.md). The only named acquisition left.
+- **`ziqi: yinianyisu`** — **a second dated chart with 炁 placed on it**, a
+  century or more from 《星度指南》's 1886 board. One acquisition does both halves:
+  it makes the anchor two witnesses, and it decides the rate empirically, since
+  twenty-eight years and twenty-nine part by 44° a century and the anchor is good
+  to ±15°. What is *not* wanted any more is an epoch — the 定度法 was read on the
+  plate 2026-09-01 in 《張果星宗》 at 古今圖書集成 卷580, which also showed that the
+  work counted beside it was the same work, and a dated position makes the 積日
+  origin redundant. See [`docs/refusals.md`](docs/refusals.md) and
+  `docs/sources.md` § 四餘.
 
 ## 2. The shelf
 

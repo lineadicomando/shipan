@@ -1573,7 +1573,7 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.ziqi.title': '紫氣 zǐqì, il quarto residuo',
   'notes.refusals.ziqi.asks': 'chi si aspetta quattro 餘 yú su una tavola di 七政四餘 qīzhèng sìyú.',
   'notes.refusals.ziqi.body':
-    'Tre dei quattro sono collocati dalle effemeridi. Il quarto manca perché manca una verifica, non una regola: la trasmissione esiste, un’epoca citabile no, e niente pesa la sua costante perché in cielo non c’è nulla su cui confrontarla. Il parametro è dichiarato e spento, così l’assenza è visibile invece che tacita.',
+    'Tre dei quattro sono collocati dalle effemeridi. Il quarto aspetta un secondo testimone: una regola è trasmessa, e una carta calcolata nel 1886 lo mette in un palazzo, ma la velocità sta su un’opera sola che si contraddice al proprio interno e la posizione su quell’unica carta. Una seconda carta datata deciderebbe entrambe le cose insieme. Il parametro è dichiarato e spento, così l’assenza è visibile invece che tacita.',
   'notes.refusals.feixing.title': 'Le collocazioni delle 十八飛星 shíbāfēixīng',
   'notes.refusals.feixing.asks': 'chi ha in mano entrambi i libri del 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':

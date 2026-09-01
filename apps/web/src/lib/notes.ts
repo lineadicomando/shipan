@@ -260,7 +260,7 @@ export const REFUSALS: readonly WrittenEntry[] = [
   refusal('taiyiReadings', '2026-08-22'),
   refusal('hostGuest', '2026-08-22'),
   refusal('dayMaster', '2026-08-22'),
-  refusal('ziqi', '2026-08-22'),
+  refusal('ziqi', '2026-09-01'),
   refusal('feixing', '2026-08-22'),
   refusal('maoshan', '2026-08-22'),
   refusal('placeFromName', '2026-08-22'),

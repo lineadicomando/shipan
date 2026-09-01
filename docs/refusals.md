@@ -159,10 +159,22 @@ This engine computes no 用神 and no 格局.
 
 *Asked by:* readers expecting four 餘 on a 七政四餘 board.
 
-Three of the four are placed by ephemeris. The fourth is absent **for want of
-a check rather than for want of a rule**: the named transmission (一年一宿)
-exists, and an epoch that can be cited does not. `ziqi` is a declared
-parameter with the value `off`, so the absence is visible rather than tacit.
+Three of the four are placed by ephemeris. The fourth is absent **for want of a
+second witness rather than for want of a rule**: the named transmission
+(一年一宿) exists, and so does a dated board that would anchor it — 《星度指南》's
+1886 chart, which puts 炁 in 巳宮 and places the other three where this engine
+computes them. Each half rests on one text. The rate is 《張果星宗》's 大數, which
+that work's own 總論 contradicts twenty-eight against twenty-nine; the anchor is
+one plate, at a palace and never a degree. `ziqi` is a declared parameter with
+the value `off`, so the absence is visible rather than tacit.
+
+**Neither half is refused as unknowable, and this entry used to say one of them
+was.** The error a placement would carry is a rate error times the circuits run
+since the anchor, which is bounded at both ends and shrinks as the anchor comes
+forward. What would move the value is ordinary: a second dated chart with 炁 on
+it, a century or more from 1886, which makes the anchor two witnesses and
+decides twenty-eight against twenty-nine at the same time, the two parting by
+44° a century.
 
 ## The 十八飛星 placements
 
