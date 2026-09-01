@@ -1560,11 +1560,18 @@ export const en = {
   'footer.disclaimer':
     'This site is a space for inner enquiry and personal enrichment; in no case is it a substitute for professional advice on medical, legal, financial or other matters.',
   'footer.data': 'Astronomical data {ephemeris} · places {geonames} (CC BY 4.0)',
-  // The name arrives from `author.ts` rather than from here: a handle is a
-  // name and a name does not translate, so what a catalog holds is the
-  // sentence around it. `footer.data` names its two sources the same way.
-  'footer.author': 'Written by {author}',
   'footer.licence': 'Source code under AGPL-3.0',
+  // The copy the reader is talking to, on the line the byline is on: who wrote
+  // this and which version answered them are one fact about the page, and two
+  // lines of three words each read as two. The handle is set beside this from
+  // `author.ts` and is in no catalog — a name does not translate.
+  //
+  // Two keys and not one with a word switched in: «alpha» is true of a version
+  // below 1.0.0 and of no other, so the word goes away with the state it
+  // describes rather than surviving as a line that has quietly stopped being
+  // accurate.
+  'footer.version': '{name} {version}',
+  'footer.version.alpha': '{name} {version} (alpha)',
   'footer.privacy': 'Privacy',
   'footer.notes': 'Notes',
 
@@ -1610,6 +1617,34 @@ export const en = {
     'The layers the engine computes, and the points where the schools diverge.',
   'notes.answers.sources':
     'One row per quantity: the source the engine derives it from, the check it passed, and the rung it stands on.',
+
+  // What the footer's version links to. The number alone tells a reader
+  // nothing, so this is where it is spent: what this release is, what it is
+  // free to change before the next one, and where to send an error. The
+  // sentences open on what the engine does and what a release is allowed to
+  // do — the consequence for a saved link follows as evidence rather than
+  // leading, which is the rule for every limit stated on a page a person
+  // reads.
+  // The heading of the block, so it carries no full stop: a heading is a name
+  // and not a statement. It is also the whole of what the block had to be
+  // introduced by — a title over it would have announced the sentence under it.
+  'notes.release.welcome': 'Welcome to {name} {version} (alpha release)',
+  // The four go in a list rather than in the sentence that introduces them.
+  // Read as prose they were a run of four clauses a reader had to hold to the
+  // end to see they were parallel; each is one thing an update may do, and a
+  // list says «parallel» before the first one is read. The lead-in carries the
+  // verb they hang from, so no item has to be reconstructed, and «for example»
+  // says the four are not the whole of it.
+  'notes.release.changes': 'Before 1.0.0, any update can make substantial changes. It can, for example:',
+  'notes.release.change.parameters': 'change or remove a parameter',
+  'notes.release.change.addresses': 'move the address of a page',
+  'notes.release.change.api': 'alter the structure of an API answer',
+  'notes.release.change.layout': 'rearrange the layout of the site',
+  'notes.release.impact':
+    'A link you saved or a script written against the API can therefore stop working. The number at the foot of every page tells you which version you are reading.',
+  'notes.release.bugs':
+    'Every calculation is checked against an independent implementation, and an error can still get through.',
+  'notes.release.report': 'Report a bug on GitHub',
 
   // The layers. Six of the nine are instruments and are named in
   // `lib/instruments.ts`; two are named arts that are not instruments and are

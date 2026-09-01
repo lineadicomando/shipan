@@ -1329,8 +1329,19 @@ export const it: Record<MessageKey, string> = {
   'footer.disclaimer':
     'Questo sito è uno spazio dedicato alla ricerca interiore e all’arricchimento personale e in nessun caso sostituisce il parere di professionisti per questioni mediche, legali, finanziarie o altro.',
   'footer.data': 'Dati astronomici {ephemeris} · località {geonames} (CC BY 4.0)',
-  'footer.author': 'Scritto da {author}',
   'footer.licence': 'Codice sorgente sotto licenza AGPL-3.0',
+  // La copia che il lettore ha davanti, sulla riga della firma: chi ha scritto
+  // il sito e quale versione gli ha risposto sono un unico dato sulla pagina,
+  // e due righe da tre parole si leggono come due cose distinte. Il nome
+  // dell'autore sta accanto a questa stringa e arriva da `author.ts`: non è in
+  // nessun catalogo, perché un nome non si traduce.
+  //
+  // Due chiavi e non una con una parola sostituita: «alfa» è vero di una
+  // versione sotto la 1.0.0 e di nessun'altra, così la parola sparisce insieme
+  // allo stato che descrive invece di restare come una riga che ha smesso di
+  // essere esatta.
+  'footer.version': '{name} {version}',
+  'footer.version.alpha': '{name} {version} (alfa)',
   'footer.privacy': 'Privacy',
   'footer.notes': 'Note',
 
@@ -1369,6 +1380,37 @@ export const it: Record<MessageKey, string> = {
     'Gli strati che il motore calcola e i punti in cui le scuole divergono.',
   'notes.answers.sources':
     'Una riga per ogni quantità: la fonte da cui il motore la ricava, la verifica che ha superato, e il rung su cui sta.',
+
+  // Dove porta la versione scritta in fondo alla pagina. Il numero da solo non
+  // dice niente al lettore: qui viene speso, dicendo che cos'è questa
+  // versione, che cosa può cambiare prima della prossima e dove si segnala un
+  // errore. Le frasi aprono su quello che il motore fa e su quello che una
+  // versione può fare; la conseguenza per un link salvato viene dopo, come
+  // prova, e non per prima.
+  // «Ti diamo il benvenuto» e non «Benvenuto»: il participio si accorda con
+  // chi legge, e chi legge non è noto. La formula verbale saluta allo stesso
+  // modo senza attribuire un genere a nessuno.
+  // È il titolo del blocco, quindi non porta il punto finale: un titolo è un
+  // nome e non un'affermazione. Ed è tutto quello che serviva a introdurre il
+  // blocco — un titoletto sopra avrebbe annunciato la frase che gli sta sotto.
+  'notes.release.welcome': 'Ti diamo il benvenuto su {name} {version} (versione alfa)',
+  // I quattro punti stanno in un elenco e non nella frase che li introduce.
+  // In fila dentro un periodo erano quattro proposizioni che il lettore doveva
+  // tenere fino alla fine per accorgersi che erano parallele; l'elenco lo dice
+  // prima ancora che il primo punto sia letto. La frase d'apertura porta il
+  // verbo a cui si agganciano, così nessun punto va ricostruito, e «per
+  // esempio» dice che i quattro non sono tutto.
+  'notes.release.changes':
+    'Prima della versione 1.0.0, ogni aggiornamento può introdurre modifiche sostanziali. Può per esempio:',
+  'notes.release.change.parameters': 'modificare o rimuovere parametri',
+  'notes.release.change.addresses': 'cambiare l’indirizzo delle pagine',
+  'notes.release.change.api': 'variare la struttura delle risposte API',
+  'notes.release.change.layout': 'riorganizzare il layout del sito',
+  'notes.release.impact':
+    'Link salvati o script scritti per l’API potrebbero quindi smettere di funzionare. Il numero in fondo a ogni pagina indica la versione che stai leggendo.',
+  'notes.release.bugs':
+    'Tutti i calcoli sono verificati tramite un’implementazione indipendente, ma un errore può comunque sfuggire.',
+  'notes.release.report': 'Segnala un errore su GitHub',
 
   'notes.layer.pillars': 'Lo strato calendariale',
   'notes.takes': 'Si calcola da',

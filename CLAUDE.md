@@ -251,6 +251,15 @@ the engine falls back to Moshier, which needs no files.
   `lib/source.ts`, read from `PUBLIC_SOURCE_URL` so a fork points at itself,
   and set after the anchor on paper, where an anchor offers nothing. →
   [`docs/architecture.md`](docs/architecture.md)
+- **The repository is one version, and the tag repeats it rather than defining
+  it.** The number lives in the `version` field of every manifest, is read from
+  there by `lib/version.ts` and `packages/mcp/src/version.ts`, and a release is
+  that number with a `v` in front — tagged, and triggering no build. Whether a
+  copy is an alpha is `PRERELEASE`, derived from the leading zero and declared
+  nowhere; the footer carries the byline and the version on one line —
+  `lineadicomando · shipan 0.1.0 (alpha)` — and the version half links to
+  `#release` on the notes, which is where what an alpha may change is said. →
+  [`docs/architecture.md`](docs/architecture.md)
 - **A link that leaves opens beside the page and carries no referrer.**
   `lib/external.ts` is the whole rule, spread onto the anchor: the page a
   reader is on is a board they are reading, and the address of it is

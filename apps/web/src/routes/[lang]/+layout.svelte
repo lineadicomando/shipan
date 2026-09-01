@@ -9,6 +9,7 @@
   import { EXTERNAL } from '$lib/external';
   import { rain } from '$lib/rain.svelte';
   import { SOURCE_URL } from '$lib/source';
+  import { NAME, PRERELEASE, VERSION } from '$lib/version';
 
   let { data, children } = $props();
   const t = $derived(data.t);
@@ -73,18 +74,38 @@
   <main>{@render children()}</main>
 
   <footer>
-    <!-- First of the three, and not in the small print at the end of them:
-         it is the one line here that is about what to do with any of this. -->
+    <!-- First of the three, and not in the small print at the end of them: it
+         is the one line here that is about what to do with any of this. -->
     <p class="disclaimer">{t('footer.disclaimer')}</p>
     <p>
       {t('footer.data', { ephemeris: 'Swiss Ephemeris', geonames: 'GeoNames' })}
     </p>
-    <!-- Who made it, on the page and not only in the structured data. The
-         first question the helpful-content guide asks is who wrote this, and
-         a byline a crawler can read and a reader cannot is that question
-         answered to the wrong party. `author.ts` is the one place the name
-         is written. -->
-    <p>{t('footer.author', { author: AUTHOR })}</p>
+    <!-- Who made it and which copy of it answered, on one line.
+
+         The name is on the page and not only in the structured data: the first
+         question the helpful-content guide asks is who wrote this, and a
+         byline a crawler can read and a reader cannot is that question
+         answered to the wrong party. It stands alone, without «written by» in
+         front of it — a handle at the foot of a page is read as the person
+         behind the page, and the sentence around it was two words the version
+         beside it now has better use for. `author.ts` is still the one place
+         the name is written.
+
+         The version is the half a reader can act on, so it is the half that
+         is a link: a number alone is a fact nobody can do anything with, and
+         the notes open on what this release is, what it is free to change
+         before the next one, and where an error goes. The word in the
+         parentheses is chosen by the number rather than written into the
+         sentence, so it leaves when the release stops being an alpha. -->
+    <p>
+      {AUTHOR} ·
+      <a href="/{t.locale}/notes#release">
+        {t(PRERELEASE ? 'footer.version.alpha' : 'footer.version', {
+          name: NAME,
+          version: VERSION,
+        })}
+      </a>
+    </p>
     <!-- The third of them is the only link here that leaves the site, and it
          leaves it because the licence says it must: the line already named
          AGPL-3.0, and a licence that obliges an offer of the source obliges

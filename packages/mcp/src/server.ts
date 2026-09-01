@@ -24,9 +24,10 @@ import {
   registerSolarTerms,
 } from './tools.js';
 import type { ToolContext } from './shared.js';
+import { SERVER_VERSION } from './version.js';
 
 export const SERVER_NAME = 'shipan';
-export const SERVER_VERSION = '0.0.0';
+export { SERVER_VERSION };
 
 /**
  * Builds the MCP server.

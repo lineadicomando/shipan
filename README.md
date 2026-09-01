@@ -1,4 +1,13 @@
-# shipan 式盤
+<h1 align="center">
+  <img src="design/logo/seal.svg" alt="shipan 式盤 shìpán" width="128" height="128">
+</h1>
+
+<p align="center">
+  <a href="https://github.com/lineadicomando/shipan/tags"><img
+    alt="Latest release" src="https://img.shields.io/github/v/tag/lineadicomando/shipan?label=release&amp;color=B4322B"></a>
+  <a href="LICENSE"><img
+    alt="Licence" src="https://img.shields.io/github/license/lineadicomando/shipan?color=B4322B"></a>
+</p>
 
 式盤 shìpán is the diviner's board itself: the round heaven turning on the
 square earth, and the ancestor the three 式 — 奇門, 六壬, 太乙 — have in common.
@@ -56,18 +65,18 @@ set `PUBLIC_SOURCE_URL` to your repository if you deploy a modified one. See
 
 ## What it computes
 
-| | |
-|---|---|
-| Solar terms | the twenty-four 節氣, to the second, from Swiss Ephemeris |
-| Lunar calendar | months, intercalary months, lunar dates, reckoned on 120°E |
-| Four pillars | 四柱 with 藏干, 十神, 納音, 十二長生, 空亡, 大運, and the five elements counted over the eight characters |
-| Qi Men charts | 時家 by the 拆補 or 置閏 method: four plates, configurations, seasonal states, 門宮 and 星宮 relations, the post horse of the day and of the hour |
-| Liu Ren boards | 大六壬: the 天地盤 by 月將加時, the 四課, the 三傳 by the 九宗門, the 十二天將, the 遁干 and the 空亡 |
-| 七政四餘 boards | the seven governors and three of the four remainders, placed by ephemeris: the 宿 and the 入宿度 with the boundaries taken from the 距星 themselves, the twelve 次 and the 宮度, 順 and 逆, the 命宮 by 加時 and the 人事十二宮 numbered from it |
-| 紫微斗數 boards | the twelve seats counted from a birth: 紫微 by the 五行局 and the day of the lunar month with the thirteen that hang off it, the auxiliaries 卷二 places, the 四化, the seven grades of brightness, the two masters, the 大限, the 小限 and the rings of 長生 and 博士. Nothing on it is in the sky |
-| 太乙 boards | 太乙神數 in the 年計: 太乙 walking the eight palaces and never the centre, the 十六神, 文昌 and 始擊, the 主算 and 客算 with the 大將 and 參將 each seats, the 八門直使, the 三基, 五福 and 大遊, and the conditions 掩 擊 迫 囚 關 格 對 |
-| Almanac | 曆注: 建除十二神, 二十八宿值日, the 十二神, twenty-six 年神, the four 德 of the month and twenty-eight 神煞 — reckoned on 120°E beside the chart rather than inside it |
-| Choosing a time | 擇時擇方: every chart over an interval, narrowed to the palaces answering stated criteria |
+|                 |                                                                                                                                                                                                                                                                                    |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Solar terms     | the twenty-four 節氣, to the second, from Swiss Ephemeris                                                                                                                                                                                                                            |
+| Lunar calendar  | months, intercalary months, lunar dates, reckoned on 120°E                                                                                                                                                                                                                         |
+| Four pillars    | 四柱 with 藏干, 十神, 納音, 十二長生, 空亡, 大運, and the five elements counted over the eight characters                                                                                                                                                                                          |
+| Qi Men charts   | 時家 by the 拆補 or 置閏 method: four plates, configurations, seasonal states, 門宮 and 星宮 relations, the post horse of the day and of the hour                                                                                                                                            |
+| Liu Ren boards  | 大六壬: the 天地盤 by 月將加時, the 四課, the 三傳 by the 九宗門, the 十二天將, the 遁干 and the 空亡                                                                                                                                                                                                       |
+| 七政四餘 boards     | the seven governors and three of the four remainders, placed by ephemeris: the 宿 and the 入宿度 with the boundaries taken from the 距星 themselves, the twelve 次 and the 宮度, 順 and 逆, the 命宮 by 加時 and the 人事十二宮 numbered from it                                                       |
+| 紫微斗數 boards     | the twelve seats counted from a birth: 紫微 by the 五行局 and the day of the lunar month with the thirteen that hang off it, the auxiliaries 卷二 places, the 四化, the seven grades of brightness, the two masters, the 大限, the 小限 and the rings of 長生 and 博士. Nothing on it is in the sky |
+| 太乙 boards       | 太乙神數 in the 年計: 太乙 walking the eight palaces and never the centre, the 十六神, 文昌 and 始擊, the 主算 and 客算 with the 大將 and 參將 each seats, the 八門直使, the 三基, 五福 and 大遊, and the conditions 掩 擊 迫 囚 關 格 對                                                                                  |
+| Almanac         | 曆注: 建除十二神, 二十八宿值日, the 十二神, twenty-six 年神, the four 德 of the month and twenty-eight 神煞 — reckoned on 120°E beside the chart rather than inside it                                                                                                                                  |
+| Choosing a time | 擇時擇方: every chart over an interval, narrowed to the palaces answering stated criteria                                                                                                                                                                                              |
 
 It reports **arrangements and what the tradition calls them**. A gate stands
 over a palace whose phase it controls; the configuration is called 門迫; 迫 is
@@ -109,11 +118,11 @@ it, that the fortunes do not add up to a score, that a 凶 is not advice.
 
 **Six boards, in three kinds, and the kind decides what is asked for.**
 
-| Kind | Boards | What it is laid on | What the reader supplies |
-|---|---|---|---|
-| 卜 divination | 奇門, 六壬 | the instant of asking | a question |
-| 命 fate | 八字, 七政四餘, 紫微斗數 | a birth | nothing asked; the themes are commissioned in the prompt |
-| 天 heaven | 太乙 | a year | a **matter** — what is being looked at, with two sides in it |
+| Kind         | Boards         | What it is laid on    | What the reader supplies                                     |
+|--------------|----------------|-----------------------|--------------------------------------------------------------|
+| 卜 divination | 奇門, 六壬         | the instant of asking | a question                                                   |
+| 命 fate       | 八字, 七政四餘, 紫微斗數 | a birth               | nothing asked; the themes are commissioned in the prompt     |
+| 天 heaven     | 太乙             | a year                | a **matter** — what is being looked at, with two sides in it |
 
 A 卜 board withholds the 用神 and says so: which palace bears on the question
 is the reader's, and without one the board is a map with no pin. A 命 reading
@@ -213,8 +222,7 @@ valleys up, and the longitude is what the correction to true solar time is
 made of: the coordinates replace the ones GeoNames holds, and the zone stays
 the named place's. Only what *departs* from the chosen place is written into
 the address, so the plainest question keeps the plainest address; where
-something did depart, the answer says both halves — `Rome, Lazio, Italy ·
-41.8919, 13.5113` — because a sheet reading «Rome» over a board laid fifty
+something did depart, the answer says both halves — `Rome, Lazio, Italy · 41.8919, 13.5113` — because a sheet reading «Rome» over a board laid fifty
 kilometres off says something untrue.
 
 In this engine it is the longitude that moves a board. The latitude is carried
@@ -257,15 +265,15 @@ Different schools produce different charts from identical input, so every
 divergence is a parameter with a declared default, present in the input type
 from the first release. The Qi Men chart's, in brief:
 
-| | | default |
-|---|---|---|
-| `method` | 拆補 (the yuan from the day's 符頭) / 置閏 / 茅山 (the yuan from the term's first instant) | `chaibu` |
-| `plate` | 轉盤 / 飛盤 | `zhuan` |
-| `centreLodging` | the centre lodges in 坤, or in 坤 by yang dun and 艮 by yin | `kun` |
-| `trueSolarTime` | correct clock time to the Sun | `true` |
-| `yearBoundary` | 立春 or 正月初一 | `lichun` |
-| `dayBoundary` | the day pillar turns at 23:00 or at midnight | `zishi` |
-| `system` | which family of chart: 時家, or the day's, month's or year's | `shijia` |
+|                 |                                                                                    | default  |
+|-----------------|------------------------------------------------------------------------------------|----------|
+| `method`        | 拆補 (the yuan from the day's 符頭) / 置閏 / 茅山 (the yuan from the term's first instant) | `chaibu` |
+| `plate`         | 轉盤 / 飛盤                                                                            | `zhuan`  |
+| `centreLodging` | the centre lodges in 坤, or in 坤 by yang dun and 艮 by yin                           | `kun`    |
+| `trueSolarTime` | correct clock time to the Sun                                                      | `true`   |
+| `yearBoundary`  | 立春 or 正月初一                                                                         | `lichun` |
+| `dayBoundary`   | the day pillar turns at 23:00 or at midnight                                       | `zishi`  |
+| `system`        | which family of chart: 時家, or the day's, month's or year's                         | `shijia` |
 
 Each other board keeps its own, because each is a board and not a view of the
 first: a saved one has to reproduce on its own terms. The full table, every
@@ -324,12 +332,12 @@ anchor had survived an independent check.
 English and Italian, English by default. But there are four kinds of string
 here, not two:
 
-| | example | where it lives |
-|---|---|---|
+|            | example              | where it lives                                |
+|------------|----------------------|-----------------------------------------------|
 | identifier | `xiumen`, `tianpeng` | the engine, toneless pinyin, never translated |
-| hanzi | 休門, 天蓬 | the engine — **domain data, not a locale** |
-| pinyin | xiūmén, tiānpéng | the engine — the same, said aloud |
-| gloss | "Rest" / "Riposo" | the catalog, keyed by identifier |
+| hanzi      | 休門, 天蓬               | the engine — **domain data, not a locale**    |
+| pinyin     | xiūmén, tiānpéng     | the engine — the same, said aloud             |
+| gloss      | "Rest" / "Riposo"    | the catalog, keyed by identifier              |
 
 The middle two are the ones usually got wrong. 休門 is not the Chinese
 rendering of "Rest Gate": it is the name of the gate, and an Italian reader
@@ -353,12 +361,12 @@ More: [`docs/i18n.md`](docs/i18n.md).
 
 ## The documents
 
-| | |
-|---|---|
-| [`CLAUDE.md`](CLAUDE.md) | the rules that bind any change, one line each |
-| [`docs/`](docs/README.md) | the project as it is now: architecture, parameters, sources, refusals, readings, i18n, what is claimed |
-| [`docs/history/`](docs/history/README.md) | how it got here, phase by phase, including the mistakes. Never normative |
-| [`ROADMAP.md`](ROADMAP.md) | what is not built yet |
+|                                           |                                                                                                        |
+|-------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| [`CLAUDE.md`](CLAUDE.md)                  | the rules that bind any change, one line each                                                          |
+| [`docs/`](docs/README.md)                 | the project as it is now: architecture, parameters, sources, refusals, readings, i18n, what is claimed |
+| [`docs/history/`](docs/history/README.md) | how it got here, phase by phase, including the mistakes. Never normative                               |
+| [`ROADMAP.md`](ROADMAP.md)                | what is not built yet                                                                                  |
 
 A feature crosses several surfaces and has a procedure of its own: see
 `.claude/skills/new-feature`.

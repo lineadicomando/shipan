@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { LOCALES, createTranslator } from '@shipan/i18n';
 import { AUTHOR } from '../src/lib/author';
@@ -91,8 +92,16 @@ describe('what a page declares itself to be', () => {
       });
 
       it('says the name to a reader as well as to a machine', () => {
-        // The half of a byline that answers the question it was asked.
-        expect(t(locale)('footer.author', { author: AUTHOR })).toContain(AUTHOR);
+        // The half of a byline that answers the question it was asked. The
+        // handle stands on its own in the footer now, beside the version, so
+        // what is checked is that the line a reader sees carries it — the
+        // catalogs hold the version label and never the name.
+        const footer = readFileSync(
+          new URL('../src/routes/[lang]/+layout.svelte', import.meta.url),
+          'utf8',
+        );
+        expect(footer).toContain('{AUTHOR} ·');
+        expect(t(locale)('footer.version', { name: 'shipan', version: '1.2.3' })).toContain('1.2.3');
       });
 
       it('dates a written page and never a derived one', () => {

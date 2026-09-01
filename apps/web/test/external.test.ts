@@ -35,10 +35,26 @@ const COMPONENTS = walk(SRC, '.svelte').map((path) => ({ path, code: markup(path
  * is the only one today; `env.PUBLIC_SOURCE_URL || 'https://…'` is why the
  * pattern reads to the end of the statement rather than to the first quote.
  */
-const ADDRESSES = walk(join(SRC, 'lib'), '.ts')
-  .map((path) => readFileSync(path, 'utf8'))
-  .flatMap((code) => [...code.matchAll(/export const (\w+)[^=]*=[^;]*'https?:\/\//g)])
-  .map((match) => match[1]);
+const LIB = walk(join(SRC, 'lib'), '.ts').map((path) => readFileSync(path, 'utf8'));
+
+/** The constants holding an address written out as a literal. */
+const WRITTEN = LIB.flatMap((code) => [
+  ...code.matchAll(/export const (\w+)[^=]*=[^;]*'https?:\/\//g),
+]).map((match) => match[1] as string);
+
+/**
+ * And the constants built from one of those, which leave the site just as
+ * surely. `ISSUES_URL` is `SOURCE_URL` with a path on the end: it holds no
+ * literal address of its own, so a rule that read only for `https://` would
+ * let a link to somebody's issue tracker out of this site unguarded.
+ */
+const DERIVED = LIB.flatMap((code) =>
+  [...code.matchAll(/export const (\w+)[^=]*=([^;]*)/g)]
+    .filter((match) => WRITTEN.some((name) => (match[2] as string).includes(name)))
+    .map((match) => match[1] as string),
+).filter((name) => !WRITTEN.includes(name));
+
+const ADDRESSES = [...WRITTEN, ...DERIVED];
 
 /**
  * How an outward address may be spelled in the anchor that carries it.

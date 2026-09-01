@@ -393,7 +393,8 @@ the anchor, and the address appearing in no second place.
 
 ## A link that leaves
 
-Only one does today — the source in the footer — and the rule is written once,
+Two do today — the source in the footer, and the issue tracker the notes send
+an error to — and the rule is written once,
 in `apps/web/src/lib/external.ts`, so that the second one inherits it rather
 than repeating it. `EXTERNAL` is spread onto the anchor: `target="_blank"` and
 `rel="noopener noreferrer"`.
@@ -411,6 +412,49 @@ other end of the link. Browsers today send only the origin across sites, and
 «today» is not what a person's birth should rest on.
 
 `apps/web/test/external.test.ts` derives the list rather than keeping one: an
-external address is a constant in `lib/` holding an absolute `http(s)` address,
-and every anchor naming one is held to the spread. A hand-kept list of links is
+external address is a constant in `lib/` holding an absolute `http(s)` address —
+**or one built from such a constant**, which is what `ISSUES_URL` is, since
+`SOURCE_URL` with a path on the end carries no literal address of its own — and
+every anchor naming one is held to the spread. A hand-kept list of links is
 right until somebody adds the twelfth.
+
+## The version, and the tag that repeats it
+
+**One number for the repository**, in the `version` field of every manifest,
+and a release is that number with a `v` in front of it: `0.1.0` is tagged
+`v0.1.0`. The tag records the release and does not define it — a checkout
+happens in a tarball, in an image and in a fork, none of which carry tags, and
+a version derived from `git describe` would say nothing in exactly the copies a
+reader is most likely to be talking to. **No tag triggers anything.** Nothing
+here is published to a registry, so the tag is a mark in the history and not a
+build.
+
+**Nothing writes the number twice.** `apps/web/src/lib/version.ts` imports it
+from `apps/web/package.json`, which Vite resolves at build time, so the string
+ships and the manifest does not; `packages/mcp/src/version.ts` reads its own
+manifest at startup, the file sitting beside `src` and `dist` alike, which is
+what the MCP handshake announces. That constant used to be typed out as
+`0.0.0` and stayed `0.0.0` through every change this project has had — the
+failure a second copy of a fact always has.
+
+**Alpha is derived, not declared.** `PRERELEASE` is a leading zero, because
+that is already what a leading zero means, and a flag beside the number could
+disagree with the number. The footer prints `lineadicomando · shipan 0.1.0
+(alpha)` while it holds and drops the parenthesis after, and the notes page
+shows what an alpha is free to change for exactly as long — no page has to be
+edited when the state ends.
+
+**Who wrote this and which copy answered are one line**, since each is a fact
+about the page rather than about a board, and two lines of three words read as
+two claims. The handle stands without «written by» in front of it: a name at
+the foot of a page is read as the person behind the page, and the catalogs
+hold the version label and never the name — `author.ts` is still where the
+name is written.
+
+The version is the half of that line a reader can act on, so it is the half
+that is a link. It goes to `#release` on `[lang]/notes`, which is where the
+number is spent: what this release is, what a release before 1.0.0 may change
+under a saved link or a script written against the API, and where an error is
+reported. `apps/web/test/version.test.ts` holds every workspace to the one
+number, the two constants to their manifests, and the footer to the paragraph
+it points at.
