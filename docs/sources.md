@@ -103,13 +103,35 @@ a block.
 
 *What it confirmed*: cast under `chaibu`, all 260 charts
 whose ju agrees agree cell for cell — earth plate including the lodged stem,
-the turn of the heaven plate, **the eight outer stars**, the eight gates, the
-eight spirits, 值符, 值使, 旬首, 空亡 and 驛馬. That said «the nine stars» until
+the turn of the heaven plate, **the eight outer stars**, the eight gates,
+值符, 值使, 旬首, 空亡 and 驛馬. That said «the nine stars» until
 2026-08-28, which it could not have: the same entry records this reference as
 leaving the centre starless, and a reference with no star there cannot have
 agreed about the ninth. The disagreement about the ju had
 been masking a complete agreement about everything else, which is the argument
 for comparing a chart layer by layer rather than as a whole.
+
+**It said «the eight spirits» too, and that was half true.** Re-checked
+2026-09-01 over twelve charts fetched fresh and read cell by cell: the ring's
+seats agree everywhere, and the *names* of the fifth and sixth agree on every
+yin board and on no yang one. This reference seats 白虎 fifth and 玄武 sixth in
+**both** dun, where `spirits: dun` — 陰陽異名, the value shipped — seats 勾陳 and
+朱雀 while the yang half runs. So the earlier reading was taken from a sample
+that cannot have been checked on this point in yang, and the entry is corrected
+rather than the code. **It is a fourth arrangement and the engine has none like
+it**: `fixed` stands 勾陳 and 朱雀 in both dun, `baihu` stands 白虎 fifth and 勾陳
+sixth, and neither is this. A runnable reference is not a witness — what it
+would take to declare a value is a text, and this names none — so what changes
+here is one sentence and nothing in `parameters.ts`.
+
+**And the corrected `chaibu` is confirmed against it.** The same twelve charts:
+the ju agrees on **12 of 12** under `chaibu`, on 1 under `maoshan` and on 6
+under `zhirun`. The reference had no part in finding the fault
+`docs/history/40-the-default-was-maoshan.md` records, which is what makes it
+worth stating — it is the outside check on the correction. One further
+divergence found and it is the reference's: at 1975-09-08 23:30 it prints no
+驛馬, though its own hour pillar is 壬子 and it marks 艮 for the 子 hour on every
+other chart tried. Its 驛馬 is the **hour's**, not the day's.
 
 *What it corrected here*: this engine wrote the second spirit 滕蛇 in
 `plates.ts` and 螣蛇夭矯 in `patterns.ts` — the same creature under two
