@@ -146,7 +146,9 @@ describe('what the server offers', () => {
 
 describe('compute_qimen_chart', () => {
   it('casts a chart for a place and a moment', async () => {
-    const text = await call('compute_qimen_chart', BEIJING);
+    // 茅山, which is the school the verified chart for this instant belongs
+    // to: 陽遁九局. → `docs/history/40-the-default-was-maoshan.md`
+    const text = await call('compute_qimen_chart', { ...BEIJING, method: 'maoshan' });
 
     expect(text).toContain('yang dun 9');
     expect(text).toContain('天蓬');
@@ -205,7 +207,11 @@ describe('compute_qimen_chart', () => {
    * rather than guessed when the direction of its count is unknown.
    */
   it('places a birth in the chart when one is given', async () => {
-    const text = await call('compute_qimen_chart', { ...BEIJING, born: '1990-06-01' });
+    const text = await call('compute_qimen_chart', {
+      ...BEIJING,
+      method: 'maoshan',
+      born: '1990-06-01',
+    });
 
     expect(text).toContain('本命');
     expect(text).toContain('庚午');
@@ -237,15 +243,15 @@ describe('compute_qimen_chart', () => {
     expect(chart?.description).toMatch(/no palace here stands for a part of one/);
   });
 
-  it('reads the yuan from the futou when asked, and says it did', async () => {
-    // The two readings part company on this day; see the CLI test for why.
+  it('casts 茅山 when asked, and it parts from the default', async () => {
+    // The two methods part company on this day; see the CLI test for why.
     const at = { ...BEIJING, date: '1999-01-06', time: '12:00' };
 
-    expect(await call('compute_qimen_chart', at)).toContain('upper yuan');
+    expect(await call('compute_qimen_chart', at)).toContain('middle yuan');
 
-    const futou = await call('compute_qimen_chart', { ...at, yuan: 'futou' });
-    expect(futou).toContain('middle yuan');
-    expect(futou).toContain('futou cycle');
+    const maoshan = await call('compute_qimen_chart', { ...at, method: 'maoshan' });
+    expect(maoshan).toContain('upper yuan');
+    expect(maoshan).toContain('茅山');
   });
 
   it('answers in the language it was asked in', async () => {

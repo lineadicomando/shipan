@@ -47,7 +47,9 @@ const MOMENT = [
 
 describe('qimen', () => {
   it('prints the ju, the chief and the nine palaces', async () => {
-    expect(await run(['qimen', ...MOMENT, '--lang', 'en'])).toBe(0);
+    // 茅山, because 陽遁九局 is the verified reading of this instant and the
+    // chart it names is the one `dunjia.test.ts` checked cell by cell.
+    expect(await run(['qimen', ...MOMENT, '--method', 'maoshan', '--lang', 'en'])).toBe(0);
 
     expect(out).toContain('yang dun 9');
     // Nine palaces, each named in the reader's language and each still
@@ -92,25 +94,21 @@ describe('qimen', () => {
     expect(err).toContain('zhirn');
   });
 
-  it('reads the yuan from the futou when asked, and says it did', async () => {
+  it('casts 茅山 when asked, and it parts from the default', async () => {
     // 1999-01-06 stands in the middle of a futou stretch and in the first
-    // five days of Xiaohan, so the two readings part company.
+    // five days of Xiaohan, so the two methods part company: 拆補 has the day
+    // already carried to the middle yuan, 茅山 counts from the term's instant
+    // and is still in the upper.
     const at = ['--date', '1999-01-06', '--time', '12:00', '--tz', 'Asia/Shanghai',
                 '--no-true-solar', '--lang', 'en'];
 
     await run(['qimen', ...at]);
-    expect(out).toContain('upper yuan');
+    expect(out).toContain('middle yuan');
 
     out = '';
-    await run(['qimen', ...at, '--yuan', 'futou']);
-    expect(out).toContain('middle yuan');
-    expect(out).toContain('futou cycle');
-  });
-
-  it('says nothing about the futou when it was not asked for', async () => {
-    await run(['qimen', ...MOMENT, '--lang', 'en']);
-
-    expect(out).not.toContain('futou');
+    await run(['qimen', ...at, '--method', 'maoshan']);
+    expect(out).toContain('upper yuan');
+    expect(out).toContain('茅山');
   });
 
   it('refuses a day boundary it has never heard of', async () => {
@@ -123,11 +121,15 @@ describe('qimen', () => {
     expect(err).toContain('midnght');
   });
 
-  it('refuses a yuan it has never heard of', async () => {
-    const code = await run(['qimen', ...MOMENT, '--yuan', 'futuo', '--lang', 'en']);
+  it('no longer takes a --yuan, which named a method', async () => {
+    // It offered `term`, and `term` was 茅山 declared as a divergence inside
+    // 拆補. Retired rather than aliased: two ways of naming one school is the
+    // condition the mistake grew in.
+    // → `docs/history/40-the-default-was-maoshan.md`
+    const code = await run(['qimen', ...MOMENT, '--yuan', 'futou', '--lang', 'en']);
 
     expect(code).toBe(2);
-    expect(err).toContain('futuo');
+    expect(err).toContain('--yuan');
   });
 });
 
@@ -470,7 +472,7 @@ describe('terms and calendar', () => {
 
 describe('--json', () => {
   it('emits the data untranslated', async () => {
-    expect(await run(['qimen', ...MOMENT, '--json'])).toBe(0);
+    expect(await run(['qimen', ...MOMENT, '--method', 'maoshan', '--json'])).toBe(0);
 
     const chart = JSON.parse(out);
     // Identifiers and hanzi, no glosses: the shape a program consumes.

@@ -22,7 +22,7 @@ export const load: PageLoad = async ({ url, fetch, parent }) => {
   const { locale } = await parent();
   // The instrument first, because it says which board's divergences the
   // address carries: a consultation set to 六壬 reads `liuren.guiren` where one
-  // set to 奇門 reads the method and the yuan, and neither reads the other's.
+  // set to 奇門 reads `qimen.method`, and neither reads the other's.
   const instrument = readInstrument(url.searchParams.get('instrument'));
   const { input, locationId } = readMoment(url, instrument);
   const { place, failure } = await lookupPlace(fetch, locationId, locale);

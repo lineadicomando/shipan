@@ -73,6 +73,7 @@ phase.
 | 37 | [The pair and the plate](37-the-pair-and-the-plate.md) | done — computes the last refusal that wanted a shape, finds the shape was inferred from a picture, and catches a field that had been contradicting the board under it |
 | 38 | [Reading the scans on the shelf](38-reading-the-scans-on-the-shelf.md) | done — `ROADMAP.md` § 2 as it stood when it closed: four phases that opened every photographic file on the shelf, and what each turned out to establish, including the ones that establish nothing |
 | 39 | [The 寶鑑, and what it was made of](39-the-baojian-and-what-it-was-made-of.md) | done — the survey of ten arrivals, and the volume it sent to the top of the list: a print that is one work at its frame and another at its filling, a refusal better argued, and a finding withdrawn the day it was made |
+| 40 | [The default was 茅山](40-the-default-was-maoshan.md) | done — the engine computed 茅山 by default under the name 拆補, and refused it in the same breath as having no reference; `yuan` retires, every default chart changes, and a printed statement of the rule is found on a shelf that had held it for three weeks |
 
 ## The rest of the record
 

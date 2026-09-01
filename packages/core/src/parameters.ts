@@ -102,22 +102,31 @@ export interface ParameterValue<V> {
   /**
    * A line printed under the block when this value is the one in force.
    *
-   * 符頭 has one — it is a divergence inside 拆補 and it moves the ju on most
-   * days — and the two methods carry the general caution between them. Most
-   * values need none: the words above say what was followed, and what a school
-   * *means* is doctrine this engine does not hold.
+   * The three methods carry one between them, because which of them is in
+   * force moves the ju on most days and a reader weighing a board needs that
+   * said wherever the board is. Most values need none: the words above say
+   * what was followed, and what a school *means* is doctrine this engine does
+   * not hold.
    */
   readonly note?: MessageKey;
   readonly name?: { readonly hanzi: string; readonly pinyin: string };
   /**
    * Whether the engine computes it.
    *
-   * `false` is not a promise that it one day will. `maoshan` is declared and
-   * expected never to be implemented — there is no reference against which a
-   * 茅山 chart could be falsified — and it is here for the reason every other
-   * refused value is: the parameter has to exist before there is a second
-   * value, or adding it breaks the API, the MCP tools, the CLI and every
-   * shared URL at once.
+   * `false` is not a promise that it one day will, and `true` is not always
+   * a promise kept the way the entry reads. A refused value is here for the
+   * reason every other one is: the parameter has to exist before there is a
+   * second value, or adding it breaks the API, the MCP tools, the CLI and
+   * every shared URL at once.
+   *
+   * **`maoshan` is the value that shows what this flag cannot catch.** It sat
+   * here `false`, refused as having no reference in the world, while the
+   * engine computed it by default under another value's name — because the
+   * rule was shipped as `yuan: 'term'`, a divergence supposedly inside 拆補.
+   * This table says which values are *offered*; nothing in it can say that
+   * two entries name one rule. What caught it was a year of hours run against
+   * an outside implementation: 100 % against 茅山, 47.66 % against 拆補.
+   * → `docs/history/40-the-default-was-maoshan.md`
    */
   readonly implemented: boolean;
 }
@@ -144,10 +153,10 @@ export interface Parameter<V> {
    * A divergence *inside* another one, in force only where that one stands on
    * a value.
    *
-   * One parameter uses it and it is doctrine rather than presentation: the
-   * yuan divides 拆補, so under 置閏 the third of the term is the 符頭's
-   * because that is what the method is. Reported beside a zhirun chart it
-   * would name a choice the method had already made.
+   * One parameter uses it and it is doctrine rather than presentation:
+   * `leap` divides 置閏, so under 拆補 or 茅山 nothing is repeated and where
+   * the repetition goes decides nothing. Reported beside those boards it
+   * would name a choice the method never had to make.
    */
   readonly inside?: { readonly id: string; readonly value: string };
   readonly values: readonly ParameterValue<V>[];
@@ -196,26 +205,16 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         note: 'cli.note.method',
         implemented: true,
       },
-      { id: 'maoshan', name: { hanzi: '茅山', pinyin: 'máoshān' }, implemented: false },
-    ],
-    default: 'chaibu',
-    refusal: 'METHOD_NOT_IMPLEMENTED',
-  },
-  yuan: {
-    board: 'qimen',
-    label: 'form.qimen.yuan',
-    inside: { id: 'method', value: 'chaibu' },
-    values: [
-      { id: 'term', says: 'form.qimen.yuan.term', implemented: true },
       {
-        id: 'futou',
-        name: { hanzi: '符頭', pinyin: 'fútóu' },
-        says: 'form.qimen.yuan.futou',
-        note: 'cli.note.yuanFutou',
+        id: 'maoshan',
+        name: { hanzi: '茅山', pinyin: 'máoshān' },
+        says: 'form.qimen.method.maoshan',
+        note: 'cli.note.method',
         implemented: true,
       },
     ],
-    default: 'term',
+    default: 'chaibu',
+    refusal: 'METHOD_NOT_IMPLEMENTED',
   },
   plate: {
     board: 'qimen',
@@ -318,8 +317,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
       { id: 'runyue', name: { hanzi: '閏月', pinyin: 'rùnyuè' }, implemented: false },
     ],
     default: 'solstice',
-    // Inside 置閏 as `yuan` is inside 拆補: under 拆補 nothing is repeated, so
-    // there is no block to place and this decides nothing.
+    // Inside 置閏, and the one parameter that passes that test: under 拆補 and
+    // under 茅山 nothing is repeated, so there is no block to place and this
+    // decides nothing.
     inside: { id: 'method', value: 'zhirun' },
   },
   strengths: {

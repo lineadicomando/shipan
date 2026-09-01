@@ -18,29 +18,21 @@ export interface ChartOptions {
    * The most divisive parameter of the whole engine. Two practitioners of
    * different schools, given the same instant, will lay out different plates
    * and neither is making a mistake.
+   *
+   * **It used to have a `yuan` beside it, and that parameter was the seam
+   * between two of these three.** `yuan` offered `term` — cut the term into
+   * three fives from the instant it began — as a divergence *inside* 拆補,
+   * and it was the default. It is not inside 拆補: it is 茅山, which is what
+   * 拆補 stops being the moment the 符頭 is not read. 劉文元 parts the two on
+   * exactly that point (「其與拆補法不同的是……根本不去考慮日支的子午卯酉為
+   * 上元」), 唐頤 says the method 「打破了根據日干支符頭確定三元的規律」, and
+   * 神奇之門 defines 拆補 by both conditions at once — the three yuan inside
+   * the term *and* the 甲己 cycle. A 拆補 with no 符頭 has nothing to split
+   * and nothing to patch. So the seam is a method boundary, the two values
+   * are two methods, and `yuan` is gone rather than kept as a second way of
+   * saying `method`. → `docs/parameters.md`, `docs/history/40-the-default-was-maoshan.md`
    */
   method: 'chaibu' | 'zhirun' | 'maoshan';
-
-  /**
-   * Where the yuan is read from, under 拆補.
-   *
-   * A divergence *inside* 拆補, and one that changes the ju of most days.
-   * `term` cuts the fifteen days of the term into three fives from the
-   * instant it began, so the yuan turns with the term. `futou` reads it from
-   * the day instead: the days run in five-day stretches headed by a 甲 or 己
-   * day (the 符頭), and where the day stands in that fifteen-day cycle is the
-   * yuan, whatever the term is doing. The two agree only when a term happens
-   * to open on a 符頭.
-   *
-   * `term` is the default because it is what this engine shipped and what
-   * `qimen-dunjia` computes; `futou` is what `kinqimen` and
-   * fengshui-hacks.com compute, which is the two independent sources
-   * `docs/sources.md` asks for before a reading is offered at all.
-   *
-   * It has no bearing under 置閏, where the yuan is the 符頭's by
-   * construction — that is what the method *is*, not a choice inside it.
-   */
-  yuan: 'term' | 'futou';
 
   /**
    * How the heaven plate is derived: rotating (轉盤) or flying (飛盤).
@@ -148,9 +140,12 @@ export interface ChartOptions {
    * leap month falls under and rejects the solstice placement as a
    * convenience — 「於理法都不是」.
    *
-   * A divergence **inside** 置閏, as `yuan` is inside 拆補, and declared the
-   * same way rather than as a fourth `method`: what parts these two is not how
-   * the ju is established but where one method puts its own repetition.
+   * A divergence genuinely **inside** 置閏, and declared as one rather than as
+   * a fourth `method`: what parts these two is not how the ju is established
+   * but where one method puts its own repetition — both read the yuan from the
+   * 符頭 and both carry the drift, which is what makes them one method. That
+   * test is worth stating because `yuan` failed it and was a `method`
+   * boundary written as a divergence for a whole phase.
    */
   leap: 'solstice' | 'runyue';
 
@@ -227,7 +222,6 @@ export interface ChartOptions {
  */
 export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   method: 'chaibu',
-  yuan: 'term',
   plate: 'zhuan',
   trueSolarTime: true,
   yearBoundary: 'lichun',

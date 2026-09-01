@@ -180,15 +180,17 @@ describe('what refuses an option the engine does not compute', () => {
     // `METHOD_NOT_IMPLEMENTED` is part of the API a client reads and a surface
     // translates. Folding it into the general code to tidy the registry would
     // change what every existing caller sees for the most divisive option
-    // here, so the parameter records its own.
-    const options: ChartOptions = { ...DEFAULT_OPTIONS, method: 'maoshan' };
+    // here, so the parameter records its own. All three declared methods are
+    // computed, so what carries the code now is a value nobody declared.
+    const method = 'tiandiquanshu' as unknown as ChartOptions['method'];
+    const options: ChartOptions = { ...DEFAULT_OPTIONS, method };
 
     try {
       requireImplemented(CHART_PARAMETERS, options, 'method');
-      expect.unreachable('茅山 should be refused');
+      expect.unreachable('a method nobody declared should be refused');
     } catch (error) {
       expect((error as { code: string }).code).toBe('METHOD_NOT_IMPLEMENTED');
-      expect((error as { params: Record<string, string> }).params).toEqual({ method: 'maoshan' });
+      expect((error as { params: Record<string, string> }).params).toEqual({ method });
     }
   });
 
@@ -362,7 +364,7 @@ describe('the CLI help', () => {
    *
    * They name what the engine **computes** and not what the type declares,
    * which is the same choice the web form and the MCP schema make: a flag
-   * offering 茅山 would be offering an error. That makes the help a copy of
+   * offering 飛盤 would be offering an error. That makes the help a copy of
    * the implemented list, in prose, where nothing could see it go stale.
    *
    * `--year-boundary` is deliberately not here and is the exception that
@@ -373,7 +375,6 @@ describe('the CLI help', () => {
    */
   const spelledOut: Array<[string, () => readonly (string | boolean)[]]> = [
     ['--method', () => implementedValues(CHART_PARAMETERS.method)],
-    ['--yuan', () => implementedValues(CHART_PARAMETERS.yuan)],
     ['--day-boundary', () => implementedValues(CHART_PARAMETERS.dayBoundary)],
     ['--shensha', () => implementedValues(CHART_PARAMETERS.shensha)],
     ['--guiren', () => implementedValues(LIUREN_PARAMETERS.guiren)],

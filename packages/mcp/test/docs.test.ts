@@ -147,7 +147,6 @@ describe('the values the tool schema offers', () => {
   // chart, and it is the almanac's parameter wherever it is written.
   const offered: Array<[string, keyof typeof CHART_PARAMETERS]> = [
     ['method', 'method'],
-    ['yuan', 'yuan'],
     ['day_boundary', 'dayBoundary'],
     ['year_boundary', 'yearBoundary'],
     ['shensha', 'shensha'],

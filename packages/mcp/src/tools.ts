@@ -152,10 +152,11 @@ export function registerComputeQimenChart(server: McpServer, context: ToolContex
         'which refines it, the coordinates replacing the ones GeoNames holds while the zone ' +
         'stays the named place\'s. Refine only with coordinates somebody gave you: do not ' +
         'invent a pair to sharpen a town you were told the name of. ' +
-        'The chart is cast by the chaibu method unless method says otherwise; zhirun is the ' +
-        'other one implemented, the two are different schools, and the answer says which one ' +
-        'cast it. Inside chaibu, yuan says whether the third of the term is counted from the ' +
-        'term or from the day\'s futou — two schools again, and they disagree on most days. ' +
+        'The chart is cast by the chaibu method unless method says otherwise; zhirun and ' +
+        'maoshan are the other two, the three are different schools, and the answer says ' +
+        'which one cast it. chaibu and maoshan read the same term and part over the yuan — ' +
+        'off the day\'s futou against off the instant the term began — which moves the ju ' +
+        'about three hours in five. ' +
         'Pass born, and gender for the 行年, to place a 年命 in the chart: a birth looked up ' +
         'inside the chart of the moment, which is the classical direction and comes from ' +
         '《遁甲演義》. It is not a chart of a birth. The answer says which palaces the two pairs ' +

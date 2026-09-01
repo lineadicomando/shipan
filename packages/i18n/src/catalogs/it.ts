@@ -1190,7 +1190,9 @@ export const it: Record<MessageKey, string> = {
   'form.pillars.dayBoundary.zishi': 'all’ora del Topo 子時 zǐshí, alle 23:00',
   'form.pillars.dayBoundary.midnight': 'a mezzanotte, alle 00:00',
   'form.qimen.method': 'Il ju si determina',
-  'form.qimen.method.chaibu': 'per terzi del termine: 拆補 chāibǔ',
+  'form.qimen.method.chaibu': 'dal giorno, per tratti di cinque: 拆補 chāibǔ',
+  'form.qimen.method.maoshan':
+    'dal primo istante del termine, per tratti di cinque: 茅山 máoshān',
   'form.qimen.method.zhirun': 'per blocchi interi, con l’intercalazione: 置閏 zhìrùn',
   'form.qimen.spirits': 'Il quinto e il sesto spirito sono nominati da',
   'form.qimen.spirits.dun':
@@ -1205,9 +1207,6 @@ export const it: Record<MessageKey, string> = {
     'in 坤 kūn, che è il palazzo dove il centro alloggia: 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.centreTravel.travel':
     'nel palazzo centrale stesso: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
-  'form.qimen.yuan': 'Con chaibu, il terzo del termine si conta',
-  'form.qimen.yuan.term': 'dall’istante in cui il termine è cominciato',
-  'form.qimen.yuan.futou': 'dal giorno, per tratti di cinque: 符頭 fútóu',
   'form.gender': 'Sesso: ne dipende solo la direzione dei cicli decennali',
   'form.gender.unset': 'non indicato',
   'form.gender.male': 'maschile',
@@ -1430,7 +1429,6 @@ export const it: Record<MessageKey, string> = {
   'notes.noParameters':
     'Questo strato non ha divergenze proprie: si calcola interamente dallo strato calendariale, e i parametri che lo spostano sono quelli elencati qui sopra.',
   'notes.parameter.method': 'Come si stabilisce il ju.',
-  'notes.parameter.yuan': 'Da dove si conta il terzo del termine, sotto 拆補 chāibǔ.',
   'notes.parameter.plate': 'Come si ricava la tavola di cielo.',
   'notes.parameter.centreLodging':
     'Dove alloggia il centro, che non ha direzione, né porta, né spirito propri.',
@@ -2186,8 +2184,6 @@ export const it: Record<MessageKey, string> = {
   'cli.value.turns': '{count} (giri del pilastro dell’anno)',
   'cli.value.leapTerm': '{term} intercalato',
 
-  'cli.note.yuanFutou':
-    'Lo yuan si legge dalla posizione del giorno nel ciclo di quindici del futou, non dall’istante in cui il termine è cominciato. È una divergenza interna al chaibu, e sposta il ju nella maggior parte dei giorni.',
   'cli.note.method':
     'Posta con il metodo {method}. Altre scuole dispongono altre carte dallo stesso istante.',
 

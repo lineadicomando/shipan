@@ -16,7 +16,19 @@ beforeAll(() => {
 });
 
 const BEIJING: Place = { latitude: 39.9075, longitude: 116.3972, timezone: 'Asia/Shanghai' };
-const CLOCK: ChartOptions = { ...DEFAULT_OPTIONS, trueSolarTime: false, dayBoundary: 'midnight' };
+/**
+ * 茅山, because the fixtures below were chosen for the configurations a
+ * particular ju lays out, and that ju is the one this engine computed by
+ * default while the method was misnamed 拆補. The charts are unchanged; only
+ * the name of the school that casts them is.
+ * → `docs/history/40-the-default-was-maoshan.md`
+ */
+const CLOCK: ChartOptions = {
+  ...DEFAULT_OPTIONS,
+  method: 'maoshan',
+  trueSolarTime: false,
+  dayBoundary: 'midnight',
+};
 
 function cast(date: string, time: string): QimenChart {
   return computeQimenChart(

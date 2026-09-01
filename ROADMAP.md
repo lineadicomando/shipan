@@ -68,7 +68,7 @@ waiting on one. `docs/sources.md` § "What a second copy of one text buys".
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `method: maoshan`, `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen` |
+| 奇門 | `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `ziqi: yinianyisu`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
@@ -127,8 +127,6 @@ are the query to put to an arriving text.
   of this that touches code.
 - **`ziqi: yinianyisu`** — one citable fact, an epoch for 紫氣. See
   [`docs/refusals.md`](docs/refusals.md). The only named acquisition left.
-- **`method: maoshan`** — nothing, and it is not expected to leave the table:
-  there is no reference against which a 茅山 chart could be falsified.
 
 ## 2. The shelf
 

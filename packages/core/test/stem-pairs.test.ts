@@ -15,7 +15,17 @@ beforeAll(() => {
 });
 
 const BEIJING: Place = { latitude: 39.9075, longitude: 116.3972, timezone: 'Asia/Shanghai' };
-const CLOCK: ChartOptions = { ...DEFAULT_OPTIONS, trueSolarTime: false, dayBoundary: 'midnight' };
+/**
+ * 茅山, for the reason `patterns.test.ts` gives: the fixture was picked for
+ * the pairing a particular ju puts on the board.
+ * → `docs/history/40-the-default-was-maoshan.md`
+ */
+const CLOCK: ChartOptions = {
+  ...DEFAULT_OPTIONS,
+  method: 'maoshan',
+  trueSolarTime: false,
+  dayBoundary: 'midnight',
+};
 
 function cast(date: string, time: string): QimenChart {
   return computeQimenChart(

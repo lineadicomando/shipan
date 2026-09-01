@@ -172,14 +172,22 @@ describe('the zhirun method', { timeout: 30_000 }, () => {
     expect(onsets.every((o) => o.startsWith('daxue'))).toBe(true);
   });
 
-  it('disagrees with chaibu about the term itself, not only the yuan', () => {
-    // 2 September 2026, the date the two readings of 拆補 were told apart
-    // by. Chaibu reads the term in force — 處暑, ten days in, lower yuan.
-    // Zhirun reads the day: 己卯 opens a block, and that block already
-    // serves 白露, five days before the Sun gets there (超神).
-    const chaibu: ChartOptions = { ...ZHIRUN, method: 'chaibu' };
-    expect(juAt('2026-09-02', '11:00', chaibu)).toMatchObject({
+  it('disagrees with the other two about the term itself, not only the yuan', () => {
+    // 2 September 2026, the instant the three methods were told apart by.
+    // 茅山 reads the term in force and counts from its instant — 處暑, ten
+    // days in, lower yuan. 拆補 reads the same term and takes the yuan off
+    // the day's 符頭, which puts it in the upper. 置閏 reads the day too, but
+    // 己卯 opens a block and that block already serves 白露, five days before
+    // the Sun gets there (超神) — so it is the only one of the three that can
+    // name a term the Sun has not reached.
+    const at = (method: ChartOptions['method']) =>
+      juAt('2026-09-02', '11:00', { ...ZHIRUN, method });
+
+    expect(at('maoshan')).toMatchObject({
       yang: false, number: 7, yuan: 'xia', term: { id: 'chushu' }, leap: false,
+    });
+    expect(at('chaibu')).toMatchObject({
+      yang: false, number: 1, yuan: 'shang', term: { id: 'chushu' }, leap: false,
     });
     expect(juAt('2026-09-02', '11:00')).toMatchObject({
       yang: false, number: 9, yuan: 'shang', term: { id: 'bailu' }, leap: false,

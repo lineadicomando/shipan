@@ -97,8 +97,8 @@
    * the pillars page has no «now» at all, since a chart of birth cast for
    * whoever opened it is a wrong answer rather than a lesser one.
    *
-   * The ju is left behind on purpose. `method` and `yuan` decide how Qi Men
-   * counts its ju and mean nothing to the four pillars; carried across they
+   * The ju is left behind on purpose. `method` decides how Qi Men counts its
+   * ju and means nothing to the four pillars; carried across it
    * would sit in an address that never reads them, looking like settings that
    * bear on the answer. `dayBoundary` and the solar correction do go, because
    * both sections reckon the same day and the same hour from them — a moment

@@ -180,14 +180,6 @@ that book calls 地空. **A placement carried across is a graft and not a gap
 being filled** — the natal-Qimen error, made smaller and between two books
 that share a title.
 
-## 茅山
-
-*Asked by:* the `method` parameter, which lists it.
-
-No reference exists, runnable or transmitted, against which a 茅山 chart could
-be falsified. It is refused with `METHOD_NOT_IMPLEMENTED` rather than
-substituted, because a chart cast by the wrong method looks right and is not.
-
 ## A place from a name
 
 *Asked by:* every convenience API.

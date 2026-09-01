@@ -153,7 +153,6 @@ interface Options {
   dayBoundary?: string;
   method?: string;
   shensha?: string;
-  yuan?: string;
   until?: string;
   gate?: string;
   star?: string;
@@ -213,10 +212,8 @@ Narrowing a scan
                          says which palaces are the person's
   --true-solar, --no-true-solar   default: on
   --day-boundary zishi|midnight   default: zishi
-  --method chaibu|zhirun          how the ju is determined; default: chaibu
+  --method chaibu|zhirun|maoshan  how the ju is determined; default: chaibu
   --shensha xieji                 which register the almanac line carries
-  --yuan term|futou               under chaibu, where the third of the term is
-                                  counted from; default: term
   --guiren chou|wei               for \`liuren\`: which verse seats the 貴人.
                                   It moves the twelve generals and never the
                                   three transmissions; default: chou
@@ -344,7 +341,7 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
   };
 
   if (command === 'terms') {
-    // Strict, like --method and --yuan: `Number` alone would read a mistyped
+    // Strict, like --method and --day-boundary: `Number` alone would read a mistyped
     // year as NaN and hand it to the calendar, which answers with a stack
     // trace addressed to nobody.
     if (options.year !== undefined && !/^-?\d+$/.test(options.year)) {
@@ -876,21 +873,13 @@ function resolveOptions(options: Options): ChartOptions {
     }
     chartOptions.dayBoundary = options.dayBoundary;
   }
-  // A chart cast by the wrong method looks right and is not. maoshan passes
-  // through and the engine refuses it.
+  // A chart cast by the wrong method looks right and is not, so a misspelling
+  // is refused here rather than falling back to the default.
   if (options.method !== undefined) {
     if (options.method !== 'chaibu' && options.method !== 'zhirun' && options.method !== 'maoshan') {
       throw new UsageError('cli.error.unknownValue', { option: '--method', value: options.method });
     }
     chartOptions.method = options.method;
-  }
-  // A yuan read from the wrong end moves the ju on most days, and a
-  // misspelling that fell back would do it silently.
-  if (options.yuan !== undefined) {
-    if (options.yuan !== 'term' && options.yuan !== 'futou') {
-      throw new UsageError('cli.error.unknownValue', { option: '--yuan', value: options.yuan });
-    }
-    chartOptions.yuan = options.yuan;
   }
   // One register exists, so this can only ever be right or refused. It is
   // offered anyway: a script that passes it today keeps working when a second
@@ -989,7 +978,6 @@ const FLAGS: Record<string, keyof Options> = {
   '--day-boundary': 'dayBoundary',
   '--method': 'method',
   '--shensha': 'shensha',
-  '--yuan': 'yuan',
   '--until': 'until',
   '--gate': 'gate',
   '--star': 'star',

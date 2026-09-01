@@ -30,10 +30,22 @@ const CLOCK: ChartOptions = {
  */
 const WRITTEN_ORDER = [4, 9, 2, 3, 5, 7, 8, 1, 6];
 
+/**
+ * The method the charts below were checked against, which is not the default.
+ *
+ * They were verified against `qimen-dunjia` (npm), and that reference reads
+ * the yuan from the term's first instant — which is 茅山 and was this engine's
+ * default under the name 拆補 until `yuan` was retired. The charts are the
+ * same charts and were never wrong; what was wrong was the name on them. Cast
+ * them under the declared default now and they would be checked against a
+ * reference that does not compute it. → `docs/history/40-the-default-was-maoshan.md`
+ */
+const MAOSHAN: ChartOptions = { ...CLOCK, method: 'maoshan' };
+
 function cast(date: string, time: string): QimenChart {
   return computeQimenChart(
-    resolveMoment({ date, time, timezone: 'Asia/Shanghai' }, BEIJING, CLOCK, context),
-    CLOCK,
+    resolveMoment({ date, time, timezone: 'Asia/Shanghai' }, BEIJING, MAOSHAN, context),
+    MAOSHAN,
   );
 }
 
@@ -111,8 +123,8 @@ describe('the earth plate', () => {
 });
 
 describe('a verified chart', () => {
-  // 2024-06-15 14:00 in Beijing. Checked against an independent
-  // implementation, as were the three that follow.
+  // 2024-06-15 14:00 in Beijing, cast under 茅山. Checked against an
+  // independent implementation, as were the three that follow.
   let chart: QimenChart;
 
   beforeAll(() => {
@@ -181,9 +193,10 @@ describe('more verified charts', () => {
   });
 });
 
-describe('the yuan', () => {
+describe('the yuan under 茅山', () => {
   it('splits the term into three parts of five days', () => {
-    // Lichun 2024 fell on 4 February at 16:27. Five days on, the yuan turns.
+    // Lichun 2024 fell on 4 February at 16:27. Five days on, the yuan turns,
+    // and the day pillar has no say in it.
     expect(cast('2024-02-05', '12:00').ju.yuan).toBe('shang');
     expect(cast('2024-02-10', '12:00').ju.yuan).toBe('zhong');
     expect(cast('2024-02-15', '12:00').ju.yuan).toBe('xia');
@@ -208,8 +221,8 @@ describe('the yuan', () => {
   });
 });
 
-describe('the yuan read from the futou', () => {
-  const FUTOU: ChartOptions = { ...CLOCK, yuan: 'futou' };
+describe('拆補, which reads the yuan from the futou', () => {
+  const FUTOU = CLOCK;
 
   function futou(date: string, time: string): QimenChart {
     return computeQimenChart(
@@ -241,8 +254,9 @@ describe('the yuan read from the futou', () => {
   });
 
   it('reads the yuan off the day and not off the term', () => {
-    // Xiaohan 1999 fell on 5 January. Under `term` the first five days are
-    // the upper yuan; the 符頭 had already carried the day to the middle.
+    // Xiaohan 1999 fell on 5 January. Under 茅山 the first five days are the
+    // upper yuan; the 符頭 had already carried the day to the middle. This is
+    // the whole of what parts the two methods.
     expect(cast('1999-01-06', '12:00').ju.yuan).toBe('shang');
     expect(futou('1999-01-06', '12:00').ju.yuan).toBe('zhong');
   });
@@ -364,15 +378,17 @@ describe('what every chart must satisfy', () => {
 });
 
 describe('no school is implicit', () => {
-  it('refuses a method it does not implement', () => {
-    // A chart cast by the wrong method looks right and is not, so asking for
-    // one that is missing is an error rather than a quiet substitution.
-    // Only maoshan is missing now; zhirun has its own tests.
-    const method = 'maoshan' as const;
+  it('refuses a method it has never heard of, and keeps the code', () => {
+    // All three declared methods are computed now, so what this holds is the
+    // refusal itself: an undeclared value takes no branch by accident. It
+    // used to be asserted on maoshan, which the engine was computing by
+    // default at the time under another name — the refusal passed and said
+    // nothing true. → `docs/history/40-the-default-was-maoshan.md`
+    const method = 'tiandiquanshu' as unknown as ChartOptions['method'];
     const moment = resolveMoment(
       { date: '2024-06-15', time: '14:00', timezone: 'Asia/Shanghai' },
       BEIJING,
-      { ...CLOCK, method },
+      CLOCK,
       context,
     );
 
@@ -383,6 +399,23 @@ describe('no school is implicit', () => {
       expect((error as ChartError).code).toBe('METHOD_NOT_IMPLEMENTED');
       expect((error as ChartError).params['method']).toBe(method);
     }
+  });
+
+  it('computes all three declared methods, and they disagree', () => {
+    // The three are three schools, not three approximations. If two of them
+    // ever agreed everywhere, one of them would be misnamed — which is
+    // exactly what had happened to 茅山.
+    const moment = resolveMoment(
+      { date: '2026-09-02', time: '11:00', timezone: 'Asia/Shanghai' },
+      BEIJING,
+      CLOCK,
+      context,
+    );
+    const ju = (method: ChartOptions['method']) => determineJu(moment, { ...CLOCK, method });
+
+    expect(ju('chaibu')).toMatchObject({ yang: false, number: 1, yuan: 'shang' });
+    expect(ju('maoshan')).toMatchObject({ yang: false, number: 7, yuan: 'xia' });
+    expect(ju('zhirun')).toMatchObject({ yang: false, number: 9, yuan: 'shang' });
   });
 
   it('refuses a plate and a system it does not implement', () => {
@@ -420,16 +453,18 @@ describe('no school is implicit', () => {
     // 《奇門遁甲金鏡寶鑑》 卷之一: 「行活局，符使不必寄於二，徑排入中宮」, against
     // 《御定奇門寶鑑》 卷二: 「甲辰在中宮，寄於坤二」. Two Qing imperial prints,
     // one on each side, which is what makes this a parameter and not a
-    // preference. 2024-06-15 14:00 is a chart they answer differently: the
-    // hour's stem 癸 is the one 陽遁九局 puts in the centre.
+    // preference. 2024-06-15 14:00 under 茅山 is a chart they answer
+    // differently: the hour's stem 癸 is the one 陽遁九局 puts in the centre.
+    // The method is named because it decides the ju and the ju is what puts a
+    // stem there at all; what parts the two prints is unaffected by it.
     const moment = resolveMoment(
       { date: '2024-06-15', time: '14:00', timezone: 'Asia/Shanghai' },
       BEIJING,
-      CLOCK,
+      MAOSHAN,
       context,
     );
-    const stay = computeQimenChart(moment, CLOCK);
-    const travel = computeQimenChart(moment, { ...CLOCK, centreTravel: 'travel' });
+    const stay = computeQimenChart(moment, MAOSHAN);
+    const travel = computeQimenChart(moment, { ...MAOSHAN, centreTravel: 'travel' });
 
     expect(stay.chief.palace.number).toBe(CENTRE_HOST);
     expect(travel.chief.palace.number).toBe(5);
@@ -466,7 +501,7 @@ describe('no school is implicit', () => {
   });
 
   it('keeps the options that produced it', () => {
-    expect(cast('2024-06-15', '14:00').options).toEqual(CLOCK);
+    expect(cast('2024-06-15', '14:00').options).toEqual(MAOSHAN);
   });
 });
 

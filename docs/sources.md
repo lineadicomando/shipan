@@ -67,7 +67,8 @@ recollection, and this is the rule the rest of the document exists to keep.
 
 **`qimen-dunjia`** (npm 2.1.0) — 160 charts from 2000 to 2023, all thirteen
 quantities compared. The derived earth plate reproduces all eighteen published
-arrangements without a cell out of place. Covers 拆補 only.
+arrangements without a cell out of place. **It covers 茅山, and this entry said
+拆補 for a whole phase**; see "The method that was two methods" below.
 
 *Two defects found in it, for whoever uses it next*: its 局數 table is keyed in
 traditional characters while it reads term names from `lunar-javascript`, which
@@ -79,19 +80,20 @@ among several.
 term agrees wherever that reference follows the classical bookkeeping, about
 two days in three. Installs under Python 3.9 only. Re-verified 2026-08-08.
 
-*It is a different 拆補.* `kinqimen` assigns the yuan from the day's 符頭 where
-`qimen-dunjia` — and this engine with it — splits the term into three five-day
-thirds from the instant it begins. For 2026-09-02 11:00 in Beijing the two
-return 陰遁一局上元 and 陰遁七局下元 from the same instant, each internally
-consistent. That is a school divergence *inside* 拆補; it is now shipped as
-`yuan`, for the reason the entry below gives.
+*It is not a different 拆補; it is the only one.* `kinqimen` assigns the yuan
+from the day's 符頭 where `qimen-dunjia` — and this engine with it — split the
+term into three five-day thirds from the instant it begins. For 2026-09-02
+11:00 in Beijing the two return 陰遁一局上元 and 陰遁七局下元 from the same
+instant, each internally consistent. That was filed as a school divergence
+*inside* 拆補 and shipped as `yuan`. It is the boundary between 拆補 and 茅山;
+see "The method that was two methods" below.
 
 **fengshui-hacks.com** (`cgi-bin/plotChart.pl`) — 266 moments from 1935 to
 2020, every cell of the nine palaces compared. Reads clock time on 120°E with
 no true-solar correction and turns the day at 23:00. Checked 2026-08-13.
 
-*It is the second source for the 符頭 yuan*, which is what let that reading be
-shipped: the standard below asks for two, and `kinqimen` was one. The rule
+*It is the second source for 拆補*, which is what let that reading be shipped:
+the standard below asks for two, and `kinqimen` was one. The rule
 this reference follows — **the term in force at the instant, and the yuan from
 the day's place in the fifteen-day 符頭 cycle** — reproduces its ju on 260 of
 the 266, the six exceptions being 超神 windows around 寒露 and 小雪. It is not
@@ -99,7 +101,7 @@ the 266, the six exceptions being 超神 windows around 寒露 and 小雪. It is
 time and the disagreement alternates every five days, which is a yuan and not
 a block.
 
-*What it confirmed*: cast under `chaibu` with `yuan: 'futou'`, all 260 charts
+*What it confirmed*: cast under `chaibu`, all 260 charts
 whose ju agrees agree cell for cell — earth plate including the lodged stem,
 the turn of the heaven plate, **the eight outer stars**, the eight gates, the
 eight spirits, 值符, 值使, 旬首, 空亡 and 驛馬. That said «the nine stars» until
@@ -119,6 +121,60 @@ gate. `PalaceContents.lodged` now says it. The two still part on the heaven
 plate, where that reference turns the lodged stem with its host and this one
 leaves the centre out of the turn — a divergence in the derivation of the
 plate, not in the lodging.
+
+### The method that was two methods
+
+**茅山 was computed here by default, under the name 拆補, for a whole phase.**
+The rule shipped as `yuan: 'term'` — cut the term into three fives from the
+instant it began — declared a divergence *inside* 拆補 and made the default.
+Over a tropical year of 時辰 that reading agrees with an outside 茅山
+implementation on 100.00 % of them and with an outside 拆補 on 47.66 %. It was
+never a wrong chart; it was a chart under the wrong school's name, which is the
+thing `docs/parameters.md` says may not happen.
+
+**What parts the two is one thing, and the sources say so in three voices.**
+劉文元《奇門啟悟》 (Taipei: 滾石出版 / 天府書屋, October 2008, ISBN
+978-986-84441-5-7) pp. 33–34 names the point and nothing else: 「其與拆補法不同
+的是，茅山道士的方法是從交本節氣那一時刻起即開始用本節氣之上元局，而根本不去
+考慮日支的子午卯酉為上元、寅申巳亥為中元、辰戌丑未為下元之說」. 唐頤《圖解中國
+傳統決策學·奇門遁甲大全》 (西安: 陝西師範大學出版社, 2009.9, ISBN
+978-7-5613-4832-1) p. 128 says it of the same method — 「這樣就打破了根據日干支
+符頭確定三元的規律」. And 張志春《神奇之門》 p. 74 defines 拆補 by **both**
+conditions at once, the three yuan inside each term *and* the 甲己 cycle:
+「拆補法既把上、中、下三元放在每一個節氣之中，又遵循六十甲子循環中子、午、卯、
+酉為上元…的規律」. Read the yuan anywhere but off the 符頭 and there is nothing
+left to split and nothing to patch, so a 拆補 without the 符頭 is not a second
+school of 拆補 — it is the other method.
+
+**Both of the printed witnesses state the rule complete, with the two edge
+cases, and they number them differently.** 劉文元 numbers them: the 下元 has run
+its sixty 時辰 and the next term has not come, so it keeps running to the term's
+end (case 1); the 下元 has not run its sixty and the next term arrives, so it is
+dropped where it stands (case 2). 唐頤 gives the same two as 取 and 舍 — 「前一個
+節氣下元已用完六十個時辰，下個節氣尚未到，仍需繼續用前一個節氣下元，這就叫做
+取」 and 「前一個節氣下元尚未用完六十個時辰，節氣一到就停止不用，即要捨棄一部分
+時間」. Both fall out of the one sentence and neither needs a branch in the code:
+capping the block index at the third holds a long term's 下元 open, and the
+count restarting at the next term cuts a short one's.
+
+**The two are independent and the standard is met.** Different authors,
+different jurisdictions — Taipei and Xi'an — different scripts, different
+framings of the same two cases, a year apart, and neither cites the other; and
+a runnable reference, `qimen-dunjia`, computes the same rule including the tail
+behaviour. What none of it licenses is the *attribution*: the 歌訣 劉文元 quotes
+is credited to the 茅山道士 with no edition, no manuscript and no teacher, and
+no second witness to that verse is on this shelf. **The rule is attested from
+2008; the attribution is not attested at all**, which is why `docs/sources.tsv`
+files it on the runnable rung and not on the two-witness one.
+
+**A negative belongs beside it.** 張志春 does not expound the rule in either of
+his books. 《神奇之門》 p. 74 dismisses it in one line — 「茅山道人的方法必須按照
+事先編制好的奇門曆書才能應用，比『置閏派』的方法還複雜，所以也不實用」 — and
+《奇門遁甲開悟之門》 p. 70, which was acquired on the guess that the same author
+would have said more, names it once and says only that he does not deny its
+accuracy and that students of his have cast by it. 幺學聲《奇門遁甲現代應用
+技術》 (2005) states the whole divergence and never names 茅山 at all. Those are
+measured negatives about who expounds it, not about whether it is transmitted.
 
 **That divergence now has a transmitted witness, and it turns out to be one
 divergence and not two.** 《奇門遁甲元靈經》 works two examples out in full, and
@@ -538,7 +594,7 @@ line's fourth character is cut **坤** — read at 400 dpi, 土 and 申, and not
 孟 the parallel with 仲 and 季 wants. On the only reading that parses, the verse
 gives 孟 the upper yuan, 仲 the middle and 季 the lower.
 
-**That is not the anchor this engine's `yuan: futou` uses, and 遁甲演義 assigns
+**That is not the anchor this engine's 拆補 uses, and 遁甲演義 assigns
 it to a different system.** 卷一 states the hour system's cut in prose and
 states it completely — 「自甲子至戊辰五日六十時，足為上局；己巳至癸酉又五日
 六十時，足為中局；甲戌至戊寅又五日六十時，足為下局」 — which puts 甲子, a 仲
@@ -4699,7 +4755,6 @@ calendrical layer settles. Recorded as a passage read and not used.
 | counting the 泊宮 through the palaces | 《遁甲演義》 states it in four characters that admit two readings |
 | the month pillar a 春節 almanac prints | 五虎遁 reads the year stem, so `chunjie` moves the month with the year and reports a pillar no lichun almanac carries. Whether an almanac counting by the lunar new year prints that one or the solar one, no source consulted says. The rule is applied as stated and the consequence is pinned by a test, so that changing it has to be deliberate |
 | the other 70 cells of 十干克應 | complete tables exist but each is a single uncited source; two are needed |
-| 茅山 | no reference at all. `METHOD_NOT_IMPLEMENTED` rather than a silent substitution |
 | 飛盤 | a whole family. `OPTION_NOT_IMPLEMENTED`, and not separable from `system`: the 年家, 月家 and 日家 boards 《遁甲演義》 states are flown, not turned. **That now has its second witness**: 《御定奇門寶鑑》卷二 turns the hour board — 「即以天盤直符加於此宮」 — and flies the others in the same juan, 「順飛九宮」 for the day board's stars and an enumeration for the month's that runs 離九 · 坎一 · 坤二 · 震三 · 巽四 · **中五** · 乾六 · 兌七 · 艮八, which is the Luoshu order through the centre and not a ring of eight. Its day gates 「三日順轉一宮，不入中五」, which is 遁甲演義's 「飛八方，不入中五」 for the same family. So the pairing of the two parameters is stated and no longer inferred; what neither text supplies is a lineage holding one of the competing 三元 readings. **The work whose name most invites being read as this one is not this board at all.** 《諸葛武侯行兵遁甲金函玉鏡》, six 卷 in 故宮珍本叢刊 第427冊 from its p. 251, lays nine stars per day — 「假如甲子日巳上起太乙」, and its diagrams name 太乙, 攝提, 軒轅, 招搖 and 咸池 — where this board's nine are 天蓬 through 天英 turned with the 值符, and what stands beside them is an hour table grading the twelve hours 黃道 and 黑道 by the day gods. Another art under the 奇門遁甲 name, the relation 金口訣 has to 六壬. Surveyed and three leaves read on the plate 2026-08-28 |
 | 日家 · 月家 · 年家 | 《遁甲演義》卷一 states all three entire, and they are 飛盤 where the 時家 is 轉盤, so the two parameters move together. The second witness has since arrived — 《遁甲集成》第三冊 — and it puts the 年家's three 元 on palaces 一, 七 and 四 where 遁甲演義 puts them on 一, 四 and 七. Two witnesses disagreeing is neither of the two things the standard accepts, so this is refused on a reading and no longer for want of one. **A third has since arrived and it does not settle it either.** 《御定奇門寶鑑》卷二 states all three families with a worked example and puts the 年家's three 元 on 一, 四 and 七 — two to one for 遁甲演義 — and then prints three competing day methods and two 又一本 variants beside them, and its compiler writes 「諸說紛紜，全無定見。恐是後人附會穿鑿，於理皆有未通，於法皆有不順。姑錄之以俟選擇之用，非奇門所急也」. What blocks the value is now a plural transmission that its own best witness disowns, not a single contradicting table. See the 年命 section |
 | 寄宮 `dun` | the parameter exists and the second value is refused rather than guessed. The first witness searched for it does not know it: 《圖解奇門遁甲大全》 states the lodging with no condition on it — 「中宮無位：無論是奇門遁甲圓盤還是方盤，中五宮都無位，所以在中五宮的星和門都寄於坤二宮」 — and then applies it inside 陰遁, in a passage it quotes rather than writes: 「假令陰七局，甲己之日丙寅時 … 值使在五宮寄二宮西南」. A witness that lodges the 值使 in 坤二 in a yin board is evidence for `kun` and none at all for the divergence, which still has no text. Read on the plate 2026-08-27. **A transmitted text has since said the same thing, which is what that row was missing.** 《遁甲符應經》, in 《遁甲集成》第三冊 at its p. 1137 — a volume attribution the series' own 總目錄 contests, see the 奇門 section — derives the lodging from the 洛書 in one clause — 「以靈龜出洛，戴九履一，左三右七，二四為肩，六八為足，五在中央者，土火之子、金之母，**所寄理於西南坤之位也**」 — with no condition on the 遁 and no second position named anywhere near it. So `kun` no longer stands on a divulgation alone, and `dun` is still what nobody states. Read on the plate at 400 dpi 2026-08-28. **And a yin board has since been read with 坤's gate printed in it**: 《奇門遁甲金鏡寶鑑》's 陰遁一局起門訣 names the 直使 of all six decades and gives the centre's — 甲寅癸 — 「死門 甲寅五」, where `dun` would give it 艮八's 生門. That is the first witness for `kun` that is a board rather than a rule, and it is a yin one, which is the half `dun` would change. Read on the plate at 600 dpi 2026-08-28. **And `dun` is no longer what nobody states.** 《御定奇門寶鑑》卷二 起例 prints 「陽遁陰遁俱寄坤宮。一本陰遁寄艮」 — the shipped reading for both dun without a condition, and the refused one named beside it. It does not move the value: 一本 flags a variant copy, and `CLAUDE.md` settles a recension in the register rather than naming a parameter value for it. What it settles is that the 艮 reading is transmitted and that an imperial compiler chose against it. The same juan lodges the centre a second time inside the laying — 「甲辰在中宮，寄於坤二，天禽為本旬直符，死門為本旬直使」 — which is also the counter-witness to 《金鏡寶鑑》's palace 5. Read on the plate at 600 dpi 2026-08-28. **And the same work argues both readings at length, in a section nobody had opened.** 釋虛中合宮, in the 釋義四十四則 of 卷一 — 御定 series p. 7, 遁甲集成 第四冊 series pp. 1733–1734 — derives 坤二 from the 五行 turning left through the five directions, then gives the variant with a derivation of its own: 「一本：陽局中五寄於二，陰局中五合於八。先天巽以一陰生於西南，震以一陽生於東北。冬至一陽生於陰之極，故用陽局而以中五寄坤以始其陰氣；夏至一陰生於陽之極，故用陰局而以中五寄震以復其陽氣」 — 震 being 先天's occupant of the 東北 seat 卷二's note calls 艮. Then the compiler decides: 「其說於理尤為周備，但本多從前說，故遵之」. He judges the two-board lodging the sounder and keeps 坤 for both because the **copies** mostly read that way, which is why the value does not move: 本 is an edition and not a lineage, and an edition can only be preferred. Read on both plates at 600 dpi 2026-08-31 |
@@ -4717,7 +4772,11 @@ calendrical layer settles. Recorded as a passage read and not used.
 | 紫微斗數 `huoling` `hour` | the widespread practice counts 火星 and 鈴星 on from the year's seats by the birth hour. No verse in 卷二 does, and agreement with a reference that does falls to exactly the quarter of a sample whose hour offset is zero. **It now has a witness and it is the wrong kind**: 《中國絕學》第六冊 p. 406 prints it whole — 「年支爲丑、巳、酉時：由卯宮起子時，順行一宮加一時辰，……數到生時之宮位安火星。由戌宮起子時，……安鈴星」 — with a diagram of the count. What that settles is how narrow the divergence is: 丑巳酉 seats 火星 on 卯 and 鈴星 on 戌 in the manual and in `HUOLING` alike, so the two readings share every seat and part only on whether the hour is counted on from it. A 1986 school manual is one modern witness where the standard asks for two transmitted ones, so the value stays refused with `OPTION_NOT_IMPLEMENTED` — but not any longer for want of anybody stating it. Read on the plate 2026-08-27. **A third transmitted recension has since been asked and is silent too**: the Ming 南陽堂 block's 安火鈴二星訣 gives the four seats and stops. Silence is not a statement — both readings share the seats — so what this adds is that nobody transmitted the count, in three recensions now instead of two. Read on the plate 2026-08-28 |
 | 紫微斗數 `leapMonth` `current` · `split` | 「凡有閏月俱要依此為例」 counts a leap month as the one after it. The other two readings are other schools' and neither is in this book |
 | 紫微斗數 `daxian` `ming` | 「陽男陰女從命前一宮起順行 是父母宮」 opens the run *beside* the 命宮, in both copies verbatim. Opening it in the 命宮 is traceable twice over, and the two are not the same rule. The 十八飛星 transmission opens there with a flat ten years on a board with **no 五行局**, so it inherits no starting age; **the variant this parameter names — the 命宮 *and* the bureau's age — is 《中國絕學》第六冊 p. 437**, which prints it as a procedure and then as two charts: 「由命宮起大限（水二局爲2〜11歲、木三局爲3〜12歲、金四局爲4〜13歲、火六局爲6〜15歲、……）以陽男陰女順行、陰男陽女逆行之方向」, and beside it a 水二局 board drawn twice, 命 2–11 · 父 12–21 · 福 22–31 forward and 命 2–11 · 兄 12–21 · 妻 22–31 back. The rule, its enumeration and both drawings agree with each other, which is internal consistency and not the self-check rung 4 asks for: it is one modern school manual against a received text that says otherwise in both copies. Refused, and no longer for want of a text. Read on the plate 2026-08-27 |
-| 紫微斗數 `sihua` | one value, and the divergent lineage now has a name without having a text. A 中州派 manual on the shelf reports that it is **王亭之's branch** that departs from the received table at 戊, 庚 and 壬, and names what it rests on — 『紫微星訣』, unpublished. That manual's *own* table agrees with this book at 戊 and 庚 and parts from it at 壬 alone (科 to 左輔, not 天府), so the three-stem table that would be the second value is still unread. A lineage named is not yet a lineage read: the `tongzong` precedent holds, and what would overturn it is now a findable book rather than a rumour. **A second book now uses the departing cells, it uses both sides of one of them, and it names which school each side is.** 《中國絕學》第七冊 (斗數秘儀四化飛伏斷訣 · 占驗派、南派、北派, 方外人, 臺北金林文化 1986) prints 「大限之疾厄爲庚，天相化忌」 at its p. 252 and 「（流日的）庚天同化忌入夫妻」 at its p. 四—二一〇, with a diagram — 庚's 忌 to 天相 in one part and to 天同, this book's own value, in another. The volume is an anthology and says so on its cover — 斗數秘儀四化飛伏斷訣 · 占驗派 · 南派 · 北派, 京洋圖書股份有限公司 — so that is a divergence between the lineages it collects and not a slip. **Which part is whose has been read off the plates**, because the parts number their own pages: the run carrying 天相 is the plain-numbered one, at its p. 252, under a 【占驗派】 heading, while both of the others are printed 四—一八二 and 四—二一〇, inside a part that opens on a title page of its own — 《紫微斗數 北派》, 恭鑑老人 著. So 庚's 忌 goes to 天相 in the 占驗派 material and to 天同, this book's value, in 北派's, and 壬's 科 goes to 左輔 in 北派's. At 壬, 北派 puts 科 on 左輔 with the 中州派 manual and against this book's 天府 — 「干壬左輔化科入戌照辰」 and 「壬武曲化忌在亥」, p. 四—一八二. **That one is checkable and it checks.** 左輔 is placed from the lunar month alone, 辰 forward, so a 七月 birth puts it in 戌 with no day given; 天府 needs the day, through 紫微 and the 五行局, and the example gives a year, a month and an hour and no day. The worked example is decidable only on the reading it states. **And 北派's table has since been read across six stems and it is this book's table with that one cell moved** — see 「天府 taking 化科 at 壬」 above — which is what closes the question this parameter was opened for. The second value of `sihua` was conceived as a lineage's own ten stems; what the shelf supports is one cell, twice, from two modern schools, against a received reading both editions and the Ming 南陽堂 block carry. Read on the plate 2026-08-27. **That was written down as «not a value to declare», and the criterion has since been corrected rather than the evidence.** Completeness was standing in for the test this project actually states: the board changes at 壬, two practitioners hold opposite sides, and how much of the table they part over is not one of the three questions. So `sihua: zuofu` is declared and computed — named for the cell and not for either school, since two of them hold it and neither's ten stems are here, on the precedent of `yuan: futou`. What a value named for a school must show is in `docs/parameters.md`; what this row already shows is all of it bar the naming. 2026-08-29 |
+| 紫微斗數 `sihua` | one value, and the divergent lineage now has a name without having a text. A 中州派 manual on the shelf reports that it is **王亭之's branch** that departs from the received table at 戊, 庚 and 壬, and names what it rests on — 『紫微星訣』, unpublished. That manual's *own* table agrees with this book at 戊 and 庚 and parts from it at 壬 alone (科 to 左輔, not 天府), so the three-stem table that would be the second value is still unread. A lineage named is not yet a lineage read: the `tongzong` precedent holds, and what would overturn it is now a findable book rather than a rumour. **A second book now uses the departing cells, it uses both sides of one of them, and it names which school each side is.** 《中國絕學》第七冊 (斗數秘儀四化飛伏斷訣 · 占驗派、南派、北派, 方外人, 臺北金林文化 1986) prints 「大限之疾厄爲庚，天相化忌」 at its p. 252 and 「（流日的）庚天同化忌入夫妻」 at its p. 四—二一〇, with a diagram — 庚's 忌 to 天相 in one part and to 天同, this book's own value, in another. The volume is an anthology and says so on its cover — 斗數秘儀四化飛伏斷訣 · 占驗派 · 南派 · 北派, 京洋圖書股份有限公司 — so that is a divergence between the lineages it collects and not a slip. **Which part is whose has been read off the plates**, because the parts number their own pages: the run carrying 天相 is the plain-numbered one, at its p. 252, under a 【占驗派】 heading, while both of the others are printed 四—一八二 and 四—二一〇, inside a part that opens on a title page of its own — 《紫微斗數 北派》, 恭鑑老人 著. So 庚's 忌 goes to 天相 in the 占驗派 material and to 天同, this book's value, in 北派's, and 壬's 科 goes to 左輔 in 北派's. At 壬, 北派 puts 科 on 左輔 with the 中州派 manual and against this book's 天府 — 「干壬左輔化科入戌照辰」 and 「壬武曲化忌在亥」, p. 四—一八二. **That one is checkable and it checks.** 左輔 is placed from the lunar month alone, 辰 forward, so a 七月 birth puts it in 戌 with no day given; 天府 needs the day, through 紫微 and the 五行局, and the example gives a year, a month and an hour and no day. The worked example is decidable only on the reading it states. **And 北派's table has since been read across six stems and it is this book's table with that one cell moved** — see 「天府 taking 化科 at 壬」 above — which is what closes the question this parameter was opened for. The second value of `sihua` was conceived as a lineage's own ten stems; what the shelf supports is one cell, twice, from two modern schools, against a received reading both editions and the Ming 南陽堂 block carry. Read on the plate 2026-08-27. **That was written down as «not a value to declare», and the criterion has since been corrected rather than the evidence.** Completeness was standing in for the test this project actually states: the board changes at 壬, two practitioners hold opposite sides, and how much of the table they part over is not one of the three questions. So `sihua: zuofu` is declared and computed — named for the cell and not for either school, since two of them hold it and neither's ten stems are here — a value named for the cell rather than for a
+school, which is what `yuan: futou` used to be cited as the precedent for. That
+precedent has since been withdrawn as an argument for naming and kept as a
+warning: `yuan` named a rule and the rule turned out to be a school boundary.
+See "The method that was two methods". What a value named for a school must show is in `docs/parameters.md`; what this row already shows is all of it bar the naming. 2026-08-29 |
 | the 流年 layer of 紫微斗數 | placement 卷二 states, postponed rather than refused: its subject is a year laid on a person, and what that would be handed over for has not been designed |
 | the per-palace readings and fu of 紫微斗數全書 | prose-verdict doctrine, declined on the ground 《果老星宗》 is declined on. What is carried is what the book names and weighs in one line: a brightness grade, a transformation |
 

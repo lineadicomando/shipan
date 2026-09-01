@@ -68,14 +68,19 @@ describe('the divergences in force', () => {
     expect(named).not.toContain('system');
   });
 
-  it('leave out the yuan where the method has already decided it', () => {
-    const chaibu = divergencesInForce('qimen', DEFAULT_OPTIONS).map((row) => row.parameter.id);
-    const zhirun = divergencesInForce('qimen', { ...DEFAULT_OPTIONS, method: 'zhirun' }).map(
-      (row) => row.parameter.id,
-    );
+  it('name the method under each of the three, and no yuan under any', () => {
+    // `yuan` was reported here as a divergence inside 拆補. It was not inside
+    // it: it was the seam between 拆補 and 茅山, and both are `method` values
+    // now. A board says which of the three cast it and nothing underneath.
+    // → `docs/history/40-the-default-was-maoshan.md`
+    for (const method of ['chaibu', 'zhirun', 'maoshan'] as const) {
+      const named = divergencesInForce('qimen', { ...DEFAULT_OPTIONS, method }).map(
+        (row) => row.parameter.id,
+      );
 
-    expect(chaibu).toContain('yuan');
-    expect(zhirun).not.toContain('yuan');
+      expect(named).toContain('method');
+      expect(named).not.toContain('yuan');
+    }
   });
 
   it('carry no other board\'s parameters, only its own and the layers\'', () => {

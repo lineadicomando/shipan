@@ -82,10 +82,11 @@ export const PATTERN_IDS = [
 
 /*
  * The school divergences used to be here too, as two lists — the methods a
- * form offers and the two readings of the yuan. They are in
- * `$lib/parameters`, with every other one, because what a form offers is now
- * read off a declaration rather than written per board: a list of two was
- * exactly as long as the day dunjia was the only board with a choice on it.
+ * form offers and the readings of the yuan, which turned out to be more
+ * methods. They are in `$lib/parameters`, with every other one, because what
+ * a form offers is now read off a declaration rather than written per board:
+ * a list of two was exactly as long as the day dunjia was the only board with
+ * a choice on it.
  */
 
 /** The eight outward directions. The centre faces none and is not offered. */

@@ -167,14 +167,14 @@ neither disputed.
   not a reading. It does not carry the note about an ambiguous local hour, or
   about the method. Call the drawing **after** the calculation and show both,
   or show the data alone.
-- **Two methods are implemented, and they are different schools.** Charts are
-  cast by 拆補 unless `method` chooses 置閏, whose ju follows the day's 符頭
-  and can belong to a term the Sun has not reached yet — the answer says
-  which. Never switch method between charts you are comparing, and never
-  present one method's chart as the other's. 茅山 is refused with
-  `METHOD_NOT_IMPLEMENTED` rather than silently substituted, because a chart
-  cast by the wrong method looks right and is not; if someone asks for it,
-  say it is not available.
+- **Three methods are implemented, and they are three schools.** Charts are
+  cast by 拆補, which reads the yuan off the day's 符頭, unless `method`
+  chooses one of the other two. 茅山 reads the same term and takes the yuan
+  from the instant that term began instead, which moves the ju about three
+  hours in five. 置閏 follows the 符頭 through whole blocks and its ju can
+  belong to a term the Sun has not reached yet — the answer says which. Never
+  switch method between charts you are comparing, and never present one
+  method's chart as the other's.
 - **The eight spirits are named three ways and the board says which.** The ring
   is the same ring under all three — same star, same gate, same stem, same
   palace — and what parts them is which fact names the fifth and sixth seats:
@@ -183,12 +183,6 @@ neither disputed.
   with 白虎 kept at the fifth seat (`baihu`). A fourth convention names them by
   what is being divined; it is refused here, because that is a licence to read
   and not a rule for laying, and you should not supply it either.
-- **拆補 itself splits in two, and `yuan` says which.** `term` counts the
-  three fives from the instant the term began; `futou` reads them off the
-  days, by where the day pillar stands in the fifteen-day cycle headed by 甲
-  and 己. They disagree on most days, both are held by schools that call
-  themselves 拆補, and the default is `term`. The same rule as above holds:
-  do not switch it between charts you are comparing.
 - **The centre is read somewhere else (寄宮).** It has no direction, no gate
   and no spirit, so the stem the ju puts there is read at its host — 坤 by
   default — and the host's palace says so with `lodged`. That palace therefore
@@ -498,7 +492,7 @@ GET /api/qimen?date=2024-06-15&time=14:00&locationId=1816670&latitude=39.8000&lo
 ```
 
 **A board's own parameter is written under the board's name** —
-`qimen.method`, `qimen.yuan`, `liuren.guiren`, `qizheng.luohou`,
+`qimen.method`, `qimen.spirits`, `liuren.guiren`, `qizheng.luohou`,
 `nianming.count` — because one query string is shared by every board and three
 of them declare a `yearBoundary` with different values. What stays bare is the
 layer under all of them, `trueSolarTime`, `yearBoundary` and `dayBoundary`, and

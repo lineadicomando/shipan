@@ -87,11 +87,10 @@ export function createServer(context: ToolContext = {}): McpServer {
         'and report their agreement: two schools of one art share nearly everything they are ' +
         'made of, so where they agree is the part neither disputed. ' +
         'Qi Men charts are cast by the chaibu method unless the method parameter chooses ' +
-        'zhirun; the two are different schools and lay out different charts from the same ' +
-        'instant, so never switch method between charts you are comparing. maoshan is not ' +
-        'implemented and is refused rather than silently substituted, because a chart cast by ' +
-        'the wrong method looks right and is not. Every other board has divergences of its ' +
-        'own with a declared default, and each names them in its own tool.',
+        'zhirun or maoshan; the three are different schools and lay out different charts from ' +
+        'the same instant — chaibu and maoshan disagree about three hours in five — so never ' +
+        'switch method between charts you are comparing. Every other board has divergences of ' +
+        'its own with a declared default, and each names them in its own tool.',
     },
   );
 

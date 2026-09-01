@@ -24,7 +24,7 @@ export interface Ju {
   number: number;
   /** The moment's third of its term or, under zhirun, of its block. */
   yuan: Yuan;
-  /** Days elapsed since the term began. It fixes the yuan under `term`. */
+  /** Days elapsed since the term began. It fixes the yuan under 茅山. */
   daysIntoTerm: number;
   /**
    * The term whose ju was taken. Under chaibu, always the term in force;
@@ -91,39 +91,51 @@ const FUTOU_CYCLE = 15;
  * This is the most divisive step in the whole art, and the parameter that
  * governs it is `method`.
  *
- * Under `chaibu` (拆補) the term is split into three parts of five days and
- * the ju is read off the term in force. The name means "split and patch", and
- * the patching is precisely this — the fifteen days of a term and the
- * sixty-day cycle of the days do not divide into one another, and rather than
- * carry the drift, this method re-divides the term each time.
+ * All three read the ju off a table that is the same table. What they part
+ * over is which term's row to read and which of its three cells.
  *
- * *Where the three parts are cut* is `yuan`, and the two schools that cut
- * them differently do not agree on most days. Under `term` the cut is made
- * from the exact instant the term began: first five days upper, next five
- * middle, the rest lower. Under `futou` it is made on the days themselves —
- * where the day pillar stands in the fifteen-day cycle headed by 甲 and 己 is
- * the yuan, and the term's own edge does not move it.
+ * Under `chaibu` (拆補) the ju is read off the term in force and the yuan off
+ * the **day**: the days run in five-day stretches headed by a 甲 or a 己 (the
+ * 符頭), and where the day pillar stands in that fifteen-day cycle is the
+ * yuan, whatever the term is doing. The name means "split and patch", and
+ * both halves of it are consequences of that — the fifteen days of a term and
+ * the sixty-day cycle of the days do not divide into one another, so a term
+ * opens on a part-spent yuan (拆) and closes with days over to make it up
+ * (補). **Read the yuan anywhere but off the 符頭 and there is nothing to
+ * split and nothing to patch**, which is why 拆補 has no second reading here.
  *
- * Under `zhirun` (置閏) the drift is carried instead of re-divided: the yuan
- * follows the day's futou through the sexagenary cycle, whole fifteen-day
- * blocks serve one term each, and the accumulated drift is paid off by a
- * repeated 芒種 or 大雪 block. The bookkeeping lives in `zhirun.ts`; the
- * moment carries it, and this function only reads the table with it. The
- * two methods therefore disagree not only on the yuan of a given day but,
- * around a term's edges, on which term's ju the day takes at all.
+ * Under `maoshan` (茅山) the 符頭 is not read at all. The cut is made from the
+ * exact instant the term began: sixty 時辰 upper, sixty middle, and the rest
+ * of the term lower. Its two edge cases both fall out of that sentence and
+ * need no branch — a term running longer than 180 時辰 keeps its 下元 to the
+ * end (劉文元's case 1, 唐頤's 取), and one running shorter has its 下元 cut
+ * where the next term opens (case 2, 舍). Nothing is repeated and nothing is
+ * skipped, which is the property the method was made for: 劉文元 gives the
+ * motive, and it is order rather than truth — the 拆補 「使人感到很零亂，十分
+ * 煩瑣」.
  *
- * `maoshan` (茅山) differs again. It is not implemented, and it is not
- * silently substituted: asking for it is an error rather than a chart that
- * looks right and is not.
+ * Under `zhirun` (置閏) the drift is neither re-divided nor absorbed but
+ * carried: the yuan follows the day's futou through the sexagenary cycle,
+ * whole fifteen-day blocks serve one term each, and the accumulated drift is
+ * paid off by a repeated 芒種 or 大雪 block. The bookkeeping lives in
+ * `zhirun.ts`; the moment carries it, and this function only reads the table
+ * with it. So it can disagree with the other two not only about the yuan of a
+ * day but, around a term's edges, about which term's ju the day takes at all.
+ *
+ * **茅山 was this engine's default for a whole phase, under the name 拆補.**
+ * It shipped as `yuan: 'term'`, declared a divergence inside 拆補; it is not
+ * one, and the parameter is gone. Over a tropical year of 時辰 the old default
+ * agrees with an outside 茅山 implementation 100 % of the time and with an
+ * outside 拆補 47.66 %. → `docs/history/40-the-default-was-maoshan.md`
  */
 export function determineJu(moment: Moment, options: ChartOptions): Ju {
-  // Before either branch, and for the yuan as well as for the method: both
-  // are read below by asking whether the value is the one this engine has a
-  // branch for, and a value it has never heard of would otherwise take the
-  // other branch rather than an error — which is how `yuan` came to answer an
-  // unrecognised reading with the term's, silently. The method keeps its own
-  // error code, which `CHART_PARAMETERS` records and this call honours.
-  requireImplemented(CHART_PARAMETERS, options, 'method', 'yuan', 'leap');
+  // Before any branch. Each is read below by asking whether the value is the
+  // one this engine has a branch for, and a value it has never heard of would
+  // otherwise take another branch rather than an error — which is how the
+  // retired `yuan` came to answer an unrecognised reading with the term's,
+  // silently. The method keeps its own error code, which `CHART_PARAMETERS`
+  // records and this call honours.
+  requireImplemented(CHART_PARAMETERS, options, 'method', 'leap');
 
   const daysIntoTerm = moment.julianDayUT - moment.solarTerm.julianDayUT;
 
@@ -145,15 +157,21 @@ export function determineJu(moment: Moment, options: ChartOptions): Ju {
     };
   }
 
-  // Two readings, and the term is the same under both: only where the yuan
-  // is read from differs. `futou` needs nothing but the day pillar's place in
-  // the sexagenary cycle, which the moment already carries — the same number
-  // `zhirun.ts` heads its blocks by, read the same way and for the same
-  // reason, so the two cannot drift apart.
+  // Two methods left, and the term in force is the same under both: only
+  // where the yuan is read from differs. 拆補 needs nothing but the day
+  // pillar's place in the sexagenary cycle, which the moment already carries
+  // — the same number `zhirun.ts` heads its blocks by, read the same way and
+  // for the same reason, so the two cannot drift apart.
+  //
+  // 茅山 needs the term's instant and the moment's and nothing else: no day
+  // pillar, no 符頭, no sexagenary cycle. Sixty 時辰 is five days exactly, so
+  // the block index is the elapsed days over five, and the `min` is the whole
+  // of both edge cases — it holds the 下元 open to the end of a long term, and
+  // the reset of `daysIntoTerm` at the next term cuts a short one's.
   const index =
-    options.yuan === 'futou'
-      ? Math.floor((moment.pillars.day.index % FUTOU_CYCLE) / 5)
-      : Math.min(2, Math.max(0, Math.floor(daysIntoTerm / 5)));
+    options.method === 'maoshan'
+      ? Math.min(2, Math.max(0, Math.floor(daysIntoTerm / 5)))
+      : Math.floor((moment.pillars.day.index % FUTOU_CYCLE) / 5);
   const entry = JU_TABLE[moment.solarTerm.term.id];
 
   return {

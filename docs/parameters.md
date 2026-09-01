@@ -169,7 +169,6 @@ dunjia's.**
 | Parameter | Values | Default |
 |---|---|---|
 | `method` | `chaibu` (拆補 chāibǔ), `zhirun` (置閏 zhìrùn), `maoshan` (茅山 máoshān) | `chaibu` |
-| `yuan` | `term`, `futou` (符頭 fútóu) — inside 拆補 | `term` |
 | `plate` | `zhuan` (轉盤 zhuànpán), `fei` (飛盤 fēipán) | `zhuan` |
 | `centreLodging` | `kun` (寄坤二), `dun` (陽遁寄二 · 陰遁寄八) | `kun` |
 | `system` | `shijia` (時家 shíjiā), later `rijia` (日家 rìjiā), `yuejia` (月家 yuèjiā), `nianjia` (年家 niánjiā) | `shijia` |
@@ -179,8 +178,23 @@ dunjia's.**
 | `earth` | where earth's season begins: `quarters` (the four closing months entire), `eighteen` (their last eighteen days) | `quarters` |
 | `centreTravel` | where the 值符 zhífú and the 值使 zhíshǐ are read when the count puts them on the centre: `stay` (lodged out to 坤, as 《御定奇門寶鑑》 has it), `travel` (in the fifth palace, as 《奇門遁甲金鏡寶鑑》 has it) | `stay` |
 
-`method` and `yuan` are the two most divisive and neither is optional. 茅山 has
-no reference at all and is refused.
+`method` is the most divisive parameter in the engine and it is not optional.
+All three values are computed, and 拆補 and 茅山 — which read the same term and
+part only over where the yuan is taken from — disagree about three hours in
+five.
+
+**There was a `yuan` beside it, and it was a method wearing another name.** It
+offered `term`, cutting the term into three fives from the instant it began,
+as a divergence *inside* 拆補; `term` was the default. It is not inside 拆補: it
+is 茅山, and 拆補 is what stops being itself the moment the 符頭 goes unread —
+劉文元 parts the two on that point and no other, 唐頤 says the method
+「打破了根據日干支符頭確定三元的規律」, and 神奇之門 defines 拆補 by both
+conditions at once, the three yuan inside the term *and* the 甲己 cycle. A 拆補
+with no 符頭 has nothing to split and nothing to patch. So the seam was a
+method boundary, the two values are two methods, and the parameter is gone
+rather than kept as a second way of saying `method`: an address carrying
+`qimen.yuan` is refused by name rather than answered under a school it did not
+choose. → [`docs/history/40-the-default-was-maoshan.md`](history/40-the-default-was-maoshan.md)
 
 ## The calendrical layer under every board
 
@@ -290,9 +304,14 @@ them decidable on that reading alone. A lineage's whole ten stems was being
 asked for, and that is a completeness test rather than the one this page
 states: the board changes, two practitioners hold opposite sides, and the size
 of the disagreement is not a question. **It is named for the cell and not for
-either school**, because two of them hold it and neither's table is here — the
-`futou` precedent, where a value names the rule that parts two schools of 拆補
-rather than one of them.
+either school**, because two of them hold it and neither's table is here.
+
+`futou` used to be cited here as the precedent for that — a value named for
+the rule rather than for a school. It is a precedent for the opposite lesson
+and is kept as one: naming a value after the rule that parts two schools is
+how a school comes to be filed as a divergence inside another, which is what
+happened to 茅山 and lasted a phase. Where the rule *is* the boundary, the
+value belongs to `method`.
 
 **`xiudu` gained `juxing`, and `gong` did not exist until the board was
 written.** Both are the same discovery arriving twice: the 宿度 and the 十二次

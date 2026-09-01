@@ -485,7 +485,9 @@ describe('the prompts for a board of 命', () => {
 
 describe('GET /api/qimen', () => {
   it('casts a chart from the query string alone', async () => {
-    const { status, body } = await call(qimen, MOMENT);
+    // 茅山, which is the school the verified reading of this instant belongs
+    // to. → `docs/history/40-the-default-was-maoshan.md`
+    const { status, body } = await call(qimen, `${MOMENT}&qimen.method=maoshan`);
     const answer = body as { qimen: { ju: unknown; palaces: unknown[] } };
 
     expect(status).toBe(200);
@@ -710,24 +712,24 @@ describe('GET /api/qimen', () => {
     });
   });
 
-  it('reads the yuan from the futou when the address asks', async () => {
+  it('casts 茅山 when the address asks', async () => {
     // 1999-01-06 stands in the middle of a futou stretch and in the first
-    // five days of 小寒: the term is the same under both readings and the
-    // yuan is not, which is exactly what this parameter governs.
+    // five days of 小寒: the term is the same under both methods and the yuan
+    // is not, which is the whole of what parts them.
     const at = 'date=1999-01-06&time=12:00&timezone=Asia/Shanghai&trueSolarTime=false';
     const ju = async (query: string) =>
       (
         (await call(qimen, query)).body as {
-          qimen: { ju: Record<string, unknown>; options: { yuan: string } };
+          qimen: { ju: Record<string, unknown>; options: { method: string } };
         }
       ).qimen;
 
-    expect((await ju(at)).ju).toMatchObject({ yang: true, number: 2, yuan: 'shang' });
+    expect((await ju(at)).ju).toMatchObject({ yang: true, number: 8, yuan: 'zhong' });
 
-    const futou = await ju(`${at}&qimen.yuan=futou`);
-    expect(futou.options.yuan).toBe('futou');
-    expect(futou.ju).toMatchObject({ yang: true, number: 8, yuan: 'zhong' });
-    expect(futou.ju['term']).toMatchObject({ id: 'xiaohan' });
+    const maoshan = await ju(`${at}&qimen.method=maoshan`);
+    expect(maoshan.options.method).toBe('maoshan');
+    expect(maoshan.ju).toMatchObject({ yang: true, number: 2, yuan: 'shang' });
+    expect(maoshan.ju['term']).toMatchObject({ id: 'xiaohan' });
   });
 
   /**
@@ -751,21 +753,28 @@ describe('GET /api/qimen', () => {
     }
   });
 
-  it('refuses a yuan it has never heard of', async () => {
-    const { status, body } = await call(qimen, `${MOMENT}&qimen.yuan=futuo`);
+  it('refuses a method it has never heard of', async () => {
+    const { status, body } = await call(qimen, `${MOMENT}&qimen.method=chaib`);
 
     expect(status).toBe(400);
     expect(body).toMatchObject({
       code: 'UNKNOWN_IDENTIFIER',
-      params: { parameter: 'qimen.yuan', value: 'futuo' },
+      params: { parameter: 'qimen.method', value: 'chaib' },
     });
   });
 
-  it('answers maoshan with a refusal, not a substitute', async () => {
-    const { status, body } = await call(qimen, `${MOMENT}&qimen.method=maoshan`);
+  it('no longer honours qimen.yuan, which named a method', async () => {
+    // It offered `term`, and `term` was 茅山 declared as a divergence inside
+    // 拆補. An address that still carries it is told no parameter is called
+    // that, rather than being answered under a school it did not choose.
+    // → `docs/history/40-the-default-was-maoshan.md`
+    const { status, body } = await call(qimen, `${MOMENT}&qimen.yuan=futou`);
 
-    expect(status).toBe(501);
-    expect(body).toMatchObject({ code: 'METHOD_NOT_IMPLEMENTED' });
+    expect(status).toBe(400);
+    expect(body).toMatchObject({
+      code: 'UNKNOWN_IDENTIFIER',
+      params: { parameter: 'qimen.yuan', value: 'futou' },
+    });
   });
 });
 
@@ -1056,8 +1065,9 @@ describe('GET /api/qimen/plate', () => {
     expect(english.text).toContain('Rest');
     expect(italian.text).toContain('Riposo');
     expect(english.text).toContain('休門');
-    // Down to the pillars along the top and the chief along the foot.
-    expect(english.text).toMatch(/chief Canopy 天蓬 — chief gate Rest 休門/);
+    // Down to the pillars along the top and the chief along the foot. Cast
+    // under the default, so the chief is the one 拆補 puts there.
+    expect(english.text).toMatch(/chief Pillar 天柱 — chief gate Shock 驚門/);
   });
 
   it('frames the drawing with the directions, in the language it was asked for', async () => {
@@ -1402,7 +1412,7 @@ describe('the address every board cites', () => {
       // somebody else's chart. The chart is the chart of its moment either
       // way, and the 年命 is written out in the transcript this link travels
       // inside — so the comparison below drops it from both sides.
-      reads: 'qimen.method=chaibu&qimen.yuan=futou&born=1990-06-01&gender=male',
+      reads: 'qimen.method=maoshan&born=1990-06-01&gender=male',
     },
     {
       id: 'liuren',

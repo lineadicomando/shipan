@@ -18,28 +18,28 @@ Four Pillars
   hour   Yin Water · Goat    癸未 guǐwèi
 
 Qi Men chart
-  ju               yang dun 9 · lower yuan 下元 xiàyuán
-  concealing 甲    Yin Earth 己 jǐ
-  chief            Canopy 天蓬 tiānpéng → centre 中 zhōng
-  chief gate       Rest 休門 xiūmén → north 坎 kǎn
+  ju                   yang dun 6 · upper yuan 上元 shàngyuán
+  concealing 甲 jiǎ    Yin Earth 己 jǐ
+  chief                Pillar 天柱 tiānzhù → southwest 坤 kūn
+  chief gate           Shock 驚門 jīngmén → west 兌 duì
 
 Nine palaces
   palace               earth               heaven
-  1 north 坎 kǎn       Yin Earth 己 jǐ     Yang Water 壬 rén
-  2 southwest 坤 kūn   Yang Metal 庚 gēng  Yin Earth 己 jǐ
+  1 north 坎 kǎn       Yang Water 壬 rén   Yang Metal 庚 gēng
+  2 southwest 坤 kūn   Yin Water 癸 guǐ    Yin Earth 己 jǐ
   …
-  The centre lodges in 2 southwest 坤 kūn, where its Yin Water 癸 guǐ is read.
+  The centre lodges in 2 southwest 坤 kūn, where its Yin Wood 乙 yǐ is read.
 
 What stands in each
   palace      star                   gate                spirit
-  1 坎 kǎn    Assistant 天輔 tiānfǔ  Rest 休門 xiūmén    Union 六合 liùhé
-  2 坤 kūn    Canopy 天蓬 tiānpéng   Death 死門 sǐmén    Chief 值符 zhífú
+  1 坎 kǎn    Charge 天任 tiānrèn    Rest 休門 xiūmén    Union 六合 liùhé
+  2 坤 kūn    Pillar 天柱 tiānzhù    Death 死門 sǐmén    Chief 值符 zhífú
   …
 
 How each of them stands
-  palace      star                              gate
-  1 坎 kǎn    resting · generated 生我 shēngwǒ  imprisoned · same phase 比和 bǐhé
-  2 坤 kūn    imprisoned · controlled 剋我 kèwǒ  supported · same phase 比和 bǐhé
+  palace      star                               gate
+  1 坎 kǎn    supported · controlling 我剋 wǒkè  imprisoned · same phase 比和 bǐhé
+  2 坤 kūn    dying · generated 生我 shēngwǒ     supported · same phase 比和 bǐhé
   …
 ```
 
@@ -259,8 +259,7 @@ from the first release. The Qi Men chart's, in brief:
 
 | | | default |
 |---|---|---|
-| `method` | 拆補 / 置閏 / 茅山 | `chaibu` |
-| `yuan` | under 拆補, the third of the term counted from the term or from the day's 符頭 | `term` |
+| `method` | 拆補 (the yuan from the day's 符頭) / 置閏 / 茅山 (the yuan from the term's first instant) | `chaibu` |
 | `plate` | 轉盤 / 飛盤 | `zhuan` |
 | `centreLodging` | the centre lodges in 坤, or in 坤 by yang dun and 艮 by yin | `kun` |
 | `trueSolarTime` | correct clock time to the Sun | `true` |
@@ -274,17 +273,16 @@ board, is [`docs/parameters.md`](docs/parameters.md).
 
 Two of these are worth knowing before reading any chart from here.
 
-**`chaibu` and `zhirun` are different schools, not approximations of one
-another.** Under 拆補 each term splits into three five-day thirds from the
-instant it begins; under 置閏 the yuan follows the day's 符頭 through whole
-fifteen-day blocks and the drift is paid off with an intercalated 芒種 or 大雪.
-Around a term's edges the two disagree about which term the ju belongs to, and
-occasionally about the dun itself. A zhirun chart names the term its ju was
-taken from.
-
-**`yuan` is a divergence inside 拆補, and it moves the ju on most days.**
-`term` counts the three fives from the instant the term began; `futou` reads
-them off the days instead. Both are held by schools that name themselves 拆補.
+**The three methods are three schools, not approximations of one another.**
+拆補 reads the ju off the term in force and the yuan off the day, by where the
+day pillar stands in the fifteen-day cycle headed by 甲 and 己 — the 符頭. 茅山
+reads the same term and ignores the day: it counts five days from the instant
+the term began, five more, and gives the rest of the term to the third yuan.
+The two disagree about three hours in five. 置閏 follows the 符頭 through whole
+fifteen-day blocks instead and pays the drift off with an intercalated 芒種 or
+大雪, so around a term's edges it can disagree with both about which term the
+ju belongs to, and occasionally about the dun itself. A zhirun chart names the
+term its ju was taken from.
 
 An unimplemented value raises `METHOD_NOT_IMPLEMENTED` or
 `OPTION_NOT_IMPLEMENTED` rather than being silently substituted, because a

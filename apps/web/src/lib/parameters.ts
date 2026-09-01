@@ -53,17 +53,16 @@ export interface Divergence {
   /**
    * A line under the control, per value, saying what standing there does.
    *
-   * Keyed by value because that is how the engine declares it: 符頭 has a
-   * consequence worth stating where the term has none, and the two methods
-   * point at one caution between them.
+   * Keyed by value because that is how the engine declares it: the three
+   * methods point at one caution between them, and most values need none.
    */
   readonly notes?: Readonly<Record<string, MessageKey>>;
   /**
    * A divergence *inside* another one, shown only where that one stands on a
-   * value — the engine's `inside`, and doctrine rather than layout: the yuan
-   * divides 拆補, so under 置閏 the third of the term is the 符頭's because
-   * that is what the method is, and a control that changed nothing would read
-   * as a choice where none is left.
+   * value — the engine's `inside`, and doctrine rather than layout: `leap`
+   * divides 置閏, so under 拆補 and under 茅山 there is no repeated block to
+   * place, and a control that changed nothing would read as a choice where
+   * none is left.
    */
   readonly inside?: { readonly id: string; readonly value: string };
 }
@@ -80,22 +79,15 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'method',
     board: 'qimen',
     values: ['chaibu', 'zhirun', 'maoshan'],
-    implemented: ['chaibu', 'zhirun'],
+    implemented: ['chaibu', 'zhirun', 'maoshan'],
     fallback: 'chaibu',
     label: 'form.qimen.method',
-    says: { chaibu: 'form.qimen.method.chaibu', zhirun: 'form.qimen.method.zhirun' },
-    notes: { chaibu: 'cli.note.method', zhirun: 'cli.note.method' },
-  },
-  {
-    id: 'yuan',
-    board: 'qimen',
-    values: ['term', 'futou'],
-    implemented: ['term', 'futou'],
-    fallback: 'term',
-    label: 'form.qimen.yuan',
-    says: { term: 'form.qimen.yuan.term', futou: 'form.qimen.yuan.futou' },
-    notes: { futou: 'cli.note.yuanFutou' },
-    inside: { id: 'method', value: 'chaibu' },
+    says: {
+      chaibu: 'form.qimen.method.chaibu',
+      zhirun: 'form.qimen.method.zhirun',
+      maoshan: 'form.qimen.method.maoshan',
+    },
+    notes: { chaibu: 'cli.note.method', zhirun: 'cli.note.method', maoshan: 'cli.note.method' },
   },
   {
     id: 'plate',

@@ -1295,7 +1295,9 @@ export const en = {
   'form.pillars.dayBoundary.zishi': 'at the hour of the Rat 子時 zǐshí, 23:00',
   'form.pillars.dayBoundary.midnight': 'at midnight, 00:00',
   'form.qimen.method': 'The ju is determined',
-  'form.qimen.method.chaibu': 'by thirds of the term: 拆補 chāibǔ',
+  'form.qimen.method.chaibu': 'from the day, by five-day stretches: 拆補 chāibǔ',
+  'form.qimen.method.maoshan':
+    'from the term’s first instant, by five-day stretches: 茅山 máoshān',
   'form.qimen.method.zhirun': 'by whole blocks, with the leap: 置閏 zhìrùn',
   // The three readings of the ring of eight. They part at two seats and only
   // in the name — same star, same gate, same stem, same palace — so the label
@@ -1316,9 +1318,6 @@ export const en = {
     'at 坤 kūn, which is the palace the centre lodges in: 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.centreTravel.travel':
     'in the central palace itself: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
-  'form.qimen.yuan': 'Under chaibu, the third of the term is counted',
-  'form.qimen.yuan.term': 'from the instant the term began',
-  'form.qimen.yuan.futou': 'from the day, by five-day stretches: 符頭 fútóu',
   'form.gender': 'Sex — only the direction of the luck cycles depends on it',
   'form.gender.unset': 'not given',
   'form.gender.male': 'male',
@@ -1661,7 +1660,6 @@ export const en = {
   'notes.noParameters':
     'This layer has no divergence of its own: it is computed entirely from the calendrical layer, and the parameters that move it are the ones listed above.',
   'notes.parameter.method': 'How the ju is established.',
-  'notes.parameter.yuan': 'Where the third of the term is counted from, under 拆補 chāibǔ.',
   'notes.parameter.plate': 'How the heaven plate is derived.',
   'notes.parameter.centreLodging':
     'Where the centre lodges, having no direction, no gate and no spirit of its own.',
@@ -2563,8 +2561,6 @@ export const en = {
   'cli.value.turns': '{count} (turns of the year pillar)',
   'cli.value.leapTerm': 'intercalated {term}',
 
-  'cli.note.yuanFutou':
-    'The yuan is read from the day’s place in the fifteen-day futou cycle, not from the instant the term began. It is a divergence inside chaibu, and it moves the ju on most days.',
   'cli.note.method':
     'Cast by the {method} method. Other schools lay out other charts from the same instant.',
 

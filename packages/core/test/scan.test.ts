@@ -21,6 +21,17 @@ const BEIJING: Place = { latitude: 39.9075, longitude: 116.3972, timezone: 'Asia
 const ROME: Place = { latitude: 41.9028, longitude: 12.4964, timezone: 'Europe/Rome' };
 const CLOCK: ChartOptions = { ...DEFAULT_OPTIONS, trueSolarTime: false, dayBoundary: 'midnight' };
 
+/**
+ * 茅山, and the two tests that use it could not be written any other way.
+ *
+ * A yuan that turns *inside* a double hour is a thing only this method does:
+ * under 拆補 and under 置閏 the yuan is the day's, read off the 符頭, so it can
+ * only ever turn where a day turns. 茅山 counts sixty 時辰 from the instant the
+ * term began, and that instant is wherever the Sun put it.
+ * → `docs/history/40-the-default-was-maoshan.md`
+ */
+const MAOSHAN: ChartOptions = { ...CLOCK, method: 'maoshan' };
+
 function scan(
   from: string,
   to: string,
@@ -113,7 +124,7 @@ describe('scanCharts', () => {
     const opensADoubleHour = turns.hour % 2 === 1 && turns.minute === 0 && turns.second === 0;
     expect(opensADoubleHour).toBe(false);
 
-    const runs = scan('2026-09-02T09:00', '2026-09-02T11:00');
+    const runs = scan('2026-09-02T09:00', '2026-09-02T11:00', BEIJING, MAOSHAN);
 
     expect(runs).toHaveLength(2);
     // The hour pillar holds across the split. The ju is what changed.
@@ -131,7 +142,7 @@ describe('scanCharts', () => {
     // not one, and each must open a run of its own. A single bisection would
     // report 11:00–13:00 under the chart of 10:19, which no instant of those
     // two hours holds.
-    const runs = scan('2026-09-02T09:00', '2026-09-02T15:00');
+    const runs = scan('2026-09-02T09:00', '2026-09-02T15:00', BEIJING, MAOSHAN);
 
     expect(runs.map((run) => run.chart.moment.pillars.hour.hanzi)).toEqual([
       '己巳',
@@ -151,8 +162,8 @@ describe('scanCharts', () => {
       }).format(middle);
       const [date, time] = clock.split(' ') as [string, string];
       const direct = computeQimenChart(
-        resolveMoment({ date, time, timezone: BEIJING.timezone }, BEIJING, CLOCK, context),
-        CLOCK,
+        resolveMoment({ date, time, timezone: BEIJING.timezone }, BEIJING, MAOSHAN, context),
+        MAOSHAN,
       );
 
       expect(run.chart.moment.pillars.hour.hanzi).toBe(direct.moment.pillars.hour.hanzi);

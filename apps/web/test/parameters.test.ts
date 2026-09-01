@@ -118,15 +118,21 @@ describe('what a form offers', () => {
   });
 
   /**
-   * The dependency between two of them, which is doctrine and not layout: the
-   * yuan is a divergence inside 拆補, and under 置閏 there is nothing left to
-   * choose.
+   * The dependency between two of them, which is doctrine and not layout:
+   * `leap` says where 置閏 repeats its block, and under 拆補 or 茅山 there is
+   * no block to place.
+   *
+   * `yuan` used to be the case asserted here, declared inside 拆補. It was
+   * not inside it — it was the seam between 拆補 and 茅山 — and both are
+   * `method` values now.
+   * → `docs/history/40-the-default-was-maoshan.md`
    */
   it('hides a divergence whose method has been left behind', () => {
-    const yuan = DIVERGENCES.find((row) => row.id === 'yuan');
-    expect(yuan?.inside).toEqual({ id: 'method', value: 'chaibu' });
-    expect(shown(yuan!, { 'qimen.method': 'chaibu' })).toBe(true);
-    expect(shown(yuan!, { 'qimen.method': 'zhirun' })).toBe(false);
+    const leap = DIVERGENCES.find((row) => row.id === 'leap');
+    expect(leap?.inside).toEqual({ id: 'method', value: 'zhirun' });
+    expect(shown(leap!, { 'qimen.method': 'zhirun' })).toBe(true);
+    expect(shown(leap!, { 'qimen.method': 'chaibu' })).toBe(false);
+    expect(shown(leap!, { 'qimen.method': 'maoshan' })).toBe(false);
   });
 
   /**
@@ -165,16 +171,17 @@ describe('what a form offers', () => {
   });
 
   it('reads what an address says and writes back only what was moved', () => {
-    const asked = new URLSearchParams('qimen.yuan=futou&dayBoundary=midnight');
+    const asked = new URLSearchParams('qimen.method=maoshan&dayBoundary=midnight');
     const chosen = readChosen(asked, 'qimen');
 
-    expect(chosen['qimen.yuan']).toBe('futou');
-    expect(chosen['qimen.method']).toBe('chaibu');
+    expect(chosen['qimen.method']).toBe('maoshan');
     expect(chosen['dayBoundary']).toBe('midnight');
+    // Untouched, and it reads as the declared default rather than as absent.
+    expect(chosen['yearBoundary']).toBe('lichun');
 
     // The engine's own answers stay out of the address, as every other field
     // here does: the plainest question keeps the plainest address.
-    expect(chosenFields(chosen)).toEqual({ 'qimen.yuan': 'futou', dayBoundary: 'midnight' });
+    expect(chosenFields(chosen)).toEqual({ 'qimen.method': 'maoshan', dayBoundary: 'midnight' });
   });
 
   it('leaves a board’s own behind when the reader crosses to another', () => {
@@ -212,7 +219,7 @@ describe('what a laid board stands on', () => {
     const bags: Readonly<Record<string, unknown>>[] = [
       {},
       { method: 'zhirun' },
-      { method: 'chaibu', yuan: 'futou' },
+      { method: 'maoshan' },
       { guiren: 'wei' },
       { luohou: 'ascending' },
       { yearBoundary: 'lichun' },

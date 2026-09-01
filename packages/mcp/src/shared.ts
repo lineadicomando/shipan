@@ -212,16 +212,10 @@ export const optionSchema = {
     .optional()
     .describe('Where the year of the pillars begins. Default lichun.'),
   method: z
-    .enum(['chaibu', 'zhirun'])
+    .enum(['chaibu', 'zhirun', 'maoshan'])
     .optional()
     .describe(
-      'How the ju of a Qi Men chart is determined. Default chaibu, which splits each term into three five-day thirds from the instant it begins. zhirun follows the day\'s futou through whole fifteen-day blocks and pays the drift off with an intercalated Mangzhong or Daxue; its ju can belong to a term the Sun has not reached yet, and the answer says which. The two are different schools, not approximations of one another. Does not affect the Four Pillars.',
-    ),
-  yuan: z
-    .enum(['term', 'futou'])
-    .optional()
-    .describe(
-      'Under chaibu, where the third of the term is counted from. Default term, counting from the instant the term began. futou counts from the days instead: where the day pillar stands in the fifteen-day cycle headed by Jia and Ji is the yuan, whatever the term is doing. A divergence inside chaibu, and it moves the ju on most days. No bearing under zhirun, where the yuan is the futou\'s by construction. Does not affect the Four Pillars.',
+      'How the ju of a Qi Men chart is determined, and the most divisive choice in the art. Default chaibu, which reads the ju off the term in force and the yuan off the day: the days run in five-day stretches headed by Jia or Ji (the futou), and where the day pillar stands in that fifteen-day cycle is the yuan. maoshan does not read the day at all — it counts sixty shichen from the instant the term began, then sixty more, and gives the rest of the term to the third yuan. zhirun follows the day\'s futou through whole fifteen-day blocks and pays the drift off with an intercalated Mangzhong or Daxue; its ju can belong to a term the Sun has not reached yet, and the answer says which. Three different schools, not three approximations of one another: chaibu and maoshan disagree about three hours in five. Does not affect the Four Pillars.',
     ),
   shensha: z
     .enum(['xieji'])
@@ -247,8 +241,7 @@ interface RawInput {
   true_solar_time?: boolean | undefined;
   day_boundary?: 'zishi' | 'midnight' | undefined;
   year_boundary?: 'lichun' | 'chunjie' | undefined;
-  method?: 'chaibu' | 'zhirun' | undefined;
-  yuan?: 'term' | 'futou' | undefined;
+  method?: 'chaibu' | 'zhirun' | 'maoshan' | undefined;
   shensha?: 'xieji' | undefined;
   born?: string | undefined;
   born_time?: string | undefined;
@@ -287,7 +280,6 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.day_boundary) options.dayBoundary = raw.day_boundary;
   if (raw.year_boundary) options.yearBoundary = raw.year_boundary;
   if (raw.method) options.method = raw.method;
-  if (raw.yuan) options.yuan = raw.yuan;
   if (raw.shensha) options.shensha = raw.shensha;
 
   const ephemeris: EphemerisContext = initEphemeris(context.ephemerisPath);

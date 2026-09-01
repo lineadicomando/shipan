@@ -419,7 +419,7 @@ export function readOptions(params: URLSearchParams): ChartOptions {
   // `requireImplemented` and comes back a 501 saying so by name.
   //
   // The list is `DIVERGENCES`, not a copy of it: this used to name `method`
-  // and `yuan` by hand and read neither `plate` nor `system` nor
+  // and the retired `yuan` by hand and read neither `plate` nor `system` nor
   // `centreLodging` at all, so an address asking for 飛盤 was answered with a
   // 轉盤 chart and nothing said otherwise — a value substituted in silence,
   // which is the one thing `docs/parameters.md` says may never happen.
@@ -435,6 +435,24 @@ export function readOptions(params: URLSearchParams): ChartOptions {
     // been checked against the declaration on the line above, and an options
     // type is keyed to its own board so that the declaration cannot drift.
     (options as unknown as Record<string, unknown>)[row.id] = asked;
+  }
+
+  // **A `qimen.` name nobody declares is refused, not ignored.** The loop
+  // above reads the declaration and passes over everything else, which is the
+  // right behaviour for a stray field and the wrong one for a parameter that
+  // used to exist: `qimen.yuan=futou` would have been dropped in silence and
+  // the chart answered under 茅山, which is what that address was written to
+  // avoid. A parameter that retires takes its addresses with it, and says so.
+  // → `docs/history/40-the-default-was-maoshan.md`
+  const declared = new Set(
+    DIVERGENCES.filter((row) => row.board === 'qimen').map((row) => wire(row)),
+  );
+  for (const name of params.keys()) {
+    if (!name.startsWith('qimen.') || declared.has(name)) continue;
+    throw new ChartError('UNKNOWN_IDENTIFIER', {
+      parameter: name,
+      value: params.get(name) as string,
+    });
   }
 
   // The almanac's register is bare, like the pillars' three and unlike a
