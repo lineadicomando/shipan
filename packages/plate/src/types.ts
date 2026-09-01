@@ -358,7 +358,7 @@ export interface PlateOptions {
 export interface PlateQizheng {
   /** The seven, in the transmitted order 日月水金火木土. */
   governors: readonly PlatePlacement[];
-  /** Three of the four, on every board this engine draws. See `remainders` in the labels. */
+  /** Three of the four, or four where 紫氣 was asked for. See `remainders` in the labels. */
   remainders: readonly PlatePlacement[];
   minggong: {
     palace: { hanzi: string; index: number };
@@ -374,9 +374,17 @@ export interface PlateQizheng {
 
 export interface PlatePlacement {
   body: { hanzi: string; id: string; element?: string | undefined; pinyin?: string | undefined };
-  /** The 宿 it fell in, and how far past that 宿's 距星 it stands. */
-  lodge: { hanzi: string; id: string; pinyin?: string | undefined };
-  lodgeDegree: number;
+  /**
+   * The 宿 it fell in, and how far past that 宿's 距星 it stands.
+   *
+   * **Absent together, and only for 紫氣**, whose rule gives a palace and no
+   * degree: a lodge is a stretch of about thirteen degrees inside a palace of
+   * thirty, so a body known to the palace is not known to the lodge. The row
+   * leaves both slots empty and the note under the ring says why. See
+   * `PalacePlacement` in core.
+   */
+  lodge?: { hanzi: string; id: string; pinyin?: string | undefined } | undefined;
+  lodgeDegree?: number | undefined;
   /** The palace of the ring. `index` seats it; the drawing writes its own branch. */
   palace: { hanzi: string; index: number };
   /** 順 or 逆, as an identifier the caller has a word for. */
@@ -396,7 +404,7 @@ export interface PlateQizhengLabels {
   motion?: Record<string, string>;
   /** A word for what the middle of the ring holds, e.g. «palace of the life». */
   minggong?: string;
-  /** The line saying the board carries three remainders and why not four. */
+  /** The line saying how many remainders the board carries, and what that is worth. */
   remainders?: string;
   /** The line saying the 宿 begin at their determinative stars and not at a table. */
   frame?: string;

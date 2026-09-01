@@ -574,7 +574,12 @@ export function qizhengReadingPrompt(
     `- ${t('prompt.ming.configuration')}`,
     `- ${t('prompt.qizheng.houses')}`,
     `- ${t('prompt.ming.time')}`,
-    `- ${t('prompt.qizheng.remainders')}`,
+    // Which remainder rule the model is given follows the board it was handed,
+    // not the option that produced it: a prompt saying three are printed above
+    // a board carrying four is a prompt a model will resolve by guessing.
+    `- ${t(board.remainders.some((one) => one.body.id === 'ziqi')
+      ? 'prompt.qizheng.ziqi'
+      : 'prompt.qizheng.remainders')}`,
     `- ${t('prompt.qizheng.noScore')}`,
     `- ${t('prompt.ming.limits')}`,
     `- ${t('prompt.ming.noRecital')}`,

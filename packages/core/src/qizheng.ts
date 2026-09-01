@@ -61,15 +61,18 @@ export interface QizhengOptions {
    * Whether 紫氣 enters, and by which transmission.
    *
    * `off` is the default and the output then says it carries 三餘, which is
-   * the honest count. The refusal is not for want of a rule: the rate is
-   * settled at one circuit in twenty-eight years, and 《張果星宗》 卷八 and
-   * 《三辰通載》 both give a procedure with its epoch constant. It is that
-   * 紫氣 has no referent, so nothing weighs the constant. Calibrate that same
-   * table at 1300 and run it forward: its 羅睺 is still good to 0.25° in 2026
-   * and its 月孛 is 69° out, because one 大數 is 0.01 % off and the other
-   * 0.20 %. 紫氣's could be either and the only test is a position in the sky
-   * to check against. The error is unbounded in principle rather than merely
-   * unknown, which no better source can mend. See `docs/sources.md` § 四餘.
+   * the honest count. `yinianyisu` places it, **and places it as a palace**:
+   * one circuit in twenty-eight years from 《張果星宗》's 大數 10228, carried
+   * from 《星度指南》's 1886 board, which prints a palace and not a degree. See
+   * `ZIQI_DASHU` and `ZIQI_ANCHOR` for both and what each is worth.
+   *
+   * **Why the default is still `off`.** Each half of the placement stands on
+   * one text — the rate on a work that contradicts itself between its 算法 and
+   * its 總論, the anchor on a single plate — and nothing weighs the 大數 for
+   * 紫氣 itself, its two checkable siblings in the same table erring by 0.01 %
+   * and 0.20 %. That is rung 5 twice over, which this engine ships elsewhere
+   * and does not switch on for somebody. What would move the default is a
+   * second dated chart with 炁 on it. See `docs/sources.md` § 四餘.
    */
   ziqi: 'off' | 'yinianyisu';
 
@@ -313,30 +316,68 @@ export interface HouseSeat {
   ci: Ci;
 }
 
+/**
+ * A palace of the ring and nothing finer, which is all some rules give.
+ *
+ * 立命 by 加時 gives this and so does 紫氣, for opposite reasons: the first
+ * because counting hours around a ring of twelve cannot produce a thirteenth
+ * thing, the second because the one board it is anchored to prints a palace.
+ * Both are the honest whole of what their rule states.
+ */
+export interface PalaceStanding {
+  /** The palace of the ring, as a branch. */
+  palace: Branch;
+  /** That palace under its own name. */
+  ci: Ci;
+}
+
 /** Where something stands, said in both of the frames the board uses. */
-export interface Standing {
+export interface Standing extends PalaceStanding {
   /** Apparent geocentric ecliptic longitude, degrees from the equinox. */
   longitude: number;
   /** The 宿 it falls in. */
   lodge: Lodge;
   /** 入宿度 — degrees past that 宿's 距星. */
   lodgeDegree: number;
-  /** The palace of the ring, as a branch. */
-  palace: Branch;
-  /** That palace under its own name. */
-  ci: Ci;
   /** 宮度 — degrees into the palace, 0 to 30. */
   palaceDegree: number;
 }
 
-/** One of the eleven, placed. */
-export interface Placement extends Standing {
+/** What every placement carries, however finely it is known. */
+interface Placed {
   body: QizhengBody;
   /** Degrees a day of ecliptic longitude, signed. */
   speed: number;
   /** 順 or 逆, which is the sign of `speed` and nothing more. */
   motion: MotionId;
 }
+
+/** One of the eleven, placed to a degree because the sky was asked. */
+export interface DegreePlacement extends Standing, Placed {
+  resolution: 'degree';
+}
+
+/**
+ * One of the eleven, placed to a palace because that is all its rule gives.
+ *
+ * 紫氣 alone, and the missing fields are the point rather than an omission to
+ * be filled in later. Its longitude is known modulo the resolution of the one
+ * board that anchors it — 《星度指南》's 1886 chart puts 炁 in 巳宮 and no finer
+ * — so a 入宿度 computed from it would be a number this engine invented. See
+ * `ziqiLongitude`.
+ */
+export interface PalacePlacement extends PalaceStanding, Placed {
+  resolution: 'palace';
+}
+
+/**
+ * One of the eleven, placed.
+ *
+ * The discriminant is not decoration: a surface that prints `placement.lodge`
+ * without asking which kind it has will not compile, which is the only way a
+ * ±15° quantity stays out of a column of two-decimal degrees.
+ */
+export type Placement = DegreePlacement | PalacePlacement;
 
 export interface QizhengBoard {
   /** The instant the sky was asked about, as a Julian Day in UT. */
@@ -373,6 +414,66 @@ export function lodgeBoundaries(
 ): readonly number[] {
   return LODGES.map((lodge) =>
     starLongitude(DETERMINATIVE_STARS[lodge.id], julianDayUT, context),
+  );
+}
+
+/**
+ * 紫氣's 大數 — one circuit in 10228 days, which is 28.00 years of 365.25 days.
+ *
+ * 《張果星宗》's 紫氣筭法 炁星篇, read on the plate at 古今圖書集成 藝術典 卷580:
+ * 「置積日減一千二百八十八。以一萬二百二十八大數除之 … 平行：一日行三分五十七
+ * 秒」. The scheme closes on itself — 10228 × 10 ⁄ 280 = 365.29 度, a circle, and
+ * ¹⁄₂₈ 度 a day is the 三分五十七秒 printed — and it is 一年一宿 stated
+ * arithmetically, which is where this parameter's value takes its name.
+ *
+ * **The same work says twenty-nine two columns further on**, in a 總論 that
+ * belongs with the round-number 星曜行度 table where 月孛 is «nine» for 8.85
+ * and the nodes «eighteen» for 18.6. That layer is gradeable, because two of
+ * the four remainders have a referent: propagated from 1886 to 2026 its 月孛
+ * misses by 98° and its nodes by 87°, against 11.4° and 0.2° for the 大數 of
+ * the same bodies. The computational layer is taken for all four, which is
+ * what this engine already does for the three it places from an ephemeris.
+ * A layer is not a lineage, so the twenty-nine is a divergence recorded in
+ * `docs/sources.md` § 四餘 and not a second value of `ziqi`.
+ */
+const ZIQI_DASHU = 10228;
+
+/** 360° ⁄ 10228 d = 0.0352 °/d, prograde. 紫氣 never stations and never turns. */
+const ZIQI_SPEED = 360 / ZIQI_DASHU;
+
+/**
+ * The dated position the rate is carried from, and what it is worth.
+ *
+ * A linear rule is fixed by a rate and any one dated position; the 積日 origin
+ * the printed procedure asks for is what the *procedure* needs and not what
+ * the placement needs, and inverting the two checkable rules for it does not
+ * recover it — see `docs/sources.md` § 四餘 for the moduli argument.
+ *
+ * 曹仁麟's 《星度指南》 (1941) 第七篇 works a chart for 光緒丙戌年十月十一日寅時
+ * — 1886-11-06, whose four pillars and lunar date this engine reproduces — and
+ * puts 炁 in 巳宮, which is [150°, 180°). **The board certifies itself on the
+ * three remainders that can be checked**: it puts 羅 and 孛 in 亥 and 計 in 巳
+ * where this engine computes 亥 3.55°, 亥 9.16° and 巳 3.55°.
+ *
+ * `longitude` is the middle of that palace and not a reading: the anchor is
+ * worth ±15°, the hour is worth 0.003° at this rate and so does not matter,
+ * and a placement carried from here is a palace. Nothing weighs the 大數
+ * itself, its two checkable siblings erring by 0.01 % and 0.20 %, and that
+ * residue is the reason `off` is still the default.
+ */
+const ZIQI_ANCHOR = { julianDay: 2410216.3438, longitude: 165 };
+
+/**
+ * 紫氣's mean longitude at an instant, which is only ever read as a palace.
+ *
+ * Exported because the tests walk it — a circuit of 10228 days must return the
+ * same degree — and for no other reason: a
+ * caller wanting a position takes the board, where the type says what the
+ * number is worth.
+ */
+export function ziqiLongitude(julianDayUT: number): number {
+  return mod360(
+    ZIQI_ANCHOR.longitude + (360 * (julianDayUT - ZIQI_ANCHOR.julianDay)) / ZIQI_DASHU,
   );
 }
 
@@ -429,11 +530,12 @@ export function qizhengBoard(
 
   const { julianDay, hour } = request;
   const boundaries = lodgeBoundaries(julianDay, context);
-  const place = (body: QizhengBody, longitude: number, speed: number): Placement => ({
+  const place = (body: QizhengBody, longitude: number, speed: number): DegreePlacement => ({
     ...standingOf(longitude, boundaries),
     body,
     speed,
     motion: speed < 0 ? 'ni' : 'shun',
+    resolution: 'degree',
   });
 
   const governors = GOVERNORS.map(({ body, ...named }) => {
@@ -450,16 +552,31 @@ export function qizhengBoard(
   const luohouLongitude = options.luohou === 'ascending' ? node.longitude : descending;
   const jiduLongitude = options.luohou === 'ascending' ? descending : node.longitude;
 
-  const remainders = [
+  const remainders: Placement[] = [
     place(REMAINDERS.luohou, luohouLongitude, node.speed),
     place(REMAINDERS.jidu, jiduLongitude, node.speed),
     place(REMAINDERS.yuebei, apogee.longitude, apogee.speed),
   ];
 
+  // 紫氣 enters last and enters as a palace. `off` is the default, so a board
+  // that carries it was asked for it, and the count the surfaces print — 三餘
+  // or 四餘 — follows this array rather than a constant.
+  if (options.ziqi === 'yinianyisu') {
+    const palace = palaceOfLongitude(ziqiLongitude(julianDay));
+    remainders.push({
+      body: REMAINDERS.ziqi,
+      palace,
+      ci: CI[palace.index] as Ci,
+      speed: ZIQI_SPEED,
+      motion: 'shun',
+      resolution: 'palace',
+    });
+  }
+
   // 立命: the hour of the birth is laid on the palace the Sun stands in, and
   // the palaces are counted forward from there to 卯. What 卯 lands on is the
   // 命宮 — a palace, and no degree, which is the whole of what the rule gives.
-  const sun = governors[0] as Placement;
+  const sun = governors[0] as DegreePlacement;
   const steps = mod12(BRANCHES[3]!.index - hour.index);
   const minggongPalace = BRANCHES[mod12(sun.palace.index + steps)] as Branch;
 

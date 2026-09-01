@@ -59,8 +59,18 @@
               {t(`label.qizheng.${one.body.id}` as MessageKey)}
               <span class="glyph">{glyph(one.body)}</span>
             </th>
-            <td>{glyph(one.lodge)} <span class="deg">{degrees(one.lodgeDegree)}</span></td>
-            <td>{glyph(one.ci)} <span class="deg">{degrees(one.palaceDegree)}</span></td>
+            <!--
+              紫氣 is placed to a palace and to no degree, so its two degree
+              cells stay empty rather than carrying a figure the engine would
+              have had to invent. The line under the table says so.
+            -->
+            {#if one.resolution === 'palace'}
+              <td></td>
+              <td>{glyph(one.ci)}</td>
+            {:else}
+              <td>{glyph(one.lodge)} <span class="deg">{degrees(one.lodgeDegree)}</span></td>
+              <td>{glyph(one.ci)} <span class="deg">{degrees(one.palaceDegree)}</span></td>
+            {/if}
             <td class="way">
               {t(`label.motion.${one.motion}` as MessageKey)}
               <span class="glyph">{one.motion === 'ni' ? '逆 nì' : '順 shùn'}</span>

@@ -268,13 +268,20 @@ neither disputed.
   卷二 against later lineages, not errors. And a seat named 妻妾 is a **name
   and not an assignment**: which theme is read from which seat is the reader's
   act, said aloud as it is made.
-- **The 七政四餘 board carries three remainders and not four.** 紫氣 is a
-  table rather than a body, and a rule for it does exist. What does not is any
-  way to check the rule, since checking means comparing against a position in
-  the sky and 紫氣 has none; the two remainders in the same table that can be
-  checked come out 0.25° and 69° wrong over the same span. So it is omitted
-  rather than invented. If someone asks where 紫氣 is, the answer is that this
-  engine will not say, not that it is somewhere in particular.
+- **The 七政四餘 board carries three remainders unless the fourth was asked
+  for, and the fourth is worth less than the three.** 紫氣 is a table rather
+  than a body — the tradition says so itself, 在天無象, it has no figure in the
+  heavens — so nothing in the sky weighs its constant, where the two
+  remainders in the same table that can be weighed err by 0.01 % and 0.20 %.
+  It is off by default. Where `ziqi: yinianyisu` was passed it is on the
+  board, **placed to a palace and to no degree**: read it in that palace,
+  quote no degree for it and name no lodge, since a lodge is a stretch of some
+  thirteen degrees inside a palace of thirty and the rule does not reach that
+  far. Say, if you use it, that its rate stands on one work and its position
+  on one board of 1886, where the other three are computed from an ephemeris.
+  If someone asks where 紫氣 is on a board that does not carry it, the answer
+  is that this engine was not asked to place it, not that it is somewhere in
+  particular.
 - **The 宿 boundaries are stars, not a table.** They are the 距星 placed at
   the instant of the chart, so they move with precession and match no printed
   table exactly. Do not attribute them to 《時憲曆》 or to 《授時曆》; those are

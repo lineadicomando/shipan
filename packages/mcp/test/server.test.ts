@@ -90,9 +90,12 @@ describe('what the server offers', () => {
     expect(byName.get('compute_liuren')).toMatch(/not for a birth/i);
     expect(byName.get('compute_liuren')).toMatch(/does not choose the 用神/i);
     // The three things a model reading a 七政四餘 board gets confidently
-    // wrong: counting four remainders, reading 羅睺 as Rahu, and taking the
-    // lodge boundaries for a published table.
-    expect(byName.get('compute_qizheng')).toMatch(/three remainders, not\s+\*\*four\*\*|three remainders, not/i);
+    // wrong: counting the remainders, reading 羅睺 as Rahu, and taking the
+    // lodge boundaries for a published table. The fourth remainder can now be
+    // asked for, so what the description owes a model is the count *and* what
+    // the fourth one is worth when it is there.
+    expect(byName.get('compute_qizheng')).toMatch(/three remainders unless/i);
+    expect(byName.get('compute_qizheng')).toMatch(/to a palace and to no degree/i);
     expect(byName.get('compute_qizheng')).toMatch(/descending node here/i);
     expect(byName.get('compute_qizheng')).toMatch(/no epoch\s+enters|no epoch enters/i);
 

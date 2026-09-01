@@ -345,9 +345,13 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
         'it. ' +
         'Unlike Qi Men and Liu Ren this is a 命 art, so it is laid for a birth as readily as ' +
         'for a question — but it is its own board and borrows nothing from theirs. ' +
-        'Three things to state when reporting it. **The board carries three remainders, not ' +
-        'four**: 紫氣 is transmitted as a rule without an epoch, so it is omitted rather than ' +
-        'invented. **羅睺 is the descending node here, not the ascending one** — the ' +
+        'Three things to state when reporting it. **The board carries three remainders unless ' +
+        'you ask for the fourth**: 紫氣 is left out by default because each half of what would ' +
+        'place it — its rate and its one dated anchor — rests on a single text. Pass ' +
+        '`ziqi: "yinianyisu"` and it is placed **to a palace and to no degree**; read it in ' +
+        'that palace, quote no degree and name no lodge for it, and say it stands on one text ' +
+        'and one board where the other three are computed from an ephemeris. ' +
+        '**羅睺 is the descending node here, not the ascending one** — the ' +
         'astrologers’ law, which is the reverse of the Indian convention and of the 時憲曆’s; ' +
         '計都 takes the other. **The lodge boundaries are the determinative stars themselves**, ' +
         'placed at this instant with precession in them, so no table of 宿度 and no epoch ' +
@@ -366,6 +370,15 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
             'Which node bears the name 羅睺, the other taking 計都. Default descending, ' +
               'which is the astrologers’ law rather than the calendar office’s.',
           ),
+        ziqi: z
+          .enum(['off', 'yinianyisu'])
+          .optional()
+          .describe(
+            'Whether 紫氣 enters as a fourth remainder, by the 一年一宿 transmission — one ' +
+              'circuit in twenty-eight years, carried from a board worked in 1886. Default ' +
+              'off. It is placed to a palace and to no degree, and it is the only body here ' +
+              'that is not computed from an ephemeris.',
+          ),
         ...optionSchema,
         lang: langSchema,
       },
@@ -376,6 +389,7 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
         const { moment, label } = resolveInput(args, context);
         const options: QizhengOptions = { ...DEFAULT_QIZHENG_OPTIONS };
         if (args.luohou) options.luohou = args.luohou;
+        if (args.ziqi) options.ziqi = args.ziqi;
 
         const board = qizhengBoard(
           { julianDay: moment.julianDayUT, hour: moment.hourBranch },

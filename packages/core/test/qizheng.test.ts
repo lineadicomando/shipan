@@ -1,7 +1,13 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 import { LODGES } from '../src/almanac.js';
 import { ChartError } from '../src/errors.js';
-import { initEphemeris, sunCrossing, sunLongitude, type EphemerisContext } from '../src/ephemeris.js';
+import {
+  bodyPosition,
+  initEphemeris,
+  sunCrossing,
+  sunLongitude,
+  type EphemerisContext,
+} from '../src/ephemeris.js';
 import { BRANCHES, type Branch } from '../src/ganzhi.js';
 import {
   CI,
@@ -9,6 +15,7 @@ import {
   lodgeBoundaries,
   qizhengBoard,
   standingOf,
+  ziqiLongitude,
   type QizhengOptions,
 } from '../src/qizheng.js';
 import { resolveTime } from '../src/time.js';
@@ -277,10 +284,16 @@ describe('the four remainders', () => {
     expect(flipped[2]?.longitude).toBeCloseTo(kept[2]?.longitude as number, 9);
   });
 
-  it('carries three and says so, because 紫氣 is not shipped', () => {
+  it('carries three by default, because 紫氣 is not on by default', () => {
     const laid = board(julianDay, '午');
     expect(laid.remainders).toHaveLength(3);
     expect(laid.remainders.map((r) => r.body.hanzi)).toEqual(['羅睺', '計都', '月孛']);
+  });
+
+  it('carries four when 紫氣 is asked for, and it comes last', () => {
+    const laid = board(julianDay, '午', { ziqi: 'yinianyisu' });
+    expect(laid.remainders).toHaveLength(4);
+    expect(laid.remainders.map((r) => r.body.hanzi)).toEqual(['羅睺', '計都', '月孛', '紫氣']);
   });
 
   it('runs 月孛 forward, which a mean apogee always does', () => {
@@ -290,6 +303,120 @@ describe('the four remainders', () => {
   it('gives each remainder the phase the tradition gave it', () => {
     const laid = board(julianDay, '午');
     expect(laid.remainders.map((r) => r.body.element)).toEqual(['huo', 'tu', 'shui']);
+  });
+});
+
+/**
+ * 紫氣, which is the one body here placed by a rule instead of by the sky.
+ *
+ * These are the checks that need no reference at all: an implementation that
+ * fails one is wrong whatever the sources say. The one that carries the whole
+ * argument for the 大數 is the last — the transmitted layer that says
+ * twenty-nine is gradeable against the two remainders that have a referent,
+ * and it fails by three palaces on both.
+ */
+describe('紫氣, placed by rule and to a palace', () => {
+  /** 1886-11-06 寅時 at Peking, the board 《星度指南》 第七篇 works. */
+  const ANCHOR = 2410216.3438;
+  const laid = (julianDay: number) =>
+    qizhengBoard(
+      { julianDay, hour: branch('寅') },
+      { ...DEFAULT_QIZHENG_OPTIONS, ziqi: 'yinianyisu' },
+      context,
+    );
+
+  const ziqi = (julianDay: number) =>
+    laid(julianDay).remainders.find((one) => one.body.id === 'ziqi');
+
+  it('gives a palace and refuses to give a degree', () => {
+    const one = ziqi(at('2026-08-15', '12:00'));
+    expect(one?.resolution).toBe('palace');
+    // The four a degree would buy, none of which the rule states.
+    expect(one).not.toHaveProperty('longitude');
+    expect(one).not.toHaveProperty('lodge');
+    expect(one).not.toHaveProperty('lodgeDegree');
+    expect(one).not.toHaveProperty('palaceDegree');
+  });
+
+  it('runs forward and never stations, which is what 無伏見遲留 says', () => {
+    expect(ziqi(at('2026-08-15', '12:00'))?.motion).toBe('shun');
+    expect(ziqiLongitude(ANCHOR + 1) - ziqiLongitude(ANCHOR)).toBeCloseTo(360 / 10228, 12);
+  });
+
+  it('returns to the same degree after one 大數 of 10228 days', () => {
+    for (const offset of [0, 1234.5, 90000]) {
+      expect(ziqiLongitude(ANCHOR + offset + 10228)).toBeCloseTo(
+        ziqiLongitude(ANCHOR + offset),
+        9,
+      );
+    }
+  });
+
+  it('takes 28.00 years of 365.25 days to a circuit, which is 一年一宿', () => {
+    // The 度 the rule is stated in is ¹⁄₃₆₅.₂₅ of the circle, not ¹⁄₃₆₀, and
+    // the whole 一年一宿 reading depends on reading it that way: one lodge a
+    // year is 365.25 ⁄ 28 days a 度, and that is the 大數 divided by 28.
+    expect(10228 / 365.25).toBeCloseTo(28.0, 2);
+    expect(10228 / 28).toBeCloseTo(365.25, 0);
+  });
+
+  /**
+   * The 1886 regression, which is the whole of what the anchor is worth.
+   *
+   * 《星度指南》 puts 羅 and 孛 in 亥, 計 and 炁 in 巳. Three of those four are
+   * computed from an ephemeris and were already true; the fourth is what this
+   * parameter added, and it is a palace.
+   */
+  it('reproduces 《星度指南》\u2019s 1886 board on all four remainders', () => {
+    const found = new Map(
+      laid(ANCHOR).remainders.map((one) => [one.body.id, one.palace.hanzi]),
+    );
+    expect(found.get('luohou')).toBe('亥');
+    expect(found.get('yuebei')).toBe('亥');
+    expect(found.get('jidu')).toBe('巳');
+    expect(found.get('ziqi')).toBe('巳');
+  });
+
+  /**
+   * Why the 大數 and not the round-number table, in the one form that can be
+   * checked: run both layers on the two remainders that have a referent.
+   *
+   * 《張果星宗》 gives 紫氣 a 大數 of 10228 in its 算法 and twenty-nine years in
+   * its 總論 two columns away, and the same round layer gives 月孛 nine years
+   * for 8.85 and the nodes eighteen for 18.6. Propagated from 1886 to 2026 it
+   * misses by most of a quadrant on both. Nothing weighs 紫氣's own constant —
+   * that is the residue the default `off` stands on — but taking the fourth
+   * body's rate from the layer that fails on the other three would be the
+   * inconsistency. See `docs/sources.md` § 四餘.
+   */
+  it('grades the two layers on the bodies that have a referent', () => {
+    const then = ANCHOR;
+    const now = at('2026-01-01', '12:00');
+
+    // How far a constant misses by, propagating the true position at 1886
+    // forward with a period of `days` and comparing against the sky in 2026.
+    const missBy = (body: 'meanNode' | 'meanApogee', days: number): number => {
+      const from = bodyPosition(body, then, context);
+      const to = bodyPosition(body, now, context);
+      const turns = Math.sign(from.speed) * 360 * ((now - then) / days);
+      const error = (((from.longitude + turns - to.longitude) % 360) + 360) % 360;
+      return Math.min(error, 360 - error);
+    };
+
+    const YEAR = 365.25;
+    const apogee = { dashu: missBy('meanApogee', 3225), round: missBy('meanApogee', 9 * YEAR) };
+    const node = { dashu: missBy('meanNode', 6794), round: missBy('meanNode', 18 * YEAR) };
+
+    // The 大數 hold to within a palace over 140 years; the round numbers do
+    // not hold to within three.
+    expect(apogee.dashu).toBeLessThan(30);
+    expect(node.dashu).toBeLessThan(30);
+    expect(apogee.round).toBeGreaterThan(60);
+    expect(node.round).toBeGreaterThan(60);
+
+    // And the margin is what the argument rests on, not the direction.
+    expect(apogee.round / apogee.dashu).toBeGreaterThan(5);
+    expect(node.round / node.dashu).toBeGreaterThan(50);
   });
 });
 
@@ -352,7 +479,6 @@ describe('the options it does not implement', () => {
   const refused: [keyof QizhengOptions, string][] = [
     ['xiudu', 'shixian'],
     ['xiudu', 'shoushi'],
-    ['ziqi', 'yinianyisu'],
     ['minggong', 'ascendant'],
     ['gong', 'ci'],
   ];

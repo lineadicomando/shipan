@@ -168,6 +168,7 @@ interface Options {
   years?: string;
   guiren?: string;
   luohou?: string;
+  ziqi?: string;
   yearBoundary?: string;
 }
 
@@ -221,6 +222,9 @@ Narrowing a scan
                                   羅睺, the other taking 計都. The default is
                                   the astrologers' law and not the 時憲曆's,
                                   which is the reverse of the Indian one
+  --ziqi off|yinianyisu           for \`qizheng\`: whether 紫氣 enters as a
+                                  fourth remainder. It is placed to a palace
+                                  and to no degree, and it is off by default
   --year-boundary lichun|dongzhi|chunjie
                                   for \`taiyi\`: where the counted year begins.
                                   It is upstream of the whole board, and only
@@ -947,9 +951,11 @@ function taiyiOptionsFrom(options: Options): TaiyiOptions {
  *
  * `--luohou` is exposed because both values are implemented and because a
  * reader who has the name the other way round has no way to discover that
- * from the output: the board would simply be labelled wrong. The rest —
- * `xiudu`, `ziqi`, `minggong`, `gong` — have one implemented value each, so a
- * flag for them could only offer a refusal.
+ * from the output: the board would simply be labelled wrong. `--ziqi` for the
+ * same reason and a plainer one — it decides whether the board carries three
+ * remainders or four, which is the first thing a reader counts. The rest —
+ * `xiudu`, `minggong`, `gong` — have one implemented value each, so a flag for
+ * them could only offer a refusal.
  */
 function qizhengOptionsFrom(options: Options): QizhengOptions {
   const qizheng: QizhengOptions = { ...DEFAULT_QIZHENG_OPTIONS };
@@ -961,6 +967,15 @@ function qizhengOptionsFrom(options: Options): QizhengOptions {
       });
     }
     qizheng.luohou = options.luohou;
+  }
+  if (options.ziqi !== undefined) {
+    if (options.ziqi !== 'off' && options.ziqi !== 'yinianyisu') {
+      throw new UsageError('cli.error.unknownValue', {
+        option: '--ziqi',
+        value: options.ziqi,
+      });
+    }
+    qizheng.ziqi = options.ziqi;
   }
   return qizheng;
 }
@@ -995,6 +1010,7 @@ const FLAGS: Record<string, keyof Options> = {
   '--years': 'years',
   '--guiren': 'guiren',
   '--luohou': 'luohou',
+  '--ziqi': 'ziqi',
   '--year-boundary': 'yearBoundary',
 };
 

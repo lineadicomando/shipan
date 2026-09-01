@@ -70,13 +70,20 @@ waiting on one. `docs/sources.md` § "What a second copy of one text buys".
 |---|---|
 | 奇門 | `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
-| 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `ziqi: yinianyisu`, `minggong: ascendant`, `gong: ci` |
+| 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
 | 紫微斗數 | `leapMonth: current`, `leapMonth: split`, `huoling: hour`, `daxian: ming` |
 
 `apps/web/test/docs.test.ts` holds this table to the engine both ways: a value
 the engine starts computing and this table still calls refused fails that suite,
 and so does a refusal the engine gains and this table does not name.
+
+**紫氣 left this table on 2026-09-01** and is the case a reader will look here
+for. It is computed, and shipped switched off: the value places the fourth 餘 to
+a palace and never to a degree, and each half of that placement rests on a
+single text. What would switch the default — a second dated chart with 炁 on it
+— is stated where the default is argued, in
+[`docs/refusals.md`](docs/refusals.md).
 
 **One parameter carries one value and no second one to refuse**, which is a
 different state and not a lesser one: the divergence is declared, the engine
@@ -125,15 +132,6 @@ are the query to put to an arriving text.
   observations and is § 2's fourth line. Separately, **the option would have to
   carry an epoch as well as a table** — 「各得當時宿度」 — which is the only part
   of this that touches code.
-- **`ziqi: yinianyisu`** — **a second dated chart with 炁 placed on it**, a
-  century or more from 《星度指南》's 1886 board. One acquisition does both halves:
-  it makes the anchor two witnesses, and it decides the rate empirically, since
-  twenty-eight years and twenty-nine part by 44° a century and the anchor is good
-  to ±15°. What is *not* wanted any more is an epoch — the 定度法 was read on the
-  plate 2026-09-01 in 《張果星宗》 at 古今圖書集成 卷580, which also showed that the
-  work counted beside it was the same work, and a dated position makes the 積日
-  origin redundant. See [`docs/refusals.md`](docs/refusals.md) and
-  `docs/sources.md` § 四餘.
 
 ## 2. The shelf
 

@@ -847,10 +847,17 @@ export function formatQizheng(board: QizhengBoard, t: Translator): string {
     ).map((line) => `  ${line}`),
   );
 
-  // Both said on the page and not in a document: a reader counting four
-  // remainders and finding three is owed the reason where they are counting,
-  // and the frame is the one thing here nothing published can be held against.
-  lines.push('', `  ${t('cli.value.threeRemainders')}`, `  ${t('cli.value.qizhengFrame')}`);
+  // Both said on the page and not in a document: a reader counting the
+  // remainders is owed the reason where they are counting, and the frame is
+  // the one thing here nothing published can be held against. Which of the two
+  // remainder notes is printed follows the board and not the option, because
+  // the board is what the reader is looking at.
+  const carriesZiqi = board.remainders.some((one) => one.body.id === 'ziqi');
+  lines.push(
+    '',
+    `  ${t(carriesZiqi ? 'cli.value.fourRemainders' : 'cli.value.threeRemainders')}`,
+    `  ${t('cli.value.qizhengFrame')}`,
+  );
 
   return lines.join('\n');
 }
@@ -1020,12 +1027,26 @@ function taiyiPattern(pattern: TaiyiPattern, t: Translator): string[] {
   ];
 }
 
+/**
+ * One of the eleven on a row, and the row is as fine as the placement is.
+ *
+ * 紫氣 has no 宿 and no 宮度 to print — its rule gives a palace — so those two
+ * slots stay empty rather than carrying a number the engine would have had to
+ * invent. An empty column is a question a reader asks once; a plausible
+ * `巳 12.40°` beside a measured one is a question nobody knows to ask, and the
+ * note under the table answers the first.
+ */
 function placementRow(placement: QizhengPlacement, t: Translator): string[] {
+  const name = named(placement.body, `label.qizheng.${placement.body.id}` as MessageKey, t);
+  const motion = named(MOTIONS[placement.motion], `label.motion.${placement.motion}` as MessageKey, t);
+  if (placement.resolution === 'palace') {
+    return [name, '', glyph(placement.palace), motion];
+  }
   return [
-    named(placement.body, `label.qizheng.${placement.body.id}` as MessageKey, t),
+    name,
     `${glyph(placement.lodge)} ${degrees(placement.lodgeDegree)}`,
     `${glyph(placement.palace)} ${degrees(placement.palaceDegree)}`,
-    named(MOTIONS[placement.motion], `label.motion.${placement.motion}` as MessageKey, t),
+    motion,
   ];
 }
 

@@ -3351,7 +3351,8 @@ Take the accumulated days, **subtract 1288**, divide by the 大數 10228, take
 the residue tenfold, 280 to the 度 and 28 to the 分. The scheme closes on
 itself: 10228 × 10 ⁄ 280 = 365.29 度, a circle; the rate 10⁄280 = ¹⁄₂₈ 度 a day
 is 3.57 分 at 一度百分, which is the 三分五十七秒 printed; and 10228 days is
-28.001 tropical years. Nothing here is approximate except the arithmetic of a
+28.003 tropical years, which is 28.00 of the 365.25-day years the 度 is cut
+from — the year the scheme is stated in and the one that makes 一年一宿 exact. Nothing here is approximate except the arithmetic of a
 fourteenth-century almanac.
 
 **And the system it sits in is checkable, which is what gives it weight.** The

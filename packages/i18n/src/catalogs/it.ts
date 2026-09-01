@@ -1011,7 +1011,7 @@ export const it: Record<MessageKey, string> = {
 
   'meta.title.qizheng': 'Qi Zheng Si Yu: una carta di nascita',
   'meta.description.qizheng':
-    'Qi Zheng Si Yu per una nascita: i sette governatori e tre dei quattro residui, collocati sulle ventotto dimore e sui dodici palazzi.',
+    'Qi Zheng Si Yu per una nascita: i sette governatori e i residui, collocati sulle ventotto dimore e sui dodici palazzi.',
   // Tre dei quattro, e il paragrafo dice tre: 紫氣 zǐqì sta nel vocabolario e
   // su nessuna carta, e dei tre stampati due sono nodi e il terzo è l'apogeo
   // lunare. La frase è arrivata con «i 4 punti ombra (nodi lunari ed
@@ -1022,7 +1022,7 @@ export const it: Record<MessageKey, string> = {
   // parola: due dei sette sono il Sole e la Luna, che stanno fuori dal conto
   // di cinque che i pianeti sono.
   'meta.intro.qizheng.a':
-    'Il 七政四餘 qīzhèng sìyú è la forma classica dell’astrologia oroscopica cinese, fondata sul movimento effettivo dei corpi celesti. Porta il percorso dei sette governatori (il Sole, la Luna e i cinque pianeti) e di tre dei quattro residui, i due nodi lunari e l’apogeo della Luna, attraverso le ventotto dimore 宿 xiù.',
+    'Il 七政四餘 qīzhèng sìyú è la forma classica dell’astrologia oroscopica cinese, fondata sul movimento effettivo dei corpi celesti. Porta il percorso dei sette governatori (il Sole, la Luna e i cinque pianeti) e dei residui — i due nodi lunari e l’apogeo della Luna, con 紫氣 zǐqì se lo chiedi — attraverso le ventotto dimore 宿 xiù.',
   // Quel che non dice più è che la latitudine non entra in nessun calcolo.
   // Lo dicono le note, sotto un rifiuto tutto suo, che è dove `CLAUDE.md` lo
   // vuole: nella documentazione e non nel modulo.
@@ -1433,7 +1433,7 @@ export const it: Record<MessageKey, string> = {
   'notes.does.taiyi':
     'La tavola di un anno: sedici divinità in nove palazzi, e i conti dell’ospite e dell’ospitante. Non c’è nessuno sopra.',
   'notes.does.qizheng':
-    'I sette governatori e tre dei quattro residui, collocati sulle ventotto dimore 宿 xiù e sui dodici palazzi.',
+    'I sette governatori e i residui, collocati sulle ventotto dimore 宿 xiù e sui dodici palazzi.',
   'notes.does.ziwei':
     'Dodici seggi contati dal mese lunare e dall’ora, le stelle che il libro vi colloca, e il grado che dà a ciascuna.',
   'notes.does.bazi':
@@ -1573,7 +1573,7 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.ziqi.title': '紫氣 zǐqì, il quarto residuo',
   'notes.refusals.ziqi.asks': 'chi si aspetta quattro 餘 yú su una tavola di 七政四餘 qīzhèng sìyú.',
   'notes.refusals.ziqi.body':
-    'Tre dei quattro sono collocati dalle effemeridi. Il quarto aspetta un secondo testimone: una regola è trasmessa, e una carta calcolata nel 1886 lo mette in un palazzo, ma la velocità sta su un’opera sola che si contraddice al proprio interno e la posizione su quell’unica carta. Una seconda carta datata deciderebbe entrambe le cose insieme. Il parametro è dichiarato e spento, così l’assenza è visibile invece che tacita.',
+    'Tre dei quattro sono collocati dalle effemeridi e il quarto è collocato da una regola, che puoi accendere. Quel che resta rifiutato è un grado per esso: la regola dà un palazzo, e una dimora è un tratto di una tredicina di gradi dentro un palazzo di trenta. Arriva spento perché ciascuna metà della collocazione — la velocità e l’unica carta datata del 1886 da cui è portata — poggia su un testo solo, dove gli altri tre poggiano sul cielo.',
   'notes.refusals.feixing.title': 'Le collocazioni delle 十八飛星 shíbāfēixīng',
   'notes.refusals.feixing.asks': 'chi ha in mano entrambi i libri del 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':
@@ -1922,6 +1922,8 @@ export const it: Record<MessageKey, string> = {
     'I dodici 人事宮 rénshìgōng sono stampati accanto ai palazzi su cui sono caduti, e ogni nome dice che cosa la tradizione legge a quel seggio: la persona al 命宮 mìnggōng, i mezzi al 財帛宮 cáibógōng, l’impresa al 官祿宮 guānlùgōng, e così via per i dodici. Leggi da essi per nome. Il software non ha scelto nulla oltre i nomi: quale seggio porti quale parte di ciò che scrivi è una tua scelta, e una scelta detta si legge meglio di una contrabbandata – dove un tema poggia su un seggio, di’ quale.',
   'prompt.qizheng.remainders':
     'I 四餘 sìyú sono quattro e tre sono stampati. 羅睺 luóhóu sta al nodo discendente, 計都 jìdū all’ascendente e 月孛 yuèbèi all’apogeo lunare: la legge che gli 星命家 xīngmìngjiā hanno mantenuto, e il contrario di ciò che imposterebbe chiunque ragioni da Rahu e Ketu. 紫氣 zǐqì è assente: una regola per esso sopravvive, ma non c’è nulla in cielo contro cui verificarla, quindi è lasciato fuori anziché indovinato. Non fornirlo. Tutti e tre quelli stampati sono elementi medi e sono 隱曜 yǐnyào, corpi in ombra: un moto medio è ciò che descriveva ogni testo che li nomina.',
+  'prompt.qizheng.ziqi':
+    'I 四餘 sìyú sono quattro e quattro sono stampati. 羅睺 luóhóu sta al nodo discendente, 計都 jìdū all\u2019ascendente e 月孛 yuèbèi all\u2019apogeo lunare: la legge che gli 星命家 xīngmìngjiā hanno mantenuto, e il contrario di ciò che imposterebbe chiunque ragioni da Rahu e Ketu. Quei tre sono elementi medi e 隱曜 yǐnyào, corpi d\u2019ombra, che è ciò che descriveva ogni testo che li nomina. 紫氣 zǐqì è il quarto ed è dato come palazzo e senza grado, che è tutto ciò che la sua regola enuncia: la sua velocità è il 大數 dàshù di un\u2019opera sola e la sua posizione è portata da un\u2019unica carta calcolata nel 1886, che stampa un palazzo. Leggilo nel palazzo che gli è dato e non più finemente. Non citarne un grado, non calcolarne uno e non nominare il 宿 xiù in cui cade: il palazzo è largo trenta gradi e dove stia dentro a uno non è determinato. Se lo usi, di\u2019 che la sua velocità poggia su un testo solo e la sua posizione su una carta sola, dove gli altri tre sono calcolati da un\u2019effemeride.',
   'prompt.qizheng.noScore':
     'Non contare i corpi benefici contro quelli malefici e non chiamare il risultato un punteggio per la vita. Non ordinare i palazzi e non ordinare i corpi. 順 shùn e 逆 nì sono la direzione in cui un corpo si muove, che è un fatto sul cielo e non un segno a favore o contro alcunché.',
   'prompt.qizheng.direction':
@@ -2111,6 +2113,11 @@ export const it: Record<MessageKey, string> = {
   // Detto una volta, dove chi legge può soppesarlo. Si veda `docs/history/`, fase 23.
   'cli.value.ziweiSource':
     'collocazioni dal 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr in ogni punto: la trasmissione delle quattordici stelle, non quella delle diciotto, i 十八飛星 shíbāfēixīng che portano 《全集》 quánjí e 《捷覽》 jiélǎn. Le sue tavole si scostano da quelle moderne in quattro luoghi – due stelle slegate dall’ora, una coppia insediata dallo stelo, una divinità presa dall’anno e una delle quattro trasformazioni – e in ognuno si segue questo libro, con lo scostamento registrato',
+  'form.qizheng.ziqi': 'Se entri 紫氣 zǐqì',
+  'form.qizheng.ziqi.off': 'tre residui: il quarto resta fuori',
+  'form.qizheng.ziqi.yinianyisu': 'quattro residui: una dimora l’anno 一年一宿 yīniányīxiù',
+  'form.qizheng.ziqi.note':
+    'Aggiunge un quarto residuo e non muove altro. 紫氣 zǐqì è collocato in un palazzo e in nessun grado: la sua velocità è il 大數 dàshù di un’opera sola, che sullo stesso foglio dà ventinove anni altrove, e la sua posizione è portata da un’unica carta calcolata nel 1886. I tre calcolati da un’effemeride stanno su un terreno diverso, ed è per questo che il default lo lascia fuori.',
   'form.qizheng.luohou': 'Quale nodo è 羅睺 luóhóu',
   'form.qizheng.luohou.descending': 'il nodo discendente: la legge degli astrologi',
   'form.qizheng.luohou.ascending': 'il nodo ascendente: 湯若望 Tāng Ruòwàng e il 時憲曆 shíxiànlì',
@@ -2119,8 +2126,10 @@ export const it: Record<MessageKey, string> = {
     'Scambia i due nomi e non muove altro: i due nodi sono i capi di una sola linea, a mezzo giro l’uno dall’altro. Il default è quello che gli astrologi hanno tenuto, che è il rovescio della convenzione indiana.',
   // Stampato sotto ogni tavola, perché a chi conta quattro nomi e ne trova
   // tre la ragione è dovuta sulla pagina, non in un documento.
+  'cli.value.fourRemainders':
+    'quattro, e il quarto è 紫氣 zǐqì, collocato in un palazzo e in nessun grado: la sua velocità è di un\u2019opera sola e la sua posizione è portata da un\u2019unica carta del 1886, quindi il palazzo in cui sta è tutto ciò che si può dire',
   'cli.value.threeRemainders':
-    'tre, non quattro: 紫氣 zǐqì è una tavola e non un corpo, quindi non esiste una posizione in cielo con cui verificarne la tavola',
+    'tre, non quattro: 紫氣 zǐqì si può collocare ed è lasciato fuori qui, con la velocità che poggia su un’opera sola e la posizione su un’unica carta del 1886, dove questi tre sono calcolati da un’effemeride',
   // Detto una volta sotto una tavola il cui quadro non ha nulla di pubblicato
   // contro cui essere verificato. Vedi `docs/history/`, fase 16.
   'cli.value.qizhengFrame':

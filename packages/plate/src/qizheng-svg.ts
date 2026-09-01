@@ -231,7 +231,7 @@ function saidOnBoard(board: PlateQizheng, labels: PlateQizhengLabels): Said[][] 
   const placed = [...board.governors, ...board.remainders];
   return [
     said(placed.map((one) => one.body), labels.body ?? {}),
-    said(placed.map((one) => one.lodge), labels.lodge ?? {}),
+    said(placed.flatMap((one) => (one.lodge === undefined ? [] : [one.lodge])), labels.lodge ?? {}),
     said(board.houses.map((seat) => seat.ci), labels.ci ?? {}),
     said(board.houses.map((seat) => seat.house), labels.house ?? {}),
   ].filter((group) => group.length > 0);
@@ -313,19 +313,25 @@ function listing(
       // twelfth of the sky. The word for the lodge is in the band, against
       // the numeral in front of it: there is no room for it here, and this is
       // the register on this board a reader is least able to say.
-      const lodgeKey = key.get(one.lodge.hanzi);
+      //
+      // 紫氣 has neither and the slot stays empty: the row still says the body,
+      // the palace under it on the ring and which way it runs, which is the
+      // whole of what its rule gives.
       const lodgeAt = left + columnWidth * LODGE;
-      if (lodgeKey !== undefined) parts.push(ringed(lodgeKey, lodgeAt, y, box.key, small));
-      parts.push(
-        text(
-          lodgeAt + indent,
-          y,
-          `${one.lodge.hanzi} ${one.lodgeDegree.toFixed(2)}°`,
-          small,
-          undefined,
-          'start',
-        ),
-      );
+      if (one.lodge !== undefined && one.lodgeDegree !== undefined) {
+        const lodgeKey = key.get(one.lodge.hanzi);
+        if (lodgeKey !== undefined) parts.push(ringed(lodgeKey, lodgeAt, y, box.key, small));
+        parts.push(
+          text(
+            lodgeAt + indent,
+            y,
+            `${one.lodge.hanzi} ${one.lodgeDegree.toFixed(2)}°`,
+            small,
+            undefined,
+            'start',
+          ),
+        );
+      }
 
       // The room is cut for the longer of the two words rather than for the
       // commoner one: `retrograde` shrunk to fit beside a full-sized `direct`
@@ -541,8 +547,13 @@ const HANZI = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '�
 const GROUND = ['shui', 'tu', 'mu', 'mu', 'tu', 'huo', 'huo', 'tu', 'jin', 'jin', 'tu', 'shui'] as const;
 
 function ariaLabel(board: PlateQizheng): string {
+  // The Sun, which is a governor and so always carries a lodge. The guard is
+  // for the type rather than for the board: only 紫氣 comes without one.
   const sun = board.governors[0];
-  const where = sun ? `太陽${sun.lodge.hanzi}${sun.lodgeDegree.toFixed(1)}度` : '';
+  const where =
+    sun?.lodge !== undefined && sun.lodgeDegree !== undefined
+      ? `太陽${sun.lodge.hanzi}${sun.lodgeDegree.toFixed(1)}度`
+      : '';
   return `七政四餘 ${where} · 命宮${board.minggong.palace.hanzi}${board.minggong.ci.hanzi}`;
 }
 

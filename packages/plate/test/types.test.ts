@@ -202,8 +202,15 @@ describe('the redeclared 七政四餘 board', () => {
     for (const one of [...plate.governors, ...plate.remainders]) {
       expect(typeof one.body.hanzi).toBe('string');
       expect(one.body.pinyin).toMatch(/\S/);
-      expect(one.lodge.pinyin).toMatch(/\S/);
-      expect(typeof one.lodgeDegree).toBe('number');
+      // 紫氣 is the one body without a lodge, because its rule gives a palace.
+      // Both slots go together: a degree with no lodge would be a number.
+      if (one.body.id === 'ziqi') {
+        expect(one.lodge).toBeUndefined();
+        expect(one.lodgeDegree).toBeUndefined();
+      } else {
+        expect(one.lodge?.pinyin).toMatch(/\S/);
+        expect(typeof one.lodgeDegree).toBe('number');
+      }
       expect(typeof one.palace.index).toBe('number');
       expect(typeof one.motion).toBe('string');
     }

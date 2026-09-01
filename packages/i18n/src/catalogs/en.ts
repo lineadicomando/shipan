@@ -1084,7 +1084,7 @@ export const en = {
 
   'meta.title.qizheng': 'Qi Zheng Si Yu — a chart of a birth',
   'meta.description.qizheng':
-    'Qi Zheng Si Yu for a birth: the seven governors and three of the four remainders, placed against the twenty-eight lodges and the twelve palaces.',
+    'Qi Zheng Si Yu for a birth: the seven governors and the remainders, placed against the twenty-eight lodges and the twelve palaces.',
   // **Three of the four, and the paragraph says three.** It arrived offering
   // «the 4 shadow points (lunar and ecliptic nodes)», which is two errors in
   // one parenthesis: 紫氣 is in the vocabulary and on no board — a rule for it
@@ -1097,7 +1097,7 @@ export const en = {
   // at all: two of the seven are the Sun and the Moon, which stand outside
   // the count of five that the planets are.
   'meta.intro.qizheng.a':
-    '七政四餘 qīzhèng sìyú is the classical form of Chinese horoscopic astrology, founded on the actual movement of the celestial bodies. It carries the paths of the seven governors — the Sun, the Moon and the five planets — and of three of the four remainders, the two lunar nodes and the lunar apogee, through the twenty-eight lodges 宿 xiù.',
+    '七政四餘 qīzhèng sìyú is the classical form of Chinese horoscopic astrology, founded on the actual movement of the celestial bodies. It carries the paths of the seven governors — the Sun, the Moon and the five planets — and of the remainders — the two lunar nodes and the lunar apogee, with 紫氣 zǐqì where you ask for it — through the twenty-eight lodges 宿 xiù.',
   // What it no longer says is that the latitude enters no calculation. That
   // is stated in the notes, under a refusal of its own, which is where
   // `CLAUDE.md` puts it: in the documentation and not in the form.
@@ -1671,7 +1671,7 @@ export const en = {
   'notes.does.taiyi':
     'The board of a year: sixteen gods in nine palaces, and the counts of host and guest. Nobody is on it.',
   'notes.does.qizheng':
-    'The seven governors and three of the four remainders, placed against the twenty-eight lodges 宿 xiù and the twelve palaces.',
+    'The seven governors and the remainders, placed against the twenty-eight lodges 宿 xiù and the twelve palaces.',
   'notes.does.ziwei':
     'Twelve seats counted from the lunar month and the hour, the stars the book places in them, and the grade it gives each.',
   'notes.does.bazi':
@@ -1794,7 +1794,7 @@ export const en = {
   'notes.refusals.ziqi.title': '紫氣 zǐqì, the fourth remainder',
   'notes.refusals.ziqi.asks': 'readers expecting four 餘 yú on a 七政四餘 qīzhèng sìyú board.',
   'notes.refusals.ziqi.body':
-    'Three of the four are placed by ephemeris. The fourth waits on a second witness: a rule for it is transmitted, and a chart worked in 1886 puts it in a palace, but the rate stands on one work that disagrees with itself and the position on that one board. A second dated chart would settle both at once. The parameter is declared and switched off, so the absence is visible rather than tacit.',
+    'Three of the four are placed by ephemeris and the fourth is placed by rule, which you can switch on. What stays refused is a degree for it: the rule gives a palace, and a lodge is a stretch of some thirteen degrees inside a palace of thirty. It ships switched off because each half of the placement — the rate and the one dated board of 1886 it is carried from — rests on a single text, where the other three rest on the sky.',
   'notes.refusals.feixing.title': 'The 十八飛星 shíbāfēixīng placements',
   'notes.refusals.feixing.asks': 'anyone holding both books of 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':
@@ -2203,6 +2203,8 @@ export const en = {
     'The twelve 人事宮 rénshìgōng are printed against the palaces they fell on, and each name says what the tradition reads at that seat — the person at 命宮 mìnggōng, means at 財帛宮 cáibógōng, undertaking at 官祿宮 guānlùgōng, and so on through the twelve. Read from them by their names. The software chose nothing beyond the names: which seat carries which part of what you write is your choice, and a choice reads better said than smuggled — where a theme leans on a seat, say which.',
   'prompt.qizheng.remainders':
     'The 四餘 sìyú are four and three are printed. 羅睺 luóhóu stands at the descending node, 計都 jìdū at the ascending and 月孛 yuèbèi at the lunar apogee — the law the 星命家 xīngmìngjiā kept, and the reverse of what anyone reasoning from Rahu and Ketu would set. 紫氣 zǐqì is absent: a rule for it survives, but there is nothing in the sky to check that rule against, so it is left out rather than guessed at. Do not supply it. All three that are printed are mean elements and are 隱曜 yǐnyào, shadow bodies — a mean motion is what every text naming them was describing.',
+  'prompt.qizheng.ziqi':
+    'The 四餘 sìyú are four and four are printed. 羅睺 luóhóu stands at the descending node, 計都 jìdū at the ascending and 月孛 yuèbèi at the lunar apogee — the law the 星命家 xīngmìngjiā kept, and the reverse of what anyone reasoning from Rahu and Ketu would set. Those three are mean elements and 隱曜 yǐnyào, shadow bodies, which is what every text naming them was describing. 紫氣 zǐqì is the fourth and is given as a palace with no degree, which is the whole of what its rule states: its rate is one work\u2019s 大數 dàshù and its place is carried from a single board worked in 1886, which prints a palace. Read it in the palace it is given and nowhere finer. Do not quote a degree for it, do not compute one, and do not name the 宿 xiù it falls in — the palace is thirty degrees wide and where it sits inside one is not determined. If you use it, say that its rate rests on one text and its position on one board, where the other three are computed from an ephemeris.',
   'prompt.qizheng.noScore':
     'Do not count benefic bodies against malefic ones and call the result a score for the life. Do not rank the palaces and do not rank the bodies. 順 shùn and 逆 nì are the direction a body is moving, which is a fact about the sky and not a mark for or against anything.',
   // The two "how sure" lines, said among the rules rather than left in a
@@ -2478,6 +2480,11 @@ export const en = {
   // Said once, where a reader can weigh it. See `docs/history/` phase 23.
   'cli.value.ziweiSource':
     'placed by 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr throughout: the fourteen-star transmission, and not the eighteen-star 十八飛星 shíbāfēixīng line that 《全集》 quánjí and 《捷覽》 jiélǎn carry. Its tables part from the modern ones in four places — two stars taken off the hour, a pair seated off the stem, a god taken off the year, and one of the four transformations — and in each this book is followed and the divergence recorded',
+  'form.qizheng.ziqi': 'Whether 紫氣 zǐqì enters',
+  'form.qizheng.ziqi.off': 'three remainders: the fourth is left out',
+  'form.qizheng.ziqi.yinianyisu': 'four remainders: one lodge a year 一年一宿 yīniányīxiù',
+  'form.qizheng.ziqi.note':
+    'It adds a fourth remainder and moves nothing else. 紫氣 zǐqì is placed to a palace and to no degree: its rate is the 大數 dàshù of one work, which gives twenty-nine years elsewhere on the same leaf, and its position is carried from a single board worked in 1886. The three computed from an ephemeris stand on different ground, which is why the default leaves it out.',
   'form.qizheng.luohou': 'Which node is 羅睺 luóhóu',
   'form.qizheng.luohou.descending': 'the descending node: the astrologers’ law',
   'form.qizheng.luohou.ascending': 'the ascending node: 湯若望 Tāng Ruòwàng and the 時憲曆 shíxiànlì',
@@ -2486,8 +2493,10 @@ export const en = {
     'It swaps the two names and moves nothing else: the two nodes are the ends of one line, half a turn apart. The default is what the astrologers kept, which is the reverse of the Indian convention.',
   // Printed under every board, because a reader counting four names and
   // finding three is owed the reason on the page rather than in a document.
+  'cli.value.fourRemainders':
+    'four, the fourth being 紫氣 zǐqì, which is placed to a palace and to no degree: its rate is one work\u2019s and its position is carried from a single board of 1886, so the palace it stands in is the whole of what can be said',
   'cli.value.threeRemainders':
-    'three, not four: 紫氣 zǐqì is a table and not a body, so there is no position in the sky against which its table could be checked',
+    'three, not four: 紫氣 zǐqì can be placed and is left out here, its rate resting on one work and its position on a single board of 1886, where these three are computed from an ephemeris',
   // Said once under a board whose frame nothing published can be held
   // against. See `docs/history/` phase 16.
   'cli.value.qizhengFrame':

@@ -73,6 +73,9 @@ const READINGS: Readonly<Record<string, string>> = {
   十八飛星: 'shíbāfēixīng',
   宿: 'xiù',
   宿度: 'xiùdù',
+  // The divisor of a 定度法, which prose names where it says what a rate
+  // stands on. No board seats it, so the engine cannot say it.
+  大數: 'dàshù',
   建除: 'jiànchú',
   神煞: 'shénshà',
   一宮: 'yīgōng',
@@ -223,7 +226,10 @@ describe('a reading standing inside a sentence', () => {
         // A name has to stand on its own to be one: 太乙 is inside 太乙神數 and
         // 六壬 inside 大六壬, and a plain `includes` would expect a second
         // reading behind glyphs that are part of a longer name.
-        const expected = Object.entries(READINGS)
+        // Read off `SAID` and not off `READINGS`: an intro may name something
+        // the engine seats — 紫氣 does — and a name is a name whichever half
+        // of the map declared how to say it.
+        const expected = [...SAID]
           .filter(([glyphs]) => standsAlone(glyphs, text))
           .sort(([, a], [, b]) => text.indexOf(a) - text.indexOf(b))
           .map(([, reading]) => reading);

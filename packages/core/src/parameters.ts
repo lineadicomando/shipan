@@ -413,9 +413,16 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
   },
   ziqi: {
     board: 'qizheng',
+    label: 'form.qizheng.ziqi',
     values: [
-      { id: 'off', implemented: true },
-      { id: 'yinianyisu', name: { hanzi: '一年一宿', pinyin: 'yīniányīxiù' }, implemented: false },
+      { id: 'off', says: 'form.qizheng.ziqi.off', implemented: true },
+      {
+        id: 'yinianyisu',
+        name: { hanzi: '一年一宿', pinyin: 'yīniányīxiù' },
+        says: 'form.qizheng.ziqi.yinianyisu',
+        note: 'form.qizheng.ziqi.note',
+        implemented: true,
+      },
     ],
     default: 'off',
   },

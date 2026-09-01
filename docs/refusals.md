@@ -159,21 +159,27 @@ This engine computes no 用神 and no 格局.
 
 *Asked by:* readers expecting four 餘 on a 七政四餘 board.
 
-Three of the four are placed by ephemeris. The fourth is absent **for want of a
-second witness rather than for want of a rule**: the named transmission
-(一年一宿) exists, and so does a dated board that would anchor it — 《星度指南》's
-1886 chart, which puts 炁 in 巳宮 and places the other three where this engine
-computes them. Each half rests on one text. The rate is 《張果星宗》's 大數, which
-that work's own 總論 contradicts twenty-eight against twenty-nine; the anchor is
-one plate, at a palace and never a degree. `ziqi` is a declared parameter with
-the value `off`, so the absence is visible rather than tacit.
+Three of the four are placed by ephemeris and the fourth is placed by rule,
+under `ziqi: yinianyisu`, **which is off by default**. What is refused is
+narrower than the body and it is the thing a reader would most like to have:
+**a degree for it**.
 
-**Neither half is refused as unknowable, and this entry used to say one of them
-was.** The error a placement would carry is a rate error times the circuits run
-since the anchor, which is bounded at both ends and shrinks as the anchor comes
-forward. What would move the value is ordinary: a second dated chart with 炁 on
-it, a century or more from 1886, which makes the anchor two witnesses and
-decides twenty-eight against twenty-nine at the same time, the two parting by
+The rule gives a palace. Its rate is 《張果星宗》's 大數 10228, one circuit in
+twenty-eight years — a figure that work's own 總論 contradicts two columns
+later, 「凡二十九年行一周」 — and its dated position is 《星度指南》's 1886 board,
+which prints 炁 in 巳宮 and no finer. A 宿 is a stretch of some thirteen degrees
+inside a palace of thirty, so a board known to the palace is not known to the
+lodge, and a `巳 12.40°` printed beside a measured 入宿度 would be this engine
+inventing the one number nobody handed it. The type says so rather than the
+documentation: 紫氣 arrives as a `PalacePlacement`, and a surface that reaches
+for its degree does not compile.
+
+**The default is off for a different reason again**, and not because the
+placement is unknowable. Each half of it rests on a single text, which is rung 5
+twice over — a grade this engine ships elsewhere and does not switch on for
+somebody unasked. What would move the default is ordinary: a second dated chart
+with 炁 on it, a century or more from 1886, which makes the anchor two witnesses
+and decides twenty-eight against twenty-nine at the same time, the two parting by
 44° a century.
 
 ## The 十八飛星 placements

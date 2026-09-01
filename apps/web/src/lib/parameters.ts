@@ -223,8 +223,18 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'ziqi',
     board: 'qizheng',
     values: ['off', 'yinianyisu'],
-    implemented: ['off'],
+    implemented: ['off', 'yinianyisu'],
     fallback: 'off',
+    label: 'form.qizheng.ziqi',
+    says: {
+      off: 'form.qizheng.ziqi.off',
+      yinianyisu: 'form.qizheng.ziqi.yinianyisu',
+    },
+    // Only the value that adds the body carries the note: what `off` does is
+    // already said in the line the board prints under itself.
+    notes: {
+      yinianyisu: 'form.qizheng.ziqi.note',
+    },
   },
   {
     id: 'luohou',
