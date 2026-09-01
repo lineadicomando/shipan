@@ -1,6 +1,9 @@
 <h1 align="center">
-  <img src="design/logo/seal.svg" alt="shipan 式盤 shìpán" width="128" height="128">
+  <img src="design/logo/seal.svg" alt="" width="128" height="128"><br>
+  shipan
 </h1>
+
+<p align="center">式盤 · shìpán</p>
 
 <p align="center">
   <a href="https://github.com/lineadicomando/shipan/tags"><img
