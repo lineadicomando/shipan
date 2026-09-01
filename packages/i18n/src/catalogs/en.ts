@@ -2596,8 +2596,7 @@ export const en = {
   'cli.value.turns': '{count} (turns of the year pillar)',
   'cli.value.leapTerm': 'intercalated {term}',
 
-  'cli.note.method':
-    'Cast by the {method} method. Other schools lay out other charts from the same instant.',
+  'cli.note.method': 'Cast by the {method} method.',
 
   'cli.error.unknownCommand': 'Unknown command "{command}". Try `qimen --help`.',
   'cli.error.unknownOption': 'Unknown option "{option}". Try `qimen --help`.',

@@ -2226,8 +2226,7 @@ export const it: Record<MessageKey, string> = {
   'cli.value.turns': '{count} (giri del pilastro dell’anno)',
   'cli.value.leapTerm': '{term} intercalato',
 
-  'cli.note.method':
-    'Posta con il metodo {method}. Altre scuole dispongono altre carte dallo stesso istante.',
+  'cli.note.method': 'Posta con il metodo {method}.',
 
   'cli.error.unknownCommand': 'Comando "{command}" sconosciuto. Prova `qimen --help`.',
   'cli.error.unknownOption': 'Opzione "{option}" sconosciuta. Prova `qimen --help`.',
