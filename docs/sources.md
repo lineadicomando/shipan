@@ -3937,14 +3937,22 @@ the tables do not — and the 太歲 the count yields is checked against
 `yearGanzhi` over four centuries, which is the one check here that does not
 come from the text.
 
-### The counts beside the board, which the 立成 does not weigh
+### Beside the six the 立成 weighs
 
-The tables of 卷三 give six placements a row and stop there. The counts below
-are laid on every board and printed beside those six, each stated in a chapter
-of its own, and what checks each one differs — which is why they are weighed
-here one at a time rather than under the verification above. 小遊 closes the
-section because it is the one that is *not* reported: it is this board's own
-太乙, and the paragraph says why.
+The tables of 卷三 give six placements a row and stop there. What is below is
+laid on every board and printed beside those six — one seat and four counts,
+each stated in a chapter of its own — and what checks each one differs, which
+is why they are weighed here one at a time rather than under the verification
+above. 小遊 closes the section because it is the one that is *not* reported: it
+is this board's own 太乙, and the paragraph says why.
+
+**合神 is the 六合 of the 太歲, and the text says it twice.** 卷一 gives the
+rule by example — 「假令太嵗在子，合神在丑」 — and the pairs it names close on
+themselves: 子丑, 寅亥, 卯戌, 辰酉, 巳申, 午未, each summing to thirteen on the
+wheel. The worked board of 卷一 推六紀月建法 then prints it beside the 計神 for
+a 局 this engine reproduces, 「太乙在一宫，武徳為天目，計神寅，合神丑」, which
+is the text agreeing with itself about the thing in question rather than
+stating it twice in one voice.
 
 **八門直使 — one gate every thirty years, and the text works it on a date.**
 卷四 states the whole of it: 「置演紀上元甲子所求積年，與小遊同，以二百四十去
