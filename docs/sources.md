@@ -3261,7 +3261,7 @@ both (30.4° against 33), 鬼 narrow at both (4.6 against 4), 房 4.9 against 5,
 as the numbers agreeing; where they differ by three or four degrees, the
 obliquity is the reason and neither is wrong.
 
-### 四餘 — three of them, and why the fourth is missing
+### 四餘 — four of them, and what the fourth is worth
 
 **羅睺 is not Rahu, and this is the parameter most likely to be set wrong by
 someone reasoning from India.** The name moved twice. 羅睺 began as the
