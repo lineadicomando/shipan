@@ -3937,6 +3937,55 @@ the tables do not — and the 太歲 the count yields is checked against
 `yearGanzhi` over four centuries, which is the one check here that does not
 come from the text.
 
+### The counts beside the board, which the 立成 does not weigh
+
+The tables of 卷三 give six placements a row and stop there. The counts below
+are laid on every board and printed beside those six, each stated in a chapter
+of its own, and what checks each one differs — which is why they are weighed
+here one at a time rather than under the verification above. 小遊 closes the
+section because it is the one that is *not* reported: it is this board's own
+太乙, and the paragraph says why.
+
+**八門直使 — one gate every thirty years, and the text works it on a date.**
+卷四 states the whole of it: 「置演紀上元甲子所求積年，與小遊同，以二百四十去
+之，不盡以三十約之為直門數，不盡筭外即直門所入年，命起開門，次休生，左行八門，
+周而復始」. The ring is the compass ring from 乾 — 乾開, 坎休, 艮生, 震傷,
+巽杜, 離景, 坤死, 兌驚, the eight seats 卷二 推八門所主法 gives. 卷一 then
+checks it against two dates — 「假令今開元十二年甲子，即開門為直使，至三十一年
+甲午嵗即休門為直使」 — and the count gives both.
+
+**五福太乙 — forty-five years to a palace, and the text checks that one too.**
+卷五 推五福太乙法 runs it on the 一萬三千三百三十一 count, over the four
+corners and the centre, 二百二十五年 to the circuit. The check is a date again:
+「今開元十二年甲子在遼東十一年也」, the eleventh year in 黃始宮, which is what
+the count gives.
+
+**大遊太乙 runs on the same count and nothing checks it.** 卷五 推大遊太乙
+gives thirty-six years to a palace and 二百八十八年一周, opening from 七宮
+where the year's count opens from 一宮. Its eye makes the walk 天目 makes,
+starting from 天道 rather than from 武德 and pausing at the same two corners,
+so what it shares with a placement the 立成 weighs is the walk and not the
+count. The text works no dated example for it, and this file has none to put
+beside it.
+
+**三基 print their period beside their count**, and the reason is a defect this
+board produced. 卷五 gives the sovereign thirty years to a fief, the minister
+three and the people one, so 民基 stands at 1 on every board ever laid. Printed
+as a bare `1` beside a sovereign at `23` it was read as a base newly begun — a
+fact nobody computed, produced by a right number without the thing that makes it
+legible. `TaiyiFief` carries `period`; the transcript prints `1/1`.
+
+**三基 is computed and unchecked.** 君基, 臣基 and 民基 run on 卷五's opening
+count, 「自上元甲寅之嵗至大唐開元十二年甲子嵗積得二十八萬五千一十一筭」, with
+「臣今恐速要，自漢安帝元初甲寅為近，至開元十二年甲子嵗積得六百十一筭」 beside
+it — and 285,011 ≡ 611 (mod 360), so the two agree as the three main figures
+do. It is the one count in this board the text never checks against a date.
+
+**小遊太乙 is the year board's own 太乙, and the text says so:** 「小遊主事見
+在嵗計中，自此不復載，天目亦然也」. The two counts bear it out — 3,361 and
+1,937,281 are both ≡ 1 (mod 24) and both advance one a year, so they never
+part. It is not reported twice.
+
 ### The transliteration decided deliberately
 
 - **太炅 tàijiǒng.** 炅 is jiǒng, brightness, and 卷二 says why the seat is
@@ -4132,24 +4181,6 @@ whole reading resting on nothing. A matter is not a question, and the difference
 is what lets this board be handed over at all: a question about a year puts the
 reader inside a figure they are not in. See `prompt.taiyi.hostguest`,
 `prompt.taiyi.matter` and `docs/history/21-consultation-taiyi.md`.
-
-**三基 print their period beside their count**, and the reason is a defect this
-board produced. 卷五 gives the sovereign thirty years to a fief, the minister
-three and the people one, so 民基 stands at 1 on every board ever laid. Printed
-as a bare `1` beside a sovereign at `23` it was read as a base newly begun — a
-fact nobody computed, produced by a right number without the thing that makes it
-legible. `TaiyiFief` carries `period`; the transcript prints `1/1`.
-
-**三基 is computed and unchecked.** 君基, 臣基 and 民基 run on 卷五's opening
-count, 「自上元甲寅之嵗至大唐開元十二年甲子嵗積得二十八萬五千一十一筭」, with
-「臣今恐速要，自漢安帝元初甲寅為近，至開元十二年甲子嵗積得六百十一筭」 beside
-it — and 285,011 ≡ 611 (mod 360), so the two agree as the three main figures
-do. It is the one count in this board the text never checks against a date.
-
-**小遊太乙 is the year board's own 太乙, and the text says so:** 「小遊主事見
-在嵗計中，自此不復載，天目亦然也」. The two counts bear it out — 3,361 and
-1,937,281 are both ≡ 1 (mod 24) and both advance one a year, so they never
-part. It is not reported twice.
 
 ---
 
