@@ -1,9 +1,10 @@
-import { DEFAULT_TAIYI_OPTIONS, taiyiBoard, taiyiReadingPrompt } from '@shipan/core';
+import { taiyiBoard, taiyiReadingPrompt } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import {
   localeVary,
   pageAddress,
   readLocale,
+  readTaiyiOptions,
   readTaiyiYear,
   taiyiCacheControl,
 } from '$lib/server/params';
@@ -68,7 +69,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       ...localeVary(url.searchParams),
     });
     return new Response(
-      taiyiReadingPrompt(taiyiBoard({ year }, DEFAULT_TAIYI_OPTIONS), t, {
+      taiyiReadingPrompt(taiyiBoard({ year }, readTaiyiOptions(url.searchParams)), t, {
         // An empty string, never the text: the caller is saying a matter exists
         // and that it will append it. See `TaiyiReadingRequest.matter`.
         ...(url.searchParams.get('about') === 'true' ? { matter: '' } : {}),

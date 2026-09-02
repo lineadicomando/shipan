@@ -1,9 +1,7 @@
 import {
   divergenceLines,
-  DEFAULT_QIZHENG_OPTIONS,
   qizhengBoard,
   qizhengLabels,
-  type QizhengOptions,
 } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import { renderQizhengSvg } from '@shipan/plate';
@@ -12,11 +10,11 @@ import {
   momentIsFixed,
   readLocale,
   readMoment,
+  readQizhengOptions,
   readPlateOptions,
 } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
-import { named } from '$lib/parameters';
 
 /**
  * `GET /api/qizheng/plate?date=1968-03-12&time=14:30&locationId=3169070`
@@ -38,11 +36,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const t = createTranslator(locale);
     const { moment } = readMoment(url.searchParams);
 
-    const options: QizhengOptions = { ...DEFAULT_QIZHENG_OPTIONS };
-    const luohou = url.searchParams.get(named('qizheng', 'luohou'));
-    if (luohou === 'descending' || luohou === 'ascending') options.luohou = luohou;
-    const ziqi = url.searchParams.get(named('qizheng', 'ziqi'));
-    if (ziqi === 'off' || ziqi === 'yinianyisu') options.ziqi = ziqi;
+    const options = readQizhengOptions(url.searchParams);
 
     const board = qizhengBoard(
       { julianDay: moment.julianDayUT, hour: moment.hourBranch },

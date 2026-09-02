@@ -1,17 +1,20 @@
 import {
   divergenceLines,
-  DEFAULT_LIUREN_OPTIONS,
   liurenBoard,
   liurenLabels,
   sayGanzhi,
-  type LiurenOptions,
 } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import { renderLiurenSvg } from '@shipan/plate';
-import { momentIsFixed, readLocale, readMoment, readPlateOptions } from '$lib/server/params';
+import {
+  momentIsFixed,
+  readLiurenOptions,
+  readLocale,
+  readMoment,
+  readPlateOptions,
+} from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
-import { named } from '$lib/parameters';
 
 /**
  * `GET /api/liuren/plate?date=2026-08-14&time=14:30&locationId=3169070`
@@ -26,9 +29,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const t = createTranslator(locale);
     const { moment } = readMoment(url.searchParams);
 
-    const options: LiurenOptions = { ...DEFAULT_LIUREN_OPTIONS };
-    const guiren = url.searchParams.get(named('liuren', 'guiren'));
-    if (guiren === 'chou' || guiren === 'wei') options.guiren = guiren;
+    const options = readLiurenOptions(url.searchParams);
 
     const board = liurenBoard(
       { term: moment.solarTerm.term, day: moment.pillars.day, hour: moment.hourBranch },

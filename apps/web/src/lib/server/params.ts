@@ -1,6 +1,8 @@
 import {
   DEFAULT_ZIWEI_OPTIONS,
   ChartError,
+  DEFAULT_LIUREN_OPTIONS,
+  DEFAULT_QIZHENG_OPTIONS,
   DEFAULT_TAIYI_OPTIONS,
   GATES,
   PATTERN_IDS,
@@ -22,16 +24,19 @@ import {
   type Ganzhi,
   type GateId,
   type Gender,
+  type LiurenOptions,
   type LocalMoment,
   type Moment,
   type NianmingOptions,
   type PatternId,
+  type QizhengOptions,
   type Place,
   type ScanCriteria,
   type SpiritId,
   type StarId,
   type StemId,
   type StrengthId,
+  type TaiyiOptions,
   type BaziOptions,
   type ZiweiOptions,
 } from '@shipan/core';
@@ -528,6 +533,44 @@ export function readBaziOptions(params: URLSearchParams): BaziOptions {
   if (gender === 'male' || gender === 'female') options.gender = gender;
 
   return readDeclared('bazi', params, options);
+}
+
+/**
+ * The 六壬 divergences an address states, with the board's own defaults.
+ *
+ * One reader for the four endpoints, like 紫微斗數's and 八字's above: a board
+ * that came back with the general turned at the 中氣 through `/api` and at the
+ * 節氣 through `/text` would be two boards under one address. Written out four
+ * times it read `guiren` and nothing else, so `liuren.yuejiang=jieqi` — half a
+ * term earlier, and four different lessons — was passed over in silence.
+ */
+export function readLiurenOptions(params: URLSearchParams): LiurenOptions {
+  return readDeclared('liuren', params, { ...DEFAULT_LIUREN_OPTIONS });
+}
+
+/**
+ * The 七政四餘 divergences an address states, with the board's own defaults.
+ *
+ * One reader for the four endpoints, for the reason 六壬 has one. Written out
+ * four times it read `luohou` and `ziqi` — the two with a second implemented
+ * value — so `qizheng.xiudu=shoushi` was passed over and the board came back
+ * on the 距星 frame under an address naming the 授時曆's table.
+ */
+export function readQizhengOptions(params: URLSearchParams): QizhengOptions {
+  return readDeclared('qizheng', params, { ...DEFAULT_QIZHENG_OPTIONS });
+}
+
+/**
+ * The 太乙 divergences an address states, with the board's own defaults.
+ *
+ * Every one of them has a single implemented value today, which is why the
+ * four endpoints passed `DEFAULT_TAIYI_OPTIONS` straight through and an
+ * address asking for the 月計 got the 年計 in silence. A parameter with one
+ * value is not a parameter nobody may name — it is one whose other values
+ * come back a 501.
+ */
+export function readTaiyiOptions(params: URLSearchParams): TaiyiOptions {
+  return readDeclared('taiyi', params, { ...DEFAULT_TAIYI_OPTIONS });
 }
 
 export interface ReadMoment {
