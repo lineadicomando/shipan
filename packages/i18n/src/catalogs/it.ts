@@ -373,11 +373,11 @@ export const it: Record<MessageKey, string> = {
   'label.lodge.yi': 'le ali',
   'label.lodge.zhen': 'la traversa del carro',
 
-  // 七政四餘 — i sette governatori e i quattro residui. I cinque pianeti sono
-  // le cinque fasi e ne portano il nome; il Sole e la Luna stanno fuori da
-  // quel conto. I quattro sono 隱曜, posizioni calcolate e non corpi, e 紫氣
-  // è nominato qui e collocato in nessun luogo: la sua epoca non è citabile,
-  // quindi nessuna tavola lo porta. Vedi docs/sources.md.
+  // 七政四餘 — the seven governors and the four remainders. The five planets
+  // are the five phases and are named for them; the Sun and the Moon stand
+  // outside that count. The four are 隱曜, computed positions rather than
+  // bodies: three are read off the sky and 紫氣 is carried by rule, to a
+  // palace and to no degree. See docs/sources.md § 四餘.
   'label.qizheng.taiyang': 'il sole',
   'label.qizheng.taiyin': 'la luna',
   'label.qizheng.shuixing': 'Mercurio',
@@ -914,7 +914,7 @@ export const it: Record<MessageKey, string> = {
   // `meta.intro.qimen.a`: si accorda con la lettura, e una «z» iniziale vuole
   // l'articolo che vuole lo zaino.
   'meta.intro.moments.a':
-    'Nel pensiero classico orientale il tempo non è un flusso uniforme, ma una successione di qualità energetiche differenti. La disciplina dello 擇日 zérì permette di individuare la finestra temporale più propizia per iniziare un’attività, prendere una decisione o avviare un progetto.',
+    'Nel pensiero classico orientale il tempo non è un flusso uniforme, ma una successione di qualità energetiche differenti. Lo 擇日 zérì è la disciplina che legge quelle qualità prima di intraprendere qualcosa. Indichi che cosa deve valere per un’ora — per iniziare un’attività, prendere una decisione, avviare un progetto — e le ore che rispondono a quei criteri sono quelle che vedi elencate.',
   // Dice che cosa fa la sezione, che è il mestiere di ogni secondo paragrafo.
   // Il modulo qui sotto ha due gambe, «L’intervallo e il luogo» e «Che cosa
   // cercare»: la frase le tiene tutte e due implicite — il flusso temporale è
@@ -1012,17 +1012,17 @@ export const it: Record<MessageKey, string> = {
   'meta.title.qizheng': 'Qi Zheng Si Yu: una carta di nascita',
   'meta.description.qizheng':
     'Qi Zheng Si Yu per una nascita: i sette governatori e i residui, collocati sulle ventotto dimore e sui dodici palazzi.',
-  // Tre dei quattro, e il paragrafo dice tre: 紫氣 zǐqì sta nel vocabolario e
-  // su nessuna carta, e dei tre stampati due sono nodi e il terzo è l'apogeo
-  // lunare. La frase è arrivata con «i 4 punti ombra (nodi lunari ed
-  // eclittici)», due errori in una parentesi; l'argomento sta in `en.ts` e le
-  // note lo portano per intero.
+  // Three of the four, and the paragraph names three: of the three read off
+  // the sky two are nodes and the third stands at the lunar apogee. 紫氣 is
+  // the fourth, carried by default and by rule, and it is named in the form,
+  // in the notes and under every board rather than in a paragraph that has no
+  // room for what it is worth. The argument is in `en.ts`.
   //
   // «Governatori» e non «pianeti», per la ragione che ha fatto nascere la
   // parola: due dei sette sono il Sole e la Luna, che stanno fuori dal conto
   // di cinque che i pianeti sono.
   'meta.intro.qizheng.a':
-    'Il 七政四餘 qīzhèng sìyú è la forma classica dell’astrologia oroscopica cinese, fondata sul movimento effettivo dei corpi celesti. Porta il percorso dei sette governatori (il Sole, la Luna e i cinque pianeti) e dei residui — i due nodi lunari e l’apogeo della Luna, con 紫氣 zǐqì se lo chiedi — attraverso le ventotto dimore 宿 xiù.',
+    'Il 七政四餘 qīzhèng sìyú è la forma classica dell’astrologia oroscopica cinese, fondata sul movimento effettivo dei corpi celesti. Porta il percorso dei sette governatori (il Sole, la Luna e i cinque pianeti) e dei residui — i due nodi lunari e l’apogeo della Luna — attraverso le ventotto dimore 宿 xiù.',
   // Quel che non dice più è che la latitudine non entra in nessun calcolo.
   // Lo dicono le note, sotto un rifiuto tutto suo, che è dove `CLAUDE.md` lo
   // vuole: nella documentazione e non nel modulo.

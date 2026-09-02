@@ -375,8 +375,9 @@ export const en = {
   // 七政四餘 — the seven governors and the four remainders. The five planets
   // are the five phases and are named for them; the Sun and the Moon stand
   // outside that count. The four are 隱曜, computed positions rather than
-  // bodies, and 紫氣 is named here and placed nowhere: its epoch cannot be
-  // cited, so no board carries it. See docs/sources.md.
+  // bodies: three are read off the sky and 紫氣 is carried by rule, to a
+  // palace and to no degree. See docs/sources.md § 四餘, which weighs both
+  // halves of that placement.
   'label.qizheng.taiyang': 'the sun',
   'label.qizheng.taiyin': 'the moon',
   'label.qizheng.shuixing': 'Mercury',
@@ -999,7 +1000,7 @@ export const en = {
   // promises describes 擇日. What *this section* does is the paragraph under
   // it, and that is the one that has to be exact.
   'meta.intro.moments.a':
-    'In classical Eastern thought, time is not a uniform flow but a sequence of differing energetic qualities. The discipline of 擇日 zérì makes it possible to identify the most propitious window in which to begin an activity, make a decision or launch a project.',
+    'In classical Eastern thought, time is not a uniform flow but a sequence of differing energetic qualities. 擇日 zérì is the discipline that reads those qualities before an undertaking. You name what an hour has to hold — to begin an activity, to take a decision, to open a project — and the hours that answer are the ones you are shown.',
   // It says what the section does, which is what every second paragraph is
   // for. The form under it has two legs — the interval and the place, and
   // what to look for — and the sentence keeps both implicit: the temporal
@@ -1085,19 +1086,25 @@ export const en = {
   'meta.title.qizheng': 'Qi Zheng Si Yu — a chart of a birth',
   'meta.description.qizheng':
     'Qi Zheng Si Yu for a birth: the seven governors and the remainders, placed against the twenty-eight lodges and the twelve palaces.',
-  // **Three of the four, and the paragraph says three.** It arrived offering
+  // **Three of the four, and the paragraph names three.** It arrived offering
   // «the 4 shadow points (lunar and ecliptic nodes)», which is two errors in
-  // one parenthesis: 紫氣 is in the vocabulary and on no board — a rule for it
-  // survives and there is nothing in the sky to check that rule against, so it
-  // is left out rather than guessed at — and of the three that are printed
-  // only two are nodes, the third standing at the lunar apogee. The notes
-  // carry the whole of it, and `qizheng.ts` is where it is decided.
+  // one parenthesis: of the three read off the sky only two are nodes, the
+  // third standing at the lunar apogee.
+  //
+  // 紫氣 is the fourth and is carried by default now, from a rule rather than
+  // from an ephemeris. It is named in the form, in the notes and under every
+  // board, each of which says what it is worth in the same breath; here it is
+  // left out rather than qualified, because a paragraph a reader meets on the
+  // way in has no room for the clause and reads as a promise without it. What
+  // stood here — «with 紫氣 zǐqì where you ask for it» — was written while the
+  // value shipped switched off, and said the reverse of the default from the
+  // day it changed.
   //
   // «Governors» and not «planets», for the reason the tradition has the word
   // at all: two of the seven are the Sun and the Moon, which stand outside
   // the count of five that the planets are.
   'meta.intro.qizheng.a':
-    '七政四餘 qīzhèng sìyú is the classical form of Chinese horoscopic astrology, founded on the actual movement of the celestial bodies. It carries the paths of the seven governors — the Sun, the Moon and the five planets — and of the remainders — the two lunar nodes and the lunar apogee, with 紫氣 zǐqì where you ask for it — through the twenty-eight lodges 宿 xiù.',
+    '七政四餘 qīzhèng sìyú is the classical form of Chinese horoscopic astrology, founded on the actual movement of the celestial bodies. It carries the paths of the seven governors — the Sun, the Moon and the five planets — and of the remainders — the two lunar nodes and the lunar apogee — through the twenty-eight lodges 宿 xiù.',
   // What it no longer says is that the latitude enters no calculation. That
   // is stated in the notes, under a refusal of its own, which is where
   // `CLAUDE.md` puts it: in the documentation and not in the form.
