@@ -1148,6 +1148,40 @@ describe('GET /api/locations', () => {
   });
 });
 
+/**
+ * The scan's answer is a set of hours, and which hours they are is a function
+ * of the school: 拆補 and 茅山 disagree about three hours in five. It came back
+ * with the interval, the place, the criteria and the hours, and nothing saying
+ * who laid them — under a URL a reader shares.
+ */
+describe('GET /api/moments', () => {
+  const INTERVAL =
+    'from=2026-09-01&to=2026-09-03&latitude=39.9075&longitude=116.3972' +
+    '&timezone=Asia/Shanghai&trueSolarTime=false&dayBoundary=midnight';
+
+  it('carries the options every chart of the interval was laid from', async () => {
+    const { body } = await call(moments, `${INTERVAL}&gate=kaimen`);
+
+    expect((body as { options: Record<string, unknown> }).options).toMatchObject({
+      method: 'chaibu',
+      trueSolarTime: false,
+      dayBoundary: 'midnight',
+    });
+  });
+
+  it('says the method it was asked for, and answers different hours under it', async () => {
+    const { body: chaibu } = await call(moments, `${INTERVAL}&gate=kaimen`);
+    const { body: maoshan } = await call(moments, `${INTERVAL}&gate=kaimen&qimen.method=maoshan`);
+
+    const said = (body: unknown): unknown => (body as { options: { method: string } }).options.method;
+    const hours = (body: unknown): unknown[] => (body as { moments: unknown[] }).moments;
+
+    expect(said(chaibu)).toBe('chaibu');
+    expect(said(maoshan)).toBe('maoshan');
+    expect(hours(maoshan)).not.toEqual(hours(chaibu));
+  });
+});
+
 describe('GET /api/qimen/plate', () => {
   it('returns an SVG', async () => {
     const { status, headers, text } = await call(plate, `${MOMENT}&size=400`);

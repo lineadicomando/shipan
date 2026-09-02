@@ -37,6 +37,11 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
       place: label ?? null,
       timezone: place.timezone,
       criteria,
+      // The options every chart of the interval was laid from, at the top
+      // level because there is no board here to carry them: an answer is a
+      // set of hours that would be a different set under another method, and
+      // one that did not say could not be laid again from itself.
+      options,
       scanned: runs.length,
       moments: matches.map(project),
     });
