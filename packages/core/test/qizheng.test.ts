@@ -9,6 +9,7 @@ import {
   type EphemerisContext,
 } from '../src/ephemeris.js';
 import { BRANCHES, type Branch } from '../src/ganzhi.js';
+import { qizhengLabels } from '../src/labels.js';
 import {
   CI,
   DEFAULT_QIZHENG_OPTIONS,
@@ -419,6 +420,30 @@ describe('紫氣, placed by rule and to a palace', () => {
     // And the margin is what the argument rests on, not the direction.
     expect(apogee.round / apogee.dashu).toBeGreaterThan(5);
     expect(node.round / node.dashu).toBeGreaterThan(50);
+  });
+});
+
+/**
+ * The line a drawing carries under the ring, which is about the board drawn.
+ *
+ * It was a constant for as long as three remainders was all the engine could
+ * draw, and a constant here is a caption that contradicts the rows above it
+ * on half the boards.
+ */
+describe('what the drawing is told to say under the ring', () => {
+  const julianDay = at('2026-08-15', '12:00');
+  const words = (options?: Partial<QizhengOptions>) =>
+    qizhengLabels(
+      ((key: string) => key) as Parameters<typeof qizhengLabels>[0],
+      board(julianDay, '午', options),
+    ).remainders;
+
+  it('says four where four were drawn', () => {
+    expect(words()).toBe('cli.value.fourRemainders');
+  });
+
+  it('says three where 紫氣 was switched off', () => {
+    expect(words({ ziqi: 'off' })).toBe('cli.value.threeRemainders');
   });
 });
 

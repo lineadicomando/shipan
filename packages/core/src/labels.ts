@@ -2,7 +2,7 @@ import type { MessageKey, Translator } from '@shipan/i18n';
 import { BRANCHES, STEMS, type Ganzhi } from './ganzhi.js';
 import { GENERALS, KETI, LIUREN_RULES } from './liuren.js';
 import { LODGES } from './almanac.js';
-import { CI, HOUSES, MOTIONS, QIZHENG_BODIES } from './qizheng.js';
+import { CI, HOUSES, MOTIONS, QIZHENG_BODIES, type QizhengBoard } from './qizheng.js';
 import { ZIWEI_HOUSES, ZIWEI_STARS } from './ziwei/stars.js';
 import { TAIYI_GODS, TAIYI_PATTERN_IDS } from './taiyi.js';
 import {
@@ -194,7 +194,17 @@ export interface QizhengLabels {
   frame: string;
 }
 
-export function qizhengLabels(t: Translator): QizhengLabels {
+/**
+ * The words a 七政四餘 drawing needs, for the board that is being drawn.
+ *
+ * **The board is an argument and not a convenience.** The line under the ring
+ * says how many remainders the plate carries and what the fourth is worth,
+ * which is a fact about *this* board rather than about the art: laid with
+ * `ziqi: off` it carries three, and a caption fixed at either count is a
+ * caption that contradicts the rows above it half the time. It was fixed at
+ * three for exactly as long as three was all the engine could draw.
+ */
+export function qizhengLabels(t: Translator, board: QizhengBoard): QizhengLabels {
   return {
     body: Object.fromEntries(
       QIZHENG_BODIES.map((one) => [one.id, t(`label.qizheng.${one.id}` as MessageKey)]),
@@ -210,7 +220,11 @@ export function qizhengLabels(t: Translator): QizhengLabels {
       Object.keys(MOTIONS).map((id) => [id, t(`label.motion.${id}` as MessageKey)]),
     ),
     minggong: t('cli.field.minggong'),
-    remainders: t('cli.value.threeRemainders'),
+    remainders: t(
+      board.remainders.some((one) => one.body.id === 'ziqi')
+        ? 'cli.value.fourRemainders'
+        : 'cli.value.threeRemainders',
+    ),
     frame: t('cli.value.qizhengFrame'),
   };
 }

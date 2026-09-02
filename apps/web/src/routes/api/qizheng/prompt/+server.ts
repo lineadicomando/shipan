@@ -52,6 +52,8 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const options: QizhengOptions = { ...DEFAULT_QIZHENG_OPTIONS };
     const luohou = url.searchParams.get(named('qizheng', 'luohou'));
     if (luohou === 'descending' || luohou === 'ascending') options.luohou = luohou;
+    const ziqi = url.searchParams.get(named('qizheng', 'ziqi'));
+    if (ziqi === 'off' || ziqi === 'yinianyisu') options.ziqi = ziqi;
 
     const board = qizhengBoard(
       { julianDay: moment.julianDayUT, hour: moment.hourBranch },

@@ -458,6 +458,28 @@ describe('the prompts for a board of 命', () => {
     expect(text).toContain('over-determination');
   });
 
+  /**
+   * The rule a prompt endpoint is easiest to break: it lays its own board, so
+   * an option it forgets to read hands a model a board the reader is not
+   * looking at, described by a rule that does not fit it.
+   */
+  it('lays the board the address asked for, and says the count it laid', async () => {
+    const four = await call(qizhengPrompt, `${BIRTH}&lang=en`);
+    const three = await call(qizhengPrompt, `${BIRTH}&qizheng.ziqi=off&lang=en`);
+
+    expect(four.text).toContain('four and four are printed');
+    expect(four.text).toContain('紫氣');
+    expect(three.text).toContain('four and three are printed');
+    expect(three.text).toContain('Do not supply it');
+  });
+
+  it('renders the same board at /text, with the same count', async () => {
+    const three = await call(qizhengText, `${BIRTH}&qizheng.ziqi=off&lang=en`);
+
+    expect(three.text).toMatch(/three, not four/i);
+    expect(three.text).not.toContain('the purple vapour');
+  });
+
   it('carries the four pillars and the element it withholds', async () => {
     const { status, text } = await call(baziPrompt, `${BIRTH}&gender=male&lang=en`);
 

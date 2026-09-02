@@ -31,6 +31,9 @@
     ),
   );
 
+  /** Whether the fourth remainder is on this board, which decides the note. */
+  const carriesZiqi = $derived(board.remainders.some((one) => one.body.id === 'ziqi'));
+
   const degrees = (value: number): string => `${value.toFixed(2)}°`;
 </script>
 
@@ -121,10 +124,13 @@
   <CalendarAndAlmanac {moment} {t} />
 
   <!-- Both said where a reader is counting, and never in a footnote. The
-       first answers whoever counted three names and expected four; the
-       second answers whoever is holding an almanac open beside this and is
+       first answers whoever is counting the remainders — and follows the
+       board rather than the option, since the board is what they are counting;
+       the second answers whoever is holding an almanac open beside this and is
        about to conclude the degrees are wrong. -->
-  <p class="note"><Named text={t('cli.value.threeRemainders')} /></p>
+  <p class="note">
+    <Named text={t(carriesZiqi ? 'cli.value.fourRemainders' : 'cli.value.threeRemainders')} />
+  </p>
   <p class="note"><Named text={t('cli.value.qizhengFrame')} /></p>
 </div>
 
