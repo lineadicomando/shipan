@@ -61,7 +61,7 @@ import {
   type QizhengOptions,
 } from './qizheng.js';
 import { nianmingOf, yearsLived, type Nianming, type NianmingOptions } from './nianming.js';
-import { DEFAULT_ZIWEI_OPTIONS, computeZiwei } from './ziwei/index.js';
+import { DEFAULT_ZIWEI_OPTIONS, computeZiwei, type ZiweiOptions } from './ziwei/index.js';
 import { resolveMoment, type Moment } from './pillars.js';
 import {
   baziReadingPrompt,
@@ -170,6 +170,8 @@ interface Options {
   luohou?: string;
   ziqi?: string;
   yearBoundary?: string;
+  ziweiYearBoundary?: string;
+  taiyiYearBoundary?: string;
 }
 
 const HELP = `shipan 式盤 — the boards, on the command line
@@ -226,7 +228,15 @@ Narrowing a scan
                                   fourth remainder. It is on by default and is
                                   placed to a palace and to no degree; \`off\`
                                   leaves the board with three
-  --year-boundary lichun|dongzhi|chunjie
+  --year-boundary lichun|chunjie  where the year of the pillars begins, which
+                                  every board stands on; default: lichun
+  --ziwei-year-boundary lichun|chunjie
+                                  for \`ziwei\`: which reckoning gives that
+                                  board's year its stem, and so seats the four
+                                  transformations. It is not the pillars' and
+                                  carries its own name for that reason;
+                                  default: chunjie
+  --taiyi-year-boundary lichun|dongzhi|chunjie
                                   for \`taiyi\`: where the counted year begins.
                                   It is upstream of the whole board, and only
                                   lichun is implemented — the pillars turn
@@ -519,6 +529,7 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
     }
     const board = computeZiwei(moment, {
       ...DEFAULT_ZIWEI_OPTIONS,
+      ...ziweiOptionsFrom(options),
       ...(gender ? { gender } : {}),
     });
     if (options.json) return JSON.stringify({ moment, ziwei: board }, null, 2);
@@ -878,6 +889,19 @@ function resolveOptions(options: Options): ChartOptions {
     }
     chartOptions.dayBoundary = options.dayBoundary;
   }
+  // The pillars' own, which no flag reached until the layer and the boards
+  // stopped sharing a word: `--year-boundary` was read in 太乙's branch alone,
+  // so it was dropped in silence on every other command and the layer's could
+  // not be moved at all. → `docs/history/43-the-layer-under-the-board.md`
+  if (options.yearBoundary !== undefined) {
+    if (options.yearBoundary !== 'lichun' && options.yearBoundary !== 'chunjie') {
+      throw new UsageError('cli.error.unknownValue', {
+        option: '--year-boundary',
+        value: options.yearBoundary,
+      });
+    }
+    chartOptions.yearBoundary = options.yearBoundary;
+  }
   // A chart cast by the wrong method looks right and is not, so a misspelling
   // is refused here rather than falling back to the default.
   if (options.method !== undefined) {
@@ -929,20 +953,41 @@ function liurenOptionsFrom(options: Options): LiurenOptions {
  * than an omission — what changed is what the engine can refuse by name, not
  * what it can compute.
  */
+/**
+ * 紫微斗數's own year boundary, which is not the pillars'.
+ *
+ * Both are implemented and they disagree by weeks, and the board's decides the
+ * year stem, which seats the four transformations — so a birth between the two
+ * lays out a different board either way. It carries its board's name because
+ * the layer is under it while it is being laid: naming the command settles
+ * which board and not which of the two bags.
+ * → `docs/parameters.md` § "A board's parameters travel under the board's name"
+ */
+function ziweiOptionsFrom(options: Options): Partial<ZiweiOptions> {
+  if (options.ziweiYearBoundary === undefined) return {};
+  if (options.ziweiYearBoundary !== 'lichun' && options.ziweiYearBoundary !== 'chunjie') {
+    throw new UsageError('cli.error.unknownValue', {
+      option: '--ziwei-year-boundary',
+      value: options.ziweiYearBoundary,
+    });
+  }
+  return { yearBoundary: options.ziweiYearBoundary };
+}
+
 function taiyiOptionsFrom(options: Options): TaiyiOptions {
   const taiyi: TaiyiOptions = { ...DEFAULT_TAIYI_OPTIONS };
-  if (options.yearBoundary !== undefined) {
+  if (options.taiyiYearBoundary !== undefined) {
     if (
-      options.yearBoundary !== 'lichun' &&
-      options.yearBoundary !== 'dongzhi' &&
-      options.yearBoundary !== 'chunjie'
+      options.taiyiYearBoundary !== 'lichun' &&
+      options.taiyiYearBoundary !== 'dongzhi' &&
+      options.taiyiYearBoundary !== 'chunjie'
     ) {
       throw new UsageError('cli.error.unknownValue', {
-        option: '--year-boundary',
-        value: options.yearBoundary,
+        option: '--taiyi-year-boundary',
+        value: options.taiyiYearBoundary,
       });
     }
-    taiyi.yearBoundary = options.yearBoundary;
+    taiyi.yearBoundary = options.taiyiYearBoundary;
   }
   return taiyi;
 }
@@ -1013,6 +1058,8 @@ const FLAGS: Record<string, keyof Options> = {
   '--luohou': 'luohou',
   '--ziqi': 'ziqi',
   '--year-boundary': 'yearBoundary',
+  '--ziwei-year-boundary': 'ziweiYearBoundary',
+  '--taiyi-year-boundary': 'taiyiYearBoundary',
 };
 
 function parse(argv: string[]): { command?: Command; options: Options } {
