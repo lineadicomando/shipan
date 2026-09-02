@@ -439,10 +439,13 @@ failure a second copy of a fact always has.
 
 **Alpha is derived, not declared.** `PRERELEASE` is a leading zero, because
 that is already what a leading zero means, and a flag beside the number could
-disagree with the number. The footer prints `lineadicomando · shipan 0.1.0
-(alpha)` while it holds and drops the parenthesis after, and the notes page
-shows what an alpha is free to change for exactly as long — no page has to be
-edited when the state ends.
+disagree with the number. The footer prints the byline, the name and the
+number on one line — `lineadicomando · shipan 0.1.20 (alpha)` as this is
+written — and carries the parenthesis while the leading zero holds and drops it
+after, and the notes page shows what an alpha is free to change for exactly as
+long. No page has to be edited when the state ends, and the number in that
+example is the one thing here that is a snapshot: it is what the line looked
+like, not what it says.
 
 **Who wrote this and which copy answered are one line**, since each is a fact
 about the page rather than about a board, and two lines of three words read as
