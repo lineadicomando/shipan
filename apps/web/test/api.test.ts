@@ -26,6 +26,7 @@ import { GET as terms } from '../src/routes/api/terms/+server';
 import { GET as locations } from '../src/routes/api/locations/+server';
 import { GET as moments } from '../src/routes/api/moments/+server';
 import { INSTRUMENTS, type InstrumentId } from '../src/lib/instruments';
+import { DIVERGENCES, wire } from '../src/lib/parameters';
 
 /**
  * The endpoints are called as SvelteKit calls them, with a URL and a request.
@@ -859,33 +860,6 @@ describe('GET /api/ziwei', () => {
   });
 
   /**
-   * The same hole 奇門 closed, on the board where it stayed open longest: this
-   * reader named 四化 and the year's boundary by hand and passed over the
-   * other three, so `ziwei.huoling=hour` — a value the engine declares and
-   * does not compute — came back a chart cast the way the book does it, under
-   * an address saying otherwise.
-   */
-  it('refuses a value it declares and does not compute', async () => {
-    for (const [parameter, value] of [
-      ['ziwei.huoling', 'hour'],
-      ['ziwei.leapMonth', 'current'],
-      ['ziwei.daxian', 'ming'],
-    ] as const) {
-      const { status, body } = await call(ziwei, `${MOMENT}&${parameter}=${value}`);
-
-      expect(status, parameter).toBe(501);
-      expect(body, parameter).toMatchObject({ code: 'OPTION_NOT_IMPLEMENTED' });
-    }
-  });
-
-  it('refuses a 紫微斗數 name nobody declares, rather than passing over it', async () => {
-    const { status, body } = await call(ziwei, `${MOMENT}&ziwei.yuan=futou`);
-
-    expect(status).toBe(400);
-    expect(body).toMatchObject({ code: 'UNKNOWN_IDENTIFIER' });
-  });
-
-  /**
    * The one divergence of this board a reader can move, and the reason it is
    * spelt with the board's name in front of it.
    *
@@ -962,6 +936,63 @@ describe('GET /api/ziwei', () => {
 
     const { text: plain } = await call(ziweiPrompt, MOMENT);
     expect(plain).not.toMatch(/gender\s+male/);
+  });
+});
+
+
+/**
+ * No board answers under a reading its address did not ask for.
+ *
+ * **Derived, because listing it is what let it drift.** 奇門 had this closed
+ * and the other four did not: each read its own options inline and read only
+ * the parameters with a second implemented value, so a value the engine
+ * declares and does not compute was passed over and the board came back on the
+ * default — 六壬 turned at the 中氣 under an address naming the 節氣, 太乙 in
+ * the 年計 under one naming the 月計. A refused value has to come back refused,
+ * and a table of examples would only ever cover the boards somebody remembered.
+ *
+ * `bazi` and `nianming` carry no unimplemented value today, so the loop finds
+ * nothing to ask of them and the count below is what says so.
+ */
+describe('every board refuses the values it declares and does not compute', () => {
+  const ADDRESSES: [string, Handler, string][] = [
+    ['qimen', qimen, MOMENT],
+    ['liuren', liuren, MOMENT],
+    ['qizheng', qizheng, MOMENT],
+    ['bazi', bazi, MOMENT],
+    ['ziwei', ziwei, MOMENT],
+    ['taiyi', taiyi, 'year=2026'],
+  ];
+
+  const refused = ADDRESSES.flatMap(([board, handler, query]) =>
+    DIVERGENCES.filter((row) => row.board === board).flatMap((row) =>
+      row.values
+        .filter((value) => !row.implemented.includes(value))
+        .map((value): [string, Handler, string] => [
+          `${wire(row)}=${value}`,
+          handler,
+          `${query}&${wire(row)}=${value}`,
+        ]),
+    ),
+  );
+
+  it('has something to ask of every board that declares one', () => {
+    const asked = new Set(refused.map(([asking]) => asking.split('.')[0]));
+    expect(asked).toEqual(new Set(['qimen', 'liuren', 'qizheng', 'ziwei', 'taiyi']));
+  });
+
+  it.each(refused)('%s', async (_asking, handler, query) => {
+    const { status, body } = await call(handler, query);
+
+    expect(status).toBe(501);
+    expect(body).toMatchObject({ code: 'OPTION_NOT_IMPLEMENTED' });
+  });
+
+  it.each(ADDRESSES)('%s refuses a name nobody declares', async (board, handler, query) => {
+    const { status, body } = await call(handler, `${query}&${board}.yuan=futou`);
+
+    expect(status).toBe(400);
+    expect(body).toMatchObject({ code: 'UNKNOWN_IDENTIFIER' });
   });
 });
 
