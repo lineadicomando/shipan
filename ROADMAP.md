@@ -244,7 +244,36 @@ grows written prose grows the price of this.** The one thing that would change
 the design rather than the catalogs is a language needing plural rules, gender
 agreement or message syntax; Spanish needs none of the three.
 
-## 5. What is refused and stays refused
+## 5. Surfaces that reach less than the engine
+
+**Medium.** Nothing here is wrong: no value is accepted and dropped, and the
+block naming the schools in force says the truth on every surface. What is
+missing is reach — a school the engine computes that one surface cannot be
+asked for.
+
+**The CLI is the poorest of the three today.** It offers `--method`,
+`--guiren`, `--luohou`, `--ziqi`, `--year-boundary`, `--ziwei-year-boundary`,
+`--taiyi-year-boundary`, `--day-boundary`, `--true-solar` and `--shensha`, and
+not these four:
+
+| | |
+|---|---|
+| `qimen.spirits` | three implemented values, and it decides which names the middle pair of the eight carries |
+| `qimen.centreTravel` | two, and it decides which palace the 值符 and the 值使 are read from when the count puts them on the centre |
+| `ziwei.sihua` | two, one cell of the table apart, and the cell seats a transformation |
+| `bazi.luckGranularity` | two, parting by up to ten days on when the first decade opens |
+
+All four are offered by MCP and by the REST API. The CLI's own stated policy
+implies they are owed a flag: a flag over a parameter with **one** implemented
+value could only offer a refusal, which is why `epoch` and `ji` have none —
+these have two or three.
+
+What each costs: a row in `FLAGS`, a field on `Options`, a clause in the usage
+text, a validated read beside `ziweiOptionsFrom` and `qizhengOptionsFrom`, and
+a test that the board moves rather than that the flag parses. No engine change,
+no register row, no new prose in `docs/`.
+
+## 6. What is refused and stays refused
 
 Not roadmap, and here only so nobody mistakes silence for an omission: the 用神,
 格局, ranking, dating, advice, the 年命 purposes doctrine, who is 主 and who is
