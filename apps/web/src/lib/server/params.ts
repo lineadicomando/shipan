@@ -386,6 +386,63 @@ export function readPlace(params: URLSearchParams): {
 }
 
 /**
+ * The divergences one board's address states, read off the declaration.
+ *
+ * **Every declared value is accepted here and none is judged.** One the
+ * engine does not compute travels on to `requireImplemented`, which comes
+ * back a 501 naming it; one nobody declares is a 400 saying no school is
+ * called that. The third outcome is what this function exists to make
+ * impossible: an address asking for one reading, answered under another, in
+ * silence.
+ *
+ * The list is `DIVERGENCES`, not a copy of it. Naming the parameters by hand
+ * is how the hole opened the first time — the 奇門 reader named `method` and
+ * the retired `yuan` and read neither `plate` nor `system` nor
+ * `centreLodging`, so an address asking for 飛盤 was answered with a 轉盤
+ * chart and nothing said otherwise.
+ *
+ * **A `board.` name nobody declares is refused, not ignored.** Passing over a
+ * stray field is right and passing over a parameter that used to exist is
+ * not: `qimen.yuan=futou` would be dropped in silence and the chart answered
+ * under 茅山, which is what that address was written to avoid. A parameter
+ * that retires takes its addresses with it, and says so.
+ * → `docs/history/40-the-default-was-maoshan.md`
+ *
+ * A board's, and not a layer's. A layer's parameter travels bare — it stands
+ * under every board and collides with nothing — so it has no prefix to sweep.
+ */
+function readDeclared<O>(board: string, params: URLSearchParams, options: O): O {
+  const declared = new Set<string>();
+
+  for (const row of DIVERGENCES) {
+    if (row.board !== board) continue;
+
+    const name = wire(row);
+    declared.add(name);
+
+    const asked = params.get(name);
+    if (asked === null) continue;
+    if (!row.values.includes(asked)) {
+      throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: name, value: asked });
+    }
+    // One cast, for the reason `requireImplemented` has one: the value has
+    // been checked against the declaration on the line above, and an options
+    // type is keyed to its own board so that the declaration cannot drift.
+    (options as unknown as Record<string, unknown>)[row.id] = asked;
+  }
+
+  for (const name of params.keys()) {
+    if (!name.startsWith(`${board}.`) || declared.has(name)) continue;
+    throw new ChartError('UNKNOWN_IDENTIFIER', {
+      parameter: name,
+      value: params.get(name) as string,
+    });
+  }
+
+  return options;
+}
+
+/**
  * Whether the address fixes the instant.
  *
  * Cacheability rests on this and not on the endpoint: a chart is a pure
@@ -413,47 +470,8 @@ export function readOptions(params: URLSearchParams): ChartOptions {
   // **Strict, unlike the three above, and read off the declaration.** A
   // misspelt boundary falls back to a default the answer shows; a misspelt
   // school would cast a chart under a name nobody asked for, which looks right
-  // and is not. So every named value of every 奇門 parameter is checked here
-  // against the values the engine declares — an unknown one is a 400 saying no
-  // school is called that, a declared one the engine does not compute reaches
-  // `requireImplemented` and comes back a 501 saying so by name.
-  //
-  // The list is `DIVERGENCES`, not a copy of it: this used to name `method`
-  // and the retired `yuan` by hand and read neither `plate` nor `system` nor
-  // `centreLodging` at all, so an address asking for 飛盤 was answered with a
-  // 轉盤 chart and nothing said otherwise — a value substituted in silence,
-  // which is the one thing `docs/parameters.md` says may never happen.
-  for (const row of DIVERGENCES) {
-    if (row.board !== 'qimen') continue;
-
-    const asked = params.get(wire(row));
-    if (asked === null) continue;
-    if (!row.values.includes(asked)) {
-      throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: wire(row), value: asked });
-    }
-    // One cast, for the reason `requireImplemented` has one: the value has
-    // been checked against the declaration on the line above, and an options
-    // type is keyed to its own board so that the declaration cannot drift.
-    (options as unknown as Record<string, unknown>)[row.id] = asked;
-  }
-
-  // **A `qimen.` name nobody declares is refused, not ignored.** The loop
-  // above reads the declaration and passes over everything else, which is the
-  // right behaviour for a stray field and the wrong one for a parameter that
-  // used to exist: `qimen.yuan=futou` would have been dropped in silence and
-  // the chart answered under 茅山, which is what that address was written to
-  // avoid. A parameter that retires takes its addresses with it, and says so.
-  // → `docs/history/40-the-default-was-maoshan.md`
-  const declared = new Set(
-    DIVERGENCES.filter((row) => row.board === 'qimen').map((row) => wire(row)),
-  );
-  for (const name of params.keys()) {
-    if (!name.startsWith('qimen.') || declared.has(name)) continue;
-    throw new ChartError('UNKNOWN_IDENTIFIER', {
-      parameter: name,
-      value: params.get(name) as string,
-    });
-  }
+  // and is not. `readDeclared` does that here and at every other board.
+  readDeclared('qimen', params, options);
 
   // The almanac's register is bare, like the pillars' three and unlike a
   // board's: 曆注 is not a board. It is a page a chart is read *against*,
