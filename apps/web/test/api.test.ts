@@ -282,8 +282,29 @@ describe('GET /api/qizheng', () => {
     expect(answer.qizheng.minggong.palace.hanzi).toBeTruthy();
   });
 
-  it('carries three remainders, because 紫氣 has no epoch to be placed by', async () => {
+  it('carries four remainders, the fourth to a palace and to no degree', async () => {
     const { body } = await call(qizheng, MOMENT);
+    const answer = body as {
+      qizheng: {
+        remainders: { body: { hanzi: string }; resolution: string; longitude?: number }[];
+      };
+    };
+
+    expect(answer.qizheng.remainders.map((one) => one.body.hanzi)).toEqual([
+      '羅睺',
+      '計都',
+      '月孛',
+      '紫氣',
+    ]);
+    // Over the wire as it is in the type: the discriminant travels, and there
+    // is no degree behind it for a client to read.
+    const ziqi = answer.qizheng.remainders[3];
+    expect(ziqi?.resolution).toBe('palace');
+    expect(ziqi?.longitude).toBeUndefined();
+  });
+
+  it('drops 紫氣 alone when the address switches it off', async () => {
+    const { body } = await call(qizheng, `${MOMENT}&qizheng.ziqi=off`);
     const answer = body as { qizheng: { remainders: { body: { hanzi: string } }[] } };
 
     expect(answer.qizheng.remainders.map((one) => one.body.hanzi)).toEqual([
@@ -320,7 +341,7 @@ describe('GET /api/qizheng', () => {
 
     expect((body as { qizheng: { options: unknown } }).qizheng.options).toMatchObject({
       xiudu: 'juxing',
-      ziqi: 'off',
+      ziqi: 'yinianyisu',
       luohou: 'descending',
       minggong: 'yuejiang',
     });
@@ -333,8 +354,9 @@ describe('GET /api/qizheng', () => {
     expect(headers['content-type']).toContain('text/plain');
     expect(text).toContain('太陽');
     expect(text).toContain('命宮');
-    // The two things the page owes a reader who counts.
-    expect(text).toMatch(/three, not four/i);
+    // The two things the page owes a reader who counts: what the fourth
+    // remainder is worth, and where the lodges begin.
+    expect(text).toMatch(/to a palace and to no degree/i);
     expect(text).toMatch(/determinative stars/i);
   });
 });

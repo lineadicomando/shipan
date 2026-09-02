@@ -79,10 +79,10 @@ the engine starts computing and this table still calls refused fails that suite,
 and so does a refusal the engine gains and this table does not name.
 
 **紫氣 left this table on 2026-09-01** and is the case a reader will look here
-for. It is computed, and shipped switched off: the value places the fourth 餘 to
-a palace and never to a degree, and each half of that placement rests on a
-single text. What would switch the default — a second dated chart with 炁 on it
-— is stated where the default is argued, in
+for. It is computed and it is the default: the value places the fourth 餘 to a
+palace and never to a degree. Both halves of that placement rest on a single
+text, which is a rung and not a refusal, and what would strengthen them — a
+second dated chart with 炁 on it — is stated where the placement is argued, in
 [`docs/refusals.md`](docs/refusals.md).
 
 **One parameter carries one value and no second one to refuse**, which is a

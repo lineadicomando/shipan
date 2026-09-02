@@ -223,8 +223,9 @@ Narrowing a scan
                                   the astrologers' law and not the 時憲曆's,
                                   which is the reverse of the Indian one
   --ziqi off|yinianyisu           for \`qizheng\`: whether 紫氣 enters as a
-                                  fourth remainder. It is placed to a palace
-                                  and to no degree, and it is off by default
+                                  fourth remainder. It is on by default and is
+                                  placed to a palace and to no degree; \`off\`
+                                  leaves the board with three
   --year-boundary lichun|dongzhi|chunjie
                                   for \`taiyi\`: where the counted year begins.
                                   It is upstream of the whole board, and only

@@ -224,7 +224,7 @@ almanac takes none of these at all. Both are below.
 | 六壬 | `zhouye` | `branch` (晝 from 卯 to 申), `solar` (actual sunrise and sunset) | `branch` |
 | 曆注 | `shensha` | `xieji` (what 《協紀辨方書》 xiéjìbiànfāngshū ratifies in its 卷三 to 卷七, cut to the day and the direction), later a named lineage | `xieji` |
 | 七政四餘 | `xiudu` | where the 宿 begin: `juxing` (at the 距星 jùxīng, placed at the instant), or a 曆's table — `shixian` (時憲曆 shíxiànlì), `shoushi` (授時曆 shòushílì) | `juxing` |
-| 七政四餘 | `ziqi` | whether 紫氣 enters as a fourth 餘: `off`, or `yinianyisu` (一年一宿 yīniányīxiù), which places it **to a palace and to no degree** | `off` |
+| 七政四餘 | `ziqi` | whether 紫氣 enters as a fourth 餘: `yinianyisu` (一年一宿 yīniányīxiù), which places it **to a palace and to no degree**, or `off` | `yinianyisu` |
 | 七政四餘 | `luohou` | which node is 羅睺: `descending` (the 星命 law), `ascending` (湯若望 and the 時憲曆) | `descending` |
 | 七政四餘 | `minggong` | `yuejiang` (立命 by 加時, the hour laid on the palace of the 月將 yuèjiàng), `ascendant` (the true rising degree) | `yuejiang` |
 | 七政四餘 | `gong` | where the twelve 宮 are cut: `zhongqi` (太陽過宮 at the 中氣 zhōngqì), `ci` (the 次 cì as stretches of 宿度) | `zhongqi` |

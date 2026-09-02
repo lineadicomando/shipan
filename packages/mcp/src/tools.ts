@@ -345,12 +345,12 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
         'it. ' +
         'Unlike Qi Men and Liu Ren this is a 命 art, so it is laid for a birth as readily as ' +
         'for a question — but it is its own board and borrows nothing from theirs. ' +
-        'Three things to state when reporting it. **The board carries three remainders unless ' +
-        'you ask for the fourth**: 紫氣 is left out by default because each half of what would ' +
-        'place it — its rate and its one dated anchor — rests on a single text. Pass ' +
-        '`ziqi: "yinianyisu"` and it is placed **to a palace and to no degree**; read it in ' +
-        'that palace, quote no degree and name no lodge for it, and say it stands on one text ' +
-        'and one board where the other three are computed from an ephemeris. ' +
+        'Three things to state when reporting it. **The fourth remainder is not measured like ' +
+        'the other three**: 羅睺, 計都 and 月孛 come from the ephemeris, and 紫氣 is carried by ' +
+        'a transmitted rule from a single board of 1886, so it is given **to a palace and to ' +
+        'no degree**. Read it in that palace, quote no degree and name no lodge for it, and ' +
+        'say what it rests on. Pass `ziqi: "off"` to lay the board without it, and it will say ' +
+        'it carries three. ' +
         '**羅睺 is the descending node here, not the ascending one** — the ' +
         'astrologers’ law, which is the reverse of the Indian convention and of the 時憲曆’s; ' +
         '計都 takes the other. **The lodge boundaries are the determinative stars themselves**, ' +
@@ -376,8 +376,8 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
           .describe(
             'Whether 紫氣 enters as a fourth remainder, by the 一年一宿 transmission — one ' +
               'circuit in twenty-eight years, carried from a board worked in 1886. Default ' +
-              'off. It is placed to a palace and to no degree, and it is the only body here ' +
-              'that is not computed from an ephemeris.',
+              'yinianyisu. It is placed to a palace and to no degree, and it is the only ' +
+              'body here that is not computed from an ephemeris.',
           ),
         ...optionSchema,
         lang: langSchema,

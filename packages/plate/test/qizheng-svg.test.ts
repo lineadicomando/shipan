@@ -31,7 +31,7 @@ function placed(
 const READING: Record<string, string> = {
   太陽: 'tàiyáng', 太陰: 'tàiyīn', 水星: 'shuǐxīng', 金星: 'jīnxīng',
   火星: 'huǒxīng', 木星: 'mùxīng', 土星: 'tǔxīng',
-  羅睺: 'luóhóu', 計都: 'jìdū', 月孛: 'yuèbèi',
+  羅睺: 'luóhóu', 計都: 'jìdū', 月孛: 'yuèbèi', 紫氣: 'zǐqì',
 };
 
 const BOARD: PlateQizheng = {
@@ -48,6 +48,13 @@ const BOARD: PlateQizheng = {
     placed('羅睺', 'luohou', 'huo', ['星', 'xing', 'xīng'], 2.55, ['巳', 5], 'ni'),
     placed('計都', 'jidu', 'tu', ['虛', 'xu', 'xū'], 6.42, ['亥', 11], 'ni'),
     placed('月孛', 'yuebei', 'shui', ['尾', 'wei3', 'wěi'], 10.05, ['寅', 2], 'shun'),
+    // The one body with no lodge and no degree, which is the case the row
+    // layout has to survive: 紫氣 is placed by rule and carries a palace.
+    {
+      body: { hanzi: '紫氣', id: 'ziqi', element: 'mu', pinyin: 'zǐqì' },
+      palace: { hanzi: '巳', index: 5 },
+      motion: 'shun',
+    },
   ],
   minggong: { palace: { hanzi: '卯', index: 3 }, ci: { hanzi: '大火', id: 'dahuo', pinyin: 'dàhuǒ' } },
   houses: (
@@ -77,6 +84,7 @@ const LABELS = {
     taiyang: 'the sun', taiyin: 'the moon', shuixing: 'Mercury', jinxing: 'Venus',
     huoxing: 'Mars', muxing: 'Jupiter', tuxing: 'Saturn',
     luohou: 'the eclipse head', jidu: 'the eclipse tail', yuebei: 'the lunar apogee',
+    ziqi: 'the purple vapour',
   },
   house: {
     ming: 'the life', caibo: 'wealth', xiongdi: 'siblings', tianzhai: 'land and house',
@@ -93,7 +101,7 @@ const LABELS = {
   lodge: { liu: 'the willow', wei3: 'the tail', gui: 'the ghost', yi: 'the wings' },
   motion: { shun: 'direct', ni: 'retrograde' },
   minggong: 'palace of the life',
-  remainders: 'three, not four: 紫氣 is a rule without an epoch',
+  remainders: 'four, the fourth placed to a palace and to no degree',
   frame: 'the lodges begin at their determinative stars',
 };
 
@@ -160,11 +168,30 @@ describe('the listing over the ring', () => {
     expect(svg()).toContain('retrograde');
     expect(svg()).toContain('direct');
   });
+
+  it('leaves the lodge slot empty for the body that has none', () => {
+    const drawn = svg();
+
+    // 紫氣 gets its name, its gloss and its direction like any other row, and
+    // the two slots its rule does not reach are simply not drawn. What must
+    // never appear is a degree behind it.
+    expect(drawn).toContain('紫氣');
+    expect(drawn).toContain('the purple vapour');
+    expect(drawn).not.toMatch(/紫氣<\/text>[\s\S]{0,400}?\d+\.\d\d°/);
+  });
+
+  it('seats it on the ring all the same, since a palace is what it has', () => {
+    const drawn = svg({ size: 800 });
+
+    // Once in the listing, once on the ring — the same two the measured
+    // bodies get.
+    expect(drawn.match(/>紫氣</g)).toHaveLength(2);
+  });
 });
 
 describe('what it says under the board', () => {
-  it('says the count is three and why, on the sheet', () => {
-    expect(svg()).toContain('three, not four');
+  it('says how many remainders the board carries, on the sheet', () => {
+    expect(svg()).toContain('four, the fourth placed to a palace');
   });
 
   it('says the frame is the stars and not a table', () => {
@@ -174,7 +201,8 @@ describe('what it says under the board', () => {
   it('leaves both out when it was given neither', () => {
     const bare = renderQizhengSvg(BOARD);
 
-    expect(bare).not.toContain('three, not four');
+    expect(bare).not.toContain('four, the fourth placed to a palace');
+    expect(bare).not.toContain('determinative stars');
     expect(bare).toContain('<svg');
   });
 });

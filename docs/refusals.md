@@ -160,9 +160,9 @@ This engine computes no 用神 and no 格局.
 *Asked by:* readers expecting four 餘 on a 七政四餘 board.
 
 Three of the four are placed by ephemeris and the fourth is placed by rule,
-under `ziqi: yinianyisu`, **which is off by default**. What is refused is
-narrower than the body and it is the thing a reader would most like to have:
-**a degree for it**.
+under `ziqi: yinianyisu`, which is the default. What is refused is narrower than
+the body and it is the thing a reader would most like to have: **a degree for
+it**.
 
 The rule gives a palace. Its rate is 《張果星宗》's 大數 10228, one circuit in
 twenty-eight years — a figure that work's own 總論 contradicts two columns
@@ -174,13 +174,19 @@ inventing the one number nobody handed it. The type says so rather than the
 documentation: 紫氣 arrives as a `PalacePlacement`, and a surface that reaches
 for its degree does not compile.
 
-**The default is off for a different reason again**, and not because the
-placement is unknowable. Each half of it rests on a single text, which is rung 5
-twice over — a grade this engine ships elsewhere and does not switch on for
-somebody unasked. What would move the default is ordinary: a second dated chart
-with 炁 on it, a century or more from 1886, which makes the anchor two witnesses
-and decides twenty-eight against twenty-nine at the same time, the two parting by
-44° a century.
+**And what is weak about it is published rather than withheld.** Each half of
+the placement rests on a single text, which is rung 5 twice over — the grade
+年命, the 年神 bearings and 太乙's 大將 and 參將 already ship at. This project's
+rule for such a quantity is that its rung is written down, not that the quantity
+is dropped: the art is 七政四餘, and a board printing three by default answered
+to a name it did not carry. So the fourth is on the board, at the resolution its
+rule gives, with the line under the board saying what it stands on. `ziqi: off`
+lays it without, and the board then says it carries three.
+
+What would strengthen it is ordinary: a second dated chart with 炁 on it, a
+century or more from 1886, which makes the anchor two witnesses and decides
+twenty-eight against twenty-nine at the same time, the two parting by 44° a
+century.
 
 ## The 十八飛星 placements
 

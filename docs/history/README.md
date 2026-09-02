@@ -75,6 +75,7 @@ phase.
 | 39 | [The 寶鑑, and what it was made of](39-the-baojian-and-what-it-was-made-of.md) | done — the survey of ten arrivals, and the volume it sent to the top of the list: a print that is one work at its frame and another at its filling, a refusal better argued, and a finding withdrawn the day it was made |
 | 40 | [The default was 茅山](40-the-default-was-maoshan.md) | done — the engine computed 茅山 by default under the name 拆補, and refused it in the same breath as having no reference; `yuan` retires, every default chart changes, and a printed statement of the rule is found on a shelf that had held it for three weeks |
 | 41 | [The fourth remainder](41-the-fourth-remainder.md) | done — 《古今圖書集成》 星命部 arrives, the 定度法 is read on the plate, and the two witnesses the register counted for its rate turn out to be one work printed twice; 紫氣 is implemented at palace resolution and shipped off by default |
+| 42 | [Four by default](42-four-by-default.md) | done — revises 41 one commit later: a rung is written down rather than withheld, and the engine already ships three quantities at the same grade, so 紫氣 becomes the default and the palace-only resolution is what keeps it honest |
 
 ## The rest of the record
 

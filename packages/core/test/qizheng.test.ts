@@ -284,16 +284,16 @@ describe('the four remainders', () => {
     expect(flipped[2]?.longitude).toBeCloseTo(kept[2]?.longitude as number, 9);
   });
 
-  it('carries three by default, because 紫氣 is not on by default', () => {
+  it('carries four by default, and 紫氣 comes last', () => {
     const laid = board(julianDay, '午');
-    expect(laid.remainders).toHaveLength(3);
-    expect(laid.remainders.map((r) => r.body.hanzi)).toEqual(['羅睺', '計都', '月孛']);
-  });
-
-  it('carries four when 紫氣 is asked for, and it comes last', () => {
-    const laid = board(julianDay, '午', { ziqi: 'yinianyisu' });
     expect(laid.remainders).toHaveLength(4);
     expect(laid.remainders.map((r) => r.body.hanzi)).toEqual(['羅睺', '計都', '月孛', '紫氣']);
+  });
+
+  it('carries three when 紫氣 is switched off, and drops only that one', () => {
+    const laid = board(julianDay, '午', { ziqi: 'off' });
+    expect(laid.remainders).toHaveLength(3);
+    expect(laid.remainders.map((r) => r.body.hanzi)).toEqual(['羅睺', '計都', '月孛']);
   });
 
   it('runs 月孛 forward, which a mean apogee always does', () => {
@@ -301,8 +301,10 @@ describe('the four remainders', () => {
   });
 
   it('gives each remainder the phase the tradition gave it', () => {
+    // 火餘, 土餘, 水餘, 木餘 — and 金 has none, which is the tradition's own
+    // arrangement and the reason this list is four and not five.
     const laid = board(julianDay, '午');
-    expect(laid.remainders.map((r) => r.body.element)).toEqual(['huo', 'tu', 'shui']);
+    expect(laid.remainders.map((r) => r.body.element)).toEqual(['huo', 'tu', 'shui', 'mu']);
   });
 });
 

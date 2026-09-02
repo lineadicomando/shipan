@@ -1794,7 +1794,7 @@ export const en = {
   'notes.refusals.ziqi.title': '紫氣 zǐqì, the fourth remainder',
   'notes.refusals.ziqi.asks': 'readers expecting four 餘 yú on a 七政四餘 qīzhèng sìyú board.',
   'notes.refusals.ziqi.body':
-    'Three of the four are placed by ephemeris and the fourth is placed by rule, which you can switch on. What stays refused is a degree for it: the rule gives a palace, and a lodge is a stretch of some thirteen degrees inside a palace of thirty. It ships switched off because each half of the placement — the rate and the one dated board of 1886 it is carried from — rests on a single text, where the other three rest on the sky.',
+    'Three of the four are placed by ephemeris and the fourth is placed by a transmitted rule. What stays refused is a degree for it: the rule gives a palace, and a lodge is a stretch of some thirteen degrees inside a palace of thirty. Each half of that placement — the rate, and the one dated board of 1886 it is carried from — rests on a single text, where the other three rest on the sky. The board says so under itself, and you can lay it without the fourth.',
   'notes.refusals.feixing.title': 'The 十八飛星 shíbāfēixīng placements',
   'notes.refusals.feixing.asks': 'anyone holding both books of 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':
@@ -2204,7 +2204,7 @@ export const en = {
   'prompt.qizheng.remainders':
     'The 四餘 sìyú are four and three are printed. 羅睺 luóhóu stands at the descending node, 計都 jìdū at the ascending and 月孛 yuèbèi at the lunar apogee — the law the 星命家 xīngmìngjiā kept, and the reverse of what anyone reasoning from Rahu and Ketu would set. 紫氣 zǐqì is absent: a rule for it survives, but there is nothing in the sky to check that rule against, so it is left out rather than guessed at. Do not supply it. All three that are printed are mean elements and are 隱曜 yǐnyào, shadow bodies — a mean motion is what every text naming them was describing.',
   'prompt.qizheng.ziqi':
-    'The 四餘 sìyú are four and four are printed. 羅睺 luóhóu stands at the descending node, 計都 jìdū at the ascending and 月孛 yuèbèi at the lunar apogee — the law the 星命家 xīngmìngjiā kept, and the reverse of what anyone reasoning from Rahu and Ketu would set. Those three are mean elements and 隱曜 yǐnyào, shadow bodies, which is what every text naming them was describing. 紫氣 zǐqì is the fourth and is given as a palace with no degree, which is the whole of what its rule states: its rate is one work\u2019s 大數 dàshù and its place is carried from a single board worked in 1886, which prints a palace. Read it in the palace it is given and nowhere finer. Do not quote a degree for it, do not compute one, and do not name the 宿 xiù it falls in — the palace is thirty degrees wide and where it sits inside one is not determined. If you use it, say that its rate rests on one text and its position on one board, where the other three are computed from an ephemeris.',
+    'The 四餘 sìyú are four and four are printed. 羅睺 luóhóu stands at the descending node, 計都 jìdū at the ascending and 月孛 yuèbèi at the lunar apogee — the law the 星命家 xīngmìngjiā kept, and the reverse of what anyone reasoning from Rahu and Ketu would set. 紫氣 zǐqì is the fourth and stands in a palace with no degree, which is the whole of what its rule states. Read it there: quote no degree for it and name no lodge 宿 xiù, a lodge being a stretch of some thirteen degrees inside a palace of thirty. All four are 隱曜 yǐnyào, shadow bodies; the three at the nodes and the apogee are mean elements, and 紫氣 is carried by rule from a single board of 1886.',
   'prompt.qizheng.noScore':
     'Do not count benefic bodies against malefic ones and call the result a score for the life. Do not rank the palaces and do not rank the bodies. 順 shùn and 逆 nì are the direction a body is moving, which is a fact about the sky and not a mark for or against anything.',
   // The two "how sure" lines, said among the rules rather than left in a
@@ -2481,10 +2481,8 @@ export const en = {
   'cli.value.ziweiSource':
     'placed by 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr throughout: the fourteen-star transmission, and not the eighteen-star 十八飛星 shíbāfēixīng line that 《全集》 quánjí and 《捷覽》 jiélǎn carry. Its tables part from the modern ones in four places — two stars taken off the hour, a pair seated off the stem, a god taken off the year, and one of the four transformations — and in each this book is followed and the divergence recorded',
   'form.qizheng.ziqi': 'Whether 紫氣 zǐqì enters',
-  'form.qizheng.ziqi.off': 'three remainders: the fourth is left out',
+  'form.qizheng.ziqi.off': 'three remainders: ephemeris only',
   'form.qizheng.ziqi.yinianyisu': 'four remainders: one lodge a year 一年一宿 yīniányīxiù',
-  'form.qizheng.ziqi.note':
-    'It adds a fourth remainder and moves nothing else. 紫氣 zǐqì is placed to a palace and to no degree: its rate is the 大數 dàshù of one work, which gives twenty-nine years elsewhere on the same leaf, and its position is carried from a single board worked in 1886. The three computed from an ephemeris stand on different ground, which is why the default leaves it out.',
   'form.qizheng.luohou': 'Which node is 羅睺 luóhóu',
   'form.qizheng.luohou.descending': 'the descending node: the astrologers’ law',
   'form.qizheng.luohou.ascending': 'the ascending node: 湯若望 Tāng Ruòwàng and the 時憲曆 shíxiànlì',

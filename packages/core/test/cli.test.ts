@@ -307,14 +307,21 @@ describe('qizheng', () => {
     expect(out).toMatch(/\d+\.\d\d°/);
   });
 
-  it('carries three remainders and says on the page why not four', async () => {
+  it('carries four remainders and says what the fourth is worth', async () => {
     expect(await run(['qizheng', ...MOMENT, '--lang', 'en'])).toBe(0);
 
     expect(out).toContain('羅睺');
     expect(out).toContain('計都');
     expect(out).toContain('月孛');
-    // 紫氣 is on the page, in the line that says why it is not on the board.
-    // What must be absent is a row for it.
+    expect(out).toContain('the purple vapour');
+    expect(out).toContain('placed to a palace and to no degree');
+  });
+
+  it('drops 紫氣 alone when told to, and says the board carries three', async () => {
+    expect(await run(['qizheng', ...MOMENT, '--ziqi', 'off', '--lang', 'en'])).toBe(0);
+
+    // The other three stay, and what must be absent is a row for the fourth.
+    expect(out).toContain('月孛');
     expect(out).not.toContain('the purple vapour');
     expect(out).toContain('three, not four');
   });

@@ -94,7 +94,7 @@ describe('what the server offers', () => {
     // lodge boundaries for a published table. The fourth remainder can now be
     // asked for, so what the description owes a model is the count *and* what
     // the fourth one is worth when it is there.
-    expect(byName.get('compute_qizheng')).toMatch(/three remainders unless/i);
+    expect(byName.get('compute_qizheng')).toMatch(/not measured like\s+the other three/i);
     expect(byName.get('compute_qizheng')).toMatch(/to a palace and to no degree/i);
     expect(byName.get('compute_qizheng')).toMatch(/descending node here/i);
     expect(byName.get('compute_qizheng')).toMatch(/no epoch\s+enters|no epoch enters/i);

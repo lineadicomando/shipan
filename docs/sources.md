@@ -3450,11 +3450,16 @@ the worse of its two checkable siblings — and nothing establishes that it is n
 worse, which is the real residue and belongs in an output rather than in a
 refusal.
 
-`ziqi` keeps `off` as its default and `yinianyisu` as a named, refused value.
-The board reports three remainders rather than quietly printing four. **What
-holds that refusal today is one plate for the anchor and one work for the rate**
-— see the rungs below — and no longer the claim that no acquisition could
-change it.
+**So the board carries the fourth 餘, and carries what it is worth with it.**
+`ziqi: yinianyisu` is the default; `off` lays the board without it and the
+output then says 三餘. Both halves of the placement are rung 5 — one plate for
+the anchor, one work for the rate, see the rungs below — and this project's rule
+for a rung-5 quantity is that its rung is written down, not that the quantity is
+withheld: 年命, the 年神 bearings and 太乙's 大將 and 參將 ship at the same grade.
+What keeps that honest here is the resolution. 紫氣 travels as a palace and can
+travel as nothing finer — the type refuses a degree rather than the prose asking
+for one — and the line under every board says its rate rests on one work and its
+position on one plate, where the other three are read off the sky.
 
 For what it is worth against a future check: 曹仁麟's 《星度指南》 (preface
 民國三十年, 1941) 第七篇 works a chart for 光緒丙戌年十月十一日寅時 —

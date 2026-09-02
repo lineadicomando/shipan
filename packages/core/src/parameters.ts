@@ -420,11 +420,10 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
         id: 'yinianyisu',
         name: { hanzi: '一年一宿', pinyin: 'yīniányīxiù' },
         says: 'form.qizheng.ziqi.yinianyisu',
-        note: 'form.qizheng.ziqi.note',
         implemented: true,
       },
     ],
-    default: 'off',
+    default: 'yinianyisu',
   },
   luohou: {
     board: 'qizheng',

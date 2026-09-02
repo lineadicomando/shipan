@@ -1573,7 +1573,7 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.ziqi.title': '紫氣 zǐqì, il quarto residuo',
   'notes.refusals.ziqi.asks': 'chi si aspetta quattro 餘 yú su una tavola di 七政四餘 qīzhèng sìyú.',
   'notes.refusals.ziqi.body':
-    'Tre dei quattro sono collocati dalle effemeridi e il quarto è collocato da una regola, che puoi accendere. Quel che resta rifiutato è un grado per esso: la regola dà un palazzo, e una dimora è un tratto di una tredicina di gradi dentro un palazzo di trenta. Arriva spento perché ciascuna metà della collocazione — la velocità e l’unica carta datata del 1886 da cui è portata — poggia su un testo solo, dove gli altri tre poggiano sul cielo.',
+    'Tre dei quattro sono collocati dalle effemeridi e il quarto è collocato da una regola trasmessa. Quel che resta rifiutato è un grado per esso: la regola dà un palazzo, e una dimora è un tratto di una tredicina di gradi dentro un palazzo di trenta. Ciascuna metà di quella collocazione — la velocità, e l’unica carta datata del 1886 da cui è portata — poggia su un testo solo, dove gli altri tre poggiano sul cielo. La tavola lo dice sotto di sé, e puoi stenderla senza il quarto.',
   'notes.refusals.feixing.title': 'Le collocazioni delle 十八飛星 shíbāfēixīng',
   'notes.refusals.feixing.asks': 'chi ha in mano entrambi i libri del 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':
@@ -1923,7 +1923,7 @@ export const it: Record<MessageKey, string> = {
   'prompt.qizheng.remainders':
     'I 四餘 sìyú sono quattro e tre sono stampati. 羅睺 luóhóu sta al nodo discendente, 計都 jìdū all’ascendente e 月孛 yuèbèi all’apogeo lunare: la legge che gli 星命家 xīngmìngjiā hanno mantenuto, e il contrario di ciò che imposterebbe chiunque ragioni da Rahu e Ketu. 紫氣 zǐqì è assente: una regola per esso sopravvive, ma non c’è nulla in cielo contro cui verificarla, quindi è lasciato fuori anziché indovinato. Non fornirlo. Tutti e tre quelli stampati sono elementi medi e sono 隱曜 yǐnyào, corpi in ombra: un moto medio è ciò che descriveva ogni testo che li nomina.',
   'prompt.qizheng.ziqi':
-    'I 四餘 sìyú sono quattro e quattro sono stampati. 羅睺 luóhóu sta al nodo discendente, 計都 jìdū all\u2019ascendente e 月孛 yuèbèi all\u2019apogeo lunare: la legge che gli 星命家 xīngmìngjiā hanno mantenuto, e il contrario di ciò che imposterebbe chiunque ragioni da Rahu e Ketu. Quei tre sono elementi medi e 隱曜 yǐnyào, corpi d\u2019ombra, che è ciò che descriveva ogni testo che li nomina. 紫氣 zǐqì è il quarto ed è dato come palazzo e senza grado, che è tutto ciò che la sua regola enuncia: la sua velocità è il 大數 dàshù di un\u2019opera sola e la sua posizione è portata da un\u2019unica carta calcolata nel 1886, che stampa un palazzo. Leggilo nel palazzo che gli è dato e non più finemente. Non citarne un grado, non calcolarne uno e non nominare il 宿 xiù in cui cade: il palazzo è largo trenta gradi e dove stia dentro a uno non è determinato. Se lo usi, di\u2019 che la sua velocità poggia su un testo solo e la sua posizione su una carta sola, dove gli altri tre sono calcolati da un\u2019effemeride.',
+    'I 四餘 sìyú sono quattro e quattro sono stampati. 羅睺 luóhóu sta al nodo discendente, 計都 jìdū all’ascendente e 月孛 yuèbèi all’apogeo lunare: la legge che gli 星命家 xīngmìngjiā hanno mantenuto, e il contrario di ciò che imposterebbe chiunque ragioni da Rahu e Ketu. 紫氣 zǐqì è il quarto e sta in un palazzo senza grado, che è tutto ciò che la sua regola enuncia. Leggilo lì: non citarne un grado e non nominarne la dimora 宿 xiù, ché una dimora è un tratto di una tredicina di gradi dentro un palazzo di trenta. Tutti e quattro sono 隱曜 yǐnyào, corpi in ombra; i tre ai nodi e all’apogeo sono elementi medi, e il 紫氣 è portato da una regola a partire da un’unica carta del 1886.',
   'prompt.qizheng.noScore':
     'Non contare i corpi benefici contro quelli malefici e non chiamare il risultato un punteggio per la vita. Non ordinare i palazzi e non ordinare i corpi. 順 shùn e 逆 nì sono la direzione in cui un corpo si muove, che è un fatto sul cielo e non un segno a favore o contro alcunché.',
   'prompt.qizheng.direction':
@@ -2114,10 +2114,8 @@ export const it: Record<MessageKey, string> = {
   'cli.value.ziweiSource':
     'collocazioni dal 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr in ogni punto: la trasmissione delle quattordici stelle, non quella delle diciotto, i 十八飛星 shíbāfēixīng che portano 《全集》 quánjí e 《捷覽》 jiélǎn. Le sue tavole si scostano da quelle moderne in quattro luoghi – due stelle slegate dall’ora, una coppia insediata dallo stelo, una divinità presa dall’anno e una delle quattro trasformazioni – e in ognuno si segue questo libro, con lo scostamento registrato',
   'form.qizheng.ziqi': 'Se entri 紫氣 zǐqì',
-  'form.qizheng.ziqi.off': 'tre residui: il quarto resta fuori',
+  'form.qizheng.ziqi.off': 'tre residui: solo effemeridi',
   'form.qizheng.ziqi.yinianyisu': 'quattro residui: una dimora l’anno 一年一宿 yīniányīxiù',
-  'form.qizheng.ziqi.note':
-    'Aggiunge un quarto residuo e non muove altro. 紫氣 zǐqì è collocato in un palazzo e in nessun grado: la sua velocità è il 大數 dàshù di un’opera sola, che sullo stesso foglio dà ventinove anni altrove, e la sua posizione è portata da un’unica carta calcolata nel 1886. I tre calcolati da un’effemeride stanno su un terreno diverso, ed è per questo che il default lo lascia fuori.',
   'form.qizheng.luohou': 'Quale nodo è 羅睺 luóhóu',
   'form.qizheng.luohou.descending': 'il nodo discendente: la legge degli astrologi',
   'form.qizheng.luohou.ascending': 'il nodo ascendente: 湯若望 Tāng Ruòwàng e il 時憲曆 shíxiànlì',

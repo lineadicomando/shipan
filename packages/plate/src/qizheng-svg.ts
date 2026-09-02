@@ -255,9 +255,10 @@ function numbered(groups: Said[][]): Said[][] {
  * Governors on the left and remainders on the right, which is the order the
  * tradition counts them in and also the order of certainty: the seven are
  * bodies somebody can point at, and the four are 隱曜, computed positions
- * that were never seen. Where a board carries three of the four — which is
- * every board this engine draws — the fourth is simply absent, and the note
- * under the ring says why rather than leaving a gap to be wondered at.
+ * that were never seen. 紫氣 is the fourth and is placed by rule rather than
+ * from an ephemeris, so its row carries a palace and leaves the lodge slot
+ * empty; where a board was laid without it there are three rows, and the note
+ * under the ring says which case it is rather than leaving a reader counting.
  *
  * A row says the body, its gloss, the 宿 it fell in with the degrees past
  * that 宿's determinative star, and which way it runs. The 宮度 is not here:

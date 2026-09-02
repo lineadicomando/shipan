@@ -268,20 +268,19 @@ neither disputed.
   卷二 against later lineages, not errors. And a seat named 妻妾 is a **name
   and not an assignment**: which theme is read from which seat is the reader's
   act, said aloud as it is made.
-- **The 七政四餘 board carries three remainders unless the fourth was asked
-  for, and the fourth is worth less than the three.** 紫氣 is a table rather
-  than a body — the tradition says so itself, 在天無象, it has no figure in the
-  heavens — so nothing in the sky weighs its constant, where the two
-  remainders in the same table that can be weighed err by 0.01 % and 0.20 %.
-  It is off by default. Where `ziqi: yinianyisu` was passed it is on the
-  board, **placed to a palace and to no degree**: read it in that palace,
-  quote no degree for it and name no lodge, since a lodge is a stretch of some
-  thirteen degrees inside a palace of thirty and the rule does not reach that
-  far. Say, if you use it, that its rate stands on one work and its position
-  on one board of 1886, where the other three are computed from an ephemeris.
-  If someone asks where 紫氣 is on a board that does not carry it, the answer
-  is that this engine was not asked to place it, not that it is somewhere in
-  particular.
+- **The 七政四餘 board carries four remainders, and the fourth is not measured
+  like the other three.** 羅睺, 計都 and 月孛 are mean elements read off an
+  ephemeris. 紫氣 is a table rather than a body — the tradition says so itself,
+  在天無象, it has no figure in the heavens — so nothing in the sky weighs its
+  constant, where the two remainders in the same table that can be weighed err
+  by 0.01 % and 0.20 %. It is carried by a transmitted rate from a single board
+  of 1886 and is therefore **placed to a palace and to no degree**: read it in
+  that palace, quote no degree for it and name no lodge, since a lodge is a
+  stretch of some thirteen degrees inside a palace of thirty and the rule does
+  not reach that far. Say, if you use it, what it rests on. A board laid with
+  `ziqi: off` carries three and says so; on such a board the answer to where
+  紫氣 is, is that this engine was not asked to place it, not that it is
+  somewhere in particular.
 - **The 宿 boundaries are stars, not a table.** They are the 距星 placed at
   the instant of the chart, so they move with precession and match no printed
   table exactly. Do not attribute them to 《時憲曆》 or to 《授時曆》; those are
@@ -441,7 +440,7 @@ prompt — it was in one once, and what a model did with it was recite it.
 | `compute_bazi` | the four pillars, read out. `gender` only affects the luck cycles |
 | `compute_liuren` | the 大六壬 board — the other 式, laid on the same instant and answering the same shape of question. Lay it for the moment of the asking, never for a birth |
 | `compute_ziwei` | the 紫微斗數 board — the twelve seats counted from a birth, with 紫微 and the thirteen that hang off it, the auxiliaries, the 四化, the brightness grades, the two masters and the limits. **Nothing on it is in the sky**: do not read planets, aspects or transits into it |
-| `compute_qizheng` | the 七政四餘 board — the seven governors and three remainders on the sky, each said twice over: the 宿 with its 入宿度 and the 宮 with its 宮度. A 命 art, so it is laid for a birth as readily as for a question, and it borrows nothing from the other two boards |
+| `compute_qizheng` | the 七政四餘 board — the seven governors and the four remainders, each said twice over: the 宿 with its 入宿度 and the 宮 with its 宮度, except 紫氣, which is placed by rule and carries a palace only. A 命 art, so it is laid for a birth as readily as for a question, and it borrows nothing from the other two boards |
 | `compute_taiyi` | the 太乙 board of a year — 年計. Takes a year and nothing else: no place, no hour, nobody's birth. Never says who is 主 and who is 客, and its palace numbers are not a Qi Men chart's |
 | `draw_qimen_chart` | the picture, framed by the eight directions, with the configurations and their fortunes listed under the grid. After the calculation, never instead of it |
 | `draw_liuren` | the Liu Ren board as a picture: a ring of twelve, the lessons written right to left, the transmissions read downwards. After the calculation, never instead of it |

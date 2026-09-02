@@ -60,19 +60,22 @@ export interface QizhengOptions {
   /**
    * Whether 紫氣 enters, and by which transmission.
    *
-   * `off` is the default and the output then says it carries 三餘, which is
-   * the honest count. `yinianyisu` places it, **and places it as a palace**:
-   * one circuit in twenty-eight years from 《張果星宗》's 大數 10228, carried
-   * from 《星度指南》's 1886 board, which prints a palace and not a degree. See
-   * `ZIQI_DASHU` and `ZIQI_ANCHOR` for both and what each is worth.
+   * `yinianyisu` is the default and places it **as a palace**: one circuit in
+   * twenty-eight years from 《張果星宗》's 大數 10228, carried from 《星度指南》's
+   * 1886 board, which prints a palace and not a degree. See `ZIQI_DASHU` and
+   * `ZIQI_ANCHOR` for both and what each is worth. `off` leaves it out, and the
+   * board then says it carries 三餘.
    *
-   * **Why the default is still `off`.** Each half of the placement stands on
-   * one text — the rate on a work that contradicts itself between its 算法 and
-   * its 總論, the anchor on a single plate — and nothing weighs the 大數 for
-   * 紫氣 itself, its two checkable siblings in the same table erring by 0.01 %
-   * and 0.20 %. That is rung 5 twice over, which this engine ships elsewhere
-   * and does not switch on for somebody. What would move the default is a
-   * second dated chart with 炁 on it. See `docs/sources.md` § 四餘.
+   * **Why the default carries it.** The art is 七政四餘 and the fourth 餘 is
+   * the one absence a reader can see, so a board printing three by default
+   * answered to a name it did not carry. What the placement is worth travels
+   * with it instead of being handled by omission: it arrives as a
+   * `PalacePlacement`, so no surface can print a degree for it, and the line
+   * under the board says its rate rests on one work and its position on one
+   * plate. That is rung 5 twice over — a grade this engine already ships in
+   * 年命, the 年神 bearings and 太乙's 大將 and 參將, each with its rung written
+   * down rather than withheld. What would strengthen it is a second dated chart
+   * with 炁 on it. See `docs/sources.md` § 四餘.
    */
   ziqi: 'off' | 'yinianyisu';
 
@@ -118,7 +121,7 @@ export interface QizhengOptions {
 
 export const DEFAULT_QIZHENG_OPTIONS: QizhengOptions = Object.freeze({
   xiudu: 'juxing',
-  ziqi: 'off',
+  ziqi: 'yinianyisu',
   luohou: 'descending',
   minggong: 'yuejiang',
   gong: 'zhongqi',
@@ -385,8 +388,8 @@ export interface QizhengBoard {
   /** The seven, in the transmitted order 日月水金火木土. */
   governors: readonly Placement[];
   /**
-   * The remainders this board carries, which is three unless 紫氣 was asked
-   * for. `ziqi: 'off'` is the default, and then this is 三餘 and says so.
+   * The remainders this board carries, which is four unless 紫氣 was switched
+   * off. `ziqi: 'off'` makes it 三餘, and the board says so.
    */
   remainders: readonly Placement[];
   /** 命宮, which under 加時 is a palace and carries no degree. */
@@ -558,9 +561,9 @@ export function qizhengBoard(
     place(REMAINDERS.yuebei, apogee.longitude, apogee.speed),
   ];
 
-  // 紫氣 enters last and enters as a palace. `off` is the default, so a board
-  // that carries it was asked for it, and the count the surfaces print — 三餘
-  // or 四餘 — follows this array rather than a constant.
+  // 紫氣 enters last and enters as a palace. The count the surfaces print —
+  // 三餘 or 四餘 — follows this array rather than a constant, so a board laid
+  // with it switched off says three and means it.
   if (options.ziqi === 'yinianyisu') {
     const palace = palaceOfLongitude(ziqiLongitude(julianDay));
     remainders.push({

@@ -331,10 +331,11 @@ describe('the prompt for a board of 命', () => {
 
     expect(instructions).toContain('one source and three derivations');
     expect(instructions).toContain('over-determination');
-    // 紫氣 is absent from the board and the prompt says so rather than leaving
-    // a reader to count three where a name promises four.
+    // 紫氣 is on the board and is the one body there not read off the sky, so
+    // the prompt says what it is worth rather than letting a model read it
+    // beside the measured three as though it were one of them.
     expect(instructions).toContain('紫氣');
-    expect(instructions).toContain('Do not supply it');
+    expect(instructions).toContain('quote no degree for it');
   });
 
   it('puts the four pillars inside a fence and the withheld 用神 outside', () => {
