@@ -360,3 +360,9 @@ Domain identifiers are toneless pinyin where the domain is Chinese (`ganzhi`,
 
 A feature crosses several surfaces and has a procedure of its own — see the
 `new-feature` skill.
+
+## Reviewing what is already there
+
+Auditing is not changing, and the rules above are read while writing. Checking
+one aspect of the project cold — or all of it — has a procedure of its own, in
+five levels ordered by what each invalidates below it: see the `review` skill.
