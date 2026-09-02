@@ -39,7 +39,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const { size, scheme } = readPlateOptions(url.searchParams);
 
     const svg = renderLiurenSvg(board, {
-      schools: divergenceLines('liuren', options, moment, t),
+      schools: divergenceLines('liuren', options, moment.options, t),
       size,
       scheme,
       labels: liurenLabels(t),

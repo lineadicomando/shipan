@@ -1172,6 +1172,22 @@ describe('GET /api/qimen/plate', () => {
     expect(english.text).toMatch(/chief Pillar 天柱 — chief gate Shock 驚門/);
   });
 
+  /**
+   * The drawing's school lines are built from two bags — the board's options
+   * and the layer's — and the layer's used to be read out of a whole `Moment`
+   * handed in beside them. Handed the wrong object the block does not fail:
+   * every layer value comes back `undefined`, falls to its declared default,
+   * and the picture states a school nobody asked for while looking right.
+   */
+  it('names the layer values in force and not their defaults', async () => {
+    const moved = await call(plate, `${MOMENT}&lang=en&yearBoundary=chunjie`);
+    const standing = await call(plate, `date=2024-06-15&time=14:00&timezone=Asia/Shanghai&lang=en`);
+
+    expect(moved.text).toContain('正月初一');
+    expect(moved.text).not.toContain('立春');
+    expect(standing.text).toContain('立春');
+  });
+
   it('frames the drawing with the directions, in the language it was asked for', async () => {
     const english = await call(plate, `${MOMENT}&lang=en`);
     const italian = await call(plate, `${MOMENT}&lang=it`);

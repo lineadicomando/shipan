@@ -425,14 +425,14 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
     }
     const matches = matchRuns(runs, criteria);
 
-    if (options.json) return JSON.stringify({ criteria, matches }, null, 2);
+    if (options.json) return JSON.stringify({ criteria, matches, options: chartOptions }, null, 2);
     return [
       `${t('cli.heading.scan', { from: input.date, to: options.until })}`,
       // What an errand expanded into, said out loud. A shorthand that worked
       // silently would leave the reader unable to check it or to vary it.
       expansionOf(options, t),
       '',
-      formatScan(matches, t),
+      formatScan(matches, t, chartOptions),
       warningsOf(moment, t),
     ]
       .filter((part) => part !== '')

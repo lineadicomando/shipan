@@ -665,7 +665,7 @@ export function registerDrawQimenChart(server: McpServer, context: ToolContext):
           size: args.size ?? 900,
           // Which schools laid it, on the picture: this is the half of a board
           // that travels with no transcript beside it.
-          schools: divergenceLines('qimen', chart.options, moment, t),
+          schools: divergenceLines('qimen', chart.options, moment.options, t),
           // The palaces are written in words, each beside the name it
           // renders — the same drawing the web surface serves.
           labels,
@@ -737,7 +737,7 @@ export function registerDrawLiuren(server: McpServer, context: ToolContext): voi
         return ok(
           renderLiurenSvg(board, {
             size: args.size ?? 900,
-            schools: divergenceLines('liuren', board.options, moment, t),
+            schools: divergenceLines('liuren', board.options, moment.options, t),
             labels: liurenLabels(t),
             heading:
               `${sayGanzhi(board.day, t)} ${board.day.hanzi} · ${board.hour.hanzi} · ` +
@@ -884,7 +884,7 @@ export function registerScanMoments(server: McpServer, context: ToolContext): vo
             `${t('cli.field.place')}: ${label}`,
             t('cli.heading.scan', { from: args.from, to: args.to }),
             '',
-            formatScan(matches, t),
+            formatScan(matches, t, moment.options),
           ].join('\n'),
         );
       } catch (error) {

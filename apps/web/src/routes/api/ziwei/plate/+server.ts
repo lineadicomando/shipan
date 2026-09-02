@@ -42,7 +42,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const { size, scheme } = readPlateOptions(url.searchParams);
 
     const svg = renderZiweiSvg(board, {
-      schools: divergenceLines('ziwei', options, moment, t),
+      schools: divergenceLines('ziwei', options, moment.options, t),
       size,
       scheme,
       labels: ziweiLabels(t),

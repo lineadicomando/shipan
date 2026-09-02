@@ -47,7 +47,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const { size, scheme } = readPlateOptions(url.searchParams);
 
     const svg = renderQizhengSvg(board, {
-      schools: divergenceLines('qizheng', options, moment, t),
+      schools: divergenceLines('qizheng', options, moment.options, t),
       size,
       scheme,
       labels: qizhengLabels(t, board),
