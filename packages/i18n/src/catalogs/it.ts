@@ -1011,18 +1011,26 @@ export const it: Record<MessageKey, string> = {
 
   'meta.title.qizheng': 'Qi Zheng Si Yu: una carta di nascita',
   'meta.description.qizheng':
-    'Qi Zheng Si Yu per una nascita: i sette governatori e i residui, collocati sulle ventotto dimore e sui dodici palazzi.',
-  // Three of the four, and the paragraph names three: of the three read off
-  // the sky two are nodes and the third stands at the lunar apogee. 紫氣 is
-  // the fourth, carried by default and by rule, and it is named in the form,
-  // in the notes and under every board rather than in a paragraph that has no
-  // room for what it is worth. The argument is in `en.ts`.
+    'Qi Zheng Si Yu per una nascita: i sette governatori e i complementi, collocati sulle ventotto dimore e sui dodici palazzi.',
+  // Four, and the paragraph names four: of them only two are nodes, the third
+  // standing at the lunar apogee and the fourth carried by rule rather than by
+  // an ephemeris. What that fourth is worth is not said here — the form, the
+  // notes and the line under every board carry it, where somebody is deciding
+  // rather than arriving. The argument is in `en.ts`.
+  //
+  // «Complementi» e non «residui», che era la resa letterale di 餘 e in
+  // italiano fa pensare per primo allo scarto. Sono l'eccedenza di quattro
+  // delle cinque fasi — 羅睺 del fuoco, 計都 della terra, 月孛 dell'acqua,
+  // 紫氣 del legno — e completano le fasi che i sette governatori portano,
+  // che è quel che «complemento» dice e «residuo» nascondeva. Non sono
+  // stelle e non sono corpi: 「在天無象」, in cielo non hanno figura, e le
+  // note e il prompt li dicono 隱曜 yǐnyào, corpi in ombra.
   //
   // «Governatori» e non «pianeti», per la ragione che ha fatto nascere la
   // parola: due dei sette sono il Sole e la Luna, che stanno fuori dal conto
   // di cinque che i pianeti sono.
   'meta.intro.qizheng.a':
-    'Il 七政四餘 qīzhèng sìyú è la forma classica dell’astrologia oroscopica cinese, fondata sul movimento effettivo dei corpi celesti. Porta il percorso dei sette governatori (il Sole, la Luna e i cinque pianeti) e dei residui — i due nodi lunari e l’apogeo della Luna — attraverso le ventotto dimore 宿 xiù.',
+    'Il 七政四餘 qīzhèng sìyú è la forma classica dell’astrologia oroscopica cinese, fondata sul movimento effettivo dei corpi celesti. Porta il percorso dei sette governatori — il Sole, la Luna e i cinque pianeti — e dei quattro complementi (i due nodi lunari, l’apogeo della Luna e 紫氣 zǐqì) attraverso le ventotto dimore 宿 xiù.',
   // Quel che non dice più è che la latitudine non entra in nessun calcolo.
   // Lo dicono le note, sotto un rifiuto tutto suo, che è dove `CLAUDE.md` lo
   // vuole: nella documentazione e non nel modulo.
@@ -1433,7 +1441,7 @@ export const it: Record<MessageKey, string> = {
   'notes.does.taiyi':
     'La tavola di un anno: sedici divinità in nove palazzi, e i conti dell’ospite e dell’ospitante. Non c’è nessuno sopra.',
   'notes.does.qizheng':
-    'I sette governatori e i residui, collocati sulle ventotto dimore 宿 xiù e sui dodici palazzi.',
+    'I sette governatori e i complementi, collocati sulle ventotto dimore 宿 xiù e sui dodici palazzi.',
   'notes.does.ziwei':
     'Dodici seggi contati dal mese lunare e dall’ora, le stelle che il libro vi colloca, e il grado che dà a ciascuna.',
   'notes.does.bazi':
@@ -1570,7 +1578,7 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.dayMaster.asks': 'ogni lettore dei quattro pilastri.',
   'notes.refusals.dayMaster.body':
     'I cinque elementi arrivano contati sugli otto caratteri, zeri compresi, perché un’assenza pesa quanto un’abbondanza, e il conteggio è stampato perché nessuno debba rifarlo. Dichiarare il signore del giorno forte o debole, e scegliere che cosa compensi un’assenza, sono passi di un metodo: le scuole divergono su come si faccia, perciò la scelta si compie ad alta voce nella lettura, con il metodo nominato.',
-  'notes.refusals.ziqi.title': '紫氣 zǐqì, il quarto residuo',
+  'notes.refusals.ziqi.title': '紫氣 zǐqì, il quarto complemento',
   'notes.refusals.ziqi.asks': 'chi si aspetta quattro 餘 yú su una tavola di 七政四餘 qīzhèng sìyú.',
   'notes.refusals.ziqi.body':
     'Tre dei quattro sono collocati dalle effemeridi e il quarto è collocato da una regola trasmessa. Quel che resta rifiutato è un grado per esso: la regola dà un palazzo, e una dimora è un tratto di una tredicina di gradi dentro un palazzo di trenta. Ciascuna metà di quella collocazione — la velocità, e l’unica carta datata del 1886 da cui è portata — poggia su un testo solo, dove gli altri tre poggiano sul cielo. La tavola lo dice sotto di sé, e puoi stenderla senza il quarto.',
@@ -1917,7 +1925,7 @@ export const it: Record<MessageKey, string> = {
 
   'prompt.qizheng.heading': 'Leggere un quadro di Qi Zheng Si Yu',
   'prompt.qizheng.role':
-    'Qui sotto è disposto un quadro di Qi Zheng Si Yu: i sette governatori, i residui, e i dodici palazzi dell’eclittica con le dimore in cui i corpi sono caduti. È stato calcolato da un’effemeride, non da te: leggilo esattamente come sta, e non aggiungervi nulla. Nessun corpo, nessuna dimora, nessun grado, nessun palazzo che non sia scritto lì. **Non è un oroscopo occidentale e le sue parti non sono quelle di uno**: non importare aspetti, orbi, domicili o un sistema di case, e non tradurlo in uno per leggerlo. Se manca qualcosa che ti serve, di’ che manca. **Non aggiungere nulla riguarda il quadro e non la lettura**: non inventare corpi né posizioni, e poi di’ che cosa quelle posizioni sono.',
+    'Qui sotto è disposto un quadro di Qi Zheng Si Yu: i sette governatori, i complementi, e i dodici palazzi dell’eclittica con le dimore in cui i corpi sono caduti. È stato calcolato da un’effemeride, non da te: leggilo esattamente come sta, e non aggiungervi nulla. Nessun corpo, nessuna dimora, nessun grado, nessun palazzo che non sia scritto lì. **Non è un oroscopo occidentale e le sue parti non sono quelle di uno**: non importare aspetti, orbi, domicili o un sistema di case, e non tradurlo in uno per leggerlo. Se manca qualcosa che ti serve, di’ che manca. **Non aggiungere nulla riguarda il quadro e non la lettura**: non inventare corpi né posizioni, e poi di’ che cosa quelle posizioni sono.',
   'prompt.qizheng.houses':
     'I dodici 人事宮 rénshìgōng sono stampati accanto ai palazzi su cui sono caduti, e ogni nome dice che cosa la tradizione legge a quel seggio: la persona al 命宮 mìnggōng, i mezzi al 財帛宮 cáibógōng, l’impresa al 官祿宮 guānlùgōng, e così via per i dodici. Leggi da essi per nome. Il software non ha scelto nulla oltre i nomi: quale seggio porti quale parte di ciò che scrivi è una tua scelta, e una scelta detta si legge meglio di una contrabbandata – dove un tema poggia su un seggio, di’ quale.',
   'prompt.qizheng.remainders':
@@ -2088,9 +2096,9 @@ export const it: Record<MessageKey, string> = {
   'cli.value.emptyBranch': 'vuoto',
   'cli.value.liurenUnverified':
     'nessuna implementazione di riferimento copre questa regola; il testo classico enumera ogni quadro che essa può trarre, e questo motore li restituisce tutti',
-  'cli.heading.qizheng': 'I sette governatori e i quattro residui',
+  'cli.heading.qizheng': 'I sette governatori e i quattro complementi',
   'cli.field.governors': 'i sette',
-  'cli.field.remainders': 'i residui',
+  'cli.field.remainders': 'i complementi',
   'cli.field.minggong': 'palazzo della vita',
   'cli.field.houses': 'i dodici palazzi',
 
@@ -2114,8 +2122,8 @@ export const it: Record<MessageKey, string> = {
   'cli.value.ziweiSource':
     'collocazioni dal 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr in ogni punto: la trasmissione delle quattordici stelle, non quella delle diciotto, i 十八飛星 shíbāfēixīng che portano 《全集》 quánjí e 《捷覽》 jiélǎn. Le sue tavole si scostano da quelle moderne in quattro luoghi – due stelle slegate dall’ora, una coppia insediata dallo stelo, una divinità presa dall’anno e una delle quattro trasformazioni – e in ognuno si segue questo libro, con lo scostamento registrato',
   'form.qizheng.ziqi': 'Se entri 紫氣 zǐqì',
-  'form.qizheng.ziqi.off': 'tre residui: solo effemeridi',
-  'form.qizheng.ziqi.yinianyisu': 'quattro residui: una dimora l’anno 一年一宿 yīniányīxiù',
+  'form.qizheng.ziqi.off': 'tre complementi: solo effemeridi',
+  'form.qizheng.ziqi.yinianyisu': 'quattro complementi: una dimora l’anno 一年一宿 yīniányīxiù',
   'form.qizheng.luohou': 'Quale nodo è 羅睺 luóhóu',
   'form.qizheng.luohou.descending': 'il nodo discendente: la legge degli astrologi',
   'form.qizheng.luohou.ascending': 'il nodo ascendente: 湯若望 Tāng Ruòwàng e il 時憲曆 shíxiànlì',

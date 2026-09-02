@@ -1086,25 +1086,25 @@ export const en = {
   'meta.title.qizheng': 'Qi Zheng Si Yu — a chart of a birth',
   'meta.description.qizheng':
     'Qi Zheng Si Yu for a birth: the seven governors and the remainders, placed against the twenty-eight lodges and the twelve palaces.',
-  // **Three of the four, and the paragraph names three.** It arrived offering
-  // «the 4 shadow points (lunar and ecliptic nodes)», which is two errors in
-  // one parenthesis: of the three read off the sky only two are nodes, the
-  // third standing at the lunar apogee.
+  // **Four, and the paragraph names four.** It arrived offering «the 4 shadow
+  // points (lunar and ecliptic nodes)», which is two errors in one
+  // parenthesis: of the four only two are nodes, the third standing at the
+  // lunar apogee and the fourth carried by rule rather than by an ephemeris.
   //
-  // 紫氣 is the fourth and is carried by default now, from a rule rather than
-  // from an ephemeris. It is named in the form, in the notes and under every
-  // board, each of which says what it is worth in the same breath; here it is
-  // left out rather than qualified, because a paragraph a reader meets on the
-  // way in has no room for the clause and reads as a promise without it. What
-  // stood here — «with 紫氣 zǐqì where you ask for it» — was written while the
-  // value shipped switched off, and said the reverse of the default from the
-  // day it changed.
+  // **紫氣 is named because the art is named for four.** A paragraph opening
+  // on 七政四餘 and then listing three left the reader to reconcile the two,
+  // and the one they would reconcile it with is a count in the name of the
+  // art. What the fourth is worth is not said here: the form, the notes and
+  // the line under every board carry that clause, where somebody is deciding
+  // rather than arriving. What stood here — «with 紫氣 zǐqì where you ask for
+  // it» — was written while the value shipped switched off, and said the
+  // reverse of the default from the day it changed.
   //
   // «Governors» and not «planets», for the reason the tradition has the word
   // at all: two of the seven are the Sun and the Moon, which stand outside
   // the count of five that the planets are.
   'meta.intro.qizheng.a':
-    '七政四餘 qīzhèng sìyú is the classical form of Chinese horoscopic astrology, founded on the actual movement of the celestial bodies. It carries the paths of the seven governors — the Sun, the Moon and the five planets — and of the remainders — the two lunar nodes and the lunar apogee — through the twenty-eight lodges 宿 xiù.',
+    '七政四餘 qīzhèng sìyú is the classical form of Chinese horoscopic astrology, founded on the actual movement of the celestial bodies. It carries the paths of the seven governors — the Sun, the Moon and the five planets — and of the four remainders (the two lunar nodes, the lunar apogee and 紫氣 zǐqì) through the twenty-eight lodges 宿 xiù.',
   // What it no longer says is that the latitude enters no calculation. That
   // is stated in the notes, under a refusal of its own, which is where
   // `CLAUDE.md` puts it: in the documentation and not in the form.
