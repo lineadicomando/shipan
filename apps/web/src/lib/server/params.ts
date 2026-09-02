@@ -37,7 +37,7 @@ import {
 } from '@shipan/core';
 import { getLocation } from '@shipan/geo';
 import { genderBelongsToBoard, type InstrumentId } from '$lib/instruments';
-import { DIVERGENCES, belongsTo, named, wire } from '$lib/parameters';
+import { DIVERGENCES, belongsTo, wire } from '$lib/parameters';
 import { resolveLocale, type Locale } from '@shipan/i18n';
 import { error } from '@sveltejs/kit';
 
@@ -511,29 +511,7 @@ export function readZiweiOptions(params: URLSearchParams): ZiweiOptions {
   const gender = params.get('gender');
   if (gender === 'male' || gender === 'female') options.gender = gender;
 
-  const table = params.get(named('ziwei', 'sihua'));
-  if (table !== null) {
-    if (table !== 'quanshu' && table !== 'zuofu') {
-      throw new ChartError('UNKNOWN_IDENTIFIER', {
-        parameter: named('ziwei', 'sihua'),
-        value: table,
-      });
-    }
-    options.sihua = table;
-  }
-
-  const cut = params.get(named('ziwei', 'yearBoundary'));
-  if (cut !== null) {
-    if (cut !== 'lichun' && cut !== 'chunjie') {
-      throw new ChartError('UNKNOWN_IDENTIFIER', {
-        parameter: named('ziwei', 'yearBoundary'),
-        value: cut,
-      });
-    }
-    options.yearBoundary = cut;
-  }
-
-  return options;
+  return readDeclared('ziwei', params, options);
 }
 
 /**
@@ -549,18 +527,7 @@ export function readBaziOptions(params: URLSearchParams): BaziOptions {
   const gender = params.get('gender');
   if (gender === 'male' || gender === 'female') options.gender = gender;
 
-  const counting = params.get(named('bazi', 'luckGranularity'));
-  if (counting !== null) {
-    if (counting !== 'shichen' && counting !== 'minute') {
-      throw new ChartError('UNKNOWN_IDENTIFIER', {
-        parameter: named('bazi', 'luckGranularity'),
-        value: counting,
-      });
-    }
-    options.luckGranularity = counting;
-  }
-
-  return options;
+  return readDeclared('bazi', params, options);
 }
 
 export interface ReadMoment {
@@ -639,14 +606,7 @@ export function readNianming(
     throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: 'gender', value: gender });
   }
 
-  const count = params.get(named('nianming', 'count'));
-  if (count !== null && count !== 'sui' && count !== 'turns') {
-    throw new ChartError('UNKNOWN_IDENTIFIER', {
-      parameter: named('nianming', 'count'),
-      value: count,
-    });
-  }
-  const options: NianmingOptions = { count: count ?? 'sui' };
+  const options = readNianmingOptions(params);
 
   return {
     birthYear: birth.pillars.year,
@@ -654,10 +614,15 @@ export function readNianming(
   };
 }
 
-/** The count of years the 行年 steps by, read the same way everywhere. */
+/**
+ * The count of years the 行年 steps by, read the same way everywhere.
+ *
+ * Literally everywhere, which it was not: this coerced an unrecognised count
+ * to 虛歲 and the reader beside it refused the same string, so one address
+ * answered two ways depending on which function opened it.
+ */
 export function readNianmingOptions(params: URLSearchParams): NianmingOptions {
-  const count = params.get(named('nianming', 'count'));
-  return { count: count === 'turns' ? 'turns' : 'sui' };
+  return readDeclared('nianming', params, { count: 'sui' } as NianmingOptions);
 }
 
 /**

@@ -859,6 +859,33 @@ describe('GET /api/ziwei', () => {
   });
 
   /**
+   * The same hole 奇門 closed, on the board where it stayed open longest: this
+   * reader named 四化 and the year's boundary by hand and passed over the
+   * other three, so `ziwei.huoling=hour` — a value the engine declares and
+   * does not compute — came back a chart cast the way the book does it, under
+   * an address saying otherwise.
+   */
+  it('refuses a value it declares and does not compute', async () => {
+    for (const [parameter, value] of [
+      ['ziwei.huoling', 'hour'],
+      ['ziwei.leapMonth', 'current'],
+      ['ziwei.daxian', 'ming'],
+    ] as const) {
+      const { status, body } = await call(ziwei, `${MOMENT}&${parameter}=${value}`);
+
+      expect(status, parameter).toBe(501);
+      expect(body, parameter).toMatchObject({ code: 'OPTION_NOT_IMPLEMENTED' });
+    }
+  });
+
+  it('refuses a 紫微斗數 name nobody declares, rather than passing over it', async () => {
+    const { status, body } = await call(ziwei, `${MOMENT}&ziwei.yuan=futou`);
+
+    expect(status).toBe(400);
+    expect(body).toMatchObject({ code: 'UNKNOWN_IDENTIFIER' });
+  });
+
+  /**
    * The one divergence of this board a reader can move, and the reason it is
    * spelt with the board's name in front of it.
    *
