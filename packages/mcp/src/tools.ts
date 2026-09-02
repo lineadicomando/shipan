@@ -52,6 +52,7 @@ import {
   langSchema,
   ok,
   optionSchema,
+  qimenSchema,
   placeSchema,
   resolveBirth,
   resolveInput,
@@ -169,6 +170,7 @@ export function registerComputeQimenChart(server: McpServer, context: ToolContex
         ...placeSchema,
         ...birthSchema,
         ...optionSchema,
+        ...qimenSchema,
         lang: langSchema,
       },
     },
@@ -227,6 +229,12 @@ export function registerComputeBazi(server: McpServer, context: ToolContext): vo
           .optional()
           .describe('Only the direction of the luck cycles depends on it. Do not guess it.'),
         cycles: z.number().int().min(1).max(12).optional().describe('How many decades. Default 8.'),
+        luck_granularity: z
+          .enum(['shichen', 'minute'])
+          .optional()
+          .describe(
+            'How finely the distance to the term is measured when the decades are placed. Three days of the calendar answer to one year lived, a day to four months, a double hour to ten days. Default shichen: whole days and whole double hours, dropping the remainder, which is the classical reading and yields starting days in multiples of ten because it was read off a clock with no minutes. minute carries the same rule further. The two disagree by up to ten days on when the first decade opens.',
+          ),
         ...optionSchema,
         lang: langSchema,
       },
@@ -238,6 +246,7 @@ export function registerComputeBazi(server: McpServer, context: ToolContext): vo
         const options: Parameters<typeof computeBazi>[1] = {};
         if (args.gender) options.gender = args.gender;
         if (args.cycles !== undefined) options.cycles = args.cycles;
+        if (args.luck_granularity) options.luckGranularity = args.luck_granularity;
 
         const bazi = computeBazi(moment, options, ephemerisOf(context));
 
@@ -458,6 +467,18 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
           .describe(
             'Only the 大限, the 小限 and the rings of 長生 and 博士 depend on it. Do not guess it.',
           ),
+        sihua: z
+          .enum(['quanshu', 'zuofu'])
+          .optional()
+          .describe(
+            'Which table of the four transformations. Default quanshu, the Ziwei Doushu Quanshu\'s own, which gives ren its ke to tianfu. zuofu is that table with the one cell moved to zuofu, as two modern schools teach it — one cell of ten, and everything else on the table is the book\'s under either value.',
+          ),
+        ziwei_year_boundary: z
+          .enum(['lichun', 'chunjie'])
+          .optional()
+          .describe(
+            'Which reckoning gives THIS BOARD its year, and so seats the four transformations. Not the pillars\' year_boundary, which is the layer under every board and is asked for separately: this board counts its month and its day on the lunar calendar, so it defaults to chunjie where the pillars default to lichun. A birth in the weeks between the two lays out two different boards.',
+          ),
         ...optionSchema,
         lang: langSchema,
       },
@@ -468,6 +489,8 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
         const { moment, label } = resolveInput(args, context);
         const options: ZiweiOptions = { ...DEFAULT_ZIWEI_OPTIONS };
         if (args.gender) options.gender = args.gender;
+        if (args.sihua) options.sihua = args.sihua;
+        if (args.ziwei_year_boundary) options.yearBoundary = args.ziwei_year_boundary;
 
         const board = computeZiwei(moment, options);
 
@@ -639,6 +662,7 @@ export function registerDrawQimenChart(server: McpServer, context: ToolContext):
         time: timeSchema,
         ...placeSchema,
         ...optionSchema,
+        ...qimenSchema,
         size: z.number().int().min(240).max(2048).optional().describe('Side in pixels. Default 900.'),
         lang: langSchema,
       },
@@ -841,6 +865,7 @@ export function registerScanMoments(server: McpServer, context: ToolContext): vo
           .describe('IANA zone of the birth. Default the interval\'s own.'),
         ...placeSchema,
         ...optionSchema,
+        ...qimenSchema,
         lang: langSchema,
       },
     },

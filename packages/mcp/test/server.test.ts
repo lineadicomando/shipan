@@ -1,6 +1,7 @@
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { InMemoryTransport } from '@modelcontextprotocol/sdk/inMemory.js';
 import { beforeAll, describe, expect, it } from 'vitest';
+import { PARAMETERS } from '@shipan/core';
 import { translate } from '@shipan/i18n';
 import { createServer, SERVER_NAME } from '../src/server.js';
 
@@ -568,5 +569,102 @@ describe('the errands', () => {
     const purposes = resources.find((resource) => resource.uri.endsWith('/purposes'));
 
     expect(purposes?.description).toMatch(/the server does not apply it/i);
+  });
+});
+
+/**
+ * Every school a caller could choose is offered by the tool of its board.
+ *
+ * The instructions promise it — «Every other board has divergences of its own
+ * with a declared default, and each names them in its own tool» — and that was
+ * a sentence about five of the ten. It is derived here so that it cannot go
+ * back to being one: a parameter gaining a second implemented value fails this
+ * until the tool that lays that board offers it.
+ *
+ * The argument names are the ids in snake case, bare, because a tool answers
+ * for one board. The exception is the collision the naming rule turns on:
+ * 紫微斗數's year boundary and the layer's are two questions under one word,
+ * and both are asked at `compute_ziwei`, so the board's carries its board.
+ * → `docs/parameters.md` § "A board's parameters travel under the board's name"
+ */
+describe('the divergences a tool offers', () => {
+  const TOOL: Record<string, string> = {
+    qimen: 'compute_qimen_chart',
+    liuren: 'compute_liuren',
+    qizheng: 'compute_qizheng',
+    ziwei: 'compute_ziwei',
+    bazi: 'compute_bazi',
+    taiyi: 'compute_taiyi',
+    // A birth put inside somebody else's board, so it rides on their tools.
+    nianming: 'compute_qimen_chart',
+  };
+  const NAMED: Record<string, string> = {
+    'ziwei.yearBoundary': 'ziwei_year_boundary',
+    // A birth is not the board's, so its count says whose years it counts.
+    'nianming.count': 'years_count',
+  };
+
+  const snake = (id: string): string => id.replace(/[A-Z]/g, (up) => `_${up.toLowerCase()}`);
+
+  /** Board parameters a caller could actually move: two implemented values or more. */
+  const CHOOSABLE = PARAMETERS.filter(
+    (parameter) =>
+      TOOL[parameter.board] !== undefined &&
+      parameter.values.filter((value) => value.implemented).length > 1,
+  );
+
+  it('has something to check', () => {
+    expect(CHOOSABLE.length).toBeGreaterThan(4);
+  });
+
+  it.each(CHOOSABLE.map((parameter) => [`${parameter.board}.${parameter.id}`, parameter]))(
+    '%s',
+    async (key, parameter) => {
+      const { tools } = await client.listTools();
+      const tool = tools.find((one) => one.name === TOOL[(parameter as { board: string }).board]);
+      const properties = (tool?.inputSchema as { properties: Record<string, unknown> }).properties;
+      const argument = NAMED[key as string] ?? snake((parameter as { id: string }).id);
+
+      expect(properties[argument], `${tool?.name} should offer ${argument}`).toBeDefined();
+    },
+  );
+
+  /**
+   * And the boards move when a caller moves them, which is the half a schema
+   * cannot show: an argument declared and dropped on the floor reads exactly
+   * like one that works.
+   */
+  it('lays a different 紫微斗數 board under each of its own two', async () => {
+    // 1983-02-08 stands between 立春 and 正月初一, which is where the two part:
+    // the year stem moves, and the year stem seats the four transformations.
+    const birth = {
+      date: '1983-02-08',
+      time: '09:00',
+      latitude: 39.9075,
+      longitude: 116.3972,
+      timezone: 'Asia/Shanghai',
+    };
+    const solar = await call('compute_ziwei', { ...birth, ziwei_year_boundary: 'lichun' });
+    const lunar = await call('compute_ziwei', { ...birth, ziwei_year_boundary: 'chunjie' });
+
+    expect(solar).toContain('癸亥');
+    expect(lunar).toContain('壬戌');
+    expect(solar).not.toBe(lunar);
+  });
+
+  it('offers a Qi Men school only where a Qi Men chart is laid', async () => {
+    const { tools } = await client.listTools();
+    const takes = (name: string): boolean =>
+      'method' in (tools.find((one) => one.name === name)?.inputSchema as { properties: object }).properties;
+
+    // `method` sat in the bundle every compute tool spread, so it was offered
+    // on boards it does not touch — with a description that had to end «Does
+    // not affect the Four Pillars».
+    for (const name of ['compute_qimen_chart', 'draw_qimen_chart', 'scan_moments']) {
+      expect(takes(name), name).toBe(true);
+    }
+    for (const name of ['compute_bazi', 'compute_ziwei', 'compute_liuren', 'compute_qizheng']) {
+      expect(takes(name), name).toBe(false);
+    }
   });
 });
