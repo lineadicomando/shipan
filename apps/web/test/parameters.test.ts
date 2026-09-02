@@ -1,3 +1,6 @@
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { PARAMETERS, divergencesInForce } from '@shipan/core';
 import {
@@ -12,6 +15,7 @@ import {
   shown,
   wire,
 } from '../src/lib/parameters';
+import { SECTIONS as PAGES } from '../src/lib/navigation';
 
 /**
  * The client's copy of the school divergences, held to the engine's.
@@ -284,5 +288,45 @@ describe('the name a divergence travels under', () => {
     expect(belongsTo('shensha', 'taiyi')).toBe(true);
     // And the birth put inside somebody else's board belongs to no section.
     expect(belongsTo('nianming.count', 'qimen')).toBe(false);
+  });
+});
+
+/**
+ * Every page that lays a board says which schools laid it.
+ *
+ * `docs/parameters.md` § "A declared default is not a hidden school": the
+ * value in force is stated wherever the board is, moved or not, and the
+ * picture does not count — a drawing is an `<img>` with `alt=""`.
+ *
+ * Listed by slug because the mapping from a page to the board it lays is not
+ * computable: `/moments` lays 奇門 charts and is not called that, and the
+ * consultation lays whichever instrument was chosen. What is derived is that
+ * every section has a line here, so a section arriving without one fails
+ * rather than shipping a board that reads as *the* board of its instant.
+ */
+describe('the pages that lay a board', () => {
+  const ROOT = fileURLToPath(new URL('../src/routes/[lang]/', import.meta.url));
+
+  /** Slug, and the board it lays — `''` is the consultation. */
+  const LAYS: Record<string, string> = {
+    '': 'whichever instrument was chosen',
+    moments: 'qimen, over an interval',
+    qimen: 'qimen',
+    liuren: 'liuren',
+    taiyi: 'taiyi',
+    qizheng: 'qizheng',
+    ziwei: 'ziwei',
+    bazi: 'bazi',
+  };
+
+  it('has a line for every section, and no more', () => {
+    expect(new Set(Object.keys(LAYS))).toEqual(new Set(PAGES.map((section) => section.slug)));
+  });
+
+  it.each(Object.entries(LAYS))('/%s says which schools laid %s', (slug) => {
+    const source = readFileSync(join(ROOT, slug, '+page.svelte'), 'utf8');
+
+    expect(source).toContain('Schools.svelte');
+    expect(source).toMatch(/<Schools\b/);
   });
 });
