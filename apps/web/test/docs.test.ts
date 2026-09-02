@@ -2,7 +2,22 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
-import { PARAMETERS } from '@shipan/core';
+import {
+  DEFAULT_LIUREN_OPTIONS,
+  DEFAULT_OPTIONS,
+  DEFAULT_QIZHENG_OPTIONS,
+  DEFAULT_TAIYI_OPTIONS,
+  DEFAULT_ZIWEI_OPTIONS,
+  PARAMETERS,
+  computeBazi,
+  computeQimenChart,
+  computeZiwei,
+  initEphemeris,
+  liurenBoard,
+  qizhengBoard,
+  resolveMoment,
+  taiyiBoard,
+} from '@shipan/core';
 import { LOCALES } from '@shipan/i18n';
 import { INSTRUMENTS } from '../src/lib/instruments';
 import { NOTE_PAGES } from '../src/lib/notes';
@@ -468,6 +483,182 @@ describe('ROADMAP.md says what the engine refuses', () => {
         open.includes(`\`${pair}\``),
         `ROADMAP.md § 1 still calls ${pair} refused, and the engine computes it`,
       ).toBe(false);
+    }
+  });
+});
+
+/**
+ * Every field a board hands out, against the row of the register that weighs
+ * it.
+ *
+ * **What this catches, and what it does not.** A field added to a board's
+ * output fails here until somebody says which quantity of `docs/sources.tsv`
+ * stands behind it, or states in the waiver below why it is not a quantity at
+ * all — which is how 三基, 五福, 大遊, 八門直使 and 合神 came to be computed and
+ * printed for a year with no row anywhere. What it cannot see is a **new member
+ * of a list that already has a field**: 紫氣 arrived inside `remainders` and
+ * this test would have watched it go by. That half stays procedural, and
+ * `CLAUDE.md`'s rule — a quantity added without an entry is a quantity nobody
+ * can weigh — is where it lives.
+ *
+ * The map is written out and the completeness is derived, which is the same
+ * bargain `DIVERGENCES` makes: the link between an identifier and a quantity
+ * argued in prose cannot be computed, but nothing can quietly fall outside it.
+ */
+describe('the register weighs what a board hands out', () => {
+  /** Weighed: the field, and the `quantity` of every row that stands behind it. */
+  const WEIGHED: Record<string, Record<string, readonly string[]>> = {
+    qimen: {
+      ju: ['the ju under 拆補, the yuan from the 符頭'],
+      instrument: ['the heaven plate, the nine stars, the eight gates, the eight spirits, 值符, 值使, 旬首, 空亡, 驛馬'],
+      chief: ['the heaven plate, the nine stars, the eight gates, the eight spirits, 值符, 值使, 旬首, 空亡, 驛馬'],
+      chiefGate: ['the heaven plate, the nine stars, the eight gates, the eight spirits, 值符, 值使, 旬首, 空亡, 驛馬'],
+      palaces: ['the earth plate', 'the heaven plate, the nine stars, the eight gates, the eight spirits, 值符, 值使, 旬首, 空亡, 驛馬'],
+      season: ['旺相休囚死, 門宮, 星宮'],
+      horses: ['驛馬'],
+      patterns: ['門迫', '五不遇時', '入墓 and 六儀擊刑', '十干克應 — the twelve pairings shipped'],
+    },
+    bazi: {
+      pillars: ['the four pillars'],
+      emptyBranches: ['納音, hidden stems, ten gods, twelve stages, void branches, the luck cycles'],
+      distribution: ['the count of the five elements'],
+    },
+    ziwei: {
+      lunar: ['the lunar date'],
+      countedMonth: ['the twelve palaces, the bureau, 紫微 and the fourteen main stars'],
+      yearPillar: ['the four pillars'],
+      minggongPillar: ['the twelve palaces, the bureau, 紫微 and the fourteen main stars'],
+      nayin: ['納音, hidden stems, ten gods, twelve stages, void branches, the luck cycles'],
+      bureau: ['the twelve palaces, the bureau, 紫微 and the fourteen main stars'],
+      palaces: [
+        'the twelve palaces, the bureau, 紫微 and the fourteen main stars',
+        'the brightness grades',
+        '天刑 and 天姚',
+        '火星 and 鈴星',
+        '解神',
+        'the 四化 at 庚',
+        'the 四化 at 壬, the reading two schools move',
+        'the five phases the board is inked by',
+      ],
+      bodyBranch: ['the twelve palaces, the bureau, 紫微 and the fourteen main stars'],
+      lifeMaster: ['the twelve palaces, the bureau, 紫微 and the fourteen main stars'],
+      bodyMaster: ['身主'],
+    },
+    taiyi: {
+      year: ['the 太歲 the count yields'],
+      sui: ['the 太歲 the count yields'],
+      accumulated: ['the epoch — 上元積年'],
+      liuji: ['the epoch — 上元積年'],
+      ju: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神'],
+      taiyi: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神'],
+      gods: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神'],
+      yang: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神'],
+      wenchang: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神'],
+      shiji: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神'],
+      jishen: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神'],
+      heshen: ['合神 — the 六合 of the 太歲'],
+      host: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神', '大將 and 參將'],
+      guest: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神', '大將 and 參將'],
+      patterns: ['the conditions of 卷三 — 掩, 擊, 迫, 囚, 關, 格, 對'],
+      gate: ['八門直使 — one gate every thirty years'],
+      sanji: ['三基 — 君基, 臣基, 民基'],
+      wufu: ['五福太乙'],
+      dayou: ['大遊太乙'],
+    },
+    liuren: {
+      yuejiang: ['the four courses, 月將加時 and the 寄宮 table'],
+      heaven: ['the four courses, 月將加時 and the 寄宮 table'],
+      courses: ['the four courses, 月將加時 and the 寄宮 table'],
+      generals: ['the 貴人 seat, by day and by night', 'the five-phase assignments of the 十二天將'],
+      half: ['which hours are 晝 and which 夜'],
+      transmissions: ['the three transmissions and the 九宗門', '返吟'],
+      rule: ['the three transmissions and the 九宗門'],
+      keti: ['the three transmissions and the 九宗門'],
+    },
+    qizheng: {
+      governors: ['the places of the seven governors'],
+      remainders: ['四餘 — 羅睺, 計都, 月孛', '紫氣 — the fourth 餘, placed to a palace and to no degree'],
+      minggong: ['命宮 by 立命 加時'],
+      houses: ['the twelve 人事宮'],
+    },
+  };
+
+  /** Not a quantity, and why. A blank does not pass for a reason. */
+  const NOT_WEIGHED: Record<string, string> = {
+    moment: 'the instant, whose own readings are weighed under the pillars',
+    options: 'the divergences that produced the board, weighed as schools and not as quantities',
+    dayMaster: "the day pillar's stem, read off a pillar the register weighs",
+    hourStem: "the hour pillar's stem, read off a pillar the register weighs",
+    hourBranch: 'the hour of the moment, which the pillars carry',
+    day: 'the day pillar, weighed under the pillars',
+    hour: 'the hour branch, weighed under the pillars',
+    julianDay: 'the instant itself, in the scale the ephemeris answers in',
+  };
+
+  const laid = (): Record<string, object> => {
+    const ephemeris = initEphemeris();
+    const moment = resolveMoment(
+      { date: '1968-03-12', time: '14:30', timezone: 'Asia/Shanghai' },
+      { latitude: 31.23, longitude: 121.47, timezone: 'Asia/Shanghai' } as never,
+      DEFAULT_OPTIONS,
+      ephemeris,
+    );
+    return {
+      qimen: computeQimenChart(moment, moment.options),
+      bazi: computeBazi(moment, {}, ephemeris),
+      ziwei: computeZiwei(moment, DEFAULT_ZIWEI_OPTIONS),
+      taiyi: taiyiBoard({ year: 2026 }, DEFAULT_TAIYI_OPTIONS),
+      liuren: liurenBoard(
+        { term: moment.solarTerm.term, day: moment.pillars.day, hour: moment.hourBranch },
+        DEFAULT_LIUREN_OPTIONS,
+      ),
+      qizheng: qizhengBoard(
+        { julianDay: moment.julianDayUT, hour: moment.hourBranch },
+        DEFAULT_QIZHENG_OPTIONS,
+        ephemeris,
+      ),
+    };
+  };
+
+  const boards = laid();
+
+  it.each(Object.keys(boards))('%s hands out nothing the register has not heard of', (board) => {
+    const weighed = WEIGHED[board] ?? {};
+    for (const field of Object.keys(boards[board] as object)) {
+      const stated = field in weighed || field in NOT_WEIGHED;
+      expect(
+        stated,
+        `${board}.${field} is handed out and docs/sources.tsv weighs nothing for it. ` +
+          'Give it the quantity that stands behind it, or say in NOT_WEIGHED why it is not one.',
+      ).toBe(true);
+    }
+  });
+
+  it('names quantities the register actually carries', () => {
+    const quantities = new Set(
+      readFileSync(join(ROOT, 'docs/sources.tsv'), 'utf8')
+        .trim()
+        .split('\n')
+        .slice(1)
+        .map((line) => line.split('\t')[1] as string),
+    );
+
+    for (const [board, fields] of Object.entries(WEIGHED)) {
+      for (const [field, named] of Object.entries(fields)) {
+        expect(named.length, `${board}.${field} names no quantity`).toBeGreaterThan(0);
+        for (const quantity of named) {
+          expect(
+            quantities.has(quantity),
+            `${board}.${field} is weighed by "${quantity}", which docs/sources.tsv does not carry`,
+          ).toBe(true);
+        }
+      }
+    }
+  });
+
+  it('gives a reason for every field it calls not a quantity', () => {
+    for (const [field, reason] of Object.entries(NOT_WEIGHED)) {
+      expect(reason.trim(), field).toBeTruthy();
     }
   });
 });
