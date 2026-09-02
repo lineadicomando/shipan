@@ -828,7 +828,7 @@ export function registerScanMoments(server: McpServer, context: ToolContext): vo
           .enum(SPIRIT_IDS as unknown as [string, ...string[]])
           .optional()
           .describe(
-            'One of the spirits. A chart shows eight, but which eight depends on the dun: gouchen and zhuque stand in a yang chart, baihu and xuanwu in a yin one.',
+            'One of the spirits. A chart shows eight, and which eight is what `spirits` decides: under the default, the half of the year names the middle pair, so gouchen and zhuque stand in a yang chart and baihu and xuanwu in a yin one. Under `spirits: fixed` the same eight stand in both. So this criterion and that parameter are read together — a name matched here is a name the board was laid to carry.',
           ),
         stem: z.enum(ids(STEMS)).optional().describe('A stem on either plate of the palace.'),
         towards: z

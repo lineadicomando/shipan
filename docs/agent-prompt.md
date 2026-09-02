@@ -504,7 +504,13 @@ of them declare a `yearBoundary` with different values. What stays bare is the
 layer under all of them, `trueSolarTime`, `yearBoundary` and `dayBoundary`, and
 the almanac's `shensha` beside them. **A tool takes it bare**: `compute_ziwei`
 answers for one board, so its arguments need no prefix, and it is the address
-that does.
+that does — **except where the board and the layer under it want the same
+word**. Naming the board settles which board and not which of the two bags, and
+the layer is under the board while the board is being laid: so `year_boundary`
+at a tool is where the four pillars are cut, and `ziwei_year_boundary` is where
+that board counts its own year from, a different question with a different
+default. The command line parts them the same way, `--year-boundary` against
+`--ziwei-year-boundary` and `--taiyi-year-boundary`.
 
 A place is a `locationId`, or a `latitude` and a `longitude` with a
 `timezone`, or a `locationId` **refined by** coordinates — the last of those
