@@ -435,6 +435,22 @@ describe('scan_moments', () => {
     expect(text).toMatch(/\d (north|northeast|east|southeast|south|southwest|west|northwest)/);
   });
 
+  /**
+   * The hours a scan answers with are a function of the school: the method
+   * decides which hour carries which 局, and this tool takes `method` like
+   * every other. It answered with the hours and said nothing about who laid
+   * them, which is the one thing the instructions tell a caller to report.
+   */
+  it('says which schools walked the interval', async () => {
+    const asked = { ...INTERVAL, gate: 'kaimen' };
+    const chaibu = await call('scan_moments', asked);
+    const maoshan = await call('scan_moments', { ...asked, method: 'maoshan' as const });
+
+    expect(chaibu).toContain('拆補');
+    expect(maoshan).toContain('茅山');
+    expect(maoshan).not.toContain('拆補');
+  });
+
   it('keeps the name beside the word where the table has room for it', async () => {
     const text = await call('scan_moments', { ...INTERVAL, gate: 'kaimen' });
 
