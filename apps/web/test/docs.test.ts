@@ -290,7 +290,7 @@ describe('the documents point where they say they point', () => {
  * `docs/sources.tsv` is four columns of prose and two of vocabulary, and both
  * of the second kind can go quietly wrong: a `rung` outside the ladder means
  * nothing, and a `section` naming an argument that has been renamed is a row
- * a reader cannot follow. Neither is visible by eye in forty-seven rows.
+ * a reader cannot follow. Neither is visible by eye in a register this long.
  *
  * The allowed rungs are read out of `docs/notes.md` rather than written here,
  * for the reason the counts above are read out of the code: that page is where

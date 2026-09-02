@@ -11,7 +11,7 @@ import table from '../../../../../docs/sources.tsv?raw';
  * directory — which is the failure that would only appear in production.
  *
  * It stays on the server side for one reason: this is four columns of prose
- * and two of vocabulary over forty-odd rows, and the page renders it whole. Shipping it to the
+ * and two of vocabulary over a row a quantity, and the page renders it whole. Shipping it to the
  * browser as data would send it twice, once as HTML and once as JSON.
  *
  * The parsing is a `split`, deliberately. A TSV whose fields are guaranteed
