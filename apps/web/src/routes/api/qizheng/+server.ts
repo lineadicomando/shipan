@@ -1,6 +1,11 @@
-import { DEFAULT_QIZHENG_OPTIONS, qizhengBoard, type QizhengOptions } from '@shipan/core';
+import { qizhengBoard } from '@shipan/core';
 import { json } from '@sveltejs/kit';
-import { ephemerisContext, momentIsFixed, readMoment } from '$lib/server/params';
+import {
+  ephemerisContext,
+  momentIsFixed,
+  readMoment,
+  readQizhengOptions,
+} from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
 import { named } from '$lib/parameters';
@@ -26,11 +31,7 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
   try {
     const { moment, label } = readMoment(url.searchParams);
 
-    const options: QizhengOptions = { ...DEFAULT_QIZHENG_OPTIONS };
-    const luohou = url.searchParams.get(named('qizheng', 'luohou'));
-    if (luohou === 'descending' || luohou === 'ascending') options.luohou = luohou;
-    const ziqi = url.searchParams.get(named('qizheng', 'ziqi'));
-    if (ziqi === 'off' || ziqi === 'yinianyisu') options.ziqi = ziqi;
+    const options = readQizhengOptions(url.searchParams);
 
     const board = qizhengBoard(
       { julianDay: moment.julianDayUT, hour: moment.hourBranch },

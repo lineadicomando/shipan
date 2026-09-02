@@ -444,8 +444,15 @@ describe('formatScan', () => {
   const t: Translator = (key, params) => translate('en', key, params);
 
   it('writes the palace on every line and the hour only on the first of a run', () => {
-    const text = formatScan(matchRuns(scan('2026-09-01', '2026-09-02'), { minStrength: 'xiang' }), t);
-    const rows = text.split('\n').slice(1);
+    const text = formatScan(
+      matchRuns(scan('2026-09-01', '2026-09-02'), { minStrength: 'xiang' }),
+      t,
+      CLOCK,
+    );
+    // Past the block naming the schools, and past the table's own header.
+    const lines = text.split('\n');
+    const header = lines.findIndex((line) => line.includes(t('cli.column.from')));
+    const rows = lines.slice(header + 1);
 
     expect(rows.length).toBeGreaterThan(1);
     // Every row names a palace by its direction; only some carry a date.
@@ -455,14 +462,44 @@ describe('formatScan', () => {
   });
 
   it('says that nothing answered rather than printing an empty table', () => {
-    const text = formatScan([], t);
+    const text = formatScan([], t, CLOCK);
 
     expect(text).toContain(t('cli.value.nothingAnswered'));
     expect(text).not.toContain('until');
   });
 
+  /**
+   * The hours a scan answers with are a function of the school twice over —
+   * the method decides which hour carries which 局, and `spirits` decides
+   * which spirits a `spirit` criterion can even match — so an answer that did
+   * not say which school walked the interval would be a set of hours nobody
+   * could lay again. It said nothing on all four surfaces that scan until the
+   * options became an argument this function cannot be called without.
+   */
+  it('says which schools walked the interval, and says it when nothing answered', () => {
+    const asked = matchRuns(scan('2026-09-01', '2026-09-02'), { minStrength: 'xiang' });
+
+    for (const text of [formatScan(asked, t, CLOCK), formatScan([], t, CLOCK)]) {
+      expect(text).toContain(t('cli.heading.divergences'));
+      expect(text).toContain(t('form.qimen.method.chaibu'));
+    }
+
+    // The options the scan actually ran under, which is the whole of what the
+    // block is for: laid the other way it would describe a scan nobody walked.
+    const walked = matchRuns(scan('2026-09-01', '2026-09-02', BEIJING, MAOSHAN), {
+      minStrength: 'xiang',
+    });
+    const maoshan = formatScan(walked, t, MAOSHAN);
+    expect(maoshan).toContain(t('form.qimen.method.maoshan'));
+    expect(maoshan).not.toContain(t('form.qimen.method.chaibu'));
+  });
+
   it('carries no verdict about anything it reports', () => {
-    const text = formatScan(matchRuns(scan('2026-09-01', '2026-09-02'), {}), t).toLowerCase();
+    const text = formatScan(
+      matchRuns(scan('2026-09-01', '2026-09-02'), {}),
+      t,
+      CLOCK,
+    ).toLowerCase();
 
     for (const word of ['lucky', 'unlucky', 'favourable', 'auspicious', 'best', 'avoid']) {
       expect(text).not.toContain(word);

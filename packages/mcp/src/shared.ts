@@ -211,17 +211,43 @@ export const optionSchema = {
     .enum(['lichun', 'chunjie'])
     .optional()
     .describe('Where the year of the pillars begins. Default lichun.'),
-  method: z
-    .enum(['chaibu', 'zhirun', 'maoshan'])
-    .optional()
-    .describe(
-      'How the ju of a Qi Men chart is determined, and the most divisive choice in the art. Default chaibu, which reads the ju off the term in force and the yuan off the day: the days run in five-day stretches headed by Jia or Ji (the futou), and where the day pillar stands in that fifteen-day cycle is the yuan. maoshan does not read the day at all — it counts sixty shichen from the instant the term began, then sixty more, and gives the rest of the term to the third yuan. zhirun follows the day\'s futou through whole fifteen-day blocks and pays the drift off with an intercalated Mangzhong or Daxue; its ju can belong to a term the Sun has not reached yet, and the answer says which. Three different schools, not three approximations of one another: chaibu and maoshan disagree about three hours in five. Does not affect the Four Pillars.',
-    ),
   shensha: z
     .enum(['xieji'])
     .optional()
     .describe(
       'Which register of shensha the almanac line carries. Only xieji exists: what the Xieji Bianfang Shu ratifies, cut to what bears on the quality of a day and the bearing of a direction. There are hundreds of shensha and they diverge by lineage far more than the schools of Qi Men do, so the parameter is here before there is a second register to choose. Affects only the almanac line, never the chart or the pillars.',
+    ),
+};
+
+/**
+ * The divergences of 奇門 itself, for the tools that lay one of its charts.
+ *
+ * Apart from the bundle above because that one is the *layers* — how an
+ * instant is read into the four pillars every board stands on, and which
+ * register the almanac line carries — and 奇門's own belong to 奇門. `method`
+ * sat in it and was therefore offered on `compute_bazi`, with a description
+ * ending «Does not affect the Four Pillars»: the prose patch for a schema that
+ * offered a school where it did nothing.
+ * → `docs/history/43-the-layer-under-the-board.md`
+ */
+export const qimenSchema = {
+  method: z
+    .enum(['chaibu', 'zhirun', 'maoshan'])
+    .optional()
+    .describe(
+      'How the ju of a Qi Men chart is determined, and the most divisive choice in the art. Default chaibu, which reads the ju off the term in force and the yuan off the day: the days run in five-day stretches headed by Jia or Ji (the futou), and where the day pillar stands in that fifteen-day cycle is the yuan. maoshan does not read the day at all — it counts sixty shichen from the instant the term began, then sixty more, and gives the rest of the term to the third yuan. zhirun follows the day\'s futou through whole fifteen-day blocks and pays the drift off with an intercalated Mangzhong or Daxue; its ju can belong to a term the Sun has not reached yet, and the answer says which. Three different schools, not three approximations of one another: chaibu and maoshan disagree about three hours in five.',
+    ),
+  spirits: z
+    .enum(['dun', 'fixed', 'baihu'])
+    .optional()
+    .describe(
+      'What names the fifth and sixth of the eight spirits. Default dun: the pair is named by the half of the year, gouchen and zhuque in a yang chart, baihu and xuanwu in a yin one. fixed keeps the same eight names in both dun, as the Yuding Qimen Baojian has them. baihu keeps the naming by half-year but leaves baihu at the fifth seat of a yang chart, which is the board of the Qimen Dunjia Quanju. Three readings of one ring, parting at two seats and only in the name — but the name is what a spirit criterion matches on.',
+    ),
+  centre_travel: z
+    .enum(['stay', 'travel'])
+    .optional()
+    .describe(
+      'Where the chief (zhifu) and the chief gate (zhishi) are read when the count puts them on the central palace. Default stay: at kun, the palace the centre lodges in, as the Yuding Qimen Baojian has it. travel reads them in the fifth palace itself, as the Qimen Dunjia Jinjing Baojian does. Neither moves a plate; both values are computed and the chart says which it stands on.',
     ),
 };
 
@@ -242,6 +268,8 @@ interface RawInput {
   day_boundary?: 'zishi' | 'midnight' | undefined;
   year_boundary?: 'lichun' | 'chunjie' | undefined;
   method?: 'chaibu' | 'zhirun' | 'maoshan' | undefined;
+  spirits?: 'dun' | 'fixed' | 'baihu' | undefined;
+  centre_travel?: 'stay' | 'travel' | undefined;
   shensha?: 'xieji' | undefined;
   born?: string | undefined;
   born_time?: string | undefined;
@@ -280,6 +308,8 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.day_boundary) options.dayBoundary = raw.day_boundary;
   if (raw.year_boundary) options.yearBoundary = raw.year_boundary;
   if (raw.method) options.method = raw.method;
+  if (raw.spirits) options.spirits = raw.spirits;
+  if (raw.centre_travel) options.centreTravel = raw.centre_travel;
   if (raw.shensha) options.shensha = raw.shensha;
 
   const ephemeris: EphemerisContext = initEphemeris(context.ephemerisPath);

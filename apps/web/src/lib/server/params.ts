@@ -1,6 +1,8 @@
 import {
   DEFAULT_ZIWEI_OPTIONS,
   ChartError,
+  DEFAULT_LIUREN_OPTIONS,
+  DEFAULT_QIZHENG_OPTIONS,
   DEFAULT_TAIYI_OPTIONS,
   GATES,
   PATTERN_IDS,
@@ -22,22 +24,25 @@ import {
   type Ganzhi,
   type GateId,
   type Gender,
+  type LiurenOptions,
   type LocalMoment,
   type Moment,
   type NianmingOptions,
   type PatternId,
+  type QizhengOptions,
   type Place,
   type ScanCriteria,
   type SpiritId,
   type StarId,
   type StemId,
   type StrengthId,
+  type TaiyiOptions,
   type BaziOptions,
   type ZiweiOptions,
 } from '@shipan/core';
 import { getLocation } from '@shipan/geo';
 import { genderBelongsToBoard, type InstrumentId } from '$lib/instruments';
-import { DIVERGENCES, belongsTo, named, wire } from '$lib/parameters';
+import { DIVERGENCES, belongsTo, wire } from '$lib/parameters';
 import { resolveLocale, type Locale } from '@shipan/i18n';
 import { error } from '@sveltejs/kit';
 
@@ -386,6 +391,63 @@ export function readPlace(params: URLSearchParams): {
 }
 
 /**
+ * The divergences one board's address states, read off the declaration.
+ *
+ * **Every declared value is accepted here and none is judged.** One the
+ * engine does not compute travels on to `requireImplemented`, which comes
+ * back a 501 naming it; one nobody declares is a 400 saying no school is
+ * called that. The third outcome is what this function exists to make
+ * impossible: an address asking for one reading, answered under another, in
+ * silence.
+ *
+ * The list is `DIVERGENCES`, not a copy of it. Naming the parameters by hand
+ * is how the hole opened the first time — the 奇門 reader named `method` and
+ * the retired `yuan` and read neither `plate` nor `system` nor
+ * `centreLodging`, so an address asking for 飛盤 was answered with a 轉盤
+ * chart and nothing said otherwise.
+ *
+ * **A `board.` name nobody declares is refused, not ignored.** Passing over a
+ * stray field is right and passing over a parameter that used to exist is
+ * not: `qimen.yuan=futou` would be dropped in silence and the chart answered
+ * under 茅山, which is what that address was written to avoid. A parameter
+ * that retires takes its addresses with it, and says so.
+ * → `docs/history/40-the-default-was-maoshan.md`
+ *
+ * A board's, and not a layer's. A layer's parameter travels bare — it stands
+ * under every board and collides with nothing — so it has no prefix to sweep.
+ */
+function readDeclared<O>(board: string, params: URLSearchParams, options: O): O {
+  const declared = new Set<string>();
+
+  for (const row of DIVERGENCES) {
+    if (row.board !== board) continue;
+
+    const name = wire(row);
+    declared.add(name);
+
+    const asked = params.get(name);
+    if (asked === null) continue;
+    if (!row.values.includes(asked)) {
+      throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: name, value: asked });
+    }
+    // One cast, for the reason `requireImplemented` has one: the value has
+    // been checked against the declaration on the line above, and an options
+    // type is keyed to its own board so that the declaration cannot drift.
+    (options as unknown as Record<string, unknown>)[row.id] = asked;
+  }
+
+  for (const name of params.keys()) {
+    if (!name.startsWith(`${board}.`) || declared.has(name)) continue;
+    throw new ChartError('UNKNOWN_IDENTIFIER', {
+      parameter: name,
+      value: params.get(name) as string,
+    });
+  }
+
+  return options;
+}
+
+/**
  * Whether the address fixes the instant.
  *
  * Cacheability rests on this and not on the endpoint: a chart is a pure
@@ -413,47 +475,8 @@ export function readOptions(params: URLSearchParams): ChartOptions {
   // **Strict, unlike the three above, and read off the declaration.** A
   // misspelt boundary falls back to a default the answer shows; a misspelt
   // school would cast a chart under a name nobody asked for, which looks right
-  // and is not. So every named value of every 奇門 parameter is checked here
-  // against the values the engine declares — an unknown one is a 400 saying no
-  // school is called that, a declared one the engine does not compute reaches
-  // `requireImplemented` and comes back a 501 saying so by name.
-  //
-  // The list is `DIVERGENCES`, not a copy of it: this used to name `method`
-  // and the retired `yuan` by hand and read neither `plate` nor `system` nor
-  // `centreLodging` at all, so an address asking for 飛盤 was answered with a
-  // 轉盤 chart and nothing said otherwise — a value substituted in silence,
-  // which is the one thing `docs/parameters.md` says may never happen.
-  for (const row of DIVERGENCES) {
-    if (row.board !== 'qimen') continue;
-
-    const asked = params.get(wire(row));
-    if (asked === null) continue;
-    if (!row.values.includes(asked)) {
-      throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: wire(row), value: asked });
-    }
-    // One cast, for the reason `requireImplemented` has one: the value has
-    // been checked against the declaration on the line above, and an options
-    // type is keyed to its own board so that the declaration cannot drift.
-    (options as unknown as Record<string, unknown>)[row.id] = asked;
-  }
-
-  // **A `qimen.` name nobody declares is refused, not ignored.** The loop
-  // above reads the declaration and passes over everything else, which is the
-  // right behaviour for a stray field and the wrong one for a parameter that
-  // used to exist: `qimen.yuan=futou` would have been dropped in silence and
-  // the chart answered under 茅山, which is what that address was written to
-  // avoid. A parameter that retires takes its addresses with it, and says so.
-  // → `docs/history/40-the-default-was-maoshan.md`
-  const declared = new Set(
-    DIVERGENCES.filter((row) => row.board === 'qimen').map((row) => wire(row)),
-  );
-  for (const name of params.keys()) {
-    if (!name.startsWith('qimen.') || declared.has(name)) continue;
-    throw new ChartError('UNKNOWN_IDENTIFIER', {
-      parameter: name,
-      value: params.get(name) as string,
-    });
-  }
+  // and is not. `readDeclared` does that here and at every other board.
+  readDeclared('qimen', params, options);
 
   // The almanac's register is bare, like the pillars' three and unlike a
   // board's: 曆注 is not a board. It is a page a chart is read *against*,
@@ -493,29 +516,7 @@ export function readZiweiOptions(params: URLSearchParams): ZiweiOptions {
   const gender = params.get('gender');
   if (gender === 'male' || gender === 'female') options.gender = gender;
 
-  const table = params.get(named('ziwei', 'sihua'));
-  if (table !== null) {
-    if (table !== 'quanshu' && table !== 'zuofu') {
-      throw new ChartError('UNKNOWN_IDENTIFIER', {
-        parameter: named('ziwei', 'sihua'),
-        value: table,
-      });
-    }
-    options.sihua = table;
-  }
-
-  const cut = params.get(named('ziwei', 'yearBoundary'));
-  if (cut !== null) {
-    if (cut !== 'lichun' && cut !== 'chunjie') {
-      throw new ChartError('UNKNOWN_IDENTIFIER', {
-        parameter: named('ziwei', 'yearBoundary'),
-        value: cut,
-      });
-    }
-    options.yearBoundary = cut;
-  }
-
-  return options;
+  return readDeclared('ziwei', params, options);
 }
 
 /**
@@ -531,18 +532,45 @@ export function readBaziOptions(params: URLSearchParams): BaziOptions {
   const gender = params.get('gender');
   if (gender === 'male' || gender === 'female') options.gender = gender;
 
-  const counting = params.get(named('bazi', 'luckGranularity'));
-  if (counting !== null) {
-    if (counting !== 'shichen' && counting !== 'minute') {
-      throw new ChartError('UNKNOWN_IDENTIFIER', {
-        parameter: named('bazi', 'luckGranularity'),
-        value: counting,
-      });
-    }
-    options.luckGranularity = counting;
-  }
+  return readDeclared('bazi', params, options);
+}
 
-  return options;
+/**
+ * The 六壬 divergences an address states, with the board's own defaults.
+ *
+ * One reader for the four endpoints, like 紫微斗數's and 八字's above: a board
+ * that came back with the general turned at the 中氣 through `/api` and at the
+ * 節氣 through `/text` would be two boards under one address. Written out four
+ * times it read `guiren` and nothing else, so `liuren.yuejiang=jieqi` — half a
+ * term earlier, and four different lessons — was passed over in silence.
+ */
+export function readLiurenOptions(params: URLSearchParams): LiurenOptions {
+  return readDeclared('liuren', params, { ...DEFAULT_LIUREN_OPTIONS });
+}
+
+/**
+ * The 七政四餘 divergences an address states, with the board's own defaults.
+ *
+ * One reader for the four endpoints, for the reason 六壬 has one. Written out
+ * four times it read `luohou` and `ziqi` — the two with a second implemented
+ * value — so `qizheng.xiudu=shoushi` was passed over and the board came back
+ * on the 距星 frame under an address naming the 授時曆's table.
+ */
+export function readQizhengOptions(params: URLSearchParams): QizhengOptions {
+  return readDeclared('qizheng', params, { ...DEFAULT_QIZHENG_OPTIONS });
+}
+
+/**
+ * The 太乙 divergences an address states, with the board's own defaults.
+ *
+ * Every one of them has a single implemented value today, which is why the
+ * four endpoints passed `DEFAULT_TAIYI_OPTIONS` straight through and an
+ * address asking for the 月計 got the 年計 in silence. A parameter with one
+ * value is not a parameter nobody may name — it is one whose other values
+ * come back a 501.
+ */
+export function readTaiyiOptions(params: URLSearchParams): TaiyiOptions {
+  return readDeclared('taiyi', params, { ...DEFAULT_TAIYI_OPTIONS });
 }
 
 export interface ReadMoment {
@@ -621,14 +649,7 @@ export function readNianming(
     throw new ChartError('UNKNOWN_IDENTIFIER', { parameter: 'gender', value: gender });
   }
 
-  const count = params.get(named('nianming', 'count'));
-  if (count !== null && count !== 'sui' && count !== 'turns') {
-    throw new ChartError('UNKNOWN_IDENTIFIER', {
-      parameter: named('nianming', 'count'),
-      value: count,
-    });
-  }
-  const options: NianmingOptions = { count: count ?? 'sui' };
+  const options = readNianmingOptions(params);
 
   return {
     birthYear: birth.pillars.year,
@@ -636,10 +657,15 @@ export function readNianming(
   };
 }
 
-/** The count of years the 行年 steps by, read the same way everywhere. */
+/**
+ * The count of years the 行年 steps by, read the same way everywhere.
+ *
+ * Literally everywhere, which it was not: this coerced an unrecognised count
+ * to 虛歲 and the reader beside it refused the same string, so one address
+ * answered two ways depending on which function opened it.
+ */
 export function readNianmingOptions(params: URLSearchParams): NianmingOptions {
-  const count = params.get(named('nianming', 'count'));
-  return { count: count === 'turns' ? 'turns' : 'sui' };
+  return readDeclared('nianming', params, { count: 'sui' } as NianmingOptions);
 }
 
 /**

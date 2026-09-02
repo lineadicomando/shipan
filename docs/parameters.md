@@ -339,11 +339,24 @@ flat query string does not. Written bare, `?yearBoundary=chunjie` would mean two
 things on two pages, and the setup a reader carries from one section to the next
 would write one board's answer into another's.
 
-**Where the board is already named, the prefix is not.** A CLI command lays one
-board and an MCP tool answers for one, so `shipan ziwei --year-boundary lichun`
-and a `compute_ziwei` argument are unambiguous by construction; it is the query
-string, and every address built from one, where all the boards share a
-namespace. `apps/web/src/lib/parameters.ts` is the one place the naming is
+**Where the board is already named, the prefix is not — and what the naming
+settles is which board, not which bag.** A CLI command lays one board and an
+MCP tool answers for one, so nothing there has to say whose a `sihua` or a
+`guiren` is; it is the query string, and every address built from one, where
+all the boards share a namespace.
+
+**A layer stands under the board wherever the board is, so naming the board
+settles nothing between the two.** `shipan ziwei` carries a `yearBoundary`
+twice over — the pillars are read into an instant before that board counts
+anything off them — and one of the two can have the bare name. The layer keeps
+it, on every surface, because a layer is under all of them and collides with
+nothing; **a board's parameter that shares a name with a layer's takes its
+board's name everywhere**: `ziwei.yearBoundary` in an address,
+`--ziwei-year-boundary` at a command, `ziwei_year_boundary` at a tool. One row
+answers to this today and 太乙's is the second, with one implemented value and
+the same name.
+
+`apps/web/src/lib/parameters.ts` is the one place the naming is
 written, `wire` and `named` are how it is asked for, and
 `apps/web/test/parameters.test.ts` holds the client's copy of these rows to the
 engine's declaration.

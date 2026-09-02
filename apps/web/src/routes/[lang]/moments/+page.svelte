@@ -35,6 +35,7 @@
   import MomentTable from '$lib/components/MomentTable.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import PlateDialog from '$lib/components/PlateDialog.svelte';
+  import Schools from '$lib/components/Schools.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
 
@@ -606,6 +607,20 @@
     {:else}
       <p class="none">{t('cli.value.nothingAnswered')}</p>
     {/if}
+
+    <!--
+      Under the hours, as it stands under a board on every other section, and
+      inside the answer rather than beside the form: which hours came back is
+      a function of the school — 拆補 and 茅山 disagree about three hours in
+      five — so it belongs to the answer and not to the question. It stands
+      over «nothing answered» too, where it is if anything sharper: nothing
+      answered *under these*.
+
+      One bag, twice. A scan lays every chart of its interval from a single
+      set of options, so the board's and the layer's are the same object, and
+      it is `/api/moments` that says which they were.
+    -->
+    <Schools {t} board="qimen" options={scan.options} layers={scan.options} />
   </div>
 {/if}
 

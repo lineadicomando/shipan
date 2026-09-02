@@ -3261,7 +3261,7 @@ both (30.4° against 33), 鬼 narrow at both (4.6 against 4), 房 4.9 against 5,
 as the numbers agreeing; where they differ by three or four degrees, the
 obliquity is the reason and neither is wrong.
 
-### 四餘 — three of them, and why the fourth is missing
+### 四餘 — four of them, and what the fourth is worth
 
 **羅睺 is not Rahu, and this is the parameter most likely to be set wrong by
 someone reasoning from India.** The name moved twice. 羅睺 began as the
@@ -3937,6 +3937,63 @@ the tables do not — and the 太歲 the count yields is checked against
 `yearGanzhi` over four centuries, which is the one check here that does not
 come from the text.
 
+### Beside the six the 立成 weighs
+
+The tables of 卷三 give six placements a row and stop there. What is below is
+laid on every board and printed beside those six — one seat and four counts,
+each stated in a chapter of its own — and what checks each one differs, which
+is why they are weighed here one at a time rather than under the verification
+above. 小遊 closes the section because it is the one that is *not* reported: it
+is this board's own 太乙, and the paragraph says why.
+
+**合神 is the 六合 of the 太歲, and the text says it twice.** 卷一 gives the
+rule by example — 「假令太嵗在子，合神在丑」 — and the pairs it names close on
+themselves: 子丑, 寅亥, 卯戌, 辰酉, 巳申, 午未, each summing to thirteen on the
+wheel. The worked board of 卷一 推六紀月建法 then prints it beside the 計神 for
+a 局 this engine reproduces, 「太乙在一宫，武徳為天目，計神寅，合神丑」, which
+is the text agreeing with itself about the thing in question rather than
+stating it twice in one voice.
+
+**八門直使 — one gate every thirty years, and the text works it on a date.**
+卷四 states the whole of it: 「置演紀上元甲子所求積年，與小遊同，以二百四十去
+之，不盡以三十約之為直門數，不盡筭外即直門所入年，命起開門，次休生，左行八門，
+周而復始」. The ring is the compass ring from 乾 — 乾開, 坎休, 艮生, 震傷,
+巽杜, 離景, 坤死, 兌驚, the eight seats 卷二 推八門所主法 gives. 卷一 then
+checks it against two dates — 「假令今開元十二年甲子，即開門為直使，至三十一年
+甲午嵗即休門為直使」 — and the count gives both.
+
+**五福太乙 — forty-five years to a palace, and the text checks that one too.**
+卷五 推五福太乙法 runs it on the 一萬三千三百三十一 count, over the four
+corners and the centre, 二百二十五年 to the circuit. The check is a date again:
+「今開元十二年甲子在遼東十一年也」, the eleventh year in 黃始宮, which is what
+the count gives.
+
+**大遊太乙 runs on the same count and nothing checks it.** 卷五 推大遊太乙
+gives thirty-six years to a palace and 二百八十八年一周, opening from 七宮
+where the year's count opens from 一宮. Its eye makes the walk 天目 makes,
+starting from 天道 rather than from 武德 and pausing at the same two corners,
+so what it shares with a placement the 立成 weighs is the walk and not the
+count. The text works no dated example for it, and this file has none to put
+beside it.
+
+**三基 print their period beside their count**, and the reason is a defect this
+board produced. 卷五 gives the sovereign thirty years to a fief, the minister
+three and the people one, so 民基 stands at 1 on every board ever laid. Printed
+as a bare `1` beside a sovereign at `23` it was read as a base newly begun — a
+fact nobody computed, produced by a right number without the thing that makes it
+legible. `TaiyiFief` carries `period`; the transcript prints `1/1`.
+
+**三基 is computed and unchecked.** 君基, 臣基 and 民基 run on 卷五's opening
+count, 「自上元甲寅之嵗至大唐開元十二年甲子嵗積得二十八萬五千一十一筭」, with
+「臣今恐速要，自漢安帝元初甲寅為近，至開元十二年甲子嵗積得六百十一筭」 beside
+it — and 285,011 ≡ 611 (mod 360), so the two agree as the three main figures
+do. It is the one count in this board the text never checks against a date.
+
+**小遊太乙 is the year board's own 太乙, and the text says so:** 「小遊主事見
+在嵗計中，自此不復載，天目亦然也」. The two counts bear it out — 3,361 and
+1,937,281 are both ≡ 1 (mod 24) and both advance one a year, so they never
+part. It is not reported twice.
+
 ### The transliteration decided deliberately
 
 - **太炅 tàijiǒng.** 炅 is jiǒng, brightness, and 卷二 says why the seat is
@@ -4132,24 +4189,6 @@ whole reading resting on nothing. A matter is not a question, and the difference
 is what lets this board be handed over at all: a question about a year puts the
 reader inside a figure they are not in. See `prompt.taiyi.hostguest`,
 `prompt.taiyi.matter` and `docs/history/21-consultation-taiyi.md`.
-
-**三基 print their period beside their count**, and the reason is a defect this
-board produced. 卷五 gives the sovereign thirty years to a fief, the minister
-three and the people one, so 民基 stands at 1 on every board ever laid. Printed
-as a bare `1` beside a sovereign at `23` it was read as a base newly begun — a
-fact nobody computed, produced by a right number without the thing that makes it
-legible. `TaiyiFief` carries `period`; the transcript prints `1/1`.
-
-**三基 is computed and unchecked.** 君基, 臣基 and 民基 run on 卷五's opening
-count, 「自上元甲寅之嵗至大唐開元十二年甲子嵗積得二十八萬五千一十一筭」, with
-「臣今恐速要，自漢安帝元初甲寅為近，至開元十二年甲子嵗積得六百十一筭」 beside
-it — and 285,011 ≡ 611 (mod 360), so the two agree as the three main figures
-do. It is the one count in this board the text never checks against a date.
-
-**小遊太乙 is the year board's own 太乙, and the text says so:** 「小遊主事見
-在嵗計中，自此不復載，天目亦然也」. The two counts bear it out — 3,361 and
-1,937,281 are both ≡ 1 (mod 24) and both advance one a year, so they never
-part. It is not reported twice.
 
 ---
 
@@ -4890,7 +4929,7 @@ calendrical layer settles. Recorded as a passage read and not used.
 | 二十八宿值日's 宜忌 | 《協紀辨方書》卷三十六 辨訛 rejects the lodge-day selection outright as an import: 來自西域, 並不可從. The count may still travel; the doctrine attached to it may not, and the epoch takes its warrant elsewhere |
 | the 宜忌 of the twelve officers | the largest thing in the 協紀 and the clearest refusal here: 宜 and 忌 are advice — ordering days, dating an act — which is `purposes.ts`'s line in a second place |
 | the verse's clause order in 涉害 | 「孟深仲淺季當休」 read as evaluation order scores 98.19 % where the grouping this engine uses scores 99.58 %. Both references take the deeper 季; the divergence is recorded rather than resolved by preference |
-| 紫氣 | a procedure carrying an epoch constant exists, so the refusal is not for want of a rule, and a dated board exists that would anchor it. **Each half is one witness.** 《張果星宗》 and the 三辰通載 section the register used to count beside it are one work, read on the plate 2026-09-01, and that work's 總論 gives twenty-nine years where its 算法 gives twenty-eight; the anchor is 《星度指南》's single 1886 chart, good to a palace. Nothing weighs 紫氣's own constant, its two checkable siblings in the same table erring by 0.01 % and 0.20 %. Both halves at rung 5. See the 四餘 section |
+| 紫氣's degree | the body itself is placed, by default, under `ziqi: yinianyisu`; what nothing supplies is a position finer than a palace. **Each half of that placement is one witness.** 《張果星宗》 and the 三辰通載 section the register used to count beside it are one work, read on the plate 2026-09-01, and that work's 總論 gives twenty-nine years where its 算法 gives twenty-eight; the anchor is 《星度指南》's single 1886 chart, good to a palace. Nothing weighs 紫氣's own constant, its two checkable siblings in the same table erring by 0.01 % and 0.20 %. Both halves are rung 5, which is a grade written down rather than a body withheld — the refusal is the degree alone, and the type carries it: 紫氣 arrives as a `PalacePlacement`. See the 四餘 section |
 | 七政四餘 `xiudu` `shixian` · `shoushi` | the boundaries are taken from the 距星 themselves, so no epoch is chosen. The two 曆 tables are declared and refused until one arrives with an epoch that can be cited, and 《曆法通志》's complete eight-曆 table does not. **《授時曆故》 does**: 至元辛巳, said by the work, with the whole 黃道宿次 in its 卷二 and the text's own rule for carrying it — 「依赤道及冬至歲差所在算定 … 各得當時宿度」. So `shoushi` is refused now for a different reason, and a narrower one: **the table checks itself** — the four quadrant sums close against their entries, and against each other on 365.2575, the 曆's own 周天分 — so what is left is transcribing the remaining cells at a resolution that settles them, and giving the option an epoch as well as a table, because the source makes its numbers a function of a moment. `shixian` is where it was. See the frame section |
 | 七政四餘 `minggong` `ascendant` | 立命 by 加時 is what the texts state and gives a palace. The rising degree is a second method, not a sharper reading of the first. `OPTION_NOT_IMPLEMENTED` |
 | 七政四餘 `gong` `ci` | the 次 as stretches of 宿度 needs the same table `xiudu` is waiting for |

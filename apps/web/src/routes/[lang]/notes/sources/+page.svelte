@@ -201,7 +201,7 @@
   /*
    * The rung is a figure in a box, the same box in the table below.
    *
-   * It has to be recognisable at a glance in a column of forty-seven rows and
+   * It has to be recognisable at a glance down a column as long as this one and
    * unmistakable for the count beside it in the list, and a bare digit is
    * neither.
    */

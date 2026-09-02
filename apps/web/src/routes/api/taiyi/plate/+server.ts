@@ -1,10 +1,11 @@
-import { DEFAULT_TAIYI_OPTIONS, taiyiBoard, taiyiLabels } from '@shipan/core';
+import { taiyiBoard, taiyiLabels } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import { renderTaiyiSvg } from '@shipan/plate';
 import {
   localeVary,
   readLocale,
   readPlateOptions,
+  readTaiyiOptions,
   readTaiyiYear,
   taiyiCacheControl,
 } from '$lib/server/params';
@@ -42,7 +43,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const t = createTranslator(locale);
     const { year, named } = readTaiyiYear(url.searchParams);
 
-    const board = taiyiBoard({ year }, DEFAULT_TAIYI_OPTIONS);
+    const board = taiyiBoard({ year }, readTaiyiOptions(url.searchParams));
 
     const { size, scheme } = readPlateOptions(url.searchParams);
 

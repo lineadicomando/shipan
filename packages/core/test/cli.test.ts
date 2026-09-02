@@ -133,6 +133,45 @@ describe('qimen', () => {
   });
 });
 
+describe('the year a board counts, and the year the pillars are cut at', () => {
+  /**
+   * Two questions that were one word, and the word reached 太乙's branch alone:
+   * `--year-boundary` was accepted on every other command and dropped without a
+   * sound, and the pillars' own could not be moved at all.
+   * → `docs/history/43-the-layer-under-the-board.md`
+   */
+  it('moves the pillars under a board that stands on them', async () => {
+    // 立春 and 正月初一 cut 1983-02-08 into two different years, so the year
+    // pillar the board prints is the whole of the test.
+    const at = ['--date', '1983-02-08', '--time', '09:00', '--tz', 'Asia/Shanghai',
+                '--no-true-solar', '--lang', 'en'];
+
+    expect(await run(['bazi', ...at, '--year-boundary', 'lichun'])).toBe(0);
+    expect(out).toContain('癸亥');
+
+    out = '';
+    expect(await run(['bazi', ...at, '--year-boundary', 'chunjie'])).toBe(0);
+    expect(out).toContain('壬戌');
+
+    // And a value the pillars do not take is refused by name, where it used to
+    // be validated on the one command that read it and nowhere else.
+    expect(await run(['bazi', ...at, '--year-boundary', 'dongzhi'])).toBe(2);
+    expect(err).toContain('dongzhi');
+  });
+
+  it("cuts 紫微斗數's own year under its own name", async () => {
+    const at = ['--date', '1983-02-08', '--time', '09:00', '--tz', 'Asia/Shanghai',
+                '--no-true-solar', '--lang', 'en'];
+
+    expect(await run(['ziwei', ...at, '--ziwei-year-boundary', 'lichun'])).toBe(0);
+    // The board's own line, which said 正月初一 whatever it was asked for.
+    expect(out).toContain('立春');
+
+    expect(await run(['ziwei', ...at, '--ziwei-year-boundary', 'qiufen'])).toBe(2);
+    expect(err).toContain('qiufen');
+  });
+});
+
 describe('taiyi', () => {
   it('lays the board of a year and takes no place and no hour', async () => {
     expect(await run(['taiyi', '--year', '724', '--lang', 'en'])).toBe(0);
@@ -168,15 +207,17 @@ describe('taiyi', () => {
 
     // A declared value that is not implemented is the engine refusing, not
     // the caller mistyping: it comes back as a ChartError and says so.
-    expect(await run(['taiyi', '--year-boundary', 'dongzhi', '--lang', 'en'])).toBe(1);
+    expect(await run(['taiyi', '--taiyi-year-boundary', 'dongzhi', '--lang', 'en'])).toBe(1);
     expect(err).toContain('not implemented');
-    expect(await run(['taiyi', '--year-boundary', 'qiufen', '--lang', 'en'])).toBe(2);
+    expect(await run(['taiyi', '--taiyi-year-boundary', 'qiufen', '--lang', 'en'])).toBe(2);
 
     // 春節 passed validation and was answered by the 立春 rule, on a board that
     // then recorded the boundary it had not used.
-    expect(await run(['taiyi', '--year-boundary', 'chunjie', '--lang', 'en'])).toBe(1);
+    expect(await run(['taiyi', '--taiyi-year-boundary', 'chunjie', '--lang', 'en'])).toBe(1);
     expect(err).toContain('not implemented');
   });
+
+
 
   it('carries a matter into the prompt rather than dropping it', async () => {
     expect(await run(['taiyi', '--year', '2026', '--about', 'a merger', '--lang', 'en'])).toBe(0);

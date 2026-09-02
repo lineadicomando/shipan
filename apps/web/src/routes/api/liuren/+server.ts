@@ -1,9 +1,8 @@
-import { DEFAULT_LIUREN_OPTIONS, liurenBoard, type LiurenOptions } from '@shipan/core';
+import { liurenBoard } from '@shipan/core';
 import { json } from '@sveltejs/kit';
-import { momentIsFixed, readMoment } from '$lib/server/params';
+import { momentIsFixed, readLiurenOptions, readMoment } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
-import { named } from '$lib/parameters';
 
 /**
  * `GET /api/liuren?date=2026-08-14&time=14:30&locationId=3169070&liuren.guiren=chou`
@@ -21,9 +20,7 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
   try {
     const { moment, label } = readMoment(url.searchParams);
 
-    const options: LiurenOptions = { ...DEFAULT_LIUREN_OPTIONS };
-    const guiren = url.searchParams.get(named('liuren', 'guiren'));
-    if (guiren === 'chou' || guiren === 'wei') options.guiren = guiren;
+    const options = readLiurenOptions(url.searchParams);
 
     const board = liurenBoard(
       { term: moment.solarTerm.term, day: moment.pillars.day, hour: moment.hourBranch },

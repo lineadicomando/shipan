@@ -26,6 +26,7 @@ import { GET as terms } from '../src/routes/api/terms/+server';
 import { GET as locations } from '../src/routes/api/locations/+server';
 import { GET as moments } from '../src/routes/api/moments/+server';
 import { INSTRUMENTS, type InstrumentId } from '../src/lib/instruments';
+import { DIVERGENCES, wire } from '../src/lib/parameters';
 
 /**
  * The endpoints are called as SvelteKit calls them, with a URL and a request.
@@ -938,6 +939,63 @@ describe('GET /api/ziwei', () => {
   });
 });
 
+
+/**
+ * No board answers under a reading its address did not ask for.
+ *
+ * **Derived, because listing it is what let it drift.** 奇門 had this closed
+ * and the other four did not: each read its own options inline and read only
+ * the parameters with a second implemented value, so a value the engine
+ * declares and does not compute was passed over and the board came back on the
+ * default — 六壬 turned at the 中氣 under an address naming the 節氣, 太乙 in
+ * the 年計 under one naming the 月計. A refused value has to come back refused,
+ * and a table of examples would only ever cover the boards somebody remembered.
+ *
+ * `bazi` and `nianming` carry no unimplemented value today, so the loop finds
+ * nothing to ask of them and the count below is what says so.
+ */
+describe('every board refuses the values it declares and does not compute', () => {
+  const ADDRESSES: [string, Handler, string][] = [
+    ['qimen', qimen, MOMENT],
+    ['liuren', liuren, MOMENT],
+    ['qizheng', qizheng, MOMENT],
+    ['bazi', bazi, MOMENT],
+    ['ziwei', ziwei, MOMENT],
+    ['taiyi', taiyi, 'year=2026'],
+  ];
+
+  const refused = ADDRESSES.flatMap(([board, handler, query]) =>
+    DIVERGENCES.filter((row) => row.board === board).flatMap((row) =>
+      row.values
+        .filter((value) => !row.implemented.includes(value))
+        .map((value): [string, Handler, string] => [
+          `${wire(row)}=${value}`,
+          handler,
+          `${query}&${wire(row)}=${value}`,
+        ]),
+    ),
+  );
+
+  it('has something to ask of every board that declares one', () => {
+    const asked = new Set(refused.map(([asking]) => asking.split('.')[0]));
+    expect(asked).toEqual(new Set(['qimen', 'liuren', 'qizheng', 'ziwei', 'taiyi']));
+  });
+
+  it.each(refused)('%s', async (_asking, handler, query) => {
+    const { status, body } = await call(handler, query);
+
+    expect(status).toBe(501);
+    expect(body).toMatchObject({ code: 'OPTION_NOT_IMPLEMENTED' });
+  });
+
+  it.each(ADDRESSES)('%s refuses a name nobody declares', async (board, handler, query) => {
+    const { status, body } = await call(handler, `${query}&${board}.yuan=futou`);
+
+    expect(status).toBe(400);
+    expect(body).toMatchObject({ code: 'UNKNOWN_IDENTIFIER' });
+  });
+});
+
 describe('GET /api/bazi', () => {
   it('reads the pillars out', async () => {
     const { body } = await call(bazi, `${MOMENT}&gender=male`);
@@ -1090,6 +1148,40 @@ describe('GET /api/locations', () => {
   });
 });
 
+/**
+ * The scan's answer is a set of hours, and which hours they are is a function
+ * of the school: 拆補 and 茅山 disagree about three hours in five. It came back
+ * with the interval, the place, the criteria and the hours, and nothing saying
+ * who laid them — under a URL a reader shares.
+ */
+describe('GET /api/moments', () => {
+  const INTERVAL =
+    'from=2026-09-01&to=2026-09-03&latitude=39.9075&longitude=116.3972' +
+    '&timezone=Asia/Shanghai&trueSolarTime=false&dayBoundary=midnight';
+
+  it('carries the options every chart of the interval was laid from', async () => {
+    const { body } = await call(moments, `${INTERVAL}&gate=kaimen`);
+
+    expect((body as { options: Record<string, unknown> }).options).toMatchObject({
+      method: 'chaibu',
+      trueSolarTime: false,
+      dayBoundary: 'midnight',
+    });
+  });
+
+  it('says the method it was asked for, and answers different hours under it', async () => {
+    const { body: chaibu } = await call(moments, `${INTERVAL}&gate=kaimen`);
+    const { body: maoshan } = await call(moments, `${INTERVAL}&gate=kaimen&qimen.method=maoshan`);
+
+    const said = (body: unknown): unknown => (body as { options: { method: string } }).options.method;
+    const hours = (body: unknown): unknown[] => (body as { moments: unknown[] }).moments;
+
+    expect(said(chaibu)).toBe('chaibu');
+    expect(said(maoshan)).toBe('maoshan');
+    expect(hours(maoshan)).not.toEqual(hours(chaibu));
+  });
+});
+
 describe('GET /api/qimen/plate', () => {
   it('returns an SVG', async () => {
     const { status, headers, text } = await call(plate, `${MOMENT}&size=400`);
@@ -1112,6 +1204,22 @@ describe('GET /api/qimen/plate', () => {
     // Down to the pillars along the top and the chief along the foot. Cast
     // under the default, so the chief is the one 拆補 puts there.
     expect(english.text).toMatch(/chief Pillar 天柱 — chief gate Shock 驚門/);
+  });
+
+  /**
+   * The drawing's school lines are built from two bags — the board's options
+   * and the layer's — and the layer's used to be read out of a whole `Moment`
+   * handed in beside them. Handed the wrong object the block does not fail:
+   * every layer value comes back `undefined`, falls to its declared default,
+   * and the picture states a school nobody asked for while looking right.
+   */
+  it('names the layer values in force and not their defaults', async () => {
+    const moved = await call(plate, `${MOMENT}&lang=en&yearBoundary=chunjie`);
+    const standing = await call(plate, `date=2024-06-15&time=14:00&timezone=Asia/Shanghai&lang=en`);
+
+    expect(moved.text).toContain('正月初一');
+    expect(moved.text).not.toContain('立春');
+    expect(standing.text).toContain('立春');
   });
 
   it('frames the drawing with the directions, in the language it was asked for', async () => {

@@ -39,7 +39,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       .join(' / ');
 
     const svg = renderChartSvg(chart, {
-      schools: divergenceLines('qimen', moment.options, moment, t),
+      schools: divergenceLines('qimen', moment.options, moment.options, t),
       size,
       scheme,
       labels,

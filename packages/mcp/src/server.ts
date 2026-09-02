@@ -91,7 +91,11 @@ export function createServer(context: ToolContext = {}): McpServer {
         'zhirun or maoshan; the three are different schools and lay out different charts from ' +
         'the same instant — chaibu and maoshan disagree about three hours in five — so never ' +
         'switch method between charts you are comparing. Every other board has divergences of ' +
-        'its own with a declared default, and each names them in its own tool.',
+        'its own with a declared default, and each names them in its own tool — where an ' +
+        'argument is bare because a tool answers for one board, except where a board and the ' +
+        'layer under it want the same word: `year_boundary` is where the four pillars are cut, ' +
+        'asked at every tool, and `ziwei_year_boundary` is where that board counts its own year ' +
+        'from, which is a different question with a different default.',
     },
   );
 

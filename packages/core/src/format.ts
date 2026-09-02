@@ -16,6 +16,7 @@ import {
 import { NIANMING_NAMES, type Nianming, type Placement, type Seat } from './nianming.js';
 import type { Moment } from './pillars.js';
 import { divergencesInForce } from './parameters.js';
+import type { ChartOptions } from './types.js';
 import {
   MOTIONS,
   type Placement as QizhengPlacement,
@@ -317,7 +318,7 @@ export function formatMoment(
     '',
     `${t('cli.heading.pillars')}`,
     ...table(pillars),
-    ...(divergences ? ['', formatDivergences(divergences.board, divergences.options, moment, t)] : []),
+    ...(divergences ? ['', formatDivergences(divergences.board, divergences.options, moment.options, t)] : []),
   ].join('\n');
 }
 
@@ -351,10 +352,10 @@ export function formatMoment(
 export function saidDivergences(
   board: string,
   options: object,
-  moment: Moment,
+  layers: object,
   t: Translator,
 ): readonly { label: string; said: string }[] {
-  return divergencesInForce(board, options, moment.options).map(({ parameter, value }) => ({
+  return divergencesInForce(board, options, layers).map(({ parameter, value }) => ({
     label: t(parameter.label as MessageKey),
     said: t(value.says as MessageKey),
   }));
@@ -370,25 +371,25 @@ export function saidDivergences(
 export function divergenceLines(
   board: string,
   options: object,
-  moment: Moment,
+  layers: object,
   t: Translator,
 ): string[] {
   // An em dash and not a colon: several of the glosses carry a colon of their
   // own — «by thirds of the term: 拆補 chāibǔ» — and a line with two of them
   // reads as a list of three things rather than as one thing said twice.
-  return saidDivergences(board, options, moment, t).map((row) => `${row.label} — ${row.said}`);
+  return saidDivergences(board, options, layers, t).map((row) => `${row.label} — ${row.said}`);
 }
 
 export function formatDivergences(
   board: string,
   options: object,
-  moment: Moment,
+  layers: object,
   t: Translator,
 ): string {
-  const inForce = divergencesInForce(board, options, moment.options);
+  const inForce = divergencesInForce(board, options, layers);
   if (inForce.length === 0) return '';
 
-  const rows = saidDivergences(board, options, moment, t).map((row) => [row.label, row.said]);
+  const rows = saidDivergences(board, options, layers, t).map((row) => [row.label, row.said]);
 
   // The notes under the block, each said once however many values carry it:
   // both methods point at the same caution, and printing it twice would be
@@ -1286,15 +1287,40 @@ export function formatWarnings(moment: Moment, t: Translator): string {
 }
 
 /**
- * A scan, read out: when each chart holds and which palaces answered.
+ * A scan, read out: which schools laid it, then when each chart holds and
+ * which palaces answered.
  *
  * The palace leads the line and not the hour, because the answer to *when* is
  * half an answer. A chart is consulted for a direction as much as for a time,
  * and a reader handed times alone has been given the part of this tradition
  * that every other art already has.
+ *
+ * **The options are required and not optional**, which is the whole of what
+ * this argument is for. A scan is a function of the school twice over: the
+ * method decides which hour carries which 局 — 拆補 and 茅山 disagree about
+ * three hours in five — and `spirits` decides which spirits are on the board
+ * a `spirit` criterion is asked against. An answer that did not say would be
+ * a set of hours nobody could lay again. It was optional nowhere: it was
+ * absent, on all four surfaces that scan, and an optional argument with a
+ * sensible default is how the same thing goes missing in a printer nobody is
+ * looking at. See `docs/parameters.md` § "A declared default is not a hidden
+ * school".
+ *
+ * The layer options and the board's are one object here, and that is a fact
+ * about a scan rather than a shortcut: every chart in the interval is laid
+ * from the one set, which is what makes the interval comparable with itself.
  */
-export function formatScan(matches: readonly ScanMatch[], t: Translator): string {
-  if (matches.length === 0) return `  ${t('cli.value.nothingAnswered')}`;
+export function formatScan(
+  matches: readonly ScanMatch[],
+  t: Translator,
+  options: ChartOptions,
+): string {
+  const schools = formatDivergences('qimen', options, options, t);
+  const said = schools === '' ? [] : [schools, ''];
+
+  if (matches.length === 0) {
+    return [...said, `  ${t('cli.value.nothingAnswered')}`].join('\n');
+  }
 
   // Already local clock time at the place, and already ISO: the date and the
   // hour are read off it rather than converted through a zone a second time.
@@ -1352,5 +1378,5 @@ export function formatScan(matches: readonly ScanMatch[], t: Translator): string
     }
   }
 
-  return table(rows).join('\n');
+  return [...said, ...table(rows)].join('\n');
 }
