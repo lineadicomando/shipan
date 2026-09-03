@@ -1,6 +1,6 @@
 {
   "name": "@shipan/i18n",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Message catalogs and locale negotiation, shared by every surface",
   "license": "AGPL-3.0-or-later",
   "type": "module",

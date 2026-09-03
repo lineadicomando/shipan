@@ -1,6 +1,6 @@
 {
   "name": "@shipan/geo",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Location lookup with coordinates and timezone, from a local GeoNames dataset",
   "license": "AGPL-3.0-or-later",
   "type": "module",

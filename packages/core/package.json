@@ -1,6 +1,6 @@
 {
   "name": "@shipan/core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Calculation engine: solar terms, lunar calendar, sexagenary cycles, and the 奇門, 六壬, 太乙, 八字, 七政四餘 and 紫微斗數 boards",
   "license": "AGPL-3.0-or-later",
   "type": "module",

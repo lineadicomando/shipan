@@ -72,5 +72,19 @@ jobs:
       # Build, never push: what is asserted is that the Dockerfile still
       # describes this repository — every stage, including the web build and
       # the fonts, whose absence is exactly what it once shipped silently.
+      #
+      # **Three attempts, because the first thing this step does is ask another
+      # host a question.** `docker build` resolves the base image before it
+      # reads a line of the Dockerfile, and Docker Hub answered that request
+      # with a 502 on 2026-09-03, nine seconds in, on a commit whose `test` job
+      # had already passed — a red tick that said nothing about the repository.
+      # A build that is genuinely broken still fails; it takes half a minute
+      # longer to say so, and that is the whole of what the retry costs.
       - name: Build the image
-        run: docker build .
+        run: |
+          for attempt in 1 2 3; do
+            if docker build .; then exit 0; fi
+            echo "::warning::the image build failed on attempt $attempt"
+            [ "$attempt" = 3 ] || sleep 15
+          done
+          exit 1

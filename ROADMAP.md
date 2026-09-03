@@ -151,6 +151,8 @@ entry shows. Ordered by what a reading would move.
 | 《中國恆星觀測史》 第七章第一節二 | the 授時 lodge values, if a modern reconstruction can stand where the 曆's own table would | printed p. 272 |
 | SKQS vol. 809, 《星學大成》 | what 七政四餘's neighbours have wanted; unweighed until read | volume pp. 285–870, 三十卷, both ends read on the plate |
 | 《太乙數統宗大全》, 故宮 第420冊 | the 闕 of 卷一 read against a second hand; its own constants answered the other half and did not lift the refusal, being another calendar's | four leaves of 440 read — 卷二's calendrical apparatus and 卷三's 起例 |
+| 《中國古代星占學》 第五章 · 太乙式數占 | 陰陽和不和, refused because two accounts of it do not line up; this chapter's eight principles open on the parity of a 算, which is what they disagree about | printed pp. 492–499, of which only the closing summary is read |
+| 《中國古代星占學》 第五章 · 太乙十神 · 十精太乙 | the four bodies that walk twelve palaces, and the one layer of this art read for weather rather than for reigns — named in the register and not computed | printed pp. 505–511 and 512–519 |
 
 **The two 六壬 lines are one question from two sides** and are the cheapest pair
 here: 神煞 is a juan of its own and 卷上's 目錄 names 起貴人定十二天將法, so both
@@ -273,7 +275,26 @@ text, a validated read beside `ziweiOptionsFrom` and `qizhengOptionsFrom`, and
 a test that the board moves rather than that the flag parses. No engine change,
 no register row, no new prose in `docs/`.
 
-## 6. What is refused and stays refused
+## 6. Small debts in the code
+
+**Low.** Neither is wrong and neither blocks anything; both are what a session
+left when the thing it was doing was something else.
+
+**The 元 does not leave the engine.** Both witnesses address a 太乙 board as
+「第五壬子元 58 局」 — five 元 of seventy-two to a 周紀 — and `TaiyiBoard` hands
+over the 紀 and the 局 while computing the 元 and never naming it. What it costs:
+a field beside `liuji`, a label pair in both catalogs, a line in the transcript
+and on the section, and no register row, since the count it is cut from is
+already weighed under the epoch. It moves the second term of the version, an
+existing answer gaining a field.
+
+**About forty comments still call the register 年計.** The parameter's name is
+now 歲計, which is what both witnesses call it, and the identifier stays
+`nianji`; the prose around the code kept the name in modern circulation. The
+sweep is mechanical and touches no behaviour — and, shipping nothing, moves no
+term.
+
+## 7. What is refused and stays refused
 
 Not roadmap, and here only so nobody mistakes silence for an omission: the 用神,
 格局, ranking, dating, advice, the 年命 purposes doctrine, who is 主 and who is
