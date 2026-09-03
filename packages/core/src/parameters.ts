@@ -463,6 +463,14 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
 };
 
 export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
+  // The counts differ by millions and mostly do not differ at all: 《統宗》's
+  // is congruent with 《金鏡》's modulo both 360 and 24, so it lays the identical
+  // board and is a second witness rather than a second value. 《太乙淘金歌》's is
+  // not — it is out by a whole 元 and puts 太乙 in a different palace — which is
+  // what makes it the one alternative the engine can be asked for and must
+  // refuse by name. 《齊書·武帝紀》's eleven dated positions are what discards it,
+  // and a value is declared when the engine can refuse it by name rather than
+  // when it can compute it. See `docs/sources.md` § 太乙.
   epoch: {
     board: 'taiyi',
     values: [
@@ -470,6 +478,11 @@ export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
         id: 'jinjing',
         name: { hanzi: '太乙金鏡式經', pinyin: 'tàiyǐjīnjìngshìjīng' },
         implemented: true,
+      },
+      {
+        id: 'taojin',
+        name: { hanzi: '太乙淘金歌', pinyin: 'tàiyǐtáojīngē' },
+        implemented: false,
       },
     ],
     default: 'jinjing',
@@ -483,7 +496,7 @@ export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
   ji: {
     board: 'taiyi',
     values: [
-      { id: 'nianji', name: { hanzi: '年計', pinyin: 'niánjì' }, implemented: true },
+      { id: 'nianji', name: { hanzi: '歲計', pinyin: 'suìjì' }, implemented: true },
       { id: 'yueji', name: { hanzi: '月計', pinyin: 'yuèjì' }, implemented: false },
       { id: 'riji', name: { hanzi: '日計', pinyin: 'rìjì' }, implemented: false },
       { id: 'shiji', name: { hanzi: '時計', pinyin: 'shíjì' }, implemented: false },

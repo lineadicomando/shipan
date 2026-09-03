@@ -115,8 +115,10 @@ stays out.
 
 **The per-palace readings of 卷二 are declined entirely**, because they are a
 Tang province and a dynastic omen and there is no third thing behind them.
-There is no non-dynastic interpretive layer in this text to extract, and
-`docs/sources.md` says so as a refusal rather than by omission.
+What a palace hands down is those two and nothing else, and `docs/sources.md`
+says so as a refusal rather than by omission — where it also names the one part
+of this art that is read for something other than reigns, the 十精, which are
+read for the weather and are not computed here either.
 
 What does travel: 卷三 states each of the seven conditions three times over — a
 trigger, a 之義 saying what the shape *is*, then 若… and 嵗計遇之… saying what
@@ -176,7 +178,7 @@ for its degree does not compile.
 
 **And what is weak about it is published rather than withheld.** Each half of
 the placement rests on a single text, which is rung 5 twice over — the grade
-年命, the 年神 bearings and 太乙's 大將 and 參將 already ship at. This project's
+年命, the 年神 bearings and 太乙's 大遊 already ship at. This project's
 rule for such a quantity is that its rung is written down, not that the quantity
 is dropped: the art is 七政四餘, and a board printing three by default answered
 to a name it did not carry. So the fourth is on the board, at the resolution its

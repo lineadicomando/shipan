@@ -286,7 +286,7 @@ function listing(
 
     const generals = [
       `${labels.general ?? ''} ${side.general.hanzi}${side.general.number}`,
-      side.assistant ? `${labels.assistant ?? ''} ${side.assistant.hanzi}${side.assistant.number}` : '',
+      `${labels.assistant ?? ''} ${side.assistant.hanzi}${side.assistant.number}`,
     ]
       .filter(Boolean)
       .join('   ');
@@ -348,9 +348,9 @@ function palaces(
   };
   put(board.taiyi.palace.number, '太乙', words.taiyi);
   put(board.host.general.number, '主將', words.hostGeneral);
-  put(board.host.assistant?.number, '主參', words.hostAssistant);
+  put(board.host.assistant.number, '主參', words.hostAssistant);
   put(board.guest.general.number, '客將', words.guestGeneral);
-  put(board.guest.assistant?.number, '客參', words.guestAssistant);
+  put(board.guest.assistant.number, '客參', words.guestAssistant);
 
   for (const [direction, seat] of Object.entries(PALACE_SEAT)) {
     const [row, column] = seat;

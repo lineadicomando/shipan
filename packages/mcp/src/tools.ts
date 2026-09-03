@@ -524,7 +524,7 @@ export function registerComputeTaiyi(server: McpServer): void {
     {
       title: 'Lay the 太乙 board of a year',
       description:
-        'Lays the 太乙神數 board of a year in the 年計, the register of the year, from ' +
+        'Lays the 太乙神數 board of a year in the 歲計, the register of the year, from ' +
         '《太乙金鏡式經》 (王希明, 唐, c. 730). It places 太乙 itself, which walks eight ' +
         'palaces and never the centre (太乙不入中宮) at three years a palace; the two eyes — ' +
         '文昌 the lower, 始擊 the upper; 計神 and 合神; the 主算 and 客算 counted from the ' +
@@ -539,10 +539,14 @@ export function registerComputeTaiyi(server: McpServer): void {
         'and the north there, and every number is one seat off the 洛書. **It never says who ' +
         'is 主 and who is 客** — identifying host and guest is the first interpretive act the ' +
         'system asks for, and it is the reader’s, exactly as choosing a 用神 is. **It is ' +
-        'checked against the text itself and not against any independent implementation**, ' +
-        'because none exists: 卷三 prints a 立成 of seventy-two rows twice over and 卷一, 卷 ' +
-        '六 and 卷九 work individual boards, which is the tradition auditing itself and is ' +
-        'weaker evidence than a second program would be. ' +
+        'checked against texts and not against any independent implementation**, because ' +
+        'none exists: 卷三 prints a 立成 of seventy-two rows twice over and 卷一, 卷六 and ' +
+        '卷九 work individual boards, which is the tradition auditing itself and is weaker ' +
+        'evidence than a second program would be. Four things on it are also checked from ' +
+        'outside the manuals — the palace 太乙 stands in against the eleven dated positions ' +
+        '《齊書·武帝紀》 records, the 五福 against the three temples the Song court built for ' +
+        'it in 984, 1029 and 1074, the 三基 against three dated entries, and the 參將 rule, ' +
+        'which 《太乙金鏡式經》 only exemplifies and 《太乙數統宗大全》 states. ' +
         'The received readings of this board are dynastic — which state falls, which year an ' +
         'army breaks — and are not here. It names positions and numbers and stops.',
       inputSchema: {

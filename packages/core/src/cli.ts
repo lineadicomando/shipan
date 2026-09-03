@@ -180,7 +180,7 @@ Usage
   shipan qimen     [options]     the 奇門遁甲 nine palaces for a moment
   shipan liuren    [options]     the 大六壬 board for a moment
   shipan qizheng   [options]     the 七政四餘 board for a moment
-  shipan taiyi     [--year N]    the 太乙 board of a year — 年計
+  shipan taiyi     [--year N]    the 太乙 board of a year — 歲計
   shipan bazi      [options]     the four pillars, read out
   shipan ziwei     [options]     the 紫微斗數 board for a birth
   shipan terms     [options]     the twenty-four solar terms of a year

@@ -71,7 +71,7 @@ waiting on one. `docs/sources.md` § "What a second copy of one text buys".
 | 奇門 | `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `minggong: ascendant`, `gong: ci` |
-| 太乙 | `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
+| 太乙 | `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
 | 紫微斗數 | `leapMonth: current`, `leapMonth: split`, `huoling: hour`, `daxian: ming` |
 
 `apps/web/test/docs.test.ts` holds this table to the engine both ways: a value
@@ -150,7 +150,7 @@ entry shows. Ordered by what a reading would move.
 | 《御定六壬直指》 卷上 起例 | 起貴人定十二天將法 and 十二月將名號 — the same question, second place | series pp. 5–33 |
 | 《中國恆星觀測史》 第七章第一節二 | the 授時 lodge values, if a modern reconstruction can stand where the 曆's own table would | printed p. 272 |
 | SKQS vol. 809, 《星學大成》 | what 七政四餘's neighbours have wanted; unweighed until read | volume pp. 285–870, 三十卷, both ends read on the plate |
-| 《太乙數統宗大全》, 故宮 第420冊 | 太乙's 卷一 constants, and the 月計 · 日計 · 時計 whose arithmetic is damaged in the edition held | **440 pages, no survey yet** — measured before it is planned around |
+| 《太乙數統宗大全》, 故宮 第420冊 | the 闕 of 卷一 read against a second hand; its own constants answered the other half and did not lift the refusal, being another calendar's | four leaves of 440 read — 卷二's calendrical apparatus and 卷三's 起例 |
 
 **The two 六壬 lines are one question from two sides** and are the cheapest pair
 here: 神煞 is a juan of its own and 卷上's 目錄 names 起貴人定十二天將法, so both

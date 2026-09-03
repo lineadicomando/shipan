@@ -1002,13 +1002,10 @@ function taiyiGod(god: TaiyiGod, t: Translator): string {
   return `${named(god, `label.taiyishen.${god.id}` as MessageKey, t)} → ${seat}${at}`;
 }
 
-/** A count and the two generals it seats. The adjutant can be absent. */
+/** A count and the two generals it seats, both of which it always seats. */
 function taiyiSide(side: TaiyiSide, t: Translator): string[] {
   const general = `${t('label.taiyi.general')} ${glyph(side.general)} ${side.general.number}`;
-  const assistant =
-    side.assistant === undefined
-      ? ''
-      : `${t('label.taiyi.assistant')} ${glyph(side.assistant)} ${side.assistant.number}`;
+  const assistant = `${t('label.taiyi.assistant')} ${glyph(side.assistant)} ${side.assistant.number}`;
   return [String(side.count), general, assistant];
 }
 

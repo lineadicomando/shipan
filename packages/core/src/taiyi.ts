@@ -41,22 +41,31 @@ export interface TaiyiOptions {
    * Which 上元積年 the count runs from.
    *
    * `jinjing` is 《太乙金鏡式經》's own, and the only one implemented: the text
-   * hands down 一百九十三萬七千二百八十一 at 開元十二年甲子 (724 CE) and
-   * two shorter reckonings beside it, and since all three agree modulo 360
-   * they are one epoch for this register. 《太乙統宗寶鑑》 states another; it
-   * has not been read here, and a branch nobody has read is worse than a
-   * branch that does not exist yet. This exists so that reading it later
-   * cannot break a shared link.
+   * hands down 一百九十三萬七千二百八十一 at 開元十二年甲子 (724 CE) and two
+   * shorter reckonings beside it, and since all three agree modulo 360 they are
+   * one epoch for this register. **So is 《太乙數統宗大全》's**, whose 公元基數
+   * differs by an exact multiple of 360 and of 24 and therefore lays the
+   * identical board: a second witness rather than a second value.
+   *
+   * `taojin` is 《太乙淘金歌》's, and it is the one count known to be
+   * incongruent — out by a whole 元, putting 太乙 in a different palace for the
+   * same year. It is declared and refused: what discards it is 《齊書·武帝紀》's
+   * eleven dated positions, which agree with this one, and a value is declared
+   * when the engine can refuse it by name rather than when it can compute it.
    */
-  epoch: 'jinjing';
+  epoch: 'jinjing' | 'taojin';
 
   /**
    * Which register the board is laid in.
    *
-   * `nianji` (年計) is the register of the year, the only one implemented and
-   * the one 卷二 assigns to the highest subject — 王者用嵗計. 月計, 日計 and
-   * 時計 run the same placements over a count of months, days or hours; the
-   * text states all four and this engine computes one.
+   * The register of the year is the only one implemented, and it is the one
+   * 卷二 assigns to the highest subject — 「王者用嵗計」. **Its name is 歲計 in
+   * both witnesses**, which is what the parameter carries; the identifier stays
+   * `nianji`, the name the value shipped under and the one in modern
+   * circulation, because an identifier is not renamed under a shared link.
+   * 月計, 日計 and 時計 run the same placements over a count of months, days or
+   * hours; 《統宗》 calls the four together 四計, the text states all four, and
+   * this engine computes one.
    *
    * The other three are declared and refused because 卷一 prints their
    * procedures entire and prints constants that do not check: in each of the
@@ -330,14 +339,25 @@ export interface TaiyiSide {
   /** 大將, the palace the count reduces to. */
   general: TaiyiPalace;
   /**
-   * 參將, a quarter turn clockwise from the 大將.
+   * 參將 — the 大將's palace number times three, the tens dropped.
    *
-   * Absent when the count reduces to the centre. The text never states this
-   * step in words — it is read off its own worked boards, which agree on it
-   * eleven times over and never place a 參將 from a centred 大將. See
-   * `docs/sources.md`, where the eleven are listed.
+   * On the ring of eight that is a quarter turn clockwise, which is how this
+   * engine first had it: 《太乙金鏡式經》 never states the step, and fourteen
+   * worked instances in 卷一, 卷六 and 卷九 put it a quarter turn on without
+   * exception. 《太乙統宗大全》 states it — 大將宮數 × 3 mod 10 — and the two
+   * are one rule on all eight seats.
+   *
+   * **Where they parted was the centre, and the stated rule answers there.**
+   * A count ending in five seats the 大將 in 五宮, which stands on no ring, and
+   * no board of 《金鏡》 reaches that case; ×3 mod 10 gives five again, and both
+   * of the boards the second witness works that reach it seat the 參將 beside
+   * its 大將 and call the standing 杜塞 — the generals shut into the one palace
+   * neither 太乙 nor either eye can enter. So the field is always present. What
+   * it is *not* is a condition: 杜塞 travels in `docs/sources.md` and not in
+   * `patterns`, because the sentence saying what it is would be a modern
+   * scholar's rather than a source's.
    */
-  assistant?: TaiyiPalace;
+  assistant: TaiyiPalace;
 }
 
 /** A body seated on the twelve 邦, which are the branches from 戌. */
@@ -709,12 +729,12 @@ function sideOf(from: TaiyiGod, taiyi: number): TaiyiSide {
 
   const units = count % 10;
   const general = units === 0 ? count / 10 : units;
-  const onRing = RING.indexOf(general);
-  const assistant = onRing < 0 ? undefined : (RING[(onRing + 2) % 8] as number);
+  // 「主大將宮數乘以三，再以十除之，所得餘數即為主參將所在宮」. On the eight
+  // seats of the ring this is the quarter turn the worked boards induce; at
+  // the centre, which those boards never reach, it returns the centre.
+  const assistant = (general * 3) % 10;
 
-  return assistant === undefined
-    ? { count, from, general: taiyiPalace(general) }
-    : { count, from, general: taiyiPalace(general), assistant: taiyiPalace(assistant) };
+  return { count, from, general: taiyiPalace(general), assistant: taiyiPalace(assistant) };
 }
 
 /**
@@ -903,9 +923,11 @@ function findTaiyiPatterns(input: {
   const seat = seatOfPalace(palace);
   const facing = RING[(RING.indexOf(palace) + 4) % 8] as number;
 
-  // A general that reduced to the centre stands off the ring of eight and
-  // enters none of these conditions: every one of them is a distance measured
-  // on that ring, and the centre is at no distance from anything.
+  // A general or an adjutant that reduced to the centre stands off the ring of
+  // eight and enters none of these conditions: every one of them is a distance
+  // measured on that ring or a palace 太乙 could stand in, and the centre is
+  // neither — 太乙 never enters it, so nothing there can be 囚 or 迫 or 格, and
+  // two bodies meeting there are 杜塞 and not 關.
   //
   // Kept as two sides rather than four bodies because 卷三 keeps them so: it
   // writes 主客 wherever both parties are meant — 主客大小四將 at 囚,
@@ -913,11 +935,11 @@ function findTaiyiPatterns(input: {
   // decides who enters 格.
   const hostGenerals: { subject: TaiyiPatternSubject; palace: number | undefined }[] = [
     { subject: 'hostGeneral', palace: onRing(host.general.number) },
-    { subject: 'hostAssistant', palace: host.assistant?.number },
+    { subject: 'hostAssistant', palace: onRing(host.assistant.number) },
   ];
   const guestGenerals: { subject: TaiyiPatternSubject; palace: number | undefined }[] = [
     { subject: 'guestGeneral', palace: onRing(guest.general.number) },
-    { subject: 'guestAssistant', palace: guest.assistant?.number },
+    { subject: 'guestAssistant', palace: onRing(guest.assistant.number) },
   ];
   const generals = [...hostGenerals, ...guestGenerals];
 

@@ -223,9 +223,9 @@ neither disputed.
   general five-phase reasoning for it: those are other systems and saying what
   a palace means here from them is the likeliest way to be fluent and wrong.
 - **月計, 日計 and 時計 are not computed.** The text states all four registers
-  and the engine computes the 年計. `ji` is the parameter that waits for the
-  others; a board for a month or a day is not available and must not be
-  improvised from the year's.
+  — 四計 — and the engine computes the first, 歲計. `ji` is the parameter that
+  waits for the others; a board for a month or a day is not available and must
+  not be improvised from the year's.
 - **The errands live in a reference, not in the tool.** The `purposes`
   resource holds the one mapping the manuals do not dispute — the eight gates
   and what each is chosen for — and nothing past the gates: the stems, stars
@@ -407,7 +407,12 @@ Not uniformly, and the difference matters when you are asked to justify one.
   lists against the 紀 each enters. That is the tradition auditing itself, not
   an independent implementation. It is broad — 850 of 864 printed cells
   reproduce exactly, and the fourteen that do not are mostly settled by the
-  text against itself — but say what it is if you are asked. Two things about
+  text against itself — but say what it is if you are asked. **Four things on
+  it are also checked from outside the tradition's manuals**: the palace 太乙
+  stands in, against the eleven dated positions 《齊書·武帝紀》 records; the
+  五福, against the three temples the Song court built for it in 984, 1029 and
+  1074; the 三基, against three dated entries; and the 參將, whose rule
+  《太乙金鏡式經》 only exemplifies and 《太乙統宗大全》 states. Two things about
   this board that a reader will otherwise get wrong: its **nine palaces are
   numbered one seat off the Luoshu** (一宮 is the north-west here, the north in
   a Qi Men chart), and the 上元積年 is stated three times in the text with
@@ -441,7 +446,7 @@ prompt — it was in one once, and what a model did with it was recite it.
 | `compute_liuren` | the 大六壬 board — the other 式, laid on the same instant and answering the same shape of question. Lay it for the moment of the asking, never for a birth |
 | `compute_ziwei` | the 紫微斗數 board — the twelve seats counted from a birth, with 紫微 and the thirteen that hang off it, the auxiliaries, the 四化, the brightness grades, the two masters and the limits. **Nothing on it is in the sky**: do not read planets, aspects or transits into it |
 | `compute_qizheng` | the 七政四餘 board — the seven governors and the four remainders, each said twice over: the 宿 with its 入宿度 and the 宮 with its 宮度, except 紫氣, which is placed by rule and carries a palace only. A 命 art, so it is laid for a birth as readily as for a question, and it borrows nothing from the other two boards |
-| `compute_taiyi` | the 太乙 board of a year — 年計. Takes a year and nothing else: no place, no hour, nobody's birth. Never says who is 主 and who is 客, and its palace numbers are not a Qi Men chart's |
+| `compute_taiyi` | the 太乙 board of a year — 歲計. Takes a year and nothing else: no place, no hour, nobody's birth. Never says who is 主 and who is 客, and its palace numbers are not a Qi Men chart's |
 | `draw_qimen_chart` | the picture, framed by the eight directions, with the configurations and their fortunes listed under the grid. After the calculation, never instead of it |
 | `draw_liuren` | the Liu Ren board as a picture: a ring of twelve, the lessons written right to left, the transmissions read downwards. After the calculation, never instead of it |
 | `solar_terms` | the twenty-four terms of a year, with exact instants |

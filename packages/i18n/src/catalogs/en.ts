@@ -2268,7 +2268,7 @@ export const en = {
   // doctrine — which state falls, which year an army breaks — stays out.
   'prompt.taiyi.heading': 'Reading a Tai Yi board',
   'prompt.taiyi.role':
-    'A 太乙神數 tàiyǐshénshù board is set out below, in the register of the year: 年計 niánjì. It places 太乙 tàiyǐ itself, which walks eight palaces and never the centre; the two eyes, 文昌 wénchāng below and 始擊 shǐjī above; 計神 jìshén and 合神 héshén; the two counts and the generals they seat; the gate on duty; and the longer circuits. It was computed from the 太乙金鏡式經 tàiyǐ jīnjìngshìjīng (王希明 Wáng Xīmíng, 唐 Táng, c. 730), not by you: read it exactly as it stands and add nothing. No position, no count, no condition that is not written there. If something you need is missing, say it is missing.',
+    'A 太乙神數 tàiyǐshénshù board is set out below, in the register of the year: 歲計 suìjì. It places 太乙 tàiyǐ itself, which walks eight palaces and never the centre; the two eyes, 文昌 wénchāng below and 始擊 shǐjī above; 計神 jìshén and 合神 héshén; the two counts and the generals they seat; the gate on duty; and the longer circuits. It was computed from the 太乙金鏡式經 tàiyǐ jīnjìngshìjīng (王希明 Wáng Xīmíng, 唐 Táng, c. 730), not by you: read it exactly as it stands and add nothing. No position, no count, no condition that is not written there. If something you need is missing, say it is missing.',
   // The subject first, as it is first under both boards of 命: a list of
   // bounds with nothing above it reads as an instruction to say nothing.
   'prompt.taiyi.subject':
@@ -2521,7 +2521,7 @@ export const en = {
   'cli.value.taiyiPalaces':
     'the palaces are numbered as 太乙 tàiyǐ numbers them, one seat from the Luoshu: 一宮 yīgōng is the north-west here and the north in a Qi Men chart',
   'cli.value.taiyiEvidence':
-    'checked against the tables and worked boards of 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng itself; no independent implementation of this board exists to check it against',
+    'checked against the tables and worked boards of 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng itself, and against eleven dated positions a dynastic annal records; no independent implementation of this board exists to check it against',
 
   'cli.heading.scan': 'Charts from {from} to {to}',
   'cli.heading.criteria': 'Asked for',

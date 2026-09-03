@@ -1,0 +1,812 @@
+{
+  "the canonical birth": {
+    "dayMaster": {
+      "index": 7,
+      "id": "xin",
+      "hanzi": "辛",
+      "pinyin": "xīn",
+      "element": "jin",
+      "yang": false
+    },
+    "pillars": [
+      {
+        "position": "year",
+        "ganzhi": {
+          "index": 44,
+          "stem": {
+            "index": 4,
+            "id": "wu",
+            "hanzi": "戊",
+            "pinyin": "wù",
+            "element": "tu",
+            "yang": true
+          },
+          "branch": {
+            "index": 8,
+            "id": "shen",
+            "hanzi": "申",
+            "pinyin": "shēn",
+            "element": "jin",
+            "yang": true
+          },
+          "hanzi": "戊申",
+          "pinyin": "wùshēn",
+          "id": "wushen"
+        },
+        "stemGod": {
+          "id": "zhengyin",
+          "hanzi": "正印",
+          "pinyin": "zhèngyìn"
+        },
+        "hidden": [
+          {
+            "stem": {
+              "stem": {
+                "index": 6,
+                "id": "geng",
+                "hanzi": "庚",
+                "pinyin": "gēng",
+                "element": "jin",
+                "yang": true
+              },
+              "rank": "ben"
+            },
+            "god": {
+              "id": "jiecai",
+              "hanzi": "劫財",
+              "pinyin": "jiécái"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 8,
+                "id": "ren",
+                "hanzi": "壬",
+                "pinyin": "rén",
+                "element": "shui",
+                "yang": true
+              },
+              "rank": "zhong"
+            },
+            "god": {
+              "id": "shangguan",
+              "hanzi": "傷官",
+              "pinyin": "shāngguān"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 4,
+                "id": "wu",
+                "hanzi": "戊",
+                "pinyin": "wù",
+                "element": "tu",
+                "yang": true
+              },
+              "rank": "yu"
+            },
+            "god": {
+              "id": "zhengyin",
+              "hanzi": "正印",
+              "pinyin": "zhèngyìn"
+            }
+          }
+        ],
+        "nayin": {
+          "id": "dayitu",
+          "hanzi": "大驛土",
+          "pinyin": "dàyìtǔ",
+          "element": "tu"
+        },
+        "stage": {
+          "id": "diwang",
+          "hanzi": "帝旺",
+          "pinyin": "dìwàng",
+          "index": 4
+        },
+        "empty": true
+      },
+      {
+        "position": "month",
+        "ganzhi": {
+          "index": 51,
+          "stem": {
+            "index": 1,
+            "id": "yi",
+            "hanzi": "乙",
+            "pinyin": "yǐ",
+            "element": "mu",
+            "yang": false
+          },
+          "branch": {
+            "index": 3,
+            "id": "mao",
+            "hanzi": "卯",
+            "pinyin": "mǎo",
+            "element": "mu",
+            "yang": false
+          },
+          "hanzi": "乙卯",
+          "pinyin": "yǐmǎo",
+          "id": "yimao"
+        },
+        "stemGod": {
+          "id": "piancai",
+          "hanzi": "偏財",
+          "pinyin": "piāncái"
+        },
+        "hidden": [
+          {
+            "stem": {
+              "stem": {
+                "index": 1,
+                "id": "yi",
+                "hanzi": "乙",
+                "pinyin": "yǐ",
+                "element": "mu",
+                "yang": false
+              },
+              "rank": "ben"
+            },
+            "god": {
+              "id": "piancai",
+              "hanzi": "偏財",
+              "pinyin": "piāncái"
+            }
+          }
+        ],
+        "nayin": {
+          "id": "daxishui",
+          "hanzi": "大溪水",
+          "pinyin": "dàxīshuǐ",
+          "element": "shui"
+        },
+        "stage": {
+          "id": "jue",
+          "hanzi": "絕",
+          "pinyin": "jué",
+          "index": 9
+        },
+        "empty": false
+      },
+      {
+        "position": "day",
+        "ganzhi": {
+          "index": 17,
+          "stem": {
+            "index": 7,
+            "id": "xin",
+            "hanzi": "辛",
+            "pinyin": "xīn",
+            "element": "jin",
+            "yang": false
+          },
+          "branch": {
+            "index": 5,
+            "id": "si",
+            "hanzi": "巳",
+            "pinyin": "sì",
+            "element": "huo",
+            "yang": false
+          },
+          "hanzi": "辛巳",
+          "pinyin": "xīnsì",
+          "id": "xinsi"
+        },
+        "stemGod": null,
+        "hidden": [
+          {
+            "stem": {
+              "stem": {
+                "index": 2,
+                "id": "bing",
+                "hanzi": "丙",
+                "pinyin": "bǐng",
+                "element": "huo",
+                "yang": true
+              },
+              "rank": "ben"
+            },
+            "god": {
+              "id": "zhengguan",
+              "hanzi": "正官",
+              "pinyin": "zhèngguān"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 6,
+                "id": "geng",
+                "hanzi": "庚",
+                "pinyin": "gēng",
+                "element": "jin",
+                "yang": true
+              },
+              "rank": "zhong"
+            },
+            "god": {
+              "id": "jiecai",
+              "hanzi": "劫財",
+              "pinyin": "jiécái"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 4,
+                "id": "wu",
+                "hanzi": "戊",
+                "pinyin": "wù",
+                "element": "tu",
+                "yang": true
+              },
+              "rank": "yu"
+            },
+            "god": {
+              "id": "zhengyin",
+              "hanzi": "正印",
+              "pinyin": "zhèngyìn"
+            }
+          }
+        ],
+        "nayin": {
+          "id": "bailajin",
+          "hanzi": "白蠟金",
+          "pinyin": "báilàjīn",
+          "element": "jin"
+        },
+        "stage": {
+          "id": "si",
+          "hanzi": "死",
+          "pinyin": "sǐ",
+          "index": 7
+        },
+        "empty": false
+      },
+      {
+        "position": "hour",
+        "ganzhi": {
+          "index": 31,
+          "stem": {
+            "index": 1,
+            "id": "yi",
+            "hanzi": "乙",
+            "pinyin": "yǐ",
+            "element": "mu",
+            "yang": false
+          },
+          "branch": {
+            "index": 7,
+            "id": "wei",
+            "hanzi": "未",
+            "pinyin": "wèi",
+            "element": "tu",
+            "yang": false
+          },
+          "hanzi": "乙未",
+          "pinyin": "yǐwèi",
+          "id": "yiwei"
+        },
+        "stemGod": {
+          "id": "piancai",
+          "hanzi": "偏財",
+          "pinyin": "piāncái"
+        },
+        "hidden": [
+          {
+            "stem": {
+              "stem": {
+                "index": 5,
+                "id": "ji",
+                "hanzi": "己",
+                "pinyin": "jǐ",
+                "element": "tu",
+                "yang": false
+              },
+              "rank": "ben"
+            },
+            "god": {
+              "id": "pianyin",
+              "hanzi": "偏印",
+              "pinyin": "piānyìn"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 3,
+                "id": "ding",
+                "hanzi": "丁",
+                "pinyin": "dīng",
+                "element": "huo",
+                "yang": false
+              },
+              "rank": "zhong"
+            },
+            "god": {
+              "id": "qisha",
+              "hanzi": "七殺",
+              "pinyin": "qīshā"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 1,
+                "id": "yi",
+                "hanzi": "乙",
+                "pinyin": "yǐ",
+                "element": "mu",
+                "yang": false
+              },
+              "rank": "yu"
+            },
+            "god": {
+              "id": "piancai",
+              "hanzi": "偏財",
+              "pinyin": "piāncái"
+            }
+          }
+        ],
+        "nayin": {
+          "id": "shazhongjin",
+          "hanzi": "沙中金",
+          "pinyin": "shāzhōngjīn",
+          "element": "jin"
+        },
+        "stage": {
+          "id": "shuai",
+          "hanzi": "衰",
+          "pinyin": "shuāi",
+          "index": 5
+        },
+        "empty": false
+      }
+    ],
+    "emptyBranches": [
+      {
+        "index": 8,
+        "id": "shen",
+        "hanzi": "申",
+        "pinyin": "shēn",
+        "element": "jin",
+        "yang": true
+      },
+      {
+        "index": 9,
+        "id": "you",
+        "hanzi": "酉",
+        "pinyin": "yǒu",
+        "element": "jin",
+        "yang": false
+      }
+    ],
+    "distribution": {
+      "mu": 3,
+      "huo": 1,
+      "tu": 2,
+      "jin": 2,
+      "shui": 0
+    },
+    "options": {
+      "luckGranularity": "shichen"
+    }
+  },
+  "2026-01-20, before 立春": {
+    "dayMaster": {
+      "index": 0,
+      "id": "jia",
+      "hanzi": "甲",
+      "pinyin": "jiǎ",
+      "element": "mu",
+      "yang": true
+    },
+    "pillars": [
+      {
+        "position": "year",
+        "ganzhi": {
+          "index": 41,
+          "stem": {
+            "index": 1,
+            "id": "yi",
+            "hanzi": "乙",
+            "pinyin": "yǐ",
+            "element": "mu",
+            "yang": false
+          },
+          "branch": {
+            "index": 5,
+            "id": "si",
+            "hanzi": "巳",
+            "pinyin": "sì",
+            "element": "huo",
+            "yang": false
+          },
+          "hanzi": "乙巳",
+          "pinyin": "yǐsì",
+          "id": "yisi"
+        },
+        "stemGod": {
+          "id": "jiecai",
+          "hanzi": "劫財",
+          "pinyin": "jiécái"
+        },
+        "hidden": [
+          {
+            "stem": {
+              "stem": {
+                "index": 2,
+                "id": "bing",
+                "hanzi": "丙",
+                "pinyin": "bǐng",
+                "element": "huo",
+                "yang": true
+              },
+              "rank": "ben"
+            },
+            "god": {
+              "id": "shishen",
+              "hanzi": "食神",
+              "pinyin": "shíshén"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 6,
+                "id": "geng",
+                "hanzi": "庚",
+                "pinyin": "gēng",
+                "element": "jin",
+                "yang": true
+              },
+              "rank": "zhong"
+            },
+            "god": {
+              "id": "qisha",
+              "hanzi": "七殺",
+              "pinyin": "qīshā"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 4,
+                "id": "wu",
+                "hanzi": "戊",
+                "pinyin": "wù",
+                "element": "tu",
+                "yang": true
+              },
+              "rank": "yu"
+            },
+            "god": {
+              "id": "piancai",
+              "hanzi": "偏財",
+              "pinyin": "piāncái"
+            }
+          }
+        ],
+        "nayin": {
+          "id": "fudenghuo",
+          "hanzi": "覆燈火",
+          "pinyin": "fùdēnghuǒ",
+          "element": "huo"
+        },
+        "stage": {
+          "id": "bing",
+          "hanzi": "病",
+          "pinyin": "bìng",
+          "index": 6
+        },
+        "empty": true
+      },
+      {
+        "position": "month",
+        "ganzhi": {
+          "index": 25,
+          "stem": {
+            "index": 5,
+            "id": "ji",
+            "hanzi": "己",
+            "pinyin": "jǐ",
+            "element": "tu",
+            "yang": false
+          },
+          "branch": {
+            "index": 1,
+            "id": "chou",
+            "hanzi": "丑",
+            "pinyin": "chǒu",
+            "element": "tu",
+            "yang": false
+          },
+          "hanzi": "己丑",
+          "pinyin": "jǐchǒu",
+          "id": "jichou"
+        },
+        "stemGod": {
+          "id": "zhengcai",
+          "hanzi": "正財",
+          "pinyin": "zhèngcái"
+        },
+        "hidden": [
+          {
+            "stem": {
+              "stem": {
+                "index": 5,
+                "id": "ji",
+                "hanzi": "己",
+                "pinyin": "jǐ",
+                "element": "tu",
+                "yang": false
+              },
+              "rank": "ben"
+            },
+            "god": {
+              "id": "zhengcai",
+              "hanzi": "正財",
+              "pinyin": "zhèngcái"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 9,
+                "id": "gui",
+                "hanzi": "癸",
+                "pinyin": "guǐ",
+                "element": "shui",
+                "yang": false
+              },
+              "rank": "zhong"
+            },
+            "god": {
+              "id": "zhengyin",
+              "hanzi": "正印",
+              "pinyin": "zhèngyìn"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 7,
+                "id": "xin",
+                "hanzi": "辛",
+                "pinyin": "xīn",
+                "element": "jin",
+                "yang": false
+              },
+              "rank": "yu"
+            },
+            "god": {
+              "id": "zhengguan",
+              "hanzi": "正官",
+              "pinyin": "zhèngguān"
+            }
+          }
+        ],
+        "nayin": {
+          "id": "pilihuo",
+          "hanzi": "霹靂火",
+          "pinyin": "pīlìhuǒ",
+          "element": "huo"
+        },
+        "stage": {
+          "id": "guandai",
+          "hanzi": "冠帶",
+          "pinyin": "guāndài",
+          "index": 2
+        },
+        "empty": false
+      },
+      {
+        "position": "day",
+        "ganzhi": {
+          "index": 30,
+          "stem": {
+            "index": 0,
+            "id": "jia",
+            "hanzi": "甲",
+            "pinyin": "jiǎ",
+            "element": "mu",
+            "yang": true
+          },
+          "branch": {
+            "index": 6,
+            "id": "wu",
+            "hanzi": "午",
+            "pinyin": "wǔ",
+            "element": "huo",
+            "yang": true
+          },
+          "hanzi": "甲午",
+          "pinyin": "jiǎwǔ",
+          "id": "jiawu"
+        },
+        "stemGod": null,
+        "hidden": [
+          {
+            "stem": {
+              "stem": {
+                "index": 3,
+                "id": "ding",
+                "hanzi": "丁",
+                "pinyin": "dīng",
+                "element": "huo",
+                "yang": false
+              },
+              "rank": "ben"
+            },
+            "god": {
+              "id": "shangguan",
+              "hanzi": "傷官",
+              "pinyin": "shāngguān"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 5,
+                "id": "ji",
+                "hanzi": "己",
+                "pinyin": "jǐ",
+                "element": "tu",
+                "yang": false
+              },
+              "rank": "zhong"
+            },
+            "god": {
+              "id": "zhengcai",
+              "hanzi": "正財",
+              "pinyin": "zhèngcái"
+            }
+          }
+        ],
+        "nayin": {
+          "id": "shazhongjin",
+          "hanzi": "沙中金",
+          "pinyin": "shāzhōngjīn",
+          "element": "jin"
+        },
+        "stage": {
+          "id": "si",
+          "hanzi": "死",
+          "pinyin": "sǐ",
+          "index": 7
+        },
+        "empty": false
+      },
+      {
+        "position": "hour",
+        "ganzhi": {
+          "index": 4,
+          "stem": {
+            "index": 4,
+            "id": "wu",
+            "hanzi": "戊",
+            "pinyin": "wù",
+            "element": "tu",
+            "yang": true
+          },
+          "branch": {
+            "index": 4,
+            "id": "chen",
+            "hanzi": "辰",
+            "pinyin": "chén",
+            "element": "tu",
+            "yang": true
+          },
+          "hanzi": "戊辰",
+          "pinyin": "wùchén",
+          "id": "wuchen"
+        },
+        "stemGod": {
+          "id": "piancai",
+          "hanzi": "偏財",
+          "pinyin": "piāncái"
+        },
+        "hidden": [
+          {
+            "stem": {
+              "stem": {
+                "index": 4,
+                "id": "wu",
+                "hanzi": "戊",
+                "pinyin": "wù",
+                "element": "tu",
+                "yang": true
+              },
+              "rank": "ben"
+            },
+            "god": {
+              "id": "piancai",
+              "hanzi": "偏財",
+              "pinyin": "piāncái"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 1,
+                "id": "yi",
+                "hanzi": "乙",
+                "pinyin": "yǐ",
+                "element": "mu",
+                "yang": false
+              },
+              "rank": "zhong"
+            },
+            "god": {
+              "id": "jiecai",
+              "hanzi": "劫財",
+              "pinyin": "jiécái"
+            }
+          },
+          {
+            "stem": {
+              "stem": {
+                "index": 9,
+                "id": "gui",
+                "hanzi": "癸",
+                "pinyin": "guǐ",
+                "element": "shui",
+                "yang": false
+              },
+              "rank": "yu"
+            },
+            "god": {
+              "id": "zhengyin",
+              "hanzi": "正印",
+              "pinyin": "zhèngyìn"
+            }
+          }
+        ],
+        "nayin": {
+          "id": "dalinmu",
+          "hanzi": "大林木",
+          "pinyin": "dàlínmù",
+          "element": "mu"
+        },
+        "stage": {
+          "id": "shuai",
+          "hanzi": "衰",
+          "pinyin": "shuāi",
+          "index": 5
+        },
+        "empty": true
+      }
+    ],
+    "emptyBranches": [
+      {
+        "index": 4,
+        "id": "chen",
+        "hanzi": "辰",
+        "pinyin": "chén",
+        "element": "tu",
+        "yang": true
+      },
+      {
+        "index": 5,
+        "id": "si",
+        "hanzi": "巳",
+        "pinyin": "sì",
+        "element": "huo",
+        "yang": false
+      }
+    ],
+    "distribution": {
+      "mu": 2,
+      "huo": 2,
+      "tu": 4,
+      "jin": 0,
+      "shui": 0
+    },
+    "options": {
+      "luckGranularity": "shichen"
+    }
+  }
+}

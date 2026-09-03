@@ -1,0 +1,1135 @@
+{
+  "2026": {
+    "year": 2026,
+    "sui": {
+      "index": 42,
+      "stem": {
+        "index": 2,
+        "id": "bing",
+        "hanzi": "丙",
+        "pinyin": "bǐng",
+        "element": "huo",
+        "yang": true
+      },
+      "branch": {
+        "index": 6,
+        "id": "wu",
+        "hanzi": "午",
+        "pinyin": "wǔ",
+        "element": "huo",
+        "yang": true
+      },
+      "hanzi": "丙午",
+      "pinyin": "bǐngwǔ",
+      "id": "bingwu"
+    },
+    "accumulated": {
+      "taiyi": 1938583,
+      "xiaoyou": 4663,
+      "wufu": 14633,
+      "sanji": 286313
+    },
+    "liuji": {
+      "number": 6,
+      "year": 43
+    },
+    "ju": 55,
+    "taiyi": {
+      "palace": {
+        "number": 3,
+        "id": "gen",
+        "hanzi": "艮",
+        "pinyin": "gèn",
+        "direction": "ne"
+      },
+      "year": 1
+    },
+    "gods": [
+      {
+        "id": "dizhu",
+        "hanzi": "地主",
+        "pinyin": "dìzhǔ",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 0,
+            "id": "zi",
+            "hanzi": "子",
+            "pinyin": "zǐ",
+            "element": "shui",
+            "yang": true
+          }
+        },
+        "palace": 8,
+        "element": "shui"
+      },
+      {
+        "id": "yangde",
+        "hanzi": "陽德",
+        "pinyin": "yángdé",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 1,
+            "id": "chou",
+            "hanzi": "丑",
+            "pinyin": "chǒu",
+            "element": "tu",
+            "yang": false
+          }
+        },
+        "element": "tu"
+      },
+      {
+        "id": "hede",
+        "hanzi": "和德",
+        "pinyin": "hédé",
+        "seat": {
+          "kind": "trigram",
+          "palace": {
+            "number": 3,
+            "id": "gen",
+            "hanzi": "艮",
+            "pinyin": "gèn",
+            "direction": "ne"
+          }
+        },
+        "palace": 3,
+        "element": "tu"
+      },
+      {
+        "id": "lushen",
+        "hanzi": "呂申",
+        "pinyin": "lǚshēn",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 2,
+            "id": "yin",
+            "hanzi": "寅",
+            "pinyin": "yín",
+            "element": "mu",
+            "yang": true
+          }
+        },
+        "element": "mu"
+      },
+      {
+        "id": "gaocong",
+        "hanzi": "高叢",
+        "pinyin": "gāocóng",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 3,
+            "id": "mao",
+            "hanzi": "卯",
+            "pinyin": "mǎo",
+            "element": "mu",
+            "yang": false
+          }
+        },
+        "palace": 4,
+        "element": "mu"
+      },
+      {
+        "id": "taiyang",
+        "hanzi": "太陽",
+        "pinyin": "tàiyáng",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 4,
+            "id": "chen",
+            "hanzi": "辰",
+            "pinyin": "chén",
+            "element": "tu",
+            "yang": true
+          }
+        },
+        "element": "tu"
+      },
+      {
+        "id": "taijiong",
+        "hanzi": "太炅",
+        "pinyin": "tàijiǒng",
+        "seat": {
+          "kind": "trigram",
+          "palace": {
+            "number": 9,
+            "id": "xun",
+            "hanzi": "巽",
+            "pinyin": "xùn",
+            "direction": "se"
+          }
+        },
+        "palace": 9,
+        "element": "mu"
+      },
+      {
+        "id": "taishen",
+        "hanzi": "太神",
+        "pinyin": "tàishén",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 5,
+            "id": "si",
+            "hanzi": "巳",
+            "pinyin": "sì",
+            "element": "huo",
+            "yang": false
+          }
+        },
+        "element": "huo"
+      },
+      {
+        "id": "dawei",
+        "hanzi": "大威",
+        "pinyin": "dàwēi",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 6,
+            "id": "wu",
+            "hanzi": "午",
+            "pinyin": "wǔ",
+            "element": "huo",
+            "yang": true
+          }
+        },
+        "palace": 2,
+        "element": "huo"
+      },
+      {
+        "id": "tiandao",
+        "hanzi": "天道",
+        "pinyin": "tiāndào",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 7,
+            "id": "wei",
+            "hanzi": "未",
+            "pinyin": "wèi",
+            "element": "tu",
+            "yang": false
+          }
+        },
+        "element": "tu"
+      },
+      {
+        "id": "dawu",
+        "hanzi": "大武",
+        "pinyin": "dàwǔ",
+        "seat": {
+          "kind": "trigram",
+          "palace": {
+            "number": 7,
+            "id": "kun",
+            "hanzi": "坤",
+            "pinyin": "kūn",
+            "direction": "sw"
+          }
+        },
+        "palace": 7,
+        "element": "tu"
+      },
+      {
+        "id": "wude",
+        "hanzi": "武德",
+        "pinyin": "wǔdé",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 8,
+            "id": "shen",
+            "hanzi": "申",
+            "pinyin": "shēn",
+            "element": "jin",
+            "yang": true
+          }
+        },
+        "element": "jin"
+      },
+      {
+        "id": "taicu",
+        "hanzi": "太蔟",
+        "pinyin": "tàicù",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 9,
+            "id": "you",
+            "hanzi": "酉",
+            "pinyin": "yǒu",
+            "element": "jin",
+            "yang": false
+          }
+        },
+        "palace": 6,
+        "element": "jin"
+      },
+      {
+        "id": "yinzhu",
+        "hanzi": "陰主",
+        "pinyin": "yīnzhǔ",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 10,
+            "id": "xu",
+            "hanzi": "戌",
+            "pinyin": "xū",
+            "element": "tu",
+            "yang": true
+          }
+        },
+        "element": "tu"
+      },
+      {
+        "id": "yinde",
+        "hanzi": "陰德",
+        "pinyin": "yīndé",
+        "seat": {
+          "kind": "trigram",
+          "palace": {
+            "number": 1,
+            "id": "qian",
+            "hanzi": "乾",
+            "pinyin": "qián",
+            "direction": "nw"
+          }
+        },
+        "palace": 1,
+        "element": "jin"
+      },
+      {
+        "id": "dayi",
+        "hanzi": "大義",
+        "pinyin": "dàyì",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 11,
+            "id": "hai",
+            "hanzi": "亥",
+            "pinyin": "hài",
+            "element": "shui",
+            "yang": false
+          }
+        },
+        "element": "shui"
+      }
+    ],
+    "yang": true,
+    "wenchang": {
+      "id": "wude",
+      "hanzi": "武德",
+      "pinyin": "wǔdé",
+      "seat": {
+        "kind": "branch",
+        "branch": {
+          "index": 8,
+          "id": "shen",
+          "hanzi": "申",
+          "pinyin": "shēn",
+          "element": "jin",
+          "yang": true
+        }
+      },
+      "element": "jin"
+    },
+    "shiji": {
+      "id": "hede",
+      "hanzi": "和德",
+      "pinyin": "hédé",
+      "seat": {
+        "kind": "trigram",
+        "palace": {
+          "number": 3,
+          "id": "gen",
+          "hanzi": "艮",
+          "pinyin": "gèn",
+          "direction": "ne"
+        }
+      },
+      "palace": 3,
+      "element": "tu"
+    },
+    "jishen": {
+      "index": 8,
+      "id": "shen",
+      "hanzi": "申",
+      "pinyin": "shēn",
+      "element": "jin",
+      "yang": true
+    },
+    "host": {
+      "count": 16,
+      "from": {
+        "id": "wude",
+        "hanzi": "武德",
+        "pinyin": "wǔdé",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 8,
+            "id": "shen",
+            "hanzi": "申",
+            "pinyin": "shēn",
+            "element": "jin",
+            "yang": true
+          }
+        },
+        "element": "jin"
+      },
+      "general": {
+        "number": 6,
+        "id": "dui",
+        "hanzi": "兌",
+        "pinyin": "duì",
+        "direction": "w"
+      },
+      "assistant": {
+        "number": 8,
+        "id": "kan",
+        "hanzi": "坎",
+        "pinyin": "kǎn",
+        "direction": "n"
+      }
+    },
+    "guest": {
+      "count": 3,
+      "from": {
+        "id": "hede",
+        "hanzi": "和德",
+        "pinyin": "hédé",
+        "seat": {
+          "kind": "trigram",
+          "palace": {
+            "number": 3,
+            "id": "gen",
+            "hanzi": "艮",
+            "pinyin": "gèn",
+            "direction": "ne"
+          }
+        },
+        "palace": 3,
+        "element": "tu"
+      },
+      "general": {
+        "number": 3,
+        "id": "gen",
+        "hanzi": "艮",
+        "pinyin": "gèn",
+        "direction": "ne"
+      },
+      "assistant": {
+        "number": 9,
+        "id": "xun",
+        "hanzi": "巽",
+        "pinyin": "xùn",
+        "direction": "se"
+      }
+    },
+    "patterns": [
+      {
+        "id": "yan",
+        "hanzi": "掩",
+        "pinyin": "yǎn",
+        "valence": {
+          "id": "xiong",
+          "hanzi": "凶",
+          "pinyin": "xiōng"
+        },
+        "meaning": "掩襲刼殺之義",
+        "subject": "shiji",
+        "palace": 3
+      },
+      {
+        "id": "po",
+        "hanzi": "迫",
+        "pinyin": "pò",
+        "valence": {
+          "id": "xiong",
+          "hanzi": "凶",
+          "pinyin": "xiōng"
+        },
+        "meaning": "宫迫災㣲緩，辰迫災急疾",
+        "subject": "hostAssistant",
+        "kind": "hougong"
+      },
+      {
+        "id": "qiu",
+        "hanzi": "囚",
+        "pinyin": "qiú",
+        "valence": {
+          "id": "xiong",
+          "hanzi": "凶",
+          "pinyin": "xiōng"
+        },
+        "meaning": "囚者，簒戮之義也",
+        "subject": "guestGeneral",
+        "palace": 3
+      }
+    ],
+    "heshen": {
+      "index": 7,
+      "id": "wei",
+      "hanzi": "未",
+      "pinyin": "wèi",
+      "element": "tu",
+      "yang": false
+    },
+    "gate": {
+      "gate": {
+        "id": "shangmen",
+        "hanzi": "傷門",
+        "pinyin": "shāngmén",
+        "home": 3
+      },
+      "year": 13
+    },
+    "sanji": {
+      "jun": {
+        "branch": {
+          "index": 1,
+          "id": "chou",
+          "hanzi": "丑",
+          "pinyin": "chǒu",
+          "element": "tu",
+          "yang": false
+        },
+        "year": 23,
+        "period": 30
+      },
+      "chen": {
+        "branch": {
+          "index": 11,
+          "id": "hai",
+          "hanzi": "亥",
+          "pinyin": "hài",
+          "element": "shui",
+          "yang": false
+        },
+        "year": 2,
+        "period": 3
+      },
+      "min": {
+        "branch": {
+          "index": 2,
+          "id": "yin",
+          "hanzi": "寅",
+          "pinyin": "yín",
+          "element": "mu",
+          "yang": true
+        },
+        "year": 1,
+        "period": 1
+      }
+    },
+    "wufu": {
+      "palace": {
+        "id": "huangmi",
+        "hanzi": "黃祕宮",
+        "pinyin": "huángmìgōng",
+        "palace": {
+          "number": 1,
+          "id": "qian",
+          "hanzi": "乾",
+          "pinyin": "qián",
+          "direction": "nw"
+        }
+      },
+      "year": 8
+    },
+    "dayou": {
+      "station": {
+        "palace": {
+          "number": 4,
+          "id": "zhen",
+          "hanzi": "震",
+          "pinyin": "zhèn",
+          "direction": "e"
+        },
+        "year": 17
+      },
+      "wenchang": {
+        "id": "taishen",
+        "hanzi": "太神",
+        "pinyin": "tàishén",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 5,
+            "id": "si",
+            "hanzi": "巳",
+            "pinyin": "sì",
+            "element": "huo",
+            "yang": false
+          }
+        },
+        "element": "huo"
+      }
+    },
+    "options": {
+      "epoch": "jinjing",
+      "ji": "nianji",
+      "yearBoundary": "lichun"
+    }
+  },
+  "940, 杜塞": {
+    "year": 940,
+    "sui": {
+      "index": 36,
+      "stem": {
+        "index": 6,
+        "id": "geng",
+        "hanzi": "庚",
+        "pinyin": "gēng",
+        "element": "jin",
+        "yang": true
+      },
+      "branch": {
+        "index": 0,
+        "id": "zi",
+        "hanzi": "子",
+        "pinyin": "zǐ",
+        "element": "shui",
+        "yang": true
+      },
+      "hanzi": "庚子",
+      "pinyin": "gēngzǐ",
+      "id": "gengzi"
+    },
+    "accumulated": {
+      "taiyi": 1937497,
+      "xiaoyou": 3577,
+      "wufu": 13547,
+      "sanji": 285227
+    },
+    "liuji": {
+      "number": 6,
+      "year": 37
+    },
+    "ju": 49,
+    "taiyi": {
+      "palace": {
+        "number": 1,
+        "id": "qian",
+        "hanzi": "乾",
+        "pinyin": "qián",
+        "direction": "nw"
+      },
+      "year": 1
+    },
+    "gods": [
+      {
+        "id": "dizhu",
+        "hanzi": "地主",
+        "pinyin": "dìzhǔ",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 0,
+            "id": "zi",
+            "hanzi": "子",
+            "pinyin": "zǐ",
+            "element": "shui",
+            "yang": true
+          }
+        },
+        "palace": 8,
+        "element": "shui"
+      },
+      {
+        "id": "yangde",
+        "hanzi": "陽德",
+        "pinyin": "yángdé",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 1,
+            "id": "chou",
+            "hanzi": "丑",
+            "pinyin": "chǒu",
+            "element": "tu",
+            "yang": false
+          }
+        },
+        "element": "tu"
+      },
+      {
+        "id": "hede",
+        "hanzi": "和德",
+        "pinyin": "hédé",
+        "seat": {
+          "kind": "trigram",
+          "palace": {
+            "number": 3,
+            "id": "gen",
+            "hanzi": "艮",
+            "pinyin": "gèn",
+            "direction": "ne"
+          }
+        },
+        "palace": 3,
+        "element": "tu"
+      },
+      {
+        "id": "lushen",
+        "hanzi": "呂申",
+        "pinyin": "lǚshēn",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 2,
+            "id": "yin",
+            "hanzi": "寅",
+            "pinyin": "yín",
+            "element": "mu",
+            "yang": true
+          }
+        },
+        "element": "mu"
+      },
+      {
+        "id": "gaocong",
+        "hanzi": "高叢",
+        "pinyin": "gāocóng",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 3,
+            "id": "mao",
+            "hanzi": "卯",
+            "pinyin": "mǎo",
+            "element": "mu",
+            "yang": false
+          }
+        },
+        "palace": 4,
+        "element": "mu"
+      },
+      {
+        "id": "taiyang",
+        "hanzi": "太陽",
+        "pinyin": "tàiyáng",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 4,
+            "id": "chen",
+            "hanzi": "辰",
+            "pinyin": "chén",
+            "element": "tu",
+            "yang": true
+          }
+        },
+        "element": "tu"
+      },
+      {
+        "id": "taijiong",
+        "hanzi": "太炅",
+        "pinyin": "tàijiǒng",
+        "seat": {
+          "kind": "trigram",
+          "palace": {
+            "number": 9,
+            "id": "xun",
+            "hanzi": "巽",
+            "pinyin": "xùn",
+            "direction": "se"
+          }
+        },
+        "palace": 9,
+        "element": "mu"
+      },
+      {
+        "id": "taishen",
+        "hanzi": "太神",
+        "pinyin": "tàishén",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 5,
+            "id": "si",
+            "hanzi": "巳",
+            "pinyin": "sì",
+            "element": "huo",
+            "yang": false
+          }
+        },
+        "element": "huo"
+      },
+      {
+        "id": "dawei",
+        "hanzi": "大威",
+        "pinyin": "dàwēi",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 6,
+            "id": "wu",
+            "hanzi": "午",
+            "pinyin": "wǔ",
+            "element": "huo",
+            "yang": true
+          }
+        },
+        "palace": 2,
+        "element": "huo"
+      },
+      {
+        "id": "tiandao",
+        "hanzi": "天道",
+        "pinyin": "tiāndào",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 7,
+            "id": "wei",
+            "hanzi": "未",
+            "pinyin": "wèi",
+            "element": "tu",
+            "yang": false
+          }
+        },
+        "element": "tu"
+      },
+      {
+        "id": "dawu",
+        "hanzi": "大武",
+        "pinyin": "dàwǔ",
+        "seat": {
+          "kind": "trigram",
+          "palace": {
+            "number": 7,
+            "id": "kun",
+            "hanzi": "坤",
+            "pinyin": "kūn",
+            "direction": "sw"
+          }
+        },
+        "palace": 7,
+        "element": "tu"
+      },
+      {
+        "id": "wude",
+        "hanzi": "武德",
+        "pinyin": "wǔdé",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 8,
+            "id": "shen",
+            "hanzi": "申",
+            "pinyin": "shēn",
+            "element": "jin",
+            "yang": true
+          }
+        },
+        "element": "jin"
+      },
+      {
+        "id": "taicu",
+        "hanzi": "太蔟",
+        "pinyin": "tàicù",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 9,
+            "id": "you",
+            "hanzi": "酉",
+            "pinyin": "yǒu",
+            "element": "jin",
+            "yang": false
+          }
+        },
+        "palace": 6,
+        "element": "jin"
+      },
+      {
+        "id": "yinzhu",
+        "hanzi": "陰主",
+        "pinyin": "yīnzhǔ",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 10,
+            "id": "xu",
+            "hanzi": "戌",
+            "pinyin": "xū",
+            "element": "tu",
+            "yang": true
+          }
+        },
+        "element": "tu"
+      },
+      {
+        "id": "yinde",
+        "hanzi": "陰德",
+        "pinyin": "yīndé",
+        "seat": {
+          "kind": "trigram",
+          "palace": {
+            "number": 1,
+            "id": "qian",
+            "hanzi": "乾",
+            "pinyin": "qián",
+            "direction": "nw"
+          }
+        },
+        "palace": 1,
+        "element": "jin"
+      },
+      {
+        "id": "dayi",
+        "hanzi": "大義",
+        "pinyin": "dàyì",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 11,
+            "id": "hai",
+            "hanzi": "亥",
+            "pinyin": "hài",
+            "element": "shui",
+            "yang": false
+          }
+        },
+        "element": "shui"
+      }
+    ],
+    "yang": false,
+    "wenchang": {
+      "id": "taijiong",
+      "hanzi": "太炅",
+      "pinyin": "tàijiǒng",
+      "seat": {
+        "kind": "trigram",
+        "palace": {
+          "number": 9,
+          "id": "xun",
+          "hanzi": "巽",
+          "pinyin": "xùn",
+          "direction": "se"
+        }
+      },
+      "palace": 9,
+      "element": "mu"
+    },
+    "shiji": {
+      "id": "taiyang",
+      "hanzi": "太陽",
+      "pinyin": "tàiyáng",
+      "seat": {
+        "kind": "branch",
+        "branch": {
+          "index": 4,
+          "id": "chen",
+          "hanzi": "辰",
+          "pinyin": "chén",
+          "element": "tu",
+          "yang": true
+        }
+      },
+      "element": "tu"
+    },
+    "jishen": {
+      "index": 2,
+      "id": "yin",
+      "hanzi": "寅",
+      "pinyin": "yín",
+      "element": "mu",
+      "yang": true
+    },
+    "host": {
+      "count": 24,
+      "from": {
+        "id": "taijiong",
+        "hanzi": "太炅",
+        "pinyin": "tàijiǒng",
+        "seat": {
+          "kind": "trigram",
+          "palace": {
+            "number": 9,
+            "id": "xun",
+            "hanzi": "巽",
+            "pinyin": "xùn",
+            "direction": "se"
+          }
+        },
+        "palace": 9,
+        "element": "mu"
+      },
+      "general": {
+        "number": 4,
+        "id": "zhen",
+        "hanzi": "震",
+        "pinyin": "zhèn",
+        "direction": "e"
+      },
+      "assistant": {
+        "number": 2,
+        "id": "li",
+        "hanzi": "離",
+        "pinyin": "lí",
+        "direction": "s"
+      }
+    },
+    "guest": {
+      "count": 25,
+      "from": {
+        "id": "taiyang",
+        "hanzi": "太陽",
+        "pinyin": "tàiyáng",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 4,
+            "id": "chen",
+            "hanzi": "辰",
+            "pinyin": "chén",
+            "element": "tu",
+            "yang": true
+          }
+        },
+        "element": "tu"
+      },
+      "general": {
+        "number": 5,
+        "id": "zhong",
+        "hanzi": "中",
+        "pinyin": "zhōng",
+        "direction": null
+      },
+      "assistant": {
+        "number": 5,
+        "id": "zhong",
+        "hanzi": "中",
+        "pinyin": "zhōng",
+        "direction": null
+      }
+    },
+    "patterns": [
+      {
+        "id": "dui",
+        "hanzi": "對",
+        "pinyin": "duì",
+        "valence": {
+          "id": "xiong",
+          "hanzi": "凶",
+          "pinyin": "xiōng"
+        },
+        "subject": "wenchang",
+        "palace": 9
+      }
+    ],
+    "heshen": {
+      "index": 1,
+      "id": "chou",
+      "hanzi": "丑",
+      "pinyin": "chǒu",
+      "element": "tu",
+      "yang": false
+    },
+    "gate": {
+      "gate": {
+        "id": "jing1men",
+        "hanzi": "驚門",
+        "pinyin": "jīngmén",
+        "home": 7
+      },
+      "year": 7
+    },
+    "sanji": {
+      "jun": {
+        "branch": {
+          "index": 1,
+          "id": "chou",
+          "hanzi": "丑",
+          "pinyin": "chǒu",
+          "element": "tu",
+          "yang": false
+        },
+        "year": 17,
+        "period": 30
+      },
+      "chen": {
+        "branch": {
+          "index": 9,
+          "id": "you",
+          "hanzi": "酉",
+          "pinyin": "yǒu",
+          "element": "jin",
+          "yang": false
+        },
+        "year": 2,
+        "period": 3
+      },
+      "min": {
+        "branch": {
+          "index": 8,
+          "id": "shen",
+          "hanzi": "申",
+          "pinyin": "shēn",
+          "element": "jin",
+          "yang": true
+        },
+        "year": 1,
+        "period": 1
+      }
+    },
+    "wufu": {
+      "palace": {
+        "id": "huangshi3",
+        "hanzi": "黃始宮",
+        "pinyin": "huángshǐgōng",
+        "palace": {
+          "number": 3,
+          "id": "gen",
+          "hanzi": "艮",
+          "pinyin": "gèn",
+          "direction": "ne"
+        }
+      },
+      "year": 2
+    },
+    "dayou": {
+      "station": {
+        "palace": {
+          "number": 7,
+          "id": "kun",
+          "hanzi": "坤",
+          "pinyin": "kūn",
+          "direction": "sw"
+        },
+        "year": 11
+      },
+      "wenchang": {
+        "id": "yangde",
+        "hanzi": "陽德",
+        "pinyin": "yángdé",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 1,
+            "id": "chou",
+            "hanzi": "丑",
+            "pinyin": "chǒu",
+            "element": "tu",
+            "yang": false
+          }
+        },
+        "element": "tu"
+      }
+    },
+    "options": {
+      "epoch": "jinjing",
+      "ji": "nianji",
+      "yearBoundary": "lichun"
+    }
+  }
+}

@@ -1965,7 +1965,7 @@ export const it: Record<MessageKey, string> = {
     'Dove guardare per tutto questo – l’ordine in cui guardi, mai l’ordine in cui scrivi: procedi all’infuori dal padrone del giorno; quali dei dieci dèi stanno nei quattro pilastri e quali non stanno da nessuna parte; che cosa i rami celano contro ciò che gli steli mostrano; quali rami sono vuoti e se qualcosa della nascita cade in uno di essi; dove il padrone del giorno si trovi nel ciclo dei dodici a ciascun pilastro; le quattro immagini 納音 nàyīn; il conteggio dei cinque elementi; e i decenni, dove sono stampati, come la direzione in cui i pilastri camminano. Di’ che cosa la tradizione ritiene che sia ciascuna cosa che usi, e usala dove porta un tema.',
   'prompt.taiyi.heading': 'Leggere un quadro Tai Yi',
   'prompt.taiyi.role':
-    'Qui sotto è disposto un quadro 太乙神數 tàiyǐshénshù, nel registro dell’anno: 年計 niánjì. Colloca 太乙 tàiyǐ stesso, che cammina otto palazzi e mai il centro; i due occhi, 文昌 wénchāng in basso e 始擊 shǐjī in alto; 計神 jìshén e 合神 héshén; i due conti e i generali che insediano; la porta di turno; e i circuiti più lunghi. È stato calcolato dal 太乙金鏡式經 tàiyǐ jīnjìngshìjīng (王希明 Wáng Xīmíng, 唐 Táng, c. 730), non da te: leggilo esattamente come sta e non aggiungere nulla. Nessuna posizione, nessun conto, nessuna condizione che non sia scritta lì. Se manca qualcosa che ti serve, di’ che manca.',
+    'Qui sotto è disposto un quadro 太乙神數 tàiyǐshénshù, nel registro dell’anno: 歲計 suìjì. Colloca 太乙 tàiyǐ stesso, che cammina otto palazzi e mai il centro; i due occhi, 文昌 wénchāng in basso e 始擊 shǐjī in alto; 計神 jìshén e 合神 héshén; i due conti e i generali che insediano; la porta di turno; e i circuiti più lunghi. È stato calcolato dal 太乙金鏡式經 tàiyǐ jīnjìngshìjīng (王希明 Wáng Xīmíng, 唐 Táng, c. 730), non da te: leggilo esattamente come sta e non aggiungere nulla. Nessuna posizione, nessun conto, nessuna condizione che non sia scritta lì. Se manca qualcosa che ti serve, di’ che manca.',
   'prompt.taiyi.subject':
     'Ciò che hai davanti è **un anno**, non una persona e non una domanda. 太乙主天 tàiyǐ zhǔ tiān: questo quadro è steso sull’anno in cui il mondo si trova, e nessuna nascita, ora o luogo di qualcuno vi è entrato – è una pura funzione di un numero. Non c’è dunque nessun consultante qui e nessun nativo. Leggi la figura: di’ come sta quest’anno, attorno a che cosa è organizzato, dove è equilibrato e dove è sotto sforzo. I significati sono trasmessi, e le fonti dicono che cosa sia per 太乙 stare in un dato palazzo, per un occhio cadere dove cade, per un conto essere un dato numero. Leggerli su quest’anno è la lettura.',
   'prompt.taiyi.hostguest':
@@ -2156,7 +2156,7 @@ export const it: Record<MessageKey, string> = {
   'cli.value.taiyiPalaces':
     'i palazzi sono numerati come li numera 太乙 tàiyǐ, a un seggio dal 洛書 luòshū: qui 一宮 yīgōng è il nord-ovest, in una carta di Qi Men il nord',
   'cli.value.taiyiEvidence':
-    'verificata sulle tavole e sulle carte svolte del 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng stesso; di questa tavola non esiste alcuna implementazione indipendente su cui controllarla',
+    'verificata sulle tavole e sulle carte svolte del 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng stesso e su undici posizioni datate che una storia dinastica registra; di questa tavola non esiste alcuna implementazione indipendente su cui controllarla',
 
   'cli.heading.scan': 'Carte dal {from} al {to}',
   'cli.heading.criteria': 'Richiesto',

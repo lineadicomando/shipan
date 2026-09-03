@@ -598,8 +598,8 @@ export interface PlateTaiyiGod {
 export interface PlateTaiyiSide {
   count: number;
   general: PlateTaiyiPalace;
-  /** Absent where the count reduced to the centre, which is on no ring. */
-  assistant?: PlateTaiyiPalace | undefined;
+  /** 參將, which stands in the centre with its 大將 where the count ends in five. */
+  assistant: PlateTaiyiPalace;
 }
 
 export interface PlateTaiyiLabels {

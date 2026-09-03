@@ -3455,7 +3455,7 @@ refusal.
 output then says 三餘. Both halves of the placement are rung 5 — one plate for
 the anchor, one work for the rate, see the rungs below — and this project's rule
 for a rung-5 quantity is that its rung is written down, not that the quantity is
-withheld: 年命, the 年神 bearings and 太乙's 大將 and 參將 ship at the same grade.
+withheld: 年命, the 年神 bearings and 太乙's 大遊 ship at the same grade.
 What keeps that honest here is the resolution. 紫氣 travels as a palace and can
 travel as nothing finer — the type refuses a degree rather than the prose asking
 for one — and the line under every board says its rate rests on one work and its
@@ -3683,12 +3683,16 @@ carries the years the ladder requires.
 
 ### The parameter, and why it has one value
 
-`epoch` is declared with `jinjing` alone. 《太乙統宗寶鑑》 states another
-上元積年 and has **not been read here**, so it is not a value: a branch nobody
-has read is worse than a branch that does not exist, and the parameter exists
-from the first release so that reading it later cannot break a shared link.
-See `docs/parameters.md`, which says exactly this about every divergence and said it
-about this one before the reading.
+`epoch` is declared with `jinjing` alone, and **the other lineage's figure is
+now known and congruent**: 《統宗》 counts from a 公元基數 of 10 153 917, which
+differs from 《金鏡》's by an exact multiple of both 360 and 24 and therefore
+lays this board identically. See § "The witness that is not a manual" below,
+where the arithmetic is done. So the parameter keeps one implemented value for
+the reason it was always going to keep one if the reading went this way — not
+because a branch is unread. What is still unread is the 上元積年 as
+《太乙統宗寶鑑》 itself states it: 錢大昕 discusses that work's 積年術 in
+《十駕齋養新錄》 卷十四, and whether 寶鑑 and the 統宗大全 on this shelf are one
+recension is not settled here.
 
 **And what reading it would have to establish first is congruence, not
 difference.** § "A second 上元, and what it turns out not to change" below is
@@ -3764,17 +3768,25 @@ case, because there astronomy cannot even choose — 3682 and 1341 disagree, one
 of them is wrong, and nothing on the page adjudicates.
 
 **A second witness lifts all three at once**, since one collation would settle
-five numerals. 《太乙統宗寶鑑》 is the obvious place and is not on the shelf;
-neither is any other 太乙 text carrying 卷一's constants. Until one is,
-`yueji`, `riji` and `shiji` are declared, refused by name, and this is the
-entry saying why.
+five numerals — and **a second witness is now partly on the shelf without
+lifting any of them**. 《太乙數統宗大全》 has been opened on four leaves: its
+卷二 is the calendrical apparatus, giving 日法 一萬單五百 with 朔實, 朔策 and
+朔盈差 beside it, and its 卷三 carries 求月計 · 日計 · 時計太乙入紀元局術 among
+the 起例. That is another system's constants, not a collation of these: it
+would let the three registers be computed **on 《統宗》's arithmetic**, which
+is a different board from the one this engine lays, and it says nothing about
+what 卷一 of 《金鏡》 meant to print. Until a witness carrying *these*
+constants is read, `yueji`, `riji` and `shiji` stay declared, refused by name,
+and this is the entry saying why.
 
-**That negative was closed against the shelf of 2026-08-30, and a 太乙 volume
-arrived the next day.** 《太乙數統宗大全》, 故宮珍本叢刊 第420冊 — four hundred
-and forty pages, and the first 太乙 witness here besides the 金鏡式經. Whether
-it carries 卷一's constants is the question, and **nobody has asked it**: the
-volume is on the shelf and unread for this, so the refusals above stand exactly
-as they did. Last checked 2026-08-30.
+**That negative was closed against the shelf of 2026-08-30, a 太乙 volume
+arrived the next day, and the question has since been put to it.**
+《太乙數統宗大全》, 故宮珍本叢刊 第420冊 — four hundred and forty pages, and the
+first 太乙 witness here besides the 金鏡式經. Whether it carries 卷一's constants
+was the question, and the answer is the paragraph above: it carries constants of
+its own, on another calendar, and none of 《金鏡》's. Four of its four hundred
+and forty leaves have been read, which is what that answer rests on. Last
+checked 2026-09-03.
 
 **A 四庫 volume was filed the same day, and it lifts nothing.**
 《景印文淵閣四庫全書》第810冊 carries 太乙金鏡式經 十卷 whole — and the plate the
@@ -3874,9 +3886,11 @@ carried to.
 四」 — and a count that is a whole number of tens gives the tens, which is what
 若得十置一 says and what 卷九's 「客筭四十大將四宫參將二宫」 confirms.
 
-**參將 is the one step the text never states in words.** It is read off the
+**參將 is the one step *this* text never states in words.** It is read off the
 text's own worked boards, which put it a quarter turn clockwise from the 大將
-without exception:
+without exception — and 《統宗》 does state it, as 大將宮數 × 3 mod 10, which is
+that quarter turn on every seat of the ring. The induction below is what the
+engine was built on and what the second witness then transmitted:
 
 | source | 大將 | 參將 | | source | 大將 | 參將 |
 |---|---|---|---|---|---|---|
@@ -3889,16 +3903,38 @@ without exception:
 | 卷九 敵國動靜 客 | 7 坤 | 1 乾 | | 卷六 術七 客 | 9 巽 | 7 坤 |
 
 Fourteen instances, one rule, no exception: 乾→艮, 坎→震, 艮→巽, 震→離,
-巽→坤, 離→兌, 坤→乾, 兌→坎. **It is induced and not transmitted, and the
-engine says so** — `TaiyiSide.assistant` carries the note, and where a count
-reduces to the centre the 參將 is `undefined` rather than invented, since the
-centre is on no ring and no worked board places one from there.
+巽→坤, 離→兌, 坤→乾, 兌→坎 — and every one of them is ×3 mod 10.
+
+**Where the induction and the transmitted rule parted was the centre, and the
+stated rule is followed there.** A count ending in five seats the 大將 in 五宮,
+which stands on no ring, and no worked board of 《金鏡》 reaches the case; ×3
+mod 10 gives five again, and both boards 盧央 works that reach it say so —
+「主大小將均入中宮，是為杜塞」, 「客算得二十五，所以客大小將杜塞」. So the
+engine seats the 參將 beside its 大將 in the middle, where it used to hand over
+`undefined`: a rule that reproduces all fourteen induced instances and answers
+the one case they never show is worth more than a silence, and the silence had
+no attribution — no text says a 參將 stops existing. It is not a rare cell
+either, a general falling there in a little under a third of years.
+
+**What the second witness also does is name the standing, and that part does
+not travel.** 杜塞 is the two generals shut into the one palace neither 太乙 nor
+either eye can enter — 「中五與外面不通」 — and it is not in `patterns` with the
+other seven, because those each carry the sentence 卷三 uses to say what they
+*are* and this one's would be a modern scholar's; 《統宗》's own 序 lists
+關囚掩迫對擊 and 挺挾 without it. The name is here, where a reader weighing the
+board can find it. **And nothing at the centre enters a condition**, which is
+what the ring of eight already said about a 大將 there: 太乙 never stands in the
+middle, so nothing there is at a distance from it, and two bodies meeting there
+are 杜塞 rather than 關.
 
 ### The verification, and what it is worth
 
 There is no `lunar-javascript` here. Nothing open computes this board, and the
 closed programs that do disagree with each other — so the reference is the
-text, which is unusually well equipped to be one. 卷三 prints a **立成 of
+text, which is unusually well equipped to be one. **What follows is that
+reference; the section after it is the evidence that does not come from the
+tradition's manuals at all**, and the two are kept apart because they answer
+different questions. 卷三 prints a **立成 of
 seventy-two rows twice over**, 陽局 and 陰局, giving 太乙宮, 天目, 主算, 客目,
 客算 and 計神 for every row. `test/taiyi.test.ts` carries all one hundred and
 forty-four and drives the same code the year board uses.
@@ -3937,6 +3973,90 @@ the tables do not — and the 太歲 the count yields is checked against
 `yearGanzhi` over four centuries, which is the one check here that does not
 come from the text.
 
+### The witness that is not a manual, and the first checks from outside the text
+
+**《中國古代星占學》, 盧央, 中國科學技術出版社 2007, 第五章 太乙式**, 809 pages,
+with a row in `docs/provenance.tsv`. It is a modern historian of astronomy
+laying the board out from both surviving lineages, and it is a different kind
+of source from everything else in this section: not a manual teaching the
+method, but a study of it that works six dated boards through every step,
+quotes a dynastic annal against them, and says of its own object 「數占是一種
+關於式占的設計，並不是可信的」 — the 數占 explains what has already happened
+and does not predict. A source that exposes the mechanism entire *and* declares
+what it thinks of it is worth quoting on both.
+
+**What it brings is the thing this board did not have: evidence written by
+nobody teaching the method.** All of it is in `test/taiyi.test.ts`, in the
+block named for it.
+
+- **《齊書·武帝紀》 records eleven dated positions of 太乙**, from 漢高五年
+  (202 BCE) to 宋升明元年 (477 CE), and 蕭子顯 was not writing a manual. 盧央
+  quotes the passage whole to adjudicate the three 上元積年 in circulation: the
+  count of 《太乙淘金歌》 is out by a whole 元 and gives 九宮 where the annal
+  says 四宮, 「故不能採納」. **This engine reproduces all eleven**, and the 太歲
+  it prints for each agrees with the reign year that names it, which is what
+  shows the years were converted rightly rather than the palaces guessed.
+- **Six boards worked step by step**, of which five recompute in every printed
+  value: 589 through all eight steps of the 布式 with the finished figure at
+  圖 5-7, then 940, 830, 124 and 210 BCE, each worked to name a configuration.
+  The sixth, 207 BCE, prints a 主算 of 二十三 where the procedure of its own
+  chapter gives sixteen — which is what this engine gives — and the page works
+  no arithmetic for it. It is carried as an erratum for the reason the 立成's
+  fourteen are.
+- **The 參將 is stated in words**: 「主大將宮數乘以 3，再以 10 除之，所得餘數
+  即為主參將所在宮」. ×3 mod 10 *is* the quarter turn clockwise that fourteen
+  worked boards of 卷一, 卷六 and 卷九 induced, on all eight seats of the ring.
+  The step this file called untransmitted is transmitted — and it answers at
+  the centre, which the fourteen never reach and this engine used to leave
+  empty. See § "主算 and 客算" above, where that is decided.
+- **五福 against three acts of state.** 周琮's memorial of 1071, in 《宋史·禮志
+  六》: the court built the eastern 太乙宮 when the body entered 巽 in 984 and
+  the western when it entered 坤 in 1029, and he asked for a third in the
+  capital because it would enter the centre in 1074. It was built. The
+  forty-five years this engine counts with put the body in each of the three on
+  the year the archive names.
+- **三基 against three dates**, which is what 卷五's 甲寅 count had none of:
+  君基 into 午邦 in 714, 臣基 into 午邦 in 642, 民基 into 未邦 in 627 — and for
+  the first two 盧央 runs 《統宗》's own arrangement beside 《金鏡》's, where a
+  start from 午邦 and a correction of 邦盈差 二百五十 compensate each other and
+  land on the same fief. Two lineages, one placement.
+
+**And the other 上元 turns out to be the one already weighed here.** 《統宗》's
+公元基數 is **10 153 917**, so that 940 CE is 歲積 10 154 857 — the figure the
+940 board is worked from — and 《金鏡》's is 1 936 557. The difference is
+8 217 360, which is 22 826 × 360 and 342 390 × 24: the same difference § "A
+second 上元" below computes for a teaching handout that named no text, which is
+therefore counting from 《統宗》. `epoch` still has one implemented value, and
+now because the other one agrees rather than because nobody had read it.
+
+**Where the two lineages part is the reading, and three partings touch what
+this engine reports.** None of them is an error found here; each is a second
+tradition saying something 卷三 does not.
+
+| | 《金鏡》, which this engine follows | 《統宗》, per 盧央 |
+|---|---|---|
+| 格 on the host's generals | not a condition: 「客目大小將與太乙對宫為格」 names one party | the 124 board marks 「主大將居九宮，又與太乙相格」 |
+| 文昌 in 太乙's palace | 囚, per 「文昌將并主客大小四將，俱與太乙同宫」 | 關, on 樂產's authority — and 掩 two lines away, which 盧央 reports without choosing |
+| 格 by opposition | the palace facing 太乙 across the board | the 940 board admits a 沖 of branches: 始擊 in 辰 against a 太乙 in 乾, 「乾宮居戌亥」 |
+
+**What it does not do is settle a numeral.** It is not a witness to 《金鏡》's
+text — it quotes the same 四庫 lineage — so the five broken constants of 卷一
+stay broken and the three registers stay refused. What it does say about them
+is the route: 「只要將歲積算改成月積算或日積算」, the 月計 and 日計 being the
+same placements over a different counter, and the 時計 adding the 陰陽二局
+(冬至 to 夏至 順行, 夏至 to 冬至 逆行) that `taiyiJu`'s yin branch already
+computes, plus the 三元 of a day read off its 干支 exactly as 奇門 reads it.
+《統宗》 has calendrical constants of its own for those counters — 日法 一萬單
+五百, and a 歲實 錢大昕 showed to be the 授時曆's in disguise, which dates that
+apparatus after 1281 whatever it claims of itself.
+
+**And it reaches this project through a transcribed corpus rather than off the
+plate**, which is the ordinary limit `docs/notes.md` states: passages filed by
+the question they answer say where to look, and the primary annals quoted in
+them — 《齊書》, 《宋史》 — are not on this shelf. What holds them up here is
+that eleven positions from an annal and six boards from a study reproduce
+against a procedure that knows nothing about either. Read 2026-09-03.
+
 ### Beside the six the 立成 weighs
 
 The tables of 卷三 give six placements a row and stop there. What is below is
@@ -3962,11 +4082,14 @@ stating it twice in one voice.
 checks it against two dates — 「假令今開元十二年甲子，即開門為直使，至三十一年
 甲午嵗即休門為直使」 — and the count gives both.
 
-**五福太乙 — forty-five years to a palace, and the text checks that one too.**
-卷五 推五福太乙法 runs it on the 一萬三千三百三十一 count, over the four
-corners and the centre, 二百二十五年 to the circuit. The check is a date again:
-「今開元十二年甲子在遼東十一年也」, the eleventh year in 黃始宮, which is what
-the count gives.
+**五福太乙 — forty-five years to a palace, and two checks, one of them from an
+archive.** 卷五 推五福太乙法 runs it on the 一萬三千三百三十一 count, over the
+four corners and the centre, 二百二十五年 to the circuit. The text's own check
+is a date: 「今開元十二年甲子在遼東十一年也」, the eleventh year in 黃始宮, which
+is what the count gives. The second is not the text's — 周琮's memorial of 1071
+in 《宋史·禮志六》 dates the body into 巽 in 984 and into 坤 in 1029 by the
+temples the Song court built for it, and asks for a third because it enters the
+centre in 1074. The count puts it in each of the three on the year named.
 
 **大遊太乙 runs on the same count and nothing checks it.** 卷五 推大遊太乙
 gives thirty-six years to a palace and 二百八十八年一周, opening from 七宮
@@ -3983,7 +4106,12 @@ as a bare `1` beside a sovereign at `23` it was read as a base newly begun — a
 fact nobody computed, produced by a right number without the thing that makes it
 legible. `TaiyiFief` carries `period`; the transcript prints `1/1`.
 
-**三基 is computed and unchecked.** 君基, 臣基 and 民基 run on 卷五's opening
+**三基 is computed, and checked from outside since 2026-09-03.** 盧央 puts all
+three on dated years — 君基 into 午邦 in 714, 臣基 into 午邦 in 642, 民基 into
+未邦 in 627 — and runs 《統宗》's arrangement beside 《金鏡》's for the first
+two, where a start from 午邦 and a 邦盈差 of 二百五十 compensate and land on the
+same fief. This engine gives all three. What follows is the count itself, which
+《金鏡》 states and never checks: 君基, 臣基 and 民基 run on 卷五's opening
 count, 「自上元甲寅之嵗至大唐開元十二年甲子嵗積得二十八萬五千一十一筭」, with
 「臣今恐速要，自漢安帝元初甲寅為近，至開元十二年甲子嵗積得六百十一筭」 beside
 it — and 285,011 ≡ 611 (mod 360), so the two agree as the three main figures
@@ -4020,7 +4148,10 @@ part. It is not reported twice.
 **A different origin is not a different board**, and one file on this shelf
 says so by arithmetic. 《祖傳年家太乙神數教材》 — a teaching handout, printed by
 高俊波 off an 「阴阳先生祖传手抄本」, thirty numbered pages in simplified
-characters, naming no text and no lineage — carries an 積年 table of its own:
+characters, naming no text and no lineage — carries an 積年 table of its own.
+**The text it does not name is 《統宗》**: its base is that lineage's 公元基數
+10 153 917 to the year, which § "The witness that is not a manual" quotes from
+a source that does name it. The table:
 甲子 of 1864 at 10 155 781, 1924 at 10 155 841, 1984 at 10 155 901, 2044 at
 10 155 961. This engine counts from 《太乙金鏡式經》's 開元十二年甲子 and
 1 937 281, which for 2010 gives 1 938 567 where the handout gives 10 155 927.
@@ -4051,15 +4182,51 @@ is not a witness. Read on the plate 2026-08-30.
 卷六 and 卷九's worked boards are 日計 and 時計 boards — but each needs its own
 accumulated count and 卷一's 日計 arithmetic is damaged in this edition
 (推時計差法 has a 闕 in the middle of a constant). `ji` is the parameter that
-waits for them.
+waits for them. **What changes with them is the counter and almost nothing
+else**, which 盧央 states outright — 「只要將歲積算改成月積算或日積算」 — with
+the 時計 alone adding the 陰陽二局 that `taiyiJu` already computes and the 三元
+of a day read off its 干支. The technical name for the four is **四計**, and
+the first of them is **歲計** in both witnesses — which is the name the
+parameter now carries, its identifier staying `nianji` so that a shared link
+cannot break.
 
 The volume named two sections above bears on both halves of that — a second
 witness for the counts, and a second reading for the 闕 — and has been read for
-neither. Last checked 2026-08-30.
+the first only: its 卷二 gives counts, and they are 《統宗》's own rather than a
+second look at these. The 闕 is still unread against it. Last checked
+2026-09-03.
 
 **四神, 天乙, 地乙 and 直符太乙.** 卷五 places all four, and they walk **twelve**
 palaces rather than eight — the nine plus 絳宮, 明堂 and 玉堂, which 卷八 gives
 分野 for. A different figure on a different ring; not computed, and not drawn.
+They are four of the **十神**, the group 三基 and 五福 also belong to, and the
+group has a 上元 of its own: 甲寅 rather than 甲子, the 二十八萬五千一十一 this
+engine already counts the 三基 from, and 盧央 states the prohibition that count
+carries — 「這個數據不能用來推求太乙行九宮和文昌行十六神」.
+
+**十精太乙, and it is the one layer here that is not dynastic.** 天皇, 帝符,
+天時, 太尊, 飛鳥, 五行, 八風, 五風, 三風 and 太乙數 — nine star-envoys and a
+count — and what they are read for is the weather: 「十精太乙主要功能是占風晴雨
+露」, a casebook of wind, clearing, rain and dew put into the form of a 式. The
+first of them is the 天皇太乙 of 卷七 this file already cites for its 小周 of
+twenty; the group is not computed and is not drawn, and it is named here
+because § "The per-palace readings" below says what it qualifies. Reading it
+would want the eight states 旺, 相, 胎, 沒, 死, 囚, 休, 廢 that turn with the
+八節 — stated for 立春 alone, and on the 洛書's numbers, which 盧央 stops to
+warn about in six characters: 「注意不是太乙九宮」.
+
+**The 五行 of the actors, and the planet each stands for.** 太乙 is 木 and the
+歲星, 文昌 火 and the 熒惑, 始擊 土 and the 填星, 主大將 金 and the 太白, 客大將
+水 and the 辰星, the two 參將 taking what their general generates, 計神 火. This
+engine gives an element to each of the sixteen **seats**, which is what 卷六
+states and what the drawing tints a palace by, and none to the **roles** — so
+the 生剋 between the bodies on a board, which is what that table exists for, is
+not computed. It is one table away and it is not there.
+
+**陽九百六, 太乙入卦 and 九宮分野.** Three more chapters of the received layer:
+the two great limits of 4560 and 4320 years, the board read into hexagrams, and
+the geography of the palaces. Not computed, and the first is the dynastic
+register at its most epochal.
 
 **掩, 擊, 迫, 囚, 關, 格 and 對 are computed; 四郭固, 四郭杜, 執提 and 提挾 are
 not.** The first seven are stated in 卷三 as relations between bodies this
@@ -4118,7 +4285,13 @@ what the engine reports.
   皆為闗」 at 關, three lines above and three below — so a 格 marked on the
   host's 大將 or 參將 would be a condition reported for a configuration the
   source states for nobody. It was marked on all four until this reading was
-  made; `test/taiyi.test.ts` now holds it to the guest's three.
+  made; `test/taiyi.test.ts` now holds it to the guest's three. **A second
+  tradition does state it for somebody**, and the reading stands anyway:
+  盧央's board for 124 marks 「主大將居九宮，又與太乙相格」, which is 《統宗》's
+  reading and not 卷三's, and the same board lets a 沖 of branches make a 格
+  where this engine tests the facing palace alone. Following one witness where
+  two disagree is what this register does; naming a value for the other would
+  be naming a parameter for a recension, which it does not.
 - **囚 is reported per body, and 俱 is read as the collective.** 「若文昌將并
   主客大小四將，俱與太乙同宫，總名曰囚」 can be read strictly — all five in
   太乙's palace at once — or as 總名曰囚 naming the class of these standings.
@@ -4148,11 +4321,18 @@ configuration that boards of many years fall into, and the text says exactly
 what it portends. A reader who finds this engine silent about it is owed the
 reason, which is not that the doctrine is missing.
 
-It is also the answer to a question worth stating plainly: **there is no
-non-dynastic interpretive layer in this text to extract.** What 太乙 hands down
-for a palace is a province and a political omen. The 之義 clauses of 卷三 are
+It is also the answer to a question worth stating plainly, and the answer has
+one exception that arrived later: **what 太乙 hands down for a palace is a
+province and a political omen, and nothing else.** The 之義 clauses of 卷三 are
 the whole of what can be carried under the standard this project holds, which
 is why the conditions have them and the palaces have nothing.
+
+**The exception is the 十精, and it is not about a palace.** That group is read
+for wind and rain rather than for reigns — see § "What is not here" — so the
+sentence this file used to carry, that there is no non-dynastic interpretive
+layer in this art to extract, was too wide. It holds for the eight palaces,
+which is what it was written about. Whether 卷七 carries the whole group or
+only the 天皇太乙 it states there has not been asked.
 
 **陰陽和不和.** 卷二 gives two accounts of it, 張良經's and 王希明's, and they
 do not line up: one reads the parity of the 算 against the polarity of the eye's
@@ -4162,6 +4342,13 @@ built from *are* in the output — 太乙's palace carries `yang` per 卷二's
 「八三四九為陽，二七六一為隂」, and the parity of a count is readable from the
 count — and the judgement built on them is left out. Where sources disagree,
 the entry is left out and the absence is written down.
+
+**And that absence is now an unasked question rather than a closed one.**
+中國古代星占學 has a chapter on exactly this, 太乙式數占 pp. 492–499, of which
+only the closing summary of eight principles has been read here — the first two
+of which, 「以得算之多少定勝負」 and 「以得算之奇偶定陰陽、孤單」, are the two
+accounts' subject. What that chapter settles, if anything, has not been put to
+the two. Last checked 2026-09-03.
 
 **Who is 主 and who is 客.** The first interpretive act the system asks for,
 and the reader's, for the reason the 用神 is. And the whole received dynastic

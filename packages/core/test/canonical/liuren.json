@@ -1,0 +1,784 @@
+{
+  "the canonical moment, 晝": {
+    "yuejiang": {
+      "id": "dengming",
+      "hanzi": "登明",
+      "pinyin": "dēngmíng",
+      "branch": {
+        "index": 11,
+        "id": "hai",
+        "hanzi": "亥",
+        "pinyin": "hài",
+        "element": "shui",
+        "yang": false
+      },
+      "term": {
+        "id": "yushui",
+        "hanzi": "雨水",
+        "pinyin": "yǔshuǐ",
+        "longitude": 330,
+        "kind": "qi"
+      }
+    },
+    "day": {
+      "index": 17,
+      "stem": {
+        "index": 7,
+        "id": "xin",
+        "hanzi": "辛",
+        "pinyin": "xīn",
+        "element": "jin",
+        "yang": false
+      },
+      "branch": {
+        "index": 5,
+        "id": "si",
+        "hanzi": "巳",
+        "pinyin": "sì",
+        "element": "huo",
+        "yang": false
+      },
+      "hanzi": "辛巳",
+      "pinyin": "xīnsì",
+      "id": "xinsi"
+    },
+    "hour": {
+      "index": 7,
+      "id": "wei",
+      "hanzi": "未",
+      "pinyin": "wèi",
+      "element": "tu",
+      "yang": false
+    },
+    "heaven": [
+      {
+        "index": 4,
+        "id": "chen",
+        "hanzi": "辰",
+        "pinyin": "chén",
+        "element": "tu",
+        "yang": true
+      },
+      {
+        "index": 5,
+        "id": "si",
+        "hanzi": "巳",
+        "pinyin": "sì",
+        "element": "huo",
+        "yang": false
+      },
+      {
+        "index": 6,
+        "id": "wu",
+        "hanzi": "午",
+        "pinyin": "wǔ",
+        "element": "huo",
+        "yang": true
+      },
+      {
+        "index": 7,
+        "id": "wei",
+        "hanzi": "未",
+        "pinyin": "wèi",
+        "element": "tu",
+        "yang": false
+      },
+      {
+        "index": 8,
+        "id": "shen",
+        "hanzi": "申",
+        "pinyin": "shēn",
+        "element": "jin",
+        "yang": true
+      },
+      {
+        "index": 9,
+        "id": "you",
+        "hanzi": "酉",
+        "pinyin": "yǒu",
+        "element": "jin",
+        "yang": false
+      },
+      {
+        "index": 10,
+        "id": "xu",
+        "hanzi": "戌",
+        "pinyin": "xū",
+        "element": "tu",
+        "yang": true
+      },
+      {
+        "index": 11,
+        "id": "hai",
+        "hanzi": "亥",
+        "pinyin": "hài",
+        "element": "shui",
+        "yang": false
+      },
+      {
+        "index": 0,
+        "id": "zi",
+        "hanzi": "子",
+        "pinyin": "zǐ",
+        "element": "shui",
+        "yang": true
+      },
+      {
+        "index": 1,
+        "id": "chou",
+        "hanzi": "丑",
+        "pinyin": "chǒu",
+        "element": "tu",
+        "yang": false
+      },
+      {
+        "index": 2,
+        "id": "yin",
+        "hanzi": "寅",
+        "pinyin": "yín",
+        "element": "mu",
+        "yang": true
+      },
+      {
+        "index": 3,
+        "id": "mao",
+        "hanzi": "卯",
+        "pinyin": "mǎo",
+        "element": "mu",
+        "yang": false
+      }
+    ],
+    "generals": [
+      {
+        "id": "taiyin",
+        "hanzi": "太陰",
+        "pinyin": "tàiyīn"
+      },
+      {
+        "id": "tianhou",
+        "hanzi": "天后",
+        "pinyin": "tiānhòu"
+      },
+      {
+        "id": "guiren",
+        "hanzi": "貴人",
+        "pinyin": "guìrén"
+      },
+      {
+        "id": "tengshe",
+        "hanzi": "螣蛇",
+        "pinyin": "téngshé"
+      },
+      {
+        "id": "zhuque",
+        "hanzi": "朱雀",
+        "pinyin": "zhūquè"
+      },
+      {
+        "id": "liuhe",
+        "hanzi": "六合",
+        "pinyin": "liùhé"
+      },
+      {
+        "id": "gouchen",
+        "hanzi": "勾陳",
+        "pinyin": "gōuchén"
+      },
+      {
+        "id": "qinglong",
+        "hanzi": "青龍",
+        "pinyin": "qīnglóng"
+      },
+      {
+        "id": "tiankong",
+        "hanzi": "天空",
+        "pinyin": "tiānkōng"
+      },
+      {
+        "id": "baihu",
+        "hanzi": "白虎",
+        "pinyin": "báihǔ"
+      },
+      {
+        "id": "taichang",
+        "hanzi": "太常",
+        "pinyin": "tàicháng"
+      },
+      {
+        "id": "xuanwu",
+        "hanzi": "玄武",
+        "pinyin": "xuánwǔ"
+      }
+    ],
+    "half": "day",
+    "courses": [
+      {
+        "number": 1,
+        "upper": {
+          "index": 2,
+          "id": "yin",
+          "hanzi": "寅",
+          "pinyin": "yín",
+          "element": "mu",
+          "yang": true
+        },
+        "lower": {
+          "index": 7,
+          "id": "xin",
+          "hanzi": "辛",
+          "pinyin": "xīn",
+          "element": "jin",
+          "yang": false
+        },
+        "lowerIsStem": true,
+        "general": {
+          "id": "taichang",
+          "hanzi": "太常",
+          "pinyin": "tàicháng"
+        }
+      },
+      {
+        "number": 2,
+        "upper": {
+          "index": 6,
+          "id": "wu",
+          "hanzi": "午",
+          "pinyin": "wǔ",
+          "element": "huo",
+          "yang": true
+        },
+        "lower": {
+          "index": 2,
+          "id": "yin",
+          "hanzi": "寅",
+          "pinyin": "yín",
+          "element": "mu",
+          "yang": true
+        },
+        "lowerIsStem": false,
+        "general": {
+          "id": "guiren",
+          "hanzi": "貴人",
+          "pinyin": "guìrén"
+        }
+      },
+      {
+        "number": 3,
+        "upper": {
+          "index": 9,
+          "id": "you",
+          "hanzi": "酉",
+          "pinyin": "yǒu",
+          "element": "jin",
+          "yang": false
+        },
+        "lower": {
+          "index": 5,
+          "id": "si",
+          "hanzi": "巳",
+          "pinyin": "sì",
+          "element": "huo",
+          "yang": false
+        },
+        "lowerIsStem": false,
+        "general": {
+          "id": "liuhe",
+          "hanzi": "六合",
+          "pinyin": "liùhé"
+        }
+      },
+      {
+        "number": 4,
+        "upper": {
+          "index": 1,
+          "id": "chou",
+          "hanzi": "丑",
+          "pinyin": "chǒu",
+          "element": "tu",
+          "yang": false
+        },
+        "lower": {
+          "index": 9,
+          "id": "you",
+          "hanzi": "酉",
+          "pinyin": "yǒu",
+          "element": "jin",
+          "yang": false
+        },
+        "lowerIsStem": false,
+        "general": {
+          "id": "baihu",
+          "hanzi": "白虎",
+          "pinyin": "báihǔ"
+        }
+      }
+    ],
+    "transmissions": [
+      {
+        "position": "chu",
+        "branch": {
+          "index": 9,
+          "id": "you",
+          "hanzi": "酉",
+          "pinyin": "yǒu",
+          "element": "jin",
+          "yang": false
+        },
+        "general": {
+          "id": "liuhe",
+          "hanzi": "六合",
+          "pinyin": "liùhé"
+        },
+        "empty": true
+      },
+      {
+        "position": "zhong",
+        "branch": {
+          "index": 1,
+          "id": "chou",
+          "hanzi": "丑",
+          "pinyin": "chǒu",
+          "element": "tu",
+          "yang": false
+        },
+        "general": {
+          "id": "baihu",
+          "hanzi": "白虎",
+          "pinyin": "báihǔ"
+        },
+        "empty": false,
+        "hiddenStem": {
+          "index": 3,
+          "id": "ding",
+          "hanzi": "丁",
+          "pinyin": "dīng",
+          "element": "huo",
+          "yang": false
+        }
+      },
+      {
+        "position": "mo",
+        "branch": {
+          "index": 5,
+          "id": "si",
+          "hanzi": "巳",
+          "pinyin": "sì",
+          "element": "huo",
+          "yang": false
+        },
+        "general": {
+          "id": "tianhou",
+          "hanzi": "天后",
+          "pinyin": "tiānhòu"
+        },
+        "empty": false,
+        "hiddenStem": {
+          "index": 7,
+          "id": "xin",
+          "hanzi": "辛",
+          "pinyin": "xīn",
+          "element": "jin",
+          "yang": false
+        }
+      }
+    ],
+    "rule": "biyong",
+    "options": {
+      "yuejiang": "zhongqi",
+      "guiren": "chou",
+      "zhouye": "branch"
+    },
+    "keti": "zhiyi"
+  },
+  "02:00, 夜": {
+    "yuejiang": {
+      "id": "dengming",
+      "hanzi": "登明",
+      "pinyin": "dēngmíng",
+      "branch": {
+        "index": 11,
+        "id": "hai",
+        "hanzi": "亥",
+        "pinyin": "hài",
+        "element": "shui",
+        "yang": false
+      },
+      "term": {
+        "id": "yushui",
+        "hanzi": "雨水",
+        "pinyin": "yǔshuǐ",
+        "longitude": 330,
+        "kind": "qi"
+      }
+    },
+    "day": {
+      "index": 17,
+      "stem": {
+        "index": 7,
+        "id": "xin",
+        "hanzi": "辛",
+        "pinyin": "xīn",
+        "element": "jin",
+        "yang": false
+      },
+      "branch": {
+        "index": 5,
+        "id": "si",
+        "hanzi": "巳",
+        "pinyin": "sì",
+        "element": "huo",
+        "yang": false
+      },
+      "hanzi": "辛巳",
+      "pinyin": "xīnsì",
+      "id": "xinsi"
+    },
+    "hour": {
+      "index": 1,
+      "id": "chou",
+      "hanzi": "丑",
+      "pinyin": "chǒu",
+      "element": "tu",
+      "yang": false
+    },
+    "heaven": [
+      {
+        "index": 10,
+        "id": "xu",
+        "hanzi": "戌",
+        "pinyin": "xū",
+        "element": "tu",
+        "yang": true
+      },
+      {
+        "index": 11,
+        "id": "hai",
+        "hanzi": "亥",
+        "pinyin": "hài",
+        "element": "shui",
+        "yang": false
+      },
+      {
+        "index": 0,
+        "id": "zi",
+        "hanzi": "子",
+        "pinyin": "zǐ",
+        "element": "shui",
+        "yang": true
+      },
+      {
+        "index": 1,
+        "id": "chou",
+        "hanzi": "丑",
+        "pinyin": "chǒu",
+        "element": "tu",
+        "yang": false
+      },
+      {
+        "index": 2,
+        "id": "yin",
+        "hanzi": "寅",
+        "pinyin": "yín",
+        "element": "mu",
+        "yang": true
+      },
+      {
+        "index": 3,
+        "id": "mao",
+        "hanzi": "卯",
+        "pinyin": "mǎo",
+        "element": "mu",
+        "yang": false
+      },
+      {
+        "index": 4,
+        "id": "chen",
+        "hanzi": "辰",
+        "pinyin": "chén",
+        "element": "tu",
+        "yang": true
+      },
+      {
+        "index": 5,
+        "id": "si",
+        "hanzi": "巳",
+        "pinyin": "sì",
+        "element": "huo",
+        "yang": false
+      },
+      {
+        "index": 6,
+        "id": "wu",
+        "hanzi": "午",
+        "pinyin": "wǔ",
+        "element": "huo",
+        "yang": true
+      },
+      {
+        "index": 7,
+        "id": "wei",
+        "hanzi": "未",
+        "pinyin": "wèi",
+        "element": "tu",
+        "yang": false
+      },
+      {
+        "index": 8,
+        "id": "shen",
+        "hanzi": "申",
+        "pinyin": "shēn",
+        "element": "jin",
+        "yang": true
+      },
+      {
+        "index": 9,
+        "id": "you",
+        "hanzi": "酉",
+        "pinyin": "yǒu",
+        "element": "jin",
+        "yang": false
+      }
+    ],
+    "generals": [
+      {
+        "id": "taichang",
+        "hanzi": "太常",
+        "pinyin": "tàicháng"
+      },
+      {
+        "id": "xuanwu",
+        "hanzi": "玄武",
+        "pinyin": "xuánwǔ"
+      },
+      {
+        "id": "taiyin",
+        "hanzi": "太陰",
+        "pinyin": "tàiyīn"
+      },
+      {
+        "id": "tianhou",
+        "hanzi": "天后",
+        "pinyin": "tiānhòu"
+      },
+      {
+        "id": "guiren",
+        "hanzi": "貴人",
+        "pinyin": "guìrén"
+      },
+      {
+        "id": "tengshe",
+        "hanzi": "螣蛇",
+        "pinyin": "téngshé"
+      },
+      {
+        "id": "zhuque",
+        "hanzi": "朱雀",
+        "pinyin": "zhūquè"
+      },
+      {
+        "id": "liuhe",
+        "hanzi": "六合",
+        "pinyin": "liùhé"
+      },
+      {
+        "id": "gouchen",
+        "hanzi": "勾陳",
+        "pinyin": "gōuchén"
+      },
+      {
+        "id": "qinglong",
+        "hanzi": "青龍",
+        "pinyin": "qīnglóng"
+      },
+      {
+        "id": "tiankong",
+        "hanzi": "天空",
+        "pinyin": "tiānkōng"
+      },
+      {
+        "id": "baihu",
+        "hanzi": "白虎",
+        "pinyin": "báihǔ"
+      }
+    ],
+    "half": "night",
+    "courses": [
+      {
+        "number": 1,
+        "upper": {
+          "index": 8,
+          "id": "shen",
+          "hanzi": "申",
+          "pinyin": "shēn",
+          "element": "jin",
+          "yang": true
+        },
+        "lower": {
+          "index": 7,
+          "id": "xin",
+          "hanzi": "辛",
+          "pinyin": "xīn",
+          "element": "jin",
+          "yang": false
+        },
+        "lowerIsStem": true,
+        "general": {
+          "id": "tiankong",
+          "hanzi": "天空",
+          "pinyin": "tiānkōng"
+        }
+      },
+      {
+        "number": 2,
+        "upper": {
+          "index": 6,
+          "id": "wu",
+          "hanzi": "午",
+          "pinyin": "wǔ",
+          "element": "huo",
+          "yang": true
+        },
+        "lower": {
+          "index": 8,
+          "id": "shen",
+          "hanzi": "申",
+          "pinyin": "shēn",
+          "element": "jin",
+          "yang": true
+        },
+        "lowerIsStem": false,
+        "general": {
+          "id": "gouchen",
+          "hanzi": "勾陳",
+          "pinyin": "gōuchén"
+        }
+      },
+      {
+        "number": 3,
+        "upper": {
+          "index": 3,
+          "id": "mao",
+          "hanzi": "卯",
+          "pinyin": "mǎo",
+          "element": "mu",
+          "yang": false
+        },
+        "lower": {
+          "index": 5,
+          "id": "si",
+          "hanzi": "巳",
+          "pinyin": "sì",
+          "element": "huo",
+          "yang": false
+        },
+        "lowerIsStem": false,
+        "general": {
+          "id": "tengshe",
+          "hanzi": "螣蛇",
+          "pinyin": "téngshé"
+        }
+      },
+      {
+        "number": 4,
+        "upper": {
+          "index": 1,
+          "id": "chou",
+          "hanzi": "丑",
+          "pinyin": "chǒu",
+          "element": "tu",
+          "yang": false
+        },
+        "lower": {
+          "index": 3,
+          "id": "mao",
+          "hanzi": "卯",
+          "pinyin": "mǎo",
+          "element": "mu",
+          "yang": false
+        },
+        "lowerIsStem": false,
+        "general": {
+          "id": "tianhou",
+          "hanzi": "天后",
+          "pinyin": "tiānhòu"
+        }
+      }
+    ],
+    "transmissions": [
+      {
+        "position": "chu",
+        "branch": {
+          "index": 1,
+          "id": "chou",
+          "hanzi": "丑",
+          "pinyin": "chǒu",
+          "element": "tu",
+          "yang": false
+        },
+        "general": {
+          "id": "tianhou",
+          "hanzi": "天后",
+          "pinyin": "tiānhòu"
+        },
+        "empty": false,
+        "hiddenStem": {
+          "index": 3,
+          "id": "ding",
+          "hanzi": "丁",
+          "pinyin": "dīng",
+          "element": "huo",
+          "yang": false
+        }
+      },
+      {
+        "position": "zhong",
+        "branch": {
+          "index": 11,
+          "id": "hai",
+          "hanzi": "亥",
+          "pinyin": "hài",
+          "element": "shui",
+          "yang": false
+        },
+        "general": {
+          "id": "xuanwu",
+          "hanzi": "玄武",
+          "pinyin": "xuánwǔ"
+        },
+        "empty": false,
+        "hiddenStem": {
+          "index": 1,
+          "id": "yi",
+          "hanzi": "乙",
+          "pinyin": "yǐ",
+          "element": "mu",
+          "yang": false
+        }
+      },
+      {
+        "position": "mo",
+        "branch": {
+          "index": 9,
+          "id": "you",
+          "hanzi": "酉",
+          "pinyin": "yǒu",
+          "element": "jin",
+          "yang": false
+        },
+        "general": {
+          "id": "baihu",
+          "hanzi": "白虎",
+          "pinyin": "báihǔ"
+        },
+        "empty": true
+      }
+    ],
+    "rule": "zeike",
+    "options": {
+      "yuejiang": "zhongqi",
+      "guiren": "chou",
+      "zhouye": "branch"
+    },
+    "keti": "zhongshen"
+  }
+}

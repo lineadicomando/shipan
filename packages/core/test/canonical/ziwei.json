@@ -1,0 +1,2453 @@
+{
+  "the canonical birth": {
+    "lunar": {
+      "year": 1968,
+      "month": 2,
+      "leap": false,
+      "day": 14
+    },
+    "countedMonth": 2,
+    "hourBranch": {
+      "index": 7,
+      "id": "wei",
+      "hanzi": "未",
+      "pinyin": "wèi",
+      "element": "tu",
+      "yang": false
+    },
+    "yearPillar": {
+      "index": 44,
+      "stem": {
+        "index": 4,
+        "id": "wu",
+        "hanzi": "戊",
+        "pinyin": "wù",
+        "element": "tu",
+        "yang": true
+      },
+      "branch": {
+        "index": 8,
+        "id": "shen",
+        "hanzi": "申",
+        "pinyin": "shēn",
+        "element": "jin",
+        "yang": true
+      },
+      "hanzi": "戊申",
+      "pinyin": "wùshēn",
+      "id": "wushen"
+    },
+    "minggongPillar": {
+      "index": 56,
+      "stem": {
+        "index": 6,
+        "id": "geng",
+        "hanzi": "庚",
+        "pinyin": "gēng",
+        "element": "jin",
+        "yang": true
+      },
+      "branch": {
+        "index": 8,
+        "id": "shen",
+        "hanzi": "申",
+        "pinyin": "shēn",
+        "element": "jin",
+        "yang": true
+      },
+      "hanzi": "庚申",
+      "pinyin": "gēngshēn",
+      "id": "gengshen"
+    },
+    "nayin": {
+      "id": "shiliumu",
+      "hanzi": "石榴木",
+      "pinyin": "shíliúmù",
+      "element": "mu"
+    },
+    "bureau": {
+      "id": "musanju",
+      "hanzi": "木三局",
+      "pinyin": "mùsānjú",
+      "number": 3
+    },
+    "palaces": [
+      {
+        "house": {
+          "id": "ming",
+          "hanzi": "命宮",
+          "pinyin": "mìnggōng"
+        },
+        "branch": {
+          "index": 8,
+          "id": "shen",
+          "hanzi": "申",
+          "pinyin": "shēn",
+          "element": "jin",
+          "yang": true
+        },
+        "stem": {
+          "index": 6,
+          "id": "geng",
+          "hanzi": "庚",
+          "pinyin": "gēng",
+          "element": "jin",
+          "yang": true
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "bazuo",
+              "hanzi": "八座",
+              "pinyin": "bāzuò",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": [
+          1
+        ]
+      },
+      {
+        "house": {
+          "id": "xiongdi",
+          "hanzi": "兄弟",
+          "pinyin": "xiōngdì"
+        },
+        "branch": {
+          "index": 7,
+          "id": "wei",
+          "hanzi": "未",
+          "pinyin": "wèi",
+          "element": "tu",
+          "yang": false
+        },
+        "stem": {
+          "index": 5,
+          "id": "ji",
+          "hanzi": "己",
+          "pinyin": "jǐ",
+          "element": "tu",
+          "yang": false
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "tianyue",
+              "hanzi": "天鉞",
+              "pinyin": "tiānyuè",
+              "starClass": "aid",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "hongluan",
+              "hanzi": "紅鸞",
+              "pinyin": "hóngluán",
+              "starClass": "minor",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": []
+      },
+      {
+        "house": {
+          "id": "qiqie",
+          "hanzi": "妻妾",
+          "pinyin": "qīqiè"
+        },
+        "branch": {
+          "index": 6,
+          "id": "wu",
+          "hanzi": "午",
+          "pinyin": "wǔ",
+          "element": "huo",
+          "yang": true
+        },
+        "stem": {
+          "index": 4,
+          "id": "wu",
+          "hanzi": "戊",
+          "pinyin": "wù",
+          "element": "tu",
+          "yang": true
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "qingyang",
+              "hanzi": "擎羊",
+              "pinyin": "qíngyáng",
+              "starClass": "malefic",
+              "elements": [
+                "jin"
+              ],
+              "zhengyao": false
+            },
+            "brightness": {
+              "id": "luoxian",
+              "hanzi": "落陷",
+              "pinyin": "luòxiàn"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "dijie",
+              "hanzi": "地劫",
+              "pinyin": "dìjié",
+              "starClass": "malefic",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "santai",
+              "hanzi": "三台",
+              "pinyin": "sāntái",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": [
+          4
+        ]
+      },
+      {
+        "house": {
+          "id": "zinu",
+          "hanzi": "子女",
+          "pinyin": "zǐnǚ"
+        },
+        "branch": {
+          "index": 5,
+          "id": "si",
+          "hanzi": "巳",
+          "pinyin": "sì",
+          "element": "huo",
+          "yang": false
+        },
+        "stem": {
+          "index": 3,
+          "id": "ding",
+          "hanzi": "丁",
+          "pinyin": "dīng",
+          "element": "huo",
+          "yang": false
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "ziwei",
+              "hanzi": "紫微",
+              "pinyin": "zǐwēi",
+              "starClass": "main",
+              "elements": [
+                "tu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "wang",
+              "hanzi": "旺",
+              "pinyin": "wàng"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "qisha",
+              "hanzi": "七殺",
+              "pinyin": "qīshā",
+              "starClass": "main",
+              "elements": [
+                "huo",
+                "jin"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "pinghe",
+              "hanzi": "平和",
+              "pinyin": "pínghé"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "zuofu",
+              "hanzi": "左輔",
+              "pinyin": "zuǒfǔ",
+              "starClass": "aid",
+              "elements": [
+                "tu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "lucun",
+              "hanzi": "祿存",
+              "pinyin": "lùcún",
+              "starClass": "aid",
+              "elements": [
+                "tu"
+              ],
+              "zhengyao": false
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": []
+      },
+      {
+        "house": {
+          "id": "caibo",
+          "hanzi": "財帛",
+          "pinyin": "cáibó"
+        },
+        "branch": {
+          "index": 4,
+          "id": "chen",
+          "hanzi": "辰",
+          "pinyin": "chén",
+          "element": "tu",
+          "yang": true
+        },
+        "stem": {
+          "index": 2,
+          "id": "bing",
+          "hanzi": "丙",
+          "pinyin": "bǐng",
+          "element": "huo",
+          "yang": true
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "tianji",
+              "hanzi": "天機",
+              "pinyin": "tiānjī",
+              "starClass": "main",
+              "elements": [
+                "mu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "liyi",
+              "hanzi": "利益",
+              "pinyin": "lìyì"
+            },
+            "transform": {
+              "id": "huaji",
+              "hanzi": "化忌",
+              "pinyin": "huàjì"
+            }
+          },
+          {
+            "star": {
+              "id": "tianliang",
+              "hanzi": "天梁",
+              "pinyin": "tiānliáng",
+              "starClass": "main",
+              "elements": [
+                "tu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tuoluo",
+              "hanzi": "陀羅",
+              "pinyin": "tuóluó",
+              "starClass": "malefic",
+              "elements": [
+                "jin"
+              ],
+              "zhengyao": false
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tiankong",
+              "hanzi": "天空",
+              "pinyin": "tiānkōng",
+              "starClass": "malefic",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": [
+          2
+        ]
+      },
+      {
+        "house": {
+          "id": "jie",
+          "hanzi": "疾厄",
+          "pinyin": "jíè"
+        },
+        "branch": {
+          "index": 3,
+          "id": "mao",
+          "hanzi": "卯",
+          "pinyin": "mǎo",
+          "element": "mu",
+          "yang": false
+        },
+        "stem": {
+          "index": 1,
+          "id": "yi",
+          "hanzi": "乙",
+          "pinyin": "yǐ",
+          "element": "mu",
+          "yang": false
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "tianxiang",
+              "hanzi": "天相",
+              "pinyin": "tiānxiàng",
+              "starClass": "main",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "luoxian",
+              "hanzi": "落陷",
+              "pinyin": "luòxiàn"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "wenchang",
+              "hanzi": "文昌",
+              "pinyin": "wénchāng",
+              "starClass": "aid",
+              "elements": [
+                "jin"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "liyi",
+              "hanzi": "利益",
+              "pinyin": "lìyì"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianshi",
+              "hanzi": "天使",
+              "pinyin": "tiānshǐ",
+              "starClass": "minor",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "xunzhongkongwang",
+              "hanzi": "旬中空亡",
+              "pinyin": "xúnzhōngkōngwáng",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": [
+          3
+        ]
+      },
+      {
+        "house": {
+          "id": "qianyi",
+          "hanzi": "遷移",
+          "pinyin": "qiānyí"
+        },
+        "branch": {
+          "index": 2,
+          "id": "yin",
+          "hanzi": "寅",
+          "pinyin": "yín",
+          "element": "mu",
+          "yang": true
+        },
+        "stem": {
+          "index": 0,
+          "id": "jia",
+          "hanzi": "甲",
+          "pinyin": "jiǎ",
+          "element": "mu",
+          "yang": true
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "taiyang",
+              "hanzi": "太陽",
+              "pinyin": "tàiyáng",
+              "starClass": "main",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "wang",
+              "hanzi": "旺",
+              "pinyin": "wàng"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "jumen",
+              "hanzi": "巨門",
+              "pinyin": "jùmén",
+              "starClass": "main",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianma",
+              "hanzi": "天馬",
+              "pinyin": "tiānmǎ",
+              "starClass": "aid",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "huoxing",
+              "hanzi": "火星",
+              "pinyin": "huǒxīng",
+              "starClass": "malefic",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianyao",
+              "hanzi": "天姚",
+              "pinyin": "tiānyáo",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianxu",
+              "hanzi": "天虛",
+              "pinyin": "tiānxū",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "fengge",
+              "hanzi": "鳳閣",
+              "pinyin": "fènggé",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "jieshen",
+              "hanzi": "解神",
+              "pinyin": "jiěshén",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "xunzhongkongwang",
+              "hanzi": "旬中空亡",
+              "pinyin": "xúnzhōngkōngwáng",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": []
+      },
+      {
+        "house": {
+          "id": "nupu",
+          "hanzi": "奴僕",
+          "pinyin": "núpú"
+        },
+        "branch": {
+          "index": 1,
+          "id": "chou",
+          "hanzi": "丑",
+          "pinyin": "chǒu",
+          "element": "tu",
+          "yang": false
+        },
+        "stem": {
+          "index": 1,
+          "id": "yi",
+          "hanzi": "乙",
+          "pinyin": "yǐ",
+          "element": "mu",
+          "yang": false
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "wuqu",
+              "hanzi": "武曲",
+              "pinyin": "wǔqǔ",
+              "starClass": "main",
+              "elements": [
+                "jin"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tanlang",
+              "hanzi": "貪狼",
+              "pinyin": "tānláng",
+              "starClass": "main",
+              "elements": [
+                "shui",
+                "mu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": {
+              "id": "hualu",
+              "hanzi": "化祿",
+              "pinyin": "huàlù"
+            }
+          },
+          {
+            "star": {
+              "id": "tiankui",
+              "hanzi": "天魁",
+              "pinyin": "tiānkuí",
+              "starClass": "aid",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianshang",
+              "hanzi": "天傷",
+              "pinyin": "tiānshāng",
+              "starClass": "minor",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "taifu",
+              "hanzi": "台輔",
+              "pinyin": "táifǔ",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianxi",
+              "hanzi": "天喜",
+              "pinyin": "tiānxǐ",
+              "starClass": "minor",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "jielukongwang",
+              "hanzi": "截路空亡",
+              "pinyin": "jiélùkōngwáng",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": []
+      },
+      {
+        "house": {
+          "id": "guanlu",
+          "hanzi": "官祿",
+          "pinyin": "guānlù"
+        },
+        "branch": {
+          "index": 0,
+          "id": "zi",
+          "hanzi": "子",
+          "pinyin": "zǐ",
+          "element": "shui",
+          "yang": true
+        },
+        "stem": {
+          "index": 0,
+          "id": "jia",
+          "hanzi": "甲",
+          "pinyin": "jiǎ",
+          "element": "mu",
+          "yang": true
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "tiantong",
+              "hanzi": "天同",
+              "pinyin": "tiāntóng",
+              "starClass": "main",
+              "elements": [
+                "shui",
+                "jin"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "wang",
+              "hanzi": "旺",
+              "pinyin": "wàng"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "taiyin",
+              "hanzi": "太陰",
+              "pinyin": "tàiyīn",
+              "starClass": "main",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": {
+              "id": "huaquan",
+              "hanzi": "化權",
+              "pinyin": "huàquán"
+            }
+          },
+          {
+            "star": {
+              "id": "longchi",
+              "hanzi": "龍池",
+              "pinyin": "lóngchí",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "jielukongwang",
+              "hanzi": "截路空亡",
+              "pinyin": "jiélùkōngwáng",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": [
+          6
+        ]
+      },
+      {
+        "house": {
+          "id": "tianzhai",
+          "hanzi": "田宅",
+          "pinyin": "tiánzhái"
+        },
+        "branch": {
+          "index": 11,
+          "id": "hai",
+          "hanzi": "亥",
+          "pinyin": "hài",
+          "element": "shui",
+          "yang": false
+        },
+        "stem": {
+          "index": 9,
+          "id": "gui",
+          "hanzi": "癸",
+          "pinyin": "guǐ",
+          "element": "shui",
+          "yang": false
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "tianfu",
+              "hanzi": "天府",
+              "pinyin": "tiānfǔ",
+              "starClass": "main",
+              "elements": [
+                "tu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "dedi",
+              "hanzi": "得地",
+              "pinyin": "dédì"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "wenqu",
+              "hanzi": "文曲",
+              "pinyin": "wénqǔ",
+              "starClass": "aid",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "wang",
+              "hanzi": "旺",
+              "pinyin": "wàng"
+            },
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": []
+      },
+      {
+        "house": {
+          "id": "fude",
+          "hanzi": "福德",
+          "pinyin": "fúdé"
+        },
+        "branch": {
+          "index": 10,
+          "id": "xu",
+          "hanzi": "戌",
+          "pinyin": "xū",
+          "element": "tu",
+          "yang": true
+        },
+        "stem": {
+          "index": 8,
+          "id": "ren",
+          "hanzi": "壬",
+          "pinyin": "rén",
+          "element": "shui",
+          "yang": true
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "lingxing",
+              "hanzi": "鈴星",
+              "pinyin": "língxīng",
+              "starClass": "malefic",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianxing",
+              "hanzi": "天刑",
+              "pinyin": "tiānxíng",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianku",
+              "hanzi": "天哭",
+              "pinyin": "tiānkū",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": true,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": [
+          5
+        ]
+      },
+      {
+        "house": {
+          "id": "fumu",
+          "hanzi": "父母",
+          "pinyin": "fùmǔ"
+        },
+        "branch": {
+          "index": 9,
+          "id": "you",
+          "hanzi": "酉",
+          "pinyin": "yǒu",
+          "element": "jin",
+          "yang": false
+        },
+        "stem": {
+          "index": 7,
+          "id": "xin",
+          "hanzi": "辛",
+          "pinyin": "xīn",
+          "element": "jin",
+          "yang": false
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "lianzhen",
+              "hanzi": "廉貞",
+              "pinyin": "liánzhēn",
+              "starClass": "main",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "pinghe",
+              "hanzi": "平和",
+              "pinyin": "pínghé"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "pojun",
+              "hanzi": "破軍",
+              "pinyin": "pòjūn",
+              "starClass": "main",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "luoxian",
+              "hanzi": "落陷",
+              "pinyin": "luòxiàn"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "youbi",
+              "hanzi": "右弼",
+              "pinyin": "yòubì",
+              "starClass": "aid",
+              "elements": [
+                "tu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": null,
+            "transform": {
+              "id": "huake",
+              "hanzi": "化科",
+              "pinyin": "huàkē"
+            }
+          },
+          {
+            "star": {
+              "id": "fenggao",
+              "hanzi": "封誥",
+              "pinyin": "fēnggào",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": []
+      }
+    ],
+    "bodyBranch": {
+      "index": 10,
+      "id": "xu",
+      "hanzi": "戌",
+      "pinyin": "xū",
+      "element": "tu",
+      "yang": true
+    },
+    "lifeMaster": {
+      "id": "lianzhen",
+      "hanzi": "廉貞",
+      "pinyin": "liánzhēn",
+      "starClass": "main",
+      "elements": [
+        "huo"
+      ],
+      "zhengyao": true
+    },
+    "bodyMaster": {
+      "id": "tianliang",
+      "hanzi": "天梁",
+      "pinyin": "tiānliáng",
+      "starClass": "main",
+      "elements": [
+        "tu"
+      ],
+      "zhengyao": true
+    },
+    "options": {
+      "leapMonth": "following",
+      "sihua": "quanshu",
+      "huoling": "fixed",
+      "daxian": "adjacent",
+      "yearBoundary": "chunjie"
+    }
+  },
+  "2023-03-25, 閏二月": {
+    "lunar": {
+      "year": 2023,
+      "month": 2,
+      "leap": true,
+      "day": 4
+    },
+    "countedMonth": 3,
+    "hourBranch": {
+      "index": 6,
+      "id": "wu",
+      "hanzi": "午",
+      "pinyin": "wǔ",
+      "element": "huo",
+      "yang": true
+    },
+    "yearPillar": {
+      "index": 39,
+      "stem": {
+        "index": 9,
+        "id": "gui",
+        "hanzi": "癸",
+        "pinyin": "guǐ",
+        "element": "shui",
+        "yang": false
+      },
+      "branch": {
+        "index": 3,
+        "id": "mao",
+        "hanzi": "卯",
+        "pinyin": "mǎo",
+        "element": "mu",
+        "yang": false
+      },
+      "hanzi": "癸卯",
+      "pinyin": "guǐmǎo",
+      "id": "guimao"
+    },
+    "minggongPillar": {
+      "index": 58,
+      "stem": {
+        "index": 8,
+        "id": "ren",
+        "hanzi": "壬",
+        "pinyin": "rén",
+        "element": "shui",
+        "yang": true
+      },
+      "branch": {
+        "index": 10,
+        "id": "xu",
+        "hanzi": "戌",
+        "pinyin": "xū",
+        "element": "tu",
+        "yang": true
+      },
+      "hanzi": "壬戌",
+      "pinyin": "rénxū",
+      "id": "renxu"
+    },
+    "nayin": {
+      "id": "dahaishui",
+      "hanzi": "大海水",
+      "pinyin": "dàhǎishuǐ",
+      "element": "shui"
+    },
+    "bureau": {
+      "id": "shuierju",
+      "hanzi": "水二局",
+      "pinyin": "shuǐèrjú",
+      "number": 2
+    },
+    "palaces": [
+      {
+        "house": {
+          "id": "ming",
+          "hanzi": "命宮",
+          "pinyin": "mìnggōng"
+        },
+        "branch": {
+          "index": 10,
+          "id": "xu",
+          "hanzi": "戌",
+          "pinyin": "xū",
+          "element": "tu",
+          "yang": true
+        },
+        "stem": {
+          "index": 8,
+          "id": "ren",
+          "hanzi": "壬",
+          "pinyin": "rén",
+          "element": "shui",
+          "yang": true
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "tiantong",
+              "hanzi": "天同",
+              "pinyin": "tiāntóng",
+              "starClass": "main",
+              "elements": [
+                "shui",
+                "jin"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "pinghe",
+              "hanzi": "平和",
+              "pinyin": "pínghé"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "wenqu",
+              "hanzi": "文曲",
+              "pinyin": "wénqǔ",
+              "starClass": "aid",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "luoxian",
+              "hanzi": "落陷",
+              "pinyin": "luòxiàn"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "lingxing",
+              "hanzi": "鈴星",
+              "pinyin": "língxīng",
+              "starClass": "malefic",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          }
+        ],
+        "body": true,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": [
+          1
+        ]
+      },
+      {
+        "house": {
+          "id": "xiongdi",
+          "hanzi": "兄弟",
+          "pinyin": "xiōngdì"
+        },
+        "branch": {
+          "index": 9,
+          "id": "you",
+          "hanzi": "酉",
+          "pinyin": "yǒu",
+          "element": "jin",
+          "yang": false
+        },
+        "stem": {
+          "index": 7,
+          "id": "xin",
+          "hanzi": "辛",
+          "pinyin": "xīn",
+          "element": "jin",
+          "yang": false
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "huoxing",
+              "hanzi": "火星",
+              "pinyin": "huǒxīng",
+              "starClass": "malefic",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": {
+              "id": "dedi",
+              "hanzi": "得地",
+              "pinyin": "dédì"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "santai",
+              "hanzi": "三台",
+              "pinyin": "sāntái",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianxu",
+              "hanzi": "天虛",
+              "pinyin": "tiānxū",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": []
+      },
+      {
+        "house": {
+          "id": "qiqie",
+          "hanzi": "妻妾",
+          "pinyin": "qīqiè"
+        },
+        "branch": {
+          "index": 8,
+          "id": "shen",
+          "hanzi": "申",
+          "pinyin": "shēn",
+          "element": "jin",
+          "yang": true
+        },
+        "stem": {
+          "index": 6,
+          "id": "geng",
+          "hanzi": "庚",
+          "pinyin": "gēng",
+          "element": "jin",
+          "yang": true
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "youbi",
+              "hanzi": "右弼",
+              "pinyin": "yòubì",
+              "starClass": "aid",
+              "elements": [
+                "tu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "fenggao",
+              "hanzi": "封誥",
+              "pinyin": "fēnggào",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": [
+          4
+        ]
+      },
+      {
+        "house": {
+          "id": "zinu",
+          "hanzi": "子女",
+          "pinyin": "zǐnǚ"
+        },
+        "branch": {
+          "index": 7,
+          "id": "wei",
+          "hanzi": "未",
+          "pinyin": "wèi",
+          "element": "tu",
+          "yang": false
+        },
+        "stem": {
+          "index": 5,
+          "id": "ji",
+          "hanzi": "己",
+          "pinyin": "jǐ",
+          "element": "tu",
+          "yang": false
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "lianzhen",
+              "hanzi": "廉貞",
+              "pinyin": "liánzhēn",
+              "starClass": "main",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "liyi",
+              "hanzi": "利益",
+              "pinyin": "lìyì"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "qisha",
+              "hanzi": "七殺",
+              "pinyin": "qīshā",
+              "starClass": "main",
+              "elements": [
+                "huo",
+                "jin"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "longchi",
+              "hanzi": "龍池",
+              "pinyin": "lóngchí",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "fengge",
+              "hanzi": "鳳閣",
+              "pinyin": "fènggé",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "jieshen",
+              "hanzi": "解神",
+              "pinyin": "jiěshén",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": []
+      },
+      {
+        "house": {
+          "id": "caibo",
+          "hanzi": "財帛",
+          "pinyin": "cáibó"
+        },
+        "branch": {
+          "index": 6,
+          "id": "wu",
+          "hanzi": "午",
+          "pinyin": "wǔ",
+          "element": "huo",
+          "yang": true
+        },
+        "stem": {
+          "index": 4,
+          "id": "wu",
+          "hanzi": "戊",
+          "pinyin": "wù",
+          "element": "tu",
+          "yang": true
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "tianliang",
+              "hanzi": "天梁",
+              "pinyin": "tiānliáng",
+              "starClass": "main",
+              "elements": [
+                "tu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "zuofu",
+              "hanzi": "左輔",
+              "pinyin": "zuǒfǔ",
+              "starClass": "aid",
+              "elements": [
+                "tu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianxi",
+              "hanzi": "天喜",
+              "pinyin": "tiānxǐ",
+              "starClass": "minor",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": [
+          2
+        ]
+      },
+      {
+        "house": {
+          "id": "jie",
+          "hanzi": "疾厄",
+          "pinyin": "jíè"
+        },
+        "branch": {
+          "index": 5,
+          "id": "si",
+          "hanzi": "巳",
+          "pinyin": "sì",
+          "element": "huo",
+          "yang": false
+        },
+        "stem": {
+          "index": 3,
+          "id": "ding",
+          "hanzi": "丁",
+          "pinyin": "dīng",
+          "element": "huo",
+          "yang": false
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "tianxiang",
+              "hanzi": "天相",
+              "pinyin": "tiānxiàng",
+              "starClass": "main",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "dedi",
+              "hanzi": "得地",
+              "pinyin": "dédì"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianyue",
+              "hanzi": "天鉞",
+              "pinyin": "tiānyuè",
+              "starClass": "aid",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianma",
+              "hanzi": "天馬",
+              "pinyin": "tiānmǎ",
+              "starClass": "aid",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "dijie",
+              "hanzi": "地劫",
+              "pinyin": "dìjié",
+              "starClass": "malefic",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tiankong",
+              "hanzi": "天空",
+              "pinyin": "tiānkōng",
+              "starClass": "malefic",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianshi",
+              "hanzi": "天使",
+              "pinyin": "tiānshǐ",
+              "starClass": "minor",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "bazuo",
+              "hanzi": "八座",
+              "pinyin": "bāzuò",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "xunzhongkongwang",
+              "hanzi": "旬中空亡",
+              "pinyin": "xúnzhōngkōngwáng",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": [
+          3
+        ]
+      },
+      {
+        "house": {
+          "id": "qianyi",
+          "hanzi": "遷移",
+          "pinyin": "qiānyí"
+        },
+        "branch": {
+          "index": 4,
+          "id": "chen",
+          "hanzi": "辰",
+          "pinyin": "chén",
+          "element": "tu",
+          "yang": true
+        },
+        "stem": {
+          "index": 2,
+          "id": "bing",
+          "hanzi": "丙",
+          "pinyin": "bǐng",
+          "element": "huo",
+          "yang": true
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "jumen",
+              "hanzi": "巨門",
+              "pinyin": "jùmén",
+              "starClass": "main",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "luoxian",
+              "hanzi": "落陷",
+              "pinyin": "luòxiàn"
+            },
+            "transform": {
+              "id": "huaquan",
+              "hanzi": "化權",
+              "pinyin": "huàquán"
+            }
+          },
+          {
+            "star": {
+              "id": "wenchang",
+              "hanzi": "文昌",
+              "pinyin": "wénchāng",
+              "starClass": "aid",
+              "elements": [
+                "jin"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "dedi",
+              "hanzi": "得地",
+              "pinyin": "dédì"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "xunzhongkongwang",
+              "hanzi": "旬中空亡",
+              "pinyin": "xúnzhōngkōngwáng",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": []
+      },
+      {
+        "house": {
+          "id": "nupu",
+          "hanzi": "奴僕",
+          "pinyin": "núpú"
+        },
+        "branch": {
+          "index": 3,
+          "id": "mao",
+          "hanzi": "卯",
+          "pinyin": "mǎo",
+          "element": "mu",
+          "yang": false
+        },
+        "stem": {
+          "index": 1,
+          "id": "yi",
+          "hanzi": "乙",
+          "pinyin": "yǐ",
+          "element": "mu",
+          "yang": false
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "ziwei",
+              "hanzi": "紫微",
+              "pinyin": "zǐwēi",
+              "starClass": "main",
+              "elements": [
+                "tu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "wang",
+              "hanzi": "旺",
+              "pinyin": "wàng"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tanlang",
+              "hanzi": "貪狼",
+              "pinyin": "tānláng",
+              "starClass": "main",
+              "elements": [
+                "shui",
+                "mu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "liyi",
+              "hanzi": "利益",
+              "pinyin": "lìyì"
+            },
+            "transform": {
+              "id": "huaji",
+              "hanzi": "化忌",
+              "pinyin": "huàjì"
+            }
+          },
+          {
+            "star": {
+              "id": "tiankui",
+              "hanzi": "天魁",
+              "pinyin": "tiānkuí",
+              "starClass": "aid",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianshang",
+              "hanzi": "天傷",
+              "pinyin": "tiānshāng",
+              "starClass": "minor",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianyao",
+              "hanzi": "天姚",
+              "pinyin": "tiānyáo",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianku",
+              "hanzi": "天哭",
+              "pinyin": "tiānkū",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": []
+      },
+      {
+        "house": {
+          "id": "guanlu",
+          "hanzi": "官祿",
+          "pinyin": "guānlù"
+        },
+        "branch": {
+          "index": 2,
+          "id": "yin",
+          "hanzi": "寅",
+          "pinyin": "yín",
+          "element": "mu",
+          "yang": true
+        },
+        "stem": {
+          "index": 0,
+          "id": "jia",
+          "hanzi": "甲",
+          "pinyin": "jiǎ",
+          "element": "mu",
+          "yang": true
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "tianji",
+              "hanzi": "天機",
+              "pinyin": "tiānjī",
+              "starClass": "main",
+              "elements": [
+                "mu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "dedi",
+              "hanzi": "得地",
+              "pinyin": "dédì"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "taiyin",
+              "hanzi": "太陰",
+              "pinyin": "tàiyīn",
+              "starClass": "main",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "wang",
+              "hanzi": "旺",
+              "pinyin": "wàng"
+            },
+            "transform": {
+              "id": "huake",
+              "hanzi": "化科",
+              "pinyin": "huàkē"
+            }
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": [
+          6
+        ]
+      },
+      {
+        "house": {
+          "id": "tianzhai",
+          "hanzi": "田宅",
+          "pinyin": "tiánzhái"
+        },
+        "branch": {
+          "index": 1,
+          "id": "chou",
+          "hanzi": "丑",
+          "pinyin": "chǒu",
+          "element": "tu",
+          "yang": false
+        },
+        "stem": {
+          "index": 1,
+          "id": "yi",
+          "hanzi": "乙",
+          "pinyin": "yǐ",
+          "element": "mu",
+          "yang": false
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "tianfu",
+              "hanzi": "天府",
+              "pinyin": "tiānfǔ",
+              "starClass": "main",
+              "elements": [
+                "tu"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "qingyang",
+              "hanzi": "擎羊",
+              "pinyin": "qíngyáng",
+              "starClass": "malefic",
+              "elements": [
+                "jin"
+              ],
+              "zhengyao": false
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "jielukongwang",
+              "hanzi": "截路空亡",
+              "pinyin": "jiélùkōngwáng",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": []
+      },
+      {
+        "house": {
+          "id": "fude",
+          "hanzi": "福德",
+          "pinyin": "fúdé"
+        },
+        "branch": {
+          "index": 0,
+          "id": "zi",
+          "hanzi": "子",
+          "pinyin": "zǐ",
+          "element": "shui",
+          "yang": true
+        },
+        "stem": {
+          "index": 0,
+          "id": "jia",
+          "hanzi": "甲",
+          "pinyin": "jiǎ",
+          "element": "mu",
+          "yang": true
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "taiyang",
+              "hanzi": "太陽",
+              "pinyin": "tàiyáng",
+              "starClass": "main",
+              "elements": [
+                "huo"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "luoxian",
+              "hanzi": "落陷",
+              "pinyin": "luòxiàn"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "lucun",
+              "hanzi": "祿存",
+              "pinyin": "lùcún",
+              "starClass": "aid",
+              "elements": [
+                "tu"
+              ],
+              "zhengyao": false
+            },
+            "brightness": {
+              "id": "miao",
+              "hanzi": "廟",
+              "pinyin": "miào"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "taifu",
+              "hanzi": "台輔",
+              "pinyin": "táifǔ",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "hongluan",
+              "hanzi": "紅鸞",
+              "pinyin": "hóngluán",
+              "starClass": "minor",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "jielukongwang",
+              "hanzi": "截路空亡",
+              "pinyin": "jiélùkōngwáng",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": [
+          5
+        ]
+      },
+      {
+        "house": {
+          "id": "fumu",
+          "hanzi": "父母",
+          "pinyin": "fùmǔ"
+        },
+        "branch": {
+          "index": 11,
+          "id": "hai",
+          "hanzi": "亥",
+          "pinyin": "hài",
+          "element": "shui",
+          "yang": false
+        },
+        "stem": {
+          "index": 9,
+          "id": "gui",
+          "hanzi": "癸",
+          "pinyin": "guǐ",
+          "element": "shui",
+          "yang": false
+        },
+        "stars": [
+          {
+            "star": {
+              "id": "wuqu",
+              "hanzi": "武曲",
+              "pinyin": "wǔqǔ",
+              "starClass": "main",
+              "elements": [
+                "jin"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "pinghe",
+              "hanzi": "平和",
+              "pinyin": "pínghé"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "pojun",
+              "hanzi": "破軍",
+              "pinyin": "pòjūn",
+              "starClass": "main",
+              "elements": [
+                "shui"
+              ],
+              "zhengyao": true
+            },
+            "brightness": {
+              "id": "pinghe",
+              "hanzi": "平和",
+              "pinyin": "pínghé"
+            },
+            "transform": {
+              "id": "hualu",
+              "hanzi": "化祿",
+              "pinyin": "huàlù"
+            }
+          },
+          {
+            "star": {
+              "id": "tuoluo",
+              "hanzi": "陀羅",
+              "pinyin": "tuóluó",
+              "starClass": "malefic",
+              "elements": [
+                "jin"
+              ],
+              "zhengyao": false
+            },
+            "brightness": {
+              "id": "luoxian",
+              "hanzi": "落陷",
+              "pinyin": "luòxiàn"
+            },
+            "transform": null
+          },
+          {
+            "star": {
+              "id": "tianxing",
+              "hanzi": "天刑",
+              "pinyin": "tiānxíng",
+              "starClass": "minor",
+              "elements": [],
+              "zhengyao": false
+            },
+            "brightness": null,
+            "transform": null
+          }
+        ],
+        "body": false,
+        "changsheng": null,
+        "boshi": null,
+        "majorLimit": null,
+        "minorLimitAge": null,
+        "childLimit": []
+      }
+    ],
+    "bodyBranch": {
+      "index": 10,
+      "id": "xu",
+      "hanzi": "戌",
+      "pinyin": "xū",
+      "element": "tu",
+      "yang": true
+    },
+    "lifeMaster": {
+      "id": "lucun",
+      "hanzi": "祿存",
+      "pinyin": "lùcún",
+      "starClass": "aid",
+      "elements": [
+        "tu"
+      ],
+      "zhengyao": false
+    },
+    "bodyMaster": {
+      "id": "tiantong",
+      "hanzi": "天同",
+      "pinyin": "tiāntóng",
+      "starClass": "main",
+      "elements": [
+        "shui",
+        "jin"
+      ],
+      "zhengyao": true
+    },
+    "options": {
+      "leapMonth": "following",
+      "sihua": "quanshu",
+      "huoling": "fixed",
+      "daxian": "adjacent",
+      "yearBoundary": "chunjie"
+    }
+  }
+}

@@ -260,6 +260,14 @@ the engine falls back to Moshier, which needs no files.
   `lineadicomando · shipan 0.1.0 (alpha)` — and the version half links to
   `#release` on the notes, which is where what an alpha may change is said. →
   [`docs/architecture.md`](docs/architecture.md)
+- **Which term moves is decided by what an existing answer stopped being, never
+  by how much work a session was.** An address that answers differently moves
+  the second, something shipping that no address answered for moves the third,
+  and a session that ships nothing moves neither; the first is the end of the
+  alpha and not a size. The three questions are in `docs/architecture.md`, the
+  fascicle of six canonical boards in `packages/core/test/canonical/` answers
+  the first of them, and the bump rides in the commit that earned it. →
+  [`docs/architecture.md`](docs/architecture.md)
 - **A link that leaves opens beside the page and carries no referrer.**
   `lib/external.ts` is the whole rule, spread onto the anchor: the page a
   reader is on is a board they are reading, and the address of it is

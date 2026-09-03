@@ -461,3 +461,51 @@ under a saved link or a script written against the API, and where an error is
 reported. `apps/web/test/version.test.ts` holds every workspace to the one
 number, the two constants to their manifests, and the footer to the paragraph
 it points at.
+
+### Which term moves, and the three questions that settle it
+
+**The number is about answers and not about work.** What `#release` promises a
+reader is the only thing it can promise before 1.0.0 — that an update may change
+a parameter, move an address, alter the structure of an API answer or rearrange
+the site — so the version's job is to let them say *when it happened*, and the
+four are the definition rather than four examples. A session that read a
+thousand pages and changed no answer has not moved the number; one that changed
+a single palace has.
+
+Three questions, in this order, and the first «yes» takes it:
+
+| | | |
+|---|---|---|
+| 1 | **Does an address that answered before answer differently?** A different value, a field that appeared or went, a different status | the **second** term |
+| 2 | **Does something ship that no existing address answered for?** A section, an endpoint, a row in the register, a sentence a reader reads | the **third** |
+| 3 | **Does nothing ship?** A comment, a test, a file under `texts/` | **nothing moves**, and the manifests stay where they are |
+
+The order is what makes it mechanical: a session that does both — and most do —
+moves the second, because the stronger promise is the one that broke.
+
+**The first term is the state and not a size.** It moves once, 0 to 1, when the
+four freedoms above end, and `PRERELEASE` stops deriving an alpha from the
+leading zero on the same day. A large release is not a major one; the end of the
+alpha is.
+
+**Question 1 is answered by the machine.** `packages/core/test/canonical/`
+holds six files, one an art, each carrying two boards laid on fixed inputs — the
+canonical instant every example here uses, and one input apiece chosen to sit on
+the branch that art turns on and the canonical instant misses: the other 遁, the
+night 貴人, a 太乙 count that seats both generals in the centre, a birth between
+New Year and 立春, two bodies retrograde, a birth in an intercalary month. **A
+diff to one of those files is question 1 answered, printed rather than judged.**
+`packages/core/test/canonical.test.ts` writes them, and pins them to the Moshier
+ephemeris so that a fixture cannot diff on a download; the same file asserts that
+Swiss Ephemeris, where its files are present, agrees over every number on every
+canonical board to under an arc-second.
+
+The fascicle is not a domain sweep and does not replace one. Each suite beside
+it checks a rule over its domain — 太乙 against 864 printed cells, the pillars
+against two centuries — and this catches the change nobody thought to assert,
+which is the kind a version has to name.
+
+**The bump rides with the change that earned it.** On `main` one commit a
+session is enough, and a commit that moves seven manifests and nothing else is
+exactly the commit that cannot stand up alone. There is no changelog either:
+what changed is `docs/history/`'s subject and what holds is `docs/`'s.

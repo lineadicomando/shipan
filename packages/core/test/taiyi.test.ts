@@ -14,7 +14,7 @@ import {
 } from '../src/taiyi.js';
 
 /**
- * 太乙 is checked against the text that states it, because nothing else can.
+ * 太乙 is checked against the text that states it, and now against more.
  *
  * There is no `lunar-javascript` here. Nothing open computes this board, and
  * the closed programs that do disagree with each other — so the reference is
@@ -26,6 +26,11 @@ import {
  * have — every surface says so — but it is evidence over the whole domain: the
  * tables below cover all one hundred and forty-four rows of both 局, and every
  * quantity in them is produced by the same code the year board is.
+ *
+ * **What is no longer true is that nothing else can.** The last describe block
+ * here is checked against evidence written by nobody teaching the method — a
+ * dynastic annal's eleven dated positions, three Song acts of state, and a
+ * modern study that works six boards from the other lineage's count.
  */
 
 const options: TaiyiOptions = DEFAULT_TAIYI_OPTIONS;
@@ -332,9 +337,10 @@ describe('the 立成 of seventy-two', () => {
  * The boards the text works out in words, each naming its own 局.
  *
  * These are the only place 大將 and 參將 are printed often enough to check,
- * and they are what settles the 參將: the text never states the step, and
- * eleven worked boards put it a quarter turn clockwise from the 大將 without
- * a single exception.
+ * and they are what settled the 參將 before a second witness stated it: this
+ * text never states the step, and fourteen worked instances put it a quarter
+ * turn clockwise from the 大將 without a single exception. The rule that says
+ * so in words is checked further down, against 《統宗》.
  */
 describe('the worked boards', () => {
   const worked = [
@@ -371,7 +377,7 @@ describe('the worked boards', () => {
       ] as const) {
         if (!expected) continue;
         const party = cast[side];
-        expect([party.count, party.general.number, party.assistant?.number]).toEqual([...expected]);
+        expect([party.count, party.general.number, party.assistant.number]).toEqual([...expected]);
       }
     });
   }
@@ -544,11 +550,307 @@ describe('the twenty-six reigns of 卷二', () => {
   });
 });
 
+/**
+ * The checks that do not come from 《太乙金鏡式經》 — the first this board has.
+ *
+ * Everything above is the text auditing itself, which is what the 太乙 section
+ * of `docs/sources.md` says it is worth. These are not: **中國古代星占學**
+ * (盧央, 中國科學技術出版社 2007) 第五章 lays this board out from the two
+ * surviving lineages, quotes eleven dated positions out of a dynastic history,
+ * works six boards through every step, and reads the 五福 against three acts of
+ * the Song government. None of that was written to check an implementation,
+ * which is exactly what makes it one.
+ *
+ * The years are astronomical: 207 BCE is −206.
+ */
+describe('the checks that come from outside the text', () => {
+  /** A year before the era, in the numbering `taiyiBoard` counts in. */
+  const bce = (year: number) => 1 - year;
+
+  /**
+   * 《齊書·武帝紀》 — eleven years, each with the palace 太乙 stood in.
+   *
+   * 蕭子顯 records them for reigns from 漢 to 宋, and 盧央 quotes the passage
+   * whole at p. 469 to adjudicate between the three 上元積年 in circulation:
+   * 《金鏡》 and 《統宗》 give the palace the history gives, 《太乙淘金歌》 is
+   * out by a whole 元 and gives nine where the history says four, 「故不能採納」.
+   *
+   * **This is the only evidence on this board that was not written by somebody
+   * teaching the method.** A court astronomer's figure, entered in an annal for
+   * a dated year, and this engine reproduces all eleven — with the 太歲 of each
+   * agreeing with the reign year that names it, which is what shows the years
+   * were converted right and not merely the palaces guessed.
+   */
+  const ANNALS: readonly { reign: string; year: number; palace: number; sui?: string }[] = [
+    { reign: '漢高五年', year: bce(202), palace: 4, sui: '己亥' },
+    { reign: '晉元興二年', year: 403, palace: 7 },
+    { reign: '晉元興三年', year: 404, palace: 7 },
+    { reign: '宋元嘉元年', year: 424, palace: 6, sui: '甲子' },
+    { reign: '宋元嘉七年', year: 430, palace: 8 },
+    { reign: '宋元嘉十八年', year: 441, palace: 2 },
+    { reign: '宋泰始元年', year: 465, palace: 2, sui: '乙巳' },
+    { reign: '宋泰始二年', year: 466, palace: 3 },
+    { reign: '宋元徽二年', year: 474, palace: 6 },
+    { reign: '宋元徽四年', year: 476, palace: 7 },
+    { reign: '宋升明元年', year: 477, palace: 7, sui: '丁巳' },
+  ];
+
+  it.each(ANNALS)('stands where 《齊書》 puts it in $reign', ({ year, palace, sui }) => {
+    const board = taiyiBoard({ year }, options);
+    expect(board.taiyi.palace.number).toBe(palace);
+    if (sui) expect(board.sui.hanzi).toBe(sui);
+  });
+
+  /**
+   * The boards 盧央 works step by step, each from a stated 積年.
+   *
+   * 589 is the fullest — pp. 469 to 477 run one year through all eight steps of
+   * the 布式 and print the finished figure as 圖 5-7 — and the others come out
+   * of 太乙式格局, where each is worked to name a configuration. `era` is the
+   * 元 the sources address a board by, 「第五壬子元 58 局」: five 元 of seventy-
+   * two to a 周紀, and the engine carries the 紀 and the 局 without ever naming
+   * the 元, so the test derives it from the count the board hands over.
+   */
+  const WORKED: readonly {
+    what: string;
+    year: number;
+    era: number;
+    ju: number;
+    palace: number;
+    wenchang: string;
+    jishen?: string;
+    shiji?: string;
+    host?: readonly [number, number, number];
+    guest?: readonly [number, number, number];
+  }[] = [
+    // 陳後主禎明三年己酉 (589), 第五壬子元 58 局 — the whole 布式, 圖 5-7.
+    // 「主算…1＋8＋3＝12」, 「客算…1＋7＋6＋1＋8＋3＝26」.
+    {
+      what: '陳禎明三年 (589)',
+      year: 589,
+      era: 5,
+      ju: 58,
+      palace: 4,
+      wenchang: '陰德',
+      jishen: '巳',
+      shiji: '天道',
+      host: [12, 2, 6],
+      guest: [26, 6, 8],
+    },
+    // 唐文宗太和四年庚戌 (830), 第四庚子元 11 局 — 關囚. The 天目 stands in
+    // 太乙's own palace, so the count is the opening term alone: 「主算得 4」.
+    // It is the case that settles 陰局 46 of the 立成 from outside the text.
+    {
+      what: '唐太和四年 (830)',
+      year: 830,
+      era: 4,
+      ju: 11,
+      palace: 4,
+      wenchang: '高叢',
+      jishen: '辰',
+      shiji: '陽德',
+      host: [4, 4, 2],
+      guest: [4, 4, 2],
+    },
+    // 漢安帝延光三年甲子 (124), 第四庚子元 25 局 — 外辰擊, and the one case
+    // that puts a whole number of tens to the test: 「客算得 40，客大將居四宮」.
+    {
+      what: '漢延光三年 (124)',
+      year: 124,
+      era: 4,
+      ju: 25,
+      palace: 1,
+      wenchang: '地主',
+      jishen: '寅',
+      shiji: '大義',
+      host: [39, 9, 7],
+      guest: [40, 4, 2],
+    },
+    // 秦始皇三十七年辛卯 (210 BCE), 第四庚子元 52 局 — three 迫 on one board.
+    {
+      what: '秦始皇三十七年 (210 BCE)',
+      year: bce(210),
+      era: 4,
+      ju: 52,
+      palace: 2,
+      wenchang: '天道',
+      host: [39, 9, 7],
+    },
+    // 後晉天福五年庚子 (940), 第五壬子元 49 局 — 格對, and the 客算 25 that
+    // seats both of the guest's generals in the centre. See 杜塞 below.
+    {
+      what: '後晉天福五年 (940)',
+      year: 940,
+      era: 5,
+      ju: 49,
+      palace: 1,
+      wenchang: '太炅',
+      shiji: '太陽',
+      guest: [25, 5, 5],
+    },
+  ];
+
+  it.each(WORKED)('lays $what as 中國古代星占學 works it', (worked) => {
+    const board = taiyiBoard({ year: worked.year }, options);
+    // 元 — five of seventy-two to a 周紀, counted 筭外 like everything here.
+    expect(Math.floor((((board.accumulated.taiyi - 1) % 360) % 360) / 72) + 1).toBe(worked.era);
+    expect(board.ju).toBe(worked.ju);
+    expect(board.taiyi.palace.number).toBe(worked.palace);
+    expect(board.wenchang.hanzi).toBe(worked.wenchang);
+    if (worked.jishen) expect(board.jishen.hanzi).toBe(worked.jishen);
+    if (worked.shiji) expect(board.shiji.hanzi).toBe(worked.shiji);
+    for (const [side, expected] of [
+      ['host', worked.host],
+      ['guest', worked.guest],
+    ] as const) {
+      if (!expected) continue;
+      const party = board[side];
+      expect([party.count, party.general.number, party.assistant.number]).toEqual([...expected]);
+    }
+  });
+
+  /**
+   * 秦二世三年甲午 (207 BCE) — the sixth board, and the one that does not close.
+   *
+   * Everything on it comes out: 局 55, 太乙 in 三宮, 天目 on 武德, 計神 on the
+   * same seat — which is why the page says 「計神與文昌同位」 — 始擊 carried to
+   * 和德 in 太乙's own palace, so 掩; and the guest's 3, which the page states.
+   * The one number that does not is the 主算, printed 二十三 where the
+   * procedure the same chapter gives yields sixteen. 盧央 works no arithmetic
+   * for it, and it is the only one of his six that fails to recompute.
+   *
+   * It is kept as an erratum rather than dropped, on the principle the 立成
+   * already stands on: a fixture edited into agreement has stopped being
+   * evidence, and a divergence written down is worth more than a case removed.
+   */
+  it('agrees with 秦二世三年 (207 BCE) except at the 主算 the page prints', () => {
+    const board = taiyiBoard({ year: bce(207) }, options);
+    expect(board.ju).toBe(55);
+    expect(board.taiyi.palace.number).toBe(3);
+    expect(board.wenchang.hanzi).toBe('武德');
+    expect(board.jishen.hanzi).toBe('申');
+    expect(board.shiji.hanzi).toBe('和德');
+    expect(board.patterns.some((pattern) => pattern.id === 'yan')).toBe(true);
+    expect([board.guest.count, board.guest.general.number]).toEqual([3, 3]);
+    // Printed 二十三; the procedure gives sixteen, and nothing in the chapter
+    // reaches the printed figure.
+    expect(board.host.count).toBe(16);
+  });
+
+  /**
+   * 五福太乙 against three acts of the Song government.
+   *
+   * 周琮's memorial of 1071, in 《宋史·禮志六》: 「五福太乙自國朝雍熙元年
+   * （984）甲申歲入東南巽宮時，修東太乙宮；天聖七年（1029）己巳歲五福太乙入
+   * 西南坤位，修西太乙宮」, and since the 五福 would enter the centre in 1074
+   * he asked for a third temple in the capital. It was built.
+   *
+   * So three dated entries into a palace, ninety years apart, recorded as
+   * decisions of state rather than as worked examples — and the 45-year period
+   * this engine counts with puts the body in each of the three on the year the
+   * archive names.
+   */
+  it.each([
+    { year: 724, palace: '黃始宮', seat: '艮', at: 11 },
+    { year: 984, palace: '黃室宮', seat: '巽', at: 1 },
+    { year: 1029, palace: '黃庭宮', seat: '坤', at: 1 },
+    { year: 1074, palace: '玄師宮', seat: '中', at: 1 },
+  ])('moves 五福 into $palace in $year', ({ year, palace, seat, at }) => {
+    const board = taiyiBoard({ year }, options);
+    expect(board.wufu.palace.hanzi).toBe(palace);
+    expect(board.wufu.palace.palace.hanzi).toBe(seat);
+    expect(board.wufu.year).toBe(at);
+  });
+
+  /**
+   * 三基 against three dates, which the text this engine reads gives none of.
+   *
+   * 卷五's 甲寅 count is the one figure on this board 《金鏡》 never checks
+   * against a year, and `docs/sources.md` said so. 盧央 pp. 501–504 checks all
+   * three bases: 君基 entering 午邦 in 714, the year after 玄宗's accession;
+   * 臣基 entering 午邦 in 642; 民基 in 未邦 in 627 — the last recovered from a
+   * truncated 歲積 by the result the page itself states.
+   */
+  it.each([
+    { year: 714, base: 'jun' as const, branch: '午', at: 1 },
+    { year: 642, base: 'chen' as const, branch: '午', at: 1 },
+    { year: 627, base: 'min' as const, branch: '未', at: 1 },
+  ])('puts the $base base in $branch in $year', ({ year, base, branch, at }) => {
+    const fief = taiyiBoard({ year }, options).sanji[base];
+    expect(fief.branch.hanzi).toBe(branch);
+    expect(fief.year).toBe(at);
+  });
+
+  /**
+   * The other 上元, and what it turns out not to change.
+   *
+   * 《太乙統宗大全》 counts from a 上元 of its own — 公元基數 10 153 917, so
+   * that 940 CE is 歲積 10 154 857, which is the figure 盧央 works that board
+   * from — and 《金鏡》's is 1 936 557. The two differ by 8 217 360, which is
+   * 22 826 × 360 and 342 390 × 24, and every count on this board is taken mod
+   * one or the other. **So a second lineage eight million years away lays the
+   * same board**, and the parameter `epoch` still has one implemented value —
+   * now because the other agrees rather than because nobody had read it.
+   *
+   * It is also what the teaching handout of `docs/sources.md` § "A second
+   * 上元" was counting from: 10 153 917 + 1864 is its own 10 155 781.
+   */
+  it('lays the same board from 《統宗》 as from 《金鏡》', () => {
+    const TONGZONG = 10_153_917;
+    for (const year of [bce(207), 124, 589, 724, 830, 940, 1303, 1864, 1984, 2026, 2044]) {
+      const mine = taiyiBoard({ year }, options).accumulated.taiyi;
+      const theirs = TONGZONG + year;
+      expect((theirs - mine) % 360, `${year} mod 360`).toBe(0);
+      expect((theirs - mine) % 24, `${year} mod 24`).toBe(0);
+    }
+  });
+
+  /**
+   * 參將 — the step 《金鏡》 never states, and 《統宗》 does.
+   *
+   * `docs/sources.md` had it induced off fourteen worked boards, which put it a
+   * quarter turn clockwise from the 大將 without exception. 盧央 p. 476 gives
+   * the rule in words: 「主大將宮數乘以 3，再以 10 除之，所得餘數即為主參將所
+   * 在宮」. The two are the same rule — ×3 mod 10 is that quarter turn on all
+   * eight seats of the ring — so the induction is now transmitted.
+   *
+   * **Where they parted was the centre, and the stated rule answers there.** A
+   * count ending in five seats the 大將 in 五宮, which stands on no ring, and no
+   * board of 《金鏡》 reaches the case; ×3 mod 10 gives five again, and both of
+   * the boards the second witness works that reach it say so — 「主大小將均入中
+   * 宮，是為杜塞」, 「客算得二十五，所以客大小將杜塞」. So the 參將 is always
+   * seated, and where it is seated at the centre it enters no condition, which
+   * is what the ring of eight already said about its 大將.
+   */
+  it('seats every 參將 where ×3 mod 10 puts it, the centre included', () => {
+    let centred = 0;
+    for (const dun of ['yang', 'yin'] as const) {
+      for (let ju = 1; ju <= 72; ju += 1) {
+        const board = taiyiJu(ju, dun);
+        for (const side of [board.host, board.guest]) {
+          expect(side.assistant.number, `${dun} ${ju}`).toBe((side.general.number * 3) % 10);
+          if (side.general.number !== 5) continue;
+          centred += 1;
+          // 杜塞: both of them in 五宮, and neither of them in any condition.
+          // 太乙 never stands there, so there is nothing for them to be at a
+          // distance from, and two bodies meeting there are not 關.
+          expect(side.assistant.number).toBe(5);
+          for (const pattern of board.patterns) {
+            expect(pattern.palace, `${dun} ${ju} ${pattern.id}`).not.toBe(5);
+          }
+        }
+      }
+    }
+    expect(centred).toBeGreaterThan(0);
+  });
+});
+
 describe('the year board', () => {
   it('agrees with the year pillar for two centuries either side of now', () => {
-    // The one check here that does not come from the text: the 太歲 the count
-    // yields is the year pillar every almanac prints, and if the epoch were
-    // wrong by a year this would be the first thing to say so.
+    // The 太歲 the count yields is the year pillar every almanac prints, and
+    // if the epoch were wrong by a year this would be the first thing to say
+    // so. It was the only check here that did not come from the text until the
+    // eleven annal years above arrived beside it.
     for (let year = 1800; year <= 2200; year += 1) {
       expect(taiyiBoard({ year }, options).sui.index).toBe(yearGanzhi(year).index);
     }

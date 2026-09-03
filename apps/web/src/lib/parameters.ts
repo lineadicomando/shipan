@@ -264,7 +264,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'epoch',
     board: 'taiyi',
-    values: ['jinjing'],
+    values: ['jinjing', 'taojin'],
     implemented: ['jinjing'],
     fallback: 'jinjing',
   },
