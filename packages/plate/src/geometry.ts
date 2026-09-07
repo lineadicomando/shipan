@@ -231,17 +231,30 @@ export function layout(size: number, around: Around = {}): Layout {
     ? { band: size * 0.03 + aloudStep * lines + size * 0.012, heading: size * 0.024, first: size * 0.03 + aloudStep * 0.8, step: aloudStep }
     : { band: 0, heading: 0, first: 0, step: aloudStep };
 
-  // The schools under both bands, at the readings' rhythm: it is a list of
-  // the same kind — what was chosen rather than what was found — and a third
-  // rhythm on one sheet would be a third habit for a reader to learn.
+  // The schools under both bands, and at the *configurations'* rhythm rather
+  // than the readings'.
+  //
+  // It sat at the readings' for a phase, on the argument that both are lists
+  // of the same kind. They are not, and the difference is how each is used: a
+  // reading is consulted one name at a time, so it can be the smallest thing
+  // on the paper that is still meant to be read, and a school is a sentence
+  // read through once. Two of them run to a dozen words, and set at a
+  // lookup list's size they were the two lines on the sheet a reader's eye
+  // slid off — which is exactly the half of the drawing that says a board was
+  // laid one way and could have been laid another.
+  //
+  // `schoolStep` is the step of the block above and `font.entry` its size, so
+  // nothing new is invented: the block is set like the configurations, which
+  // are also sentences about this chart.
   const schoolLines = around.schools ?? 0;
+  const schoolStep = step;
   const schools: Schools = schoolLines
     ? {
-        band: size * 0.026 + aloudStep * schoolLines + size * 0.012,
+        band: size * 0.026 + schoolStep * schoolLines + size * 0.012,
         first: 0,
-        step: aloudStep,
+        step: schoolStep,
       }
-    : { band: 0, first: 0, step: aloudStep };
+    : { band: 0, first: 0, step: schoolStep };
 
   // The square, and nothing but the square. No band comes into it: they are
   // written on the paper the square grew, not out of the square.

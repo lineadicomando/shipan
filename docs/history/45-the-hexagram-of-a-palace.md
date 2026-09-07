@@ -73,3 +73,33 @@ the older rule that keeps a dash away from a glyph, which binds both catalogs
 because 一 is a character. The ninety-six dashes already in `it.ts` are a debt in
 `ROADMAP.md` § 6 and no test asserts the rule until they are swept: a guard that
 fails ninety-six times the day it lands tells nobody anything.
+
+## And the block naming the schools, which nobody could read
+
+A separate change, in its own commit. The lines under the drawing that say
+which school laid the board were set at the readings' size and *shrunk* to one
+line each where they would not fit. Two of them are long — the pair of spirits a
+yin board renames, and the palace the 值符 and the 值使 are read at when the
+count puts them in the centre — so the two most consequential sentences on the
+sheet were the two nobody could read.
+
+They are now folded rather than shrunk, at the configurations' size and rhythm
+rather than the readings'. The argument for the readings' rhythm had been that
+both are lists of the same kind; they are not, and the difference is how each is
+used. A reading is consulted one name at a time and can be the smallest thing on
+the paper that is still meant to be read. A school is a sentence read through
+once, and 「A declared default is not a hidden school」 is the whole reason the
+block is on the drawing at all.
+
+`fit.ts` already had `folded` for this, written for the 太乙 note, and its own
+comment states the case: «shrinking a sentence to fit a sheet makes it a
+sentence nobody reads». What was missing was that the block's depth has to be
+known before the layout is settled, so the fold now happens against the
+provisional geometry, which is the same two-pass shape the readings band uses.
+
+**One Italian em dash is left standing.** `divergenceLines` joins a label to its
+value with `—`, and by the rule added above it should not, in Italian. It is not
+a catalog string but a separator in `format.ts`, and what replaces it is a real
+choice rather than a substitution: a colon collides with the colon several of
+the glosses already carry. Left for the sweep, and named here so it is not
+mistaken for an oversight.

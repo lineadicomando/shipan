@@ -1,4 +1,4 @@
-import { escape, fitted, round } from './fit.js';
+import { escape, folded, round } from './fit.js';
 
 /**
  * The lines under a board saying which schools laid it.
@@ -19,7 +19,34 @@ import { escape, fitted, round } from './fit.js';
  * One to a line rather than columned: there are two of these on most boards
  * and four at the most, and a list of four set in columns is a table with one
  * row in it.
+ *
+ * **A line that will not fit is folded and not shrunk.** Two of these run to a
+ * dozen words — the pair of spirits a yin board renames, the palace the centre
+ * lodges in — and shrinking them to one line each is what put the two most
+ * consequential sentences on the sheet at a size nobody reads. `folded` is the
+ * same estimate applied to breaking instead, and the block simply grows by the
+ * lines it takes.
  */
+
+/** One line as it will be set, and whether it opens an entry or continues one. */
+export interface SchoolLine {
+  text: string;
+  /** False on a fold, which is what earns the line its indent. */
+  opens: boolean;
+}
+
+/**
+ * The lines as they will be set: one entry may become two or three.
+ *
+ * Asked before the layout is settled and again when it is drawn, because the
+ * depth of the block is what the fold decides. `ems` is the room in multiples
+ * of the font size, which is how `fit.ts` measures throughout.
+ */
+export function schoolLines(lines: readonly string[], ems: number): SchoolLine[] {
+  return lines.flatMap((line) =>
+    folded(line, ems).map((text, index) => ({ text, opens: index === 0 })),
+  );
+}
 
 /** How much paper the block takes, or zero where there is nothing to say. */
 export function schoolDepth(lines: readonly string[], step: number, air: number): number {
@@ -33,16 +60,22 @@ export interface SchoolBlock {
   first: number;
   step: number;
   size: number;
-  /** Beyond this a line is shrunk rather than allowed to run over. */
+  /** Beyond this a line is folded onto the next rather than allowed to run over. */
   maxWidth: number;
 }
 
 export function drawSchools(lines: readonly string[], block: SchoolBlock): string[] {
-  return lines.map((line, index) => {
-    const size = fitted(line, block.size, block.maxWidth);
+  // Folded here and counted by the caller, which had to fold to know how deep
+  // the block is. Nothing shrinks: every line is set at the one size.
+  return schoolLines(lines, block.maxWidth / block.size).map((line, index) => {
+    // A continuation is indented, so that the eye finds where an entry begins
+    // in a block whose entries are no longer one line each. A hanging indent
+    // and not a hyphen or a bullet: the entries were never marked when they
+    // fitted, and marking them now would be a list where there was a stack.
+    const indent = line.opens ? 0 : block.size;
     return (
-      `<text x="${round(block.x)}" y="${round(block.first + block.step * index)}" ` +
-      `font-size="${round(size)}" class="word">${escape(line)}</text>`
+      `<text x="${round(block.x + indent)}" y="${round(block.first + block.step * index)}" ` +
+      `font-size="${round(block.size)}" class="word">${escape(line.text)}</text>`
     );
   });
 }

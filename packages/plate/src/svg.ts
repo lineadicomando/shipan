@@ -12,7 +12,7 @@ import {
 } from './geometry.js';
 import { FONT_STACK, styleSheet } from './palette.js';
 import { drawReadingColumns, readingDepth, said, type Said } from './readings.js';
-import { drawSchools } from './schools.js';
+import { drawSchools, schoolLines } from './schools.js';
 import type {
   Named,
   PlateChart,
@@ -121,7 +121,14 @@ export function renderChartSvg(chart: PlateChart, options: PlateOptions = {}): s
       })
     : 0;
   const schools = options.schools ?? [];
-  const geometry = layout(size, { ...around, readings: bandLines, schools: schools.length });
+  // Folded before the layout, because a school that runs to two lines costs the
+  // block two: the depth is what the fold decides, so the fold has to happen
+  // first. Measured against the provisional geometry, whose margin and cell do
+  // not depend on either band — the same two-pass shape the readings use.
+  const schoolWidth = provisional.cell * 3;
+  const schoolSize = provisional.font.entry;
+  const schoolDepth = schoolLines(schools, schoolWidth / schoolSize).length;
+  const geometry = layout(size, { ...around, readings: bandLines, schools: schoolDepth });
   const byNumber = new Map(chart.palaces.map((palace) => [palace.palace.number, palace]));
   const marked = markedPalaces(chart);
 
@@ -187,7 +194,7 @@ export function renderChartSvg(chart: PlateChart, options: PlateOptions = {}): s
         x: geometry.margin,
         first: geometry.schools.first,
         step: geometry.schools.step,
-        size: geometry.font.reading,
+        size: geometry.font.entry,
         maxWidth: geometry.cell * 3,
       }),
     );
