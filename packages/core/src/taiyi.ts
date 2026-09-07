@@ -148,6 +148,8 @@ export interface TaiyiPalace {
   hanzi: string;
   /** The trigram said aloud, e.g. `qián`. */
   pinyin: string;
+  /** The trigram drawn, e.g. ☰. Absent for the centre, which is not one. */
+  symbol?: string;
   /** Compass direction. The centre has none. */
   direction: Direction | null;
 }
@@ -165,8 +167,8 @@ const TAIYI_TRIGRAMS: readonly PalaceId[] = [
 ];
 
 export const TAIYI_PALACES: readonly TaiyiPalace[] = TAIYI_TRIGRAMS.map((id, index) => {
-  const { hanzi, pinyin, direction } = PALACES.find((one) => one.id === id) as Palace;
-  return { number: index + 1, id, hanzi, pinyin, direction };
+  const { hanzi, pinyin, symbol, direction } = PALACES.find((one) => one.id === id) as Palace;
+  return { number: index + 1, id, hanzi, pinyin, ...(symbol ? { symbol } : {}), direction };
 });
 
 export function taiyiPalace(number: number): TaiyiPalace {

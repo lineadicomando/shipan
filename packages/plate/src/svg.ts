@@ -285,6 +285,15 @@ function markedPalaces(chart: PlateChart): Map<number, PlatePattern[]> {
  */
 const HANZI_SCALE = 0.75;
 
+/**
+ * How large the trigram is drawn beside the one written.
+ *
+ * Smaller, because the hanzi is the name and this is the same name in the
+ * other hand — but not as small as `HANZI_SCALE`, which is for a glyph
+ * *glossing* a word. Six strokes of ink at 0.75 of a hanzi are a smudge.
+ */
+const SYMBOL_SCALE = 0.85;
+
 /** A hair space, which no renderer collapses the way it collapses a space. */
 const GAP = ' ';
 
@@ -425,10 +434,22 @@ function register(
   // different amount are what stops a column looking like a column.
   const mark = strength ? ` ${STRENGTH_MARKS[strength.id] ?? strength.hanzi}` : '';
 
+  // The trigram drawn, ahead of the trigram written, and smaller: the two are
+  // one name, and a reader who cannot read 巽 can still count ☴'s lines. Set
+  // in the palace's own phase colour rather than faint — it is the name and
+  // not a qualifier of it.
+  const drawn: Run[] = thing.symbol
+    ? [{ text: `${thing.symbol}${GAP}`, scale: SYMBOL_SCALE, className: thing.element }]
+    : [];
+
   const lines = [
-    text(x, glyphLine, [{ text: thing.hanzi, className: thing.element }], geometry.font.glyph, {
-      maxWidth,
-    }),
+    text(
+      x,
+      glyphLine,
+      [...drawn, { text: thing.hanzi, className: thing.element }],
+      geometry.font.glyph,
+      { maxWidth },
+    ),
   ];
 
   const size = geometry.font.word;

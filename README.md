@@ -32,31 +32,33 @@ Four Pillars
 Qi Men chart
   ju                   yang dun 6 · upper yuan 上元 shàngyuán
   concealing 甲 jiǎ    Yin Earth 己 jǐ
-  chief                Pillar 天柱 tiānzhù → southwest 坤 kūn
-  chief gate           Shock 驚門 jīngmén → west 兌 duì
+  chief                Pillar 天柱 tiānzhù → southwest ☷ 坤 kūn
+  chief gate           Shock 驚門 jīngmén → west ☱ 兌 duì
 
 Nine palaces
-  palace               earth               heaven
-  1 north 坎 kǎn       Yang Water 壬 rén   Yang Metal 庚 gēng
-  2 southwest 坤 kūn   Yin Water 癸 guǐ    Yin Earth 己 jǐ
+  palace                 earth               heaven
+  1 north ☵ 坎 kǎn       Yang Water 壬 rén   Yang Metal 庚 gēng
+  2 southwest ☷ 坤 kūn   Yin Water 癸 guǐ    Yin Earth 己 jǐ
   …
-  The centre lodges in 2 southwest 坤 kūn, where its Yin Wood 乙 yǐ is read.
+  The centre lodges in 2 southwest ☷ 坤 kūn, where its Yin Wood 乙 yǐ is read.
 
 What stands in each
-  palace      star                   gate                spirit
-  1 坎 kǎn    Charge 天任 tiānrèn    Rest 休門 xiūmén    Union 六合 liùhé
-  2 坤 kūn    Pillar 天柱 tiānzhù    Death 死門 sǐmén    Chief 值符 zhífú
+  palace       star                   gate                spirit
+  1 ☵ 坎 kǎn   Charge 天任 tiānrèn    Rest 休門 xiūmén    Union 六合 liùhé
+  2 ☷ 坤 kūn   Pillar 天柱 tiānzhù    Death 死門 sǐmén    Chief 值符 zhífú
   …
 
 How each of them stands
-  palace      star                               gate
-  1 坎 kǎn    supported · controlling 我剋 wǒkè  imprisoned · same phase 比和 bǐhé
-  2 坤 kūn    dying · generated 生我 shēngwǒ     supported · same phase 比和 bǐhé
+  palace       star                                 gate
+  1 ☵ 坎 kǎn   supported · controlling 我剋 wǒkè    imprisoned · same phase 比和 bǐhé
+  2 ☷ 坤 kūn   dying · generated 生我 shēngwǒ       supported · same phase 比和 bǐhé
   …
 ```
 
 Every name arrives three ways at once: the word you read, the name as it is
-written, and the name as it is said. None of the three is optional — see
+written, and the name as it is said — and a trigram, which is a figure before
+it is a word, arrives drawn as well: ☵ 坎 kǎn. The centre is the one seat with
+no figure, because 中 is not a trigram. None of the three is optional — see
 [the four kinds of string](#the-four-kinds-of-string).
 
 **Licence AGPL-3.0-or-later**, imposed by Swiss Ephemeris. Every dependency

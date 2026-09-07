@@ -42,7 +42,7 @@ export interface PngOptions extends Omit<PlateOptions, 'scheme'> {
 export function renderChartPng(chart: PlateChart, options: PngOptions = {}): Buffer {
   assertGlyphsRender(options.captions?.readings !== undefined);
   const scheme = options.scheme ?? 'light';
-  const svg = renderChartSvg(chart, {
+  const svg = renderChartSvg(undrawn(chart), {
     ...options,
     // The stylesheet resolves to one scheme: custom properties survive
     // rasterisation, media queries do not.
@@ -57,7 +57,37 @@ export function renderChartPng(chart: PlateChart, options: PngOptions = {}): Buf
   return Buffer.from(renderer.render().asPng());
 }
 
+/**
+ * The chart with the trigram symbols dropped where no font can draw them.
+ *
+ * **The third failure of this kind is the one that must not throw.** A palace
+ * with no hanzi is an empty palace and a band with no tone marks is half a
+ * drawing, so those two stop the render and name the package to install. ☴ is
+ * the name 巽 in the other hand and 巽 is still there: losing it costs a
+ * reader a mnemonic and no information, and refusing to draw the chart at all
+ * over it would be the graver answer to the smaller fault.
+ *
+ * Nor is it the silent failure the probes exist to prevent, which is a picture
+ * that still looks like a chart with a register gone from it. Nothing goes:
+ * the palace reads as it read before the symbols existed.
+ *
+ * `fonts-noto-cjk` alone does **not** cover U+2630 — the deployed image adds
+ * `fonts-dejavu-core` for it — so this is the ordinary case on a small image
+ * and not a corner of one.
+ */
+function undrawn(chart: PlateChart): PlateChart {
+  if (symbolsRender()) return chart;
+  return {
+    ...chart,
+    palaces: chart.palaces.map((one) => {
+      const { symbol: _drop, ...palace } = one.palace;
+      return { ...one, palace };
+    }),
+  };
+}
+
 let glyphsChecked: boolean | undefined;
+let symbolsDrawn: boolean | undefined;
 let readingsChecked: boolean | undefined;
 
 /**
@@ -80,18 +110,19 @@ let readingsChecked: boolean | undefined;
  * Checked once per process — fonts do not appear while a program runs — and
  * each message names the fix rather than the symptom.
  */
+/** One character rasterised alone, so two of them can be compared. */
+function probeGlyph(content: string): Buffer {
+  const svg =
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">` +
+    `<text x="16" y="26" font-size="28" font-family="${FONT_STACK.replace(/"/g, '&quot;')}" ` +
+    `text-anchor="middle">${content}</text></svg>`;
+  return Buffer.from(new Resvg(svg, { font: { loadSystemFonts: true } }).render().asPng());
+}
+
 function assertGlyphsRender(readings: boolean): void {
   if (glyphsChecked && (readingsChecked || !readings)) return;
 
-  const probe = (content: string): Buffer => {
-    const svg =
-      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">` +
-      `<text x="16" y="26" font-size="28" font-family="${FONT_STACK.replace(/"/g, '&quot;')}" ` +
-      `text-anchor="middle">${content}</text></svg>`;
-    return Buffer.from(
-      new Resvg(svg, { font: { loadSystemFonts: true } }).render().asPng(),
-    );
-  };
+  const probe = probeGlyph;
 
   if (!glyphsChecked) {
     if (probe('休').equals(probe(''))) {
@@ -119,6 +150,20 @@ function assertGlyphsRender(readings: boolean): void {
     }
     readingsChecked = true;
   }
+}
+
+/**
+ * Whether a font here draws the eight trigram symbols.
+ *
+ * Asked with ☰, the first of the block, and answered once: three lines is the
+ * simplest of the eight, so a face that has any of them has this one. Unlike
+ * the two assertions above this reports rather than throws — see `undrawn`.
+ */
+function symbolsRender(): boolean {
+  if (symbolsDrawn !== undefined) return symbolsDrawn;
+  const drawn = probeGlyph('\u2630');
+  symbolsDrawn = !drawn.equals(probeGlyph('')) && !drawn.equals(probeGlyph('\u{e000}'));
+  return symbolsDrawn;
 }
 
 /**

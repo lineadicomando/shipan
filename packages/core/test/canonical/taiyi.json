@@ -40,6 +40,7 @@
         "id": "gen",
         "hanzi": "艮",
         "pinyin": "gèn",
+        "symbol": "☶",
         "direction": "ne"
       },
       "year": 1
@@ -91,6 +92,7 @@
             "id": "gen",
             "hanzi": "艮",
             "pinyin": "gèn",
+            "symbol": "☶",
             "direction": "ne"
           }
         },
@@ -160,6 +162,7 @@
             "id": "xun",
             "hanzi": "巽",
             "pinyin": "xùn",
+            "symbol": "☴",
             "direction": "se"
           }
         },
@@ -229,6 +232,7 @@
             "id": "kun",
             "hanzi": "坤",
             "pinyin": "kūn",
+            "symbol": "☷",
             "direction": "sw"
           }
         },
@@ -298,6 +302,7 @@
             "id": "qian",
             "hanzi": "乾",
             "pinyin": "qián",
+            "symbol": "☰",
             "direction": "nw"
           }
         },
@@ -351,6 +356,7 @@
           "id": "gen",
           "hanzi": "艮",
           "pinyin": "gèn",
+          "symbol": "☶",
           "direction": "ne"
         }
       },
@@ -389,6 +395,7 @@
         "id": "dui",
         "hanzi": "兌",
         "pinyin": "duì",
+        "symbol": "☱",
         "direction": "w"
       },
       "assistant": {
@@ -396,6 +403,7 @@
         "id": "kan",
         "hanzi": "坎",
         "pinyin": "kǎn",
+        "symbol": "☵",
         "direction": "n"
       }
     },
@@ -412,6 +420,7 @@
             "id": "gen",
             "hanzi": "艮",
             "pinyin": "gèn",
+            "symbol": "☶",
             "direction": "ne"
           }
         },
@@ -423,6 +432,7 @@
         "id": "gen",
         "hanzi": "艮",
         "pinyin": "gèn",
+        "symbol": "☶",
         "direction": "ne"
       },
       "assistant": {
@@ -430,6 +440,7 @@
         "id": "xun",
         "hanzi": "巽",
         "pinyin": "xùn",
+        "symbol": "☴",
         "direction": "se"
       }
     },
@@ -539,6 +550,7 @@
           "id": "qian",
           "hanzi": "乾",
           "pinyin": "qián",
+          "symbol": "☰",
           "direction": "nw"
         }
       },
@@ -551,6 +563,7 @@
           "id": "zhen",
           "hanzi": "震",
           "pinyin": "zhèn",
+          "symbol": "☳",
           "direction": "e"
         },
         "year": 17
@@ -620,6 +633,7 @@
         "id": "qian",
         "hanzi": "乾",
         "pinyin": "qián",
+        "symbol": "☰",
         "direction": "nw"
       },
       "year": 1
@@ -671,6 +685,7 @@
             "id": "gen",
             "hanzi": "艮",
             "pinyin": "gèn",
+            "symbol": "☶",
             "direction": "ne"
           }
         },
@@ -740,6 +755,7 @@
             "id": "xun",
             "hanzi": "巽",
             "pinyin": "xùn",
+            "symbol": "☴",
             "direction": "se"
           }
         },
@@ -809,6 +825,7 @@
             "id": "kun",
             "hanzi": "坤",
             "pinyin": "kūn",
+            "symbol": "☷",
             "direction": "sw"
           }
         },
@@ -878,6 +895,7 @@
             "id": "qian",
             "hanzi": "乾",
             "pinyin": "qián",
+            "symbol": "☰",
             "direction": "nw"
           }
         },
@@ -914,6 +932,7 @@
           "id": "xun",
           "hanzi": "巽",
           "pinyin": "xùn",
+          "symbol": "☴",
           "direction": "se"
         }
       },
@@ -958,6 +977,7 @@
             "id": "xun",
             "hanzi": "巽",
             "pinyin": "xùn",
+            "symbol": "☴",
             "direction": "se"
           }
         },
@@ -969,6 +989,7 @@
         "id": "zhen",
         "hanzi": "震",
         "pinyin": "zhèn",
+        "symbol": "☳",
         "direction": "e"
       },
       "assistant": {
@@ -976,6 +997,7 @@
         "id": "li",
         "hanzi": "離",
         "pinyin": "lí",
+        "symbol": "☲",
         "direction": "s"
       }
     },
@@ -1092,6 +1114,7 @@
           "id": "gen",
           "hanzi": "艮",
           "pinyin": "gèn",
+          "symbol": "☶",
           "direction": "ne"
         }
       },
@@ -1104,6 +1127,7 @@
           "id": "kun",
           "hanzi": "坤",
           "pinyin": "kūn",
+          "symbol": "☷",
           "direction": "sw"
         },
         "year": 11

@@ -598,9 +598,10 @@ describe('scan', () => {
 
     expect(out).toContain('2026-09-01');
     expect(out).toContain('2026-09-02');
-    // The word for the gate, the name beside it, and where to face.
+    // The word for the gate, the name beside it, and where to face — the
+    // trigram drawn as well as written, which is the palace's whole register.
     expect(out).toContain('Open');
-    expect(out).toMatch(/\d southeast 巽|\d north 坎|\d west 兌/);
+    expect(out).toMatch(/\d southeast ☴ 巽|\d north ☵ 坎|\d west ☱ 兌/);
   });
 
   it('opens the interval at midnight, not at the hour it was typed', async () => {

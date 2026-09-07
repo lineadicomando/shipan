@@ -85,7 +85,7 @@ WORKDIR /app
 # fonts through it, and with the files present but no index it behaves exactly
 # as if none were installed.
 RUN apt-get update \
-  && apt-get install -y --no-install-recommends fonts-noto-cjk fontconfig \
+  && apt-get install -y --no-install-recommends fonts-noto-cjk fonts-dejavu-core fontconfig \
   && fc-cache -f \
   && rm -rf /var/lib/apt/lists/*
 

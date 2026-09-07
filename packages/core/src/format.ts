@@ -62,8 +62,11 @@ import { fromJulianDay } from './time.js';
  * It is not a locale and does not vary with one: 休門 is xiūmén to an Italian
  * reader and to an English one. Only the gloss beside it changes.
  */
-function glyph(entity: { hanzi: string; pinyin: string }): string {
-  return `${entity.hanzi} ${entity.pinyin}`;
+function glyph(entity: { hanzi: string; pinyin: string; symbol?: string }): string {
+  // The trigram drawn leads the trigram written, where there is one. Only a
+  // palace has it, and not the centre, so every other name here is unchanged.
+  const written = entity.symbol ? `${entity.symbol} ${entity.hanzi}` : entity.hanzi;
+  return `${written} ${entity.pinyin}`;
 }
 
 /**
@@ -73,7 +76,7 @@ function glyph(entity: { hanzi: string; pinyin: string }): string {
  * cannot read the glyph, and a line they cannot read is a line they skip.
  */
 function named(
-  entity: { hanzi: string; pinyin: string },
+  entity: { hanzi: string; pinyin: string; symbol?: string },
   key: MessageKey,
   t: Translator,
 ): string {
@@ -163,7 +166,7 @@ function seatOf(seat: YearGodSeat, t: Translator): string {
     return `${t(`label.stem.${seat.stem.id}` as MessageKey)} ${seat.stem.hanzi}`;
   }
   if (seat.kind === 'trigram') {
-    return `${t(`label.palace.${seat.trigram.id}` as MessageKey)} ${seat.trigram.hanzi} ${seat.trigram.pinyin}`;
+    return `${t(`label.palace.${seat.trigram.id}` as MessageKey)} ${glyph(seat.trigram)}`;
   }
   // 金神 holds several at once, and they are said as a run rather than as a
   // list: the source names them that way too, 午未申酉.

@@ -65,6 +65,24 @@ describe('the nine palaces', () => {
     expect(PALACES.filter((p) => p.direction === null)).toHaveLength(1);
   });
 
+  it('draws the eight, and does not draw the centre', () => {
+    // The Unicode order is the 先天 one — ☰ 乾, ☱ 兌, ☲ 離, ☳ 震, ☴ 巽, ☵ 坎,
+    // ☶ 艮, ☷ 坤 at U+2630 — and this is the assertion the symbols are written
+    // out by hand for. Deriving them from this line would make it unfalsifiable.
+    const drawn = ['qian', 'dui', 'li', 'zhen', 'xun', 'kan', 'gen', 'kun'];
+    for (const p of PALACES) {
+      const index = drawn.indexOf(p.id);
+      if (index === -1) continue;
+      expect(p.symbol, `${p.hanzi} is drawn`).toBe(String.fromCodePoint(0x2630 + index));
+    }
+    expect(PALACES.filter((p) => p.symbol).map((p) => p.symbol).join('')).toBe('☵☷☳☴☰☱☶☲');
+  });
+
+  it('leaves the centre undrawn, because it is not a trigram', () => {
+    expect(PALACES.find((p) => p.number === 5)?.symbol).toBeUndefined();
+    expect(PALACES.filter((p) => p.symbol === undefined)).toHaveLength(1);
+  });
+
   it('lodges the centre, and leaves the rest alone', () => {
     expect(lodge(5)).toBe(CENTRE_HOST);
     for (const p of PALACES) if (p.number !== 5) expect(lodge(p.number)).toBe(p.number);

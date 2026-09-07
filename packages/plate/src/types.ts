@@ -33,7 +33,14 @@ export interface PlateChart {
 }
 
 export interface PlatePalace {
-  palace: { number: number; hanzi: string; id: string; element: string; pinyin?: string | undefined };
+  palace: {
+    number: number;
+    hanzi: string;
+    id: string;
+    element: string;
+    pinyin?: string | undefined;
+    symbol?: string | undefined;
+  };
   earth: Named;
   heaven: Named;
   star: Named;
@@ -67,6 +74,15 @@ export interface Named {
    * a reading is listed.
    */
   pinyin?: string | undefined;
+  /**
+   * The name drawn rather than written: ☴ beside 巽.
+   *
+   * Only a trigram has one, so on this board only the palace register carries
+   * it — and not the centre, which is a seat and not a trigram. Optional like
+   * everything else here: a chart cast before the engine had the field draws
+   * the hanzi alone rather than failing.
+   */
+  symbol?: string | undefined;
   /**
    * The phase, where the thing named *is* one — a stem, a trigram. Absent on
    * a star or a gate, which have a phase only by way of the palace they rest

@@ -577,6 +577,7 @@
                 "id": "li",
                 "hanzi": "離",
                 "pinyin": "lí",
+                "symbol": "☲",
                 "element": "huo",
                 "direction": "s"
               }
@@ -593,6 +594,7 @@
                 "id": "kun",
                 "hanzi": "坤",
                 "pinyin": "kūn",
+                "symbol": "☷",
                 "element": "tu",
                 "direction": "sw"
               }
@@ -609,6 +611,7 @@
                 "id": "gen",
                 "hanzi": "艮",
                 "pinyin": "gèn",
+                "symbol": "☶",
                 "element": "tu",
                 "direction": "ne"
               }
@@ -625,6 +628,7 @@
                 "id": "qian",
                 "hanzi": "乾",
                 "pinyin": "qián",
+                "symbol": "☰",
                 "element": "jin",
                 "direction": "nw"
               }
@@ -641,6 +645,7 @@
                 "id": "xun",
                 "hanzi": "巽",
                 "pinyin": "xùn",
+                "symbol": "☴",
                 "element": "mu",
                 "direction": "se"
               }
@@ -701,6 +706,7 @@
                 "id": "kun",
                 "hanzi": "坤",
                 "pinyin": "kūn",
+                "symbol": "☷",
                 "element": "tu",
                 "direction": "sw"
               }
@@ -1122,6 +1128,7 @@
         "id": "li",
         "hanzi": "離",
         "pinyin": "lí",
+        "symbol": "☲",
         "element": "huo",
         "direction": "s"
       }
@@ -1138,6 +1145,7 @@
         "id": "kun",
         "hanzi": "坤",
         "pinyin": "kūn",
+        "symbol": "☷",
         "element": "tu",
         "direction": "sw"
       }
@@ -1149,6 +1157,7 @@
           "id": "kan",
           "hanzi": "坎",
           "pinyin": "kǎn",
+          "symbol": "☵",
           "element": "shui",
           "direction": "n"
         },
@@ -1212,6 +1221,7 @@
           "id": "kun",
           "hanzi": "坤",
           "pinyin": "kūn",
+          "symbol": "☷",
           "element": "tu",
           "direction": "sw"
         },
@@ -1283,6 +1293,7 @@
           "id": "zhen",
           "hanzi": "震",
           "pinyin": "zhèn",
+          "symbol": "☳",
           "element": "mu",
           "direction": "e"
         },
@@ -1346,6 +1357,7 @@
           "id": "xun",
           "hanzi": "巽",
           "pinyin": "xùn",
+          "symbol": "☴",
           "element": "mu",
           "direction": "se"
         },
@@ -1451,6 +1463,7 @@
           "id": "qian",
           "hanzi": "乾",
           "pinyin": "qián",
+          "symbol": "☰",
           "element": "jin",
           "direction": "nw"
         },
@@ -1514,6 +1527,7 @@
           "id": "dui",
           "hanzi": "兌",
           "pinyin": "duì",
+          "symbol": "☱",
           "element": "jin",
           "direction": "w"
         },
@@ -1577,6 +1591,7 @@
           "id": "gen",
           "hanzi": "艮",
           "pinyin": "gèn",
+          "symbol": "☶",
           "element": "tu",
           "direction": "ne"
         },
@@ -1640,6 +1655,7 @@
           "id": "li",
           "hanzi": "離",
           "pinyin": "lí",
+          "symbol": "☲",
           "element": "huo",
           "direction": "s"
         },
@@ -2421,6 +2437,7 @@
                 "id": "kun",
                 "hanzi": "坤",
                 "pinyin": "kūn",
+                "symbol": "☷",
                 "element": "tu",
                 "direction": "sw"
               }
@@ -2437,6 +2454,7 @@
                 "id": "xun",
                 "hanzi": "巽",
                 "pinyin": "xùn",
+                "symbol": "☴",
                 "element": "mu",
                 "direction": "se"
               }
@@ -2453,6 +2471,7 @@
                 "id": "qian",
                 "hanzi": "乾",
                 "pinyin": "qián",
+                "symbol": "☰",
                 "element": "jin",
                 "direction": "nw"
               }
@@ -2469,6 +2488,7 @@
                 "id": "kun",
                 "hanzi": "坤",
                 "pinyin": "kūn",
+                "symbol": "☷",
                 "element": "tu",
                 "direction": "sw"
               }
@@ -2485,6 +2505,7 @@
                 "id": "gen",
                 "hanzi": "艮",
                 "pinyin": "gèn",
+                "symbol": "☶",
                 "element": "tu",
                 "direction": "ne"
               }
@@ -2993,6 +3014,7 @@
         "id": "qian",
         "hanzi": "乾",
         "pinyin": "qián",
+        "symbol": "☰",
         "element": "jin",
         "direction": "nw"
       }
@@ -3009,6 +3031,7 @@
         "id": "dui",
         "hanzi": "兌",
         "pinyin": "duì",
+        "symbol": "☱",
         "element": "jin",
         "direction": "w"
       }
@@ -3020,6 +3043,7 @@
           "id": "kan",
           "hanzi": "坎",
           "pinyin": "kǎn",
+          "symbol": "☵",
           "element": "shui",
           "direction": "n"
         },
@@ -3083,6 +3107,7 @@
           "id": "kun",
           "hanzi": "坤",
           "pinyin": "kūn",
+          "symbol": "☷",
           "element": "tu",
           "direction": "sw"
         },
@@ -3154,6 +3179,7 @@
           "id": "zhen",
           "hanzi": "震",
           "pinyin": "zhèn",
+          "symbol": "☳",
           "element": "mu",
           "direction": "e"
         },
@@ -3217,6 +3243,7 @@
           "id": "xun",
           "hanzi": "巽",
           "pinyin": "xùn",
+          "symbol": "☴",
           "element": "mu",
           "direction": "se"
         },
@@ -3322,6 +3349,7 @@
           "id": "qian",
           "hanzi": "乾",
           "pinyin": "qián",
+          "symbol": "☰",
           "element": "jin",
           "direction": "nw"
         },
@@ -3385,6 +3413,7 @@
           "id": "dui",
           "hanzi": "兌",
           "pinyin": "duì",
+          "symbol": "☱",
           "element": "jin",
           "direction": "w"
         },
@@ -3448,6 +3477,7 @@
           "id": "gen",
           "hanzi": "艮",
           "pinyin": "gèn",
+          "symbol": "☶",
           "element": "tu",
           "direction": "ne"
         },
@@ -3511,6 +3541,7 @@
           "id": "li",
           "hanzi": "離",
           "pinyin": "lí",
+          "symbol": "☲",
           "element": "huo",
           "direction": "s"
         },

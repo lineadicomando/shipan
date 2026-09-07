@@ -191,7 +191,9 @@ describe('compute_qimen_chart', () => {
     // An agent that could not see where would have to know it from outside.
     const text = await call('compute_qimen_chart', BEIJING);
 
-    expect(text).toContain('The centre lodges in 2 southwest 坤');
+    // The trigram drawn as well as written, which is how a palace is named
+    // everywhere: an agent that cannot read 坤 can still count ☷'s lines.
+    expect(text).toContain('The centre lodges in 2 southwest ☷ 坤');
   });
 
   it("says the almanac's officer for the day", async () => {
@@ -460,7 +462,9 @@ describe('scan_moments', () => {
     // alone there too: four more pairs of hanzi would put this table past any
     // terminal, and an agent that needs the name has compute_qimen_chart.
     expect(text).toMatch(/· (Rat|Ox|Tiger|Rabbit|Dragon)\s+[甲乙丙丁戊己庚辛壬癸]/);
-    expect(text).toMatch(/\d (north|south|east|west|northeast|northwest|southeast|southwest) [坎坤震巽乾兌艮離]/);
+    expect(text).toMatch(
+      /\d (north|south|east|west|northeast|northwest|southeast|southwest) [☰☱☲☳☴☵☶☷] [坎坤震巽乾兌艮離]/,
+    );
   });
 
   it('offers every spirit a chart can show, not one plate of them', async () => {

@@ -17,6 +17,25 @@ export interface Palace {
   hanzi: string;
   /** The trigram said aloud, e.g. `kǎn`. */
   pinyin: string;
+  /**
+   * The trigram drawn: ☵ beside 坎.
+   *
+   * The same fact as `hanzi` in the other of the two ways the tradition writes
+   * it, and the reason it is worth carrying is what it does for a reader with
+   * no Chinese: 坎 is a shape to be looked up, ☵ is a shape that *shows* — one
+   * broken line, one whole, one broken — and the eight of them are a set at a
+   * glance rather than eight more characters.
+   *
+   * **Absent for the centre, and that absence is half the field's worth.** 中
+   * is the name of a seat and not a trigram; it has no lines to draw. Written
+   * in hanzi it stands in a row with 坎 and 離 and reads as the ninth of a set
+   * of eight, which it is not.
+   *
+   * Written out rather than derived from `id`, because deriving it from the
+   * Unicode order would bake in the belief that is being checked: the order is
+   * asserted in `test/palaces.test.ts` instead, where a wrong symbol fails.
+   */
+  symbol?: string;
   element: Element;
   /** Compass direction, `null` for the centre, which has none. */
   direction: Direction | null;
@@ -32,15 +51,15 @@ export const DIRECTIONS: readonly Direction[] = ['n', 'ne', 'e', 'se', 's', 'sw'
 // 乾 is qián, the trigram — not the gān that means dry. The identifier had
 // already made the choice; the transliteration only makes it visible.
 export const PALACES: readonly Palace[] = [
-  { number: 1, id: 'kan', hanzi: '坎', pinyin: 'kǎn', element: 'shui', direction: 'n' },
-  { number: 2, id: 'kun', hanzi: '坤', pinyin: 'kūn', element: 'tu', direction: 'sw' },
-  { number: 3, id: 'zhen', hanzi: '震', pinyin: 'zhèn', element: 'mu', direction: 'e' },
-  { number: 4, id: 'xun', hanzi: '巽', pinyin: 'xùn', element: 'mu', direction: 'se' },
+  { number: 1, id: 'kan', hanzi: '坎', pinyin: 'kǎn', symbol: '☵', element: 'shui', direction: 'n' },
+  { number: 2, id: 'kun', hanzi: '坤', pinyin: 'kūn', symbol: '☷', element: 'tu', direction: 'sw' },
+  { number: 3, id: 'zhen', hanzi: '震', pinyin: 'zhèn', symbol: '☳', element: 'mu', direction: 'e' },
+  { number: 4, id: 'xun', hanzi: '巽', pinyin: 'xùn', symbol: '☴', element: 'mu', direction: 'se' },
   { number: 5, id: 'zhong', hanzi: '中', pinyin: 'zhōng', element: 'tu', direction: null },
-  { number: 6, id: 'qian', hanzi: '乾', pinyin: 'qián', element: 'jin', direction: 'nw' },
-  { number: 7, id: 'dui', hanzi: '兌', pinyin: 'duì', element: 'jin', direction: 'w' },
-  { number: 8, id: 'gen', hanzi: '艮', pinyin: 'gèn', element: 'tu', direction: 'ne' },
-  { number: 9, id: 'li', hanzi: '離', pinyin: 'lí', element: 'huo', direction: 's' },
+  { number: 6, id: 'qian', hanzi: '乾', pinyin: 'qián', symbol: '☰', element: 'jin', direction: 'nw' },
+  { number: 7, id: 'dui', hanzi: '兌', pinyin: 'duì', symbol: '☱', element: 'jin', direction: 'w' },
+  { number: 8, id: 'gen', hanzi: '艮', pinyin: 'gèn', symbol: '☶', element: 'tu', direction: 'ne' },
+  { number: 9, id: 'li', hanzi: '離', pinyin: 'lí', symbol: '☲', element: 'huo', direction: 's' },
 ];
 
 export function palace(number: number): Palace {

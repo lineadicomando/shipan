@@ -1347,6 +1347,21 @@ to its branch's, because neither is read differently for standing next to the
 other. A test asserts that, and asserts that no named thing anywhere in the
 engine is missing its reading.
 
+**The trigram carries a third thing, and it is the same kind of datum.** A
+palace has `symbol` beside its `hanzi` and its `pinyin` — ☵ beside 坎 — which
+is the figure the name is a name *of*, three lines broken or whole. Like the
+reading it is written out by hand and computed from nothing; unlike the reading
+it can be checked without knowing any Chinese at all, because Unicode lays the
+eight out in the 先天 order from U+2630 ☰ 乾 to U+2637 ☷ 坤 and
+`test/dunjia.test.ts` asserts each palace against that arithmetic. Written out
+rather than derived from it for that reason: a symbol derived from the order
+could not be caught disagreeing with the order.
+
+**The centre has none**, and that is the half of the field worth having. 中 is
+the name of a seat and not a trigram, so it has no lines; in hanzi it stands in
+a row with 坎 and 離 and reads as the ninth of a set of eight, which is exactly
+what a reader with no Chinese would take it for.
+
 **The drawing prints it under the board and not in the palace**, which is a
 placement rather than an omission: a register in a palace is a glyph and a word
 wrapped to at most two lines, and the line a reading would take is the register
