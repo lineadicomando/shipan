@@ -53,7 +53,20 @@ How each of them stands
   1 ☵ 坎 kǎn   supported · controlling 我剋 wǒkè    imprisoned · same phase 比和 bǐhé
   2 ☷ 坤 kūn   dying · generated 生我 shēngwǒ       supported · same phase 比和 bǐhé
   …
+
+The hexagram of each palace
+  palace       gate                above / below  hexagram
+  1 ☵ 坎 kǎn   Life 生門 shēngmén  ☶ ☵            Inexperience ䷃ 蒙 méng
+  2 ☷ 坤 kūn   Shock 驚門 jīngmén  ☱ ☷            Gathering ䷬ 萃 cuì
+  …
 ```
+
+The last of those is the gate's trigram set over the palace's, which is the
+pairing 《奇門探索錄》卷十一 八門三合 qíméntànsuǒlù bāménsānhé reads the board
+by. **The name and nothing else**: what that chapter goes on to say each
+hexagram means is a reading, and this engine stops where it stops everywhere.
+The eight palaces that have a gate carry one; the centre is a seat and not a
+trigram, so it carries none.
 
 Every name arrives three ways at once: the word you read, the name as it is
 written, and the name as it is said — and a trigram, which is a figure before

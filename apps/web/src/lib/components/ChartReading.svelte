@@ -16,6 +16,7 @@
   import { glyph } from '$lib/glyph';
   import type { MessageKey, Translator } from '@shipan/i18n';
   import type { QimenChart } from '@shipan/core';
+  import HexagramTable from './HexagramTable.svelte';
   import PalaceTable from './PalaceTable.svelte';
   import CalendarAndAlmanac from './CalendarAndAlmanac.svelte';
   import PillarPlate from './PillarPlate.svelte';
@@ -160,6 +161,21 @@
      inside its frame rather than taking the page with it. -->
 {#if palaces}
   <div class="scroller"><PalaceTable palaces={chart.palaces} {t} /></div>
+
+  <!--
+    The gate over the palace, named, and the rule stated *under* the table
+    rather than over it: the eight rows show the pairing working, and a reader
+    who has followed them arrives at the note wanting the source rather than
+    the instruction. A heading over it would announce a table that announces
+    itself, the four columns saying what this is before any prose could.
+
+    Guarded on the field and not on the flag: a chart is cacheable private for
+    a day, so this meets charts cast before the hexagram existed.
+  -->
+  {#if chart.palaces.some((cell) => cell.hexagram)}
+    <div class="scroller"><HexagramTable palaces={chart.palaces} {t} /></div>
+    <p class="note">{t('cli.note.hexagrams')}</p>
+  {/if}
 {/if}
 
 {#if chart.patterns.length > 0}
@@ -195,6 +211,12 @@
    * element that holds this moves all of it together.
    */
   .ju { font-size: 1.1em; margin: 0 0 0.35rem; }
+  /*
+   * The note under the hexagram table: what the rule is and where it is
+   * written. Set like the caption under the drawing, being the same kind of
+   * sentence — it qualifies what is above it and is not itself a finding.
+   */
+  .note { color: var(--faint); font-size: 0.9em; margin: 0.5rem 0 0; }
   /*
    * The caption's measure, which is the board's: `--board`, in `app.css`.
    *

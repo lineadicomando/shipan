@@ -110,6 +110,77 @@ export const en = {
   'label.palace.gen': 'northeast',
   'label.palace.li': 'south',
 
+  // The sixty-four, keyed by the King Wen number, which is the identifier for
+  // the reason `hexagram.ts` gives: 履 and 旅 are both lǚ in the same tone, so
+  // the toneless-pinyin convention cannot part them and the ordinal the
+  // tradition prints is what is left. The name and the reading travel from the
+  // engine and are not here; each comment carries them so that a key made of
+  // digits is still legible to whoever edits the line under it.
+  'label.hexagram.1': 'The creative', // 乾 qián
+  'label.hexagram.2': 'The receptive', // 坤 kūn
+  'label.hexagram.3': 'Difficult beginning', // 屯 zhūn
+  'label.hexagram.4': 'Inexperience', // 蒙 méng
+  'label.hexagram.5': 'Waiting', // 需 xū
+  'label.hexagram.6': 'Conflict', // 訟 sòng
+  'label.hexagram.7': 'The army', // 師 shī
+  'label.hexagram.8': 'Holding together', // 比 bǐ
+  'label.hexagram.9': 'The small restraint', // 小畜 xiǎoxù
+  'label.hexagram.10': 'Treading', // 履 lǚ
+  'label.hexagram.11': 'Peace', // 泰 tài
+  'label.hexagram.12': 'Standstill', // 否 pǐ
+  'label.hexagram.13': 'Fellowship', // 同人 tóngrén
+  'label.hexagram.14': 'Great possession', // 大有 dàyǒu
+  'label.hexagram.15': 'Modesty', // 謙 qiān
+  'label.hexagram.16': 'Enthusiasm', // 豫 yù
+  'label.hexagram.17': 'Following', // 隨 suí
+  'label.hexagram.18': 'What has spoiled', // 蠱 gǔ
+  'label.hexagram.19': 'Approach', // 臨 lín
+  'label.hexagram.20': 'Contemplation', // 觀 guān
+  'label.hexagram.21': 'Biting through', // 噬嗑 shìkè
+  'label.hexagram.22': 'Grace', // 賁 bì
+  'label.hexagram.23': 'Splitting apart', // 剝 bō
+  'label.hexagram.24': 'Return', // 復 fù
+  'label.hexagram.25': 'Innocence', // 無妄 wúwàng
+  'label.hexagram.26': 'The great restraint', // 大畜 dàxù
+  'label.hexagram.27': 'Nourishment', // 頤 yí
+  'label.hexagram.28': 'Great excess', // 大過 dàguò
+  'label.hexagram.29': 'The abyss', // 坎 kǎn
+  'label.hexagram.30': 'The clinging', // 離 lí
+  'label.hexagram.31': 'Influence', // 咸 xián
+  'label.hexagram.32': 'Duration', // 恆 héng
+  'label.hexagram.33': 'Retreat', // 遯 dùn
+  'label.hexagram.34': 'Great power', // 大壯 dàzhuàng
+  'label.hexagram.35': 'Progress', // 晉 jìn
+  'label.hexagram.36': 'Darkening of the light', // 明夷 míngyí
+  'label.hexagram.37': 'The family', // 家人 jiārén
+  'label.hexagram.38': 'Opposition', // 睽 kuí
+  'label.hexagram.39': 'Obstruction', // 蹇 jiǎn
+  'label.hexagram.40': 'Deliverance', // 解 xiè
+  'label.hexagram.41': 'Decrease', // 損 sǔn
+  'label.hexagram.42': 'Increase', // 益 yì
+  'label.hexagram.43': 'Breakthrough', // 夬 guài
+  'label.hexagram.44': 'Coming to meet', // 姤 gòu
+  'label.hexagram.45': 'Gathering', // 萃 cuì
+  'label.hexagram.46': 'Pushing upward', // 升 shēng
+  'label.hexagram.47': 'Oppression', // 困 kùn
+  'label.hexagram.48': 'The well', // 井 jǐng
+  'label.hexagram.49': 'Revolution', // 革 gé
+  'label.hexagram.50': 'The cauldron', // 鼎 dǐng
+  'label.hexagram.51': 'The arousing', // 震 zhèn
+  'label.hexagram.52': 'Keeping still', // 艮 gèn
+  'label.hexagram.53': 'Gradual progress', // 漸 jiàn
+  'label.hexagram.54': 'The marrying maiden', // 歸妹 guīmèi
+  'label.hexagram.55': 'Abundance', // 豐 fēng
+  'label.hexagram.56': 'The wanderer', // 旅 lǚ
+  'label.hexagram.57': 'The gentle', // 巽 xùn
+  'label.hexagram.58': 'The joyous', // 兌 duì
+  'label.hexagram.59': 'Dispersion', // 渙 huàn
+  'label.hexagram.60': 'Limitation', // 節 jié
+  'label.hexagram.61': 'Inner truth', // 中孚 zhōngfú
+  'label.hexagram.62': 'Small excess', // 小過 xiǎoguò
+  'label.hexagram.63': 'After completion', // 既濟 jìjì
+  'label.hexagram.64': 'Before completion', // 未濟 wèijì
+
   // The same eight directions abbreviated, for the frame around the drawing:
   // a band a twentieth of the picture wide holds "SE" and not "southeast".
   // Two keys for one thing because the abbreviation is not the word cut
@@ -2356,6 +2427,7 @@ export const en = {
   'cli.heading.terms': 'Solar terms of {year}',
   'cli.heading.calendar': 'Lunar date',
   'cli.heading.patterns': 'Configurations',
+  'cli.heading.hexagrams': 'The hexagram of each palace',
   // The band under a drawing, where every name on it is said aloud. It exists
   // because the picture is what travels: on the page the readings stand in the
   // table beside it, and a picture sent on or printed has nobody to ask.
@@ -2568,6 +2640,9 @@ export const en = {
   'cli.column.star': 'star',
   'cli.column.gate': 'gate',
   'cli.column.spirit': 'spirit',
+  'cli.column.hexagram': 'hexagram',
+  // The two trigrams the hexagram is built of, in the order they are stacked.
+  'cli.column.trigrams': 'above / below',
   'cli.column.pillar': 'pillar',
   'cli.column.stem': 'stem',
   'cli.column.hidden': 'concealed',
@@ -2611,6 +2686,11 @@ export const en = {
   'cli.value.leapTerm': 'intercalated {term}',
 
   'cli.note.method': 'Cast by the {method} method.',
+  // The rule the table above is built on, and the one text that states it.
+  // A source cited to a reader carries its reading and its sense, the way
+  // every other name on the page does: a title in glyphs alone is a shape.
+  'cli.note.hexagrams':
+    'The gate’s trigram above, the palace’s below. 《奇門探索錄》 qíméntànsuǒlù, “a record of enquiry into Qi Men”, book eleven, 八門三合 bāménsānhé, “the eight gates in threefold combination”.',
 
   'cli.error.unknownCommand': 'Unknown command "{command}". Try `qimen --help`.',
   'cli.error.unknownOption': 'Unknown option "{option}". Try `qimen --help`.',

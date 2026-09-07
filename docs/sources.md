@@ -1228,16 +1228,32 @@ then one clause of the five relations between gate and palace — 乃門生宮,
 乃宮生門, 宮門比和 — then what to do under a 凶格 and whether the day favours
 主 or 客, then 類神, then 克應.
 
-**The naming is derivable and the rest of it is not, and that is why none of it
-is here.** The hexagram is a function of two things this engine already
-computes, and the relation the entry states next is the same 門宮 relation it
-already reports; so a board could carry the name without a table. What follows
-the name is a reading — what the palace signifies, what will be met at two 里
-and at ten — and the engine stops at the 用神 and does not rank palaces. Naming
-the hexagram and refusing what the chapter says about it would hand a reader
-sixty-four doors and no rooms, and handing a model the same thing invites it to
-supply the rooms from the 易經, which is a different book.
-[`docs/refusals.md`](refusals.md) § "The hexagram over a palace" carries it.
+**The naming is derivable and the rest of it is not, and the board carries the
+first.** The hexagram is a function of two things this engine already computes,
+and the relation the entry states next is the same 門宮 relation it already
+reports, so the name costs a table of sixty-four glosses and no doctrine at all.
+What follows the name is a reading — what the palace signifies, what will be met
+at two 里 and at ten — and the engine stops at the 用神 and does not rank
+palaces. `docs/refusals.md` § "What 卷十一 reads in the hexagram of a palace"
+carries the second half.
+
+**What the register has to say is how firmly the *orientation* stands, because
+nothing else here is in doubt.** The arrangement of the sixty-four is the
+周易's, closed and checkable by anyone: sixty-four cells, each name once, the
+eight doubled trigrams on the diagonal. What this chapter contributes is which
+trigram goes above — and that rests on eight cells read on the plate, agreeing
+with each other and with nothing else, since no second work on this shelf pairs
+the gates this way at all. **Rung 4**: one text, redundant about the thing in
+question. The engine asserts all eight in `test/hexagram.test.ts`, so a wrong
+orientation fails rather than prints.
+
+**And the identifier is the ordinal, which is a first for this engine.** The
+house convention is toneless pinyin, tone-numbered where two names would
+collide. Six of the sixty-four collide and five come apart under a tone number;
+履 and 旅 do not, being both lǚ in the same tone. The tradition's own answer is
+the King Wen number — every edition prints it and every commentary cites by it —
+so `label.hexagram.44` is the catalog key and the name travels from the engine
+beside it. → [`docs/i18n.md`](i18n.md)
 
 **One layer located and not read.** The eight-juan e-text carries, under a
 《大宗直指》敘 the print's 篇 divisions do not reach, a 卦氣 chapter that runs

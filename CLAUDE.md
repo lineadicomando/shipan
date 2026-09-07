@@ -175,6 +175,12 @@ the engine falls back to Moshier, which needs no files.
   start the sentence again. The diagnosis and the fix for each are in the
   `reader-copy` skill; it governs the catalogs, `lib/meta.ts` and `README.md`,
   and nothing in `docs/`.
+- **A vernacular is written in its own conventions, not translated through
+  another's.** The em dash is English punctuation: Italian makes the same turn
+  with a comma, a colon, a semicolon or parentheses, so `—` belongs in `en.ts`
+  and not in `it.ts`. It is a rule about the register a sentence is written in
+  and is not the rule that keeps a dash away from a glyph, which binds both.
+  → [`docs/i18n.md`](docs/i18n.md)
 - **A limit is a property of the instrument, and copy names it as one.** What
   the engine stops short of is stated plainly — it is half of what this project
   claims — but the subject of the sentence is what the engine has, does or

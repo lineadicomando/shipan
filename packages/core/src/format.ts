@@ -531,6 +531,37 @@ export function formatQimenChart(chart: QimenChart, t: Translator): string {
         cell.gate ? `${strong(cell.gateStrength)}${stands(cell.gateRelation)}` : t('cli.none'),
       ]),
     ]),
+    '',
+    // A fourth table, and the only one with eight rows instead of nine: the
+    // centre is a seat and not a trigram, so it makes no hexagram and a row
+    // saying so would be a row about nothing.
+    //
+    // The name and no more. What the chapter this comes from reads in each
+    // one is declined entire; `docs/refusals.md` says which refusals it would
+    // cross. The note under the table is where the rule and its source are.
+    `${t('cli.heading.hexagrams')}`,
+    ...table([
+      [
+        t('cli.column.palace'),
+        t('cli.column.gate'),
+        t('cli.column.trigrams'),
+        t('cli.column.hexagram'),
+      ],
+      ...chart.palaces
+        .filter((cell) => cell.hexagram)
+        .map((cell) => {
+          const figure = cell.hexagram as NonNullable<typeof cell.hexagram>;
+          return [
+            where(cell, false),
+            cell.gate ? named(cell.gate, `label.gate.${cell.gate.id}` as MessageKey, t) : '',
+            `${figure.upper.symbol} ${figure.lower.symbol}`,
+            // `glyph` already leads with the figure, as it does for a trigram:
+            // the field is called the same thing and read the same way.
+            named(figure, `label.hexagram.${figure.number}` as MessageKey, t),
+          ];
+        }),
+    ]),
+    t('cli.note.hexagrams'),
   );
 
   if (chart.patterns.length > 0) {

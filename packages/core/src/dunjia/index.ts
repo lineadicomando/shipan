@@ -2,6 +2,7 @@ import type { Stem } from '../ganzhi.js';
 import { CHART_PARAMETERS, requireImplemented } from '../parameters.js';
 import type { Moment } from '../pillars.js';
 import type { ChartOptions, Element } from '../types.js';
+import { hexagramOfSeats, type Hexagram } from './hexagram.js';
 import { horseOf, type Horse } from './horse.js';
 import { determineJu, type Ju } from './ju.js';
 import { findPatterns, type Pattern } from './patterns.js';
@@ -44,6 +45,20 @@ export interface PalaceContents {
   starRelation: Relation;
   /** How the gate does (門宮). Absent with the gate. */
   gateRelation?: Relation;
+  /**
+   * The hexagram the gate makes over this palace: the gate's trigram above,
+   * this palace's below (八門三合).
+   *
+   * Derived from two things already here and carrying nothing new — which is
+   * the whole of what travels. Absent with the gate, the centre being a seat
+   * and not a trigram, and it is the one register of this board that a reader
+   * with no Chinese can meet as a figure rather than as a name.
+   *
+   * The gate is the one *standing* here and not the one this palace is home
+   * to, so it moves with the hour like everything else on the plate. See
+   * `hexagram.ts`, and `docs/refusals.md` for the reading that is not here.
+   */
+  hexagram?: Hexagram;
   /**
    * The centre's stem, when this is the palace the centre lodges in (寄宮).
    * Present on exactly one palace of every chart, and on the centre never.
@@ -207,6 +222,11 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
       contents.gate = gateHere;
       contents.gateStrength = strengthOf(gateElement, season);
       contents.gateRelation = relationOf(gateElement, current.element);
+      // The gate's home trigram above, this palace's below. Read off the same
+      // `home` the element and the relation above are read off, so the three
+      // can never disagree about which trigram the gate is of.
+      const figure = hexagramOfSeats(gateHere.home, current.number);
+      if (figure) contents.hexagram = figure;
     }
     if (spiritHere) contents.spirit = spiritHere;
     // Read off `lodge` rather than off the constant, so that the palace named
@@ -246,6 +266,7 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   };
 }
 
+export { hexagramOf, hexagramOfSeats, type Hexagram, type Trigram } from './hexagram.js';
 export { determineJu, YUAN_HANZI, YUAN_PINYIN, type Ju, type Yuan } from './ju.js';
 export {
   PATTERN_IDS,

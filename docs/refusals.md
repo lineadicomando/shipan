@@ -134,34 +134,44 @@ arriving in a new register. Nothing is asked of it anywhere: no question box,
 no `asked` on `/api/taiyi/prompt`, and `--ask` refused by the CLI with a
 message of its own.
 
-## The hexagram over a palace, and what 卷十一 reads in it
+## What 卷十一 reads in the hexagram of a palace
 
-*Asked by:* anyone who notices that the gates and the palaces are trigrams.
+*Asked by:* anyone who has just met the hexagram on the board and wants to know
+what it says.
 
-They are, and the pairing is a whole system: 《奇門探索錄》卷十一 八門三合 takes
-each of the eight gates over each of the eight palaces, puts the gate's trigram
-above and the palace's below, and names the hexagram — 杜加坎 is 渙, 死加乾 is
-泰. Eight over eight is sixty-four, the centre having no gate, so the chapter is
-the 六十四卦 laid on the board with nothing left over. It is on the shelf, read
-on the plate, and written up in `docs/sources.md`.
+**The name is computed and the reading is not, and the line between them is the
+one this engine draws everywhere else.** 《奇門探索錄》卷十一 八門三合 takes each
+of the eight gates over each of the eight palaces, puts the gate's trigram above
+and the palace's below, and names the hexagram: 杜加坎 is 渙, 死加乾 is 泰. Eight
+over eight is sixty-four, the centre having no gate, so the chapter is the
+六十四卦 laid on the board with nothing left over. The engine lays the same
+sixty-four, because the name is a function of two things it already computes and
+belongs to the configuration rather than to anybody's situation — which is the
+test `Pattern.valence` passes and 門迫 passes.
 
-**The name is derivable and is not the refusal.** It is a function of two things
-this engine already computes, and the clause each entry states next — 乃門生宮,
-乃宮生門, 宮門比和 — is the 門宮 relation the engine already reports.
-
-**What is refused is what the chapter is for.** After the hexagram come the
+**What is refused is everything the chapter says next.** After the name come the
 《象》 and the 卦辭 quoted, then whether the hour favours 主 or 客, then 類神 —
 what the palace stands for, city god and stove god, spleen and stomach — then
-克應: what will be met at two 里 and at ten. That is the 用神 chosen, the palace
-ranked and the outcome dated, three times over, and each of them has its own
-entry above.
+克應, what will be met at two 里 and at ten. That is the 用神 chosen, the palace
+ranked and the outcome dated, three times over, and each has its own entry
+above. The 門宮 relation the chapter states first — 乃門生宮, 乃宮生門, 宮門比和
+— is not refused and never was: the engine already reports it as `gateRelation`,
+which is what 門迫 is read off.
 
-**And a name without its rooms is worse than neither.** A board that printed 渙
-over the north and stopped would hand a reader sixty-four doors and no doctrine,
-and hand a model an invitation to supply the doctrine from the 易經 — which is a
-different book, arrived at through 納甲 and 爻辭 and answering a different
-question. The engine does not print the name for the reason it does not print
-the reading: the two were transmitted together.
+**Naming without reading is the ordinary case here, not the exception.** This
+board prints 天蓬 and does not say what 天蓬 means, prints 休門 and leaves the
+errand to the one table the manuals do not dispute, prints 空亡 with a fortune
+and no prose. A hexagram named and left unread is that, once more.
+
+**What the reader is owed is that the name came from here.** The risk this
+carries and the others do not is that 渙 has a second life in a far more famous
+book: a hexagram on a 奇門 board invites an 易經 reading, arrived at through
+納甲 and 爻辭 and answering a different question, and a model handed the name is
+one step from supplying that. So the note under the table says which work and
+which chapter the pairing is from, `docs/agent-prompt.md` says the same to a
+model in the imperative, and neither leaves it to be guessed. That is the answer
+to the risk. Declining to print a name this engine computes correctly would not
+have been.
 
 ## Who is 主 and who is 客
 

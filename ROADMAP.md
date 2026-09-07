@@ -299,6 +299,15 @@ and on the section, and no register row, since the count it is cut from is
 already weighed under the epoch. It moves the second term of the version, an
 existing answer gaining a field.
 
+**The Italian catalog still carries ninety-six em dashes.** `docs/i18n.md` says
+a vernacular is punctuated in its own conventions and that `—` is English; what
+is written today predates the rule, and the sweep is a reading of every line
+rather than a substitution, since each dash becomes a comma, a colon, a
+semicolon or a parenthesis depending on the turn it was making. Nothing is
+asserted by a test until the sweep has run, because a test that fails
+ninety-six times on the day it lands tells nobody anything. Shipping nothing,
+it moves no term.
+
 **About forty comments still call the register 年計.** The parameter's name is
 now 歲計, which is what both witnesses call it, and the identifier stays
 `nianji`; the prose around the code kept the name in modern circulation. The
@@ -310,8 +319,8 @@ term.
 Not roadmap, and here only so nobody mistakes silence for an omission: the 用神,
 格局, ranking, dating, advice, the 年命 purposes doctrine, who is 主 and who is
 客, a day master called strong or weak, a natal Qi Men chart, 太乙's dynastic
-readings, the sixty-four hexagrams 卷十一 of the 探索錄 reads over the palaces,
-and the 十八飛星 placements grafted onto a 《全書》 board. Each has an
+readings, what 卷十一 of the 探索錄 reads in the hexagram of a palace, and the
+十八飛星 placements grafted onto a 《全書》 board. Each has an
 entry in [`docs/refusals.md`](docs/refusals.md) saying who asks for it and why
 it is not here — and that file carries more than this list does, several of its
 entries being rules about a surface rather than doctrine somebody asks for.

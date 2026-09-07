@@ -1209,6 +1209,24 @@
           "hanzi": "我生",
           "pinyin": "wǒshēng"
         },
+        "hexagram": {
+          "number": 47,
+          "hanzi": "困",
+          "pinyin": "kùn",
+          "symbol": "䷮",
+          "upper": {
+            "id": "dui",
+            "hanzi": "兌",
+            "pinyin": "duì",
+            "symbol": "☱"
+          },
+          "lower": {
+            "id": "kan",
+            "hanzi": "坎",
+            "pinyin": "kǎn",
+            "symbol": "☵"
+          }
+        },
         "spirit": {
           "id": "gouchen",
           "hanzi": "勾陳",
@@ -1272,6 +1290,24 @@
           "id": "woke",
           "hanzi": "我剋",
           "pinyin": "wǒkè"
+        },
+        "hexagram": {
+          "number": 20,
+          "hanzi": "觀",
+          "pinyin": "guān",
+          "symbol": "䷓",
+          "upper": {
+            "id": "xun",
+            "hanzi": "巽",
+            "pinyin": "xùn",
+            "symbol": "☴"
+          },
+          "lower": {
+            "id": "kun",
+            "hanzi": "坤",
+            "pinyin": "kūn",
+            "symbol": "☷"
+          }
         },
         "spirit": {
           "id": "tengshe",
@@ -1345,6 +1381,24 @@
           "hanzi": "我生",
           "pinyin": "wǒshēng"
         },
+        "hexagram": {
+          "number": 3,
+          "hanzi": "屯",
+          "pinyin": "zhūn",
+          "symbol": "䷂",
+          "upper": {
+            "id": "kan",
+            "hanzi": "坎",
+            "pinyin": "kǎn",
+            "symbol": "☵"
+          },
+          "lower": {
+            "id": "zhen",
+            "hanzi": "震",
+            "pinyin": "zhèn",
+            "symbol": "☳"
+          }
+        },
         "spirit": {
           "id": "jiudi",
           "hanzi": "九地",
@@ -1408,6 +1462,24 @@
           "id": "kewo",
           "hanzi": "剋我",
           "pinyin": "kèwǒ"
+        },
+        "hexagram": {
+          "number": 18,
+          "hanzi": "蠱",
+          "pinyin": "gǔ",
+          "symbol": "䷑",
+          "upper": {
+            "id": "gen",
+            "hanzi": "艮",
+            "pinyin": "gèn",
+            "symbol": "☶"
+          },
+          "lower": {
+            "id": "xun",
+            "hanzi": "巽",
+            "pinyin": "xùn",
+            "symbol": "☴"
+          }
         },
         "spirit": {
           "id": "jiutian",
@@ -1515,6 +1587,24 @@
           "hanzi": "我生",
           "pinyin": "wǒshēng"
         },
+        "hexagram": {
+          "number": 11,
+          "hanzi": "泰",
+          "pinyin": "tài",
+          "symbol": "䷊",
+          "upper": {
+            "id": "kun",
+            "hanzi": "坤",
+            "pinyin": "kūn",
+            "symbol": "☷"
+          },
+          "lower": {
+            "id": "qian",
+            "hanzi": "乾",
+            "pinyin": "qián",
+            "symbol": "☰"
+          }
+        },
         "spirit": {
           "id": "liuhe",
           "hanzi": "六合",
@@ -1578,6 +1668,24 @@
           "id": "woke",
           "hanzi": "我剋",
           "pinyin": "wǒkè"
+        },
+        "hexagram": {
+          "number": 38,
+          "hanzi": "睽",
+          "pinyin": "kuí",
+          "symbol": "䷥",
+          "upper": {
+            "id": "li",
+            "hanzi": "離",
+            "pinyin": "lí",
+            "symbol": "☲"
+          },
+          "lower": {
+            "id": "dui",
+            "hanzi": "兌",
+            "pinyin": "duì",
+            "symbol": "☱"
+          }
         },
         "spirit": {
           "id": "taiyin",
@@ -1643,6 +1751,24 @@
           "hanzi": "生我",
           "pinyin": "shēngwǒ"
         },
+        "hexagram": {
+          "number": 33,
+          "hanzi": "遯",
+          "pinyin": "dùn",
+          "symbol": "䷠",
+          "upper": {
+            "id": "qian",
+            "hanzi": "乾",
+            "pinyin": "qián",
+            "symbol": "☰"
+          },
+          "lower": {
+            "id": "gen",
+            "hanzi": "艮",
+            "pinyin": "gèn",
+            "symbol": "☶"
+          }
+        },
         "spirit": {
           "id": "zhuque",
           "hanzi": "朱雀",
@@ -1706,6 +1832,24 @@
           "id": "wosheng",
           "hanzi": "我生",
           "pinyin": "wǒshēng"
+        },
+        "hexagram": {
+          "number": 55,
+          "hanzi": "豐",
+          "pinyin": "fēng",
+          "symbol": "䷶",
+          "upper": {
+            "id": "zhen",
+            "hanzi": "震",
+            "pinyin": "zhèn",
+            "symbol": "☳"
+          },
+          "lower": {
+            "id": "li",
+            "hanzi": "離",
+            "pinyin": "lí",
+            "symbol": "☲"
+          }
         },
         "spirit": {
           "id": "zhifu",
@@ -3095,6 +3239,24 @@
           "hanzi": "我生",
           "pinyin": "wǒshēng"
         },
+        "hexagram": {
+          "number": 47,
+          "hanzi": "困",
+          "pinyin": "kùn",
+          "symbol": "䷮",
+          "upper": {
+            "id": "dui",
+            "hanzi": "兌",
+            "pinyin": "duì",
+            "symbol": "☱"
+          },
+          "lower": {
+            "id": "kan",
+            "hanzi": "坎",
+            "pinyin": "kǎn",
+            "symbol": "☵"
+          }
+        },
         "spirit": {
           "id": "jiutian",
           "hanzi": "九天",
@@ -3158,6 +3320,24 @@
           "id": "woke",
           "hanzi": "我剋",
           "pinyin": "wǒkè"
+        },
+        "hexagram": {
+          "number": 20,
+          "hanzi": "觀",
+          "pinyin": "guān",
+          "symbol": "䷓",
+          "upper": {
+            "id": "xun",
+            "hanzi": "巽",
+            "pinyin": "xùn",
+            "symbol": "☴"
+          },
+          "lower": {
+            "id": "kun",
+            "hanzi": "坤",
+            "pinyin": "kūn",
+            "symbol": "☷"
+          }
         },
         "spirit": {
           "id": "taiyin",
@@ -3231,6 +3411,24 @@
           "hanzi": "我生",
           "pinyin": "wǒshēng"
         },
+        "hexagram": {
+          "number": 3,
+          "hanzi": "屯",
+          "pinyin": "zhūn",
+          "symbol": "䷂",
+          "upper": {
+            "id": "kan",
+            "hanzi": "坎",
+            "pinyin": "kǎn",
+            "symbol": "☵"
+          },
+          "lower": {
+            "id": "zhen",
+            "hanzi": "震",
+            "pinyin": "zhèn",
+            "symbol": "☳"
+          }
+        },
         "spirit": {
           "id": "xuanwu",
           "hanzi": "玄武",
@@ -3294,6 +3492,24 @@
           "id": "kewo",
           "hanzi": "剋我",
           "pinyin": "kèwǒ"
+        },
+        "hexagram": {
+          "number": 18,
+          "hanzi": "蠱",
+          "pinyin": "gǔ",
+          "symbol": "䷑",
+          "upper": {
+            "id": "gen",
+            "hanzi": "艮",
+            "pinyin": "gèn",
+            "symbol": "☶"
+          },
+          "lower": {
+            "id": "xun",
+            "hanzi": "巽",
+            "pinyin": "xùn",
+            "symbol": "☴"
+          }
         },
         "spirit": {
           "id": "baihu",
@@ -3401,6 +3617,24 @@
           "hanzi": "我生",
           "pinyin": "wǒshēng"
         },
+        "hexagram": {
+          "number": 11,
+          "hanzi": "泰",
+          "pinyin": "tài",
+          "symbol": "䷊",
+          "upper": {
+            "id": "kun",
+            "hanzi": "坤",
+            "pinyin": "kūn",
+            "symbol": "☷"
+          },
+          "lower": {
+            "id": "qian",
+            "hanzi": "乾",
+            "pinyin": "qián",
+            "symbol": "☰"
+          }
+        },
         "spirit": {
           "id": "zhifu",
           "hanzi": "值符",
@@ -3464,6 +3698,24 @@
           "id": "woke",
           "hanzi": "我剋",
           "pinyin": "wǒkè"
+        },
+        "hexagram": {
+          "number": 38,
+          "hanzi": "睽",
+          "pinyin": "kuí",
+          "symbol": "䷥",
+          "upper": {
+            "id": "li",
+            "hanzi": "離",
+            "pinyin": "lí",
+            "symbol": "☲"
+          },
+          "lower": {
+            "id": "dui",
+            "hanzi": "兌",
+            "pinyin": "duì",
+            "symbol": "☱"
+          }
         },
         "spirit": {
           "id": "tengshe",
@@ -3529,6 +3781,24 @@
           "hanzi": "生我",
           "pinyin": "shēngwǒ"
         },
+        "hexagram": {
+          "number": 33,
+          "hanzi": "遯",
+          "pinyin": "dùn",
+          "symbol": "䷠",
+          "upper": {
+            "id": "qian",
+            "hanzi": "乾",
+            "pinyin": "qián",
+            "symbol": "☰"
+          },
+          "lower": {
+            "id": "gen",
+            "hanzi": "艮",
+            "pinyin": "gèn",
+            "symbol": "☶"
+          }
+        },
         "spirit": {
           "id": "jiudi",
           "hanzi": "九地",
@@ -3592,6 +3862,24 @@
           "id": "wosheng",
           "hanzi": "我生",
           "pinyin": "wǒshēng"
+        },
+        "hexagram": {
+          "number": 55,
+          "hanzi": "豐",
+          "pinyin": "fēng",
+          "symbol": "䷶",
+          "upper": {
+            "id": "zhen",
+            "hanzi": "震",
+            "pinyin": "zhèn",
+            "symbol": "☳"
+          },
+          "lower": {
+            "id": "li",
+            "hanzi": "離",
+            "pinyin": "lí",
+            "symbol": "☲"
+          }
         },
         "spirit": {
           "id": "liuhe",

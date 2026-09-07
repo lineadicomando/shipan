@@ -117,6 +117,73 @@ export const it: Record<MessageKey, string> = {
   'label.palace.gen': 'nord-est',
   'label.palace.li': 'sud',
 
+  // The sixty-four, keyed by the King Wen number. See `en.ts` for why the key
+  // is an ordinal and not a name.
+  'label.hexagram.1': 'Il creativo', // 乾 qián
+  'label.hexagram.2': 'Il ricettivo', // 坤 kūn
+  'label.hexagram.3': 'L’inizio difficile', // 屯 zhūn
+  'label.hexagram.4': 'L’inesperienza', // 蒙 méng
+  'label.hexagram.5': 'L’attesa', // 需 xū
+  'label.hexagram.6': 'La lite', // 訟 sòng
+  'label.hexagram.7': 'L’esercito', // 師 shī
+  'label.hexagram.8': 'L’unione', // 比 bǐ
+  'label.hexagram.9': 'La piccola riserva', // 小畜 xiǎoxù
+  'label.hexagram.10': 'Il passo', // 履 lǚ
+  'label.hexagram.11': 'La pace', // 泰 tài
+  'label.hexagram.12': 'L’ostruzione', // 否 pǐ
+  'label.hexagram.13': 'La compagnia', // 同人 tóngrén
+  'label.hexagram.14': 'Il grande possesso', // 大有 dàyǒu
+  'label.hexagram.15': 'La modestia', // 謙 qiān
+  'label.hexagram.16': 'L’entusiasmo', // 豫 yù
+  'label.hexagram.17': 'Il seguito', // 隨 suí
+  'label.hexagram.18': 'Il guasto', // 蠱 gǔ
+  'label.hexagram.19': 'L’avvicinarsi', // 臨 lín
+  'label.hexagram.20': 'La contemplazione', // 觀 guān
+  'label.hexagram.21': 'Il morso deciso', // 噬嗑 shìkè
+  'label.hexagram.22': 'L’ornamento', // 賁 bì
+  'label.hexagram.23': 'Lo sgretolamento', // 剝 bō
+  'label.hexagram.24': 'Il ritorno', // 復 fù
+  'label.hexagram.25': 'L’innocenza', // 無妄 wúwàng
+  'label.hexagram.26': 'La grande riserva', // 大畜 dàxù
+  'label.hexagram.27': 'Il nutrimento', // 頤 yí
+  'label.hexagram.28': 'Il grande eccesso', // 大過 dàguò
+  'label.hexagram.29': 'L’abisso', // 坎 kǎn
+  'label.hexagram.30': 'L’aderire', // 離 lí
+  'label.hexagram.31': 'La stimolazione', // 咸 xián
+  'label.hexagram.32': 'La durata', // 恆 héng
+  'label.hexagram.33': 'La ritirata', // 遯 dùn
+  'label.hexagram.34': 'La grande forza', // 大壯 dàzhuàng
+  'label.hexagram.35': 'L’avanzata', // 晉 jìn
+  'label.hexagram.36': 'La luce oscurata', // 明夷 míngyí
+  'label.hexagram.37': 'La famiglia', // 家人 jiārén
+  'label.hexagram.38': 'L’opposizione', // 睽 kuí
+  'label.hexagram.39': 'L’impedimento', // 蹇 jiǎn
+  'label.hexagram.40': 'La liberazione', // 解 xiè
+  'label.hexagram.41': 'La diminuzione', // 損 sǔn
+  'label.hexagram.42': 'L’accrescimento', // 益 yì
+  'label.hexagram.43': 'La rottura', // 夬 guài
+  'label.hexagram.44': 'L’incontro', // 姤 gòu
+  'label.hexagram.45': 'La raccolta', // 萃 cuì
+  'label.hexagram.46': 'La salita', // 升 shēng
+  'label.hexagram.47': 'L’assillo', // 困 kùn
+  'label.hexagram.48': 'Il pozzo', // 井 jǐng
+  'label.hexagram.49': 'La muta', // 革 gé
+  'label.hexagram.50': 'Il tripode', // 鼎 dǐng
+  'label.hexagram.51': 'Lo scuotimento', // 震 zhèn
+  'label.hexagram.52': 'L’arresto', // 艮 gèn
+  'label.hexagram.53': 'Il progresso graduale', // 漸 jiàn
+  'label.hexagram.54': 'La sposa che entra', // 歸妹 guīmèi
+  'label.hexagram.55': 'L’abbondanza', // 豐 fēng
+  'label.hexagram.56': 'Il viandante', // 旅 lǚ
+  'label.hexagram.57': 'Il mite', // 巽 xùn
+  'label.hexagram.58': 'Il sereno', // 兌 duì
+  'label.hexagram.59': 'La dispersione', // 渙 huàn
+  'label.hexagram.60': 'La misura', // 節 jié
+  'label.hexagram.61': 'La verità interiore', // 中孚 zhōngfú
+  'label.hexagram.62': 'Il piccolo eccesso', // 小過 xiǎoguò
+  'label.hexagram.63': 'Dopo il compimento', // 既濟 jìjì
+  'label.hexagram.64': 'Prima del compimento', // 未濟 wèijì
+
   'label.compass.n': 'N',
   'label.compass.ne': 'NE',
   'label.compass.e': 'E',
@@ -2023,6 +2090,7 @@ export const it: Record<MessageKey, string> = {
   'cli.heading.terms': 'Termini solari del {year}',
   'cli.heading.calendar': 'Data lunare',
   'cli.heading.patterns': 'Configurazioni',
+  'cli.heading.hexagrams': 'L’esagramma di ogni palazzo',
   'cli.heading.readings': 'Come si leggono i nomi',
   'cli.field.lodged': 'Il centro si alloggia nel palazzo {palace}, dove si legge il suo {stem}.',
   'cli.field.lodgedShort': 'qui si alloggia il centro: {stem}',
@@ -2203,6 +2271,9 @@ export const it: Record<MessageKey, string> = {
   'cli.column.star': 'stella',
   'cli.column.gate': 'porta',
   'cli.column.spirit': 'spirito',
+  'cli.column.hexagram': 'esagramma',
+  // I due trigrammi di cui l'esagramma è fatto, nell'ordine in cui stanno.
+  'cli.column.trigrams': 'sopra / sotto',
   'cli.column.pillar': 'pilastro',
   'cli.column.stem': 'stelo',
   'cli.column.hidden': 'celati',
@@ -2242,6 +2313,8 @@ export const it: Record<MessageKey, string> = {
   'cli.value.leapTerm': '{term} intercalato',
 
   'cli.note.method': 'Posta con il metodo {method}.',
+  'cli.note.hexagrams':
+    'Il trigramma della porta sopra, quello del palazzo sotto. 《奇門探索錄》 qíméntànsuǒlù, «registro d’esplorazione del Qi Men», libro undicesimo, 八門三合 bāménsānhé, «le otto porte in triplice combinazione».',
 
   'cli.error.unknownCommand': 'Comando "{command}" sconosciuto. Prova `qimen --help`.',
   'cli.error.unknownOption': 'Opzione "{option}" sconosciuta. Prova `qimen --help`.',
