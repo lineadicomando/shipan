@@ -134,6 +134,35 @@ arriving in a new register. Nothing is asked of it anywhere: no question box,
 no `asked` on `/api/taiyi/prompt`, and `--ask` refused by the CLI with a
 message of its own.
 
+## The hexagram over a palace, and what 卷十一 reads in it
+
+*Asked by:* anyone who notices that the gates and the palaces are trigrams.
+
+They are, and the pairing is a whole system: 《奇門探索錄》卷十一 八門三合 takes
+each of the eight gates over each of the eight palaces, puts the gate's trigram
+above and the palace's below, and names the hexagram — 杜加坎 is 渙, 死加乾 is
+泰. Eight over eight is sixty-four, the centre having no gate, so the chapter is
+the 六十四卦 laid on the board with nothing left over. It is on the shelf, read
+on the plate, and written up in `docs/sources.md`.
+
+**The name is derivable and is not the refusal.** It is a function of two things
+this engine already computes, and the clause each entry states next — 乃門生宮,
+乃宮生門, 宮門比和 — is the 門宮 relation the engine already reports.
+
+**What is refused is what the chapter is for.** After the hexagram come the
+《象》 and the 卦辭 quoted, then whether the hour favours 主 or 客, then 類神 —
+what the palace stands for, city god and stove god, spleen and stomach — then
+克應: what will be met at two 里 and at ten. That is the 用神 chosen, the palace
+ranked and the outcome dated, three times over, and each of them has its own
+entry above.
+
+**And a name without its rooms is worse than neither.** A board that printed 渙
+over the north and stopped would hand a reader sixty-four doors and no doctrine,
+and hand a model an invitation to supply the doctrine from the 易經 — which is a
+different book, arrived at through 納甲 and 爻辭 and answering a different
+question. The engine does not print the name for the reason it does not print
+the reading: the two were transmitted together.
+
 ## Who is 主 and who is 客
 
 *Asked by:* every reader of a 太乙 board, immediately.

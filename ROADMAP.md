@@ -92,6 +92,17 @@ alternative. Declaring one belongs to the same errand as implementing it.
 
 - 曆注 `shensha` — what 《協紀辨方書》 ratifies, until a named lineage has been.
 
+**And one divergence carries no parameter at all**, which is the state `leap`
+was in until 《金鏡寶鑑》 arrived. Under the centre lodging this engine computes, the palace of 坤
+holds two stems — its own and the centre's, lodged there — and which of the two
+a star carries off it when the plate turns is read both ways. 《奇門探索錄》
+卷三 p. 22 has 天芮 carry the centre's 乙 out to 兌; this engine leaves 乙 in the
+fifth and carries 坤's own 庚. One heaven-plate cell, and the text's own 夾注
+disputes which star does the carrying rather than whether one does, so it is one
+work quarrelling with itself and not yet a school. Naming it wants a second
+witness. → `docs/sources.md` § "《奇門探索錄》, which derives the pin the 統宗
+only asserts".
+
 ### What each named one waits on
 
 Most of the table waits on a source and nothing more particular. These clauses
@@ -299,7 +310,8 @@ term.
 Not roadmap, and here only so nobody mistakes silence for an omission: the 用神,
 格局, ranking, dating, advice, the 年命 purposes doctrine, who is 主 and who is
 客, a day master called strong or weak, a natal Qi Men chart, 太乙's dynastic
-readings, and the 十八飛星 placements grafted onto a 《全書》 board. Each has an
+readings, the sixty-four hexagrams 卷十一 of the 探索錄 reads over the palaces,
+and the 十八飛星 placements grafted onto a 《全書》 board. Each has an
 entry in [`docs/refusals.md`](docs/refusals.md) saying who asks for it and why
 it is not here — and that file carries more than this list does, several of its
 entries being rules about a surface rather than doctrine somebody asks for.

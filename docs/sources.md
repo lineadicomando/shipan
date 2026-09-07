@@ -1072,6 +1072,184 @@ and the marvels change hands. That is an argument about the method rather than
 the 「以後人難推閏月」 convenience 《金鏡寶鑑》 accuses the placement of being, and
 it belongs beside the accusation.
 
+### 《奇門探索錄》, which derives the pin the 統宗 only asserts
+
+《奇門探索錄》, twelve 卷, printed in 《秘傳奇門十種》, 華齡出版社 2012. A
+Republican compilation, modern movable type on a photographic reproduction —
+so it is read rather than surveyed, and the characters an argument turns on are
+not in doubt. It came off the same 白雲深處人家 fund as the 統宗 scan above,
+inside a RAR anthology with no per-file address; `docs/provenance.tsv` carries
+the origin and the sha256. Citations are by the book's own pagination with the
+PDF sheet beside it, the offset being twenty-six. Read on the plate 2026-09-07.
+
+**It was on the shelf and not in this file**, cited by the transcription
+package for the 中宮 and for a worked example and never weighed here. What it
+turns out to carry is the derivation of the one number `zhirun.ts` calls
+contested.
+
+**The eight-juan copy is not a second witness**, and saying so is the point of
+looking. `qimen-tansuolu-bajuan` is one e-text in three containers — the PDF is
+a LibreOffice render of the plain text, not a facsimile — and it divides the
+work into eight 卷 rather than twelve. It carries the 卷三 material below and
+**not** 卷十一: a search of it for 乘令 returns nothing, which on a typed text
+is a negative worth having. So there is no collation here, and the hexagram
+layer stands on the print alone.
+
+**The pin, with the reason the 統宗 does not give.** 卷三 p. 21 (sheet 47),
+under 超神接氣直指:
+
+> 奇門之法，有正授，有超神，有閏奇，有接氣。正授之後，超神繼之；超神之後，
+> 閏奇繼之；閏奇之後，接氣繼之；接氣之後，復為正授。符頭甲己正值節氣，謂之
+> 正授。此後符頭漸漸過節，則為超神。超至九日十日，則當置閏…然必在芒種大雪
+> 之後、二至之前，其餘節氣不可置閏。
+
+> 凡二至超過九日十日十一日，即重布，芒種大雪三局為閏奇，超過九日置閏，則接
+> 以六日；超過十日置閏，則接以五日；超過十一日置閏，則接以四日。超接循環，
+> 久之自歸於正授，然置閏必以九日起數，何也？蓋一氣十五日，折半乃七日半，八
+> 日以前得一氣之先，不必置閏。八日以後交九日，居一氣之末，故須置閏。
+
+Continued on p. 22: 「超法自一日至十一日，接法自六日至一日，超漸加，接漸減，
+而二十四氣始歸於一定。」
+
+**That is `MAX_CHAOSHEN` stated as a bound and then derived.** Eight days or
+fewer and the block still belongs to the term it is ahead of; nine and it has
+crossed the half of a fifteen-day 氣 and belongs to the next, so the leap
+fires. The engine's constant is 8 — the head may stand up to eight days before,
+and the intercalation waits for nine — which is this text cell for cell, and
+the arithmetic 超 + 接 = 15 holds across all three of its cases.
+
+**The two texts count the same threshold differently, in the same words.** The
+統宗 writes 超過九日 of 甲子 standing eight days before a 壬申 solstice, which
+is an inclusive count; this text writes 超過九日 of 己酉 standing nine days
+before a 戊午 solstice, and its 接以六日 fixes the convention as a gap, 15 − 9.
+So the sentence the 統宗 section above reads as making the engine «one day
+loose» is read here as making it exact. Nothing in `zhirun.ts` moves: what
+changes is that the pin now has a witness on each side and a derivation on one
+of them, where before it had a Python package and a comment.
+
+**And the placement, with the argument the 集成 leaf gives.** 「然置閏必在芒種、
+大雪之後，何也？蓋奇以冬至、夏至分順逆，故于二至之前，以均勻其氣，而他節則無
+也。」 The leap sits before the solstices because that is where the instruments
+and the marvels change hands — the same ground the 超接訣 states and the same
+one 《金鏡寶鑑》 denies. `leap: solstice` is what the engine computes, and it is
+now two texts and two arguments against one.
+
+**拆補 is rejected in a footnote**, and it is recorded because the engine's
+default is 拆補: 「據此則世傳拆補之法不可信從。」 One more partisan of the leap
+dismissing the split, which is what `method` exists to keep apart. It changes
+no default: a school can be followed, and this one is.
+
+**Two dated worked examples, and the engine reproduces both.** The 統宗's
+Kangxi case above is the only other one in this file. These are 萬曆己丑, 1589,
+and the lunar dates and day pillars all come back:
+
+| the text | the engine | the ju |
+|---|---|---|
+| 正月初二日庚戌, 符頭己酉, 超神, 雨水節上局 | 1589-02-16 庚戌, 符頭 1589-02-15 己酉 | 陽遁 9 上元 雨水 |
+| 十月二十日甲午 大雪超神上局 | 1589-11-27 甲午 | 陰遁 4 上元 大雪 |
+| 二十五日己亥 大雪中局 | 1589-12-02 己亥 | 陰遁 7 中元 大雪 |
+| 三十日甲辰 大雪下局, 三局已完 | 1589-12-07 甲辰 | 陰遁 1 下元 大雪 |
+| 十一月初五日己酉至初九日癸丑 大雪閏奇上局 | 1589-12-12 己酉 to 12-16 癸丑 | 陰遁 4 上元 **閏** 大雪 |
+| 初十日甲寅 中局 | 1589-12-17 甲寅 | 陰遁 7 中元 **閏** 大雪 |
+| 十五日己未 下局 | 1589-12-22 己未 | 陰遁 1 下元 **閏** 大雪 |
+| 二十日甲子 方作冬至上局 | 1589-12-27 甲子 | 陽遁 1 上元 冬至 |
+
+Eleven dated blocks, the leap flag included, and the day the intercalation
+stops is the day the text stops it. The first row is the one that separates the
+methods: on 正月初二 this engine's `chaibu` gives 陽遁 8 上元 立春 and its
+`zhirun` gives 陽遁 9 上元 雨水, which is the text's, and the footnote above is
+the text explaining why it expects the other to be wrong.
+
+**Its calendar runs a day off this engine's and the method does not care.** The
+text puts 大雪 on 十月二十九日癸卯 and 冬至 on 十一月十四日戊午; the sky here
+puts them on 甲辰 and 己未, a day later each, and 雨水 two days earlier than the
+初六 the text gives. That is a sixteenth-century 大統曆 against a modern
+ephemeris and nothing else. It moves nothing, because what the rule reads is
+the 符頭's distance from the solstice in whole days, and 己酉 stands nine days
+before either reading of it.
+
+**The chart under the second example, cell for cell.** 卷三 p. 22 lays the
+whole board for 庚戌日戊寅時 and reads it out. Against this engine at
+陰遁 4 上元 閏大雪, `centreLodging: kun`:
+
+| what the text places | how many | agreement |
+|---|---|---|
+| the earth plate, 戊 in 巽 round to 丁 in 兌 | 9 | all nine |
+| 旬首 甲戌 in 震 3, 值符 天沖, 值使 傷門 | 3 | all three |
+| the heaven plate's stars | 8 | six, and two below |
+| the eight gates, 傷門 in 艮 round | 8 | all eight |
+| the eight spirits, by palace | 8 | all eight |
+| 生門 on 坎 called 迫 | 1 | the engine flags 門迫 there unprompted |
+
+Its conclusion — 「坎宮有奇門，又逢六合，正北方大吉」 — is 丙 over 辛 under
+生門 with 六合 beside it, which is what the palace holds here.
+
+**Three partings, and only one of them is the text's mistake.** After naming
+six stars in the order its own turn requires, it writes 「蓬加震。任加巽。」;
+the ring it has just walked puts 天蓬 in 艮 and 天任 in 震, which is where this
+engine puts them, and the last two clauses are shifted by one seat. It is a
+slip and not a doctrine — nothing else in the passage moves with it.
+
+The second is 勾陳 and 朱雀 seated in a yin chart, where this engine prints
+白虎 and 玄武. **The text never renames**: its yang example, on the same page,
+seats 勾陳 and 朱雀 too. That is the counter-witness 《御定奇門寶鑑》 already
+gives, in a second work, and it is what `spirits` carries.
+
+The third has no parameter and is written down as owed one. Under 中宮寄坤 the
+palace of 坤 holds two stems — its own 庚 and the centre's lodged 乙 — and the
+text has 天芮 carry 乙 out of it to 兌, where this engine has it carry 庚 and
+leaves 乙 in the centre. One heaven-plate cell, and the text's own 夾注 quarrels
+with the reading rather than settling it: 「中宮天禽帶乙奇，此云天芮帶到，於理
+不合。」 `centreTravel` is not this — that decides where the 值符 and 值使 are
+*reported* when the count lands them on the centre, and here the instrument is
+in 震. `ROADMAP.md` § 1 carries the debt.
+
+**The centre, and four readings each with a name on it.** 凡例 p. 一二 lists
+them: 中宮寄坤 leaves the centre empty and lodges its gate and star out to 坤,
+《大全》 gives it a gate of its own, 傅先生 puts every spirit and star into the
+fifth, and 趙先生 reads it together with the 值使門. The compiler takes half a
+position — an empty centre is 「於理終覺不安」, so 「看中宮吉凶亦自有法」, but
+「又不必如《大全》所云也」. **None of the four moves the 排盤**: the ju, the
+值符 and the 值使 are the same under all of them, and what changes is what is
+read in the fifth palace. `centreLodging` has one implemented value and this is
+the first source in the file to name three others and attribute each.
+
+**卷十一 八門三合 — the board named in sixty-four hexagrams.** From sheet 189,
+whose title page reads 奇門探索錄卷十一 · 八門三合, the chapter takes each gate
+over each palace and gives it a hexagram: the gate's own trigram above, the
+palace's below. 杜加坎 is 渙, 巽 over 坎; 杜加坤 is 觀; 景加坤 is 晉; 死加巽 is
+升; 死加坎 is 師; 死加兌 is 臨; 死加乾 is 泰; 開加巽 is 姤. Eight cells read on
+the plate and all eight obey the rule. Eight gates over eight palaces is
+sixty-four, the centre having no gate and no trigram, so the chapter is the
+whole of the 六十四卦 laid on the board with nothing left over.
+
+Each entry has a fixed shape: 「X卦乘令」, then the 《象》 and the 卦辭 quoted,
+then one clause of the five relations between gate and palace — 乃門生宮,
+乃宮生門, 宮門比和 — then what to do under a 凶格 and whether the day favours
+主 or 客, then 類神, then 克應.
+
+**The naming is derivable and the rest of it is not, and that is why none of it
+is here.** The hexagram is a function of two things this engine already
+computes, and the relation the entry states next is the same 門宮 relation it
+already reports; so a board could carry the name without a table. What follows
+the name is a reading — what the palace signifies, what will be met at two 里
+and at ten — and the engine stops at the 用神 and does not rank palaces. Naming
+the hexagram and refusing what the chapter says about it would hand a reader
+sixty-four doors and no rooms, and handing a model the same thing invites it to
+supply the rooms from the 易經, which is a different book.
+[`docs/refusals.md`](refusals.md) § "The hexagram over a palace" carries it.
+
+**One layer located and not read.** The eight-juan e-text carries, under a
+《大宗直指》敘 the print's 篇 divisions do not reach, a 卦氣 chapter that runs
+the twenty-four terms over the six lines of the eight trigrams — 立春 at 艮之
+初六、六二 with 丙辰丙午 as its 納甲, 雨水 at 艮之九三、六四, and a second
+series in parallel for 天地之氣 — and hangs each term's three 局 on it. The 局
+numbers are the ordinary ones: 立春 八五二, 雨水 九六三, 驚蟄 一七四, the table
+the engine already computes. So the chapter is an argument about why the
+eighteen 局 fall where they do and not a rule that would move one of them. It
+is on a typed text of unknown descent and has not been found on any plate;
+recorded here as located, which is not weighed.
+
 ---
 
 ## Tier 3 — the reading layer

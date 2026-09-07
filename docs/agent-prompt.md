@@ -226,6 +226,14 @@ neither disputed.
   — 四計 — and the engine computes the first, 歲計. `ji` is the parameter that
   waits for the others; a board for a month or a day is not available and must
   not be improvised from the year's.
+- **The gates and the palaces are trigrams, and the hexagram they make is not
+  computed.** 《奇門探索錄》卷十一 pairs each gate over each palace — the gate's
+  trigram above, the palace's below — and reads the sixty-four hexagrams off the
+  board: 杜門 over 坎 is 渙, 死門 over 乾 is 泰. The engine names none of them,
+  because what the chapter attaches to each name is 類神 and 克應, which is the
+  reading it refuses. Do not supply the pairing and then read the 易經 into it:
+  the hexagram would be arithmetic on this board and everything said about it
+  would come from a different one.
 - **The errands live in a reference, not in the tool.** The `purposes`
   resource holds the one mapping the manuals do not dispute — the eight gates
   and what each is chosen for — and nothing past the gates: the stems, stars
