@@ -77,6 +77,9 @@ phase.
 | 41 | [The fourth remainder](41-the-fourth-remainder.md) | done — 《古今圖書集成》 星命部 arrives, the 定度法 is read on the plate, and the two witnesses the register counted for its rate turn out to be one work printed twice; 紫氣 is implemented at palace resolution and shipped off by default |
 | 42 | [Four by default](42-four-by-default.md) | done — revises 41 one commit later: a rung is written down rather than withheld, and the engine already ships three quantities at the same grade, so 紫氣 becomes the default and the palace-only resolution is what keeps it honest |
 | 43 | [The layer under the board](43-the-layer-under-the-board.md) | done — narrows the exemption that let a bare name stand where the board is already named: naming the board settles which board and not which bag, and `shipan ziwei --year-boundary lichun`, the example the rule carried as proof, had been doing nothing |
+| 44 | [The trigram drawn](44-the-trigram-drawn.md) | done — the nine palaces were always trigrams and the board printed only the name; the figure goes beside it, ☵ 坎, everywhere a palace is printed |
+| 45 | [The hexagram of a palace](45-the-hexagram-of-a-palace.md) | done — the gate's trigram over the palace's names a hexagram, eight to a board; and a refusal that had declined the name along with the reading is reversed on the ground that it would have been fatal to 門迫 |
+| 46 | [The other three families](46-the-other-three-families.md) | done — the day, month and year 奇門 audited across the shelf: the third witness turns out to be the second's text printed four times, 《遁甲釋要》 arrives from a volume already held, the 金函玉鏡 row is one inference too long, and a survey's negative is traced to sampling past the front of a file |
 
 ## The rest of the record
 

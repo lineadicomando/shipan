@@ -119,10 +119,18 @@ are the query to put to an arriving text.
   on manuscript majority: 「其說於理尤為周備，但本多從前說，故遵之」. 本 is an
   edition, and an edition can only be preferred.
 - **`system: rijia · yuejia · nianjia`** — a **lineage holding one reading**.
-  Three witnesses state the families entire and disagree; the fullest prints
-  three competing day methods and its compiler calls the whole layer 後人附會
-  穿鑿. That pairing with `plate: fei` is now stated in a text rather than
-  inferred.
+  Two works state the families entire and disagree; the fuller prints three
+  competing day methods and its compiler calls the whole layer 後人附會穿鑿.
+  Two, not three: the juan counted as a third witness is 《奇門遁甲統宗》卷二,
+  which this shelf holds four times over. On the year the count is 遁甲演義 and
+  the 統宗 for 一四七 against 遁甲集成 第三冊's 一七四, with 《遁甲釋要》 (1939)
+  checking the older recension and printing 「分值一四七諸局」. The day family has
+  a second divergence of its own — where its cycle restarts, on which 遁甲釋要 and
+  《奇門探索錄》 part — so a lineage would have to hold a reading of that too.
+  Two lineages are on the shelf, both 張志春's, and they disagree with each
+  other on the month. That pairing with `plate: fei` is stated in a text rather
+  than inferred, and a family costs more than the pairing suggests: its own
+  ring of nine stars, its own leap count, and layers the hour board has not.
 - **`leap: runyue`** — attribution. 《金鏡寶鑑》 states the leap-month placement,
   works it twice by date and rejects the solstitial one outright; what it does
   not do is name a lineage. `docs/parameters.md` § "What a school value must

@@ -245,6 +245,8 @@ first six of them while this page was being written:
 | 《祖傳年家太乙神數》, «a manuscript or private transmission» | 《祖傳年家太乙神數教材》 — a modern teaching handout, photocopied off a handwritten notebook and printed by a named person, in simplified characters, with worked examples for 1984, 2010 and 2044 |
 | 《中國絕學》第一冊, handwriting no model reads | handwriting for seven eighths of it and movable type for the first, and the typeset eighth carries the 目錄 that navigates the rest |
 | 《遁甲集成》第四冊, 《奇門寶鑑》 六卷 | 故宮 第431冊's 《御定奇門寶鑑》 at its frame and 《奇門遁甲統宗》卷一 at its filling — the 起例, the 超接, the 置閏法 and the 四十格 are the other work, reprinted in its order and word for word |
+| 故宮 第429冊, three works | **four**, which its own title page prints: 奇門遁甲 · 奇門遁甲全局 · 奇門遁甲備覽 · 遁甲奇門捷要. The third of them, from about series p. 440, is a day board — one diagram per 日干支, with a 陽局, a 陰局, a 喜神 and a 鶴神 — and had never been looked at |
+| 《遁甲集成》第一冊, the 符應經 | that work from its p. 385, and 《遁甲釋要》, 徐昂 1939, opening the volume: the four 家 stated entire at its pp. 9–11. A survey that sampled from p. 20 onward reported the volume silent on them |
 
 **A print can be one work at its frame and another at its filling**, and no
 contents leaf says so. 《遁甲集成》第四冊's 《奇門寶鑑》 opens 卷一 on
@@ -284,6 +286,13 @@ render. Four commands, under a minute, and
 they establish extent — which is the thing a plan is a function of. A work in
 six juan and a file with one of them are different objects and only one of them
 is on the shelf.
+
+**And «the whole extent» includes the front.** 《遁甲集成》第一冊 was surveyed
+on twelve sheets from its p. 20 onward, because the work it was catalogued for
+sits at its p. 385, and the four 家 it was being asked about are at pp. 9–11 —
+in a work the entry did not name, opening the volume. The sample was taken over
+the part the question was expected in, which is the same failure as sampling the
+middle, arriving from the other end.
 
 **And a file need not have one hand, so the contact sheet has to cross the
 whole extent and not the middle of it.** 中國絕學 第一冊 was recorded as a
