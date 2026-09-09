@@ -89,8 +89,8 @@ awk -F'\t' 'NR>1 && $3 !~ /no longer held/ {print $5 "  " $1}' docs/provenance.t
 **The clause is not tidiness.** A row whose `revision` says the copy was
 discarded is a deliberate non-holding — it stays so that the same upload is not
 fetched a second time — and without the clause the check reports it as a failed
-file and reads as a hole in the shelf. It is not one, and one reader has already
-taken it for one.
+file and reads as a hole in the shelf. It is not one. There are no such rows
+today; the clause is there because the shelf has had them and will again.
 
 It covers what came off the network — Wikisource wikitext at its `oldid`,
 the ctext pages, three smaller sites, and the reference implementations this
@@ -106,6 +106,13 @@ they reached the shelf with no origin recorded, and a row giving the day they
 were filed would say they were fetched on a day nobody fetched them. Those are
 named in `texts/README.md`, which says of each that its origin is not
 recorded, and cited by edition in `sources.md`.
+
+**And a third case has a row with `not recorded` where the URL goes**, which is
+neither of those two: a file fetched on a day that *is* known, by somebody who
+did not keep the address. The date and the hash are honest and worth having —
+they are most of what the row is for — and writing a plausible URL beside them
+would be the one thing this file cannot afford. The column says so in as many
+words, and supplying the address later costs one edit.
 
 None of it displaces the rule at the foot of `sources.md`: a link is not the
 evidence, the extract is. This is provenance for the copies, not a substitute

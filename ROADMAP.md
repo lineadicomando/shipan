@@ -180,6 +180,24 @@ are the query to put to an arriving text.
 
 ## 2. The shelf
 
+### Read first — three that outrank the table below
+
+**These three are ahead of everything in the next section**, and each for its
+own reason: the first is the only thing in sight that could move a refused
+value, and the other two are files that arrived on 2026-09-09 and were shelved
+without being opened. A file nobody has read is not evidence, and a file nobody
+has read that the register already has sentences about is worse.
+
+| | what would move | where |
+|---|---|---|
+| **《奇門探索錄》卷三 pp. 33–35** | **`plate: fei`.** Its 九星轉運歌 is the first thing on this shelf to put 飛 and the nine stars in an hour context — 「一時一局……陽遁用飛須順轉，陰遁用伏退一推」, with 五黃 in the centre, which is a nine-palace flight and not a ring of eight. Two sentences of it are read and the chapter is not. If it lays a board, the value moves; if its 換星不換時 makes it an overlay on a board already turned, the value is where it was and the clause under it in § 1 can be written with a reason instead of an expectation | `qimen-tansuolu.pdf`, pdf 59–61 (printed 33–35); the 都天轉甲法 follows it on the same page |
+| **《奇門克應》** | **unknown, and that is the point.** 34 sheets, two book-pages to each, colour, no text layer, arrived 2026-09-09 and not opened. 克應 names three different things on this shelf — the eighty-one-cell stem table, the gate-over-palace omens of 《奇門遁甲秘要》, and the ten single stems of 《奇門探索錄》卷四 — and which of them this is decides whether it touches `docs/sources.tsv`'s 十干克應 row at all. **What the file is comes before what it says**: extent, recension, and whether the sheets need cutting | `texts/qimen/qimen-keying.pdf`; `docs/scans.md` § "More than one book-page to the sheet" |
+| **《紫微斗數捷覽》 明刊孤本 1581, 心一堂 facsimile** | the *other* transmission whole — the one 《全集》 belongs to, of which this register has two witnesses and no block-printed edition. 456 pages with the 點校本, arrived 2026-09-09 to replace a 39-page teaser, and **every sentence `docs/sources.md` has about this work was written from the teaser**. Reading it is what lets those sentences be re-read rather than repeated | `texts/ziwei/857656718-…-456页.pdf`, 1279 × 1735 rgb at 192 dpi |
+
+**The address the 捷覽 facsimile came from is not recorded**, and neither is the
+奇門克應's. `docs/provenance.tsv` says so on both rows rather than guessing, and
+supplying them is a two-minute job for whoever fetched the files.
+
 ### Read — sections a question has already been put to
 
 **Nothing here is a sweep of a book.** Every line is a named section of a
