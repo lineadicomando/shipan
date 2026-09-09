@@ -140,9 +140,10 @@ message of its own.
 what it says.
 
 **The name is computed and the reading is not, and the line between them is the
-one this engine draws everywhere else.** 《奇門探索錄》卷十一 八門三合 takes each
-of the eight gates over each of the eight palaces, puts the gate's trigram above
-and the palace's below, and names the hexagram: 杜加坎 is 渙, 死加乾 is 泰. Eight
+one this engine draws everywhere else.** 《奇門探索錄》卷十一
+八門宣明克應動靜占驗 takes each of the eight gates over each of the eight
+palaces, puts the gate's trigram above and the palace's below, and names the
+hexagram: 杜加坎 is 渙, 死加乾 is 泰, 開加艮 is 遯. Eight
 over eight is sixty-four, the centre having no gate, so the chapter is the
 六十四卦 laid on the board with nothing left over. The engine lays the same
 sixty-four, because the name is a function of two things it already computes and

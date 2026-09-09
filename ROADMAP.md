@@ -135,6 +135,13 @@ are the query to put to an arriving text.
   works it twice by date and rejects the solstitial one outright; what it does
   not do is name a lineage. `docs/parameters.md` § "What a school value must
   show" asks for attribution and transcription, and only the second is here.
+  **And a third text has since printed a rule that contains both values**:
+  《金函玉鏡》上冊 p. 87 keeps the two solstitial terms and lets the year's leap
+  month choose between them. One witness, so nothing is declared on it; what it
+  says is that the two values as written may be one rule with a different half
+  suppressed in each, which is the shape of the question before the attribution
+  is even asked for. See `docs/sources.md` § "A third text, and the two
+  placements turn out to be one rule".
 - **`strengths: star`** — a second witness, or one text checking itself. 卷之四
   of 《金鏡寶鑑》 reads 旺相休囚死 outward from the star and tabulates all nine
   that way, swapping 相 with 休 and 囚 with 死. Its table checks its own rule

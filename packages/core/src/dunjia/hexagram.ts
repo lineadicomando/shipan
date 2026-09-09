@@ -3,11 +3,14 @@ import { PALACES, palace, type PalaceId } from './palaces.js';
 /**
  * The hexagram a gate makes standing over a palace.
  *
- * 《奇門探索錄》卷十一 八門三合 reads the board this way: the gate's own
- * trigram above, the palace's below, and the sixty-four names fall out with
- * nothing left over — eight gates over eight palaces, the centre having no
- * gate and no trigram. Eight of its cells were read on the plate and all eight
- * obey the rule; `test/hexagram.test.ts` asserts them.
+ * 《奇門探索錄》卷十一 八門宣明克應動靜占驗 reads the board this way: the
+ * gate's own trigram above, the palace's below, and the sixty-four names fall
+ * out with nothing left over — eight gates over eight palaces, the centre
+ * having no gate and no trigram. The chapter prints all sixty-four, one section
+ * to a gate over sheets 189–216; twelve were read on the plate and all twelve
+ * obey the rule. `test/hexagram.test.ts` asserts every cell. (八門三合 is the
+ * four-line 歌 that opens the same juan and names no hexagram; this file used
+ * to cite that heading.)
  *
  * **The name is all that travels.** What that chapter attaches to each name —
  * the 《象》, whether the hour favours 主 or 客, the 類神 and the 克應 — is the
