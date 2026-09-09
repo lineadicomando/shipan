@@ -107,12 +107,6 @@ were filed would say they were fetched on a day nobody fetched them. Those are
 named in `texts/README.md`, which says of each that its origin is not
 recorded, and cited by edition in `sources.md`.
 
-**And a third case has a row with `not recorded` where the URL goes**, which is
-neither of those two: a file fetched on a day that *is* known, by somebody who
-did not keep the address. The date and the hash are honest and worth having —
-they are most of what the row is for — and writing a plausible URL beside them
-would be the one thing this file cannot afford. The column says so in as many
-words, and supplying the address later costs one edit.
 
 None of it displaces the rule at the foot of `sources.md`: a link is not the
 evidence, the extract is. This is provenance for the copies, not a substitute
