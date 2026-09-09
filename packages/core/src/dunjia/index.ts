@@ -47,7 +47,7 @@ export interface PalaceContents {
   gateRelation?: Relation;
   /**
    * The hexagram the gate makes over this palace: the gate's trigram above,
-   * this palace's below (八門三合).
+   * this palace's below (八門宣明克應動靜占驗).
    *
    * Derived from two things already here and carrying nothing new — which is
    * the whole of what travels. Absent with the gate, the centre being a seat

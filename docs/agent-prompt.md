@@ -229,7 +229,8 @@ neither disputed.
 - **The hexagram of a palace is a name and not a reading, and the difference is
   where you are likeliest to go wrong.** The board hands you one for each of the
   eight palaces that have a gate: the gate's trigram above, the palace's below,
-  which is 《奇門探索錄》卷十一 八門三合's pairing and nobody else's. It is
+  which is 《奇門探索錄》卷十一 八門宣明克應動靜占驗's pairing and
+  nobody else's. It is
   arithmetic on two things already on the board, so it adds no fact — 杜門 over
   坎 is 渙 the way 巽 over 坎 is 渙, and saying both is saying one thing twice.
   **What that chapter reads in each one is not here**: the 《象》, whether the

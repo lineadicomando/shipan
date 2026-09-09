@@ -206,9 +206,12 @@ are flown where the 時家 is turned, which is why `system` and `plate` move
 together — and each also carries **its own ring of nine stars**: 天蓬 through
 天英 for the hour, the 太乙 nine (太乙, 攝提, 軒轅, 招搖, 天符, 青龍, 咸池,
 太陰, 天乙) for the day in the witnesses that print any, the 紫白 for the year
-and the month in the one exposition that tabulates them. The day family carries
-layers the hour family has not, and intercalates on a different count. The table
-above has one column of values and the cost is not one column wide. →
+and the month in the one exposition that tabulates them. **And the day family's
+ring does not move with its gates**: the gates hold three days to a palace and
+skip the centre, the nine stars take one palace a day and go through it, so one
+board there is two motions. It carries layers the hour family has not, and
+intercalates on a different count. The table above has one column of values and
+the cost is not one column wide. →
 [`docs/sources.md`](sources.md) § "What implementing a family would cost"
 
 ## The calendrical layer under every board

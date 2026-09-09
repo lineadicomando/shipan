@@ -131,6 +131,13 @@ are the query to put to an arriving text.
   other on the month. That pairing with `plate: fei` is stated in a text rather
   than inferred, and a family costs more than the pairing suggests: its own
   ring of nine stars, its own leap count, and layers the hour board has not.
+  **The day family's tables are no longer part of that cost.** 《日家奇門》
+  (鮮紅草, 1998) gives all sixty 干支 in both 遁 — gates three days to a palace
+  without the centre, the 太乙 nine one palace a day through it — which is 120
+  charts to check an implementation against, one block of them a known misprint.
+  A bench is not a lineage and nothing here moves; what it removes is the need to
+  derive the tables before being able to test them. 年家 and 月家 keep the cost
+  whole.
 - **`leap: runyue`** — attribution. 《金鏡寶鑑》 states the leap-month placement,
   works it twice by date and rejects the solstitial one outright; what it does
   not do is name a lineage. `docs/parameters.md` § "What a school value must
