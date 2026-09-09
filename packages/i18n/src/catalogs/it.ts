@@ -293,7 +293,7 @@ export const it: Record<MessageKey, string> = {
   'label.pattern.yingrutaibai': 'il fuoco entra nella stella bianca',
   'label.pattern.dage': 'la grande barriera',
   'label.pattern.xingge': 'la barriera della punizione',
-  'label.pattern.zhange': 'la barriera della battaglia',
+  'label.pattern.taibaitonggong': 'la stella bianca in un solo palazzo',
   'label.pattern.shangge': 'la barriera superiore',
   'label.pattern.tengsheyaojiao': 'il serpente si contorce',
   'label.pattern.zhuquetoujiang': 'la fenice si getta nel fiume',

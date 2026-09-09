@@ -21,7 +21,7 @@ export type PatternId =
   | 'yingrutaibai'
   | 'dage'
   | 'xingge'
-  | 'zhange'
+  | 'taibaitonggong'
   | 'shangge'
   | 'tengsheyaojiao'
   | 'zhuquetoujiang'
@@ -92,7 +92,7 @@ const CONFIGURATIONS: Record<PatternId, { hanzi: string; pinyin: string; valence
   yingrutaibai: { hanzi: '熒入太白', pinyin: 'yíngrùtàibái', valence: 'xiong' },
   dage: { hanzi: '大格', pinyin: 'dàgé', valence: 'xiong' },
   xingge: { hanzi: '刑格', pinyin: 'xínggé', valence: 'xiong' },
-  zhange: { hanzi: '戰格', pinyin: 'zhàngé', valence: 'xiong' },
+  taibaitonggong: { hanzi: '太白同宮', pinyin: 'tàibáitónggōng', valence: 'xiong' },
   shangge: { hanzi: '上格', pinyin: 'shànggé', valence: 'xiong' },
   tengsheyaojiao: { hanzi: '螣蛇夭矯', pinyin: 'téngshéyāojiǎo', valence: 'xiong' },
   zhuquetoujiang: { hanzi: '朱雀投江', pinyin: 'zhūquètóujiāng', valence: 'xiong' },
@@ -353,8 +353,10 @@ const STEM_PAIRS: readonly { above: string; below: string; id: PatternId }[] = [
   { above: 'geng', below: 'ji', id: 'xingge' },
   // 加壬之時為上格 — 煙波釣叟歌, in the recension that reads 上格; see above.
   { above: 'geng', below: 'ren', id: 'shangge' },
-  // 戰格: not in the verse fetched; named alike by two independent sources.
-  { above: 'geng', below: 'geng', id: 'zhange' },
+  // 太白同宮: not in the verse. The tables name it so — 《金函玉鏡》卷二
+  // 十干克應訣 and 《神奇之門》 both — and 戰格 is its 又名, which the
+  // second states outright: 名為太白同宮，又名戰格.
+  { above: 'geng', below: 'geng', id: 'taibaitonggong' },
   // 六癸加丁蛇夭矯，六丁加癸雀投江 — 煙波釣叟歌
   { above: 'gui', below: 'ding', id: 'tengsheyaojiao' },
   { above: 'ding', below: 'gui', id: 'zhuquetoujiang' },

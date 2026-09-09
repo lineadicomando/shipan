@@ -72,7 +72,7 @@ export const PATTERN_IDS = [
   'yingrutaibai',
   'dage',
   'xingge',
-  'zhange',
+  'taibaitonggong',
   'shangge',
   'tengsheyaojiao',
   'zhuquetoujiang',

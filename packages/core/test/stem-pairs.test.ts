@@ -96,17 +96,18 @@ describe('十干克應 — the stem above over the stem below', { timeout: 30_00
     });
   }
 
-  it('reports 戰格 where 庚 stands over 庚', () => {
-    // Not in the couplets above: named alike by two independent sources
-    // instead — see `docs/sources.md`. It is here rather than with the verse
-    // so that the tier it belongs to is visible in the test file too.
-    expect(found.get('zhange')).toEqual({ above: 'geng', below: 'geng' });
+  it('reports 太白同宮 where 庚 stands over 庚', () => {
+    // Not in the couplets above: the tables name it and the verse does not —
+    // see `docs/sources.md`. 戰格 is its 又名 and used to be what shipped. It
+    // is here rather than with the verse so that the tier it belongs to is
+    // visible in the test file too.
+    expect(found.get('taibaitonggong')).toEqual({ above: 'geng', below: 'geng' });
   });
 
   it('never reports a pairing in the centre, where nothing was brought', () => {
     // The turn neither moves the centre nor reaches it, so its heaven stem is
     // its earth stem by construction: a ju seating 庚 there would otherwise
-    // carry 戰格 in the centre every hour of the term. Yang ju 3 is such a ju.
+    // carry 太白同宮 in the centre every hour of the term. Yang ju 3 is such a ju.
     for (const hour of ['01:00', '07:00', '13:00', '19:00']) {
       const chart = cast('2024-03-21', hour);
       const centre = chart.palaces.find((cell) => cell.palace.number === 5);
@@ -144,6 +145,6 @@ describe('十干克應 — the stem above over the stem below', { timeout: 30_00
 
 const PAIR_IDS: string[] = [
   'qinglongfanshou', 'feiniaodiexue', 'taibairuying', 'yingrutaibai', 'dage',
-  'xingge', 'zhange', 'tengsheyaojiao', 'zhuquetoujiang', 'qinglongtaozou',
+  'xingge', 'taibaitonggong', 'tengsheyaojiao', 'zhuquetoujiang', 'qinglongtaozou',
   'baihuchangkuang',
 ];

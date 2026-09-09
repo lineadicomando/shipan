@@ -1553,7 +1553,7 @@ tradition's own, said once at the head of the table it governs.
 | 丙 + 庚 | 熒入白 | 火入**金鄉** | 熒入太白 | **織女尋牛郎** ‡ | 熒入太白 | 荧入太白 | **熒入太白** 凶 |
 | 庚 + 癸 | 大格 | 大格 | 大格 | — | 大格 | 太白**冲刑** | **大格** 凶 |
 | 庚 + 己 | 刑格 | 刑格 | 刑格 | — | 刑格 | 太白**大刑** | **刑格** 凶 |
-| 庚 + 庚 | — | — | 太白**同宮** | — | 戦格 | 太白**同宫** | **戰格** 凶 — and see below |
+| 庚 + 庚 | — | — | 太白**同宮** | — | 戦格 | 太白**同宫** | **太白同宮** 凶, 又名 戰格 — and see below |
 | 癸 + 丁 | 蛇夭矯 | 蛇**妖**矯 | 螣蛇**妖**矯 | — | 騰蛇妖矯 | 螣蛇夭矫 | **螣蛇夭矯** 凶 |
 | 丁 + 癸 | 雀投江 | 雀投江 | 朱雀投江 | — | 朱雀投江 | 朱雀投江 | **朱雀投江** 凶 |
 | 乙 + 辛 | 龍逃走 | 龍逃走 | 青龍逃走 | 青龍逃走 | 青龍逃走 | 青龙逃走 | **青龍逃走** 凶 |
@@ -1566,8 +1566,8 @@ tradition's own, said once at the head of the table it governs.
 `test/stem-pairs.test.ts` states each couplet of the verse as data and asserts
 the engine reproduces it. Eleven of the twelve are pinned to a line of the
 song — one of them, 上格, to a line the recensions divide over, and J is the
-second print to read it that way. **The twelfth, 戰格, is pinned to K and H
-agreeing, and that pin no longer holds**: see below.
+second print to read it that way. **The twelfth, 太白同宮, is not in the verse
+at all**; it used to ship as 戰格, which the tables give as its 又名. See below.
 
 **T is read off a transcription, and the printed copy here cannot confirm it.**
 The photographic edition on the shelf — 故宮珍本叢刊 第426冊 — carries the
@@ -1638,9 +1638,11 @@ The same happens at 刑格 and 戰格, and at the two 甲/庚 pairings K names
 that had stood on an uncited repository. Where the sources name a pairing
 differently the classical verse decides — it is the text the others descend
 from — and the divergence is recorded here rather than resolved in silence.
-**That rule has two known limits.** 庚 over 壬, where the verse is transmitted
-two ways, and 庚 over 庚, where the verse does not carry the pairing at all;
-both are below. **T, J and Y widen the spread without moving a single pairing**:
+**That rule has one known limit and it is 庚 over 壬**, where the verse is
+transmitted two ways; see below. **庚 over 庚 turned out not to be a second
+one** — the verse does not carry that pairing, but the witnesses that do are
+unanimous, and what had happened there was that this file shipped the
+formation's alias instead of its name. **T, J and Y widen the spread without moving a single pairing**:
 every cell any of them carries is a cell the shipped table already has, at the
 same two stems, and 丙 over 庚 alone answers to four names — 熒入白, 熒入太白,
 火入金鄉, 織女尋牛郎 — of which the last is Y's and is now doubtful at that
@@ -1707,26 +1709,41 @@ precedent: there the sources disagree,
 which is a different thing from there being only one, and only the second was
 ever true here.
 
-**And 庚 over 庚 is the second, arrived by the other road.** 上格's rule ran out
-because the deciding text carries the couplet two ways; here the deciding text
-does not carry the pairing at all. 戰格 was shipped on K and H agreeing, which
-was the whole of the evidence, and J has since put a classical print on the
-shelf that names the cell **太白同宮** — as do B, 道音文化 and 靈匣網, which is
-J's own line saying it again, and as does H, which prints 太白同宮（戰格）with
-戰格 behind it in brackets. **So 戰格 leads in K alone.** The pairing is not in
-doubt: every source that names the cell marks 庚 standing on 庚 as a 凶
-configuration, and 太白同宮 and 戰格 are two names for it. **What has gone is
-the ground for the name shipped, and it has gone twice over.** The standard is
-«two independent sources, the same thing the same way»; K and H met it, and H is
-not independent of J — its 庚 row runs with J's name for name, 太白蓬星 ·
-亭亭之格 · 白虎干格 included — so the two were one and a half. And H does not
-say the same thing the same way either: it leads with 太白同宮 and keeps 戰格 in
-brackets. The table above carries 戰格 still, and this note is what stands under
-it until the cell is decided:
-the choice is J's reading against a Japanese tradition that has been right
-about this row's other members, and it is a name and not a computation, so
-nothing on a board moves either way. `docs/parameters.md` has no parameter here
-and should not grow one — this is an edition preferred, not a school followed.
+**庚 over 庚 was shipped under the wrong one of its two names**, and finding that
+out took searching the shelf for the name rather than for the cell. The verse
+does not carry this pairing at all, so 戰格 stood on K and H agreeing and on
+nothing else. **Every table on the shelf calls it 太白同宮.** J does — 「加庚曰
+太白同宮，官災橫禍，兄弟雷攻」 — and so do B, H, 道音文化 and 靈匣網, which is
+J's line saying it again.
+
+**And 戰格 is not a Japanese peculiarity: it is the formation's 又名, said so in
+Chinese.** 《神奇之門》 writes 「天盤甲申庚加地盤甲申庚，即庚加庚，**名為太白
+同宮，又名戰格**，官災橫禍，兄弟或同輩朋友相沖撞」, and two practical manuals
+here — 《奇門遁甲現代應用技術》 and 《奇門遁甲高級班筆記》 — tabulate the cell as
+太白同宮 and then use 戰格 in their worked readings. So the two names are one
+formation and the shelf says which is which: 太白同宮 in the tables, 戰格 in the
+running commentary and in the Japanese list of 庚系凶格.
+
+**The table above carries 太白同宮 now**, `taibaitonggong`, which is what every
+other cell of it does — the tables' name and not the alias. Nothing computed
+changes: the same pairing at the same two stems with the same 凶, under the name
+its witnesses lead with. The rule that decides a disputed naming has no verse to
+consult here and did not need one, because no witness disagrees about the
+formation; they agree about the name too, and this file had taken an alias for
+the reading.
+
+**One caution the collation forces.** 《奇門遁甲秘笈大全》 prints 太白同宮 twice —
+in its own 卷二 十干尅應訣 and again in the 賦 quoted above for 小格 — and that
+is **not** a further witness. Its 十干尅應訣 opens 「六甲同六戊，天盤戊加地盤戊，
+謂之伏吟」 and runs cell for cell with J's, so the 秘笈大全 and the 金函玉鏡 are
+one work in two recensions here as they are in the 日家. What seconds J on this
+cell is 《神奇之門》, which is another line.
+
+**And that recension carries a divergence inside one work**, which is worth the
+line because this file leans on both halves of it. At 庚 over 壬 the 秘笈大全's
+verse and 賦 read 小格, and the 十干尅應訣 of the same work — J's recension of
+it — reads 上格. One compilation, two chapters, two names; see the 上格 note
+above, where the split had been taken for one between works.
 
 **B dissents on 戊 over 丙**, calling it 青龍轉光 where V, Y, J and H call it
 青龍返首 — and J says what the dissent is. **青龍轉光 is J's name for 丁 over
