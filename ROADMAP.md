@@ -180,13 +180,18 @@ are the query to put to an arriving text.
 
 ## 2. The shelf
 
-### Read first — three that outrank the table below
+### Read first — the unopened, and the one chapter that could move a value
 
-**These three are ahead of everything in the next section**, and each for its
-own reason: the first is the only thing in sight that could move a refused
-value, and the other two are files that arrived on 2026-09-09 and were shelved
-without being opened. A file nobody has read is not evidence, and a file nobody
-has read that the register already has sentences about is worse.
+**Everything here is ahead of the table in the next section.** One line is a
+chapter already on the shelf that is the only thing in sight capable of moving a
+refused value; the other seven are files that reached the shelf on 2026-09-09 and
+have not been opened. **A file nobody has read is not evidence**, and a file
+nobody has read that the register already has sentences about is worse — which
+is the case of one of them exactly.
+
+**The order inside this section is: the chapter, then the two that arrived
+first, then the four bought against § 1's clauses.** Nothing below is owed a
+reading until these are done.
 
 | | what would move | where |
 |---|---|---|
@@ -194,8 +199,34 @@ has read that the register already has sentences about is worse.
 | **《奇門克應》** | **unknown, and that is the point.** 34 sheets, two book-pages to each, colour, no text layer, arrived 2026-09-09 and not opened. 克應 names three different things on this shelf — the eighty-one-cell stem table, the gate-over-palace omens of 《奇門遁甲秘要》, and the ten single stems of 《奇門探索錄》卷四 — and which of them this is decides whether it touches `docs/sources.tsv`'s 十干克應 row at all. **What the file is comes before what it says**: extent, recension, and whether the sheets need cutting | `texts/qimen/qimen-keying.pdf`; `docs/scans.md` § "More than one book-page to the sheet" |
 | **《紫微斗數捷覽》 明刊孤本 1581, 心一堂 facsimile** | the *other* transmission whole — the one 《全集》 belongs to, of which this register has two witnesses and no block-printed edition. 456 pages with the 點校本, arrived 2026-09-09 to replace a 39-page teaser, and **every sentence `docs/sources.md` has about this work was written from the teaser**. Reading it is what lets those sentences be re-read rather than repeated | `texts/ziwei/ziwei-doushu-jielan-mingkan.pdf`, 1279 × 1735 rgb at 192 dpi |
 
-**Both were bought from guoxueziyuan.com**, which is the watermark they carry;
-`docs/provenance.tsv` has the two addresses. The 捷覽 is no longer named for the
+**Four more were bought on 2026-09-09 and shelved unopened**, chosen against the
+clauses in § 1 rather than by title, and each is owed the same first pass — what
+the file *is*, before what it says.
+
+| | what it was bought to answer | where |
+|---|---|---|
+| **《奇門遁甲折衷》一冊, [清] 甘國壁, 抄本** | **attribution**, which is the half every refused school value in § 1 lacks. 折衷 is reconciling divergent accounts, and 甘國壁 is datable — 巡撫 of 江蘇 and of 雲南 between 康熙 and 乾隆 — so if it takes sides on the 三元, on the centre's lodging or on where the leap block goes, it takes them with a name and a date attached | `qimen-zhezhong.pdf`, 82 sheets two-up at 96 dpi — **and `qimen-zhezhong-chaolu.pdf`, a 67-page transcription with a real text layer**, which makes this the one thing in this block that can be searched before it is read |
+| **景佑《御定奇門大全》** | a **起例 variant**, which is where every divergence on this shelf has come from. Sold as a 明永樂 manuscript copy in 64 卷 carrying thirteen works — the only large compilation on that platform not obviously held here | `yuding-qimen-daquan.pdf`, 1485 sheets two-up at **600 dpi**, the sharpest scan here. **Settle the title first**: 御定 is Qing usage, 景祐 a Song reign, and 《御定奇門寶鑑》 is already on this shelf twice |
+| **《紀氏奇門秘書仕學備餘》** | **`strengths: star`.** 紀氏 is a commentator this shelf already meets — 《奇門探索錄》 carries 「紀氏云：此或九星如此推，八門、九神不能照此也」, disputing whether the nine stars' rule reaches the gates and the spirits, which is that value's whole question. Forty-one pages for a named line | `jishi-qimen-mishu.pdf`, one-up at about 367 dpi |
+
+**None of the four states a provenance.** guoxueziyuan.com says only 「資源來源於
+網絡公開發表文件」, so no 叢刊, no library, no edition — and this register's
+recurring discovery is that two differently-titled files are one text: 遁甲集成
+第四冊 turned out to be the 御定寶鑑, the 秘笈大全 the 金函玉鏡. **Identifying the
+recension therefore comes before weighing anything off any of them**, and that is
+the pass these rows are asking for.
+
+**Four more titles on that platform were judged worth having and were not
+bought**, and they are recorded so the judgement does not have to be made twice:
+《宮藏奇門大全》 (622 pp.), 《遁甲奇門秘傳要旨》 (661 pp.), 《明抄奇門陰遁書》
+(326 pp.) — three large unattributed manuscripts — and 《李衛公奇門心法》, which
+carries a **Tang attribution** and would stand beside 《太乙金鏡式經》 under the
+八門 row, that row's only Tang witness. **Nothing is owed on any of them until
+the four above have been read**: a shelf grows by what has been weighed, not by
+what has been fetched.
+
+**All were bought from guoxueziyuan.com**, which is the watermark they carry;
+`docs/provenance.tsv` has every address. The 捷覽 is no longer named for the
 Scribd upload whose teaser it replaced, those bytes not being from it.
 
 ### Read — sections a question has already been put to
