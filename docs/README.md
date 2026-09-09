@@ -83,8 +83,14 @@ root and point into `texts/`, so a clone that has fetched the files can check
 the lot:
 
 ```sh
-awk -F'\t' 'NR>1 {print $5 "  " $1}' docs/provenance.tsv | sha256sum -c
+awk -F'\t' 'NR>1 && $3 !~ /no longer held/ {print $5 "  " $1}' docs/provenance.tsv | sha256sum -c
 ```
+
+**The clause is not tidiness.** A row whose `revision` says the copy was
+discarded is a deliberate non-holding — it stays so that the same upload is not
+fetched a second time — and without the clause the check reports it as a failed
+file and reads as a hole in the shelf. It is not one, and one reader has already
+taken it for one.
 
 It covers what came off the network — Wikisource wikitext at its `oldid`,
 the ctext pages, three smaller sites, and the reference implementations this
