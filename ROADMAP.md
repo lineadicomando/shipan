@@ -136,19 +136,25 @@ are the query to put to an arriving text.
   without the centre, the 太乙 nine one palace a day through it — which is 120
   charts to check an implementation against, one block of them a known misprint.
   A bench is not a lineage and nothing here moves; what it removes is the need to
-  derive the tables before being able to test them. 年家 and 月家 keep the cost
-  whole.
+  derive the tables before being able to test them. **And the work that table
+  names as its source is now read**: 《金函玉鏡》下冊 prints the 九星 訣 with six
+  decade anchors that check its motion (p. 372) and states the anchor in verse
+  (p. 413), 「冬至艮宮夏坤地，命起甲子順逆行」. What still blocks the value is the
+  anchor divergence, two branches to one, and the lineage. 年家 and 月家 keep
+  the cost whole.
 - **`leap: runyue`** — attribution. 《金鏡寶鑑》 states the leap-month placement,
   works it twice by date and rejects the solstitial one outright; what it does
   not do is name a lineage. `docs/parameters.md` § "What a school value must
   show" asks for attribution and transcription, and only the second is here.
-  **And a third text has since printed a rule that contains both values**:
-  《金函玉鏡》上冊 p. 87 keeps the two solstitial terms and lets the year's leap
-  month choose between them. One witness, so nothing is declared on it; what it
-  says is that the two values as written may be one rule with a different half
-  suppressed in each, which is the shape of the question before the attribution
-  is even asked for. See `docs/sources.md` § "A third text, and the two
-  placements turn out to be one rule".
+  **And a third text prints a rule that contains both values**: 《金函玉鏡》上冊
+  p. 87 keeps the two solstitial terms and lets the year's leap month choose
+  between them, while its 下冊 p. 425 states the placement — 冬夏二至前起閏 —
+  and the nine-day pin outright, and derives the intercalation from the length
+  of a solar month. One work, so nothing is declared on it; what it says is that
+  the two values as written may be one rule with a different half suppressed in
+  each, which is the shape of the question before the attribution is even asked
+  for. See `docs/sources.md` § "A third text, and the two placements turn out to
+  be one rule".
 - **`strengths: star`** — a second witness, or one text checking itself. 卷之四
   of 《金鏡寶鑑》 reads 旺相休囚死 outward from the star and tabulates all nine
   that way, swapping 相 with 休 and 囚 with 死. Its table checks its own rule
