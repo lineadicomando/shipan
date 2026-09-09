@@ -111,8 +111,14 @@ are the query to put to an arriving text.
 - **`plate: fei`** — a text flying the **hour** board. Both imperial prints turn
   it and say so; 《金鏡寶鑑》 spends 飛 five times on other things, including the
   flying-palace operation itself on 八宅. The last unread 起例 on this shelf was
-  read on 2026-08-31 and turns it too. Not expected to move from the shelf as it
-  stands. `plate: fei` and `system` are one errand.
+  read on 2026-08-31 and turns it too. **One passage has since been located that
+  does put 飛 and the nine stars in an hour context**: 《奇門探索錄》卷三 p. 34
+  九星轉運歌, 「一時一局……陽遁用飛須順轉，陰遁用伏退一推」, with 五黃 in the
+  centre. Its closing 換星不換時 reads as an overlay on a board already laid
+  rather than a way of laying one, but that is two sentences and not a reading:
+  **卷三 pp. 33–35 whole is the next thing to read for this value**, and until
+  they are, «not expected to move» is not a sentence to repeat.
+  `plate: fei` and `system` are one errand.
 - **`centreLodging: dun`** — a **school** holding 艮, not another copy reading
   it. 《御定奇門寶鑑》 knows both readings, derives the refused one from the
   先天 trigrams in its 卷一 釋虛中合宮, judges it the sounder — and declines it

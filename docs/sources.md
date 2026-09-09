@@ -701,6 +701,17 @@ register had the ten pairings and a derivation that reproduced them: the
 polarity clause the engine carries is now transmitted in so many words and not
 only inferred from the list. Series pp. 309 and 310.
 
+**A second work states the rule bare and picks the same two examples**, which is
+the same evidence arriving without the clause on it. 《奇門探索錄》卷三 p. 52,
+read on the plate: 「時干剋日干也，甲日庚時、乙日辛時之類」. It does not say
+陽忌陽，陰忌陰 — and the two instances it reaches for are 甲庚 and 乙辛, both
+same-polarity, where a bare reading of 剋 would have 甲日辛時 and 乙日庚時 as
+available and as obvious. They are 《金鏡寶鑑》's two examples exactly. So the
+pair is what the tradition carries, one work spells out the clause the pair
+implies, and the other leaves it to the pair. The rung does not move — this is
+a derived quantity checked against a transmitted list — and what it gains is
+that the derivation and the two witnesses now agree about the same two cells.
+
 **And the 格 are defined a second time inside the same work, 天盤 against 地盤**,
 agreeing with 卷之三 throughout: 伏宮格 庚加直符, 飛宮格 直符加庚, 伏干格 庚加
 日干, 飛干格 日干加庚, 大格 庚加癸, 刑格 庚加己, 龍逃走 乙加辛, 虎猖狂 辛加乙,
@@ -1789,6 +1800,23 @@ sources and three classical ones. T writes 龍**回**首 for the same cell, whic
 is the variant to know when collating: 回 and 返 both say the dragon turns its
 head, and no source seen puts a different configuration there.
 
+**克應 names three things on this shelf and only one of them is this table.**
+The word is the search term, so each of the other two is written down where a
+search will land on it.
+
+**《奇門探索錄》卷四 p. 64 十干克應訣 is not this table either**, and the heading
+is as close to it as a heading gets. Read on the plate: its 歌 opens 「十干克應
+有玄微，**一一皆從時上推**，六甲貴人端正好」, and what follows is **ten single
+stems, not eighty-one pairs** — each 干 given a spirit, an omen by 陽日 or 陰日,
+and a term. 六甲天福貴有餘: 陽日青衣男子，陰日青衣婦人，主三年得祿; 六丁玉女好
+容儀: 丁為玉女，陰日女子，陽日婦人，二十日內進古器; and so through 戊 天武,
+己 明堂, 庚 天刑, 辛 天禽, 壬 天牢, 癸 天藏. It is what will be met and when,
+which is the layer this engine stops before, and it closes on an editor's
+cross-reference — 「九星克應詳《大全》本」. **So the row's count of witnesses is
+unchanged by the best-titled candidate left on the shelf**, and that is worth
+having as a negative established on the plate rather than as a heading nobody
+opened. Read 2026-09-09.
+
 **克應 names another thing on this shelf, and the search for it lands there.**
 《奇門遁甲秘要》, the second half of 《遁甲集成》第二冊 by its running title
 奇門秘要, prints 剋應 in bulk — and its 剋應 answers a *gate over a palace*, not
@@ -2264,6 +2292,24 @@ So `plate: fei` is where it was: 遁甲演義 states that the three systems fly 
 the manual confirms only that the division has a name. Read on the plate
 2026-08-27.
 
+**And one passage has since been located that spends 飛 on the hour board's own
+nine stars, which is what this value is waiting for.** 《奇門探索錄》卷三 p. 34
+九星轉運歌, seen on the plate while reading the page above it: 「九星轉運最為佳，
+年月周天十二時。發動之時隨變化，運行順逆遠近宜。**陽遁用飛須順轉，陰遁用伏退
+一推**」, with a prose note under it — 「一時一局，兩占用此……若陰陽皆五黃居中于
+動宮，止用伏盤，退一宮飛入，退至五黃為極數。總之，**換星不換時**」. The 五黃
+in the centre is a nine-palace flight and not a ring of eight.
+
+**Nothing follows from it yet, and the reason is the last four characters.**
+換星不換時 reads as a technique for moving the stars over a chart already laid —
+一時一局 with 六親 assigned and reassigned — rather than as a way of laying one,
+which would make it an overlay on the turned board and not a rival to it. That
+is a reading of two sentences and the chapter has not been read. **What the
+register can say is that it is now the first thing on this shelf to put 飛 and
+the nine stars in an hour context**, so `ROADMAP.md`'s clause under `plate: fei`
+— that the value is not expected to move from the shelf as it stands — should
+not be repeated until 卷三 pp. 33–35 have been read whole. Located 2026-09-09.
+
 **Its 月家 line carries an attribute 遁甲演義 does not**, and it is recorded
 rather than used: 「月家奇門：用奇門遁甲預測一月內發生的事情，此種預測術中只用
 陽遁，不用陰遁」. 卷一 gives the 月家's 三元分局, its 直符 and its
@@ -2502,11 +2548,29 @@ extract's; it is now read. **The six decade anchors under it check the motion**:
 through nine, since ten palaces forward from any seat is one palace forward. One
 text redundant about the thing in question, which is rung 4's own description.
 
-**It also grades the nine, and 《日家奇門》 grades two of them otherwise.** Here
-天符 and 軒轅 are 中平 and 攝提, 招搖, 咸池 are 凶; the 1998 table makes 軒轅 and
-招搖 the middling pair and 攝提, 咸池, 天符 the baleful one. 天符 and 招搖 trade
-places. A compilation that names this work as its source parting from it on two
-of nine is worth the line, and neither is computed here.
+**It also grades the nine, and three witnesses now do, and they agree about
+seven.** Here 天符 and 軒轅 are 中平 with 攝提, 招搖, 咸池 凶. 《日家奇門》 makes
+軒轅 and 招搖 the middling pair and 攝提, 咸池, 天符 the baleful one. And
+《奇門探索錄》卷三 p. 34 carries a fortune verse for the same nine — 「太乙持衡必
+稱情，青龍財喜滿門庭。太陰得遇謀為利，天乙提攜是貴人。天符咸池招口舌，招搖攝提
+不堪親。軒轅居止能持重，凶吉星辰仔細尋」 — read on the plate, which leaves 軒轅
+alone in the middle and puts 天符 with the baleful.
+
+| | 太乙 青龍 太陰 天乙 | 軒轅 | 天符 | 招搖 | 攝提 咸池 |
+|---|---|---|---|---|---|
+| 金函玉鏡 p. 372 | 吉 | 中平 | 中平 | 凶 | 凶 |
+| 奇門探索錄 p. 34 | 吉 | 中 | 凶 | 凶 | 凶 |
+| 日家奇門 (1998) | 吉 | 平 | 凶 | 平 | 凶 |
+
+**Seven of the nine are agreed by all three and two float**: the four 吉 are the
+same four, 軒轅 is middling in all three, 攝提 and 咸池 are baleful in all three,
+and 天符 and 招搖 are placed differently by each. That the 1998 table names the
+金函玉鏡 as its source and parts from it on both floaters is the sort of thing to
+know before treating it as that work's tabulation. None of it is computed here.
+
+**And this is the 探索錄 carrying the 日家's stars**, which the section above has
+it carrying only the gates' 起訣. It is a third line for the nine names and a
+third for their fortunes.
 
 **卷二十 p. 413 日家奇門九星 — the anchor, in verse.**
 
