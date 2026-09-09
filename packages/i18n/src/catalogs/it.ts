@@ -299,6 +299,8 @@ export const it: Record<MessageKey, string> = {
   'label.pattern.zhuquetoujiang': 'la fenice si getta nel fiume',
   'label.pattern.qinglongtaozou': 'il drago fugge',
   'label.pattern.baihuchangkuang': 'la tigre bianca infuria',
+  'label.pattern.qinglongyaoming': 'il drago risplende',
+  'label.pattern.riqiruwu': 'il sole entra nella nebbia',
 
   // La sorte con cui ciascuna configurazione è trasmessa. Traduzioni piane e
   // non attenuate: 凶 è ciò che dicono le fonti, e una glossa scelta per

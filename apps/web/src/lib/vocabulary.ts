@@ -78,6 +78,8 @@ export const PATTERN_IDS = [
   'zhuquetoujiang',
   'qinglongtaozou',
   'baihuchangkuang',
+  'qinglongyaoming',
+  'riqiruwu',
 ] as const;
 
 /*

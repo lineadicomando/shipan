@@ -1453,8 +1453,8 @@ refuses to rasterise a reading no font on the machine can draw.
 ## 十干克應 — what was checked, one pairing at a time
 
 The table has eighty-one cells: nine stems on the heaven plate over nine on
-the earth plate, 甲 excluded because it never stands on a plate. **Twelve are
-implemented.** The other sixty-nine are absent, and the reason is below.
+the earth plate, 甲 excluded because it never stands on a plate. **Fourteen are
+implemented.** The other sixty-seven are absent, and the reason is below.
 
 ### The sources consulted
 
@@ -1566,8 +1566,11 @@ tradition's own, said once at the head of the table it governs.
 `test/stem-pairs.test.ts` states each couplet of the verse as data and asserts
 the engine reproduces it. Eleven of the twelve are pinned to a line of the
 song — one of them, 上格, to a line the recensions divide over, and J is the
-second print to read it that way. **The twelfth, 太白同宮, is not in the verse
-at all**; it used to ship as 戰格, which the tables give as its 又名. See below.
+second print to read it that way. **Three are not in the verse at all**:
+太白同宮, which used to ship as 戰格 and is treated below; and 青龍耀明 and
+日奇入霧, which came in with J and stand on it and 《奇門遁甲元靈經》 together.
+See "The sixty-seven" below for what those two were weighed against and what
+was held back beside them.
 
 **T is read off a transcription, and the printed copy here cannot confirm it.**
 The photographic edition on the shelf — 故宮珍本叢刊 第426冊 — carries the
@@ -1813,41 +1816,64 @@ naming the same formation at two addresses is a disagreement and not a
 displacement — neither block is out of order around it — and it is recorded
 rather than resolved, since no cell of this engine's twelve stands on either.
 
-### The sixty-nine, and what the collation did to the reason they are refused
+### The sixty-seven, and what the collation did to the reason they are refused
 
 The refusal used to read: the whole table is in two complete sources and both
 are uncited, so a cell outside the twelve has one witness and not two. **The
-collation above says something stronger and less comfortable.** J is a printed
+collation says something stronger and less comfortable.** J is a printed
 classical witness to all 81, so the count of *sources* went up — and the count
 of *lines* went down, because B, H, 道音文化 and 靈匣網 turn out to be J's own
-line in four states. **The second source was the same source.** So the sixty-nine
-stay out, and the reason to write beside them is now that the lines which could
-second J stop short of it: V names about ten formations, T's 四十格 are
-formations and not a nine-by-nine, K covers sixteen, and Y gives three blocks of
-which one cannot be read at its heading.
+line in four states. **The second source was the same source.** So the great
+majority stay out, and the reason to write beside them is now that the lines
+which could second J stop short of it: V names about ten formations, T's 四十格
+are formations and not a nine-by-nine, K covers sixteen, and Y gives three
+blocks of which one cannot be read at its heading.
 
-**Four cells are seconded by two classical lines and are not shipped.** J and
-Y's undisplaced first block write them the same way:
+**Four cells were seconded by two classical lines. Two of them shipped and two
+did not**, and the two that did not are the more instructive.
 
-| | J | Y |
-|---|---|---|
-| 戊 + 丁 | 青龍耀明 | 青龍耀明格 |
-| 戊 + 癸 | 青龍華蓋 | 青龍華蓋格 |
-| 乙 + 己 | 日奇入霧 | 日奇入雾 |
-| 戊 + 戊 | 伏吟 | 雖曰伏吟 |
+| | J | the second line | |
+|---|---|---|---|
+| 戊 + 丁 | 青龍耀明，謁貴求名吉利，若值墓迫，招是招非 | Y 青龍耀明格…必有榮光之喜 | **shipped 吉** |
+| 乙 + 己 | 日奇入霧，被土暗昧，門凶必凶 | Y 日奇入霧，土木相剋，求事不吉 | **shipped 凶** |
+| 戊 + 癸 | 青龍華蓋，吉格者吉招福，門凶多乖 | Y 門合星吉則吉，若傷、死門不美 | held back |
+| 戊 + 戊 | 伏吟，凡事閉塞靜守為吉 | Y 雖曰伏吟…**吉凶不定** | held back |
 
-They meet the standard and that is not the same as being added, which is the
-line 上格 already drew here: meeting the standard makes a pairing *eligible*,
-and a thirteenth entry still needs an id, a hanzi, a reading, a valence read off
-a source rather than inferred from its neighbours, and a line in
-`test/stem-pairs.test.ts`. **The valence is where these four will be hard**, and
-it is worth knowing before the work starts: J grades three of them on the gate
-rather than on the pairing — 青龍耀明 「謁貴求名吉利，若值墓迫，招是招非」,
-青龍華蓋 「吉格者吉招福，門凶多乖」, 日奇入霧 「門凶必凶」 — and B, which is
-J's line and the only one carrying a fortune field, makes two of the four 平.
-A conditional verdict and a neutral one are the two things `Valence` has no
-value for; see "What is deliberately not imported" below. They are listed so
-that the next pass starts from four names and not from eighty-one.
+**青龍耀明 has four lines and a fortune of its own.** Beyond J and Y,
+《開悟之門》 lists it as its **第三吉格** and 《神奇之門》 writes 「因甲木青龍生助
+丁火，故為青龍耀明，宜見上級領導、貴人、求功名，為事吉利」. The 若值墓迫 rider
+is not a reason to withhold: 青龍返首 carries the identical one — 「若逢迫墓擊
+刑，吉事成凶」 — and has shipped 吉 since the beginning.
+
+**日奇入霧 has two and they agree on the sign.** J gives 被土暗昧 and Y gives
+求事不吉 outright, which is a head verdict and not a condition. It is the
+thinner of the two, resting on J and Y alone with no modern line naming it at
+all, and it is shipped on exactly the standard 上格 was: two independent
+sources, the same thing the same way.
+
+**青龍華蓋 is the case where the name is transmitted and the fortune is not**,
+and it is held back for that and not for want of witnesses — it has more of them
+than 日奇入霧 does. J makes it 吉格者吉…門凶多乖, Y makes it 門合星吉則吉,
+《神奇之門》 makes it 逢吉門為吉…逢凶門者事多不利，為凶, and 《奇門探索錄》 —
+「甲子戊加癸，青龍華蓋格，主首尾無應，隱顯兩途…詳生旺休囚，以定主客之吉凶」 —
+hands the verdict to the season. **Four lines and not one head verdict between
+them**; B, which grades, makes it 平. `Valence` has 吉, 凶 and 吉凶, and 吉凶 is
+not a hedge — it is what 空亡 gets, where the sources state both halves of one
+rule in one breath. Writing 吉凶 here would be using it as a hedge, and inventing
+a 平 for one cell is worse. **This is the cell to reach for if a fourth value is
+ever argued.**
+
+**伏吟 is held back for two reasons and either would do.** Y says 吉凶不定 in as
+many words, so there is nothing to carry; and the name collides with the 伏吟
+this engine already reports, which is 星門加本宮 and a different thing under the
+same two characters. A stem-pair 伏吟 would print twice on one board meaning
+twice.
+
+**One variant the collation turned up in passing.** At 乙 over 己 J reads
+「得**二**吉門為地遁」 where the 秘笈大全's recension reads 得**三**吉門, one
+character apart in the same sentence of the same work. Nothing here depends on
+it — the 九遁 are not computed — and it is the sort of thing a second copy exists
+to find.
 
 ### What is deliberately not imported
 

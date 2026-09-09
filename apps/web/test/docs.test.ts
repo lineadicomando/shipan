@@ -516,7 +516,7 @@ describe('the register weighs what a board hands out', () => {
       palaces: ['the earth plate', 'the heaven plate, the nine stars, the eight gates, the eight spirits, 值符, 值使, 旬首, 空亡, 驛馬'],
       season: ['旺相休囚死, 門宮, 星宮'],
       horses: ['驛馬'],
-      patterns: ['門迫', '五不遇時', '入墓 and 六儀擊刑', '十干克應 — the twelve pairings shipped'],
+      patterns: ['門迫', '五不遇時', '入墓 and 六儀擊刑', '十干克應 — the fourteen pairings shipped'],
     },
     bazi: {
       pillars: ['the four pillars'],

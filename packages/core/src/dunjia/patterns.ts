@@ -26,7 +26,9 @@ export type PatternId =
   | 'tengsheyaojiao'
   | 'zhuquetoujiang'
   | 'qinglongtaozou'
-  | 'baihuchangkuang';
+  | 'baihuchangkuang'
+  | 'qinglongyaoming'
+  | 'riqiruwu';
 
 /**
  * The fortune a configuration is transmitted with (吉凶).
@@ -98,6 +100,8 @@ const CONFIGURATIONS: Record<PatternId, { hanzi: string; pinyin: string; valence
   zhuquetoujiang: { hanzi: '朱雀投江', pinyin: 'zhūquètóujiāng', valence: 'xiong' },
   qinglongtaozou: { hanzi: '青龍逃走', pinyin: 'qīnglóngtáozǒu', valence: 'xiong' },
   baihuchangkuang: { hanzi: '白虎猖狂', pinyin: 'báihǔchāngkuáng', valence: 'xiong' },
+  qinglongyaoming: { hanzi: '青龍耀明', pinyin: 'qīnglóngyàomíng', valence: 'ji' },
+  riqiruwu: { hanzi: '日奇入霧', pinyin: 'rìqírùwù', valence: 'xiong' },
 };
 
 /**
@@ -226,8 +230,10 @@ export interface PatternInput {
  *
  * Not implemented: 三奇得使. The sources consulted do not agree on which
  * pairings count, and a rule guessed at would be worse than a rule absent.
- * Nor is the whole of 十干克應 — twelve of its eighty-one cells are here and
- * the rest await a second source; see `STEM_PAIRS` and `docs/sources.md`.
+ * Nor is the whole of 十干克應 — fourteen of its eighty-one cells are here and
+ * the rest await a second *independent* source, the printed table and the
+ * modern tables that carry all eighty-one having turned out to be one line;
+ * see `STEM_PAIRS` and `docs/sources.md`.
  */
 export function findPatterns(input: PatternInput): Pattern[] {
   const found: Pattern[] = [];
@@ -363,6 +369,14 @@ const STEM_PAIRS: readonly { above: string; below: string; id: PatternId }[] = [
   // 六乙加辛龍逃走，六辛加乙虎猖狂 — 煙波釣叟歌
   { above: 'yi', below: 'xin', id: 'qinglongtaozou' },
   { above: 'xin', below: 'yi', id: 'baihuchangkuang' },
+  // Not in the verse either, and here because two lines that never met name
+  // them alike and give each a fortune of its own. 青龍耀明 is 《金函玉鏡》's
+  // 加丁為青龍耀明，謁貴求名吉利 and 《奇門遁甲元靈經》's 青龍耀明格…必有榮
+  // 光之喜, with 《開悟之門》 listing it as its 第三吉格; 日奇入霧 is 被土暗昧
+  // against 土木相剋，求事不吉. Both carry a 墓迫 rider, which is the rider
+  // 青龍返首 above already ships with.
+  { above: 'wu', below: 'ding', id: 'qinglongyaoming' },
+  { above: 'yi', below: 'ji', id: 'riqiruwu' },
 ];
 
 function stemPairs(earth: ByPalace<Stem>, heaven: ByPalace<Stem>): Pattern[] {

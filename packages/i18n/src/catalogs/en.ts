@@ -300,6 +300,8 @@ export const en = {
   'label.pattern.zhuquetoujiang': 'the vermilion bird throws itself in the river',
   'label.pattern.qinglongtaozou': 'the dragon runs away',
   'label.pattern.baihuchangkuang': 'the white tiger runs wild',
+  'label.pattern.qinglongyaoming': 'the dragon blazes',
+  'label.pattern.riqiruwu': 'the sun enters the mist',
 
   // The fortune each configuration is transmitted with. These are the plain
   // translations and not softer ones: 凶 is what the sources say, and a gloss

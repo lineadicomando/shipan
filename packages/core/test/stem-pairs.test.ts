@@ -96,6 +96,15 @@ describe('十干克應 — the stem above over the stem below', { timeout: 30_00
     });
   }
 
+  it('reports 青龍耀明 where 戊 stands over 丁, and 日奇入霧 where 乙 stands over 己', () => {
+    // Neither is in the couplets above: each is named alike by two lines that
+    // never met, and each is given a fortune of its own by both — see
+    // `docs/sources.md`. They are here rather than with the verse so that the
+    // tier they belong to is visible in the test file too.
+    expect(found.get('qinglongyaoming')).toEqual({ above: 'wu', below: 'ding' });
+    expect(found.get('riqiruwu')).toEqual({ above: 'yi', below: 'ji' });
+  });
+
   it('reports 太白同宮 where 庚 stands over 庚', () => {
     // Not in the couplets above: the tables name it and the verse does not —
     // see `docs/sources.md`. 戰格 is its 又名 and used to be what shipped. It
@@ -118,12 +127,13 @@ describe('十干克應 — the stem above over the stem below', { timeout: 30_00
     }
   });
 
-  it('gives every pairing of the table a fortune, and every one of them 凶 but two', () => {
+  it('gives every pairing of the table a fortune, and every one of them 凶 but three', () => {
     const pairings = PATTERN_IDS.filter((id) => found.has(id));
-    // The two the tradition marks 吉 are the two that were already here; the
-    // nine added by the cross-check are all 凶.
+    // Two of the three were the two the verse itself marks 吉; 青龍耀明 is the
+    // third and came in with the printed table, which grades it 吉 in its own
+    // words and is seconded there. Everything the cross-check added is 凶.
     const auspicious = pairings.filter((id) => valenceOf(id).id === 'ji');
-    expect([...auspicious].sort()).toEqual(['feiniaodiexue', 'qinglongfanshou']);
+    expect([...auspicious].sort()).toEqual(['feiniaodiexue', 'qinglongfanshou', 'qinglongyaoming']);
   });
 
   it('never reports two names for one palace’s pair of stems', () => {
@@ -146,5 +156,5 @@ describe('十干克應 — the stem above over the stem below', { timeout: 30_00
 const PAIR_IDS: string[] = [
   'qinglongfanshou', 'feiniaodiexue', 'taibairuying', 'yingrutaibai', 'dage',
   'xingge', 'taibaitonggong', 'tengsheyaojiao', 'zhuquetoujiang', 'qinglongtaozou',
-  'baihuchangkuang',
+  'baihuchangkuang', 'qinglongyaoming', 'riqiruwu',
 ];

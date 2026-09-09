@@ -1944,6 +1944,17 @@
         "palace": 2
       },
       {
+        "id": "riqiruwu",
+        "hanzi": "日奇入霧",
+        "pinyin": "rìqírùwù",
+        "valence": {
+          "id": "xiong",
+          "hanzi": "凶",
+          "pinyin": "xiōng"
+        },
+        "palace": 2
+      },
+      {
         "id": "yingrutaibai",
         "hanzi": "熒入太白",
         "pinyin": "yíngrùtàibái",
@@ -3972,6 +3983,17 @@
         },
         "palace": 7,
         "layer": "gate"
+      },
+      {
+        "id": "qinglongyaoming",
+        "hanzi": "青龍耀明",
+        "pinyin": "qīnglóngyàomíng",
+        "valence": {
+          "id": "ji",
+          "hanzi": "吉",
+          "pinyin": "jí"
+        },
+        "palace": 7
       },
       {
         "id": "zhuquetoujiang",
