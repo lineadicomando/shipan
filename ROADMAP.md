@@ -111,13 +111,19 @@ are the query to put to an arriving text.
 - **`plate: fei`** — a text flying the **hour** board. Both imperial prints turn
   it and say so; 《金鏡寶鑑》 spends 飛 five times on other things, including the
   flying-palace operation itself on 八宅. The last unread 起例 on this shelf was
-  read on 2026-08-31 and turns it too. **One passage has since been located that
-  does put 飛 and the nine stars in an hour context**: 《奇門探索錄》卷三 p. 34
-  九星轉運歌, 「一時一局……陽遁用飛須順轉，陰遁用伏退一推」, with 五黃 in the
-  centre. Its closing 換星不換時 reads as an overlay on a board already laid
-  rather than a way of laying one, but that is two sentences and not a reading:
-  **卷三 pp. 33–35 whole is the next thing to read for this value**, and until
-  they are, «not expected to move» is not a sentence to repeat.
+  read on 2026-08-31 and turns it too. **The one passage that put 飛 and the nine stars
+  in an hour context has now been read whole, and it does not lay a board**:
+  《奇門探索錄》卷三 pp. 33–35, 2026-09-10. Its 九星轉運歌 closes on 換星不換時,
+  and the 按 on p. 35 says what the method is for — 「不過看日前日後於何年月值吉
+  凶生旺者，與都天輔甲不同，不可錯用」 — so it reads a year and a month off a
+  chart already standing. **What the same chapter does carry is a laying
+  procedure that flies, on the hour**: 起訣, p. 35,
+  「十二時支干飛布九宮……自中宮起，飛布九星於各宮」 — a 符經 hand-reckoning with
+  六親, a 身位 and twelve 青龍, which its own 按 measures against 太乙 rather than
+  against this board. A flying hour system, and not this board's 起例. So «not
+  expected to move» can be written with a reason: what is missing is not a text
+  spending 飛 near the nine stars, which this shelf now has twice, but one flying
+  the 時家 board's own 起例.
   `plate: fei` and `system` are one errand. **And a second text has since been
   read that flies half the hour board.** 《奇門遁甲折衷》 devotes a 論 to each
   half — 九星飛布不用旋轉 and 八門旋轉不用飛布 — quotes a named 傳本 for
@@ -198,9 +204,11 @@ are the query to put to an arriving text.
 
 ### Read first — the unopened, and the one chapter that could move a value
 
-**Everything here is ahead of the table in the next section.** One line is a
-chapter already on the shelf that is the only thing in sight capable of moving a
-refused value; the other six are files that reached the shelf on 2026-09-09 —
+**Everything here is ahead of the table in the next section.** The chapter that
+stood at its head — 《奇門探索錄》卷三 pp. 33–35, the only thing in sight capable
+of moving a refused value — was read on 2026-09-10 and moved none: what it
+establishes is under `plate: fei` in § 1. What is left are the six files that
+reached the shelf on 2026-09-09 —
 `docs/provenance.tsv` has nine such files in all, but three of them
 (`jinhan-yujing-1.pdf`, `jinhan-yujing-2.pdf`, `rijia-qimen.pdf`) were already
 read for other rows before this section was written and sit outside it. **A
@@ -208,15 +216,14 @@ file nobody has read is not evidence**, and a file nobody has read that the
 register already has sentences about is worse — which is the case of one of
 them exactly.
 
-**The order inside this section is: the chapter, then the two that arrived
-first, then the four bought against § 1's clauses.** Nothing below is owed a
-reading until these are done.
+**The order inside this section is: the two that arrived first, then the four
+bought against § 1's clauses.** Nothing below is owed a reading until these are
+done.
 
 | | what would move | where |
 |---|---|---|
-| **《奇門探索錄》卷三 pp. 33–35** | **`plate: fei`.** Its 九星轉運歌 is the first thing on this shelf to put 飛 and the nine stars in an hour context — 「一時一局……陽遁用飛須順轉，陰遁用伏退一推」, with 五黃 in the centre, which is a nine-palace flight and not a ring of eight. Two sentences of it are read and the chapter is not. If it lays a board, the value moves; if its 換星不換時 makes it an overlay on a board already turned, the value is where it was and the clause under it in § 1 can be written with a reason instead of an expectation | `qimen-tansuolu.pdf`, pdf 59–61 (printed 33–35); the 都天轉甲法 follows it on the same page |
 | **《奇門克應》** | **surveyed 2026-09-10, and it is none of the three.** A colour facsimile of a manuscript in a running hand, 34 sheets, two book-pages to each, no title leaf, no colophon, no 版心. Most of it is an eight-trigram 萬物類象-style correspondence table (乾坎艮震巽離坤兌, each with categorised lists), bracketed by a grave/missing-person location formula; no eighty-one-cell grid, no gate-over-palace layout, no ten-stem structure. It does not touch `docs/sources.tsv`'s 十干克應 row. Full detail in `texts/README.md`'s row | `texts/qimen/qimen-keying.pdf`; `docs/scans.md` § "More than one book-page to the sheet" |
-| **《紫微斗數捷覽》 明刊孤本 1581, 心一堂 facsimile** | **surveyed 2026-09-10**: the facsimile is whole in four 卷 and the 點校本 bound with it is also complete, its own four 卷 ending in a signed 後跋 — the *other* transmission whole, the one 《全集》 belongs to, of which this register has two witnesses and no block-printed edition. **Every sentence `docs/sources.md` has about this work still describes the 39-page teaser it replaced**. Reading the collation against those sentences is what lets them be re-read rather than repeated | `texts/ziwei/ziwei-doushu-jielan-mingkan.pdf`, 1279 × 1735 rgb at 192 dpi |
+| **《紫微斗數捷覽》 明刊孤本 1581, 心一堂 facsimile** | **surveyed 2026-09-10**: the facsimile runs to four 卷 and the 點校本 bound with it to four of its own, closing on 「[四卷終]」 and a signed 後跋 — the *other* transmission, the one 《全集》 belongs to, of which this register has two witnesses and no block-printed edition. **Whether that is the work whole is not settled**: the title leaf reads 附 點校本 **(上)**, and whether the 上 is a second physical volume nobody here holds or the series' own binding division was not established — the 《御定奇門寶鑑》第一冊 failure exactly, and `texts/README.md`'s row carries it. **Every sentence `docs/sources.md` has about this work still describes the 39-page teaser it replaced**. Reading the collation against those sentences is what lets them be re-read rather than repeated | `texts/ziwei/ziwei-doushu-jielan-mingkan.pdf`, 1279 × 1735 rgb at 192 dpi |
 
 **Four more were bought on 2026-09-09**, chosen against the
 clauses in § 1 rather than by title, and each was owed the same first pass — what
