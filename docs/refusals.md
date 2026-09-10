@@ -236,9 +236,13 @@ century.
 
 **紫微斗數 names two boards and this engine computes one of them**: 《全書》's
 fourteen 正曜, cut by a 五行局 and a lunar day. The other transmission — the
-十八飛星 of 《全集》 and 《捷覽》 — has eighteen stars counted off the **year
-branch**, no 五行局, no 天府, no mirrored second file, and not one of the
-fourteen on it.
+十八飛星 of 《萬曆續道藏》's 三卷 and 《十八飛星策天紫微斗數全集》 — has eighteen
+stars counted off the **year branch**, no 五行局, no 天府, no mirrored second
+file, and not one of the fourteen on it. 《紫微斗數捷覽》 was named here as a
+third witness of that side and is not one: its own 目錄 gives 北斗, 南斗, 中天,
+a 五行局圖 in five grids and 安紫微天府訣, so it belongs to the board this engine
+computes. See `docs/sources.md` § "《紫微斗數捷覽》, which was filed on the wrong
+side".
 
 Both are on the shelf, and the shelf is the trap: 天貴, 天福 and 天壽 have no
 rule in 卷二 and a rule in the other book, and what 《全書》 calls 天空 is what

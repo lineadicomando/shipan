@@ -202,28 +202,35 @@ are the query to put to an arriving text.
 
 ## 2. The shelf
 
-### Read first — the unopened, and the one chapter that could move a value
+### Read first — what is left of the 2026-09 arrivals
 
 **Everything here is ahead of the table in the next section.** The chapter that
 stood at its head — 《奇門探索錄》卷三 pp. 33–35, the only thing in sight capable
 of moving a refused value — was read on 2026-09-10 and moved none: what it
-establishes is under `plate: fei` in § 1. What is left are the six files that
-reached the shelf on 2026-09-09 —
+establishes is under `plate: fei` in § 1. **The two files that arrived first are
+now done** (2026-09-10): the 克應 was surveyed and turns out to be none of the
+three things this shelf calls 克應, and the 捷覽 was read whole. What is left in
+this section is the two of the four bought against § 1's clauses that are
+surveyed and not yet read for the clause each was bought to answer. What
+follows is the six files that reached the shelf on 2026-09-09 —
 `docs/provenance.tsv` has nine such files in all, but three of them
 (`jinhan-yujing-1.pdf`, `jinhan-yujing-2.pdf`, `rijia-qimen.pdf`) were already
 read for other rows before this section was written and sit outside it. **A
 file nobody has read is not evidence**, and a file nobody has read that the
-register already has sentences about is worse — which is the case of one of
-them exactly.
+register already has sentences about is worse. **That was the 捷覽 and it has now
+been paid for**: every sentence about it had been written from a 39-page teaser,
+and reading the book put it in the other transmission from the one those
+sentences put it in.
 
 **The order inside this section is: the two that arrived first, then the four
-bought against § 1's clauses.** Nothing below is owed a reading until these are
-done.
+bought against § 1's clauses.** The first two are done and are kept here for
+what they establish. Nothing below this section is owed a reading until the two
+still standing are.
 
 | | what would move | where |
 |---|---|---|
 | **《奇門克應》** | **surveyed 2026-09-10, and it is none of the three.** A colour facsimile of a manuscript in a running hand, 34 sheets, two book-pages to each, no title leaf, no colophon, no 版心. Most of it is an eight-trigram 萬物類象-style correspondence table (乾坎艮震巽離坤兌, each with categorised lists), bracketed by a grave/missing-person location formula; no eighty-one-cell grid, no gate-over-palace layout, no ten-stem structure. It does not touch `docs/sources.tsv`'s 十干克應 row. Full detail in `texts/README.md`'s row | `texts/qimen/qimen-keying.pdf`; `docs/scans.md` § "More than one book-page to the sheet" |
-| **《紫微斗數捷覽》 明刊孤本 1581, 心一堂 facsimile** | **surveyed 2026-09-10**: the facsimile runs to four 卷 and the 點校本 bound with it to four of its own, closing on 「[四卷終]」 and a signed 後跋 — the *other* transmission, the one 《全集》 belongs to, of which this register has two witnesses and no block-printed edition. **Whether that is the work whole is not settled**: the title leaf reads 附 點校本 **(上)**, and whether the 上 is a second physical volume nobody here holds or the series' own binding division was not established — the 《御定奇門寶鑑》第一冊 failure exactly, and `texts/README.md`'s row carries it. **Every sentence `docs/sources.md` has about this work still describes the 39-page teaser it replaced**. Reading the collation against those sentences is what lets them be re-read rather than repeated | `texts/ziwei/ziwei-doushu-jielan-mingkan.pdf`, 1279 × 1735 rgb at 192 dpi |
+| **《紫微斗數捷覽》 明刊孤本 1581, 心一堂 facsimile** | **read 2026-09-10, and it was filed on the wrong side.** Not the 十八飛星 transmission this file and `docs/refusals.md` both called it: its 目錄 gives 北斗, 南斗, 中天, a 五行局圖 in five grids and 安紫微天府訣, so it is 《全書》's fourteen-star board — the one computed here — in a block-printed Ming witness that transmission had none of. It moves no value and it takes an argument away from one: 定大限訣 states `daxian: ming` **with the bureau's age**, on a board that has a 五行局, worked both ways off one birth, which is the pair this register had been calling a graft. Still refused, now on the count of witnesses. Its five grids also print both cells 《全書》's page lost. → `docs/sources.md` § "《紫微斗數捷覽》, which was filed on the wrong side" | `texts/ziwei/ziwei-doushu-jielan-mingkan.pdf`, 1279 × 1735 rgb at 192 dpi |
 
 **Four more were bought on 2026-09-09**, chosen against the
 clauses in § 1 rather than by title, and each was owed the same first pass — what
