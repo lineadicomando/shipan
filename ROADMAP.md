@@ -118,12 +118,25 @@ are the query to put to an arriving text.
   rather than a way of laying one, but that is two sentences and not a reading:
   **卷三 pp. 33–35 whole is the next thing to read for this value**, and until
   they are, «not expected to move» is not a sentence to repeat.
-  `plate: fei` and `system` are one errand.
+  `plate: fei` and `system` are one errand. **And a second text has since been
+  read that flies half the hour board.** 《奇門遁甲折衷》 devotes a 論 to each
+  half — 九星飛布不用旋轉 and 八門旋轉不用飛布 — quotes a named 傳本 for
+  「地盤星儀是飛，天盤何得用旋？地盤八門用旋，天盤安可用飛？」, and names
+  顧陵岡池本理 for the turn — the 統宗 line, on the text's word and not on a
+  title page. It flies the stars and the 儀 and turns the gates,
+  which is a **third** arrangement rather than this value, and it is one work.
+  What the clause can now say is that the hour board is flown somewhere, which
+  is more than it could say before.
 - **`centreLodging: dun`** — a **school** holding 艮, not another copy reading
   it. 《御定奇門寶鑑》 knows both readings, derives the refused one from the
   先天 trigrams in its 卷一 釋虛中合宮, judges it the sounder — and declines it
   on manuscript majority: 「其說於理尤為周備，但本多從前說，故遵之」. 本 is an
-  edition, and an edition can only be preferred.
+  edition, and an edition can only be preferred. **A second work now states the
+  value and holds it no more than the first did.** 《奇門遁甲折衷》 prints both
+  declared values in one sentence with their derivations and rejects the pair,
+  for a lodging that walks all eight palaces three terms at a time; it also names
+  顧陵岡池本理 for the 坤 this engine lodges in, which is the first attribution
+  the shipped value has. What is still missing is somebody who *holds* 艮.
 - **`system: rijia · yuejia · nianjia`** — a **lineage holding one reading**.
   Two works state the families entire and disagree; the fuller prints three
   competing day methods and its compiler calls the whole layer 後人附會穿鑿.
@@ -150,7 +163,10 @@ are the query to put to an arriving text.
   the cost whole.
 - **`leap: runyue`** — attribution. 《金鏡寶鑑》 states the leap-month placement,
   works it twice by date and rejects the solstitial one outright; what it does
-  not do is name a lineage. `docs/parameters.md` § "What a school value must
+  not do is name a lineage. **Neither does the second work to go looking**:
+  《奇門遁甲折衷》 calls the solstitial rule 諸書's, puts the block at any of the
+  eight 節 instead — a third placement — and quotes a 耕山陳氏 who denies there is
+  a leap at all. Four readings inside one work quoting three others. `docs/parameters.md` § "What a school value must
   show" asks for attribution and transcription, and only the second is here.
   **And a third text prints a rule that contains both values**: 《金函玉鏡》上冊
   p. 87 keeps the two solstitial terms and lets the year's leap month choose
@@ -201,16 +217,20 @@ reading until these are done.
 
 **Four more were bought on 2026-09-09 and shelved unopened**, chosen against the
 clauses in § 1 rather than by title, and each is owed the same first pass — what
-the file *is*, before what it says.
+the file *is*, before what it says. **《奇門遁甲折衷》 was the first of them and is
+read** (2026-09-10): it is the one work on this shelf that carries attribution and
+transcription at once, it names 顧陵岡池本理 for the plate this engine turns and
+the 坤 it lodges the centre in, and it moves no value — `docs/sources.md`
+§ "《奇門遁甲折衷》, which names the school this engine follows". Three left.
 
 | | what it was bought to answer | where |
 |---|---|---|
-| **《奇門遁甲折衷》一冊, [清] 甘國壁, 抄本** | **attribution**, which is the half every refused school value in § 1 lacks. 折衷 is reconciling divergent accounts, and 甘國壁 is datable — 巡撫 of 江蘇 and of 雲南 between 康熙 and 乾隆 — so if it takes sides on the 三元, on the centre's lodging or on where the leap block goes, it takes them with a name and a date attached | `qimen-zhezhong.pdf`, 82 sheets two-up at 96 dpi — **and `qimen-zhezhong-chaolu.pdf`, a 67-page transcription with a real text layer**, which makes this the one thing in this block that can be searched before it is read |
 | **景佑《御定奇門大全》** | a **起例 variant**, which is where every divergence on this shelf has come from. Sold as a 明永樂 manuscript copy in 64 卷 carrying thirteen works — the only large compilation on that platform not obviously held here | `yuding-qimen-daquan.pdf`, 1485 sheets two-up at **600 dpi**, the sharpest scan here. **Settle the title first**: 御定 is Qing usage, 景祐 a Song reign, and 《御定奇門寶鑑》 is already on this shelf twice |
 | **《紀氏奇門秘書仕學備餘》** | **`strengths: star`.** 紀氏 is a commentator this shelf already meets — 《奇門探索錄》 carries 「紀氏云：此或九星如此推，八門、九神不能照此也」, disputing whether the nine stars' rule reaches the gates and the spirits, which is that value's whole question. Forty-one pages for a named line | `jishi-qimen-mishu.pdf`, one-up at about 367 dpi |
 
-**None of the four states a provenance.** guoxueziyuan.com says only 「資源來源於
-網絡公開發表文件」, so no 叢刊, no library, no edition — and this register's
+**None of the four states a provenance**, the one now read included, and that one
+turned out to carry a second watermark under the first. guoxueziyuan.com says only
+「資源來源於網絡公開發表文件」, so no 叢刊, no library, no edition — and this register's
 recurring discovery is that two differently-titled files are one text: 遁甲集成
 第四冊 turned out to be the 御定寶鑑, the 秘笈大全 the 金函玉鏡. **Identifying the
 recension therefore comes before weighing anything off any of them**, and that is
@@ -222,7 +242,7 @@ bought**, and they are recorded so the judgement does not have to be made twice:
 (326 pp.) — three large unattributed manuscripts — and 《李衛公奇門心法》, which
 carries a **Tang attribution** and would stand beside 《太乙金鏡式經》 under the
 八門 row, that row's only Tang witness. **Nothing is owed on any of them until
-the four above have been read**: a shelf grows by what has been weighed, not by
+the three above have been read**: a shelf grows by what has been weighed, not by
 what has been fetched.
 
 **All were bought from guoxueziyuan.com**, which is the watermark they carry;
