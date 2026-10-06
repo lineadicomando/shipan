@@ -416,16 +416,30 @@ no register row, no new prose in `docs/`.
 Nothing here is wrong and nothing blocks anything; each is what a session left
 when the thing it was doing was something else.
 
-**A rasterised board is shaped once for every family on a line.**
-`familiesByScript` in `png.ts` sets each script in a family of its own, because
-resvg's own fallback loses the hanzi beside certain letters, and resvg shapes
-the whole line again for each stretch so set. On a machine holding several
-hundred faces a board with its readings takes about three seconds; the runtime
-image holds far fewer, and what it costs there has not been measured. What
-would remove it is a resvg that resolves a stack a character at a time, which
-the latest `@resvg/resvg-js`, 2.6.2, does not. Nothing in this repository asks
-for a PNG — the entry point is exported and no surface imports it — so it
-moves no term.
+**A rasterised board sets its Latin in whatever face resvg falls back to, on
+any line that also holds a hanzi.** `familiesByScript` in `png.ts` sets each
+script in a family of its own, because resvg's own fallback loses the hanzi
+beside certain letters. Every name draws. What it does not reach is the other
+half of that fallback: resvg shapes the whole line for each stretch, and where
+the face it falls back to covers the line entire it takes every glyph from that
+face, the Latin included. On the runtime image that face is Noto Sans CJK Bold,
+so a reading and a caption beside a name come out in a bold sans where a line
+of Latin alone — the band's heading — is set in DejaVu Serif. Nothing is lost
+and two registers of one drawing are set unalike. Seen 2026-10-06 on a board
+rendered inside the deployed container; a machine whose fallback face lacks the
+tone marks does not show it, which is why the tests do not.
+
+**What it needs is a line that is one script to a chunk**, since resvg shapes a
+chunk at a time: a stretch placed at an `x` of its own starts one. That wants
+the width of what stands before it, and this package estimates widths and does
+not measure them — `measure` in `readings.ts` — so the remedy is a text engine
+or a resvg that resolves a stack a character at a time, which the latest
+`@resvg/resvg-js`, 2.6.2, does not.
+
+**The same shaping is what a board costs.** About a second with its readings at
+a thousand pixels on the runtime image, about three on a machine holding
+several hundred faces. Nothing in this repository asks for a PNG — the entry
+point is exported and no surface imports it — so neither moves a term.
 
 **The 元 does not leave the engine.** Both witnesses address a 太乙 board as
 「第五壬子元 58 局」 — five 元 of seventy-two to a 周紀 — and `TaiyiBoard` hands
