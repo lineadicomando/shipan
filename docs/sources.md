@@ -1215,6 +1215,39 @@ loose» is read here as making it exact. Nothing in `zhirun.ts` moves: what
 changes is that the pin now has a witness on each side and a derivation on one
 of them, where before it had a Python package and a comment.
 
+**A second copy of this chapter has since been read, and it is a plate.**
+《御定奇門大全》卷一, under the running title 景祐秘纂, opens the whole
+sixty-four-juan compilation on a section headed **超神接氣直指** — the same
+heading — and carries this text: 「奇門之法，有正授，有超神，有閏奇，有接氣。
+正授之後超神繼之，超神之後閏奇繼之，閏奇之後接氣繼之，接氣之後復為正授」 on its
+leaf 一, the 芒種大雪 placement with the 二至 derivation and the 超九日接六日
+series on leaf 二, and the 萬曆己丑 examples on leaf 三. Until now the passage
+stood on one Republican typesetting; it now stands on a woodblock as well, and
+**the derivation of `MAX_CHAOSHEN` is not a twentieth-century addition.** Read
+on the plate at 600 dpi 2026-09-10.
+
+**The collation finds one divergence and the copy settles it against itself.**
+Where the 探索錄 reads 符頭甲**己**, 《御定奇門大全》's leaf 一 reads 符頭甲**乙**
+— a single stroke against three, read at 600 dpi with the cell cropped, and 甲己
+is the doctrine, the block heads being the 甲 and 己 days. **Its own next leaf
+prints 甲己符頭先到而節未到為超**, in the same section, so the work contradicts
+itself within two leaves and the sound reading is the one it repeats. That is a
+copyist's slip told from a text's damage, which is what a second copy is for.
+
+**What it does not buy is a witness.** These are two copies of one chapter, so
+nothing below moves a rung, and the count of texts standing behind
+`leap: solstice` has to be looked at again rather than raised: what reads as two
+works agreeing may be one work in two compilations. **Which carries which is not
+established.** The 探索錄 is a Republican compilation and 景祐秘纂 is the name of
+a Song commission, but 《御定奇門大全》's own preface is dated 永樂十二年 (1414)
+while this section works a 萬曆己丑 (1589) year, so its title's date does not
+date its text either. Settling it is a collation of the two chapters entire, and
+it was not done.
+
+**And the clause the file was bought against is answered in the negative.** It
+was bought for a 起例 variant; 卷一's 起例 is the one this engine already
+computes, argued in the words this file already had.
+
 **And the placement, with the argument the 集成 leaf gives.** 「然置閏必在芒種、
 大雪之後，何也？蓋奇以冬至、夏至分順逆，故于二至之前，以均勻其氣，而他節則無
 也。」 The leap sits before the solstices because that is where the instruments

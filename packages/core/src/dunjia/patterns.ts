@@ -318,7 +318,7 @@ function struckInstruments(earth: ByPalace<Stem>): Pattern[] {
  * 十干克應 — the stem above standing over the stem below.
  *
  * The whole table has eighty-one cells, nine stems over nine, and this holds
- * twelve of them. **The rest are absent on purpose**, and the reason is the
+ * fourteen of them. **The rest are absent on purpose**, and the reason is the
  * project's standing one: a pairing enters here only when at least two
  * independent sources name it the same way. Which sources, and what each of
  * these was checked against one by one, is in `docs/sources.md`.
