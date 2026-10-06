@@ -1,5 +1,11 @@
 import { Resvg } from '@resvg/resvg-js';
-import { FONT_STACK, PALETTES, type Scheme } from './palette.js';
+import {
+  CJK_FAMILIES,
+  FONT_STACK,
+  PALETTES,
+  SYMBOL_FAMILIES,
+  type Scheme,
+} from './palette.js';
 import { DEFAULT_SIZE, renderChartSvg } from './svg.js';
 import type { PlateChart, PlateOptions } from './types.js';
 
@@ -49,7 +55,7 @@ export function renderChartPng(chart: PlateChart, options: PngOptions = {}): Buf
     scheme,
   });
 
-  const renderer = new Resvg(inlineColours(svg, scheme), {
+  const renderer = new Resvg(familiesByScript(inlineColours(svg, scheme)), {
     fitTo: { mode: 'width', value: options.width ?? options.size ?? DEFAULT_SIZE },
     font: { loadSystemFonts: true },
   });
@@ -94,38 +100,50 @@ let readingsChecked: boolean | undefined;
  * Refuses to draw where the glyphs would not appear.
  *
  * There is no way to ask resvg which fonts it loaded, so the question is put
- * to it directly: the same tiny image is rasterised twice, once holding a
- * Chinese character and once holding nothing. If the two come out identical,
- * the character drew no pixels and every chart from this process would be an
- * empty grid.
+ * to it directly: the same tiny image is rasterised twice, holding two
+ * different characters of one script. If the two come out identical, neither
+ * drew as itself — both are nothing, or both are the box a font puts where it
+ * has no glyph — and every chart from this process would say as little.
  *
- * **A second question, asked only where the readings were.** `FONT_STACK` is
- * CJK faces and `serif`, and the macron and the caron of ā ǎ ǖ live in Latin
- * Extended-A and B, which those faces cover unevenly and the fallback covers
- * or does not. A band of readings rasterised as a row of boxes — or as
- * nothing — is the silent failure the first probe exists to prevent, one step
- * further on: the picture still looks like a chart, and the half of it that
- * exists for the reader with no Chinese is gone.
+ * **The probe is a line the drawing writes, and not a character alone.** A
+ * hanzi by itself draws on any machine that holds one CJK face, whatever
+ * resvg resolved the family to; what failed was the hanzi sharing a line with
+ * a reading, which is how the band sets every one of them. So each question
+ * is asked of a name beside its pinyin and a word, set as `familiesByScript`
+ * sets it. See that function for why the company matters.
+ *
+ * **A second question, asked only where the readings were.** The macron and
+ * the caron of ā ǎ ǖ live in Latin Extended-A and B, which the faces of the
+ * stack cover unevenly. A band of readings rasterised as a row of boxes — or
+ * as nothing — is the silent failure the first probe exists to prevent, one
+ * step further on: the picture still looks like a chart, and the half of it
+ * that exists for the reader with no Chinese is gone.
  *
  * Checked once per process — fonts do not appear while a program runs — and
  * each message names the fix rather than the symptom.
  */
-/** One character rasterised alone, so two of them can be compared. */
-function probeGlyph(content: string): Buffer {
+/** One short line rasterised alone, so two of them can be compared. */
+function probeLine(content: string): Buffer {
   const svg =
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">` +
-    `<text x="16" y="26" font-size="28" font-family="${FONT_STACK.replace(/"/g, '&quot;')}" ` +
-    `text-anchor="middle">${content}</text></svg>`;
-  return Buffer.from(new Resvg(svg, { font: { loadSystemFonts: true } }).render().asPng());
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 32" width="160" height="32">` +
+    `<g font-family="${FONT_STACK}"><text x="4" y="26" font-size="24">${content}</text></g></svg>`;
+  return Buffer.from(
+    new Resvg(familiesByScript(svg), { font: { loadSystemFonts: true } }).render().asPng(),
+  );
+}
+
+/** Whether two lines came out as one picture, which is neither drawn as itself. */
+function alike(one: string, other: string): boolean {
+  return probeLine(one).equals(probeLine(other));
 }
 
 function assertGlyphsRender(readings: boolean): void {
   if (glyphsChecked && (readingsChecked || !readings)) return;
 
-  const probe = probeGlyph;
-
   if (!glyphsChecked) {
-    if (probe('休').equals(probe(''))) {
+    // `fi` is on the line because a ligature is one of the two things found to
+    // lose the hanzi beside it, and ǐ because it is the other.
+    if (alike('休 jǐ fi', '癸 jǐ fi')) {
       throw new Error(
         'No font on this system can draw Chinese characters, so every palace of the chart would come out empty. ' +
           'Install one — on Debian and Ubuntu, `fonts-noto-cjk`; on Alpine, `font-noto-cjk`; on macOS one is present already. ' +
@@ -136,12 +154,9 @@ function assertGlyphsRender(readings: boolean): void {
   }
 
   if (readings && !readingsChecked) {
-    // Two ways for a reading to be unreadable, and both are asked about: drawn
-    // as nothing, which is the same test as above, and drawn as the box a font
-    // puts where it has no glyph — which is why the second comparison is
-    // against a private-use character no font has ever heard of.
-    const tone = probe('ǎ');
-    if (tone.equals(probe('')) || tone.equals(probe('\u{e000}'))) {
+    // Two marks over one letter: where neither is drawn the lines are one
+    // picture, whether the mark went missing or the whole letter boxed.
+    if (alike('癸 ǎ fi', '癸 ā fi') || alike('癸 ǐ fi', '癸 ī fi')) {
       throw new Error(
         'No font on this system can draw the tone marks of the pinyin, so the band of readings would come out empty or boxed. ' +
           'Install a face with Latin Extended-A and B — on Debian and Ubuntu, `fonts-dejavu` beside the CJK one; on macOS one is present already — ' +
@@ -155,15 +170,68 @@ function assertGlyphsRender(readings: boolean): void {
 /**
  * Whether a font here draws the eight trigram symbols.
  *
- * Asked with ☰, the first of the block, and answered once: three lines is the
- * simplest of the eight, so a face that has any of them has this one. Unlike
- * the two assertions above this reports rather than throws — see `undrawn`.
+ * Asked with ☰ and ☷, the two ends of the block, beside the name each stands
+ * ahead of in a palace, and answered once. Unlike the two assertions above
+ * this reports rather than throws — see `undrawn`.
  */
 function symbolsRender(): boolean {
   if (symbolsDrawn !== undefined) return symbolsDrawn;
-  const drawn = probeGlyph('\u2630');
-  symbolsDrawn = !drawn.equals(probeGlyph('')) && !drawn.equals(probeGlyph('\u{e000}'));
+  symbolsDrawn = !alike('☰ 乾', '☷ 乾');
   return symbolsDrawn;
+}
+
+const HANZI = '⺀-鿿＀-｠';
+const TRIGRAMS = '☰-☷';
+const BY_SCRIPT = new RegExp(`([${HANZI}]+|[${TRIGRAMS}]+)`);
+const CJK_STACK = [...CJK_FAMILIES, 'serif'].join(', ');
+const SYMBOL_STACK = [...SYMBOL_FAMILIES, FONT_STACK].join(', ');
+
+/**
+ * Sets each script of a line in a family of its own.
+ *
+ * **A stack is resolved a character at a time by a browser and not by resvg.**
+ * resvg shapes a whole line in the first family it finds and, where that face
+ * lacks a character, shapes the line again in another and copies the missing
+ * glyphs across by position. The copy is abandoned when the two faces set the
+ * line in a different number of glyphs — a ligature in one, a letter composed
+ * from two pieces in the other — and then every hanzi on the line is a box.
+ * Which lines that takes depends on the faces the machine holds: 癸 guǐ under
+ * one, anything beside an `fi` under another.
+ *
+ * So nothing is left to that copy. The drawing as a whole is given the CJK
+ * families, and every stretch that is not hanzi is wrapped in the stack entire
+ * — Latin first, as `palette.ts` argues it. A line is still shaped once for
+ * each family on it, but each keeps only its own stretch, which is the part it
+ * was chosen for.
+ *
+ * **Every line is told to keep its spaces**, because the wrapping moves them:
+ * a space that led a stretch now leads an element, and one that stood between
+ * two names is now an element by itself, and the default handling drops both.
+ */
+export function familiesByScript(svg: string): string {
+  return svg
+    .replaceAll(FONT_STACK, CJK_STACK)
+    .replace(/(<text\b[^>]*>)([\s\S]*?)(<\/text>)/g, (_whole, open: string, body: string, close: string) => {
+      const set = body
+        .split(/(<[^>]+>)/)
+        .map((piece, index) => (index % 2 === 1 ? piece : stretches(piece)))
+        .join('');
+      return `${open.replace(/^<text/, '<text xml:space="preserve"')}${set}${close}`;
+    });
+}
+
+/** The text between two tags, with every stretch that is not hanzi wrapped. */
+function stretches(text: string): string {
+  return text
+    .split(BY_SCRIPT)
+    .map((stretch, index) => {
+      if (!stretch) return '';
+      if (index % 2 === 0) return `<tspan font-family="${FONT_STACK}">${stretch}</tspan>`;
+      return new RegExp(`^[${TRIGRAMS}]`).test(stretch)
+        ? `<tspan font-family="${SYMBOL_STACK}">${stretch}</tspan>`
+        : stretch;
+    })
+    .join('');
 }
 
 /**

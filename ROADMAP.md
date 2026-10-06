@@ -413,48 +413,19 @@ no register row, no new prose in `docs/`.
 
 ## 6. Debts in the code
 
-**One is high and the rest are low**, which is new: this section used to hold
-only what a session left behind when the thing it was doing was something else.
+Nothing here is wrong and nothing blocks anything; each is what a session left
+when the thing it was doing was something else.
 
-### High — the PNG drops names, and the probe written to catch that passes
-
-**A rasterised board prints a box where some of its hanzi should be**, in the
-band of readings under the grid: 癸 guǐ, 乙 yǐ, 己 jǐ and 景門 jǐngmén come out
-as tofu where 辛 xīn, 坎 kǎn and 天蓬 tiānpéng beside them come out whole. The
-SVG is sound — a browser draws every glyph — so it is the rasteriser and
-nothing above it.
-
-**It is not coverage.** `fc-list` gives the same families for the characters
-that draw and the characters that do not, and the two sit in the same `<text>`
-element at the same size with the same class. Reduced to four lines of markup
-lifted out of a real board, with the drawing's own stylesheet, two draw and two
-box.
-
-**And the probe cannot see it, which is the part that matters.**
-`assertGlyphsRender` in `png.ts` writes `FONT_STACK` inline on the element it
-tests; the drawing takes the same stack from a class in the stylesheet. Under
-the inline form 癸 draws, so the probe answers a question the picture is not
-asking. Two guards exist there precisely against *silent* loss in this band —
-«the picture still looks like a chart, and the half of it that exists for the
-reader with no Chinese is gone» — and this is that failure, arriving past both.
-
-**Why it is high.** It is the register that carries the readings, which is the
-half of the drawing built for a reader who cannot read the glyphs; the loss is
-per-name and partial, so a chart looks right; and a PNG is the copy that
-travels furthest from the page that could have corrected it.
-
-**What it needs first is the cause, not a patch.** The next step is to find
-which family resvg resolves the class to and what it holds — a stack whose
-early faces carry a partial CJK set would explain a per-character split exactly
-— and only then to decide between naming a family the way the drawing means it,
-narrowing the stack, or probing the way the drawing actually resolves. Reported
-2026-09-08; nothing about it is guessed above, and the four-line reduction is
-what each claim rests on.
-
-### Low
-
-Neither is wrong and neither blocks anything; both are what a session left when
-the thing it was doing was something else.
+**A rasterised board is shaped once for every family on a line.**
+`familiesByScript` in `png.ts` sets each script in a family of its own, because
+resvg's own fallback loses the hanzi beside certain letters, and resvg shapes
+the whole line again for each stretch so set. On a machine holding several
+hundred faces a board with its readings takes about three seconds; the runtime
+image holds far fewer, and what it costs there has not been measured. What
+would remove it is a resvg that resolves a stack a character at a time, which
+the latest `@resvg/resvg-js`, 2.6.2, does not. Nothing in this repository asks
+for a PNG — the entry point is exported and no surface imports it — so it
+moves no term.
 
 **The 元 does not leave the engine.** Both witnesses address a 太乙 board as
 「第五壬子元 58 局」 — five 元 of seventy-two to a 周紀 — and `TaiyiBoard` hands

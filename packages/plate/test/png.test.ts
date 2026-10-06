@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { inlineColours, renderChartPng } from '../src/png.js';
+import { Resvg } from '@resvg/resvg-js';
+import { FONT_STACK } from '../src/palette.js';
+import { familiesByScript, inlineColours, renderChartPng } from '../src/png.js';
 import { renderChartSvg } from '../src/svg.js';
 import type { PlateChart } from '../src/types.js';
 
@@ -82,5 +84,38 @@ describe('renderChartPng', { timeout: 30_000 }, () => {
     expect(svg).toContain('var(--qmdj-ink-huo)');
     expect(inlineColours(svg, 'light')).not.toContain('var(');
     expect(renderChartPng(CHART, { width: 200 }).length).toBeGreaterThan(1000);
+  });
+});
+
+describe('familiesByScript', { timeout: 30_000 }, () => {
+  it('wraps what is not hanzi and leaves the hanzi to the drawing', () => {
+    const set = familiesByScript(
+      `<g font-family="${FONT_STACK}"><text x="0" y="0"><tspan class="shui">☵ </tspan>坎<tspan class="word"> kǎn</tspan></text></g>`,
+    );
+
+    // The drawing itself no longer leads with a Latin family.
+    expect(set).toMatch(/^<g font-family="Noto Serif CJK SC,/);
+    expect(set).toContain(`>坎<tspan class="word"><tspan font-family="${FONT_STACK}"> kǎn</tspan></tspan>`);
+    expect(set).toMatch(/<tspan class="shui"><tspan font-family="DejaVu Sans,[^"]*">☵<\/tspan>/);
+  });
+
+  it('keeps a hanzi drawn beside the letters that used to box it', () => {
+    // The regression, put the way it was found: 癸 guǐ and anything beside an
+    // `fi` came out as a box, the box being the same for every hanzi. Two
+    // names on one line that rasterise alike are two boxes.
+    const line = (hanzi: string): Buffer =>
+      Buffer.from(
+        new Resvg(
+          familiesByScript(
+            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 32" width="240" height="32">` +
+              `<g font-family="${FONT_STACK}"><text x="4" y="26" font-size="24">${hanzi}<tspan class="word"> guǐ fire</tspan></text></g></svg>`,
+          ),
+          { font: { loadSystemFonts: true } },
+        )
+          .render()
+          .asPng(),
+      );
+
+    expect(line('癸').equals(line('己'))).toBe(false);
   });
 });

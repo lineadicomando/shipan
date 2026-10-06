@@ -175,10 +175,43 @@ export function styleSheet(scheme: 'light' | 'dark' | 'auto'): string {
  * in one, and the sans families follow because a bare `fonts-noto-cjk`
  * installs those — a stack that named only the serifs would fall through to a
  * Latin default with no Chinese coverage at all.
+ *
+ * **No name is quoted, and that is for the rasteriser.** A family of several
+ * words is a sequence of identifiers and needs no quotes in CSS; resvg loses a
+ * quoted name anywhere past the first, so a stack written the careful way was
+ * one absent family and then whatever face the machine listed first.
+ *
+ * The two halves are kept apart because `png.ts` sets each script in its own:
+ * see `familiesByScript` there.
  */
-export const FONT_STACK =
-  "'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, " +
-  "'Noto Serif', 'Liberation Serif', 'DejaVu Serif', " +
-  "'Noto Serif CJK SC', 'Noto Serif CJK TC', 'Source Han Serif', 'Songti SC', " +
-  "'Noto Sans CJK SC', 'Noto Sans CJK TC', 'PingFang SC', 'Microsoft YaHei', " +
-  "'WenQuanYi Zen Hei', serif";
+export const LATIN_FAMILIES = [
+  'Iowan Old Style',
+  'Palatino Linotype',
+  'Palatino',
+  'Georgia',
+  'Noto Serif',
+  'Liberation Serif',
+  'DejaVu Serif',
+] as const;
+
+export const CJK_FAMILIES = [
+  'Noto Serif CJK SC',
+  'Noto Serif CJK TC',
+  'Source Han Serif',
+  'Songti SC',
+  'Noto Sans CJK SC',
+  'Noto Sans CJK TC',
+  'PingFang SC',
+  'Microsoft YaHei',
+  'WenQuanYi Zen Hei',
+] as const;
+
+/**
+ * Faces known to hold the eight trigrams, U+2630 to U+2637.
+ *
+ * Not part of the stack: a browser finds ☴ by itself, a character at a time.
+ * Only the rasteriser is told, and only for the run that is a symbol.
+ */
+export const SYMBOL_FAMILIES = ['DejaVu Sans', 'Apple Symbols', 'Segoe UI Symbol'] as const;
+
+export const FONT_STACK = [...LATIN_FAMILIES, ...CJK_FAMILIES, 'serif'].join(', ');

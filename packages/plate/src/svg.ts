@@ -149,7 +149,7 @@ export function renderChartSvg(chart: PlateChart, options: PlateOptions = {}): s
     </style>`,
     // Both as an attribute and in the sheet: rasterisers apply
     // presentation attributes reliably and class selectors not at all.
-    `<g class="qmdj" font-family="${FONT_STACK.replace(/"/g, '&quot;')}">`,
+    `<g class="qmdj" font-family="${FONT_STACK}">`,
     `<rect x="0" y="0" width="${size}" height="${round(geometry.height)}" fill="var(--qmdj-ground)"/>`,
   ];
 
