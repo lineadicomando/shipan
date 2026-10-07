@@ -134,7 +134,7 @@ is what holds.
 | `strengths: star` | declared and refused | held by 《奇門遁甲金鏡寶鑑》卷之四; the 折衷 argues against the same reading and puts it on a 《三元經》. Waits on reading whether its rule reaches the gates and the spirits or the nine stars alone |
 | `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
 | `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Each waits on being built as the day family was: a board of its own, with its own stars and no table on the shelf to hold it to |
-| the board of a day | computed | gates and stars, under two readings of the gates. Waits on the hours and the bearings the table prints beside them, and on a prompt of its own |
+| the board of a day | computed | gates and stars, under two readings of the gates. Waits on the hours and the bearings the table prints beside them, on a prompt of its own, on `draw_qimen_chart` drawing it — `compute_qimen_chart` and `/api/qimen/plate` already answer it — and on the scan and the 年命, which are written against a plate of stems |
 | `dayDun: liushi` | declared and refused | sixty days to a 局, the 統宗's. Waits on its rule being read on the plate |
 | the gates' year in six blocks of four terms | recorded | the 金函玉鏡's 大八門逐日出行訣, read for its starts and not verse by verse |
 | `plate: fei` | declared and refused | no text flies the hour board's own 起例. Arrives with a family of `system` |
