@@ -427,6 +427,12 @@ board's name everywhere**: `ziwei.yearBoundary` in an address,
 answers to this today and 太乙's is the second, with one implemented value and
 the same name.
 
+**On the command line the flag is derived from the declaration** — `flagOf` in
+`packages/core/src/cli.ts` — by this same rule, so no divergence is named there
+by hand: `--centre-lodging`, `--guiren`, `--year-boundary` for the layer and
+`--ziwei-year-boundary` for the board. One name is kept: 年命's `count` is
+asked for as `--years`, after what it counts.
+
 `apps/web/src/lib/parameters.ts` is the one place the naming is
 written, `wire` and `named` are how it is asked for, and
 `apps/web/test/parameters.test.ts` holds the client's copy of these rows to the

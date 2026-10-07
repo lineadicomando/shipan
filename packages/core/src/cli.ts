@@ -35,6 +35,7 @@ import {
 } from './dunjia/index.js';
 import { initEphemeris, type EphemerisContext } from './ephemeris.js';
 import { ChartError } from './errors.js';
+import { PARAMETERS, implementedValues, type ParameterEntry } from './parameters.js';
 import { STEMS, type StemId } from './ganzhi.js';
 import {
   formatBazi,
@@ -53,15 +54,13 @@ import { lunarDate } from './lunar.js';
 import {
   DEFAULT_LIUREN_OPTIONS,
   liurenBoard,
-  type LiurenOptions,
 } from './liuren.js';
 import {
   DEFAULT_QIZHENG_OPTIONS,
   qizhengBoard,
-  type QizhengOptions,
 } from './qizheng.js';
 import { nianmingOf, yearsLived, type Nianming, type NianmingOptions } from './nianming.js';
-import { DEFAULT_ZIWEI_OPTIONS, computeZiwei, type ZiweiOptions } from './ziwei/index.js';
+import { DEFAULT_ZIWEI_OPTIONS, computeZiwei } from './ziwei/index.js';
 import { resolveMoment, type Moment } from './pillars.js';
 import {
   baziReadingPrompt,
@@ -79,7 +78,6 @@ import {
   DEFAULT_TAIYI_OPTIONS,
   taiyiBoard,
   taiyiYearAt,
-  type TaiyiOptions,
 } from './taiyi.js';
 import {
   currentMoment,
@@ -150,9 +148,15 @@ interface Options {
    */
   about?: string;
   trueSolar?: boolean;
-  dayBoundary?: string;
-  method?: string;
-  shensha?: string;
+  /**
+   * Every school option asked for, by the flag it was asked with.
+   *
+   * One bag and not a field a parameter: which flags exist is read off the
+   * engine's declaration — `DECLARED_FLAGS` — so a divergence landing in
+   * `parameters.ts` can be asked for here the same day and nothing in this
+   * file learns its name.
+   */
+  declared: Record<string, string>;
   until?: string;
   gate?: string;
   star?: string;
@@ -165,16 +169,147 @@ interface Options {
   born?: string;
   bornTime?: string;
   bornTz?: string;
-  years?: string;
-  guiren?: string;
-  luohou?: string;
-  ziqi?: string;
-  yearBoundary?: string;
-  ziweiYearBoundary?: string;
-  taiyiYearBoundary?: string;
 }
 
-const HELP = `shipan 式盤 — the boards, on the command line
+/** camelCase to the words of a flag: `centreLodging` is `centre-lodging`. */
+const kebab = (id: string): string => id.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
+
+/** The names a layer's parameters carry, which a board's may not share bare. */
+const LAYER_IDS = new Set(
+  PARAMETERS.filter((parameter) => parameter.board === 'pillars').map((parameter) => parameter.id),
+);
+
+/**
+ * The flag a declared parameter is asked for by.
+ *
+ * `docs/parameters.md` § "A board's parameters travel under the board's name"
+ * is the whole rule: a command lays one board, so a board's parameter is bare
+ * — `--guiren`, `--centre-lodging` — and a layer's is bare because it is under
+ * all of them. The one a board shares a name with a layer's takes its board's
+ * name, since the layer is under that board while it is being laid:
+ * `--ziwei-year-boundary`.
+ *
+ * One name is not derived. 年命's `count` is asked for as `--years`, after
+ * what it counts: a `--count` beside `--born` would say nothing of whose.
+ */
+export function flagOf(parameter: ParameterEntry): string {
+  if (parameter.board === 'nianming' && parameter.id === 'count') return '--years';
+  const bare = kebab(parameter.id);
+  return parameter.board !== 'pillars' && LAYER_IDS.has(parameter.id)
+    ? `--${parameter.board}-${bare}`
+    : `--${bare}`;
+}
+
+/**
+ * Every school option the command line can be asked for, off the declaration.
+ *
+ * All of them, the ones with a single computed value included: a flag asking
+ * for a value the engine declares and refuses is answered with that refusal by
+ * name, which is the true statement about it, where no flag at all would leave
+ * a caller unable to find out the value exists. `trueSolarTime` is the one
+ * parameter with no entry: it is a boolean, and `--true-solar` and
+ * `--no-true-solar` are its two words.
+ */
+export const DECLARED_FLAGS: ReadonlyMap<string, ParameterEntry> = new Map(
+  PARAMETERS.filter((parameter) =>
+    parameter.values.every((value) => typeof value.id === 'string'),
+  ).map((parameter) => [flagOf(parameter), parameter]),
+);
+
+/** The boards a command reads options for, beside the layers under all of them. */
+const COMMAND_BOARDS: Partial<Record<Command, readonly string[]>> = {
+  qimen: ['nianming'],
+  liuren: ['liuren'],
+  qizheng: ['qizheng'],
+  taiyi: ['taiyi'],
+  ziwei: ['ziwei'],
+  bazi: ['bazi'],
+};
+
+/**
+ * Refuses a school option the command in hand does not lay.
+ *
+ * `--guiren` beside `qimen` used to be dropped in silence, and a board that
+ * ignores what it was asked for looks exactly like one that honoured it. The
+ * chart's own options and the layers' are read by every command, as they were.
+ */
+function refuseStrays(command: Command, options: Options): void {
+  const read = ['pillars', 'qimen', 'almanac', ...(COMMAND_BOARDS[command] ?? [])];
+  for (const flag of Object.keys(options.declared)) {
+    const parameter = DECLARED_FLAGS.get(flag) as ParameterEntry;
+    if (!read.includes(parameter.board)) {
+      throw new UsageError('cli.error.optionNotRead', { option: flag, command });
+    }
+  }
+}
+
+/**
+ * Sets on a board's options every declared value asked for on the command line.
+ *
+ * Strict about the value: nothing in a printed board says which reading of a
+ * divergence was meant, so a misspelling that fell back to the default would
+ * move the board with no visible symptom. A value the engine declares and does
+ * not compute passes here and is refused by the engine, by name.
+ */
+function declared<O extends object>(boards: readonly string[], target: O, options: Options): O {
+  for (const [flag, parameter] of DECLARED_FLAGS) {
+    const value = options.declared[flag];
+    if (value === undefined || !boards.includes(parameter.board)) continue;
+    if (!parameter.values.some((candidate) => candidate.id === value)) {
+      throw new UsageError('cli.error.unknownValue', { option: flag, value });
+    }
+    (target as Record<string, unknown>)[parameter.id] = value;
+  }
+  return target;
+}
+
+/** A sentence set under its flag, at the measure the rest of the help keeps. */
+function folded(sentence: string): string[] {
+  const margin = ' '.repeat(25);
+  const lines: string[] = [];
+  let line = '';
+  for (const word of sentence.split(' ')) {
+    if (line && line.length + 1 + word.length > 54) {
+      lines.push(margin + line);
+      line = word;
+    } else {
+      line = line ? `${line} ${word}` : word;
+    }
+  }
+  if (line) lines.push(margin + line);
+  return lines;
+}
+
+/**
+ * The lines of the help that name the school options, off the same declaration.
+ *
+ * After each flag, what the engine **computes** — a flag offering 飛盤 would be
+ * offering an error — and under it the gloss the notes page prints for that
+ * parameter, the default, and the values declared and refused, so that a
+ * reader weighing a school knows the others exist.
+ */
+function declaredHelp(): string {
+  const lines: string[] = [];
+  for (const [flag, parameter] of DECLARED_FLAGS) {
+    const computed = implementedValues(parameter).map(String);
+    const refused = parameter.values
+      .filter((value) => !value.implemented)
+      .map((value) => String(value.id));
+    const whose =
+      parameter.board === 'pillars' || parameter.board === 'almanac'
+        ? 'every board'
+        : `\`${parameter.board === 'nianming' ? 'qimen --born' : parameter.board}\``;
+    const gloss = translate('en', `notes.parameter.${parameter.id}` as MessageKey);
+    lines.push(`  ${flag} ${computed.join('|')}`);
+    lines.push(...folded(`for ${whose}: ${gloss} Default: ${String(parameter.default)}`));
+    if (refused.length > 0) {
+      lines.push(...folded(`declared and refused: ${refused.join(', ')}`));
+    }
+  }
+  return lines.join('\n');
+}
+
+export const HELP = `shipan 式盤 — the boards, on the command line
 
 Usage
   shipan qimen     [options]     the 奇門遁甲 nine palaces for a moment
@@ -214,34 +349,7 @@ Narrowing a scan
                          say what makes a palace worth standing in; this one
                          says which palaces are the person's
   --true-solar, --no-true-solar   default: on
-  --day-boundary zishi|midnight   default: zishi
-  --method chaibu|zhirun|maoshan  how the ju is determined; default: chaibu
-  --shensha xieji                 which register the almanac line carries
-  --guiren chou|wei               for \`liuren\`: which verse seats the 貴人.
-                                  It moves the twelve generals and never the
-                                  three transmissions; default: chou
-  --luohou descending|ascending   for \`qizheng\`: which node bears the name
-                                  羅睺, the other taking 計都. The default is
-                                  the astrologers' law and not the 時憲曆's,
-                                  which is the reverse of the Indian one
-  --ziqi off|yinianyisu           for \`qizheng\`: whether 紫氣 enters as a
-                                  fourth remainder. It is on by default and is
-                                  placed to a palace and to no degree; \`off\`
-                                  leaves the board with three
-  --year-boundary lichun|chunjie  where the year of the pillars begins, which
-                                  every board stands on; default: lichun
-  --ziwei-year-boundary lichun|chunjie
-                                  for \`ziwei\`: which reckoning gives that
-                                  board's year its stem, and so seats the four
-                                  transformations. It is not the pillars' and
-                                  carries its own name for that reason;
-                                  default: chunjie
-  --taiyi-year-boundary lichun|dongzhi|chunjie
-                                  for \`taiyi\`: where the counted year begins.
-                                  It is upstream of the whole board, and only
-                                  lichun is implemented — the pillars turn
-                                  there, and a board cut elsewhere would be two
-                                  calendars in one output
+${declaredHelp()}
   --lang en|it           default: the environment, then English
   --json                 the data, unformatted and untranslated. Not with
                          --ask or --about: there is nowhere in it for a
@@ -280,10 +388,6 @@ Placing a birth in the chart (年命)
   --born-time HH:mm      default: 12:00. It bears on nothing but a birth
                          within hours of 立春, where it decides the year
   --born-tz IANA-zone    default: the chart's zone, for the same reason
-  --years sui|turns      how the years are counted for 行年: 虛歲, counting
-                         the year of the birth itself, or the turns of the
-                         year pillar. Default: sui, which is the count the
-                         rule was written for
 
 A note on what this prints
   The engine reports arrangements — which gate stands over which palace, how
@@ -324,6 +428,7 @@ export async function run(argv: string[]): Promise<number> {
   }
 
   try {
+    refuseStrays(command, options);
     process.stdout.write(`${await execute(command, options, locale)}\n`);
     return 0;
   } catch (error) {
@@ -384,7 +489,7 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
     if (options.year !== undefined && !/^-?\d+$/.test(options.year)) {
       throw new UsageError('cli.error.numberRequired', { option: '--year', value: options.year });
     }
-    const taiyiOptions = taiyiOptionsFrom(options);
+    const taiyiOptions = declared(['taiyi'], { ...DEFAULT_TAIYI_OPTIONS }, options);
     // Without `--year` the board is the one being stood in, which is a
     // question about where the year was cut — so 立春 answers it rather than
     // the calendar. Asked of the sky and not of a resolved moment: a moment
@@ -466,7 +571,11 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
     if (gender && gender !== 'male' && gender !== 'female') {
       throw new UsageError('cli.error.unknownValue', { option: '--gender', value: gender });
     }
-    const bazi = computeBazi(moment, gender ? { gender } : {}, context);
+    const bazi = computeBazi(
+      moment,
+      declared(['bazi'], gender ? { gender } : {}, options),
+      context,
+    );
     if (options.json) return JSON.stringify({ moment, bazi }, null, 2);
 
     // Unlike `qimen` and `liuren`, `--ask` does not imply `--prompt` here: it
@@ -500,7 +609,7 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
         day: moment.pillars.day,
         hour: moment.hourBranch,
       },
-      liurenOptionsFrom(options),
+      declared(['liuren'], { ...DEFAULT_LIUREN_OPTIONS }, options),
     );
     if (options.json) return JSON.stringify({ moment, liuren: board }, null, 2);
 
@@ -527,11 +636,10 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
     if (gender && gender !== 'male' && gender !== 'female') {
       throw new UsageError('cli.error.unknownValue', { option: '--gender', value: gender });
     }
-    const board = computeZiwei(moment, {
-      ...DEFAULT_ZIWEI_OPTIONS,
-      ...ziweiOptionsFrom(options),
-      ...(gender ? { gender } : {}),
-    });
+    const board = computeZiwei(
+      moment,
+      declared(['ziwei'], { ...DEFAULT_ZIWEI_OPTIONS, ...(gender ? { gender } : {}) }, options),
+    );
     if (options.json) return JSON.stringify({ moment, ziwei: board }, null, 2);
 
     if (options.prompt) return ziweiReadingPrompt(moment, board, t);
@@ -557,7 +665,7 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
     // ephemeris goes in where the other two take pillars.
     const board = qizhengBoard(
       { julianDay: moment.julianDayUT, hour: moment.hourBranch },
-      qizhengOptionsFrom(options),
+      declared(['qizheng'], { ...DEFAULT_QIZHENG_OPTIONS }, options),
       context,
     );
     if (options.json) return JSON.stringify({ moment, qizheng: board }, null, 2);
@@ -644,10 +752,7 @@ function placeBirth(
   chartOptions: ChartOptions,
   context: EphemerisContext,
 ): Nianming {
-  if (options.years !== undefined && options.years !== 'sui' && options.years !== 'turns') {
-    throw new UsageError('cli.error.unknownValue', { option: '--years', value: options.years });
-  }
-  const nianmingOptions: NianmingOptions = { count: (options.years as 'sui' | 'turns') ?? 'sui' };
+  const nianmingOptions = declared(['nianming'], { count: 'sui' } as NianmingOptions, options);
 
   const gender = options.gender as Gender | undefined;
   if (gender && gender !== 'male' && gender !== 'female') {
@@ -877,153 +982,10 @@ function resolveCriteria(options: Options): ScanCriteria {
 function resolveOptions(options: Options): ChartOptions {
   const chartOptions: ChartOptions = { ...DEFAULT_OPTIONS };
   if (options.trueSolar !== undefined) chartOptions.trueSolarTime = options.trueSolar;
-  // Strict, like the two below: nothing in the printed chart says which day
-  // boundary was read, so a misspelling that fell back to zishi would move
-  // the day pillar with no visible symptom.
-  if (options.dayBoundary !== undefined) {
-    if (options.dayBoundary !== 'zishi' && options.dayBoundary !== 'midnight') {
-      throw new UsageError('cli.error.unknownValue', {
-        option: '--day-boundary',
-        value: options.dayBoundary,
-      });
-    }
-    chartOptions.dayBoundary = options.dayBoundary;
-  }
-  // The pillars' own, which no flag reached until the layer and the boards
-  // stopped sharing a word: `--year-boundary` was read in 太乙's branch alone,
-  // so it was dropped in silence on every other command and the layer's could
-  // not be moved at all. → `docs/history/43-the-layer-under-the-board.md`
-  if (options.yearBoundary !== undefined) {
-    if (options.yearBoundary !== 'lichun' && options.yearBoundary !== 'chunjie') {
-      throw new UsageError('cli.error.unknownValue', {
-        option: '--year-boundary',
-        value: options.yearBoundary,
-      });
-    }
-    chartOptions.yearBoundary = options.yearBoundary;
-  }
-  // A chart cast by the wrong method looks right and is not, so a misspelling
-  // is refused here rather than falling back to the default.
-  if (options.method !== undefined) {
-    if (options.method !== 'chaibu' && options.method !== 'zhirun' && options.method !== 'maoshan') {
-      throw new UsageError('cli.error.unknownValue', { option: '--method', value: options.method });
-    }
-    chartOptions.method = options.method;
-  }
-  // One register exists, so this can only ever be right or refused. It is
-  // offered anyway: a script that passes it today keeps working when a second
-  // arrives, and one that cannot pass it at all would have to be rewritten.
-  if (options.shensha !== undefined) {
-    if (options.shensha !== 'xieji') {
-      throw new UsageError('cli.error.unknownValue', { option: '--shensha', value: options.shensha });
-    }
-    chartOptions.shensha = options.shensha;
-  }
-  return chartOptions;
-}
-
-/**
- * The Liu Ren divergences, from the command line.
- *
- * The board keeps its own options rather than borrowing dunjia's: they are two
- * boards and a saved one of either has to reproduce on its own terms. What
- * they do share — where the day turns, whether the clock is corrected — has
- * already been applied to the moment before this is reached.
- */
-function liurenOptionsFrom(options: Options): LiurenOptions {
-  const liuren: LiurenOptions = { ...DEFAULT_LIUREN_OPTIONS };
-  if (options.guiren !== undefined) {
-    if (options.guiren !== 'chou' && options.guiren !== 'wei') {
-      throw new UsageError('cli.error.unknownValue', { option: '--guiren', value: options.guiren });
-    }
-    liuren.guiren = options.guiren;
-  }
-  return liuren;
-}
-
-/**
- * The 太乙 options, of which one is settable and two are not.
- *
- * `--year-boundary` is exposed because it decides which year the board is of,
- * and a reader who wants the other reckoning has to be able to ask and be
- * told no by name. `epoch` and `ji` have one implemented value each and get
- * no flag, on the same rule the board below states: a flag over a parameter
- * with one implemented value could only offer a refusal. **`ji` gained three
- * refused values without gaining a flag**, which is the rule working rather
- * than an omission — what changed is what the engine can refuse by name, not
- * what it can compute.
- */
-/**
- * 紫微斗數's own year boundary, which is not the pillars'.
- *
- * Both are implemented and they disagree by weeks, and the board's decides the
- * year stem, which seats the four transformations — so a birth between the two
- * lays out a different board either way. It carries its board's name because
- * the layer is under it while it is being laid: naming the command settles
- * which board and not which of the two bags.
- * → `docs/parameters.md` § "A board's parameters travel under the board's name"
- */
-function ziweiOptionsFrom(options: Options): Partial<ZiweiOptions> {
-  if (options.ziweiYearBoundary === undefined) return {};
-  if (options.ziweiYearBoundary !== 'lichun' && options.ziweiYearBoundary !== 'chunjie') {
-    throw new UsageError('cli.error.unknownValue', {
-      option: '--ziwei-year-boundary',
-      value: options.ziweiYearBoundary,
-    });
-  }
-  return { yearBoundary: options.ziweiYearBoundary };
-}
-
-function taiyiOptionsFrom(options: Options): TaiyiOptions {
-  const taiyi: TaiyiOptions = { ...DEFAULT_TAIYI_OPTIONS };
-  if (options.taiyiYearBoundary !== undefined) {
-    if (
-      options.taiyiYearBoundary !== 'lichun' &&
-      options.taiyiYearBoundary !== 'dongzhi' &&
-      options.taiyiYearBoundary !== 'chunjie'
-    ) {
-      throw new UsageError('cli.error.unknownValue', {
-        option: '--taiyi-year-boundary',
-        value: options.taiyiYearBoundary,
-      });
-    }
-    taiyi.yearBoundary = options.taiyiYearBoundary;
-  }
-  return taiyi;
-}
-
-/**
- * The 七政四餘 options, of which one is settable and four are not yet.
- *
- * `--luohou` is exposed because both values are implemented and because a
- * reader who has the name the other way round has no way to discover that
- * from the output: the board would simply be labelled wrong. `--ziqi` for the
- * same reason and a plainer one — it decides whether the board carries three
- * remainders or four, which is the first thing a reader counts. The rest —
- * `xiudu`, `minggong`, `gong` — have one implemented value each, so a flag for
- * them could only offer a refusal.
- */
-function qizhengOptionsFrom(options: Options): QizhengOptions {
-  const qizheng: QizhengOptions = { ...DEFAULT_QIZHENG_OPTIONS };
-  if (options.luohou !== undefined) {
-    if (options.luohou !== 'descending' && options.luohou !== 'ascending') {
-      throw new UsageError('cli.error.unknownValue', {
-        option: '--luohou',
-        value: options.luohou,
-      });
-    }
-    qizheng.luohou = options.luohou;
-  }
-  if (options.ziqi !== undefined) {
-    if (options.ziqi !== 'off' && options.ziqi !== 'yinianyisu') {
-      throw new UsageError('cli.error.unknownValue', {
-        option: '--ziqi',
-        value: options.ziqi,
-      });
-    }
-    qizheng.ziqi = options.ziqi;
-  }
-  return qizheng;
+  // The layers under every board and dunjia's own, which share one type: how
+  // an instant is read into pillars, which register the almanac line carries,
+  // and the school a chart is cast by.
+  return declared(['pillars', 'qimen', 'almanac'], chartOptions, options);
 }
 
 const FLAGS: Record<string, keyof Options> = {
@@ -1036,9 +998,6 @@ const FLAGS: Record<string, keyof Options> = {
   '--year': 'year',
   '--gender': 'gender',
   '--lang': 'lang',
-  '--day-boundary': 'dayBoundary',
-  '--method': 'method',
-  '--shensha': 'shensha',
   '--until': 'until',
   '--gate': 'gate',
   '--star': 'star',
@@ -1053,17 +1012,10 @@ const FLAGS: Record<string, keyof Options> = {
   '--born': 'born',
   '--born-time': 'bornTime',
   '--born-tz': 'bornTz',
-  '--years': 'years',
-  '--guiren': 'guiren',
-  '--luohou': 'luohou',
-  '--ziqi': 'ziqi',
-  '--year-boundary': 'yearBoundary',
-  '--ziwei-year-boundary': 'ziweiYearBoundary',
-  '--taiyi-year-boundary': 'taiyiYearBoundary',
 };
 
 function parse(argv: string[]): { command?: Command; options: Options } {
-  const options: Options = { json: false, help: false, prompt: false };
+  const options: Options = { json: false, help: false, prompt: false, declared: {} };
   let command: Command | undefined;
 
   for (let i = 0; i < argv.length; i += 1) {
@@ -1087,6 +1039,16 @@ function parse(argv: string[]): { command?: Command; options: Options } {
     }
     if (argument === '--no-true-solar') {
       options.trueSolar = false;
+      continue;
+    }
+
+    if (DECLARED_FLAGS.has(argument)) {
+      const value = argv[i + 1];
+      if (value === undefined || value.startsWith('--')) {
+        throw new UsageError('cli.error.missingValue', { option: argument });
+      }
+      options.declared[argument] = value;
+      i += 1;
       continue;
     }
 

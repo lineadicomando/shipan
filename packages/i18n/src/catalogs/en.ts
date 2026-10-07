@@ -2761,6 +2761,8 @@ export const en = {
 
   'cli.error.unknownCommand': 'Unknown command "{command}". Try `qimen --help`.',
   'cli.error.unknownOption': 'Unknown option "{option}". Try `qimen --help`.',
+  'cli.error.optionNotRead':
+    'Option "{option}" belongs to another board, and `{command}` does not read it.',
   'cli.error.missingValue': 'Option "{option}" needs a value.',
   'cli.error.numberRequired': 'Option "{option}" needs a whole number, and "{value}" is not one.',
   'cli.error.contradiction':

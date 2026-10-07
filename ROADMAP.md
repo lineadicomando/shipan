@@ -489,36 +489,23 @@ agreement or message syntax; Spanish needs none of the three.
 
 ## 5. Surfaces that reach less than the engine
 
-**Medium.** Nothing here is wrong: no value is accepted and dropped, and the
-block naming the schools in force says the truth on every surface. What is
-missing is reach — a school the engine computes that one surface cannot be
-asked for.
+**Small.** Nothing here is wrong: no value is accepted and dropped, and the
+block naming the schools in force says the truth on every surface.
 
-**The CLI is the poorest of the three today.** It offers `--method`,
-`--guiren`, `--luohou`, `--ziqi`, `--year-boundary`, `--ziwei-year-boundary`,
-`--taiyi-year-boundary`, `--day-boundary`, `--true-solar` and `--shensha`, and
-not these:
+**The command line reads its school options off the declaration**, since
+2026-10-07. `flagOf` in `packages/core/src/cli.ts` names a flag for every
+parameter `parameters.ts` declares — bare for a board's own and for a layer's,
+under the board's name where a layer has the word — and the help lists after
+each what the engine computes, its default, and what is declared and refused.
+A divergence landing in the engine can be asked for there the same day. An
+option the command in hand does not lay is refused instead of dropped.
 
-| | |
-|---|---|
-| `qimen.spirits` | three implemented values, and it decides which names the middle pair of the eight carries |
-| `qimen.centreTravel` | two, and it decides which palace the 值符 and the 值使 are read from when the count puts them on the centre |
-| `ziwei.sihua` | two, one cell of the table apart, and the cell seats a transformation |
-| `qimen.centreLodging` | five, and it decides which palace the centre is read in and whose gate it takes |
-| `qimen.earthPlate` | two, standing on different plates for fifty hours in sixty |
-| `ziwei.huoling` | two, parting for every birth outside the 子 hour |
-| `ziwei.daxian` | two, one palace apart along the whole run of decades |
-| `bazi.luckGranularity` | two, parting by up to ten days on when the first decade opens |
-
-All of them are offered by MCP and by the REST API. The CLI's own stated policy
-implies they are owed a flag: a flag over a parameter with **one** implemented
-value could only offer a refusal, which is why `epoch` and `ji` have none —
-these have two or three.
-
-What each costs: a row in `FLAGS`, a field on `Options`, a clause in the usage
-text, a validated read beside `ziweiOptionsFrom` and `qizhengOptionsFrom`, and
-a test that the board moves rather than that the flag parses. No engine change,
-no register row, no new prose in `docs/`.
+**Two copies are still written a parameter at a time**, and each is held to the
+declaration by a test rather than read off it: the MCP tool schemas in
+`packages/mcp/src/`, which carry a paragraph of description apiece that a
+derivation would lose, and the page's `apps/web/src/lib/parameters.ts`, which
+exists because the client imports only types from `core`. A value added to the
+engine fails those suites until it is added there; nothing says it silently.
 
 ## 6. Debts in the code
 

@@ -50,8 +50,6 @@ const ROOT = fileURLToPath(new URL('../../../', import.meta.url));
 
 const PAGE = readFileSync(join(ROOT, 'docs/parameters.md'), 'utf8');
 
-/** The CLI's own help, read as text: this test must not run the CLI. */
-const HELP = readFileSync(join(ROOT, 'packages/core/src/cli.ts'), 'utf8');
 
 /**
  * The lines of the page that could be a given parameter's row.
@@ -355,41 +353,4 @@ describe('the readings the values carry', () => {
     // their names and this test had stopped saying anything.
     expect([...new Set(checked)].sort()).toEqual(['丑', '冬至', '命宮', '未', '立春']);
   });
-});
-
-describe('the CLI help', () => {
-  /**
-   * The flags whose help line spells the values out, and the parameter each
-   * one sets.
-   *
-   * They name what the engine **computes** and not what the type declares,
-   * which is the same choice the web form and the MCP schema make: a flag
-   * offering 飛盤 would be offering an error. That makes the help a copy of
-   * the implemented list, in prose, where nothing could see it go stale.
-   *
-   * `--year-boundary` is deliberately not here and is the exception that
-   * shows the rule is a choice: it lists all three of 太乙's values and says
-   * in the line beneath that only 立春 is implemented, because that
-   * parameter is upstream of the whole board and a reader who does not know
-   * the other two exist cannot weigh the one that does.
-   */
-  const spelledOut: Array<[string, () => readonly (string | boolean)[]]> = [
-    ['--method', () => implementedValues(CHART_PARAMETERS.method)],
-    ['--day-boundary', () => implementedValues(CHART_PARAMETERS.dayBoundary)],
-    ['--shensha', () => implementedValues(CHART_PARAMETERS.shensha)],
-    ['--guiren', () => implementedValues(LIUREN_PARAMETERS.guiren)],
-    ['--luohou', () => implementedValues(QIZHENG_PARAMETERS.luohou)],
-    ['--years', () => implementedValues(NIANMING_PARAMETERS.count)],
-  ];
-
-  for (const [flag, values] of spelledOut) {
-    it(`offers after ${flag} exactly what the engine computes`, () => {
-      const line = HELP.split('\n').find((candidate) => candidate.includes(`  ${flag} `));
-      expect(line, `the help has no line for ${flag}`).toBeDefined();
-      expect(
-        line?.includes(values().join('|')),
-        `${flag} should be followed by ${values().join('|')}, and the help says: ${line?.trim()}`,
-      ).toBe(true);
-    });
-  }
 });
