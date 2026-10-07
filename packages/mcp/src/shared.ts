@@ -255,7 +255,7 @@ export const qimenSchema = {
     .enum(['shijia', 'rijia'])
     .optional()
     .describe(
-      'Which family of Qi Men board, and each is a board of its own. Default shijia, the board of the hour: a plate of stems, nine stars, eight gates and eight spirits, and everything else this tool describes. rijia is the board of the day: eight gates and nine stars of its own, the first of them taiyi, with no stems, no chief and no spirits. It is laid off the day pillar and the season alone, so every hour of one day has the same one, and it reads day_gates and none of method, plate, spirits, centre_lodging, earth, earth_plate or centre_travel. The answer has a different shape under each.',
+      'Which family of Qi Men board, and each is a board of its own. Default shijia, the board of the hour: a plate of stems, nine stars, eight gates and eight spirits, and everything else this tool describes. rijia is the board of the day: eight gates and nine stars of its own, the first of them taiyi, with no stems, no chief and no spirits. It is laid off the day pillar and the season alone, so every hour of one day has the same one; beside it come the twelve hours of that day, each with the god it treads and what the stem of the day puts on it — the Heavenly Noble, the road cut off, the hour that does not meet, the spirit of joy and its bearing — which are names from the almanac and order no hour above another. The board reads day_gates and none of method, plate, spirits, centre_lodging, earth, earth_plate or centre_travel. The answer has a different shape under each.',
     ),
   day_gates: z
     .enum(['fei', 'zhuan'])

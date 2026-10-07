@@ -2,6 +2,7 @@ import { sunCrossing, type EphemerisContext } from './ephemeris.js';
 import { nayin } from './bazi/nayin.js';
 import {
   dayGanzhi,
+  hourGanzhi,
   monthGanzhi,
   yearGanzhi,
   BRANCHES,
@@ -12,7 +13,7 @@ import {
 } from './ganzhi.js';
 import { PALACES, type Palace } from './dunjia/palaces.js';
 import { CHART_PARAMETERS, requireImplemented } from './parameters.js';
-import { VALENCE, type Valence, type ValenceId } from './dunjia/patterns.js';
+import { VALENCE, unmetHour, type Valence, type ValenceId } from './dunjia/patterns.js';
 import { calendarDayNumber, CALENDAR_ZONE } from './lunar.js';
 import { fromJulianDay } from './time.js';
 import { jieAt, solarTermAt, SOLAR_TERMS, type SolarTermDefinition } from './solar-terms.js';
@@ -241,6 +242,117 @@ export function dayGodOf(monthBranch: Branch, dayBranch: Branch): DayGod {
 }
 
 export const DAY_GOD_LIST: readonly DayGod[] = DAY_GODS;
+
+export type HourMarkId = 'guiren' | 'jielu' | 'wubuyu' | 'xishen';
+
+/** What an hour is flagged with, read off the day's stem. */
+export interface HourMark {
+  id: HourMarkId;
+  hanzi: string;
+  pinyin: string;
+  /**
+   * Carried where the entry says it and nowhere else.
+   *
+   * 五不遇時 is the one of the four whose entry weighs it in its own rule,
+   * 「則為凶時」. 截路空亡 has none because the 協紀's own 按 argues the name
+   * down — 「若以行路遇水為截，則方之舟之可矣，何截之有」.
+   */
+  valence?: Valence;
+}
+
+const HOUR_MARKS: Record<HourMarkId, HourMark> = {
+  guiren: { id: 'guiren', hanzi: '天乙貴人', pinyin: 'tiānyǐguìrén' },
+  jielu: { id: 'jielu', hanzi: '截路空亡', pinyin: 'jiélùkōngwáng' },
+  wubuyu: { id: 'wubuyu', hanzi: '五不遇時', pinyin: 'wǔbùyùshí', valence: VALENCE.xiong },
+  xishen: { id: 'xishen', hanzi: '喜神', pinyin: 'xǐshén' },
+};
+
+export const HOUR_MARK_LIST: readonly HourMark[] = Object.values(HOUR_MARKS);
+
+/**
+ * The two branches 天乙貴人 takes on a day, by the day's stem.
+ *
+ * **Both seats and neither named.** Which of the two is the 陽貴 is where the
+ * tables part — `liuren.guiren` is that divergence — and every table on the
+ * shelf seats the same pair under a stem, the 協紀's 起例 in 卷七 included. So
+ * the pair is what those texts hand down together, and an hour is flagged for
+ * standing on either. Whether a 陽貴 counts by night is a step of a reading.
+ *
+ * One verse in circulation seats 庚 with 辛, on 寅 and 午 — 「庚辛逢馬虎」 — and
+ * the table of 《日家奇門》 follows it. No text held states it, so it is
+ * recorded and not a value.
+ */
+const GUIREN_SEATS: readonly (readonly [number, number])[] = [
+  [1, 7], [0, 8], [9, 11], [9, 11], [1, 7], [0, 8], [1, 7], [2, 6], [3, 5], [3, 5],
+];
+
+/**
+ * Where 喜神 stands on a day, and the hour that is its own.
+ *
+ * 「甲己日艮方寅時，乙庚日乾方戌時，丙辛日坤方申時，丁壬日離方午時，戊癸日巽方
+ * 辰時」, 《協紀辨方書》卷七. The hour comes first and the bearing off it:
+ * 「喜神者見丙也。假令甲己之干用五虎元起丙寅，寅為艮，故在艮也」.
+ */
+const XISHEN: readonly { palace: number; hour: number }[] = [
+  { palace: 8, hour: 2 },
+  { palace: 6, hour: 10 },
+  { palace: 2, hour: 8 },
+  { palace: 9, hour: 6 },
+  { palace: 4, hour: 4 },
+];
+
+export interface Xishen {
+  hanzi: string;
+  pinyin: string;
+  /** The bearing, as the palace of its trigram. */
+  palace: Palace;
+  /** The hour the bearing is read off. */
+  hour: Branch;
+}
+
+export function xishenOf(dayStem: Stem): Xishen {
+  const seat = XISHEN[dayStem.index % 5] as { palace: number; hour: number };
+  return {
+    hanzi: HOUR_MARKS.xishen.hanzi,
+    pinyin: HOUR_MARKS.xishen.pinyin,
+    palace: PALACES.find((palace) => palace.number === seat.palace) as Palace,
+    hour: BRANCHES[seat.hour] as Branch,
+  };
+}
+
+/** One of the twelve hours of a day, with what the day's pillar puts on it. */
+export interface DayHour {
+  /** The hour's pair, its stem by 五鼠遁 off the day's. */
+  ganzhi: Ganzhi;
+  /** The god the hour treads, as a day treads one under its month. */
+  god: DayGod;
+  marks: HourMark[];
+}
+
+/**
+ * The twelve hours of a day, from 子, read off the day pillar alone.
+ *
+ * All of it is 《協紀辨方書》卷七. The god is the day's own rule one cycle
+ * down — 「視其日、其時所履之神」, the 天罡 laid on the day's branch as it is
+ * laid on the month's. 截路空亡 is the hour whose stem is 壬 or 癸, 「截路空亡，
+ * 遇壬癸也」, which is two hours on eight stems and four on 戊 and 癸: 「戊癸日
+ * 子丑戌亥時」. 五不遇時 is `unmetHour`, the hour board's.
+ *
+ * The 子 hour is the one the day opens on, whichever way the day turns over.
+ */
+export function dayHoursOf(day: Ganzhi): DayHour[] {
+  const nobles = GUIREN_SEATS[day.stem.index] as readonly [number, number];
+  const xishen = XISHEN[day.stem.index % 5] as { palace: number; hour: number };
+  return BRANCHES.map((branch) => {
+    const ganzhi = hourGanzhi(day.stem.index, branch.index);
+    const marks: HourMark[] = [];
+    if (nobles.includes(branch.index)) marks.push(HOUR_MARKS.guiren);
+    if (branch.index === xishen.hour) marks.push(HOUR_MARKS.xishen);
+    if (ganzhi.stem.index >= 8) marks.push(HOUR_MARKS.jielu);
+    if (unmetHour(day.stem, ganzhi)) marks.push(HOUR_MARKS.wubuyu);
+    return { ganzhi, god: dayGodOf(day.branch, branch), marks };
+  });
+}
 
 
 export type YearGodId =

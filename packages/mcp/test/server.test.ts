@@ -173,6 +173,10 @@ describe('compute_qimen_chart', () => {
     // Told of its own divergence and of none of the hour board's.
     expect(text).toContain('金函玉鏡');
     expect(text).not.toContain('拆補');
+    // The twelve hours stand beside it, each a name and none ranked.
+    expect(text).toContain('Twelve hours of the day');
+    expect(text).toContain('截路空亡 jiélùkōngwáng');
+    expect(text).toContain('喜神 xǐshén');
 
     const turned = await call('compute_qimen_chart', {
       ...BEIJING,

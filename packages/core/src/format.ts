@@ -495,6 +495,13 @@ export function formatDayChart(chart: DayChart, t: Translator): string {
           t('cli.field.dayStar'),
           `${taiyi ? named(taiyi.star, `label.dayStar.${taiyi.star.id}` as MessageKey, t) : t('cli.none')} → ${seat(chart.taiyi)}`,
         ],
+        [
+          `${t('cli.field.xishen')} ${chart.xishen.hanzi} ${chart.xishen.pinyin}`,
+          t('cli.value.xishenHour', {
+            palace: seat(chart.xishen.palace),
+            hour: named(chart.xishen.hour, `label.branch.${chart.xishen.hour.id}` as MessageKey, t),
+          }),
+        ],
       ],
       4,
     ),
@@ -506,6 +513,24 @@ export function formatDayChart(chart: DayChart, t: Translator): string {
         `${cell.palace.number} ${seat(cell.palace)}`,
         cell.gate ? named(cell.gate, `label.gate.${cell.gate.id}` as MessageKey, t) : t('cli.none'),
         named(cell.star, `label.dayStar.${cell.star.id}` as MessageKey, t),
+      ]),
+    ]),
+    '',
+    `${t('cli.heading.dayHours')}`,
+    ...table([
+      [t('cli.column.hour'), t('cli.column.hourGod'), t('cli.column.hourMarks')],
+      ...chart.hours.map((hour) => [
+        ganzhi(hour.ganzhi, t),
+        `${hour.god.hanzi} ${hour.god.pinyin} ${t(`label.daygod.${hour.god.id}` as MessageKey)} ${hour.god.valence.hanzi}`,
+        hour.marks.length === 0
+          ? t('cli.none')
+          : hour.marks
+              .map(
+                (mark) =>
+                  `${mark.hanzi} ${mark.pinyin} ${t(`label.hourmark.${mark.id}` as MessageKey)}` +
+                  (mark.valence ? ` ${mark.valence.hanzi}` : ''),
+              )
+              .join(' · '),
       ]),
     ]),
   ].join('\n');

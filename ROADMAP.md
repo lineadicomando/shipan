@@ -134,7 +134,7 @@ is what holds.
 | `strengths: star` | declared and refused | held by 《奇門遁甲金鏡寶鑑》卷之四; the 折衷 argues against the same reading and puts it on a 《三元經》. Waits on reading whether its rule reaches the gates and the spirits or the nine stars alone |
 | `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
 | `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Each waits on being built as the day family was: a board of its own, with its own stars and no table on the shelf to hold it to |
-| the board of a day | computed | gates and stars, under two readings of the gates. Waits on the hours and the bearings the table prints beside them, on a prompt of its own, and on the scan and the 年命, which are written against a plate of stems |
+| the board of a day | computed | gates and stars, under two readings of the gates. The twelve hours of the day stand beside them, read off the almanac. Waits on a prompt of its own, and on the scan and the 年命, which are written against a plate of stems |
 | `dayDun: liushi` | declared and refused | sixty days to a 局, the 統宗's. Waits on its rule being read on the plate |
 | the gates' year in six blocks of four terms | recorded | the 金函玉鏡's 大八門逐日出行訣, read for its starts and not verse by verse |
 | `plate: fei` | declared and refused | no text flies the hour board's own 起例. Arrives with a family of `system` |
@@ -156,12 +156,12 @@ is".
 | | State | What it has, and what it waits on |
 |---|---|---|
 | `yuejiang: jieqi`, `yuejiang: true` | declared and refused | no holder. 《大六壬精解》 prints the 節 beside the 氣 and endorses neither. Waits on a text stating either as its own |
-| `zhouye: solar` | declared and refused | named in one sentence of the 精解, with no procedure and two risings joined. Waits on a text saying which rising, and how |
+| `zhouye: solar` | declared and refused | named in one sentence of the 精解, with no procedure and two risings joined; 《協紀辨方書》卷七 holds 日出入 for the noble of an almanac, again with no procedure. Waits on a text saying which rising, and how |
 | the order of 涉害 | recorded | a verse read one way and two programs grouping another. Waits on a text or a manual holding either by name |
 | the 末傳 of a 伏吟 by 冲 | recorded | the engine's own clause |
 
 The second table of `guiren`, which stands 甲 apart, is 《御定六壬直指》's two
-verses, read on the plate. The five phases of the 十二天將 have nothing
+verses and 《協紀辨方書》卷七's two tables, each read on the plate. The five phases of the 十二天將 have nothing
 registered: the two sections located for them were read and carry none, and
 《六壬經緯》 has no juan of 神煞.
 
@@ -199,6 +199,8 @@ state or short of an attribution.
 | | State | What it has, and what it waits on |
 |---|---|---|
 | a second value of `shensha` | recorded | 曹震圭's and 邵泰衢's accounts of the 十二神, 《萬全廣濟》's table for 蠶命, the fixed-date list of 楊公忌: known through the 《協紀辨方書》 that rejects them. Waits on a witness of their own |
+| the noble of 庚 seated with 辛's, on 寅 and 午 | recorded | 「庚辛逢馬虎」, which 《日家奇門》's column follows and no manual held states. Waits on one |
+| 五不遇時 read off the day's branch | recorded | the 《遁甲隱公歌註》's, known through the 《協紀辨方書》 that sets it aside |
 | who holds the year turned at 立春 or at 正月初一, the day turned at the 子 hour, and the clock left uncorrected | not yet attributed | every reading is computed. 《三命通會》's 論年月日時 is silent on the boundaries. 《命理新論》 holds true solar time, the day turned at midnight and the year turned at 冬至, and none of these four. Asked 2026-10-07; a lead for the day at midnight in 沈義方's 《星平大成》, not held |
 | the hour laid on the month's palace rather than the Sun's, for the 命宮 | recorded | 《三命通會》卷二: 正月 on 子 and back a palace a month, where a 七政四餘 board changes palace at the 中氣. They part in the second half of every month |
 | who holds the 大運 counted to the minute | not yet attributed | the count by the 時辰 is 《三命通會》's, which knows the 刻 is finer and counts by the 時 |
@@ -214,7 +216,7 @@ is «not expected» on this evidence.
 | The question | What came back |
 |---|---|
 | a 奇門 text giving earth the last eighteen days of a season, for the second reading of `earth` | nothing in the 奇門 extracts. 《大六壬精解》 has the general statement, since read on the plate at its p. 214 and admitted as a witness: the three 式 stand on one doctrine of the phases. The value is computed since |
-| a 六壬 text seating the noble with 甲 standing alone, for the second table of `guiren` | nothing found |
+| a 六壬 text seating the noble with 甲 standing alone, for the second table of `guiren` | nothing in the 六壬 extracts; an almanac has it — 《協紀辨方書》卷七's 起例, since read on the plate |
 | a 六壬 text cutting day from night at a rising, for `zhouye: solar` | only the sentence of the 精解 the register already quotes |
 | a 六壬 text turning the general at the 節, for `yuejiang: jieqi` | nothing found |
 | a 紫微斗數 text splitting a leap month at its middle, for `leapMonth: split` | nothing found |
@@ -482,8 +484,8 @@ agreement or message syntax; Spanish needs none of the three.
 
 ## 5. Surfaces that reach less than the engine
 
-**Small.** Nothing here is wrong: no value is accepted and dropped, and the
-block naming the schools in force says the truth on every surface.
+**Small.** The block naming the schools in force says the truth on every
+surface, and one thing below is a value accepted and not read.
 
 **The command line reads its school options off the declaration**, since
 2026-10-07. `flagOf` in `packages/core/src/cli.ts` names a flag for every
@@ -499,6 +501,20 @@ declaration by a test rather than read off it: the MCP tool schemas in
 derivation would lose, and the page's `apps/web/src/lib/parameters.ts`, which
 exists because the client imports only types from `core`. A value added to the
 engine fails those suites until it is added there; nothing says it silently.
+
+**The board of a day reaches four surfaces whole and three in part**, since
+the twelve hours landed on 2026-10-07. Each line is a task and none blocks
+another.
+
+| | what is owed | where |
+|---|---|---|
+| a parameter of the hour board given beside `system: rijia` | refused by name, as a flag given to a command that does not lay it already is. `method`, `plate`, `spirits`, `centreLodging`, `earth`, `earthPlate` and `centreTravel` are accepted and not read today, on the command line, over HTTP and in `compute_qimen_chart`; `family` in the declaration already says which is whose | `computeDayChart` in `packages/core/src/dunjia/rijia.ts`, and a test on each surface |
+| the drawing | the bearing of 喜神 on the palace it stands in, and a decision on the twelve hours: drawn under the grid, or said to be the transcript's. `renderDaySvg` draws gates, stars and palaces and nothing of either | `packages/plate`, whose types are its own; `draw_qimen_chart` and `/api/qimen/plate` follow |
+| the section, looked at | the hours table was checked in the HTML the built server answers and never in a browser: its measure against `.reading`, the two lines of a cell, paper | `DayReading.svelte`, at `/it/qimen?qimen.system=rijia` |
+| `README.md` and `docs/agent-prompt.md` | neither names the board of a day, so neither says it carries twelve hours or that the marks on them rank nothing. The contract an agent reads is the second | both files; `reader-copy` binds the first |
+
+What the same board waits on that is no surface — a prompt of its own, the
+scan and the 年命 — is on its line in § 1.
 
 ## 6. Debts in the code
 

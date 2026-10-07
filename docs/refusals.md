@@ -306,9 +306,15 @@ on that plate; a criterion of the scan names a star or a spirit this board
 has not. What the day board would need of each is its own, and none is
 written.
 
-What its one table prints beside the gates and the stars stays out for a
-second reason: the hours it marks 黃道 and 黑道 close on 「大吉時為…」, which
-is hours ordered, and § "Ordering two hours" is why that is not here.
+Of what its one table prints beside the gates and the stars, the board
+carries what an almanac states of the day: the god each of the twelve hours
+treads, 天乙貴人, 截路空亡, 五不遇時 and the bearing of 喜神, each a name beside
+an hour. What the table makes of them stays out: its column closes on
+「大吉時為…」, which is hours ordered, its red and black grade the nine palaces,
+and its instructions combine a gate with a star into a 大吉方位 — § "Ordering
+two hours" is why none of that is here. A noble is flagged on both its
+branches and the mark says neither 陽貴 nor 陰貴, the tables parting over
+which is which; whether one counts in an hour of the night is the reader's.
 
 ## The middle pair named by the matter
 

@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { ganzhiOf } from '../src/ganzhi.js';
+import { BRANCHES, STEMS, ganzhiOf } from '../src/ganzhi.js';
+import { dayHoursOf, xishenOf } from '../src/almanac.js';
 import {
   DAY_STARS,
   computeDayChart,
@@ -286,5 +287,143 @@ describe('the board of a day', () => {
     expect(() => computeDayChart(moment, { ...DAY, system: 'shijia' })).toThrowError(
       expect.objectContaining({ code: 'OPTION_NOT_IMPLEMENTED' }),
     );
+  });
+});
+
+/**
+ * The twelve hours beside the board, held to the same table's 吉凶時 column
+ * and to 《協紀辨方書》卷七, which is where each of them is stated.
+ */
+const GOD_OF: Record<string, string> = {
+  青龙: '青龍', 明堂: '明堂', 天刑: '天刑', 朱雀: '朱雀', 金匮: '金匱', 天德: '天德',
+  白虎: '白虎', 玉堂: '玉堂', 天牢: '天牢', 玄武: '玄武', 司命: '司命', 勾陈: '勾陳',
+};
+const MARK_OF: Record<string, string> = { 贵人: 'guiren', 截空: 'jielu', 五不遇: 'wubuyu' };
+
+const HOUR_ROWS = readFileSync(new URL('./rijia/hours.tsv', import.meta.url), 'utf8')
+  .split('\n')
+  .filter((line) => line !== '' && !line.startsWith('#'))
+  .map((line) => {
+    const [label, hours] = line.split('\t') as [string, string];
+    return {
+      label,
+      day: SIXTY.indexOf(label),
+      hours: hours.split(' ').map((hour) => {
+        const [god, ...marks] = hour.split('+') as [string, ...string[]];
+        return { god: GOD_OF[god] as string, marks: marks.map((mark) => MARK_OF[mark] as string).sort() };
+      }),
+    };
+  });
+
+/** What the table flags, which leaves 喜神 to its own column. */
+const laidHours = (day: number) =>
+  dayHoursOf(ganzhiOf(day)).map((hour) => ({
+    god: hour.god.hanzi,
+    marks: hour.marks.map((mark) => mark.id).filter((id) => id !== 'xishen').sort(),
+  }));
+
+/**
+ * Days whose column parts from the rule, named so that a day held out is a day
+ * somebody looked at. Six have a flag dropped that the same column prints on
+ * another day of the same stem; 己巳 carries the noble of 甲子, the day whose
+ * hour stems it shares.
+ */
+const HOUR_SLIPS = ['丙寅', '戊辰', '己巳', '癸未', '甲午', '丁巳', '己未'];
+
+/**
+ * And the 庚 days part by school and not by slip: the column seats 庚's noble
+ * with 辛's, on 寅 and 午, where every text on the shelf seats it with 甲's and
+ * 戊's, on 丑 and 未. They are held to the rule with the noble left out.
+ */
+const without = (marks: string[][]): string[][] =>
+  marks.map((hour) => hour.filter((mark) => mark !== 'guiren'));
+
+describe('the twelve hours of a day', () => {
+  it('reads enough of the column to be worth holding to', () => {
+    expect(HOUR_ROWS.every((row) => row.day >= 0 && row.hours.length === 12)).toBe(true);
+    expect(HOUR_ROWS.length).toBeGreaterThan(35);
+  });
+
+  it('seats the twelve gods on the hours as every day of the column prints them', () => {
+    for (const row of HOUR_ROWS) {
+      expect(laidHours(row.day).map((hour) => hour.god), row.label).toEqual(
+        row.hours.map((hour) => hour.god),
+      );
+    }
+  });
+
+  it('flags the hours as the column does, the slips apart', () => {
+    for (const row of HOUR_ROWS) {
+      if (HOUR_SLIPS.includes(row.label)) continue;
+      const laid = laidHours(row.day).map((hour) => hour.marks);
+      const printed = row.hours.map((hour) => hour.marks);
+      if (row.label.startsWith('庚')) expect(without(laid), row.label).toEqual(without(printed));
+      else expect(laid, row.label).toEqual(printed);
+    }
+  });
+
+  it('parts from the column on 庚, whose noble it seats with 辛\'s', () => {
+    const geng = HOUR_ROWS.filter((row) => row.label.startsWith('庚'));
+    expect(geng.length).toBeGreaterThan(2);
+    for (const row of geng) {
+      const noble = row.hours.flatMap((hour, branch) => (hour.marks.includes('guiren') ? [branch] : []));
+      expect(noble.every((branch) => branch === 2 || branch === 6), row.label).toBe(true);
+    }
+    expect(hoursWith('庚', 'guiren')).toBe('丑未');
+  });
+
+  it('parts from the slips', () => {
+    for (const row of HOUR_ROWS) {
+      if (!HOUR_SLIPS.includes(row.label)) continue;
+      expect(laidHours(row.day).map((hour) => hour.marks)).not.toEqual(
+        row.hours.map((hour) => hour.marks),
+      );
+    }
+  });
+
+  const hoursWith = (stem: string, mark: string): string =>
+    dayHoursOf(ganzhiOf(STEMS.findIndex((s) => s.hanzi === stem)))
+      .filter((hour) => hour.marks.some((m) => m.id === mark))
+      .map((hour) => hour.ganzhi.branch.hanzi)
+      .join('');
+
+  it('cuts the road where the 歷例 does: 戊癸日子丑戌亥時', () => {
+    const stated: Record<string, string> = {
+      甲: '申酉', 己: '申酉', 乙: '午未', 庚: '午未', 丙: '辰巳', 辛: '辰巳',
+      丁: '寅卯', 壬: '寅卯', 戊: '子丑戌亥', 癸: '子丑戌亥',
+    };
+    for (const [stem, hours] of Object.entries(stated)) {
+      expect(hoursWith(stem, 'jielu'), stem).toBe(hours);
+    }
+  });
+
+  it('seats the noble on both branches of the 協紀\'s 起例, 陽貴 and 陰貴', () => {
+    // Read off the two tables of 卷七, stem by stem from 甲.
+    const yang = '未申酉亥丑子丑寅卯巳';
+    const yin = '丑子亥酉未申未午巳卯';
+    STEMS.forEach((stem, index) => {
+      const seats = [yang[index], yin[index]]
+        .map((hanzi) => BRANCHES.findIndex((branch) => branch.hanzi === hanzi))
+        .sort((a, b) => a - b)
+        .map((branch) => BRANCHES[branch]?.hanzi)
+        .join('');
+      expect(hoursWith(stem.hanzi, 'guiren'), stem.hanzi).toBe(seats);
+    });
+  });
+
+  it('puts 喜神 where the entry does, bearing and hour', () => {
+    const stated = ['艮寅', '乾戌', '坤申', '離午', '巽辰'];
+    STEMS.forEach((stem, index) => {
+      const xishen = xishenOf(stem);
+      expect(xishen.palace.hanzi + xishen.hour.hanzi, stem.hanzi).toBe(stated[index % 5]);
+      // 「喜神者見丙也」, counted from 寅 by the month's rule and not from 子.
+      expect(hoursWith(stem.hanzi, 'xishen')).toBe(xishen.hour.hanzi);
+    });
+  });
+
+  it('carries the hours on the board of the day', () => {
+    const hours = dayHoursOf(ganzhiOf(0));
+    expect(hours.map((hour) => hour.ganzhi.hanzi).slice(0, 3)).toEqual(['甲子', '乙丑', '丙寅']);
+    expect(hours[6]?.marks.map((mark) => mark.id)).toEqual(['wubuyu']);
   });
 });

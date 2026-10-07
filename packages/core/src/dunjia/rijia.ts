@@ -2,6 +2,7 @@ import type { Moment } from '../pillars.js';
 import type { ChartOptions } from '../types.js';
 import { CHART_PARAMETERS, requireImplemented } from '../parameters.js';
 import { ChartError } from '../errors.js';
+import { dayHoursOf, xishenOf, type DayHour, type Xishen } from '../almanac.js';
 import { yangHalf } from './ju.js';
 import { PALACES, palace, type ByPalace, type Palace } from './palaces.js';
 import { GATES, type Gate } from './plates.js';
@@ -148,6 +149,15 @@ export interface DayChart {
   taiyi: Palace;
   /** The nine palaces in the order of their numbers. The centre has a star and no gate. */
   palaces: { palace: Palace; gate?: Gate; star: DayStar }[];
+  /**
+   * The twelve hours of the day, which this board has in place of one.
+   *
+   * Not the family's: they are the almanac's, read off the day pillar, and
+   * they stand here because every hour of the day shares this board.
+   */
+  hours: DayHour[];
+  /** Where 喜神 stands on the day, among the nine palaces above. */
+  xishen: Xishen;
   /** The options this board was laid with. */
   options: ChartOptions;
 }
@@ -190,6 +200,8 @@ export function computeDayChart(moment: Moment, options: ChartOptions): DayChart
       ...(gates[seat.number] ? { gate: gates[seat.number] as Gate } : {}),
       star: stars[seat.number] as DayStar,
     })),
+    hours: dayHoursOf(moment.pillars.day),
+    xishen: xishenOf(moment.pillars.day.stem),
     options,
   };
 }

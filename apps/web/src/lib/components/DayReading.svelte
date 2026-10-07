@@ -1,5 +1,6 @@
 <!--
-  A board of the day said in full: what it was laid off, and the nine palaces.
+  A board of the day said in full: what it was laid off, the nine palaces, and
+  the twelve hours the day has in place of one.
 
   The words under the drawing, as `ChartReading` is to the hour board's. The
   table has three columns where the hour board's has six — there is no plate of stems under these gates and
@@ -57,6 +58,19 @@
       <span class="glyph">{glyph(chart.taiyi)}</span>
     </dd>
   </div>
+  <!-- Guarded, as the hours below are: a board cached before the engine
+       carried them comes back without. -->
+  {#if chart.xishen}
+    <div>
+      <dt>{t('cli.field.xishen')} <span class="glyph">{glyph(chart.xishen)}</span></dt>
+      <dd>
+        {t('cli.value.xishenHour', {
+          palace: `${gloss('palace', chart.xishen.palace.id)} ${glyph(chart.xishen.palace)}`,
+          hour: `${gloss('branch', chart.xishen.hour.id)} ${glyph(chart.xishen.hour)}`,
+        })}
+      </dd>
+    </div>
+  {/if}
 </dl>
 
 <table class="palaces">
@@ -89,6 +103,39 @@
   </tbody>
 </table>
 
+{#if chart.hours}
+  <h2>{t('cli.heading.dayHours')}</h2>
+  <table class="hours">
+    <thead>
+      <tr>
+        <th scope="col">{t('cli.column.hour')}</th>
+        <th scope="col">{t('cli.column.hourGod')}</th>
+        <th scope="col">{t('cli.column.hourMarks')}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {#each chart.hours as hour (hour.ganzhi.branch.id)}
+        <tr>
+          <th scope="row">
+            <span>{gloss('branch', hour.ganzhi.branch.id)}</span>
+            <span class="glyph">{glyph(hour.ganzhi)}</span>
+          </th>
+          <td>
+            <span>{gloss('daygod', hour.god.id)}</span>
+            <span class="glyph">{glyph(hour.god)} {hour.god.valence.hanzi}</span>
+          </td>
+          <td>
+            {#each hour.marks as mark (mark.id)}
+              <span>{gloss('hourmark', mark.id)}</span>
+              <span class="glyph">{glyph(mark)}{mark.valence ? ` ${mark.valence.hanzi}` : ''}</span>
+            {:else}<span class="glyph">{t('cli.none')}</span>{/each}
+          </td>
+        </tr>
+      {/each}
+    </tbody>
+  </table>
+{/if}
+
 <style>
   /* The caption's measure is the board's, as under a drawing. */
   .cast { inline-size: var(--board); margin-inline: auto; }
@@ -101,9 +148,9 @@
   .anchors .glyph { display: inline; margin-inline: 0.35rem; }
   /* Three short columns in a page's width: a name is kept on its line, and
      the slack goes to the last column as `.reading` has it. */
-  .palaces :is(th, td) { white-space: nowrap; }
+  :is(.palaces, .hours) :is(th, td) { white-space: nowrap; }
   /* The word leads; the name it renders sits under it, small. */
-  th span:first-child, td span:first-child { display: block; }
+  th span:not(.glyph), td span:not(.glyph) { display: block; }
   .glyph { display: block; color: var(--faint); font-size: 0.8em; }
   @media print {
     .cast { inline-size: min(100%, 17cm); break-inside: avoid; }

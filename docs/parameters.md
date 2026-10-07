@@ -265,7 +265,9 @@ so that a board is never told of a choice it was not laid by. The layers under
 both are the same pillars. `dayGates` has two values because two works lay the
 gates and part: the 金函玉鏡's 定局 flies them and names no half of the year,
 and 《日家奇門》, which says it is drawn from that work, turns them and mirrors
-the count after 夏至.
+the count after 夏至. The twelve hours it hands over are no part of the family: they
+are read off the day pillar under `shensha`, and stand on this board because
+every hour of the day shares it.
 
 **年命 does not follow `earthPlate`, and that is a limit stated rather than a
 choice made.** A birth in a 甲 year is looked up under the 儀 its decade pins —
@@ -319,7 +321,7 @@ almanac takes none of these at all. Both are below.
 | 六壬 | `yuejiang` | `zhongqi` (太陽過宮 at the 中氣 zhōngqì), `jieqi` (節氣 jiéqì, half a term earlier), `true` (太陽實躔 tàiyángshíchán) | `zhongqi` |
 | 六壬 | `guiren` | `chou` (丑 chǒu and 未, which 甲 shares with 戊庚), `wei` (未 wèi and 丑, with 甲 standing alone) | `chou` |
 | 六壬 | `zhouye` | `branch` (晝 from 卯 to 申), `solar` (actual sunrise and sunset) | `branch` |
-| 曆注 | `shensha` | `xieji` (what 《協紀辨方書》 xiéjìbiànfāngshū ratifies in its 卷三 to 卷七, cut to the day and the direction), later a named lineage | `xieji` |
+| 曆注 | `shensha` | `xieji` (what 《協紀辨方書》 xiéjìbiànfāngshū ratifies in its 卷三 to 卷七, cut to the day and the direction, and to the twelve hours where a board is a day's), later a named lineage | `xieji` |
 | 七政四餘 | `xiudu` | where the 宿 begin: `juxing` (at the 距星 jùxīng, placed at the instant), or a 曆's frame — `shixian` (時憲曆 shíxiànlì), `shoushi` (授時曆 shòushílì, carried from 1281 by that 曆's own method) | `juxing` |
 | 七政四餘 | `ziqi` | whether 紫氣 enters as a fourth 餘: `yinianyisu` (一年一宿 yīniányīxiù), which places it **to a palace and to no degree**, or `off` | `yinianyisu` |
 | 七政四餘 | `luohou` | which node is 羅睺: `descending` (the 星命 law), `ascending` (湯若望 and the 時憲曆) | `descending` |

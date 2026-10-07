@@ -3325,10 +3325,12 @@ sixty, and was not read past its heading and gloss.
 **What is laid, since 2026-10-07.** `system: rijia` answers with a board of its
 own — eight gates, nine stars, no plate of stems — from `computeDayChart`,
 under `dayGates` and `dayDun`. `test/rijia.test.ts` asserts the eight rows of
-the 定局 on all sixty days, the six anchors of 太乙, and the table's blocks. Of
-what the table prints beside its gates and stars — the twelve hours 黃道 and
-黑道, 喜神方, 貴人, 截路空亡, and a closing 「大吉時為…」 — nothing is laid; the
-last is a verdict and stays out on any reading. **`dayDun: liushi`**, sixty
+the 定局 on all sixty days, the six anchors of 太乙, and the table's blocks.
+What the table prints beside its gates and stars — the god each of the twelve
+hours treads, 貴人, 截路空亡, 五不遇時 and the 喜神方 — is carried on the board
+and is not the family's: it is the almanac's, stated in 《協紀辨方書》卷七, and
+§ "The twelve hours of a day, which 卷七 states" is where it is argued. The
+closing 「大吉時為…」 is a verdict and stays out on any reading. **`dayDun: liushi`**, sixty
 days to a 局 with the half following the 局, is the 統宗's and is declared and
 refused: its rule has not been read on the plate.
 
@@ -4025,7 +4027,10 @@ engine computes under that value, which stands 甲 apart and splits the pairs
 the plain verse keeps together, is the 直指's two verses seat for seat: set
 against them stem by stem, all twenty agree. This section said on its first
 writing that nobody was named for the value; that was true of the register and
-not of the shelf. The row is rung 5, one text.
+not of the shelf. **It has a second text since 2026-10-07 and the row is rung
+2**: 《協紀辨方書》卷七's 起例 for 天乙貴人 seats the same twenty, derived from
+the 干德 and its 合 rather than recited — § "The twelve hours of a day, which
+卷七 states".
 
 **`zhouye: branch` moves from rung 5 to rung 2.** It stood on 《大六壬精解》
 alone. Two transmitted texts now state the same six hours for the day and the
@@ -4591,6 +4596,82 @@ seat taken as an auspicious hour, which settles it as 祿 and not as a variant
 worth carrying. The modern 華齡 typesetting reads 八祿 in both places. A table
 of contents is a witness to its own book and can be wrong about it, which is
 `docs/scans.md`'s rule one level further down.
+
+### The twelve hours of a day, which 卷七 states
+
+Read 2026-10-07 on the 四庫 woodblock, `xieji-bianfang-skqs-juan07-08.pdf`,
+located first in the 華齡 typesetting's extract and then read on the plate.
+The entries are the ones § "義例五 and 義例六" lists as hours and leaves out.
+They are carried on one board only, the board of a day, which has twelve hours
+where every other board has one: `dayHoursOf` and `xishenOf` in `almanac.ts`,
+handed over in `DayChart.hours` and `DayChart.xishen`.
+
+**The god an hour treads** is the day's rule one cycle down, and the entry
+says so in the clause that states the rule: 「於是視其日、其時所履之神以定吉凶
+焉」, 卷七 leaf 九, with every worked case headed 「寅月日」, 「卯月日」 — a month
+or a day. `dayGodOf` is asked with the day's branch where the page asks it
+with the month's. The valence travels and 黃道 and 黑道 do not, for the reason
+given under the 十二神.
+
+**截路空亡**, leaf 四十七: 「歷例曰：截路空亡者，甲己日申酉時，乙庚日午未時，
+丙辛日辰巳時，丁壬日寅卯時，戊癸日子丑戌亥時」, and the 考原 beside it gives
+the rule the list is an enumeration of — 「截路空亡，遇壬癸也……如甲己日以五鼠遁
+起甲子，順歷之得壬申癸酉」. The engine computes the rule and the test asserts the
+list, the four hours of 戊 and 癸 included. **It carries no valence**: the 協紀's
+own 按 argues the name down, 「若以行路遇水為截，則方之舟之可矣，何截之有」.
+
+**喜神**, leaves 二十一 and 二十二: 「甲己日艮方寅時，乙庚日乾方戌時，丙辛日坤方申時，丁壬日
+離方午時，戊癸日巽方辰時」. The hour comes first and the bearing off it —
+「喜神者見丙也。假令甲己之干用五虎元起丙寅，寅為艮，故在艮也」 — so the 丙 is
+counted from 寅 by the month's rule and not from 子 by the hour's, and a day
+has one such hour where 五鼠遁 would give 乙 and 庚 two. Both travel: the
+bearing as a palace of the board, the hour as a mark on it.
+
+**五不遇時** is the hour board's `unmetHour`, and this entry is one more text
+for its rule: 「神煞起例：五不遇時，時干尅日干也」, leaf 三十七, with a 按 that sets the
+reading by the day's branch, the 遁甲隱公歌註's, beside it and prefers the
+first — 「今攷其義，不若神煞起例之善」. The reading by the branch is recorded
+and is no value.
+
+**天乙貴人, and why an hour is flagged without the seat being named.** The
+起例 on leaves 十六 and 十七 seats the noble in two tables, each cell a stem's
+德 and the stem its 氣 joins: 陽貴 at 子 甲合己, 丑 乙合庚 and 癸合戊, 寅 丙合辛,
+卯 丁合壬, 巳 戊合癸, 未 己合甲, 申 庚合乙, 酉 辛合丙, 亥 壬合丁; 陰貴 at 申
+甲合己, 未 乙合庚 and 癸合戊, 午 丙合辛, 巳 丁合壬, 卯 戊合癸, 丑 己合甲, 子
+庚合乙, 亥 辛合丙, 酉 壬合丁. Read the way the prose above them reads its
+first case — 「甲德在子，氣合於己，故己以子為陽貴」 — that is `guiren: wei` seat
+for seat, all twenty, which is why that row moves. For the hours it settles
+less than it could and enough: `guiren: chou` and `guiren: wei` part over
+which of a stem's two branches is the 陽貴 and never over which two they are,
+so an hour standing on either is flagged and the mark says neither 陽 nor 陰.
+Whether a 陽貴 counts in an hour of the night is a step of a reading.
+
+**The 庚 of the noble is read another way in circulation, and it is recorded
+without a value.** 「庚辛逢馬虎」 seats 庚 with 辛 on 寅 and 午, where the three
+texts held seat it with 甲 and 戊 on 丑 and 未. No manual on the shelf states
+it; what the shelf has is the table below following it.
+
+**The same leaves say where the day is cut from the night**, and it is a lead
+for `zhouye: solar` and not a witness: 「其晝夜之分，則或以卯酉為限，或以日出入
+為限，今攷其義，自當以日出入為定也」, leaf 十八. A holder named for the reading
+this engine refuses, in an almanac and not in a 六壬 text, with no procedure.
+
+| against 《日家奇門》's 吉凶時 column, the days that come back whole | | |
+|---|---|---|
+| the god of each hour | 43 days of 43 | every hour |
+| 貴人, 截空 and 五不遇, on the days of nine stems | 33 days of 40 | seven slips, named in the test |
+| 截空 and 五不遇 on the days of 庚 | 3 days of 3 | the noble parts by reading |
+| the 喜神方, read off its own column | five bearings in the order of the stems | not asserted by a test |
+
+The column is a bench and states no rule. Six of its seven slips drop a flag
+the same column prints on another day of the same stem, and the seventh,
+己巳, carries the noble of 甲子, whose hour stems it shares. On 庚 it never
+flags 丑 or 未 and on 庚辰 it flags 寅 and 午 both.
+
+**What the table adds and the engine leaves.** Its 「大吉時為…」 orders hours,
+its red and black grade the palaces, and its second point combines a gate
+with a star into 大吉方位: verdicts, and `docs/refusals.md` § "A board of the
+day, anywhere but on its own page" is where they stay.
 
 ### 《御定星歷考原》, and the sixth of it that arrived
 
