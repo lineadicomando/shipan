@@ -472,11 +472,25 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   earth: {
     board: 'qimen',
+    // Where earth's season begins. The default has no text named for it; the
+    // other reading is a 六壬 manual's statement about the phases, which
+    // counts here because the 三式 stand on one doctrine of them.
+    label: 'form.qimen.earth',
     values: [
-      { id: 'quarters', implemented: true },
-      // 「惟土守中宫，分旺四季，每季前各旺十八日」, 《大六壬精解》 p. 214: a
-      // statement about the five phases from a sibling art, which counts here.
-      { id: 'eighteen', implemented: false, heldBy: ['jingjie'] },
+      {
+        id: 'quarters',
+        says: 'form.qimen.earth.quarters',
+        note: 'form.qimen.earth.note',
+        implemented: true,
+      },
+      // 「惟土守中宫，分旺四季，每季前各旺十八日」, 《大六壬精解》 p. 214.
+      {
+        id: 'eighteen',
+        says: 'form.qimen.earth.eighteen',
+        note: 'form.qimen.earth.note',
+        implemented: true,
+        heldBy: ['jingjie'],
+      },
     ],
     default: 'quarters',
   },

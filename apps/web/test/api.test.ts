@@ -789,7 +789,6 @@ describe('GET /api/qimen', () => {
       ['qimen.plate', 'fei'],
       ['qimen.system', 'rijia'],
       ['qimen.plate', 'xingfei'],
-      ['qimen.earth', 'eighteen'],
       ['qimen.strengths', 'star'],
     ] as const) {
       const { status, body } = await call(qimen, `${MOMENT}&${parameter}=${value}`);

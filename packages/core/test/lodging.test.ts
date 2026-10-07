@@ -141,3 +141,53 @@ describe('the earth plate laid anew at every decade', () => {
     expect(other.chief.palace.number).toBe(1);
   });
 });
+
+/**
+ * Where earth's season begins.
+ *
+ * 「惟土守中宫，分旺四季，每季前各旺十八日，總七十二日，合而成歲」, 《大六壬
+ * 精解》 p. 214: a 六壬 text speaking of the phases, which counts for a 奇門
+ * chart because the 三式 stand on one doctrine of them.
+ */
+describe('earth holding the eighteen days before a season opens', () => {
+  // 2024: 清明 on 4 April, 立夏 on 5 May. 辰 is the month between them.
+  const season = (date: string, earth: ChartOptions['earth']) =>
+    chart(date, '12:30', { earth }).season;
+
+  it('leaves the head of a closing month to the season it closes', () => {
+    expect(chart('2024-04-07', '12:30').moment.pillars.month.branch.hanzi).toBe('辰');
+    expect(season('2024-04-07', 'quarters')).toBe('tu');
+    expect(season('2024-04-07', 'eighteen')).toBe('mu');
+  });
+
+  it('gives earth the eighteen days at its foot under both readings', () => {
+    expect(season('2024-05-01', 'quarters')).toBe('tu');
+    expect(season('2024-05-01', 'eighteen')).toBe('tu');
+  });
+
+  it('turns to earth eighteen days before the 節 that closes the month, to the instant', () => {
+    // 立夏 2024 strikes on the morning of 5 May in Beijing, so eighteen days
+    // before it falls on the morning of 17 April, between these two hours.
+    const at = (time: string) => chart('2024-04-17', time, { earth: 'eighteen' }).season;
+    expect(at('06:30')).toBe('mu');
+    expect(at('10:30')).toBe('tu');
+  });
+
+  it('does the same at the foot of every season, and nothing in the months between', () => {
+    // 未 closes summer, 戌 autumn, 丑 winter; 午 is no closing month.
+    expect(season('2024-07-10', 'eighteen')).toBe('huo');
+    expect(season('2024-10-10', 'eighteen')).toBe('jin');
+    expect(season('2024-01-08', 'eighteen')).toBe('shui');
+    expect(season('2024-06-15', 'eighteen')).toBe(season('2024-06-15', 'quarters'));
+  });
+
+  it('weighs the board against the season it names', () => {
+    const quarters = chart('2024-04-07', '12:30');
+    const eighteen = chart('2024-04-07', '12:30', { earth: 'eighteen' });
+    const strengths = (c: QimenChart) => c.palaces.map((p) => p.starStrength.id).join(' ');
+    expect(strengths(eighteen)).not.toBe(strengths(quarters));
+    // The plates are the same plates: only what they are weighed against moved.
+    expect(eighteen.palaces.map((p) => p.heaven.id)).toEqual(quarters.palaces.map((p) => p.heaven.id));
+  });
+});
+

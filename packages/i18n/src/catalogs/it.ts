@@ -1308,6 +1308,12 @@ export const it: Record<MessageKey, string> = {
     'niente: gli stessi otto nomi stanno in entrambi i dun, come li ha il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.spirits.baihu':
     'la metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
+  'form.qimen.earth': 'La stagione della terra è',
+  'form.qimen.earth.quarters': 'l’intero mese che chiude ciascuna stagione',
+  'form.qimen.earth.eighteen':
+    'gli ultimi diciotto giorni prima che si apra ciascuna stagione, come enuncia il 《大六壬精解》 dàliùrénjīngjiě',
+  'form.qimen.earth.note':
+    'Quattro mesi dell’anno chiudono una stagione, e alla loro fine la fase in stagione è la terra. La prima lettura dà alla terra quei quattro mesi interi. La seconda le dà diciotto giorni alla fine di ciascuno e lascia il resto del mese alla stagione che esso chiude. Per circa dodici giorni di ciascuno di quei quattro mesi le due letture pesano quindi ogni stella e ogni porta della tavola contro una stagione diversa.',
   'form.qimen.centreLodging': 'Il palazzo centrale alloggia',
   'form.qimen.centreLodging.kun': 'sempre in 坤 kūn, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
   'form.qimen.centreLodging.dun':

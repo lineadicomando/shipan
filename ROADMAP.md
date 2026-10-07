@@ -72,7 +72,7 @@ second copy of one text buys".
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `plate: fei`, `plate: xingfei`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen` |
+| 奇門 | `plate: fei`, `plate: xingfei`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
@@ -135,7 +135,6 @@ is what holds.
 | `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
 | `system: rijia`, `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Waits on a family being built, which is nearer a board than a value |
 | `plate: fei` | declared and refused | no text flies the hour board's own 起例. Arrives with a family of `system` |
-| `earth: eighteen` | declared and refused | held by 《大六壬精解》 p. 214, a 六壬 text on the phases: 「每季前各旺十八日」. Waits on code and not on a text — the moment has to carry the 節 that closes its month, which it does not |
 | `plate: xingfei` | declared and refused | the stars and the 儀 flown, the gates turned: held by the 折衷, argued from 《極深研幾賦》. Waits on the flight of its heaven plate being reconstructed from the chapter, which was read for whose it is and not yet for how it lays |
 | the 值使 from the earth plate or the heaven plate | recorded | chosen by the matter asked |
 | the leap block at any of the eight 節 | recorded | asks for a judgement |
@@ -210,7 +209,7 @@ is «not expected» on this evidence.
 
 | The question | What came back |
 |---|---|
-| a 奇門 text giving earth the last eighteen days of a season, for `earth: eighteen` | nothing in the 奇門 extracts. 《大六壬精解》 has the general statement, since read on the plate at its p. 214 and admitted as a witness: the three 式 stand on one doctrine of the phases |
+| a 奇門 text giving earth the last eighteen days of a season, for the second reading of `earth` | nothing in the 奇門 extracts. 《大六壬精解》 has the general statement, since read on the plate at its p. 214 and admitted as a witness: the three 式 stand on one doctrine of the phases. The value is computed since |
 | a 六壬 text seating the noble with 甲 standing alone, for the second table of `guiren` | nothing found |
 | a 六壬 text cutting day from night at a rising, for `zhouye: solar` | only the sentence of the 精解 the register already quotes |
 | a 六壬 text turning the general at the 節, for `yuejiang: jieqi` | nothing found |
@@ -292,9 +291,6 @@ are the query to put to an arriving text.
   of 《金鏡寶鑑》 reads 旺相休囚死 outward from the star and tabulates all nine
   that way, swapping 相 with 休 and 囚 with 死. Its table checks its own rule
   rather than the rule.
-- **`earth: eighteen`** — a text giving earth only the last eighteen days of
-  each season. It feeds the states above, so it decides 旺相休囚死 for every
-  cell, and the two answers part for two-thirds of four months a year.
 - **`xiudu: shoushi`** — **參, and a decision about the parameter's shape.**
   《授時曆故》卷二 carries the whole 授時 黃道宿次 at 至元辛巳 and the table checks
   itself: each quadrant closes on its own seven entries and the four on

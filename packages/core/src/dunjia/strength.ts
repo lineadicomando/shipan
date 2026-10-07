@@ -35,6 +35,32 @@ const STRENGTH: Record<StrengthId, { hanzi: string; pinyin: string }> = {
  * readings part for the first two-thirds of each of 辰, 未, 戌 and 丑. What a
  * caller could not see before the parameter is which one drew the chart.
  */
+/** The season each closing month belongs to before earth takes it. */
+const SEASON_CLOSED: Record<number, Element> = { 4: 'mu', 7: 'huo', 10: 'jin', 1: 'shui' };
+
+/** How long earth holds the end of a season under `earth: eighteen`, in days. */
+const EARTH_DAYS = 18;
+
+/**
+ * The phase in season at an instant, under either reading of where earth's
+ * begins.
+ *
+ * `quarters` gives earth the four closing months entire — 辰, 未, 戌, 丑.
+ * `eighteen` gives it the eighteen days before each season opens and leaves
+ * the rest of those months to the season they close: 「惟土守中宫，分旺四季，
+ * 每季前各旺十八日，總七十二日，合而成歲」, 《大六壬精解》 p. 214. Counted back
+ * from the instant the next 節 strikes, which is where the season ends.
+ */
+export function seasonAt(
+  monthBranch: Branch,
+  reading: 'quarters' | 'eighteen',
+  daysToMonthEnd: () => number,
+): Element {
+  const byMonth = seasonElement(monthBranch);
+  if (reading === 'quarters' || byMonth !== 'tu') return byMonth;
+  return daysToMonthEnd() <= EARTH_DAYS ? 'tu' : (SEASON_CLOSED[monthBranch.index] as Element);
+}
+
 export function seasonElement(monthBranch: Branch): Element {
   switch (monthBranch.index) {
     case 2:

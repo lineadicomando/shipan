@@ -236,7 +236,6 @@ describe('what 奇門 decided in silence', () => {
   const REFUSED = [
     ['leap', 'runyue'],
     ['strengths', 'star'],
-    ['earth', 'eighteen'],
   ] as const;
 
   it('refuses every value it declares and does not compute', () => {

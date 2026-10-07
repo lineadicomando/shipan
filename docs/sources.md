@@ -1650,9 +1650,10 @@ read on the plate — 「惟土守中宫，分旺四季，每季前各旺十八�
 岁」. Earth is 旺 for the eighteen days before each season opens, seventy-two
 in the year, which is `earth: eighteen`. It is a 六壬 text speaking of the
 phases and not of a board, and by § "What a value named for a school must
-show" that is a witness here. The value stays refused for a reason that is
-no longer a text: laying it needs the instant the season ends, and a moment
-carries the 節 that opened its month and not the one that closes it. `spirits: dun` and `strengths:
+show" that is a witness here. The value was refused that morning for want of the instant a season ends, which a
+moment did not carry, and is computed since: the moment now finds the 節 that
+closes its month when this reading asks for it, and earth takes the eighteen
+days before it strikes, to the instant. `spirits: dun` and `strengths:
 season` were the other two until the plate was read; see below. `plate: fei` on the
 hour board and `earth: eighteen` are unattributed as well, having no text.
 

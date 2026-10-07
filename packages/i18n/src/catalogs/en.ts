@@ -1422,6 +1422,12 @@ export const en = {
   // The moving pair against the plate under it. 《金鏡寶鑑》 separates the two in
   // one clause — 其星寄 for the star, 符使不必寄於二 for the 符 and the 使 — so
   // the label asks about the pair and neither value promises a different board.
+  'form.qimen.earth': 'The season of earth is',
+  'form.qimen.earth.quarters': 'the whole of each month that closes a season',
+  'form.qimen.earth.eighteen':
+    'the last eighteen days before each season opens, as 《大六壬精解》 dàliùrénjīngjiě states it',
+  'form.qimen.earth.note':
+    'Four months of the year close a season, and earth is the phase in season at their end. The first reading gives earth those four months whole. The second gives earth eighteen days at the end of each and leaves the rest of the month to the season it closes. For some twelve days of each of those four months the two readings therefore weigh every star and gate on the board against a different season.',
   'form.qimen.centreLodging': 'The central palace lodges',
   'form.qimen.centreLodging.kun': 'in 坤 kūn always, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
   'form.qimen.centreLodging.dun':

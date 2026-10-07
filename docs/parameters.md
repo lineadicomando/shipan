@@ -215,7 +215,7 @@ dunjia's.**
 | `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat) | `dun` |
 | `leap` | where 置閏 repeats its block — inside 置閏: `solstice` (芒種 or 大雪), `runyue` (閏月 rùnyuè, the term the year's leap month falls under) | `solstice` |
 | `strengths` | what 旺相休囚死 are read from: `season`, `star` | `season` |
-| `earth` | where earth's season begins: `quarters` (the four closing months entire), `eighteen` (their last eighteen days) | `quarters` |
+| `earth` | where earth's season begins: `quarters` (the four closing months entire), `eighteen` (their last eighteen days, as 《大六壬精解》 states of the phases) | `quarters` |
 | `centreTravel` | where the 值符 zhífú and the 值使 zhíshǐ are read when the count puts them on the centre: `stay` (lodged out to 坤, as 《御定奇門寶鑑》 has it), `travel` (in the fifth palace, as 《奇門遁甲金鏡寶鑑》 has it) | `stay` |
 
 `method` is the most divisive parameter in the engine and it is not optional.
