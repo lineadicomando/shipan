@@ -85,6 +85,32 @@ So the row of the four pillars now stands under the two readings that lay it,
 and the rest is entered as what it is: computed by convention, and not yet
 attributed.
 
+**`luckGranularity: shichen` has a holder, read on the plate 2026-10-07.**
+《三命通會》, 明 萬民英, in the 四庫 copy — 景印文淵閣四庫全書 vol. 810, printed
+pp. 93–94, 卷二 leaves 六十七 and 六十八, 論大運. The chapter works the opening
+of the cycles from a birth to the 節 and counts in days and double hours:
+
+> 自二十四日巳時至二十五日巳時方是一日之實數，至二十九申時正得五日三時之節氣，
+> 實歷過六十三時折除，計六百三十日，乃一歲奇九月之大運。
+
+Five days and three 時 are sixty-three 時, a 時 is ten days, and the cycle
+opens at a year and nine months: that is this value, with its own worked
+example. The same leaf says what it is written against — 「今人行運多用約法…
+便以二歲，殊不明折除實歷之數也」, rounding to whole years — and a second
+example sets the birth and the 節 to the 刻 and still counts the difference in
+時: 「若春在寅時則多一時，乃零一旬；若欠一時，乃借一旬」. The next leaf closes
+on what to do without the 刻: 「若學者不知其生刻，獨知其生時，即以生時扣算…亦
+差不遠」. So the work counts by the 時 and knows the 刻 is finer; it does not
+state a count by the minute, and `luckGranularity: minute` stays unattributed.
+The modern typesetting on the shelf located the passage and is not quoted.
+
+**Asked of the same work and not answered there.** Its 論年月日時, the chapter
+before, says nothing of where the year turns or where the day does: it ends on
+「時有八刻，有初正末，氣不同，須細察之」 in the modern copy, which was not taken
+to the plate. And its 論坐命宮 lays the 命宮 by setting the hour on the month
+and counting to 卯, which is kin to the rule a 七政四餘 board follows and is a
+lead for `minggong: yuejiang`, in other words than the ones quoted there.
+
 ---
 
 ## Tier 2 — the layout, and the zhirun ju
@@ -6798,8 +6824,16 @@ and a program is not a witness; no text on the shelf states either.
 
 - **解神 placed off the month.** The book places it off the birth year; what
   boards drawn by modern software carry under the name is a star placed off
-  the month. No manual on the shelf states the second, so it has no value to
-  be written under, and its row reads `recorded`.
+  the month. **A manual on the shelf states the second whole**, read on the
+  plate 2026-10-07: 《中國絕學》第六冊 p. 399, in the plotting chapters that
+  carry `huoling: hour` — 「解神：由申宮起1月、2月，順行陽地支之宮位，每宮安連
+  續之兩月（即1、2月在申，3、4月在戌……），數到生月之宮安解神」, with a diagram
+  running 申 · 戌 · 子 · 寅 · 辰 · 午, two months to each. So it is no longer
+  for want of a text that the row reads `recorded`. What is undecided is what
+  the two are to each other: two readings of one star, which would be a
+  parameter, or two stars that later boards carry side by side as 年解 and
+  月解, which would be a star this board does not place. The manual prints
+  one 解神 and says nothing of the other.
 - **The stars 卷二 does not place**, which modern boards carry: 恩光, 天貴,
   天官, 天福, 咸池, 孤辰, 寡宿, 華蓋, 破碎, 天才, 天壽, 天廚, the year-branch
   大耗 and a 地空 distinct from this book's 天空. Recorded until a manual

@@ -955,6 +955,8 @@ export const BAZI_PARAMETERS: ParameterSet<Pick<BaziOptions, 'luckGranularity'>>
         name: { hanzi: '時辰', pinyin: 'shíchén' },
         says: 'form.bazi.luckGranularity.shichen',
         implemented: true,
+        // 《三命通會》卷二 論大運: 「正得五日三時…過六十三時折除，計六百三十日」.
+        heldBy: ['santong'],
       },
       {
         id: 'minute',

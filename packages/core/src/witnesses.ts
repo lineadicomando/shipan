@@ -154,6 +154,11 @@ export const WITNESSES = {
     name: { hanzi: '圖解奇門遁甲大全', pinyin: 'tújiěqíméndùnjiǎdàquán' },
     year: 2009,
   },
+  /** 萬民英's 《三命通會》, whose 論大運 works the opening of the cycles by the 時辰. */
+  santong: {
+    kind: 'transmitted',
+    name: { hanzi: '三命通會', pinyin: 'sānmìngtōnghuì' },
+  },
   /** 《六壬大全》, whose verse turns the general at the 中氣 and seats the noble. */
   liurendaquan: {
     kind: 'transmitted',

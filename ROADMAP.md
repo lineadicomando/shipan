@@ -120,7 +120,7 @@ is".
 | | State | What it has, and what it waits on |
 |---|---|---|
 | `leapMonth: current`, `leapMonth: split` | declared and refused | no text; a program computes one of them. Waits on a manual that states either |
-| 解神 placed off the month | recorded | modern boards carry it and no manual on the shelf states it |
+| 解神 placed off the month | recorded | stated whole by 《中國絕學》第六冊 p. 399: from 申, two months to a palace, through the yang branches. Waits on a decision and not on a text — a second reading of one star, or a second star |
 | the stars 卷二 does not place | recorded | the same |
 | 王亭之's table at 戊, 庚 and 壬 | recorded | named, unread |
 
@@ -197,7 +197,8 @@ state or short of an attribution.
 | | State | What it has, and what it waits on |
 |---|---|---|
 | a second value of `shensha` | recorded | 曹震圭's and 邵泰衢's accounts of the 十二神, 《萬全廣濟》's table for 蠶命, the fixed-date list of 楊公忌: known through the 《協紀辨方書》 that rejects them. Waits on a witness of their own |
-| who holds each reading of the year boundary, the day boundary, the true-solar correction, the 大運's granularity | not yet attributed | every reading is computed; no file names a holder for either side |
+| who holds each reading of the year boundary, the day boundary, the true-solar correction | not yet attributed | every reading is computed; no file names a holder for either side. 《三命通會》's 論年月日時 was asked and is silent on both boundaries |
+| who holds the 大運 counted to the minute | not yet attributed | the count by the 時辰 is 《三命通會》's, which knows the 刻 is finer and counts by the 時 |
 | who holds the count of years lived by turns | not yet attributed | the other count is 《遁甲演義》's |
 
 ### What was asked of the extracts, 2026-10-07
@@ -215,7 +216,7 @@ is «not expected» on this evidence.
 | a 六壬 text turning the general at the 節, for `yuejiang: jieqi` | nothing found |
 | a 紫微斗數 text splitting a leap month at its middle, for `leapMonth: split` | nothing found |
 | a 七政四餘 text making 羅睺 the ascending node | nothing found; one set of lecture notes names 羅睺 天首星 and says nothing of which node |
-| a manual placing 解神 off the month | the search pattern matched two volumes of 《中國絕學》 and the passages were not read |
+| a manual placing 解神 off the month | 《中國絕學》第六冊 p. 399, since read on the plate: stated whole, with a diagram |
 
 ### What each named one waits on
 
