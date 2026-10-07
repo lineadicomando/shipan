@@ -159,6 +159,11 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '三命通會', pinyin: 'sānmìngtōnghuì' },
   },
+  /** 吳俊民's modern 子平 treatise, which casts by true solar time and turns the day at midnight. */
+  xinlun: {
+    kind: 'modern',
+    name: { hanzi: '命理新論', pinyin: 'mìnglǐxīnlùn' },
+  },
   /** 《六壬大全》, whose verse turns the general at the 中氣 and seats the noble. */
   liurendaquan: {
     kind: 'transmitted',

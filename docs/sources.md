@@ -104,7 +104,45 @@ on what to do without the 刻: 「若學者不知其生刻，獨知其生時，�
 state a count by the minute, and `luckGranularity: minute` stays unattributed.
 The modern typesetting on the shelf located the passage and is not quoted.
 
-**Asked of the same work and not answered there.** Its 論年月日時, the chapter
+**`trueSolarTime: true` and `dayBoundary: midnight` have a holder, read on
+the plate 2026-10-07.** 《命理新論》, 福建晉江 吳俊民（若萍）著, 上冊, a modern
+子平 treatise that was first a correspondence course by its own title leaf. The
+file prints two pages to a sheet and lies on its side.
+
+Its 第五章 sets the twelve 時辰 against 平均太陽時 in a table, 子 at 23—1, and
+closes the table on a note: 「時間係指出生地點的平均太陽時，不是普通區域時間，
+亦不是指夏令時間」. Its 第九章, laying the hour pillar, goes one step further
+and gives the procedure:
+
+> 定時應以出生地點的真正太陽時為準 … 第二、我們必須將區域時間折算成為地方平均
+> 太陽時 … 每度差四分 … 第三 … 尚須參照「時差比較表」
+
+with a worked case — a broadcast of eight in the morning in 臺北 on a day of
+summer time, taken down an hour, moved six minutes for the longitude and five
+for the equation of time, to 七時一分. That is this engine's correction in its
+three parts and in its order.
+
+The same chapter cuts the 子 hour in two:
+
+> 早子應用本日子時的天干，夜子應用明日子時的天干 … 本日夜間廿三時至明日清早
+> 一時的一段時間 … 以半夜正子（廿四時或零時）為前後兩日的交換點，日柱的天干
+> 地支，當然是要在這個時候交換的
+
+The day pillar turns at midnight, and the hour from 23:00 keeps the day that
+is ending while its own stem is read from the day that is coming. That is
+`dayBoundary: midnight` exactly, the hour's stem included, which
+`packages/core/src/types.ts` already says is not in dispute between the two
+values. `dayBoundary: zishi`, the default, stays unattributed: this manual
+argues against it without naming who holds it.
+
+**And the year, in a sentence.** 第五章 第二節: 「命理學向來是不管有無閏月…均
+是以立春為春首」, of the seasons, and the chapter counts the months from the
+節. It is said of where spring opens and not in so many words of the year
+pillar, so `yearBoundary: lichun` is not attributed on it; the passage that
+would say it is the chapter's account of the year pillar, which was not
+reached.
+
+**Asked of the 三命通會 and not answered there.** Its 論年月日時, the chapter
 before, says nothing of where the year turns or where the day does: it ends on
 「時有八刻，有初正末，氣不同，須細察之」 in the modern copy, which was not taken
 to the plate. And its 論坐命宮 lays the 命宮 by setting the hour on the month

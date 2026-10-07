@@ -198,7 +198,7 @@ state or short of an attribution.
 | | State | What it has, and what it waits on |
 |---|---|---|
 | a second value of `shensha` | recorded | 曹震圭's and 邵泰衢's accounts of the 十二神, 《萬全廣濟》's table for 蠶命, the fixed-date list of 楊公忌: known through the 《協紀辨方書》 that rejects them. Waits on a witness of their own |
-| who holds each reading of the year boundary, the day boundary, the true-solar correction | not yet attributed | every reading is computed; no file names a holder for either side. 《三命通會》's 論年月日時 was asked and is silent on both boundaries |
+| who holds the year turned at 立春 or at 正月初一, the day turned at the 子 hour, and the clock left uncorrected | not yet attributed | every reading is computed. 《三命通會》's 論年月日時 is silent on the boundaries; 《命理新論》 holds true solar time and the day turned at midnight, and says of the seasons that 立春 opens them without saying it of the year pillar |
 | who holds the 大運 counted to the minute | not yet attributed | the count by the 時辰 is 《三命通會》's, which knows the 刻 is finer and counts by the 時 |
 | who holds the count of years lived by turns | not yet attributed | the other count is 《遁甲演義》's |
 

@@ -373,11 +373,12 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   trueSolarTime: {
     board: 'pillars',
-    // The one parameter here whose values are not identifiers, and their
-    // having no name is not an omission: a correction applied or not applied
-    // names no school.
+    // The one parameter here whose values are not identifiers. They carry no
+    // name, a correction being applied or not; that one of them is taught is
+    // said by who holds it.
     values: [
-      { id: true, implemented: true },
+      // 「定時應以出生地點的真正太陽時為準」, 《命理新論》 第九章.
+      { id: true, implemented: true, heldBy: ['xinlun'] },
       { id: false, implemented: true },
     ],
     default: true,
@@ -411,7 +412,14 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.pillars.dayBoundary.zishi',
         implemented: true,
       },
-      { id: 'midnight', says: 'form.pillars.dayBoundary.midnight', implemented: true },
+      // 「以半夜正子為前後兩日的交換點」, 《命理新論》 第九章: the day turns at
+      // midnight and the hour before it is the 夜子 of the day that is ending.
+      {
+        id: 'midnight',
+        says: 'form.pillars.dayBoundary.midnight',
+        implemented: true,
+        heldBy: ['xinlun'],
+      },
     ],
     default: 'zishi',
   },
