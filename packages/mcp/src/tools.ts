@@ -473,6 +473,12 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
           .describe(
             'Which table of the four transformations. Default quanshu, the Ziwei Doushu Quanshu\'s own, which gives ren its ke to tianfu. zuofu is that table with the one cell moved to zuofu, as two modern schools teach it — one cell of ten, and everything else on the table is the book\'s under either value.',
           ),
+        daxian: z
+          .enum(['adjacent', 'ming'])
+          .optional()
+          .describe(
+            'Where the first decade of the 大限 opens. Default adjacent, the palace beside the 命宮, which is the Ziwei Doushu Quanshu\'s. ming opens it in the 命宮 itself, as the Ziwei Doushu Jielan of 1581 works it and a manual of 1986 states it. Same opening age and same direction under both; every decade stands one palace apart between them. Needs gender, like the 大限 itself.',
+          ),
         ziwei_year_boundary: z
           .enum(['lichun', 'chunjie'])
           .optional()
@@ -490,6 +496,7 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
         const options: ZiweiOptions = { ...DEFAULT_ZIWEI_OPTIONS };
         if (args.gender) options.gender = args.gender;
         if (args.sihua) options.sihua = args.sihua;
+        if (args.daxian) options.daxian = args.daxian;
         if (args.ziwei_year_boundary) options.yearBoundary = args.ziwei_year_boundary;
 
         const board = computeZiwei(moment, options);

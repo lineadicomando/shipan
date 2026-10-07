@@ -684,12 +684,25 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
   },
   daxian: {
     board: 'ziwei',
+    // Two lines and one palace between them: 《全書》 opens the run beside the
+    // 命宮 and the 捷覽 of 1581 opens it in the 命宮, with the same age and the
+    // same direction. See `docs/sources.md` § "Whose each value of a 紫微斗數
+    // board is".
+    label: 'form.ziwei.daxian',
     values: [
-      { id: 'adjacent', implemented: true, heldBy: ['quanshu'] },
+      {
+        id: 'adjacent',
+        says: 'form.ziwei.daxian.adjacent',
+        note: 'form.ziwei.daxian.note',
+        implemented: true,
+        heldBy: ['quanshu'],
+      },
       {
         id: 'ming',
         name: { hanzi: '命宮', pinyin: 'mìnggōng' },
-        implemented: false,
+        says: 'form.ziwei.daxian.ming',
+        note: 'form.ziwei.daxian.note',
+        implemented: true,
         heldBy: ['jielan', 'juexue6'],
       },
     ],

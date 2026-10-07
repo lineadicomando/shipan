@@ -76,7 +76,7 @@ second copy of one text buys".
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
-| 紫微斗數 | `leapMonth: current`, `leapMonth: split`, `huoling: hour`, `daxian: ming` |
+| 紫微斗數 | `leapMonth: current`, `leapMonth: split`, `huoling: hour` |
 
 `apps/web/test/docs.test.ts` holds this table to the engine both ways: a value
 the engine starts computing and this table still calls refused fails that suite,
@@ -119,7 +119,6 @@ is".
 
 | | State | What it has, and what it waits on |
 |---|---|---|
-| `daxian: ming` | declared and refused | two witnesses, a print of 1581 and a manual of 1986. Waits on nothing but being built |
 | `huoling: hour` | declared and refused | one witness, a manual of 1986 that prints the count whole. Waits on reading, on the plate, which line that volume teaches it as |
 | `leapMonth: current`, `leapMonth: split` | declared and refused | no text; a program computes one of them. Waits on a manual that states either |
 | 庚's 忌 to 天相 | owed a declaration | the 占驗派 material of 《中國絕學》第七冊. A value of `sihua` named for the cell |
@@ -491,16 +490,17 @@ asked for.
 **The CLI is the poorest of the three today.** It offers `--method`,
 `--guiren`, `--luohou`, `--ziqi`, `--year-boundary`, `--ziwei-year-boundary`,
 `--taiyi-year-boundary`, `--day-boundary`, `--true-solar` and `--shensha`, and
-not these four:
+not these:
 
 | | |
 |---|---|
 | `qimen.spirits` | three implemented values, and it decides which names the middle pair of the eight carries |
 | `qimen.centreTravel` | two, and it decides which palace the 值符 and the 值使 are read from when the count puts them on the centre |
 | `ziwei.sihua` | two, one cell of the table apart, and the cell seats a transformation |
+| `ziwei.daxian` | two, one palace apart along the whole run of decades |
 | `bazi.luckGranularity` | two, parting by up to ten days on when the first decade opens |
 
-All four are offered by MCP and by the REST API. The CLI's own stated policy
+All of them are offered by MCP and by the REST API. The CLI's own stated policy
 implies they are owed a flag: a flag over a parameter with **one** implemented
 value could only offer a refusal, which is why `epoch` and `ji` have none —
 these have two or three.

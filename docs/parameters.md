@@ -291,7 +291,7 @@ almanac takes none of these at all. Both are below.
 | 紫微斗數 | `leapMonth` | what a birth in an intercalary month counts as: `following` (the month after it, which is the book's), `current`, `split` | `following` |
 | 紫微斗數 | `sihua` | which table of the 四化: `quanshu` (《紫微斗數全書》 zǐwēidǒushùquánshū's own), `zuofu` (左輔 zuǒfǔ — that table with 壬's 科 moved, as two modern schools read it) | `quanshu` |
 | 紫微斗數 | `huoling` | how 火星 and 鈴星 are placed: `fixed` (a seat apiece from the year's triplicity, which is all 卷二 states), `hour` | `fixed` |
-| 紫微斗數 | `daxian` | where the first decade opens: `adjacent` (the palace beside the 命宮), `ming` (命宮 mìnggōng itself) | `adjacent` |
+| 紫微斗數 | `daxian` | where the first decade opens: `adjacent` (the palace beside the 命宮, which is the book's), `ming` (命宮 mìnggōng itself, as 《紫微斗數捷覽》 zǐwēidǒushùjiélǎn works it) | `adjacent` |
 | 紫微斗數 | `yearBoundary` | which reckoning gives the year its stem and branch: `lichun` (立春 lìchūn), `chunjie` (正月初一 zhēngyuèchūyī) | `chunjie` |
 | 八字 | `luckGranularity` | how finely the distance to the 節 is measured when the 大運 are placed: `shichen` (時辰 shíchén, whole days and whole double hours), `minute` | `shichen` |
 | 年命 | `count` | how the years lived are counted: `sui` (虛歲 xūsuì), `turns` (the turns of the year pillar alone) | `sui` |

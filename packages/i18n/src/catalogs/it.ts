@@ -1257,6 +1257,13 @@ export const it: Record<MessageKey, string> = {
   'form.ziwei.sihua.zuofu': 'la lettura che insegnano due scuole moderne, che sposta quel 科 kē a 左輔 zuǒfǔ',
   'form.ziwei.sihua.note':
     'Una cella su dieci, ed è tutto ciò che lo scaffale attesta: il manuale 中州派 zhōngzhōupài la stampa, e un manuale 北派 běipài la traccia due volte in esempi svolti — contro una lettura che entrambe le edizioni del 《全書》 quánshū e la recensione Ming portano. Tutto il resto della tavola è quello del libro sotto l’uno o l’altro valore.',
+  'form.ziwei.daxian': 'Il primo decennio del 大限 dàxiàn si apre',
+  'form.ziwei.daxian.adjacent':
+    'nel palazzo accanto al 命宮 mìnggōng, come nel 《紫微斗數全書》 zǐwēidǒushùquánshū',
+  'form.ziwei.daxian.ming':
+    'nel 命宮 mìnggōng stesso, come nel 《紫微斗數捷覽》 zǐwēidǒushùjiélǎn',
+  'form.ziwei.daxian.note':
+    'Le due letture aprono il primo decennio alla stessa età, che è il numero del quadro 五行局 wǔxíngjú, e camminano nello stesso verso. Si separano sul palazzo in cui sta quel decennio, perciò ogni decennio di una vita cade a un palazzo di distanza tra le due. La prima lettura è del 《全書》 quánshū, in tre copie. La seconda è svolta nei due versi in una stampa del 1581 ed enunciata di nuovo in un manuale del 1986.',
   'form.ziwei.yearBoundary': 'L’anno di questa tavola comincia',
   'form.ziwei.yearBoundary.lichun': 'a 立春 lìchūn, dove gira l’anno solare',
   'form.ziwei.yearBoundary.chunjie':
@@ -1985,7 +1992,7 @@ export const it: Record<MessageKey, string> = {
   'prompt.ziwei.substrate':
     'Questa tavola e un 八字 sono costruiti sulla stessa nascita, e lo stelo dell’anno che qui porta le 四化, 祿存, 天魁 e 天鉞 è lo stesso stelo dell’anno che là porta gli dèi. Se hai entrambe, hai un fatto due volte e non due testimoni. Qui hai una tavola sola: leggi quella.',
   'prompt.ziwei.limits':
-    'Dove sono mostrati i 大限, ogni seggio tiene un decennio di anni e la corsa si apre nel seggio accanto al 命宮, che è la lettura di questo libro e non di ogni scuola. Il 小限 mostra l’età alla quale raggiunge per la prima volta un seggio, tornandovi ogni dodicesimo anno. Questi collocano un tratto di vita sulla tavola. Non datano un evento, e nulla qui dice che cosa vi accadrà.',
+    'Dove sono mostrati i 大限, ogni seggio tiene un decennio di anni. Dove si apre la corsa è una delle scuole nominate sotto i pilastri: nel seggio accanto al 命宮, che è la lettura del 《紫微斗數全書》, oppure nel 命宮 stesso, che è quella del 《紫微斗數捷覽》. Leggi i decenni come della scuola che li ha posati. Il 小限 mostra l’età alla quale raggiunge per la prima volta un seggio, tornandovi ogni dodicesimo anno. Questi collocano un tratto di vita sulla tavola. Non datano un evento, e nulla qui dice che cosa vi accadrà.',
   'prompt.ziwei.board': 'La tavola',
   'prompt.ziwei.opening':
     'Apri collocando la nascita in una frase o due con parole tue – quando e dove, qual è il quadro e su quale seggio cade la vita – così che chi legge sappia che cosa si sta leggendo prima che sia letto.',

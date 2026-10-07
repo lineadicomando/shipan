@@ -450,6 +450,65 @@ describe('the limits, and what a missing gender costs', () => {
     }
   });
 
+  /**
+   * `daxian: ming`, on the two witnesses that state it.
+   *
+   * Each prints the rule and then works it, and the births below were chosen
+   * to land on the boards they work: a 命宮 at 子 under 金四局 for the 捷覽,
+   * a 水二局 for the manual. What is asserted is what each text prints.
+   */
+  describe('opened in the 命宮, as the 捷覽 has it', () => {
+    const run = (b: ZiweiBoard, decades: number) =>
+      b.palaces
+        .filter((p) => p.majorLimit!.from < b.bureau.number + decades * 10)
+        .sort((x, y) => x.majorLimit!.from - y.majorLimit!.from)
+        .map((p) => `${p.house.id}@${p.branch.id} ${p.majorLimit!.from}–${p.majorLimit!.to}`);
+
+    it('works the 捷覽: 命立子宮 金四局, 子宮起四歲, 丑宮爲十四 forward and 亥宮十四 back', () => {
+      // 「假如陽男陰女命立子宮，屬金四局，即在子宮起四歲，順行，丑宮爲十四…
+      // 如陰男陽女…即在子宮起四歲，運逆行，亥宮十四」. 1983 is 癸亥, a yin year.
+      const woman = board('1983-02-19', '04:30', { gender: 'female', daxian: 'ming' });
+      const man = board('1983-02-19', '04:30', { gender: 'male', daxian: 'ming' });
+      expect(woman.bureau.number).toBe(4);
+      expect(run(woman, 2)).toEqual(['ming@zi 4–13', 'fumu@chou 14–23']);
+      expect(run(man, 2)).toEqual(['ming@zi 4–13', 'xiongdi@hai 14–23']);
+    });
+
+    it('draws the manual’s two 水二局 boards: 命 · 父 · 福 forward, 命 · 兄 · 妻 back', () => {
+      // 《中國絕學》第六冊 p. 437: 命 2–11 · 父 12–21 · 福 22–31, and
+      // 命 2–11 · 兄 12–21 · 妻 22–31.
+      const forward = board('1980-01-03', '00:30', { gender: 'female', daxian: 'ming' });
+      const back = board('1980-01-03', '00:30', { gender: 'male', daxian: 'ming' });
+      expect(forward.bureau.number).toBe(2);
+      expect(run(forward, 3).map((seat) => seat.replace(/@\w+/, ''))).toEqual([
+        'ming 2–11',
+        'fumu 12–21',
+        'fude 22–31',
+      ]);
+      expect(run(back, 3).map((seat) => seat.replace(/@\w+/, ''))).toEqual([
+        'ming 2–11',
+        'xiongdi 12–21',
+        'qiqie 22–31',
+      ]);
+    });
+
+    it('parts from the 《全書》 by one palace along the whole run, and by nothing else', () => {
+      for (const gender of ['male', 'female'] as const) {
+        const book = board('1984-05-05', '14:30', { gender });
+        const jielan = board('1984-05-05', '14:30', { gender, daxian: 'ming' });
+        const opens = (b: ZiweiBoard) =>
+          b.palaces.find((p) => p.majorLimit!.from === b.bureau.number)!.house.id;
+        expect(opens(jielan)).toBe('ming');
+        expect(['fumu', 'xiongdi']).toContain(opens(book));
+        // Every seat keeps its stars, its 小限 and its rings: only the decade moves.
+        const without = (b: ZiweiBoard) =>
+          b.palaces.map(({ majorLimit: _decade, ...rest }) => rest);
+        expect(without(jielan)).toEqual(without(book));
+        expect(jielan.options.daxian).toBe('ming');
+      }
+    });
+  });
+
   it("starts the first decade at the bureau's own number", () => {
     const b = board('1984-05-05', '14:30', { gender: 'male' });
     const froms = b.palaces.map((p) => p.majorLimit!.from).sort((x, y) => x - y);
@@ -537,7 +596,6 @@ describe('the options', () => {
       ['leapMonth', 'current'],
       ['leapMonth', 'split'],
       ['huoling', 'hour'],
-      ['daxian', 'ming'],
     ] as const) {
       let code: string | undefined;
       try {

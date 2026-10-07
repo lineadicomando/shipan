@@ -1365,6 +1365,13 @@ export const en = {
   'form.ziwei.sihua.zuofu': 'the reading two modern schools teach, which moves that 科 kē to 左輔 zuǒfǔ',
   'form.ziwei.sihua.note':
     'One cell of ten, and the whole of what the shelf attests: the 中州派 zhōngzhōupài manual prints it, and a 北派 běipài manual draws it twice in worked examples — against a reading both editions of the 《全書》 quánshū and the Ming recension carry. Everything else on the table is the book’s under either value.',
+  'form.ziwei.daxian': 'The first decade of the 大限 dàxiàn opens',
+  'form.ziwei.daxian.adjacent':
+    'in the palace beside the 命宮 mìnggōng, as 《紫微斗數全書》 zǐwēidǒushùquánshū has it',
+  'form.ziwei.daxian.ming':
+    'in the 命宮 mìnggōng itself, as 《紫微斗數捷覽》 zǐwēidǒushùjiélǎn has it',
+  'form.ziwei.daxian.note':
+    'Both readings open the first decade at the same age, the number of the bureau 五行局 wǔxíngjú, and walk the same way. They part over the palace that decade stands in, so every decade of a life falls one palace apart between the two. The first reading is the 《全書》 quánshū’s, in three copies. The second is worked both ways in a print of 1581 and stated again in a manual of 1986.',
   'form.ziwei.yearBoundary': 'The year of this board begins',
   'form.ziwei.yearBoundary.lichun': 'at 立春 lìchūn, where the solar year turns',
   'form.ziwei.yearBoundary.chunjie':
@@ -2267,7 +2274,7 @@ export const en = {
   'prompt.ziwei.substrate':
     'This board and a 八字 are built from the same birth, and the year stem that carries the 四化, 祿存, 天魁 and 天鉞 here is the same year stem that carries the gods there. If you have both, you have one fact twice and not two witnesses. You have one board here; read it.',
   'prompt.ziwei.limits':
-    'Where the 大限 are shown, each seat holds a decade of years and the run opens in the seat beside the 命宮, which is this book’s reading and not every school’s. The 小限 shows the age at which it first reaches a seat, returning every twelfth year. These locate a stretch of life on the board. They do not date an event, and nothing here says what will happen in one.',
+    'Where the 大限 are shown, each seat holds a decade of years. Where the run opens is one of the schools named under the pillars: in the seat beside the 命宮, which is 《紫微斗數全書》’s reading, or in the 命宮 itself, which is 《紫微斗數捷覽》’s. Read the decades as the school’s that laid them. The 小限 shows the age at which it first reaches a seat, returning every twelfth year. These locate a stretch of life on the board. They do not date an event, and nothing here says what will happen in one.',
   'prompt.ziwei.board': 'The board',
   'prompt.ziwei.opening':
     'Open by situating the birth in a sentence or two of your own words — when and where, what the bureau is and what seat the life falls on — so the reader knows what is being read before it is read.',

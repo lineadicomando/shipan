@@ -313,8 +313,14 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'daxian',
     board: 'ziwei',
     values: ['adjacent', 'ming'],
-    implemented: ['adjacent'],
+    implemented: ['adjacent', 'ming'],
     fallback: 'adjacent',
+    label: 'form.ziwei.daxian',
+    says: {
+      adjacent: 'form.ziwei.daxian.adjacent',
+      ming: 'form.ziwei.daxian.ming',
+    },
+    notes: { adjacent: 'form.ziwei.daxian.note', ming: 'form.ziwei.daxian.note' },
   },
   /**
    * The second `yearBoundary`, and the reason this file has a naming rule.

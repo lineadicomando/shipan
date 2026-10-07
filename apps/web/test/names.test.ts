@@ -96,6 +96,10 @@ const READINGS: Readonly<Record<string, string>> = {
   // above stands on the near side of that one too.
   奇門遁甲金鏡寶鑑: 'qíméndùnjiǎjīnjìngbǎojiàn',
   捷覽: 'jiélǎn',
+  // The run of decades and what it is counted from, said where a value of
+  // `daxian` is offered. A board prints the decades; no seat is named either.
+  大限: 'dàxiàn',
+  五行局: 'wǔxíngjú',
   // The two lineages that move 壬's 科 to 左輔, named where a value of `sihua`
   // is argued. Neither is a board this engine seats, so neither can be dug
   // out of it — and a school named in prose is exactly what this list is for.

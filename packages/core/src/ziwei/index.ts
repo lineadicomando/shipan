@@ -98,19 +98,22 @@ export interface ZiweiOptions {
    *
    * `fixed` is all 卷二 states: a seat apiece from the triplicity of the
    * birth year, with the hour nowhere in the verse. `hour` names the
-   * widespread practice of counting on from those seats by the birth hour,
-   * and it now has one witness — a modern school manual, which is not what
-   * the standard asks for. The two agree on the seats and part on the count.
+   * practice of counting on from those seats by the birth hour, which one
+   * modern manual on the shelf prints whole. The two agree on the seats and
+   * part on the count.
    * See `docs/sources.md`.
    */
   huoling: 'fixed' | 'hour';
   /**
    * Where the first decade of the 大限 falls.
    *
-   * `adjacent` is the text, in both copies verbatim: 「陽男陰女從命前一宮起
-   * 順行 是父母宮。陰男陽女從命後一宮起逆行 是兄弟宮」 — the run opens in
-   * the palace *beside* the 命宮, never in it. `ming` names the widespread
-   * practice of opening in the 命宮 itself.
+   * `adjacent` is 《紫微斗數全書》, in both copies verbatim: 「陽男陰女從命前
+   * 一宮起順行 是父母宮。陰男陽女從命後一宮起逆行 是兄弟宮」 — the run opens
+   * in the palace *beside* the 命宮, never in it. `ming` is 《紫微斗數捷覽》
+   * (1581): 「凡命俱以命宮爲主，假如陽男陰女命立子宮，屬金四局，即在子宮起
+   * 四歲，順行，丑宮爲十四，每十年過一宮」 — the run opens in the 命宮 itself.
+   * The two agree on the age the first decade opens at and on the direction,
+   * and part by one palace along the whole run.
    */
   daxian: 'adjacent' | 'ming';
   /**
@@ -415,8 +418,12 @@ export function computeZiwei(moment: Moment, options: ZiweiOptions): ZiweiBoard 
     for (const [n, god] of BOSHI_GODS.entries()) {
       boshiAt.set(step(lucunIndex, yangManYinWoman ? n : -n), god);
     }
-    // 「陽男陰女從命前一宮起順行 是父母宮。陰男陽女從命後一宮起逆行 是兄弟宮」.
-    const first = step(mingIndex, yangManYinWoman ? 1 : -1);
+    // `adjacent`: 「陽男陰女從命前一宮起順行 是父母宮。陰男陽女從命後一宮起
+    // 逆行 是兄弟宮」. `ming`: 「凡命俱以命宮爲主…即在子宮起四歲」, the 捷覽's.
+    // One rule for the age and the direction; the palace it opens in is the
+    // whole of what the two part over.
+    const first =
+      options.daxian === 'ming' ? mingIndex : step(mingIndex, yangManYinWoman ? 1 : -1);
     for (let n = 0; n < 12; n += 1) {
       const from = bureau.number + n * 10;
       limitAt.set(step(first, yangManYinWoman ? n : -n), { from, to: from + 9 });
