@@ -80,6 +80,7 @@ phase.
 | 44 | [The trigram drawn](44-the-trigram-drawn.md) | done — the nine palaces were always trigrams and the board printed only the name; the figure goes beside it, ☵ 坎, everywhere a palace is printed |
 | 45 | [The hexagram of a palace](45-the-hexagram-of-a-palace.md) | done — the gate's trigram over the palace's names a hexagram, eight to a board; and a refusal that had declined the name along with the reading is reversed on the ground that it would have been fatal to 門迫 |
 | 46 | [The other three families](46-the-other-three-families.md) | done — the day, month and year 奇門 audited across the shelf: the third witness turns out to be the second's text printed four times, 《遁甲釋要》 arrives from a volume already held, the 金函玉鏡 row is one inference too long, and a survey's negative is traced to sampling past the front of a file |
+| 47 | [Many lines and no orthodoxy](47-many-lines-and-no-orthodoxy.md) | in progress — drops the premise that comparing witnesses recovers an art's rule: a transmitted quantity says who carries it, two agreeing sources check a transcription, and the transit is staged art by art |
 
 ## The rest of the record
 

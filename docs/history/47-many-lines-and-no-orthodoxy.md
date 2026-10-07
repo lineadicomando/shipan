@@ -1,0 +1,107 @@
+# Phase 47 — many lines and no orthodoxy
+
+A premise this project never wrote down, and was built on: that the arts it
+lays each have a rule, that the texts are imperfect witnesses to it, and that
+comparing enough of them brings it back. The register's standard said so in
+one sentence — «For anything that cannot be derived, **two** such sources must
+agree» — and the ladder said it in another, that the risk it orders is of a
+rule being «the one lineage's own».
+
+Forty-six phases of reading did not recover a rule. They found branching, in
+every art and at every depth the shelf reaches. This phase drops the premise
+and says what stands in its place. It revises phases 17, 33, 34 and 35, which
+are left as they were written.
+
+## What the shelf had already said
+
+None of this was new on the day. Each finding had been closed with «nothing
+moves», because under the premise it was a problem to be contained.
+
+- **奇門's defaults are one party's doctrine.** Phase 46's own shelf: the 折衷
+  names 顧陵岡池本理 for the turning plate and the lodging in 坤 together, and
+  every witness the register had for either sits in that line.
+- **A plural transmission was a reason to refuse.** The year, month and day
+  families stayed refused because their fullest witness finds 「諸說紛紜，全無
+  定見」.
+- **Agreement kept turning out to be kinship.** The four sources of 十干克應
+  were one line in four states; the 統宗 is on the shelf four times.
+- **A school had passed for the norm.** Phase 40: 茅山, computed by default
+  under 拆補's name.
+- **Two works had been filed as two copies.** In 太乙, 《金鏡式經》 and the
+  《統宗》 part on three conditions, and the register followed the first on the
+  ground that naming a value for the second «would be naming a parameter for a
+  recension».
+- **The measure was a book, or the sky.** 《協紀辨方書》 was chosen for the
+  almanac because it adjudicates, and what it rejects left with its verdict;
+  on a 七政四餘 board the default frame is one no practitioner casts by, and
+  both that practitioners do cast by are refused.
+
+Phase 35 had already cut the first exception — a school value claims
+attribution and transcription, not doctrine. This phase makes the exception
+the rule.
+
+## What holds now
+
+It is in `docs/sources.md` § "The standard, stated once" and is not repeated
+here. In one line: a transmitted quantity says who carries it and how well it
+was transcribed, and «the answer» is only what was measured or derived.
+
+## The decisions, in the order they were taken
+
+1. **A reading attested only by those who reject it is declarable**, if there
+   is enough to reconstruct it without contradiction.
+2. **Three states**: declared when attributed and its effect can be said cell
+   by cell; computed when it can besides be reconstructed and its witness has
+   been read; recorded with no parameter while a shape would be a guess.
+3. **The ladder is kept.** Redrawing it was decided, then withdrawn the same
+   day when it was put beside its cost: every row of the register re-weighed,
+   for a change that correcting one gloss delivers. Rung 2 is redefined as a
+   check on transcription, the standard's sentence leaves, and a line says why
+   a collation stays off. The redraw is weighed again once three single-witness
+   school values are computed.
+4. **What the 折衷 flies and turns is a third value of `plate`**, not two axes:
+   two axes would make a fourth combination no text holds.
+5. **New parameters of one art are declared in one movement.**
+6. **Which values are attested together is derived**, from witnesses
+   registered per value, and said under the board in three states.
+7. **`—` is a negative about the shelf that was asked.**
+8. **Two works that disagree are two values.**
+9. **A manual in modern type is read on the plate**, and one targeted search a
+   value precedes «not expected».
+10. **`xiudu: juxing` stays the default** when a practitioner's table becomes
+    computable: a default is a convention and does not move for attestation.
+11. **A source reached through a modern study counts as read**, the study
+    named.
+12. **A new value is named for its rule.**
+13. **涉害's two orders stay recorded**, and so do the lines the 協紀 rejects.
+
+## What this phase changed, and what it left
+
+It changed `docs/sources.md` (the standard, the collation, what a line's
+witness is), `docs/notes.md` (rung 2, the risk the ladder orders, the dash),
+`docs/parameters.md` (the default as a convention, two works against two
+copies, naming), three lines of `CLAUDE.md`, the opening of `ROADMAP.md` § 1,
+one pass of the `review` skill, and six strings on the notes pages in each
+vernacular. The third term of the version moved, to 0.6.1.
+
+**It left every entry of the register where it was.** The rows of «What is
+refused, and why» still give their reasons as they stood, several of them
+invoking the bar this phase removed, and a paragraph at the head of that table
+says so. Each is reopened when its value is taken up. Rewriting them in one
+sweep would have been the quiet rewrite the register forbids, and would have
+passed a judgement on each value that nobody had made.
+
+**And it left `ROADMAP.md` § 1's clauses**, which still say of several values
+that a second witness is what they wait on. The attribution pass, art by art,
+is where each divergence is put in one of the three states.
+
+## What was not established
+
+The survey of the five arts other than 奇門 was read off the register and
+sampled, not re-read line by line. What is new about the 折衷 — an attribution
+for `spirits: dun`, a table of the stars' 旺相, two ways of taking the 值使
+chosen by the matter — comes from the transcription sold with it and locates
+only. No plate was opened in this phase.
+
+The plan, and the proposal it is staged from, is
+`docs/proposal-plural-lines.md` for as long as the branch lives.
