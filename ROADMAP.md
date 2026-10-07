@@ -74,7 +74,7 @@ second copy of one text buys".
 |---|---|
 | 奇門 | `plate: fei`, `plate: xingfei`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
-| 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `minggong: ascendant`, `gong: ci` |
+| 七政四餘 | `xiudu: shixian`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
 | 紫微斗數 | `leapMonth: current`, `leapMonth: split` |
 
@@ -177,14 +177,12 @@ Whose bodies 格 is marked for, and what 文昌 in 太乙's own palace is called
 left this table on 2026-10-07 and are computed.
 
 **七政四餘** — argued in `docs/sources.md` § "Whose each value of a 七政四餘
-board is". The default frame is the engine's own construction, and no frame a
-line holds is computed yet. Where the clause for `xiudu: shoushi`
-below calls the subtraction «a derivation and not a witness», this table is
-what holds.
+board is". The default frame is the engine's own construction; the 授時
+frame, the first a line holds, is computed since 2026-10-07 by the method of
+《授時曆故》.
 
 | | State | What it has, and what it waits on |
 |---|---|---|
-| `xiudu: shoushi` | declared and refused | held by 《授時曆故》卷二, twenty-seven lodges read. 參 is supplied by the sum that closes its quadrant, admitted and marked as derived. Waits on the option carrying an epoch, and on the cells being transcribed |
 | `xiudu: shixian` | declared and refused | a table with no epoch that can be cited. Waits on one |
 | `gong: ci` | declared and refused | no holder named. Waits on the same table |
 | `minggong: ascendant` | declared and refused | no holder named; a second method and not a second reading |
@@ -307,15 +305,6 @@ are the query to put to an arriving text.
   of 《金鏡寶鑑》 reads 旺相休囚死 outward from the star and tabulates all nine
   that way, swapping 相 with 休 and 囚 with 死. Its table checks its own rule
   rather than the rule.
-- **`xiudu: shoushi`** — **參, and a decision about the parameter's shape.**
-  《授時曆故》卷二 carries the whole 授時 黃道宿次 at 至元辛巳 and the table checks
-  itself: each quadrant closes on its own seven entries and the four on
-  365.2575, the 曆's own 周天分. Twenty-seven of twenty-eight lodges are read off
-  the plate; 參 is not printed, and subtraction is a derivation and not a
-  witness. 《中國恆星觀測史》's 第七章第一節二 studies that same epoch's
-  observations and is § 2's fourth line. Separately, **the option would have to
-  carry an epoch as well as a table** — 「各得當時宿度」 — which is the only part
-  of this that touches code.
 
 ## 2. The shelf
 

@@ -248,8 +248,11 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'xiudu',
     board: 'qizheng',
     values: ['juxing', 'shixian', 'shoushi'],
-    implemented: ['juxing'],
+    implemented: ['juxing', 'shoushi'],
     fallback: 'juxing',
+    label: 'form.qizheng.xiudu',
+    says: { juxing: 'form.qizheng.xiudu.juxing', shoushi: 'form.qizheng.xiudu.shoushi' },
+    notes: { juxing: 'form.qizheng.xiudu.note', shoushi: 'form.qizheng.xiudu.note' },
   },
   {
     id: 'ziqi',

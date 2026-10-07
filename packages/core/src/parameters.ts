@@ -601,10 +601,16 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
 export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
   xiudu: {
     board: 'qizheng',
+    // The frame every body on this board is stood against. The default takes
+    // it from the stars and is the engine's own; `shoushi` is the first a
+    // line holds, laid by the 《授時曆故》's method from its equatorial widths.
+    label: 'form.qizheng.xiudu',
     values: [
       {
         id: 'juxing',
         name: { hanzi: '距星', pinyin: 'jùxīng' },
+        says: 'form.qizheng.xiudu.juxing',
+        note: 'form.qizheng.xiudu.note',
         implemented: true,
         heldBy: ['engine'],
       },
@@ -612,7 +618,9 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
       {
         id: 'shoushi',
         name: { hanzi: '授時曆', pinyin: 'shòushílì' },
-        implemented: false,
+        says: 'form.qizheng.xiudu.shoushi',
+        note: 'form.qizheng.xiudu.note',
+        implemented: true,
         heldBy: ['shoushiligu'],
       },
     ],
