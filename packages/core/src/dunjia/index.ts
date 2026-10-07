@@ -8,7 +8,8 @@ import { determineJu, type Ju } from './ju.js';
 import { findPatterns, type Pattern } from './patterns.js';
 import { relationOf, type Relation } from './relation.js';
 import { seasonElement, strengthOf, type Strength } from './strength.js';
-import { PALACES, lodge, palace, type Palace } from './palaces.js';
+import { STEMS } from '../ganzhi.js';
+import { PALACES, centreHost, lodge, palace, type Palace } from './palaces.js';
 import {
   chiefGate,
   chiefGatePalace,
@@ -150,6 +151,7 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     'plate',
     'system',
     'centreLodging',
+    'earthPlate',
     'spirits',
     'strengths',
     'earth',
@@ -157,16 +159,27 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   );
 
   const ju = determineJu(moment, options);
-  const earth = earthPlate(ju.yang, ju.number);
-
   const hourGanzhi = moment.pillars.hour;
-  const instrument = decadeInstrument(hourGanzhi);
+
+  // One plate a 元, the six 儀 pinned to the six 甲 — or one a decade, 六戊還原:
+  // 「如陽遁一局第二旬首甲戌在坤二宮，即從坤二上起甲，逆宮而佈」. The decade's
+  // plate is the ordinary layout begun from the palace its 甲 stands in on the
+  // 元's, so 甲 is concealed under 戊 in every decade and the chief star and
+  // gate are the ones the 元's plate gives. 「仍照常例，惟不分貼六儀耳」.
+  const ofTheYuan = earthPlate(ju.yang, ju.number);
+  const pinned = decadeInstrument(hourGanzhi);
+  const byDecade = options.earthPlate === 'xun';
+  const earth = byDecade ? earthPlate(ju.yang, palaceOf(ofTheYuan, pinned)) : ofTheYuan;
+  const instrument = byDecade ? (STEMS.find((stem) => stem.id === 'wu') as Stem) : pinned;
+
+  // Where the centre lodges, which every ring below reads the centre at.
+  const host = centreHost(options.centreLodging, ju.yang, ju.term.id);
   // 甲 never appears on a plate: where the hour's stem is 甲, the instrument
   // concealing it stands in. That is what 遁甲 names.
   const hourStem = hourGanzhi.stem.id === 'jia' ? instrument : hourGanzhi.stem;
 
-  const heaven = heavenPlate(earth, instrument, hourStem);
-  const stars = starPlate(earth, instrument, hourStem);
+  const heaven = heavenPlate(earth, instrument, hourStem, host);
+  const stars = starPlate(earth, instrument, hourStem, host);
 
   const chief = chiefStar(earth, instrument);
   // Where 值符隨時干 and 值使隨時支 send the pair, before the centre is
@@ -174,14 +187,14 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   // falls on. Either can be the fifth, which is the whole of `centreTravel`.
   const chiefLanding = palaceOf(earth, hourStem);
 
-  const gate = chiefGate(earth, instrument);
+  const gate = chiefGate(earth, instrument, host);
   const gateLanding = chiefGatePalace(earth, instrument, hourGanzhi, ju.yang);
   // The eight gates ring from the lodged seat whatever the option says, and so
   // do the spirits, which lodge inside `spiritPlate`. Neither ring has a place
   // for the centre: what `centreTravel` moves is where the pair is *reported*,
   // never where the other seven stand.
-  const gates = gatePlate(gate, lodge(gateLanding));
-  const spirits = spiritPlate(chiefLanding, ju.yang, options.spirits);
+  const gates = gatePlate(gate, lodge(gateLanding, host));
+  const spirits = spiritPlate(chiefLanding, ju.yang, options.spirits, host);
 
   // 「行活局，符使不必寄於二，徑排入中宮」 — on the turning board the 符 and the
   // 使 need not lodge at 坤二 but go into the fifth palace itself. The clause
@@ -195,8 +208,8 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   // print's own sentence; under `travel` 天禽 goes to the hour's palace, which
   // is the first's.
   const travels = options.centreTravel === 'travel';
-  const chiefPalace = palace(travels ? chiefLanding : lodge(chiefLanding));
-  const gatePalace = palace(travels ? gateLanding : lodge(gateLanding));
+  const chiefPalace = palace(travels ? chiefLanding : lodge(chiefLanding, host));
+  const gatePalace = palace(travels ? gateLanding : lodge(gateLanding, host));
 
   const season = seasonElement(moment.pillars.month.branch);
 
@@ -231,7 +244,7 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     if (spiritHere) contents.spirit = spiritHere;
     // Read off `lodge` rather than off the constant, so that the palace named
     // here and the palace the chief gate is read at can never come apart.
-    if (current.number !== 5 && lodge(5) === current.number) {
+    if (current.number !== 5 && host === current.number) {
       contents.lodged = earth[5] as Stem;
     }
     return contents;
@@ -296,6 +309,7 @@ export {
 } from './strength.js';
 export {
   CENTRE_HOST,
+  centreHost,
   DIRECTIONS,
   FLIGHT_ASCENDING,
   FLIGHT_DESCENDING,

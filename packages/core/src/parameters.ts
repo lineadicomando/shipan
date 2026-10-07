@@ -6,6 +6,7 @@ import type { NianmingOptions } from './nianming.js';
 import type { QizhengOptions } from './qizheng.js';
 import type { TaiyiOptions } from './taiyi.js';
 import type { ChartOptions } from './types.js';
+import { holdingOf, type WitnessId } from './witnesses.js';
 import type { ZiweiOptions } from './ziwei/index.js';
 
 /**
@@ -129,6 +130,27 @@ export interface ParameterValue<V> {
    * → `docs/history/40-the-default-was-maoshan.md`
    */
   readonly implemented: boolean;
+  /**
+   * The witnesses that hold this value, by their key in `WITNESSES`.
+   *
+   * Absent says «not yet attributed», which is a state and not a blank:
+   * `holdingOf` reads it, and a board laid on such a value says so rather
+   * than passing for one some text lays. It is filled an art at a time, as
+   * each is read for who holds what — `docs/sources.md` § "What a value named
+   * for a school must show" is what an attribution has to show first.
+   *
+   * It is not `name`: a value is named for its rule, so that a second line
+   * found holding the same reading does not find it named for the first.
+   */
+  readonly heldBy?: readonly WitnessId[];
+  /**
+   * The witnesses that state this value and reject it, where none holds it.
+   *
+   * A reading its only witnesses argue against is declarable when what they
+   * report is enough to reconstruct it without contradiction. A holder found
+   * later goes in `heldBy`, and `holdingOf` then reads that instead.
+   */
+  readonly reportedBy?: readonly WitnessId[];
 }
 
 export interface Parameter<V> {
@@ -197,6 +219,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.method.chaibu',
         note: 'cli.note.method',
         implemented: true,
+        heldBy: ['shenqi'],
       },
       {
         id: 'zhirun',
@@ -204,6 +227,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.method.zhirun',
         note: 'cli.note.method',
         implemented: true,
+        heldBy: ['tongzong'],
       },
       {
         id: 'maoshan',
@@ -211,6 +235,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.method.maoshan',
         note: 'cli.note.method',
         implemented: true,
+        heldBy: ['qiwu', 'tujie'],
       },
     ],
     default: 'chaibu',
@@ -219,26 +244,130 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   plate: {
     board: 'qimen',
     values: [
-      { id: 'zhuan', name: { hanzi: '轉盤', pinyin: 'zhuànpán' }, implemented: true },
+      {
+        id: 'zhuan',
+        name: { hanzi: '轉盤', pinyin: 'zhuànpán' },
+        implemented: true,
+        heldBy: ['tongzong'],
+      },
       { id: 'fei', name: { hanzi: '飛盤', pinyin: 'fēipán' }, implemented: false },
+      // The stars and the 儀 flown, the gates turned: the 折衷's, argued from
+      // 《極深研幾賦》. Declared, and refused until the flight is reconstructed.
+      {
+        id: 'xingfei',
+        name: { hanzi: '星飛門轉', pinyin: 'xīngfēiménzhuàn' },
+        implemented: false,
+        heldBy: ['zhezhong'],
+      },
     ],
     default: 'zhuan',
   },
   centreLodging: {
     board: 'qimen',
+    // Five readings of which palace the centre is read in. Two are held and
+    // three are known only from a text that sets the reading out and argues
+    // it down, which `reportedBy` says and a board laid on one of them repeats.
+    // See `docs/sources.md` § "The 折衷 on the plate, chapter by chapter".
+    label: 'form.qimen.centreLodging',
     values: [
-      { id: 'kun', implemented: true },
-      { id: 'dun', implemented: false },
+      {
+        id: 'kun',
+        says: 'form.qimen.centreLodging.kun',
+        note: 'form.qimen.centreLodging.note',
+        implemented: true,
+        heldBy: ['tongzong'],
+      },
+      // Yang to 坤, yin to 艮: the imperial print's 一本.
+      {
+        id: 'dun',
+        says: 'form.qimen.centreLodging.dun',
+        note: 'form.qimen.centreLodging.note',
+        implemented: true,
+        reportedBy: ['baojian'],
+      },
+      // Yang to 艮, yin to 坤: 「元經又謂陽遁寄艮，陰遁寄坤」, as the 折衷 quotes.
+      {
+        id: 'dunni',
+        says: 'form.qimen.centreLodging.dunni',
+        note: 'form.qimen.centreLodging.note',
+        implemented: true,
+        reportedBy: ['zhezhong'],
+      },
+      // Through the eight palaces with the eight 節, three terms to each.
+      {
+        id: 'bajie',
+        name: { hanzi: '八節', pinyin: 'bājié' },
+        says: 'form.qimen.centreLodging.bajie',
+        note: 'form.qimen.centreLodging.note',
+        implemented: true,
+        heldBy: ['zhezhong'],
+      },
+      // Through the four corners with the four seasons: 耕山陳氏's, which the
+      // 折衷 sets out and finds too narrow.
+      {
+        id: 'siyu',
+        name: { hanzi: '四隅', pinyin: 'sìyú' },
+        says: 'form.qimen.centreLodging.siyu',
+        note: 'form.qimen.centreLodging.note',
+        implemented: true,
+        reportedBy: ['zhezhong'],
+      },
     ],
     default: 'kun',
+  },
+  earthPlate: {
+    board: 'qimen',
+    // One plate a 元, or one a decade — 六戊還原. The 折衷 states the second
+    // twice, agreeing palace for palace, and says it is its own reasoning from
+    // a phrase of 豫章張氏.
+    label: 'form.qimen.earthPlate',
+    values: [
+      {
+        id: 'yuan',
+        name: { hanzi: '元', pinyin: 'yuán' },
+        says: 'form.qimen.earthPlate.yuan',
+        note: 'form.qimen.earthPlate.note',
+        implemented: true,
+        heldBy: ['tongzong'],
+      },
+      {
+        id: 'xun',
+        name: { hanzi: '旬', pinyin: 'xún' },
+        says: 'form.qimen.earthPlate.xun',
+        note: 'form.qimen.earthPlate.note',
+        implemented: true,
+        heldBy: ['zhezhong'],
+      },
+    ],
+    default: 'yuan',
   },
   system: {
     board: 'qimen',
     values: [
-      { id: 'shijia', name: { hanzi: '時家', pinyin: 'shíjiā' }, implemented: true },
-      { id: 'rijia', name: { hanzi: '日家', pinyin: 'rìjiā' }, implemented: false },
-      { id: 'yuejia', name: { hanzi: '月家', pinyin: 'yuèjiā' }, implemented: false },
-      { id: 'nianjia', name: { hanzi: '年家', pinyin: 'niánjiā' }, implemented: false },
+      {
+        id: 'shijia',
+        name: { hanzi: '時家', pinyin: 'shíjiā' },
+        implemented: true,
+        heldBy: ['tongzong'],
+      },
+      {
+        id: 'rijia',
+        name: { hanzi: '日家', pinyin: 'rìjiā' },
+        implemented: false,
+        heldBy: ['yanyi', 'tongzong'],
+      },
+      {
+        id: 'yuejia',
+        name: { hanzi: '月家', pinyin: 'yuèjiā' },
+        implemented: false,
+        heldBy: ['yanyi', 'tongzong'],
+      },
+      {
+        id: 'nianjia',
+        name: { hanzi: '年家', pinyin: 'niánjiā' },
+        implemented: false,
+        heldBy: ['yanyi', 'tongzong'],
+      },
     ],
     default: 'shijia',
   },
@@ -299,13 +428,17 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         name: { hanzi: '陰陽異名', pinyin: 'yīnyángyìmíng' },
         says: 'form.qimen.spirits.dun',
         implemented: true,
+        // Sheet 79 of the 折衷, citing 來子授書: 勾陳 and 朱雀 walking forward
+        // under yang, 白虎 and 玄武 walking back under yin.
+        heldBy: ['zhezhong'],
       },
-      { id: 'fixed', says: 'form.qimen.spirits.fixed', implemented: true },
+      { id: 'fixed', says: 'form.qimen.spirits.fixed', implemented: true, heldBy: ['baojian'] },
       {
         id: 'baihu',
         name: { hanzi: '白虎', pinyin: 'báihǔ' },
         says: 'form.qimen.spirits.baihu',
         implemented: true,
+        heldBy: ['quanju'],
       },
     ],
     default: 'dun',
@@ -313,8 +446,13 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   leap: {
     board: 'qimen',
     values: [
-      { id: 'solstice', implemented: true },
-      { id: 'runyue', name: { hanzi: '閏月', pinyin: 'rùnyuè' }, implemented: false },
+      { id: 'solstice', implemented: true, heldBy: ['tongzong'] },
+      {
+        id: 'runyue',
+        name: { hanzi: '閏月', pinyin: 'rùnyuè' },
+        implemented: false,
+        heldBy: ['jinjingbaojian'],
+      },
     ],
     default: 'solstice',
     // Inside 置閏, and the one parameter that passes that test: under 拆補 and
@@ -325,8 +463,10 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   strengths: {
     board: 'qimen',
     values: [
-      { id: 'season', implemented: true },
-      { id: 'star', implemented: false },
+      // Sheets 72–73 of the 折衷 tabulate the nine stars by the season against
+      // each star's own phase, under two other names: 廢 for 囚, 沒 for 死.
+      { id: 'season', implemented: true, heldBy: ['zhezhong'] },
+      { id: 'star', implemented: false, heldBy: ['jinjingbaojian'] },
     ],
     default: 'season',
   },
@@ -346,15 +486,31 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     // moves a plate. See `docs/sources.md`.
     label: 'form.qimen.centreTravel',
     values: [
-      { id: 'stay', says: 'form.qimen.centreTravel.stay', implemented: true },
-      { id: 'travel', says: 'form.qimen.centreTravel.travel', implemented: true },
+      {
+        id: 'stay',
+        says: 'form.qimen.centreTravel.stay',
+        implemented: true,
+        // The 統宗 states it as well: 「甲辰在中宮，寄於坤二，天禽為符，死門為使」.
+        heldBy: ['baojian', 'tongzong'],
+      },
+      {
+        id: 'travel',
+        says: 'form.qimen.centreTravel.travel',
+        implemented: true,
+        heldBy: ['jinjingbaojian'],
+      },
     ],
     default: 'stay',
   },
   shensha: {
     board: 'almanac',
     values: [
-      { id: 'xieji', name: { hanzi: '協紀辨方書', pinyin: 'xiéjìbiànfāngshū' }, implemented: true },
+      {
+        id: 'xieji',
+        name: { hanzi: '協紀辨方書', pinyin: 'xiéjìbiànfāngshū' },
+        implemented: true,
+        heldBy: ['xieji'],
+      },
     ],
     default: 'xieji',
   },
@@ -364,7 +520,12 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
   yuejiang: {
     board: 'liuren',
     values: [
-      { id: 'zhongqi', name: { hanzi: '中氣', pinyin: 'zhōngqì' }, implemented: true },
+      {
+        id: 'zhongqi',
+        name: { hanzi: '中氣', pinyin: 'zhōngqì' },
+        implemented: true,
+        heldBy: ['liurendaquan', 'jingjie'],
+      },
       { id: 'jieqi', name: { hanzi: '節氣', pinyin: 'jiéqì' }, implemented: false },
       { id: 'true', name: { hanzi: '太陽實躔', pinyin: 'tàiyángshíchán' }, implemented: false },
     ],
@@ -380,6 +541,7 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
         says: 'form.liuren.guiren.chou',
         note: 'form.liuren.guiren.note',
         implemented: true,
+        heldBy: ['liurendaquan', 'jingjie'],
       },
       {
         id: 'wei',
@@ -394,7 +556,7 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
   zhouye: {
     board: 'liuren',
     values: [
-      { id: 'branch', implemented: true },
+      { id: 'branch', implemented: true, heldBy: ['jingjie'] },
       { id: 'solar', implemented: false },
     ],
     default: 'branch',
@@ -405,9 +567,19 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
   xiudu: {
     board: 'qizheng',
     values: [
-      { id: 'juxing', name: { hanzi: '距星', pinyin: 'jùxīng' }, implemented: true },
+      {
+        id: 'juxing',
+        name: { hanzi: '距星', pinyin: 'jùxīng' },
+        implemented: true,
+        heldBy: ['engine'],
+      },
       { id: 'shixian', name: { hanzi: '時憲曆', pinyin: 'shíxiànlì' }, implemented: false },
-      { id: 'shoushi', name: { hanzi: '授時曆', pinyin: 'shòushílì' }, implemented: false },
+      {
+        id: 'shoushi',
+        name: { hanzi: '授時曆', pinyin: 'shòushílì' },
+        implemented: false,
+        heldBy: ['shoushiligu'],
+      },
     ],
     default: 'juxing',
   },
@@ -421,6 +593,7 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
         name: { hanzi: '一年一宿', pinyin: 'yīniányīxiù' },
         says: 'form.qizheng.ziqi.yinianyisu',
         implemented: true,
+        heldBy: ['xingzong', 'xingduzhinan'],
       },
     ],
     default: 'yinianyisu',
@@ -434,6 +607,7 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
         says: 'form.qizheng.luohou.descending',
         note: 'form.qizheng.luohou.note',
         implemented: true,
+        heldBy: ['xingduzhinan'],
       },
       {
         id: 'ascending',
@@ -463,6 +637,73 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
 };
 
 export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
+  // Three places where 《太乙金鏡式經》 and the 《統宗》 part on a condition.
+  // They are two works and not two copies, so each owes a parameter; the
+  // 統宗's readings reach the register through 盧央's study. See
+  // `docs/sources.md` § "Whose each value of a 太乙 board is".
+  geHost: {
+    board: 'taiyi',
+    label: 'form.taiyi.geHost',
+    values: [
+      {
+        id: 'ke',
+        name: { hanzi: '客', pinyin: 'kè' },
+        says: 'form.taiyi.geHost.ke',
+        note: 'form.taiyi.geHost.note',
+        implemented: true,
+        heldBy: ['jinjing'],
+      },
+      {
+        id: 'zhuke',
+        name: { hanzi: '主客', pinyin: 'zhǔkè' },
+        says: 'form.taiyi.geHost.zhuke',
+        note: 'form.taiyi.geHost.note',
+        implemented: true,
+        heldBy: ['taiyitongzong'],
+      },
+    ],
+    default: 'ke',
+  },
+  geChong: {
+    board: 'taiyi',
+    values: [
+      { id: 'gong', name: { hanzi: '對宮', pinyin: 'duìgōng' }, implemented: true, heldBy: ['jinjing'] },
+      { id: 'chong', name: { hanzi: '沖', pinyin: 'chōng' }, implemented: false, heldBy: ['taiyitongzong'] },
+    ],
+    default: 'gong',
+  },
+  wenchangTaiyi: {
+    board: 'taiyi',
+    label: 'form.taiyi.wenchangTaiyi',
+    values: [
+      {
+        id: 'qiu',
+        name: { hanzi: '囚', pinyin: 'qiú' },
+        says: 'form.taiyi.wenchangTaiyi.qiu',
+        note: 'form.taiyi.wenchangTaiyi.note',
+        implemented: true,
+        heldBy: ['jinjing'],
+      },
+      // 樂產's word, which the 統宗 carries as his.
+      {
+        id: 'guan',
+        name: { hanzi: '關', pinyin: 'guān' },
+        says: 'form.taiyi.wenchangTaiyi.guan',
+        note: 'form.taiyi.wenchangTaiyi.note',
+        implemented: true,
+        reportedBy: ['taiyitongzong'],
+      },
+      {
+        id: 'yan',
+        name: { hanzi: '掩', pinyin: 'yǎn' },
+        says: 'form.taiyi.wenchangTaiyi.yan',
+        note: 'form.taiyi.wenchangTaiyi.note',
+        implemented: true,
+        heldBy: ['taiyitongzong'],
+      },
+    ],
+    default: 'qiu',
+  },
   // The counts differ by millions and mostly do not differ at all: 《統宗》's
   // is congruent with 《金鏡》's modulo both 360 and 24, so it lays the identical
   // board and is a second witness rather than a second value. 《太乙淘金歌》's is
@@ -478,11 +719,13 @@ export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
         id: 'jinjing',
         name: { hanzi: '太乙金鏡式經', pinyin: 'tàiyǐjīnjìngshìjīng' },
         implemented: true,
+        heldBy: ['jinjing', 'taiyitongzong'],
       },
       {
         id: 'taojin',
         name: { hanzi: '太乙淘金歌', pinyin: 'tàiyǐtáojīngē' },
         implemented: false,
+        heldBy: ['taojin'],
       },
     ],
     default: 'jinjing',
@@ -496,10 +739,30 @@ export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
   ji: {
     board: 'taiyi',
     values: [
-      { id: 'nianji', name: { hanzi: '歲計', pinyin: 'suìjì' }, implemented: true },
-      { id: 'yueji', name: { hanzi: '月計', pinyin: 'yuèjì' }, implemented: false },
-      { id: 'riji', name: { hanzi: '日計', pinyin: 'rìjì' }, implemented: false },
-      { id: 'shiji', name: { hanzi: '時計', pinyin: 'shíjì' }, implemented: false },
+      {
+        id: 'nianji',
+        name: { hanzi: '歲計', pinyin: 'suìjì' },
+        implemented: true,
+        heldBy: ['jinjing', 'taiyitongzong'],
+      },
+      {
+        id: 'yueji',
+        name: { hanzi: '月計', pinyin: 'yuèjì' },
+        implemented: false,
+        heldBy: ['jinjing', 'taiyitongzong'],
+      },
+      {
+        id: 'riji',
+        name: { hanzi: '日計', pinyin: 'rìjì' },
+        implemented: false,
+        heldBy: ['jinjing', 'taiyitongzong'],
+      },
+      {
+        id: 'shiji',
+        name: { hanzi: '時計', pinyin: 'shíjì' },
+        implemented: false,
+        heldBy: ['jinjing', 'taiyitongzong'],
+      },
     ],
     default: 'nianji',
   },
@@ -528,7 +791,7 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
   leapMonth: {
     board: 'ziwei',
     values: [
-      { id: 'following', implemented: true },
+      { id: 'following', implemented: true, heldBy: ['quanshu'] },
       { id: 'current', implemented: false },
       { id: 'split', implemented: false },
     ],
@@ -549,6 +812,7 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
         name: { hanzi: '紫微斗數全書', pinyin: 'zǐwēidǒushùquánshū' },
         says: 'form.ziwei.sihua.quanshu',
         implemented: true,
+        heldBy: ['quanshu'],
       },
       {
         id: 'zuofu',
@@ -556,23 +820,68 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
         says: 'form.ziwei.sihua.zuofu',
         note: 'form.ziwei.sihua.note',
         implemented: true,
+        heldBy: ['han', 'beipai'],
+      },
+      // 庚's 忌 to 天相: the 占驗派 material of the anthology's seventh volume.
+      {
+        id: 'tianxiang',
+        name: { hanzi: '天相', pinyin: 'tiānxiàng' },
+        says: 'form.ziwei.sihua.tianxiang',
+        note: 'form.ziwei.sihua.note',
+        implemented: true,
+        heldBy: ['juexue7'],
       },
     ],
     default: 'quanshu',
   },
   huoling: {
     board: 'ziwei',
+    // The same two seats under both values, off the year's triplicity. The
+    // book states them and stops; a manual of 1986 takes each as where the 子
+    // hour stands and counts on to the hour of birth. See `docs/sources.md`
+    // § "Whose each value of a 紫微斗數 board is".
+    label: 'form.ziwei.huoling',
     values: [
-      { id: 'fixed', implemented: true },
-      { id: 'hour', implemented: false },
+      {
+        id: 'fixed',
+        says: 'form.ziwei.huoling.fixed',
+        note: 'form.ziwei.huoling.note',
+        implemented: true,
+        heldBy: ['quanshu'],
+      },
+      {
+        id: 'hour',
+        says: 'form.ziwei.huoling.hour',
+        note: 'form.ziwei.huoling.note',
+        implemented: true,
+        heldBy: ['juexue6'],
+      },
     ],
     default: 'fixed',
   },
   daxian: {
     board: 'ziwei',
+    // Two lines and one palace between them: 《全書》 opens the run beside the
+    // 命宮 and the 捷覽 of 1581 opens it in the 命宮, with the same age and the
+    // same direction. See `docs/sources.md` § "Whose each value of a 紫微斗數
+    // board is".
+    label: 'form.ziwei.daxian',
     values: [
-      { id: 'adjacent', implemented: true },
-      { id: 'ming', name: { hanzi: '命宮', pinyin: 'mìnggōng' }, implemented: false },
+      {
+        id: 'adjacent',
+        says: 'form.ziwei.daxian.adjacent',
+        note: 'form.ziwei.daxian.note',
+        implemented: true,
+        heldBy: ['quanshu'],
+      },
+      {
+        id: 'ming',
+        name: { hanzi: '命宮', pinyin: 'mìnggōng' },
+        says: 'form.ziwei.daxian.ming',
+        note: 'form.ziwei.daxian.note',
+        implemented: true,
+        heldBy: ['jielan', 'juexue6'],
+      },
     ],
     default: 'adjacent',
   },
@@ -646,7 +955,12 @@ export const NIANMING_PARAMETERS: ParameterSet<NianmingOptions> = {
   count: {
     board: 'nianming',
     values: [
-      { id: 'sui', name: { hanzi: '虛歲', pinyin: 'xūsuì' }, implemented: true },
+      {
+        id: 'sui',
+        name: { hanzi: '虛歲', pinyin: 'xūsuì' },
+        implemented: true,
+        heldBy: ['yanyi'],
+      },
       { id: 'turns', implemented: true },
     ],
     default: 'sui',
@@ -760,19 +1074,23 @@ export function requireImplemented<O extends object, K extends keyof O & string>
 export function divergencesInForce(
   board: string,
   options: object,
-  layers: object = options,
+  // `null` for a board that stands on no instant — 太乙, whose subject is a
+  // year: no hour was read into pillars for it, and naming where the day
+  // begins would be answering about a calendar that board never opened.
+  layers: object | null = options,
 ): readonly { parameter: ParameterEntry; value: ParameterValue<string | boolean> }[] {
   // One cast, here, for the reason `requireImplemented` has one: an options
   // type is keyed to its own board so that a declaration cannot drift, and
   // reading it back by the parameter's name is the one place that precision
   // cannot be carried through.
   const bag = options as Record<string, unknown>;
-  const under = layers as Record<string, unknown>;
+  const under = (layers ?? {}) as Record<string, unknown>;
 
   const inForce = [];
   for (const parameter of PARAMETERS) {
     if (parameter.label === undefined) continue;
     if (parameter.board !== board && parameter.board !== 'pillars') continue;
+    if (parameter.board === 'pillars' && layers === null) continue;
     if (implementedValues(parameter).length < 2) continue;
     if (parameter.inside && bag[parameter.inside.id] !== parameter.inside.value) continue;
 
@@ -786,4 +1104,78 @@ export function divergencesInForce(
     if (value?.says !== undefined) inForce.push({ parameter, value });
   }
   return inForce;
+}
+
+/**
+ * Who lays the combination a board stands on.
+ *
+ * Axes are independent here and lines hold them together: every parameter
+ * added multiplies the boards no text ever laid, and a board cast on such a
+ * combination looks exactly like one a school teaches. This reads the answer
+ * off the declaration, so that it can be said under every board rather than
+ * left for a reader to work out.
+ *
+ * Three answers, and the third is not a failure of the first two:
+ *
+ * - `together` — one or more witnesses hold every value in force;
+ * - `apart` — every value has a text behind it and none holds them all, so
+ *   the combination is this engine's;
+ * - `unattributed` — at least one value is a convention with no text named
+ *   for it yet. `together` then says who holds all the *others*, which is
+ *   usually what a reader wants next, and `attributed` whether there are any
+ *   others: an empty `together` beside it means they have texts and no one
+ *   text among them.
+ *
+ * **Every parameter of the board counts, a single-valued one included**: a
+ * value nobody could have moved is still somebody's. **The layers under the
+ * board do not**: how an instant is cut into pillars is a reckoning shared by
+ * every board laid on it, and what is asked here is whose the board is.
+ *
+ * A value only *reported*, by texts that reject it, has a text behind it and
+ * no holder, so it can never be part of `together`.
+ *
+ * `docs/parameters.md` § "A declared default is not a hidden school".
+ */
+export type Combination =
+  | { readonly state: 'together'; readonly by: readonly WitnessId[] }
+  | { readonly state: 'apart' }
+  | {
+      readonly state: 'unattributed';
+      readonly attributed: boolean;
+      readonly together: readonly WitnessId[];
+    };
+
+export function combinationOf(board: string, options: object): Combination | undefined {
+  const bag = options as Record<string, unknown>;
+
+  let shared: WitnessId[] | undefined;
+  let unattributed = false;
+  let counted = 0;
+
+  for (const parameter of PARAMETERS) {
+    if (parameter.board !== board) continue;
+    if (parameter.inside && bag[parameter.inside.id] !== parameter.inside.value) continue;
+
+    const chosen = bag[parameter.id] ?? parameter.default;
+    const value = parameter.values.find((candidate) => candidate.id === chosen);
+    if (value === undefined) continue;
+    counted += 1;
+
+    const holding = holdingOf(value);
+    if (holding.state === 'unattributed') {
+      unattributed = true;
+      continue;
+    }
+    const holders = holding.state === 'held' ? holding.by : [];
+    shared = shared === undefined ? [...holders] : shared.filter((id) => holders.includes(id));
+  }
+
+  // A board with no parameter of its own has no combination to speak of.
+  if (counted === 0) return undefined;
+  if (unattributed) {
+    return { state: 'unattributed', attributed: shared !== undefined, together: shared ?? [] };
+  }
+  return shared !== undefined && shared.length > 0
+    ? { state: 'together', by: shared }
+    : { state: 'apart' };
 }

@@ -96,12 +96,23 @@ const READINGS: Readonly<Record<string, string>> = {
   // above stands on the near side of that one too.
   奇門遁甲金鏡寶鑑: 'qíméndùnjiǎjīnjìngbǎojiàn',
   捷覽: 'jiélǎn',
+  // The run of decades and what it is counted from, said where a value of
+  // `daxian` is offered. A board prints the decades; no seat is named either.
+  大限: 'dàxiàn',
+  // The condition a value of `geHost` is about, said where the choice is
+  // offered. The engine names it as a pattern and seats nothing by it.
+  格: 'gé',
+  五行局: 'wǔxíngjú',
   // The two lineages that move 壬's 科 to 左輔, named where a value of `sihua`
   // is argued. Neither is a board this engine seats, so neither can be dug
   // out of it — and a school named in prose is exactly what this list is for.
   中州派: 'zhōngzhōupài',
   北派: 'běipài',
+  // The line that moves 庚's 忌, named where the third value of `sihua` is
+  // argued, and the transformation it moves.
+  占驗派: 'zhānyànpài',
   科: 'kē',
+  忌: 'jì',
   餘: 'yú',
   卜: 'bǔ',
   命: 'mìng',

@@ -1363,8 +1363,38 @@ export const en = {
   'form.ziwei.sihua': 'The four transformations follow',
   'form.ziwei.sihua.quanshu': '《紫微斗數全書》 zǐwēidǒushùquánshū, which gives 壬 rén its 科 kē to 天府 tiānfǔ',
   'form.ziwei.sihua.zuofu': 'the reading two modern schools teach, which moves that 科 kē to 左輔 zuǒfǔ',
+  'form.ziwei.sihua.tianxiang':
+    'the reading of the 占驗派 zhānyànpài, which moves the 忌 jì of 庚 gēng from 天同 tiāntóng to 天相 tiānxiàng',
   'form.ziwei.sihua.note':
-    'One cell of ten, and the whole of what the shelf attests: the 中州派 zhōngzhōupài manual prints it, and a 北派 běipài manual draws it twice in worked examples — against a reading both editions of the 《全書》 quánshū and the Ming recension carry. Everything else on the table is the book’s under either value.',
+    'Each of the other two readings is the book’s table with one cell moved. A 中州派 zhōngzhōupài manual prints 壬 rén’s 科 kē on 左輔 zuǒfǔ, and a 北派 běipài manual draws it so twice in worked examples. The 占驗派 zhānyànpài reads 庚 gēng’s 忌 jì on 天相 tiānxiàng in a worked verdict. Both stand against a reading that the two editions of the 《全書》 quánshū carry, and the cell a reading moves is marked on the board under every one of the three.',
+  'form.taiyi.geHost': 'The condition 格 gé, a body in the palace facing 太乙 tàiyǐ, is marked',
+  'form.taiyi.geHost.ke':
+    'for the guest’s eye, great general and adjutant alone, as 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng has it',
+  'form.taiyi.geHost.zhuke':
+    'for the host’s great general and adjutant as well, as 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn has it',
+  'form.taiyi.geHost.note':
+    'The first text names one party where it states this condition. A modern study of the second reproduces one of its boards, in which the host’s great general faces 太乙 tàiyǐ and is marked the same way. The two texts are different works, and each is followed here as its own.',
+  'form.taiyi.wenchangTaiyi': 'When 文昌 wénchāng stands in the palace of 太乙 tàiyǐ, the condition is called',
+  'form.taiyi.wenchangTaiyi.qiu': '囚 qiú, as 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng has it',
+  'form.taiyi.wenchangTaiyi.guan':
+    '關 guān, a name 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn quotes from an earlier master',
+  'form.taiyi.wenchangTaiyi.yan': '掩 yǎn, as 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn has it in its own voice',
+  'form.taiyi.wenchangTaiyi.note':
+    'One arrangement carries three names in the texts. The board is the same under each of them. What changes is the condition the arrangement is filed under, and with it the words the naming text attaches to that condition.',
+  'form.ziwei.huoling': '火星 huǒxīng and 鈴星 língxīng are placed',
+  'form.ziwei.huoling.fixed':
+    'each on its seat from the year’s triplicity, which is what 《紫微斗數全書》 zǐwēidǒushùquánshū states',
+  'form.ziwei.huoling.hour':
+    'counted on from those seats by the hour of birth, as a manual of 1986 prints it',
+  'form.ziwei.huoling.note':
+    'Both readings start from the same two seats, which the branch of the year gives. The 《全書》 quánshū states the seats and no count, in three copies. The other reading takes each seat as the place of the 子 zǐ hour and counts forward one palace for every double hour up to the hour of birth. The two readings therefore agree only for a birth in the 子 zǐ hour.',
+  'form.ziwei.daxian': 'The first decade of the 大限 dàxiàn opens',
+  'form.ziwei.daxian.adjacent':
+    'in the palace beside the 命宮 mìnggōng, as 《紫微斗數全書》 zǐwēidǒushùquánshū has it',
+  'form.ziwei.daxian.ming':
+    'in the 命宮 mìnggōng itself, as 《紫微斗數捷覽》 zǐwēidǒushùjiélǎn has it',
+  'form.ziwei.daxian.note':
+    'Both readings open the first decade at the same age, the number of the bureau 五行局 wǔxíngjú, and walk the same way. They part over the palace that decade stands in, so every decade of a life falls one palace apart between the two. The first reading is the 《全書》 quánshū’s, in three copies. The second is worked both ways in a print of 1581 and stated again in a manual of 1986.',
   'form.ziwei.yearBoundary': 'The year of this board begins',
   'form.ziwei.yearBoundary.lichun': 'at 立春 lìchūn, where the solar year turns',
   'form.ziwei.yearBoundary.chunjie':
@@ -1392,10 +1422,29 @@ export const en = {
   // The moving pair against the plate under it. 《金鏡寶鑑》 separates the two in
   // one clause — 其星寄 for the star, 符使不必寄於二 for the 符 and the 使 — so
   // the label asks about the pair and neither value promises a different board.
+  'form.qimen.centreLodging': 'The central palace lodges',
+  'form.qimen.centreLodging.kun': 'in 坤 kūn always, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
+  'form.qimen.centreLodging.dun':
+    'in 坤 kūn in a yang chart and in 艮 gèn in a yin one, which 《御定奇門寶鑑》 yùdìngqíménbǎojiàn reports of a variant copy',
+  'form.qimen.centreLodging.dunni':
+    'in 艮 gèn in a yang chart and in 坤 kūn in a yin one, which 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng reports an older text as saying',
+  'form.qimen.centreLodging.bajie':
+    'in the palace of the trigram that governs the season, moving through all eight in a year, as 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng holds',
+  'form.qimen.centreLodging.siyu':
+    'in one of the four corner palaces, a corner to each season, which 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng reports of another teacher',
+  'form.qimen.centreLodging.note':
+    'The central palace has no direction and no gate of its own. What the count puts there is therefore read in another palace, and it takes that palace’s gate with it. The shelf carries five readings of which palace that is. Three of the five are known only from a text that sets the reading out and then argues against it.',
+  'form.qimen.earthPlate': 'The earth plate is laid',
+  'form.qimen.earthPlate.yuan':
+    'once for the sixty hours of a 元 yuán, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
+  'form.qimen.earthPlate.xun':
+    'anew at the head of every decade of hours, as 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng holds',
+  'form.qimen.earthPlate.note':
+    'The earth plate is the nine stems set on the nine palaces, and everything else on the board is read against it. The first reading keeps one plate for sixty hours. The second begins a new plate every ten hours, from the palace that decade starts in. The two readings therefore share a plate for the first ten hours of the sixty and stand on different plates for the other fifty.',
   'form.qimen.centreTravel':
     'When the chief 值符 zhífú and the chief gate 值使 zhíshǐ fall on the central palace, they are read',
   'form.qimen.centreTravel.stay':
-    'at 坤 kūn, which is the palace the centre lodges in: 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
+    'in the palace the centre lodges in, as 《御定奇門寶鑑》 yùdìngqíménbǎojiàn has it',
   'form.qimen.centreTravel.travel':
     'in the central palace itself: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
   'form.gender': 'Sex — only the direction of the luck cycles depends on it',
@@ -1778,6 +1827,7 @@ export const en = {
   'notes.parameter.plate': 'How the heaven plate is derived.',
   'notes.parameter.centreLodging':
     'Where the centre lodges, having no direction, no gate and no spirit of its own.',
+  'notes.parameter.earthPlate': 'How often the earth plate is laid anew: once for sixty hours, or at every decade of them.',
   'notes.parameter.system':
     'Which family of chart: the hour’s, the day’s, the month’s or the year’s.',
   'notes.parameter.trueSolarTime': 'Whether clock time is corrected to the Sun at the place.',
@@ -1796,6 +1846,9 @@ export const en = {
   'notes.parameter.gong': 'Where the twelve palaces are cut.',
   'notes.parameter.epoch': 'Which 上元積年 shàngyuánjīnián the count runs from.',
   'notes.parameter.ji': 'Which register the board is laid in.',
+  'notes.parameter.geHost': 'Whose bodies the condition 格 gé is marked for.',
+  'notes.parameter.geChong': 'What makes a 格 gé: the facing palace, or a clash of branches as well.',
+  'notes.parameter.wenchangTaiyi': 'What 文昌 wénchāng in the palace of 太乙 tàiyǐ is called.',
   'notes.parameter.leapMonth': 'What a birth in an intercalary month counts as.',
   'notes.parameter.sihua': 'Which table of the four transformations.',
   'notes.parameter.huoling': 'How 火星 huǒxīng and 鈴星 língxīng are placed.',
@@ -1879,10 +1932,6 @@ export const en = {
   'notes.refusals.feixing.asks': 'anyone holding both books of 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':
     'That art names two boards and this engine computes one of them. The other transmission counts eighteen stars off the year branch, has no bureau of the five phases, no 天府 tiānfǔ, and not one of the fourteen main stars. A placement carried across is a graft rather than a gap being filled — the same error as a natal chart of dunjia, made smaller and between two books that share a title.',
-  'notes.refusals.maoshan.title': '茅山 máoshān',
-  'notes.refusals.maoshan.asks': 'the parameter that lists it.',
-  'notes.refusals.maoshan.body':
-    'No reference exists, runnable or transmitted, against which a 茅山 máoshān chart could be falsified. It is refused by name rather than substituted, because a chart cast by the wrong method looks right and is not. It stands on the list of what is declared and unimplemented, and it is not expected to leave it.',
   'notes.refusals.placeFromName.title': 'A place from a name',
   'notes.refusals.placeFromName.asks': 'every convenience API.',
   'notes.refusals.placeFromName.body':
@@ -1909,16 +1958,16 @@ export const en = {
 
   'notes.schools.claim.title': 'What a value named for a school claims',
   'notes.schools.claim.body':
-    'Not that the school is right — that this is what the school teaches, and that the engine transcribes it. Those are the two ways such a value can be wrong, the lineage misnamed or the table miscopied, and neither needs a second tradition to be caught. That is also why more is asked of a quantity this engine presents as the answer than of one it presents as somebody’s.',
+    'Not that the school is right — that this is what the school teaches, and that the engine transcribes it. Those are the two ways such a value can be wrong, the lineage misnamed or the table miscopied, and neither needs a second tradition to be caught. Every quantity this engine takes from a text makes that same claim. Only a quantity that was measured or derived is presented as the answer.',
   'notes.schools.standard.title': 'What must be on the shelf before one is declared',
   'notes.schools.standard.body':
-    'Four things: a witness that is the school’s own, or that states that school’s teaching and says so; the reading named as that school’s, in the same words the value carries; exactly what it moves, set against what the engine already computes; and a rung, which weighs the transcription and not the doctrine. A modern summary with no text behind it is none of those. Nor is the size of the disagreement one of them: a lineage that moves a single cell and keeps the rest still draws a different board, and two practitioners still hold opposite sides of it.',
+    'Four things: a witness that is the school’s own, or that states that school’s teaching and says so; the reading attributed to that school in the register’s entry; exactly what it moves, set against what the engine already computes; and a rung, which weighs the transcription and not the doctrine. The age of the witness is not one of the four: a manual printed in the last century is a school’s witness when a named author teaches the reading and gives the procedure. A summary that names a divergence without its procedure is not a witness, and neither is a program that runs. Nor is the size of the disagreement one of the four: a lineage that moves a single cell and keeps the rest still draws a different board, and two practitioners still hold opposite sides of it.',
   'notes.schools.rung.title': 'Whose a rule is, beside how well it is attested',
   'notes.schools.rung.body':
-    'The ladder of evidence orders one risk: that a rule handed down as the tradition’s is in fact one lineage’s own. Whose a rule is answers a different question, and it cannot be a rung without claiming a kind of check it does not have. So the register carries it in a column of its own, beside the rung and never inside it — and most rows show a dash there, which is a claim rather than a blank: the quantity is carried as the tradition’s own, not as one party’s reading of it.',
+    'The ladder of evidence orders one risk: that a rule was taken down wrongly and nothing would show it. Whose a rule is answers a different question, and it cannot be a rung without claiming a kind of check it does not have. So the register carries it in a column of its own, beside the rung and never inside it. Most rows show a dash there, which is a claim rather than a blank: among the texts this project has asked, no divergence is known for that quantity.',
   'notes.schools.default.title': 'A declared default is not a hidden school',
   'notes.schools.default.body':
-    'Every divergence has a default and has to: an address naming no method still answers, and so does a bare section. What does not follow is that the default may be silent. Where the engine computes more than one value, the one in force is stated wherever the board is — under it on the page, under the grid on the drawing, under the pillars in the transcript, in the answer over the API — whether or not anybody moved it. The controls stay where a reader opens them on purpose; it is the reading that must never be able to pass for schoolless.',
+    'Every divergence has a default and has to: an address naming no method still answers, and so does a bare section. What does not follow is that the default may be silent. Where the engine computes more than one value, the one in force is stated wherever the board is — under it on the page, under the grid on the drawing, under the pillars in the transcript, in the answer over the API — whether or not anybody moved it. The controls stay where a reader opens them on purpose; it is the reading that must never be able to pass for schoolless. A default is a convention: it says what an address answers when it names nothing, and it claims no priority for the school it belongs to.',
   'notes.schools.axes.title': 'A school is axes, never a bundle',
   'notes.schools.axes.body':
     'A school usually touches more than one of these axes at once, and the convenient shape would be a single name that sets all the rest. The engine refuses it: a bundle is a table, a table can be edited, and a board carrying the bundle’s name rather than the values it stood for would reproduce differently the day the table changed, with nothing in its own output to say so. A form may offer the shortcut and fill the fields with it — what leaves the form is still the fields, and a reader can see what was set and move any one of them.',
@@ -1974,7 +2023,7 @@ export const en = {
     'Another program computes it, independently of this one, and was run over the whole domain rather than sampled. Where the subject is a contested tradition this means consistent with a common implementation, never verified.',
   'notes.rung.2': 'Two texts agreeing',
   'notes.rung.2.means':
-    'Two transmitted sources, independent of each other, naming the same thing the same way. This is the standard for anything that cannot be derived.',
+    'Two sources, independent of each other, carry the same reading, so each checks how the other was transcribed. A reading with a single source behind it is carried too, on one of the rungs below.',
   'notes.rung.3': 'Over-determination',
   'notes.rung.3.means':
     'A structure with more constraints than it has freedom, so a wrong answer breaks many things at once and the right one breaks none.',
@@ -1992,7 +2041,7 @@ export const en = {
   // saying: a reader meeting a column of them will read «not filled in» unless
   // told it is a claim.
   'notes.ladder.attributed':
-    'The school column says which declared value a quantity stands under, in the words a caller passes them — huoling: fixed, yuan: futou. A dash says the quantity is carried as the tradition’s own rather than as one party’s reading of it, and that is a claim, not an empty cell. Whose a rule is and how well it is attested are different questions, so the two columns stand side by side and neither moves the other.',
+    'The school column says which declared value a quantity stands under, in the words a caller passes them — huoling: fixed, sihua: zuofu. A dash says that no divergence is known for the quantity among the texts this project has asked, and that is a claim, not an empty cell. The word recorded says that a divergence is known and the engine has no value for it yet. Whose a rule is and how well it is attested are different questions, so the two columns stand side by side and neither moves the other.',
   'notes.ladder.quoted':
     'The table below is quoted rather than translated. It is a register of citations — the quantities as the engine names them, editions, chapters, the programs each was measured against and the spans they were run over — and this project keeps it in English, the language of its source. What is translated is everything you decide from: the rungs above, what each of them means, and what each layer is.',
   // The way back to what the register was checked on, under the tables that
@@ -2267,7 +2316,7 @@ export const en = {
   'prompt.ziwei.substrate':
     'This board and a 八字 are built from the same birth, and the year stem that carries the 四化, 祿存, 天魁 and 天鉞 here is the same year stem that carries the gods there. If you have both, you have one fact twice and not two witnesses. You have one board here; read it.',
   'prompt.ziwei.limits':
-    'Where the 大限 are shown, each seat holds a decade of years and the run opens in the seat beside the 命宮, which is this book’s reading and not every school’s. The 小限 shows the age at which it first reaches a seat, returning every twelfth year. These locate a stretch of life on the board. They do not date an event, and nothing here says what will happen in one.',
+    'Where the 大限 are shown, each seat holds a decade of years. Where the run opens is one of the schools named under the pillars: in the seat beside the 命宮, which is 《紫微斗數全書》’s reading, or in the 命宮 itself, which is 《紫微斗數捷覽》’s. Read the decades as the school’s that laid them. The 小限 shows the age at which it first reaches a seat, returning every twelfth year. These locate a stretch of life on the board. They do not date an event, and nothing here says what will happen in one.',
   'prompt.ziwei.board': 'The board',
   'prompt.ziwei.opening':
     'Open by situating the birth in a sentence or two of your own words — when and where, what the bureau is and what seat the life falls on — so the reader knows what is being read before it is read.',
@@ -2426,6 +2475,22 @@ export const en = {
   // the default included, since a reader who moved nothing is the one who does
   // not know a choice was made for them.
   'cli.heading.divergences': 'Schools followed',
+  // Who lays the combination a board stands on, under the schools followed.
+  // Three sentences for the three answers `combinationOf` gives, and a fourth
+  // for the case a reader meets most: some values are conventions with no text
+  // named, and the rest do belong to one text. Each leads with what the board
+  // has; the shelf's limit follows as the reason.
+  'cli.combination.together': 'This combination of values is laid as one by {witnesses}.',
+  'cli.combination.apart':
+    'Each value this board was laid on has a text behind it, and the combination is this engine’s: no text on its shelf lays them all together.',
+  'cli.combination.unattributed':
+    'Some of the values this board was laid on are conventions of this engine, with no text named for them yet.',
+  'cli.combination.unattributedBeside':
+    'Some of the values this board was laid on are conventions of this engine, with no text named for them yet. The other values are laid as one by {witnesses}.',
+  'cli.combination.unattributedApart':
+    'Some of the values this board was laid on are conventions of this engine, with no text named for them yet. Each of the other values has a text behind it, and no text on the shelf lays those all together.',
+  'cli.combination.and': ' and ',
+  'label.witness.engine': 'this engine’s own construction',
   'cli.heading.terms': 'Solar terms of {year}',
   'cli.heading.calendar': 'Lunar date',
   'cli.heading.patterns': 'Configurations',

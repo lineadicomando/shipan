@@ -17,6 +17,7 @@
 -->
 <script lang="ts">
   import type { Translator } from '@shipan/i18n';
+  import { sayLaidBy, type LaidBy } from '$lib/laid';
   import { inForce } from '$lib/parameters';
   import Named from './Named.svelte';
 
@@ -25,6 +26,7 @@
     board,
     options = {},
     layers = undefined,
+    laidBy = undefined,
   }: {
     t: Translator;
     /** The section's own board, whose divergences are asked for beside the layers'. */
@@ -39,20 +41,33 @@
      * an answer about a calendar that board never opened.
      */
     layers?: object | undefined;
+    /**
+     * Who lays the combination, as the answer carried it beside the board.
+     *
+     * Not derived here like the rows above: whose a value is lives in the
+     * engine's registry of witnesses, which the page cannot import, so the
+     * endpoint says it and this prints it.
+     */
+    laidBy?: LaidBy | null | undefined;
   } = $props();
 
   const standing = $derived(inForce(board, options, layers));
 </script>
 
-{#if standing.length > 0}
+{#if standing.length > 0 || laidBy}
   <section class="schools">
     <h2>{t('cli.heading.divergences')}</h2>
+    {#if standing.length > 0}
     <dl>
       {#each standing as { row, value } (row.board + row.id)}
         <dt><Named text={t(row.label!)} /></dt>
         <dd><Named text={t(row.says![value]!)} /></dd>
       {/each}
     </dl>
+    {/if}
+    {#if laidBy}
+      <p class="laid"><Named text={sayLaidBy(laidBy, t)} /></p>
+    {/if}
   </section>
 {/if}
 
@@ -93,6 +108,10 @@
     padding: 0.35rem 0.6rem;
     border-bottom: 1px solid var(--rule);
   }
+
+  /* About all the rows above and the parameters that have none, so it closes
+     the block at the page's measure rather than joining the grid. */
+  .laid { margin: 0.6rem 0 0; padding: 0 0.6rem; }
 
   /* It belongs on a sheet: the paper copy travels furthest from the page. */
   @media print {

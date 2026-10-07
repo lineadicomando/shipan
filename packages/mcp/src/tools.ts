@@ -445,8 +445,9 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
         'into one to read it. ' +
         'Every placement is 《紫微斗數全書》 卷二, and four of its tables part from the ones ' +
         'modern software carries — say so if you report those four. **火星 and 鈴星 take a ' +
-        'seat apiece from the year’s triplicity and the birth hour never enters**, where the ' +
-        'widespread practice counts on from those seats by the hour. **天魁 and 天鉞 go to 亥 ' +
+        'seat apiece from the year’s triplicity and the birth hour never enters** unless ' +
+        'huoling is set to hour, which counts on from those seats as most modern boards do; ' +
+        'the block of schools under the pillars says which was laid. **天魁 and 天鉞 go to 亥 ' +
         'and 戌 for 丙 and 丁** (「丙丁豬狗位」), where the modern verse reads 豬雞; and 辛 ' +
         'takes 寅 then 午. **解神 is placed off the birth year**, not off the month. **壬 ' +
         'gives 化科 to 天府**, not to 左輔. ' +
@@ -468,10 +469,22 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
             'Only the 大限, the 小限 and the rings of 長生 and 博士 depend on it. Do not guess it.',
           ),
         sihua: z
-          .enum(['quanshu', 'zuofu'])
+          .enum(['quanshu', 'zuofu', 'tianxiang'])
           .optional()
           .describe(
-            'Which table of the four transformations. Default quanshu, the Ziwei Doushu Quanshu\'s own, which gives ren its ke to tianfu. zuofu is that table with the one cell moved to zuofu, as two modern schools teach it — one cell of ten, and everything else on the table is the book\'s under either value.',
+            'Which table of the four transformations. Default quanshu, the Ziwei Doushu Quanshu\'s own, which gives ren its ke to tianfu. zuofu is that table with the one cell moved to zuofu, as two modern schools teach it — tianxiang is the book\'s table with geng\'s ji moved from tiantong to tianxiang, as the Zhanyan school reads it. Each moves one cell and everything else on the table is the book\'s.',
+          ),
+        huoling: z
+          .enum(['fixed', 'hour'])
+          .optional()
+          .describe(
+            'How 火星 and 鈴星 are placed. Default fixed: a seat apiece from the triplicity of the year, which is all the Ziwei Doushu Quanshu states. hour takes each seat as where the 子 hour stands and counts forward one palace a double hour to the hour of birth, as a manual of 1986 prints it and as most modern boards are drawn. The two agree only for a birth in the 子 hour.',
+          ),
+        daxian: z
+          .enum(['adjacent', 'ming'])
+          .optional()
+          .describe(
+            'Where the first decade of the 大限 opens. Default adjacent, the palace beside the 命宮, which is the Ziwei Doushu Quanshu\'s. ming opens it in the 命宮 itself, as the Ziwei Doushu Jielan of 1581 works it and a manual of 1986 states it. Same opening age and same direction under both; every decade stands one palace apart between them. Needs gender, like the 大限 itself.',
           ),
         ziwei_year_boundary: z
           .enum(['lichun', 'chunjie'])
@@ -490,6 +503,8 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
         const options: ZiweiOptions = { ...DEFAULT_ZIWEI_OPTIONS };
         if (args.gender) options.gender = args.gender;
         if (args.sihua) options.sihua = args.sihua;
+        if (args.huoling) options.huoling = args.huoling;
+        if (args.daxian) options.daxian = args.daxian;
         if (args.ziwei_year_boundary) options.yearBoundary = args.ziwei_year_boundary;
 
         const board = computeZiwei(moment, options);
@@ -557,13 +572,28 @@ export function registerComputeTaiyi(server: McpServer): void {
             'The year the board is laid on, counted from 立春 as the pillars are. ' +
               'Astronomical numbering, so 1 BCE is 0.',
           ),
+        ge_host: z
+          .enum(['ke', 'zhuke'])
+          .optional()
+          .describe(
+            'Whose bodies the condition 格 is marked for. Default ke: the guest\'s eye and the guest\'s two generals alone, as the Taiyi Jinjing Shijing names them. zhuke marks the host\'s two generals as well, as the Taiyi Tongzong does. Two works, not two copies of one, and each is followed as its own.',
+          ),
+        wenchang_taiyi: z
+          .enum(['qiu', 'guan', 'yan'])
+          .optional()
+          .describe(
+            'What 文昌 standing in 太乙\'s own palace is called. Default qiu, the Taiyi Jinjing Shijing\'s name. guan is a name the Taiyi Tongzong quotes from an earlier master; yan is the Tongzong\'s own. The board does not move; the condition it is filed under does.',
+          ),
         lang: langSchema,
       },
     },
     async (args) => {
       const t = translatorFor(args.lang);
       try {
-        const board = taiyiBoard({ year: args.year }, DEFAULT_TAIYI_OPTIONS);
+        const options = { ...DEFAULT_TAIYI_OPTIONS };
+        if (args.ge_host) options.geHost = args.ge_host;
+        if (args.wenchang_taiyi) options.wenchangTaiyi = args.wenchang_taiyi;
+        const board = taiyiBoard({ year: args.year }, options);
         return ok(formatTaiyi(board, t));
       } catch (error) {
         return fail(describeError(error, t));

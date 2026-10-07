@@ -30,6 +30,11 @@ ever named for a recension**: a caller has no ground to choose between two
 witnesses to one text, and offering the choice would be the engine declining a
 job that is its own.
 
+**Two works are not two copies.** Where 《太乙金鏡式經》 and 太乙's 《統宗》
+part, somebody casts by each, and the divergence owes what any other does. The
+test is the one above and it is applied to the witnesses as they are: one text
+in two states, or two texts.
+
 **A value named for a work is not a counter-example.** `sihua: quanshu` names
 《紫微斗數全書》 and `xiudu` names two 曆, because in those places the work *is*
 the method — a 七政四餘 practitioner really does cast by 授時 degrees or by
@@ -75,18 +80,32 @@ alternatives declared and refused. What it found is in `ROADMAP.md` § 1.
 ## What a school value must show
 
 The three questions say *whether* a divergence owes a value. This says what has
-to be true before one can be declared — and it is a lower bar than the one in
-`docs/sources.md`, on purpose.
+to be true before one can be declared.
 
 **A value named for a school claims attribution, not doctrine.** It does not
 assert that the school is right; it asserts that this is what the school
 teaches and that the engine transcribes it. That claim fails in two ways only,
 the lineage misnamed and the table miscopied, and neither wants a second
-tradition to catch it — so the standard's demand for two agreeing witnesses is
-the demand on a quantity the engine presents as the answer, and it is not the
-demand here. `docs/sources.md` § "What a value named for a school must show"
-states what stands in its place, and `docs/notes.md` says why attribution is
-not a rung.
+tradition to catch it — so two agreeing witnesses are a check on a
+transcription and never the condition for a value. `docs/sources.md` § "What a
+value named for a school must show" states what the shelf owes one, what makes
+a text a line's witness whatever its age, and the three states a divergence
+can be in; `docs/notes.md` says why attribution is not a rung.
+
+**A value is named for the rule it follows**, or for a work where the work is
+the method. Who holds it is the entry's business and not the name's, because
+a second line found holding the same reading must not find it already named
+for the first. The warning two sections down stands: before a name is fixed,
+the entry says whether the rule sits inside a method or is the boundary
+between two.
+
+**Who holds a value is declared beside it, and is a list.**
+`packages/core/src/witnesses.ts` registers the texts — a work handed down, a
+line's modern manual, or the engine's own construction, which is the honest
+name for a value no text lays — and each value in
+`packages/core/src/parameters.ts` names the ones that hold it. A value with no
+list is *not yet attributed*, which is a state and not a blank: it is what a
+default laid by convention is until somebody reads whose it is.
 
 **Completeness is not the test, and it was being used as one.** A lineage that
 moves a single cell and keeps the rest was read, for a while, as not having a
@@ -135,6 +154,11 @@ Every row here has a default and has to: an address naming no method still
 answers, and so do a tool call, a command and a bare section. What does not
 follow is that the default may be silent.
 
+**A default is a convention and not the reading the art hands down.** It says
+what an address answers when it names nothing, and it stays where it is so
+that a saved address goes on answering the same. It claims no priority for
+its line, and a value does not become the default by being better attested.
+
 **Where a parameter has more than one implemented value, the value in force
 travels — always, and whether or not anybody moved it.** It is stated under the
 board in the interface, under the pillars of every transcript and inside a
@@ -161,6 +185,21 @@ Where a parameter has one implemented value there is nothing to be aware of and
 nothing is said: what would be reported is not a school but the absence of a
 second one, which is `ROADMAP.md` § 1's business.
 
+**And the board says who lays the combination it stands on.** Axes are
+independent in the engine and lines hold them together, so every parameter
+added multiplies the boards no text ever laid, and such a board looks exactly
+like one a school teaches. `combinationOf` in
+`packages/core/src/parameters.ts` reads the answer off the declaration: every
+parameter of the board counts, a single-valued one included, and the layers
+under the board do not. Three answers — one text holds every value in force;
+each has a text and none holds them all, so the combination is the engine's;
+or a value is a convention with no text named for it yet, in which case what
+holds all the others is said beside it. It closes the block of schools in a
+transcript, in a prompt's fence and on a drawing, and travels as `laidBy`
+*beside* the board over REST: it is a statement about the shelf, and a saved
+board must not move when a text is read. It is never a refusal and never a
+verdict on the board.
+
 **Each board carries its own input type. None inherits a default from
 dunjia's.**
 
@@ -169,8 +208,9 @@ dunjia's.**
 | Parameter | Values | Default |
 |---|---|---|
 | `method` | `chaibu` (拆補 chāibǔ), `zhirun` (置閏 zhìrùn), `maoshan` (茅山 máoshān) | `chaibu` |
-| `plate` | `zhuan` (轉盤 zhuànpán), `fei` (飛盤 fēipán) | `zhuan` |
-| `centreLodging` | `kun` (寄坤二), `dun` (陽遁寄二 · 陰遁寄八) | `kun` |
+| `plate` | `zhuan` (轉盤 zhuànpán), `fei` (飛盤 fēipán), `xingfei` (星飛門轉 xīngfēiménzhuàn — the stars and the 儀 flown, the gates turned) | `zhuan` |
+| `centreLodging` | where the centre is read: `kun` (寄坤二 always), `dun` (陽遁寄二 · 陰遁寄八), `dunni` (陽遁寄八 · 陰遁寄二), `bajie` (八節 bājié — through all eight palaces, three terms to each), `siyu` (四隅 sìyú — through the four corners, six terms to each) | `kun` |
+| `earthPlate` | how often the earth plate is laid: `yuan` (元 yuán — once for sixty hours), `xun` (旬 xún — anew at every decade, 六戊還原) | `yuan` |
 | `system` | `shijia` (時家 shíjiā), later `rijia` (日家 rìjiā), `yuejia` (月家 yuèjiā), `nianjia` (年家 niánjiā) | `shijia` |
 | `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat) | `dun` |
 | `leap` | where 置閏 repeats its block — inside 置閏: `solstice` (芒種 or 大雪), `runyue` (閏月 rùnyuè, the term the year's leap month falls under) | `solstice` |
@@ -195,6 +235,16 @@ method boundary, the two values are two methods, and the parameter is gone
 rather than kept as a second way of saying `method`: an address carrying
 `qimen.yuan` is refused by name rather than answered under a school it did not
 choose. → [`docs/history/40-the-default-was-maoshan.md`](history/40-the-default-was-maoshan.md)
+
+**`centreLodging` has five values and three of them are reported, not held.**
+Each is what one text says the lodging is, and the two that divide it by the
+dun divide it the opposite way round: 《御定奇門寶鑑》's variant copy sends yang
+to 坤 and yin to 艮, the 《元經》 the 折衷 quotes sends yang to 艮 and yin to 坤.
+They were one refused value until the two quotations were set side by side;
+they are two readings and two values. `earthPlate` is the 折衷's own, and with
+the lodging by the eight 節 it belongs to a board that work lays whole — stars
+flown, gates turned, `plate: xingfei` — of which this engine computes the
+parts and not yet the flight.
 
 **`system` is four values because four are transmitted, not because the set is
 closed.** A modern lineage on the shelf adds 分家 fēnjiā, a board of the minute;
@@ -248,11 +298,14 @@ almanac takes none of these at all. Both are below.
 | 七政四餘 | `gong` | where the twelve 宮 are cut: `zhongqi` (太陽過宮 at the 中氣 zhōngqì), `ci` (the 次 cì as stretches of 宿度) | `zhongqi` |
 | 太乙 | `epoch` | which 上元積年 the count runs from: `jinjing` (《太乙金鏡式經》 tàiyǐjīnjìngshìjīng), `taojin` (《太乙淘金歌》 tàiyǐtáojīngē, out by a whole 元 and refused) | `jinjing` |
 | 太乙 | `ji` | which register the board is laid in: `nianji` (歲計 suìjì, which is what both witnesses call it), `yueji` (月計 yuèjì), `riji` (日計 rìjì), `shiji` (時計 shíjì) | `nianji` |
+| 太乙 | `geHost` | whose bodies the condition 格 is marked for: `ke` (客 kè — the guest's eye and generals alone, as 《太乙金鏡式經》 has it), `zhuke` (主客 zhǔkè — the host's generals as well, as the 《統宗》 has it) | `ke` |
+| 太乙 | `geChong` | what makes a 格: `gong` (對宮 duìgōng — the palace facing 太乙), `chong` (沖 chōng — a clash of branches as well) | `gong` |
+| 太乙 | `wenchangTaiyi` | what 文昌 in 太乙's own palace is called: `qiu` (囚 qiú, the 金鏡's), `guan` (關 guān, 樂產's as the 統宗 carries it), `yan` (掩 yǎn, the 統宗's own) | `qiu` |
 | 太乙 | `yearBoundary` | where the counted year begins: `lichun` (立春 lìchūn), `dongzhi` (冬至 dōngzhì), `chunjie` (正月初一 zhēngyuèchūyī) | `lichun` |
 | 紫微斗數 | `leapMonth` | what a birth in an intercalary month counts as: `following` (the month after it, which is the book's), `current`, `split` | `following` |
-| 紫微斗數 | `sihua` | which table of the 四化: `quanshu` (《紫微斗數全書》 zǐwēidǒushùquánshū's own), `zuofu` (左輔 zuǒfǔ — that table with 壬's 科 moved, as two modern schools read it) | `quanshu` |
-| 紫微斗數 | `huoling` | how 火星 and 鈴星 are placed: `fixed` (a seat apiece from the year's triplicity, which is all 卷二 states), `hour` | `fixed` |
-| 紫微斗數 | `daxian` | where the first decade opens: `adjacent` (the palace beside the 命宮), `ming` (命宮 mìnggōng itself) | `adjacent` |
+| 紫微斗數 | `sihua` | which table of the 四化: `quanshu` (《紫微斗數全書》 zǐwēidǒushùquánshū's own), `zuofu` (左輔 zuǒfǔ — that table with 壬's 科 moved, as two modern schools read it), `tianxiang` (天相 tiānxiàng — that table with 庚's 忌 moved, as the 占驗派 reads it) | `quanshu` |
+| 紫微斗數 | `huoling` | how 火星 and 鈴星 are placed: `fixed` (a seat apiece from the year's triplicity, which is all 卷二 states), `hour` (counted on from those seats to the hour of birth, as a manual of 1986 prints it) | `fixed` |
+| 紫微斗數 | `daxian` | where the first decade opens: `adjacent` (the palace beside the 命宮, which is the book's), `ming` (命宮 mìnggōng itself, as 《紫微斗數捷覽》 zǐwēidǒushùjiélǎn works it) | `adjacent` |
 | 紫微斗數 | `yearBoundary` | which reckoning gives the year its stem and branch: `lichun` (立春 lìchūn), `chunjie` (正月初一 zhēngyuèchūyī) | `chunjie` |
 | 八字 | `luckGranularity` | how finely the distance to the 節 is measured when the 大運 are placed: `shichen` (時辰 shíchén, whole days and whole double hours), `minute` | `shichen` |
 | 年命 | `count` | how the years lived are counted: `sui` (虛歲 xūsuì), `turns` (the turns of the year pillar alone) | `sui` |

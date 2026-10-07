@@ -1,6 +1,7 @@
 import { STEMS, type Ganzhi, type Stem } from '../ganzhi.js';
 import type { ChartOptions } from '../types.js';
 import {
+  CENTRE_HOST,
   FLIGHT_ASCENDING,
   FLIGHT_DESCENDING,
   RING_CLOCKWISE,
@@ -253,9 +254,9 @@ export function decadeInstrument(hourGanzhi: Ganzhi): Stem {
  * receives. A palace named as the centre is read at its host instead — the
  * ring has no place for it.
  */
-function turn<T>(source: ByPalace<T>, from: number, to: number): ByPalace<T> {
-  const take = orbitFrom(RING_CLOCKWISE, lodge(from));
-  const give = orbitFrom(RING_CLOCKWISE, lodge(to));
+function turn<T>(source: ByPalace<T>, from: number, to: number, host: number): ByPalace<T> {
+  const take = orbitFrom(RING_CLOCKWISE, lodge(from, host));
+  const give = orbitFrom(RING_CLOCKWISE, lodge(to, host));
 
   const result: ByPalace<T> = {};
   for (let i = 0; i < take.length; i += 1) {
@@ -276,8 +277,9 @@ export function heavenPlate(
   earth: ByPalace<Stem>,
   instrument: Stem,
   hourStem: Stem,
+  host: number = CENTRE_HOST,
 ): ByPalace<Stem> {
-  return turn(earth, palaceOf(earth, instrument), palaceOf(earth, hourStem));
+  return turn(earth, palaceOf(earth, instrument), palaceOf(earth, hourStem), host);
 }
 
 /** The nine stars, turned by the same amount as the heaven plate. */
@@ -285,10 +287,11 @@ export function starPlate(
   earth: ByPalace<Stem>,
   instrument: Stem,
   hourStem: Stem,
+  host: number = CENTRE_HOST,
 ): ByPalace<Star> {
   const atRest: ByPalace<Star> = {};
   for (const star of STARS) atRest[star.home] = star;
-  return turn(atRest, palaceOf(earth, instrument), palaceOf(earth, hourStem));
+  return turn(atRest, palaceOf(earth, instrument), palaceOf(earth, hourStem), host);
 }
 
 /**
@@ -304,10 +307,15 @@ export function chiefStar(earth: ByPalace<Stem>, instrument: Stem): Star {
 }
 
 /** The gate belonging to the instrument's palace: the chief gate (值使). */
-export function chiefGate(earth: ByPalace<Stem>, instrument: Stem): Gate {
+export function chiefGate(
+  earth: ByPalace<Stem>,
+  instrument: Stem,
+  host: number = CENTRE_HOST,
+): Gate {
   // Lodged, unlike the chief star: the centre has no gate at all, so there is
-  // nothing there to name.
-  const home = lodge(palaceOf(earth, instrument));
+  // nothing there to name. 「有宮寄則有門」 — the gate is its host's, whichever
+  // palace that is.
+  const home = lodge(palaceOf(earth, instrument), host);
   return GATES.find((gate) => gate.home === home) as Gate;
 }
 
@@ -367,9 +375,13 @@ export function spiritPlate(
   chiefPalace: number,
   yang: boolean,
   naming: ChartOptions['spirits'] = 'dun',
+  host: number = CENTRE_HOST,
 ): ByPalace<Spirit> {
   const spirits = spiritRing(yang, naming);
-  const ring = orbitFrom(yang ? RING_CLOCKWISE : RING_COUNTERCLOCKWISE, lodge(chiefPalace));
+  const ring = orbitFrom(
+    yang ? RING_CLOCKWISE : RING_COUNTERCLOCKWISE,
+    lodge(chiefPalace, host),
+  );
 
   const plate: ByPalace<Spirit> = {};
   for (let i = 0; i < ring.length; i += 1) {

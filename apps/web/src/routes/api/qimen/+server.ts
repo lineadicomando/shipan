@@ -7,6 +7,7 @@ import {
   readNianmingOptions,
 } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
+import { laidBy } from '$lib/server/laid';
 import type { RequestHandler } from './$types';
 
 /**
@@ -45,7 +46,12 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
     // board named after itself, and this was the one that did not — which is
     // what `Instrument.api` being a single field depends on. See
     // `lib/instruments.ts`.
-    return json({ qimen: chart, nianming, place: label ?? null });
+    return json({
+      qimen: chart,
+      nianming,
+      place: label ?? null,
+      laidBy: laidBy('qimen', chart.options),
+    });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;
     toHttpError(cause);

@@ -142,7 +142,13 @@
 
     <div>
       <QizhengReading {board} {t} {moment} />
-      <Schools {t} board="qizheng" options={board.options} layers={moment.options} />
+      <Schools
+        {t}
+        board="qizheng"
+        options={board.options}
+        layers={moment.options}
+        laidBy={data.result?.laidBy}
+      />
     </div>
   </div>
 {/if}

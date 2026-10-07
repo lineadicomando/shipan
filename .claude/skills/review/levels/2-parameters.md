@@ -41,10 +41,22 @@ preferred. A value named for a recension is the finding, and so is a parameter
 whose two values are two readings of one passage.
 
 **A school value with no attribution or no transcription.** Not two agreeing
-witnesses — that is the register's standard and a different one. For each value
-named for a school: is the lineage named, and is the table it turns on
-transcribed somewhere a reader can check? `docs/notes.md` § the ladder's closing
-paragraphs say why attribution is not a rung.
+witnesses — those are a check on a transcription and never the condition for a
+value. For each value named for a school: is the lineage named, and is the
+table it turns on transcribed somewhere a reader can check? `docs/sources.md`
+§ "What a value named for a school must show" says what makes a text a line's
+witness at any age; `docs/notes.md` § the ladder's closing paragraphs say why
+attribution is not a rung.
+
+**A value refused for having one line behind it.** One witness is the ordinary
+case. A refusal whose reason is that a second agreeing witness is wanted is the
+finding, and so is a `—` in the register on a quantity a recorded divergence
+touches.
+
+**Two works filed as two copies.** «An edition can only be preferred» settles
+a disagreement inside one text. Where the two witnesses are two works, each is
+somebody's to follow and the divergence owes one of the three states in
+`docs/sources.md`.
 
 **A default that is a hidden school.** Where a parameter has more than one
 implemented value, what is in force must be stated wherever the board is, moved

@@ -240,6 +240,10 @@ function seatOf(
   // replaced before the search. There is nothing to fall through to.
   if (!found) throw new Error('the stem is on neither plate, which cannot happen');
   const seat: Seat = { palace: found.palace };
-  if (found.palace.number === 5) seat.host = palace(lodge(5));
+  // Wherever this chart lodges its centre, which it says by carrying the
+  // centre's stem there.
+  if (found.palace.number === 5) {
+    seat.host = chart.palaces.find((contents) => contents.lodged !== undefined)?.palace ?? palace(lodge(5));
+  }
   return seat;
 }

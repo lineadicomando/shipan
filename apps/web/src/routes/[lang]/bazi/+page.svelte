@@ -154,7 +154,13 @@
     <!-- The four pillars at a glance, then the same four read out in full. -->
     <PillarPlate pillars={result.bazi.pillars} {t} />
     <BaziReading bazi={result.bazi} {t} />
-    <Schools {t} board="bazi" options={result.bazi.options} layers={result.moment.options} />
+    <Schools
+      {t}
+      board="bazi"
+      options={result.bazi.options}
+      layers={result.moment.options}
+      laidBy={result.laidBy}
+    />
 
     <!--
       The calendar the pillars were cast from, and here the case is stronger

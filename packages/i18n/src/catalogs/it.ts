@@ -1255,8 +1255,38 @@ export const it: Record<MessageKey, string> = {
   'form.ziwei.sihua': 'Le quattro trasformazioni seguono',
   'form.ziwei.sihua.quanshu': 'il 《紫微斗數全書》 zǐwēidǒushùquánshū, che dà a 壬 rén il suo 科 kē a 天府 tiānfǔ',
   'form.ziwei.sihua.zuofu': 'la lettura che insegnano due scuole moderne, che sposta quel 科 kē a 左輔 zuǒfǔ',
+  'form.ziwei.sihua.tianxiang':
+    'la lettura della 占驗派 zhānyànpài, che sposta il 忌 jì di 庚 gēng da 天同 tiāntóng a 天相 tiānxiàng',
   'form.ziwei.sihua.note':
-    'Una cella su dieci, ed è tutto ciò che lo scaffale attesta: il manuale 中州派 zhōngzhōupài la stampa, e un manuale 北派 běipài la traccia due volte in esempi svolti — contro una lettura che entrambe le edizioni del 《全書》 quánshū e la recensione Ming portano. Tutto il resto della tavola è quello del libro sotto l’uno o l’altro valore.',
+    'Ciascuna delle altre due letture è la tavola del libro con una cella spostata. Un manuale 中州派 zhōngzhōupài stampa il 科 kē di 壬 rén su 左輔 zuǒfǔ, e un manuale 北派 běipài lo traccia così due volte in esempi svolti. La 占驗派 zhānyànpài legge il 忌 jì di 庚 gēng su 天相 tiānxiàng in un giudizio svolto. Entrambe stanno contro una lettura che le due edizioni del 《全書》 quánshū portano, e la cella che una lettura sposta è segnata sulla tavola sotto ciascuna delle tre.',
+  'form.taiyi.geHost': 'La condizione 格 gé, un corpo nel palazzo di fronte a 太乙 tàiyǐ, è segnata',
+  'form.taiyi.geHost.ke':
+    'soltanto per l’occhio, il gran generale e l’aiutante di chi arriva, come nel 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng',
+  'form.taiyi.geHost.zhuke':
+    'anche per il gran generale e l’aiutante di chi riceve, come nel 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn',
+  'form.taiyi.geHost.note':
+    'Il primo testo nomina una sola parte dove enuncia questa condizione. Uno studio moderno del secondo ne riproduce una tavola, nella quale il gran generale di chi riceve sta di fronte a 太乙 tàiyǐ ed è segnato allo stesso modo. I due testi sono opere diverse, e qui ciascuno è seguito come proprio.',
+  'form.taiyi.wenchangTaiyi': 'Quando 文昌 wénchāng sta nel palazzo di 太乙 tàiyǐ, la condizione si chiama',
+  'form.taiyi.wenchangTaiyi.qiu': '囚 qiú, come nel 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng',
+  'form.taiyi.wenchangTaiyi.guan':
+    '關 guān, nome che il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn cita da un maestro precedente',
+  'form.taiyi.wenchangTaiyi.yan': '掩 yǎn, come dice in proprio il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn',
+  'form.taiyi.wenchangTaiyi.note':
+    'Una sola disposizione porta tre nomi nei testi. La tavola è la stessa sotto ciascuno di essi. Cambia la condizione sotto cui la disposizione è registrata, e con essa le parole che il testo attribuisce a quella condizione.',
+  'form.ziwei.huoling': '火星 huǒxīng e 鈴星 língxīng sono collocate',
+  'form.ziwei.huoling.fixed':
+    'ciascuna sul seggio che le dà il triplice dell’anno, che è quanto enuncia il 《紫微斗數全書》 zǐwēidǒushùquánshū',
+  'form.ziwei.huoling.hour':
+    'contando da quei seggi secondo l’ora di nascita, come stampa un manuale del 1986',
+  'form.ziwei.huoling.note':
+    'Le due letture partono dagli stessi due seggi, che dà il ramo dell’anno. Il 《全書》 quánshū enuncia i seggi e nessun conteggio, in tre copie. L’altra lettura prende ciascun seggio come il posto dell’ora 子 zǐ e conta in avanti un palazzo per ogni doppia ora, fino all’ora di nascita. Le due letture coincidono quindi soltanto per una nascita nell’ora 子 zǐ.',
+  'form.ziwei.daxian': 'Il primo decennio del 大限 dàxiàn si apre',
+  'form.ziwei.daxian.adjacent':
+    'nel palazzo accanto al 命宮 mìnggōng, come nel 《紫微斗數全書》 zǐwēidǒushùquánshū',
+  'form.ziwei.daxian.ming':
+    'nel 命宮 mìnggōng stesso, come nel 《紫微斗數捷覽》 zǐwēidǒushùjiélǎn',
+  'form.ziwei.daxian.note':
+    'Le due letture aprono il primo decennio alla stessa età, che è il numero del quadro 五行局 wǔxíngjú, e camminano nello stesso verso. Si separano sul palazzo in cui sta quel decennio, perciò ogni decennio di una vita cade a un palazzo di distanza tra le due. La prima lettura è del 《全書》 quánshū, in tre copie. La seconda è svolta nei due versi in una stampa del 1581 ed enunciata di nuovo in un manuale del 1986.',
   'form.ziwei.yearBoundary': 'L’anno di questa tavola comincia',
   'form.ziwei.yearBoundary.lichun': 'a 立春 lìchūn, dove gira l’anno solare',
   'form.ziwei.yearBoundary.chunjie':
@@ -1278,10 +1308,29 @@ export const it: Record<MessageKey, string> = {
     'niente: gli stessi otto nomi stanno in entrambi i dun, come li ha il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.spirits.baihu':
     'la metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
+  'form.qimen.centreLodging': 'Il palazzo centrale alloggia',
+  'form.qimen.centreLodging.kun': 'sempre in 坤 kūn, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
+  'form.qimen.centreLodging.dun':
+    'in 坤 kūn in una carta yang e in 艮 gèn in una carta yin, lettura che il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn riporta da una copia variante',
+  'form.qimen.centreLodging.dunni':
+    'in 艮 gèn in una carta yang e in 坤 kūn in una carta yin, lettura che il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng riporta come di un testo più antico',
+  'form.qimen.centreLodging.bajie':
+    'nel palazzo del trigramma che governa la stagione, passando per tutti e otto in un anno, come sostiene il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng',
+  'form.qimen.centreLodging.siyu':
+    'in uno dei quattro palazzi d’angolo, un angolo per stagione, lettura che il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng riporta come di un altro maestro',
+  'form.qimen.centreLodging.note':
+    'Il palazzo centrale non ha una direzione e non ha una porta propria. Ciò che il conteggio vi colloca si legge perciò in un altro palazzo, e prende con sé la porta di quel palazzo. Lo scaffale conserva cinque letture di quale palazzo sia. Tre delle cinque sono note soltanto da un testo che espone la lettura e poi la contesta.',
+  'form.qimen.earthPlate': 'Il piatto terra si stende',
+  'form.qimen.earthPlate.yuan':
+    'una volta per le sessanta ore di un 元 yuán, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
+  'form.qimen.earthPlate.xun':
+    'di nuovo all’inizio di ogni decade di ore, come sostiene il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng',
+  'form.qimen.earthPlate.note':
+    'Il piatto terra è l’insieme dei nove tronchi posati sui nove palazzi, e tutto il resto della tavola si legge contro di esso. La prima lettura tiene un solo piatto per sessanta ore. La seconda comincia un piatto nuovo ogni dieci ore, dal palazzo in cui quella decade ha inizio. Le due letture condividono quindi il piatto per le prime dieci ore delle sessanta e poggiano su piatti diversi per le altre cinquanta.',
   'form.qimen.centreTravel':
     'Quando il capo 值符 zhífú e la porta del capo 值使 zhíshǐ cadono sul palazzo centrale, si leggono',
   'form.qimen.centreTravel.stay':
-    'in 坤 kūn, che è il palazzo dove il centro alloggia: 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
+    'nel palazzo in cui il centro alloggia, come nel 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.centreTravel.travel':
     'nel palazzo centrale stesso: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
   'form.gender': 'Sesso: ne dipende solo la direzione dei cicli decennali',
@@ -1538,8 +1587,8 @@ export const it: Record<MessageKey, string> = {
   // c'è una cella di tabella.
   //
   // È anche la parola che il resto della sezione usa già. «Sta nell'elenco di
-  // ciò che è dichiarato e non implementato» sta in
-  // `notes.refusals.maoshan.body` da prima di questa riga, e il segno diceva
+  // ciò che è dichiarato e non implementato» stava in una voce delle note,
+  // ora tolta, da prima di questa riga, e il segno diceva
   // l'altra: due parole per lo stesso fatto in due pagine che si leggono di
   // seguito. L'inglese tiene «refused» perché in inglese quella parola dice
   // il comportamento e non la condanna — un catalogo argomenta la propria
@@ -1551,6 +1600,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.plate': 'Come si ricava la tavola di cielo.',
   'notes.parameter.centreLodging':
     'Dove alloggia il centro, che non ha direzione, né porta, né spirito propri.',
+  'notes.parameter.earthPlate': 'Ogni quanto si stende di nuovo il piatto terra: una volta per sessanta ore, oppure a ogni decade.',
   'notes.parameter.system': 'Quale famiglia di carta: dell’ora, del giorno, del mese o dell’anno.',
   'notes.parameter.trueSolarTime':
     'Se l’ora dell’orologio venga corretta sul Sole del luogo.',
@@ -1569,6 +1619,9 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.gong': 'Dove si tagliano i dodici palazzi.',
   'notes.parameter.epoch': 'Da quale 上元積年 shàngyuánjīnián corre il conto.',
   'notes.parameter.ji': 'In quale registro si posa la tavola.',
+  'notes.parameter.geHost': 'Per i corpi di chi si segna la condizione 格 gé.',
+  'notes.parameter.geChong': 'Che cosa fa un 格 gé: il palazzo di fronte, oppure anche uno scontro di rami.',
+  'notes.parameter.wenchangTaiyi': 'Come si chiama 文昌 wénchāng nel palazzo di 太乙 tàiyǐ.',
   'notes.parameter.leapMonth': 'Che cosa conta una nascita in un mese intercalare.',
   'notes.parameter.sihua': 'Quale tavola delle quattro trasformazioni.',
   'notes.parameter.huoling': 'Come si collocano 火星 huǒxīng e 鈴星 língxīng.',
@@ -1655,10 +1708,6 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.feixing.asks': 'chi ha in mano entrambi i libri del 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':
     'Quell’arte nomina due tavole e questo motore ne calcola una. L’altra trasmissione conta diciotto stelle a partire dal ramo dell’anno, non ha ufficio dei cinque elementi, non ha 天府 tiānfǔ e non porta nessuna delle quattordici stelle principali. Una collocazione portata da un libro all’altro è un innesto, non una lacuna colmata: lo stesso errore della carta natale di dunjia, più piccolo e fra due libri che condividono il titolo.',
-  'notes.refusals.maoshan.title': '茅山 máoshān',
-  'notes.refusals.maoshan.asks': 'il parametro che lo elenca.',
-  'notes.refusals.maoshan.body':
-    'Non esiste alcun riferimento, eseguibile o tramandato, su cui una carta 茅山 máoshān possa essere falsificata. È rifiutato per nome anziché sostituito, perché una carta tratta con il metodo sbagliato sembra giusta e non lo è. Sta nell’elenco di ciò che è dichiarato e non implementato, e non ci si aspetta che ne esca.',
   'notes.refusals.placeFromName.title': 'Un luogo da un nome',
   'notes.refusals.placeFromName.asks': 'ogni API di comodo.',
   'notes.refusals.placeFromName.body':
@@ -1682,16 +1731,16 @@ export const it: Record<MessageKey, string> = {
 
   'notes.schools.claim.title': 'Che cosa afferma un valore intestato a una scuola',
   'notes.schools.claim.body':
-    'Non che la scuola abbia ragione: che questo è ciò che quella scuola insegna, e che il motore lo trascrive. Sono i due modi in cui un valore così può essere sbagliato (il lignaggio nominato male, la tavola copiata male) e nessuno dei due ha bisogno di una seconda tradizione per essere colto. Per questo a una quantità che il motore presenta come la risposta si chiede di più che a una presentata come quella di qualcuno.',
+    'Non che la scuola abbia ragione: che questo è ciò che quella scuola insegna, e che il motore lo trascrive. Sono i due modi in cui un valore così può essere sbagliato (il lignaggio nominato male, la tavola copiata male) e nessuno dei due ha bisogno di una seconda tradizione per essere colto. Ogni quantità che il motore prende da un testo afferma la stessa cosa. Il motore presenta come la risposta soltanto una quantità misurata o derivata.',
   'notes.schools.standard.title': 'Che cosa deve esserci sullo scaffale prima di dichiararne una',
   'notes.schools.standard.body':
-    'Quattro cose: un testimone che sia della scuola stessa, o che ne dichiari l’insegnamento e lo dica; la lettura intestata a quella scuola, nelle stesse parole che il valore porta; che cosa muove, esattamente, messo accanto a ciò che il motore già calcola; e un rung, che pesa la trascrizione e non la dottrina. Un riassunto moderno senza un testo dietro non è nessuna di queste cose. E non lo è nemmeno l’ampiezza del disaccordo: un lignaggio che sposta una cella sola e lascia ferme le altre traccia comunque una tavola diversa, e due praticanti ne tengono comunque i lati opposti.',
+    'Quattro cose: un testimone che sia della scuola stessa, o che ne dichiari l’insegnamento e lo dica; la lettura attribuita a quella scuola nella voce del registro; che cosa muove, esattamente, messo accanto a ciò che il motore già calcola; e un rung, che pesa la trascrizione e non la dottrina. L’età del testimone non è una delle quattro: un manuale stampato nel secolo scorso è il testimone di una scuola quando un autore nominato insegna la lettura e ne dà il procedimento. Un riassunto che nomina una divergenza senza il procedimento non è un testimone, e non lo è un programma che gira. Non è una delle quattro nemmeno l’ampiezza del disaccordo: un lignaggio che sposta una cella sola e lascia ferme le altre traccia comunque una tavola diversa, e due praticanti ne tengono comunque i lati opposti.',
   'notes.schools.rung.title': 'Di chi è una regola, accanto a quanto è attestata',
   'notes.schools.rung.body':
-    'La scala delle prove ordina un rischio solo: che una regola tramandata come propria della tradizione sia in realtà di un solo lignaggio. Di chi sia una regola risponde a un’altra domanda, e non può diventare un rung senza rivendicare un tipo di controllo che non ha. Perciò il registro la porta in una colonna sua, accanto al rung e mai dentro. La maggior parte delle righe lì mostra un trattino, ed è un’affermazione, non una casella vuota: la quantità è portata come propria della tradizione, non come la lettura di una parte.',
+    'La scala delle prove ordina un rischio solo: che una regola sia stata trascritta male senza che nulla lo mostri. Di chi sia una regola risponde a un’altra domanda, e non può diventare un rung senza rivendicare un tipo di controllo che non ha. Perciò il registro la porta in una colonna sua, accanto al rung e mai dentro. La maggior parte delle righe lì mostra un trattino, ed è un’affermazione, non una casella vuota: tra i testi che questo progetto ha interrogato non è nota nessuna divergenza per quella quantità.',
   'notes.schools.default.title': 'Un predefinito dichiarato non è una scuola nascosta',
   'notes.schools.default.body':
-    'Ogni divergenza ha un valore predefinito, e deve averlo: un indirizzo che non nomina nessun metodo risponde lo stesso, e così una sezione nuda. Non ne segue che il predefinito possa tacere. Dove il motore calcola più di un valore, quello in vigore è dichiarato ovunque sia la tavola (sotto di essa nella pagina, sotto la griglia nel disegno, sotto i pilastri nel trascritto, nella risposta via API), che qualcuno l’abbia mosso o no. I controlli restano dove un lettore li apre apposta; è la lettura che non deve poter passare per senza scuola.',
+    'Ogni divergenza ha un valore predefinito, e deve averlo: un indirizzo che non nomina nessun metodo risponde lo stesso, e così una sezione nuda. Non ne segue che il predefinito possa tacere. Dove il motore calcola più di un valore, quello in vigore è dichiarato ovunque sia la tavola (sotto di essa nella pagina, sotto la griglia nel disegno, sotto i pilastri nel trascritto, nella risposta via API), che qualcuno l’abbia mosso o no. I controlli restano dove un lettore li apre apposta; è la lettura che non deve poter passare per senza scuola. Un predefinito è una convenzione: dice che cosa risponde un indirizzo che non nomina nulla, e non rivendica nessuna precedenza per la scuola a cui appartiene.',
   'notes.schools.axes.title': 'Una scuola è assi, mai un pacchetto',
   'notes.schools.axes.body':
     'Una scuola di solito tocca più di uno di questi assi insieme, e la forma comoda sarebbe un nome unico che imposta tutti gli altri. Il motore la rifiuta: un pacchetto è una tabella, una tabella si può modificare, e una tavola che portasse il nome del pacchetto invece dei valori per cui stava si riprodurrebbe diversa il giorno in cui la tabella cambia, senza che il suo stesso risultato lo dica. Un modulo può offrire la scorciatoia e riempirci i campi: quello che esce dal modulo sono comunque i campi, e chi legge vede che cosa è stato impostato e può muovere ognuno di essi.',
@@ -1752,7 +1801,7 @@ export const it: Record<MessageKey, string> = {
     'Un altro programma la calcola, indipendentemente da questo, ed è stato eseguito sull’intero dominio anziché a campione. Dove la materia è una tradizione controversa questo significa coerente con un’implementazione diffusa, mai verificata.',
   'notes.rung.2': 'Due testi che concordano',
   'notes.rung.2.means':
-    'Due fonti tramandate, indipendenti l’una dall’altra, che nominano la stessa cosa allo stesso modo. È lo standard per tutto ciò che non si può derivare.',
+    'Due fonti, indipendenti l’una dall’altra, portano la stessa lettura, e ciascuna controlla come è stata trascritta l’altra. Anche una lettura che ha dietro una fonte sola viene portata, su uno dei rung più in basso.',
   'notes.rung.3': 'Sovradeterminazione',
   'notes.rung.3.means':
     'Una struttura con più vincoli che libertà, per cui una risposta sbagliata rompe molte cose insieme e quella giusta non ne rompe nessuna.',
@@ -1767,7 +1816,7 @@ export const it: Record<MessageKey, string> = {
   'notes.ladder.notAVerdict':
     'Un rung non è un verdetto. Dice che cosa potrebbe andare storto senza che nessuno se ne accorga, che è cosa diversa da quanto storto sia qualcosa: il telaio delle ventotto dimore è retto da sovradeterminazione ed è esatto a un settantesimo della domanda più stretta che gli si ponga mai. E un rung non è nemmeno una proprietà della quantità: si sposta quando si sposta lo scaffale, in entrambe le direzioni, e una fonte che si limita a confermare lo sposta quanto una che contraddice.',
   'notes.ladder.attributed':
-    'La colonna della scuola dice sotto quale valore dichiarato sta una quantità, nelle parole con cui lo si passa: huoling: fixed, yuan: futou. Un trattino dice che la quantità è portata come propria della tradizione e non come la lettura di una parte, ed è un’affermazione, non una casella lasciata vuota. Di chi sia una regola e quanto sia attestata sono domande diverse, perciò le due colonne stanno accanto e nessuna delle due sposta l’altra.',
+    'La colonna della scuola dice sotto quale valore dichiarato sta una quantità, nelle parole con cui lo si passa: huoling: fixed, sihua: zuofu. Un trattino dice che per quella quantità non è nota nessuna divergenza tra i testi che questo progetto ha interrogato, ed è un’affermazione, non una casella lasciata vuota. La parola recorded dice che una divergenza è nota e che il motore non ha ancora un valore per essa. Di chi sia una regola e quanto sia attestata sono domande diverse, perciò le due colonne stanno accanto e nessuna delle due sposta l’altra.',
   'notes.ladder.quoted':
     'La tavola qui sotto è citata, non tradotta. È un registro di citazioni (le quantità come le nomina il motore, edizioni, capitoli, i programmi su cui ciascuna è stata misurata e gli intervalli su cui sono stati eseguiti) e questo progetto lo tiene in inglese, la lingua del suo codice sorgente. Ciò che è tradotto è tutto quello da cui si decide: i rung qui sopra, che cosa significa ciascuno, e che cos’è ogni strato.',
   'notes.references.title': 'I programmi su cui è stato verificato',
@@ -1985,7 +2034,7 @@ export const it: Record<MessageKey, string> = {
   'prompt.ziwei.substrate':
     'Questa tavola e un 八字 sono costruiti sulla stessa nascita, e lo stelo dell’anno che qui porta le 四化, 祿存, 天魁 e 天鉞 è lo stesso stelo dell’anno che là porta gli dèi. Se hai entrambe, hai un fatto due volte e non due testimoni. Qui hai una tavola sola: leggi quella.',
   'prompt.ziwei.limits':
-    'Dove sono mostrati i 大限, ogni seggio tiene un decennio di anni e la corsa si apre nel seggio accanto al 命宮, che è la lettura di questo libro e non di ogni scuola. Il 小限 mostra l’età alla quale raggiunge per la prima volta un seggio, tornandovi ogni dodicesimo anno. Questi collocano un tratto di vita sulla tavola. Non datano un evento, e nulla qui dice che cosa vi accadrà.',
+    'Dove sono mostrati i 大限, ogni seggio tiene un decennio di anni. Dove si apre la corsa è una delle scuole nominate sotto i pilastri: nel seggio accanto al 命宮, che è la lettura del 《紫微斗數全書》, oppure nel 命宮 stesso, che è quella del 《紫微斗數捷覽》. Leggi i decenni come della scuola che li ha posati. Il 小限 mostra l’età alla quale raggiunge per la prima volta un seggio, tornandovi ogni dodicesimo anno. Questi collocano un tratto di vita sulla tavola. Non datano un evento, e nulla qui dice che cosa vi accadrà.',
   'prompt.ziwei.board': 'La tavola',
   'prompt.ziwei.opening':
     'Apri collocando la nascita in una frase o due con parole tue – quando e dove, qual è il quadro e su quale seggio cade la vita – così che chi legge sappia che cosa si sta leggendo prima che sia letto.',
@@ -2089,6 +2138,22 @@ export const it: Record<MessageKey, string> = {
   // «Seguite» e non «usate»: una scuola si segue, ed è un impegno che chi la
   // segue potrebbe difendere. Il default è nell'elenco come gli altri.
   'cli.heading.divergences': 'Scuole seguite',
+  // Who lays the combination a board stands on, under the schools followed.
+  // Three sentences for the three answers `combinationOf` gives, and a fourth
+  // for the case a reader meets most: some values are conventions with no text
+  // named, and the rest do belong to one text. Each leads with what the board
+  // has; the shelf's limit follows as the reason.
+  'cli.combination.together': 'Questa combinazione di valori è posata per intero da {witnesses}.',
+  'cli.combination.apart':
+    'Ogni valore con cui è posata questa tavola ha un testo dietro, e la combinazione è del motore: nessun testo del suo scaffale li posa tutti insieme.',
+  'cli.combination.unattributed':
+    'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo.',
+  'cli.combination.unattributedBeside':
+    'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo. Gli altri valori sono posati per intero da {witnesses}.',
+  'cli.combination.unattributedApart':
+    'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo. Ciascuno degli altri valori ha un testo dietro, e nessun testo dello scaffale li posa tutti insieme.',
+  'cli.combination.and': ' e ',
+  'label.witness.engine': 'una costruzione propria del motore',
   'cli.heading.terms': 'Termini solari del {year}',
   'cli.heading.calendar': 'Data lunare',
   'cli.heading.patterns': 'Configurazioni',

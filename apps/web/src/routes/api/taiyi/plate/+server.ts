@@ -1,4 +1,4 @@
-import { taiyiBoard, taiyiLabels } from '@shipan/core';
+import { divergenceLines, taiyiBoard, taiyiLabels } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import { renderTaiyiSvg } from '@shipan/plate';
 import {
@@ -55,6 +55,9 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       // on — no instant, no place, and nobody's birth.
       heading: `${board.year} · ${board.sui.hanzi} ${board.sui.pinyin}`,
       readings: t('cli.heading.readings'),
+      // Which readings named the conditions, and who lays them together. No
+      // layers: the board stands on a year.
+      schools: divergenceLines('taiyi', board.options, null, t),
     });
 
     setHeaders({

@@ -2,6 +2,7 @@ import { taiyiBoard } from '@shipan/core';
 import { json } from '@sveltejs/kit';
 import { readTaiyiOptions, readTaiyiYear, taiyiCacheControl } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
+import { laidBy } from '$lib/server/laid';
 import type { RequestHandler } from './$types';
 
 /**
@@ -28,7 +29,8 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
     const { year, named } = readTaiyiYear(url.searchParams);
 
     setHeaders({ 'cache-control': taiyiCacheControl(named) });
-    return json({ taiyi: taiyiBoard({ year }, readTaiyiOptions(url.searchParams)) });
+    const taiyi = taiyiBoard({ year }, readTaiyiOptions(url.searchParams));
+    return json({ taiyi, laidBy: laidBy('taiyi', taiyi.options) });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;
     toHttpError(cause);

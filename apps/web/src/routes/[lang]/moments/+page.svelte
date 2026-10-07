@@ -620,7 +620,13 @@
       set of options, so the board's and the layer's are the same object, and
       it is `/api/moments` that says which they were.
     -->
-    <Schools {t} board="qimen" options={scan.options} layers={scan.options} />
+    <Schools
+      {t}
+      board="qimen"
+      options={scan.options}
+      layers={scan.options}
+      laidBy={scan.laidBy}
+    />
   </div>
 {/if}
 

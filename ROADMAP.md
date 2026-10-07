@@ -60,19 +60,23 @@ That is the point: **the API does not break when one lands.**
 `docs/parameters.md` argues what each value names and deliberately does not say
 which side of this line it is on; `packages/core/src/parameters.ts` declares it.
 
-Implementing one is a matter of finding a source that meets the standard — two
-transmitted witnesses agreeing, or one text that checks itself — not of writing
-code. **Another copy of a work already held is not that**, however well edited:
-it collates the text and adds no witness to the doctrine, so no value below is
-waiting on one. `docs/sources.md` § "What a second copy of one text buys".
+Implementing one is a matter of a witness and not of writing code: a text of
+the line that holds it, of whatever age, attributed, and giving a procedure
+that can be reconstructed without contradiction. `docs/sources.md` § "What a
+value named for a school must show" says what makes a text that witness and
+names the three states a divergence can be in — computed, declared and
+refused, recorded with no parameter. **Another copy of a work already held is
+not a witness**, however well edited: it collates the text and adds none to
+the doctrine, so no value below is waiting on one. `docs/sources.md` § "What a
+second copy of one text buys".
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen` |
+| 奇門 | `plate: fei`, `plate: xingfei`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `minggong: ascendant`, `gong: ci` |
-| 太乙 | `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
-| 紫微斗數 | `leapMonth: current`, `leapMonth: split`, `huoling: hour`, `daxian: ming` |
+| 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
+| 紫微斗數 | `leapMonth: current`, `leapMonth: split` |
 
 `apps/web/test/docs.test.ts` holds this table to the engine both ways: a value
 the engine starts computing and this table still calls refused fails that suite,
@@ -102,6 +106,117 @@ disputes which star does the carrying rather than whether one does, so it is one
 work quarrelling with itself and not yet a school. Naming it wants a second
 witness. → `docs/sources.md` § "《奇門探索錄》, which derives the pin the 統宗
 only asserts".
+
+### The state of each divergence, art by art
+
+`docs/sources.md` § "What a value named for a school must show" names three
+states. The table above is the second of them; this says, for each art that
+has been read for it, what each refused value has behind it and which
+divergences stand in the third. An art not listed here has not had the pass.
+
+**紫微斗數** — argued in `docs/sources.md` § "Whose each value on this board
+is".
+
+| | State | What it has, and what it waits on |
+|---|---|---|
+| `leapMonth: current`, `leapMonth: split` | declared and refused | no text; a program computes one of them. Waits on a manual that states either |
+| 解神 placed off the month | recorded | modern boards carry it and no manual on the shelf states it |
+| the stars 卷二 does not place | recorded | the same |
+| 王亭之's table at 戊, 庚 and 壬 | recorded | named, unread |
+
+**奇門** — argued in `docs/sources.md` § "Whose each value of a 奇門 board
+is". The clauses under "What each named one waits on" below are the readings
+as they were made; where one ends on a second witness being wanted, this table
+is what holds.
+
+| | State | What it has, and what it waits on |
+|---|---|---|
+| `strengths: star` | declared and refused | held by 《奇門遁甲金鏡寶鑑》卷之四; the 折衷 argues against the same reading and puts it on a 《三元經》. Waits on reading whether its rule reaches the gates and the spirits or the nine stars alone |
+| `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
+| `system: rijia`, `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Waits on a family being built, which is nearer a board than a value |
+| `plate: fei` | declared and refused | no text flies the hour board's own 起例. Arrives with a family of `system` |
+| `earth: eighteen` | declared and refused | no text |
+| `plate: xingfei` | declared and refused | the stars and the 儀 flown, the gates turned: held by the 折衷, argued from 《極深研幾賦》. Waits on the flight of its heaven plate being reconstructed from the chapter, which was read for whose it is and not yet for how it lays |
+| the 值使 from the earth plate or the heaven plate | recorded | chosen by the matter asked |
+| the leap block at any of the eight 節 | recorded | asks for a judgement |
+| which stem a star carries off 坤 | recorded | one work quarrelling with itself |
+
+Four readings of where the centre lodges and the earth plate laid by the
+decade left this table on 2026-10-07 and are computed; `docs/sources.md`
+§ "The 折衷 on the plate, chapter by chapter" is where each is read.
+
+The default of `earth` is not yet attributed: no text is named for it. The
+defaults of `spirits` and `strengths` are the 折衷's, read on the plate.
+
+**六壬** — argued in `docs/sources.md` § "Whose each value of a 六壬 board
+is".
+
+| | State | What it has, and what it waits on |
+|---|---|---|
+| `yuejiang: jieqi`, `yuejiang: true` | declared and refused | no holder. 《大六壬精解》 prints the 節 beside the 氣 and endorses neither. Waits on a text stating either as its own |
+| `zhouye: solar` | declared and refused | named in one sentence of the 精解, with no procedure and two risings joined. Waits on a text saying which rising, and how |
+| the order of 涉害 | recorded | a verse read one way and two programs grouping another. Waits on a text or a manual holding either by name |
+| the 末傳 of a 伏吟 by 冲 | recorded | the engine's own clause |
+
+One computed value is not yet attributed: the second table of `guiren`, which
+stands 甲 apart. The five phases of the 十二天將 have nothing registered, and
+both sections that would supply it are located.
+
+**太乙** — argued in `docs/sources.md` § "Whose each value of a 太乙 board
+is".
+
+| | State | What it has, and what it waits on |
+|---|---|---|
+| `epoch: taojin` | declared and refused | held by 《太乙淘金歌》, which reaches the register through 盧央 and is not on the shelf. Waits on the text, and travels with the evidence 盧央 sets against it |
+| `ji: yueji`, `ji: riji`, `ji: shiji` | declared and refused | the 金鏡 states all three and its constants fail its own check; the 統宗 carries another system's. Waits on the 統宗's being read, as that work's |
+| `yearBoundary: dongzhi`, `yearBoundary: chunjie` | declared and refused | no holder, and the default has none either |
+| `geChong: chong` | declared and refused | a 格 made by a 沖 of branches: the 統宗, on one board 盧央 reproduces, 始擊 in 辰 against a 太乙 in 乾. Waits on the rule being stated — which seats and which bodies it reaches — and one board is not that |
+| 陰陽和不和 in two accounts | recorded | one work carrying both |
+
+Whose bodies 格 is marked for, and what 文昌 in 太乙's own palace is called,
+left this table on 2026-10-07 and are computed.
+
+**七政四餘** — argued in `docs/sources.md` § "Whose each value of a 七政四餘
+board is". The default frame is the engine's own construction, and no frame a
+line holds is computed yet. Where the clause for `xiudu: shoushi`
+below calls the subtraction «a derivation and not a witness», this table is
+what holds.
+
+| | State | What it has, and what it waits on |
+|---|---|---|
+| `xiudu: shoushi` | declared and refused | held by 《授時曆故》卷二, twenty-seven lodges read. 參 is supplied by the sum that closes its quadrant, admitted and marked as derived. Waits on the option carrying an epoch, and on the cells being transcribed |
+| `xiudu: shixian` | declared and refused | a table with no epoch that can be cited. Waits on one |
+| `gong: ci` | declared and refused | no holder named. Waits on the same table |
+| `minggong: ascendant` | declared and refused | no holder named; a second method and not a second reading |
+| the 距星 of 觜 and of 參 | recorded | four assignments across the Tang, the Song, the Jesuit order and the 《儀象考成》; the engine takes the last |
+
+**曆注, and the layers under every board** — argued in `docs/sources.md`
+§ "Whose each value of the almanac's page is" and § "Whose each value of the
+calendrical layer is". Nothing here is refused, so this is all in the third
+state or short of an attribution.
+
+| | State | What it has, and what it waits on |
+|---|---|---|
+| a second value of `shensha` | recorded | 曹震圭's and 邵泰衢's accounts of the 十二神, 《萬全廣濟》's table for 蠶命, the fixed-date list of 楊公忌: known through the 《協紀辨方書》 that rejects them. Waits on a witness of their own |
+| who holds each reading of the year boundary, the day boundary, the true-solar correction, the 大運's granularity | not yet attributed | every reading is computed; no file names a holder for either side |
+| who holds the count of years lived by turns | not yet attributed | the other count is 《遁甲演義》's |
+
+### What was asked of the extracts, 2026-10-07
+
+One search a value, the question written first, over the text extracted from
+the shelf. **An extract locates and cannot establish a negative**, so «nothing
+found» below means the question is still open and now has a date; nothing here
+is «not expected» on this evidence.
+
+| The question | What came back |
+|---|---|
+| a 奇門 text giving earth the last eighteen days of a season, for `earth: eighteen` | nothing in the 奇門 extracts. 《大六壬精解》 has the general statement — earth 「分旺四季…各旺十八日，總七十二日」 — in a passage the extract garbles; a lead for the plate, and for whether a five-phase statement from another art is a witness here |
+| a 六壬 text seating the noble with 甲 standing alone, for the second table of `guiren` | nothing found |
+| a 六壬 text cutting day from night at a rising, for `zhouye: solar` | only the sentence of the 精解 the register already quotes |
+| a 六壬 text turning the general at the 節, for `yuejiang: jieqi` | nothing found |
+| a 紫微斗數 text splitting a leap month at its middle, for `leapMonth: split` | nothing found |
+| a 七政四餘 text making 羅睺 the ascending node | nothing found; one set of lecture notes names 羅睺 天首星 and says nothing of which node |
+| a manual placing 解神 off the month | the search pattern matched two volumes of 《中國絕學》 and the passages were not read |
 
 ### What each named one waits on
 
@@ -133,16 +248,6 @@ are the query to put to an arriving text.
   which is a **third** arrangement rather than this value, and it is one work.
   What the clause can now say is that the hour board is flown somewhere, which
   is more than it could say before.
-- **`centreLodging: dun`** — a **school** holding 艮, not another copy reading
-  it. 《御定奇門寶鑑》 knows both readings, derives the refused one from the
-  先天 trigrams in its 卷一 釋虛中合宮, judges it the sounder — and declines it
-  on manuscript majority: 「其說於理尤為周備，但本多從前說，故遵之」. 本 is an
-  edition, and an edition can only be preferred. **A second work now states the
-  value and holds it no more than the first did.** 《奇門遁甲折衷》 prints both
-  declared values in one sentence with their derivations and rejects the pair,
-  for a lodging that walks all eight palaces three terms at a time; it also names
-  顧陵岡池本理 for the 坤 this engine lodges in, which is the first attribution
-  the shipped value has. What is still missing is somebody who *holds* 艮.
 - **`system: rijia · yuejia · nianjia`** — a **lineage holding one reading**.
   Two works state the families entire and disagree; the fuller prints three
   competing day methods and its compiler calls the whole layer 後人附會穿鑿.
@@ -392,16 +497,20 @@ asked for.
 **The CLI is the poorest of the three today.** It offers `--method`,
 `--guiren`, `--luohou`, `--ziqi`, `--year-boundary`, `--ziwei-year-boundary`,
 `--taiyi-year-boundary`, `--day-boundary`, `--true-solar` and `--shensha`, and
-not these four:
+not these:
 
 | | |
 |---|---|
 | `qimen.spirits` | three implemented values, and it decides which names the middle pair of the eight carries |
 | `qimen.centreTravel` | two, and it decides which palace the 值符 and the 值使 are read from when the count puts them on the centre |
 | `ziwei.sihua` | two, one cell of the table apart, and the cell seats a transformation |
+| `qimen.centreLodging` | five, and it decides which palace the centre is read in and whose gate it takes |
+| `qimen.earthPlate` | two, standing on different plates for fifty hours in sixty |
+| `ziwei.huoling` | two, parting for every birth outside the 子 hour |
+| `ziwei.daxian` | two, one palace apart along the whole run of decades |
 | `bazi.luckGranularity` | two, parting by up to ten days on when the first decade opens |
 
-All four are offered by MCP and by the REST API. The CLI's own stated policy
+All of them are offered by MCP and by the REST API. The CLI's own stated policy
 implies they are owed a flag: a flag over a parameter with **one** implemented
 value could only offer a refusal, which is why `epoch` and `ji` have none —
 these have two or three.

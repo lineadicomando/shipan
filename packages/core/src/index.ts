@@ -275,6 +275,7 @@ export {
   formatLiuren,
   formatMoment,
   divergenceLines,
+  saidCombination,
   saidDivergences,
   formatNianming,
   formatQimenChart,
@@ -340,6 +341,7 @@ export {
 
 export {
   CENTRE_HOST,
+  centreHost,
   DIRECTIONS,
   FLIGHT_ASCENDING,
   FLIGHT_DESCENDING,
@@ -426,12 +428,22 @@ export {
   QIZHENG_PARAMETERS,
   TAIYI_PARAMETERS,
   ZIWEI_PARAMETERS,
+  combinationOf,
   divergencesInForce,
   implementedValues,
   requireImplemented,
+  type Combination,
   type Parameter,
   type ParameterBoard,
   type ParameterEntry,
   type ParameterSet,
   type ParameterValue,
 } from './parameters.js';
+export {
+  WITNESSES,
+  holdingOf,
+  type Holding,
+  type Witness,
+  type WitnessId,
+  type WitnessKind,
+} from './witnesses.js';

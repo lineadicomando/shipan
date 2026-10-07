@@ -9,6 +9,7 @@ import {
   DEFAULT_TAIYI_OPTIONS,
   DEFAULT_ZIWEI_OPTIONS,
   PARAMETERS,
+  WITNESSES,
   computeBazi,
   computeQimenChart,
   computeZiwei,
@@ -17,6 +18,7 @@ import {
   qizhengBoard,
   resolveMoment,
   taiyiBoard,
+  type Witness,
 } from '@shipan/core';
 import { LOCALES } from '@shipan/i18n';
 import { INSTRUMENTS } from '../src/lib/instruments';
@@ -373,33 +375,65 @@ describe('docs/sources.tsv', () => {
    * a value renamed in `parameters.ts` would leave the register pointing at a
    * school nothing computes, silently, in a file nobody reads end to end.
    *
-   * `—` is the other legal cell and means the quantity is carried as the
-   * tradition's own. It is a claim, which is why a blank does not pass for it.
+   * `—` is another legal cell and means no divergence is known for the
+   * quantity among the texts that were asked. It is a claim, which is why a
+   * blank does not pass for it. `recorded` is the third: a divergence is
+   * known and carries no parameter, which `docs/sources.md` § "What a value
+   * named for a school must show" names as a state of its own.
    */
   it('attributes each quantity to a value the engine declares', () => {
-    const declared = new Map<string, string>(
-      PARAMETERS.flatMap((parameter) =>
-        parameter.values
-          .filter((value) => typeof value.id === 'string')
-          .map((value): [string, string] => [
-            `${parameter.id}: ${String(value.id)}`,
-            parameter.board,
-          ]),
-      ),
-    );
+    // A pair is unique only within its board — `yearBoundary: lichun` is the
+    // pillars', 太乙's and 紫微斗數's — so each is kept with every board that
+    // declares it.
+    const declared = new Map<string, Set<string>>();
+    for (const parameter of PARAMETERS) {
+      for (const value of parameter.values) {
+        if (typeof value.id !== 'string') continue;
+        const pair = `${parameter.id}: ${value.id}`;
+        declared.set(pair, (declared.get(pair) ?? new Set<string>()).add(parameter.board));
+      }
+    }
 
     for (const row of register()) {
-      const school = row.school as string;
-      if (school === '—') continue;
+      const cell = row.school as string;
+      // Two cells name no value: `—`, and `recorded` where a divergence is
+      // known and has no parameter to be written under.
+      if (cell === '—' || cell === 'recorded') continue;
+      // A quantity can stand under several values at once — a heaven plate is
+      // turned, lodged and named by three parameters — so the cell is a list,
+      // and each pair in it is held to the declaration on its own.
+      for (const school of cell.split('; ')) {
+        expect(
+          declared.has(school),
+          `docs/sources.tsv attributes "${row.quantity}" to ${school}, which ` +
+            `packages/core/src/parameters.ts does not declare.`,
+        ).toBe(true);
+        expect(
+          declared.get(school)?.has(row.board as string),
+          `docs/sources.tsv puts ${school} on a ${row.board} row`,
+        ).toBe(true);
+      }
+    }
+  });
+
+  /**
+   * Who holds a value is declared in `packages/core/src/witnesses.ts`, and a
+   * holder nobody argues is a holder nobody can weigh: every work named there
+   * has to be a work `docs/sources.md` writes about.
+   */
+  it('argues every witness a value is held by', () => {
+    // A title wraps and a set prints a space inside one, so whitespace is not
+    // part of what is matched.
+    const argued = read('docs/sources.md').replace(/\s/g, '');
+    for (const [id, witness] of Object.entries<Witness>(WITNESSES)) {
+      // A volume is argued under its set's title, so the test reads the
+      // title up to the ordinal.
+      const title = witness.name?.hanzi.replace(/第.+冊$/, '') ?? witness.latin?.split(',')[0]?.replace(/\s/g, '');
+      if (title === undefined) continue;
       expect(
-        declared.has(school),
-        `docs/sources.tsv attributes "${row.quantity}" to ${school}, which ` +
-          `packages/core/src/parameters.ts does not declare.`,
+        argued.includes(title),
+        `the witness ${id} (${title}) is named nowhere in docs/sources.md`,
       ).toBe(true);
-      expect(
-        declared.get(school),
-        `docs/sources.tsv puts ${school} on a ${row.board} row`,
-      ).toBe(row.board);
     }
   });
 

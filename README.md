@@ -88,7 +88,7 @@ set `PUBLIC_SOURCE_URL` to your repository if you deploy a modified one. See
 | Solar terms     | the twenty-four 節氣, to the second, from Swiss Ephemeris                                                                                                                                                                                                                            |
 | Lunar calendar  | months, intercalary months, lunar dates, reckoned on 120°E                                                                                                                                                                                                                         |
 | Four pillars    | 四柱 with 藏干, 十神, 納音, 十二長生, 空亡, 大運, and the five elements counted over the eight characters                                                                                                                                                                                          |
-| Qi Men charts   | 時家 by the 拆補 or 置閏 method: four plates, configurations, seasonal states, 門宮 and 星宮 relations, the post horse of the day and of the hour                                                                                                                                            |
+| Qi Men charts   | 時家 by the 拆補, 置閏 or 茅山 method: four plates, configurations, seasonal states, 門宮 and 星宮 relations, the post horse of the day and of the hour                                                                                                                                            |
 | Liu Ren boards  | 大六壬: the 天地盤 by 月將加時, the 四課, the 三傳 by the 九宗門, the 十二天將, the 遁干 and the 空亡                                                                                                                                                                                                       |
 | 七政四餘 boards     | the seven governors and the four remainders, three of them placed by ephemeris: the 宿 and the 入宿度 with the boundaries taken from the 距星 themselves, the twelve 次 and the 宮度, 順 and 逆, the 命宮 by 加時 and the 人事十二宮 numbered from it. 紫氣, the fourth, is placed by a transmitted rule instead, and to a palace only                                                       |
 | 紫微斗數 boards     | the twelve seats counted from a birth: 紫微 by the 五行局 and the day of the lunar month with the thirteen that hang off it, the auxiliaries 卷二 places, the 四化, the seven grades of brightness, the two masters, the 大限, the 小限 and the rings of 長生 and 博士. Nothing on it is in the sky |
@@ -287,7 +287,8 @@ from the first release. The Qi Men chart's, in brief:
 |-----------------|------------------------------------------------------------------------------------|----------|
 | `method`        | 拆補 (the yuan from the day's 符頭) / 置閏 / 茅山 (the yuan from the term's first instant) | `chaibu` |
 | `plate`         | 轉盤 / 飛盤                                                                            | `zhuan`  |
-| `centreLodging` | the centre lodges in 坤, or in 坤 by yang dun and 艮 by yin                           | `kun`    |
+| `centreLodging` | the centre lodges in 坤; or by the dun, either way round; or by the eight 節; or by the four corners | `kun`    |
+| `earthPlate`    | one earth plate for the sixty hours of a 元, or a new one at every decade            | `yuan`   |
 | `trueSolarTime` | correct clock time to the Sun                                                      | `true`   |
 | `yearBoundary`  | 立春 or 正月初一                                                                         | `lichun` |
 | `dayBoundary`   | the day pillar turns at 23:00 or at midnight                                       | `zishi`  |

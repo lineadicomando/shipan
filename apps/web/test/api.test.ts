@@ -788,7 +788,8 @@ describe('GET /api/qimen', () => {
     for (const [parameter, value] of [
       ['qimen.plate', 'fei'],
       ['qimen.system', 'rijia'],
-      ['qimen.centreLodging', 'dun'],
+      ['qimen.plate', 'xingfei'],
+      ['qimen.earth', 'eighteen'],
       ['qimen.strengths', 'star'],
     ] as const) {
       const { status, body } = await call(qimen, `${MOMENT}&${parameter}=${value}`);
@@ -1669,5 +1670,47 @@ describe('the address every board cites', () => {
     expect(CITED.map((board) => board.id).sort()).toEqual(
       INSTRUMENTS.map((instrument) => instrument.id).sort(),
     );
+  });
+});
+
+/**
+ * Who lays the combination a board stands on, beside the board.
+ *
+ * `docs/parameters.md` § "A declared default is not a hidden school": axes are
+ * independent in the engine and lines hold them together, so an answer says
+ * whether a text lays the values it was laid on. It is a statement about the
+ * shelf and travels beside the board, never inside it — a saved board must not
+ * move when a text is read.
+ */
+describe('who lays the combination', () => {
+  it('names the text holding every value of a default 六壬 board', async () => {
+    const { body } = await call(liuren, MOMENT);
+    const answer = body as { laidBy: { state: string; by: { id: string }[] }; liuren: object };
+    expect(answer.laidBy.state).toBe('together');
+    expect(answer.laidBy.by.map((witness) => witness.id)).toEqual(['jingjie']);
+    expect(answer.liuren).not.toHaveProperty('laidBy');
+  });
+
+  it('says a value is a convention where no text is named for it', async () => {
+    const { body } = await call(liuren, `${MOMENT}&liuren.guiren=wei`);
+    const answer = body as { laidBy: { state: string; attributed: boolean; by: { id: string }[] } };
+    expect(answer.laidBy.state).toBe('unattributed');
+    expect(answer.laidBy.attributed).toBe(true);
+    expect(answer.laidBy.by.map((witness) => witness.id)).toEqual(['jingjie']);
+  });
+
+  it('writes a witness out, title and year, so a caller need not look it up', async () => {
+    const { body } = await call(liuren, MOMENT);
+    const [witness] = (body as { laidBy: { by: Record<string, unknown>[] } }).laidBy.by;
+    expect(witness).toMatchObject({
+      kind: 'modern',
+      name: { hanzi: '大六壬精解', pinyin: 'dàliùrénjīngjiě' },
+      year: 1995,
+    });
+  });
+
+  it('closes the block of schools in a transcript with the same statement', async () => {
+    const { text } = await call(liurenText, MOMENT);
+    expect(text).toContain('This combination of values is laid as one by 大六壬精解');
   });
 });

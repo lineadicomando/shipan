@@ -139,7 +139,13 @@
 
     <div>
       <LiurenReading {board} {t} {moment} />
-      <Schools {t} board="liuren" options={board.options} layers={moment.options} />
+      <Schools
+        {t}
+        board="liuren"
+        options={board.options}
+        layers={moment.options}
+        laidBy={data.result?.laidBy}
+      />
 
     </div>
   </div>

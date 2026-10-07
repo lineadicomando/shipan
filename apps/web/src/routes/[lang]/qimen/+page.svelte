@@ -320,7 +320,13 @@
         signpost to a door in the same room is furniture.
       -->
       <ChartReading {chart} {t} wide />
-      <Schools {t} board="qimen" options={chart.options} layers={chart.moment.options} />
+      <Schools
+        {t}
+        board="qimen"
+        options={chart.options}
+        layers={chart.moment.options}
+        laidBy={data.laidBy}
+      />
     </div>
   </section>
 {/if}

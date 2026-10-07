@@ -310,6 +310,7 @@
         board="ziwei"
         options={result.ziwei.options}
         layers={result.moment.options}
+        laidBy={result.laidBy}
       />
       <ZiweiReading
         board={result.ziwei}

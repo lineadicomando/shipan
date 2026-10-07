@@ -1,4 +1,5 @@
 import { BRANCHES, type Branch } from '../ganzhi.js';
+import type { SolarTermId } from '../solar-terms.js';
 import type { Element } from '../types.js';
 
 /**
@@ -112,9 +113,70 @@ export function branchesOf(number: number): Branch[] {
  */
 export const CENTRE_HOST = 2;
 
-/** Sends the centre to its host, and leaves every other palace alone. */
-export function lodge(number: number): number {
-  return number === 5 ? CENTRE_HOST : number;
+/**
+ * Sends the centre to its host, and leaves every other palace alone.
+ *
+ * The host is 坤 unless a caller says otherwise, which a chart does: where
+ * the centre lodges is `centreLodging`, and `centreHost` reads it.
+ */
+export function lodge(number: number, host: number = CENTRE_HOST): number {
+  return number === 5 ? host : number;
+}
+
+/** 八節, three terms to each, and the palace of the trigram that governs them. */
+const HOST_BY_JIE: Record<SolarTermId, number> = {
+  dongzhi: 1, xiaohan: 1, dahan: 1,
+  lichun: 8, yushui: 8, jingzhe: 8,
+  chunfen: 3, qingming: 3, guyu: 3,
+  lixia: 4, xiaoman: 4, mangzhong: 4,
+  xiazhi: 9, xiaoshu: 9, dashu: 9,
+  liqiu: 2, chushu: 2, bailu: 2,
+  qiufen: 7, hanlu: 7, shuangjiang: 7,
+  lidong: 6, xiaoxue: 6, daxue: 6,
+};
+
+/** The four seasons, six terms to each, and the corner earth is 旺 in. */
+const HOST_BY_SEASON: Record<SolarTermId, number> = {
+  lichun: 4, yushui: 4, jingzhe: 4, chunfen: 4, qingming: 4, guyu: 4,
+  lixia: 2, xiaoman: 2, mangzhong: 2, xiazhi: 2, xiaoshu: 2, dashu: 2,
+  liqiu: 6, chushu: 6, bailu: 6, qiufen: 6, hanlu: 6, shuangjiang: 6,
+  lidong: 8, xiaoxue: 8, daxue: 8, dongzhi: 8, xiaohan: 8, dahan: 8,
+};
+
+/**
+ * The palace the centre lodges in, under each reading of `centreLodging`.
+ *
+ * - `kun` — 坤 always: 「中宮，寄坤宮也」, 《奇門遁甲統宗》.
+ * - `dun` — 坤 under yang, 艮 under yin: 「陽局中五寄於二，陰局中五合於八」,
+ *   which 《御定奇門寶鑑》 reports of a variant copy.
+ * - `dunni` — 艮 under yang, 坤 under yin: 「元經又謂陽遁寄艮，陰遁寄坤」, as
+ *   the commentary 《奇門遁甲折衷》 opens its chapter with reports it.
+ * - `bajie` — the palace of the 節 in force: 「冬至三氣皆寄坎，立春三氣皆寄艮，
+ *   春分三氣皆寄震，立夏三氣皆寄巽，夏至三氣皆寄離，立秋三氣皆寄坤，秋分三氣
+ *   皆寄兌，立冬三氣皆寄乾」, which the 折衷 holds.
+ * - `siyu` — the corner of the season: spring 巽, summer 坤, autumn 乾, winter
+ *   艮, each where that season's earth is 旺; 《三才發秘》 as the 折衷 quotes it.
+ *
+ * The term is the one the ju was taken from, so that the lodging and the ju
+ * are read off the same 氣.
+ */
+export function centreHost(
+  lodging: 'kun' | 'dun' | 'dunni' | 'bajie' | 'siyu',
+  yang: boolean,
+  term: SolarTermId,
+): number {
+  switch (lodging) {
+    case 'kun':
+      return CENTRE_HOST;
+    case 'dun':
+      return yang ? 2 : 8;
+    case 'dunni':
+      return yang ? 8 : 2;
+    case 'bajie':
+      return HOST_BY_JIE[term];
+    case 'siyu':
+      return HOST_BY_SEASON[term];
+  }
 }
 
 /**

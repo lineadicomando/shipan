@@ -149,6 +149,15 @@ the value it stands on: the method a Qi Men chart was cast by, the verse the
 default is in that block**, because a reader who moved nothing is exactly the
 one who does not know a choice was made for them.
 
+**The block closes on who lays that combination.** One sentence, after the
+rows: that a named text lays all the values in force as one, or that each has a
+text behind it and the combination is this engine's, or that some of them are
+this engine's conventions with no text named for them yet. Over REST the same
+fact is the `laidBy` field beside the board — `state`, and `by`, the texts
+written out with their titles and years. It is a statement about what has been
+read so far and not about the board: a combination no text lays is still a
+board, laid exactly as declared. Report it with the school, in a clause.
+
 So: **say which school the board you are holding was laid by, and that another
 exists.** Not as a caveat at the end — as part of naming what you are reading.
 A parameter with one implemented value is not in the block and is not a school
@@ -272,12 +281,15 @@ neither disputed.
   a star a telescope finds; none of the names on that board is a body, none
   has a position, none rises or sets. Twelve palaces on twelve branches with
   stars in them invites the reach for planets, and a reading built on that
-  reach is fluent, confident and about a different art. Four of its tables
-  also part from what modern software carries — 火星 and 鈴星 take a seat from
-  the year's triplicity and the birth hour never enters, 天魁 and 天鉞 go to
-  亥 and 戌 for 丙 and 丁, 解神 is placed off the birth year rather than the
-  month, and 壬 gives 化科 to 天府 rather than 左輔. Those are 《紫微斗數全書》
-  卷二 against later lineages, not errors. And a seat named 妻妾 is a **name
+  reach is fluent, confident and about a different art. By default four of its
+  tables also part from what modern software carries — 火星 and 鈴星 take a
+  seat from the year's triplicity and the birth hour never enters, 天魁 and
+  天鉞 go to 亥 and 戌 for 丙 and 丁, 解神 is placed off the birth year rather
+  than the month, and 壬 gives 化科 to 天府 rather than 左輔. Those are
+  《紫微斗數全書》 卷二 against later lineages, not errors. Two of the four and
+  one thing more are choices a caller can move, each named in the block of
+  schools: `huoling` counts the two stars on by the hour, `sihua` moves 壬's
+  科, and `daxian` opens the decades in the 命宮 rather than beside it. And a seat named 妻妾 is a **name
   and not an assignment**: which theme is read from which seat is the reader's
   act, said aloud as it is made.
 - **The 七政四餘 board carries four remainders, and the fourth is not measured

@@ -10,6 +10,7 @@ import { RELATION_IDS, relationOf } from '../src/dunjia/relation.js';
 import { strengthOf } from '../src/dunjia/strength.js';
 import { BRANCHES, STEMS, ganzhiOf } from '../src/ganzhi.js';
 import { PARAMETERS } from '../src/parameters.js';
+import { WITNESSES, type Witness } from '../src/witnesses.js';
 import { CI, HOUSES, MOTIONS, QIZHENG_BODIES } from '../src/qizheng.js';
 import {
   BOSHI_GODS,
@@ -86,6 +87,10 @@ function everything(): { hanzi: string; pinyin: string }[] {
     ...PARAMETERS.flatMap((parameter) =>
       parameter.values.map((value) => value.name).filter((name) => name !== undefined),
     ),
+    // The works a value is held by, which a surface names beside the board.
+    ...Object.values<Witness>(WITNESSES)
+      .map((witness) => witness.name)
+      .filter((name) => name !== undefined),
   ];
 
   for (const yuan of ['shang', 'zhong', 'xia'] as Yuan[]) {

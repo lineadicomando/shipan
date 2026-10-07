@@ -15,7 +15,8 @@ import {
 } from './liuren.js';
 import { NIANMING_NAMES, type Nianming, type Placement, type Seat } from './nianming.js';
 import type { Moment } from './pillars.js';
-import { divergencesInForce } from './parameters.js';
+import { combinationOf, divergencesInForce } from './parameters.js';
+import { WITNESSES, type Witness, type WitnessId } from './witnesses.js';
 import type { ChartOptions } from './types.js';
 import {
   MOTIONS,
@@ -355,7 +356,7 @@ export function formatMoment(
 export function saidDivergences(
   board: string,
   options: object,
-  layers: object,
+  layers: object | null,
   t: Translator,
 ): readonly { label: string; said: string }[] {
   return divergencesInForce(board, options, layers).map(({ parameter, value }) => ({
@@ -374,23 +375,69 @@ export function saidDivergences(
 export function divergenceLines(
   board: string,
   options: object,
-  layers: object,
+  layers: object | null,
   t: Translator,
 ): string[] {
   // An em dash and not a colon: several of the glosses carry a colon of their
   // own — «by thirds of the term: 拆補 chāibǔ» — and a line with two of them
   // reads as a list of three things rather than as one thing said twice.
-  return saidDivergences(board, options, layers, t).map((row) => `${row.label} — ${row.said}`);
+  const lines = saidDivergences(board, options, layers, t).map(
+    (row) => `${row.label} — ${row.said}`,
+  );
+  const combination = saidCombination(board, options, t);
+  return combination === undefined ? lines : [...lines, combination];
+}
+
+/** A witness as a reader meets it: the title written and said, and its year. */
+function sayWitness(id: WitnessId, t: Translator): string {
+  const witness: Witness = WITNESSES[id];
+  const title =
+    witness.name !== undefined
+      ? `${witness.name.hanzi} ${witness.name.pinyin}`
+      : (witness.latin ?? t('label.witness.engine'));
+  return witness.year === undefined ? title : `${title} (${witness.year})`;
+}
+
+/**
+ * Who lays the combination the board stands on, in a sentence.
+ *
+ * `combinationOf` is the fact and this is the saying, kept apart for the
+ * reason the divergences are: a surface with a structure of its own takes the
+ * fact, and the transcript, the prompt's fence and the drawing take the line.
+ * It is the engine's statement about its shelf and never a verdict on the
+ * board — a combination no text lays is still a board, laid as declared.
+ */
+export function saidCombination(board: string, options: object, t: Translator): string | undefined {
+  const combination = combinationOf(board, options);
+  if (combination === undefined) return undefined;
+
+  const names = (ids: readonly WitnessId[]): string =>
+    ids.map((id) => sayWitness(id, t)).join(t('cli.combination.and'));
+
+  switch (combination.state) {
+    case 'together':
+      return t('cli.combination.together', { witnesses: names(combination.by) });
+    case 'apart':
+      return t('cli.combination.apart');
+    case 'unattributed':
+      if (combination.together.length > 0) {
+        return t('cli.combination.unattributedBeside', { witnesses: names(combination.together) });
+      }
+      return combination.attributed
+        ? t('cli.combination.unattributedApart')
+        : t('cli.combination.unattributed');
+  }
 }
 
 export function formatDivergences(
   board: string,
   options: object,
-  layers: object,
+  layers: object | null,
   t: Translator,
 ): string {
   const inForce = divergencesInForce(board, options, layers);
-  if (inForce.length === 0) return '';
+  const combination = saidCombination(board, options, t);
+  if (inForce.length === 0 && combination === undefined) return '';
 
   const rows = saidDivergences(board, options, layers, t).map((row) => [row.label, row.said]);
 
@@ -405,10 +452,14 @@ export function formatDivergences(
     notes.push(`  ${t(value.note, { [parameter.id]: String(value.id) })}`);
   }
 
+  // Who lays the combination, last: it is about all the rows above and about
+  // the parameters that have no row, so it closes the block rather than
+  // joining the table.
   return [
     `${t('cli.heading.divergences')}`,
     ...table(rows),
     ...(notes.length ? ['', ...notes] : []),
+    ...(combination === undefined ? [] : [...(rows.length ? [''] : []), `  ${combination}`]),
   ].join('\n');
 }
 
@@ -1024,6 +1075,11 @@ export function formatTaiyi(board: TaiyiBoard, t: Translator): string {
   }
 
   lines.push('', `  ${t('cli.value.taiyiPalaces')}`, `  ${t('cli.value.taiyiEvidence')}`);
+
+  // Which readings named the conditions above, and who lays them together.
+  // No layers: this board stands on a year and opened no calendar of hours.
+  const schools = formatDivergences('taiyi', board.options, null, t);
+  if (schools) lines.push('', schools);
 
   return lines.join('\n');
 }
