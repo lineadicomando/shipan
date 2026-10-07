@@ -135,7 +135,7 @@ is what holds.
 | `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
 | `system: rijia`, `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Waits on a family being built, which is nearer a board than a value |
 | `plate: fei` | declared and refused | no text flies the hour board's own 起例. Arrives with a family of `system` |
-| `earth: eighteen` | declared and refused | no text |
+| `earth: eighteen` | declared and refused | held by 《大六壬精解》 p. 214, a 六壬 text on the phases: 「每季前各旺十八日」. Waits on code and not on a text — the moment has to carry the 節 that closes its month, which it does not |
 | `plate: xingfei` | declared and refused | the stars and the 儀 flown, the gates turned: held by the 折衷, argued from 《極深研幾賦》. Waits on the flight of its heaven plate being reconstructed from the chapter, which was read for whose it is and not yet for how it lays |
 | the 值使 from the earth plate or the heaven plate | recorded | chosen by the matter asked |
 | the leap block at any of the eight 節 | recorded | asks for a judgement |
@@ -210,7 +210,7 @@ is «not expected» on this evidence.
 
 | The question | What came back |
 |---|---|
-| a 奇門 text giving earth the last eighteen days of a season, for `earth: eighteen` | nothing in the 奇門 extracts. 《大六壬精解》 has the general statement — earth 「分旺四季…各旺十八日，總七十二日」 — in a passage the extract garbles; a lead for the plate, and for whether a five-phase statement from another art is a witness here |
+| a 奇門 text giving earth the last eighteen days of a season, for `earth: eighteen` | nothing in the 奇門 extracts. 《大六壬精解》 has the general statement, since read on the plate at its p. 214 and admitted as a witness: the three 式 stand on one doctrine of the phases |
 | a 六壬 text seating the noble with 甲 standing alone, for the second table of `guiren` | nothing found |
 | a 六壬 text cutting day from night at a rising, for `zhouye: solar` | only the sentence of the 精解 the register already quotes |
 | a 六壬 text turning the general at the 節, for `yuejiang: jieqi` | nothing found |

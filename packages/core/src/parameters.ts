@@ -474,7 +474,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     board: 'qimen',
     values: [
       { id: 'quarters', implemented: true },
-      { id: 'eighteen', implemented: false },
+      // 「惟土守中宫，分旺四季，每季前各旺十八日」, 《大六壬精解》 p. 214: a
+      // statement about the five phases from a sibling art, which counts here.
+      { id: 'eighteen', implemented: false, heldBy: ['jingjie'] },
     ],
     default: 'quarters',
   },
