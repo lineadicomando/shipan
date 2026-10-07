@@ -21,7 +21,7 @@ unable to weigh one against another. These are the rungs, **strongest first**.
 |---|---|---|
 | **0** | **Measured, not transmitted.** An ephemeris answer: the sky is asked and the answer is read off | the solar terms, the lunar date, the places of the seven governors |
 | **1** | **A runnable independent reference**, run over the domain rather than sampled | the pillars against `lunar-javascript` over two centuries |
-| **2** | **Two transmitted sources agreeing**, which is the standard `docs/sources.md` § "The standard, stated once" states | the eleven pairings of 十干克應; what each of the eight gates is chosen for |
+| **2** | **Two independent texts carrying the same reading**, each a check on the other's transcription | the eleven pairings of 十干克應; what each of the eight gates is chosen for |
 | **3** | **Over-determination** — a structure with more constraints than it has freedom, so a wrong answer breaks many things at once and the right one breaks none | the 宿 frame; the direction the twelve 人事宮 are counted in |
 | **4** | **A single text that checks itself** — one witness, exhaustive or redundant about the thing in question | 返吟; 太乙's 立成 of 864 cells; each 德 confirmed by its own 五合 |
 | **5** | **A single text with no check available** | 年命; the 年神 bearings; 太乙's 大遊 |
@@ -74,10 +74,11 @@ written in place of the other: what the register carries, and what a page owes a
 reader weighing one quantity against another, is the rung.
 
 **And it does not carry whether the text is sound, which is the other thing
-that can go wrong.** The ladder orders one risk: that a rule handed down is the
-one lineage's own. A second witness to the *same* text answers a different one —
-that the copy is corrupt, or misread at the character the rule turns on — and it
-answers it for a quantity at any rung. So a collation is not a rung and is not
+that can go wrong.** The ladder orders one risk: that a reading was taken down
+wrongly and nothing would show it. A second witness to the *same* text answers
+a different one — that the copy is corrupt, or misread at the character the
+rule turns on — and it answers it for a quantity at any rung. It inherits
+whatever its archetype got wrong, where an independent work does not. So a collation is not a rung and is not
 on this ladder at all, for the reason rung 0 is not one of the five: filed as a
 rung it would claim an independence it does not have, and filed nowhere it is
 what the register cannot say about the several arguments in `sources.md` that
@@ -87,10 +88,10 @@ buys" is the argument, and it says when an edited edition counts as that second
 witness.
 
 **And it does not carry whose the rule is, which is the third thing that can go
-wrong.** A quantity carried because a school teaches it makes a different claim
-from one carried because the tradition hands it down: not «this is the rule» but
-«this is that school's rule, and here it is transcribed». The ladder cannot
-order that, for the reason it cannot order a collation — filed as a rung it
+wrong.** Every transmitted quantity says «this line carries it, and here it is
+transcribed», and the ladder weighs the second half alone. Whether a reading
+is one line's or many's is no part of how well it was read, and being one
+line's is not a risk. The ladder cannot order whose a rule is, for the reason it cannot order a collation — filed as a rung it
 would claim a kind of check it does not have — and it does not need to. The two
 ways such a value goes wrong are that the lineage is misnamed and that the table
 is miscopied, and both are answered by naming the school and quoting the text,
@@ -131,8 +132,9 @@ a school named in prose here and as a value there would be two names for one
 commitment. `apps/web/test/docs.test.ts` holds every cell to a value
 `packages/core/src/parameters.ts` declares, on the board the row belongs to.
 
-Most cells read `—`, and that is a claim rather than a blank: the quantity is
-carried as the tradition's own and not as one party's reading of it. A row that
+Most cells read `—`, and that is a claim rather than a blank: no divergence is
+known for the quantity among the texts that were asked. It is a negative about
+that shelf, as every negative here is, and an arrival reopens it. A row that
 should say a school and says `—` is the register describing a choice as a fact,
 which is the failure `docs/parameters.md` opens by refusing.
 

@@ -373,8 +373,9 @@ describe('docs/sources.tsv', () => {
    * a value renamed in `parameters.ts` would leave the register pointing at a
    * school nothing computes, silently, in a file nobody reads end to end.
    *
-   * `—` is the other legal cell and means the quantity is carried as the
-   * tradition's own. It is a claim, which is why a blank does not pass for it.
+   * `—` is the other legal cell and means no divergence is known for the
+   * quantity among the texts that were asked. It is a claim, which is why a
+   * blank does not pass for it.
    */
   it('attributes each quantity to a value the engine declares', () => {
     const declared = new Map<string, string>(

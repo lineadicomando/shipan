@@ -80,6 +80,11 @@ the engine falls back to Moshier, which needs no files.
   `Pattern` has a `valence`. It stops at the 用神, ranking, ordering hours,
   dating an outcome, advising. Such an attribute travels as an identifier and
   a glyph, **never as prose**. → [`docs/refusals.md`](docs/refusals.md)
+- **A transmitted quantity says who carries it, never what the art's rule
+  is.** These arts are branched as far back as their texts reach: two sources
+  agreeing is a check on a transcription and not a threshold, a line with one
+  witness is the ordinary case, two works parting are two readings, and «the
+  answer» is only what was measured or derived. → [`docs/sources.md`](docs/sources.md)
 - **No school is implicit, and a chart carries the options that produced it.**
   Every divergence *between practitioners* is an explicit parameter with a
   declared default, present in the input type from the start; an unimplemented
@@ -90,11 +95,14 @@ the engine falls back to Moshier, which needs no files.
   reads a global default. → [`docs/parameters.md`](docs/parameters.md)
 - **A school is axes and never a bundle, and a declared default is not a hidden
   school.** Where a parameter has more than one implemented value, what is in
-  force is stated wherever the board is — moved or not. A preset may fill a
-  form's fields and never travel. → [`docs/parameters.md`](docs/parameters.md)
+  force is stated wherever the board is — moved or not. A default is a
+  convention and claims no priority for its line. A preset may fill a form's
+  fields and never travel. → [`docs/parameters.md`](docs/parameters.md)
 - **How many schools there are is a state and not a design**, as with the
   vernaculars. What a school value must show is **attribution and
   transcription**, not two agreeing witnesses, and attribution is not a rung.
+  A line's manual is its witness at any age; a summary without the procedure,
+  an extract and a program that runs are not. A value is named for its rule.
   → [`docs/parameters.md`](docs/parameters.md), [`docs/notes.md`](docs/notes.md)
 - **A board's parameter travels under the board's name** — `qimen.method`,
   `ziwei.yearBoundary` — and only a layer's is bare. A name is unique inside a

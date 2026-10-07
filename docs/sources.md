@@ -6342,6 +6342,12 @@ calendrical layer settles. Recorded as a passage read and not used.
 
 ## What is refused, and why
 
+**Each row gives its reason as it stood on the day the row was last read**,
+and the date is in the row. Where one invokes two agreeing witnesses as the
+bar a value has not met, it is waiting to be re-read under § "The standard,
+stated once", and it is re-read when its value is taken up — an entry is
+reopened, never quietly rewritten.
+
 | | Reason |
 |---|---|
 | 三奇得使 | the sources consulted disagree on which pairings count |
@@ -6386,11 +6392,26 @@ it alone.
 A source is usable here when it is **complete** for what it covers,
 **unambiguous**, **interrogable in bulk**, **independent** of the sources this
 engine already uses, **declared** as to school, **citable**, and **stable**.
-For anything that cannot be derived, **two** such sources must agree.
 
-Where they do not, the divergence becomes an explicit parameter with a
-declared default, or the entry is left out and the absence is written down.
-It is never resolved by preference.
+**What a transmitted quantity asserts is who carries it and how well it was
+transcribed.** These arts are branched and layered as far back as their texts
+reach, so no comparison of witnesses recovers one rule standing behind them,
+and none is attempted here. A quantity read off a text says «this line carries
+it, and here it is transcribed». The engine presents a quantity as *the* answer
+only where it was measured or derived — rungs 0, 1 and 3 of
+[`notes.md`](notes.md) — and a line with a single witness is the ordinary case
+and not a deficiency.
+
+**Two independent sources agreeing is a check and not a threshold.** Each
+tests the other's transcription, which is what rung 2 records. It does not
+make the reading the art's own, and no quantity waits on it to be carried.
+
+**Where two sources part, each is a reading.** The divergence becomes an
+explicit parameter with a declared default where each side can be attributed,
+or it is recorded and the absence is written down. It is never resolved by
+preference. Two *works* parting are two readings; two copies of one work
+parting are not, and [`parameters.md`](parameters.md) § "What is not a
+parameter" says what becomes of those.
 
 **A link is not the evidence; the extract is.** Every passage this file leans
 on is quoted here in full, because a wiki page can be edited or deleted — one
@@ -6402,16 +6423,18 @@ the citation: an edition and a page number outlive every URL here.
 
 ### What a second copy of one text buys, which is not the second source
 
-Two things can go wrong in a rule that was read rather than measured, and the
-standard above retires one of them. The rule may be the idiosyncrasy of the one
-lineage that transmits it — that is what two agreeing sources answer. Or the
-copy in hand may be corrupt, or misread at the character the rule turns on, and
-**no number of independent works answers that**, because none of them is a
-witness to this text. A second witness *to the same text* is.
+Two things can go wrong in a rule that was read rather than measured. The
+reading may have been taken down wrongly — a table miscopied, a procedure
+misunderstood — and a second, independent work carrying the same reading
+answers that. Or the copy in hand may be corrupt, or misread at the character
+the rule turns on, and **no number of independent works answers that**, because
+none of them is a witness to this text. A second witness *to the same text* is.
 
 So a collation **establishes the text and never the doctrine**. It cannot make
 two agreeing sources out of one, and a quantity standing on a single work stays
-on rung 4 or rung 5 however many copies of that work have been compared. What
+on rung 4 or rung 5 however many copies of that work have been compared: **a
+second copy inherits whatever its archetype got wrong, and an independent work
+does not**, which is why the one moves no rung and the other does. What
 changes is that the register can now say which of the two risks was retired,
 which is a thing it had no way to say: several arguments in this file turn on a
 single character — 己 for 巳 in the 六壬大全, 陰同 against 同陰 at 庚, 丑卯
@@ -6454,11 +6477,10 @@ on the second edition's authority alone.
 
 ### What a value named for a school must show, which is a different claim
 
-The standard above is the demand made of a quantity this engine presents as
-**the** answer: two witnesses agreeing, or one text that checks itself. A value
-named for a school is not that, and holding it to that demand would refuse
-every school there is — a lineage has one witness by construction, and it is
-itself.
+The standard above says what every transmitted quantity asserts. A value named
+for a school is where that assertion is declared in an input type, and this is
+what the shelf owes it. A second agreeing witness is never the condition: a
+lineage has one witness by construction, and it is itself.
 
 **What such a value asserts is attribution and transcription.** `sihua:
 quanshu` does not say that 《全書》's table is right; it says that this is the
@@ -6469,12 +6491,12 @@ provenance, in four parts:
 
 1. **A witness that is the school's own**, or is stating that school's
    teaching and says so — a manual of the lineage, a printed recension, an
-   editor reporting it as theirs. What it may never be is a modern summary
-   with no text behind it.
-2. **The reading named as that school's**, in the entry, in the same words the
-   parameter's value carries. The rule that no value is ever named for a
-   recension holds here from the other side: a value is named for whoever
-   *teaches* the reading, and the entry has to be able to say who that is.
+   editor reporting it as theirs. **Its age is not a criterion**; what makes
+   it a witness is set out below.
+2. **The reading attributed**, in the entry, beside the words the parameter's
+   value carries. A value is named for the rule it follows, or for a work
+   where the work is the method, and never for a recension; who teaches the
+   reading is what the entry says, and it has to be able to say it.
 3. **What it moves, exactly** — the cells, the seats, the placement — set
    against what the engine already computes, because a school that agrees
    everywhere but one cell is the ordinary case and the entry is where that
@@ -6485,10 +6507,41 @@ provenance, in four parts:
    ordinary business of the ladder. [`notes.md`](notes.md) says why attribution
    is not itself a rung.
 
+**What makes a text a line's witness, whatever its age.**
+
+| | A witness | Not a witness |
+|---|---|---|
+| Who speaks | a named author or lineage, teaching the reading as its own or saying whose it is | an anonymous classification, a handout naming no text, a summary that does not say who teaches it |
+| What it says | a procedure or a table sufficient to compute, the better for a worked example | the name of a divergence without its procedure |
+| How it is read | at an edition and a page | from an extract, which stays a finding aid — [`scans.md`](scans.md) holds for modern type as it does for a woodblock |
+| What it claims of its own origin | travels quoted, as that text's claim | is never said by the engine in its own voice |
+
+**A program that runs is not a witness.** It can check a transcription over a
+whole domain, which is rung 1, and it declares no value.
+
+**A source reached through a modern study counts as read**, and the entry
+names the study it came through.
+
+**A reading reported only by those who reject it is declarable**, where the
+report is enough to reconstruct it without contradiction. The entry says who
+reports it, and a holder found later takes the reporter's place.
+
+**Two texts of one line that contradict each other are not a reading**, and
+the value stays refused until the line is found to hold one.
+
+**A divergence is in one of three states**, and
+[`ROADMAP.md`](../ROADMAP.md) § 1 says which.
+
+| | When |
+|---|---|
+| computed | it is attributed, it can be reconstructed without contradiction, and its witness has been read |
+| declared and refused | it is attributed and what it moves can be said cell by cell, and something in the row above is still short |
+| recorded, with no parameter | giving it a shape would be guessing — the reading turns on the matter asked, or asks for a judgement, or nobody holds it by name |
+
 **And it is registered as one school among others.** An entry that argues a
-value into existence while leaving the received reading unnamed would make the
-default look like the truth and the alternative like an option, which is the
-thing `docs/parameters.md` opens by refusing.
+value into existence while leaving the default's own line unnamed would make
+the default look like the truth and the alternative like an option, which is
+the thing `docs/parameters.md` opens by refusing.
 [`parameters.md`](parameters.md) § "What a school value must show" is where the
 criterion for declaring one is argued; this is what the shelf owes it.
 

@@ -60,11 +60,15 @@ That is the point: **the API does not break when one lands.**
 `docs/parameters.md` argues what each value names and deliberately does not say
 which side of this line it is on; `packages/core/src/parameters.ts` declares it.
 
-Implementing one is a matter of finding a source that meets the standard — two
-transmitted witnesses agreeing, or one text that checks itself — not of writing
-code. **Another copy of a work already held is not that**, however well edited:
-it collates the text and adds no witness to the doctrine, so no value below is
-waiting on one. `docs/sources.md` § "What a second copy of one text buys".
+Implementing one is a matter of a witness and not of writing code: a text of
+the line that holds it, of whatever age, attributed, and giving a procedure
+that can be reconstructed without contradiction. `docs/sources.md` § "What a
+value named for a school must show" says what makes a text that witness and
+names the three states a divergence can be in — computed, declared and
+refused, recorded with no parameter. **Another copy of a work already held is
+not a witness**, however well edited: it collates the text and adds none to
+the doctrine, so no value below is waiting on one. `docs/sources.md` § "What a
+second copy of one text buys".
 
 | Board | Refused today |
 |---|---|

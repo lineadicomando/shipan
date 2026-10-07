@@ -30,6 +30,11 @@ ever named for a recension**: a caller has no ground to choose between two
 witnesses to one text, and offering the choice would be the engine declining a
 job that is its own.
 
+**Two works are not two copies.** Where 《太乙金鏡式經》 and 太乙's 《統宗》
+part, somebody casts by each, and the divergence owes what any other does. The
+test is the one above and it is applied to the witnesses as they are: one text
+in two states, or two texts.
+
 **A value named for a work is not a counter-example.** `sihua: quanshu` names
 《紫微斗數全書》 and `xiudu` names two 曆, because in those places the work *is*
 the method — a 七政四餘 practitioner really does cast by 授時 degrees or by
@@ -75,18 +80,24 @@ alternatives declared and refused. What it found is in `ROADMAP.md` § 1.
 ## What a school value must show
 
 The three questions say *whether* a divergence owes a value. This says what has
-to be true before one can be declared — and it is a lower bar than the one in
-`docs/sources.md`, on purpose.
+to be true before one can be declared.
 
 **A value named for a school claims attribution, not doctrine.** It does not
 assert that the school is right; it asserts that this is what the school
 teaches and that the engine transcribes it. That claim fails in two ways only,
 the lineage misnamed and the table miscopied, and neither wants a second
-tradition to catch it — so the standard's demand for two agreeing witnesses is
-the demand on a quantity the engine presents as the answer, and it is not the
-demand here. `docs/sources.md` § "What a value named for a school must show"
-states what stands in its place, and `docs/notes.md` says why attribution is
-not a rung.
+tradition to catch it — so two agreeing witnesses are a check on a
+transcription and never the condition for a value. `docs/sources.md` § "What a
+value named for a school must show" states what the shelf owes one, what makes
+a text a line's witness whatever its age, and the three states a divergence
+can be in; `docs/notes.md` says why attribution is not a rung.
+
+**A value is named for the rule it follows**, or for a work where the work is
+the method. Who holds it is the entry's business and not the name's, because
+a second line found holding the same reading must not find it already named
+for the first. The warning two sections down stands: before a name is fixed,
+the entry says whether the rule sits inside a method or is the boundary
+between two.
 
 **Completeness is not the test, and it was being used as one.** A lineage that
 moves a single cell and keeps the rest was read, for a while, as not having a
@@ -134,6 +145,11 @@ name of the bundle.
 Every row here has a default and has to: an address naming no method still
 answers, and so do a tool call, a command and a bare section. What does not
 follow is that the default may be silent.
+
+**A default is a convention and not the reading the art hands down.** It says
+what an address answers when it names nothing, and it stays where it is so
+that a saved address goes on answering the same. It claims no priority for
+its line, and a value does not become the default by being better attested.
 
 **Where a parameter has more than one implemented value, the value in force
 travels — always, and whether or not anybody moved it.** It is stated under the
