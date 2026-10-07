@@ -1686,16 +1686,24 @@ describe('who lays the combination', () => {
     const { body } = await call(liuren, MOMENT);
     const answer = body as { laidBy: { state: string; by: { id: string }[] }; liuren: object };
     expect(answer.laidBy.state).toBe('together');
-    expect(answer.laidBy.by.map((witness) => witness.id)).toEqual(['jingjie']);
+    expect(answer.laidBy.by.map((witness) => witness.id)).toEqual(['jingjie', 'jingwei', 'zhizhi']);
     expect(answer.liuren).not.toHaveProperty('laidBy');
   });
 
-  it('says a value is a convention where no text is named for it', async () => {
+  it('narrows to the one text holding a value once it is moved', async () => {
     const { body } = await call(liuren, `${MOMENT}&liuren.guiren=wei`);
+    const answer = body as { laidBy: { state: string; by: { id: string }[] } };
+    expect(answer.laidBy.state).toBe('together');
+    expect(answer.laidBy.by.map((witness) => witness.id)).toEqual(['zhizhi']);
+  });
+
+  it('says a value is a convention where no text is named for it', async () => {
+    // 紫微斗數's year boundary: the book says nothing either way.
+    const { body } = await call(ziwei, MOMENT);
     const answer = body as { laidBy: { state: string; attributed: boolean; by: { id: string }[] } };
     expect(answer.laidBy.state).toBe('unattributed');
     expect(answer.laidBy.attributed).toBe(true);
-    expect(answer.laidBy.by.map((witness) => witness.id)).toEqual(['jingjie']);
+    expect(answer.laidBy.by.map((witness) => witness.id)).toEqual(['quanshu']);
   });
 
   it('writes a witness out, title and year, so a caller need not look it up', async () => {

@@ -141,13 +141,14 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'yearBoundary',
     board: 'pillars',
-    values: ['lichun', 'chunjie'],
-    implemented: ['lichun', 'chunjie'],
+    values: ['lichun', 'chunjie', 'dongzhi'],
+    implemented: ['lichun', 'chunjie', 'dongzhi'],
     fallback: 'lichun',
     label: 'form.pillars.yearBoundary',
     says: {
       lichun: 'form.pillars.yearBoundary.lichun',
       chunjie: 'form.pillars.yearBoundary.chunjie',
+      dongzhi: 'form.pillars.yearBoundary.dongzhi',
     },
   },
   {

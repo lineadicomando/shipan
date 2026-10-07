@@ -373,11 +373,12 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   trueSolarTime: {
     board: 'pillars',
-    // The one parameter here whose values are not identifiers, and their
-    // having no name is not an omission: a correction applied or not applied
-    // names no school.
+    // The one parameter here whose values are not identifiers. They carry no
+    // name, a correction being applied or not; that one of them is taught is
+    // said by who holds it.
     values: [
-      { id: true, implemented: true },
+      // 「定時應以出生地點的真正太陽時為準」, 《命理新論》 第九章.
+      { id: true, implemented: true, heldBy: ['xinlun'] },
       { id: false, implemented: true },
     ],
     default: true,
@@ -398,6 +399,15 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.pillars.yearBoundary.chunjie',
         implemented: true,
       },
+      // 《命理新論》 第九章: a birth after 冬至 takes the next year's pillar,
+      // and the month pillar stays.
+      {
+        id: 'dongzhi',
+        name: { hanzi: '冬至', pinyin: 'dōngzhì' },
+        says: 'form.pillars.yearBoundary.dongzhi',
+        implemented: true,
+        heldBy: ['xinlun'],
+      },
     ],
     default: 'lichun',
   },
@@ -411,7 +421,14 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.pillars.dayBoundary.zishi',
         implemented: true,
       },
-      { id: 'midnight', says: 'form.pillars.dayBoundary.midnight', implemented: true },
+      // 「以半夜正子為前後兩日的交換點」, 《命理新論》 第九章: the day turns at
+      // midnight and the hour before it is the 夜子 of the day that is ending.
+      {
+        id: 'midnight',
+        says: 'form.pillars.dayBoundary.midnight',
+        implemented: true,
+        heldBy: ['xinlun'],
+      },
     ],
     default: 'zishi',
   },
@@ -540,7 +557,7 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
         id: 'zhongqi',
         name: { hanzi: '中氣', pinyin: 'zhōngqì' },
         implemented: true,
-        heldBy: ['liurendaquan', 'jingjie'],
+        heldBy: ['liurendaquan', 'jingjie', 'jingwei', 'zhizhi'],
       },
       { id: 'jieqi', name: { hanzi: '節氣', pinyin: 'jiéqì' }, implemented: false },
       { id: 'true', name: { hanzi: '太陽實躔', pinyin: 'tàiyángshíchán' }, implemented: false },
@@ -557,7 +574,7 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
         says: 'form.liuren.guiren.chou',
         note: 'form.liuren.guiren.note',
         implemented: true,
-        heldBy: ['liurendaquan', 'jingjie'],
+        heldBy: ['liurendaquan', 'jingjie', 'jingwei', 'zhizhi'],
       },
       {
         id: 'wei',
@@ -565,6 +582,8 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
         says: 'form.liuren.guiren.wei',
         note: 'form.liuren.guiren.note',
         implemented: true,
+        // 《御定六壬直指》's two verses, 陽貴 and 陰貴: this table cell for cell.
+        heldBy: ['zhizhi'],
       },
     ],
     default: 'chou',
@@ -572,7 +591,7 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
   zhouye: {
     board: 'liuren',
     values: [
-      { id: 'branch', implemented: true, heldBy: ['jingjie'] },
+      { id: 'branch', implemented: true, heldBy: ['jingjie', 'jingwei', 'zhizhi'] },
       { id: 'solar', implemented: false },
     ],
     default: 'branch',
@@ -637,7 +656,14 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
   minggong: {
     board: 'qizheng',
     values: [
-      { id: 'yuejiang', name: { hanzi: '月將', pinyin: 'yuèjiàng' }, implemented: true },
+      // 《三命通會》卷二 論坐命宮: 「將所生之時加於所生之月，順行十二位，逢卯即
+      // 安命宮」 — the hour laid on the month's palace and counted to 卯.
+      {
+        id: 'yuejiang',
+        name: { hanzi: '月將', pinyin: 'yuèjiàng' },
+        implemented: true,
+        heldBy: ['santong'],
+      },
       { id: 'ascendant', implemented: false },
     ],
     default: 'yuejiang',
@@ -955,6 +981,8 @@ export const BAZI_PARAMETERS: ParameterSet<Pick<BaziOptions, 'luckGranularity'>>
         name: { hanzi: '時辰', pinyin: 'shíchén' },
         says: 'form.bazi.luckGranularity.shichen',
         implemented: true,
+        // 《三命通會》卷二 論大運: 「正得五日三時…過六十三時折除，計六百三十日」.
+        heldBy: ['santong'],
       },
       {
         id: 'minute',

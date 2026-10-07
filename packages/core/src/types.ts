@@ -85,8 +85,13 @@ export interface ChartOptions {
    * Which of the two an almanac counting by the lunar new year would itself
    * print is a question no source consulted here answers, so the rule is
    * applied as stated rather than special-cased. See `docs/sources.md`.
+   *
+   * `dongzhi` turns the year pillar at the winter solstice and leaves the
+   * month pillar where 立春's year puts it: 《命理新論》 works a birth after
+   * 冬至 as 「年柱應為下一年的干支…月柱仍為甲子」. So it moves one pillar for
+   * the six weeks between the solstice and 立春, and nothing else.
    */
-  yearBoundary: 'lichun' | 'chunjie';
+  yearBoundary: 'lichun' | 'chunjie' | 'dongzhi';
 
   /**
    * Where the day pillar turns over.

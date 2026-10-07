@@ -19,19 +19,19 @@ import {
  */
 describe('the combination a board stands on', () => {
   it('names the text that holds every value in force', () => {
-    // The 精解 holds the 中氣, the verse's seats and the branch division.
+    // Three texts hold the 中氣, the verse's seats and the branch division.
     expect(combinationOf('liuren', DEFAULT_LIUREN_OPTIONS)).toEqual({
       state: 'together',
-      by: ['jingjie'],
+      by: ['jingjie', 'jingwei', 'zhizhi'],
     });
   });
 
-  it('says so where a value in force has no text named for it', () => {
-    // The table that stands 甲 apart is computed and nobody is named for it.
+  it('narrows to the one text that holds a value once it is moved', () => {
+    // The table that stands 甲 apart is the 直指's two verses and no other
+    // text's, so a board laid on it is that work's alone.
     expect(combinationOf('liuren', { ...DEFAULT_LIUREN_OPTIONS, guiren: 'wei' })).toEqual({
-      state: 'unattributed',
-      attributed: true,
-      together: ['jingjie'],
+      state: 'together',
+      by: ['zhizhi'],
     });
   });
 
@@ -59,7 +59,7 @@ describe('the combination a board stands on', () => {
   it('says it in a sentence, with the title written and said', () => {
     const t = createTranslator('en');
     expect(saidCombination('liuren', DEFAULT_LIUREN_OPTIONS, t)).toBe(
-      'This combination of values is laid as one by 大六壬精解 dàliùrénjīngjiě (1995).',
+      'This combination of values is laid as one by 大六壬精解 dàliùrénjīngjiě (1995) and 六壬經緯 liùrénjīngwěi and 御定六壬直指 yùdìngliùrénzhízhǐ.',
     );
   });
 

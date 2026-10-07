@@ -154,10 +154,30 @@ export const WITNESSES = {
     name: { hanzi: '圖解奇門遁甲大全', pinyin: 'tújiěqíméndùnjiǎdàquán' },
     year: 2009,
   },
+  /** 萬民英's 《三命通會》, whose 論大運 works the opening of the cycles by the 時辰. */
+  santong: {
+    kind: 'transmitted',
+    name: { hanzi: '三命通會', pinyin: 'sānmìngtōnghuì' },
+  },
+  /** 吳俊民's modern 子平 treatise, which casts by true solar time and turns the day at midnight. */
+  xinlun: {
+    kind: 'modern',
+    name: { hanzi: '命理新論', pinyin: 'mìnglǐxīnlùn' },
+  },
   /** 《六壬大全》, whose verse turns the general at the 中氣 and seats the noble. */
   liurendaquan: {
     kind: 'transmitted',
     name: { hanzi: '六壬大全', pinyin: 'liùréndàquán' },
+  },
+  /** 毛志道's 《六壬經緯》, whose first 卷 lays the board a section a leaf. */
+  jingwei: {
+    kind: 'transmitted',
+    name: { hanzi: '六壬經緯', pinyin: 'liùrénjīngwěi' },
+  },
+  /** 《御定六壬直指》, which seats the noble by two verses, one for day and one for night. */
+  zhizhi: {
+    kind: 'transmitted',
+    name: { hanzi: '御定六壬直指', pinyin: 'yùdìngliùrénzhízhǐ' },
   },
   /** 曹福倞 and 張月明's compilation, which names the edition of every work it draws on. */
   jingjie: {

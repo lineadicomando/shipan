@@ -85,6 +85,105 @@ So the row of the four pillars now stands under the two readings that lay it,
 and the rest is entered as what it is: computed by convention, and not yet
 attributed.
 
+**`luckGranularity: shichen` has a holder, read on the plate 2026-10-07.**
+《三命通會》, 明 萬民英, in the 四庫 copy — 景印文淵閣四庫全書 vol. 810, printed
+pp. 93–94, 卷二 leaves 六十七 and 六十八, 論大運. The chapter works the opening
+of the cycles from a birth to the 節 and counts in days and double hours:
+
+> 自二十四日巳時至二十五日巳時方是一日之實數，至二十九申時正得五日三時之節氣，
+> 實歷過六十三時折除，計六百三十日，乃一歲奇九月之大運。
+
+Five days and three 時 are sixty-three 時, a 時 is ten days, and the cycle
+opens at a year and nine months: that is this value, with its own worked
+example. The same leaf says what it is written against — 「今人行運多用約法…
+便以二歲，殊不明折除實歷之數也」, rounding to whole years — and a second
+example sets the birth and the 節 to the 刻 and still counts the difference in
+時: 「若春在寅時則多一時，乃零一旬；若欠一時，乃借一旬」. The next leaf closes
+on what to do without the 刻: 「若學者不知其生刻，獨知其生時，即以生時扣算…亦
+差不遠」. So the work counts by the 時 and knows the 刻 is finer; it does not
+state a count by the minute, and `luckGranularity: minute` stays unattributed.
+The modern typesetting on the shelf located the passage and is not quoted.
+
+**`trueSolarTime: true` and `dayBoundary: midnight` have a holder, read on
+the plate 2026-10-07.** 《命理新論》, 福建晉江 吳俊民（若萍）著, 上冊, a modern
+子平 treatise that was first a correspondence course by its own title leaf. The
+file prints two pages to a sheet and lies on its side.
+
+Its 第五章 sets the twelve 時辰 against 平均太陽時 in a table, 子 at 23—1, and
+closes the table on a note: 「時間係指出生地點的平均太陽時，不是普通區域時間，
+亦不是指夏令時間」. Its 第九章, laying the hour pillar, goes one step further
+and gives the procedure:
+
+> 定時應以出生地點的真正太陽時為準 … 第二、我們必須將區域時間折算成為地方平均
+> 太陽時 … 每度差四分 … 第三 … 尚須參照「時差比較表」
+
+with a worked case — a broadcast of eight in the morning in 臺北 on a day of
+summer time, taken down an hour, moved six minutes for the longitude and five
+for the equation of time, to 七時一分. That is this engine's correction in its
+three parts and in its order.
+
+The same chapter cuts the 子 hour in two:
+
+> 早子應用本日子時的天干，夜子應用明日子時的天干 … 本日夜間廿三時至明日清早
+> 一時的一段時間 … 以半夜正子（廿四時或零時）為前後兩日的交換點，日柱的天干
+> 地支，當然是要在這個時候交換的
+
+The day pillar turns at midnight, and the hour from 23:00 keeps the day that
+is ending while its own stem is read from the day that is coming. That is
+`dayBoundary: midnight` exactly, the hour's stem included, which
+`packages/core/src/types.ts` already says is not in dispute between the two
+values. `dayBoundary: zishi`, the default, stays unattributed: this manual
+argues against it without naming who holds it.
+
+**The four boards the chapter works, laid again.** 第三節 casts four births
+and prints the eight characters of each. Three are the engine's under the
+readings above, character for character: 辛酉 乙未 乙酉 壬午; a 夜子, 丁亥
+甲辰 甲寅 丙子, 「夜子則應取用明日子時的天干」; and an 早子, 庚子 己卯 甲午
+甲子. They are the first worked boards on the shelf for the day turned at
+midnight, and the 夜子 is the one that tells the two readings apart: under
+`dayBoundary: zishi` the same hour gives 乙卯 for the day.
+
+**The fourth turns the year pillar at 冬至, which this engine did not
+declare.**
+
+> 又如民國十七年（戊辰）十一月二十日申時出生，因十一月二十日在冬至以後，故年柱
+> 應為下一年的干支「己巳」，月柱仍為「甲子」，日柱為「乙巳」，時柱…「甲申」。
+
+The year pillar is the next year's from the solstice and the month pillar is
+left where 立春's year puts it. The section before agrees with it: the months
+are counted 「以子正的冬至點為年之始」. So the pillars' year has a third
+reading, held by this manual and worked by it, and it is declared and computed
+as `yearBoundary: dongzhi`: one pillar moved for the six weeks between the
+solstice and 立春, and nothing else. Laid again, the board is the book's.
+
+`yearBoundary: lichun`, the default, and `yearBoundary: chunjie` stay
+unattributed. This manual says of the *seasons* that 「命理學向來…均是以立春為
+春首」 and then turns the year somewhere else, which is a caution about reading
+a sentence on spring as a sentence on the year.
+
+**A lead for the day turned at midnight, older than this manual.** Its 第四節
+quotes 沈義方's 《星平大成》: 「余初不明一夜字，詢諸監中友人始知…夜子者，今日之
+夜，非今日之早也」. That work is not on the shelf.
+
+**Asked of the 三命通會 and not answered there.** Its 論年月日時, the chapter
+before, says nothing of where the year turns or where the day does: it ends on
+「時有八刻，有初正末，氣不同，須細察之」 in the modern copy, which was not taken
+to the plate. Its 論坐命宮, the leaf before 論大運, was: 卷二 leaf 六十五, printed p. 92,
+read on the plate.
+
+> 先將所生之月從子上起正月，亥上二月，戌三酉四申五未六午七巳八辰九卯十寅十一丑
+> 十二，逆行十二位；次將所生之時加於所生之月，順行十二位，逢卯即安命宮。經云：
+> 天輪轉出地輪上，卯上分明是命宮是也。
+
+with a worked case, 三月 at 戌 and a 戌 hour counted on to 卯. The hour is
+laid on a palace and counted forward to 卯, which is `minggong: yuejiang`, and
+this work is named for it. **Where it parts from a 七政四餘 board is in whose
+palace the hour is laid on.** Here it is the month's, 正月 on 子 and back a
+palace a month; there it is the palace the Sun stands in, which changes at the
+中氣 in the middle of a month. The two agree for the first half of every month
+and part for the second. That is a divergence recorded with no parameter: it
+belongs to how the Sun's palace is found and not to 加時.
+
 ---
 
 ## Tier 2 — the layout, and the zhirun ju
@@ -3769,11 +3868,54 @@ data.
 | `guiren: chou` | 《六壬大全》, 《大六壬精解》 | the verse with the branches interlined, and the same verse glossed stem by stem |
 | `zhouye: branch` | 《大六壬精解》 | p. 26, with a worked example. 《六壬大全》 and 《大六壬課經集》 use the distinction and define neither half |
 
-**`guiren: wei` is computed and nobody is named for it.** The table that
-stands 甲 apart is in the engine, a caller can ask for it, and no section above
-says what it was taken from. It is entered in `sources.tsv` with nothing
-registered behind it, which is the state the five phases of the 十二天將 are
-in, and it is not yet attributed.
+**Two works read on the plate, 2026-10-07, for the questions this section left
+open.** Both are in 故宮珍本叢刊 第417冊.
+
+《六壬經緯》, 京江 毛志道 正儒 著 by its first leaf, 卷之一 演法, a section to a
+leaf:
+
+- **月將**, leaf 三: the twelve from 正月亥 to 十二月子, and then 「至於更換值月
+  之將，不可拘定月分，當按曆家中氣交節時刻換之」 — the general changes at the
+  instant of the 中氣.
+- **貴神**, leaf 九: 「六甲六戊六庚日丑為陽貴，未為陰貴；六乙六己日子為陽貴，申
+  為陰貴；六丙六丁日亥為陽貴，酉為陰貴；六壬六癸日巳為陽貴，卯為陰貴；六辛日午
+  為陽貴，寅為陰貴」, which is `guiren: chou` in prose; and 「若運定卯辰巳午未申
+  六時者，即以貴人乘其陽貴；運定酉戌亥子丑寅六時者，即以貴人乘其陰貴」, which
+  is `zhouye: branch`.
+
+《御定六壬直指》, 卷上 起例, leaves 七 and 八, series pp. 8–9:
+
+- **起貴人定十二天將法** opens on the verse 「甲戊庚牛羊，乙己鼠猴鄉，丙丁猪雞
+  位，壬癸蛇兔藏，六辛逢馬虎，天乙貴人方」 and then gives a verse to each half
+  of the day — 陽貴 「庚戊見牛甲在羊，乙猴己鼠丙雞方，丁猪癸蛇壬是兔，六辛逢虎
+  貴為陽」, 陰貴 「甲貴陰牛庚戊羊，乙貴在鼠己猴鄉，丙猪丁雞辛遇馬，壬蛇癸兔屬
+  陰方」 — and the hours, 「正時自卯至申用晝貴，即陽貴；自酉至寅用夜貴，即陰
+  貴」.
+- **十二月將躔次之宮** names each palace with the 氣 after which the Sun stands
+  in it: 「亥為娵訾，雨水氣後」 through 「子為元枵，大寒氣後」, twelve 中氣.
+
+**So `guiren: wei` has a holder, and it is an imperial one.** The table this
+engine computes under that value, which stands 甲 apart and splits the pairs
+the plain verse keeps together, is the 直指's two verses seat for seat: set
+against them stem by stem, all twenty agree. This section said on its first
+writing that nobody was named for the value; that was true of the register and
+not of the shelf. The row is rung 5, one text.
+
+**`zhouye: branch` moves from rung 5 to rung 2.** It stood on 《大六壬精解》
+alone. Two transmitted texts now state the same six hours for the day and the
+same six for the night, neither citing the other nor cited by the 精解's list
+of the works it draws on.
+
+**`yuejiang: zhongqi` and `guiren: chou` gain the same two holders**, and move
+no rung.
+
+**What the two did not carry.** Neither gives the twelve generals a phase: the
+直指's leaf lists them in order, 一貴人 to 十二天后, and its 天干所屬 and 地支所屬
+give phases to stems and branches only. And 《六壬經緯》 has no juan of 神煞
+where this register expected one: its 卷之二 is 定式, the boards day by day,
+and its 卷之三 is 格局, each by its own 目錄. The five phases of the 十二天將
+are therefore still unregistered, and the two sections that were located for
+them have been read.
 
 **Three refused values have no holder.** `yuejiang: jieqi` and `yuejiang:
 true`: the 精解 prints the 節 beside the 氣 for every month and endorses
@@ -6798,8 +6940,16 @@ and a program is not a witness; no text on the shelf states either.
 
 - **解神 placed off the month.** The book places it off the birth year; what
   boards drawn by modern software carry under the name is a star placed off
-  the month. No manual on the shelf states the second, so it has no value to
-  be written under, and its row reads `recorded`.
+  the month. **A manual on the shelf states the second whole**, read on the
+  plate 2026-10-07: 《中國絕學》第六冊 p. 399, in the plotting chapters that
+  carry `huoling: hour` — 「解神：由申宮起1月、2月，順行陽地支之宮位，每宮安連
+  續之兩月（即1、2月在申，3、4月在戌……），數到生月之宮安解神」, with a diagram
+  running 申 · 戌 · 子 · 寅 · 辰 · 午, two months to each. So it is no longer
+  for want of a text that the row reads `recorded`. What is undecided is what
+  the two are to each other: two readings of one star, which would be a
+  parameter, or two stars that later boards carry side by side as 年解 and
+  月解, which would be a star this board does not place. The manual prints
+  one 解神 and says nothing of the other.
 - **The stars 卷二 does not place**, which modern boards carry: 恩光, 天貴,
   天官, 天福, 咸池, 孤辰, 寡宿, 華蓋, 破碎, 天才, 天壽, 天廚, the year-branch
   大耗 and a 地空 distinct from this book's 天空. Recorded until a manual
