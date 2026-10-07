@@ -1868,10 +1868,36 @@ The term a lodging is read off is the one the ju was taken from, so that the
 two follow the same 氣; the text says «the three 氣 of 冬至» and no more. Under
 `earthPlate: xun` everything else on the board is laid 「仍照常例」: the chief
 star and the chief gate are the ones the 元's plate gives, and what moves is
-the stems of the plate and so where the chief lands. `plate: xingfei` — the
-stars and the 儀 flown, the gates turned — is declared for the same work and
-refused: the chapter was read for whose the arrangement is, and the flight of
-its heaven plate is not reconstructed.
+the stems of the plate and so where the chief lands.
+
+**The flight, `plate: xingfei`, since 2026-10-07.** Three sheets give it, and
+between them they leave nothing to supply for a yang board.
+
+- **Sheet 67 gives the direction**: 陽遁順飛, 陰遁逆飛.
+- **Sheet 24 gives what flying is**, where it flies a 值符 both ways to find
+  the 合符. Forward, 「一加五、二加六、三加七、四加八」; back, 「九加五、一加四、
+  二加三、三加二」. Each star is named by its own palace and carries that
+  palace's stem, and the nine are counted through all nine palaces, the centre
+  one of them.
+- **Sheet 22 works two hours of 陽遁一局**: 「如陽遁第一局甲子日丙寅時，直符加
+  艮八宮為龍返首」 and 「又如乙丑時乾六宮丁加癸為雀投江」.
+
+So the 值符 is set on the palace the hour's stem holds on the earth plate, as
+it is on a turning plate, and the eight others follow it in the order of their
+own palaces, each with the stem of its own. The engine reproduces both worked
+hours — 天蓬 on 艮八 with 戊 over 丙 and 青龍返首 named; 丁 over 癸 in 乾六 and
+朱雀投江 named — and `test/lodging.test.ts` asserts them. The second is the one
+that tells the arrangements apart: a turning plate has no 丁 over that palace
+at that hour.
+
+**What the sheets do not give, stated so that it is not read as given.** No
+hour of a yin board is worked. The yin flight is the direction of sheet 67 put
+to the backward count of sheet 24, which is a count of the same nine stars for
+another purpose. And the spirits are not flown by anything read: the rosters
+the work prints are of eight, so they are laid round the ring from where the
+值符 lands, and from the centre's lodging when it lands on the centre. Nothing
+that runs lays this board, so the agreement is with the text and with nothing
+else.
 
 **These are the 折衷's readings one at a time, and that work holds them
 together.** It lodges the centre by the eight 節 *on* a board whose stars fly

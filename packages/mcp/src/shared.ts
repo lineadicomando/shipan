@@ -245,6 +245,12 @@ export const qimenSchema = {
     .describe(
       'What names the fifth and sixth of the eight spirits. Default dun: the pair is named by the half of the year, gouchen and zhuque in a yang chart, baihu and xuanwu in a yin one. fixed keeps the same eight names in both dun, as the Yuding Qimen Baojian has them. baihu keeps the naming by half-year but leaves baihu at the fifth seat of a yang chart, which is the board of the Qimen Dunjia Quanju. Three readings of one ring, parting at two seats and only in the name — but the name is what a spirit criterion matches on.',
     ),
+  plate: z
+    .enum(['zhuan', 'xingfei'])
+    .optional()
+    .describe(
+      'How the stars and the heaven stems are moved. Default zhuan: turned round the eight outer palaces, the centre left where it is, as the Qimen Dunjia Tongzong has it. xingfei: flown through all nine palaces in Luoshu order, forward in a yang chart and back in a yin one, while the gates still turn, as the Qimen Dunjia Zhezhong holds. Under both the chief star is set on the palace of the hour stem; every other star and stem above the palaces can stand somewhere else.',
+    ),
   centre_lodging: z
     .enum(['kun', 'dun', 'dunni', 'bajie', 'siyu'])
     .optional()
@@ -289,6 +295,7 @@ interface RawInput {
   year_boundary?: 'lichun' | 'chunjie' | 'dongzhi' | undefined;
   method?: 'chaibu' | 'zhirun' | 'maoshan' | undefined;
   spirits?: 'dun' | 'fixed' | 'baihu' | undefined;
+  plate?: 'zhuan' | 'xingfei' | undefined;
   centre_lodging?: 'kun' | 'dun' | 'dunni' | 'bajie' | 'siyu' | undefined;
   earth?: 'quarters' | 'eighteen' | undefined;
   earth_plate?: 'yuan' | 'xun' | undefined;
@@ -332,6 +339,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.year_boundary) options.yearBoundary = raw.year_boundary;
   if (raw.method) options.method = raw.method;
   if (raw.spirits) options.spirits = raw.spirits;
+  if (raw.plate) options.plate = raw.plate;
   if (raw.centre_lodging) options.centreLodging = raw.centre_lodging;
   if (raw.earth) options.earth = raw.earth;
   if (raw.earth_plate) options.earthPlate = raw.earth_plate;

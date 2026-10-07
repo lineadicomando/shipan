@@ -1310,6 +1310,13 @@ export const it: Record<MessageKey, string> = {
     'niente: gli stessi otto nomi stanno in entrambi i dun, come li ha il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.spirits.baihu':
     'la metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
+  'form.qimen.plate': 'Le stelle e i tronchi sopra i palazzi si muovono',
+  'form.qimen.plate.zhuan':
+    'girandoli sugli otto palazzi esterni, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
+  'form.qimen.plate.xingfei':
+    'facendoli volare per tutti e nove i palazzi mentre le porte continuano a girare, come sostiene il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng',
+  'form.qimen.plate.note':
+    'Le due letture pongono la stella del capo sul palazzo del tronco dell’ora. Si separano sul modo in cui le altre otto la seguono. La prima le porta lungo l’anello degli otto palazzi esterni e lascia il centro dov’è. La seconda le conta per tutti e nove i palazzi nell’ordine del 洛書 luòshū, centro compreso, in avanti in una carta yang e all’indietro in una carta yin. Le porte girano sugli otto sotto entrambe.',
   'form.qimen.earth': 'La stagione della terra è',
   'form.qimen.earth.quarters': 'l’intero mese che chiude ciascuna stagione',
   'form.qimen.earth.eighteen':

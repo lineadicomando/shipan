@@ -158,7 +158,7 @@ describe('what refuses an option the engine does not compute', () => {
       expect((error as { params: Record<string, string> }).params).toEqual({
         option: 'plate',
         value: 'fei',
-        implemented: 'zhuan',
+        implemented: 'zhuan, xingfei',
       });
     }
   });

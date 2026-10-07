@@ -858,9 +858,9 @@ describe('the flags the declaration gives', () => {
   });
 
   it('hands a declared and refused value to the engine, which refuses it by name', async () => {
-    const code = await run(['qimen', ...MOMENT, '--plate', 'xingfei', '--lang', 'en']);
+    const code = await run(['qimen', ...MOMENT, '--plate', 'fei', '--lang', 'en']);
     expect(code).toBe(1);
-    expect(err).toContain('xingfei');
+    expect(err).toContain('fei');
   });
 });
 

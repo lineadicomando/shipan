@@ -191,3 +191,81 @@ describe('earth holding the eighteen days before a season opens', () => {
   });
 });
 
+/**
+ * The stars and the stems flown, the gates turned.
+ *
+ * 《奇門遁甲折衷》 argues it at length and works two hours of 陽遁一局 in its
+ * chapter on stems and branches, sheet 22: those are the test. What flying
+ * back means it shows where it flies a 值符 both ways, sheet 24.
+ */
+describe('the plate flown, as the 折衷 lays it', () => {
+  const fly = (date: string, time: string, moved: Partial<ChartOptions> = {}) =>
+    chart(date, time, { plate: 'xingfei', ...moved });
+  const at = (c: QimenChart, number: number) => c.palaces.find((p) => p.palace.number === number)!;
+
+  it('sets the 值符 on 艮八 at 丙寅 of 陽遁一局, 龍返首', () => {
+    // 「如陽遁第一局甲子日丙寅時，直符加艮八宮為龍返首」.
+    const board = fly('2024-01-01', '04:30');
+    expect(board.ju).toMatchObject({ yang: true, number: 1 });
+    expect(board.moment.pillars.hour.hanzi).toBe('丙寅');
+    expect(board.chief.star.hanzi).toBe('天蓬');
+    expect(board.chief.palace.number).toBe(8);
+    expect(`${at(board, 8).heaven.hanzi}加${at(board, 8).earth.hanzi}`).toBe('戊加丙');
+    expect(board.patterns.map((pattern) => pattern.hanzi)).toContain('青龍返首');
+  });
+
+  it('puts 丁 over 癸 in 乾六 at 乙丑, 雀投江', () => {
+    // 「又如乙丑時乾六宮丁加癸為雀投江」.
+    const board = fly('2024-01-01', '02:30');
+    expect(board.moment.pillars.hour.hanzi).toBe('乙丑');
+    expect(`${at(board, 6).heaven.hanzi}加${at(board, 6).earth.hanzi}`).toBe('丁加癸');
+    expect(board.patterns.map((pattern) => pattern.hanzi)).toContain('朱雀投江');
+    // The turning plate has neither over that palace at that hour.
+    const turned = chart('2024-01-01', '02:30');
+    expect(at(turned, 6).heaven.hanzi).not.toBe('丁');
+  });
+
+  it('flies all nine through all nine, each star with the stem of its own palace', () => {
+    for (const [date, time] of [['2024-01-01', '04:30'], ['2024-06-24', '22:30']] as const) {
+      const board = fly(date, time);
+      // Nothing lodges and nothing is left behind: nine stars, nine palaces.
+      expect(new Set(board.palaces.map((p) => p.star.hanzi)).size).toBe(9);
+      for (const p of board.palaces) {
+        expect(p.heaven.hanzi).toBe(at(board, p.star.home).earth.hanzi);
+      }
+    }
+  });
+
+  it('counts forward under yang and back under yin, in the order of the stars’ own palaces', () => {
+    // 「一加五、二加六、三加七」 forward; 「九加五、一加四、二加三、三加二」 back.
+    const step = (board: QimenChart) => {
+      const home = board.chief.star.home;
+      const next = board.palaces.find((p) => p.star.home === (home % 9) + 1)!.palace.number;
+      return (((next - board.chief.palace.number) % 9) + 9) % 9;
+    };
+    const yang = fly('2024-01-01', '04:30');
+    const yin = fly('2024-06-24', '22:30');
+    expect(yang.ju.yang).toBe(true);
+    expect(yin.ju.yang).toBe(false);
+    expect(step(yang)).toBe(1);
+    expect(step(yin)).toBe(8);
+  });
+
+  it('leaves the earth plate and the gates as the turning plate has them', () => {
+    const flown = fly('2024-01-01', '04:30');
+    const turned = chart('2024-01-01', '04:30');
+    expect(flown.palaces.map((p) => p.earth.id)).toEqual(turned.palaces.map((p) => p.earth.id));
+    expect(flown.palaces.map((p) => p.gate?.id)).toEqual(turned.palaces.map((p) => p.gate?.id));
+    expect(flown.chiefGate).toEqual(turned.chiefGate);
+    // And both set the same star on the same palace: they part over the rest.
+    expect(flown.chief.palace.number).toBe(turned.chief.palace.number);
+    expect(flown.palaces.map((p) => p.star.id)).not.toEqual(turned.palaces.map((p) => p.star.id));
+  });
+
+  it('is the whole board the 折衷 lays, with its own earth plate and lodging', () => {
+    const board = fly('2024-01-01', '20:30', { earthPlate: 'xun', centreLodging: 'bajie' });
+    expect(board.options).toMatchObject({ plate: 'xingfei', earthPlate: 'xun', centreLodging: 'bajie' });
+    expect(new Set(board.palaces.map((p) => p.star.hanzi)).size).toBe(9);
+  });
+});
+

@@ -295,6 +295,41 @@ export function starPlate(
 }
 
 /**
+ * The heaven plate and the nine stars **flown**, as 《奇門遁甲折衷》 lays them.
+ *
+ * 「星有九必當飛九宮」: the star of the palace the instrument stands in is the
+ * 值符, it is set on the palace of the hour's stem, and the other eight follow
+ * it through all nine palaces, the centre among them, each carrying the stem
+ * of the palace it came from. Forward under yang and back under yin — 「陽遁…
+ * 以次順飛而終於離九，陰遁…以次逆飛而終於坎一」 — and what back means the
+ * work shows where it flies a 值符 both ways: 「一加五、二加六、三加七」 forward,
+ * 「九加五、一加四、二加三、三加二」 back. The stars are taken in the order of
+ * their own palaces either way, and set on rising palaces or on falling ones.
+ *
+ * Nothing lodges: 天禽 flies like the other eight, and the centre is given a
+ * star and a stem like any palace. The worked hours the text prints are the
+ * test — 陽遁一局, 丙寅: 「直符加艮八宮為龍返首」; 乙丑: 「乾六宮丁加癸」.
+ */
+export function flownPlates(
+  earth: ByPalace<Stem>,
+  instrument: Stem,
+  hourStem: Stem,
+  yang: boolean,
+): { heaven: ByPalace<Stem>; stars: ByPalace<Star> } {
+  const home = palaceOf(earth, instrument);
+  const landing = palaceOf(earth, hourStem);
+  const heaven: ByPalace<Stem> = {};
+  const stars: ByPalace<Star> = {};
+  for (const star of STARS) {
+    const ahead = (((star.home - home) % 9) + 9) % 9;
+    const palace = ((((landing - 1 + (yang ? ahead : -ahead)) % 9) + 9) % 9) + 1;
+    stars[palace] = star;
+    heaven[palace] = earth[star.home] as Stem;
+  }
+  return { heaven, stars };
+}
+
+/**
  * The star standing over the instrument's palace: the chief (值符).
  *
  * Not lodged. When the instrument sits in the centre the chief is 天禽, and
