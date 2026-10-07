@@ -733,6 +733,34 @@ describe('四化 — the table two modern schools move one cell of', () => {
     }
   });
 
+  it('moves 庚 taboo to 天相 as the 占驗派 reads it, and marks that cell alone', () => {
+    // 「大限之疾厄爲庚，天相化忌」, 《中國絕學》第七冊 p. 252. 1980 is 庚申.
+    const book = board('1980-05-05', '14:30');
+    const zhanyan = board('1980-05-05', '14:30', { sihua: 'tianxiang' });
+    expect(book.yearPillar.stem.id).toBe('geng');
+
+    expect(transformed(book)).toContain('tiantong:huaji');
+    expect(transformed(zhanyan)).toContain('tianxiang:huaji');
+    expect(transformed(zhanyan)).not.toContain('tiantong:huaji');
+    expect(transformed(zhanyan).filter((entry) => transformed(book).includes(entry))).toHaveLength(
+      3,
+    );
+
+    for (const [laid, star] of [
+      [book, 'tiantong'],
+      [zhanyan, 'tianxiang'],
+    ] as const) {
+      const marked = laid.palaces.flatMap((palace) => palace.stars).filter((seat) => seat.contested);
+      expect(marked.map((seat) => `${seat.star.id}:${seat.transform?.id}`)).toEqual([
+        `${star}:huaji`,
+      ]);
+    }
+    // And the cell the other two schools move is untouched by this one.
+    expect(transformed(board('1982-05-05', '14:30', { sihua: 'tianxiang' }))).toEqual(
+      transformed(board('1982-05-05', '14:30')),
+    );
+  });
+
   it('marks nothing on a stem no table parts over', () => {
     // Nine stems in ten: the value is declared, and on those boards it decides
     // nothing and says nothing.

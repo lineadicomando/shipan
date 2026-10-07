@@ -198,6 +198,9 @@ no rule. A 太乙 transcript had never printed the block of schools, having had
 none to name, and prints it now without the layers a board laid on a year
 never opened.
 
+紫微斗數 closed the stage with one cell: 庚's 忌 on 天相, as the 占驗派 reads
+it, a third value of `sihua` named for the cell as the second is.
+
 ## What was not established
 
 The survey of the five arts other than 奇門 was read off the register and

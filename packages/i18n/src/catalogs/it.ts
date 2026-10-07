@@ -1255,8 +1255,10 @@ export const it: Record<MessageKey, string> = {
   'form.ziwei.sihua': 'Le quattro trasformazioni seguono',
   'form.ziwei.sihua.quanshu': 'il 《紫微斗數全書》 zǐwēidǒushùquánshū, che dà a 壬 rén il suo 科 kē a 天府 tiānfǔ',
   'form.ziwei.sihua.zuofu': 'la lettura che insegnano due scuole moderne, che sposta quel 科 kē a 左輔 zuǒfǔ',
+  'form.ziwei.sihua.tianxiang':
+    'la lettura della 占驗派 zhānyànpài, che sposta il 忌 jì di 庚 gēng da 天同 tiāntóng a 天相 tiānxiàng',
   'form.ziwei.sihua.note':
-    'Una cella su dieci, ed è tutto ciò che lo scaffale attesta: il manuale 中州派 zhōngzhōupài la stampa, e un manuale 北派 běipài la traccia due volte in esempi svolti — contro una lettura che entrambe le edizioni del 《全書》 quánshū e la recensione Ming portano. Tutto il resto della tavola è quello del libro sotto l’uno o l’altro valore.',
+    'Ciascuna delle altre due letture è la tavola del libro con una cella spostata. Un manuale 中州派 zhōngzhōupài stampa il 科 kē di 壬 rén su 左輔 zuǒfǔ, e un manuale 北派 běipài lo traccia così due volte in esempi svolti. La 占驗派 zhānyànpài legge il 忌 jì di 庚 gēng su 天相 tiānxiàng in un giudizio svolto. Entrambe stanno contro una lettura che le due edizioni del 《全書》 quánshū portano, e la cella che una lettura sposta è segnata sulla tavola sotto ciascuna delle tre.',
   'form.taiyi.geHost': 'La condizione 格 gé, un corpo nel palazzo di fronte a 太乙 tàiyǐ, è segnata',
   'form.taiyi.geHost.ke':
     'soltanto per l’occhio, il gran generale e l’aiutante di chi arriva, come nel 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng',

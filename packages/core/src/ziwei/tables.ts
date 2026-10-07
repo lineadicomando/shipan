@@ -165,11 +165,31 @@ export const SIHUA_ZUOFU: typeof SIHUA = {
  * Beside `sihuaTable` and moving with it: a reading added to one and not the
  * other would either be unreachable or would stop marking the cells it moves.
  */
-export const SIHUA_READINGS = ['quanshu', 'zuofu'] as const;
+export const SIHUA_READINGS = ['quanshu', 'zuofu', 'tianxiang'] as const;
+
+/**
+ * 庚's 忌 on 天相, which is where the 占驗派 parts from this book.
+ *
+ * One cell again. 《全書》 gives 庚 its 忌 to 天同 — 庚日武陰同為首 — and the
+ * 占驗派 material of 《中國絕學》第七冊 prints 「大限之疾厄爲庚，天相化忌」 at
+ * its p. 252, in a worked verdict. A reading held by a named line and moving
+ * one cell is what `zuofu` is, and this is declared on the same ground and
+ * named the same way, for the cell.
+ *
+ * **Not the swap between the two editions of 《全書》 at this stem**, 陰同
+ * against 同陰: that is two copies of one work, settled in the register, and
+ * no value is named for it.
+ */
+export const SIHUA_TIANXIANG: typeof SIHUA = {
+  ...SIHUA,
+  geng: ['taiyang', 'wuqu', 'taiyin', 'tianxiang'],
+};
 
 /** The table a chart's `sihua` asks for. */
-export function sihuaTable(reading: 'quanshu' | 'zuofu'): typeof SIHUA {
-  return reading === 'zuofu' ? SIHUA_ZUOFU : SIHUA;
+export function sihuaTable(reading: (typeof SIHUA_READINGS)[number]): typeof SIHUA {
+  if (reading === 'zuofu') return SIHUA_ZUOFU;
+  if (reading === 'tianxiang') return SIHUA_TIANXIANG;
+  return SIHUA;
 }
 
 /** 起五行寅例 — the stem that stands on 寅 for each year stem (五虎遁). */

@@ -120,7 +120,6 @@ is".
 | | State | What it has, and what it waits on |
 |---|---|---|
 | `leapMonth: current`, `leapMonth: split` | declared and refused | no text; a program computes one of them. Waits on a manual that states either |
-| 庚's 忌 to 天相 | owed a declaration | the 占驗派 material of 《中國絕學》第七冊. A value of `sihua` named for the cell |
 | 解神 placed off the month | recorded | modern boards carry it and no manual on the shelf states it |
 | the stars 卷二 does not place | recorded | the same |
 | 王亭之's table at 戊, 庚 and 壬 | recorded | named, unread |

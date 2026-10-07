@@ -108,7 +108,11 @@ const READINGS: Readonly<Record<string, string>> = {
   // out of it — and a school named in prose is exactly what this list is for.
   中州派: 'zhōngzhōupài',
   北派: 'běipài',
+  // The line that moves 庚's 忌, named where the third value of `sihua` is
+  // argued, and the transformation it moves.
+  占驗派: 'zhānyànpài',
   科: 'kē',
+  忌: 'jì',
   餘: 'yú',
   卜: 'bǔ',
   命: 'mìng',

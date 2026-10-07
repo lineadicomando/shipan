@@ -469,10 +469,10 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
             'Only the 大限, the 小限 and the rings of 長生 and 博士 depend on it. Do not guess it.',
           ),
         sihua: z
-          .enum(['quanshu', 'zuofu'])
+          .enum(['quanshu', 'zuofu', 'tianxiang'])
           .optional()
           .describe(
-            'Which table of the four transformations. Default quanshu, the Ziwei Doushu Quanshu\'s own, which gives ren its ke to tianfu. zuofu is that table with the one cell moved to zuofu, as two modern schools teach it — one cell of ten, and everything else on the table is the book\'s under either value.',
+            'Which table of the four transformations. Default quanshu, the Ziwei Doushu Quanshu\'s own, which gives ren its ke to tianfu. zuofu is that table with the one cell moved to zuofu, as two modern schools teach it — tianxiang is the book\'s table with geng\'s ji moved from tiantong to tianxiang, as the Zhanyan school reads it. Each moves one cell and everything else on the table is the book\'s.',
           ),
         huoling: z
           .enum(['fixed', 'hour'])

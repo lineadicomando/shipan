@@ -165,6 +165,12 @@ export const WITNESSES = {
     name: { hanzi: '大六壬精解', pinyin: 'dàliùrénjīngjiě' },
     year: 1995,
   },
+  /** The plain-numbered part of the anthology's seventh volume, headed 占驗派. */
+  juexue7: {
+    kind: 'modern',
+    name: { hanzi: '中國絕學第七冊', pinyin: 'zhōngguójuéxuédìqīcè' },
+    year: 1986,
+  },
   /** A manual of declared 中州派 lineage, which prints its 四化 table whole. */
   han: { kind: 'modern', latin: 'Aloysius Han, Zi Wei Dou Shu', year: 2014 },
 } as const satisfies Record<string, Witness>;

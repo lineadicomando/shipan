@@ -6797,8 +6797,8 @@ and a program is not a witness; no text on the shelf states either.
   states their placement.
 - **王亭之's table at 戊, 庚 and 壬**, named by the 中州派 manual and unread.
 
-**Owed a declaration.** 庚's 忌 to 天相, which the 占驗派 material of 《中國絕學》
-第七冊 prints at its p. 252: a reading held by a named line, moving one cell,
+**Declared and computed since 2026-10-07, as `sihua: tianxiang`.** 庚's 忌 to
+天相, which the 占驗派 material of 《中國絕學》第七冊 prints at its p. 252: a reading held by a named line, moving one cell,
 which is what `sihua: zuofu` is. The swap of 太陰 and 天同 between the two
 editions of 《全書》 at the same stem is a different thing and stays where it
 is: two copies of one work, settled in the register.

@@ -1363,8 +1363,10 @@ export const en = {
   'form.ziwei.sihua': 'The four transformations follow',
   'form.ziwei.sihua.quanshu': '《紫微斗數全書》 zǐwēidǒushùquánshū, which gives 壬 rén its 科 kē to 天府 tiānfǔ',
   'form.ziwei.sihua.zuofu': 'the reading two modern schools teach, which moves that 科 kē to 左輔 zuǒfǔ',
+  'form.ziwei.sihua.tianxiang':
+    'the reading of the 占驗派 zhānyànpài, which moves the 忌 jì of 庚 gēng from 天同 tiāntóng to 天相 tiānxiàng',
   'form.ziwei.sihua.note':
-    'One cell of ten, and the whole of what the shelf attests: the 中州派 zhōngzhōupài manual prints it, and a 北派 běipài manual draws it twice in worked examples — against a reading both editions of the 《全書》 quánshū and the Ming recension carry. Everything else on the table is the book’s under either value.',
+    'Each of the other two readings is the book’s table with one cell moved. A 中州派 zhōngzhōupài manual prints 壬 rén’s 科 kē on 左輔 zuǒfǔ, and a 北派 běipài manual draws it so twice in worked examples. The 占驗派 zhānyànpài reads 庚 gēng’s 忌 jì on 天相 tiānxiàng in a worked verdict. Both stand against a reading that the two editions of the 《全書》 quánshū carry, and the cell a reading moves is marked on the board under every one of the three.',
   'form.taiyi.geHost': 'The condition 格 gé, a body in the palace facing 太乙 tàiyǐ, is marked',
   'form.taiyi.geHost.ke':
     'for the guest’s eye, great general and adjutant alone, as 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng has it',

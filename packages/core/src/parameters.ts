@@ -822,6 +822,15 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
         implemented: true,
         heldBy: ['han', 'beipai'],
       },
+      // 庚's 忌 to 天相: the 占驗派 material of the anthology's seventh volume.
+      {
+        id: 'tianxiang',
+        name: { hanzi: '天相', pinyin: 'tiānxiàng' },
+        says: 'form.ziwei.sihua.tianxiang',
+        note: 'form.ziwei.sihua.note',
+        implemented: true,
+        heldBy: ['juexue7'],
+      },
     ],
     default: 'quanshu',
   },

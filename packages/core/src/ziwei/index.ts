@@ -53,6 +53,7 @@ export {
   KUIYUE,
   LUCUN,
   SIHUA,
+  SIHUA_TIANXIANG,
   SIHUA_ZUOFU,
   TIANMA,
   ZIWEI_BY_DAY,
@@ -92,7 +93,7 @@ export interface ZiweiOptions {
    * read, and a lineage nobody has read is not a value — the `tongzong`
    * precedent, which is about a text and not about the size of a divergence.
    */
-  sihua: 'quanshu' | 'zuofu';
+  sihua: 'quanshu' | 'zuofu' | 'tianxiang';
   /**
    * How 火星 and 鈴星 are placed.
    *
