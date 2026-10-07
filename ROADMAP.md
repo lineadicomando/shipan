@@ -177,6 +177,20 @@ is".
 | 文昌 in 太乙's own palace: 囚, 關 or 掩 | owed a declaration | the 統宗 on 樂產's authority. Waits on the plate for which of 關 and 掩 it holds |
 | 陰陽和不和 in two accounts | recorded | one work carrying both |
 
+**七政四餘** — argued in `docs/sources.md` § "Whose each value of a 七政四餘
+board is". The default frame is the engine's own construction, and no frame a
+line holds is computed yet. Where the clause for `xiudu: shoushi`
+below calls the subtraction «a derivation and not a witness», this table is
+what holds.
+
+| | State | What it has, and what it waits on |
+|---|---|---|
+| `xiudu: shoushi` | declared and refused | held by 《授時曆故》卷二, twenty-seven lodges read. 參 is supplied by the sum that closes its quadrant, admitted and marked as derived. Waits on the option carrying an epoch, and on the cells being transcribed |
+| `xiudu: shixian` | declared and refused | a table with no epoch that can be cited. Waits on one |
+| `gong: ci` | declared and refused | no holder named. Waits on the same table |
+| `minggong: ascendant` | declared and refused | no holder named; a second method and not a second reading |
+| the 距星 of 觜 and of 參 | recorded | four assignments across the Tang, the Song, the Jesuit order and the 《儀象考成》; the engine takes the last |
+
 ### What each named one waits on
 
 Most of the table waits on a source and nothing more particular. These clauses

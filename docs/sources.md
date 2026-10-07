@@ -4853,6 +4853,48 @@ already keeps does the same work: one tone mark to a syllable, so `jíè` is
 plainly two where `jié` would be one. The apostrophe is only load-bearing in
 toneless pinyin, and nothing here is toneless.
 
+### Whose each value of a 七政四餘 board is
+
+Written 2026-10-07, under § "The standard, stated once". It attributes what
+the sections above established and establishes nothing: no plate was opened
+for it. `packages/core/src/parameters.ts` carries the same attributions as
+data.
+
+**The frame this board is laid in by default is the engine's own, and no line
+on the shelf lays it.** `xiudu: juxing` takes every boundary from the 距星
+placed at the instant. The section above argues that this is what a 宿 is, and
+the argument is about the sky. About the art it says something else, which
+[`parameters.md`](parameters.md) already states: a practitioner casts by 授時
+degrees or by 時憲 ones, and both of those are refused. So the value is
+attributed to the engine, by that name, and it stays the default: a default is
+a convention and does not move for attestation. What follows from it is said
+rather than softened — on this board the frame a reader is handed is one no
+text lays, and the first frame a line holds becomes computable with `xiudu:
+shoushi`.
+
+| Value | Held by | What the attribution rests on |
+|---|---|---|
+| `xiudu: shoushi` | 《授時曆故》, 黃宗羲 | 卷二 carries the 黃道宿次 at 至元辛巳, twenty-seven lodges of twenty-eight on this print, the quadrants closing on their own sums |
+| `ziqi: yinianyisu` | 《張果星宗》, 《星度指南》 | the rate from the first's 算法, which its own 總論 contradicts by a year; the anchor from the second's one dated board, good to a palace |
+| `luohou: descending` | 《星度指南》 | the same board, 羅 in 亥 and 計 in 巳. The section calls it «the art's convention» and names no other text for it |
+
+**Not yet attributed.** `luohou: ascending` is computed and is put on 湯若望
+and the 時憲曆 with no text on the shelf named for it. `minggong: yuejiang` is
+quoted — 「以生時加在太陽所在之宮，順數至卯，即是命宮」 — from «the texts»,
+unnamed. `gong: zhongqi` has no text named on this board at all and gains a
+row saying so. `ziqi: off`, `xiudu: shixian`, `gong: ci` and `minggong:
+ascendant` have no holder named either.
+
+**Recorded, with no parameter.** Which star is the 距星 of 觜 and which of 參:
+the Tang and Song assignments, the order the Jesuits printed and the 《儀象
+考成》's differ, and this engine takes the last. A body within a degree of that
+boundary changes lodge with the choice, so the row reads `recorded`.
+
+**Not a matter of lines.** The direction the twelve 人事宮 are counted in
+rests on one unnamed source and three derivations. Nobody on the shelf holds
+the other direction for this art; what the quantity is short of is evidence,
+and its row keeps its dash.
+
 ### What is not here
 
 **留.** 順 and 逆 are read off the sign of the daily motion, which is a fact

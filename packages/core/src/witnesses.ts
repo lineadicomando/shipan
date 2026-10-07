@@ -64,6 +64,21 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '太乙金鏡式經', pinyin: 'tàiyǐjīnjìngshìjīng' },
   },
+  /** 《張果星宗》, whose 算法 gives 紫氣 its rate. */
+  xingzong: {
+    kind: 'transmitted',
+    name: { hanzi: '張果星宗', pinyin: 'zhāngguǒxīngzōng' },
+  },
+  /** 《星度指南》, whose one dated board anchors 紫氣 and shows which node is 羅睺. */
+  xingduzhinan: {
+    kind: 'transmitted',
+    name: { hanzi: '星度指南', pinyin: 'xīngdùzhǐnán' },
+  },
+  /** 黃宗羲's 《授時曆故》, which carries the 授時 lodges at 至元辛巳. */
+  shoushiligu: {
+    kind: 'transmitted',
+    name: { hanzi: '授時曆故', pinyin: 'shòushílìgù' },
+  },
   /** 太乙's 《統宗》, a second work and not a second copy of the 金鏡. */
   taiyitongzong: {
     kind: 'transmitted',
