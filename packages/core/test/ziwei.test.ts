@@ -451,6 +451,63 @@ describe('the limits, and what a missing gender costs', () => {
   });
 
   /**
+   * `huoling: hour`, as 《中國絕學》第六冊 prints it at its pp. 405–408.
+   *
+   * Four diagrams, one a triplicity of the year: the seat is where the 子
+   * hour stands and each star is counted forward to the hour of birth. The
+   * seats are 《全書》's own, so the two values share them and part on the
+   * count alone.
+   */
+  describe('火星 and 鈴星 counted on by the hour', () => {
+    const seat = (b: ZiweiBoard, id: string) =>
+      b.palaces.find((p) => p.stars.some((s) => s.star.id === id))!.branch;
+
+    it.each([
+      // year, its triplicity's seats for 火星 and 鈴星 at the 子 hour
+      ['1984-05-05', 'zi', 'yin', 'xu'], // 甲子: 「由寅宮起子時…由戌宮起子時」
+      ['1985-05-05', 'chou', 'mao', 'xu'], // 乙丑: 「由卯宮起子時…由戌宮起子時」
+      ['1986-05-05', 'yin', 'chou', 'mao'], // 丙寅: 「由丑宮起子時…由卯宮起子時」
+      ['1987-05-05', 'mao', 'you', 'xu'], // 丁卯: 「由酉宮起子時…由戌宮起子時」
+    ])('counts forward from the seat of the 子 hour, in a %s birth', (date, year, huo, ling) => {
+      const at = (id: string) => BRANCHES.findIndex((b) => b.id === id);
+      for (const [time, hours] of [['02:30', 1], ['12:30', 6], ['20:30', 10]] as const) {
+        const b = board(date, time, { huoling: 'hour' });
+        expect(b.yearPillar.branch.id).toBe(year);
+        expect(seat(b, 'huoxing').index).toBe((at(huo) + hours) % 12);
+        expect(seat(b, 'lingxing').index).toBe((at(ling) + hours) % 12);
+        // And the book's reading leaves both where the year put them.
+        const book = board(date, time);
+        expect(seat(book, 'huoxing').id).toBe(huo);
+        expect(seat(book, 'lingxing').id).toBe(ling);
+      }
+    });
+
+    it('keeps the two stars as far apart as the manual says they always are', () => {
+      // p. 406, of a 丑巳酉 year: 「火星，一定在鈴星的前五宮位上」.
+      // p. 407, of a 寅午戌 year: 「鈴星，一定在火星的前二宮位上」.
+      for (const time of ['02:30', '08:30', '14:30', '22:30']) {
+        const chou = board('1985-05-05', time, { huoling: 'hour' });
+        expect((seat(chou, 'huoxing').index - seat(chou, 'lingxing').index + 12) % 12).toBe(5);
+        const yin = board('1986-05-05', time, { huoling: 'hour' });
+        expect((seat(yin, 'lingxing').index - seat(yin, 'huoxing').index + 12) % 12).toBe(2);
+      }
+    });
+
+    it('agrees with the book for a birth in the 子 hour, and moves nothing else', () => {
+      const book = board('1984-05-05', '00:30');
+      const counted = board('1984-05-05', '00:30', { huoling: 'hour' });
+      expect(counted.palaces).toEqual(book.palaces);
+      const later = board('1984-05-05', '14:30', { huoling: 'hour' });
+      const others = (b: ZiweiBoard) =>
+        b.palaces.map((p) => ({
+          ...p,
+          stars: p.stars.filter((s) => s.star.id !== 'huoxing' && s.star.id !== 'lingxing'),
+        }));
+      expect(others(later)).toEqual(others(board('1984-05-05', '14:30')));
+    });
+  });
+
+  /**
    * `daxian: ming`, on the two witnesses that state it.
    *
    * Each prints the rule and then works it, and the births below were chosen
@@ -595,7 +652,6 @@ describe('the options', () => {
     for (const [option, value] of [
       ['leapMonth', 'current'],
       ['leapMonth', 'split'],
-      ['huoling', 'hour'],
     ] as const) {
       let code: string | undefined;
       try {

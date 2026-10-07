@@ -445,8 +445,9 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
         'into one to read it. ' +
         'Every placement is 《紫微斗數全書》 卷二, and four of its tables part from the ones ' +
         'modern software carries — say so if you report those four. **火星 and 鈴星 take a ' +
-        'seat apiece from the year’s triplicity and the birth hour never enters**, where the ' +
-        'widespread practice counts on from those seats by the hour. **天魁 and 天鉞 go to 亥 ' +
+        'seat apiece from the year’s triplicity and the birth hour never enters** unless ' +
+        'huoling is set to hour, which counts on from those seats as most modern boards do; ' +
+        'the block of schools under the pillars says which was laid. **天魁 and 天鉞 go to 亥 ' +
         'and 戌 for 丙 and 丁** (「丙丁豬狗位」), where the modern verse reads 豬雞; and 辛 ' +
         'takes 寅 then 午. **解神 is placed off the birth year**, not off the month. **壬 ' +
         'gives 化科 to 天府**, not to 左輔. ' +
@@ -473,6 +474,12 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
           .describe(
             'Which table of the four transformations. Default quanshu, the Ziwei Doushu Quanshu\'s own, which gives ren its ke to tianfu. zuofu is that table with the one cell moved to zuofu, as two modern schools teach it — one cell of ten, and everything else on the table is the book\'s under either value.',
           ),
+        huoling: z
+          .enum(['fixed', 'hour'])
+          .optional()
+          .describe(
+            'How 火星 and 鈴星 are placed. Default fixed: a seat apiece from the triplicity of the year, which is all the Ziwei Doushu Quanshu states. hour takes each seat as where the 子 hour stands and counts forward one palace a double hour to the hour of birth, as a manual of 1986 prints it and as most modern boards are drawn. The two agree only for a birth in the 子 hour.',
+          ),
         daxian: z
           .enum(['adjacent', 'ming'])
           .optional()
@@ -496,6 +503,7 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
         const options: ZiweiOptions = { ...DEFAULT_ZIWEI_OPTIONS };
         if (args.gender) options.gender = args.gender;
         if (args.sihua) options.sihua = args.sihua;
+        if (args.huoling) options.huoling = args.huoling;
         if (args.daxian) options.daxian = args.daxian;
         if (args.ziwei_year_boundary) options.yearBoundary = args.ziwei_year_boundary;
 

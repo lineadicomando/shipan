@@ -324,9 +324,13 @@ export function computeZiwei(moment: Moment, options: ZiweiOptions): ZiweiBoard 
   place('lucun', lucunIndex);
   place('qingyang', step(lucunIndex, 1));
   place('tuoluo', step(lucunIndex, -1));
+  // `fixed`: the seat, which is all 卷二 states. `hour`: 「由卯宮起子時，順行
+  // 一宮加一時辰，……數到生時之宮位安火星」 — the seat is where the 子 hour
+  // stands and both stars are counted forward from it, one palace an hour.
   const [huo, ling] = HUOLING[yearBranch.id];
-  place('huoxing', BRANCHES.findIndex((b) => b.id === huo));
-  place('lingxing', BRANCHES.findIndex((b) => b.id === ling));
+  const counted = options.huoling === 'hour' ? hour.index : 0;
+  place('huoxing', step(BRANCHES.findIndex((b) => b.id === huo), counted));
+  place('lingxing', step(BRANCHES.findIndex((b) => b.id === ling), counted));
 
   // 「亥上起子順安劫，逆向便是天空鄉」.
   place('dijie', step(11, hour.index));

@@ -676,9 +676,26 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
   },
   huoling: {
     board: 'ziwei',
+    // The same two seats under both values, off the year's triplicity. The
+    // book states them and stops; a manual of 1986 takes each as where the 子
+    // hour stands and counts on to the hour of birth. See `docs/sources.md`
+    // § "Whose each value of a 紫微斗數 board is".
+    label: 'form.ziwei.huoling',
     values: [
-      { id: 'fixed', implemented: true, heldBy: ['quanshu'] },
-      { id: 'hour', implemented: false, heldBy: ['juexue6'] },
+      {
+        id: 'fixed',
+        says: 'form.ziwei.huoling.fixed',
+        note: 'form.ziwei.huoling.note',
+        implemented: true,
+        heldBy: ['quanshu'],
+      },
+      {
+        id: 'hour',
+        says: 'form.ziwei.huoling.hour',
+        note: 'form.ziwei.huoling.note',
+        implemented: true,
+        heldBy: ['juexue6'],
+      },
     ],
     default: 'fixed',
   },

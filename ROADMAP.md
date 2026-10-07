@@ -76,7 +76,7 @@ second copy of one text buys".
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
-| 紫微斗數 | `leapMonth: current`, `leapMonth: split`, `huoling: hour` |
+| 紫微斗數 | `leapMonth: current`, `leapMonth: split` |
 
 `apps/web/test/docs.test.ts` holds this table to the engine both ways: a value
 the engine starts computing and this table still calls refused fails that suite,
@@ -119,7 +119,6 @@ is".
 
 | | State | What it has, and what it waits on |
 |---|---|---|
-| `huoling: hour` | declared and refused | one witness, a manual of 1986 that prints the count whole. Waits on reading, on the plate, which line that volume teaches it as |
 | `leapMonth: current`, `leapMonth: split` | declared and refused | no text; a program computes one of them. Waits on a manual that states either |
 | 庚's 忌 to 天相 | owed a declaration | the 占驗派 material of 《中國絕學》第七冊. A value of `sihua` named for the cell |
 | 解神 placed off the month | recorded | modern boards carry it and no manual on the shelf states it |
@@ -497,6 +496,7 @@ not these:
 | `qimen.spirits` | three implemented values, and it decides which names the middle pair of the eight carries |
 | `qimen.centreTravel` | two, and it decides which palace the 值符 and the 值使 are read from when the count puts them on the centre |
 | `ziwei.sihua` | two, one cell of the table apart, and the cell seats a transformation |
+| `ziwei.huoling` | two, parting for every birth outside the 子 hour |
 | `ziwei.daxian` | two, one palace apart along the whole run of decades |
 | `bazi.luckGranularity` | two, parting by up to ten days on when the first decade opens |
 

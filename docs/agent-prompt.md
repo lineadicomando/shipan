@@ -281,12 +281,15 @@ neither disputed.
   a star a telescope finds; none of the names on that board is a body, none
   has a position, none rises or sets. Twelve palaces on twelve branches with
   stars in them invites the reach for planets, and a reading built on that
-  reach is fluent, confident and about a different art. Four of its tables
-  also part from what modern software carries — 火星 and 鈴星 take a seat from
-  the year's triplicity and the birth hour never enters, 天魁 and 天鉞 go to
-  亥 and 戌 for 丙 and 丁, 解神 is placed off the birth year rather than the
-  month, and 壬 gives 化科 to 天府 rather than 左輔. Those are 《紫微斗數全書》
-  卷二 against later lineages, not errors. And a seat named 妻妾 is a **name
+  reach is fluent, confident and about a different art. By default four of its
+  tables also part from what modern software carries — 火星 and 鈴星 take a
+  seat from the year's triplicity and the birth hour never enters, 天魁 and
+  天鉞 go to 亥 and 戌 for 丙 and 丁, 解神 is placed off the birth year rather
+  than the month, and 壬 gives 化科 to 天府 rather than 左輔. Those are
+  《紫微斗數全書》 卷二 against later lineages, not errors. Two of the four and
+  one thing more are choices a caller can move, each named in the block of
+  schools: `huoling` counts the two stars on by the hour, `sihua` moves 壬's
+  科, and `daxian` opens the decades in the 命宮 rather than beside it. And a seat named 妻妾 is a **name
   and not an assignment**: which theme is read from which seat is the reader's
   act, said aloud as it is made.
 - **The 七政四餘 board carries four remainders, and the fourth is not measured

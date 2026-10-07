@@ -306,8 +306,14 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'huoling',
     board: 'ziwei',
     values: ['fixed', 'hour'],
-    implemented: ['fixed'],
+    implemented: ['fixed', 'hour'],
     fallback: 'fixed',
+    label: 'form.ziwei.huoling',
+    says: {
+      fixed: 'form.ziwei.huoling.fixed',
+      hour: 'form.ziwei.huoling.hour',
+    },
+    notes: { fixed: 'form.ziwei.huoling.note', hour: 'form.ziwei.huoling.note' },
   },
   {
     id: 'daxian',

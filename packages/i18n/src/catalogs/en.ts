@@ -1365,6 +1365,13 @@ export const en = {
   'form.ziwei.sihua.zuofu': 'the reading two modern schools teach, which moves that 科 kē to 左輔 zuǒfǔ',
   'form.ziwei.sihua.note':
     'One cell of ten, and the whole of what the shelf attests: the 中州派 zhōngzhōupài manual prints it, and a 北派 běipài manual draws it twice in worked examples — against a reading both editions of the 《全書》 quánshū and the Ming recension carry. Everything else on the table is the book’s under either value.',
+  'form.ziwei.huoling': '火星 huǒxīng and 鈴星 língxīng are placed',
+  'form.ziwei.huoling.fixed':
+    'each on its seat from the year’s triplicity, which is what 《紫微斗數全書》 zǐwēidǒushùquánshū states',
+  'form.ziwei.huoling.hour':
+    'counted on from those seats by the hour of birth, as a manual of 1986 prints it',
+  'form.ziwei.huoling.note':
+    'Both readings start from the same two seats, which the branch of the year gives. The 《全書》 quánshū states the seats and no count, in three copies. The other reading takes each seat as the place of the 子 zǐ hour and counts forward one palace for every double hour up to the hour of birth. The two readings therefore agree only for a birth in the 子 zǐ hour.',
   'form.ziwei.daxian': 'The first decade of the 大限 dàxiàn opens',
   'form.ziwei.daxian.adjacent':
     'in the palace beside the 命宮 mìnggōng, as 《紫微斗數全書》 zǐwēidǒushùquánshū has it',

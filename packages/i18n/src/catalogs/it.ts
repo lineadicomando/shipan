@@ -1257,6 +1257,13 @@ export const it: Record<MessageKey, string> = {
   'form.ziwei.sihua.zuofu': 'la lettura che insegnano due scuole moderne, che sposta quel 科 kē a 左輔 zuǒfǔ',
   'form.ziwei.sihua.note':
     'Una cella su dieci, ed è tutto ciò che lo scaffale attesta: il manuale 中州派 zhōngzhōupài la stampa, e un manuale 北派 běipài la traccia due volte in esempi svolti — contro una lettura che entrambe le edizioni del 《全書》 quánshū e la recensione Ming portano. Tutto il resto della tavola è quello del libro sotto l’uno o l’altro valore.',
+  'form.ziwei.huoling': '火星 huǒxīng e 鈴星 língxīng sono collocate',
+  'form.ziwei.huoling.fixed':
+    'ciascuna sul seggio che le dà il triplice dell’anno, che è quanto enuncia il 《紫微斗數全書》 zǐwēidǒushùquánshū',
+  'form.ziwei.huoling.hour':
+    'contando da quei seggi secondo l’ora di nascita, come stampa un manuale del 1986',
+  'form.ziwei.huoling.note':
+    'Le due letture partono dagli stessi due seggi, che dà il ramo dell’anno. Il 《全書》 quánshū enuncia i seggi e nessun conteggio, in tre copie. L’altra lettura prende ciascun seggio come il posto dell’ora 子 zǐ e conta in avanti un palazzo per ogni doppia ora, fino all’ora di nascita. Le due letture coincidono quindi soltanto per una nascita nell’ora 子 zǐ.',
   'form.ziwei.daxian': 'Il primo decennio del 大限 dàxiàn si apre',
   'form.ziwei.daxian.adjacent':
     'nel palazzo accanto al 命宮 mìnggōng, come nel 《紫微斗數全書》 zǐwēidǒushùquánshū',
