@@ -82,6 +82,53 @@ export const WITNESSES = {
     name: { hanzi: '紫微斗數北派', pinyin: 'zǐwēidǒushùběipài' },
     year: 1986,
   },
+  /** 《奇門遁甲統宗》, the line the turning plate and the lodging in 坤 descend in. */
+  tongzong: {
+    kind: 'transmitted',
+    name: { hanzi: '奇門遁甲統宗', pinyin: 'qíméndùnjiǎtǒngzōng' },
+  },
+  /** 《御定奇門寶鑑》, the imperial print that stands the eight spirits in both dun. */
+  baojian: {
+    kind: 'transmitted',
+    name: { hanzi: '御定奇門寶鑑', pinyin: 'yùdìngqíménbǎojiàn' },
+  },
+  /** 《奇門遁甲金鏡寶鑑》, which argues the leap month and reads the states from the star. */
+  jinjingbaojian: {
+    kind: 'transmitted',
+    name: { hanzi: '奇門遁甲金鏡寶鑑', pinyin: 'qíméndùnjiǎjīnjìngbǎojiàn' },
+  },
+  /** 《遁甲演義》, which states the year, month and day families entire. */
+  yanyi: {
+    kind: 'transmitted',
+    name: { hanzi: '遁甲演義', pinyin: 'dùnjiǎyǎnyì' },
+  },
+  /** 《奇門遁甲全局》, the circular plates that keep 白虎 at the fifth seat. */
+  quanju: {
+    kind: 'transmitted',
+    name: { hanzi: '奇門遁甲全局', pinyin: 'qíméndùnjiǎquánjú' },
+  },
+  /** 甘國壁's manuscript, which reports the lodging by dun and argues it down. */
+  zhezhong: {
+    kind: 'transmitted',
+    name: { hanzi: '奇門遁甲折衷', pinyin: 'qíméndùnjiǎzhézhōng' },
+  },
+  /** 張志春, who defines 拆補 by the term and the 符頭 at once. */
+  shenqi: {
+    kind: 'modern',
+    name: { hanzi: '神奇之門', pinyin: 'shénqízhīmén' },
+  },
+  /** 劉文元, the first text on the shelf to state 茅山 complete. */
+  qiwu: {
+    kind: 'modern',
+    name: { hanzi: '奇門啟悟', pinyin: 'qíménqǐwù' },
+    year: 2008,
+  },
+  /** 唐頤, who states the same rule a year later and cites nobody for it. */
+  tujie: {
+    kind: 'modern',
+    name: { hanzi: '圖解奇門遁甲大全', pinyin: 'tújiěqíméndùnjiǎdàquán' },
+    year: 2009,
+  },
   /** A manual of declared 中州派 lineage, which prints its 四化 table whole. */
   han: { kind: 'modern', latin: 'Aloysius Han, Zi Wei Dou Shu', year: 2014 },
 } as const satisfies Record<string, Witness>;
@@ -98,11 +145,26 @@ export type WitnessId = keyof typeof WITNESSES;
  */
 export type Holding =
   | { readonly state: 'held'; readonly by: readonly WitnessId[] }
+  /**
+   * Stated by texts that reject it, and held by none on the shelf.
+   *
+   * `docs/sources.md` admits such a reading where the reports are enough to
+   * reconstruct it. It is a different fact from being held, and a board laid
+   * on it says who reports the reading rather than who teaches it.
+   */
+  | { readonly state: 'reported'; readonly by: readonly WitnessId[] }
   | { readonly state: 'unattributed' };
 
-/** Reads a value's holders off its declaration. */
-export function holdingOf(value: { readonly heldBy?: readonly WitnessId[] }): Holding {
-  return value.heldBy === undefined || value.heldBy.length === 0
-    ? { state: 'unattributed' }
-    : { state: 'held', by: value.heldBy };
+/** Reads a value's holders off its declaration: a holder outranks a reporter. */
+export function holdingOf(value: {
+  readonly heldBy?: readonly WitnessId[];
+  readonly reportedBy?: readonly WitnessId[];
+}): Holding {
+  if (value.heldBy !== undefined && value.heldBy.length > 0) {
+    return { state: 'held', by: value.heldBy };
+  }
+  if (value.reportedBy !== undefined && value.reportedBy.length > 0) {
+    return { state: 'reported', by: value.reportedBy };
+  }
+  return { state: 'unattributed' };
 }

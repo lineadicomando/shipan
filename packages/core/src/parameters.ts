@@ -143,6 +143,14 @@ export interface ParameterValue<V> {
    * found holding the same reading does not find it named for the first.
    */
   readonly heldBy?: readonly WitnessId[];
+  /**
+   * The witnesses that state this value and reject it, where none holds it.
+   *
+   * A reading its only witnesses argue against is declarable when what they
+   * report is enough to reconstruct it without contradiction. A holder found
+   * later goes in `heldBy`, and `holdingOf` then reads that instead.
+   */
+  readonly reportedBy?: readonly WitnessId[];
 }
 
 export interface Parameter<V> {
@@ -211,6 +219,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.method.chaibu',
         note: 'cli.note.method',
         implemented: true,
+        heldBy: ['shenqi'],
       },
       {
         id: 'zhirun',
@@ -218,6 +227,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.method.zhirun',
         note: 'cli.note.method',
         implemented: true,
+        heldBy: ['tongzong'],
       },
       {
         id: 'maoshan',
@@ -225,6 +235,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.method.maoshan',
         note: 'cli.note.method',
         implemented: true,
+        heldBy: ['qiwu', 'tujie'],
       },
     ],
     default: 'chaibu',
@@ -233,7 +244,12 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   plate: {
     board: 'qimen',
     values: [
-      { id: 'zhuan', name: { hanzi: '轉盤', pinyin: 'zhuànpán' }, implemented: true },
+      {
+        id: 'zhuan',
+        name: { hanzi: '轉盤', pinyin: 'zhuànpán' },
+        implemented: true,
+        heldBy: ['tongzong'],
+      },
       { id: 'fei', name: { hanzi: '飛盤', pinyin: 'fēipán' }, implemented: false },
     ],
     default: 'zhuan',
@@ -241,18 +257,38 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   centreLodging: {
     board: 'qimen',
     values: [
-      { id: 'kun', implemented: true },
-      { id: 'dun', implemented: false },
+      { id: 'kun', implemented: true, heldBy: ['tongzong'] },
+      { id: 'dun', implemented: false, reportedBy: ['baojian', 'zhezhong'] },
     ],
     default: 'kun',
   },
   system: {
     board: 'qimen',
     values: [
-      { id: 'shijia', name: { hanzi: '時家', pinyin: 'shíjiā' }, implemented: true },
-      { id: 'rijia', name: { hanzi: '日家', pinyin: 'rìjiā' }, implemented: false },
-      { id: 'yuejia', name: { hanzi: '月家', pinyin: 'yuèjiā' }, implemented: false },
-      { id: 'nianjia', name: { hanzi: '年家', pinyin: 'niánjiā' }, implemented: false },
+      {
+        id: 'shijia',
+        name: { hanzi: '時家', pinyin: 'shíjiā' },
+        implemented: true,
+        heldBy: ['tongzong'],
+      },
+      {
+        id: 'rijia',
+        name: { hanzi: '日家', pinyin: 'rìjiā' },
+        implemented: false,
+        heldBy: ['yanyi', 'tongzong'],
+      },
+      {
+        id: 'yuejia',
+        name: { hanzi: '月家', pinyin: 'yuèjiā' },
+        implemented: false,
+        heldBy: ['yanyi', 'tongzong'],
+      },
+      {
+        id: 'nianjia',
+        name: { hanzi: '年家', pinyin: 'niánjiā' },
+        implemented: false,
+        heldBy: ['yanyi', 'tongzong'],
+      },
     ],
     default: 'shijia',
   },
@@ -314,12 +350,13 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.spirits.dun',
         implemented: true,
       },
-      { id: 'fixed', says: 'form.qimen.spirits.fixed', implemented: true },
+      { id: 'fixed', says: 'form.qimen.spirits.fixed', implemented: true, heldBy: ['baojian'] },
       {
         id: 'baihu',
         name: { hanzi: '白虎', pinyin: 'báihǔ' },
         says: 'form.qimen.spirits.baihu',
         implemented: true,
+        heldBy: ['quanju'],
       },
     ],
     default: 'dun',
@@ -327,8 +364,13 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   leap: {
     board: 'qimen',
     values: [
-      { id: 'solstice', implemented: true },
-      { id: 'runyue', name: { hanzi: '閏月', pinyin: 'rùnyuè' }, implemented: false },
+      { id: 'solstice', implemented: true, heldBy: ['tongzong'] },
+      {
+        id: 'runyue',
+        name: { hanzi: '閏月', pinyin: 'rùnyuè' },
+        implemented: false,
+        heldBy: ['jinjingbaojian'],
+      },
     ],
     default: 'solstice',
     // Inside 置閏, and the one parameter that passes that test: under 拆補 and
@@ -340,7 +382,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     board: 'qimen',
     values: [
       { id: 'season', implemented: true },
-      { id: 'star', implemented: false },
+      { id: 'star', implemented: false, heldBy: ['jinjingbaojian'] },
     ],
     default: 'season',
   },
@@ -360,8 +402,18 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     // moves a plate. See `docs/sources.md`.
     label: 'form.qimen.centreTravel',
     values: [
-      { id: 'stay', says: 'form.qimen.centreTravel.stay', implemented: true },
-      { id: 'travel', says: 'form.qimen.centreTravel.travel', implemented: true },
+      {
+        id: 'stay',
+        says: 'form.qimen.centreTravel.stay',
+        implemented: true,
+        heldBy: ['baojian'],
+      },
+      {
+        id: 'travel',
+        says: 'form.qimen.centreTravel.travel',
+        implemented: true,
+        heldBy: ['jinjingbaojian'],
+      },
     ],
     default: 'stay',
   },

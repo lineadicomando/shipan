@@ -127,6 +127,29 @@ is".
 | the stars 卷二 does not place | recorded | the same |
 | 王亭之's table at 戊, 庚 and 壬 | recorded | named, unread |
 
+**奇門** — argued in `docs/sources.md` § "Whose each value of a 奇門 board
+is". The clauses under "What each named one waits on" below are the readings
+as they were made; where one ends on a second witness being wanted, this table
+is what holds.
+
+| | State | What it has, and what it waits on |
+|---|---|---|
+| `centreLodging: dun` | declared and refused | stated whole by 《御定奇門寶鑑》 with its derivation and again by the 折衷, reported by both and held by neither; the two agree on what it is. Waits on nothing but being built |
+| `strengths: star` | declared and refused | held by 《奇門遁甲金鏡寶鑑》卷之四. Waits on reading whether its rule reaches the gates and the spirits or the nine stars alone |
+| `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
+| `system: rijia`, `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Waits on a family being built, which is nearer a board than a value |
+| `plate: fei` | declared and refused | no text flies the hour board's own 起例. Arrives with a family of `system` |
+| `earth: eighteen` | declared and refused | no text |
+| the stars and the 儀 flown, the gates turned | owed a declaration | the 折衷. A third value of `plate` |
+| a new earth plate at every decade | owed a declaration | the 折衷, for 豫章張氏. A parameter of its own |
+| the centre lodged through eight palaces, or four corners | owed a declaration | the 折衷, for 南華道人 and for 耕山陳氏. Two values of `centreLodging` |
+| the 值使 from the earth plate or the heaven plate | recorded | chosen by the matter asked |
+| the leap block at any of the eight 節 | recorded | asks for a judgement |
+| which stem a star carries off 坤 | recorded | one work quarrelling with itself |
+
+The defaults of `spirits`, `strengths` and `earth` are not yet attributed: no
+text is named for any of the three.
+
 ### What each named one waits on
 
 Most of the table waits on a source and nothing more particular. These clauses

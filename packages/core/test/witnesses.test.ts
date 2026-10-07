@@ -13,7 +13,7 @@ describe('the witnesses a value is held by', () => {
   it('names only witnesses the registry declares', () => {
     for (const parameter of PARAMETERS) {
       for (const value of parameter.values) {
-        for (const id of value.heldBy ?? []) {
+        for (const id of [...(value.heldBy ?? []), ...(value.reportedBy ?? [])]) {
           expect(
             Object.hasOwn(WITNESSES, id),
             `${parameter.board} ${parameter.id}: ${String(value.id)} is held by "${id}", which is not a witness`,
@@ -29,11 +29,23 @@ describe('the witnesses a value is held by', () => {
     expect(holdingOf({ heldBy: ['engine'] })).toEqual({ state: 'held', by: ['engine'] });
   });
 
+  // A reading stated only by texts that argue it down: who reports it is said,
+  // and a holder found later is read instead of them.
+  it('tells a reading reported from one that is held', () => {
+    expect(holdingOf({ reportedBy: ['zhezhong'] })).toEqual({ state: 'reported', by: ['zhezhong'] });
+    expect(holdingOf({ heldBy: ['tongzong'], reportedBy: ['zhezhong'] })).toEqual({
+      state: 'held',
+      by: ['tongzong'],
+    });
+  });
+
   // A registry entry no value names is a title waiting for an attribution
   // that was never written, and it would pass for one that was.
   it('carries no witness that holds nothing', () => {
     const named = new Set(
-      PARAMETERS.flatMap((parameter) => parameter.values.flatMap((value) => value.heldBy ?? [])),
+      PARAMETERS.flatMap((parameter) =>
+        parameter.values.flatMap((value) => [...(value.heldBy ?? []), ...(value.reportedBy ?? [])]),
+      ),
     );
     for (const id of Object.keys(WITNESSES)) {
       expect(named.has(id as keyof typeof WITNESSES), `no value is held by "${id}"`).toBe(true);

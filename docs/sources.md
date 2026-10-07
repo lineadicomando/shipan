@@ -1562,6 +1562,76 @@ already refuses: three of them now have a named opponent instead of silence, and
 the two it computes by default have, for the first time, somebody to be
 attributed to.
 
+### Whose each value of a 奇門 board is
+
+Written 2026-10-07, under § "The standard, stated once". It attributes what
+the sections above established and establishes nothing: no plate was opened
+for it. `packages/core/src/parameters.ts` carries the same attributions as
+data.
+
+**The hour board this engine lays by default is the 《奇門遁甲統宗》's.** That
+work turns the plate — 「即以天盤直符加於此宮」 — lodges the centre in 坤 twice
+over, and states the 置閏 this engine computes with its block at 芒種 or 大雪.
+The 折衷 says as much from outside, naming 顧陵岡池本理 for the turn and the
+lodging together. So `plate: zhuan`, `centreLodging: kun`, `system: shijia`,
+`method: zhirun` and `leap: solstice` are attributed to it, and the row of the
+heaven plate in `sources.tsv` now stands under the values that lay it and not
+under the naming of the spirits alone.
+
+| Value | Held by | What the attribution rests on |
+|---|---|---|
+| `method: chaibu` | 張志春《神奇之門》 | p. 74 defines 拆補 by the term and the 符頭 at once, and sets the other two methods aside as impractical |
+| `method: maoshan` | 劉文元《奇門啟悟》 (2008), 唐頤《圖解奇門遁甲大全》 (2009) | each states the rule complete with its two edge cases; the credit to the 茅山道士 is theirs and travels as theirs |
+| `spirits: fixed` | 《御定奇門寶鑑》 | the eight standing in both dun |
+| `spirits: baihu` | 《奇門遁甲全局》 | three yang plates with 白虎 fifth and 勾陳 sixth |
+| `centreTravel: stay` | 《御定奇門寶鑑》 | the 值符 and 值使 read at 坤 |
+| `centreTravel: travel` | 《奇門遁甲金鏡寶鑑》 | 「符使不必寄於二」 |
+| `leap: runyue` | 《奇門遁甲金鏡寶鑑》 | states the placement, works it twice by date, rejects the solstitial one. A work arguing its own reading is its own line |
+| `strengths: star` | 《奇門遁甲金鏡寶鑑》卷之四 | tabulates the five states outward from each of the nine stars |
+| `system: rijia`, `yuejia`, `nianjia` | 《遁甲演義》, 《奇門遁甲統宗》 | each states the three families; they part on the 年家's three 元, which is two readings and will be two values |
+
+**`centreLodging: dun` is reported and not held.** 《御定奇門寶鑑》 states it
+whole with its derivation — 「陽局中五寄於二，陰局中五合於八」 — and keeps 坤 on
+the majority of copies; the 折衷 prints it beside the other and argues both
+down. The two reports agree on what the reading is, which is enough to
+reconstruct it without contradiction, so the value is computable on them. The
+declaration names the two as reporting it. A text found holding 艮 takes their
+place.
+
+**Three defaults are not yet attributed.** `spirits: dun`, `strengths: season`
+and `earth: quarters` are computed by default with no text named for any of
+them in the sections above: the first was weighed against implementations, the
+second is called «the ordinary 五行 statement», the third has no entry. The
+transcription sold with the 折衷 locates a statement of the first under 來子授書
+and 玉斗秘文, and it is a lead until the plate is read. `plate: fei` on the
+hour board and `earth: eighteen` are unattributed as well, having no text.
+
+**Owed a declaration**, each on the 折衷, each waiting on its chapter being
+read on the plate where only the passages quoted in the section above have
+been:
+
+- **the stars and the 儀 flown and the gates turned**, on the hour board: a
+  third value of `plate`, argued from 《極深研幾賦》;
+- **a new earth plate at every decade**, 六戊還原, which the 折衷 puts on
+  豫章張氏: a parameter of its own, and the row of the earth plate reads
+  `recorded` until it has one;
+- **the centre lodged through all eight palaces**, three terms to each, and
+  **through the four corners**, six terms to each: two further values of
+  `centreLodging`, the first on 赤霆經's commentary and 南華道人, the second on
+  耕山陳氏.
+
+**Recorded, with no parameter.**
+
+- **The 值使 taken from the earth plate or from the heaven plate.** The
+  transcription of the 折衷 has it choose between the two by the matter asked,
+  and a choice keyed to the matter is not one this engine makes.
+- **The leap block at any of the eight 節**, which asks for a judgement
+  between a surplus and a shortfall.
+- **Which stem a star carries off 坤** when the centre is lodged there, on
+  which 《奇門探索錄》 quarrels with itself.
+- **白虎 fifth and 玄武 sixth in both dun**, which one runnable reference
+  prints and no text is named for.
+
 ---
 
 ## Tier 3 — the reading layer
@@ -6278,7 +6348,7 @@ argument: the witness carries it. The other reading is recorded here rather
 than lost, so that an edition printing the line whole overturns this in one
 commit.
 
-### Whose each value on this board is
+### Whose each value of a 紫微斗數 board is
 
 Written 2026-10-07, under § "The standard, stated once". It attributes what
 the sections above established and establishes nothing: no plate was opened
