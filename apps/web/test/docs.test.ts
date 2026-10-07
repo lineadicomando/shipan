@@ -9,6 +9,7 @@ import {
   DEFAULT_TAIYI_OPTIONS,
   DEFAULT_ZIWEI_OPTIONS,
   PARAMETERS,
+  WITNESSES,
   computeBazi,
   computeQimenChart,
   computeZiwei,
@@ -17,6 +18,7 @@ import {
   qizhengBoard,
   resolveMoment,
   taiyiBoard,
+  type Witness,
 } from '@shipan/core';
 import { LOCALES } from '@shipan/i18n';
 import { INSTRUMENTS } from '../src/lib/instruments';
@@ -390,17 +392,38 @@ describe('docs/sources.tsv', () => {
     );
 
     for (const row of register()) {
-      const school = row.school as string;
-      if (school === '—') continue;
+      const cell = row.school as string;
+      if (cell === '—') continue;
+      // A quantity can stand under several values at once — a heaven plate is
+      // turned, lodged and named by three parameters — so the cell is a list,
+      // and each pair in it is held to the declaration on its own.
+      for (const school of cell.split('; ')) {
+        expect(
+          declared.has(school),
+          `docs/sources.tsv attributes "${row.quantity}" to ${school}, which ` +
+            `packages/core/src/parameters.ts does not declare.`,
+        ).toBe(true);
+        expect(
+          declared.get(school),
+          `docs/sources.tsv puts ${school} on a ${row.board} row`,
+        ).toBe(row.board);
+      }
+    }
+  });
+
+  /**
+   * Who holds a value is declared in `packages/core/src/witnesses.ts`, and a
+   * holder nobody argues is a holder nobody can weigh: every work named there
+   * has to be a work `docs/sources.md` writes about.
+   */
+  it('argues every witness a value is held by', () => {
+    const argued = read('docs/sources.md');
+    for (const [id, witness] of Object.entries<Witness>(WITNESSES)) {
+      if (witness.name === undefined) continue;
       expect(
-        declared.has(school),
-        `docs/sources.tsv attributes "${row.quantity}" to ${school}, which ` +
-          `packages/core/src/parameters.ts does not declare.`,
+        argued.includes(witness.name.hanzi),
+        `the witness ${id} (${witness.name.hanzi}) is named nowhere in docs/sources.md`,
       ).toBe(true);
-      expect(
-        declared.get(school),
-        `docs/sources.tsv puts ${school} on a ${row.board} row`,
-      ).toBe(row.board);
     }
   });
 
