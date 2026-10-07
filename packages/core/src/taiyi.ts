@@ -88,12 +88,45 @@ export interface TaiyiOptions {
    * Only `lichun` is implemented. See `taiyiYearOf`, which is where it bites.
    */
   yearBoundary: 'lichun' | 'dongzhi' | 'chunjie';
+
+  /**
+   * Whose bodies the condition 格 is marked for.
+   *
+   * 《太乙金鏡式經》 names one party: 「客目大小將與太乙對宫為格」, the guest's
+   * eye and the guest's two generals. `zhuke` marks the host's two generals
+   * as well, which is the 《統宗》's reading as 盧央 reproduces it — his board
+   * for 124 has 「主大將居九宮，又與太乙相格」.
+   */
+  geHost: 'ke' | 'zhuke';
+
+  /**
+   * What makes a 格: the palace facing 太乙, or a 沖 of branches as well.
+   *
+   * `gong` is the 金鏡's, the palace across the board. `chong` is the 統宗's
+   * as 盧央's board for 940 shows it, 始擊 in 辰 against a 太乙 in 乾 because
+   * 「乾宮居戌亥」. Declared and refused: one board is not a rule, and which
+   * seats and which bodies it reaches is not stated.
+   */
+  geChong: 'gong' | 'chong';
+
+  /**
+   * What 文昌 standing in 太乙's own palace is called.
+   *
+   * One arrangement and three names, each with somebody behind it: 囚 in the
+   * 金鏡, 「文昌將并主客大小四將，俱與太乙同宫」; 關 for 樂產, 「文昌與太乙同
+   * 宮為關」, which the 統宗 carries as his; 掩 for the 統宗 itself, 「文昌加
+   * 太乙為掩」. The board does not move; the condition it is filed under does.
+   */
+  wenchangTaiyi: 'qiu' | 'guan' | 'yan';
 }
 
 export const DEFAULT_TAIYI_OPTIONS: TaiyiOptions = Object.freeze({
   epoch: 'jinjing',
   ji: 'nianji',
   yearBoundary: 'lichun',
+  geHost: 'ke',
+  geChong: 'gong',
+  wenchangTaiyi: 'qiu',
 });
 
 /**
@@ -538,7 +571,16 @@ export function taiyiBoard(request: { year: number }, options: TaiyiOptions): Ta
   // arrives already decided and this function never cuts one: a board carries
   // the options that produced it, and one that recorded a boundary nothing
   // here can compute would be a board saying it was cut somewhere it was not.
-  requireImplemented(TAIYI_PARAMETERS, options, 'epoch', 'ji', 'yearBoundary');
+  requireImplemented(
+    TAIYI_PARAMETERS,
+    options,
+    'epoch',
+    'ji',
+    'yearBoundary',
+    'geHost',
+    'geChong',
+    'wenchangTaiyi',
+  );
 
   const { year } = request;
   const elapsed = year - ANCHOR_YEAR;
@@ -558,7 +600,7 @@ export function taiyiBoard(request: { year: number }, options: TaiyiOptions): Ta
   const liuji = { number: Math.floor((intoCycle - 1) / 60) + 1, year: inclusive(intoCycle, 60) };
   const ju = inclusive(intoCycle, 72);
 
-  const board = taiyiJu(ju, 'yang');
+  const board = taiyiJu(ju, 'yang', options);
 
   // 合神 — 「假令太嵗在子，合神在丑」, which is the 六合 of the year: 子丑,
   // 寅亥, 卯戌, 辰酉, 巳申, 午未, each pair summing to thirteen on the wheel.
@@ -592,6 +634,9 @@ export function taiyiBoard(request: { year: number }, options: TaiyiOptions): Ta
 export function taiyiJu(
   ju: number,
   dun: 'yang' | 'yin',
+  // The conditions are named as the options say, and the 立成 this is checked
+  // against is the 金鏡's, so its readings are what a caller gets by default.
+  options: TaiyiOptions = DEFAULT_TAIYI_OPTIONS,
 ): Pick<
   TaiyiBoard,
   'taiyi' | 'gods' | 'yang' | 'wenchang' | 'shiji' | 'jishen' | 'host' | 'guest' | 'patterns'
@@ -621,7 +666,7 @@ export function taiyiJu(
     jishen,
     host,
     guest,
-    patterns: findTaiyiPatterns({ palace, wenchang, shiji, host, guest }),
+    patterns: findTaiyiPatterns({ palace, wenchang, shiji, host, guest }, options),
   };
 }
 
@@ -919,7 +964,7 @@ function findTaiyiPatterns(input: {
   shiji: TaiyiGod;
   host: TaiyiSide;
   guest: TaiyiSide;
-}): TaiyiPattern[] {
+}, options: TaiyiOptions): TaiyiPattern[] {
   const { palace, wenchang, shiji, host, guest } = input;
   const found: TaiyiPattern[] = [];
   const seat = seatOfPalace(palace);
@@ -975,7 +1020,9 @@ function findTaiyiPatterns(input: {
   // the collective name for these standings, and the stricter reading of 俱
   // would suppress the condition at almost every year there has ever been. The
   // judgement is recorded in `docs/sources.md`, since it is one.
-  if (lower === seat) found.push(mark('qiu', 'wenchang', { palace }));
+  // 文昌 there is 囚 in this text, 關 in 樂產's words and 掩 in the 統宗's:
+  // `wenchangTaiyi` says which name the board carries.
+  if (lower === seat) found.push(mark(options.wenchangTaiyi, 'wenchang', { palace }));
   for (const { subject, palace: at } of generals) {
     if (at === palace) found.push(mark('qiu', subject, { palace }));
   }
@@ -1000,7 +1047,9 @@ function findTaiyiPatterns(input: {
   if (upper === facingSeat) {
     found.push(mark('ge', 'shiji', { palace: facing }));
   }
-  for (const { subject, palace: at } of guestGenerals) {
+  // `geHost: zhuke` is the 統宗's reading and marks the host's two as well.
+  const opposed = options.geHost === 'zhuke' ? [...hostGenerals, ...guestGenerals] : guestGenerals;
+  for (const { subject, palace: at } of opposed) {
     if (at === facing) found.push(mark('ge', subject, { palace: facing }));
   }
 

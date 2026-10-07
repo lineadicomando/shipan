@@ -637,6 +637,73 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
 };
 
 export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
+  // Three places where 《太乙金鏡式經》 and the 《統宗》 part on a condition.
+  // They are two works and not two copies, so each owes a parameter; the
+  // 統宗's readings reach the register through 盧央's study. See
+  // `docs/sources.md` § "Whose each value of a 太乙 board is".
+  geHost: {
+    board: 'taiyi',
+    label: 'form.taiyi.geHost',
+    values: [
+      {
+        id: 'ke',
+        name: { hanzi: '客', pinyin: 'kè' },
+        says: 'form.taiyi.geHost.ke',
+        note: 'form.taiyi.geHost.note',
+        implemented: true,
+        heldBy: ['jinjing'],
+      },
+      {
+        id: 'zhuke',
+        name: { hanzi: '主客', pinyin: 'zhǔkè' },
+        says: 'form.taiyi.geHost.zhuke',
+        note: 'form.taiyi.geHost.note',
+        implemented: true,
+        heldBy: ['taiyitongzong'],
+      },
+    ],
+    default: 'ke',
+  },
+  geChong: {
+    board: 'taiyi',
+    values: [
+      { id: 'gong', name: { hanzi: '對宮', pinyin: 'duìgōng' }, implemented: true, heldBy: ['jinjing'] },
+      { id: 'chong', name: { hanzi: '沖', pinyin: 'chōng' }, implemented: false, heldBy: ['taiyitongzong'] },
+    ],
+    default: 'gong',
+  },
+  wenchangTaiyi: {
+    board: 'taiyi',
+    label: 'form.taiyi.wenchangTaiyi',
+    values: [
+      {
+        id: 'qiu',
+        name: { hanzi: '囚', pinyin: 'qiú' },
+        says: 'form.taiyi.wenchangTaiyi.qiu',
+        note: 'form.taiyi.wenchangTaiyi.note',
+        implemented: true,
+        heldBy: ['jinjing'],
+      },
+      // 樂產's word, which the 統宗 carries as his.
+      {
+        id: 'guan',
+        name: { hanzi: '關', pinyin: 'guān' },
+        says: 'form.taiyi.wenchangTaiyi.guan',
+        note: 'form.taiyi.wenchangTaiyi.note',
+        implemented: true,
+        reportedBy: ['taiyitongzong'],
+      },
+      {
+        id: 'yan',
+        name: { hanzi: '掩', pinyin: 'yǎn' },
+        says: 'form.taiyi.wenchangTaiyi.yan',
+        note: 'form.taiyi.wenchangTaiyi.note',
+        implemented: true,
+        heldBy: ['taiyitongzong'],
+      },
+    ],
+    default: 'qiu',
+  },
   // The counts differ by millions and mostly do not differ at all: 《統宗》's
   // is congruent with 《金鏡》's modulo both 360 and 24, so it lays the identical
   // board and is a second witness rather than a second value. 《太乙淘金歌》's is
@@ -998,19 +1065,23 @@ export function requireImplemented<O extends object, K extends keyof O & string>
 export function divergencesInForce(
   board: string,
   options: object,
-  layers: object = options,
+  // `null` for a board that stands on no instant — 太乙, whose subject is a
+  // year: no hour was read into pillars for it, and naming where the day
+  // begins would be answering about a calendar that board never opened.
+  layers: object | null = options,
 ): readonly { parameter: ParameterEntry; value: ParameterValue<string | boolean> }[] {
   // One cast, here, for the reason `requireImplemented` has one: an options
   // type is keyed to its own board so that a declaration cannot drift, and
   // reading it back by the parameter's name is the one place that precision
   // cannot be carried through.
   const bag = options as Record<string, unknown>;
-  const under = layers as Record<string, unknown>;
+  const under = (layers ?? {}) as Record<string, unknown>;
 
   const inForce = [];
   for (const parameter of PARAMETERS) {
     if (parameter.label === undefined) continue;
     if (parameter.board !== board && parameter.board !== 'pillars') continue;
+    if (parameter.board === 'pillars' && layers === null) continue;
     if (implementedValues(parameter).length < 2) continue;
     if (parameter.inside && bag[parameter.inside.id] !== parameter.inside.value) continue;
 

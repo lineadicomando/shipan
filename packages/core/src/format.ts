@@ -356,7 +356,7 @@ export function formatMoment(
 export function saidDivergences(
   board: string,
   options: object,
-  layers: object,
+  layers: object | null,
   t: Translator,
 ): readonly { label: string; said: string }[] {
   return divergencesInForce(board, options, layers).map(({ parameter, value }) => ({
@@ -375,7 +375,7 @@ export function saidDivergences(
 export function divergenceLines(
   board: string,
   options: object,
-  layers: object,
+  layers: object | null,
   t: Translator,
 ): string[] {
   // An em dash and not a colon: several of the glosses carry a colon of their
@@ -432,7 +432,7 @@ export function saidCombination(board: string, options: object, t: Translator): 
 export function formatDivergences(
   board: string,
   options: object,
-  layers: object,
+  layers: object | null,
   t: Translator,
 ): string {
   const inForce = divergencesInForce(board, options, layers);
@@ -1075,6 +1075,11 @@ export function formatTaiyi(board: TaiyiBoard, t: Translator): string {
   }
 
   lines.push('', `  ${t('cli.value.taiyiPalaces')}`, `  ${t('cli.value.taiyiEvidence')}`);
+
+  // Which readings named the conditions above, and who lays them together.
+  // No layers: this board stands on a year and opened no calendar of hours.
+  const schools = formatDivergences('taiyi', board.options, null, t);
+  if (schools) lines.push('', schools);
 
   return lines.join('\n');
 }

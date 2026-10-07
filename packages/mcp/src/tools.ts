@@ -572,13 +572,28 @@ export function registerComputeTaiyi(server: McpServer): void {
             'The year the board is laid on, counted from 立春 as the pillars are. ' +
               'Astronomical numbering, so 1 BCE is 0.',
           ),
+        ge_host: z
+          .enum(['ke', 'zhuke'])
+          .optional()
+          .describe(
+            'Whose bodies the condition 格 is marked for. Default ke: the guest\'s eye and the guest\'s two generals alone, as the Taiyi Jinjing Shijing names them. zhuke marks the host\'s two generals as well, as the Taiyi Tongzong does. Two works, not two copies of one, and each is followed as its own.',
+          ),
+        wenchang_taiyi: z
+          .enum(['qiu', 'guan', 'yan'])
+          .optional()
+          .describe(
+            'What 文昌 standing in 太乙\'s own palace is called. Default qiu, the Taiyi Jinjing Shijing\'s name. guan is a name the Taiyi Tongzong quotes from an earlier master; yan is the Tongzong\'s own. The board does not move; the condition it is filed under does.',
+          ),
         lang: langSchema,
       },
     },
     async (args) => {
       const t = translatorFor(args.lang);
       try {
-        const board = taiyiBoard({ year: args.year }, DEFAULT_TAIYI_OPTIONS);
+        const options = { ...DEFAULT_TAIYI_OPTIONS };
+        if (args.ge_host) options.geHost = args.ge_host;
+        if (args.wenchang_taiyi) options.wenchangTaiyi = args.wenchang_taiyi;
+        const board = taiyiBoard({ year: args.year }, options);
         return ok(formatTaiyi(board, t));
       } catch (error) {
         return fail(describeError(error, t));

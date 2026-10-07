@@ -298,6 +298,9 @@ almanac takes none of these at all. Both are below.
 | 七政四餘 | `gong` | where the twelve 宮 are cut: `zhongqi` (太陽過宮 at the 中氣 zhōngqì), `ci` (the 次 cì as stretches of 宿度) | `zhongqi` |
 | 太乙 | `epoch` | which 上元積年 the count runs from: `jinjing` (《太乙金鏡式經》 tàiyǐjīnjìngshìjīng), `taojin` (《太乙淘金歌》 tàiyǐtáojīngē, out by a whole 元 and refused) | `jinjing` |
 | 太乙 | `ji` | which register the board is laid in: `nianji` (歲計 suìjì, which is what both witnesses call it), `yueji` (月計 yuèjì), `riji` (日計 rìjì), `shiji` (時計 shíjì) | `nianji` |
+| 太乙 | `geHost` | whose bodies the condition 格 is marked for: `ke` (客 kè — the guest's eye and generals alone, as 《太乙金鏡式經》 has it), `zhuke` (主客 zhǔkè — the host's generals as well, as the 《統宗》 has it) | `ke` |
+| 太乙 | `geChong` | what makes a 格: `gong` (對宮 duìgōng — the palace facing 太乙), `chong` (沖 chōng — a clash of branches as well) | `gong` |
+| 太乙 | `wenchangTaiyi` | what 文昌 in 太乙's own palace is called: `qiu` (囚 qiú, the 金鏡's), `guan` (關 guān, 樂產's as the 統宗 carries it), `yan` (掩 yǎn, the 統宗's own) | `qiu` |
 | 太乙 | `yearBoundary` | where the counted year begins: `lichun` (立春 lìchūn), `dongzhi` (冬至 dōngzhì), `chunjie` (正月初一 zhēngyuèchūyī) | `lichun` |
 | 紫微斗數 | `leapMonth` | what a birth in an intercalary month counts as: `following` (the month after it, which is the book's), `current`, `split` | `following` |
 | 紫微斗數 | `sihua` | which table of the 四化: `quanshu` (《紫微斗數全書》 zǐwēidǒushùquánshū's own), `zuofu` (左輔 zuǒfǔ — that table with 壬's 科 moved, as two modern schools read it) | `quanshu` |

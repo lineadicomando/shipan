@@ -211,10 +211,13 @@ describe('what a laid board stands on', () => {
    * page says nothing because it hands over no layers.
    */
   it('names no layer for a board laid on no instant', () => {
-    expect(inForce('taiyi', {})).toEqual([]);
+    // Its own two divergences, and no layer under them.
+    expect(inForce('taiyi', {}).map(({ row }) => row.id)).toEqual(['geHost', 'wenchangTaiyi']);
     expect(inForce('taiyi', {}, {}).map(({ row }) => row.id)).toEqual([
       'yearBoundary',
       'dayBoundary',
+      'geHost',
+      'wenchangTaiyi',
     ]);
   });
 

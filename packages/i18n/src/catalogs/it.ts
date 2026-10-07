@@ -1257,6 +1257,20 @@ export const it: Record<MessageKey, string> = {
   'form.ziwei.sihua.zuofu': 'la lettura che insegnano due scuole moderne, che sposta quel 科 kē a 左輔 zuǒfǔ',
   'form.ziwei.sihua.note':
     'Una cella su dieci, ed è tutto ciò che lo scaffale attesta: il manuale 中州派 zhōngzhōupài la stampa, e un manuale 北派 běipài la traccia due volte in esempi svolti — contro una lettura che entrambe le edizioni del 《全書》 quánshū e la recensione Ming portano. Tutto il resto della tavola è quello del libro sotto l’uno o l’altro valore.',
+  'form.taiyi.geHost': 'La condizione 格 gé, un corpo nel palazzo di fronte a 太乙 tàiyǐ, è segnata',
+  'form.taiyi.geHost.ke':
+    'soltanto per l’occhio, il gran generale e l’aiutante di chi arriva, come nel 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng',
+  'form.taiyi.geHost.zhuke':
+    'anche per il gran generale e l’aiutante di chi riceve, come nel 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn',
+  'form.taiyi.geHost.note':
+    'Il primo testo nomina una sola parte dove enuncia questa condizione. Uno studio moderno del secondo ne riproduce una tavola, nella quale il gran generale di chi riceve sta di fronte a 太乙 tàiyǐ ed è segnato allo stesso modo. I due testi sono opere diverse, e qui ciascuno è seguito come proprio.',
+  'form.taiyi.wenchangTaiyi': 'Quando 文昌 wénchāng sta nel palazzo di 太乙 tàiyǐ, la condizione si chiama',
+  'form.taiyi.wenchangTaiyi.qiu': '囚 qiú, come nel 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng',
+  'form.taiyi.wenchangTaiyi.guan':
+    '關 guān, nome che il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn cita da un maestro precedente',
+  'form.taiyi.wenchangTaiyi.yan': '掩 yǎn, come dice in proprio il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn',
+  'form.taiyi.wenchangTaiyi.note':
+    'Una sola disposizione porta tre nomi nei testi. La tavola è la stessa sotto ciascuno di essi. Cambia la condizione sotto cui la disposizione è registrata, e con essa le parole che il testo attribuisce a quella condizione.',
   'form.ziwei.huoling': '火星 huǒxīng e 鈴星 língxīng sono collocate',
   'form.ziwei.huoling.fixed':
     'ciascuna sul seggio che le dà il triplice dell’anno, che è quanto enuncia il 《紫微斗數全書》 zǐwēidǒushùquánshū',
@@ -1603,6 +1617,9 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.gong': 'Dove si tagliano i dodici palazzi.',
   'notes.parameter.epoch': 'Da quale 上元積年 shàngyuánjīnián corre il conto.',
   'notes.parameter.ji': 'In quale registro si posa la tavola.',
+  'notes.parameter.geHost': 'Per i corpi di chi si segna la condizione 格 gé.',
+  'notes.parameter.geChong': 'Che cosa fa un 格 gé: il palazzo di fronte, oppure anche uno scontro di rami.',
+  'notes.parameter.wenchangTaiyi': 'Come si chiama 文昌 wénchāng nel palazzo di 太乙 tàiyǐ.',
   'notes.parameter.leapMonth': 'Che cosa conta una nascita in un mese intercalare.',
   'notes.parameter.sihua': 'Quale tavola delle quattro trasformazioni.',
   'notes.parameter.huoling': 'Come si collocano 火星 huǒxīng e 鈴星 língxīng.',

@@ -978,3 +978,53 @@ describe('the named conditions', () => {
     }
   });
 });
+
+/**
+ * Where 《太乙金鏡式經》 and the 《統宗》 part on a condition.
+ *
+ * Two works and not two copies, so each reading is a value. The 統宗's reach
+ * this register through 盧央's 《中國古代星占學》, pp. 480–484, and what is
+ * asserted is what he prints of it. `docs/sources.md` § "Whose each value of a
+ * 太乙 board is".
+ */
+describe('the conditions two works name differently', () => {
+  const said = (year: number, moved: Partial<TaiyiOptions> = {}) =>
+    taiyiBoard({ year }, { ...DEFAULT_TAIYI_OPTIONS, ...moved }).patterns.map(
+      (pattern) => `${pattern.id}:${pattern.subject}`,
+    );
+
+  it('marks 格 on the host’s great general in 盧央’s board for 124, under the 統宗', () => {
+    // 「主大將居九宮，又與太乙相格」: 太乙 in the first palace, the host's great
+    // general in the ninth, facing it.
+    const board = taiyiBoard({ year: 124 }, DEFAULT_TAIYI_OPTIONS);
+    expect(board.taiyi.palace.number).toBe(1);
+    expect(board.host.general.number).toBe(9);
+
+    expect(said(124)).not.toContain('ge:hostGeneral');
+    expect(said(124, { geHost: 'zhuke' })).toContain('ge:hostGeneral');
+    // And nothing else on the board moves for it.
+    expect(said(124, { geHost: 'zhuke' }).filter((mark) => mark !== 'ge:hostGeneral')).toEqual(
+      said(124),
+    );
+  });
+
+  it('files 文昌 in 太乙’s own palace under the name the reading gives it', () => {
+    // 囚 in the 金鏡, 「文昌與太乙同宮為關」 for 樂產, 「文昌加太乙為掩」 for the
+    // 統宗. 1908 is a year the arrangement stands in.
+    expect(said(1908)).toContain('qiu:wenchang');
+    expect(said(1908, { wenchangTaiyi: 'guan' })).toContain('guan:wenchang');
+    expect(said(1908, { wenchangTaiyi: 'yan' })).toContain('yan:wenchang');
+    for (const wenchangTaiyi of ['guan', 'yan'] as const) {
+      expect(said(1908, { wenchangTaiyi })).not.toContain('qiu:wenchang');
+      // One mark renamed and the same number of marks.
+      expect(said(1908, { wenchangTaiyi })).toHaveLength(said(1908).length);
+    }
+  });
+
+  it('refuses a 格 by a clash of branches, which one board states and no rule does', () => {
+    expect(() => taiyiBoard({ year: 940 }, { ...DEFAULT_TAIYI_OPTIONS, geChong: 'chong' })).toThrow(
+      expect.objectContaining({ code: 'OPTION_NOT_IMPLEMENTED' }),
+    );
+  });
+});
+

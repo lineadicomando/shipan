@@ -5733,6 +5733,15 @@ cast by the 統宗. Its readings reach this register through 盧央's
 nowhere says where its counted year begins; 立春 is the default because the
 pillars beside the board turn there, which is a convention and is said as one.
 
+**Declared since 2026-10-07, two of the three computed.** `geHost: zhuke`
+marks 格 on the host's generals and is held to 盧央's board for 124, which the
+engine lays again: 太乙 in the first palace, the host's great general in the
+ninth. `wenchangTaiyi` names the arrangement 囚, 關 or 掩; the board does not
+move under it, and the mark carries the name the reading gives. `geChong:
+chong` is declared and refused: one board shows a 格 by a 沖 of branches and
+no sentence says which seats and which bodies the rule reaches. What follows
+is the list as it stood when the three were owed.
+
 **Owed a declaration**, each on the 《統宗》 as 盧央 reports it:
 
 - **格 reaching the host's generals**, where the 金鏡 reads it of the guest's

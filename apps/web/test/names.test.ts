@@ -99,6 +99,9 @@ const READINGS: Readonly<Record<string, string>> = {
   // The run of decades and what it is counted from, said where a value of
   // `daxian` is offered. A board prints the decades; no seat is named either.
   大限: 'dàxiàn',
+  // The condition a value of `geHost` is about, said where the choice is
+  // offered. The engine names it as a pattern and seats nothing by it.
+  格: 'gé',
   五行局: 'wǔxíngjú',
   // The two lineages that move 壬's 科 to 左輔, named where a value of `sihua`
   // is argued. Neither is a board this engine seats, so neither can be dug

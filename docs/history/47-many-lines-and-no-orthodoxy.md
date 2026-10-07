@@ -190,6 +190,14 @@ refused. Threading the host of the centre through the plates replaced a
 constant that had been 坤 since the first chart; the canonical board did not
 move, and gained one option.
 
+太乙 followed. Three parameters where the 金鏡 and the 統宗 part on a
+condition: whose bodies 格 is marked for, which is computed and held to 盧央's
+board for 124; what 文昌 in 太乙's palace is called, three names and each
+computed; and 格 by a clash of branches, declared and refused on one board and
+no rule. A 太乙 transcript had never printed the block of schools, having had
+none to name, and prints it now without the layers a board laid on a year
+never opened.
+
 ## What was not established
 
 The survey of the five arts other than 奇門 was read off the register and

@@ -1365,6 +1365,20 @@ export const en = {
   'form.ziwei.sihua.zuofu': 'the reading two modern schools teach, which moves that 科 kē to 左輔 zuǒfǔ',
   'form.ziwei.sihua.note':
     'One cell of ten, and the whole of what the shelf attests: the 中州派 zhōngzhōupài manual prints it, and a 北派 běipài manual draws it twice in worked examples — against a reading both editions of the 《全書》 quánshū and the Ming recension carry. Everything else on the table is the book’s under either value.',
+  'form.taiyi.geHost': 'The condition 格 gé, a body in the palace facing 太乙 tàiyǐ, is marked',
+  'form.taiyi.geHost.ke':
+    'for the guest’s eye, great general and adjutant alone, as 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng has it',
+  'form.taiyi.geHost.zhuke':
+    'for the host’s great general and adjutant as well, as 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn has it',
+  'form.taiyi.geHost.note':
+    'The first text names one party where it states this condition. A modern study of the second reproduces one of its boards, in which the host’s great general faces 太乙 tàiyǐ and is marked the same way. The two texts are different works, and each is followed here as its own.',
+  'form.taiyi.wenchangTaiyi': 'When 文昌 wénchāng stands in the palace of 太乙 tàiyǐ, the condition is called',
+  'form.taiyi.wenchangTaiyi.qiu': '囚 qiú, as 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng has it',
+  'form.taiyi.wenchangTaiyi.guan':
+    '關 guān, a name 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn quotes from an earlier master',
+  'form.taiyi.wenchangTaiyi.yan': '掩 yǎn, as 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn has it in its own voice',
+  'form.taiyi.wenchangTaiyi.note':
+    'One arrangement carries three names in the texts. The board is the same under each of them. What changes is the condition the arrangement is filed under, and with it the words the naming text attaches to that condition.',
   'form.ziwei.huoling': '火星 huǒxīng and 鈴星 língxīng are placed',
   'form.ziwei.huoling.fixed':
     'each on its seat from the year’s triplicity, which is what 《紫微斗數全書》 zǐwēidǒushùquánshū states',
@@ -1830,6 +1844,9 @@ export const en = {
   'notes.parameter.gong': 'Where the twelve palaces are cut.',
   'notes.parameter.epoch': 'Which 上元積年 shàngyuánjīnián the count runs from.',
   'notes.parameter.ji': 'Which register the board is laid in.',
+  'notes.parameter.geHost': 'Whose bodies the condition 格 gé is marked for.',
+  'notes.parameter.geChong': 'What makes a 格 gé: the facing palace, or a clash of branches as well.',
+  'notes.parameter.wenchangTaiyi': 'What 文昌 wénchāng in the palace of 太乙 tàiyǐ is called.',
   'notes.parameter.leapMonth': 'What a birth in an intercalary month counts as.',
   'notes.parameter.sihua': 'Which table of the four transformations.',
   'notes.parameter.huoling': 'How 火星 huǒxīng and 鈴星 língxīng are placed.',

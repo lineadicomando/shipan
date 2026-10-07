@@ -589,7 +589,10 @@
     "options": {
       "epoch": "jinjing",
       "ji": "nianji",
-      "yearBoundary": "lichun"
+      "yearBoundary": "lichun",
+      "geHost": "ke",
+      "geChong": "gong",
+      "wenchangTaiyi": "qiu"
     }
   },
   "940, 杜塞": {
@@ -1153,7 +1156,10 @@
     "options": {
       "epoch": "jinjing",
       "ji": "nianji",
-      "yearBoundary": "lichun"
+      "yearBoundary": "lichun",
+      "geHost": "ke",
+      "geChong": "gong",
+      "wenchangTaiyi": "qiu"
     }
   }
 }

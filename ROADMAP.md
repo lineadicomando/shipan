@@ -75,7 +75,7 @@ second copy of one text buys".
 | 奇門 | `plate: fei`, `plate: xingfei`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `minggong: ascendant`, `gong: ci` |
-| 太乙 | `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
+| 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
 | 紫微斗數 | `leapMonth: current`, `leapMonth: split` |
 
 `apps/web/test/docs.test.ts` holds this table to the engine both ways: a value
@@ -171,10 +171,11 @@ is".
 | `epoch: taojin` | declared and refused | held by 《太乙淘金歌》, which reaches the register through 盧央 and is not on the shelf. Waits on the text, and travels with the evidence 盧央 sets against it |
 | `ji: yueji`, `ji: riji`, `ji: shiji` | declared and refused | the 金鏡 states all three and its constants fail its own check; the 統宗 carries another system's. Waits on the 統宗's being read, as that work's |
 | `yearBoundary: dongzhi`, `yearBoundary: chunjie` | declared and refused | no holder, and the default has none either |
-| 格 reaching the host's generals | owed a declaration | the 統宗, through 盧央 |
-| 格 by a 沖 of branches | owed a declaration | the same |
-| 文昌 in 太乙's own palace: 囚, 關 or 掩 | owed a declaration | three names, each held: 囚 by the 金鏡, 關 by 樂產 as the 統宗 carries him, 掩 by the 統宗 in its own voice. Read on 盧央's pp. 482–483. A parameter of three values |
+| `geChong: chong` | declared and refused | a 格 made by a 沖 of branches: the 統宗, on one board 盧央 reproduces, 始擊 in 辰 against a 太乙 in 乾. Waits on the rule being stated — which seats and which bodies it reaches — and one board is not that |
 | 陰陽和不和 in two accounts | recorded | one work carrying both |
+
+Whose bodies 格 is marked for, and what 文昌 in 太乙's own palace is called,
+left this table on 2026-10-07 and are computed.
 
 **七政四餘** — argued in `docs/sources.md` § "Whose each value of a 七政四餘
 board is". The default frame is the engine's own construction, and no frame a
