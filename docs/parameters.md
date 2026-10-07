@@ -215,7 +215,7 @@ dunjia's.**
 | `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat) | `dun` |
 | `leap` | where 置閏 repeats its block — inside 置閏: `solstice` (芒種 or 大雪), `runyue` (閏月 rùnyuè, the term the year's leap month falls under) | `solstice` |
 | `strengths` | what 旺相休囚死 are read from: `season`, `star` | `season` |
-| `earth` | where earth's season begins: `quarters` (the four closing months entire), `eighteen` (their last eighteen days) | `quarters` |
+| `earth` | where earth's season begins: `quarters` (the four closing months entire), `eighteen` (their last eighteen days, as 《大六壬精解》 states of the phases) | `quarters` |
 | `centreTravel` | where the 值符 zhífú and the 值使 zhíshǐ are read when the count puts them on the centre: `stay` (lodged out to 坤, as 《御定奇門寶鑑》 has it), `travel` (in the fifth palace, as 《奇門遁甲金鏡寶鑑》 has it) | `stay` |
 
 `method` is the most divisive parameter in the engine and it is not optional.
@@ -245,6 +245,14 @@ they are two readings and two values. `earthPlate` is the 折衷's own, and with
 the lodging by the eight 節 it belongs to a board that work lays whole — stars
 flown, gates turned, `plate: xingfei` — of which this engine computes the
 parts and not yet the flight.
+
+**年命 does not follow `earthPlate`, and that is a limit stated rather than a
+choice made.** A birth in a 甲 year is looked up under the 儀 its decade pins —
+甲子戊, 甲戌己 — which is 《遁甲演義》's rule and the only one this engine has
+for it. On a chart laid with `earthPlate: xun` the hours conceal every 甲 under
+戊, and the 折衷 says nothing of how a birth is to be placed on such a plate.
+Until a text does, the 本命 on that chart is read by one work's rule on
+another work's plate.
 
 **`system` is four values because four are transmitted, not because the set is
 closed.** A modern lineage on the shelf adds 分家 fēnjiā, a board of the minute;
@@ -426,6 +434,12 @@ board's name everywhere**: `ziwei.yearBoundary` in an address,
 `--ziwei-year-boundary` at a command, `ziwei_year_boundary` at a tool. One row
 answers to this today and 太乙's is the second, with one implemented value and
 the same name.
+
+**On the command line the flag is derived from the declaration** — `flagOf` in
+`packages/core/src/cli.ts` — by this same rule, so no divergence is named there
+by hand: `--centre-lodging`, `--guiren`, `--year-boundary` for the layer and
+`--ziwei-year-boundary` for the board. One name is kept: 年命's `count` is
+asked for as `--years`, after what it counts.
 
 `apps/web/src/lib/parameters.ts` is the one place the naming is
 written, `wire` and `named` are how it is asked for, and

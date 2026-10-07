@@ -134,6 +134,22 @@ export function jieAt(julianDayUT: number, context: EphemerisContext): SolarTerm
 }
 
 /**
+ * The `jie` that closes the month an instant stands in, and when it strikes.
+ *
+ * The twin of `jieAt`, looking forward: the 節 after the one in force, which
+ * is where the month ends and, in a month that closes a season, where the
+ * season does.
+ */
+export function jieAfter(julianDayUT: number, context: EphemerisContext): SolarTerm {
+  const opened = jieAt(julianDayUT, context).term;
+  const definition = definitionAt(normalize360(opened.longitude + 30));
+  return {
+    term: definition,
+    julianDayUT: sunCrossing(definition.longitude, julianDayUT, context),
+  };
+}
+
+/**
  * The most terms that may be asked for at once.
  *
  * Twenty-four to a year, so a little over sixteen years. The bound is here

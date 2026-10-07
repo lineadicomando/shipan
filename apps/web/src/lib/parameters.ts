@@ -194,8 +194,11 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'earth',
     board: 'qimen',
     values: ['quarters', 'eighteen'],
-    implemented: ['quarters'],
+    implemented: ['quarters', 'eighteen'],
     fallback: 'quarters',
+    label: 'form.qimen.earth',
+    says: { quarters: 'form.qimen.earth.quarters', eighteen: 'form.qimen.earth.eighteen' },
+    notes: { quarters: 'form.qimen.earth.note', eighteen: 'form.qimen.earth.note' },
   },
   {
     id: 'centreTravel',

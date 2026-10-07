@@ -249,6 +249,12 @@ export const qimenSchema = {
     .describe(
       'Which palace the central palace is read in, and whose gate it takes. Default kun: always the palace of kun, as the Qimen Dunjia Tongzong has it. dun: kun in a yang chart and gen in a yin one, which the Yuding Qimen Baojian reports of a variant copy. dunni: the other way round, gen under yang and kun under yin, which the Qimen Dunjia Zhezhong reports an older text as saying. bajie: the palace of the trigram governing the season, through all eight in a year, which the Zhezhong holds. siyu: one of the four corners, a corner a season, which the Zhezhong reports of another teacher. Three of the five are known only from a text that sets them out and argues against them, and the answer says which were laid.',
     ),
+  earth: z
+    .enum(['quarters', 'eighteen'])
+    .optional()
+    .describe(
+      'Where earth\'s season begins, which every star and gate on the board is weighed against. Default quarters: the whole of each month that closes a season. eighteen: only the eighteen days before each season opens, the rest of that month staying with the season it closes, as the Da Liuren Jingjie states of the five phases. The two part for about twelve days in each of four months.',
+    ),
   earth_plate: z
     .enum(['yuan', 'xun'])
     .optional()
@@ -282,6 +288,7 @@ interface RawInput {
   method?: 'chaibu' | 'zhirun' | 'maoshan' | undefined;
   spirits?: 'dun' | 'fixed' | 'baihu' | undefined;
   centre_lodging?: 'kun' | 'dun' | 'dunni' | 'bajie' | 'siyu' | undefined;
+  earth?: 'quarters' | 'eighteen' | undefined;
   earth_plate?: 'yuan' | 'xun' | undefined;
   centre_travel?: 'stay' | 'travel' | undefined;
   shensha?: 'xieji' | undefined;
@@ -324,6 +331,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.method) options.method = raw.method;
   if (raw.spirits) options.spirits = raw.spirits;
   if (raw.centre_lodging) options.centreLodging = raw.centre_lodging;
+  if (raw.earth) options.earth = raw.earth;
   if (raw.earth_plate) options.earthPlate = raw.earth_plate;
   if (raw.centre_travel) options.centreTravel = raw.centre_travel;
   if (raw.shensha) options.shensha = raw.shensha;

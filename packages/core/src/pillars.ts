@@ -11,7 +11,7 @@ import {
   type Ganzhi,
 } from './ganzhi.js';
 import { lunarDate, localDayNumber, type LunarDate } from './lunar.js';
-import { jieAt, solarTermAt, type SolarTerm } from './solar-terms.js';
+import { jieAfter, jieAt, solarTermAt, type SolarTerm } from './solar-terms.js';
 import { fromJulianDay, resolveTime, type LocalMoment } from './time.js';
 import { trueSolarTime, type TrueSolarTime } from './true-solar.js';
 import type { ChartOptions, Place } from './types.js';
@@ -72,6 +72,14 @@ export interface Moment {
    * zhirun chart reports itself.
    */
   readonly zhirun: ZhirunAssignment;
+  /**
+   * The jie that closes the month, which `jie` opened.
+   *
+   * Deferred and not serialised, like `zhirun`: one reading of one divergence
+   * asks for it — where earth's season begins, when it is counted back from
+   * the instant a season ends — and no other chart pays for the search.
+   */
+  readonly jieEnd: SolarTerm;
   /** The options this was computed with. A saved result must reproduce. */
   options: ChartOptions;
   warnings: ChartWarning[];
@@ -180,6 +188,9 @@ export function resolveMoment(
     }),
   );
   Object.defineProperty(moment, 'zhirun', { get: zhirun, enumerable: false });
+
+  const jieEnd = deferred(() => jieAfter(time.julianDayUT, context));
+  Object.defineProperty(moment, 'jieEnd', { get: jieEnd, enumerable: false });
 
   return moment;
 }

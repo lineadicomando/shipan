@@ -1644,7 +1644,16 @@ it on a 《元經》 — 「元經又謂陽遁寄艮，陰遁寄坤」 — which
 plate is read, and would be a holder if it reads so.
 
 **One default is not yet attributed.** `earth: quarters` is computed by
-default with no entry naming a text for it. `spirits: dun` and `strengths:
+default with no entry naming a text for it. **The other side of it has a
+holder since 2026-10-07**: 《大六壬精解》, printed p. 214, in the section 雜狀課,
+read on the plate — 「惟土守中宫，分旺四季，每季前各旺十八日，总七十二日，合而成
+岁」. Earth is 旺 for the eighteen days before each season opens, seventy-two
+in the year, which is `earth: eighteen`. It is a 六壬 text speaking of the
+phases and not of a board, and by § "What a value named for a school must
+show" that is a witness here. The value was refused that morning for want of the instant a season ends, which a
+moment did not carry, and is computed since: the moment now finds the 節 that
+closes its month when this reading asks for it, and earth takes the eighteen
+days before it strikes, to the instant. `spirits: dun` and `strengths:
 season` were the other two until the plate was read; see below. `plate: fei` on the
 hour board and `earth: eighteen` are unattributed as well, having no text.
 
@@ -7050,6 +7059,14 @@ whole domain, which is rung 1, and it declares no value.
 
 **A source reached through a modern study counts as read**, and the entry
 names the study it came through.
+
+**A statement about the five phases made in one of these arts is a witness in
+another.** 奇門, 六壬 and 太乙 are the 三式 and stand on one doctrine of the
+phases, the seasons and the stems; where a text of one states how a phase is
+weighed, it states it for the ground the others are built on. The entry says
+which art the text is of, and the statement must be about that shared ground
+and not about a board: what a 六壬 manual says of earth's season counts for a
+奇門 chart, and what it says of its own twelve generals does not.
 
 **A reading reported only by those who reject it is declarable**, where the
 report is enough to reconstruct it without contradiction. The entry says who

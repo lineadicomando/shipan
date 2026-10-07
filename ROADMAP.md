@@ -72,7 +72,7 @@ second copy of one text buys".
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `plate: fei`, `plate: xingfei`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen` |
+| 奇門 | `plate: fei`, `plate: xingfei`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
@@ -135,7 +135,6 @@ is what holds.
 | `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
 | `system: rijia`, `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Waits on a family being built, which is nearer a board than a value |
 | `plate: fei` | declared and refused | no text flies the hour board's own 起例. Arrives with a family of `system` |
-| `earth: eighteen` | declared and refused | no text |
 | `plate: xingfei` | declared and refused | the stars and the 儀 flown, the gates turned: held by the 折衷, argued from 《極深研幾賦》. Waits on the flight of its heaven plate being reconstructed from the chapter, which was read for whose it is and not yet for how it lays |
 | the 值使 from the earth plate or the heaven plate | recorded | chosen by the matter asked |
 | the leap block at any of the eight 節 | recorded | asks for a judgement |
@@ -210,7 +209,7 @@ is «not expected» on this evidence.
 
 | The question | What came back |
 |---|---|
-| a 奇門 text giving earth the last eighteen days of a season, for `earth: eighteen` | nothing in the 奇門 extracts. 《大六壬精解》 has the general statement — earth 「分旺四季…各旺十八日，總七十二日」 — in a passage the extract garbles; a lead for the plate, and for whether a five-phase statement from another art is a witness here |
+| a 奇門 text giving earth the last eighteen days of a season, for the second reading of `earth` | nothing in the 奇門 extracts. 《大六壬精解》 has the general statement, since read on the plate at its p. 214 and admitted as a witness: the three 式 stand on one doctrine of the phases. The value is computed since |
 | a 六壬 text seating the noble with 甲 standing alone, for the second table of `guiren` | nothing found |
 | a 六壬 text cutting day from night at a rising, for `zhouye: solar` | only the sentence of the 精解 the register already quotes |
 | a 六壬 text turning the general at the 節, for `yuejiang: jieqi` | nothing found |
@@ -292,9 +291,6 @@ are the query to put to an arriving text.
   of 《金鏡寶鑑》 reads 旺相休囚死 outward from the star and tabulates all nine
   that way, swapping 相 with 休 and 囚 with 死. Its table checks its own rule
   rather than the rule.
-- **`earth: eighteen`** — a text giving earth only the last eighteen days of
-  each season. It feeds the states above, so it decides 旺相休囚死 for every
-  cell, and the two answers part for two-thirds of four months a year.
 - **`xiudu: shoushi`** — **參, and a decision about the parameter's shape.**
   《授時曆故》卷二 carries the whole 授時 黃道宿次 at 至元辛巳 and the table checks
   itself: each quadrant closes on its own seven entries and the four on
@@ -489,36 +485,23 @@ agreement or message syntax; Spanish needs none of the three.
 
 ## 5. Surfaces that reach less than the engine
 
-**Medium.** Nothing here is wrong: no value is accepted and dropped, and the
-block naming the schools in force says the truth on every surface. What is
-missing is reach — a school the engine computes that one surface cannot be
-asked for.
+**Small.** Nothing here is wrong: no value is accepted and dropped, and the
+block naming the schools in force says the truth on every surface.
 
-**The CLI is the poorest of the three today.** It offers `--method`,
-`--guiren`, `--luohou`, `--ziqi`, `--year-boundary`, `--ziwei-year-boundary`,
-`--taiyi-year-boundary`, `--day-boundary`, `--true-solar` and `--shensha`, and
-not these:
+**The command line reads its school options off the declaration**, since
+2026-10-07. `flagOf` in `packages/core/src/cli.ts` names a flag for every
+parameter `parameters.ts` declares — bare for a board's own and for a layer's,
+under the board's name where a layer has the word — and the help lists after
+each what the engine computes, its default, and what is declared and refused.
+A divergence landing in the engine can be asked for there the same day. An
+option the command in hand does not lay is refused instead of dropped.
 
-| | |
-|---|---|
-| `qimen.spirits` | three implemented values, and it decides which names the middle pair of the eight carries |
-| `qimen.centreTravel` | two, and it decides which palace the 值符 and the 值使 are read from when the count puts them on the centre |
-| `ziwei.sihua` | two, one cell of the table apart, and the cell seats a transformation |
-| `qimen.centreLodging` | five, and it decides which palace the centre is read in and whose gate it takes |
-| `qimen.earthPlate` | two, standing on different plates for fifty hours in sixty |
-| `ziwei.huoling` | two, parting for every birth outside the 子 hour |
-| `ziwei.daxian` | two, one palace apart along the whole run of decades |
-| `bazi.luckGranularity` | two, parting by up to ten days on when the first decade opens |
-
-All of them are offered by MCP and by the REST API. The CLI's own stated policy
-implies they are owed a flag: a flag over a parameter with **one** implemented
-value could only offer a refusal, which is why `epoch` and `ji` have none —
-these have two or three.
-
-What each costs: a row in `FLAGS`, a field on `Options`, a clause in the usage
-text, a validated read beside `ziweiOptionsFrom` and `qizhengOptionsFrom`, and
-a test that the board moves rather than that the flag parses. No engine change,
-no register row, no new prose in `docs/`.
+**Two copies are still written a parameter at a time**, and each is held to the
+declaration by a test rather than read off it: the MCP tool schemas in
+`packages/mcp/src/`, which carry a paragraph of description apiece that a
+derivation would lose, and the page's `apps/web/src/lib/parameters.ts`, which
+exists because the client imports only types from `core`. A value added to the
+engine fails those suites until it is added there; nothing says it silently.
 
 ## 6. Debts in the code
 

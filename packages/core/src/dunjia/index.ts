@@ -7,7 +7,7 @@ import { horseOf, type Horse } from './horse.js';
 import { determineJu, type Ju } from './ju.js';
 import { findPatterns, type Pattern } from './patterns.js';
 import { relationOf, type Relation } from './relation.js';
-import { seasonElement, strengthOf, type Strength } from './strength.js';
+import { seasonAt, strengthOf, type Strength } from './strength.js';
 import { STEMS } from '../ganzhi.js';
 import { PALACES, centreHost, lodge, palace, type Palace } from './palaces.js';
 import {
@@ -211,7 +211,12 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   const chiefPalace = palace(travels ? chiefLanding : lodge(chiefLanding, host));
   const gatePalace = palace(travels ? gateLanding : lodge(gateLanding, host));
 
-  const season = seasonElement(moment.pillars.month.branch);
+  // Read off the moment's closing 節 only where the reading asks for it.
+  const season = seasonAt(
+    moment.pillars.month.branch,
+    options.earth,
+    () => moment.jieEnd.julianDayUT - moment.julianDayUT,
+  );
 
   const palaces = PALACES.map((current): PalaceContents => {
     const star = stars[current.number] as Star;

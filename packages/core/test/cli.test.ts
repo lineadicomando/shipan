@@ -3,7 +3,8 @@ import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { translate } from '@shipan/i18n';
-import { run } from '../src/cli.js';
+import { DECLARED_FLAGS, HELP, flagOf, run } from '../src/cli.js';
+import { PARAMETERS, implementedValues } from '../src/parameters.js';
 
 /**
  * The CLI is a surface, so it is tested as one: what it writes, what it
@@ -770,3 +771,90 @@ describe('the installed bin', () => {
     expect(result.stdout).toContain('立春');
   });
 });
+
+/**
+ * The school options, asked for by flags read off the declaration.
+ *
+ * `docs/parameters.md` § "A board's parameters travel under the board's name".
+ * Nothing in the command line names a divergence by hand any more, so what is
+ * asserted is the derivation and that a flag moves the board it is for.
+ */
+describe('the flags the declaration gives', () => {
+  it('gives every declared parameter one flag, and no two the same', () => {
+    const asked = PARAMETERS.filter((parameter) =>
+      parameter.values.every((value) => typeof value.id === 'string'),
+    );
+    expect(DECLARED_FLAGS.size).toBe(asked.length);
+    for (const parameter of asked) {
+      expect(DECLARED_FLAGS.get(flagOf(parameter))).toBe(parameter);
+    }
+  });
+
+  it('names a board’s parameter bare, and by its board where a layer has the word', () => {
+    const flag = (board: string, id: string) =>
+      flagOf(PARAMETERS.find((entry) => entry.board === board && entry.id === id)!);
+    expect(flag('qimen', 'centreLodging')).toBe('--centre-lodging');
+    expect(flag('liuren', 'guiren')).toBe('--guiren');
+    expect(flag('pillars', 'yearBoundary')).toBe('--year-boundary');
+    expect(flag('ziwei', 'yearBoundary')).toBe('--ziwei-year-boundary');
+    expect(flag('taiyi', 'yearBoundary')).toBe('--taiyi-year-boundary');
+    expect(flag('nianming', 'count')).toBe('--years');
+  });
+
+  it('offers in the help, after each flag, exactly what the engine computes', () => {
+    for (const [flag, parameter] of DECLARED_FLAGS) {
+      const line = HELP.split('\n').find((candidate) => candidate.startsWith(`  ${flag} `));
+      expect(line, `the help has no line for ${flag}`).toBe(
+        `  ${flag} ${implementedValues(parameter).join('|')}`,
+      );
+    }
+  });
+
+  it('moves the board a flag is for', async () => {
+    // 甲辰 in 陽遁一局 at 冬至, the decade's 儀 in the centre: the chief gate is
+    // the host's, 死門 under 坤 and 休門 by the eight 節.
+    const at = ['--date', '2024-01-04', '--time', '08:30', '--tz', 'Asia/Shanghai', '--lon', '120'];
+    const clock = ['--no-true-solar', '--day-boundary', 'midnight', '--lang', 'en'];
+    await run(['qimen', ...at, ...clock]);
+    const kun = out;
+    out = '';
+    await run(['qimen', ...at, ...clock, '--centre-lodging', 'bajie']);
+    expect(kun).toContain('死門');
+    expect(out).toContain('休門');
+    expect(out).not.toBe(kun);
+  });
+
+  it('moves a 紫微斗數 board by its own three', async () => {
+    const birth = ['--date', '1984-05-05', '--time', '14:30', '--tz', 'Asia/Shanghai', '--lon', '120'];
+    const laid = async (...flags: string[]) => {
+      out = '';
+      expect(await run(['ziwei', ...birth, '--gender', 'male', '--lang', 'en', ...flags])).toBe(0);
+      return out;
+    };
+    const book = await laid();
+    expect(await laid('--huoling', 'hour')).not.toBe(book);
+    expect(await laid('--daxian', 'ming')).not.toBe(book);
+    expect(await laid('--sihua', 'zuofu')).toContain('zuǒfǔ');
+  });
+
+  it('refuses an option the command in hand does not lay, rather than dropping it', async () => {
+    const code = await run(['qimen', ...MOMENT, '--guiren', 'wei', '--lang', 'en']);
+    expect(code).toBe(2);
+    expect(err).toBe(
+      `${translate('en', 'cli.error.optionNotRead', { option: '--guiren', command: 'qimen' })}\n`,
+    );
+  });
+
+  it('refuses a value the parameter does not declare, by the flag it came with', async () => {
+    const code = await run(['qimen', ...MOMENT, '--centre-lodging', 'gen', '--lang', 'en']);
+    expect(code).toBe(2);
+    expect(err).toContain('--centre-lodging');
+  });
+
+  it('hands a declared and refused value to the engine, which refuses it by name', async () => {
+    const code = await run(['qimen', ...MOMENT, '--plate', 'xingfei', '--lang', 'en']);
+    expect(code).toBe(1);
+    expect(err).toContain('xingfei');
+  });
+});
+

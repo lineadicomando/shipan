@@ -1422,6 +1422,12 @@ export const en = {
   // The moving pair against the plate under it. 《金鏡寶鑑》 separates the two in
   // one clause — 其星寄 for the star, 符使不必寄於二 for the 符 and the 使 — so
   // the label asks about the pair and neither value promises a different board.
+  'form.qimen.earth': 'The season of earth is',
+  'form.qimen.earth.quarters': 'the whole of each month that closes a season',
+  'form.qimen.earth.eighteen':
+    'the last eighteen days before each season opens, as 《大六壬精解》 dàliùrénjīngjiě states it',
+  'form.qimen.earth.note':
+    'Four months of the year close a season, and earth is the phase in season at their end. The first reading gives earth those four months whole. The second gives earth eighteen days at the end of each and leaves the rest of the month to the season it closes. For some twelve days of each of those four months the two readings therefore weigh every star and gate on the board against a different season.',
   'form.qimen.centreLodging': 'The central palace lodges',
   'form.qimen.centreLodging.kun': 'in 坤 kūn always, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
   'form.qimen.centreLodging.dun':
@@ -2482,13 +2488,13 @@ export const en = {
   // has; the shelf's limit follows as the reason.
   'cli.combination.together': 'This combination of values is laid as one by {witnesses}.',
   'cli.combination.apart':
-    'Each value this board was laid on has a text behind it, and the combination is this engine’s: no text on its shelf lays them all together.',
+    'The combination this board was laid on is this engine’s own: no one text on its shelf lays all of these values together.',
   'cli.combination.unattributed':
-    'Some of the values this board was laid on are conventions of this engine, with no text named for them yet.',
+    'This board was laid on conventions of this engine, with no text named for them yet.',
   'cli.combination.unattributedBeside':
     'Some of the values this board was laid on are conventions of this engine, with no text named for them yet. The other values are laid as one by {witnesses}.',
   'cli.combination.unattributedApart':
-    'Some of the values this board was laid on are conventions of this engine, with no text named for them yet. Each of the other values has a text behind it, and no text on the shelf lays those all together.',
+    'Some of the values this board was laid on are conventions of this engine, with no text named for them yet. The other values do not all belong to one text.',
   'cli.combination.and': ' and ',
   'label.witness.engine': 'this engine’s own construction',
   'cli.heading.terms': 'Solar terms of {year}',
@@ -2761,6 +2767,8 @@ export const en = {
 
   'cli.error.unknownCommand': 'Unknown command "{command}". Try `qimen --help`.',
   'cli.error.unknownOption': 'Unknown option "{option}". Try `qimen --help`.',
+  'cli.error.optionNotRead':
+    'Option "{option}" belongs to another board, and `{command}` does not read it.',
   'cli.error.missingValue': 'Option "{option}" needs a value.',
   'cli.error.numberRequired': 'Option "{option}" needs a whole number, and "{value}" is not one.',
   'cli.error.contradiction':

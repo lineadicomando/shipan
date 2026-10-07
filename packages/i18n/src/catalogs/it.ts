@@ -1308,6 +1308,12 @@ export const it: Record<MessageKey, string> = {
     'niente: gli stessi otto nomi stanno in entrambi i dun, come li ha il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.spirits.baihu':
     'la metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
+  'form.qimen.earth': 'La stagione della terra è',
+  'form.qimen.earth.quarters': 'l’intero mese che chiude ciascuna stagione',
+  'form.qimen.earth.eighteen':
+    'gli ultimi diciotto giorni prima che si apra ciascuna stagione, come enuncia il 《大六壬精解》 dàliùrénjīngjiě',
+  'form.qimen.earth.note':
+    'Quattro mesi dell’anno chiudono una stagione, e alla loro fine la fase in stagione è la terra. La prima lettura dà alla terra quei quattro mesi interi. La seconda le dà diciotto giorni alla fine di ciascuno e lascia il resto del mese alla stagione che esso chiude. Per circa dodici giorni di ciascuno di quei quattro mesi le due letture pesano quindi ogni stella e ogni porta della tavola contro una stagione diversa.',
   'form.qimen.centreLodging': 'Il palazzo centrale alloggia',
   'form.qimen.centreLodging.kun': 'sempre in 坤 kūn, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
   'form.qimen.centreLodging.dun':
@@ -2145,13 +2151,13 @@ export const it: Record<MessageKey, string> = {
   // has; the shelf's limit follows as the reason.
   'cli.combination.together': 'Questa combinazione di valori è posata per intero da {witnesses}.',
   'cli.combination.apart':
-    'Ogni valore con cui è posata questa tavola ha un testo dietro, e la combinazione è del motore: nessun testo del suo scaffale li posa tutti insieme.',
+    'La combinazione con cui è posata questa tavola è propria del motore: nessun testo del suo scaffale posa insieme tutti questi valori.',
   'cli.combination.unattributed':
-    'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo.',
+    'Questa tavola è posata su convenzioni del motore, per le quali non è ancora nominato nessun testo.',
   'cli.combination.unattributedBeside':
     'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo. Gli altri valori sono posati per intero da {witnesses}.',
   'cli.combination.unattributedApart':
-    'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo. Ciascuno degli altri valori ha un testo dietro, e nessun testo dello scaffale li posa tutti insieme.',
+    'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo. Gli altri valori non appartengono tutti a uno stesso testo.',
   'cli.combination.and': ' e ',
   'label.witness.engine': 'una costruzione propria del motore',
   'cli.heading.terms': 'Termini solari del {year}',
@@ -2385,6 +2391,8 @@ export const it: Record<MessageKey, string> = {
 
   'cli.error.unknownCommand': 'Comando "{command}" sconosciuto. Prova `qimen --help`.',
   'cli.error.unknownOption': 'Opzione "{option}" sconosciuta. Prova `qimen --help`.',
+  'cli.error.optionNotRead':
+    'L’opzione "{option}" appartiene a un’altra tavola, e `{command}` non la legge.',
   'cli.error.missingValue': 'L’opzione "{option}" richiede un valore.',
   'cli.error.numberRequired': 'L’opzione "{option}" richiede un numero intero, e "{value}" non lo è.',
   'cli.error.contradiction':
