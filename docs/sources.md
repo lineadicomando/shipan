@@ -3795,11 +3795,54 @@ data.
 | `guiren: chou` | 《六壬大全》, 《大六壬精解》 | the verse with the branches interlined, and the same verse glossed stem by stem |
 | `zhouye: branch` | 《大六壬精解》 | p. 26, with a worked example. 《六壬大全》 and 《大六壬課經集》 use the distinction and define neither half |
 
-**`guiren: wei` is computed and nobody is named for it.** The table that
-stands 甲 apart is in the engine, a caller can ask for it, and no section above
-says what it was taken from. It is entered in `sources.tsv` with nothing
-registered behind it, which is the state the five phases of the 十二天將 are
-in, and it is not yet attributed.
+**Two works read on the plate, 2026-10-07, for the questions this section left
+open.** Both are in 故宮珍本叢刊 第417冊.
+
+《六壬經緯》, 京江 毛志道 正儒 著 by its first leaf, 卷之一 演法, a section to a
+leaf:
+
+- **月將**, leaf 三: the twelve from 正月亥 to 十二月子, and then 「至於更換值月
+  之將，不可拘定月分，當按曆家中氣交節時刻換之」 — the general changes at the
+  instant of the 中氣.
+- **貴神**, leaf 九: 「六甲六戊六庚日丑為陽貴，未為陰貴；六乙六己日子為陽貴，申
+  為陰貴；六丙六丁日亥為陽貴，酉為陰貴；六壬六癸日巳為陽貴，卯為陰貴；六辛日午
+  為陽貴，寅為陰貴」, which is `guiren: chou` in prose; and 「若運定卯辰巳午未申
+  六時者，即以貴人乘其陽貴；運定酉戌亥子丑寅六時者，即以貴人乘其陰貴」, which
+  is `zhouye: branch`.
+
+《御定六壬直指》, 卷上 起例, leaves 七 and 八, series pp. 8–9:
+
+- **起貴人定十二天將法** opens on the verse 「甲戊庚牛羊，乙己鼠猴鄉，丙丁猪雞
+  位，壬癸蛇兔藏，六辛逢馬虎，天乙貴人方」 and then gives a verse to each half
+  of the day — 陽貴 「庚戊見牛甲在羊，乙猴己鼠丙雞方，丁猪癸蛇壬是兔，六辛逢虎
+  貴為陽」, 陰貴 「甲貴陰牛庚戊羊，乙貴在鼠己猴鄉，丙猪丁雞辛遇馬，壬蛇癸兔屬
+  陰方」 — and the hours, 「正時自卯至申用晝貴，即陽貴；自酉至寅用夜貴，即陰
+  貴」.
+- **十二月將躔次之宮** names each palace with the 氣 after which the Sun stands
+  in it: 「亥為娵訾，雨水氣後」 through 「子為元枵，大寒氣後」, twelve 中氣.
+
+**So `guiren: wei` has a holder, and it is an imperial one.** The table this
+engine computes under that value, which stands 甲 apart and splits the pairs
+the plain verse keeps together, is the 直指's two verses seat for seat: set
+against them stem by stem, all twenty agree. This section said on its first
+writing that nobody was named for the value; that was true of the register and
+not of the shelf. The row is rung 5, one text.
+
+**`zhouye: branch` moves from rung 5 to rung 2.** It stood on 《大六壬精解》
+alone. Two transmitted texts now state the same six hours for the day and the
+same six for the night, neither citing the other nor cited by the 精解's list
+of the works it draws on.
+
+**`yuejiang: zhongqi` and `guiren: chou` gain the same two holders**, and move
+no rung.
+
+**What the two did not carry.** Neither gives the twelve generals a phase: the
+直指's leaf lists them in order, 一貴人 to 十二天后, and its 天干所屬 and 地支所屬
+give phases to stems and branches only. And 《六壬經緯》 has no juan of 神煞
+where this register expected one: its 卷之二 is 定式, the boards day by day,
+and its 卷之三 is 格局, each by its own 目錄. The five phases of the 十二天將
+are therefore still unregistered, and the two sections that were located for
+them have been read.
 
 **Three refused values have no holder.** `yuejiang: jieqi` and `yuejiang:
 true`: the 精解 prints the 節 beside the 氣 for every month and endorses

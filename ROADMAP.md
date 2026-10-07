@@ -157,9 +157,10 @@ is".
 | the order of 涉害 | recorded | a verse read one way and two programs grouping another. Waits on a text or a manual holding either by name |
 | the 末傳 of a 伏吟 by 冲 | recorded | the engine's own clause |
 
-One computed value is not yet attributed: the second table of `guiren`, which
-stands 甲 apart. The five phases of the 十二天將 have nothing registered, and
-both sections that would supply it are located.
+The second table of `guiren`, which stands 甲 apart, is 《御定六壬直指》's two
+verses, read on the plate. The five phases of the 十二天將 have nothing
+registered: the two sections located for them were read and carry none, and
+《六壬經緯》 has no juan of 神煞.
 
 **太乙** — argued in `docs/sources.md` § "Whose each value of a 太乙 board
 is".

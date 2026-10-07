@@ -540,7 +540,7 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
         id: 'zhongqi',
         name: { hanzi: '中氣', pinyin: 'zhōngqì' },
         implemented: true,
-        heldBy: ['liurendaquan', 'jingjie'],
+        heldBy: ['liurendaquan', 'jingjie', 'jingwei', 'zhizhi'],
       },
       { id: 'jieqi', name: { hanzi: '節氣', pinyin: 'jiéqì' }, implemented: false },
       { id: 'true', name: { hanzi: '太陽實躔', pinyin: 'tàiyángshíchán' }, implemented: false },
@@ -557,7 +557,7 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
         says: 'form.liuren.guiren.chou',
         note: 'form.liuren.guiren.note',
         implemented: true,
-        heldBy: ['liurendaquan', 'jingjie'],
+        heldBy: ['liurendaquan', 'jingjie', 'jingwei', 'zhizhi'],
       },
       {
         id: 'wei',
@@ -565,6 +565,8 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
         says: 'form.liuren.guiren.wei',
         note: 'form.liuren.guiren.note',
         implemented: true,
+        // 《御定六壬直指》's two verses, 陽貴 and 陰貴: this table cell for cell.
+        heldBy: ['zhizhi'],
       },
     ],
     default: 'chou',
@@ -572,7 +574,7 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
   zhouye: {
     board: 'liuren',
     values: [
-      { id: 'branch', implemented: true, heldBy: ['jingjie'] },
+      { id: 'branch', implemented: true, heldBy: ['jingjie', 'jingwei', 'zhizhi'] },
       { id: 'solar', implemented: false },
     ],
     default: 'branch',

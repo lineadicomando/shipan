@@ -164,6 +164,16 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '六壬大全', pinyin: 'liùréndàquán' },
   },
+  /** 毛志道's 《六壬經緯》, whose first 卷 lays the board a section a leaf. */
+  jingwei: {
+    kind: 'transmitted',
+    name: { hanzi: '六壬經緯', pinyin: 'liùrénjīngwěi' },
+  },
+  /** 《御定六壬直指》, which seats the noble by two verses, one for day and one for night. */
+  zhizhi: {
+    kind: 'transmitted',
+    name: { hanzi: '御定六壬直指', pinyin: 'yùdìngliùrénzhízhǐ' },
+  },
   /** 曹福倞 and 張月明's compilation, which names the edition of every work it draws on. */
   jingjie: {
     kind: 'modern',
