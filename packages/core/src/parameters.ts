@@ -6,6 +6,7 @@ import type { NianmingOptions } from './nianming.js';
 import type { QizhengOptions } from './qizheng.js';
 import type { TaiyiOptions } from './taiyi.js';
 import type { ChartOptions } from './types.js';
+import type { WitnessId } from './witnesses.js';
 import type { ZiweiOptions } from './ziwei/index.js';
 
 /**
@@ -129,6 +130,19 @@ export interface ParameterValue<V> {
    * → `docs/history/40-the-default-was-maoshan.md`
    */
   readonly implemented: boolean;
+  /**
+   * The witnesses that hold this value, by their key in `WITNESSES`.
+   *
+   * Absent says «not yet attributed», which is a state and not a blank:
+   * `holdingOf` reads it, and a board laid on such a value says so rather
+   * than passing for one some text lays. It is filled an art at a time, as
+   * each is read for who holds what — `docs/sources.md` § "What a value named
+   * for a school must show" is what an attribution has to show first.
+   *
+   * It is not `name`: a value is named for its rule, so that a second line
+   * found holding the same reading does not find it named for the first.
+   */
+  readonly heldBy?: readonly WitnessId[];
 }
 
 export interface Parameter<V> {
@@ -354,7 +368,12 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   shensha: {
     board: 'almanac',
     values: [
-      { id: 'xieji', name: { hanzi: '協紀辨方書', pinyin: 'xiéjìbiànfāngshū' }, implemented: true },
+      {
+        id: 'xieji',
+        name: { hanzi: '協紀辨方書', pinyin: 'xiéjìbiànfāngshū' },
+        implemented: true,
+        heldBy: ['xieji'],
+      },
     ],
     default: 'xieji',
   },
@@ -405,7 +424,12 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
   xiudu: {
     board: 'qizheng',
     values: [
-      { id: 'juxing', name: { hanzi: '距星', pinyin: 'jùxīng' }, implemented: true },
+      {
+        id: 'juxing',
+        name: { hanzi: '距星', pinyin: 'jùxīng' },
+        implemented: true,
+        heldBy: ['engine'],
+      },
       { id: 'shixian', name: { hanzi: '時憲曆', pinyin: 'shíxiànlì' }, implemented: false },
       { id: 'shoushi', name: { hanzi: '授時曆', pinyin: 'shòushílì' }, implemented: false },
     ],
@@ -478,6 +502,7 @@ export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
         id: 'jinjing',
         name: { hanzi: '太乙金鏡式經', pinyin: 'tàiyǐjīnjìngshìjīng' },
         implemented: true,
+        heldBy: ['jinjing'],
       },
       {
         id: 'taojin',
@@ -549,6 +574,7 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
         name: { hanzi: '紫微斗數全書', pinyin: 'zǐwēidǒushùquánshū' },
         says: 'form.ziwei.sihua.quanshu',
         implemented: true,
+        heldBy: ['quanshu'],
       },
       {
         id: 'zuofu',

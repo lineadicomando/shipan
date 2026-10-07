@@ -99,6 +99,14 @@ for the first. The warning two sections down stands: before a name is fixed,
 the entry says whether the rule sits inside a method or is the boundary
 between two.
 
+**Who holds a value is declared beside it, and is a list.**
+`packages/core/src/witnesses.ts` registers the texts — a work handed down, a
+line's modern manual, or the engine's own construction, which is the honest
+name for a value no text lays — and each value in
+`packages/core/src/parameters.ts` names the ones that hold it. A value with no
+list is *not yet attributed*, which is a state and not a blank: it is what a
+default laid by convention is until somebody reads whose it is.
+
 **Completeness is not the test, and it was being used as one.** A lineage that
 moves a single cell and keeps the rest was read, for a while, as not having a
 table of its own, and no value was declared for it. But a moved cell changes

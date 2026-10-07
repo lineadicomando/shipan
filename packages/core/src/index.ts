@@ -435,3 +435,11 @@ export {
   type ParameterSet,
   type ParameterValue,
 } from './parameters.js';
+export {
+  WITNESSES,
+  holdingOf,
+  type Holding,
+  type Witness,
+  type WitnessId,
+  type WitnessKind,
+} from './witnesses.js';
