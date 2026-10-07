@@ -3575,6 +3575,47 @@ list closes on 「已災凶兆返無疑　一百」, so that juan is accounted f
 negative for 卷三 and 卷四, which print no 目錄 of their own, rests on the
 sampling and not on a list.
 
+### Whose each value of a 六壬 board is
+
+Written 2026-10-07, under § "The standard, stated once". It attributes what
+the sections above established and establishes nothing: no plate was opened
+for it. `packages/core/src/parameters.ts` carries the same attributions as
+data.
+
+| Value | Held by | What the attribution rests on |
+|---|---|---|
+| `yuejiang: zhongqi` | 《六壬大全》, 《大六壬精解》 (1995) | the first in its verse's table; the second states it as its own rule — 「太陽於每月中氣過宮，故月將亦逢中氣而換」 — and is the study through which 陳公獻's 增注 and 《六壬視斯》 reach this register, each named there with its edition |
+| `guiren: chou` | 《六壬大全》, 《大六壬精解》 | the verse with the branches interlined, and the same verse glossed stem by stem |
+| `zhouye: branch` | 《大六壬精解》 | p. 26, with a worked example. 《六壬大全》 and 《大六壬課經集》 use the distinction and define neither half |
+
+**`guiren: wei` is computed and nobody is named for it.** The table that
+stands 甲 apart is in the engine, a caller can ask for it, and no section above
+says what it was taken from. It is entered in `sources.tsv` with nothing
+registered behind it, which is the state the five phases of the 十二天將 are
+in, and it is not yet attributed.
+
+**Three refused values have no holder.** `yuejiang: jieqi` and `yuejiang:
+true`: the 精解 prints the 節 beside the 氣 for every month and endorses
+neither reading, and no text states the second at all. `zhouye: solar`: the
+精解 names an older practice in one sentence, gives no procedure and joins two
+different risings in it, which is not enough to reconstruct a reading from.
+
+**Recorded, with no parameter.**
+
+- **The order of 涉害.** 「孟深仲淺季當休」 read as an order of evaluation, and
+  the grouping both runnable references use, lay different transmissions on a
+  few boards in a thousand. One is a reading of a verse and the other is what
+  two programs do; no text or manual is named for either as its own. The row
+  of the three transmissions reads `recorded`.
+- **The 末傳 of a 伏吟 taken by 冲** where the punishment returns to the
+  opening, which the section above marks as the engine's own clause.
+
+**Where the two programs are called witnesses above, they are read as
+checks.** «Where two disagreeing witnesses agree, that is the transmitted
+board» was written of `kinliuren` and `liuren-ts-lib`. What their agreement
+establishes is that the nine rules of 《六壬大全》 were transcribed the same
+way three times; whose those rules are is that book's, and is said here.
+
 ---
 
 ## 曆注 — the almanac's page, and the block its own source refuses

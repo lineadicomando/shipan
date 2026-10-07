@@ -129,6 +129,17 @@ export const WITNESSES = {
     name: { hanzi: '圖解奇門遁甲大全', pinyin: 'tújiěqíméndùnjiǎdàquán' },
     year: 2009,
   },
+  /** 《六壬大全》, whose verse turns the general at the 中氣 and seats the noble. */
+  liurendaquan: {
+    kind: 'transmitted',
+    name: { hanzi: '六壬大全', pinyin: 'liùréndàquán' },
+  },
+  /** 曹福倞 and 張月明's compilation, which names the edition of every work it draws on. */
+  jingjie: {
+    kind: 'modern',
+    name: { hanzi: '大六壬精解', pinyin: 'dàliùrénjīngjiě' },
+    year: 1995,
+  },
   /** A manual of declared 中州派 lineage, which prints its 四化 table whole. */
   han: { kind: 'modern', latin: 'Aloysius Han, Zi Wei Dou Shu', year: 2014 },
 } as const satisfies Record<string, Witness>;

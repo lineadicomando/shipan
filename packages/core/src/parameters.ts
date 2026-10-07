@@ -435,7 +435,12 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
   yuejiang: {
     board: 'liuren',
     values: [
-      { id: 'zhongqi', name: { hanzi: '中氣', pinyin: 'zhōngqì' }, implemented: true },
+      {
+        id: 'zhongqi',
+        name: { hanzi: '中氣', pinyin: 'zhōngqì' },
+        implemented: true,
+        heldBy: ['liurendaquan', 'jingjie'],
+      },
       { id: 'jieqi', name: { hanzi: '節氣', pinyin: 'jiéqì' }, implemented: false },
       { id: 'true', name: { hanzi: '太陽實躔', pinyin: 'tàiyángshíchán' }, implemented: false },
     ],
@@ -451,6 +456,7 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
         says: 'form.liuren.guiren.chou',
         note: 'form.liuren.guiren.note',
         implemented: true,
+        heldBy: ['liurendaquan', 'jingjie'],
       },
       {
         id: 'wei',
@@ -465,7 +471,7 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
   zhouye: {
     board: 'liuren',
     values: [
-      { id: 'branch', implemented: true },
+      { id: 'branch', implemented: true, heldBy: ['jingjie'] },
       { id: 'solar', implemented: false },
     ],
     default: 'branch',

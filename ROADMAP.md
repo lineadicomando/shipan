@@ -150,6 +150,20 @@ is what holds.
 The defaults of `spirits`, `strengths` and `earth` are not yet attributed: no
 text is named for any of the three.
 
+**六壬** — argued in `docs/sources.md` § "Whose each value of a 六壬 board
+is".
+
+| | State | What it has, and what it waits on |
+|---|---|---|
+| `yuejiang: jieqi`, `yuejiang: true` | declared and refused | no holder. 《大六壬精解》 prints the 節 beside the 氣 and endorses neither. Waits on a text stating either as its own |
+| `zhouye: solar` | declared and refused | named in one sentence of the 精解, with no procedure and two risings joined. Waits on a text saying which rising, and how |
+| the order of 涉害 | recorded | a verse read one way and two programs grouping another. Waits on a text or a manual holding either by name |
+| the 末傳 of a 伏吟 by 冲 | recorded | the engine's own clause |
+
+One computed value is not yet attributed: the second table of `guiren`, which
+stands 甲 apart. The five phases of the 十二天將 have nothing registered, and
+both sections that would supply it are located.
+
 ### What each named one waits on
 
 Most of the table waits on a source and nothing more particular. These clauses
