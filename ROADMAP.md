@@ -191,6 +191,17 @@ what holds.
 | `minggong: ascendant` | declared and refused | no holder named; a second method and not a second reading |
 | the 距星 of 觜 and of 參 | recorded | four assignments across the Tang, the Song, the Jesuit order and the 《儀象考成》; the engine takes the last |
 
+**曆注, and the layers under every board** — argued in `docs/sources.md`
+§ "Whose each value of the almanac's page is" and § "Whose each value of the
+calendrical layer is". Nothing here is refused, so this is all in the third
+state or short of an attribution.
+
+| | State | What it has, and what it waits on |
+|---|---|---|
+| a second value of `shensha` | recorded | 曹震圭's and 邵泰衢's accounts of the 十二神, 《萬全廣濟》's table for 蠶命, the fixed-date list of 楊公忌: known through the 《協紀辨方書》 that rejects them. Waits on a witness of their own |
+| who holds each reading of the year boundary, the day boundary, the true-solar correction, the 大運's granularity | not yet attributed | every reading is computed; no file names a holder for either side |
+| who holds the count of years lived by turns | not yet attributed | the other count is 《遁甲演義》's |
+
 ### What each named one waits on
 
 Most of the table waits on a source and nothing more particular. These clauses

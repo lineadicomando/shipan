@@ -61,6 +61,30 @@ Working from memory was tried first and abandoned: recalled almanac values
 were wrong more often than right. Nothing in this repository is anchored on
 recollection, and this is the rule the rest of the document exists to keep.
 
+### Whose each value of the calendrical layer is
+
+Written 2026-10-07, under § "The standard, stated once". It attributes what
+this register and `docs/parameters.md` established and establishes nothing.
+
+**Most of this layer is the answer, and is not a line's.** The solar terms,
+the lunar date and the true-solar correction are measured; the four pillars
+were run against a published reference over two centuries. Those are rungs 0
+and 1, and nobody's school.
+
+**What is somebody's is how an instant is cut**, and there every reading is
+computed and almost none is attributed. `yearBoundary`, `dayBoundary`,
+`trueSolarTime`, 八字's `luckGranularity` and 年命's `count` each lay a
+different result, each has a default, and no file names the text or the
+practitioners holding either side of any of them, nor says why the default is
+the default — with two exceptions. `docs/parameters.md` gives the year turned
+at 立春 as «what every almanac printing four pillars does», which is a reason
+and names a class of witness rather than one. And `count: sui` is held by
+《遁甲演義》卷一, whose transmitted pairs are 一歲丙寅 and 十一歲丙子.
+
+So the row of the four pillars now stands under the two readings that lay it,
+and the rest is entered as what it is: computed by convention, and not yet
+attributed.
+
 ---
 
 ## Tier 2 — the layout, and the zhirun ju
@@ -4209,6 +4233,42 @@ kind. What may still travel is the **count**, which every printed almanac
 carries and which the 協紀 describes accurately while declining to follow it —
 but it will travel with the refusal beside it, and its epoch takes its warrant
 from the implementations and from the weekday lock, **never from this book**.
+
+### Whose each value of the almanac's page is
+
+Written 2026-10-07, under § "The standard, stated once". It attributes what
+the sections above established and establishes nothing: no plate was opened
+for it.
+
+**The page is 《協紀辨方書》's, and that is the line followed and not the
+measure.** `shensha: xieji` has said so in the type from the start — one value,
+named for the work, «later a named lineage». What the sections above add in
+arguing for the choice is of another kind: that it is «the one work of its kind
+that adjudicates between conflicting rules», and that a source chosen because
+it rejects things, having rejected something, was «the right source». Read
+under the standard those sentences give the reason this line was followed
+first: it says where its own knowledge stops, which is what makes a text
+usable. They do not make what it rejects wrong, and they are left as written.
+
+The 十二神 and the 四德 are that book's as much as the 年神 and the 神煞 are,
+so their rows now stand under the same value.
+
+**What a second value would be, recorded.** The lines the 協紀 names and sets
+aside are other people's readings and reach this register only through the
+book rejecting them:
+
+- **曹震圭's account of the 十二神** by 納甲, and **邵泰衢's** by pairing with
+  the 建除;
+- **《萬全廣濟》's table for 蠶命**, printed beside the one the book disowns;
+- **the fixed-date list of 楊公忌**, against the count by 室.
+
+None is declared. A report by an opponent is enough where it lets the reading
+be reconstructed without contradiction, and nothing above says the 協紀 quotes
+any of these whole; a value waits on a witness of its own being read.
+
+**Unchanged, and not about lines.** The 宜忌 stay out because they are advice,
+which is `docs/refusals.md`'s line. The lodge of the day ships with its epoch
+warranted by the weekday lock and never by this book, and keeps its dash.
 
 ### What is not here
 

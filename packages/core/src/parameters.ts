@@ -764,7 +764,12 @@ export const NIANMING_PARAMETERS: ParameterSet<NianmingOptions> = {
   count: {
     board: 'nianming',
     values: [
-      { id: 'sui', name: { hanzi: '虛歲', pinyin: 'xūsuì' }, implemented: true },
+      {
+        id: 'sui',
+        name: { hanzi: '虛歲', pinyin: 'xūsuì' },
+        implemented: true,
+        heldBy: ['yanyi'],
+      },
       { id: 'turns', implemented: true },
     ],
     default: 'sui',
