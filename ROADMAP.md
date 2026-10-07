@@ -184,7 +184,7 @@ what holds.
 
 | | State | What it has, and what it waits on |
 |---|---|---|
-| `xiudu: shoushi` | declared and refused | held by 《授時曆故》卷二, twenty-seven lodges read. 參 is supplied by the sum that closes its quadrant, admitted and marked as derived. Waits on the option carrying an epoch, and on the cells being transcribed |
+| `xiudu: shoushi` | declared and refused | held by 《授時曆故》卷二. The twenty-eight widths are transcribed and close on the text's sums, 參 supplied by its quadrant and marked; the anchor at 至元辛巳 and the 歲差 are read. Waits on a decision and not on a text: how the table is carried from its epoch to a chart's instant — by the work's own 術, by its 歲差 alone, or by the sky's precession |
 | `xiudu: shixian` | declared and refused | a table with no epoch that can be cited. Waits on one |
 | `gong: ci` | declared and refused | no holder named. Waits on the same table |
 | `minggong: ascendant` | declared and refused | no holder named; a second method and not a second reading |
@@ -307,15 +307,9 @@ are the query to put to an arriving text.
   of 《金鏡寶鑑》 reads 旺相休囚死 outward from the star and tabulates all nine
   that way, swapping 相 with 休 and 囚 with 死. Its table checks its own rule
   rather than the rule.
-- **`xiudu: shoushi`** — **參, and a decision about the parameter's shape.**
-  《授時曆故》卷二 carries the whole 授時 黃道宿次 at 至元辛巳 and the table checks
-  itself: each quadrant closes on its own seven entries and the four on
-  365.2575, the 曆's own 周天分. Twenty-seven of twenty-eight lodges are read off
-  the plate; 參 is not printed, and subtraction is a derivation and not a
-  witness. 《中國恆星觀測史》's 第七章第一節二 studies that same epoch's
-  observations and is § 2's fourth line. Separately, **the option would have to
-  carry an epoch as well as a table** — 「各得當時宿度」 — which is the only part
-  of this that touches code.
+- **`xiudu: shoushi`** — a decision about how the table is carried to a
+  chart's instant; see the table of states above. The widths, the anchor and
+  the 歲差 are read.
 
 ## 2. The shelf
 

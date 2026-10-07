@@ -4713,6 +4713,54 @@ with 柳 12.90, so its own sum cannot choose — and the crop chose:
 and the three quadrants that print all their lodges each close on their own
 entries.
 
+**The table is transcribed whole, since 2026-10-07, and held to its own sums by
+a test.** `packages/core/src/shoushi.ts` carries the twenty-eight widths as
+the leaves print them, leaves 十五 and 十六 of 卷二 read again on the plate:
+each of the three quadrants printed whole closes on its seven, and the four
+sums close on 365.2575. 參 is entered as 10.28, the western sum less the six
+lodges printed, and is marked as derived in the data — by decision, and with
+its cost said: that quadrant now closes by construction. The paragraph above
+calls the subtraction «a derivation and not a witness», which it is; what
+changed is that a derived cell is admitted where it is marked.
+
+**The same leaves and the ones before give the moment the table belongs to,
+read on the plate the same day.**
+
+- **The anchor.** The worked step under the table ends 「即為冬至後黃道積度
+  三六八一」 and then 「共得二十三度八三三六，以前宿黃道積度箕宿三六八一減之，
+  餘為斗二十三度四六五五」. So at the solstice before 至元辛巳 the lodge 箕 ends
+  0.3681 度 of ecliptic past the solstice, 斗 begins there, and the table's
+  23.47 for 斗 is that 23.4655 rounded.
+- **The 歲差.** Leaf 十三: 「歲差一分五十秒」, and 「授時所測乃在箕十度…積六十六
+  年有奇而日退一度」. It is counted on the equator: a later leaf carries the
+  solstice from one year to the next by taking the 歲差 from its 赤道 degree
+  and converting.
+- **The conversion.** The leaves between, 推黃道宿度, hold a table of the
+  equatorial widths with their running sums from the solstice and the rate of
+  ecliptic to equator degree by degree, 「如赤道率一度〇八六五而一」 for the
+  first. Seen and not transcribed. It prints an equatorial 參.
+
+**So what the value waits on is no longer a number. It is how the table is
+carried from 1281 to a chart's instant**, and there are three ways, each of
+which is somebody's:
+
+1. **By the text's own 術**: the solstice moved on the equator by 一分五十秒 a
+   year, and every lodge's ecliptic width recomputed through the table of
+   rates — 「依術推變，各得當時宿度」. It is what the work says to do. It needs
+   the conversion table transcribed, and it would give 參 an ecliptic width by
+   the method rather than by subtraction, and reproduce the printed table at
+   its epoch as a check.
+2. **The printed widths held as they are, and the solstice moved by the text's
+   歲差.** What a practitioner with the table and no 術 would do. It needs the
+   歲差 turned into ecliptic, which the text does only through that same
+   table.
+3. **The printed widths held against the stars**, the anchor carried by the
+   sky's own precession. It needs nothing more, and it is no longer the
+   曆's reckoning after its epoch: 一分五十秒 of equator a year is not what the
+   sky does.
+
+The value stays declared and refused until one is chosen.
+
 **And the third book on the shelf that could have been asked is the wrong
 size for the question.** 《中國古代天文與曆法》, 陳久金 · 楊怡, 中國國際廣播
 出版社 2010, is a 155-page popular survey in the 中國讀本 series, seventeen
