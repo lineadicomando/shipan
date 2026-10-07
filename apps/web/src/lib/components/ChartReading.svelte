@@ -16,6 +16,7 @@
   import { glyph } from '$lib/glyph';
   import type { MessageKey, Translator } from '@shipan/i18n';
   import type { QimenChart } from '@shipan/core';
+  import { COMPASS_READINGS } from '@shipan/plate';
   import HexagramTable from './HexagramTable.svelte';
   import PalaceTable from './PalaceTable.svelte';
   import CalendarAndAlmanac from './CalendarAndAlmanac.svelte';
@@ -68,6 +69,33 @@
    */
   const squares = $derived(
     PILLARS.map((position) => ({ position, ganzhi: chart.moment.pillars[position] })),
+  );
+
+  type Name = { hanzi: string; pinyin?: string };
+  /** Each name once, in the order the board meets it. */
+  const once = (names: readonly (Name | undefined)[]): Name[] => {
+    const seen = new Map<string, Name>();
+    for (const name of names) if (name && !seen.has(name.hanzi)) seen.set(name.hanzi, name);
+    return [...seen.values()];
+  };
+  /**
+   * Every name on the board with how it is said, a group to a kind.
+   *
+   * The drawing carried this as a band under the grid, and the pages that set
+   * a reading under the drawing now ask for the board bare: said here it is
+   * text a reader can select, search and have read out, which a picture's is
+   * not. The order is the order a palace is read in — what it was dealt, then
+   * what came to stand over it — and the branches of the frame close it.
+   */
+  const names = $derived(
+    [
+      once(chart.palaces.map((cell) => cell.palace)),
+      once(chart.palaces.flatMap((cell) => [cell.earth, cell.heaven])),
+      once(chart.palaces.map((cell) => cell.star)),
+      once(chart.palaces.map((cell) => cell.gate)),
+      once(chart.palaces.map((cell) => cell.spirit)),
+      [...COMPASS_READINGS],
+    ].filter((group) => group.length > 0),
   );
 </script>
 
@@ -142,6 +170,20 @@
   against a response left over from before the field was built.
 -->
 <ul class="horses">
+  <!-- The chief and the chief gate, which the drawing closes on when it
+       travels alone. Guarded like the horses below, and for their reason. -->
+  {#if chart.chief && chart.chiefGate}
+    <li>
+      {t('cli.field.chief')}:
+      {t(`label.star.${chart.chief.star.id}` as MessageKey)}
+      <span class="glyph">{glyph(chart.chief.star)}</span>
+    </li>
+    <li>
+      {t('cli.field.chiefGate')}:
+      {t(`label.gate.${chart.chiefGate.gate.id}` as MessageKey)}
+      <span class="glyph">{glyph(chart.chiefGate.gate)}</span>
+    </li>
+  {/if}
   {#each chart.horses ?? [] as horse}
     <li>
       {t(`label.horse.${horse.from}` as MessageKey)}:
@@ -202,7 +244,31 @@
   </ul>
 {/if}
 
+<!-- How every name on the board is said, a line to a kind. -->
+<h2>{t('cli.heading.readings')}</h2>
+<div class="names">
+  {#each names as group}
+    <ul>
+      {#each group as name (name.hanzi)}
+        <li><span lang="zh-Hant">{name.hanzi}</span> {name.pinyin ?? ''}</li>
+      {/each}
+    </ul>
+  {/each}
+</div>
+
 <style>
+  /* A group to a kind, each a run of short entries that wraps where the
+     measure does: a list to scan, at the size of the notes around it. */
+  .names { display: grid; gap: 0.5rem; font-size: 0.9em; color: var(--faint); }
+  .names ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+    gap: 0.1rem 1rem;
+  }
+  .names li span { color: var(--ink); }
   /*
    * Sized in `em` throughout, so the caller decides how loud this is.
    *

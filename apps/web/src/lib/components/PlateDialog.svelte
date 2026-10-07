@@ -210,7 +210,7 @@
           src={plate}
           alt=""
           width="900"
-          height="1280"
+          height="900"
           class:settling={drawn !== plate}
           onload={() => (drawn = plate)}
         />

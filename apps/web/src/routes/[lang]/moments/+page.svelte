@@ -199,7 +199,7 @@
    * criteria still returned.
    */
   const plateSrc = $derived(
-    at && `/api/qimen/plate?${chartQuery(at, data.interval, { lang: t.locale, scheme: appearance.current })}`,
+    at && `/api/qimen/plate?${chartQuery(at, data.interval, { lang: t.locale, scheme: appearance.current })}&bare=true`,
   );
   const chartSrc = $derived(
     at && `/api/qimen?${chartQuery(at, data.interval, { lang: t.locale })}`,

@@ -626,7 +626,12 @@
     if (chart && !failure) await panel?.close();
   }
 
-  const plate = $derived(`/api/${shown.api}/plate?${address}&scheme=${appearance.current}`);
+  // 奇門's reading sets in type everything its drawing can carry under the
+  // grid, so that board is asked for bare. See `readPlateOptions`.
+  const bare = $derived(shown.api === 'qimen' ? '&bare=true' : '');
+  const plate = $derived(
+    `/api/${shown.api}/plate?${address}&scheme=${appearance.current}${bare}`,
+  );
 
   /**
    * The same board, drawn for paper.
@@ -641,7 +646,7 @@
    * then the board on screen is the board for paper.
    */
   const onPaper = $derived(appearance.current !== 'light' && shown.plate !== undefined);
-  const paper = $derived(`/api/${shown.api}/plate?${address}&scheme=light`);
+  const paper = $derived(`/api/${shown.api}/plate?${address}&scheme=light${bare}`);
 
   /**
    * Fetched as soon as there is a chart, not when the printer is asked for.
@@ -1432,8 +1437,8 @@
      *
      * And a bound on the other side, which a width alone cannot give: this is
      * the one page that prints four different boards, and they are not the
-     * same shape. The palaces are 900 by 1280 and come to 24cm tall at 17
-     * wide, which is what a sheet takes; a ring of twelve is half again taller
+     * same shape. The palaces are a square, 17cm either way, which a sheet
+     * takes with room to spare; a ring of twelve is half again taller
      * than it is wide and would run off the bottom at the same measure. So the
      * height is what is capped, a shade over what the palaces already print
      * at, and a picture too tall for it narrows until it fits. The ring used

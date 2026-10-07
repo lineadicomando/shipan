@@ -177,9 +177,19 @@ export function localeVary(params: URLSearchParams): Record<string, string> {
 export function readPlateOptions(params: URLSearchParams): {
   size: number;
   scheme: 'light' | 'dark' | 'auto';
+  /**
+   * The board and its caption, and none of the bands under it.
+   *
+   * A drawing fetched by itself carries what it needs to be read alone: the
+   * configurations, how its names are said, the schools it was laid by. A page
+   * that sets all of that in type under the drawing asks for the board bare,
+   * so that nothing is said twice a hand's width apart.
+   */
+  bare: boolean;
 } {
   const asked = params.get('scheme');
   return {
+    bare: params.get('bare') === 'true',
     size: Math.min(2048, Math.max(240, readInteger(params, 'size') ?? 900)),
     scheme: asked === 'light' || asked === 'dark' ? asked : 'auto',
   };

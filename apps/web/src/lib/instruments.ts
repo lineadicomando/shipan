@@ -229,7 +229,8 @@ export const INSTRUMENTS: readonly Instrument[] = [
     takesBirth: true,
     takesGender: true,
     strengths: true,
-    plate: { width: 900, height: 1560 },
+    // A square: this board is asked for bare, its bands set in type below it.
+    plate: { width: 900, height: 900 },
     option: 'form.instrument.qimen',
     asks: 'form.questionPlaceholder.qimen',
     name: { hanzi: '奇門遁甲', pinyin: 'Qí Mén Dùn Jiǎ' },

@@ -1228,6 +1228,24 @@ describe('GET /api/qimen/plate', () => {
     expect(text.startsWith('<svg')).toBe(true);
   });
 
+  it('draws the board bare for a page that sets the rest in type', async () => {
+    const whole = await call(plate, `${MOMENT}&lang=en`);
+    const bare = await call(plate, `${MOMENT}&lang=en&bare=true`);
+
+    // The grid and its caption stay: the names in the palaces, the ju above.
+    expect(bare.text).toContain('休門');
+    expect(bare.text).toMatch(/dun \d/);
+    // What the page says under the drawing is gone from it: how the names
+    // are said, the chief along the foot, the schools.
+    expect(whole.text).toContain('How the names are said');
+    expect(bare.text).not.toContain('How the names are said');
+    expect(bare.text).not.toMatch(/chief gate/);
+    expect(bare.text).not.toContain('拆補');
+    // And the paper is the square, where the whole drawing grows downward.
+    expect(bare.text).toMatch(/viewBox="0 0 900 900"/);
+    expect(whole.text).not.toMatch(/viewBox="0 0 900 900"/);
+  });
+
   it('writes the palaces in the language it was asked for', async () => {
     const english = await call(plate, `${MOMENT}&lang=en`);
     const italian = await call(plate, `${MOMENT}&lang=it`);

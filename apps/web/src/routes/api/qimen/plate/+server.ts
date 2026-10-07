@@ -24,7 +24,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     // scheme: `auto` emits both behind a media query, which is right for a
     // drawing dropped into a page nobody controls, while a page that knows
     // what its reader picked asks for that one. See `readPlateOptions`.
-    const { size, scheme } = readPlateOptions(url.searchParams);
+    const { size, scheme, bare } = readPlateOptions(url.searchParams);
     const labels = chartLabels(t);
     const PILLARS = [
       moment.pillars.year,
@@ -39,7 +39,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       .join(' / ');
 
     const svg = renderChartSvg(chart, {
-      schools: divergenceLines('qimen', moment.options, moment.options, t),
+      schools: bare ? [] : divergenceLines('qimen', moment.options, moment.options, t),
       size,
       scheme,
       labels,
@@ -50,6 +50,9 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       captions: {
         ju: `${chart.ju.yang ? t('cli.value.yangDun') : t('cli.value.yinDun')} ${chart.ju.number}`,
         pillars: PILLARS,
+        // Everything from here down is what a page sets in type under the
+        // board and asks to be spared in the picture. See `readPlateOptions`.
+        ...(bare ? {} : {
         chief: `${t('cli.field.chief')} ${labels.star[chart.chief.star.id]} ${chart.chief.star.hanzi}`,
         chiefGate: `${t('cli.field.chiefGate')} ${labels.gate[chart.chiefGate.gate.id]} ${chart.chiefGate.gate.hanzi}`,
         // The configurations, each once, with the fortune the tradition gives
@@ -61,6 +64,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
         // drawing, and this endpoint is also what a reader saves, prints or
         // sends on — where a glyph with no sound is unsayable and unlookupable.
         readings: t('cli.heading.readings'),
+        }),
       },
     });
 
