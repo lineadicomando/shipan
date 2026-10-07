@@ -126,6 +126,9 @@ export const ZIWEI_STARS: readonly ZiweiStar[] = [
   { id: 'tianxi', hanzi: '天喜', pinyin: 'tiānxǐ', starClass: 'minor', elements: ['shui'] , zhengyao: false },
   { id: 'taifu', hanzi: '台輔', pinyin: 'táifǔ', starClass: 'minor', elements: [] , zhengyao: false },
   { id: 'fenggao', hanzi: '封誥', pinyin: 'fēnggào', starClass: 'minor', elements: [] , zhengyao: false },
+  // The book's name for it. Modern boards call this star 年解 and give the
+  // name 解神 to another, placed off the month, which this board does not
+  // carry: see `docs/sources.md` § "Whose each value of a 紫微斗數 board is".
   { id: 'jieshen', hanzi: '解神', pinyin: 'jiěshén', starClass: 'minor', elements: [] , zhengyao: false },
   { id: 'jielukongwang', hanzi: '截路空亡', pinyin: 'jiélùkōngwáng', starClass: 'minor', elements: [] , zhengyao: false },
   { id: 'xunzhongkongwang', hanzi: '旬中空亡', pinyin: 'xúnzhōngkōngwáng', starClass: 'minor', elements: [] , zhengyao: false },

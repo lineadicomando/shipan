@@ -284,8 +284,9 @@ neither disputed.
   reach is fluent, confident and about a different art. By default four of its
   tables also part from what modern software carries — 火星 and 鈴星 take a
   seat from the year's triplicity and the birth hour never enters, 天魁 and
-  天鉞 go to 亥 and 戌 for 丙 and 丁, 解神 is placed off the birth year rather
-  than the month, and 壬 gives 化科 to 天府 rather than 左輔. Those are
+  天鉞 go to 亥 and 戌 for 丙 and 丁, 解神 is placed off the birth year — it is the star modern boards call 年解,
+  and their 解神, placed off the month, is a second star this board does not
+  carry — and 壬 gives 化科 to 天府 rather than 左輔. Those are
   《紫微斗數全書》 卷二 against later lineages, not errors. Two of the four and
   one thing more are choices a caller can move, each named in the block of
   schools: `huoling` counts the two stars on by the hour, `sihua` moves 壬's

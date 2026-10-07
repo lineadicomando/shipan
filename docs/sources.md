@@ -6945,11 +6945,20 @@ and a program is not a witness; no text on the shelf states either.
   carry `huoling: hour` — 「解神：由申宮起1月、2月，順行陽地支之宮位，每宮安連
   續之兩月（即1、2月在申，3、4月在戌……），數到生月之宮安解神」, with a diagram
   running 申 · 戌 · 子 · 寅 · 辰 · 午, two months to each. So it is no longer
-  for want of a text that the row reads `recorded`. What is undecided is what
-  the two are to each other: two readings of one star, which would be a
-  parameter, or two stars that later boards carry side by side as 年解 and
-  月解, which would be a star this board does not place. The manual prints
-  one 解神 and says nothing of the other.
+  for want of a text that the row reads `recorded`. **Decided 2026-10-07: they are two
+  stars and the board keeps its book's.** A run against `iztro` over 366
+  births settles what the two are to each other: that reference carries a 年解
+  and a 解神 on one board, the book's rule lands on its 年解 in every one of
+  the 366 and the manual's rule on its 解神 in every one, and the two names
+  agree in 60. So the star this engine calls 解神 is the one modern boards
+  call 年解, and the 10 % agreement this register recorded was two stars
+  compared under one name. A program is not a witness and this is not one: it
+  checks both transcriptions, and shows the practice keeps the two side by
+  side rather than choosing between them. No parameter is declared, since no
+  text sets one against the other, and no star is added, since the board
+  carries what its book places. The collision is said where a caller reads —
+  in `docs/agent-prompt.md` and in the tool's description — on the ground the
+  book's 天空 is kept under its name beside the other transmission's 地空.
 - **The stars 卷二 does not place**, which modern boards carry: 恩光, 天貴,
   天官, 天福, 咸池, 孤辰, 寡宿, 華蓋, 破碎, 天才, 天壽, 天廚, the year-branch
   大耗 and a 地空 distinct from this book's 天空. Recorded until a manual

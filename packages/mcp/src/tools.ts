@@ -449,7 +449,9 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
         'huoling is set to hour, which counts on from those seats as most modern boards do; ' +
         'the block of schools under the pillars says which was laid. **天魁 and 天鉞 go to 亥 ' +
         'and 戌 for 丙 and 丁** (「丙丁豬狗位」), where the modern verse reads 豬雞; and 辛 ' +
-        'takes 寅 then 午. **解神 is placed off the birth year**, not off the month. **壬 ' +
+        'takes 寅 then 午. **解神 is placed off the birth year**: it is the star modern boards ' +
+        'call 年解, and the star they call 解神, placed off the month, is another one this ' +
+        'board does not carry — neither board is wrong where the two differ. **壬 ' +
         'gives 化科 to 天府**, not to 左輔. ' +
         'gender is needed only for the 大限, the 小限 and the two rings; without it the seats ' +
         'are complete and those four are absent, which is the right answer and not a degraded ' +

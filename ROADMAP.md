@@ -120,7 +120,7 @@ is".
 | | State | What it has, and what it waits on |
 |---|---|---|
 | `leapMonth: current`, `leapMonth: split` | declared and refused | no text; a program computes one of them. Waits on a manual that states either |
-| 解神 placed off the month | recorded | stated whole by 《中國絕學》第六冊 p. 399: from 申, two months to a palace, through the yang branches. Waits on a decision and not on a text — a second reading of one star, or a second star |
+| the star modern boards call 解神, placed off the month | recorded | a second star and not a second reading: the book's 解神 is their 年解, 366 births of 366 against a reference that carries both. Stated whole by 《中國絕學》第六冊 p. 399. It enters with the other stars 卷二 does not place, if the board is ever to carry them |
 | the stars 卷二 does not place | recorded | the same |
 | 王亭之's table at 戊, 庚 and 壬 | recorded | named, unread |
 
