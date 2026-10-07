@@ -107,6 +107,26 @@ work quarrelling with itself and not yet a school. Naming it wants a second
 witness. → `docs/sources.md` § "《奇門探索錄》, which derives the pin the 統宗
 only asserts".
 
+### The state of each divergence, art by art
+
+`docs/sources.md` § "What a value named for a school must show" names three
+states. The table above is the second of them; this says, for each art that
+has been read for it, what each refused value has behind it and which
+divergences stand in the third. An art not listed here has not had the pass.
+
+**紫微斗數** — argued in `docs/sources.md` § "Whose each value on this board
+is".
+
+| | State | What it has, and what it waits on |
+|---|---|---|
+| `daxian: ming` | declared and refused | two witnesses, a print of 1581 and a manual of 1986. Waits on nothing but being built |
+| `huoling: hour` | declared and refused | one witness, a manual of 1986 that prints the count whole. Waits on reading, on the plate, which line that volume teaches it as |
+| `leapMonth: current`, `leapMonth: split` | declared and refused | no text; a program computes one of them. Waits on a manual that states either |
+| 庚's 忌 to 天相 | owed a declaration | the 占驗派 material of 《中國絕學》第七冊. A value of `sihua` named for the cell |
+| 解神 placed off the month | recorded | modern boards carry it and no manual on the shelf states it |
+| the stars 卷二 does not place | recorded | the same |
+| 王亭之's table at 戊, 庚 and 壬 | recorded | named, unread |
+
 ### What each named one waits on
 
 Most of the table waits on a source and nothing more particular. These clauses

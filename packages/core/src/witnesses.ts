@@ -33,6 +33,14 @@ export interface Witness {
    */
   readonly name?: { readonly hanzi: string; readonly pinyin: string };
   /**
+   * The author and title of a work published in Latin script.
+   *
+   * One manual on the shelf is written in English and its hanzi title is the
+   * name of the art, which would tell a reader nothing about which book it
+   * is. A proper name, carried as it is printed and never translated.
+   */
+  readonly latin?: string;
+  /**
    * The year the witness is dated to, where the register states one.
    *
    * Absent rather than recalled: a date this file supplied from memory would
@@ -56,6 +64,26 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '太乙金鏡式經', pinyin: 'tàiyǐjīnjìngshìjīng' },
   },
+  /** 《新鍥纂集紫微斗數捷覽》, the Ming print that works the 大限 from the 命宮. */
+  jielan: {
+    kind: 'transmitted',
+    name: { hanzi: '紫微斗數捷覽', pinyin: 'zǐwēidǒushùjiélǎn' },
+    year: 1581,
+  },
+  /** The sixth volume of 方外人's anthology: 闡微, 析論 and 特例命譜. */
+  juexue6: {
+    kind: 'modern',
+    name: { hanzi: '中國絕學第六冊', pinyin: 'zhōngguójuéxuédìliùcè' },
+    year: 1986,
+  },
+  /** 恭鑑老人's part of the anthology's seventh volume, on a title page of its own. */
+  beipai: {
+    kind: 'modern',
+    name: { hanzi: '紫微斗數北派', pinyin: 'zǐwēidǒushùběipài' },
+    year: 1986,
+  },
+  /** A manual of declared 中州派 lineage, which prints its 四化 table whole. */
+  han: { kind: 'modern', latin: 'Aloysius Han, Zi Wei Dou Shu', year: 2014 },
 } as const satisfies Record<string, Witness>;
 
 export type WitnessId = keyof typeof WITNESSES;

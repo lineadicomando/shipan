@@ -110,7 +110,7 @@ beside `docs/provenance.tsv` and readable the same way.
 |---|---|
 | `board` | which layer it belongs to: a board, `pillars` for the calendrical layer under all of them, `almanac`, `nianming` |
 | `quantity` | the thing computed, as a reader would ask for it |
-| `school` | the declared value the quantity stands under, written as a caller passes it — `sihua: zuofu`, `huoling: fixed` — several joined by `; ` where it stands under more than one, or `—` where no divergence is known for it |
+| `school` | the declared value the quantity stands under, written as a caller passes it — `sihua: zuofu`, `huoling: fixed` — several joined by `; ` where it stands under more than one, `recorded` where a divergence is known and carries no parameter, or `—` where none is known |
 | `rung` | one of the values above |
 | `stands_on` | what the engine derives it from, or the text that states the rule |
 | `checked_against` | what it was actually measured against, and how far — counts, spans, percentages |

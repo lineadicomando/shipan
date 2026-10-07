@@ -1992,7 +1992,7 @@ export const en = {
   // saying: a reader meeting a column of them will read «not filled in» unless
   // told it is a claim.
   'notes.ladder.attributed':
-    'The school column says which declared value a quantity stands under, in the words a caller passes them — huoling: fixed, sihua: zuofu. A dash says that no divergence is known for the quantity among the texts this project has asked, and that is a claim, not an empty cell. Whose a rule is and how well it is attested are different questions, so the two columns stand side by side and neither moves the other.',
+    'The school column says which declared value a quantity stands under, in the words a caller passes them — huoling: fixed, sihua: zuofu. A dash says that no divergence is known for the quantity among the texts this project has asked, and that is a claim, not an empty cell. The word recorded says that a divergence is known and the engine has no value for it yet. Whose a rule is and how well it is attested are different questions, so the two columns stand side by side and neither moves the other.',
   'notes.ladder.quoted':
     'The table below is quoted rather than translated. It is a register of citations — the quantities as the engine names them, editions, chapters, the programs each was measured against and the spans they were run over — and this project keeps it in English, the language of its source. What is translated is everything you decide from: the rungs above, what each of them means, and what each layer is.',
   // The way back to what the register was checked on, under the tables that

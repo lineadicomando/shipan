@@ -375,9 +375,11 @@ describe('docs/sources.tsv', () => {
    * a value renamed in `parameters.ts` would leave the register pointing at a
    * school nothing computes, silently, in a file nobody reads end to end.
    *
-   * `—` is the other legal cell and means no divergence is known for the
+   * `—` is another legal cell and means no divergence is known for the
    * quantity among the texts that were asked. It is a claim, which is why a
-   * blank does not pass for it.
+   * blank does not pass for it. `recorded` is the third: a divergence is
+   * known and carries no parameter, which `docs/sources.md` § "What a value
+   * named for a school must show" names as a state of its own.
    */
   it('attributes each quantity to a value the engine declares', () => {
     const declared = new Map<string, string>(
@@ -393,7 +395,9 @@ describe('docs/sources.tsv', () => {
 
     for (const row of register()) {
       const cell = row.school as string;
-      if (cell === '—') continue;
+      // Two cells name no value: `—`, and `recorded` where a divergence is
+      // known and has no parameter to be written under.
+      if (cell === '—' || cell === 'recorded') continue;
       // A quantity can stand under several values at once — a heaven plate is
       // turned, lodged and named by three parameters — so the cell is a list,
       // and each pair in it is held to the declaration on its own.
@@ -417,12 +421,17 @@ describe('docs/sources.tsv', () => {
    * has to be a work `docs/sources.md` writes about.
    */
   it('argues every witness a value is held by', () => {
-    const argued = read('docs/sources.md');
+    // A title wraps and a set prints a space inside one, so whitespace is not
+    // part of what is matched.
+    const argued = read('docs/sources.md').replace(/\s/g, '');
     for (const [id, witness] of Object.entries<Witness>(WITNESSES)) {
-      if (witness.name === undefined) continue;
+      // A volume is argued under its set's title, so the test reads the
+      // title up to the ordinal.
+      const title = witness.name?.hanzi.replace(/第.+冊$/, '') ?? witness.latin?.split(',')[0]?.replace(/\s/g, '');
+      if (title === undefined) continue;
       expect(
-        argued.includes(witness.name.hanzi),
-        `the witness ${id} (${witness.name.hanzi}) is named nowhere in docs/sources.md`,
+        argued.includes(title),
+        `the witness ${id} (${title}) is named nowhere in docs/sources.md`,
       ).toBe(true);
     }
   });

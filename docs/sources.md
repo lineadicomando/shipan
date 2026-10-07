@@ -6278,6 +6278,58 @@ argument: the witness carries it. The other reading is recorded here rather
 than lost, so that an edition printing the line whole overturns this in one
 commit.
 
+### Whose each value on this board is
+
+Written 2026-10-07, under § "The standard, stated once". It attributes what
+the sections above established and establishes nothing: no plate was opened
+for it. `packages/core/src/parameters.ts` carries the same attributions as
+data, and the rows this section is the argument for are the four at the foot
+of the 紫微斗數 block of `sources.tsv`.
+
+**The board is 《紫微斗數全書》's, and that is a line and not the measure.**
+Four defaults are that book's and are attributed to it: `sihua: quanshu`,
+`leapMonth: following`, `daxian: adjacent` and `huoling: fixed`. The last is
+attributed for what the book lays — a seat apiece from the year's triplicity,
+and no count by the hour in three copies — and the entry above already says
+that a silence is what it rests on. Where the sections above call that book's
+table «received» and another reading «the widespread practice», they are read
+as naming two lines; they are left as written.
+
+| Value | Held by | What the attribution rests on |
+|---|---|---|
+| `sihua: zuofu` | Aloysius Han's manual of declared 中州派 lineage (2014), and 《紫微斗數 北派》 in 《中國絕學》第七冊 (1986) | the first prints the table whole, the second draws 左輔 in a worked example decidable on that reading alone |
+| `daxian: ming` | 《紫微斗數捷覽》 (1581), and 《中國絕學》第六冊 p. 437 (1986) | the first works it both ways off one birth, the second states it and draws two boards |
+| `huoling: hour` | 《中國絕學》第六冊 p. 406 (1986) | the count whole, with a diagram. Which line that volume teaches it as is not yet read on the plate, and the value is computed after it is |
+
+**Three values are not yet attributed, which is a state and is said.**
+`yearBoundary: chunjie` and `yearBoundary: lichun`: the book says nothing
+either way, the default is the reckoning its own month and day are counted in,
+and that it is also the reference's setting makes it nobody's teaching.
+`leapMonth: current` and `leapMonth: split`: one is what a program computes
+and a program is not a witness; no text on the shelf states either.
+
+**Recorded, with no parameter.**
+
+- **解神 placed off the month.** The book places it off the birth year; what
+  boards drawn by modern software carry under the name is a star placed off
+  the month. No manual on the shelf states the second, so it has no value to
+  be written under, and its row reads `recorded`.
+- **The stars 卷二 does not place**, which modern boards carry: 恩光, 天貴,
+  天官, 天福, 咸池, 孤辰, 寡宿, 華蓋, 破碎, 天才, 天壽, 天廚, the year-branch
+  大耗 and a 地空 distinct from this book's 天空. Recorded until a manual
+  states their placement.
+- **王亭之's table at 戊, 庚 and 壬**, named by the 中州派 manual and unread.
+
+**Owed a declaration.** 庚's 忌 to 天相, which the 占驗派 material of 《中國絕學》
+第七冊 prints at its p. 252: a reading held by a named line, moving one cell,
+which is what `sihua: zuofu` is. The swap of 太陰 and 天同 between the two
+editions of 《全書》 at the same stem is a different thing and stays where it
+is: two copies of one work, settled in the register.
+
+**The 十八飛星 transmission is not in this account.** It is another board
+under the same title, with eighteen stars and no 五行局, and what it owes is a
+board of its own rather than a value on this one.
+
 ### What is not here
 
 **What the second edition confirmed rather than changed**: the 大限 opening in

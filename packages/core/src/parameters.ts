@@ -553,7 +553,7 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
   leapMonth: {
     board: 'ziwei',
     values: [
-      { id: 'following', implemented: true },
+      { id: 'following', implemented: true, heldBy: ['quanshu'] },
       { id: 'current', implemented: false },
       { id: 'split', implemented: false },
     ],
@@ -582,6 +582,7 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
         says: 'form.ziwei.sihua.zuofu',
         note: 'form.ziwei.sihua.note',
         implemented: true,
+        heldBy: ['han', 'beipai'],
       },
     ],
     default: 'quanshu',
@@ -589,16 +590,21 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
   huoling: {
     board: 'ziwei',
     values: [
-      { id: 'fixed', implemented: true },
-      { id: 'hour', implemented: false },
+      { id: 'fixed', implemented: true, heldBy: ['quanshu'] },
+      { id: 'hour', implemented: false, heldBy: ['juexue6'] },
     ],
     default: 'fixed',
   },
   daxian: {
     board: 'ziwei',
     values: [
-      { id: 'adjacent', implemented: true },
-      { id: 'ming', name: { hanzi: '命宮', pinyin: 'mìnggōng' }, implemented: false },
+      { id: 'adjacent', implemented: true, heldBy: ['quanshu'] },
+      {
+        id: 'ming',
+        name: { hanzi: '命宮', pinyin: 'mìnggōng' },
+        implemented: false,
+        heldBy: ['jielan', 'juexue6'],
+      },
     ],
     default: 'adjacent',
   },
