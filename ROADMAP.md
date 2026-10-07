@@ -164,6 +164,19 @@ One computed value is not yet attributed: the second table of `guiren`, which
 stands 甲 apart. The five phases of the 十二天將 have nothing registered, and
 both sections that would supply it are located.
 
+**太乙** — argued in `docs/sources.md` § "Whose each value of a 太乙 board
+is".
+
+| | State | What it has, and what it waits on |
+|---|---|---|
+| `epoch: taojin` | declared and refused | held by 《太乙淘金歌》, which reaches the register through 盧央 and is not on the shelf. Waits on the text, and travels with the evidence 盧央 sets against it |
+| `ji: yueji`, `ji: riji`, `ji: shiji` | declared and refused | the 金鏡 states all three and its constants fail its own check; the 統宗 carries another system's. Waits on the 統宗's being read, as that work's |
+| `yearBoundary: dongzhi`, `yearBoundary: chunjie` | declared and refused | no holder, and the default has none either |
+| 格 reaching the host's generals | owed a declaration | the 統宗, through 盧央 |
+| 格 by a 沖 of branches | owed a declaration | the same |
+| 文昌 in 太乙's own palace: 囚, 關 or 掩 | owed a declaration | the 統宗 on 樂產's authority. Waits on the plate for which of 關 and 掩 it holds |
+| 陰陽和不和 in two accounts | recorded | one work carrying both |
+
 ### What each named one waits on
 
 Most of the table waits on a source and nothing more particular. These clauses

@@ -64,6 +64,16 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '太乙金鏡式經', pinyin: 'tàiyǐjīnjìngshìjīng' },
   },
+  /** 太乙's 《統宗》, a second work and not a second copy of the 金鏡. */
+  taiyitongzong: {
+    kind: 'transmitted',
+    name: { hanzi: '太乙統宗寶鑑', pinyin: 'tàiyǐtǒngzōngbǎojiàn' },
+  },
+  /** 《太乙淘金歌》, known to this register through 盧央's study and not on the shelf. */
+  taojin: {
+    kind: 'transmitted',
+    name: { hanzi: '太乙淘金歌', pinyin: 'tàiyǐtáojīngē' },
+  },
   /** 《新鍥纂集紫微斗數捷覽》, the Ming print that works the 大限 from the 命宮. */
   jielan: {
     kind: 'transmitted',

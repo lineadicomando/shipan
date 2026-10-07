@@ -62,6 +62,7 @@ describe('the witnesses a value is held by', () => {
   ])('holds %s %s: %s by %s', (board, id, value, witness) => {
     const parameter = PARAMETERS.find((entry) => entry.board === board && entry.id === id);
     const declared = parameter?.values.find((candidate) => candidate.id === value);
-    expect(declared?.heldBy).toEqual([witness]);
+    // Among others, where a second work lays the same board.
+    expect(declared?.heldBy).toContain(witness);
   });
 });

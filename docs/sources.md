@@ -5455,6 +5455,55 @@ handout naming no source cannot contradict a text, so **nothing moves**: 大將
 and 參將 stay at rung 5, on 卷一, 卷六 and 卷九's worked boards, and this file
 is not a witness. Read on the plate 2026-08-30.
 
+### Whose each value of a 太乙 board is
+
+Written 2026-10-07, under § "The standard, stated once". It attributes what
+the sections above established and establishes nothing: no plate was opened
+for it. `packages/core/src/parameters.ts` carries the same attributions as
+data.
+
+**Two works are on this board, and they are not two copies.** 《太乙金鏡式經》
+and the 《統宗》 are different books. Where they agree — the epoch, congruent
+modulo 360 and 24; 年計 as the register laid; the arrangement of the 三基 —
+the value is attributed to both. Where they part, this section's earlier
+entries follow the 金鏡 and say that naming a value for the other «would be
+naming a parameter for a recension». That sentence is left as written and is
+no longer how the case is filed: nobody follows a recension, and a board is
+cast by the 統宗. Its readings reach this register through 盧央's
+《中國古代星占學》 (2007), which counts as read and is named as the way in.
+
+| Value | Held by | What the attribution rests on |
+|---|---|---|
+| `epoch: jinjing` | 《太乙金鏡式經》, the 《統宗》 | the anchor checked four ways in the first; the second's count differs by a multiple of both cycles and lays the same board |
+| `epoch: taojin` | 《太乙淘金歌》 | named by 盧央 as one of three 上元積年 in circulation; not on the shelf, its figure and procedure unstated here. 盧央 sets it against eleven dated positions of 《齊書·武帝紀》, where it gives 九宮 for the annal's 四宮 |
+| `ji: nianji` | both works | 歲計 in each |
+| `ji: yueji`, `riji`, `shiji` | both works, with different constants | the 金鏡 prints the three procedures entire and its constants fail the check it supplies; the 統宗's are another system's and are not read |
+
+**`yearBoundary` is not attributed, in any of its three values.** The text
+nowhere says where its counted year begins; 立春 is the default because the
+pillars beside the board turn there, which is a convention and is said as one.
+
+**Owed a declaration**, each on the 《統宗》 as 盧央 reports it:
+
+- **格 reaching the host's generals**, where the 金鏡 reads it of the guest's
+  alone — 盧央's board for 124 marks 「主大將居九宮，又與太乙相格」;
+- **格 made by a 沖 of branches**, where the 金鏡 tests the facing palace;
+- **文昌 in 太乙's own palace**, which the 金鏡 calls 囚 and the other line 關
+  on 樂產's authority, with 掩 two lines away. 盧央 reports both without
+  choosing, so which the 統宗 holds is read on the plate before a value is
+  computed.
+
+The two rows of the conditions in `sources.tsv` read `recorded` until those
+have a parameter to stand under.
+
+**Recorded, with no parameter.** 陰陽和不和, which 卷二 gives in two accounts,
+張良經's and 王希明's, inside one work.
+
+**Not a witness.** The 祖傳教材 handout parts «as a different school» and
+names no text and no line, which is what `sources.md` asks a witness to do
+first. One sentence about it above says 大將 and 參將 «stay at rung 5»; it is
+dated, and the row, which reads 2, is what holds.
+
 ### What is not here
 
 **月計, 日計 and 時計.** Stated in 卷一 and computable from the same tables —

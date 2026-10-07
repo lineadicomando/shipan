@@ -382,16 +382,17 @@ describe('docs/sources.tsv', () => {
    * named for a school must show" names as a state of its own.
    */
   it('attributes each quantity to a value the engine declares', () => {
-    const declared = new Map<string, string>(
-      PARAMETERS.flatMap((parameter) =>
-        parameter.values
-          .filter((value) => typeof value.id === 'string')
-          .map((value): [string, string] => [
-            `${parameter.id}: ${String(value.id)}`,
-            parameter.board,
-          ]),
-      ),
-    );
+    // A pair is unique only within its board — `yearBoundary: lichun` is the
+    // pillars', 太乙's and 紫微斗數's — so each is kept with every board that
+    // declares it.
+    const declared = new Map<string, Set<string>>();
+    for (const parameter of PARAMETERS) {
+      for (const value of parameter.values) {
+        if (typeof value.id !== 'string') continue;
+        const pair = `${parameter.id}: ${value.id}`;
+        declared.set(pair, (declared.get(pair) ?? new Set<string>()).add(parameter.board));
+      }
+    }
 
     for (const row of register()) {
       const cell = row.school as string;
@@ -408,9 +409,9 @@ describe('docs/sources.tsv', () => {
             `packages/core/src/parameters.ts does not declare.`,
         ).toBe(true);
         expect(
-          declared.get(school),
+          declared.get(school)?.has(row.board as string),
           `docs/sources.tsv puts ${school} on a ${row.board} row`,
-        ).toBe(row.board);
+        ).toBe(true);
       }
     }
   });
