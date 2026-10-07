@@ -1345,6 +1345,8 @@ export const en = {
   'form.pillars.yearBoundary.lichun': 'at 立春 lìchūn, where the solar year turns',
   'form.pillars.yearBoundary.chunjie':
     'at 正月初一 zhēngyuèchūyī, the first day of the lunar year',
+  'form.pillars.yearBoundary.dongzhi':
+    'at 冬至 dōngzhì, the winter solstice, as 《命理新論》 mìnglǐxīnlùn works it; the month pillar stays',
   // The 四化 sìhuà, and the first parameter here to carry a second school.
   // The label names the table and the values name what parts them, because
   // what parts them is one cell: 壬's 科 on 天府 or on 左輔.

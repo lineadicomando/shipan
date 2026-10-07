@@ -399,6 +399,15 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.pillars.yearBoundary.chunjie',
         implemented: true,
       },
+      // 《命理新論》 第九章: a birth after 冬至 takes the next year's pillar,
+      // and the month pillar stays.
+      {
+        id: 'dongzhi',
+        name: { hanzi: '冬至', pinyin: 'dōngzhì' },
+        says: 'form.pillars.yearBoundary.dongzhi',
+        implemented: true,
+        heldBy: ['xinlun'],
+      },
     ],
     default: 'lichun',
   },
@@ -647,7 +656,14 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
   minggong: {
     board: 'qizheng',
     values: [
-      { id: 'yuejiang', name: { hanzi: '月將', pinyin: 'yuèjiàng' }, implemented: true },
+      // 《三命通會》卷二 論坐命宮: 「將所生之時加於所生之月，順行十二位，逢卯即
+      // 安命宮」 — the hour laid on the month's palace and counted to 卯.
+      {
+        id: 'yuejiang',
+        name: { hanzi: '月將', pinyin: 'yuèjiàng' },
+        implemented: true,
+        heldBy: ['santong'],
+      },
       { id: 'ascendant', implemented: false },
     ],
     default: 'yuejiang',

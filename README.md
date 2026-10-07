@@ -290,7 +290,7 @@ from the first release. The Qi Men chart's, in brief:
 | `centreLodging` | the centre lodges in 坤; or by the dun, either way round; or by the eight 節; or by the four corners | `kun`    |
 | `earthPlate`    | one earth plate for the sixty hours of a 元, or a new one at every decade            | `yuan`   |
 | `trueSolarTime` | correct clock time to the Sun                                                      | `true`   |
-| `yearBoundary`  | 立春 or 正月初一                                                                         | `lichun` |
+| `yearBoundary`  | 立春, 正月初一 or 冬至                                                                    | `lichun` |
 | `dayBoundary`   | the day pillar turns at 23:00 or at midnight                                       | `zishi`  |
 | `system`        | which family of chart: 時家, or the day's, month's or year's                         | `shijia` |
 

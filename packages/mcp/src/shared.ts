@@ -208,9 +208,11 @@ export const optionSchema = {
       'Where the day pillar turns over: at 23:00 with the hour of the Rat, or at midnight. Default zishi. The two disagree only for that one hour, and there about a quarter of the chart.',
     ),
   year_boundary: z
-    .enum(['lichun', 'chunjie'])
+    .enum(['lichun', 'chunjie', 'dongzhi'])
     .optional()
-    .describe('Where the year of the pillars begins. Default lichun.'),
+    .describe(
+      'Where the year of the pillars begins. Default lichun. chunjie turns it at the first day of the lunar year. dongzhi turns the year pillar at the winter solstice and leaves the month pillar where it was, as the modern treatise Mingli Xinlun works it; it moves one pillar for the weeks between the solstice and lichun.',
+    ),
   shensha: z
     .enum(['xieji'])
     .optional()
@@ -284,7 +286,7 @@ interface RawInput {
   timezone?: string | undefined;
   true_solar_time?: boolean | undefined;
   day_boundary?: 'zishi' | 'midnight' | undefined;
-  year_boundary?: 'lichun' | 'chunjie' | undefined;
+  year_boundary?: 'lichun' | 'chunjie' | 'dongzhi' | undefined;
   method?: 'chaibu' | 'zhirun' | 'maoshan' | undefined;
   spirits?: 'dun' | 'fixed' | 'baihu' | undefined;
   centre_lodging?: 'kun' | 'dun' | 'dunni' | 'bajie' | 'siyu' | undefined;

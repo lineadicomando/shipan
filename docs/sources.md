@@ -135,19 +135,54 @@ is ending while its own stem is read from the day that is coming. That is
 values. `dayBoundary: zishi`, the default, stays unattributed: this manual
 argues against it without naming who holds it.
 
-**And the year, in a sentence.** 第五章 第二節: 「命理學向來是不管有無閏月…均
-是以立春為春首」, of the seasons, and the chapter counts the months from the
-節. It is said of where spring opens and not in so many words of the year
-pillar, so `yearBoundary: lichun` is not attributed on it; the passage that
-would say it is the chapter's account of the year pillar, which was not
-reached.
+**The four boards the chapter works, laid again.** 第三節 casts four births
+and prints the eight characters of each. Three are the engine's under the
+readings above, character for character: 辛酉 乙未 乙酉 壬午; a 夜子, 丁亥
+甲辰 甲寅 丙子, 「夜子則應取用明日子時的天干」; and an 早子, 庚子 己卯 甲午
+甲子. They are the first worked boards on the shelf for the day turned at
+midnight, and the 夜子 is the one that tells the two readings apart: under
+`dayBoundary: zishi` the same hour gives 乙卯 for the day.
+
+**The fourth turns the year pillar at 冬至, which this engine did not
+declare.**
+
+> 又如民國十七年（戊辰）十一月二十日申時出生，因十一月二十日在冬至以後，故年柱
+> 應為下一年的干支「己巳」，月柱仍為「甲子」，日柱為「乙巳」，時柱…「甲申」。
+
+The year pillar is the next year's from the solstice and the month pillar is
+left where 立春's year puts it. The section before agrees with it: the months
+are counted 「以子正的冬至點為年之始」. So the pillars' year has a third
+reading, held by this manual and worked by it, and it is declared and computed
+as `yearBoundary: dongzhi`: one pillar moved for the six weeks between the
+solstice and 立春, and nothing else. Laid again, the board is the book's.
+
+`yearBoundary: lichun`, the default, and `yearBoundary: chunjie` stay
+unattributed. This manual says of the *seasons* that 「命理學向來…均是以立春為
+春首」 and then turns the year somewhere else, which is a caution about reading
+a sentence on spring as a sentence on the year.
+
+**A lead for the day turned at midnight, older than this manual.** Its 第四節
+quotes 沈義方's 《星平大成》: 「余初不明一夜字，詢諸監中友人始知…夜子者，今日之
+夜，非今日之早也」. That work is not on the shelf.
 
 **Asked of the 三命通會 and not answered there.** Its 論年月日時, the chapter
 before, says nothing of where the year turns or where the day does: it ends on
 「時有八刻，有初正末，氣不同，須細察之」 in the modern copy, which was not taken
-to the plate. And its 論坐命宮 lays the 命宮 by setting the hour on the month
-and counting to 卯, which is kin to the rule a 七政四餘 board follows and is a
-lead for `minggong: yuejiang`, in other words than the ones quoted there.
+to the plate. Its 論坐命宮, the leaf before 論大運, was: 卷二 leaf 六十五, printed p. 92,
+read on the plate.
+
+> 先將所生之月從子上起正月，亥上二月，戌三酉四申五未六午七巳八辰九卯十寅十一丑
+> 十二，逆行十二位；次將所生之時加於所生之月，順行十二位，逢卯即安命宮。經云：
+> 天輪轉出地輪上，卯上分明是命宮是也。
+
+with a worked case, 三月 at 戌 and a 戌 hour counted on to 卯. The hour is
+laid on a palace and counted forward to 卯, which is `minggong: yuejiang`, and
+this work is named for it. **Where it parts from a 七政四餘 board is in whose
+palace the hour is laid on.** Here it is the month's, 正月 on 子 and back a
+palace a month; there it is the palace the Sun stands in, which changes at the
+中氣 in the middle of a month. The two agree for the first half of every month
+and part for the second. That is a divergence recorded with no parameter: it
+belongs to how the Sun's palace is found and not to 加時.
 
 ---
 

@@ -142,12 +142,23 @@ export function resolveMoment(
   // and asking for it is what pays for it.
   const lunar = deferred(() => lunarDate(time.julianDayUT, context));
 
+  // The year 立春 opens, which two of the three readings need: it is the year
+  // pillar under `lichun`, and under `dongzhi` it is still what the month's
+  // stem is taken from — 「年柱應為下一年的干支…月柱仍為甲子」.
+  const springYear = (): number =>
+    fromJulianDay(lastCrossingBefore(315, time.julianDayUT, context), input.timezone).year;
   const year = yearGanzhi(
     options.yearBoundary === 'chunjie'
       ? lunar().year
-      : fromJulianDay(lastCrossingBefore(315, time.julianDayUT, context), input.timezone).year,
+      : options.yearBoundary === 'dongzhi'
+        ? // The solstice falls in December, and the year it opens is the next.
+          fromJulianDay(lastCrossingBefore(270, time.julianDayUT, context), input.timezone).year + 1
+        : springYear(),
   );
-  const month = monthGanzhi(year.stem.index, jie.term.monthBranch as number);
+  const month = monthGanzhi(
+    (options.yearBoundary === 'dongzhi' ? yearGanzhi(springYear()) : year).stem.index,
+    jie.term.monthBranch as number,
+  );
 
   const moment: Moment = {
     input,

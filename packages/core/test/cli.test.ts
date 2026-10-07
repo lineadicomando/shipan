@@ -154,10 +154,16 @@ describe('the year a board counts, and the year the pillars are cut at', () => {
     expect(await run(['bazi', ...at, '--year-boundary', 'chunjie'])).toBe(0);
     expect(out).toContain('壬戌');
 
+    // 冬至 is a third reading of the pillars' year since 《命理新論》 was read,
+    // and on this date it agrees with 立春: the solstice is behind both.
+    out = '';
+    expect(await run(['bazi', ...at, '--year-boundary', 'dongzhi'])).toBe(0);
+    expect(out).toContain('癸亥');
+
     // And a value the pillars do not take is refused by name, where it used to
     // be validated on the one command that read it and nowhere else.
-    expect(await run(['bazi', ...at, '--year-boundary', 'dongzhi'])).toBe(2);
-    expect(err).toContain('dongzhi');
+    expect(await run(['bazi', ...at, '--year-boundary', 'xiazhi'])).toBe(2);
+    expect(err).toContain('xiazhi');
   });
 
   it("cuts 紫微斗數's own year under its own name", async () => {

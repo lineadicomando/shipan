@@ -1245,6 +1245,8 @@ export const it: Record<MessageKey, string> = {
   'form.pillars.yearBoundary.lichun': 'a 立春 lìchūn, dove gira l’anno solare',
   'form.pillars.yearBoundary.chunjie':
     'a 正月初一 zhēngyuèchūyī, il primo giorno dell’anno lunare',
+  'form.pillars.yearBoundary.dongzhi':
+    'a 冬至 dōngzhì, il solstizio d’inverno, come lo svolge il 《命理新論》 mìnglǐxīnlùn; il pilastro del mese resta',
   'label.contested': 'qui le scuole divergono',
   'form.bazi.luckGranularity': 'La serie dei decenni si colloca contando',
   'form.bazi.luckGranularity.shichen':

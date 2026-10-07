@@ -285,7 +285,7 @@ calendars in one output.
 | Parameter | Values | Default |
 |---|---|---|
 | `trueSolarTime` | `true`, `false` — the one boolean here | `true` |
-| `yearBoundary` | `lichun` (立春 lìchūn), `chunjie` (正月初一 zhēngyuèchūyī) | `lichun` |
+| `yearBoundary` | `lichun` (立春 lìchūn), `chunjie` (正月初一 zhēngyuèchūyī), `dongzhi` (冬至 dōngzhì — the year pillar alone, the month pillar staying) | `lichun` |
 | `dayBoundary` | `zishi` (子時 zǐshí, 23:00 → next day), `midnight` | `zishi` |
 
 太乙 and 紫微斗數 cut the counted year by a boundary of their own, and the

@@ -198,7 +198,8 @@ state or short of an attribution.
 | | State | What it has, and what it waits on |
 |---|---|---|
 | a second value of `shensha` | recorded | 曹震圭's and 邵泰衢's accounts of the 十二神, 《萬全廣濟》's table for 蠶命, the fixed-date list of 楊公忌: known through the 《協紀辨方書》 that rejects them. Waits on a witness of their own |
-| who holds the year turned at 立春 or at 正月初一, the day turned at the 子 hour, and the clock left uncorrected | not yet attributed | every reading is computed. 《三命通會》's 論年月日時 is silent on the boundaries; 《命理新論》 holds true solar time and the day turned at midnight, and says of the seasons that 立春 opens them without saying it of the year pillar |
+| who holds the year turned at 立春 or at 正月初一, the day turned at the 子 hour, and the clock left uncorrected | not yet attributed | every reading is computed. 《三命通會》's 論年月日時 is silent on the boundaries. 《命理新論》 holds true solar time, the day turned at midnight and the year turned at 冬至, and none of these four. Asked 2026-10-07; a lead for the day at midnight in 沈義方's 《星平大成》, not held |
+| the hour laid on the month's palace rather than the Sun's, for the 命宮 | recorded | 《三命通會》卷二: 正月 on 子 and back a palace a month, where a 七政四餘 board changes palace at the 中氣. They part in the second half of every month |
 | who holds the 大運 counted to the minute | not yet attributed | the count by the 時辰 is 《三命通會》's, which knows the 刻 is finer and counts by the 時 |
 | who holds the count of years lived by turns | not yet attributed | the other count is 《遁甲演義》's |
 
@@ -218,6 +219,19 @@ is «not expected» on this evidence.
 | a 紫微斗數 text splitting a leap month at its middle, for `leapMonth: split` | nothing found |
 | a 七政四餘 text making 羅睺 the ascending node | nothing found; one set of lecture notes names 羅睺 天首星 and says nothing of which node |
 | a manual placing 解神 off the month | 《中國絕學》第六冊 p. 399, since read on the plate: stated whole, with a diagram |
+
+### What was asked of the plates and not found, 2026-10-07
+
+Each of these was put to the works named and the works were read on the
+plate. A negative here is about those works and no others.
+
+| The question | Asked of | Outcome |
+|---|---|---|
+| who turns the day when the 子 hour opens, the default | 《三命通會》卷二, 《命理新論》 第五章 and 第九章 | not found. The second argues against it and names nobody for it |
+| who turns the pillars' year at 立春, the default, or at 正月初一 | the same | not found. 《命理新論》 turns it at 冬至 |
+| the five phases of the 十二天將 | 《御定六壬直指》卷上, 《六壬經緯》卷一 to 卷三 by their 目錄 | not found, and the second has no juan of 神煞 |
+| a 六壬 text turning the general at the 節, or cutting day from night at a rising | the same two | not found: both turn at the 中氣 and cut by the branches |
+| who holds the year boundaries of 太乙 and of 紫微斗數, the ascending node as 羅睺, the palaces cut at the 中氣 | nothing: no lead on the shelf | not asked |
 
 ### What each named one waits on
 
