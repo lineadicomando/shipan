@@ -100,6 +100,9 @@
   .anchors dt { color: var(--faint); }
   .anchors dd { margin: 0; }
   .anchors .glyph { display: inline; margin-inline: 0.35rem; }
+  /* Three short columns in a page's width: a name is kept on its line, and
+     the slack goes to the last column as `.reading` has it. */
+  .palaces :is(th, td) { white-space: nowrap; }
   /* The word leads; the name it renders sits under it, small. */
   th span:first-child, td span:first-child { display: block; }
   .glyph { display: block; color: var(--faint); font-size: 0.8em; }
