@@ -2267,6 +2267,13 @@ export const it: Record<MessageKey, string> = {
   'form.qizheng.ziqi': 'Se entri 紫氣 zǐqì',
   'form.qizheng.ziqi.off': 'tre complementi: solo effemeridi',
   'form.qizheng.ziqi.yinianyisu': 'quattro complementi: una dimora l’anno 一年一宿 yīniányīxiù',
+  'form.qizheng.xiudu': 'Le ventotto dimore cominciano',
+  'form.qizheng.xiudu.juxing':
+    'alle loro stelle determinative 距星 jùxīng, ciascuna collocata in cielo in questo istante',
+  'form.qizheng.xiudu.shoushi':
+    'dove le pone il 授時曆 shòushílì del 1281, portate a questo istante con il metodo di quel calendario',
+  'form.qizheng.xiudu.note':
+    'Ogni corpo di questa tavola è collocato rispetto alle dimore, perciò il punto in cui una dimora comincia decide in quale dimora sta un corpo e a quale grado. La prima lettura prende ogni confine dalla sua stella, dove la stella sta ora, ed è una costruzione propria del motore. La seconda prende le ampiezze che un calendario misurò lungo l’equatore nel 1281, le porta sull’eclittica con la geometria di quel calendario e le muove come esso dice che si muove il cielo. Le due letture concordano entro un grado circa per le dimore le cui stelle stanno vicino all’eclittica. Distano fino a sette gradi per le dimore le cui stelle ne stanno lontano, perciò un corpo può cadere in una dimora diversa sotto ciascuna.',
   'form.qizheng.luohou': 'Quale nodo è 羅睺 luóhóu',
   'form.qizheng.luohou.descending': 'il nodo discendente: la legge degli astrologi',
   'form.qizheng.luohou.ascending': 'il nodo ascendente: 湯若望 Tāng Ruòwàng e il 時憲曆 shíxiànlì',

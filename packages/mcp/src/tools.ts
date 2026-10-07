@@ -372,6 +372,12 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
         date: dateSchema,
         time: timeSchema,
         ...placeSchema,
+        xiudu: z
+          .enum(['juxing', 'shoushi'])
+          .optional()
+          .describe(
+            'Where the twenty-eight lodges begin, which decides the lodge and the degree of every body. Default juxing: each boundary taken from its determinative star as placed at this instant, which is this engine\'s own construction and no calendar\'s. shoushi: the lodges of the Shoushi calendar of 1281, carried to the instant by that calendar\'s own method from its equatorial widths and its rate of precession. The two agree to about a degree for lodges whose stars lie near the ecliptic and stand up to seven degrees apart for those that lie far from it, so a body can fall in a different lodge under each: say which frame the board was laid in.',
+          ),
         luohou: z
           .enum(['descending', 'ascending'])
           .optional()
@@ -397,6 +403,7 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
       try {
         const { moment, label } = resolveInput(args, context);
         const options: QizhengOptions = { ...DEFAULT_QIZHENG_OPTIONS };
+        if (args.xiudu) options.xiudu = args.xiudu;
         if (args.luohou) options.luohou = args.luohou;
         if (args.ziqi) options.ziqi = args.ziqi;
 

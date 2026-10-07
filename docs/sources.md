@@ -4740,26 +4740,57 @@ read on the plate the same day.**
   ecliptic to equator degree by degree, 「如赤道率一度〇八六五而一」 for the
   first. Seen and not transcribed. It prints an equatorial 參.
 
-**So what the value waits on is no longer a number. It is how the table is
-carried from 1281 to a chart's instant**, and there are three ways, each of
-which is somebody's:
+**The value is computed, since 2026-10-07, by the work's own method.** Three
+ways of carrying the table from 1281 to a chart's instant were set out — the
+text's 術, its 歲差 alone, the sky's precession — and the first was chosen,
+because it is the only one under which the frame is the 授時's and not the
+授時's table moved by somebody else's rule. `packages/core/src/shoushi.ts`
+is that method, and what it rests on was read on the plate:
 
-1. **By the text's own 術**: the solstice moved on the equator by 一分五十秒 a
-   year, and every lodge's ecliptic width recomputed through the table of
-   rates — 「依術推變，各得當時宿度」. It is what the work says to do. It needs
-   the conversion table transcribed, and it would give 參 an ecliptic width by
-   the method rather than by subtraction, and reproduce the printed table at
-   its epoch as a check.
-2. **The printed widths held as they are, and the solstice moved by the text's
-   歲差.** What a practitioner with the table and no 術 would do. It needs the
-   歲差 turned into ecliptic, which the text does only through that same
-   table.
-3. **The printed widths held against the stars**, the anchor carried by the
-   sky's own precession. It needs nothing more, and it is no longer the
-   曆's reckoning after its epoch: 一分五十秒 of equator a year is not what the
-   sky does.
+- **The equatorial widths**, 卷二's 赤道宿次, all twenty-eight printed with a
+  running sum beside each and 參 among them at 十一度一十分: 79.20, 93.8075,
+  83.85 and 108.40 to the quadrant, 365.2575 round.
+- **求四正赤道宿積度**: 「置四正赤道宿全度，以所推四正赤道日度及分減之，餘為距後
+  度，以赤道宿度累加之」, with the epoch's own figures — the solstice at 箕十度,
+  四十分 short of the end of 箕; the spring 正 at 壁五度七〇三一二五.
+- **推黃道宿度**: 「以其赤道積度減之，餘以黃道率乘之，如赤道率而一，所得以加黃道
+  積度…以前宿黃道積度減之，為其宿黃道度，其秒就近為分」.
+- **The rates**, by 卷三's 推經度黃赤道率術, which is 弧矢割圓: an arc is its
+  half-chord and the square of its sagitta over the diameter, on a circle of
+  diameter 121.75 with a 大股 of 56.0268. The text's worked steps print what
+  it gives — 一度〇八六五 under the first degree, 二度一七二八 under the second,
+  二十五度七七五二 under the twenty-fourth — and the engine's figures agree
+  with each to the fourth place or one unit of it.
+- **消長**: a 秒 a century passes from the 歲周 to the 周天, 「凡上下消長皆從
+  虛度」, so that the 歲差 is 一分五十六秒 three hundred and sixty-seven years
+  on, as the work computes for its own day.
 
-The value stays declared and refused until one is chosen.
+**The check is the table itself.** At the epoch the method gives back the
+printed 黃道宿次, all twenty-eight lodges within a 分: twenty-four to the same
+分, three a 分 across a rounding (氐, 婁, 畢), and 虛, which the text makes
+carry the circle's seventy-five 秒. 斗 opens 0.3682 度 past the solstice
+against a printed 三六八一. **And 參 comes out at 10.2809**, which is the
+10.28 the western sum left for it: the one cell this copy lacks is reached by
+the method from the equatorial 參 the copy does print, so the subtraction and
+the 術 agree and the derived mark on that cell is no longer the only thing
+behind it.
+
+**What kind of frame it is, which the comparison shows and the method
+explains.** Set against the stars' own longitudes at the epoch, the 授時 frame
+agrees within a degree for the lodges whose 距星 lie near the ecliptic — 斗,
+箕, 氐, 井, 鬼 — and stands up to nine degrees off for those that lie far from
+it: 室, 奎, 星, 張, 翼. That is what turning an equatorial width into an
+ecliptic one does: the boundary is put where the circle through the pole and
+the star cuts the ecliptic, and not at the star's own longitude. So `xiudu:
+juxing` and `xiudu: shoushi` are two frames and not two measurements of one,
+and a body can stand in a different lodge under each. The row is rung 4: one
+text, checking itself as thoroughly as a text can.
+
+**Two limits, said.** The degree a body stands at in its lodge is printed in
+the degrees every other longitude here is in, three hundred and sixty to the
+circle, where the 曆 counts 度 of which a year holds 365.2425. And the epoch's
+instant is the sky's solstice of December 1280 and not the 曆's own 氣應: it
+decides only how many years a chart stands from the epoch.
 
 **And the third book on the shelf that could have been asked is the wrong
 size for the question.** 《中國古代天文與曆法》, 陳久金 · 楊怡, 中國國際廣播

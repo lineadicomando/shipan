@@ -2637,6 +2637,13 @@ export const en = {
   'form.qizheng.ziqi': 'Whether 紫氣 zǐqì enters',
   'form.qizheng.ziqi.off': 'three remainders: ephemeris only',
   'form.qizheng.ziqi.yinianyisu': 'four remainders: one lodge a year 一年一宿 yīniányīxiù',
+  'form.qizheng.xiudu': 'The twenty-eight lodges begin',
+  'form.qizheng.xiudu.juxing':
+    'at their determinative stars 距星 jùxīng, each placed in the sky at this instant',
+  'form.qizheng.xiudu.shoushi':
+    'where the 授時曆 shòushílì of 1281 puts them, carried to this instant by that calendar’s own method',
+  'form.qizheng.xiudu.note':
+    'Every body on this board is stood against the lodges, so where a lodge begins decides which lodge a body is in and at what degree. The first reading takes each boundary from its star as the star stands now, and it is this engine’s own construction. The second takes the widths a calendar measured along the equator in 1281, carries them to the ecliptic by that calendar’s own geometry, and moves them as it says the sky moves. The two readings agree to about a degree for the lodges whose stars lie near the ecliptic. They stand as much as seven degrees apart for the lodges whose stars lie far from it, so a body can fall in a different lodge under each.',
   'form.qizheng.luohou': 'Which node is 羅睺 luóhóu',
   'form.qizheng.luohou.descending': 'the descending node: the astrologers’ law',
   'form.qizheng.luohou.ascending': 'the ascending node: 湯若望 Tāng Ruòwàng and the 時憲曆 shíxiànlì',

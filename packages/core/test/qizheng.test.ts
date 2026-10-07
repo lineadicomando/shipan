@@ -501,11 +501,42 @@ describe('the seven governors', () => {
   });
 });
 
+/**
+ * The 授時 frame on a board.
+ *
+ * `shoushi.test.ts` holds the frame to the text; this says what it does to a
+ * board. Nothing about a body moves — the sky is the sky — and what changes is
+ * the lodge it is stood in and the degree it is read at.
+ */
+describe('a board laid in the 授時 frame', () => {
+  const julianDay = at('2026-08-15', '12:00');
+
+  it('leaves every body where the sky has it, and its palace with it', () => {
+    const stars = board(julianDay, '午');
+    const shoushi = board(julianDay, '午', { xiudu: 'shoushi' });
+    expect(shoushi.governors.map((g) => g.longitude)).toEqual(stars.governors.map((g) => g.longitude));
+    expect(shoushi.governors.map((g) => g.palace.id)).toEqual(stars.governors.map((g) => g.palace.id));
+    expect(shoushi.options.xiudu).toBe('shoushi');
+  });
+
+  it('stands a body in another lodge, or at another degree of the same one', () => {
+    const stars = board(julianDay, '午');
+    const shoushi = board(julianDay, '午', { xiudu: 'shoushi' });
+    const standing = (laid: typeof stars) =>
+      laid.governors.map((g) => `${g.lodge.hanzi}${g.lodgeDegree.toFixed(1)}`);
+    expect(standing(shoushi)).not.toEqual(standing(stars));
+    // Seven bodies, each in one of twenty-eight lodges and within its width.
+    for (const governor of shoushi.governors) {
+      expect(governor.lodgeDegree).toBeGreaterThanOrEqual(0);
+      expect(governor.lodgeDegree).toBeLessThan(35);
+    }
+  });
+});
+
 describe('the options it does not implement', () => {
   const julianDay = at('2026-08-15', '12:00');
   const refused: [keyof QizhengOptions, string][] = [
     ['xiudu', 'shixian'],
-    ['xiudu', 'shoushi'],
     ['minggong', 'ascendant'],
     ['gong', 'ci'],
   ];

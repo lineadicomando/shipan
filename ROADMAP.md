@@ -74,7 +74,7 @@ second copy of one text buys".
 |---|---|
 | 奇門 | `plate: fei`, `plate: xingfei`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
-| 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `minggong: ascendant`, `gong: ci` |
+| 七政四餘 | `xiudu: shixian`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
 | 紫微斗數 | `leapMonth: current`, `leapMonth: split` |
 
@@ -177,14 +177,12 @@ Whose bodies 格 is marked for, and what 文昌 in 太乙's own palace is called
 left this table on 2026-10-07 and are computed.
 
 **七政四餘** — argued in `docs/sources.md` § "Whose each value of a 七政四餘
-board is". The default frame is the engine's own construction, and no frame a
-line holds is computed yet. Where the clause for `xiudu: shoushi`
-below calls the subtraction «a derivation and not a witness», this table is
-what holds.
+board is". The default frame is the engine's own construction; the 授時
+frame, the first a line holds, is computed since 2026-10-07 by the method of
+《授時曆故》.
 
 | | State | What it has, and what it waits on |
 |---|---|---|
-| `xiudu: shoushi` | declared and refused | held by 《授時曆故》卷二. The twenty-eight widths are transcribed and close on the text's sums, 參 supplied by its quadrant and marked; the anchor at 至元辛巳 and the 歲差 are read. Waits on a decision and not on a text: how the table is carried from its epoch to a chart's instant — by the work's own 術, by its 歲差 alone, or by the sky's precession |
 | `xiudu: shixian` | declared and refused | a table with no epoch that can be cited. Waits on one |
 | `gong: ci` | declared and refused | no holder named. Waits on the same table |
 | `minggong: ascendant` | declared and refused | no holder named; a second method and not a second reading |
@@ -307,9 +305,6 @@ are the query to put to an arriving text.
   of 《金鏡寶鑑》 reads 旺相休囚死 outward from the star and tabulates all nine
   that way, swapping 相 with 休 and 囚 with 死. Its table checks its own rule
   rather than the rule.
-- **`xiudu: shoushi`** — a decision about how the table is carried to a
-  chart's instant; see the table of states above. The widths, the anchor and
-  the 歲差 are read.
 
 ## 2. The shelf
 

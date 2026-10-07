@@ -7,6 +7,7 @@ import {
 } from './ephemeris.js';
 import { BRANCHES, type Branch } from './ganzhi.js';
 import { QIZHENG_PARAMETERS, requireImplemented } from './parameters.js';
+import { shoushiBoundaries } from './shoushi.js';
 import type { Element } from './types.js';
 
 /**
@@ -532,7 +533,11 @@ export function qizhengBoard(
   requireImplemented(QIZHENG_PARAMETERS, options, 'xiudu', 'ziqi', 'minggong', 'gong', 'luohou');
 
   const { julianDay, hour } = request;
-  const boundaries = lodgeBoundaries(julianDay, context);
+  // The stars themselves, placed at the instant, or the 授時曆's lodges
+  // carried from its epoch by its own method. Either way a list of longitudes
+  // aligned with `LODGES`, and everything below reads it the same.
+  const boundaries =
+    options.xiudu === 'shoushi' ? shoushiBoundaries(julianDay) : lodgeBoundaries(julianDay, context);
   const place = (body: QizhengBody, longitude: number, speed: number): DegreePlacement => ({
     ...standingOf(longitude, boundaries),
     body,
