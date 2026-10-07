@@ -1608,7 +1608,7 @@ under the naming of the spirits alone.
 | `method: maoshan` | 劉文元《奇門啟悟》 (2008), 唐頤《圖解奇門遁甲大全》 (2009) | each states the rule complete with its two edge cases; the credit to the 茅山道士 is theirs and travels as theirs |
 | `spirits: fixed` | 《御定奇門寶鑑》 | the eight standing in both dun |
 | `spirits: baihu` | 《奇門遁甲全局》 | three yang plates with 白虎 fifth and 勾陳 sixth |
-| `centreTravel: stay` | 《御定奇門寶鑑》 | the 值符 and 值使 read at 坤 |
+| `centreTravel: stay` | 《御定奇門寶鑑》, 《奇門遁甲統宗》 | the 值符 and 值使 read at 坤; the second in 「甲辰在中宮，寄於坤二，天禽為符，死門為使」 |
 | `centreTravel: travel` | 《奇門遁甲金鏡寶鑑》 | 「符使不必寄於二」 |
 | `leap: runyue` | 《奇門遁甲金鏡寶鑑》 | states the placement, works it twice by date, rejects the solstitial one. A work arguing its own reading is its own line |
 | `strengths: star` | 《奇門遁甲金鏡寶鑑》卷之四 | tabulates the five states outward from each of the nine stars |

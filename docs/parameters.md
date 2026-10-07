@@ -185,6 +185,21 @@ Where a parameter has one implemented value there is nothing to be aware of and
 nothing is said: what would be reported is not a school but the absence of a
 second one, which is `ROADMAP.md` § 1's business.
 
+**And the board says who lays the combination it stands on.** Axes are
+independent in the engine and lines hold them together, so every parameter
+added multiplies the boards no text ever laid, and such a board looks exactly
+like one a school teaches. `combinationOf` in
+`packages/core/src/parameters.ts` reads the answer off the declaration: every
+parameter of the board counts, a single-valued one included, and the layers
+under the board do not. Three answers — one text holds every value in force;
+each has a text and none holds them all, so the combination is the engine's;
+or a value is a convention with no text named for it yet, in which case what
+holds all the others is said beside it. It closes the block of schools in a
+transcript, in a prompt's fence and on a drawing, and travels as `laidBy`
+*beside* the board over REST: it is a statement about the shelf, and a saved
+board must not move when a text is read. It is never a refusal and never a
+verdict on the board.
+
 **Each board carries its own input type. None inherits a default from
 dunjia's.**
 

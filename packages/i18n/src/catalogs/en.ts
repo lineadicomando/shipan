@@ -2426,6 +2426,22 @@ export const en = {
   // the default included, since a reader who moved nothing is the one who does
   // not know a choice was made for them.
   'cli.heading.divergences': 'Schools followed',
+  // Who lays the combination a board stands on, under the schools followed.
+  // Three sentences for the three answers `combinationOf` gives, and a fourth
+  // for the case a reader meets most: some values are conventions with no text
+  // named, and the rest do belong to one text. Each leads with what the board
+  // has; the shelf's limit follows as the reason.
+  'cli.combination.together': 'This combination of values is laid as one by {witnesses}.',
+  'cli.combination.apart':
+    'Each value this board was laid on has a text behind it, and the combination is this engine’s: no text on its shelf lays them all together.',
+  'cli.combination.unattributed':
+    'Some of the values this board was laid on are conventions of this engine, with no text named for them yet.',
+  'cli.combination.unattributedBeside':
+    'Some of the values this board was laid on are conventions of this engine, with no text named for them yet. The other values are laid as one by {witnesses}.',
+  'cli.combination.unattributedApart':
+    'Some of the values this board was laid on are conventions of this engine, with no text named for them yet. Each of the other values has a text behind it, and no text on the shelf lays those all together.',
+  'cli.combination.and': ' and ',
+  'label.witness.engine': 'this engine’s own construction',
   'cli.heading.terms': 'Solar terms of {year}',
   'cli.heading.calendar': 'Lunar date',
   'cli.heading.patterns': 'Configurations',

@@ -83,7 +83,10 @@ export function createServer(context: ToolContext = {}): McpServer {
         'EVERY BOARD IS LAID BY A SCHOOL, INCLUDING THE ONE NOBODY CHOSE. Under the pillars ' +
         'of every answer there is a block naming each divergence in force and the value it ' +
         'stands on — the default included, because whoever chose nothing is exactly who does ' +
-        'not know a choice was made for them. Say which school laid the board you are ' +
+        'not know a choice was made for them. The block closes on a sentence saying whether ' +
+        'a named text lays that whole combination of values, or the combination is this ' +
+        'engine’s own: report it in a clause, as a fact about what has been read and never ' +
+        'as a fault in the board. Say which school laid the board you are ' +
         'reporting, and that another exists. And do not lay one board twice under two schools ' +
         'and report their agreement: two schools of one art share nearly everything they are ' +
         'made of, so where they agree is the part neither disputed. ' +

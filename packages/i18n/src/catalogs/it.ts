@@ -2089,6 +2089,22 @@ export const it: Record<MessageKey, string> = {
   // «Seguite» e non «usate»: una scuola si segue, ed è un impegno che chi la
   // segue potrebbe difendere. Il default è nell'elenco come gli altri.
   'cli.heading.divergences': 'Scuole seguite',
+  // Who lays the combination a board stands on, under the schools followed.
+  // Three sentences for the three answers `combinationOf` gives, and a fourth
+  // for the case a reader meets most: some values are conventions with no text
+  // named, and the rest do belong to one text. Each leads with what the board
+  // has; the shelf's limit follows as the reason.
+  'cli.combination.together': 'Questa combinazione di valori è posata per intero da {witnesses}.',
+  'cli.combination.apart':
+    'Ogni valore con cui è posata questa tavola ha un testo dietro, e la combinazione è del motore: nessun testo del suo scaffale li posa tutti insieme.',
+  'cli.combination.unattributed':
+    'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo.',
+  'cli.combination.unattributedBeside':
+    'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo. Gli altri valori sono posati per intero da {witnesses}.',
+  'cli.combination.unattributedApart':
+    'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo. Ciascuno degli altri valori ha un testo dietro, e nessun testo dello scaffale li posa tutti insieme.',
+  'cli.combination.and': ' e ',
+  'label.witness.engine': 'una costruzione propria del motore',
   'cli.heading.terms': 'Termini solari del {year}',
   'cli.heading.calendar': 'Data lunare',
   'cli.heading.patterns': 'Configurazioni',

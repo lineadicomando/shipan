@@ -6,7 +6,7 @@ import type { NianmingOptions } from './nianming.js';
 import type { QizhengOptions } from './qizheng.js';
 import type { TaiyiOptions } from './taiyi.js';
 import type { ChartOptions } from './types.js';
-import type { WitnessId } from './witnesses.js';
+import { holdingOf, type WitnessId } from './witnesses.js';
 import type { ZiweiOptions } from './ziwei/index.js';
 
 /**
@@ -406,7 +406,8 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         id: 'stay',
         says: 'form.qimen.centreTravel.stay',
         implemented: true,
-        heldBy: ['baojian'],
+        // The 統宗 states it as well: 「甲辰在中宮，寄於坤二，天禽為符，死門為使」.
+        heldBy: ['baojian', 'tongzong'],
       },
       {
         id: 'travel',
@@ -909,4 +910,78 @@ export function divergencesInForce(
     if (value?.says !== undefined) inForce.push({ parameter, value });
   }
   return inForce;
+}
+
+/**
+ * Who lays the combination a board stands on.
+ *
+ * Axes are independent here and lines hold them together: every parameter
+ * added multiplies the boards no text ever laid, and a board cast on such a
+ * combination looks exactly like one a school teaches. This reads the answer
+ * off the declaration, so that it can be said under every board rather than
+ * left for a reader to work out.
+ *
+ * Three answers, and the third is not a failure of the first two:
+ *
+ * - `together` — one or more witnesses hold every value in force;
+ * - `apart` — every value has a text behind it and none holds them all, so
+ *   the combination is this engine's;
+ * - `unattributed` — at least one value is a convention with no text named
+ *   for it yet. `together` then says who holds all the *others*, which is
+ *   usually what a reader wants next, and `attributed` whether there are any
+ *   others: an empty `together` beside it means they have texts and no one
+ *   text among them.
+ *
+ * **Every parameter of the board counts, a single-valued one included**: a
+ * value nobody could have moved is still somebody's. **The layers under the
+ * board do not**: how an instant is cut into pillars is a reckoning shared by
+ * every board laid on it, and what is asked here is whose the board is.
+ *
+ * A value only *reported*, by texts that reject it, has a text behind it and
+ * no holder, so it can never be part of `together`.
+ *
+ * `docs/parameters.md` § "A declared default is not a hidden school".
+ */
+export type Combination =
+  | { readonly state: 'together'; readonly by: readonly WitnessId[] }
+  | { readonly state: 'apart' }
+  | {
+      readonly state: 'unattributed';
+      readonly attributed: boolean;
+      readonly together: readonly WitnessId[];
+    };
+
+export function combinationOf(board: string, options: object): Combination | undefined {
+  const bag = options as Record<string, unknown>;
+
+  let shared: WitnessId[] | undefined;
+  let unattributed = false;
+  let counted = 0;
+
+  for (const parameter of PARAMETERS) {
+    if (parameter.board !== board) continue;
+    if (parameter.inside && bag[parameter.inside.id] !== parameter.inside.value) continue;
+
+    const chosen = bag[parameter.id] ?? parameter.default;
+    const value = parameter.values.find((candidate) => candidate.id === chosen);
+    if (value === undefined) continue;
+    counted += 1;
+
+    const holding = holdingOf(value);
+    if (holding.state === 'unattributed') {
+      unattributed = true;
+      continue;
+    }
+    const holders = holding.state === 'held' ? holding.by : [];
+    shared = shared === undefined ? [...holders] : shared.filter((id) => holders.includes(id));
+  }
+
+  // A board with no parameter of its own has no combination to speak of.
+  if (counted === 0) return undefined;
+  if (unattributed) {
+    return { state: 'unattributed', attributed: shared !== undefined, together: shared ?? [] };
+  }
+  return shared !== undefined && shared.length > 0
+    ? { state: 'together', by: shared }
+    : { state: 'apart' };
 }
