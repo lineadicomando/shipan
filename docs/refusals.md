@@ -293,12 +293,13 @@ confidence.
 
 ## A board of the day, anywhere but on its own page
 
-*Asked by:* whoever has just laid one and wants it read, drawn or scanned.
+*Asked by:* whoever has just laid one and wants it read or scanned.
 
-`system: rijia` is a board of its own and is laid, printed and copied: the
-section, `/api/qimen`, `/api/qimen/text`, `shipan qimen` and
-`compute_qimen_chart` answer it. The prompt, the drawing, the scan and the
-年命 are the hour board's, and each refuses the family by name rather than
+`system: rijia` is a board of its own and is laid, printed, drawn and copied:
+the section, `/api/qimen`, `/api/qimen/text`, `/api/qimen/plate`,
+`shipan qimen` and `compute_qimen_chart` answer it. The prompt, the scan, the
+年命 and `draw_qimen_chart` are the hour board's, and each refuses the family
+by name rather than
 answering with an hour board nobody asked for. A prompt is written against a
 plate of stems and tells a model how to read one; a 年命 is a birth looked up
 on that plate; a criterion of the scan names a star or a spirit this board

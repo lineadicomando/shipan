@@ -36,7 +36,7 @@
    *
    * A family is a board of its own and the endpoint answers either under one
    * name; `options.system` is what every board carries and what tells them
-   * apart. The day's has no drawing, so nothing below asks for one.
+   * apart. The drawing is asked of one address for both.
    */
   const ofTheDay = $derived(data.chart?.options.system === 'rijia');
   const failure = $derived(data.failure ? sayFailure(t, data.failure) : '');
@@ -83,7 +83,7 @@
     `/api/qimen/plate?${momentQuery({ ...data.moment, ...cast }, { lang: t.locale, scheme: 'light' })}&bare=true`,
   );
   $effect(() => {
-    if (!chart || !onPaper || ofTheDay) return;
+    if (!chart || !onPaper) return;
     const warm = new Image();
     warm.src = paper;
     void warm.decode().catch(() => {});
@@ -288,18 +288,6 @@
     <!-- The board and the key to its marks are one thing in this grid: the
          gap between the picture and the reading is two rems, and a legend
          standing in it would belong to neither. -->
-    {#if ofTheDay}
-      <div class="reading">
-        <DayReading {chart} {t} />
-        <Schools
-          {t}
-          board="qimen"
-          options={chart.options}
-          layers={chart.moment.options}
-          laidBy={data.laidBy}
-        />
-      </div>
-    {:else}
     <div class="board" class:swapped={onPaper}>
       <img
         src={plate}
@@ -318,8 +306,22 @@
       <!-- Under the picture and above the words: the marks it explains are in
            the picture, and a key that came after the reading would be found
            by whoever had already given up on them. -->
-      <StrengthLegend {t} />
+      <!-- The key is to the marks of strength, which a day board has not. -->
+      {#if !ofTheDay}<StrengthLegend {t} />{/if}
     </div>
+
+    {#if ofTheDay}
+      <div class="reading">
+        <DayReading {chart} {t} />
+        <Schools
+          {t}
+          board="qimen"
+          options={chart.options}
+          layers={chart.moment.options}
+          laidBy={data.laidBy}
+        />
+      </div>
+    {:else}
 
     <!-- `reading`: the measure everything read off a board is set at, and the
          dressing of the tables in it. Said once in `app.css`. -->

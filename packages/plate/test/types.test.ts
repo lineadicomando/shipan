@@ -1,4 +1,5 @@
 import {
+  computeDayChart,
   computeQimenChart,
   initEphemeris,
   liurenBoard,
@@ -13,6 +14,7 @@ import {
   taiyiBoard,
 } from '@shipan/core';
 import type {
+  DayChart,
   LiurenBoard,
   QimenChart,
   QizhengBoard,
@@ -20,8 +22,10 @@ import type {
   ZiweiBoard,
 } from '@shipan/core';
 import { describe, expect, it } from 'vitest';
+import { renderDaySvg } from '../src/svg.js';
 import type {
   PlateChart,
+  PlateDay,
   PlateLiuren,
   PlateQizheng,
   PlateTaiyi,
@@ -48,6 +52,53 @@ const chart: QimenChart = computeQimenChart(
   ),
   { ...DEFAULT_OPTIONS, trueSolarTime: false, dayBoundary: 'midnight' },
 );
+
+const DAY_OPTIONS = {
+  ...DEFAULT_OPTIONS,
+  system: 'rijia' as const,
+  trueSolarTime: false,
+  dayBoundary: 'midnight' as const,
+};
+const day: DayChart = computeDayChart(
+  resolveMoment(
+    { date: '2024-06-15', time: '14:00', timezone: 'Asia/Shanghai' },
+    { latitude: 39.9075, longitude: 116.3972, timezone: 'Asia/Shanghai' },
+    DAY_OPTIONS,
+    initEphemeris(),
+  ),
+  DAY_OPTIONS,
+);
+
+describe('the redeclared shape of a day board', () => {
+  it('accepts a real one without a cast, and finds what the drawing reads', () => {
+    const plate: PlateDay = day;
+
+    expect(typeof plate.yang).toBe('boolean');
+    expect(plate.palaces).toHaveLength(9);
+    for (const palace of plate.palaces) {
+      expect(typeof palace.palace.number).toBe('number');
+      expect(palace.palace.element).toMatch(/\S/);
+      expect(palace.star.hanzi).toMatch(/\S/);
+      expect(palace.star.pinyin).toMatch(/\S/);
+      if (palace.gate) expect(palace.gate.pinyin).toMatch(/\S/);
+    }
+    for (const pillar of ['year', 'month', 'day', 'hour'] as const) {
+      expect(plate.moment.pillars[pillar].hanzi).toMatch(/^.{2}$/);
+    }
+  });
+
+  it('draws nine palaces, eight gates and the day’s own stars', () => {
+    const svg = renderDaySvg(day);
+
+    expect(svg.startsWith('<svg')).toBe(true);
+    for (const palace of day.palaces) {
+      expect(svg).toContain(palace.star.hanzi);
+      if (palace.gate) expect(svg).toContain(palace.gate.hanzi);
+    }
+    // No plate of stems under them: bare, the paper is the square.
+    expect(svg).toMatch(/viewBox="0 0 900 900"/);
+  });
+});
 
 describe('the redeclared shape', () => {
   it('accepts a real chart without a cast', () => {

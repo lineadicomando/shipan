@@ -31,7 +31,7 @@ export {
 } from './geometry.js';
 export { type Said } from './readings.js';
 export { FONT_STACK, PALETTES, styleSheet, type Palette, type Scheme } from './palette.js';
-export { renderChartSvg, STRENGTH_MARKS } from './svg.js';
+export { renderChartSvg, renderDaySvg, STRENGTH_MARKS } from './svg.js';
 export { renderLiurenSvg, DEFAULT_LIUREN_SIZE } from './liuren-svg.js';
 export { renderQizhengSvg, DEFAULT_QIZHENG_SIZE } from './qizheng-svg.js';
 export { renderTaiyiSvg, DEFAULT_TAIYI_SIZE } from './taiyi-svg.js';
@@ -65,6 +65,8 @@ export type {
   PlateZiweiPalace,
   PlateZiweiSeat,
   PlateChart,
+  PlateDay,
+  PlateDayPalace,
   PlateDirections,
   PlateLabels,
   PlateOptions,

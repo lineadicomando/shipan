@@ -16,6 +16,8 @@ import { drawSchools, schoolLines } from './schools.js';
 import type {
   Named,
   PlateChart,
+  PlateDay,
+  PlateDayPalace,
   PlateDirections,
   PlateLabels,
   PlateOptions,
@@ -203,6 +205,153 @@ export function renderChartSvg(chart: PlateChart, options: PlateOptions = {}): s
   parts.push('</g></svg>');
 
   return parts.join('\n');
+}
+
+/**
+ * Draws a board of the day as SVG: the same nine palaces, the same frame.
+ *
+ * In the hour board's hand and on its geometry, so that a reader stepping
+ * from one family to the other meets one grid. What a palace holds is less —
+ * a gate, a star of the day's own nine, and the palace — so each is set once
+ * down the middle of its cell where the hour board sets two columns of three.
+ * The centre has a star and no gate, and the blank above it is the picture of
+ * that.
+ *
+ * `labels.star` is read for the day's stars here: the caller hands the words
+ * for the nine this board lays, which are not the hour board's nine.
+ */
+export function renderDaySvg(board: PlateDay, options: PlateOptions = {}): string {
+  const size = options.size ?? DEFAULT_SIZE;
+  const captions = options.captions;
+  const compass = options.compass;
+  const around = {
+    captions: captions !== undefined,
+    compass: compass !== undefined,
+    configurations: 0,
+  };
+  // The two passes of `renderChartSvg`, for the reason given there.
+  const provisional = layout(size, around);
+  const aloud = captions?.readings ? saidOnDay(board, compass) : [];
+  const bandLines = aloud.length
+    ? readingDepth(aloud, {
+        size: provisional.font.reading,
+        maxWidth: provisional.cell * 3,
+        columns: COLUMNS,
+      })
+    : 0;
+  const schools = options.schools ?? [];
+  const schoolDepth = schoolLines(
+    schools,
+    (provisional.cell * 3) / provisional.font.entry,
+  ).length;
+  const geometry = layout(size, { ...around, readings: bandLines, schools: schoolDepth });
+  const byNumber = new Map(board.palaces.map((palace) => [palace.palace.number, palace]));
+  const labels = options.labels ?? {};
+
+  const parts = [
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${round(geometry.height)}" width="${size}" height="${round(geometry.height)}" role="img" aria-label="${escape(dayAriaLabel(board))}">`,
+    `<style>${styleSheet(options.scheme ?? 'auto')}
+      .qmdj { font-family: ${FONT_STACK}; }
+      .qmdj text { fill: var(--qmdj-ink); }
+      .qmdj .faint { fill: var(--qmdj-faint); }
+      .qmdj .word { fill: var(--qmdj-word); }
+      .qmdj .rule { stroke: var(--qmdj-rule); fill: none; }
+      ${PHASES.map((phase) => `.qmdj .${phase} { fill: var(--qmdj-ink-${phase}); }`).join('\n      ')}
+    </style>`,
+    `<g class="qmdj" font-family="${FONT_STACK}">`,
+    `<rect x="0" y="0" width="${size}" height="${round(geometry.height)}" fill="var(--qmdj-ground)"/>`,
+  ];
+
+  for (const cell of cells()) {
+    const palace = byNumber.get(cell.palace);
+    if (palace) parts.push(drawDayCell(cell, palace, geometry, labels));
+  }
+
+  parts.push(drawGrid(geometry));
+  if (compass) parts.push(drawCompass(compass, geometry));
+  if (bandLines > 0) {
+    const top = geometry.margin + geometry.cell * 3 + geometry.compass.band + geometry.foot.band;
+    parts.push(
+      ...drawReadingColumns(aloud, captions?.readings as string, {
+        columns: COLUMNS,
+        x: geometry.margin,
+        heading: top + geometry.aloud.heading,
+        first: top + geometry.aloud.first,
+        step: geometry.aloud.step,
+        size: geometry.font.reading,
+        maxWidth: geometry.cell * 3,
+      }),
+    );
+  }
+  if (schools.length > 0) {
+    parts.push(
+      ...drawSchools(schools, {
+        x: geometry.margin,
+        first: geometry.schools.first,
+        step: geometry.schools.step,
+        size: geometry.font.entry,
+        maxWidth: geometry.cell * 3,
+      }),
+    );
+  }
+  if (captions) parts.push(drawCaptions(board, captions, geometry));
+  parts.push('</g></svg>');
+
+  return parts.join('\n');
+}
+
+/** One palace of a day: the gate, the star under it, the palace at the foot. */
+function drawDayCell(
+  cell: Cell,
+  palace: PlateDayPalace,
+  geometry: Layout,
+  labels: PlateLabels,
+): string {
+  const { x, y } = origin(cell, geometry);
+  const side = geometry.cell;
+  const middle = x + side / 2;
+  const tint = `var(--qmdj-element-${palace.palace.element})`;
+  const [top, centre, bottom] = geometry.line.row;
+  // One name to a line, so a line has the palace's width and not half of it.
+  const width = side * 0.9;
+  const entry = (
+    at: Register,
+    thing: Named | undefined,
+    from: Record<string, string> | undefined,
+  ): string =>
+    register(middle, y + side * at.glyph, y + side * at.word, thing, from, undefined, geometry, width);
+
+  const inset = side * 0.06;
+  return [
+    `<rect x="${x}" y="${y}" width="${side}" height="${side}" fill="${tint}"/>`,
+    entry(top, palace.gate, labels.gate),
+    entry(centre, palace.star, labels.star),
+    entry(bottom, palace.palace, labels.palace),
+    text(x + inset, y + side * geometry.line.number, String(palace.palace.number), geometry.font.number, {
+      className: 'faint',
+      maxWidth: side - inset * 2,
+      anchor: 'start',
+    }),
+  ]
+    .filter(Boolean)
+    .join('\n');
+}
+
+/** Every name a day board prints, a group to a kind, as `saidOnBoard` has it. */
+function saidOnDay(board: PlateDay, compass: PlateDirections | undefined): Said[][] {
+  const groups = [
+    said(board.palaces.map((palace) => palace.palace)),
+    said(board.palaces.map((palace) => palace.gate)),
+    said(board.palaces.map((palace) => palace.star)),
+  ];
+  if (compass) groups.push(said(COMPASS_READINGS));
+  return groups.filter((group) => group.length > 0);
+}
+
+function dayAriaLabel(board: PlateDay): string {
+  return `日家 ${board.yang ? '陽' : '陰'} — ${board.palaces
+    .map((palace) => `${palace.palace.hanzi}: ${palace.gate?.hanzi ?? ''}${palace.star.hanzi}`)
+    .join(', ')}`;
 }
 
 /** One configuration, and every palace of this chart it fell in. */
@@ -742,7 +891,7 @@ function drawConfigurations(
 }
 
 function drawCaptions(
-  chart: PlateChart,
+  chart: Pick<PlateChart, 'moment'>,
   captions: NonNullable<PlateOptions['captions']>,
   geometry: Layout,
 ): string {

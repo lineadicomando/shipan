@@ -1,9 +1,8 @@
 <!--
   A board of the day said in full: what it was laid off, and the nine palaces.
 
-  The whole board and not the words under a drawing of one: a day board has no
-  picture yet, so the table is the board. It is a table of three columns where
-  the hour board's has six — there is no plate of stems under these gates and
+  The words under the drawing, as `ChartReading` is to the hour board's. The
+  table has three columns where the hour board's has six — there is no plate of stems under these gates and
   no spirit over them — and the centre holds a star and no gate.
 -->
 <script lang="ts">

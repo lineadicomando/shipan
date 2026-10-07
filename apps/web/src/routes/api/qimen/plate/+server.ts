@@ -1,6 +1,14 @@
-import { divergenceLines, chartLabels, computeQimenChart, sayGanzhi } from '@shipan/core';
+import {
+  DAY_STARS,
+  chartLabels,
+  computeDayChart,
+  computeQimenChart,
+  divergenceLines,
+  sayGanzhi,
+} from '@shipan/core';
+import type { MessageKey } from '@shipan/i18n';
 import { createTranslator } from '@shipan/i18n';
-import { renderChartSvg } from '@shipan/plate';
+import { renderChartSvg, renderDaySvg } from '@shipan/plate';
 import { momentIsFixed, readLocale, readMoment, readPlateOptions } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { RequestHandler } from './$types';
@@ -18,6 +26,46 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const locale = readLocale(url.searchParams, request.headers.get('accept-language'));
     const t = createTranslator(locale);
     const { moment } = readMoment(url.searchParams);
+    const headers = {
+      'cache-control': momentIsFixed(url.searchParams) ? 'private, max-age=86400' : 'no-store',
+      vary: 'Accept-Language',
+    };
+
+    // A family is a board of its own and so is its drawing: the same grid and
+    // frame, a gate and a star to a palace. See `renderDaySvg`.
+    if (moment.options.system === 'rijia') {
+      const day = computeDayChart(moment, moment.options);
+      const { size, scheme, bare } = readPlateOptions(url.searchParams);
+      const labels = chartLabels(t);
+      const svg = renderDaySvg(day, {
+        schools: bare ? [] : divergenceLines('qimen', day.options, moment.options, t),
+        size,
+        scheme,
+        // The day's own nine, under the name the drawing reads a star by.
+        labels: {
+          ...labels,
+          star: Object.fromEntries(
+            DAY_STARS.map((star) => [star.id, t(`label.dayStar.${star.id}` as MessageKey)]),
+          ),
+        },
+        compass: labels.direction,
+        captions: {
+          ju: `${day.yang ? t('cli.value.yangDun') : t('cli.value.yinDun')} · ${t(`label.term.${day.term.id}` as MessageKey)} ${day.term.hanzi}`,
+          pillars: [
+            moment.pillars.year,
+            moment.pillars.month,
+            moment.pillars.day,
+            moment.pillars.hour,
+          ]
+            .map((pair) => `${sayGanzhi(pair, t)} ${pair.hanzi}`)
+            .join(' / '),
+          ...(bare ? {} : { readings: t('cli.heading.readings') }),
+        },
+      });
+      setHeaders(headers);
+      return new Response(svg, { headers: { 'content-type': 'image/svg+xml; charset=utf-8' } });
+    }
+
     const chart = computeQimenChart(moment, moment.options);
 
     // The intrinsic size, which the page overrides with CSS anyway, and the
@@ -68,12 +116,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       },
     });
 
-    setHeaders({
-      'cache-control': momentIsFixed(url.searchParams) ? 'private, max-age=86400' : 'no-store',
-      // The locale falls back to the Accept-Language header, so a cached copy
-      // is only right for the language it was asked in.
-      vary: 'Accept-Language',
-    });
+    setHeaders(headers);
     return new Response(svg, { headers: { 'content-type': 'image/svg+xml; charset=utf-8' } });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;

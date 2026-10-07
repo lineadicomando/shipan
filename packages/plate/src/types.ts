@@ -32,6 +32,22 @@ export interface PlateChart {
   };
 }
 
+/**
+ * A board of the day, as the drawing needs it: nine palaces, each with a star
+ * of the day's own nine and all but the centre with a gate. No plate of stems.
+ */
+export interface PlateDay {
+  yang: boolean;
+  palaces: readonly PlateDayPalace[];
+  moment: PlateChart['moment'];
+}
+
+export interface PlateDayPalace {
+  palace: PlatePalace['palace'];
+  gate?: Named | undefined;
+  star: Named;
+}
+
 export interface PlatePalace {
   palace: {
     number: number;
