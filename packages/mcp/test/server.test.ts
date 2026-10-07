@@ -149,6 +149,25 @@ describe('what the server offers', () => {
 });
 
 describe('compute_qimen_chart', () => {
+  it('lays the board of a day when that family is asked for, in a shape of its own', async () => {
+    const text = await call('compute_qimen_chart', { ...BEIJING, system: 'rijia', lang: 'en' });
+
+    expect(text).toContain('Qi Men board of the day');
+    expect(text).toContain('太乙 tàiyǐ');
+    expect(text).toContain('日家 rìjiā');
+    // Told of its own divergence and of none of the hour board's.
+    expect(text).toContain('金函玉鏡');
+    expect(text).not.toContain('拆補');
+
+    const turned = await call('compute_qimen_chart', {
+      ...BEIJING,
+      system: 'rijia',
+      day_gates: 'zhuan',
+      lang: 'en',
+    });
+    expect(turned).toContain('日家奇門');
+  });
+
   it('casts a chart for a place and a moment', async () => {
     // 茅山, which is the school the verified chart for this instant belongs
     // to: 陽遁九局. → `docs/history/40-the-default-was-maoshan.md`

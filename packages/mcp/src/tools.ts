@@ -12,7 +12,9 @@ import {
   STEMS,
   chartLabels,
   computeBazi,
+  computeDayChart,
   computeQimenChart,
+  formatDayChart,
   formatBazi,
   formatLiuren,
   formatMoment,
@@ -178,6 +180,24 @@ export function registerComputeQimenChart(server: McpServer, context: ToolContex
       const t = translatorFor(args.lang);
       try {
         const { moment, label } = resolveInput(args, context);
+        // A family is a board of its own. A birth is looked up on a plate of
+        // stems, which the day's has not, so `born` goes on to the hour
+        // board's function and is refused there with the family named.
+        if (moment.options.system === 'rijia' && args.born === undefined) {
+          const day = computeDayChart(moment, moment.options);
+          return ok(
+            [
+              `${t('cli.field.place')}: ${label}`,
+              '',
+              formatMoment(moment, t, { divergences: { board: 'qimen', options: day.options } }),
+              '',
+              formatDayChart(day, t),
+              formatWarnings(moment, t),
+            ]
+              .filter((part) => part !== '')
+              .join('\n'),
+          );
+        }
         const chart = computeQimenChart(moment, moment.options);
         // 年命, when a birth was given: two pairs looked up in the chart that
         // was just laid. The chart is not recast for it.

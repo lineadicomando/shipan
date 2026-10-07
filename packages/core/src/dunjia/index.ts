@@ -1,6 +1,7 @@
 import type { Stem } from '../ganzhi.js';
 import { CHART_PARAMETERS, requireImplemented } from '../parameters.js';
 import type { Moment } from '../pillars.js';
+import { ChartError } from '../errors.js';
 import type { ChartOptions, Element } from '../types.js';
 import { hexagramOfSeats, type Hexagram } from './hexagram.js';
 import { horseOf, type Horse } from './horse.js';
@@ -157,7 +158,20 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     'strengths',
     'earth',
     'centreTravel',
+    // The day board's, which this one does not read: a value nobody computes
+    // is refused wherever it is asked, and never only where it would bite.
+    'dayGates',
+    'dayDun',
   );
+  // A family is a board of its own, and this one is the hour's: a day board
+  // has no plate of stems for anything below to stand on. `computeDayChart`.
+  if (options.system !== 'shijia') {
+    throw new ChartError('OPTION_NOT_IMPLEMENTED', {
+      option: 'system',
+      value: options.system,
+      implemented: 'shijia',
+    });
+  }
 
   const ju = determineJu(moment, options);
   const hourGanzhi = moment.pillars.hour;

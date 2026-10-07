@@ -72,7 +72,7 @@ second copy of one text buys".
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `plate: fei`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star` |
+| 奇門 | `plate: fei`, `system: yuejia`, `system: nianjia`, `dayDun: liushi`, `leap: runyue`, `strengths: star` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
@@ -133,7 +133,10 @@ is what holds.
 |---|---|---|
 | `strengths: star` | declared and refused | held by 《奇門遁甲金鏡寶鑑》卷之四; the 折衷 argues against the same reading and puts it on a 《三元經》. Waits on reading whether its rule reaches the gates and the spirits or the nine stars alone |
 | `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
-| `system: rijia`, `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Waits on a family being built, which is nearer a board than a value |
+| `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Each waits on being built as the day family was: a board of its own, with its own stars and no table on the shelf to hold it to |
+| the board of a day | computed | gates and stars, under two readings of the gates. Waits on the hours and the bearings the table prints beside them, on a drawing, and on a prompt of its own |
+| `dayDun: liushi` | declared and refused | sixty days to a 局, the 統宗's. Waits on its rule being read on the plate |
+| the gates' year in six blocks of four terms | recorded | the 金函玉鏡's 大八門逐日出行訣, read for its starts and not verse by verse |
 | `plate: fei` | declared and refused | no text flies the hour board's own 起例. Arrives with a family of `system` |
 | the stars and the 儀 flown, the gates turned | computed | held by the 折衷, which works two hours of a yang board. Waits on a yin hour worked in any text, and on whether its spirits are flown |
 | the 值使 from the earth plate or the heaven plate | recorded | chosen by the matter asked |
@@ -261,30 +264,19 @@ are the query to put to an arriving text.
   which is a **third** arrangement rather than this value, and it is one work.
   What the clause can now say is that the hour board is flown somewhere, which
   is more than it could say before.
-- **`system: rijia · yuejia · nianjia`** — a **lineage holding one reading**.
-  Two works state the families entire and disagree; the fuller prints three
-  competing day methods and its compiler calls the whole layer 後人附會穿鑿.
-  Two, not three: the juan counted as a third witness is 《奇門遁甲統宗》卷二,
-  which this shelf holds four times over. On the year the count is 遁甲演義 and
-  the 統宗 for 一四七 against 遁甲集成 第三冊's 一七四, with 《遁甲釋要》 (1939)
-  checking the older recension and printing 「分值一四七諸局」. The day family has
-  a second divergence of its own — where its cycle restarts, on which 遁甲釋要 and
-  《奇門探索錄》 part — so a lineage would have to hold a reading of that too.
-  Two lineages are on the shelf, both 張志春's, and they disagree with each
-  other on the month. That pairing with `plate: fei` is stated in a text rather
-  than inferred, and a family costs more than the pairing suggests: its own
-  ring of nine stars, its own leap count, and layers the hour board has not.
-  **The day family's tables are no longer part of that cost.** 《日家奇門》
-  (鮮紅草, 1998) gives all sixty 干支 in both 遁 — gates three days to a palace
-  without the centre, the 太乙 nine one palace a day through it — which is 120
-  charts to check an implementation against, one block of them a known misprint.
-  A bench is not a lineage and nothing here moves; what it removes is the need to
-  derive the tables before being able to test them. **And the work that table
-  names as its source is now read**: 《金函玉鏡》下冊 prints the 九星 訣 with six
-  decade anchors that check its motion (p. 372) and states the anchor in verse
-  (p. 413), 「冬至艮宮夏坤地，命起甲子順逆行」. What still blocks the value is the
-  anchor divergence, two branches to one, and the lineage. 年家 and 月家 keep
-  the cost whole.
+- **`system: yuejia · nianjia`** — a board built, as the day's was. Two works
+  state the families entire: 遁甲演義 and the 統宗, whose 卷二 this shelf holds
+  four times over. On the year they give 一四七 against 遁甲集成 第三冊's 一七四,
+  with 《遁甲釋要》 (1939) checking the older recension and printing 「分值一四七
+  諸局」; those are two readings and will be two values. Two modern lines are on
+  the shelf for the month, both 張志春's, and they part on it. A family is a
+  board of its own — its own ring of nine stars, its own count, and layers the
+  hour board has not — and for these two the sources give the point of entry
+  and the step, where the day family had a table of a hundred and twenty
+  charts to be held to. `plate: fei` arrives with them: both are flown.
+- **`dayDun: liushi`** — the rule. The 統宗 gives the day family sixty days to a
+  局 and lets the half follow the 局; it is declared on the register's word and
+  has not been read on the plate for how a 局 is begun.
 - **`leap: runyue`** — attribution. 《金鏡寶鑑》 states the leap-month placement,
   works it twice by date and rejects the solstitial one outright; what it does
   not do is name a lineage. **Neither does the second work to go looking**:

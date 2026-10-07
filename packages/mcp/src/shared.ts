@@ -251,6 +251,18 @@ export const qimenSchema = {
     .describe(
       'How the stars and the heaven stems are moved. Default zhuan: turned round the eight outer palaces, the centre left where it is, as the Qimen Dunjia Tongzong has it. xingfei: flown through all nine palaces in Luoshu order, forward in a yang chart and back in a yin one, while the gates still turn, as the Qimen Dunjia Zhezhong holds. Under both the chief star is set on the palace of the hour stem; every other star and stem above the palaces can stand somewhere else.',
     ),
+  system: z
+    .enum(['shijia', 'rijia'])
+    .optional()
+    .describe(
+      'Which family of Qi Men board, and each is a board of its own. Default shijia, the board of the hour: a plate of stems, nine stars, eight gates and eight spirits, and everything else this tool describes. rijia is the board of the day: eight gates and nine stars of its own, the first of them taiyi, with no stems, no chief and no spirits. It is laid off the day pillar and the season alone, so every hour of one day has the same one, and it reads day_gates and none of method, plate, spirits, centre_lodging, earth, earth_plate or centre_travel. The answer has a different shape under each.',
+    ),
+  day_gates: z
+    .enum(['fei', 'zhuan'])
+    .optional()
+    .describe(
+      'Under system rijia only: how the seven other gates follow xiumen on a board of the day. Both readings keep xiumen three days on a palace and move it through the eight outer palaces. Default fei: all eight gates are counted on together through the palaces in the order of their numbers, the same way all year, as the Jinhan Yujing Qimen Dunjia Miji Quanshu enumerates. zhuan: the seven are carried round the ring behind xiumen, one way on the day of a yang stem and the other on the day of a yin stem, and from the summer solstice the count begins at the opposite palace and runs back, as the table Rijia Qimen (1998) lays them.',
+    ),
   centre_lodging: z
     .enum(['kun', 'dun', 'dunni', 'bajie', 'siyu'])
     .optional()
@@ -296,6 +308,8 @@ interface RawInput {
   method?: 'chaibu' | 'zhirun' | 'maoshan' | undefined;
   spirits?: 'dun' | 'fixed' | 'baihu' | undefined;
   plate?: 'zhuan' | 'xingfei' | undefined;
+  system?: 'shijia' | 'rijia' | undefined;
+  day_gates?: 'fei' | 'zhuan' | undefined;
   centre_lodging?: 'kun' | 'dun' | 'dunni' | 'bajie' | 'siyu' | undefined;
   earth?: 'quarters' | 'eighteen' | undefined;
   earth_plate?: 'yuan' | 'xun' | undefined;
@@ -340,6 +354,8 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.method) options.method = raw.method;
   if (raw.spirits) options.spirits = raw.spirits;
   if (raw.plate) options.plate = raw.plate;
+  if (raw.system) options.system = raw.system;
+  if (raw.day_gates) options.dayGates = raw.day_gates;
   if (raw.centre_lodging) options.centreLodging = raw.centre_lodging;
   if (raw.earth) options.earth = raw.earth;
   if (raw.earth_plate) options.earthPlate = raw.earth_plate;

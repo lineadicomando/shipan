@@ -55,6 +55,31 @@ With it the board the 折衷 lays whole — stars flown, earth plate by the deca
 centre lodged by the eight 節 — is the first combination of three non-default
 values that the line under a board names one text for.
 
+## A family, which turned out to be a board
+
+`system: rijia` had been «nearer a board than a value» since the register
+first counted its cost, and that is how it was built: `computeDayChart`, a
+type of its own, answered on 奇門's addresses and told apart by the option
+every board carries. The hour board's parameters and the day board's were
+given a `family`, so that neither is told of a choice it was not laid by.
+
+The calculation was written first from the one table on the shelf, 《日家奇門》,
+and held to ninety-three of its blocks. **Then the work the table names as
+its source was read for the one rule the table does not state, and it lays
+the gates another way**: the 金函玉鏡's 定局 flies all eight through the eight
+palaces, where the table turns seven behind 休門 and changes sides with the
+day's stem. A first commit had called the table's way «the rule»; it is one
+of two, and the default is the other.
+
+The same pages gave a third reading of how the year divides, in six blocks of
+four terms, and a fourth piece keyed to stems. Both are recorded.
+
+Decided by the owner on the way: the day board keeps 奇門's addresses rather
+than getting a section; the half of the year is a parameter with the
+solstices as its default; the hours and bearings the table prints stay out;
+and the plate is read before a rule seen only in a modern table is shipped.
+
 ## What is still open
 
-A family of `system`, in `ROADMAP.md`.
+The month and year families, the day board's drawing and prompt, and the two
+readings recorded above, each in `ROADMAP.md`.

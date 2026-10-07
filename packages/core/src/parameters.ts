@@ -181,6 +181,16 @@ export interface Parameter<V> {
    * would name a choice the method never had to make.
    */
   readonly inside?: { readonly id: string; readonly value: string };
+  /**
+   * The family of 奇門 a parameter belongs to, where it belongs to one.
+   *
+   * A family is a board of its own: a day board has no plate of stems to turn
+   * and no centre to lodge, and the hour board has no gates of a day. Naming
+   * the hour board's method beside a day board would report a choice that
+   * board was never laid by. Absent on `system` itself and on every other
+   * art's parameters.
+   */
+  readonly family?: 'shijia' | 'rijia';
   readonly values: readonly ParameterValue<V>[];
   /** What the engine assumes when a caller says nothing. */
   readonly default: V;
@@ -211,6 +221,7 @@ export type ParameterSet<O> = { readonly [K in keyof O]-?: Parameter<O[K]> };
 export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   method: {
     board: 'qimen',
+    family: 'shijia',
     label: 'form.qimen.method',
     values: [
       {
@@ -243,6 +254,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   plate: {
     board: 'qimen',
+    family: 'shijia',
     // How what stands over the palaces is moved. Two readings are computed and
     // each is a board somebody lays whole; 飛盤, where the gates fly as well,
     // waits on a text flying the hour board's own 起例.
@@ -272,6 +284,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   centreLodging: {
     board: 'qimen',
+    family: 'shijia',
     // Five readings of which palace the centre is read in. Two are held and
     // three are known only from a text that sets the reading out and argues
     // it down, which `reportedBy` says and a board laid on one of them repeats.
@@ -325,6 +338,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   earthPlate: {
     board: 'qimen',
+    family: 'shijia',
     // One plate a 元, or one a decade — 六戊還原. The 折衷 states the second
     // twice, agreeing palace for palace, and says it is its own reasoning from
     // a phrase of 豫章張氏.
@@ -351,18 +365,25 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   system: {
     board: 'qimen',
+    // What the board is laid off: the hour, or the day. Each is a board of its
+    // own with its own stars, and they share the eight gates and nothing else.
+    label: 'form.qimen.system',
     values: [
       {
         id: 'shijia',
         name: { hanzi: '時家', pinyin: 'shíjiā' },
+        says: 'form.qimen.system.shijia',
+        note: 'form.qimen.system.note',
         implemented: true,
         heldBy: ['tongzong'],
       },
       {
         id: 'rijia',
         name: { hanzi: '日家', pinyin: 'rìjiā' },
-        implemented: false,
-        heldBy: ['yanyi', 'tongzong'],
+        says: 'form.qimen.system.rijia',
+        note: 'form.qimen.system.note',
+        implemented: true,
+        heldBy: ['yanyi', 'tongzong', 'jinhan'],
       },
       {
         id: 'yuejia',
@@ -378,6 +399,54 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
       },
     ],
     default: 'shijia',
+  },
+  dayGates: {
+    board: 'qimen',
+    family: 'rijia',
+    // How the seven other gates follow 休門 on a day board. Two works lay it
+    // and they part; the second says it is drawn from the first.
+    label: 'form.qimen.dayGates',
+    values: [
+      {
+        id: 'fei',
+        name: { hanzi: '飛', pinyin: 'fēi' },
+        says: 'form.qimen.dayGates.fei',
+        note: 'form.qimen.dayGates.note',
+        implemented: true,
+        // 八門三奇出行定局, 卷十八: eight rows, every gate in every one.
+        heldBy: ['jinhan'],
+      },
+      {
+        id: 'zhuan',
+        name: { hanzi: '轉', pinyin: 'zhuàn' },
+        says: 'form.qimen.dayGates.zhuan',
+        note: 'form.qimen.dayGates.note',
+        implemented: true,
+        heldBy: ['rijiaqimen'],
+      },
+    ],
+    default: 'fei',
+  },
+  dayDun: {
+    board: 'qimen',
+    family: 'rijia',
+    values: [
+      {
+        id: 'solstice',
+        name: { hanzi: '二至', pinyin: 'èrzhì' },
+        implemented: true,
+        // 「冬至艮宮夏坤地」, 卷二十; 「每年從冬至節開始，到翌年交夏至節止，為陽」.
+        heldBy: ['jinhan', 'rijiaqimen'],
+      },
+      // Sixty days to a 局, the half following the 局 and not the term.
+      {
+        id: 'liushi',
+        name: { hanzi: '六十日一局', pinyin: 'liùshírìyījú' },
+        implemented: false,
+        heldBy: ['tongzong'],
+      },
+    ],
+    default: 'solstice',
   },
   trueSolarTime: {
     board: 'pillars',
@@ -442,6 +511,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   spirits: {
     board: 'qimen',
+    family: 'shijia',
     // Three readings of one ring, parting at two seats and only in the name.
     // What is *not* a value here is the fourth answer — the names following
     // what is being divined — which is a licence to read: see
@@ -470,6 +540,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   leap: {
     board: 'qimen',
+    family: 'shijia',
     values: [
       { id: 'solstice', implemented: true, heldBy: ['tongzong'] },
       {
@@ -487,6 +558,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   strengths: {
     board: 'qimen',
+    family: 'shijia',
     values: [
       // Sheets 72–73 of the 折衷 tabulate the nine stars by the season against
       // each star's own phase, under two other names: 廢 for 囚, 沒 for 死.
@@ -497,6 +569,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   earth: {
     board: 'qimen',
+    family: 'shijia',
     // Where earth's season begins. The default has no text named for it; the
     // other reading is a 六壬 manual's statement about the phases, which
     // counts here because the 三式 stand on one doctrine of them.
@@ -521,6 +594,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   centreTravel: {
     board: 'qimen',
+    family: 'shijia',
     // Where the 值符 and the 值使 are read when the count puts them on the
     // centre, and nothing else: 《金鏡寶鑑》 states the pair apart from the
     // star in one clause — 其星寄 against 符使不必寄於二 — so neither value
@@ -1153,6 +1227,7 @@ export function divergencesInForce(
     if (parameter.board === 'pillars' && layers === null) continue;
     if (implementedValues(parameter).length < 2) continue;
     if (parameter.inside && bag[parameter.inside.id] !== parameter.inside.value) continue;
+    if (parameter.family && (bag.system ?? 'shijia') !== parameter.family) continue;
 
     // Read out of the bag the parameter belongs to, and never out of both.
     // `yearBoundary` is the pillars' and 紫微斗數's at once, and a board that
@@ -1215,6 +1290,7 @@ export function combinationOf(board: string, options: object): Combination | und
   for (const parameter of PARAMETERS) {
     if (parameter.board !== board) continue;
     if (parameter.inside && bag[parameter.inside.id] !== parameter.inside.value) continue;
+    if (parameter.family && (bag.system ?? 'shijia') !== parameter.family) continue;
 
     const chosen = bag[parameter.id] ?? parameter.default;
     const value = parameter.values.find((candidate) => candidate.id === chosen);

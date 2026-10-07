@@ -787,7 +787,7 @@ describe('GET /api/qimen', () => {
   it('refuses every declared value it does not compute, and not only the two it reads by hand', async () => {
     for (const [parameter, value] of [
       ['qimen.plate', 'fei'],
-      ['qimen.system', 'rijia'],
+      ['qimen.system', 'yuejia'],
       ['qimen.strengths', 'star'],
     ] as const) {
       const { status, body } = await call(qimen, `${MOMENT}&${parameter}=${value}`);
@@ -795,6 +795,44 @@ describe('GET /api/qimen', () => {
       expect(status, parameter).toBe(501);
       expect(body, parameter).toMatchObject({ code: 'OPTION_NOT_IMPLEMENTED' });
     }
+  });
+
+  it('answers the board of a day under the same name, with a shape of its own', async () => {
+    type Day = {
+      qimen: {
+        options: Record<string, string>;
+        ju?: unknown;
+        palaces: { gate?: unknown; star?: unknown; earth?: unknown }[];
+      };
+      laidBy?: unknown;
+    };
+    const answered = await call(qimen, `${MOMENT}&qimen.system=rijia`);
+    const status = answered.status;
+    const body = answered.body as Day;
+
+    expect(status).toBe(200);
+    expect(body.qimen.options).toMatchObject({ system: 'rijia', dayGates: 'fei' });
+    // Eight gates and nine stars, and no plate of stems under them.
+    expect(body.qimen.palaces).toHaveLength(9);
+    expect(body.qimen.palaces.filter((cell) => cell.gate)).toHaveLength(8);
+    expect(body.qimen.palaces.every((cell) => cell.star)).toBe(true);
+    expect(body.qimen.ju).toBeUndefined();
+    expect(body.qimen.palaces[0]?.earth).toBeUndefined();
+    expect(body.laidBy).toBeDefined();
+
+    // The two readings of the gates part, and the hour moves neither.
+    const turned = await call(qimen, `${MOMENT}&qimen.system=rijia&qimen.dayGates=zhuan`);
+    expect((turned.body as Day).qimen.options.dayGates).toBe('zhuan');
+  });
+
+  it('keeps a birth for the hour board, and says the family when asked for both', async () => {
+    const { status, body } = await call(qimen, `${MOMENT}&qimen.system=rijia&born=1990-06-01`);
+
+    expect(status).toBe(501);
+    expect(body).toMatchObject({
+      code: 'OPTION_NOT_IMPLEMENTED',
+      params: { option: 'system', value: 'rijia' },
+    });
   });
 
   it('refuses a method it has never heard of', async () => {

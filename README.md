@@ -292,7 +292,7 @@ from the first release. The Qi Men chart's, in brief:
 | `trueSolarTime` | correct clock time to the Sun                                                      | `true`   |
 | `yearBoundary`  | 立春, 正月初一 or 冬至                                                                    | `lichun` |
 | `dayBoundary`   | the day pillar turns at 23:00 or at midnight                                       | `zishi`  |
-| `system`        | which family of chart: 時家, or the day's, month's or year's                         | `shijia` |
+| `system`        | which family of chart: 時家 shíjiā for the hour, 日家 rìjiā for the day               | `shijia` |
 
 Each other board keeps its own, because each is a board and not a view of the
 first: a saved one has to reproduce on its own terms. The full table, every

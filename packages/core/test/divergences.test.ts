@@ -57,15 +57,26 @@ describe('the divergences in force', () => {
   });
 
   it('leave out a divergence declared and refused', () => {
-    // `system` and `leap` are dunjia's and each has one value the engine
-    // computes. What would be reported is not a school but the absence of a
-    // second one. `plate` was a third until the 折衷's flight was laid.
+    // `leap` is dunjia's and inside 置閏; `dayGates` is a day board's. Neither
+    // was a choice this board was laid by. `plate` and `system` were left out
+    // here too, until each had a second value the engine lays.
     const named = divergencesInForce('qimen', DEFAULT_OPTIONS).map((row) => row.parameter.id);
 
     expect(named).toContain('method');
     expect(named).toContain('plate');
+    expect(named).toContain('system');
     expect(named).not.toContain('leap');
-    expect(named).not.toContain('system');
+    expect(named).not.toContain('dayGates');
+
+    // And a day board is told of its own and of none of the hour board's.
+    const day = divergencesInForce('qimen', { ...DEFAULT_OPTIONS, system: 'rijia' }).map(
+      (row) => row.parameter.id,
+    );
+    expect(day).toContain('system');
+    expect(day).toContain('dayGates');
+    expect(day).not.toContain('method');
+    expect(day).not.toContain('plate');
+    expect(day).not.toContain('centreLodging');
   });
 
   it('name the method under each of the three, and no yuan under any', () => {

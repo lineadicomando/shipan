@@ -19,6 +19,7 @@
     trueSolarTime = $bindable(true),
     chosen = $bindable<Chosen>({}),
     board = undefined,
+    families = false,
     when = 'fields',
     openLegend,
     beside,
@@ -69,6 +70,8 @@
      * walks is charts.
      */
     board?: string | undefined;
+    /** Whether the family of the board is asked here too: 奇門's section alone. */
+    families?: boolean;
     /**
      * A name for the fields this asks in the open, where they need one.
      *
@@ -143,7 +146,7 @@
     if (!trueSolarTime) count += 1;
     // Every divergence standing somewhere other than where the engine would
     // have left it, counted off the declaration rather than named one by one.
-    for (const row of offered(board)) {
+    for (const row of offered(board, families)) {
       if (chosen[wire(row)] && chosen[wire(row)] !== row.fallback) count += 1;
     }
     return count;
@@ -216,7 +219,7 @@
   `$lib/parameters`, so a school landing in the declaration lands here.
 -->
 {#snippet reading()}
-  {@const rows = offered(board).filter((row) => shown(row, chosen))}
+  {@const rows = offered(board, families).filter((row) => shown(row, chosen))}
   {@const own = rows.filter((row) => !ofLayer(row))}
   {@const layers = rows.filter((row) => ofLayer(row))}
   {#if own.length > 0}

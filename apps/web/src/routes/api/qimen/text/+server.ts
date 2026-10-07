@@ -1,4 +1,10 @@
-import { chartTranscript, computeQimenChart, nianmingOf } from '@shipan/core';
+import {
+  chartTranscript,
+  computeDayChart,
+  computeQimenChart,
+  dayTranscript,
+  nianmingOf,
+} from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import {
   momentIsFixed,
@@ -24,6 +30,24 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
   try {
     const locale = readLocale(url.searchParams, request.headers.get('accept-language'));
     const { moment } = readMoment(url.searchParams);
+    const headers = {
+      'cache-control': momentIsFixed(url.searchParams) ? 'private, max-age=86400' : 'no-store',
+      vary: 'Accept-Language',
+    };
+
+    // The board of the day, where that is the family asked for. See
+    // `/api/qimen` for why a birth is not read here.
+    if (moment.options.system === 'rijia' && !url.searchParams.has('born')) {
+      const day = computeDayChart(moment, moment.options);
+      setHeaders(headers);
+      return new Response(
+        dayTranscript(moment, day, createTranslator(locale), {
+          source: pageAddress(url, locale, 'qimen', laidAt(moment)),
+        }),
+        { headers: { 'content-type': 'text/plain; charset=utf-8' } },
+      );
+    }
+
     const chart = computeQimenChart(moment, moment.options);
     const birth = readNianming(url.searchParams, chart);
 

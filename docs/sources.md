@@ -3232,6 +3232,106 @@ does the anchor — and it removes the reason a future implementer would have ha
 to derive the tables before being able to test them. 年家 and 月家 are unchanged:
 for those the sources still give the entry and the step alone.
 
+**The table was put to the rule on 2026-10-07, and the rule is now in the
+engine.** `packages/core/src/dunjia/rijia.ts` lays the two motions from the
+day's place in the sixty and the half of the year, and `test/rijia.test.ts`
+holds them to every block whose text layer comes back whole — a label found
+once, eight different gates, eight different stars, which is ninety-three of
+the hundred and twenty, kept or dropped on that ground alone. The gates agree
+in ninety and the stars in ninety. **The six that part are slips, and each is
+named in the test**: 傷 and 杜 exchanged in the yin blocks of 戊辰, 壬辰 and
+丙辰, which are one palace's turn copied forward twice, and two or four stars
+out of series in 陰庚辰, 陽癸巳 and 陽庚申, between neighbours that keep it.
+
+#### The 定局, read on the plate, and the table parting from its own source
+
+《金函玉鏡》下冊 卷十八 pp. 370–374, read 2026-10-07 for one question: how the
+seven other gates follow 休門. **八門三奇出行定局, p. 370, answers it in full,
+and it is not what the table lays.** Eight rows, one to each palace 休門 can
+stand in, naming the days the row serves and where every gate is:
+
+> 甲子乙丑丙寅…：休坎，死坤，傷震，杜巽，開乾，驚兌，生艮，景離。
+>
+> 丁卯戊辰己巳…：休坤，死震，傷巽，杜乾，開兌，驚艮，生離，景坎。
+
+and so through 震, 巽, 乾, 兌, 艮 and 離. The eight gates keep the order of
+their own palaces' numbers — 休 · 死 · 傷 · 杜 · 開 · 驚 · 生 · 景 — and are
+counted on together through the eight, the centre left out, which is what the
+訣 on p. 369 says in a clause: 「依九宮次序，三日一換局，去中五不用」. **That
+is a flight over eight seats**, 遁甲演義's 「飛八方，不入中五」 enumerated. The
+days it serves restart at every 甲子: four rows carry nine days and four carry
+six. The 白話 on p. 371 says each row again, palace by palace, and agrees.
+
+**Where every gate stands is printed clean in all eight rows; the lists of
+days in front of them are not.** Five slips, each a day that the count and
+the neighbouring rows restore: 癸巳 for 癸丑 in the first row, 辛巳 for 辛卯 in
+the second, the two days 庚子辛丑 run together in the fifth, 乙卯 for 己卯 in
+the sixth, and 乙酉 misprinted in the eighth. The list of 休門's palaces above
+the 定局 on the same page has the sixth right — 「己卯、癸卯日，休門在兌七宮」.
+The rows are quoted here for their gates, which is what was asked of them, and
+only as far as their first three days.
+
+**So two works lay the gates of a day and part, and they are two values.**
+
+| | 休門 | the seven behind it | the yin half |
+|---|---|---|---|
+| `dayGates: fei`, the 金函玉鏡's 定局 | three days to a palace through the eight | flown with it, in the order of the palaces' numbers | not named: the 定局 serves sixty days and no half |
+| `dayGates: zhuan`, 《日家奇門》 | the same | turned round the eight behind it, with the sun on the day of a yang stem and against it on a yin one | 休門 begun at 離 and run back |
+
+The table says it is drawn from the 金函奇門遁甲 and lays the gates another
+way on every day but those with 休門 on 坎 or 離 and a yang stem. It states no
+rule for what it does; the rule here is read off ninety blocks of it. Neither
+is a corruption of the other that anybody can show, and a line's own table is
+that line's witness: each is a value, and the default is the one with a rule
+and an enumeration behind it.
+
+**What `dayGates: fei` does after 夏至 is the 定局's and is a limit of it.**
+The 定局 names no half of the year, so the engine counts the gates the same way
+all year under it and runs only the stars back. The same work's next piece
+does divide the year, and differently from everybody:
+
+**大八門逐日出行訣, pp. 372–373, recorded and not computed.** Six verses, one to
+each four terms from 冬至, each naming the palace of the eight groups of days:
+冬至 from 坎, 雨水 from 兌, 穀雨 from 巽, 夏至 from 離, 處暑 from 震, 霜降 from
+乾. Its own note works two of them — 「冬至四氣，首云戊壬子居坎，乃休門在坎也…
+三日換一門，五日換一奇」 and 「夏至四氣，甲子乙丑丙寅…仍是休門在離」 — and the
+夏至 verse then goes on 「丁辛乙卯北居，戊庚甲馬在坤期」, 離 · 坎 · 坤 · 震,
+which is forward from 離 where the table runs back from it. A third reading of
+the gates' year, in the work the first comes from. It would be a third value
+of `dayDun`, or a parameter of its own, once all six verses are read character
+by character; they were read for their starts.
+
+**每日出行八門捷訣, p. 374**, is a fourth piece — 「甲乾丙辰戊子風，庚震壬坎起
+休門…此是居處真休門，每宮三日順排輪」 — keyed to stems rather than to the
+sixty, and was not read past its heading and gloss.
+
+**日家九星, p. 374**, is the stars' anchors a third time: 「甲子為頭，起艮，甲戌
+飛入離宮，猿猴來入水晶宮，甲午坤中不動」 — 艮, 離, 坎, 坤 for the first four
+甲, as the 訣 on p. 372 has them.
+
+**What the table shows of the count, which the 定局 confirms for the gates.**
+
+- **Both counts are taken up again at every 甲子.** 休門 is on 巽 at 癸亥 and on
+  坎 the day after, where a count carried over would put it on 乾; 太乙 likewise
+  returns to 艮. The 定局's rows say the same of the gates, and the 訣's six
+  anchors of the stars.
+- **So the restart and the solstices are not two anchors on this table.** It
+  restarts at 甲子, which is 遁甲釋要's reading, and takes the direction from the
+  solstices, which is 探索錄's. The section above counts them as parting; what
+  parts them is whether a count running when a solstice passes is finished or
+  dropped, and the table, printing sixty days to a half, does not say. The
+  engine drops it: the half is read off the term in force on the day.
+
+**What is laid, since 2026-10-07.** `system: rijia` answers with a board of its
+own — eight gates, nine stars, no plate of stems — from `computeDayChart`,
+under `dayGates` and `dayDun`. `test/rijia.test.ts` asserts the eight rows of
+the 定局 on all sixty days, the six anchors of 太乙, and the table's blocks. Of
+what the table prints beside its gates and stars — the twelve hours 黃道 and
+黑道, 喜神方, 貴人, 截路空亡, and a closing 「大吉時為…」 — nothing is laid; the
+last is a verdict and stays out on any reading. **`dayDun: liushi`**, sixty
+days to a 局 with the half following the 局, is the 統宗's and is declared and
+refused: its rule has not been read on the plate.
+
 **Its own 陽/陰 boundary is the solstices**, 「每年從冬至節開始，到翌年交夏至節
 止，為陽」, which is 遁甲演義's rule and not the 統宗's sixty-days-to-a-局. That is
 a third reading on the anchor above and it stands with 《奇門探索錄》.

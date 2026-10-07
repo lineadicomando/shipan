@@ -19,6 +19,7 @@ import {
   type MessageParams,
 } from '@shipan/i18n';
 import { computeBazi, type Gender } from './bazi/index.js';
+import { computeDayChart } from './dunjia/rijia.js';
 import {
   GATES,
   PATTERN_IDS,
@@ -65,6 +66,7 @@ import { resolveMoment, type Moment } from './pillars.js';
 import {
   baziReadingPrompt,
   chartTranscript,
+  dayTranscript,
   liurenReadingPrompt,
   qizhengReadingPrompt,
   readingPrompt,
@@ -680,6 +682,20 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
     const warnings = warningsOf(moment, t);
     if (warnings !== '') parts.push(warnings);
     return parts.join('\n');
+  }
+
+  // A family is a board of its own. The day's is laid and printed; a birth, a
+  // question and a prompt are the hour board's, whose function refuses the
+  // family by name when one of them is asked of it.
+  if (
+    chartOptions.system === 'rijia' &&
+    !options.born &&
+    !options.prompt &&
+    options.ask === undefined
+  ) {
+    const day = computeDayChart(moment, chartOptions);
+    if (options.json) return JSON.stringify(day, null, 2);
+    return [dayTranscript(moment, day, t), '', formatAlmanac(moment.almanac, t)].join('\n');
   }
 
   const chart = computeQimenChart(moment, chartOptions);

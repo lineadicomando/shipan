@@ -862,5 +862,34 @@ describe('the flags the declaration gives', () => {
     expect(code).toBe(1);
     expect(err).toContain('fei');
   });
+
+  it('prints the board of a day, which has gates and stars and no plate of stems', async () => {
+    const code = await run(['qimen', ...MOMENT, '--system', 'rijia', '--lang', 'en']);
+    expect(code).toBe(0);
+    expect(out).toContain('Qi Men board of the day');
+    expect(out).toContain('太乙 tàiyǐ');
+    expect(out).toContain('休門 xiūmén');
+    expect(out).toContain('日家 rìjiā');
+    // Named under the board: its own divergence, and none of the hour board's.
+    expect(out).toContain('金函玉鏡');
+    expect(out).not.toContain('拆補');
+    expect(out).not.toContain('Qi Men chart');
+  });
+
+  it('moves the gates of a day with the flag declared for them', async () => {
+    await run(['qimen', ...MOMENT, '--system', 'rijia', '--json']);
+    const flown = JSON.parse(out) as { palaces: { gate?: { id: string } }[] };
+    out = '';
+    await run(['qimen', ...MOMENT, '--system', 'rijia', '--day-gates', 'zhuan', '--json']);
+    const turned = JSON.parse(out) as { palaces: { gate?: { id: string } }[] };
+    const gates = (board: typeof flown) => board.palaces.map((cell) => cell.gate?.id);
+    expect(gates(turned)).not.toEqual(gates(flown));
+  });
+
+  it('keeps a question for the hour board, and names the family in refusing', async () => {
+    const code = await run(['qimen', ...MOMENT, '--system', 'rijia', '--prompt', '--lang', 'en']);
+    expect(code).toBe(1);
+    expect(err).toContain('rijia');
+  });
 });
 

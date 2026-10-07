@@ -85,6 +85,11 @@ const YUAN_ORDER: Yuan[] = ['shang', 'zhong', 'xia'];
  */
 const FUTOU_CYCLE = 15;
 
+/** Whether a term belongs to the half of the year that opens at 冬至. */
+export function yangHalf(term: SolarTermId): boolean {
+  return JU_TABLE[term].yang;
+}
+
 /**
  * Determines the dun and the ju number.
  *

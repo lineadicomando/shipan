@@ -1,4 +1,4 @@
-import { computeQimenChart, nianmingOf } from '@shipan/core';
+import { computeDayChart, computeQimenChart, nianmingOf } from '@shipan/core';
 import { json } from '@sveltejs/kit';
 import {
   momentIsFixed,
@@ -26,6 +26,23 @@ import type { RequestHandler } from './$types';
 export const GET: RequestHandler = ({ url, setHeaders }) => {
   try {
     const { moment, label } = readMoment(url.searchParams);
+    const cache = momentIsFixed(url.searchParams) ? 'private, max-age=86400' : 'no-store';
+
+    // A family is a board of its own, answered under the same name: what
+    // tells them apart is `options.system`, which every board carries. A
+    // birth is looked up on a plate of stems and a day board has none, so
+    // `born` goes on to the hour board's function, which refuses the family.
+    if (moment.options.system === 'rijia' && !url.searchParams.has('born')) {
+      const day = computeDayChart(moment, moment.options);
+      setHeaders({ 'cache-control': cache });
+      return json({
+        qimen: day,
+        nianming: null,
+        place: label ?? null,
+        laidBy: laidBy('qimen', day.options),
+      });
+    }
+
     const chart = computeQimenChart(moment, moment.options);
     const birth = readNianming(url.searchParams, chart);
     const nianming = birth
@@ -39,9 +56,7 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
     //
     // And cacheable only where the URL fixes the instant. Without a date the
     // question is "now", which is a different question every hour.
-    setHeaders({
-      'cache-control': momentIsFixed(url.searchParams) ? 'private, max-age=86400' : 'no-store',
-    });
+    setHeaders({ 'cache-control': cache });
     // `qimen` and not `chart`: every board endpoint here answers with its
     // board named after itself, and this was the one that did not — which is
     // what `Instrument.api` being a single field depends on. See

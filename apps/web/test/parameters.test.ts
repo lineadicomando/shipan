@@ -157,6 +157,7 @@ describe('what a form offers', () => {
 
       expect(row.label, where).toBe(parameter?.label);
       expect(row.inside, where).toEqual(parameter?.inside);
+      expect(row.family, where).toEqual(parameter?.family);
 
       const says = Object.fromEntries(
         (parameter?.values ?? [])

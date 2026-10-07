@@ -211,6 +211,15 @@ export const it: Record<MessageKey, string> = {
   'label.gate.simen': 'Morte',
   'label.gate.jing1men': 'Sgomento',
   'label.gate.kaimen': 'Apertura',
+  'label.dayStar.taiyi': 'Grande Uno',
+  'label.dayStar.sheti': 'Conduttore',
+  'label.dayStar.xuanyuan': 'Timone del carro',
+  'label.dayStar.zhaoyao': 'Richiamo',
+  'label.dayStar.tianfu': 'Contrassegno',
+  'label.dayStar.qinglong': 'Drago azzurro',
+  'label.dayStar.xianchi': 'Stagno',
+  'label.dayStar.taiyin': 'Grande Yin',
+  'label.dayStar.tianyi': 'Uno celeste',
 
   'label.spirit.zhifu': 'Capo',
   'label.spirit.tengshe': 'Serpente',
@@ -1317,6 +1326,20 @@ export const it: Record<MessageKey, string> = {
     'facendoli volare per tutti e nove i palazzi mentre le porte continuano a girare, come sostiene il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng',
   'form.qimen.plate.note':
     'Le due letture pongono la stella del capo sul palazzo del tronco dell’ora. Si separano sul modo in cui le altre otto la seguono. La prima le porta lungo l’anello degli otto palazzi esterni e lascia il centro dov’è. La seconda le conta per tutti e nove i palazzi nell’ordine del 洛書 luòshū, centro compreso, in avanti in una carta yang e all’indietro in una carta yin. Le porte girano sugli otto sotto entrambe.',
+  'form.qimen.system': 'La tavola si posa',
+  'form.qimen.system.shijia':
+    'sull’ora, come tavola 時家 shíjiā: un piatto di tronchi, nove stelle, otto porte e otto spiriti',
+  'form.qimen.system.rijia':
+    'sul giorno, come tavola 日家 rìjiā: otto porte e nove stelle proprie',
+  'form.qimen.system.note':
+    'La tavola dell’ora e la tavola del giorno sono due tavole distinte, e hanno in comune le otto porte. La tavola dell’ora posa nove tronchi sui palazzi e muove sopra di essi un secondo piatto di tronchi, nove stelle e otto spiriti. La tavola del giorno è fatta delle otto porte e di nove stelle proprie, la prima delle quali è 太乙 tàiyǐ. Si posa soltanto sul giorno e sulla stagione, quindi tutte le ore di uno stesso giorno hanno la stessa tavola del giorno.',
+  'form.qimen.dayGates': 'Le altre sette porte seguono 休門 xiūmén',
+  'form.qimen.dayGates.fei':
+    'volando per gli otto palazzi esterni nell’ordine dei loro numeri, come le dispone il 《金函玉鏡奇門遁甲秘笈全書》 jīnhányùjìngqíméndùnjiǎmìjíquánshū',
+  'form.qimen.dayGates.zhuan':
+    'girando sugli otto palazzi esterni, come le dispone la tavola 《日家奇門》 rìjiāqímén',
+  'form.qimen.dayGates.note':
+    'Le due letture tengono 休門 xiūmén su un palazzo per tre giorni e poi la spostano sul successivo, attraverso gli otto palazzi esterni. Si separano sul posto delle altre sette porte. La prima lettura conta tutte e otto le porte insieme lungo i palazzi nell’ordine del 洛書 luòshū, e conta allo stesso modo per tutto l’anno. La seconda lettura porta le sette porte lungo l’anello dietro 休門 xiūmén, in un verso nei giorni di tronco yang e nel verso opposto nei giorni di tronco yin. Da 夏至 xiàzhì a 冬至 dōngzhì la seconda lettura comincia inoltre il conto dal palazzo opposto e lo percorre all’indietro.',
   'form.qimen.earth': 'La stagione della terra è',
   'form.qimen.earth.quarters': 'l’intero mese che chiude ciascuna stagione',
   'form.qimen.earth.eighteen':
@@ -1617,6 +1640,9 @@ export const it: Record<MessageKey, string> = {
     'Dove alloggia il centro, che non ha direzione, né porta, né spirito propri.',
   'notes.parameter.earthPlate': 'Ogni quanto si stende di nuovo il piatto terra: una volta per sessanta ore, oppure a ogni decade.',
   'notes.parameter.system': 'Quale famiglia di carta: dell’ora, del giorno, del mese o dell’anno.',
+  'notes.parameter.dayGates':
+    'Come le altre sette porte seguono 休門 xiūmén su una tavola del giorno.',
+  'notes.parameter.dayDun': 'Dove l’anno di una tavola del giorno si divide nelle sue due metà.',
   'notes.parameter.trueSolarTime':
     'Se l’ora dell’orologio venga corretta sul Sole del luogo.',
   'notes.parameter.yearBoundary': 'Dove comincia l’anno contato.',
@@ -2145,6 +2171,7 @@ export const it: Record<MessageKey, string> = {
   'cli.heading.moment': 'Istante',
   'cli.heading.pillars': 'Quattro pilastri',
   'cli.heading.qimen': 'Carta Qi Men',
+  'cli.heading.qimenDay': 'Tavola Qi Men del giorno',
   'cli.heading.palaces': 'Nove palazzi',
   'cli.heading.standing': 'Che cosa vi sta',
   'cli.heading.weighed': 'Come vi stanno',
@@ -2337,6 +2364,9 @@ export const it: Record<MessageKey, string> = {
   'cli.field.ju': 'ju',
   'cli.field.chief': 'capo',
   'cli.field.chiefGate': 'porta del capo',
+  'cli.field.dayHalf': 'metà dell’anno',
+  'cli.field.dayGate': 'porta dei tre giorni',
+  'cli.field.dayStar': 'stella del giorno',
   'cli.field.instrument': 'cela 甲 jiǎ',
   'cli.field.dayMaster': 'padrone del giorno',
   'cli.field.empty': 'rami vuoti',

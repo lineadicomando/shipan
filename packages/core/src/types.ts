@@ -110,8 +110,32 @@ export interface ChartOptions {
 
   /**
    * Which family of Qi Men chart: hour, day, month or year.
+   *
+   * A family is a board of its own and not the hour board reground. `rijia`
+   * lays eight gates and nine stars of its own off the day and has no plate of
+   * stems, so it is answered by `computeDayChart` and reads `dayGates` and
+   * `dayDun` where the hour board reads everything else here.
    */
   system: 'shijia' | 'rijia' | 'yuejia' | 'nianjia';
+
+  /**
+   * How a day board's seven other gates follow 休門. `system: rijia` alone.
+   *
+   * `fei` flies them over the eight palaces in the order of their numbers, as
+   * the 金函玉鏡's 八門三奇出行定局 enumerates, and counts the same way the
+   * whole year, that 定局 naming no half. `zhuan` turns them round the eight,
+   * with the sun on the day of a yang stem and against it on a yin one, and
+   * mirrors the count in the yin half: 《日家奇門》's table.
+   */
+  dayGates: 'fei' | 'zhuan';
+
+  /**
+   * Where a day board's year divides into its yang and yin halves.
+   *
+   * `solstice` at 冬至 and 夏至. `liushi`, sixty days to a 局, is the 統宗's
+   * and is refused.
+   */
+  dayDun: 'solstice' | 'liushi';
 
   /**
    * Where the centre lodges (寄宮).
@@ -259,6 +283,8 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   yearBoundary: 'lichun',
   dayBoundary: 'zishi',
   system: 'shijia',
+  dayGates: 'fei',
+  dayDun: 'solstice',
   centreLodging: 'kun',
   earthPlate: 'yuan',
   spirits: 'dun',

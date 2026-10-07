@@ -212,6 +212,19 @@ export const en = {
   'label.gate.simen': 'Death',
   'label.gate.jing1men': 'Shock',
   'label.gate.kaimen': 'Open',
+  // The nine stars a board of the day lays. They are not the hour board's
+  // nine, and four of them share a name with something on another board —
+  // 太陰 with a spirit, 青龍 and 天乙 with a general, 太乙 with an art — which
+  // is why they have a key of their own.
+  'label.dayStar.taiyi': 'Great One',
+  'label.dayStar.sheti': 'Conductor',
+  'label.dayStar.xuanyuan': 'Chariot Shaft',
+  'label.dayStar.zhaoyao': 'Beckoner',
+  'label.dayStar.tianfu': 'Tally',
+  'label.dayStar.qinglong': 'Azure Dragon',
+  'label.dayStar.xianchi': 'Pool',
+  'label.dayStar.taiyin': 'Great Yin',
+  'label.dayStar.tianyi': 'Heavenly One',
 
   'label.spirit.zhifu': 'Chief',
   'label.spirit.tengshe': 'Snake',
@@ -1431,6 +1444,22 @@ export const en = {
     'by flying them through all nine palaces while the gates still turn, as 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng holds',
   'form.qimen.plate.note':
     'Both readings set the chief star on the palace of the hour’s stem. They part over how the other eight follow it. The first carries them round the ring of eight outer palaces and leaves the centre where it is. The second counts them on through all nine palaces in the order of the 洛書 luòshū, the centre included, forward in a yang chart and back in a yin one. The gates turn round the eight under both.',
+  // The family, and the two things a day board is asked. A family is a board
+  // of its own, so the first of these says what each is made of.
+  'form.qimen.system': 'The board is laid off',
+  'form.qimen.system.shijia':
+    'the hour, as a 時家 shíjiā board: a plate of stems, nine stars, eight gates and eight spirits',
+  'form.qimen.system.rijia':
+    'the day, as a 日家 rìjiā board: eight gates and nine stars of its own',
+  'form.qimen.system.note':
+    'The board of the hour and the board of the day are two boards, and the eight gates are what they share. The board of the hour sets nine stems on the palaces and moves a second plate of stems, nine stars and eight spirits over them. The board of the day is made of the eight gates and of nine stars of its own, the first of which is 太乙 tàiyǐ. It is laid off the day and the season alone, so every hour of one day has the same board of the day.',
+  'form.qimen.dayGates': 'The other seven gates follow 休門 xiūmén',
+  'form.qimen.dayGates.fei':
+    'by flying through the eight outer palaces in the order of their numbers, as 《金函玉鏡奇門遁甲秘笈全書》 jīnhányùjìngqíméndùnjiǎmìjíquánshū lays them',
+  'form.qimen.dayGates.zhuan':
+    'by turning round the eight outer palaces, as the table 《日家奇門》 rìjiāqímén lays them',
+  'form.qimen.dayGates.note':
+    'Both readings keep 休門 xiūmén on one palace for three days and then move it to the next, through the eight outer palaces. They part over where the other seven gates stand. The first reading counts all eight gates on together through the palaces in the order of the 洛書 luòshū, and it counts the same way all year. The second reading carries the seven gates round the ring behind 休門 xiūmén, one way on the day of a yang stem and the other way on the day of a yin stem. From 夏至 xiàzhì to 冬至 dōngzhì the second reading also begins its count at the opposite palace and runs it back.',
   'form.qimen.earth': 'The season of earth is',
   'form.qimen.earth.quarters': 'the whole of each month that closes a season',
   'form.qimen.earth.eighteen':
@@ -1845,6 +1874,9 @@ export const en = {
   'notes.parameter.earthPlate': 'How often the earth plate is laid anew: once for sixty hours, or at every decade of them.',
   'notes.parameter.system':
     'Which family of chart: the hour’s, the day’s, the month’s or the year’s.',
+  'notes.parameter.dayGates':
+    'How the seven other gates follow 休門 xiūmén on a board of the day.',
+  'notes.parameter.dayDun': 'Where the year of a board of the day divides into its two halves.',
   'notes.parameter.trueSolarTime': 'Whether clock time is corrected to the Sun at the place.',
   'notes.parameter.yearBoundary': 'Where the counted year begins.',
   'notes.parameter.dayBoundary': 'Where the day turns over.',
@@ -2481,6 +2513,7 @@ export const en = {
   'cli.heading.moment': 'Moment',
   'cli.heading.pillars': 'Four Pillars',
   'cli.heading.qimen': 'Qi Men chart',
+  'cli.heading.qimenDay': 'Qi Men board of the day',
   'cli.heading.palaces': 'Nine palaces',
   'cli.heading.standing': 'What stands in each',
   'cli.heading.weighed': 'How each of them stands',
@@ -2706,6 +2739,9 @@ export const en = {
   'cli.field.ju': 'ju',
   'cli.field.chief': 'chief',
   'cli.field.chiefGate': 'chief gate',
+  'cli.field.dayHalf': 'half of the year',
+  'cli.field.dayGate': 'gate of the three days',
+  'cli.field.dayStar': 'star of the day',
   'cli.field.instrument': 'concealing 甲 jiǎ',
   'cli.field.dayMaster': 'day master',
   'cli.field.empty': 'void branches',

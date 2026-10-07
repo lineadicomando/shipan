@@ -170,6 +170,8 @@ export function sayPlace(input: PlaceInput): string {
 export function readMoment(
   url: URL,
   board?: string,
+  // Whether this section lays more than one family of its art. See `offered`.
+  families = false,
 ): {
   input: Omit<MomentInput, 'place'>;
   locationId: string | null;
@@ -181,7 +183,7 @@ export function readMoment(
       time: params.get('time') ?? '',
       ...readPlaceInput(params),
       trueSolarTime: params.get('trueSolarTime') !== 'false',
-      chosen: readChosen(params, board),
+      chosen: readChosen(params, board, families),
     },
     locationId: params.get('locationId'),
   };

@@ -1,11 +1,13 @@
 import type { Translator } from '@shipan/i18n';
 import type { Bazi } from './bazi/index.js';
 import type { QimenChart } from './dunjia/index.js';
+import type { DayChart } from './dunjia/rijia.js';
 import {
   formatBazi,
   formatLiuren,
   formatMoment,
   formatNianming,
+  formatDayChart,
   formatQimenChart,
   formatQizheng,
   formatZiwei,
@@ -155,6 +157,31 @@ export function chartTranscript(
     // chart, and a reader who received the two apart could pair the wrong
     // birth with the wrong hour and never see it.
     ...(extra.nianming ? ['', formatNianming(extra.nianming, t)] : []),
+    ...(warnings ? ['', warnings] : []),
+    ...(extra.source ? ['', `  ${t('prompt.source', { url: extra.source })}`] : []),
+  ].join('\n');
+}
+
+/**
+ * A board of the day said in full, as `chartTranscript` says the hour's.
+ *
+ * Without a 年命: a birth is looked up on a plate of stems, and this board
+ * has none.
+ */
+export function dayTranscript(
+  moment: Moment,
+  chart: DayChart,
+  t: Translator,
+  extra: { source?: string } = {},
+): string {
+  const warnings = formatWarnings(moment, t);
+  return [
+    formatMoment(moment, t, {
+      almanac: false,
+      divergences: { board: 'qimen', options: chart.options },
+    }),
+    '',
+    formatDayChart(chart, t),
     ...(warnings ? ['', warnings] : []),
     ...(extra.source ? ['', `  ${t('prompt.source', { url: extra.source })}`] : []),
   ].join('\n');
