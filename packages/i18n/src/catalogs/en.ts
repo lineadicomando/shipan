@@ -2482,13 +2482,13 @@ export const en = {
   // has; the shelf's limit follows as the reason.
   'cli.combination.together': 'This combination of values is laid as one by {witnesses}.',
   'cli.combination.apart':
-    'Each value this board was laid on has a text behind it, and the combination is this engine’s: no text on its shelf lays them all together.',
+    'The combination this board was laid on is this engine’s own: no one text on its shelf lays all of these values together.',
   'cli.combination.unattributed':
-    'Some of the values this board was laid on are conventions of this engine, with no text named for them yet.',
+    'This board was laid on conventions of this engine, with no text named for them yet.',
   'cli.combination.unattributedBeside':
     'Some of the values this board was laid on are conventions of this engine, with no text named for them yet. The other values are laid as one by {witnesses}.',
   'cli.combination.unattributedApart':
-    'Some of the values this board was laid on are conventions of this engine, with no text named for them yet. Each of the other values has a text behind it, and no text on the shelf lays those all together.',
+    'Some of the values this board was laid on are conventions of this engine, with no text named for them yet. The other values do not all belong to one text.',
   'cli.combination.and': ' and ',
   'label.witness.engine': 'this engine’s own construction',
   'cli.heading.terms': 'Solar terms of {year}',

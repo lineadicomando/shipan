@@ -2145,13 +2145,13 @@ export const it: Record<MessageKey, string> = {
   // has; the shelf's limit follows as the reason.
   'cli.combination.together': 'Questa combinazione di valori è posata per intero da {witnesses}.',
   'cli.combination.apart':
-    'Ogni valore con cui è posata questa tavola ha un testo dietro, e la combinazione è del motore: nessun testo del suo scaffale li posa tutti insieme.',
+    'La combinazione con cui è posata questa tavola è propria del motore: nessun testo del suo scaffale posa insieme tutti questi valori.',
   'cli.combination.unattributed':
-    'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo.',
+    'Questa tavola è posata su convenzioni del motore, per le quali non è ancora nominato nessun testo.',
   'cli.combination.unattributedBeside':
     'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo. Gli altri valori sono posati per intero da {witnesses}.',
   'cli.combination.unattributedApart':
-    'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo. Ciascuno degli altri valori ha un testo dietro, e nessun testo dello scaffale li posa tutti insieme.',
+    'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo. Gli altri valori non appartengono tutti a uno stesso testo.',
   'cli.combination.and': ' e ',
   'label.witness.engine': 'una costruzione propria del motore',
   'cli.heading.terms': 'Termini solari del {year}',

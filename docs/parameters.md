@@ -246,6 +246,14 @@ the lodging by the eight 節 it belongs to a board that work lays whole — star
 flown, gates turned, `plate: xingfei` — of which this engine computes the
 parts and not yet the flight.
 
+**年命 does not follow `earthPlate`, and that is a limit stated rather than a
+choice made.** A birth in a 甲 year is looked up under the 儀 its decade pins —
+甲子戊, 甲戌己 — which is 《遁甲演義》's rule and the only one this engine has
+for it. On a chart laid with `earthPlate: xun` the hours conceal every 甲 under
+戊, and the 折衷 says nothing of how a birth is to be placed on such a plate.
+Until a text does, the 本命 on that chart is read by one work's rule on
+another work's plate.
+
 **`system` is four values because four are transmitted, not because the set is
 closed.** A modern lineage on the shelf adds 分家 fēnjiā, a board of the minute;
 nothing here is written as though four were the end of it, for the reason the
