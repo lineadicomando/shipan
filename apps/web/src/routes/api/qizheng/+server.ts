@@ -7,6 +7,7 @@ import {
   readQizhengOptions,
 } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
+import { laidBy } from '$lib/server/laid';
 import type { RequestHandler } from './$types';
 import { named } from '$lib/parameters';
 
@@ -42,7 +43,12 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
     setHeaders({
       'cache-control': momentIsFixed(url.searchParams) ? 'private, max-age=86400' : 'no-store',
     });
-    return json({ moment, qizheng: board, place: label ?? null });
+    return json({
+      moment,
+      qizheng: board,
+      place: label ?? null,
+      laidBy: laidBy('qizheng', board.options),
+    });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;
     toHttpError(cause);

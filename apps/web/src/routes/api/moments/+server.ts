@@ -3,6 +3,7 @@ import { json } from '@sveltejs/kit';
 import { ephemerisContext, readCriteria, readInterval } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import type { ScannedMoment } from '$lib/moment';
+import { laidBy } from '$lib/server/laid';
 import type { RequestHandler } from './$types';
 
 /**
@@ -42,6 +43,8 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
       // set of hours that would be a different set under another method, and
       // one that did not say could not be laid again from itself.
       options,
+      // Who lays the combination those options make, beside them.
+      laidBy: laidBy('qimen', options),
       scanned: runs.length,
       moments: matches.map(project),
     });

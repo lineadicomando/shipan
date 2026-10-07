@@ -4,6 +4,7 @@ import { ephemerisContext, momentIsFixed, readInteger, readMoment,
   readBaziOptions,
 } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
+import { laidBy } from '$lib/server/laid';
 import type { RequestHandler } from './$types';
 
 /**
@@ -26,7 +27,12 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
     setHeaders({
       'cache-control': momentIsFixed(url.searchParams) ? 'private, max-age=86400' : 'no-store',
     });
-    return json({ moment, bazi, place: label ?? null });
+    return json({
+      moment,
+      bazi,
+      place: label ?? null,
+      laidBy: laidBy('bazi', bazi.options),
+    });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;
     toHttpError(cause);

@@ -61,6 +61,7 @@
 -->
 <script lang="ts">
   import Choice from '$lib/components/Choice.svelte';
+  import type { LaidBy } from '$lib/laid';
   import Named from '$lib/components/Named.svelte';
   import { replaceState } from '$app/navigation';
   import { page } from '$app/state';
@@ -257,6 +258,7 @@
    * quietly stopped appearing.
    */
   let castMoment = $state<Moment | null | undefined>();
+  let castLaidBy = $state<LaidBy | undefined>();
   /** The fields, which withdraw once they have answered. */
   let panel: FormPanel | undefined = $state();
 
@@ -512,6 +514,7 @@
         chart = undefined;
         castInstrument = undefined;
         castMoment = undefined;
+        castLaidBy = undefined;
         address = '';
         failure = body as Failure;
         return;
@@ -539,6 +542,9 @@
        */
       const laidAt = body.moment ?? body[instrument.api]?.moment ?? null;
       castMoment = laidAt;
+      // Who lays the combination, from beside the board: it is the shelf's
+      // statement and no endpoint puts it inside what was laid.
+      castLaidBy = body.laidBy ?? undefined;
       /**
        * The address of what was laid, and under 天 there is no moment in it.
        *
@@ -602,6 +608,7 @@
       // the same answer should clear the same fields, and the one that does
       // not is the one a later reader trusts.
       castMoment = undefined;
+      castLaidBy = undefined;
       address = '';
       // The request itself failed, so there is no code to translate — and it
       // may well be the first press, when nothing was ever cast to be "read
@@ -1217,6 +1224,7 @@
           board={chart.id}
           options={(chart.board as { options?: object }).options ?? {}}
           layers={castMoment?.options ?? {}}
+          laidBy={castLaidBy}
         />
       </div>
     </section>

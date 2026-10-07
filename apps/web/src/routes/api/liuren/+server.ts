@@ -2,6 +2,7 @@ import { liurenBoard } from '@shipan/core';
 import { json } from '@sveltejs/kit';
 import { momentIsFixed, readLiurenOptions, readMoment } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
+import { laidBy } from '$lib/server/laid';
 import type { RequestHandler } from './$types';
 
 /**
@@ -30,7 +31,12 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
     setHeaders({
       'cache-control': momentIsFixed(url.searchParams) ? 'private, max-age=86400' : 'no-store',
     });
-    return json({ moment, liuren: board, place: label ?? null });
+    return json({
+      moment,
+      liuren: board,
+      place: label ?? null,
+      laidBy: laidBy('liuren', board.options),
+    });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;
     toHttpError(cause);

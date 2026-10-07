@@ -194,7 +194,7 @@
            parameters have one implemented value apiece, and a board of a year
            stands on no pillars. It is here so that the day 月計 lands the
            reader is told which register they are looking at. -->
-      <Schools {t} board="taiyi" options={board.options} />
+      <Schools {t} board="taiyi" options={board.options} laidBy={data.result?.laidBy} />
     </div>
   </div>
 {/if}
