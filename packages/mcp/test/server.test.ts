@@ -148,6 +148,21 @@ describe('what the server offers', () => {
   });
 });
 
+describe('draw_qimen_chart, for a board of the day', () => {
+  it('draws the day’s gates and stars on the grid, with its names and schools under it', async () => {
+    const svg = await call('draw_qimen_chart', { ...BEIJING, system: 'rijia', lang: 'en' });
+
+    expect(svg.startsWith('<svg')).toBe(true);
+    expect(svg).toContain('太乙');
+    expect(svg).toContain('休門');
+    // It travels alone, so it says how its names are read and who laid it.
+    expect(svg).toContain('How the names are said');
+    expect(svg).toContain('金函玉鏡');
+    // And nothing of the hour board's: no chief along the foot.
+    expect(svg).not.toMatch(/chief gate/);
+  });
+});
+
 describe('compute_qimen_chart', () => {
   it('lays the board of a day when that family is asked for, in a shape of its own', async () => {
     const text = await call('compute_qimen_chart', { ...BEIJING, system: 'rijia', lang: 'en' });

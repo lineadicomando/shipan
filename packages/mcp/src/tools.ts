@@ -12,6 +12,7 @@ import {
   STEMS,
   chartLabels,
   computeBazi,
+  DAY_STARS,
   computeDayChart,
   computeQimenChart,
   formatDayChart,
@@ -43,7 +44,8 @@ import {
   type ScanCriteria,
 } from '@shipan/core';
 import { searchLocations } from '@shipan/geo';
-import { renderChartSvg, renderLiurenSvg } from '@shipan/plate';
+import type { MessageKey } from '@shipan/i18n';
+import { renderChartSvg, renderDaySvg, renderLiurenSvg } from '@shipan/plate';
 import { z } from 'zod';
 import {
   birthSchema,
@@ -719,7 +721,10 @@ export function registerDrawQimenChart(server: McpServer, context: ToolContext):
         'underneath, so it can be read by somebody who does not read Chinese. ' +
         'CALL THIS AFTER compute_qimen_chart, not instead of it: a picture carries the glyphs ' +
         'and their readings but not the warnings, and not the note about which method cast it. ' +
-        'Show the person both, or show them the data alone.',
+        'Show the person both, or show them the data alone. ' +
+        'With system rijia it draws the board of the day on the same grid and inside the same ' +
+        'frame: a gate, a star of the day\'s own nine and the palace in each of the nine, the ' +
+        'centre holding a star and no gate.',
       inputSchema: {
         date: dateSchema,
         time: timeSchema,
@@ -734,7 +739,6 @@ export function registerDrawQimenChart(server: McpServer, context: ToolContext):
       const t = translatorFor(args.lang);
       try {
         const { moment } = resolveInput(args, context);
-        const chart = computeQimenChart(moment, moment.options);
         const labels = chartLabels(t);
         const PILLARS = [
           moment.pillars.year,
@@ -747,6 +751,33 @@ export function registerDrawQimenChart(server: McpServer, context: ToolContext):
           // A visible separator, not spaces: SVG collapses runs of whitespace,
           // so four pillars set three spaces apart arrive as one long phrase.
           .join(' / ');
+
+        // A family is a board of its own and so is its drawing: the same grid
+        // and frame, with the schools and the names said under it, since this
+        // too leaves with no transcript beside it.
+        if (moment.options.system === 'rijia') {
+          const day = computeDayChart(moment, moment.options);
+          return ok(
+            renderDaySvg(day, {
+              size: args.size ?? 900,
+              schools: divergenceLines('qimen', day.options, moment.options, t),
+              // The day's own nine, under the name the drawing reads a star by.
+              labels: {
+                ...labels,
+                star: Object.fromEntries(
+                  DAY_STARS.map((star) => [star.id, t(`label.dayStar.${star.id}` as MessageKey)]),
+                ),
+              },
+              compass: labels.direction,
+              captions: {
+                ju: `${day.yang ? t('cli.value.yangDun') : t('cli.value.yinDun')} · ${t(`label.term.${day.term.id}` as MessageKey)} ${day.term.hanzi}`,
+                pillars: PILLARS,
+                readings: t('cli.heading.readings'),
+              },
+            }),
+          );
+        }
+        const chart = computeQimenChart(moment, moment.options);
 
         const svg = renderChartSvg(chart, {
           size: args.size ?? 900,
