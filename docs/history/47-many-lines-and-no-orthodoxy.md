@@ -209,5 +209,19 @@ for `spirits: dun`, a table of the stars' 旺相, two ways of taking the 值使
 chosen by the matter — comes from the transcription sold with it and locates
 only. No plate was opened in this phase.
 
-The plan, and the proposal it is staged from, is
-`docs/proposal-plural-lines.md` for as long as the branch lives.
+## How it landed, and what it left for later
+
+The proposal this was staged from, `docs/proposal-plural-lines.md`, said of
+itself that it would go when the change landed, and went: what holds is in the
+pages that own it and the record is this file. The branch was merged with its
+series kept, one commit a step.
+
+The ladder was weighed again once school values stood on one witness and on
+several, and was not redrawn: a default turned out to stand below the value
+beside it in two places, which is what ordering transcription alone looks
+like, and `docs/notes.md` says so.
+
+Left open, each in `ROADMAP.md`: the flight of `plate: xingfei`; the 授時
+table with 參 supplied by its quadrant's sum; a family of `system`; the flags
+the command line owes; and thirty declared values of eighty-five with no text
+yet named for them, most of them the cuts of the year and the day.
