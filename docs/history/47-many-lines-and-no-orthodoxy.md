@@ -95,6 +95,39 @@ passed a judgement on each value that nobody had made.
 that a second witness is what they wait on. The attribution pass, art by art,
 is where each divergence is put in one of the three states.
 
+## The registry, and the pass through every art
+
+Two things followed in the same sitting, each a step of its own.
+
+**Who holds a value became data.** `packages/core/src/witnesses.ts` registers
+the texts — a work handed down, a line's modern manual, the engine's own
+construction — and each declared value names the ones that hold it. Three
+things were decided while it was being written and were not in the plan:
+
+- **A reading reported by those who reject it is its own state**, `reportedBy`
+  beside `heldBy`. `centreLodging: dun` is the one value in it.
+- **The school column gained a third word, `recorded`.** Once a dash meant «no
+  divergence known», a quantity with a known divergence and no parameter could
+  not carry one; 解神 was the first row that could not.
+- **No year is recalled.** A witness carries one where the register states it.
+
+**Then every art was read for whose each value is**: 紫微斗數, 奇門, 六壬, 太乙,
+七政四餘, the almanac, and the layers under all of them. Each gained a section
+in `docs/sources.md`, the rows it owed, and a table of states in `ROADMAP.md`
+§ 1. No plate was opened and no answer changed.
+
+What the pass found, counted on the day it closed and asserted by no test: of
+seventy-one declared values, thirty-eight have a holder named, one is reported,
+and thirty-two are not yet attributed — twenty of those computed. The
+unattributed defaults are where the old premise had been doing its work
+unseen: the cut of the year and of the day, the naming of 奇門's middle pair,
+the palaces of a 七政四餘 board. Nobody had been asked whose they were because
+nothing had required them to be anybody's.
+
+One test was wrong and passing. The suite holding the school column to the
+declaration kept one board for each pair, so 紫微斗數's year boundary passed by
+the order of a list.
+
 ## What was not established
 
 The survey of the five arts other than 奇門 was read off the register and
