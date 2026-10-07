@@ -3232,6 +3232,38 @@ does the anchor — and it removes the reason a future implementer would have ha
 to derive the tables before being able to test them. 年家 and 月家 are unchanged:
 for those the sources still give the entry and the step alone.
 
+**The table was put to the rule on 2026-10-07, and the rule is now in the
+engine.** `packages/core/src/dunjia/rijia.ts` lays the two motions from the
+day's place in the sixty and the half of the year, and `test/rijia.test.ts`
+holds them to every block whose text layer comes back whole — a label found
+once, eight different gates, eight different stars, which is ninety-three of
+the hundred and twenty, kept or dropped on that ground alone. The gates agree
+in ninety and the stars in ninety. **The six that part are slips, and each is
+named in the test**: 傷 and 杜 exchanged in the yin blocks of 戊辰, 壬辰 and
+丙辰, which are one palace's turn copied forward twice, and two or four stars
+out of series in 陰庚辰, 陽癸巳 and 陽庚申, between neighbours that keep it.
+
+Three things the table shows that no 訣 on this shelf says, and they are the
+table's until a text is read for them:
+
+- **The gates are laid with the sun on the day of a yang stem and against it
+  on the day of a yin one**, in both halves of the year. 休門 does not move
+  inside its three days; the seven behind it change sides every day. The
+  金函玉鏡's 「休門既定，然後從八卦定方位也」 gives 休門 and leaves the rest
+  unsaid, and its p. 370, 八門三奇出行定局, where this would be, is not read.
+- **Both counts are taken up again at every 甲子.** 休門 is on 巽 at 癸亥 and on
+  坎 the day after, where a count carried over would put it on 乾; 太乙 likewise
+  returns to 艮. For the stars this is the 訣's own six anchors.
+- **So the restart and the solstices are not two anchors on this table.** It
+  restarts at 甲子, which is 遁甲釋要's reading, and takes the direction from the
+  solstices, which is 探索錄's. The section above counts them as parting; what
+  parts them is whether a count running when a solstice passes is finished or
+  dropped, and the table, printing sixty days to a half, does not say.
+
+**Nothing is laid on a surface from it yet.** The calculation is pure and takes
+a day and a half of the year; which half a date is in, and what a board of a
+day is on a page, are not decided here.
+
 **Its own 陽/陰 boundary is the solstices**, 「每年從冬至節開始，到翌年交夏至節
 止，為陽」, which is 遁甲演義's rule and not the 統宗's sixty-days-to-a-局. That is
 a third reading on the anchor above and it stands with 《奇門探索錄》.
