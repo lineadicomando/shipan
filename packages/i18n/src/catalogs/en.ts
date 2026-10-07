@@ -1932,10 +1932,6 @@ export const en = {
   'notes.refusals.feixing.asks': 'anyone holding both books of 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':
     'That art names two boards and this engine computes one of them. The other transmission counts eighteen stars off the year branch, has no bureau of the five phases, no 天府 tiānfǔ, and not one of the fourteen main stars. A placement carried across is a graft rather than a gap being filled — the same error as a natal chart of dunjia, made smaller and between two books that share a title.',
-  'notes.refusals.maoshan.title': '茅山 máoshān',
-  'notes.refusals.maoshan.asks': 'the parameter that lists it.',
-  'notes.refusals.maoshan.body':
-    'No reference exists, runnable or transmitted, against which a 茅山 máoshān chart could be falsified. It is refused by name rather than substituted, because a chart cast by the wrong method looks right and is not. It stands on the list of what is declared and unimplemented, and it is not expected to leave it.',
   'notes.refusals.placeFromName.title': 'A place from a name',
   'notes.refusals.placeFromName.asks': 'every convenience API.',
   'notes.refusals.placeFromName.body':

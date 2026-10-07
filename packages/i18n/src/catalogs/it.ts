@@ -1587,8 +1587,8 @@ export const it: Record<MessageKey, string> = {
   // c'è una cella di tabella.
   //
   // È anche la parola che il resto della sezione usa già. «Sta nell'elenco di
-  // ciò che è dichiarato e non implementato» sta in
-  // `notes.refusals.maoshan.body` da prima di questa riga, e il segno diceva
+  // ciò che è dichiarato e non implementato» stava in una voce delle note,
+  // ora tolta, da prima di questa riga, e il segno diceva
   // l'altra: due parole per lo stesso fatto in due pagine che si leggono di
   // seguito. L'inglese tiene «refused» perché in inglese quella parola dice
   // il comportamento e non la condanna — un catalogo argomenta la propria
@@ -1708,10 +1708,6 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.feixing.asks': 'chi ha in mano entrambi i libri del 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':
     'Quell’arte nomina due tavole e questo motore ne calcola una. L’altra trasmissione conta diciotto stelle a partire dal ramo dell’anno, non ha ufficio dei cinque elementi, non ha 天府 tiānfǔ e non porta nessuna delle quattordici stelle principali. Una collocazione portata da un libro all’altro è un innesto, non una lacuna colmata: lo stesso errore della carta natale di dunjia, più piccolo e fra due libri che condividono il titolo.',
-  'notes.refusals.maoshan.title': '茅山 máoshān',
-  'notes.refusals.maoshan.asks': 'il parametro che lo elenca.',
-  'notes.refusals.maoshan.body':
-    'Non esiste alcun riferimento, eseguibile o tramandato, su cui una carta 茅山 máoshān possa essere falsificata. È rifiutato per nome anziché sostituito, perché una carta tratta con il metodo sbagliato sembra giusta e non lo è. Sta nell’elenco di ciò che è dichiarato e non implementato, e non ci si aspetta che ne esca.',
   'notes.refusals.placeFromName.title': 'Un luogo da un nome',
   'notes.refusals.placeFromName.asks': 'ogni API di comodo.',
   'notes.refusals.placeFromName.body':

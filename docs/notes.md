@@ -56,6 +56,16 @@ not a boast either: it says the sky was asked, and asking the sky is what an
 ephemeris is for. What the ladder orders is **what could go wrong unnoticed**,
 which is a different thing from how wrong anything is.
 
+**And a rung does not rank a reading against its alternative.** It weighs how
+well one reading was taken down, and two readings of one divergence are
+weighed apart. So a default can stand on a lower rung than the value beside
+it, and does: `daxian: adjacent` is one work in three copies and `daxian:
+ming` is two works agreeing; `huoling: fixed` is a text checking itself and
+`huoling: hour` was run against a reference over its whole domain. Neither
+pair says which reading to follow, and a reader choosing between two schools
+is not helped by comparing their rungs. Who holds a reading is declared beside
+it and is not on this ladder.
+
 **What the rung does not carry is what agreement means.** A runnable reference
 for a contested tradition is one author's reading of it: agreeing with
 `qimen-dunjia` is *consistent with a common implementation*, never *verified*,

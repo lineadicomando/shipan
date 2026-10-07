@@ -262,7 +262,6 @@ export const REFUSALS: readonly WrittenEntry[] = [
   refusal('dayMaster', '2026-08-22'),
   refusal('ziqi', '2026-09-01'),
   refusal('feixing', '2026-08-22'),
-  refusal('maoshan', '2026-08-22'),
   refusal('placeFromName', '2026-08-22'),
   refusal('latitude', '2026-08-22'),
   refusal('twoBoards', '2026-08-22'),
