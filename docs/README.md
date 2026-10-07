@@ -18,6 +18,7 @@ or an agent — must be able to tell at a glance whether a page binds them.
 | [`agent-prompt.md`](agent-prompt.md) | the contract a model calling this project has to read first — through MCP or through the REST API |
 | [`sources.tsv`](sources.tsv) | the register as a table: one row a quantity, the rung it stands on, what it was checked against, and the section of `sources.md` that argues it |
 | [`provenance.tsv`](provenance.tsv) | every file this project was read off that came from the network: URL, revision, date taken, sha256 |
+| [`proposal-plural-lines.md`](proposal-plural-lines.md) | **a proposal, binding nothing**, and the one page here that is not the project as it is: the premise that a transmitted quantity says who carries it rather than what the rule is, what that moves in each art, and the stages the transit would take |
 
 `CLAUDE.md` at the root holds the rules that bind any change, one line each,
 pointing here. `README.md` says what the project is and how to run it.
