@@ -158,7 +158,7 @@ refused because their fullest witness finds the transmission plural:
 
 | Divergence | Today | Proposed state |
 |---|---|---|
-| `centreLodging: dun` | refused: «a school holding 艮» is wanted | **computable**, by decision 1: stated whole twice with its derivation, reported as practised |
+| `centreLodging: dun` | refused: «a school holding 艮» is wanted | **stays refused**: stage 4 found that the two texts reporting it assign 坤 and 艮 the opposite way round, so decision 1's condition fails. Written here as computable before the two quotations were set side by side |
 | stars and 儀 flown, gates turned, on the hour board | «a third arrangement», declares nothing | **declared**: third value of `plate` |
 | a new earth plate at every decade (六戊還原) | located, weighed at nothing | **declared**: a parameter of its own |
 | the centre lodged through eight palaces, or four corners | the 折衷's own quarrel | **declared**: two further values of `centreLodging` |

@@ -1614,13 +1614,31 @@ under the naming of the spirits alone.
 | `strengths: star` | 《奇門遁甲金鏡寶鑑》卷之四 | tabulates the five states outward from each of the nine stars |
 | `system: rijia`, `yuejia`, `nianjia` | 《遁甲演義》, 《奇門遁甲統宗》 | each states the three families; they part on the 年家's three 元, which is two readings and will be two values |
 
-**`centreLodging: dun` is reported and not held.** 《御定奇門寶鑑》 states it
-whole with its derivation — 「陽局中五寄於二，陰局中五合於八」 — and keeps 坤 on
-the majority of copies; the 折衷 prints it beside the other and argues both
-down. The two reports agree on what the reading is, which is enough to
-reconstruct it without contradiction, so the value is computable on them. The
-declaration names the two as reporting it. A text found holding 艮 takes their
-place.
+**`centreLodging: dun` is reported, not held, and the two reports do not
+describe one reading.** This paragraph said on 2026-10-07 that they agree on
+what the reading is and that the value is computable on them. It was wrong,
+and the quotations above are what show it.
+
+| Reported by | Yang | Yin | In its own words |
+|---|---|---|---|
+| 《御定奇門寶鑑》, 卷一 釋虛中合宮 and 卷二's note in both copies | 坤二 | 艮八 | 「陽局中五寄於二，陰局中五合於八」; 「一本陰遁寄艮，陽遁寄坤」 |
+| 《奇門遁甲折衷》, quoting 《三才發秘》 | 艮八 | 坤二 | 「以艮為陽土，陽遁寄之…坤為陰土，陰遁寄之」 |
+
+Both divide the lodging by the dun between the same two palaces, each gives
+its derivation, and they assign the palaces the opposite way round. The value
+as `docs/parameters.md` declares it — 陽遁寄二 · 陰遁寄八 — is the imperial
+print's, so that print alone is named as reporting it. What the 折衷 reports
+is a different lodging by dun.
+
+**So the value is not computable under the rule that admits a reported
+reading**, which asks that the reports be enough to reconstruct it without
+contradiction. Each report is whole and coherent taken alone. Taken together
+they leave it open whether two practices existed or one was misreported by
+one of the two texts that reject it, and nothing on the shelf decides that.
+It stays declared and refused. The reverse lodging is recorded with no
+parameter; the transcription sold with the 折衷 has its 赤霆經 commentary put
+it on a 《元經》 — 「元經又謂陽遁寄艮，陰遁寄坤」 — which is a lead until the
+plate is read, and would be a holder if it reads so.
 
 **Three defaults are not yet attributed.** `spirits: dun`, `strengths: season`
 and `earth: quarters` are computed by default with no text named for any of

@@ -32,8 +32,8 @@ describe('the witnesses a value is held by', () => {
   // A reading stated only by texts that argue it down: who reports it is said,
   // and a holder found later is read instead of them.
   it('tells a reading reported from one that is held', () => {
-    expect(holdingOf({ reportedBy: ['zhezhong'] })).toEqual({ state: 'reported', by: ['zhezhong'] });
-    expect(holdingOf({ heldBy: ['tongzong'], reportedBy: ['zhezhong'] })).toEqual({
+    expect(holdingOf({ reportedBy: ['baojian'] })).toEqual({ state: 'reported', by: ['baojian'] });
+    expect(holdingOf({ heldBy: ['tongzong'], reportedBy: ['baojian'] })).toEqual({
       state: 'held',
       by: ['tongzong'],
     });

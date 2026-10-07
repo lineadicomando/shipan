@@ -132,7 +132,8 @@ is what holds.
 
 | | State | What it has, and what it waits on |
 |---|---|---|
-| `centreLodging: dun` | declared and refused | stated whole by 《御定奇門寶鑑》 with its derivation and again by the 折衷, reported by both and held by neither; the two agree on what it is. Waits on nothing but being built |
+| `centreLodging: dun` | declared and refused | reported by 《御定奇門寶鑑》 as a variant copy's, yang to 坤 and yin to 艮. The 折衷 reports a lodging by dun the other way round, so the two reports contradict each other and the value is not reconstructed from them. Waits on a text holding either, or on the plate deciding which the 《元經》 the 折衷's commentary names holds |
+| the centre lodged in 艮 under yang and in 坤 under yin | recorded | the reverse of the value above, reported by the 折衷 from 《三才發秘》 |
 | `strengths: star` | declared and refused | held by 《奇門遁甲金鏡寶鑑》卷之四. Waits on reading whether its rule reaches the gates and the spirits or the nine stars alone |
 | `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
 | `system: rijia`, `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Waits on a family being built, which is nearer a board than a value |

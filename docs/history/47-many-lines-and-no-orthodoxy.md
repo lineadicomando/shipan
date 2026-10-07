@@ -128,6 +128,32 @@ One test was wrong and passing. The suite holding the school column to the
 declaration kept one board for each pair, so 紫微斗數's year boundary passed by
 the order of a list.
 
+## Two values computed, and one that was not
+
+The values the shelf already allowed were taken up one at a time.
+
+**`daxian: ming`** went through as planned: the 捷覽's worked example and the
+manual's two boards are what the tests assert.
+
+**`huoling: hour`** waited on the plate, as decided. Printed pp. 405–408 give
+a diagram and a rule to each of the four groups of years, in plotting chapters
+the volume says it wrote for beginners; no school is named for the count. Run
+against `iztro` over 734 births, both stars fall in the reference's palace in
+every one. A band of scan shadow covers the foot of two of the four pages and
+one closing clause was not read through it.
+
+**`centreLodging: dun` was not computed, and the plan was wrong about it.**
+The proposal, the attribution pass and `ROADMAP.md` all said the two texts
+reporting it agree. They do not: 《御定奇門寶鑑》 sends the yang board's centre
+to 坤 and the yin board's to 艮, and the 折衷, quoting 《三才發秘》, sends them
+the other way round. Both quotations had been in the register for weeks, in
+sections a thousand lines apart, and the 折衷's own section counts its
+sentence as «a second statement» of the value. The condition a reported
+reading has to meet — enough to reconstruct it without contradiction — fails
+on exactly the two reports that were supposed to satisfy it. The mistake was
+caught on opening the code, because writing the branch required knowing which
+dun goes to which palace, which no summary had needed to say.
+
 ## What was not established
 
 The survey of the five arts other than 奇門 was read off the register and

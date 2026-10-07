@@ -258,7 +258,10 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     board: 'qimen',
     values: [
       { id: 'kun', implemented: true, heldBy: ['tongzong'] },
-      { id: 'dun', implemented: false, reportedBy: ['baojian', 'zhezhong'] },
+      // Reported by the imperial print as a variant copy's: yang to 坤, yin to 艮.
+      // The 折衷 reports a lodging by dun the other way round, which is another
+      // reading and not a second report of this one.
+      { id: 'dun', implemented: false, reportedBy: ['baojian'] },
     ],
     default: 'kun',
   },
