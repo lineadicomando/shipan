@@ -1,4 +1,9 @@
-import { PALACES, palace, type ByPalace } from './palaces.js';
+import type { Moment } from '../pillars.js';
+import type { ChartOptions } from '../types.js';
+import { CHART_PARAMETERS, requireImplemented } from '../parameters.js';
+import { ChartError } from '../errors.js';
+import { yangHalf } from './ju.js';
+import { PALACES, palace, type ByPalace, type Palace } from './palaces.js';
 import { GATES, type Gate } from './plates.js';
 
 /**
@@ -64,14 +69,35 @@ export function restPalace(dayIndex: number, yang: boolean): number {
 }
 
 /**
- * The eight gates of a day.
+ * The eight gates of a day, flown: `dayGates: fei`.
  *
- * 休門 is set by `restPalace` and the other seven follow it round the eight in
- * their own order — with the sun on the day of a yang stem, against it on the
- * day of a yin one, which is every other day whatever the half of the year.
+ * 八門三奇出行定局 has a row to each palace 休門 can stand in and every gate in
+ * every row — 「休坎，死坤，傷震，杜巽，開乾，驚兌，生艮，景離」, then 「休坤，
+ * 死震，傷巽，杜乾，開兌，驚艮，生離，景坎」. The eight keep the order of their
+ * own palaces' numbers and are counted on together through the eight, the
+ * centre left out: 「依九宮次序…去中五不用」.
  */
-export function dayGates(dayIndex: number, yang: boolean): ByPalace<Gate> {
-  const start = ROUND.indexOf(restPalace(dayIndex, yang));
+export function flownDayGates(rest: number): ByPalace<Gate> {
+  const shift = OUTER.indexOf(rest);
+  if (shift === -1) throw new Error(`休門 does not stand on palace ${rest}`);
+  const gates: Record<number, Gate> = {};
+  for (const gate of GATES) {
+    gates[OUTER[(OUTER.indexOf(gate.home) + shift) % OUTER.length] as number] = gate;
+  }
+  return gates;
+}
+
+/**
+ * The eight gates of a day, turned: `dayGates: zhuan`.
+ *
+ * The other seven follow 休門 round the eight in the order they are recited —
+ * with the sun on the day of a yang stem, against it on the day of a yin one,
+ * which is every other day whatever the half of the year. 《日家奇門》 lays it
+ * so on every day it prints and states no rule for it.
+ */
+export function turnedDayGates(rest: number, dayIndex: number): ByPalace<Gate> {
+  const start = ROUND.indexOf(rest);
+  if (start === -1) throw new Error(`休門 does not stand on palace ${rest}`);
   const forward = wrap(dayIndex, 2) === 0;
   const gates: Record<number, Gate> = {};
   GATES.forEach((gate, offset) => {
@@ -102,4 +128,68 @@ export function dayStars(dayIndex: number, yang: boolean): ByPalace<DayStar> {
     stars[palace(number).number] = star;
   });
   return stars;
+}
+
+/** A board of the day family: eight gates and nine stars, and no plate of stems. */
+export interface DayChart {
+  moment: Moment;
+  /**
+   * The half of the year the day is counted in, by `dayDun`.
+   *
+   * It moves the stars under either reading of the gates and the gates under
+   * `dayGates: zhuan` alone.
+   */
+  yang: boolean;
+  /** The term in force, which is what the half was read off. */
+  term: { id: string; hanzi: string; pinyin: string };
+  /** Where 休門 stands, which is what the three days share. */
+  rest: Palace;
+  /** Where 太乙 stands, which moves every day. */
+  taiyi: Palace;
+  /** The nine palaces in the order of their numbers. The centre has a star and no gate. */
+  palaces: { palace: Palace; gate?: Gate; star: DayStar }[];
+  /** The options this board was laid with. */
+  options: ChartOptions;
+}
+
+/**
+ * Lays the board of a day.
+ *
+ * Off the day pillar and the term in force, and off nothing else the moment
+ * carries: the hour moves nothing here, which is what makes it the day's.
+ */
+export function computeDayChart(moment: Moment, options: ChartOptions): DayChart {
+  if (options.system !== 'rijia') {
+    throw new ChartError('OPTION_NOT_IMPLEMENTED', {
+      option: 'system',
+      value: options.system,
+      implemented: 'rijia',
+    });
+  }
+  requireImplemented(CHART_PARAMETERS, options, 'dayGates', 'dayDun');
+
+  const day = moment.pillars.day.index;
+  const term = moment.solarTerm.term;
+  const yang = yangHalf(term.id);
+
+  // The 定局 names no half of the year, so its count is the one count; the
+  // table's is mirrored under yin, 休門 beginning at 離 and running back.
+  const flown = options.dayGates === 'fei';
+  const rest = restPalace(day, flown ? true : yang);
+  const gates = flown ? flownDayGates(rest) : turnedDayGates(rest, day);
+  const stars = dayStars(day, yang);
+
+  return {
+    moment,
+    yang,
+    term: { id: term.id, hanzi: term.hanzi, pinyin: term.pinyin },
+    rest: palace(rest),
+    taiyi: palace(taiyiPalace(day, yang)),
+    palaces: PALACES.map((seat) => ({
+      palace: seat,
+      ...(gates[seat.number] ? { gate: gates[seat.number] as Gate } : {}),
+      star: stars[seat.number] as DayStar,
+    })),
+    options,
+  };
 }

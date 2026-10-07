@@ -16,7 +16,8 @@ import type { PageLoad } from './$types';
  */
 export const load: PageLoad = async ({ url, fetch, parent }) => {
   const { locale } = await parent();
-  const { input, locationId } = readMoment(url, 'qimen');
+  // The one section that lays more than one family of its art.
+  const { input, locationId } = readMoment(url, 'qimen', true);
   const { place, failure: unknownPlace } = await lookupPlace(fetch, locationId, locale);
   const moment = { ...input, place };
 

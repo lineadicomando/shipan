@@ -211,7 +211,9 @@ dunjia's.**
 | `plate` | `zhuan` (轉盤 zhuànpán), `fei` (飛盤 fēipán), `xingfei` (星飛門轉 xīngfēiménzhuàn — the stars and the 儀 flown, the gates turned) | `zhuan` |
 | `centreLodging` | where the centre is read: `kun` (寄坤二 always), `dun` (陽遁寄二 · 陰遁寄八), `dunni` (陽遁寄八 · 陰遁寄二), `bajie` (八節 bājié — through all eight palaces, three terms to each), `siyu` (四隅 sìyú — through the four corners, six terms to each) | `kun` |
 | `earthPlate` | how often the earth plate is laid: `yuan` (元 yuán — once for sixty hours), `xun` (旬 xún — anew at every decade, 六戊還原) | `yuan` |
-| `system` | `shijia` (時家 shíjiā), later `rijia` (日家 rìjiā), `yuejia` (月家 yuèjiā), `nianjia` (年家 niánjiā) | `shijia` |
+| `system` | which family, each a board of its own: `shijia` (時家 shíjiā), `rijia` (日家 rìjiā), later `yuejia` (月家 yuèjiā), `nianjia` (年家 niánjiā) | `shijia` |
+| `dayGates` | how the seven other gates follow 休門 on a day board — under `system: rijia`: `fei` (飛 fēi — flown through the eight in the order of their numbers), `zhuan` (轉 zhuàn — turned round the eight, the way changing with the day's stem) | `fei` |
+| `dayDun` | where a day board's year divides — under `system: rijia`: `solstice` (二至 èrzhì), `liushi` (六十日一局 liùshírìyījú — sixty days to a 局) | `solstice` |
 | `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat) | `dun` |
 | `leap` | where 置閏 repeats its block — inside 置閏: `solstice` (芒種 or 大雪), `runyue` (閏月 rùnyuè, the term the year's leap month falls under) | `solstice` |
 | `strengths` | what 旺相休囚死 are read from: `season`, `star` | `season` |
@@ -253,6 +255,17 @@ order of their own, forward under yang and back under yin, each carrying the
 stem its own palace holds on the earth plate. Nothing lodges, so
 `centreLodging` reaches the stars and the stems no longer and still says where
 a gate or a spirit is read when its count falls on the centre.
+
+**A family is a board and not a setting of the hour board.** `system: rijia`
+is answered by `computeDayChart` with a type of its own: eight gates, nine
+stars named from 太乙, no plate of stems, no 值符 and no spirits. It reads
+`dayGates` and `dayDun` and none of the hour board's parameters, and the hour
+board reads neither of those; `family` in the declaration says which is whose,
+so that a board is never told of a choice it was not laid by. The layers under
+both are the same pillars. `dayGates` has two values because two works lay the
+gates and part: the 金函玉鏡's 定局 flies them and names no half of the year,
+and 《日家奇門》, which says it is drawn from that work, turns them and mirrors
+the count after 夏至.
 
 **年命 does not follow `earthPlate`, and that is a limit stated rather than a
 choice made.** A birth in a 甲 year is looked up under the 儀 its decade pins —

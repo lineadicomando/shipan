@@ -122,6 +122,17 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '奇門遁甲金鏡寶鑑', pinyin: 'qíméndùnjiǎjīnjìngbǎojiàn' },
   },
+  /** 《金函玉鏡奇門遁甲秘笈全書》, whose 卷十八 enumerates the day family's gates and stars. */
+  jinhan: {
+    kind: 'transmitted',
+    name: { hanzi: '金函玉鏡奇門遁甲秘笈全書', pinyin: 'jīnhányùjìngqíméndùnjiǎmìjíquánshū' },
+  },
+  /** 《日家奇門》, 鮮紅草's table of the sixty days in each half of the year. */
+  rijiaqimen: {
+    kind: 'modern',
+    name: { hanzi: '日家奇門', pinyin: 'rìjiāqímén' },
+    year: 1998,
+  },
   /** 《遁甲演義》, which states the year, month and day families entire. */
   yanyi: {
     kind: 'transmitted',

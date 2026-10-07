@@ -291,6 +291,24 @@ where two boards agree it is frequently one fact printed twice, and a model
 reading that as corroboration counts one datum as two with complete
 confidence.
 
+## A board of the day, anywhere but on its own page
+
+*Asked by:* whoever has just laid one and wants it read, drawn or scanned.
+
+`system: rijia` is a board of its own and is laid, printed and copied: the
+section, `/api/qimen`, `/api/qimen/text`, `shipan qimen` and
+`compute_qimen_chart` answer it. The prompt, the drawing, the scan and the
+年命 are the hour board's, and each refuses the family by name rather than
+answering with an hour board nobody asked for. A prompt is written against a
+plate of stems and tells a model how to read one; a 年命 is a birth looked up
+on that plate; a criterion of the scan names a star or a spirit this board
+has not. What the day board would need of each is its own, and none is
+written.
+
+What its one table prints beside the gates and the stars stays out for a
+second reason: the hours it marks 黃道 and 黑道 close on 「大吉時為…」, which
+is hours ordered, and § "Ordering two hours" is why that is not here.
+
 ## The middle pair named by the matter
 
 *Asked by:* the school that says the names follow what is being divined.

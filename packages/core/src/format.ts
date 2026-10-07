@@ -2,6 +2,7 @@ import type { MessageKey, Translator } from '@shipan/i18n';
 import type { Almanac, YearGodSeat } from './almanac.js';
 import { ELEMENTS, type Bazi } from './bazi/index.js';
 import { palace, YUAN_HANZI, YUAN_PINYIN, type QimenChart } from './dunjia/index.js';
+import type { DayChart } from './dunjia/rijia.js';
 import { BRANCHES, type Ganzhi } from './ganzhi.js';
 import type { LunarDate } from './lunar.js';
 import {
@@ -460,6 +461,53 @@ export function formatDivergences(
     ...table(rows),
     ...(notes.length ? ['', ...notes] : []),
     ...(combination === undefined ? [] : [...(rows.length ? [''] : []), `  ${combination}`]),
+  ].join('\n');
+}
+
+/**
+ * A board of the day, said in full: what the three days share, what the day
+ * has alone, and the nine palaces.
+ *
+ * One table and not three. A palace of the hour board answers three questions
+ * and this one answers one — what stands in it — there being no plate of stems
+ * under the gates and nothing weighed against a season.
+ */
+export function formatDayChart(chart: DayChart, t: Translator): string {
+  const rest = chart.palaces.find((cell) => cell.palace.number === chart.rest.number);
+  const taiyi = chart.palaces.find((cell) => cell.palace.number === chart.taiyi.number);
+  const seat = (palace: DayChart['rest']): string =>
+    named(palace, `label.palace.${palace.id}` as MessageKey, t);
+
+  return [
+    `${t('cli.heading.qimenDay')}`,
+    ...table(
+      [
+        [
+          t('cli.field.dayHalf'),
+          `${chart.yang ? t('cli.value.yangDun') : t('cli.value.yinDun')} · ` +
+            `${chart.term.hanzi} ${chart.term.pinyin} ${t(`label.term.${chart.term.id}` as MessageKey)}`,
+        ],
+        [
+          t('cli.field.dayGate'),
+          `${rest?.gate ? named(rest.gate, `label.gate.${rest.gate.id}` as MessageKey, t) : t('cli.none')} → ${seat(chart.rest)}`,
+        ],
+        [
+          t('cli.field.dayStar'),
+          `${taiyi ? named(taiyi.star, `label.dayStar.${taiyi.star.id}` as MessageKey, t) : t('cli.none')} → ${seat(chart.taiyi)}`,
+        ],
+      ],
+      4,
+    ),
+    '',
+    `${t('cli.heading.palaces')}`,
+    ...table([
+      [t('cli.column.palace'), t('cli.column.gate'), t('cli.column.star')],
+      ...chart.palaces.map((cell) => [
+        `${cell.palace.number} ${seat(cell.palace)}`,
+        cell.gate ? named(cell.gate, `label.gate.${cell.gate.id}` as MessageKey, t) : t('cli.none'),
+        named(cell.star, `label.dayStar.${cell.star.id}` as MessageKey, t),
+      ]),
+    ]),
   ].join('\n');
 }
 

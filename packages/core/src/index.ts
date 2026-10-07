@@ -278,6 +278,7 @@ export {
   saidCombination,
   saidDivergences,
   formatNianming,
+  formatDayChart,
   formatQimenChart,
   formatQizheng,
   formatZiwei,
@@ -291,6 +292,7 @@ export {
   baziReadingPrompt,
   baziTranscript,
   chartTranscript,
+  dayTranscript,
   liurenReadingPrompt,
   liurenTranscript,
   qizhengReadingPrompt,
@@ -406,6 +408,14 @@ export {
   type ValenceId,
   type Yuan,
 } from './dunjia/index.js';
+
+export {
+  DAY_STARS,
+  computeDayChart,
+  type DayChart,
+  type DayStar,
+  type DayStarId,
+} from './dunjia/rijia.js';
 
 export {
   DEFAULT_OPTIONS,

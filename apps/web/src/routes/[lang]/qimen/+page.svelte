@@ -6,6 +6,7 @@
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import { step, type Unit, type Wall } from '$lib/step';
   import ChartReading from '$lib/components/ChartReading.svelte';
+  import DayReading from '$lib/components/DayReading.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import Schools from '$lib/components/Schools.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
@@ -30,6 +31,14 @@
   });
 
   const chart = $derived(data.chart);
+  /**
+   * Whether what came back is a board of the day.
+   *
+   * A family is a board of its own and the endpoint answers either under one
+   * name; `options.system` is what every board carries and what tells them
+   * apart. The day's has no drawing, so nothing below asks for one.
+   */
+  const ofTheDay = $derived(data.chart?.options.system === 'rijia');
   const failure = $derived(data.failure ? sayFailure(t, data.failure) : '');
 
   /**
@@ -74,7 +83,7 @@
     `/api/qimen/plate?${momentQuery({ ...data.moment, ...cast }, { lang: t.locale, scheme: 'light' })}`,
   );
   $effect(() => {
-    if (!chart || !onPaper) return;
+    if (!chart || !onPaper || ofTheDay) return;
     const warm = new Image();
     warm.src = paper;
     void warm.decode().catch(() => {});
@@ -206,6 +215,7 @@
       bind:trueSolarTime={asked.trueSolarTime}
       bind:chosen={asked.chosen}
       board="qimen"
+      families
     />
     <!-- Nothing here can be missing: a chart of no date is the chart of now. -->
     <SubmitButton {t} label="cli.heading.qimen" {busy} />
@@ -281,6 +291,18 @@
     <!-- The board and the key to its marks are one thing in this grid: the
          gap between the picture and the reading is two rems, and a legend
          standing in it would belong to neither. -->
+    {#if ofTheDay}
+      <div class="reading">
+        <DayReading {chart} {t} />
+        <Schools
+          {t}
+          board="qimen"
+          options={chart.options}
+          layers={chart.moment.options}
+          laidBy={data.laidBy}
+        />
+      </div>
+    {:else}
     <div class="board" class:swapped={onPaper}>
       <img
         src={plate}
@@ -328,6 +350,7 @@
         laidBy={data.laidBy}
       />
     </div>
+    {/if}
   </section>
 {/if}
 

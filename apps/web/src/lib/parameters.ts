@@ -65,6 +65,12 @@ export interface Divergence {
    * none is left.
    */
   readonly inside?: { readonly id: string; readonly value: string };
+  /**
+   * The family of 奇門 a divergence belongs to — the engine's `family`. A day
+   * board has no plate to turn and the hour board no gates of a day, so each
+   * is offered, and named under a board, with its own family alone.
+   */
+  readonly family?: 'shijia' | 'rijia';
 }
 
 /**
@@ -78,6 +84,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'method',
     board: 'qimen',
+    family: 'shijia',
     values: ['chaibu', 'zhirun', 'maoshan'],
     implemented: ['chaibu', 'zhirun', 'maoshan'],
     fallback: 'chaibu',
@@ -92,6 +99,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'plate',
     board: 'qimen',
+    family: 'shijia',
     values: ['zhuan', 'fei', 'xingfei'],
     implemented: ['zhuan', 'xingfei'],
     fallback: 'zhuan',
@@ -102,6 +110,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'centreLodging',
     board: 'qimen',
+    family: 'shijia',
     values: ['kun', 'dun', 'dunni', 'bajie', 'siyu'],
     implemented: ['kun', 'dun', 'dunni', 'bajie', 'siyu'],
     fallback: 'kun',
@@ -124,6 +133,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'earthPlate',
     board: 'qimen',
+    family: 'shijia',
     values: ['yuan', 'xun'],
     implemented: ['yuan', 'xun'],
     fallback: 'yuan',
@@ -138,8 +148,36 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'system',
     board: 'qimen',
     values: ['shijia', 'rijia', 'yuejia', 'nianjia'],
-    implemented: ['shijia'],
+    implemented: ['shijia', 'rijia'],
     fallback: 'shijia',
+    label: 'form.qimen.system',
+    says: {
+      shijia: 'form.qimen.system.shijia',
+      rijia: 'form.qimen.system.rijia',
+    },
+    notes: { shijia: 'form.qimen.system.note', rijia: 'form.qimen.system.note' },
+  },
+  {
+    id: 'dayGates',
+    board: 'qimen',
+    family: 'rijia',
+    values: ['fei', 'zhuan'],
+    implemented: ['fei', 'zhuan'],
+    fallback: 'fei',
+    label: 'form.qimen.dayGates',
+    says: {
+      fei: 'form.qimen.dayGates.fei',
+      zhuan: 'form.qimen.dayGates.zhuan',
+    },
+    notes: { fei: 'form.qimen.dayGates.note', zhuan: 'form.qimen.dayGates.note' },
+  },
+  {
+    id: 'dayDun',
+    board: 'qimen',
+    family: 'rijia',
+    values: ['solstice', 'liushi'],
+    implemented: ['solstice'],
+    fallback: 'solstice',
   },
   {
     id: 'yearBoundary',
@@ -169,6 +207,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'spirits',
     board: 'qimen',
+    family: 'shijia',
     values: ['dun', 'fixed', 'baihu'],
     implemented: ['dun', 'fixed', 'baihu'],
     fallback: 'dun',
@@ -182,6 +221,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'leap',
     board: 'qimen',
+    family: 'shijia',
     values: ['solstice', 'runyue'],
     implemented: ['solstice'],
     fallback: 'solstice',
@@ -190,6 +230,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'strengths',
     board: 'qimen',
+    family: 'shijia',
     values: ['season', 'star'],
     implemented: ['season'],
     fallback: 'season',
@@ -197,6 +238,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'earth',
     board: 'qimen',
+    family: 'shijia',
     values: ['quarters', 'eighteen'],
     implemented: ['quarters', 'eighteen'],
     fallback: 'quarters',
@@ -207,6 +249,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'centreTravel',
     board: 'qimen',
+    family: 'shijia',
     values: ['stay', 'travel'],
     implemented: ['stay', 'travel'],
     fallback: 'stay',
@@ -515,11 +558,26 @@ export function belongsTo(name: string, section: string): boolean {
  * this list is for: an axis with a real choice on it is one the reader has to
  * be able to see and to move.
  */
-export function offered(board?: string): readonly Divergence[] {
+export function offered(board?: string, families = false): readonly Divergence[] {
   return DIVERGENCES.filter(
     (row) =>
-      row.implemented.length > 1 && (LAYERS.includes(row.board) || row.board === board),
+      row.implemented.length > 1 &&
+      (LAYERS.includes(row.board) || row.board === board) &&
+      (families || !ofFamilies(row)),
   );
+}
+
+/**
+ * Whether a divergence is the choice of a family, or belongs to one that is
+ * not the hour's.
+ *
+ * A family is a board of its own, and one section lays it: 奇門's. The
+ * consultation and the scan lay the hour board — a prompt and a criterion are
+ * both written against a plate of stems — so they neither offer the family nor
+ * read it off an address that carried it there.
+ */
+function ofFamilies(row: Divergence): boolean {
+  return (row.board === 'qimen' && row.id === 'system') || row.family === 'rijia';
 }
 
 /** What a reader has chosen, keyed by the name each one travels under. */
@@ -532,9 +590,9 @@ export type Chosen = Readonly<Record<string, string>>;
  * does not know, where a silent fallback would cast a chaibu chart under
  * whatever name the address had misspelt.
  */
-export function readChosen(params: URLSearchParams, board?: string): Chosen {
+export function readChosen(params: URLSearchParams, board?: string, families = false): Chosen {
   const chosen: Record<string, string> = {};
-  for (const row of offered(board)) {
+  for (const row of offered(board, families)) {
     chosen[wire(row)] = params.get(wire(row)) ?? row.fallback;
   }
   return chosen;
@@ -560,6 +618,7 @@ export function chosenFields(chosen: Chosen): Record<string, string | undefined>
 
 /** Whether a divergence is shown at all, given what else is set. */
 export function shown(row: Divergence, chosen: Chosen): boolean {
+  if (row.family && (chosen[named(row.board, 'system')] ?? 'shijia') !== row.family) return false;
   if (!row.inside) return true;
   return chosen[named(row.board, row.inside.id)] === row.inside.value;
 }
@@ -619,6 +678,7 @@ export function inForce(
     if (row.implemented.length < 2) continue;
     const bag = row.board === 'pillars' ? (under ?? {}) : own;
     if (row.inside && bag[row.inside.id] !== row.inside.value) continue;
+    if (row.family && (bag.system ?? 'shijia') !== row.family) continue;
 
     const from = LAYERS.includes(row.board) ? (under ?? {}) : own;
     const value = String(from[row.id] ?? row.fallback);
