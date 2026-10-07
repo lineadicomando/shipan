@@ -387,7 +387,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   strengths: {
     board: 'qimen',
     values: [
-      { id: 'season', implemented: true },
+      // Sheets 72–73 of the 折衷 tabulate the nine stars by the season against
+      // each star's own phase, under two other names: 廢 for 囚, 沒 for 死.
+      { id: 'season', implemented: true, heldBy: ['zhezhong'] },
       { id: 'star', implemented: false, heldBy: ['jinjingbaojian'] },
     ],
     default: 'season',

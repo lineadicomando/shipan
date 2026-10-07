@@ -133,8 +133,8 @@ is what holds.
 | | State | What it has, and what it waits on |
 |---|---|---|
 | `centreLodging: dun` | declared and refused | reported by 《御定奇門寶鑑》 as a variant copy's, yang to 坤 and yin to 艮. The 折衷 was read on the plate and reports the lodging by dun the other way round, twice, so the two readings are two and this one has no holder. Waits on a text holding it |
-| the centre lodged in 艮 under yang and in 坤 under yin | recorded | the reverse of the value above. Reported twice in the 折衷, once of a nameless «有…者» from 《三才發秘》 and once, on sheet 41, as what a 《元經》 says. Waits on a decision: it has a holder named at one remove, and the declared value has none |
-| `strengths: star` | declared and refused | held by 《奇門遁甲金鏡寶鑑》卷之四. Waits on reading whether its rule reaches the gates and the spirits or the nine stars alone |
+| the centre lodged in 艮 under yang and in 坤 under yin | owed a declaration | the reverse of `centreLodging: dun`, and decided 2026-10-07 to be a value of its own, named for its rule. Reported twice in the 折衷, once as what a 《元經》 says. Each of the two readings is whole taken alone |
+| `strengths: star` | declared and refused | held by 《奇門遁甲金鏡寶鑑》卷之四; the 折衷 argues against the same reading and puts it on a 《三元經》. Waits on reading whether its rule reaches the gates and the spirits or the nine stars alone |
 | `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
 | `system: rijia`, `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Waits on a family being built, which is nearer a board than a value |
 | `plate: fei` | declared and refused | no text flies the hour board's own 起例. Arrives with a family of `system` |
@@ -146,8 +146,8 @@ is what holds.
 | the leap block at any of the eight 節 | recorded | asks for a judgement |
 | which stem a star carries off 坤 | recorded | one work quarrelling with itself |
 
-The defaults of `strengths` and `earth` are not yet attributed: no text is
-named for either. The default of `spirits` is the 折衷's, read on the plate.
+The default of `earth` is not yet attributed: no text is named for it. The
+defaults of `spirits` and `strengths` are the 折衷's, read on the plate.
 
 **六壬** — argued in `docs/sources.md` § "Whose each value of a 六壬 board
 is".
@@ -173,7 +173,7 @@ is".
 | `yearBoundary: dongzhi`, `yearBoundary: chunjie` | declared and refused | no holder, and the default has none either |
 | 格 reaching the host's generals | owed a declaration | the 統宗, through 盧央 |
 | 格 by a 沖 of branches | owed a declaration | the same |
-| 文昌 in 太乙's own palace: 囚, 關 or 掩 | owed a declaration | the 統宗 on 樂產's authority. Waits on the plate for which of 關 and 掩 it holds |
+| 文昌 in 太乙's own palace: 囚, 關 or 掩 | owed a declaration | three names, each held: 囚 by the 金鏡, 關 by 樂產 as the 統宗 carries him, 掩 by the 統宗 in its own voice. Read on 盧央's pp. 482–483. A parameter of three values |
 | 陰陽和不和 in two accounts | recorded | one work carrying both |
 
 **七政四餘** — argued in `docs/sources.md` § "Whose each value of a 七政四餘
@@ -200,6 +200,23 @@ state or short of an attribution.
 | a second value of `shensha` | recorded | 曹震圭's and 邵泰衢's accounts of the 十二神, 《萬全廣濟》's table for 蠶命, the fixed-date list of 楊公忌: known through the 《協紀辨方書》 that rejects them. Waits on a witness of their own |
 | who holds each reading of the year boundary, the day boundary, the true-solar correction, the 大運's granularity | not yet attributed | every reading is computed; no file names a holder for either side |
 | who holds the count of years lived by turns | not yet attributed | the other count is 《遁甲演義》's |
+
+### What was asked of the extracts, 2026-10-07
+
+One search a value, the question written first, over the text extracted from
+the shelf. **An extract locates and cannot establish a negative**, so «nothing
+found» below means the question is still open and now has a date; nothing here
+is «not expected» on this evidence.
+
+| The question | What came back |
+|---|---|
+| a 奇門 text giving earth the last eighteen days of a season, for `earth: eighteen` | nothing in the 奇門 extracts. 《大六壬精解》 has the general statement — earth 「分旺四季…各旺十八日，總七十二日」 — in a passage the extract garbles; a lead for the plate, and for whether a five-phase statement from another art is a witness here |
+| a 六壬 text seating the noble with 甲 standing alone, for the second table of `guiren` | nothing found |
+| a 六壬 text cutting day from night at a rising, for `zhouye: solar` | only the sentence of the 精解 the register already quotes |
+| a 六壬 text turning the general at the 節, for `yuejiang: jieqi` | nothing found |
+| a 紫微斗數 text splitting a leap month at its middle, for `leapMonth: split` | nothing found |
+| a 七政四餘 text making 羅睺 the ascending node | nothing found; one set of lecture notes names 羅睺 天首星 and says nothing of which node |
+| a manual placing 解神 off the month | the search pattern matched two volumes of 《中國絕學》 and the passages were not read |
 
 ### What each named one waits on
 

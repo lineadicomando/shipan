@@ -1640,11 +1640,9 @@ parameter; the transcription sold with the 折衷 has its 赤霆經 commentary p
 it on a 《元經》 — 「元經又謂陽遁寄艮，陰遁寄坤」 — which is a lead until the
 plate is read, and would be a holder if it reads so.
 
-**Two defaults are not yet attributed.** `strengths: season` and `earth:
-quarters` are computed by default with no text named for either in the
-sections above: the first is called «the ordinary 五行 statement», the second
-has no entry. `spirits: dun` was the third until the plate was read; see
-below. `plate: fei` on the
+**One default is not yet attributed.** `earth: quarters` is computed by
+default with no entry naming a text for it. `spirits: dun` and `strengths:
+season` were the other two until the plate was read; see below. `plate: fei` on the
 hour board and `earth: eighteen` are unattributed as well, having no text.
 
 **Owed a declaration**, each on the 折衷, each waiting on its chapter being
@@ -1745,11 +1743,39 @@ the author says in as many words that he is building on it: 「即使書中並�
 hint. A work arguing its own reading is its own line, and that is what this
 one is; it is not 張氏's table.
 
-**What was not read.** The table of the nine stars' 旺相, on sheet 73 by the
-transcription's count, and the passage choosing between two ways of taking the
-值使 by the matter asked. Both stay leads. One character of the second decade
-— the 坎 after 壬午連乙在 — is under a tear and is supplied by the sequence and
-by sheet 66.
+**One character was not read**: the 坎 after 壬午連乙在, in the second decade,
+is under a tear and is supplied by the sequence and by sheet 66.
+
+**The states of the nine stars, as a table.** Sheets 72, left page, and 73,
+right page, read the same day in a second sitting. Under the heading 校正九星
+休旺圖 the columns are 春 · 夏 · 季 · 秋 · 冬 and there is a row to a star:
+
+| | 春 | 夏 | 季 | 秋 | 冬 |
+|---|---|---|---|---|---|
+| 天蓬, 水 | 休 | 廢 | 沒 | 相 | 旺 |
+| 天芮 · 天禽 · 天任, 土 | 沒 | 相 | 旺 | 休 | 廢 |
+| 天衝 · 天輔, 木 | 旺 | 休 | 廢 | 沒 | 相 |
+| 天心 · 天柱, 金 | 廢 | 沒 | 相 | 旺 | 休 |
+| 天英, 火 | 相 | 旺 | 休 | 廢 | 沒 |
+
+Each star is weighed by the season against its own phase: 旺 in its own
+season, 相 where the season generates it, 休 where it generates the season,
+廢 where it controls the season, 沒 where the season controls it. **That is
+`strengths: season` cell for cell**, under two other names — 廢 where this
+engine prints 囚, 沒 where it prints 死 — and a difference in a name is a
+variant the register records and not an option. The chapter is written
+against the other reading, which it puts on a 《三元經》 and its commentators:
+「則其父為休，而又改作旺，亦已誤矣」. So the default has a holder, for the nine
+stars; the declaration names the 折衷, and what it says of the gates is not
+in this table. The last two cells of 天蓬's row are under a blot and are read
+by the rule the other eight rows keep.
+
+**The 值使 by the matter asked.** Sheet 63, right page, as the transcription
+had it: 「凡國家舉動，如兩軍對壘、列陣交鋒、坐作進退等事，皆為出奇制變，當從天道
+變化而推，合用天盤直符宮上門使一時一易者為是」, against the earth plate's gate
+held for ten hours in ordinary undertakings. A board that turns on what is
+being asked is one this engine does not lay, and the divergence stays recorded
+with no parameter.
 
 ---
 
@@ -5692,6 +5718,17 @@ pillars beside the board turn there, which is a convention and is said as one.
 
 The two rows of the conditions in `sources.tsv` read `recorded` until those
 have a parameter to stand under.
+
+**Which of 關 and 掩 the 《統宗》 holds, read 2026-10-07.** On 盧央's own
+pages, 482 and 483 of the print, which is how that work reaches this register.
+He quotes it twice and in two voices. First 「乐产说：“文昌与太乙同宫为关”
+（《统宗》）」: 關 is 樂產's word, carried in the 統宗 as his. Then 「《统宗》又
+讲：“文昌加太乙为掩，始击加太乙宫亦为掩。”…这与《金镜》有所不同」: 掩 is what
+the 統宗 says for itself. So one configuration has three names and each has
+somebody behind it — 囚 in the 金鏡, 關 for 樂產, 掩 for the 統宗 — and the
+parameter owed has three values and not two. The quotations are as 盧央 prints
+them, in simplified characters; the 統宗's own leaf was not opened, its 明文昌
+變化所主術 standing in a 卷 this shelf has not read.
 
 **Recorded, with no parameter.** 陰陽和不和, which 卷二 gives in two accounts,
 張良經's and 王希明's, inside one work.
