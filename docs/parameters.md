@@ -243,8 +243,16 @@ to 坤 and yin to 艮, the 《元經》 the 折衷 quotes sends yang to 艮 and 
 They were one refused value until the two quotations were set side by side;
 they are two readings and two values. `earthPlate` is the 折衷's own, and with
 the lodging by the eight 節 it belongs to a board that work lays whole — stars
-flown, gates turned, `plate: xingfei` — of which this engine computes the
-parts and not yet the flight.
+flown, gates turned, `plate: xingfei`. Each of the three is computed, and the
+line under a board laid with all of them names that work for the combination.
+
+**`plate: xingfei` flies nine and turns eight, and the eight spirits stay a
+ring of eight.** The 值符 is set on the palace of the hour's stem as on a
+turning plate; the other eight stars follow it through the nine palaces in the
+order of their own, forward under yang and back under yin, each carrying the
+stem its own palace holds on the earth plate. Nothing lodges, so
+`centreLodging` reaches the stars and the stems no longer and still says where
+a gate or a spirit is read when its count falls on the centre.
 
 **年命 does not follow `earthPlate`, and that is a limit stated rather than a
 choice made.** A birth in a 甲 year is looked up under the 儀 its decade pins —

@@ -1424,6 +1424,13 @@ export const en = {
   // The moving pair against the plate under it. 《金鏡寶鑑》 separates the two in
   // one clause — 其星寄 for the star, 符使不必寄於二 for the 符 and the 使 — so
   // the label asks about the pair and neither value promises a different board.
+  'form.qimen.plate': 'The stars and the stems above the palaces are moved',
+  'form.qimen.plate.zhuan':
+    'by turning them round the eight outer palaces, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
+  'form.qimen.plate.xingfei':
+    'by flying them through all nine palaces while the gates still turn, as 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng holds',
+  'form.qimen.plate.note':
+    'Both readings set the chief star on the palace of the hour’s stem. They part over how the other eight follow it. The first carries them round the ring of eight outer palaces and leaves the centre where it is. The second counts them on through all nine palaces in the order of the 洛書 luòshū, the centre included, forward in a yang chart and back in a yin one. The gates turn round the eight under both.',
   'form.qimen.earth': 'The season of earth is',
   'form.qimen.earth.quarters': 'the whole of each month that closes a season',
   'form.qimen.earth.eighteen':

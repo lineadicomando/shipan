@@ -14,6 +14,7 @@ import {
   chiefGate,
   chiefGatePalace,
   chiefStar,
+  flownPlates,
   decadeInstrument,
   earthPlate,
   gatePlate,
@@ -178,8 +179,12 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   // concealing it stands in. That is what 遁甲 names.
   const hourStem = hourGanzhi.stem.id === 'jia' ? instrument : hourGanzhi.stem;
 
-  const heaven = heavenPlate(earth, instrument, hourStem, host);
-  const stars = starPlate(earth, instrument, hourStem, host);
+  // Turned round the ring of eight, the centre left where it is; or flown
+  // through all nine as the 折衷 has it, the gates still turned below.
+  const flown =
+    options.plate === 'xingfei' ? flownPlates(earth, instrument, hourStem, ju.yang) : undefined;
+  const heaven = flown?.heaven ?? heavenPlate(earth, instrument, hourStem, host);
+  const stars = flown?.stars ?? starPlate(earth, instrument, hourStem, host);
 
   const chief = chiefStar(earth, instrument);
   // Where 值符隨時干 and 值使隨時支 send the pair, before the centre is
@@ -208,7 +213,11 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   // print's own sentence; under `travel` 天禽 goes to the hour's palace, which
   // is the first's.
   const travels = options.centreTravel === 'travel';
-  const chiefPalace = palace(travels ? chiefLanding : lodge(chiefLanding, host));
+  // A flown 值符 that lands on the centre stands there: it is a star among nine
+  // and the centre is one of its palaces, so there is nothing to lodge.
+  const chiefPalace = palace(
+    travels || flown !== undefined ? chiefLanding : lodge(chiefLanding, host),
+  );
   const gatePalace = palace(travels ? gateLanding : lodge(gateLanding, host));
 
   // Read off the moment's closing 節 only where the reading asks for it.

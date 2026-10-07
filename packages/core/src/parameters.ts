@@ -243,20 +243,28 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   plate: {
     board: 'qimen',
+    // How what stands over the palaces is moved. Two readings are computed and
+    // each is a board somebody lays whole; 飛盤, where the gates fly as well,
+    // waits on a text flying the hour board's own 起例.
+    label: 'form.qimen.plate',
     values: [
       {
         id: 'zhuan',
         name: { hanzi: '轉盤', pinyin: 'zhuànpán' },
+        says: 'form.qimen.plate.zhuan',
+        note: 'form.qimen.plate.note',
         implemented: true,
         heldBy: ['tongzong'],
       },
       { id: 'fei', name: { hanzi: '飛盤', pinyin: 'fēipán' }, implemented: false },
       // The stars and the 儀 flown, the gates turned: the 折衷's, argued from
-      // 《極深研幾賦》. Declared, and refused until the flight is reconstructed.
+      // 《極深研幾賦》 and worked hour by hour in its own pages.
       {
         id: 'xingfei',
         name: { hanzi: '星飛門轉', pinyin: 'xīngfēiménzhuàn' },
-        implemented: false,
+        says: 'form.qimen.plate.xingfei',
+        note: 'form.qimen.plate.note',
+        implemented: true,
         heldBy: ['zhezhong'],
       },
     ],

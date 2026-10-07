@@ -93,8 +93,11 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'plate',
     board: 'qimen',
     values: ['zhuan', 'fei', 'xingfei'],
-    implemented: ['zhuan'],
+    implemented: ['zhuan', 'xingfei'],
     fallback: 'zhuan',
+    label: 'form.qimen.plate',
+    says: { zhuan: 'form.qimen.plate.zhuan', xingfei: 'form.qimen.plate.xingfei' },
+    notes: { zhuan: 'form.qimen.plate.note', xingfei: 'form.qimen.plate.note' },
   },
   {
     id: 'centreLodging',

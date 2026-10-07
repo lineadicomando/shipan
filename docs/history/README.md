@@ -81,6 +81,7 @@ phase.
 | 45 | [The hexagram of a palace](45-the-hexagram-of-a-palace.md) | done — the gate's trigram over the palace's names a hexagram, eight to a board; and a refusal that had declined the name along with the reading is reversed on the ground that it would have been fatal to 門迫 |
 | 46 | [The other three families](46-the-other-three-families.md) | done — the day, month and year 奇門 audited across the shelf: the third witness turns out to be the second's text printed four times, 《遁甲釋要》 arrives from a volume already held, the 金函玉鏡 row is one inference too long, and a survey's negative is traced to sampling past the front of a file |
 | 47 | [Many lines and no orthodoxy](47-many-lines-and-no-orthodoxy.md) | done — drops the premise that comparing witnesses recovers an art's rule: a transmitted quantity says who carries it, who holds each value becomes data and is said under every board, every art is read for whose its values are, and values are computed that had been refused or never declared |
+| 48 | [What the transit left open](48-what-the-transit-left-open.md) | done — the flags derived from the declaration, a sibling art admitted as witness on the phases, the defaults attributed on the plate, 解神 found to be two stars, the 授時 frame laid by its own method, and the 折衷's flight computed from two worked hours |
 
 ## The rest of the record
 

@@ -40,8 +40,8 @@ export interface ChartOptions {
    * `xingfei` is a third arrangement and not a mixture of the two: the nine
    * stars and the 奇儀 are flown through nine palaces and the eight gates are
    * turned round eight, on the hour board. 《奇門遁甲折衷》 argues it from
-   * 《極深研幾賦》 — 「星有九必當飛九宮，門有八只可行八面」. Declared and
-   * refused: the flight of its heaven plate is not yet reconstructed.
+   * 《極深研幾賦》 — 「星有九必當飛九宮，門有八只可行八面」 — and works two
+   * hours of it. `fei`, which flies the gates as well, is refused.
    */
   plate: 'zhuan' | 'fei' | 'xingfei';
 

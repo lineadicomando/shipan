@@ -72,7 +72,7 @@ second copy of one text buys".
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `plate: fei`, `plate: xingfei`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star` |
+| 奇門 | `plate: fei`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
@@ -135,7 +135,7 @@ is what holds.
 | `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
 | `system: rijia`, `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Waits on a family being built, which is nearer a board than a value |
 | `plate: fei` | declared and refused | no text flies the hour board's own 起例. Arrives with a family of `system` |
-| `plate: xingfei` | declared and refused | the stars and the 儀 flown, the gates turned: held by the 折衷, argued from 《極深研幾賦》. Waits on the flight of its heaven plate being reconstructed from the chapter, which was read for whose it is and not yet for how it lays |
+| the stars and the 儀 flown, the gates turned | computed | held by the 折衷, which works two hours of a yang board. Waits on a yin hour worked in any text, and on whether its spirits are flown |
 | the 值使 from the earth plate or the heaven plate | recorded | chosen by the matter asked |
 | the leap block at any of the eight 節 | recorded | asks for a judgement |
 | which stem a star carries off 坤 | recorded | one work quarrelling with itself |
