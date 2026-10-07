@@ -175,6 +175,21 @@ and is now waiting on a decision that the plan had not foreseen needing.
 default fewer. The table of the stars' 旺相 and the passage on the 值使 were
 not reached.
 
+## The declarations, beginning with 奇門
+
+The plan had the new parameters declared and refused in one stage and computed
+in the next. The owner removed the distinction: nobody is using the API of an
+alpha, so breaking it costs nothing, and a value is computed as soon as its
+text can be reconstructed. The names were settled in the same answer, each for
+its rule.
+
+奇門 went first. The centre's lodging became five values — the two by the dun
+that had been one, the eight 節, the four corners — and the earth plate laid
+by the decade a parameter of its own. `plate: xingfei` is declared and
+refused. Threading the host of the centre through the plates replaced a
+constant that had been 坤 since the first chart; the canonical board did not
+move, and gained one option.
+
 ## What was not established
 
 The survey of the five arts other than 奇門 was read off the register and

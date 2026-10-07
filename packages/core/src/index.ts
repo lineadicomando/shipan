@@ -341,6 +341,7 @@ export {
 
 export {
   CENTRE_HOST,
+  centreHost,
   DIRECTIONS,
   FLIGHT_ASCENDING,
   FLIGHT_DESCENDING,

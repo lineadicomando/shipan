@@ -72,7 +72,7 @@ second copy of one text buys".
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `plate: fei`, `centreLodging: dun`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen` |
+| 奇門 | `plate: fei`, `plate: xingfei`, `system: rijia`, `system: yuejia`, `system: nianjia`, `leap: runyue`, `strengths: star`, `earth: eighteen` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `xiudu: shoushi`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
@@ -132,19 +132,19 @@ is what holds.
 
 | | State | What it has, and what it waits on |
 |---|---|---|
-| `centreLodging: dun` | declared and refused | reported by 《御定奇門寶鑑》 as a variant copy's, yang to 坤 and yin to 艮. The 折衷 was read on the plate and reports the lodging by dun the other way round, twice, so the two readings are two and this one has no holder. Waits on a text holding it |
-| the centre lodged in 艮 under yang and in 坤 under yin | owed a declaration | the reverse of `centreLodging: dun`, and decided 2026-10-07 to be a value of its own, named for its rule. Reported twice in the 折衷, once as what a 《元經》 says. Each of the two readings is whole taken alone |
 | `strengths: star` | declared and refused | held by 《奇門遁甲金鏡寶鑑》卷之四; the 折衷 argues against the same reading and puts it on a 《三元經》. Waits on reading whether its rule reaches the gates and the spirits or the nine stars alone |
 | `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
 | `system: rijia`, `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Waits on a family being built, which is nearer a board than a value |
 | `plate: fei` | declared and refused | no text flies the hour board's own 起例. Arrives with a family of `system` |
 | `earth: eighteen` | declared and refused | no text |
-| the stars and the 儀 flown, the gates turned | owed a declaration | the 折衷. A third value of `plate` |
-| a new earth plate at every decade | owed a declaration | the 折衷's own, built on a phrase of 豫章張氏 and stated twice, sheets 18 and 66, agreeing palace for palace. A parameter of its own, and reconstructible |
-| the centre lodged through eight palaces, or four corners | owed a declaration | the 折衷, for 南華道人 and for 耕山陳氏: an eight-row table on sheet 44 and a four-row one on sheet 43, the centre taking the gate of the palace it lodges in. Two values of `centreLodging`, and reconstructible |
+| `plate: xingfei` | declared and refused | the stars and the 儀 flown, the gates turned: held by the 折衷, argued from 《極深研幾賦》. Waits on the flight of its heaven plate being reconstructed from the chapter, which was read for whose it is and not yet for how it lays |
 | the 值使 from the earth plate or the heaven plate | recorded | chosen by the matter asked |
 | the leap block at any of the eight 節 | recorded | asks for a judgement |
 | which stem a star carries off 坤 | recorded | one work quarrelling with itself |
+
+Four readings of where the centre lodges and the earth plate laid by the
+decade left this table on 2026-10-07 and are computed; `docs/sources.md`
+§ "The 折衷 on the plate, chapter by chapter" is where each is read.
 
 The default of `earth` is not yet attributed: no text is named for it. The
 defaults of `spirits` and `strengths` are the 折衷's, read on the plate.
@@ -248,16 +248,6 @@ are the query to put to an arriving text.
   which is a **third** arrangement rather than this value, and it is one work.
   What the clause can now say is that the hour board is flown somewhere, which
   is more than it could say before.
-- **`centreLodging: dun`** — a **school** holding 艮, not another copy reading
-  it. 《御定奇門寶鑑》 knows both readings, derives the refused one from the
-  先天 trigrams in its 卷一 釋虛中合宮, judges it the sounder — and declines it
-  on manuscript majority: 「其說於理尤為周備，但本多從前說，故遵之」. 本 is an
-  edition, and an edition can only be preferred. **A second work now states the
-  value and holds it no more than the first did.** 《奇門遁甲折衷》 prints both
-  declared values in one sentence with their derivations and rejects the pair,
-  for a lodging that walks all eight palaces three terms at a time; it also names
-  顧陵岡池本理 for the 坤 this engine lodges in, which is the first attribution
-  the shipped value has. What is still missing is somebody who *holds* 艮.
 - **`system: rijia · yuejia · nianjia`** — a **lineage holding one reading**.
   Two works state the families entire and disagree; the fuller prints three
   competing day methods and its compiler calls the whole layer 後人附會穿鑿.
@@ -514,6 +504,8 @@ not these:
 | `qimen.spirits` | three implemented values, and it decides which names the middle pair of the eight carries |
 | `qimen.centreTravel` | two, and it decides which palace the 值符 and the 值使 are read from when the count puts them on the centre |
 | `ziwei.sihua` | two, one cell of the table apart, and the cell seats a transformation |
+| `qimen.centreLodging` | five, and it decides which palace the centre is read in and whose gate it takes |
+| `qimen.earthPlate` | two, standing on different plates for fifty hours in sixty |
 | `ziwei.huoling` | two, parting for every birth outside the 子 hour |
 | `ziwei.daxian` | two, one palace apart along the whole run of decades |
 | `bazi.luckGranularity` | two, parting by up to ten days on when the first decade opens |

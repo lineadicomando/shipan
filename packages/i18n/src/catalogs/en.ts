@@ -1406,10 +1406,29 @@ export const en = {
   // The moving pair against the plate under it. 《金鏡寶鑑》 separates the two in
   // one clause — 其星寄 for the star, 符使不必寄於二 for the 符 and the 使 — so
   // the label asks about the pair and neither value promises a different board.
+  'form.qimen.centreLodging': 'The central palace lodges',
+  'form.qimen.centreLodging.kun': 'in 坤 kūn always, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
+  'form.qimen.centreLodging.dun':
+    'in 坤 kūn in a yang chart and in 艮 gèn in a yin one, which 《御定奇門寶鑑》 yùdìngqíménbǎojiàn reports of a variant copy',
+  'form.qimen.centreLodging.dunni':
+    'in 艮 gèn in a yang chart and in 坤 kūn in a yin one, which 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng reports an older text as saying',
+  'form.qimen.centreLodging.bajie':
+    'in the palace of the trigram that governs the season, moving through all eight in a year, as 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng holds',
+  'form.qimen.centreLodging.siyu':
+    'in one of the four corner palaces, a corner to each season, which 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng reports of another teacher',
+  'form.qimen.centreLodging.note':
+    'The central palace has no direction and no gate of its own. What the count puts there is therefore read in another palace, and it takes that palace’s gate with it. The shelf carries five readings of which palace that is. Three of the five are known only from a text that sets the reading out and then argues against it.',
+  'form.qimen.earthPlate': 'The earth plate is laid',
+  'form.qimen.earthPlate.yuan':
+    'once for the sixty hours of a 元 yuán, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
+  'form.qimen.earthPlate.xun':
+    'anew at the head of every decade of hours, as 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng holds',
+  'form.qimen.earthPlate.note':
+    'The earth plate is the nine stems set on the nine palaces, and everything else on the board is read against it. The first reading keeps one plate for sixty hours. The second begins a new plate every ten hours, from the palace that decade starts in. The two readings therefore share a plate for the first ten hours of the sixty and stand on different plates for the other fifty.',
   'form.qimen.centreTravel':
     'When the chief 值符 zhífú and the chief gate 值使 zhíshǐ fall on the central palace, they are read',
   'form.qimen.centreTravel.stay':
-    'at 坤 kūn, which is the palace the centre lodges in: 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
+    'in the palace the centre lodges in, as 《御定奇門寶鑑》 yùdìngqíménbǎojiàn has it',
   'form.qimen.centreTravel.travel':
     'in the central palace itself: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
   'form.gender': 'Sex — only the direction of the luck cycles depends on it',
@@ -1792,6 +1811,7 @@ export const en = {
   'notes.parameter.plate': 'How the heaven plate is derived.',
   'notes.parameter.centreLodging':
     'Where the centre lodges, having no direction, no gate and no spirit of its own.',
+  'notes.parameter.earthPlate': 'How often the earth plate is laid anew: once for sixty hours, or at every decade of them.',
   'notes.parameter.system':
     'Which family of chart: the hour’s, the day’s, the month’s or the year’s.',
   'notes.parameter.trueSolarTime': 'Whether clock time is corrected to the Sun at the place.',

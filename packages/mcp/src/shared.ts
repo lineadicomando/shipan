@@ -243,11 +243,23 @@ export const qimenSchema = {
     .describe(
       'What names the fifth and sixth of the eight spirits. Default dun: the pair is named by the half of the year, gouchen and zhuque in a yang chart, baihu and xuanwu in a yin one. fixed keeps the same eight names in both dun, as the Yuding Qimen Baojian has them. baihu keeps the naming by half-year but leaves baihu at the fifth seat of a yang chart, which is the board of the Qimen Dunjia Quanju. Three readings of one ring, parting at two seats and only in the name — but the name is what a spirit criterion matches on.',
     ),
+  centre_lodging: z
+    .enum(['kun', 'dun', 'dunni', 'bajie', 'siyu'])
+    .optional()
+    .describe(
+      'Which palace the central palace is read in, and whose gate it takes. Default kun: always the palace of kun, as the Qimen Dunjia Tongzong has it. dun: kun in a yang chart and gen in a yin one, which the Yuding Qimen Baojian reports of a variant copy. dunni: the other way round, gen under yang and kun under yin, which the Qimen Dunjia Zhezhong reports an older text as saying. bajie: the palace of the trigram governing the season, through all eight in a year, which the Zhezhong holds. siyu: one of the four corners, a corner a season, which the Zhezhong reports of another teacher. Three of the five are known only from a text that sets them out and argues against them, and the answer says which were laid.',
+    ),
+  earth_plate: z
+    .enum(['yuan', 'xun'])
+    .optional()
+    .describe(
+      'How often the earth plate is laid anew. Default yuan: one plate for the sixty hours of a yuan, as every text on the shelf but one has it. xun: a new plate at the head of every decade of hours, begun from the palace that decade starts in, as the Qimen Dunjia Zhezhong holds. The first ten hours of a yuan are the same plate under both; the other fifty are not.',
+    ),
   centre_travel: z
     .enum(['stay', 'travel'])
     .optional()
     .describe(
-      'Where the chief (zhifu) and the chief gate (zhishi) are read when the count puts them on the central palace. Default stay: at kun, the palace the centre lodges in, as the Yuding Qimen Baojian has it. travel reads them in the fifth palace itself, as the Qimen Dunjia Jinjing Baojian does. Neither moves a plate; both values are computed and the chart says which it stands on.',
+      'Where the chief (zhifu) and the chief gate (zhishi) are read when the count puts them on the central palace. Default stay: in the palace the centre lodges in, as the Yuding Qimen Baojian has it. travel reads them in the fifth palace itself, as the Qimen Dunjia Jinjing Baojian does. Neither moves a plate; both values are computed and the chart says which it stands on.',
     ),
 };
 
@@ -269,6 +281,8 @@ interface RawInput {
   year_boundary?: 'lichun' | 'chunjie' | undefined;
   method?: 'chaibu' | 'zhirun' | 'maoshan' | undefined;
   spirits?: 'dun' | 'fixed' | 'baihu' | undefined;
+  centre_lodging?: 'kun' | 'dun' | 'dunni' | 'bajie' | 'siyu' | undefined;
+  earth_plate?: 'yuan' | 'xun' | undefined;
   centre_travel?: 'stay' | 'travel' | undefined;
   shensha?: 'xieji' | undefined;
   born?: string | undefined;
@@ -309,6 +323,8 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.year_boundary) options.yearBoundary = raw.year_boundary;
   if (raw.method) options.method = raw.method;
   if (raw.spirits) options.spirits = raw.spirits;
+  if (raw.centre_lodging) options.centreLodging = raw.centre_lodging;
+  if (raw.earth_plate) options.earthPlate = raw.earth_plate;
   if (raw.centre_travel) options.centreTravel = raw.centre_travel;
   if (raw.shensha) options.shensha = raw.shensha;
 

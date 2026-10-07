@@ -57,14 +57,14 @@ describe('the divergences in force', () => {
   });
 
   it('leave out a divergence declared and refused', () => {
-    // `plate`, `centreLodging` and `system` are dunjia's and each has one
-    // value the engine computes. What would be reported is not a school but
+    // `plate`, `system` and `earth` are dunjia's and each has one value the
+    // engine computes. What would be reported is not a school but
     // the absence of a second one.
     const named = divergencesInForce('qimen', DEFAULT_OPTIONS).map((row) => row.parameter.id);
 
     expect(named).toContain('method');
     expect(named).not.toContain('plate');
-    expect(named).not.toContain('centreLodging');
+    expect(named).not.toContain('earth');
     expect(named).not.toContain('system');
   });
 

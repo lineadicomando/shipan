@@ -36,8 +36,28 @@ export interface ChartOptions {
 
   /**
    * How the heaven plate is derived: rotating (轉盤) or flying (飛盤).
+   *
+   * `xingfei` is a third arrangement and not a mixture of the two: the nine
+   * stars and the 奇儀 are flown through nine palaces and the eight gates are
+   * turned round eight, on the hour board. 《奇門遁甲折衷》 argues it from
+   * 《極深研幾賦》 — 「星有九必當飛九宮，門有八只可行八面」. Declared and
+   * refused: the flight of its heaven plate is not yet reconstructed.
    */
-  plate: 'zhuan' | 'fei';
+  plate: 'zhuan' | 'fei' | 'xingfei';
+
+  /**
+   * How often the earth plate is laid anew.
+   *
+   * `yuan` lays one plate for the sixty hours of a 元, the six 儀 pinned to
+   * the six 甲 — 甲子戊, 甲戌己 and on — which is what every other text on
+   * the shelf does. `xun` lays one at the head of every decade, 六戊還原:
+   * the ordinary layout begun from the palace that decade's 甲 stands in, so
+   * that 甲 is always concealed under 戊. 《奇門遁甲折衷》 states it twice,
+   * agreeing palace for palace — 「如陽遁一局第二旬首甲戌在坤二宮，即從坤二上
+   * 起甲，逆宮而佈」 — and says everything else is 「仍照常例」. The first
+   * decade of a 元 is the same plate under both.
+   */
+  earthPlate: 'yuan' | 'xun';
 
   /**
    * Whether to correct clock time to true solar time at the place.
@@ -93,9 +113,16 @@ export interface ChartOptions {
    *
    * The centre has no direction, no gate and no spirit, so whatever the ju
    * puts there has to be read somewhere else. `kun` sends it to the palace of
-   * Kun always, which is the common choice and the one implemented; `dun`
-   * sends it to Kun in a yang chart and to Gen in a yin one, which other
-   * schools hold to.
+   * Kun always, which is the 《奇門遁甲統宗》's. `dun` sends it to Kun in a
+   * yang chart and to Gen in a yin one, as 《御定奇門寶鑑》 reports of a variant
+   * copy; `dunni` the other way round, to Gen under yang and Kun under yin,
+   * which the 《奇門遁甲折衷》 reports a 《元經》 as saying. `bajie` walks it
+   * through all eight palaces with the eight 節, three terms to each, which
+   * the 折衷 holds; `siyu` through the four corners, six terms to each, which
+   * it reports of 耕山陳氏.
+   *
+   * Under any of them the centre takes everything its host has: 「有宮寄則有
+   * 門」 — the gate it is read by is the host's.
    *
    * It is a parameter and not a constant for the reason every divergence here
    * is one: the palace the centre lodges in decides which palace the chief and
@@ -104,7 +131,7 @@ export interface ChartOptions {
    * made this engine's school implicit — the one thing this project says it
    * will not do.
    */
-  centreLodging: 'kun' | 'dun';
+  centreLodging: 'kun' | 'dun' | 'dunni' | 'bajie' | 'siyu';
 
   /**
    * What decides the two names the fifth and sixth spirits wear.
@@ -228,6 +255,7 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   dayBoundary: 'zishi',
   system: 'shijia',
   centreLodging: 'kun',
+  earthPlate: 'yuan',
   spirits: 'dun',
   leap: 'solstice',
   strengths: 'season',

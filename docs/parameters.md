@@ -208,8 +208,9 @@ dunjia's.**
 | Parameter | Values | Default |
 |---|---|---|
 | `method` | `chaibu` (拆補 chāibǔ), `zhirun` (置閏 zhìrùn), `maoshan` (茅山 máoshān) | `chaibu` |
-| `plate` | `zhuan` (轉盤 zhuànpán), `fei` (飛盤 fēipán) | `zhuan` |
-| `centreLodging` | `kun` (寄坤二), `dun` (陽遁寄二 · 陰遁寄八) | `kun` |
+| `plate` | `zhuan` (轉盤 zhuànpán), `fei` (飛盤 fēipán), `xingfei` (星飛門轉 xīngfēiménzhuàn — the stars and the 儀 flown, the gates turned) | `zhuan` |
+| `centreLodging` | where the centre is read: `kun` (寄坤二 always), `dun` (陽遁寄二 · 陰遁寄八), `dunni` (陽遁寄八 · 陰遁寄二), `bajie` (八節 bājié — through all eight palaces, three terms to each), `siyu` (四隅 sìyú — through the four corners, six terms to each) | `kun` |
+| `earthPlate` | how often the earth plate is laid: `yuan` (元 yuán — once for sixty hours), `xun` (旬 xún — anew at every decade, 六戊還原) | `yuan` |
 | `system` | `shijia` (時家 shíjiā), later `rijia` (日家 rìjiā), `yuejia` (月家 yuèjiā), `nianjia` (年家 niánjiā) | `shijia` |
 | `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat) | `dun` |
 | `leap` | where 置閏 repeats its block — inside 置閏: `solstice` (芒種 or 大雪), `runyue` (閏月 rùnyuè, the term the year's leap month falls under) | `solstice` |
@@ -234,6 +235,16 @@ method boundary, the two values are two methods, and the parameter is gone
 rather than kept as a second way of saying `method`: an address carrying
 `qimen.yuan` is refused by name rather than answered under a school it did not
 choose. → [`docs/history/40-the-default-was-maoshan.md`](history/40-the-default-was-maoshan.md)
+
+**`centreLodging` has five values and three of them are reported, not held.**
+Each is what one text says the lodging is, and the two that divide it by the
+dun divide it the opposite way round: 《御定奇門寶鑑》's variant copy sends yang
+to 坤 and yin to 艮, the 《元經》 the 折衷 quotes sends yang to 艮 and yin to 坤.
+They were one refused value until the two quotations were set side by side;
+they are two readings and two values. `earthPlate` is the 折衷's own, and with
+the lodging by the eight 節 it belongs to a board that work lays whole — stars
+flown, gates turned, `plate: xingfei` — of which this engine computes the
+parts and not yet the flight.
 
 **`system` is four values because four are transmitted, not because the set is
 closed.** A modern lineage on the shelf adds 分家 fēnjiā, a board of the minute;

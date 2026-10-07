@@ -1292,10 +1292,29 @@ export const it: Record<MessageKey, string> = {
     'niente: gli stessi otto nomi stanno in entrambi i dun, come li ha il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.spirits.baihu':
     'la metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
+  'form.qimen.centreLodging': 'Il palazzo centrale alloggia',
+  'form.qimen.centreLodging.kun': 'sempre in 坤 kūn, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
+  'form.qimen.centreLodging.dun':
+    'in 坤 kūn in una carta yang e in 艮 gèn in una carta yin, lettura che il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn riporta da una copia variante',
+  'form.qimen.centreLodging.dunni':
+    'in 艮 gèn in una carta yang e in 坤 kūn in una carta yin, lettura che il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng riporta come di un testo più antico',
+  'form.qimen.centreLodging.bajie':
+    'nel palazzo del trigramma che governa la stagione, passando per tutti e otto in un anno, come sostiene il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng',
+  'form.qimen.centreLodging.siyu':
+    'in uno dei quattro palazzi d’angolo, un angolo per stagione, lettura che il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng riporta come di un altro maestro',
+  'form.qimen.centreLodging.note':
+    'Il palazzo centrale non ha una direzione e non ha una porta propria. Ciò che il conteggio vi colloca si legge perciò in un altro palazzo, e prende con sé la porta di quel palazzo. Lo scaffale conserva cinque letture di quale palazzo sia. Tre delle cinque sono note soltanto da un testo che espone la lettura e poi la contesta.',
+  'form.qimen.earthPlate': 'Il piatto terra si stende',
+  'form.qimen.earthPlate.yuan':
+    'una volta per le sessanta ore di un 元 yuán, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
+  'form.qimen.earthPlate.xun':
+    'di nuovo all’inizio di ogni decade di ore, come sostiene il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng',
+  'form.qimen.earthPlate.note':
+    'Il piatto terra è l’insieme dei nove tronchi posati sui nove palazzi, e tutto il resto della tavola si legge contro di esso. La prima lettura tiene un solo piatto per sessanta ore. La seconda comincia un piatto nuovo ogni dieci ore, dal palazzo in cui quella decade ha inizio. Le due letture condividono quindi il piatto per le prime dieci ore delle sessanta e poggiano su piatti diversi per le altre cinquanta.',
   'form.qimen.centreTravel':
     'Quando il capo 值符 zhífú e la porta del capo 值使 zhíshǐ cadono sul palazzo centrale, si leggono',
   'form.qimen.centreTravel.stay':
-    'in 坤 kūn, che è il palazzo dove il centro alloggia: 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
+    'nel palazzo in cui il centro alloggia, come nel 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.centreTravel.travel':
     'nel palazzo centrale stesso: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
   'form.gender': 'Sesso: ne dipende solo la direzione dei cicli decennali',
@@ -1565,6 +1584,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.plate': 'Come si ricava la tavola di cielo.',
   'notes.parameter.centreLodging':
     'Dove alloggia il centro, che non ha direzione, né porta, né spirito propri.',
+  'notes.parameter.earthPlate': 'Ogni quanto si stende di nuovo il piatto terra: una volta per sessanta ore, oppure a ogni decade.',
   'notes.parameter.system': 'Quale famiglia di carta: dell’ora, del giorno, del mese o dell’anno.',
   'notes.parameter.trueSolarTime':
     'Se l’ora dell’orologio venga corretta sul Sole del luogo.',

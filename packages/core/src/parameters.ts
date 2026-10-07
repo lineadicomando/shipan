@@ -251,19 +251,95 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         heldBy: ['tongzong'],
       },
       { id: 'fei', name: { hanzi: '飛盤', pinyin: 'fēipán' }, implemented: false },
+      // The stars and the 儀 flown, the gates turned: the 折衷's, argued from
+      // 《極深研幾賦》. Declared, and refused until the flight is reconstructed.
+      {
+        id: 'xingfei',
+        name: { hanzi: '星飛門轉', pinyin: 'xīngfēiménzhuàn' },
+        implemented: false,
+        heldBy: ['zhezhong'],
+      },
     ],
     default: 'zhuan',
   },
   centreLodging: {
     board: 'qimen',
+    // Five readings of which palace the centre is read in. Two are held and
+    // three are known only from a text that sets the reading out and argues
+    // it down, which `reportedBy` says and a board laid on one of them repeats.
+    // See `docs/sources.md` § "The 折衷 on the plate, chapter by chapter".
+    label: 'form.qimen.centreLodging',
     values: [
-      { id: 'kun', implemented: true, heldBy: ['tongzong'] },
-      // Reported by the imperial print as a variant copy's: yang to 坤, yin to 艮.
-      // The 折衷 reports a lodging by dun the other way round, which is another
-      // reading and not a second report of this one.
-      { id: 'dun', implemented: false, reportedBy: ['baojian'] },
+      {
+        id: 'kun',
+        says: 'form.qimen.centreLodging.kun',
+        note: 'form.qimen.centreLodging.note',
+        implemented: true,
+        heldBy: ['tongzong'],
+      },
+      // Yang to 坤, yin to 艮: the imperial print's 一本.
+      {
+        id: 'dun',
+        says: 'form.qimen.centreLodging.dun',
+        note: 'form.qimen.centreLodging.note',
+        implemented: true,
+        reportedBy: ['baojian'],
+      },
+      // Yang to 艮, yin to 坤: 「元經又謂陽遁寄艮，陰遁寄坤」, as the 折衷 quotes.
+      {
+        id: 'dunni',
+        says: 'form.qimen.centreLodging.dunni',
+        note: 'form.qimen.centreLodging.note',
+        implemented: true,
+        reportedBy: ['zhezhong'],
+      },
+      // Through the eight palaces with the eight 節, three terms to each.
+      {
+        id: 'bajie',
+        name: { hanzi: '八節', pinyin: 'bājié' },
+        says: 'form.qimen.centreLodging.bajie',
+        note: 'form.qimen.centreLodging.note',
+        implemented: true,
+        heldBy: ['zhezhong'],
+      },
+      // Through the four corners with the four seasons: 耕山陳氏's, which the
+      // 折衷 sets out and finds too narrow.
+      {
+        id: 'siyu',
+        name: { hanzi: '四隅', pinyin: 'sìyú' },
+        says: 'form.qimen.centreLodging.siyu',
+        note: 'form.qimen.centreLodging.note',
+        implemented: true,
+        reportedBy: ['zhezhong'],
+      },
     ],
     default: 'kun',
+  },
+  earthPlate: {
+    board: 'qimen',
+    // One plate a 元, or one a decade — 六戊還原. The 折衷 states the second
+    // twice, agreeing palace for palace, and says it is its own reasoning from
+    // a phrase of 豫章張氏.
+    label: 'form.qimen.earthPlate',
+    values: [
+      {
+        id: 'yuan',
+        name: { hanzi: '元', pinyin: 'yuán' },
+        says: 'form.qimen.earthPlate.yuan',
+        note: 'form.qimen.earthPlate.note',
+        implemented: true,
+        heldBy: ['tongzong'],
+      },
+      {
+        id: 'xun',
+        name: { hanzi: '旬', pinyin: 'xún' },
+        says: 'form.qimen.earthPlate.xun',
+        note: 'form.qimen.earthPlate.note',
+        implemented: true,
+        heldBy: ['zhezhong'],
+      },
+    ],
+    default: 'yuan',
   },
   system: {
     board: 'qimen',

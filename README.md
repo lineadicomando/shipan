@@ -287,7 +287,8 @@ from the first release. The Qi Men chart's, in brief:
 |-----------------|------------------------------------------------------------------------------------|----------|
 | `method`        | 拆補 (the yuan from the day's 符頭) / 置閏 / 茅山 (the yuan from the term's first instant) | `chaibu` |
 | `plate`         | 轉盤 / 飛盤                                                                            | `zhuan`  |
-| `centreLodging` | the centre lodges in 坤, or in 坤 by yang dun and 艮 by yin                           | `kun`    |
+| `centreLodging` | the centre lodges in 坤; or by the dun, either way round; or by the eight 節; or by the four corners | `kun`    |
+| `earthPlate`    | one earth plate for the sixty hours of a 元, or a new one at every decade            | `yuan`   |
 | `trueSolarTime` | correct clock time to the Sun                                                      | `true`   |
 | `yearBoundary`  | 立春 or 正月初一                                                                         | `lichun` |
 | `dayBoundary`   | the day pillar turns at 23:00 or at midnight                                       | `zishi`  |
