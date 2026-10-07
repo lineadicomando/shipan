@@ -352,6 +352,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         name: { hanzi: '陰陽異名', pinyin: 'yīnyángyìmíng' },
         says: 'form.qimen.spirits.dun',
         implemented: true,
+        // Sheet 79 of the 折衷, citing 來子授書: 勾陳 and 朱雀 walking forward
+        // under yang, 白虎 and 玄武 walking back under yin.
+        heldBy: ['zhezhong'],
       },
       { id: 'fixed', says: 'form.qimen.spirits.fixed', implemented: true, heldBy: ['baojian'] },
       {

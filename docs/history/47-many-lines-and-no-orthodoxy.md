@@ -154,6 +154,27 @@ on exactly the two reports that were supposed to satisfy it. The mistake was
 caught on opening the code, because writing the branch required knowing which
 dun goes to which palace, which no summary had needed to say.
 
+## The 折衷, read on the plate
+
+Ten sheets, for five questions the transcription had located. Three came back
+as the transcription had them: the eight-row lodging, the two enumerations of
+the decade's earth plate, the rosters of the spirits. Two came back changed.
+
+**The decade's earth plate is the author's own.** The survey had put it on
+豫章張氏. The plate has 甘國壁 say that 張氏 left a phrase and that he is
+reasoning from it where no book gives the example.
+
+**The lodging by dun is two readings, and one of them has a name.** The
+commentary quoted at the head of the chapter puts 陽遁寄艮，陰遁寄坤 on a
+《元經》. So the reading the engine declares, the imperial print's, is the one
+with no holder, and the reading it does not declare is the one with one. The
+value was called computable in the plan, withdrawn when the code was opened,
+and is now waiting on a decision that the plan had not foreseen needing.
+
+`spirits: dun` gained a holder from the same sitting, and one unattributed
+default fewer. The table of the stars' 旺相 and the passage on the 值使 were
+not reached.
+
 ## What was not established
 
 The survey of the five arts other than 奇門 was read off the register and

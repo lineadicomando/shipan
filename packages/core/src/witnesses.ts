@@ -132,6 +132,11 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '奇門遁甲全局', pinyin: 'qíméndùnjiǎquánjú' },
   },
+  /** 甘國壁's manuscript, which sets the middle pair of spirits out by the dun. */
+  zhezhong: {
+    kind: 'transmitted',
+    name: { hanzi: '奇門遁甲折衷', pinyin: 'qíméndùnjiǎzhézhōng' },
+  },
   /** 張志春, who defines 拆補 by the term and the 符頭 at once. */
   shenqi: {
     kind: 'modern',

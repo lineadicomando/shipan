@@ -132,22 +132,22 @@ is what holds.
 
 | | State | What it has, and what it waits on |
 |---|---|---|
-| `centreLodging: dun` | declared and refused | reported by 《御定奇門寶鑑》 as a variant copy's, yang to 坤 and yin to 艮. The 折衷 reports a lodging by dun the other way round, so the two reports contradict each other and the value is not reconstructed from them. Waits on a text holding either, or on the plate deciding which the 《元經》 the 折衷's commentary names holds |
-| the centre lodged in 艮 under yang and in 坤 under yin | recorded | the reverse of the value above, reported by the 折衷 from 《三才發秘》 |
+| `centreLodging: dun` | declared and refused | reported by 《御定奇門寶鑑》 as a variant copy's, yang to 坤 and yin to 艮. The 折衷 was read on the plate and reports the lodging by dun the other way round, twice, so the two readings are two and this one has no holder. Waits on a text holding it |
+| the centre lodged in 艮 under yang and in 坤 under yin | recorded | the reverse of the value above. Reported twice in the 折衷, once of a nameless «有…者» from 《三才發秘》 and once, on sheet 41, as what a 《元經》 says. Waits on a decision: it has a holder named at one remove, and the declared value has none |
 | `strengths: star` | declared and refused | held by 《奇門遁甲金鏡寶鑑》卷之四. Waits on reading whether its rule reaches the gates and the spirits or the nine stars alone |
 | `leap: runyue` | declared and refused | held by 《奇門遁甲金鏡寶鑑》. Waits on 《金函玉鏡》's rule that contains both placements: one rule or two |
 | `system: rijia`, `system: yuejia`, `system: nianjia` | declared and refused | held by 《遁甲演義》 and the 統宗; the 年家's two readings are two values. Waits on a family being built, which is nearer a board than a value |
 | `plate: fei` | declared and refused | no text flies the hour board's own 起例. Arrives with a family of `system` |
 | `earth: eighteen` | declared and refused | no text |
 | the stars and the 儀 flown, the gates turned | owed a declaration | the 折衷. A third value of `plate` |
-| a new earth plate at every decade | owed a declaration | the 折衷, for 豫章張氏. A parameter of its own |
-| the centre lodged through eight palaces, or four corners | owed a declaration | the 折衷, for 南華道人 and for 耕山陳氏. Two values of `centreLodging` |
+| a new earth plate at every decade | owed a declaration | the 折衷's own, built on a phrase of 豫章張氏 and stated twice, sheets 18 and 66, agreeing palace for palace. A parameter of its own, and reconstructible |
+| the centre lodged through eight palaces, or four corners | owed a declaration | the 折衷, for 南華道人 and for 耕山陳氏: an eight-row table on sheet 44 and a four-row one on sheet 43, the centre taking the gate of the palace it lodges in. Two values of `centreLodging`, and reconstructible |
 | the 值使 from the earth plate or the heaven plate | recorded | chosen by the matter asked |
 | the leap block at any of the eight 節 | recorded | asks for a judgement |
 | which stem a star carries off 坤 | recorded | one work quarrelling with itself |
 
-The defaults of `spirits`, `strengths` and `earth` are not yet attributed: no
-text is named for any of the three.
+The defaults of `strengths` and `earth` are not yet attributed: no text is
+named for either. The default of `spirits` is the 折衷's, read on the plate.
 
 **六壬** — argued in `docs/sources.md` § "Whose each value of a 六壬 board
 is".

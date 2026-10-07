@@ -1640,12 +1640,11 @@ parameter; the transcription sold with the 折衷 has its 赤霆經 commentary p
 it on a 《元經》 — 「元經又謂陽遁寄艮，陰遁寄坤」 — which is a lead until the
 plate is read, and would be a holder if it reads so.
 
-**Three defaults are not yet attributed.** `spirits: dun`, `strengths: season`
-and `earth: quarters` are computed by default with no text named for any of
-them in the sections above: the first was weighed against implementations, the
-second is called «the ordinary 五行 statement», the third has no entry. The
-transcription sold with the 折衷 locates a statement of the first under 來子授書
-and 玉斗秘文, and it is a lead until the plate is read. `plate: fei` on the
+**Two defaults are not yet attributed.** `strengths: season` and `earth:
+quarters` are computed by default with no text named for either in the
+sections above: the first is called «the ordinary 五行 statement», the second
+has no entry. `spirits: dun` was the third until the plate was read; see
+below. `plate: fei` on the
 hour board and `earth: eighteen` are unattributed as well, having no text.
 
 **Owed a declaration**, each on the 折衷, each waiting on its chapter being
@@ -1673,6 +1672,84 @@ been:
   which 《奇門探索錄》 quarrels with itself.
 - **白虎 fifth and 玄武 sixth in both dun**, which one runnable reference
   prints and no text is named for.
+
+### The 折衷 on the plate, chapter by chapter
+
+Read 2026-10-07, on the sheets named, each sheet two book-pages with the right
+one first. The transcription sold with the manuscript located every passage
+and none is quoted from it. Five things were asked.
+
+**Whose the naming of the middle pair by the dun is.** Sheet 79, left page, in
+一論八神順逆. A question is put — 「或有去朱雀用玄武，去白虎用勾陳者，又安據
+乎」 — and answered from 來子授書: 「玄武與朱雀同宮者，丁與壬合也；白虎與勾陳
+同宮者，乙與庚合也。此為太極盤，故陰陽順逆從此分焉」. Then the two rosters, set
+out as lists:
+
+> 陽遁順行　前一螣蛇　前二太陰　前三六合　前四勾陳　前五朱雀　後一九天　後二九地
+> 陰遁逆行　前一螣蛇　前二太陰　前三六合　前四白虎　前五玄武　後一九天
+
+That is `spirits: dun` entire: 勾陳 and 朱雀 walking forward under yang, 白虎
+and 玄武 walking back under yin. The 折衷 holds it and names its ground, so the
+value has a holder for the first time and the declaration names this work. The
+last seat of the yin roster runs off the foot of the page and was not read.
+
+**Whose the lodging by dun is, the other way round.** Sheet 41, left page, the
+opening of 一論中五寄宮, quoting a commentary on the 赤霆經:
+
+> 赤霆經註釋曰：中五寄門，世傳專寄坤二，謂土長生於申也，謂坤為土德之厚也，似無
+> 陰陽之別也。元經又謂陽遁寄艮，陰遁寄坤。
+
+So the reading that sends a yang board's centre to 艮 and a yin board's to 坤
+is put on a named work, a 《元經》, by that commentary, two sheets before the
+《三才發秘》 passage reports the same assignment of a nameless «有…者». Two
+reports inside one manuscript, agreeing with each other, and one of them
+naming who says it. Against them stands the imperial print's 一本, the other
+way round and on a derivation of its own. **This does not reconcile the two
+readings; it makes them two.** The one the 折衷 reports has a holder named at
+one remove. The one `centreLodging: dun` declares has a variant copy and no
+name. Neither is computed here.
+
+**The lodging through eight palaces, as a table.** Sheet 44, right page:
+
+> 善乎解赤霆者乎，曰：中五之寄隨時而轉，故冬至三氣皆寄坎，立春三氣皆寄艮，春分
+> 三氣皆寄震，立夏三氣皆寄巽，夏至三氣皆寄離，立秋三氣皆寄坤，秋分三氣皆寄兌，
+> 立冬三氣皆寄乾，立寄宮之定衡也。
+
+Eight rows, none to supply. Sheet 42 says what the lodging carries with it:
+「如在冬至、小寒、大寒三氣則寄休門，夏至、小暑、大暑三氣則寄景門之類，所為隨
+局更使也」 — the centre takes the gate of the palace it lodges in, where the
+rest of this shelf has it borrow 死門. The four-corner lodging is the same
+sheet 43 the section above quotes.
+
+**A new earth plate at every decade, stated twice and agreeing.** Sheet 18,
+left page, in the chapter of that name, lays two decades out hour by hour:
+
+> 如甲子連戊在坎一，則乙丑連己在坤二，丙寅連庚在震三，丁卯連辛在巽四，戊辰連壬
+> 在中五，己巳連癸在乾六，庚午連丁在兌七，辛未連丙在艮八，壬申連乙在離九，癸酉
+> 連戊復還本位，又與甲同在坎矣。如甲戌連戊在坤二，乙亥連己在震三，丙子連庚在巽
+> 四，丁丑連辛在中五，戊寅連壬在乾六，己卯連癸在兌七，庚辰連丁在艮八，辛巳連丙
+> 在離九，壬午連乙在坎…
+
+and sheet 66, left page, in the chapter on the flying stars, states the second
+of them as a plate: 「如陽遁一局第二旬首甲戌在坤二宮，即從坤二上起甲，逆宮而
+佈：乙奇在坎一，丙奇在離九，丁奇在艮八，癸在兌七，壬在乾六，辛在中五，庚在巽
+四，己在震三，戊又在坤二宮矣」. Palace for palace the two agree, which is a
+text checking itself across forty-eight sheets. The plate of each decade is
+the ordinary layout begun from the palace that decade's 甲 stands in.
+
+**And whose it is, which the plate says more plainly than the survey did.**
+Sheet 18, right page: the copies of 新安戴熙宇 「皆以後五甲復用前甲之地盤」, and
+豫章張氏 alone doubted it. What 張氏 left is a phrase — 「滿十時而法變」 — and
+the author says in as many words that he is building on it: 「即使書中並無此例，
+猶當推詳古人立法之原而以義起」. The enumeration is 甘國壁's own, argued from a
+hint. A work arguing its own reading is its own line, and that is what this
+one is; it is not 張氏's table.
+
+**What was not read.** The table of the nine stars' 旺相, on sheet 73 by the
+transcription's count, and the passage choosing between two ways of taking the
+值使 by the matter asked. Both stay leads. One character of the second decade
+— the 坎 after 壬午連乙在 — is under a tear and is supplied by the sequence and
+by sheet 66.
 
 ---
 
