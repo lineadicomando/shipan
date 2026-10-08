@@ -5747,11 +5747,86 @@ p. 805, 卷二十八 by p. 819, 卷二十九 by p. 833, 卷三十 by p. 847. Wha
 holds is not known past 卷四.
 
 **羅睺 and 紫氣 are still not found, and a rule for placing them may not be
-in the work.** That is a guess and is marked as one: the 凡例前引 says the
+in the work.** That was a guess, marked as one, and it was wrong about 紫氣:
+the section below finds a reckoning for each of the four 餘. As written: the 凡例前引 says the
 charts are taken from the 臺曆, and the 起例 that was read lays the 命 and the
 limits and places no body. What the work could still say is which of 羅 and
 計 it calls 天首, in a 論 on the four 餘, and that has not been looked for
 beyond these leaves.
+
+Last checked 2026-10-08.
+
+### 《星學大成》卷十四 to 卷二十二: the 三辰通載, with a reckoning for each of the four 餘
+
+The twenty-six juan from 卷四 leaf 7 to the end of the work were gone through
+on 2026-10-08, every page, on tiles of six at a size where a heading reads
+and a figure does not; the four leaves quoted below were then rendered at the
+file's resolution and read. **So what is said of those four leaves is read,
+and what is said of everything else is where it is.**
+
+**What the juan hold**, which corrects the guess the section above closes on:
+卷四 to 卷六 are the 琴堂's 五星總斷 and a commentary on a 賦; 卷七 is a
+耶律's 星命秘訣; 卷八 to 卷十三 are named collections — 碧玉真經, 鄧史喬宮詞,
+望斗真經, 壁奧經, 洞微限 and the 百六限 among them; **卷十四 to 卷二十二 are
+headed 三辰通載, a body to a juan or two**; 卷二十三 and 卷二十四 are the
+總龜紫府珍藏; 卷二十五 to 卷三十 are 賦, 論 and verse by star and by
+combination, closing on a 起太陽法. The first seven 曜 run from 卷十四, 木星,
+to 卷十八, which opens on 太陽 under 「三辰通載　六曜」; 太陰 is 卷十九; and
+the four 餘 are 卷十九 leaf 29 to 卷二十二.
+
+**The work does carry a rule for placing each 餘, and it is the 算法 this
+register read in 《張果星宗》.** Each body opens on a 總龜算法:
+
+> 天乙紫炁星　總龜算法：置積日減一千二百八十八，以一萬二百二十八大數除之，不
+> 盡者為殘分，轉一當十，以二百八十為一度，二十八為一分，次下除為秒。平行一
+> 日行三分五十七秒。
+
+卷十九 leaf 29, the volume's p. 660. Character for character the procedure
+quoted further down this page from the 《古今圖書集成》's 張果星宗, the offset
+1288 and the 大數 10228 included. **And the 論 after it says twenty-eight**:
+「一宮住二十八箇月，二十八年行一周天」, leaf 30, p. 661 — where the 張果星宗's
+總論 says 「凡二十九年行一周」, which that section reads as a round-number
+layer parting from its own 算法. In this copy the prose and the reckoning
+agree. That is a second copy of one text, the 三辰通載, compiled in 1563 into
+a work with an author; it settles the reading 10228 and the 一年一宿 it
+states, and it is not a second line for the rate.
+
+> 天首羅睺星　總龜算法：置積日加五百六十，以六千七百九十四逆遊數除之…平行一
+> 日行五分三十七秒。
+
+卷二十一 leaf 1, p. 690: the same 560 and 6794, and a printed rate that is
+the 大數's own — 365.2575 ⁄ 6794 is 0.0538 度. 卷二十二 leaf 1, p. 704:
+「天尾計都星　總龜算法：將羅睺定度加半周天數」.
+
+> 太乙月孛星　總龜算法：置積日加一千二百三十五，以三千二百三十五大數除之…平
+> 行一日行十一分二十九秒。
+
+卷二十 leaf 1, p. 674. **Here the two copies part: 3235 where the 張果星宗
+reads 3225.** This copy's own rate decides between them for this copy:
+365.2575 ⁄ 3235 is 0.11291 度 a day, the 十一分二十九秒 printed, and
+⁄ 3225 would be 十一分三十三秒. Against the mean apogee's 3231.5 days, 3235
+errs by 0.11 % and 3225 by 0.20 %. So the table further down, which grades
+that system's 月孛 at 0.20 % and takes it as the worse of 紫氣's two
+checkable siblings, is grading one copy's figure; the other is nearer by
+half. The engine places 月孛 from the ephemeris and reads neither. What moves
+is the bound written on 紫氣's drift, which leans on that sibling, and it
+moves in 紫氣's favour: it is not recomputed here, the 張果星宗's printed rate
+not having been read beside its divisor to say which figure that copy means.
+
+**Which node 羅睺 is, the work does not say.** It heads 羅睺 天首 and 計都
+天尾, has 羅睺 「逆行天道」 at 「一宮一年半，十八年行一周天」 and calls it
+蝕神, and puts 計都 half a circle from it. Head and tail are names; neither
+論 says at which of them the Moon crosses northward, and the tiles of the
+verses after them show nothing that would. `luohou` stays as attributed.
+
+**The 積日 has an origin nowhere in what was read.** The 太陽's own 算法,
+卷十八 leaf 1 — 「置積日減一算，以三百六十五日二十五分五十秒為一周天之數除
+之」 — counts from the same unnamed epoch. The work's last section, 起太陽法
+in 卷三十, places the Sun by the month and a lodge and was not read.
+
+**And the frame is said to be the 授時's a second time.** The 紫炁論's
+「行道有黃赤之不同」 aside, each body's 躔度 section runs by the twenty-eight
+lodges, which are the wheels of 卷一.
 
 Last checked 2026-10-08.
 

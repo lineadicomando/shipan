@@ -368,7 +368,8 @@ entry shows. Ordered by what a reading would move.
 
 | | what would move | where |
 |---|---|---|
-| SKQS vol. 809, 《星學大成》, from 卷四 leaf 7 | which of 羅 and 計 the work calls 天首, in a 論 on the four 餘 if it has one; a rule for placing them or 紫氣 may not be there, the work taking its places from the 臺曆. 卷一 leaves 1–8, 卷三's 運限起例 and 卷四's 星盤或問 are read; the juan are mapped by the 版心 to fourteen pages and what each holds is not known. No 目錄: a section is found on a tile of six pages | volume pp. 349–870; the map is in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
+| 《古今圖書集成》's 張果星宗, the 月孛 算法 | whether its 大數 is 3225 or 3235. 《星學大成》 prints 3235 with a rate that is 3235's own; the register read 3225 off the 集成 and did not read the rate beside it. The bound on 紫氣's drift leans on that figure | 第469冊 leaf 24, where the 紫氣 算法 was read |
+| SKQS vol. 809, 《星學大成》 卷三十, 起太陽法 | whether the work states the epoch its 積日 count from, which no 算法 in it does | the volume's pp. 861–862 |
 | 《太乙數統宗大全》, 故宮 第420冊 | the 闕 of 卷一 read against a second hand; its own constants answered the other half and did not lift the refusal, being another calendar's | four leaves of 440 read — 卷二's calendrical apparatus and 卷三's 起例 |
 | 《中國古代星占學》 第五章 · 太乙式數占 | 陰陽和不和, refused because two accounts of it do not line up; this chapter's eight principles open on the parity of a 算, which is what they disagree about | printed pp. 492–499, of which only the closing summary is read |
 | 《中國古代星占學》 第五章 · 太乙十神 · 十精太乙 | the four bodies that walk twelve palaces, and the one layer of this art read for weather rather than for reigns — named in the register and not computed | printed pp. 505–511 and 512–519 |
