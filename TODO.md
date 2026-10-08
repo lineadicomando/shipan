@@ -298,16 +298,25 @@ are the query to put to an arriving text.
 - **`strengths: star`** — a second witness, or one text checking itself. 卷之四
   of 《金鏡寶鑑》 reads 旺相休囚死 outward from the star and tabulates all nine
   that way, swapping 相 with 休 and 囚 with 死. Its table checks its own rule
-  rather than the rule.
+  rather than the rule. **The work bought to answer it carries a different
+  reading from the star, and it is not alone in that**: the 煙波釣叟歌 as 紀大奎 copies it,
+  with its 舊註, has the star 旺 in the months it generates and 相 in its own,
+  and 《奇門探索錄》 prints the same; 《遁甲符應經》 gives it as a rule and puts
+  it on a 《三元經》. That is a neighbour and not a witness, so
+  the clause stands as written; what a text would also have to say now is which
+  of the two it is. 紀 keeps it to the nine stars — 「八門干支之類，或不當以此例論
+  也」. See `docs/sources.md` § "《紀氏奇門秘書仕學備餘》, where the states read
+  from the star are a second arrangement".
 
 ## 2. The shelf
 
 ### Read first — what is left of the 2026-09 arrivals
 
 **Everything here is ahead of the rest of this section.** Of the files that
-reached the shelf on 2026-09-09, two are surveyed and not yet read for the
-clause in § 1 each was bought to answer. The others are done, and what each
-established is in `docs/sources.md`: 《奇門克應》 (none of the three things this
+reached the shelf on 2026-09-09, one is surveyed and not yet read past its
+first juan. The others are done, and what each established is in
+`docs/sources.md`: 《紀氏奇門秘書仕學備餘》 (the states read from the star in a
+second arrangement, and 紀大奎 limiting it to the nine stars), 《奇門克應》 (none of the three things this
 shelf calls 克應), 《紫微斗數捷覽》 (the 《全書》 board, not the 十八飛星 one),
 《奇門遁甲折衷》 (it names the school this engine follows) and its 抄錄 companion
 (a finding aid). **A file nobody has read is not evidence**, and a file nobody
@@ -317,8 +326,7 @@ other transmission.
 
 | | what it was bought to answer | where |
 |---|---|---|
-| **景佑《御定奇門大全》** | a **起例 variant**, which is where every divergence on this shelf has come from. **Its 目錄 is now read whole and its 卷一 opened** (2026-09-10), and the variant is not there: 卷一–四 are 景祐秘纂, whose opening chapter 超神接氣直指 is 《奇門探索錄》卷三's chapter on a plate — the same headings, the same 芒種大雪 placement, the same derivation of `MAX_CHAOSHEN`, the same 萬曆己丑 worked examples. That is a second copy of a chapter this register has already weighed, so it moves no rung; what it does is put the derivation on a woodblock instead of on one Republican typesetting, and it obliges the count behind `leap: solstice` to be looked at again, two works agreeing possibly being one work in two compilations. **What is left unread is the other twelve works**, of which 卷五–十's eighteen 局 tables are a bench and 卷二十五–二十七's 遁甲符應經 is a title held elsewhere. → `docs/sources.md` § "《奇門探索錄》, which derives the pin the 統宗 only asserts". Earlier: the plate disagrees with itself on the title — 景祐奇門大全 in its own preface (dated 永樂十二年), 御製奇門大全 at its first section heading, 御定奇門大全 in its 目錄 and at its closing colophon — three headings for one compilation running to 卷六十四, consistent with (not counted against) the seller's claimed thirteen works. Full detail in `texts/README.md`'s row | `yuding-qimen-daquan.pdf`, 1485 sheets two-up at **600 dpi**, the sharpest scan here — and 8-bit grayscale on inspection, not the 1-bit this row once said |
-| **《紀氏奇門秘書仕學備餘》** | **`strengths: star`.** 紀氏 is a commentator this shelf already meets — 《奇門探索錄》 carries 「紀氏云：此或九星如此推，八門、九神不能照此也」, disputing whether the nine stars' rule reaches the gates and the spirits, which is that value's whole question. **Surveyed, not read for the value**: a printed edition whose later juan carry gate/star/stem judgements in the right register, closing with an appendix, 附甘氏克應, naming a fourth and narrower 克應 — six-gate correspondences — distinct from the other three this shelf already has. Full detail in `texts/README.md`'s row | `jishi-qimen-mishu.pdf`, one-up at about 367 dpi |
+| **景佑《御定奇門大全》** | a **起例 variant**, which is where every divergence on this shelf has come from. **Its 目錄 is now read whole and its 卷一 opened** (2026-09-10), and the variant is not there: 卷一–四 are 景祐秘纂, whose opening chapter 超神接氣直指 is 《奇門探索錄》卷三's chapter on a plate — the same headings, the same 芒種大雪 placement, the same derivation of `MAX_CHAOSHEN`, the same 萬曆己丑 worked examples. That is a second copy of a chapter this register has already weighed, so it moves no rung; what it does is put the derivation on a woodblock instead of on one Republican typesetting, and it obliges the count behind `leap: solstice` to be looked at again, two works agreeing possibly being one work in two compilations. **What is left unread is eleven of the other twelve works**, of which 卷五–十's eighteen 局 tables are a bench. 卷二十五, the 卷上 of its 遁甲符應經, was read on 2026-10-08 against the copy in 遁甲集成 第一冊: one text, with a 超接 and 置閏 passage dated 淳祐 that the other copy lacks → `docs/sources.md` § "《遁甲符應經》 in three copies, and what its 卷上 says". → `docs/sources.md` § "《奇門探索錄》, which derives the pin the 統宗 only asserts". Earlier: the plate disagrees with itself on the title — 景祐奇門大全 in its own preface (dated 永樂十二年), 御製奇門大全 at its first section heading, 御定奇門大全 in its 目錄 and at its closing colophon — three headings for one compilation running to 卷六十四, consistent with (not counted against) the seller's claimed thirteen works. Full detail in `texts/README.md`'s row | `yuding-qimen-daquan.pdf`, 1485 sheets two-up at **600 dpi**, the sharpest scan here — and 8-bit grayscale on inspection, not the 1-bit this row once said |
 
 **None of the four bought on 2026-09-09 states a provenance**, and the 折衷
 carries a second watermark under the first. guoxueziyuan.com says only
@@ -336,7 +344,7 @@ bought**, and they are recorded so the judgement does not have to be made twice:
 (326 pp.) — three large unattributed manuscripts — and 《李衛公奇門心法》, which
 carries a **Tang attribution** and would stand beside 《太乙金鏡式經》 under the
 八門 row, that row's only Tang witness. **Nothing is owed on any of them until
-the two above have been read**: a shelf grows by what has been weighed, not by
+the one above has been read**: a shelf grows by what has been weighed, not by
 what has been fetched.
 
 **All were bought from guoxueziyuan.com**, which is the watermark they carry;
@@ -352,7 +360,7 @@ entry shows. Ordered by what a reading would move.
 
 | | what would move | where |
 |---|---|---|
-| 遁甲集成 第一冊, 《遁甲符應經》 三卷 | closes the volume attribution the register carries open, and 二遁直符合於中宮 is a second reading of the centre | series pp. 385–490; 目錄 at 389–393 |
+| 《遁甲符應經》 卷中 · 卷下 | the 格 and the 下營 matter of a work whose 卷上 states 拆補, the lodging at 坤 and a 《三元經》 on the nine stars; read in neither copy | 遁甲集成 第一冊 from series p. 409; 《御定奇門大全》 卷二十六–二十七, sheets about 600–657 |
 | 《中國恆星觀測史》 第七章第一節二 | the 授時 lodge values, if a modern reconstruction can stand where the 曆's own table would | printed p. 272 |
 | SKQS vol. 809, 《星學大成》 | what 七政四餘's neighbours have wanted; unweighed until read | volume pp. 285–870, 三十卷, both ends read on the plate |
 | 《太乙數統宗大全》, 故宮 第420冊 | the 闕 of 卷一 read against a second hand; its own constants answered the other half and did not lift the refusal, being another calendar's | four leaves of 440 read — 卷二's calendrical apparatus and 卷三's 起例 |

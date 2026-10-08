@@ -1938,6 +1938,218 @@ held for ten hours in ordinary undertakings. A board that turns on what is
 being asked is one this engine does not lay, and the divergence stays recorded
 with no parameter.
 
+### 《遁甲符應經》 in three copies, and what its 卷上 says
+
+**The volume attribution carried open above is closed, and both voices were
+right.** 《遁甲集成》第一冊 pp. 385–490 is the work in 三卷 under its own 目錄,
+as the series' 總目錄 says; 第三冊 p. 1136 is also headed 遁甲符應經 on the
+plate, with a note in small characters under the title this reading did not
+resolve, and it opens on the same three sections — 遁甲總序, 造式法, 九星所直 —
+before parting company at 八門, where 第三冊 goes to a 方位所屬五行歌 and a
+diagram and 第一冊 to 推八節以主卦為初直第五. **So 第三冊's leaves are the
+opening of the work set at the head of something else**, which is what the
+總目錄's 《奇門遁甲》 is, and a citation of the clause at 第三冊 p. 1137 names a
+copy of it and not the wrong book. A third copy arrived unlooked for:
+《御定奇門大全》 gives the work its 卷二十五 to 卷二十七, on sheets 589 to about
+657 by the 版心, which reads 遁甲符應經 and the leaf. 卷上 was read in 第一冊
+(pp. 395–409, at the file's native 200 dpi) and in the 大全 (卷二十五 leaves
+1–11, sheets 589–598, with crops at 200) on 2026-10-08; 卷中 and 卷下 are read
+in neither.
+
+**The clause the 寄宮 row quotes collates across all three, and no copy puts a
+condition on it.**
+
+| | 九星所直 |
+|---|---|
+| 第三冊 p. 1137 | 五在中央者，土火之子、金之母，所寄理於西南坤之位也 |
+| 第一冊 p. 396 | 凡五在中宮，中宮者土，火之子、金之母，所寄理於西南坤之位也 |
+| 《大全》卷二十五 leaf 2 | 五在中央者土，乃火之子、金之母，寄於西南坤之位也 |
+
+Three wordings of one sentence, which is a text settled and no rung moved.
+
+**二遁直符合於中宮 is not a second reading of the centre.** It was listed as
+one from the 目錄 alone. The section, in the 大全's wording, leaf 8:
+
+> 合于中宮者，謂陽遁陽使，冬至上元甲己日夜半生甲子，初起一宮，順行歷五時至戊
+> 辰，在五宮；陰遁陰使，夏至上元……初起九宮，逆歷五時至戊辰，亦在五宮，故合
+> 於中宮也。
+
+The 值使 of 陽遁一局 and of 陰遁九局 both stand on 五 at the fifth hour: an
+observation about two counts meeting. 第一冊 p. 402 has it under 「洪曰」 with the two halves tangled. The
+next section but one says what is done about it — 「凡直使在五宮，主客勝負難分，
+是為凶時，故避五也」, both copies — which is an hour avoided and not a gate
+borrowed. Nothing here lodges the 使 anywhere.
+
+**九星休旺 is where the verse's arrangement comes from, and the work puts it on
+a 《三元經》.** 第一冊 p. 404; the 大全 numbers it 第十七, leaves 9–10:
+
+> 三元經曰：九星休旺者，謂九星各旺於我生月，相於同類月，死於生我月，囚於官鬼
+> 月，休於才月。假令天蓬水星，旺於寅卯月，相於亥子月，死於申酉月，囚於四季
+> 月，休於巳午月。日時同。
+
+The 大全 writes 妻財月 for 才月, glosses 官鬼 and 妻財 in small characters and
+repeats 四季月 across a line break; otherwise the two agree. **This is the
+arrangement of the 煙波釣叟歌's couplet stated as a rule with its source
+named**, and 《奇門探索錄》's 釋九星休旺 is this passage nearly word for word,
+as its 釋陰陽二遁 is the section quoted above. So the section below, which
+counts the verse's arrangement three times on this shelf, is counting one
+doctrine with a name: the 《三元經》 the 折衷 argues against and 紀大奎 sets
+beside the 通書. And 「日時同」 is the phrase 《金鏡寶鑑》 closes its own, other
+rule on — 「日時皆同」 — so the 寶鑑's sentence has this one's frame and two of
+its states changed, which is as far as a comparison of two sentences goes.
+
+**超神接氣折局補局第九 states 拆補 with a case, in both copies.** 第一冊
+p. 400:
+
+> 假令甲己之日，季局第二十日乙庚遇立春，便使立春下局，只得四日，至十五日甲己，
+> 却補足下局，共五日六十時足。其雨水氣准此。此拆補局超接之氣明矣。
+
+The 大全, leaf 4 verso, reads 第二日 for 第二十日, which is the reading the
+arithmetic wants, and 此折局補局超神之氣明矣. A term arriving on the second day
+of a 下元 block takes that block's four remaining days as its own 下局, and a
+fifth day is made up when the 下元 comes round again fifteen days on: the 局
+follows the term in force and the 元 follows the 符頭, cut where the term
+strikes. **That is `method: chaibu` as `ju.ts` computes it**, in a work with a
+named author and an imperial preface, where the declaration names one modern
+manual. It is one sentence and a case, read in two copies of one text; whether
+it is put beside 張志春 in the declaration is a change to what a board says of
+itself and is not made by this entry.
+
+**And the 大全's copy of that section is longer by two centuries.** After the
+sentence above it defines 超 and 接 by the 符頭 arriving before or after the
+term, works both — 「如淳祐六年丙午，前四月十三日壬申交立夏節，而本月初五日甲
+子已到」 and 「淳祐七年丁未二月二十三日雖交清明節……二十五日方是己酉」 — and
+then states an intercalation: 「超神不過十日，遇芒種大雪超過九日必置閏也」,
+worked for a 丙戌 year. 淳祐 is 1241 to 1252 and the 景祐 commission the
+preface names is two hundred years before it, so this is matter added to the
+work in the recension the 大全 prints, and 第一冊's copy does not have it. The
+engine puts 己酉 on the twenty-fifth of the second month of 1247 and the 清明
+two days before the text's, which is the gap between a term cut by the Sun's
+longitude and one cut by equal division; for 1246 its lunar day is one off the
+text's. Neither was checked against a table of the calendar then in force.
+**So `leap: solstice`'s placement has a thirteenth-century statement on this
+shelf**, in a copy of one work, beside the Ming and Republican ones already
+weighed; the count behind that value is the count of works, and this is one.
+
+Last checked 2026-10-08.
+
+### 《紀氏奇門秘書仕學備餘》, where the states read from the star are a second arrangement
+
+《紀氏奇門秘書仕學備餘》 四卷, [清] 紀大奎 撰 — the facsimile's own title leaf
+says so, and says 清稿抄本 beside it: **a fair copy in a regular hand inside a
+ruled frame, and not a print**. 41 sheets, **two half-leaves to each**, rgb at
+310 to 380 dpi, no text layer; the 版心 reads 奇門秘書仕學備餘, the juan and the
+leaf, and the leaves run 卷一 1–14, 卷二 1–13, 卷三 1–34 and 卷四 1–19, where
+the text stops without a colophon. The title leaf faces a seal opening 續修; no
+叢刊, library or shelfmark is printed. Bought from guoxueziyuan.com 2026-09-09
+and **read whole on the plate 2026-10-08**, every sheet, with the passages
+quoted below read again on crops at 190 and 300 dpi. `docs/provenance.tsv` has
+the address and the sha256.
+
+**The work dates itself twice.** The 序 on 卷一 leaf 1 gives the occasion —
+「余丙午攝篆商河，適聞大名有宵小之案，益念官守責重，輒於暇時輯古天時諸說，考其
+大略如左」 — and 卷二 leaf 7 carries a note in small characters, 「嘉慶元年十一月
+二十三日冬至初起甲子上元局」. The engine puts the 冬至 of 1796 on 21 December,
+the twenty-third of the eleventh month, a 甲子 day: the note is right in all
+three, which is a check on the reading and on the copy, and it puts the fair
+copy after that day.
+
+**What the four juan are.** 卷一 is 選擇 for a garrison — 建除十二神, 月建 and
+月厭, 陰陽大會, 寶義制專伐日, 八專 — argued out of 《淮南子》, 《協紀辨方書》 and
+曹震圭. 卷二 is 三元: the 一白 through the nine palaces by year, by month, and by
+day and hour, with an intercalation of its own for the day. 卷三 is headed
+三元歌 and is the 煙波釣叟歌 entire, each couplet followed by a 舊註, by a 甘氏
+and a 池氏 where they differ, and by 紀's own 按. 卷四 is 三奇六儀 by the hour's
+stem, then four appendices under 甘氏's name: 奇儀諸格, 占晴雨, 占捕逃 and 克應.
+
+**The couplets on the states, as this copy has them.** 卷三 leaf 11, recto:
+
+> 要識九星配五行，各隨八卦考羲經。坎蓬星水離英火，中宮坤艮土為營。乾兌為金震
+> 巽木，旺相休囚看重輕。與我同行即為相，我生之月誠為旺。廢於父母休於財，囚於
+> 鬼兮真不妄。假如水宿號天蓬，相在初冬與仲冬。旺於正二休四五，其餘倣此自研窮。
+
+and the 舊註 on the verso works the one star: 「天蓬水宿相於亥子月，旺於寅卯月，
+廢於申酉月，休於巳午月，囚於辰戌丑未月，餘星五行倣此推」. The gloss agrees with
+the verse cell for cell.
+
+**That is read from the star, and it is not 《金鏡寶鑑》's reading from the
+star.** Both make 「我」 the star and both part from the season's reckoning; they
+part from each other on four months of five.
+
+| 天蓬, water | from the season | 《金鏡寶鑑》卷之四 | this verse and its 舊註 |
+|---|---|---|---|
+| 亥子, its own | 旺 | 旺 | 相 |
+| 寅卯, what it generates | 休 | 相 | 旺 |
+| 申酉, what generates it | 相 | 休 | 廢 |
+| 巳午, what it controls | 囚 | 死 | 休 |
+| 辰戌丑未, what controls it | 死 | 囚 | 囚 |
+
+The star prospers in its own months for the 寶鑑 and in the months it generates
+for the verse; 休 names what generates the star in the one and what the star
+controls in the other. **So «read from the star» is two arrangements and not
+one**, and `strengths: star`, which is named for the 寶鑑's rule and held by it
+alone, has not gained a witness here. What it has gained is a neighbour with
+more carriers than it has.
+
+**For the verse's arrangement is carried three times on this shelf.** This
+copy with its 舊註; 《奇門探索錄》 釋九星休旺, printed p. 二四, read on the plate
+the same day — 「九星休旺，謂各旺於我生之月，相於同類之月，死於生我之月，囚於官鬼
+之月，休於我克之月」, with 天蓬 worked to the same five months and 死 where this
+copy writes 廢, the print being in simplified characters; and the Wikisource
+text of the 歌, which is an extract and is named here as locating the line and
+no more. Three prints of one verse and its gloss are one transmission, and what
+they settle is the text. **The prose form has since been read where it comes
+from**: 《遁甲符應經》 quotes it from a 《三元經》, and the 探索錄's paragraph is
+that one — see the section above. The 探索錄 also carries the verse a second time, later
+in the book and with 旺 and 相 the other way about; that is in its extract only
+and has not been read on the plate.
+
+**紀大奎's own judgement is the sentence the 探索錄 quotes him for.** The 按
+under the 舊註, same verso:
+
+> 按五行常理，水旺於冬，相於秋，休於春，囚於夏，死於四季。此云旺於我生，廢於父
+> 母，殆以受生者為卑弱，而以生彼之星為尊為父之意歟。然九星屬天，似可以此論，
+> 八門干支之類，或不當以此例論也。存考。
+
+The 探索錄's footnote to 釋九星休旺 gives it as 「紀氏云：此或九星如此推，八門、
+九神不能照此也」, which is a paraphrase: the plate has 八門干支之類 and no 九神,
+and it closes on 存考, which the paraphrase drops. Three things are in the
+sentence. He states the season's reckoning as 五行常理, the ordinary doctrine,
+and names nobody for it — it is `strengths: season` for water cell for cell.
+He takes the verse's reading to be a different thing and offers a reason for
+it, the generated being the lesser. **And he limits it to the nine stars**,
+leaving the gates and the stems to the ordinary reckoning, as a thing to be
+looked into. The 折衷 tabulates the nine stars by the season and argues against
+a 《三元經》 that does otherwise; 紀 has the same 《三元經》 in view one note
+earlier on the same leaf — 「按三元經凶星旺相之說與歌文異，不如通書說合」 — on
+what a baleful star in a prosperous state is worth, and sides with the 通書
+there.
+
+**A third thing on the same subject is 甘氏's, and it is coarser.** 卷三 leaves
+7 verso to 9 give each palace its star and gate with one line of seasons:
+water 「旺於秋冬」, wood and fire 「旺於春夏」, metal 「旺於秋冬」, earth 「旺於四
+季」. Two seasons to a phase, and no five states. Who 甘氏 is this reading does
+not establish: the shelf holds 甘國壁's 折衷, and the phrases 紀 quotes under
+that name were put to its transcription and found in none of its pages,
+which is a finding aid's silence and settles nothing.
+
+**What 卷二 says of the methods, located and quoted once.** Leaf 9, recto:
+「凡九局循環，皆生於二氣中渾天六十甲子之數，不生於二十四氣。正起閏接，特因節氣
+以分限立名，後人據之拆補者謬也」. A text that names 拆補 and rejects it, by a
+named author, which `method` has not had; and the juan's day reckoning lays an
+intercalary 局 on a palace of its own — 坤 before the 夏至, 艮 before the 冬至,
+leaf 4 — which is a placement none of `leap`'s values names. Both are read on
+the plate and neither is weighed here: the first is one sentence against a
+value held by a modern manual, the second belongs to the day and hour 九宮 of
+this juan and not obviously to the 時家 board, and saying which is a reading of
+卷二 for that question, not a line in an entry written for another.
+
+**Nothing moves in the code and no rung moves.** The default keeps its holder
+and gains a second statement of itself as the ordinary doctrine, unattributed;
+`star` stays declared and refused, held by 《金鏡寶鑑》 alone; and the verse's
+arrangement is recorded with no parameter, with the limit its one named reader
+puts on it. Last checked 2026-10-08.
+
 ---
 
 ## Tier 3 — the reading layer
@@ -1955,7 +2167,7 @@ independent sources naming the same thing the same way**.
 | 五不遇時 | the hour's stem controls the day's, same polarity | the ten transmitted pairings — and the rule found the mnemonic **incomplete**: on two days in ten the condition strikes twice and the mnemonic names one |
 | 驛馬 | the branch facing the triad's 長生 | 申子辰馬在寅 and its three fellows |
 | the earth plate | count the instruments and marvels through the Luoshu | all eighteen published arrangements |
-| 旺相休囚死 | the five-phase reckoning against the season | stateable in a sentence and checked against it — and **contradicted in print**, 《奇門遁甲金鏡寶鑑》卷之四 reading the same five relations outward from the star and transposing two pairs; see above |
+| 旺相休囚死 | the five-phase reckoning against the season | stateable in a sentence and checked against it — and **contradicted in print**, 《奇門遁甲金鏡寶鑑》卷之四 reading the same five relations outward from the star and transposing two pairs, and by the 煙波釣叟歌 as 紀大奎 copies it, which reads them from the star in a second arrangement; see above |
 | 門宮 · 星宮 | the five relations of the phases | 門迫 is one of the five, and a test asserts the two never disagree |
 
 **The list that tests 門迫 is two cells shorter than the rule.** 《統宗》卷一
@@ -2744,7 +2956,9 @@ is one the series' own contents list attaches elsewhere. **It changes nothing
 about what those leaves say** — the clause and the tables were read on the plate
 and are unaffected — and it changes what they may be cited as. Settling it is a
 collation of 第三冊 pp. 1136–1159 against 第一冊 pp. 385–490, and the 目錄 above
-says which section to open.
+says which section to open. **That collation was made on 2026-10-08 and it
+closes the question**: § "《遁甲符應經》 in three copies, and what its 卷上
+says".
 
 **And it does not say whether those boards fly, which was the other thing worth
 asking it.** 遁甲演義 states the flight three times — 「俱逆飛六儀」 for the 年家,
