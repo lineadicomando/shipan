@@ -260,6 +260,17 @@ export const DIVERGENCES: readonly Divergence[] = [
     },
   },
   {
+    id: 'dingTomb',
+    board: 'qimen',
+    family: 'shijia',
+    values: ['gen', 'qian'],
+    implemented: ['gen', 'qian'],
+    fallback: 'gen',
+    label: 'form.qimen.dingTomb',
+    says: { gen: 'form.qimen.dingTomb.gen', qian: 'form.qimen.dingTomb.qian' },
+    notes: { gen: 'form.qimen.dingTomb.note', qian: 'form.qimen.dingTomb.note' },
+  },
+  {
     id: 'shensha',
     board: 'almanac',
     values: ['xieji'],

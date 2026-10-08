@@ -138,6 +138,11 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '遁甲演義', pinyin: 'dùnjiǎyǎnyì' },
   },
+  /** 楊維德's 《遁甲符應經》, which works the lodging at 坤 in both dun and buries 丁 with 丙. */
+  fuyingjing: {
+    kind: 'transmitted',
+    name: { hanzi: '遁甲符應經', pinyin: 'dùnjiǎfúyìngjīng' },
+  },
   /** 《奇門遁甲全局》, the circular plates that keep 白虎 at the fifth seat. */
   quanju: {
     kind: 'transmitted',

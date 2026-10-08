@@ -153,6 +153,7 @@
         "strengths": "season",
         "earth": "quarters",
         "centreTravel": "stay",
+        "dingTomb": "gen",
         "shensha": "xieji"
       },
       "lunar": {
@@ -2018,6 +2019,7 @@
       "strengths": "season",
       "earth": "quarters",
       "centreTravel": "stay",
+      "dingTomb": "gen",
       "shensha": "xieji"
     }
   },
@@ -2174,6 +2176,7 @@
         "strengths": "season",
         "earth": "quarters",
         "centreTravel": "stay",
+        "dingTomb": "gen",
         "shensha": "xieji"
       },
       "lunar": {
@@ -4032,6 +4035,7 @@
       "strengths": "season",
       "earth": "quarters",
       "centreTravel": "stay",
+      "dingTomb": "gen",
       "shensha": "xieji"
     }
   }

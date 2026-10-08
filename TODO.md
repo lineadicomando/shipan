@@ -145,7 +145,7 @@ is what holds.
 | the leap block at any of the eight 節 | recorded | asks for a judgement |
 | which stem a star carries off 坤 | recorded | one work quarrelling with itself |
 | which stem a stem coming to 坤 stands over | recorded | 《遁甲符應經》 marks 太白入熒惑 by the centre's 丙 lodged there, on a board where this engine marks 刑格 by 坤's own 己. One case, corrupt in one copy and whole in the other |
-| the tomb of 丁 | recorded | 艮 in the 統宗's 四十格, which `TOMB` follows; 乾 with 丙 in 《遁甲符應經》, under 璋曰, in both copies. One cell of four |
+| the tomb of 丁, 艮 or 乾 | computed | `dingTomb`: the 統宗's cell by default, 《遁甲符應經》's beside it. Each stands on one text |
 | 三奇入墓 and 六儀擊刑 read off the hour | recorded | 乙未 and 丙戌, and the hour whose branch the decade's punishes: 《遁甲符應經》 states each beside the palace reading this engine computes |
 | 三奇得使 | recorded | 葛洪's pairing in 《遁甲符應經》, with four boards worked of which one lays. Stays out of `findPatterns` |
 

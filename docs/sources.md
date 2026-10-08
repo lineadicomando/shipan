@@ -1709,6 +1709,9 @@ under the naming of the spirits alone.
 | `spirits: baihu` | 《奇門遁甲全局》 | three yang plates with 白虎 fifth and 勾陳 sixth |
 | `centreTravel: stay` | 《御定奇門寶鑑》, 《奇門遁甲統宗》 | the 值符 and 值使 read at 坤; the second in 「甲辰在中宮，寄於坤二，天禽為符，死門為使」 |
 | `centreTravel: travel` | 《奇門遁甲金鏡寶鑑》 | 「符使不必寄於二」 |
+| `centreLodging: kun`, `centreTravel: stay` | 《遁甲符應經》, beside the 統宗 | 「六戊在五宮，寄坤二」 on a yang board and 「直使在五宮，寄坤二西南」 on a yin one, each worked |
+| `dingTomb: gen` | 《奇門遁甲統宗》 | 「丁奇艮宮」, in its 奇門四十格 |
+| `dingTomb: qian` | 《遁甲符應經》 | 「六丙月奇、六丁星奇在六宮」, under 璋曰, in both copies |
 | `leap: runyue` | 《奇門遁甲金鏡寶鑑》 | states the placement, works it twice by date, rejects the solstitial one. A work arguing its own reading is its own line |
 | `strengths: star` | 《奇門遁甲金鏡寶鑑》卷之四 | tabulates the five states outward from each of the nine stars |
 | `system: rijia`, `yuejia`, `nianjia` | 《遁甲演義》, 《奇門遁甲統宗》 | each states the three families; they part on the 年家's three 元, which is two readings and will be two values |
@@ -2099,8 +2102,12 @@ The 大全's list, leaf 5 on sheet 618: 「乙臨二宮，丙丁臨六宮」, an
 two hours. So 乙 in 坤 and 丙 in 乾 stand in a second work, which is the half of
 the table that parts from the twelve stages; and 丁 goes with the phase it
 shares with 丙 and not to 丑. That is a second reading of one cell of four,
-held by a named voice in a work with a title page, in two copies that agree.
-It is recorded and no parameter is declared on it by this entry. **And the
+held by a named voice in a work with a title page, in two copies that agree:
+attribution and transcription, which is what a value must show. It is
+`dingTomb: qian`, declared and computed, and the 統宗's cell is `dingTomb:
+gen`, the default. The value is named for the palace, since neither text
+gives 丁 a reason of its own — the 符應經 argues 未 for wood and 戌 for fire
+under 洪, about the hours, and under 璋 only says where. **And the
 passage carries a second thing under the same name**: an hour that is the
 tomb of its own stem, 乙未 and 丙戌, which the 統宗's list files apart as 時墓.
 The engine computes the palace and not the hour.
@@ -2125,7 +2132,8 @@ p. 453, under 時加六戊: 「假令立春中陽五局甲己之日戊辰時，�
 
 The 大全 has both, 「六戊在五宮寄二宮」 on sheet 631 and 「直使五宮寄二宮西
 南」 on sheet 637. The 值使 of a yin board, having counted down to 五, is read
-at 坤: `centreLodging: kun` with `centreTravel: stay`. The two cases together
+at 坤: `centreLodging: kun` with `centreTravel: stay`, and the declaration
+names this work for both beside the 統宗. The two cases together
 are neither of the lodgings by dun, `dun` sending the yin board's centre to 艮
 and `dunni` the yang board's. The entry above
 found no lodging of the 使 in 卷上's 二遁直符合於中宮, and that stands for that
@@ -2407,11 +2415,14 @@ page 12 — as well as off ctext:
 
 `STRIKE` is the six of them exactly, decade for decade and palace for palace,
 which is the first source in this file to state that table rather than have it
-inferred. `TOMB` holds four and the list holds three: 乙 in Kun is the reading
-that parts from the twelve stages, and it is here in print, while 戊 in Qian
-has no line of its own — 戊 is an instrument and not a 奇, so the heading it
-would have to stand under excludes it. That is where the fourth entry stands:
-transmitted, and not witnessed by this list.
+inferred. The engine holds four tombs and the list holds three: 乙 in Kun is
+the reading that parts from the twelve stages, and it is here in print, while
+戊 in Qian has no line of its own — 戊 is an instrument and not a 奇, so the
+heading it would have to stand under excludes it. That is where the fourth
+entry stands: transmitted, and not witnessed by this list. **丁 is the cell a
+second work parts on**, and it is a parameter: `dingTomb`, with 艮 here and 乾
+in 《遁甲符應經》, kept apart from `TOMB` in `DING_TOMB`. → § "《遁甲符應經》
+from 三甲 to its 後序: the rest of 卷上, 卷中 and 卷下".
 
 ---
 

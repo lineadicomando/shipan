@@ -1501,6 +1501,13 @@ export const en = {
     'in the palace the centre lodges in, as 《御定奇門寶鑑》 yùdìngqíménbǎojiàn has it',
   'form.qimen.centreTravel.travel':
     'in the central palace itself: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
+  'form.qimen.dingTomb': 'The stem 丁 dīng is marked entombed when it stands',
+  'form.qimen.dingTomb.gen':
+    'in the palace of 艮 gèn, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
+  'form.qimen.dingTomb.qian':
+    'in the palace of 乾 qián, with 丙 bǐng, as 《遁甲符應經》 dùnjiǎfúyìngjīng has it',
+  'form.qimen.dingTomb.note':
+    'A stem is entombed when the turn of the plate carries it to the one palace where its strength ends, and the board marks that palace. The two texts agree on the palace of 乙 yǐ and on the palace of 丙 bǐng. For 丁 dīng the first text names 艮 gèn and the second names 乾 qián, where 丙 bǐng is entombed too. The choice moves that one mark and nothing else on the board.',
   'form.gender': 'Sex — only the direction of the luck cycles depends on it',
   'form.gender.unset': 'not given',
   'form.gender.male': 'male',
@@ -1914,6 +1921,7 @@ export const en = {
   'notes.parameter.leap': 'Where 置閏 zhìrùn repeats its block.',
   'notes.parameter.strengths': 'What the five seasonal states are read from.',
   'notes.parameter.earth': 'Where earth’s season begins.',
+  'notes.parameter.dingTomb': 'Which palace the stem 丁 dīng is entombed in.',
   'notes.parameter.centreTravel': 'Where the chief and the chief gate are read when they fall on the central palace.',
   'notes.parameter.luckGranularity': 'How finely the distance to the term is counted.',
   'notes.parameter.count': 'How the years lived are counted.',

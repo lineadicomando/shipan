@@ -1378,6 +1378,13 @@ export const it: Record<MessageKey, string> = {
     'nel palazzo in cui il centro alloggia, come nel 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.centreTravel.travel':
     'nel palazzo centrale stesso: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
+  'form.qimen.dingTomb': 'Il tronco 丁 dīng è segnato in tomba quando sta',
+  'form.qimen.dingTomb.gen':
+    'nel palazzo di 艮 gèn, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
+  'form.qimen.dingTomb.qian':
+    'nel palazzo di 乾 qián, insieme a 丙 bǐng, come nel 《遁甲符應經》 dùnjiǎfúyìngjīng',
+  'form.qimen.dingTomb.note':
+    'Un tronco è in tomba quando il giro del piatto lo porta nell’unico palazzo in cui la sua forza finisce, e la tavola segna quel palazzo. I due testi concordano sul palazzo di 乙 yǐ e su quello di 丙 bǐng. Per 丁 dīng il primo testo indica 艮 gèn e il secondo indica 乾 qián, dove è in tomba anche 丙 bǐng. La scelta sposta quel solo segno e nient’altro sulla tavola.',
   'form.gender': 'Sesso: ne dipende solo la direzione dei cicli decennali',
   'form.gender.unset': 'non indicato',
   'form.gender.male': 'maschile',
@@ -1678,6 +1685,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.leap': 'Dove il 置閏 zhìrùn ripete il proprio blocco.',
   'notes.parameter.strengths': 'Da che cosa si leggono i cinque stati stagionali.',
   'notes.parameter.earth': 'Dove comincia la stagione della terra.',
+  'notes.parameter.dingTomb': 'In quale palazzo il tronco 丁 dīng è in tomba.',
   'notes.parameter.centreTravel': 'Dove si leggono il capo e la porta del capo quando cadono sul palazzo centrale.',
   'notes.parameter.luckGranularity': 'Con quale finezza si conta la distanza dal termine.',
   'notes.parameter.count': 'Come si contano gli anni vissuti.',

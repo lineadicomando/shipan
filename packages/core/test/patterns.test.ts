@@ -305,6 +305,58 @@ describe('what the configurations are, and are not', () => {
   });
 });
 
+describe('入墓 — where 丁 is buried', () => {
+  const laid = (date: string, time: string, dingTomb: ChartOptions['dingTomb']): QimenChart => {
+    const options: ChartOptions = { ...CLOCK, method: 'chaibu', dingTomb };
+    return computeQimenChart(
+      resolveMoment({ date, time, timezone: 'Asia/Shanghai' }, BEIJING, options, context),
+      options,
+    );
+  };
+  const heavenOf = (chart: QimenChart, stem: string): number | undefined =>
+    chart.palaces.find((cell) => cell.heaven.hanzi === stem)?.palace.number;
+
+  it('marks 丁 over 乾 under the 符應經 and leaves it unmarked under the 統宗', () => {
+    // 陽遁一局, 甲己日丙寅時: 乙 is carried to 坤 and 丁 to 乾.
+    // 「六乙日奇臨二宮，六丙月奇、六丁星奇在六宮」.
+    const gen = laid('2020-03-07', '04:00', 'gen');
+    const qian = laid('2020-03-07', '04:00', 'qian');
+    expect([heavenOf(gen, '乙'), heavenOf(gen, '丁')]).toEqual([2, 6]);
+    expect(idsOf(gen, 'rumu')).toEqual([2]);
+    expect(idsOf(qian, 'rumu').sort()).toEqual([2, 6]);
+    expect(qian.options.dingTomb).toBe('qian');
+  });
+
+  it('parts from the default on 丁 alone, over 艮 and over 乾', () => {
+    let overGen = 0;
+    let overQian = 0;
+    for (let day = 1; day <= 20; day += 1) {
+      for (let hour = 0; hour < 24; hour += 2) {
+        const date = `2021-05-${String(day).padStart(2, '0')}`;
+        const time = `${String(hour).padStart(2, '0')}:30`;
+        const gen = laid(date, time, 'gen');
+        const qian = laid(date, time, 'qian');
+        const ding = heavenOf(gen, '丁');
+        const expected = new Set(idsOf(gen, 'rumu'));
+        if (ding === 8) {
+          expected.delete(8);
+          overGen += 1;
+        }
+        if (ding === 6) {
+          expected.add(6);
+          overQian += 1;
+        }
+        expect(new Set(idsOf(qian, 'rumu'))).toEqual(expected);
+        expect(qian.palaces.map((cell) => cell.heaven.hanzi)).toEqual(
+          gen.palaces.map((cell) => cell.heaven.hanzi),
+        );
+      }
+    }
+    expect(overGen).toBeGreaterThan(0);
+    expect(overQian).toBeGreaterThan(0);
+  });
+});
+
 describe('ganzhiFrom', () => {
   it('is the inverse of the pair it names', () => {
     // Used by the unmet-hour table above; worth its own line.

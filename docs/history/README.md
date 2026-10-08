@@ -83,6 +83,7 @@ phase.
 | 47 | [Many lines and no orthodoxy](47-many-lines-and-no-orthodoxy.md) | done — drops the premise that comparing witnesses recovers an art's rule: a transmitted quantity says who carries it, who holds each value becomes data and is said under every board, every art is read for whose its values are, and values are computed that had been refused or never declared |
 | 48 | [What the transit left open](48-what-the-transit-left-open.md) | done — the flags derived from the declaration, a sibling art admitted as witness on the phases, the defaults attributed on the plate, 解神 found to be two stars, the 授時 frame laid by its own method, the 折衷's flight computed from two worked hours, and the day family laid as a board of its own under two readings of its gates |
 | 49 | [The hours of a day](49-the-hours-of-a-day.md) | done — the twelve hours of a day board read off 《協紀辨方書》卷七 and held to the day table's own column, `guiren: wei` given its second text |
+| 50 | [The 符應經 read whole](50-the-fuyingjing-read-whole.md) | done — 《遁甲符應經》 read to its 後序 in one copy and collated with a second that turns out to be another recension from 卷中 on; twelve boards it works are the engine's, one cell of 入墓 parts and becomes `dingTomb`, and the work is named a holder of the default lodging |
 
 ## The rest of the record
 

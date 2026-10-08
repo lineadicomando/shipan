@@ -249,6 +249,21 @@ export interface ChartOptions {
   centreTravel: 'stay' | 'travel';
 
   /**
+   * The palace 丁 is buried in (入墓).
+   *
+   * One cell of the four `TOMB` holds, and the only one two texts part on.
+   * `gen` is 《奇門遁甲統宗》's 奇門四十格 — 「丁奇艮宮」. `qian` is
+   * 《遁甲符應經》's, under 璋曰 and in both its copies: 「六丙月奇、六丁星奇在
+   * 六宮」, 丁 with the 奇 whose phase it shares. 乙 in 坤 and 丙 in 乾 are the
+   * same under both.
+   *
+   * It moves one mark on a board and no plate: a 丁 on the heaven plate over
+   * 艮 is 入墓 under the first and not under the second, and over 乾 the other
+   * way about.
+   */
+  dingTomb: 'gen' | 'qian';
+
+  /**
    * Which register of 神煞 the almanac's page carries (曆注).
    *
    * `xieji` is the only value implemented: what 《協紀辨方書》 ratifies, cut to
@@ -292,6 +307,7 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   strengths: 'season',
   earth: 'quarters',
   centreTravel: 'stay',
+  dingTomb: 'gen',
   shensha: 'xieji',
 });
 

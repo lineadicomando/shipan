@@ -158,6 +158,7 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     'strengths',
     'earth',
     'centreTravel',
+    'dingTomb',
     // The day board's, which this one does not read: a value nobody computes
     // is refused wherever it is asked, and never only where it would bite.
     'dayGates',
@@ -285,6 +286,7 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     gates,
     dayStem: moment.pillars.day.stem,
     hourGanzhi,
+    dingTomb: options.dingTomb,
   });
 
   return {

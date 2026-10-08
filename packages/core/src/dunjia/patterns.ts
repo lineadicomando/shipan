@@ -3,6 +3,7 @@ import { decade, type Branch, type Ganzhi, type Stem } from '../ganzhi.js';
 import { palace, palaceOfBranch, type ByPalace } from './palaces.js';
 import { relationOf } from './relation.js';
 import type { Gate, Star } from './plates.js';
+import type { ChartOptions } from '../types.js';
 
 export type PatternId =
   | 'kongwang'
@@ -201,12 +202,20 @@ const STRIKE: Record<string, number> = {
  * is transmitted rather than derived, and it does not agree with the twelve
  * stages: those put the tomb of 乙 at 戌, in the palace of Qian, while the
  * Qi Men tradition puts it in Kun with 甲. Some schools give 乙 both.
+ *
+ * 丁 is the cell two texts part on, and `dingTomb` says which is followed:
+ * 艮 in the 統宗's 四十格, 乾 with 丙 in 《遁甲符應經》. See `DING_TOMB`.
  */
 const TOMB: Record<string, number> = {
   yi: 2, //    乙 — 坤
   bing: 6, //  丙 — 乾
-  ding: 8, //  丁 — 艮
   wu: 6, //    戊 — 乾
+};
+
+/** Where 丁 is buried under each reading: 「丁奇艮宮」, or 「六丁星奇在六宮」. */
+const DING_TOMB: Record<ChartOptions['dingTomb'], number> = {
+  gen: 8,
+  qian: 6,
 };
 
 export interface PatternInput {
@@ -216,6 +225,8 @@ export interface PatternInput {
   gates: ByPalace<Gate>;
   dayStem: Stem;
   hourGanzhi: Ganzhi;
+  /** Which palace 丁 is buried in. The caller's to say; nothing here assumes one. */
+  dingTomb: ChartOptions['dingTomb'];
 }
 
 /**
@@ -239,7 +250,7 @@ export function findPatterns(input: PatternInput): Pattern[] {
   const found: Pattern[] = [];
 
   found.push(...voidPalaces(input.hourGanzhi));
-  found.push(...tombs(input.heaven));
+  found.push(...tombs(input.heaven, input.dingTomb));
   found.push(...oppressedGates(input.gates));
   found.push(...struckInstruments(input.earth));
   found.push(...stemPairs(input.earth, input.heaven));
@@ -264,10 +275,11 @@ function voidPalaces(hourGanzhi: Ganzhi): Pattern[] {
 }
 
 /** Stems standing in the palace they are buried in (入墓). */
-function tombs(heaven: ByPalace<Stem>): Pattern[] {
+function tombs(heaven: ByPalace<Stem>, dingTomb: ChartOptions['dingTomb']): Pattern[] {
   const found: Pattern[] = [];
   for (const [number, stem] of Object.entries(heaven)) {
-    if (TOMB[stem.id] === Number(number)) {
+    const tomb = stem.id === 'ding' ? DING_TOMB[dingTomb] : TOMB[stem.id];
+    if (tomb === Number(number)) {
       found.push(mark('rumu', { palace: Number(number) }));
     }
   }

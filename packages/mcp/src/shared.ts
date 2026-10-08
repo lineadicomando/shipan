@@ -288,6 +288,12 @@ export const qimenSchema = {
     .describe(
       'Where the chief (zhifu) and the chief gate (zhishi) are read when the count puts them on the central palace. Default stay: in the palace the centre lodges in, as the Yuding Qimen Baojian has it. travel reads them in the fifth palace itself, as the Qimen Dunjia Jinjing Baojian does. Neither moves a plate; both values are computed and the chart says which it stands on.',
     ),
+  ding_tomb: z
+    .enum(['gen', 'qian'])
+    .optional()
+    .describe(
+      'Which palace the stem ding is buried in (rumu). Default gen: the palace of gen, as the Qimen Dunjia Tongzong has it. qian: the palace of qian, where bing is buried too, as the Dunjia Fuyingjing has it. The two texts agree on yi and on bing. It moves that one mark and no plate; both values are computed and the chart says which it stands on.',
+    ),
 };
 
 export interface ResolvedInput {
@@ -315,6 +321,7 @@ interface RawInput {
   earth?: 'quarters' | 'eighteen' | undefined;
   earth_plate?: 'yuan' | 'xun' | undefined;
   centre_travel?: 'stay' | 'travel' | undefined;
+  ding_tomb?: 'gen' | 'qian' | undefined;
   shensha?: 'xieji' | undefined;
   born?: string | undefined;
   born_time?: string | undefined;
@@ -361,6 +368,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
       earth: raw.earth,
       earthPlate: raw.earth_plate,
       centreTravel: raw.centre_travel,
+      dingTomb: raw.ding_tomb,
     },
     (parameter) => parameter.id.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`),
   );
@@ -378,6 +386,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.earth) options.earth = raw.earth;
   if (raw.earth_plate) options.earthPlate = raw.earth_plate;
   if (raw.centre_travel) options.centreTravel = raw.centre_travel;
+  if (raw.ding_tomb) options.dingTomb = raw.ding_tomb;
   if (raw.shensha) options.shensha = raw.shensha;
 
   const ephemeris: EphemerisContext = initEphemeris(context.ephemerisPath);

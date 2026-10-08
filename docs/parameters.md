@@ -219,6 +219,7 @@ dunjia's.**
 | `strengths` | what 旺相休囚死 are read from: `season`, `star` | `season` |
 | `earth` | where earth's season begins: `quarters` (the four closing months entire), `eighteen` (their last eighteen days, as 《大六壬精解》 states of the phases) | `quarters` |
 | `centreTravel` | where the 值符 zhífú and the 值使 zhíshǐ are read when the count puts them on the centre: `stay` (lodged out to 坤, as 《御定奇門寶鑑》 has it), `travel` (in the fifth palace, as 《奇門遁甲金鏡寶鑑》 has it) | `stay` |
+| `dingTomb` | the palace 丁 is buried in, for 入墓: `gen` (艮 gèn, as 《奇門遁甲統宗》 has it), `qian` (乾 qián, with 丙, as 《遁甲符應經》 has it) | `gen` |
 
 `method` is the most divisive parameter in the engine and it is not optional.
 All three values are computed, and 拆補 and 茅山 — which read the same term and

@@ -296,7 +296,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.centreLodging.kun',
         note: 'form.qimen.centreLodging.note',
         implemented: true,
-        heldBy: ['tongzong'],
+        // The 符應經 works it in both dun: 「六戊在五宮，寄坤二」 on a yang board
+        // and 「直使在五宮，寄坤二西南」 on a yin one.
+        heldBy: ['tongzong', 'fuyingjing'],
       },
       // Yang to 坤, yin to 艮: the imperial print's 一本.
       {
@@ -605,8 +607,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         id: 'stay',
         says: 'form.qimen.centreTravel.stay',
         implemented: true,
-        // The 統宗 states it as well: 「甲辰在中宮，寄於坤二，天禽為符，死門為使」.
-        heldBy: ['baojian', 'tongzong'],
+        // The 統宗 states it as well: 「甲辰在中宮，寄於坤二，天禽為符，死門為使」,
+        // and the 符應經 reads the 值使 of a yin board there: 「直使在五宮，寄坤二」.
+        heldBy: ['baojian', 'tongzong', 'fuyingjing'],
       },
       {
         id: 'travel',
@@ -616,6 +619,32 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
       },
     ],
     default: 'stay',
+  },
+  dingTomb: {
+    board: 'qimen',
+    family: 'shijia',
+    // One cell of 入墓, and two works that part on it: 丁 in 艮, or in 乾 with
+    // 丙. See `docs/sources.md` § "《遁甲符應經》 from 三甲 to its 後序".
+    label: 'form.qimen.dingTomb',
+    values: [
+      {
+        id: 'gen',
+        name: { hanzi: '艮', pinyin: 'gèn' },
+        says: 'form.qimen.dingTomb.gen',
+        note: 'form.qimen.dingTomb.note',
+        implemented: true,
+        heldBy: ['tongzong'],
+      },
+      {
+        id: 'qian',
+        name: { hanzi: '乾', pinyin: 'qián' },
+        says: 'form.qimen.dingTomb.qian',
+        note: 'form.qimen.dingTomb.note',
+        implemented: true,
+        heldBy: ['fuyingjing'],
+      },
+    ],
+    default: 'gen',
   },
   shensha: {
     board: 'almanac',
