@@ -90,4 +90,5 @@ phase.
 | | |
 |---|---|
 | [`risks.md`](risks.md) | the risk register as it stood, worst first. The evidence in item 1 has since been superseded by `docs/sources.md`, which carries it per quantity |
+| [`roadmap-2026-10-08.md`](roadmap-2026-10-08.md) | `TODO.md` whole as it stood that day, before it was cut to what a session needs: the readings under each refused value, the questions asked on 2026-10-07, the 2026-09 arrivals one by one |
 | [`order.md`](order.md) | why the phases were sequenced as they were. Entirely retrospective except for what it says about phase 17 |
