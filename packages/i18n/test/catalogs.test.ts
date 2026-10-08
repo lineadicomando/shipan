@@ -100,16 +100,16 @@ describe('catalog parity', () => {
   });
 
   /**
-   * The em dash is English punctuation, and Italian makes the same turn with a
-   * comma, a colon, a semicolon or parentheses. `docs/i18n.md` argues it.
+   * Italian sets off a clause with a comma, a colon, a semicolon or
+   * parentheses, and with no dash of either length. `docs/i18n.md` argues it.
    *
    * Italian only, and values only: `en.ts` keeps its dashes, and a comment in
-   * either catalog is English. Asserted from the day the last five went, each
-   * replaced by the mark its turn asked for rather than by substitution.
+   * either catalog is English. Each dash went by the mark its turn asked for
+   * rather than by substitution, which is why nothing here suggests one.
    */
-  it('punctuates Italian without the em dash', () => {
+  it('punctuates Italian without a dash', () => {
     for (const [key, message] of Object.entries(italian)) {
-      expect(message, `it / ${key}`).not.toContain('—');
+      expect(message, `it / ${key}`).not.toMatch(/[—–]/);
     }
   });
 

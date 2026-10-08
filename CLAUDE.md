@@ -186,7 +186,7 @@ the engine falls back to Moshier, which needs no files.
 - **A vernacular is written in its own conventions, not translated through
   another's.** The em dash is English punctuation: Italian makes the same turn
   with a comma, a colon, a semicolon or parentheses, so `—` belongs in `en.ts`
-  and not in `it.ts`. It is a rule about the register a sentence is written in
+  and not in `it.ts`, and neither does `–`. It is a rule about the register a sentence is written in
   and is not the rule that keeps a dash away from a glyph, which binds both.
   → [`docs/i18n.md`](docs/i18n.md)
 - **A limit is a property of the instrument, and copy names it as one.** What
