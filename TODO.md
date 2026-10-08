@@ -195,7 +195,7 @@ frame, the first a line holds, is computed since 2026-10-07 by the method of
 | `xiudu: shixian` | declared and refused | a table with no epoch that can be cited. Waits on one |
 | `gong: ci` | declared and refused | no holder named. Waits on the same table |
 | `minggong: ascendant` | declared and refused | no holder named; a second method and not a second reading |
-| the 距星 of 觜 and of 參 | recorded | four assignments across the Tang, the Song, the Jesuit order and the 《儀象考成》; the engine takes the last |
+| the 距星 of 觜 and of 參 | recorded | four assignments across the Tang, the Song, the Jesuit order and the 《儀象考成》; the engine takes the last. 潘鼐's 表71 identifies the 至元 pair as φ¹ Ori and δ Ori, which the 授時 frame as computed does not read |
 
 **曆注, and the layers under every board** — argued in `docs/sources.md`
 § "Whose each value of the almanac's page is" and § "Whose each value of the
@@ -366,7 +366,6 @@ entry shows. Ordered by what a reading would move.
 
 | | what would move | where |
 |---|---|---|
-| 《中國恆星觀測史》 第七章第一節二 | the 授時 lodge values, if a modern reconstruction can stand where the 曆's own table would | printed p. 272 |
 | SKQS vol. 809, 《星學大成》 | what 七政四餘's neighbours have wanted; unweighed until read | volume pp. 285–870, 三十卷, both ends read on the plate |
 | 《太乙數統宗大全》, 故宮 第420冊 | the 闕 of 卷一 read against a second hand; its own constants answered the other half and did not lift the refusal, being another calendar's | four leaves of 440 read — 卷二's calendrical apparatus and 卷三's 起例 |
 | 《中國古代星占學》 第五章 · 太乙式數占 | 陰陽和不和, refused because two accounts of it do not line up; this chapter's eight principles open on the parity of a 算, which is what they disagree about | printed pp. 492–499, of which only the closing summary is read |

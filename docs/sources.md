@@ -5266,9 +5266,10 @@ So the boundaries here are not tabulated. `packages/core/data/sefstars.txt`
 holds the twenty-eight 距星 and sweph places them at the instant of the chart,
 proper motion and precession included. **No epoch is chosen, because none has
 to be**, and the frame is correct in the eleventh century and the twenty-third
-alike. `xiudu` keeps `shixian` and `shoushi` as declared values, refused with
-`OPTION_NOT_IMPLEMENTED`, for whenever one of those tables arrives with an
-epoch that can be cited.
+alike. `xiudu` keeps `shixian` as a declared value, refused with
+`OPTION_NOT_IMPLEMENTED`, for whenever that table arrives with an epoch that
+can be cited; `shoushi` arrived with one and is computed, as this section goes
+on to say.
 
 **The tables have now been seen, and what they show is why they stay
 refused.** 朱文鑫's 《曆法通志》 (商務印書館 1934), pp. 273–275, prints
@@ -5456,20 +5457,19 @@ survey resolution and it is recorded as a reason not to lean on the column
 rather than as a measurement.
 
 **And a fourth book on the shelf was surveyed after that negative was written,
-which is what reopens it.** 《中國恆星觀測史》, 潘鼐 — 498 pages, unopened until
-2026-08-31 and unread now — carries at its 第七章第一節二, printed p. 272,
-「至元年間的二十八宿觀測與元《郭守敬星表》拾遺」. 至元 is this 曆's own epoch and
-郭守敬 its author, so the one section on this shelf headed at the question is
-one nobody has read. **It would not be the same witness**: a modern
-reconstruction of an observation is not the 曆's printed table, and what rung it
-could stand on is a question for whoever reads it. What it does settle is that
-«this shelf cannot supply it» was a statement about the files opened by
-2026-08-27 and is not one about the files held.
+which is what reopened it.** 《中國恆星觀測史》, 潘鼐 — 498 pages, unopened
+until 2026-08-31 — carries at its 第七章第一節二, printed p. 272, 「至元年間的
+二十八宿觀測與元《郭守敬星表》拾遺」. 至元 is this 曆's own epoch and 郭守敬 its
+author. The section was read on 2026-10-08 and is § "潘鼐's 表71, the 至元
+lodges in a modern study" below: it carries the equatorial widths, 參 among
+them, and no ecliptic ones. «This shelf cannot supply it» was a statement
+about the files opened by 2026-08-27.
 
-So the value stays refused, and what stands in the way is now two things and
-not three: 參, which this print does not carry and no *read* file here
-supplies, and an option shape that has to hold an epoch as well as a table,
-because the source makes its own numbers a function of a moment. Read on the plate 2026-08-27. The 考成 column is the one that
+What stood in the way on that day was two things: 參, which this print does
+not carry, and an option shape that has to hold an epoch as well as a table,
+because the source makes its own numbers a function of a moment. Both are
+answered by the method further up, which gives 參 back from its quadrant's sum
+and carries the epoch. Read on the plate 2026-08-27. The 考成 column is the one that
 could be checked without leaving this shelf, since 《儀象考成》 卷一~卷十六 is
 held and its 距星 are the ends of exactly these intervals; that collation has
 not been run.
@@ -5494,6 +5494,60 @@ standard one and is the list the Chinese Wikipedia article on the 二十八宿
 gives; three of them are corroborated from inside the Swiss Ephemeris file
 itself, which happens to carry 亢, 房 and 張 under their Chinese names against
 κ Vir, π Sco and υ¹ Hya.
+
+### 潘鼐's 表71, the 至元 lodges in a modern study
+
+《中國恆星觀測史》, 潘鼐, 第七章第一節二 (一) 郭守敬所測二十八宿宿度, printed
+pp. 272–274, read on the plate on 2026-10-08. The file is a stencil at 92 dpi,
+which is under the floor `docs/scans.md` sets for quoting a numeral, so what
+is said here of a figure is said where a second thing fixes it and not
+otherwise. (二) 郭守敬星表鈎沉, from p. 274, is about recovering the lost star
+catalogue; it was read to p. 275 and no further, and nothing is claimed of it.
+
+**What the section is.** A table, 表71 on p. 273, of twenty-eight rows: the
+lodge, the star 潘鼐 identifies as its 距星, the 宿度 measured in the 至元
+years in 度 and 分, that width in degrees, the difference in right ascension
+he computes for 1280, the error, and the same four for the 去極度. The page
+before it quotes 《元史·曆志》's 授時曆議, 周天列宿度, on what the widths are
+for. So it is the 赤道宿次 this
+engine lays `xiudu: shoushi` from, in a third place: 《授時曆故》卷二 is the
+first, and the 《元史》 the study reads them off is behind both.
+
+**The widths collate with `SHOUSHI_EQUATOR`, twenty-seven of twenty-eight
+figure for figure.** The twenty-eighth is 虛, 8 度 95 分 in the table against
+8.9575 in the engine: the table is cut at the 分 and the 曆 carries 虛 to the
+秒, which is where the circle's own fraction is lodged. 參 is there, 11 度
+10 分, as the 授時曆故 prints it on its equator and does not on its ecliptic.
+The reading of a stencil is fixed here by the table it is read against: a
+digit misread would have had to be misread into agreement twenty-seven times.
+**A second copy of one table, which settles the text and moves no rung.** The
+row of `xiudu: shoushi` gains it as a collation.
+
+**It carries no ecliptic widths**, so the one figure the method supplies by
+subtraction — 參's 黃道 width, 10.28, from its quadrant's sum — has no second
+print on this shelf still.
+
+**And it says which stars the 至元 frame was measured from.** Twenty-six of
+潘鼐's identifications, read against the list, are the twenty-six
+`sefstars.txt` carries for the same lodges. The two that part are the two this register already records as a
+choice: he gives 觜 φ¹ Ori and 參 δ Ori, the older pair, where the engine
+takes 《儀象考成》's λ Ori and ζ Ori. 表72 on p. 274 follows 觜's width down
+through the measurements — 一度 under 一行 and through the Song to 元豐, 半度
+at 崇寧, 五分 at 至元, and negative by the end of the Ming — and the text
+puts the two stars at equal right ascension a generation before the 曆, and
+reads 郭守敬's 五分 as the smallest mark his ring could carry laid
+over a difference too small to read. That is the table further down this page
+from the other side: laid with φ¹ and δ, 觜 comes out behind 參.
+
+**What that leaves standing.** `xiudu: shoushi` lays its lodges by the 曆's
+widths and its method and reads no star, so the identification moves nothing
+in it; `xiudu: juxing` reads the stars and takes the Qing pair. A frame of the
+至元 stars placed by the sky — the older pair, at the chart's instant — is a
+third thing, which nobody on the shelf lays a board on and this engine does
+not declare. The divergence of the two 距星 stays recorded with no parameter,
+and has a modern study's identification of its 至元 side.
+
+Last checked 2026-10-08.
 
 ### 觜 and 參, which is the finding
 
