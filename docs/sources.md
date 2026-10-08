@@ -5707,6 +5707,54 @@ them.
 
 Last checked 2026-10-08.
 
+### 《星學大成》卷四 星盤或問, and the map of the other juan
+
+Read on the plate on 2026-10-08: 卷四 leaves 1 to 7, the volume's
+pp. 345–348, where the juan opens under 觀星節要 on a dialogue, 星盤或問,
+and then goes over to 括蒼季宗舒's 琴堂五星總斷. The rest of the work was
+surveyed by its 版心 every fourteenth page and not read.
+
+**The dialogue gives the reason for the two things the section above
+states.** On the order of the twelve, the guest objects that it runs
+backwards — 「其敘却乃倒言，何也」 — and the answer is the Sun's day: 財帛,
+兄弟 and 田宅 lie under the earth and are told ahead of the person, 遷移 and
+the rest are met after noon. On the 命: 「卯時而生，天日俱出東廂…故因日而數至
+卯，即卯地而出蒼穹」, the count to 卯 being the count to where the sky comes
+up. That is the rule's own account of itself, and it is an account of a
+rising: the reading `minggong: ascendant` would take from the degree, said
+here of the palace.
+
+**It records a second reading of the 身, and sets it aside.** The guest: 「諸星
+家俱以太陰為身」. The answer: 「星家既以太陽數至卯為命，獨不以太陰數至酉為身
+…以命對宮之度為身，不可直指太陰為身」. The Moon as the 身 is everybody's and
+the 琴堂's; the degree facing the 命 is 萬民英's own, argued. This engine
+carries no 身 for this board, so it is recorded with no parameter.
+
+**And it knows the frame drifts.** 「循行次舍，七十年而差一度」, given as why
+the 星家 「有準於古而差於今」: a degree in seventy years, where the 授時's own
+歲差 is one in sixty-six and a fraction. It does not say what a caster is to
+do about it. It is the practitioner's side of the argument § "The frame, which
+is twenty-eight stars and not a table" makes, a third time on this shelf.
+
+**The juan, by the 版心.** Sampled, so each boundary is good to fourteen
+pages and no better: 卷四 from the volume's p. 345, 卷五 by p. 373, 卷六 by
+p. 401, 卷七 by p. 429, 卷八 by p. 443, 卷九 by p. 457, 卷十 by p. 471, 卷十一
+by p. 499, 卷十二 by p. 527, 卷十三 by p. 541, 卷十四 by p. 555, 卷十五 by
+p. 569, 卷十六 by p. 609, 卷十七 by p. 623, 卷十八 by p. 637, 卷十九 by p. 651,
+卷二十 by p. 679, 卷二十一 by p. 693, 卷二十二 by p. 707, 卷二十三 by p. 721,
+卷二十四 by p. 749, 卷二十五 by p. 763, 卷二十六 by p. 791, 卷二十七 by
+p. 805, 卷二十八 by p. 819, 卷二十九 by p. 833, 卷三十 by p. 847. What each
+holds is not known past 卷四.
+
+**羅睺 and 紫氣 are still not found, and a rule for placing them may not be
+in the work.** That is a guess and is marked as one: the 凡例前引 says the
+charts are taken from the 臺曆, and the 起例 that was read lays the 命 and the
+limits and places no body. What the work could still say is which of 羅 and
+計 it calls 天首, in a 論 on the four 餘, and that has not been looked for
+beyond these leaves.
+
+Last checked 2026-10-08.
+
 ### 觜 and 參, which is the finding
 
 The one place the list is a choice, and it is a large one.
