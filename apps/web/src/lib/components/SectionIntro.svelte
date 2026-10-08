@@ -141,10 +141,14 @@
    * comfortable measure and the right end to be at: these are two short
    * paragraphs, and a column too narrow to read is worse than a page that
    * stacked them.
+   *
+   * Capped at the block's own width, because a phone is narrower than 24rem:
+   * at 375px the one track stood 24px past the edge and the page scrolled
+   * sideways on every section.
    */
   .intro {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
     /*
      * The row gap is spent twice and wants the same number both times: under
      * the paragraphs, where the link to the notes stands across both tracks,

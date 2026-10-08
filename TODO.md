@@ -468,14 +468,18 @@ derivation would lose, and the page's `apps/web/src/lib/parameters.ts`, which
 exists because the client imports only types from `core`. A value added to the
 engine fails those suites until it is added there; nothing says it silently.
 
-**The board of a day reaches four surfaces whole and three in part.** Each
-line is a task and none blocks another.
+**The board of a day reaches every surface that lays, prints, draws or copies
+a board.** The drawing marks 喜神 on the palace of its bearing and leaves the
+twelve hours to the transcript, being a grid of directions with no place for
+an hour; `draw_qimen_chart` says so. The section was looked at on 2026-10-08
+in a browser, at a desktop width, at 375px and on paper.
 
-| | what is owed | where |
-|---|---|---|
-| the drawing | the bearing of 喜神 on the palace it stands in, and a decision on the twelve hours: drawn under the grid, or said to be the transcript's. `renderDaySvg` draws gates, stars and palaces and nothing of either | `packages/plate`, whose types are its own; `draw_qimen_chart` and `/api/qimen/plate` follow |
-| the section, looked at | the hours table was checked in the HTML the built server answers and never in a browser: its measure against `.reading`, the two lines of a cell, paper | `DayReading.svelte`, at `/it/qimen?qimen.system=rijia` |
-| `README.md` and `docs/agent-prompt.md` | neither names the board of a day, so neither says it carries twelve hours or that the marks on them rank nothing. The contract an agent reads is the second | both files; `reader-copy` binds the first |
+**A section's almanac runs past a phone's edge.** At 375px the 曆注 block of
+the hour board — `CalendarAndAlmanac.svelte`, whose `dt` and `.entry` do not
+wrap — is 426px wide and the page scrolls sideways; seen on `/it/qimen` on
+2026-10-08, the day the introduction above it stopped doing the same. The
+board of a day carries no such block. What it needs is the measure of the
+longest entry against the column it is set in, read in a browser.
 
 What the same board waits on that is no surface — a prompt of its own, the
 scan and the 年命 — is on its line in § 1.

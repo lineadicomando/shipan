@@ -1,7 +1,7 @@
 import type { MessageKey, Translator } from '@shipan/i18n';
 import { BRANCHES, STEMS, type Ganzhi } from './ganzhi.js';
 import { GENERALS, KETI, LIUREN_RULES } from './liuren.js';
-import { LODGES } from './almanac.js';
+import { HOUR_MARK_LIST, LODGES } from './almanac.js';
 import { CI, HOUSES, MOTIONS, QIZHENG_BODIES, type QizhengBoard } from './qizheng.js';
 import { ZIWEI_HOUSES, ZIWEI_STARS } from './ziwei/stars.js';
 import { TAIYI_GODS, TAIYI_PATTERN_IDS } from './taiyi.js';
@@ -43,6 +43,8 @@ export interface ChartLabels {
   valence: Record<string, string>;
   /** The gates, the stars, or both: where a whole-board configuration came home. */
   layer: Record<string, string>;
+  /** What a day puts on an hour, for the board of a day: the drawing reads 喜神's. */
+  hourMark: Record<string, string>;
 }
 
 /**
@@ -71,6 +73,7 @@ export function chartLabels(t: Translator): ChartLabels {
       VALENCE_IDS.map((id) => [id, t(`label.valence.${id}` as MessageKey)]),
     ),
     layer: Object.fromEntries(LAYERS.map((id) => [id, t(`label.layer.${id}` as MessageKey)])),
+    hourMark: from(HOUR_MARK_LIST, 'hourmark'),
   };
 }
 

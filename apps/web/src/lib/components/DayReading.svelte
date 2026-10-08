@@ -122,12 +122,13 @@
           </th>
           <td>
             <span>{gloss('daygod', hour.god.id)}</span>
-            <span class="glyph">{glyph(hour.god)} {hour.god.valence.hanzi}</span>
+            <!-- The fortune is held to the reading, never left on a line alone. -->
+            <span class="glyph">{glyph(hour.god)}{'\u00a0'}{hour.god.valence.hanzi}</span>
           </td>
           <td>
             {#each hour.marks as mark (mark.id)}
               <span>{gloss('hourmark', mark.id)}</span>
-              <span class="glyph">{glyph(mark)}{mark.valence ? ` ${mark.valence.hanzi}` : ''}</span>
+              <span class="glyph">{glyph(mark)}{mark.valence ? `\u00a0${mark.valence.hanzi}` : ''}</span>
             {:else}<span class="glyph">{t('cli.none')}</span>{/each}
           </td>
         </tr>
@@ -147,8 +148,15 @@
   .anchors dd { margin: 0; }
   .anchors .glyph { display: inline; margin-inline: 0.35rem; }
   /* Three short columns in a page's width: a name is kept on its line, and
-     the slack goes to the last column as `.reading` has it. */
-  :is(.palaces, .hours) :is(th, td) { white-space: nowrap; }
+     the slack goes to the last column as `.reading` has it. The last one
+     wraps, as `HexagramTable`'s does; on a phone so does the god an hour
+     treads, or the hours run 433px into 345 and the whole page scrolls
+     sideways. Above a phone it may not, since the last column's slack would
+     squeeze it to a word a line. */
+  :is(.palaces, .hours) :is(th, td):not(:last-child) { white-space: nowrap; }
+  @media (max-width: 34rem) {
+    .hours td:not(:last-child) { white-space: normal; }
+  }
   /* The word leads; the name it renders sits under it, small. */
   th span:not(.glyph), td span:not(.glyph) { display: block; }
   .glyph { display: block; color: var(--faint); font-size: 0.8em; }

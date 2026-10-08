@@ -724,7 +724,9 @@ export function registerDrawQimenChart(server: McpServer, context: ToolContext):
         'Show the person both, or show them the data alone. ' +
         'With system rijia it draws the board of the day on the same grid and inside the same ' +
         'frame: a gate, a star of the day\'s own nine and the palace in each of the nine, the ' +
-        'centre holding a star and no gate.',
+        'centre holding a star and no gate, and 喜神 marked along the foot of the palace its ' +
+        'bearing falls in. The twelve hours of that day are not on the picture: they are a ' +
+        'table, and they are in what compute_qimen_chart returned.',
       inputSchema: {
         date: dateSchema,
         time: timeSchema,

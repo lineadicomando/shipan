@@ -184,6 +184,20 @@ neither disputed.
   belong to a term the Sun has not reached yet — the answer says which. Never
   switch method between charts you are comparing, and never present one
   method's chart as the other's.
+- **A board of the day is another board, and it carries twelve hours that it
+  does not rank.** With `system: rijia` (`qimen.system=rijia` over REST) the
+  answer has a shape of its own: eight gates and nine stars of the day's own,
+  the first of them 太乙, and no plate of stems, no chief and no spirits. It is
+  laid off the day pillar and the season, so every hour of one day has the
+  same board. Beside it stand the twelve hours of that day, each with the god
+  it treads and what the day's stem puts on it: 天乙貴人, 截路空亡, 五不遇時,
+  and 喜神 with its bearing. These are names an almanac prints beside an hour.
+  五不遇時 alone carries a valence, because its own entry weighs it, and none
+  of the four puts one hour above another. Do not rank the hours from the
+  marks, and do not read the board through an hour board's gates and stems:
+  the prompt, the scan and `born` refuse this family by name, since each is
+  written against a plate of stems. `draw_qimen_chart` draws the board and
+  喜神's bearing on its palace, and leaves the hours to the answer.
 - **The eight spirits are named three ways and the board says which.** The ring
   is the same ring under all three — same star, same gate, same stem, same
   palace — and what parts them is which fact names the fifth and sixth seats:
@@ -466,13 +480,13 @@ prompt — it was in one once, and what a model did with it was recite it.
 | | |
 |---|---|
 | `search_location` | a name → candidates with coordinates and zone. Always first when you have a name |
-| `compute_qimen_chart` | the nine palaces, the plates, the configurations, how each star and gate stands to its palace, and both post horses — 日馬 and 時馬, never one of the two. With `born`, also a 年命: the birth placed *inside* this chart |
+| `compute_qimen_chart` | the nine palaces, the plates, the configurations, how each star and gate stands to its palace, and both post horses — 日馬 and 時馬, never one of the two. With `born`, also a 年命: the birth placed *inside* this chart. With `system: rijia`, the board of the day instead, and its twelve hours beside it |
 | `compute_bazi` | the four pillars, read out. `gender` only affects the luck cycles |
 | `compute_liuren` | the 大六壬 board — the other 式, laid on the same instant and answering the same shape of question. Lay it for the moment of the asking, never for a birth |
 | `compute_ziwei` | the 紫微斗數 board — the twelve seats counted from a birth, with 紫微 and the thirteen that hang off it, the auxiliaries, the 四化, the brightness grades, the two masters and the limits. **Nothing on it is in the sky**: do not read planets, aspects or transits into it |
 | `compute_qizheng` | the 七政四餘 board — the seven governors and the four remainders, each said twice over: the 宿 with its 入宿度 and the 宮 with its 宮度, except 紫氣, which is placed by rule and carries a palace only. A 命 art, so it is laid for a birth as readily as for a question, and it borrows nothing from the other two boards |
 | `compute_taiyi` | the 太乙 board of a year — 歲計. Takes a year and nothing else: no place, no hour, nobody's birth. Never says who is 主 and who is 客, and its palace numbers are not a Qi Men chart's |
-| `draw_qimen_chart` | the picture, framed by the eight directions, with the configurations and their fortunes listed under the grid. After the calculation, never instead of it |
+| `draw_qimen_chart` | the picture, framed by the eight directions, with the configurations and their fortunes listed under the grid; for a board of the day, its gates and stars and the bearing of 喜神. After the calculation, never instead of it |
 | `draw_liuren` | the Liu Ren board as a picture: a ring of twelve, the lessons written right to left, the transmissions read downwards. After the calculation, never instead of it |
 | `solar_terms` | the twenty-four terms of a year, with exact instants |
 | `lunar_date` | the lunisolar date. Reckoned on 120°E by convention, not on the zone you pass |

@@ -98,6 +98,21 @@ describe('the redeclared shape of a day board', () => {
     // No plate of stems under them: bare, the paper is the square.
     expect(svg).toMatch(/viewBox="0 0 900 900"/);
   });
+
+  it('marks 喜神 on the palace of its bearing, and nowhere else', () => {
+    const svg = renderDaySvg(day, {
+      labels: { hourMark: { xishen: 'the spirit of joy' } },
+      captions: { readings: 'Said aloud' },
+    });
+    const xishen = day.xishen;
+
+    expect(svg.match(/class="mark"/g)).toHaveLength(1);
+    expect(svg).toContain('the spirit of joy');
+    expect(svg).toContain(xishen.pinyin);
+    expect(svg).toMatch(new RegExp(`${xishen.palace.hanzi}: [^,]* 喜神`));
+    // The hours are the transcript's: no branch of the twelve is drawn as one.
+    expect(svg).not.toContain('五不遇時');
+  });
 });
 
 describe('the redeclared shape', () => {

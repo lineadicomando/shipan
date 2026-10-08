@@ -158,6 +158,9 @@ describe('draw_qimen_chart, for a board of the day', () => {
     // It travels alone, so it says how its names are read and who laid it.
     expect(svg).toContain('How the names are said');
     expect(svg).toContain('金函玉鏡');
+    // The bearing of the day is drawn, in the reader's word for it; the hours are not.
+    expect(svg).toMatch(/class="mark"[^>]*>the spirit of joy<tspan[^>]*>\s喜神/);
+    expect(svg).not.toContain('截路空亡');
     // And nothing of the hour board's: no chief along the foot.
     expect(svg).not.toMatch(/chief gate/);
   });

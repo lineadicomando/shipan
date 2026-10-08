@@ -255,6 +255,7 @@ export function renderDaySvg(board: PlateDay, options: PlateOptions = {}): strin
       .qmdj text { fill: var(--qmdj-ink); }
       .qmdj .faint { fill: var(--qmdj-faint); }
       .qmdj .word { fill: var(--qmdj-word); }
+      .qmdj .mark { fill: var(--qmdj-mark); }
       .qmdj .rule { stroke: var(--qmdj-rule); fill: none; }
       ${PHASES.map((phase) => `.qmdj .${phase} { fill: var(--qmdj-ink-${phase}); }`).join('\n      ')}
     </style>`,
@@ -264,7 +265,8 @@ export function renderDaySvg(board: PlateDay, options: PlateOptions = {}): strin
 
   for (const cell of cells()) {
     const palace = byNumber.get(cell.palace);
-    if (palace) parts.push(drawDayCell(cell, palace, geometry, labels));
+    const xishen = board.xishen?.palace.number === cell.palace ? board.xishen : undefined;
+    if (palace) parts.push(drawDayCell(cell, palace, geometry, labels, xishen));
   }
 
   parts.push(drawGrid(geometry));
@@ -300,12 +302,16 @@ export function renderDaySvg(board: PlateDay, options: PlateOptions = {}): strin
   return parts.join('\n');
 }
 
-/** One palace of a day: the gate, the star under it, the palace at the foot. */
+/**
+ * One palace of a day: the gate, the star under it, the palace at the foot —
+ * and 喜神 along the foot where the day's bearing falls in this palace.
+ */
 function drawDayCell(
   cell: Cell,
   palace: PlateDayPalace,
   geometry: Layout,
   labels: PlateLabels,
+  xishen: PlateDay['xishen'],
 ): string {
   const { x, y } = origin(cell, geometry);
   const side = geometry.cell;
@@ -332,6 +338,17 @@ function drawDayCell(
       maxWidth: side - inset * 2,
       anchor: 'start',
     }),
+    // On the line the hour board gives a configuration, and in its colour: a
+    // thing standing on the palace, not a fourth thing in it.
+    xishen
+      ? text(
+          middle,
+          y + side * geometry.line.marks,
+          named({ hanzi: xishen.hanzi, id: 'xishen' }, labels.hourMark, '', ''),
+          geometry.font.word,
+          { className: 'mark', maxWidth: width },
+        )
+      : '',
   ]
     .filter(Boolean)
     .join('\n');
@@ -343,6 +360,7 @@ function saidOnDay(board: PlateDay, compass: PlateDirections | undefined): Said[
     said(board.palaces.map((palace) => palace.palace)),
     said(board.palaces.map((palace) => palace.gate)),
     said(board.palaces.map((palace) => palace.star)),
+    said(board.xishen ? [board.xishen] : []),
   ];
   if (compass) groups.push(said(COMPASS_READINGS));
   return groups.filter((group) => group.length > 0);
@@ -350,7 +368,11 @@ function saidOnDay(board: PlateDay, compass: PlateDirections | undefined): Said[
 
 function dayAriaLabel(board: PlateDay): string {
   return `日家 ${board.yang ? '陽' : '陰'} — ${board.palaces
-    .map((palace) => `${palace.palace.hanzi}: ${palace.gate?.hanzi ?? ''}${palace.star.hanzi}`)
+    .map(
+      (palace) =>
+        `${palace.palace.hanzi}: ${palace.gate?.hanzi ?? ''}${palace.star.hanzi}` +
+        (board.xishen?.palace.number === palace.palace.number ? ` ${board.xishen.hanzi}` : ''),
+    )
     .join(', ')}`;
 }
 

@@ -40,6 +40,19 @@ export interface PlateDay {
   yang: boolean;
   palaces: readonly PlateDayPalace[];
   moment: PlateChart['moment'];
+  /**
+   * 喜神, and the palace whose bearing it stands in.
+   *
+   * **The one thing of the day's twelve hours that is drawn**, because it is a
+   * bearing and a bearing has a palace: it is marked along the foot of that
+   * palace, where the hour board marks a configuration. The hours themselves
+   * are a table of twelve rows and four marks, which is the transcript's — a
+   * grid of nine directions has no place to put an hour.
+   *
+   * Optional, as everything here is that the drawing can do without: a board
+   * cached before the engine carried it draws the palaces alone.
+   */
+  xishen?: { hanzi: string; pinyin?: string | undefined; palace: { number: number } } | undefined;
 }
 
 export interface PlateDayPalace {
@@ -156,6 +169,8 @@ export interface PlateLabels {
   valence?: Record<string, string>;
   /** The word for a layer — the gates, the stars, both — as a place. */
   layer?: Record<string, string>;
+  /** The words for what a day puts on an hour, of which the drawing reads `xishen`. */
+  hourMark?: Record<string, string>;
 }
 
 /**
