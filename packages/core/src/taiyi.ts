@@ -21,7 +21,7 @@ import type { Element } from './types.js';
  * this. **The text states its own epoch and then checks it**, which is what
  * made this board possible at all: three 上元積年 appear in it, in three
  * different chapters and differing by millions, and all three are congruent
- * modulo 周紀法 三百六十 — the one residue every placement in the 年計 reduces
+ * modulo 周紀法 三百六十 — the one residue every placement in the 歲計 reduces
  * by. The magnitude is unsettled and irrelevant; the board is not. See the
  * 太乙 section of `docs/sources.md`, where the figures are quoted and the
  * arithmetic is done.
@@ -141,7 +141,7 @@ const ANCHOR_YEAR = 724;
 /**
  * The counts the text anchors at 開元十二年, each with its own 上元.
  *
- * They are not one number scaled: 卷一's is the count the 年計 proper runs on,
+ * They are not one number scaled: 卷一's is the count the 歲計 proper runs on,
  * 卷四's 小遊 count and 卷五's 五福, 大遊 and 三基 counts each come from a
  * different epoch, and the text states each separately. Every one of them is
  * quoted in `docs/sources.md`.
@@ -481,6 +481,17 @@ export interface TaiyiBoard {
    * years against this number, which is the longest check the text offers.
    */
   liuji: { number: number; year: number };
+  /**
+   * 入元 — which of the five 元 the year stands in, and the year that heads it.
+   *
+   * The same count cut the other way: 「先以周紀法三百六十去之，餘以七十二約之，
+   * 不盡為入元局數也」, 卷三 五子元積年立成法. The quotient is the 元 and the
+   * remainder the 局, so five 元 of seventy-two fill a 周紀, and each is named
+   * for the year it opens on — 甲子, 丙子, 戊子, 庚子, 壬子, the 五子元 of the
+   * heading. Both witnesses address a board by the two together, 「第五壬子元
+   * 五十八局」.
+   */
+  yuan: { number: number; head: Ganzhi };
   /** 局 — the row of the 立成 of seventy-two this year falls on. */
   ju: number;
   /** 太乙 itself, which is also the 小遊: 卷五 says so and the counts agree. */
@@ -559,7 +570,7 @@ const GATE_ORDER: readonly Gate[] = (
 /* ── Casting ──────────────────────────────────────────────────────────── */
 
 /**
- * Lays the 年計 board for a year.
+ * Lays the 歲計 board for a year.
  *
  * The year is the whole of the input. There is no place, no hour and nobody's
  * date of birth in it, which is what lets the section that shows it be cached
@@ -599,6 +610,9 @@ export function taiyiBoard(request: { year: number }, options: TaiyiOptions): Ta
   const intoCycle = inclusive(accumulated.taiyi, 360);
   const liuji = { number: Math.floor((intoCycle - 1) / 60) + 1, year: inclusive(intoCycle, 60) };
   const ju = inclusive(intoCycle, 72);
+  const yuanNumber = Math.floor((intoCycle - 1) / 72) + 1;
+  // Opened by the year 72 × (n − 1) into the 周紀, whose pair is a 子 every time.
+  const yuan = { number: yuanNumber, head: ganzhiOf((72 * (yuanNumber - 1)) % 60) };
 
   const board = taiyiJu(ju, 'yang', options);
 
@@ -611,6 +625,7 @@ export function taiyiBoard(request: { year: number }, options: TaiyiOptions): Ta
     sui,
     accumulated,
     liuji,
+    yuan,
     ju,
     ...board,
     heshen,
@@ -626,7 +641,7 @@ export function taiyiBoard(request: { year: number }, options: TaiyiOptions): Ta
  * Everything the 立成 of seventy-two holds, for one of its rows.
  *
  * Split out because 卷三 prints the table twice — 陽局 and 陰局 — and the two
- * are the same procedure counted from opposite seats. The 年計 uses the yang
+ * are the same procedure counted from opposite seats. The 歲計 uses the yang
  * table alone; the yin one is here because it is what the text's own worked
  * boards in 卷六 and 卷九 are checked against, and because the registers
  * below the year will need it.
@@ -1140,7 +1155,7 @@ export function taiyiYearOf(
  * attached and none of them are on this board.
  *
  * **Every surface has to answer «now» with this and not with its own clock.**
- * A 年計 board is a function of the year and of nothing else, so a page reading
+ * A 歲計 board is a function of the year and of nothing else, so a page reading
  * the browser's calendar year and a command reading the pillars would lay two
  * different boards for one instant every January — and the one served in
  * public would be cached that way for a week.

@@ -462,7 +462,7 @@ export interface TaiyiReadingRequest {
  * The board, the instructions for reading it, and the year it is laid on.
  *
  * **The only prompt here without a `Moment`**, matching `taiyiTranscript`: a
- * 年計 board is a function of a year and there is no instant, no place and no
+ * 歲計 board is a function of a year and there is no instant, no place and no
  * set of pillars under it. Nobody's data enters it, which is what lets the
  * endpoint that serves this be cached in public — the first prompt on this site
  * that can be.

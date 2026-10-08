@@ -472,14 +472,8 @@ engine fails those suites until it is added there; nothing says it silently.
 a board.** The drawing marks 喜神 on the palace of its bearing and leaves the
 twelve hours to the transcript, being a grid of directions with no place for
 an hour; `draw_qimen_chart` says so. The section was looked at on 2026-10-08
-in a browser, at a desktop width, at 375px and on paper.
-
-**A section's almanac runs past a phone's edge.** At 375px the 曆注 block of
-the hour board — `CalendarAndAlmanac.svelte`, whose `dt` and `.entry` do not
-wrap — is 426px wide and the page scrolls sideways; seen on `/it/qimen` on
-2026-10-08, the day the introduction above it stopped doing the same. The
-board of a day carries no such block. What it needs is the measure of the
-longest entry against the column it is set in, read in a browser.
+in a browser, at a desktop width, at 375px and on paper, and every section
+was measured at 375px on the same day and holds to the screen's edge.
 
 What the same board waits on that is no surface — a prompt of its own, the
 scan and the 年命 — is on its line in § 1.
@@ -513,29 +507,6 @@ or a resvg that resolves a stack a character at a time, which the latest
 a thousand pixels on the runtime image, about three on a machine holding
 several hundred faces. Nothing in this repository asks for a PNG — the entry
 point is exported and no surface imports it — so neither moves a term.
-
-**The 元 does not leave the engine.** Both witnesses address a 太乙 board as
-「第五壬子元 58 局」 — five 元 of seventy-two to a 周紀 — and `TaiyiBoard` hands
-over the 紀 and the 局 while computing the 元 and never naming it. What it costs:
-a field beside `liuji`, a label pair in both catalogs, a line in the transcript
-and on the section, and no register row, since the count it is cut from is
-already weighed under the epoch. It moves the second term of the version, an
-existing answer gaining a field.
-
-**The Italian catalog still carries em dashes**, nearly a hundred of them. `docs/i18n.md` says
-a vernacular is punctuated in its own conventions and that `—` is English; what
-is written today predates the rule, and the sweep is a reading of every line
-rather than a substitution, since each dash becomes a comma, a colon, a
-semicolon or a parenthesis depending on the turn it was making. Nothing is
-asserted by a test until the sweep has run, because a test that fails
-a hundred times on the day it lands tells nobody anything. Shipping nothing,
-it moves no term.
-
-**Comments still call the register 年計**, some twenty of them. The parameter's name is
-now 歲計, which is what both witnesses call it, and the identifier stays
-`nianji`; the prose around the code kept the name in modern circulation. The
-sweep is mechanical and touches no behaviour — and, shipping nothing, moves no
-term.
 
 ## 7. What is refused and stays refused
 

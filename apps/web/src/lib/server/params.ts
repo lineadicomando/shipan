@@ -135,7 +135,7 @@ export function readTaiyiYear(params: URLSearchParams): { year: number; named: b
 /**
  * How long a 太乙 answer may be kept.
  *
- * `public` either way, because a 年計 board holds nobody's data — that much is
+ * `public` either way, because a 歲計 board holds nobody's data — that much is
  * a property of the board and does not turn on the address. What does turn on
  * it is the *keeping*: a named year is a pure function of the URL and keeps
  * for a week, while an address that names none is a function of the server's
@@ -585,7 +585,7 @@ export function readQizhengOptions(params: URLSearchParams): QizhengOptions {
  *
  * Every one of them has a single implemented value today, which is why the
  * four endpoints passed `DEFAULT_TAIYI_OPTIONS` straight through and an
- * address asking for the 月計 got the 年計 in silence. A parameter with one
+ * address asking for the 月計 got the 歲計 in silence. A parameter with one
  * value is not a parameter nobody may name — it is one whose other values
  * come back a 501.
  */

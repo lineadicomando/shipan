@@ -414,6 +414,12 @@ describe('開元十二年 (724)', () => {
     expect(board.liuji).toEqual({ number: 3, year: 1 });
   });
 
+  it('stands in the second 元, the one 丙子 opens', () => {
+    // 121 into the 周紀: one 元 of seventy-two gone, and 49 into the next.
+    expect(board.yuan.number).toBe(2);
+    expect(board.yuan.head.hanzi).toBe('丙子');
+  });
+
   it('falls on 局 49 and opens the walk of 太乙', () => {
     expect(board.ju).toBe(49);
     expect(board.taiyi.palace.number).toBe(1);
@@ -532,6 +538,22 @@ describe('開元十二年 (724)', () => {
  * so the list here carries the years the sequence requires, and the wrinkle is
  * written down in `docs/sources.md` rather than smoothed away.
  */
+describe('the five 元 of a 周紀', () => {
+  it('opens each on the year whose 太歲 is the 子 it is named for, and on 局 1', () => {
+    const opened = [];
+    for (let year = 724; year < 724 + 360; year += 1) {
+      const board = taiyiBoard({ year }, options);
+      // 局 runs on inside its 元, and the two together are the place in the 周紀.
+      expect((board.yuan.number - 1) * 72 + board.ju).toBe(((year - 724 + 120) % 360) + 1);
+      if (board.ju === 1) {
+        expect(board.yuan.head.hanzi).toBe(board.sui.hanzi);
+        opened.push(`${board.yuan.number}${board.yuan.head.hanzi}`);
+      }
+    }
+    expect(opened.sort()).toEqual(['1甲子', '2丙子', '3戊子', '4庚子', '5壬子']);
+  });
+});
+
 describe('the twenty-six reigns of 卷二', () => {
   it('enters the 紀 the text assigns, at every one of them', () => {
     const first = 724 - 1560; // 周厲王三十七年甲子, 837 BCE in astronomical numbering.

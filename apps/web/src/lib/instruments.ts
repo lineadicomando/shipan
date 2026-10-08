@@ -82,7 +82,7 @@ export interface Instrument {
    *
    * **It also settles the address and whether a moment comes back**, and that
    * is one reason rather than two folded together: this is the column that says
-   * what the board is a function of. A 年計 board is a function of `year=N`, and
+   * what the board is a function of. A 歲計 board is a function of `year=N`, and
    * `/api/taiyi` returns no moment because there is no instant under it.
    */
   readonly needs: 'question' | 'birth' | 'year';

@@ -100,6 +100,20 @@ describe('catalog parity', () => {
   });
 
   /**
+   * The em dash is English punctuation, and Italian makes the same turn with a
+   * comma, a colon, a semicolon or parentheses. `docs/i18n.md` argues it.
+   *
+   * Italian only, and values only: `en.ts` keeps its dashes, and a comment in
+   * either catalog is English. Asserted from the day the last five went, each
+   * replaced by the mark its turn asked for rather than by substitution.
+   */
+  it('punctuates Italian without the em dash', () => {
+    for (const [key, message] of Object.entries(italian)) {
+      expect(message, `it / ${key}`).not.toContain('—');
+    }
+  });
+
+  /**
    * A reading of 命 is addressed to the person the board was laid on, and the
    * board is told their gender. The prompt must not presume it instead.
    *

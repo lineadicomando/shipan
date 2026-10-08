@@ -222,7 +222,7 @@ the engine falls back to Moshier, which needs no files.
   translates; nobody parses prose. See `lib/server/errors.ts`.
 - **A chart is cacheable `private`, never `public`.** Its URL holds somebody's
   date, time and place of birth. The solar terms are `public`, and so is a
-  太乙 年計 board and its prompt — they are about the sky and a year, and hold
+  太乙 歲計 board and its prompt — they are about the sky and a year, and hold
   nobody's data. → [`docs/readings.md`](docs/readings.md)
 - **The site installs, and an installed copy keeps the site and nothing that
   was asked of it.** No board can be laid without a network — the engine is on

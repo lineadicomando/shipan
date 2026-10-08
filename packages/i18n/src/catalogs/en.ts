@@ -684,6 +684,7 @@ export const en = {
   'label.taiyi.minji': 'the people’s base',
   'label.taiyi.wufu': 'the five blessings',
   'label.taiyi.dayou': 'the great circuit',
+  'label.taiyi.yuan': 'the five periods',
   'label.taiyi.liuji': 'the six eras',
   'label.taiyi.ju': 'arrangement',
   'label.taiyi.accumulated': 'years accumulated',
@@ -916,7 +917,7 @@ export const en = {
   // arrow readable — see `Icon.svelte`.
   'nav.top': 'Back to top',
 
-  // On the bar under the 太乙 board, which is the whole of the form: a 年計
+  // On the bar under the 太乙 board, which is the whole of the form: a 歲計
   // board is a function of the year and of nothing else.
   'form.year': 'Year',
   'form.copyTaiyi': 'Copy the board as text',

@@ -675,6 +675,7 @@ export const it: Record<MessageKey, string> = {
   'label.taiyi.minji': 'la base del popolo',
   'label.taiyi.wufu': 'le cinque felicità',
   'label.taiyi.dayou': 'il grande giro',
+  'label.taiyi.yuan': 'i cinque periodi',
   'label.taiyi.liuji': 'le sei ere',
   'label.taiyi.ju': 'disposizione',
   'label.taiyi.accumulated': 'anni accumulati',
@@ -880,8 +881,8 @@ export const it: Record<MessageKey, string> = {
   // rende leggibile la freccia — è il punto per cui la parola c'è.
   'nav.top': 'Torna su',
 
-  // Sulla barra sotto la tavola di 太乙, che è tutto il modulo: una tavola
-  // 年計 è funzione dell'anno e di nient'altro.
+  // On the bar under the 太乙 board, which is the whole of the form: a 歲計
+  // board is a function of the year and of nothing else.
   'form.year': 'Anno',
   'form.copyTaiyi': 'Copia la tavola come testo',
 
@@ -999,7 +1000,7 @@ export const it: Record<MessageKey, string> = {
   // `meta.intro.qimen.a`: si accorda con la lettura, e una «z» iniziale vuole
   // l'articolo che vuole lo zaino.
   'meta.intro.moments.a':
-    'Nel pensiero classico orientale il tempo non è un flusso uniforme, ma una successione di qualità energetiche differenti. Lo 擇日 zérì è la disciplina che legge quelle qualità prima di intraprendere qualcosa. Indichi che cosa deve valere per un’ora — per iniziare un’attività, prendere una decisione, avviare un progetto — e le ore che rispondono a quei criteri sono quelle che vedi elencate.',
+    'Nel pensiero classico orientale il tempo non è un flusso uniforme, ma una successione di qualità energetiche differenti. Lo 擇日 zérì è la disciplina che legge quelle qualità prima di intraprendere qualcosa. Indichi che cosa deve valere per un’ora (per iniziare un’attività, prendere una decisione, avviare un progetto) e le ore che rispondono a quei criteri sono quelle che vedi elencate.',
   // Dice che cosa fa la sezione, che è il mestiere di ogni secondo paragrafo.
   // Il modulo qui sotto ha due gambe, «L’intervallo e il luogo» e «Che cosa
   // cercare»: la frase le tiene tutte e due implicite — il flusso temporale è
@@ -1115,7 +1116,7 @@ export const it: Record<MessageKey, string> = {
   // parola: due dei sette sono il Sole e la Luna, che stanno fuori dal conto
   // di cinque che i pianeti sono.
   'meta.intro.qizheng.a':
-    'Il 七政四餘 qīzhèng sìyú è la forma classica dell’astrologia oroscopica cinese, fondata sul movimento effettivo dei corpi celesti. Porta il percorso dei sette governatori — il Sole, la Luna e i cinque pianeti — e dei quattro complementi (i due nodi lunari, l’apogeo della Luna e 紫氣 zǐqì) attraverso le ventotto dimore 宿 xiù.',
+    'Il 七政四餘 qīzhèng sìyú è la forma classica dell’astrologia oroscopica cinese, fondata sul movimento effettivo dei corpi celesti. Porta il percorso dei sette governatori (il Sole, la Luna e i cinque pianeti) e dei quattro complementi (i due nodi lunari, l’apogeo della Luna e 紫氣 zǐqì) attraverso le ventotto dimore 宿 xiù.',
   // Quel che non dice più è che la latitudine non entra in nessun calcolo.
   // Lo dicono le note, sotto un rifiuto tutto suo, che è dove `CLAUDE.md` lo
   // vuole: nella documentazione e non nel modulo.
@@ -1266,10 +1267,10 @@ export const it: Record<MessageKey, string> = {
   'label.contested': 'qui le scuole divergono',
   'form.bazi.luckGranularity': 'La serie dei decenni si colloca contando',
   'form.bazi.luckGranularity.shichen':
-    'giorni interi e doppie ore intere 時辰 shíchén, lasciando cadere il resto — la lettura classica',
+    'giorni interi e doppie ore intere 時辰 shíchén, lasciando cadere il resto: è la lettura classica',
   'form.bazi.luckGranularity.minute': 'fino al minuto',
   'form.bazi.luckGranularity.note':
-    'Tre giorni di calendario rispondono a un anno vissuto, un giorno a quattro mesi, una doppia ora a dieci giorni. Le due letture partono da quella regola e si dividono su dove fermarsi, quindi divergono fino a dieci giorni su quando si apre il primo decennio — e quella classica dà giorni d’inizio in multipli di dieci perché è stata letta su un orologio che non aveva minuti.',
+    'Tre giorni di calendario rispondono a un anno vissuto, un giorno a quattro mesi, una doppia ora a dieci giorni. Le due letture partono da quella regola e si dividono su dove fermarsi, quindi divergono fino a dieci giorni su quando si apre il primo decennio, e quella classica dà giorni d’inizio in multipli di dieci perché è stata letta su un orologio che non aveva minuti.',
   'form.ziwei.sihua': 'Le quattro trasformazioni seguono',
   'form.ziwei.sihua.quanshu': 'il 《紫微斗數全書》 zǐwēidǒushùquánshū, che dà a 壬 rén il suo 科 kē a 天府 tiānfǔ',
   'form.ziwei.sihua.zuofu': 'la lettura che insegnano due scuole moderne, che sposta quel 科 kē a 左輔 zuǒfǔ',
@@ -1751,7 +1752,7 @@ export const it: Record<MessageKey, string> = {
   'notes.refusals.ziqi.title': '紫氣 zǐqì, il quarto complemento',
   'notes.refusals.ziqi.asks': 'chi si aspetta quattro 餘 yú su una tavola di 七政四餘 qīzhèng sìyú.',
   'notes.refusals.ziqi.body':
-    'Tre dei quattro sono collocati dalle effemeridi e il quarto è collocato da una regola trasmessa. Quel che resta rifiutato è un grado per esso: la regola dà un palazzo, e una dimora è un tratto di una tredicina di gradi dentro un palazzo di trenta. Ciascuna metà di quella collocazione — la velocità, e l’unica carta datata del 1886 da cui è portata — poggia su un testo solo, dove gli altri tre poggiano sul cielo. La tavola lo dice sotto di sé, e puoi stenderla senza il quarto.',
+    'Tre dei quattro sono collocati dalle effemeridi e il quarto è collocato da una regola trasmessa. Quel che resta rifiutato è un grado per esso: la regola dà un palazzo, e una dimora è un tratto di una tredicina di gradi dentro un palazzo di trenta. Ciascuna metà di quella collocazione (la velocità, e l’unica carta datata del 1886 da cui è portata) poggia su un testo solo, dove gli altri tre poggiano sul cielo. La tavola lo dice sotto di sé, e puoi stenderla senza il quarto.',
   'notes.refusals.feixing.title': 'Le collocazioni delle 十八飛星 shíbāfēixīng',
   'notes.refusals.feixing.asks': 'chi ha in mano entrambi i libri del 紫微斗數 zǐwēi dǒushù.',
   'notes.refusals.feixing.body':

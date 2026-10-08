@@ -35,7 +35,7 @@ import type { RequestHandler } from './$types';
  * and the readings are said together in the band under the grid, as they are
  * on every other drawing here.
  *
- * `public` like the board itself: a 年計 board holds nobody's data.
+ * `public` like the board itself: a 歲計 board holds nobody's data.
  */
 export const GET: RequestHandler = ({ url, request, setHeaders }) => {
   try {

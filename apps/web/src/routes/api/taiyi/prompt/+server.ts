@@ -20,7 +20,7 @@ import type { RequestHandler } from './$types';
  * **The first prompt on this site that is cacheable `public`**, and it is a
  * property of the board rather than a relaxation of anything. The other four
  * prompt endpoints are pure functions of their URLs too, but the key of a
- * shared cache would hold somebody's date, time and place of birth. A 年計
+ * shared cache would hold somebody's date, time and place of birth. A 歲計
  * board holds nobody's data: it is a function of a year, like the solar terms
  * and for the same reason. Nothing here is anybody's, so nothing here needs
  * keeping out of a cache.

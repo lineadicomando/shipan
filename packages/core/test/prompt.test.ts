@@ -582,7 +582,7 @@ describe('the prompt for a board of 天', () => {
   });
 
   /**
-   * It takes no `Moment`, which no other prompt here can say. A 年計 board is a
+   * It takes no `Moment`, which no other prompt here can say. A 歲計 board is a
    * function of a year: there is no instant, no place and no set of pillars
    * under it, and nobody's data is in it — which is what lets the endpoint that
    * serves it be cached in public.

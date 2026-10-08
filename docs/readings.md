@@ -57,7 +57,7 @@ fields ask for that instead.
 
 **Under 天 there is no person.** `MomentForm` is absent altogether and the
 whole of the form is one number. Empty there is the year being lived: an empty
-year is everybody's answer where an empty birth is nobody's. A 年計 board has
+year is everybody's answer where an empty birth is nobody's. A 歲計 board has
 no moment, so reading `castMoment` unguarded is an exception in the middle of
 a successful cast.
 
@@ -70,7 +70,7 @@ along the way.
 
 Under 命 or 天 there is nothing to withhold — nothing is asked of those boards
 — and the line the prompt ends on is not there either. Under 天 that is what
-makes `/api/taiyi/prompt` the one prompt endpoint cacheable `public`: a 年計
+makes `/api/taiyi/prompt` the one prompt endpoint cacheable `public`: a 歲計
 board and its instructions are a pure function of a year and hold nobody's
 data. Everything else is `private`, never `public`: a chart is a pure function
 of its URL, but the key of a shared cache would hold somebody's date, time and

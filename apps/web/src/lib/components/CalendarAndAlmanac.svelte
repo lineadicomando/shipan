@@ -208,6 +208,14 @@
   }
   dt { grid-column: 1; white-space: nowrap; }
   dd { grid-column: 2; margin: 0; }
+  /* On a phone the term stands over what it names. Beside it, the widest
+     entry — 金神 on six branches is 265px — and a label of 107px ran the page
+     51px past the edge, and an entry may not be split to make room. */
+  @media (max-width: 34rem) {
+    dl { grid-template-columns: 1fr; }
+    dt, dd { grid-column: 1; }
+    dd + dt { margin-block-start: 0.35rem; }
+  }
   /* A run of gods wraps as a run, and no entry is ever split across a line. */
   .entry { display: inline-block; margin-inline-end: 0.6rem; white-space: nowrap; }
   /* The virtue the day actually holds is the news. Weight, not colour, so the

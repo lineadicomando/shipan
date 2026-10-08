@@ -33,6 +33,31 @@
       "number": 6,
       "year": 43
     },
+    "yuan": {
+      "number": 5,
+      "head": {
+        "index": 48,
+        "stem": {
+          "index": 8,
+          "id": "ren",
+          "hanzi": "壬",
+          "pinyin": "rén",
+          "element": "shui",
+          "yang": true
+        },
+        "branch": {
+          "index": 0,
+          "id": "zi",
+          "hanzi": "子",
+          "pinyin": "zǐ",
+          "element": "shui",
+          "yang": true
+        },
+        "hanzi": "壬子",
+        "pinyin": "rénzǐ",
+        "id": "renzi"
+      }
+    },
     "ju": 55,
     "taiyi": {
       "palace": {
@@ -628,6 +653,31 @@
     "liuji": {
       "number": 6,
       "year": 37
+    },
+    "yuan": {
+      "number": 5,
+      "head": {
+        "index": 48,
+        "stem": {
+          "index": 8,
+          "id": "ren",
+          "hanzi": "壬",
+          "pinyin": "rén",
+          "element": "shui",
+          "yang": true
+        },
+        "branch": {
+          "index": 0,
+          "id": "zi",
+          "hanzi": "子",
+          "pinyin": "zǐ",
+          "element": "shui",
+          "yang": true
+        },
+        "hanzi": "壬子",
+        "pinyin": "rénzǐ",
+        "id": "renzi"
+      }
     },
     "ju": 49,
     "taiyi": {

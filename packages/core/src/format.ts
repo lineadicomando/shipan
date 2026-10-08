@@ -1039,7 +1039,10 @@ export function formatTaiyi(board: TaiyiBoard, t: Translator): string {
       [t('cli.field.taiyiSui'), ganzhi(board.sui, t)],
       [
         t('cli.field.taiyiJu'),
-        `${board.ju} · ${t('label.taiyi.liuji')} ${board.liuji.number}/${board.liuji.year}`,
+        // The 局 leads, the row being its own; the 元 follows it, which is the
+        // other half of how the witnesses address a board: 第五壬子元五十八局.
+        `${board.ju} · ${t('label.taiyi.yuan')} ${board.yuan.number} ${glyph(board.yuan.head)}` +
+          ` · ${t('label.taiyi.liuji')} ${board.liuji.number}/${board.liuji.year}`,
       ],
       [
         t('label.taiyi.taiyi'),

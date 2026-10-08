@@ -3,7 +3,7 @@ import type { PageLoad } from './$types';
 /**
  * The one section on this site whose whole address is a number.
  *
- * No place, no hour, no birth: a 年計 board is a function of the year and of
+ * No place, no hour, no birth: a 歲計 board is a function of the year and of
  * nothing else, so the load is a year and a fetch. An empty address is the
  * year being stood in, which is the right default here in a way it is nowhere
  * else — a board of now is the board everybody is standing in.

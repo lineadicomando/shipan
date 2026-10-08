@@ -86,7 +86,7 @@ export interface Failure {
  *
  * Seven sections read a place out of a URL and one of them is not a moment —
  * the interval of `moments` — so this is the piece they share rather than a
- * copy of three lines apiece. 太乙 is the eighth and reads none: a 年計 board
+ * copy of three lines apiece. 太乙 is the eighth and reads none: a 歲計 board
  * takes no place and no hour.
  */
 export function readPlaceInput(params: URLSearchParams): Omit<PlaceInput, 'place'> {

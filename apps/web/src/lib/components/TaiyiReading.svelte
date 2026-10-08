@@ -63,6 +63,11 @@
     <strong>{seat(board.taiyi.palace)}</strong>
     <span class="glyph">{board.taiyi.year}/3</span>
     · {t('label.taiyi.ju')} <strong>{board.ju}</strong>
+    <!-- Guarded: a board cached before the field existed has no 元. -->
+    {#if board.yuan}
+      · {t('label.taiyi.yuan')} <strong>{board.yuan.number}</strong>
+      <span class="glyph">{glyph(board.yuan.head)}</span>
+    {/if}
     · {t('label.taiyi.liuji')} <strong>{board.liuji.number}</strong>
     <span class="glyph">{board.liuji.year}/60</span>
   </p>

@@ -100,7 +100,7 @@ describe('GET /api/taiyi', () => {
   it('is the one board here that may be cached in public', async () => {
     // Every other endpoint is a pure function of its URL too, and every other
     // one is `private`, because the key of a shared cache would hold somebody's
-    // date, time and place of birth. A 年計 board holds nobody's data: it is a
+    // date, time and place of birth. A 歲計 board holds nobody's data: it is a
     // function of the year, like the solar terms and for the same reason.
     const { headers } = await call(taiyi, 'year=2026');
     expect(headers['cache-control']).toContain('public');
@@ -170,7 +170,7 @@ describe('GET /api/taiyi', () => {
   });
 
   it('keeps a named year for a week and an unnamed one for an hour', async () => {
-    // Both public — a 年計 board holds nobody's data either way. What differs
+    // Both public — a 歲計 board holds nobody's data either way. What differs
     // is the keeping: with no year in the address the answer is a function of
     // the server's clock, and one cached for a week goes on serving the old
     // board through the first week of the new year.
@@ -368,7 +368,7 @@ describe('GET /api/qizheng', () => {
  *
  * Four of the five hand the moment over beside the board; `/api/qimen` keeps it
  * inside the chart, because a chart carries its own. `/api/taiyi` is the sixth
- * and is not here at all: a 年計 board is laid on a year and has no instant to
+ * and is not here at all: a 歲計 board is laid on a year and has no instant to
  * yield, which is why the consultation guards `castMoment` rather than reading
  * it. The consultation
  * read `body.moment` alone from the day a second board arrived, so every Qi Men
@@ -1001,7 +1001,7 @@ describe('GET /api/ziwei', () => {
  * the parameters with a second implemented value, so a value the engine
  * declares and does not compute was passed over and the board came back on the
  * default — 六壬 turned at the 中氣 under an address naming the 節氣, 太乙 in
- * the 年計 under one naming the 月計. A refused value has to come back refused,
+ * the 歲計 under one naming the 月計. A refused value has to come back refused,
  * and a table of examples would only ever cover the boards somebody remembered.
  *
  * `bazi` and `nianming` carry no unimplemented value today, so the loop finds
@@ -1652,7 +1652,7 @@ describe('the address every board cites', () => {
       slug: 'taiyi',
       handlers: [taiyiText, taiyiPrompt],
       fixed: 'year=2026',
-      // A 年計 board has no instant under it at all: an address that names no
+      // A 歲計 board has no instant under it at all: an address that names no
       // year is the year being lived, and it is the year that gets pinned.
       open: { query: '', pins: 'year=' },
       board: taiyi,

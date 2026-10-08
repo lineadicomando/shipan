@@ -583,6 +583,7 @@ describe('the register weighs what a board hands out', () => {
       sui: ['the 太歲 the count yields'],
       accumulated: ['the epoch — 上元積年'],
       liuji: ['the epoch — 上元積年'],
+      yuan: ['the epoch — 上元積年'],
       ju: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神'],
       taiyi: [
         'the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神',

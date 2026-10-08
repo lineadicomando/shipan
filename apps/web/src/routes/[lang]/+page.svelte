@@ -485,7 +485,7 @@
       //
       // Under 天 none of that applies and none of it is sent. The place and
       // the options are still standing in this page's state, because they are
-      // setup a reader set once — but a 年計 board is a function of a year, and
+      // setup a reader set once — but a 歲計 board is a function of a year, and
       // handing it a `locationId` it would ignore is how a reader comes to
       // believe their city went into it.
       // No `lang` under 天: the board comes back as identifiers, hanzi and
@@ -548,7 +548,7 @@
       /**
        * The address of what was laid, and under 天 there is no moment in it.
        *
-       * The two branches are not a convenience. A 年計 board has no instant, no
+       * The two branches are not a convenience. A 歲計 board has no instant, no
        * place and no pillars under it, so `castMoment` is legitimately null
        * here — and the line below this one used to read `castMoment.input.date`
        * unconditionally, which on this board is an exception thrown in the
@@ -955,7 +955,7 @@
 
           Under a board of 天 the whole component is **absent**, which is the one
           thing `when` could not express. There is no instant here to put in the
-          open or under a disclosure, and no place either: a 年計 board is a
+          open or under a disclosure, and no place either: a 歲計 board is a
           function of a year, and a field asking where you are standing would be
           the page collecting a datum the board cannot use and the reader would
           assume it had. What stands in its place is the one number below.
@@ -1092,7 +1092,7 @@
          it is read with the answer rather than beside a button.
 
          The place is left off under 天, and not for tidiness: it never reached
-         the board. A bar reading «2026 · Roma» would say a 年計 board had been
+         the board. A bar reading «2026 · Roma» would say a 歲計 board had been
          laid somewhere, which is the one thing about this instrument a reader
          has to not believe. -->
     {#snippet summary()}
