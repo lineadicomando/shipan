@@ -105,7 +105,9 @@ fifth and carries 坤's own 庚. One heaven-plate cell, and the text's own 夾�
 disputes which star does the carrying rather than whether one does, so it is one
 work quarrelling with itself and not yet a school. Naming it wants a second
 witness. → `docs/sources.md` § "《奇門探索錄》, which derives the pin the 統宗
-only asserts".
+only asserts". 《遁甲符應經》 has the earth plate's side of it, a 格 marked by
+the centre's stem at 坤 and not by 坤's own, which is a neighbour and not that
+witness → `docs/sources.md` § "《遁甲符應經》 from 三甲 to its 後序".
 
 ### The state of each divergence, art by art
 
@@ -142,6 +144,10 @@ is what holds.
 | the 值使 from the earth plate or the heaven plate | recorded | chosen by the matter asked |
 | the leap block at any of the eight 節 | recorded | asks for a judgement |
 | which stem a star carries off 坤 | recorded | one work quarrelling with itself |
+| which stem a stem coming to 坤 stands over | recorded | 《遁甲符應經》 marks 太白入熒惑 by the centre's 丙 lodged there, on a board where this engine marks 刑格 by 坤's own 己. One case, corrupt in one copy and whole in the other |
+| the tomb of 丁 | recorded | 艮 in the 統宗's 四十格, which `TOMB` follows; 乾 with 丙 in 《遁甲符應經》, under 璋曰, in both copies. One cell of four |
+| 三奇入墓 and 六儀擊刑 read off the hour | recorded | 乙未 and 丙戌, and the hour whose branch the decade's punishes: 《遁甲符應經》 states each beside the palace reading this engine computes |
+| 三奇得使 | recorded | 葛洪's pairing in 《遁甲符應經》, with four boards worked of which one lays. Stays out of `findPatterns` |
 
 Four readings of where the centre lodges and the earth plate laid by the
 decade left this table on 2026-10-07 and are computed; `docs/sources.md`
@@ -326,7 +332,7 @@ other transmission.
 
 | | what it was bought to answer | where |
 |---|---|---|
-| **景佑《御定奇門大全》** | a **起例 variant**, which is where every divergence on this shelf has come from. **Its 目錄 is now read whole and its 卷一 opened** (2026-09-10), and the variant is not there: 卷一–四 are 景祐秘纂, whose opening chapter 超神接氣直指 is 《奇門探索錄》卷三's chapter on a plate — the same headings, the same 芒種大雪 placement, the same derivation of `MAX_CHAOSHEN`, the same 萬曆己丑 worked examples. That is a second copy of a chapter this register has already weighed, so it moves no rung; what it does is put the derivation on a woodblock instead of on one Republican typesetting, and it obliges the count behind `leap: solstice` to be looked at again, two works agreeing possibly being one work in two compilations. **What is left unread is eleven of the other twelve works**, of which 卷五–十's eighteen 局 tables are a bench. 卷二十五, the 卷上 of its 遁甲符應經, was read on 2026-10-08 against the copy in 遁甲集成 第一冊: one text, with a 超接 and 置閏 passage dated 淳祐 that the other copy lacks → `docs/sources.md` § "《遁甲符應經》 in three copies, and what its 卷上 says". → `docs/sources.md` § "《奇門探索錄》, which derives the pin the 統宗 only asserts". Earlier: the plate disagrees with itself on the title — 景祐奇門大全 in its own preface (dated 永樂十二年), 御製奇門大全 at its first section heading, 御定奇門大全 in its 目錄 and at its closing colophon — three headings for one compilation running to 卷六十四, consistent with (not counted against) the seller's claimed thirteen works. Full detail in `texts/README.md`'s row | `yuding-qimen-daquan.pdf`, 1485 sheets two-up at **600 dpi**, the sharpest scan here — and 8-bit grayscale on inspection, not the 1-bit this row once said |
+| **景佑《御定奇門大全》** | a **起例 variant**, which is where every divergence on this shelf has come from. **Its 目錄 is now read whole and its 卷一 opened** (2026-09-10), and the variant is not there: 卷一–四 are 景祐秘纂, whose opening chapter 超神接氣直指 is 《奇門探索錄》卷三's chapter on a plate — the same headings, the same 芒種大雪 placement, the same derivation of `MAX_CHAOSHEN`, the same 萬曆己丑 worked examples. That is a second copy of a chapter this register has already weighed, so it moves no rung; what it does is put the derivation on a woodblock instead of on one Republican typesetting, and it obliges the count behind `leap: solstice` to be looked at again, two works agreeing possibly being one work in two compilations. **What is left unread is eleven of the other twelve works**, of which 卷五–十's eighteen 局 tables are a bench. 卷二十五, the 卷上 of its 遁甲符應經, was read on 2026-10-08 against the copy in 遁甲集成 第一冊: one text, with a 超接 and 置閏 passage dated 淳祐 that the other copy lacks → `docs/sources.md` § "《遁甲符應經》 in three copies, and what its 卷上 says". The rest of that work was read whole in 第一冊 the same day, and in this file only where a passage was set against it — sheets 607, 615–620, 631 and 637 of 599 to about 657: from 卷中 on it is another recension, with a 奇門四十格 list where the other copy has its sections → `docs/sources.md` § "《遁甲符應經》 from 三甲 to its 後序". → `docs/sources.md` § "《奇門探索錄》, which derives the pin the 統宗 only asserts". Earlier: the plate disagrees with itself on the title — 景祐奇門大全 in its own preface (dated 永樂十二年), 御製奇門大全 at its first section heading, 御定奇門大全 in its 目錄 and at its closing colophon — three headings for one compilation running to 卷六十四, consistent with (not counted against) the seller's claimed thirteen works. Full detail in `texts/README.md`'s row | `yuding-qimen-daquan.pdf`, 1485 sheets two-up at **600 dpi**, the sharpest scan here — and 8-bit grayscale on inspection, not the 1-bit this row once said |
 
 **None of the four bought on 2026-09-09 states a provenance**, and the 折衷
 carries a second watermark under the first. guoxueziyuan.com says only
@@ -360,7 +366,6 @@ entry shows. Ordered by what a reading would move.
 
 | | what would move | where |
 |---|---|---|
-| 《遁甲符應經》 卷中 · 卷下 | the 格 and the 下營 matter of a work whose 卷上 states 拆補, the lodging at 坤 and a 《三元經》 on the nine stars; read in neither copy | 遁甲集成 第一冊 from series p. 409; 《御定奇門大全》 卷二十六–二十七, sheets about 600–657 |
 | 《中國恆星觀測史》 第七章第一節二 | the 授時 lodge values, if a modern reconstruction can stand where the 曆's own table would | printed p. 272 |
 | SKQS vol. 809, 《星學大成》 | what 七政四餘's neighbours have wanted; unweighed until read | volume pp. 285–870, 三十卷, both ends read on the plate |
 | 《太乙數統宗大全》, 故宮 第420冊 | the 闕 of 卷一 read against a second hand; its own constants answered the other half and did not lift the refusal, being another calendar's | four leaves of 440 read — 卷二's calendrical apparatus and 卷三's 起例 |

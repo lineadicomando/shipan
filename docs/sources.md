@@ -1951,10 +1951,11 @@ opening of the work set at the head of something else**, which is what the
 總目錄's 《奇門遁甲》 is, and a citation of the clause at 第三冊 p. 1137 names a
 copy of it and not the wrong book. A third copy arrived unlooked for:
 《御定奇門大全》 gives the work its 卷二十五 to 卷二十七, on sheets 589 to about
-657 by the 版心, which reads 遁甲符應經 and the leaf. 卷上 was read in 第一冊
-(pp. 395–409, at the file's native 200 dpi) and in the 大全 (卷二十五 leaves
-1–11, sheets 589–598, with crops at 200) on 2026-10-08; 卷中 and 卷下 are read
-in neither.
+657 by the 版心, which reads 遁甲符應經 and the leaf. The first eighteen
+sections of 卷上 were read in 第一冊 (pp. 395–407, at the file's native 200 dpi)
+and in the 大全 (卷二十五 leaves 1–11, sheets 589–598, with crops at 200) on
+2026-10-08, and this section is about those. 卷上 runs on to p. 425; the rest
+of it, 卷中 and 卷下 are the section after this one.
 
 **The clause the 寄宮 row quotes collates across all three, and no copy puts a
 condition on it.**
@@ -2030,6 +2031,213 @@ text's. Neither was checked against a table of the calendar then in force.
 **So `leap: solstice`'s placement has a thirteenth-century statement on this
 shelf**, in a copy of one work, beside the Ming and Republican ones already
 weighed; the count behind that value is the count of works, and this is one.
+
+Last checked 2026-10-08.
+
+### 《遁甲符應經》 from 三甲 to its 後序: the rest of 卷上, 卷中 and 卷下
+
+**The work is now read whole in 第一冊, and 卷上 is half again as long as the
+entry above took it for.** The 目錄 (pp. 389–393) gives 卷上 thirty-odd
+sections, and it closes on 「遁甲符應經卷上終」 at p. 425; 卷中 opens at p. 427
+on 釋天遁第一 and 卷下 at p. 449 on 十干人君所利. Pp. 408–490 were read on
+2026-10-08, every sheet at 110 dpi and the passages quoted below again at the
+file's native 200. In the 大全 the same matter is sheets 599 to about 657; it
+was located on contact sheets and read at 85 dpi where a passage is set
+against it — sheets 607, 615–620, 631 and 637 — and nowhere else.
+
+**The two copies are two recensions from 卷中 on, and the juan are cut in
+different places.** 第一冊's 卷中 goes heading by heading — 三奇入墓, 六儀擊刑,
+太白入熒惑, 青龍回首, the 格 of 六庚 one by one — each under a 洪曰, a 璋曰 or a
+湯曰 and most with a board worked. The 大全 keeps 釋天遁第一 to 人遁第三 and
+then sets a list in their place, 奇門四十格第四, on leaves 2 to 7 of its
+卷二十六: one line an entry, the worked boards mostly gone, and entries
+第一冊 has no heading for — 神遁 · 鬼遁 · 風遁 · 雲遁 · 龍遁 · 虎遁, 小格,
+六儀受制, 尺寸高低. Its tail carries 三奇入墓, 六儀擊刑, 六儀受制, 天網四張 and
+尺寸高低, which are entries of the 統宗's 四十格 as the sections on that work
+record them. And the 大全 carries the work's 卷下 on
+into its own 卷二十六 as far as 三勝宮第四, opening 卷二十七 on 五不可擊第五.
+**So what the 大全 adds in 卷中 is matter added to the work**, as its 淳祐
+passage in 卷上 is, and a line of that list is the list's and not the 景祐
+text's.
+
+**The work closes on a 後序 dated 永樂十二年**, in 第一冊 alone, pp. 489–490:
+written 「永樂歲在甲午孟秋」 by a 欽天監五官司曆, on the occasion of the work
+being cut again. The preface that opens the 大全 carries the same year. Whether
+that preface is this one's sibling was not looked at; it is a lead on what the
+大全 was compiled from and nothing rests on it.
+
+**門迫 is printed with all thirteen cells, in both copies.** 第一冊
+pp. 418–419:
+
+> 經曰：宮制其門，是為門迫；門制其宮，是為宮迫。若吉門被迫則吉事不成，凶門
+> 被迫凶災尤甚。假令開門臨三宮四宮，休門臨九宮，生門臨一宮，景門臨七宮六宮，
+> 此為吉門被迫，吉事不成；若傷杜門臨八二宮，死門臨一宮，驚門臨三四宮，此為
+> 凶門被迫，凶災尤甚。
+
+The 大全, 門迫第三十, 卷二十五 leaf 19 on sheet 607, has the same cells —
+景門臨六七宮, 傷門杜門臨二八宮 — and 凶禍 for 凶災. Two metal gates on two
+wood palaces, water on fire, 生門 and 死門 on water, fire on two metal palaces,
+two wood gates on two earth palaces: thirteen, which is what `menpo` derives
+and two more than 《統宗》卷一 prints. The two lines that list was judged to
+have dropped, 傷門臨二宮 and 景門臨七宮, are here. **The sentence above the
+cases names the relation the other way round from the cases under it** — the
+palace controlling the gate is 門迫 and the gate controlling the palace 宮迫 —
+and both copies read so; every cell that follows is a gate controlling its
+palace and is called 門被迫. The engine follows the cells. The 大全's list has
+the same relation a second time as 六儀受制, leaf 7 on sheet 620, with the
+phase written beside each — 休門加離 水克火, 傷門加坤艮 木克土 — and without
+杜門, which makes eleven.
+
+**三奇入墓 buries 丁 in 乾 with 丙, where `TOMB` follows the 統宗 and buries it
+in 艮.** 第一冊 p. 429:
+
+> 洪曰：三奇入墓者，謂乙未時為日奇入墓，乙為日奇，木墓在未，故為日奇入墓；
+> 丙戌為月奇入墓，丙為月奇，火墓在戌，故為月奇入墓。璋曰：三奇墓者，謂六乙
+> 日奇臨二宮，六丙月奇、六丁星奇在六宮，是三奇入墓也。
+
+The 大全's list, leaf 5 on sheet 618: 「乙臨二宮，丙丁臨六宮」, and then the
+two hours. So 乙 in 坤 and 丙 in 乾 stand in a second work, which is the half of
+the table that parts from the twelve stages; and 丁 goes with the phase it
+shares with 丙 and not to 丑. That is a second reading of one cell of four,
+held by a named voice in a work with a title page, in two copies that agree.
+It is recorded and no parameter is declared on it by this entry. **And the
+passage carries a second thing under the same name**: an hour that is the
+tomb of its own stem, 乙未 and 丙戌, which the 統宗's list files apart as 時墓.
+The engine computes the palace and not the hour.
+
+**六儀擊刑 is the six of `STRIKE`, stated by the hour and by the palace at
+once.** P. 429, with its glosses in small characters: 「洪曰：六儀擊刑者，謂
+甲子直符時加卯，甲戌直符時加未，甲申直符時加寅，甲午直符時加午，甲辰直符時
+加辰，甲寅直符時加巳」; and the case, p. 430, has both in one board — 陽遁一局
+甲己之日, struck at 日出 and again 「至庚午時，以甲子直符加六庚於三宮，即六儀
+擊刑也」. The 大全's list heads the entry with the palaces in small characters,
+甲子直符三 · 甲戌直符二 · 甲申直符八 · 甲午直符九 · 甲辰直符四 · 甲寅直符四,
+which is the 統宗's line. The engine marks the palace; the hour whose branch is
+the punished one is the same rule read off the clock and is not marked.
+
+**The lodging at 坤 is worked, in a yang board and in a yin one.** 卷下
+p. 453, under 時加六戊: 「假令立春中陽五局甲己之日戊辰時，此時六戊在五宮，寄
+坤二，以直符加時干，即六戊臨二宮，出西南方吉」. And p. 460, under 五不擊:
+
+> 假令陰七局甲己之日丙寅時，天乙在七宮，陰遁居地宮也，宜正西而擊其衝正東。
+> 天上直符臨九宮，陰遁前一，九天在二宮西南，生門在一宮正北，九地在七宮正
+> 西，直使在五宮，寄坤二西南。
+
+The 大全 has both, 「六戊在五宮寄二宮」 on sheet 631 and 「直使五宮寄二宮西
+南」 on sheet 637. The 值使 of a yin board, having counted down to 五, is read
+at 坤: `centreLodging: kun` with `centreTravel: stay`. The two cases together
+are neither of the lodgings by dun, `dun` sending the yin board's centre to 艮
+and `dunni` the yang board's. The entry above
+found no lodging of the 使 in 卷上's 二遁直符合於中宮, and that stands for that
+section; this is the work saying where it goes.
+
+**The four spirits it knows are seated where `spirits: dun` seats them.**
+P. 414, under 九天九地太陰六合: after 冬至 the palace the 直符 has come to
+has 九天 one behind it and 九地 two, 太陰 two ahead and 六合 three; after 夏至
+前 and 後 change places. It names no other spirit, so it says nothing of the
+middle pair the three values of `spirits` part on. Read against the ring the
+engine lays — clockwise in a yang board, counter-clockwise in a yin one — 後
+is against the turn of the yang ring, and the text's own cases fix it.
+
+**Its worked boards are the engine's.** Each was laid by the 局 and the hour
+the text names and the seats compared:
+
+| | the text gives | |
+|---|---|---|
+| p. 414, 陽一局 丙寅時 | 直符 at 八; 九天 一, 九地 六, 太陰 四, 六合 九 | all five |
+| p. 414, 陰九局 丙寅時 | 直符 at 二; 九天 七, 九地 六, 太陰 四, 六合 三 | all five |
+| p. 427, 陽四局 乙酉時 | 天心 the 直符, 開門 the 使 at 七; 生門 and 丙 over 丁 at 一 | all |
+| p. 427, 陰六局 庚申時 | 天蓬 the 直符, 休門 the 使 at 四; 生門 and 丙 over 丁 at 九 | all |
+| p. 428, 陽一局 辛卯時 | 天衝 the 直符, 傷門 the 使 at 一; 開門 and 乙 over 己 at 二 | all |
+| p. 428, 陽七局 丙子時 | 天任 the 直符, 生門 the 使 at 一; 休門, 丁 and 太陰 at 六 | all |
+| p. 431, 陽一局 丙寅時 | the 直符 of 甲子 over 丙 at 八 | agrees |
+| p. 431, 陰六局 丙寅時 | 天心 the 直符; 丙 over 庚 at 四 | agrees |
+| p. 459, 陽三局 丁卯時 | 直符 with 丁 at 九; 九天 四; 生門 and 丁 at 七 | all |
+| p. 459, 陰八局 丙寅時 | the earth 直符 at 八; 九天 八; 生門 六 | all |
+| p. 460, 陽八局 辛卯時 | 直符 二; 九天 九; 生門 三; 九地 四; 直使 八 | all five |
+| p. 460, 陰七局 丙寅時 | 直符 九; 九天 二; 生門 一; 九地 七; 直使 at 五, lodged at 二 | all five |
+
+Twelve boards across both dun, with the turn of the plate, the flight of the
+使, the lodging and four of the eight spirits in them, in a work the default
+board is not attributed to. One text checking the engine and not a second
+implementation: the row of the heaven plate gains it as evidence and its rung
+is the one it had.
+
+**One case reads the centre's stem at 坤 where the engine reads 坤's own.**
+太白入熒惑, p. 430, is corrupt in 第一冊 — 陰二局, 丙寅 for the 平旦 of an 乙庚
+day, 「六庚在乙宮」 — and whole in the 大全, leaf 5 on sheet 618: 「夏至中元陰
+三局，乙庚日戊寅時，六庚在一宮，天芮直符加時干於三宮，六庚下臨六丙」, to which
+第一冊 adds 「於二宮」. On 陰三局 丙 is the stem of the fifth palace. The engine
+lays the same board to the seat — 天芮 at 三, 庚 come to 坤 — and marks 刑格
+there, 庚 over 坤's own 己; the text marks 庚 over the 丙 lodged with it. This
+is the earth-plate side of the question 《奇門探索錄》卷三 p. 22 raises on the
+heaven plate, which of the two stems in 坤 a star carries off: here, which of
+the two a stem coming to 坤 stands over. Recorded beside it, with no parameter.
+
+**The 格 arrive attributed, and the pairings are the verse's.** 卷中
+pp. 430–434, each heading with the voice it is given under:
+
+| | | under |
+|---|---|---|
+| 太白入熒惑 · 熒惑入太白 | 庚加丙 · 丙加庚 | 湯 |
+| 青龍回首 · 飛鳥跌穴 | 六甲加六丙 · 六丙加六甲 | 洪 |
+| 天乙伏宮格 · 天乙飛宮格 | 六庚加直符 · 直符加六庚 | 《三元經》 |
+| 伏干格 · 飛干格 | 六庚加日干 · 日干加六庚 | — |
+| 歲干格 · 月干格 · 日干格 · 時干格 | 六庚 over the stem of the year, the month, the day, the hour | — |
+| 大格 · 刑格 | 六庚加六癸 · 六庚加六己 | 湯 |
+| 青龍逃走 · 白虎猖狂 | 六乙加六辛 · 六辛加六乙 | 璋 |
+| 朱雀入江 · 螣蛇夭矯 | 六丁加六癸 · 六癸加六丁 | 璋 |
+
+Ten of these are in `STEM_PAIRS`, pairing for pairing; the name 朱雀入江 is
+the verse's 雀投江. 青龍回首 is 六甲 over 丙 and its one case is the 直符 of
+甲子, so it does not say whether a 直符 of another decade makes the 格: the
+engine reads 戊 and the case agrees with it. The 大全's list writes 「甲直符
+加地盤丙奇」. **And the 大全's list has 小格, 「庚臨壬」**, where 第一冊 goes from
+大格 to 刑格 with nothing between. That is a third print naming 庚 over 壬
+小格, beside the 統宗 and the 秘笈大全, against the two that read 上格; it
+stands in the list and not in the 景祐 text, so it counts where the list
+counts. The 格 of 庚 over the 直符 and over the four pillars' stems are not
+computed and are named here for the first time in this register.
+
+**The three 遁 are stated and worked.** Pp. 427–428: 天遁 is 生門 with 丙 over
+丁; 地遁 is 開門 with 乙 over 己; 人遁 is 休門 with 丁 「合前二太陰中」, the
+太陰 of the count above. The 大全's list adds 「又生門與丙奇臨戊」 under 天遁,
+which is the pairing later lists carry, and the six further 遁. None is
+computed; this is where a text for them is.
+
+**五不遇時 is stated with its ten hours.** P. 461: 「洪曰：五不遇時者，謂剛柔
+日相克而損其明，時下之干剋今日之干是也」, and then the hour of each day from
+甲日午時 to 癸日未時 — the hour whose stem controls the day's at its own
+polarity, ten of ten as `wubuyu` derives them. The 大全 has the passage as
+五不遇時第七 on sheet 637 and writes the hours with their stems, 甲日庚午時.
+A third work stating the rule, and the first on this shelf to print the list
+whole under a name.
+
+**三奇得使 has a rule here and cases that do not lay.** P. 409, under 葛洪:
+「甲戌甲午乙為使，甲子甲申丙為使，甲辰甲寅丁為使」 — a 奇 standing over the
+儀 of one of its two decades. Four boards are worked, pp. 409–410. Laid by the
+engine, the 奇 comes to the palace the text names in three of them and stands
+over the decade the text names in one: 陰遁三局 壬辰時, 乙 over 甲午 at 九. In
+陽遁三局 丁亥時 乙 is at 九 and 甲午 is not; in 陽遁五局 丙午時 丙 is at 一 and
+the decade under it is 甲寅, not 甲子; in 陰遁五局 己亥時 丁 does not come to
+四. The 大全's list has the heading with nothing under it. So the pairing
+`findPatterns` leaves out for want of agreement has one more statement and
+three cases that contradict the board they are drawn on, in the only copy that
+prints them. It stays out.
+
+**What else is in the three juan, by name.** 卷上 from p. 408: 三甲, 三奇之靈,
+九天之上六甲 and its three companions, 伏吟 and 反吟 — 「凡六甲之時，門符皆伏
+吟」 — the 寶 · 義 · 制 · 和 · 伐 of a day by its pillar's two halves, 利客 and
+利主 by star and month, and two sections of omens, 三奇靜應 and 奇門路應, which
+are what this shelf calls 克應 and the engine does not carry. 卷中 after the
+格: 時勃, 五陽 and 五陰 hours, the names called on leaving, 之三避五 worked on
+the same 丙寅 and 戊辰 as 卷上, 三奇遊六儀 with six hours it calls 玉女守門 —
+庚午 · 己卯 · 戊子 · 丁酉 · 丙午 · 乙卯, a decade apiece — 天輔之時, 天網四張
+at an hour of 癸, 亭亭白奸, a 孤虛 table by decade, and four procedures for a
+camp. 卷下: what each of the ten stems on the hour suits, 六甲下營法, 三勝 and
+五不擊, 五不遇時, and from p. 462 rite — 玉女反閉 with its diagrams, 真人閉
+六戊, 步斗, 六甲陰符. The 大全's 玉女守門 is a different table, by the day's
+stem; the two were not reconciled.
 
 Last checked 2026-10-08.
 
