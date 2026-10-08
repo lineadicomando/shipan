@@ -407,7 +407,7 @@ describe('紫氣, placed by rule and to a palace', () => {
     };
 
     const YEAR = 365.25;
-    const apogee = { dashu: missBy('meanApogee', 3225), round: missBy('meanApogee', 9 * YEAR) };
+    const apogee = { dashu: missBy('meanApogee', 3235), round: missBy('meanApogee', 9 * YEAR) };
     const node = { dashu: missBy('meanNode', 6794), round: missBy('meanNode', 18 * YEAR) };
 
     // The 大數 hold to within a palace over 140 years; the round numbers do

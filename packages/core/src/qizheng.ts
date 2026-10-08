@@ -434,7 +434,7 @@ export function lodgeBoundaries(
  * belongs with the round-number 星曜行度 table where 月孛 is «nine» for 8.85
  * and the nodes «eighteen» for 18.6. That layer is gradeable, because two of
  * the four remainders have a referent: propagated from 1886 to 2026 its 月孛
- * misses by 98° and its nodes by 87°, against 11.4° and 0.2° for the 大數 of
+ * misses by 98° and its nodes by 87°, against 6.1° and 0.2° for the 大數 of
  * the same bodies. The computational layer is taken for all four, which is
  * what this engine already does for the three it places from an ephemeris.
  * A layer is not a lineage, so the twenty-nine is a divergence recorded in
@@ -462,7 +462,7 @@ const ZIQI_SPEED = 360 / ZIQI_DASHU;
  * `longitude` is the middle of that palace and not a reading: the anchor is
  * worth ±15°, the hour is worth 0.003° at this rate and so does not matter,
  * and a placement carried from here is a palace. Nothing weighs the 大數
- * itself, its two checkable siblings erring by 0.01 % and 0.20 %, and that
+ * itself, its two checkable siblings erring by 0.01 % and 0.11 %, and that
  * residue is the reason `off` is still the default.
  */
 const ZIQI_ANCHOR = { julianDay: 2410216.3438, longitude: 165 };

@@ -312,7 +312,7 @@ neither disputed.
   ephemeris. 紫氣 is a table rather than a body — the tradition says so itself,
   在天無象, it has no figure in the heavens — so nothing in the sky weighs its
   constant, where the two remainders in the same table that can be weighed err
-  by 0.01 % and 0.20 %. It is carried by a transmitted rate from a single board
+  by 0.01 % and 0.11 %. It is carried by a transmitted rate from a single board
   of 1886 and is therefore **placed to a palace and to no degree**: read it in
   that palace, quote no degree for it and name no lodge, since a lodge is a
   stretch of some thirteen degrees inside a palace of thirty and the rule does
