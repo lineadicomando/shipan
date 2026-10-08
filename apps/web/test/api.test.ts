@@ -825,6 +825,22 @@ describe('GET /api/qimen', () => {
     expect((turned.body as Day).qimen.options.dayGates).toBe('zhuan');
   });
 
+  it('refuses an option of the other family by the name it travels under', async () => {
+    const day = await call(qimen, `${MOMENT}&qimen.system=rijia&qimen.plate=xingfei`);
+    expect(day.status).toBe(400);
+    expect(day.body).toMatchObject({
+      code: 'OPTION_NOT_READ',
+      params: { option: 'qimen.plate', system: 'rijia' },
+    });
+
+    const hour = await call(qimen, `${MOMENT}&qimen.dayGates=zhuan`);
+    expect(hour.status).toBe(400);
+    expect(hour.body).toMatchObject({
+      code: 'OPTION_NOT_READ',
+      params: { option: 'qimen.dayGates', system: 'shijia' },
+    });
+  });
+
   it('keeps a birth for the hour board, and says the family when asked for both', async () => {
     const { status, body } = await call(qimen, `${MOMENT}&qimen.system=rijia&born=1990-06-01`);
 
@@ -1008,7 +1024,8 @@ describe('every board refuses the values it declares and does not compute', () =
         .map((value): [string, Handler, string] => [
           `${wire(row)}=${value}`,
           handler,
-          `${query}&${wire(row)}=${value}`,
+          // Asked of the family that reads it, or it is refused as the other's.
+          `${query}${row.family === 'rijia' ? '&qimen.system=rijia' : ''}&${wire(row)}=${value}`,
         ]),
     ),
   );

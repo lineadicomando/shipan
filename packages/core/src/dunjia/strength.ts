@@ -100,7 +100,7 @@ export function seasonElement(monthBranch: Branch): Element {
  * that way, which transposes 相 with 休 and 囚 with 死 and agrees only on 旺.
  * One text against the ordinary reading is not a reason to move, and its own
  * table confirms its rule rather than the rule's truth; `docs/sources.md` has
- * the argument and `ROADMAP.md` § 1 carries it as a divergence nothing exposes.
+ * the argument and `TODO.md` § 1 carries it as a divergence nothing exposes.
  * The same passage reads the states off the day and the hour as well as the
  * month — 「日時皆同」 — where `dunjia` passes the month branch alone.
  */

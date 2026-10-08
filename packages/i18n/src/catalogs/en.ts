@@ -38,6 +38,8 @@ export const en = {
     'The {method} method for determining the ju is not implemented. Only chaibu is, and no other method is substituted for it: a chart cast by the wrong method looks right and is not.',
   'core.error.OPTION_NOT_IMPLEMENTED':
     '"{value}" for {option} is not implemented. Only {implemented} is, and no other value is substituted for it: a chart cast under the wrong option looks right and is not.',
+  'core.error.OPTION_NOT_READ':
+    'A {system} board is laid without the option {option}, which belongs to the other family of 奇門 qímén board. It is refused rather than set aside, because a board that had dropped it would look as though it had honoured it.',
   'core.error.EPHEMERIS_FAILURE': 'Ephemeris calculation failed at Julian Day {julianDay}: {reason}',
   'core.error.EMPTY_INTERVAL': 'The interval from {from} to {to} contains no time: it must end after it begins.',
   'core.error.INTERVAL_TOO_LONG':

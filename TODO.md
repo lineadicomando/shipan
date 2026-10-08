@@ -11,17 +11,17 @@ What holds today is in [`docs/`](docs/README.md); how it got here is in
 
 ## Resuming cold
 
-**Read this section and § 2's table. That is enough to start.** The rest of this
+**Read this section and § 2. That is enough to start.** The rest of this
 file is reference for when a particular value or a particular constraint comes
 up, and the pages it points at are large — opening one whole to find one fact is
 the expensive mistake here.
 
-**Pick a line from § 2's table, then read exactly three things.**
+**Pick a line from § 2, then read exactly three things.**
 
 | | | how |
 |---|---|---|
 | 1 | what the file *is* | `texts/README.md`, **one row** — grep the filename or the title. It carries the extent, the pixels, the way in and the leaf anchors |
-| 2 | what is already established about it | `docs/sources.md` is ~5 000 lines. **Grep it**, for the work's title or the quantity's name; read the section the hit is in and no more |
+| 2 | what is already established about it | `docs/sources.md` runs to thousands of lines. **Grep it**, for the work's title or the quantity's name; read the section the hit is in and no more |
 | 3 | what the value would need | § 1 below, the clause under the value's name. That clause *is* the query to put to the text |
 
 **What not to open.** `docs/sources.tsv` is read by a test and by a surface, not
@@ -40,7 +40,7 @@ read before a first survey — once, not every session.
 ```sh
 texts/shelf.py crosswalk --moves   # quantities whose rule gained a witness
 texts/shelf.py crosswalk --gaps    # registered quantities no passage reaches
-texts/bench/run.mjs                # the 147 worked examples the sources print
+texts/bench/run.mjs                # the worked examples the sources print
 texts/bench/run.mjs --uncovered    # the shapes still without an adapter
 ```
 
@@ -304,52 +304,24 @@ are the query to put to an arriving text.
 
 ### Read first — what is left of the 2026-09 arrivals
 
-**Everything here is ahead of the table in the next section.** The chapter that
-stood at its head — 《奇門探索錄》卷三 pp. 33–35, the only thing in sight capable
-of moving a refused value — was read on 2026-09-10 and moved none: what it
-establishes is under `plate: fei` in § 1. **The two files that arrived first are
-now done** (2026-09-10): the 克應 was surveyed and turns out to be none of the
-three things this shelf calls 克應, and the 捷覽 was read whole. What is left in
-this section is the two of the four bought against § 1's clauses that are
-surveyed and not yet read for the clause each was bought to answer. What
-follows is the six files that reached the shelf on 2026-09-09 —
-`docs/provenance.tsv` has nine such files in all, but three of them
-(`jinhan-yujing-1.pdf`, `jinhan-yujing-2.pdf`, `rijia-qimen.pdf`) were already
-read for other rows before this section was written and sit outside it. **A
-file nobody has read is not evidence**, and a file nobody has read that the
-register already has sentences about is worse. **That was the 捷覽 and it has now
-been paid for**: every sentence about it had been written from a 39-page teaser,
-and reading the book put it in the other transmission from the one those
-sentences put it in.
-
-**The order inside this section is: the two that arrived first, then the four
-bought against § 1's clauses.** The first two are done and are kept here for
-what they establish. Nothing below this section is owed a reading until the two
-still standing are.
-
-| | what would move | where |
-|---|---|---|
-| **《奇門克應》** | **surveyed 2026-09-10, and it is none of the three.** A colour facsimile of a manuscript in a running hand, 34 sheets, two book-pages to each, no title leaf, no colophon, no 版心. Most of it is an eight-trigram 萬物類象-style correspondence table (乾坎艮震巽離坤兌, each with categorised lists), bracketed by a grave/missing-person location formula; no eighty-one-cell grid, no gate-over-palace layout, no ten-stem structure. It does not touch `docs/sources.tsv`'s 十干克應 row. Full detail in `texts/README.md`'s row | `texts/qimen/qimen-keying.pdf`; `docs/scans.md` § "More than one book-page to the sheet" |
-| **《紫微斗數捷覽》 明刊孤本 1581, 心一堂 facsimile** | **read 2026-09-10, and it was filed on the wrong side.** Not the 十八飛星 transmission this file and `docs/refusals.md` both called it: its 目錄 gives 北斗, 南斗, 中天, a 五行局圖 in five grids and 安紫微天府訣, so it is 《全書》's fourteen-star board — the one computed here — in a block-printed Ming witness that transmission had none of. It moves no value and it takes an argument away from one: 定大限訣 states `daxian: ming` **with the bureau's age**, on a board that has a 五行局, worked both ways off one birth, which is the pair this register had been calling a graft. Still refused, now on the count of witnesses. Its five grids also print both cells 《全書》's page lost. → `docs/sources.md` § "《紫微斗數捷覽》, which was filed on the wrong side" | `texts/ziwei/ziwei-doushu-jielan-mingkan.pdf`, 1279 × 1735 rgb at 192 dpi |
-
-**Four more were bought on 2026-09-09**, chosen against the
-clauses in § 1 rather than by title, and each was owed the same first pass — what
-the file *is*, before what it says. **《奇門遁甲折衷》 was the first of them and is
-read** (2026-09-10): it is the one work on this shelf that carries attribution and
-transcription at once, it names 顧陵岡池本理 for the plate this engine turns and
-the 坤 it lodges the centre in, and it moves no value — `docs/sources.md`
-§ "《奇門遁甲折衷》, which names the school this engine follows". Its
-transcription companion, `qimen-zhezhong-chaolu.pdf`, was measured the same
-day — a finding aid, not a witness. **The other two are now surveyed**
-(2026-09-10), not read for the clause each was bought to answer.
+**Everything here is ahead of the rest of this section.** Of the files that
+reached the shelf on 2026-09-09, two are surveyed and not yet read for the
+clause in § 1 each was bought to answer. The others are done, and what each
+established is in `docs/sources.md`: 《奇門克應》 (none of the three things this
+shelf calls 克應), 《紫微斗數捷覽》 (the 《全書》 board, not the 十八飛星 one),
+《奇門遁甲折衷》 (it names the school this engine follows) and its 抄錄 companion
+(a finding aid). **A file nobody has read is not evidence**, and a file nobody
+has read that the register already has sentences about is worse: the 捷覽 had
+been written up from a 39-page teaser, and reading the book moved it to the
+other transmission.
 
 | | what it was bought to answer | where |
 |---|---|---|
 | **景佑《御定奇門大全》** | a **起例 variant**, which is where every divergence on this shelf has come from. **Its 目錄 is now read whole and its 卷一 opened** (2026-09-10), and the variant is not there: 卷一–四 are 景祐秘纂, whose opening chapter 超神接氣直指 is 《奇門探索錄》卷三's chapter on a plate — the same headings, the same 芒種大雪 placement, the same derivation of `MAX_CHAOSHEN`, the same 萬曆己丑 worked examples. That is a second copy of a chapter this register has already weighed, so it moves no rung; what it does is put the derivation on a woodblock instead of on one Republican typesetting, and it obliges the count behind `leap: solstice` to be looked at again, two works agreeing possibly being one work in two compilations. **What is left unread is the other twelve works**, of which 卷五–十's eighteen 局 tables are a bench and 卷二十五–二十七's 遁甲符應經 is a title held elsewhere. → `docs/sources.md` § "《奇門探索錄》, which derives the pin the 統宗 only asserts". Earlier: the plate disagrees with itself on the title — 景祐奇門大全 in its own preface (dated 永樂十二年), 御製奇門大全 at its first section heading, 御定奇門大全 in its 目錄 and at its closing colophon — three headings for one compilation running to 卷六十四, consistent with (not counted against) the seller's claimed thirteen works. Full detail in `texts/README.md`'s row | `yuding-qimen-daquan.pdf`, 1485 sheets two-up at **600 dpi**, the sharpest scan here — and 8-bit grayscale on inspection, not the 1-bit this row once said |
 | **《紀氏奇門秘書仕學備餘》** | **`strengths: star`.** 紀氏 is a commentator this shelf already meets — 《奇門探索錄》 carries 「紀氏云：此或九星如此推，八門、九神不能照此也」, disputing whether the nine stars' rule reaches the gates and the spirits, which is that value's whole question. **Surveyed, not read for the value**: a printed edition whose later juan carry gate/star/stem judgements in the right register, closing with an appendix, 附甘氏克應, naming a fourth and narrower 克應 — six-gate correspondences — distinct from the other three this shelf already has. Full detail in `texts/README.md`'s row | `jishi-qimen-mishu.pdf`, one-up at about 367 dpi |
 
-**None of the four states a provenance**, the one now read included, and that one
-turned out to carry a second watermark under the first. guoxueziyuan.com says only
+**None of the four bought on 2026-09-09 states a provenance**, and the 折衷
+carries a second watermark under the first. guoxueziyuan.com says only
 「資源來源於網絡公開發表文件」, so no 叢刊, no library, no edition — and this register's
 recurring discovery is that two differently-titled files are one text: 遁甲集成
 第四冊 turned out to be the 御定寶鑑, the 秘笈大全 the 金函玉鏡. **Identifying the
@@ -364,12 +336,11 @@ bought**, and they are recorded so the judgement does not have to be made twice:
 (326 pp.) — three large unattributed manuscripts — and 《李衛公奇門心法》, which
 carries a **Tang attribution** and would stand beside 《太乙金鏡式經》 under the
 八門 row, that row's only Tang witness. **Nothing is owed on any of them until
-the three above have been read**: a shelf grows by what has been weighed, not by
+the two above have been read**: a shelf grows by what has been weighed, not by
 what has been fetched.
 
 **All were bought from guoxueziyuan.com**, which is the watermark they carry;
-`docs/provenance.tsv` has every address. The 捷覽 is no longer named for the
-Scribd upload whose teaser it replaced, those bytes not being from it.
+`docs/provenance.tsv` has every address.
 
 ### Read — sections a question has already been put to
 
@@ -382,17 +353,11 @@ entry shows. Ordered by what a reading would move.
 | | what would move | where |
 |---|---|---|
 | 遁甲集成 第一冊, 《遁甲符應經》 三卷 | closes the volume attribution the register carries open, and 二遁直符合於中宮 is a second reading of the centre | series pp. 385–490; 目錄 at 389–393 |
-| 《六壬經緯》's 神煞 juan | the five phases of the 十二天將, which the drawing leaves in neutral ink for want of a source | series pp. 1–92, one juan of six |
-| 《御定六壬直指》 卷上 起例 | 起貴人定十二天將法 and 十二月將名號 — the same question, second place | series pp. 5–33 |
 | 《中國恆星觀測史》 第七章第一節二 | the 授時 lodge values, if a modern reconstruction can stand where the 曆's own table would | printed p. 272 |
 | SKQS vol. 809, 《星學大成》 | what 七政四餘's neighbours have wanted; unweighed until read | volume pp. 285–870, 三十卷, both ends read on the plate |
 | 《太乙數統宗大全》, 故宮 第420冊 | the 闕 of 卷一 read against a second hand; its own constants answered the other half and did not lift the refusal, being another calendar's | four leaves of 440 read — 卷二's calendrical apparatus and 卷三's 起例 |
 | 《中國古代星占學》 第五章 · 太乙式數占 | 陰陽和不和, refused because two accounts of it do not line up; this chapter's eight principles open on the parity of a 算, which is what they disagree about | printed pp. 492–499, of which only the closing summary is read |
 | 《中國古代星占學》 第五章 · 太乙十神 · 十精太乙 | the four bodies that walk twelve palaces, and the one layer of this art read for weather rather than for reigns — named in the register and not computed | printed pp. 505–511 and 512–519 |
-
-**The two 六壬 lines are one question from two sides** and are the cheapest pair
-here: 神煞 is a juan of its own and 卷上's 目錄 names 起貴人定十二天將法, so both
-are reached by arithmetic rather than by sweeping.
 
 **《御定奇門真詮》 is on no line and that is an answer**, not an omission: 545
 pages of it are 1080 hour boards with no 起例. What it could be is a bench of
@@ -408,13 +373,13 @@ before what it says" is the four commands it takes.
 
 ### Ask — the two instruments that already have questions open
 
-**`texts/bench/`** runs the 147 worked examples the sources print for
+**`texts/bench/`** runs the worked examples the sources print for
 themselves. **Two disagree**, both 六壬 and both on rules the corpus marks
 divergent: a 涉害 whose 三傳 come out differently, and a 返吟 whose four courses
 are displaced in a way that points at the 日干寄宮. Each is a question and
 neither is a verdict — settling one means reading the passage its citation
-names, and the passage is on the shelf. A hundred and twenty-four examples have
-no adapter yet.
+names, and the passage is on the shelf. Most examples have no adapter yet;
+`--uncovered` lists the shapes.
 
 **`texts/crosswalk.tsv`** joins the transcribed corpus to `docs/sources.tsv`.
 Its two reports are leads and not findings: **a witness located is not a witness
@@ -459,11 +424,12 @@ Binding, and the place where an honest session and a wasted one part.
   reopens the part of it that named that file's class or its text, bounded:
   `docs/sources.md` § "What an arrival reopens" says how far.
 
-**Three negatives stand reopened and unanswered**, each dated in the register
+**Two negatives stand reopened and unanswered**, each dated in the register
 and each naming the volume that would answer it: 太乙's 卷一 constants and its
-月計 · 日計 · 時計, both waiting on § 2's sixth line, and the five phases of the
-十二天將, waiting on its second and third. That is the register's side of the
-same table.
+月計 · 日計 · 時計, both waiting on 《太乙數統宗大全》 in § 2. That is the
+register's side of the same table. The five phases of the 十二天將 were the
+third: both sections located for them have been read and carry none, so that
+question waits on a file this shelf does not hold.
 
 ## 4. Spanish, once the engine has stopped moving
 
@@ -485,10 +451,10 @@ agreement or message syntax; Spanish needs none of the three.
 ## 5. Surfaces that reach less than the engine
 
 **Small.** The block naming the schools in force says the truth on every
-surface, and one thing below is a value accepted and not read.
+surface, and no value is accepted and left unread: an option of the other
+family of 奇門 is refused by name on every surface, by `refuseOtherFamily`.
 
-**The command line reads its school options off the declaration**, since
-2026-10-07. `flagOf` in `packages/core/src/cli.ts` names a flag for every
+**The command line reads its school options off the declaration.** `flagOf` in `packages/core/src/cli.ts` names a flag for every
 parameter `parameters.ts` declares — bare for a board's own and for a layer's,
 under the board's name where a layer has the word — and the help lists after
 each what the engine computes, its default, and what is declared and refused.
@@ -502,13 +468,11 @@ derivation would lose, and the page's `apps/web/src/lib/parameters.ts`, which
 exists because the client imports only types from `core`. A value added to the
 engine fails those suites until it is added there; nothing says it silently.
 
-**The board of a day reaches four surfaces whole and three in part**, since
-the twelve hours landed on 2026-10-07. Each line is a task and none blocks
-another.
+**The board of a day reaches four surfaces whole and three in part.** Each
+line is a task and none blocks another.
 
 | | what is owed | where |
 |---|---|---|
-| a parameter of the hour board given beside `system: rijia` | refused by name, as a flag given to a command that does not lay it already is. `method`, `plate`, `spirits`, `centreLodging`, `earth`, `earthPlate` and `centreTravel` are accepted and not read today, on the command line, over HTTP and in `compute_qimen_chart`; `family` in the declaration already says which is whose | `computeDayChart` in `packages/core/src/dunjia/rijia.ts`, and a test on each surface |
 | the drawing | the bearing of 喜神 on the palace it stands in, and a decision on the twelve hours: drawn under the grid, or said to be the transcript's. `renderDaySvg` draws gates, stars and palaces and nothing of either | `packages/plate`, whose types are its own; `draw_qimen_chart` and `/api/qimen/plate` follow |
 | the section, looked at | the hours table was checked in the HTML the built server answers and never in a browser: its measure against `.reading`, the two lines of a cell, paper | `DayReading.svelte`, at `/it/qimen?qimen.system=rijia` |
 | `README.md` and `docs/agent-prompt.md` | neither names the board of a day, so neither says it carries twelve hours or that the marks on them rank nothing. The contract an agent reads is the second | both files; `reader-copy` binds the first |
@@ -554,16 +518,16 @@ and on the section, and no register row, since the count it is cut from is
 already weighed under the epoch. It moves the second term of the version, an
 existing answer gaining a field.
 
-**The Italian catalog still carries ninety-six em dashes.** `docs/i18n.md` says
+**The Italian catalog still carries em dashes**, nearly a hundred of them. `docs/i18n.md` says
 a vernacular is punctuated in its own conventions and that `—` is English; what
 is written today predates the rule, and the sweep is a reading of every line
 rather than a substitution, since each dash becomes a comma, a colon, a
 semicolon or a parenthesis depending on the turn it was making. Nothing is
 asserted by a test until the sweep has run, because a test that fails
-ninety-six times on the day it lands tells nobody anything. Shipping nothing,
+a hundred times on the day it lands tells nobody anything. Shipping nothing,
 it moves no term.
 
-**About forty comments still call the register 年計.** The parameter's name is
+**Comments still call the register 年計**, some twenty of them. The parameter's name is
 now 歲計, which is what both witnesses call it, and the identifier stays
 `nianji`; the prose around the code kept the name in modern circulation. The
 sweep is mechanical and touches no behaviour — and, shipping nothing, moves no
@@ -571,7 +535,7 @@ term.
 
 ## 7. What is refused and stays refused
 
-Not roadmap, and here only so nobody mistakes silence for an omission: the 用神,
+Not to do, and here only so nobody mistakes silence for an omission: the 用神,
 格局, ranking, dating, advice, the 年命 purposes doctrine, who is 主 and who is
 客, a day master called strong or weak, a natal Qi Men chart, 太乙's dynastic
 readings, what 卷十一 of the 探索錄 reads in the hexagram of a palace, and the

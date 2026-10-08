@@ -46,7 +46,7 @@ Once an editorial settlement is named as the thing that is *not* a parameter, a
 convention this engine follows and another living tradition does not stops
 being able to hide behind the same word. If two practitioners would draw
 different boards, the divergence owes a parameter, whatever else is true about
-it. `ROADMAP.md` § 1 carries what that costs today.
+it. `TODO.md` § 1 carries what that costs today.
 
 **This section settles what a disagreement between witnesses becomes, and the
 other half of the question is not here.** What an *agreement* between them is
@@ -75,7 +75,7 @@ The audit that followed the narrowing put every admission of divergence in
 Most of what the audit met was the rule already working. The 用神 mapping is
 refused in `scan.ts` in as many words; 六壬's 課體 reports nothing where the
 sources disagree; `leapMonth`, `huoling` and `centreLodging` each carry their
-alternatives declared and refused. What it found is in `ROADMAP.md` § 1.
+alternatives declared and refused. What it found is in `TODO.md` § 1.
 
 ## What a school value must show
 
@@ -183,7 +183,7 @@ page carries the same block in words because the reader is there.
 
 Where a parameter has one implemented value there is nothing to be aware of and
 nothing is said: what would be reported is not a school but the absence of a
-second one, which is `ROADMAP.md` § 1's business.
+second one, which is `TODO.md` § 1's business.
 
 **And the board says who lays the combination it stands on.** Axes are
 independent in the engine and lines hold them together, so every parameter
@@ -261,7 +261,11 @@ is answered by `computeDayChart` with a type of its own: eight gates, nine
 stars named from 太乙, no plate of stems, no 值符 and no spirits. It reads
 `dayGates` and `dayDun` and none of the hour board's parameters, and the hour
 board reads neither of those; `family` in the declaration says which is whose,
-so that a board is never told of a choice it was not laid by. The layers under
+so that a board is never told of a choice it was not laid by. **A parameter of
+the other family is refused, never dropped**: `refuseOtherFamily` reads what a
+surface was given, not the options with their defaults filled in, and throws
+`OPTION_NOT_READ` under the name it was asked by — `--method` on the command
+line, `qimen.method` in an address, `method` on the MCP tool. The layers under
 both are the same pillars. `dayGates` has two values because two works lay the
 gates and part: the 金函玉鏡's 定局 flies them and names no half of the year,
 and 《日家奇門》, which says it is drawn from that work, turns them and mirrors

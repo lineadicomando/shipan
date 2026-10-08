@@ -36,7 +36,12 @@ import {
 } from './dunjia/index.js';
 import { initEphemeris, type EphemerisContext } from './ephemeris.js';
 import { ChartError } from './errors.js';
-import { PARAMETERS, implementedValues, type ParameterEntry } from './parameters.js';
+import {
+  PARAMETERS,
+  implementedValues,
+  refuseOtherFamily,
+  type ParameterEntry,
+} from './parameters.js';
 import { STEMS, type StemId } from './ganzhi.js';
 import {
   formatBazi,
@@ -243,6 +248,15 @@ function refuseStrays(command: Command, options: Options): void {
       throw new UsageError('cli.error.optionNotRead', { option: flag, command });
     }
   }
+
+  // A family of 奇門 is a board of its own, so a flag of the other family is
+  // refused as a flag of another board is, and by the word it was asked by.
+  const given: Record<string, string> = {};
+  for (const [flag, value] of Object.entries(options.declared)) {
+    const parameter = DECLARED_FLAGS.get(flag) as ParameterEntry;
+    if (parameter.board === 'qimen') given[parameter.id] = value;
+  }
+  refuseOtherFamily(given, flagOf);
 }
 
 /**

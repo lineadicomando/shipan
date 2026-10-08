@@ -25,6 +25,7 @@ import {
   ZIWEI_HOUSES,
   ZIWEI_PARAMETERS,
   implementedValues,
+  refuseOtherFamily,
   requireImplemented,
   type ChartOptions,
 } from '../src/index.js';
@@ -220,6 +221,43 @@ const moment = (): Moment =>
     DEFAULT_OPTIONS,
     context,
   );
+
+describe('what refuses an option of the other family of 奇門', () => {
+  /** The code and the params a call came back with, or nothing. */
+  const refusal = (given: Record<string, unknown>) => {
+    try {
+      refuseOtherFamily(given);
+      return undefined;
+    } catch (error) {
+      const { code, params } = error as { code: string; params: Record<string, string> };
+      return { code, params };
+    }
+  };
+
+  it('refuses every option of the hour board beside the board of a day', () => {
+    for (const parameter of PARAMETERS) {
+      if (parameter.board !== 'qimen' || parameter.family !== 'shijia') continue;
+      expect(refusal({ system: 'rijia', [parameter.id]: parameter.default })).toEqual({
+        code: 'OPTION_NOT_READ',
+        params: { option: parameter.id, system: 'rijia' },
+      });
+    }
+  });
+
+  it('refuses an option of the day board beside the hour board, named or by default', () => {
+    expect(refusal({ dayGates: 'zhuan' })?.params).toEqual({ option: 'dayGates', system: 'shijia' });
+    expect(refusal({ system: 'shijia', dayDun: 'solstice' })?.code).toBe('OPTION_NOT_READ');
+  });
+
+  it('passes what each family reads, an option left unsaid, and a family not yet laid', () => {
+    expect(refusal({ system: 'rijia', dayGates: 'zhuan', method: undefined })).toBeUndefined();
+    expect(refusal({ method: 'zhirun', plate: 'xingfei' })).toBeUndefined();
+    // Every board's options travel in one bag, and only 奇門's are a family's.
+    expect(refusal({ system: 'rijia', trueSolarTime: false, guiren: 'wei' })).toBeUndefined();
+    // Refused as a family by `requireImplemented`, which names that refusal.
+    expect(refusal({ system: 'yuejia', method: 'zhirun' })).toBeUndefined();
+  });
+});
 
 describe('what 奇門 decided in silence', () => {
   /**

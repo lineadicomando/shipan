@@ -187,6 +187,18 @@ describe('compute_qimen_chart', () => {
     expect(turned).toContain('日家奇門');
   });
 
+  it('refuses an option of the hour board beside the board of a day, by its name here', async () => {
+    const text = await failing('compute_qimen_chart', {
+      ...BEIJING,
+      system: 'rijia',
+      centre_lodging: 'bajie',
+      lang: 'en',
+    });
+    expect(text).toContain(
+      translate('en', 'core.error.OPTION_NOT_READ', { option: 'centre_lodging', system: 'rijia' }),
+    );
+  });
+
   it('casts a chart for a place and a moment', async () => {
     // 茅山, which is the school the verified chart for this instant belongs
     // to: 陽遁九局. → `docs/history/40-the-default-was-maoshan.md`

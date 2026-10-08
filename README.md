@@ -385,7 +385,7 @@ More: [`docs/i18n.md`](docs/i18n.md).
 | [`CLAUDE.md`](CLAUDE.md)                  | the rules that bind any change, one line each                                                          |
 | [`docs/`](docs/README.md)                 | the project as it is now: architecture, parameters, sources, refusals, readings, i18n, what is claimed |
 | [`docs/history/`](docs/history/README.md) | how it got here, phase by phase, including the mistakes. Never normative                               |
-| [`ROADMAP.md`](ROADMAP.md)                | what is not built yet                                                                                  |
+| [`TODO.md`](TODO.md)                      | what is not built yet                                                                                  |
 
 A feature crosses several surfaces and has a procedure of its own: see
 `.claude/skills/new-feature`.

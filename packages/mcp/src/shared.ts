@@ -3,6 +3,7 @@ import {
   currentMoment,
   initEphemeris,
   nianmingOf,
+  refuseOtherFamily,
   resolveMoment,
   systemTimezone,
   yearsLived,
@@ -346,6 +347,23 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
     timezone: place.timezone,
   };
   if (meridianAssumed) place.longitude = zoneMeridian(input);
+
+  // A family of 奇門 is a board of its own, so an option of the other one is
+  // refused by the name this tool takes it under rather than laid without.
+  refuseOtherFamily(
+    {
+      method: raw.method,
+      spirits: raw.spirits,
+      plate: raw.plate,
+      system: raw.system,
+      dayGates: raw.day_gates,
+      centreLodging: raw.centre_lodging,
+      earth: raw.earth,
+      earthPlate: raw.earth_plate,
+      centreTravel: raw.centre_travel,
+    },
+    (parameter) => parameter.id.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`),
+  );
 
   const options: ChartOptions = { ...DEFAULT_OPTIONS };
   if (raw.true_solar_time !== undefined) options.trueSolarTime = raw.true_solar_time;

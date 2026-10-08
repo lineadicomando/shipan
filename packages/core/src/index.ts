@@ -448,6 +448,7 @@ export {
   combinationOf,
   divergencesInForce,
   implementedValues,
+  refuseOtherFamily,
   requireImplemented,
   type Combination,
   type Parameter,

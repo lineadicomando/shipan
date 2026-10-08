@@ -2,7 +2,7 @@
 
 **Everything in this directory describes the project as it is now.** How it
 got here is in [`history/`](history/README.md); what is not built yet is in
-`ROADMAP.md`. Keeping those three apart is the whole arrangement: a reader —
+`TODO.md`. Keeping those three apart is the whole arrangement: a reader —
 or an agent — must be able to tell at a glance whether a page binds them.
 
 | | |

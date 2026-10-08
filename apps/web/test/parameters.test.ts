@@ -189,6 +189,16 @@ describe('what a form offers', () => {
     expect(chosenFields(chosen)).toEqual({ 'qimen.method': 'maoshan', dayBoundary: 'midnight' });
   });
 
+  it('leaves out what the form hides, which the board laid does not read', () => {
+    // A reader who chose a method and then the board of a day: the method is
+    // the hour board's, and the server refuses it beside the other family.
+    const day = { 'qimen.system': 'rijia', 'qimen.method': 'zhirun', 'qimen.dayGates': 'zhuan' };
+    expect(chosenFields(day)).toEqual({ 'qimen.system': 'rijia', 'qimen.dayGates': 'zhuan' });
+
+    const hour = { 'qimen.method': 'zhirun', 'qimen.dayGates': 'zhuan' };
+    expect(chosenFields(hour)).toEqual({ 'qimen.method': 'zhirun' });
+  });
+
   it('leaves a board’s own behind when the reader crosses to another', () => {
     const chosen = { 'qimen.method': 'zhirun', dayBoundary: 'midnight' };
 

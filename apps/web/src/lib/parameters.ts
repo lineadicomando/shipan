@@ -610,6 +610,9 @@ export function readChosen(params: URLSearchParams, board?: string, families = f
 export function chosenFields(chosen: Chosen): Record<string, string | undefined> {
   const fields: Record<string, string | undefined> = {};
   for (const row of DIVERGENCES) {
+    // A value the form hides is one the board laid does not read, and the
+    // server refuses a 奇門 option of the other family by name.
+    if (!shown(row, chosen)) continue;
     const value = chosen[wire(row)];
     if (value && value !== row.fallback) fields[wire(row)] = value;
   }

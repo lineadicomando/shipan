@@ -82,7 +82,7 @@ const MAX_CHAOSHEN = 8;
  * placement 「於理法都不是」 — a convenience adopted because the leap month was
  * hard to reckon. That is a divergence between practitioners and `method` has
  * no name for it: 置閏 means the 統宗's placement here without saying so.
- * `docs/sources.md` § 置閏 has both, and `ROADMAP.md` § 1 carries the debt.
+ * `docs/sources.md` § 置閏 has both, and `TODO.md` § 1 carries the debt.
  */
 export function zhirunAssignment(args: {
   /** Julian Day Number the day pillar was read from. */

@@ -343,7 +343,7 @@ export function formatMoment(
  * nothing in this file knows which schools exist.
  *
  * A parameter with one implemented value says nothing: what would be reported
- * is not a school but the absence of a second one, which is `ROADMAP.md` § 1's
+ * is not a school but the absence of a second one, which is `TODO.md` § 1's
  * business and not a board's.
  */
 /**

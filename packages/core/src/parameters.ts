@@ -1184,6 +1184,36 @@ export function requireImplemented<O extends object, K extends keyof O & string>
 }
 
 /**
+ * Refuses a 奇門 option given beside a family that does not read it.
+ *
+ * A family is a board of its own, and the hour board's options and the day
+ * board's travel in one type: `method` beside `system: rijia` was accepted and
+ * laid without, and a board that ignores what it was asked for looks exactly
+ * like one that honoured it. So this reads **what the caller gave**, never the
+ * options with the defaults filled in — a default nobody moved was not asked
+ * for — keyed by the parameter's own name. `name` is the word the surface asked
+ * for it by, which is the word the refusal has to say.
+ *
+ * A `system` the engine does not compute is left to `requireImplemented`, which
+ * names that refusal; reading the family of a board that is not laid would be
+ * answering a question nobody can ask yet.
+ */
+export function refuseOtherFamily(
+  given: Readonly<Record<string, unknown>>,
+  name: (parameter: ParameterEntry) => string = (parameter) => parameter.id,
+): void {
+  const system = String(given.system ?? CHART_PARAMETERS.system.default);
+  const families = new Set(PARAMETERS.map((parameter) => parameter.family));
+  if (!families.has(system as ParameterEntry['family'])) return;
+
+  for (const parameter of PARAMETERS) {
+    if (parameter.board !== 'qimen' || parameter.family === undefined) continue;
+    if (parameter.family === system || given[parameter.id] === undefined) continue;
+    throw new ChartError('OPTION_NOT_READ', { option: name(parameter), system });
+  }
+}
+
+/**
  * The divergences in force on a board, in the words a reader is owed.
  *
  * Every parameter of that board and of the layers under it that the engine

@@ -12,6 +12,7 @@ import {
   currentMoment,
   initEphemeris,
   julianDayFromMillis,
+  refuseOtherFamily,
   resolveMoment,
   systemTimezone,
   taiyiYearAt,
@@ -487,6 +488,15 @@ export function readOptions(params: URLSearchParams): ChartOptions {
   // school would cast a chart under a name nobody asked for, which looks right
   // and is not. `readDeclared` does that here and at every other board.
   readDeclared('qimen', params, options);
+
+  // And a parameter of the other family of 奇門 is refused by the name it
+  // travels under: `qimen.method` beside `qimen.system=rijia` is read by no
+  // board the address lays, and answering without it would look like honouring it.
+  const given: Record<string, string> = {};
+  for (const [name, value] of params) {
+    if (name.startsWith('qimen.')) given[name.slice('qimen.'.length)] = value;
+  }
+  refuseOtherFamily(given, (parameter) => `qimen.${parameter.id}`);
 
   // The almanac's register is bare, like the pillars' three and unlike a
   // board's: 曆注 is not a board. It is a page a chart is read *against*,

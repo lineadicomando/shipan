@@ -175,7 +175,7 @@ describe('the counts the documents state', () => {
   it('lists the languages the project actually speaks', () => {
     /**
      * `docs/i18n.md` prints `LOCALES` in a code block, and how many there are
-     * is a state rather than a design: Spanish is on the roadmap and the page
+     * is a state rather than a design: Spanish is in `TODO.md` and the page
      * says so. A page that went on printing two after a third landed would be
      * wrong about the one thing it is the home of — and the same page tells
      * the reader this test holds it, so the claim has to be true.
@@ -230,7 +230,7 @@ describe('the documents point where they say they point', () => {
   const linking = [
     'CLAUDE.md',
     'README.md',
-    'ROADMAP.md',
+    'TODO.md',
     ...readdirSync(join(ROOT, 'docs'))
       .filter((entry) => entry.endsWith('.md'))
       .map((entry) => `docs/${entry}`),
@@ -370,7 +370,7 @@ describe('docs/sources.tsv', () => {
    *
    * `school` says which declared value a quantity stands under — `huoling:
    * fixed`, `yuan: futou` — in the grammar a caller passes, which is the same
-   * grammar `ROADMAP.md` § 1 is held to. Written in prose it would be a second
+   * grammar `TODO.md` § 1 is held to. Written in prose it would be a second
    * name for a commitment the engine already names, and the two would part:
    * a value renamed in `parameters.ts` would leave the register pointing at a
    * school nothing computes, silently, in a file nobody reads end to end.
@@ -464,7 +464,7 @@ describe('docs/sources.tsv', () => {
 });
 
 /**
- * `ROADMAP.md` § 1 names what the engine refuses, and the engine is what says.
+ * `TODO.md` § 1 names what the engine refuses, and the engine is what says.
  *
  * This is the counts rule applied to a list: a table of what the code does,
  * kept by hand, drifts the moment the code moves, and it drifted — two values
@@ -477,12 +477,12 @@ describe('docs/sources.tsv', () => {
  * the second assertion — `yearBoundary: chunjie` is 太乙's refusal and the
  * pillars' default at once.
  */
-describe('ROADMAP.md says what the engine refuses', () => {
+describe('TODO.md says what the engine refuses', () => {
   const SECTION = /^## 1\..*?$([\s\S]*?)^## /m;
 
   const section = (): string => {
-    const found = SECTION.exec(read('ROADMAP.md'));
-    expect(found, 'ROADMAP.md has no § 1 to read').not.toBeNull();
+    const found = SECTION.exec(read('TODO.md'));
+    expect(found, 'TODO.md has no § 1 to read').not.toBeNull();
     return (found as RegExpExecArray)[1] as string;
   };
 
@@ -505,7 +505,7 @@ describe('ROADMAP.md says what the engine refuses', () => {
     const open = section();
     for (const [pair, verdicts] of pairs()) {
       if (verdicts.has(true)) continue;
-      expect(open.includes(`\`${pair}\``), `ROADMAP.md § 1 does not name ${pair}`).toBe(true);
+      expect(open.includes(`\`${pair}\``), `TODO.md § 1 does not name ${pair}`).toBe(true);
     }
   });
 
@@ -515,7 +515,7 @@ describe('ROADMAP.md says what the engine refuses', () => {
       if (verdicts.has(false)) continue;
       expect(
         open.includes(`\`${pair}\``),
-        `ROADMAP.md § 1 still calls ${pair} refused, and the engine computes it`,
+        `TODO.md § 1 still calls ${pair} refused, and the engine computes it`,
       ).toBe(false);
     }
   });

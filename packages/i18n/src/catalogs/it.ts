@@ -47,6 +47,8 @@ export const it: Record<MessageKey, string> = {
     'Il metodo {method} per la determinazione del ju non è implementato. Lo è soltanto chaibu, e nessun altro metodo viene messo al suo posto: una carta posta con il metodo sbagliato sembra giusta e non lo è.',
   'core.error.OPTION_NOT_IMPLEMENTED':
     '"{value}" per {option} non è implementato. Lo è soltanto {implemented}, e nessun altro valore viene messo al suo posto: una carta posta con l’opzione sbagliata sembra giusta e non lo è.',
+  'core.error.OPTION_NOT_READ':
+    'Una tavola {system} si posa senza l’opzione {option}, che appartiene all’altra famiglia di tavole 奇門 qímén. Per questo viene rifiutata anziché messa da parte: una tavola che l’avesse lasciata cadere sembrerebbe averla rispettata.',
   'core.error.EPHEMERIS_FAILURE':
     'Calcolo delle effemeridi fallito al giorno giuliano {julianDay}: {reason}',
   'core.error.EMPTY_INTERVAL':

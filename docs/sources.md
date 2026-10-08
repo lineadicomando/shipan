@@ -349,7 +349,7 @@ the other side in a worked example rather than an implementation choosing it.
 into one cell and leaves the centre starless» is what this convention looks like
 from outside: if the centre's occupants travel with their host, the centre ends
 empty and the host's destination carries two. The two things listed apart in
-`ROADMAP.md` are one parameter's worth of divergence.
+`TODO.md` are one parameter's worth of divergence.
 
 **What the witness is worth, said plainly.** 元靈經 is held as a transcription
 of unstated editorial provenance from an archive that no longer exists at the
@@ -522,7 +522,7 @@ choice with a Qing imperial print dissenting from half of it, by name and in
 one direction. **And a third reading is what turned this from a note into a
 debt**: two conventions could be called one implementation's preference, three
 cannot, and `CLAUDE.md`'s rule as narrowed on 2026-08-28 says a divergence
-between practitioners owes a parameter. `ROADMAP.md` § 1 carries it. It also names the 直符 **天乙** — 「直符天乙」 in the yin chart,
+between practitioners owes a parameter. `TODO.md` § 1 carries it. It also names the 直符 **天乙** — 「直符天乙」 in the yin chart,
 「艮開蓬天乙」 in the yang — which is the same spirit and the glyph the 四十格's
 天乙伏宮 and 天乙飛宮 are built on.
 
@@ -532,7 +532,7 @@ character in the outer rings gets perhaps fifteen — under half of what
 `docs/scans.md` sets as the floor. One sector was legible and it agrees:
 陽遁一局's 坎 reads 坎一 · 戊 · 甲子 · 休 · 直使, and this engine puts 戊 in
 palace 1 of that ju. That is one cell of nine and it is reported as one cell of
-nine. **The file cannot support the wholesale check the roadmap expected of
+nine. **The file cannot support the wholesale check `TODO.md` expected of
 it**, and the prose beside each chart is what it can support instead. Read on
 the plate 2026-08-28.
 
@@ -615,7 +615,7 @@ lets the turn reach the ninth seat. So:
 
 That third bullet **is the 元靈經 reading, in print.** 《奇門遁甲元靈經》 states
 it in two worked examples, and the register weighs that witness as what it is —
-a transcription of unstated provenance which checks itself. `ROADMAP.md` said a
+a transcription of unstated provenance which checks itself. `TODO.md` said a
 print was wanted before the value was implemented. This is that print — a Qing
 imperial woodblock, stating the same thing not once in a worked chart but as a
 table covering every hour of every 局. The two halves of the divergence turn
@@ -805,7 +805,7 @@ once would have tabulated the transpose nine times without noticing. Against it
 stands the season-centric reading, which is the ordinary 五行 statement and what
 `strengthOf` calls «stateable in a sentence». **So nothing moves in the code**,
 and what the register gains is that a shipped quantity now has a transmitted
-text against it rather than nothing. `ROADMAP.md` § 1 carries it: two
+text against it rather than nothing. `TODO.md` § 1 carries it: two
 practitioners can hold opposite sides here, and no chart says which side drew
 it.
 
@@ -1179,7 +1179,7 @@ not have one: `method` carries 拆補, 置閏 and 茅山, and 置閏 means the �
 placement here without saying so. The engine keeps that placement, which is
 what the runnable reference and the worked example both do; `zhirun.ts` used to
 call 芒種 and 大雪 「the only place the tradition allows it」 and that sentence is
-now false and has been corrected. `ROADMAP.md` § 1 carries the debt.
+now false and has been corrected. `TODO.md` § 1 carries the debt.
 
 **The passage has a second print and not a second witness, which was
 established the wrong way round first.** 遁甲集成 第四冊 prints this whole block
@@ -1231,7 +1231,7 @@ third and not a second for either: one witness states it, and the standard is
 two. What it does is change what the two existing values *are* — `solstice`
 turns out to be this rule with the choice suppressed, and `runyue` to be it with
 the pair suppressed — and that is the sort of thing a value's description has to
-say before a third is declared. `ROADMAP.md` § 1 carries the debt with the
+say before a third is declared. `TODO.md` § 1 carries the debt with the
 placement.
 
 **The same page carries a threshold this file had not recorded.** Its opening
@@ -1446,7 +1446,7 @@ leaves 乙 in the centre. One heaven-plate cell, and the text's own 夾注 quarr
 with the reading rather than settling it: 「中宮天禽帶乙奇，此云天芮帶到，於理
 不合。」 `centreTravel` is not this — that decides where the 值符 and 值使 are
 *reported* when the count lands them on the centre, and here the instrument is
-in 震. `ROADMAP.md` § 1 carries the debt.
+in 震. `TODO.md` § 1 carries the debt.
 
 **The centre, and four readings each with a name on it.** 凡例 p. 一二 lists
 them: 中宮寄坤 leaves the centre empty and lodges its gate and star out to 坤,
@@ -1589,7 +1589,7 @@ The 序 states the pair (sheet 2):
 排宮法又稱轉盤 against 飛宮法又稱飛盤, and the refused one names the family
 《遁甲演義》 flies whole — the 年家, 月家 and 日家, which is why `plate` and
 `system` move together. 折衷 flies the 奇儀 and the nine stars on the **hour**
-board and turns the eight gates on that same board. `ROADMAP.md`'s clause under
+board and turns the eight gates on that same board. `TODO.md`'s clause under
 `plate: fei` asks for a text that flies the hour board; this is a text that
 flies half of it, on a named authority and at length, and one witness to a third
 arrangement declares nothing. So the clause moves and the value does not. The
@@ -2828,7 +2828,7 @@ that the compiler who prints it most fully calls 諸說紛紜 and 後人附會�
 parameter value names a school somebody follows. **The one text here that
 states these boards most fully is the one that says they are not what the art
 is about**, and this engine is not in a position to pick a school out of a set
-its own best witness disowns. `ROADMAP.md` § 1 carries what would change it: not
+its own best witness disowns. `TODO.md` § 1 carries what would change it: not
 another statement of the method, of which there are now plenty, but a lineage
 that holds one of them.
 
@@ -2882,7 +2882,7 @@ printed beside it: 「至九星轉運，陽用飛星，陰用伏宮退一法，*
 and the work separates it from its neighbour and forbids using one for the
 other. It is an overlay on a laid board, which is what the two sentences
 suggested and is now established instead of suspected. `plate: fei` does not
-move on it, and the clause under that value in `ROADMAP.md` can be written with
+move on it, and the clause under that value in `TODO.md` can be written with
 a reason.
 
 **And the chapter carries a laying procedure that does fly, which is a
@@ -3359,7 +3359,7 @@ it is one line out of that stretch. From the extract, so a lead and marked:
 
 #### The lineages that hold one reading, and the fifth family
 
-`ROADMAP.md` § 1 says what would move these values: not another statement of the
+`TODO.md` § 1 says what would move these values: not another statement of the
 method but a lineage holding one of them. Two are on this shelf and neither has
 been weighed. Both are 張志春's line, both are extracts, and they are recorded
 here as leads with the register's reason for keeping a lead written down.
@@ -3413,7 +3413,7 @@ survey is not a reading and each row says what was sampled.
 | 《遁甲集成》第一冊 | **positive, and the survey missed it.** Twelve sheets sampled from its p. 20 onward found nothing; 遁甲釋要's four families are at pp. 9–11, in the first work of the volume. The lesson is `docs/scans.md`'s own — a contact sheet has to cross the whole extent, and «the whole extent» includes the front |
 | 《遁甲集成》第四冊 | **positive**, and a fourth copy of one text. See the table above |
 | 《奇門遁甲秘笈大全》, 故宮 第427冊 | **positive** at its 目錄, body unread. See above |
-| 故宮 第429冊 | **the volume holds four works and this file named three.** Its title page reads 奇門遁甲 · 奇門遁甲全局 · 奇門遁甲備覽 · 遁甲奇門捷要. 奇門遁甲 is four juan of prose to series p. 126; 奇門遁甲全局 is the circular hour plates from p. 146, the ones `ROADMAP.md` records as uncheckable wholesale; **《奇門遁甲備覽》, from about series p. 440, prints one eight-pointed diagram per day** — headed 日 · phase · branch · stem, with a 陽局 and a 陰局 and a 喜神 and a 鶴神 beside each. A day board, and 喜神 is the layer the modern manuals name as the day family's. The diagrams are dense and fogged; nothing is quoted off them until a cell is cropped and rendered |
+| 故宮 第429冊 | **the volume holds four works and this file named three.** Its title page reads 奇門遁甲 · 奇門遁甲全局 · 奇門遁甲備覽 · 遁甲奇門捷要. 奇門遁甲 is four juan of prose to series p. 126; 奇門遁甲全局 is the circular hour plates from p. 146, the ones `TODO.md` records as uncheckable wholesale; **《奇門遁甲備覽》, from about series p. 440, prints one eight-pointed diagram per day** — headed 日 · phase · branch · stem, with a 陽局 and a 陰局 and a 喜神 and a 鶴神 beside each. A day board, and 喜神 is the layer the modern manuals name as the day family's. The diagrams are dense and fogged; nothing is quoted off them until a cell is cropped and rendered |
 | 《開悟之門》 | **negative.** Twelve sheets across 452, and the extract of the same file is a good one, being modern type: a 時家 casebook of 1998–99 in 張志春's line |
 | 《奇門遁甲秘笈大全》, 生生堂 | not surveyed. A second copy of a work whose question is answered |
 
@@ -3863,9 +3863,10 @@ where to ask rather than an answer**: 《六壬經緯》 is complete in six juan
 its own 序 names them — 「其書六卷，曰演法、曰神煞、曰格局、曰斷占、曰類」 — so
 one of the six is 神煞 entire, at series pp. 1–92; and 《御定六壬直指》 卷上's
 目錄 carries 起貴人定十二天將法 beside 天干所屬 and 地支所屬, which is the
-shape an attribution would be printed in. Neither has been read. **A witness
+shape an attribution would be printed in. Neither had been read. **A witness
 located is not a witness weighed** and the ink is what it was. Last checked
-2026-08-31.
+2026-08-31. **Both have since been read, and neither carries one**: § "Whose
+each value of a 六壬 board is" says what each holds instead.
 
 **And 金口訣 is not this board, which the shelf keeps a book to be able to
 show.** 《官板大六壬神課金口訣》, 金陵經正堂校梓 — the 故宮珍本叢刊 facsimile,
@@ -7521,7 +7522,7 @@ reports it, and a holder found later takes the reporter's place.
 the value stays refused until the line is found to hold one.
 
 **A divergence is in one of three states**, and
-[`ROADMAP.md`](../ROADMAP.md) § 1 says which.
+[`TODO.md`](../TODO.md) § 1 says which.
 
 | | When |
 |---|---|
@@ -7605,7 +7606,7 @@ stands on that text.
 at two to four plate-pages a minute cannot be re-read at every arrival, and a
 rule that asks for it is a rule that gets skipped.
 
-1. **What is standing?** `ROADMAP.md` § 1 says, per refused value, what would
+1. **What is standing?** `TODO.md` § 1 says, per refused value, what would
    move it — a school holding 艮, a text flying the hour board, a lineage
    holding one reading, a 授時 table printing 參, an epoch for 紫氣. Those
    clauses are the query put to the arrival, and they stay there rather than
@@ -7619,7 +7620,7 @@ rule that asks for it is a rule that gets skipped.
    where it agrees, a divergence where it does not. § "What a second copy of one
    text buys" says which of the two an arrival is.
 
-**The closure sentences are the thing to sweep.** `ROADMAP.md` § "Resuming
+**The closure sentences are the thing to sweep.** `TODO.md` § "Resuming
 cold" already names the phrases asserting an unfinished state — «not yet read», «still missing»,
 «none opened» — and an arrival falsifies the opposite ones: «this list is
 empty», «no file left on this shelf», «nothing here is waiting to be read», «an

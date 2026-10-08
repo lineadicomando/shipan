@@ -886,6 +886,19 @@ describe('the flags the declaration gives', () => {
     expect(gates(turned)).not.toEqual(gates(flown));
   });
 
+  it('refuses an option of the hour board beside the board of a day, by its flag', async () => {
+    const asked = ['--system', 'rijia', '--method', 'zhirun', '--lang', 'en'];
+    const code = await run(['qimen', ...MOMENT, ...asked]);
+    expect(code).toBe(1);
+    expect(err).toBe(
+      `${translate('en', 'core.error.OPTION_NOT_READ', { option: '--method', system: 'rijia' })}\n`,
+    );
+    // And the other way about: the gates of a day are no option of the hour's.
+    err = '';
+    expect(await run(['qimen', ...MOMENT, '--day-gates', 'zhuan', '--lang', 'en'])).toBe(1);
+    expect(err).toContain('--day-gates');
+  });
+
   it('keeps a question for the hour board, and names the family in refusing', async () => {
     const code = await run(['qimen', ...MOMENT, '--system', 'rijia', '--prompt', '--lang', 'en']);
     expect(code).toBe(1);
