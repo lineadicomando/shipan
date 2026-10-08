@@ -6535,7 +6535,9 @@ first 太乙 witness here besides the 金鏡式經. Whether it carries 卷一's 
 was the question, and the answer is the paragraph above: it carries constants of
 its own, on another calendar, and none of 《金鏡》's. Four of its four hundred
 and forty leaves have been read, which is what that answer rests on. Last
-checked 2026-09-03.
+checked 2026-09-03. Its 卷二 and the head of its 卷三 were read on 2026-10-08
+and the answer stands: § "《太乙數統宗大全》卷二 and 卷三: the count of years
+dated twice, and the other three 計 stated".
 
 **A 四庫 volume was filed the same day, and it lifts nothing.**
 《景印文淵閣四庫全書》第810冊 carries 太乙金鏡式經 十卷 whole — and the plate the
@@ -6925,6 +6927,97 @@ handout naming no source cannot contradict a text, so **nothing moves**: 大將
 and 參將 stay at rung 5, on 卷一, 卷六 and 卷九's worked boards, and this file
 is not a witness. Read on the plate 2026-08-30.
 
+### 《太乙數統宗大全》卷二 and 卷三: the count of years dated twice, and the other three 計 stated
+
+《太乙數統宗大全》, 故宮珍本叢刊 第420冊, 四十卷 by the series' 新編目錄 on
+its last leaf. Read on the plate on 2026-10-08, at the file's 300 dpi with
+the leaves quoted enlarged: 卷二 from its 目錄 to 求超神接氣術, series
+pp. 16–21, and 卷三 from its 目錄 to 求四計太乙所在宮次術, pp. 27–29. A PDF
+page is the series page plus four. The rest of 卷二, which is 朓朒 tables, was
+looked at and not read; the other thirty-eight juan are unread.
+
+**The count of years is stated at two dates and lays the board this engine
+lays.** 求太乙積年術, p. 19:
+
+> 今以上元甲子距景泰二年辛未歲一千一十五萬五千三百六十七歲。置演上元甲子距大
+> 元大德七年癸卯歲積一千零一十五萬五千二百一十九年，上考往古每年減一，驗將來
+> 每年加一。
+
+1451 less 1303 is 148 and so is the difference of the two counts: the text
+checks itself. Against the engine: the 金鏡's count for 1303 is 1 937 860,
+which is 340 past a multiple of 360, and this one is 339; 卷三 then takes
+what is left after 360 and after 72 as 「入元以來年數」 and has it 「就起第一
+局」, where the 金鏡 takes its remainder as the 局 itself. Fifty-one years
+elapsed counted from 局 1, or a remainder of fifty-two: 局 52 in the 壬子元
+either way, and 局 56 in the 丙子元 for 1451. So the two works' counts are
+one apart and are read one apart, and the board is the same. That was known
+here through 盧央; it is now read on the plate, with the two dates that fix
+the print after 1451.
+
+**The apparatus is the 授時's year on a day of 10 500 parts.** P. 20: 日法
+一萬五百分, 歲實 三百八十三萬五千零四十六分二十五秒 — which is 365.2425 days,
+the 授時曆's 歲實 — with 元法 七萬二, 紀法 六萬, 辰法 八百七十五 and 刻法
+一百零五 beside it. The lunar constants on the same leaf were not collated:
+one of them is damaged where a digit stands. This is what the entry of
+2026-09-03 called another system's constants, and it is: nothing here is a
+second look at the five numerals 卷一 of the 金鏡 prints, and 推時計差法's 闕
+is not answered, the 統宗 reaching its 時計 by no constant at all.
+
+**月計, 日計 and 時計 are each stated as a procedure, pp. 28–29.**
+
+> 求月計太乙入紀元局術：求天正十一月氣積應月，如所求月為實積月，以周紀法三百六
+> 十去之，不盡為周紀餘，以紀法六十約之而一，所得為紀數…又置周法以元法七十二
+> 約之而一，所得為元數，不滿為元入來月數，命起一局即得所在。
+
+The months are 卷二's 求天正積月術 — 「置所求積年內減一算，以十二乘之為所求歲
+前天正十一月之積月」 — twelve to a year, so the months of the terms and not of
+the Moon, counted from the 十一月 before the year.
+
+> 求日計太乙入紀元局法：置氣朔積日加所求積日為實。所求用日計：正德己巳十一月初
+> 六日甲子下元大紀，庚午年正月初七日甲子上元第一紀。
+
+The dates are in small characters under the heading, and 卷二's 求天正冬至積日
+術 carries the same two. **Both are 甲子 days in this engine's calendar**:
+the sixth of the eleventh month of 1509 and the seventh of the first month of
+1510, sixty days apart, which is one 紀. So the day count has an anchor
+stated twice in the work, self-consistent, and agreeing with a calendar the
+work did not see: the first 甲子 day of an 上元 falls on the proleptic
+Gregorian 25 February 1510.
+
+> 求時計太乙入紀元局術：值冬至夏至所日減一，以十二乘之為辰，前半子正之初積時
+> 也，加所求時為積時，而周紀餘法三百六十去之…又置周紀餘以元法七十二約之為元
+> 數，不滿為入元以來時數，起命第一局即得時計入局。
+
+Hours counted from the solstice, winter or summer, twelve to a day. And the
+compiler's own note closes the four, p. 29: 「所在歲月日時四計之數，惟歲計與
+日計加盈差二百四十，其與五元六紀之數皆不相合者…之於古亦無所取，今循舊法而用
+之，使無後惑矣」 — of the four counts only the year's and the day's take a
+盈差 of 240, they do not agree with the five 元 and six 紀, nothing in the
+old texts supports it, and the old method is followed. One character before
+之於古 was not read.
+
+**So the three registers are no longer waiting on this work being read; they
+are waiting on being built.** `ji: yueji`, `riji` and `shiji` have, in a work
+with a title and a date, a counter apiece, and 求四計太乙所在宮次術 on the
+same leaf lays 太乙 from any of the four by the one rule — 「置所求入局積數，
+以太乙小周法二百四十去之，不盡以太乙行宮率三約之」. They stay refused by this
+entry, for reasons that are about the engine and the reading and not about
+the shelf:
+
+- a 太乙 board is a function of a year and takes no instant; a month's, a
+  day's or an hour's board takes one, which is a second input type and every
+  surface with it;
+- 「所日減一」 reads as the days from the solstice less one, and was not held
+  to a worked board. 卷六 and 卷九 of the 金鏡 lay 日計 and 時計 boards, and
+  a case in either work is what would fix whether the count is inclusive;
+- the 盈差 of 240 is named and not explained on these leaves. Where it enters
+  the year's count, the board above does not show it: 局 52 for 1303 comes
+  out without it;
+- 下元大紀 and 上元第一紀 say the day's count runs in three 元, which the 局
+  does not need and a board printing its 元 would.
+
+Last checked 2026-10-08.
+
 ### Whose each value of a 太乙 board is
 
 Written 2026-10-07, under § "The standard, stated once". It attributes what
@@ -6947,7 +7040,7 @@ cast by the 統宗. Its readings reach this register through 盧央's
 | `epoch: jinjing` | 《太乙金鏡式經》, the 《統宗》 | the anchor checked four ways in the first; the second's count differs by a multiple of both cycles and lays the same board |
 | `epoch: taojin` | 《太乙淘金歌》 | named by 盧央 as one of three 上元積年 in circulation; not on the shelf, its figure and procedure unstated here. 盧央 sets it against eleven dated positions of 《齊書·武帝紀》, where it gives 九宮 for the annal's 四宮 |
 | `ji: nianji` | both works | 歲計 in each |
-| `ji: yueji`, `riji`, `shiji` | both works, with different constants | the 金鏡 prints the three procedures entire and its constants fail the check it supplies; the 統宗's are another system's and are not read |
+| `ji: yueji`, `riji`, `shiji` | both works, with different constants | the 金鏡 prints the three procedures entire and its constants fail the check it supplies; the 統宗's are another system's, read on 2026-10-08: months from the 十一月 before the year, days from a 甲子 it dates twice, hours from the solstice |
 
 **`yearBoundary` is not attributed, in any of its three values.** The text
 nowhere says where its counted year begins; 立春 is the default because the
@@ -7012,7 +7105,10 @@ The volume named two sections above bears on both halves of that — a second
 witness for the counts, and a second reading for the 闕 — and has been read for
 the first only: its 卷二 gives counts, and they are 《統宗》's own rather than a
 second look at these. The 闕 is still unread against it. Last checked
-2026-09-03.
+2026-09-03. **Read since**: the 統宗 has no such constant to set beside the
+闕, counting its hours from the solstice, and it states all three registers
+as procedures of its own — § "《太乙數統宗大全》卷二 and 卷三: the count of
+years dated twice, and the other three 計 stated".
 
 **四神, 天乙, 地乙 and 直符太乙.** 卷五 places all four, and they walk **twelve**
 palaces rather than eight — the nine plus 絳宮, 明堂 and 玉堂, which 卷八 gives

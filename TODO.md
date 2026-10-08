@@ -177,7 +177,7 @@ is".
 | | State | What it has, and what it waits on |
 |---|---|---|
 | `epoch: taojin` | declared and refused | held by 《太乙淘金歌》, which reaches the register through 盧央 and is not on the shelf. Waits on the text, and travels with the evidence 盧央 sets against it |
-| `ji: yueji`, `ji: riji`, `ji: shiji` | declared and refused | the 金鏡 states all three and its constants fail its own check; the 統宗 carries another system's. Waits on the 統宗's being read, as that work's |
+| `ji: yueji`, `ji: riji`, `ji: shiji` | declared and refused | the 金鏡 states all three and its constants fail its own check. The 統宗 states each as a procedure of its own, read 2026-10-08: months from the 十一月 before the year, days from a 甲子 it dates twice and the calendar confirms, hours from the solstice. Waits on being built — a board that takes an instant — and on a worked 日計 or 時計 board to fix whether 「減一」 counts inclusively |
 | `yearBoundary: dongzhi`, `yearBoundary: chunjie` | declared and refused | no holder, and the default has none either |
 | `geChong: chong` | declared and refused | a 格 made by a 沖 of branches: the 統宗, on one board 盧央 reproduces, 始擊 in 辰 against a 太乙 in 乾. Waits on the rule being stated — which seats and which bodies it reaches — and one board is not that |
 | 陰陽和不和 in two accounts | recorded | one work carrying both |
@@ -368,7 +368,7 @@ entry shows. Ordered by what a reading would move.
 
 | | what would move | where |
 |---|---|---|
-| 《太乙數統宗大全》, 故宮 第420冊 | the 闕 of 卷一 read against a second hand; its own constants answered the other half and did not lift the refusal, being another calendar's | four leaves of 440 read — 卷二's calendrical apparatus and 卷三's 起例 |
+| 《太乙金鏡式經》卷六 · 卷九, or the 《統宗》 past 卷三 | a 日計 or a 時計 board worked for a date, to hold the 統宗's counters to: whether 「所日減一」 counts inclusively, and where the 盈差 of 240 enters | the 金鏡 is SKQS vol. 810 from its p. 855; the 統宗's 卷四 opens at series p. 35, and thirty-eight of its forty juan are unread |
 | 《中國古代星占學》 第五章 · 太乙式數占 | 陰陽和不和, refused because two accounts of it do not line up; this chapter's eight principles open on the parity of a 算, which is what they disagree about | printed pp. 492–499, of which only the closing summary is read |
 | 《中國古代星占學》 第五章 · 太乙十神 · 十精太乙 | the four bodies that walk twelve palaces, and the one layer of this art read for weather rather than for reigns — named in the register and not computed | printed pp. 505–511 and 512–519 |
 
@@ -437,10 +437,10 @@ Binding, and the place where an honest session and a wasted one part.
   reopens the part of it that named that file's class or its text, bounded:
   `docs/sources.md` § "What an arrival reopens" says how far.
 
-**Two negatives stand reopened and unanswered**, each dated in the register
-and each naming the volume that would answer it: 太乙's 卷一 constants and its
-月計 · 日計 · 時計, both waiting on 《太乙數統宗大全》 in § 2. That is the
-register's side of the same table. The five phases of the 十二天將 were the
+**Two negatives stood reopened and are answered**, both by 《太乙數統宗大全》,
+read on 2026-10-08: 太乙's 卷一 constants have no second hand in it, which
+closes that against this volume, and its 月計 · 日計 · 時計 are stated there
+as that work's own procedures. The five phases of the 十二天將 were the
 third: both sections located for them have been read and carry none, so that
 question waits on a file this shelf does not hold.
 
