@@ -781,7 +781,7 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
         id: 'yuejiang',
         name: { hanzi: '月將', pinyin: 'yuèjiàng' },
         implemented: true,
-        heldBy: ['santong'],
+        heldBy: ['xingxuedacheng', 'santong'],
       },
       { id: 'ascendant', implemented: false },
     ],

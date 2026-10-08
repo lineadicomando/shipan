@@ -195,6 +195,7 @@ frame, the first a line holds, is computed since 2026-10-07 by the method of
 | `xiudu: shixian` | declared and refused | a table with no epoch that can be cited. Waits on one |
 | `gong: ci` | declared and refused | the table is read: 《星學大成》卷一's 宿度過宮之圖, in the 授時 frame, nine boundaries of twelve checked by the table's own symmetry and three miscopied. Waits on a second copy for those three — the 《元史·曆志》 has the 曆's own — on the work's 起例, and on what the value computes under the default frame |
 | `minggong: ascendant` | declared and refused | no holder named; a second method and not a second reading |
+| the 命宮 to a lodge and a degree | recorded | 《星學大成》卷三 起立命: the Sun's degree carried to the 命 by a 量天尺. The engine carries the palace |
 | the 距星 of 觜 and of 參 | recorded | four assignments across the Tang, the Song, the Jesuit order and the 《儀象考成》; the engine takes the last. 潘鼐's 表71 identifies the 至元 pair as φ¹ Ori and δ Ori, which the 授時 frame as computed does not read |
 
 **曆注, and the layers under every board** — argued in `docs/sources.md`
@@ -366,7 +367,7 @@ entry shows. Ordered by what a reading would move.
 
 | | what would move | where |
 |---|---|---|
-| SKQS vol. 809, 《星學大成》, past 卷一 leaf 8 | how the 命宮 is taken, which node 羅睺 is, where 紫氣 is put, and whether the work casts by the 宮 its first leaves cut in 宿度. The front and those leaves are read; the copy has no 目錄, so the 凡例's three juan are found by the 版心 | volume pp. 293–870; a character reads at a quarter of the file's resolution |
+| SKQS vol. 809, 《星學大成》, from 卷四 | which node 羅睺 is and where 紫氣 is put; and the degree of the 命, which the work takes off a 量天尺 and the engine does not carry. 卷一 leaves 1–8 and 卷三's 運限起例 are read; 卷二 and the rest of 卷三 are verses on the 神煞, paged through. The copy has no 目錄, so a section is found by the 版心 and a page of headings | volume pp. 341–870; 卷四 opens about p. 347 |
 | 《太乙數統宗大全》, 故宮 第420冊 | the 闕 of 卷一 read against a second hand; its own constants answered the other half and did not lift the refusal, being another calendar's | four leaves of 440 read — 卷二's calendrical apparatus and 卷三's 起例 |
 | 《中國古代星占學》 第五章 · 太乙式數占 | 陰陽和不和, refused because two accounts of it do not line up; this chapter's eight principles open on the parity of a 算, which is what they disagree about | printed pp. 492–499, of which only the closing summary is read |
 | 《中國古代星占學》 第五章 · 太乙十神 · 十精太乙 | the four bodies that walk twelve palaces, and the one layer of this art read for weather rather than for reigns — named in the register and not computed | printed pp. 505–511 and 512–519 |

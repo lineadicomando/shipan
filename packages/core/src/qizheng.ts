@@ -267,10 +267,10 @@ export interface House {
  * The twelve 人事宮, from the 命宮 in the order they are numbered.
  *
  * **They ascend against the branches, which is forwards through the sky**, and
- * that direction was the last thing this board settled. No source consulted
- * states it in terms that could be held against another, so it is carried the
- * way the 值日宿 epoch is carried: by over-determination, with the check
- * written down so a reader can run it.
+ * that direction was the last thing this board settled. It is carried the way
+ * the 值日宿 epoch is carried: by over-determination, with the check written
+ * down so a reader can run it. One text states it outright — 《星學大成》卷三,
+ * 「逆數右轉」 — and was read after the check was made.
  *
  * The check is the names. These twelve are the Hellenistic houses in the
  * Hellenistic order, position for position — wealth second, siblings third,

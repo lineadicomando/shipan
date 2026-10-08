@@ -5559,7 +5559,7 @@ their radial writing turned upright before it was read. The other
 twenty-nine juan and the rest of the first are unread.
 
 **What the front of it says.** The 原序 closes 「嘉靖肆拾貳年歲次癸亥十月朔日
-易水萬民英謹序」. The 凡例前引 announces three juan of 凡例 — 「上卷定吉凶雜
+易水萬民英謹序」, which is 1563. The 凡例前引 announces three juan of 凡例 — 「上卷定吉凶雜
 曜，中卷定觀星節要，下卷論位次強弱、諸家限例」 — and says where the charts
 come from: 「余取臺曆諸星圖、神煞及諸家之所散見」. This copy carries no 目錄
 between that leaf and 卷一, so a section is reached by the 版心, which gives
@@ -5631,9 +5631,11 @@ its lodges are the ones `xiudu: shoushi` computes — in the first diagram of a
 work with an author, a date and a 提要. That is attribution and transcription
 for nine boundaries of twelve. It stays refused by this entry: three cells
 want a second copy, the shelf does not yet say whether the work casts by
-these boundaries or only prints them, since its 起例 is unread, and a 宮 cut
-in 宿度 is a frame carried with the lodges, which is a decision about what
-the value computes under `xiudu: juxing`. The second copy is not far: the
+these boundaries or only prints them — its 起立命, read since and the section
+below, takes the 命 to a lodge and a degree off a 量天尺, which is casting in
+宿度 without naming this table — and a 宮 cut in 宿度 is a frame carried with
+the lodges, which is a decision about what the value computes under `xiudu:
+juxing`. The second copy is not far: the
 授時's own 黃道十二次宿度 is in the 《元史·曆志》, which is not held.
 
 **And the leaves after the wheels are dignities.** Leaves 5 to 8: 星辰分野所屬
@@ -5641,9 +5643,67 @@ the value computes under `xiudu: juxing`. The second copy is not far: the
 and the 分野; 星辰入垣之圖 and 星辰升殿之圖, a 曜 to each lodge; 星辰貴格之圖.
 None of it is computed, and none of it was read past its headings.
 
-**What was not reached**, and is what the work was wanted for: how the 命宮
-is taken, which node 羅睺 is, and where 紫氣 is put. The 凡例's 中卷 is
-where the plan of the work would put them.
+**What these leaves do not hold**, and is what the work was wanted for: how
+the 命宮 is taken, which node 羅睺 is, and where 紫氣 is put. The first is in
+卷三 and is the section below; the other two are not reached.
+
+Last checked 2026-10-08.
+
+### 《星學大成》卷三 運限起例, where the 命宮 and the order of the twelve are stated
+
+Read on the plate on 2026-10-08: 卷三 leaves 21 to 27, the volume's
+pp. 337–340. 卷二 and the rest of 卷三 are verses on the 神煞, a heading and a
+歌 apiece, and were paged through and not read. The section opens on leaf 21
+verso under 運限起例 and runs 支中人元, 年上起月, 日上起時, 起立命, 起大運,
+起小運, 起大限, 起小限 and the 月限.
+
+**起立命 is the rule this board lays the 命宮 by, in a work with an author.**
+Leaves 21 verso to 22:
+
+> 看太陽在何宮，以生時加太陽宮起，順數。如太陽在子，即從子上起生時，挨丑順數
+> 至卯，便是立命宮。又看太陽躔第幾度，以量天尺對立命躔何宿第幾度。
+
+The hour laid on the palace the Sun is in and counted on to 卯: `minggong:
+yuejiang`, which the register quoted from «the texts», unnamed, and attributed
+to 《三命通會》 — the same author's other work, which lays the hour on the
+month's palace and not on the Sun's. This one is named for the value beside
+it. **And the second sentence gives the 命宮 a degree**: the lodge and degree
+the 命 stands at, taken off a 量天尺 against the Sun's own. The engine carries
+a palace and no degree for it. That is recorded, and it is also the answer to
+what the entry above left open: the work casts in 宿度, on the wheels its
+first leaves print.
+
+**The twelve are numbered against the branches, and the limits run with
+them: both stated, in one sentence.** 起小限, leaves 25 verso to 26:
+
+> 以宮分言，則一命宮、二財帛、三兄弟、四田宅、五男女、六奴僕、七妻妾、八疾厄、
+> 九遷移、十官祿、十一福德、十二相貌，逆數右轉；以限度言，則一命宮、二相貌、
+> 三福德、四官祿、五遷移、六疾厄、七妻妾、八奴僕、九男女、十田宅、十一兄弟、
+> 十二財帛，順數左旋。宮分次第不可亂也。
+
+逆數 is the count against the branches, and the example beside it fixes the
+sense: a 小限 「從命宮起逆轉」 goes from a 命 in 丑 to 子 and then to 亥. So
+財帛 stands a branch behind the 命宮 and the 大限 walks 命, 相貌, 福德, 官祿
+the other way, which is the direction the engine counts in and the order of
+limits it took as the independent check. **The direction was carried on
+over-determination because no source consulted stated it in terms another
+could be held against; this one does.** It is one text, and the
+over-determination is still the stronger check, so the row keeps its rung and
+loses the sentence that said nobody states it. The work writes 妻妾 where the
+engine's list has 夫妻.
+
+**What else the section holds, by name.** 起大運 counts three days to a year
+from the 節 and never the 氣 — 「論節不論氣」 — and reckons the remainder by
+the 時, a 時 to a 旬, which is the count 《三命通會》 gives and no finer. 起小運
+starts a man at 丙寅 forward and a woman at 壬申 back. 起大限 is headed 「琴堂
+洞微皆同」 and opens the limits from the degree of the 命, with a table of
+童限 by lodge and one case worked from a Sun at 翼十度; its figures were not
+collated. The 月限 follow, and a note on reading the 日宿. None of the limits
+is computed.
+
+**Still not reached**: which node 羅睺 is and where 紫氣 is put. The leaves
+read name 羅, 計, 孛 and 紫 among the 曜 and give no rule for placing any of
+them.
 
 Last checked 2026-10-08.
 
@@ -6034,8 +6094,11 @@ the Sun culminates. A rule laid the other way round fails all three.
 
 命宮, 財帛, 兄弟, 田宅, 男女, 奴僕, 夫妻, 疾厄, 遷移, 官祿, 福德, 相貌. They
 follow from the 命宮 by counting, and **the counting has a direction that no
-source consulted states in terms another could be held against.** Two agreeing
-sources was not available. What is here instead is the argument the 值日宿
+source consulted when this was written stated in terms another could be held
+against.** One does, read since: 《星學大成》卷三 numbers the twelve 逆數右轉
+and the limits 順數左旋, with a case that fixes which way 逆 runs — § "《星學
+大成》卷三 運限起例, where the 命宮 and the order of the twelve are stated". It
+agrees with what follows. What is here is the argument the 值日宿
 epoch is here on: a structure with more constraints than it has freedom, so a
 wrong answer breaks many things at once and the right one breaks none.
 
@@ -6112,7 +6175,8 @@ shoushi`.
 **Not yet attributed.** `luohou: ascending` is computed and is put on 湯若望
 and the 時憲曆 with no text on the shelf named for it. `minggong: yuejiang` is
 quoted — 「以生時加在太陽所在之宮，順數至卯，即是命宮」 — from «the texts»,
-unnamed. `gong: zhongqi` has no text named on this board at all and gains a
+unnamed; since 2026-10-08 it has a text, 《星學大成》卷三 起立命, which is
+declared its holder. `gong: zhongqi` has no text named on this board at all and gains a
 row saying so. `ziqi: off`, `xiudu: shixian` and `minggong: ascendant` have no
 holder named either. `gong: ci` has a table since 2026-10-08, in 《星學大成》
 卷一, nine boundaries of twelve read and checked; no holder is declared on it
@@ -6125,9 +6189,9 @@ the Tang and Song assignments, the order the Jesuits printed and the 《儀象
 boundary changes lodge with the choice, so the row reads `recorded`.
 
 **Not a matter of lines.** The direction the twelve 人事宮 are counted in
-rests on one unnamed source and three derivations. Nobody on the shelf holds
-the other direction for this art; what the quantity is short of is evidence,
-and its row keeps its dash.
+rests on three derivations and, since 2026-10-08, on 《星學大成》卷三 stating
+it. Nobody on the shelf holds the other direction for this art, so there is
+no value to name a holder for, and its row keeps its dash.
 
 ### What is not here
 

@@ -170,6 +170,12 @@ export const WITNESSES = {
     name: { hanzi: '圖解奇門遁甲大全', pinyin: 'tújiěqíméndùnjiǎdàquán' },
     year: 2009,
   },
+  /** 萬民英's 《星學大成》, whose 起立命 lays the hour on the Sun's palace and counts to 卯. */
+  xingxuedacheng: {
+    kind: 'transmitted',
+    name: { hanzi: '星學大成', pinyin: 'xīngxuédàchéng' },
+    year: 1563,
+  },
   /** 萬民英's 《三命通會》, whose 論大運 works the opening of the cycles by the 時辰. */
   santong: {
     kind: 'transmitted',
