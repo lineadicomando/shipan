@@ -336,8 +336,8 @@ almanac takes none of these at all. Both are below.
 | 太乙 | `ji` | which register the board is laid in: `nianji` (歲計 suìjì, which is what both witnesses call it), `yueji` (月計 yuèjì), `riji` (日計 rìjì), `shiji` (時計 shíjì) | `nianji` |
 | 太乙 | `geHost` | whose bodies the condition 格 is marked for: `ke` (客 kè — the guest's eye and generals alone, as 《太乙金鏡式經》 has it), `zhuke` (主客 zhǔkè — the host's generals as well, as the 《統宗》 has it) | `ke` |
 | 太乙 | `geChong` | what makes a 格: `gong` (對宮 duìgōng — the palace facing 太乙), `chong` (沖 chōng — a clash of branches as well) | `gong` |
-| 太乙 | `wenchangTaiyi` | what 文昌 in 太乙's own palace is called: `qiu` (囚 qiú, the 金鏡's), `guan` (關 guān, 樂產's as the 統宗 carries it), `yan` (掩 yǎn, the 統宗's own) | `qiu` |
-| 太乙 | `yearBoundary` | where the counted year begins: `lichun` (立春 lìchūn), `dongzhi` (冬至 dōngzhì), `chunjie` (正月初一 zhēngyuèchūyī) | `lichun` |
+| 太乙 | `wenchangTaiyi` | what 文昌 in 太乙's own palace is called: `qiu` (囚 qiú, the 金鏡's, and the 統宗's for 文昌 and the four generals together), `guan` (關 guān, 樂產's, and where the 統宗's own list files it), `yan` (掩 yǎn, the 統宗's under 釋掩) | `qiu` |
+| 太乙 | `yearBoundary` | where the counted year begins: `lichun` (立春 lìchūn, a convention with no text behind it), `dongzhi` (冬至 dōngzhì, the 《統宗》's: its year runs from one winter solstice to the next), `chunjie` (正月初一 zhēngyuèchūyī, refused). A board laid on a named year is the same under any; the value decides which year an instant falls in | `lichun` |
 | 紫微斗數 | `leapMonth` | what a birth in an intercalary month counts as: `following` (the month after it, which is the book's), `current`, `split` | `following` |
 | 紫微斗數 | `sihua` | which table of the 四化: `quanshu` (《紫微斗數全書》 zǐwēidǒushùquánshū's own), `zuofu` (左輔 zuǒfǔ — that table with 壬's 科 moved, as two modern schools read it), `tianxiang` (天相 tiānxiàng — that table with 庚's 忌 moved, as the 占驗派 reads it) | `quanshu` |
 | 紫微斗數 | `huoling` | how 火星 and 鈴星 are placed: `fixed` (a seat apiece from the year's triplicity, which is all 卷二 states), `hour` (counted on from those seats to the hour of birth, as a manual of 1986 prints it) | `fixed` |
@@ -459,9 +459,9 @@ anything off them — and one of the two can have the bare name. The layer keeps
 it, on every surface, because a layer is under all of them and collides with
 nothing; **a board's parameter that shares a name with a layer's takes its
 board's name everywhere**: `ziwei.yearBoundary` in an address,
-`--ziwei-year-boundary` at a command, `ziwei_year_boundary` at a tool. One row
-answers to this today and 太乙's is the second, with one implemented value and
-the same name.
+`--ziwei-year-boundary` at a command, `ziwei_year_boundary` at a tool. Two rows
+answer to this: 紫微斗數's and 太乙's, which is `taiyi.yearBoundary`,
+`--taiyi-year-boundary` and `taiyi_year_boundary`.
 
 **On the command line the flag is derived from the declaration** — `flagOf` in
 `packages/core/src/cli.ts` — by this same rule, so no divergence is named there

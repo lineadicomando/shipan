@@ -81,11 +81,19 @@ export interface TaiyiOptions {
    *
    * It is upstream of everything here: the board is a function of a year, and
    * this is what decides which year an instant is in. `lichun` is the default
-   * because the pillars beside it turn there, and a board that cut the year
-   * elsewhere would be two calendars in one output. The text states no
-   * boundary of its own, which is why this is a parameter and not a constant.
+   * because the pillars beside it turn there, which is a convention: the
+   * 金鏡 states no boundary of its own.
    *
-   * Only `lichun` is implemented. See `taiyiYearOf`, which is where it bites.
+   * `dongzhi` is the 《統宗》's. 卷二十 明太乙歲本論建子為正術 has 「今年子月
+   * 自當為明年」, and 卷二 counts its 積年 from one 天正冬至 to the next, so a
+   * year of that count opens at the winter solstice before the civil year of
+   * its number. Between that solstice and 立春 the two values lay different
+   * boards for one instant, and the 太歲 of a `dongzhi` board is then a year
+   * ahead of a year pillar cut at 立春.
+   *
+   * `chunjie` is declared and refused. See `taiyiYearAt`, which is where the
+   * option bites: a board laid on a named year is the same board under any
+   * of them, and carries the one it was asked under.
    */
   yearBoundary: 'lichun' | 'dongzhi' | 'chunjie';
 
@@ -112,10 +120,12 @@ export interface TaiyiOptions {
   /**
    * What 文昌 standing in 太乙's own palace is called.
    *
-   * One arrangement and three names, each with somebody behind it: 囚 in the
-   * 金鏡, 「文昌將并主客大小四將，俱與太乙同宫」; 關 for 樂產, 「文昌與太乙同
-   * 宮為關」, which the 統宗 carries as his; 掩 for the 統宗 itself, 「文昌加
-   * 太乙為掩」. The board does not move; the condition it is filed under does.
+   * One arrangement and three names: 囚 in the 金鏡, 「文昌將并主客大小四將，
+   * 俱與太乙同宫」; 關 for 樂產, 「文昌與太乙同宮為關」; 掩 in the 統宗's 釋掩,
+   * 「文昌加太乙為掩」. The 統宗 carries all three — 囚 as the name of the
+   * whole, 關 where its own list sorts the conditions — so it is a holder of
+   * each and the 金鏡 of one. The board does not move; the condition it is
+   * filed under does.
    */
   wenchangTaiyi: 'qiu' | 'guan' | 'yan';
 }
@@ -365,6 +375,39 @@ export interface TaiyiStation {
   year: number;
 }
 
+/**
+ * 陰陽和不和 — whether a count agrees with the seat its eye stands on.
+ *
+ * 張良經's test, as 《太乙金鏡式經》卷二 推陰陽和不和 quotes it and 《太乙數統宗
+ * 大全》卷六 repeats it: 「下目立正宫為陽，立間神為隂，立陽筭得竒為重陽，立隂
+ * 筭得偶為重隂，則不和…若在陽筭得偶，隂筭得竒，為隂陽和」. An eye on one of
+ * the eight palace seats is 陽 and one between them is 陰; an odd count from
+ * the first doubles the 陽, an even count from the second doubles the 陰, and
+ * the two crossed pairings are 和.
+ *
+ * **It is this test and neither of the two the sources set beside it.** The
+ * same passage reads a count against 太乙's own palace without saying which
+ * count, and 王希明's lists class a count by its digits and stand differently
+ * in every print read. Both are in `docs/sources.md` and neither is here.
+ *
+ * An identifier and a name, with no `valence`: the passage says 「和則吉」 of
+ * the pairing, and what a count that is not 和 portends is the reader's.
+ */
+export type TaiyiAccordId = 'he' | 'chongyang' | 'chongyin';
+
+export interface TaiyiAccord {
+  id: TaiyiAccordId;
+  hanzi: string;
+  /** The name said aloud, e.g. `chóngyáng`. */
+  pinyin: string;
+}
+
+export const TAIYI_ACCORDS: Readonly<Record<TaiyiAccordId, TaiyiAccord>> = Object.freeze({
+  he: { id: 'he', hanzi: '和', pinyin: 'hé' },
+  chongyang: { id: 'chongyang', hanzi: '重陽', pinyin: 'chóngyáng' },
+  chongyin: { id: 'chongyin', hanzi: '重陰', pinyin: 'chóngyīn' },
+});
+
 /** One of the two parties: a count, and the two generals it seats. */
 export interface TaiyiSide {
   /** 主算 or 客算 — the number the whole board exists to produce. */
@@ -393,6 +436,8 @@ export interface TaiyiSide {
    * scholar's rather than a source's.
    */
   assistant: TaiyiPalace;
+  /** 和, 重陽 or 重陰 — the count against the seat of the eye it was taken from. */
+  accord: TaiyiAccord;
 }
 
 /** A body seated on the twelve 邦, which are the branches from 戌. */
@@ -796,7 +841,18 @@ function sideOf(from: TaiyiGod, taiyi: number): TaiyiSide {
   // the centre, which those boards never reach, it returns the centre.
   const assistant = (general * 3) % 10;
 
-  return { count, from, general: taiyiPalace(general), assistant: taiyiPalace(assistant) };
+  // 正宮 is 陽 and 間神 is 陰; like with like is the doubling, and the rest 和.
+  const odd = count % 2 === 1;
+  const accord =
+    own !== undefined && odd ? 'chongyang' : own === undefined && !odd ? 'chongyin' : 'he';
+
+  return {
+    count,
+    from,
+    general: taiyiPalace(general),
+    assistant: taiyiPalace(assistant),
+    accord: TAIYI_ACCORDS[accord],
+  };
 }
 
 /**
@@ -1127,12 +1183,12 @@ function inclusive(count: number, modulus: number): number {
  * against exactly that boundary — under `lichun` the counted year is the civil
  * year when the two pillars agree and the one before it when they do not.
  *
- * `dongzhi` would move the boundary into December and `chunjie` onto a lunar
- * date that falls either side of 立春, and the arithmetic here with them —
- * which is why anything but `lichun` throws rather than quietly answering by
- * the wrong rule. The guard is stated as one refusal and not as a list of the
- * two: a boundary added to the option later would otherwise be a boundary
- * silently answered by this one until somebody remembered a third throw.
+ * **The pillar has to have been cut where the option says.** Under `dongzhi`
+ * the year turns in December, so a moment after the solstice carries the
+ * pillar of the civil year to come and the counted year is that one; before
+ * it, the civil year's own. `chunjie` would put the boundary on a lunar date
+ * either side of 立春 and is refused by name — as is any value added later,
+ * the guard naming what it implements and not what it does not.
  */
 export function taiyiYearOf(
   moment: { civilYear: number; sui: Ganzhi },
@@ -1140,6 +1196,9 @@ export function taiyiYearOf(
 ): number {
   requireImplemented(TAIYI_PARAMETERS, options, 'yearBoundary');
   const { civilYear, sui } = moment;
+  if (options.yearBoundary === 'dongzhi') {
+    return sui.index === yearGanzhi(civilYear + 1).index ? civilYear + 1 : civilYear;
+  }
   return sui.index === yearGanzhi(civilYear).index ? civilYear : civilYear - 1;
 }
 
@@ -1162,7 +1221,9 @@ export function taiyiYearOf(
  *
  * The crossing is dated in UTC, and the zone is not a choice being made here:
  * 立春 falls on the third, fourth or fifth of February in every zone there is,
- * so no zone disagrees about which civil year contains it.
+ * so no zone disagrees about which civil year contains it. Nor about 冬至,
+ * ten days short of New Year: under `dongzhi` the counted year is the one
+ * after the civil year of the last time the Sun reached 270°.
  */
 export function taiyiYearAt(
   julianDayUT: number,
@@ -1170,5 +1231,8 @@ export function taiyiYearAt(
   context: EphemerisContext,
 ): number {
   requireImplemented(TAIYI_PARAMETERS, options, 'yearBoundary');
+  if (options.yearBoundary === 'dongzhi') {
+    return fromJulianDay(lastCrossingBefore(270, julianDayUT, context), 'UTC').year + 1;
+  }
   return fromJulianDay(lastCrossingBefore(315, julianDayUT, context), 'UTC').year;
 }

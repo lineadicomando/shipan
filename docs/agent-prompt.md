@@ -214,6 +214,17 @@ neither disputed.
   centre: it is one stem read in two places, not two stems.
 - **三奇得使 is not computed.** The sources consulted do not agree on which
   pairings count. Its absence is deliberate; do not fill the gap yourself.
+- **Each count of a 太乙 board carries one label, and it is not a score.**
+  `host.accord` and `guest.accord` read 和, 重陽 or 重陰: the count against the
+  seat of the eye it was taken from, as 《太乙金鏡式經》 quotes the test from
+  張良經. It is the only one of three tests the sources give under 陰陽和不和
+  that is computed; the one against 太乙's palace and 王希明's lists are in
+  `docs/sources.md` and not in the output. Do not supply them.
+- **A 太乙 board's year is cut at 立春 unless `taiyi.yearBoundary` says
+  `dongzhi`.** Under it the year runs from one winter solstice to the next, as
+  《太乙數統宗大全》 counts, and for the weeks before 立春 the board's 太歲 is a
+  year ahead of the year pillar. A board laid on a named year is the same
+  under either; the transcript says which was asked.
 - **A 太乙 board never says who is 主 and who is 客.** Identifying the host and
   the guest is the first interpretive act the system asks for, and it is the
   reader's — the same refusal as the 用神. The board gives both counts and both

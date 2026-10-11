@@ -662,6 +662,11 @@ export const it: Record<MessageKey, string> = {
   'label.taiyi.heshen': 'il compagno dell’anno',
   'label.taiyi.hostCount': 'il conto di chi riceve',
   'label.taiyi.guestCount': 'il conto di chi arriva',
+  'label.taiyi.accord': 'il conto e il suo occhio',
+  // 陰陽和不和, the eye's test alone: the count against the seat its eye stands on.
+  'label.taiyiaccord.he': 'in accordo',
+  'label.taiyiaccord.chongyang': 'yang raddoppiato',
+  'label.taiyiaccord.chongyin': 'yin raddoppiato',
   'label.taiyi.general': 'gran generale',
   'label.taiyi.assistant': 'aiutante',
   'label.taiyi.hostGeneral': 'il gran generale di chi riceve',
@@ -1284,11 +1289,17 @@ export const it: Record<MessageKey, string> = {
     'anche per il gran generale e l’aiutante di chi riceve, come nel 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn',
   'form.taiyi.geHost.note':
     'Il primo testo nomina una sola parte dove enuncia questa condizione. Uno studio moderno del secondo ne riproduce una tavola, nella quale il gran generale di chi riceve sta di fronte a 太乙 tàiyǐ ed è segnato allo stesso modo. I due testi sono opere diverse, e qui ciascuno è seguito come proprio.',
+  'form.taiyi.yearBoundary': 'L’anno di questa tavola comincia',
+  'form.taiyi.yearBoundary.lichun': 'a 立春 lìchūn, dove gira l’anno dei pilastri',
+  'form.taiyi.yearBoundary.dongzhi':
+    'a 冬至 dōngzhì, il solstizio d’inverno, come lo conta il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn',
+  'form.taiyi.yearBoundary.note':
+    'Una tavola stesa su un anno che indichi tu è la stessa tavola con entrambe le scelte. La scelta decide in quale anno cade una data: tra il solstizio d’inverno e 立春 lìchūn, la seconda conta l’anno che sta per aprirsi e la prima quello ancora in corso.',
   'form.taiyi.wenchangTaiyi': 'Quando 文昌 wénchāng sta nel palazzo di 太乙 tàiyǐ, la condizione si chiama',
   'form.taiyi.wenchangTaiyi.qiu': '囚 qiú, come nel 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng',
   'form.taiyi.wenchangTaiyi.guan':
-    '關 guān, nome che il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn cita da un maestro precedente',
-  'form.taiyi.wenchangTaiyi.yan': '掩 yǎn, come dice in proprio il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn',
+    '關 guān, il nome sotto cui lo elenca il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn, citando un maestro precedente',
+  'form.taiyi.wenchangTaiyi.yan': '掩 yǎn, come lo chiama il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn dove spiega quella condizione',
   'form.taiyi.wenchangTaiyi.note':
     'Una sola disposizione porta tre nomi nei testi. La tavola è la stessa sotto ciascuno di essi. Cambia la condizione sotto cui la disposizione è registrata, e con essa le parole che il testo attribuisce a quella condizione.',
   'form.ziwei.huoling': '火星 huǒxīng e 鈴星 língxīng sono collocate',
@@ -2151,7 +2162,7 @@ export const it: Record<MessageKey, string> = {
   'prompt.taiyi.palaces':
     'I nove palazzi di questo quadro **non sono numerati come li numera una carta Qi Men**. Il 卷二 juàn èr dice 九宮皆差一位 jiǔgōng jiē chā yī wèi (ogni numero si è spostato di un seggio perché 一 yī raggiunga 乾 qián), quindi 一宮 yīgōng è il nord-ovest qui e il nord là, e tutti e otto sono a un seggio di distanza dal 洛書 luòshū. Leggi i numeri come quelli propri di questo quadro. Se conosci la disposizione del Luoshu, non trasportarla qui, e non «correggere» nulla di ciò che segue su di essa.',
   'prompt.taiyi.counts':
-    '主算 zhǔsuàn e 客算 kèsuàn sono il risultato di una procedura di conteggio (seggi contati lungo l’anello a partire dai due occhi) e non punteggi di bene e di male. Un conto più grande non è un conto migliore. Non sommarli, non sottrarre l’uno dall’altro chiamando la differenza un esito, e non ordinare i palazzi né i sedici seggi. Ciò che i conti portano davvero sono le condizioni nominate qui sotto, ed è lì che le fonti mettono il peso.',
+    '主算 zhǔsuàn e 客算 kèsuàn sono il risultato di una procedura di conteggio (seggi contati lungo l’anello a partire dai due occhi) e non punteggi di bene e di male. Un conto più grande non è un conto migliore. Non sommarli, non sottrarre l’uno dall’altro chiamando la differenza un esito, e non ordinare i palazzi né i sedici seggi. Ciò che i conti portano davvero sono le condizioni nominate qui sotto, ed è lì che le fonti mettono il peso. Accanto a ogni conto la tavola stampa un’etichetta che viene dalle fonti: un conto dispari preso da un occhio che sta su un palazzo è 重陽 chóngyáng, un conto pari preso da un occhio che sta tra due palazzi è 重陰 chóngyīn, e ogni altro abbinamento è 和 hé. È la prova che il 太乙金鏡式經 tàiyǐjīnjìngshìjīng cita da un testo più antico, ed è il nome dell’abbinamento: nemmeno questo va trasformato in un punteggio.',
   'prompt.taiyi.conditions':
     'Le condizioni nominate qui sotto (掩 yǎn, 迫 pò, 囚 qiú, 擊 jī, 關 guān, 格 gé, 對 duì) sono attributi della configurazione nelle parole del 卷三 juàn sān, ciascuna con la fortuna che quel capitolo le assegna. Appartengono alla figura e non alla situazione di qualcuno, e la fortuna è della fonte e non un verdetto tuo. **Ciascuna è stampata con la frase del capitolo che dice che cosa sia**: leggi quella, usala, e fermati lì. Ciò che il capitolo dice inoltre che *accadrà al regno* quando una condizione cade non è stampato, e di proposito: è lo strato dinastico, e la sua assenza non è un invito a ricostruirlo.',
   'prompt.taiyi.noDoctrine':

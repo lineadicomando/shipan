@@ -6155,7 +6155,7 @@ refusal.
 output then says 三餘. Both halves of the placement are rung 5 — one plate for
 the anchor, one work for the rate, see the rungs below — and this project's rule
 for a rung-5 quantity is that its rung is written down, not that the quantity is
-withheld: 年命, the 年神 bearings and 太乙's 大遊 ship at the same grade.
+withheld: 年命 and the 年神 bearings ship at the same grade.
 What keeps that honest here is the resolution. 紫氣 travels as a palace and can
 travel as nothing finer — the type refuses a degree rather than the prose asking
 for one — and the line under every board says its rate rests on one work and its
@@ -6455,7 +6455,12 @@ different» would have established nothing.
 where its counted year begins — the 金鏡, that is: the 《統宗》 does, in a
 section read on 2026-10-11 and quoted under § "《太乙數統宗大全》 mapped by its
 juan". 立春 is the default because the pillars beside it turn there, and a board that cut the year elsewhere would be two calendars
-in one output. `dongzhi` and `chunjie` are declared and refused — **both of
+in one output. **`dongzhi` is computed since 2026-10-11**, on the 《統宗》's
+count from one 天正冬至 to the next — § "《太乙數統宗大全》卷二 again" — and a
+board laid under it says so, because between the solstice and 立春 its 太歲
+is a year ahead of a pillar cut at 立春. What follows is how the refusal
+stood while both were refused, and it still describes `chunjie`.
+`dongzhi` and `chunjie` are declared and refused — **both of
 them, and the refusal is now written as one**: for a while only 冬至 threw and
 春節 fell through into the 立春 arithmetic, so a board asked for the lunar
 boundary was answered by the solar rule and then recorded, in its own
@@ -6832,7 +6837,10 @@ stating it twice in one voice.
 周而復始」. The ring is the compass ring from 乾 — 乾開, 坎休, 艮生, 震傷,
 巽杜, 離景, 坤死, 兌驚, the eight seats 卷二 推八門所主法 gives. 卷一 then
 checks it against two dates — 「假令今開元十二年甲子，即開門為直使，至三十一年
-甲午嵗即休門為直使」 — and the count gives both.
+甲午嵗即休門為直使」 — and the count gives both. **A second work dates it
+twenty-five times more**: the 《統宗》's 求歲計入門略例 names the gate of every
+thirtieth year from 964 to 1684, and `test/taiyi.test.ts` walks them, since
+2026-10-11.
 
 **五福太乙 — forty-five years to a palace, and two checks, one of them from an
 archive.** 卷五 推五福太乙法 runs it on the 一萬三千三百三十一 count, over the
@@ -6848,8 +6856,11 @@ gives thirty-six years to a palace and 二百八十八年一周, opening from �
 where the year's count opens from 一宮. Its eye makes the walk 天目 makes,
 starting from 天道 rather than from 武德 and pausing at the same two corners,
 so what it shares with a placement the 立成 weighs is the walk and not the
-count. The text works no dated example for it, and this file has none to put
-beside it.
+count. The text works no dated example for it. **The 《統宗》 does, and it is
+what checks it since 2026-10-11**: 大遊 in 七宮 for 930, the first year of a
+round, which the count gives — § "What is not here", under 大遊. One year in
+a second work, so the body is checked at one point of its walk and its eye
+not at all.
 
 **三基 print their period beside their count**, and the reason is a defect this
 board produced. 卷五 gives the sovereign thirty years to a fief, the minister
@@ -7079,9 +7090,8 @@ names the gate of twenty-five 甲子 and 甲午 years, from 宋太祖乾德二�
 開門 to 清康熙二十三年甲子 on 開門, one gate to thirty years without a break.
 乾德二年 is 964, two hundred and forty years after the 開元十二年 the 金鏡
 puts on 開門, so the list is the 金鏡's count carried on for seven centuries
-with no 盈差 in it. That is a second work dating the 八門直使, and the row
-stays on its rung until the twenty-five years are in `test/taiyi.test.ts`:
-they were held to the rule by hand, the engine not having been run.
+with no 盈差 in it. That is a second work dating the 八門直使; the twenty-five
+years are in `test/taiyi.test.ts` and the row is on rung 2.
 
 **The 二百四十 of p. 29 is another sentence and is not a refusal.** The entry
 above left a character unread before 之於古; none is missing. The column ends
@@ -7193,9 +7203,11 @@ And the day count is that many 歲實 from it, p. 21:
 **So a year of this count is solstice to solstice**, which is the instant
 卷二十 does not name: 「今年子月自當為明年」 and a 積年 that advances by one
 歲實 at each 天正冬至 are one statement. `yearBoundary: dongzhi` has a work
-and a rule. What it has not got is a board: none in the work is dated between
-a solstice and the 立春 after it, which is the only place the two boundaries
-part. The 氣盈差 is printed 四百四十六分 on p. 20 and 四百十六分 on p. 21,
+and a rule, and is computed on them: `taiyiYearAt` answers with the year
+after the civil year of the last time the Sun reached 270°. What it has not
+got is a board: none in the work is dated between a solstice and the 立春
+after it, which is the only place the two boundaries part, so the rule is
+held as stated and by no case. The 氣盈差 is printed 四百四十六分 on p. 20 and 四百十六分 on p. 21,
 thirty parts of 10 500 apart.
 
 **Held to a calendar the work did not see, the count wants no 減一 on 卷二's
@@ -7297,8 +7309,8 @@ nowhere says where its counted year begins; 立春 is the default because the
 pillars beside the board turn there, which is a convention and is said as one.
 **Read since, 2026-10-11**: the 《統宗》 turns the year at 子, in 卷二十 明太乙
 歲本論建子為正術 — 「今年子月自當為明年」 — and 卷二 counts a year from one
-天正冬至 to the next. So `dongzhi` has a work behind it and a rule; `lichun`
-and `chunjie` have neither.
+天正冬至 to the next. So `dongzhi` has a work behind it and a rule, and is
+computed; `lichun` and `chunjie` have neither.
 
 **Declared since 2026-10-07, two of the three computed.** `geHost: zhuke`
 marks 格 on the host's generals and is held to 盧央's board for 124, which the
@@ -7349,8 +7361,9 @@ name as well:
 So 囚 is in the 統宗 too, as the name of the whole — 文昌 and the four
 generals — with 關 the part that is 文昌's and 掩 said of both eyes. Three
 names in one work, and where it sorts them, on p. 64, 文昌 with 太乙 is 關.
-The parameter's three values stand; that the 統宗 holds 掩 against 關 is not
-what its own list does.
+The parameter's three values stand, and the declaration follows the plate:
+the 統宗 holds each of the three and the 金鏡 holds 囚. 關 was filed as
+reported, 樂產's word in another's book, and is held since the list was read.
 
 **格, on the same leaves.** 釋格, p. 68: 「經曰客目始擊與客二將在太乙對宮為格」
 — the guest's eye and the guest's two generals, in the palace facing 太乙's.
@@ -7373,13 +7386,87 @@ at 乾 with 文昌 on 大炅 facing it, which is 對. Both are boards
 
 **Recorded, with no parameter.** 陰陽和不和, which 卷二 gives in two accounts,
 張良經's and 王希明's, inside one work. **Read since, 2026-10-11**: three
-tests on different subjects, in the 《統宗》 and in 盧央 alike — this board's
-§ "What is not here", under 陰陽和不和.
+tests on different subjects, in the 《統宗》 and in 盧央 alike, and the eye's is
+computed — § "陰陽和不和: three tests, and the one that travels".
 
 **Not a witness.** The 祖傳教材 handout parts «as a different school» and
 names no text and no line, which is what `sources.md` asks a witness to do
 first. One sentence about it above says 大將 and 參將 «stay at rung 5»; it is
 dated, and the row, which reads 2, is what holds.
+
+### 陰陽和不和: three tests, and the one that travels
+
+**What had been filed as two accounts that do not line up is three tests on
+three subjects**, put to the texts on 2026-10-11. Read on the plate: the 《統宗》卷六 明太乙主客陰陽不和之
+數術, series pp. 54–56, with the lists cropped at 600 dpi; 盧央 pp. 477–479,
+which is where his 第二節 treats it — pp. 492–499 take it as given and send
+back there, 「關於太乙式陰陽數已於本章第二節講述過了」. Both lay it out in one
+order:
+
+- **太乙's palace against the count.** 「太乙在陽宮算得奇…為純陽之數，在陰宮算
+  得偶為純陰…皆不和之數也。三八四九為陽宮，二七六一為陰宮。若太乙在陽宮算得
+  偶為和，在陰宮算得奇為和也」. The 統宗 opens this on 「張良曰」.
+- **The seat of an eye against its count.** 「二目在乾離坎震兌坤艮巽正宮為陽，
+  在亥丑寅辰巳未申戌間辰為陰。在陽宮算得奇為重陽之數，在陰宮算得偶為重陰之
+  數，皆為不和之數也」.
+- **The count read by its digits**, which is where the numbers that fitted
+  neither come from. 盧央 quotes the 金鏡: 「三九寅辰為純陽，四八巳丑為雜陽，
+  二六未亥為純陰，七一戌申為雜陰。三十三、三十九為重陽，二十二、二十六為重
+  陰，二十四、二十八為雜陰，十三、十九、三十一、三十七為雜陽」, and 王希明:
+  「若算得 14、18 為上和，23、29、32、36 為次和，12、16、21、27、34、38 為下
+  和」. Each digit is a palace number carrying that palace's quality, and a
+  count is what its two digits make together.
+
+So the parity of a count is read twice, against two things, and a third
+reading classes the count itself: the sentence above, that the accounts «do
+not line up», described three layers as two rivals. What is still open is
+smaller. The first test does not say which count is read against 太乙's
+palace, the host's or each. The third is lists and not a rule that covers
+every count: 盧央 says of 5, 15, 25 and 35 that nothing classes them, p. 479,
+and the tens and the elevens stand in no list either. And the 統宗's print of
+the lists is damaged where 盧央's quotation is whole — it has 三六未亥 for
+二六未亥, 五十三 where 三十二 is wanted, and a 不和 over the last list whose
+own gloss is 「九野人安」, where the 金鏡 as quoted has 下和. 盧央 himself
+calls a 主算 of twelve 上和 on p. 494 against the list he prints.
+
+**The 金鏡's 卷二 opened again the same day, on the plate: 推陰陽和不和,
+leaves 9 and 10, 四庫 vol. 810 p. 875.** It reads as the transcription held
+does, and it moves two things in the entry above.
+
+*Whose each test is.* Both tests of parity are 張良經's, and 王希明's is the
+third alone. 「張良經曰陰陽和不和者謂太乙及上下二目就筭數以相配。下目立正宮為
+陽，立間神為陰，立陽筭得奇為重陽，立陰筭得偶為重陰，則不和。上目所臨陽宮筭
+得重陽…臨陰宮筭得陰為重陰…若在陽筭得偶，陰筭得奇，為陰陽和，和則吉」; then
+「太乙在陽宮筭得奇者為重陽之數，八三四九為陽宮；太乙陰宮筭得偶者為重陰之數，
+二七六一為陰宮，皆不和」; and only then 「王希明曰三九寅辰為純陽…」. So the
+entry's «張良經's and 王希明's» were never two accounts of one test.
+
+*Which count.* For the eyes it is said: the 下目, which is 文昌, and the 上目,
+which is 始擊, each by its own seat, and a count is taken from each. For 太乙's
+palace no count is named, here or in the 《統宗》 or in 盧央. The passage closes
+on the two together — 「若太乙天目立陰陽位而筭陽多者利為客，陰多者利為主」.
+
+*The lists are not established to the numeral.* The 四庫 copy has 二八巳丑 for
+the 雜陽 where 盧央 quotes 四八, 二十六未亥 for 二六, and then 「十四十八三十
+三為上和，二十三二十九三十二為次和，十二十六二十七三十四三十八為下和」 —
+with 三十三 a 重陽 two columns before it is an 上和. Three prints of the
+three lists, the 金鏡's, the 統宗's and 盧央's quotation, and no two agree.
+What all three carry: 14 and 18 in the first, 23 in the second, 12, 16, 27,
+34 and 38 in the last.
+
+**The eye's test travels, since 2026-10-11, and the other two do not.**
+`host.accord` and `guest.accord` carry 和, 重陽 or 重陰: the count against
+the seat of the eye it was taken from, 正宮 as 陽 and 間神 as 陰. It is a
+total function — every seat is one or the other and every count odd or even —
+it stands in three places in one form, and its count is named. It travels as
+an identifier and a name with no `valence`: 「和則吉」 is said of the pairing,
+and what a count that is not 和 portends is not the engine's to say. No
+worked board in either work names one of the three, so the sentence is what
+`test/taiyi.test.ts` holds, over both tables, and no case of it.
+
+The test against 太乙's palace is not computed: no count is named for it, and
+choosing one would be a parameter with nobody behind either value. 王希明's
+lists are not computed: three prints, three lists. Last checked 2026-10-11.
 
 ### What is not here
 
@@ -7452,8 +7539,8 @@ added leaves 1 after 288: the first year in 七宮, which is what the 金鏡's
 一萬三千三百三十一 gives for the year. The two 三 are the print's — the next
 section has 「二百八十八年行一周」, and the case comes out on 2 880 and 288
 and not on the figures printed. 大遊 stood on one text with no dated case;
-this is a second work and a date, and the row stays where it is until the
-year is in `test/taiyi.test.ts`. 明大遊天目所主術, p. 110, gives its 天目 a
+this is a second work and a date, and the year is in `test/taiyi.test.ts`:
+the row is on rung 2. 明大遊天目所主術, p. 110, gives its 天目 a
 count from 甲寅 — 四十二萬四千五百一十七 at 正德庚辰 — with an 盈差 and a 大
 周 whose numerals were not settled, and a second figure for 崇禎甲申 that is
 not a hundred and twenty-four more. Located and not read to the digit.
@@ -7595,10 +7682,11 @@ what the engine reports.
   the same list of bodies is meant one at a time. Recorded as a judgement
   rather than left to the code, because it is one.
 
-Several of the omitted clauses turn on 筭和 / 不和, which this engine does not
-compute — see 陰陽和不和 below. That is a second reason they could not travel
-even if the first did not hold: they are conditional on a quantity that is not
-in the output.
+Several of the omitted clauses turn on 筭和 / 不和, which this engine did not
+compute when this was written and computes in one of its three senses since
+2026-10-11 — § "陰陽和不和: three tests, and the one that travels". Which
+sense each clause means is not said, so the second reason stands: they are
+conditional on a quantity that is not, as they mean it, in the output.
 
 ### The per-palace readings of 卷二 — declined
 
@@ -7644,69 +7732,10 @@ of which, 「以得算之多少定勝負」 and 「以得算之奇偶定陰陽�
 accounts' subject. What that chapter settles, if anything, has not been put to
 the two. Last checked 2026-09-03.
 
-**Put to them on 2026-10-11, and the two accounts are two of three tests on
-different subjects.** Read on the plate: the 《統宗》卷六 明太乙主客陰陽不和之
-數術, series pp. 54–56, with the lists cropped at 600 dpi; 盧央 pp. 477–479,
-which is where his 第二節 treats it — pp. 492–499 take it as given and send
-back there, 「關於太乙式陰陽數已於本章第二節講述過了」. Both lay it out in one
-order:
-
-- **太乙's palace against the count.** 「太乙在陽宮算得奇…為純陽之數，在陰宮算
-  得偶為純陰…皆不和之數也。三八四九為陽宮，二七六一為陰宮。若太乙在陽宮算得
-  偶為和，在陰宮算得奇為和也」. The 統宗 opens this on 「張良曰」.
-- **The seat of an eye against its count.** 「二目在乾離坎震兌坤艮巽正宮為陽，
-  在亥丑寅辰巳未申戌間辰為陰。在陽宮算得奇為重陽之數，在陰宮算得偶為重陰之
-  數，皆為不和之數也」.
-- **The count read by its digits**, which is where the numbers that fitted
-  neither come from. 盧央 quotes the 金鏡: 「三九寅辰為純陽，四八巳丑為雜陽，
-  二六未亥為純陰，七一戌申為雜陰。三十三、三十九為重陽，二十二、二十六為重
-  陰，二十四、二十八為雜陰，十三、十九、三十一、三十七為雜陽」, and 王希明:
-  「若算得 14、18 為上和，23、29、32、36 為次和，12、16、21、27、34、38 為下
-  和」. Each digit is a palace number carrying that palace's quality, and a
-  count is what its two digits make together.
-
-So the parity of a count is read twice, against two things, and a third
-reading classes the count itself: the sentence above, that the accounts «do
-not line up», described three layers as two rivals. What is still open is
-smaller. The first test does not say which count is read against 太乙's
-palace, the host's or each. The third is lists and not a rule that covers
-every count: 盧央 says of 5, 15, 25 and 35 that nothing classes them, p. 479,
-and the tens and the elevens stand in no list either. And the 統宗's print of
-the lists is damaged where 盧央's quotation is whole — it has 三六未亥 for
-二六未亥, 五十三 where 三十二 is wanted, and a 不和 over the last list whose
-own gloss is 「九野人安」, where the 金鏡 as quoted has 下和. 盧央 himself
-calls a 主算 of twelve 上和 on p. 494 against the list he prints.
-
-**The 金鏡's 卷二 opened again the same day, on the plate: 推陰陽和不和,
-leaves 9 and 10, 四庫 vol. 810 p. 875.** It reads as the transcription held
-does, and it moves two things in the entry above.
-
-*Whose each test is.* Both tests of parity are 張良經's, and 王希明's is the
-third alone. 「張良經曰陰陽和不和者謂太乙及上下二目就筭數以相配。下目立正宮為
-陽，立間神為陰，立陽筭得奇為重陽，立陰筭得偶為重陰，則不和。上目所臨陽宮筭
-得重陽…臨陰宮筭得陰為重陰…若在陽筭得偶，陰筭得奇，為陰陽和，和則吉」; then
-「太乙在陽宮筭得奇者為重陽之數，八三四九為陽宮；太乙陰宮筭得偶者為重陰之數，
-二七六一為陰宮，皆不和」; and only then 「王希明曰三九寅辰為純陽…」. So the
-entry's «張良經's and 王希明's» were never two accounts of one test.
-
-*Which count.* For the eyes it is said: the 下目, which is 文昌, and the 上目,
-which is 始擊, each by its own seat, and a count is taken from each. For 太乙's
-palace no count is named, here or in the 《統宗》 or in 盧央. The passage closes
-on the two together — 「若太乙天目立陰陽位而筭陽多者利為客，陰多者利為主」.
-
-*The lists are not established to the numeral.* The 四庫 copy has 二八巳丑 for
-the 雜陽 where 盧央 quotes 四八, 二十六未亥 for 二六, and then 「十四十八三十
-三為上和，二十三二十九三十二為次和，十二十六二十七三十四三十八為下和」 —
-with 三十三 a 重陽 two columns before it is an 上和. Three prints of the
-three lists, the 金鏡's, the 統宗's and 盧央's quotation, and no two agree.
-What all three carry: 14 and 18 in the first, 23 in the second, 12, 16, 27,
-34 and 38 in the last.
-
-Nothing is computed. The two tests of parity stand in three places in one
-form, the eyes' with its count named and 太乙's without; the lists stand on
-no rung until a copy is found that the others can be held to. Whether the
-first two travel as attributes of the board is not decided here. Last checked
-2026-10-11.
+**Put to them on 2026-10-11, and one of the three tests found there is
+computed**: § "陰陽和不和: three tests, and the one that travels". The
+judgement built on 太乙's palace and the classing of a count by its digits
+are still left out, for the reasons that section gives.
 
 **Who is 主 and who is 客.** The first interpretive act the system asks for,
 and the reader's, for the reason the 用神 is. And the whole received dynastic

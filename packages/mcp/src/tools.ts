@@ -600,8 +600,14 @@ export function registerComputeTaiyi(server: McpServer): void {
           .number()
           .int()
           .describe(
-            'The year the board is laid on, counted from 立春 as the pillars are. ' +
-              'Astronomical numbering, so 1 BCE is 0.',
+            'The year the board is laid on, counted from 立春 as the pillars are unless ' +
+              'taiyi_year_boundary says otherwise. Astronomical numbering, so 1 BCE is 0.',
+          ),
+        taiyi_year_boundary: z
+          .enum(['lichun', 'dongzhi'])
+          .optional()
+          .describe(
+            'Where the counted year begins. Default lichun, where the pillars turn; no text is behind it and it is a convention. dongzhi is the Taiyi Tongzong\'s: its year runs from one winter solstice to the next, so the year named opens at the solstice before the civil year of that number. The board of a named year is the same under either; what changes is which year a date between the solstice and 立春 belongs to, and the transcript says which was asked.',
           ),
         ge_host: z
           .enum(['ke', 'zhuke'])
@@ -613,7 +619,7 @@ export function registerComputeTaiyi(server: McpServer): void {
           .enum(['qiu', 'guan', 'yan'])
           .optional()
           .describe(
-            'What 文昌 standing in 太乙\'s own palace is called. Default qiu, the Taiyi Jinjing Shijing\'s name. guan is a name the Taiyi Tongzong quotes from an earlier master; yan is the Tongzong\'s own. The board does not move; the condition it is filed under does.',
+            'What 文昌 standing in 太乙\'s own palace is called. Default qiu, the Taiyi Jinjing Shijing\'s name. guan is an earlier master\'s name, which the Taiyi Tongzong quotes and lists the arrangement under; yan is what the Tongzong calls it where it explains that condition. The board does not move; the condition it is filed under does.',
           ),
         lang: langSchema,
       },
@@ -622,6 +628,7 @@ export function registerComputeTaiyi(server: McpServer): void {
       const t = translatorFor(args.lang);
       try {
         const options = { ...DEFAULT_TAIYI_OPTIONS };
+        if (args.taiyi_year_boundary) options.yearBoundary = args.taiyi_year_boundary;
         if (args.ge_host) options.geHost = args.ge_host;
         if (args.wenchang_taiyi) options.wenchangTaiyi = args.wenchang_taiyi;
         const board = taiyiBoard({ year: args.year }, options);

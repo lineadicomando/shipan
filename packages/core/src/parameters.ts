@@ -843,17 +843,21 @@ export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
         says: 'form.taiyi.wenchangTaiyi.qiu',
         note: 'form.taiyi.wenchangTaiyi.note',
         implemented: true,
-        heldBy: ['jinjing'],
+        // The 統宗 has it too, as the name of the whole: 「文昌主客四將與太乙同宮
+        // 總名曰囚」, 卷七 釋囚.
+        heldBy: ['jinjing', 'taiyitongzong'],
       },
-      // 樂產's word, which the 統宗 carries as his.
+      // 樂產's word. The 統宗 quotes it as his in 釋囚 and files 文昌 under it
+      // in its own list of the conditions, 卷七: 「文昌與太乙同宮為關」.
       {
         id: 'guan',
         name: { hanzi: '關', pinyin: 'guān' },
         says: 'form.taiyi.wenchangTaiyi.guan',
         note: 'form.taiyi.wenchangTaiyi.note',
         implemented: true,
-        reportedBy: ['taiyitongzong'],
+        heldBy: ['taiyitongzong'],
       },
+      // The same work under 釋掩: 「文昌加太乙為掩，始擊加太乙宮亦為掩」.
       {
         id: 'yan',
         name: { hanzi: '掩', pinyin: 'yǎn' },
@@ -927,11 +931,29 @@ export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
     ],
     default: 'nianji',
   },
+  // The default has no holder and is a convention: the pillars beside the
+  // board turn at 立春 and the 金鏡 names no boundary. `dongzhi` has one — the
+  // 《統宗》, 卷二十 「今年子月自當為明年」 and 卷二's count from one 天正冬至 to
+  // the next. See `docs/sources.md` § "《太乙數統宗大全》卷二 again".
   yearBoundary: {
     board: 'taiyi',
+    label: 'form.taiyi.yearBoundary',
     values: [
-      { id: 'lichun', name: { hanzi: '立春', pinyin: 'lìchūn' }, implemented: true },
-      { id: 'dongzhi', name: { hanzi: '冬至', pinyin: 'dōngzhì' }, implemented: false },
+      {
+        id: 'lichun',
+        name: { hanzi: '立春', pinyin: 'lìchūn' },
+        says: 'form.taiyi.yearBoundary.lichun',
+        note: 'form.taiyi.yearBoundary.note',
+        implemented: true,
+      },
+      {
+        id: 'dongzhi',
+        name: { hanzi: '冬至', pinyin: 'dōngzhì' },
+        says: 'form.taiyi.yearBoundary.dongzhi',
+        note: 'form.taiyi.yearBoundary.note',
+        implemented: true,
+        heldBy: ['taiyitongzong'],
+      },
       { id: 'chunjie', name: { hanzi: '正月初一', pinyin: 'zhēngyuèchūyī' }, implemented: false },
     ],
     default: 'lichun',

@@ -37,8 +37,7 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-11
 
-Version 0.20.0. `npm test`, `npm run typecheck` and `npm run build` passed on
-2026-10-08, and nothing but `docs/` and this file has changed since.
+Version 0.21.0. `npm test`, `npm run typecheck` and `npm run build` pass.
 
 **Decisions held open, by the user's word, until there is more to decide on:**
 
@@ -48,20 +47,11 @@ Version 0.20.0. `npm test`, `npm run typecheck` and `npm run build` passed on
   The day's is not: the 甲子 the work dates as 上元第一紀 stands 120 days,
   or 240, from where its own count puts it, and the three places asked for
   a dated board have none. Held, by the user's word of 2026-10-11.
-- **`yearBoundary: dongzhi` of 太乙.** The 《統宗》 turns the year at 子, 卷二十
-  pp. 193–194, and counts it solstice to solstice, 卷二 pp. 19–21. A work and
-  a rule; not built, and no dated board to hold it to.
 - **`gong: ci`.** The table is read, with three cells of twelve miscopied.
   Not built until a second copy gives those three.
 
-- **陰陽和不和 of 太乙.** No longer two accounts that disagree. Whether 和 and
-  不和 travel as an attribute of the board, as a `Pattern`'s `valence` does,
-  was held by the user's word of 2026-10-11 until 卷二 of the 金鏡 was read,
-  and it was, the same day. The eyes' test names its count; 太乙's does not;
-  the lists of 上和 · 次和 · 下和 differ in all three prints. The user's to
-  say.
-
-**Declared this session**: nothing. Nothing is half done.
+**Declared this session**: `yearBoundary: dongzhi` of 太乙 computed, and
+`host.accord` · `guest.accord` carried. Nothing is half done.
 
 ## 1. Parameters that are declared and refused
 
@@ -78,7 +68,7 @@ not a witness**.
 | 奇門 | `plate: fei`, `system: yuejia`, `system: nianjia`, `dayDun: liushi`, `leap: runyue`, `strengths: star` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `minggong: ascendant`, `gong: ci` |
-| 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: dongzhi`, `yearBoundary: chunjie` |
+| 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: chunjie` |
 | 紫微斗數 | `leapMonth: current`, `leapMonth: split` |
 
 **What each waits on.** The row is the query to put to an arriving text. The
@@ -101,7 +91,6 @@ section an art.
 | `ji: yueji` | being built: a board that takes an instant |
 | `ji: riji` | which anchor: the 《統宗》's count puts 25 February 1510 on 局 25 and its dated note on 局 1, a 盈差 of 120 or 240 apart. A dated 日計 board, in any work. `docs/sources.md` § "《太乙數統宗大全》卷二 again" |
 | `ji: shiji` | being built. The hours run from the epoch and the 盈差 does not reach them; whether a day's hours open at 子初 or 子正 is asked first |
-| `yearBoundary: dongzhi` | being built: the year runs from one 天正冬至 to the next. No board dated between a solstice and 立春 to hold it to |
 | `yearBoundary: chunjie` | a holder. The default has none either |
 | `geChong: chong` | the rule as a sentence. 盧央's board for 940 shows it of 始擊; the 《統宗》卷七 states 格 by the facing palace alone, and on its 589 board adds a 格 of the 太歲, p. 69 |
 | `leapMonth: current`, `leapMonth: split` | a manual stating either. A program computes one |
@@ -120,10 +109,10 @@ nothing exposes. Only those with something to wait on:
 - **七政四餘.** The 身 as the Moon or as the degree facing the 命; the 命宮 to
   a lodge and a degree by a 量天尺; the 距星 of 觜 and 參. Which node 羅睺 is:
   《星學大成》 names 天首 and 天尾 and does not say.
-- **太乙.** 陰陽和不和, three tests the 《統宗》 and 盧央 give alike: 太乙's
-  palace against a count, an eye's seat against its count, the count by its
-  digits. The first two are 張良經's and the third 王希明's. Which count the
-  first reads is not said, and the third's lists are not settled. The 定算 and its 定計目 · 計大將 ·
+- **太乙.** Two of the three tests of 陰陽和不和: 太乙's palace against a
+  count, where no count is named, and 王希明's lists, which three prints give
+  three ways. The eye's test is computed. The 太歲 as a body of 格, on the
+  《統宗》's 589 board. The 定算 and its 定計目 · 計大將 ·
   計參, a third count the 《統宗》 lays on every board. 陰局 after 夏至 as the
   hour's alone or the day's as well: the 《統宗》 prints both.
 - **紫微斗數.** The stars 卷二 does not place, 解神 off the month among them;
@@ -157,9 +146,7 @@ middle or for 羅睺 as the ascending node, which is a date and not a negative.
 
 **Small and left open by this session**: in the 符應經, the note in small
 characters under the title at 遁甲集成 第三冊 p. 1136, and 玉女守門 as two
-tables in two copies; in the 《統宗》, the lunar constants of 卷二, one damaged, the twenty-five
-years of 求歲計入門略例 owed to `test/taiyi.test.ts` before the 八門直使 row
-moves, 大遊 in 七宮 for 930 owed there before its row does, the rest of
+tables in two copies; in the 《統宗》, the lunar constants of 卷二, one damaged, the rest of
 推四神太乙立成歷 to collate, and the reign printed for 1444 in that list;
 in 《星學大成》, the figures of 起大限.
 

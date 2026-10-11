@@ -191,6 +191,19 @@ describe('taiyi', () => {
     expect(out).toContain('黃始宮');
   });
 
+  it('counts a January date in the year the asked boundary puts it in', async () => {
+    // Between 冬至 and 立春 the two boundaries part: the 《統宗》's year has
+    // opened and the pillars' has not.
+    const at = ['taiyi', '--date', '2026-01-15', '--time', '12:00', '--tz', 'UTC', '--json'];
+    expect(await run(at)).toBe(0);
+    expect(JSON.parse(out).year).toBe(2025);
+
+    out = '';
+    expect(await run([...at, '--taiyi-year-boundary', 'dongzhi'])).toBe(0);
+    expect(JSON.parse(out).year).toBe(2026);
+    expect(JSON.parse(out).options.yearBoundary).toBe('dongzhi');
+  });
+
   it('says on the page that its palaces are not a chart\u2019s', async () => {
     expect(await run(['taiyi', '--year', '2026', '--lang', 'en'])).toBe(0);
 
@@ -212,12 +225,10 @@ describe('taiyi', () => {
     expect(await run(['taiyi', '--year', 'MMXXVI', '--lang', 'en'])).toBe(2);
     expect(err).toContain('--year');
 
-    // A declared value that is not implemented is the engine refusing, not
-    // the caller mistyping: it comes back as a ChartError and says so.
-    expect(await run(['taiyi', '--taiyi-year-boundary', 'dongzhi', '--lang', 'en'])).toBe(1);
-    expect(err).toContain('not implemented');
     expect(await run(['taiyi', '--taiyi-year-boundary', 'qiufen', '--lang', 'en'])).toBe(2);
 
+    // A declared value that is not implemented is the engine refusing, not
+    // the caller mistyping: it comes back as a ChartError and says so.
     // 春節 passed validation and was answered by the 立春 rule, on a board that
     // then recorded the boundary it had not used.
     expect(await run(['taiyi', '--taiyi-year-boundary', 'chunjie', '--lang', 'en'])).toBe(1);

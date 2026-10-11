@@ -599,8 +599,8 @@ describe('the register weighs what a board hands out', () => {
       shiji: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神'],
       jishen: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神'],
       heshen: ['合神 — the 六合 of the 太歲'],
-      host: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神', '大將 and 參將'],
-      guest: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神', '大將 and 參將'],
+      host: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神', '大將 and 參將', '陰陽和不和 — a count against the seat of its eye'],
+      guest: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神', '大將 and 參將', '陰陽和不和 — a count against the seat of its eye'],
       patterns: [
         'the conditions of 卷三 — 掩, 擊, 迫, 關',
         'the conditions of 卷三 — 囚, 格, 對, whose subjects two lineages dispute',

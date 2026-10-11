@@ -237,6 +237,7 @@ export {
 
 export {
   DEFAULT_TAIYI_OPTIONS,
+  TAIYI_ACCORDS,
   TAIYI_GODS,
   TAIYI_PALACES,
   TAIYI_PATTERN_IDS,
@@ -247,6 +248,8 @@ export {
   taiyiPatternName,
   taiyiYearAt,
   taiyiYearOf,
+  type TaiyiAccord,
+  type TaiyiAccordId,
   type TaiyiBoard,
   type TaiyiFief,
   type TaiyiGod,

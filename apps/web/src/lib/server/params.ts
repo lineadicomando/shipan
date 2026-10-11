@@ -116,9 +116,11 @@ export function readYear(params: URLSearchParams): number | undefined {
  * chart endpoints already guard with `momentIsFixed`.
  *
  * The year being lived is asked of the engine and never of the calendar here.
- * `taiyiYearAt` cuts it at 立春, as the CLI does and as this board's own
- * `yearBoundary` says it is cut, so the section, the four endpoints and the
- * command all lay one board for one instant. Read from `new Date()` instead,
+ * `taiyiYearAt` cuts it where the address's own `taiyi.yearBoundary` says —
+ * at 立春 unless it names 冬至 — as the CLI does, so the section, the four
+ * endpoints and the command all lay one board for one instant. A boundary the
+ * engine refuses is refused here, before a year is guessed for it. Read from
+ * `new Date()` instead,
  * they disagreed for the month between New Year and 立春 — and the web half
  * disagreed with itself, the pages reading a local calendar and the endpoints
  * a UTC one.
@@ -127,7 +129,7 @@ export function readTaiyiYear(params: URLSearchParams): { year: number; named: b
   const named = readYear(params);
   if (named !== undefined) return { year: named, named: true };
   return {
-    year: taiyiYearAt(julianDayFromMillis(Date.now()), DEFAULT_TAIYI_OPTIONS, ephemerisContext()),
+    year: taiyiYearAt(julianDayFromMillis(Date.now()), readTaiyiOptions(params), ephemerisContext()),
     named: false,
   };
 }
@@ -583,7 +585,7 @@ export function readQizhengOptions(params: URLSearchParams): QizhengOptions {
 /**
  * The 太乙 divergences an address states, with the board's own defaults.
  *
- * Every one of them has a single implemented value today, which is why the
+ * Every one of them had a single implemented value once, which is why the
  * four endpoints passed `DEFAULT_TAIYI_OPTIONS` straight through and an
  * address asking for the 月計 got the 歲計 in silence. A parameter with one
  * value is not a parameter nobody may name — it is one whose other values

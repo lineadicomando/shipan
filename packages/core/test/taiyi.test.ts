@@ -867,6 +867,74 @@ describe('the checks that come from outside the text', () => {
   });
 });
 
+/**
+ * What 《太乙數統宗大全》 dates on its own leaves.
+ *
+ * The block above reaches that work through 盧央. These were read on the
+ * plate of 故宮珍本叢刊 第420冊 — `docs/sources.md` § "《太乙數統宗大全》
+ * mapped by its juan" — and each is a year the work names beside what the
+ * board holds in it. It prints its count two ways, the years elapsed in 卷二
+ * and the year counted in from 卷十 on, so the figures below say which.
+ */
+describe('the years 《太乙數統宗大全》 dates', () => {
+  it('walks the gates of 求歲計入門略例, one to thirty years for seven centuries', () => {
+    // 卷三, series pp. 31–32: 宋太祖乾德二年甲子開門值事 … 清康熙二十三年甲子
+    // 開門值事, twenty-five 甲子 and 甲午 years, with the 門盈差 the section
+    // names refused in it — 「故不取焉」.
+    const printed = '開休生傷杜景死驚開休生傷杜景死驚開休生傷杜景死驚開';
+    const gates = Array.from({ length: 25 }, (_, index) => {
+      const board = taiyiBoard({ year: 964 + index * 30 }, options);
+      expect(board.sui.hanzi).toBe(index % 2 === 0 ? '甲子' : '甲午');
+      expect(board.gate.year).toBe(1);
+      return board.gate.gate.hanzi.charAt(0);
+    });
+    expect(gates.join('')).toBe(printed);
+  });
+
+  it('enters the 元 and the 局 the work states for three dated counts', () => {
+    // 卷二 p. 19, the years elapsed: 大德七年癸卯 and 景泰二年辛未. 卷三十一
+    // p. 307, the year counted in: 康熙丙午, 「至壬子元五十五局為入局」.
+    const dated = [
+      { year: 1303, count: 10_155_219 + 1, head: '壬子', ju: 52 },
+      { year: 1451, count: 10_155_367 + 1, head: '丙子', ju: 56 },
+      { year: 1666, count: 10_155_583, head: '壬子', ju: 55 },
+    ];
+    for (const { year, count, head, ju } of dated) {
+      const board = taiyiBoard({ year }, options);
+      expect((count - board.accumulated.taiyi) % 360, `${year}`).toBe(0);
+      expect(board.yuan.head.hanzi, `${year}`).toBe(head);
+      expect(board.ju, `${year}`).toBe(ju);
+    }
+  });
+
+  it('lays the year board 卷四 works for 崇禎甲戌', () => {
+    // P. 37: 「太乙在九宮，文昌在一宮…甲戌合神在卯」. 一宮 is 乾, where 陰德
+    // stands. The 定計目 and the count laid from it are a third count this
+    // engine does not carry.
+    const board = taiyiBoard({ year: 1634 }, options);
+    expect(board.sui.hanzi).toBe('甲戌');
+    expect(board.taiyi.palace.number).toBe(9);
+    expect(board.wenchang.hanzi).toBe('陰德');
+    expect(board.heshen.hanzi).toBe('卯');
+  });
+
+  it('puts 大遊 in 七宮 in 930 and 五福 in the centre in 624', () => {
+    // 卷十一 p. 109: 「後唐明宗長〔興〕元年庚寅歲大遊入…宮梁益分…蓋大遊在七
+    // 宮」. 卷十 p. 104: 「唐高祖武德七年甲申歲積一千零一十五萬四千五百四十一
+    // 年，五福入玄宮中宮」, the year counted in.
+    const dayou = taiyiBoard({ year: 930 }, options);
+    expect(dayou.sui.hanzi).toBe('庚寅');
+    expect(dayou.dayou.station.palace.number).toBe(7);
+    expect(dayou.dayou.station.year).toBe(1);
+
+    const wufu = taiyiBoard({ year: 624 }, options);
+    expect(wufu.sui.hanzi).toBe('甲申');
+    expect((10_154_541 - wufu.accumulated.taiyi) % 360).toBe(0);
+    expect(wufu.wufu.palace.id).toBe('xuanshi');
+    expect(wufu.wufu.year).toBe(1);
+  });
+});
+
 describe('the year board', () => {
   it('agrees with the year pillar for two centuries either side of now', () => {
     // The 太歲 the count yields is the year pillar every almanac prints, and
@@ -901,7 +969,7 @@ describe('the year board', () => {
     // the lunar boundary was answered by the 立春 rule and recorded the option
     // it had not used. The guard is one refusal now, so a fourth boundary
     // cannot arrive quietly answered by this one.
-    for (const yearBoundary of ['dongzhi', 'chunjie'] as const) {
+    for (const yearBoundary of ['chunjie'] as const) {
       expect(() => taiyiYearOf({ civilYear: 2026, sui: yearGanzhi(2026) }, { ...options, yearBoundary })).toThrow(
         /OPTION_NOT_IMPLEMENTED|not implemented/i,
       );
@@ -923,6 +991,82 @@ describe('the year board', () => {
     expect(at('2026-02-03')).toBe(2025);
     expect(at('2026-02-10')).toBe(2026);
     expect(at('2026-12-31')).toBe(2026);
+  });
+
+  /**
+   * 《太乙數統宗大全》卷二十: 「今夜子時為明日，今年子月自當為明年」, and 卷二
+   * counts its 積年 from one 天正冬至 to the next. So the year named 2026 opens
+   * at the solstice of December 2025 — the 21st — and closes at the next.
+   *
+   * No board in the work is dated in the weeks the two boundaries part on, so
+   * what this holds is the rule as stated and not a case of it.
+   */
+  it('answers «now» from 冬至 where the 《統宗》 is followed', () => {
+    const context = initEphemeris();
+    const dongzhi: TaiyiOptions = { ...options, yearBoundary: 'dongzhi' };
+    const at = (date: string) =>
+      taiyiYearAt(resolveTime({ date, time: '12:00', timezone: 'UTC' }).time.julianDayUT, dongzhi, context);
+    expect(at('2025-12-20')).toBe(2025);
+    expect(at('2025-12-23')).toBe(2026);
+    expect(at('2026-01-15')).toBe(2026);
+    expect(at('2026-02-10')).toBe(2026);
+    expect(at('2026-12-20')).toBe(2026);
+    expect(at('2026-12-23')).toBe(2027);
+  });
+
+  it('reads the same year off a pillar cut at the same boundary', () => {
+    const dongzhi: TaiyiOptions = { ...options, yearBoundary: 'dongzhi' };
+    // After the solstice the pillar is the coming year's; before it, this one's.
+    expect(taiyiYearOf({ civilYear: 2025, sui: yearGanzhi(2026) }, dongzhi)).toBe(2026);
+    expect(taiyiYearOf({ civilYear: 2026, sui: yearGanzhi(2026) }, dongzhi)).toBe(2026);
+  });
+
+  it('lays one board for a named year under either boundary, and says which', () => {
+    const dongzhi: TaiyiOptions = { ...options, yearBoundary: 'dongzhi' };
+    const { options: asked, ...board } = taiyiBoard({ year: 2026 }, dongzhi);
+    const { options: byDefault, ...same } = taiyiBoard({ year: 2026 }, options);
+    expect(board).toEqual(same);
+    expect(asked.yearBoundary).toBe('dongzhi');
+    expect(byDefault.yearBoundary).toBe('lichun');
+  });
+});
+
+/**
+ * 陰陽和不和, the eye's test: 《太乙金鏡式經》卷二 推陰陽和不和 quoting 張良經,
+ * and 《太乙數統宗大全》卷六 in the same terms.
+ *
+ * No worked board in either work names one of these, so what is held here is
+ * the sentence, over every 局 of both tables, and not a case of it.
+ */
+describe('the count against the seat of its eye', () => {
+  it('doubles 陽 on a palace seat with an odd count and 陰 between palaces with an even one', () => {
+    const seen = new Set<string>();
+    for (const dun of ['yang', 'yin'] as const) {
+      for (let ju = 1; ju <= 72; ju += 1) {
+        const board = taiyiJu(ju, dun);
+        for (const side of [board.host, board.guest]) {
+          // 「下目立正宫為陽，立間神為隂」.
+          const onPalace = side.from.palace !== undefined;
+          const odd = side.count % 2 === 1;
+          const expected = onPalace && odd ? '重陽' : !onPalace && !odd ? '重陰' : '和';
+          expect(side.accord.hanzi, `${dun} ${ju}`).toBe(expected);
+          seen.add(side.accord.id);
+        }
+      }
+    }
+    expect([...seen].sort()).toEqual(['chongyang', 'chongyin', 'he']);
+  });
+
+  it('reads the first 局 of the 立成 as the table seats it', () => {
+    // 陽局 1: 文昌 on 武德, between palaces, 主算 七 — 陰 with an odd count.
+    // 始擊 on 大武, which is 坤 and a palace, 客算 十三 — 陽 with an odd count.
+    const board = taiyiJu(1, 'yang');
+    expect(board.host.from.hanzi).toBe('武德');
+    expect(board.host.count).toBe(7);
+    expect(board.host.accord.hanzi).toBe('和');
+    expect(board.guest.from.hanzi).toBe('大武');
+    expect(board.guest.count).toBe(13);
+    expect(board.guest.accord.hanzi).toBe('重陽');
   });
 });
 

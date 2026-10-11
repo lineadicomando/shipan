@@ -1172,7 +1172,8 @@ function taiyiGod(god: TaiyiGod, t: Translator): string {
 function taiyiSide(side: TaiyiSide, t: Translator): string[] {
   const general = `${t('label.taiyi.general')} ${glyph(side.general)} ${side.general.number}`;
   const assistant = `${t('label.taiyi.assistant')} ${glyph(side.assistant)} ${side.assistant.number}`;
-  return [String(side.count), general, assistant];
+  const accord = named(side.accord, `label.taiyiaccord.${side.accord.id}` as MessageKey, t);
+  return [String(side.count), accord, general, assistant];
 }
 
 function taiyiPattern(pattern: TaiyiPattern, t: Translator): string[] {

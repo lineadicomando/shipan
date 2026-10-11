@@ -406,8 +406,17 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'yearBoundary',
     board: 'taiyi',
     values: ['lichun', 'dongzhi', 'chunjie'],
-    implemented: ['lichun'],
+    implemented: ['lichun', 'dongzhi'],
     fallback: 'lichun',
+    label: 'form.taiyi.yearBoundary',
+    says: {
+      lichun: 'form.taiyi.yearBoundary.lichun',
+      dongzhi: 'form.taiyi.yearBoundary.dongzhi',
+    },
+    notes: {
+      lichun: 'form.taiyi.yearBoundary.note',
+      dongzhi: 'form.taiyi.yearBoundary.note',
+    },
   },
   {
     id: 'leapMonth',

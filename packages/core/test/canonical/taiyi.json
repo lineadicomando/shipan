@@ -430,6 +430,11 @@
         "pinyin": "kǎn",
         "symbol": "☵",
         "direction": "n"
+      },
+      "accord": {
+        "id": "chongyin",
+        "hanzi": "重陰",
+        "pinyin": "chóngyīn"
       }
     },
     "guest": {
@@ -467,6 +472,11 @@
         "pinyin": "xùn",
         "symbol": "☴",
         "direction": "se"
+      },
+      "accord": {
+        "id": "chongyang",
+        "hanzi": "重陽",
+        "pinyin": "chóngyáng"
       }
     },
     "patterns": [
@@ -1052,6 +1062,11 @@
         "pinyin": "lí",
         "symbol": "☲",
         "direction": "s"
+      },
+      "accord": {
+        "id": "he",
+        "hanzi": "和",
+        "pinyin": "hé"
       }
     },
     "guest": {
@@ -1086,6 +1101,11 @@
         "hanzi": "中",
         "pinyin": "zhōng",
         "direction": null
+      },
+      "accord": {
+        "id": "he",
+        "hanzi": "和",
+        "pinyin": "hé"
       }
     },
     "patterns": [

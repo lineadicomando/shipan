@@ -80,6 +80,7 @@
           <th scope="col"></th>
           <th scope="col">{t('cli.field.taiyiEyes')}</th>
           <th scope="col">{t('cli.field.taiyiCounts')}</th>
+          <th scope="col">{t('label.taiyi.accord')}</th>
           <th scope="col">{t('label.taiyi.general')}</th>
           <th scope="col">{t('label.taiyi.assistant')}</th>
         </tr>
@@ -93,6 +94,13 @@
               <span class="glyph">{glyph(one.eye)}</span>
             </td>
             <td class="count">{one.side.count}</td>
+            <!-- Guarded: a board cached before the field existed has none. -->
+            <td>
+              {#if one.side.accord}
+                {t(`label.taiyiaccord.${one.side.accord.id}` as MessageKey)}
+                <span class="glyph">{glyph(one.side.accord)}</span>
+              {/if}
+            </td>
             <td>{seat(one.side.general)}</td>
             <td>{seat(one.side.assistant)}</td>
           </tr>

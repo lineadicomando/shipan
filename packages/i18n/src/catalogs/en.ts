@@ -672,6 +672,11 @@ export const en = {
   'label.taiyi.heshen': 'the year’s companion',
   'label.taiyi.hostCount': 'the host’s count',
   'label.taiyi.guestCount': 'the guest’s count',
+  'label.taiyi.accord': 'the count and its eye',
+  // 陰陽和不和, the eye's test alone: the count against the seat its eye stands on.
+  'label.taiyiaccord.he': 'in accord',
+  'label.taiyiaccord.chongyang': 'yang doubled',
+  'label.taiyiaccord.chongyin': 'yin doubled',
   'label.taiyi.general': 'great general',
   'label.taiyi.assistant': 'adjutant',
   'label.taiyi.hostGeneral': 'the host’s great general',
@@ -1399,11 +1404,17 @@ export const en = {
     'for the host’s great general and adjutant as well, as 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn has it',
   'form.taiyi.geHost.note':
     'The first text names one party where it states this condition. A modern study of the second reproduces one of its boards, in which the host’s great general faces 太乙 tàiyǐ and is marked the same way. The two texts are different works, and each is followed here as its own.',
+  'form.taiyi.yearBoundary': 'The year of this board begins',
+  'form.taiyi.yearBoundary.lichun': 'at 立春 lìchūn, where the year of the pillars turns',
+  'form.taiyi.yearBoundary.dongzhi':
+    'at 冬至 dōngzhì, the winter solstice, as 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn counts it',
+  'form.taiyi.yearBoundary.note':
+    'A board laid on a year you name is the same board under either choice. The choice decides which year a date falls in: between the winter solstice and 立春 lìchūn, the second counts the year that is about to open and the first counts the one still running.',
   'form.taiyi.wenchangTaiyi': 'When 文昌 wénchāng stands in the palace of 太乙 tàiyǐ, the condition is called',
   'form.taiyi.wenchangTaiyi.qiu': '囚 qiú, as 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng has it',
   'form.taiyi.wenchangTaiyi.guan':
-    '關 guān, a name 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn quotes from an earlier master',
-  'form.taiyi.wenchangTaiyi.yan': '掩 yǎn, as 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn has it in its own voice',
+    '關 guān, the name 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn lists it under, quoting an earlier master',
+  'form.taiyi.wenchangTaiyi.yan': '掩 yǎn, as 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn has it where it explains that condition',
   'form.taiyi.wenchangTaiyi.note':
     'One arrangement carries three names in the texts. The board is the same under each of them. What changes is the condition the arrangement is filed under, and with it the words the naming text attaches to that condition.',
   'form.ziwei.huoling': '火星 huǒxīng and 鈴星 língxīng are placed',
@@ -2486,7 +2497,7 @@ export const en = {
   'prompt.taiyi.palaces':
     'The nine palaces of this board are **not numbered as a Qi Men chart numbers them**. 卷二 juàn èr says 九宮皆差一位 jiǔgōng jiē chā yī wèi (every number has moved one seat so that 一 yī reaches 乾 qián), so 一宮 yīgōng is the north-west here and the north there, and all eight are one seat off the 洛書 luòshū. Read the numbers as this board’s own. If you know the Luoshu arrangement, do not carry it across, and do not "correct" anything below to it.',
   'prompt.taiyi.counts':
-    '主算 zhǔsuàn and 客算 kèsuàn are the output of a counting procedure — seats told off around the ring from the two eyes — and not scores of good and bad. A larger count is not a better one. Do not add them, do not subtract one from the other and call the difference an outcome, and do not rank the palaces or the sixteen seats. What the counts do carry is the named conditions below, which is where the sources put the weight.',
+    '主算 zhǔsuàn and 客算 kèsuàn are the output of a counting procedure — seats told off around the ring from the two eyes — and not scores of good and bad. A larger count is not a better one. Do not add them, do not subtract one from the other and call the difference an outcome, and do not rank the palaces or the sixteen seats. What the counts do carry is the named conditions below, which is where the sources put the weight. Beside each count the board prints one label from the sources: an odd count taken from an eye on a palace seat is 重陽 chóngyáng, an even count taken from an eye between two palaces is 重陰 chóngyīn, and either other pairing is 和 hé. That is the test 太乙金鏡式經 tàiyǐjīnjìngshìjīng quotes from an older text, and it is a name for the pairing: do not turn it into a score either.',
   'prompt.taiyi.conditions':
     'The conditions named below (掩 yǎn, 迫 pò, 囚 qiú, 擊 jī, 關 guān, 格 gé, 對 duì) are attributes of the configuration in the words of 卷三 juàn sān, each with the fortune that chapter gives it. They belong to the figure and not to anybody’s situation, and the fortune is the source’s and not a verdict of yours. **Each is printed with the chapter’s own sentence saying what it is** — read that, use it, and leave it there. What the chapter also says will *befall the realm* when a condition falls is not printed, deliberately: it is the dynastic layer, and its absence is not an invitation to reconstruct it.',
   // The load-bearing refusal, and the reason this board waited for a designed

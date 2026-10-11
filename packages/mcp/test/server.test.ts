@@ -657,6 +657,7 @@ describe('the divergences a tool offers', () => {
   };
   const NAMED: Record<string, string> = {
     'ziwei.yearBoundary': 'ziwei_year_boundary',
+    'taiyi.yearBoundary': 'taiyi_year_boundary',
     // A birth is not the board's, so its count says whose years it counts.
     'nianming.count': 'years_count',
   };

@@ -218,7 +218,7 @@ for its degree does not compile.
 
 **And what is weak about it is published rather than withheld.** Each half of
 the placement rests on a single text, which is rung 5 twice over — the grade
-年命, the 年神 bearings and 太乙's 大遊 already ship at. This project's
+年命 and the 年神 bearings already ship at. This project's
 rule for such a quantity is that its rung is written down, not that the quantity
 is dropped: the art is 七政四餘, and a board printing three by default answered
 to a name it did not carry. So the fourth is on the board, at the resolution its
