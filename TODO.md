@@ -37,21 +37,37 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-11
 
-Version 0.21.0. `npm test`, `npm run typecheck` and `npm run build` pass.
+Version 0.21.0. `main` is ahead of `origin/main` and nothing of 2026-10-11 is pushed.
+`npm test`, `npm run typecheck` and `npm run build` pass. One test is skipped
+in a tree that was never built, the installed bin run through its symlink,
+and it is not a failure.
 
 **Decisions held open, by the user's word, until there is more to decide on:**
 
-- **太乙's 月計 · 日計 · 時計.** The 《統宗》 states all three as procedures. Not
-  built: it needs a board that takes an instant. Read on 2026-10-11: the
-  hour's count is settled, from the epoch and by the 干支 of day and hour.
-  The day's is not: the 甲子 the work dates as 上元第一紀 stands 120 days,
-  or 240, from where its own count puts it, and the three places asked for
-  a dated board have none. Held, by the user's word of 2026-10-11.
+- **太乙's 月計 · 日計 · 時計: wait, all three** — the user's word of
+  2026-10-11, with the options set out and none taken. The 《統宗》 states
+  each as a procedure and the three stand unalike. The hour's count is read
+  and would build: from the epoch, the 局 following from the 干支 of the day
+  and of the hour, 陰局 after 夏至. It was reached by argument and by eight
+  undated boards agreeing, which is why it waits too. The day's does not
+  build: the 甲子 the work dates as 上元第一紀 stands 120 days, or 240, from
+  where its own count puts it. The month's was read as a procedure and no
+  further. Building any of them is a second input type — an instant and a
+  zone where `taiyiBoard` takes a year — a `dayBoundary` under the board's
+  name, a ruling on `gate`, `sanji`, `wufu` and `dayou`, which have counts of
+  the year only, and a line in `lib/cacheable.ts`.
 - **`gong: ci`.** The table is read, with three cells of twelve miscopied.
   Not built until a second copy gives those three.
 
-**Declared this session**: `yearBoundary: dongzhi` of 太乙 computed, and
-`host.accord` · `guest.accord` carried. Nothing is half done.
+**Done on 2026-10-11, and nothing is half done.** `yearBoundary: dongzhi` of
+太乙 is computed. `host.accord` and `guest.accord` carry 和, 重陽 or 重陰.
+八門直使 and 大遊 are on rung 2. 關 is held by the 《統宗》.
+`docs/history/51-the-tongzong-of-taiyi.md` is the record.
+
+**Owed a look by the user, and not blocking**: the catalog strings written
+that day without the `reader-copy` skill — `form.taiyi.yearBoundary` and its
+three, `label.taiyi.accord`, `label.taiyiaccord.*`, the sentence added to
+`prompt.taiyi.counts`, and the two `form.taiyi.wenchangTaiyi` lines reworded.
 
 ## 1. Parameters that are declared and refused
 
@@ -122,7 +138,9 @@ nothing exposes. Only those with something to wait on:
   lived by turns; a second value of `shensha`; the noble of 庚 seated with
   辛's.
 
-**Asked and not found, so not asked of the same works again**: the holders of
+**Asked and not found, so not asked of the same works again**: a 日計 or
+時計 board with a date on it, of 《太乙金鏡式經》卷六 and 卷九 and of the
+《統宗》卷四, 卷十八 and 卷三十六; the holders of
 the day and year boundaries, of 《三命通會》卷二 and 《命理新論》; the five phases
 of the 十二天將 and a general turned at the 節, of 《御定六壬直指》卷上 and
 《六壬經緯》卷一–三; a rule for which node 羅睺 is and an epoch for the 積日, of
@@ -132,6 +150,13 @@ middle or for 羅睺 as the ascending node, which is a date and not a negative.
 ## 2. The shelf
 
 **In order.** Each is a named section; nothing here is a sweep of a book.
+Lines 1 to 5 are 太乙 and three files, each with its own offset: the
+《統宗》, `taiyi/taiyi-shu-tongzong-daquan-gugong.pdf`, PDF page = series
+page + 4, every juan opening on a 目錄 of its own; the 金鏡,
+`taiyi/taiyi-jinjing-shijing-skqs.pdf`, PDF page = 四庫 printed page − 854;
+盧央's 《中國古代星占學》, `shushu/zhongguo-gudai-xingzhanxue.pdf`, PDF page =
+printed page + 18. Lines 1 and 2 have nothing left to read on this shelf and
+stand first because a decision waits on each.
 
 | | what would move | where |
 |---|---|---|
@@ -144,11 +169,16 @@ middle or for 羅睺 as the ascending node, which is a date and not a negative.
 | 7 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
 | 8 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 
-**Small and left open by this session**: in the 符應經, the note in small
-characters under the title at 遁甲集成 第三冊 p. 1136, and 玉女守門 as two
-tables in two copies; in the 《統宗》, the lunar constants of 卷二, one damaged, the rest of
-推四神太乙立成歷 to collate, and the reign printed for 1444 in that list;
-in 《星學大成》, the figures of 起大限.
+**Small and left open**: in the 符應經, the note in small characters under
+the title at 遁甲集成 第三冊 p. 1136, and 玉女守門 as two tables in two
+copies; in 《星學大成》, the figures of 起大限. In the 《統宗》: the lunar
+constants of 卷二, one damaged, and its 朓朒 leaves pp. 22–27, seen and not
+read; the rest of 推四神太乙立成歷, p. 108, to collate; the reign printed
+for 1444 in the list of gates; two characters of the note under the heading
+at p. 193; 者 or 考 closing a column at p. 29; and whether that work and the
+《太乙統宗寶鑑》 the engine names its witness for are one recension —
+`taiyitongzong` in `packages/core/src/witnesses.ts`, and the catalogs with
+it, carry the second title and the file on the shelf the first.
 
 **Wanted and not held**: the 《元史·曆志》; 《太乙淘金歌》; 沈義方's
 《星平大成》, a lead for the day turned at midnight; a second dated chart with
@@ -196,6 +226,15 @@ prose, which a third language pays for and derived text does not. →
   by tests: the MCP schemas in `packages/mcp/src/` and
   `apps/web/src/lib/parameters.ts`. A value added to the engine fails those
   suites until it is added there.
+- **`accord` is not on the drawing.** The transcript and the section print
+  it; `packages/plate` was left as it was, its `PlateTaiyiSide` without the
+  field.
+- **The eye of 太乙's 大遊 is checked by nothing.** Its row rose on the body,
+  dated once in a second work; `dayou.wenchang` rides in that row and the
+  row says so. 明大遊天目所主術, the 《統宗》卷十一 p. 110, is line 3 of § 2.
+- **`taiyiYearOf` is exported and no surface calls it.** Every surface asks
+  `taiyiYearAt`. Under `dongzhi` it reads a pillar that must have been cut
+  at the solstice too, which nothing checks.
 - **A rasterised board sets its Latin in resvg's fallback face** on any line
   that also holds a hanzi, so two registers of one drawing are set unalike.
   It wants a text engine, or a resvg resolving a font stack a character at a
