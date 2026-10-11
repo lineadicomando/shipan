@@ -6452,8 +6452,9 @@ it is incongruent, and a reading of 太乙統宗寶鑑 that stopped at «its num
 different» would have established nothing.
 
 `yearBoundary` is a genuine divergence and stays one. The text nowhere says
-where its counted year begins; 立春 is the default because the pillars beside
-it turn there, and a board that cut the year elsewhere would be two calendars
+where its counted year begins — the 金鏡, that is: the 《統宗》 does, in a
+section read on 2026-10-11 and quoted under § "《太乙數統宗大全》 mapped by its
+juan". 立春 is the default because the pillars beside it turn there, and a board that cut the year elsewhere would be two calendars
 in one output. `dongzhi` and `chunjie` are declared and refused — **both of
 them, and the refusal is now written as one**: for a while only 冬至 threw and
 春節 fell through into the 立春 arithmetic, so a board asked for the lunar
@@ -7016,7 +7017,256 @@ the shelf:
 - 下元大紀 and 上元第一紀 say the day's count runs in three 元, which the 局
   does not need and a board printing its 元 would.
 
-Last checked 2026-10-08.
+Last checked 2026-10-08. **Read since**: no board of either work is
+dated, the 門盈差 of the gate is named to be refused, nothing is missing
+before 之於古, and the print is after 1684 — the section below. And the
+note's 甲子 is not where 卷二's own count puts it: the section after that.
+
+### 《太乙數統宗大全》 mapped by its juan, and what the worked boards of both works hold
+
+Read on the plate on 2026-10-11, at the file's 300 dpi with the deciding
+characters cropped at twice that: the rest of 卷三, series pp. 30–34; 卷四,
+pp. 35–42; the last section of 卷二十, pp. 193–194; of 卷三十一 its 目錄 and
+立成歷序, the head of its 陽局計數 and its 積年, pp. 296–298 and 307; of
+卷三十六 its 目錄 and the first five leaves, pp. 385–389. Every juan opens on
+a 目錄 of its own, and the opening leaf of each from 卷四 to 卷四十 was read
+on contact sheets, which is a map and not a reading. 《太乙金鏡式經》卷六
+leaves 1 to 6 and 卷九 leaves 1 to 3 were read again beside them, 四庫 vol. 810
+pp. 899–901 and 913–914.
+
+**The question put was whether either work lays a 日計 or a 時計 board from a
+date, and neither does.** Every worked board in both is entered by its 紀, its
+元, its 局 and the 干支 of the day or the hour:
+
+| | as printed | 干支, counted from 甲子 |
+|---|---|---|
+| 金鏡 卷六 推猛虎相拒術四 | 上元第一紀第七局庚午日 | 7 |
+| 金鏡 卷六 推雷公入水術五 | 上元第一紀第一甲子元十三局丙子日 | 13 |
+| 金鏡 卷六 推白龍得雲術六 | 上元第一甲子元二十二局乙酉日 | 22 |
+| 金鏡 卷六 推迴軍無言術七 | 上元第一紀第一甲子元二十八局辛卯日 | 28 |
+| 金鏡 卷九 推敵國有無間諜 | 陽遁第一紀第二局乙丑時 | 2 |
+| 金鏡 卷九 推敵來方面法; 統宗 p. 389 | 陽遁第一紀第八局辛未時; 冬至後用陽局太乙上元第一紀甲子元第八局辛未時 | 8 |
+| 金鏡 卷九 推敵使言虛實; 統宗 p. 388 | 陽遁第一紀二十五局戊子時; 陽遁甲子元第二十五局戊子時 | 25 |
+| 金鏡 卷九 推敵國動靜; 統宗 p. 388 | 陰遁第三紀第五十二局乙卯時; 夏至後陰局太乙在第一紀甲子元第五十二局乙卯時 | 52 |
+
+**In every one the 局 is the place of the 干支 in the sixty**, which is what a
+甲子元 is: seventy-two 局 opening on a 甲子 day or hour. So the boards hold a
+count to its phase and to nothing else. They say that 局 1 falls *on* the
+甲子 — the count is inclusive, 「命起第一局」 — and they do not say which
+甲子, since none carries a year.
+
+**The eighth row is the two works parting on a numeral, and the hour settles
+it.** 局 52 falls on 乙卯 in the first 紀 alone; in a third it falls on 丁卯.
+The 統宗 prints 第一紀甲子元 and the 四庫 copy of the 金鏡 第三紀, so the 三
+is the copy's. The 局 is what `test/taiyi.test.ts` checks, and it stands.
+
+**The boards fix the phase of a count and the leaves read beside them fix
+the rest for the hour, not for the day.** The 統宗 dates the first day of an
+上元第一紀 to a 甲子, and the boards make a 甲子 局 1 — 「命起第一局」 counts
+it in. What that leaves open is in the section after this one: the dated anchor
+and the count it is printed under do not agree. The hour is settled there
+too, by a sentence of 卷二.
+
+**The 門盈差 is named in order to be refused.** P. 31, 求四計入門值事所在法:
+
+> 求歲計值積年加門盈差六十，求日計值積日加門盈差一百二十，攷古推原不用相
+> 符，今編應金鏡諸經亦無所取。蓋太乙八門值事之法其來久矣，止用積年不容元
+> 紀…加之盈差反遭污穢，故不取焉。
+
+A 門盈差 of sixty on the year and a hundred and twenty on the day, for the
+gate alone, and not taken. The list that follows is the proof: 求歲計入門略例
+names the gate of twenty-five 甲子 and 甲午 years, from 宋太祖乾德二年甲子 on
+開門 to 清康熙二十三年甲子 on 開門, one gate to thirty years without a break.
+乾德二年 is 964, two hundred and forty years after the 開元十二年 the 金鏡
+puts on 開門, so the list is the 金鏡's count carried on for seven centuries
+with no 盈差 in it. That is a second work dating the 八門直使, and the row
+stays on its rung until the twenty-five years are in `test/taiyi.test.ts`:
+they were held to the rule by hand, the engine not having been run.
+
+**The 二百四十 of p. 29 is another sentence and is not a refusal.** The entry
+above left a character unread before 之於古; none is missing. The column ends
+on 者 or 考 — the file does not separate them — and the next opens on 之:
+「惟歲計與日計加盈差二百四十，其與五元六紀之數皆不相合，考之於古亦無所取，今
+循舊法而用之，使無後惑矣」. Where p. 31 ends 故不取焉, this ends 用之. For the
+year nothing is added: the three dated counts of the work each lay their 局
+without it. For the day something is, and the section after this one
+measures it.
+
+**A third dated count, and the date of the print.** 卷三十一 積年, p. 307:
+
+> 自上古七政齊元天正冬至積算起算至國朝康熙丙午年積共一千零一十五萬五千五
+> 百八十三年，置歲積之實以周法三百六十去之不盡，再以小周法六十去之不盡，
+> 餘五十五算…至丙午年即至壬子元五十五局為入局。
+
+康熙丙午 is 1666. 10 155 583 leaves 343 after 360, 343 is 43 past a multiple
+of sixty and 丙午 is the forty-third, and after 72 it leaves 55: 壬子元, 局
+55, which is what the 金鏡's count gives for the year, 1 938 223 leaving the
+same 343. Two things in it are the leaf's own. The 55 is the remainder by
+seventy-two and the sentence says sixty. And the figure is **one more** than
+卷二's series reaches for 1666, 10 155 582: 卷二 counts the years elapsed and
+begins from 局 1, this leaf counts the year in and takes the remainder as the
+局, as the 金鏡 does. One work, two conventions, one board. With 國朝 here
+and 康熙二十三年 closing the list of gates, **the print is after 1684**, where
+the entry above could say only after 1451; the leaf closing 卷三十五, p. 385,
+carries a note signed 集福堂.
+
+**A year board worked for 崇禎甲戌, 1634, and a third count on it.** 卷四
+求四計定計目計大計參所在術, p. 37, under 「淘金訣法」: 太乙在九宮, 文昌在一宮,
+甲戌合神在卯. By the rule this engine runs, 1634 leaves 311 after 360: 太乙 in
+the ninth palace, 天目 on 陰德 at 乾, which is the first, and 卯 the 六合 of
+戌. The leaf then lays a 定計目 at 巳, a 計大將 by a count of thirty-two and a
+計參 in 六宮 — the 大將's palace reads 三 and the ×3 that follows gives 六
+from 二 alone. That is the 定算, the third count 《祖傳年家太乙神數教材》 prints
+beside 主算 and 客算 and the 金鏡 has no name for; the 統宗's drawn boards of
+卷三十二 to 卷三十五 carry it on every one. Recorded, with no parameter.
+
+**《太乙淘金歌》 is quoted by title, and not for its 上元.** 卷四, p. 36:
+「太乙淘金歌推九星…所求積年以九星周法九數除之…如崇禎甲戌餘四十一算即天禽
+為值符」 — nine stars, ten years each. 10 155 551, the work's own count for
+1634 with the year counted in, leaves 41 after ninety, and so does the
+金鏡's. So the one figure the 統宗 gives under that name is its own count's,
+and `epoch: taojin` waits on the 歌 as before.
+
+**The year is turned at 子, and the 統宗 says so in a section of its own.**
+卷二十 明太乙歲本論建子為正術, pp. 193–194:
+
+> 太乙天道之運自子始，年月日時四計皆然。天道自子為始，故太乙自開闢上元甲
+> 子以來，歲始于子終于亥，此天道自然之運。故今夜子時為明日，今年子月自當
+> 為明年。故太乙歲月日時四計之數皆始于子，可無疑也。
+
+A note in small characters under the heading reads 「此書梁時所著故用子為
+正」, two of its characters unsure at this size. § "The parameter, and why it
+has one value" says the text nowhere states where its counted year begins,
+and of the 金鏡 that stands; of the 統宗 it does not. The leaf says the 子
+month and not which instant opens it; 卷二 does, and is read in the section
+after this one. The default stays 立春 and is still a convention; what
+changed is that a work on this shelf holds against it by name.
+
+**陰局 is the hour's alone on one leaf and the day's as well on another.**
+P. 30 says it of 太乙 and again of 天目, 「歲月日時四計皆同，惟時計夏至後用陰
+局」; 卷三十六 明太乙出兵舉事用日之術, p. 386, has 「冬至用以陽局，夏
+至用以陰局」 of the day. Both are the work's.
+
+**Not computed, and located.** The gate of an hour, 求冬夏二至八門所在術, p. 33:
+「以半周之法一百二十去之…以門率三十約之…冬至命起開…夏至命起杜」. 推六儀三奇
+on the same leaf and 飛九宮 · 飛八門 opening 卷四, with tables to p. 36. The
+立成 of 卷三十一, seventy-two rows of 陽局 and seventy-two of 陰局 with the
+conditions of each printed in the row, and the hundred and forty-four drawn
+boards of 卷三十二 to 卷三十五: a second 立成 to hold the 金鏡's to, unread
+past its first leaf. 卷六 明太乙主客陰陽不和之數術, 卷七's 釋掩 · 釋迫 · 釋關 ·
+釋囚 · 釋擊 · 釋格 · 釋對, 卷十一's 四神, 天乙, 地乙 and 直符 with a 立成歷
+of their own, and 明十精太乙所主之術 closing 卷三十六: each answers a question
+this register carries open, and none was read. 卷三十七 to 卷四十 are a
+命法, a life read off the board.
+
+**下元大紀 is 下元之第六紀.** The note dating the 日計 reads 大 on p. 29, and
+卷二 prints the same note under 求天正冬至積日術, p. 21, with the numeral
+whole: 「正德己巳年十一月初六日甲子為下元之第六紀，庚午年正月初七日甲子為上元第
+一紀」. Three 元 of six 紀, a thousand and eighty days.
+
+Last checked 2026-10-11.
+
+### 《太乙數統宗大全》卷二 again: the year opened at the solstice, the hours counted from the epoch, and a day's anchor its own count does not give
+
+Read on the plate on 2026-10-11, after the section above and for the two
+questions it left: 求太乙積年術 to its end, series p. 19; the constants,
+p. 20; 求天正積月術 and 求天正冬至積日術, p. 21, each with the numerals
+cropped at 600 dpi; and p. 29 again for 求時計. The rest of the juan,
+pp. 22–27, is the lunar apparatus — 求天正經朔積日術, 求次朔術, the 立成 of
+the twenty-four 氣 with their 損益, 朓朒 and 日出分, 求朓朒定數術 and its
+立成 by the day of the 歷 — seen on a contact sheet and not read: nothing in
+it is headed for the year or for a 計.
+
+**The four counts run from one instant, and it is a winter solstice.** P. 19,
+closing 求太乙積年術:
+
+> 自上古甲子年甲子月甲子日甲子時天正冬至，日月合璧五星連珠皆合于子，是為上
+> 元，由此推來之數也…故太乙歲月日時四計之數皆從于上古齊元甲子為上元第一紀
+> 之初也。
+
+And the day count is that many 歲實 from it, p. 21:
+
+> 置歲實三百八十三萬五千〔零〕四十六分二十五秒，以所求積年減一乘之為中積分，
+> 加氣盈差三十五萬九千四百十六分十秒，以一法一萬零五百除之，為所求歲前天正
+> 冬至積日之算也。其日辰命以紀法求之…算外即得天正冬至積日辰。
+
+**So a year of this count is solstice to solstice**, which is the instant
+卷二十 does not name: 「今年子月自當為明年」 and a 積年 that advances by one
+歲實 at each 天正冬至 are one statement. `yearBoundary: dongzhi` has a work
+and a rule. What it has not got is a board: none in the work is dated between
+a solstice and the 立春 after it, which is the only place the two boundaries
+part. The 氣盈差 is printed 四百四十六分 on p. 20 and 四百十六分 on p. 21,
+thirty parts of 10 500 apart.
+
+**Held to a calendar the work did not see, the count wants no 減一 on 卷二's
+own figures.** For 正德五年庚午 the series of p. 19 gives 10 155 426. Taken
+as printed, less one, the solstice before it falls on 癸丑; the solstice of
+December 1509 was a 己未, five days before the 甲子 of 十一月初六 the note
+names, and the 授時's own 氣應 puts it there. Without the subtraction the
+count gives 己未. So the figure 卷二 dates is already the years elapsed to
+the 歲前冬至, and 減一 belongs to a 積年 that counts its year in — which is
+how 卷三十一 states its own, one more than this series. The same two
+conventions as in the section above, here with a day to tell them apart. The
+fraction of the day does not agree with the 授時's, 0.04 against 0.59, so the
+count is not held to the day in every year; it was held in this one.
+
+**The dated anchor is not where that count puts it, and the difference is
+the 盈差.** The 甲子 of 己巳十一月初六 is five days past that solstice, and
+its 積日 leaves 180 after 360: the first day of a **fourth** 紀. The note
+says the sixth, and 上元第一紀 sixty days on. Every reading of 減一 tried
+gives a fourth. The note is reached by adding 120 or by taking off 240, which
+are one thing modulo 360 — and those are the two figures the work names for
+the day, the 門盈差 of p. 31 and the 盈差 of p. 29. With the 元 counted as
+well, three to 1 080 days, it is the 240 taken off that lands on 下元之第六紀
+from the count that has the solstice right; the leaf says 加.
+
+So `ji: riji` is where it was and for a better reason. A 局 is the count
+after 360 and after 72: the count as stated puts 25 February 1510 on 局 25,
+the note puts it on 局 1, and each is the work's. No dated 日計 board is on
+this shelf to choose, the eight of the section above being entered by 局 and
+干支 alone.
+
+**The hour is counted from the epoch, and the 盈差 does not reach it.** P. 29
+entire:
+
+> 值冬至夏至所日減一，以十二乘之為辰前半子正之初積時也，加所求時為積〔日〕時，
+> 而周紀餘法三百六十去之，不盡為周紀餘，以紀法六十約之而一，所得為紀數，不
+> 滿為入紀以來時數…又置周紀餘以元法七十二約之為元數，不滿為入元以來時數，
+> 起命第一局即得時計入局。
+
+The product is named: the 積時 at the 子正 opening the day, 辰前半 being the
+calendars' 晨前夜半. That is an hour count at a midnight, which a count
+restarting at each solstice has no need to name, and p. 19 has all four
+counts 「皆從于上古齊元甲子」. So 所日 is the 積日 of the solstice day, and of
+the two readings the section above left, it is the second. The hours of a
+紀 and a 元 then turn on the day's place in thirty: 120 days and 240 days
+are each a whole number of 360 hours, so whichever anchor the day keeps, the
+hour's 紀, 元 and 局 are one — a 甲子 hour on a 甲子 or a 甲午 day opens a 周
+紀, and the 局 of any hour follows from the 干支 of its day and its own. The
+eight boards of the section above are laid by it, the 統宗's three in the
+紀 they print. One character of 積〔日〕時 is unsure and moves nothing.
+
+`ji: shiji` therefore waits on being built, with 陰局 from the 夏至 on. Not
+read for it: whether the day of an hour turns at 子初 or at 子正, the leaf
+naming 子正 and the 干支 of a 子 hour being the question the pillars carry
+as `dayBoundary`.
+
+**Asked of three more places for a dated 日計 board, and none has one.** Read
+on the plate the same day: 卷三十六 to 明時計以占諸事術, series pp. 387–392;
+卷四 明太乙歲月日時計用式不同例, p. 41; 卷十八 明太乙七術 whole,
+pp. 169–175. 卷四's section says who lays which — 「國動靜主客相持天變災異用
+時…卿大夫用月計，眾庶用日計」 — and counts nothing. 卷十八 is the seven 術 of
+the 金鏡's 卷六 under the same seven names, and its boards are the four of
+that juan: 上元第一紀甲子元第七局庚午日 with 太乙 in 三宮, 第十三局丙子日 in
+六宮, 第二十三局乙酉日 in 九宮, 第二十八局辛卯日 in 二宮. The third numeral
+is the print's, read at 600 dpi: 乙酉 is the twenty-second, which is what the
+金鏡 has, and 太乙 stands in 九宮 on 局 22 and in 一宮 on 局 23. 卷三十六's boards are entered by 局 as well. So the negative
+stands on these leaves: the 統宗 dates a 日計 once, in the note 卷二 and 卷三
+both carry, and lays no board from it.
+
+Last checked 2026-10-11.
+
+### Whose each valueLast checked 2026-10-11.
 
 ### Whose each value of a 太乙 board is
 
@@ -7045,6 +7295,10 @@ cast by the 統宗. Its readings reach this register through 盧央's
 **`yearBoundary` is not attributed, in any of its three values.** The text
 nowhere says where its counted year begins; 立春 is the default because the
 pillars beside the board turn there, which is a convention and is said as one.
+**Read since, 2026-10-11**: the 《統宗》 turns the year at 子, in 卷二十 明太乙
+歲本論建子為正術 — 「今年子月自當為明年」 — and 卷二 counts a year from one
+天正冬至 to the next. So `dongzhi` has a work behind it and a rule; `lichun`
+and `chunjie` have neither.
 
 **Declared since 2026-10-07, two of the three computed.** `geHost: zhuke`
 marks 格 on the host's generals and is held to 盧央's board for 124, which the
@@ -7079,8 +7333,48 @@ parameter owed has three values and not two. The quotations are as 盧央 prints
 them, in simplified characters; the 統宗's own leaf was not opened, its 明文昌
 變化所主術 standing in a 卷 this shelf has not read.
 
+**The 統宗's own leaves, read 2026-10-11: 卷七, series pp. 64–69**, the list
+closing 明太乙五音之數術 and 釋掩, 釋囚, 釋格 and 釋對 after it; 釋迫, 釋關,
+釋擊 and 釋提挾 were seen on a contact sheet and not read. 盧央's two
+quotations are on the plate as he prints them, and the work has the third
+name as well:
+
+- 釋掩, p. 65: 「文昌加太乙為掩，始擊加太乙宮亦為掩」.
+- 釋囚, p. 67: 「文昌主客四將與太乙同宮總名曰囚」, then 「樂產云文昌與太乙同
+  宮為關」 and 「李淳風云主客四將與太乙同宮為囚」, and at the section's end
+  「文昌與太乙同宮為關，關者隔防也，關囚皆不利為主」.
+- The list, p. 64, under 諸將與太乙同宮諸列同用: 「始擊與太乙同宮為掩，文昌
+  與太乙同宮為關，主客大小將與太乙同宮為囚」.
+
+So 囚 is in the 統宗 too, as the name of the whole — 文昌 and the four
+generals — with 關 the part that is 文昌's and 掩 said of both eyes. Three
+names in one work, and where it sorts them, on p. 64, 文昌 with 太乙 is 關.
+The parameter's three values stand; that the 統宗 holds 掩 against 關 is not
+what its own list does.
+
+**格, on the same leaves.** 釋格, p. 68: 「經曰客目始擊與客二將在太乙對宮為格」
+— the guest's eye and the guest's two generals, in the palace facing 太乙's.
+The list on p. 64 has it without the guest: 「始擊大小將與太乙宮相對為格，文昌
+與太乙宮相對為對」. And the case worked under 釋格, p. 69, is 589, the board
+盧央 lays whole: 「太乙在卯四宮，始擊在天道未，客算得二十六，客大在六宮格，又歲
+君〔所〕格」, one character unsure. The 客大將 in 六宮 faces 四宮, which is the
+rule. The second 格 is the year's: 己酉, and 酉 faces 卯. `geChong: chong`
+was declared on another board, 盧央's for 940, where it is 始擊 in 辰 against
+a 太乙 in 乾; this one is a second body — the 太歲 — and a branch that is
+the facing palace's own, so it may be the rule of 釋格 reaching a body the
+engine does not test and not a 沖 at all. Two cases and no sentence: the
+value stays refused, and the 太歲 as a body of 格 is recorded with no
+parameter.
+
+Three counts in these cases are dated, each with the year counted in: 589 at
+10 154 506 and 局 58 of the 壬子元, 940 at 10 154 857 and 局 49, 太乙 in 一宮
+at 乾 with 文昌 on 大炅 facing it, which is 對. Both are boards
+`test/taiyi.test.ts` already holds from 盧央.
+
 **Recorded, with no parameter.** 陰陽和不和, which 卷二 gives in two accounts,
-張良經's and 王希明's, inside one work.
+張良經's and 王希明's, inside one work. **Read since, 2026-10-11**: three
+tests on different subjects, in the 《統宗》 and in 盧央 alike — this board's
+§ "What is not here", under 陰陽和不和.
 
 **Not a witness.** The 祖傳教材 handout parts «as a different school» and
 names no text and no line, which is what `sources.md` asks a witness to do
@@ -7117,6 +7411,92 @@ They are four of the **十神**, the group 三基 and 五福 also belong to, and
 group has a 上元 of its own: 甲寅 rather than 甲子, the 二十八萬五千一十一 this
 engine already counts the 三基 from, and 盧央 states the prohibition that count
 carries — 「這個數據不能用來推求太乙行九宮和文昌行十六神」.
+
+**The 《統宗》 states the four as procedures, dates three of them and tabulates
+all four**: 卷十一, series pp. 105–108, read on the plate on 2026-10-11 with
+the table's head and the numerals at 600 dpi. The four sections are one
+sentence with one thing changed, the palace the walk opens on:
+
+> 置上元甲子至所求積年，以…大周法三百六十除之，不盡以小周法三十六去之，不盡
+> 為宮周餘，以行宮率三約之，所得為宮數，不滿為入宮以來年數，命起…算外即得…
+> 所在及年數。
+
+Three years to a palace and twelve palaces to the thirty-six: the nine in
+order, 五 among them, with 絳宮, 明堂 and 玉堂 after the ninth. 四神 opens on
+一宮, 天乙 on 六宮, 地乙 on 九宮, 值符 on 五宮. The count is the 上元甲子
+one, the board's own, and each dated case comes out on it — the 金鏡's count
+and the 統宗's alike, 331 after 360 for 934:
+
+| | as printed | the count after 36, in threes |
+|---|---|---|
+| 天乙 | 唐高祖武德五年壬午歲天乙玉堂宮 (622) | 19: six palaces passed, the seventh from 六宮 is 玉堂 |
+| 地乙 | 後唐…順元年甲午歲地乙在明堂 (934) | 7: two passed, the third from 九宮 is 明堂 |
+| 四神 | 唐昭宗天佑四年丁卯歲四神入六宮 (907) | 16: five passed, the sixth from 一宮 is 六宮 |
+
+值符 has no dated case. 推四神太乙立成歷, p. 108, then gives all four by the
+太歲, three years to a row and three palaces to a cell — 上元, 中元 and 下元,
+a hundred and eighty years being five rounds of thirty-six. Its first five
+rows were held to the rule: 地乙 and 值符 agree in every cell read, 四神 and
+天乙 from the third row on, and three cells of the first two rows do not —
+四神's 一五九 where the rule gives 一九五, 天乙's 六三絳 for 六二絳 and its
+second row. The rest of the table was not collated. So the sentence above
+about a 上元 of 甲寅 stands for the 三基 and not for these four in this work,
+which counts them from 甲子. Not computed and not drawn; what building them
+would stand on is now two works, three dates and a table.
+
+**大遊 is dated in the same juan.** 明大遊太乙所主術, p. 109: 「置上元甲子至所
+求積年之加宮差三十四，以大周法三千八百八十除之，不盡以大遊小周法三百八十八去
+之，不盡為宮周餘，以行宮率三十六約之…起命七宮順行八宮不入中五」, and 「後唐
+明宗長〔興〕元年庚寅歲大遊入…宮梁益分…蓋大遊在七宮」. 930 with thirty-four
+added leaves 1 after 288: the first year in 七宮, which is what the 金鏡's
+一萬三千三百三十一 gives for the year. The two 三 are the print's — the next
+section has 「二百八十八年行一周」, and the case comes out on 2 880 and 288
+and not on the figures printed. 大遊 stood on one text with no dated case;
+this is a second work and a date, and the row stays where it is until the
+year is in `test/taiyi.test.ts`. 明大遊天目所主術, p. 110, gives its 天目 a
+count from 甲寅 — 四十二萬四千五百一十七 at 正德庚辰 — with an 盈差 and a 大
+周 whose numerals were not settled, and a second figure for 崇禎甲申 that is
+not a hundred and twenty-four more. Located and not read to the digit.
+
+And 五福, closing 卷十, p. 104: 「唐高祖武德七年甲申歲積一千零一十五萬四千五
+百四十一年，五福入玄宮中宮」 — the year counted in, as 卷三十一 counts, and
+the fifth palace in its first year, which the 金鏡's count gives for 624.
+
+**十精太乙 in the 《統宗》: ten counters on the board's own count, a step a
+year.** 明十精太乙所主之術 and 明十精太乙雲氣所主法, closing 卷三十六, series
+pp. 394–398, read whole on the plate on 2026-10-11 at the file's 300 dpi; 盧央
+p. 515 read beside them, and his pp. 513–519 located on an extract, which is
+a finding aid. Each of the ten is 「置上元甲子至所求積年」 reduced by a 大周 and
+a 小周 and walked from a named seat, and what every one is read for is
+weather — 「日暈大風」, 「小陰雨」, 「日月有變」 — by which of the others it
+stands with and whether the seat is 旺相.
+
+The two that walk the sixteen are stated whole and agree in both works.
+天皇: 「以天皇周法二百除之，不盡以小周法二十去之，不盡者為神周餘，命起武德
+順行太乙十六宮間之神，逢陰德和德大炅大武乾坤艮巽之地重留一算」 — the
+sixteen and the four corners twice, which is the twenty. 帝符: the same from
+陰主, with 「坎離震兌四正之地重留一算」. 盧央 has both in those terms, 「周法
+20，神率 1…命起武德（申），順行十六神，遇陰德、和德、大炅、大武重留一算」,
+and works one year: 1650, 327 after 360, seven after twenty, 「得天皇太乙在地
+主（子）坎宮」. Counted on this engine's ring from 武德 with 陰德 twice, the
+seventh is 地主, and 327 is what the 金鏡's count leaves for 1650.
+
+The other eight were read and their numerals not cropped: 天時 on the twelve
+branches, twelve to the round; 太尊 on the four 正; 飛鳥 on the nine palaces
+in order; 五行 on 「一八三九七宮」, 陰德, 地主, 和德, 大炅 and 大武, which is the four
+corners and 坎; 八風, 五風 and
+三風 on the nine in three orders of their own; 太乙數 the 局 itself, a palace
+a year, 「不入中五」. The extract of 盧央 shows the same seats and rounds,
+which says where to look and is not a collation.
+
+One sentence in it bears on a question above: 「惟時計冬至陰升當用陽局，夏至陰
+長當用陰局，取陽局對沖之宮而求之」 — the 陰局 is the hour's alone, here as on
+p. 30, against the one leaf of the same juan that has it of the day.
+
+Not computed. The eight states a seat is read by turn with the season and
+are a board's that takes an instant; and the reading is of two bodies
+meeting, which is the kind of sentence this engine carries as a pattern or
+not at all.
 
 **十精太乙, and it is the one layer here that is not dynastic.** 天皇, 帝符,
 天時, 太尊, 飛鳥, 五行, 八風, 五風, 三風 and 太乙數 — nine star-envoys and a
@@ -7263,6 +7643,70 @@ only the closing summary of eight principles has been read here — the first tw
 of which, 「以得算之多少定勝負」 and 「以得算之奇偶定陰陽、孤單」, are the two
 accounts' subject. What that chapter settles, if anything, has not been put to
 the two. Last checked 2026-09-03.
+
+**Put to them on 2026-10-11, and the two accounts are two of three tests on
+different subjects.** Read on the plate: the 《統宗》卷六 明太乙主客陰陽不和之
+數術, series pp. 54–56, with the lists cropped at 600 dpi; 盧央 pp. 477–479,
+which is where his 第二節 treats it — pp. 492–499 take it as given and send
+back there, 「關於太乙式陰陽數已於本章第二節講述過了」. Both lay it out in one
+order:
+
+- **太乙's palace against the count.** 「太乙在陽宮算得奇…為純陽之數，在陰宮算
+  得偶為純陰…皆不和之數也。三八四九為陽宮，二七六一為陰宮。若太乙在陽宮算得
+  偶為和，在陰宮算得奇為和也」. The 統宗 opens this on 「張良曰」.
+- **The seat of an eye against its count.** 「二目在乾離坎震兌坤艮巽正宮為陽，
+  在亥丑寅辰巳未申戌間辰為陰。在陽宮算得奇為重陽之數，在陰宮算得偶為重陰之
+  數，皆為不和之數也」.
+- **The count read by its digits**, which is where the numbers that fitted
+  neither come from. 盧央 quotes the 金鏡: 「三九寅辰為純陽，四八巳丑為雜陽，
+  二六未亥為純陰，七一戌申為雜陰。三十三、三十九為重陽，二十二、二十六為重
+  陰，二十四、二十八為雜陰，十三、十九、三十一、三十七為雜陽」, and 王希明:
+  「若算得 14、18 為上和，23、29、32、36 為次和，12、16、21、27、34、38 為下
+  和」. Each digit is a palace number carrying that palace's quality, and a
+  count is what its two digits make together.
+
+So the parity of a count is read twice, against two things, and a third
+reading classes the count itself: the sentence above, that the accounts «do
+not line up», described three layers as two rivals. What is still open is
+smaller. The first test does not say which count is read against 太乙's
+palace, the host's or each. The third is lists and not a rule that covers
+every count: 盧央 says of 5, 15, 25 and 35 that nothing classes them, p. 479,
+and the tens and the elevens stand in no list either. And the 統宗's print of
+the lists is damaged where 盧央's quotation is whole — it has 三六未亥 for
+二六未亥, 五十三 where 三十二 is wanted, and a 不和 over the last list whose
+own gloss is 「九野人安」, where the 金鏡 as quoted has 下和. 盧央 himself
+calls a 主算 of twelve 上和 on p. 494 against the list he prints.
+
+**The 金鏡's 卷二 opened again the same day, on the plate: 推陰陽和不和,
+leaves 9 and 10, 四庫 vol. 810 p. 875.** It reads as the transcription held
+does, and it moves two things in the entry above.
+
+*Whose each test is.* Both tests of parity are 張良經's, and 王希明's is the
+third alone. 「張良經曰陰陽和不和者謂太乙及上下二目就筭數以相配。下目立正宮為
+陽，立間神為陰，立陽筭得奇為重陽，立陰筭得偶為重陰，則不和。上目所臨陽宮筭
+得重陽…臨陰宮筭得陰為重陰…若在陽筭得偶，陰筭得奇，為陰陽和，和則吉」; then
+「太乙在陽宮筭得奇者為重陽之數，八三四九為陽宮；太乙陰宮筭得偶者為重陰之數，
+二七六一為陰宮，皆不和」; and only then 「王希明曰三九寅辰為純陽…」. So the
+entry's «張良經's and 王希明's» were never two accounts of one test.
+
+*Which count.* For the eyes it is said: the 下目, which is 文昌, and the 上目,
+which is 始擊, each by its own seat, and a count is taken from each. For 太乙's
+palace no count is named, here or in the 《統宗》 or in 盧央. The passage closes
+on the two together — 「若太乙天目立陰陽位而筭陽多者利為客，陰多者利為主」.
+
+*The lists are not established to the numeral.* The 四庫 copy has 二八巳丑 for
+the 雜陽 where 盧央 quotes 四八, 二十六未亥 for 二六, and then 「十四十八三十
+三為上和，二十三二十九三十二為次和，十二十六二十七三十四三十八為下和」 —
+with 三十三 a 重陽 two columns before it is an 上和. Three prints of the
+three lists, the 金鏡's, the 統宗's and 盧央's quotation, and no two agree.
+What all three carry: 14 and 18 in the first, 23 in the second, 12, 16, 27,
+34 and 38 in the last.
+
+Nothing is computed. The two tests of parity stand in three places in one
+form, the eyes' with its count named and 太乙's without; the lists stand on
+no rung until a copy is found that the others can be held to. Whether the
+first two travel as attributes of the board is not decided here. Last checked
+2026-10-11.
 
 **Who is 主 and who is 客.** The first interpretive act the system asks for,
 and the reader's, for the reason the 用神 is. And the whole received dynastic
