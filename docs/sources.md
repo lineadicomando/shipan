@@ -7166,7 +7166,7 @@ boards of 卷三十二 to 卷三十五: a second 立成 to hold the 金鏡's to,
 past its first leaf. 卷六 明太乙主客陰陽不和之數術, 卷七's 釋掩 · 釋迫 · 釋關 ·
 釋囚 · 釋擊 · 釋格 · 釋對, 卷十一's 四神, 天乙, 地乙 and 直符 with a 立成歷
 of their own, and 明十精太乙所主之術 closing 卷三十六: each answers a question
-this register carries open, and none was read. 卷三十七 to 卷四十 are a
+this register carries, and each is read in a section of its own below. 卷三十七 to 卷四十 are a
 命法, a life read off the board.
 
 **下元大紀 is 下元之第六紀.** The note dating the 日計 reads 大 on p. 29, and
@@ -7278,8 +7278,6 @@ both carry, and lays no board from it.
 
 Last checked 2026-10-11.
 
-### Whose each valueLast checked 2026-10-11.
-
 ### Whose each value of a 太乙 board is
 
 Written 2026-10-07, under § "The standard, stated once". It attributes what
@@ -7347,7 +7345,8 @@ them, in simplified characters; the 統宗's own leaf was not opened, its 明文
 
 **The 統宗's own leaves, read 2026-10-11: 卷七, series pp. 64–69**, the list
 closing 明太乙五音之數術 and 釋掩, 釋囚, 釋格 and 釋對 after it; 釋迫, 釋關,
-釋擊 and 釋提挾 were seen on a contact sheet and not read. 盧央's two
+釋擊 and 釋提挾 were seen on a contact sheet and not read that day — **read
+since, 2026-10-13**, under "The rest of 卷七" below. 盧央's two
 quotations are on the plate as he prints them, and the work has the third
 name as well:
 
@@ -7383,6 +7382,76 @@ Three counts in these cases are dated, each with the year counted in: 589 at
 10 154 506 and 局 58 of the 壬子元, 940 at 10 154 857 and 局 49, 太乙 in 一宮
 at 乾 with 文昌 on 大炅 facing it, which is 對. Both are boards
 `test/taiyi.test.ts` already holds from 盧央.
+
+**The rest of 卷七, read 2026-10-13: series pp. 65–72**, at 600 dpi a block,
+which is the whole of the juan after the list — 釋迫, 釋關, 釋擊, 釋提挾,
+釋提執, 釋四郭固 and 釋四郭杜, the juan closing on p. 72. Each is a gloss, a
+trigger and a dated case, and every case was laid again here.
+
+- **釋迫, pp. 65–66.** 「在太乙前一宮為外宮〔迫〕…在太乙後辰為內辰迫」, and
+  「宮迫灾緩而輕，辰迫災急而重」: ahead is 外 and behind is 內, by palace or by
+  branch, graded as the 金鏡 grades them and as `kind` carries them. The
+  column setting out the four is miscut, with two small characters let in at
+  its foot. It adds one sentence the 金鏡 has not, 「古云天目在太乙前後宮為迫，
+  在太乙前後為擊，迫灾輕而擊災重」.
+- **釋關, pp. 66–67.** 「關者關防守備提防之義，〔謂〕主客四將同宮為關」, one
+  character unsure, and again
+  「四將同宮為關」, 「算齊為關」: here 關 is the generals meeting one another,
+  which is the 金鏡's 關 and the one this engine computes. **So the 統宗
+  carries 關 as two things** — the generals' in the section that explains the
+  word, and 文昌 with 太乙 in the list on p. 64 and under 釋囚. The value
+  `wenchangTaiyi: guan` stands on those two leaves and not on 釋關, which does
+  not state it.
+- **釋擊, p. 68.** 「經曰始擊在太乙前一宮為外辰擊，在前一宮為外宮，始擊在太乙
+  後一辰為內辰擊，在一宮為外宮」: the upper eye beside 太乙, ahead or behind,
+  by branch or by palace. The first 宮 wants 辰 and the last 外 wants 內, on
+  the pattern of 釋迫; printed as quoted.
+- **釋提挾, pp. 69–70.** 「經曰二目在太乙左右為挾，及四將在正宮間宮辰為提挾」:
+  太乙 flanked, by the two eyes or by generals. Who loses turns on who is
+  挾 — 「挾主主敗，挾客客敗」 — and on 算長 and 和.
+- **釋提執, p. 70.** 「太乙與開生二門合曰提執，開生二門衝者提格」: 太乙 against
+  two of the gates. **Its case breaks off**: 後梁太祖乾化二年 runs to the foot
+  of leaf 二十四 at 「壬子元二十」 and leaf 二十五 opens on the next heading.
+- **釋四郭固, p. 71.** 「經曰文昌囚太乙宮，主二將相關囚」, or the counts and the
+  guest's two generals doing the same: 囚 and 關 on one board, with no gate in
+  the sentence.
+- **釋四郭杜, pp. 71–72.** 「經曰客參與文昌相并，主參與客大相并，兼知掩迫關格
+  之備，名曰四郭杜」.
+
+**The cases, and what the print does to their figures.** Five of the six that
+are whole lay as this engine lays the year, body for body:
+
+| | year | what the leaf names | laid here |
+|---|---|---|---|
+| 釋迫 | 秦始皇三十七年辛卯, 210 BCE, 庚子元 52 局 | 文昌 on 天道 外辰迫, the 主大 in 九宮 內宮迫, the 主參 in 七宮 外宮迫 | the same three; the leaf prints 主算二十九 where the count is 39, as 盧央 has it, and 太乙 for the 主大 |
+| 釋關 | 唐文宗太和四年庚戌, 830, 庚子元 11 局 | 「謂之關囚」: both 大將 in 太乙's 四宮 | 囚 and 關, every body as printed |
+| 釋提挾 | 漢獻帝建安十八年癸巳, 213 | 主大 in 七宮 「又囚」, 客大 in 二宮 內迫, 客參 in 六宮 外迫 | the same; the leaf prints 四十三局 beside a 太乙 in 七宮, which is 局 42 |
+| 釋四郭固 | 魏齊王嘉平六年, 254, 甲子元 11 局 | 文昌 in 卯 囚, 客大 in 四宮 「亦囚」 | the same, and the 關 of the generals the trigger asks for |
+| 釋四郭杜 | 甲申, 丙子元 69 局, 「為謝玄所敗」 | 主參 in 八宮 囚, 始擊 on 和德 外宮擊, 客大 in 二宮 格, 客參 in 六宮 with the 主大 關 | the same, in 384 |
+
+The last is printed 建安二十年甲申 and is 苻堅's 建元二十年: 384 is 甲申, is
+局 69 of the 丙子元, and is the year after 淝水. Its count is printed
+10 154 101, which is 184. **The counts in these cases are the least reliable
+thing on the leaves** — 二千 for 三千 in 210 BCE, 一十三萬 for 一十五萬 twice,
+八百三十九 for 912 — and the 紀, the 元 and the 局 beside them are what date a
+case, each checking the others. A digit of these read alone is a digit unread.
+
+**釋擊's case does not lay.** It is headed 秦始皇六年庚申, 庚子元 21 局 — which
+241 BCE is, by this work's own count — and the board under the heading is 太乙
+in 八宮, 文昌 on 午, 主算 16, 始擊 on 和德, 客算 32. That is 局 69, the board
+釋四郭杜 lays for 384, body for body; 局 21 has 文昌 on 陰主 and 始擊 on 太神,
+with no 擊 on it. A heading and a board forty-eight 局 apart: recorded as a
+case that does not lay, and not as a reading of 擊.
+
+**What this moves.** No rung. 掩, 擊, 迫 and 關 were on rung 2 by 盧央's boards
+and three more dated boards, read on the 統宗's own leaves, are entered in
+that row beside them; `test/taiyi.test.ts` holds the three. 囚 is named on
+four of these boards where this engine names it, and 格 on one, for the
+guest's 大將: the row those stand in is on rung 5 for a dispute about subjects
+that these cases do not reach, and whether they lift it is not decided here.
+四郭固 and 四郭杜 are stated by the 統宗 as 囚, 關 and 并 among bodies this
+engine places, without the gates the 金鏡's account of them turns on; 提挾 and
+提執 still ask who is 主, or want the gates. None of the four is computed.
 
 **Recorded, with no parameter.** 陰陽和不和, which 卷二 gives in two accounts,
 張良經's and 王希明's, inside one work. **Read since, 2026-10-11**: three

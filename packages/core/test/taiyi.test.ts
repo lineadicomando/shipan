@@ -933,6 +933,68 @@ describe('the years 《太乙數統宗大全》 dates', () => {
     expect(wufu.wufu.palace.id).toBe('xuanshi');
     expect(wufu.wufu.year).toBe(1);
   });
+
+  it('lays the three boards 卷七 dates under 釋提挾 and the two 四郭', () => {
+    // Series pp. 70–72, each naming the bodies and the conditions they stand
+    // in: 漢獻帝建安十八年癸巳, 「客大在二宮離內迫，客參在六宮外迫」 and 主大
+    // 「又囚」; 魏齊王嘉平六年, 「文昌在卯囚」 and 「客大在四宮亦囚」; and the
+    // 甲申 that 苻堅 fell in, 「主參在八宮」 囚, 「始擊在和德艮外宮擊」, 客大
+    // 格 and 客參 「在六宮與主大同關」. The print dates the third 建安二十年
+    // where it is 建元, and its count of that year is a different year's, so
+    // no count is held to it; the first is printed 四十三局 beside a 太乙 in
+    // 七宮, which is 42.
+    const dated = [
+      {
+        year: 213,
+        sui: '癸巳',
+        count: 10_154_130,
+        ju: 42,
+        bodies: [7, '大義', '太陽', 27, 7, 1, 12, 2, 6],
+        marks: ['po:guestGeneral', 'po:guestAssistant', 'qiu:hostGeneral'],
+      },
+      {
+        year: 254,
+        sui: '甲戌',
+        count: 10_154_171,
+        ju: 11,
+        bodies: [4, '高叢', '陽德', 4, 4, 2, 4, 4, 2],
+        marks: ['qiu:wenchang', 'qiu:guestGeneral'],
+      },
+      {
+        year: 384,
+        sui: '甲申',
+        ju: 69,
+        bodies: [8, '大威', '和德', 16, 6, 8, 32, 2, 6],
+        marks: ['ji:shiji', 'qiu:hostAssistant', 'guan:hostGeneral', 'ge:guestGeneral'],
+      },
+    ];
+    for (const { year, sui, count, ju, bodies, marks } of dated) {
+      const board = taiyiBoard({ year }, options);
+      expect(board.sui.hanzi, `${year}`).toBe(sui);
+      if (count !== undefined) {
+        expect((count - board.accumulated.taiyi) % 360, `${year}`).toBe(0);
+      }
+      expect(board.ju, `${year}`).toBe(ju);
+      expect(
+        [
+          board.taiyi.palace.number,
+          board.wenchang.hanzi,
+          board.shiji.hanzi,
+          board.host.count,
+          board.host.general.number,
+          board.host.assistant.number,
+          board.guest.count,
+          board.guest.general.number,
+          board.guest.assistant.number,
+        ],
+        `${year}`,
+      ).toEqual(bodies);
+      const said = board.patterns.map((pattern) => `${pattern.id}:${pattern.subject}`);
+      for (const mark of marks) {
+        expect(said, `${year}`).toContain(mark);
+      }
+    }
+  });
 });
 
 describe('the year board', () => {

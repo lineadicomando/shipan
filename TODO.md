@@ -61,8 +61,19 @@ and it is not a failure.
 
 **Done on 2026-10-11, and nothing is half done.** `yearBoundary: dongzhi` of
 太乙 is computed. `host.accord` and `guest.accord` carry 和, 重陽 or 重陰.
-八門直使 and 大遊 are on rung 2. 關 is held by the 《統宗》.
+八門直使 and 大遊 are on rung 2. `wenchangTaiyi: guan` is held by the
+《統宗》, on its list at p. 64 and its 釋囚.
 `docs/history/51-the-tongzong-of-taiyi.md` is the record.
+
+**Read on 2026-10-13**: the rest of the 《統宗》卷七, pp. 65–72 — 釋迫, 釋關,
+釋擊, 釋提挾, 釋提執 and the two 四郭. No rung moved and nothing was built;
+three of its dated boards are held in `test/taiyi.test.ts`.
+
+**A decision for the user**: 囚 is named on four dated boards of 卷七 where
+the engine names it, and 格 on one. Their row in `docs/sources.tsv` is on
+rung 5 for a dispute about subjects those cases do not reach; whether they
+lift it was left. `docs/sources.md` § "Whose each value of a 太乙 board is",
+under "The rest of 卷七".
 
 **Owed a look by the user, and not blocking**: the catalog strings written
 that day without the `reader-copy` skill — `form.taiyi.yearBoundary` and its
@@ -150,7 +161,7 @@ middle or for 羅睺 as the ascending node, which is a date and not a negative.
 ## 2. The shelf
 
 **In order.** Each is a named section; nothing here is a sweep of a book.
-Lines 1 to 5 are 太乙 and three files, each with its own offset: the
+Lines 1 to 4 are 太乙 and three files, each with its own offset: the
 《統宗》, `taiyi/taiyi-shu-tongzong-daquan-gugong.pdf`, PDF page = series
 page + 4, every juan opening on a 目錄 of its own; the 金鏡,
 `taiyi/taiyi-jinjing-shijing-skqs.pdf`, PDF page = 四庫 printed page − 854;
@@ -163,11 +174,10 @@ stand first because a decision waits on each.
 | 1 | **A dated 日計 board, or the 盈差 of the day explained**: what `ji: riji` waits on | not in the 《統宗》 where it was looked for: 卷三十六 to p. 392, 卷四 p. 41 and 卷十八 whole were read on 2026-10-11 and every board is entered by its 局. Left in that work: the drawn boards of 卷三十二–三十五 and the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
 | 2 | the lists of 上和 · 次和 · 下和, which three prints give three ways, and which count is read against 太乙's palace | a copy of the 金鏡 that is not the 四庫's, or a work quoting 王希明's lists: none held. The 金鏡 卷二 leaves 9–10, the 《統宗》卷六 pp. 54–56 and 盧央 pp. 477–479 were read on 2026-10-11 |
 | 3 | eight of the ten 精 to the numeral, and 大遊's 天目 | the 《統宗》卷三十六 pp. 395–397 cropped at 600 dpi beside 《中國古代星占學》 pp. 513–519 on the plate; 卷十一 p. 110. The ten were read whole on 2026-10-11 and 天皇 and 帝符 are settled in both works |
-| 4 | the rest of the 釋: 迫, 關, 擊, 提挾 and 四郭固, as the 《統宗》 states them | 卷七, series pp. 65–72. 釋掩, 釋囚, 釋格, 釋對 and the list on p. 64 were read on 2026-10-11 |
-| 5 | a second 立成 to hold the 金鏡's to, and a bench for the 陰局 | the 《統宗》卷三十一, pp. 298–307, read on its first leaf; the drawn boards of 卷三十二–三十五 |
-| 6 | a 起例 variant; eighteen 局 tables that would be a bench | 《御定奇門大全》, `yuding-qimen-daquan.pdf`: its 目錄, 卷一 and 卷二十五 are read, 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. Eleven of its other twelve works are unread; 卷五–十 are the tables |
-| 7 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
-| 8 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
+| 4 | a second 立成 to hold the 金鏡's to, and a bench for the 陰局 | the 《統宗》卷三十一, pp. 298–307, read on its first leaf; the drawn boards of 卷三十二–三十五 |
+| 5 | a 起例 variant; eighteen 局 tables that would be a bench | 《御定奇門大全》, `yuding-qimen-daquan.pdf`: its 目錄, 卷一 and 卷二十五 are read, 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. Eleven of its other twelve works are unread; 卷五–十 are the tables |
+| 6 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
+| 7 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 
 **Small and left open**: in the 符應經, the note in small characters under
 the title at 遁甲集成 第三冊 p. 1136, and 玉女守門 as two tables in two
@@ -175,7 +185,8 @@ copies; in 《星學大成》, the figures of 起大限. In the 《統宗》: th
 constants of 卷二, one damaged, and its 朓朒 leaves pp. 22–27, seen and not
 read; the rest of 推四神太乙立成歷, p. 108, to collate; the reign printed
 for 1444 in the list of gates; two characters of the note under the heading
-at p. 193; 者 or 考 closing a column at p. 29; and whether that work and the
+at p. 193; the case of 釋提執, which breaks off at the foot of p. 70, and
+the board under 釋擊, p. 68, which is another 局's; 者 or 考 closing a column at p. 29; and whether that work and the
 《太乙統宗寶鑑》 the engine names its witness for are one recension —
 `taiyitongzong` in `packages/core/src/witnesses.ts`, and the catalogs with
 it, carry the second title and the file on the shelf the first.
