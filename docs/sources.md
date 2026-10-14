@@ -6860,7 +6860,8 @@ count. The text works no dated example for it. **The 《統宗》 does, and it i
 what checks it since 2026-10-11**: 大遊 in 七宮 for 930, the first year of a
 round, which the count gives — § "What is not here", under 大遊. One year in
 a second work, so the body is checked at one point of its walk and its eye
-not at all.
+not at all; and since 2026-10-14 that work is known to count the eye another
+way, under the same paragraph.
 
 **三基 print their period beside their count**, and the reason is a defect this
 board produced. 卷五 gives the sovereign thirty years to a fief, the minister
@@ -7609,10 +7610,37 @@ added leaves 1 after 288: the first year in 七宮, which is what the 金鏡's
 section has 「二百八十八年行一周」, and the case comes out on 2 880 and 288
 and not on the figures printed. 大遊 stood on one text with no dated case;
 this is a second work and a date, and the year is in `test/taiyi.test.ts`:
-the row is on rung 2. 明大遊天目所主術, p. 110, gives its 天目 a
-count from 甲寅 — 四十二萬四千五百一十七 at 正德庚辰 — with an 盈差 and a 大
-周 whose numerals were not settled, and a second figure for 崇禎甲申 that is
-not a hundred and twenty-four more. Located and not read to the digit.
+the row is on rung 2.
+
+**大遊's 天目, p. 110, read to the digit on 2026-10-14.** 明大遊天目所主術:
+「置上元甲子至所求積年加盈差二百一十六，以大遊天目大周法一百八十八法除之，不盡
+以小周法十八去之，不盡為神周餘，就為入神，以未年積命起天道未，順行十六宮，遇乾坤
+重留一算，算外即得大遊天目所在」, and 「三十六年經行二周」 — the eighteen are the
+sixteen with 乾 and 坤 counted twice, as 天皇 counts four corners for its
+twenty. Then two figures, 「初甲寅之歲積」: 四十二萬四千五百一十七 at 正德庚辰,
+1520, and 四十二萬四千六百五十二 at 崇禎甲申, 1644, which is 135 more for 124
+years.
+
+**The first figure holds the numerals, and the second is the print's.** The
+金鏡's count for 1520 with 216 added, less 424 517, is 8 052 times 188 exactly.
+That is one coincidence in 188 if either numeral were misread, and it fails
+under 一百八十, which is what a 小周 of eighteen would make one expect: the
+大周 is the 188 printed. 124 years more gives 424 641, so the 1644 figure is
+十一 over, 五十二 for 四十一. What 甲寅 heads is not settled — no 甲寅 year
+stands at either count's origin.
+
+**And it is not the eye this engine draws.** `dayou.wenchang` is the 金鏡's,
+read on the plate the same day, 卷五 推大遊天目所在法 (810-893): 「置上元以來
+積年，以天目元法七十二去之，不盡以天目周法十八去之，命起天道，順行十六神，遇大武
+陰德重留一筭，外即天目所在也」, with 「天目周率二百一十六，以十二乘十八」 and
+「天目行率十八」 above it. The walk is the 《統宗》's and the count is not: run
+over six thousand years the two put the eye on one seat in about one year in
+eight, which is what two unrelated counts on eighteen seats give. The
+《統宗》's 盈差 is the 金鏡's 周率, 216, put to another use. Two works, each
+stating its count whole, and neither working a dated seat — so the eye is a
+divergence where it was an unchecked reading, and the row in
+`docs/sources.tsv` says so. It is to be a parameter under the board's name,
+the 金鏡's count the default, decided the same day and not yet built.
 
 And 五福, closing 卷十, p. 104: 「唐高祖武德七年甲申歲積一千零一十五萬四千五
 百四十一年，五福入玄宮中宮」 — the year counted in, as 卷三十一 counts, and
@@ -7637,13 +7665,47 @@ and works one year: 1650, 327 after 360, seven after twenty, 「得天皇太乙�
 主（子）坎宮」. Counted on this engine's ring from 武德 with 陰德 twice, the
 seventh is 地主, and 327 is what the 金鏡's count leaves for 1650.
 
-The other eight were read and their numerals not cropped: 天時 on the twelve
-branches, twelve to the round; 太尊 on the four 正; 飛鳥 on the nine palaces
-in order; 五行 on 「一八三九七宮」, 陰德, 地主, 和德, 大炅 and 大武, which is the four
-corners and 坎; 八風, 五風 and
-三風 on the nine in three orders of their own; 太乙數 the 局 itself, a palace
-a year, 「不入中五」. The extract of 盧央 shows the same seats and rounds,
-which says where to look and is not a collation.
+The other eight were read on the plate again on 2026-10-14, every numeral at
+600 dpi, and 盧央 pp. 513–519 beside them on the page and not on the extract.
+The 《統宗》 gives each a 大周 and, for four of them, a 小周 by number:
+
+| | 大周 · 小周 | walked |
+|---|---|---|
+| 天時 | 一百二十 · 一十二 | 「…申順行十二辰」, one character before 申 lost to the block's foot |
+| 太尊 | 四十 · 四 | 「命起地主、太簇、太威、高叢，八六二四四正之地」: 子, 酉, 午, 卯, against the order of the sixteen |
+| 飛鳥 | 九十 · unprinted | 「命起一宮陰德順行九宮」 |
+| 五行 | 五十 · unprinted | 「命起陰德、地主、和德、大炅、大武次第行之，此即一八三九七宮」 |
+| 八風 | 九十 · 九 | 「命起大威一宮，次和德，順行九宮」: 二 then 三 |
+| 五風 | 九十 · unprinted | 「命起一三五七九二四六八之宮」 |
+| 三風 | 九十 · unprinted | 「命起三、七、二、六、一、五、九、四、八依次」, a step of four |
+| 太乙數 | 二百六十 · 七十二 | 「起一數，算外…不入中五，陰遁以陽遁衝起之」 |
+
+Each 大周 is a multiple of its 小周, so the seat comes out as if the 積年
+were reduced by the 小周 alone — and by 360 first, as 盧央 does, since each
+小周 divides that too. The exception is 太乙數's 二百六十, which no count of
+局 can be reduced by and keep the 七十二 under it, and which is read as
+三百六十 with a stroke lost, the 周紀 the 局 are cut by everywhere else.
+Where the 小周 is unprinted the seats it walks give it: nine, five, nine,
+nine.
+
+**盧央 works all ten on one year, 1650, and nine of them come out where the
+《統宗》's procedure puts them.** His figure is the 積年 reduced by 360, 327,
+which is what the 金鏡's count leaves; from it 太尊 three steps from 子
+backwards to 午, 飛鳥 to 三宮, 五行 to 八宮, 八風 from 二宮 to 四宮, 五風 to
+the centre, 三風 to 二宮, 太乙數 to 八宮 with the centre skipped — each the
+seat the table above gives for 327. His 三風 lists eight palaces and drops
+the 八, which his own 「宮周數 9」 beside it restores. **The tenth is 天時,
+and the two works part on its seat**: 盧央 「命起寅宮，順行十二宮」, three
+steps to 辰; the 《統宗》 「…申順行」, which for the same 327 is 戌. The
+character lost before 申 does not reconcile them, since the clause after it
+runs on from 申. Recorded and not weighed: nothing computes the 十精, and
+which text 盧央 followed for the 寅 he does not say.
+
+His table 5–3, 衰旺立成, gives the eight states for all eight 節 and not for
+立春 alone, on the 洛書's numbers, each column the ring 八三四九二七六一
+begun one seat further on. Two cells break the ring and are the print's: 冬至
+囚 and 立冬 休 read 三 where the ring has 二, and 三 stands elsewhere in both
+columns.
 
 One sentence in it bears on a question above: 「惟時計冬至陰升當用陽局，夏至陰
 長當用陰局，取陽局對沖之宮而求之」 — the 陰局 is the hour's alone, here as on
@@ -7662,7 +7724,7 @@ first of them is the 天皇太乙 of 卷七 this file already cites for its 小�
 twenty; the group is not computed and is not drawn, and it is named here
 because § "The per-palace readings" below says what it qualifies. Reading it
 would want the eight states 旺, 相, 胎, 沒, 死, 囚, 休, 廢 that turn with the
-八節 — stated for 立春 alone, and on the 洛書's numbers, which 盧央 stops to
+八節 — 盧央 tabulates all eight, on the 洛書's numbers, which he stops to
 warn about in six characters: 「注意不是太乙九宮」.
 
 **The 五行 of the actors, and the planet each stands for.** 太乙 is 木 and the

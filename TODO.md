@@ -58,6 +58,12 @@ and it is not a failure.
   the year only, and a line in `lib/cacheable.ts`.
 - **`gong: ci`.** The table is read, with three cells of twelve miscopied.
   Not built until a second copy gives those three.
+- **囚 and 格 on the dated boards of 卷七: the row stays on rung 5** — the
+  user's word of 2026-10-14. Four boards name 囚 where the engine names it
+  and one names 格, and the dispute that holds the row there is about subjects
+  those cases do not reach. Reopened only by a source that moves it, not by
+  the same boards read again. `docs/sources.md` § "Whose each value of a 太乙
+  board is", under "The rest of 卷七".
 
 **Done on 2026-10-11, and nothing is half done.** `yearBoundary: dongzhi` of
 太乙 is computed. `host.accord` and `guest.accord` carry 和, 重陽 or 重陰.
@@ -69,11 +75,27 @@ and it is not a failure.
 釋擊, 釋提挾, 釋提執 and the two 四郭. No rung moved and nothing was built;
 three of its dated boards are held in `test/taiyi.test.ts`.
 
-**A decision for the user**: 囚 is named on four dated boards of 卷七 where
-the engine names it, and 格 on one. Their row in `docs/sources.tsv` is on
-rung 5 for a dispute about subjects those cases do not reach; whether they
-lift it was left. `docs/sources.md` § "Whose each value of a 太乙 board is",
-under "The rest of 卷七".
+**Read on 2026-10-14**: the ten 精 of the 《統宗》卷三十六 to the numeral,
+beside 盧央 pp. 513–519 on the page, and 大遊's 天目, 卷十一 p. 110. Nine of
+盧央's ten 1650 cases fall where the 《統宗》 puts them; 天時 is begun at 寅
+in one and at 申 in the other. The 天目's 盈差 216 and 大周 188 are held by
+its 1520 figure against the 金鏡's count, and its 1644 figure is eleven over.
+Nothing built and no rung moved: `docs/sources.md`, the 十精 and 大遊
+paragraphs.
+
+**Decided on 2026-10-14, by the user's word, and not yet built**: the eye of
+大遊, `dayou.wenchang`, becomes a parameter under the board's name, with the
+金鏡's count as the default. The engine runs the 金鏡's today, 卷五
+推大遊天目所在法: 積年 by 七十二, then by 十八. The 《統宗》卷十一 p. 110
+states the other count whole: 積年 plus a 盈差 of 216, by 188, then by 18.
+Both walk from 天道 with 乾 and 坤 counted twice, and they agree in about
+one year in eight. Neither work dates a seat. The second value has
+attribution and transcription, so it is implemented and not refused. Its
+1520 figure is the one numeral to hold it to, and it is held by its residue
+on 188 against the 金鏡's 積年, not by a seat. The name is settled when it is
+built, after `epoch: jinjing`, the board's one value named for a work so far.
+It goes in with the `new-feature` skill, and it lands in § 1 only if a value
+is left refused.
 
 **Owed a look by the user, and not blocking**: the catalog strings written
 that day without the `reader-copy` skill — `form.taiyi.yearBoundary` and its
@@ -161,7 +183,7 @@ middle or for 羅睺 as the ascending node, which is a date and not a negative.
 ## 2. The shelf
 
 **In order.** Each is a named section; nothing here is a sweep of a book.
-Lines 1 to 4 are 太乙 and three files, each with its own offset: the
+Lines 1 to 3 are 太乙 and three files, each with its own offset: the
 《統宗》, `taiyi/taiyi-shu-tongzong-daquan-gugong.pdf`, PDF page = series
 page + 4, every juan opening on a 目錄 of its own; the 金鏡,
 `taiyi/taiyi-jinjing-shijing-skqs.pdf`, PDF page = 四庫 printed page − 854;
@@ -173,11 +195,10 @@ stand first because a decision waits on each.
 |---|---|---|
 | 1 | **A dated 日計 board, or the 盈差 of the day explained**: what `ji: riji` waits on | not in the 《統宗》 where it was looked for: 卷三十六 to p. 392, 卷四 p. 41 and 卷十八 whole were read on 2026-10-11 and every board is entered by its 局. Left in that work: the drawn boards of 卷三十二–三十五 and the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
 | 2 | the lists of 上和 · 次和 · 下和, which three prints give three ways, and which count is read against 太乙's palace | a copy of the 金鏡 that is not the 四庫's, or a work quoting 王希明's lists: none held. The 金鏡 卷二 leaves 9–10, the 《統宗》卷六 pp. 54–56 and 盧央 pp. 477–479 were read on 2026-10-11 |
-| 3 | eight of the ten 精 to the numeral, and 大遊's 天目 | the 《統宗》卷三十六 pp. 395–397 cropped at 600 dpi beside 《中國古代星占學》 pp. 513–519 on the plate; 卷十一 p. 110. The ten were read whole on 2026-10-11 and 天皇 and 帝符 are settled in both works |
-| 4 | a second 立成 to hold the 金鏡's to, and a bench for the 陰局 | the 《統宗》卷三十一, pp. 298–307, read on its first leaf; the drawn boards of 卷三十二–三十五 |
-| 5 | a 起例 variant; eighteen 局 tables that would be a bench | 《御定奇門大全》, `yuding-qimen-daquan.pdf`: its 目錄, 卷一 and 卷二十五 are read, 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. Eleven of its other twelve works are unread; 卷五–十 are the tables |
-| 6 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
-| 7 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
+| 3 | a second 立成 to hold the 金鏡's to, and a bench for the 陰局 | the 《統宗》卷三十一, pp. 298–307, read on its first leaf; the drawn boards of 卷三十二–三十五 |
+| 4 | a 起例 variant; eighteen 局 tables that would be a bench | 《御定奇門大全》, `yuding-qimen-daquan.pdf`: its 目錄, 卷一 and 卷二十五 are read, 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. Eleven of its other twelve works are unread; 卷五–十 are the tables |
+| 5 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
+| 6 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 
 **Small and left open**: in the 符應經, the note in small characters under
 the title at 遁甲集成 第三冊 p. 1136, and 玉女守門 as two tables in two
@@ -186,7 +207,9 @@ constants of 卷二, one damaged, and its 朓朒 leaves pp. 22–27, seen and no
 read; the rest of 推四神太乙立成歷, p. 108, to collate; the reign printed
 for 1444 in the list of gates; two characters of the note under the heading
 at p. 193; the case of 釋提執, which breaks off at the foot of p. 70, and
-the board under 釋擊, p. 68, which is another 局's; 者 or 考 closing a column at p. 29; and whether that work and the
+the board under 釋擊, p. 68, which is another 局's; 者 or 考 closing a column at p. 29; the
+character lost before 天時's 申 at p. 395, and which text 盧央 followed for
+his 寅; what the 甲寅 heading the 天目's two figures at p. 110 is; and whether that work and the
 《太乙統宗寶鑑》 the engine names its witness for are one recension —
 `taiyitongzong` in `packages/core/src/witnesses.ts`, and the catalogs with
 it, carry the second title and the file on the shelf the first.
@@ -242,7 +265,8 @@ prose, which a third language pays for and derived text does not. →
   field.
 - **The eye of 太乙's 大遊 is checked by nothing.** Its row rose on the body,
   dated once in a second work; `dayou.wenchang` rides in that row and the
-  row says so. 明大遊天目所主術, the 《統宗》卷十一 p. 110, is line 3 of § 2.
+  row says so. The 《統宗》卷十一 p. 110 counts it another way, read on
+  2026-10-14, and nothing dates a seat in either work.
 - **`taiyiYearOf` is exported and no surface calls it.** Every surface asks
   `taiyiYearAt`. Under `dongzhi` it reads a pillar that must have been cut
   at the solstice too, which nothing checks.
