@@ -36,6 +36,22 @@ The notes beside every count of the table — 和, 重陽, 重陰 and the rest �
 were located and not read. The user asked the same day for them to be read
 to the character, as the next step of the shelf's second line.
 
+## Then the notes, the same day
+
+Every note of both tables was transcribed — five readers on two pages each,
+the disputed cells settled on the plate. The label beside a count reads it
+by its digits: two odd digits 重陽, one of each 和, with no 上, 次 or 下 and
+with 王希明's 雜陽 folded into 重陽; two even digits are split between 重陽 and
+重陰 by nothing found. None is read against 太乙's palace, which is the
+question shelf line 2 asked, so the table answers it by not asking it. Where
+the numeral in a cell is wrong, the label is the right count's.
+
+The transcription also corrected the first reading: four cells taken for the
+engine's are the print's slips — 陽局 12's 天目, 陽局 27 and 53's 客算,
+陰局 12's 客算 — and one reading of a broken 三 at 陰局 13 was a small 一 of
+the note beside a 二. A reading that holds a table to a computation finds
+the cells that disagree, and passes over the ones it expected.
+
 ## The version
 
 0.22.0. The canonical 太乙 board, whose second input seats both of the

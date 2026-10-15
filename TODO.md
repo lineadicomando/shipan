@@ -84,7 +84,7 @@ Nothing built and no rung moved: `docs/sources.md`, the 十精 and 大遊
 paragraphs.
 
 **Read on 2026-10-15**: the 《統宗》卷三十一 立成, pp. 298–307, both 局
-whole. Every value printed is the engine's or is contradicted by another row
+whole, and every note in it, which labels each count by its digits. Every value printed is the engine's or is contradicted by another row
 of the same table; of the 金鏡's fourteen errata it prints ten as computed —
 陰局 46 among them, the one the 金鏡 could not settle — and shares two. No rung
 moved and nothing was built: `docs/sources.md` § "《太乙數統宗大全》卷三十一".
@@ -197,14 +197,13 @@ Lines 1 to 3 are 太乙 and three files, each with its own offset: the
 page + 4, every juan opening on a 目錄 of its own; the 金鏡,
 `taiyi/taiyi-jinjing-shijing-skqs.pdf`, PDF page = 四庫 printed page − 854;
 盧央's 《中國古代星占學》, `shushu/zhongguo-gudai-xingzhanxue.pdf`, PDF page =
-printed page + 18. Line 1 has nothing left to read on this shelf, and line 2
-only the notes of one table; both stand first because a decision waits on
-each.
+printed page + 18. Lines 1 and 2 have nothing left to read on this shelf and
+stand first because a decision waits on each.
 
 | | what would move | where |
 |---|---|---|
 | 1 | **A dated 日計 board, or the 盈差 of the day explained**: what `ji: riji` waits on | not in the 《統宗》 where it was looked for: 卷三十六 to p. 392, 卷四 p. 41 and 卷十八 whole were read on 2026-10-11 and every board is entered by its 局. Left in that work: the drawn boards of 卷三十二–三十五 and the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
-| 2 | the lists of 上和 · 次和 · 下和, which three prints give three ways, and which count is read against 太乙's palace | the notes of the 《統宗》卷三十一 立成, pp. 298–307: a label — 和, 重陽, 重陰, 單陽, 孤陽 — beside each of 288 counts, seen and not read. A label is not a sentence, so it says which test the table applied and does not state one. Otherwise a copy of the 金鏡 that is not the 四庫's, or a work quoting 王希明's lists: none held. The 金鏡 卷二 leaves 9–10, the 《統宗》卷六 pp. 54–56 and 盧央 pp. 477–479 were read on 2026-10-11 |
+| 2 | the lists of 上和 · 次和 · 下和, which three prints give three ways, and which count is read against 太乙's palace | the notes of the 《統宗》卷三十一 立成 were read on 2026-10-15: its table labels every count by its digits, ungraded, and none against 太乙's palace — so it answers neither question. A copy of the 金鏡 that is not the 四庫's, or a work quoting 王希明's lists: none held. The 金鏡 卷二 leaves 9–10, the 《統宗》卷六 pp. 54–56 and 盧央 pp. 477–479 were read on 2026-10-11 |
 | 3 | a bench for the 陰局, and the 定算 laid on every board | the drawn boards of 卷三十二–三十五, from p. 311: 「陽局圖盤上」 opens there with 局 1, then two boards to a page with 主算 · 客算 · 定算 beside each circle. The 立成 of 卷三十一 was read on 2026-10-15 |
 | 4 | a 起例 variant; eighteen 局 tables that would be a bench | 《御定奇門大全》, `yuding-qimen-daquan.pdf`: its 目錄, 卷一 and 卷二十五 are read, 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. Eleven of its other twelve works are unread; 卷五–十 are the tables |
 | 5 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |

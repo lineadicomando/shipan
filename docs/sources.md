@@ -7303,25 +7303,31 @@ the same 大將 with 太乙 in the same palace:
 
 | | printed | computed | the row that settles it |
 |---|---|---|---|
+| 陽局 12 天目 | 太陰 | 太陽 | 陰局 39, 太陽 三十七 on the same 太乙 in 震 |
 | 陽局 23, 24 主參將 | 九 | 八 | 陽局 22, 六 八 in the column before |
 | 陽局 31 主大將 · 主參將 | 九 三 | 三 九 | the two in the reverse order |
+| 陽局 27 客算 | 三十八 | 二十八 | 陰局 70, 高叢 二十八 on the same 太乙 in 乾 |
 | 陽局 47 主參將 | 一 | 二 | 陽局 11, 高叢 四 四 二 |
 | 陽局 47 始擊 | 陰德 | 陽德 | 陽局 11, the same 計神 辰 and 天目 高叢; and 八 is 陽德's count |
 | 陽局 51 始擊 | 大威 | 大武 | 陽局 15, the same 計神 子 and 天目 大威; and 十三 is 大武's count |
+| 陽局 53 客算 | 三十五 | 二十五 | 陽局 6, 大義 二十五 on the same 太乙 in 離 |
 | 陽局 55 主大將, 陽局 63 客參將 | 大 | 六 | a 六 without its dot, both times |
 | 陽局 57 主參將 | 二 | 三 | 陽局 3, 14, 30: 大將 一, 參將 三 |
 | 陽局 64 客算 | 十 [重陽] 一 三 | 十一 一 三 | one 一 where the count and its 大將 want two |
 | 陰局 8 客參將 | 三 | 一 | 陰局 9 beside it, 大武 七 七 一 |
+| 陰局 12 客算 | 三十三 [和] | 二十三 | no row shares it; the 金鏡 prints 二十三, and 和 is 二十三's label |
+| 陰局 13 客算 | 二十七 [重陽] | 三十七 | 陽局 12 and 陰局 39, 太陽 三十七 on 震; 重陽 is 三十七's label |
 | 陰局 22 主算 | 十四 [重陰] | 二十四 | 陰局 23 beside it, 太炅 二十四 [重陰] |
 | 陰局 41 客參將 | 一 | 四 | 陰局 18, 地主 八 八 四 |
 | 陰局 46 天目 · 始擊 | 陽德 · 大武 | 武德 · 陰德 | the counts 七 and 一 are 武德's and 陰德's, and the note names 陰德 掩 |
 | 陰局 64, 65 客算 | 二十三 [重陽], 三十三 [和] | 三十三, 二十三 | the two counts exchanged, each note the other's |
 | 陰局 68 客參將 | 三 | 二 | 陰局 69 beside it, 二十四 四 二 |
 
-Besides these the print drops a cell here and there: a 大將 or a 參將 in ten
-rows, the 主算 and 大將 of 陽局 7, and 局 71 and 72 of the 陽局 run together —
+Besides these the print drops a cell here and there: a 大將 or a 參將 in
+eleven rows, the 主算 and 大將 of 陽局 7, and 局 71 and 72 of the 陽局 run together —
 their hosts are the same, 大武 二十九 九 七 on 巽, and the table prints one host
-and 局 72's guest. 陰局 64's 主參將 is under a damaged patch.
+and 局 72's guest. 陰局 64's 主參將 is under a damaged patch, and so is the
+first numeral of 陽局 54's 主算, three traces read 三 with doubt.
 
 **Of the 金鏡's fourteen errata, the 統宗 prints ten as the engine computes
 them.** The other four are the cells where its own count fails:
@@ -7375,17 +7381,49 @@ beside the 大將 at the centre, and the table neither seats it nor says it
 stops existing. Since 2026-10-15 the engine marks the standing as 杜, with
 no fortune: § "主算 and 客算" says why.
 
-**Every count carries a note, and the notes are not read.** Beside the counts:
-和, 重陽, 重陰, 單陽, 單陰, 孤陽, 孤陰, 無天, 無地, 三才; beside the eyes and
-generals: 掩, 迫, 關, 囚, 格, 對, 擊, 挾, 外宮, 內宮, 絕陽, 絕陰, 絕氣, 易氣.
-They are small, often damaged, and were read only where a cell turned on
-them. What was seen is a lead and not a finding: most labels go with the
-parity of the count's two digits — 二十六 重陰, 二十七 和, 三十三 重陽, 十
-孤陽 — and some seen do not, 陰局 11's 三十六 marked 重陽 among them. Two
-hundred and eighty-eight counts, each labelled 和 or not, are what the open
-question of § "陰陽和不和" can be put to: which count, and against what. A
-label in a table is not the sentence of a rule, and a test induced from it
-would be this register's.
+**Every count carries a label, and the label reads the count by its digits.**
+The notes were transcribed on 2026-10-15 from the same renders, at full size,
+every note of both tables: beside the counts 和, 重陽, 重陰, 單陽, 單陰, 孤陽,
+孤陰, 不和, with 無天, 無地 and 三才 after some; beside the eyes and generals
+掩, 迫, 關, 囚, 格, 對, 擊, 挾, 并, 外宮, 內宮, 絕陽, 絕陰, 絕氣, 易氣, and who
+meets whom. Two hundred and twenty-one counts carry a label. Grouped by the
+count the engine computes for the row, which is the count the label belongs
+to wherever the two part:
+
+| the count | labels |
+|---|---|
+| two odd digits — 11, 13, 17, 19, 31, 33, 37, 39 | 重陽 39, 重陰 1 |
+| one odd and one even — 12, 14, 16, 18, 23, 27, 29, 32, 34, 38 | 和 74, 單陽 1, 不和 1 |
+| two even digits — 22, 24, 26, 28 | 重陽 13, 重陰 9, 和 2, 單陰 1 |
+| one digit, or whole tens | 單陽 or 孤陽 on the odd, 單陰 or 孤陰 on most of the even |
+| ending in five | none, 杜 standing there; 和 at two of the three where 杜 is not printed |
+
+**So the table's test is the count read by its digits, and it is neither of
+the other two.** Put against 太乙's palace it agrees on 67 of the 221 and
+against the seat of the eye, which is the test `accord` computes, on 61; the
+digits agree on 170, and every disagreement but a handful is in the third row.
+Three places where the numeral is the print's error carry the computed
+count's label and not the printed one — 陰局 12, 13 and the exchanged pair at
+陰局 64 and 65 — so the labels were set from the counts and not read off the
+cells. What the table does not do is grade: 和 has no 上, 次 or 下, and 13,
+19, 31 and 37, which 王希明's lists as the 金鏡 quotes them call 雜陽, are 重陽
+here like 33 and 39.
+
+**Two digits both even are split, and nothing found splits them.** 二十四 is
+重陽 in all three 陽局 rows and 重陰 in all four 陰局 rows; 二十二 and 二十八 lean
+the same way; 二十六 does not, and the same 二十四 on the same 太乙 with the
+same eye is 重陽 at 陽局 49 and 重陰 at 陰局 22. The 陽 of 陽局 33's 二十四 was
+checked on the plate. The 金鏡 as 盧央 quotes it puts 二十二 and 二十六 under
+重陰; the table says 重陽 nearly as often.
+
+**What this answers of § "陰陽和不和", and what it does not.** It says what the
+《統宗》's own table applies to every count: the reading by digits, ungraded.
+It does not say which count is read against 太乙's palace, because the table
+reads none against it, and it does not settle 王希明's lists, because it
+does not grade. A label in a table is the work's practice and not its
+sentence, and a rule induced from 221 of them would be this register's; the
+labels are a witness to the third test and the transcription is a finding
+aid, `texts/taiyi/tongzong-juan31-notes/`.
 
 No rung moves. Rows 54 and 55 of `docs/sources.tsv` stand on rung 2 on the
 evidence written there; this table adds a second work's 144 rows to what
@@ -7648,6 +7686,9 @@ an identifier and a name with no `valence`: 「和則吉」 is said of the pairi
 and what a count that is not 和 portends is not the engine's to say. No
 worked board in either work names one of the three, so the sentence is what
 `test/taiyi.test.ts` holds, over both tables, and no case of it.
+
+The 《統宗》's 立成 labels all its counts by the third test and none by the
+first: § "《太乙數統宗大全》卷三十一: the second 立成".
 
 The test against 太乙's palace is not computed: no count is named for it, and
 choosing one would be a parameter with nobody behind either value. 王希明's
