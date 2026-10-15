@@ -6721,12 +6721,14 @@ one of the two tables with the value the procedure gives:
 The one with no parallel is **陰局 46 客算**, printed 二 where the procedure
 gives 一. It is the only place either table shows a 正宮 eye standing in 太乙's
 own palace at 一宮; 陽局 43 shows the same case at 八宮 and gives 八, which is
-「至太乙宫止」 applied to a walk of no length. The engine follows the rule and
-the divergence is written down here rather than smoothed away.
+「至太乙宫止」 applied to a walk of no length. The engine follows the rule, and
+the 《統宗》's own 立成 prints 一 in that cell — § "《太乙數統宗大全》卷三十一:
+the second 立成", which also says which of the other thirteen it prints as the
+engine does and which it shares.
 
 Beside the tables, the boards 卷一, 卷六 and 卷九 work out in words are
 checked individually — each names its own 局 and prints 大將 and 參將, which
-the tables do not — and the 太歲 the count yields is checked against
+the 金鏡's tables do not — and the 太歲 the count yields is checked against
 `yearGanzhi` over four centuries, which is the one check here that does not
 come from the text.
 
@@ -7161,10 +7163,10 @@ P. 30 says it of 太乙 and again of 天目, 「歲月日時四計皆同，惟�
 **Not computed, and located.** The gate of an hour, 求冬夏二至八門所在術, p. 33:
 「以半周之法一百二十去之…以門率三十約之…冬至命起開…夏至命起杜」. 推六儀三奇
 on the same leaf and 飛九宮 · 飛八門 opening 卷四, with tables to p. 36. The
-立成 of 卷三十一, seventy-two rows of 陽局 and seventy-two of 陰局 with the
-conditions of each printed in the row, and the hundred and forty-four drawn
-boards of 卷三十二 to 卷三十五: a second 立成 to hold the 金鏡's to, unread
-past its first leaf. 卷六 明太乙主客陰陽不和之數術, 卷七's 釋掩 · 釋迫 · 釋關 ·
+hundred and forty-four drawn boards of 卷三十二 to 卷三十五, two to a page,
+each with its 主算, 客算 and 定算 written beside the circle. The 立成 of
+卷三十一, seventy-two rows of 陽局 and seventy-two of 陰局 with the conditions
+of each printed in the row, 卷六 明太乙主客陰陽不和之數術, 卷七's 釋掩 · 釋迫 · 釋關 ·
 釋囚 · 釋擊 · 釋格 · 釋對, 卷十一's 四神, 天乙, 地乙 and 直符 with a 立成歷
 of their own, and 明十精太乙所主之術 closing 卷三十六: each answers a question
 this register carries, and each is read in a section of its own below. 卷三十七 to 卷四十 are a
@@ -7278,6 +7280,115 @@ stands on these leaves: the 統宗 dates a 日計 once, in the note 卷二 and �
 both carry, and lays no board from it.
 
 Last checked 2026-10-11.
+
+### 《太乙數統宗大全》卷三十一: the second 立成, and what it says of the fourteen
+
+Read on the plate on 2026-10-15, at 600 dpi a half-block at a time, with
+every cell that disagreed cropped at full size: 七十二局立成歷陽局計數, series
+pp. 298–302, and 七十二局太乙立成歷陰局計數, pp. 303–307, each closing on
+「…計數之終」. A 局 runs on down the column as ten entries in the order the
+heading gives — 太乙, 天目, 主算, 主大將, 主參將; 計神, 始擊, 客算, 客大將,
+客參將 — with 太乙's palace in the capital numerals 壹 to 玖, and small
+double-line notes between the entries. **So this table prints both generals
+of every row**, where the 金鏡's prints them for its first row alone.
+
+**Every value printed is the engine's, or is contradicted by another row of
+the same table.** The table was read against the engine cell by cell, and
+each disagreement was held to a row printing the same eye, the same seat or
+the same 大將 with 太乙 in the same palace:
+
+| | printed | computed | the row that settles it |
+|---|---|---|---|
+| 陽局 23, 24 主參將 | 九 | 八 | 陽局 22, 六 八 in the column before |
+| 陽局 31 主大將 · 主參將 | 九 三 | 三 九 | the two in the reverse order |
+| 陽局 47 主參將 | 一 | 二 | 陽局 11, 高叢 四 四 二 |
+| 陽局 47 始擊 | 陰德 | 陽德 | 陽局 11, the same 計神 辰 and 天目 高叢; and 八 is 陽德's count |
+| 陽局 51 始擊 | 大威 | 大武 | 陽局 15, the same 計神 子 and 天目 大威; and 十三 is 大武's count |
+| 陽局 55 主大將, 陽局 63 客參將 | 大 | 六 | a 六 without its dot, both times |
+| 陽局 57 主參將 | 二 | 三 | 陽局 3, 14, 30: 大將 一, 參將 三 |
+| 陽局 64 客算 | 十 [重陽] 一 三 | 十一 一 三 | one 一 where the count and its 大將 want two |
+| 陰局 8 客參將 | 三 | 一 | 陰局 9 beside it, 大武 七 七 一 |
+| 陰局 22 主算 | 十四 [重陰] | 二十四 | 陰局 23 beside it, 太炅 二十四 [重陰] |
+| 陰局 41 客參將 | 一 | 四 | 陰局 18, 地主 八 八 四 |
+| 陰局 46 天目 · 始擊 | 陽德 · 大武 | 武德 · 陰德 | the counts 七 and 一 are 武德's and 陰德's, and the note names 陰德 掩 |
+| 陰局 64, 65 客算 | 二十三 [重陽], 三十三 [和] | 三十三, 二十三 | the two counts exchanged, each note the other's |
+| 陰局 68 客參將 | 三 | 二 | 陰局 69 beside it, 二十四 四 二 |
+
+Besides these the print drops a cell here and there: a 大將 or a 參將 in ten
+rows, the 主算 and 大將 of 陽局 7, and 局 71 and 72 of the 陽局 run together —
+their hosts are the same, 大武 二十九 九 七 on 巽, and the table prints one host
+and 局 72's guest. 陰局 64's 主參將 is under a damaged patch.
+
+**Of the 金鏡's fourteen errata, the 統宗 prints ten as the engine computes
+them.** The other four are the cells where its own count fails:
+
+| | 金鏡 | 統宗 | computed |
+|---|---|---|---|
+| 陽局 39 主算 | 25 | 35 | 35 |
+| 陽局 50 主算 | 6 | 16 | 16 |
+| 陰局 11 客算 | 36 | 36 | 26 |
+| 陰局 15 客算 | 29 | 25 | 25 |
+| 陰局 25 主算 | 21 | 21 | 31 |
+| 陰局 26 主算 | 31 | 30 | 30 |
+| 陰局 27 主算 | 39 | 19 | 29 |
+| 陰局 37 始擊 | 大威 | 大武 | 大武 |
+| 陰局 43 始擊 · 客算 | 大武 38 | 太神 1 | 太神 1 |
+| 陰局 44 始擊 · 客算 | 太蔟 31 | 大武 38 | 大武 38 |
+| 陰局 46 客算 | 2 | 1 | 1 |
+| 陰局 70 主算 | 22 | 52 | 32 |
+
+**陰局 46 is settled from a second work.** It was the one erratum the 金鏡's
+tables could not settle against themselves: a 正宮 eye standing in 太乙's own
+palace at 一宮, which 「至太乙宫止」 counts as the opening term alone, and
+which only 陽局 43, at 八宮, shows elsewhere. The 統宗 prints 一 [單陽] 一 三
+there. Its two names in that row are wrong, as the table above says; the
+count is not, and the note beside the 始擊 is 陰德 掩, the 始擊 in 太乙's
+palace, which is the case itself.
+
+**The other three of the four are wrong in the 統宗 as well, so a third of
+the tables' trouble is older than either copy.** 陰局 11's 三十六 and 陰局
+25's 二十一 are the 金鏡's numerals in the 統宗's cells, and its own rows
+contradict both: 陽局 62 prints 陽德 二十六 on the same 太乙 in 兌, and 陰局
+50 prints 大威 三十一 on the same 太乙 in 巽. 陰局 27 and 70 are wrong in both
+works and differently — 39 and 19 for 29, 22 and 52 for 32 — and the 統宗's
+陰局 51 prints 大武 二十九 and its 陽局 26 陽德 三十二 on the same palaces.
+Two errors shared and two tens digits each copy got wrong its own way say the
+two tables descend from one, at least in those rows; that is a statement
+about the tables and not about the procedure, which both tables contradict
+there and the engine follows.
+
+**The two generals of 288 counts are ×3 mod 10, bar the seven numerals the
+first table lists.** The rule `TaiyiSide.assistant` cites from 盧央 is now on
+the 統宗's own page over the whole domain, and each exception is a single
+character another row prints right.
+
+**A count ending in five is followed by 杜 where its generals stand, and no
+參將 is printed.** Forty-two counts of the two tables end in five; the print
+writes 杜 after all but three of them. So the 統宗 has a word for the standing
+in a table of its own, not only in a modern study; what it has not got, in
+anything read, is the sentence saying what 杜 is. The engine seats the 參將
+beside the 大將 at the centre, and the table neither seats it nor says it
+stops existing. The paragraph on 杜塞 under § "主算 and 客算" stands as it
+was on what travels.
+
+**Every count carries a note, and the notes are not read.** Beside the counts:
+和, 重陽, 重陰, 單陽, 單陰, 孤陽, 孤陰, 無天, 無地, 三才; beside the eyes and
+generals: 掩, 迫, 關, 囚, 格, 對, 擊, 挾, 外宮, 內宮, 絕陽, 絕陰, 絕氣, 易氣.
+They are small, often damaged, and were read only where a cell turned on
+them. What was seen is a lead and not a finding: most labels go with the
+parity of the count's two digits — 二十六 重陰, 二十七 和, 三十三 重陽, 十
+孤陽 — and some seen do not, 陰局 11's 三十六 marked 重陽 among them. Two
+hundred and eighty-eight counts, each labelled 和 or not, are what the open
+question of § "陰陽和不和" can be put to: which count, and against what. A
+label in a table is not the sentence of a rule, and a test induced from it
+would be this register's.
+
+No rung moves. Rows 54 and 55 of `docs/sources.tsv` stand on rung 2 on the
+evidence written there; this table adds a second work's 144 rows to what
+they are checked against, and the shared errors are why it is not called an
+independent one.
+
+Last checked 2026-10-15.
 
 ### Whose each value of a 太乙 board is
 
