@@ -7485,10 +7485,19 @@ and it is computed since 2026-10-15**, by the user's word: `ding` on every
 the whole domain. It is a third count the 金鏡 does not have, so it is no
 value of a parameter: a board of the 金鏡's line lays it as well, as the
 quantity the 統宗 adds. `test/taiyi.test.ts` carries the 144 boards and the
-cells where each parts from the rule, and holds the list both ways. The 計大將 and 計參 the leaf then lays — 「計大將在三宮」 from
-三十二, 「以二數三因之則計參在六宮」 — read the 參將 off the units where 主
-and 客 read it off the 大將, and the boards were not read for those two
-labels, so the 定算's generals are not carried. The rows of the placements
+cells where each parts from the rule, and holds the list both ways.
+
+**Its generals are seated as the host's and the guest's are, and the leaf
+reads its own case otherwise.** The 計大將 and 計參 the leaf lays —
+「計大將在三宮」 from 三十二, 「以二數三因之則計參在六宮」 — take the tens for
+the 大將 and the units for the 參將. The boards were read again the same day
+for all six generals, and do not follow the leaf: 定大 and 定參 stand where
+the units of the 定算 and ×3 mod 10 put them on 133 of 144 boards, against
+54 for the tens, and ten of the other eleven follow the units of the 定算
+the board itself prints. So `ding.general` and `ding.assistant` are the
+units' and the leaf's 三宮 is recorded as its reading of its one case. The
+same pass holds the other four to the engine: 主大 on 138 boards, 主參 137,
+客大 136, 客參 133. The rows of the placements
 and the generals in `docs/sources.tsv` are on rung 2 on the evidence they
 cite, and the 定算 has a row of its own.
 

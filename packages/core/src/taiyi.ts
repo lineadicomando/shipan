@@ -582,10 +582,15 @@ export interface TaiyiBoard {
    * and 客算 are counted, 「又算至太乙前得三十二算」. The 金鏡 has no third
    * count. Held to the work's 144 drawn boards, 卷三十二–三十五, it seats the
    * eye of 134 and gives the count of 118; `docs/sources.md` says where the
-   * rest part. Its generals are not carried: the leaf reads the 計大將 off the
-   * tens of 三十二, and the boards that draw a 定大 were not read for it.
+   * rest part.
+   *
+   * Its two generals are seated as the host's and the guest's are, off the
+   * units and ×3 mod 10. The leaf reads its own case otherwise — 三十二 to
+   * 「計大將在三宮」, the tens — and the boards do not: 133 of the 144 draw
+   * 定大 and 定參 where the units put them, and ten of the other eleven where
+   * the units of the 定算 *they* print put them.
    */
-  ding: { eye: TaiyiGod; count: number };
+  ding: { eye: TaiyiGod; count: number; general: TaiyiPalace; assistant: TaiyiPalace };
   /** 八門直使 — one gate every thirty years, and how far into it. */
   gate: { gate: Gate; year: number };
   /** 三基 — 君基, 臣基, 民基, on the twelve fiefs from 戌. */
@@ -847,8 +852,7 @@ function sideOf(from: TaiyiGod, taiyi: number): TaiyiSide {
   const own = SEATS[seatOf(from)]?.palace;
   const count = countFrom(seatOf(from), taiyi);
 
-  const units = count % 10;
-  const general = units === 0 ? count / 10 : units;
+  const general = generalOf(count);
   // 「主大將宮數乘以三，再以十除之，所得餘數即為主參將所在宮」. On the eight
   // seats of the ring this is the quarter turn the worked boards induce; at
   // the centre, which those boards never reach, it returns the centre.
@@ -1186,13 +1190,21 @@ function countFrom(seat: number, taiyi: number): number {
  * every count of this art is: from 合神 卯 to 文昌 on 乾 is eleven seats, and
  * eleven from 太歲 戌 is 巳, which is the case the leaf works.
  */
-function dingOf(ju: number, wenchang: TaiyiGod, taiyi: number): { eye: TaiyiGod; count: number } {
+function dingOf(ju: number, wenchang: TaiyiGod, taiyi: number): TaiyiBoard['ding'] {
   const sui = (ju - 1) % 12;
   const he = (13 - sui) % 12;
   const seatOfBranch = (branch: number) => SEATS.findIndex((seat) => seat.branch === branch);
   const steps = (((seatOf(wenchang) - seatOfBranch(he)) % 16) + 16) % 16;
   const eye = (seatOfBranch(sui) + steps) % 16;
-  return { eye: godAt(eye), count: countFrom(eye, taiyi) };
+  const count = countFrom(eye, taiyi);
+  const general = generalOf(count);
+  return { eye: godAt(eye), count, general: taiyiPalace(general), assistant: taiyiPalace((general * 3) % 10) };
+}
+
+/** 「若得十置一，若得二十四棄二十置四」: the units, or the tens of a whole ten. */
+function generalOf(count: number): number {
+  const units = count % 10;
+  return units === 0 ? count / 10 : units;
 }
 
 /** A palace number, unless it is the centre, which is on no ring. */

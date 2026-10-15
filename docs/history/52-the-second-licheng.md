@@ -59,12 +59,13 @@ of 定目. They print right the four cells both 立成 get wrong, so they were
 computed apart from either table; and 卷四's 淘金訣 rule for the 定算, run
 over them, seats 134 定目 and gives 118 定算, the rest being the boards' own
 slips. It was built the same day, by the user's word, as `ding` on every
-board: the eye and the count, without the generals the leaf reads off the
-digits in a way the boards were not read for.
+board, the eye and the count; and once the boards were read for their six
+generals, the 定算's two as well, from the units as the host's are, where
+133 boards draw them and the leaf's own case does not put them.
 
 ## The version
 
 0.22.0, when the canonical 太乙 board, whose second input seats both of
 the guest's generals in the centre, answered with a condition it did not
 have; then 0.23.0, when every 太乙 board answered with a field it did not
-have.
+have; then 0.24.0, when that field gained its two generals.

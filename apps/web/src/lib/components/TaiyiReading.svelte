@@ -105,8 +105,8 @@
             <td>{seat(one.side.assistant)}</td>
           </tr>
         {/each}
-        <!-- The 統宗's third count. No accord and no generals: the work names
-             none for it that was read. Guarded for a board cached before it. -->
+        <!-- The 統宗's third count. No accord, which no source states for it.
+             Guarded for a board cached before it, and before its generals. -->
         {#if board.ding}
           <tr>
             <th scope="row">{t('label.taiyi.dingEye')}</th>
@@ -116,8 +116,8 @@
             </td>
             <td class="count">{board.ding.count}</td>
             <td></td>
-            <td></td>
-            <td></td>
+            <td>{#if board.ding.general}{seat(board.ding.general)}{/if}</td>
+            <td>{#if board.ding.assistant}{seat(board.ding.assistant)}{/if}</td>
           </tr>
         {/if}
       </tbody>

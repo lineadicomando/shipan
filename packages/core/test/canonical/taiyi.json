@@ -498,7 +498,23 @@
         "palace": 7,
         "element": "tu"
       },
-      "count": 22
+      "count": 22,
+      "general": {
+        "number": 2,
+        "id": "li",
+        "hanzi": "離",
+        "pinyin": "lí",
+        "symbol": "☲",
+        "direction": "s"
+      },
+      "assistant": {
+        "number": 6,
+        "id": "dui",
+        "hanzi": "兌",
+        "pinyin": "duì",
+        "symbol": "☱",
+        "direction": "w"
+      }
     },
     "patterns": [
       {
@@ -1147,7 +1163,21 @@
         },
         "element": "tu"
       },
-      "count": 25
+      "count": 25,
+      "general": {
+        "number": 5,
+        "id": "zhong",
+        "hanzi": "中",
+        "pinyin": "zhōng",
+        "direction": null
+      },
+      "assistant": {
+        "number": 5,
+        "id": "zhong",
+        "hanzi": "中",
+        "pinyin": "zhōng",
+        "direction": null
+      }
     },
     "patterns": [
       {

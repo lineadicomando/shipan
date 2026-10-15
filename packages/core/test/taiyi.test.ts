@@ -1417,4 +1417,87 @@ describe('the 定算 of the 《統宗》', () => {
     expect(DING_SLIPS.filter((slip) => slip.endsWith('eye'))).toHaveLength(10);
     expect(DING_SLIPS.filter((slip) => slip.endsWith('count'))).toHaveLength(26);
   });
+
+  /**
+   * 定大 and 定參 as the boards draw them, read on 2026-10-15: a seat, or 中
+   * for the centre, or - where the label is not on the board. Ten of the
+   * slips follow the board's own misprinted 定算 by the same rule, so the
+   * board is consistent with itself and not with the count.
+   */
+  const YANG_DING_GENERALS = `
+  1 艮 巽  2 乾 艮  3 午 酉  4 乾 艮  5 乾 艮  6 午 酉
+  7 巽 坤  8 艮 巽  9 艮 巽  10 中 中  11 中 中  12 卯 午
+  13 巽 坤  14 巽 坤  15 酉 子  16 酉 子  17 酉 子  18 乾 艮
+  19 卯 午  20 午 酉  21 午 酉  22 乾 艮  23 午 酉  24 艮 巽
+  25 卯 午  26 乾 艮  27 卯 午  28 子 卯  29 酉 子  30 坤 乾
+  31 卯 午  32 卯 午  33 中 中  34 乾 艮  35 乾 艮  36 酉 子
+  37 坤 乾  38 中 中  39 酉 子  40 午 酉  41 艮 巽  42 卯 午
+  43 乾 艮  44 午 酉  45 中 中  46 巽 坤  47 坤 乾  48 子 卯
+  49 中 中  50 中 中  51 中 中  52 卯 午  53 卯 午  54 巽 坤
+  55 午 酉  56 乾 艮  57 乾 艮  58 坤 乾  59 子 卯  60 巽 坤
+  61 卯 午  62 中 中  63 子 卯  64 坤 乾  65 子 卯  66 巽 坤
+  67 酉 子  68 酉 子  69 坤 乾  70 中 中  71 中 中  72 巽 坤
+  `;
+
+  const YIN_DING_GENERALS = `
+  1 坤 乾  2 乾 艮  3 乾 艮  4 午 酉  5 午 酉  6 艮 巽
+  7 艮 巽  8 坤 乾  9 坤 乾  10 中 中  11 巽 坤  12 子 卯
+  13 艮 巽  14 乾 艮  15 卯 午  16 卯 午  17 酉 子  18 巽 坤
+  19 酉 子  20 乾 艮  21 巽 坤  22 乾 艮  23 卯 午  24 巽 坤
+  25 午 酉  26 巽 坤  27 酉 子  28 午 酉  29 酉 子  30 中 中
+  31 子 卯  32 酉 子  33 中 中  34 巽 坤  35 乾 艮  36 卯 午
+  37 艮 巽  38 - 乾  39 午 酉  40 乾 艮  41 巽 坤  42 子 卯
+  43 乾 艮  44 子 卯  45 中 中  46 乾 艮  47 乾 艮  48 卯 午
+  49 坤 乾  50 中 中  51 卯 午  52 酉 子  53 子 卯  54 乾 艮
+  55 子 卯  56 午 酉  57 乾 艮  58 中 中  59 午 酉  60 艮 巽
+  61 子 卯  62 坤 乾  63 午 酉  64 艮 巽  65 卯 午  66 艮 巽
+  67 酉 子  68 酉 子  69 艮 巽  70 中 中  71 坤 乾  72 乾 艮
+  `;
+
+  const DING_GENERAL_SLIPS: readonly string[] = [
+    'yang 11 general', // board 中, rule 艮 from 13
+    'yang 11 assistant', // board 中, rule 巽 from 13
+    'yang 21 general', // board 午, rule 艮 from 33
+    'yang 21 assistant', // board 酉, rule 巽 from 33
+    'yang 51 general', // board 中, rule 酉 from 6
+    'yang 51 assistant', // board 中, rule 子 from 6
+    'yin 3 general', // board 乾, rule 艮 from 30
+    'yin 3 assistant', // board 艮, rule 巽 from 30
+    'yin 5 general', // board 午, rule 乾 from 1
+    'yin 5 assistant', // board 酉, rule 艮 from 1
+    'yin 38 general', // board -, rule 坤 from 37
+    'yin 39 general', // board 午, rule 酉 from 26
+    'yin 39 assistant', // board 酉, rule 子 from 26
+    'yin 47 general', // board 乾, rule 中 from 25
+    'yin 47 assistant', // board 艮, rule 中 from 25
+    'yin 59 general', // board 午, rule 卯 from 34
+    'yin 59 assistant', // board 酉, rule 午 from 34
+    'yin 62 general', // board 坤, rule 中 from 25
+    'yin 62 assistant', // board 乾, rule 中 from 25
+    'yin 68 general', // board 酉, rule 卯 from 24
+    'yin 68 assistant', // board 子, rule 午 from 24
+  ];
+
+  it('seats the generals as the host’s are, from the units, and the boards draw them there', () => {
+    const PALACE_SEAT: Record<number, string> = { 1: '乾', 2: '午', 3: '艮', 4: '卯', 5: '中', 6: '酉', 7: '坤', 8: '子', 9: '巽' };
+    const parting: string[] = [];
+    for (const [dun, table] of [
+      ['yang', YANG_DING_GENERALS],
+      ['yin', YIN_DING_GENERALS],
+    ] as const) {
+      const boards = table
+        .trim()
+        .split(/\s{2,}|\n/)
+        .map((cell) => cell.trim().split(/\s+/) as [string, string, string]);
+      expect(boards).toHaveLength(72);
+      for (const [number, general, assistant] of boards) {
+        const ju = Number(number);
+        const { ding } = taiyiJu(ju, dun);
+        expect(ding.assistant.number).toBe((ding.general.number * 3) % 10);
+        if (PALACE_SEAT[ding.general.number] !== general) parting.push(`${dun} ${ju} general`);
+        if (PALACE_SEAT[ding.assistant.number] !== assistant) parting.push(`${dun} ${ju} assistant`);
+      }
+    }
+    expect(new Set(parting)).toEqual(new Set(DING_GENERAL_SLIPS));
+  });
 });

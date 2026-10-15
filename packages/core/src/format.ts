@@ -1073,14 +1073,13 @@ export function formatTaiyi(board: TaiyiBoard, t: Translator): string {
         [t('label.taiyi.hostCount'), ...taiyiSide(board.host, t)],
         [t('label.taiyi.guestCount'), ...taiyiSide(board.guest, t)],
         // The 統宗's third count, with its eye where the other two have an
-        // accord and no generals: the leaf seats those by a reading of the
-        // digits the boards were not read for.
+        // accord: no test of accord is stated for it.
         [
           t('label.taiyi.dingCount'),
           String(board.ding.count),
           `${t('label.taiyi.dingEye')} ${taiyiGod(board.ding.eye, t)}`,
-          '',
-          '',
+          `${t('label.taiyi.general')} ${glyph(board.ding.general)} ${board.ding.general.number}`,
+          `${t('label.taiyi.assistant')} ${glyph(board.ding.assistant)} ${board.ding.assistant.number}`,
         ],
       ],
       2,
