@@ -1295,3 +1295,126 @@ describe('the conditions two works name differently', () => {
   });
 });
 
+/**
+ * The 《統宗》's 定計目 and 定算, against the work's own leaf and its drawn boards.
+ *
+ * 卷四 p. 37 works the rule for 崇禎甲戌, 1634; 卷三十二–三十五 draw a board
+ * for every 局 of both tables with the 定目 on the ring and the 定算 in the
+ * margin, read on 2026-10-15 (`texts/taiyi/tongzong-juan32-35-boards/`). The
+ * tables below are those boards: 局, the seat of 定目, the 定算. Where a
+ * board and the rule part, the cell is listed with both, and the test holds
+ * the list both ways, as the 立成's errata are held above — so a change to
+ * the rule that fixed one board and broke another would not pass. 陽局 23's
+ * board is the one cut under the title 三十三; its 戌 years say which it is.
+ */
+describe('the 定算 of the 《統宗》', () => {
+  const YANG_DING = `
+  1 坤 13  2 戌 1  3 丑 32  4 辰 10  5 巳 1  6 申 32
+  7 亥 9  8 艮 3  9 巽 33  10 坤 25  11 戌 15  12 卯 4
+  13 辰 19  14 午 9  15 酉 6  16 子 26  17 寅 16  18 巽 11
+  19 坤 14  20 乾 2  21 丑 32  22 辰 1  23 巳 33  24 申 23
+  25 亥 40  26 艮 31  27 巽 24  28 坤 8  29 戌 26  30 丑 17
+  31 巽 34  32 午 24  33 酉 25  34 子 11  35 寅 1  36 巽 -
+  37 坤 7  38 戌 25  39 丑 26  40 辰 12  41 巳 3  42 申 34
+  43 亥 1  44 艮 32  45 辰 25  46 坤 29  47 戌 17  48 丑 8
+  49 辰 15  50 午 15  51 酉 15  52 子 24  53 寅 14  54 巽 9
+  55 坤 22  56 戌 10  57 丑 21  58 辰 37  59 巳 28  60 申 19
+  61 亥 34  62 艮 25  63 巽 18  64 坤 17  65 戌 28  66 丑 19
+  67 辰 26  68 午 16  69 酉 7  70 子 15  71 寅 5  72 巽 9
+  `;
+
+  const YIN_DING = `
+  1 艮 7  2 辰 1  3 未 31  4 戌 2  5 亥 2  6 寅 30
+  7 巳 3  8 申 7  9 乾 27  10 艮 25  11 辰 19  12 未 8
+  13 戌 23  14 子 11  15 卯 4  16 午 24  17 申 16  18 乾 9
+  19 艮 16  20 巽 10  21 未 39  22 戌 1  23 亥 40  24 寅 39
+  25 巳 32  26 坤 29  27 乾 16  28 艮 32  29 辰 26  30 未 15
+  31 乾 28  32 子 20  33 卯 15  34 午 9  35 - 1  36 乾 34
+  37 艮 3  38 辰 37  39 未 22  40 戌 10  41 亥 9  42 寅 38
+  43 巳 1  44 坤 38  45 戌 5  46 艮 31  47 辰 1  48 未 4
+  49 戌 17  50 子 15  51 卯 4  52 午 16  53 申 8  54 乾 1
+  55 艮 18  56 辰 12  57 未 1  58 戌 35  59 亥 12  60 寅 23
+  61 巳 8  62 坤 7  63 乾 20  64 艮 23  65 辰 34  66 未 23
+  67 戌 26  68 戌 26  69 卯 13  70 午 15  71 申 7  72 乾 1
+  `;
+
+  const DING_SLIPS: readonly string[] = [
+    'yang 11 count', // board 15, rule 13
+    'yang 12 eye', // board 卯, rule 丑
+    'yang 20 eye', // board 乾, rule 戌
+    'yang 21 count', // board 32, rule 33
+    'yang 23 count', // board 33, rule 32
+    'yang 28 count', // board 8, rule 38
+    'yang 31 eye', // board 巽, rule 辰
+    'yang 33 count', // board 25, rule 15
+    'yang 36 count', // board -, rule 36
+    'yang 38 count', // board 25, rule 35
+    'yang 45 eye', // board 辰, rule 巽
+    'yang 49 count', // board 15, rule 25
+    'yang 51 count', // board 15, rule 6
+    'yang 57 count', // board 21, rule 1
+    'yang 64 count', // board 17, rule 7
+    'yin 3 count', // board 31, rule 30
+    'yin 5 count', // board 2, rule 1
+    'yin 8 eye', // board 申, rule 坤
+    'yin 13 count', // board 23, rule 13
+    'yin 20 eye', // board 巽, rule 辰
+    'yin 24 count', // board 39, rule 29
+    'yin 31 eye', // board 乾, rule 戌
+    'yin 32 count', // board 20, rule 26
+    'yin 35 eye', // board -, rule 申
+    'yin 39 count', // board 22, rule 26
+    'yin 45 eye', // board 戌, rule 乾
+    'yin 45 count', // board 5, rule 25
+    'yin 47 count', // board 1, rule 25
+    'yin 48 count', // board 4, rule 14
+    'yin 59 count', // board 12, rule 34
+    'yin 61 count', // board 8, rule 28
+    'yin 62 count', // board 7, rule 25
+    'yin 63 count', // board 20, rule 12
+    'yin 64 count', // board 23, rule 3
+    'yin 68 eye', // board 戌, rule 子
+    'yin 68 count', // board 26, rule 24
+  ];
+
+  const read = (table: string) =>
+    table
+      .trim()
+      .split(/\s{2,}|\n/)
+      .map((cell) => cell.trim().split(/\s+/))
+      .map(([ju, eye, count]) => ({ ju: Number(ju), eye, count: count === '-' ? undefined : Number(count) }));
+
+  it('lays the case 卷四 works: 太歲 甲戌, 文昌 in 一宮, 太乙 in 九宮', () => {
+    // 「文昌在一宮便以甲戌合神在卯順所在文昌得十一算，即以加太歲神位順數至巳為
+    // 定計目，又算至太乙前得三十二算」. 1634 is a 甲戌 year with 太乙 in 九宮.
+    const board = taiyiBoard({ year: 1634 }, options);
+    expect(board.sui.hanzi).toBe('甲戌');
+    expect(board.taiyi.palace.number).toBe(9);
+    expect(board.wenchang.seat).toMatchObject({ kind: 'trigram', palace: { number: 1 } });
+    expect(board.heshen.hanzi).toBe('卯');
+    expect(board.ding.eye.seat).toMatchObject({ kind: 'branch', branch: { hanzi: '巳' } });
+    expect(board.ding.count).toBe(32);
+  });
+
+  it('parts from the 144 boards in the listed cells and nowhere else', () => {
+    const seat = (god: { seat: { kind: string; branch?: { hanzi: string }; palace?: { hanzi: string } } }) =>
+      god.seat.kind === 'branch' ? god.seat.branch?.hanzi : god.seat.palace?.hanzi;
+    const parting: string[] = [];
+    for (const [dun, table] of [
+      ['yang', YANG_DING],
+      ['yin', YIN_DING],
+    ] as const) {
+      const boards = read(table);
+      expect(boards.map((board) => board.ju)).toEqual(Array.from({ length: 72 }, (_, i) => i + 1));
+      for (const board of boards) {
+        const { ding } = taiyiJu(board.ju, dun);
+        if (seat(ding.eye) !== board.eye) parting.push(`${dun} ${board.ju} eye`);
+        if (ding.count !== board.count) parting.push(`${dun} ${board.ju} count`);
+      }
+    }
+    expect(new Set(parting)).toEqual(new Set(DING_SLIPS));
+    // What the reading claims: the seat on 134 boards and the count on 118.
+    expect(DING_SLIPS.filter((slip) => slip.endsWith('eye'))).toHaveLength(10);
+    expect(DING_SLIPS.filter((slip) => slip.endsWith('count'))).toHaveLength(26);
+  });
+});

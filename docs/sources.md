@@ -7479,14 +7479,18 @@ the slip is in the count and not in the seat: 十五 for 二十五, 八 for 三�
 boards — 辰 for 巽, 戌 for 乾, 申 for 坤 — and on the other four, two of them
 boards with every count wrong.
 
-**So the 定算 has a procedure, one worked case and 144 boards in one work.**
-It is a third count the 金鏡 does not have, and computing it would be a
-quantity of the 統宗's line on rung 4 — one text, checking itself over the
-whole domain. The 計大將 and 計參 the leaf then lays — 「計大將在三宮」 from
+**So the 定算 has a procedure, one worked case and 144 boards in one work,
+and it is computed since 2026-10-15**, by the user's word: `ding` on every
+太乙 board, the eye and the count, on rung 4 — one text checking itself over
+the whole domain. It is a third count the 金鏡 does not have, so it is no
+value of a parameter: a board of the 金鏡's line lays it as well, as the
+quantity the 統宗 adds. `test/taiyi.test.ts` carries the 144 boards and the
+cells where each parts from the rule, and holds the list both ways. The 計大將 and 計參 the leaf then lays — 「計大將在三宮」 from
 三十二, 「以二數三因之則計參在六宮」 — read the 參將 off the units where 主
 and 客 read it off the 大將, and the boards were not read for those two
-labels. Not computed, and nothing moves: the rows of the placements and
-the generals in `docs/sources.tsv` are on rung 2 on the evidence they cite.
+labels, so the 定算's generals are not carried. The rows of the placements
+and the generals in `docs/sources.tsv` are on rung 2 on the evidence they
+cite, and the 定算 has a row of its own.
 
 Last checked 2026-10-15.
 

@@ -601,9 +601,11 @@ describe('the register weighs what a board hands out', () => {
       heshen: ['合神 — the 六合 of the 太歲'],
       host: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神', '大將 and 參將', '陰陽和不和 — a count against the seat of its eye'],
       guest: ['the placements — 太乙宮, 天目, 主算, 客目, 客算, 計神', '大將 and 參將', '陰陽和不和 — a count against the seat of its eye'],
+      ding: ['定計目 and 定算 — the third eye and the third count'],
       patterns: [
         'the conditions of 卷三 — 掩, 擊, 迫, 關',
         'the conditions of 卷三 — 囚, 格, 對, whose subjects two lineages dispute',
+        '杜 — both generals of one party in the centre',
       ],
       gate: ['八門直使 — one gate every thirty years'],
       sanji: ['三基 — 君基, 臣基, 民基'],

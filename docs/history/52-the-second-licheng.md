@@ -1,4 +1,4 @@
-# Phase 52 — the second 立成, and 杜
+# Phase 52 — the second 立成, 杜 and the 定算
 
 The 立成 of 太乙 had one witness, the 金鏡's 卷三, and fourteen of its cells
 were held to be its own errors. This is 2026-10-15: the 《統宗》卷三十一 立成
@@ -58,9 +58,13 @@ The 144 boards of 卷三十二–三十五 were read for their margins and the s
 of 定目. They print right the four cells both 立成 get wrong, so they were
 computed apart from either table; and 卷四's 淘金訣 rule for the 定算, run
 over them, seats 134 定目 and gives 118 定算, the rest being the boards' own
-slips. The 定算 is buildable as the 統宗's on rung 4, and was not built.
+slips. It was built the same day, by the user's word, as `ding` on every
+board: the eye and the count, without the generals the leaf reads off the
+digits in a way the boards were not read for.
 
 ## The version
 
-0.22.0. The canonical 太乙 board, whose second input seats both of the
-guest's generals in the centre, answers with a condition it did not have.
+0.22.0, when the canonical 太乙 board, whose second input seats both of
+the guest's generals in the centre, answered with a condition it did not
+have; then 0.23.0, when every 太乙 board answered with a field it did not
+have.

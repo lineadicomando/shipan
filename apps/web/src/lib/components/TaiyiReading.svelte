@@ -105,6 +105,21 @@
             <td>{seat(one.side.assistant)}</td>
           </tr>
         {/each}
+        <!-- The 統宗's third count. No accord and no generals: the work names
+             none for it that was read. Guarded for a board cached before it. -->
+        {#if board.ding}
+          <tr>
+            <th scope="row">{t('label.taiyi.dingEye')}</th>
+            <td>
+              {t(`label.taiyishen.${board.ding.eye.id}` as MessageKey)}
+              <span class="glyph">{glyph(board.ding.eye)}</span>
+            </td>
+            <td class="count">{board.ding.count}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        {/if}
       </tbody>
     </table>
   </div>

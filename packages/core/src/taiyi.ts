@@ -572,6 +572,20 @@ export interface TaiyiBoard {
   host: TaiyiSide;
   /** 客: the count taken from 始擊, and its two generals. */
   guest: TaiyiSide;
+  /**
+   * 定計目 and 定算 — the 《太乙數統宗大全》's third eye and third count.
+   *
+   * 卷四 求四計定計目計大計參所在術 states it under 「淘金訣法」 and works it for
+   * 崇禎甲戌: count from the 合神 to 文昌, inclusive, on the ring of sixteen —
+   * 「順所在文昌得十一」 — and that many seats on from the 太歲 is the eye,
+   * 「以加太歲神位順數至巳為定計目」; then count from it to 太乙's palace as 主算
+   * and 客算 are counted, 「又算至太乙前得三十二算」. The 金鏡 has no third
+   * count. Held to the work's 144 drawn boards, 卷三十二–三十五, it seats the
+   * eye of 134 and gives the count of 118; `docs/sources.md` says where the
+   * rest part. Its generals are not carried: the leaf reads the 計大將 off the
+   * tens of 三十二, and the boards that draw a 定大 were not read for it.
+   */
+  ding: { eye: TaiyiGod; count: number };
   /** 八門直使 — one gate every thirty years, and how far into it. */
   gate: { gate: Gate; year: number };
   /** 三基 — 君基, 臣基, 民基, on the twelve fiefs from 戌. */
@@ -706,7 +720,7 @@ export function taiyiJu(
   options: TaiyiOptions = DEFAULT_TAIYI_OPTIONS,
 ): Pick<
   TaiyiBoard,
-  'taiyi' | 'gods' | 'yang' | 'wenchang' | 'shiji' | 'jishen' | 'host' | 'guest' | 'patterns'
+  'taiyi' | 'gods' | 'yang' | 'wenchang' | 'shiji' | 'jishen' | 'host' | 'guest' | 'ding' | 'patterns'
 > {
   // 「以太乙小周法二十四除之，又不盡，以三約之為宫數，不滿為入宫以来年數，
   // 其宫數命起一宫，順行八宫，不遊中五」. Three years to a palace, twenty-four
@@ -723,6 +737,7 @@ export function taiyiJu(
 
   const host = sideOf(wenchang, palace);
   const guest = sideOf(shiji, palace);
+  const ding = dingOf(ju, wenchang, palace);
 
   return {
     taiyi,
@@ -733,6 +748,7 @@ export function taiyiJu(
     jishen,
     host,
     guest,
+    ding,
     patterns: findTaiyiPatterns({ palace, wenchang, shiji, host, guest }, options),
   };
 }
@@ -828,18 +844,8 @@ function shijiOf(wenchang: TaiyiGod, jishen: Branch): TaiyiGod {
  * confirms.
  */
 function sideOf(from: TaiyiGod, taiyi: number): TaiyiSide {
-  const seat = seatOf(from);
-  const own = SEATS[seat]?.palace;
-  let count = own ?? 1;
-
-  if (own !== taiyi) {
-    for (let step = 1; step < 16; step += 1) {
-      const passed = SEATS[(seat + step) % 16]?.palace;
-      if (passed === undefined) continue;
-      if (passed === taiyi) break;
-      count += passed;
-    }
-  }
+  const own = SEATS[seatOf(from)]?.palace;
+  const count = countFrom(seatOf(from), taiyi);
 
   const units = count % 10;
   const general = units === 0 ? count / 10 : units;
@@ -1151,6 +1157,42 @@ function findTaiyiPatterns(input: {
   }
 
   return found;
+}
+
+/**
+ * 「若天目在正宫則按本數，若天目間神則加一數而行筭，至太乙宫止矣」: open on the
+ * seat's own palace number, or on one between two palaces; walk the ring
+ * clockwise adding every palace passed; stop on reaching 太乙's.
+ */
+function countFrom(seat: number, taiyi: number): number {
+  const own = SEATS[seat]?.palace;
+  let count = own ?? 1;
+  if (own === taiyi) return count;
+  for (let step = 1; step < 16; step += 1) {
+    const passed = SEATS[(seat + step) % 16]?.palace;
+    if (passed === undefined) continue;
+    if (passed === taiyi) break;
+    count += passed;
+  }
+  return count;
+}
+
+/**
+ * The 《統宗》's 定計目 and 定算, by 卷四's 淘金訣.
+ *
+ * The 太歲 and 合神 are the 局's own: seventy-two is a whole number of twelves,
+ * so every year — or hour — on one 局 has one branch, which is why each drawn
+ * board lists five 干支 of a single branch. Both counts are inclusive, as
+ * every count of this art is: from 合神 卯 to 文昌 on 乾 is eleven seats, and
+ * eleven from 太歲 戌 is 巳, which is the case the leaf works.
+ */
+function dingOf(ju: number, wenchang: TaiyiGod, taiyi: number): { eye: TaiyiGod; count: number } {
+  const sui = (ju - 1) % 12;
+  const he = (13 - sui) % 12;
+  const seatOfBranch = (branch: number) => SEATS.findIndex((seat) => seat.branch === branch);
+  const steps = (((seatOf(wenchang) - seatOfBranch(he)) % 16) + 16) % 16;
+  const eye = (seatOfBranch(sui) + steps) % 16;
+  return { eye: godAt(eye), count: countFrom(eye, taiyi) };
 }
 
 /** A palace number, unless it is the centre, which is on no ring. */

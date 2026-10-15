@@ -672,6 +672,10 @@ export const en = {
   'label.taiyi.heshen': 'the year’s companion',
   'label.taiyi.hostCount': 'the host’s count',
   'label.taiyi.guestCount': 'the guest’s count',
+  // 定計目 and 定算: the third eye and the third count, the 太乙數統宗大全's
+  // and not the 金鏡's. «Fixed» is 定 as a reckoning settles a figure.
+  'label.taiyi.dingEye': 'the fixed eye',
+  'label.taiyi.dingCount': 'the fixed count',
   'label.taiyi.accord': 'the count and its eye',
   // 陰陽和不和, the eye's test alone: the count against the seat its eye stands on.
   'label.taiyiaccord.he': 'in accord',
@@ -2498,7 +2502,7 @@ export const en = {
   'prompt.taiyi.palaces':
     'The nine palaces of this board are **not numbered as a Qi Men chart numbers them**. 卷二 juàn èr says 九宮皆差一位 jiǔgōng jiē chā yī wèi (every number has moved one seat so that 一 yī reaches 乾 qián), so 一宮 yīgōng is the north-west here and the north there, and all eight are one seat off the 洛書 luòshū. Read the numbers as this board’s own. If you know the Luoshu arrangement, do not carry it across, and do not "correct" anything below to it.',
   'prompt.taiyi.counts':
-    '主算 zhǔsuàn and 客算 kèsuàn are the output of a counting procedure — seats told off around the ring from the two eyes — and not scores of good and bad. A larger count is not a better one. Do not add them, do not subtract one from the other and call the difference an outcome, and do not rank the palaces or the sixteen seats. What the counts do carry is the named conditions below, which is where the sources put the weight. Beside each count the board prints one label from the sources: an odd count taken from an eye on a palace seat is 重陽 chóngyáng, an even count taken from an eye between two palaces is 重陰 chóngyīn, and either other pairing is 和 hé. That is the test 太乙金鏡式經 tàiyǐjīnjìngshìjīng quotes from an older text, and it is a name for the pairing: do not turn it into a score either.',
+    '主算 zhǔsuàn and 客算 kèsuàn are the output of a counting procedure — seats told off around the ring from the two eyes — and not scores of good and bad. A larger count is not a better one. Do not add them, do not subtract one from the other and call the difference an outcome, and do not rank the palaces or the sixteen seats. What the counts do carry is the named conditions below, which is where the sources put the weight. Beside each count the board prints one label from the sources: an odd count taken from an eye on a palace seat is 重陽 chóngyáng, an even count taken from an eye between two palaces is 重陰 chóngyīn, and either other pairing is 和 hé. That is the test 太乙金鏡式經 tàiyǐjīnjìngshìjīng quotes from an older text, and it is a name for the pairing: do not turn it into a score either. The third count, 定算 dìngsuàn, taken from the fixed eye 定目 dìngmù, is the 太乙數統宗大全 tàiyǐshùtǒngzōngdàquán’s and not the 金鏡 jīnjìng’s: it is counted the same way and carries no label and no generals here. It is a third position on the board, not a tiebreak between the other two.',
   'prompt.taiyi.conditions':
     'The conditions named below (掩 yǎn, 迫 pò, 囚 qiú, 擊 jī, 關 guān, 格 gé, 對 duì, and 杜 dù) are attributes of the configuration, the first seven in the words of 卷三 juàn sān, each with the fortune that chapter gives it. They belong to the figure and not to anybody’s situation, and the fortune is the source’s and not a verdict of yours. **Each is printed with the chapter’s own sentence saying what it is** — read that, use it, and leave it there. What the chapter also says will *befall the realm* when a condition falls is not printed, deliberately: it is the dynastic layer, and its absence is not an invitation to reconstruct it. 杜 dù is not from 卷三 juàn sān: it is the word the 太乙數統宗大全 tàiyǐshùtǒngzōngdàquán writes in its table where both generals of one party stand in the centre, and it comes with no fortune and no sentence. Report the standing and give it no weight the source does not.',
   // The load-bearing refusal, and the reason this board waited for a designed
@@ -2736,7 +2740,7 @@ export const en = {
   'cli.field.taiyiSui': 'year',
   'cli.field.taiyiJu': 'arrangement',
   'cli.field.taiyiEyes': 'the two eyes',
-  'cli.field.taiyiCounts': 'the two counts',
+  'cli.field.taiyiCounts': 'the counts',
   'cli.field.taiyiBases': 'the three bases',
   'cli.field.taiyiCircuits': 'the longer circuits',
   'cli.field.taiyiGate': 'gate on duty',

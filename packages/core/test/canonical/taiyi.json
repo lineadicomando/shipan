@@ -479,6 +479,27 @@
         "pinyin": "chóngyáng"
       }
     },
+    "ding": {
+      "eye": {
+        "id": "dawu",
+        "hanzi": "大武",
+        "pinyin": "dàwǔ",
+        "seat": {
+          "kind": "trigram",
+          "palace": {
+            "number": 7,
+            "id": "kun",
+            "hanzi": "坤",
+            "pinyin": "kūn",
+            "symbol": "☷",
+            "direction": "sw"
+          }
+        },
+        "palace": 7,
+        "element": "tu"
+      },
+      "count": 22
+    },
     "patterns": [
       {
         "id": "yan",
@@ -1107,6 +1128,26 @@
         "hanzi": "和",
         "pinyin": "hé"
       }
+    },
+    "ding": {
+      "eye": {
+        "id": "taiyang",
+        "hanzi": "太陽",
+        "pinyin": "tàiyáng",
+        "seat": {
+          "kind": "branch",
+          "branch": {
+            "index": 4,
+            "id": "chen",
+            "hanzi": "辰",
+            "pinyin": "chén",
+            "element": "tu",
+            "yang": true
+          }
+        },
+        "element": "tu"
+      },
+      "count": 25
     },
     "patterns": [
       {

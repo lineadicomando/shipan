@@ -574,7 +574,8 @@ export function registerComputeTaiyi(server: McpServer): void {
         '《太乙金鏡式經》 (王希明, 唐, c. 730). It places 太乙 itself, which walks eight ' +
         'palaces and never the centre (太乙不入中宮) at three years a palace; the two eyes — ' +
         '文昌 the lower, 始擊 the upper; 計神 and 合神; the 主算 and 客算 counted from the ' +
-        'two eyes; the 大將 and 參將 each count seats; the 八門直使; the 三基 (君基 臣基 ' +
+        'two eyes; the 大將 and 參將 each count seats; the 定算, a third count taken from the 定目 by ' +
+        'the rule of 《太乙數統宗大全》卷四, which that work lays and the 金鏡 does not; the 八門直使; the 三基 (君基 臣基 ' +
         '民基), 五福, and 大遊. It also names the conditions 卷三 states — 掩 擊 迫 囚 關 ' +
         '格 對 — each with the fortune that chapter gives it, and 杜, the word the 《太乙數統宗大全》 ' +
         'writes where both generals of one party stand in the centre, which comes with no ' +
