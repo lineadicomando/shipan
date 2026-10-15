@@ -126,7 +126,9 @@ will befall the realm. **Only the middle one is carried**, as
 `PATTERNS[id].meaning`, for the reason `Pattern.valence` is carried. 對 has no
 such sentence and carries none: where the sources say nothing, the silence
 travels, and a seventh line invented so the table looked even would be this
-engine founding a school.
+engine founding a school. The same holds one step further for 杜, the eighth
+condition and the 《統宗》's: its 立成 writes the word and no fortune, so 杜
+travels without a `valence` as well.
 
 **And nobody is on this board.** The reader is not in it, no seat here stands
 for a part of their life, and a forecast for them is the natal-Qimen error

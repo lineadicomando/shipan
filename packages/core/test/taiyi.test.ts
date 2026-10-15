@@ -853,12 +853,12 @@ describe('the checks that come from outside the text', () => {
           expect(side.assistant.number, `${dun} ${ju}`).toBe((side.general.number * 3) % 10);
           if (side.general.number !== 5) continue;
           centred += 1;
-          // 杜塞: both of them in 五宮, and neither of them in any condition.
-          // 太乙 never stands there, so there is nothing for them to be at a
-          // distance from, and two bodies meeting there are not 關.
+          // Both of them in 五宮, and in no condition but 杜. 太乙 never stands
+          // there, so there is nothing for them to be at a distance from, and
+          // two bodies meeting there are not 關.
           expect(side.assistant.number).toBe(5);
           for (const pattern of board.patterns) {
-            expect(pattern.palace, `${dun} ${ju} ${pattern.id}`).not.toBe(5);
+            if (pattern.palace === 5) expect(pattern.id, `${dun} ${ju}`).toBe('du');
           }
         }
       }
@@ -1197,13 +1197,52 @@ describe('the named conditions', () => {
     }
   });
 
-  it('weighs every condition, because 卷三 does', () => {
-    const patterns = [...Array(72).keys()].flatMap((index) => taiyiJu(index + 1, 'yang').patterns);
+  it('weighs every condition 卷三 states, because 卷三 does', () => {
+    const patterns = [...Array(72).keys()]
+      .flatMap((index) => taiyiJu(index + 1, 'yang').patterns)
+      .filter((pattern) => pattern.id !== 'du');
     expect(patterns.length).toBeGreaterThan(0);
     for (const pattern of patterns) {
-      expect(pattern.valence.hanzi).toBe('凶');
+      expect(pattern.valence?.hanzi).toBe('凶');
       expect(pattern.hanzi).toBeTruthy();
     }
+  });
+
+  /**
+   * 杜 is the 《統宗》's, from its 立成 of 卷三十一, series pp. 298–307: after a
+   * count ending in five it writes 杜 where the two generals stand, and prints
+   * no 參將. Forty-two counts of the two tables end in five; the print writes
+   * 杜 after thirty-nine of them and drops it after 陽局 39 主算, 陰局 1 主算
+   * and 陰局 16 客算, which are 三十五, 五 and 十五 like the rest.
+   */
+  it('marks 杜 once for a party whose count ends in five, and nowhere else', () => {
+    let marked = 0;
+    for (const dun of ['yang', 'yin'] as const) {
+      for (let ju = 1; ju <= 72; ju++) {
+        const board = taiyiJu(ju, dun);
+        for (const [side, subject, partner] of [
+          [board.host, 'hostGeneral', 'hostAssistant'],
+          [board.guest, 'guestGeneral', 'guestAssistant'],
+        ] as const) {
+          const du = board.patterns.filter(
+            (pattern) => pattern.id === 'du' && pattern.subject === subject,
+          );
+          if (side.count % 10 === 5) {
+            expect(du).toEqual([
+              expect.objectContaining({ hanzi: '杜', pinyin: 'dù', partner, palace: 5 }),
+            ]);
+            marked += 1;
+          } else {
+            expect(du).toEqual([]);
+          }
+        }
+      }
+    }
+    expect(marked).toBe(42);
+  });
+
+  it('carries no fortune and no sentence with 杜, since its source gives neither', () => {
+    expect(taiyiPatternName('du')).toEqual({ hanzi: '杜', pinyin: 'dù' });
   });
 });
 

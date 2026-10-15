@@ -610,7 +610,8 @@ export interface PlateTaiyi {
   patterns: readonly {
     hanzi: string;
     id: string;
-    valence: { hanzi: string };
+    /** Absent on 杜, which no source weighs. */
+    valence?: { hanzi: string } | undefined;
     subject: string;
     palace?: number | undefined;
     kind?: string | undefined;

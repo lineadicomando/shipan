@@ -84,6 +84,7 @@ phase.
 | 48 | [What the transit left open](48-what-the-transit-left-open.md) | done — the flags derived from the declaration, a sibling art admitted as witness on the phases, the defaults attributed on the plate, 解神 found to be two stars, the 授時 frame laid by its own method, the 折衷's flight computed from two worked hours, and the day family laid as a board of its own under two readings of its gates |
 | 49 | [The hours of a day](49-the-hours-of-a-day.md) | done — the twelve hours of a day board read off 《協紀辨方書》卷七 and held to the day table's own column, `guiren: wei` given its second text |
 | 50 | [The 符應經 read whole](50-the-fuyingjing-read-whole.md) | done — 《遁甲符應經》 read to its 後序 in one copy and collated with a second that turns out to be another recension from 卷中 on; twelve boards it works are the engine's, one cell of 入墓 parts and becomes `dingTomb`, and the work is named a holder of the default lodging |
+| 52 | [The second 立成, and 杜](52-the-second-licheng.md) | done — the 《統宗》's 立成 read whole against the 金鏡's: ten of the fourteen errata printed as computed, 陰局 46 settled from a second work, two errors shared; and 杜, the word that table writes for generals in the centre, becomes the eighth condition and the first with no fortune |
 
 ## The rest of the record
 

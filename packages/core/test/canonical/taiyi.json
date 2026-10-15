@@ -1120,6 +1120,14 @@
         },
         "subject": "wenchang",
         "palace": 9
+      },
+      {
+        "id": "du",
+        "hanzi": "杜",
+        "pinyin": "dù",
+        "subject": "guestGeneral",
+        "partner": "guestAssistant",
+        "palace": 5
       }
     ],
     "heshen": {

@@ -37,7 +37,7 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-11
 
-Version 0.21.0. `main` is ahead of `origin/main` and nothing of 2026-10-11 is pushed.
+Version 0.22.0. `main` is ahead of `origin/main` and nothing since 2026-10-11 is pushed.
 `npm test`, `npm run typecheck` and `npm run build` pass. One test is skipped
 in a tree that was never built, the installed bin run through its symlink,
 and it is not a failure.
@@ -103,8 +103,9 @@ built, after `epoch: jinjing`, the board's one value named for a work so far.
 It goes in with the `new-feature` skill, and it lands in § 1 only if a value
 is left refused.
 
-**Owed a look by the user, and not blocking**: the catalog strings written
-that day without the `reader-copy` skill — `form.taiyi.yearBoundary` and its
+**Owed a look by the user, and not blocking**: `label.taiyipattern.du`,
+«shutting in» and «chiusura», written on 2026-10-15; and the catalog strings
+written on 2026-10-11 without the `reader-copy` skill — `form.taiyi.yearBoundary` and its
 three, `label.taiyi.accord`, `label.taiyiaccord.*`, the sentence added to
 `prompt.taiyi.counts`, and the two `form.taiyi.wenchangTaiyi` lines reworded.
 
@@ -168,9 +169,9 @@ nothing exposes. Only those with something to wait on:
   count, where no count is named, and 王希明's lists, which three prints give
   three ways. The eye's test is computed. The 太歲 as a body of 格, on the
   《統宗》's 589 board. The 定算 and its 定計目 · 計大將 ·
-  計參, a third count the 《統宗》 lays on every board. 杜, which its 立成
-  writes for the generals of every count ending in five: a word, and no
-  sentence saying what it is read. 陰局 after 夏至 as the
+  計參, a third count the 《統宗》 lays on every board. A fortune or a
+  sentence for 杜, which is computed since 2026-10-15 on the word of the 立成
+  of 卷三十一 and carries neither. 陰局 after 夏至 as the
   hour's alone or the day's as well: the 《統宗》 prints both.
 - **紫微斗數.** The stars 卷二 does not place, 解神 off the month among them;
   王亭之's table at 戊, 庚 and 壬, named and unread.

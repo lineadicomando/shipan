@@ -714,6 +714,7 @@ export const en = {
   'label.taiyipattern.guan': 'locking',
   'label.taiyipattern.ge': 'blocking',
   'label.taiyipattern.dui': 'facing',
+  'label.taiyipattern.du': 'shutting in',
   // What 卷三 says each condition **is**, glossing the clause the engine quotes
   // beside it. The chapter's omens — what will befall the realm — are not here
   // and are not glossed; see `PATTERNS` in `taiyi.ts` for the line between the
@@ -2499,7 +2500,7 @@ export const en = {
   'prompt.taiyi.counts':
     '主算 zhǔsuàn and 客算 kèsuàn are the output of a counting procedure — seats told off around the ring from the two eyes — and not scores of good and bad. A larger count is not a better one. Do not add them, do not subtract one from the other and call the difference an outcome, and do not rank the palaces or the sixteen seats. What the counts do carry is the named conditions below, which is where the sources put the weight. Beside each count the board prints one label from the sources: an odd count taken from an eye on a palace seat is 重陽 chóngyáng, an even count taken from an eye between two palaces is 重陰 chóngyīn, and either other pairing is 和 hé. That is the test 太乙金鏡式經 tàiyǐjīnjìngshìjīng quotes from an older text, and it is a name for the pairing: do not turn it into a score either.',
   'prompt.taiyi.conditions':
-    'The conditions named below (掩 yǎn, 迫 pò, 囚 qiú, 擊 jī, 關 guān, 格 gé, 對 duì) are attributes of the configuration in the words of 卷三 juàn sān, each with the fortune that chapter gives it. They belong to the figure and not to anybody’s situation, and the fortune is the source’s and not a verdict of yours. **Each is printed with the chapter’s own sentence saying what it is** — read that, use it, and leave it there. What the chapter also says will *befall the realm* when a condition falls is not printed, deliberately: it is the dynastic layer, and its absence is not an invitation to reconstruct it.',
+    'The conditions named below (掩 yǎn, 迫 pò, 囚 qiú, 擊 jī, 關 guān, 格 gé, 對 duì, and 杜 dù) are attributes of the configuration, the first seven in the words of 卷三 juàn sān, each with the fortune that chapter gives it. They belong to the figure and not to anybody’s situation, and the fortune is the source’s and not a verdict of yours. **Each is printed with the chapter’s own sentence saying what it is** — read that, use it, and leave it there. What the chapter also says will *befall the realm* when a condition falls is not printed, deliberately: it is the dynastic layer, and its absence is not an invitation to reconstruct it. 杜 dù is not from 卷三 juàn sān: it is the word the 太乙數統宗大全 tàiyǐshùtǒngzōngdàquán writes in its table where both generals of one party stand in the centre, and it comes with no fortune and no sentence. Report the standing and give it no weight the source does not.',
   // The load-bearing refusal, and the reason this board waited for a designed
   // register rather than an adapted one.
   'prompt.taiyi.noDoctrine':

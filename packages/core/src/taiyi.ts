@@ -430,10 +430,9 @@ export interface TaiyiSide {
    * no board of 《金鏡》 reaches that case; ×3 mod 10 gives five again, and both
    * of the boards the second witness works that reach it seat the 參將 beside
    * its 大將 and call the standing 杜塞 — the generals shut into the one palace
-   * neither 太乙 nor either eye can enter. So the field is always present. What
-   * it is *not* is a condition: 杜塞 travels in `docs/sources.md` and not in
-   * `patterns`, because the sentence saying what it is would be a modern
-   * scholar's rather than a source's.
+   * neither 太乙 nor either eye can enter. So the field is always present.
+   * The standing is in `patterns` as 杜, which is the 統宗's own word for it:
+   * its 立成 of 卷三十一 writes 杜 where the generals of such a count stand.
    */
   assistant: TaiyiPalace;
   /** 和, 重陽 or 重陰 — the count against the seat of the eye it was taken from. */
@@ -460,7 +459,7 @@ export interface TaiyiFief {
   period: number;
 }
 
-export type TaiyiPatternId = 'yan' | 'ji' | 'po' | 'qiu' | 'guan' | 'ge' | 'dui';
+export type TaiyiPatternId = 'yan' | 'ji' | 'po' | 'qiu' | 'guan' | 'ge' | 'dui' | 'du';
 
 /**
  * A condition the board has fallen into.
@@ -468,8 +467,10 @@ export type TaiyiPatternId = 'yan' | 'ji' | 'po' | 'qiu' | 'guan' | 'ge' | 'dui'
  * Each is checkable off the placements — that the 始擊 stands in 太乙's palace
  * is something anyone can verify — and each is named and weighed in one line
  * of 卷三, which is why the fortune travels with it exactly as `Pattern`'s
- * does. The seven here are the seven 卷三 states as relations between the
- * bodies this engine places. 四郭固, 四郭杜, 執提 and 提挾 are stated there
+ * does. Seven here are the seven 卷三 states as relations between the bodies
+ * this engine places. The eighth, 杜, is the 《統宗》's: the word its 立成 of
+ * 卷三十一 writes where both generals of one party stand in the centre, with
+ * no fortune and no sentence. 四郭固, 四郭杜, 執提 and 提挾 are stated there
  * too and are not computed: each needs the three gates and the five generals
  * read together, and the text's account of them turns on which party is which
  * — which is the question this board does not ask.
@@ -479,8 +480,14 @@ export interface TaiyiPattern {
   hanzi: string;
   /** The name said aloud, e.g. `yǎn`. */
   pinyin: string;
-  /** 吉 or 凶, as 卷三 hands it down. All seven of these are 凶. */
-  valence: Valence;
+  /**
+   * 吉 or 凶, as 卷三 hands it down. All seven of its conditions are 凶.
+   *
+   * Absent on 杜, which no source read weighs: the 統宗 marks the standing in
+   * a table and says nothing of it, and a fortune supplied here would be this
+   * engine's.
+   */
+  valence?: Valence;
   /**
    * What 卷三 says the condition **is**, in its own words — where it says it.
    *
@@ -492,7 +499,7 @@ export interface TaiyiPattern {
   meaning?: string;
   /** Which body fell into it. */
   subject: TaiyiPatternSubject;
-  /** The other body, where the condition is a meeting of two — only 關 is. */
+  /** The other body, where the condition is a meeting of two: 關, and 杜. */
   partner?: TaiyiPatternSubject;
   /** Where, when the condition names a palace. */
   palace?: number;
@@ -941,7 +948,8 @@ function dayouOf(accumulated: number): TaiyiBoard['dayou'] {
 /* ── The named conditions ─────────────────────────────────────────────── */
 
 /**
- * The seven, each with what 卷三 says it **is** — where the chapter says it.
+ * The seven of 卷三, each with what the chapter says it **is** — where it says
+ * it — and 杜, which comes from another work and with nothing beside its name.
  *
  * `meaning` is the source's own characterisation, quoted, and it travels for
  * the reason `valence` travels: 掩 *is* 掩襲刼殺之義, named and weighed in one
@@ -986,7 +994,7 @@ function dayouOf(accumulated: number): TaiyiBoard['dayou'] {
  */
 const PATTERNS: Record<
   TaiyiPatternId,
-  { hanzi: string; pinyin: string; valence: Valence; meaning?: string }
+  { hanzi: string; pinyin: string; valence?: Valence; meaning?: string }
 > = {
   yan: { hanzi: '掩', pinyin: 'yǎn', valence: VALENCE.xiong, meaning: '掩襲刼殺之義' },
   ji: {
@@ -1006,6 +1014,9 @@ const PATTERNS: Record<
   ge: { hanzi: '格', pinyin: 'gé', valence: VALENCE.xiong, meaning: '言政事上下格也' },
   // No 之義 in 卷三 — only an omen list. See above.
   dui: { hanzi: '對', pinyin: 'duì', valence: VALENCE.xiong },
+  // Not 卷三's: the 《統宗》卷三十一 立成 writes 杜 for the two generals of a
+  // count ending in five, and carries no fortune and no 之義 with it.
+  du: { hanzi: '杜', pinyin: 'dù' },
 };
 
 export const TAIYI_PATTERN_IDS = Object.keys(PATTERNS) as readonly TaiyiPatternId[];
@@ -1014,7 +1025,7 @@ export const TAIYI_PATTERN_IDS = Object.keys(PATTERNS) as readonly TaiyiPatternI
 export function taiyiPatternName(id: TaiyiPatternId): {
   hanzi: string;
   pinyin: string;
-  valence: Valence;
+  valence?: Valence;
   meaning?: string;
 } {
   return PATTERNS[id];
@@ -1042,10 +1053,10 @@ function findTaiyiPatterns(input: {
   const facing = RING[(RING.indexOf(palace) + 4) % 8] as number;
 
   // A general or an adjutant that reduced to the centre stands off the ring of
-  // eight and enters none of these conditions: every one of them is a distance
+  // eight and enters none of 卷三's conditions: every one of them is a distance
   // measured on that ring or a palace 太乙 could stand in, and the centre is
   // neither — 太乙 never enters it, so nothing there can be 囚 or 迫 or 格, and
-  // two bodies meeting there are 杜塞 and not 關.
+  // two bodies meeting there are 杜 and not 關.
   //
   // Kept as two sides rather than four bodies because 卷三 keeps them so: it
   // writes 主客 wherever both parties are meant — 主客大小四將 at 囚,
@@ -1127,6 +1138,16 @@ function findTaiyiPatterns(input: {
   // 對 — 「下目文昌將與太乙衝而相當者為對」. The lower eye alone, facing.
   if (lower === facingSeat) {
     found.push(mark('dui', 'wenchang', { palace: facing }));
+  }
+
+  // 杜 — the 統宗's 立成 writes it after every count ending in five, in place of
+  // the generals: one party's two, together in the centre. A count seats both
+  // there or neither, so the condition is the party's and is marked once.
+  if (host.general.number === 5) {
+    found.push(mark('du', 'hostGeneral', { partner: 'hostAssistant', palace: 5 }));
+  }
+  if (guest.general.number === 5) {
+    found.push(mark('du', 'guestGeneral', { partner: 'guestAssistant', palace: 5 }));
   }
 
   return found;

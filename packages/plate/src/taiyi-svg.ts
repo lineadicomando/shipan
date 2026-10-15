@@ -565,7 +565,7 @@ function conditionsOf(
     text(
       box.margin,
       box.top + step * (index + 1),
-      `${pattern.hanzi} ${pattern.valence.hanzi}  ${labels.pattern?.[pattern.id] ?? ''}`,
+      `${pattern.hanzi}${pattern.valence ? ` ${pattern.valence.hanzi}` : ''}  ${labels.pattern?.[pattern.id] ?? ''}`,
       box.size * 0.02,
       'faint',
       'start',

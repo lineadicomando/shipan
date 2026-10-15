@@ -6673,16 +6673,20 @@ the one case they never show is worth more than a silence, and the silence had
 no attribution — no text says a 參將 stops existing. It is not a rare cell
 either, a general falling there in a little under a third of years.
 
-**What the second witness also does is name the standing, and that part does
-not travel.** 杜塞 is the two generals shut into the one palace neither 太乙 nor
-either eye can enter — 「中五與外面不通」 — and it is not in `patterns` with the
-other seven, because those each carry the sentence 卷三 uses to say what they
-*are* and this one's would be a modern scholar's; 《統宗》's own 序 lists
-關囚掩迫對擊 and 挺挾 without it. The name is here, where a reader weighing the
-board can find it. **And nothing at the centre enters a condition**, which is
-what the ring of eight already said about a 大將 there: 太乙 never stands in the
-middle, so nothing there is at a distance from it, and two bodies meeting there
-are 杜塞 rather than 關.
+**What the second witness also does is name the standing, and the name
+travels as 杜.** 杜塞 is 盧央's word for the two generals shut into the one
+palace neither 太乙 nor either eye can enter — 「中五與外面不通」 — and the
+《統宗》's own 立成 of 卷三十一 writes 杜 where the generals of every such count
+stand: § "《太乙數統宗大全》卷三十一: the second 立成". So it is in `patterns`
+as the eighth, marked once for the party whose count ends in five, with the
+partner field naming its 參將. **It carries no `valence` and no `meaning`**,
+because the table gives neither and nothing else read does; the 序 lists
+關囚掩迫對擊 and 挺挾 without it. Where the seven of 卷三 travel weighed, this
+one travels as a name, which is what its source handed down. **And nothing
+else at the centre enters a condition**, which is what the ring of eight
+already said about a 大將 there: 太乙 never stands in the middle, so nothing
+there is at a distance from it, and two bodies meeting there are 杜 rather
+than 關.
 
 ### The verification, and what it is worth
 
@@ -7368,8 +7372,8 @@ writes 杜 after all but three of them. So the 統宗 has a word for the standin
 in a table of its own, not only in a modern study; what it has not got, in
 anything read, is the sentence saying what 杜 is. The engine seats the 參將
 beside the 大將 at the centre, and the table neither seats it nor says it
-stops existing. The paragraph on 杜塞 under § "主算 and 客算" stands as it
-was on what travels.
+stops existing. Since 2026-10-15 the engine marks the standing as 杜, with
+no fortune: § "主算 and 客算" says why.
 
 **Every count carries a note, and the notes are not read.** Beside the counts:
 和, 重陽, 重陰, 單陽, 單陰, 孤陽, 孤陰, 無天, 無地, 三才; beside the eyes and

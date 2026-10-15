@@ -129,7 +129,7 @@
                 {t(`label.taiyipattern.${pattern.id}` as MessageKey)}
                 <span class="glyph">{glyph(pattern)}</span>
               </th>
-              <td class="glyph">{glyph(pattern.valence)}</td>
+              <td class="glyph">{pattern.valence ? glyph(pattern.valence) : ''}</td>
               <td>{t(`label.taiyi.${pattern.subject}` as MessageKey)}</td>
               <td>
                 {#if pattern.kind}{t(`label.taiyikind.${pattern.kind}` as MessageKey)}{/if}

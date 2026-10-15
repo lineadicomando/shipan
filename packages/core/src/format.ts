@@ -1185,7 +1185,7 @@ function taiyiPattern(pattern: TaiyiPattern, t: Translator): string[] {
         : `${glyph(taiyiPalace(pattern.palace))} ${pattern.palace}`;
   return [
     named(pattern, `label.taiyipattern.${pattern.id}` as MessageKey, t),
-    glyph(pattern.valence),
+    pattern.valence === undefined ? '' : glyph(pattern.valence),
     t(`label.taiyi.${pattern.subject}` as MessageKey),
     pattern.partner === undefined ? '' : t(`label.taiyi.${pattern.partner}` as MessageKey),
     where,

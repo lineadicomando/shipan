@@ -576,7 +576,9 @@ export function registerComputeTaiyi(server: McpServer): void {
         '文昌 the lower, 始擊 the upper; 計神 and 合神; the 主算 and 客算 counted from the ' +
         'two eyes; the 大將 and 參將 each count seats; the 八門直使; the 三基 (君基 臣基 ' +
         '民基), 五福, and 大遊. It also names the conditions 卷三 states — 掩 擊 迫 囚 關 ' +
-        '格 對 — each with the fortune that chapter gives it. ' +
+        '格 對 — each with the fortune that chapter gives it, and 杜, the word the 《太乙數統宗大全》 ' +
+        'writes where both generals of one party stand in the centre, which comes with no ' +
+        'fortune because that work gives it none. ' +
         'The input is a year and nothing else: no place, no hour, nobody’s birth. This board ' +
         'is 太乙主天 and its subject is the year the world is standing in, which is why it is ' +
         'the one board here that holds nobody’s data. ' +

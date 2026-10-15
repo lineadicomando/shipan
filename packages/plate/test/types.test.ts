@@ -315,7 +315,11 @@ describe('the redeclared 太乙 board', () => {
     // The direction is what the palace is; the number is this board's own and
     // places nothing.
     expect(plate.taiyi.palace.direction).toMatch(/^(n|ne|e|se|s|sw|w|nw)$/);
-    for (const pattern of plate.patterns) expect(pattern.valence.hanzi).toMatch(/^.$/);
+    // Every condition carries its fortune but 杜, which no source weighs.
+    for (const pattern of plate.patterns) {
+      if (pattern.id === 'du') expect(pattern.valence).toBeUndefined();
+      else expect(pattern.valence?.hanzi).toMatch(/^.$/);
+    }
   });
 });
 

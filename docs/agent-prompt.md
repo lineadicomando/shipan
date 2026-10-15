@@ -244,6 +244,10 @@ neither disputed.
   source's own words, not this engine's. Read it as a characterisation of the
   shape and never as a forecast. **對 is printed without one** because 卷三 gives
   it none — that is the text being quoted faithfully, not a field left empty.
+  **杜 is printed with neither a sentence nor a fortune**: it is not 卷三's but
+  the word the 《太乙數統宗大全》's 立成 writes where both generals of one party
+  stand in the centre, and that work weighs it nowhere read. Report the
+  standing; do not lend it the 凶 its neighbours carry.
 - **The received doctrine of 太乙 is dynastic and is not here.** What the
   manuals hang on this board is epochal — which state falls, which year an army
   breaks, 陽九之災 and 百六之厄 — dated, falsifiable by nobody, and read as
