@@ -2,6 +2,8 @@
   import { goto, invalidateAll } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
+  import { isRegister, type BoardSpot } from '$lib/board';
+  import type { MessageKey } from '@shipan/i18n';
   import { carried } from '$lib/parameters';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import { step, type Unit, type Wall } from '$lib/step';
@@ -15,6 +17,7 @@
   import InlineBoard from '$lib/components/InlineBoard.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import MomentSteps from '$lib/components/MomentSteps.svelte';
+  import LayerLegend from '$lib/components/LayerLegend.svelte';
   import StrengthLegend from '$lib/components/StrengthLegend.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
 
@@ -50,6 +53,15 @@
    * degrees somebody typed would be claiming a place that was refined away.
    */
   const where = $derived(sayPlace(data.moment));
+
+  /**
+   * Which of the six a name on the board is, said over it when a pointer
+   * rests there. The drawing says it by position alone, and a reader new to
+   * the board has no way to read a position as a kind.
+   */
+  function register(spot: BoardSpot): string | undefined {
+    return isRegister(spot.layer) ? t(`label.register.${spot.layer}` as MessageKey) : undefined;
+  }
 
   /**
    * The instant the answer was actually computed for.
@@ -281,7 +293,7 @@
          gap between the picture and the reading is two rems, and a legend
          standing in it would belong to neither. -->
     <div class="board" class:swapped={onPaper}>
-      <div class="screen"><InlineBoard src={plate} width={900} height={900} /></div>
+      <div class="screen"><InlineBoard src={plate} width={900} height={900} tip={register} /></div>
       <!-- The same board in the colours of paper, drawn only where the two
            differ and shown only by a printer. -->
       {#if onPaper}
@@ -291,7 +303,7 @@
            the picture, and a key that came after the reading would be found
            by whoever had already given up on them. -->
       <!-- The key is to the marks of strength, which a day board has not. -->
-      {#if !ofTheDay}<StrengthLegend {t} />{/if}
+      {#if !ofTheDay}<LayerLegend {t} /><StrengthLegend {t} />{/if}
     </div>
 
     {#if ofTheDay}

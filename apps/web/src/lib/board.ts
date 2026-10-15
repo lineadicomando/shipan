@@ -54,3 +54,18 @@ export function spotOf(event: Event): BoardSpot | undefined {
 export function sameSpot(a: BoardSpot | undefined, b: BoardSpot | undefined): boolean {
   return a?.element === b?.element;
 }
+
+/**
+ * The six registers of a palace on an hour board, by the names `data-layer`
+ * carries, in the order the board is read: down the left, then down the right.
+ *
+ * `label.register.*` says each in words. A day board marks three of them.
+ */
+export const REGISTERS = ['heaven', 'earth', 'palace', 'spirit', 'star', 'gate'] as const;
+
+export type Register = (typeof REGISTERS)[number];
+
+/** Whether a mark read off the drawing is one of the six, and can be said. */
+export function isRegister(layer: string | undefined): layer is Register {
+  return (REGISTERS as readonly string[]).includes(layer ?? '');
+}

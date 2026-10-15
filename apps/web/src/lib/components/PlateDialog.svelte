@@ -36,6 +36,7 @@
   import { sayFailure, type Failure } from '$lib/moment';
   import ChartReading from './ChartReading.svelte';
   import PalaceTable from './PalaceTable.svelte';
+  import LayerLegend from './LayerLegend.svelte';
   import StrengthLegend from './StrengthLegend.svelte';
 
   interface Props {
@@ -214,6 +215,7 @@
           class:settling={drawn !== plate}
           onload={() => (drawn = plate)}
         />
+        <LayerLegend {t} />
         <StrengthLegend {t} />
       </div>
 

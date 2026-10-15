@@ -86,6 +86,7 @@
   import QizhengReading from '$lib/components/QizhengReading.svelte';
   import Schools from '$lib/components/Schools.svelte';
   import ZiweiReading from '$lib/components/ZiweiReading.svelte';
+  import LayerLegend from '$lib/components/LayerLegend.svelte';
   import StrengthLegend from '$lib/components/StrengthLegend.svelte';
   import TaiyiReading from '$lib/components/TaiyiReading.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
@@ -1181,7 +1182,7 @@
               class="paper"
             />
           {/if}
-          {#if shown.strengths}<StrengthLegend {t} />{/if}
+          {#if shown.strengths}<LayerLegend {t} /><StrengthLegend {t} />{/if}
         </div>
       {/if}
       <!-- `wide`: the board above has the page to itself, so what it was cast

@@ -852,6 +852,13 @@ export const it: Record<MessageKey, string> = {
   'label.layer.star': 'stelle',
   'label.layer.both': 'porte e stelle',
 
+  'label.register.heaven': 'Tavola di cielo',
+  'label.register.earth': 'Tavola di terra',
+  'label.register.palace': 'Palazzo',
+  'label.register.spirit': 'Spirito',
+  'label.register.star': 'Stella',
+  'label.register.gate': 'Porta',
+
   // I tre metodi portano il proprio nome e i due atti no, e la linea fra loro
   // sta in ciò che si nomina, non in chi legge.
   //
@@ -1453,6 +1460,7 @@ export const it: Record<MessageKey, string> = {
     'I cicli decennali richiedono il sesso, perché la tradizione ne trae la direzione. I pilastri restano completi in ogni caso.',
   'form.jumpDate': 'Il giorno per cui la carta è posta',
 
+  'form.layerLegend': 'Ogni palazzo è disposto così',
   'form.strengthLegend': 'Come stanno la stella e la porta rispetto alla stagione',
 
   'form.copyChart': 'Copia la carta come testo',

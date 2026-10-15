@@ -201,6 +201,12 @@ shadow root. `spotOf` in `lib/board.ts` reads the marks back off an event and is
 the one place that knows their names; what is done with a spot is the page's.
 The copy for paper stays a picture, since nobody points at a sheet.
 
+The first thing done with one is saying which of the six registers a name is
+in — `label.register.*`, set over the name while a mouse rests on it or after a
+tap — because the drawing says it by position alone. The cursor is the only
+announcement it gets. A sheet has no pointer, so in print the same six words
+are set once instead, as an empty palace under the board (`LayerLegend`).
+
 ## Found by a search, and what may never be found
 
 The interface is public and meant to be found. What is on it is not: an

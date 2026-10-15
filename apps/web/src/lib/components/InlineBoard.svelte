@@ -17,11 +17,16 @@
 
   It reports what is under the pointer and decides nothing about it: `onhover`
   as the pointer moves from one marked thing to another, and `onpick` when one
-  is pressed — which on a screen with no pointer is the only one of the two
-  that happens.
+  is pressed.
 
-  Hidden from assistive technology, as the picture was with `alt=""`: the
-  board is said in full in the table under it.
+  **`tip` is the one thing it shows of its own**: a short line set over the
+  spot, in words the caller chose. A mouse shows it by resting and hides it by
+  leaving; a finger has no resting, so a tap shows it and a tap anywhere else,
+  or Escape, puts it away. Nothing else on the page moves for it.
+
+  Hidden from assistive technology, as the picture was with `alt=""`, and the
+  tip with it: the board is said in full in the table under it, and a tip
+  read aloud would be the sixth time a reader heard which column a name is in.
 -->
 <script lang="ts">
   import { sameSpot, spotOf, type BoardSpot } from '$lib/board';
@@ -30,12 +35,14 @@
     src,
     width,
     height,
+    tip,
     onhover,
     onpick,
   }: {
     src: string;
     width: number;
     height: number;
+    tip?: (spot: BoardSpot) => string | undefined;
     onhover?: (spot: BoardSpot | undefined) => void;
     onpick?: (spot: BoardSpot | undefined) => void;
   } = $props();
@@ -44,9 +51,16 @@
    * The drawing fills its box, and the box is the page's to size. The
    * drawing's own `width` and `height` are its intrinsic size and would
    * otherwise win over the box.
+   *
+   * Where something is said about a name, the cursor says so before anything
+   * is: that is the whole of how a reader learns there is something to find.
    */
-  const SHEET = ':host { display: block; } svg { display: block; width: 100%; height: auto; }';
+  const sheet = $derived(
+    ':host { display: block; } svg { display: block; width: 100%; height: auto; }' +
+      (tip ? ' [data-layer] { cursor: help; }' : ''),
+  );
 
+  let frame: HTMLDivElement | undefined = $state();
   let host: HTMLDivElement | undefined = $state();
   let root: ShadowRoot | undefined;
   /** Whether the shadow root holds a drawing yet. Until it does, the picture shows. */
@@ -57,6 +71,7 @@
   $effect(() => {
     const wanted = src;
     const target = host;
+    const style = sheet;
     if (!target) return;
 
     const controller = new AbortController();
@@ -66,60 +81,146 @@
         root ??= target.attachShadow({ mode: 'open' });
         // The drawing is this site's own, from its own endpoint, and holds no
         // script: it is set as markup the way the picture was set as pixels.
-        root.innerHTML = `<style>${SHEET}</style>${svg}`;
+        root.innerHTML = `<style>${style}</style>${svg}`;
         inline = true;
         drawn = wanted;
+        // A tip over a name that was on the last board is a tip over nothing.
+        over = picked = undefined;
       })
       .catch(() => {});
     return () => controller.abort();
   });
 
-  /** The last spot reported, so that a move inside one name reports nothing. */
-  let over: BoardSpot | undefined;
+  /** What the mouse rests on, and what a finger last tapped. */
+  let over = $state<BoardSpot>();
+  let picked = $state<BoardSpot>();
 
   function moved(event: PointerEvent): void {
+    if (event.pointerType !== 'mouse') return;
     const spot = spotOf(event);
     if (sameSpot(spot, over)) return;
     over = spot;
     onhover?.(spot);
   }
 
-  function left(): void {
-    if (over === undefined) return;
+  function left(event: PointerEvent): void {
+    if (event.pointerType !== 'mouse' || over === undefined) return;
     over = undefined;
     onhover?.(undefined);
   }
+
+  function pressed(event: MouseEvent): void {
+    const spot = spotOf(event);
+    onpick?.(spot);
+    // A mouse has its tip already; a click is not asked to pin it.
+    if ((event as PointerEvent).pointerType === 'mouse') return;
+    picked = sameSpot(spot, picked) ? undefined : spot;
+  }
+
+  /**
+   * Listened for on the box itself and not through attributes.
+   *
+   * An `onclick` attribute is delegated: Svelte listens at the root and walks
+   * the event's path back to the handler. With the drawing in a shadow root
+   * the handler was reached twice for one press, so a tap pinned its tip and
+   * took it away again before it was ever drawn.
+   */
+  $effect(() => {
+    const target = host;
+    if (!target) return;
+    target.addEventListener('pointermove', moved);
+    target.addEventListener('pointerleave', left);
+    target.addEventListener('click', pressed);
+    return () => {
+      target.removeEventListener('pointermove', moved);
+      target.removeEventListener('pointerleave', left);
+      target.removeEventListener('click', pressed);
+    };
+  });
+
+  /** The tip shown, and where: over the middle of the name it is about. */
+  const shown = $derived.by(() => {
+    const spot = over ?? picked;
+    if (!spot || !tip || !frame) return undefined;
+    const words = tip(spot);
+    if (!words) return undefined;
+    const box = spot.element.getBoundingClientRect();
+    const origin = frame.getBoundingClientRect();
+    return {
+      words,
+      x: box.left + box.width / 2 - origin.left,
+      y: box.top - origin.top,
+    };
+  });
 </script>
 
-<div
-  bind:this={host}
-  class="board"
-  class:settling={inline && drawn !== src}
-  aria-hidden="true"
-  onpointermove={moved}
-  onpointerleave={left}
-  onclick={(event) => onpick?.(spotOf(event))}
->
-  {#if !inline}
-    <img
-      {src}
-      alt=""
-      {width}
-      {height}
-      class:settling={drawn !== src}
-      onload={() => (drawn = src)}
-    />
+<svelte:window
+  onkeydown={(event) => {
+    if (event.key === 'Escape') over = picked = undefined;
+  }}
+  onpointerdown={(event) => {
+    // A tap anywhere off the board puts a pinned tip away.
+    if (picked && frame && !event.composedPath().includes(frame)) picked = undefined;
+  }}
+/>
+
+<div class="frame" bind:this={frame}>
+  <!-- Presses are read for the tip and for the caller, and the board is
+       hidden from assistive technology: there is nothing here a keyboard was
+       promised, and the table under it says every name in words. -->
+  <div
+    bind:this={host}
+    class="board"
+    class:settling={inline && drawn !== src}
+    aria-hidden="true"
+  >
+    {#if !inline}
+      <img
+        {src}
+        alt=""
+        {width}
+        {height}
+        class:settling={drawn !== src}
+        onload={() => (drawn = src)}
+      />
+    {/if}
+  </div>
+  {#if shown}
+    <span class="tip" aria-hidden="true" style:left="{shown.x}px" style:top="{shown.y}px">
+      {shown.words}
+    </span>
   {/if}
 </div>
 
 <style>
+  .frame { position: relative; }
   .board, img { transition: opacity 0.15s ease-out; }
   img { display: block; width: 100%; height: auto; }
   .settling { opacity: 0.35; }
+  /*
+   * Small, and set off the name rather than on it: over the top edge of the
+   * register, so the name it is about stays readable under it. The colours
+   * are the page's ink reversed, so it reads as the page's and not the
+   * drawing's — a seventh thing in the palace is exactly what it must not
+   * look like.
+   */
+  .tip {
+    position: absolute;
+    transform: translate(-50%, calc(-100% - 0.2rem));
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.2rem;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    white-space: nowrap;
+    background: var(--ink);
+    color: var(--ground);
+    pointer-events: none;
+  }
   @media (prefers-reduced-motion: reduce) {
     .board, img { transition: none; }
   }
   @media print {
     .settling { opacity: 1; }
+    .tip { display: none; }
   }
 </style>

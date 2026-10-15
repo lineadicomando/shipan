@@ -876,6 +876,13 @@ export const en = {
   'label.layer.star': 'stars',
   'label.layer.both': 'gates and stars',
 
+  'label.register.heaven': 'Heaven plate',
+  'label.register.earth': 'Earth plate',
+  'label.register.palace': 'Palace',
+  'label.register.spirit': 'Spirit',
+  'label.register.star': 'Star',
+  'label.register.gate': 'Gate',
+
   // The three methods carry their own names and the two errands do not, and
   // the line between them is what is being named rather than who is reading.
   //
@@ -1619,6 +1626,7 @@ export const en = {
   // and nowhere says what they mean. The words for the states themselves are
   // `label.strength.*`; this is the line that says what they qualify — the
   // star and the gate, against the season, and nothing else in the palace.
+  'form.layerLegend': 'Every palace is laid out like this',
   'form.strengthLegend': 'How the star and the gate stand to the season',
 
   // Taking a chart away: as words, and as a prompt for a model that will be
