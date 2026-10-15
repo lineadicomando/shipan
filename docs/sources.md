@@ -7135,7 +7135,8 @@ the ninth palace, 天目 on 陰德 at 乾, which is the first, and 卯 the 六�
 計參 in 六宮 — the 大將's palace reads 三 and the ×3 that follows gives 六
 from 二 alone. That is the 定算, the third count 《祖傳年家太乙神數教材》 prints
 beside 主算 and 客算 and the 金鏡 has no name for; the 統宗's drawn boards of
-卷三十二 to 卷三十五 carry it on every one. Recorded, with no parameter.
+卷三十二 to 卷三十五 carry it on every one. Computed since 2026-10-15 as `ding`:
+§ "《太乙數統宗大全》卷三十二 to 卷三十五: the drawn boards, and the 定算 they lay".
 
 **《太乙淘金歌》 is quoted by title, and not for its 上元.** 卷四, p. 36:
 「太乙淘金歌推九星…所求積年以九星周法九數除之…如崇禎甲戌餘四十一算即天禽

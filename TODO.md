@@ -28,19 +28,52 @@ date, the row in `docs/sources.tsv` and its rung, the row of
 minute. A woodblock with no 目錄 is found on tiles of six pages rendered
 small, then read on the page; `texts/contact.py` and `texts/banxin.py` do the
 tiling, and a digit is read beside whatever checks it — a sum, a rate, a
-table already held.
+table already held. **A table too long for one reading** — a 立成, a run of
+drawn boards — is transcribed by readers working to a written brief, a page
+range each, into TSV; the cells that disagree with the engine are then
+looked at on the plate before anything is written up. Two precedents, each
+with its brief and its comparison script: `texts/taiyi/tongzong-juan31-notes/`
+and `texts/taiyi/tongzong-juan32-35-boards/`. A transcriber normalises
+titles it believes misprinted, so a title out of sequence is checked on the
+plate too.
 
 **Before the session ends, sweep** `docs/sources.md`, `texts/README.md`,
 `docs/provenance.tsv` and this file for sentences the session outlived: «not
 yet read», «unread», «still missing», «none opened», «nobody has», «stays
 refused», «this list is empty».
 
-### Where it stands, 2026-10-11
+### Where it stands, 2026-10-15
 
-Version 0.24.0. `main` is ahead of `origin/main` and nothing since 2026-10-11 is pushed.
-`npm test`, `npm run typecheck` and `npm run build` pass. One test is skipped
-in a tree that was never built, the installed bin run through its symlink,
-and it is not a failure.
+Version 0.24.0. `main` is 78 commits ahead of `origin/main`, whose last
+commit is of 2026-10-06; nothing since is pushed, and pushing is the user's
+call. `npm test`, `npm run typecheck` and `npm run build` pass on
+2026-10-15. One test is skipped in a tree that was never built, the
+installed bin run through its symlink, and it is not a failure.
+
+**What to do next, in the order the user has been taking it:**
+
+1. **Build the eye of 大遊 as a parameter** — decided on 2026-10-14 and not
+   yet built; the paragraph below says what it asks. It is the one decided
+   thing left undone.
+2. **Or read on**: § 2 line 3, the 《御定奇門大全》's 局 tables. Lines 1 and
+   2 have nothing left on this shelf.
+
+**Decided on 2026-10-14, by the user's word, and not yet built**: the eye of
+大遊, `dayou.wenchang`, becomes a parameter under the board's name, with the
+金鏡's count as the default. The engine runs the 金鏡's today, 卷五
+推大遊天目所在法: 積年 by 七十二, then by 十八 — `dayouOf` in
+`packages/core/src/taiyi.ts`. The 《統宗》卷十一 p. 110 states the other
+count whole: 積年 plus a 盈差 of 216, by 188, then by 18. Both walk from 天道
+with 乾 and 坤 counted twice, and they agree in about one year in eight.
+Neither work dates a seat. The second value has attribution and
+transcription, so it is implemented and not refused. Its 1520 figure is the
+one numeral to hold it to, and it is held by its residue on 188 against the
+金鏡's 積年, not by a seat. The name is settled when it is built, after
+`epoch: jinjing`, the board's one value named for a work so far. It goes in
+with the `new-feature` skill: `packages/core/src/parameters.ts` declares it,
+the MCP schemas and `apps/web/src/lib/parameters.ts` list it, the
+canonical 太乙 fixture moves only if the default does, and it lands in § 1
+only if a value is left refused.
 
 **Decisions held open, by the user's word, until there is more to decide on:**
 
@@ -54,8 +87,8 @@ and it is not a failure.
   where its own count puts it. The month's was read as a procedure and no
   further. Building any of them is a second input type — an instant and a
   zone where `taiyiBoard` takes a year — a `dayBoundary` under the board's
-  name, a ruling on `gate`, `sanji`, `wufu` and `dayou`, which have counts of
-  the year only, and a line in `lib/cacheable.ts`.
+  name, a ruling on `gate`, `sanji`, `wufu`, `dayou` and `ding`, which have
+  counts of the year only, and a line in `lib/cacheable.ts`.
 - **`gong: ci`.** The table is read, with three cells of twelve miscopied.
   Not built until a second copy gives those three.
 - **囚 and 格 on the dated boards of 卷七: the row stays on rung 5** — the
@@ -64,7 +97,6 @@ and it is not a failure.
   those cases do not reach. Reopened only by a source that moves it, not by
   the same boards read again. `docs/sources.md` § "Whose each value of a 太乙
   board is", under "The rest of 卷七".
-
 - **The test of a count by its digits: not built** — the user's word of
   2026-10-15. The 《統宗》卷三十一 立成 labels every count by it and the 金鏡
   quotes it as 王希明's lists, so it would be a value of a parameter beside
@@ -72,53 +104,38 @@ and it is not a failure.
   induced from a table, and the lists are three prints three ways. It waits
   on a sentence stating the rule, in any work.
 
-**Done on 2026-10-11, and nothing is half done.** `yearBoundary: dongzhi` of
-太乙 is computed. `host.accord` and `guest.accord` carry 和, 重陽 or 重陰.
-八門直使 and 大遊 are on rung 2. `wenchangTaiyi: guan` is held by the
-《統宗》, on its list at p. 64 and its 釋囚.
-`docs/history/51-the-tongzong-of-taiyi.md` is the record.
+**Done between 2026-10-11 and 2026-10-15, and nothing is half done.** Each
+reading and each build has its section in `docs/sources.md`, its row in
+`docs/sources.tsv` and its line in `texts/README.md`; phases 51 and 52 in
+`docs/history/` are the record.
 
-**Read on 2026-10-13**: the rest of the 《統宗》卷七, pp. 65–72 — 釋迫, 釋關,
-釋擊, 釋提挾, 釋提執 and the two 四郭. No rung moved and nothing was built;
-three of its dated boards are held in `test/taiyi.test.ts`.
+- 2026-10-11: `yearBoundary: dongzhi` of 太乙 computed; `host.accord` and
+  `guest.accord` carry 和, 重陽 or 重陰; 八門直使 and 大遊 on rung 2;
+  `wenchangTaiyi: guan` held by the 《統宗》.
+- 2026-10-13: the rest of the 《統宗》卷七 read; three of its dated boards in
+  `test/taiyi.test.ts`.
+- 2026-10-14: the ten 精 of 卷三十六 and 大遊's 天目, 卷十一 p. 110, read to
+  the numeral; nothing built.
+- 2026-10-15: the 《統宗》卷三十一 立成 read whole with every note, and the
+  144 drawn boards of 卷三十二–三十五 read for their counts, 定目 and six
+  generals. 陰局 46 of the 金鏡's 立成 settled from a second work, and four
+  cells both tables get wrong printed right on the boards. **Built**: 杜 as
+  the eighth 太乙 condition, with no fortune (0.22.0); `ding`, the 定目 and
+  定算 by 卷四's 淘金訣 rule, on rung 4 (0.23.0), and its two generals as
+  the boards draw them (0.24.0). The transcriptions behind these are in
+  `texts/taiyi/tongzong-juan31-notes/` and
+  `texts/taiyi/tongzong-juan32-35-boards/`, each with the brief its readers
+  worked to and the script that compares it to the engine.
 
-**Read on 2026-10-14**: the ten 精 of the 《統宗》卷三十六 to the numeral,
-beside 盧央 pp. 513–519 on the page, and 大遊's 天目, 卷十一 p. 110. Nine of
-盧央's ten 1650 cases fall where the 《統宗》 puts them; 天時 is begun at 寅
-in one and at 申 in the other. The 天目's 盈差 216 and 大周 188 are held by
-its 1520 figure against the 金鏡's count, and its 1644 figure is eleven over.
-Nothing built and no rung moved: `docs/sources.md`, the 十精 and 大遊
-paragraphs.
-
-**Read on 2026-10-15**: the 《統宗》卷三十一 立成, pp. 298–307, both 局
-whole, and every note in it, which labels each count by its digits; and
-the 144 drawn boards of 卷三十二–三十五, which print the four cells both
-立成 get wrong as the engine computes them and lay the 定算 by 卷四's rule. Every value printed is the engine's or is contradicted by another row
-of the same table; of the 金鏡's fourteen errata it prints ten as computed —
-陰局 46 among them, the one the 金鏡 could not settle — and shares two. No rung
-moved and nothing was built: `docs/sources.md` § "《太乙數統宗大全》卷三十一".
-
-**Decided on 2026-10-14, by the user's word, and not yet built**: the eye of
-大遊, `dayou.wenchang`, becomes a parameter under the board's name, with the
-金鏡's count as the default. The engine runs the 金鏡's today, 卷五
-推大遊天目所在法: 積年 by 七十二, then by 十八. The 《統宗》卷十一 p. 110
-states the other count whole: 積年 plus a 盈差 of 216, by 188, then by 18.
-Both walk from 天道 with 乾 and 坤 counted twice, and they agree in about
-one year in eight. Neither work dates a seat. The second value has
-attribution and transcription, so it is implemented and not refused. Its
-1520 figure is the one numeral to hold it to, and it is held by its residue
-on 188 against the 金鏡's 積年, not by a seat. The name is settled when it is
-built, after `epoch: jinjing`, the board's one value named for a work so far.
-It goes in with the `new-feature` skill, and it lands in § 1 only if a value
-is left refused.
-
-**Owed a look by the user, and not blocking**: `label.taiyipattern.du`,
-«shutting in» and «chiusura», and `label.taiyi.dingEye` · `dingCount`, «the
-fixed eye / count» and «l’occhio / il conto fisso», with the sentence on the
-定算 added to `prompt.taiyi.counts`, written on 2026-10-15; and the catalog strings
-written on 2026-10-11 without the `reader-copy` skill — `form.taiyi.yearBoundary` and its
-three, `label.taiyi.accord`, `label.taiyiaccord.*`, the sentence added to
-`prompt.taiyi.counts`, and the two `form.taiyi.wenchangTaiyi` lines reworded.
+**Owed a look by the user, and not blocking**: catalog strings written
+without the `reader-copy` skill. On 2026-10-15: `label.taiyipattern.du`,
+«shutting in» and «chiusura»; `label.taiyi.dingEye` and `dingCount`, «the
+fixed eye / count» and «l’occhio / il conto fisso»; `cli.field.taiyiCounts`
+shortened to «the counts» and «i conti»; and the sentences on 杜 and on the
+定算 added to `prompt.taiyi.conditions` and `prompt.taiyi.counts`. On
+2026-10-11: `form.taiyi.yearBoundary` and its three, `label.taiyi.accord`,
+`label.taiyiaccord.*`, the sentence on 和 in `prompt.taiyi.counts`, and the
+two `form.taiyi.wenchangTaiyi` lines reworded.
 
 ## 1. Parameters that are declared and refused
 
@@ -179,14 +196,12 @@ nothing exposes. Only those with something to wait on:
 - **太乙.** Two of the three tests of 陰陽和不和: 太乙's palace against a
   count, where no count is named, and 王希明's lists, which three prints give
   three ways. The eye's test is computed. The 太歲 as a body of 格, on the
-  《統宗》's 589 board. The 定算 and its 定計目 · 計大將 ·
-  計參, a third count the 《統宗》 lays on every board: 卷四's 淘金訣 rule
-  seats the 定目 of 134 of its 144 drawn boards and gives the 定算 of 118,
-  read 2026-10-15, and computed the same day as `ding`, its generals with
-  it as the boards draw them. A fortune or a
-  sentence for 杜, which is computed since 2026-10-15 on the word of the 立成
-  of 卷三十一 and carries neither. 陰局 after 夏至 as the
-  hour's alone or the day's as well: the 《統宗》 prints both.
+  《統宗》's 589 board. A fortune or a sentence for 杜, which is computed
+  since 2026-10-15 on the word of the 立成 of 卷三十一 and carries neither.
+  Whether the 計大將 of the 定算 is read off the tens, as 卷四's one case
+  reads 三十二, or off the units, as 133 of the 144 boards draw it: the
+  engine follows the boards. 陰局 after 夏至 as the hour's alone or the
+  day's as well: the 《統宗》 prints both.
 - **紫微斗數.** The stars 卷二 does not place, 解神 off the month among them;
   王亭之's table at 戊, 庚 and 壬, named and unread.
 - **Not yet attributed.** The default of `earth`; who turns the year at 立春
@@ -216,9 +231,9 @@ stand first because a decision waits on each.
 
 | | what would move | where |
 |---|---|---|
-| 1 | **A dated 日計 board, or the 盈差 of the day explained**: what `ji: riji` waits on | not in the 《統宗》 where it was looked for: 卷三十六 to p. 392, 卷四 p. 41 and 卷十八 whole were read on 2026-10-11 and every board is entered by its 局. Left in that work: the drawn boards of 卷三十二–三十五 and the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
+| 1 | **A dated 日計 board, or the 盈差 of the day explained**: what `ji: riji` waits on | not in the 《統宗》 where it was looked for: 卷三十六 to p. 392, 卷四 p. 41 and 卷十八 whole were read on 2026-10-11 and every board is entered by its 局, and the 144 drawn boards of 卷三十二–三十五, read on 2026-10-15, are entered by their 局 and five 干支 with no year. Left in that work: the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
 | 2 | the lists of 上和 · 次和 · 下和, which three prints give three ways, and which count is read against 太乙's palace | the notes of the 《統宗》卷三十一 立成 were read on 2026-10-15: its table labels every count by its digits, ungraded, and none against 太乙's palace — so it answers neither question. A copy of the 金鏡 that is not the 四庫's, or a work quoting 王希明's lists: none held. The 金鏡 卷二 leaves 9–10, the 《統宗》卷六 pp. 54–56 and 盧央 pp. 477–479 were read on 2026-10-11 |
-| 3 | a 起例 variant; eighteen 局 tables that would be a bench | 《御定奇門大全》, `yuding-qimen-daquan.pdf`: its 目錄, 卷一 and 卷二十五 are read, 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. Eleven of its other twelve works are unread; 卷五–十 are the tables |
+| 3 | a 起例 variant; eighteen 局 tables that would be a bench | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets at 600 dpi, two book-pages to a sheet, located by the 版心: its 目錄, 卷一 and 卷二十五 are read, 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. Eleven of its other twelve works are unread. The 局 tables are 卷五–十 by the 目錄 as read on 2026-09-10, and 卷四–十二 by an earlier pass written into the same row of `texts/README.md`: settle that on the 版心 before planning around it. A table is a bench only for what the engine computes — the 時家 board by 拆補 — so the first thing to read is which 起例 the table states |
 | 4 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
 | 5 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 
@@ -282,9 +297,10 @@ prose, which a third language pays for and derived text does not. →
   by tests: the MCP schemas in `packages/mcp/src/` and
   `apps/web/src/lib/parameters.ts`. A value added to the engine fails those
   suites until it is added there.
-- **`accord` is not on the drawing.** The transcript and the section print
-  it; `packages/plate` was left as it was, its `PlateTaiyiSide` without the
-  field.
+- **`accord` and `ding` are not on the drawing.** The transcript and the
+  section print both; `packages/plate` was left as it was, its
+  `PlateTaiyiSide` without `accord` and its `PlateTaiyi` without `ding`. 杜
+  is drawn, among the conditions, with no fortune beside it.
 - **The eye of 太乙's 大遊 is checked by nothing.** Its row rose on the body,
   dated once in a second work; `dayou.wenchang` rides in that row and the
   row says so. The 《統宗》卷十一 p. 110 counts it another way, read on
