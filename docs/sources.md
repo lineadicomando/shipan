@@ -7168,7 +7168,8 @@ P. 30 says it of 太乙 and again of 天目, 「歲月日時四計皆同，惟�
 「以半周之法一百二十去之…以門率三十約之…冬至命起開…夏至命起杜」. 推六儀三奇
 on the same leaf and 飛九宮 · 飛八門 opening 卷四, with tables to p. 36. The
 hundred and forty-four drawn boards of 卷三十二 to 卷三十五, two to a page,
-each with its 主算, 客算 and 定算 written beside the circle. The 立成 of
+each with its 主算, 客算 and 定算 written beside the circle, read since in a
+section of their own below. The 立成 of
 卷三十一, seventy-two rows of 陽局 and seventy-two of 陰局 with the conditions
 of each printed in the row, 卷六 明太乙主客陰陽不和之數術, 卷七's 釋掩 · 釋迫 · 釋關 ·
 釋囚 · 釋擊 · 釋格 · 釋對, 卷十一's 四神, 天乙, 地乙 and 直符 with a 立成歷
@@ -7365,7 +7366,10 @@ works and differently — 39 and 19 for 29, 22 and 52 for 32 — and the 統宗'
 Two errors shared and two tens digits each copy got wrong its own way say the
 two tables descend from one, at least in those rows; that is a statement
 about the tables and not about the procedure, which both tables contradict
-there and the engine follows.
+there and the engine follows. **The same work's drawn boards print all four
+as the engine computes them** — 陰局 11 廿六, 25 卅一, 27 廿九, 70 卅二, read on
+the plate — so the boards were not copied from either table: § "卷三十二 to
+卷三十五" below.
 
 **The two generals of 288 counts are ×3 mod 10, bar the seven numerals the
 first table lists.** The rule `TaiyiSide.assistant` cites from 盧央 is now on
@@ -7429,6 +7433,60 @@ No rung moves. Rows 54 and 55 of `docs/sources.tsv` stand on rung 2 on the
 evidence written there; this table adds a second work's 144 rows to what
 they are checked against, and the shared errors are why it is not called an
 independent one.
+
+Last checked 2026-10-15.
+
+### 《太乙數統宗大全》卷三十二 to 卷三十五: the drawn boards, and the 定算 they lay
+
+Read on 2026-10-15, at 300 dpi with the margins and the disputed cells
+cropped at 600: 陽局圖盤 上 and 下, series pp. 311–347, and 陰局圖盤 上 and
+下, pp. 348–384, one board to a block, with the title leaf of each juan and
+the note that closes it, signed 集福堂. Four readers transcribed a page range
+each — title, the five 干支 of the 局, the three counts in the margin and the
+seat of the label 定目 — and the cells that disagree with the engine were
+looked at again on the plate. The transcription is a finding aid,
+`texts/taiyi/tongzong-juan32-35-boards/`.
+
+**All 144 boards are there, one to a 局, and two were cut under one title.**
+The board in 陽局 23's place is titled 三十三 and carries the 申 years and
+the counts of 局 33; the board in 局 33's place is titled 三十三 too and
+carries the 戌 years and the counts of 局 23. The 干支 say which is which,
+and each is held to the 局 its years name. 陰局 2 and 3 stand in the
+reverse order on their page.
+
+**Each board is laid apart from the 立成 of 卷三十一, and holds the engine
+where both tables fail.** Of the four cells the 金鏡's 立成 and the
+《統宗》's get wrong alike or each its own way, the boards print all four as
+computed: 陰局 11 客算 廿六, 25 主算 卅一, 27 主算 廿九, 70 主算 卅二; and 陰局
+46 客算 一, which only the 《統宗》's table had. Read on the plate, every one.
+Over the whole set the margins agree with the engine on 122 of 144 主算 and
+115 of 144 客算, and the rest are the boards' own slips — a tens digit
+dropped or added, 陽局 50's 三十六 for 十六, a board that repeats its
+neighbour's counts at 陰局 68 — none of them shared with either table.
+
+**The 定算 and its 定目 are the rule of 卷四, on every board.** 卷四
+求四計定計目計大計參所在術, p. 37, states it under 「淘金訣法」 and works it for
+1634: count from the 合神 to 文昌, inclusive, on the ring of sixteen —
+「順所在文昌得十一」 — and that many seats on from the 太歲 is the 定計目,
+「以加太歲神位順數至巳為定計目」; the 定算 is then the count from that seat to
+太乙's palace, the same count as 主算 and 客算 — 「又算至太乙前得三十二算」.
+The 太歲 and 合神 of a 局 are its 干支's, the five the board lists, so the
+rule is a function of the 局. Run over all 144, it seats the 定目 where the
+board draws it on 134, and gives the board's 定算 on 118. Of the 26 定算
+it does not give, the board's own 定目 is where the rule puts it on 24, so
+the slip is in the count and not in the seat: 十五 for 二十五, 八 for 三十八,
+卅九 for 廿九. The ten 定目 that part sit one seat off at a corner on six
+boards — 辰 for 巽, 戌 for 乾, 申 for 坤 — and on the other four, two of them
+boards with every count wrong.
+
+**So the 定算 has a procedure, one worked case and 144 boards in one work.**
+It is a third count the 金鏡 does not have, and computing it would be a
+quantity of the 統宗's line on rung 4 — one text, checking itself over the
+whole domain. The 計大將 and 計參 the leaf then lays — 「計大將在三宮」 from
+三十二, 「以二數三因之則計參在六宮」 — read the 參將 off the units where 主
+and 客 read it off the 大將, and the boards were not read for those two
+labels. Not computed, and nothing moves: the rows of the placements and
+the generals in `docs/sources.tsv` are on rung 2 on the evidence they cite.
 
 Last checked 2026-10-15.
 

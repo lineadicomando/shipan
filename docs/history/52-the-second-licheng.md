@@ -52,6 +52,14 @@ engine's are the print's slips — 陽局 12's 天目, 陽局 27 and 53's 客算
 the note beside a 二. A reading that holds a table to a computation finds
 the cells that disagree, and passes over the ones it expected.
 
+## And the drawn boards
+
+The 144 boards of 卷三十二–三十五 were read for their margins and the seat
+of 定目. They print right the four cells both 立成 get wrong, so they were
+computed apart from either table; and 卷四's 淘金訣 rule for the 定算, run
+over them, seats 134 定目 and gives 118 定算, the rest being the boards' own
+slips. The 定算 is buildable as the 統宗's on rung 4, and was not built.
+
 ## The version
 
 0.22.0. The canonical 太乙 board, whose second input seats both of the
