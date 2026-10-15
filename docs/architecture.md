@@ -182,6 +182,25 @@ cannot wait for a picture.
 **The consultation prints from the page and never from a route of its own**,
 because a route would have to be told the question. See `docs/readings.md`.
 
+## A board the page can point into
+
+The drawing marks what it draws and does nothing with it: each palace is a
+group carrying `data-palace`, each name in it a group carrying `data-layer` and
+`data-id` (`tagged` in `packages/plate/src/svg.ts`). A renderer that knows
+nothing of them ignores them, so the PNG and what the MCP server hands over are
+the same drawing.
+
+A page that wants to answer a pointer on the board holds it with
+`InlineBoard.svelte`: the server sends the `<img>`, so the board is there
+before any script runs, and the same address is then fetched as text — out of
+the cache the picture just filled — and set in a **shadow root**. A root of its
+own because the drawing carries its sheet, and two copies of one board in two
+schemes on one page would otherwise colour each other; which is also why the
+palette is declared on `svg` and not on `:root`, which matches nothing in a
+shadow root. `spotOf` in `lib/board.ts` reads the marks back off an event and is
+the one place that knows their names; what is done with a spot is the page's.
+The copy for paper stays a picture, since nobody points at a sheet.
+
 ## Found by a search, and what may never be found
 
 The interface is public and meant to be found. What is on it is not: an

@@ -321,18 +321,23 @@ function drawDayCell(
   // One name to a line, so a line has the palace's width and not half of it.
   const width = side * 0.9;
   const entry = (
+    layer: Layer,
     at: Register,
     thing: Named | undefined,
     from: Record<string, string> | undefined,
   ): string =>
-    register(middle, y + side * at.glyph, y + side * at.word, thing, from, undefined, geometry, width);
+    tagged(
+      layer,
+      thing,
+      register(middle, y + side * at.glyph, y + side * at.word, thing, from, undefined, geometry, width),
+    );
 
   const inset = side * 0.06;
-  return [
+  return seated(palace.palace.number, [
     `<rect x="${x}" y="${y}" width="${side}" height="${side}" fill="${tint}"/>`,
-    entry(top, palace.gate, labels.gate),
-    entry(centre, palace.star, labels.star),
-    entry(bottom, palace.palace, labels.palace),
+    entry('gate', top, palace.gate, labels.gate),
+    entry('star', centre, palace.star, labels.star),
+    entry('palace', bottom, palace.palace, labels.palace),
     text(x + inset, y + side * geometry.line.number, String(palace.palace.number), geometry.font.number, {
       className: 'faint',
       maxWidth: side - inset * 2,
@@ -349,9 +354,7 @@ function drawDayCell(
           { className: 'mark', maxWidth: width },
         )
       : '',
-  ]
-    .filter(Boolean)
-    .join('\n');
+  ]);
 }
 
 /** Every name a day board prints, a group to a kind, as `saidOnBoard` has it. */
@@ -519,12 +522,18 @@ function drawCell(
   const column = side * geometry.columnWidth;
 
   const entry = (
+    layer: Layer,
     at_: Register,
     column_: number,
     thing: Named | undefined,
     from: Record<string, string> | undefined,
     strength?: Named | undefined,
-  ): string => register(column_, y + side * at_.glyph, y + side * at_.word, thing, from, strength, geometry, column);
+  ): string =>
+    tagged(
+      layer,
+      thing,
+      register(column_, y + side * at_.glyph, y + side * at_.word, thing, from, strength, geometry, column),
+    );
 
   const parts = [
     `<rect x="${x}" y="${y}" width="${side}" height="${side}" fill="${tint}"/>`,
@@ -532,14 +541,14 @@ function drawCell(
     // Left: the board as it was dealt. Heaven over earth, which is the
     // convention and the reason neither is labelled, and under them the
     // palace itself — the one thing here that never moves.
-    entry(top, left, palace.heaven, labels.stem),
-    entry(centre, left, palace.earth, labels.stem),
-    entry(bottom, left, palace.palace, labels.palace),
+    entry('heaven', top, left, palace.heaven, labels.stem),
+    entry('earth', centre, left, palace.earth, labels.stem),
+    entry('palace', bottom, left, palace.palace, labels.palace),
 
     // Right: what came to stand over it, in the order it is always recited.
-    entry(top, right, palace.spirit, labels.spirit),
-    entry(centre, right, palace.star, labels.star, palace.starStrength),
-    entry(bottom, right, palace.gate, labels.gate, palace.gateStrength),
+    entry('spirit', top, right, palace.spirit, labels.spirit),
+    entry('star', centre, right, palace.star, labels.star, palace.starStrength),
+    entry('gate', bottom, right, palace.gate, labels.gate, palace.gateStrength),
   ];
 
   // The Luoshu number in the corner, small: it is the palace's identity for
@@ -578,7 +587,35 @@ function drawCell(
     );
   }
 
-  return parts.filter(Boolean).join('\n');
+  return seated(palace.palace.number, parts);
+}
+
+/**
+ * Which layer of the board a name in a palace belongs to.
+ *
+ * The drawing says it by where the name stands and in no other way, and a
+ * surface that wants to say it in words — or to answer a pointer resting on
+ * the name — cannot read a position back out of the ink. So each register is
+ * marked with it. The ids are the ones the palace table's columns go by.
+ */
+type Layer = 'heaven' | 'earth' | 'palace' | 'spirit' | 'star' | 'gate';
+
+/**
+ * A register marked with its layer and with the identifier of what stands in
+ * it, as `data-` attributes and nothing else.
+ *
+ * What the marks are *for* is not this package's business: a drawing carries
+ * no behaviour, and a renderer that knows nothing of them ignores them. An
+ * empty register stays unmarked, since there is nothing in it to point at.
+ */
+function tagged(layer: Layer, thing: Named | undefined, body: string): string {
+  if (!thing || !body) return body;
+  return `<g data-layer="${layer}" data-id="${escape(thing.id)}">\n${body}\n</g>`;
+}
+
+/** A palace's whole cell, marked with its Luoshu number. See `tagged`. */
+function seated(number: number, parts: string[]): string {
+  return `<g data-palace="${number}">\n${parts.filter(Boolean).join('\n')}\n</g>`;
 }
 
 /**
