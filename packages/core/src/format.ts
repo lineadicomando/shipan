@@ -705,7 +705,9 @@ export function formatQimenChart(chart: QimenChart, t: Translator): string {
           return [
             t(`label.pattern.${pattern.id}` as MessageKey),
             glyph(pattern),
-            named(pattern.valence, `label.valence.${pattern.valence.id}` as MessageKey, t),
+            pattern.valence === undefined
+              ? ''
+              : named(pattern.valence, `label.valence.${pattern.valence.id}` as MessageKey, t),
             where,
           ];
         }),

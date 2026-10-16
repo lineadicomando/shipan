@@ -221,6 +221,7 @@ dunjia's.**
 | `centreTravel` | where the 值符 zhífú and the 值使 zhíshǐ are read when the count puts them on the centre: `stay` (lodged out to 坤, as 《御定奇門寶鑑》 has it), `travel` (in the fifth palace, as 《奇門遁甲金鏡寶鑑》 has it) | `stay` |
 | `centreStem` | where the centre's stem stands on the heaven plate once the plate has turned, on the turned plate only: `centre` (in the fifth palace), `host` (with the stem of the palace the centre lodges in, wherever that stem goes, as 《御定奇門大全》's hour tables read it) | `centre` |
 | `dingTomb` | the palace 丁 is buried in, for 入墓: `gen` (艮 gèn, as 《奇門遁甲統宗》 has it), `qian` (乾 qián, with 丙, as 《遁甲符應經》 has it) | `gen` |
+| `stemPairs` | which table of 十干克應 names a stem over the stem below: `shared` (the fourteen cells the texts name alike, a convention with no holder), `jinhan` (金函 jīnhán — 《金函玉鏡》卷二's table, eighty of its eighty-one cells, with its fortune only where it states one outright), `xianji` (仙機 xiānjī — 奇門仙機's 干論, refused until the cells its print garbles are read). It moves marks and no plate | `shared` |
 
 `method` is the most divisive parameter in the engine and it is not optional.
 All three values are computed, and 拆補 and 茅山 — which read the same term and

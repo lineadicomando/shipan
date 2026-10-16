@@ -82,6 +82,8 @@ const READINGS: Readonly<Record<string, string>> = {
   // stands on. No board seats it, so the engine cannot say it.
   大數: 'dàshù',
   大遊: 'dàyóu',
+  金函玉鏡: 'jīnhányùjìng',
+  十干克應: 'shígānkèyìng',
   建除: 'jiànchú',
   神煞: 'shénshà',
   一宮: 'yīgōng',

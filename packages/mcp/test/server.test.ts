@@ -177,6 +177,21 @@ describe('compute_qimen_chart', () => {
     expect(centre).not.toContain('has moved with the stem of the palace it lodges in');
   });
 
+  it('names the stems by the table of 《金函玉鏡》 when stem_pairs asks for it, and moves no plate', async () => {
+    const at = { ...BEIJING, date: '2026-01-30', time: '02:00', lang: 'en' };
+    const jinhan = await call('compute_qimen_chart', { ...at, stem_pairs: 'jinhan' });
+    const shared = await call('compute_qimen_chart', at);
+
+    // 庚 over 戊 in 乾, which the text weighs 「百事不可謀，為凶」, and 癸 over 戊
+    // in 坤, which it names and does not weigh.
+    expect(jinhan).toContain('太白天乙伏宮');
+    expect(jinhan).toContain('青龍華蓋');
+    expect(shared).not.toContain('太白天乙伏宮');
+    // The cell both tables carry is in both.
+    expect(jinhan).toContain('熒入太白');
+    expect(shared).toContain('熒入太白');
+  });
+
   it('lays the board of a day when that family is asked for, in a shape of its own', async () => {
     const text = await call('compute_qimen_chart', { ...BEIJING, system: 'rijia', lang: 'en' });
 

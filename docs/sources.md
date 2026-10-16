@@ -1720,6 +1720,8 @@ under the naming of the spirits alone.
 | `centreTravel: travel` | 《奇門遁甲金鏡寶鑑》 | 「符使不必寄於二」 |
 | `centreLodging: kun`, `centreTravel: stay` | 《遁甲符應經》, beside the 統宗 | 「六戊在五宮，寄坤二」 on a yang board and 「直使在五宮，寄坤二西南」 on a yin one, each worked |
 | `dingTomb: gen` | 《奇門遁甲統宗》 | 「丁奇艮宮」, in its 奇門四十格 |
+| `stemPairs: jinhan` | 《金函玉鏡奇門遁甲秘笈全書》 | 卷二 十干克應訣, the eighty-one set out as its own, read at pp. 30–32 of the 1996 print; added 2026-10-16 |
+| `stemPairs: xianji` | 《御定奇門大全》 | the 干論 of 奇門仙機, 卷十四–十六, refused until six garbled cells are read |
 | `dingTomb: qian` | 《遁甲符應經》 | 「六丙月奇、六丁星奇在六宮」, under 璋曰, in both copies |
 | `leap: runyue` | 《奇門遁甲金鏡寶鑑》 | states the placement, works it twice by date, rejects the solstitial one. A work arguing its own reading is its own line |
 | `strengths: star` | 《奇門遁甲金鏡寶鑑》卷之四 | tabulates the five states outward from each of the nine stars |
@@ -2813,8 +2815,10 @@ refuses to rasterise a reading no font on the machine can draw.
 ## 十干克應 — what was checked, one pairing at a time
 
 The table has eighty-one cells: nine stems on the heaven plate over nine on
-the earth plate, 甲 excluded because it never stands on a plate. **Fourteen are
-implemented.** The other sixty-seven are absent, and the reason is below.
+the earth plate, 甲 excluded because it never stands on a plate. **The board
+lays fourteen by default**, the cells the lines name alike. Under `stemPairs:
+jinhan` it lays 《金函玉鏡》's table, eighty of the eighty-one, and the other
+sixty-six cells are that text's names and not the art's. Why, is below.
 
 ### The sources consulted
 
@@ -3311,6 +3315,57 @@ twice.
 character apart in the same sentence of the same work. Nothing here depends on
 it — the 九遁 are not computed — and it is the sort of thing a second copy exists
 to find.
+
+### The sixty-seven, read again: three tables, and a school value
+
+Written 2026-10-16, after the 奇門仙機 arrived, under § "What a value named for
+a school must show". **The ground the section above refuses them on no longer
+holds as written.** It refuses for want of a second line independent of J. The
+仙機's 干論 is such a line and covers every cell — under its own names. So the
+cells are not unwitnessed. They are witnessed three ways, and the three name
+most of them differently.
+
+| line | what it carries | cells it names as J does |
+|---|---|---|
+| J, 《金函玉鏡》卷二 | all eighty-one, with fortunes in prose | — |
+| 卷十五 of the 仙機, in verse | J's line in another state | about two dozen |
+| the 仙機's 干論 | a line of its own, by an image of the stem above | six |
+| Y, 《元靈經》 | the rows of 戊, 乙 and a third block read as 丁 | about ten, and the 干論's 青龍入雲 at 戊 over 乙 |
+
+**So a whole table is one line's, and laying one is a choice between
+practitioners.** That makes it a parameter and not a refusal: it changes what
+the board shows, and a reader following 《金函玉鏡》 and a reader following the
+仙機 would each say which they follow. `stemPairs` carries it.
+
+- **`shared`, the default**, is the fourteen above. No line lays exactly that
+  table, so the value has no holder and is said to be a convention.
+- **`jinhan`** is J whole, and has what a value named for a work must show: a
+  work that sets the table out as its own 訣, read at an edition and a page,
+  every cell transcribed. Eighty cells are laid. **戊 over 戊 is not**: J calls
+  it 伏吟, and the board already reports a 伏吟 that is every star or gate at
+  home, so the two characters would print meaning two things. At 癸 over 丁 J
+  prints 妖矯 and the shared table 夭矯; the shared name stands, one character
+  being a variant and not a second name. Two cells were settled on the page:
+  乙 over 癸 is 華蓋逢星官, and 己 over 乙 is 墓神, the edition ending the
+  sentence there, 「加乙名為墓神。不明，地戶蓬星」.
+- **`xianji`** is the 干論, declared and refused. Its print garbles six cells
+  — 庚加丙 twice and no 庚加丁, 庚加辛 with no name, 丁加巳 where 乙 is wanted,
+  丙加戊 with a rule in place of a name, 己加乙 printed 己甲乙 — and a value is
+  computed when its table can be reconstructed without guessing.
+
+**The fortune under `jinhan` is J's, and only where J states one outright.**
+`CLAUDE.md` lets a mark carry a fortune the sources hand down concordantly,
+and within one line's table that is the line's own verdict. J gives eight
+without a condition on the gate or on who asks: 吉 for 奇儀相佐 「文書事吉，百事
+皆可為」, 日月並行 「公謀私為皆吉」, 人遁吉格 and 天乙會合 「吉格」; 凶 for
+貴人入獄 「公私皆不利」, 值符飛宮 「吉事不吉，凶事更凶」, 青龍入天牢 「凡陰陽皆不
+吉利」 and 太白天乙伏宮 「百事不可謀，為凶」. The other fifty-eight carry none,
+as 杜 on a 太乙 board carries none. Where J says what befalls without a verdict
+word — 「病者必死，百事不遂」 — the engine does not supply one.
+
+**What the review did not move.** No cell of the default table. 青龍華蓋 is
+still the cell to reach for if a fourth valence is argued, and under `jinhan`
+it carries J's name and no fortune, which is what J gives it.
 
 ### What is deliberately not imported
 

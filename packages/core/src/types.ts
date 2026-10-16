@@ -288,6 +288,21 @@ export interface ChartOptions {
   dingTomb: 'gen' | 'qian';
 
   /**
+   * Which table of 十干克應 names the stem of the heaven plate over the stem
+   * below it.
+   *
+   * The table has eighty-one cells and the lines that carry it name them
+   * differently. `shared` lays the fourteen that the 煙波釣叟歌 and the tables
+   * name alike, which is a convention of this engine and the choice no line
+   * makes. `jinhan` lays 《金函玉鏡》卷二 十干克應訣 whole, bar the one cell
+   * that would collide with the board's own 伏吟, with that text's fortune
+   * where it gives one outright. `xianji` is 奇門仙機's 干論, a line that
+   * names each cell by an image of the stem above; declared and refused until
+   * the cells its print garbles are settled. It moves marks and no plate.
+   */
+  stemPairs: 'shared' | 'jinhan' | 'xianji';
+
+  /**
    * Which register of 神煞 the almanac's page carries (曆注).
    *
    * `xieji` is the only value implemented: what 《協紀辨方書》 ratifies, cut to
@@ -333,6 +348,7 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   centreTravel: 'stay',
   centreStem: 'centre',
   dingTomb: 'gen',
+  stemPairs: 'shared',
   shensha: 'xieji',
 });
 

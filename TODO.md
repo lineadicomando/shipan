@@ -47,7 +47,7 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-16
 
-Version 0.26.0, on the branch `board-pointer`, which is checked out and
+Version 0.27.0, on the branch `board-pointer`, which is checked out and
 ahead of `main` (`git log main..board-pointer`). Its first two commits are
 of 2026-10-15 and are surface work: the Qi Men section holds its board in
 the page (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which
@@ -56,7 +56,8 @@ holds its board that way yet. The rest are of 2026-10-16: the 大全's 局 table
 read, then `spirits: huwu` and `centreStem` built, then this file brought up
 to date, then the 大全's 遁甲通明鈐 read, then the 大全 named a holder of
 置閏, then the eye of the 大遊 built as `dayouEye` (0.26.0), then the
-大全's 奇門仙機 surveyed, then its two stem tables read against 十干克應.
+大全's 奇門仙機 surveyed, then its two stem tables read against 十干克應, then the sixty-seven
+reviewed and `stemPairs` built (0.27.0).
 `main` is 79 commits ahead of `origin/main`, whose last commit is
 of 2026-10-06. Nothing since that day is pushed and the branch is not
 merged; both are the user's call. `npm test`, `npm run typecheck` and `npm
@@ -144,10 +145,17 @@ reading and each build has its section in `docs/sources.md`, its row in
   in one year in nine, measured over the 3384 years in which 72 and 188 meet,
   where the register had said one in eight. 0.26.0: every 太乙 board carries
   the option.
+  Then the 仙機's two stem tables read against 十干克應, and on the user's
+  word the sixty-seven reviewed: `stemPairs`, `shared` by default, `jinhan`
+  laying 《金函玉鏡》's table with its fortune where it states one, `xianji`
+  declared and refused (0.27.0).
 
 **Owed a look by the user, and not blocking**: catalog strings written
 without the `reader-copy` skill. On 2026-10-16: `form.taiyi.dayouEye`, its
-two values and its note, and `notes.parameter.dayouEye`, in both catalogs.
+two values and its note, and `notes.parameter.dayouEye`, in both catalogs;
+`form.qimen.stemPairs`, its two values, its note and `notes.parameter.stemPairs`;
+and the sixty-five glosses `label.pattern.*` of 《金函玉鏡》's names, where 華蓋
+is «the parasol» because 天蓬 is already the Canopy.
 On 2026-10-15: `label.taiyipattern.du`,
 «shutting in» and «chiusura»; `label.taiyi.dingEye` and `dingCount`, «the
 fixed eye / count» and «l’occhio / il conto fisso»; `cli.field.taiyiCounts`
@@ -169,7 +177,7 @@ not a witness**.
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `plate: fei`, `system: yuejia`, `system: nianjia`, `dayDun: liushi`, `leap: runyue`, `strengths: star` |
+| 奇門 | `plate: fei`, `system: yuejia`, `system: nianjia`, `dayDun: liushi`, `leap: runyue`, `strengths: star`, `stemPairs: xianji` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: chunjie` |
@@ -185,6 +193,7 @@ section an art.
 | `system: yuejia`, `system: nianjia` | being built as the day family was. 《遁甲演義》 and the 統宗 state both; on the year they read 一四七 against 遁甲集成 第三冊's 一七四, which will be two values. No table on the shelf to hold either to |
 | `dayDun: liushi` | the 統宗's rule read on the plate for how a 局 is begun |
 | `leap: runyue` | a lineage named for it. 《金鏡寶鑑》 holds it; 《金函玉鏡》 上冊 p. 87 and 下冊 p. 425 print a rule containing both placements, so one rule or two is asked first |
+| `stemPairs: xianji` | the cells the 干論 of 《御定奇門大全》卷十四–十六 prints garbled, read on the plate: 庚加丙 twice and no 庚加丁, 庚加辛 with no name, 丁加巳 where 乙 is wanted, 丙加戊 with a rule in place of a name, 己加乙 printed 己甲乙. Its transcription is in `texts/qimen/daquan-juan14-16-stems/` |
 | `strengths: star` | which of two arrangements from the star it is — 《金鏡寶鑑》卷之四's, or the 《三元經》's that the 符應經, 紀大奎 and the 探索錄 carry — and whether it reaches past the nine stars |
 | `yuejiang: jieqi`, `yuejiang: true` | a text stating either as its own. None found, on the plate or in the extracts |
 | `zhouye: solar` | which rising, and how. One sentence of 《大六壬精解》 and the 協紀's 日出入, neither with a procedure |

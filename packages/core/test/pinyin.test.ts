@@ -63,7 +63,7 @@ function everything(): { hanzi: string; pinyin: string }[] {
     ...SPIRITS_YANG,
     ...SPIRITS_YIN,
     ...PATTERN_IDS.map(patternName),
-    ...PATTERN_IDS.map(valenceOf),
+    ...PATTERN_IDS.map(valenceOf).filter((valence) => valence !== undefined),
     ...QIZHENG_BODIES,
     ...CI,
     ...HOUSES,

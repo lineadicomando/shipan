@@ -284,6 +284,17 @@ export const DIVERGENCES: readonly Divergence[] = [
     notes: { gen: 'form.qimen.dingTomb.note', qian: 'form.qimen.dingTomb.note' },
   },
   {
+    id: 'stemPairs',
+    board: 'qimen',
+    family: 'shijia',
+    values: ['shared', 'jinhan', 'xianji'],
+    implemented: ['shared', 'jinhan'],
+    fallback: 'shared',
+    label: 'form.qimen.stemPairs',
+    says: { shared: 'form.qimen.stemPairs.shared', jinhan: 'form.qimen.stemPairs.jinhan' },
+    notes: { shared: 'form.qimen.stemPairs.note', jinhan: 'form.qimen.stemPairs.note' },
+  },
+  {
     id: 'shensha',
     board: 'almanac',
     values: ['xieji'],

@@ -300,6 +300,12 @@ export const qimenSchema = {
     .describe(
       'Which palace the stem ding is buried in (rumu). Default gen: the palace of gen, as the Qimen Dunjia Tongzong has it. qian: the palace of qian, where bing is buried too, as the Dunjia Fuyingjing has it. The two texts agree on yi and on bing. It moves that one mark and no plate; both values are computed and the chart says which it stands on.',
     ),
+  stem_pairs: z
+    .enum(['shared', 'jinhan'])
+    .optional()
+    .describe(
+      'Which table of shigan keying (the stem of the heaven plate over the stem below it) names the marks. Default shared: the fourteen cells the texts name alike, which is a convention of this engine and no text\'s table. jinhan: the whole table of the Jinhan Yujing, eighty of its eighty-one cells (the one it calls fuyin is left out, since the board already reports a different fuyin), with a fortune only where that text states one without a condition, so most of its marks carry no fortune. A third table, the Qimen Xianji\'s, is declared and refused. It moves marks and no plate. The lines name most cells differently, so a mark under jinhan is that text\'s name and not the art\'s.',
+    ),
 };
 
 export interface ResolvedInput {
@@ -329,6 +335,7 @@ interface RawInput {
   centre_travel?: 'stay' | 'travel' | undefined;
   centre_stem?: 'centre' | 'host' | undefined;
   ding_tomb?: 'gen' | 'qian' | undefined;
+  stem_pairs?: 'shared' | 'jinhan' | undefined;
   shensha?: 'xieji' | undefined;
   born?: string | undefined;
   born_time?: string | undefined;
@@ -377,6 +384,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
       centreTravel: raw.centre_travel,
       centreStem: raw.centre_stem,
       dingTomb: raw.ding_tomb,
+      stemPairs: raw.stem_pairs,
     },
     (parameter) => parameter.id.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`),
   );
@@ -396,6 +404,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.centre_travel) options.centreTravel = raw.centre_travel;
   if (raw.centre_stem) options.centreStem = raw.centre_stem;
   if (raw.ding_tomb) options.dingTomb = raw.ding_tomb;
+  if (raw.stem_pairs) options.stemPairs = raw.stem_pairs;
   if (raw.shensha) options.shensha = raw.shensha;
 
   const ephemeris: EphemerisContext = initEphemeris(context.ephemerisPath);

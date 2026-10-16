@@ -37,6 +37,10 @@ Two mistakes follow from confusing the two, and both are yours to avoid:
   time". Which palace even bears on the question is the 用神, chosen by the
   reader for the question asked; the server does not choose it and does not
   know the question.
+- **Do not supply a fortune that is not there.** Under `stem_pairs: jinhan`
+  most stem-pair marks carry a name and no fortune, because the text they are
+  taken from states none for them. A name like 凶蛇入墓 is not a 凶, and a mark
+  printed without one has none.
 
 If the person asked for a reading, the reading is yours — and so is the
 responsibility for it. Do not present one as though the software had produced

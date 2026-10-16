@@ -90,6 +90,7 @@ phase.
 | 55 | [The eye of the 大遊](55-the-eye-of-the-dayou.md) | done — `dayouEye`, the eye of the 大遊 by the 金鏡's count or by the 《統宗》's, the second held by its own figure for 1520; the agreement between them measured at one year in nine, where the register had one in eight |
 | 56 | [The 仙機 surveyed](56-the-xianji-surveyed.md) | done — 奇門仙機, 卷十四–十六 of the 大全, holds no 起例 and does hold a table of one stem over another, a lead for 十干克應; 先天要論 opens on a verse stating 置閏 at the solstices |
 | 57 | [The 仙機's stem tables](57-the-xianji-stem-tables.md) | done — the 仙機 carries the eighty-one twice: in verse, J's line in another state, and in its 干論, a line of its own; 青龍耀明 gains a line outside J's, and B's 太白 names turn out to be the 干論's |
+| 58 | [The sixty-seven reviewed](58-the-sixty-seven-reviewed.md) | done — the refusal of 十干克應's other cells no longer held on its written ground, and a whole table turned out to be one line's: `stemPairs`, `shared` by default, `jinhan` laying 《金函玉鏡》's eighty cells with its fortune only where it states one, `xianji` refused |
 
 ## The rest of the record
 

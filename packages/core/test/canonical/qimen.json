@@ -155,6 +155,7 @@
         "centreTravel": "stay",
         "centreStem": "centre",
         "dingTomb": "gen",
+        "stemPairs": "shared",
         "shensha": "xieji"
       },
       "lunar": {
@@ -2022,6 +2023,7 @@
       "centreTravel": "stay",
       "centreStem": "centre",
       "dingTomb": "gen",
+      "stemPairs": "shared",
       "shensha": "xieji"
     }
   },
@@ -2180,6 +2182,7 @@
         "centreTravel": "stay",
         "centreStem": "centre",
         "dingTomb": "gen",
+        "stemPairs": "shared",
         "shensha": "xieji"
       },
       "lunar": {
@@ -4040,6 +4043,7 @@
       "centreTravel": "stay",
       "centreStem": "centre",
       "dingTomb": "gen",
+      "stemPairs": "shared",
       "shensha": "xieji"
     }
   }

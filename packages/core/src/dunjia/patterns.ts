@@ -29,7 +29,74 @@ export type PatternId =
   | 'qinglongtaozou'
   | 'baihuchangkuang'
   | 'qinglongyaoming'
-  | 'riqiruwu';
+  | 'riqiruwu'
+  // The rest of 《金函玉鏡》's table, which only `stemPairs: jinhan` lays. See
+  // `JINHAN_PAIRS`.
+  | 'qinglongheling'
+  | 'guirenruyu'
+  | 'zhifufeigong'
+  | 'qinglongzhezu'
+  | 'qinglongrutianlao'
+  | 'qinglonghuagai'
+  | 'liyinhaiyang'
+  | 'riqifuyin'
+  | 'qiyishunsui'
+  | 'qiyixiangzuo'
+  | 'riqibeixing'
+  | 'riqirudi'
+  | 'huagaifengxingguan'
+  | 'riyuebingxing'
+  | 'yueqibeishi'
+  | 'yueqizhuque'
+  | 'dabeiruxing'
+  | 'moushijiucheng'
+  | 'huorutianluo'
+  | 'huagaibeishi'
+  | 'qinglongzhuanguang'
+  | 'rendunjige'
+  | 'xingsuiyuezhuan'
+  | 'qirutaiyin'
+  | 'huorugouchen'
+  | 'nianyuerishige'
+  | 'zhuqueruyu'
+  | 'wushenhuhe'
+  | 'quanyuqinglong'
+  | 'mushen'
+  | 'huobeidihu'
+  | 'zhuquerumu'
+  | 'dihufenggui'
+  | 'ligefanming'
+  | 'youhunrumu'
+  | 'diwanggaozhang'
+  | 'dixingxuanwu'
+  | 'taibaitianyifugong'
+  | 'taibaipengxing'
+  | 'tingtingzhige'
+  | 'baihugange'
+  | 'kunlongbeishang'
+  | 'ganhebeishi'
+  | 'yushendeqi'
+  | 'ruyuzixing'
+  | 'baihuchuli'
+  | 'fuyintianting'
+  | 'xiongsheruyu'
+  | 'tianlaohuagai'
+  | 'xiaoshehualong'
+  | 'xiaosheriqi'
+  | 'shuisheruhuo'
+  | 'ganheshexing'
+  | 'xiongsherumu'
+  | 'taibaiqinshe'
+  | 'tengshexiangchan'
+  | 'sherudiluo'
+  | 'younvjianyin'
+  | 'tianyihuihe'
+  | 'huagaifengxing'
+  | 'huagaidihu'
+  | 'taibairuwang'
+  | 'wanggaitianlao'
+  | 'fujiantengshe'
+  | 'tianwangsizhang';
 
 /**
  * The fortune a configuration is transmitted with (吉凶).
@@ -81,7 +148,7 @@ export const VALENCE: Record<ValenceId, Valence> = {
  * 凶格落空則凶不成, a baleful configuration fallen into the void does not
  * come off either. Two transmitted halves of one rule, not two schools.
  */
-const CONFIGURATIONS: Record<PatternId, { hanzi: string; pinyin: string; valence: ValenceId }> = {
+const CONFIGURATIONS: Record<PatternId, { hanzi: string; pinyin: string; valence?: ValenceId }> = {
   kongwang: { hanzi: '空亡', pinyin: 'kōngwáng', valence: 'jixiong' },
   rumu: { hanzi: '入墓', pinyin: 'rùmù', valence: 'xiong' },
   menpo: { hanzi: '門迫', pinyin: 'ménpò', valence: 'xiong' },
@@ -103,6 +170,75 @@ const CONFIGURATIONS: Record<PatternId, { hanzi: string; pinyin: string; valence
   baihuchangkuang: { hanzi: '白虎猖狂', pinyin: 'báihǔchāngkuáng', valence: 'xiong' },
   qinglongyaoming: { hanzi: '青龍耀明', pinyin: 'qīnglóngyàomíng', valence: 'ji' },
   riqiruwu: { hanzi: '日奇入霧', pinyin: 'rìqírùwù', valence: 'xiong' },
+  // 《金函玉鏡》卷二 十干克應訣, as `stemPairs: jinhan` lays it. A fortune is
+  // here only where that text gives one outright, without a condition on the
+  // gate or on who asks — 「公私皆不利」, 「百事不可謀，為凶」, 「吉格」 — and
+  // the rest carry none, as 杜 on a 太乙 board carries none.
+  qinglongheling: { hanzi: '青龍合靈', pinyin: 'qīnglónghélíng' },
+  guirenruyu: { hanzi: '貴人入獄', pinyin: 'guìrénrùyù', valence: 'xiong' },
+  zhifufeigong: { hanzi: '值符飛宮', pinyin: 'zhífúfēigōng', valence: 'xiong' },
+  qinglongzhezu: { hanzi: '青龍折足', pinyin: 'qīnglóngzhézú' },
+  qinglongrutianlao: { hanzi: '青龍入天牢', pinyin: 'qīnglóngrùtiānláo', valence: 'xiong' },
+  qinglonghuagai: { hanzi: '青龍華蓋', pinyin: 'qīnglónghuágài' },
+  liyinhaiyang: { hanzi: '利陰害陽', pinyin: 'lìyīnhàiyáng' },
+  riqifuyin: { hanzi: '日奇伏吟', pinyin: 'rìqífúyín' },
+  qiyishunsui: { hanzi: '奇儀順遂', pinyin: 'qíyíshùnsuì' },
+  qiyixiangzuo: { hanzi: '奇儀相佐', pinyin: 'qíyíxiāngzuǒ', valence: 'ji' },
+  riqibeixing: { hanzi: '日奇被刑', pinyin: 'rìqíbèixíng' },
+  riqirudi: { hanzi: '日奇入地', pinyin: 'rìqírùdì' },
+  huagaifengxingguan: { hanzi: '華蓋逢星官', pinyin: 'huágàiféngxīngguān' },
+  riyuebingxing: { hanzi: '日月並行', pinyin: 'rìyuèbìngxíng', valence: 'ji' },
+  yueqibeishi: { hanzi: '月奇悖師', pinyin: 'yuèqíbèishī' },
+  yueqizhuque: { hanzi: '月奇朱雀', pinyin: 'yuèqízhūquè' },
+  dabeiruxing: { hanzi: '大悖入刑', pinyin: 'dàbèirùxíng' },
+  moushijiucheng: { hanzi: '謀事就成', pinyin: 'móushìjiùchéng' },
+  huorutianluo: { hanzi: '火入天羅', pinyin: 'huǒrùtiānluó' },
+  huagaibeishi: { hanzi: '華蓋悖師', pinyin: 'huágàibèishī' },
+  qinglongzhuanguang: { hanzi: '青龍轉光', pinyin: 'qīnglóngzhuǎnguāng' },
+  rendunjige: { hanzi: '人遁吉格', pinyin: 'réndùnjígé', valence: 'ji' },
+  xingsuiyuezhuan: { hanzi: '星隨月轉', pinyin: 'xīngsuíyuèzhuǎn' },
+  qirutaiyin: { hanzi: '奇入太陰', pinyin: 'qírùtàiyīn' },
+  huorugouchen: { hanzi: '火入勾陳', pinyin: 'huǒrùgōuchén' },
+  nianyuerishige: { hanzi: '年月日時格', pinyin: 'niányuèrìshígé' },
+  zhuqueruyu: { hanzi: '朱雀入獄', pinyin: 'zhūquèrùyù' },
+  wushenhuhe: { hanzi: '五神互合', pinyin: 'wǔshénhùhé' },
+  quanyuqinglong: { hanzi: '犬遇青龍', pinyin: 'quǎnyùqīnglóng' },
+  mushen: { hanzi: '墓神', pinyin: 'mùshén' },
+  huobeidihu: { hanzi: '火悖地戶', pinyin: 'huǒbèidìhù' },
+  zhuquerumu: { hanzi: '朱雀入墓', pinyin: 'zhūquèrùmù' },
+  dihufenggui: { hanzi: '地戶逢鬼', pinyin: 'dìhùféngguǐ' },
+  ligefanming: { hanzi: '利格返名', pinyin: 'lìgéfǎnmíng' },
+  youhunrumu: { hanzi: '遊魂入墓', pinyin: 'yóuhúnrùmù' },
+  diwanggaozhang: { hanzi: '地網高張', pinyin: 'dìwǎnggāozhāng' },
+  dixingxuanwu: { hanzi: '地刑玄武', pinyin: 'dìxíngxuánwǔ' },
+  taibaitianyifugong: { hanzi: '太白天乙伏宮', pinyin: 'tàibáitiānyǐfúgōng', valence: 'xiong' },
+  taibaipengxing: { hanzi: '太白蓬星', pinyin: 'tàibáipéngxīng' },
+  tingtingzhige: { hanzi: '亭亭之格', pinyin: 'tíngtíngzhīgé' },
+  baihugange: { hanzi: '白虎干格', pinyin: 'báihǔgāngé' },
+  kunlongbeishang: { hanzi: '困龍被傷', pinyin: 'kùnlóngbèishāng' },
+  ganhebeishi: { hanzi: '干合悖師', pinyin: 'gānhébèishī' },
+  yushendeqi: { hanzi: '獄神得奇', pinyin: 'yùshéndéqí' },
+  ruyuzixing: { hanzi: '入獄自刑', pinyin: 'rùyùzìxíng' },
+  baihuchuli: { hanzi: '白虎出力', pinyin: 'báihǔchūlì' },
+  fuyintianting: { hanzi: '伏吟天庭', pinyin: 'fúyíntiāntíng' },
+  xiongsheruyu: { hanzi: '凶蛇入獄', pinyin: 'xiōngshérùyù' },
+  tianlaohuagai: { hanzi: '天牢華蓋', pinyin: 'tiānláohuágài' },
+  xiaoshehualong: { hanzi: '小蛇化龍', pinyin: 'xiǎoshéhuàlóng' },
+  xiaosheriqi: { hanzi: '小蛇日奇', pinyin: 'xiǎoshérìqí' },
+  shuisheruhuo: { hanzi: '水蛇入火', pinyin: 'shuǐshérùhuǒ' },
+  ganheshexing: { hanzi: '干合蛇刑', pinyin: 'gānhéshéxíng' },
+  xiongsherumu: { hanzi: '凶蛇入墓', pinyin: 'xiōngshérùmù' },
+  taibaiqinshe: { hanzi: '太白擒蛇', pinyin: 'tàibáiqínshé' },
+  tengshexiangchan: { hanzi: '螣蛇相纏', pinyin: 'téngshéxiāngchán' },
+  sherudiluo: { hanzi: '蛇入地羅', pinyin: 'shérùdìluó' },
+  younvjianyin: { hanzi: '幼女奸淫', pinyin: 'yòunǚjiānyín' },
+  tianyihuihe: { hanzi: '天乙會合', pinyin: 'tiānyǐhuìhé', valence: 'ji' },
+  huagaifengxing: { hanzi: '華蓋逢星', pinyin: 'huágàiféngxīng' },
+  huagaidihu: { hanzi: '華蓋地戶', pinyin: 'huágàidìhù' },
+  taibairuwang: { hanzi: '太白入網', pinyin: 'tàibáirùwǎng' },
+  wanggaitianlao: { hanzi: '網蓋天牢', pinyin: 'wǎnggàitiānláo' },
+  fujiantengshe: { hanzi: '復見螣蛇', pinyin: 'fùjiànténgshé' },
+  tianwangsizhang: { hanzi: '天網四張', pinyin: 'tiānwǎngsìzhāng' },
 };
 
 /**
@@ -125,8 +261,9 @@ export const VALENCE_IDS: readonly ValenceId[] = Object.keys(VALENCE) as Valence
  * that reading the fortune off an occurrence means reading it off a chart
  * that may not have one.
  */
-export function valenceOf(id: PatternId): Valence {
-  return VALENCE[CONFIGURATIONS[id].valence];
+export function valenceOf(id: PatternId): Valence | undefined {
+  const valence = CONFIGURATIONS[id].valence;
+  return valence === undefined ? undefined : VALENCE[valence];
 }
 
 /**
@@ -156,8 +293,11 @@ export interface Pattern {
   hanzi: string;
   /** The name said aloud, e.g. `qīnglóngfǎnshǒu`. */
   pinyin: string;
-  /** 吉, 凶, or both, as the sources hand it down. */
-  valence: Valence;
+  /**
+   * 吉, 凶, or both, as the sources hand it down. Absent where the text that
+   * names the configuration gives it no fortune outright.
+   */
+  valence?: Valence;
   /** The palace it occurs in. Absent when it is a property of the whole chart. */
   palace?: number;
   /** Which layer it was found on, where more than one can carry it. */
@@ -170,7 +310,7 @@ function mark(
   rest: Omit<Pattern, 'id' | 'hanzi' | 'pinyin' | 'valence'> = {},
 ): Pattern {
   const { hanzi, pinyin, valence } = CONFIGURATIONS[id];
-  return { id, hanzi, pinyin, valence: VALENCE[valence], ...rest };
+  return { id, hanzi, pinyin, ...(valence === undefined ? {} : { valence: VALENCE[valence] }), ...rest };
 }
 
 /** The palace facing another across the board. The centre faces nothing. */
@@ -227,6 +367,8 @@ export interface PatternInput {
   hourGanzhi: Ganzhi;
   /** Which palace 丁 is buried in. The caller's to say; nothing here assumes one. */
   dingTomb: ChartOptions['dingTomb'];
+  /** Which table of 十干克應 is laid. The caller's to say, as `dingTomb` is. */
+  stemPairs: ChartOptions['stemPairs'];
   /**
    * The centre's stem where it rides the heaven plate with its host's, under
    * `centreStem: host`. A second stem over that palace, read like the first.
@@ -246,10 +388,9 @@ export interface PatternInput {
  *
  * Not implemented: 三奇得使. The sources consulted do not agree on which
  * pairings count, and a rule guessed at would be worse than a rule absent.
- * Nor is the whole of 十干克應 — fourteen of its eighty-one cells are here and
- * the rest await a second *independent* source, the printed table and the
- * modern tables that carry all eighty-one having turned out to be one line;
- * see `STEM_PAIRS` and `docs/sources.md`.
+ * 十干克應 is laid by the table `stemPairs` names: by default the fourteen
+ * cells the lines name alike, under `jinhan` 《金函玉鏡》's whole table bar one
+ * cell. See `STEM_PAIRS`, `JINHAN_PAIRS` and `docs/sources.md`.
  */
 export function findPatterns(input: PatternInput): Pattern[] {
   const found: Pattern[] = [];
@@ -261,7 +402,7 @@ export function findPatterns(input: PatternInput): Pattern[] {
   found.push(...tombs(above, input.dingTomb));
   found.push(...oppressedGates(input.gates));
   found.push(...struckInstruments(input.earth));
-  found.push(...stemPairs(input.earth, above));
+  found.push(...stemPairs(input.earth, above, input.stemPairs));
   found.push(...chanting(input.stars, input.gates));
 
   if (unmetHour(input.dayStem, input.hourGanzhi)) {
@@ -347,10 +488,12 @@ function struckInstruments(earth: ByPalace<Stem>): Pattern[] {
  * 十干克應 — the stem above standing over the stem below.
  *
  * The whole table has eighty-one cells, nine stems over nine, and this holds
- * fourteen of them. **The rest are absent on purpose**, and the reason is the
- * project's standing one: a pairing enters here only when at least two
- * independent sources name it the same way. Which sources, and what each of
- * these was checked against one by one, is in `docs/sources.md`.
+ * the fourteen that `stemPairs: shared` lays: the cells that at least two
+ * independent lines name the same way. **The rest are not here because the
+ * lines name them differently**, so a whole table is one line's and is laid
+ * only when a caller asks for that line — `JINHAN_PAIRS` below. Which
+ * sources, and what each of these was checked against one by one, is in
+ * `docs/sources.md`.
  *
  * Two things the cross-check turned up, both worth knowing before adding to
  * this table:
@@ -408,7 +551,99 @@ const STEM_PAIRS: readonly { above: string; below: string; id: PatternId }[] = [
   { above: 'yi', below: 'ji', id: 'riqiruwu' },
 ];
 
-function stemPairs(earth: ByPalace<Stem>, overhead: { palace: number; stem: Stem }[]): Pattern[] {
+/**
+ * The rest of 《金函玉鏡》卷二 十干克應訣, under `stemPairs: jinhan`.
+ *
+ * That text names all eighty-one cells. Fourteen are `STEM_PAIRS` above, laid
+ * under both values and named as that table names them: at 癸 over 丁 the
+ * text prints 妖矯 where the verse has 夭矯, which is a variant of one
+ * character and not a second name. Sixty-six are here. **戊 over 戊 is not**:
+ * the text calls it 伏吟, and this board already reports a 伏吟 that is every
+ * star or gate at home, so a stem-pair 伏吟 would print the same two
+ * characters meaning two things. Its own sentence gives it no fortune either,
+ * 「凡事閉塞靜守為吉」.
+ *
+ * Read off the plate, 中州古籍 1996 上冊 pp. 30–32, simplified type converted
+ * here to the traditional the engine prints. Two readings were settled on the
+ * page: 乙 over 癸 is 華蓋逢星官, and 己 over 乙 is 墓神, the edition
+ * stopping the sentence there — 「加乙名為墓神。不明，地戶蓬星」. `docs/sources.md`
+ * § 十干克應 has the argument, the fortunes and the lines it was set against.
+ */
+const JINHAN_PAIRS: readonly { above: string; below: string; id: PatternId }[] = [
+  { above: 'wu', below: 'yi', id: 'qinglongheling' },
+  { above: 'wu', below: 'ji', id: 'guirenruyu' },
+  { above: 'wu', below: 'geng', id: 'zhifufeigong' },
+  { above: 'wu', below: 'xin', id: 'qinglongzhezu' },
+  { above: 'wu', below: 'ren', id: 'qinglongrutianlao' },
+  { above: 'wu', below: 'gui', id: 'qinglonghuagai' },
+  { above: 'yi', below: 'wu', id: 'liyinhaiyang' },
+  { above: 'yi', below: 'yi', id: 'riqifuyin' },
+  { above: 'yi', below: 'bing', id: 'qiyishunsui' },
+  { above: 'yi', below: 'ding', id: 'qiyixiangzuo' },
+  { above: 'yi', below: 'geng', id: 'riqibeixing' },
+  { above: 'yi', below: 'ren', id: 'riqirudi' },
+  { above: 'yi', below: 'gui', id: 'huagaifengxingguan' },
+  { above: 'bing', below: 'yi', id: 'riyuebingxing' },
+  { above: 'bing', below: 'bing', id: 'yueqibeishi' },
+  { above: 'bing', below: 'ding', id: 'yueqizhuque' },
+  { above: 'bing', below: 'ji', id: 'dabeiruxing' },
+  { above: 'bing', below: 'xin', id: 'moushijiucheng' },
+  { above: 'bing', below: 'ren', id: 'huorutianluo' },
+  { above: 'bing', below: 'gui', id: 'huagaibeishi' },
+  { above: 'ding', below: 'wu', id: 'qinglongzhuanguang' },
+  { above: 'ding', below: 'yi', id: 'rendunjige' },
+  { above: 'ding', below: 'bing', id: 'xingsuiyuezhuan' },
+  { above: 'ding', below: 'ding', id: 'qirutaiyin' },
+  { above: 'ding', below: 'ji', id: 'huorugouchen' },
+  { above: 'ding', below: 'geng', id: 'nianyuerishige' },
+  { above: 'ding', below: 'xin', id: 'zhuqueruyu' },
+  { above: 'ding', below: 'ren', id: 'wushenhuhe' },
+  { above: 'ji', below: 'wu', id: 'quanyuqinglong' },
+  { above: 'ji', below: 'yi', id: 'mushen' },
+  { above: 'ji', below: 'bing', id: 'huobeidihu' },
+  { above: 'ji', below: 'ding', id: 'zhuquerumu' },
+  { above: 'ji', below: 'ji', id: 'dihufenggui' },
+  { above: 'ji', below: 'geng', id: 'ligefanming' },
+  { above: 'ji', below: 'xin', id: 'youhunrumu' },
+  { above: 'ji', below: 'ren', id: 'diwanggaozhang' },
+  { above: 'ji', below: 'gui', id: 'dixingxuanwu' },
+  { above: 'geng', below: 'wu', id: 'taibaitianyifugong' },
+  { above: 'geng', below: 'yi', id: 'taibaipengxing' },
+  { above: 'geng', below: 'ding', id: 'tingtingzhige' },
+  { above: 'geng', below: 'xin', id: 'baihugange' },
+  { above: 'xin', below: 'wu', id: 'kunlongbeishang' },
+  { above: 'xin', below: 'bing', id: 'ganhebeishi' },
+  { above: 'xin', below: 'ding', id: 'yushendeqi' },
+  { above: 'xin', below: 'ji', id: 'ruyuzixing' },
+  { above: 'xin', below: 'geng', id: 'baihuchuli' },
+  { above: 'xin', below: 'xin', id: 'fuyintianting' },
+  { above: 'xin', below: 'ren', id: 'xiongsheruyu' },
+  { above: 'xin', below: 'gui', id: 'tianlaohuagai' },
+  { above: 'ren', below: 'wu', id: 'xiaoshehualong' },
+  { above: 'ren', below: 'yi', id: 'xiaosheriqi' },
+  { above: 'ren', below: 'bing', id: 'shuisheruhuo' },
+  { above: 'ren', below: 'ding', id: 'ganheshexing' },
+  { above: 'ren', below: 'ji', id: 'xiongsherumu' },
+  { above: 'ren', below: 'geng', id: 'taibaiqinshe' },
+  { above: 'ren', below: 'xin', id: 'tengshexiangchan' },
+  { above: 'ren', below: 'ren', id: 'sherudiluo' },
+  { above: 'ren', below: 'gui', id: 'younvjianyin' },
+  { above: 'gui', below: 'wu', id: 'tianyihuihe' },
+  { above: 'gui', below: 'yi', id: 'huagaifengxing' },
+  { above: 'gui', below: 'bing', id: 'huagaibeishi' },
+  { above: 'gui', below: 'ji', id: 'huagaidihu' },
+  { above: 'gui', below: 'geng', id: 'taibairuwang' },
+  { above: 'gui', below: 'xin', id: 'wanggaitianlao' },
+  { above: 'gui', below: 'ren', id: 'fujiantengshe' },
+  { above: 'gui', below: 'gui', id: 'tianwangsizhang' },
+];
+
+function stemPairs(
+  earth: ByPalace<Stem>,
+  overhead: { palace: number; stem: Stem }[],
+  table: ChartOptions['stemPairs'],
+): Pattern[] {
+  const pairs = table === 'jinhan' ? [...STEM_PAIRS, ...JINHAN_PAIRS] : STEM_PAIRS;
   const found: Pattern[] = [];
   for (const { palace: number, stem: above } of overhead) {
     // The centre is left out: the turn neither moves it nor reaches it, so
@@ -418,7 +653,7 @@ function stemPairs(earth: ByPalace<Stem>, overhead: { palace: number; stem: Stem
     // ju that seats 庚 there, one hour in each, all term long.
     if (number === 5) continue;
     const below = earth[number] as Stem;
-    for (const pair of STEM_PAIRS) {
+    for (const pair of pairs) {
       if (above.id === pair.above && below.id === pair.below) {
         found.push(mark(pair.id, { palace: number }));
       }
