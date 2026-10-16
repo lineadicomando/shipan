@@ -54,7 +54,8 @@ the page (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which
 register a name stands in while a pointer rests on it; no other section
 holds its board that way yet. The rest are of 2026-10-16: the 大全's 局 tables
 read, then `spirits: huwu` and `centreStem` built, then this file brought up
-to date. `main` is 79 commits ahead of `origin/main`, whose last commit is
+to date, then the 大全's 遁甲通明鈐 read, which built nothing.
+`main` is 79 commits ahead of `origin/main`, whose last commit is
 of 2026-10-06. Nothing since that day is pushed and the branch is not
 merged; both are the user's call. `npm test`, `npm run typecheck` and `npm
 run build` pass on 2026-10-16, after a full build. One test is skipped in a
@@ -66,8 +67,12 @@ is not a failure.
 1. **Build the eye of 大遊 as a parameter** — decided on 2026-10-14 and not
    yet built; the paragraph below says what it asks. It is the one decided
    thing left undone.
-2. **Or read on**: § 2 line 3, the 大全's 遁甲通明鈐. Lines 1 and 2 have
-   nothing left on this shelf.
+2. **Or read on**: § 2 line 3, the 大全's 奇門仙機 from sheet 347. Lines 1
+   and 2 have nothing left on this shelf.
+3. **Or decide whether the 大全 is named for 置閏**: its 遁甲通明鈐 states
+   `method: zhirun` with `leap: solstice` and works 1246 block for block, so
+   it could join the 統宗 in `heldBy` for both values. That changes what a
+   置閏 board says of itself, so it waits on the user's word.
 
 What `board-pointer` does next is not decided: whether the other sections
 hold their boards the way the Qi Men section does, and whether a pointer does
@@ -148,6 +153,10 @@ reading and each build has its section in `docs/sources.md`, its row in
   two recorded divergences are named by a text. **Built** on the user's word
   of the same day: `spirits: huwu` and `centreStem`, with `heavenLodged` on
   the palace the centre's stem rides to, held by `qimendaquan` (0.25.0).
+  Then the 大全's 卷十一–十三, 遁甲通明鈐, read for its 起例: 置閏 with the
+  block before the solstices, the leap month refused in words, 淳祐六年
+  reproduced block for block, and a 卷十二 that intercalates at ten where its
+  卷十三 does at nine. Nothing built, no rung moved.
 
 **Owed a look by the user, and not blocking**: catalog strings written
 without the `reader-copy` skill. On 2026-10-15: `label.taiyipattern.du`,
@@ -204,7 +213,11 @@ section an art.
 **Recorded, with no parameter** — a divergence the register carries and
 nothing exposes. Only those with something to wait on:
 
-- **奇門.** Which of the two stems in 坤 a stem coming to it stands over:
+- **奇門.** The 置閏 pin at ten days: the 大全's 遁甲通明鈐 卷十二 states
+  「凡過超十日則閏」 and works a case dated here to 1265–66 that lets nine
+  pass, where its 卷十三 and `MAX_CHAOSHEN` intercalate at nine. A text
+  stating ten as its own rule, with nothing against it inside the same juan.
+  Which of the two stems in 坤 a stem coming to it stands over:
   the 符應經 marks a 格 by the centre's, one case, and a second witness names
   it. The heaven plate's side of the same question is `centreStem` since
   2026-10-16. 三奇得使: the
@@ -256,7 +269,7 @@ stand first because a decision waits on each.
 |---|---|---|
 | 1 | **A dated 日計 board, or the 盈差 of the day explained**: what `ji: riji` waits on | not in the 《統宗》 where it was looked for: 卷三十六 to p. 392, 卷四 p. 41 and 卷十八 whole were read on 2026-10-11 and every board is entered by its 局, and the 144 drawn boards of 卷三十二–三十五, read on 2026-10-15, are entered by their 局 and five 干支 with no year. Left in that work: the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
 | 2 | the lists of 上和 · 次和 · 下和, which three prints give three ways, and which count is read against 太乙's palace | the notes of the 《統宗》卷三十一 立成 were read on 2026-10-15: its table labels every count by its digits, ungraded, and none against 太乙's palace — so it answers neither question. A copy of the 金鏡 that is not the 四庫's, or a work quoting 王希明's lists: none held. The 金鏡 卷二 leaves 9–10, the 《統宗》卷六 pp. 54–56 and 盧央 pp. 477–479 were read on 2026-10-11 |
-| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets at 600 dpi, two book-pages to a sheet, located by the 版心: its 目錄, 卷一, 卷五–十 and 卷二十五 are read, 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. **The eighteen 局 tables of 卷五–十 were read whole on 2026-10-16** (sheets 114–268): they state no 起例 beyond the ordinary 三元 table and are a bench for the hour board, `docs/sources.md` § "《御定奇門大全》卷五–十, the eighteen 局 hour by hour". Ten of its other works are unread; the next is 遁甲通明鈐, 卷十一–十三 from sheet 270 |
+| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets at 600 dpi, two book-pages to a sheet, located by the 版心: its 目錄, 卷一, 卷五–十 and 卷二十五 are read, 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. **The eighteen 局 tables of 卷五–十 were read whole on 2026-10-16** (sheets 114–268): they state no 起例 beyond the ordinary 三元 table and are a bench for the hour board, `docs/sources.md` § "《御定奇門大全》卷五–十, the eighteen 局 hour by hour". **遁甲通明鈐, 卷十一–十三, was read for its 起例 the same day** (sheets 269–345): it is 置閏, which the engine computes, with two pins a day apart, § "《御定奇門大全》卷十一–十三, 遁甲通明鈐". Nine of its other works are unread; the next is 奇門仙機, 卷十四–十六 from sheet 347 |
 | 4 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
 | 5 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 

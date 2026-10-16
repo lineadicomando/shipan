@@ -2270,7 +2270,7 @@ engine.
 **What the six juan are, settled on the 版心.** 奇門大全卷四終 closes sheet
 113. 御定奇門大全卷之五 opens sheet 114 under the running title 奇門秘纂, and
 not the 景祐秘纂 of 卷一–四. 卷之十終 closes sheet 268, and 遁甲通明鈐 begins
-at sheet 270. There are three 局 to a juan: 卷五 holds 陽遁一–三, 卷六 四–六,
+on the left page of sheet 269. There are three 局 to a juan: 卷五 holds 陽遁一–三, 卷六 四–六,
 卷七 七–九, 卷八 陰遁九–七, 卷九 六–四 and 卷十 三–一. So the 目錄's 卷五–十
 is right, and the 卷四–十二 of an earlier pass is not. The 版心 names the wrong 局 twice — leaf 七 of
 陽遁第二局 reads 第一局, and sheet 262 reads 陰遁第二局 among the hours of the
@@ -2368,6 +2368,154 @@ The same tables lay the rest of the default board — `plate: zhuan`,
 `centreLodging: kun`, `earthPlate: yuan` — so the work is named among their
 holders too. The row of the heaven plate in `sources.tsv` stays on rung 1 with
 the table among its checks, and each new value has a row of its own.
+
+Last checked 2026-10-16.
+
+### 《御定奇門大全》卷十一–十三, 遁甲通明鈐: 置閏 stated twice, a day apart
+
+Read 2026-10-16 on the plate, sheets 269–345, at 160 to 170 dpi with crops at
+400 where one character decided something. Every passage quoted here was read
+on the page. The 起例 passages were read whole: 卷十一 leaves 1–6, 卷十二 from
+sheet 304 to 309 and 315 to 317, 卷十三 from 318 to 324. Everything else was
+read on contact sheets for its headings, and nothing is quoted from it.
+
+**What the three juan are, settled on the 版心.** 御定奇門大全卷之十一 · 遁甲通明鈐
+opens on the left page of sheet 269, a sheet earlier than the line on the shelf
+had it, and the 版心 reads 遁甲通明鈐 and the leaf from there. 卷十一終 is on
+sheet 292, 卷之十二 opens on 293, 卷十二終 is on 317, 卷之十三 opens on 318, and
+卷十三終 is on 345. 卷十三 closes on a 驪山老人跋, which credits the art to the
+legend and names nobody. 卷十四, 奇門仙機, follows from sheet 347.
+
+**What the three juan hold.** 卷十一 opens on the 起例: a verse placing 上中下 by
+the 符頭's branch, 「甲己為頭要君知，子午卯酉上元奇，寅申巳亥為中局，辰戌丑未下元
+推」, then the ordinary 三元 table of the twenty-four terms, and a board laid on
+the palm for 陽遁一局 甲子日庚午時. Its stars and gates are the turned plate's,
+although it calls the gates 「飛布於天盤」, and the centre is
+「天禽五中央飛寄坤二」. From sheet 275 to the end of the juan it lists 應:
+omens by gate, by stem, by branch and by palace. 卷十二 carries the 路應 of the
+gates, then a run of 起例 from sheet 305, then the 九星 and 六儀. 卷十三 opens on
+奇門超接正閏秘旨 with dated cases, adds an 起神正閏篇, and goes on to the
+直使, the 三奇得使, 玉女守門 and the 格, through 伏吟 and 反吟.
+
+**The rule both juan state is 置閏 with the block at the solstices.** 卷十二,
+sheet 306, gives it as arithmetic: 「按歷書法，一年二十四氣，一氣十五日，五日一局，
+是一氣三局，而一局五日也」. The repeated block is defined: 「閏奇者，非閏月，乃重疊
+用奇也」. 卷十三, sheet 322, gives its ground: 「遁奇之有閏，與歲之有閏，名雖同而理
+則異…積日之餘以閏月，奇之閏積時之餘以閏日」. Sheet 321 states the placement, and
+then denies the other one in words:
+
+> 凡是閏奇只在夏至前用之，永不在冬至後，亦不在閏月之例內。若然淳祐六年丙午夏至節
+> 四月立例，其他閏奇月不閏奇也。凡閏奇只在芒種大雪之前。
+
+The leap block stands before a solstice and is not set by the leap month. The
+case it has just worked falls in a 閏四月 only by coincidence. That is
+`leap: solstice` against `leap: runyue`, from inside a thirteenth-century
+case, and it is the earliest sentence on this shelf to say that the leap month
+does not place the block.
+
+**卷十三 works the rule by date, and this engine reproduces every block.**
+Sheets 320–321, 淳祐六年 (1246):
+
+| the text | `method: zhirun` here |
+|---|---|
+| 閏四月初一日己丑至初五日癸巳 小滿下局 | 閏4/1 己丑 to 閏4/5 癸巳, 小滿 下元 |
+| 初六日甲午 超先用芒種上局 | 閏4/6 甲午, 芒種 上元 |
+| 十一日己亥至十五日癸卯 先借中局 | 閏4/11 己亥, 芒種 中元 |
+| 十六日甲辰至二十日戊申 芒種下局 | 閏4/16 甲辰, 芒種 下元 |
+| 二十一日己酉至二十五日癸丑 用芒種上局 | 閏4/21 己酉, 芒種 上元 **閏** |
+| 二十六日甲寅至五月初一日戊午 再用芒種中局 | 閏4/26 甲寅, 芒種 中元 **閏** |
+| 初二日己未至初六日癸亥 用芒種下局，此閏奇之終也 | 5/2 己未, 芒種 下元 **閏** |
+| 五月初七日甲子 入夏至節陰局 | 5/7 甲子, 夏至 上元 |
+| 五月初一日戊午 方交夏至節 | 夏至 on 5/1 戊午 |
+
+Then 淳祐七年 (1247): 甲子 on 十一月十五日 takes 冬至上局 two days ahead of a
+冬至 on 丙寅 the 十七日, 「其大雪節為甲己所拘，所以不用有閏」. 己酉 opens 清明
+上局 with 丁未 and 戊申 still 春分下元, and 己酉 on 六月二十八日 is 正受 for
+立秋. Every block is this engine's. Its 芒種 falls a day before the text's, its
+清明 two days before, and its 立秋 a day after. As with the 符應經's cases below,
+that is the Sun's longitude against a calendar of the day, and the rule reads
+whole days from the 符頭.
+
+**The 1246 leap fires at nine days**: 己酉 stands nine days before a 戊午
+夏至, which is `MAX_CHAOSHEN` = 8 exactly. The engine intercalates at nine,
+and so does this case.
+
+**卷十二 states ten, and works a case that needs ten.** Sheet 316, under
+超神接氣閏奇起例:
+
+> 凡過超十日則閏，每於芒種大雪二節內驗超日多少定之。閏者重使前一節局也。假令癸未年
+> 十一月初十日大雪節庚申，則超過十一日，合於此置閏，十四日甲子仍舊用大雪節，謂之
+> 閏奇，直至二十九日己卯方是冬至上局。
+
+The 癸未 is a 假令, and it is one. No 癸未 year from 1003 to 1903 has 大雪 on
+庚申 on 十一月初十 in this engine, and its 「第二年十二月初六日庚辰冬至」 puts a
+solstice in a twelfth month. Its arithmetic holds all the same: 超 eleven and
+接 four make fifteen, and the next year's 冬至 is 庚辰, one day after the 己卯
+head.
+
+Sheets 307–308 work two more cases as 「如某年」, and these do date. One has 冬至
+on 庚子 on 十一月初六 and 甲午 opening 冬至上局 six days ahead. The other has
+大雪 on 庚寅 on 十一月初二, 冬至 on 乙巳 on the 十七日, and 甲午 to 戊申 repeating
+大雪. Searched from 400 to 1912 with a day's latitude in the lunar date, each
+pattern turns up twice. **The one pair of consecutive years is 1265
+and 1266**, 咸淳元年 and 二年, nineteen years after the 淳祐 cases. In each year
+the text's tenth month runs a day off this engine's, which is again a calendar
+of the day.
+
+| the text | `method: zhirun` here |
+|---|---|
+| 1265: 十月二十四日己丑 大雪下局 | 己丑, 大雪 下元 |
+| 1265: 二十九日甲午 當起冬至上局, 初六日交節 | 甲午, 冬至 上元; 冬至 on 庚子 |
+| 1266: 十月二十一日己卯 已超大雪上局 | 己卯, **小雪** 上元 |
+| 1266: 初一日己丑 大雪下局 | 己丑, **小雪** 下元 |
+| 1266: 甲午 to 戊申 閏奇 | 甲午, **大雪** 上元, not repeated |
+| 1266: 二十一日己酉 方用冬至節上奇局 | 己酉, 冬至 上元 |
+
+The 1266 rows part by one block, and the cause is the summer before them. The
+夏至 of 1266 fell on 癸卯 with 甲午 nine days ahead of it, under the true
+term and under a mean one alike. This engine intercalated at 芒種 that summer
+and the case cannot have: its 己卯 is 大雪上局, which is where the blocks stand
+if nothing was repeated in the summer. **So the case lets nine pass and
+intercalates at eleven**, which is 卷十二's own 「凡過超十日則閏」. And the summer
+of 1266 is the summer of 1246 to the day, with 芒種 eight days ahead and 夏至
+nine. 卷十三 intercalates there.
+
+**So one compilation's two juan part on the pin by a day**, as the 統宗 and the
+《奇門探索錄》 part on how to count their nine. 卷十三's dated case and its
+「近十日」 are at nine. 卷十二's sentence and its datable case are at ten or
+eleven. 卷十三 also says 「蓋超神十日，正受十日，接氣十日，而奇閏之理足」, which
+is round. Three things in the 1266 reading are inferred and not printed: the
+year, from a search; the calendar of 1266, which a search only approximates;
+and that no block was repeated in the summer, from one 「已超大雪上局」. It is
+recorded as a reading and moves nothing.
+
+**卷十二 uses 折局補局 for something else.** The phrase that names `method:
+chaibu` elsewhere here names the wait after a leap block: 「如閏奇之後下局未
+滿，已交夏至之節，仍待下局已終，方用正局符頭以接其氣，所謂折局補局也」. Searching
+the shelf for 拆補 will find this passage, and it describes 置閏.
+
+**Whose this is, and what it is not.** No author is named. The 淳祐 dates put
+卷十三's cases in the 1240s and the datable 卷十二 case in the 1260s. The
+《遁甲符應經》's copy in this same compilation carries 淳祐 cases too (§ "《遁甲符應經》
+in three copies"). The two share 淳祐七年's 清明 and 立秋, part by a day on the
+清明's lunar date, and work different 淳祐六年 cases with different sentences. So
+they are not one passage. Whether they are one source is not established, and
+both are matter the 大全's recension adds in the same century. For that reason
+the work is entered on the 置閏 row as a further statement with its cases. The
+rung does not move: the row is one text that checks itself, and this work
+cannot be counted as a second independent one while its two juan disagree on
+the pin and its cases may share a source with another work in the same
+compilation.
+
+**What the file was bought for is answered, and the answer is 置閏.** Its 起例
+is the 符頭 table in 卷十一 and the 置閏 in 卷十二 and 卷十三, and this engine
+computes both. The pin at ten is a reading the engine does not compute. It is
+recorded and not declared: a divergence in a corpus is not yet a parameter.
+
+**Small things, left as read.** 卷十一 leaf 1 prints 「甲己還生申」 for the 五子遁's
+甲. 卷十二 names the three 元 of a 節 by its terms in reverse for the yin half:
+「冬至為天元，小寒為地元，大寒為人元，夏至為人元，小暑為地元，大暑為天元，陰陽順逆類倣此」.
+And 卷十二 says 「當用冬至閏月者」 two leaves after saying 「閏奇者，非閏月」.
 
 Last checked 2026-10-16.
 
