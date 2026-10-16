@@ -2890,6 +2890,9 @@ print here and the second held as a transcription; and K. What B, H, 道音文�
 they buy is the one a second copy always buys — where they agree with J the
 character was not misread.
 
+**B's 庚 row is the exception, read since.** Three of its 太白 names are a
+second classical line's, the 奇門仙機's; see "奇門仙機: two more tables" below.
+
 **That is a demotion of four sources and a promotion of the section**, which is
 the ordinary shape of an arrival that only confirms: nothing this file ships
 moves because of it, and what any of it is worth is now sayable.
@@ -3192,6 +3195,63 @@ this and is where 戊 + 丙 青龍返首 comes from.
 naming the same formation at two addresses is a disagreement and not a
 displacement — neither block is out of order around it — and it is recorded
 rather than resolved, since no cell of this engine's twelve stands on either.
+
+### 奇門仙機: two more tables, one a cousin of J and one a line of its own
+
+Read 2026-10-16. 《御定奇門大全》卷十四–十六, 奇門仙機, sheets 357–416, carries the
+eighty-one cells twice. Four readers transcribed them to a written brief into
+`texts/qimen/daquan-juan14-16-stems/`, J was transcribed beside them from its
+pp. 30–32, and `compare.tsv` there sets the three side by side. The cells this
+section turns on were read again on the plate at 300 dpi.
+
+**卷十五 is the table in verse.** Under 丁干互用, sheets 368–378, each cell is a
+quatrain of seven-character lines opening on its name: 「六庚加癸名天格，占路出遠
+囚疾厄」. 甲 stands for the 戊 of its decade, as in J, and 六戊 is set apart as
+「六戊在局」. **It is J's line in another state, and not J.** Fourteen of its
+names are J's abbreviated in order — 鳥跌穴, 龍返首, 勃入刑, 奇太陰, 朱雀獄,
+青龍蓋, 逢星 — and about nine more are J's rearranged: 干格虎 for 白虎干格,
+格亭亭 for 亭亭之格, 墓魂井 for 遊魂入墓, 四網張 for 天網四張. Names J has and
+the verse of the 煙波釣叟歌 does not, shared, are what makes it one line. The
+other fifty-odd cells part from J, so this is not a copy of it either.
+
+**The 干論 of 卷十四 and 卷十六 is a line of its own.** Under each stem's 干論, an
+entry 「X加Y」 carries a name in two columns of small characters, and the name is
+built on an image of the stem above: 戊 is always 青龍, 乙 玉兔 or 奇, 丁 玉女, 己
+明堂, 庚 太白, 辛 白虎 or 天庭, 壬 天牢, 癸 華蓋 or 天網. It runs over palaces as
+well as stems — 乙加震 玉兔乘風, 丁加坤 玉女遊地戶 — and the 戊干論 is empty,
+「論加官干斷見前篇」. It names J's name at six cells only, and they are the
+verse's formations and J's 青龍耀明: 龍逃走, 白虎猖狂, 朱雀投江, 螣蛇妖嬌,
+太白入熒, 青龍燿明.
+
+**What it does to the shipped fourteen.**
+
+| above + below | shipped | 卷十五, J's line | 干論 |
+|---|---|---|---|
+| 戊 + 丁 | 青龍耀明 | no name: 「龍更臨門值門休生貴榮」 | **青龍燿明** |
+| 乙 + 己 | 日奇入霧 | **奇入墓** | 日入地鄉, 三奇得使, 地遁格 |
+| 庚 + 庚 | 太白同宮 | 伏格 | 太白重刑 |
+| 庚 + 壬 | 上格 | **蛇格** | 太白退位 |
+| 庚 + 癸 | 大格 | 天格, printed 名天格 | 太白刑融 |
+| 庚 + 己 | 刑格 | 刑格 | 太白大刑 |
+
+The other eight are named as shipped by at least one of the two. **青龍耀明 has
+a line outside J's**, which is the fifth line for it. **日奇入霧 has none**: J's
+own line in verse calls that cell 奇入墓, and the shipped name stands on J and
+Y as before. 庚 over 壬 is a fifth naming beside 上格, 小格, 太白退位 and the
+verse's split. Nothing here moves a value, and no cell of the sixty-seven is
+seconded by a line independent of J.
+
+**B's 太白 renaming of the 庚 row has a source.** This section calls B the most
+corrupted state of J's line, and lists its 庚 cells as renamings. Two of them
+are the 干論's names exactly: 太白大刑 at 庚 over 己 and 太白退位 at 庚 over 壬.
+B's 太白冲刑 at 庚 over 癸 stands beside the 干論's 太白刑融. So B's 庚 row
+is not corruption alone. It carries a second classical line into J's table,
+and what that buys is the provenance of three cells.
+
+**What is not established.** The 干論's names were transcribed and the cells
+above read on the plate; the rest of both tables stands at the transcription's
+mark and is a finding aid. Whether the 干論 is older than J's line, and where
+the 大全 took either table from, nothing in the three juan says.
 
 ### The sixty-seven, and what the collation did to the reason they are refused
 

@@ -56,7 +56,7 @@ holds its board that way yet. The rest are of 2026-10-16: the 大全's 局 table
 read, then `spirits: huwu` and `centreStem` built, then this file brought up
 to date, then the 大全's 遁甲通明鈐 read, then the 大全 named a holder of
 置閏, then the eye of the 大遊 built as `dayouEye` (0.26.0), then the
-大全's 奇門仙機 surveyed.
+大全's 奇門仙機 surveyed, then its two stem tables read against 十干克應.
 `main` is 79 commits ahead of `origin/main`, whose last commit is
 of 2026-10-06. Nothing since that day is pushed and the branch is not
 merged; both are the user's call. `npm test`, `npm run typecheck` and `npm
@@ -69,8 +69,6 @@ is not a failure.
 1. **Read on**: § 2 line 3, the 大全's 先天要論 from sheet 420, 卷十七–二十四.
    Lines 1 and 2 have nothing left on this shelf. Nothing decided is left
    unbuilt.
-2. **Or read the 仙機's stem table against 十干克應**: 卷十四–十六 set each
-   「X加Y」 with a name, and the register counts six sources without it.
 
 What `board-pointer` does next is not decided: whether the other sections
 hold their boards the way the Qi Men section does, and whether a pointer does
