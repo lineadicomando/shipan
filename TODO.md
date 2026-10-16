@@ -31,9 +31,12 @@ tiling, and a digit is read beside whatever checks it — a sum, a rate, a
 table already held. **A table too long for one reading** — a 立成, a run of
 drawn boards — is transcribed by readers working to a written brief, a page
 range each, into TSV; the cells that disagree with the engine are then
-looked at on the plate before anything is written up. Two precedents, each
-with its brief and its comparison script: `texts/taiyi/tongzong-juan31-notes/`
-and `texts/taiyi/tongzong-juan32-35-boards/`. A transcriber normalises
+looked at on the plate before anything is written up. Three precedents, each
+with its brief and its comparison script: `texts/taiyi/tongzong-juan31-notes/`,
+`texts/taiyi/tongzong-juan32-35-boards/` and, for prose rather than cells,
+`texts/qimen/daquan-juan05-10-hours/` — whose `engine.mjs` lays all 1080 hours
+of the 時家 board off the engine's step functions under several parameter
+values, and is the generator to reuse for any table of 局 and hours. A transcriber normalises
 titles it believes misprinted, so a title out of sequence is checked on the
 plate too.
 
@@ -44,13 +47,19 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-16
 
-Version 0.25.0. `main` is 79 commits ahead of `origin/main`, whose last
-commit is of 2026-10-06, and the branch `board-pointer` is two more ahead of
-`main`, with this session's work on top of them; nothing since 2026-10-06 is
-pushed, and pushing is the user's call. `npm test`, `npm run typecheck` and
-`npm run build` pass on 2026-10-16, after a full build. One test is skipped
-in a tree that was never built, the installed bin run through its symlink,
-and it is not a failure.
+Version 0.25.0, on the branch `board-pointer`, which is checked out and
+ahead of `main` (`git log main..board-pointer`). Its first two commits are
+of 2026-10-15 and are surface work: the Qi Men section holds its board in
+the page (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which
+register a name stands in while a pointer rests on it; no other section
+holds its board that way yet. The rest are of 2026-10-16: the 大全's 局 tables
+read, then `spirits: huwu` and `centreStem` built, then this file brought up
+to date. `main` is 79 commits ahead of `origin/main`, whose last commit is
+of 2026-10-06. Nothing since that day is pushed and the branch is not
+merged; both are the user's call. `npm test`, `npm run typecheck` and `npm
+run build` pass on 2026-10-16, after a full build. One test is skipped in a
+tree that was never built, the installed bin run through its symlink, and it
+is not a failure.
 
 **What to do next, in the order the user has been taking it:**
 
@@ -59,6 +68,10 @@ and it is not a failure.
    thing left undone.
 2. **Or read on**: § 2 line 3, the 大全's 遁甲通明鈐. Lines 1 and 2 have
    nothing left on this shelf.
+
+What `board-pointer` does next is not decided: whether the other sections
+hold their boards the way the Qi Men section does, and whether a pointer does
+more than name the register.
 
 **Decided on 2026-10-14, by the user's word, and not yet built**: the eye of
 大遊, `dayou.wenchang`, becomes a parameter under the board's name, with the
@@ -71,7 +84,7 @@ Neither work dates a seat. The second value has attribution and
 transcription, so it is implemented and not refused. Its 1520 figure is the
 one numeral to hold it to, and it is held by its residue on 188 against the
 金鏡's 積年, not by a seat. The name is settled when it is built, after
-`epoch: jinjing`, the board's one value named for a work so far. It goes in
+`epoch: jinjing`, the board's one implemented value named for a work so far. It goes in
 with the `new-feature` skill: `packages/core/src/parameters.ts` declares it,
 the MCP schemas and `apps/web/src/lib/parameters.ts` list it, the
 canonical 太乙 fixture moves only if the default does, and it lands in § 1
@@ -275,7 +288,8 @@ before what it says" is the four commands.
 two 六壬 cases disagree, a 涉害 and a 返吟, and each is settled by reading the
 passage its citation names. `--uncovered` lists the shapes with no adapter.
 `texts/shelf.py crosswalk --moves` and `--gaps` are leads, never findings.
-《御定奇門真詮》 is 1080 hour boards with no 起例: a bench, if anything.
+《御定奇門真詮》 is 1080 hour boards with no 起例: a bench, if anything, and
+the 大全's `engine.mjs` already lays the 1080 it would be held to.
 
 **Where the state is kept**: `docs/sources.md` what is read,
 `docs/provenance.tsv` what is held, `texts/README.md` what each file is.
@@ -307,6 +321,11 @@ prose, which a third language pays for and derived text does not. →
   by tests: the MCP schemas in `packages/mcp/src/` and
   `apps/web/src/lib/parameters.ts`. A value added to the engine fails those
   suites until it is added there.
+- **`lodged` and `heavenLodged` are not on the drawing**, which shows one
+  stem to a plate in each palace. The transcript prints both as a line under
+  the plates and the table of palaces in its cell; a reader of the drawing
+  alone does not see that 坤 hosts the centre, or that under
+  `centreStem: host` the centre's stem rides to a second palace.
 - **`accord` and `ding` are not on the drawing.** The transcript and the
   section print both; `packages/plate` was left as it was, its
   `PlateTaiyiSide` without `accord` and its `PlateTaiyi` without `ding`. 杜
