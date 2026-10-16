@@ -245,7 +245,11 @@ rather than the code. **It is a fourth arrangement and the engine has none like
 it**: `fixed` stands 勾陳 and 朱雀 in both dun, `baihu` stands 白虎 fifth and 勾陳
 sixth, and neither is this. A runnable reference is not a witness — what it
 would take to declare a value is a text, and this names none — so what changes
-here is one sentence and nothing in `parameters.ts`.
+here is one sentence and nothing in `parameters.ts`. **A text has since been
+read that prints it**, on 2026-10-16: the 《御定奇門大全》's hour tables name
+玄武 and 白虎 on five yang hours at the seats this reference gives them, with no
+attribution beyond the compilation's — § "《御定奇門大全》卷五–十, the eighteen 局
+hour by hour".
 
 **And the corrected `chaibu` is confirmed against it.** The same twelve charts:
 the ju agrees on **12 of 12** under `chaibu`, on 1 under `maoshan` and on 6
@@ -1781,9 +1785,13 @@ been:
 - **The leap block at any of the eight 節**, which asks for a judgement
   between a surplus and a shortfall.
 - **Which stem a star carries off 坤** when the centre is lodged there, on
-  which 《奇門探索錄》 quarrels with itself.
+  which 《奇門探索錄》 quarrels with itself. Since 2026-10-16 the 《御定奇門大全》's
+  hour tables carry the centre's stem off with 坤's in 37 claims of 41, without
+  comment; whose those tables are is not stated.
 - **白虎 fifth and 玄武 sixth in both dun**, which one runnable reference
-  prints and no text is named for.
+  prints. Since 2026-10-16 the same tables print it on five yang hours, each
+  read on the plate, and name 勾陳 and 朱雀 nowhere. § "《御定奇門大全》卷五–十,
+  the eighteen 局 hour by hour".
 
 ### The 折衷 on the plate, chapter by chapter
 
@@ -2248,6 +2256,104 @@ camp. 卷下: what each of the ten stems on the hour suits, 六甲下營法, 三
 stem; the two were not reconciled.
 
 Last checked 2026-10-08.
+
+### 《御定奇門大全》卷五–十, the eighteen 局 hour by hour
+
+Read 2026-10-16 on the plate, sheets 114–268, two book-pages to the sheet and
+the right one first. Eight readers transcribed a range of sheets each, every
+hour entry verbatim and every other line in full, and every passage quoted
+here was read again on the plate. The transcription is a finding aid,
+`texts/qimen/daquan-juan05-10-hours/`, with the scripts that hold it to the
+engine.
+
+**What the six juan are, settled on the 版心.** 奇門大全卷四終 closes sheet
+113. 御定奇門大全卷之五 opens sheet 114 under the running title 奇門秘纂, and
+not the 景祐秘纂 of 卷一–四. 卷之十終 closes sheet 268, and 遁甲通明鈐 begins
+at sheet 270. There are three 局 to a juan: 卷五 holds 陽遁一–三, 卷六 四–六,
+卷七 七–九, 卷八 陰遁九–七, 卷九 六–四 and 卷十 三–一. So the 目錄's 卷五–十
+is right, and the 卷四–十二 of an earlier pass is not. The 版心 names the wrong 局 twice — leaf 七 of
+陽遁第二局 reads 第一局, and sheet 262 reads 陰遁第二局 among the hours of the
+第一 — and the wrong dun once, on sheet 214. Where it does, the hours decide.
+
+**What a 局 holds.** A drawn board comes first, then the sixty hours under five
+day-group headings, 甲己日 to 戊癸日, one entry to an hour. An entry names
+where the three 奇 stand on the heaven plate, the gate over each and often the
+spirit with it, and the 格 they make — 陽遁一局 乙丑, 「星反開休門迫生門會兌丁半吉
+丙奇合休在坤上」. Of the 1080 hours, 1075 are printed. Some fifteen are cut
+under the wrong 干支, and the sequence corrects them.
+
+**What it states of the 起例, and why that is no variant.** No prose in the six
+juan says how a 局 is reached. Six boards say which 元 they serve: under the
+titles of 陰遁一 to 六 stand four terms apiece — 陰遁一局, 大暑中 處暑上 秋分中
+大雪下 — which is twenty-four of the thirty-six yin seats, every one of them
+the ordinary table. The yang boards and 陰遁七–九 carry the title alone. That
+table is what `method: chaibu`, `maoshan` and `zhirun` share: it names a 元
+by its term and says nothing of how the 元 is found. So the 起例 variant the
+file was bought for is not in these juan either, and with 卷一 that makes seven
+juan read without it.
+
+**What the hours were held to.** The engine's own step functions lay all 1080
+hours under every value a table keyed by 局 alone can tell apart:
+`centreLodging: kun`, `dun` and `dunni`, `earthPlate: yuan` and `xun`, and the
+three values of `spirits`. `bajie` and `siyu` lodge by the term, and one 局
+serves terms with different hosts, so no table keyed by 局 can be either of
+them. The positions are taken from each entry in the print's own shapes —
+丙開在兌, 丁生臨兌, 丙奇合休在坤, 會太陰. 197 entries say nothing those shapes
+catch.
+
+| claim | agreeing under `kun`, `yuan` |
+|---|---|
+| a 奇 on the heaven plate | 1380 of 1504, and 37 of 37 more below |
+| the gate over it | 1363 of 1552 |
+| the spirit with it | 91 of 101 |
+| the 值符's palace | 13 of 14 |
+
+Counted only where two values part, `kun` is alone right 216 times and `dun`
+3 times; `kun` 251 and `dunni` once; `yuan` 1017 and `xun` 9. **So the table is
+laid on the turned plate of one 元, with the centre lodged in 坤 in both dun**,
+which is the board this engine lays by default. The tenth that disagrees does
+not gather where a rule would. The gate is right 153 times in 179 where the
+值使's count falls on the centre, and 1210 in 1373 where it does not. Where the
+disagreement does gather, at the foot of 陰遁九局 on sheets 198–199, the plate
+reads as transcribed — 甲寅, 「天輔又伏吟丙傷在震…乙杜在巽」, the 值符 the
+engine's and the stems another board's — so the fault is the print's.
+
+**Two divergences that had no text now have one.**
+
+- **The centre's stem leaves with its host.** Six 局 put a 奇 in the fifth
+  palace: 乙 in 陽六 and 陰四, 丙 in 陽七 and 陰三, 丁 in 陽八 and 陰二. The
+  print sets that 奇 wherever 坤's own stem goes. 陽遁六局 乙丑 reads
+  「乙景在巽」: 坤's 癸 has come to 巽, and the 乙 lodged with it has come too.
+  This engine leaves the 乙 in the centre. Of 41 claims about the centre's
+  stem, 37 are the carried reading, in five of the six 局 and 25 of them in
+  陽六; four fit neither reading, and none puts the stem in the centre, a
+  palace the print never names. It is the reading 《奇門探索錄》卷三 makes
+  twice and its own 夾注 disputes, and 《遁甲符應經》 makes on the earth plate
+  (both above). Here it is made in nearly every hour it can be, and without
+  comment.
+- **白虎 and 玄武 on the yang boards.** Five entries name a middle-pair spirit
+  on a yang board, and each was read on the plate: 陽遁四局 甲子
+  「丁休在火入水池玄武加臨」, 己巳 「丁生在震門迫玄武」, 壬午 「乙休在兌…會玄武」
+  and 戊戌 「乙休雖在乾會白虎」, and 陽遁五局 己巳 「丙生雖離上會元武」. Stem
+  and gate are the engine's in all five. 玄武 stands at the sixth seat and
+  白虎 at the fifth, where `spirits: dun` and `fixed` print 朱雀 and 勾陳 and
+  `baihu` prints 勾陳 sixth. 勾陳 and 朱雀 occur nowhere in the transcription,
+  which locates and establishes nothing. Of the two yin entries, 陰遁五局 癸亥
+  puts 玄武 sixth, as every value does, and 陰遁四局 甲子 puts it fifth. It is
+  the fourth arrangement the runnable reference above prints, 白虎 fifth and
+  玄武 sixth in both dun, now in a text.
+
+**What it does not settle is whose these tables are.** The juan are headed
+奇門秘纂 inside a compilation that gives itself three titles on its own leaves
+and a 永樂 preface, while its 卷一 works a 萬曆 year (above), and nothing in
+the six juan names an author or a line. A value wants attribution and
+transcription. These two have transcription, 1075 entries of it, and an
+attribution to a compilation's running title; whether that declares either is
+a decision, and it was not taken. Nothing in `parameters.ts` moves, and the
+row of the heaven plate in `sources.tsv` stays on rung 1 with the table among
+its checks.
+
+Last checked 2026-10-16.
 
 ### 《紀氏奇門秘書仕學備餘》, where the states read from the star are a second arrangement
 
