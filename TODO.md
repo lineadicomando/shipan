@@ -54,7 +54,8 @@ the page (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which
 register a name stands in while a pointer rests on it; no other section
 holds its board that way yet. The rest are of 2026-10-16: the 大全's 局 tables
 read, then `spirits: huwu` and `centreStem` built, then this file brought up
-to date, then the 大全's 遁甲通明鈐 read, which built nothing.
+to date, then the 大全's 遁甲通明鈐 read, then the 大全 named a holder of
+置閏.
 `main` is 79 commits ahead of `origin/main`, whose last commit is
 of 2026-10-06. Nothing since that day is pushed and the branch is not
 merged; both are the user's call. `npm test`, `npm run typecheck` and `npm
@@ -69,10 +70,6 @@ is not a failure.
    thing left undone.
 2. **Or read on**: § 2 line 3, the 大全's 奇門仙機 from sheet 347. Lines 1
    and 2 have nothing left on this shelf.
-3. **Or decide whether the 大全 is named for 置閏**: its 遁甲通明鈐 states
-   `method: zhirun` with `leap: solstice` and works 1246 block for block, so
-   it could join the 統宗 in `heldBy` for both values. That changes what a
-   置閏 board says of itself, so it waits on the user's word.
 
 What `board-pointer` does next is not decided: whether the other sections
 hold their boards the way the Qi Men section does, and whether a pointer does
@@ -156,7 +153,9 @@ reading and each build has its section in `docs/sources.md`, its row in
   Then the 大全's 卷十一–十三, 遁甲通明鈐, read for its 起例: 置閏 with the
   block before the solstices, the leap month refused in words, 淳祐六年
   reproduced block for block, and a 卷十二 that intercalates at ten where its
-  卷十三 does at nine. Nothing built, no rung moved.
+  卷十三 does at nine. No rung moved. **Declared** on the user's word of the
+  same day: the 大全 beside the 統宗 in `heldBy` for `method: zhirun` and
+  `leap: solstice`, which no surface prints and no answer changes for.
 
 **Owed a look by the user, and not blocking**: catalog strings written
 without the `reader-copy` skill. On 2026-10-15: `label.taiyipattern.du`,

@@ -239,7 +239,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.method.zhirun',
         note: 'cli.note.method',
         implemented: true,
-        heldBy: ['tongzong'],
+        heldBy: ['tongzong', 'qimendaquan'],
       },
       {
         id: 'maoshan',
@@ -557,7 +557,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     board: 'qimen',
     family: 'shijia',
     values: [
-      { id: 'solstice', implemented: true, heldBy: ['tongzong'] },
+      { id: 'solstice', implemented: true, heldBy: ['tongzong', 'qimendaquan'] },
       {
         id: 'runyue',
         name: { hanzi: '閏月', pinyin: 'rùnyuè' },

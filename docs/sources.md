@@ -1714,6 +1714,7 @@ under the naming of the spirits alone.
 | `method: maoshan` | 劉文元《奇門啟悟》 (2008), 唐頤《圖解奇門遁甲大全》 (2009) | each states the rule complete with its two edge cases; the credit to the 茅山道士 is theirs and travels as theirs |
 | `spirits: fixed` | 《御定奇門寶鑑》 | the eight standing in both dun |
 | `spirits: baihu` | 《奇門遁甲全局》 | three yang plates with 白虎 fifth and 勾陳 sixth |
+| `method: zhirun`, `leap: solstice` | 《御定奇門大全》, beside the 統宗 | its 遁甲通明鈐 states 置閏 with the block before the solstices, refuses the leap month as what places it, and works 淳祐六年 through a 閏芒種 block for block; added 2026-10-16, on the user's word |
 | `spirits: huwu`, `centreStem: host` | 《御定奇門大全》 | its 卷五–十 lay the eighteen 局 hour by hour, naming 白虎 and 玄武 on yang boards and setting the centre's stem where 坤's goes; added 2026-10-16, with the same tables beside the 統宗 for `plate: zhuan`, `centreLodging: kun` and `earthPlate: yuan` |
 | `centreTravel: stay` | 《御定奇門寶鑑》, 《奇門遁甲統宗》 | the 值符 and 值使 read at 坤; the second in 「甲辰在中宮，寄於坤二，天禽為符，死門為使」 |
 | `centreTravel: travel` | 《奇門遁甲金鏡寶鑑》 | 「符使不必寄於二」 |
@@ -2501,7 +2502,10 @@ in three copies"). The two share 淳祐七年's 清明 and 立秋, part by a day
 清明's lunar date, and work different 淳祐六年 cases with different sentences. So
 they are not one passage. Whether they are one source is not established, and
 both are matter the 大全's recension adds in the same century. For that reason
-the work is entered on the 置閏 row as a further statement with its cases. The
+the work is entered on the 置閏 row as a further statement with its cases, and
+on the user's word of the same day it is named beside the 統宗 as a holder of
+`method: zhirun` and `leap: solstice`: attribution and transcription are what
+a holder needs, and its 卷十三 has both. The
 rung does not move: the row is one text that checks itself, and this work
 cannot be counted as a second independent one while its two juan disagree on
 the pin and its cases may share a source with another work in the same

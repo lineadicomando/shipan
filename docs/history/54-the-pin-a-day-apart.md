@@ -48,6 +48,17 @@ the register. The 1266 reading rests on a year found by search and on a
 calendar of the day the search only approximates, which `docs/sources.md`
 says. Nine works of the 大全 are unread, the next of them 奇門仙機.
 
+## Then, on the user's word
+
+The same day the user named the 大全 beside the 統宗 in `heldBy` for `method:
+zhirun` and `leap: solstice`. Its 卷十三 has what a holder needs, attribution
+to the work that prints it and a case transcribed. The attribution is data in
+`parameters.ts` and nothing prints it: the line naming the schools writes its
+holders in the catalogs, and 置閏's names none. The sentence on whether a text
+lays a board's whole combination cannot change either, since the 統宗 holds
+both values already and the 大全 does not hold `centreTravel` or `dingTomb`.
+
 ## The version
 
-Unchanged. The session ships nothing, and no address answers differently.
+Unchanged. Nothing ships that an address answers for, and no address answers
+differently.
