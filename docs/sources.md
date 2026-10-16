@@ -2385,7 +2385,7 @@ opens on the left page of sheet 269, a sheet earlier than the line on the shelf
 had it, and the 版心 reads 遁甲通明鈐 and the leaf from there. 卷十一終 is on
 sheet 292, 卷之十二 opens on 293, 卷十二終 is on 317, 卷之十三 opens on 318, and
 卷十三終 is on 345. 卷十三 closes on a 驪山老人跋, which credits the art to the
-legend and names nobody. 卷十四, 奇門仙機, follows from sheet 347.
+legend and names nobody. 卷十四, 奇門仙機, opens on the left page of sheet 346.
 
 **What the three juan hold.** 卷十一 opens on the 起例: a verse placing 上中下 by
 the 符頭's branch, 「甲己為頭要君知，子午卯酉上元奇，寅申巳亥為中局，辰戌丑未下元
@@ -2520,6 +2520,46 @@ recorded and not declared: a divergence in a corpus is not yet a parameter.
 甲. 卷十二 names the three 元 of a 節 by its terms in reverse for the yin half:
 「冬至為天元，小寒為地元，大寒為人元，夏至為人元，小暑為地元，大暑為天元，陰陽順逆類倣此」.
 And 卷十二 says 「當用冬至閏月者」 two leaves after saying 「閏奇者，非閏月」.
+
+Last checked 2026-10-16.
+
+### 《御定奇門大全》卷十四–十七: 奇門仙機, and the verse that opens 先天要論
+
+Surveyed 2026-10-16 on contact sheets at 50 dpi, sheets 346–418, and read on
+the plate at 170 dpi where a 起例 could stand: the opening of 卷十四 on sheet
+346 and the opening of 卷十七 on sheets 417–419. Nothing else was read.
+
+**What 奇門仙機 is, on the 版心.** 御定奇門大全卷之十四 opens on the left page
+of sheet 346 under the running title 仙機. 卷十四終 is on 367, 卷之十五 opens
+on 367, 卷十五終 is on 392, 卷之十六 opens on 392, and 卷十六終 is on 416.
+卷之十七, 先天要論, opens on the left page of 417.
+
+**It holds no 起例.** 卷十四 opens on 三奇靜應, 「經曰陽遁順行前取用，陰遁逆行
+后取用」, which is when an omen arrives and not how a 局 is found. The rest of
+the three juan, by their headings, is omens: the three 奇 by palace, the stems
+of an hour, 十二支神, 三奇吉凶斷 and 六儀吉凶斷 in 卷十五, and a 干論 for each
+stem in 卷十四 and 卷十六.
+
+**It does hold a table of one stem over another.** 卷十五 runs 六甲加甲 to
+六癸加癸 in prose, and 卷十四 and 卷十六 set each 「X加Y」 with a two-character
+name in small characters beside it: 乙加辛 青龍逃走 and 丙加庚 熒惑入白 are
+legible on the contact sheets. That is the shape of 十干克應, whose register
+counts six sources and does not name this one. **So the arrival reopens that
+question and settles nothing in it.** The table was located and not read, and
+a contact sheet at 50 dpi is a finding aid.
+
+**先天要論 opens on 置閏.** 卷十七 leaf 2, the 八十老人騎竹馬歌, after a 賦:
+
+> 二至定陰陽，甲子三元節氣藏，二至須尋真甲子，符頭方合古軒王。五日一候，六十時
+> 三候為氣，無移易，甲己上元為候始，數數餘即閏，二至宜。冬至陽遁起一宮…
+
+with 「子午卯酉為上元」 in small characters beside 甲己上元. It goes on to the
+ordinary table of the twenty-four terms. That is the rule `method: zhirun`
+computes, with the leap at the solstices, and no number of days is named.
+Seven juan of 先天要論 remain, to about sheet 588.
+
+**So the file still shows no 起例 variant.** Fifteen juan of the 大全 are now
+read for one, and the two that state a 起例 at length state 置閏.
 
 Last checked 2026-10-16.
 

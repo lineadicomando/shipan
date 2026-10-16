@@ -88,6 +88,7 @@ phase.
 | 53 | [The eighteen 局 hour by hour](53-the-eighteen-ju-hour-by-hour.md) | done — the 《御定奇門大全》's 卷五–十 settled on the 版心 and read whole: no 起例 beyond the ordinary table, 1075 hour entries holding `centreLodging: kun` and `earthPlate: yuan`; and two divergences with no text declared on them, `spirits: huwu` and `centreStem: host` |
 | 54 | [The pin a day apart](54-the-pin-a-day-apart.md) | done — 遁甲通明鈐, 卷十一–十三 of the 大全, read for its 起例: 置閏 with the block before the solstices and the leap month refused in words, 淳祐六年 reproduced block for block at the engine's pin of nine, and a 卷十二 whose rule and datable case intercalate at ten; the 大全 named beside the 統宗 as a holder of 置閏 |
 | 55 | [The eye of the 大遊](55-the-eye-of-the-dayou.md) | done — `dayouEye`, the eye of the 大遊 by the 金鏡's count or by the 《統宗》's, the second held by its own figure for 1520; the agreement between them measured at one year in nine, where the register had one in eight |
+| 56 | [The 仙機 surveyed](56-the-xianji-surveyed.md) | done — 奇門仙機, 卷十四–十六 of the 大全, holds no 起例 and does hold a table of one stem over another, a lead for 十干克應; 先天要論 opens on a verse stating 置閏 at the solstices |
 
 ## The rest of the record
 

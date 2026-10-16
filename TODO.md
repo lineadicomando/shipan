@@ -55,7 +55,8 @@ register a name stands in while a pointer rests on it; no other section
 holds its board that way yet. The rest are of 2026-10-16: the 大全's 局 tables
 read, then `spirits: huwu` and `centreStem` built, then this file brought up
 to date, then the 大全's 遁甲通明鈐 read, then the 大全 named a holder of
-置閏, then the eye of the 大遊 built as `dayouEye` (0.26.0).
+置閏, then the eye of the 大遊 built as `dayouEye` (0.26.0), then the
+大全's 奇門仙機 surveyed.
 `main` is 79 commits ahead of `origin/main`, whose last commit is
 of 2026-10-06. Nothing since that day is pushed and the branch is not
 merged; both are the user's call. `npm test`, `npm run typecheck` and `npm
@@ -65,8 +66,11 @@ is not a failure.
 
 **What to do next, in the order the user has been taking it:**
 
-1. **Read on**: § 2 line 3, the 大全's 奇門仙機 from sheet 347. Lines 1
-   and 2 have nothing left on this shelf. Nothing decided is left unbuilt.
+1. **Read on**: § 2 line 3, the 大全's 先天要論 from sheet 420, 卷十七–二十四.
+   Lines 1 and 2 have nothing left on this shelf. Nothing decided is left
+   unbuilt.
+2. **Or read the 仙機's stem table against 十干克應**: 卷十四–十六 set each
+   「X加Y」 with a name, and the register counts six sources without it.
 
 What `board-pointer` does next is not decided: whether the other sections
 hold their boards the way the Qi Men section does, and whether a pointer does
@@ -256,7 +260,7 @@ stand first because a decision waits on each.
 |---|---|---|
 | 1 | **A dated 日計 board, or the 盈差 of the day explained**: what `ji: riji` waits on | not in the 《統宗》 where it was looked for: 卷三十六 to p. 392, 卷四 p. 41 and 卷十八 whole were read on 2026-10-11 and every board is entered by its 局, and the 144 drawn boards of 卷三十二–三十五, read on 2026-10-15, are entered by their 局 and five 干支 with no year. Left in that work: the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
 | 2 | the lists of 上和 · 次和 · 下和, which three prints give three ways, and which count is read against 太乙's palace | the notes of the 《統宗》卷三十一 立成 were read on 2026-10-15: its table labels every count by its digits, ungraded, and none against 太乙's palace — so it answers neither question. A copy of the 金鏡 that is not the 四庫's, or a work quoting 王希明's lists: none held. The 金鏡 卷二 leaves 9–10, the 《統宗》卷六 pp. 54–56 and 盧央 pp. 477–479 were read on 2026-10-11 |
-| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets at 600 dpi, two book-pages to a sheet, located by the 版心: its 目錄, 卷一, 卷五–十 and 卷二十五 are read, 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. **The eighteen 局 tables of 卷五–十 were read whole on 2026-10-16** (sheets 114–268): they state no 起例 beyond the ordinary 三元 table and are a bench for the hour board, `docs/sources.md` § "《御定奇門大全》卷五–十, the eighteen 局 hour by hour". **遁甲通明鈐, 卷十一–十三, was read for its 起例 the same day** (sheets 269–345): it is 置閏, which the engine computes, with two pins a day apart, § "《御定奇門大全》卷十一–十三, 遁甲通明鈐". Nine of its other works are unread; the next is 奇門仙機, 卷十四–十六 from sheet 347 |
+| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets at 600 dpi, two book-pages to a sheet, located by the 版心: its 目錄, 卷一, 卷五–十 and 卷二十五 are read, 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. **The eighteen 局 tables of 卷五–十 were read whole on 2026-10-16** (sheets 114–268): they state no 起例 beyond the ordinary 三元 table and are a bench for the hour board, `docs/sources.md` § "《御定奇門大全》卷五–十, the eighteen 局 hour by hour". **遁甲通明鈐, 卷十一–十三, was read for its 起例 the same day** (sheets 269–345): it is 置閏, which the engine computes, with two pins a day apart, § "《御定奇門大全》卷十一–十三, 遁甲通明鈐". **奇門仙機, 卷十四–十六, surveyed the same day** (sheets 346–416): omens and a table of one stem over another, no 起例. **先天要論 opens on 置閏** (卷十七, sheets 417–419), § "《御定奇門大全》卷十四–十七". Eight of its works are unread past their first leaves; the next is the rest of 先天要論, to about sheet 588 |
 | 4 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
 | 5 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 
