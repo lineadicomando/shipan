@@ -153,6 +153,7 @@
         "strengths": "season",
         "earth": "quarters",
         "centreTravel": "stay",
+        "centreStem": "centre",
         "dingTomb": "gen",
         "shensha": "xieji"
       },
@@ -2019,6 +2020,7 @@
       "strengths": "season",
       "earth": "quarters",
       "centreTravel": "stay",
+      "centreStem": "centre",
       "dingTomb": "gen",
       "shensha": "xieji"
     }
@@ -2176,6 +2178,7 @@
         "strengths": "season",
         "earth": "quarters",
         "centreTravel": "stay",
+        "centreStem": "centre",
         "dingTomb": "gen",
         "shensha": "xieji"
       },
@@ -4035,6 +4038,7 @@
       "strengths": "season",
       "earth": "quarters",
       "centreTravel": "stay",
+      "centreStem": "centre",
       "dingTomb": "gen",
       "shensha": "xieji"
     }

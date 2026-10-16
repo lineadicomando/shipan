@@ -167,6 +167,16 @@ describe('draw_qimen_chart, for a board of the day', () => {
 });
 
 describe('compute_qimen_chart', () => {
+  it('carries the centre\'s stem with its host when centre_stem asks for it', async () => {
+    // 陽遁六局 乙丑: the hour tables of 《御定奇門大全》 read 「乙景在巽」.
+    const at = { ...BEIJING, date: '2026-01-30', time: '02:00', lang: 'en' };
+    const host = await call('compute_qimen_chart', { ...at, centre_stem: 'host' });
+    const centre = await call('compute_qimen_chart', at);
+
+    expect(host).toContain('has moved with the stem of the palace it lodges in, and stands above 4');
+    expect(centre).not.toContain('has moved with the stem of the palace it lodges in');
+  });
+
   it('lays the board of a day when that family is asked for, in a shape of its own', async () => {
     const text = await call('compute_qimen_chart', { ...BEIJING, system: 'rijia', lang: 'en' });
 

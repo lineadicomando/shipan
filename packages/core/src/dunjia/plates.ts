@@ -161,16 +161,18 @@ const SPIRITS_BAIHU: readonly Spirit[] = SPIRITS_YANG.map((spirit, seat) =>
 /**
  * Which eight names the ring carries, and what selects them.
  *
- * Three answers, and they part only at the fifth and sixth seats: the star,
+ * Four answers, and they part only at the fifth and sixth seats: the star,
  * the gate, the stem and the palace under either are the same. `dun` is the
  * 陰陽異名 convention, `fixed` is 《御定奇門寶鑑》's eight standing in both
- * dun, `baihu` is 《奇門遁甲全局》's yang board. A fourth answer — the names
+ * dun, `baihu` is 《奇門遁甲全局》's yang board, and `huwu` is the yin names
+ * standing in both, as 《御定奇門大全》's hour tables name them. A fourth answer — the names
  * following what is being divined — is refused rather than declared, because
  * it is a licence to read and not a rule for laying: see
  * `docs/refusals.md` § "The middle pair named by the matter".
  */
 export function spiritRing(yang: boolean, spirits: ChartOptions['spirits']): readonly Spirit[] {
   if (spirits === 'fixed') return SPIRITS_FIXED;
+  if (spirits === 'huwu') return SPIRITS_YIN;
   if (spirits === 'baihu') return yang ? SPIRITS_BAIHU : SPIRITS_YIN;
   return yang ? SPIRITS_YANG : SPIRITS_YIN;
 }
@@ -280,6 +282,25 @@ export function heavenPlate(
   host: number = CENTRE_HOST,
 ): ByPalace<Stem> {
   return turn(earth, palaceOf(earth, instrument), palaceOf(earth, hourStem), host);
+}
+
+/**
+ * Where the turn carries the host's stem, which is where the centre's stem
+ * rides under `centreStem: host`.
+ *
+ * The host is the palace the centre lodges in, and the turn takes the centre
+ * from there, so this is the palace the host's own stem comes to on the
+ * heaven plate — the outer palace whose heaven stem is the host's earth stem.
+ */
+export function hostLanding(
+  earth: ByPalace<Stem>,
+  instrument: Stem,
+  hourStem: Stem,
+  host: number = CENTRE_HOST,
+): number {
+  const ring = orbitFrom(RING_CLOCKWISE, lodge(palaceOf(earth, instrument), host));
+  const landing = orbitFrom(RING_CLOCKWISE, lodge(palaceOf(earth, hourStem), host));
+  return landing[ring.indexOf(host)] as number;
 }
 
 /** The nine stars, turned by the same amount as the heaven plate. */

@@ -48,6 +48,13 @@
         <td>
           <span>{gloss('stem', cell.heaven.id)}</span>
           <span class="glyph">{glyph(cell.heaven)}</span>
+          <!-- The same lodging above the palaces, under centreStem host: the
+               centre's stem has ridden the turn to this palace with its
+               host's. Guarded for the same reason as the one under earth. -->
+          {#if cell.heavenLodged}
+            <span class="gloss">{t('cli.field.heavenLodgedShort', { stem: gloss('stem', cell.heavenLodged.id) })}</span>
+            <span class="glyph">{glyph(cell.heavenLodged)}</span>
+          {/if}
         </td>
         <td>
           <span>{gloss('star', cell.star.id)}</span>

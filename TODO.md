@@ -42,26 +42,22 @@ plate too.
 yet read», «unread», «still missing», «none opened», «nobody has», «stays
 refused», «this list is empty».
 
-### Where it stands, 2026-10-15
+### Where it stands, 2026-10-16
 
-Version 0.24.0. `main` is 78 commits ahead of `origin/main`, whose last
-commit is of 2026-10-06; nothing since is pushed, and pushing is the user's
-call. `npm test`, `npm run typecheck` and `npm run build` pass on
-2026-10-16, after a full build. One test is skipped in a tree that was never built, the
-installed bin run through its symlink, and it is not a failure.
+Version 0.25.0. `main` is 79 commits ahead of `origin/main`, whose last
+commit is of 2026-10-06, and the branch `board-pointer` is two more ahead of
+`main`, with this session's work on top of them; nothing since 2026-10-06 is
+pushed, and pushing is the user's call. `npm test`, `npm run typecheck` and
+`npm run build` pass on 2026-10-16, after a full build. One test is skipped
+in a tree that was never built, the installed bin run through its symlink,
+and it is not a failure.
 
 **What to do next, in the order the user has been taking it:**
 
 1. **Build the eye of 大遊 as a parameter** — decided on 2026-10-14 and not
    yet built; the paragraph below says what it asks. It is the one decided
    thing left undone.
-2. **Decide on the two 奇門 divergences the 《御定奇門大全》's 局 tables
-   name**, read on 2026-10-16: the centre's stem carried off with 坤's, and
-   白虎 fifth and 玄武 sixth in both dun. Each has transcription and no
-   attribution beyond a compilation's running title, 奇門秘纂, so whether
-   either becomes a value is the user's word. `docs/sources.md` §
-   "《御定奇門大全》卷五–十, the eighteen 局 hour by hour".
-3. **Or read on**: § 2 line 3, the 大全's 遁甲通明鈐. Lines 1 and 2 have
+2. **Or read on**: § 2 line 3, the 大全's 遁甲通明鈐. Lines 1 and 2 have
    nothing left on this shelf.
 
 **Decided on 2026-10-14, by the user's word, and not yet built**: the eye of
@@ -110,9 +106,9 @@ only if a value is left refused.
   induced from a table, and the lists are three prints three ways. It waits
   on a sentence stating the rule, in any work.
 
-**Done between 2026-10-11 and 2026-10-15, and nothing is half done.** Each
+**Done between 2026-10-11 and 2026-10-16, and nothing is half done.** Each
 reading and each build has its section in `docs/sources.md`, its row in
-`docs/sources.tsv` and its line in `texts/README.md`; phases 51 and 52 in
+`docs/sources.tsv` and its line in `texts/README.md`; phases 51 to 53 in
 `docs/history/` are the record.
 
 - 2026-10-11: `yearBoundary: dongzhi` of 太乙 computed; `host.accord` and
@@ -136,8 +132,9 @@ reading and each build has its section in `docs/sources.md`, its row in
   hour, transcribed by eight readers into `texts/qimen/daquan-juan05-10-hours/`
   and held to the engine's step functions under every value a table keyed by
   局 can tell apart: `centreLodging: kun` and `earthPlate: yuan` hold, and
-  two recorded divergences are named by a text. Nothing built, and no phase
-  file written.
+  two recorded divergences are named by a text. **Built** on the user's word
+  of the same day: `spirits: huwu` and `centreStem`, with `heavenLodged` on
+  the palace the centre's stem rides to, held by `qimendaquan` (0.25.0).
 
 **Owed a look by the user, and not blocking**: catalog strings written
 without the `reader-copy` skill. On 2026-10-15: `label.taiyipattern.du`,
@@ -194,13 +191,10 @@ section an art.
 **Recorded, with no parameter** — a divergence the register carries and
 nothing exposes. Only those with something to wait on:
 
-- **奇門.** Which of the two stems in 坤 is read — the one a star carries off
-  it (《探索錄》卷三 p. 22) and the one a stem coming to it stands over (the
-  符應經): each is one case, and a second witness names it. The 《御定奇門大全》's
-  hour tables carry the centre's stem off with 坤's in 37 claims of 41, and
-  print 白虎 fifth and 玄武 sixth on yang boards — the two divergences named
-  by a text since 2026-10-16, an unattributed one; declaring either waits on
-  the user's word. 三奇得使: the
+- **奇門.** Which of the two stems in 坤 a stem coming to it stands over:
+  the 符應經 marks a 格 by the centre's, one case, and a second witness names
+  it. The heaven plate's side of the same question is `centreStem` since
+  2026-10-16. 三奇得使: the
   符應經 has a rule and three cases of four that do not lay. The half-flown
   board wants a yin hour worked in any text. The board of a day wants a prompt
   of its own, the scan and the 年命.

@@ -175,9 +175,11 @@ export interface ChartOptions {
    * half does. `fixed` is 《御定奇門寶鑑》's — the eight names stand in both
    * dun and only the order they are counted in reverses. `baihu` is the
    * seating 《奇門遁甲全局》 holds, 白虎 at the fifth seat and 勾陳 at the
-   * sixth.
+   * sixth. `huwu` is the yin names standing in both dun, 白虎 fifth and 玄武
+   * sixth, as the hour tables of 《御定奇門大全》卷五–十 name them on yang
+   * boards — the mirror of `fixed`.
    *
-   * **A fourth answer exists and is deliberately not a value here.**
+   * **One more answer exists and is deliberately not a value here.**
    * 《奇門遁甲金鏡寶鑑》 keys the choice to what is being divined —
    * 「如占病、占賊，則勾、雀二神可換虎、武用」 — which is a licence granted to
    * the reader at the moment of reading and not a rule that lays a different
@@ -185,7 +187,7 @@ export interface ChartOptions {
    * it: a chart is a function of its instant, the question enters at the 用神,
    * and a parameter here would be that first interpretive act computed.
    */
-  spirits: 'dun' | 'fixed' | 'baihu';
+  spirits: 'dun' | 'fixed' | 'baihu' | 'huwu';
 
   /**
    * Where the repeated block goes under 置閏.
@@ -249,6 +251,28 @@ export interface ChartOptions {
   centreTravel: 'stay' | 'travel';
 
   /**
+   * Where the centre's stem stands on the heaven plate, when the plate turns.
+   *
+   * Under 中宮寄坤 the palace that hosts the centre holds two stems on the
+   * earth plate, its own and the centre's (`PalaceContents.lodged`), and the
+   * turn carries the host's away to another palace. `centre` leaves the
+   * centre's stem where it is, so the turn carries the host's alone. `host`
+   * carries the centre's with it, so the palace the host's stem comes to holds
+   * both, and the second is `PalaceContents.heavenLodged`.
+   *
+   * 《御定奇門大全》卷五–十 reads every hour the second way: in 陽遁六局, 乙 is
+   * the centre's stem, and at 乙丑 the host's 癸 comes to 巽 and the table
+   * reads 「乙景在巽」. 《奇門探索錄》卷三 reads one board the same way and
+   * its own 夾注 objects — 「中宮天禽帶乙奇，此云天芮帶到，於理不合」. No text
+   * is named for the first, which this engine computes by default.
+   *
+   * It moves no star, no gate and no spirit: one stem rides a second palace,
+   * and the 格 a stem makes over the one below are read there too. On the
+   * flown plate nothing lodges, so it is in force on the turned plate alone.
+   */
+  centreStem: 'centre' | 'host';
+
+  /**
    * The palace 丁 is buried in (入墓).
    *
    * One cell of the four `TOMB` holds, and the only one two texts part on.
@@ -307,6 +331,7 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   strengths: 'season',
   earth: 'quarters',
   centreTravel: 'stay',
+  centreStem: 'centre',
   dingTomb: 'gen',
   shensha: 'xieji',
 });

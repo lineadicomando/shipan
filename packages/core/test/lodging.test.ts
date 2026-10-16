@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest';
+import { createTranslator } from '@shipan/i18n';
 import {
   DEFAULT_OPTIONS,
   centreHost,
   computeQimenChart,
+  formatQimenChart,
   initEphemeris,
   resolveMoment,
   type ChartOptions,
@@ -269,3 +271,58 @@ describe('the plate flown, as the 折衷 lays it', () => {
   });
 });
 
+/**
+ * Where the centre's stem stands once the plate has turned.
+ *
+ * `docs/sources.md` § "《御定奇門大全》卷五–十, the eighteen 局 hour by hour".
+ * 陽遁六局 seats 乙 in the centre and 癸 in 坤, its host; the table reads 乙
+ * wherever 癸 goes. 2026-01-30 is a 己 day in 大寒下元, which is 陽遁六局.
+ */
+describe('the centre\'s stem on the heaven plate', () => {
+  const heavenOf = (c: QimenChart) =>
+    Object.fromEntries(
+      c.palaces.map((p) => [p.palace.hanzi, p.heaven.hanzi + (p.heavenLodged?.hanzi ?? '')]),
+    );
+
+  it('stays in the centre by default', () => {
+    const board = chart('2026-01-30', '02:00');
+    expect(board.ju).toMatchObject({ yang: true, number: 6 });
+    expect(board.palaces.some((p) => p.heavenLodged)).toBe(false);
+  });
+
+  it('rides with its host where the hour tables read it, 「乙景在巽」 at 乙丑', () => {
+    const board = chart('2026-01-30', '02:00', { centreStem: 'host' });
+    const xun = board.palaces.find((p) => p.palace.hanzi === '巽');
+
+    expect(xun?.heaven.hanzi).toBe('癸');
+    expect(xun?.heavenLodged?.hanzi).toBe('乙');
+    expect(xun?.gate?.hanzi).toBe('景門');
+    // One stem rides a second palace, and nothing else on the board moves.
+    const centre = chart('2026-01-30', '02:00');
+    expect(heavenOf(board)).toEqual({ ...heavenOf(centre), 巽: '癸乙' });
+    expect(board.palaces.map((p) => [p.star.id, p.gate?.id, p.spirit?.id])).toEqual(
+      centre.palaces.map((p) => [p.star.id, p.gate?.id, p.spirit?.id]),
+    );
+  });
+
+  it('reads the 格 a carried stem makes over the palace it rides to', () => {
+    // 甲子 is 伏吟, so 乙 rides nowhere and stays over 坤 with 癸 — where it is
+    // buried. Under `centre` the centre's 乙 is over no palace that buries it.
+    const tombs = (c: QimenChart) =>
+      c.patterns.filter((p) => p.id === 'rumu').map((p) => p.palace).sort();
+
+    expect(tombs(chart('2026-01-30', '00:30'))).toEqual([6]);
+    expect(tombs(chart('2026-01-30', '00:30', { centreStem: 'host' }))).toEqual([2, 6]);
+  });
+
+  it('says so under the plates', () => {
+    const t = createTranslator('en');
+    const printed = formatQimenChart(chart('2026-01-30', '02:00', { centreStem: 'host' }), t);
+    expect(printed).toContain('has moved with the stem of the palace it lodges in, and stands above 4');
+  });
+
+  it('carries nothing on the flown plate, where nothing lodges', () => {
+    const board = chart('2026-01-30', '02:00', { centreStem: 'host', plate: 'xingfei' });
+    expect(board.palaces.some((p) => p.heavenLodged)).toBe(false);
+  });
+});

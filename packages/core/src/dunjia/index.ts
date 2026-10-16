@@ -20,6 +20,7 @@ import {
   earthPlate,
   gatePlate,
   heavenPlate,
+  hostLanding,
   palaceOf,
   spiritPlate,
   starPlate,
@@ -91,6 +92,17 @@ export interface PalaceContents {
    * `docs/sources.md` carries the collation.
    */
   lodged?: Stem;
+  /**
+   * The centre's stem, when it rides the heaven plate to this palace with its
+   * host's (`centreStem: host`).
+   *
+   * The heaven-plate twin of `lodged`: there the centre's stem is read at its
+   * host on the earth plate, here it travels on with the host's when the plate
+   * turns, so the palace the host's stem comes to holds two. Absent under
+   * `centreStem: centre`, which leaves it in the fifth, and on the flown plate,
+   * where nothing lodges.
+   */
+  heavenLodged?: Stem;
 }
 
 export interface QimenChart {
@@ -158,6 +170,7 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     'strengths',
     'earth',
     'centreTravel',
+    'centreStem',
     'dingTomb',
     // The day board's, which this one does not read: a value nobody computes
     // is refused wherever it is asked, and never only where it would bite.
@@ -200,6 +213,13 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     options.plate === 'xingfei' ? flownPlates(earth, instrument, hourStem, ju.yang) : undefined;
   const heaven = flown?.heaven ?? heavenPlate(earth, instrument, hourStem, host);
   const stars = flown?.stars ?? starPlate(earth, instrument, hourStem, host);
+
+  // 「此云天芮帶到」: under `centreStem: host` the centre's stem goes where the
+  // host's does. Nothing lodges on the flown plate, so nothing rides there.
+  const rides =
+    options.centreStem === 'host' && flown === undefined
+      ? hostLanding(earth, instrument, hourStem, host)
+      : undefined;
 
   const chief = chiefStar(earth, instrument);
   // Where 值符隨時干 and 值使隨時支 send the pair, before the centre is
@@ -276,6 +296,7 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     if (current.number !== 5 && host === current.number) {
       contents.lodged = earth[5] as Stem;
     }
+    if (rides === current.number) contents.heavenLodged = earth[5] as Stem;
     return contents;
   });
 
@@ -287,6 +308,7 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     dayStem: moment.pillars.day.stem,
     hourGanzhi,
     dingTomb: options.dingTomb,
+    ...(rides === undefined ? {} : { carried: { palace: rides, stem: earth[5] as Stem } }),
   });
 
   return {

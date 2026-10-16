@@ -1467,6 +1467,8 @@ export const en = {
     'nothing: the same eight names stand in both dun, as 《御定奇門寶鑑》 yùdìngqíménbǎojiàn has them',
   'form.qimen.spirits.baihu':
     'the half of the year, with 白虎 báihǔ kept at the fifth seat in a yang chart: the board of 《奇門遁甲全局》 qíméndùnjiǎquánjú',
+  'form.qimen.spirits.huwu':
+    'nothing, with the names of a yin chart in both dun: 白虎 báihǔ and 玄武 xuánwǔ stand in a yang chart as they do in a yin one, as the hour tables of 《御定奇門大全》 yùdìngqíméndàquán have them',
   // The moving pair against the plate under it. 《金鏡寶鑑》 separates the two in
   // one clause — 其星寄 for the star, 符使不必寄於二 for the 符 and the 使 — so
   // the label asks about the pair and neither value promises a different board.
@@ -1524,6 +1526,14 @@ export const en = {
     'in the palace the centre lodges in, as 《御定奇門寶鑑》 yùdìngqíménbǎojiàn has it',
   'form.qimen.centreTravel.travel':
     'in the central palace itself: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
+  // Where the centre's stem stands once the plate has turned: in the fifth, or
+  // with the stem of its host wherever that one went.
+  'form.qimen.centreStem': 'When the stems above the palaces turn, the stem of the central palace',
+  'form.qimen.centreStem.centre': 'stays in the central palace',
+  'form.qimen.centreStem.host':
+    'moves with the stem of the palace the centre lodges in, and is read where that stem arrives, as the hour tables of 《御定奇門大全》 yùdìngqíméndàquán have it',
+  'form.qimen.centreStem.note':
+    'The palace the centre lodges in holds two stems under earth: its own and the centre’s. When the stems above the palaces turn, its own stem moves to another palace. The two readings part over whether the centre’s stem moves with it. The star, the gate and the spirit of every palace are the same under both.',
   'form.qimen.dingTomb': 'The stem 丁 dīng is marked entombed when it stands',
   'form.qimen.dingTomb.gen':
     'in the palace of 艮 gèn, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
@@ -1947,6 +1957,7 @@ export const en = {
   'notes.parameter.earth': 'Where earth’s season begins.',
   'notes.parameter.dingTomb': 'Which palace the stem 丁 dīng is entombed in.',
   'notes.parameter.centreTravel': 'Where the chief and the chief gate are read when they fall on the central palace.',
+  'notes.parameter.centreStem': 'Where the stem of the central palace stands when the stems above the palaces turn.',
   'notes.parameter.luckGranularity': 'How finely the distance to the term is counted.',
   'notes.parameter.count': 'How the years lived are counted.',
 
@@ -2596,6 +2607,10 @@ export const en = {
   'cli.field.lodged': 'The centre lodges in {palace}, where its {stem} is read.',
   // The same fact in a table cell, where there is no room for the sentence.
   'cli.field.lodgedShort': 'the centre lodges here: {stem}',
+  // Its twin above the palaces, under centreStem host: the centre's stem has
+  // ridden the turn with its host's.
+  'cli.field.heavenLodged': 'The centre’s {stem} has moved with the stem of the palace it lodges in, and stands above {palace}.',
+  'cli.field.heavenLodgedShort': 'the centre’s stem has come here too: {stem}',
   'cli.field.horse': '{from}: {branch}, palace {palace}',
   // 年命 — the birth looked up inside a chart cast for a moment, which is the
   // classical direction: the chart is the hour's, and the person is placed in

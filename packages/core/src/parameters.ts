@@ -175,10 +175,11 @@ export interface Parameter<V> {
    * A divergence *inside* another one, in force only where that one stands on
    * a value.
    *
-   * One parameter uses it and it is doctrine rather than presentation:
-   * `leap` divides 置閏, so under 拆補 or 茅山 nothing is repeated and where
-   * the repetition goes decides nothing. Reported beside those boards it
-   * would name a choice the method never had to make.
+   * It is doctrine rather than presentation: `leap` divides 置閏, so under
+   * 拆補 or 茅山 nothing is repeated and where the repetition goes decides
+   * nothing. Reported beside those boards it would name a choice the method
+   * never had to make. `centreStem` divides the turned plate the same way,
+   * since nothing lodges on the flown one.
    */
   readonly inside?: { readonly id: string; readonly value: string };
   /**
@@ -266,7 +267,8 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.plate.zhuan',
         note: 'form.qimen.plate.note',
         implemented: true,
-        heldBy: ['tongzong'],
+        // 《御定奇門大全》卷五–十 turns it in every one of its 1080 hours.
+        heldBy: ['tongzong', 'qimendaquan'],
       },
       { id: 'fei', name: { hanzi: '飛盤', pinyin: 'fēipán' }, implemented: false },
       // The stars and the 儀 flown, the gates turned: the 折衷's, argued from
@@ -297,8 +299,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         note: 'form.qimen.centreLodging.note',
         implemented: true,
         // The 符應經 works it in both dun: 「六戊在五宮，寄坤二」 on a yang board
-        // and 「直使在五宮，寄坤二西南」 on a yin one.
-        heldBy: ['tongzong', 'fuyingjing'],
+        // and 「直使在五宮，寄坤二西南」 on a yin one. 《御定奇門大全》卷五–十
+        // lays all eighteen 局 on it, hour by hour.
+        heldBy: ['tongzong', 'fuyingjing', 'qimendaquan'],
       },
       // Yang to 坤, yin to 艮: the imperial print's 一本.
       {
@@ -352,7 +355,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.earthPlate.yuan',
         note: 'form.qimen.earthPlate.note',
         implemented: true,
-        heldBy: ['tongzong'],
+        heldBy: ['tongzong', 'qimendaquan'],
       },
       {
         id: 'xun',
@@ -537,6 +540,16 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         implemented: true,
         heldBy: ['quanju'],
       },
+      // The yin names in both dun: 「乙休雖在乾會白虎」 and 「乙休在兌…會玄武」 on
+      // the yang boards of 《御定奇門大全》卷五–十, which name 勾陳 and 朱雀 nowhere.
+      // Named after the pair 《金鏡寶鑑》 calls them by, 「換虎、武用」.
+      {
+        id: 'huwu',
+        name: { hanzi: '虎武', pinyin: 'hǔwǔ' },
+        says: 'form.qimen.spirits.huwu',
+        implemented: true,
+        heldBy: ['qimendaquan'],
+      },
     ],
     default: 'dun',
   },
@@ -619,6 +632,33 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
       },
     ],
     default: 'stay',
+  },
+  centreStem: {
+    board: 'qimen',
+    family: 'shijia',
+    // Whether the centre's stem rides the heaven plate with its host's. Nothing
+    // lodges on the flown plate, so this divides the turned one alone. See
+    // `docs/sources.md` § "《御定奇門大全》卷五–十, the eighteen 局 hour by hour".
+    label: 'form.qimen.centreStem',
+    inside: { id: 'plate', value: 'zhuan' },
+    values: [
+      {
+        id: 'centre',
+        says: 'form.qimen.centreStem.centre',
+        note: 'form.qimen.centreStem.note',
+        implemented: true,
+        // Argued, not held: the 《奇門探索錄》's 夾注 puts the centre's 乙 in the
+        // centre against its own text — 「中宮天禽帶乙奇，此云天芮帶到，於理不合」.
+      },
+      {
+        id: 'host',
+        says: 'form.qimen.centreStem.host',
+        note: 'form.qimen.centreStem.note',
+        implemented: true,
+        heldBy: ['qimendaquan'],
+      },
+    ],
+    default: 'centre',
   },
   dingTomb: {
     board: 'qimen',

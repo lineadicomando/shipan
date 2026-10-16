@@ -751,13 +751,26 @@ export function formatQimenChart(chart: QimenChart, t: Translator): string {
 function lodging(chart: QimenChart, t: Translator): string[] {
   const host = chart.palaces.find((cell) => cell.lodged);
   if (!host?.lodged) return [];
+  const where = (cell: QimenChart['palaces'][number]): string =>
+    `${cell.palace.number} ${named(cell.palace, `label.palace.${cell.palace.id}` as MessageKey, t)}`;
 
-  return [
+  const lines = [
     `  ${t('cli.field.lodged', {
-      palace: `${host.palace.number} ${named(host.palace, `label.palace.${host.palace.id}` as MessageKey, t)}`,
+      palace: where(host),
       stem: named(host.lodged, `label.stem.${host.lodged.id}` as MessageKey, t),
     })}`,
   ];
+  // And where it rode the turn, under `centreStem: host`.
+  const rode = chart.palaces.find((cell) => cell.heavenLodged);
+  if (rode?.heavenLodged) {
+    lines.push(
+      `  ${t('cli.field.heavenLodged', {
+        palace: where(rode),
+        stem: named(rode.heavenLodged, `label.stem.${rode.heavenLodged.id}` as MessageKey, t),
+      })}`,
+    );
+  }
+  return lines;
 }
 
 /**

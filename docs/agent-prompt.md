@@ -198,20 +198,24 @@ neither disputed.
   the prompt, the scan and `born` refuse this family by name, since each is
   written against a plate of stems. `draw_qimen_chart` draws the board and
   喜神's bearing on its palace, and leaves the hours to the answer.
-- **The eight spirits are named three ways and the board says which.** The ring
-  is the same ring under all three — same star, same gate, same stem, same
+- **The eight spirits are named four ways and the board says which.** The ring
+  is the same ring under all four — same star, same gate, same stem, same
   palace — and what parts them is which fact names the fifth and sixth seats:
   the half of the year (`qimen.spirits=dun`, the default), nothing at all
-  (`fixed`, where the same eight stand in both dun), or the half of the year
-  with 白虎 kept at the fifth seat (`baihu`). A fourth convention names them by
-  what is being divined; it is refused here, because that is a licence to read
-  and not a rule for laying, and you should not supply it either.
+  (`fixed`, where the yang chart's eight stand in both dun, or `huwu`, where
+  the yin chart's 白虎 and 玄武 do), or the half of the year with 白虎 kept at
+  the fifth seat (`baihu`). Another convention names them by what is being
+  divined; it is refused here, because that is a licence to read and not a
+  rule for laying, and you should not supply it either.
 - **The centre is read somewhere else (寄宮).** It has no direction, no gate
   and no spirit, so the stem the ju puts there is read at its host — 坤 by
   default — and the host's palace says so with `lodged`. That palace therefore
   carries two stems on the earth plate, its own and the centre's, and both are
   in play there. Do not drop either, and do not move the centre's out of the
-  centre: it is one stem read in two places, not two stems.
+  centre yourself: it is one stem read in two places, not two stems. Where the
+  board was laid with `qimen.centreStem=host`, the centre's stem has ridden the
+  turn with its host's, and the palace it came to says so with `heavenLodged`:
+  two stems stand above that palace, and both are in play there too.
 - **三奇得使 is not computed.** The sources consulted do not agree on which
   pairings count. Its absence is deliberate; do not fill the gap yourself.
 - **Each count of a 太乙 board carries one label, and it is not a score.**

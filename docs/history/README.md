@@ -85,6 +85,7 @@ phase.
 | 49 | [The hours of a day](49-the-hours-of-a-day.md) | done — the twelve hours of a day board read off 《協紀辨方書》卷七 and held to the day table's own column, `guiren: wei` given its second text |
 | 50 | [The 符應經 read whole](50-the-fuyingjing-read-whole.md) | done — 《遁甲符應經》 read to its 後序 in one copy and collated with a second that turns out to be another recension from 卷中 on; twelve boards it works are the engine's, one cell of 入墓 parts and becomes `dingTomb`, and the work is named a holder of the default lodging |
 | 52 | [The second 立成, 杜 and the 定算](52-the-second-licheng.md) | done — the 《統宗》's 立成 read whole against the 金鏡's: ten of the fourteen errata printed as computed, 陰局 46 settled from a second work, two errors shared; and 杜, the word that table writes for generals in the centre, becomes the eighth condition and the first with no fortune; the 144 drawn boards hold 卷四's rule for the 定算, which is built |
+| 53 | [The eighteen 局 hour by hour](53-the-eighteen-ju-hour-by-hour.md) | done — the 《御定奇門大全》's 卷五–十 settled on the 版心 and read whole: no 起例 beyond the ordinary table, 1075 hour entries holding `centreLodging: kun` and `earthPlate: yuan`; and two divergences with no text declared on them, `spirits: huwu` and `centreStem: host` |
 
 ## The rest of the record
 

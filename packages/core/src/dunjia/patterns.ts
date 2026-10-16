@@ -227,6 +227,11 @@ export interface PatternInput {
   hourGanzhi: Ganzhi;
   /** Which palace 丁 is buried in. The caller's to say; nothing here assumes one. */
   dingTomb: ChartOptions['dingTomb'];
+  /**
+   * The centre's stem where it rides the heaven plate with its host's, under
+   * `centreStem: host`. A second stem over that palace, read like the first.
+   */
+  carried?: { palace: number; stem: Stem };
 }
 
 /**
@@ -250,10 +255,13 @@ export function findPatterns(input: PatternInput): Pattern[] {
   const found: Pattern[] = [];
 
   found.push(...voidPalaces(input.hourGanzhi));
-  found.push(...tombs(input.heaven, input.dingTomb));
+  // What stands over each palace on the heaven plate: one stem, and a second
+  // where the centre's rides with its host's.
+  const above = overhead(input.heaven, input.carried);
+  found.push(...tombs(above, input.dingTomb));
   found.push(...oppressedGates(input.gates));
   found.push(...struckInstruments(input.earth));
-  found.push(...stemPairs(input.earth, input.heaven));
+  found.push(...stemPairs(input.earth, above));
   found.push(...chanting(input.stars, input.gates));
 
   if (unmetHour(input.dayStem, input.hourGanzhi)) {
@@ -275,12 +283,21 @@ function voidPalaces(hourGanzhi: Ganzhi): Pattern[] {
 }
 
 /** Stems standing in the palace they are buried in (入墓). */
-function tombs(heaven: ByPalace<Stem>, dingTomb: ChartOptions['dingTomb']): Pattern[] {
+/** Every heaven-plate stem with the palace it stands over, the carried one included. */
+function overhead(
+  heaven: ByPalace<Stem>,
+  carried: PatternInput['carried'],
+): { palace: number; stem: Stem }[] {
+  const all = Object.entries(heaven).map(([number, stem]) => ({ palace: Number(number), stem }));
+  return carried ? [...all, carried] : all;
+}
+
+function tombs(above: { palace: number; stem: Stem }[], dingTomb: ChartOptions['dingTomb']): Pattern[] {
   const found: Pattern[] = [];
-  for (const [number, stem] of Object.entries(heaven)) {
+  for (const { palace: number, stem } of above) {
     const tomb = stem.id === 'ding' ? DING_TOMB[dingTomb] : TOMB[stem.id];
-    if (tomb === Number(number)) {
-      found.push(mark('rumu', { palace: Number(number) }));
+    if (tomb === number) {
+      found.push(mark('rumu', { palace: number }));
     }
   }
   return found;
@@ -391,10 +408,9 @@ const STEM_PAIRS: readonly { above: string; below: string; id: PatternId }[] = [
   { above: 'yi', below: 'ji', id: 'riqiruwu' },
 ];
 
-function stemPairs(earth: ByPalace<Stem>, heaven: ByPalace<Stem>): Pattern[] {
+function stemPairs(earth: ByPalace<Stem>, overhead: { palace: number; stem: Stem }[]): Pattern[] {
   const found: Pattern[] = [];
-  for (const [key, above] of Object.entries(heaven)) {
-    const number = Number(key);
+  for (const { palace: number, stem: above } of overhead) {
     // The centre is left out: the turn neither moves it nor reaches it, so
     // its heaven stem is its earth stem by construction. A pairing is the
     // stem the plate brought standing over the one below, and nothing is

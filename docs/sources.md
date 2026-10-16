@@ -248,8 +248,8 @@ would take to declare a value is a text, and this names none — so what changes
 here is one sentence and nothing in `parameters.ts`. **A text has since been
 read that prints it**, on 2026-10-16: the 《御定奇門大全》's hour tables name
 玄武 and 白虎 on five yang hours at the seats this reference gives them, with no
-attribution beyond the compilation's — § "《御定奇門大全》卷五–十, the eighteen 局
-hour by hour".
+attribution beyond the compilation's, and `spirits: huwu` computes it since —
+§ "《御定奇門大全》卷五–十, the eighteen 局 hour by hour".
 
 **And the corrected `chaibu` is confirmed against it.** The same twelve charts:
 the ju agrees on **12 of 12** under `chaibu`, on 1 under `maoshan` and on 6
@@ -1450,7 +1450,10 @@ leaves 乙 in the centre. One heaven-plate cell, and the text's own 夾注 quarr
 with the reading rather than settling it: 「中宮天禽帶乙奇，此云天芮帶到，於理
 不合。」 `centreTravel` is not this — that decides where the 值符 and 值使 are
 *reported* when the count lands them on the centre, and here the instrument is
-in 震. `TODO.md` § 1 carries the debt.
+in 震. `TODO.md` § 1 carried the debt until 2026-10-16, when the
+《御定奇門大全》's hour tables were read making the text's reading and not its
+夾注's in 37 claims of 41; `centreStem: host` computes it since — §
+"《御定奇門大全》卷五–十, the eighteen 局 hour by hour".
 
 **The centre, and four readings each with a name on it.** 凡例 p. 一二 lists
 them: 中宮寄坤 leaves the centre empty and lodges its gate and star out to 坤,
@@ -1711,6 +1714,7 @@ under the naming of the spirits alone.
 | `method: maoshan` | 劉文元《奇門啟悟》 (2008), 唐頤《圖解奇門遁甲大全》 (2009) | each states the rule complete with its two edge cases; the credit to the 茅山道士 is theirs and travels as theirs |
 | `spirits: fixed` | 《御定奇門寶鑑》 | the eight standing in both dun |
 | `spirits: baihu` | 《奇門遁甲全局》 | three yang plates with 白虎 fifth and 勾陳 sixth |
+| `spirits: huwu`, `centreStem: host` | 《御定奇門大全》 | its 卷五–十 lay the eighteen 局 hour by hour, naming 白虎 and 玄武 on yang boards and setting the centre's stem where 坤's goes; added 2026-10-16, with the same tables beside the 統宗 for `plate: zhuan`, `centreLodging: kun` and `earthPlate: yuan` |
 | `centreTravel: stay` | 《御定奇門寶鑑》, 《奇門遁甲統宗》 | the 值符 and 值使 read at 坤; the second in 「甲辰在中宮，寄於坤二，天禽為符，死門為使」 |
 | `centreTravel: travel` | 《奇門遁甲金鏡寶鑑》 | 「符使不必寄於二」 |
 | `centreLodging: kun`, `centreTravel: stay` | 《遁甲符應經》, beside the 統宗 | 「六戊在五宮，寄坤二」 on a yang board and 「直使在五宮，寄坤二西南」 on a yin one, each worked |
@@ -1784,14 +1788,11 @@ been:
   and a choice keyed to the matter is not one this engine makes.
 - **The leap block at any of the eight 節**, which asks for a judgement
   between a surplus and a shortfall.
-- **Which stem a star carries off 坤** when the centre is lodged there, on
-  which 《奇門探索錄》 quarrels with itself. Since 2026-10-16 the 《御定奇門大全》's
-  hour tables carry the centre's stem off with 坤's in 37 claims of 41, without
-  comment; whose those tables are is not stated.
-- **白虎 fifth and 玄武 sixth in both dun**, which one runnable reference
-  prints. Since 2026-10-16 the same tables print it on five yang hours, each
-  read on the plate, and name 勾陳 and 朱雀 nowhere. § "《御定奇門大全》卷五–十,
-  the eighteen 局 hour by hour".
+
+Two more stood here until 2026-10-16 and are computed since, on the
+《御定奇門大全》's hour tables: which stem a star carries off 坤 when the centre
+is lodged there, now `centreStem`, and 白虎 fifth and 玄武 sixth in both dun,
+now `spirits: huwu`. § "《御定奇門大全》卷五–十, the eighteen 局 hour by hour".
 
 ### The 折衷 on the plate, chapter by chapter
 
@@ -2324,7 +2325,7 @@ engine's and the stems another board's — so the fault is the print's.
   palace: 乙 in 陽六 and 陰四, 丙 in 陽七 and 陰三, 丁 in 陽八 and 陰二. The
   print sets that 奇 wherever 坤's own stem goes. 陽遁六局 乙丑 reads
   「乙景在巽」: 坤's 癸 has come to 巽, and the 乙 lodged with it has come too.
-  This engine leaves the 乙 in the centre. Of 41 claims about the centre's
+  This engine leaves the 乙 in the centre by default. Of 41 claims about the centre's
   stem, 37 are the carried reading, in five of the six 局 and 25 of them in
   陽六; four fit neither reading, and none puts the stem in the centre, a
   palace the print never names. It is the reading 《奇門探索錄》卷三 makes
@@ -2343,15 +2344,30 @@ engine's and the stems another board's — so the fault is the print's.
   the fourth arrangement the runnable reference above prints, 白虎 fifth and
   玄武 sixth in both dun, now in a text.
 
-**What it does not settle is whose these tables are.** The juan are headed
-奇門秘纂 inside a compilation that gives itself three titles on its own leaves
-and a 永樂 preface, while its 卷一 works a 萬曆 year (above), and nothing in
-the six juan names an author or a line. A value wants attribution and
-transcription. These two have transcription, 1075 entries of it, and an
-attribution to a compilation's running title; whether that declares either is
-a decision, and it was not taken. Nothing in `parameters.ts` moves, and the
-row of the heaven plate in `sources.tsv` stays on rung 1 with the table among
-its checks.
+**Whose these tables are is the compilation's, and that was enough to declare
+both.** The juan are headed 奇門秘纂 inside a compilation that gives itself
+three titles on its own leaves and a 永樂 preface, while its 卷一 works a 萬曆
+year (above), and nothing in the six juan names an author or a line. A value
+wants attribution and transcription. These two have transcription, 1075
+entries of it, and an attribution to the work that prints them, which
+`WITNESSES` carries as `qimendaquan`, 《御定奇門大全》. On the user's word of
+2026-10-16 both are computed:
+
+- **`spirits: huwu`**, 虎武 hǔwǔ — 白虎 fifth and 玄武 sixth in both dun,
+  named for the pair 《金鏡寶鑑》 calls them by, 「換虎、武用」;
+- **`centreStem: host`**, a parameter of its own beside the default
+  `centre`: the centre's stem rides the heaven plate to wherever its host's
+  goes, and the palace it comes to reports it as `heavenLodged`, the twin of
+  the earth plate's `lodged`. The 格 a stem makes over the one below — 入墓
+  and the pairs of `STEM_PAIRS` — are read there too, since the reading is
+  that the stem stands there. It is declared inside `plate: zhuan`: on the
+  flown plate nothing lodges. `centre` has no holder; the 探索錄's 夾注
+  argues it and the 探索錄 is not a witness here.
+
+The same tables lay the rest of the default board — `plate: zhuan`,
+`centreLodging: kun`, `earthPlate: yuan` — so the work is named among their
+holders too. The row of the heaven plate in `sources.tsv` stays on rung 1 with
+the table among its checks, and each new value has a row of its own.
 
 Last checked 2026-10-16.
 

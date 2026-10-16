@@ -1347,6 +1347,8 @@ export const it: Record<MessageKey, string> = {
     'niente: gli stessi otto nomi stanno in entrambi i dun, come li ha il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.spirits.baihu':
     'la metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
+  'form.qimen.spirits.huwu':
+    'niente, con i nomi della carta yin in entrambi i dun: 白虎 báihǔ e 玄武 xuánwǔ stanno in una carta yang come in una yin, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
   'form.qimen.plate': 'Le stelle e i tronchi sopra i palazzi si muovono',
   'form.qimen.plate.zhuan':
     'girandoli sugli otto palazzi esterni, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
@@ -1399,6 +1401,12 @@ export const it: Record<MessageKey, string> = {
     'nel palazzo in cui il centro alloggia, come nel 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.centreTravel.travel':
     'nel palazzo centrale stesso: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
+  'form.qimen.centreStem': 'Quando i tronchi sopra i palazzi girano, il tronco del palazzo centrale',
+  'form.qimen.centreStem.centre': 'resta nel palazzo centrale',
+  'form.qimen.centreStem.host':
+    'si sposta con il tronco del palazzo in cui il centro alloggia, e si legge dove quel tronco arriva, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
+  'form.qimen.centreStem.note':
+    'Il palazzo in cui il centro alloggia ha due tronchi nella colonna della terra: il proprio e quello del centro. Quando i tronchi sopra i palazzi girano, il suo tronco passa in un altro palazzo. Le due letture si separano su un punto solo: se il tronco del centro passa insieme a lui. La stella, la porta e lo spirito di ogni palazzo restano gli stessi in entrambe.',
   'form.qimen.dingTomb': 'Il tronco 丁 dīng è segnato in tomba quando sta',
   'form.qimen.dingTomb.gen':
     'nel palazzo di 艮 gèn, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
@@ -1709,6 +1717,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.earth': 'Dove comincia la stagione della terra.',
   'notes.parameter.dingTomb': 'In quale palazzo il tronco 丁 dīng è in tomba.',
   'notes.parameter.centreTravel': 'Dove si leggono il capo e la porta del capo quando cadono sul palazzo centrale.',
+  'notes.parameter.centreStem': 'Dove sta il tronco del palazzo centrale quando i tronchi sopra i palazzi girano.',
   'notes.parameter.luckGranularity': 'Con quale finezza si conta la distanza dal termine.',
   'notes.parameter.count': 'Come si contano gli anni vissuti.',
 
@@ -2241,6 +2250,8 @@ export const it: Record<MessageKey, string> = {
   'cli.heading.readings': 'Come si leggono i nomi',
   'cli.field.lodged': 'Il centro si alloggia nel palazzo {palace}, dove si legge il suo {stem}.',
   'cli.field.lodgedShort': 'qui si alloggia il centro: {stem}',
+  'cli.field.heavenLodged': 'Il {stem} del centro si è spostato con il tronco del palazzo in cui alloggia, e sta sopra il palazzo {palace}.',
+  'cli.field.heavenLodgedShort': 'qui è arrivato anche il tronco del centro: {stem}',
   'cli.field.horse': '{from}: {branch}, palazzo {palace}',
   // 年命 — la nascita cercata dentro una carta posta per un momento, che è il
   // verso classico: la carta è quella dell'ora, e la persona vi si colloca
