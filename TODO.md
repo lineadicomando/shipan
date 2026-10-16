@@ -31,14 +31,19 @@ tiling, and a digit is read beside whatever checks it — a sum, a rate, a
 table already held. **A table too long for one reading** — a 立成, a run of
 drawn boards — is transcribed by readers working to a written brief, a page
 range each, into TSV; the cells that disagree with the engine are then
-looked at on the plate before anything is written up. Three precedents, each
+looked at on the plate before anything is written up. Four precedents, each
 with its brief and its comparison script: `texts/taiyi/tongzong-juan31-notes/`,
-`texts/taiyi/tongzong-juan32-35-boards/` and, for prose rather than cells,
+`texts/taiyi/tongzong-juan32-35-boards/`, for prose rather than cells
 `texts/qimen/daquan-juan05-10-hours/` — whose `engine.mjs` lays all 1080 hours
 of the 時家 board off the engine's step functions under several parameter
-values, and is the generator to reuse for any table of 局 and hours. A transcriber normalises
-titles it believes misprinted, so a title out of sequence is checked on the
-plate too.
+values, and is the generator to reuse for any table of 局 and hours — and, for
+one table set against another, `texts/qimen/daquan-juan14-16-stems/`. Each
+directory has a README or a brief saying what its files are. A transcriber
+normalises titles it believes misprinted, so a title out of sequence is
+checked on the plate too. **A date the engine can find** — a solstice on a
+named day pillar and lunar date — is searched rather than guessed:
+`texts/qimen/daquan-juan11-13-zhirun/` has the scripts, run against the built
+engine.
 
 **Before the session ends, sweep** `docs/sources.md`, `texts/README.md`,
 `docs/provenance.tsv` and this file for sentences the session outlived: «not
@@ -47,33 +52,42 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-16
 
-Version 0.27.0, on the branch `board-pointer`, which is checked out and
-ahead of `main` (`git log main..board-pointer`). Its first two commits are
-of 2026-10-15 and are surface work: the Qi Men section holds its board in
-the page (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which
-register a name stands in while a pointer rests on it; no other section
-holds its board that way yet. The rest are of 2026-10-16: the 大全's 局 tables
-read, then `spirits: huwu` and `centreStem` built, then this file brought up
-to date, then the 大全's 遁甲通明鈐 read, then the 大全 named a holder of
-置閏, then the eye of the 大遊 built as `dayouEye` (0.26.0), then the
-大全's 奇門仙機 surveyed, then its two stem tables read against 十干克應, then the sixty-seven
-reviewed and `stemPairs` built (0.27.0).
-`main` is 79 commits ahead of `origin/main`, whose last commit is
-of 2026-10-06. Nothing since that day is pushed and the branch is not
-merged; both are the user's call. `npm test`, `npm run typecheck` and `npm
-run build` pass on 2026-10-16, after a full build. One test is skipped in a
-tree that was never built, the installed bin run through its symlink, and it
-is not a failure.
+**Version 0.27.0**, in every manifest. **The branch `board-pointer` is checked
+out**, ahead of `main` by the commits `git log main..board-pointer` lists,
+none of them merged. They are of two days:
 
-**What to do next, in the order the user has been taking it:**
+- 2026-10-15, surface work: the Qi Men section holds its board in the page
+  (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which register a
+  name stands in while a pointer rests on it. No other section holds its
+  board that way yet.
+- 2026-10-16, the shelf and what it built: the 大全's eighteen 局 tables read,
+  then `spirits: huwu` and `centreStem` (0.25.0); its 遁甲通明鈐 read, and the
+  大全 named a holder of 置閏; `dayouEye` (0.26.0); its 奇門仙機 surveyed and
+  its two stem tables read against 十干克應; the sixty-seven cells reviewed
+  and `stemPairs` built (0.27.0).
 
-1. **Read on**: § 2 line 3, the 大全's 先天要論 from sheet 420, 卷十七–二十四.
-   Lines 1 and 2 have nothing left on this shelf. Nothing decided is left
-   unbuilt.
+`main` is 79 commits ahead of `origin/main`, whose last commit is of
+2026-10-06. Nothing since that day is pushed; pushing and merging are the
+user's call. `npm test`, `npm run typecheck` and `npm run build` pass on
+2026-10-16 with no test skipped. **Run `npm run build` before `npm test`** in
+a fresh tree: the MCP and web suites and the shelf's scripts import
+`packages/core/dist`, and a stale `dist` fails them on whatever changed.
 
-What `board-pointer` does next is not decided: whether the other sections
-hold their boards the way the Qi Men section does, and whether a pointer does
-more than name the register.
+**What to do next, in the order the user has been taking it.** Nothing decided
+is left unbuilt.
+
+1. **Read on**: § 2 line 3, the rest of the 大全's 先天要論, 卷十七–二十四,
+   from sheet 420 to about 588. The question put to it is still a 起例
+   variant.
+2. **Or the 十干克應 cells two lines name alike** beyond the fourteen, which
+   the review of 2026-10-16 found and did not take into `shared`: § 1,
+   "Recorded, with no parameter", under 奇門.
+3. **Or `stemPairs: xianji`**: six cells of the 仙機's 干論 read again on the
+   plate, § 1. Its transcription is held, so this is an errand of six looks.
+
+What `board-pointer` does next on the surface is not decided: whether the
+other sections hold their boards the way the Qi Men section does, and whether
+a pointer does more than name the register.
 
 **Decisions held open, by the user's word, until there is more to decide on:**
 
@@ -106,7 +120,7 @@ more than name the register.
 
 **Done between 2026-10-11 and 2026-10-16, and nothing is half done.** Each
 reading and each build has its section in `docs/sources.md`, its row in
-`docs/sources.tsv` and its line in `texts/README.md`; phases 51 to 53 in
+`docs/sources.tsv` and its line in `texts/README.md`; phases 51 to 58 in
 `docs/history/` are the record.
 
 - 2026-10-11: `yearBoundary: dongzhi` of 太乙 computed; `host.accord` and
@@ -211,7 +225,16 @@ section an art.
 **Recorded, with no parameter** — a divergence the register carries and
 nothing exposes. Only those with something to wait on:
 
-- **奇門.** The 置閏 pin at ten days: the 大全's 遁甲通明鈐 卷十二 states
+- **奇門.** **十干克應 beyond the fourteen**: about a dozen cells two lines
+  name alike, or nearly, were found by the review of 2026-10-16 and not taken
+  into `shared` — 奇儀順遂 and 日奇被刑 in J and 《元靈經》, 火入勾陳, 朱雀入獄,
+  人遁 and 奇入太陰 in J and the block of 《元靈經》 read as the 丁 row, whose
+  heading is in doubt, and 青龍入雲 at 戊 over 乙 in the 干論 and 《元靈經》
+  against J's 青龍合靈. Several differ by a word, and each would need its
+  fortune argued. `texts/qimen/daquan-juan14-16-stems/compare.tsv` sets the
+  lines side by side. **日奇入霧**, shipped on J and 《元靈經》, is 奇入墓 in J's
+  own line as the 仙機 versifies it. **青龍華蓋** is still the cell for a fourth
+  valence. The 置閏 pin at ten days: the 大全's 遁甲通明鈐 卷十二 states
   「凡過超十日則閏」 and works a case dated here to 1265–66 that lets nine
   pass, where its 卷十三 and `MAX_CHAOSHEN` intercalate at nine. A text
   stating ten as its own rule, with nothing against it inside the same juan.
@@ -267,7 +290,7 @@ stand first because a decision waits on each.
 |---|---|---|
 | 1 | **A dated 日計 board, or the 盈差 of the day explained**: what `ji: riji` waits on | not in the 《統宗》 where it was looked for: 卷三十六 to p. 392, 卷四 p. 41 and 卷十八 whole were read on 2026-10-11 and every board is entered by its 局, and the 144 drawn boards of 卷三十二–三十五, read on 2026-10-15, are entered by their 局 and five 干支 with no year. Left in that work: the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
 | 2 | the lists of 上和 · 次和 · 下和, which three prints give three ways, and which count is read against 太乙's palace | the notes of the 《統宗》卷三十一 立成 were read on 2026-10-15: its table labels every count by its digits, ungraded, and none against 太乙's palace — so it answers neither question. A copy of the 金鏡 that is not the 四庫's, or a work quoting 王希明's lists: none held. The 金鏡 卷二 leaves 9–10, the 《統宗》卷六 pp. 54–56 and 盧央 pp. 477–479 were read on 2026-10-11 |
-| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets at 600 dpi, two book-pages to a sheet, located by the 版心: its 目錄, 卷一, 卷五–十 and 卷二十五 are read, 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. **The eighteen 局 tables of 卷五–十 were read whole on 2026-10-16** (sheets 114–268): they state no 起例 beyond the ordinary 三元 table and are a bench for the hour board, `docs/sources.md` § "《御定奇門大全》卷五–十, the eighteen 局 hour by hour". **遁甲通明鈐, 卷十一–十三, was read for its 起例 the same day** (sheets 269–345): it is 置閏, which the engine computes, with two pins a day apart, § "《御定奇門大全》卷十一–十三, 遁甲通明鈐". **奇門仙機, 卷十四–十六, surveyed the same day** (sheets 346–416): omens and a table of one stem over another, no 起例. **先天要論 opens on 置閏** (卷十七, sheets 417–419), § "《御定奇門大全》卷十四–十七". Eight of its works are unread past their first leaves; the next is the rest of 先天要論, to about sheet 588 |
+| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets at 600 dpi, two book-pages to a sheet, right one first, each juan opening on a left page and located by the 版心 (`texts/qimen/daquan-tools/`). **Read for a 起例, and none found that the engine does not compute**: the 目錄; 卷一 of 景祐秘纂 (卷二–四 unread); 卷五–十, the eighteen 局 hour by hour (sheets 114–268); 卷十一–十三, 遁甲通明鈐, which states 置閏 at two pins (269–345); 卷十四–十六, 奇門仙機, omens and two stem tables, the tables transcribed (346–416); the opening of 卷十七, 先天要論, which states 置閏 (417–419); 卷二十五 of the 符應經, with 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. `docs/sources.md` has a section for each, titled by the juan. **Next**: the rest of 先天要論, sheets 420 to about 588. Then, unopened: 奇門古本 卷二十八–三十二 (from about sheet 660), 乾坤變異錄 卷三十三–三十九, 禽遁陰符經 卷四十–四十二, 奇門秘訣 卷四十三–四十九, 寶鑑摘要 卷五十–五十七, 吉凶格解 卷五十八–五十九, 寶鏡圖 卷六十–六十四. An earlier pass misread the 目錄's juan numbers twice, so each work is bracketed on the 版心 before it is read |
 | 4 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
 | 5 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 
@@ -331,7 +354,14 @@ prose, which a third language pays for and derived text does not. →
 - **Two lists are written a parameter at a time** and held to the declaration
   by tests: the MCP schemas in `packages/mcp/src/` and
   `apps/web/src/lib/parameters.ts`. A value added to the engine fails those
-  suites until it is added there.
+  suites until it is added there. **So is the list of configurations**,
+  `PATTERN_IDS` in `apps/web/src/lib/vocabulary.ts`, and the scan form's
+  `JINHAN_PATTERN_IDS` is read off it by position, from `qinglongheling` on:
+  a configuration added after 《金函玉鏡》's would be offered only under
+  `stemPairs: jinhan` until that slice is changed.
+- **A configuration may carry no fortune**, since `stemPairs: jinhan`:
+  `Pattern.valence` and `valenceOf` are optional, and every surface prints the
+  mark without one. A surface added later has to do the same.
 - **`lodged` and `heavenLodged` are not on the drawing**, which shows one
   stem to a plate in each palace. The transcript prints both as a line under
   the plates and the table of palaces in its cell; a reader of the drawing

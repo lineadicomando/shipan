@@ -2547,8 +2547,8 @@ stem in 卷十四 and 卷十六.
 name in small characters beside it: 乙加辛 青龍逃走 and 丙加庚 熒惑入白 are
 legible on the contact sheets. That is the shape of 十干克應, whose register
 counts six sources and does not name this one. **So the arrival reopens that
-question and settles nothing in it.** The table was located and not read, and
-a contact sheet at 50 dpi is a finding aid.
+question.** It was answered the same day: the 仙機 carries two tables, and §
+"奇門仙機: two more tables" below sets them against J.
 
 **先天要論 opens on 置閏.** 卷十七 leaf 2, the 八十老人騎竹馬歌, after a 賦:
 
