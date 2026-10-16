@@ -47,7 +47,7 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-16
 
-Version 0.25.0, on the branch `board-pointer`, which is checked out and
+Version 0.26.0, on the branch `board-pointer`, which is checked out and
 ahead of `main` (`git log main..board-pointer`). Its first two commits are
 of 2026-10-15 and are surface work: the Qi Men section holds its board in
 the page (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which
@@ -55,7 +55,7 @@ register a name stands in while a pointer rests on it; no other section
 holds its board that way yet. The rest are of 2026-10-16: the 大全's 局 tables
 read, then `spirits: huwu` and `centreStem` built, then this file brought up
 to date, then the 大全's 遁甲通明鈐 read, then the 大全 named a holder of
-置閏.
+置閏, then the eye of the 大遊 built as `dayouEye` (0.26.0).
 `main` is 79 commits ahead of `origin/main`, whose last commit is
 of 2026-10-06. Nothing since that day is pushed and the branch is not
 merged; both are the user's call. `npm test`, `npm run typecheck` and `npm
@@ -65,32 +65,12 @@ is not a failure.
 
 **What to do next, in the order the user has been taking it:**
 
-1. **Build the eye of 大遊 as a parameter** — decided on 2026-10-14 and not
-   yet built; the paragraph below says what it asks. It is the one decided
-   thing left undone.
-2. **Or read on**: § 2 line 3, the 大全's 奇門仙機 from sheet 347. Lines 1
-   and 2 have nothing left on this shelf.
+1. **Read on**: § 2 line 3, the 大全's 奇門仙機 from sheet 347. Lines 1
+   and 2 have nothing left on this shelf. Nothing decided is left unbuilt.
 
 What `board-pointer` does next is not decided: whether the other sections
 hold their boards the way the Qi Men section does, and whether a pointer does
 more than name the register.
-
-**Decided on 2026-10-14, by the user's word, and not yet built**: the eye of
-大遊, `dayou.wenchang`, becomes a parameter under the board's name, with the
-金鏡's count as the default. The engine runs the 金鏡's today, 卷五
-推大遊天目所在法: 積年 by 七十二, then by 十八 — `dayouOf` in
-`packages/core/src/taiyi.ts`. The 《統宗》卷十一 p. 110 states the other
-count whole: 積年 plus a 盈差 of 216, by 188, then by 18. Both walk from 天道
-with 乾 and 坤 counted twice, and they agree in about one year in eight.
-Neither work dates a seat. The second value has attribution and
-transcription, so it is implemented and not refused. Its 1520 figure is the
-one numeral to hold it to, and it is held by its residue on 188 against the
-金鏡's 積年, not by a seat. The name is settled when it is built, after
-`epoch: jinjing`, the board's one implemented value named for a work so far. It goes in
-with the `new-feature` skill: `packages/core/src/parameters.ts` declares it,
-the MCP schemas and `apps/web/src/lib/parameters.ts` list it, the
-canonical 太乙 fixture moves only if the default does, and it lands in § 1
-only if a value is left refused.
 
 **Decisions held open, by the user's word, until there is more to decide on:**
 
@@ -156,9 +136,17 @@ reading and each build has its section in `docs/sources.md`, its row in
   卷十三 does at nine. No rung moved. **Declared** on the user's word of the
   same day: the 大全 beside the 統宗 in `heldBy` for `method: zhirun` and
   `leap: solstice`, which no surface prints and no answer changes for.
+  **Built** on the user's word of 2026-10-14, named on theirs of 2026-10-16:
+  `dayouEye`, the eye of the 大遊 counted by the 金鏡, `jinjing`, the default,
+  or by the 《統宗》, `tongzong`, which its 1520 figure holds. The two agree
+  in one year in nine, measured over the 3384 years in which 72 and 188 meet,
+  where the register had said one in eight. 0.26.0: every 太乙 board carries
+  the option.
 
 **Owed a look by the user, and not blocking**: catalog strings written
-without the `reader-copy` skill. On 2026-10-15: `label.taiyipattern.du`,
+without the `reader-copy` skill. On 2026-10-16: `form.taiyi.dayouEye`, its
+two values and its note, and `notes.parameter.dayouEye`, in both catalogs.
+On 2026-10-15: `label.taiyipattern.du`,
 «shutting in» and «chiusura»; `label.taiyi.dingEye` and `dingCount`, «the
 fixed eye / count» and «l’occhio / il conto fisso»; `cli.field.taiyiCounts`
 shortened to «the counts» and «i conti»; and the sentences on 杜 and on the
@@ -342,10 +330,9 @@ prose, which a third language pays for and derived text does not. →
   section print both; `packages/plate` was left as it was, its
   `PlateTaiyiSide` without `accord` and its `PlateTaiyi` without `ding`. 杜
   is drawn, among the conditions, with no fortune beside it.
-- **The eye of 太乙's 大遊 is checked by nothing.** Its row rose on the body,
-  dated once in a second work; `dayou.wenchang` rides in that row and the
-  row says so. The 《統宗》卷十一 p. 110 counts it another way, read on
-  2026-10-14, and nothing dates a seat in either work.
+- **No seat of the eye of 太乙's 大遊 is dated**, in either work. `dayouEye`
+  computes both counts; `tongzong` is held by a printed count and `jinjing`
+  by nothing past its transcription.
 - **`taiyiYearOf` is exported and no surface calls it.** Every surface asks
   `taiyiYearAt`. Under `dongzhi` it reads a pillar that must have been cut
   at the solstice too, which nothing checks.

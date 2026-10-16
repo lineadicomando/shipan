@@ -87,6 +87,7 @@ phase.
 | 52 | [The second 立成, 杜 and the 定算](52-the-second-licheng.md) | done — the 《統宗》's 立成 read whole against the 金鏡's: ten of the fourteen errata printed as computed, 陰局 46 settled from a second work, two errors shared; and 杜, the word that table writes for generals in the centre, becomes the eighth condition and the first with no fortune; the 144 drawn boards hold 卷四's rule for the 定算, which is built |
 | 53 | [The eighteen 局 hour by hour](53-the-eighteen-ju-hour-by-hour.md) | done — the 《御定奇門大全》's 卷五–十 settled on the 版心 and read whole: no 起例 beyond the ordinary table, 1075 hour entries holding `centreLodging: kun` and `earthPlate: yuan`; and two divergences with no text declared on them, `spirits: huwu` and `centreStem: host` |
 | 54 | [The pin a day apart](54-the-pin-a-day-apart.md) | done — 遁甲通明鈐, 卷十一–十三 of the 大全, read for its 起例: 置閏 with the block before the solstices and the leap month refused in words, 淳祐六年 reproduced block for block at the engine's pin of nine, and a 卷十二 whose rule and datable case intercalate at ten; the 大全 named beside the 統宗 as a holder of 置閏 |
+| 55 | [The eye of the 大遊](55-the-eye-of-the-dayou.md) | done — `dayouEye`, the eye of the 大遊 by the 金鏡's count or by the 《統宗》's, the second held by its own figure for 1520; the agreement between them measured at one year in nine, where the register had one in eight |
 
 ## The rest of the record
 

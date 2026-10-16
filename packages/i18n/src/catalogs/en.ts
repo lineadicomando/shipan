@@ -1429,6 +1429,13 @@ export const en = {
   'form.taiyi.wenchangTaiyi.yan': '掩 yǎn, as 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn has it where it explains that condition',
   'form.taiyi.wenchangTaiyi.note':
     'One arrangement carries three names in the texts. The board is the same under each of them. What changes is the condition the arrangement is filed under, and with it the words the naming text attaches to that condition.',
+  'form.taiyi.dayouEye': 'The eye of the 大遊 dàyóu is counted',
+  'form.taiyi.dayouEye.jinjing':
+    'by reducing the years by the 元法 yuánfǎ, seventy-two, as 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng counts it',
+  'form.taiyi.dayouEye.tongzong':
+    'by adding the 盈差 yíngchā, 216, and reducing by 188, as 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn counts it',
+  'form.taiyi.dayouEye.note':
+    'Both texts walk the eye from 天道 tiāndào round the sixteen gods and hold it twice at 乾 qián and at 坤 kūn. They count the years differently before it walks, so the two counts put it on the same god in one year in nine. Each text states its count whole and dates no seat of the eye.',
   'form.ziwei.huoling': '火星 huǒxīng and 鈴星 língxīng are placed',
   'form.ziwei.huoling.fixed':
     'each on its seat from the year’s triplicity, which is what 《紫微斗數全書》 zǐwēidǒushùquánshū states',
@@ -1947,6 +1954,7 @@ export const en = {
   'notes.parameter.geHost': 'Whose bodies the condition 格 gé is marked for.',
   'notes.parameter.geChong': 'What makes a 格 gé: the facing palace, or a clash of branches as well.',
   'notes.parameter.wenchangTaiyi': 'What 文昌 wénchāng in the palace of 太乙 tàiyǐ is called.',
+  'notes.parameter.dayouEye': 'How the eye of the 大遊 dàyóu is counted.',
   'notes.parameter.leapMonth': 'What a birth in an intercalary month counts as.',
   'notes.parameter.sihua': 'Which table of the four transformations.',
   'notes.parameter.huoling': 'How 火星 huǒxīng and 鈴星 língxīng are placed.',

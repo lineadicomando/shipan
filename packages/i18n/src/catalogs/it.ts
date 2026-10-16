@@ -1312,6 +1312,13 @@ export const it: Record<MessageKey, string> = {
   'form.taiyi.wenchangTaiyi.yan': '掩 yǎn, come lo chiama il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn dove spiega quella condizione',
   'form.taiyi.wenchangTaiyi.note':
     'Una sola disposizione porta tre nomi nei testi. La tavola è la stessa sotto ciascuno di essi. Cambia la condizione sotto cui la disposizione è registrata, e con essa le parole che il testo attribuisce a quella condizione.',
+  'form.taiyi.dayouEye': 'L’occhio del 大遊 dàyóu si conta',
+  'form.taiyi.dayouEye.jinjing':
+    'riducendo gli anni per il 元法 yuánfǎ, settantadue, come lo conta il 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng',
+  'form.taiyi.dayouEye.tongzong':
+    'aggiungendo il 盈差 yíngchā, 216, e riducendo per 188, come lo conta il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn',
+  'form.taiyi.dayouEye.note':
+    'Entrambi i testi fanno camminare l’occhio da 天道 tiāndào lungo i sedici dèi e lo trattengono due volte, su 乾 qián e su 坤 kūn. Contano gli anni in modo diverso prima del cammino, perciò i due conti lo mettono sullo stesso dio un anno su nove. Ciascun testo enuncia il proprio conto per intero e non data nessuna posizione dell’occhio.',
   'form.ziwei.huoling': '火星 huǒxīng e 鈴星 língxīng sono collocate',
   'form.ziwei.huoling.fixed':
     'ciascuna sul seggio che le dà il triplice dell’anno, che è quanto enuncia il 《紫微斗數全書》 zǐwēidǒushùquánshū',
@@ -1707,6 +1714,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.geHost': 'Per i corpi di chi si segna la condizione 格 gé.',
   'notes.parameter.geChong': 'Che cosa fa un 格 gé: il palazzo di fronte, oppure anche uno scontro di rami.',
   'notes.parameter.wenchangTaiyi': 'Come si chiama 文昌 wénchāng nel palazzo di 太乙 tàiyǐ.',
+  'notes.parameter.dayouEye': 'Come si conta l’occhio del 大遊 dàyóu.',
   'notes.parameter.leapMonth': 'Che cosa conta una nascita in un mese intercalare.',
   'notes.parameter.sihua': 'Quale tavola delle quattro trasformazioni.',
   'notes.parameter.huoling': 'Come si collocano 火星 huǒxīng e 鈴星 língxīng.',

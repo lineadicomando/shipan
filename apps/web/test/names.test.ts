@@ -81,6 +81,7 @@ const READINGS: Readonly<Record<string, string>> = {
   // The divisor of a 定度法, which prose names where it says what a rate
   // stands on. No board seats it, so the engine cannot say it.
   大數: 'dàshù',
+  大遊: 'dàyóu',
   建除: 'jiànchú',
   神煞: 'shénshà',
   一宮: 'yīgōng',

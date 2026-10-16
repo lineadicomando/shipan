@@ -909,6 +909,33 @@ export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
     ],
     default: 'qiu',
   },
+  // The eye of the 大遊 walks the same ring in both works and is counted two
+  // ways before it walks. The values are named for the works, as `epoch` is;
+  // the name beside each is the word its count turns on. Neither work dates a
+  // seat. See `docs/sources.md` § "What is not here", under 大遊.
+  dayouEye: {
+    board: 'taiyi',
+    label: 'form.taiyi.dayouEye',
+    values: [
+      {
+        id: 'jinjing',
+        name: { hanzi: '元法', pinyin: 'yuánfǎ' },
+        says: 'form.taiyi.dayouEye.jinjing',
+        note: 'form.taiyi.dayouEye.note',
+        implemented: true,
+        heldBy: ['jinjing'],
+      },
+      {
+        id: 'tongzong',
+        name: { hanzi: '盈差', pinyin: 'yíngchā' },
+        says: 'form.taiyi.dayouEye.tongzong',
+        note: 'form.taiyi.dayouEye.note',
+        implemented: true,
+        heldBy: ['taiyitongzong'],
+      },
+    ],
+    default: 'jinjing',
+  },
   // The counts differ by millions and mostly do not differ at all: 《統宗》's
   // is congruent with 《金鏡》's modulo both 360 and 24, so it lays the identical
   // board and is a second witness rather than a second value. 《太乙淘金歌》's is

@@ -402,6 +402,22 @@ export const DIVERGENCES: readonly Divergence[] = [
     },
   },
   {
+    id: 'dayouEye',
+    board: 'taiyi',
+    values: ['jinjing', 'tongzong'],
+    implemented: ['jinjing', 'tongzong'],
+    fallback: 'jinjing',
+    label: 'form.taiyi.dayouEye',
+    says: {
+      jinjing: 'form.taiyi.dayouEye.jinjing',
+      tongzong: 'form.taiyi.dayouEye.tongzong',
+    },
+    notes: {
+      jinjing: 'form.taiyi.dayouEye.note',
+      tongzong: 'form.taiyi.dayouEye.note',
+    },
+  },
+  {
     id: 'epoch',
     board: 'taiyi',
     values: ['jinjing', 'taojin'],

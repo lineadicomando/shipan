@@ -7800,6 +7800,8 @@ cast by the 統宗. Its readings reach this register through 盧央's
 | `epoch: jinjing` | 《太乙金鏡式經》, the 《統宗》 | the anchor checked four ways in the first; the second's count differs by a multiple of both cycles and lays the same board |
 | `epoch: taojin` | 《太乙淘金歌》 | named by 盧央 as one of three 上元積年 in circulation; not on the shelf, its figure and procedure unstated here. 盧央 sets it against eleven dated positions of 《齊書·武帝紀》, where it gives 九宮 for the annal's 四宮 |
 | `ji: nianji` | both works | 歲計 in each |
+| `dayouEye: jinjing` | 《太乙金鏡式經》 | 卷五 推大遊天目所在法: the 大遊's 積年 by the 天目元法 of seventy-two, then by eighteen, walked from 天道 |
+| `dayouEye: tongzong` | the 《統宗》 | 卷十一 明大遊天目所主術, p. 110: the 積年 with a 盈差 of 216, by 188, then by eighteen, from the same seat; its printed count for 1520 holds the constants |
 | `ji: yueji`, `riji`, `shiji` | both works, with different constants | the 金鏡 prints the three procedures entire and its constants fail the check it supplies; the 統宗's are another system's, read on 2026-10-08: months from the 十一月 before the year, days from a 甲子 it dates twice, hours from the solstice |
 
 **`yearBoundary` is not attributed, in any of its three values.** The text
@@ -8131,18 +8133,19 @@ under 一百八十, which is what a 小周 of eighteen would make one expect: th
 十一 over, 五十二 for 四十一. What 甲寅 heads is not settled — no 甲寅 year
 stands at either count's origin.
 
-**And it is not the eye this engine draws.** `dayou.wenchang` is the 金鏡's,
-read on the plate the same day, 卷五 推大遊天目所在法 (810-893): 「置上元以來
-積年，以天目元法七十二去之，不盡以天目周法十八去之，命起天道，順行十六神，遇大武
-陰德重留一筭，外即天目所在也」, with 「天目周率二百一十六，以十二乘十八」 and
-「天目行率十八」 above it. The walk is the 《統宗》's and the count is not: run
-over six thousand years the two put the eye on one seat in about one year in
-eight, which is what two unrelated counts on eighteen seats give. The
-《統宗》's 盈差 is the 金鏡's 周率, 216, put to another use. Two works, each
-stating its count whole, and neither working a dated seat — so the eye is a
-divergence where it was an unchecked reading, and the row in
-`docs/sources.tsv` says so. It is to be a parameter under the board's name,
-the 金鏡's count the default, decided the same day and not yet built.
+**And the engine draws either, the 金鏡's by default.** `dayouEye: jinjing`
+is the 金鏡's count, read on the plate the same day, 卷五 推大遊天目所在法
+(810-893): 「置上元以來積年，以天目元法七十二去之，不盡以天目周法十八去之，命起
+天道，順行十六神，遇大武陰德重留一筭，外即天目所在也」, with 「天目周率二百一十六，
+以十二乘十八」 and 「天目行率十八」 above it. The walk is the 《統宗》's and the
+count is not. Seventy-two and 188 meet every 3384 years, and in that span the
+two counts put the eye on one god in 376 years, one in nine. The 《統宗》's
+盈差 is the 金鏡's 周率, 216, put to another use. Two works state their counts
+whole and neither works a dated seat, so the eye is a divergence and has a
+parameter under the board's name: `dayouEye`, computed since 2026-10-16, with
+`tongzong` beside the default. What holds `tongzong` is its 1520 figure, by
+its residue on 188, which `test/taiyi.test.ts` asserts with the seat it walks
+to, 呂申. Nothing holds `jinjing` beyond its transcription.
 
 And 五福, closing 卷十, p. 104: 「唐高祖武德七年甲申歲積一千零一十五萬四千五
 百四十一年，五福入玄宮中宮」 — the year counted in, as 卷三十一 counts, and

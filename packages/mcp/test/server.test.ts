@@ -702,6 +702,20 @@ describe('the divergences a tool offers', () => {
    * cannot show: an argument declared and dropped on the floor reads exactly
    * like one that works.
    */
+  it('moves the eye of the 大遊 under dayou_eye and nothing else on the board', async () => {
+    // 1520 is the year the 《統宗》 prints its count for: 太陽 by the 金鏡's
+    // count, 呂申 by the 《統宗》's, and the palace of the circuit under both.
+    const circuit = (text: string): string | undefined =>
+      text.split('\n').find((line) => line.includes('the great circuit'));
+    const jinjing = circuit(await call('compute_taiyi', { year: 1520, lang: 'en' }));
+    const tongzong = circuit(await call('compute_taiyi', { year: 1520, dayou_eye: 'tongzong', lang: 'en' }));
+
+    expect(jinjing).toContain('太陽');
+    expect(tongzong).toContain('呂申');
+    expect(jinjing).toContain('坤 kūn 7 · 15/36');
+    expect(tongzong).toContain('坤 kūn 7 · 15/36');
+  });
+
   it('lays a different 紫微斗數 board under each of its own two', async () => {
     // 1983-02-08 stands between 立春 and 正月初一, which is where the two part:
     // the year stem moves, and the year stem seats the four transformations.
