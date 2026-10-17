@@ -2703,6 +2703,40 @@ and 卷五 to 卷三十二. 卷二 to 卷四 of 景祐秘纂 are not.
 
 Last checked 2026-10-17.
 
+### 《御定奇門大全》卷三十三–三十八: 乾坤變異錄, which is omens of the sky and the ground
+
+Surveyed 2026-10-17, sheets 760–893. The juan were bracketed by the sheets
+with a blank half, `blanks.py` in `texts/qimen/daquan-tools/`, and each
+bracket was confirmed on the 版心 and on the opening leaf. Contact sheets at
+50 dpi covered sheets 760–791, 808–815, 832–839, 856–863 and 872–879, and
+edge strips every sixth sheet covered the rest. Nothing was read on the
+plate, and nothing is quoted.
+
+**What the six juan are.** The 版心 reads 乾坤變異錄 throughout:
+
+| juan | sheets | what it holds, by its headings |
+|---|---|---|
+| 三十三 | 760–783 | a 序, then 占天部第一 and 占地山石部第二, then the sun's 暈, 珥 and eclipses |
+| 三十四 | 784–806 | the sun, resumed: stars and 氣 beside it, 日月並見 |
+| 三十五 | 807–828 | the moon against the lodges and the stars, 月犯 |
+| 三十六 | 829–851 | 雲氣 entering the lodges and the palaces of the sky |
+| 三十七 | 852–872 | 雲氣 over a city, 占城可攻雲氣第九, then 占風部第一 |
+| 三十八 | 873–893 | the eight winds by term, 占旋風第二, 占雨第三, thunder and hail |
+
+**卷三十九 is not this work.** It opens on sheet 894 under
+禽遁秘訣陰符經 with 七曜禽星會者 and 初禽起例, and its 版心 reads 禽遁秘訣.
+The 目錄 gives 乾坤變異錄 卷三十三–三十九 and 禽遁陰符經 卷四十–四十二, and the
+plate moves the boundary one juan earlier. The blank halves put 卷三十九 at
+894–916, 卷四十 at 917–940, 卷四十一 at 941–960 and 卷四十二 at 961–982, and
+奇門秘訣 opens 卷四十三 on 983. Those four brackets were confirmed on the 版心
+and nothing in them was read.
+
+**So the work has no 起例 of any board.** Its omens read the sky and the
+ground directly, by a 暈, a cloud or a wind, and nothing in them is laid
+on a 局. Read for a 起例 are 卷一 and 卷五 to 卷三十八.
+
+Last checked 2026-10-17.
+
 ### 《紀氏奇門秘書仕學備餘》, where the states read from the star are a second arrangement
 
 《紀氏奇門秘書仕學備餘》 四卷, [清] 紀大奎 撰 — the facsimile's own title leaf
