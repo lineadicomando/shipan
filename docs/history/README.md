@@ -91,6 +91,7 @@ phase.
 | 56 | [The 仙機 surveyed](56-the-xianji-surveyed.md) | done — 奇門仙機, 卷十四–十六 of the 大全, holds no 起例 and does hold a table of one stem over another, a lead for 十干克應; 先天要論 opens on a verse stating 置閏 at the solstices |
 | 57 | [The 仙機's stem tables](57-the-xianji-stem-tables.md) | done — the 仙機 carries the eighty-one twice: in verse, J's line in another state, and in its 干論, a line of its own; 青龍耀明 gains a line outside J's, and B's 太白 names turn out to be the 干論's |
 | 58 | [The sixty-seven reviewed](58-the-sixty-seven-reviewed.md) | done — the refusal of 十干克應's other cells no longer held on its written ground, and a whole table turned out to be one line's: `stemPairs`, `shared` by default, `jinhan` laying 《金函玉鏡》's eighty cells with its fortune only where it states one, `xianji` refused |
+| 59 | [先天要論, the rest of it](59-the-xiantian-yaolun.md) | done — 卷十七–二十四 of the 大全 surveyed for a 起例 and none found: 卷十七 carries the 探索錄's 符經 on a woodblock, which reads 都天轉甲 where the 2012 print has 輔甲, and 卷二十–二十一 are the ordinary 局, every cell read the engine's |
 
 ## The rest of the record
 

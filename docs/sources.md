@@ -2558,12 +2558,73 @@ question.** It was answered the same day: the 仙機 carries two tables, and §
 with 「子午卯酉為上元」 in small characters beside 甲己上元. It goes on to the
 ordinary table of the twenty-four terms. That is the rule `method: zhirun`
 computes, with the leap at the solstices, and no number of days is named.
-Seven juan of 先天要論 remain, to about sheet 588.
+The rest of 先天要論 is the next section.
 
 **So the file still shows no 起例 variant.** Fifteen juan of the 大全 are now
 read for one, and the two that state a 起例 at length state 置閏.
 
 Last checked 2026-10-16.
+
+### 《御定奇門大全》卷十七–二十四: the rest of 先天要論, which carries the 探索錄's 符經 and the ordinary 局
+
+Surveyed 2026-10-17 on contact sheets at 50 to 60 dpi, sheets 420–588, every
+sheet seen for its headings. Read on the plate at 220 dpi, with one leaf at
+400: the 符經 run of 卷十七, sheets 430 and 432–434; the 值符歌 of 卷二十,
+sheets 484–485 and 488–490. Nothing else is quoted.
+
+**What the eight juan are, settled on the 版心**, which reads 先天要論 and the
+juan throughout:
+
+| juan | sheets | what it holds, by its headings |
+|---|---|---|
+| 十七 | 417–437 | the 八十老人騎竹馬歌 (above); then 九宮別音, 九星合卦所屬, 六親訣, 先天定六親訣, 三元值符以日支論, 天元 · 地元 · 人元九星, 十二值時星, 定身法, 符經用法, 都天轉甲法, 遁甲天元金口訣, 九星轉運歌, 起手總歌, 起訣, 斷中宮九星, 斷數總歌 and 九星斷訣 |
+| 十八 | 438–458 | 斷用星訣, 斷數總訣, 五行斷訣, then 斷 by matter: 求官, 求財, 行人, 婚姻, 疾病, 天文, 捕捉, 田宅, 失物, 問孕, 問姓 |
+| 十九 | 459–482 | 五符總斷, then a 章 for each matter (名利, 婚姻朋友, 出行, 行人, 詞訟, 疾病, 捕捉, 壽元, 晴雨), then the twelve branches as 類象 under the names of the 月將, from 神后 at 子 |
+| 二十 | 483–504 | 陽遁歌 and 陰遁歌, nine 局 each, a 值符歌 to each 局; then the three 局 of each term from 立春 to 穀雨 |
+| 二十一 | 505–525 | the terms from 立夏 to 大寒 |
+| 二十二 | 526–546 | 克應 of the eight gates: 杜門 from 526, 景門 from 533, 死門 from 540 to 死加震 |
+| 二十三 | 547–569 | 休門 from 547, 生門 from 554, 傷門 from 561 |
+| 二十四 | 570–588 | 死門 resumed, 死加巽 to 死加中宮; 驚門 from 572, 開門 from 578, and an 八門總歌 |
+
+卷二十四終 is on sheet 588 and 卷二十五 遁甲符應經 opens on 589. The 死門
+is split between 卷二十二 and 卷二十四 with three gates between, and each half
+opens its juan on a leaf 一. That is the block's own order.
+
+**卷十七 carries the 探索錄's 符經, in its order and with its 按.** 符經用法,
+sheet 433, reads 「按查值時飛宮，每用一盤管十二年月日時之吉凶，再用都天轉甲法以管數十年
+或數百年後時，再飛九星以觀十二年每年何宮之生克，則用十二局推此於太乙三元推斷之法無二也。
+至九星轉運，陽用飛星，陰用伏宮退一法，不過看日前日後于何年月值凶值吉生旺者，與都天轉甲
+不同，不可錯用」. 起訣, sheet 434, reads 「其法照二至後三元陰陽順逆，以本日值支定上中
+下三元，合於原盤之定數，起子時十二時支干飛佈九宮」. Both are 《奇門探索錄》卷三
+pp. 34–35, read on that print 2026-09-10 (§ "The three systems the same juan
+states", under "The second work"). This is the second chapter of 探索錄卷三 the 大全
+carries, after 超神接氣直指 in 卷一. **What the two copies settle is the text**:
+the 按's 都天轉甲 against the 2012 print's 輔甲, and the 符經 not being that
+print's own. What they do not settle is the finding the 探索錄 section made of
+it. The 起訣 still lays a board with 六親 and a 身位, measured by its own 按
+against 太乙, and that is not the 時家 board's 起例. `plate: fei` does not move.
+Which work carries which is no more established than it was for 卷一.
+
+**卷二十 and 卷二十一 are the ordinary 局, and every cell read is this
+engine's.** Each 局 of 陽遁歌 has a 值符歌 that walks the 六儀 round the
+palaces. 「六局值符歌，甲子值符起於六」 is followed by 己 at 兌, 庚 at 艮, 辛 at 離,
+壬 at 坎 and 癸 at 坤. That is 陽遁六局's earth plate under `earthPlate: yuan`.
+陽一, 二 and 五 were read the same way and agree, except one line: 二局's 辛 is
+「到巽及避五虎伏中堂」, which names the centre where the plate has it, and 巽
+besides. That is recorded as read. The term table names each 元 by the star
+whose palace it opens on, so each digit is read beside what checks it:
+「立春三元　天任八　天禽五　天芮二」. Twenty-two of the twenty-four terms
+were seen on the contact sheets, and all sixty-six 局 are `JU_TABLE`'s in
+`packages/core/src/dunjia/ju.ts`. 穀雨 and 霜降 fall on sheets where the heading
+and its numbers part, and were not looked for further. Under each term the
+text gives a 卦氣 commentary, which is reading and not placement.
+
+**So the work bought for a 起例 variant shows none in its first twenty-four
+juan.** What 先天要論 says of the 局 is the ordinary table and 置閏 at the
+solstices. Its gates, its 章 and its 類象 are omens. Read for this question
+are 卷一, 卷五 to 卷二十四 and 卷二十五; 卷二 to 卷四 of 景祐秘纂 are not.
+
+Last checked 2026-10-17.
 
 ### 《紀氏奇門秘書仕學備餘》, where the states read from the star are a second arrangement
 
@@ -3776,6 +3837,13 @@ the same juan reads 都天**轉**甲法, and footnote ⑥ to 遁甲天元金口�
 the plate, and both are one edition disagreeing with itself — a matter for the
 register and not for a parameter. Located 2026-09-09, read on the plate
 2026-09-10.
+
+**A second copy of the chapter has since been read, and it settles one of the
+two.** 《御定奇門大全》卷十七, sheets 432–435, carries the run from 遁甲天元金口訣
+to 斷數總歌 in the same order. Its 按 under 符經用法 reads 「與都天**轉**甲不同，
+不可錯用」, so 輔 is the 2012 typesetting's. 第盤 stands in the 大全 at the same
+place, so that one is older than the typesetting. See § "《御定奇門大全》卷十七–
+二十四". Read on the plate 2026-10-17.
 
 **Its 月家 line carries an attribute 遁甲演義 does not**, and it is recorded
 rather than used: 「月家奇門：用奇門遁甲預測一月內發生的事情，此種預測術中只用
