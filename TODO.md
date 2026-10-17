@@ -40,7 +40,12 @@ values, and is the generator to reuse for any table of 局 and hours — and, fo
 one table set against another, `texts/qimen/daquan-juan14-16-stems/`. Each
 directory has a README or a brief saying what its files are. A transcriber
 normalises titles it believes misprinted, so a title out of sequence is
-checked on the plate too. **A date the engine can find** — a solstice on a
+checked on the plate too. **The 大全 is surveyed with three scripts** in
+`texts/qimen/daquan-tools/` (its README says how): `blanks.py` brackets
+juan by their blank half-pages, `edges.py` reads the 版心 to confirm each
+bracket, `tile.py` lays eight sheets to a look for the headings. A passage
+that might hold a 起例 is then read at 220 dpi, and a doubtful character at
+400–500. **A date the engine can find** — a solstice on a
 named day pillar and lunar date — is searched rather than guessed:
 `texts/qimen/daquan-juan11-13-zhirun/` has the scripts, run against the built
 engine.
@@ -68,23 +73,42 @@ none of them merged. They are of three days:
 - 2026-10-17, the shelf: the rest of the 大全's 先天要論, 卷十七–二十四, and
   its 奇門古本, 卷二十八–三十二, and its 乾坤變異錄, 卷三十三–三十八,
   surveyed for a 起例 and none found; the 古本 carries the 年家 on 一七四.
-  No version moved.
+  `blanks.py` added to the 大全's tools. No version moved, and no code.
 
 `main` is 79 commits ahead of `origin/main`, whose last commit is of
 2026-10-06. Nothing since that day is pushed; pushing and merging are the
 user's call. `npm test`, `npm run typecheck` and `npm run build` pass on
-2026-10-16 with no test skipped. **Run `npm run build` before `npm test`** in
+2026-10-17 with no test skipped. **Run `npm run build` before `npm test`** in
 a fresh tree: the MCP and web suites and the shelf's scripts import
 `packages/core/dist`, and a stale `dist` fails them on whatever changed.
+
+**The index holds a staged change nobody committed**:
+`packages/core/test/cli.test.ts` staged with `.bin/qimen` where the tree and
+`HEAD` have `.bin/shipan`, which would undo e6b882b. It was there when the
+session of 2026-10-17 began and was left out of every commit. Whether to
+drop it (`git restore --staged packages/core/test/cli.test.ts`) is the
+user's call. Commit by naming the files, so it does not ride along.
 
 **What to do next, in the order the user has been taking it.** Nothing decided
 is left unbuilt.
 
-1. **Read on**: § 2 line 3, the 大全's 禽遁陰符經, 卷三十九–四十二, sheets
-   894–982, already bracketed. The question put to it is still a 起例
-   variant; 禽遁 is 演禽, so what it would answer is whether it lays a 奇門
-   board at all. 先天要論, 奇門古本 and 乾坤變異錄 were surveyed 2026-10-17
-   and have none.
+1. **Read on**: § 2 line 3, the 大全, for a 起例 variant. Two works stand
+   next, and which comes first was put to the user and not answered:
+   - **禽遁陰符經, 卷三十九–四十二, sheets 894–982**, bracketed on the 版心:
+     894–916, 917–940, 941–960, 961–982. It opens on 七曜禽星 and
+     初禽起例, which is 演禽, so what it can answer is whether it lays a
+     奇門 board at all.
+   - **奇門秘訣, 卷四十三–四十九, from sheet 983.** By the blank halves,
+     not yet confirmed on the 版心: 983–1001, 1002–1026, 1027–1046, then
+     1047 or 1051 to 1070, 1072–1095, from 1096. Its title promises more.
+
+   Then 寶鑑摘要, 吉凶格解 and 寶鏡圖, to sheet 1485, and 景祐秘纂 卷二–四,
+   which by the blank halves are 31–59, 60–82 and 83–113, unconfirmed.
+   先天要論, 奇門古本 and 乾坤變異錄 were surveyed 2026-10-17 and have
+   none. **A survey ends** with a section in `docs/sources.md` placed after
+   § "《御定奇門大全》卷三十三–三十八", the file's row in `texts/README.md`
+   extended (`texts/` is outside the repository), line 3 of § 2 and this
+   list, a phase in `docs/history/`, and one commit.
 2. **Or the 十干克應 cells two lines name alike** beyond the fourteen, which
    the review of 2026-10-16 found and did not take into `shared`: § 1,
    "Recorded, with no parameter", under 奇門.
@@ -177,6 +201,13 @@ reading and each build has its section in `docs/sources.md`, its row in
   a case at 1648, a second copy of that line older than the first, and a
   日家 of six sixty-day 局. Then 乾坤變異錄, 卷三十三–三十八: omens of the
   sky and the ground, and 卷三十九 is 禽遁 already. Nothing built.
+
+**Left open by the readings of 2026-10-17**, each small and none blocking:
+in 先天要論, the terms 穀雨 and 霜降, whose 局 numbers fall on another
+sheet from their heading and were not looked for, and 陽遁二局's 值符歌
+sending 辛 to 巽 and the centre in one line; in 奇門古本, the 雜占's worked
+hours, not held to the engine; and which of the 大全 and 《奇門探索錄》
+carries the other, since the 大全 holds two of the 探索錄卷三's chapters.
 
 **Owed a look by the user, and not blocking**: catalog strings written
 without the `reader-copy` skill. On 2026-10-16: `form.taiyi.dayouEye`, its
@@ -304,7 +335,7 @@ stand first because a decision waits on each.
 |---|---|---|
 | 1 | **A dated 日計 board, or the 盈差 of the day explained**: what `ji: riji` waits on | not in the 《統宗》 where it was looked for: 卷三十六 to p. 392, 卷四 p. 41 and 卷十八 whole were read on 2026-10-11 and every board is entered by its 局, and the 144 drawn boards of 卷三十二–三十五, read on 2026-10-15, are entered by their 局 and five 干支 with no year. Left in that work: the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
 | 2 | the lists of 上和 · 次和 · 下和, which three prints give three ways, and which count is read against 太乙's palace | the notes of the 《統宗》卷三十一 立成 were read on 2026-10-15: its table labels every count by its digits, ungraded, and none against 太乙's palace — so it answers neither question. A copy of the 金鏡 that is not the 四庫's, or a work quoting 王希明's lists: none held. The 金鏡 卷二 leaves 9–10, the 《統宗》卷六 pp. 54–56 and 盧央 pp. 477–479 were read on 2026-10-11 |
-| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets at 600 dpi, two book-pages to a sheet, right one first, each juan opening on a left page and located by the 版心 (`texts/qimen/daquan-tools/`). **Read for a 起例, and none found that the engine does not compute**: the 目錄; 卷一 of 景祐秘纂 (卷二–四 unread); 卷五–十, the eighteen 局 hour by hour (sheets 114–268); 卷十一–十三, 遁甲通明鈐, which states 置閏 at two pins (269–345); 卷十四–十六, 奇門仙機, omens and two stem tables, the tables transcribed (346–416); 卷十七–二十四, 先天要論, which states 置閏 and the ordinary 局 and carries the 探索錄's 符經 (417–588); 卷二十五 of the 符應經, with 卷二十六–二十七 only at sheets 607, 615–620, 631, 637. `docs/sources.md` has a section for each, titled by the juan. 卷二十八–三十二, 奇門古本, whose 卷二十九 states the 年家 on 一七四 with the 集成's epoch chain (659–759). 卷三十三–三十八, 乾坤變異錄, omens of the sky and the ground (760–893). **Next**, unopened: 禽遁陰符經 卷三十九–四十二 (894–982, a juan earlier than the 目錄 has it), 奇門秘訣 卷四十三–四十九 (from 983), 寶鑑摘要 卷五十–五十七, 吉凶格解 卷五十八–五十九, 寶鏡圖 卷六十–六十四. An earlier pass misread the 目錄's juan numbers twice, so each work is bracketed on the 版心 before it is read |
+| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets at 600 dpi, two book-pages to a sheet, right one first, each juan opening on a left page and located by the 版心 (`texts/qimen/daquan-tools/`). **Read for a 起例, and none found that the engine does not compute**: the 目錄; 卷一 of 景祐秘纂; 卷五–十, the eighteen 局 hour by hour (sheets 114–268); 卷十一–十三, 遁甲通明鈐, which states 置閏 at two pins (269–345); 卷十四–十六, 奇門仙機, omens and two stem tables, the tables transcribed (346–416); 卷十七–二十四, 先天要論, which states 置閏 and the ordinary 局 and carries the 探索錄's 符經 (417–588); 卷二十五 of the 符應經, with 卷二十六–二十七 only at sheets 607, 615–620, 631, 637; 卷二十八–三十二, 奇門古本, whose 卷二十九 states the 年家 on 一七四 with the 集成's epoch chain (659–759); 卷三十三–三十八, 乾坤變異錄, omens of the sky and the ground (760–893). `docs/sources.md` has a section for each, titled by the juan. **Unopened**: 景祐秘纂 卷二–四 (about 31–113); 禽遁陰符經 卷三十九–四十二 (894–982, a juan earlier than the 目錄 has it); 奇門秘訣 卷四十三–四十九 (from 983); 寶鑑摘要 卷五十–五十七, 吉凶格解 卷五十八–五十九, 寶鏡圖 卷六十–六十四. The 目錄's juan numbers have been wrong three times, so each work is bracketed on the 版心 before it is read |
 | 4 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
 | 5 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 
