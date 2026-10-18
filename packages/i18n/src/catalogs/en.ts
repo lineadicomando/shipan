@@ -965,6 +965,13 @@ export const en = {
   'label.register.qizheng.lodge': 'Lodge, and degrees past its star',
   'label.register.qizheng.motion': 'Which way it runs',
 
+  'label.register.taiyi.eye': 'Eye, where a count starts',
+  'label.register.taiyi.number': 'Palace number, in this board’s own count',
+  'label.register.taiyi.taiyi': 'Tai Yi, where it stands this year',
+  'label.register.taiyi.general': 'One of the four generals',
+  'label.register.taiyi.seat': 'Seat: a branch, or a corner trigram',
+  'label.register.taiyi.god': 'One of the sixteen gods',
+
   // The three methods carry their own names and the two errands do not, and
   // the line between them is what is being named rather than who is reading.
   //

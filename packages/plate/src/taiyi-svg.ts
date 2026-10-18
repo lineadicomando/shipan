@@ -9,6 +9,7 @@ import {
   type Said,
 } from './readings.js';
 import { drawSchools, schoolDepth } from './schools.js';
+import { marks } from './marks.js';
 import type {
   PlateTaiyi,
   PlateTaiyiGod,
@@ -77,6 +78,14 @@ import type {
  * Like the other three it holds no catalog and knows no language. South is at
  * the top, as everywhere here.
  */
+
+/**
+ * What the drawing marks: see `marks.ts`. A palace is its trigram and never its
+ * number, which is this board's own and one seat off the 洛書; a seat of the
+ * border is its branch or its corner trigram, and the unit tells the corner
+ * 乾 from the palace 乾.
+ */
+const { board: BOARD, tagged, seated } = marks('taiyi');
 
 /** The five phases, as classes the sheet turns into ink colours. */
 const PHASES = ['mu', 'huo', 'tu', 'jin', 'shui'] as const;
@@ -180,7 +189,7 @@ export function renderTaiyiSvg(board: PlateTaiyi, options: PlateTaiyiOptions = {
 
   const parts: string[] = [
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${round(height)}" ` +
-      `width="${size}" height="${round(height)}" role="img" aria-label="${escape(ariaLabel(board))}">`,
+      `width="${size}" height="${round(height)}" ${BOARD} role="img" aria-label="${escape(ariaLabel(board))}">`,
     `<style>${styleSheet(options.scheme ?? 'auto')}
       .qmdj { font-family: ${FONT_STACK}; }
       .qmdj text { fill: var(--qmdj-ink); }
@@ -281,8 +290,18 @@ function listing(
     const left = margin + columnWidth * index;
     const middle = left + columnWidth / 2;
 
-    if (eyeWord) parts.push(text(middle, top + height * 0.2, eyeWord, size * 0.019, 'word'));
-    parts.push(text(middle, top + height * 0.5, eye.hanzi, size * 0.042, eye.element));
+    parts.push(
+      tagged(
+        'eye',
+        eye,
+        [
+          eyeWord ? text(middle, top + height * 0.2, eyeWord, size * 0.019, 'word') : '',
+          text(middle, top + height * 0.5, eye.hanzi, size * 0.042, eye.element),
+        ]
+          .filter(Boolean)
+          .join('\n'),
+      ),
+    );
 
     const generals = [
       `${labels.general ?? ''} ${side.general.hanzi}${side.general.number}`,
@@ -342,15 +361,15 @@ function palaces(
   // general, not for the two characters that write it.
   const words = labels.standing ?? {};
   const standing = new Map<number, Standing[]>();
-  const put = (palace: number | undefined, glyph: string, word: string | undefined) => {
+  const put = (palace: number | undefined, role: Role, glyph: string, word: string | undefined) => {
     if (palace === undefined) return;
-    standing.set(palace, [...(standing.get(palace) ?? []), { glyph, word }]);
+    standing.set(palace, [...(standing.get(palace) ?? []), { role, glyph, word }]);
   };
-  put(board.taiyi.palace.number, '太乙', words.taiyi);
-  put(board.host.general.number, '主將', words.hostGeneral);
-  put(board.host.assistant.number, '主參', words.hostAssistant);
-  put(board.guest.general.number, '客將', words.guestGeneral);
-  put(board.guest.assistant.number, '客參', words.guestAssistant);
+  put(board.taiyi.palace.number, 'taiyi', '太乙', words.taiyi);
+  put(board.host.general.number, 'hostGeneral', '主將', words.hostGeneral);
+  put(board.host.assistant.number, 'hostAssistant', '主參', words.hostAssistant);
+  put(board.guest.general.number, 'guestGeneral', '客將', words.guestGeneral);
+  put(board.guest.assistant.number, 'guestAssistant', '客參', words.guestAssistant);
 
   for (const [direction, seat] of Object.entries(PALACE_SEAT)) {
     const [row, column] = seat;
@@ -362,25 +381,31 @@ function palaces(
     // phase picked here: a wrongly coloured palace is a wrong statement about
     // the board, and an uncoloured one is only a plainer drawing.
     const phase = phaseAt.get(direction);
-    parts.push(
+    const trigram = TRIGRAM_AT[direction] as string;
+    const cellParts = [
       `<rect x="${round(x)}" y="${round(y)}" width="${round(cell)}" height="${round(cell)}" ` +
         `fill="${phase ? `var(--qmdj-element-${phase})` : 'var(--qmdj-ground)'}" class="cell"/>`,
-    );
+    ];
 
     const number = numberAt.get(direction);
-    if (number === undefined) continue;
-    parts.push(text(middle, y + cell * 0.3, String(number), cell * 0.24, 'faint'));
+    if (number !== undefined) {
+      cellParts.push(
+        tagged('number', { id: trigram }, text(middle, y + cell * 0.3, String(number), cell * 0.24, 'faint')),
+      );
 
-    // Under the number, and never over it: the number is how a palace is
-    // named and the stack is what happens to be standing in it this year.
-    parts.push(
-      ...stacked(standing.get(number) ?? [], {
-        middle,
-        top: y + cell * 0.34,
-        room: cell * 0.63,
-        cell,
-      }),
-    );
+      // Under the number, and never over it: the number is how a palace is
+      // named and the stack is what happens to be standing in it this year.
+      cellParts.push(
+        ...stacked(standing.get(number) ?? [], {
+          middle,
+          top: y + cell * 0.34,
+          room: cell * 0.63,
+          cell,
+        }),
+      );
+    }
+
+    parts.push(seated('palace', trigram, cellParts));
   }
 
   // The middle. 太乙不入中宮 — it walks eight and never nine — so the cell is
@@ -395,24 +420,28 @@ function palaces(
   // on no seat, takes no phase from one, and is not walked.
   const centre = left + cell * 2;
   parts.push(
-    `<rect x="${round(centre)}" y="${round(top + cell * 2)}" width="${round(cell)}" ` +
-      `height="${round(cell)}" fill="var(--qmdj-ground)" class="cell"/>`,
-    text(centre + cell / 2, top + cell * 2.42, '中', cell * 0.2, 'faint'),
-  );
-  parts.push(
-    ...stacked(standing.get(5) ?? [], {
-      middle: centre + cell / 2,
-      top: top + cell * 2.5,
-      room: cell * 0.46,
-      cell,
-    }),
+    seated('palace', 'zhong', [
+      `<rect x="${round(centre)}" y="${round(top + cell * 2)}" width="${round(cell)}" ` +
+        `height="${round(cell)}" fill="var(--qmdj-ground)" class="cell"/>`,
+      text(centre + cell / 2, top + cell * 2.42, '中', cell * 0.2, 'faint'),
+      ...stacked(standing.get(5) ?? [], {
+        middle: centre + cell / 2,
+        top: top + cell * 2.5,
+        room: cell * 0.46,
+        cell,
+      }),
+    ]),
   );
 
   return parts;
 }
 
+/** Which of the five pieces stands in a palace, by the key its word goes by. */
+type Role = 'taiyi' | 'hostGeneral' | 'hostAssistant' | 'guestGeneral' | 'guestAssistant';
+
 /** One thing standing in a palace: the glyph the drawing writes, and its word. */
 interface Standing {
+  role: Role;
   glyph: string;
   word?: string | undefined;
 }
@@ -470,11 +499,14 @@ function stacked(
     const size = entry.size * scale;
     const wordSize = entry.wordSize * scale;
     y += size;
-    parts.push(text(middle, y, entry.one.glyph, size));
+    const piece = [text(middle, y, entry.one.glyph, size)];
     for (const line of entry.lines) {
       y += wordSize * 1.2;
-      parts.push(text(middle, y, line, fitted(line, wordSize, width), 'word'));
+      piece.push(text(middle, y, line, fitted(line, wordSize, width), 'word'));
     }
+    // 太乙 is the board's own and the other four are the parties' generals.
+    const { role } = entry.one;
+    parts.push(tagged(role === 'taiyi' ? 'taiyi' : 'general', { id: role }, piece.join('\n')));
     y += size * 0.2;
   }
   return parts;
@@ -515,14 +547,14 @@ function ring(
     const y = top + row * cell;
     const middle = x + cell / 2;
 
-    parts.push(
+    const cellParts = [
       `<rect x="${round(x)}" y="${round(y)}" width="${round(cell)}" height="${round(cell)}" ` +
         `fill="var(--qmdj-element-${god.element})" class="cell"/>`,
-    );
+    ];
 
     if (god.id === board.wenchang.id || god.id === board.shiji.id) {
       const inset = cell * 0.06;
-      parts.push(
+      cellParts.push(
         `<rect x="${round(x + inset)}" y="${round(y + inset)}" ` +
           `width="${round(cell - inset * 2)}" height="${round(cell - inset * 2)}" class="rule"/>`,
       );
@@ -534,15 +566,24 @@ function ring(
     // written in, not the exception, and a line that ran on would run into
     // the cell below.
     const numeral = key.get(god.hanzi);
-    if (numeral !== undefined) {
-      parts.push(ringed(numeral, x + cell * 0.06, y + cell * 0.18, cell * 0.085));
-    }
+    const seat = RIM_IDS[index] as string;
 
-    parts.push(
-      text(middle, y + cell * 0.28, SEAT_GLYPH[index] as string, cell * 0.17, 'faint'),
-      text(middle, y + cell * 0.6, god.hanzi, cell * 0.17, god.element),
-      ...worded(middle, y + cell * 0.78, labels.god?.[god.id], cell * 0.085, room),
+    cellParts.push(
+      tagged('seat', { id: seat }, text(middle, y + cell * 0.28, SEAT_GLYPH[index] as string, cell * 0.17, 'faint')),
+      tagged(
+        'god',
+        god,
+        [
+          numeral !== undefined ? ringed(numeral, x + cell * 0.06, y + cell * 0.18, cell * 0.085) : '',
+          text(middle, y + cell * 0.6, god.hanzi, cell * 0.17, god.element),
+          ...worded(middle, y + cell * 0.78, labels.god?.[god.id], cell * 0.085, room),
+        ]
+          .filter(Boolean)
+          .join('\n'),
+      ),
     );
+
+    parts.push(seated('rim', seat, cellParts));
   });
 
   return parts;
@@ -576,6 +617,20 @@ function conditionsOf(
 /** Which direction each of the sixteen seats faces, in ring order from 子. */
 const SEAT_DIRECTION: readonly (string | null)[] = [
   'n', null, 'ne', null, 'e', null, 'se', null, 's', null, 'sw', null, 'w', null, 'nw', null,
+];
+
+/**
+ * The trigram of each inner palace, by the direction it faces: the identifier
+ * a palace is marked with, since its number is this board's own.
+ */
+const TRIGRAM_AT: Readonly<Record<string, string>> = {
+  n: 'kan', ne: 'gen', e: 'zhen', se: 'xun', s: 'li', sw: 'kun', w: 'dui', nw: 'qian',
+};
+
+/** The sixteen seats by identifier, in ring order from 子, for the marks. */
+const RIM_IDS: readonly string[] = [
+  'zi', 'chou', 'gen', 'yin', 'mao', 'chen', 'xun', 'si',
+  'wu', 'wei', 'kun', 'shen', 'you', 'xu', 'qian', 'hai',
 ];
 
 /** The seat each of the sixteen stands on: a branch, or a corner trigram. */

@@ -941,6 +941,13 @@ export const it: Record<MessageKey, string> = {
   'label.register.qizheng.lodge': 'Dimora, e gradi oltre la sua stella',
   'label.register.qizheng.motion': 'In che verso corre',
 
+  'label.register.taiyi.eye': 'Occhio, da cui parte un conto',
+  'label.register.taiyi.number': 'Numero del palazzo, nel conto di questa tavola',
+  'label.register.taiyi.taiyi': 'Tai Yi, dove sta quest’anno',
+  'label.register.taiyi.general': 'Uno dei quattro generali',
+  'label.register.taiyi.seat': 'Seggio: un ramo, o un trigramma d’angolo',
+  'label.register.taiyi.god': 'Uno dei sedici dèi',
+
   // I tre metodi portano il proprio nome e i due atti no, e la linea fra loro
   // sta in ciò che si nomina, non in chi legge.
   //
