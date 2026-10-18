@@ -241,10 +241,10 @@ export const qimenSchema = {
       'How the ju of a Qi Men chart is determined, and the most divisive choice in the art. Default chaibu, which reads the ju off the term in force and the yuan off the day: the days run in five-day stretches headed by Jia or Ji (the futou), and where the day pillar stands in that fifteen-day cycle is the yuan. maoshan does not read the day at all — it counts sixty shichen from the instant the term began, then sixty more, and gives the rest of the term to the third yuan. zhirun follows the day\'s futou through whole fifteen-day blocks and pays the drift off with an intercalated Mangzhong or Daxue; its ju can belong to a term the Sun has not reached yet, and the answer says which. Three different schools, not three approximations of one another: chaibu and maoshan disagree about three hours in five.',
     ),
   spirits: z
-    .enum(['dun', 'fixed', 'baihu'])
+    .enum(['dun', 'fixed', 'baihu', 'huwu'])
     .optional()
     .describe(
-      'What names the fifth and sixth of the eight spirits. Default dun: the pair is named by the half of the year, gouchen and zhuque in a yang chart, baihu and xuanwu in a yin one. fixed keeps the same eight names in both dun, as the Yuding Qimen Baojian has them. baihu keeps the naming by half-year but leaves baihu at the fifth seat of a yang chart, which is the board of the Qimen Dunjia Quanju. Three readings of one ring, parting at two seats and only in the name — but the name is what a spirit criterion matches on.',
+      'What names the fifth and sixth of the eight spirits. Default dun: the pair is named by the half of the year, gouchen and zhuque in a yang chart, baihu and xuanwu in a yin one. fixed keeps the same eight names in both dun, as the Yuding Qimen Baojian has them. baihu keeps the naming by half-year but leaves baihu at the fifth seat of a yang chart, which is the board of the Qimen Dunjia Quanju. huwu keeps the names of a yin chart in both dun, baihu fifth and xuanwu sixth, as the hour tables of the Yuding Qimen Daquan name them. Four readings of one ring, parting at two seats and only in the name — but the name is what a spirit criterion matches on.',
     ),
   plate: z
     .enum(['zhuan', 'xingfei'])
@@ -256,7 +256,7 @@ export const qimenSchema = {
     .enum(['shijia', 'rijia'])
     .optional()
     .describe(
-      'Which family of Qi Men board, and each is a board of its own. Default shijia, the board of the hour: a plate of stems, nine stars, eight gates and eight spirits, and everything else this tool describes. rijia is the board of the day: eight gates and nine stars of its own, the first of them taiyi, with no stems, no chief and no spirits. It is laid off the day pillar and the season alone, so every hour of one day has the same one; beside it come the twelve hours of that day, each with the god it treads and what the stem of the day puts on it — the Heavenly Noble, the road cut off, the hour that does not meet, the spirit of joy and its bearing — which are names from the almanac and order no hour above another. The board reads day_gates and none of method, plate, spirits, centre_lodging, earth, earth_plate or centre_travel. The answer has a different shape under each.',
+      'Which family of Qi Men board, and each is a board of its own. Default shijia, the board of the hour: a plate of stems, nine stars, eight gates and eight spirits, and everything else this tool describes. rijia is the board of the day: eight gates and nine stars of its own, the first of them taiyi, with no stems, no chief and no spirits. It is laid off the day pillar and the season alone, so every hour of one day has the same one; beside it come the twelve hours of that day, each with the god it treads and what the stem of the day puts on it — the Heavenly Noble, the road cut off, the hour that does not meet, the spirit of joy and its bearing — which are names from the almanac and order no hour above another. The board reads day_gates and none of method, plate, spirits, centre_lodging, earth, earth_plate, centre_travel or centre_stem. The answer has a different shape under each.',
     ),
   day_gates: z
     .enum(['fei', 'zhuan'])
@@ -288,11 +288,23 @@ export const qimenSchema = {
     .describe(
       'Where the chief (zhifu) and the chief gate (zhishi) are read when the count puts them on the central palace. Default stay: in the palace the centre lodges in, as the Yuding Qimen Baojian has it. travel reads them in the fifth palace itself, as the Qimen Dunjia Jinjing Baojian does. Neither moves a plate; both values are computed and the chart says which it stands on.',
     ),
+  centre_stem: z
+    .enum(['centre', 'host'])
+    .optional()
+    .describe(
+      'Where the stem of the central palace stands once the plate has turned, on the turned plate (plate zhuan) only. The palace the centre lodges in holds two stems on the earth plate, its own and the centre\'s, and the turn carries its own to another palace. Default centre: the centre\'s stem stays in the fifth palace. host: it moves with its host\'s stem and stands above the palace that stem arrives at, as the hour tables of the Yuding Qimen Daquan read it; the configurations it makes over the stem below are read there too, and the palace reports it as heavenLodged. Both values are computed and the chart says which it stands on.',
+    ),
   ding_tomb: z
     .enum(['gen', 'qian'])
     .optional()
     .describe(
       'Which palace the stem ding is buried in (rumu). Default gen: the palace of gen, as the Qimen Dunjia Tongzong has it. qian: the palace of qian, where bing is buried too, as the Dunjia Fuyingjing has it. The two texts agree on yi and on bing. It moves that one mark and no plate; both values are computed and the chart says which it stands on.',
+    ),
+  stem_pairs: z
+    .enum(['shared', 'jinhan'])
+    .optional()
+    .describe(
+      'Which table of shigan keying (the stem of the heaven plate over the stem below it) names the marks. Default shared: the fourteen cells the texts name alike, which is a convention of this engine and no text\'s table. jinhan: the whole table of the Jinhan Yujing, eighty of its eighty-one cells (the one it calls fuyin is left out, since the board already reports a different fuyin), with a fortune only where that text states one without a condition, so most of its marks carry no fortune. A third table, the Qimen Xianji\'s, is declared and refused. It moves marks and no plate. The lines name most cells differently, so a mark under jinhan is that text\'s name and not the art\'s.',
     ),
 };
 
@@ -313,7 +325,7 @@ interface RawInput {
   day_boundary?: 'zishi' | 'midnight' | undefined;
   year_boundary?: 'lichun' | 'chunjie' | 'dongzhi' | undefined;
   method?: 'chaibu' | 'zhirun' | 'maoshan' | undefined;
-  spirits?: 'dun' | 'fixed' | 'baihu' | undefined;
+  spirits?: 'dun' | 'fixed' | 'baihu' | 'huwu' | undefined;
   plate?: 'zhuan' | 'xingfei' | undefined;
   system?: 'shijia' | 'rijia' | undefined;
   day_gates?: 'fei' | 'zhuan' | undefined;
@@ -321,7 +333,9 @@ interface RawInput {
   earth?: 'quarters' | 'eighteen' | undefined;
   earth_plate?: 'yuan' | 'xun' | undefined;
   centre_travel?: 'stay' | 'travel' | undefined;
+  centre_stem?: 'centre' | 'host' | undefined;
   ding_tomb?: 'gen' | 'qian' | undefined;
+  stem_pairs?: 'shared' | 'jinhan' | undefined;
   shensha?: 'xieji' | undefined;
   born?: string | undefined;
   born_time?: string | undefined;
@@ -368,7 +382,9 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
       earth: raw.earth,
       earthPlate: raw.earth_plate,
       centreTravel: raw.centre_travel,
+      centreStem: raw.centre_stem,
       dingTomb: raw.ding_tomb,
+      stemPairs: raw.stem_pairs,
     },
     (parameter) => parameter.id.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`),
   );
@@ -386,7 +402,9 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.earth) options.earth = raw.earth;
   if (raw.earth_plate) options.earthPlate = raw.earth_plate;
   if (raw.centre_travel) options.centreTravel = raw.centre_travel;
+  if (raw.centre_stem) options.centreStem = raw.centre_stem;
   if (raw.ding_tomb) options.dingTomb = raw.ding_tomb;
+  if (raw.stem_pairs) options.stemPairs = raw.stem_pairs;
   if (raw.shensha) options.shensha = raw.shensha;
 
   const ephemeris: EphemerisContext = initEphemeris(context.ephemerisPath);

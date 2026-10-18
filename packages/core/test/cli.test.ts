@@ -776,7 +776,7 @@ describe('the installed bin', () => {
   // foot of cli.ts once sniffed the path for `cli.js`, and through the
   // symlink the whole program was a silent exit 0. Only a spawn exercises
   // that guard — everything above imports `run`, which must not fire it.
-  const BIN = fileURLToPath(new URL('../../../node_modules/.bin/qimen', import.meta.url));
+  const BIN = fileURLToPath(new URL('../../../node_modules/.bin/shipan', import.meta.url));
 
   // Skipped where `dist` has not been built: the suite runs from source and
   // must not demand a build first.

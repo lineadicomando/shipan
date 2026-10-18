@@ -132,7 +132,7 @@ describe('十干克應 — the stem above over the stem below', { timeout: 30_00
     // Two of the three were the two the verse itself marks 吉; 青龍耀明 is the
     // third and came in with the printed table, which grades it 吉 in its own
     // words and is seconded there. Everything the cross-check added is 凶.
-    const auspicious = pairings.filter((id) => valenceOf(id).id === 'ji');
+    const auspicious = pairings.filter((id) => valenceOf(id)?.id === 'ji');
     expect([...auspicious].sort()).toEqual(['feiniaodiexue', 'qinglongfanshou', 'qinglongyaoming']);
   });
 
@@ -158,3 +158,147 @@ const PAIR_IDS: string[] = [
   'xingge', 'taibaitonggong', 'tengsheyaojiao', 'zhuquetoujiang', 'qinglongtaozou',
   'baihuchangkuang', 'qinglongyaoming', 'riqiruwu',
 ];
+
+/**
+ * 《金函玉鏡》卷二 十干克應訣, cell by cell: the stem above, the stem below,
+ * and the name the text gives that pairing, as `stemPairs: jinhan` lays it.
+ * Transcribed from the 1996 print, pp. 30–32, simplified type read into the
+ * traditional the engine prints. The fourteen of the shared table are not
+ * repeated here, and 戊 over 戊 is not here at all: the text's 伏吟 would
+ * collide with the board's own.
+ */
+const JINHAN: readonly [string, string][] = [
+  ['戊乙', 'qinglongheling'],
+  ['戊己', 'guirenruyu'],
+  ['戊庚', 'zhifufeigong'],
+  ['戊辛', 'qinglongzhezu'],
+  ['戊壬', 'qinglongrutianlao'],
+  ['戊癸', 'qinglonghuagai'],
+  ['乙戊', 'liyinhaiyang'],
+  ['乙乙', 'riqifuyin'],
+  ['乙丙', 'qiyishunsui'],
+  ['乙丁', 'qiyixiangzuo'],
+  ['乙庚', 'riqibeixing'],
+  ['乙壬', 'riqirudi'],
+  ['乙癸', 'huagaifengxingguan'],
+  ['丙乙', 'riyuebingxing'],
+  ['丙丙', 'yueqibeishi'],
+  ['丙丁', 'yueqizhuque'],
+  ['丙己', 'dabeiruxing'],
+  ['丙辛', 'moushijiucheng'],
+  ['丙壬', 'huorutianluo'],
+  ['丙癸', 'huagaibeishi'],
+  ['丁戊', 'qinglongzhuanguang'],
+  ['丁乙', 'rendunjige'],
+  ['丁丙', 'xingsuiyuezhuan'],
+  ['丁丁', 'qirutaiyin'],
+  ['丁己', 'huorugouchen'],
+  ['丁庚', 'nianyuerishige'],
+  ['丁辛', 'zhuqueruyu'],
+  ['丁壬', 'wushenhuhe'],
+  ['己戊', 'quanyuqinglong'],
+  ['己乙', 'mushen'],
+  ['己丙', 'huobeidihu'],
+  ['己丁', 'zhuquerumu'],
+  ['己己', 'dihufenggui'],
+  ['己庚', 'ligefanming'],
+  ['己辛', 'youhunrumu'],
+  ['己壬', 'diwanggaozhang'],
+  ['己癸', 'dixingxuanwu'],
+  ['庚戊', 'taibaitianyifugong'],
+  ['庚乙', 'taibaipengxing'],
+  ['庚丁', 'tingtingzhige'],
+  ['庚辛', 'baihugange'],
+  ['辛戊', 'kunlongbeishang'],
+  ['辛丙', 'ganhebeishi'],
+  ['辛丁', 'yushendeqi'],
+  ['辛己', 'ruyuzixing'],
+  ['辛庚', 'baihuchuli'],
+  ['辛辛', 'fuyintianting'],
+  ['辛壬', 'xiongsheruyu'],
+  ['辛癸', 'tianlaohuagai'],
+  ['壬戊', 'xiaoshehualong'],
+  ['壬乙', 'xiaosheriqi'],
+  ['壬丙', 'shuisheruhuo'],
+  ['壬丁', 'ganheshexing'],
+  ['壬己', 'xiongsherumu'],
+  ['壬庚', 'taibaiqinshe'],
+  ['壬辛', 'tengshexiangchan'],
+  ['壬壬', 'sherudiluo'],
+  ['壬癸', 'younvjianyin'],
+  ['癸戊', 'tianyihuihe'],
+  ['癸乙', 'huagaifengxing'],
+  ['癸丙', 'huagaibeishi'],
+  ['癸己', 'huagaidihu'],
+  ['癸庚', 'taibairuwang'],
+  ['癸辛', 'wanggaitianlao'],
+  ['癸壬', 'fujiantengshe'],
+  ['癸癸', 'tianwangsizhang'],
+];
+
+const STEM_ID: Record<string, string> = {
+  乙: 'yi', 丙: 'bing', 丁: 'ding', 戊: 'wu', 己: 'ji', 庚: 'geng', 辛: 'xin', 壬: 'ren', 癸: 'gui',
+};
+
+describe('the table of 《金函玉鏡》, under stemPairs: jinhan', { timeout: 60_000 }, () => {
+  const JINHAN_CLOCK: ChartOptions = { ...CLOCK, stemPairs: 'jinhan' };
+
+  /** Every stem-pair mark found, keyed by the pair of stems it stood on. */
+  function sweep(options: ChartOptions): Map<string, Set<string>> {
+    const seen = new Map<string, Set<string>>();
+    for (const year of [2024, 2025]) {
+      for (let month = 1; month <= 12; month += 1) {
+        for (const day of [3, 11, 19, 27]) {
+          const date = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+          for (const hour of ['01:00', '07:00', '13:00', '19:00', '23:30']) {
+            const chart = computeQimenChart(
+              resolveMoment({ date, time: hour, timezone: 'Asia/Shanghai' }, BEIJING, options, context),
+              options,
+            );
+            for (const pattern of chart.patterns) {
+              if (pattern.palace === undefined || !STEM_PAIR_IDS.has(pattern.id)) continue;
+              const cell = chart.palaces.find((one) => one.palace.number === pattern.palace);
+              if (!cell) continue;
+              const key = `${cell.heaven.id}/${cell.earth.id}`;
+              seen.set(key, (seen.get(key) ?? new Set()).add(pattern.id));
+            }
+          }
+        }
+      }
+    }
+    return seen;
+  }
+
+  const STEM_PAIR_IDS = new Set<string>([...PAIR_IDS, 'shangge', ...JINHAN.map(([, id]) => id)]);
+
+  it('names every cell of the eighty it lays as the text names it, and nothing else', () => {
+    const found = sweep(JINHAN_CLOCK);
+    for (const [pair, id] of JINHAN) {
+      const key = `${STEM_ID[[...pair][0] as string]}/${STEM_ID[[...pair][1] as string]}`;
+      expect([...(found.get(key) ?? [])], pair).toEqual([id]);
+    }
+    // And the shared fourteen stand under it unchanged.
+    expect([...(found.get('geng/gui') ?? [])]).toEqual(['dage']);
+    expect([...(found.get('wu/ding') ?? [])]).toEqual(['qinglongyaoming']);
+    // 戊 over 戊 carries no stem-pair mark: the board's 伏吟 is another thing.
+    expect(found.get('wu/wu')).toBeUndefined();
+    expect(found.size).toBe(80);
+  });
+
+  it('lays none of them under the default', () => {
+    const jinhanOnly = new Set(JINHAN.map(([, id]) => id));
+    for (const ids of sweep(CLOCK).values()) {
+      for (const id of ids) expect(jinhanOnly.has(id), id).toBe(false);
+    }
+  });
+
+  it('gives a fortune only where the text states one outright', () => {
+    // 「公謀私為皆吉」, 「文書事吉，百事皆可為」, 「吉格」 twice; and 「公私皆不利」,
+    // 「吉事不吉，凶事更凶」, 「凡陰陽皆不吉利」, 「百事不可謀，為凶」.
+    const weighed = [...new Set(JINHAN.map(([, id]) => id))].filter((id) => valenceOf(id as never));
+    const by = (v: string) => weighed.filter((id) => valenceOf(id as never)?.id === v).sort();
+    expect(by('ji')).toEqual(['qiyixiangzuo', 'rendunjige', 'riyuebingxing', 'tianyihuihe']);
+    expect(by('xiong')).toEqual(['guirenruyu', 'qinglongrutianlao', 'taibaitianyifugong', 'zhifufeigong']);
+    expect(weighed).toHaveLength(8);
+  });
+});

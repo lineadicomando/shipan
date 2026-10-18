@@ -122,6 +122,21 @@ describe('renderZiweiSvg', () => {
     expect(svg).toContain(`x="${left + cell * 3}" y="${top}"`); // 申, upper right
   });
 
+  it('marks every seat by its ground, and every name in it with its layer', () => {
+    const svg = renderZiweiSvg(board());
+
+    expect(svg).toMatch(/<svg [^>]*data-board="ziwei"/);
+    for (const [, branch] of GROUND) expect(svg).toContain(`<g data-unit="palace" data-seat="${branch}">`);
+    for (const layer of ['rings', 'ground', 'house']) {
+      expect(svg.match(new RegExp(`data-layer="${layer}"`, 'g'))).toHaveLength(12);
+    }
+    // A star line is one name with its grade and transformation on it, and is
+    // marked whole: the crowded seat holds eleven, the empty one none.
+    expect(svg.match(/data-layer="star"/g)).toHaveLength(CROWDED.length + 10);
+    expect(svg).toMatch(/<g data-layer="star" data-id="紫微">[\s\S]*?紫微廟化權/);
+    expect(svg).toContain('<g data-layer="house" data-id="ming">');
+  });
+
   it('carries the grade and the transformation on the star they belong to', () => {
     const svg = renderZiweiSvg(board());
 

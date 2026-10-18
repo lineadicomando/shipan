@@ -91,6 +91,34 @@ describe('the 太乙 drawing', () => {
     readings: 'Said aloud',
   });
 
+  it('marks a palace by its trigram and never by its number', () => {
+    expect(svg).toMatch(/<svg [^>]*data-board="taiyi"/);
+    for (const trigram of ['kan', 'gen', 'zhen', 'xun', 'li', 'kun', 'dui', 'qian', 'zhong']) {
+      expect(svg).toContain(`<g data-unit="palace" data-seat="${trigram}">`);
+    }
+    // No mark carries a number a reader could take for the Luoshu's.
+    expect(svg).not.toMatch(/data-seat="\d/);
+    // 太乙 stands in 乾, which this board numbers 1: the number is marked by
+    // the trigram it belongs to.
+    expect(svg).toMatch(
+      /<g data-unit="palace" data-seat="qian">[\s\S]*?<g data-layer="number" data-id="qian">[\s\S]*?<g data-layer="taiyi" data-id="taiyi">/,
+    );
+    expect(svg.match(/data-layer="general"/g)).toHaveLength(4);
+    expect(svg).toContain('<g data-layer="general" data-id="guestAssistant">');
+  });
+
+  it('marks the sixteen around them by their seats, apart from the palaces', () => {
+    for (const seat of ['zi', 'gen', 'xun', 'kun', 'qian', 'hai']) {
+      expect(svg).toContain(`<g data-unit="rim" data-seat="${seat}">`);
+    }
+    expect(svg.match(/data-unit="rim"/g)).toHaveLength(16);
+    expect(svg.match(/data-layer="god"/g)).toHaveLength(16);
+    expect(svg.match(/data-layer="seat"/g)).toHaveLength(16);
+    // The two eyes above the grid, by the god each is.
+    expect(svg).toContain('<g data-layer="eye" data-id="taijiong">');
+    expect(svg).toContain('<g data-layer="eye" data-id="taiyang">');
+  });
+
   it('draws twenty-five cells: nine palaces and the sixteen around them', () => {
     expect([...svg.matchAll(/class="cell"/g)]).toHaveLength(25);
   });

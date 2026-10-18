@@ -2,6 +2,7 @@
   import { goto, invalidateAll } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
+  import { sayLayer } from '$lib/board';
   import { carried } from '$lib/parameters';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import { step, type Unit, type Wall } from '$lib/step';
@@ -12,8 +13,10 @@
   import SectionIntro from '$lib/components/SectionIntro.svelte';
   import Takeaway from '$lib/components/Takeaway.svelte';
   import FormPanel from '$lib/components/FormPanel.svelte';
+  import InlineBoard from '$lib/components/InlineBoard.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import MomentSteps from '$lib/components/MomentSteps.svelte';
+  import LayerLegend from '$lib/components/LayerLegend.svelte';
   import StrengthLegend from '$lib/components/StrengthLegend.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
 
@@ -138,15 +141,6 @@
 
   let busy = $state(false);
   let panel: FormPanel | undefined = $state();
-
-  /**
-   * The drawing that is on screen, as against the one that was asked for.
-   *
-   * A new address changes `src` before a pixel of the new picture exists, and
-   * the browser holds the old one up in the meantime with nothing to say it
-   * is stale. Until the two agree, the board is shown as on its way.
-   */
-  let drawn = $state('');
 
   /**
    * Asking is navigating, and the answer arrives as the page's own data.
@@ -289,15 +283,7 @@
          gap between the picture and the reading is two rems, and a legend
          standing in it would belong to neither. -->
     <div class="board" class:swapped={onPaper}>
-      <img
-        src={plate}
-        alt=""
-        width="900"
-        height="900"
-        class="screen"
-        class:settling={drawn !== plate}
-        onload={() => (drawn = plate)}
-      />
+      <div class="screen"><InlineBoard src={plate} width={900} height={900} tip={(spot) => sayLayer(spot, t)} /></div>
       <!-- The same board in the colours of paper, drawn only where the two
            differ and shown only by a printer. -->
       {#if onPaper}
@@ -307,7 +293,7 @@
            the picture, and a key that came after the reading would be found
            by whoever had already given up on them. -->
       <!-- The key is to the marks of strength, which a day board has not. -->
-      {#if !ofTheDay}<StrengthLegend {t} />{/if}
+      {#if !ofTheDay}<LayerLegend {t} board="qimen" /><StrengthLegend {t} />{/if}
     </div>
 
     {#if ofTheDay}
@@ -376,7 +362,6 @@
   .board { min-inline-size: 0; }
   .result, img { transition: opacity 0.15s ease-out; }
   .stale { opacity: 0.5; }
-  .settling { opacity: 0.35; }
   /*
    * As large as the page allows short of touching its walls, and centred in
    * it.
@@ -394,8 +379,11 @@
    *
    * `width` first, so a browser that does not know `svh` still gets the
    * column's measure rather than the image's own 900 pixels.
+   *
+   * The board on screen is a box holding the drawing (`InlineBoard`), and the
+   * box takes the measure the picture for paper takes.
    */
-  img {
+  img, .screen {
     display: block;
     margin-inline: auto;
     width: 100%;
@@ -428,11 +416,11 @@
     .result { display: block; }
     .board { margin-bottom: 1.2rem; }
     .onPaper { display: block; margin: 0 0 0.4rem; font-size: 0.85rem; color: var(--faint); }
-      .stale, .settling { opacity: 1; }
+    .stale { opacity: 1; }
     /* A picture on a sheet of paper, not one fitted to a window: `svh` means
        nothing to a printer, and left the board at the full measure of the
        page. 17cm is what A4 has between its margins with a little to spare. */
-    img { inline-size: min(100%, 17cm); }
+    img, .screen { inline-size: min(100%, 17cm); }
     .swapped .screen { display: none; }
     .paper { display: block; }
   }

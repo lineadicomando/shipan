@@ -175,9 +175,11 @@ export interface ChartOptions {
    * half does. `fixed` is 《御定奇門寶鑑》's — the eight names stand in both
    * dun and only the order they are counted in reverses. `baihu` is the
    * seating 《奇門遁甲全局》 holds, 白虎 at the fifth seat and 勾陳 at the
-   * sixth.
+   * sixth. `huwu` is the yin names standing in both dun, 白虎 fifth and 玄武
+   * sixth, as the hour tables of 《御定奇門大全》卷五–十 name them on yang
+   * boards — the mirror of `fixed`.
    *
-   * **A fourth answer exists and is deliberately not a value here.**
+   * **One more answer exists and is deliberately not a value here.**
    * 《奇門遁甲金鏡寶鑑》 keys the choice to what is being divined —
    * 「如占病、占賊，則勾、雀二神可換虎、武用」 — which is a licence granted to
    * the reader at the moment of reading and not a rule that lays a different
@@ -185,7 +187,7 @@ export interface ChartOptions {
    * it: a chart is a function of its instant, the question enters at the 用神,
    * and a parameter here would be that first interpretive act computed.
    */
-  spirits: 'dun' | 'fixed' | 'baihu';
+  spirits: 'dun' | 'fixed' | 'baihu' | 'huwu';
 
   /**
    * Where the repeated block goes under 置閏.
@@ -249,6 +251,28 @@ export interface ChartOptions {
   centreTravel: 'stay' | 'travel';
 
   /**
+   * Where the centre's stem stands on the heaven plate, when the plate turns.
+   *
+   * Under 中宮寄坤 the palace that hosts the centre holds two stems on the
+   * earth plate, its own and the centre's (`PalaceContents.lodged`), and the
+   * turn carries the host's away to another palace. `centre` leaves the
+   * centre's stem where it is, so the turn carries the host's alone. `host`
+   * carries the centre's with it, so the palace the host's stem comes to holds
+   * both, and the second is `PalaceContents.heavenLodged`.
+   *
+   * 《御定奇門大全》卷五–十 reads every hour the second way: in 陽遁六局, 乙 is
+   * the centre's stem, and at 乙丑 the host's 癸 comes to 巽 and the table
+   * reads 「乙景在巽」. 《奇門探索錄》卷三 reads one board the same way and
+   * its own 夾注 objects — 「中宮天禽帶乙奇，此云天芮帶到，於理不合」. No text
+   * is named for the first, which this engine computes by default.
+   *
+   * It moves no star, no gate and no spirit: one stem rides a second palace,
+   * and the 格 a stem makes over the one below are read there too. On the
+   * flown plate nothing lodges, so it is in force on the turned plate alone.
+   */
+  centreStem: 'centre' | 'host';
+
+  /**
    * The palace 丁 is buried in (入墓).
    *
    * One cell of the four `TOMB` holds, and the only one two texts part on.
@@ -262,6 +286,21 @@ export interface ChartOptions {
    * way about.
    */
   dingTomb: 'gen' | 'qian';
+
+  /**
+   * Which table of 十干克應 names the stem of the heaven plate over the stem
+   * below it.
+   *
+   * The table has eighty-one cells and the lines that carry it name them
+   * differently. `shared` lays the fourteen that the 煙波釣叟歌 and the tables
+   * name alike, which is a convention of this engine and the choice no line
+   * makes. `jinhan` lays 《金函玉鏡》卷二 十干克應訣 whole, bar the one cell
+   * that would collide with the board's own 伏吟, with that text's fortune
+   * where it gives one outright. `xianji` is 奇門仙機's 干論, a line that
+   * names each cell by an image of the stem above; declared and refused until
+   * the cells its print garbles are settled. It moves marks and no plate.
+   */
+  stemPairs: 'shared' | 'jinhan' | 'xianji';
 
   /**
    * Which register of 神煞 the almanac's page carries (曆注).
@@ -307,7 +346,9 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   strengths: 'season',
   earth: 'quarters',
   centreTravel: 'stay',
+  centreStem: 'centre',
   dingTomb: 'gen',
+  stemPairs: 'shared',
   shensha: 'xieji',
 });
 

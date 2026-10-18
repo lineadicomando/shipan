@@ -2,8 +2,11 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
+  import { sayLayer } from '$lib/board';
   import { sayFailure } from '$lib/moment';
   import type { Unit } from '$lib/step';
+  import InlineBoard from '$lib/components/InlineBoard.svelte';
+  import LayerLegend from '$lib/components/LayerLegend.svelte';
   import MomentSteps from '$lib/components/MomentSteps.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import Schools from '$lib/components/Schools.svelte';
@@ -44,7 +47,6 @@
   const failure = $derived(data.failure ? sayFailure(t, data.failure) : '');
 
   let busy = $state(false);
-  let drawn = $state('');
 
   /**
    * The year the drawing and the transcript are asked for.
@@ -176,16 +178,11 @@
 {#if board}
   <div class="result" class:stale={busy} aria-busy={busy}>
     <div class="board" class:swapped={onPaper}>
-      <img
-        src={plate}
-        alt=""
-        width="900"
-        height="1360"
-        class="screen"
-        class:settling={drawn !== plate}
-        onload={() => (drawn = plate)}
-      />
+      <div class="screen">
+        <InlineBoard src={plate} width={900} height={1360} tip={(spot) => sayLayer(spot, t)} />
+      </div>
       {#if onPaper}<img src={paper} alt="" width="900" height="1360" class="paper" />{/if}
+      <LayerLegend {t} board="taiyi" />
     </div>
 
     <div>
@@ -252,15 +249,13 @@
   }
   .stale { opacity: 0.5; }
 
-  .board img { width: 100%; inline-size: var(--board); height: auto; display: block; margin-inline: auto; }
+  .board img, .screen { width: 100%; inline-size: var(--board); height: auto; display: block; margin-inline: auto; }
   .board .paper { display: none; }
-  .screen { transition: opacity 0.2s ease-out; }
-  .settling { opacity: 0.6; }
 
   .failure { color: var(--alarm); }
 
   @media (prefers-reduced-motion: reduce) {
-    .result, .screen { transition: none; }
+    .result { transition: none; }
   }
 
   /* On a narrow screen the bar is most of the page, as the panel is: the rule
@@ -283,6 +278,6 @@
        none, and hiding the board would print a sheet with a hole in it. */
     .swapped .screen { display: none; }
     .board .paper { display: block; }
-    .board img { max-width: 26rem; }
+    .board img, .screen { max-width: 26rem; }
   }
 </style>

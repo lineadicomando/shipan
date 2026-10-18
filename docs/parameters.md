@@ -214,12 +214,14 @@ dunjia's.**
 | `system` | which family, each a board of its own: `shijia` (時家 shíjiā), `rijia` (日家 rìjiā), later `yuejia` (月家 yuèjiā), `nianjia` (年家 niánjiā) | `shijia` |
 | `dayGates` | how the seven other gates follow 休門 on a day board — under `system: rijia`: `fei` (飛 fēi — flown through the eight in the order of their numbers), `zhuan` (轉 zhuàn — turned round the eight, the way changing with the day's stem) | `fei` |
 | `dayDun` | where a day board's year divides — under `system: rijia`: `solstice` (二至 èrzhì), `liushi` (六十日一局 liùshírìyījú — sixty days to a 局) | `solstice` |
-| `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat) | `dun` |
+| `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat), `huwu` (虎武 hǔwǔ — 白虎 fifth and 玄武 sixth in both dun, as 《御定奇門大全》's hour tables name them) | `dun` |
 | `leap` | where 置閏 repeats its block — inside 置閏: `solstice` (芒種 or 大雪), `runyue` (閏月 rùnyuè, the term the year's leap month falls under) | `solstice` |
 | `strengths` | what 旺相休囚死 are read from: `season`, `star` | `season` |
 | `earth` | where earth's season begins: `quarters` (the four closing months entire), `eighteen` (their last eighteen days, as 《大六壬精解》 states of the phases) | `quarters` |
 | `centreTravel` | where the 值符 zhífú and the 值使 zhíshǐ are read when the count puts them on the centre: `stay` (lodged out to 坤, as 《御定奇門寶鑑》 has it), `travel` (in the fifth palace, as 《奇門遁甲金鏡寶鑑》 has it) | `stay` |
+| `centreStem` | where the centre's stem stands on the heaven plate once the plate has turned, on the turned plate only: `centre` (in the fifth palace), `host` (with the stem of the palace the centre lodges in, wherever that stem goes, as 《御定奇門大全》's hour tables read it) | `centre` |
 | `dingTomb` | the palace 丁 is buried in, for 入墓: `gen` (艮 gèn, as 《奇門遁甲統宗》 has it), `qian` (乾 qián, with 丙, as 《遁甲符應經》 has it) | `gen` |
+| `stemPairs` | which table of 十干克應 names a stem over the stem below: `shared` (the fourteen cells the texts name alike, a convention with no holder), `jinhan` (金函 jīnhán — 《金函玉鏡》卷二's table, eighty of its eighty-one cells, with its fortune only where it states one outright), `xianji` (仙機 xiānjī — 奇門仙機's 干論, refused until the cells its print garbles are read). It moves marks and no plate | `shared` |
 
 `method` is the most divisive parameter in the engine and it is not optional.
 All three values are computed, and 拆補 and 茅山 — which read the same term and
@@ -337,6 +339,7 @@ almanac takes none of these at all. Both are below.
 | 太乙 | `geHost` | whose bodies the condition 格 is marked for: `ke` (客 kè — the guest's eye and generals alone, as 《太乙金鏡式經》 has it), `zhuke` (主客 zhǔkè — the host's generals as well, as the 《統宗》 has it) | `ke` |
 | 太乙 | `geChong` | what makes a 格: `gong` (對宮 duìgōng — the palace facing 太乙), `chong` (沖 chōng — a clash of branches as well) | `gong` |
 | 太乙 | `wenchangTaiyi` | what 文昌 in 太乙's own palace is called: `qiu` (囚 qiú, the 金鏡's, and the 統宗's for 文昌 and the four generals together), `guan` (關 guān, 樂產's, and where the 統宗's own list files it), `yan` (掩 yǎn, the 統宗's under 釋掩) | `qiu` |
+| 太乙 | `dayouEye` | how the eye of the 大遊 is counted before it walks from 天道: `jinjing` (元法 yuánfǎ, the 金鏡's — the 大遊's 積年 by seventy-two, then eighteen), `tongzong` (盈差 yíngchā, the 《統宗》's — the 積年 太乙 is counted on, with 216 added, by 188, then eighteen). The two agree in one year in nine, and neither work dates a seat | `jinjing` |
 | 太乙 | `yearBoundary` | where the counted year begins: `lichun` (立春 lìchūn, a convention with no text behind it), `dongzhi` (冬至 dōngzhì, the 《統宗》's: its year runs from one winter solstice to the next), `chunjie` (正月初一 zhēngyuèchūyī, refused). A board laid on a named year is the same under any; the value decides which year an instant falls in | `lichun` |
 | 紫微斗數 | `leapMonth` | what a birth in an intercalary month counts as: `following` (the month after it, which is the book's), `current`, `split` | `following` |
 | 紫微斗數 | `sihua` | which table of the 四化: `quanshu` (《紫微斗數全書》 zǐwēidǒushùquánshū's own), `zuofu` (左輔 zuǒfǔ — that table with 壬's 科 moved, as two modern schools read it), `tianxiang` (天相 tiānxiàng — that table with 庚's 忌 moved, as the 占驗派 reads it) | `quanshu` |

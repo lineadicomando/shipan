@@ -32,6 +32,13 @@ export {
 export { type Said } from './readings.js';
 export { FONT_STACK, PALETTES, styleSheet, type Palette, type Scheme } from './palette.js';
 export { renderChartSvg, renderDaySvg, STRENGTH_MARKS } from './svg.js';
+export {
+  LAYERS,
+  UNITS,
+  type BoardLayer,
+  type BoardUnit,
+  type MarkedBoard,
+} from './marks.js';
 export { renderLiurenSvg, DEFAULT_LIUREN_SIZE } from './liuren-svg.js';
 export { renderQizhengSvg, DEFAULT_QIZHENG_SIZE } from './qizheng-svg.js';
 export { renderTaiyiSvg, DEFAULT_TAIYI_SIZE } from './taiyi-svg.js';

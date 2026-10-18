@@ -235,10 +235,12 @@
           into a verdict on the hour holding them, which is the one thing this
           is not.
         -->
-        <span class="valence">
-          {t(`label.valence.${pattern.valence.id}` as MessageKey)}
-          <span class="glyph">{glyph(pattern.valence)}</span>
-        </span>
+        {#if pattern.valence}
+          <span class="valence">
+            {t(`label.valence.${pattern.valence.id}` as MessageKey)}
+            <span class="glyph">{glyph(pattern.valence)}</span>
+          </span>
+        {/if}
       </li>
     {/each}
   </ul>

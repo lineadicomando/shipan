@@ -554,7 +554,7 @@ describe('identifiers', () => {
  * quoted in `plates.ts`.
  */
 describe('八神 — which fact names the middle pair', () => {
-  const ring = (yang: boolean, naming: 'dun' | 'fixed' | 'baihu') =>
+  const ring = (yang: boolean, naming: 'dun' | 'fixed' | 'baihu' | 'huwu') =>
     spiritRing(yang, naming).map((spirit) => spirit.hanzi);
 
   it('follows the dun by default, renaming both seats in a yang chart', () => {
@@ -577,8 +577,15 @@ describe('八神 — which fact names the middle pair', () => {
     expect(ring(false, 'baihu')).toEqual(ring(false, 'dun'));
   });
 
+  it('keeps the yin names in both dun, where the hour tables of 《御定奇門大全》 do', () => {
+    // 陽遁四局 戊戌, 「乙休雖在乾會白虎」, at the fifth seat; 陽遁四局 甲子,
+    // 「丁休在火入水池玄武加臨」, at the sixth. The mirror of `fixed`.
+    expect(ring(true, 'huwu')).toEqual(['值符', '螣蛇', '太陰', '六合', '白虎', '玄武', '九地', '九天']);
+    expect(ring(false, 'huwu')).toEqual(ring(false, 'dun'));
+  });
+
   it('moves nothing but the two names', () => {
-    for (const naming of ['fixed', 'baihu'] as const)
+    for (const naming of ['fixed', 'baihu', 'huwu'] as const)
       for (const yang of [true, false]) {
         const other = ring(yang, naming);
         const ours = ring(yang, 'dun');
@@ -592,10 +599,11 @@ describe('八神 — which fact names the middle pair', () => {
   it('lands them on the same palaces, whichever names them', () => {
     // The plate is the ring: what a value changes is the word in the cell and
     // never the cell it is in.
-    const palaces = (naming: 'dun' | 'fixed' | 'baihu') =>
+    const palaces = (naming: 'dun' | 'fixed' | 'baihu' | 'huwu') =>
       Object.keys(spiritPlate(3, true, naming)).sort();
 
     expect(palaces('fixed')).toEqual(palaces('dun'));
     expect(palaces('baihu')).toEqual(palaces('dun'));
+    expect(palaces('huwu')).toEqual(palaces('dun'));
   });
 });

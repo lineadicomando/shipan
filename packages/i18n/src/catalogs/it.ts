@@ -311,6 +311,73 @@ export const it: Record<MessageKey, string> = {
   'label.pattern.baihuchangkuang': 'la tigre bianca infuria',
   'label.pattern.qinglongyaoming': 'il drago risplende',
   'label.pattern.riqiruwu': 'il sole entra nella nebbia',
+  // The rest of 《金函玉鏡》's table, which only `stemPairs: jinhan` lays. 華蓋
+  // is il parasole because il Baldacchino is already 天蓬's.
+  'label.pattern.qinglongheling': 'il drago si unisce allo spirito',
+  'label.pattern.guirenruyu': 'il nobile va in prigione',
+  'label.pattern.zhifufeigong': 'il Capo vola via dal suo palazzo',
+  'label.pattern.qinglongzhezu': 'il drago si spezza il piede',
+  'label.pattern.qinglongrutianlao': 'il drago entra nella prigione del cielo',
+  'label.pattern.qinglonghuagai': 'il drago sotto il parasole',
+  'label.pattern.liyinhaiyang': 'bene per lo yin, danno per lo yang',
+  'label.pattern.riqifuyin': 'il sole resta a casa',
+  'label.pattern.qiyishunsui': 'meraviglia e strumento vanno d’accordo',
+  'label.pattern.qiyixiangzuo': 'meraviglia e strumento si aiutano',
+  'label.pattern.riqibeixing': 'il sole è punito',
+  'label.pattern.riqirudi': 'il sole entra nella terra',
+  'label.pattern.huagaifengxingguan': 'il parasole incontra il funzionario delle stelle',
+  'label.pattern.riyuebingxing': 'sole e luna camminano insieme',
+  'label.pattern.yueqibeishi': 'la luna sfida l’esercito',
+  'label.pattern.yueqizhuque': 'la luna e la fenice',
+  'label.pattern.dabeiruxing': 'la grande sfida incontra la punizione',
+  'label.pattern.moushijiucheng': 'i progetti si compiono',
+  'label.pattern.huorutianluo': 'il fuoco entra nel laccio del cielo',
+  'label.pattern.huagaibeishi': 'il parasole sfida l’esercito',
+  'label.pattern.qinglongzhuanguang': 'il drago si volge alla luce',
+  'label.pattern.rendunjige': 'l’uomo nascosto, configurazione fausta',
+  'label.pattern.xingsuiyuezhuan': 'la stella segue la luna che gira',
+  'label.pattern.qirutaiyin': 'la meraviglia entra nella Luna',
+  'label.pattern.huorugouchen': 'il fuoco entra nell’Uncino',
+  'label.pattern.nianyuerishige': 'la barriera di anno, mese, giorno e ora',
+  'label.pattern.zhuqueruyu': 'la fenice va in prigione',
+  'label.pattern.wushenhuhe': 'cinque spiriti uniti',
+  'label.pattern.quanyuqinglong': 'il cane incontra il drago',
+  'label.pattern.mushen': 'lo spirito della tomba',
+  'label.pattern.huobeidihu': 'il fuoco sfida la porta della terra',
+  'label.pattern.zhuquerumu': 'la fenice entra nella tomba',
+  'label.pattern.dihufenggui': 'la porta della terra incontra un fantasma',
+  'label.pattern.ligefanming': 'la barriera del guadagno respinge il nome',
+  'label.pattern.youhunrumu': 'l’anima errante entra nella tomba',
+  'label.pattern.diwanggaozhang': 'la rete della terra tesa in alto',
+  'label.pattern.dixingxuanwu': 'la punizione della terra e il Guerriero Oscuro',
+  'label.pattern.taibaitianyifugong': 'la stella bianca e l’Uno celeste nascosto nel suo palazzo',
+  'label.pattern.taibaipengxing': 'la stella bianca incontra il Baldacchino',
+  'label.pattern.tingtingzhige': 'la barriera eretta',
+  'label.pattern.baihugange': 'la tigre bianca sbarra il tronco',
+  'label.pattern.kunlongbeishang': 'il drago in trappola è ferito',
+  'label.pattern.ganhebeishi': 'tronchi uniti, l’esercito sfidato',
+  'label.pattern.yushendeqi': 'lo spirito della prigione ottiene la meraviglia',
+  'label.pattern.ruyuzixing': 'in prigione e punito da sé',
+  'label.pattern.baihuchuli': 'la tigre bianca mostra la sua forza',
+  'label.pattern.fuyintianting': 'la corte del cielo resta a casa',
+  'label.pattern.xiongsheruyu': 'il serpente feroce va in prigione',
+  'label.pattern.tianlaohuagai': 'la prigione del cielo sotto il parasole',
+  'label.pattern.xiaoshehualong': 'il piccolo serpente diventa drago',
+  'label.pattern.xiaosheriqi': 'il piccolo serpente e il sole',
+  'label.pattern.shuisheruhuo': 'il serpente d’acqua entra nel fuoco',
+  'label.pattern.ganheshexing': 'tronchi uniti, il serpente punito',
+  'label.pattern.xiongsherumu': 'il serpente feroce entra nella tomba',
+  'label.pattern.taibaiqinshe': 'la stella bianca afferra il serpente',
+  'label.pattern.tengshexiangchan': 'i serpenti avvinghiati',
+  'label.pattern.sherudiluo': 'il serpente entra nel laccio della terra',
+  'label.pattern.younvjianyin': 'la fanciulla corrotta',
+  'label.pattern.tianyihuihe': 'l’Uno celeste si incontra e si unisce',
+  'label.pattern.huagaifengxing': 'il parasole incontra la stella',
+  'label.pattern.huagaidihu': 'il parasole sulla porta della terra',
+  'label.pattern.taibairuwang': 'la stella bianca entra nella rete',
+  'label.pattern.wanggaitianlao': 'la rete copre la prigione del cielo',
+  'label.pattern.fujiantengshe': 'il serpente rivisto',
+  'label.pattern.tianwangsizhang': 'la rete del cielo tesa sui quattro lati',
 
   // La sorte con cui ciascuna configurazione è trasmessa. Traduzioni piane e
   // non attenuate: 凶 è ciò che dicono le fonti, e una glossa scelta per
@@ -852,6 +919,41 @@ export const it: Record<MessageKey, string> = {
   'label.layer.star': 'stelle',
   'label.layer.both': 'porte e stelle',
 
+  'label.register.qimen.heaven': 'Tavola di cielo',
+  'label.register.qimen.earth': 'Tavola di terra',
+  'label.register.qimen.palace': 'Palazzo',
+  'label.register.qimen.spirit': 'Spirito',
+  'label.register.qimen.star': 'Stella',
+  'label.register.qimen.gate': 'Porta',
+
+  'label.register.liuren.general': 'Generale',
+  'label.register.liuren.heaven': 'Tavola di cielo',
+  'label.register.liuren.earth': 'Tavola di terra',
+  'label.register.liuren.upper': 'Lezione, il ramo sopra',
+  'label.register.liuren.lower': 'Lezione, ciò su cui il ramo poggia',
+  'label.register.liuren.branch': 'Trasmissione, il ramo',
+  'label.register.liuren.stem': 'Trasmissione, lo stelo che copre il ramo',
+
+  'label.register.qizheng.palace': 'Palazzo, il nome e il ramo',
+  'label.register.qizheng.governor': 'Governatore',
+  'label.register.qizheng.remainder': 'Complemento',
+  'label.register.qizheng.house': 'Ciò di cui il palazzo è interrogato',
+  'label.register.qizheng.lodge': 'Dimora, e gradi oltre la sua stella',
+  'label.register.qizheng.motion': 'In che verso corre',
+
+  'label.register.taiyi.eye': 'Occhio, da cui parte un conto',
+  'label.register.taiyi.number': 'Numero del palazzo, nel conto di questa tavola',
+  'label.register.taiyi.taiyi': 'Tai Yi, dove sta quest’anno',
+  'label.register.taiyi.general': 'Uno dei quattro generali',
+  'label.register.taiyi.seat': 'Seggio: un ramo, o un trigramma d’angolo',
+  'label.register.taiyi.god': 'Uno dei sedici dèi',
+
+  'label.register.ziwei.rings': 'Anelli, e il decennio',
+  'label.register.ziwei.star': 'Una delle quattordici stelle maggiori',
+  'label.register.ziwei.minor': 'Una delle altre stelle',
+  'label.register.ziwei.ground': 'Terreno: lo stelo e il ramo',
+  'label.register.ziwei.house': 'Nome del seggio',
+
   // I tre metodi portano il proprio nome e i due atti no, e la linea fra loro
   // sta in ciò che si nomina, non in chi legge.
   //
@@ -1305,6 +1407,13 @@ export const it: Record<MessageKey, string> = {
   'form.taiyi.wenchangTaiyi.yan': '掩 yǎn, come lo chiama il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn dove spiega quella condizione',
   'form.taiyi.wenchangTaiyi.note':
     'Una sola disposizione porta tre nomi nei testi. La tavola è la stessa sotto ciascuno di essi. Cambia la condizione sotto cui la disposizione è registrata, e con essa le parole che il testo attribuisce a quella condizione.',
+  'form.taiyi.dayouEye': 'L’occhio del 大遊 dàyóu si conta',
+  'form.taiyi.dayouEye.jinjing':
+    'riducendo gli anni per il 元法 yuánfǎ, settantadue, come lo conta il 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng',
+  'form.taiyi.dayouEye.tongzong':
+    'aggiungendo il 盈差 yíngchā, 216, e riducendo per 188, come lo conta il 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn',
+  'form.taiyi.dayouEye.note':
+    'Entrambi i testi fanno camminare l’occhio da 天道 tiāndào lungo i sedici dèi e lo trattengono due volte, su 乾 qián e su 坤 kūn. Contano gli anni in modo diverso prima del cammino, perciò i due conti lo mettono sullo stesso dio un anno su nove. Ciascun testo enuncia il proprio conto per intero e non data nessuna posizione dell’occhio.',
   'form.ziwei.huoling': '火星 huǒxīng e 鈴星 língxīng sono collocate',
   'form.ziwei.huoling.fixed':
     'ciascuna sul seggio che le dà il triplice dell’anno, che è quanto enuncia il 《紫微斗數全書》 zǐwēidǒushùquánshū',
@@ -1340,6 +1449,8 @@ export const it: Record<MessageKey, string> = {
     'niente: gli stessi otto nomi stanno in entrambi i dun, come li ha il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.spirits.baihu':
     'la metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
+  'form.qimen.spirits.huwu':
+    'niente, con i nomi della carta yin in entrambi i dun: 白虎 báihǔ e 玄武 xuánwǔ stanno in una carta yang come in una yin, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
   'form.qimen.plate': 'Le stelle e i tronchi sopra i palazzi si muovono',
   'form.qimen.plate.zhuan':
     'girandoli sugli otto palazzi esterni, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
@@ -1392,6 +1503,12 @@ export const it: Record<MessageKey, string> = {
     'nel palazzo in cui il centro alloggia, come nel 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.centreTravel.travel':
     'nel palazzo centrale stesso: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
+  'form.qimen.centreStem': 'Quando i tronchi sopra i palazzi girano, il tronco del palazzo centrale',
+  'form.qimen.centreStem.centre': 'resta nel palazzo centrale',
+  'form.qimen.centreStem.host':
+    'si sposta con il tronco del palazzo in cui il centro alloggia, e si legge dove quel tronco arriva, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
+  'form.qimen.centreStem.note':
+    'Il palazzo in cui il centro alloggia ha due tronchi nella colonna della terra: il proprio e quello del centro. Quando i tronchi sopra i palazzi girano, il suo tronco passa in un altro palazzo. Le due letture si separano su un punto solo: se il tronco del centro passa insieme a lui. La stella, la porta e lo spirito di ogni palazzo restano gli stessi in entrambe.',
   'form.qimen.dingTomb': 'Il tronco 丁 dīng è segnato in tomba quando sta',
   'form.qimen.dingTomb.gen':
     'nel palazzo di 艮 gèn, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
@@ -1399,6 +1516,12 @@ export const it: Record<MessageKey, string> = {
     'nel palazzo di 乾 qián, insieme a 丙 bǐng, come nel 《遁甲符應經》 dùnjiǎfúyìngjīng',
   'form.qimen.dingTomb.note':
     'Un tronco è in tomba quando il giro del piatto lo porta nell’unico palazzo in cui la sua forza finisce, e la tavola segna quel palazzo. I due testi concordano sul palazzo di 乙 yǐ e su quello di 丙 bǐng. Per 丁 dīng il primo testo indica 艮 gèn e il secondo indica 乾 qián, dove è in tomba anche 丙 bǐng. La scelta sposta quel solo segno e nient’altro sulla tavola.',
+  'form.qimen.stemPairs': 'Un tronco sopra il tronco sottostante si nomina',
+  'form.qimen.stemPairs.shared': 'solo dove i testi lo nominano allo stesso modo: quattordici celle su ottantuno',
+  'form.qimen.stemPairs.jinhan':
+    'in ottanta celle su ottantuno, come le nomina il 《金函玉鏡》 jīnhányùjìng, con le sue fortune',
+  'form.qimen.stemPairs.note':
+    'Ogni testo che espone le ottantuno celle le nomina a modo suo, e la maggior parte delle celle ha un nome diverso in ciascuno. La prima scelta tiene le quattordici che i testi nominano allo stesso modo. La seconda segue un solo testo per tutta la tavola, e dà una fortuna solo dove quel testo la enuncia senza condizioni, perciò la maggior parte dei suoi segni non ne porta. La tavola resta la stessa con entrambe le scelte; cambiano solo i segni.',
   'form.gender': 'Sesso: ne dipende solo la direzione dei cicli decennali',
   'form.gender.unset': 'non indicato',
   'form.gender.male': 'maschile',
@@ -1453,6 +1576,9 @@ export const it: Record<MessageKey, string> = {
     'I cicli decennali richiedono il sesso, perché la tradizione ne trae la direzione. I pilastri restano completi in ogni caso.',
   'form.jumpDate': 'Il giorno per cui la carta è posta',
 
+  'form.layerLegend': 'Ogni palazzo è disposto così',
+  'form.layerLegend.seat': 'Ogni seggio è disposto così',
+  'form.layerLegend.rim': 'Ogni seggio intorno è disposto così',
   'form.strengthLegend': 'Come stanno la stella e la porta rispetto alla stagione',
 
   'form.copyChart': 'Copia la carta come testo',
@@ -1691,6 +1817,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.geHost': 'Per i corpi di chi si segna la condizione 格 gé.',
   'notes.parameter.geChong': 'Che cosa fa un 格 gé: il palazzo di fronte, oppure anche uno scontro di rami.',
   'notes.parameter.wenchangTaiyi': 'Come si chiama 文昌 wénchāng nel palazzo di 太乙 tàiyǐ.',
+  'notes.parameter.dayouEye': 'Come si conta l’occhio del 大遊 dàyóu.',
   'notes.parameter.leapMonth': 'Che cosa conta una nascita in un mese intercalare.',
   'notes.parameter.sihua': 'Quale tavola delle quattro trasformazioni.',
   'notes.parameter.huoling': 'Come si collocano 火星 huǒxīng e 鈴星 língxīng.',
@@ -1700,7 +1827,9 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.strengths': 'Da che cosa si leggono i cinque stati stagionali.',
   'notes.parameter.earth': 'Dove comincia la stagione della terra.',
   'notes.parameter.dingTomb': 'In quale palazzo il tronco 丁 dīng è in tomba.',
+  'notes.parameter.stemPairs': 'Quale tavola del 十干克應 shígānkèyìng nomina un tronco sopra un tronco.',
   'notes.parameter.centreTravel': 'Dove si leggono il capo e la porta del capo quando cadono sul palazzo centrale.',
+  'notes.parameter.centreStem': 'Dove sta il tronco del palazzo centrale quando i tronchi sopra i palazzi girano.',
   'notes.parameter.luckGranularity': 'Con quale finezza si conta la distanza dal termine.',
   'notes.parameter.count': 'Come si contano gli anni vissuti.',
 
@@ -2233,6 +2362,8 @@ export const it: Record<MessageKey, string> = {
   'cli.heading.readings': 'Come si leggono i nomi',
   'cli.field.lodged': 'Il centro si alloggia nel palazzo {palace}, dove si legge il suo {stem}.',
   'cli.field.lodgedShort': 'qui si alloggia il centro: {stem}',
+  'cli.field.heavenLodged': 'Il {stem} del centro si è spostato con il tronco del palazzo in cui alloggia, e sta sopra il palazzo {palace}.',
+  'cli.field.heavenLodgedShort': 'qui è arrivato anche il tronco del centro: {stem}',
   'cli.field.horse': '{from}: {branch}, palazzo {palace}',
   // 年命 — la nascita cercata dentro una carta posta per un momento, che è il
   // verso classico: la carta è quella dell'ora, e la persona vi si colloca

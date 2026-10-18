@@ -222,12 +222,13 @@ describe('what a laid board stands on', () => {
    * page says nothing because it hands over no layers.
    */
   it('names no layer for a board laid on no instant', () => {
-    // Its own three divergences, and no layer under them. The last is the
+    // Its own four divergences, and no layer under them. The last is the
     // board's own year, which is not the pillars': it is cut at 冬至 where the
     // 《統宗》 is followed, and travels as `taiyi.yearBoundary`.
     expect(inForce('taiyi', {}).map(({ row }) => row.id)).toEqual([
       'geHost',
       'wenchangTaiyi',
+      'dayouEye',
       'yearBoundary',
     ]);
     expect(inForce('taiyi', {}, {}).map(({ row }) => row.id)).toEqual([
@@ -235,6 +236,7 @@ describe('what a laid board stands on', () => {
       'dayBoundary',
       'geHost',
       'wenchangTaiyi',
+      'dayouEye',
       'yearBoundary',
     ]);
   });

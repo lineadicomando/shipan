@@ -263,7 +263,12 @@ describe('what the configurations are, and are not', () => {
     }
 
     // Total: a configuration added without a fortune must not slip through.
-    for (const id of PATTERN_IDS) expect(VALENCE_IDS).toContain(valenceOf(id).id);
+    // The one exception is 《金函玉鏡》's table under `stemPairs: jinhan`, which
+    // carries a fortune only where that text states one, and is held to that
+    // cell by cell in `stem-pairs.test.ts`.
+    const own = PATTERN_IDS.slice(0, PATTERN_IDS.indexOf('qinglongheling'));
+    expect(own).toContain('riqiruwu');
+    for (const id of own) expect(VALENCE_IDS).toContain(valenceOf(id)?.id);
   });
 
   it('reports each occurrence with the fortune its name carries', () => {

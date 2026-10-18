@@ -128,6 +128,19 @@ export interface TaiyiOptions {
    * filed under does.
    */
   wenchangTaiyi: 'qiu' | 'guan' | 'yan';
+
+  /**
+   * How the eye of the 大遊 is counted.
+   *
+   * Both works walk it from 天道 over the sixteen gods with 乾 and 坤 taken
+   * twice, and both reduce a 積年 by eighteen last. They part on the count
+   * before that. `jinjing` is the 金鏡's, 卷五 推大遊天目所在法: 「置上元以來
+   * 積年，以天目元法七十二去之，不盡以天目周法十八去之」. `tongzong` is the
+   * 《統宗》's, 卷十一 明大遊天目所主術: 「置上元甲子至所求積年加盈差二百一十六，
+   * 以大遊天目大周法一百八十八法除之，不盡以小周法十八去之」. The two put the eye
+   * on one seat in one year in nine, and neither work dates a seat.
+   */
+  dayouEye: 'jinjing' | 'tongzong';
 }
 
 export const DEFAULT_TAIYI_OPTIONS: TaiyiOptions = Object.freeze({
@@ -137,6 +150,7 @@ export const DEFAULT_TAIYI_OPTIONS: TaiyiOptions = Object.freeze({
   geHost: 'ke',
   geChong: 'gong',
   wenchangTaiyi: 'qiu',
+  dayouEye: 'jinjing',
 });
 
 /**
@@ -662,6 +676,7 @@ export function taiyiBoard(request: { year: number }, options: TaiyiOptions): Ta
     'geHost',
     'geChong',
     'wenchangTaiyi',
+    'dayouEye',
   );
 
   const { year } = request;
@@ -703,7 +718,7 @@ export function taiyiBoard(request: { year: number }, options: TaiyiOptions): Ta
     gate: gateOf(accumulated.xiaoyou),
     sanji: sanjiOf(accumulated.sanji),
     wufu: wufuOf(accumulated.wufu),
-    dayou: dayouOf(accumulated.wufu),
+    dayou: dayouOf(accumulated, options.dayouEye),
     options,
   };
 }
@@ -938,8 +953,11 @@ function wufuOf(accumulated: number): TaiyiBoard['wufu'] {
  * the eye of this count starts from 天道 where the year's starts from 武德,
  * pausing at the same two corners.
  */
-function dayouOf(accumulated: number): TaiyiBoard['dayou'] {
-  const intoEra = inclusive(accumulated, 4320);
+function dayouOf(
+  accumulated: TaiyiBoard['accumulated'],
+  eye: TaiyiOptions['dayouEye'],
+): TaiyiBoard['dayou'] {
+  const intoEra = inclusive(accumulated.wufu, 4320);
   const intoCircuit = inclusive(intoEra, 288);
   const steps = Math.floor((intoCircuit - 1) / 36);
   const from = WALK.indexOf(7);
@@ -951,9 +969,28 @@ function dayouOf(accumulated: number): TaiyiBoard['dayou'] {
     },
     // The same walk 天目 makes, opening on 天道 rather than on 武德 and
     // pausing at the same two corners. See `eyeSeat`.
-    wenchang: godAt(eyeSeat(inclusive(inclusive(intoEra, 72), 18), 9, YANG_HELD)),
+    wenchang: godAt(eyeSeat(inclusive(dayouEyeCount(accumulated, eye), 18), 9, YANG_HELD)),
   };
 }
+
+/**
+ * What the eye of the 大遊 has left to walk, before the eighteen.
+ *
+ * The 金鏡 reduces the 大遊's own 積年 by its 元法 of seventy-two. The 《統宗》
+ * adds a 盈差 of 216 to the 積年 太乙 itself is counted on and reduces by 188.
+ * Its 卷十一 prints that count for 正德庚辰, 1520, as 四十二萬四千五百一十七,
+ * which leaves on 188 what the 金鏡's 積年 for 1520 leaves with 216 added — one
+ * coincidence in 188 if the reading were wrong, and the one numeral this value
+ * is held to. The figure it prints for 1644 is eleven over.
+ */
+function dayouEyeCount(accumulated: TaiyiBoard['accumulated'], eye: TaiyiOptions['dayouEye']): number {
+  return eye === 'tongzong'
+    ? inclusive(accumulated.taiyi + DAYOU_YINGCHA, 188)
+    : inclusive(inclusive(accumulated.wufu, 4320), 72);
+}
+
+/** The 《統宗》's 盈差 for the eye of the 大遊: the 金鏡's 周率, 十二乘十八. */
+const DAYOU_YINGCHA = 216;
 
 /* ── The named conditions ─────────────────────────────────────────────── */
 

@@ -934,6 +934,40 @@ describe('the years 《太乙數統宗大全》 dates', () => {
     expect(wufu.wufu.year).toBe(1);
   });
 
+  /**
+   * The eye of the 大遊, counted the two ways the two works count it.
+   *
+   * Neither work dates a seat, so what holds the 《統宗》's count is the one
+   * numeral it prints whole: 「初甲寅之歲積」 for 正德庚辰, 1520,
+   * 四十二萬四千五百一十七. The count here is the 積年 太乙 is counted on with
+   * the 盈差 of 216 added, and it leaves on 188 what that figure leaves. Walked
+   * by hand from that figure — thirteen past 188, thirteen past 18, from 天道
+   * with 陰德 and 大武 taken twice — the eye is on 呂申.
+   */
+  it('counts the eye of the 大遊 as either work counts it', () => {
+    const tongzong: TaiyiOptions = { ...options, dayouEye: 'tongzong' };
+    const year1520 = taiyiBoard({ year: 1520 }, tongzong);
+    expect(year1520.sui.hanzi).toBe('庚辰');
+    expect((year1520.accumulated.taiyi + 216 - 424_517) % 188).toBe(0);
+    expect(year1520.dayou.wenchang.hanzi).toBe('呂申');
+    expect(taiyiBoard({ year: 1520 }, options).dayou.wenchang.hanzi).toBe('太陽');
+
+    // The palace of the 大遊 is the same count under both: only the eye moves.
+    expect(year1520.dayou.station).toEqual(taiyiBoard({ year: 1520 }, options).dayou.station);
+  });
+
+  it('puts the two eyes of the 大遊 on one god in one year in nine', () => {
+    // 72 and 188 meet every 3384 years, so that span is the whole of how the
+    // two counts stand to each other, and they agree in 376 of its years.
+    let agreeing = 0;
+    for (let year = 0; year < 3384; year += 1) {
+      const a = taiyiBoard({ year }, options).dayou.wenchang.id;
+      const b = taiyiBoard({ year }, { ...options, dayouEye: 'tongzong' }).dayou.wenchang.id;
+      if (a === b) agreeing += 1;
+    }
+    expect(agreeing).toBe(376);
+  });
+
   it('lays the three boards 卷七 dates under 釋提挾 and the two 四郭', () => {
     // Series pp. 70–72, each naming the bodies and the conditions they stand
     // in: 漢獻帝建安十八年癸巳, 「客大在二宮離內迫，客參在六宮外迫」 and 主大

@@ -153,7 +153,9 @@
         "strengths": "season",
         "earth": "quarters",
         "centreTravel": "stay",
+        "centreStem": "centre",
         "dingTomb": "gen",
+        "stemPairs": "shared",
         "shensha": "xieji"
       },
       "lunar": {
@@ -2019,7 +2021,9 @@
       "strengths": "season",
       "earth": "quarters",
       "centreTravel": "stay",
+      "centreStem": "centre",
       "dingTomb": "gen",
+      "stemPairs": "shared",
       "shensha": "xieji"
     }
   },
@@ -2176,7 +2180,9 @@
         "strengths": "season",
         "earth": "quarters",
         "centreTravel": "stay",
+        "centreStem": "centre",
         "dingTomb": "gen",
+        "stemPairs": "shared",
         "shensha": "xieji"
       },
       "lunar": {
@@ -4035,7 +4041,9 @@
       "strengths": "season",
       "earth": "quarters",
       "centreTravel": "stay",
+      "centreStem": "centre",
       "dingTomb": "gen",
+      "stemPairs": "shared",
       "shensha": "xieji"
     }
   }

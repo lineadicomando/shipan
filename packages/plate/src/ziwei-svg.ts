@@ -9,6 +9,7 @@ import {
   type Said,
 } from './readings.js';
 import { drawSchools, schoolDepth } from './schools.js';
+import { marks } from './marks.js';
 import type {
   PlateZiwei,
   PlateZiweiLabels,
@@ -104,6 +105,12 @@ import type {
  */
 const GLOSS_SHARE = 0.66;
 
+/**
+ * What the drawing marks: see `marks.ts`. A seat is its ground's branch, the
+ * one thing about it that never moves from one board to the next.
+ */
+const { board: BOARD, tagged, seated } = marks('ziwei');
+
 /** The five phases, as classes the sheet turns into tints and inks. */
 const PHASES = ['mu', 'huo', 'tu', 'jin', 'shui'] as const;
 
@@ -154,8 +161,8 @@ export interface ZiweiSeatBox {
  * arithmetic.
  *
  * `height` is the whole sheet including the band beneath the grid, which grows
- * with the number of names: a caller reads it off the image once it has
- * loaded rather than assuming it.
+ * with the number of names: a caller reads it off the drawing once it has
+ * arrived rather than assuming it.
  */
 export function ziweiSeatBoxes(
   width: number,
@@ -238,7 +245,7 @@ export function renderZiweiSvg(board: PlateZiwei, options: PlateZiweiOptions = {
 
   const parts: string[] = [
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${round(height)}" ` +
-      `width="${size}" height="${round(height)}" role="img" aria-label="${escape(ariaLabel(board))}">`,
+      `width="${size}" height="${round(height)}" ${BOARD} role="img" aria-label="${escape(ariaLabel(board))}">`,
     `<style>${styleSheet(options.scheme ?? 'auto')}
       .qmdj { font-family: ${FONT_STACK}; }
       .qmdj text { fill: var(--qmdj-ink); }
@@ -330,10 +337,12 @@ function seats(
       ? ` tint-${palace.branch.element}`
       : '';
     parts.push(
-      `<rect x="${round(x)}" y="${round(y)}" width="${round(at.cell)}" ` +
-        `height="${round(at.cell)}" class="cell${tint}${palace.body ? ' body' : ''}"/>`,
+      seated('palace', palace.branch.id, [
+        `<rect x="${round(x)}" y="${round(y)}" width="${round(at.cell)}" ` +
+          `height="${round(at.cell)}" class="cell${tint}${palace.body ? ' body' : ''}"/>`,
+        ...inside(palace, glosses, key, { x, y, cell: at.cell, key: at.key }),
+      ]),
     );
-    parts.push(...inside(palace, glosses, key, { x, y, cell: at.cell, key: at.key }));
   }
 
   return parts;
@@ -366,15 +375,15 @@ function inside(
     palace.boshi?.hanzi,
     palace.majorLimit ? `${palace.majorLimit.from}–${palace.majorLimit.to}` : undefined,
   ].filter((one): one is string => Boolean(one));
+  // One line holding three things, so it is marked as one register and by
+  // the first of them: what a pointer is told is the line's kind.
+  const first = palace.changsheng ?? palace.boshi ?? (palace.majorLimit ? { id: 'decade' } : undefined);
   if (scaffolding.length > 0) {
     parts.push(
-      text(
-        at.x + pad,
-        at.y + pad + at.cell * 0.075,
-        scaffolding.join(' '),
-        at.cell * 0.075,
-        'faint',
-        'start',
+      tagged(
+        'rings',
+        first,
+        text(at.x + pad, at.y + pad + at.cell * 0.075, scaffolding.join(' '), at.cell * 0.075, 'faint', 'start'),
       ),
     );
   }
@@ -392,6 +401,7 @@ function inside(
     const lead = position === 0 && seat.star.starClass === 'main';
     const gloss = lead ? glosses[seat.star.id] : undefined;
     return {
+      star: seat.star,
       content: `${seat.star.hanzi}${grade}${change}`,
       ink,
       gloss,
@@ -442,15 +452,16 @@ function inside(
 
     let line_ = at.y + at.cell * 0.29;
     for (const line of lines) {
+      const named: string[] = [];
       // Centred on the glyph it keys and drawn at its own size — `over` is
       // what parts those two.
       if (keyed && line.index) {
-        parts.push(ringed(line.index, at.x + pad, line_, keySize, starSize));
+        named.push(ringed(line.index, at.x + pad, line_, keySize, starSize));
       }
-      parts.push(text(at.x + pad + indent, line_, line.content, starSize, line.ink, 'start'));
+      named.push(text(at.x + pad + indent, line_, line.content, starSize, line.ink, 'start'));
       line_ += step;
       if (line.gloss && readable) {
-        parts.push(
+        named.push(
           text(
             at.x + pad + indent + starSize * 0.3,
             line_ - step * 0.28,
@@ -462,19 +473,27 @@ function inside(
         );
         line_ += step * GLOSS_SHARE;
       }
+      // The fourteen apart from the rest, which is the text's own first
+      // division; the others are not told apart here, because the name a
+      // class goes by would be read as a verdict on the star.
+      parts.push(tagged(line.star.starClass === 'main' ? 'star' : 'minor', line.star, named.join('\n')));
     }
   }
 
   // The two lower corners: the ground on the left, the seat's name on the
   // right. Neither shrinks — they are how the cell is found.
   parts.push(
-    text(
-      at.x + pad,
-      at.y + at.cell - pad,
-      `${palace.stem.hanzi}${palace.branch.hanzi}`,
-      at.cell * 0.1,
-      'faint',
-      'start',
+    tagged(
+      'ground',
+      palace.branch,
+      text(
+        at.x + pad,
+        at.y + at.cell - pad,
+        `${palace.stem.hanzi}${palace.branch.hanzi}`,
+        at.cell * 0.1,
+        'faint',
+        'start',
+      ),
     ),
   );
   // The seat's own name is keyed too, and it has to be: the band numbers the
@@ -483,12 +502,10 @@ function inside(
   const houseSize = at.cell * 0.1;
   const houseText = palace.house.hanzi + (palace.body ? ' 身' : '');
   const houseKey = key.get(palace.house.hanzi);
-  parts.push(
-    text(at.x + at.cell - pad, at.y + at.cell - pad, houseText, houseSize, 'word', 'end'),
-  );
+  const house = [text(at.x + at.cell - pad, at.y + at.cell - pad, houseText, houseSize, 'word', 'end')];
   if (houseKey) {
     const houseRing = Math.min(at.key, houseSize);
-    parts.push(
+    house.push(
       ringed(
         houseKey,
         at.x + at.cell - pad - measured(houseText, houseSize) - ringRoom(houseRing),
@@ -498,6 +515,7 @@ function inside(
       ),
     );
   }
+  parts.push(tagged('house', palace.house, house.join('\n')));
 
   return parts;
 }

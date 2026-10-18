@@ -664,7 +664,8 @@
       "yearBoundary": "lichun",
       "geHost": "ke",
       "geChong": "gong",
-      "wenchangTaiyi": "qiu"
+      "wenchangTaiyi": "qiu",
+      "dayouEye": "jinjing"
     }
   },
   "940, 杜塞": {
@@ -1308,7 +1309,8 @@
       "yearBoundary": "lichun",
       "geHost": "ke",
       "geChong": "gong",
-      "wenchangTaiyi": "qiu"
+      "wenchangTaiyi": "qiu",
+      "dayouEye": "jinjing"
     }
   }
 }

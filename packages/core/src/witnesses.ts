@@ -143,6 +143,16 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '遁甲符應經', pinyin: 'dùnjiǎfúyìngjīng' },
   },
+  /**
+   * 《御定奇門大全》, whose 卷五–十, headed 奇門秘纂, lay the eighteen 局 hour by
+   * hour: the centre's stem carried off with 坤's, 白虎 and 玄武 in both dun.
+   * Its 卷十一–十三, 遁甲通明鈐, state 置閏 with the block before the solstices
+   * and work 淳祐六年 through it.
+   */
+  qimendaquan: {
+    kind: 'transmitted',
+    name: { hanzi: '御定奇門大全', pinyin: 'yùdìngqíméndàquán' },
+  },
   /** 《奇門遁甲全局》, the circular plates that keep 白虎 at the fifth seat. */
   quanju: {
     kind: 'transmitted',

@@ -326,7 +326,9 @@ which is which; whether one counts in an hour of the night is the reader's.
 — 勾陳 with 白虎, 朱雀 with 玄武 — and then decides which of the two names a
 seat wears by **what is being asked**: 「如占病、占賊，則勾、雀二神可換虎、武用」,
 said once for each dun. It is on the shelf, it is in print, and it is not a
-value of `spirits`.
+value of `spirits`. The pair 白虎 and 玄武 standing in both dun whatever is
+asked is a value, `huwu`, since 2026-10-16: what is refused is the choice by
+the matter, and the names are not.
 
 **Because it is a licence to read and not a rule for laying.** The clause is
 permissive and its object is use — 可換…用 — and what it moves is a *name*: the

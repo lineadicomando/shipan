@@ -175,10 +175,11 @@ export interface Parameter<V> {
    * A divergence *inside* another one, in force only where that one stands on
    * a value.
    *
-   * One parameter uses it and it is doctrine rather than presentation:
-   * `leap` divides 置閏, so under 拆補 or 茅山 nothing is repeated and where
-   * the repetition goes decides nothing. Reported beside those boards it
-   * would name a choice the method never had to make.
+   * It is doctrine rather than presentation: `leap` divides 置閏, so under
+   * 拆補 or 茅山 nothing is repeated and where the repetition goes decides
+   * nothing. Reported beside those boards it would name a choice the method
+   * never had to make. `centreStem` divides the turned plate the same way,
+   * since nothing lodges on the flown one.
    */
   readonly inside?: { readonly id: string; readonly value: string };
   /**
@@ -238,7 +239,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.method.zhirun',
         note: 'cli.note.method',
         implemented: true,
-        heldBy: ['tongzong'],
+        heldBy: ['tongzong', 'qimendaquan'],
       },
       {
         id: 'maoshan',
@@ -266,7 +267,8 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.plate.zhuan',
         note: 'form.qimen.plate.note',
         implemented: true,
-        heldBy: ['tongzong'],
+        // 《御定奇門大全》卷五–十 turns it in every one of its 1080 hours.
+        heldBy: ['tongzong', 'qimendaquan'],
       },
       { id: 'fei', name: { hanzi: '飛盤', pinyin: 'fēipán' }, implemented: false },
       // The stars and the 儀 flown, the gates turned: the 折衷's, argued from
@@ -297,8 +299,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         note: 'form.qimen.centreLodging.note',
         implemented: true,
         // The 符應經 works it in both dun: 「六戊在五宮，寄坤二」 on a yang board
-        // and 「直使在五宮，寄坤二西南」 on a yin one.
-        heldBy: ['tongzong', 'fuyingjing'],
+        // and 「直使在五宮，寄坤二西南」 on a yin one. 《御定奇門大全》卷五–十
+        // lays all eighteen 局 on it, hour by hour.
+        heldBy: ['tongzong', 'fuyingjing', 'qimendaquan'],
       },
       // Yang to 坤, yin to 艮: the imperial print's 一本.
       {
@@ -352,7 +355,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.earthPlate.yuan',
         note: 'form.qimen.earthPlate.note',
         implemented: true,
-        heldBy: ['tongzong'],
+        heldBy: ['tongzong', 'qimendaquan'],
       },
       {
         id: 'xun',
@@ -537,6 +540,16 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         implemented: true,
         heldBy: ['quanju'],
       },
+      // The yin names in both dun: 「乙休雖在乾會白虎」 and 「乙休在兌…會玄武」 on
+      // the yang boards of 《御定奇門大全》卷五–十, which name 勾陳 and 朱雀 nowhere.
+      // Named after the pair 《金鏡寶鑑》 calls them by, 「換虎、武用」.
+      {
+        id: 'huwu',
+        name: { hanzi: '虎武', pinyin: 'hǔwǔ' },
+        says: 'form.qimen.spirits.huwu',
+        implemented: true,
+        heldBy: ['qimendaquan'],
+      },
     ],
     default: 'dun',
   },
@@ -544,7 +557,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     board: 'qimen',
     family: 'shijia',
     values: [
-      { id: 'solstice', implemented: true, heldBy: ['tongzong'] },
+      { id: 'solstice', implemented: true, heldBy: ['tongzong', 'qimendaquan'] },
       {
         id: 'runyue',
         name: { hanzi: '閏月', pinyin: 'rùnyuè' },
@@ -620,6 +633,33 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     ],
     default: 'stay',
   },
+  centreStem: {
+    board: 'qimen',
+    family: 'shijia',
+    // Whether the centre's stem rides the heaven plate with its host's. Nothing
+    // lodges on the flown plate, so this divides the turned one alone. See
+    // `docs/sources.md` § "《御定奇門大全》卷五–十, the eighteen 局 hour by hour".
+    label: 'form.qimen.centreStem',
+    inside: { id: 'plate', value: 'zhuan' },
+    values: [
+      {
+        id: 'centre',
+        says: 'form.qimen.centreStem.centre',
+        note: 'form.qimen.centreStem.note',
+        implemented: true,
+        // Argued, not held: the 《奇門探索錄》's 夾注 puts the centre's 乙 in the
+        // centre against its own text — 「中宮天禽帶乙奇，此云天芮帶到，於理不合」.
+      },
+      {
+        id: 'host',
+        says: 'form.qimen.centreStem.host',
+        note: 'form.qimen.centreStem.note',
+        implemented: true,
+        heldBy: ['qimendaquan'],
+      },
+    ],
+    default: 'centre',
+  },
   dingTomb: {
     board: 'qimen',
     family: 'shijia',
@@ -645,6 +685,38 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
       },
     ],
     default: 'gen',
+  },
+  // 十干克應, the stem above over the stem below. Three lines carry the
+  // eighty-one, and they name them differently: a whole table is a line's, and
+  // which one a board lays is a choice. The default is the cells they name
+  // alike, which nobody's table is. See `docs/sources.md` § 十干克應.
+  stemPairs: {
+    board: 'qimen',
+    family: 'shijia',
+    label: 'form.qimen.stemPairs',
+    values: [
+      {
+        id: 'shared',
+        says: 'form.qimen.stemPairs.shared',
+        note: 'form.qimen.stemPairs.note',
+        implemented: true,
+      },
+      {
+        id: 'jinhan',
+        name: { hanzi: '金函', pinyin: 'jīnhán' },
+        says: 'form.qimen.stemPairs.jinhan',
+        note: 'form.qimen.stemPairs.note',
+        implemented: true,
+        heldBy: ['jinhan'],
+      },
+      {
+        id: 'xianji',
+        name: { hanzi: '仙機', pinyin: 'xiānjī' },
+        implemented: false,
+        heldBy: ['qimendaquan'],
+      },
+    ],
+    default: 'shared',
   },
   shensha: {
     board: 'almanac',
@@ -868,6 +940,33 @@ export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
       },
     ],
     default: 'qiu',
+  },
+  // The eye of the 大遊 walks the same ring in both works and is counted two
+  // ways before it walks. The values are named for the works, as `epoch` is;
+  // the name beside each is the word its count turns on. Neither work dates a
+  // seat. See `docs/sources.md` § "What is not here", under 大遊.
+  dayouEye: {
+    board: 'taiyi',
+    label: 'form.taiyi.dayouEye',
+    values: [
+      {
+        id: 'jinjing',
+        name: { hanzi: '元法', pinyin: 'yuánfǎ' },
+        says: 'form.taiyi.dayouEye.jinjing',
+        note: 'form.taiyi.dayouEye.note',
+        implemented: true,
+        heldBy: ['jinjing'],
+      },
+      {
+        id: 'tongzong',
+        name: { hanzi: '盈差', pinyin: 'yíngchā' },
+        says: 'form.taiyi.dayouEye.tongzong',
+        note: 'form.taiyi.dayouEye.note',
+        implemented: true,
+        heldBy: ['taiyitongzong'],
+      },
+    ],
+    default: 'jinjing',
   },
   // The counts differ by millions and mostly do not differ at all: 《統宗》's
   // is congruent with 《金鏡》's modulo both 360 and 24, so it lays the identical

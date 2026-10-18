@@ -317,6 +317,73 @@ export const en = {
   'label.pattern.baihuchangkuang': 'the white tiger runs wild',
   'label.pattern.qinglongyaoming': 'the dragon blazes',
   'label.pattern.riqiruwu': 'the sun enters the mist',
+  // The rest of 《金函玉鏡》's table, which only `stemPairs: jinhan` lays. 華蓋
+  // is the parasol here because the Canopy is already 天蓬's.
+  'label.pattern.qinglongheling': 'the dragon joins the spirit',
+  'label.pattern.guirenruyu': 'the noble goes to prison',
+  'label.pattern.zhifufeigong': 'the Chief flies from its palace',
+  'label.pattern.qinglongzhezu': 'the dragon breaks its foot',
+  'label.pattern.qinglongrutianlao': 'the dragon enters the prison of heaven',
+  'label.pattern.qinglonghuagai': 'the dragon under the parasol',
+  'label.pattern.liyinhaiyang': 'good for yin, harm to yang',
+  'label.pattern.riqifuyin': 'the sun stays at home',
+  'label.pattern.qiyishunsui': 'marvel and instrument in step',
+  'label.pattern.qiyixiangzuo': 'marvel and instrument help each other',
+  'label.pattern.riqibeixing': 'the sun is punished',
+  'label.pattern.riqirudi': 'the sun goes into the earth',
+  'label.pattern.huagaifengxingguan': 'the parasol meets the star official',
+  'label.pattern.riyuebingxing': 'sun and moon walk together',
+  'label.pattern.yueqibeishi': 'the moon defies the army',
+  'label.pattern.yueqizhuque': 'the moon and the vermilion bird',
+  'label.pattern.dabeiruxing': 'the great defiance meets punishment',
+  'label.pattern.moushijiucheng': 'plans come to completion',
+  'label.pattern.huorutianluo': 'fire enters the snare of heaven',
+  'label.pattern.huagaibeishi': 'the parasol defies the army',
+  'label.pattern.qinglongzhuanguang': 'the dragon turns to the light',
+  'label.pattern.rendunjige': 'the hiding of man, a fortunate pattern',
+  'label.pattern.xingsuiyuezhuan': 'the star follows the turning moon',
+  'label.pattern.qirutaiyin': 'the marvel enters the Moon',
+  'label.pattern.huorugouchen': 'fire enters the Hook',
+  'label.pattern.nianyuerishige': 'the barrier of year, month, day and hour',
+  'label.pattern.zhuqueruyu': 'the vermilion bird goes to prison',
+  'label.pattern.wushenhuhe': 'five spirits joined',
+  'label.pattern.quanyuqinglong': 'the dog meets the dragon',
+  'label.pattern.mushen': 'the spirit of the tomb',
+  'label.pattern.huobeidihu': 'fire defies the door of earth',
+  'label.pattern.zhuquerumu': 'the vermilion bird enters the tomb',
+  'label.pattern.dihufenggui': 'the door of earth meets a ghost',
+  'label.pattern.ligefanming': 'the barrier of gain turns the name back',
+  'label.pattern.youhunrumu': 'the wandering soul enters the tomb',
+  'label.pattern.diwanggaozhang': 'the net of earth spread high',
+  'label.pattern.dixingxuanwu': 'the punishment of earth and the Dark Warrior',
+  'label.pattern.taibaitianyifugong': 'the white star and the Heavenly One hidden in its palace',
+  'label.pattern.taibaipengxing': 'the white star meets the Canopy',
+  'label.pattern.tingtingzhige': 'the upright barrier',
+  'label.pattern.baihugange': 'the white tiger bars the stem',
+  'label.pattern.kunlongbeishang': 'the trapped dragon is wounded',
+  'label.pattern.ganhebeishi': 'stems joined, the army defied',
+  'label.pattern.yushendeqi': 'the spirit of the prison gains the marvel',
+  'label.pattern.ruyuzixing': 'in prison and self-punished',
+  'label.pattern.baihuchuli': 'the white tiger puts out its strength',
+  'label.pattern.fuyintianting': 'the court of heaven stays at home',
+  'label.pattern.xiongsheruyu': 'the fierce serpent goes to prison',
+  'label.pattern.tianlaohuagai': 'the prison of heaven under the parasol',
+  'label.pattern.xiaoshehualong': 'the little serpent becomes a dragon',
+  'label.pattern.xiaosheriqi': 'the little serpent and the sun',
+  'label.pattern.shuisheruhuo': 'the water serpent enters the fire',
+  'label.pattern.ganheshexing': 'stems joined, the serpent punished',
+  'label.pattern.xiongsherumu': 'the fierce serpent enters the tomb',
+  'label.pattern.taibaiqinshe': 'the white star seizes the serpent',
+  'label.pattern.tengshexiangchan': 'the serpents entwined',
+  'label.pattern.sherudiluo': 'the serpent enters the snare of earth',
+  'label.pattern.younvjianyin': 'the young girl debauched',
+  'label.pattern.tianyihuihe': 'the Heavenly One meets and joins',
+  'label.pattern.huagaifengxing': 'the parasol meets the star',
+  'label.pattern.huagaidihu': 'the parasol over the door of earth',
+  'label.pattern.taibairuwang': 'the white star enters the net',
+  'label.pattern.wanggaitianlao': 'the net covers the prison of heaven',
+  'label.pattern.fujiantengshe': 'the serpent seen again',
+  'label.pattern.tianwangsizhang': 'the net of heaven spread on four sides',
 
   // The fortune each configuration is transmitted with. These are the plain
   // translations and not softer ones: 凶 is what the sources say, and a gloss
@@ -876,6 +943,41 @@ export const en = {
   'label.layer.star': 'stars',
   'label.layer.both': 'gates and stars',
 
+  'label.register.qimen.heaven': 'Heaven plate',
+  'label.register.qimen.earth': 'Earth plate',
+  'label.register.qimen.palace': 'Palace',
+  'label.register.qimen.spirit': 'Spirit',
+  'label.register.qimen.star': 'Star',
+  'label.register.qimen.gate': 'Gate',
+
+  'label.register.liuren.general': 'General',
+  'label.register.liuren.heaven': 'Heaven plate',
+  'label.register.liuren.earth': 'Earth plate',
+  'label.register.liuren.upper': 'Lesson, the branch above',
+  'label.register.liuren.lower': 'Lesson, what the branch stands on',
+  'label.register.liuren.branch': 'Transmission, the branch',
+  'label.register.liuren.stem': 'Transmission, the stem covering the branch',
+
+  'label.register.qizheng.palace': 'Palace, its name and its branch',
+  'label.register.qizheng.governor': 'Governor',
+  'label.register.qizheng.remainder': 'Remainder',
+  'label.register.qizheng.house': 'What the palace is asked about',
+  'label.register.qizheng.lodge': 'Lodge, and degrees past its star',
+  'label.register.qizheng.motion': 'Which way it runs',
+
+  'label.register.taiyi.eye': 'Eye, where a count starts',
+  'label.register.taiyi.number': 'Palace number, in this board’s own count',
+  'label.register.taiyi.taiyi': 'Tai Yi, where it stands this year',
+  'label.register.taiyi.general': 'One of the four generals',
+  'label.register.taiyi.seat': 'Seat: a branch, or a corner trigram',
+  'label.register.taiyi.god': 'One of the sixteen gods',
+
+  'label.register.ziwei.rings': 'Rings, and the decade',
+  'label.register.ziwei.star': 'One of the fourteen major stars',
+  'label.register.ziwei.minor': 'One of the other stars',
+  'label.register.ziwei.ground': 'Ground: the stem and the branch',
+  'label.register.ziwei.house': 'Name of the seat',
+
   // The three methods carry their own names and the two errands do not, and
   // the line between them is what is being named rather than who is reading.
   //
@@ -1422,6 +1524,13 @@ export const en = {
   'form.taiyi.wenchangTaiyi.yan': '掩 yǎn, as 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn has it where it explains that condition',
   'form.taiyi.wenchangTaiyi.note':
     'One arrangement carries three names in the texts. The board is the same under each of them. What changes is the condition the arrangement is filed under, and with it the words the naming text attaches to that condition.',
+  'form.taiyi.dayouEye': 'The eye of the 大遊 dàyóu is counted',
+  'form.taiyi.dayouEye.jinjing':
+    'by reducing the years by the 元法 yuánfǎ, seventy-two, as 《太乙金鏡式經》 tàiyǐjīnjìngshìjīng counts it',
+  'form.taiyi.dayouEye.tongzong':
+    'by adding the 盈差 yíngchā, 216, and reducing by 188, as 《太乙統宗寶鑑》 tàiyǐtǒngzōngbǎojiàn counts it',
+  'form.taiyi.dayouEye.note':
+    'Both texts walk the eye from 天道 tiāndào round the sixteen gods and hold it twice at 乾 qián and at 坤 kūn. They count the years differently before it walks, so the two counts put it on the same god in one year in nine. Each text states its count whole and dates no seat of the eye.',
   'form.ziwei.huoling': '火星 huǒxīng and 鈴星 língxīng are placed',
   'form.ziwei.huoling.fixed':
     'each on its seat from the year’s triplicity, which is what 《紫微斗數全書》 zǐwēidǒushùquánshū states',
@@ -1460,6 +1569,8 @@ export const en = {
     'nothing: the same eight names stand in both dun, as 《御定奇門寶鑑》 yùdìngqíménbǎojiàn has them',
   'form.qimen.spirits.baihu':
     'the half of the year, with 白虎 báihǔ kept at the fifth seat in a yang chart: the board of 《奇門遁甲全局》 qíméndùnjiǎquánjú',
+  'form.qimen.spirits.huwu':
+    'nothing, with the names of a yin chart in both dun: 白虎 báihǔ and 玄武 xuánwǔ stand in a yang chart as they do in a yin one, as the hour tables of 《御定奇門大全》 yùdìngqíméndàquán have them',
   // The moving pair against the plate under it. 《金鏡寶鑑》 separates the two in
   // one clause — 其星寄 for the star, 符使不必寄於二 for the 符 and the 使 — so
   // the label asks about the pair and neither value promises a different board.
@@ -1517,6 +1628,14 @@ export const en = {
     'in the palace the centre lodges in, as 《御定奇門寶鑑》 yùdìngqíménbǎojiàn has it',
   'form.qimen.centreTravel.travel':
     'in the central palace itself: 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
+  // Where the centre's stem stands once the plate has turned: in the fifth, or
+  // with the stem of its host wherever that one went.
+  'form.qimen.centreStem': 'When the stems above the palaces turn, the stem of the central palace',
+  'form.qimen.centreStem.centre': 'stays in the central palace',
+  'form.qimen.centreStem.host':
+    'moves with the stem of the palace the centre lodges in, and is read where that stem arrives, as the hour tables of 《御定奇門大全》 yùdìngqíméndàquán have it',
+  'form.qimen.centreStem.note':
+    'The palace the centre lodges in holds two stems under earth: its own and the centre’s. When the stems above the palaces turn, its own stem moves to another palace. The two readings part over whether the centre’s stem moves with it. The star, the gate and the spirit of every palace are the same under both.',
   'form.qimen.dingTomb': 'The stem 丁 dīng is marked entombed when it stands',
   'form.qimen.dingTomb.gen':
     'in the palace of 艮 gèn, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
@@ -1524,6 +1643,12 @@ export const en = {
     'in the palace of 乾 qián, with 丙 bǐng, as 《遁甲符應經》 dùnjiǎfúyìngjīng has it',
   'form.qimen.dingTomb.note':
     'A stem is entombed when the turn of the plate carries it to the one palace where its strength ends, and the board marks that palace. The two texts agree on the palace of 乙 yǐ and on the palace of 丙 bǐng. For 丁 dīng the first text names 艮 gèn and the second names 乾 qián, where 丙 bǐng is entombed too. The choice moves that one mark and nothing else on the board.',
+  'form.qimen.stemPairs': 'A stem over the stem below it is named',
+  'form.qimen.stemPairs.shared': 'only where the texts name it alike, fourteen cells of eighty-one',
+  'form.qimen.stemPairs.jinhan':
+    'in eighty of the eighty-one cells, as 《金函玉鏡》 jīnhányùjìng names them, with its own fortunes',
+  'form.qimen.stemPairs.note':
+    'Each text that sets out the eighty-one cells names them in its own way, and most cells are named differently by each. The first choice keeps the fourteen they name alike. The second follows one text through the whole table. It gives a fortune only where that text states one without a condition, so most of its marks carry none. The board itself is the same under both; only the marks change.',
   'form.gender': 'Sex — only the direction of the luck cycles depends on it',
   'form.gender.unset': 'not given',
   'form.gender.male': 'male',
@@ -1619,6 +1744,9 @@ export const en = {
   // and nowhere says what they mean. The words for the states themselves are
   // `label.strength.*`; this is the line that says what they qualify — the
   // star and the gate, against the season, and nothing else in the palace.
+  'form.layerLegend': 'Every palace is laid out like this',
+  'form.layerLegend.seat': 'Every seat is laid out like this',
+  'form.layerLegend.rim': 'Every seat around them is laid out like this',
   'form.strengthLegend': 'How the star and the gate stand to the season',
 
   // Taking a chart away: as words, and as a prompt for a model that will be
@@ -1929,6 +2057,7 @@ export const en = {
   'notes.parameter.geHost': 'Whose bodies the condition 格 gé is marked for.',
   'notes.parameter.geChong': 'What makes a 格 gé: the facing palace, or a clash of branches as well.',
   'notes.parameter.wenchangTaiyi': 'What 文昌 wénchāng in the palace of 太乙 tàiyǐ is called.',
+  'notes.parameter.dayouEye': 'How the eye of the 大遊 dàyóu is counted.',
   'notes.parameter.leapMonth': 'What a birth in an intercalary month counts as.',
   'notes.parameter.sihua': 'Which table of the four transformations.',
   'notes.parameter.huoling': 'How 火星 huǒxīng and 鈴星 língxīng are placed.',
@@ -1938,7 +2067,9 @@ export const en = {
   'notes.parameter.strengths': 'What the five seasonal states are read from.',
   'notes.parameter.earth': 'Where earth’s season begins.',
   'notes.parameter.dingTomb': 'Which palace the stem 丁 dīng is entombed in.',
+  'notes.parameter.stemPairs': 'Which table of 十干克應 shígānkèyìng names a stem over a stem.',
   'notes.parameter.centreTravel': 'Where the chief and the chief gate are read when they fall on the central palace.',
+  'notes.parameter.centreStem': 'Where the stem of the central palace stands when the stems above the palaces turn.',
   'notes.parameter.luckGranularity': 'How finely the distance to the term is counted.',
   'notes.parameter.count': 'How the years lived are counted.',
 
@@ -2588,6 +2719,10 @@ export const en = {
   'cli.field.lodged': 'The centre lodges in {palace}, where its {stem} is read.',
   // The same fact in a table cell, where there is no room for the sentence.
   'cli.field.lodgedShort': 'the centre lodges here: {stem}',
+  // Its twin above the palaces, under centreStem host: the centre's stem has
+  // ridden the turn with its host's.
+  'cli.field.heavenLodged': 'The centre’s {stem} has moved with the stem of the palace it lodges in, and stands above {palace}.',
+  'cli.field.heavenLodgedShort': 'the centre’s stem has come here too: {stem}',
   'cli.field.horse': '{from}: {branch}, palace {palace}',
   // 年命 — the birth looked up inside a chart cast for a moment, which is the
   // classical direction: the chart is the hour's, and the person is placed in

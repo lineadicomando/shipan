@@ -24,6 +24,7 @@
     PALACES,
     PALACE_OF,
     PATTERN_IDS,
+    JINHAN_PATTERN_IDS,
     PURPOSES,
     SPIRIT_IDS,
     STAR_IDS,
@@ -484,7 +485,8 @@
 
       <p class="group">{t('form.without')}</p>
       <div class="checks">
-        {#each PATTERN_IDS as id}
+        <!-- 《金函玉鏡》's own names are offered only where the board can lay them. -->
+        {#each PATTERN_IDS.filter((id) => asked.chosen['qimen.stemPairs'] === 'jinhan' || !JINHAN_PATTERN_IDS.has(id)) as id}
           <label class="check">
             <input
               type="checkbox"

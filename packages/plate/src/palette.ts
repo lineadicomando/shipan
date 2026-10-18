@@ -143,13 +143,19 @@ function declarations(palette: Palette): string {
  * With `auto`, the light values are the declared ones and the dark values
  * arrive through a media query: a drawing saved to a file, mailed, or dropped
  * into a page nobody controls still reads correctly at night.
+ *
+ * **Declared on `svg` and not on `:root`.** In a file of its own the two are
+ * the same element. Set inside a page, in a shadow root of its own — which is
+ * how a page that answers a pointer on the drawing has to hold it, or the
+ * sheet would reach every other drawing on that page — `:root` matches
+ * nothing at all and every colour falls back to black.
  */
 export function styleSheet(scheme: 'light' | 'dark' | 'auto'): string {
-  if (scheme !== 'auto') return `:root { ${declarations(PALETTES[scheme])} }`;
+  if (scheme !== 'auto') return `svg { ${declarations(PALETTES[scheme])} }`;
 
   return [
-    `:root { ${declarations(PALETTES.light)} }`,
-    `@media (prefers-color-scheme: dark) { :root { ${declarations(PALETTES.dark)} } }`,
+    `svg { ${declarations(PALETTES.light)} }`,
+    `@media (prefers-color-scheme: dark) { svg { ${declarations(PALETTES.dark)} } }`,
   ].join('\n');
 }
 

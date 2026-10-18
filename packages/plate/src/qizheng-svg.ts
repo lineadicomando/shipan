@@ -9,6 +9,7 @@ import {
   type Said,
 } from './readings.js';
 import { drawSchools, schoolDepth } from './schools.js';
+import { marks } from './marks.js';
 import type {
   PlatePlacement,
   PlateQizheng,
@@ -62,6 +63,12 @@ import type {
  * Like the other two it holds no catalog and knows no language. Words arrive
  * already chosen.
  */
+
+/**
+ * What the drawing marks: see `marks.ts`. A palace of the ring is its own
+ * branch and a row of the listing is the body it lists.
+ */
+const { board: BOARD, tagged, seated } = marks('qizheng');
 
 /** The five phases, as classes the sheet turns into ink colours. */
 const PHASES = ['mu', 'huo', 'tu', 'jin', 'shui'] as const;
@@ -143,7 +150,7 @@ export function renderQizhengSvg(board: PlateQizheng, options: PlateQizhengOptio
 
   const parts: string[] = [
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${round(height)}" ` +
-      `width="${size}" height="${round(height)}" role="img" aria-label="${escape(ariaLabel(board))}">`,
+      `width="${size}" height="${round(height)}" ${BOARD} role="img" aria-label="${escape(ariaLabel(board))}">`,
     `<style>${styleSheet(options.scheme ?? 'auto')}
       .qmdj { font-family: ${FONT_STACK}; }
       .qmdj text { fill: var(--qmdj-ink); }
@@ -293,21 +300,27 @@ function listing(
   const LODGE = 0.545;
   const MOTION = 0.775;
 
-  const column = (placed: readonly PlatePlacement[], left: number): void => {
+  const column = (placed: readonly PlatePlacement[], left: number, layer: 'governor' | 'remainder'): void => {
     placed.forEach((one, index) => {
       const y = top + step * (index + 0.9);
-
-      parts.push(text(left, y, one.body.hanzi, glyph, one.body.element, 'start'));
+      const row: string[] = [];
 
       const gloss = labels.body?.[one.body.id];
-      if (gloss) {
-        // Stopping short of the numeral that opens the next slot, rather than
-        // running under it.
-        const room = columnWidth * (LODGE - GLOSS) - small * 0.4;
-        parts.push(
-          text(left + columnWidth * GLOSS, y, gloss, fitted(gloss, small, room), 'word', 'start'),
-        );
-      }
+      // Stopping short of the numeral that opens the next slot, rather than
+      // running under it.
+      const room = columnWidth * (LODGE - GLOSS) - small * 0.4;
+      row.push(
+        tagged(
+          layer,
+          one.body,
+          [
+            text(left, y, one.body.hanzi, glyph, one.body.element, 'start'),
+            gloss ? text(left + columnWidth * GLOSS, y, gloss, fitted(gloss, small, room), 'word', 'start') : '',
+          ]
+            .filter(Boolean)
+            .join('\n'),
+        ),
+      );
 
       // The 宿 and the 入宿度 together, because neither says anything alone:
       // a degree with no lodge is a number and a lodge with no degree is a
@@ -321,15 +334,23 @@ function listing(
       const lodgeAt = left + columnWidth * LODGE;
       if (one.lodge !== undefined && one.lodgeDegree !== undefined) {
         const lodgeKey = key.get(one.lodge.hanzi);
-        if (lodgeKey !== undefined) parts.push(ringed(lodgeKey, lodgeAt, y, box.key, small));
-        parts.push(
-          text(
-            lodgeAt + indent,
-            y,
-            `${one.lodge.hanzi} ${one.lodgeDegree.toFixed(2)}°`,
-            small,
-            undefined,
-            'start',
+        row.push(
+          tagged(
+            'lodge',
+            one.lodge,
+            [
+              lodgeKey !== undefined ? ringed(lodgeKey, lodgeAt, y, box.key, small) : '',
+              text(
+                lodgeAt + indent,
+                y,
+                `${one.lodge.hanzi} ${one.lodgeDegree.toFixed(2)}°`,
+                small,
+                undefined,
+                'start',
+              ),
+            ]
+              .filter(Boolean)
+              .join('\n'),
           ),
         );
       }
@@ -339,22 +360,28 @@ function listing(
       // reads as a quieter fact, and which way a planet runs is not.
       const motion = labels.motion?.[one.motion];
       if (motion) {
-        parts.push(
-          text(
-            left + columnWidth * MOTION,
-            y,
-            motion,
-            fitted(motion, small, columnWidth * (1 - MOTION)),
-            'word',
-            'start',
+        row.push(
+          tagged(
+            'motion',
+            { id: one.motion },
+            text(
+              left + columnWidth * MOTION,
+              y,
+              motion,
+              fitted(motion, small, columnWidth * (1 - MOTION)),
+              'word',
+              'start',
+            ),
           ),
         );
       }
+
+      parts.push(seated('row', one.body.id, row));
     });
   };
 
-  column(board.governors, margin);
-  column(board.remainders, margin + columnWidth);
+  column(board.governors, margin, 'governor');
+  column(board.remainders, margin + columnWidth, 'remainder');
   return parts;
 }
 
@@ -381,16 +408,17 @@ function ringOf(
   const parts: string[] = [];
   const { left, top, cell } = box;
   const room = cell * 0.9;
-  const placed = [...board.governors, ...board.remainders];
   const minggong = board.minggong.palace.index;
+  const remainders = new Set(board.remainders);
 
   for (let branch = 0; branch < 12; branch += 1) {
     const [row, column] = SEAT[branch] as readonly [number, number];
     const x = left + column * cell;
     const y = top + row * cell;
     const middleX = x + cell / 2;
+    const cellParts: string[] = [];
 
-    parts.push(
+    cellParts.push(
       `<rect x="${round(x)}" y="${round(y)}" width="${round(cell)}" height="${round(cell)}" ` +
         `fill="var(--qmdj-element-${GROUND[branch]})" class="cell"/>`,
     );
@@ -400,7 +428,7 @@ function ringOf(
     // compete with the phase tint already carrying the ground.
     if (branch === minggong) {
       const inset = cell * 0.035;
-      parts.push(
+      cellParts.push(
         `<rect x="${round(x + inset)}" y="${round(y + inset)}" ` +
           `width="${round(cell - inset * 2)}" height="${round(cell - inset * 2)}" class="rule"/>`,
       );
@@ -415,29 +443,37 @@ function ringOf(
     const head = `${ci?.hanzi ?? ''} ${HANZI[branch] as string}`;
     const headSize = cell * 0.1;
     const ciKey = ci ? key.get(ci.hanzi) : undefined;
-    parts.push(
-      ...keyed(head, headSize, 'faint', {
-        middle: middleX,
-        y: y + cell * 0.145,
-        index: ciKey,
-        key: box.key,
-        room: cell * 0.94,
-      }),
+    cellParts.push(
+      tagged(
+        'palace',
+        ci,
+        keyed(head, headSize, 'faint', {
+          middle: middleX,
+          y: y + cell * 0.145,
+          index: ciKey,
+          key: box.key,
+          room: cell * 0.94,
+        }).join('\n'),
+      ),
     );
 
     // The bodies, stacked from a fixed first baseline rather than centred on
     // the room they need: an empty palace and a crowded one then begin at the
     // same height, and the ring reads as twelve of one thing.
-    const here = placed.filter((one) => one.palace.index === branch);
+    const here = [...board.governors, ...board.remainders].filter((one) => one.palace.index === branch);
     here.forEach((one, index) => {
-      parts.push(
-        ...keyed(one.body.hanzi, cell * 0.125, one.body.element, {
-          middle: middleX,
-          y: y + cell * (0.36 + index * 0.15),
-          index: key.get(one.body.hanzi),
-          key: box.key,
-          room,
-        }),
+      cellParts.push(
+        tagged(
+          remainders.has(one) ? 'remainder' : 'governor',
+          one.body,
+          keyed(one.body.hanzi, cell * 0.125, one.body.element, {
+            middle: middleX,
+            y: y + cell * (0.36 + index * 0.15),
+            index: key.get(one.body.hanzi),
+            key: box.key,
+            room,
+          }).join('\n'),
+        ),
       );
     });
 
@@ -448,16 +484,22 @@ function ringOf(
     const house = board.houses.find((seat) => seat.palace.index === branch)?.house;
     const word = house ? labels.house?.[house.id] : undefined;
     if (word) {
-      parts.push(
-        ...keyed(word, cell * 0.085, 'word', {
-          middle: middleX,
-          y: y + cell * 0.94,
-          index: house ? key.get(house.hanzi) : undefined,
-          key: box.key,
-          room,
-        }),
+      cellParts.push(
+        tagged(
+          'house',
+          house,
+          keyed(word, cell * 0.085, 'word', {
+            middle: middleX,
+            y: y + cell * 0.94,
+            index: house ? key.get(house.hanzi) : undefined,
+            key: box.key,
+            room,
+          }).join('\n'),
+        ),
       );
     }
+
+    parts.push(seated('palace', BRANCH_IDS[branch] as string, cellParts));
   }
 
   return parts;
@@ -537,6 +579,9 @@ function middle(
 
 /** The twelve branches, for the ground of each palace. */
 const HANZI = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'] as const;
+
+/** The same twelve by the identifiers the engine gives them, for the marks. */
+const BRANCH_IDS = ['zi', 'chou', 'yin', 'mao', 'chen', 'si', 'wu', 'wei', 'shen', 'you', 'xu', 'hai'] as const;
 
 /**
  * The phase of each palace, which is the phase of its own branch.

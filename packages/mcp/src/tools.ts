@@ -624,6 +624,12 @@ export function registerComputeTaiyi(server: McpServer): void {
           .describe(
             'What 文昌 standing in 太乙\'s own palace is called. Default qiu, the Taiyi Jinjing Shijing\'s name. guan is an earlier master\'s name, which the Taiyi Tongzong quotes and lists the arrangement under; yan is what the Tongzong calls it where it explains that condition. The board does not move; the condition it is filed under does.',
           ),
+        dayou_eye: z
+          .enum(['jinjing', 'tongzong'])
+          .optional()
+          .describe(
+            'How the eye of the 大遊 is counted. Default jinjing, the Taiyi Jinjing Shijing\'s: the 大遊\'s years reduced by seventy-two, then by eighteen. tongzong is the Taiyi Tongzong\'s: 216 added to the years 太乙 is counted on, reduced by 188, then by eighteen. Both walk the eye from 天道 over the sixteen gods, held twice at 乾 and 坤, and they put it on the same god in one year in nine. Neither work dates a seat of the eye, so neither count has been checked against a dated board.',
+          ),
         lang: langSchema,
       },
     },
@@ -634,6 +640,7 @@ export function registerComputeTaiyi(server: McpServer): void {
         if (args.taiyi_year_boundary) options.yearBoundary = args.taiyi_year_boundary;
         if (args.ge_host) options.geHost = args.ge_host;
         if (args.wenchang_taiyi) options.wenchangTaiyi = args.wenchang_taiyi;
+        if (args.dayou_eye) options.dayouEye = args.dayou_eye;
         const board = taiyiBoard({ year: args.year }, options);
         return ok(formatTaiyi(board, t));
       } catch (error) {

@@ -357,6 +357,35 @@ describe('renderChartSvg', () => {
     expect(dark).toContain('--qmdj-ink');
   });
 
+  it('declares its colours on itself, so a shadow root holding it still has them', () => {
+    const svg = renderChartSvg(CHART, { scheme: 'dark' });
+
+    // `:root` matches nothing inside a shadow root, and a board set in a page
+    // that answers a pointer on it is held in one.
+    expect(svg).toMatch(/svg \{ --qmdj-ink/);
+    expect(svg).not.toContain(':root');
+  });
+
+  it('marks every palace, and every name in it with its layer and identifier', () => {
+    const svg = renderChartSvg(CHART);
+
+    expect(svg).toMatch(/<svg [^>]*data-board="qimen"/);
+    for (const number of [1, 2, 3, 4, 5, 6, 7, 8, 9]) {
+      expect(svg).toContain(`<g data-unit="palace" data-seat="${number}">`);
+    }
+    expect(svg).not.toContain('data-palace');
+    for (const layer of ['heaven', 'earth', 'palace', 'star']) {
+      expect(svg.match(new RegExp(`data-layer="${layer}"`, 'g'))).toHaveLength(9);
+    }
+    // The centre has no gate and no spirit, and nothing to point at where they
+    // would be.
+    for (const layer of ['gate', 'spirit']) {
+      expect(svg.match(new RegExp(`data-layer="${layer}"`, 'g'))).toHaveLength(8);
+    }
+    expect(svg).toContain('<g data-layer="gate" data-id="xiumen">');
+    expect(svg).toContain('<g data-layer="heaven" data-id="ren">');
+  });
+
   it('describes itself for a reader who cannot see it', () => {
     const svg = renderChartSvg(CHART);
 
