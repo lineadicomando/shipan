@@ -63,8 +63,7 @@ none of them merged. They are of four days:
 
 - 2026-10-15, surface work: the Qi Men section holds its board in the page
   (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which register a
-  name stands in while a pointer rests on it. No other section holds its
-  board that way yet.
+  name stands in while a pointer rests on it.
 - 2026-10-16, the shelf and what it built: the 大全's eighteen 局 tables read,
   then `spirits: huwu` and `centreStem` (0.25.0); its 遁甲通明鈐 read, and the
   大全 named a holder of 置閏; `dayouEye` (0.26.0); its 奇門仙機 surveyed and
@@ -78,8 +77,22 @@ none of them merged. They are of four days:
   surveyed for a 起例 and none found; its 遁甲 run in 卷四十 is the ordinary
   起例, and one worked hour agrees with the engine. No version moved, and no
   code.
+- 2026-10-18, surface work: every drawing marks its seats and names in one
+  vocabulary (`marks.ts` in `@shipan/plate`: `data-board`, `data-unit`,
+  `data-seat`, `data-layer`), and every board on the site — the five
+  sections, the consultation and the scan's dialog — is held in the page and
+  says the layer of a name a pointer rests on, from
+  `label.register.<board>.<layer>`. Zi Wei keeps a press for going to the row
+  (`pin={false}`). `LayerLegend` prints a key to the seats of each board.
+  `apps/web/test/marks.test.ts` holds every mark to `LAYERS` and to a word in
+  each catalog. No version moved, following the Qi Men commits: the drawings
+  look as they did.
 
-`main` is 79 commits ahead of `origin/main`, whose last commit is of
+Before the branch, `main` took one commit of its own on 2026-10-18: the four
+other sections printed no board in the light scheme, and now hide the board
+on screen only where a copy for paper is there to swap in.
+
+`main` is 80 commits ahead of `origin/main`, whose last commit is of
 2026-10-06. Nothing since that day is pushed; pushing and merging are the
 user's call. `npm test`, `npm run typecheck` and `npm run build` pass on
 2026-10-17 with no test skipped. **Run `npm run build` before `npm test`** in
@@ -108,9 +121,10 @@ is left unbuilt.
 3. **Or `stemPairs: xianji`**: six cells of the 仙機's 干論 read again on the
    plate, § 1. Its transcription is held, so this is an errand of six looks.
 
-What `board-pointer` does next on the surface is not decided: whether the
-other sections hold their boards the way the Qi Men section does, and whether
-a pointer does more than name the register.
+What a pointer does beyond naming the layer is not decided. Seen while
+printing and left as they were, being older than the branch: the Zi Wei
+board prints against the left margin rather than centred, and its picture for
+paper is cut short at the foot.
 
 **Decisions held open, by the user's word, until there is more to decide on:**
 
