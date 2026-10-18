@@ -958,6 +958,13 @@ export const en = {
   'label.register.liuren.branch': 'Transmission, the branch',
   'label.register.liuren.stem': 'Transmission, the stem covering the branch',
 
+  'label.register.qizheng.palace': 'Palace, its name and its branch',
+  'label.register.qizheng.governor': 'Governor',
+  'label.register.qizheng.remainder': 'Remainder',
+  'label.register.qizheng.house': 'What the palace is asked about',
+  'label.register.qizheng.lodge': 'Lodge, and degrees past its star',
+  'label.register.qizheng.motion': 'Which way it runs',
+
   // The three methods carry their own names and the two errands do not, and
   // the line between them is what is being named rather than who is reading.
   //

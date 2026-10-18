@@ -934,6 +934,13 @@ export const it: Record<MessageKey, string> = {
   'label.register.liuren.branch': 'Trasmissione, il ramo',
   'label.register.liuren.stem': 'Trasmissione, lo stelo che copre il ramo',
 
+  'label.register.qizheng.palace': 'Palazzo, il nome e il ramo',
+  'label.register.qizheng.governor': 'Governatore',
+  'label.register.qizheng.remainder': 'Complemento',
+  'label.register.qizheng.house': 'Ciò di cui il palazzo è interrogato',
+  'label.register.qizheng.lodge': 'Dimora, e gradi oltre la sua stella',
+  'label.register.qizheng.motion': 'In che verso corre',
+
   // I tre metodi portano il proprio nome e i due atti no, e la linea fra loro
   // sta in ciò che si nomina, non in chi legge.
   //

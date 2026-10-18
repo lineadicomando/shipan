@@ -146,6 +146,33 @@ describe('the ring', () => {
   });
 });
 
+describe('the marks', () => {
+  it('marks every palace by its own branch, and what stands in it by its layer', () => {
+    const drawn = svg();
+    expect(drawn).toMatch(/<svg [^>]*data-board="qizheng"/);
+    for (const branch of ['zi', 'chou', 'yin', 'mao', 'chen', 'si', 'wu', 'wei', 'shen', 'you', 'xu', 'hai']) {
+      expect(drawn).toContain(`<g data-unit="palace" data-seat="${branch}">`);
+    }
+    // The head is the 次 with its branch, marked by the 次; the foot the 人事宮.
+    expect(drawn.match(/data-layer="palace"/g)).toHaveLength(12);
+    expect(drawn.match(/data-layer="house"/g)).toHaveLength(12);
+    expect(drawn).toMatch(/<g data-unit="palace" data-seat="mao">[\s\S]*?<g data-layer="palace" data-id="dahuo">/);
+    // A body on the ring and its row in the listing are marked alike.
+    expect(drawn.match(/data-layer="governor" data-id="huoxing"/g)).toHaveLength(2);
+    expect(drawn.match(/data-layer="remainder" data-id="ziqi"/g)).toHaveLength(2);
+  });
+
+  it('marks a row of the listing by its body, and the lodge only where there is one', () => {
+    const drawn = svg();
+    for (const body of ['taiyang', 'tuxing', 'luohou', 'ziqi']) {
+      expect(drawn).toContain(`<g data-unit="row" data-seat="${body}">`);
+    }
+    expect(drawn.match(/data-layer="lodge"/g)).toHaveLength(10);
+    expect(drawn.match(/data-layer="motion"/g)).toHaveLength(11);
+    expect(drawn).toContain('<g data-layer="motion" data-id="ni">');
+  });
+});
+
 describe('the listing over the ring', () => {
   it('glosses all eleven names it draws, which the ring then need not', () => {
     const drawn = svg();
