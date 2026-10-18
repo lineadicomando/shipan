@@ -96,8 +96,8 @@ is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
   last of them. It counts after the fold now, and a test sets lines long
   enough to fold on every one of the four. The Zi Wei board prints centred.
 
-`main` is 108 commits ahead of `origin/main`, whose last commit is of
-2026-10-06. Nothing since that day is pushed; pushing is the user's call.
+`main` is pushed to `origin/main` as of 2026-10-18, and the two agree.
+Pushing is the user's call.
 `npm test`, `npm run typecheck` and `npm run build` pass on 2026-10-18 with no
 test skipped. **Run `npm run build` before `npm test`** in
 a fresh tree: the MCP and web suites and the shelf's scripts import
