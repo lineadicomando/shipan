@@ -926,6 +926,14 @@ export const it: Record<MessageKey, string> = {
   'label.register.qimen.star': 'Stella',
   'label.register.qimen.gate': 'Porta',
 
+  'label.register.liuren.general': 'Generale',
+  'label.register.liuren.heaven': 'Tavola di cielo',
+  'label.register.liuren.earth': 'Tavola di terra',
+  'label.register.liuren.upper': 'Lezione, il ramo sopra',
+  'label.register.liuren.lower': 'Lezione, ciò su cui il ramo poggia',
+  'label.register.liuren.branch': 'Trasmissione, il ramo',
+  'label.register.liuren.stem': 'Trasmissione, lo stelo che copre il ramo',
+
   // I tre metodi portano il proprio nome e i due atti no, e la linea fra loro
   // sta in ciò che si nomina, non in chi legge.
   //

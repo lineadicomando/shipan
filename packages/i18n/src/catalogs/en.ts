@@ -950,6 +950,14 @@ export const en = {
   'label.register.qimen.star': 'Star',
   'label.register.qimen.gate': 'Gate',
 
+  'label.register.liuren.general': 'General',
+  'label.register.liuren.heaven': 'Heaven plate',
+  'label.register.liuren.earth': 'Earth plate',
+  'label.register.liuren.upper': 'Lesson, the branch above',
+  'label.register.liuren.lower': 'Lesson, what the branch stands on',
+  'label.register.liuren.branch': 'Transmission, the branch',
+  'label.register.liuren.stem': 'Transmission, the stem covering the branch',
+
   // The three methods carry their own names and the two errands do not, and
   // the line between them is what is being named rather than who is reading.
   //

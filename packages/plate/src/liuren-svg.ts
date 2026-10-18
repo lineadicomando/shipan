@@ -2,6 +2,7 @@ import { broken, escape, fitted, round } from './fit.js';
 import { FONT_STACK, styleSheet } from './palette.js';
 import { drawReadingColumns, readingDepth, said, type Said } from './readings.js';
 import { drawSchools, schoolDepth } from './schools.js';
+import { marks } from './marks.js';
 import type {
   PlateCourse,
   PlateLiuren,
@@ -34,6 +35,15 @@ import type {
  * Like the chart, it holds no catalog and knows no language. Words arrive
  * already chosen.
  */
+
+/**
+ * What the drawing marks: see `marks.ts`. A palace of the ring is its own
+ * branch, a lesson its number and a transmission its position.
+ */
+const { board: BOARD, tagged, seated } = marks('liuren');
+
+/** Name and word as one register, for marking: see `tagged`. */
+const joined = (...lines: (string | string[])[]): string => lines.flat().filter(Boolean).join('\n');
 
 /** The five phases, as classes the sheet turns into ink colours. */
 const PHASES = ['mu', 'huo', 'tu', 'jin', 'shui'] as const;
@@ -117,7 +127,7 @@ export function renderLiurenSvg(board: PlateLiuren, options: PlateLiurenOptions 
 
   const parts: string[] = [
     `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${round(height)}" ` +
-      `width="${size}" height="${round(height)}" role="img" aria-label="${escape(ariaLabel(board))}">`,
+      `width="${size}" height="${round(height)}" ${BOARD} role="img" aria-label="${escape(ariaLabel(board))}">`,
     `<style>${styleSheet(options.scheme ?? 'auto')}
       .qmdj { font-family: ${FONT_STACK}; }
       .qmdj text { fill: var(--qmdj-ink); }
@@ -243,19 +253,33 @@ function upperBlock(
   // day stem and takes a stem's word, which is why the two maps are separate.
   board.courses.forEach((course: PlateCourse, index) => {
     const x = size - margin - column * (index + 0.5);
-    parts.push(text(x, top + height * 0.22, course.upper.hanzi, glyph, course.upper.element));
-    parts.push(...worded(x, top + height * 0.33, labels.branch?.[course.upper.id], small, column * 0.95));
-    parts.push(text(x, top + height * 0.62, course.lower.hanzi, glyph, course.lower.element));
     parts.push(
-      ...worded(
-        x,
-        top + height * 0.73,
-        labels.branch?.[course.lower.id] ?? labels.stem?.[course.lower.id],
-        small,
-        column * 0.95,
-      ),
+      seated('course', course.number, [
+        tagged(
+          'upper',
+          course.upper,
+          joined(
+            text(x, top + height * 0.22, course.upper.hanzi, glyph, course.upper.element),
+            worded(x, top + height * 0.33, labels.branch?.[course.upper.id], small, column * 0.95),
+          ),
+        ),
+        tagged(
+          'lower',
+          course.lower,
+          joined(
+            text(x, top + height * 0.62, course.lower.hanzi, glyph, course.lower.element),
+            worded(
+              x,
+              top + height * 0.73,
+              labels.branch?.[course.lower.id] ?? labels.stem?.[course.lower.id],
+              small,
+              column * 0.95,
+            ),
+          ),
+        ),
+        text(x, top + height * 0.95, String(course.number), small, 'faint'),
+      ]),
     );
-    parts.push(text(x, top + height * 0.95, String(course.number), small, 'faint'));
   });
 
   // 三傳, downwards on the left, each on one baseline: the name of the
@@ -270,31 +294,53 @@ function upperBlock(
     // language does to four characters.
     const y = top + height * (0.18 + (index * 0.6) / Math.max(1, rows - 1));
     let x = margin;
+    const row: string[] = [];
 
     const name = labels.transmission?.[transmission.position];
-    if (name) parts.push(text(x, y, name, small, 'faint', 'start'));
+    if (name) row.push(text(x, y, name, small, 'faint', 'start'));
     x += column * 1.1;
 
-    parts.push(text(x, y, transmission.branch.hanzi, glyph, transmission.branch.element, 'start'));
-    parts.push(...worded(x, y + small * 1.5, labels.branch?.[transmission.branch.id], small, column, 'start'));
+    row.push(
+      tagged(
+        'branch',
+        transmission.branch,
+        joined(
+          text(x, y, transmission.branch.hanzi, glyph, transmission.branch.element, 'start'),
+          worded(x, y + small * 1.5, labels.branch?.[transmission.branch.id], small, column, 'start'),
+        ),
+      ),
+    );
     x += column * 0.85;
 
-    parts.push(text(x, y, transmission.general.hanzi, small * 1.3, 'faint', 'start'));
-    parts.push(
-      ...worded(x, y + small * 1.5, labels.general?.[transmission.general.id], small, column * 1.7, 'start'),
+    row.push(
+      tagged(
+        'general',
+        transmission.general,
+        joined(
+          text(x, y, transmission.general.hanzi, small * 1.3, 'faint', 'start'),
+          worded(x, y + small * 1.5, labels.general?.[transmission.general.id], small, column * 1.7, 'start'),
+        ),
+      ),
     );
     x += column * 1.75;
 
     if (transmission.hiddenStem) {
-      parts.push(
-        text(x, y, transmission.hiddenStem.hanzi, small * 1.3, transmission.hiddenStem.element, 'start'),
-      );
-      parts.push(
-        ...worded(x, y + small * 1.5, labels.stem?.[transmission.hiddenStem.id], small, column * 1.25, 'start'),
+      row.push(
+        tagged(
+          'stem',
+          transmission.hiddenStem,
+          joined(
+            text(x, y, transmission.hiddenStem.hanzi, small * 1.3, transmission.hiddenStem.element, 'start'),
+            worded(x, y + small * 1.5, labels.stem?.[transmission.hiddenStem.id], small, column * 1.25, 'start'),
+          ),
+        ),
       );
     } else if (labels.empty) {
-      parts.push(text(x, y, labels.empty, small, 'faint', 'start'));
+      // The absence of a stem is a word and nothing stands there to point at.
+      row.push(text(x, y, labels.empty, small, 'faint', 'start'));
     }
+
+    parts.push(seated('transmission', transmission.position, row));
   });
 
   return parts;
@@ -331,24 +377,38 @@ function ringOf(
     // the ink standing on it. The chart tints a palace by its phase for the
     // same reason and to the same faintness — enough to group the board at a
     // glance, never enough to be read instead of the glyphs.
-    parts.push(
-      `<rect x="${round(x)}" y="${round(y)}" width="${round(cell)}" height="${round(cell)}" ` +
-        `fill="var(--qmdj-element-${GROUND[branch]})" class="cell"/>`,
-    );
-
     const general = board.generals[branch];
     const over = board.heaven[branch];
+    const ground = { id: BRANCH_IDS[branch] as string };
 
     // The rhythm is set by the branch, which is the headline: at 0.24 of the
     // cell its glyph rises about 0.19 above its own baseline, so the register
     // over it has to have finished by 0.45 — and a general's word runs to two
     // lines often enough (`the celestial queen`, `the six harmonies`) that the
     // room for the second is reserved rather than hoped for.
-    parts.push(text(middleX, y + cell * 0.145, general?.hanzi ?? '', cell * 0.13, 'faint'));
-    parts.push(...worded(middleX, y + cell * 0.26, labels.general?.[general?.id ?? ''], cell * 0.082, room));
-    parts.push(text(middleX, y + cell * 0.68, over?.hanzi ?? '', cell * 0.24, over?.element));
-    parts.push(...worded(middleX, y + cell * 0.8, labels.branch?.[over?.id ?? ''], cell * 0.082, room));
-    parts.push(text(middleX, y + cell * 0.95, HANZI[branch] as string, cell * 0.115, 'faint'));
+    parts.push(
+      seated('palace', ground.id, [
+        `<rect x="${round(x)}" y="${round(y)}" width="${round(cell)}" height="${round(cell)}" ` +
+          `fill="var(--qmdj-element-${GROUND[branch]})" class="cell"/>`,
+        tagged(
+          'general',
+          general,
+          joined(
+            text(middleX, y + cell * 0.145, general?.hanzi ?? '', cell * 0.13, 'faint'),
+            worded(middleX, y + cell * 0.26, labels.general?.[general?.id ?? ''], cell * 0.082, room),
+          ),
+        ),
+        tagged(
+          'heaven',
+          over,
+          joined(
+            text(middleX, y + cell * 0.68, over?.hanzi ?? '', cell * 0.24, over?.element),
+            worded(middleX, y + cell * 0.8, labels.branch?.[over?.id ?? ''], cell * 0.082, room),
+          ),
+        ),
+        tagged('earth', ground, text(middleX, y + cell * 0.95, HANZI[branch] as string, cell * 0.115, 'faint')),
+      ]),
+    );
   }
 
   return parts;
@@ -410,6 +470,9 @@ function middle(
 
 /** The twelve branches, for the ground of each palace, and their phases. */
 const HANZI = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'] as const;
+
+/** The same twelve by the identifiers the engine gives them, for the marks. */
+const BRANCH_IDS = ['zi', 'chou', 'yin', 'mao', 'chen', 'si', 'wu', 'wei', 'shen', 'you', 'xu', 'hai'] as const;
 
 /**
  * The phase of each palace of the 地盤, which is the phase of its own branch.

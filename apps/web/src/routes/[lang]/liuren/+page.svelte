@@ -2,8 +2,10 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
+  import { sayLayer } from '$lib/board';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import FormPanel from '$lib/components/FormPanel.svelte';
+  import InlineBoard from '$lib/components/InlineBoard.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import LiurenReading from '$lib/components/LiurenReading.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
@@ -37,7 +39,6 @@
 
   let busy = $state(false);
   let panel: FormPanel | undefined = $state();
-  let drawn = $state('');
 
   // The address the answer was laid for, so the picture and the words agree.
   const address = $derived(
@@ -125,15 +126,9 @@
 {#if board}
   <div class="result" class:stale={busy} aria-busy={busy}>
     <div class="board" class:swapped={onPaper}>
-      <img
-        src={plate}
-        alt=""
-        width="900"
-        height="1379"
-        class="screen"
-        class:settling={drawn !== plate}
-        onload={() => (drawn = plate)}
-      />
+      <div class="screen">
+        <InlineBoard src={plate} width={900} height={1379} tip={(spot) => sayLayer(spot, t)} />
+      </div>
       {#if onPaper}<img src={paper} alt="" width="900" height="1379" class="paper" />{/if}
     </div>
 
@@ -172,16 +167,13 @@
      is the same fix made on the right half — the words are centred as a block
      under it and stay left-aligned inside themselves, because a centred line
      of prose is a line nobody can come back to. */
-  .board img { width: 100%; inline-size: var(--board); height: auto; display: block; margin-inline: auto; }
+  .board img, .screen { width: 100%; inline-size: var(--board); height: auto; display: block; margin-inline: auto; }
   .board .paper { display: none; }
-  /* Held in place while the next board is on its way, rather than blanking. */
-  .screen { transition: opacity 0.2s ease-out; }
-  .settling { opacity: 0.6; }
 
   .failure { color: var(--alarm); }
 
   @media (prefers-reduced-motion: reduce) {
-    .result, .screen { transition: none; }
+    .result { transition: none; }
   }
 
   /**
@@ -197,6 +189,6 @@
        none, and hiding the board would print a sheet with a hole in it. */
     .swapped .screen { display: none; }
     .board .paper { display: block; }
-    .board img { max-width: 26rem; }
+    .board img, .screen { max-width: 26rem; }
   }
 </style>

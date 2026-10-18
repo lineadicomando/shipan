@@ -2,6 +2,7 @@ import { LOCALES, catalogs } from '@shipan/i18n';
 import { LAYERS, UNITS, type MarkedBoard } from '@shipan/plate';
 import { describe, expect, it } from 'vitest';
 import { GET as qimen } from '../src/routes/api/qimen/plate/+server';
+import { GET as liuren } from '../src/routes/api/liuren/plate/+server';
 import { layerKey } from '../src/lib/board';
 
 /**
@@ -36,6 +37,7 @@ const DRAWN: Record<MarkedBoard, readonly (() => Promise<string>)[]> = {
     () => draw(qimen, MOMENT),
     () => draw(qimen, `${MOMENT}&qimen.system=rijia`),
   ],
+  liuren: [() => draw(liuren, MOMENT)],
 };
 
 function marked(svg: string, attribute: string): Set<string> {

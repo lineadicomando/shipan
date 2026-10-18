@@ -119,6 +119,36 @@ describe('the Liu Ren drawing', () => {
     }
   });
 
+  it('marks every palace by its own branch, and every name in it with its layer', () => {
+    expect(svg).toMatch(/<svg [^>]*data-board="liuren"/);
+    for (const branch of ['zi', 'chou', 'yin', 'mao', 'chen', 'si', 'wu', 'wei', 'shen', 'you', 'xu', 'hai']) {
+      expect(svg).toContain(`<g data-unit="palace" data-seat="${branch}">`);
+    }
+    for (const layer of ['general', 'heaven', 'earth']) {
+      expect(svg.match(new RegExp(`<g data-unit="palace"[\\s\\S]*?data-layer="${layer}"`, 'g'))).toHaveLength(12);
+    }
+    // 巳 is the top-left palace, and 丑 stands over it: the seat is the
+    // ground, never what came to stand on it.
+    expect(svg).toMatch(/<g data-unit="palace" data-seat="si">\n<rect[^>]*\/>\n<g data-layer="general" data-id="g5">[\s\S]*?<g data-layer="heaven" data-id="chou">/);
+    expect(svg).toContain('<g data-layer="earth" data-id="si">');
+  });
+
+  it('marks the lessons by number and the transmissions by position', () => {
+    for (const number of [1, 2, 3, 4]) expect(svg).toContain(`<g data-unit="course" data-seat="${number}">`);
+    expect(svg.match(/data-layer="upper"/g)).toHaveLength(4);
+    expect(svg.match(/data-layer="lower"/g)).toHaveLength(4);
+    // The first lesson stands on the day stem, and says so by its identifier.
+    expect(svg).toContain('<g data-layer="lower" data-id="ding">');
+
+    for (const position of ['chu', 'zhong', 'mo']) {
+      expect(svg).toContain(`<g data-unit="transmission" data-seat="${position}">`);
+    }
+    expect(svg.match(/data-layer="branch"/g)).toHaveLength(3);
+    // The first transmission is void and carries no stem: nothing to point at.
+    expect(svg.match(/data-layer="stem"/g)).toHaveLength(2);
+    expect(svg).toContain('<g data-layer="general" data-id="gouchen">');
+  });
+
   it('says what the board is, in the aria label, for a reader who cannot see it', () => {
     expect(svg).toMatch(/aria-label="大六壬 丁未日 巳時 · 月將丑 · 三傳卯亥未"/);
   });
