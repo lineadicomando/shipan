@@ -124,7 +124,7 @@
 
 {#if board}
   <div class="result" class:stale={busy} aria-busy={busy}>
-    <div class="board">
+    <div class="board" class:swapped={onPaper}>
       <img
         src={plate}
         alt=""
@@ -193,8 +193,10 @@
    */
   @media print {
     .result { display: block; }
-    .board .screen { display: none; }
+    /* Only where there is a copy to swap in: in the light scheme there is
+       none, and hiding the board would print a sheet with a hole in it. */
+    .swapped .screen { display: none; }
     .board .paper { display: block; }
-      .board img { max-width: 26rem; }
+    .board img { max-width: 26rem; }
   }
 </style>

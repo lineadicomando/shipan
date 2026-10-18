@@ -249,7 +249,7 @@
   <!-- Spent while the next reading is on its way, rather than swapped without
        warning: see the chart, where the same rule holds. -->
   <div class="result" class:stale={busy} aria-busy={busy}>
-    <div class="board">
+    <div class="board" class:swapped={onPaper}>
       <img
         src={plate}
         alt=""
@@ -429,7 +429,9 @@
   @media print {
     /* Nothing to point with on paper. */
     .seat { display: none; }
-    .board .screen { display: none; }
+    /* Only where there is a copy to swap in: in the light scheme there is
+       none, and hiding the board would print a sheet with a hole in it. */
+    .swapped .screen { display: none; }
     .board .paper { display: block; }
     .board img { max-width: 26rem; }
   }
