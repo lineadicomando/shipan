@@ -86,13 +86,6 @@ user's call. `npm test`, `npm run typecheck` and `npm run build` pass on
 a fresh tree: the MCP and web suites and the shelf's scripts import
 `packages/core/dist`, and a stale `dist` fails them on whatever changed.
 
-**The index holds a staged change nobody committed**:
-`packages/core/test/cli.test.ts` staged with `.bin/qimen` where the tree and
-`HEAD` have `.bin/shipan`, which would undo e6b882b. It was there when the
-session of 2026-10-17 began and was left out of every commit. Whether to
-drop it (`git restore --staged packages/core/test/cli.test.ts`) is the
-user's call. Commit by naming the files, so it does not ride along.
-
 **What to do next, in the order the user has been taking it.** Nothing decided
 is left unbuilt.
 
