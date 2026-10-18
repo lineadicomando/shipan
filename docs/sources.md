@@ -2737,6 +2737,78 @@ on a 局. Read for a 起例 are 卷一 and 卷五 to 卷三十八.
 
 Last checked 2026-10-17.
 
+### 《御定奇門大全》卷三十九–四十二: 禽遁秘訣陰符經, which is 演禽 with a 遁甲 run inside it
+
+Surveyed 2026-10-18 on contact sheets at 50 dpi, sheets 894–983, every sheet
+seen for its headings. Read on the plate at 220 dpi: sheets 921–926 and 930.
+Nothing else is quoted. A search of the transcribed texts on the shelf for
+the 遁甲歌's opening line and for 飛宮掌訣 returned nothing. That locates no
+parallel, and it is not a negative.
+
+**What the four juan are, settled on the 版心**, which reads 禽遁秘訣 and the
+juan throughout, and on the opening and closing leaves:
+
+| juan | sheets | what it holds, by its headings |
+|---|---|---|
+| 三十九 | 894–916 | 七曜禽星, 初禽起例, 翻禽倒將, 十二宮生尅制化, 二十八宿禽名, 七元甲子旬頭, 暗金伏斷, the twenty-eight lodges one by one, 總論, then 合, 離, 伏 and 勢, and 二十八宿破陣法 |
+| 四十 | 917–940 | 二十八宿藏身法, 推六星值日歌, 行兵忌日; then a 遁甲 run, sheets 922–931 (below); then 三刑, 滅沒日, and omens of wind and 氣 over an army |
+| 四十一 | 941–960 | 推十二月征戰背生擊死法, 孤虛, 華蓋 and the 將帳 laid for each of the six 旬 on figures of the twelve branches, 出兵安營寨法, day tables, and omens of birds and clouds by the hour |
+| 四十二 | 961–982 | 五姓兵法, the 法 of an army by their numbers, then 風, 雲, 日, 月 and 星 象, 太白, 虹, and 飛禽 and 走獸 象占 |
+
+卷三十九終 is on sheet 916, 卷四十終 on 940, 卷四十一終 on 960 and 卷四十二終
+on 982. 奇門秘訣 opens 卷四十三 on 983 with 奇門大小將辨.
+
+**Most of the work is 演禽**: the seven luminaries and the 禽 of a day or an
+hour, read for a battle. Nothing in it is laid on a 局.
+
+**The 遁甲 run in 卷四十 states the ordinary 起例.** It opens on sheet 923 with
+a 遁甲歌:
+
+> 遁甲窮推天地玄，先將節氣定根原。春從艮起夏當巽，秋過坤宮冬到乾。二至坎離分
+> 逆順，双分震兌貫三川。甲己在仲為上局，孟為中局季下元。
+
+The punctuation is ours. The verse goes on to the earth plate, the 三奇, and
+the 直符 and 直使 moved to the hour's stem: 「專取旬頭直符使，時干支上定飛遷」.
+Under the verse the run says the same thing in prose: 「立春在艮上起甲子，立夏在巽上起甲子，
+立秋在坤上起甲子，立冬在乾上起甲子」. The eight palaces are the 上元 of the
+eight nodes in `JU_TABLE` in `packages/core/src/dunjia/ju.ts`: 冬至 一, 立春
+八, 春分 三, 立夏 四, 夏至 九, 立秋 二, 秋分 七 and 立冬 六. Sheet 930's
+飛宮掌訣法 gives the same eight palaces again in verse, 「立春艮上青山色，春分震上好詳推」
+and so on.
+
+「甲己在仲為上局，孟為中局季下元」 reads the 元 off the 符頭's branch. `chaibu`
+and `zhirun` both do that, and `maoshan` does not read the 符頭 at all. The
+verse does not say which term a 符頭 is matched to, and that is where
+`chaibu` and `zhirun` part. So it is a statement of the table and it takes
+no side between them.
+
+**And it works one hour, which the engine reproduces in all five palaces it
+names.** Sheets 925–926, under 五不擊:
+
+> 天乙真符直使九天九地出門皆不可擊。假令用陽遁八局丙辛日卯時，天乙在二宮西南，
+> 乃天上直符擊其衝；九天在九宮正南；生門在三宮正東；九地在四宮東南；直使在八宮
+> 東北。已上五宮不可擊之。
+
+The hour is 辛卯, in the 甲申 decade. On the engine's 陽遁八局 the 直符 天蓬
+stands at 坤, 九天 at 離, 九地 at 巽, 生門 at 震 and the 直使 休門 at 艮. That
+is the table `texts/qimen/daquan-juan05-10-hours/engine.json` holds, under
+every value of `centreLodging` and `spirits`, with `earthPlate: yuan`. Under
+`earthPlate: xun` the 直符 lands at 巽 and the case does not hold. So this is
+one more hour of the 大全 laid on the plate of the 元 and turned. The
+compilation already holds both values for its 卷五–十, so no holder and no
+rung moves.
+
+The rest of the run is the ordinary matter, located and not read: 遁甲所喜,
+which is the 九遁; 三奇得使, 玉女守門, 趨三避五, 天馬方 and 地戶方, 三奇帝星時,
+五墓論, the 格 from 伏干 to 飛宮, and 遁甲倫覽. 卷四十一's 華蓋 figures place
+the 將帳, 天門 and 地戶 for each 旬 on the twelve branches. They are not a
+palace board, and they are recorded without being weighed.
+
+**So the 禽遁 lays no 奇門 board of its own and shows no 起例 variant.** Read
+for one are 卷一 and 卷五 to 卷四十二. 卷二 to 卷四 of 景祐秘纂 are not.
+
+Last checked 2026-10-18.
+
 ### 《紀氏奇門秘書仕學備餘》, where the states read from the star are a second arrangement
 
 《紀氏奇門秘書仕學備餘》 四卷, [清] 紀大奎 撰 — the facsimile's own title leaf

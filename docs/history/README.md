@@ -94,6 +94,7 @@ phase.
 | 59 | [先天要論, the rest of it](59-the-xiantian-yaolun.md) | done — 卷十七–二十四 of the 大全 surveyed for a 起例 and none found: 卷十七 carries the 探索錄's 符經 on a woodblock, which reads 都天轉甲 where the 2012 print has 輔甲, and 卷二十–二十一 are the ordinary 局, every cell read the engine's |
 | 60 | [奇門古本](60-the-qimen-guben.md) | done — 卷二十八–三十二 of the 大全 surveyed for a 起例 and none found; its 卷二十九 prints the 年家 on 一七四 with 遁甲集成 第三冊's epoch chain and a case at 1648, a second copy of that line older than the first |
 | 61 | [乾坤變異錄](61-the-qiankun-bianyi-lu.md) | done — 卷三十三–三十八 of the 大全, omens of the sky and the ground with no 起例; 卷三十九 is 禽遁 already, a juan earlier than the 目錄 has it |
+| 62 | [禽遁秘訣陰符經](62-the-qindun-yinfujing.md) | done — 卷三十九–四十二 of the 大全, 演禽 with no 起例 of its own; its 遁甲 run in 卷四十 states the ordinary one, and a worked hour the engine lays in all five palaces it names |
 
 ## The rest of the record
 
