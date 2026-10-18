@@ -66,6 +66,7 @@
   import { replaceState } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
+  import { sayLayer } from '$lib/board';
   import {
     INSTRUMENTS,
     genderValues,
@@ -86,6 +87,7 @@
   import QizhengReading from '$lib/components/QizhengReading.svelte';
   import Schools from '$lib/components/Schools.svelte';
   import ZiweiReading from '$lib/components/ZiweiReading.svelte';
+  import InlineBoard from '$lib/components/InlineBoard.svelte';
   import LayerLegend from '$lib/components/LayerLegend.svelte';
   import StrengthLegend from '$lib/components/StrengthLegend.svelte';
   import TaiyiReading from '$lib/components/TaiyiReading.svelte';
@@ -1164,13 +1166,14 @@
         <PillarPlate pillars={chart.board.pillars} {t} />
       {:else if shown.plate}
         <div class="board" class:swapped={onPaper}>
-          <img
-            src={plate}
-            alt=""
-            width={shown.plate.width}
-            height={shown.plate.height}
-            class="screen"
-          />
+          <div class="screen" style:--ratio={shown.plate.width / shown.plate.height}>
+            <InlineBoard
+              src={plate}
+              width={shown.plate.width}
+              height={shown.plate.height}
+              tip={(spot) => sayLayer(spot, t)}
+            />
+          </div>
           <!-- The same board in the light scheme, for paper and nothing else.
                Only drawn when the two differ — see `onPaper`. -->
           {#if onPaper}
@@ -1386,7 +1389,7 @@
   .stale { opacity: 0.5; }
   /* As on the chart, and at the same measure: the board has to fit a window,
      the words under it may perfectly well be scrolled to. See `--board`. */
-  img {
+  img, .screen {
     display: block;
     margin-inline: auto;
     width: 100%;
@@ -1457,6 +1460,10 @@
       max-inline-size: min(100%, 17cm);
       max-block-size: 24.5cm;
     }
+    /* The board held in the page is a box and not a replaced element, so it
+       keeps no ratio of its own under a pair of maxima: the height bound is
+       turned into a width through the drawing's ratio instead. */
+    .screen { inline-size: min(100%, 17cm, calc(24.5cm * var(--ratio))); }
     .swapped .screen { display: none; }
     .paper { display: block; }
   }

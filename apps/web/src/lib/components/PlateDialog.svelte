@@ -33,8 +33,10 @@
 <script lang="ts">
   import type { Translator } from '@shipan/i18n';
   import type { QimenChart } from '@shipan/core';
+  import { sayLayer } from '$lib/board';
   import { sayFailure, type Failure } from '$lib/moment';
   import ChartReading from './ChartReading.svelte';
+  import InlineBoard from './InlineBoard.svelte';
   import PalaceTable from './PalaceTable.svelte';
   import LayerLegend from './LayerLegend.svelte';
   import StrengthLegend from './StrengthLegend.svelte';
@@ -94,8 +96,8 @@
    * own row says where the gates and stars stand in the *matched* palace;
    * this is the whole chart, which is what the answer already contained.
    *
-   * Asked for from the browser, not from `load`: the drawing beside it is an
-   * `<img>` the browser fetches anyway, so there is nothing to be gained by
+   * Asked for from the browser, not from `load`: the drawing beside it is a
+   * picture the browser fetches anyway, so there is nothing to be gained by
    * having the server wait on the same answer — and picking an hour must not
    * run the page's `load`, which would rescan the interval.
    */
@@ -118,15 +120,6 @@
     return body.qimen as QimenChart;
   }
 
-  /**
-   * The drawing that is on screen, as against the one that was asked for.
-   *
-   * The same reason as in the chart section: `src` changes before a pixel of
-   * the new picture exists, and the browser holds the old board up in the
-   * meantime with nothing to say it is last question's answer. It happens
-   * here too, since choosing another hour redraws this without closing it.
-   */
-  let drawn = $state('');
 </script>
 
 <script lang="ts" module>
@@ -207,14 +200,9 @@
       <div class="board">
         <!-- A middling chart's shape, to reserve the box with. See the chart
              section, where the same attributes carry the same caveat. -->
-        <img
-          src={plate}
-          alt=""
-          width="900"
-          height="900"
-          class:settling={drawn !== plate}
-          onload={() => (drawn = plate)}
-        />
+        <div class="screen">
+          <InlineBoard src={plate} width={900} height={900} tip={(spot) => sayLayer(spot, t)} />
+        </div>
         <LayerLegend {t} />
         <StrengthLegend {t} />
       </div>
@@ -381,7 +369,7 @@
     /* The item of the grid is the board and its legend together, so what used
        to be the picture's own placement is the pair's. */
     dialog.large .board { align-self: start; }
-    dialog.large .board img {
+    dialog.large .board .screen {
       /* The height budget buys eight sevenths of itself in width: what has to
          fit is everything down to the foot of the board, which is the
          caption's eighth plus the grid's three quarters — see the same sum in
@@ -422,11 +410,7 @@
      shrink below its own nine hundred pixels — see `.palaces` above for why a
      grid item that may not shrink takes the dialog sideways with it. */
   .board { display: grid; justify-items: center; min-inline-size: 0; }
-  img { display: block; width: 100%; height: auto; transition: opacity 0.15s ease-out; }
-  .settling { opacity: 0.35; }
-  @media (prefers-reduced-motion: reduce) {
-    img { transition: none; }
-  }
+  .screen { display: block; width: 100%; }
   .note, .failure { margin: 0; font-size: 0.85em; }
   .note { color: var(--faint); }
   .failure { color: var(--alarm); }
