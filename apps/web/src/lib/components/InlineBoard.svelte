@@ -22,7 +22,13 @@
   **`tip` is the one thing it shows of its own**: a short line set over the
   spot, in words the caller chose. A mouse shows it by resting and hides it by
   leaving; a finger has no resting, so a tap shows it and a tap anywhere else,
-  or Escape, puts it away. Nothing else on the page moves for it.
+  or Escape, puts it away. Nothing else on the page moves for it. A page whose
+  board already answers a press with something else says `pin={false}`, and
+  then a tap is the caller's alone and only a mouse is told the layer.
+
+  `ondrawn` reports the size of what is on screen, the picture's or the
+  drawing's, and whether it is the drawing yet: a page laying anything over
+  the board measures it from there rather than assuming it.
 
   Hidden from assistive technology, as the picture was with `alt=""`, and the
   tip with it: the board is said in full in the table under it, and a tip
@@ -36,15 +42,19 @@
     width,
     height,
     tip,
+    pin = true,
     onhover,
     onpick,
+    ondrawn,
   }: {
     src: string;
     width: number;
     height: number;
     tip?: (spot: BoardSpot) => string | undefined;
+    pin?: boolean;
     onhover?: (spot: BoardSpot | undefined) => void;
     onpick?: (spot: BoardSpot | undefined) => void;
+    ondrawn?: (drawing: { width: number; height: number; inline: boolean }) => void;
   } = $props();
 
   /**
@@ -84,6 +94,14 @@
         root.innerHTML = `<style>${style}</style>${svg}`;
         inline = true;
         drawn = wanted;
+        const drawing = root.querySelector('svg');
+        if (drawing) {
+          ondrawn?.({
+            width: Number(drawing.getAttribute('width')),
+            height: Number(drawing.getAttribute('height')),
+            inline: true,
+          });
+        }
         // A tip over a name that was on the last board is a tip over nothing.
         over = picked = undefined;
       })
@@ -113,7 +131,7 @@
     const spot = spotOf(event);
     onpick?.(spot);
     // A mouse has its tip already; a click is not asked to pin it.
-    if ((event as PointerEvent).pointerType === 'mouse') return;
+    if (!pin || (event as PointerEvent).pointerType === 'mouse') return;
     picked = sameSpot(spot, picked) ? undefined : spot;
   }
 
@@ -152,6 +170,22 @@
       y: box.top - origin.top,
     };
   });
+
+  /**
+   * How far the tip is pushed back inside the board.
+   *
+   * Centred over a name in a cell on the edge, a tip of six words runs off
+   * the board and, on a phone, off the screen. Its width is known only once
+   * it is set, so it is measured then and moved in by what it overran.
+   */
+  let tipped: HTMLSpanElement | undefined = $state();
+  let nudge = $state(0);
+  $effect(() => {
+    if (!shown || !tipped || !frame) return;
+    const half = tipped.offsetWidth / 2;
+    const room = frame.clientWidth;
+    nudge = Math.min(0, room - (shown.x + half)) + Math.max(0, half - shown.x);
+  });
 </script>
 
 <svelte:window
@@ -181,12 +215,22 @@
         {width}
         {height}
         class:settling={drawn !== src}
-        onload={() => (drawn = src)}
+        onload={(event) => {
+          drawn = src;
+          const picture = event.currentTarget as HTMLImageElement;
+          ondrawn?.({ width: picture.naturalWidth, height: picture.naturalHeight, inline: false });
+        }}
       />
     {/if}
   </div>
   {#if shown}
-    <span class="tip" aria-hidden="true" style:left="{shown.x}px" style:top="{shown.y}px">
+    <span
+      class="tip"
+      aria-hidden="true"
+      bind:this={tipped}
+      style:left="{shown.x + nudge}px"
+      style:top="{shown.y}px"
+    >
       {shown.words}
     </span>
   {/if}
@@ -211,7 +255,12 @@
     border-radius: 0.2rem;
     font-size: 0.8rem;
     line-height: 1.3;
-    white-space: nowrap;
+    /* One line where it fits, and wrapped where the board is narrower than
+       the words: `max-content` is as wide as the line, and no wider than the
+       board. */
+    inline-size: max-content;
+    max-inline-size: 100%;
+    text-align: center;
     background: var(--ink);
     color: var(--ground);
     pointer-events: none;

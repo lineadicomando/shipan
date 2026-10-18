@@ -41,6 +41,7 @@ export const LAYERS = {
   liuren: ['general', 'heaven', 'earth', 'upper', 'lower', 'branch', 'stem'],
   qizheng: ['palace', 'governor', 'remainder', 'house', 'lodge', 'motion'],
   taiyi: ['eye', 'number', 'taiyi', 'general', 'seat', 'god'],
+  ziwei: ['rings', 'star', 'minor', 'ground', 'house'],
 } as const;
 
 /** The kinds of seat each board marks. */
@@ -49,6 +50,7 @@ export const UNITS = {
   liuren: ['palace', 'course', 'transmission'],
   qizheng: ['palace', 'row'],
   taiyi: ['palace', 'rim'],
+  ziwei: ['palace'],
 } as const satisfies Record<MarkedBoard, readonly string[]>;
 
 export type BoardLayer<B extends MarkedBoard> = (typeof LAYERS)[B][number];

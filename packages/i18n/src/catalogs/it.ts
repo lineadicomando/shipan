@@ -948,6 +948,12 @@ export const it: Record<MessageKey, string> = {
   'label.register.taiyi.seat': 'Seggio: un ramo, o un trigramma d’angolo',
   'label.register.taiyi.god': 'Uno dei sedici dèi',
 
+  'label.register.ziwei.rings': 'Anelli, e il decennio',
+  'label.register.ziwei.star': 'Una delle quattordici stelle maggiori',
+  'label.register.ziwei.minor': 'Una delle altre stelle',
+  'label.register.ziwei.ground': 'Terreno: lo stelo e il ramo',
+  'label.register.ziwei.house': 'Nome del seggio',
+
   // I tre metodi portano il proprio nome e i due atti no, e la linea fra loro
   // sta in ciò che si nomina, non in chi legge.
   //

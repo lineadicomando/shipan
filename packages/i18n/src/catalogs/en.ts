@@ -972,6 +972,12 @@ export const en = {
   'label.register.taiyi.seat': 'Seat: a branch, or a corner trigram',
   'label.register.taiyi.god': 'One of the sixteen gods',
 
+  'label.register.ziwei.rings': 'Rings, and the decade',
+  'label.register.ziwei.star': 'One of the fourteen major stars',
+  'label.register.ziwei.minor': 'One of the other stars',
+  'label.register.ziwei.ground': 'Ground: the stem and the branch',
+  'label.register.ziwei.house': 'Name of the seat',
+
   // The three methods carry their own names and the two errands do not, and
   // the line between them is what is being named rather than who is reading.
   //

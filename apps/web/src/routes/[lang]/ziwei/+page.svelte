@@ -2,6 +2,7 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
+  import { sayLayer } from '$lib/board';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import PageHead from '$lib/components/PageHead.svelte';
   import Schools from '$lib/components/Schools.svelte';
@@ -9,6 +10,7 @@
   import ZiweiReading from '$lib/components/ZiweiReading.svelte';
   import { ziweiSeatBoxes } from '@shipan/plate';
   import FormPanel from '$lib/components/FormPanel.svelte';
+  import InlineBoard from '$lib/components/InlineBoard.svelte';
   import Choice from '$lib/components/Choice.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
@@ -88,7 +90,6 @@
    */
   const onPaper = $derived(appearance.current !== 'light');
   const paper = $derived(`/api/ziwei/plate?${address}&scheme=light`);
-  let drawn = $state('');
 
   /**
    * Which seat the reader is pointing at, by the branch it stands on.
@@ -130,18 +131,36 @@
     held = setTimeout(() => (found = null), 2200);
   }
 
-  /** The image's own box, read off it rather than assumed. */
+  /** From a seat on the board to the row that says what stands in it. */
+  function go(branch: string) {
+    mark(branch);
+    document
+      .querySelector(`[data-seat="${branch}"]`)
+      ?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }
+
+  /** The drawing's own box, read off it rather than assumed. */
   let sheet = $state<{ width: number; height: number } | null>(null);
-  let screen: HTMLImageElement | undefined = $state();
+  let screen: HTMLDivElement | undefined = $state();
+
+  /**
+   * Whether the board is held in the page yet, and answers a pointer itself.
+   *
+   * Until it is — and for good where it could not be fetched — it is a
+   * picture, and the hit-areas laid over it take the pointer as they always
+   * did. Once it is, the pointer goes through them to the drawing, which can
+   * tell a star from the seat's name, and they stay for the keyboard.
+   */
+  let live = $state(false);
 
   /**
    * The twelve squares, as fractions of the sheet.
    *
    * The band under the grid grows with the number of names, so the sheet is
    * taller on a crowded board than on a spare one and the cells sit at
-   * different fractions of it. `naturalWidth` and `naturalHeight` are what the
-   * SVG declared, so they are read once the picture has arrived and the
-   * geometry comes from `plate`, which owns it.
+   * different fractions of it. The size is what the SVG declared, reported by
+   * `InlineBoard` once the picture or the drawing has arrived, and the geometry
+   * comes from `plate`, which owns it.
    */
   const boxes = $derived(
     sheet ? ziweiSeatBoxes(sheet.width, sheet.height, { heading: true }) : {},
@@ -250,29 +269,38 @@
        warning: see the chart, where the same rule holds. -->
   <div class="result" class:stale={busy} aria-busy={busy}>
     <div class="board" class:swapped={onPaper}>
-      <img
-        src={plate}
-        alt=""
-        width="900"
-        height="1150"
-        class="screen"
-        class:settling={drawn !== plate}
-        bind:this={screen}
-        onload={() => {
-          drawn = plate;
-          if (screen) sheet = { width: screen.naturalWidth, height: screen.naturalHeight };
-        }}
-      />
+      <!-- A press on a seat goes to its row, as it did before the board
+           was held in the page; so a tap pins no tip here, and the layer of a
+           name is said to a mouse alone. -->
+      <div class="screen" bind:this={screen}>
+        <InlineBoard
+          src={plate}
+          width={900}
+          height={1150}
+          tip={(spot) => sayLayer(spot, t)}
+          pin={false}
+          onhover={(spot) => (pointed = spot?.seat ?? null)}
+          onpick={(spot) => {
+            if (spot?.seat) go(spot.seat);
+          }}
+          ondrawn={({ width, height, inline }) => {
+            sheet = { width, height };
+            live = inline;
+          }}
+        />
+      </div>
       {#if onPaper}<img src={paper} alt="" width="900" height="1150" class="paper" />{/if}
 
       <!--
         Twelve hit-areas over the picture, and nothing drawn in them.
 
-        An `<img>` cannot be asked what is where, so the seats are laid over it
+        A picture cannot be asked what is where, so the seats are laid over it
         from the geometry `plate` exports. They are buttons rather than bare
         divs because they do something — they take the reader to the row that
         says what is in the seat — and because a reader who does not use a
-        mouse has to be able to reach them at all.
+        mouse has to be able to reach them at all. Once the board is held in
+        the page the pointer passes through them (`through`) and they are the
+        keyboard's.
       -->
       {#each overlay as { palace, box } (palace.branch.id)}
         <!--
@@ -286,6 +314,7 @@
           class="seat"
           class:pointed={pointed === palace.branch.id}
           class:found={found === palace.branch.id}
+          class:through={live}
           data-branch={palace.branch.id}
           style="left: {box.left * 100}%; top: {box.top * 100}%; width: {box.width *
             100}%; height: {box.height * 100}%"
@@ -294,12 +323,7 @@
           onmouseleave={() => (pointed = null)}
           onfocus={() => (pointed = palace.branch.id)}
           onblur={() => (pointed = null)}
-          onclick={() => {
-            mark(palace.branch.id);
-            document
-              .querySelector(`[data-seat="${palace.branch.id}"]`)
-              ?.scrollIntoView({ block: 'center', behavior: 'smooth' });
-          }}
+          onclick={() => go(palace.branch.id)}
         ></button>
       {/each}
     </div>
@@ -394,6 +418,7 @@
     cursor: pointer;
     transition: border-color 120ms ease, box-shadow 120ms ease;
   }
+  .seat.through { pointer-events: none; }
   .seat:hover, .seat.pointed, .seat:focus-visible {
     /* `--ink`, because this page has no accent colour and inventing one for a
        ring would put a sixth hue on a sheet whose five all mean a phase. */
@@ -410,21 +435,13 @@
     box-shadow: 0 0 0 2px var(--ink) inset;
   }
 
-  .board img { width: 100%; height: auto; display: block; }
+  .board img, .screen { width: 100%; height: auto; display: block; }
   /* Both selectors carry the frame, and that is not decoration: `.board img`
      above sets `display: block`, and a bare `.paper` loses to it on
      specificity — one class against a class and a type — so the copy drawn for
      the printer stayed on the screen beside the one meant for it. Two boards,
      one birth, and nothing on the page to say why. */
   .board .paper { display: none; }
-  .screen { transition: opacity 0.2s ease-out; }
-  /* Held back only while a *new* board is drawing, so a reader never sees the
-     previous birth's picture captioned with this one's words. */
-  .settling { opacity: 0.55; }
-
-  @media (prefers-reduced-motion: reduce) {
-    .result, .screen { transition: none; }
-  }
 
   @media print {
     /* Nothing to point with on paper. */
@@ -433,6 +450,6 @@
        none, and hiding the board would print a sheet with a hole in it. */
     .swapped .screen { display: none; }
     .board .paper { display: block; }
-    .board img { max-width: 26rem; }
+    .board img, .screen { max-width: 26rem; }
   }
 </style>
