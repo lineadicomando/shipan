@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { renderTaiyiSvg } from '../src/taiyi-svg.js';
+import { LONG_SCHOOLS, fitsItsSheet } from './sheet.js';
 import type { PlateTaiyi, PlateTaiyiGod, PlateTaiyiPalace } from '../src/types.js';
 
 /**
@@ -89,6 +90,17 @@ describe('the 太乙 drawing', () => {
     },
     heading: '724 · 甲子',
     readings: 'Said aloud',
+  });
+
+  it('sets every folded school line on its own sheet, and the note on the numbering under them', () => {
+    const long = renderTaiyiSvg(BOARD, { labels: { palaces: 'one seat from the Luoshu' }, schools: LONG_SCHOOLS });
+    expect(fitsItsSheet(long)).toBe(true);
+    // The note is set from the foot up and the schools from the grid down:
+    // where the sheet was measured short the two met, and the note was printed
+    // over the last line of the block.
+    const schools = [...long.matchAll(/<text [^>]*y="([\d.]+)"[^>]*class="word">The /g)].map((m) => Number(m[1]));
+    const note = Number(/<text [^>]*y="([\d.]+)"[^>]*>one seat from the Luoshu/.exec(long)?.[1]);
+    expect(note).toBeGreaterThan(Math.max(...schools));
   });
 
   it('marks a palace by its trigram and never by its number', () => {

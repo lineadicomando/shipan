@@ -145,7 +145,7 @@ export function renderQizhengSvg(board: PlateQizheng, options: PlateQizhengOptio
 
   const ringTop = margin + headingRoom + upper;
   const schools = options.schools ?? [];
-  const schoolBand = schoolDepth(schools, readingStep, size * 0.026);
+  const schoolBand = schoolDepth(schools, ring / reading, readingStep, size * 0.026);
   const height = ringTop + ring + band + schoolBand + margin + foot;
 
   const parts: string[] = [

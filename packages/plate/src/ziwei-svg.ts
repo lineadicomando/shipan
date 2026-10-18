@@ -240,7 +240,7 @@ export function renderZiweiSvg(board: PlateZiwei, options: PlateZiweiOptions = {
   const band = bandLines ? size * 0.05 + readingStep * bandLines + size * 0.012 : 0;
 
   const schools = options.schools ?? [];
-  const schoolBand = schoolDepth(schools, readingStep, size * 0.026);
+  const schoolBand = schoolDepth(schools, grid / reading, readingStep, size * 0.026);
   const height = gridTop + grid + band + schoolBand + margin;
 
   const parts: string[] = [

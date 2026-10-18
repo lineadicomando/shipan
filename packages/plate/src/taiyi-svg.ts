@@ -184,7 +184,7 @@ export function renderTaiyiSvg(board: PlateTaiyi, options: PlateTaiyiOptions = {
 
   const gridTop = margin + headingRoom + upper;
   const schools = options.schools ?? [];
-  const schoolBand = schoolDepth(schools, readingStep, size * 0.026);
+  const schoolBand = schoolDepth(schools, grid / reading, readingStep, size * 0.026);
   const height = gridTop + grid + conditions + band + schoolBand + margin + foot;
 
   const parts: string[] = [

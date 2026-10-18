@@ -57,9 +57,9 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-18
 
-**Version 0.27.0**, in every manifest. **The branch `board-pointer` is checked
-out**, ahead of `main` by the commits `git log main..board-pointer` lists,
-none of them merged. They are of four days:
+**Version 0.28.0**, in every manifest. **`main` is checked out and no branch
+is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
+`main` carry since 2026-10-15 is of four days:
 
 - 2026-10-15, surface work: the Qi Men section holds its board in the page
   (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which register a
@@ -85,17 +85,21 @@ none of them merged. They are of four days:
   `label.register.<board>.<layer>`. Zi Wei keeps a press for going to the row
   (`pin={false}`). `LayerLegend` prints a key to the seats of each board.
   `apps/web/test/marks.test.ts` holds every mark to `LAYERS` and to a word in
-  each catalog. No version moved, following the Qi Men commits: the drawings
-  look as they did.
+  each catalog. No version moved for the marks: the drawings look as they
+  did. Beside it, on `main`: the four other sections printed no board in the
+  light scheme, and now hide the board on screen only where a copy for paper
+  is there to swap in.
+- 2026-10-18, after the landing (0.28.0): `schoolDepth` counted the lines
+  naming the schools before the fold, so the 六壬, 七政四餘, 太乙 and 紫微斗數
+  sheets came out too short for a folded line — the Zi Wei board set its last
+  lines below its foot, and 太乙's note on its numbering was printed over the
+  last of them. It counts after the fold now, and a test sets lines long
+  enough to fold on every one of the four. The Zi Wei board prints centred.
 
-Before the branch, `main` took one commit of its own on 2026-10-18: the four
-other sections printed no board in the light scheme, and now hide the board
-on screen only where a copy for paper is there to swap in.
-
-`main` is 80 commits ahead of `origin/main`, whose last commit is of
-2026-10-06. Nothing since that day is pushed; pushing and merging are the
-user's call. `npm test`, `npm run typecheck` and `npm run build` pass on
-2026-10-17 with no test skipped. **Run `npm run build` before `npm test`** in
+`main` is 108 commits ahead of `origin/main`, whose last commit is of
+2026-10-06. Nothing since that day is pushed; pushing is the user's call.
+`npm test`, `npm run typecheck` and `npm run build` pass on 2026-10-18 with no
+test skipped. **Run `npm run build` before `npm test`** in
 a fresh tree: the MCP and web suites and the shelf's scripts import
 `packages/core/dist`, and a stale `dist` fails them on whatever changed.
 
@@ -121,10 +125,7 @@ is left unbuilt.
 3. **Or `stemPairs: xianji`**: six cells of the 仙機's 干論 read again on the
    plate, § 1. Its transcription is held, so this is an errand of six looks.
 
-What a pointer does beyond naming the layer is not decided. Seen while
-printing and left as they were, being older than the branch: the Zi Wei
-board prints against the left margin rather than centred, and its picture for
-paper is cut short at the foot.
+What a pointer does beyond naming the layer is not decided.
 
 **Decisions held open, by the user's word, until there is more to decide on:**
 
@@ -437,6 +438,13 @@ prose, which a third language pays for and derived text does not. →
   that also holds a hanzi, so two registers of one drawing are set unalike.
   It wants a text engine, or a resvg resolving a font stack a character at a
   time. No surface asks for a PNG. `familiesByScript` in `png.ts`.
+- **An em dash reaches the Italian drawings and transcripts from the code.**
+  `divergenceLines` in `packages/core/src/format.ts` joins a school's label to
+  its value with a fixed `' — '`, and `BETWEEN` in `packages/plate/src/svg.ts`
+  separates the Qi Men captions the same way, so «L’anno di questa tavola
+  comincia — a 立春» is set in Italian. The separator wants a catalog key,
+  the dash in `en.ts` and a colon in `it.ts`; the tests that look for the dash
+  move with it. Seen on 2026-10-18 and older than that day.
 
 ## 6. What is refused and stays refused
 

@@ -48,9 +48,15 @@ export function schoolLines(lines: readonly string[], ems: number): SchoolLine[]
   );
 }
 
-/** How much paper the block takes, or zero where there is nothing to say. */
-export function schoolDepth(lines: readonly string[], step: number, air: number): number {
-  return lines.length ? air + step * lines.length : 0;
+/**
+ * How much paper the block takes, or zero where there is nothing to say.
+ *
+ * Counted after the fold, at the room `drawSchools` will be given: an entry
+ * folded onto two lines takes two steps, and a count of entries left the
+ * continuations below the foot of the sheet.
+ */
+export function schoolDepth(lines: readonly string[], ems: number, step: number, air: number): number {
+  return lines.length ? air + step * schoolLines(lines, ems).length : 0;
 }
 
 export interface SchoolBlock {

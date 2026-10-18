@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { renderLiurenSvg } from '../src/liuren-svg.js';
+import { LONG_SCHOOLS, fitsItsSheet } from './sheet.js';
 import type { PlateLiuren } from '../src/types.js';
 
 /** A branch is its phase, and so is a stem. The board reads this for ink. */
@@ -147,6 +148,10 @@ describe('the Liu Ren drawing', () => {
     // The first transmission is void and carries no stem: nothing to point at.
     expect(svg.match(/data-layer="stem"/g)).toHaveLength(2);
     expect(svg).toContain('<g data-layer="general" data-id="gouchen">');
+  });
+
+  it('sets every folded school line on its own sheet', () => {
+    expect(fitsItsSheet(renderLiurenSvg(BOARD, { schools: LONG_SCHOOLS }))).toBe(true);
   });
 
   it('says what the board is, in the aria label, for a reader who cannot see it', () => {

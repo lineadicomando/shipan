@@ -120,7 +120,7 @@ export function renderLiurenSvg(board: PlateLiuren, options: PlateLiurenOptions 
   const band = bandLines ? size * 0.05 + readingStep * bandLines + size * 0.012 : 0;
 
   const schools = options.schools ?? [];
-  const schoolBand = schoolDepth(schools, readingStep, size * 0.026);
+  const schoolBand = schoolDepth(schools, ring / reading, readingStep, size * 0.026);
   const height = margin + headingRoom + upper + ring + band + schoolBand + margin + foot;
 
   const ringTop = margin + headingRoom + upper;

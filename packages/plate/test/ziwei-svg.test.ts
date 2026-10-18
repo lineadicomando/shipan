@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { DEFAULT_ZIWEI_SIZE, renderZiweiSvg } from '../src/ziwei-svg.js';
+import { LONG_SCHOOLS, fitsItsSheet } from './sheet.js';
 import type { PlateZiwei, PlateZiweiPalace, PlateZiweiSeat } from '../src/types.js';
 
 /**
@@ -135,6 +136,10 @@ describe('renderZiweiSvg', () => {
     expect(svg.match(/data-layer="star"/g)).toHaveLength(CROWDED.length + 10);
     expect(svg).toMatch(/<g data-layer="star" data-id="紫微">[\s\S]*?紫微廟化權/);
     expect(svg).toContain('<g data-layer="house" data-id="ming">');
+  });
+
+  it('sets every folded school line on its own sheet', () => {
+    expect(fitsItsSheet(renderZiweiSvg(board(), { schools: LONG_SCHOOLS }))).toBe(true);
   });
 
   it('carries the grade and the transformation on the star they belong to', () => {

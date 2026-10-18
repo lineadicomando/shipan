@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { DEFAULT_QIZHENG_SIZE, renderQizhengSvg } from '../src/qizheng-svg.js';
+import { LONG_SCHOOLS, fitsItsSheet } from './sheet.js';
 import type { PlatePlacement, PlateQizheng } from '../src/types.js';
 
 /**
@@ -170,6 +171,12 @@ describe('the marks', () => {
     expect(drawn.match(/data-layer="lodge"/g)).toHaveLength(10);
     expect(drawn.match(/data-layer="motion"/g)).toHaveLength(11);
     expect(drawn).toContain('<g data-layer="motion" data-id="ni">');
+  });
+});
+
+describe('the sheet', () => {
+  it('sets every folded school line on its own sheet', () => {
+    expect(fitsItsSheet(svg({ schools: LONG_SCHOOLS }))).toBe(true);
   });
 });
 

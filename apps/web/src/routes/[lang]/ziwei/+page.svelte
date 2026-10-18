@@ -452,6 +452,8 @@
        none, and hiding the board would print a sheet with a hole in it. */
     .swapped .screen { display: none; }
     .board .paper { display: block; }
-    .board img, .screen { max-width: 26rem; }
+    /* Narrower than the frame on paper, so centred in it: the frame is at
+       the page's measure and the board under the heading is not. */
+    .board img, .screen { max-width: 26rem; margin-inline: auto; }
   }
 </style>
