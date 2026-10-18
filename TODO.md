@@ -125,7 +125,21 @@ is left unbuilt.
 3. **Or `stemPairs: xianji`**: six cells of the 仙機's 干論 read again on the
    plate, § 1. Its transcription is held, so this is an errand of six looks.
 
-What a pointer does beyond naming the layer is not decided.
+**On the surface, nothing is owed and nothing is decided next.** What a
+pointer does beyond naming the layer is open; the em dash of § 5 is the one
+known fault. Not looked at in a browser: choosing another hour while the
+scan's dialog is open. To take surface work up again, read
+`docs/architecture.md` § "A board the page can point into", then `marks.ts`
+in `packages/plate/src` and `lib/board.ts`; a layer added to a drawing goes
+into `LAYERS` and both catalogs, and `apps/web/test/marks.test.ts` says what
+is missing. Three things learnt checking it by hand: `npm run dev -w
+@shipan/web` serves the built `dist` of the packages and does not see a new
+export until it is restarted; a board's SVG is cached `private` for a day, so
+a page reloaded normally can show a drawing from before the change; and a
+page is checked on paper with `google-chrome --headless=new
+--no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf=out.pdf`
+against the dev server, which is how the blank first sheet and the sheets
+cut short were found.
 
 **Decisions held open, by the user's word, until there is more to decide on:**
 
@@ -156,10 +170,11 @@ What a pointer does beyond naming the layer is not decided.
   induced from a table, and the lists are three prints three ways. It waits
   on a sentence stating the rule, in any work.
 
-**Done between 2026-10-11 and 2026-10-17, and nothing is half done.** Each
-reading and each build has its section in `docs/sources.md`, its row in
-`docs/sources.tsv` and its line in `texts/README.md`; phases 51 to 61 in
-`docs/history/` are the record.
+**Done between 2026-10-11 and 2026-10-18, and nothing is half done.** Each
+reading and each build of the engine has its section in `docs/sources.md`,
+its row in `docs/sources.tsv` and its line in `texts/README.md`; phases 51 to
+62 in `docs/history/` are the record. The surface work of 2026-10-15 and
+2026-10-18 has no phase: "Where it stands" above and the commits say it.
 
 - 2026-10-11: `yearBoundary: dongzhi` of 太乙 computed; `host.accord` and
   `guest.accord` carry 和, 重陽 or 重陰; 八門直使 and 大遊 on rung 2;
@@ -222,7 +237,12 @@ hours, not held to the engine; and which of the 大全 and 《奇門探索錄》
 carries the other, since the 大全 holds two of the 探索錄卷三's chapters.
 
 **Owed a look by the user, and not blocking**: catalog strings written
-without the `reader-copy` skill. On 2026-10-16: `form.taiyi.dayouEye`, its
+without the `reader-copy` skill. On 2026-10-18: the words a tip and the
+printed key say for each layer, `label.register.liuren.*`, `.qizheng.*`,
+`.taiyi.*` and `.ziwei.*` — the longest are «Ciò di cui il palazzo è
+interrogato» and «Numero del palazzo, nel conto di questa tavola» — and the
+captions `form.layerLegend.seat` and `form.layerLegend.rim`, in both
+catalogs. On 2026-10-16: `form.taiyi.dayouEye`, its
 two values and its note, and `notes.parameter.dayouEye`, in both catalogs;
 `form.qimen.stemPairs`, its two values, its note and `notes.parameter.stemPairs`;
 and the sixty-five glosses `label.pattern.*` of 《金函玉鏡》's names, where 華蓋
