@@ -66,7 +66,7 @@
   import { replaceState } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { sayLayer } from '$lib/board';
+  import { isMarkedBoard, sayLayer } from '$lib/board';
   import {
     INSTRUMENTS,
     genderValues,
@@ -1185,7 +1185,8 @@
               class="paper"
             />
           {/if}
-          {#if shown.strengths}<LayerLegend {t} /><StrengthLegend {t} />{/if}
+          {#if isMarkedBoard(chart.id)}<LayerLegend {t} board={chart.id} />{/if}
+          {#if shown.strengths}<StrengthLegend {t} />{/if}
         </div>
       {/if}
       <!-- `wide`: the board above has the page to itself, so what it was cast

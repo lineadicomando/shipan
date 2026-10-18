@@ -293,7 +293,7 @@
            the picture, and a key that came after the reading would be found
            by whoever had already given up on them. -->
       <!-- The key is to the marks of strength, which a day board has not. -->
-      {#if !ofTheDay}<LayerLegend {t} /><StrengthLegend {t} />{/if}
+      {#if !ofTheDay}<LayerLegend {t} board="qimen" /><StrengthLegend {t} />{/if}
     </div>
 
     {#if ofTheDay}

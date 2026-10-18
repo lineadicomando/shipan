@@ -73,7 +73,7 @@ export function sameSpot(a: BoardSpot | undefined, b: BoardSpot | undefined): bo
 }
 
 /** Whether a board read off a drawing is one that marks its layers. */
-function isMarkedBoard(board: string | undefined): board is MarkedBoard {
+export function isMarkedBoard(board: string | undefined): board is MarkedBoard {
   return board !== undefined && Object.hasOwn(LAYERS, board);
 }
 

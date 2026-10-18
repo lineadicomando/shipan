@@ -11,6 +11,7 @@
   import { ziweiSeatBoxes } from '@shipan/plate';
   import FormPanel from '$lib/components/FormPanel.svelte';
   import InlineBoard from '$lib/components/InlineBoard.svelte';
+  import LayerLegend from '$lib/components/LayerLegend.svelte';
   import Choice from '$lib/components/Choice.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
@@ -290,6 +291,7 @@
         />
       </div>
       {#if onPaper}<img src={paper} alt="" width="900" height="1150" class="paper" />{/if}
+      <LayerLegend {t} board="ziwei" />
 
       <!--
         Twelve hit-areas over the picture, and nothing drawn in them.

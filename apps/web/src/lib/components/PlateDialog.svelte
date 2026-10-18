@@ -203,7 +203,7 @@
         <div class="screen">
           <InlineBoard src={plate} width={900} height={900} tip={(spot) => sayLayer(spot, t)} />
         </div>
-        <LayerLegend {t} />
+        <LayerLegend {t} board="qimen" />
         <StrengthLegend {t} />
       </div>
 

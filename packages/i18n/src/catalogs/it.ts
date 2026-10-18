@@ -1577,6 +1577,8 @@ export const it: Record<MessageKey, string> = {
   'form.jumpDate': 'Il giorno per cui la carta è posta',
 
   'form.layerLegend': 'Ogni palazzo è disposto così',
+  'form.layerLegend.seat': 'Ogni seggio è disposto così',
+  'form.layerLegend.rim': 'Ogni seggio intorno è disposto così',
   'form.strengthLegend': 'Come stanno la stella e la porta rispetto alla stagione',
 
   'form.copyChart': 'Copia la carta come testo',

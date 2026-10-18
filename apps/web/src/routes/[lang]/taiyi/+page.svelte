@@ -6,6 +6,7 @@
   import { sayFailure } from '$lib/moment';
   import type { Unit } from '$lib/step';
   import InlineBoard from '$lib/components/InlineBoard.svelte';
+  import LayerLegend from '$lib/components/LayerLegend.svelte';
   import MomentSteps from '$lib/components/MomentSteps.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import Schools from '$lib/components/Schools.svelte';
@@ -181,6 +182,7 @@
         <InlineBoard src={plate} width={900} height={1360} tip={(spot) => sayLayer(spot, t)} />
       </div>
       {#if onPaper}<img src={paper} alt="" width="900" height="1360" class="paper" />{/if}
+      <LayerLegend {t} board="taiyi" />
     </div>
 
     <div>

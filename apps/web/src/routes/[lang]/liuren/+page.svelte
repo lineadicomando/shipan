@@ -6,6 +6,7 @@
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import FormPanel from '$lib/components/FormPanel.svelte';
   import InlineBoard from '$lib/components/InlineBoard.svelte';
+  import LayerLegend from '$lib/components/LayerLegend.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import LiurenReading from '$lib/components/LiurenReading.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
@@ -130,6 +131,7 @@
         <InlineBoard src={plate} width={900} height={1379} tip={(spot) => sayLayer(spot, t)} />
       </div>
       {#if onPaper}<img src={paper} alt="" width="900" height="1379" class="paper" />{/if}
+      <LayerLegend {t} board="liuren" />
     </div>
 
     <div>

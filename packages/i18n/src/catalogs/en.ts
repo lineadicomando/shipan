@@ -1745,6 +1745,8 @@ export const en = {
   // `label.strength.*`; this is the line that says what they qualify — the
   // star and the gate, against the season, and nothing else in the palace.
   'form.layerLegend': 'Every palace is laid out like this',
+  'form.layerLegend.seat': 'Every seat is laid out like this',
+  'form.layerLegend.rim': 'Every seat around them is laid out like this',
   'form.strengthLegend': 'How the star and the gate stand to the season',
 
   // Taking a chart away: as words, and as a prompt for a model that will be
