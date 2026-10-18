@@ -2,8 +2,7 @@
   import { goto, invalidateAll } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { isRegister, type BoardSpot } from '$lib/board';
-  import type { MessageKey } from '@shipan/i18n';
+  import { sayLayer } from '$lib/board';
   import { carried } from '$lib/parameters';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import { step, type Unit, type Wall } from '$lib/step';
@@ -53,15 +52,6 @@
    * degrees somebody typed would be claiming a place that was refined away.
    */
   const where = $derived(sayPlace(data.moment));
-
-  /**
-   * Which of the six a name on the board is, said over it when a pointer
-   * rests there. The drawing says it by position alone, and a reader new to
-   * the board has no way to read a position as a kind.
-   */
-  function register(spot: BoardSpot): string | undefined {
-    return isRegister(spot.layer) ? t(`label.register.${spot.layer}` as MessageKey) : undefined;
-  }
 
   /**
    * The instant the answer was actually computed for.
@@ -293,7 +283,7 @@
          gap between the picture and the reading is two rems, and a legend
          standing in it would belong to neither. -->
     <div class="board" class:swapped={onPaper}>
-      <div class="screen"><InlineBoard src={plate} width={900} height={900} tip={register} /></div>
+      <div class="screen"><InlineBoard src={plate} width={900} height={900} tip={(spot) => sayLayer(spot, t)} /></div>
       <!-- The same board in the colours of paper, drawn only where the two
            differ and shown only by a printer. -->
       {#if onPaper}

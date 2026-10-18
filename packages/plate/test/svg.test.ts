@@ -369,9 +369,11 @@ describe('renderChartSvg', () => {
   it('marks every palace, and every name in it with its layer and identifier', () => {
     const svg = renderChartSvg(CHART);
 
+    expect(svg).toMatch(/<svg [^>]*data-board="qimen"/);
     for (const number of [1, 2, 3, 4, 5, 6, 7, 8, 9]) {
-      expect(svg).toContain(`<g data-palace="${number}">`);
+      expect(svg).toContain(`<g data-unit="palace" data-seat="${number}">`);
     }
+    expect(svg).not.toContain('data-palace');
     for (const layer of ['heaven', 'earth', 'palace', 'star']) {
       expect(svg.match(new RegExp(`data-layer="${layer}"`, 'g'))).toHaveLength(9);
     }

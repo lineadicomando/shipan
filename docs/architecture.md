@@ -184,11 +184,20 @@ because a route would have to be told the question. See `docs/readings.md`.
 
 ## A board the page can point into
 
-The drawing marks what it draws and does nothing with it: each palace is a
-group carrying `data-palace`, each name in it a group carrying `data-layer` and
-`data-id` (`tagged` in `packages/plate/src/svg.ts`). A renderer that knows
-nothing of them ignores them, so the PNG and what the MCP server hands over are
-the same drawing.
+The drawing marks what it draws and does nothing with it, in one vocabulary
+for every board (`packages/plate/src/marks.ts`): the `<svg>` carries
+`data-board`; each seat — a palace, a lesson, a row — is a group carrying
+`data-unit` and `data-seat`; each name in it a group carrying `data-layer` and
+`data-id`. A renderer that knows nothing of them ignores them, so the PNG and
+what the MCP server hands over are the same drawing. Which boards mark, and
+with which layers and units, is `LAYERS` and `UNITS` in that file and nowhere
+else.
+
+**A seat is named in its board's terms**, and the unit travels beside it
+because one identifier can name two kinds of seat on one board. A Qi Men
+palace is its Luoshu number; a board whose palaces are numbered otherwise —
+太乙's, one seat off the 洛書 — names them by an identifier rather than lend a
+number a reader would take for the Luoshu's. No mark carries hanzi or pinyin.
 
 A page that wants to answer a pointer on the board holds it with
 `InlineBoard.svelte`: the server sends the `<img>`, so the board is there
@@ -201,11 +210,13 @@ shadow root. `spotOf` in `lib/board.ts` reads the marks back off an event and is
 the one place that knows their names; what is done with a spot is the page's.
 The copy for paper stays a picture, since nobody points at a sheet.
 
-The first thing done with one is saying which of the six registers a name is
-in — `label.register.*`, set over the name while a mouse rests on it or after a
-tap — because the drawing says it by position alone. The cursor is the only
-announcement it gets. A sheet has no pointer, so in print the same six words
-are set once instead, as an empty palace under the board (`LayerLegend`).
+The first thing done with one is saying which layer a name is in —
+`label.register.<board>.<layer>`, through `sayLayer`, set over the name while a
+mouse rests on it or after a tap — because the drawing says it by position
+alone. The keys are scoped by board because one word names different things on
+two boards. The cursor is the only announcement it gets. A sheet has no
+pointer, so in print the same words are set once instead, as an empty seat
+under the board (`LayerLegend`).
 
 ## Found by a search, and what may never be found
 

@@ -16,8 +16,9 @@
   is not given this.
 -->
 <script lang="ts">
-  import { REGISTERS } from '$lib/board';
-  import type { MessageKey, Translator } from '@shipan/i18n';
+  import { layerKey } from '$lib/board';
+  import { LAYERS } from '@shipan/plate';
+  import type { Translator } from '@shipan/i18n';
 
   let { t }: { t: Translator } = $props();
 </script>
@@ -26,8 +27,8 @@
   <figcaption>{t('form.layerLegend')}</figcaption>
   <!-- A list in reading order, laid out as the palace is. -->
   <ul>
-    {#each REGISTERS as register (register)}
-      <li style:grid-area={register}>{t(`label.register.${register}` as MessageKey)}</li>
+    {#each LAYERS.qimen as register (register)}
+      <li style:grid-area={register}>{t(layerKey('qimen', register))}</li>
     {/each}
   </ul>
 </figure>

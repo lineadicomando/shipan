@@ -919,12 +919,12 @@ export const it: Record<MessageKey, string> = {
   'label.layer.star': 'stelle',
   'label.layer.both': 'porte e stelle',
 
-  'label.register.heaven': 'Tavola di cielo',
-  'label.register.earth': 'Tavola di terra',
-  'label.register.palace': 'Palazzo',
-  'label.register.spirit': 'Spirito',
-  'label.register.star': 'Stella',
-  'label.register.gate': 'Porta',
+  'label.register.qimen.heaven': 'Tavola di cielo',
+  'label.register.qimen.earth': 'Tavola di terra',
+  'label.register.qimen.palace': 'Palazzo',
+  'label.register.qimen.spirit': 'Spirito',
+  'label.register.qimen.star': 'Stella',
+  'label.register.qimen.gate': 'Porta',
 
   // I tre metodi portano il proprio nome e i due atti no, e la linea fra loro
   // sta in ciò che si nomina, non in chi legge.

@@ -13,6 +13,7 @@ import {
 import { FONT_STACK, styleSheet } from './palette.js';
 import { drawReadingColumns, readingDepth, said, type Said } from './readings.js';
 import { drawSchools, schoolLines } from './schools.js';
+import { marks, type BoardLayer } from './marks.js';
 import type {
   Named,
   PlateChart,
@@ -24,6 +25,11 @@ import type {
   PlatePalace,
   PlatePattern,
 } from './types.js';
+
+/** What the drawing marks: see `marks.ts`. Day and hour boards mark alike. */
+const { board: BOARD, tagged, seated: seat } = marks('qimen');
+const seated = (number: number, parts: string[]): string => seat('palace', number, parts);
+type Layer = BoardLayer<'qimen'>;
 
 /**
  * The five states of strength as a ramp rather than as words.
@@ -135,7 +141,7 @@ export function renderChartSvg(chart: PlateChart, options: PlateOptions = {}): s
   const marked = markedPalaces(chart);
 
   const parts = [
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${round(geometry.height)}" width="${size}" height="${round(geometry.height)}" role="img" aria-label="${escape(ariaLabel(chart))}">`,
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${round(geometry.height)}" width="${size}" height="${round(geometry.height)}" ${BOARD} role="img" aria-label="${escape(ariaLabel(chart))}">`,
     // Anchoring stays out of the sheet: a rule here would outrank the
     // `text-anchor` each line carries — a declaration beats a presentation
     // attribute — and every line would centre, including the one written
@@ -249,7 +255,7 @@ export function renderDaySvg(board: PlateDay, options: PlateOptions = {}): strin
   const labels = options.labels ?? {};
 
   const parts = [
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${round(geometry.height)}" width="${size}" height="${round(geometry.height)}" role="img" aria-label="${escape(dayAriaLabel(board))}">`,
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${round(geometry.height)}" width="${size}" height="${round(geometry.height)}" ${BOARD} role="img" aria-label="${escape(dayAriaLabel(board))}">`,
     `<style>${styleSheet(options.scheme ?? 'auto')}
       .qmdj { font-family: ${FONT_STACK}; }
       .qmdj text { fill: var(--qmdj-ink); }
@@ -588,34 +594,6 @@ function drawCell(
   }
 
   return seated(palace.palace.number, parts);
-}
-
-/**
- * Which layer of the board a name in a palace belongs to.
- *
- * The drawing says it by where the name stands and in no other way, and a
- * surface that wants to say it in words — or to answer a pointer resting on
- * the name — cannot read a position back out of the ink. So each register is
- * marked with it. The ids are the ones the palace table's columns go by.
- */
-type Layer = 'heaven' | 'earth' | 'palace' | 'spirit' | 'star' | 'gate';
-
-/**
- * A register marked with its layer and with the identifier of what stands in
- * it, as `data-` attributes and nothing else.
- *
- * What the marks are *for* is not this package's business: a drawing carries
- * no behaviour, and a renderer that knows nothing of them ignores them. An
- * empty register stays unmarked, since there is nothing in it to point at.
- */
-function tagged(layer: Layer, thing: Named | undefined, body: string): string {
-  if (!thing || !body) return body;
-  return `<g data-layer="${layer}" data-id="${escape(thing.id)}">\n${body}\n</g>`;
-}
-
-/** A palace's whole cell, marked with its Luoshu number. See `tagged`. */
-function seated(number: number, parts: string[]): string {
-  return `<g data-palace="${number}">\n${parts.filter(Boolean).join('\n')}\n</g>`;
 }
 
 /**

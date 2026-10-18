@@ -943,12 +943,12 @@ export const en = {
   'label.layer.star': 'stars',
   'label.layer.both': 'gates and stars',
 
-  'label.register.heaven': 'Heaven plate',
-  'label.register.earth': 'Earth plate',
-  'label.register.palace': 'Palace',
-  'label.register.spirit': 'Spirit',
-  'label.register.star': 'Star',
-  'label.register.gate': 'Gate',
+  'label.register.qimen.heaven': 'Heaven plate',
+  'label.register.qimen.earth': 'Earth plate',
+  'label.register.qimen.palace': 'Palace',
+  'label.register.qimen.spirit': 'Spirit',
+  'label.register.qimen.star': 'Star',
+  'label.register.qimen.gate': 'Gate',
 
   // The three methods carry their own names and the two errands do not, and
   // the line between them is what is being named rather than who is reading.

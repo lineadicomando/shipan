@@ -3,7 +3,7 @@
   pointer.
 
   An `<img>` is a picture and nothing more: the drawing inside it marks every
-  palace and every name (`spotOf` in `$lib/board`), and none of it reaches
+  seat and every name (`spotOf` in `$lib/board`), and none of it reaches
   the page. So the same address is fetched as text and set in a shadow root —
   a root of its own because the drawing's sheet would otherwise reach every
   other drawing on the page, and a board on screen and its copy for paper are
