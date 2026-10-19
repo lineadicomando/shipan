@@ -95,6 +95,7 @@ phase.
 | 60 | [奇門古本](60-the-qimen-guben.md) | done — 卷二十八–三十二 of the 大全 surveyed for a 起例 and none found; its 卷二十九 prints the 年家 on 一七四 with 遁甲集成 第三冊's epoch chain and a case at 1648, a second copy of that line older than the first |
 | 61 | [乾坤變異錄](61-the-qiankun-bianyi-lu.md) | done — 卷三十三–三十八 of the 大全, omens of the sky and the ground with no 起例; 卷三十九 is 禽遁 already, a juan earlier than the 目錄 has it |
 | 62 | [禽遁秘訣陰符經](62-the-qindun-yinfujing.md) | done — 卷三十九–四十二 of the 大全, 演禽 with no 起例 of its own; its 遁甲 run in 卷四十 states the ordinary one, and a worked hour the engine lays in all five palaces it names |
+| 63 | [奇門秘訣](63-the-qimen-mijue.md) | done — 卷四十三–四十八 of the 大全, six juan and not seven; a commentary on the 煙波釣叟歌 that states the ordinary 局 and 置閏 at nine, and two readings recorded: the spirits seated from the earth plate at five hours, and 乙 buried in 乾 |
 
 ## The rest of the record
 

@@ -2809,6 +2809,128 @@ for one are 卷一 and 卷五 to 卷四十二. 卷二 to 卷四 of 景祐秘纂 
 
 Last checked 2026-10-18.
 
+### 《御定奇門大全》卷四十三–四十八: 奇門秘訣, which carries a commentary on the 煙波釣叟歌
+
+Surveyed 2026-10-19, sheets 983–1116. The juan were bracketed by
+`blanks.py` in `texts/qimen/daquan-tools/`, and each bracket was confirmed on
+the 版心 and on its closing leaf. Every sheet was seen on contact sheets at
+50 dpi. Read on the plate at 170 dpi: sheets 1038–1040, 1057–1064 and
+1082–1086, sheet 1103 at 120 dpi and one column of 1059 at 400 dpi.
+Nothing else is quoted, and the punctuation is ours.
+
+**The work is six juan, and 寶鑑摘要 opens on 卷四十九.** The 目錄 gives
+奇門秘訣 卷四十三–四十九. The 版心 reads 奇門秘訣 throughout, from 鈎叟歌 on
+with 鈎叟歌 beside it:
+
+| juan | sheets | what it holds, by its headings |
+|---|---|---|
+| 四十三 | 983–1001 | 奇門大小將辨, the 占 of an army from 占城 to 占賊臨境, 奇門出師十六占, then the 主用 and 尅應 訣 of the eight gates, the nine stars, the three 奇 and the ten stems |
+| 四十四 | 1002–1026 | what the twelve branches, the eight trigrams, the gates, the stars, the eight spirits and the ten stems stand for, 奇門占卜凡例, then 占失六畜, 占天時, 占歲時 and 占國朝 |
+| 四十五 | 1027–1046 | 占出征 to 占人在何方, about twenty matters, then 三合, 五合, 六合, 驛馬, 旬空 and 卦中空亡 |
+| 四十六 | 1047–1070 | 鬼谷三元註解 and 訂釋煙波釣叟歌: the 一千八十局, the hand of nine palaces, the 九陽 and 九陰 節氣歌 with a table, 超神接氣 and 置閏, 直使 and the 六儀 |
+| 四十七 | 1072–1095 | the 歌 continued: the 格 of one stem over another, 三奇得使, 玉女守門, 天三門地四戶, 天網, 伏吟 and 反吟, 擊刑, 三奇入墓, 五不遇時, the eight spirits |
+| 四十八 | 1096–1116 | the 歌 to its end: the nine stars by month, 天乙 and 擊衝, 亭亭白奸, the 九遁, and the 格 of 庚 and of the 奇 |
+
+卷四十五終 is on sheet 1046, 卷四十六終 on 1070, 卷四十七終 on 1095 and
+奇門秘訣卷之四十八終 on 1116; 御定奇門大全卷之四十九 · 寶鑑摘要 opens on 1117.
+That is the fourth time the 目錄's juan numbers are wrong. Sheet 1071 is a
+paper wheel of the gates, photographed lying across a page.
+
+**Its 局 table agrees with `JU_TABLE` in twenty-three terms and contradicts
+its own verse in the twenty-fourth.** The 九陽節氣歌, sheet 1057, and the
+九陰節氣歌, sheet 1059, give the 上元 of every term:
+
+> 冬至小寒及大寒，天地人元一二三；立春雨水并驚蟄，依艮順增八九一；春分清明并
+> 穀雨，從震順行三四五；立夏小滿芒種氣，四五六兮列成例。
+
+> 夏至小暑及大暑，九八兮七還退數；立秋處暑並白露，從二卻行於一九；秋分寒露及
+> 霜降，七六五兮以此向；立冬小雪並大雪，六五四兮作此訣。
+
+That is the 上元 column of `JU_TABLE` in `packages/core/src/dunjia/ju.ts`.
+A table follows each verse with all three 元, by terms that share a row,
+from 「冬至驚蟄一七四」 to 「大雪四七一」. Every row is the engine's but the last
+of the yang half, which reads 「芒種九三六為法」. The engine has 六三九, and
+the verse two leaves earlier gives 芒種's 上元 as 六. 九三六 is 夏至's row,
+which comes next. It is recorded as a slip and not weighed.
+
+**It states 置閏 at nine days, and at 芒種 and 大雪.** Sheets 1062–1063 follow
+the 符頭 of the three 元 and 「五日都來換一元，超神接氣為準的」 with:
+
+> 若節氣未至而符頭先至為之超；若節與符頭同至為正受；若節氣先至而符頭後至為之接。
+> 然接氣之後必逢正受，正受之後必有超神。若超之多而過九日，或過十日，或過十一日，
+> 必當置閏。置閏之期必芒種大雪之間。
+
+and on the next page 「置閏之法必超過九日。若未過九日而止八日，不可置閏」.
+Eight days keeps the 超神 and nine intercalates, which is `MAX_CHAOSHEN` = 8
+in `packages/core/src/zhirun.ts`. The block is set at 芒種 or 大雪, which is
+`leap: solstice`. This is 卷十三's pin and not 卷十二's: a third statement of
+置閏 inside the compilation, and the second at nine. It works no case. The
+大全 is already named a holder of `method: zhirun`, so no rung moves.
+
+**One worked case names a 局 that no method lays on its day.** Sheet 1040,
+under 占人在何方:
+
+> 假令六月初一日是壬寅日己酉時，占庚戌命人在何方吉凶。此係小暑中局陰遁八局，
+> 法當于八局地盤逆行。庚戌命屬甲辰所管，令甲辰在四宮，乙巳在三宮，丙午在二宮，
+> 丁未在一宮，戊申在九宮，己酉在八宮，庚戌在七宮，知其人在西方。
+
+The earth plate the case walks is 陰遁八局's, with 壬 in 四. 壬寅's 符頭 is
+己亥, a 孟 day, so 中 is the 元 the 符頭 gives. But 陰遁八局 is 小暑's 上元,
+and its 中元 is 二. No year is printed. On the engine's calendar, 六月初一
+falls on a 壬寅 day after 小暑 in 1228, 1285, 1352, 1409, 1662 and 1719 (a
+search of 1000 to 1750). At 己酉 on each of those days, `chaibu` lays 陰遁二
+中元, and so does `zhirun` everywhere but 1409, where it lays 大暑's 陰遁一.
+`maoshan` lays 陰遁八 上元 in 1228 and 1285 and other 局 in the rest. So
+either the 元 or the 局 is miswritten, and the case confirms nothing about
+any method. It is recorded.
+
+**It seats the eight spirits by the hour's stem.** Sheets 1085–1086, under
+the 歌's line on 直符, 六合, 太陰, 九天 and 九地:
+
+> 起例從直符。如遇甲乙丙丁戊五時為陽者，天盤直符在何宮，即於何宮起直符；如遇己
+> 庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符；如直符入中宮，無論陰陽，
+> 俱從地盤起符。
+
+The division is the 歌's own, 「甲乙丙丁戊陽時，神居天上君須知，坐擊全憑天上奇，陰時地下亦如之」,
+on sheet 1103, read at 120 dpi. There the commentary reads the 神 as the 奇 a
+striker sits on, 「天盤上之奇神」, and here it applies the same division to
+the spirits. The engine
+seats the 值符 spirit at every hour where the heaven-plate 值符 lands
+(`spiritPlate` in `packages/core/src/dunjia/plates.ts`). This rule moves it,
+at five hours in ten, to the palace where the decade's instrument stands on
+the earth plate. **The compilation's own hour tables do not follow it.**
+`texts/qimen/daquan-juan05-10-hours/` holds 101 spirit claims transcribed
+from 卷五–十. Thirty-nine stand at a 己 to 癸 hour where the two seats
+differ, compared by seat so that the fifth and sixth spirits match whatever
+they are named: 38 agree with the engine, and one, 陽遁五局 癸卯, agrees with
+this rule. The reading is one commentator's, against the compilation's
+tables, and it is recorded with no parameter.
+
+**And it quotes 三璋 for a 入墓 the engine does not lay.** Sheets 1083–1084:
+
+> 三奇入墓，三璋謂六乙日奇下臨六宮，六丙月奇下臨六宮，六丁星奇下臨八宮也。有不
+> 論干之陰陽而概以木墓在未而以二為墓、概以火墓在戌而以六為墓者，非。
+
+丙 in 乾 and 丁 in 艮 are `TOMB` and `dingTomb: gen` in
+`packages/core/src/dunjia/patterns.ts`. 乙 in 乾 is the twelve stages' 戌,
+which the comment on `TOMB` sets aside. The reading this passage rejects, 乙
+in 二, is the engine's. The 符應經, in both its copies, gives under 璋曰 乙
+in 坤 and 丁 in 乾 with 丙. So the name 璋 is quoted here for the opposite of
+both cells the 符應經 gives under it. It is recorded, and no value moves.
+
+**The rest is 占 and what things stand for.** 卷四十三–四十五 read a matter
+off the gates, the stars and the stems, and 卷四十七–四十八 comment on the
+歌's later lines: the 格, 三奇得使, 玉女守門, 伏吟 and 反吟, 五不遇時 and the
+九遁. Those were located on the contact sheets and not read.
+
+**So 奇門秘訣 states the ordinary 起例 and the engine's pin.** What it adds
+is two readings the engine does not compute: the spirits seated by the
+hour's stem, and 乙 buried in 乾. Each is one commentator's. It also has a
+slip in its table and one in its case. Read for a 起例 are 卷一 and 卷五 to
+卷四十八. 卷二 to 卷四 of 景祐秘纂 are not.
+
+Last checked 2026-10-19.
+
 ### 《紀氏奇門秘書仕學備餘》, where the states read from the star are a second arrangement
 
 《紀氏奇門秘書仕學備餘》 四卷, [清] 紀大奎 撰 — the facsimile's own title leaf
