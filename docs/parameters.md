@@ -242,10 +242,11 @@ rather than kept as a second way of saying `method`: an address carrying
 `qimen.yuan` is refused by name rather than answered under a school it did not
 choose. → [`docs/history/40-the-default-was-maoshan.md`](history/40-the-default-was-maoshan.md)
 
-**`centreLodging` has five values and three of them are reported, not held.**
+**`centreLodging` has five values and two of them are reported, not held.**
 Each is what one text says the lodging is, and the two that divide it by the
-dun divide it the opposite way round: 《御定奇門寶鑑》's variant copy sends yang
-to 坤 and yin to 艮, the 《元經》 the 折衷 quotes sends yang to 艮 and yin to 坤.
+dun divide it the opposite way round: 《漢陰居士歌》 sends yang to 坤 and yin to
+艮 as its own rule and works a board on it, which 《御定奇門寶鑑》 reports of a
+variant copy; the 《元經》 the 折衷 quotes sends yang to 艮 and yin to 坤.
 They were one refused value until the two quotations were set side by side;
 they are two readings and two values. `earthPlate` is the 折衷's own, and with
 the lodging by the eight 節 it belongs to a board that work lays whole — stars

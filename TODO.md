@@ -51,7 +51,12 @@ named day pillar and lunar date — is searched rather than guessed:
 engine. `texts/qimen/daquan-juan43-48-mijue/` does the same through the CLI
 for an undated case, and holds a rule read in prose to the 大全's 101 spirit
 claims of 卷五–十: the pattern for testing a commentator's rule against the
-compilation's own tables. **Keep scratch scripts in `texts/` from the
+compilation's own tables. **A run of worked cases** — 假如 … 局 … 時, then
+where things stand — is transcribed to `texts/qimen/daquan-juan49-baojian/cases/BRIEF.md`
+and each case laid with `check/board.mjs <陽|陰><局> <hour>` beside it, which
+prints the board off the engine's step functions with the spirits under both
+seats, `HOST=8` lodging the centre in 艮; read every case by eye against it,
+and each one that bears on a value again on the plate. **Keep scratch scripts in `texts/` from the
 start**: `/tmp` was emptied once in the middle of the session of 2026-10-19,
 and the renders and a script with it.
 
@@ -146,7 +151,7 @@ is left unbuilt.
    cases checks them through
    `texts/qimen/daquan-juan49-baojian/check/board.mjs`, which prints a 局 and
    an hour under both seats. **A survey ends** with a section in
-   `docs/sources.md` placed after § "《御定奇門大全》卷四十三–四十八", the file's row in `texts/README.md`
+   `docs/sources.md` placed after § "《御定奇門大全》卷四十九–五十七", the file's row in `texts/README.md`
    extended (`texts/` is outside the repository), line 3 of § 2 and this
    list, a phase in `docs/history/`, and one commit.
 2. **Or the 十干克應 cells two lines name alike** beyond the fourteen, which
@@ -200,10 +205,10 @@ cut short were found.
   induced from a table, and the lists are three prints three ways. It waits
   on a sentence stating the rule, in any work.
 
-**Done between 2026-10-11 and 2026-10-19, and nothing is half done.** Each
+**Done between 2026-10-11 and 2026-10-20, and nothing is half done.** Each
 reading and each build of the engine has its section in `docs/sources.md`,
 its row in `docs/sources.tsv` and its line in `texts/README.md`; phases 51 to
-63 in `docs/history/` are the record. The surface work of 2026-10-15 and
+65 in `docs/history/` are the record. The surface work of 2026-10-15 and
 2026-10-18 has no phase: "Where it stands" above and the commits say it.
 
 - 2026-10-11: `yearBoundary: dongzhi` of 太乙 computed; `host.accord` and
@@ -285,8 +290,24 @@ in 奇門秘訣, 卷四十三's opening 奇門大小將辨, which names the 起�
 六儀 and 三奇, sheets 1064–1069, seen at 50 dpi and not read; and the
 commentary under 「甲乙丙丁戊陽時」, sheet 1103, read at 120 dpi only.
 
+**Left open by the readings of 2026-10-20**, each small and none blocking:
+in 寶鑑摘要, the case 陽二局 丙午 on sheet 1269L, 「六庚加地盤九宮」, which no
+value lays (庚 stands over 坎); the four cases that split on the seat of the
+spirits fall 庚 and 辛 for `tianpan`, 壬 and 癸 for `yinshi`, too few for a
+rule and recorded as they fall; 卷五十四's 出兵方 divides the hours the
+奇門秘訣's way, 「陽時宜從天盤直符下出兵，陰時宜從地盤直符下出兵」, for a
+direction and not a seat; the 漢陰居士歌's 置閏 「凡遁九日或十日」, the count
+unsaid; a cursive note beside 占援兵 on sheet 1299L, too small at 170 dpi; and
+whether `baojian` holds `spiritSeat: tianpan` beside `tongzong`, since
+《御定奇門寶鑑》卷二 is the 統宗's 卷二 and was not read there for this rule.
+None of the 32 cases was found in another work's extract, which locates
+nothing either way.
+
 **Owed a look by the user, and not blocking**: catalog strings written
-without the `reader-copy` skill. On 2026-10-18: the words a tip and the
+without the `reader-copy` skill. On 2026-10-20: `form.qimen.spiritSeat`, its
+two values, its note and `notes.parameter.spiritSeat`, and the reworded
+`form.qimen.centreLodging.dun` and `form.qimen.centreLodging.note` («Two of
+the five», «Due delle cinque»), in both catalogs. On 2026-10-18: the words a tip and the
 printed key say for each layer, `label.register.liuren.*`, `.qizheng.*`,
 `.taiyi.*` and `.ziwei.*` — the longest are «Ciò di cui il palazzo è
 interrogato» and «Numero del palazzo, nel conto di questa tavola» — and the

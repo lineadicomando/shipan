@@ -1724,6 +1724,9 @@ under the naming of the spirits alone.
 | `stemPairs: xianji` | 《御定奇門大全》 | the 干論 of 奇門仙機, 卷十四–十六, refused until six garbled cells are read |
 | `dingTomb: qian` | 《遁甲符應經》 | 「六丙月奇、六丁星奇在六宮」, under 璋曰, in both copies |
 | `leap: runyue` | 《奇門遁甲金鏡寶鑑》 | states the placement, works it twice by date, rejects the solstitial one. A work arguing its own reading is its own line |
+| `spiritSeat: tianpan` | 《奇門遁甲統宗》, 《御定奇門大全》 | 卷二's 小值符加大值符法, 「以最上盤之值符加於九星值符所臨之宮」, and 38 of the 39 spirit claims of the 大全's 卷五–十 that tell the seats apart; added 2026-10-20 |
+| `spiritSeat: yinshi` | 《奇門秘訣》 | its commentary on the 煙波釣叟歌, 《御定奇門大全》卷四十七: 「如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符」; added 2026-10-20 |
+| `centreLodging: dun` | 《漢陰居士歌》 | 「任生艮土寄陰禽…坤寄陽禽」, and a 陰遁三局 board worked on it, 《御定奇門大全》卷五十三; added 2026-10-20, with 《御定奇門寶鑑》 beside it as the reporter |
 | `strengths: star` | 《奇門遁甲金鏡寶鑑》卷之四 | tabulates the five states outward from each of the nine stars |
 | `system: rijia`, `yuejia`, `nianjia` | 《遁甲演義》, 《奇門遁甲統宗》 | each states the three families; they part on the 年家's three 元, which is two readings and will be two values |
 
@@ -1834,7 +1837,8 @@ naming who says it. Against them stands the imperial print's 一本, the other
 way round and on a derivation of its own. **This does not reconcile the two
 readings; it makes them two.** The one the 折衷 reports has a holder named at
 one remove. The one `centreLodging: dun` declares has a variant copy and no
-name. Neither is computed here.
+name. Neither is computed here. **Both are computed since 2026-10-07, and `dun` has a name
+since 2026-10-20**: 《漢陰居士歌》, § "《御定奇門大全》卷四十九–五十七".
 
 **The lodging through eight palaces, as a table.** Sheet 44, right page:
 
