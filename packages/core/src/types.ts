@@ -190,6 +190,29 @@ export interface ChartOptions {
   spirits: 'dun' | 'fixed' | 'baihu' | 'huwu';
 
   /**
+   * Where the 值符 spirit is seated, which the other seven follow round.
+   *
+   * `tianpan` seats it where the heaven-plate 值符 lands, at every hour: the
+   * palace of the hour's stem on the earth plate. It is what the hour tables
+   * of 《御定奇門大全》卷五–十 lay — of the 39 spirit claims there that tell the
+   * two seats apart, 38 stand where this value puts them.
+   *
+   * `yinshi` keeps that seat at a 甲 to 戊 hour and moves it at a 己 to 癸
+   * hour to the palace the decade's instrument stands in on the earth plate,
+   * and to that palace whatever the hour when the heaven-plate 值符 lands in
+   * the centre. It is the 奇門秘訣's, 《御定奇門大全》卷四十七, commenting on
+   * the 煙波釣叟歌: 「如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起
+   * 直符；如直符入中宮，無論陰陽，俱從地盤起符」. Its 陰 and 陽 are the five
+   * stems either side of 戊, not the stems' own polarity: 庚 and 壬 are yin
+   * hours here.
+   *
+   * It moves where the ring starts and nothing else. The order of the eight,
+   * which way they run and what the middle pair is called are `spirits` and
+   * the dun, as the same commentary has them — 「陽符順…陰符逆布」.
+   */
+  spiritSeat: 'tianpan' | 'yinshi';
+
+  /**
    * Where the repeated block goes under 置閏.
    *
    * `solstice` is 《奇門遁甲統宗》's placement, which this engine computes: the
@@ -342,6 +365,7 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   centreLodging: 'kun',
   earthPlate: 'yuan',
   spirits: 'dun',
+  spiritSeat: 'tianpan',
   leap: 'solstice',
   strengths: 'season',
   earth: 'quarters',

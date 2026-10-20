@@ -211,6 +211,14 @@ neither disputed.
   the fifth seat (`baihu`). Another convention names them by what is being
   divined; it is refused here, because that is a licence to read and not a
   rule for laying, and you should not supply it either.
+- **Where the ring of the spirits starts is a choice too, and the board says
+  which.** By default the 值符 spirit stands where the heaven-plate 值符 lands,
+  at every hour (`qimen.spiritSeat=tianpan`). Under `yinshi` it does so at an
+  hour whose stem is 甲 to 戊, and at an hour of 己 to 癸, or whenever the
+  值符 lands in the centre, it starts from the 值符's palace on the earth
+  plate. Order and direction are the same under both; where the two seats
+  differ every spirit stands in another palace, so read the spirits of the
+  board you were given and never re-seat them yourself.
 - **The centre is read somewhere else (寄宮).** It has no direction, no gate
   and no spirit, so the stem the ju puts there is read at its host — 坤 by
   default — and the host's palace says so with `lodged`. That palace therefore

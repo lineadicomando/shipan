@@ -1571,6 +1571,15 @@ export const en = {
     'the half of the year, with 白虎 báihǔ kept at the fifth seat in a yang chart: the board of 《奇門遁甲全局》 qíméndùnjiǎquánjú',
   'form.qimen.spirits.huwu':
     'nothing, with the names of a yin chart in both dun: 白虎 báihǔ and 玄武 xuánwǔ stand in a yang chart as they do in a yin one, as the hour tables of 《御定奇門大全》 yùdìngqíméndàquán have them',
+  // Where the ring of the eight starts, which is all the two readings part
+  // over: the order and the names are the line above.
+  'form.qimen.spiritSeat': 'The first of the eight spirits, 值符 zhífú, is seated',
+  'form.qimen.spiritSeat.tianpan':
+    'where the chief 值符 zhífú stands on the heaven plate, at every hour, as the hour tables of 《御定奇門大全》 yùdìngqíméndàquán have it',
+  'form.qimen.spiritSeat.yinshi':
+    'from the heaven plate at an hour of 甲 jiǎ to 戊 wù, and from the earth plate at an hour of 己 jǐ to 癸 guǐ, as the commentary in 《奇門秘訣》 qíménmìjué has it',
+  'form.qimen.spiritSeat.note':
+    'The other seven spirits follow the first round the palaces, in the same order under both readings. The first reading seats it where the chief stands on the heaven plate. The second does that at the five hours whose stem is 甲 jiǎ to 戊 wù; at the five whose stem is 己 jǐ to 癸 guǐ, it seats it where the chief stands on the earth plate, and so it does whenever the chief falls on the central palace. Where the two places differ, every spirit stands in another palace.',
   // The moving pair against the plate under it. 《金鏡寶鑑》 separates the two in
   // one clause — 其星寄 for the star, 符使不必寄於二 for the 符 and the 使 — so
   // the label asks about the pair and neither value promises a different board.
@@ -2063,6 +2072,7 @@ export const en = {
   'notes.parameter.huoling': 'How 火星 huǒxīng and 鈴星 língxīng are placed.',
   'notes.parameter.daxian': 'Where the first decade of the great limits opens.',
   'notes.parameter.spirits': 'What names the fifth and sixth spirits.',
+  'notes.parameter.spiritSeat': 'Where the ring of the eight spirits starts.',
   'notes.parameter.leap': 'Where 置閏 zhìrùn repeats its block.',
   'notes.parameter.strengths': 'What the five seasonal states are read from.',
   'notes.parameter.earth': 'Where earth’s season begins.',

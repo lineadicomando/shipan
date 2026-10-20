@@ -215,6 +215,7 @@ dunjia's.**
 | `dayGates` | how the seven other gates follow 休門 on a day board — under `system: rijia`: `fei` (飛 fēi — flown through the eight in the order of their numbers), `zhuan` (轉 zhuàn — turned round the eight, the way changing with the day's stem) | `fei` |
 | `dayDun` | where a day board's year divides — under `system: rijia`: `solstice` (二至 èrzhì), `liushi` (六十日一局 liùshírìyījú — sixty days to a 局) | `solstice` |
 | `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat), `huwu` (虎武 hǔwǔ — 白虎 fifth and 玄武 sixth in both dun, as 《御定奇門大全》's hour tables name them) | `dun` |
+| `spiritSeat` | where the first spirit is seated, which the other seven follow round: `tianpan` (天盤 tiānpán — where the heaven-plate 值符 lands, at every hour, as 《御定奇門大全》's hour tables lay it), `yinshi` (陰時 yīnshí — from the earth-plate 值符 at a 己 to 癸 hour, and whenever the 值符 lands in the centre, as the 奇門秘訣's commentary has it) | `tianpan` |
 | `leap` | where 置閏 repeats its block — inside 置閏: `solstice` (芒種 or 大雪), `runyue` (閏月 rùnyuè, the term the year's leap month falls under) | `solstice` |
 | `strengths` | what 旺相休囚死 are read from: `season`, `star` | `season` |
 | `earth` | where earth's season begins: `quarters` (the four closing months entire), `eighteen` (their last eighteen days, as 《大六壬精解》 states of the phases) | `quarters` |

@@ -153,6 +153,17 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '御定奇門大全', pinyin: 'yùdìngqíméndàquán' },
   },
+  /**
+   * 《奇門秘訣》, 卷四十三–四十八 of 《御定奇門大全》 and a work of its own on the
+   * 版心: a commentary on the 煙波釣叟歌 that seats the spirits from the earth
+   * plate at a 己 to 癸 hour, where the compilation's hour tables do not.
+   * Named apart from `qimendaquan` because the two hold opposite values of
+   * one parameter.
+   */
+  qimenmijue: {
+    kind: 'transmitted',
+    name: { hanzi: '奇門秘訣', pinyin: 'qíménmìjué' },
+  },
   /** 《奇門遁甲全局》, the circular plates that keep 白虎 at the fifth seat. */
   quanju: {
     kind: 'transmitted',

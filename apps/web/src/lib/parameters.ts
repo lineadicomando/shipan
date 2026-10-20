@@ -220,6 +220,17 @@ export const DIVERGENCES: readonly Divergence[] = [
     },
   },
   {
+    id: 'spiritSeat',
+    board: 'qimen',
+    family: 'shijia',
+    values: ['tianpan', 'yinshi'],
+    implemented: ['tianpan', 'yinshi'],
+    fallback: 'tianpan',
+    label: 'form.qimen.spiritSeat',
+    says: { tianpan: 'form.qimen.spiritSeat.tianpan', yinshi: 'form.qimen.spiritSeat.yinshi' },
+    notes: { tianpan: 'form.qimen.spiritSeat.note', yinshi: 'form.qimen.spiritSeat.note' },
+  },
+  {
     id: 'leap',
     board: 'qimen',
     family: 'shijia',

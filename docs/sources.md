@@ -2884,27 +2884,54 @@ search of 1000 to 1750). At 己酉 on each of those days, `chaibu` lays 陰遁�
 either the 元 or the 局 is miswritten, and the case confirms nothing about
 any method. It is recorded.
 
-**It seats the eight spirits by the hour's stem.** Sheets 1085–1086, under
-the 歌's line on 直符, 六合, 太陰, 九天 and 九地:
+**It seats the eight spirits by the hour's stem, and that is `spiritSeat:
+yinshi`.** Sheets 1085–1086, under the 歌's line on 直符, 六合, 太陰, 九天 and
+九地, read whole at 170 dpi on 2026-10-20:
 
-> 起例從直符。如遇甲乙丙丁戊五時為陽者，天盤直符在何宮，即於何宮起直符；如遇己
-> 庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符；如直符入中宮，無論陰陽，
-> 俱從地盤起符。
+> 陽符順，後一為九天，後二位九地，前二為太陰，前三為六合；陰符逆布，前一為九天，
+> 前二為九地，後二位太陰，後三為六合。起例從直符。如遇甲乙丙丁戊五時為陽者，天盤
+> 直符在何宮，即於何宮起直符；如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何
+> 宮起直符；如直符入中宮，無論陰陽，俱從地盤起符。
 
-The division is the 歌's own, 「甲乙丙丁戊陽時，神居天上君須知，坐擊全憑天上奇，陰時地下亦如之」,
+The list of the eight spirits and their phases follows on 1086, with 白虎 「一本
+作勾陳」 and 玄武 「一本作朱雀」, then 張良's sayings on each. The division of
+the hours is the 歌's own, 「甲乙丙丁戊陽時，神居天上君須知，坐擊全憑天上奇，陰時地下亦如之」,
 on sheet 1103, read at 120 dpi. There the commentary reads the 神 as the 奇 a
 striker sits on, 「天盤上之奇神」, and here it applies the same division to
-the spirits. The engine
-seats the 值符 spirit at every hour where the heaven-plate 值符 lands
-(`spiritPlate` in `packages/core/src/dunjia/plates.ts`). This rule moves it,
-at five hours in ten, to the palace where the decade's instrument stands on
-the earth plate. **The compilation's own hour tables do not follow it.**
-`texts/qimen/daquan-juan05-10-hours/` holds 101 spirit claims transcribed
-from 卷五–十. Thirty-nine stand at a 己 to 癸 hour where the two seats
-differ, compared by seat so that the fifth and sixth spirits match whatever
-they are named: 38 agree with the engine, and one, 陽遁五局 癸卯, agrees with
-this rule. The reading is one commentator's, against the compilation's
-tables, and it is recorded with no parameter.
+the spirits.
+
+**What it moves is the seat and nothing else.** The 陽符 and 陰符 of the
+sentence before are the 符 of the two dun, as 《遁甲演義》 uses the words —
+「陽符左為前數，陰符右為前尋，陽遁從冬至…」 — so the ring runs forward in
+a yang chart and back in a yin one under both seats, with the engine's order.
+The engine seats the 值符 spirit at every hour where the heaven-plate 值符
+lands (`spiritPlate` in `packages/core/src/dunjia/plates.ts`), and that is
+`spiritSeat: tianpan`. Under `yinshi`, at an hour whose stem is 己 to 癸, and
+at any hour the heaven-plate 值符 lands in the centre, the ring starts from
+the palace the decade's instrument stands in on the earth plate, lodged as
+`centreLodging` says. 庚 and 壬 are yang stems and yin hours here: the
+commentary divides the ten at 戊.
+
+**The compilation's own hour tables lay the other seat**, and that is why the
+default has a holder. `texts/qimen/daquan-juan05-10-hours/` holds 101 spirit
+claims transcribed from 卷五–十. Thirty-nine stand at a 己 to 癸 hour where the
+two seats differ, compared by seat so that the fifth and sixth spirits match
+whatever they are named: 38 agree with `tianpan`, and one, 陽遁五局 癸卯, with
+`yinshi`. That one was read on the plate, sheet 154, and reads as transcribed,
+「乙傷在巽合太陰」; `tianpan` puts 六合 there. The print names 太陰 where the
+engine has 六合 twice more, 陽遁八局 戊戌 and 陰遁七局 庚子, at hours where
+neither seat gives 太陰, so the one agreement is that slip a third time and not
+a board drawn by the rule.
+
+**Two works, so two readings.** 卷五–十 run under the 版心 奇門秘纂 and these
+juan under 奇門秘訣: the compilation prints both, and neither names an author.
+Each is attributed to the work that carries it, the commentary is a procedure
+sufficient to compute and was read on the plate, and the reconstruction meets
+no contradiction. That is what § "What a value named for a school must show"
+asks of a computed value, and a second agreeing witness is
+not among it. So the commentary enters `WITNESSES` as `qimenmijue` and holds
+`yinshi`; `qimendaquan`, which names the hour tables, holds `tianpan`. It is on
+rung 5: one witness, and no board worked by it.
 
 **And it quotes 三璋 for a 入墓 the engine does not lay.** Sheets 1083–1084:
 
@@ -2924,12 +2951,13 @@ off the gates, the stars and the stems, and 卷四十七–四十八 comment on 
 九遁. Those were located on the contact sheets and not read.
 
 **So 奇門秘訣 states the ordinary 起例 and the engine's pin.** What it adds
-is two readings the engine does not compute: the spirits seated by the
-hour's stem, and 乙 buried in 乾. Each is one commentator's. It also has a
+is two readings: the spirits seated by the hour's stem, which the engine
+computes as `spiritSeat: yinshi`, and 乙 buried in 乾, which it does not. Each
+is one commentator's. It also has a
 slip in its table and one in its case. Read for a 起例 are 卷一 and 卷五 to
 卷四十八. 卷二 to 卷四 of 景祐秘纂 are not.
 
-Last checked 2026-10-19.
+Last checked 2026-10-20.
 
 ### 《紀氏奇門秘書仕學備餘》, where the states read from the star are a second arrangement
 

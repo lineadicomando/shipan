@@ -246,6 +246,12 @@ export const qimenSchema = {
     .describe(
       'What names the fifth and sixth of the eight spirits. Default dun: the pair is named by the half of the year, gouchen and zhuque in a yang chart, baihu and xuanwu in a yin one. fixed keeps the same eight names in both dun, as the Yuding Qimen Baojian has them. baihu keeps the naming by half-year but leaves baihu at the fifth seat of a yang chart, which is the board of the Qimen Dunjia Quanju. huwu keeps the names of a yin chart in both dun, baihu fifth and xuanwu sixth, as the hour tables of the Yuding Qimen Daquan name them. Four readings of one ring, parting at two seats and only in the name — but the name is what a spirit criterion matches on.',
     ),
+  spirit_seat: z
+    .enum(['tianpan', 'yinshi'])
+    .optional()
+    .describe(
+      'Where the first of the eight spirits, the zhifu spirit, is seated; the other seven follow it round in the order spirits names. Default tianpan: where the chief stands on the heaven plate, at every hour, as the hour tables of the Yuding Qimen Daquan lay it. yinshi does the same at an hour whose stem is jia to wu, and at an hour whose stem is ji, geng, xin, ren or gui seats it where the chief stands on the earth plate, and does so too whenever the chief falls on the central palace: the commentary on the Yanbo Diaosou Ge in the Qimen Mijue, juan 47 of the Daquan. Where the two places differ every spirit stands in another palace. Both values are computed and the chart says which it stands on.',
+    ),
   plate: z
     .enum(['zhuan', 'xingfei'])
     .optional()
@@ -256,7 +262,7 @@ export const qimenSchema = {
     .enum(['shijia', 'rijia'])
     .optional()
     .describe(
-      'Which family of Qi Men board, and each is a board of its own. Default shijia, the board of the hour: a plate of stems, nine stars, eight gates and eight spirits, and everything else this tool describes. rijia is the board of the day: eight gates and nine stars of its own, the first of them taiyi, with no stems, no chief and no spirits. It is laid off the day pillar and the season alone, so every hour of one day has the same one; beside it come the twelve hours of that day, each with the god it treads and what the stem of the day puts on it — the Heavenly Noble, the road cut off, the hour that does not meet, the spirit of joy and its bearing — which are names from the almanac and order no hour above another. The board reads day_gates and none of method, plate, spirits, centre_lodging, earth, earth_plate, centre_travel or centre_stem. The answer has a different shape under each.',
+      'Which family of Qi Men board, and each is a board of its own. Default shijia, the board of the hour: a plate of stems, nine stars, eight gates and eight spirits, and everything else this tool describes. rijia is the board of the day: eight gates and nine stars of its own, the first of them taiyi, with no stems, no chief and no spirits. It is laid off the day pillar and the season alone, so every hour of one day has the same one; beside it come the twelve hours of that day, each with the god it treads and what the stem of the day puts on it — the Heavenly Noble, the road cut off, the hour that does not meet, the spirit of joy and its bearing — which are names from the almanac and order no hour above another. The board reads day_gates and none of method, plate, spirits, spirit_seat, centre_lodging, earth, earth_plate, centre_travel or centre_stem. The answer has a different shape under each.',
     ),
   day_gates: z
     .enum(['fei', 'zhuan'])
@@ -326,6 +332,7 @@ interface RawInput {
   year_boundary?: 'lichun' | 'chunjie' | 'dongzhi' | undefined;
   method?: 'chaibu' | 'zhirun' | 'maoshan' | undefined;
   spirits?: 'dun' | 'fixed' | 'baihu' | 'huwu' | undefined;
+  spirit_seat?: 'tianpan' | 'yinshi' | undefined;
   plate?: 'zhuan' | 'xingfei' | undefined;
   system?: 'shijia' | 'rijia' | undefined;
   day_gates?: 'fei' | 'zhuan' | undefined;
@@ -375,6 +382,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
     {
       method: raw.method,
       spirits: raw.spirits,
+      spiritSeat: raw.spirit_seat,
       plate: raw.plate,
       system: raw.system,
       dayGates: raw.day_gates,
@@ -395,6 +403,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.year_boundary) options.yearBoundary = raw.year_boundary;
   if (raw.method) options.method = raw.method;
   if (raw.spirits) options.spirits = raw.spirits;
+  if (raw.spirit_seat) options.spiritSeat = raw.spirit_seat;
   if (raw.plate) options.plate = raw.plate;
   if (raw.system) options.system = raw.system;
   if (raw.day_gates) options.dayGates = raw.day_gates;

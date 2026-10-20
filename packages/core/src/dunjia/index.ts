@@ -145,7 +145,8 @@ export interface QimenChart {
  * 4. The heaven plate turns until the instrument stands over the hour's stem,
  *    carrying the nine stars with it.
  * 5. The gates do not turn but fly, counting through the Luoshu numbers.
- * 6. The spirits follow the chief, clockwise or not according to the dun.
+ * 6. The spirits follow the chief, clockwise or not according to the dun,
+ *    from the seat `spiritSeat` gives them.
  *
  * Nothing here is interpreted. Which gate stands over which palace is a fact
  * about the arrangement; whether that is a good thing to know belongs to
@@ -167,6 +168,7 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     'centreLodging',
     'earthPlate',
     'spirits',
+    'spiritSeat',
     'strengths',
     'earth',
     'centreTravel',
@@ -235,7 +237,15 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   // for the centre: what `centreTravel` moves is where the pair is *reported*,
   // never where the other seven stand.
   const gates = gatePlate(gate, lodge(gateLanding, host));
-  const spirits = spiritPlate(chiefLanding, ju.yang, options.spirits, host);
+  // 「如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符」: under
+  // `spiritSeat: yinshi` the ring starts from the instrument's palace on the
+  // earth plate at a 己 to 癸 hour, and at any hour the heaven-plate 值符
+  // lands in the centre. By the index and not by `yang`, which makes 庚 and
+  // 壬 yang stems: the commentary's yin hours are the five after 戊.
+  const fromEarth =
+    options.spiritSeat === 'yinshi' && (hourGanzhi.stem.index >= 5 || chiefLanding === 5);
+  const spiritSeat = fromEarth ? palaceOf(earth, instrument) : chiefLanding;
+  const spirits = spiritPlate(spiritSeat, ju.yang, options.spirits, host);
 
   // 「行活局，符使不必寄於二，徑排入中宮」 — on the turning board the 符 and the
   // 使 need not lodge at 坤二 but go into the fifth palace itself. The clause

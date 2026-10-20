@@ -1451,6 +1451,13 @@ export const it: Record<MessageKey, string> = {
     'la metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
   'form.qimen.spirits.huwu':
     'niente, con i nomi della carta yin in entrambi i dun: 白虎 báihǔ e 玄武 xuánwǔ stanno in una carta yang come in una yin, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
+  'form.qimen.spiritSeat': 'Il primo degli otto spiriti, 值符 zhífú, si colloca',
+  'form.qimen.spiritSeat.tianpan':
+    'dove sta il capo 值符 zhífú sul piatto cielo, a ogni ora, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
+  'form.qimen.spiritSeat.yinshi':
+    'dal piatto cielo in un’ora da 甲 jiǎ a 戊 wù, e dal piatto terra in un’ora da 己 jǐ a 癸 guǐ, come nel commento del 《奇門秘訣》 qíménmìjué',
+  'form.qimen.spiritSeat.note':
+    'Gli altri sette spiriti seguono il primo intorno ai palazzi, nello stesso ordine in entrambe le letture. La prima lettura lo colloca dove sta il capo sul piatto cielo. La seconda fa lo stesso nelle cinque ore il cui tronco va da 甲 jiǎ a 戊 wù; nelle cinque il cui tronco va da 己 jǐ a 癸 guǐ lo colloca dove sta il capo sul piatto terra, e così fa ogni volta che il capo cade sul palazzo centrale. Dove i due posti sono diversi, ogni spirito sta in un altro palazzo.',
   'form.qimen.plate': 'Le stelle e i tronchi sopra i palazzi si muovono',
   'form.qimen.plate.zhuan':
     'girandoli sugli otto palazzi esterni, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
@@ -1823,6 +1830,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.huoling': 'Come si collocano 火星 huǒxīng e 鈴星 língxīng.',
   'notes.parameter.daxian': 'Dove si apre il primo decennio dei grandi limiti.',
   'notes.parameter.spirits': 'Che cosa nomina il quinto e il sesto spirito.',
+  'notes.parameter.spiritSeat': 'Da dove comincia l’anello degli otto spiriti.',
   'notes.parameter.leap': 'Dove il 置閏 zhìrùn ripete il proprio blocco.',
   'notes.parameter.strengths': 'Da che cosa si leggono i cinque stati stagionali.',
   'notes.parameter.earth': 'Dove comincia la stagione della terra.',

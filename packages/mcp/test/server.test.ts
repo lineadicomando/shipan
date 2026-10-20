@@ -167,6 +167,18 @@ describe('draw_qimen_chart, for a board of the day', () => {
 });
 
 describe('compute_qimen_chart', () => {
+  it('seats the spirits from the earth plate at a yin hour when spirit_seat asks for it', async () => {
+    // 己巳, an hour the 奇門秘訣 calls yin: 「看地盤直符坐何宮，即於何宮起直符」.
+    const at = { ...BEIJING, date: '2026-01-30', time: '09:30', lang: 'en' };
+    const earth = await call('compute_qimen_chart', { ...at, spirit_seat: 'yinshi' });
+    const heaven = await call('compute_qimen_chart', at);
+
+    expect(earth).toContain('from the earth plate at an hour of 己 jǐ to 癸 guǐ');
+    expect(heaven).toContain('where the chief 值符 zhífú stands on the heaven plate, at every hour');
+    const spirits = (text: string) => text.slice(text.indexOf('What stands in each'));
+    expect(spirits(earth)).not.toEqual(spirits(heaven));
+  });
+
   it('carries the centre\'s stem with its host when centre_stem asks for it', async () => {
     // 陽遁六局 乙丑: the hour tables of 《御定奇門大全》 read 「乙景在巽」.
     const at = { ...BEIJING, date: '2026-01-30', time: '02:00', lang: 'en' };

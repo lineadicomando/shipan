@@ -553,6 +553,37 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     ],
     default: 'dun',
   },
+  spiritSeat: {
+    board: 'qimen',
+    family: 'shijia',
+    // Where the ring of the eight spirits starts, and nothing else: the order,
+    // the direction and the names are `spirits` and the dun under both values.
+    // See `docs/sources.md` § "《御定奇門大全》卷四十三–四十八".
+    label: 'form.qimen.spiritSeat',
+    values: [
+      {
+        id: 'tianpan',
+        name: { hanzi: '天盤', pinyin: 'tiānpán' },
+        says: 'form.qimen.spiritSeat.tianpan',
+        note: 'form.qimen.spiritSeat.note',
+        implemented: true,
+        // 《御定奇門大全》卷五–十: 38 of the 39 spirit claims that tell the two
+        // seats apart, at a 己 to 癸 hour.
+        heldBy: ['qimendaquan'],
+      },
+      // 「如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符」, the
+      // 奇門秘訣's commentary on the 釣叟歌, 《御定奇門大全》卷四十七.
+      {
+        id: 'yinshi',
+        name: { hanzi: '陰時', pinyin: 'yīnshí' },
+        says: 'form.qimen.spiritSeat.yinshi',
+        note: 'form.qimen.spiritSeat.note',
+        implemented: true,
+        heldBy: ['qimenmijue'],
+      },
+    ],
+    default: 'tianpan',
+  },
   leap: {
     board: 'qimen',
     family: 'shijia',
