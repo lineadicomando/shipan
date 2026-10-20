@@ -62,7 +62,7 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-20
 
-**Version 0.29.0**, in every manifest. **`main` is checked out and no branch
+**Version 0.29.1**, in every manifest. **`main` is checked out and no branch
 is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
 `main` carry since 2026-10-15 is of six days:
 
@@ -115,6 +115,14 @@ is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
   陽遁五局 癸卯 on sheet 154, the one agreeing hour of the tables, which is the
   print's 太陰 for 六合 a third time. Renders and notes in
   `texts/qimen/daquan-juan47-seat/`.
+- 2026-10-20, the shelf (0.29.1): the 大全's 寶鑑摘要, 卷四十九–五十七,
+  surveyed and its 32 worked cases laid against the engine. 卷四十九 is the
+  統宗's 起例 again, and its 小直符加大直符 puts the 統宗 among the holders of
+  `spiritSeat: tianpan`; the 漢陰居士歌 of 卷五十三 states 陽二陰八 as its own
+  rule and works a board on it, so `centreLodging: dun` is held and no longer
+  only reported; four cases at a 己 to 癸 hour split two and two on the seat
+  of the spirits. No value moved. Scripts and transcriptions in
+  `texts/qimen/daquan-juan49-baojian/`.
 
 `main` is pushed to `origin/main` as of 2026-10-18; the commits of
 2026-10-19 and 2026-10-20 are not pushed, and pushing is the user's call.
@@ -126,18 +134,18 @@ a fresh tree: the MCP and web suites and the shelf's scripts import
 **What to do next, in the order the user has been taking it.** Nothing decided
 is left unbuilt.
 
-1. **Read on**: § 2 line 3, the 大全, for a 起例 variant. **寶鑑摘要, from
-   卷四十九 on sheet 1117**, stands next: 奇門秘訣 closed a juan early, on
-   1116. By the blank halves, not yet confirmed on the 版心: 1117–1142,
-   1143–1163, from 1164. Its first leaf lays out the nine stars, the 三奇,
-   the 六儀 and the 八門 under 起例.
-
-   Then 吉凶格解 and 寶鏡圖, to sheet 1485, and 景祐秘纂 卷二–四, which by
-   the blank halves are 31–59, 60–82 and 83–113, unconfirmed. 先天要論,
-   奇門古本 and 乾坤變異錄 were surveyed 2026-10-17, 禽遁 on 2026-10-18 and
-   奇門秘訣 on 2026-10-19; the one 起例 found so far that the engine did not
-   lay, 奇門秘訣's seat of the spirits, is `spiritSeat: yinshi` since
-   2026-10-20. **A survey ends** with a section in
+1. **Read on**: § 2 line 3, the 大全, for a 起例 variant. **吉凶格解, from
+   卷五十八 on sheet 1303**, stands next: 寶鑑摘要 closed on 1302, and
+   `blanks.py` puts the next bracket at 1303–1332, from 1333 after it,
+   unconfirmed on the 版心. Then 寶鏡圖, to sheet 1485, and 景祐秘纂 卷二–四,
+   which by the blank halves are 31–59, 60–82 and 83–113, unconfirmed.
+   先天要論, 奇門古本 and 乾坤變異錄 were surveyed 2026-10-17, 禽遁 on
+   2026-10-18, 奇門秘訣 on 2026-10-19 and 寶鑑摘要 on 2026-10-20; the one
+   起例 found so far that the engine did not lay, 奇門秘訣's seat of the
+   spirits, is `spiritSeat: yinshi` since 2026-10-20. A survey with worked
+   cases checks them through
+   `texts/qimen/daquan-juan49-baojian/check/board.mjs`, which prints a 局 and
+   an hour under both seats. **A survey ends** with a section in
    `docs/sources.md` placed after § "《御定奇門大全》卷四十三–四十八", the file's row in `texts/README.md`
    extended (`texts/` is outside the repository), line 3 of § 2 and this
    list, a phase in `docs/history/`, and one commit.
@@ -259,6 +267,9 @@ its row in `docs/sources.tsv` and its line in `texts/README.md`; phases 51 to
 - 2026-10-20: that seat built as `spiritSeat: yinshi`, the user's word on the
   question of 2026-10-19: two works and not one, so two readings. The rest of
   sheets 1085–1086 and 陽遁五局 癸卯 read on the plate first (0.29.0).
+- 2026-10-20: 寶鑑摘要, 卷四十九–五十七, surveyed; three readers transcribed
+  its worked cases. The 統宗 holds `spiritSeat: tianpan` and 漢陰居士歌
+  holds `centreLodging: dun`; four cases split on the seat (0.29.1).
 
 **Left open by the readings of 2026-10-17**, each small and none blocking:
 in 先天要論, the terms 穀雨 and 霜降, whose 局 numbers fall on another
@@ -408,7 +419,7 @@ stand first because a decision waits on each.
 |---|---|---|
 | 1 | **A dated 日計 board, or the 盈差 of the day explained**: what `ji: riji` waits on | not in the 《統宗》 where it was looked for: 卷三十六 to p. 392, 卷四 p. 41 and 卷十八 whole were read on 2026-10-11 and every board is entered by its 局, and the 144 drawn boards of 卷三十二–三十五, read on 2026-10-15, are entered by their 局 and five 干支 with no year. Left in that work: the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
 | 2 | the lists of 上和 · 次和 · 下和, which three prints give three ways, and which count is read against 太乙's palace | the notes of the 《統宗》卷三十一 立成 were read on 2026-10-15: its table labels every count by its digits, ungraded, and none against 太乙's palace — so it answers neither question. A copy of the 金鏡 that is not the 四庫's, or a work quoting 王希明's lists: none held. The 金鏡 卷二 leaves 9–10, the 《統宗》卷六 pp. 54–56 and 盧央 pp. 477–479 were read on 2026-10-11 |
-| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets at 600 dpi, two book-pages to a sheet, right one first, each juan opening on a left page and located by the 版心 (`texts/qimen/daquan-tools/`). **Read for a 起例, and one found that the engine does not compute, recorded and not declared**: the 目錄; 卷一 of 景祐秘纂; 卷五–十, the eighteen 局 hour by hour (sheets 114–268); 卷十一–十三, 遁甲通明鈐, which states 置閏 at two pins (269–345); 卷十四–十六, 奇門仙機, omens and two stem tables, the tables transcribed (346–416); 卷十七–二十四, 先天要論, which states 置閏 and the ordinary 局 and carries the 探索錄's 符經 (417–588); 卷二十五 of the 符應經, with 卷二十六–二十七 only at sheets 607, 615–620, 631, 637; 卷二十八–三十二, 奇門古本, whose 卷二十九 states the 年家 on 一七四 with the 集成's epoch chain (659–759); 卷三十三–三十八, 乾坤變異錄, omens of the sky and the ground (760–893); 卷三十九–四十二, 禽遁秘訣陰符經, a juan earlier than the 目錄 has it, which is 演禽 and whose 遁甲 run in 卷四十 states the ordinary 起例 (894–982); 卷四十三–四十八, 奇門秘訣, a juan shorter than the 目錄 has it, whose commentary on the 煙波釣叟歌 states the ordinary 局 and 置閏 at nine, and seats the eight spirits from the earth-plate 直符 at a 己 to 癸 hour, which the 大全's own 卷五–十 do not follow and the engine computes as `spiritSeat: yinshi` (983–1116). `docs/sources.md` has a section for each, titled by the juan. **Unopened**: 景祐秘纂 卷二–四 (about 31–113); 寶鑑摘要 from 卷四十九 (from 1117); 吉凶格解 and 寶鏡圖, which the 目錄 numbers 卷五十八–六十四. The 目錄's juan numbers have been wrong four times, so each work is bracketed on the 版心 before it is read |
+| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets at 600 dpi, two book-pages to a sheet, right one first, each juan opening on a left page and located by the 版心 (`texts/qimen/daquan-tools/`). **Read for a 起例, and one found that the engine did not compute, `spiritSeat: yinshi` since 2026-10-20**: the 目錄; 卷一 of 景祐秘纂; 卷五–十, the eighteen 局 hour by hour (sheets 114–268); 卷十一–十三, 遁甲通明鈐, which states 置閏 at two pins (269–345); 卷十四–十六, 奇門仙機, omens and two stem tables, the tables transcribed (346–416); 卷十七–二十四, 先天要論, which states 置閏 and the ordinary 局 and carries the 探索錄's 符經 (417–588); 卷二十五 of the 符應經, with 卷二十六–二十七 only at sheets 607, 615–620, 631, 637; 卷二十八–三十二, 奇門古本, whose 卷二十九 states the 年家 on 一七四 with the 集成's epoch chain (659–759); 卷三十三–三十八, 乾坤變異錄, omens of the sky and the ground (760–893); 卷三十九–四十二, 禽遁秘訣陰符經, a juan earlier than the 目錄 has it, which is 演禽 and whose 遁甲 run in 卷四十 states the ordinary 起例 (894–982); 卷四十三–四十八, 奇門秘訣, a juan shorter than the 目錄 has it, whose commentary on the 煙波釣叟歌 states the ordinary 局 and 置閏 at nine, and seats the eight spirits from the earth-plate 直符 at a 己 to 癸 hour, which the 大全's own 卷五–十 do not follow and the engine computes as `spiritSeat: yinshi` (983–1116); 卷四十九–五十七, 寶鑑摘要, the 統宗's 起例 again and a book of 占 whose 32 cases the engine lays, with 漢陰居士歌 holding `centreLodging: dun` (1117–1302). `docs/sources.md` has a section for each, titled by the juan. **Unopened**: 景祐秘纂 卷二–四 (about 31–113); 吉凶格解 and 寶鏡圖, from 1303, which the 目錄 numbers 卷五十八–六十四. The 目錄's juan numbers have been wrong four times, so each work is bracketed on the 版心 before it is read |
 | 4 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
 | 5 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 

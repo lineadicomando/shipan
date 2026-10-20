@@ -1615,7 +1615,7 @@ export const en = {
   'form.qimen.centreLodging': 'The central palace lodges',
   'form.qimen.centreLodging.kun': 'in 坤 kūn always, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
   'form.qimen.centreLodging.dun':
-    'in 坤 kūn in a yang chart and in 艮 gèn in a yin one, which 《御定奇門寶鑑》 yùdìngqíménbǎojiàn reports of a variant copy',
+    'in 坤 kūn in a yang chart and in 艮 gèn in a yin one, as 《漢陰居士歌》 hànyīnjūshìgē has it and 《御定奇門寶鑑》 yùdìngqíménbǎojiàn reports of a variant copy',
   'form.qimen.centreLodging.dunni':
     'in 艮 gèn in a yang chart and in 坤 kūn in a yin one, which 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng reports an older text as saying',
   'form.qimen.centreLodging.bajie':
@@ -1623,7 +1623,7 @@ export const en = {
   'form.qimen.centreLodging.siyu':
     'in one of the four corner palaces, a corner to each season, which 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng reports of another teacher',
   'form.qimen.centreLodging.note':
-    'The central palace has no direction and no gate of its own. What the count puts there is therefore read in another palace, and it takes that palace’s gate with it. The shelf carries five readings of which palace that is. Three of the five are known only from a text that sets the reading out and then argues against it.',
+    'The central palace has no direction and no gate of its own. What the count puts there is therefore read in another palace, and it takes that palace’s gate with it. The shelf carries five readings of which palace that is. Two of the five are known only from a text that sets the reading out and then argues against it.',
   'form.qimen.earthPlate': 'The earth plate is laid',
   'form.qimen.earthPlate.yuan':
     'once for the sixty hours of a 元 yuán, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',

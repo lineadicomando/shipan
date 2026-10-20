@@ -1752,6 +1752,9 @@ It stayed declared and refused on that day's reading, and the reverse
 lodging recorded with no parameter. **Decided since**: each report is whole
 taken alone, so each is a value of its own and both are computed — the
 imperial print's as `centreLodging: dun`, the other as `centreLodging: dunni`.
+**And `dun` is held since 2026-10-20**: 《漢陰居士歌》, printed in 《御定奇門大全》
+卷五十三, states it as its own rule and works a board on it, so the holder takes
+the reporter's place. See § "《御定奇門大全》卷四十九–五十七".
 On the same day's first reading the transcription sold with the 折衷 has its 赤霆經 commentary put
 it on a 《元經》 — 「元經又謂陽遁寄艮，陰遁寄坤」 — which is a lead until the
 plate is read, and would be a holder if it reads so.
@@ -1876,7 +1879,7 @@ one is; it is not 張氏's table.
 | `centreLodging: bajie` | the centre read in the palace of the 節 in force, taking its gate | held by the 折衷, on 赤霆經's commentary and 南華道人 |
 | `centreLodging: siyu` | the centre read in the corner of the season | reported by the 折衷 from 《三才發秘》, as 耕山陳氏's, and found too narrow |
 | `centreLodging: dunni` | 艮 under yang, 坤 under yin | reported by the 折衷 as a 《元經》's |
-| `centreLodging: dun` | 坤 under yang, 艮 under yin | reported by 《御定奇門寶鑑》 as a variant copy's |
+| `centreLodging: dun` | 坤 under yang, 艮 under yin | held by 《漢陰居士歌》 since 2026-10-20, and reported by 《御定奇門寶鑑》 as a variant copy's |
 | `earthPlate: xun` | the ordinary layout begun from the palace the decade's 甲 stands in, 甲 concealed under 戊 | held by the 折衷, as its own |
 
 The term a lodging is read off is the one the ju was taken from, so that the
@@ -2956,6 +2959,129 @@ computes as `spiritSeat: yinshi`, and 乙 buried in 乾, which it does not. Each
 is one commentator's. It also has a
 slip in its table and one in its case. Read for a 起例 are 卷一 and 卷五 to
 卷四十八. 卷二 to 卷四 of 景祐秘纂 are not.
+
+Last checked 2026-10-20.
+
+### 《御定奇門大全》卷四十九–五十七: 寶鑑摘要, which is the 統宗's 起例 and a book of 占 with its cases
+
+Surveyed 2026-10-20, sheets 1117–1302. The juan were bracketed by
+`blanks.py` and every bracket was confirmed on the 版心 and on its closing
+leaf. 卷四十九 was read whole on the plate at 170 dpi, and the 置閏 passage at
+450. Three readers transcribed every worked case of 卷五十–五十七, a range of
+sheets each, to the brief in `texts/qimen/daquan-juan49-baojian/cases/`. Every
+passage quoted here was read again on the plate. The punctuation is ours.
+
+**Nine juan, and the work ends on 卷五十七.** The 目錄 gives 寶鑑摘要
+卷五十–五十七. The 版心 reads 寶鑑摘要 from 卷四十九 on, since 奇門秘訣 closed a
+juan early:
+
+| juan | sheets | what it holds, by its headings |
+|---|---|---|
+| 四十九 | 1117–1142 | 起例: the nine stars, the eight gates, the 三奇 and 六儀, the eight spirits, the 局 of the two dun, 八節, 三元, 符使, the 年, 月 and 日 boards, 超神接氣 and 置閏, then what the stars, gates and spirits stand for |
+| 五十 | 1143–1163 | 奇門吉格, from 奇門會合 to 五不擊 |
+| 五十一–五十二 | 1164–1204 | 八門臨時斷決, each gate over each palace with its hexagram |
+| 五十三 | 1205–1226 | verse and 賦: 漢陰居士歌, 神機賦, 指迷賦, 專征賦, 混合百神, then 天時 |
+| 五十四 | 1227–1246 | 十干尅應歌 and the war doctrine: 出兵方, 三勝地, 五不擊, 下營法 |
+| 五十五 | 1247–1266 | 奇門提要: 占地理, 占人物, 占晴雨, 占賊 |
+| 五十六–五十七 | 1267–1302 | 占 by matter, from 占伏兵 to 占行兵 |
+
+卷四十九終 is on sheet 1142, 卷五十五終 on 1266, 卷五十六終 on 1284 and
+卷五十七終 on 1302.
+
+**卷四十九 is the 統宗's 卷一–二 again.** Its 起例 runs heading for heading as
+《奇門遁甲統宗》卷二 does, which the shelf already holds as 《御定奇門寶鑑》卷二
+and in 遁甲集成 第四冊, and it closes on the 統宗卷一's 置閏法 with the Kangxi
+example. So it is one more copy of one text, and what it buys is the collation.
+The 甲午 slip stands here too, 「去符頭甲午日共超七日」 on sheet 1131, so the
+slip is upstream of every print. Its own variants are of the ordinary kind,
+read at 450 dpi:
+
+- 「至五十七年五月二十四日壬申卯初二刻夏至十五日即為甲子上元」, where the
+  統宗 has 十六日. Two columns later the same passage writes 「自十六日甲子」,
+  and the engine puts 甲子 on 五月十六, so 十五 is this print's slip.
+- 「至十五日而芒種上中下三局已足矣」, where the 統宗 has 「至十六日為」. Three
+  blocks of five from 初一 end on 十五, so here this print's reading is the
+  one the count wants.
+- 「六月初二日卯日始得夏至上局」, the 己 of 己卯 dropped; 「正局」 for 正授.
+
+The count is unchanged: the passage still counts its nine days inclusively,
+the engine is still one day loose against it, and it is still one passage. The
+section "置閏 has a dated worked example, and it moves the pin by a day" is
+where that stands.
+
+**It states the default seat of the spirits.** Sheet 1123:
+
+> 小直符加大直符法：以最上盤之直符加于九星直符所臨之宮，次即螣蛇以至九天，陽順陰逆。
+
+The 統宗 has it on its 卷二, read on the plate in the 故宮 copy at series p. 8:
+「以最上盤之值符加於九星值符所臨之宮，次即騰蛇以至九天，陽順陰逆」. The spirit
+值符 goes where the star 值符 has gone, at every hour, which is `spiritSeat:
+tianpan`. So `tianpan` is held by the 統宗 as a rule, beside the hour tables of
+卷五–十 that lay it.
+
+**And its cases split on that seat.** 卷五十五–五十七 work 31 cases, each naming
+a 局 and an hour and then where things stand; 卷五十三 works one more. The
+engine's step functions lay every one of them
+(`texts/qimen/daquan-juan49-baojian/check/board.mjs`). Nearly every star,
+gate and stem they place is where the engine puts it. Four name a spirit at a
+己 to 癸 hour where the two seats differ:
+
+| case | sheet | what it says | `tianpan` | `yinshi` |
+|---|---|---|---|---|
+| 陰遁九局 辛巳, 占婚姻 | 1274L | 「庚在九宮六合亦在九宮」 | 六合 in 9 | 玄武 |
+| 陽遁九局 庚辰, 占走失 | 1278R | 「六合在坎一宮」 | 六合 in 1 | 值符 |
+| 陽遁四局 癸卯, 占上官吉凶 | 1269L | 「六乙休門如太陰宮為重詐」 | 乙 and 休門 in 1 with 勾陳 | 太陰 with them |
+| 陰遁一局 壬戌, 占失物 | 1279L | 「甲子戊到三宮不見元武」 | 玄武 in 3 | 六合 |
+
+Two lay the seat the work states and two lay the 奇門秘訣's. The two that agree
+with `yinshi` were read on the plate and read as transcribed. A work that states
+one rule and draws boards by both is not a second witness to either, so no rung
+moves. The split is recorded against the row of `spiritSeat: yinshi`. The two
+for `tianpan` fall at 庚 and 辛 hours and the two for `yinshi` at 壬 and 癸;
+four boards are too few to make that a third rule, and it is recorded as it
+falls.
+
+**Two of the cases lay readings the engine computes as a choice.** 陰二局 丙子,
+1270R, reads 「六丁臨一宮」. 丁 is the centre's stem, and it reaches 坎 only by
+riding the turn with 坤's 戊, which is `centreStem: host`, the reading of the
+hour tables of 卷五–十. And the case that closes 漢陰居士歌, below, is laid
+with the centre lodged in 艮. One case disagrees with every value: 陽二局 丙午,
+1269L, puts 「六庚加地盤九宮」 where 庚 stands over 坎.
+
+**漢陰居士歌 lodges the centre by the dun, and that is `centreLodging: dun`.**
+Sheets 1205–1207, read at 170 dpi and doubtful characters at 400:
+
+> 休使蓬符居坎水，任生艮土寄陰禽，衝陽震木從三起，巽藏杜輔景英離，坤寄陽禽芮死隨，柱驚七兌開心六
+
+The verse walks the nine stars and the eight gates round their palaces and
+puts the centre's 禽 in 艮 under yin and in 坤 under yang. That is the reading
+《御定奇門寶鑑》 reports of a variant copy, 「一本陰遁寄艮，陽遁寄坤」, now stated
+by a text as its own. It then works one board:
+
+> 假令中元用白露，陰起三宮，甲子戊己庚辛壬癸逆行，乙丙丁奇四五六。時如己日用丙寅，支遁於蓬，干在禽，即以直符衝到艮，坎加直使是傷門，丁休六合同臨兌
+
+白露中元 is 陰遁三局, and 丙 stands in the centre on its earth plate. Lodged in
+艮 under `dun`, the engine sends the 值符 天衝 to 艮, the 值使 傷門 to 坎, and
+puts 丁, 休門 and 六合 together in 兌, all four as the verse has them. Under
+`kun` the 值符 would go to 坤 and none of the three would stand in 兌. So the
+verse is a holder of `dun`, by attribution and by a board, and enters
+`WITNESSES` as `hanyinjushi`; the 寶鑑 stays beside it as the reporter. It is one
+witness, so the row stays on rung 5.
+
+The same verse states 置閏 before the solstices, 「置閏須于二至前，雪重用巽種重
+乾，凡遁九日或十日疊作三元」, with nine or ten days and the count unsaid. It
+also prints 「陰局逆儀奇順行，陽局逆奇儀順布」 with 逆 in both clauses, read at
+400 dpi, which is a slip: the yang half lays the 儀 forward.
+
+**The rest is 占 and omen.** 卷五十–五十二 name 格 and read a gate over a
+palace; 卷五十四's 出兵方 divides the hours as the 奇門秘訣 does,
+「陽時宜從天盤直符下出兵，陰時宜從地盤直符下出兵」, but for a direction to march
+and not for a seat. 卷五十五–五十七 read matters off the board and hold no 起例.
+
+**So 寶鑑摘要 states the 統宗's 起例 and adds three things to the register**:
+the 統宗 as a holder of `spiritSeat: tianpan`, a holder for `centreLodging:
+dun`, and four boards that split on the seat of the spirits. Read for a 起例
+are 卷一 and 卷五 to 卷五十七. 卷二 to 卷四 of 景祐秘纂 are not.
 
 Last checked 2026-10-20.
 

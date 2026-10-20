@@ -287,8 +287,8 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   centreLodging: {
     board: 'qimen',
     family: 'shijia',
-    // Five readings of which palace the centre is read in. Two are held and
-    // three are known only from a text that sets the reading out and argues
+    // Five readings of which palace the centre is read in. Three are held and
+    // two are known only from a text that sets the reading out and argues
     // it down, which `reportedBy` says and a board laid on one of them repeats.
     // See `docs/sources.md` § "The 折衷 on the plate, chapter by chapter".
     label: 'form.qimen.centreLodging',
@@ -303,12 +303,14 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         // lays all eighteen 局 on it, hour by hour.
         heldBy: ['tongzong', 'fuyingjing', 'qimendaquan'],
       },
-      // Yang to 坤, yin to 艮: the imperial print's 一本.
+      // Yang to 坤, yin to 艮: the imperial print's 一本, and the 《漢陰居士歌》's
+      // own rule — 「任生艮土寄陰禽…坤寄陽禽」 — with a 陰遁三局 board worked on it.
       {
         id: 'dun',
         says: 'form.qimen.centreLodging.dun',
         note: 'form.qimen.centreLodging.note',
         implemented: true,
+        heldBy: ['hanyinjushi'],
         reportedBy: ['baojian'],
       },
       // Yang to 艮, yin to 坤: 「元經又謂陽遁寄艮，陰遁寄坤」, as the 折衷 quotes.
@@ -567,9 +569,11 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.spiritSeat.tianpan',
         note: 'form.qimen.spiritSeat.note',
         implemented: true,
-        // 《御定奇門大全》卷五–十: 38 of the 39 spirit claims that tell the two
-        // seats apart, at a 己 to 癸 hour.
-        heldBy: ['qimendaquan'],
+        // 「小值符加大值符法：以最上盤之值符加於九星值符所臨之宮，次即騰蛇以至
+        // 九天，陽順陰逆」, 《奇門遁甲統宗》卷二, printed again in 《御定奇門大全》
+        // 卷四十九; and the same compilation's 卷五–十 lay 38 of the 39 spirit
+        // claims that tell the two seats apart, at a 己 to 癸 hour.
+        heldBy: ['tongzong', 'qimendaquan'],
       },
       // 「如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符」, the
       // 奇門秘訣's commentary on the 釣叟歌, 《御定奇門大全》卷四十七.

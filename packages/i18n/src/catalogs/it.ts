@@ -1488,7 +1488,7 @@ export const it: Record<MessageKey, string> = {
   'form.qimen.centreLodging': 'Il palazzo centrale alloggia',
   'form.qimen.centreLodging.kun': 'sempre in 坤 kūn, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
   'form.qimen.centreLodging.dun':
-    'in 坤 kūn in una carta yang e in 艮 gèn in una carta yin, lettura che il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn riporta da una copia variante',
+    'in 坤 kūn in una carta yang e in 艮 gèn in una carta yin, come nel 《漢陰居士歌》 hànyīnjūshìgē; il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn la riporta da una copia variante',
   'form.qimen.centreLodging.dunni':
     'in 艮 gèn in una carta yang e in 坤 kūn in una carta yin, lettura che il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng riporta come di un testo più antico',
   'form.qimen.centreLodging.bajie':
@@ -1496,7 +1496,7 @@ export const it: Record<MessageKey, string> = {
   'form.qimen.centreLodging.siyu':
     'in uno dei quattro palazzi d’angolo, un angolo per stagione, lettura che il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng riporta come di un altro maestro',
   'form.qimen.centreLodging.note':
-    'Il palazzo centrale non ha una direzione e non ha una porta propria. Ciò che il conteggio vi colloca si legge perciò in un altro palazzo, e prende con sé la porta di quel palazzo. Lo scaffale conserva cinque letture di quale palazzo sia. Tre delle cinque sono note soltanto da un testo che espone la lettura e poi la contesta.',
+    'Il palazzo centrale non ha una direzione e non ha una porta propria. Ciò che il conteggio vi colloca si legge perciò in un altro palazzo, e prende con sé la porta di quel palazzo. Lo scaffale conserva cinque letture di quale palazzo sia. Due delle cinque sono note soltanto da un testo che espone la lettura e poi la contesta.',
   'form.qimen.earthPlate': 'Il piatto terra si stende',
   'form.qimen.earthPlate.yuan':
     'una volta per le sessanta ore di un 元 yuán, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',

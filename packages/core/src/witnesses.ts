@@ -164,6 +164,15 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '奇門秘訣', pinyin: 'qíménmìjué' },
   },
+  /**
+   * 《漢陰居士歌》, a verse 起例 printed in 《御定奇門大全》卷五十三 among the
+   * 寶鑑摘要: it lodges the centre in 坤 under yang and in 艮 under yin —
+   * 「任生艮土寄陰禽…坤寄陽禽」 — and works one board by it.
+   */
+  hanyinjushi: {
+    kind: 'transmitted',
+    name: { hanzi: '漢陰居士歌', pinyin: 'hànyīnjūshìgē' },
+  },
   /** 《奇門遁甲全局》, the circular plates that keep 白虎 at the fifth seat. */
   quanju: {
     kind: 'transmitted',

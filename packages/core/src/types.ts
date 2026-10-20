@@ -193,8 +193,9 @@ export interface ChartOptions {
    * Where the 值符 spirit is seated, which the other seven follow round.
    *
    * `tianpan` seats it where the heaven-plate 值符 lands, at every hour: the
-   * palace of the hour's stem on the earth plate. It is what the hour tables
-   * of 《御定奇門大全》卷五–十 lay — of the 39 spirit claims there that tell the
+   * palace of the hour's stem on the earth plate. 《奇門遁甲統宗》卷二 states it
+   * as a rule, 「以最上盤之值符加於九星值符所臨之宮」, and the hour tables of
+   * 《御定奇門大全》卷五–十 lay it — of the 39 spirit claims there that tell the
    * two seats apart, 38 stand where this value puts them.
    *
    * `yinshi` keeps that seat at a 甲 to 戊 hour and moves it at a 己 to 癸
