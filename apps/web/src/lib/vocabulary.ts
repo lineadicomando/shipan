@@ -61,6 +61,7 @@ export const PATTERN_IDS = [
   'kongwang',
   'rumu',
   'menpo',
+  'gongpo',
   'jixing',
   'fuyin',
   'fanyin',

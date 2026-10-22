@@ -1719,7 +1719,11 @@ under the naming of the spirits alone.
 | `centreTravel: stay` | 《御定奇門寶鑑》, 《奇門遁甲統宗》 | the 值符 and 值使 read at 坤; the second in 「甲辰在中宮，寄於坤二，天禽為符，死門為使」 |
 | `centreTravel: travel` | 《奇門遁甲金鏡寶鑑》 | 「符使不必寄於二」 |
 | `centreLodging: kun`, `centreTravel: stay` | 《遁甲符應經》, beside the 統宗 | 「六戊在五宮，寄坤二」 on a yang board and 「直使在五宮，寄坤二西南」 on a yin one, each worked |
-| `dingTomb: gen` | 《奇門遁甲統宗》, 《吉凶格解》 | 「丁奇艮宮」, in its 奇門四十格; and the verse of 《御定奇門大全》卷五十八, 「六乙臨坤請避之，丙奇一位臨乾去…更忌丁奇居艮上」; added 2026-10-22 |
+| `dingTomb: gen` | 《奇門遁甲統宗》, 《吉凶格解》, 《奇門遁甲秘笈大全》, 《奇門秘訣》 | 「丁奇艮宮」, in its 奇門四十格; the verse of 《御定奇門大全》卷五十八, 「更忌丁奇居艮上」, and the same verse in the 秘笈大全, 「丁奇一位臨艮上」; and 三璋 in 奇門秘訣, 「六丁星奇下臨八宮」; added 2026-10-22 |
+| `yiTomb: kun` | 《奇門遁甲統宗》, 《遁甲符應經》, 《吉凶格解》 | 「乙奇坤宮」; 「六乙日奇臨二宮」, under 璋曰; 「六乙臨坤請避之」; added 2026-10-22 |
+| `yiTomb: qian` | 《奇門遁甲秘笈大全》, 《奇門秘訣》 | 「乙丙臨乾請避之」, 卷十五's verse, read on the 省思堂 plate; and 三璋's 「六乙日奇下臨六宮」, with 乙 in 二 called 非; added 2026-10-22 |
+| `menpo: menzhigong` | 《奇門遁甲統宗》, 《遁甲符應經》, 《奇門遁甲秘笈大全》 | 卷一 迫, eleven cells; the 符應經's thirteen cells, under a sentence naming the relation the other way; 「驚開三四休臨九…吉門被迫吉不就」; added 2026-10-22 |
+| `menpo: gongzhimen` | 《吉凶格解》 | 「門迫宮制門，宮迫門制宮」, and thirteen cells on each, 《御定奇門大全》卷五十九; added 2026-10-22 |
 | `stemPairs: jinhan` | 《金函玉鏡奇門遁甲秘笈全書》 | 卷二 十干克應訣, the eighty-one set out as its own, read at pp. 30–32 of the 1996 print; added 2026-10-16 |
 | `stemPairs: xianji` | 《御定奇門大全》 | the 干論 of 奇門仙機, 卷十四–十六, refused until six garbled cells are read |
 | `dingTomb: qian` | 《遁甲符應經》 | 「六丙月奇、六丁星奇在六宮」, under 璋曰, in both copies |
@@ -1797,13 +1801,6 @@ been:
   and a choice keyed to the matter is not one this engine makes.
 - **The leap block at any of the eight 節**, which asks for a judgement
   between a surplus and a shortfall.
-- **門迫 named for the gate that suffers.** 《吉凶格解》 calls the palace
-  controlling its gate 門迫 and the gate controlling its palace 宮迫, and lays
-  thirteen cells on each; the engine's `menpo` is the second. Recorded
-  2026-10-22 and put to the user. § "《御定奇門大全》卷五十八–五十九".
-- **乙 buried in 乾 with 丙**, which 《奇門遁甲秘笈大全》卷十五 states in a
-  verse and 奇門秘訣 quotes from 三璋. Recorded 2026-10-22 and put to the
-  user. Same section.
 
 Two more stood here until 2026-10-16 and are computed since, on the
 《御定奇門大全》's hour tables: which stem a star carries off 坤 when the centre
@@ -3163,8 +3160,11 @@ whose verse was read on the plate in the 省思堂 print, p. 223:
 That is the engine's thirteen, called 被迫. So two lines name the same two
 relations the opposite way round, and each lays its cells. Which cells carry
 the name 門迫, and its 凶, is a divergence between practitioners and not
-between copies. It is recorded, and the user decides whether it becomes a
-parameter.
+between copies. **It is `menpo` since 2026-10-22, on the user's word**:
+`menzhigong`, the default, names the gate controlling its palace 門迫, and
+`gongzhimen` names the palace controlling its gate 門迫 and marks the converse
+宮迫, both 凶 as the work gives them. The relation each palace reports is the
+same under both, and a test holds the marks to it.
 
 **入墓 is a verse here, and the same verse elsewhere moves 乙.** Sheet 1325R:
 
@@ -3189,9 +3189,13 @@ simplified transcription on the shelf reads 「丁奇乙未临艮土」 for
 「丁奇一位臨艮上」, two slips in seven characters on the line that carries a
 cell. The two recensions are not one line miscopied: each moves a different
 stem to the half-line 一位, and 奇門秘訣 gives 乙 in 乾 a reason. So 乙 in 乾
-now has a verse stating it and a commentator arguing for it, and is recorded
-as a reading the user decides on. The 秘笈大全 buries 丁 in 艮. It is not named
-a holder of `gen`, because a board under `gen` lays 乙 in 坤, which it does not.
+now has a verse stating it and a commentator arguing for it. **It is `yiTomb:
+qian` since 2026-10-22, on the user's word**, beside `kun`, the default. The
+two are an axis apart from `dingTomb`, since each text names the palace of
+each 奇. The 秘笈大全 buries 丁 in 艮. It is not named
+a holder of `gen` on the day the section was written, because a board under
+`gen` then laid 乙 in 坤. With 乙 an axis of its own it holds `gen`, and so does
+奇門秘訣's 三璋, 「六丁星奇下臨八宮」.
 
 **三奇得使 is stated here as the 符應經 states it.** Sheet 1318R:
 
@@ -3201,8 +3205,7 @@ That is 「甲戌甲午乙為使，甲子甲申丙為使，甲辰甲寅丁為使
 符應經, pairing for pairing, and the mnemonic is a line of the 煙波釣叟歌. No
 case is worked. The row of § "What is refused, and why"
 gives disagreement over the pairings as its reason, and the register names no
-work that pairs them otherwise. That row is owed a look when 三奇得使 is next
-taken up.
+work that pairs them otherwise. It was re-read the same day: § "三奇得使 re-read".
 
 **And two names the engine uses, used for something else.** 天網四張格, 1337L:
 「六癸加時干是也」, 癸 over the hour's stem, where `stemPairs: jinhan` names
@@ -3212,9 +3215,10 @@ engine give 庚 over 癸 as 大格 and 刑格 as 庚 over 己. The work disagree
 itself there, and the engine follows its entry.
 
 **So 吉凶格解 lays no board and defines nearly all the 格 the engine names as
-the engine names them.** It adds one holder of `dingTomb: gen`, and two readings
-the user decides on: 門迫 named for the gate that suffers, and 乙 buried in 乾.
-No rung moves. The 門迫 row stays on rung 3: the derivation is what it stands
+the engine names them.** It adds a holder of `dingTomb: gen`, and two readings
+built the same day on the user's word: 門迫 named for the gate that suffers,
+`menpo: gongzhimen`, and 乙 buried in 乾, `yiTomb: qian`. Each has a rung-5 row
+of its own. No existing rung moves. The 門迫 row stays on rung 3: the derivation is what it stands
 on, and which cells carry the name is a question about the name. The 入墓 row
 stays on rung 5. The work confirms 丙 and 丁 and the 擊刑 six, but its own
 summary adds 乾 to 乙, and the 秘笈大全 contests the 乙 cell. Read for a 起例
@@ -3222,6 +3226,76 @@ are 卷一 and 卷五 to 卷五十九. 卷二 to 卷四 of 景祐秘纂 are not,
 寶鏡圖, 卷六十–六十四, which was bracketed and not read: an almanac for choosing
 a day in 卷六十, then a leaf for each day of the sixty, each with a wheel of the
 gates and the twelve hours.
+
+Last checked 2026-10-22.
+
+### 三奇得使 re-read: the pairing is transmitted alike, and what is disputed is the name and the weight
+
+Re-read 2026-10-22, at the user's word, because the row of § "What is refused,
+and why" gave as its reason that the sources disagree on which pairings count,
+and the register named no source that pairs them otherwise. Every passage
+below was read on the plate.
+
+**Five transmitted works give one pairing.** A 奇 on the heaven plate over
+the 儀 of one of its two decades on the earth plate:
+
+| work | where | what it prints |
+|---|---|---|
+| 《奇門遁甲統宗》卷一, 奇門四十格 | 故宮珍本叢刊 第426冊 p. 12 | 「三奇得使　乙奇加甲午甲戌　丙奇加甲子甲申　丁奇加甲寅甲辰」 |
+| 《遁甲符應經》, under 葛洪 | 遁甲集成 第一冊 p. 409 | 「甲戌甲午乙為使，甲子甲申丙為使，甲辰甲寅丁為使」 |
+| 《遁甲演義》卷二 | 四庫 vol. 810 pp. 939–940 | the same three clauses, then 「乙為使者，乙奇加甲戌甲午；丙為使者，丙奇加甲子甲申也；丁為使者，丁奇加甲辰甲寅也」 |
+| 《吉凶格解》 | 《御定奇門大全》卷五十八, sheet 1318 | 「乙奇臨甲午甲戌，丙奇臨甲子甲申，丁奇臨甲辰甲寅」 |
+| the 煙波釣叟歌's line | quoted by 吉凶格解 and the 演義 | 「乙逢犬馬，丙鼠猴，六丁玉女騎龍虎」 in the first, 「乙馬逢犬」 in the second: the branches of the same six decades |
+
+So 乙 over 己 or 辛, 丙 over 戊 or 庚, 丁 over 壬 or 癸, in the engine's terms.
+No transmitted text on the shelf pairs them otherwise.
+
+**The cases that did not lay are one copy's.** The 演義 works the 葛洪 cases
+too, and its copy differs from the 符應經's on the 局 and the hour of two of
+them:
+
+> 假令陽遁九局甲己日庚午時，此時六乙日奇下臨三宮甲午，是為乙奇得使。假令陰遁三局丙辛日壬辰時，此時乙奇在杜門，下臨九宮甲午辛，亦為乙奇得使。假令陽遁九局乙庚日戊寅時，此時丁奇下臨四宮甲辰，是為丁奇得使。
+
+Laid by the engine's step functions
+(`texts/qimen/daquan-juan49-baojian/check/board.mjs`), all three come out as
+written: 乙 over 辛 in 三, 乙 over 辛 in 九, 丁 over 壬 in 四. Only the gate of
+the second disagrees, 開門 where the text has 杜門. 《奇門探索錄》 carries the
+符應經's copy, 陽遁三局 亥時 and 陽遁五局 丙午 and 己亥, which do not lay. So
+the 符應經's three contradicting cases are a corruption in one line of copies,
+and the 演義's are a second line that lays.
+
+**The 演義 qualifies the fortune of half the cells.** It continues:
+
+> 但乙奇加甲午辛乃青龍逃走，丙奇加甲申庚上乃熒入太白，丁奇加甲寅癸乃朱雀投江。凡此三者尚有微疵不吉，如遇本旬直符同臨其上，方可用之而吉也。
+
+Three of the six cells are also 凶 pairings the engine already marks. The
+work calls them 「不吉」 unless the decade's 直符 stands there too, and calls the
+configuration 「此時最吉」 before that.
+
+**The disagreement on the shelf is a modern one, and it is about what 得使
+means.** 張志春's 《奇門遁甲開悟之門》, p. 120:
+
+> 乙、丙、丁三奇在天盤，無論地盤六儀如何，只要門盤是值使門，就為「三奇得使」。
+
+That is a different rule: a 奇 in the palace the 值使 gate stands in, whatever
+is under it. At p. 375 the same author gives the transmitted pairing, objects
+that four of its six cells are 凶格, reports that 劉廣斌's 《奇門預測學》 drops the
+configuration altogether, and offers his own reading as 「我個人初步意見」,
+「還需在大量實踐中驗證」. Two more manuals were looked at in their transcriptions
+only, so neither is quoted: 幺學聲's 《奇門遁甲現代應用技術》 gives the 值使 rule
+without an argument, and 《神奇之門》, by the author of 開悟之門, names the 值使
+gate and then lists the transmitted pairing cell by cell.
+
+**So the refusal's reason, as written, does not hold.** Which pairings count is
+transmitted alike, by attribution and transcription, and a line that lays is
+now on the shelf. What is disputed is two other things. One is the rule
+itself, where a modern manual states a second reading and calls it
+provisional. The other is the fortune of three cells, which the 演義 makes
+conditional on a 直符 the engine could test. By § "The standard, stated once",
+the first is a parameter: a transmitted value held by five works, and a modern
+one held by one manual. The second is a question about `valence`, which
+carries only what the manuals hand down alike. Neither is built. Both wait on
+the user's word.
 
 Last checked 2026-10-22.
 
@@ -10143,7 +10217,7 @@ reopened, never quietly rewritten.
 
 | | Reason |
 |---|---|
-| 三奇得使 | the sources consulted disagree on which pairings count |
+| 三奇得使 | **re-read 2026-10-22, and the reason as written does not hold**: every transmitted text on the shelf pairs the 奇 with the decades alike, and what is disputed is what 得使 means and what it weighs. Waiting on the user's word. § "三奇得使 re-read" |
 | the 統宗's 六親 mapping | one late compilation, and it is interpretation from the first character |
 | counting the 泊宮 through the palaces | 《遁甲演義》 states it in four characters that admit two readings |
 | the month pillar a 春節 almanac prints | 五虎遁 reads the year stem, so `chunjie` moves the month with the year and reports a pillar no lichun almanac carries. Whether an almanac counting by the lunar new year prints that one or the solar one, no source consulted says. The rule is applied as stated and the consequence is pinned by a test, so that changing it has to be deliberate |

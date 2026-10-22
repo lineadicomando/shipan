@@ -9,6 +9,8 @@ export type PatternId =
   | 'kongwang'
   | 'rumu'
   | 'menpo'
+  // 宮迫, the gate controlling its palace, under `menpo: gongzhimen` alone.
+  | 'gongpo'
   | 'jixing'
   | 'fuyin'
   | 'fanyin'
@@ -152,6 +154,8 @@ const CONFIGURATIONS: Record<PatternId, { hanzi: string; pinyin: string; valence
   kongwang: { hanzi: '空亡', pinyin: 'kōngwáng', valence: 'jixiong' },
   rumu: { hanzi: '入墓', pinyin: 'rùmù', valence: 'xiong' },
   menpo: { hanzi: '門迫', pinyin: 'ménpò', valence: 'xiong' },
+  // 《吉凶格解》's 宮迫制格, 「主百事不吉」.
+  gongpo: { hanzi: '宮迫', pinyin: 'gōngpò', valence: 'xiong' },
   jixing: { hanzi: '擊刑', pinyin: 'jīxíng', valence: 'xiong' },
   fuyin: { hanzi: '伏吟', pinyin: 'fúyín', valence: 'xiong' },
   fanyin: { hanzi: '反吟', pinyin: 'fǎnyín', valence: 'xiong' },
@@ -339,17 +343,26 @@ const STRIKE: Record<string, number> = {
  * The palace each stem is buried in (入墓).
  *
  * Only these four appear on a plate and have a tomb named for them. The table
- * is transmitted rather than derived, and it does not agree with the twelve
- * stages: those put the tomb of 乙 at 戌, in the palace of Qian, while the
- * Qi Men tradition puts it in Kun with 甲. Some schools give 乙 both.
+ * is transmitted rather than derived. 丙 and 戊 are here; 乙 and 丁 are the
+ * cells texts part on, and each has a parameter of its own.
  *
- * 丁 is the cell two texts part on, and `dingTomb` says which is followed:
- * 艮 in the 統宗's 四十格, 乾 with 丙 in 《遁甲符應經》. See `DING_TOMB`.
+ * 乙 in 坤 does not agree with the twelve stages, which put the tomb of 乙 at
+ * 戌, in the palace of Qian: the 統宗, the 符應經 and 《吉凶格解》 put it in 坤
+ * with 甲, and the 秘笈大全's verse and 奇門秘訣's 三璋 in 乾. `yiTomb` says
+ * which. 《吉凶格解》's closing summary gives 乙 both, 「乙奇入二六」, and no
+ * value lays that.
+ *
+ * 丁 is 艮 in the 統宗's 四十格, 乾 with 丙 in 《遁甲符應經》: `dingTomb`.
  */
 const TOMB: Record<string, number> = {
-  yi: 2, //    乙 — 坤
   bing: 6, //  丙 — 乾
   wu: 6, //    戊 — 乾
+};
+
+/** Where 乙 is buried under each reading: 「六乙臨坤」, or 「乙丙臨乾」. */
+const YI_TOMB: Record<ChartOptions['yiTomb'], number> = {
+  kun: 2,
+  qian: 6,
 };
 
 /** Where 丁 is buried under each reading: 「丁奇艮宮」, or 「六丁星奇在六宮」. */
@@ -367,6 +380,10 @@ export interface PatternInput {
   hourGanzhi: Ganzhi;
   /** Which palace 丁 is buried in. The caller's to say; nothing here assumes one. */
   dingTomb: ChartOptions['dingTomb'];
+  /** Which palace 乙 is buried in, as `dingTomb` says 丁's. */
+  yiTomb: ChartOptions['yiTomb'];
+  /** Which relation of gate to palace carries the name 門迫. */
+  menpo: ChartOptions['menpo'];
   /** Which table of 十干克應 is laid. The caller's to say, as `dingTomb` is. */
   stemPairs: ChartOptions['stemPairs'];
   /**
@@ -399,8 +416,8 @@ export function findPatterns(input: PatternInput): Pattern[] {
   // What stands over each palace on the heaven plate: one stem, and a second
   // where the centre's rides with its host's.
   const above = overhead(input.heaven, input.carried);
-  found.push(...tombs(above, input.dingTomb));
-  found.push(...oppressedGates(input.gates));
+  found.push(...tombs(above, input.yiTomb, input.dingTomb));
+  found.push(...oppressedGates(input.gates, input.menpo));
   found.push(...struckInstruments(input.earth));
   found.push(...stemPairs(input.earth, above, input.stemPairs));
   found.push(...chanting(input.stars, input.gates));
@@ -433,10 +450,15 @@ function overhead(
   return carried ? [...all, carried] : all;
 }
 
-function tombs(above: { palace: number; stem: Stem }[], dingTomb: ChartOptions['dingTomb']): Pattern[] {
+function tombs(
+  above: { palace: number; stem: Stem }[],
+  yiTomb: ChartOptions['yiTomb'],
+  dingTomb: ChartOptions['dingTomb'],
+): Pattern[] {
   const found: Pattern[] = [];
   for (const { palace: number, stem } of above) {
-    const tomb = stem.id === 'ding' ? DING_TOMB[dingTomb] : TOMB[stem.id];
+    const tomb =
+      stem.id === 'ding' ? DING_TOMB[dingTomb] : stem.id === 'yi' ? YI_TOMB[yiTomb] : TOMB[stem.id];
     if (tomb === number) {
       found.push(mark('rumu', { palace: number }));
     }
@@ -445,7 +467,8 @@ function tombs(above: { palace: number; stem: Stem }[], dingTomb: ChartOptions['
 }
 
 /**
- * Gates standing in a palace whose element they control (門迫).
+ * Gates standing in a palace whose element they control (門迫), or, under
+ * `menpo: gongzhimen`, in a palace whose element controls theirs.
  *
  * Derived, not tabulated. The published list — the gates of metal in the
  * palaces of wood, the gate of water in the palace of fire, and so on — is
@@ -460,15 +483,24 @@ function tombs(above: { palace: number; stem: Stem }[], dingTomb: ChartOptions['
  * that is what it is: 門迫 is the name and the fortune the tradition attaches
  * to one of the five 門宮 relations, and the palace already reports which of
  * the five it is. Two spellings of one rule could disagree; one cannot.
+ *
+ * **Which of the two relations of control carries the name is a reading.**
+ * 《吉凶格解》 lays thirteen cells on each and names them the other way round,
+ * 「門迫宮制門，宮迫門制宮」, so under `gongzhimen` the palace controlling its
+ * gate is 門迫 and these thirteen are 宮迫. The relation each palace reports
+ * does not move.
  */
-function oppressedGates(gates: ByPalace<Gate>): Pattern[] {
+function oppressedGates(gates: ByPalace<Gate>, reading: ChartOptions['menpo']): Pattern[] {
   const found: Pattern[] = [];
   for (const [number, gate] of Object.entries(gates)) {
     const here = palace(Number(number));
-    const gateElement = palace(gate.home).element;
-    if (relationOf(gateElement, here.element).id === 'woke') {
-      found.push(mark('menpo', { palace: Number(number), layer: 'gate' }));
-    }
+    const relation = relationOf(palace(gate.home).element, here.element).id;
+    // 我剋: the gate controls its palace. 剋我: the palace controls its gate.
+    const named =
+      reading === 'menzhigong'
+        ? relation === 'woke' ? 'menpo' : undefined
+        : relation === 'kewo' ? 'menpo' : relation === 'woke' ? 'gongpo' : undefined;
+    if (named) found.push(mark(named, { palace: Number(number), layer: 'gate' }));
   }
   return found;
 }

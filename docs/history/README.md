@@ -99,6 +99,7 @@ phase.
 | 64 | [the seat of the spirits](64-the-seat-of-the-spirits.md) | done — the 奇門秘訣's seat of the spirits becomes `spiritSeat: yinshi`, computed, against the hour tables' `tianpan`: two works and not one, checked on the plate first |
 | 65 | [寶鑑摘要](65-the-baojian-zhaiyao.md) | done — 卷四十九–五十七 of the 大全: the 統宗's 起例 again, a holder for `spiritSeat: tianpan` and one for `centreLodging: dun`, and 32 worked cases laid against the engine |
 | 66 | [吉凶格解](66-the-jixiong-gejie.md) | done — 卷五十八–五十九 of the 大全: the 格 one by one, a holder for `dingTomb: gen`, and two readings put to the user, 門迫 named the other way round and 乙 buried in 乾 |
+| 67 | [門迫 and 乙's tomb](67-menpo-and-the-tomb-of-yi.md) | done — `menpo` and `yiTomb` built on the user's word, and the refusal of 三奇得使 re-read on the plate |
 
 ## The rest of the record
 

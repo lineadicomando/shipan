@@ -66,6 +66,7 @@ const READINGS: Readonly<Record<string, string>> = {
   年命: 'niánmìng',
   用神: 'yòngshén',
   門迫: 'ménpò',
+  宮迫: 'gōngpò',
   // The work the hexagram of a palace comes from and the chapter of it
   // that states the rule. Prose names both, and no board seats either:
   // what the engine carries is the sixty-four names, not their source.

@@ -306,6 +306,18 @@ export const qimenSchema = {
     .describe(
       'Which palace the stem ding is buried in (rumu). Default gen: the palace of gen, as the Qimen Dunjia Tongzong has it. qian: the palace of qian, where bing is buried too, as the Dunjia Fuyingjing has it. The two texts agree on yi and on bing. It moves that one mark and no plate; both values are computed and the chart says which it stands on.',
     ),
+  yi_tomb: z
+    .enum(['kun', 'qian'])
+    .optional()
+    .describe(
+      'Which palace the stem yi is buried in (rumu). Default kun: the palace of kun, as the Qimen Dunjia Tongzong, the Dunjia Fuyingjing and the Jixiong Gejie of the Yuding Qimen Daquan have it. qian: the palace of qian, beside bing, as the verse in the Qimen Dunjia Miji Daquan has it and the commentary in the Qimen Mijue argues. It moves that one mark and no plate, apart from ding_tomb; both values are computed and the chart says which it stands on.',
+    ),
+  menpo: z
+    .enum(['menzhigong', 'gongzhimen'])
+    .optional()
+    .describe(
+      'Which relation of a gate to its palace carries the name menpo, marked inauspicious. Default menzhigong: a gate whose element controls its palace\'s, as the Qimen Dunjia Tongzong, the cells of the Dunjia Fuyingjing and the Qimen Dunjia Miji Daquan have it. gongzhimen: a gate whose palace controls it, as the Jixiong Gejie of the Yuding Qimen Daquan has it; under it a gate controlling its palace is marked gongpo, inauspicious too. The relation each palace reports is the same under both; only the marks move. Both values are computed and the chart says which it stands on.',
+    ),
   stem_pairs: z
     .enum(['shared', 'jinhan'])
     .optional()
@@ -341,6 +353,8 @@ interface RawInput {
   earth_plate?: 'yuan' | 'xun' | undefined;
   centre_travel?: 'stay' | 'travel' | undefined;
   centre_stem?: 'centre' | 'host' | undefined;
+  yi_tomb?: 'kun' | 'qian' | undefined;
+  menpo?: 'menzhigong' | 'gongzhimen' | undefined;
   ding_tomb?: 'gen' | 'qian' | undefined;
   stem_pairs?: 'shared' | 'jinhan' | undefined;
   shensha?: 'xieji' | undefined;
@@ -392,6 +406,8 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
       centreTravel: raw.centre_travel,
       centreStem: raw.centre_stem,
       dingTomb: raw.ding_tomb,
+      yiTomb: raw.yi_tomb,
+      menpo: raw.menpo,
       stemPairs: raw.stem_pairs,
     },
     (parameter) => parameter.id.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`),
@@ -413,6 +429,8 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.centre_travel) options.centreTravel = raw.centre_travel;
   if (raw.centre_stem) options.centreStem = raw.centre_stem;
   if (raw.ding_tomb) options.dingTomb = raw.ding_tomb;
+  if (raw.yi_tomb) options.yiTomb = raw.yi_tomb;
+  if (raw.menpo) options.menpo = raw.menpo;
   if (raw.stem_pairs) options.stemPairs = raw.stem_pairs;
   if (raw.shensha) options.shensha = raw.shensha;
 

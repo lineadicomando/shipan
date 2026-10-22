@@ -708,9 +708,10 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.dingTomb.gen',
         note: 'form.qimen.dingTomb.note',
         implemented: true,
-        // The 統宗's 四十格, 「丁奇艮宮」, and the 吉凶格解's verse,
-        // 「更忌丁奇居艮上」, 《御定奇門大全》卷五十八.
-        heldBy: ['tongzong', 'jixionggejie'],
+        // The 統宗's 四十格, 「丁奇艮宮」; the 吉凶格解's verse, 「更忌丁奇居艮上」,
+        // 《御定奇門大全》卷五十八; the same verse in the 秘笈大全, 「丁奇一位臨艮
+        // 上」; and 奇門秘訣's 三璋, 「六丁星奇下臨八宮」.
+        heldBy: ['tongzong', 'jixionggejie', 'mijidaquan', 'qimenmijue'],
       },
       {
         id: 'qian',
@@ -722,6 +723,66 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
       },
     ],
     default: 'gen',
+  },
+  yiTomb: {
+    board: 'qimen',
+    family: 'shijia',
+    // The other cell of 入墓 texts part on: 乙 in 坤, against the twelve
+    // stages, or in 乾 with 丙. An axis apart from `dingTomb`, since each text
+    // names each 奇. See `docs/sources.md` § "《御定奇門大全》卷五十八–五十九".
+    label: 'form.qimen.yiTomb',
+    values: [
+      {
+        id: 'kun',
+        name: { hanzi: '坤', pinyin: 'kūn' },
+        says: 'form.qimen.yiTomb.kun',
+        note: 'form.qimen.yiTomb.note',
+        implemented: true,
+        // 「乙奇坤宮」, 「六乙日奇臨二宮」 under 璋曰, 「六乙臨坤請避之」.
+        heldBy: ['tongzong', 'fuyingjing', 'jixionggejie'],
+      },
+      {
+        id: 'qian',
+        name: { hanzi: '乾', pinyin: 'qián' },
+        says: 'form.qimen.yiTomb.qian',
+        note: 'form.qimen.yiTomb.note',
+        implemented: true,
+        // 「乙丙臨乾請避之」, 《奇門遁甲秘笈大全》卷十五; and 「三璋謂六乙日奇下臨
+        // 六宮…以二為墓者，非」, 奇門秘訣, 《御定奇門大全》卷四十七.
+        heldBy: ['mijidaquan', 'qimenmijue'],
+      },
+    ],
+    default: 'kun',
+  },
+  menpo: {
+    board: 'qimen',
+    family: 'shijia',
+    // Which relation of control carries the name 門迫: the cells and the
+    // relation each palace reports are the same under both. See
+    // `docs/sources.md` § "《御定奇門大全》卷五十八–五十九".
+    label: 'form.qimen.menpo',
+    values: [
+      {
+        id: 'menzhigong',
+        name: { hanzi: '門制宮', pinyin: 'ménzhìgōng' },
+        says: 'form.qimen.menpo.menzhigong',
+        note: 'form.qimen.menpo.note',
+        implemented: true,
+        // The 統宗卷一's 迫, eleven of the thirteen; the 符應經's cells, all
+        // thirteen; 「驚開三四休臨九…吉門被迫吉不就」, 秘笈大全卷十五.
+        heldBy: ['tongzong', 'fuyingjing', 'mijidaquan'],
+      },
+      // 「門迫宮制門，宮迫門制宮」, and thirteen cells on each, 《吉凶格解》.
+      {
+        id: 'gongzhimen',
+        name: { hanzi: '宮制門', pinyin: 'gōngzhìmén' },
+        says: 'form.qimen.menpo.gongzhimen',
+        note: 'form.qimen.menpo.note',
+        implemented: true,
+        heldBy: ['jixionggejie'],
+      },
+    ],
+    default: 'menzhigong',
   },
   // 十干克應, the stem above over the stem below. Three lines carry the
   // eighty-one, and they name them differently: a whole table is a line's, and

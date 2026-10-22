@@ -174,6 +174,8 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     'centreTravel',
     'centreStem',
     'dingTomb',
+    'yiTomb',
+    'menpo',
     'stemPairs',
     // The day board's, which this one does not read: a value nobody computes
     // is refused wherever it is asked, and never only where it would bite.
@@ -319,6 +321,8 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     dayStem: moment.pillars.day.stem,
     hourGanzhi,
     dingTomb: options.dingTomb,
+    yiTomb: options.yiTomb,
+    menpo: options.menpo,
     stemPairs: options.stemPairs,
     ...(rides === undefined ? {} : { carried: { palace: rides, stem: earth[5] as Stem } }),
   });

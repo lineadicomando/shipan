@@ -67,7 +67,7 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-22
 
-**Version 0.29.2**, in every manifest. **`main` is checked out and no branch
+**Version 0.30.0**, in every manifest. **`main` is checked out and no branch
 is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
 `main` carry since 2026-10-15 is of seven days:
 
@@ -136,6 +136,13 @@ is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
   乙 buried in 乾, which 《奇門遁甲秘笈大全》卷十五 states in another recension
   of the same verse, read on the 省思堂 plate. 寶鏡圖, 卷六十–六十四, was
   bracketed and not read. Renders in `texts/qimen/daquan-juan58-jixiong/`.
+- 2026-10-22, what it built (0.30.0): both readings, on the user's word, as
+  `menpo` (`menzhigong`, the default, and `gongzhimen`, which also marks
+  宮迫) and `yiTomb` (`kun`, the default, and `qian`), with the 秘笈大全 a
+  witness as `mijidaquan`. Then the refusal of 三奇得使 re-read on the plate:
+  the pairing is transmitted alike by five works, the 演義's copy of the 葛洪
+  cases lays, and the dispute is a modern second rule and the fortune of three
+  cells. Renders in `texts/qimen/daquan-juan58-jixiong/deshi/`.
 
 `main` is pushed to `origin/main` as of 2026-10-18; the commits of
 2026-10-19, 2026-10-20 and 2026-10-22 are not pushed, and pushing is the user's call.
@@ -144,18 +151,15 @@ test skipped, and again on 2026-10-22. **Run `npm run build` before `npm test`**
 a fresh tree: the MCP and web suites and the shelf's scripts import
 `packages/core/dist`, and a stale `dist` fails them on whatever changed.
 
-**What to do next, in the order the user has been taking it.** Two readings
-of 2026-10-22 wait on the user's word, and nothing else decided is left
-unbuilt.
+**What to do next, in the order the user has been taking it.** 三奇得使
+waits on the user's word, and nothing else decided is left unbuilt.
 
-0. **The user's word on two readings**, § "《御定奇門大全》卷五十八–五十九":
-   whether **門迫 named for the gate that suffers** (《吉凶格解》, cells on
-   `kewo`) becomes a value beside the engine's (`woke`: the 統宗, the 符應經's
-   cells, the 秘笈大全's verse); and whether **乙 buried in 乾 with 丙**
-   (《奇門遁甲秘笈大全》卷十五's verse, 奇門秘訣's 三璋) becomes a value of a
-   tomb parameter beside 乙 in 坤 (the 統宗, the 符應經, 吉凶格解). Each is two
-   lines with attribution and transcription. The second touches `dingTomb`,
-   whose two values are named for 丁's palace and say nothing of 乙's.
+0. **The user's word on 三奇得使**, § "三奇得使 re-read". Whether it is built
+   as a pattern on the transmitted pairing, the 奇 of the heaven plate over
+   the 儀 of one of its two decades; whether 開悟之門's rule, a 奇 with the
+   值使 gate, is a second value of a parameter, held by one modern manual that
+   calls it provisional; and what `valence` it carries, given that the 演義
+   calls three of its six cells 不吉 unless the decade's 直符 is there too.
 1. **Read on**: § 2 line 3, the 大全, for a 起例 variant. **寶鏡圖,
    卷六十–六十四, sheets 1365–1485**, stands next, bracketed on the 版心
    2026-10-22. It is not a 起例 of the hour board: 卷六十 is an almanac for
@@ -300,7 +304,8 @@ its row in `docs/sources.tsv` and its line in `texts/README.md`; phases 51 to
 - 2026-10-22: 吉凶格解, 卷五十八–五十九, surveyed and the 格 the engine
   computes read on the plate. Its 入墓 verse holds `dingTomb: gen`; its 門迫
   is the converse of the engine's, and the 秘笈大全's recension of the same
-  入墓 verse puts 乙 in 乾. Both put to the user. 寶鏡圖 bracketed (0.29.2).
+  入墓 verse puts 乙 in 乾. 寶鏡圖 bracketed (0.29.2). Both readings built
+  the same day as `menpo` and `yiTomb`, and 三奇得使's refusal re-read (0.30.0).
 
 **Left open by the reading of 2026-10-22**, each small and none blocking:
 吉凶格解's 釋吉格 — the 九遁, 三詐, 五假, 玉女守門 — seen at 50 dpi and not
@@ -418,17 +423,13 @@ nothing exposes. Only those with something to wait on:
   pass, where its 卷十三, its 奇門秘訣 卷四十六 and `MAX_CHAOSHEN` intercalate
   at nine. A text stating ten as its own rule, with nothing against it
   inside the same juan. **乙 buried in 乾**, which the same commentary
-  quotes from 三璋 and the 符應經 gives under 璋曰 in 坤: stated since
-  2026-10-22 by 《奇門遁甲秘笈大全》卷十五's verse, and put to the user, item
-  0 above. **門迫 named for the gate that suffers**, 《吉凶格解》's: item 0.
+  quotes from 三璋 and the 符應經 gives under 璋曰 in 坤: computed since
+  2026-10-22 as the 乾 value of `yiTomb`, on 《奇門遁甲秘笈大全》卷十五's verse.
   Which of the two stems in 坤 a stem coming to it stands over:
   the 符應經 marks a 格 by the centre's, one case, and a second witness names
   it. The heaven plate's side of the same question is `centreStem` since
-  2026-10-16. 三奇得使: the
-  符應經 has a rule and three cases of four that do not lay, and 《吉凶格解》
-  states the same pairing with no case. § "What is refused, and why" gives
-  disagreement over the pairings as the reason and the register names no
-  work that pairs them otherwise: the row is owed a look. The half-flown
+  2026-10-16. 三奇得使: re-read 2026-10-22,
+  item 0 above. The half-flown
   board wants a yin hour worked in any text. The board of a day wants a prompt
   of its own, the scan and the 年命.
 - **六壬.** The order of 涉害: a text holding either reading by name. The five

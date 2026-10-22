@@ -222,6 +222,8 @@ dunjia's.**
 | `centreTravel` | where the 值符 zhífú and the 值使 zhíshǐ are read when the count puts them on the centre: `stay` (lodged out to 坤, as 《御定奇門寶鑑》 has it), `travel` (in the fifth palace, as 《奇門遁甲金鏡寶鑑》 has it) | `stay` |
 | `centreStem` | where the centre's stem stands on the heaven plate once the plate has turned, on the turned plate only: `centre` (in the fifth palace), `host` (with the stem of the palace the centre lodges in, wherever that stem goes, as 《御定奇門大全》's hour tables read it) | `centre` |
 | `dingTomb` | the palace 丁 is buried in, for 入墓: `gen` (艮 gèn, as 《奇門遁甲統宗》 has it), `qian` (乾 qián, with 丙, as 《遁甲符應經》 has it) | `gen` |
+| `yiTomb` | the palace 乙 is buried in, for 入墓: `kun` (坤 kūn, as 《奇門遁甲統宗》, 《遁甲符應經》 and 《吉凶格解》 have it), `qian` (乾 qián, with 丙, as the verse in 《奇門遁甲秘笈大全》 has it and 奇門秘訣's 三璋 argues) | `kun` |
+| `menpo` | which relation of a gate to its palace is named 門迫: `menzhigong` (門制宮 ménzhìgōng — the gate controlling its palace, as 《奇門遁甲統宗》 and 《遁甲符應經》's cells have it), `gongzhimen` (宮制門 gōngzhìmén — the palace controlling its gate, as 《吉凶格解》 has it, which marks the converse 宮迫) | `menzhigong` |
 | `stemPairs` | which table of 十干克應 names a stem over the stem below: `shared` (the fourteen cells the texts name alike, a convention with no holder), `jinhan` (金函 jīnhán — 《金函玉鏡》卷二's table, eighty of its eighty-one cells, with its fortune only where it states one outright), `xianji` (仙機 xiānjī — 奇門仙機's 干論, refused until the cells its print garbles are read). It moves marks and no plate | `shared` |
 
 `method` is the most divisive parameter in the engine and it is not optional.

@@ -289,6 +289,7 @@ export const it: Record<MessageKey, string> = {
   'label.pattern.kongwang': 'vuoto',
   'label.pattern.rumu': 'in tomba',
   'label.pattern.menpo': 'porta oppressa',
+  'label.pattern.gongpo': 'palazzo oppresso',
   'label.pattern.jixing': 'strumento colpito',
   'label.pattern.fuyin': 'la scacchiera è tornata a casa',
   'label.pattern.fanyin': 'la scacchiera si è voltata',
@@ -1523,6 +1524,20 @@ export const it: Record<MessageKey, string> = {
     'nel palazzo di 乾 qián, insieme a 丙 bǐng, come nel 《遁甲符應經》 dùnjiǎfúyìngjīng',
   'form.qimen.dingTomb.note':
     'Un tronco è in tomba quando il giro del piatto lo porta nell’unico palazzo in cui la sua forza finisce, e la tavola segna quel palazzo. I due testi concordano sul palazzo di 乙 yǐ e su quello di 丙 bǐng. Per 丁 dīng il primo testo indica 艮 gèn e il secondo indica 乾 qián, dove è in tomba anche 丙 bǐng. La scelta sposta quel solo segno e nient’altro sulla tavola.',
+  'form.qimen.yiTomb': 'Il tronco 乙 yǐ è segnato in tomba quando sta',
+  'form.qimen.yiTomb.kun':
+    'nel palazzo di 坤 kūn, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng e nel 《遁甲符應經》 dùnjiǎfúyìngjīng',
+  'form.qimen.yiTomb.qian':
+    'nel palazzo di 乾 qián, insieme a 丙 bǐng, come nel verso del 《奇門遁甲秘笈大全》 qíméndùnjiǎmìjídàquán',
+  'form.qimen.yiTomb.note':
+    'Un tronco è in tomba quando il giro del piatto lo porta nell’unico palazzo in cui la sua forza finisce, e la tavola segna quel palazzo. Quasi tutti i testi mettono la tomba di 乙 yǐ in 坤 kūn. Un verso la mette in 乾 qián, accanto alla tomba di 丙 bǐng, e il commento del 《奇門秘訣》 qíménmìjué sostiene lo stesso palazzo. La scelta sposta quel solo segno e nient’altro sulla tavola.',
+  'form.qimen.menpo': 'Il nome 門迫 ménpò spetta a una porta',
+  'form.qimen.menpo.menzhigong':
+    'che controlla il palazzo in cui sta, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
+  'form.qimen.menpo.gongzhimen':
+    'che il palazzo in cui sta controlla, come nel 《吉凶格解》 jíxiōnggéjiě, che chiama 宮迫 gōngpò una porta che controlla il proprio palazzo',
+  'form.qimen.menpo.note':
+    'Ogni palazzo dice in che rapporto stanno l’elemento della sua porta e il proprio, e questo rapporto è lo stesso nelle due letture. Le due letture danno il nome 門迫 ménpò a rapporti diversi. La prima lettura lo dà a una porta che controlla il proprio palazzo. La seconda lo dà a una porta controllata dal proprio palazzo, e chiama 宮迫 gōngpò una porta che controlla il proprio palazzo. La scelta sposta quei segni e nient’altro sulla tavola.',
   'form.qimen.stemPairs': 'Un tronco sopra il tronco sottostante si nomina',
   'form.qimen.stemPairs.shared': 'solo dove i testi lo nominano allo stesso modo: quattordici celle su ottantuno',
   'form.qimen.stemPairs.jinhan':
@@ -1835,6 +1850,8 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.strengths': 'Da che cosa si leggono i cinque stati stagionali.',
   'notes.parameter.earth': 'Dove comincia la stagione della terra.',
   'notes.parameter.dingTomb': 'In quale palazzo il tronco 丁 dīng è in tomba.',
+  'notes.parameter.yiTomb': 'In quale palazzo il tronco 乙 yǐ è in tomba.',
+  'notes.parameter.menpo': 'Quale rapporto tra una porta e il suo palazzo si chiama 門迫 ménpò.',
   'notes.parameter.stemPairs': 'Quale tavola del 十干克應 shígānkèyìng nomina un tronco sopra un tronco.',
   'notes.parameter.centreTravel': 'Dove si leggono il capo e la porta del capo quando cadono sul palazzo centrale.',
   'notes.parameter.centreStem': 'Dove sta il tronco del palazzo centrale quando i tronchi sopra i palazzi girano.',

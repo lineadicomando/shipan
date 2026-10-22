@@ -183,6 +183,15 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '吉凶格解', pinyin: 'jíxiōnggéjiě' },
   },
+  /**
+   * 《奇門遁甲秘笈大全》, 題 劉伯溫 輯, read in the 省思堂 woodblock: its 卷十五
+   * buries 乙 with 丙 in 乾 and 丁 in 艮, and names the gate controlling its
+   * palace 被迫.
+   */
+  mijidaquan: {
+    kind: 'transmitted',
+    name: { hanzi: '奇門遁甲秘笈大全', pinyin: 'qíméndùnjiǎmìjídàquán' },
+  },
   /** 《奇門遁甲全局》, the circular plates that keep 白虎 at the fifth seat. */
   quanju: {
     kind: 'transmitted',

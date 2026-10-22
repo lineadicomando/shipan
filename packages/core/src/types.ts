@@ -312,6 +312,37 @@ export interface ChartOptions {
   dingTomb: 'gen' | 'qian';
 
   /**
+   * The palace 乙 is buried in (入墓).
+   *
+   * `kun` is the 統宗's 「乙奇坤宮」, the 符應經's 「六乙日奇臨二宮」 and the verse
+   * of 《吉凶格解》, 「六乙臨坤請避之」: the cell that parts from the twelve
+   * stages. `qian` is the same verse as 《奇門遁甲秘笈大全》卷十五 prints it,
+   * 「乙丙臨乾請避之」, and 奇門秘訣's 三璋, who rejects 乙 in 二 for a stem
+   * buried by its own polarity: 乙 with 丙 in 乾, where the twelve stages put
+   * the tomb of 乙 at 戌.
+   *
+   * It moves one mark and no plate, as `dingTomb` does, and the two are axes
+   * apart: each text names the palace of each 奇.
+   */
+  yiTomb: 'kun' | 'qian';
+
+  /**
+   * Which relation of a gate to its palace is named 門迫.
+   *
+   * `menzhigong` is the gate controlling its palace, the thirteen cells
+   * `menpo` derives: the 統宗卷一's list, the cells of 《遁甲符應經》 and the
+   * verse of 《奇門遁甲秘笈大全》卷十五, 「驚開三四休臨九…吉門被迫吉不就」.
+   * `gongzhimen` is 《吉凶格解》's, 《御定奇門大全》卷五十八–五十九: 「門迫宮制門，
+   * 宮迫門制宮」. Under it the palace controlling its gate is 門迫, and the
+   * gate controlling its palace is marked too, as 宮迫, which the same work
+   * calls 宮迫制格 and gives 「主百事不吉」.
+   *
+   * It moves marks and no plate: the relation each palace reports is the same
+   * under both, and only the name it carries changes.
+   */
+  menpo: 'menzhigong' | 'gongzhimen';
+
+  /**
    * Which table of 十干克應 names the stem of the heaven plate over the stem
    * below it.
    *
@@ -373,6 +404,8 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   centreTravel: 'stay',
   centreStem: 'centre',
   dingTomb: 'gen',
+  yiTomb: 'kun',
+  menpo: 'menzhigong',
   stemPairs: 'shared',
   shensha: 'xieji',
 });

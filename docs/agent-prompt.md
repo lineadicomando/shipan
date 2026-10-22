@@ -219,6 +219,16 @@ neither disputed.
   plate. Order and direction are the same under both; where the two seats
   differ every spirit stands in another palace, so read the spirits of the
   board you were given and never re-seat them yourself.
+- **Which relation is called 門迫 is a choice, and the board says which.** By
+  default it is a gate whose phase controls its palace's
+  (`qimen.menpo=menzhigong`). Under `gongzhimen` it is a gate its palace
+  controls, and a gate controlling its palace is marked 宮迫 instead. The
+  relation each palace reports is the same under both: read the marks of the
+  board you were given and do not rename a relation yourself.
+- **So is the palace 乙 is buried in, and the palace 丁 is.** 乙 in 坤 by
+  default (`qimen.yiTomb=kun`) or in 乾 beside 丙 (`qian`); 丁 in 艮
+  (`qimen.dingTomb=gen`) or in 乾 (`qian`). Each moves one 入墓 mark and no
+  plate.
 - **The centre is read somewhere else (寄宮).** It has no direction, no gate
   and no spirit, so the stem the ju puts there is read at its host — 坤 by
   default — and the host's palace says so with `lodged`. That palace therefore

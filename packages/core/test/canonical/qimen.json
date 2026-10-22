@@ -156,6 +156,8 @@
         "centreTravel": "stay",
         "centreStem": "centre",
         "dingTomb": "gen",
+        "yiTomb": "kun",
+        "menpo": "menzhigong",
         "stemPairs": "shared",
         "shensha": "xieji"
       },
@@ -2025,6 +2027,8 @@
       "centreTravel": "stay",
       "centreStem": "centre",
       "dingTomb": "gen",
+      "yiTomb": "kun",
+      "menpo": "menzhigong",
       "stemPairs": "shared",
       "shensha": "xieji"
     }
@@ -2185,6 +2189,8 @@
         "centreTravel": "stay",
         "centreStem": "centre",
         "dingTomb": "gen",
+        "yiTomb": "kun",
+        "menpo": "menzhigong",
         "stemPairs": "shared",
         "shensha": "xieji"
       },
@@ -4047,6 +4053,8 @@
       "centreTravel": "stay",
       "centreStem": "centre",
       "dingTomb": "gen",
+      "yiTomb": "kun",
+      "menpo": "menzhigong",
       "stemPairs": "shared",
       "shensha": "xieji"
     }

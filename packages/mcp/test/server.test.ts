@@ -167,6 +167,17 @@ describe('draw_qimen_chart, for a board of the day', () => {
 });
 
 describe('compute_qimen_chart', () => {
+  it('names 門迫 by the palace controlling its gate when menpo asks for it', async () => {
+    // 「門迫宮制門，宮迫門制宮」, 《吉凶格解》.
+    const at = { ...BEIJING, date: '2026-01-30', time: '09:30', lang: 'en' };
+    const gong = await call('compute_qimen_chart', { ...at, menpo: 'gongzhimen', yi_tomb: 'qian' });
+    const ming = await call('compute_qimen_chart', at);
+
+    expect(gong).toContain('that the palace it stands in controls');
+    expect(gong).toContain('in the palace of 乾 qián, with 丙 bǐng');
+    expect(ming).toContain('that controls the palace it stands in');
+  });
+
   it('seats the spirits from the earth plate at a yin hour when spirit_seat asks for it', async () => {
     // 己巳, an hour the 奇門秘訣 calls yin: 「看地盤直符坐何宮，即於何宮起直符」.
     const at = { ...BEIJING, date: '2026-01-30', time: '09:30', lang: 'en' };

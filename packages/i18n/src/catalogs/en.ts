@@ -295,6 +295,7 @@ export const en = {
   'label.pattern.kongwang': 'void',
   'label.pattern.rumu': 'entombed',
   'label.pattern.menpo': 'gate oppressed',
+  'label.pattern.gongpo': 'palace oppressed',
   'label.pattern.jixing': 'instrument struck',
   'label.pattern.fuyin': 'the board come home',
   'label.pattern.fanyin': 'the board turned about',
@@ -1652,6 +1653,20 @@ export const en = {
     'in the palace of 乾 qián, with 丙 bǐng, as 《遁甲符應經》 dùnjiǎfúyìngjīng has it',
   'form.qimen.dingTomb.note':
     'A stem is entombed when the turn of the plate carries it to the one palace where its strength ends, and the board marks that palace. The two texts agree on the palace of 乙 yǐ and on the palace of 丙 bǐng. For 丁 dīng the first text names 艮 gèn and the second names 乾 qián, where 丙 bǐng is entombed too. The choice moves that one mark and nothing else on the board.',
+  'form.qimen.yiTomb': 'The stem 乙 yǐ is marked entombed when it stands',
+  'form.qimen.yiTomb.kun':
+    'in the palace of 坤 kūn, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng and 《遁甲符應經》 dùnjiǎfúyìngjīng have it',
+  'form.qimen.yiTomb.qian':
+    'in the palace of 乾 qián, with 丙 bǐng, as the verse in 《奇門遁甲秘笈大全》 qíméndùnjiǎmìjídàquán has it',
+  'form.qimen.yiTomb.note':
+    'A stem is entombed when the turn of the plate carries it to the one palace where its strength ends, and the board marks that palace. Most texts put the tomb of 乙 yǐ in 坤 kūn. One verse puts it in 乾 qián, beside the tomb of 丙 bǐng, and the commentary in 《奇門秘訣》 qíménmìjué argues for the same palace. The choice moves that one mark and nothing else on the board.',
+  'form.qimen.menpo': 'The name 門迫 ménpò is given to a gate',
+  'form.qimen.menpo.menzhigong':
+    'that controls the palace it stands in, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
+  'form.qimen.menpo.gongzhimen':
+    'that the palace it stands in controls, as 《吉凶格解》 jíxiōnggéjiě has it, which names a gate controlling its palace 宮迫 gōngpò',
+  'form.qimen.menpo.note':
+    'Each palace reports how the element of its gate and its own element stand to each other, and that report is the same under both readings. The two readings give the name 門迫 ménpò to different relations. The first reading gives the name to a gate that controls its palace. The second gives it to a gate that its palace controls, and gives a gate that controls its palace the name 宮迫 gōngpò. The choice moves those marks and nothing else on the board.',
   'form.qimen.stemPairs': 'A stem over the stem below it is named',
   'form.qimen.stemPairs.shared': 'only where the texts name it alike, fourteen cells of eighty-one',
   'form.qimen.stemPairs.jinhan':
@@ -2077,6 +2092,8 @@ export const en = {
   'notes.parameter.strengths': 'What the five seasonal states are read from.',
   'notes.parameter.earth': 'Where earth’s season begins.',
   'notes.parameter.dingTomb': 'Which palace the stem 丁 dīng is entombed in.',
+  'notes.parameter.yiTomb': 'Which palace the stem 乙 yǐ is entombed in.',
+  'notes.parameter.menpo': 'Which relation of a gate to its palace is named 門迫 ménpò.',
   'notes.parameter.stemPairs': 'Which table of 十干克應 shígānkèyìng names a stem over a stem.',
   'notes.parameter.centreTravel': 'Where the chief and the chief gate are read when they fall on the central palace.',
   'notes.parameter.centreStem': 'Where the stem of the central palace stands when the stems above the palaces turn.',

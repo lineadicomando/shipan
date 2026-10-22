@@ -362,6 +362,82 @@ describe('入墓 — where 丁 is buried', () => {
   });
 });
 
+describe('入墓 — where 乙 is buried', () => {
+  const laid = (date: string, time: string, yiTomb: ChartOptions['yiTomb']): QimenChart => {
+    const options: ChartOptions = { ...CLOCK, method: 'chaibu', yiTomb };
+    return computeQimenChart(
+      resolveMoment({ date, time, timezone: 'Asia/Shanghai' }, BEIJING, options, context),
+      options,
+    );
+  };
+  const heavenOf = (chart: QimenChart, stem: string): number | undefined =>
+    chart.palaces.find((cell) => cell.heaven.hanzi === stem)?.palace.number;
+
+  it('marks 乙 over 坤 under the 統宗 and over 乾 under the 秘笈大全, and nothing else moves', () => {
+    // 「六乙臨坤請避之」 against 「乙丙臨乾請避之」.
+    let overKun = 0;
+    let overQian = 0;
+    for (let day = 1; day <= 20; day += 1) {
+      for (let hour = 0; hour < 24; hour += 2) {
+        const date = `2021-05-${String(day).padStart(2, '0')}`;
+        const time = `${String(hour).padStart(2, '0')}:30`;
+        const kun = laid(date, time, 'kun');
+        const qian = laid(date, time, 'qian');
+        const yi = heavenOf(kun, '乙');
+        const expected = idsOf(kun, 'rumu');
+        if (yi === 2) {
+          expected.splice(expected.indexOf(2), 1);
+          overKun += 1;
+        }
+        if (yi === 6) {
+          expected.push(6);
+          overQian += 1;
+        }
+        expect(idsOf(qian, 'rumu').sort()).toEqual(expected.sort());
+        expect(qian.palaces.map((cell) => cell.heaven.hanzi)).toEqual(
+          kun.palaces.map((cell) => cell.heaven.hanzi),
+        );
+      }
+    }
+    expect(overKun).toBeGreaterThan(0);
+    expect(overQian).toBeGreaterThan(0);
+  });
+});
+
+describe('門迫 — which relation carries the name', () => {
+  const laid = (date: string, time: string, menpo: ChartOptions['menpo']): QimenChart => {
+    const options: ChartOptions = { ...CLOCK, method: 'chaibu', menpo };
+    return computeQimenChart(
+      resolveMoment({ date, time, timezone: 'Asia/Shanghai' }, BEIJING, options, context),
+      options,
+    );
+  };
+
+  it('names the palace controlling its gate 門迫 and the converse 宮迫 under 吉凶格解', () => {
+    // 「門迫宮制門，宮迫門制宮」.
+    let seen = 0;
+    for (const date of ['2005-05-05', '2015-08-08', '2022-02-22', '2024-06-15']) {
+      for (const hour of ['01:00', '09:00', '14:00', '23:30']) {
+        const ming = laid(date, hour, 'menzhigong');
+        const gong = laid(date, hour, 'gongzhimen');
+        expect(idsOf(ming, 'gongpo')).toEqual([]);
+        expect(gong.palaces.map((cell) => cell.gateRelation?.id)).toEqual(
+          ming.palaces.map((cell) => cell.gateRelation?.id),
+        );
+        for (const cell of gong.palaces) {
+          if (!cell.gate) continue;
+          const at = cell.palace.number;
+          expect(idsOf(gong, 'menpo').includes(at)).toBe(cell.gateRelation?.id === 'kewo');
+          expect(idsOf(gong, 'gongpo').includes(at)).toBe(cell.gateRelation?.id === 'woke');
+          expect(idsOf(gong, 'gongpo').includes(at)).toBe(idsOf(ming, 'menpo').includes(at));
+          if (cell.gateRelation?.id === 'kewo') seen += 1;
+        }
+      }
+    }
+    expect(seen).toBeGreaterThan(0);
+  });
+});
+
 describe('ganzhiFrom', () => {
   it('is the inverse of the pair it names', () => {
     // Used by the unmet-hour table above; worth its own line.
