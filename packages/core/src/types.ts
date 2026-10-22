@@ -125,17 +125,22 @@ export interface ChartOptions {
    * the 金函玉鏡's 八門三奇出行定局 enumerates, and counts the same way the
    * whole year, that 定局 naming no half. `zhuan` turns them round the eight,
    * with the sun on the day of a yang stem and against it on a yin one, and
-   * mirrors the count in the yin half: 《日家奇門》's table.
+   * mirrors the count in the yin half: 《日家奇門》's table. `shun` turns them
+   * round the eight with the sun on every day, whatever the stem: the sixty
+   * day boards of 寶鏡圖, 《御定奇門大全》卷六十一–六十四. It mirrors the count
+   * in the yin half as `zhuan` does, which that work, laying no yin half,
+   * never shows.
    */
-  dayGates: 'fei' | 'zhuan';
+  dayGates: 'fei' | 'zhuan' | 'shun';
 
   /**
    * Where a day board's year divides into its yang and yin halves.
    *
    * `solstice` at 冬至 and 夏至. `liushi`, sixty days to a 局, is the 統宗's
-   * and is refused.
+   * and is refused. `yang` does not divide it: every day is counted as yang,
+   * one board to a day of the sixty all year, as 寶鏡圖 prints them.
    */
-  dayDun: 'solstice' | 'liushi';
+  dayDun: 'solstice' | 'liushi' | 'yang';
 
   /**
    * Where the centre lodges (寄宮).

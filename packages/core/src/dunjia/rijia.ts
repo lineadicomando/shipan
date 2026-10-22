@@ -108,6 +108,23 @@ export function turnedDayGates(rest: number, dayIndex: number): ByPalace<Gate> {
 }
 
 /**
+ * The eight gates of a day, turned with the sun every day: `dayGates: shun`.
+ *
+ * The other seven follow 休門 round the eight in the order they are recited,
+ * 休 生 傷 杜 景 死 驚 開, whatever the day's stem: 寶鏡圖's sixty wheels lay
+ * them so on every day where the wheel is its own day's, and state no rule.
+ */
+export function shunDayGates(rest: number): ByPalace<Gate> {
+  const start = ROUND.indexOf(rest);
+  if (start === -1) throw new Error(`休門 does not stand on palace ${rest}`);
+  const gates: Record<number, Gate> = {};
+  GATES.forEach((gate, offset) => {
+    gates[ROUND[(start + offset) % ROUND.length] as number] = gate;
+  });
+  return gates;
+}
+
+/**
  * The palace 太乙 stands in on a day.
  *
  * 「冬至艮宮夏坤地，命起甲子順逆行」: 艮 on 甲子 and one palace on with every
@@ -180,13 +197,19 @@ export function computeDayChart(moment: Moment, options: ChartOptions): DayChart
 
   const day = moment.pillars.day.index;
   const term = moment.solarTerm.term;
-  const yang = yangHalf(term.id);
+  // Under `dayDun: yang` the year is not divided: 寶鏡圖 prints one board to
+  // each day of the sixty and every one is the yang count.
+  const yang = options.dayDun === 'yang' ? true : yangHalf(term.id);
 
   // The 定局 names no half of the year, so its count is the one count; the
-  // table's is mirrored under yin, 休門 beginning at 離 and running back.
+  // turned readings are mirrored under yin, 休門 beginning at 離 and running back.
   const flown = options.dayGates === 'fei';
   const rest = restPalace(day, flown ? true : yang);
-  const gates = flown ? flownDayGates(rest) : turnedDayGates(rest, day);
+  const gates = flown
+    ? flownDayGates(rest)
+    : options.dayGates === 'shun'
+      ? shunDayGates(rest)
+      : turnedDayGates(rest, day);
   const stars = dayStars(day, yang);
 
   return {

@@ -192,6 +192,15 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '奇門遁甲秘笈大全', pinyin: 'qíméndùnjiǎmìjídàquán' },
   },
+  /**
+   * 《寶鏡圖》, 卷六十–六十四 of 《御定奇門大全》 and a work of its own on the
+   * 版心: one day board to each day of the sixty, the yang count every day and
+   * the gates turned with the sun.
+   */
+  baojingtu: {
+    kind: 'transmitted',
+    name: { hanzi: '寶鏡圖', pinyin: 'bǎojìngtú' },
+  },
   /** 《奇門遁甲全局》, the circular plates that keep 白虎 at the fifth seat. */
   quanju: {
     kind: 'transmitted',

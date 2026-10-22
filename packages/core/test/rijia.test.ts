@@ -8,6 +8,7 @@ import {
   dayStars,
   flownDayGates,
   restPalace,
+  shunDayGates,
   taiyiPalace,
   turnedDayGates,
 } from '../src/dunjia/rijia.js';
@@ -112,6 +113,46 @@ describe('the day family, against the table of its 120 days', () => {
     for (const block of BLOCKS.filter((b) => GATE_SLIPS.includes(b.label))) {
       const printed = COLUMNS[block.gates.indexOf('休門')];
       expect(printed).toBe(restPalace(block.day, block.yang));
+    }
+  });
+});
+
+/**
+ * 寶鏡圖's wheels, the forty whose rings are their own day's.
+ *
+ * `dayGates: shun` and `dayDun: yang` are this table, which states no rule:
+ * the gates are held to it whole, and the stars bar the cells two names a dot
+ * apart, 太乙 and 天乙, and one wheel, 甲申, that keeps three of its neighbour's.
+ */
+const WHEELS = readFileSync(new URL('./rijia/baojingtu.tsv', import.meta.url), 'utf8')
+  .split('\n')
+  .filter((line) => line !== '' && !line.startsWith('#'))
+  .map((line) => {
+    const [label, , gates, stars, centre] = line.split('\t') as [string, string, string, string, string];
+    return { label, day: SIXTY.indexOf(label), gates: [...gates], stars: stars.split(' '), centre };
+  });
+const WHEEL_SLIPS = ['丙子', '壬午', '甲申', '壬辰', '戊戌', '辛酉'];
+
+describe('the day family, against the sixty wheels of 寶鏡圖', () => {
+  it('reads the forty wheels whose rings are their own day', () => {
+    expect(WHEELS).toHaveLength(40);
+    expect(new Set(WHEELS.map((wheel) => wheel.day)).size).toBe(40);
+  });
+
+  it('lays the gates as every wheel prints them, turned with the sun every day', () => {
+    for (const wheel of WHEELS) {
+      const gates = shunDayGates(restPalace(wheel.day, true));
+      expect(COLUMNS.map((number) => gates[number]?.hanzi[0]), wheel.label).toEqual(wheel.gates);
+    }
+  });
+
+  it('lays the stars as the yang count on every wheel but the slips', () => {
+    for (const wheel of WHEELS) {
+      const stars = dayStars(wheel.day, true);
+      const laid = [...COLUMNS.map((number) => stars[number]?.hanzi), stars[5]?.hanzi];
+      const read = [...wheel.stars, wheel.centre];
+      if (WHEEL_SLIPS.includes(wheel.label)) expect(laid, wheel.label).not.toEqual(read);
+      else expect(laid, wheel.label).toEqual(read);
     }
   });
 });
@@ -265,6 +306,18 @@ describe('the board of a day', () => {
     expect(board.rest.number).toBe(1);
     // The table's reading mirrors the gates as well.
     expect(lay('2024-08-28', '12:00', { dayGates: 'zhuan' }).rest.number).toBe(9);
+  });
+
+  it('lays the yang count all year under dayDun: yang, as 寶鏡圖 prints its days', () => {
+    // 甲子 on 2024-08-28 is in the yin half; under `yang` it is the yang 甲子.
+    const yin = lay('2024-08-28', '12:00');
+    const yang = lay('2024-08-28', '12:00', { dayDun: 'yang', dayGates: 'shun' });
+    const january = lay('2024-01-01', '12:00', { dayGates: 'shun' });
+    expect(yin.yang).toBe(false);
+    expect(yang.yang).toBe(true);
+    const seats = (board: typeof yang) => board.palaces.map((seat) => [seat.gate?.id, seat.star.id]);
+    expect(seats(yang)).toEqual(seats(january));
+    expect(seats(yang)).not.toEqual(seats(yin));
   });
 
   it('carries the options that laid it, and refuses the half it does not compute', () => {

@@ -167,6 +167,13 @@ describe('draw_qimen_chart, for a board of the day', () => {
 });
 
 describe('compute_qimen_chart', () => {
+  it('lays the board of a day as 寶鏡圖 does when day_gates and day_dun ask for it', async () => {
+    const at = { ...BEIJING, date: '2026-08-28', time: '12:00', lang: 'en', system: 'rijia' };
+    const shun = await call('compute_qimen_chart', { ...at, day_gates: 'shun', day_dun: 'yang' });
+    expect(shun).toContain('with the sun on every day');
+    expect(shun).toContain('does not divide');
+  });
+
   it('names 門迫 by the palace controlling its gate when menpo asks for it', async () => {
     // 「門迫宮制門，宮迫門制宮」, 《吉凶格解》.
     const at = { ...BEIJING, date: '2026-01-30', time: '09:30', lang: 'en' };

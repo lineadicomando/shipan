@@ -1479,8 +1479,17 @@ export const it: Record<MessageKey, string> = {
     'volando per gli otto palazzi esterni nell’ordine dei loro numeri, come le dispone il 《金函玉鏡奇門遁甲秘笈全書》 jīnhányùjìngqíméndùnjiǎmìjíquánshū',
   'form.qimen.dayGates.zhuan':
     'girando sugli otto palazzi esterni, come le dispone la tavola 《日家奇門》 rìjiāqímén',
+  'form.qimen.dayGates.shun':
+    'girando sugli otto palazzi esterni nel verso del sole in ogni giorno, come le dispongono le sessanta tavole del 《寶鏡圖》 bǎojìngtú',
   'form.qimen.dayGates.note':
-    'Le due letture tengono 休門 xiūmén su un palazzo per tre giorni e poi la spostano sul successivo, attraverso gli otto palazzi esterni. Si separano sul posto delle altre sette porte. La prima lettura conta tutte e otto le porte insieme lungo i palazzi nell’ordine del 洛書 luòshū, e conta allo stesso modo per tutto l’anno. La seconda lettura porta le sette porte lungo l’anello dietro 休門 xiūmén, in un verso nei giorni di tronco yang e nel verso opposto nei giorni di tronco yin. Da 夏至 xiàzhì a 冬至 dōngzhì la seconda lettura comincia inoltre il conto dal palazzo opposto e lo percorre all’indietro.',
+    'Le tre letture tengono 休門 xiūmén su un palazzo per tre giorni e poi la spostano sul successivo, attraverso gli otto palazzi esterni. Si separano sul posto delle altre sette porte. La prima lettura conta tutte e otto le porte insieme lungo i palazzi nell’ordine del 洛書 luòshū, e conta allo stesso modo per tutto l’anno. La seconda lettura porta le sette porte lungo l’anello dietro 休門 xiūmén, in un verso nei giorni di tronco yang e nel verso opposto nei giorni di tronco yin. La terza lettura le porta lungo l’anello sempre nello stesso verso, ogni giorno. Nella seconda e nella terza lettura, nella metà yin dell’anno il conto di 休門 xiūmén comincia dal palazzo opposto e lo percorre all’indietro.',
+  'form.qimen.dayDun': 'L’anno di una tavola del giorno',
+  'form.qimen.dayDun.solstice':
+    'si divide a 冬至 dōngzhì e a 夏至 xiàzhì in una metà yang e una metà yin, come nel 《金函玉鏡奇門遁甲秘笈全書》 jīnhányùjìngqíméndùnjiǎmìjíquánshū',
+  'form.qimen.dayDun.yang':
+    'non si divide, e ogni giorno si posa come un giorno yang, come le sessanta tavole del 《寶鏡圖》 bǎojìngtú',
+  'form.qimen.dayDun.note':
+    'Nella metà yang le nove stelle avanzano di un palazzo ogni giorno, e nella metà yin arretrano di un palazzo. Con la prima lettura la tavola di un giorno dipende quindi dalla stagione oltre che dal giorno. Con la seconda lettura dipende solo dal giorno, e ciascuno dei sessanta giorni ha una sola tavola per tutto l’anno.',
   'form.qimen.earth': 'La stagione della terra è',
   'form.qimen.earth.quarters': 'l’intero mese che chiude ciascuna stagione',
   'form.qimen.earth.eighteen':

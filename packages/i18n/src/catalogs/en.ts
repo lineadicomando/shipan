@@ -1606,8 +1606,17 @@ export const en = {
     'by flying through the eight outer palaces in the order of their numbers, as 《金函玉鏡奇門遁甲秘笈全書》 jīnhányùjìngqíméndùnjiǎmìjíquánshū lays them',
   'form.qimen.dayGates.zhuan':
     'by turning round the eight outer palaces, as the table 《日家奇門》 rìjiāqímén lays them',
+  'form.qimen.dayGates.shun':
+    'by turning round the eight outer palaces with the sun on every day, as the sixty boards of 《寶鏡圖》 bǎojìngtú lay them',
   'form.qimen.dayGates.note':
-    'Both readings keep 休門 xiūmén on one palace for three days and then move it to the next, through the eight outer palaces. They part over where the other seven gates stand. The first reading counts all eight gates on together through the palaces in the order of the 洛書 luòshū, and it counts the same way all year. The second reading carries the seven gates round the ring behind 休門 xiūmén, one way on the day of a yang stem and the other way on the day of a yin stem. From 夏至 xiàzhì to 冬至 dōngzhì the second reading also begins its count at the opposite palace and runs it back.',
+    'All three readings keep 休門 xiūmén on one palace for three days and then move it to the next, through the eight outer palaces. They part over where the other seven gates stand. The first reading counts all eight gates on together through the palaces in the order of the 洛書 luòshū, and it counts the same way all year. The second reading carries the seven gates round the ring behind 休門 xiūmén, one way on the day of a yang stem and the other way on the day of a yin stem. The third reading carries them round the ring the same way on every day. In the second and third readings the yin half of the year begins the count of 休門 xiūmén at the opposite palace and runs it back.',
+  'form.qimen.dayDun': 'The year of a board of the day',
+  'form.qimen.dayDun.solstice':
+    'divides at 冬至 dōngzhì and 夏至 xiàzhì into a yang half and a yin half, as 《金函玉鏡奇門遁甲秘笈全書》 jīnhányùjìngqíméndùnjiǎmìjíquánshū has it',
+  'form.qimen.dayDun.yang':
+    'does not divide, and every day is laid as a yang day, as the sixty boards of 《寶鏡圖》 bǎojìngtú are',
+  'form.qimen.dayDun.note':
+    'In the yang half the nine stars move one palace on each day, and in the yin half they move one palace back. Under the first reading the board of a day therefore depends on the season as well as on the day. Under the second reading the board depends on the day alone, so each of the sixty days has one board all year.',
   'form.qimen.earth': 'The season of earth is',
   'form.qimen.earth.quarters': 'the whole of each month that closes a season',
   'form.qimen.earth.eighteen':

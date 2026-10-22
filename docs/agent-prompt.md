@@ -193,7 +193,9 @@ neither disputed.
   answer has a shape of its own: eight gates and nine stars of the day's own,
   the first of them 太乙, and no plate of stems, no chief and no spirits. It is
   laid off the day pillar and the season, so every hour of one day has the
-  same board. Beside it stand the twelve hours of that day, each with the god
+  same board. Under `qimen.dayDun=yang` the season drops out and each of the
+  sixty days has one board all year; `qimen.dayGates` says how the seven gates
+  follow 休門, and the board names both. Beside it stand the twelve hours of that day, each with the god
   it treads and what the day's stem puts on it: 天乙貴人, 截路空亡, 五不遇時,
   and 喜神 with its bearing. These are names an almanac prints beside an hour.
   五不遇時 alone carries a valence, because its own entry weighs it, and none

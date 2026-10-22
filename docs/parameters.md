@@ -212,8 +212,8 @@ dunjia's.**
 | `centreLodging` | where the centre is read: `kun` (寄坤二 always), `dun` (陽遁寄二 · 陰遁寄八), `dunni` (陽遁寄八 · 陰遁寄二), `bajie` (八節 bājié — through all eight palaces, three terms to each), `siyu` (四隅 sìyú — through the four corners, six terms to each) | `kun` |
 | `earthPlate` | how often the earth plate is laid: `yuan` (元 yuán — once for sixty hours), `xun` (旬 xún — anew at every decade, 六戊還原) | `yuan` |
 | `system` | which family, each a board of its own: `shijia` (時家 shíjiā), `rijia` (日家 rìjiā), later `yuejia` (月家 yuèjiā), `nianjia` (年家 niánjiā) | `shijia` |
-| `dayGates` | how the seven other gates follow 休門 on a day board — under `system: rijia`: `fei` (飛 fēi — flown through the eight in the order of their numbers), `zhuan` (轉 zhuàn — turned round the eight, the way changing with the day's stem) | `fei` |
-| `dayDun` | where a day board's year divides — under `system: rijia`: `solstice` (二至 èrzhì), `liushi` (六十日一局 liùshírìyījú — sixty days to a 局) | `solstice` |
+| `dayGates` | how the seven other gates follow 休門 on a day board — under `system: rijia`: `fei` (飛 fēi — flown through the eight in the order of their numbers), `zhuan` (轉 zhuàn — turned round the eight, the way changing with the day's stem), `shun` (順 shùn — turned round the eight with the sun every day, as 《寶鏡圖》 lays them) | `fei` |
+| `dayDun` | where a day board's year divides — under `system: rijia`: `solstice` (二至 èrzhì), `liushi` (六十日一局 liùshírìyījú — sixty days to a 局), `yang` (陽遁 yángdùn — not at all, every day laid as yang, as 《寶鏡圖》 prints its sixty) | `solstice` |
 | `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat), `huwu` (虎武 hǔwǔ — 白虎 fifth and 玄武 sixth in both dun, as 《御定奇門大全》's hour tables name them) | `dun` |
 | `spiritSeat` | where the first spirit is seated, which the other seven follow round: `tianpan` (天盤 tiānpán — where the heaven-plate 值符 lands, at every hour, as 《御定奇門大全》's hour tables lay it), `yinshi` (陰時 yīnshí — from the earth-plate 值符 at a 己 to 癸 hour, and whenever the 值符 lands in the centre, as the 奇門秘訣's commentary has it) | `tianpan` |
 | `leap` | where 置閏 repeats its block — inside 置閏: `solstice` (芒種 or 大雪), `runyue` (閏月 rùnyuè, the term the year's leap month falls under) | `solstice` |
@@ -274,10 +274,11 @@ the other family is refused, never dropped**: `refuseOtherFamily` reads what a
 surface was given, not the options with their defaults filled in, and throws
 `OPTION_NOT_READ` under the name it was asked by — `--method` on the command
 line, `qimen.method` in an address, `method` on the MCP tool. The layers under
-both are the same pillars. `dayGates` has two values because two works lay the
-gates and part: the 金函玉鏡's 定局 flies them and names no half of the year,
-and 《日家奇門》, which says it is drawn from that work, turns them and mirrors
-the count after 夏至. The twelve hours it hands over are no part of the family: they
+both are the same pillars. `dayGates` has three values because three works lay
+the gates and part: the 金函玉鏡's 定局 flies them and names no half of the
+year, 《日家奇門》, which says it is drawn from that work, turns them and
+mirrors the count after 夏至, and 《寶鏡圖》 turns them with the sun every day
+on sixty boards that have no yin half, which is `dayDun: yang`. The twelve hours it hands over are no part of the family: they
 are read off the day pillar under `shensha`, and stand on this board because
 every hour of the day shares it.
 

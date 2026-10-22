@@ -431,16 +431,28 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         implemented: true,
         heldBy: ['rijiaqimen'],
       },
+      // 寶鏡圖's sixty wheels: the seven with the sun on every day.
+      {
+        id: 'shun',
+        name: { hanzi: '順', pinyin: 'shùn' },
+        says: 'form.qimen.dayGates.shun',
+        note: 'form.qimen.dayGates.note',
+        implemented: true,
+        heldBy: ['baojingtu'],
+      },
     ],
     default: 'fei',
   },
   dayDun: {
     board: 'qimen',
     family: 'rijia',
+    label: 'form.qimen.dayDun',
     values: [
       {
         id: 'solstice',
         name: { hanzi: '二至', pinyin: 'èrzhì' },
+        says: 'form.qimen.dayDun.solstice',
+        note: 'form.qimen.dayDun.note',
         implemented: true,
         // 「冬至艮宮夏坤地」, 卷二十; 「每年從冬至節開始，到翌年交夏至節止，為陽」.
         heldBy: ['jinhan', 'rijiaqimen'],
@@ -451,6 +463,15 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         name: { hanzi: '六十日一局', pinyin: 'liùshírìyījú' },
         implemented: false,
         heldBy: ['tongzong'],
+      },
+      // One board to a day all year, every one the yang count: 寶鏡圖.
+      {
+        id: 'yang',
+        name: { hanzi: '陽遁', pinyin: 'yángdùn' },
+        says: 'form.qimen.dayDun.yang',
+        note: 'form.qimen.dayDun.note',
+        implemented: true,
+        heldBy: ['baojingtu'],
       },
     ],
     default: 'solstice',

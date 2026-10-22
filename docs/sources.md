@@ -1722,6 +1722,7 @@ under the naming of the spirits alone.
 | `dingTomb: gen` | 《奇門遁甲統宗》, 《吉凶格解》, 《奇門遁甲秘笈大全》, 《奇門秘訣》 | 「丁奇艮宮」, in its 奇門四十格; the verse of 《御定奇門大全》卷五十八, 「更忌丁奇居艮上」, and the same verse in the 秘笈大全, 「丁奇一位臨艮上」; and 三璋 in 奇門秘訣, 「六丁星奇下臨八宮」; added 2026-10-22 |
 | `yiTomb: kun` | 《奇門遁甲統宗》, 《遁甲符應經》, 《吉凶格解》 | 「乙奇坤宮」; 「六乙日奇臨二宮」, under 璋曰; 「六乙臨坤請避之」; added 2026-10-22 |
 | `yiTomb: qian` | 《奇門遁甲秘笈大全》, 《奇門秘訣》 | 「乙丙臨乾請避之」, 卷十五's verse, read on the 省思堂 plate; and 三璋's 「六乙日奇下臨六宮」, with 乙 in 二 called 非; added 2026-10-22 |
+| `dayGates: shun`, `dayDun: yang` | 《寶鏡圖》 | sixty day boards, 《御定奇門大全》卷六十一–六十四: the gates turned with the sun every day and the stars the yang count on every day of the cycle; added 2026-10-22 |
 | `deshi: liuyi` | 《奇門遁甲統宗》, 《遁甲符應經》, 《遁甲演義》, 《吉凶格解》 | 「乙奇加甲午甲戌　丙奇加甲子甲申　丁奇加甲寅甲辰」, the 統宗's 四十格; 「甲戌甲午乙為使…」 under 葛洪, and in the 演義 with three cases that lay; added 2026-10-22 |
 | `deshi: zhishi` | 《奇門遁甲開悟之門》 | 「只要門盤是值使門，就為三奇得使」, p. 120, the author's own 初步意見; added 2026-10-22 |
 | `menpo: menzhigong` | 《奇門遁甲統宗》, 《遁甲符應經》, 《奇門遁甲秘笈大全》 | 卷一 迫, eleven cells; the 符應經's thirteen cells, under a sentence naming the relation the other way; 「驚開三四休臨九…吉門被迫吉不就」; added 2026-10-22 |
@@ -3301,10 +3302,16 @@ days once, with no 陽遁 and 陰遁, and every wheel it prints is the yang coun
 The engine divides the day board's year at the solstices under `dayDun:
 solstice` and at sixty-day 局 under `liushi`, and under either it lays the
 yin count for half the year. And it turns the gates the way no value does: with
-the sun every day. Two readings, and neither is built. The first is a
+the sun every day. Two readings. The first is a
 `dayDun` that does not divide the year, and the second a third value of
 `dayGates`. Both are attributed and transcribed: sixty boards, in one work,
-with no rule stated. Put to the user. The 跋 says of the 術士 that
+with no rule stated. **Built the same day on the user's word**: the
+gates as `dayGates: shun` and the undivided year as `dayDun: yang`, both held
+by 寶鏡圖, which enters `WITNESSES` as `baojingtu`. The forty wheels whose
+rings are their own day's are a test fixture, `packages/core/test/rijia/baojingtu.tsv`:
+the gates are held to it whole, and the stars bar the six wheels named above.
+Under `shun` with `dayDun: solstice` the yin half mirrors 休門's walk as
+`zhuan` does, which is the engine's construction: the work shows no yin half. The 跋 says of the 術士 that
 「其說炫人耳目以致混淆不清」 and that it gathered them into one volume, which
 is the compiler's view of his sources and not a rule either.
 

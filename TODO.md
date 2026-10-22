@@ -67,7 +67,7 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-22
 
-**Version 0.31.0**, in every manifest. **`main` is checked out and no branch
+**Version 0.31.1**, in every manifest. **`main` is checked out and no branch
 is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
 `main` carry since 2026-10-15 is of seven days:
 
@@ -153,6 +153,9 @@ is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
   wheels, 己亥 to 戊午, print the day before's rings. Two readings put to the
   user, no code. The 大全 is surveyed to its end bar 景祐秘纂 卷二–四.
   Scripts and transcriptions in `texts/qimen/daquan-juan60-baojing/`.
+- 2026-10-22, what it built (0.31.1): both, on the user's word, as
+  `dayGates: shun` and `dayDun: yang`, held by 寶鏡圖 as `baojingtu`; the
+  forty wheels of their own day are a test fixture.
 
 `main` is pushed to `origin/main` as of 2026-10-18; the commits of
 2026-10-19, 2026-10-20 and 2026-10-22 are not pushed, and pushing is the user's call.
@@ -161,15 +164,9 @@ test skipped, and again on 2026-10-22. **Run `npm run build` before `npm test`**
 a fresh tree: the MCP and web suites and the shelf's scripts import
 `packages/core/dist`, and a stale `dist` fails them on whatever changed.
 
-**What to do next, in the order the user has been taking it.** Two readings
-wait on the user's word, and nothing decided is left unbuilt.
+**What to do next, in the order the user has been taking it.** Nothing
+decided is left unbuilt.
 
-0. **The user's word on 寶鏡圖's day board**, § "《御定奇門大全》卷六十–六十四".
-   Whether **the gates turned with the sun every day** is a third value of
-   `dayGates` beside `fei` and `zhuan`; and whether **one board to a day,
-   the yang count all year**, is a value of `dayDun` that does not divide the
-   year. Each is sixty boards in one work and no rule stated. The second
-   decides what the first does in the yin half, which the work never shows.
 1. **Read on**: § 2 line 3, the 大全, for a 起例 variant. **景祐秘纂
    卷二–四** is all that is left of it, by the blank halves sheets 31–59,
    60–82 and 83–113, unconfirmed on the 版心.

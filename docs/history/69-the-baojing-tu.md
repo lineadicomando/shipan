@@ -31,3 +31,14 @@ A section in `docs/sources.md`, two rows of `docs/sources.tsv` extended with
 no rung moved, the file's row in `texts/README.md`, the shelf's line and the
 next steps in `TODO.md`. No code and no version: the two readings were put to
 the user.
+
+## What was built after
+
+The user's word was yes to both, the same day. `dayGates: shun` turns the
+seven gates with the sun every day, and `dayDun: yang` lays every day as
+yang; 寶鏡圖 enters the witnesses as `baojingtu` and holds both, so a board
+laid on the pair says a named text lays the whole combination. Under `shun`
+with the year divided, the yin half mirrors 休門's walk as `zhuan` does, which
+is the engine's own construction. The forty wheels of their own day became a
+fixture the gates are held to whole. 0.31.1: two values no address answered
+for, and no default moved.
