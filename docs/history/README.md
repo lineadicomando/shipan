@@ -101,6 +101,7 @@ phase.
 | 66 | [吉凶格解](66-the-jixiong-gejie.md) | done — 卷五十八–五十九 of the 大全: the 格 one by one, a holder for `dingTomb: gen`, and two readings put to the user, 門迫 named the other way round and 乙 buried in 乾 |
 | 67 | [門迫 and 乙's tomb](67-menpo-and-the-tomb-of-yi.md) | done — `menpo` and `yiTomb` built on the user's word, and the refusal of 三奇得使 re-read on the plate |
 | 68 | [三奇得使](68-sanqi-deshi.md) | done — the refusal lifted on the user's word: `deshi`, the transmitted pairing by default and the 值使 gate beside it, both 吉 |
+| 69 | [寶鏡圖](69-the-baojing-tu.md) | done — 卷六十–六十四 of the 大全: sixty day boards, the 日家's yang count every day and the gates turned with the sun, laid against the engine; the 大全 surveyed to its end |
 
 ## The rest of the record
 

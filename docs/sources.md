@@ -3231,6 +3231,88 @@ gates and the twelve hours.
 
 Last checked 2026-10-22.
 
+### 《御定奇門大全》卷六十–六十四: 寶鏡圖, which lays a board of the day on each of the sixty days
+
+Surveyed 2026-10-22, sheets 1365–1485. The juan were bracketed by `blanks.py`
+and each bracket confirmed on the 版心: 卷六十 1365–1388, 卷六十一 1389–1413,
+卷六十二 1414–1437, 卷六十三 1438–1462, 卷六十四 1463–1485, closing on a
+寶鏡圖跋 and 「御定奇門大全卷之六十四終」. The 跋 is signed 「乾隆四十五年庚子重陽
+偶山氏誌於公府北軒」, 1780, which dates the compilation's last work and is the
+latest date the 大全 carries. Contact sheets at 50 dpi covered the whole extent.
+Four readers transcribed the sixty wheels to the brief in
+`texts/qimen/daquan-juan60-baojing/`, and the cells that disagree with the
+engine were looked at again there.
+
+**卷六十 is an almanac for choosing a day.** 二十八宿值日吉凶便覽, 十二神,
+十二時定例 with the 黃道 and 黑道 of the hours, 天赦, 六合 · 六沖 · 六破,
+長星 and 短星, 百忌, 太白逐日遊方, 嫁娶周堂, and two figures, 九宮方位 and
+十二時方向圖. It was located at 50 dpi and not read.
+
+**卷六十一–六十四 give a leaf to each day of the sixty**, 甲子 to 癸亥. Each
+opens on a page titled by the day and its 納音, 「癸未木日」, with a printed
+wheel, and the text follows: what the day is good and bad for, a direction to
+leave by, 「遇急可選吉時出正北坎方開門吉」, and the twelve hours, each with the
+god of the 黃黑道 it treads. 癸未, sheets 1420–1421, read on the plate:
+
+> 壬子癸丑二時截路空亡凶　甲寅時金匱大吉　乙卯時天德大吉　丙辰時白虎凶 … 丙午時天牢凶　己未時玄武凶 … 辛酉時勾陳凶 … 癸亥時吉明堂寡宿
+
+and 玉堂 at 巳, 司命 at 申 and 青龍 at 戌 between them. The ten gods are the ten
+the engine seats on those hours under `system: rijia`, from 金匱 at 寅 to 明堂
+at 亥. 「丙午時」 is a slip for 戊午: the hours of a
+癸 day run 壬子 to 癸亥. The leaf gives 截路空亡 at 子 and 丑 only, where the
+engine marks it at the 壬 and 癸 hours of the day, 子, 丑, 戌 and 亥. That is one
+leaf, and the other fifty-nine were not read for it.
+
+**The wheel is the 日家 board.** Its centre holds one star, the ring round
+the centre the eight palace names, the next ring a gate beside each, and the
+outer ring a star beside each, the stars each with a small 吉 or 凶 and an
+element printed in it. The nine stars are the 日家's, 太乙 to 天乙, and the
+gates are the eight. `texts/qimen/daquan-juan60-baojing/scripts/compare.mjs`
+lays every day off the engine's step functions and sets the wheels beside it.
+
+**On forty days of the sixty the wheel is the engine's yang board, and on the
+other twenty it is the day before's.**
+
+- **The stars follow the yang count every day of the cycle**: 太乙 in 艮 on 甲子
+  and one palace on with each day, the rest following in the 洛書 order through
+  the centre. On the forty days where the wheel is its own day's — 甲子 to
+  戊戌 and 己未 to 癸亥 — thirty-four agree in all nine cells. The other six
+  carry one to three cells out of place, most of them 太乙 where 天乙 is wanted or
+  the reverse. Those two names differ by a dot, and 壬午's pair was read again
+  on the plate and reads as transcribed. Under the yin count the wheels agree
+  on 79 cells of 540, near what chance gives.
+- **The gates are turned forward every day**: 休門 three days to a palace in the
+  order of the eight's numbers, as both values of `dayGates` lay it, and the
+  other seven following it round the eight with the sun, 休 生 傷 杜 景 死 驚 開,
+  whatever the day's stem. On their own days the wheels agree with that in
+  every cell they print. `dayGates: fei` lays the same seven by the numbers and
+  agrees on 154 cells of 479; `dayGates: zhuan` turns them with the sun on a
+  day of a yang stem and against it on a yin one, and agrees on the half of
+  the days it turns forward.
+- **己亥 to 戊午 print the day before's rings.** On those twenty wheels the
+  centre star is the day's, the outer ring and the gates are the previous
+  day's, and the day's centre star therefore stands a second time at 巽, where
+  it stood the day before, with one of the nine missing. 戊申's rings are two
+  days old. The shift starts and stops cleanly, which is a fault of the cutting
+  and not a rule.
+
+**So 寶鏡圖 lays one board to a day, and never two.** It prints the sixty
+days once, with no 陽遁 and 陰遁, and every wheel it prints is the yang count.
+The engine divides the day board's year at the solstices under `dayDun:
+solstice` and at sixty-day 局 under `liushi`, and under either it lays the
+yin count for half the year. And it turns the gates the way no value does: with
+the sun every day. Two readings, and neither is built. The first is a
+`dayDun` that does not divide the year, and the second a third value of
+`dayGates`. Both are attributed and transcribed: sixty boards, in one work,
+with no rule stated. Put to the user. The 跋 says of the 術士 that
+「其說炫人耳目以致混淆不清」 and that it gathered them into one volume, which
+is the compiler's view of his sources and not a rule either.
+
+**So the 大全 is surveyed to its end.** Read for a 起例 are 卷一 and 卷五 to
+卷六十四; 景祐秘纂 卷二 to 卷四 are not.
+
+Last checked 2026-10-22.
+
 ### 三奇得使 re-read: the pairing is transmitted alike, and what is disputed is the name and the weight
 
 Re-read 2026-10-22, at the user's word, because the row of § "What is refused,
