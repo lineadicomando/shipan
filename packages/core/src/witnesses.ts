@@ -173,6 +173,16 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '漢陰居士歌', pinyin: 'hànyīnjūshìgē' },
   },
+  /**
+   * 《吉凶格解》, 卷五十八–五十九 of 《御定奇門大全》 and a work of its own on the
+   * 版心: the 格 one by one, with a verse burying 乙 in 坤, 丙 in 乾 and 丁 in
+   * 艮. Named apart from `qimendaquan` because the compilation's 卷二十六, the
+   * 符應經's list, buries 丁 in 乾.
+   */
+  jixionggejie: {
+    kind: 'transmitted',
+    name: { hanzi: '吉凶格解', pinyin: 'jíxiōnggéjiě' },
+  },
   /** 《奇門遁甲全局》, the circular plates that keep 白虎 at the fifth seat. */
   quanju: {
     kind: 'transmitted',

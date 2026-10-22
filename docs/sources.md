@@ -1719,7 +1719,7 @@ under the naming of the spirits alone.
 | `centreTravel: stay` | 《御定奇門寶鑑》, 《奇門遁甲統宗》 | the 值符 and 值使 read at 坤; the second in 「甲辰在中宮，寄於坤二，天禽為符，死門為使」 |
 | `centreTravel: travel` | 《奇門遁甲金鏡寶鑑》 | 「符使不必寄於二」 |
 | `centreLodging: kun`, `centreTravel: stay` | 《遁甲符應經》, beside the 統宗 | 「六戊在五宮，寄坤二」 on a yang board and 「直使在五宮，寄坤二西南」 on a yin one, each worked |
-| `dingTomb: gen` | 《奇門遁甲統宗》 | 「丁奇艮宮」, in its 奇門四十格 |
+| `dingTomb: gen` | 《奇門遁甲統宗》, 《吉凶格解》 | 「丁奇艮宮」, in its 奇門四十格; and the verse of 《御定奇門大全》卷五十八, 「六乙臨坤請避之，丙奇一位臨乾去…更忌丁奇居艮上」; added 2026-10-22 |
 | `stemPairs: jinhan` | 《金函玉鏡奇門遁甲秘笈全書》 | 卷二 十干克應訣, the eighty-one set out as its own, read at pp. 30–32 of the 1996 print; added 2026-10-16 |
 | `stemPairs: xianji` | 《御定奇門大全》 | the 干論 of 奇門仙機, 卷十四–十六, refused until six garbled cells are read |
 | `dingTomb: qian` | 《遁甲符應經》 | 「六丙月奇、六丁星奇在六宮」, under 璋曰, in both copies |
@@ -1797,6 +1797,13 @@ been:
   and a choice keyed to the matter is not one this engine makes.
 - **The leap block at any of the eight 節**, which asks for a judgement
   between a surplus and a shortfall.
+- **門迫 named for the gate that suffers.** 《吉凶格解》 calls the palace
+  controlling its gate 門迫 and the gate controlling its palace 宮迫, and lays
+  thirteen cells on each; the engine's `menpo` is the second. Recorded
+  2026-10-22 and put to the user. § "《御定奇門大全》卷五十八–五十九".
+- **乙 buried in 乾 with 丙**, which 《奇門遁甲秘笈大全》卷十五 states in a
+  verse and 奇門秘訣 quotes from 三璋. Recorded 2026-10-22 and put to the
+  user. Same section.
 
 Two more stood here until 2026-10-16 and are computed since, on the
 《御定奇門大全》's hour tables: which stem a star carries off 坤 when the centre
@@ -3088,6 +3095,135 @@ dun`, and four boards that split on the seat of the spirits. Read for a 起例
 are 卷一 and 卷五 to 卷五十七. 卷二 to 卷四 of 景祐秘纂 are not.
 
 Last checked 2026-10-20.
+
+### 《御定奇門大全》卷五十八–五十九: 吉凶格解, which names 門迫 the other way round
+
+Surveyed 2026-10-22, sheets 1303–1364. The juan were bracketed by
+`blanks.py` and each bracket was confirmed on the 版心; contact sheets at 50
+dpi covered every sheet. Read on the plate at 170 dpi: 1316–1318, 1325–1326,
+1328–1331, 1333–1337 and 1360–1363, and 1362 again at 400. Every passage
+quoted here was read on the plate. The punctuation is ours.
+
+**Two juan, as the 目錄 says.** The 版心 reads 吉凶格解 throughout, and the
+headings below were read off the contact sheets:
+
+| juan | sheets | what it holds, by its headings |
+|---|---|---|
+| 五十八 | 1303–1332 | 釋吉格: the 九遁, 三詐 and 五假, 天三門 and 地四戶, 玉女守門, 三奇得使, 三奇遊祿, 五不擊, the 三勝地; from 1323 釋凶格: 三奇受制, 三奇入墓, 六儀擊刑, 時干入墓, 損明時, 五不遇時, 伏吟, 返吟, 大格 and 小格, 刑格, 上格, 天乙伏宮 and 飛宮, 伏干 and 飛干 |
+| 五十九 | 1333–1364 | 凶格 continued: 太白與天乙, the 干格 of the year, month, day and hour, 悖格, 宮迫制格 and 門迫, 三奇受制 again, 天網四張; then 論奇門九遁, 論三詐, 論五假, 論三避五, 論五不擊, 論三可勝, 風后吉凶條例總註, and from 1352 a summary of the 格 to the end |
+
+卷五十八終 is on sheet 1332 and 卷五十九終 on 1364. 寶鏡圖 opens 卷六十 on 1365.
+
+**No 起例.** Every entry names a configuration on a board already laid, and
+none says how the board is laid.
+
+**What the engine computes, the work mostly defines as the engine does.**
+
+- 六儀擊刑, 1325L: 「甲子忌卯三，甲戌忌未二宮，甲申忌艮八宮，甲午忌午九宮，甲辰忌四宮，
+  甲寅忌四宮」, and again as a verse on 1326R. These are the six of `STRIKE`.
+- 五不遇時, 1328R: the ten hours from 甲日庚午時 to 癸日己未時, each the hour
+  whose stem controls the day's at its own polarity, as `wubuyu` derives them.
+- 伏吟 and 反吟, 1328L and 1329R: 「天蓬加地天蓬」 and 「天蓬加地天英」, the star
+  at home and the star facing home.
+- The stem over the stem: 大格 「庚加癸」 and 小格 「庚加壬」 (1329R), 刑格
+  「庚加己」 (1329L), 青龍逃走 「乙加辛」 and 白入熒 「庚加丙」 (1361R), 熒入白
+  「丙加庚」 (1361L), as `STEM_PAIRS` names them. 庚 over 壬 stands under two
+  names in one juan: 小格 on 1329R, with 「又云小格癸加庚」, and 上格 on 1330R.
+  That is the pairing the comment on `STEM_PAIRS` carries as 上格 against
+  witnesses that read 小格, and here one work prints both. 壬 over 庚 is
+  羊入虎穴格, 1336R, where `stemPairs: jinhan` names it 太白擒蛇.
+
+Three things the engine does not compute are defined as § "The imperial print
+that states the turn, and counts the centre in" has them: 天乙伏宮 「天上六庚加地當局十時直符」 and 飛宮
+「天上當旬直符加地下庚」 (1330), 伏干 「天上六庚加本日之日干」 and 飛干 「天上今日之
+日干加地六庚之上」 (1331R).
+
+**門迫 is named for the gate that suffers.** Sheets 1336L and 1337R:
+
+> 宮迫制格：休臨九，驚開臨三四，生死臨一，傷杜臨二八五，景臨六七。主百事不吉。
+> 門迫：休加坤艮，生死加震巽，景加坎，驚開加離，杜傷加乾兌。經云：吉門被迫吉事不成，凶門被迫凶災尤甚。
+
+The first list is the thirteen cells `menpo` derives, the gate controlling its
+palace, with the centre added under 傷杜, where no gate stands on this
+engine's boards. The second is the converse: water under earth, earth under
+wood, fire under water, metal under fire, wood under metal, thirteen cells,
+each the relation a palace reports as `kewo`. The summary that closes
+卷五十九 says it again in four characters a side, 1363L: 「門迫宮制門」,
+「宮迫門制宮」.
+
+So this is the reading the sentence above the 符應經's list states and its own
+cells do not (§ "《遁甲符應經》 from 三甲 to its 後序"), now stated by a work
+that lays thirteen cells on it, twice. The 經云 that follows is the sentence the
+符應經 sets over the engine's cells. On the other side stand the 統宗's 卷一,
+eleven cells; the 符應經's cells, thirteen; and **《奇門遁甲秘笈大全》卷十五**,
+whose verse was read on the plate in the 省思堂 print, p. 223:
+
+> 驚開三四休臨九，傷杜還歸二八宮，生死排來居第一，景門六七總相同，吉門被迫吉不就，凶門被迫禍重重。
+
+That is the engine's thirteen, called 被迫. So two lines name the same two
+relations the opposite way round, and each lays its cells. Which cells carry
+the name 門迫, and its 凶, is a divergence between practitioners and not
+between copies. It is recorded, and the user decides whether it becomes a
+parameter.
+
+**入墓 is a verse here, and the same verse elsewhere moves 乙.** Sheet 1325R:
+
+> 三奇入墓格。歌曰：三奇入墓百不祥，六乙臨坤請避之，丙奇一位臨乾去，諸般動用便休依，更忌丁奇居艮上。
+
+乙 in 坤, 丙 in 乾 and 丁 in 艮 are `TOMB` and `dingTomb: gen`. So 吉凶格解
+enters `WITNESSES` as `jixionggejie` and holds `gen` beside the 統宗. It is
+named apart from `qimendaquan`, since the compilation's 卷二十六, the 符應經's
+list, buries 丁 in 乾. Its closing summary, 1362L, read at 400 dpi, gives 乙
+two palaces: 「三奇入墓：丙奇入六，丁奇入八，乙奇入二六」. The comment on `TOMB`
+already says some schools give 乙 both, and here one work gives 乙 one palace in
+its entry and two in its summary.
+
+**《奇門遁甲秘笈大全》卷十五 has the verse in another recension.** 省思堂 print
+p. 223, the leaf after the 門迫 verse:
+
+> 三奇入墓歌：三奇入墓百不宜，乙丙臨乾請避之，丁奇一位臨艮上，諸般動作盡休休。
+
+乙 goes with 丙 to 乾 and 丁 to 艮: the three cells 奇門秘訣 quotes from 三璋
+and argues against 乙 in 二 (§ "《御定奇門大全》卷四十三–四十八"). The
+simplified transcription on the shelf reads 「丁奇乙未临艮土」 for
+「丁奇一位臨艮上」, two slips in seven characters on the line that carries a
+cell. The two recensions are not one line miscopied: each moves a different
+stem to the half-line 一位, and 奇門秘訣 gives 乙 in 乾 a reason. So 乙 in 乾
+now has a verse stating it and a commentator arguing for it, and is recorded
+as a reading the user decides on. The 秘笈大全 buries 丁 in 艮. It is not named
+a holder of `gen`, because a board under `gen` lays 乙 in 坤, which it does not.
+
+**三奇得使 is stated here as the 符應經 states it.** Sheet 1318R:
+
+> 三奇得使格：乙逢犬馬，丙鼠猴，六丁玉女騎龍虎。乙奇臨甲午甲戌，丙奇臨甲子甲申，丁奇臨甲辰甲寅。
+
+That is 「甲戌甲午乙為使，甲子甲申丙為使，甲辰甲寅丁為使」 under 葛洪 in the
+符應經, pairing for pairing, and the mnemonic is a line of the 煙波釣叟歌. No
+case is worked. The row of § "What is refused, and why"
+gives disagreement over the pairings as its reason, and the register names no
+work that pairs them otherwise. That row is owed a look when 三奇得使 is next
+taken up.
+
+**And two names the engine uses, used for something else.** 天網四張格, 1337L:
+「六癸加時干是也」, 癸 over the hour's stem, where `stemPairs: jinhan` names
+天網四張 for 癸 over 癸. And the closing summary, 1362L, sets 刑格 over 「庚加癸」
+with a gloss on 盜氣, where the work's own entry on 1329L, the verse and the
+engine give 庚 over 癸 as 大格 and 刑格 as 庚 over 己. The work disagrees with
+itself there, and the engine follows its entry.
+
+**So 吉凶格解 lays no board and defines nearly all the 格 the engine names as
+the engine names them.** It adds one holder of `dingTomb: gen`, and two readings
+the user decides on: 門迫 named for the gate that suffers, and 乙 buried in 乾.
+No rung moves. The 門迫 row stays on rung 3: the derivation is what it stands
+on, and which cells carry the name is a question about the name. The 入墓 row
+stays on rung 5. The work confirms 丙 and 丁 and the 擊刑 six, but its own
+summary adds 乾 to 乙, and the 秘笈大全 contests the 乙 cell. Read for a 起例
+are 卷一 and 卷五 to 卷五十九. 卷二 to 卷四 of 景祐秘纂 are not, and neither is
+寶鏡圖, 卷六十–六十四, which was bracketed and not read: an almanac for choosing
+a day in 卷六十, then a leaf for each day of the sixty, each with a wheel of the
+gates and the twelve hours.
+
+Last checked 2026-10-22.
 
 ### 《紀氏奇門秘書仕學備餘》, where the states read from the star are a second arrangement
 

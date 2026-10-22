@@ -708,7 +708,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.dingTomb.gen',
         note: 'form.qimen.dingTomb.note',
         implemented: true,
-        heldBy: ['tongzong'],
+        // The 統宗's 四十格, 「丁奇艮宮」, and the 吉凶格解's verse,
+        // 「更忌丁奇居艮上」, 《御定奇門大全》卷五十八.
+        heldBy: ['tongzong', 'jixionggejie'],
       },
       {
         id: 'qian',

@@ -62,6 +62,7 @@ describe('the witnesses a value is held by', () => {
     ['qimen', 'spiritSeat', 'tianpan', 'tongzong'],
     ['qimen', 'spiritSeat', 'yinshi', 'qimenmijue'],
     ['qimen', 'centreLodging', 'dun', 'hanyinjushi'],
+    ['qimen', 'dingTomb', 'gen', 'jixionggejie'],
   ])('holds %s %s: %s by %s', (board, id, value, witness) => {
     const parameter = PARAMETERS.find((entry) => entry.board === board && entry.id === id);
     const declared = parameter?.values.find((candidate) => candidate.id === value);

@@ -98,6 +98,7 @@ phase.
 | 63 | [奇門秘訣](63-the-qimen-mijue.md) | done — 卷四十三–四十八 of the 大全, six juan and not seven; a commentary on the 煙波釣叟歌 that states the ordinary 局 and 置閏 at nine, and two readings recorded: the spirits seated from the earth plate at five hours, and 乙 buried in 乾 |
 | 64 | [the seat of the spirits](64-the-seat-of-the-spirits.md) | done — the 奇門秘訣's seat of the spirits becomes `spiritSeat: yinshi`, computed, against the hour tables' `tianpan`: two works and not one, checked on the plate first |
 | 65 | [寶鑑摘要](65-the-baojian-zhaiyao.md) | done — 卷四十九–五十七 of the 大全: the 統宗's 起例 again, a holder for `spiritSeat: tianpan` and one for `centreLodging: dun`, and 32 worked cases laid against the engine |
+| 66 | [吉凶格解](66-the-jixiong-gejie.md) | done — 卷五十八–五十九 of the 大全: the 格 one by one, a holder for `dingTomb: gen`, and two readings put to the user, 門迫 named the other way round and 乙 buried in 乾 |
 
 ## The rest of the record
 
