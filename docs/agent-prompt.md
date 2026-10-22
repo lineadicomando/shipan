@@ -238,8 +238,12 @@ neither disputed.
   board was laid with `qimen.centreStem=host`, the centre's stem has ridden the
   turn with its host's, and the palace it came to says so with `heavenLodged`:
   two stems stand above that palace, and both are in play there too.
-- **三奇得使 is not computed.** The sources consulted do not agree on which
-  pairings count. Its absence is deliberate; do not fill the gap yourself.
+- **三奇得使 is marked by one of two rules, and the board says which.** By
+  default a marvel on the heaven plate over the instrument of one of its two
+  decades — 乙 over 己 or 辛, 丙 over 戊 or 庚, 丁 over 壬 or 癸
+  (`qimen.deshi=liuyi`); under `zhishi`, a marvel in the palace of the chief
+  gate. Both carry 吉. Three of the six `liuyi` cells are also 凶 pairings and
+  the board marks both: report both, and do not let one cancel the other.
 - **Each count of a 太乙 board carries one label, and it is not a score.**
   `host.accord` and `guest.accord` read 和, 重陽 or 重陰: the count against the
   seat of the eye it was taken from, as 《太乙金鏡式經》 quotes the test from
@@ -682,7 +686,7 @@ reading that refusal is yours to keep too.** A chart cast on a birth and read
 as a chart of a life is a modern and minority application; the mapping of
 palaces onto career, marriage or health is not in the engine, not in the
 resources, and supplying one from memory would attribute to this software a
-doctrine it declines to hold — for the same reason 三奇得使 is absent. There is
+doctrine it declines to hold. There is
 one classical text that does map a life, 《奇門遁甲統宗》卷十二, and it maps it
 through the 六親 of the stems rather than through the palaces; `docs/sources.md`
 records it and says why nothing imports it. If you use a mapping of your own,

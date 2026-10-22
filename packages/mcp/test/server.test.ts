@@ -178,6 +178,14 @@ describe('compute_qimen_chart', () => {
     expect(ming).toContain('that controls the palace it stands in');
   });
 
+  it('marks 三奇得使 with the chief gate when deshi asks for it', async () => {
+    const at = { ...BEIJING, date: '2026-01-30', time: '09:30', lang: 'en' };
+    const gate = await call('compute_qimen_chart', { ...at, deshi: 'zhishi' });
+    const pair = await call('compute_qimen_chart', at);
+    expect(gate).toContain('in the palace where the chief gate 值使 zhíshǐ stands');
+    expect(pair).toContain('over the instrument of one of its two decades');
+  });
+
   it('seats the spirits from the earth plate at a yin hour when spirit_seat asks for it', async () => {
     // 己巳, an hour the 奇門秘訣 calls yin: 「看地盤直符坐何宮，即於何宮起直符」.
     const at = { ...BEIJING, date: '2026-01-30', time: '09:30', lang: 'en' };

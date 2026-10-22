@@ -784,6 +784,37 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     ],
     default: 'menzhigong',
   },
+  deshi: {
+    board: 'qimen',
+    family: 'shijia',
+    // What makes a 奇 得使: the transmitted pairing with the decades, or the
+    // 值使 gate. See `docs/sources.md` § "三奇得使 re-read".
+    label: 'form.qimen.deshi',
+    values: [
+      {
+        id: 'liuyi',
+        name: { hanzi: '六儀', pinyin: 'liùyí' },
+        says: 'form.qimen.deshi.liuyi',
+        note: 'form.qimen.deshi.note',
+        implemented: true,
+        // 「乙奇加甲午甲戌　丙奇加甲子甲申　丁奇加甲寅甲辰」, the 統宗's 四十格;
+        // 「甲戌甲午乙為使…」 under 葛洪 in the 符應經 and in the 演義, which
+        // works three cases the engine lays; 「乙奇臨甲午甲戌…」, 吉凶格解.
+        heldBy: ['tongzong', 'fuyingjing', 'yanyi', 'jixionggejie'],
+      },
+      // 「乙、丙、丁三奇在天盤，無論地盤六儀如何，只要門盤是值使門，就為三奇
+      // 得使」, 《奇門遁甲開悟之門》 p. 120.
+      {
+        id: 'zhishi',
+        name: { hanzi: '值使', pinyin: 'zhíshǐ' },
+        says: 'form.qimen.deshi.zhishi',
+        note: 'form.qimen.deshi.note',
+        implemented: true,
+        heldBy: ['kaiwuzhimen'],
+      },
+    ],
+    default: 'liuyi',
+  },
   // 十干克應, the stem above over the stem below. Three lines carry the
   // eighty-one, and they name them differently: a whole table is a line's, and
   // which one a board lays is a choice. The default is the cells they name

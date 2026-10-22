@@ -317,6 +317,17 @@ export const DIVERGENCES: readonly Divergence[] = [
     notes: { menzhigong: 'form.qimen.menpo.note', gongzhimen: 'form.qimen.menpo.note' },
   },
   {
+    id: 'deshi',
+    board: 'qimen',
+    family: 'shijia',
+    values: ['liuyi', 'zhishi'],
+    implemented: ['liuyi', 'zhishi'],
+    fallback: 'liuyi',
+    label: 'form.qimen.deshi',
+    says: { liuyi: 'form.qimen.deshi.liuyi', zhishi: 'form.qimen.deshi.zhishi' },
+    notes: { liuyi: 'form.qimen.deshi.note', zhishi: 'form.qimen.deshi.note' },
+  },
+  {
     id: 'stemPairs',
     board: 'qimen',
     family: 'shijia',

@@ -128,7 +128,9 @@ describe('十干克應 — the stem above over the stem below', { timeout: 30_00
   });
 
   it('gives every pairing of the table a fortune, and every one of them 凶 but three', () => {
-    const pairings = PATTERN_IDS.filter((id) => found.has(id));
+    // 三奇得使 is a marvel over a decade's instrument and not a cell of the
+    // table, though the same pair of stems can make both.
+    const pairings = PATTERN_IDS.filter((id) => found.has(id) && id !== 'sanqideshi');
     // Two of the three were the two the verse itself marks 吉; 青龍耀明 is the
     // third and came in with the printed table, which grades it 吉 in its own
     // words and is seconded there. Everything the cross-check added is 凶.

@@ -290,6 +290,7 @@ export const it: Record<MessageKey, string> = {
   'label.pattern.rumu': 'in tomba',
   'label.pattern.menpo': 'porta oppressa',
   'label.pattern.gongpo': 'palazzo oppresso',
+  'label.pattern.sanqideshi': 'la meraviglia trova il suo messo',
   'label.pattern.jixing': 'strumento colpito',
   'label.pattern.fuyin': 'la scacchiera è tornata a casa',
   'label.pattern.fanyin': 'la scacchiera si è voltata',
@@ -1538,6 +1539,13 @@ export const it: Record<MessageKey, string> = {
     'che il palazzo in cui sta controlla, come nel 《吉凶格解》 jíxiōnggéjiě, che chiama 宮迫 gōngpò una porta che controlla il proprio palazzo',
   'form.qimen.menpo.note':
     'Ogni palazzo dice in che rapporto stanno l’elemento della sua porta e il proprio, e questo rapporto è lo stesso nelle due letture. Le due letture danno il nome 門迫 ménpò a rapporti diversi. La prima lettura lo dà a una porta che controlla il proprio palazzo. La seconda lo dà a una porta controllata dal proprio palazzo, e chiama 宮迫 gōngpò una porta che controlla il proprio palazzo. La scelta sposta quei segni e nient’altro sulla tavola.',
+  'form.qimen.deshi': 'Una meraviglia, 乙 yǐ, 丙 bǐng o 丁 dīng, è segnata 三奇得使 sānqídéshǐ quando sta sul piatto cielo',
+  'form.qimen.deshi.liuyi':
+    'sopra lo strumento di una delle sue due decadi sul piatto terra, come la abbinano il 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng e il 《遁甲演義》 dùnjiǎ yǎnyì',
+  'form.qimen.deshi.zhishi':
+    'nel palazzo in cui sta la porta del capo 值使 zhíshǐ, qualunque cosa ci sia sotto, come nel 《奇門遁甲開悟之門》 qíméndùnjiǎkāiwùzhīmén',
+  'form.qimen.deshi.note':
+    'Nella prima lettura ogni meraviglia è abbinata a due decadi: 乙 yǐ alle decadi di 甲戌 jiǎxū e 甲午 jiǎwǔ, 丙 bǐng a quelle di 甲子 jiǎzǐ e 甲申 jiǎshēn, 丁 dīng a quelle di 甲辰 jiǎchén e 甲寅 jiǎyín. Il segno compare dove la meraviglia sta sopra lo strumento di una di queste decadi. Nella seconda lettura la decade non conta, e il segno compare ovunque una meraviglia stia nello stesso palazzo della porta del capo. La scelta sposta quel segno e nient’altro sulla tavola.',
   'form.qimen.stemPairs': 'Un tronco sopra il tronco sottostante si nomina',
   'form.qimen.stemPairs.shared': 'solo dove i testi lo nominano allo stesso modo: quattordici celle su ottantuno',
   'form.qimen.stemPairs.jinhan':
@@ -1852,6 +1860,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.dingTomb': 'In quale palazzo il tronco 丁 dīng è in tomba.',
   'notes.parameter.yiTomb': 'In quale palazzo il tronco 乙 yǐ è in tomba.',
   'notes.parameter.menpo': 'Quale rapporto tra una porta e il suo palazzo si chiama 門迫 ménpò.',
+  'notes.parameter.deshi': 'Che cosa segna una meraviglia come 三奇得使 sānqídéshǐ.',
   'notes.parameter.stemPairs': 'Quale tavola del 十干克應 shígānkèyìng nomina un tronco sopra un tronco.',
   'notes.parameter.centreTravel': 'Dove si leggono il capo e la porta del capo quando cadono sul palazzo centrale.',
   'notes.parameter.centreStem': 'Dove sta il tronco del palazzo centrale quando i tronchi sopra i palazzi girano.',

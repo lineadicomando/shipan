@@ -296,6 +296,7 @@ export const en = {
   'label.pattern.rumu': 'entombed',
   'label.pattern.menpo': 'gate oppressed',
   'label.pattern.gongpo': 'palace oppressed',
+  'label.pattern.sanqideshi': 'a marvel finds its envoy',
   'label.pattern.jixing': 'instrument struck',
   'label.pattern.fuyin': 'the board come home',
   'label.pattern.fanyin': 'the board turned about',
@@ -1667,6 +1668,13 @@ export const en = {
     'that the palace it stands in controls, as 《吉凶格解》 jíxiōnggéjiě has it, which names a gate controlling its palace 宮迫 gōngpò',
   'form.qimen.menpo.note':
     'Each palace reports how the element of its gate and its own element stand to each other, and that report is the same under both readings. The two readings give the name 門迫 ménpò to different relations. The first reading gives the name to a gate that controls its palace. The second gives it to a gate that its palace controls, and gives a gate that controls its palace the name 宮迫 gōngpò. The choice moves those marks and nothing else on the board.',
+  'form.qimen.deshi': 'A marvel, 乙 yǐ, 丙 bǐng or 丁 dīng, is marked 三奇得使 sānqídéshǐ when it stands on the heaven plate',
+  'form.qimen.deshi.liuyi':
+    'over the instrument of one of its two decades on the earth plate, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng and 《遁甲演義》 dùnjiǎ yǎnyì pair them',
+  'form.qimen.deshi.zhishi':
+    'in the palace where the chief gate 值使 zhíshǐ stands, whatever is below it, as 《奇門遁甲開悟之門》 qíméndùnjiǎkāiwùzhīmén has it',
+  'form.qimen.deshi.note':
+    'In the first reading each marvel is paired with two decades: 乙 yǐ with the decades of 甲戌 jiǎxū and 甲午 jiǎwǔ, 丙 bǐng with those of 甲子 jiǎzǐ and 甲申 jiǎshēn, 丁 dīng with those of 甲辰 jiǎchén and 甲寅 jiǎyín. The mark is made where the marvel stands over the instrument of one of them. In the second reading the decade plays no part, and the mark is made wherever a marvel shares a palace with the chief gate. The choice moves that mark and nothing else on the board.',
   'form.qimen.stemPairs': 'A stem over the stem below it is named',
   'form.qimen.stemPairs.shared': 'only where the texts name it alike, fourteen cells of eighty-one',
   'form.qimen.stemPairs.jinhan':
@@ -2094,6 +2102,7 @@ export const en = {
   'notes.parameter.dingTomb': 'Which palace the stem 丁 dīng is entombed in.',
   'notes.parameter.yiTomb': 'Which palace the stem 乙 yǐ is entombed in.',
   'notes.parameter.menpo': 'Which relation of a gate to its palace is named 門迫 ménpò.',
+  'notes.parameter.deshi': 'What marks a marvel as 三奇得使 sānqídéshǐ.',
   'notes.parameter.stemPairs': 'Which table of 十干克應 shígānkèyìng names a stem over a stem.',
   'notes.parameter.centreTravel': 'Where the chief and the chief gate are read when they fall on the central palace.',
   'notes.parameter.centreStem': 'Where the stem of the central palace stands when the stems above the palaces turn.',

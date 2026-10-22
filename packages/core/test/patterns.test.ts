@@ -438,6 +438,49 @@ describe('門迫 — which relation carries the name', () => {
   });
 });
 
+describe('三奇得使 — a marvel with its envoy', () => {
+  const laid = (date: string, time: string, deshi: ChartOptions['deshi']): QimenChart => {
+    const options: ChartOptions = { ...CLOCK, method: 'chaibu', deshi };
+    return computeQimenChart(
+      resolveMoment({ date, time, timezone: 'Asia/Shanghai' }, BEIJING, options, context),
+      options,
+    );
+  };
+  // 「乙奇加甲午甲戌　丙奇加甲子甲申　丁奇加甲寅甲辰」: each decade by its instrument.
+  const PAIRED: Record<string, string> = { 乙: '己辛', 丙: '戊庚', 丁: '壬癸' };
+
+  it('marks a marvel over an instrument of its decades, and one with the chief gate', () => {
+    let liuyi = 0;
+    let zhishi = 0;
+    for (let day = 1; day <= 20; day += 1) {
+      for (let hour = 0; hour < 24; hour += 2) {
+        const date = `2021-05-${String(day).padStart(2, '0')}`;
+        const time = `${String(hour).padStart(2, '0')}:30`;
+        const byPair = laid(date, time, 'liuyi');
+        const byGate = laid(date, time, 'zhishi');
+        const expectPair: number[] = [];
+        const expectGate: number[] = [];
+        for (const cell of byPair.palaces) {
+          const at = cell.palace.number;
+          if (at === 5) continue;
+          const above = cell.heaven.hanzi;
+          if (PAIRED[above]?.includes(cell.earth.hanzi)) expectPair.push(at);
+          if (PAIRED[above] && cell.gate?.id === byPair.chiefGate.gate.id) expectGate.push(at);
+        }
+        expect(idsOf(byPair, 'sanqideshi')).toEqual(expectPair.sort());
+        expect(idsOf(byGate, 'sanqideshi')).toEqual(expectGate.sort());
+        liuyi += expectPair.length;
+        zhishi += expectGate.length;
+        expect(byGate.palaces.map((cell) => cell.heaven.hanzi)).toEqual(
+          byPair.palaces.map((cell) => cell.heaven.hanzi),
+        );
+      }
+    }
+    expect(liuyi).toBeGreaterThan(0);
+    expect(zhishi).toBeGreaterThan(0);
+  });
+});
+
 describe('ganzhiFrom', () => {
   it('is the inverse of the pair it names', () => {
     // Used by the unmet-hour table above; worth its own line.

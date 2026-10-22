@@ -318,6 +318,12 @@ export const qimenSchema = {
     .describe(
       'Which relation of a gate to its palace carries the name menpo, marked inauspicious. Default menzhigong: a gate whose element controls its palace\'s, as the Qimen Dunjia Tongzong, the cells of the Dunjia Fuyingjing and the Qimen Dunjia Miji Daquan have it. gongzhimen: a gate whose palace controls it, as the Jixiong Gejie of the Yuding Qimen Daquan has it; under it a gate controlling its palace is marked gongpo, inauspicious too. The relation each palace reports is the same under both; only the marks move. Both values are computed and the chart says which it stands on.',
     ),
+  deshi: z
+    .enum(['liuyi', 'zhishi'])
+    .optional()
+    .describe(
+      'What makes one of the three marvels (yi, bing, ding) sanqi deshi, marked auspicious under both rules. Default liuyi: the marvel on the heaven plate over the instrument of one of its two decades on the earth plate (yi over ji or xin, bing over wu or geng, ding over ren or gui), as the Qimen Dunjia Tongzong, the Dunjia Fuyingjing, the Dunjia Yanyi and the Jixiong Gejie pair them. zhishi: the marvel on the heaven plate in the palace the chief gate (zhishi) stands in, whatever is below it, as the Qimen Dunjia Kaiwu zhi Men has it and calls a provisional opinion. Three of the six liuyi cells are also inauspicious stem pairs, and the board marks both. Both values are computed and the chart says which it stands on.',
+    ),
   stem_pairs: z
     .enum(['shared', 'jinhan'])
     .optional()
@@ -355,6 +361,7 @@ interface RawInput {
   centre_stem?: 'centre' | 'host' | undefined;
   yi_tomb?: 'kun' | 'qian' | undefined;
   menpo?: 'menzhigong' | 'gongzhimen' | undefined;
+  deshi?: 'liuyi' | 'zhishi' | undefined;
   ding_tomb?: 'gen' | 'qian' | undefined;
   stem_pairs?: 'shared' | 'jinhan' | undefined;
   shensha?: 'xieji' | undefined;
@@ -408,6 +415,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
       dingTomb: raw.ding_tomb,
       yiTomb: raw.yi_tomb,
       menpo: raw.menpo,
+      deshi: raw.deshi,
       stemPairs: raw.stem_pairs,
     },
     (parameter) => parameter.id.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`),
@@ -431,6 +439,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.ding_tomb) options.dingTomb = raw.ding_tomb;
   if (raw.yi_tomb) options.yiTomb = raw.yi_tomb;
   if (raw.menpo) options.menpo = raw.menpo;
+  if (raw.deshi) options.deshi = raw.deshi;
   if (raw.stem_pairs) options.stemPairs = raw.stem_pairs;
   if (raw.shensha) options.shensha = raw.shensha;
 

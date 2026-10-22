@@ -1722,6 +1722,8 @@ under the naming of the spirits alone.
 | `dingTomb: gen` | 《奇門遁甲統宗》, 《吉凶格解》, 《奇門遁甲秘笈大全》, 《奇門秘訣》 | 「丁奇艮宮」, in its 奇門四十格; the verse of 《御定奇門大全》卷五十八, 「更忌丁奇居艮上」, and the same verse in the 秘笈大全, 「丁奇一位臨艮上」; and 三璋 in 奇門秘訣, 「六丁星奇下臨八宮」; added 2026-10-22 |
 | `yiTomb: kun` | 《奇門遁甲統宗》, 《遁甲符應經》, 《吉凶格解》 | 「乙奇坤宮」; 「六乙日奇臨二宮」, under 璋曰; 「六乙臨坤請避之」; added 2026-10-22 |
 | `yiTomb: qian` | 《奇門遁甲秘笈大全》, 《奇門秘訣》 | 「乙丙臨乾請避之」, 卷十五's verse, read on the 省思堂 plate; and 三璋's 「六乙日奇下臨六宮」, with 乙 in 二 called 非; added 2026-10-22 |
+| `deshi: liuyi` | 《奇門遁甲統宗》, 《遁甲符應經》, 《遁甲演義》, 《吉凶格解》 | 「乙奇加甲午甲戌　丙奇加甲子甲申　丁奇加甲寅甲辰」, the 統宗's 四十格; 「甲戌甲午乙為使…」 under 葛洪, and in the 演義 with three cases that lay; added 2026-10-22 |
+| `deshi: zhishi` | 《奇門遁甲開悟之門》 | 「只要門盤是值使門，就為三奇得使」, p. 120, the author's own 初步意見; added 2026-10-22 |
 | `menpo: menzhigong` | 《奇門遁甲統宗》, 《遁甲符應經》, 《奇門遁甲秘笈大全》 | 卷一 迫, eleven cells; the 符應經's thirteen cells, under a sentence naming the relation the other way; 「驚開三四休臨九…吉門被迫吉不就」; added 2026-10-22 |
 | `menpo: gongzhimen` | 《吉凶格解》 | 「門迫宮制門，宮迫門制宮」, and thirteen cells on each, 《御定奇門大全》卷五十九; added 2026-10-22 |
 | `stemPairs: jinhan` | 《金函玉鏡奇門遁甲秘笈全書》 | 卷二 十干克應訣, the eighty-one set out as its own, read at pp. 30–32 of the 1996 print; added 2026-10-16 |
@@ -3296,6 +3298,16 @@ the first is a parameter: a transmitted value held by five works, and a modern
 one held by one manual. The second is a question about `valence`, which
 carries only what the manuals hand down alike. Neither is built. Both wait on
 the user's word.
+
+**Built the same day, on the user's word, and the row of § "What is refused,
+and why" is gone.** `deshi: liuyi`, the default, marks a 奇 of the heaven plate
+over the 儀 of one of its two decades, and `deshi: zhishi` marks a 奇 in the
+palace of the 值使 gate. Both carry 吉, which is what every text that names the
+configuration gives it. The 演義's 不吉 for three cells is not a second
+fortune for the configuration but a condition on it, and the three cells
+already carry the 凶 of the pairings they are. The board shows both marks
+side by side. The canonical 奇門 board, which carried no mark of it before,
+now carries four.
 
 Last checked 2026-10-22.
 
@@ -6386,7 +6398,7 @@ warranted by the weekday lock and never by this book, and keeps its dash.
 「近代方有之」 and then shows how they were made: the four cardinal lodges taken
 as rat, hare, horse and cock, and the rest fitted round them by resemblance —
 附會, the source's own word for it. A construction a source dates late and
-shows the workings of is not a transmission. Out, as 三奇得使 is. The 七政 do
+shows the workings of is not a transmission. Out. The 七政 do
 travel, because they are how the lodge is named and because they are the check
 above.
 
@@ -10217,7 +10229,6 @@ reopened, never quietly rewritten.
 
 | | Reason |
 |---|---|
-| 三奇得使 | **re-read 2026-10-22, and the reason as written does not hold**: every transmitted text on the shelf pairs the 奇 with the decades alike, and what is disputed is what 得使 means and what it weighs. Waiting on the user's word. § "三奇得使 re-read" |
 | the 統宗's 六親 mapping | one late compilation, and it is interpretation from the first character |
 | counting the 泊宮 through the palaces | 《遁甲演義》 states it in four characters that admit two readings |
 | the month pillar a 春節 almanac prints | 五虎遁 reads the year stem, so `chunjie` moves the month with the year and reports a pillar no lichun almanac carries. Whether an almanac counting by the lunar new year prints that one or the solar one, no source consulted says. The rule is applied as stated and the consequence is pinned by a test, so that changing it has to be deliberate |

@@ -37,8 +37,8 @@ import type { ScanCriteria } from './scan.js';
  * significators of people, the nine stars, the eight spirits. There the
  * schools genuinely diverge, and what reached the West most widely reached it
  * as the teaching material of particular commercial lineages, which is not a
- * source this engine can stand a table on. 三奇得使 is the precedent for
- * saying so instead of guessing.
+ * source this engine can stand a table on, and saying so is better than
+ * guessing.
  *
  * There is **no `tradition` parameter**, and the reason is a finding rather
  * than a deferral: laying the classical strand beside the modern manuals, the

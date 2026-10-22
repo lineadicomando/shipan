@@ -67,6 +67,15 @@ const READINGS: Readonly<Record<string, string>> = {
   用神: 'yòngshén',
   門迫: 'ménpò',
   宮迫: 'gōngpò',
+  三奇得使: 'sānqídéshǐ',
+  // The six heads of decade 三奇得使 pairs the marvels with. A board seats
+  // the decade's instrument and never its 甲, so the engine carries no reading.
+  甲子: 'jiǎzǐ',
+  甲戌: 'jiǎxū',
+  甲申: 'jiǎshēn',
+  甲午: 'jiǎwǔ',
+  甲辰: 'jiǎchén',
+  甲寅: 'jiǎyín',
   // The work the hexagram of a palace comes from and the chapter of it
   // that states the rule. Prose names both, and no board seats either:
   // what the engine carries is the sixty-four names, not their source.

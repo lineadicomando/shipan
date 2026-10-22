@@ -343,6 +343,23 @@ export interface ChartOptions {
   menpo: 'menzhigong' | 'gongzhimen';
 
   /**
+   * What makes a 奇 得使 (三奇得使).
+   *
+   * `liuyi` is the transmitted rule: the 奇 on the heaven plate over the 儀 of
+   * one of its two decades on the earth plate — 乙 over 己 or 辛, 丙 over 戊 or
+   * 庚, 丁 over 壬 or 癸. 《奇門遁甲統宗》's 四十格 prints it as 「乙奇加甲午
+   * 甲戌　丙奇加甲子甲申　丁奇加甲寅甲辰」, and 《遁甲符應經》, 《遁甲演義》
+   * and 《吉凶格解》 state it alike. `zhishi` is 張志春's, 《奇門遁甲開悟之門》
+   * p. 120: a 奇 on the heaven plate in the palace the 值使 gate stands in,
+   * 「無論地盤六儀如何」, which the same author calls a provisional opinion.
+   *
+   * Both mark it 吉, as every text that names it does. Three of the six cells
+   * of `liuyi` are also 凶 pairings the board marks in their own right, which
+   * the 演義 calls 「尚有微疵不吉」: the two marks stand side by side.
+   */
+  deshi: 'liuyi' | 'zhishi';
+
+  /**
    * Which table of 十干克應 names the stem of the heaven plate over the stem
    * below it.
    *
@@ -406,6 +423,7 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   dingTomb: 'gen',
   yiTomb: 'kun',
   menpo: 'menzhigong',
+  deshi: 'liuyi',
   stemPairs: 'shared',
   shensha: 'xieji',
 });

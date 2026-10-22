@@ -202,6 +202,14 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '奇門遁甲折衷', pinyin: 'qíméndùnjiǎzhézhōng' },
   },
+  /**
+   * 張志春's second 奇門 book, which makes 三奇得使 a 奇 with the 值使 gate and
+   * calls that its own provisional opinion against the transmitted pairing.
+   */
+  kaiwuzhimen: {
+    kind: 'modern',
+    name: { hanzi: '奇門遁甲開悟之門', pinyin: 'qíméndùnjiǎkāiwùzhīmén' },
+  },
   /** 張志春, who defines 拆補 by the term and the 符頭 at once. */
   shenqi: {
     kind: 'modern',

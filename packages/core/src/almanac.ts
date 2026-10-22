@@ -120,7 +120,7 @@ const PLANETS: readonly { hanzi: string; pinyin: string }[] = [
  * were built, by taking the four cardinal lodges as rat, hare, horse and cock
  * and fitting the rest around them by resemblance: 附會, the source's word.
  * A construction a source dates late and shows the workings of is not a
- * transmission, and it is left out as 三奇得使 was.
+ * transmission, and it is left out.
  */
 export const LODGES: readonly Lodge[] = (
   [

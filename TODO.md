@@ -67,7 +67,7 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-22
 
-**Version 0.30.0**, in every manifest. **`main` is checked out and no branch
+**Version 0.31.0**, in every manifest. **`main` is checked out and no branch
 is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
 `main` carry since 2026-10-15 is of seven days:
 
@@ -143,6 +143,9 @@ is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
   the pairing is transmitted alike by five works, the 演義's copy of the 葛洪
   cases lays, and the dispute is a modern second rule and the fortune of three
   cells. Renders in `texts/qimen/daquan-juan58-jixiong/deshi/`.
+- 2026-10-22, last (0.31.0): 三奇得使 built on the user's word as `deshi`,
+  `liuyi` by default and `zhishi` beside it, both 吉. Its refusal is gone. The
+  canonical 奇門 board now carries four marks of it, checked cell by cell.
 
 `main` is pushed to `origin/main` as of 2026-10-18; the commits of
 2026-10-19, 2026-10-20 and 2026-10-22 are not pushed, and pushing is the user's call.
@@ -151,15 +154,9 @@ test skipped, and again on 2026-10-22. **Run `npm run build` before `npm test`**
 a fresh tree: the MCP and web suites and the shelf's scripts import
 `packages/core/dist`, and a stale `dist` fails them on whatever changed.
 
-**What to do next, in the order the user has been taking it.** 三奇得使
-waits on the user's word, and nothing else decided is left unbuilt.
+**What to do next, in the order the user has been taking it.** Nothing
+decided is left unbuilt.
 
-0. **The user's word on 三奇得使**, § "三奇得使 re-read". Whether it is built
-   as a pattern on the transmitted pairing, the 奇 of the heaven plate over
-   the 儀 of one of its two decades; whether 開悟之門's rule, a 奇 with the
-   值使 gate, is a second value of a parameter, held by one modern manual that
-   calls it provisional; and what `valence` it carries, given that the 演義
-   calls three of its six cells 不吉 unless the decade's 直符 is there too.
 1. **Read on**: § 2 line 3, the 大全, for a 起例 variant. **寶鏡圖,
    卷六十–六十四, sheets 1365–1485**, stands next, bracketed on the 版心
    2026-10-22. It is not a 起例 of the hour board: 卷六十 is an almanac for
@@ -428,8 +425,9 @@ nothing exposes. Only those with something to wait on:
   Which of the two stems in 坤 a stem coming to it stands over:
   the 符應經 marks a 格 by the centre's, one case, and a second witness names
   it. The heaven plate's side of the same question is `centreStem` since
-  2026-10-16. 三奇得使: re-read 2026-10-22,
-  item 0 above. The half-flown
+  2026-10-16. 三奇得使 is `deshi` since 2026-10-22. The 演義's condition on
+  three of its cells, 「如遇本旬直符同臨其上，方可用之而吉也」, is recorded and
+  not computed. The half-flown
   board wants a yin hour worked in any text. The board of a day wants a prompt
   of its own, the scan and the 年命.
 - **六壬.** The order of 涉害: a text holding either reading by name. The five

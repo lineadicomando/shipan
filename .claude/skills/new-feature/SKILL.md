@@ -120,7 +120,9 @@ Opens them over HTTP and says so in the README ...
   is the rung — `docs/notes.md` — and the two numberings are not one scale.
 - **No school is implicit.** If sources disagree, it is a parameter with a
   declared default — or, if they are too thin to choose from, it is left out
-  and said to be left out. `三奇得使` is the precedent.
+  and said to be left out. `三奇得使` was refused for years on a disagreement
+  nobody had located; re-read, it became `deshi`. Name the source that
+  disagrees before refusing on it.
 - **Never substitute a method quietly.** `METHOD_NOT_IMPLEMENTED` exists
   because a chart cast by the wrong method looks right and is not.
 - **Nothing interprets.** Names of configurations, never verdicts. There is a

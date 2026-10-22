@@ -11,6 +11,7 @@ export type PatternId =
   | 'menpo'
   // 宮迫, the gate controlling its palace, under `menpo: gongzhimen` alone.
   | 'gongpo'
+  | 'sanqideshi'
   | 'jixing'
   | 'fuyin'
   | 'fanyin'
@@ -124,7 +125,7 @@ export type PatternId =
  * **How sure this is**: the third tier, the same as the configurations
  * themselves — Chinese-language sources with no runnable reference. Only
  * fortunes the manuals hand down alike are here; anything a school disputes
- * would be a parameter or an absence, as 三奇得使 is.
+ * would be a parameter or an absence.
  */
 export type ValenceId = 'ji' | 'xiong' | 'jixiong';
 
@@ -156,6 +157,9 @@ const CONFIGURATIONS: Record<PatternId, { hanzi: string; pinyin: string; valence
   menpo: { hanzi: '門迫', pinyin: 'ménpò', valence: 'xiong' },
   // 《吉凶格解》's 宮迫制格, 「主百事不吉」.
   gongpo: { hanzi: '宮迫', pinyin: 'gōngpò', valence: 'xiong' },
+  // 「三奇得使眾善皆臻」, the 統宗; 「此時最吉」, the 演義; under 釋吉格 in
+  // 吉凶格解. Every text that names it calls it 吉, under either rule.
+  sanqideshi: { hanzi: '三奇得使', pinyin: 'sānqídéshǐ', valence: 'ji' },
   jixing: { hanzi: '擊刑', pinyin: 'jīxíng', valence: 'xiong' },
   fuyin: { hanzi: '伏吟', pinyin: 'fúyín', valence: 'xiong' },
   fanyin: { hanzi: '反吟', pinyin: 'fǎnyín', valence: 'xiong' },
@@ -384,6 +388,10 @@ export interface PatternInput {
   yiTomb: ChartOptions['yiTomb'];
   /** Which relation of gate to palace carries the name 門迫. */
   menpo: ChartOptions['menpo'];
+  /** What makes a 奇 得使. */
+  deshi: ChartOptions['deshi'];
+  /** The palace the 值使 gate stands in on the gate plate, which `deshi: zhishi` reads. */
+  chiefGateAt: number;
   /** Which table of 十干克應 is laid. The caller's to say, as `dingTomb` is. */
   stemPairs: ChartOptions['stemPairs'];
   /**
@@ -403,8 +411,8 @@ export interface PatternInput {
  * because worse is a word about somebody's undertaking and no undertaking is
  * known here.
  *
- * Not implemented: 三奇得使. The sources consulted do not agree on which
- * pairings count, and a rule guessed at would be worse than a rule absent.
+ * 三奇得使 is laid by the rule `deshi` names: by default the 奇 over the 儀 of
+ * one of its two decades, as five transmitted works pair them.
  * 十干克應 is laid by the table `stemPairs` names: by default the fourteen
  * cells the lines name alike, under `jinhan` 《金函玉鏡》's whole table bar one
  * cell. See `STEM_PAIRS`, `JINHAN_PAIRS` and `docs/sources.md`.
@@ -420,6 +428,7 @@ export function findPatterns(input: PatternInput): Pattern[] {
   found.push(...oppressedGates(input.gates, input.menpo));
   found.push(...struckInstruments(input.earth));
   found.push(...stemPairs(input.earth, above, input.stemPairs));
+  found.push(...deshi(input.earth, above, input.deshi, input.chiefGateAt));
   found.push(...chanting(input.stars, input.gates));
 
   if (unmetHour(input.dayStem, input.hourGanzhi)) {
@@ -690,6 +699,37 @@ function stemPairs(
         found.push(mark(pair.id, { palace: number }));
       }
     }
+  }
+  return found;
+}
+
+/** The 儀 of the two decades each 奇 is 使 for: 「甲戌甲午乙為使…」. */
+const DESHI: Record<string, readonly string[]> = {
+  yi: ['ji', 'xin'], //   乙 — 甲戌己, 甲午辛
+  bing: ['wu', 'geng'], // 丙 — 甲子戊, 甲申庚
+  ding: ['ren', 'gui'], // 丁 — 甲辰壬, 甲寅癸
+};
+
+/**
+ * A 奇 that has its 使 (三奇得使).
+ *
+ * Under `liuyi` the 奇 above stands over one of the two 儀 it is paired with,
+ * the centre left out as it is for every stem over a stem. Under `zhishi` the
+ * 奇 above stands in the palace the 值使 gate stands in, whatever is below.
+ */
+function deshi(
+  earth: ByPalace<Stem>,
+  overhead: { palace: number; stem: Stem }[],
+  rule: ChartOptions['deshi'],
+  chiefGateAt: number,
+): Pattern[] {
+  const found: Pattern[] = [];
+  for (const { palace: number, stem: above } of overhead) {
+    const paired = DESHI[above.id];
+    if (paired === undefined || number === 5) continue;
+    const met =
+      rule === 'liuyi' ? paired.includes((earth[number] as Stem).id) : number === chiefGateAt;
+    if (met) found.push(mark('sanqideshi', { palace: number }));
   }
   return found;
 }

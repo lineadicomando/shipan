@@ -226,7 +226,7 @@ function sameChart(a: QimenChart, b: QimenChart): boolean {
  * an undertaking to its 用神 — the open gate for negotiation, the life gate
  * for money — varies by school, and putting one of them here would make a
  * school implicit in the engine. It belongs in a table with its sources
- * declared, and there is no such table yet. 三奇得使 is the precedent.
+ * declared, and there is no such table yet.
  *
  * An empty criteria object answers with every palace of every run, which is
  * the scan itself.

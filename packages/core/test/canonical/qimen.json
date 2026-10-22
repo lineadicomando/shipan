@@ -158,6 +158,7 @@
         "dingTomb": "gen",
         "yiTomb": "kun",
         "menpo": "menzhigong",
+        "deshi": "liuyi",
         "stemPairs": "shared",
         "shensha": "xieji"
       },
@@ -2006,6 +2007,39 @@
           "pinyin": "xiōng"
         },
         "palace": 9
+      },
+      {
+        "id": "sanqideshi",
+        "hanzi": "三奇得使",
+        "pinyin": "sānqídéshǐ",
+        "valence": {
+          "id": "ji",
+          "hanzi": "吉",
+          "pinyin": "jí"
+        },
+        "palace": 2
+      },
+      {
+        "id": "sanqideshi",
+        "hanzi": "三奇得使",
+        "pinyin": "sānqídéshǐ",
+        "valence": {
+          "id": "ji",
+          "hanzi": "吉",
+          "pinyin": "jí"
+        },
+        "palace": 3
+      },
+      {
+        "id": "sanqideshi",
+        "hanzi": "三奇得使",
+        "pinyin": "sānqídéshǐ",
+        "valence": {
+          "id": "ji",
+          "hanzi": "吉",
+          "pinyin": "jí"
+        },
+        "palace": 6
       }
     ],
     "options": {
@@ -2029,6 +2063,7 @@
       "dingTomb": "gen",
       "yiTomb": "kun",
       "menpo": "menzhigong",
+      "deshi": "liuyi",
       "stemPairs": "shared",
       "shensha": "xieji"
     }
@@ -2191,6 +2226,7 @@
         "dingTomb": "gen",
         "yiTomb": "kun",
         "menpo": "menzhigong",
+        "deshi": "liuyi",
         "stemPairs": "shared",
         "shensha": "xieji"
       },
@@ -4032,6 +4068,17 @@
           "pinyin": "xiōng"
         },
         "palace": 8
+      },
+      {
+        "id": "sanqideshi",
+        "hanzi": "三奇得使",
+        "pinyin": "sānqídéshǐ",
+        "valence": {
+          "id": "ji",
+          "hanzi": "吉",
+          "pinyin": "jí"
+        },
+        "palace": 8
       }
     ],
     "options": {
@@ -4055,6 +4102,7 @@
       "dingTomb": "gen",
       "yiTomb": "kun",
       "menpo": "menzhigong",
+      "deshi": "liuyi",
       "stemPairs": "shared",
       "shensha": "xieji"
     }
