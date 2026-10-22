@@ -31,13 +31,17 @@ tiling, and a digit is read beside whatever checks it — a sum, a rate, a
 table already held. **A table too long for one reading** — a 立成, a run of
 drawn boards — is transcribed by readers working to a written brief, a page
 range each, into TSV; the cells that disagree with the engine are then
-looked at on the plate before anything is written up. Four precedents, each
+looked at on the plate before anything is written up. Five precedents, each
 with its brief and its comparison script: `texts/taiyi/tongzong-juan31-notes/`,
 `texts/taiyi/tongzong-juan32-35-boards/`, for prose rather than cells
 `texts/qimen/daquan-juan05-10-hours/` — whose `engine.mjs` lays all 1080 hours
 of the 時家 board off the engine's step functions under several parameter
 values, and is the generator to reuse for any table of 局 and hours — and, for
-one table set against another, `texts/qimen/daquan-juan14-16-stems/`. Each
+one table set against another, `texts/qimen/daquan-juan14-16-stems/`; for
+drawn diagrams, `texts/qimen/daquan-juan60-baojing/`, whose `scripts/` find
+the drawings by their ink (`wheels.py`), cut each to a disc (`disc.py`), lay
+the engine beside the transcription (`compare.mjs`) and find the day a
+drawing fits when it is not its own (`lag.mjs`). Each
 directory has a README or a brief saying what its files are. A transcriber
 normalises titles it believes misprinted, so a title out of sequence is
 checked on the plate too. **The 大全 is surveyed with three scripts** in
@@ -132,10 +136,10 @@ is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
   surveyed. It defines the 格 and lays no board, and nearly every 格 the
   engine names it defines alike. Its 入墓 verse holds `dingTomb: gen`, as the
   witness `jixionggejie`. Two readings were found and put to the user, and
-  nothing is built on them: 門迫 named for the gate that suffers (宮制門), and
-  乙 buried in 乾, which 《奇門遁甲秘笈大全》卷十五 states in another recension
-  of the same verse, read on the 省思堂 plate. 寶鏡圖, 卷六十–六十四, was
-  bracketed and not read. Renders in `texts/qimen/daquan-juan58-jixiong/`.
+  built the same day (next item): 門迫 named for the gate that suffers
+  (宮制門), and 乙 buried in 乾, which 《奇門遁甲秘笈大全》卷十五 states in
+  another recension of the same verse, read on the 省思堂 plate. Renders in
+  `texts/qimen/daquan-juan58-jixiong/`.
 - 2026-10-22, what it built (0.30.0): both readings, on the user's word, as
   `menpo` (`menzhigong`, the default, and `gongzhimen`, which also marks
   宮迫) and `yiTomb` (`kun`, the default, and `qian`), with the 秘笈大全 a
@@ -151,7 +155,8 @@ is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
   The wheels are the 日家 board: the stars the yang count every day of the
   cycle, no yin half, and the gates turned with the sun every day. Twenty
   wheels, 己亥 to 戊午, print the day before's rings. Two readings put to the
-  user, no code. The 大全 is surveyed to its end bar 景祐秘纂 卷二–四.
+  user and built the same day (next item). The 大全 is surveyed to its end
+  bar 景祐秘纂 卷二–四.
   Scripts and transcriptions in `texts/qimen/daquan-juan60-baojing/`.
 - 2026-10-22, what it built (0.31.1): both, on the user's word, as
   `dayGates: shun` and `dayDun: yang`, held by 寶鏡圖 as `baojingtu`; the
@@ -186,6 +191,11 @@ decided is left unbuilt.
    "Recorded, with no parameter", under 奇門.
 3. **Or `stemPairs: xianji`**: six cells of the 仙機's 干論 read again on the
    plate, § 1. Its transcription is held, so this is an errand of six looks.
+4. **Or two errands left by 2026-10-22.** 截路空亡 on 寶鏡圖's other
+   fifty-nine leaves: 癸未's gives it at 子 and 丑 only, where the engine
+   marks the 壬 and 癸 hours, four on a 戊 or 癸 day; the hour lines are on
+   the leaf after each wheel, `order.txt` gives the sheets. And the scan
+   form's `gongpo`, § 5.
 
 **On the surface, nothing is owed and nothing is decided next.** What a
 pointer does beyond naming the layer is open; the em dash of § 5 is the one
@@ -232,10 +242,10 @@ cut short were found.
   induced from a table, and the lists are three prints three ways. It waits
   on a sentence stating the rule, in any work.
 
-**Done between 2026-10-11 and 2026-10-20, and nothing is half done.** Each
+**Done between 2026-10-11 and 2026-10-22, and nothing is half done.** Each
 reading and each build of the engine has its section in `docs/sources.md`,
 its row in `docs/sources.tsv` and its line in `texts/README.md`; phases 51 to
-65 in `docs/history/` are the record. The surface work of 2026-10-15 and
+69 in `docs/history/` are the record. The surface work of 2026-10-15 and
 2026-10-18 has no phase: "Where it stands" above and the commits say it.
 
 - 2026-10-11: `yearBoundary: dongzhi` of 太乙 computed; `host.accord` and
@@ -307,6 +317,12 @@ its row in `docs/sources.tsv` and its line in `texts/README.md`; phases 51 to
   is the converse of the engine's, and the 秘笈大全's recension of the same
   入墓 verse puts 乙 in 乾. 寶鏡圖 bracketed (0.29.2). Both readings built
   the same day as `menpo` and `yiTomb`, and 三奇得使's refusal re-read (0.30.0).
+- 2026-10-22: 三奇得使 built as `deshi` (0.31.0), on the user's three words:
+  the transmitted pairing by default, 開悟之門's 值使 rule beside it, 吉 under
+  both. Then 寶鏡圖, 卷六十–六十四, surveyed; its sixty day wheels transcribed
+  by four readers and laid against the engine; `dayGates: shun` and `dayDun:
+  yang` built on them (0.31.1). The board of 癸未 under both, seen in the dev
+  server, is the wheel of sheet 1420 cell for cell.
 
 **Left open by the reading of 2026-10-22**, each small and none blocking:
 吉凶格解's 釋吉格 — the 九遁, 三詐, 五假, 玉女守門 — seen at 50 dpi and not
@@ -344,7 +360,13 @@ whether `baojian` holds `spiritSeat: tianpan` beside `tongzong`, since
 None of the 32 cases was found in another work's extract, which locates
 nothing either way.
 
-**Owed a look by the user, and not blocking**: catalog strings written
+**Owed a look by the user, and not blocking**: on 2026-10-22, glosses
+invented for names no catalog had — `label.pattern.gongpo` «palace oppressed»
+· «palazzo oppresso», `label.pattern.sanqideshi` «a marvel finds its envoy» ·
+«la meraviglia trova il suo messo» — and the strings of `form.qimen.menpo`,
+`yiTomb`, `deshi`, `dayDun` and `dayGates.shun` with the reworded
+`dayGates.note`, written under the `reader-copy` skill and read by nobody
+else. And catalog strings written
 without the `reader-copy` skill. On 2026-10-20: `form.qimen.spiritSeat`, its
 two values, its note and `notes.parameter.spiritSeat`, and the reworded
 `form.qimen.centreLodging.dun` and `form.qimen.centreLodging.note` («Two of
@@ -550,7 +572,10 @@ prose, which a third language pays for and derived text does not. →
   `PATTERN_IDS` in `apps/web/src/lib/vocabulary.ts`, and the scan form's
   `JINHAN_PATTERN_IDS` is read off it by position, from `qinglongheling` on:
   a configuration added after 《金函玉鏡》's would be offered only under
-  `stemPairs: jinhan` until that slice is changed.
+  `stemPairs: jinhan` until that slice is changed. `gongpo` and `sanqideshi`
+  sit before it and are offered always, though `gongpo` occurs only under
+  `menpo: gongzhimen`: a scan asked for it under the default finds nothing
+  and does not say why. The same filter, keyed on `qimen.menpo`, would fix it.
 - **A configuration may carry no fortune**, since `stemPairs: jinhan`:
   `Pattern.valence` and `valenceOf` are optional, and every surface prints the
   mark without one. A surface added later has to do the same.

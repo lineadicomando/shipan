@@ -4981,6 +4981,7 @@ only as far as their first three days.
 |---|---|---|---|
 | `dayGates: fei`, the 金函玉鏡's 定局 | three days to a palace through the eight | flown with it, in the order of the palaces' numbers | not named: the 定局 serves sixty days and no half |
 | `dayGates: zhuan`, 《日家奇門》 | the same | turned round the eight behind it, with the sun on the day of a yang stem and against it on a yin one | 休門 begun at 離 and run back |
+| `dayGates: shun`, 《寶鏡圖》 | the same | turned round the eight behind it with the sun on every day | none printed: the work lays the yang count all year, `dayDun: yang` |
 
 The table says it is drawn from the 金函奇門遁甲 and lays the gates another
 way on every day but those with 休門 on 坎 or 離 and a yang stem. It states no
@@ -4988,6 +4989,11 @@ rule for what it does; the rule here is read off ninety blocks of it. Neither
 is a corruption of the other that anybody can show, and a line's own table is
 that line's witness: each is a value, and the default is the one with a rule
 and an enumeration behind it.
+
+**A third work arrived on 2026-10-22 and is the table's third row**: 寶鏡圖,
+《御定奇門大全》卷六十一–六十四, sixty day boards with the gates turned with
+the sun on every day and no yin half. It is `dayGates: shun` and `dayDun:
+yang`. § "《御定奇門大全》卷六十–六十四".
 
 **What `dayGates: fei` does after 夏至 is the 定局's and is a limit of it.**
 The 定局 names no half of the year, so the engine counts the gates the same way
