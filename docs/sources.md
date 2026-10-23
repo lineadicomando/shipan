@@ -8032,8 +8032,12 @@ block named for it.
 - **《齊書·武帝紀》 records eleven dated positions of 太乙**, from 漢高五年
   (202 BCE) to 宋升明元年 (477 CE), and 蕭子顯 was not writing a manual. 盧央
   quotes the passage whole to adjudicate the three 上元積年 in circulation: the
-  count of 《太乙淘金歌》 is out by a whole 元 and gives 九宮 where the annal
-  says 四宮, 「故不能採納」. **This engine reproduces all eleven**, and the 太歲
+  count of 《太乙淘金歌》 is out by a 元 and gives 九宮 where the annal
+  says 四宮, 「故不能採納」. The 元 is his and not this board's: the 元法 of
+  seventy-two years is a whole number of 24-year rounds and would move
+  nothing, while 四宮 to 九宮 is twelve years modulo the round, which a
+  sexagenary 元 would be. Which he meant is on his page, not yet read for it
+  (2026-10-23). **This engine reproduces all eleven**, and the 太歲
   it prints for each agrees with the reign year that names it, which is what
   shows the years were converted rightly rather than the palaces guessed.
 - **Six boards worked step by step**, of which five recompute in every printed

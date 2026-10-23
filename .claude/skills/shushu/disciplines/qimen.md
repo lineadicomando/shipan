@@ -470,10 +470,17 @@ endpoints are `/api/qimen`, `/text`, `/plate` and `/prompt`.
 - palace-to-life-area mappings for a 年命;
 - a natal Qi Men chart (統宗 卷十二; Joey Yap's *Destiny Analysis* is the
   modern form);
-- anything 卷十一 says after a hexagram's name.
+- anything 卷十一 says after a hexagram's name;
+- a board of the day (`system: rijia`) in a prompt, a scan or a 年命: each
+  refuses the family by name, and the day table's 大吉時 and graded palaces
+  stay out;
+- choosing a name of the middle pair (勾陳/白虎, 朱雀/玄武) by the matter asked
+  (金鏡寶鑑's 「如占病、占賊…」), which is a licence to read, not a value.
 
-Of the 年命 doctrine, only the placement travels. Parameter values not
-implemented throw `OPTION_NOT_IMPLEMENTED`.
+Of the 年命 doctrine, only the placement travels. A parameter value not
+implemented throws `OPTION_NOT_IMPLEMENTED`, except `method`, which throws
+`METHOD_NOT_IMPLEMENTED`; an option of the other family (an hour-board option
+beside `system: rijia`, or the reverse) throws `OPTION_NOT_READ`.
 
 **Mapping §4 onto the output.**
 
@@ -547,10 +554,12 @@ that is on the shelf.
 
 ## 8. Leads against the register
 
-- **The 統宗's own copy of the 歌 puts 丁 in 乾.** The shelf's simplified
-  transcription of the 統宗 reads 「更嫌六乙來臨二，丙丁臨六亦如之」. The register
+- **The 統宗's own copy of the 歌 puts 丁 in 乾.** The shelf's
+  transcriptions of the 統宗 卷一 (`qimen-dunjia-tongzong-juan01-ctext.html`,
+  and `qimen-dunjia-tongzong-jianti.txt`, simplified, which collates with it
+  and is not independent) read 「更嫌六乙來臨二，丙丁臨六亦如之」. The register
   names the 統宗 a holder of `dingTomb: gen` on its 四十格 (「丁奇艮宮」). If the
-  plate reads as the transcription, one work gives 丁 two palaces, as
+  plate reads as the transcriptions, one work gives 丁 two palaces, as
   吉凶格解 gives 乙 two. Check the 故宮 第426冊 print.
 - **The Wikisource 歌 (羅通) puts 乙 in 乾**: 「更兼乙奇來臨六，丁奇臨八亦同時」.
   That is `yiTomb: qian` + `dingTomb: gen`, the 秘笈大全 verse's and 三璋's

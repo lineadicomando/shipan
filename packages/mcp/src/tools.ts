@@ -382,11 +382,14 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
         'no degree**. Read it in that palace, quote no degree and name no lodge for it, and ' +
         'say what it rests on. Pass `ziqi: "off"` to lay the board without it, and it will say ' +
         'it carries three. ' +
-        '**羅睺 is the descending node here, not the ascending one** — the ' +
+        '**By default 羅睺 is the descending node here, not the ascending one** — the ' +
         'astrologers’ law, which is the reverse of the Indian convention and of the 時憲曆’s; ' +
-        '計都 takes the other. **The lodge boundaries are the determinative stars themselves**, ' +
-        'placed at this instant with precession in them, so no table of 宿度 and no epoch ' +
-        'enters — and correspondingly nothing published can be held against them. ' +
+        '計都 takes the other, and `luohou: "ascending"` swaps the two names. **By default ' +
+        'the lodge boundaries are the determinative stars themselves**, placed at this instant ' +
+        'with precession in them, so no table of 宿度 and no epoch enters — and ' +
+        'correspondingly nothing published can be held against them; `xiudu: "shoushi"` lays ' +
+        'them by the 1281 calendar’s table instead. The block of schools under the pillars ' +
+        'says which was laid: report the board as that. ' +
         'It names what the tradition names and stops. It does not read the 化曜 or the 十神, ' +
         'weigh a 度主, rank a palace or say what a placement means for a life; those need a ' +
         'question to have been asked and belong to the reader.',
@@ -472,16 +475,17 @@ export function registerComputeZiwei(server: McpServer, context: ToolContext): v
         'lunar month give 紫微, and the rest follows by counting. No ephemeris is consulted. ' +
         'Do not import planets, aspects, transits or a house system, and do not translate it ' +
         'into one to read it. ' +
-        'Every placement is 《紫微斗數全書》 卷二, and four of its tables part from the ones ' +
-        'modern software carries — say so if you report those four. **火星 and 鈴星 take a ' +
-        'seat apiece from the year’s triplicity and the birth hour never enters** unless ' +
-        'huoling is set to hour, which counts on from those seats as most modern boards do; ' +
-        'the block of schools under the pillars says which was laid. **天魁 and 天鉞 go to 亥 ' +
-        'and 戌 for 丙 and 丁** (「丙丁豬狗位」), where the modern verse reads 豬雞; and 辛 ' +
-        'takes 寅 then 午. **解神 is placed off the birth year**: it is the star modern boards ' +
-        'call 年解, and the star they call 解神, placed off the month, is another one this ' +
-        'board does not carry — neither board is wrong where the two differ. **壬 ' +
-        'gives 化科 to 天府**, not to 左輔. ' +
+        'The placements are 《紫微斗數全書》 卷二’s wherever no parameter moves them, and ' +
+        'some of its tables part from the ones modern software carries — say so if you report ' +
+        'one of those. The block of schools under the pillars names every value the board was ' +
+        'laid on; read it before you report a placement as the book’s. **火星 and 鈴星 take ' +
+        'a seat apiece from the year’s triplicity and the birth hour never enters** unless ' +
+        'huoling is set to hour, which counts on from those seats as most modern boards do. ' +
+        '**解神 is placed off the birth year**: it is the star modern boards call 年解, and ' +
+        'the star they call 解神, placed off the month, is another one this board does not ' +
+        'carry — neither board is wrong where the two differ. **Under the default sihua, 壬 ' +
+        'gives 化科 to 天府**, not to 左輔; sihua set to zuofu moves that one cell, and ' +
+        'tianxiang moves 庚’s 化忌 from 天同 to 天相. ' +
         'gender is needed only for the 大限, the 小限 and the two rings; without it the seats ' +
         'are complete and those four are absent, which is the right answer and not a degraded ' +
         'one. Do not guess it. ' +
@@ -923,8 +927,10 @@ export function registerScanMoments(server: McpServer, context: ToolContext): vo
         'place to be is a reading — yours to make if the person wants one, and yours to own. ' +
         'An empty answer means the arrangement did not occur in that interval; say so plainly ' +
         'rather than loosening the question and presenting the result as what was asked. ' +
-        'Which gate suits which undertaking is NOT in this server: that mapping varies by ' +
-        'school, and the engine takes no position on it. If you supply one, say it is yours. ' +
+        'Which gate suits which undertaking is not applied here: the purposes resource carries ' +
+        'what the tradition puts under each gate, and if you use it to choose a gate, you ' +
+        'applied it and you say so. The stems, stars and spirits as significators are in no ' +
+        'table on this server; if you supply a mapping from those, say it is yours. ' +
         'Call compute_qimen_chart for the whole board of any hour this returns.',
       inputSchema: {
         from: z

@@ -678,6 +678,23 @@ describe('the options', () => {
     expect(chunjie.options.yearBoundary).toBe('chunjie');
     expect(lichun.options.yearBoundary).toBe('lichun');
   });
+
+  it('takes the 旬中空亡 from the year the board counts from', () => {
+    // 1994-02-07 is after 立春 and before 正月初一: 癸酉 under one boundary,
+    // 甲戌 under the other, and the two stand in different 旬.
+    const empty = (laid: ZiweiBoard) =>
+      laid.palaces
+        .filter((p) => p.stars.some((s) => s.star.id === 'xunzhongkongwang'))
+        .map((p) => p.branch.hanzi)
+        .sort()
+        .join('');
+    const chunjie = board('1994-02-07', '14:30', { yearBoundary: 'chunjie' });
+    const lichun = board('1994-02-07', '14:30', { yearBoundary: 'lichun' });
+    expect(chunjie.yearPillar.hanzi).toBe('癸酉');
+    expect(lichun.yearPillar.hanzi).toBe('甲戌');
+    expect(empty(chunjie)).toBe(['戌', '亥'].sort().join(''));
+    expect(empty(lichun)).toBe(['申', '酉'].sort().join(''));
+  });
 });
 
 describe('a leap month counts as the month after it', () => {

@@ -531,11 +531,10 @@ and whether that source is on the shelf.
 None of these corrects the register. Each is a located witness that has not yet
 been weighed, which CLAUDE.md says is not the same as a weighed one.
 
-1. **`yearBoundary: lichun`.** The register: «stay unattributed» (`docs/sources.md` § "Whose each value of the calendrical layer is"), and TODO § 3 «who turns the year at 立春». The shelf's own transcription `texts/rules/CAL-03`, marked LETTA (read), quotes 洪丕謨 《中國古代算命術》 p. 59 ★ stating it with both directions worked. The register already treats modern manuals (《命理新論》) as holders, so this one would likely qualify the same way once read on the plate.
+1. **`yearBoundary: lichun`.** The register: «stay unattributed» (`docs/sources.md` § "Whose each value of the calendrical layer is"), and `TODO.md` § 1 «who turns the year at 立春». The shelf's own transcription `texts/rules/CAL-03`, marked LETTA (read), quotes 洪丕謨 《中國古代算命術》 p. 59 ★ stating it with both directions worked. The register already treats modern manuals (《命理新論》) as holders, so this one would likely qualify the same way once read on the plate.
 2. **`dayBoundary: zishi`.** The register: «stays unattributed». `CAL-06` says 盧央 pp. 23–24 ★ demonstrates the 干支 day turning at 23:00 over six consecutive days. It is a modern study rather than a manual, so the attribution would be weaker; it is still a located witness.
 3. **`yearBoundary: chunjie`.** The register: unattributed. GB/T 33661-2017 §6.1.1 ★ (`CAL-03`) ties the civil year's 干支 to the lunar year. It is a national standard, not a 命 practitioner, so it would be attributed as the civil convention. `CAL-03` goes as far as arguing that offering 立春 runs against the official convention.
-4. **The register's "Asked and not found" in TODO § 3** lists 《三命通會》卷二 and 《命理新論》 for the day and year boundaries. 《淵海子平》 (故宮 422 ★) and 洪丕謨 were not in that list. By the rule that an arrival is put to the questions already standing, they were never asked.
-5. **The strength comment in `dunjia/strength.ts`** says `earth: eighteen` is «refused by name». `parameters.ts` has it implemented and held by `jingjie`. A stale comment in code, not a register entry, noted for whoever reviews level 3.
+4. **The register's "Asked and not found" in `TODO.md` § 1** lists 《三命通會》卷二 and 《命理新論》 for the day and year boundaries. 《淵海子平》 (故宮 422 ★) and 洪丕謨 were not in that list. By the rule that an arrival is put to the questions already standing, they were never asked.
 
 ---
 

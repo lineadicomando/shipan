@@ -369,7 +369,9 @@ export function computeZiwei(moment: Moment, options: ZiweiOptions): ZiweiBoard 
   for (const branchId of JIELU[yearStem.id]) {
     place('jielukongwang', BRANCHES.findIndex((b) => b.id === branchId));
   }
-  for (const branch of decade(yearGanzhi(lunar.year)).empty) {
+  // The year this board counts from, as for every year-branch star above: under
+  // `lichun` a birth between 立春 and 正月初一 takes its 旬 from the new year.
+  for (const branch of decade(yearPillar).empty) {
     place('xunzhongkongwang', branch.index);
   }
 

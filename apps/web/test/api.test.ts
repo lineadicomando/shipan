@@ -455,7 +455,7 @@ describe('the prompts for a board of 命', () => {
     expect(text).toContain('命宮');
     expect(text).toContain('what the tradition reads at that seat');
     // The two bounds that travel with the instruction they govern.
-    expect(text).toContain('one source and three derivations');
+    expect(text).toContain('one witness and a check');
     expect(text).toContain('over-determination');
   });
 

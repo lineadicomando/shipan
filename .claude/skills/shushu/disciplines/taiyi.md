@@ -431,7 +431,7 @@ same shape per 局 *(web)*:
 - **Computes:** the 歲計 board of a year, `taiyiBoard({ year }, options)`, on
   the 金鏡's count with the 統宗's additions. MCP `compute_taiyi`; REST
   `/api/taiyi`, `/api/taiyi/text`, `/api/taiyi/plate`, `/api/taiyi/prompt`;
-  CLI `taiyi`. It also exposes `taiyiJu(ju, dun)` for the 立成 rows.
+  CLI `taiyi`. It also exposes `taiyiJu(ju, dun, options)` for the 立成 rows.
 - **Refuses:**
   - `ji: yueji / riji / shiji`. These wait by the user's decision of
     2026-10-11. The 金鏡's constants are corrupt, the 統宗's day anchor is
@@ -440,7 +440,8 @@ same shape per 局 *(web)*:
   - The dynastic and per-palace readings, and the 主/客 assignment
     (`docs/refusals.md`: § "The received readings of 太乙", § "Who is 主 and
     who is 客").
-  - Nobody is on the board: `--ask` is refused, and there is no `asked`.
+  - Nobody is on the board: `--ask` is refused, and there is no `asked`. A
+    matter travels instead as `about=true`, the text appended in the browser.
 - **Output fields, mapped to § 4.**
   - `taiyi`, `yang`: the palace and its 陽/陰 class (A, E, C-和).
   - `wenchang`, `shiji`: the two eyes (B, D).
@@ -476,8 +477,8 @@ the shelf.
   conditions, 和/不和 labels and verdicts. It is the external check the 立成
   verification lacks, and a sentence for 杜. **Not on the shelf.**
 - **掩 of the host's 大將 by 始擊**, which 金鏡 卷三 states (「掩主大將，主人筭和
-  吉不和凶」). Not computed. `TaiyiPatternSubject` has no 主大將 as an 掩
-  target. **On the shelf** (金鏡 卷三); read it on the plate before building.
+  吉不和凶」). Not computed. `TaiyiPatternSubject` has the host's general
+  (`hostGeneral`), but 掩 is marked on `shiji` alone, with no `partner`. **On the shelf** (金鏡 卷三); read it on the plate before building.
 - **地內/天外 and 內宮/外宮.** 卷四 lists 八三四 / 九二七六, with 一 missing in
   the 四庫. 卷三 lists 1–4 / 6–9. Two partitions in one work: a divergence to
   record and perhaps a parameter. Settle it on the 四庫 plate and the 統宗 卷五

@@ -11,6 +11,7 @@ import {
   chartTranscript,
   qizhengReadingPrompt,
   qizhengTranscript,
+  ziweiReadingPrompt,
   readingPrompt,
   taiyiReadingPrompt,
   taiyiTranscript,
@@ -18,6 +19,7 @@ import {
 import { computeBazi } from '../src/bazi/index.js';
 import { qizhengBoard, DEFAULT_QIZHENG_OPTIONS } from '../src/qizheng.js';
 import { taiyiBoard, DEFAULT_TAIYI_OPTIONS } from '../src/taiyi.js';
+import { computeZiwei, DEFAULT_ZIWEI_OPTIONS } from '../src/ziwei/index.js';
 import { DEFAULT_OPTIONS, type Place } from '../src/types.js';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -329,13 +331,54 @@ describe('the prompt for a board of 命', () => {
   it('carries what the 七政四餘 board is least sure of', () => {
     const instructions = qizhengReadingPrompt(moment(), board(), en);
 
-    expect(instructions).toContain('one source and three derivations');
+    expect(instructions).toContain('one witness and a check');
     expect(instructions).toContain('over-determination');
     // 紫氣 is on the board and is the one body there not read off the sky, so
     // the prompt says what it is worth rather than letting a model read it
     // beside the measured three as though it were one of them.
     expect(instructions).toContain('紫氣');
     expect(instructions).toContain('quote no degree for it');
+  });
+
+  /**
+   * A line saying how the board was laid is true of one value only, so it
+   * follows the value in force: a prompt stating the default above a board
+   * laid on another tells a model the reverse of what it is reading.
+   */
+  it('says which node is 羅睺 and where the lodges begin as the board was laid', () => {
+    const at = moment();
+    const laid = (options: Partial<typeof DEFAULT_QIZHENG_OPTIONS>) =>
+      qizhengReadingPrompt(
+        at,
+        qizhengBoard(
+          { julianDay: at.julianDayUT, hour: at.hourBranch },
+          { ...DEFAULT_QIZHENG_OPTIONS, ...options },
+          context,
+        ),
+        en,
+      );
+    const plain = laid({});
+    expect(plain).toContain('羅睺 luóhóu stands at the descending node');
+    expect(plain).toContain('measured from the determinative stars');
+
+    const swapped = laid({ luohou: 'ascending' });
+    expect(swapped).toContain('羅睺 luóhóu stands at the ascending node');
+    expect(swapped).not.toContain('stands at the descending node, 計都');
+
+    const shoushi = laid({ xiudu: 'shoushi' });
+    expect(shoushi).toContain('授時曆 shòushílì of 1281');
+    expect(shoushi).not.toContain('measured from the determinative stars');
+  });
+
+  it('names the 四化 table the 紫微斗數 board was laid on', () => {
+    const at = moment();
+    const said = (sihua: 'quanshu' | 'zuofu' | 'tianxiang') =>
+      ziweiReadingPrompt(at, computeZiwei(at, { ...DEFAULT_ZIWEI_OPTIONS, sihua }), en);
+
+    expect(said('quanshu')).toContain('This board uses the table 《全書》 prints, which');
+    expect(said('zuofu')).toContain('壬’s 化科 falls on 左輔');
+    expect(said('zuofu')).not.toContain('This board uses the table 《全書》 prints, which');
+    expect(said('tianxiang')).toContain('庚’s 化忌 falls on 天相');
   });
 
   it('puts the four pillars inside a fence and the withheld 用神 outside', () => {

@@ -71,7 +71,7 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-23
 
-**Version 0.31.1**, in every manifest. **`main` is checked out and no branch
+**Version 0.32.0**, in every manifest. **`main` is checked out and no branch
 is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
 `main` carry since 2026-10-15 is of eight days:
 
@@ -164,6 +164,15 @@ is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
 - 2026-10-23, the documents: the roadmap and `texts/README.md` reviewed
   against the code under the `review` skill, every file of the shelf named in
   a row of its own, and § 2 says what is left to read. No code, no version.
+- 2026-10-23, the review (0.32.0): levels 1 and 2 of the `review` skill, art
+  by art, with the `shushu` files as the lens. What was fixed: 紫微's
+  旬中空亡 follows `ziwei.yearBoundary`; the 七政 prompt follows `luohou` and
+  `xiudu` and cites 星學大成 卷三 for the direction of the twelve; the 紫微
+  prompt names the 四化 table in force; the `compute_ziwei`,
+  `compute_qizheng` and `scan_moments` descriptions stop stating a default as
+  the rule; 太乙's «a whole 元» is 盧央's word and not the engine's; stale
+  comments and the `shushu` files corrected. What it found and left is item 6
+  below.
 
 `main` is pushed to `origin/main` as of 2026-10-18; the commits of
 2026-10-19, 2026-10-20, 2026-10-22 and 2026-10-23 are not pushed, and pushing is the user's call.
@@ -211,7 +220,35 @@ decided is left unbuilt.
    (`almanac.md`); the elements of 文昌 and 始擊 in the 金鏡 against the
    register's (`taiyi.md`); 洪丕謨 and 盧央 on the shelf for the year and day
    boundaries no text holds yet (`common/foundations.md`). Each is a reading
-   of a file held.
+   of a file held, bar two: the 楊公忌 passage is in the 華齡 協紀's (下) and
+   《星曆考原》卷五 is not on the shelf either.
+6. **Or what the review of 2026-10-23 found and did not fix**, each wanting a
+   plate or the user's word:
+   - 六壬: 涉害 palace-first against 精解 pp. 10–11 (`texts/rules/LR-04.md`),
+     which also counts the starting palace and the 寄干; 無親, which 精解
+     names, closed as unnamed; no row for the direction of the generals, the
+     遁干, or 無依, 自任, 自信, 虎視, 冬蛇掩目.
+   - 曆注: 臨日 carried `xiong`, where the 協紀 overrules the 《樞要歷》 and
+     calls it 吉 (華齡 OCR pdf p. 160, memorial p. 13); 十二神 at rung 4 on a
+     7 300-day check; the 神煞 row still says seven; 宜忌 refused with no
+     entry in `docs/refusals.md`; a second 喜神 rule in 卷七 leaf 47.
+   - 八字: yin-stem 長生 is a school (任鐵樵) the prompt does not sign;
+     `dongzhi` turns the 大運 for six weeks with no witness; no row for
+     `dayBoundary: midnight`.
+   - 奇門: no row for `spirits: fixed`, `spirits: baihu`,
+     `centreTravel: travel`; the 入墓 row's rung against its now-split axis;
+     the 統宗's and the 秘笈大全 卷一's copies of the 入墓 歌 on the plate;
+     the 飛盤 and 日家 refusal rows and the 十干克應 one (a second witness
+     asked for, 70 for 67).
+   - 七政: `luohou: ascending` with no `heldBy` and no row; the 三辰通載
+     described two ways; `minggong: yuejiang`'s 三命通會 lays on the month's
+     palace and would part from the Sun's under `gong: ci`.
+   - 太乙: no row for 陽宮/陰宮; the roles' elements carried by nobody;
+     《齊書》 likely 《南齊書》; kintaiyi (MIT) exists against «nothing open
+     computes this board»; `ji: yueji`/`shiji` «being built» against «wait».
+   - 紫微: no row for `yearBoundary: lichun`; the five phases row's rung;
+     「辨生剋制化以定窮通」 is 斗數準繩's and not the 太微賦's; 第五冊 of the
+     絕學 holds three works; the `sihua` refusal row unmarked.
 
 **On the surface, nothing is owed and nothing is decided next.** What a
 pointer does beyond naming the layer is open; the em dash of § 5 is the one

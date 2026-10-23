@@ -225,7 +225,9 @@ Every step below is 《協紀辨方書》's unless said; the engine value is
     - *Not carried from 卷七*: 天官貴人 (「日隨干官星」), 福星貴人 (「日干生時干」),
       八祿, 日建 · 日破 · 日合 · 日害 · 日刑, 四大吉時 (the 四煞 sunk in the four
       corners by the 月將), 貴登天門時 (the noble on 乾亥), 九醜, 旬中空亡.
-11. **宜忌**: refused (`docs/refusals.md` § Advice and § "Ordering two hours").
+11. **宜忌**: refused (`docs/sources.md` § 曆注, "What is not here", and the
+    header of `packages/core/src/almanac.ts`; `docs/refusals.md` § "Ordering
+    two hours").
     The consultant supplies it, attributed (§ 4).
 
 ---
@@ -407,7 +409,8 @@ visibly. **It does not consult the almanac**: no criterion names a 年神, an
 officer or an hour mark.
 
 **What is refused, and where it is argued**: 宜忌 and every verdict built from
-them (`docs/refusals.md` § Advice); ordering hours or days, the 「大吉時」 column,
+them (`docs/sources.md` § 曆注, "What is not here", and the header of
+`packages/core/src/almanac.ts`); ordering hours or days, the 「大吉時」 column,
 dating an outcome (§ "Ordering two hours, and dating an outcome"); the day
 board in prompts, scan and 年命 (§ "A board of the day, anywhere but on its own
 page"); the 禽象 and the words 黃道/黑道 (`docs/sources.md` § 曆注). The
@@ -415,8 +418,10 @@ consultant may give §§ 4.1–4.3 aloud, attributed; the engine's fields are th
 facts it rests on.
 
 **The register's rungs** (`docs/sources.tsv`, `almanac` rows): 建除 and the
-lodge at 1 (checked 14 600/14 600 against `lunar-javascript`); 十二神, 四德 and
-the hour marks at 4; 年神 and the 神煞 at 5 (one text, quoted); 天乙 on hours at 2.
+lodge at 1 (checked 14 600/14 600 against `lunar-javascript`); 十二神, 四德, the
+god each hour treads, 截路空亡 and 喜神 at 4; 年神 and the 神煞 at 5 (one text,
+quoted); 天乙 on hours at 2. 五不遇時 has no almanac row: it is weighed only
+under the `qimen` row, at 3.
 
 ---
 
@@ -501,7 +506,8 @@ Each: what · why · what would settle it · on the shelf or not.
   folk rule is **not** the 值日 count: 「其術元旦起角宿，依二十八宿次序順數，值室
   宿之日即為楊公忌」 and then 「今並非值日之宿，而强以角宿起元旦，每年另起，不能輪
   轉，固不通矣」. 2 of 78 is what that predicts; the comparison measures a claim the
-  source did not make. Worth re-reading on the 華齡 ★ before the paragraph stands.
+  source did not make. Worth re-reading on a print before the paragraph stands: 卷三十六 is in the
+  華齡 (下), which is not held (the shelf has the (上), 卷一~八).
 - **The 協紀 on the lodge count is softer than «It does not [stand behind
   it]».** The same 楊公忌 entry: 「夫以宿值日，亦如用甲子紀日，雖未必始於大撓，
   而其來已久，每日一宿，自然順序，不用安排，以論趨避猶可說也」 *(web)*. What

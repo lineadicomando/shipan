@@ -25,16 +25,15 @@ import type { Element } from './types.js';
  * disagree because they were measured in different centuries. So the
  * boundaries are not tabulated at all: a 宿 begins at its 距星, and
  * `data/sefstars.txt` holds the twenty-eight stars for sweph to place at the
- * instant asked for. The 曆 remain as declared values of `xiudu`, for
- * whenever one of their tables arrives with an epoch that can be cited.
+ * instant asked for. The 曆 are declared values of `xiudu` beside it, each
+ * laid from its own table with the epoch that table cites.
  *
  * **What it carries, and what it declines.** The twelve 人事宮 — 命宮, 財帛,
- * 兄弟 and the rest — are laid, and they nearly were not: they follow from the
- * 命宮 by counting, and no source consulted states which way the counting runs
- * in terms another could be held against. They are here on over-determination
- * rather than on two agreeing sources, which is the weakest ground anything on
- * this board stands on, and the check is written out at `HOUSES` for a reader
- * to run. What is declined is the step after. A palace is labelled here and
+ * 兄弟 and the rest — are laid. They follow from the 命宮 by counting, and the
+ * direction of the count is carried twice over: by over-determination, with
+ * the check written out at `HOUSES` for a reader to run, and by 《星學大成》
+ * 卷三, which states it — 「逆數右轉」 — and agrees with the check. What is
+ * declined is the step after. A palace is labelled here and
  * never read: the geometry is the 命宮, the twelve 次 the bodies sit in and the
  * name each palace takes, and the doctrine that reads a life off them is the
  * reader's, as it is everywhere else here. See `docs/history/` phase 16 and the
@@ -46,15 +45,17 @@ export interface QizhengOptions {
   /**
    * Where the twenty-eight 宿 begin.
    *
-   * `juxing` is the only value implemented and takes the boundaries from the
+   * `juxing` is the default and takes the boundaries from the
    * 距星 themselves, placed at the instant of the chart with precession and
    * proper motion in them. It commits to no epoch, which is what a table
    * cannot avoid doing: the 黃道宿度 of 《時憲曆》 and of 《授時曆》 differ
    * mostly because they were measured centuries apart, and either shipped as
    * a constant would be right for one century and quietly wrong for the rest.
    *
-   * `shixian` and `shoushi` are the two tables, declared so that one can
-   * arrive without breaking a shared link, and refused until one does.
+   * `shixian` and `shoushi` are the two tables. `shoushi` is implemented: it
+   * lays the frame by 《授時曆故》's own method from the 黃道宿次 of 至元辛巳
+   * (see `shoushi.ts`). `shixian` is declared and refused until its table
+   * arrives with an epoch that can be cited.
    */
   xiudu: 'juxing' | 'shixian' | 'shoushi';
 
@@ -109,13 +110,16 @@ export interface QizhengOptions {
    *
    * `zhongqi` cuts them at the 中氣, which is to say every thirtieth degree of
    * the Sun's own longitude — 春分 opens 降婁 at 戌 and the rest follow. It is
-   * the 時憲曆's 太陽過宮 and what every modern 排盤 lays.
+   * what every modern 排盤 lays, and the ring the 六壬 texts turn the 月將 on
+   * at the 中氣; no 七政四餘 text is named in `docs/sources.md` for cutting
+   * the palaces there.
    *
    * `ci` would take the older definition, where a 次 is a stretch of 宿度 —
    * 星紀 from 斗十二度 to 女七度 — and so rides the stars rather than the
    * seasons. The two were the same thing once and precession has parted them
-   * by weeks. It is declared and refused: the stretches have to come from a
-   * table, and that is the same table `xiudu` is still waiting for.
+   * by weeks. It is declared and refused: the stretches come from 《星學大成》
+   * 卷一's 宿度過宮之圖, which is on the shelf with three of its twelve cells
+   * miscopied, and the work's 起例 is still unread.
    */
   gong: 'zhongqi' | 'ci';
 }
@@ -171,11 +175,11 @@ const REMAINDERS: Record<RemainderId, QizhengBody> = {
 /**
  * The eleven, in the order a board lists them: the seven, then the four.
  *
- * 紫氣 is in this list and absent from every board, which is not a
- * contradiction: the name is part of the vocabulary the surfaces have to
- * carry — a catalog has to be able to say it, a reader has to be able to find
- * out why it is missing — while `ziqi: 'off'` decides whether anything is
- * ever placed under it.
+ * 紫氣 is in this list whichever value of `ziqi` is in force: the name is
+ * part of the vocabulary the surfaces have to carry — a catalog has to be able
+ * to say it, a reader under `ziqi: 'off'` has to be able to find out why it is
+ * missing — while `ziqi` decides whether anything is placed under it, and
+ * under `yinianyisu`, the default, it is placed as a palace.
  */
 export const QIZHENG_BODIES: readonly QizhengBody[] = [
   ...GOVERNORS.map(({ body, ...named }) => named),
@@ -463,7 +467,7 @@ const ZIQI_SPEED = 360 / ZIQI_DASHU;
  * worth ±15°, the hour is worth 0.003° at this rate and so does not matter,
  * and a placement carried from here is a palace. Nothing weighs the 大數
  * itself, its two checkable siblings erring by 0.01 % and 0.11 %, and that
- * residue is the reason `off` is still the default.
+ * residue is why the placement travels as a palace and with its rung stated.
  */
 const ZIQI_ANCHOR = { julianDay: 2410216.3438, longitude: 165 };
 

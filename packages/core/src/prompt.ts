@@ -607,6 +607,11 @@ export function qizhengReadingPrompt(
     `- ${t(board.remainders.some((one) => one.body.id === 'ziqi')
       ? 'prompt.qizheng.ziqi'
       : 'prompt.qizheng.remainders')}`,
+    // And which node is which follows the board's own `luohou`, for the same
+    // reason.
+    `- ${t(board.options.luohou === 'ascending'
+      ? 'prompt.qizheng.nodes.ascending'
+      : 'prompt.qizheng.nodes.descending')}`,
     `- ${t('prompt.qizheng.noScore')}`,
     `- ${t('prompt.ming.limits')}`,
     `- ${t('prompt.ming.noRecital')}`,
@@ -621,11 +626,12 @@ export function qizhengReadingPrompt(
     `- ${t('prompt.ming.rulesStayOut')}`,
     `- ${t('prompt.yours')}`,
     // How sure, said among the rules rather than in a document: the direction
-    // the twelve are numbered in is the weakest quantity on this board, and
-    // the frame the lodges are cut by is the one thing here that no runnable
-    // reference covers. A model that recites neither will read both as fact.
+    // the twelve are numbered in stands on one text and a check, and the
+    // frame the lodges are cut by is either the engine's own or a calendar's
+    // table — `xiudu` says which, and the bound follows it. A model that
+    // recites neither will read both as fact.
     `- ${t('prompt.qizheng.direction')}`,
-    `- ${t('prompt.qizheng.frame')}`,
+    `- ${t(board.options.xiudu === 'shoushi' ? 'prompt.qizheng.frame.shoushi' : 'prompt.qizheng.frame')}`,
     '',
     t('prompt.names'),
     '',
@@ -698,7 +704,8 @@ export function ziweiReadingPrompt(
     `- ${t('prompt.ziwei.houses')}`,
     `- ${t('prompt.ming.time')}`,
     `- ${t('prompt.ziwei.brightness')}`,
-    `- ${t('prompt.ziwei.sihua')}`,
+    // The table the board was laid on, never the book's whatever was chosen.
+    `- ${t(board.options.sihua === 'quanshu' ? 'prompt.ziwei.sihua' : `prompt.ziwei.sihua.${board.options.sihua}`)}`,
     `- ${t('prompt.ziwei.limits')}`,
     // The one-board rule, and it is stated on this board rather than left to
     // the documentation because this is the board it bites hardest on: the

@@ -241,14 +241,16 @@ Not modelled; recorded in `TODO.md` with two readings, and there are four:
 宮主 gōngzhǔ (the Hellenistic domiciles): 子丑 土, 寅亥 木, 卯戌 火, 辰酉 金,
 巳申 水, 午 日, 未 月. 度主 dùzhǔ, by the lodge's 禽星 day: 角斗奎井 木, 亢牛
 婁鬼 金, 氐女胃柳 土, 房虛昴星 日, 心危畢張 月, 尾室觜翼 火, 箕壁參軫 水
-(張果星宗一 入門看法, *web transcription*). 星學大成 卷四: 「須是以度主為要，
+(張果星宗一 入門看法, *web transcription*; neither table has a register
+entry). 星學大成 卷四: 「須是以度主為要，
 宮主次之。葢宮主者州郡也，度主者縣令也」. 命主 = 宮主 of the 命宮; 命度主 =
 度主 of the 命度; 身主 likewise. Not computed by the engine; derivable from
 `palace` and `lodge`.
 
 ### 3.8 化曜 huàyào (十干變曜)
 
-By the year stem. 星學大成 卷一 變曜歌訣 and 張果星宗二 (identical):
+By the year stem. 星學大成 卷一 變曜歌訣 and 張果星宗二 (identical; *web
+transcription*, no register entry — a lead to read on the plate):
 「祿暗福耗蔭貴刑印囚權」 against 「火孛木金土月水炁計羅」, the stem 甲 starting
 at 火, 乙 at 孛, and so on:
 
@@ -414,9 +416,11 @@ What `qizhengBoard` returns (`packages/core/src/qizheng.ts`):
 
 Mapping to § 4: 命 palace → `minggong`; what stands in it → bodies whose
 `palace` equals it; 三方四正 → palaces 4, 8 and 6 apart (compute); 宮主 →
-from `palace` (table § 3.7); 度主 → from `lodge`; 命度 and 身 → not given
+from `palace`; 度主 → from `lodge`; 命度 and 身 → not given
 (say so, or derive the Moon's palace for the 身 and name the reading); 化曜
-→ from the year stem in the pillars, table § 3.8, signed 星學大成/張果星宗;
+→ from the year stem in the pillars. The tables of §§ 3.7–3.8 are web
+transcriptions with no register entry: leads to read on the plate, not
+quantities to compute and sign as 星學大成/張果星宗's;
 順逆 → `motion`, and 留 is refused (no threshold; `speed` travels); 限 → not
 computed, derivable from `houses` and the table § 3.11, start age unknown
 without a 命度.
@@ -460,10 +464,8 @@ Western ones — the art's own 宮主 and 照 are fair to use, attributed.
   宋濂 祿命辯 — each 交初 = 羅睺; needs the 交初 = descending step stated in a
   text, not derived. P.4071 (Niu 2016) — not held.
 - **人事宮 direction**: 張果星宗一 十二宮例 (★ 卷567) states it with an example;
-  杜牧's epitaph (樊川文集 卷六ff., not held) fixes it in 852. The register
-  row and `prompt.qizheng.direction` («No consulted source states…») and the
-  header of `qizheng.ts` predate 星學大成 卷三; a candidate correction of the
-  catalog string, through the register first.
+  杜牧's epitaph (樊川文集 卷六ff., not held) fixes it in 852. 星學大成 卷三
+  already states it (register § 人事十二宮); 張果星宗 would be a second work.
 - **`minggong: yuejiang`, a second holder**: 張果星宗一 安命度法 (★). Same
   rule, on the Sun's palace.
 - **`minggong` third reading**: 萬民英 卷六 安命論, sunrise corrected by

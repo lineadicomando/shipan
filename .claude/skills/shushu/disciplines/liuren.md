@@ -474,8 +474,10 @@ convention matters: 大全卷二 gives 太常 「旺四季各十八日」, which
 
 **For the consultant.**
 - Read `rule` and `keti` as the shape, then apply § 4.
-- Name `guiren` and `yuejiang` as the school that laid the board (the
-  divergences block), and say the other exists.
+- Name `guiren` as the school that laid the board (the divergences block),
+  and say the other exists. The block prints only a parameter with more than
+  one implemented value, so it does not carry `yuejiang`; name that from
+  `options` where the reading turns on it.
 - Never re-derive the transmissions (`prompt.liuren.drawn`).
 - Never lay a 奇門 chart of the same instant beside it as corroboration: they
   share the day pillar, the 旬, the void and the generals' names.
@@ -554,6 +556,8 @@ shelf.
    - 神定經 釋天乙 and 心鏡's 天將 list give the same twelve.
    - The ring may be coloured once 卷二 is read on the plate.
 2. **「無親, which no source consulted carries」.**
+   - 精解 ★ names it: 「名无亲，即所谓井栏格也」 (`texts/rules/LR-04.md`,
+     W02243 p. 21).
    - 大全卷五 訂訛 ★ heads 「井欄射亦名無親」, glossed 「全是冲開渙散不屬故又名無親」.
    - It also heads 「返吟亦名無依」, which supports the engine's `wuyi` for
      返吟 with a control.
@@ -577,7 +581,8 @@ shelf.
      derivation and calls it 「其說甚有理而近不用」. That is the 大全
      attesting the reading as known and set aside, which is attribution of a
      practice.
-   - 星曆考原 卷五 rules for it explicitly against 曹震圭.
+   - 星曆考原 卷五 ☆ rules for it explicitly against 曹震圭 (Wikisource; the
+     shelf holds 卷一 only, so not yet a held witness).
    - Neither is in row 44.
 6. **`zhouye: solar` — "neither with a procedure".** See § 7.3.
    神定經's sunrise table is a procedure printed in a 六壬 work.

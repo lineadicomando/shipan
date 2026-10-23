@@ -595,7 +595,9 @@ describe('the checks that come from outside the text', () => {
    * 蕭子顯 records them for reigns from 漢 to 宋, and 盧央 quotes the passage
    * whole at p. 469 to adjudicate between the three 上元積年 in circulation:
    * 《金鏡》 and 《統宗》 give the palace the history gives, 《太乙淘金歌》 is
-   * out by a whole 元 and gives nine where the history says four, 「故不能採納」.
+   * out by a 元 (his word, and not this board's 元法 of 72, which is a whole
+   * number of 24-year rounds and would move nothing) and gives nine where the history says four,
+   * 「故不能採納」.
    *
    * **This is the only evidence on this board that was not written by somebody
    * teaching the method.** A court astronomer's figure, entered in an annal for

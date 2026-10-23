@@ -48,8 +48,8 @@ export interface TaiyiOptions {
    * identical board: a second witness rather than a second value.
    *
    * `taojin` is 《太乙淘金歌》's, and it is the one count known to be
-   * incongruent — out by a whole 元, putting 太乙 in a different palace for the
-   * same year. It is declared and refused: what discards it is 《齊書·武帝紀》's
+   * incongruent — it puts 太乙 in 九宮 where the annal has 四宮, a different
+   * palace for the same year. It is declared and refused: what discards it is 《齊書·武帝紀》's
    * eleven dated positions, which agree with this one, and a value is declared
    * when the engine can refuse it by name rather than when it can compute it.
    */
@@ -72,7 +72,11 @@ export interface TaiyiOptions {
    * three the failure is one character wide, and correcting it would mean
    * emending a Tang text from modern astronomy rather than from a witness.
    * See `docs/sources.md` § 太乙 — "The three registers this engine does not
-   * compute". A second witness lifts all three at once.
+   * compute". 《太乙數統宗大全》, which each of the three declares in `heldBy`
+   * beside the 金鏡, states all three as procedures on its own calendar and
+   * collates none of these constants, so it lays a different board rather
+   * than repairing this one. Building any of them on the 統宗's arithmetic
+   * waits on the user's word of 2026-10-11 (`TODO.md`).
    */
   ji: 'nianji' | 'yueji' | 'riji' | 'shiji';
 

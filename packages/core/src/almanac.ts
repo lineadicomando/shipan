@@ -399,12 +399,12 @@ export interface YearGod {
 /**
  * The 年神 that stand on a direction, from the branch of the year.
  *
- * **Six, and the number is a boundary rather than a set.** 《協紀辨方書》卷三
- * carries some two dozen; these are the ones whose position it states outright
- * and completely, in the entry itself, without leaning on a god defined
- * elsewhere — each was read one at a time and each of the source's own
- * enumerations is asserted in the tests. The rest of 卷三 has not been read
- * yet and is not guessed at. See `docs/sources.md`.
+ * **The number is a boundary rather than a set.** These are the gods of
+ * 《協紀辨方書》卷三 whose position it states outright and completely, in the
+ * entry itself, without leaning on a god defined elsewhere — each was read one
+ * at a time and each of the source's own enumerations is asserted in the
+ * tests. `YEAR_GOD_IDS` is the list; what 卷三 carries beyond it, and why it
+ * stays out, is in `docs/sources.md`.
  *
  * **災煞 is the one here without an entry of its own**, and it is carried
  * anyway: 卷三 names it only inside the 考原 discussion of the 三煞, but that
@@ -706,8 +706,9 @@ export interface Shensha {
 /**
  * The 神煞 a day either carries or does not.
  *
- * Seven so far, each enumerated in 卷五 and each keyed to the month's branch,
- * to the season, or to nothing at all:
+ * Each is stated in 《協紀辨方書》, by enumeration, by rule or both, and keyed to
+ * the month's branch, to the season, or to nothing at all. The first of them,
+ * with the words they rest on — the rest carry theirs at the entry:
  *
  * - **天赦** 「春戊寅，夏甲午，秋戊申，冬甲子是也」 — a whole day pillar, and
  *   the rarest thing this layer reports.

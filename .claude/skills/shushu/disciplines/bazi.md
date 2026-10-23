@@ -299,9 +299,10 @@ Each step names the witness for each reading and the engine parameter, or says
 
     《三命通會》: **「此小運又名行年」**. See § 7: this is the 年命 rule's
     other home.
-14. **流年 liúnián**. The year pillar of each year, turning at 立春 (under
-    whatever `yearBoundary` the reader uses). `annualPillars` is exported and
-    **no surface calls it**.
+14. **流年 liúnián**. The year pillar of each year. `annualPillars` is
+    exported and **no surface calls it**; it is plain arithmetic on the
+    Gregorian year number, with no instant and no year boundary, so it says
+    nothing about where between January and 立春 a year turns.
 15. **胎元 tāiyuán** (the month of conception; 《三命通會》 論胎元 counts 300
     days back) and **命宮** (the 子平 命宮 by 加時 to 卯; see the register's
     note on 論坐命宮). Neither is computed.
@@ -586,8 +587,9 @@ These are teachings and never transcript facts (`prompt.bazi.gods`).
 - **Stem and branch inside a decade** (five plus five, whole, or branch-heavy).
   - It is not a computation but a reading parameter the prompt could state.
   - Holders: 《三命通會》 ★ (branch), 《滴天髓》 (whole), 子平真詮 ★.
-- **Surface `annualPillars`** (流年) with the 立春 boundary stated. It is
-  engine-ready.
+- **Surface `annualPillars`** (流年). Its pillars are keyed to Gregorian year
+  numbers with no boundary; a surface that dates a 流年 needs the boundary
+  (`yearBoundary`) added first, so it is not engine-ready in that sense.
 - **The wanted list:**
   - 《窮通寶鑑》/《造化元鑰》 (調候; any print);
   - 《滴天髓徵義》 and 《滴天髓輯要》 (the two other recensions);

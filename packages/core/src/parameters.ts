@@ -218,7 +218,7 @@ export interface Parameter<V> {
  */
 export type ParameterSet<O> = { readonly [K in keyof O]-?: Parameter<O[K]> };
 
-/** The parameters `ChartOptions` carries: dunjia's five, the pillars' three, the almanac's one. */
+/** The parameters `ChartOptions` carries: dunjia's, the pillars' and the almanac's. */
 export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   method: {
     board: 'qimen',
@@ -1121,7 +1121,7 @@ export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {
   // The counts differ by millions and mostly do not differ at all: 《統宗》's
   // is congruent with 《金鏡》's modulo both 360 and 24, so it lays the identical
   // board and is a second witness rather than a second value. 《太乙淘金歌》's is
-  // not — it is out by a whole 元 and puts 太乙 in a different palace — which is
+  // not — it puts 太乙 in a different palace for the same year — which is
   // what makes it the one alternative the engine can be asked for and must
   // refuse by name. 《齊書·武帝紀》's eleven dated positions are what discards it,
   // and a value is declared when the engine can refuse it by name rather than
@@ -1319,10 +1319,9 @@ export const ZIWEI_PARAMETERS: ParameterSet<Omit<ZiweiOptions, 'gender'>> = {
   },
   yearBoundary: {
     board: 'ziwei',
-    // Two implemented values, where every other parameter on this board has
-    // one. The book says nothing either way and the two lay different boards
-    // for a birth in the weeks between them, so neither could be chosen on
-    // its behalf.
+    // Both values are implemented. The book says nothing either way and the
+    // two lay different boards for a birth in the weeks between them, so
+    // neither could be chosen on its behalf.
     label: 'form.ziwei.yearBoundary',
     values: [
       {

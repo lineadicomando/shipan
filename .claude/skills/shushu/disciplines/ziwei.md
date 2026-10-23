@@ -191,7 +191,8 @@ agrees on 甲乙丙丁己辛癸. The contested cells:
 | 壬 科 | 左輔 → `zuofu` | ★ Han (中州派), ★ 北派 (worked examples); 陸斌兆, 欽天門, iztro, the 《全集》 per zh.wikipedia (web) |
 | 庚 科·忌 | 太陰·天同 (陰同) → `quanshu` | Wikisource 《全書》, ★ Han, ★ 第一冊; 陸斌兆, iztro (web) |
 | 庚 科·忌 | 天同·太陰 (同陰) | 周宣屹 edition; «通行», 閩派 (天同不化忌) (web). A recension variant, settled in the register — **no value** |
-| 庚 科·忌 | 天同·天相 (同相) → `tianxiang` | 南陽堂 block; ★ 第七冊 占驗派; 吳師青's 鐵版神算 manuscript, and «北派» per web tables (web) |
+| 庚 科·忌 | 太陰·天相 (陰相) → `tianxiang` | ★ 第七冊 占驗派, for the 忌 only — the passage states no 科, and the 太陰 科 is 《全書》's cell kept. 天同 takes no transform |
+| 庚 科·忌 | 天同·天相 (同相) | 南陽堂 block; 吳師青's 鐵版神算 manuscript, and «北派» per web tables (web). **No value** — `tianxiang` moves the 忌 alone |
 | 庚 科 | 天府 (陽武府同) | 王亭之's transmission (web); his teacher also left 陽武府相 |
 | 戊 科 | 右弼 | 《全書》 and everyone but 王亭之 |
 | 戊 科 | 太陽 | 王亭之 (web): 左輔 and 右弼, being 輔曜, never transform |
@@ -407,14 +408,6 @@ Refused or not done, and where it is argued:
   — to declare when the flow layer is built, not before.
 - **文光堂 recension** (心一堂) and 潘國森's collation: a fourth recension of
   《全書》. Worth buying only if a 《全書》 reading reopens.
-- **Engine, not doctrine — check**: `xunzhongkongwang` is placed from
-  `decade(yearGanzhi(lunar.year))` while every other year quantity follows
-  `yearPillar`; under `yearBoundary: lichun`, a birth between 立春 and 正月初一
-  gets its 旬空 from a different year than its 四化. Either deliberate (say so)
-  or a bug.
-- **Prompt drift — check**: `prompt.ziwei.sihua` says «This board uses the
-  table 《全書》 prints» whatever `sihua` is; under `zuofu` or `tianxiang` that
-  is false. The schools block is right; the sentence is not derived from it.
 
 ## 8. Leads against the register
 
@@ -438,8 +431,9 @@ Refused or not done, and where it is argued:
   庚 and 壬» (from Han). Two web sources give his 壬 as 天府 — the 《全書》
   reading — so he would be a holder of `quanshu`'s contested cell, departing
   from 陸斌兆's table at 壬 rather than from 《全書》.
-- **A second named holder for `tianxiang`'s cell**: 吳師青's 鐵版神算 manuscript,
-  「陽武同相」, per the xuanmen.com.cn 王亭之 article (web).
+- **A second named holder for 同相**: 吳師青's 鐵版神算 manuscript, 「陽武同相」,
+  per the xuanmen.com.cn 王亭之 article (web). That is the 南陽堂 reading (科
+  天同), not `tianxiang` (科 太陰): it would hold `tianxiang`'s 忌 cell only.
 - **「辨生剋制化以定窮通」**: the register's five-phases section gives it to the
   太微賦; the Wikisource 卷一 prints it in 斗數準繩 (太微賦 has 「須明其生剋之要」).
   A one-word attribution fix, if the plate agrees.

@@ -482,7 +482,7 @@ describe('--prompt on a board of 命', () => {
     expect(await run(['qizheng', ...MOMENT, '--prompt', '--lang', 'en'])).toBe(0);
 
     expect(out).toContain('what the tradition reads at that seat');
-    expect(out).toContain('one source and three derivations');
+    expect(out).toContain('one witness and a check');
   });
 
   it('refuses a question rather than printing a board that ignored it', async () => {

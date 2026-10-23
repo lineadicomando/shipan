@@ -100,11 +100,13 @@ describe('what the server offers', () => {
     expect(byName.get('compute_qizheng')).toMatch(/descending node here/i);
     expect(byName.get('compute_qizheng')).toMatch(/no epoch\s+enters|no epoch enters/i);
 
-    // The one thing a model must be told before it reads this board, and the
-    // four tables where this book parts from the modern ones.
+    // The one thing a model must be told before it reads this board, and that
+    // a placement is the book's only where no parameter moved it. 「丙丁豬狗位」
+    // was a transcription error, and the description must not carry it.
     expect(byName.get('compute_ziwei')).toMatch(/[Nn]othing on this board is in the sky/);
     expect(byName.get('compute_ziwei')).toMatch(/birth hour never enters/i);
-    expect(byName.get('compute_ziwei')).toMatch(/丙丁豬狗位/);
+    expect(byName.get('compute_ziwei')).toMatch(/wherever no parameter moves them/);
+    expect(byName.get('compute_ziwei')).not.toMatch(/豬狗/);
     expect(byName.get('compute_ziwei')).toMatch(/name and not an assignment/i);
     // The two ways an agent turns a scan into something it is not: dropping
     // the direction, and answering a question that was not asked.
