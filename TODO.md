@@ -199,6 +199,19 @@ decided is left unbuilt.
    marks the 壬 and 癸 hours, four on a 戊 or 癸 day; the hour lines are on
    the leaf after each wheel, `order.txt` gives the sheets. And the scan
    form's `gongpo`, § 5.
+5. **Or a lead from the `shushu` skill.** Each art's file in
+   `.claude/skills/shushu/disciplines/` ends on «Leads against the register»:
+   passages located on the web or in a shelf transcription that bear on a row,
+   none read on a plate. The ones that touch a standing question: the order of
+   涉害, where 《大六壬精解》 and 《六壬大全》卷五 hold depth first with a worked
+   board the engine opens otherwise, likely the bench's failing 涉害
+   (`liuren.md`); the five phases of the 十二天將 in 《六壬大全》卷二, held
+   (`liuren.md`); 截路空亡 at two hours in 《星曆考原》卷五, beside 寶鏡圖's
+   (`almanac.md`); the 楊公忌 check, which the 協紀 says is not the 值日 count
+   (`almanac.md`); the elements of 文昌 and 始擊 in the 金鏡 against the
+   register's (`taiyi.md`); 洪丕謨 and 盧央 on the shelf for the year and day
+   boundaries no text holds yet (`common/foundations.md`). Each is a reading
+   of a file held.
 
 **On the surface, nothing is owed and nothing is decided next.** What a
 pointer does beyond naming the layer is open; the em dash of § 5 is the one

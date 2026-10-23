@@ -28,8 +28,8 @@ const STRENGTH: Record<StrengthId, { hanzi: string; pinyin: string }> = {
  * close them — the branches of the tombs — are given to earth.
  *
  * **Other schools give earth only the last eighteen days of each season**, and
- * that is `earth` — declared on `ChartOptions`, `quarters` computed and
- * `eighteen` refused by name. It moves the boundary and not the idea, but the
+ * that is `earth` — declared on `ChartOptions`, and both computed:
+ * `quarters` by default, `eighteen` on 《大六壬精解》's word. It moves the boundary and not the idea, but the
  * boundary is what this function returns: `strengthOf` reads it, so the choice
  * decides 旺相休囚死 for every star and every gate on the board, and the two
  * readings part for the first two-thirds of each of 辰, 未, 戌 and 丑. What a

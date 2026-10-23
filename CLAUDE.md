@@ -383,6 +383,12 @@ Domain identifiers are toneless pinyin where the domain is Chinese (`ganzhi`,
 A feature crosses several surfaces and has a procedure of its own — see the
 `new-feature` skill.
 
+## Consulting, and judging as a practitioner
+
+Reading a board for somebody, or deciding what a source means for the engine
+with the knowledge of the arts themselves, has a skill of its own: `shushu`.
+It carries the arts and points here for the rules.
+
 ## Reviewing what is already there
 
 Auditing is not changing, and the rules above are read while writing. Checking
