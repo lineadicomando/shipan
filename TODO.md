@@ -69,11 +69,11 @@ and the renders and a script with it.
 yet read», «unread», «still missing», «none opened», «nobody has», «stays
 refused», «this list is empty».
 
-### Where it stands, 2026-10-22
+### Where it stands, 2026-10-23
 
 **Version 0.31.1**, in every manifest. **`main` is checked out and no branch
 is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
-`main` carry since 2026-10-15 is of seven days:
+`main` carry since 2026-10-15 is of eight days:
 
 - 2026-10-15, surface work: the Qi Men section holds its board in the page
   (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which register a
@@ -161,11 +161,14 @@ is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
 - 2026-10-22, what it built (0.31.1): both, on the user's word, as
   `dayGates: shun` and `dayDun: yang`, held by 寶鏡圖 as `baojingtu`; the
   forty wheels of their own day are a test fixture.
+- 2026-10-23, the documents: the roadmap and `texts/README.md` reviewed
+  against the code under the `review` skill, every file of the shelf named in
+  a row of its own, and § 2 says what is left to read. No code, no version.
 
 `main` is pushed to `origin/main` as of 2026-10-18; the commits of
-2026-10-19, 2026-10-20 and 2026-10-22 are not pushed, and pushing is the user's call.
+2026-10-19, 2026-10-20, 2026-10-22 and 2026-10-23 are not pushed, and pushing is the user's call.
 `npm test`, `npm run typecheck` and `npm run build` pass on 2026-10-20 with no
-test skipped, and again on 2026-10-22. **Run `npm run build` before `npm test`** in
+test skipped, and again on 2026-10-22 and 2026-10-23. **Run `npm run build` before `npm test`** in
 a fresh tree: the MCP and web suites and the shelf's scripts import
 `packages/core/dist`, and a stale `dist` fails them on whatever changed.
 
@@ -528,9 +531,20 @@ it, carry the second title and the file on the shelf the first.
 大全》, 《遁甲奇門秘傳要旨》, 《明抄奇門陰遁書》 and 《李衛公奇門心法》, the last
 with a Tang attribution. None of that platform's files states a provenance.
 
-**Measure.** Most of the 2026-08-31 arrivals are not opened far enough to
-describe; `texts/README.md` says which. `docs/scans.md` § "What a file is,
-before what it says" is the four commands.
+**What is left to read, measured 2026-10-23.** Every file on the shelf has
+been opened far enough to say what it is, and `texts/README.md` has a row
+naming each: 134 files, about 33 700 pages. Most pages have never been read
+on the plate, and none is owed a reading: the shelf is read by question. The
+questions standing ask for **seven readings** of files held — 景祐秘纂
+卷二–四 (line 3 above), the 統宗's rule for `dayDun: liushi`, the 金函玉鏡's
+two pages for `leap: runyue`, the 仙機's six cells for `stemPairs: xianji`,
+《星學大成》's limits and 量天尺 (line 4), 《中國恆星觀測史》 from p. 274
+(line 5), and 截路空亡 on 寶鏡圖's other leaves — and about thirty small
+errands under "Left open" and "Small and left open". About ten refused values
+wait on files not held (§ 1, "Wanted and not held"), which no reading here
+moves. A new file is identified with the four commands of `docs/scans.md`
+§ "What a file is, before what it says", and gets its row before anything
+else.
 
 **Ask.** `texts/bench/run.mjs` runs the worked examples the sources print;
 two 六壬 cases disagree, a 涉害 and a 返吟, and each is settled by reading the
