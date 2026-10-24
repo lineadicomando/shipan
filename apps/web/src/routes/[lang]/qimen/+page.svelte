@@ -27,6 +27,7 @@
   import LensRelations from '$lib/components/LensRelations.svelte';
   import LensPair from '$lib/components/LensPair.svelte';
   import FiveWheel from '$lib/components/FiveWheel.svelte';
+  import LensMode from '$lib/components/LensMode.svelte';
   import { carried } from '$lib/parameters';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import { step, type Unit, type Wall } from '$lib/step';
@@ -230,7 +231,13 @@
    * go. Pressing the ground of a palace, where no name is, lays it in a pair.
    */
   function pick(spot: BoardSpot | undefined): void {
-    if (!lens || !spot) return;
+    if (!lens) return;
+    // Outside the nine palaces — on the frame, the compass, the branches —
+    // a press puts the lens away.
+    if (!spot?.unit) {
+      putAway();
+      return;
+    }
     // Inside the two palaces of a pair, a name is pressed to be compared and
     // the ground lets the palace go — in either mode.
     if (spot.seat && inPair(lensState, Number(spot.seat))) {
@@ -255,7 +262,43 @@
     if (!lensState.expert) way = 'focus';
   }
 
-  /** The palaces of a pair, in words, for the controls. */
+  /** Whether a lens is laid at all, so there is something to put away. */
+  const laid = $derived(
+    Boolean(lensState.focus || lensState.pair || lensState.layers.length > 0 || lensState.phases.length > 0),
+  );
+
+  /** The whole board again, in the mode the reader was in. */
+  function putAway(): void {
+    if (!laid) return;
+    lensState = { ...WHOLE, expert: lensState.expert };
+    way = undefined;
+  }
+
+  /**
+   * A press on the page's own ground puts the lens away too — and only there.
+   * Not in the bar the moment is stepped from, since a lens is kept across a
+   * step; not in the column of controls, nor in what is read off the board,
+   * where a press selects text; not on anything that does something of its
+   * own. The board answers for itself through `pick`.
+   */
+  const KEEP = '.screen, .bench > .side, .panel, .reading, header, footer, a, button, input, select, textarea, label, summary, [role="dialog"]';
+  function pressedOutside(event: MouseEvent): void {
+    if (!laid) return;
+    const kept = event
+      .composedPath()
+      .some((node) => node instanceof Element && node.matches(KEEP));
+    if (!kept) putAway();
+  }
+
+  /** Escape puts the lens away, unless it is being typed into something. */
+  function escaped(event: KeyboardEvent): void {
+    if (event.key !== 'Escape' || !laid) return;
+    const target = event.target;
+    if (target instanceof Element && target.closest('input, select, textarea, [role="dialog"]')) return;
+    putAway();
+  }
+
+
   const pairSaid = $derived.by(() => {
     const seats = view.seats;
     const said = (seat: number) => `${seat} ${nameAt(seat, 'palace') ?? ''}`;
@@ -344,6 +387,8 @@
     void show({ ...data.moment, date: '', time: '' });
   }
 </script>
+
+<svelte:window onclick={pressedOutside} onkeydown={escaped} />
 
 <PageHead {t} />
 
@@ -463,12 +508,14 @@
       </div>
       <div class="side">
         {#if lens}
-          <!-- The circle over the controls, in both modes, and held at the
-               top of the column while what is under it scrolls: it is the one
-               figure the reader keeps glancing at, so nothing pressed below
-               may move it. -->
-          <div class="wheel">
+          <!-- The circle over the controls, in both modes, and the mode with
+               the button that puts the lens away under it: held at the top of
+               the column while what is under them scrolls, since they are what
+               the reader keeps glancing at and reaching for, and nothing
+               pressed below may move them. -->
+          <div class="held">
             <FiveWheel {t} {lens} active={activePhases(lens, lensState)} />
+            <LensMode {t} state={lensState} onchange={(next) => (lensState = next)} />
           </div>
           <LensBar
             {t}
@@ -558,14 +605,16 @@
      a grid item will not go below its own min-content otherwise, and the
      picture's is nine hundred pixels. */
   .board { min-inline-size: 0; }
-  .wheel {
+  .held {
+    display: grid;
+    gap: 0.75rem;
     position: sticky;
     top: 0;
     z-index: 1;
     background: var(--ground);
     padding-block-end: 0.5rem;
   }
-  @media print { .wheel { display: none; } }
+  @media print { .held { display: none; } }
   .result, img { transition: opacity 0.15s ease-out; }
   .stale { opacity: 0.5; }
   /*

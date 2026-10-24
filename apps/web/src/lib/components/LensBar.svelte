@@ -9,7 +9,8 @@
   it keeps leads in the reader's language, and a phase or a relation carries
   its hanzi and its reading beside the word.
 
-  **Two modes, and the reader picks.** The expert's offers everything at
+  **Two modes, and the reader picks** — in `LensMode`, held over this panel
+  with the circle, beside the button that puts the lens away. The expert's offers everything at
   once and lets kinds, phases and relations be combined. The beginner's
   lays the lens one way at a time — two palaces, one name, or one phase —
   with one kind or one phase chosen at a time and the five relations of the
@@ -31,8 +32,6 @@
     LINK_IDS,
     PHASE_LAYERS,
     WAYS,
-    WHOLE,
-    oneAtATime,
     type LensState,
     type ShownRelation,
     type Way,
@@ -86,7 +85,6 @@
   const focused = $derived(Boolean(state.focus && focusName));
   const paired = $derived(Boolean(state.pair && pairSaid));
   const relating = $derived(focused || state.pair?.length === 2);
-  const whole = (): LensState => ({ ...WHOLE, expert: state.expert });
 
   /**
    * The relations the key shows. A pair draws every relation as a flow, so
@@ -171,15 +169,6 @@
 
 <section class="lens" aria-label={t('lens.title')}>
   <div class="controls">
-    <div class="row" role="group" aria-label={t('lens.mode')}>
-      <span class="lead">{t('lens.mode')}</span>
-      <button type="button" aria-pressed={!state.expert} onclick={() => onchange(oneAtATime(state))}>
-        {t('lens.mode.beginner')}
-      </button>
-      <button type="button" aria-pressed={state.expert} onclick={() => onchange({ ...state, expert: true })}>
-        {t('lens.mode.expert')}
-      </button>
-    </div>
 
     {#if state.expert}
       <p class="hint">{t('lens.hint')}</p>
@@ -245,11 +234,6 @@
 
     {#if relating}{@render key()}{/if}
 
-    {#if state.focus || state.pair || state.layers.length > 0 || state.phases.length > 0}
-      <div class="row">
-        <button type="button" onclick={() => onchange(whole())}>{t('lens.whole')}</button>
-      </div>
-    {/if}
   </div>
 
 </section>

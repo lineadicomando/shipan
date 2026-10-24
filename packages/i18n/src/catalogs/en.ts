@@ -422,7 +422,7 @@ export const en = {
   // does, and none says what a relation means — that is the reader's. See
   // `docs/refusals.md` § "Where to look first".
   'lens.title': 'Lens',
-  'lens.hint': 'Keep some names and let the rest fade. Press a name on the board to see how everything else relates to it, or press two palaces, away from their names, to see how the two palaces relate to each other.',
+  'lens.hint': 'Keep some names and let the rest fade. Press a name on the board to see how everything else relates to it, or press two palaces, away from their names, to see how the two palaces relate to each other. Pressing outside the palaces, or Escape, brings back the whole board.',
   'lens.pair': 'Palaces {a} and {b}',
   'lens.pairOne': 'Palace {a} is chosen. Press a second palace, away from its names.',
   'lens.pair.heading': 'How palace {a} and palace {b} stand to each other',

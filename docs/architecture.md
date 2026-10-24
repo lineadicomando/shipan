@@ -294,7 +294,14 @@ apart. **Two modes, and the reader picks.** The page opens in the beginner's,
 which lays the lens one way at a time — two palaces, one name, or one phase —
 with one kind or one phase at a time; the expert's offers every control at
 once. The circle of the five phases (`FiveWheel`) stands over the controls
-in both.
+in both, and under it the mode and «whole board» (`LensMode`), held at the top
+of the column. **Putting the lens away is always at hand**: that button, which
+stays in its place and is disabled when there is nothing to put away; a press
+on the board outside its nine palaces; a press on the page's own ground; and
+Escape. A press in the bar the moment is stepped from, in the column, in what
+is read off the board, or on anything that does something of its own keeps
+the lens — a lens is kept across a step of the hour, and a press that selects
+text is not a request for the whole board.
 The mode is in the fragment with the rest of the lens and in no storage, so
 the privacy note's inventory of what the browser keeps does not move. The rule it
 carries out is `docs/refusals.md` § "Where to look first". Three things
