@@ -68,6 +68,52 @@ answer it, and nothing here is a reason to put off asking them. The two are
 one fact with two amounts of room, and the footer is where the wording is
 settled.
 
+## Where to look first
+
+*Asked by:* whoever is new to an art, and whoever knows it and is lost in a
+dense board.
+
+**A reading arises in the person looking, and the instrument lays the board and
+stands out of the way.** What a board means to somebody comes from their
+question, their life and what strikes them in the arrangement, and the
+instrument's whole part in it is to make the arrangement legible. Anything that
+orients the eye before the reader has chosen — a palace drawn heavier, a
+starting point suggested, a «look here», an order in which to attend — is an
+interpretation arriving by layout instead of by prose. It is the refusal of the
+用神 and of ranking made in typography, and it is harder to catch than a
+sentence: a verdict in prose can at least be quoted back, and a verdict in
+emphasis is only felt.
+
+What the surface may do is help the reader look where **they** chose. That
+leaves a good deal, and it is how a dense board is made readable without being
+read for anybody:
+
+- **A board opens whole and alike.** No seat, layer or name is set apart
+  before the reader has done anything; `LayerLegend.svelte` sets its places
+  alike for this reason, since a gate in bold reads as the thing that matters
+  most.
+- **Emphasis follows an act of the reader's** — a pointer resting, a seat
+  pressed, a lens switched on — and never a default, a state the page opens
+  in, or a suggestion.
+- **Emphasis recedes the rest rather than weighting one thing.** Within what
+  the reader picked, everything stands alike: a filter by kind shows the whole
+  of that kind, and a focus on one seat shows every relation it has, with no
+  order among them.
+- **A relation shown is one the engine computed**, from a quantity with its
+  entry in `docs/sources.md`, under the school that laid the board. It is
+  named — 我剋, wǒkè, and its gloss — and nothing is said about what it
+  implies. A relation worked out in the browser would be doctrine without a
+  register.
+- **Where the reader looked is theirs.** It is not a parameter of the board,
+  so it enters no address the board is at, no prompt and no request to the
+  server.
+
+The newcomer is served by this rule and is not an exception to it. What a
+beginner is short of is not a verdict but the sight of the structure — which
+things stand together, what each one generates and controls — and a board
+that shows them that on request teaches them to read one, where a board that
+points would teach them to follow it.
+
 ## Which palace stands for which part of a life
 
 *Asked by:* readers of modern 年命 material, and models, very confidently.

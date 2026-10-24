@@ -202,6 +202,13 @@ the engine falls back to Moshier, which needs no files.
   exceptions on a page are the privacy inventory and a legal notice. The
   diagnosis and the fix are in the `reader-copy` skill, and this binds what
   that skill binds.
+- **A reading arises in the person looking, and the surface never chooses
+  where they look.** A board opens whole and alike; emphasis follows an act of
+  the reader's — a pointer, a press, a lens — and recedes the rest rather than
+  weighting one thing; a relation shown is one `core` computed, named and never
+  glossed into a consequence; where somebody looked travels nowhere. A starting
+  point suggested is a 用神 chosen by layout. →
+  [`docs/refusals.md`](docs/refusals.md)
 - **How many vernaculars there are is a state and not a design.** English and
   Italian today, Spanish when the engine has stopped moving; nothing may be
   written as though the set were closed at two, and what a third would cost is
