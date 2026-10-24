@@ -177,8 +177,10 @@ So the 奇門 section lays its board on a bench. On the left, the whole square
 which on the bench takes the place of `--board`'s seven eighths: the board is
 read with the column beside it, and a foot under the fold sends the reader
 between the two. On the right, a column at `--side` holding what is operated
-with the board in view: the steps of the moment, the lens with its circle of
-the five phases and its key, and the key to the marks of strength. The column
+on the board in view: the lens with its circle of the five phases and its
+key, and the key to the marks of strength. The steps of the moment stay in
+the bar above, with the date: they choose which board is laid, where the
+column holds how it is looked at, and the two are kept apart. The column
 is `sticky` and scrolls inside itself, so nothing pressed in it moves the
 board. A page with a bench widens its shell to 100rem, paid for out of the
 margins rather than out of the board, and the seal goes into the margin only
@@ -187,8 +189,8 @@ upright, the column goes under the board, for the same reason it is not over
 it. What is read off the board — the relations in words, the tables, the
 schools — stays under the bench at the page's measure, as on every section.
 
-Paper takes none of it: the bench is a block on a sheet, the steps and the
-lens stay off it, and the key to the strengths prints under the board as it
+Paper takes none of it: the bench is a block on a sheet, the lens stays off
+it, and the key to the strengths prints under the board as it
 always did.
 
 ## Paper is the fourth appearance

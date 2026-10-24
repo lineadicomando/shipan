@@ -389,9 +389,7 @@
     {#if where}<span>· {where}</span>{/if}
   {/snippet}
   {#snippet controls()}
-    <!-- With a board on the page the steps stand beside it, on the bench:
-         stepping the hour is done while reading the board, not above it. -->
-    {#if !chart}<MomentSteps {t} disabled={busy} {values} onstep={moved} onnow={now} />{/if}
+    <MomentSteps {t} disabled={busy} {values} onstep={moved} onnow={now} />
     <!-- The same corner in every section: finding them once is finding them
          everywhere. Only where there is something to take away. -->
     {#if chart}
@@ -442,11 +440,12 @@
 
       A board is bounded by the height of the window and never by its width,
       so on a landscape screen the width beside it is free. What stands there
-      is what a reader operates with the board in view — the steps of the
-      moment, the lens, the key to the marks — in a column that stays put
-      while the page moves, so nothing pressed in it moves the board. On a
-      narrow screen the column goes under the board, for the same reason.
-      See `docs/architecture.md` § "The bench".
+      is what a reader operates on the board in view — the lens and the key
+      to the marks — in a column that stays put while the page moves, so
+      nothing pressed in it moves the board. On a narrow screen the column
+      goes under the board, for the same reason. What chooses the board, the
+      date and its steps, stays in the bar above: a different errand. See
+      `docs/architecture.md` § "The bench".
     -->
     <div class="bench">
       <div class="board" class:swapped={onPaper}>
@@ -461,9 +460,6 @@
         {#if !ofTheDay}<LayerLegend {t} board="qimen" />{/if}
       </div>
       <div class="side">
-        <div class="steps">
-          <MomentSteps {t} disabled={busy} {values} onstep={moved} onnow={now} />
-        </div>
         {#if lens}
           <LensBar
             {t}
@@ -636,7 +632,6 @@
     .result { display: block; }
     .bench { display: block; }
     .side { position: static; max-block-size: none; overflow: visible; }
-    .steps { display: none; }
     .board { margin-bottom: 1.2rem; }
     .onPaper { display: block; margin: 0 0 0.4rem; font-size: 0.85rem; color: var(--faint); }
     .stale { opacity: 1; }

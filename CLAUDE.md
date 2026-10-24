@@ -261,11 +261,12 @@ the engine falls back to Moshier, which needs no files.
   column and is never shared out among them. →
   [`docs/architecture.md`](docs/architecture.md)
 - **A board is bounded by the window's height, so the width beside it is the
-  reader's.** Where a section lays its board on a bench, what is operated
-  while reading — the steps of the moment, a lens, the key to the marks —
-  stands in a column at `--side` beside the whole square, and stays put while
-  the page moves; on a narrow screen it goes under the board, never over it.
-  Nothing pressed there may move the board. →
+  reader's.** Where a section lays its board on a bench, what is operated on
+  the board — a lens, the key to the marks — stands in a column at `--side`
+  beside the whole square, and stays put while the page moves; on a narrow
+  screen it goes under the board, never over it.
+  Nothing pressed there may move the board, and what chooses the board —
+  the date and its steps — stays in the bar above. →
   [`docs/architecture.md`](docs/architecture.md)
 - **A chart prints, and paper is the fourth appearance** — not light, which is
   a paper-*coloured* screen. Each component says whether it belongs on a
