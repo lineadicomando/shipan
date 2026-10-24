@@ -8,8 +8,8 @@ down on 2026-10-08, and what it carried before is in
 
 ## Resuming cold
 
-**Read this section and § 2, then pick a line from § 2.** For that line read
-three things and no more:
+**Read this section, then pick an item of "What to do next" below, or a line
+of § 2.** For it read three things and no more:
 
 1. **what the file is** — `texts/README.md`, one row: grep the filename. It
    has the extent, the page offsets, the way in and what is already read;
@@ -23,8 +23,24 @@ three things and no more:
 once before a first survey.
 
 **A reading is owed four things**: the argument in `docs/sources.md` with its
-date, the row in `docs/sources.tsv` and its rung, the row of
-`texts/README.md`, and this file. A plate reads at two to four pages a
+date, the row in `docs/sources.tsv` and its rung (found by grep and edited in
+place, never read through), the row of `texts/README.md`, and this file.
+**A reading that moves the code owes more**: the declaration in
+`packages/core/src/parameters.ts` (`heldBy`, a value, its `implemented`), a
+new witness in `packages/core/src/witnesses.ts`, the row in the table of
+holders in `docs/sources.md` § "Whose each value of a 奇門 board is" and its
+siblings, a test (`packages/core/test/witnesses.test.ts` for a holder); the
+version in every manifest and `package-lock.json`, by the three questions of
+`docs/architecture.md` § "Which term moves": an address that answers
+differently moves the second term, something shipping that none answered for
+the third, a session that ships nothing neither; a phase in `docs/history/`
+with its line in that directory's README; and one commit on `main`. A value
+added to the engine also fails the MCP and web suites until § 5's two lists
+carry it, and its strings go into both catalogs under the `reader-copy`
+skill. `node texts/todo-check.mjs`, after a build, holds every parameter,
+value and path this file names to the code.
+
+A plate reads at two to four pages a
 minute. A woodblock with no 目錄 is found on tiles of six pages rendered
 small, then read on the page; `texts/contact.py` and `texts/banxin.py` do the
 tiling, and a digit is read beside whatever checks it — a sum, a rate, a
@@ -171,7 +187,7 @@ is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
   prompt names the 四化 table in force; the `compute_ziwei`,
   `compute_qizheng` and `scan_moments` descriptions stop stating a default as
   the rule; 太乙's «a whole 元» is 盧央's word and not the engine's; stale
-  comments and the `shushu` files corrected. What it found and left is item 6
+  comments and the `shushu` files corrected. What it found and left is item 5
   below.
 - 2026-10-23 and 2026-10-24, the shelf (0.32.1): 景祐秘纂 卷二–四 surveyed,
   its cases laid, the last of the 大全. 卷二 is the 符應經's 卷中 in 第一冊's
@@ -201,7 +217,8 @@ decided is left unbuilt.
 3. **Or two errands left by 2026-10-22.** 截路空亡 on 寶鏡圖's other
    fifty-nine leaves: 癸未's gives it at 子 and 丑 only, where the engine
    marks the 壬 and 癸 hours, four on a 戊 or 癸 day; the hour lines are on
-   the leaf after each wheel, `order.txt` gives the sheets. And the scan
+   the leaf after each wheel,
+   `texts/qimen/daquan-juan60-baojing/order.txt` gives the sheets. And the scan
    form's `gongpo`, § 5.
 4. **Or a lead from the `shushu` skill.** Each art's file in
    `.claude/skills/shushu/disciplines/` ends on «Leads against the register»:
@@ -290,11 +307,12 @@ cut short were found.
   induced from a table, and the lists are three prints three ways. It waits
   on a sentence stating the rule, in any work.
 
-**Done between 2026-10-11 and 2026-10-22, and nothing is half done.** Each
+**Done between 2026-10-11 and 2026-10-24, and nothing is half done.** Each
 reading and each build of the engine has its section in `docs/sources.md`,
 its row in `docs/sources.tsv` and its line in `texts/README.md`; phases 51 to
-69 in `docs/history/` are the record. The surface work of 2026-10-15 and
-2026-10-18 has no phase: "Where it stands" above and the commits say it.
+70 in `docs/history/` are the record. The surface work of 2026-10-15 and
+2026-10-18, and the review and the documents of 2026-10-23, have no phase:
+"Where it stands" above and the commits say it.
 
 - 2026-10-11: `yearBoundary: dongzhi` of 太乙 computed; `host.accord` and
   `guest.accord` carry 和, 重陽 or 重陰; 八門直使 and 大遊 on rung 2;
@@ -371,6 +389,20 @@ its row in `docs/sources.tsv` and its line in `texts/README.md`; phases 51 to
   by four readers and laid against the engine; `dayGates: shun` and `dayDun:
   yang` built on them (0.31.1). The board of 癸未 under both, seen in the dev
   server, is the wheel of sheet 1420 cell for cell.
+- 2026-10-24: 景祐秘纂 卷二–四, the last of the 大全, written up after the
+  survey of 2026-10-23; sheets 47–64 transcribed again by two readers. The
+  演義 holds `centreStem: host` beside the hour tables, on rung 2 (0.32.1).
+
+**Left open by the reading of 2026-10-24**, each small and none blocking. In
+景祐秘纂 卷二: whether 遁甲集成 第一冊 carries the 38L case, 伏干格 陽五局
+壬申, which marks 庚 over the centre's stem in 坤 — the 演義 works its 伏干格
+on a 甲申 day and reads otherwise, p. 951; the cases of 33L and 35L, which name
+景門 the 直使 where the engine has 生門 and 傷門, garbled round it; and whether
+卷之二下's 諸凶格 list is 吉凶格解's closing summary copied, which its 奇墓 and
+天網四張 suggest and nobody set side by side. Not transcribed: the wheels of 46L
+and 47R. In 卷四: five passages naming an hour and where its 直符 stands, with
+no 局 to lay them from, `cases/83-98.tsv`. Everything is in
+`texts/qimen/daquan-juan02-04-jingyou/`.
 
 **Left open by the reading of 2026-10-22**, each small and none blocking:
 吉凶格解's 釋吉格 — the 九遁, 三詐, 五假, 玉女守門 — seen at 50 dpi and not
@@ -508,8 +540,8 @@ nothing exposes. Only those with something to wait on:
   not computed. 宮迫 without 門迫: 景祐秘纂 卷之二下 names the engine's
   thirteen cells 宮迫, gives no converse, and its verse denies the converse is
   迫 — the default's cells of `menpo` under the other value's name, one list
-  and one line; and its 奇墓 gives 乙 both 二 and 六, as 吉凶格解's summary does. The half-flown
-  board wants a yin hour worked in any text. The board of a day wants a prompt
+  and one line; and its 奇墓 gives 乙 both 二 and 六, as 吉凶格解's summary
+  does. The half-flown board wants a yin hour worked in any text. The board of a day wants a prompt
   of its own, the scan and the 年命.
 - **六壬.** The order of 涉害: a text holding either reading by name. The five
   phases of the 十二天將: a file not held.
@@ -550,7 +582,9 @@ page + 4, every juan opening on a 目錄 of its own; the 金鏡,
 `taiyi/taiyi-jinjing-shijing-skqs.pdf`, PDF page = 四庫 printed page − 854;
 盧央's 《中國古代星占學》, `shushu/zhongguo-gudai-xingzhanxue.pdf`, PDF page =
 printed page + 18. Lines 1 and 2 have nothing left to read on this shelf and
-stand first because a decision waits on each.
+stand first because a decision waits on each. Line 3 has nothing left to read
+for a 起例 either, and stays as the map of the file for a question put to it
+later.
 
 | | what would move | where |
 |---|---|---|
