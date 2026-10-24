@@ -39,6 +39,11 @@ const RELATION: Record<RelationId, { hanzi: string; pinyin: string }> = {
   woke: { hanzi: '我剋', pinyin: 'wǒkè' },
 };
 
+/** The name of a relation, without waiting for two things to stand in it. */
+export function relationName(id: RelationId): { hanzi: string; pinyin: string } {
+  return { ...RELATION[id] };
+}
+
 /** The same list at runtime, for the surfaces that have to offer it. */
 export const RELATION_IDS: readonly RelationId[] = Object.keys(RELATION) as RelationId[];
 

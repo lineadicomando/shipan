@@ -24,7 +24,7 @@ export const load: PageLoad = async ({ url, fetch, parent }) => {
   // A place that could not be found stops it here. Casting for the server's
   // own zone instead would answer a question nobody asked, and the answer
   // would look like the right one.
-  if (unknownPlace) return { moment, chart: undefined, laidBy: undefined, failure: unknownPlace };
+  if (unknownPlace) return { moment, chart: undefined, laidBy: undefined, lens: undefined, failure: unknownPlace };
 
   const response = await fetch(`/api/qimen?${momentQuery(moment, { lang: locale })}`);
   const body = await response.json();
@@ -35,6 +35,6 @@ export const load: PageLoad = async ({ url, fetch, parent }) => {
   // the art it lays out, and what it hands back is a chart. Only the address
   // and the payload took the art's name — see `lib/instruments.ts`.
   return response.ok
-    ? { moment, chart: body.qimen, laidBy: body.laidBy, failure: undefined }
-    : { moment, chart: undefined, failure: body as Failure };
+    ? { moment, chart: body.qimen, laidBy: body.laidBy, lens: body.lens, failure: undefined }
+    : { moment, chart: undefined, lens: undefined, failure: body as Failure };
 };

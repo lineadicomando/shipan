@@ -218,6 +218,23 @@ two boards. The cursor is the only announcement it gets. A sheet has no
 pointer, so in print the same words are set once instead, as an empty seat
 under the board (`LayerLegend`).
 
+The second is **a lens**, on the 奇門 section: the reader keeps a kind of
+name or a phase and the rest of each seat recedes, or presses a name and is
+shown how the rest stands to it — the five relations of the phases, 對宮 and
+五合 (`lib/lens.ts`, `LensBar`, `LensLinks`, `LensRelations`). The rule it
+carries out is `docs/refusals.md` § "Where to look first". Three things
+follow from where it runs. **The relations are the engine's**: `/api/qimen`
+answers with `lens` beside the chart — `qimenLens`, every thing with a phase
+and the tables a relation is looked up in — because the client imports only
+types from `core`. **The lens is drawn in the browser and never by `plate`**:
+a drawing is made on the server, and which name somebody pressed is not
+something the server is told, so the receding is an attribute set on the
+marks in the shadow root and the relations are a layer of the page's laid
+over them, in the page's ink. **It lives in the fragment**, `#focus=…`, which
+no request carries; the query string stays what the board is a function of.
+Paper gets the whole board, and the relations drawn are said in words under
+it for a reader who does not see them.
+
 ## Found by a search, and what may never be found
 
 The interface is public and meant to be found. What is on it is not: an

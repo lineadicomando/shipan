@@ -1,9 +1,9 @@
 import { STEMS, type StemId } from '../ganzhi.js';
-import type { Element } from '../types.js';
+import { ELEMENT_HANZI, ELEMENT_PINYIN, type Element } from '../types.js';
 import type { QimenChart } from './index.js';
 import { palace } from './palaces.js';
 import { opposite } from './patterns.js';
-import { RELATION_IDS, relationOf, type RelationId } from './relation.js';
+import { RELATION_IDS, relationName, relationOf, type RelationId } from './relation.js';
 
 /**
  * What a reader may ask a 奇門 board to show them, handed over as data.
@@ -78,6 +78,15 @@ export interface QimenLens {
   facing: Record<number, number>;
   /** The 五合 partner of each stem. */
   wuhe: Record<StemId, StemId>;
+  /**
+   * The names a lens says its relations and phases by, hanzi and reading.
+   * Carried here because a page holding the lens imports no values from the
+   * engine, and a name is never the page's to write.
+   */
+  names: {
+    relations: Record<RelationId | LinkId, { hanzi: string; pinyin: string }>;
+    elements: Record<Element, { hanzi: string; pinyin: string }>;
+  };
 }
 
 const ELEMENTS: readonly Element[] = ['mu', 'huo', 'tu', 'jin', 'shui'];
@@ -113,6 +122,18 @@ function wuheTable(): Record<StemId, StemId> {
   return table;
 }
 
+/** Every relation and every phase, by hanzi and reading. */
+function names(): QimenLens['names'] {
+  const relations = {} as QimenLens['names']['relations'];
+  for (const id of RELATION_IDS) relations[id] = relationName(id);
+  for (const link of Object.values(LINKS)) relations[link.id] = { hanzi: link.hanzi, pinyin: link.pinyin };
+  const elements = {} as QimenLens['names']['elements'];
+  for (const element of ELEMENTS) {
+    elements[element] = { hanzi: ELEMENT_HANZI[element], pinyin: ELEMENT_PINYIN[element] };
+  }
+  return { relations, elements };
+}
+
 /** What a lens may show on this chart: its things, and the three tables. */
 export function qimenLens(chart: QimenChart): QimenLens {
   const things: LensThing[] = [];
@@ -129,7 +150,7 @@ export function qimenLens(chart: QimenChart): QimenLens {
     add('star', { id: contents.star.id, element: palace(contents.star.home).element });
     if (contents.gate) add('gate', { id: contents.gate.id, element: palace(contents.gate.home).element });
   }
-  return { things, phases: phaseTable(), facing: facingTable(), wuhe: wuheTable() };
+  return { things, phases: phaseTable(), facing: facingTable(), wuhe: wuheTable(), names: names() };
 }
 
 /** Every relation a lens may name, for a surface that has to offer them all. */

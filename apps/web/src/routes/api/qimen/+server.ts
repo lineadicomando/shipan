@@ -1,4 +1,4 @@
-import { computeDayChart, computeQimenChart, nianmingOf } from '@shipan/core';
+import { computeDayChart, computeQimenChart, nianmingOf, qimenLens } from '@shipan/core';
 import { json } from '@sveltejs/kit';
 import {
   momentIsFixed,
@@ -61,11 +61,16 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
     // board named after itself, and this was the one that did not — which is
     // what `Instrument.api` being a single field depends on. See
     // `lib/instruments.ts`.
+    //
+    // `lens` is every relation a reader may ask the board to show, as data:
+    // which one they ask for is chosen on the page and never sent here. See
+    // `lib/lens.ts`.
     return json({
       qimen: chart,
       nianming,
       place: label ?? null,
       laidBy: laidBy('qimen', chart.options),
+      lens: qimenLens(chart),
     });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;

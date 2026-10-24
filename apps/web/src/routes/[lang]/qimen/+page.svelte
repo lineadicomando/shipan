@@ -1,8 +1,24 @@
 <script lang="ts">
-  import { goto, invalidateAll } from '$app/navigation';
+  import { goto, invalidateAll, replaceState } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { sayLayer } from '$lib/board';
+  import { sayLayer, type BoardSpot } from '$lib/board';
+  import { glyph } from '$lib/glyph';
+  import {
+    PHASE_LAYERS,
+    WHOLE,
+    keyOf,
+    pressed,
+    readLens,
+    viewOf,
+    writeLens,
+    type Drawing,
+    type LensState,
+  } from '$lib/lens';
+  import type { LensLayer, PalaceContents, QimenLens } from '@shipan/core';
+  import type { MessageKey } from '@shipan/i18n';
+  import LensBar from '$lib/components/LensBar.svelte';
+  import LensRelations from '$lib/components/LensRelations.svelte';
   import { carried } from '$lib/parameters';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import { step, type Unit, type Wall } from '$lib/step';
@@ -138,6 +154,77 @@
       shichen: cast.time.slice(0, 5),
     },
   );
+
+  /**
+   * The lens: what the reader asked to see on the board, if anything.
+   *
+   * Nothing is on when the page opens. It is kept across a step of the hour —
+   * a focus is a thing and follows it to wherever the turn carries it — and
+   * written into the address's fragment, which no request carries, so a
+   * link can be sent with it and the server never learns of it.
+   */
+  let lensState = $state<LensState>(WHOLE);
+  let drawing = $state<Drawing>('arrows');
+  let lensRead = false;
+  $effect(() => {
+    if (lensRead) return;
+    lensRead = true;
+    lensState = readLens(page.url.hash);
+  });
+  $effect(() => {
+    const fragment = writeLens(lensState);
+    if (!lensRead || fragment === page.url.hash.replace(/^#/, '')) return;
+    replaceState(`${page.url.pathname}${page.url.search}${fragment ? `#${fragment}` : ''}`, page.state);
+  });
+
+  const lens = $derived<QimenLens | undefined>(ofTheDay ? undefined : data.lens);
+  const view = $derived(viewOf(lens, lensState));
+
+  /** The contents of a palace by its Luoshu number. */
+  const at = (seat: number): PalaceContents | undefined =>
+    chart && !ofTheDay ? (chart as { palaces: PalaceContents[] }).palaces.find((cell) => cell.palace.number === seat) : undefined;
+
+  const PREFIX: Record<string, string> = {
+    heaven: 'stem',
+    earth: 'stem',
+    palace: 'palace',
+    star: 'star',
+    gate: 'gate',
+    spirit: 'spirit',
+  };
+
+  /** A name on the board in words: its gloss, its hanzi and its reading. */
+  function nameAt(seat: number, layer: string): string | undefined {
+    const cell = at(seat) as Record<string, { id: string; hanzi: string; pinyin?: string } | undefined> | undefined;
+    const thing = cell?.[layer];
+    if (!thing) return undefined;
+    return `${t(`label.${PREFIX[layer]}.${thing.id}` as MessageKey)} ${glyph(thing)}`;
+  }
+
+  const focusName = $derived.by(() => {
+    if (!view.focus) return undefined;
+    const [seat, layer] = view.focus.split(':') as [string, string];
+    return nameAt(Number(seat), layer);
+  });
+
+  /** Pressing a name with a phase starts from it; pressing it again lets go. */
+  function pick(spot: BoardSpot | undefined): void {
+    if (!lens || !spot?.layer || !spot.id) return;
+    if (!(PHASE_LAYERS as readonly string[]).includes(spot.layer)) return;
+    lensState = pressed(lensState, { layer: spot.layer as LensLayer, id: spot.id });
+  }
+
+  /** Over a name a relation is drawn to, the relation; over any other, its layer. */
+  function tipOf(spot: BoardSpot): string | undefined {
+    if (view.focus && focusName && spot.seat && spot.layer) {
+      const key = keyOf(Number(spot.seat), spot.layer);
+      const said = view.links
+        .filter((link) => link.to === key)
+        .map((link) => t(`lens.relation.${link.relation}` as MessageKey, { thing: focusName }));
+      if (said.length > 0) return said.join(' · ');
+    }
+    return sayLayer(spot, t);
+  }
 
   let busy = $state(false);
   let panel: FormPanel | undefined = $state();
@@ -283,7 +370,21 @@
          gap between the picture and the reading is two rems, and a legend
          standing in it would belong to neither. -->
     <div class="board" class:swapped={onPaper}>
-      <div class="screen"><InlineBoard src={plate} width={900} height={900} tip={(spot) => sayLayer(spot, t)} /></div>
+      {#if lens}
+        <LensBar
+          {t}
+          {lens}
+          state={lensState}
+          {focusName}
+          {drawing}
+          onchange={(next) => (lensState = next)}
+          ondraw={(next) => (drawing = next)}
+        />
+      {/if}
+      <div class="screen">
+        <InlineBoard src={plate} width={900} height={900} tip={tipOf} onpick={pick} lens={view} {drawing} />
+      </div>
+      {#if lens}<LensRelations {t} {view} {focusName} {nameAt} />{/if}
       <!-- The same board in the colours of paper, drawn only where the two
            differ and shown only by a printer. -->
       {#if onPaper}

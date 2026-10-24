@@ -439,6 +439,7 @@ export {
 export {
   DEFAULT_OPTIONS,
   ELEMENT_HANZI,
+  ELEMENT_PINYIN,
   type ChartOptions,
   type Element,
   type Place,

@@ -106,8 +106,13 @@ describe('the relations a lens may show on a 奇門 board', () => {
     }
   });
 
-  it('names every relation it can show, with its reading', () => {
+  it('names every relation it can show, and every phase, with its reading', () => {
     expect(RELATION_IDS).toHaveLength(5);
+    const { names } = qimenLens(cast('2024-06-15', '14:00'));
+    expect(names.relations.woke).toEqual({ hanzi: '我剋', pinyin: 'wǒkè' });
+    expect(names.relations.duigong).toEqual({ hanzi: '對宮', pinyin: 'duìgōng' });
+    expect(names.elements.shui).toEqual({ hanzi: '水', pinyin: 'shuǐ' });
+    expect(Object.keys(names.relations)).toHaveLength(7);
     for (const link of Object.values(LINKS)) {
       expect(link.hanzi).toMatch(/^\p{Script=Han}+$/u);
       expect(link.pinyin).toMatch(/^[a-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü]+$/);

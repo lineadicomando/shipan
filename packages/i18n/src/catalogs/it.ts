@@ -403,6 +403,38 @@ export const it: Record<MessageKey, string> = {
   'label.relation.kewo': 'dominata',
   'label.relation.woke': 'che domina',
 
+  // Le due relazioni che una lente mostra oltre alle cinque delle fasi, dette
+  // come quelle: una parola o due, dal lato della cosa da cui si è partiti.
+  'label.relation.duigong': 'palazzo opposto',
+  'label.relation.wuhe': 'tronco unito',
+
+  // Una lente sulla tavola. Ogni riga dice che cosa fa il comando, nessuna che
+  // cosa significa una relazione: quello spetta a chi legge.
+  'lens.title': 'Lente',
+  'lens.hint': 'Tieni alcuni nomi e lascia sfumare il resto, oppure premi un nome sulla tavola per vedere come tutto il resto vi si rapporta.',
+  'lens.layers': 'Tieni',
+  'lens.phases': 'Tieni le fasi',
+  'lens.whole': 'Tavola intera',
+  'lens.focus': 'A partire da {thing}',
+  'lens.release': 'Lascia',
+  'lens.toward': 'In relazione con',
+  'lens.kinds': 'Relazioni',
+  'lens.shengke': 'generazione e dominio',
+  'lens.drawing': 'Disegnate come',
+  'lens.drawing.arrows': 'frecce',
+  'lens.drawing.marks': 'contorni',
+  'lens.key': 'Come sono disegnate le relazioni',
+  'lens.heading': 'Come la tavola si rapporta a {thing}',
+  'lens.empty': 'Nessun nome sulla tavola sta nelle relazioni scelte.',
+  'lens.at': '{layer}, palazzo {palace}',
+  'lens.relation.wosheng': 'generazione, da {thing} a qui',
+  'lens.relation.shengwo': 'generazione, da qui a {thing}',
+  'lens.relation.woke': 'dominio, da {thing} a qui',
+  'lens.relation.kewo': 'dominio, da qui a {thing}',
+  'lens.relation.bihe': 'stessa fase di {thing}',
+  'lens.relation.duigong': 'il palazzo opposto a {thing}',
+  'lens.relation.wuhe': 'il tronco con cui {thing} si unisce',
+
   // Il cavallo di posta, e il ramo da cui è calcolato. La tradizione li nomina
   // entrambi e nessuno dei due sta per l'altro.
   'label.horse.day': 'cavallo del giorno',

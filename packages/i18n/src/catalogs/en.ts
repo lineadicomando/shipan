@@ -411,6 +411,44 @@ export const en = {
   'label.relation.kewo': 'controlled',
   'label.relation.woke': 'controlling',
 
+  // The two relations a lens shows besides the five of the phases, said the
+  // way the five are said beside them: one word or two, from the side of the
+  // thing the reader started from.
+  'label.relation.duigong': 'facing palace',
+  'label.relation.wuhe': 'combined stem',
+
+  // A lens on a board: the reader keeps some names, or presses one and is
+  // shown how the rest stands to it. Every line here names what the control
+  // does, and none says what a relation means — that is the reader's. See
+  // `docs/refusals.md` § "Where to look first".
+  'lens.title': 'Lens',
+  'lens.hint': 'Keep some names and let the rest fade, or press a name on the board to see how everything else stands to it.',
+  'lens.layers': 'Keep',
+  'lens.phases': 'Keep the phases',
+  'lens.whole': 'Whole board',
+  'lens.focus': 'Starting from {thing}',
+  'lens.release': 'Let go',
+  'lens.toward': 'Related to',
+  'lens.kinds': 'Relations',
+  'lens.shengke': 'generation and control',
+  'lens.drawing': 'Drawn as',
+  'lens.drawing.arrows': 'arrows',
+  'lens.drawing.marks': 'outlines',
+  'lens.key': 'How the relations are drawn',
+  'lens.heading': 'How the board stands to {thing}',
+  'lens.empty': 'Nothing on the board stands in the relations chosen.',
+  'lens.at': '{layer}, palace {palace}',
+  // Said over a name the lens has drawn a relation to, and in the list under
+  // the board: which way the relation runs, between the name the reader
+  // started from and this one.
+  'lens.relation.wosheng': 'generation, from {thing} to this',
+  'lens.relation.shengwo': 'generation, from this to {thing}',
+  'lens.relation.woke': 'control, from {thing} to this',
+  'lens.relation.kewo': 'control, from this to {thing}',
+  'lens.relation.bihe': 'same phase as {thing}',
+  'lens.relation.duigong': 'the palace facing {thing}',
+  'lens.relation.wuhe': 'the stem {thing} combines with',
+
   // The post horse, and which pillar's branch it was reckoned from. Both are
   // named in the tradition and neither stands for the other.
   'label.horse.day': 'horse of the day',
