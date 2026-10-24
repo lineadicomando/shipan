@@ -290,7 +290,11 @@ until a name is pressed in each.
 `--lens-sheng` and `--lens-ke` in `app.css`, a violet and a magenta, hues the
 phases do not use, since colour on a board is the phase's. Each relation
 keeps its stroke as well, so colour is never the only thing telling two
-apart. **Two modes, and the reader picks.** The page opens in the beginner's,
+apart. **An arrow is straight where a straight line is clear and curved where
+it is not** — where it would cross a name another arrow points at, or lie on
+one already laid (`layArrows` in `lib/arrows.ts`): the gentlest clear bend is
+kept, the shortest arrows are laid first, and arrows leaving one name may
+meet at it, since a fan reads as a fan. **Two modes, and the reader picks.** The page opens in the beginner's,
 which lays the lens one way at a time — two palaces, one name, or one phase —
 with one kind or one phase at a time; the expert's offers every control at
 once. The circle of the five phases (`FiveWheel`) stands over the controls

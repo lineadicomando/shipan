@@ -7,6 +7,9 @@
 
   **Each relation is a line from one end to the other**, with a head where it
   runs: from what generates or controls to what is generated or controlled.
+  Straight where a straight line is clear, and curved only where it is not —
+  where it would cross a name another arrow points at, or lie on an arrow
+  already laid (`layArrows` in `$lib/arrows`).
   The same layer serves a pressed name, every relation starting from it, and a
   pair of palaces, where each runs from whichever thing acts.
 
@@ -57,6 +60,7 @@
 
 <script lang="ts">
   import { direction } from '$lib/lens';
+  import { layArrows, pathOf } from '$lib/arrows';
 
   interface Box {
     x: number;
@@ -80,25 +84,17 @@
     links: readonly { from: Box; box: Box; relation: ShownRelation }[];
   } = $props();
 
-  const centre = (box: Box) => ({ x: box.x + box.width / 2, y: box.y + box.height / 2 });
-  const radius = (box: Box) => Math.max(box.width, box.height) / 2 + 3;
-
-  /** A line from one box to another, stopping short of both. */
-  function between(a: Box, b: Box) {
-    const from = centre(a);
-    const to = centre(b);
-    const length = Math.hypot(to.x - from.x, to.y - from.y) || 1;
-    const ux = (to.x - from.x) / length;
-    const uy = (to.y - from.y) / length;
-    const start = radius(a);
-    const end = radius(b);
-    return {
-      x1: from.x + ux * start,
-      y1: from.y + uy * start,
-      x2: to.x - ux * end,
-      y2: to.y - uy * end,
-    };
-  }
+  /**
+   * Every arrow placed, clear of the names the lens points at and of each
+   * other. The obstacles are every end of every arrow, the focus with them.
+   */
+  const paths = $derived.by(() => {
+    const obstacles: Box[] = [...(focus ? [focus] : []), ...links.flatMap((link) => [link.from, link.box])];
+    return layArrows(
+      links.map((link) => ({ from: link.from, to: link.box })),
+      obstacles,
+    ).map(pathOf);
+  });
 
   /** One head per colour: a marker takes its fill from where it is defined. */
   const HEADS = [
@@ -126,18 +122,18 @@
   {/each}
 
   {#each links as link, index (index)}
-    {@const line = between(link.from, link.box)}
+    {@const d = paths[index]}
     {@const way = direction(link.relation)}
-    <line class="halo" {...line} />
-    <line
-      {...line}
+    <path class="halo" {d} />
+    <path
+      {d}
       style:stroke={colourOf(link.relation)}
       stroke-dasharray={dashOf(link.relation)}
       marker-end={way === 'out' ? headOf(link.relation) : undefined}
       marker-start={way === 'in' ? headOf(link.relation) : undefined}
     />
     {#if link.relation === 'wuhe'}
-      <line {...line} class="inner" />
+      <path {d} class="inner" />
     {/if}
   {/each}
 </svg>
@@ -149,7 +145,7 @@
     pointer-events: none;
     overflow: visible;
   }
-  line,
+  path,
   rect {
     fill: none;
     stroke: var(--ink);
