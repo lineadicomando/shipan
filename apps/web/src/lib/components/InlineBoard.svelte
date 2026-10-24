@@ -342,9 +342,12 @@
   .tip {
     position: absolute;
     transform: translate(-50%, calc(-100% - 0.2rem));
-    padding: 0.15rem 0.45rem;
-    border-radius: 0.2rem;
-    font-size: 0.8rem;
+    padding: 0.25rem 0.55rem;
+    border-radius: 0.25rem;
+    /* A step over the words the drawing sets under its names, so that what is
+       said over a name reads as the page speaking and not as one more label
+       of the board's — at the board's measure those are a little under 0.8rem. */
+    font-size: 0.95rem;
     line-height: 1.3;
     /* One line where it fits, and wrapped where the board is narrower than
        the words: `max-content` is as wide as the line, and no wider than the
