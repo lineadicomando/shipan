@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { QimenLens } from '@shipan/core';
-import { WHOLE, inPair, keyOf, oneAtATime, pairTable, pressedInPair, wayOf, pressed, pressedSeat, readLens, viewOf, writeLens, type LensState } from '../src/lib/lens';
+import { WHOLE, activePhases, inPair, keyOf, oneAtATime, pairTable, pressedInPair, wayOf, pressed, pressedSeat, readLens, viewOf, writeLens, type LensState } from '../src/lib/lens';
 
 /**
  * A lens is the reader's: these hold that it does nothing until somebody
@@ -211,5 +211,13 @@ describe('a lens on a 奇門 board', () => {
     expect(wayOf({ ...WHOLE, pair: [2] })).toBe('pair');
     expect(wayOf({ ...WHOLE, focus: { layer: 'gate', id: 'kaimen' } })).toBe('focus');
     expect(wayOf({ ...WHOLE, phases: ['jin'] })).toBe('phase');
+  });
+
+  it('lights on the circle the phases of what the lens has in it, and nothing else', () => {
+    expect(activePhases(LENS, WHOLE)).toEqual([]);
+    expect(activePhases(LENS, { ...WHOLE, focus: { layer: 'gate', id: 'kaimen' } })).toEqual(['jin']);
+    expect(activePhases(LENS, { ...WHOLE, pair: [1, 9], chosen: ['1:heaven', '9:palace', '9:heaven'] })).toEqual(['huo', 'jin']);
+    expect(activePhases(LENS, { ...WHOLE, phases: ['shui'] })).toEqual(['shui']);
+    expect(activePhases(undefined, { ...WHOLE, phases: ['shui'] })).toEqual([]);
   });
 });

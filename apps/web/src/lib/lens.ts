@@ -449,3 +449,21 @@ export function pressed(state: LensState, thing: Focus): LensState {
   const toward = state.focus ? state.toward : [thing.layer];
   return { ...state, focus: thing, toward, pair: undefined, chosen: undefined };
 }
+
+/**
+ * The phases of what the lens has in it, for the circle of the five phases:
+ * the pressed name's, the names pressed inside a pair, or the phases kept.
+ * None when nothing is chosen, and the circle stands whole.
+ */
+export function activePhases(lens: QimenLens | undefined, state: LensState): Element[] {
+  if (!lens) return [];
+  if (state.focus) {
+    const thing = lens.things.find((one) => one.layer === state.focus?.layer && one.id === state.focus?.id);
+    return thing ? [thing.element] : [];
+  }
+  if (state.pair?.length === 2 && state.chosen?.length) {
+    const chosen = new Set<string>(state.chosen);
+    return [...new Set(lens.things.filter((one) => chosen.has(keyOf(one.seat, one.layer))).map((one) => one.element))];
+  }
+  return [...state.phases];
+}

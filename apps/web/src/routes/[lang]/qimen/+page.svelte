@@ -16,6 +16,7 @@
     readLens,
     viewOf,
     wayOf,
+    activePhases,
     writeLens,
     type Way,
     type LensState,
@@ -25,6 +26,7 @@
   import LensBar from '$lib/components/LensBar.svelte';
   import LensRelations from '$lib/components/LensRelations.svelte';
   import LensPair from '$lib/components/LensPair.svelte';
+  import FiveWheel from '$lib/components/FiveWheel.svelte';
   import { carried } from '$lib/parameters';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import { step, type Unit, type Wall } from '$lib/step';
@@ -461,6 +463,13 @@
       </div>
       <div class="side">
         {#if lens}
+          <!-- The circle over the controls, in both modes, and held at the
+               top of the column while what is under it scrolls: it is the one
+               figure the reader keeps glancing at, so nothing pressed below
+               may move it. -->
+          <div class="wheel">
+            <FiveWheel {t} {lens} active={activePhases(lens, lensState)} />
+          </div>
           <LensBar
             {t}
             {lens}
@@ -549,6 +558,14 @@
      a grid item will not go below its own min-content otherwise, and the
      picture's is nine hundred pixels. */
   .board { min-inline-size: 0; }
+  .wheel {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--ground);
+    padding-block-end: 0.5rem;
+  }
+  @media print { .wheel { display: none; } }
   .result, img { transition: opacity 0.15s ease-out; }
   .stale { opacity: 0.5; }
   /*

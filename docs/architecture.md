@@ -184,8 +184,10 @@ So every section that draws a board lays it on a bench — 奇門, 六壬, 太�
 七政四餘 and 紫微斗數; the four pillars are a grid in the page's type and the
 consultation shows a board only as the check on what it hands over. On the
 left, the whole board at `--board`. On the right, a column at `--side`
-holding what is used on the board in view: on 奇門 the lens with its circle
-of the five phases and its key, and the key to the marks of strength; on the
+holding what is used on the board in view: on 奇門 the circle of the five
+phases, held at the top of the column in both modes so that nothing pressed
+under it moves it, then the lens and its key, and the key to the marks of
+strength; on the
 other four the key to the names on the board. The steps of the moment stay in
 the bar above, with the date: they choose which board is laid, where the
 column holds how it is looked at, and the two are kept apart. The column is
@@ -290,8 +292,9 @@ phases do not use, since colour on a board is the phase's. Each relation
 keeps its stroke as well, so colour is never the only thing telling two
 apart. **Two modes, and the reader picks.** The page opens in the beginner's,
 which lays the lens one way at a time — two palaces, one name, or one phase —
-with one kind or one phase at a time and the circle of the five phases
-(`FiveWheel`) beside the controls; the expert's offers every control at once.
+with one kind or one phase at a time; the expert's offers every control at
+once. The circle of the five phases (`FiveWheel`) stands over the controls
+in both.
 The mode is in the fragment with the rest of the lens and in no storage, so
 the privacy note's inventory of what the browser keeps does not move. The rule it
 carries out is `docs/refusals.md` § "Where to look first". Three things

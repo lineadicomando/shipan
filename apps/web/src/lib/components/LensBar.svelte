@@ -12,8 +12,9 @@
   **Two modes, and the reader picks.** The expert's offers everything at
   once and lets kinds, phases and relations be combined. The beginner's
   lays the lens one way at a time — two palaces, one name, or one phase —
-  with one kind or one phase chosen at a time, the five relations of the
-  phases alone, and the circle of the five phases beside the controls. Which
+  with one kind or one phase chosen at a time and the five relations of the
+  phases alone. The circle of the five phases is not here: it stands over
+  this panel in both modes, where nothing pressed below it can move it. Which
   mode is in force travels in the fragment with the rest of the lens.
 
   The key to the arrows is here and not on the board, for the reason the
@@ -22,7 +23,7 @@
 -->
 <script lang="ts">
   import type { MessageKey, Translator } from '@shipan/i18n';
-  import type { Element, LensLayer, QimenLens } from '@shipan/core';
+  import type { LensLayer, QimenLens } from '@shipan/core';
   import { glyph } from '$lib/glyph';
   import {
     BOARD_LAYERS,
@@ -37,7 +38,6 @@
     type Way,
   } from '$lib/lens';
   import { colourOf, dashOf } from './LensLinks.svelte';
-  import FiveWheel from './FiveWheel.svelte';
 
   let {
     t,
@@ -82,23 +82,6 @@
     });
   }
 
-  /** The phases of what the lens has in it, for the circle beside it. */
-  const active = $derived.by((): Element[] => {
-    if (state.focus) {
-      const thing = lens.things.find((one) => one.layer === state.focus?.layer && one.id === state.focus?.id);
-      return thing ? [thing.element] : [];
-    }
-    if (state.pair?.length === 2 && state.chosen?.length) {
-      return [
-        ...new Set(
-          lens.things
-            .filter((one) => state.chosen?.includes(`${one.seat}:${one.layer}`))
-            .map((one) => one.element),
-        ),
-      ];
-    }
-    return [...state.phases];
-  });
 
   const focused = $derived(Boolean(state.focus && focusName));
   const paired = $derived(Boolean(state.pair && pairSaid));
@@ -269,7 +252,6 @@
     {/if}
   </div>
 
-  {#if !state.expert}<FiveWheel {t} {lens} {active} />{/if}
 </section>
 
 <style>
