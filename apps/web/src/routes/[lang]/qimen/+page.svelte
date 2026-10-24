@@ -487,9 +487,9 @@
 
       A board is bounded by the height of the window and never by its width,
       so on a landscape screen the width beside it is free. What stands there
-      is what a reader operates on the board in view — the lens and the key
-      to the marks — in a column that stays put while the page moves, so
-      nothing pressed in it moves the board. On a narrow screen the column
+      is what a reader operates on the board in view — the circle and the
+      lens — in a column beside it, so nothing pressed in it moves the
+      board. On a narrow screen the column
       goes under the board, for the same reason. What chooses the board, the
       date and its steps, stays in the bar above: a different errand. See
       `docs/architecture.md` § "The bench".
@@ -512,10 +512,8 @@
       <div class="side">
         {#if lens}
           <!-- The circle over the controls, in both modes, and the mode with
-               the button that puts the lens away under it: held at the top of
-               the column while what is under them scrolls, since they are what
-               the reader keeps glancing at and reaching for, and nothing
-               pressed below may move them. -->
+               the button that puts the lens away under it: at the head of the
+               column, where nothing that grows below them can move them. -->
           <div class="held">
             <FiveWheel {t} {lens} active={activePhases(lens, lensState)} />
             <LensMode {t} state={lensState} onchange={(next) => (lensState = next)} />
@@ -606,15 +604,7 @@
      a grid item will not go below its own min-content otherwise, and the
      picture's is nine hundred pixels. */
   .board { min-inline-size: 0; }
-  .held {
-    display: grid;
-    gap: 0.75rem;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background: var(--ground);
-    padding-block-end: 0.5rem;
-  }
+  .held { display: grid; gap: 0.75rem; }
   @media print { .held { display: none; } }
   .result, img { transition: opacity 0.15s ease-out; }
   .stale { opacity: 0.5; }

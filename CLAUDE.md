@@ -263,8 +263,8 @@ the engine falls back to Moshier, which needs no files.
 - **A board is bounded by the window's height, so the width beside it is the
   reader's.** A section lays its board on a bench: the whole board in the
   window under the bar, and beside it, in a column at `--side`, what is used
-  on it — a lens, the key to its names and marks. The column stays put while
-  the page moves and goes under the board on a narrow screen, never over it;
+  on it — a lens, the key to its names and marks. The column scrolls with the
+  board and goes under it on a narrow screen, never over it;
   nothing pressed there may move the board, and what chooses the board — the
   date and its steps — stays in the bar above. A drawing whose key would make
   it taller than a window is drawn `bare` and its key set in the column, read

@@ -185,12 +185,15 @@ So every section that draws a board lays it on a bench — 奇門, 六壬, 太�
 consultation shows a board only as the check on what it hands over. On the
 left, the whole board at `--board`. On the right, a column at `--side`
 holding what is used on the board in view: on 奇門 the circle of the five
-phases, held at the top of the column in both modes so that nothing pressed
-under it moves it, then the lens and the key to its arrows; on the
+phases at the head of the column in both modes, where nothing that grows
+under it can move it, then the lens and the key to its arrows; on the
 other four the key to the names on the board. The steps of the moment stay in
 the bar above, with the date: they choose which board is laid, where the
-column holds how it is looked at, and the two are kept apart. The column is
-`sticky` and scrolls inside itself, so nothing pressed in it moves the board.
+column holds how it is looked at, and the two are kept apart. The column
+stands beside the board and scrolls with the page like the board itself —
+it is the board's companion, and a column that followed the reader down the
+page would be one more thing moving — and beside the board, nothing pressed
+in it can move the board.
 It is paid for out of the board's width and not out of the margins: the shell
 stays 72rem, and the board is the narrower for it. Below 64rem, or on a
 window standing upright, the column goes under the board, for the same
@@ -302,8 +305,8 @@ kind or one phase at a time and draws the five relations of the phases alone.
 The expert's keeps and combines as many as are pressed, kinds of name as well
 as phases, and adds 對宮 and 五合. The circle of the five phases (`FiveWheel`)
 stands over the controls in both, its sentence its accessible name and not a
-caption, and under it the mode and «whole board» (`LensMode`), held at the top
-of the column. **Putting the lens away is always at hand**: that button, which
+caption, and under it the mode and «whole board» (`LensMode`), at the head of
+the column. **Putting the lens away is always at hand**: that button, which
 stays in its place and is disabled when there is nothing to put away; a press
 on the board outside its nine palaces; a press on the page's own ground; and
 Escape. A press in the bar the moment is stepped from, in the column, in what

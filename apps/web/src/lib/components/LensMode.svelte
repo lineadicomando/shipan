@@ -2,8 +2,8 @@
   The two things a reader reaches for most while using a lens: which mode it
   is laid in, and putting it away.
 
-  Held at the top of the column with the circle of the five phases, so both
-  are in the same place whatever the panel under them holds. «Whole board» is
+  At the head of the column with the circle of the five phases, so both are
+  in the same place whatever the panel under them holds. «Whole board» is
   always there and is disabled when there is nothing to put away: a button
   that came and went would be a button nobody can find twice. The board also
   puts the lens away when pressed outside its palaces, and Escape does — the

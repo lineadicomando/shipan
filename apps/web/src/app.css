@@ -187,26 +187,19 @@
  *
  * One column on a narrow or upright window, the side under the board — never
  * over it, so nothing that grows in it pushes the board down. Two on a wide
- * one lying on its side: the column keeps its place while the page scrolls,
- * and scrolls inside itself if it is taller than the window, so the board
- * under the reader's eye never moves for anything pressed in it. On paper the
+ * one lying on its side, the column beside the board and scrolled with the
+ * page like the board itself: it is the board's companion, and a column that
+ * followed the reader down the page would be one more thing moving. Beside
+ * the board, nothing that grows in it can move the board either. On paper the
  * bench is a block, and what the column holds follows the board.
  */
 .bench { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); }
 .bench > .side { display: grid; gap: 1.25rem; align-content: start; min-inline-size: 0; }
 @media (min-width: 64rem) and (orientation: landscape) {
   .bench { grid-template-columns: minmax(0, 1fr) var(--side); gap: 2rem; align-items: start; }
-  .bench > .side {
-    position: sticky;
-    top: 1rem;
-    max-block-size: calc(100svh - 2rem);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-  }
 }
 @media print {
   .bench { display: block; }
-  .bench > .side { position: static; max-block-size: none; overflow: visible; }
 }
 
 * { box-sizing: border-box; }
