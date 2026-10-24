@@ -43,7 +43,7 @@
 -->
 <script lang="ts">
   import { sameSpot, spotOf, type BoardSpot } from '$lib/board';
-  import type { Drawing, LensView, ShownRelation, SpotKey } from '$lib/lens';
+  import type { LensView, ShownRelation, SpotKey } from '$lib/lens';
   import LensLinks from './LensLinks.svelte';
 
   let {
@@ -56,7 +56,6 @@
     onpick,
     ondrawn,
     lens,
-    drawing = 'arrows',
   }: {
     src: string;
     width: number;
@@ -67,7 +66,6 @@
     onpick?: (spot: BoardSpot | undefined) => void;
     ondrawn?: (drawing: { width: number; height: number; inline: boolean }) => void;
     lens?: LensView;
-    drawing?: Drawing;
   } = $props();
 
   /**
@@ -314,7 +312,7 @@
     {/if}
   </div>
   {#if laid}
-    <LensLinks width={size.width} height={size.height} focus={laid.focus} seats={laid.seats} links={laid.links} {drawing} />
+    <LensLinks width={size.width} height={size.height} focus={laid.focus} seats={laid.seats} links={laid.links} />
   {/if}
   {#if shown}
     <span

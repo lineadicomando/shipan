@@ -1,8 +1,9 @@
 <!--
   Two palaces, and how what stands in one stands to what stands in the other.
 
-  A table, because it is every thing of one palace against every thing of the
-  other: five by five at most, which as lines over the board would be a web
+  A table, because it is every kind the reader kept in one palace against
+  every kind kept in the other, and nothing until a kind is kept: five by five
+  at most, which as lines over the board would be a web
   and as a grid is read in one look. The rows are the lower-numbered palace's
   and the columns the other's — Luoshu order, never the order they were
   pressed in — and each cell is a flow: → from the row to the column, ← the
@@ -16,7 +17,7 @@
 -->
 <script lang="ts">
   import type { MessageKey, Translator } from '@shipan/i18n';
-  import type { QimenLens } from '@shipan/core';
+  import type { LensLayer, QimenLens } from '@shipan/core';
   import { glyph } from '$lib/glyph';
   import { PHASE_LAYERS, pairTable, type LensView } from '$lib/lens';
 
@@ -24,16 +25,19 @@
     t,
     lens,
     view,
+    kept,
     nameAt,
   }: {
     t: Translator;
     lens: QimenLens;
     view: LensView;
+    /** The kinds the reader keeps to compare. */
+    kept: readonly LensLayer[];
     nameAt: (seat: number, layer: string) => string | undefined;
   } = $props();
 
   const seats = $derived(view.seats);
-  const cells = $derived(pairTable(lens, seats));
+  const cells = $derived(pairTable(lens, seats, kept));
   const rows = $derived(PHASE_LAYERS.filter((layer) => cells.some((cell) => cell.row === layer)));
   const columns = $derived(PHASE_LAYERS.filter((layer) => cells.some((cell) => cell.column === layer)));
   const cellOf = (row: string, column: string) => cells.find((cell) => cell.row === row && cell.column === column);
@@ -49,6 +53,9 @@
   {#if seats.length === 2}
     {@const [a, b] = seats as [number, number]}
     <p class="heading">{t('lens.pair.heading', { a: palace(a), b: palace(b) })}</p>
+    {#if cells.length === 0}
+      <p>{t('lens.pair.nothing')}</p>
+    {:else}
     <div class="scroller">
       <table>
         <thead>
@@ -94,6 +101,7 @@
       </table>
     </div>
     <p class="caption">{t('lens.pair.caption')}</p>
+    {/if}
     {#if others.length > 0}
       <ul>
         {#each others as link, index (index)}

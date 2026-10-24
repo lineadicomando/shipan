@@ -1,26 +1,26 @@
 <!--
-  The relations of a focus, laid over the board it is on.
+  The relations a lens shows, laid over the board as arrows.
 
   The page's and not the drawing's, for the reason the lens is: the drawing
   is made on the server, and where a reader looked never goes there. So this
-  is a layer of its own set over the drawing, in the page's ink and never in a
-  phase's colour — the colours on the board are the phases', and a line in
-  one of them would read as a sixth thing in the palace.
+  is a layer of its own set over the drawing.
 
-  **Two ways of drawing the same relations, to be compared.** `arrows` runs a
-  line from one end of each relation to the other; `marks` draws a ring round
-  the far end with a notch on the side toward the near one. Each relation
-  carries its own two ends, so the same drawing serves a pressed name — every
-  relation starting from it — and a pair of palaces, where each runs from
-  whichever thing generates or controls. Either way the stroke says the
-  cycle — whole for 生, dashed for 剋, dotted for 比和, broken twice for
-  對宮 and doubled for 五合 — and the head or the notch says which way it
-  runs. Nothing among them is heavier than the rest but the focus itself,
-  which is the reader's own choice and is ringed as such.
+  **Each relation is a line from one end to the other**, with a head where it
+  runs: from what generates or controls to what is generated or controlled.
+  The same layer serves a pressed name, every relation starting from it, and a
+  pair of palaces, where each runs from whichever thing acts.
+
+  **Two carriers, so that neither is the only one.** The stroke says the kind
+  — whole for 生, dashed for 剋, dotted for 比和, broken twice for 對宮 and
+  doubled for 五合 — and the two cycles are coloured as well, `--lens-sheng`
+  and `--lens-ke`, in hues the phases do not use: colour on a board is the
+  phase's, and a line in green or red would read as a sixth thing of wood or
+  fire. The other three are in the page's ink. Nothing among them is heavier
+  than the rest but what the reader chose, which is framed as theirs.
 
   Hidden from assistive technology and from paper. The same relations are
-  said in words under the board (`LensRelations`), and a sheet carries the
-  whole board, as it was laid.
+  said in words under the board, and a sheet carries the whole board, as it
+  was laid.
 -->
 <script lang="ts" module>
   import type { ShownRelation } from '$lib/lens';
@@ -28,9 +28,6 @@
   /** The stroke each relation is drawn with. Shared with the key to them. */
   export function dashOf(relation: ShownRelation): string | undefined {
     switch (relation) {
-      case 'wosheng':
-      case 'shengwo':
-        return undefined;
       case 'woke':
       case 'kewo':
         return '7 4';
@@ -38,14 +35,28 @@
         return '1.5 3.5';
       case 'duigong':
         return '10 3 2 3';
-      case 'wuhe':
+      default:
         return undefined;
+    }
+  }
+
+  /** The colour each relation is drawn in. Shared with the key to them. */
+  export function colourOf(relation: ShownRelation): string {
+    switch (relation) {
+      case 'wosheng':
+      case 'shengwo':
+        return 'var(--lens-sheng)';
+      case 'woke':
+      case 'kewo':
+        return 'var(--lens-ke)';
+      default:
+        return 'var(--ink)';
     }
   }
 </script>
 
 <script lang="ts">
-  import { direction, type Drawing } from '$lib/lens';
+  import { direction } from '$lib/lens';
 
   interface Box {
     x: number;
@@ -60,7 +71,6 @@
     focus,
     seats,
     links,
-    drawing,
   }: {
     width: number;
     height: number;
@@ -68,7 +78,6 @@
     /** The palaces of a pair, framed: the reader's own choice, like the focus. */
     seats: readonly Box[];
     links: readonly { from: Box; box: Box; relation: ShownRelation }[];
-    drawing: Drawing;
   } = $props();
 
   const centre = (box: Box) => ({ x: box.x + box.width / 2, y: box.y + box.height / 2 });
@@ -91,79 +100,44 @@
     };
   }
 
-  /** The notch on a ring, on the side facing the focus, pointing the way the relation runs. */
-  function notch(target: Box, origin: Box, relation: ShownRelation): string | undefined {
-    const way = direction(relation);
-    if (way === 'none') return undefined;
-    const to = centre(target);
-    const from = centre(origin);
-    const length = Math.hypot(to.x - from.x, to.y - from.y) || 1;
-    const ux = (to.x - from.x) / length;
-    const uy = (to.y - from.y) / length;
-    const r = radius(target);
-    // The point on the ring nearest the focus.
-    const px = to.x - ux * r;
-    const py = to.y - uy * r;
-    const size = 9;
-    // Outwards from the focus: the tip points into the thing. Inwards: away
-    // from it, toward the focus.
-    const sign = way === 'out' ? 1 : -1;
-    const tipX = px + ux * size * sign;
-    const tipY = py + uy * size * sign;
-    const baseX = px - ux * size * 0.2 * sign;
-    const baseY = py - uy * size * 0.2 * sign;
-    const nx = -uy * size * 0.7;
-    const ny = ux * size * 0.7;
-    return `M ${tipX} ${tipY} L ${baseX + nx} ${baseY + ny} L ${baseX - nx} ${baseY - ny} Z`;
-  }
+  /** One head per colour: a marker takes its fill from where it is defined. */
+  const HEADS = [
+    { id: 'lens-head-sheng', colour: 'var(--lens-sheng)' },
+    { id: 'lens-head-ke', colour: 'var(--lens-ke)' },
+  ] as const;
+  const headOf = (relation: ShownRelation): string =>
+    relation === 'wosheng' || relation === 'shengwo' ? 'url(#lens-head-sheng)' : 'url(#lens-head-ke)';
 </script>
 
 <svg class="links" {width} {height} viewBox="0 0 {width} {height}" aria-hidden="true">
   <defs>
-    <marker id="lens-head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
-    </marker>
+    {#each HEADS as head (head.id)}
+      <marker id={head.id} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" style:fill={head.colour} />
+      </marker>
+    {/each}
   </defs>
 
   {#if focus}
-    <rect
-      class="focus"
-      x={focus.x - 4}
-      y={focus.y - 4}
-      width={focus.width + 8}
-      height={focus.height + 8}
-      rx="6"
-    />
+    <rect class="frame" x={focus.x - 4} y={focus.y - 4} width={focus.width + 8} height={focus.height + 8} rx="6" />
   {/if}
-
   {#each seats as seat, index (index)}
-    <rect class="seat" x={seat.x + 2} y={seat.y + 2} width={seat.width - 4} height={seat.height - 4} rx="4" />
+    <rect class="frame seat" x={seat.x + 2} y={seat.y + 2} width={seat.width - 4} height={seat.height - 4} rx="4" />
   {/each}
 
   {#each links as link, index (index)}
-    {@const dash = dashOf(link.relation)}
+    {@const line = between(link.from, link.box)}
     {@const way = direction(link.relation)}
-    {#if drawing === 'arrows'}
-      {@const line = between(link.from, link.box)}
-      <line class="halo" {...line} />
-      <line
-        {...line}
-        stroke-dasharray={dash}
-        marker-end={way === 'out' ? 'url(#lens-head)' : undefined}
-        marker-start={way === 'in' ? 'url(#lens-head)' : undefined}
-      />
-      {#if link.relation === 'wuhe'}
-        <line {...line} class="inner" />
-      {/if}
-    {:else}
-      {@const ring = { x: link.box.x - 3, y: link.box.y - 3, width: link.box.width + 6, height: link.box.height + 6 }}
-      <rect class="halo" {...ring} rx="5" />
-      <rect {...ring} rx="5" stroke-dasharray={dash} />
-      {#if link.relation === 'wuhe'}
-        <rect class="inner" x={ring.x + 3} y={ring.y + 3} width={ring.width - 6} height={ring.height - 6} rx="3" />
-      {/if}
-      {@const path = notch(link.box, link.from, link.relation)}
-      {#if path}<path d={path} class="notch" />{/if}
+    <line class="halo" {...line} />
+    <line
+      {...line}
+      style:stroke={colourOf(link.relation)}
+      stroke-dasharray={dashOf(link.relation)}
+      marker-end={way === 'out' ? headOf(link.relation) : undefined}
+      marker-start={way === 'in' ? headOf(link.relation) : undefined}
+    />
+    {#if link.relation === 'wuhe'}
+      <line {...line} class="inner" />
     {/if}
   {/each}
 </svg>
@@ -173,22 +147,20 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    color: var(--ink);
     overflow: visible;
   }
   line,
   rect {
     fill: none;
-    stroke: currentColor;
-    stroke-width: 1.6;
+    stroke: var(--ink);
+    stroke-width: 1.8;
     stroke-linecap: round;
   }
   /* A wider stroke in the page's ground under each line, so it reads over the
      names it crosses rather than through them. */
   .halo {
     stroke: var(--ground);
-    stroke-width: 4.5;
-    stroke-dasharray: none;
+    stroke-width: 5;
     opacity: 0.85;
   }
   /* 五合's second line: the one relation drawn double, as a pair is. */
@@ -196,17 +168,8 @@
     stroke: var(--ground);
     stroke-width: 0.8;
   }
-  .focus {
-    stroke-width: 2.4;
-  }
-  .seat {
-    stroke-width: 3;
-  }
-  .notch {
-    fill: currentColor;
-    stroke: var(--ground);
-    stroke-width: 0.8;
-  }
+  .frame { stroke-width: 2.4; }
+  .seat { stroke-width: 3; }
   @media print {
     .links { display: none; }
   }

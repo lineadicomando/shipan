@@ -45,6 +45,18 @@
   --ground: #fdfcfa;
   --tint: #f4f1eb;
   --alarm: #9a3b2d;
+  /*
+   * The two cycles as a lens draws them over a board: generation and control.
+   *
+   * Hues the phases do not use. Colour on a board is the phase's — green,
+   * red, ochre, steel and blue — and a line in one of them would read as a
+   * sixth thing of that phase, so these are a violet and a magenta, each over
+   * 6:1 on the paper and on every tint. Never the only carrier: each relation
+   * keeps its stroke as well (`LensLinks`), for whoever does not tell the two
+   * apart.
+   */
+  --lens-sheng: #6a3fa6;
+  --lens-ke: #a3176e;
   --element-mu: #eef4ea;
   --element-huo: #faeeea;
   --element-tu: #f6f1e6;
@@ -64,6 +76,9 @@
     --ground: #16150f;
     --tint: #201e18;
     --alarm: #d98a76;
+    /* Over 7:1 on the dark ground and on every dark tint. */
+    --lens-sheng: #b99bea;
+    --lens-ke: #ec8cc4;
     --element-mu: #1a2118;
     --element-huo: #241a17;
     --element-tu: #211d15;
@@ -81,6 +96,8 @@
   --ground: #fdfcfa;
   --tint: #f4f1eb;
   --alarm: #9a3b2d;
+  --lens-sheng: #6a3fa6;
+  --lens-ke: #a3176e;
   --element-mu: #eef4ea;
   --element-huo: #faeeea;
   --element-tu: #f6f1e6;
@@ -97,6 +114,8 @@
   --ground: #16150f;
   --tint: #201e18;
   --alarm: #d98a76;
+  --lens-sheng: #b99bea;
+  --lens-ke: #ec8cc4;
   --element-mu: #1a2118;
   --element-huo: #241a17;
   --element-tu: #211d15;

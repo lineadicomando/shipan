@@ -29,10 +29,6 @@ export const PHASE_LAYERS: readonly LensLayer[] = ['heaven', 'earth', 'palace', 
 export const ELEMENTS: readonly Element[] = ['mu', 'huo', 'tu', 'jin', 'shui'];
 export const LINK_IDS: readonly LinkId[] = ['duigong', 'wuhe'];
 
-/** How the relations of a focus are drawn over the board. */
-export type Drawing = 'arrows' | 'marks';
-export const DRAWINGS: readonly Drawing[] = ['arrows', 'marks'];
-
 /**
  * A thing the reader started from, named by what it is and not where it
  * stands: stepped to the next hour, 丙 on the heaven plate is still 丙 on the
@@ -56,7 +52,11 @@ export interface LensState {
    * ground pressed starts a pair.
    */
   pair?: readonly number[];
-  /** The kinds of thing a focus is related to. */
+  /**
+   * The kinds of thing related: those a focus is related to, or those
+   * compared between the two palaces of a pair. Nothing is related until
+   * the reader keeps a kind here.
+   */
   toward: readonly LensLayer[];
   /** Whether a focus shows the five relations of the phases. */
   shengke: boolean;
@@ -185,15 +185,18 @@ export function viewOf(lens: QimenLens | undefined, state: LensState): LensView 
  * palaces is the asker and which the matter is a reading, and the engine
  * names neither (`docs/refusals.md` § "Who is 主 and who is 客").
  *
- * On the board, what stands on one layer in one palace is related to what
- * stands on the same layer in the other: five lines at most, and 對宮 and
- * 五合 where they hold. Every pair across layers is in `pairTable`, which is
- * said in words under the board.
+ * **Only what the reader keeps is compared**: the kinds in `toward`, every
+ * one of them in one palace against every one in the other, and nothing
+ * until a kind is kept. 對宮 and 五合 are added where they are asked for and
+ * hold. The same relations are tabulated by `pairTable` and said in words
+ * under the board.
  */
 function pairView(lens: QimenLens, state: LensState): LensView {
   const seats = [...new Set(state.pair)].sort((a, b) => a - b);
+  // The two palaces whole until a kind is kept, and then what is compared.
+  const kept: readonly string[] = state.toward.length > 0 ? state.toward : BOARD_LAYERS;
   const lit = new Set<SpotKey>();
-  for (const seat of seats) for (const layer of BOARD_LAYERS) lit.add(keyOf(seat, layer));
+  for (const seat of seats) for (const layer of kept) lit.add(keyOf(seat, layer));
   if (seats.length < 2) return { active: true, lit, seats, links: [] };
 
   const [a, b] = seats as [number, number];
@@ -202,18 +205,23 @@ function pairView(lens: QimenLens, state: LensState): LensView {
   const links: ShownLink[] = [];
 
   if (state.shengke) {
-    for (const layer of PHASE_LAYERS) {
-      const one = at(a, layer);
-      const other = at(b, layer);
-      if (one && other) links.push(flow(keyOf(a, layer), keyOf(b, layer), lens.phases[one.element][other.element]));
+    for (const row of state.toward) {
+      for (const column of state.toward) {
+        const one = at(a, row);
+        const other = at(b, column);
+        if (one && other) {
+          links.push(flow(keyOf(a, row), keyOf(b, column), lens.phases[one.element][other.element]));
+        }
+      }
     }
   }
   if (state.links.includes('duigong') && lens.facing[a] === b) {
     links.push({ from: keyOf(a, 'palace'), to: keyOf(b, 'palace'), relation: 'duigong' });
   }
   if (state.links.includes('wuhe')) {
-    for (const mine of ['heaven', 'earth'] as const) {
-      for (const theirs of ['heaven', 'earth'] as const) {
+    const stems = (['heaven', 'earth'] as const).filter((layer) => state.toward.includes(layer));
+    for (const mine of stems) {
+      for (const theirs of stems) {
         const one = at(a, mine);
         const other = at(b, theirs);
         if (one && other && lens.wuhe[one.id as keyof QimenLens['wuhe']] === other.id) {
@@ -248,19 +256,20 @@ export interface PairCell {
 }
 
 /**
- * Every thing with a phase in the lower-numbered palace against every one in
- * the other, as a flow. Rows are the first palace's, in the order of
+ * Every kind kept in the lower-numbered palace against every kind kept in the
+ * other, as a flow. Rows are the first palace's, in the order of
  * `PHASE_LAYERS`; a layer a palace has nothing on — the centre's gate — has
  * no row or column.
  */
-export function pairTable(lens: QimenLens, seats: readonly number[]): PairCell[] {
+export function pairTable(lens: QimenLens, seats: readonly number[], kept: readonly LensLayer[]): PairCell[] {
   if (seats.length < 2) return [];
   const [a, b] = [...seats].sort((x, y) => x - y) as [number, number];
+  const layers = PHASE_LAYERS.filter((layer) => kept.includes(layer));
   const cells: PairCell[] = [];
-  for (const row of PHASE_LAYERS) {
+  for (const row of layers) {
     const one = lens.things.find((thing) => thing.seat === a && thing.layer === row);
     if (!one) continue;
-    for (const column of PHASE_LAYERS) {
+    for (const column of layers) {
       const other = lens.things.find((thing) => thing.seat === b && thing.layer === column);
       if (!other) continue;
       const relation = lens.phases[one.element][other.element];
@@ -284,7 +293,9 @@ export function pressedSeat(state: LensState, seat: number): LensState {
   if (pair.includes(seat)) next = pair.filter((other) => other !== seat);
   else if (pair.length >= 2) next = [seat];
   else next = [...pair, seat];
-  return { ...state, focus: undefined, pair: next.length > 0 ? next : undefined };
+  // A pair begins with nothing compared: what is, is the reader's to keep.
+  const toward = state.pair ? state.toward : [];
+  return { ...state, focus: undefined, toward, pair: next.length > 0 ? next : undefined };
 }
 
 /**
@@ -306,6 +317,7 @@ export function writeLens(state: LensState): string {
     if (state.links.length > 0) parts.push(`links=${state.links.join(',')}`);
   } else if (state.pair && state.pair.length > 0) {
     parts.push(`pair=${state.pair.join(',')}`);
+    if (state.toward.length > 0) parts.push(`toward=${state.toward.join(',')}`);
     if (!state.shengke) parts.push('shengke=0');
     if (state.links.length > 0) parts.push(`links=${state.links.join(',')}`);
   }

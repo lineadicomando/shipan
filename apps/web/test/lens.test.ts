@@ -115,22 +115,31 @@ describe('a lens on a 奇門 board', () => {
     expect(viewOf(LENS, one).links).toEqual([]);
 
     // Pressed nine first and one second: held in Luoshu order all the same.
+    // Nothing is compared until a kind is kept, and then only that kind.
     const both = pressedSeat(one, 1);
-    const view = viewOf(LENS, both);
+    expect(both.toward).toEqual([]);
+    expect(viewOf(LENS, both).links).toEqual([]);
+    expect(viewOf(LENS, both).lit.has('1:spirit')).toBe(true);
+    const view = viewOf(LENS, { ...both, toward: ['heaven', 'palace'] });
     expect(view.seats).toEqual([1, 9]);
     // Each relation is a flow, from what generates or controls to what is
     // generated or controlled: 辛 metal in nine is controlled by 丙 fire in
     // one, and 坎 water in one controls 離 fire in nine.
+    // 丙 fire in one against 辛 metal and 離 fire in nine; 坎 water in one
+    // against the same two: every kind kept against every kind kept.
     expect(view.links).toEqual([
       { from: '1:heaven', to: '9:heaven', relation: 'woke' },
+      { from: '1:heaven', to: '9:palace', relation: 'bihe' },
+      { from: '9:heaven', to: '1:palace', relation: 'wosheng' },
       { from: '1:palace', to: '9:palace', relation: 'woke' },
     ]);
+    expect(view.lit.has('1:spirit')).toBe(false);
     expect(viewOf(LENS, pressedSeat(both, 9)).seats).toEqual([1]);
     expect(pressedSeat(both, 4).pair).toEqual([4]);
   });
 
   it('turns the converse relations round in a pair rather than drawing them as a kind', () => {
-    const view = viewOf(LENS, { ...WHOLE, pair: [1, 9], links: ['duigong', 'wuhe'] });
+    const view = viewOf(LENS, { ...WHOLE, pair: [1, 9], toward: ['heaven', 'palace', 'gate'], links: ['duigong', 'wuhe'] });
     expect(view.links.map((link) => link.relation)).not.toContain('shengwo');
     expect(view.links.map((link) => link.relation)).not.toContain('kewo');
     expect(view.links).toContainEqual({ from: '1:palace', to: '9:palace', relation: 'duigong' });
@@ -138,7 +147,8 @@ describe('a lens on a 奇門 board', () => {
   });
 
   it('tabulates every thing of one palace against every thing of the other, as a flow', () => {
-    const cells = pairTable(LENS, [9, 1]);
+    expect(pairTable(LENS, [9, 1], [])).toEqual([]);
+    const cells = pairTable(LENS, [9, 1], ['heaven', 'palace', 'gate']);
     // Rows are palace one's — heaven, palace, gate — and columns nine's.
     expect(cells).toHaveLength(6);
     expect(cells).toContainEqual({ row: 'gate', column: 'palace', way: 'in', relation: 'woke' });

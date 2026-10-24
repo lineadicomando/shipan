@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto, invalidateAll, replaceState } from '$app/navigation';
+  import { untrack } from 'svelte';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
   import { sayLayer, type BoardSpot } from '$lib/board';
@@ -13,7 +14,6 @@
     readLens,
     viewOf,
     writeLens,
-    type Drawing,
     type LensState,
   } from '$lib/lens';
   import type { LensLayer, PalaceContents, QimenLens } from '@shipan/core';
@@ -166,16 +166,21 @@
    * link can be sent with it and the server never learns of it.
    */
   let lensState = $state<LensState>(WHOLE);
-  let drawing = $state<Drawing>('arrows');
-  let lensRead = false;
+  /**
+   * The fragment and the state follow each other. An address arriving with a
+   * fragment of its own — a link pasted over this page, a step back — is read;
+   * a change made here is written. Each side compares before it moves, and the
+   * reading side does not watch the state, so neither undoes the other.
+   */
+  let lensRead = $state(false);
   $effect(() => {
-    if (lensRead) return;
+    const hash = page.url.hash.replace(/^#/, '');
+    if (hash !== untrack(() => writeLens(lensState))) lensState = readLens(hash);
     lensRead = true;
-    lensState = readLens(page.url.hash);
   });
   $effect(() => {
     const fragment = writeLens(lensState);
-    if (!lensRead || fragment === page.url.hash.replace(/^#/, '')) return;
+    if (!lensRead || fragment === untrack(() => page.url.hash.replace(/^#/, ''))) return;
     replaceState(`${page.url.pathname}${page.url.search}${fragment ? `#${fragment}` : ''}`, page.state);
   });
 
@@ -277,8 +282,11 @@
     try {
       // Asking the present for the present again is not a navigation, and
       // SvelteKit would rightly do nothing with it. It is still a new chart.
+      // The lens goes with it: it is in the fragment, and a step of the hour
+      // is a new board looked at the same way.
+      const fragment = writeLens(lensState);
       if (target === `${page.url.pathname}${page.url.search}`) await invalidateAll();
-      else await goto(target, { replaceState: true, noScroll: true, keepFocus: true });
+      else await goto(`${target}${fragment ? `#${fragment}` : ''}`, { replaceState: true, noScroll: true, keepFocus: true });
     } finally {
       busy = false;
     }
@@ -411,17 +419,15 @@
           state={lensState}
           {focusName}
           {pairSaid}
-          {drawing}
           onchange={(next) => (lensState = next)}
-          ondraw={(next) => (drawing = next)}
         />
       {/if}
       <div class="screen">
-        <InlineBoard src={plate} width={900} height={900} tip={tipOf} onpick={pick} lens={view} {drawing} />
+        <InlineBoard src={plate} width={900} height={900} tip={tipOf} onpick={pick} lens={view} />
       </div>
       {#if lens}
         <LensRelations {t} {view} {focusName} {nameAt} />
-        <LensPair {t} {lens} {view} {nameAt} />
+        <LensPair {t} {lens} {view} kept={lensState.toward} {nameAt} />
       {/if}
       <!-- The same board in the colours of paper, drawn only where the two
            differ and shown only by a printer. -->
