@@ -163,6 +163,34 @@ and a note — lines read at a glance, and columns. The one block on a section
 page read through is the introduction over the form, and it keeps a measure by
 being in two columns.
 
+## The bench
+
+**A board is bounded by the window's height, and never by its width.** On any
+screen that lies on its side the square runs out of height first — at
+1366×768, 1920×1080 and 2560×1440 alike — so the width beside it is free, and
+a page that stacks its controls over the board spends the one dimension it is
+short of: the board moves down for every line the controls grow by, and the
+two cannot be seen at once.
+
+So the 奇門 section lays its board on a bench. On the left, the whole square
+— its compass and its branches included — at `min(100%, 100svh - 2rem)`,
+which on the bench takes the place of `--board`'s seven eighths: the board is
+read with the column beside it, and a foot under the fold sends the reader
+between the two. On the right, a column at `--side` holding what is operated
+with the board in view: the steps of the moment, the lens with its circle of
+the five phases and its key, and the key to the marks of strength. The column
+is `sticky` and scrolls inside itself, so nothing pressed in it moves the
+board. A page with a bench widens its shell to 100rem, paid for out of the
+margins rather than out of the board, and the seal goes into the margin only
+where there is one beside 100rem. Below 64rem, or on a window standing
+upright, the column goes under the board, for the same reason it is not over
+it. What is read off the board — the relations in words, the tables, the
+schools — stays under the bench at the page's measure, as on every section.
+
+Paper takes none of it: the bench is a block on a sheet, the steps and the
+lens stay off it, and the key to the strengths prints under the board as it
+always did.
+
 ## Paper is the fourth appearance
 
 Not light: light is a paper-*coloured* screen, set against a lit surface.

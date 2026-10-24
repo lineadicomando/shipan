@@ -389,7 +389,9 @@
     {#if where}<span>· {where}</span>{/if}
   {/snippet}
   {#snippet controls()}
-    <MomentSteps {t} disabled={busy} {values} onstep={moved} onnow={now} />
+    <!-- With a board on the page the steps stand beside it, on the bench:
+         stepping the hour is done while reading the board, not above it. -->
+    {#if !chart}<MomentSteps {t} disabled={busy} {values} onstep={moved} onnow={now} />{/if}
     <!-- The same corner in every section: finding them once is finding them
          everywhere. Only where there is something to take away. -->
     {#if chart}
@@ -435,37 +437,57 @@
     <!-- The board and the key to its marks are one thing in this grid: the
          gap between the picture and the reading is two rems, and a legend
          standing in it would belong to neither. -->
-    <div class="board" class:swapped={onPaper}>
-      {#if lens}
-        <LensBar
-          {t}
-          {lens}
-          state={lensState}
-          {focusName}
-          {pairSaid}
-          {way}
-          onchange={(next) => (lensState = next)}
-          onway={(next) => (way = next)}
-        />
-      {/if}
-      <div class="screen">
-        <InlineBoard src={plate} width={900} height={900} tip={tipOf} onpick={pick} lens={view} />
+    <!--
+      The bench: the board, and beside it what is used while reading it.
+
+      A board is bounded by the height of the window and never by its width,
+      so on a landscape screen the width beside it is free. What stands there
+      is what a reader operates with the board in view — the steps of the
+      moment, the lens, the key to the marks — in a column that stays put
+      while the page moves, so nothing pressed in it moves the board. On a
+      narrow screen the column goes under the board, for the same reason.
+      See `docs/architecture.md` § "The bench".
+    -->
+    <div class="bench">
+      <div class="board" class:swapped={onPaper}>
+        <div class="screen">
+          <InlineBoard src={plate} width={900} height={900} tip={tipOf} onpick={pick} lens={view} />
+        </div>
+        <!-- The same board in the colours of paper, drawn only where the two
+             differ and shown only by a printer. -->
+        {#if onPaper}
+          <img src={paper} alt="" width="900" height="900" class="paper" />
+        {/if}
+        {#if !ofTheDay}<LayerLegend {t} board="qimen" />{/if}
       </div>
-      {#if lens}
+      <div class="side">
+        <div class="steps">
+          <MomentSteps {t} disabled={busy} {values} onstep={moved} onnow={now} />
+        </div>
+        {#if lens}
+          <LensBar
+            {t}
+            {lens}
+            state={lensState}
+            {focusName}
+            {pairSaid}
+            {way}
+            onchange={(next) => (lensState = next)}
+            onway={(next) => (way = next)}
+          />
+        {/if}
+        <!-- The key to the marks of strength, which a day board has not. -->
+        {#if !ofTheDay}<StrengthLegend {t} />{/if}
+      </div>
+    </div>
+
+    {#if lens && (view.focus || view.seats.length === 2)}
+      <!-- What the lens draws, said in words, at the page's measure. -->
+      <div class="reading">
         <LensRelations {t} {view} {focusName} {nameAt} />
         <LensPair {t} {lens} {view} state={lensState} {nameAt} />
-      {/if}
-      <!-- The same board in the colours of paper, drawn only where the two
-           differ and shown only by a printer. -->
-      {#if onPaper}
-        <img src={paper} alt="" width="900" height="900" class="paper" />
-      {/if}
-      <!-- Under the picture and above the words: the marks it explains are in
-           the picture, and a key that came after the reading would be found
-           by whoever had already given up on them. -->
-      <!-- The key is to the marks of strength, which a day board has not. -->
-      {#if !ofTheDay}<LayerLegend {t} board="qimen" /><StrengthLegend {t} />{/if}
-    </div>
+      </div>
+    {/if}
 
     {#if ofTheDay}
       <div class="reading">
@@ -531,6 +553,33 @@
      a grid item will not go below its own min-content otherwise, and the
      picture's is nine hundred pixels. */
   .board { min-inline-size: 0; }
+  .bench { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); }
+  .side { display: grid; gap: 1.25rem; align-content: start; min-inline-size: 0; }
+  /*
+   * Beside the board where the window is wide and lies on its side. The
+   * column keeps its place while the page scrolls, and scrolls inside itself
+   * if it is taller than the window, so the board under the reader's eye
+   * never moves for anything pressed in it.
+   */
+  @media (min-width: 64rem) and (orientation: landscape) {
+    /* On the bench the whole square is in the window, its compass and its
+       branches included: the board is read with the column beside it, and a
+       board whose foot is under the fold sends the reader scrolling between
+       the two. */
+    .bench {
+      --board: min(100%, 100svh - 2rem);
+      grid-template-columns: minmax(0, 1fr) var(--side);
+      gap: 2rem;
+      align-items: start;
+    }
+    .side {
+      position: sticky;
+      top: 1rem;
+      max-block-size: calc(100svh - 2rem);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+  }
   .result, img { transition: opacity 0.15s ease-out; }
   .stale { opacity: 0.5; }
   /*
@@ -585,6 +634,9 @@
      * a third page under half a page of nothing.
      */
     .result { display: block; }
+    .bench { display: block; }
+    .side { position: static; max-block-size: none; overflow: visible; }
+    .steps { display: none; }
     .board { margin-bottom: 1.2rem; }
     .onPaper { display: block; margin: 0 0 0.4rem; font-size: 0.85rem; color: var(--faint); }
     .stale { opacity: 1; }

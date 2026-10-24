@@ -186,7 +186,7 @@
   </div>
 {/snippet}
 
-<section class="lens" class:guided={!state.expert} aria-label={t('lens.title')}>
+<section class="lens" aria-label={t('lens.title')}>
   <div class="controls">
     <div class="row" role="group" aria-label={t('lens.mode')}>
       <span class="lead">{t('lens.mode')}</span>
@@ -273,19 +273,15 @@
 </section>
 
 <style>
+  /* In the column beside the board, at its width: the circle under the
+     controls it answers to. */
   .lens {
-    margin: 0 auto 1rem;
-    inline-size: var(--board);
-    max-inline-size: 100%;
+    margin: 0;
     font-size: 0.9rem;
     display: grid;
     gap: 1rem;
     align-items: start;
   }
-  /* The circle beside the controls where there is room, under them where
-     there is not. */
-  .guided { grid-template-columns: minmax(0, 1fr) auto; }
-  @media (max-width: 40rem) { .guided { grid-template-columns: minmax(0, 1fr); } }
   .controls { display: grid; gap: 0.45rem; }
   .hint { margin: 0; color: var(--faint); }
   .row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; }

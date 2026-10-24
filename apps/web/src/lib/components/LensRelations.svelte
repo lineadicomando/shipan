@@ -60,7 +60,7 @@
 </div>
 
 <style>
-  .relations { margin: 0 auto; inline-size: var(--board); max-inline-size: 100%; font-size: 0.9rem; }
+  .relations { font-size: 0.9rem; }
   .heading { margin: 0.5rem 0 0.3rem; }
   ul { margin: 0; padding-inline-start: 1.1rem; columns: 2 16rem; }
   .where { color: var(--faint); }

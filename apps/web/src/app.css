@@ -170,6 +170,21 @@
  */
 :root { --board: calc(0.9 * min(100%, 100svh * 8 / 7)); }
 
+/*
+ * The column beside a board on a bench, where the window is wide enough to
+ * have one.
+ *
+ * A board is bounded by the window's height on any screen that lies on its
+ * side — at 1366×768, at 1920×1080 and at 2560×1440 alike the square runs out
+ * of height long before the column runs out of width — so the width beside it
+ * is free, and a page that stacks its controls over the board spends the one
+ * dimension it is short of. The column is the measure of what is operated
+ * there: a row of steps, the controls of a lens and the circle of the five
+ * phases, which is the widest of them. See `docs/architecture.md` § "The
+ * bench".
+ */
+:root { --side: 22rem; }
+
 * { box-sizing: border-box; }
 
 body {

@@ -130,6 +130,10 @@
   /* The gutter narrows with the screen: at 1.25rem a side, a phone spends a
      tenth of its width on margins. */
   .shell { max-width: 72rem; margin: 0 auto; padding: 1rem clamp(0.75rem, 4vw, 1.25rem) 3rem; }
+  /* A page with a bench is wider: the column beside the board is paid for out
+     of the margins, which on a wide screen are where the width was going, and
+     not out of the board. Pages of prose keep the measure they have. */
+  .shell:has(:global(.bench)) { max-width: 100rem; }
 
   /*
    * What the page is read off while the rain falls behind it.
@@ -221,6 +225,37 @@
     }
     .mark img { height: 76px; }
     .name { align-items: center; }
+
+    /* A page with a bench is 100rem and not 72, so its margin opens later:
+       until it does, the seal stays in the header rather than on the board. */
+    .shell:has(:global(.bench)) .mark {
+      position: static;
+      width: fit-content;
+      margin: 0 auto 1.1rem;
+      flex-direction: row;
+      gap: 0.55rem;
+      text-align: start;
+    }
+    .shell:has(:global(.bench)) .mark img { height: 34px; }
+    .shell:has(:global(.bench)) .name { align-items: start; }
+  }
+
+  /* The same margin for a bench: 100rem and room on both sides, the seal
+     half a rem clear of the shell's edge as it is at 72. */
+  @media (min-width: 116rem) {
+    .shell:has(:global(.bench)) .mark {
+      position: fixed;
+      top: 1rem;
+      left: calc(50% - 50rem - 7rem);
+      margin: 0;
+      width: 6.5rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    .shell:has(:global(.bench)) .mark img { height: 76px; }
+    .shell:has(:global(.bench)) .name { align-items: center; }
   }
 
   /* A sheet does not scroll, and a fixed element on one either repeats on

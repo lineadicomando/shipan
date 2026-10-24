@@ -115,7 +115,7 @@
 </div>
 
 <style>
-  .pair { margin: 0 auto; inline-size: var(--board); max-inline-size: 100%; font-size: 0.9rem; }
+  .pair { font-size: 0.9rem; }
   .heading { margin: 0.5rem 0 0.3rem; }
   .scroller { overflow-x: auto; }
   table { border-collapse: collapse; min-inline-size: max-content; }
