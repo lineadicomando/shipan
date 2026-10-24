@@ -503,3 +503,12 @@ function text(
     `text-anchor="${anchor}"${cls}>${escape(content)}</text>`
   );
 }
+
+/**
+ * How the names on the board are said, as the band under it lists them. For a
+ * page that sets the band beside a board drawn without one; the list is the
+ * drawing's own, so the two cannot disagree.
+ */
+export function liurenReadings(board: PlateLiuren): Said[][] {
+  return saidOnBoard(board);
+}

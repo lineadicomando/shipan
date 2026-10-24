@@ -180,22 +180,43 @@ a page that stacks its controls over the board spends the one dimension it is
 short of: the board moves down for every line the controls grow by, and the
 two cannot be seen at once.
 
-So the 奇門 section lays its board on a bench. On the left, the whole square
-at `--board`, its compass and its branches included. On the right, a column at `--side` holding what is operated
-on the board in view: the lens with its circle of the five phases and its
-key, and the key to the marks of strength. The steps of the moment stay in
+So every section that draws a board lays it on a bench — 奇門, 六壬, 太乙,
+七政四餘 and 紫微斗數; the four pillars are a grid in the page's type and the
+consultation shows a board only as the check on what it hands over. On the
+left, the whole board at `--board`. On the right, a column at `--side`
+holding what is used on the board in view: on 奇門 the lens with its circle
+of the five phases and its key, and the key to the marks of strength; on the
+other four the key to the names on the board. The steps of the moment stay in
 the bar above, with the date: they choose which board is laid, where the
-column holds how it is looked at, and the two are kept apart. The column
-is `sticky` and scrolls inside itself, so nothing pressed in it moves the
-board. It is paid for out of the board's width and not out of the margins:
-the shell stays 72rem, and the board is the narrower for it. Below 64rem, or on a window standing
-upright, the column goes under the board, for the same reason it is not over
-it. What is read off the board — the relations in words, the tables, the
-schools — stays under the bench at the page's measure, as on every section.
+column holds how it is looked at, and the two are kept apart. The column is
+`sticky` and scrolls inside itself, so nothing pressed in it moves the board.
+It is paid for out of the board's width and not out of the margins: the shell
+stays 72rem, and the board is the narrower for it. Below 64rem, or on a
+window standing upright, the column goes under the board, for the same
+reason it is not over it. What is read off the board — the relations in
+words, the tables, the schools — stays under the bench at the page's
+measure. The rules are `.bench` and `.side` in `app.css`, once.
 
-Paper takes none of it: the bench is a block on a sheet, the lens stays off
-it, and the key to the strengths prints under the board as it
-always did.
+**The key to a board's names is set beside it, not under it.** 太乙,
+七政四餘 and 紫微斗數 put a numeral beside every name they have no room to
+gloss, and the band under the figure said what each numeral was; 六壬's band
+says how its names are said. Under the figure the band made each drawing
+nearly twice as tall as it was wide, which no window holds. So a section asks
+for its board `bare` — without the band and without the lines naming the
+schools, which the page sets in type under the bench — and the drawing keeps
+its numerals (`band: false`). The key beside it is read off the same
+numbering, by the drawing's own `taiyiKey`, `qizhengKey`, `ziweiKey` and
+`liurenReadings`, so the two cannot disagree: three endpoints hand it over
+beside the board, told the reader's language as they already were, and the
+太乙 page works its own out (`lib/key.ts`), because that endpoint is told no
+language and its year is cached publicly for every reader at once. A drawing
+fetched on its own — the PNG, what the MCP server hands over, a picture saved
+from the page's address without `bare` — keeps its band: it travels without a
+page to key it.
+
+Paper takes the bench as a block: the board, then what the column held. The
+lens stays off it; the key to the strengths and the key to the names print
+under the board, since the sheet carries the board drawn the same way.
 
 ## Paper is the fourth appearance
 

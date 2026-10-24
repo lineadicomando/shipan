@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { renderTaiyiSvg } from '../src/taiyi-svg.js';
-import { LONG_SCHOOLS, fitsItsSheet } from './sheet.js';
+import { renderTaiyiSvg, taiyiKey } from '../src/taiyi-svg.js';
+import { LONG_SCHOOLS, fitsItsSheet, keyFaults } from './sheet.js';
 import type { PlateTaiyi, PlateTaiyiGod, PlateTaiyiPalace } from '../src/types.js';
 
 /**
@@ -236,5 +236,14 @@ describe('the 太乙 drawing', () => {
     expect(svg.trimEnd().endsWith('</svg>')).toBe(true);
     const viewBox = /viewBox="0 0 (\d+) ([\d.]+)"/.exec(svg) as RegExpExecArray;
     expect(Number(viewBox[2])).toBeGreaterThan(Number(viewBox[1]));
+  });
+});
+
+describe('the 太乙 drawing without its band', () => {
+  it('keeps its numerals, and the key the page sets beside it is the band it left out', () => {
+    const labels = { god: { taijiong: 'the great blaze', taiyang: 'the great yang' } };
+    const full = renderTaiyiSvg(BOARD, { labels, readings: 'Said aloud' });
+    const bare = renderTaiyiSvg(BOARD, { labels, readings: 'Said aloud', band: false });
+    expect(keyFaults(full, bare, taiyiKey(BOARD, labels), 'Said aloud')).toEqual([]);
   });
 });

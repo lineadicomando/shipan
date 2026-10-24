@@ -549,28 +549,6 @@
      a grid item will not go below its own min-content otherwise, and the
      picture's is nine hundred pixels. */
   .board { min-inline-size: 0; }
-  .bench { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); }
-  .side { display: grid; gap: 1.25rem; align-content: start; min-inline-size: 0; }
-  /*
-   * Beside the board where the window is wide and lies on its side. The
-   * column keeps its place while the page scrolls, and scrolls inside itself
-   * if it is taller than the window, so the board under the reader's eye
-   * never moves for anything pressed in it.
-   */
-  @media (min-width: 64rem) and (orientation: landscape) {
-    .bench {
-      grid-template-columns: minmax(0, 1fr) var(--side);
-      gap: 2rem;
-      align-items: start;
-    }
-    .side {
-      position: sticky;
-      top: 1rem;
-      max-block-size: calc(100svh - 2rem);
-      overflow-y: auto;
-      overscroll-behavior: contain;
-    }
-  }
   .result, img { transition: opacity 0.15s ease-out; }
   .stale { opacity: 0.5; }
   /*
@@ -625,8 +603,6 @@
      * a third page under half a page of nothing.
      */
     .result { display: block; }
-    .bench { display: block; }
-    .side { position: static; max-block-size: none; overflow: visible; }
     .board { margin-bottom: 1.2rem; }
     .onPaper { display: block; margin: 0 0 0.4rem; font-size: 0.85rem; color: var(--faint); }
     .stale { opacity: 1; }

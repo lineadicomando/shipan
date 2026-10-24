@@ -482,6 +482,16 @@ export interface PlateQizhengOptions {
    * of shapes.
    */
   readings?: string;
+  /**
+   * Whether the band of readings is drawn under the board. Left out, it is.
+   *
+   * `false` keeps the numerals in the board and leaves their key to whoever
+   * holds the drawing: a page that sets the key beside the board in its own
+   * type, read off the same numbering (`*Key` in this package), so the figure
+   * stays near a square and fits a window with the bar it is stepped from.
+   * Without `readings` there are no numerals either way.
+   */
+  band?: boolean;
 }
 
 /**
@@ -592,6 +602,16 @@ export interface PlateZiweiOptions {
   heading?: string;
   /** The heading over the band where the names are said aloud. */
   readings?: string;
+  /**
+   * Whether the band of readings is drawn under the board. Left out, it is.
+   *
+   * `false` keeps the numerals in the board and leaves their key to whoever
+   * holds the drawing: a page that sets the key beside the board in its own
+   * type, read off the same numbering (`*Key` in this package), so the figure
+   * stays near a square and fits a window with the bar it is stepped from.
+   * Without `readings` there are no numerals either way.
+   */
+  band?: boolean;
 }
 
 export interface PlateTaiyi {
@@ -706,4 +726,14 @@ export interface PlateTaiyiOptions {
   heading?: string;
   /** The heading over the band where the sixteen are said aloud. */
   readings?: string;
+  /**
+   * Whether the band of readings is drawn under the board. Left out, it is.
+   *
+   * `false` keeps the numerals in the board and leaves their key to whoever
+   * holds the drawing: a page that sets the key beside the board in its own
+   * type, read off the same numbering (`*Key` in this package), so the figure
+   * stays near a square and fits a window with the bar it is stepped from.
+   * Without `readings` there are no numerals either way.
+   */
+  band?: boolean;
 }
