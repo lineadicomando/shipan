@@ -66,7 +66,8 @@ Unmarked = found in this research and not yet on either list.
 
 - ★ 《遁甲演義》, 程道生 (明), 四卷. 四庫 edition, a 四庫珍本初集 reprint
   of 卷一, and Wikisource. The register's text for 年命 (本命, 行年), for the
-  three families of `system`, and for `deshi: liuyi` with laid cases.
+  three families of `system`, for `deshi: liuyi` with laid cases, and for
+  `centreStem: host` with two.
 - ★ 《奇門遁甲統宗》, the 池本理 line, held four ways: 故宮珍本叢刊 第426冊,
   遁甲集成 第六冊, a simplified transcription, and ctext 卷一, 二, 十, 十二.
   It holds most of the defaults (`plate: zhuan`, `centreLodging: kun`,
@@ -81,7 +82,8 @@ Unmarked = found in this research and not yet on either list.
   `leap: runyue` and `strengths: star`.
 - ★ 《遁甲符應經》, the 景祐 commission (楊惟德), in three copies. Holds
   `dingTomb: qian`.
-- ★ 《御定奇門大全》, 64 juan, surveyed whole except 景祐秘纂 卷二–四. It
+- ★ 《御定奇門大全》, 64 juan, surveyed whole. 景祐秘纂 卷二 is the 符應經's
+  卷中 again, with three cases that lay only under `centreStem: host`. It
   carries the hour tables (卷五–十), 遁甲通明鈐 (置閏 dated to the 1240s–60s),
   奇門仙機, 先天要論, 奇門古本 (年家 on 一七四), 奇門秘訣 (`spiritSeat:
   yinshi`), 寶鑑摘要 with 漢陰居士歌 (`centreLodging: dun`), 吉凶格解
@@ -240,7 +242,8 @@ Each step names the engine parameter, or says "not modelled".
    - Whether the pair is reported at the host or in the fifth:
      `centreTravel` (`stay` against `travel`, 金鏡寶鑑 「符使不必寄於二」).
    - Whether the centre's stem rides the turn with the host's stem:
-     `centreStem` (`centre` against `host`, the 大全's tables and 元靈經).
+     `centreStem` (`centre` against `host`, the 大全's tables, the 演義's
+     刑格 and 飛干格, and 元靈經).
 
    The 探索錄's four readings of what is *read* in the centre (a gate of its
    own, every spirit there, read with the 值使門) are not modelled.

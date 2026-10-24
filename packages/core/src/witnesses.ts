@@ -133,7 +133,10 @@ export const WITNESSES = {
     name: { hanzi: '日家奇門', pinyin: 'rìjiāqímén' },
     year: 1998,
   },
-  /** 《遁甲演義》, which states the year, month and day families entire. */
+  /**
+   * 《遁甲演義》, which states the year, month and day families entire, and
+   * works its 刑格 and 飛干格 with the centre's stem carried off with 坤's.
+   */
   yanyi: {
     kind: 'transmitted',
     name: { hanzi: '遁甲演義', pinyin: 'dùnjiǎyǎnyì' },

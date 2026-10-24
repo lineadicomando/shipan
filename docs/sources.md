@@ -1716,6 +1716,7 @@ under the naming of the spirits alone.
 | `spirits: baihu` | 《奇門遁甲全局》 | three yang plates with 白虎 fifth and 勾陳 sixth |
 | `method: zhirun`, `leap: solstice` | 《御定奇門大全》, beside the 統宗 | its 遁甲通明鈐 states 置閏 with the block before the solstices, refuses the leap month as what places it, and works 淳祐六年 through a 閏芒種 block for block; added 2026-10-16, on the user's word |
 | `spirits: huwu`, `centreStem: host` | 《御定奇門大全》 | its 卷五–十 lay the eighteen 局 hour by hour, naming 白虎 and 玄武 on yang boards and setting the centre's stem where 坤's goes; added 2026-10-16, with the same tables beside the 統宗 for `plate: zhuan`, `centreLodging: kun` and `earthPlate: yuan` |
+| `centreStem: host` | 《遁甲演義》, beside the 大全 | 卷二's 刑格 and 飛干格, each worked on a board that lays only with the centre's stem carried off with 坤's: 「即得天禽為六庚下臨六己於四宮」, 「即得日干六甲下臨六庚於七宮」, read on the 四庫 plate, pp. 950–951; the 大全's 景祐秘纂 卷二 copies both cases; added 2026-10-24 |
 | `centreTravel: stay` | 《御定奇門寶鑑》, 《奇門遁甲統宗》 | the 值符 and 值使 read at 坤; the second in 「甲辰在中宮，寄於坤二，天禽為符，死門為使」 |
 | `centreTravel: travel` | 《奇門遁甲金鏡寶鑑》 | 「符使不必寄於二」 |
 | `centreLodging: kun`, `centreTravel: stay` | 《遁甲符應經》, beside the 統宗 | 「六戊在五宮，寄坤二」 on a yang board and 「直使在五宮，寄坤二西南」 on a yin one, each worked |
@@ -1729,7 +1730,7 @@ under the naming of the spirits alone.
 | `menpo: gongzhimen` | 《吉凶格解》 | 「門迫宮制門，宮迫門制宮」, and thirteen cells on each, 《御定奇門大全》卷五十九; added 2026-10-22 |
 | `stemPairs: jinhan` | 《金函玉鏡奇門遁甲秘笈全書》 | 卷二 十干克應訣, the eighty-one set out as its own, read at pp. 30–32 of the 1996 print; added 2026-10-16 |
 | `stemPairs: xianji` | 《御定奇門大全》 | the 干論 of 奇門仙機, 卷十四–十六, refused until six garbled cells are read |
-| `dingTomb: qian` | 《遁甲符應經》 | 「六丙月奇、六丁星奇在六宮」, under 璋曰, in both copies |
+| `dingTomb: qian` | 《遁甲符應經》 | 「六丙月奇、六丁星奇在六宮」, under 璋曰, in both copies; and a third copy in the 大全's 景祐秘纂 卷二, 「六丙月奇臨六宮六丁星奇臨六宮」 with a case laying 丁 in 六, read 2026-10-24 |
 | `leap: runyue` | 《奇門遁甲金鏡寶鑑》 | states the placement, works it twice by date, rejects the solstitial one. A work arguing its own reading is its own line |
 | `spiritSeat: tianpan` | 《奇門遁甲統宗》, 《御定奇門大全》 | 卷二's 小值符加大值符法, 「以最上盤之值符加於九星值符所臨之宮」, and 38 of the 39 spirit claims of the 大全's 卷五–十 that tell the seats apart; added 2026-10-20 |
 | `spiritSeat: yinshi` | 《奇門秘訣》 | its commentary on the 煙波釣叟歌, 《御定奇門大全》卷四十七: 「如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符」; added 2026-10-20 |
@@ -3316,9 +3317,148 @@ Under `shun` with `dayDun: solstice` the yin half mirrors 休門's walk as
 is the compiler's view of his sources and not a rule either.
 
 **So the 大全 is surveyed to its end.** Read for a 起例 are 卷一 and 卷五 to
-卷六十四; 景祐秘纂 卷二 to 卷四 are not.
+卷六十四; 景祐秘纂 卷二 to 卷四 followed on 2026-10-24, in the next section.
 
 Last checked 2026-10-22.
+
+### 《御定奇門大全》卷二–四: the rest of 景祐秘纂, which copies the 符應經's 卷中 and the 演義's cases
+
+Surveyed 2026-10-23 and 2026-10-24, sheets 31–113. The juan were bracketed
+and each bracket confirmed on the 版心: 卷二 31L–59R, closing on
+「御定奇門大全卷二終」; 卷三 60L–82R; 卷四 83L–113R, closing on 「奇門大全卷四
+終」. From 46L 卷二 runs on as 「御定奇門大全卷之二下」 under the heading 奇門秘纂,
+and the 版心 reads 陽遁加刑制 on 46L and 陰遁加刑制圖 from 47 to 58 in place of 景祐秘纂. Tiles at
+50 dpi covered every sheet. Readers transcribed every worked case and every
+passage on laying a board to a brief, in
+`texts/qimen/daquan-juan02-04-jingyou/cases/`, and the cases were laid with
+`texts/qimen/daquan-juan49-baojian/check/board.mjs`, in `check/verdicts.md`
+there. Every passage quoted here was read again on the plate. The punctuation
+is ours.
+
+| juan | sheets | what it holds |
+|---|---|---|
+| 二 | 31–46 | 釋天遁 to 釋亭亭白奸: the 遁, 三奇入墓, the 格 of 六庚, the 干格 of the year, month, day and hour, 悖格, 五陽 and 五陰, 知三避五, 天網四張, each closing on a case worked on a named 局 and hour |
+| 二下 | 46L–59R | a drawn wheel under the title 陰遁加刑制圖; 奇門遁甲總論, the 閏訣 in verse; 八門宜用歌, 十干所利, 遁奇隱身; 諸吉格 and 諸凶格, one 格 to a line; 奇門總括, rhymed, and its close; 奇門要畧 |
+| 三 | 60L–82R | 第一法 to 第九法, a line each; 先鋒門, 發端門, 值事門, 移易門, 歸計門 and 變體門, 直使論, 九星論; from 65 verse on the 遁, 假 and 詐, 三盤入墓, 六儀擊刑, 淮陰侯奇門秘訣歌, 總發天機, 臨機變用, 奇門心傳, 八詐, the nine stars and the three 奇 |
+| 四 | 83L–113R | 奇門三盤辨, 空亡, 甲符元神秘論, 十支星門條分斷辨, 八詐八屬, 甲庚論斷, the 主客 of stars and gates, 日干時支論, 三奇保應; from 107R 釋義, 凡例, 口訣 and a table of the 局 |
+
+**卷二 is the 符應經's 卷中, in the recension of 遁甲集成 第一冊.** Its sections
+are that copy's, in that order, each a 釋 with a worked case, and where 第一冊
+writes 璋曰 卷二 writes 經所謂. The 大全's own copy of the 符應經, in its
+卷二十六, sets a list of 格 in the place of those sections (§ "《遁甲符應經》
+from 三甲 to its 後序"), so the compilation carries the 卷中 twice, in both
+recensions, under two titles. Its 入墓, 34L, reads
+「謂六乙日奇臨二宮六丙月奇臨六宮六丁星奇臨六宮」, and a case under it lays 丁 in
+六: that is `dingTomb: qian` in a third copy of one text, which settles the
+text and moves no rung.
+
+**Its cases lay, and three of them lay only one way.** Twenty-five cases in
+31–46 name a 局 and an hour. Twenty-two lay once an evident slip is read
+through: a 己 for a 乙 in an hour that the case's own 「時干六乙」 corrects, a
+陽 for a 陰 that the term printed beside it contradicts. Two, on 33L and 35L,
+put the 奇 and the gate of their 遁 where the engine does, or one palace off,
+and name 景門 the 直使 where the engine has 生門 and 傷門; both are garbled
+round it, 「天任為直使」 in the first and an hour stem the hour does not carry in
+the second. One, on 36L, closes a list set out of place and makes no claim
+that can be construed. Three lay only with
+the centre's stem carried off with 坤's: 飛干格, 39R, 陽遁五局 庚午, where 天禽
+goes to 七 and takes the centre's 戊 over 庚; 刑格, 41R, 陽遁三局 丙寅, where
+the centre's 庚 goes with 坤's 乙 to 四 over 己; and 悖格, 42R, 陽遁七局 丁未,
+where the centre's 丙 goes with 坤's 壬 to 四 over 丁. With the stem left in
+the centre none of the three makes the 格 its heading names.
+
+《遁甲演義》卷二 works the first two on the same boards, read on the 四庫 plate
+(`qimen/dunjia-yanyi-skqs.pdf`, pp. 950–951):
+
+> 此時六庚在五宮寄二宮，以直符天沖加時干六丙於一宮，即得天禽為六庚下臨六己於四宮，此名刑格也。
+>
+> 此時甲子在五宮寄二宮，以直符天禽加時干六庚於七宮，即得日干六甲下臨六庚於七宮，此名飛干格也。
+
+No case in the 演義 reads the other way; its wikisource copy was searched for
+one, which locates and does not establish. 《遁甲符應經》 in 第一冊 p. 433 states
+刑格 without a board. **So `centreStem: host` is held by a second work**: the
+大全's hour tables of 卷五–十, and the 演義's cases, of which 卷二 here is a copy.
+The two are independent of each other, and the row stands at rung 2.
+
+**卷之二下, 46L–59R, states the ordinary 起例 in verse and works no case.**
+Under the wheel on 47R, 「凡陰遁自九至一局俱直符加時干直使加時宮」. The 奇門總括,
+53L–54R, 「一氣統三為正宗，陰陽二遁分順逆，一氣三元人莫測，五日都来換一元，接氣超神為準的」
+and 「符上之門為直使，十時一位堪凭據，直符常符加時干，直使逆順遁宮去」; and on
+55L the spirits counted from the 直符, 六合 third and 太陰 second ahead of it,
+九天 one and 九地 two behind, as the engine seats them. 奇門要畧, 58L, is the
+same in prose. No line says where the centre lodges.
+
+**The 總論, 47L, is the 閏訣 in a recension that names 折補.** Read at 450 and
+600 dpi:
+
+> 節前得符謂之超，節後得符謂之接。惟其隱秘折局訣，口訣置潤真妙絕。若得折局明折補，須是天邊雲外客。
+
+Where the 演義's copy of the verse places the leap at 芒種 and 大雪, this one
+says that 折局 and 折補 are the secret and gives no rule for either. 潤 is cut
+for 閏. It names the method and does not state it, so it adds no witness to
+`method: chaibu`, which the 符應經's 超神接氣折局補局第九 states with a case.
+
+**The 諸凶格 list, 51R–53R, names the engine's thirteen cells 宮迫 and gives no
+門迫.**
+
+> 宮迫　開門臨三四宮休門臨九宮生門臨一宮傷門臨二宮八景門臨六七宮死門臨一宮驚門臨三四宮杜門臨二八宮
+
+Each is a gate controlling its palace, the cells `menpo` derives, without the
+centre that 吉凶格解 adds. The verse on 57L–58R says which relation it counts,
+and only that one: 「宮制其門不為迫，門制其宮是迫雄」. So 卷之二下 calls the same
+thirteen cells 迫 that `menpo: menzhigong` marks, names them as
+`menpo: gongzhimen` names them, and denies the converse that `gongzhimen` marks
+as 門迫. Neither value lays that whole. **It is recorded, with nothing built
+on it**: it is the cells of the default under the name of the other line,
+and whether a 宮迫 without a 門迫 is a third reading or a list cut short is
+not settled by one list and one line of verse.
+
+**Its 奇墓 gives 乙 both palaces**: 「乙奇加二宮及六宮，丙奇加六宮」, with no
+丁. That is the reading 吉凶格解's closing summary gives, 「乙奇入二六」, and
+which neither value of `yiTomb` lays. The rest of the list — the stem pairs,
+擊刑, 五不遇, 伏吟 and 反吟 — is the engine's, and its 天網四張 is 「六癸臨時干」,
+as 吉凶格解 gives it against `stemPairs: jinhan`.
+
+**卷三's first nine 法, 60L–61L, are headings of a method and lay nothing.**
+第一法 begins 「詳明氣候運行於何卦何宮，辨論符元正受于何起何接」, and the
+rest name the 九宮, the 主客, the 擊刑 and 入墓, and a 中宮 「納甲飛隸」 without
+saying where it lodges. The transcriptions of 47–64 are `cases/47-55.md` and
+`cases/56-64.md`.
+
+**Two cases mark a stem come to 坤 over the centre's stem lodged there**, the
+earth-plate side of the same question, recorded in § "《遁甲符應經》 from 三甲 to
+its 後序" from one case. 36L is that case, 太白入熒惑 on 陰遁三局 戊寅, in a third
+copy: 「即六庚下臨六丙於二宮」, where 丙 is the centre's stem and 坤's own is 己.
+38L is a second: 釋天乙伏干格, 陽遁五局 壬申 on a 甲己 day, 「即六庚下臨六甲日干在
+二宮」, where the day's 甲 is the centre's 戊 and 坤's own is 丁. The 演義 works its
+伏干格 on another board, a 甲申 day on the same 局, and does not read it so
+(p. 951); whether 遁甲集成 第一冊 carries the 38L case was not read. Both
+are in one line of copies, so the question stays recorded with no parameter.
+
+**卷三–四 work no case that names a 局.** Their 假如 open a question about a
+star, a gate or a spirit already in place, and five passages of 卷四 name an
+hour and where its 直符 stands with no 局, term or 元 to lay it from.
+
+**卷三's 淮陰侯奇門秘訣歌, 68R–70L, is a copy of the song in 《奇門探索錄》卷三**,
+which attributes it to 淮陰侯's 《奇門一得》. It opens 「符使之宮順逆飛，陽遁符一
+飛二黑，陰遁九逆艮馳」 and is the 符經 chapter that § "《御定奇門大全》卷十七–二十四"
+reads as an overlay laid on the hour board and not that board's 起例.
+`plate: fei` does not move.
+
+**卷四's table of the 局, sheet 110, is printed with slips.** Read at 450 dpi
+twice, alike. On the yang side 小寒 is printed 三八五, 谷雨 and 小滿 二五八, and
+芒種 三六九, where the engine has 二八五, 五二八 and 六三九. On the yin side only
+夏至 and 白露 九三六 and 小暑 八二五 agree; 立秋 is printed twice and 立冬
+never. The prose that follows, 110L–111R, derives the 局 the ordinary way: each
+of the 八節 opens on its own palace, the terms after it count on, and the three
+元 stand on 一四七 and its 三合. The cells break the derivation printed under
+them, so they are recorded as slips and not weighed, as 奇門秘訣's 芒種 九三六
+was.
+
+**No 起例 the engine does not compute** is stated in 卷二–四. So the 大全 is
+read for one from 卷一 to 卷六十四.
+
+Last checked 2026-10-24.
 
 ### 三奇得使 re-read: the pairing is transmitted alike, and what is disputed is the name and the weight
 

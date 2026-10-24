@@ -62,6 +62,7 @@ describe('the witnesses a value is held by', () => {
     ['qimen', 'spiritSeat', 'tianpan', 'tongzong'],
     ['qimen', 'spiritSeat', 'yinshi', 'qimenmijue'],
     ['qimen', 'centreLodging', 'dun', 'hanyinjushi'],
+    ['qimen', 'centreStem', 'host', 'yanyi'],
     ['qimen', 'dingTomb', 'gen', 'jixionggejie'],
     ['qimen', 'yiTomb', 'qian', 'mijidaquan'],
     ['qimen', 'menpo', 'gongzhimen', 'jixionggejie'],

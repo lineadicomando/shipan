@@ -711,7 +711,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.centreStem.host',
         note: 'form.qimen.centreStem.note',
         implemented: true,
-        heldBy: ['qimendaquan'],
+        // The 大全's hour tables, and the 演義's 刑格 and 飛干格 boards, which
+        // the 大全's 景祐秘纂 卷二 copies.
+        heldBy: ['qimendaquan', 'yanyi'],
       },
     ],
     default: 'centre',
