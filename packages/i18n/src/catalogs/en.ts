@@ -444,8 +444,7 @@ export const en = {
   'lens.toward': 'Related to',
   'lens.kinds': 'Relations',
   'lens.shengke': 'generation and control',
-  'lens.compare': 'Compare',
-  'lens.pair.nothing': 'Choose what to compare between the two palaces.',
+  'lens.pair.pick': 'Now press, in each of the two palaces, the names to compare. Pressing a name again takes it out of the comparison.',
   // The two modes of a lens. The beginner's lays it one way at a time and
   // sets the circle of the five phases beside it; the expert's offers every
   // control at once. Each way says what pressing does, and nothing about what
@@ -457,7 +456,7 @@ export const en = {
   'lens.way.pair': 'two palaces',
   'lens.way.focus': 'one name and the rest',
   'lens.way.phase': 'one phase',
-  'lens.way.pair.said': 'Press two palaces on the board, then choose what to compare between them.',
+  'lens.way.pair.said': 'Press two palaces on the board, then press in each of them the names to compare.',
   'lens.way.focus.said': 'Press a name on the board, then choose which names to relate it to.',
   'lens.way.phase.said': 'Choose a phase: what belongs to it stays as drawn, and the rest of the board fades.',
   'lens.wheel': 'In the circle of the five phases, each phase generates the next phase round the circle and controls the phase two places further on.',

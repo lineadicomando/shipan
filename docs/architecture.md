@@ -226,7 +226,9 @@ and 五合 (`lib/lens.ts`, `LensBar`, `LensLinks`, `LensRelations`,
 `LensPair`). **A pair is held in Luoshu order and drawn as a flow**, from
 what generates or controls to what is generated or controlled, so every
 relation is said both ways round and neither palace is made the asker's; and
-it compares only the kinds the reader keeps, nothing until one is kept.
+it compares only the names the reader presses inside the two palaces once
+both are laid, every one in one against every one in the other, and nothing
+until a name is pressed in each.
 **The relations are arrows, and the two cycles are coloured** —
 `--lens-sheng` and `--lens-ke` in `app.css`, a violet and a magenta, hues the
 phases do not use, since colour on a board is the phase's. Each relation

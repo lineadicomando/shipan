@@ -52,12 +52,13 @@ export interface LensState {
    * ground pressed starts a pair.
    */
   pair?: readonly number[];
-  /**
-   * The kinds of thing related: those a focus is related to, or those
-   * compared between the two palaces of a pair. Nothing is related until
-   * the reader keeps a kind here.
-   */
+  /** The kinds of thing a focus is related to. */
   toward: readonly LensLayer[];
+  /**
+   * The names pressed inside the two palaces of a pair, by where they stand.
+   * Only these are compared, and nothing until one is pressed in each.
+   */
+  chosen?: readonly SpotKey[];
   /** Whether a focus shows the five relations of the phases. */
   shengke: boolean;
   /** Which of the other relations a focus shows. */
@@ -94,6 +95,7 @@ export function oneAtATime(state: LensState): LensState {
     layers: [],
     phases: state.phases.slice(0, 1),
     toward: state.toward.slice(0, 1),
+    chosen: state.chosen?.length ? state.chosen : undefined,
     shengke: true,
     links: [],
     expert: false,
@@ -221,52 +223,64 @@ export function viewOf(lens: QimenLens | undefined, state: LensState): LensView 
  * palaces is the asker and which the matter is a reading, and the engine
  * names neither (`docs/refusals.md` § "Who is 主 and who is 客").
  *
- * **Only what the reader keeps is compared**: the kinds in `toward`, every
- * one of them in one palace against every one in the other, and nothing
- * until a kind is kept. 對宮 and 五合 are added where they are asked for and
- * hold. The same relations are tabulated by `pairTable` and said in words
- * under the board.
+ * **Only what the reader pressed is compared**: the names pressed inside
+ * the two palaces (`chosen`), every one in one palace against every one in
+ * the other, and nothing until a name is pressed in each. 對宮 and 五合 are
+ * added where they are asked for and hold. The same relations are tabulated
+ * by `pairTable` and said in words under the board.
  */
 function pairView(lens: QimenLens, state: LensState): LensView {
   const seats = [...new Set(state.pair)].sort((a, b) => a - b);
-  // The two palaces whole until a kind is kept, and then what is compared.
-  const kept: readonly string[] = state.toward.length > 0 ? state.toward : BOARD_LAYERS;
-  const lit = new Set<SpotKey>();
-  for (const seat of seats) for (const layer of kept) lit.add(keyOf(seat, layer));
+  const chosen = chosenIn(state, seats);
+  // Each palace whole until a name is pressed in it, and then what was.
+  const lit = new Set<SpotKey>(chosen);
+  for (const seat of seats) {
+    if (chosen.some((key) => key.startsWith(`${seat}:`))) continue;
+    for (const layer of BOARD_LAYERS) lit.add(keyOf(seat, layer));
+  }
   if (seats.length < 2) return { active: true, lit, seats, links: [] };
 
   const [a, b] = seats as [number, number];
-  const at = (seat: number, layer: string) =>
-    lens.things.find((thing) => thing.seat === seat && thing.layer === layer);
+  const thing = (key: SpotKey) => {
+    const [seat, layer] = key.split(':');
+    return lens.things.find((one) => one.seat === Number(seat) && one.layer === layer);
+  };
+  const ones = chosen.filter((key) => key.startsWith(`${a}:`));
+  const others = chosen.filter((key) => key.startsWith(`${b}:`));
   const links: ShownLink[] = [];
 
-  if (state.shengke) {
-    for (const row of state.toward) {
-      for (const column of state.toward) {
-        const one = at(a, row);
-        const other = at(b, column);
-        if (one && other) {
-          links.push(flow(keyOf(a, row), keyOf(b, column), lens.phases[one.element][other.element]));
-        }
+  for (const mine of ones) {
+    for (const theirs of others) {
+      const one = thing(mine);
+      const other = thing(theirs);
+      if (!one || !other) continue;
+      if (state.shengke) links.push(flow(mine, theirs, lens.phases[one.element][other.element]));
+      const stems = (key: SpotKey) => key.endsWith(':heaven') || key.endsWith(':earth');
+      if (
+        state.links.includes('wuhe') &&
+        stems(mine) &&
+        stems(theirs) &&
+        lens.wuhe[one.id as keyof QimenLens['wuhe']] === other.id
+      ) {
+        links.push({ from: mine, to: theirs, relation: 'wuhe' });
       }
     }
   }
   if (state.links.includes('duigong') && lens.facing[a] === b) {
     links.push({ from: keyOf(a, 'palace'), to: keyOf(b, 'palace'), relation: 'duigong' });
   }
-  if (state.links.includes('wuhe')) {
-    const stems = (['heaven', 'earth'] as const).filter((layer) => state.toward.includes(layer));
-    for (const mine of stems) {
-      for (const theirs of stems) {
-        const one = at(a, mine);
-        const other = at(b, theirs);
-        if (one && other && lens.wuhe[one.id as keyof QimenLens['wuhe']] === other.id) {
-          links.push({ from: keyOf(a, mine), to: keyOf(b, theirs), relation: 'wuhe' });
-        }
-      }
-    }
-  }
   return { active: true, lit, seats, links };
+}
+
+/** The names pressed that stand in the palaces of the pair, in board order. */
+function chosenIn(state: LensState, seats: readonly number[]): SpotKey[] {
+  const order = (key: SpotKey) => {
+    const [seat, layer] = key.split(':');
+    return Number(seat) * 10 + PHASE_LAYERS.indexOf(layer as LensLayer);
+  };
+  return (state.chosen ?? [])
+    .filter((key) => seats.includes(Number(key.split(':')[0])))
+    .sort((x, y) => order(x) - order(y));
 }
 
 /**
@@ -292,20 +306,22 @@ export interface PairCell {
 }
 
 /**
- * Every kind kept in the lower-numbered palace against every kind kept in the
- * other, as a flow. Rows are the first palace's, in the order of
- * `PHASE_LAYERS`; a layer a palace has nothing on — the centre's gate — has
- * no row or column.
+ * Every name pressed in the lower-numbered palace against every name pressed
+ * in the other, as a flow. Rows are the first palace's, columns the
+ * other's, each in the order of `PHASE_LAYERS`.
  */
-export function pairTable(lens: QimenLens, seats: readonly number[], kept: readonly LensLayer[]): PairCell[] {
+export function pairTable(lens: QimenLens, state: LensState): PairCell[] {
+  const seats = [...new Set(state.pair ?? [])].sort((x, y) => x - y);
   if (seats.length < 2) return [];
-  const [a, b] = [...seats].sort((x, y) => x - y) as [number, number];
-  const layers = PHASE_LAYERS.filter((layer) => kept.includes(layer));
+  const [a, b] = seats as [number, number];
+  const chosen = chosenIn(state, seats);
   const cells: PairCell[] = [];
-  for (const row of layers) {
+  for (const mine of chosen.filter((key) => key.startsWith(`${a}:`))) {
+    const row = mine.split(':')[1] as LensLayer;
     const one = lens.things.find((thing) => thing.seat === a && thing.layer === row);
     if (!one) continue;
-    for (const column of layers) {
+    for (const theirs of chosen.filter((key) => key.startsWith(`${b}:`))) {
+      const column = theirs.split(':')[1] as LensLayer;
       const other = lens.things.find((thing) => thing.seat === b && thing.layer === column);
       if (!other) continue;
       const relation = lens.phases[one.element][other.element];
@@ -315,6 +331,24 @@ export function pairTable(lens: QimenLens, seats: readonly number[], kept: reado
     }
   }
   return cells;
+}
+
+/**
+ * Pressing a name inside one of the two palaces of a pair: it is compared, or
+ * pressed again, it is not. A name with no phase — a spirit — is not one a
+ * relation can be drawn to, and nothing happens.
+ */
+export function pressedInPair(state: LensState, seat: number, layer: string): LensState {
+  if (!(PHASE_LAYERS as readonly string[]).includes(layer)) return state;
+  const key = keyOf(seat, layer);
+  const chosen = state.chosen ?? [];
+  const next = chosen.includes(key) ? chosen.filter((one) => one !== key) : [...chosen, key];
+  return { ...state, chosen: next.length > 0 ? next : undefined };
+}
+
+/** Whether a press in this seat is a press inside a complete pair. */
+export function inPair(state: LensState, seat: number): boolean {
+  return (state.pair?.length ?? 0) === 2 && (state.pair ?? []).includes(seat);
 }
 
 /**
@@ -329,9 +363,15 @@ export function pressedSeat(state: LensState, seat: number): LensState {
   if (pair.includes(seat)) next = pair.filter((other) => other !== seat);
   else if (pair.length >= 2) next = [seat];
   else next = [...pair, seat];
-  // A pair begins with nothing compared: what is, is the reader's to keep.
-  const toward = state.pair ? state.toward : [];
-  return { ...state, focus: undefined, toward, pair: next.length > 0 ? next : undefined };
+  // A pair begins with nothing compared, and a palace let go of takes what
+  // was pressed in it with it.
+  const chosen = (state.chosen ?? []).filter((key) => next.includes(Number(key.split(':')[0])));
+  return {
+    ...state,
+    focus: undefined,
+    pair: next.length > 0 ? next : undefined,
+    chosen: chosen.length > 0 ? chosen : undefined,
+  };
 }
 
 /**
@@ -354,7 +394,7 @@ export function writeLens(state: LensState): string {
     if (state.links.length > 0) parts.push(`links=${state.links.join(',')}`);
   } else if (state.pair && state.pair.length > 0) {
     parts.push(`pair=${state.pair.join(',')}`);
-    if (state.toward.length > 0) parts.push(`toward=${state.toward.join(',')}`);
+    if (state.chosen?.length) parts.push(`chosen=${state.chosen.join(',')}`);
     if (!state.shengke) parts.push('shengke=0');
     if (state.links.length > 0) parts.push(`links=${state.links.join(',')}`);
   }
@@ -383,7 +423,15 @@ export function readLens(fragment: string): LensState {
     const pair = [...new Set((fields.get('pair') ?? '').split(',').map(Number))]
       .filter((seat) => Number.isInteger(seat) && seat >= 1 && seat <= 9)
       .slice(0, 2);
-    if (pair.length > 0) state.pair = pair;
+    if (pair.length > 0) {
+      state.pair = pair;
+      const chosen = (fields.get('chosen') ?? '')
+        .split(',')
+        .filter((key) => /^[1-9]:[a-z]+$/.test(key))
+        .filter((key) => pair.includes(Number(key[0])) && (PHASE_LAYERS as readonly string[]).includes(key.slice(2)))
+        .map((key) => key as SpotKey);
+      if (chosen.length > 0) state.chosen = [...new Set(chosen)];
+    }
   }
   return state;
 }
@@ -399,5 +447,5 @@ export function pressed(state: LensState, thing: Focus): LensState {
     return { ...state, focus: undefined };
   }
   const toward = state.focus ? state.toward : [thing.layer];
-  return { ...state, focus: thing, toward, pair: undefined };
+  return { ...state, focus: thing, toward, pair: undefined, chosen: undefined };
 }

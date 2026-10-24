@@ -88,12 +88,11 @@
       const thing = lens.things.find((one) => one.layer === state.focus?.layer && one.id === state.focus?.id);
       return thing ? [thing.element] : [];
     }
-    if (state.pair?.length === 2 && state.toward.length === 1) {
-      const layer = state.toward[0];
+    if (state.pair?.length === 2 && state.chosen?.length) {
       return [
         ...new Set(
           lens.things
-            .filter((one) => state.pair?.includes(one.seat) && one.layer === layer)
+            .filter((one) => state.chosen?.includes(`${one.seat}:${one.layer}`))
             .map((one) => one.element),
         ),
       ];
@@ -215,7 +214,7 @@
           <button type="button" onclick={() => onchange({ ...state, pair: undefined })}>{t('lens.release')}</button>
         </div>
         {#if state.pair?.length === 2}
-          {@render kinds(t('lens.compare'), state.toward)}
+          <p class="hint">{t('lens.pair.pick')}</p>
           {@render relations()}
         {/if}
       {:else}
@@ -249,7 +248,7 @@
           <span class="lead">{pairSaid}</span>
           <button type="button" onclick={() => onchange({ ...state, pair: undefined })}>{t('lens.release')}</button>
         </div>
-        {#if state.pair?.length === 2}{@render kinds(t('lens.compare'), state.toward)}{/if}
+        {#if state.pair?.length === 2}<p class="hint">{t('lens.pair.pick')}</p>{/if}
       {:else if way === 'focus' && focused}
         <div class="row">
           <span class="lead">{t('lens.focus', { thing: focusName ?? '' })}</span>

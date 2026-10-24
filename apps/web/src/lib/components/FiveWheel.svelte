@@ -33,7 +33,7 @@
   }: {
     t: Translator;
     lens: QimenLens;
-    /** The phases of what the lens has in it: none, one, or two. */
+    /** The phases of what the lens has in it: none, one, or several. */
     active: readonly Element[];
   } = $props();
 
@@ -62,6 +62,7 @@
   const lit = (from: Element, to: Element): boolean => {
     if (active.length === 0) return true;
     if (active.length === 1) return active.includes(from) || active.includes(to);
+    // Several phases: the arrows among them, and none leading elsewhere.
     return active.includes(from) && active.includes(to);
   };
 

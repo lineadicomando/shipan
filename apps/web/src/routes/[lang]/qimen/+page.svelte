@@ -11,6 +11,8 @@
     keyOf,
     pressed,
     pressedSeat,
+    pressedInPair,
+    inPair,
     readLens,
     viewOf,
     wayOf,
@@ -227,6 +229,14 @@
    */
   function pick(spot: BoardSpot | undefined): void {
     if (!lens || !spot) return;
+    // Inside the two palaces of a pair, a name is pressed to be compared and
+    // the ground lets the palace go — in either mode.
+    if (spot.seat && inPair(lensState, Number(spot.seat))) {
+      lensState = spot.layer
+        ? pressedInPair(lensState, Number(spot.seat), spot.layer)
+        : pressedSeat(lensState, Number(spot.seat));
+      return;
+    }
     // Laid one way at a time, a press does what that way does: in a pair, a
     // press anywhere in a palace is the palace; with a phase, nothing.
     const guided = !lensState.expert ? way : undefined;
@@ -443,7 +453,7 @@
       </div>
       {#if lens}
         <LensRelations {t} {view} {focusName} {nameAt} />
-        <LensPair {t} {lens} {view} kept={lensState.toward} {nameAt} />
+        <LensPair {t} {lens} {view} state={lensState} {nameAt} />
       {/if}
       <!-- The same board in the colours of paper, drawn only where the two
            differ and shown only by a printer. -->
