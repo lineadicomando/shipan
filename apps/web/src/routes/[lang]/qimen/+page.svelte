@@ -407,7 +407,7 @@
     that changed nothing visible for half a second is a press people make
     twice.
   -->
-  <section class="result" class:stale={busy} aria-busy={busy}>
+  <section class="result board-measure" class:stale={busy} aria-busy={busy}>
     <!--
       Which chart this is, on paper and nowhere else.
 
@@ -558,12 +558,7 @@
    * never moves for anything pressed in it.
    */
   @media (min-width: 64rem) and (orientation: landscape) {
-    /* On the bench the whole square is in the window, its compass and its
-       branches included: the board is read with the column beside it, and a
-       board whose foot is under the fold sends the reader scrolling between
-       the two. */
     .bench {
-      --board: min(100%, 100svh - 2rem);
       grid-template-columns: minmax(0, 1fr) var(--side);
       gap: 2rem;
       align-items: start;

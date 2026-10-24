@@ -130,13 +130,21 @@ there carrying the setup.
 
 The drawing has one of its own and everything read off it has the page's.
 
-`--board` in `app.css` is the first: a picture as wide as the column allows,
-bounded by the window's own height, less a tenth so it does not touch the
-walls. Five sections draw a board at it and the sixth sets the four pillars out
-as a grid at the same width, so a reader who lays one board and then another
-watches nothing resize under an answer that did not change. The caption under a
-drawing takes that measure too — `wide` in `ChartReading` — because the plate of
-four pillars inside it is derived from the drawing's own geometry.
+`--board` in `app.css` is the first, and it is **a height before it is a
+width**: the window, less the bar the board is stepped from (`--above`),
+divided by how much taller than wide the drawing is (`--aspect`). A board is
+read by stepping it, and the steps are in the bar above it, so a board taller
+than the window under that bar is read by scrolling up to step and down to
+look, every time. The nine palaces are a square; the rings of 六壬, 太乙 and
+七政四餘 and the grid of 紫微 are taller and come out narrower, so the boards
+of the six sections are one height and not one width. The proportion is read
+off each drawing when it arrives, since what a board holds under its ring
+moves its height, and each section declares it on its wrapper, which carries
+`board-measure` so the measure is worked out there. The column bounds it too,
+and 30rem is its floor, under which the names in a palace stop being legible:
+a board that cannot fit above that floor is scrolled. The caption under a
+drawing takes the same measure — `wide` in `ChartReading` — because the plate
+of four pillars inside it is derived from the drawing's own geometry.
 
 `.reading`, beside it, is the second: no measure at all. The caption, the
 tables, the notes and the line naming the schools run from one wall of the
@@ -173,18 +181,14 @@ short of: the board moves down for every line the controls grow by, and the
 two cannot be seen at once.
 
 So the 奇門 section lays its board on a bench. On the left, the whole square
-— its compass and its branches included — at `min(100%, 100svh - 2rem)`,
-which on the bench takes the place of `--board`'s seven eighths: the board is
-read with the column beside it, and a foot under the fold sends the reader
-between the two. On the right, a column at `--side` holding what is operated
+at `--board`, its compass and its branches included. On the right, a column at `--side` holding what is operated
 on the board in view: the lens with its circle of the five phases and its
 key, and the key to the marks of strength. The steps of the moment stay in
 the bar above, with the date: they choose which board is laid, where the
 column holds how it is looked at, and the two are kept apart. The column
 is `sticky` and scrolls inside itself, so nothing pressed in it moves the
-board. A page with a bench widens its shell to 100rem, paid for out of the
-margins rather than out of the board, and the seal goes into the margin only
-where there is one beside 100rem. Below 64rem, or on a window standing
+board. It is paid for out of the board's width and not out of the margins:
+the shell stays 72rem, and the board is the narrower for it. Below 64rem, or on a window standing
 upright, the column goes under the board, for the same reason it is not over
 it. What is read off the board — the relations in words, the tables, the
 schools — stays under the bench at the page's measure, as on every section.

@@ -19,6 +19,14 @@
   import Takeaway from '$lib/components/Takeaway.svelte';
 
   let { data } = $props();
+
+  /**
+   * How much taller than wide the drawing is, read off the drawing when it
+   * arrives: what a board holds under its ring moves its height, so the
+   * figure written on the picture is a placeholder. `--board` is worked out
+   * from it, so the whole board stands in the window under the bar.
+   */
+  let aspect = $state(1150 / 900);
   const t = $derived(data.t);
 
   // The fields are edited, so they are state; the address is what they were
@@ -268,7 +276,7 @@
 {#if result}
   <!-- Spent while the next reading is on its way, rather than swapped without
        warning: see the chart, where the same rule holds. -->
-  <div class="result" class:stale={busy} aria-busy={busy}>
+  <div class="result board-measure" class:stale={busy} aria-busy={busy} style:--aspect={aspect}>
     <div class="board" class:swapped={onPaper}>
       <!-- A press on a seat goes to its row, as it did before the board
            was held in the page; so a tap pins no tip here, and the layer of a
@@ -286,6 +294,7 @@
           }}
           ondrawn={({ width, height, inline }) => {
             sheet = { width, height };
+            aspect = height / width;
             live = inline;
           }}
         />

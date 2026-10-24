@@ -16,6 +16,14 @@
   import SubmitButton from '$lib/components/SubmitButton.svelte';
 
   let { data } = $props();
+
+  /**
+   * How much taller than wide the drawing is, read off the drawing when it
+   * arrives: what a board holds under its ring moves its height, so the
+   * figure written on the picture is a placeholder. `--board` is worked out
+   * from it, so the whole board stands in the window under the bar.
+   */
+  let aspect = $state(1379 / 900);
   const t = $derived(data.t);
 
   // svelte-ignore state_referenced_locally
@@ -125,10 +133,16 @@
 {#if failure}<p class="failure" role="alert">{failure}</p>{/if}
 
 {#if board}
-  <div class="result" class:stale={busy} aria-busy={busy}>
+  <div class="result board-measure" class:stale={busy} aria-busy={busy} style:--aspect={aspect}>
     <div class="board" class:swapped={onPaper}>
       <div class="screen">
-        <InlineBoard src={plate} width={900} height={1379} tip={(spot) => sayLayer(spot, t)} />
+        <InlineBoard
+          src={plate}
+          width={900}
+          height={1379}
+          tip={(spot) => sayLayer(spot, t)}
+          ondrawn={(drawing) => (aspect = drawing.height / drawing.width)}
+        />
       </div>
       {#if onPaper}<img src={paper} alt="" width="900" height="1379" class="paper" />{/if}
       <LayerLegend {t} board="liuren" />

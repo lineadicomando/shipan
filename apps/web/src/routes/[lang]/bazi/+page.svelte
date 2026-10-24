@@ -150,7 +150,7 @@
 {#if result}
   <!-- Spent while the next reading is on its way, rather than swapped without
        warning: see the chart, where the same rule holds. -->
-  <div class="result" class:stale={busy} aria-busy={busy}>
+  <div class="result board-measure" class:stale={busy} aria-busy={busy}>
     <!-- The four pillars at a glance, then the same four read out in full. -->
     <PillarPlate pillars={result.bazi.pillars} {t} />
     <BaziReading bazi={result.bazi} {t} />
