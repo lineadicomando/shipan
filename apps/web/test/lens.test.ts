@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { QimenLens } from '@shipan/core';
-import { WHOLE, keyOf, pressed, readLens, viewOf, writeLens, type LensState } from '../src/lib/lens';
+import { WHOLE, keyOf, pairTable, pressed, pressedSeat, readLens, viewOf, writeLens, type LensState } from '../src/lib/lens';
 
 /**
  * A lens is the reader's: these hold that it does nothing until somebody
@@ -107,5 +107,51 @@ describe('a lens on a 奇門 board', () => {
       ...WHOLE,
       layers: ['heaven'],
     });
+  });
+
+  it("lays a pair by the ground of two palaces, and neither is the reader's", () => {
+    const one = pressedSeat(WHOLE, 9);
+    expect(viewOf(LENS, one).seats).toEqual([9]);
+    expect(viewOf(LENS, one).links).toEqual([]);
+
+    // Pressed nine first and one second: held in Luoshu order all the same.
+    const both = pressedSeat(one, 1);
+    const view = viewOf(LENS, both);
+    expect(view.seats).toEqual([1, 9]);
+    // Each relation is a flow, from what generates or controls to what is
+    // generated or controlled: 辛 metal in nine is controlled by 丙 fire in
+    // one, and 坎 water in one controls 離 fire in nine.
+    expect(view.links).toEqual([
+      { from: '1:heaven', to: '9:heaven', relation: 'woke' },
+      { from: '1:palace', to: '9:palace', relation: 'woke' },
+    ]);
+    expect(viewOf(LENS, pressedSeat(both, 9)).seats).toEqual([1]);
+    expect(pressedSeat(both, 4).pair).toEqual([4]);
+  });
+
+  it('turns the converse relations round in a pair rather than drawing them as a kind', () => {
+    const view = viewOf(LENS, { ...WHOLE, pair: [1, 9], links: ['duigong', 'wuhe'] });
+    expect(view.links.map((link) => link.relation)).not.toContain('shengwo');
+    expect(view.links.map((link) => link.relation)).not.toContain('kewo');
+    expect(view.links).toContainEqual({ from: '1:palace', to: '9:palace', relation: 'duigong' });
+    expect(view.links).toContainEqual({ from: '1:heaven', to: '9:heaven', relation: 'wuhe' });
+  });
+
+  it('tabulates every thing of one palace against every thing of the other, as a flow', () => {
+    const cells = pairTable(LENS, [9, 1]);
+    // Rows are palace one's — heaven, palace, gate — and columns nine's.
+    expect(cells).toHaveLength(6);
+    expect(cells).toContainEqual({ row: 'gate', column: 'palace', way: 'in', relation: 'woke' });
+    expect(cells).toContainEqual({ row: 'gate', column: 'heaven', way: 'none', relation: 'bihe' });
+    // 辛 metal in nine generates 坎 water in one: the flow runs from the column.
+    expect(cells).toContainEqual({ row: 'palace', column: 'heaven', way: 'in', relation: 'wosheng' });
+  });
+
+  it('lets a pressed name and a pair stand in for each other, never together', () => {
+    const named = pressed(pressedSeat(WHOLE, 1), { layer: 'gate', id: 'kaimen' });
+    expect(named.pair).toBeUndefined();
+    expect(pressedSeat(named, 1).focus).toBeUndefined();
+    expect(readLens(`#${writeLens({ ...WHOLE, pair: [9, 1] })}`).pair).toEqual([9, 1]);
+    expect(readLens('#pair=0,12,3,3,4').pair).toEqual([3, 4]);
   });
 });

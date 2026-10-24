@@ -8,8 +8,11 @@
   one of them would read as a sixth thing in the palace.
 
   **Two ways of drawing the same relations, to be compared.** `arrows` runs a
-  line from the focus to each thing; `marks` draws a ring round each thing
-  with a notch on the side toward the focus. Either way the stroke says the
+  line from one end of each relation to the other; `marks` draws a ring round
+  the far end with a notch on the side toward the near one. Each relation
+  carries its own two ends, so the same drawing serves a pressed name — every
+  relation starting from it — and a pair of palaces, where each runs from
+  whichever thing generates or controls. Either way the stroke says the
   cycle — whole for 生, dashed for 剋, dotted for 比和, broken twice for
   對宮 and doubled for 五合 — and the head or the notch says which way it
   runs. Nothing among them is heavier than the rest but the focus itself,
@@ -55,13 +58,16 @@
     width,
     height,
     focus,
+    seats,
     links,
     drawing,
   }: {
     width: number;
     height: number;
     focus: Box | undefined;
-    links: readonly { box: Box; relation: ShownRelation }[];
+    /** The palaces of a pair, framed: the reader's own choice, like the focus. */
+    seats: readonly Box[];
+    links: readonly { from: Box; box: Box; relation: ShownRelation }[];
     drawing: Drawing;
   } = $props();
 
@@ -130,11 +136,15 @@
     />
   {/if}
 
+  {#each seats as seat, index (index)}
+    <rect class="seat" x={seat.x + 2} y={seat.y + 2} width={seat.width - 4} height={seat.height - 4} rx="4" />
+  {/each}
+
   {#each links as link, index (index)}
     {@const dash = dashOf(link.relation)}
     {@const way = direction(link.relation)}
-    {#if drawing === 'arrows' && focus}
-      {@const line = between(focus, link.box)}
+    {#if drawing === 'arrows'}
+      {@const line = between(link.from, link.box)}
       <line class="halo" {...line} />
       <line
         {...line}
@@ -152,10 +162,8 @@
       {#if link.relation === 'wuhe'}
         <rect class="inner" x={ring.x + 3} y={ring.y + 3} width={ring.width - 6} height={ring.height - 6} rx="3" />
       {/if}
-      {#if focus}
-        {@const path = notch(link.box, focus, link.relation)}
-        {#if path}<path d={path} class="notch" />{/if}
-      {/if}
+      {@const path = notch(link.box, link.from, link.relation)}
+      {#if path}<path d={path} class="notch" />{/if}
     {/if}
   {/each}
 </svg>
@@ -190,6 +198,9 @@
   }
   .focus {
     stroke-width: 2.4;
+  }
+  .seat {
+    stroke-width: 3;
   }
   .notch {
     fill: currentColor;

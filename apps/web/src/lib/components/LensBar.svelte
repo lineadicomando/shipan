@@ -34,6 +34,7 @@
     lens,
     state,
     focusName,
+    pairSaid,
     drawing,
     onchange,
     ondraw,
@@ -43,6 +44,8 @@
     state: LensState;
     /** The pressed name in words, where one is pressed and on this board. */
     focusName: string | undefined;
+    /** The palaces of a pair in words, where one or two are pressed. */
+    pairSaid: string | undefined;
     drawing: Drawing;
     onchange: (next: LensState) => void;
     ondraw: (next: Drawing) => void;
@@ -54,8 +57,15 @@
     return list.includes(value) ? list.filter((item) => item !== value) : [...list, value];
   }
 
-  /** The relations the key shows: the five, and the two others. */
-  const KEYED: readonly ShownRelation[] = ['wosheng', 'shengwo', 'woke', 'kewo', 'bihe', 'duigong', 'wuhe'];
+  /**
+   * The relations the key shows: the five, and the two others. A pair draws
+   * every relation as a flow, so its key has no converse two.
+   */
+  const KEYED = $derived<readonly ShownRelation[]>(
+    state.pair
+      ? ['wosheng', 'woke', 'bihe', 'duigong', 'wuhe']
+      : ['wosheng', 'shengwo', 'woke', 'kewo', 'bihe', 'duigong', 'wuhe'],
+  );
 </script>
 
 <section class="lens" aria-label={t('lens.title')}>
@@ -91,6 +101,28 @@
         >{t(`label.relation.${link}` as MessageKey)} <span class="glyph">{glyph(lens.names.relations[link])}</span></button>
       {/each}
     </div>
+  {:else if state.pair && pairSaid}
+    <div class="row">
+      <span class="lead">{pairSaid}</span>
+      <button type="button" onclick={() => onchange({ ...state, pair: undefined })}>{t('lens.release')}</button>
+    </div>
+    {#if state.pair.length === 2}
+      <div class="row" role="group" aria-label={t('lens.kinds')}>
+        <span class="lead">{t('lens.kinds')}</span>
+        <button
+          type="button"
+          aria-pressed={state.shengke}
+          onclick={() => onchange({ ...state, shengke: !state.shengke })}
+        >{t('lens.shengke')}</button>
+        {#each LINK_IDS as link (link)}
+          <button
+            type="button"
+            aria-pressed={state.links.includes(link)}
+            onclick={() => onchange({ ...state, links: toggle(state.links, link) })}
+          >{t(`label.relation.${link}` as MessageKey)} <span class="glyph">{glyph(lens.names.relations[link])}</span></button>
+        {/each}
+      </div>
+    {/if}
   {:else}
     <div class="row" role="group" aria-label={t('lens.layers')}>
       <span class="lead">{t('lens.layers')}</span>
@@ -104,6 +136,7 @@
     </div>
   {/if}
 
+  {#if !state.pair}
   <div class="row" role="group" aria-label={t('lens.phases')}>
     <span class="lead">{t('lens.phases')}</span>
     {#each ELEMENTS as element (element)}
@@ -114,8 +147,9 @@
       >{t(`label.element.${element}` as MessageKey)} <span class="glyph">{glyph(lens.names.elements[element])}</span></button>
     {/each}
   </div>
+  {/if}
 
-  {#if state.focus && focusName}
+  {#if (state.focus && focusName) || state.pair?.length === 2}
     <div class="row" role="group" aria-label={t('lens.drawing')}>
       <span class="lead">{t('lens.drawing')}</span>
       {#each DRAWINGS as way (way)}
@@ -134,15 +168,19 @@
               {#if relation === 'wosheng' || relation === 'woke'}<path d="M 36 1 L 43 5 L 36 9 Z" />{/if}
               {#if relation === 'shengwo' || relation === 'kewo'}<path d="M 9 1 L 2 5 L 9 9 Z" />{/if}
             </svg>
-            {t(`label.relation.${relation}` as MessageKey)}
-            <span class="glyph">{glyph(lens.names.relations[relation])}</span>
+            {#if state.pair && (relation === 'wosheng' || relation === 'woke' || relation === 'bihe')}
+              {t(`lens.flow.${relation}` as MessageKey)}
+            {:else}
+              {t(`label.relation.${relation}` as MessageKey)}
+              <span class="glyph">{glyph(lens.names.relations[relation])}</span>
+            {/if}
           </li>
         {/each}
       </ul>
     </div>
   {/if}
 
-  {#if state.focus || state.layers.length > 0 || state.phases.length > 0}
+  {#if state.focus || state.pair || state.layers.length > 0 || state.phases.length > 0}
     <div class="row">
       <button type="button" onclick={() => onchange(WHOLE)}>{t('lens.whole')}</button>
     </div>

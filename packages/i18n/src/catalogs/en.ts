@@ -422,7 +422,20 @@ export const en = {
   // does, and none says what a relation means — that is the reader's. See
   // `docs/refusals.md` § "Where to look first".
   'lens.title': 'Lens',
-  'lens.hint': 'Keep some names and let the rest fade, or press a name on the board to see how everything else stands to it.',
+  'lens.hint': 'Keep some names and let the rest fade. Press a name on the board to see how everything else stands to it, or press the ground of two palaces to see how they stand to each other.',
+  'lens.pair': 'Palaces {a} and {b}',
+  'lens.pairOne': 'Palace {a}. Press the ground of a second palace.',
+  'lens.pair.heading': 'How palace {a} and palace {b} stand to each other',
+  'lens.pair.caption': '→ runs from the row to the column, ← from the column to the row.',
+  // A cell of that table: the relation as a flow, from whatever generates or
+  // controls to whatever is generated or controlled. Said whole for a screen
+  // reader, since the arrow beside the word is a shape.
+  'lens.flow.wosheng': 'generation',
+  'lens.flow.woke': 'control',
+  'lens.flow.bihe': 'same phase',
+  'lens.flow.wosheng.said': '{from} generates {to}',
+  'lens.flow.woke.said': '{from} controls {to}',
+  'lens.flow.bihe.said': '{from} and {to} are of the same phase',
   'lens.layers': 'Keep',
   'lens.phases': 'Keep the phases',
   'lens.whole': 'Whole board',

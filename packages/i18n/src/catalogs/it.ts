@@ -411,7 +411,17 @@ export const it: Record<MessageKey, string> = {
   // Una lente sulla tavola. Ogni riga dice che cosa fa il comando, nessuna che
   // cosa significa una relazione: quello spetta a chi legge.
   'lens.title': 'Lente',
-  'lens.hint': 'Tieni alcuni nomi e lascia sfumare il resto, oppure premi un nome sulla tavola per vedere come tutto il resto vi si rapporta.',
+  'lens.hint': 'Tieni alcuni nomi e lascia sfumare il resto. Premi un nome sulla tavola per vedere come tutto il resto vi si rapporta, oppure premi il fondo di due palazzi per vedere come stanno fra loro.',
+  'lens.pair': 'Palazzi {a} e {b}',
+  'lens.pairOne': 'Palazzo {a}. Premi il fondo di un secondo palazzo.',
+  'lens.pair.heading': 'Come stanno fra loro il palazzo {a} e il palazzo {b}',
+  'lens.pair.caption': '→ va dalla riga alla colonna, ← dalla colonna alla riga.',
+  'lens.flow.wosheng': 'generazione',
+  'lens.flow.woke': 'dominio',
+  'lens.flow.bihe': 'stessa fase',
+  'lens.flow.wosheng.said': '{from} genera {to}',
+  'lens.flow.woke.said': '{from} domina {to}',
+  'lens.flow.bihe.said': '{from} e {to} sono della stessa fase',
   'lens.layers': 'Tieni',
   'lens.phases': 'Tieni le fasi',
   'lens.whole': 'Tavola intera',

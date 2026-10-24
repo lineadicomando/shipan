@@ -170,19 +170,33 @@
     return () => watcher.disconnect();
   });
 
-  /** The relations of the focus, placed. */
+  /** The box of a whole palace, for framing the palaces of a pair. */
+  function seatBox(seat: number, origin: DOMRect) {
+    const group = root?.querySelector(`[data-seat="${seat}"] > rect`);
+    if (!group) return undefined;
+    const box = group.getBoundingClientRect();
+    return { x: box.left - origin.left, y: box.top - origin.top, width: box.width, height: box.height };
+  }
+
+  /** The relations of the focus or of the pair, placed. */
   const laid = $derived.by(() => {
     void size;
     void drawn;
-    if (!lens?.active || lens.links.length === 0 || !inline || !frame) return undefined;
+    if (!lens?.active || !inline || !frame) return undefined;
+    if (lens.links.length === 0 && lens.seats.length === 0) return undefined;
     const origin = frame.getBoundingClientRect();
     const focus = lens.focus ? boxOf(lens.focus, origin) : undefined;
-    const links: { box: NonNullable<ReturnType<typeof boxOf>>; relation: ShownRelation }[] = [];
+    const seats = lens.seats
+      .map((seat) => seatBox(seat, origin))
+      .filter((box): box is NonNullable<typeof box> => box !== undefined);
+    type Box = NonNullable<ReturnType<typeof boxOf>>;
+    const links: { from: Box; box: Box; relation: ShownRelation }[] = [];
     for (const link of lens.links) {
+      const from = boxOf(link.from, origin);
       const box = boxOf(link.to, origin);
-      if (box) links.push({ box, relation: link.relation });
+      if (from && box) links.push({ from, box, relation: link.relation });
     }
-    return { focus, links };
+    return { focus, seats, links };
   });
 
   /** What the mouse rests on, and what a finger last tapped. */
@@ -300,7 +314,7 @@
     {/if}
   </div>
   {#if laid}
-    <LensLinks width={size.width} height={size.height} focus={laid.focus} links={laid.links} {drawing} />
+    <LensLinks width={size.width} height={size.height} focus={laid.focus} seats={laid.seats} links={laid.links} {drawing} />
   {/if}
   {#if shown}
     <span

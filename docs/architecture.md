@@ -219,9 +219,13 @@ pointer, so in print the same words are set once instead, as an empty seat
 under the board (`LayerLegend`).
 
 The second is **a lens**, on the 奇門 section: the reader keeps a kind of
-name or a phase and the rest of each seat recedes, or presses a name and is
-shown how the rest stands to it — the five relations of the phases, 對宮 and
-五合 (`lib/lens.ts`, `LensBar`, `LensLinks`, `LensRelations`). The rule it
+name or a phase and the rest of each seat recedes, presses a name and is
+shown how the rest stands to it, or presses the ground of two palaces and is
+shown how they stand to each other — the five relations of the phases, 對宮
+and 五合 (`lib/lens.ts`, `LensBar`, `LensLinks`, `LensRelations`,
+`LensPair`). **A pair is held in Luoshu order and drawn as a flow**, from
+what generates or controls to what is generated or controlled, so every
+relation is said both ways round and neither palace is made the asker's. The rule it
 carries out is `docs/refusals.md` § "Where to look first". Three things
 follow from where it runs. **The relations are the engine's**: `/api/qimen`
 answers with `lens` beside the chart — `qimenLens`, every thing with a phase

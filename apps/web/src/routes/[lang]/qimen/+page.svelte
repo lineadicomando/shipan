@@ -9,6 +9,7 @@
     WHOLE,
     keyOf,
     pressed,
+    pressedSeat,
     readLens,
     viewOf,
     writeLens,
@@ -19,6 +20,7 @@
   import type { MessageKey } from '@shipan/i18n';
   import LensBar from '$lib/components/LensBar.svelte';
   import LensRelations from '$lib/components/LensRelations.svelte';
+  import LensPair from '$lib/components/LensPair.svelte';
   import { carried } from '$lib/parameters';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import { step, type Unit, type Wall } from '$lib/step';
@@ -207,15 +209,47 @@
     return nameAt(Number(seat), layer);
   });
 
-  /** Pressing a name with a phase starts from it; pressing it again lets go. */
+  /**
+   * Pressing a name with a phase starts from it, and pressing it again lets
+   * go. Pressing the ground of a palace, where no name is, lays it in a pair.
+   */
   function pick(spot: BoardSpot | undefined): void {
-    if (!lens || !spot?.layer || !spot.id) return;
+    if (!lens || !spot) return;
+    if (!spot.layer && spot.unit === 'palace' && spot.seat) {
+      lensState = pressedSeat(lensState, Number(spot.seat));
+      return;
+    }
+    if (!spot.layer || !spot.id) return;
     if (!(PHASE_LAYERS as readonly string[]).includes(spot.layer)) return;
     lensState = pressed(lensState, { layer: spot.layer as LensLayer, id: spot.id });
   }
 
+  /** The palaces of a pair, in words, for the controls. */
+  const pairSaid = $derived.by(() => {
+    const seats = view.seats;
+    const said = (seat: number) => `${seat} ${nameAt(seat, 'palace') ?? ''}`;
+    if (seats.length === 1) return t('lens.pairOne', { a: said(seats[0] as number) });
+    if (seats.length === 2) return t('lens.pair', { a: said(seats[0] as number), b: said(seats[1] as number) });
+    return undefined;
+  });
+
   /** Over a name a relation is drawn to, the relation; over any other, its layer. */
   function tipOf(spot: BoardSpot): string | undefined {
+    if (view.seats.length === 2 && spot.seat && spot.layer) {
+      const key = keyOf(Number(spot.seat), spot.layer);
+      const name = (at: string) => {
+        const [seat, layer] = at.split(':') as [string, string];
+        return nameAt(Number(seat), layer) ?? '';
+      };
+      const said = view.links
+        .filter((link) => link.to === key || link.from === key)
+        .map((link) =>
+          link.relation === 'wosheng' || link.relation === 'woke' || link.relation === 'bihe'
+            ? t(`lens.flow.${link.relation}.said` as MessageKey, { from: name(link.from), to: name(link.to) })
+            : `${t(`label.relation.${link.relation}` as MessageKey)} ${glyph(lens!.names.relations[link.relation])}`,
+        );
+      if (said.length > 0) return said.join(' · ');
+    }
     if (view.focus && focusName && spot.seat && spot.layer) {
       const key = keyOf(Number(spot.seat), spot.layer);
       const said = view.links
@@ -376,6 +410,7 @@
           {lens}
           state={lensState}
           {focusName}
+          {pairSaid}
           {drawing}
           onchange={(next) => (lensState = next)}
           ondraw={(next) => (drawing = next)}
@@ -384,7 +419,10 @@
       <div class="screen">
         <InlineBoard src={plate} width={900} height={900} tip={tipOf} onpick={pick} lens={view} {drawing} />
       </div>
-      {#if lens}<LensRelations {t} {view} {focusName} {nameAt} />{/if}
+      {#if lens}
+        <LensRelations {t} {view} {focusName} {nameAt} />
+        <LensPair {t} {lens} {view} {nameAt} />
+      {/if}
       <!-- The same board in the colours of paper, drawn only where the two
            differ and shown only by a printer. -->
       {#if onPaper}
