@@ -422,7 +422,6 @@ export const en = {
   // does, and none says what a relation means — that is the reader's. See
   // `docs/refusals.md` § "Where to look first".
   'lens.title': 'Lens',
-  'lens.hint': 'Keep some names and let the rest fade. Press a name on the board to see how everything else relates to it, or press two palaces, away from their names, to see how the two palaces relate to each other. Pressing outside the palaces, or Escape, brings back the whole board.',
   'lens.pair': 'Palaces {a} and {b}',
   'lens.pairOne': 'Palace {a} is chosen. Press a second palace, away from its names.',
   'lens.pair.heading': 'How palace {a} and palace {b} stand to each other',
@@ -456,6 +455,8 @@ export const en = {
   'lens.way.pair': 'two palaces',
   'lens.way.focus': 'one name and the rest',
   'lens.way.phase': 'one phase',
+  'lens.way.filter': 'kinds and phases',
+  'lens.way.filter.said': 'Keep kinds of name and phases, as many as you like, and the rest of the board fades.',
   'lens.way.pair.said': 'Press two palaces on the board, then press in each of them the names to compare.',
   'lens.way.focus.said': 'Press a name on the board, then choose which names to relate it to.',
   'lens.way.phase.said': 'Choose a phase: what belongs to it stays as drawn, and the rest of the board fades.',

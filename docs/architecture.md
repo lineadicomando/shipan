@@ -186,8 +186,7 @@ consultation shows a board only as the check on what it hands over. On the
 left, the whole board at `--board`. On the right, a column at `--side`
 holding what is used on the board in view: on 奇門 the circle of the five
 phases, held at the top of the column in both modes so that nothing pressed
-under it moves it, then the lens and its key, and the key to the marks of
-strength; on the
+under it moves it, then the lens and the key to its arrows; on the
 other four the key to the names on the board. The steps of the moment stay in
 the bar above, with the date: they choose which board is laid, where the
 column holds how it is looked at, and the two are kept apart. The column is
@@ -217,8 +216,10 @@ from the page's address without `bare` — keeps its band: it travels without a
 page to key it.
 
 Paper takes the bench as a block: the board, then what the column held. The
-lens stays off it; the key to the strengths and the key to the names print
-under the board, since the sheet carries the board drawn the same way.
+lens stays off it; the key to the names prints under the board, since the
+sheet carries the board drawn the same way. The key to the marks of strength
+is under the 奇門 board on screen as well as on paper, with the marks it
+reads.
 
 ## Paper is the fourth appearance
 
@@ -294,11 +295,14 @@ apart. **An arrow is straight where a straight line is clear and curved where
 it is not** — where it would cross a name another arrow points at, or lie on
 one already laid (`layArrows` in `lib/arrows.ts`): the gentlest clear bend is
 kept, the shortest arrows are laid first, and arrows leaving one name may
-meet at it, since a fan reads as a fan. **Two modes, and the reader picks.** The page opens in the beginner's,
-which lays the lens one way at a time — two palaces, one name, or one phase —
-with one kind or one phase at a time; the expert's offers every control at
-once. The circle of the five phases (`FiveWheel`) stands over the controls
-in both, and under it the mode and «whole board» (`LensMode`), held at the top
+meet at it, since a fan reads as a fan. **Two modes, and the reader
+picks.** Both lay the lens one way at a time — two palaces, one name and the
+rest, or what is kept — and the page opens in the beginner's, which keeps one
+kind or one phase at a time and draws the five relations of the phases alone.
+The expert's keeps and combines as many as are pressed, kinds of name as well
+as phases, and adds 對宮 and 五合. The circle of the five phases (`FiveWheel`)
+stands over the controls in both, its sentence its accessible name and not a
+caption, and under it the mode and «whole board» (`LensMode`), held at the top
 of the column. **Putting the lens away is always at hand**: that button, which
 stays in its place and is disabled when there is nothing to put away; a press
 on the board outside its nine palaces; a press on the page's own ground; and

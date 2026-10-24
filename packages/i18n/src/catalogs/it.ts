@@ -411,7 +411,6 @@ export const it: Record<MessageKey, string> = {
   // Una lente sulla tavola. Ogni riga dice che cosa fa il comando, nessuna che
   // cosa significa una relazione: quello spetta a chi legge.
   'lens.title': 'Lente',
-  'lens.hint': 'Tieni alcuni nomi e lascia sfumare il resto. Premi un nome sulla tavola per vedere come tutto il resto vi si rapporta, oppure premi due palazzi in un punto senza nomi per vedere come i due palazzi si rapportano fra loro. Premendo fuori dai palazzi, o con il tasto Esc, torna la tavola intera.',
   'lens.pair': 'Palazzi {a} e {b}',
   'lens.pairOne': 'Hai scelto il palazzo {a}. Premi un secondo palazzo in un punto senza nomi.',
   'lens.pair.heading': 'Come stanno fra loro il palazzo {a} e il palazzo {b}',
@@ -438,6 +437,8 @@ export const it: Record<MessageKey, string> = {
   'lens.way.pair': 'due palazzi',
   'lens.way.focus': 'un nome e il resto',
   'lens.way.phase': 'una fase',
+  'lens.way.filter': 'tipi e fasi',
+  'lens.way.filter.said': 'Tieni tipi di nome e fasi, quanti ne vuoi: il resto della tavola sfuma.',
   'lens.way.pair.said': 'Premi due palazzi sulla tavola, poi premi in ciascuno i nomi da confrontare.',
   'lens.way.focus.said': 'Premi un nome sulla tavola, poi scegli con quali nomi metterlo in relazione.',
   'lens.way.phase.said': 'Scegli una fase: ciò che le appartiene resta com’è e il resto della tavola sfuma.',

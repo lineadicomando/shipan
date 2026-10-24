@@ -253,13 +253,13 @@
     if (guided === 'pair' || (!spot.layer && spot.unit === 'palace')) {
       if (guided === 'focus' || !spot.seat) return;
       lensState = pressedSeat(lensState, Number(spot.seat));
-      if (!lensState.expert) way = 'pair';
+      way = 'pair';
       return;
     }
     if (!spot.layer || !spot.id) return;
     if (!(PHASE_LAYERS as readonly string[]).includes(spot.layer)) return;
     lensState = pressed(lensState, { layer: spot.layer as LensLayer, id: spot.id });
-    if (!lensState.expert) way = 'focus';
+    way = 'focus';
   }
 
   /** Whether a lens is laid at all, so there is something to put away. */
@@ -505,6 +505,9 @@
           <img src={paper} alt="" width="900" height="900" class="paper" />
         {/if}
         {#if !ofTheDay}<LayerLegend {t} board="qimen" />{/if}
+        <!-- The key to the marks of strength, under the board whose marks
+             it reads, which a day board has not. -->
+        {#if !ofTheDay}<StrengthLegend {t} />{/if}
       </div>
       <div class="side">
         {#if lens}
@@ -528,8 +531,6 @@
             onway={(next) => (way = next)}
           />
         {/if}
-        <!-- The key to the marks of strength, which a day board has not. -->
-        {#if !ofTheDay}<StrengthLegend {t} />{/if}
       </div>
     </div>
 

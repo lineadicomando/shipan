@@ -81,7 +81,7 @@ export const WAYS: readonly Way[] = ['pair', 'focus', 'phase'];
 export function wayOf(state: LensState): Way | undefined {
   if (state.pair) return 'pair';
   if (state.focus) return 'focus';
-  if (state.phases.length > 0) return 'phase';
+  if (state.phases.length > 0 || state.layers.length > 0) return 'phase';
   return undefined;
 }
 

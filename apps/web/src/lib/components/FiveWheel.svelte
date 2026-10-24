@@ -19,8 +19,9 @@
   one phase, every arrow touching it; the rest recede. With nothing chosen the
   circle is whole, as the board is.
 
-  Said as an image with its sentence: the circle is the rule stated once, and
-  the relations it lights are said in words under the board.
+  Said as an image, its sentence its accessible name and not a caption: a
+  reader who sees the circle reads the rule off it, and the relations it
+  lights are said in words under the board.
 -->
 <script lang="ts">
   import type { MessageKey, Translator } from '@shipan/i18n';
@@ -110,7 +111,6 @@
       </g>
     {/each}
   </svg>
-  <figcaption>{t('lens.wheel')}</figcaption>
 </figure>
 
 <style>
@@ -124,6 +124,5 @@
   .hanzi { font-size: 17px; dominant-baseline: middle; }
   .said { font-size: 10px; font-style: italic; fill: var(--faint); }
   .word { font-size: 12px; dominant-baseline: middle; }
-  figcaption { font-size: 0.8rem; color: var(--faint); max-inline-size: 18rem; text-align: center; }
   @media (prefers-reduced-motion: reduce) { line, g { transition: none; } }
 </style>

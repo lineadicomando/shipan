@@ -77,9 +77,18 @@
       ...state,
       focus: chosen === 'focus' ? state.focus : undefined,
       pair: chosen === 'pair' ? state.pair : undefined,
+      chosen: chosen === 'pair' ? state.chosen : undefined,
       phases: chosen === 'phase' ? state.phases : [],
+      layers: chosen === 'phase' ? state.layers : [],
     });
   }
+
+  /**
+   * The name a way goes by. Kept one phase at a time it is a phase; in the
+   * expert's mode the same way keeps kinds of name as well, and says so.
+   */
+  const wayKey = (one: Way): MessageKey =>
+    (one === 'phase' && state.expert ? 'lens.way.filter' : `lens.way.${one}`) as MessageKey;
 
 
   const focused = $derived(Boolean(state.focus && focusName));
@@ -169,27 +178,37 @@
 
 <section class="lens" aria-label={t('lens.title')}>
   <div class="controls">
+    <!-- One way at a time, in both modes: the expert's offers more inside
+         each way, and keeps and combines. -->
+    <div class="row" role="group" aria-label={t('lens.choose')}>
+      <span class="lead">{t('lens.choose')}</span>
+      {#each WAYS as one (one)}
+        <button type="button" aria-pressed={way === one} onclick={() => choose(one)}>
+          {t(wayKey(one))}
+        </button>
+      {/each}
+    </div>
 
-    {#if state.expert}
-      <p class="hint">{t('lens.hint')}</p>
+    {#if way}<p class="hint">{t(`${wayKey(way)}.said` as MessageKey)}</p>{/if}
 
-      {#if focused}
-        <div class="row">
-          <span class="lead">{t('lens.focus', { thing: focusName ?? '' })}</span>
-          <button type="button" onclick={() => onchange({ ...state, focus: undefined })}>{t('lens.release')}</button>
-        </div>
-        {@render kinds(t('lens.toward'), state.toward)}
-        {@render relations()}
-      {:else if paired}
-        <div class="row">
-          <span class="lead">{pairSaid}</span>
-          <button type="button" onclick={() => onchange({ ...state, pair: undefined })}>{t('lens.release')}</button>
-        </div>
-        {#if state.pair?.length === 2}
-          <p class="hint">{t('lens.pair.pick')}</p>
-          {@render relations()}
-        {/if}
-      {:else}
+    {#if way === 'pair' && paired}
+      <div class="row">
+        <span class="lead">{pairSaid}</span>
+        <button type="button" onclick={() => onchange({ ...state, pair: undefined })}>{t('lens.release')}</button>
+      </div>
+      {#if state.pair?.length === 2}
+        <p class="hint">{t('lens.pair.pick')}</p>
+        {#if state.expert}{@render relations()}{/if}
+      {/if}
+    {:else if way === 'focus' && focused}
+      <div class="row">
+        <span class="lead">{t('lens.focus', { thing: focusName ?? '' })}</span>
+        <button type="button" onclick={() => onchange({ ...state, focus: undefined })}>{t('lens.release')}</button>
+      </div>
+      {@render kinds(t('lens.toward'), state.toward)}
+      {#if state.expert}{@render relations()}{/if}
+    {:else if way === 'phase'}
+      {#if state.expert}
         <div class="row" role="group" aria-label={t('lens.layers')}>
           <span class="lead">{t('lens.layers')}</span>
           {#each BOARD_LAYERS as layer (layer)}
@@ -201,41 +220,11 @@
           {/each}
         </div>
       {/if}
-
-      {#if !state.pair}{@render phases()}{/if}
-    {:else}
-      <div class="row" role="group" aria-label={t('lens.choose')}>
-        <span class="lead">{t('lens.choose')}</span>
-        {#each WAYS as one (one)}
-          <button type="button" aria-pressed={way === one} onclick={() => choose(one)}>
-            {t(`lens.way.${one}` as MessageKey)}
-          </button>
-        {/each}
-      </div>
-
-      {#if way}<p class="hint">{t(`lens.way.${way}.said` as MessageKey)}</p>{/if}
-
-      {#if way === 'pair' && paired}
-        <div class="row">
-          <span class="lead">{pairSaid}</span>
-          <button type="button" onclick={() => onchange({ ...state, pair: undefined })}>{t('lens.release')}</button>
-        </div>
-        {#if state.pair?.length === 2}<p class="hint">{t('lens.pair.pick')}</p>{/if}
-      {:else if way === 'focus' && focused}
-        <div class="row">
-          <span class="lead">{t('lens.focus', { thing: focusName ?? '' })}</span>
-          <button type="button" onclick={() => onchange({ ...state, focus: undefined })}>{t('lens.release')}</button>
-        </div>
-        {@render kinds(t('lens.toward'), state.toward)}
-      {:else if way === 'phase'}
-        {@render phases()}
-      {/if}
+      {@render phases()}
     {/if}
 
     {#if relating}{@render key()}{/if}
-
   </div>
-
 </section>
 
 <style>

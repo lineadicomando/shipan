@@ -211,6 +211,7 @@ describe('a lens on a 奇門 board', () => {
     expect(wayOf({ ...WHOLE, pair: [2] })).toBe('pair');
     expect(wayOf({ ...WHOLE, focus: { layer: 'gate', id: 'kaimen' } })).toBe('focus');
     expect(wayOf({ ...WHOLE, phases: ['jin'] })).toBe('phase');
+    expect(wayOf({ ...WHOLE, expert: true, layers: ['gate'] })).toBe('phase');
   });
 
   it('lights on the circle the phases of what the lens has in it, and nothing else', () => {
