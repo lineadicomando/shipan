@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { QimenLens } from '@shipan/core';
-import { WHOLE, keyOf, pairTable, pressed, pressedSeat, readLens, viewOf, writeLens, type LensState } from '../src/lib/lens';
+import { WHOLE, keyOf, oneAtATime, pairTable, wayOf, pressed, pressedSeat, readLens, viewOf, writeLens, type LensState } from '../src/lib/lens';
 
 /**
  * A lens is the reader's: these hold that it does nothing until somebody
@@ -97,9 +97,10 @@ describe('a lens on a 奇門 board', () => {
       toward: ['heaven', 'gate'],
       shengke: false,
       links: ['wuhe'],
+      expert: true,
     };
     const fragment = writeLens(state);
-    expect(fragment).toBe('phases=huo&focus=heaven.bing&toward=heaven,gate&shengke=0&links=wuhe');
+    expect(fragment).toBe('expert=1&phases=huo&focus=heaven.bing&toward=heaven,gate&shengke=0&links=wuhe');
     expect(readLens(`#${fragment}`)).toEqual(state);
     expect(writeLens(WHOLE)).toBe('');
     // What is not a known value is dropped, never guessed at.
@@ -163,5 +164,30 @@ describe('a lens on a 奇門 board', () => {
     expect(pressedSeat(named, 1).focus).toBeUndefined();
     expect(readLens(`#${writeLens({ ...WHOLE, pair: [9, 1] })}`).pair).toEqual([9, 1]);
     expect(readLens('#pair=0,12,3,3,4').pair).toEqual([3, 4]);
+  });
+
+  it('lays a lens one way at a time for a beginner, and keeps nothing behind for either mode', () => {
+    // The beginner's is the mode a page opens in, and it writes nothing: a
+    // reader who never switches leaves no trace in the address either.
+    expect(WHOLE.expert).toBe(false);
+    expect(writeLens(WHOLE)).toBe('');
+    const many: LensState = {
+      ...WHOLE,
+      expert: true,
+      layers: ['gate'],
+      phases: ['mu', 'huo'],
+      toward: ['heaven', 'gate'],
+      shengke: false,
+      links: ['duigong'],
+    };
+    expect(oneAtATime(many)).toEqual({
+      ...WHOLE,
+      phases: ['mu'],
+      toward: ['heaven'],
+    });
+    expect(wayOf(WHOLE)).toBeUndefined();
+    expect(wayOf({ ...WHOLE, pair: [2] })).toBe('pair');
+    expect(wayOf({ ...WHOLE, focus: { layer: 'gate', id: 'kaimen' } })).toBe('focus');
+    expect(wayOf({ ...WHOLE, phases: ['jin'] })).toBe('phase');
   });
 });

@@ -231,7 +231,12 @@ it compares only the kinds the reader keeps, nothing until one is kept.
 `--lens-sheng` and `--lens-ke` in `app.css`, a violet and a magenta, hues the
 phases do not use, since colour on a board is the phase's. Each relation
 keeps its stroke as well, so colour is never the only thing telling two
-apart. The rule it
+apart. **Two modes, and the reader picks.** The page opens in the beginner's,
+which lays the lens one way at a time — two palaces, one name, or one phase —
+with one kind or one phase at a time and the circle of the five phases
+(`FiveWheel`) beside the controls; the expert's offers every control at once.
+The mode is in the fragment with the rest of the lens and in no storage, so
+the privacy note's inventory of what the browser keeps does not move. The rule it
 carries out is `docs/refusals.md` § "Where to look first". Three things
 follow from where it runs. **The relations are the engine's**: `/api/qimen`
 answers with `lens` beside the chart — `qimenLens`, every thing with a phase

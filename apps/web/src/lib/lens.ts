@@ -62,10 +62,46 @@ export interface LensState {
   shengke: boolean;
   /** Which of the other relations a focus shows. */
   links: readonly LinkId[];
+  /**
+   * Whether every control is offered at once. Without it the lens is laid one
+   * way at a time — two palaces, one name, or one phase — with one kind or
+   * one phase chosen at a time, and the circle of the five phases beside it.
+   * It is in the fragment with the rest and kept nowhere else: a reader who
+   * never switches leaves nothing behind.
+   */
+  expert: boolean;
+}
+
+/** The three ways a lens is laid when it is laid one at a time. */
+export type Way = 'pair' | 'focus' | 'phase';
+export const WAYS: readonly Way[] = ['pair', 'focus', 'phase'];
+
+/** Which way the state is laid, where it says. */
+export function wayOf(state: LensState): Way | undefined {
+  if (state.pair) return 'pair';
+  if (state.focus) return 'focus';
+  if (state.phases.length > 0) return 'phase';
+  return undefined;
+}
+
+/**
+ * The same state, reduced to what is laid one way at a time: one kind, one
+ * phase, and the five relations of the phases without the other two.
+ */
+export function oneAtATime(state: LensState): LensState {
+  return {
+    ...state,
+    layers: [],
+    phases: state.phases.slice(0, 1),
+    toward: state.toward.slice(0, 1),
+    shengke: true,
+    links: [],
+    expert: false,
+  };
 }
 
 /** No lens: the whole board, alike. */
-export const WHOLE: LensState = { layers: [], phases: [], toward: [], shengke: true, links: [] };
+export const WHOLE: LensState = { layers: [], phases: [], toward: [], shengke: true, links: [], expert: false };
 
 /** Where a thing is on the drawing: the seat and the layer, as the marks say. */
 export type SpotKey = `${number}:${string}`;
@@ -308,6 +344,7 @@ export function pressedSeat(state: LensState, seat: number): LensState {
  */
 export function writeLens(state: LensState): string {
   const parts: string[] = [];
+  if (state.expert) parts.push('expert=1');
   if (state.layers.length > 0) parts.push(`layers=${state.layers.join(',')}`);
   if (state.phases.length > 0) parts.push(`phases=${state.phases.join(',')}`);
   if (state.focus) {
@@ -337,6 +374,7 @@ export function readLens(fragment: string): LensState {
     toward: list('toward', PHASE_LAYERS),
     shengke: fields.get('shengke') !== '0',
     links: list('links', LINK_IDS),
+    expert: fields.get('expert') === '1',
   };
   const [layer, id] = (fields.get('focus') ?? '').split('.');
   if (layer && id && (PHASE_LAYERS as readonly string[]).includes(layer) && /^[a-z0-9]+$/.test(id)) {

@@ -9,24 +9,35 @@
   it keeps leads in the reader's language, and a phase or a relation carries
   its hanzi and its reading beside the word.
 
+  **Two modes, and the reader picks.** The expert's offers everything at
+  once and lets kinds, phases and relations be combined. The beginner's
+  lays the lens one way at a time — two palaces, one name, or one phase —
+  with one kind or one phase chosen at a time, the five relations of the
+  phases alone, and the circle of the five phases beside the controls. Which
+  mode is in force travels in the fragment with the rest of the lens.
+
   The key to the arrows is here and not on the board, for the reason the
   strengths have theirs beside it: the page can say it in the reader's own
   words, and the drawing would have to spend room on every chart to say it.
 -->
 <script lang="ts">
   import type { MessageKey, Translator } from '@shipan/i18n';
-  import type { LensLayer, QimenLens } from '@shipan/core';
+  import type { Element, LensLayer, QimenLens } from '@shipan/core';
   import { glyph } from '$lib/glyph';
   import {
     BOARD_LAYERS,
     ELEMENTS,
     LINK_IDS,
     PHASE_LAYERS,
+    WAYS,
     WHOLE,
+    oneAtATime,
     type LensState,
     type ShownRelation,
+    type Way,
   } from '$lib/lens';
   import { colourOf, dashOf } from './LensLinks.svelte';
+  import FiveWheel from './FiveWheel.svelte';
 
   let {
     t,
@@ -34,7 +45,9 @@
     state,
     focusName,
     pairSaid,
+    way,
     onchange,
+    onway,
   }: {
     t: Translator;
     lens: QimenLens;
@@ -43,28 +56,66 @@
     focusName: string | undefined;
     /** The palaces of a pair in words, where one or two are pressed. */
     pairSaid: string | undefined;
+    /** The way a lens is being laid one at a time, where one was chosen. */
+    way: Way | undefined;
     onchange: (next: LensState) => void;
+    onway: (next: Way | undefined) => void;
   } = $props();
 
   const layerWord = (layer: string): string => t(`label.register.qimen.${layer}` as MessageKey);
 
+  /** A toggle in a list: added or taken out, or, one at a time, the only one. */
   function toggle<T>(list: readonly T[], value: T): T[] {
+    if (!state.expert) return list.includes(value) ? [] : [value];
     return list.includes(value) ? list.filter((item) => item !== value) : [...list, value];
   }
+
+  /** Choosing a way, one at a time: what belongs to the others is let go. */
+  function choose(next: Way): void {
+    const chosen = way === next ? undefined : next;
+    onway(chosen);
+    onchange({
+      ...state,
+      focus: chosen === 'focus' ? state.focus : undefined,
+      pair: chosen === 'pair' ? state.pair : undefined,
+      phases: chosen === 'phase' ? state.phases : [],
+    });
+  }
+
+  /** The phases of what the lens has in it, for the circle beside it. */
+  const active = $derived.by((): Element[] => {
+    if (state.focus) {
+      const thing = lens.things.find((one) => one.layer === state.focus?.layer && one.id === state.focus?.id);
+      return thing ? [thing.element] : [];
+    }
+    if (state.pair?.length === 2 && state.toward.length === 1) {
+      const layer = state.toward[0];
+      return [
+        ...new Set(
+          lens.things
+            .filter((one) => state.pair?.includes(one.seat) && one.layer === layer)
+            .map((one) => one.element),
+        ),
+      ];
+    }
+    return [...state.phases];
+  });
 
   const focused = $derived(Boolean(state.focus && focusName));
   const paired = $derived(Boolean(state.pair && pairSaid));
   const relating = $derived(focused || state.pair?.length === 2);
+  const whole = (): LensState => ({ ...WHOLE, expert: state.expert });
 
   /**
    * The relations the key shows. A pair draws every relation as a flow, so
    * its key has no converse two and says each cycle once.
    */
-  const KEYED = $derived<readonly ShownRelation[]>(
-    state.pair
+  const KEYED = $derived.by<readonly ShownRelation[]>(() => {
+    const shown: ShownRelation[] = state.pair
       ? ['wosheng', 'woke', 'bihe', 'duigong', 'wuhe']
-      : ['wosheng', 'shengwo', 'woke', 'kewo', 'bihe', 'duigong', 'wuhe'],
-  );
+      : ['wosheng', 'shengwo', 'woke', 'kewo', 'bihe', 'duigong', 'wuhe'];
+    return state.expert ? shown : shown.filter((relation) => relation !== 'duigong' && relation !== 'wuhe');
+  });
   const flowWord = (relation: ShownRelation): boolean =>
     Boolean(state.pair) && (relation === 'wosheng' || relation === 'woke' || relation === 'bihe');
 </script>
@@ -100,79 +151,126 @@
   </div>
 {/snippet}
 
-<section class="lens" aria-label={t('lens.title')}>
-  <p class="hint">{t('lens.hint')}</p>
+{#snippet phases()}
+  <div class="row" role="group" aria-label={t('lens.phases')}>
+    <span class="lead">{t('lens.phases')}</span>
+    {#each ELEMENTS as element (element)}
+      <button
+        type="button"
+        aria-pressed={state.phases.includes(element)}
+        onclick={() => onchange({ ...state, phases: toggle(state.phases, element) })}
+      >{t(`label.element.${element}` as MessageKey)} <span class="glyph">{glyph(lens.names.elements[element])}</span></button>
+    {/each}
+  </div>
+{/snippet}
 
-  {#if focused}
-    <div class="row">
-      <span class="lead">{t('lens.focus', { thing: focusName ?? '' })}</span>
-      <button type="button" onclick={() => onchange({ ...state, focus: undefined })}>{t('lens.release')}</button>
-    </div>
-    {@render kinds(t('lens.toward'), state.toward)}
-    {@render relations()}
-  {:else if paired}
-    <div class="row">
-      <span class="lead">{pairSaid}</span>
-      <button type="button" onclick={() => onchange({ ...state, pair: undefined })}>{t('lens.release')}</button>
-    </div>
-    {#if state.pair?.length === 2}
-      {@render kinds(t('lens.compare'), state.toward)}
-      {@render relations()}
-    {/if}
-  {:else}
-    <div class="row" role="group" aria-label={t('lens.layers')}>
-      <span class="lead">{t('lens.layers')}</span>
-      {#each BOARD_LAYERS as layer (layer)}
-        <button
-          type="button"
-          aria-pressed={state.layers.includes(layer)}
-          onclick={() => onchange({ ...state, layers: toggle(state.layers, layer) })}
-        >{layerWord(layer)}</button>
+{#snippet key()}
+  <div class="key">
+    <p>{t('lens.key')}</p>
+    <ul>
+      {#each KEYED as relation (relation)}
+        <li>
+          <svg width="44" height="10" aria-hidden="true" style:color={colourOf(relation)}>
+            <line x1="2" y1="5" x2="36" y2="5" stroke-dasharray={dashOf(relation)} />
+            {#if relation === 'wosheng' || relation === 'woke'}<path d="M 36 1 L 43 5 L 36 9 Z" />{/if}
+            {#if relation === 'shengwo' || relation === 'kewo'}<path d="M 9 1 L 2 5 L 9 9 Z" />{/if}
+          </svg>
+          {#if flowWord(relation)}
+            {t(`lens.flow.${relation}` as MessageKey)}
+          {:else}
+            {t(`label.relation.${relation}` as MessageKey)}
+            <span class="glyph">{glyph(lens.names.relations[relation])}</span>
+          {/if}
+        </li>
       {/each}
-    </div>
-  {/if}
+    </ul>
+  </div>
+{/snippet}
 
-  {#if !state.pair}
-    <div class="row" role="group" aria-label={t('lens.phases')}>
-      <span class="lead">{t('lens.phases')}</span>
-      {#each ELEMENTS as element (element)}
-        <button
-          type="button"
-          aria-pressed={state.phases.includes(element)}
-          onclick={() => onchange({ ...state, phases: toggle(state.phases, element) })}
-        >{t(`label.element.${element}` as MessageKey)} <span class="glyph">{glyph(lens.names.elements[element])}</span></button>
-      {/each}
+<section class="lens" class:guided={!state.expert} aria-label={t('lens.title')}>
+  <div class="controls">
+    <div class="row" role="group" aria-label={t('lens.mode')}>
+      <span class="lead">{t('lens.mode')}</span>
+      <button type="button" aria-pressed={!state.expert} onclick={() => onchange(oneAtATime(state))}>
+        {t('lens.mode.beginner')}
+      </button>
+      <button type="button" aria-pressed={state.expert} onclick={() => onchange({ ...state, expert: true })}>
+        {t('lens.mode.expert')}
+      </button>
     </div>
-  {/if}
 
-  {#if relating}
-    <div class="key">
-      <p>{t('lens.key')}</p>
-      <ul>
-        {#each KEYED as relation (relation)}
-          <li>
-            <svg width="44" height="10" aria-hidden="true" style:color={colourOf(relation)}>
-              <line x1="2" y1="5" x2="36" y2="5" stroke-dasharray={dashOf(relation)} />
-              {#if relation === 'wosheng' || relation === 'woke'}<path d="M 36 1 L 43 5 L 36 9 Z" />{/if}
-              {#if relation === 'shengwo' || relation === 'kewo'}<path d="M 9 1 L 2 5 L 9 9 Z" />{/if}
-            </svg>
-            {#if flowWord(relation)}
-              {t(`lens.flow.${relation}` as MessageKey)}
-            {:else}
-              {t(`label.relation.${relation}` as MessageKey)}
-              <span class="glyph">{glyph(lens.names.relations[relation])}</span>
-            {/if}
-          </li>
+    {#if state.expert}
+      <p class="hint">{t('lens.hint')}</p>
+
+      {#if focused}
+        <div class="row">
+          <span class="lead">{t('lens.focus', { thing: focusName ?? '' })}</span>
+          <button type="button" onclick={() => onchange({ ...state, focus: undefined })}>{t('lens.release')}</button>
+        </div>
+        {@render kinds(t('lens.toward'), state.toward)}
+        {@render relations()}
+      {:else if paired}
+        <div class="row">
+          <span class="lead">{pairSaid}</span>
+          <button type="button" onclick={() => onchange({ ...state, pair: undefined })}>{t('lens.release')}</button>
+        </div>
+        {#if state.pair?.length === 2}
+          {@render kinds(t('lens.compare'), state.toward)}
+          {@render relations()}
+        {/if}
+      {:else}
+        <div class="row" role="group" aria-label={t('lens.layers')}>
+          <span class="lead">{t('lens.layers')}</span>
+          {#each BOARD_LAYERS as layer (layer)}
+            <button
+              type="button"
+              aria-pressed={state.layers.includes(layer)}
+              onclick={() => onchange({ ...state, layers: toggle(state.layers, layer) })}
+            >{layerWord(layer)}</button>
+          {/each}
+        </div>
+      {/if}
+
+      {#if !state.pair}{@render phases()}{/if}
+    {:else}
+      <div class="row" role="group" aria-label={t('lens.choose')}>
+        <span class="lead">{t('lens.choose')}</span>
+        {#each WAYS as one (one)}
+          <button type="button" aria-pressed={way === one} onclick={() => choose(one)}>
+            {t(`lens.way.${one}` as MessageKey)}
+          </button>
         {/each}
-      </ul>
-    </div>
-  {/if}
+      </div>
 
-  {#if state.focus || state.pair || state.layers.length > 0 || state.phases.length > 0}
-    <div class="row">
-      <button type="button" onclick={() => onchange(WHOLE)}>{t('lens.whole')}</button>
-    </div>
-  {/if}
+      {#if way}<p class="hint">{t(`lens.way.${way}.said` as MessageKey)}</p>{/if}
+
+      {#if way === 'pair' && paired}
+        <div class="row">
+          <span class="lead">{pairSaid}</span>
+          <button type="button" onclick={() => onchange({ ...state, pair: undefined })}>{t('lens.release')}</button>
+        </div>
+        {#if state.pair?.length === 2}{@render kinds(t('lens.compare'), state.toward)}{/if}
+      {:else if way === 'focus' && focused}
+        <div class="row">
+          <span class="lead">{t('lens.focus', { thing: focusName ?? '' })}</span>
+          <button type="button" onclick={() => onchange({ ...state, focus: undefined })}>{t('lens.release')}</button>
+        </div>
+        {@render kinds(t('lens.toward'), state.toward)}
+      {:else if way === 'phase'}
+        {@render phases()}
+      {/if}
+    {/if}
+
+    {#if relating}{@render key()}{/if}
+
+    {#if state.focus || state.pair || state.layers.length > 0 || state.phases.length > 0}
+      <div class="row">
+        <button type="button" onclick={() => onchange(whole())}>{t('lens.whole')}</button>
+      </div>
+    {/if}
+  </div>
+
+  {#if !state.expert}<FiveWheel {t} {lens} {active} />{/if}
 </section>
 
 <style>
@@ -182,8 +280,14 @@
     max-inline-size: 100%;
     font-size: 0.9rem;
     display: grid;
-    gap: 0.45rem;
+    gap: 1rem;
+    align-items: start;
   }
+  /* The circle beside the controls where there is room, under them where
+     there is not. */
+  .guided { grid-template-columns: minmax(0, 1fr) auto; }
+  @media (max-width: 40rem) { .guided { grid-template-columns: minmax(0, 1fr); } }
+  .controls { display: grid; gap: 0.45rem; }
   .hint { margin: 0; color: var(--faint); }
   .row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; }
   .lead { margin-inline-end: 0.35rem; }

@@ -422,11 +422,11 @@ export const en = {
   // does, and none says what a relation means — that is the reader's. See
   // `docs/refusals.md` § "Where to look first".
   'lens.title': 'Lens',
-  'lens.hint': 'Keep some names and let the rest fade. Press a name on the board to see how everything else stands to it, or press the ground of two palaces to see how they stand to each other.',
+  'lens.hint': 'Keep some names and let the rest fade. Press a name on the board to see how everything else relates to it, or press two palaces, away from their names, to see how the two palaces relate to each other.',
   'lens.pair': 'Palaces {a} and {b}',
-  'lens.pairOne': 'Palace {a}. Press the ground of a second palace.',
+  'lens.pairOne': 'Palace {a} is chosen. Press a second palace, away from its names.',
   'lens.pair.heading': 'How palace {a} and palace {b} stand to each other',
-  'lens.pair.caption': '→ runs from the row to the column, ← from the column to the row.',
+  'lens.pair.caption': '→ means the relation runs from the row to the column, and ← means it runs from the column to the row.',
   // A cell of that table: the relation as a flow, from whatever generates or
   // controls to whatever is generated or controlled. Said whole for a screen
   // reader, since the arrow beside the word is a shape.
@@ -440,15 +440,30 @@ export const en = {
   'lens.phases': 'Keep the phases',
   'lens.whole': 'Whole board',
   'lens.focus': 'Starting from {thing}',
-  'lens.release': 'Let go',
+  'lens.release': 'Deselect',
   'lens.toward': 'Related to',
   'lens.kinds': 'Relations',
   'lens.shengke': 'generation and control',
   'lens.compare': 'Compare',
   'lens.pair.nothing': 'Choose what to compare between the two palaces.',
+  // The two modes of a lens. The beginner's lays it one way at a time and
+  // sets the circle of the five phases beside it; the expert's offers every
+  // control at once. Each way says what pressing does, and nothing about what
+  // a relation means.
+  'lens.mode': 'Mode',
+  'lens.mode.beginner': 'Beginner',
+  'lens.mode.expert': 'Expert',
+  'lens.choose': 'Look at',
+  'lens.way.pair': 'two palaces',
+  'lens.way.focus': 'one name and the rest',
+  'lens.way.phase': 'one phase',
+  'lens.way.pair.said': 'Press two palaces on the board, then choose what to compare between them.',
+  'lens.way.focus.said': 'Press a name on the board, then choose which names to relate it to.',
+  'lens.way.phase.said': 'Choose a phase: what belongs to it stays as drawn, and the rest of the board fades.',
+  'lens.wheel': 'In the circle of the five phases, each phase generates the next phase round the circle and controls the phase two places further on.',
   'lens.key': 'How the relations are drawn',
-  'lens.heading': 'How the board stands to {thing}',
-  'lens.empty': 'Nothing on the board stands in the relations chosen.',
+  'lens.heading': 'How the rest of the board relates to {thing}',
+  'lens.empty': 'Choose which names to relate it to.',
   'lens.at': '{layer}, palace {palace}',
   // Said over a name the lens has drawn a relation to, and in the list under
   // the board: which way the relation runs, between the name the reader

@@ -13,7 +13,9 @@
     pressedSeat,
     readLens,
     viewOf,
+    wayOf,
     writeLens,
+    type Way,
     type LensState,
   } from '$lib/lens';
   import type { LensLayer, PalaceContents, QimenLens } from '@shipan/core';
@@ -166,6 +168,8 @@
    * link can be sent with it and the server never learns of it.
    */
   let lensState = $state<LensState>(WHOLE);
+  /** The way a beginner chose to lay the lens, where one was chosen. */
+  let way = $state<Way | undefined>();
   /**
    * The fragment and the state follow each other. An address arriving with a
    * fragment of its own — a link pasted over this page, a step back — is read;
@@ -175,7 +179,10 @@
   let lensRead = $state(false);
   $effect(() => {
     const hash = page.url.hash.replace(/^#/, '');
-    if (hash !== untrack(() => writeLens(lensState))) lensState = readLens(hash);
+    if (hash !== untrack(() => writeLens(lensState))) {
+      lensState = readLens(hash);
+      way = wayOf(lensState) ?? untrack(() => way);
+    }
     lensRead = true;
   });
   $effect(() => {
@@ -220,13 +227,20 @@
    */
   function pick(spot: BoardSpot | undefined): void {
     if (!lens || !spot) return;
-    if (!spot.layer && spot.unit === 'palace' && spot.seat) {
+    // Laid one way at a time, a press does what that way does: in a pair, a
+    // press anywhere in a palace is the palace; with a phase, nothing.
+    const guided = !lensState.expert ? way : undefined;
+    if (guided === 'phase') return;
+    if (guided === 'pair' || (!spot.layer && spot.unit === 'palace')) {
+      if (guided === 'focus' || !spot.seat) return;
       lensState = pressedSeat(lensState, Number(spot.seat));
+      if (!lensState.expert) way = 'pair';
       return;
     }
     if (!spot.layer || !spot.id) return;
     if (!(PHASE_LAYERS as readonly string[]).includes(spot.layer)) return;
     lensState = pressed(lensState, { layer: spot.layer as LensLayer, id: spot.id });
+    if (!lensState.expert) way = 'focus';
   }
 
   /** The palaces of a pair, in words, for the controls. */
@@ -419,7 +433,9 @@
           state={lensState}
           {focusName}
           {pairSaid}
+          {way}
           onchange={(next) => (lensState = next)}
+          onway={(next) => (way = next)}
         />
       {/if}
       <div class="screen">
