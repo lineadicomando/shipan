@@ -811,7 +811,9 @@ function baseline(centre: number, size: number): number {
  *
  * A visible mark and not a run of spaces: SVG collapses whitespace, so a
  * caption set three spaces apart arrives with its two halves touching —
- * `capo Baldacchino porta del capo Riposo`, read as one phrase.
+ * `capo Baldacchino porta del capo Riposo`, read as one phrase. The mark is
+ * the caller's, `captions.between`, since a dash is English punctuation; this
+ * is what is set when none is given.
  */
 const BETWEEN = ' — ';
 
@@ -963,14 +965,14 @@ function drawCaptions(
       [pillars.year.hanzi, pillars.month.hanzi, pillars.day.hanzi, pillars.hour.hanzi].join(' '),
   ]
     .filter(Boolean)
-    .join(BETWEEN);
+    .join(captions.between ?? BETWEEN);
   parts.push(text(middle, outside * 0.45, head, font.caption, { maxWidth: size * 0.94 }));
 
   // Measured up from the foot of the paper and not from the foot of the
   // square: the list of configurations stands between the two, and these two
   // lines belong under all of it. On a drawing with no list the paper is the
   // square and this is the same number it always was.
-  const foot = [captions.chief, captions.chiefGate].filter(Boolean).join(BETWEEN);
+  const foot = [captions.chief, captions.chiefGate].filter(Boolean).join(captions.between ?? BETWEEN);
   parts.push(text(middle, height - outside * 0.58, foot, font.caption, { maxWidth: size * 0.94 }));
 
   // The disclaimer travels with the picture, because a picture travels

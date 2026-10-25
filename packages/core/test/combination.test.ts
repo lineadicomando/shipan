@@ -68,4 +68,14 @@ describe('the combination a board stands on', () => {
     const lines = divergenceLines('liuren', DEFAULT_LIUREN_OPTIONS, DEFAULT_OPTIONS, t);
     expect(lines.at(-1)).toBe(saidCombination('liuren', DEFAULT_LIUREN_OPTIONS, t));
   });
+
+  it('joins a label to its value with the vernacular’s own mark', () => {
+    // The em dash is English punctuation: an Italian drawing takes the colon.
+    const moved = { ...DEFAULT_OPTIONS, method: 'zhirun' } as const;
+    const en = divergenceLines('qimen', moved, moved, createTranslator('en'));
+    const it = divergenceLines('qimen', moved, moved, createTranslator('it'));
+    expect(en.some((line) => line.includes(' — '))).toBe(true);
+    expect(it.join('\n')).not.toMatch(/[—–]/);
+    expect(it.some((line) => line.startsWith('Il ju si determina: '))).toBe(true);
+  });
 });

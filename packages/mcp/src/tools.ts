@@ -793,6 +793,7 @@ export function registerDrawQimenChart(server: McpServer, context: ToolContext):
               },
               compass: labels.direction,
               captions: {
+                between: t('cli.between.items'),
                 ju: `${day.yang ? t('cli.value.yangDun') : t('cli.value.yinDun')} · ${t(`label.term.${day.term.id}` as MessageKey)} ${day.term.hanzi}`,
                 pillars: PILLARS,
                 readings: t('cli.heading.readings'),
@@ -814,6 +815,7 @@ export function registerDrawQimenChart(server: McpServer, context: ToolContext):
           // answer to "which way" is half of what a chart is asked for.
           compass: labels.direction,
           captions: {
+            between: t('cli.between.items'),
             ju: `${chart.ju.yang ? t('cli.value.yangDun') : t('cli.value.yinDun')} ${chart.ju.number}`,
             pillars: PILLARS,
             chief: `${t('cli.field.chief')} ${labels.star[chart.chief.star.id]} ${chart.chief.star.hanzi}`,

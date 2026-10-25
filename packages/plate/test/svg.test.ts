@@ -343,6 +343,15 @@ describe('renderChartSvg', () => {
     expect(svg).toContain('chief Canopy 天蓬 — chief gate Rest 休門');
   });
 
+  it('sets the caller’s mark between two captions where one is given', () => {
+    // A dash is English punctuation; an Italian caption brings its own.
+    const svg = renderChartSvg(CHART, {
+      captions: { between: ' · ', chief: 'capo Baldacchino 天蓬', chiefGate: 'porta del capo Riposo 休門' },
+    });
+    expect(svg).toContain('capo Baldacchino 天蓬 · porta del capo Riposo 休門');
+    expect(svg).not.toContain('天蓬 — ');
+  });
+
   it('carries both colour schemes by default', () => {
     const auto = renderChartSvg(CHART);
 

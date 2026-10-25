@@ -192,6 +192,13 @@ export interface PlateCaptions {
   /** What the drawing is not, said where it will be read. */
   note?: string;
   /**
+   * What separates two things set side by side on a caption line, e.g. ` — `.
+   *
+   * The caller's, as every word here is: the em dash is English punctuation,
+   * and an Italian caption sets the same seam another way. Absent, the dash.
+   */
+  between?: string;
+  /**
    * The word for the band of configurations under the grid, e.g. «Patterns».
    *
    * Giving it is what draws the band, exactly as giving `compass` is what

@@ -91,10 +91,11 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-25
 
-**Version 0.36.0**, in every manifest. **`main` is checked out and no branch
+**Version 0.36.1**, in every manifest. **`main` is checked out and no branch
 is open**: `lens-relations` and `lens-generic` landed on 2026-10-25 and were
 deleted, as «lenses» was the day before and `board-pointer` on 2026-10-18.
-Phase 74 is pushed to `origin/main`, on the user's word of 2026-10-25. What `main` carries since 2026-10-15 is of eleven days:
+Phase 74 is pushed to `origin/main`, on the user's word of 2026-10-25; the
+commit of 0.36.1 after it is not. What `main` carries since 2026-10-15 is of eleven days:
 
 - 2026-10-15, surface work: the Qi Men section holds its board in the page
   (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which register a
@@ -251,8 +252,16 @@ Phase 74 is pushed to `origin/main`, on the user's word of 2026-10-25. What `mai
   - the family of 奇門 board (`qimen.system`) chosen from the bar beside the
     date.
 
+- 2026-10-25, on `main` (0.36.1), the two known faults of the surface: the
+  seams the code set with an em dash are catalog keys, `cli.between.said`
+  (a school's label and its value on a drawing, a solar term and its instant:
+  the colon in Italian) and `cli.between.items` (two captions side by side,
+  `captions.between` in `@shipan/plate`: the middle dot in Italian); and the
+  Italian lens strings no longer set a preposition before a name whose gloss
+  opens on an article — the name is a subject or follows «con».
+
 `main` is pushed to `origin/main` as of 2026-10-25, phase 74 included, on the
-user's word; pushing is always the user's call.
+user's word; 0.36.1 is not. Pushing is always the user's call.
 `npm test`, `npm run typecheck` and `npm run build` pass on 2026-10-20 with no
 test skipped, and again on 2026-10-22, 2026-10-23, 2026-10-24 and 2026-10-25,
 the last on `main` at the end of phase 74. **Run `npm run build` before `npm test`** in
@@ -404,10 +413,6 @@ that sheet nearly blank.
   palaces; its order would have to be 太乙's numbering, one seat off the 洛書.
 - The 《淘金》, which 盧央 cites for a 文昌 of 熒惑, is not on the shelf.
 - The 續道藏 紫微斗數's 「詳其時照三方四正」 is a digital text with no plate.
-- The Italian lens strings put a preposition before a gloss that opens on an
-  article — «da il folto alto», «opposto a la tenuità purpurea» — where
-  Italian contracts; the fix is in the catalogs, under the `reader-copy`
-  skill.
 - 太乙's answer is cached `public` for a week, so a change to its shape —
   the lens's included — reaches a returning reader up to a week late.
 - 六壬's 六沖 and 六合 between branches, the 十二天將's phases (§ 1, 六壬),
@@ -475,9 +480,13 @@ decided is left unbuilt.
      絕學 holds three works; the `sihua` refusal row unmarked.
 
 **On the surface, nothing is owed and nothing is decided next.** What a
-pointer does beyond naming the layer is open; the known faults are the em
-dash of § 5 and the Italian lens strings that do not contract a preposition
-with an article (the leads under § "The lens on every board"). On the 奇門
+pointer does beyond naming the layer is open. With the colon as the Italian
+seam, a school's line on a drawing reads «Il quinto e il sesto spirito sono
+nominati da: niente: …» where the label ends on a preposition, and the
+Italian labels are written as the opening of a sentence the value closes,
+which a plain space would join better bar the three that are questions
+(«Quale nodo è 羅睺», «Se entri 紫氣», «Quale verso insedia il nobile»):
+a choice of copy for the user, not a fault. On the 奇門
 section the selector of the board's family (2026-10-25) pushes the steps of
 the moment onto a second line of the bar on a 1920-wide window; not looked at
 narrower. Not looked at in a browser: choosing another hour while the
@@ -671,7 +680,10 @@ whether `baojian` holds `spiritSeat: tianpan` beside `tongzong`, since
 None of the 32 cases was found in another work's extract, which locates
 nothing either way.
 
-**Owed a look by the user, and not blocking**: on 2026-10-25, phase 74's
+**Owed a look by the user, and not blocking**: on 2026-10-25, after phase
+74, the Italian `lens.focus` «Punto di partenza: {thing}», `lens.heading`
+and `lens.relation.*` reworded so no preposition stands before a name, and
+the two seams `cli.between.said` and `.items`. Also on 2026-10-25, phase 74's
 strings, written under the `reader-copy` skill and read by nobody else —
 `web.note.qizhengFour`, `.qizhengThree`, `.qizhengFrame` and `.taiyiPalaces`,
 the page's own sentences for the notes under those boards;
@@ -939,13 +951,6 @@ prose, which a third language pays for and derived text does not. →
   that also holds a hanzi, so two registers of one drawing are set unalike.
   It wants a text engine, or a resvg resolving a font stack a character at a
   time. No surface asks for a PNG. `familiesByScript` in `png.ts`.
-- **An em dash reaches the Italian drawings and transcripts from the code.**
-  `divergenceLines` in `packages/core/src/format.ts` joins a school's label to
-  its value with a fixed `' — '`, and `BETWEEN` in `packages/plate/src/svg.ts`
-  separates the Qi Men captions the same way, so «L’anno di questa tavola
-  comincia — a 立春» is set in Italian. The separator wants a catalog key,
-  the dash in `en.ts` and a colon in `it.ts`; the tests that look for the dash
-  move with it. Seen on 2026-10-18 and older than that day.
 
 ## 6. What is refused and stays refused
 

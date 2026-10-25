@@ -426,7 +426,7 @@ export const it: Record<MessageKey, string> = {
   'lens.layers': 'Tieni',
   'lens.phases': 'Tieni le fasi',
   'lens.whole': 'Tavola intera',
-  'lens.focus': 'A partire da {thing}',
+  'lens.focus': 'Punto di partenza: {thing}',
   'lens.release': 'Deseleziona',
   'lens.toward': 'In relazione con',
   'lens.kinds': 'Relazioni',
@@ -446,7 +446,7 @@ export const it: Record<MessageKey, string> = {
   'lens.way.phase.said': 'Scegli una fase: ciò che le appartiene resta com’è e il resto della tavola sfuma.',
   'lens.wheel': 'Nel cerchio delle cinque fasi ogni fase genera la fase successiva e domina la fase che si trova due posti più avanti.',
   'lens.key': 'Come sono disegnate le relazioni',
-  'lens.heading': 'Come il resto della tavola si rapporta a {thing}',
+  'lens.heading': 'Come il resto della tavola sta in rapporto con {thing}',
   'lens.empty': 'Scegli con quali nomi metterlo in relazione.',
   'lens.at': '{layer}, {where}',
   'lens.where.palace': 'palazzo {palace}',
@@ -454,12 +454,16 @@ export const it: Record<MessageKey, string> = {
   'lens.where.transmission.chu': 'prima trasmissione',
   'lens.where.transmission.zhong': 'trasmissione mediana',
   'lens.where.transmission.mo': 'ultima trasmissione',
-  'lens.relation.wosheng': 'generazione, da {thing} a qui',
-  'lens.relation.shengwo': 'generazione, da qui a {thing}',
-  'lens.relation.woke': 'dominio, da {thing} a qui',
-  'lens.relation.kewo': 'dominio, da qui a {thing}',
-  'lens.relation.bihe': 'stessa fase di {thing}',
-  'lens.relation.duigong': 'il palazzo opposto a {thing}',
+  // {thing} is a name whose gloss may open on an article, «la tenuità
+  // purpurea», and a bare preposition before it would print «da la» where
+  // Italian contracts. So no preposition stands in front of it: the name is a
+  // subject, an object, or follows «con», which does not contract.
+  'lens.relation.wosheng': 'generazione: {thing} genera ciò che sta qui',
+  'lens.relation.shengwo': 'generazione: ciò che sta qui genera {thing}',
+  'lens.relation.woke': 'dominio: {thing} domina ciò che sta qui',
+  'lens.relation.kewo': 'dominio: ciò che sta qui domina {thing}',
+  'lens.relation.bihe': 'la stessa fase che ha {thing}',
+  'lens.relation.duigong': 'il palazzo che ha di fronte {thing}',
   'lens.relation.wuhe': 'il tronco con cui {thing} si unisce',
   'lens.relation.guiyuan': 'il palazzo in cui {thing} è di casa',
   'lens.relation.sanfang': 'un palazzo della triade in cui sta {thing}',
@@ -2485,6 +2489,13 @@ export const it: Record<MessageKey, string> = {
   'cli.combination.unattributedApart':
     'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo. Gli altri valori non appartengono tutti a uno stesso testo.',
   'cli.combination.and': ' e ',
+  // The colon is the Italian turn for what English makes with a dash: «Il ju
+  // si determina: dal giorno». A value carrying a colon of its own then has
+  // two, which Italian reads as a thing and its explanation.
+  'cli.between.said': ': ',
+  // Two things set side by side on a caption, which neither introduces the
+  // other: the middle dot the day board's caption already uses.
+  'cli.between.items': ' · ',
   'label.witness.engine': 'una costruzione propria del motore',
   'cli.heading.terms': 'Termini solari del {year}',
   'cli.heading.calendar': 'Data lunare',

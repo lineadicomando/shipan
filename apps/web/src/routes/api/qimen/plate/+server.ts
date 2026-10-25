@@ -50,6 +50,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
         },
         compass: labels.direction,
         captions: {
+          between: t('cli.between.items'),
           ju: `${day.yang ? t('cli.value.yangDun') : t('cli.value.yinDun')} · ${t(`label.term.${day.term.id}` as MessageKey)} ${day.term.hanzi}`,
           pillars: [
             moment.pillars.year,
@@ -96,6 +97,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       // without the page around it, it still has to say which way it faces.
       compass: labels.direction,
       captions: {
+        between: t('cli.between.items'),
         ju: `${chart.ju.yang ? t('cli.value.yangDun') : t('cli.value.yinDun')} ${chart.ju.number}`,
         pillars: PILLARS,
         // Everything from here down is what a page sets in type under the

@@ -146,7 +146,7 @@ function timeOf(julianDayUT: number, timezone: string): string {
 
 function term(solarTerm: SolarTerm, timezone: string, t: Translator): string {
   const gloss = named(solarTerm.term, `label.term.${solarTerm.term.id}` as MessageKey, t);
-  return `${gloss} — ${timeOf(solarTerm.julianDayUT, timezone)}`;
+  return `${gloss}${t('cli.between.said')}${timeOf(solarTerm.julianDayUT, timezone)}`;
 }
 
 function lunar(date: LunarDate, t: Translator): string {
@@ -369,7 +369,7 @@ export function saidDivergences(
 /**
  * The same, as finished lines — for a surface that draws rather than sets.
  *
- * The colon is here and not at four callers: a drawing writes what it is
+ * The seam is here and not at four callers: a drawing writes what it is
  * handed, so the one place that decides how a divergence reads on a picture is
  * this one. `saidDivergences` stays beside it for a caller that has a table.
  */
@@ -379,11 +379,11 @@ export function divergenceLines(
   layers: object | null,
   t: Translator,
 ): string[] {
-  // An em dash and not a colon: several of the glosses carry a colon of their
-  // own — «by thirds of the term: 拆補 chāibǔ» — and a line with two of them
-  // reads as a list of three things rather than as one thing said twice.
+  // The seam is the catalog's: an em dash in English, where several glosses
+  // carry a colon of their own, and a colon in Italian, which has no dash.
+  const between = t('cli.between.said');
   const lines = saidDivergences(board, options, layers, t).map(
-    (row) => `${row.label} — ${row.said}`,
+    (row) => `${row.label}${between}${row.said}`,
   );
   const combination = saidCombination(board, options, t);
   return combination === undefined ? lines : [...lines, combination];
