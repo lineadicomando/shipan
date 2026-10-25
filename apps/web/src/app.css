@@ -183,6 +183,17 @@
 :root { --side: 22rem; }
 
 /*
+ * The page's own measure, and the board's column in it: what the shell leaves
+ * a board once the column beside it and the bench's gap are taken. Said here
+ * so that a board drawn outside a page — the scan's dialog — can be drawn at
+ * the size the section draws it, and not at a size of its own.
+ */
+:root {
+  --shell: 72rem;
+  --bench-board: calc(var(--shell) - 2.5rem - var(--side) - 2rem);
+}
+
+/*
  * The bench itself: the board, the column beside it, and the key under it.
  *
  * One column on a narrow or upright window, the side under the board — never

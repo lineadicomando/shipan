@@ -129,7 +129,7 @@
 <style>
   /* The gutter narrows with the screen: at 1.25rem a side, a phone spends a
      tenth of its width on margins. */
-  .shell { max-width: 72rem; margin: 0 auto; padding: 1rem clamp(0.75rem, 4vw, 1.25rem) 3rem; }
+  .shell { max-width: var(--shell); margin: 0 auto; padding: 1rem clamp(0.75rem, 4vw, 1.25rem) 3rem; }
 
   /*
    * What the page is read off while the rain falls behind it.

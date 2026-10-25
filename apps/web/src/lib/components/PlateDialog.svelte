@@ -418,22 +418,26 @@
      * configurations — runs under both, across the dialog.
      */
     dialog.large .body {
-      grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem);
+      /*
+       * The board at the measure the 奇門 section draws it at — the column a
+       * bench leaves it in the page (`--bench-board`), and the window's height
+       * less what stands above a board (`--above`), both in `app.css` — and no
+       * wider than the dialog leaves beside the column. The first column
+       * is exactly that wide and the pair is centred, so the lens stands at
+       * the bench's gap from the board, as it does on the section, rather
+       * than across whatever the window had to spare.
+       */
+      --dialog-board: min(var(--bench-board), calc(96vw - var(--side) - 4rem), calc(100svh - var(--above)));
+      grid-template-columns: var(--dialog-board) var(--side);
       grid-template-rows: auto 1fr;
+      column-gap: 2rem;
+      justify-content: center;
     }
     dialog.large .board { grid-column: 1; grid-row: 1; align-self: start; }
     dialog.large .side { grid-column: 2; grid-row: 1 / span 2; }
     dialog.large .under { grid-column: 1; grid-row: 2; }
     dialog.large .wide { grid-column: 1 / -1; }
-    dialog.large .board .screen {
-      /* The height budget buys eight sevenths of itself in width: what has to
-         fit is everything down to the foot of the board, which is the
-         caption's eighth plus the grid's three quarters — see the same sum in
-         the chart section. */
-      inline-size: min(calc(96vw - 28rem), calc((90vh - 5rem) * 8 / 7));
-      block-size: auto;
-      max-inline-size: 100%;
-    }
+    dialog.large .board .screen { inline-size: 100%; block-size: auto; }
   }
   .head button {
     border: 0;
