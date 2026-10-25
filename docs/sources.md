@@ -3683,6 +3683,7 @@ independent sources naming the same thing the same way**.
 | a lens on a day: 對宮 | the Luoshu, as on the hour board | the same four pairs, asserted |
 | a lens on 六壬: 生剋 | the same five relations, between any two names with a phase: the two plates, the lessons, the transmissions | the 賊剋 the board is drawn by: on every 賊剋 board the 初傳 stands over a lesson the lens names in control |
 | a lens on 七政四餘: 生剋 | the same five relations, between any two of the nine bodies with a phase | 《御定五星精義》's 論恩難仇用: twenty cells, five planets by four relations, each matched |
+| a lens on 紫微斗數: 生剋 | the same five relations, between any two stars with one phase | no list; the twenty-five cells against the two cycles |
 
 **The three a lens shows are relations and never readings of them.** A reader
 who picks a thing on a board is shown how everything else stands to it
@@ -3723,6 +3724,18 @@ and how the body fares there — and a 生剋 drawn from a body to its palace's
 owner's phase would be a reading the art does not make. A palace may hold
 several bodies, which is why the descriptor tells names apart by identifier
 on this board (`crowded`).
+
+**On 紫微斗數 the lens relates the stars that have one phase.** 卷二 gives a
+phase to every star it places bar thirteen, and three it gives two — 天同屬水金,
+貪狼屬水木, 七殺屬火金 — which the book means both of. A relation wants one phase
+at each end, so `ziweiLens` keeps those three by their kind as it does the
+thirteen, rather than pick one. The palaces have none in the lens, the art
+reading a star's grade where it stands. **What the art reads across, 對宮 and
+三方四正, is not drawn yet.** The 續道藏 紫微斗數 says to read a star's phase
+against what 「時照三方四正，和合之宮」 holds, and the 全書's 卷一 to 「分對宮之
+體用，定三合之源流」; both are located in transcriptions and neither is read on
+a plate, and the Ming 南陽堂 woodblock held here is where the 全書's is to be
+read. A lens draws either after its row.
 
 **The list that tests 門迫 is two cells shorter than the rule.** 《統宗》卷一
 迫 — ctext, and 故宮珍本叢刊 第426冊 page 13 — prints eight lines — 開門臨三四宮（金克木）· 休門臨九宮 · 生門臨一宮 ·

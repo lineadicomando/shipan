@@ -214,7 +214,8 @@ on 2026-10-18. What `main` carries since 2026-10-15 is of eleven days:
   (`dayLens`), its nine stars kept by kind for want of a registered phase.
   Then item 3: 六壬 (`liurenLens`), its generals kept by kind. Then item 4:
   七政四餘 (`qizhengLens`), the bodies alone, the remainders' phases read
-  from the 五星精義. Phase 72. The `lens` that `routes/api/qimen/+server.ts` answers changed shape,
+  from the 五星精義. Then item 5: 紫微斗數 (`ziweiLens`), the stars with one
+  phase, the press shared with the row. Phase 72. The `lens` that `routes/api/qimen/+server.ts` answers changed shape,
   which is what moved the version.
 
 `main` is pushed to `origin/main` as of 2026-10-18; the commits of
@@ -320,12 +321,16 @@ why). The code to copy from is the 奇門 hour board:
    work's 十二宮所屬 and 七政歸垣, neither registered) is a relation the lens
    should show, which wants both tables registered first. 《星度指南》's copy
    of the 四餘所屬 is located in the 合編's recovered text and not read.
-5. **紫微斗數.** Every star's 五行 is transmitted (陰陽五行 in 全書's tables)
-   and some are disputed: register before drawing. 三方四正 is the art's own
-   structural relation, derived from the twelve seats, and is the obvious
-   second link kind beside 對宮; the 四化 flights from a seat are a third.
-   The page already holds the board in the page with a press going to the row
-   (`pin={false}`): the lens has to share the press with that.
+5. **Done on 2026-10-25** (phase 72): 紫微斗數 has its lens, `ziweiLens`,
+   the five relations between the stars 卷二 gives one phase. The three it
+   gives two (天同, 貪狼, 七殺) and the thirteen it passes over are kept by
+   kind; the palaces are given none. A press on the board goes to the row
+   until the reader takes up the lens (a way chosen, or a lens laid), and to
+   the lens after. **對宮 and 三方四正 wait for a reading**: 「分對宮之體用，
+   定三合之源流」 (全書 卷一) and the 續道藏's 「時照三方四正」 are located in
+   transcriptions; the 全書's is to be read on the Ming 南陽堂 woodblock held
+   in `texts/ziwei/`, then registered, then drawn as links. The 四化 flights
+   wait behind them.
 6. **太乙.** The sixteen gods carry `element` in the drawing's type; whether
    each is registered is to be checked (`.claude/skills/shushu/disciplines/taiyi.md`, «the
    elements of 文昌 and 始擊 in the 金鏡 against the register's»). The nine

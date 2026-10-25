@@ -69,15 +69,26 @@ there is keyed by its identifier as well. Checking the claim that the
 Sun's and the Moon's rows fit no phase, the Moon's turned out to read as
 water's; it is recorded and left for the user.
 
+## 紫微斗數
+
+The fifth step: `ziweiLens`, answered by `/api/ziwei`. The phases were
+registered already, at rung 2; what needed deciding was the three stars the
+book gives two phases, and the engine had decided it before the lens: a
+surface that can show one phase shows none for them rather than pick, so a
+lens keeps them by kind. The roadmap named 對宮 and 三方四正 as the obvious
+links; the passages are located in transcriptions only, so they wait for the
+plate. The press was the page's already — a seat pressed went to its row —
+and is shared: the row's until the reader takes up the lens.
+
 ## What it moved
 
-The first step moved nothing a reader sees; the second, third and fourth
-gave the board of a day, 六壬 and 七政四餘 a lens they had not had. The answer of `/api/qimen` moved with the first — its `lens`
+The first step moved nothing a reader sees; the four after it gave the board
+of a day, 六壬, 七政四餘 and 紫微斗數 a lens they had not had. The answer of `/api/qimen` moved with the first — its `lens`
 carries `seats`, `layers`, `phased`, `linkIds` and `links` where it carried
 `facing` and `wuhe`, and a seat is a string — so it is 0.34.0 by the first
 of the three questions. The roadmap had said this step would move no version,
 reasoning from the page and not from the answer.
 
-The lenses of the day, 六壬 and 七政四餘 ride in the same version: 0.34.0 has not left the branch,
+The lenses of the day, 六壬, 七政四餘 and 紫微斗數 ride in the same version: 0.34.0 has not left the branch,
 and a version is about what an answer has stopped being since the last one
-shipped. Their five rows are new; the rows phase 71 registered do not move.
+shipped. Their six rows are new; the rows phase 71 registered do not move.

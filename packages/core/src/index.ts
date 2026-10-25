@@ -188,6 +188,13 @@ export {
   type QizhengLayer,
   type QizhengLens,
 } from './qizheng-lens.js';
+export {
+  ZIWEI_LAYERS,
+  ZIWEI_LENS_LAYERS,
+  ziweiLens,
+  type ZiweiLayer,
+  type ZiweiLens,
+} from './ziwei/lens.js';
 
 export {
   CI,

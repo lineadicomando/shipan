@@ -2,7 +2,12 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { sayLayer } from '$lib/board';
+  import { glyph } from '$lib/glyph';
+  import { HeldLens } from '$lib/held-lens.svelte';
+  import type { ZiweiBoard, ZiweiLens } from '@shipan/core';
+  import type { MessageKey } from '@shipan/i18n';
+  import LensReading from '$lib/components/LensReading.svelte';
+  import LensSide from '$lib/components/LensSide.svelte';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import PageHead from '$lib/components/PageHead.svelte';
   import Schools from '$lib/components/Schools.svelte';
@@ -133,12 +138,12 @@
    * destination, and needs no second variable to say which end that is.
    */
   let found = $state<string | null>(null);
-  let held: ReturnType<typeof setTimeout> | undefined;
+  let fading: ReturnType<typeof setTimeout> | undefined;
 
   function mark(branch: string) {
-    clearTimeout(held);
+    clearTimeout(fading);
     found = branch;
-    held = setTimeout(() => (found = null), 2200);
+    fading = setTimeout(() => (found = null), 2200);
   }
 
   /** From a seat on the board to the row that says what stands in it. */
@@ -200,13 +205,55 @@
     void warm.decode().catch(() => {});
   });
 
+  /**
+   * The lens: what the reader asked to see on the board, if anything. The
+   * state, its fragment and what a press does are `HeldLens`'s; what is this
+   * section's is how a star and a palace are said.
+   */
+  const lens = $derived<ZiweiLens | undefined>(result?.lens);
+
+  type Named = { id: string; hanzi: string; pinyin?: string };
+
+  /** A name on the board in words: its gloss, its hanzi and its reading. */
+  function nameAt(seat: string, layer: string, id?: string): string | undefined {
+    const palace = (result?.ziwei as ZiweiBoard | undefined)?.palaces.find((one) => one.branch.id === seat);
+    if (!palace) return undefined;
+    let at: { thing: Named; key: string } | undefined;
+    if (layer === 'star' || layer === 'minor') {
+      const star = palace.stars.find((one) => one.star.id === id)?.star;
+      at = star && { thing: star, key: `label.ziwei.${star.id}` };
+    } else if (layer === 'house') at = { thing: palace.house, key: `label.ziweihouse.${palace.house.id}` };
+    else if (layer === 'ground') at = { thing: palace.branch, key: `label.branch.${palace.branch.id}` };
+    return at && `${t(at.key as MessageKey)} ${glyph(at.thing)}`;
+  }
+
+  /** A palace as a pair says it: the seat that fell there. */
+  const seatName = (seat: string): string => nameAt(seat, 'house') ?? seat;
+
+  /** Where a name stands, after its layer: the palace. */
+  const seatPlace = (seat: string): string => t('lens.where.palace', { palace: seatName(seat) });
+
+  const held = new HeldLens({ lens: () => lens, t: () => t, nameAt, seatName, seatPlace });
+
+  /**
+   * A press on the board is shared. Until the reader takes up the lens — a
+   * way chosen in the column, or a lens already laid — it goes to the row
+   * that says what stands in the seat, as it always did; from then on it is
+   * the lens's. The buttons over the seats, which the keyboard reaches, go
+   * to the row either way.
+   */
+  const lensing = $derived(Boolean(held.way || held.laid));
+
   /** Reading is navigating: the address holds the moment, here and on the chart. */
   async function submit(event: SubmitEvent): Promise<void> {
     event.preventDefault();
     busy = true;
     try {
       const query = momentQuery(asked, { gender });
-      await goto(`${page.url.pathname}${query ? `?${query}` : ''}`, {
+      // The lens goes with it: it is in the fragment, and a new board is
+      // looked at the same way.
+      const fragment = held.fragment;
+      await goto(`${page.url.pathname}${query ? `?${query}` : ''}${fragment ? `#${fragment}` : ''}`, {
         replaceState: true,
         noScroll: true,
         keepFocus: true,
@@ -219,6 +266,8 @@
     if (!data.failure && data.result) await panel?.close();
   }
 </script>
+
+<svelte:window onclick={held.pressedOutside} onkeydown={held.escaped} />
 
 <PageHead {t} />
 
@@ -283,18 +332,21 @@
     <div class="bench">
       <div class="board" class:swapped={onPaper}>
         <!-- A press on a seat goes to its row, as it did before the board
-             was held in the page; so a tap pins no tip here, and the layer of a
-             name is said to a mouse alone. -->
+             was held in the page, until the reader takes up the lens
+             (`lensing`); so a tap pins no tip here, and the layer of a name
+             is said to a mouse alone. -->
         <div class="screen" bind:this={screen}>
           <InlineBoard
             src={plate}
             width={900}
             height={1150}
-            tip={(spot) => sayLayer(spot, t)}
+            tip={held.tip}
             pin={false}
+            lens={held.view}
             onhover={(spot) => (pointed = spot?.seat ?? null)}
             onpick={(spot) => {
-              if (spot?.seat) go(spot.seat);
+              if (lensing) held.pick(spot);
+              else if (spot?.seat) go(spot.seat);
             }}
             ondrawn={({ width, height, inline }) => {
               sheet = { width, height };
@@ -343,9 +395,14 @@
         {/each}
       </div>
       <div class="side">
+        <!-- The circle, the mode and the lens, then the key to the names. -->
+        <LensSide {t} {held} />
         <NameKey {t} groups={result.key ?? []} />
       </div>
     </div>
+
+    <!-- What the lens draws, said in words, at the page's measure. -->
+    <LensReading {t} {held} {seatName} />
 
     <div>
       <Schools

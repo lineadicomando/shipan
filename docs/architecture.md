@@ -279,7 +279,7 @@ two boards. The cursor is the only announcement it gets. A sheet has no
 pointer, so in print the same words are set once instead, as an empty seat
 under the board (`LayerLegend`).
 
-The second is **a lens**, on the 奇門 section — the board of an hour and of a day — and on 六壬's and 七政四餘's: the reader keeps a kind of
+The second is **a lens**, on the 奇門 section — the board of an hour and of a day — and on 六壬's, 七政四餘's and 紫微斗數's: the reader keeps a kind of
 name or a phase and the rest of each seat recedes, presses a name and is
 shown how the rest stands to it, or presses the ground of two palaces and is
 shown how they stand to each other — the five relations of the phases, 對宮
@@ -332,7 +332,10 @@ are said. A pair is laid on the seats the descriptor names for it
 the transmissions, whose names a lens still keeps and relates. Where a seat holds
 several names in one layer — the bodies in a palace of the 七政四餘 ring — the
 descriptor says so (`crowded`) and a name is keyed by its identifier as well
-as its seat and layer. **The lens is drawn in the browser and never by `plate`**:
+as its seat and layer. On 紫微斗數 a press on the board also goes to the row
+that says what is in the seat, and it stays the row's until the reader takes
+up the lens — a way chosen in the column, or a lens laid — and is the lens's
+after; the buttons the keyboard reaches go to the row either way. **The lens is drawn in the browser and never by `plate`**:
 a drawing is made on the server, and which name somebody pressed is not
 something the server is told, so the receding is an attribute set on the
 marks in the shadow root and the relations are a layer of the page's laid
