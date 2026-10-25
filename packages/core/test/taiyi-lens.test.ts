@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import { DEFAULT_TAIYI_OPTIONS, taiyiBoard } from '../src/taiyi.js';
-import { TAIYI_LAYERS, TAIYI_LENS_LAYERS, rimSeatOf, taiyiLens } from '../src/taiyi-lens.js';
+import { ROLE_PHASES, TAIYI_LAYERS, TAIYI_LENS_LAYERS, rimSeatOf, taiyiLens } from '../src/taiyi-lens.js';
 
 const lay = (year: number) => taiyiBoard({ year }, DEFAULT_TAIYI_OPTIONS);
 
 describe('the relations a lens may show on a 太乙 board', () => {
-  it('describes the board as the drawing marks it, the gods alone with a phase and no pair', () => {
+  it('describes the board as the drawing marks it, gods and roles with a phase, and no pair', () => {
     const lens = taiyiLens(lay(724));
     expect(lens.board).toBe('taiyi');
     expect(lens.layers).toEqual(TAIYI_LAYERS);
@@ -14,17 +14,36 @@ describe('the relations a lens may show on a 太乙 board', () => {
     expect(lens.linkIds).toEqual([]);
     // Sixteen seats of the rim and the palaces, the four corners named once.
     expect(lens.seats).toHaveLength(16 + 5);
+    expect(lens.crowded).toEqual(['general']);
   });
 
-  it('lists the sixteen gods on their seats with their phases, and nothing in the palaces', () => {
+  it('lists the sixteen gods on their seats, and 太乙 and the four generals in their palaces', () => {
     for (const year of [724, 1984, 2026]) {
       const board = lay(year);
       const { things } = taiyiLens(board);
-      expect(things).toHaveLength(16);
+      expect(things).toHaveLength(16 + 5);
       for (const god of board.gods) {
         expect(things).toContainEqual({ seat: rimSeatOf(god), layer: 'god', id: god.id, element: god.element });
       }
+      expect(things).toContainEqual({ seat: board.taiyi.palace.id, layer: 'taiyi', id: 'taiyi', element: 'mu' });
+      expect(things).toContainEqual({ seat: board.host.general.id, layer: 'general', id: 'hostGeneral', element: 'jin' });
+      expect(things).toContainEqual({ seat: board.guest.general.id, layer: 'general', id: 'guestGeneral', element: 'shui' });
     }
+  });
+
+  it('gives the roles the phases of the stars 推五將所主法 makes them the essence of', () => {
+    // 監將 (太乙) 歲星 木, 主大將 太白 金, 客大將 辰星 水; the 統宗 gives each 參將
+    // what its general generates: 金 → 水, 水 → 木.
+    expect(ROLE_PHASES).toEqual({
+      taiyi: 'mu',
+      hostGeneral: 'jin',
+      hostAssistant: 'shui',
+      guestGeneral: 'shui',
+      guestAssistant: 'mu',
+    });
+    const { phases } = taiyiLens(lay(724));
+    expect(phases[ROLE_PHASES.hostGeneral][ROLE_PHASES.hostAssistant]).toBe('wosheng');
+    expect(phases[ROLE_PHASES.guestGeneral][ROLE_PHASES.guestAssistant]).toBe('wosheng');
   });
 
   it('reads from 高叢 the relation 卷六 names each god by', () => {

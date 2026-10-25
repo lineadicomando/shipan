@@ -416,6 +416,8 @@ export const en = {
   // thing the reader started from.
   'label.relation.duigong': 'facing palace',
   'label.relation.wuhe': 'combined stem',
+  'label.relation.guiyuan': 'home palace',
+  'label.relation.sanfang': 'palace of the triad',
 
   // A lens on a board: the reader keeps some names, or presses one and is
   // shown how the rest stands to it. Every line here names what the control
@@ -485,6 +487,8 @@ export const en = {
   'lens.relation.bihe': 'same phase as {thing}',
   'lens.relation.duigong': 'the palace facing {thing}',
   'lens.relation.wuhe': 'the stem {thing} combines with',
+  'lens.relation.guiyuan': 'the palace {thing} is at home in',
+  'lens.relation.sanfang': 'a palace of the triad {thing} stands in',
 
   // The post horse, and which pillar's branch it was reckoned from. Both are
   // named in the tradition and neither stands for the other.

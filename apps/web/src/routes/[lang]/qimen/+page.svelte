@@ -2,10 +2,9 @@
   import { goto, invalidateAll } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { glyph } from '$lib/glyph';
   import { HeldLens } from '$lib/held-lens.svelte';
+  import { qimenWords } from '$lib/lens-words';
   import type { DayLens, QimenLens } from '@shipan/core';
-  import type { MessageKey } from '@shipan/i18n';
   import LensReading from '$lib/components/LensReading.svelte';
   import LensSide from '$lib/components/LensSide.svelte';
   import { carried } from '$lib/parameters';
@@ -144,45 +143,17 @@
     },
   );
 
-  /** The board's lens, of the hour or of the day: each answer carries its own. */
-  const lens = $derived<QimenLens | DayLens | undefined>(data.lens);
-
-  /**
-   * The contents of a palace by its Luoshu number, on either board: both lay
-   * nine palaces in the order of their numbers.
-   */
-  const at = (seat: string): Record<string, { id: string; hanzi: string; pinyin?: string } | undefined> | undefined =>
-    chart
-      ? ((chart as { palaces: { palace: { number: number } }[] }).palaces.find(
-          (cell) => String(cell.palace.number) === seat,
-        ) as unknown as Record<string, { id: string; hanzi: string; pinyin?: string } | undefined>)
-      : undefined;
-
-  /** The catalog a name is glossed from, by its layer. The day's nine stars are not the hour's. */
-  const prefixOf = (layer: string): string =>
-    layer === 'star' && ofTheDay
-      ? 'dayStar'
-      : ({ heaven: 'stem', earth: 'stem', palace: 'palace', star: 'star', gate: 'gate', spirit: 'spirit' } as Record<string, string>)[layer] ?? layer;
-
-  /** A name on the board in words: its gloss, its hanzi and its reading. */
-  function nameAt(seat: string, layer: string): string | undefined {
-    const thing = at(seat)?.[layer];
-    if (!thing) return undefined;
-    return `${t(`label.${prefixOf(layer)}.${thing.id}` as MessageKey)} ${glyph(thing)}`;
-  }
-
-  /** A palace as a pair says it: its number and its name. */
-  const seatName = (seat: string): string => `${seat} ${nameAt(seat, 'palace') ?? ''}`;
-
   /**
    * The lens: what the reader asked to see on the board, if anything. The
-   * state, its fragment, and what a press does are `HeldLens`'s; what is
-   * this section's is how a name and a palace are said.
+   * state, its fragment and what a press does are `HeldLens`'s. Each answer,
+   * of the hour or of the day, carries its own lens.
    */
-  /** Where a name stands, after its layer: the palace by its number. */
-  const seatPlace = (seat: string): string => t('lens.where.palace', { palace: seat });
+  const lens = $derived<QimenLens | DayLens | undefined>(data.lens);
 
-  const held = new HeldLens({ lens: () => lens, t: () => t, nameAt, seatName, seatPlace });
+  /** How the board's names and seats are said, shared with the consultation. */
+  const words = $derived(qimenWords(chart, t));
+
+  const held = new HeldLens({ lens: () => lens, t: () => t, words: () => words });
 
   let busy = $state(false);
   let panel: FormPanel | undefined = $state();
@@ -366,7 +337,7 @@
     </div>
 
     <!-- What the lens draws, said in words, at the page's measure. -->
-    <LensReading {t} {held} {seatName} />
+    <LensReading {t} {held} />
 
     {#if ofTheDay}
       <div class="reading">

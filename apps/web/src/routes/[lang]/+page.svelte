@@ -66,7 +66,7 @@
   import { replaceState } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { isMarkedBoard, sayLayer } from '$lib/board';
+  import { isMarkedBoard } from '$lib/board';
   import {
     INSTRUMENTS,
     genderValues,
@@ -92,11 +92,27 @@
   import StrengthLegend from '$lib/components/StrengthLegend.svelte';
   import TaiyiReading from '$lib/components/TaiyiReading.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
+  import LensReading from '$lib/components/LensReading.svelte';
+  import LensSide from '$lib/components/LensSide.svelte';
+  import NameKey from '$lib/components/NameKey.svelte';
+  import { HeldLens } from '$lib/held-lens.svelte';
+  import { WHOLE } from '$lib/lens';
+  import { taiyiKeyOf } from '$lib/key';
+  import {
+    liurenWords,
+    qimenWords,
+    qizhengWords,
+    taiyiWords,
+    ziweiWords,
+    type LensWords,
+  } from '$lib/lens-words';
+  import type { Said } from '@shipan/plate';
   import type { MessageKey } from '@shipan/i18n';
   // Types only, never a value: a value import from `core` would drag the
   // ephemerides and a native module into the browser bundle.
   import type {
     Bazi,
+    Lens,
     LiurenBoard,
     Moment,
     QimenChart,
@@ -275,6 +291,38 @@
    */
   let castMoment = $state<Moment | null | undefined>();
   let castLaidBy = $state<LaidBy | undefined>();
+  /**
+   * The lens the cast board came with, and the key to its names the endpoint
+   * handed beside it — 六壬's readings, 七政四餘's and 紫微斗數's key. 太乙's
+   * key is built here, as its section builds it, its endpoint being told no
+   * language (`lib/key.ts`).
+   */
+  let castLens = $state<Lens | undefined>();
+  let castKey = $state<readonly (readonly Said[])[]>([]);
+  const key = $derived(chart?.id === 'taiyi' ? taiyiKeyOf(chart.board, t) : castKey);
+
+  /**
+   * The lens, as every section holds one: nothing on until the reader asks,
+   * and where they looked kept in the fragment, which no request carries and
+   * no prompt reads. Said in the words of the board that was cast.
+   */
+  const words = $derived.by<LensWords>(() => {
+    switch (chart?.id) {
+      case 'qimen':
+        return qimenWords(chart.board, t);
+      case 'liuren':
+        return liurenWords(chart.board, t);
+      case 'qizheng':
+        return qizhengWords(chart.board, t);
+      case 'ziwei':
+        return ziweiWords(chart.board, t);
+      case 'taiyi':
+        return taiyiWords(chart.board, t);
+      default:
+        return { nameAt: () => undefined, seatName: (seat) => seat, seatPlace: (seat) => seat };
+    }
+  });
+  const held = new HeldLens({ lens: () => castLens, t: () => t, words: () => words });
   /** The fields, which withdraw once they have answered. */
   let panel: FormPanel | undefined = $state();
 
@@ -531,6 +579,8 @@
         castInstrument = undefined;
         castMoment = undefined;
         castLaidBy = undefined;
+        castLens = undefined;
+        castKey = [];
         address = '';
         failure = body as Failure;
         return;
@@ -602,7 +652,15 @@
         at = `${cast.date} ${cast.time.slice(0, 5)}`;
       }
       castFrom = fields;
+      // A lens laid on one art means nothing on another: a board of a
+      // different instrument opens whole, in the mode the reader was in.
+      if (castInstrument?.id !== instrument.id) {
+        held.state = { ...WHOLE, extended: held.state.extended };
+        held.way = undefined;
+      }
       castInstrument = instrument;
+      castLens = body.lens ?? undefined;
+      castKey = body.readings ?? body.key ?? [];
       // Only where one was put. The field is merely *hidden* under the kinds
       // that ask nothing, so a question typed under Qi Men and never cast is
       // still in this component's state when a 八字 or a 太乙 board comes back —
@@ -625,6 +683,8 @@
       // not is the one a later reader trusts.
       castMoment = undefined;
       castLaidBy = undefined;
+      castLens = undefined;
+      castKey = [];
       address = '';
       // The request itself failed, so there is no code to translate — and it
       // may well be the first press, when nothing was ever cast to be "read
@@ -642,9 +702,11 @@
     if (chart && !failure) await panel?.close();
   }
 
-  // 奇門's reading sets in type everything its drawing can carry under the
-  // grid, so that board is asked for bare. See `readPlateOptions`.
-  const bare = $derived(shown.api === 'qimen' ? '&bare=true' : '');
+  // Every drawing is asked for bare, as the sections ask: 奇門's reading sets
+  // in type what its drawing would carry under the grid, and the other four
+  // have their key to the names set in the column beside the board. See
+  // `readPlateOptions` and `docs/architecture.md` § "The bench".
+  const bare = '&bare=true';
   const plate = $derived(
     `/api/${shown.api}/plate?${address}&scheme=${appearance.current}${bare}`,
   );
@@ -709,6 +771,8 @@
    */
   let at = $state('');
 </script>
+
+<svelte:window onclick={held.pressedOutside} onkeydown={held.escaped} />
 
 <PageHead {t} />
 
@@ -1183,30 +1247,43 @@
       {#if chart.id === 'bazi'}
         <PillarPlate pillars={chart.board.pillars} {t} />
       {:else if shown.plate}
-        <div class="board" class:swapped={onPaper}>
-          <div class="screen" style:--ratio={shown.plate.width / shown.plate.height}>
-            <InlineBoard
-              src={plate}
-              width={shown.plate.width}
-              height={shown.plate.height}
-              tip={(spot) => sayLayer(spot, t)}
-              ondrawn={(drawing) => (drawnAspect = drawing.height / drawing.width)}
-            />
+        <!-- The bench, as in every section: the board whole in the window,
+             and beside it the lens and the key to its names. See
+             `docs/architecture.md` § "The bench". -->
+        <div class="bench">
+          <div class="board" class:swapped={onPaper}>
+            <div class="screen" style:--ratio={shown.plate.width / shown.plate.height}>
+              <InlineBoard
+                src={plate}
+                width={shown.plate.width}
+                height={shown.plate.height}
+                tip={held.tip}
+                onpick={held.pick}
+                lens={held.view}
+                ondrawn={(drawing) => (drawnAspect = drawing.height / drawing.width)}
+              />
+            </div>
+            <!-- The same board in the light scheme, for paper and nothing else.
+                 Only drawn when the two differ — see `onPaper`. -->
+            {#if onPaper}
+              <img
+                src={paper}
+                alt=""
+                width={shown.plate.width}
+                height={shown.plate.height}
+                class="paper"
+              />
+            {/if}
+            {#if isMarkedBoard(chart.id)}<LayerLegend {t} board={chart.id} />{/if}
+            {#if shown.strengths}<StrengthLegend {t} />{/if}
           </div>
-          <!-- The same board in the light scheme, for paper and nothing else.
-               Only drawn when the two differ — see `onPaper`. -->
-          {#if onPaper}
-            <img
-              src={paper}
-              alt=""
-              width={shown.plate.width}
-              height={shown.plate.height}
-              class="paper"
-            />
-          {/if}
-          {#if isMarkedBoard(chart.id)}<LayerLegend {t} board={chart.id} />{/if}
-          {#if shown.strengths}<StrengthLegend {t} />{/if}
+          <div class="side">
+            <LensSide {t} {held} />
+            <NameKey {t} groups={key} />
+          </div>
         </div>
+        <!-- What the lens draws, said in words, at the page's measure. -->
+        <LensReading {t} {held} />
       {/if}
       <!-- `wide`: the board above has the page to itself, so what it was cast
            from is set as its caption — at the drawing's own measure, centred
@@ -1464,26 +1541,28 @@
      * same shape. The palaces are a square, 17cm either way, which a sheet
      * takes with room to spare; a ring of twelve is half again taller
      * than it is wide and would run off the bottom at the same measure. So the
-     * height is what is capped, a shade over what the palaces already print
-     * at, and a picture too tall for it narrows until it fits. The ring used
+     * height is what is capped — at what is left of an A4 sheet under the
+     * question and the instant that head it, so the board starts on the first
+     * sheet rather than leaving it nearly blank — and a picture too tall for
+     * it narrows until it fits. The ring used
      * to be held to 34rem on screen and inherited that on paper; on screen it
      * no longer is, and this is where that job actually belonged.
      *
      * Both bounds are maxima and the size itself is `auto`, which is the whole
      * trick: a replaced element keeps its ratio under a pair of maxima, and
      * gives it up under a width it was *told*. `inline-size: 17cm` with a
-     * `max-block-size` under it prints the board squashed — 17 wide by 24.5
+     * `max-block-size` under it prints the board squashed — 17 wide by 21
      * tall out of a picture that is neither.
      */
     img {
       inline-size: auto;
       max-inline-size: min(100%, 17cm);
-      max-block-size: 24.5cm;
+      max-block-size: 21cm;
     }
     /* The board held in the page is a box and not a replaced element, so it
        keeps no ratio of its own under a pair of maxima: the height bound is
        turned into a width through the drawing's ratio instead. */
-    .screen { inline-size: min(100%, 17cm, calc(24.5cm * var(--ratio))); }
+    .screen { inline-size: min(100%, 17cm, calc(21cm * var(--ratio))); }
     .swapped .screen { display: none; }
     .paper { display: block; }
   }

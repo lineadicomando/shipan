@@ -39,7 +39,7 @@
     /** A seat in words, as the heading says it. */
     seatName: (seat: string) => string;
     /** Where a name stands, in words, as a row or a column is headed: «palace 9». */
-    seatPlace: (seat: string) => string;
+    seatPlace: (seat: string, layer?: string) => string;
   } = $props();
 
   const seats = $derived(view.seats);
@@ -72,7 +72,7 @@
             <td></td>
             {#each columns as column (column)}
               <th scope="col">
-                <span>{layerWord(column)} · {seatPlace(b)}</span>
+                <span>{layerWord(column)} · {seatPlace(b, spotOfKey(column).layer)}</span>
                 <span class="glyph">{named(column)}</span>
               </th>
             {/each}
@@ -82,7 +82,7 @@
           {#each rows as row (row)}
             <tr>
               <th scope="row">
-                <span>{layerWord(row)} · {seatPlace(a)}</span>
+                <span>{layerWord(row)} · {seatPlace(a, spotOfKey(row).layer)}</span>
                 <span class="glyph">{named(row)}</span>
               </th>
               {#each columns as column (column)}

@@ -2,10 +2,9 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { glyph } from '$lib/glyph';
   import { HeldLens } from '$lib/held-lens.svelte';
+  import { taiyiWords } from '$lib/lens-words';
   import type { TaiyiBoard, TaiyiLens } from '@shipan/core';
-  import type { MessageKey } from '@shipan/i18n';
   import LensReading from '$lib/components/LensReading.svelte';
   import LensSide from '$lib/components/LensSide.svelte';
   import { sayFailure } from '$lib/moment';
@@ -101,32 +100,10 @@
    */
   const lens = $derived<TaiyiLens | undefined>(data.result?.lens);
 
-  /** The god on a seat of the rim, where one stands there. */
-  const godAt = (seat: string) =>
-    (board as TaiyiBoard | undefined)?.gods.find((god) =>
-      god.seat.kind === 'branch' ? god.seat.branch.id === seat : god.seat.palace.id === seat,
-    );
+  /** How the board's names and seats are said, shared with the consultation. */
+  const words = $derived(taiyiWords(board as TaiyiBoard | undefined, t));
 
-  /** A name on the board in words: its gloss, its hanzi and its reading. */
-  function nameAt(seat: string, layer: string): string | undefined {
-    if (layer !== 'god') return undefined;
-    const god = godAt(seat);
-    return god && `${t(`label.taiyishen.${god.id}` as MessageKey)} ${glyph(god)}`;
-  }
-
-  /** A seat of the rim in words: its branch, or its corner. */
-  function seatName(seat: string): string {
-    const god = godAt(seat);
-    if (!god) return seat;
-    return god.seat.kind === 'branch'
-      ? `${t(`label.branch.${god.seat.branch.id}` as MessageKey)} ${glyph(god.seat.branch)}`
-      : `${t(`label.palace.${god.seat.palace.id}` as MessageKey)} ${glyph(god.seat.palace)}`;
-  }
-
-  /** Where a god stands, after its layer: its seat of the rim. */
-  const seatPlace = (seat: string): string => t('lens.where.seat', { seat: seatName(seat) });
-
-  const held = new HeldLens({ lens: () => lens, t: () => t, nameAt, seatName, seatPlace });
+  const held = new HeldLens({ lens: () => lens, t: () => t, words: () => words });
 
   /**
    * Asking is navigating, and the answer arrives as the page's own data.
@@ -258,7 +235,7 @@
     </div>
 
     <!-- What the lens draws, said in words, at the page's measure. -->
-    <LensReading {t} {held} {seatName} />
+    <LensReading {t} {held} />
 
     <div>
       <TaiyiReading {board} {t} />
