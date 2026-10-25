@@ -174,6 +174,35 @@ export {
   type Yuejiang,
   type YuejiangId,
 } from './liuren.js';
+export {
+  LIUREN_LAYERS,
+  LIUREN_LENS_LAYERS,
+  liurenLens,
+  type LiurenLayer,
+  type LiurenLens,
+} from './liuren-lens.js';
+export {
+  QIZHENG_LAYERS,
+  QIZHENG_LENS_LAYERS,
+  qizhengLens,
+  type QizhengLayer,
+  type QizhengLens,
+} from './qizheng-lens.js';
+export {
+  ZIWEI_LAYERS,
+  ZIWEI_LENS_LAYERS,
+  ziweiLens,
+  type ZiweiLayer,
+  type ZiweiLens,
+} from './ziwei/lens.js';
+export {
+  TAIYI_LAYERS,
+  TAIYI_LENS_LAYERS,
+  rimSeatOf,
+  taiyiLens,
+  type TaiyiLayer,
+  type TaiyiLens,
+} from './taiyi-lens.js';
 
 export {
   CI,
@@ -378,9 +407,14 @@ export {
   horseOf,
   LENS_LAYERS,
   LENS_RELATION_IDS,
+  DAY_LAYERS,
+  DAY_LENS_LAYERS,
+  dayLens,
   LINKS,
   opposite,
+  QIMEN_LAYERS,
   qimenLens,
+  wuhePartner,
   relationOf,
   seasonElement,
   strengthOf,
@@ -404,7 +438,6 @@ export {
   type Ju,
   type Horse,
   type LensLayer,
-  type LensThing,
   type LinkId,
   type LinkName,
   type Palace,
@@ -413,6 +446,8 @@ export {
   type Pattern,
   type PatternId,
   type QimenChart,
+  type DayLens,
+  type QimenLayer,
   type QimenLens,
   type Relation,
   type RelationId,
@@ -435,6 +470,15 @@ export {
   type DayStar,
   type DayStarId,
 } from './dunjia/rijia.js';
+export {
+  lensNames,
+  phaseTable,
+  type Lens,
+  type LensLink,
+  type LensName,
+  type LensSpot,
+  type LensThing,
+} from './lens.js';
 
 export {
   DEFAULT_OPTIONS,

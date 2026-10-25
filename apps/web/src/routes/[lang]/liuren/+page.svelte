@@ -2,7 +2,12 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { sayLayer } from '$lib/board';
+  import { glyph } from '$lib/glyph';
+  import { HeldLens } from '$lib/held-lens.svelte';
+  import type { LiurenBoard, LiurenLens } from '@shipan/core';
+  import type { MessageKey } from '@shipan/i18n';
+  import LensReading from '$lib/components/LensReading.svelte';
+  import LensSide from '$lib/components/LensSide.svelte';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import FormPanel from '$lib/components/FormPanel.svelte';
   import InlineBoard from '$lib/components/InlineBoard.svelte';
@@ -47,6 +52,66 @@
    */
   const where = $derived(sayPlace(data.moment));
 
+  /**
+   * The lens: what the reader asked to see on the board, if anything. The
+   * state, its fragment and what a press does are `HeldLens`'s; what is this
+   * section's is how a name and a seat are said.
+   */
+  const lens = $derived<LiurenLens | undefined>(data.result?.lens);
+
+  type Named = { id: string; hanzi: string; pinyin?: string };
+
+  /**
+   * What stands at a seat in a layer, and the catalog its word is in. A
+   * palace of the ring is its branch: the heaven plate holds all twelve
+   * branches, so the ground is found among them by its identifier.
+   */
+  function standing(seat: string, layer: string): { thing: Named; prefix: string } | undefined {
+    const laid = board as LiurenBoard | undefined;
+    if (!laid || !lens) return undefined;
+    const ring = lens.pairSeats.indexOf(seat);
+    if (ring !== -1) {
+      if (layer === 'general') return { thing: laid.generals[ring] as Named, prefix: 'general' };
+      if (layer === 'heaven') return { thing: laid.heaven[ring] as Named, prefix: 'branch' };
+      if (layer === 'earth') {
+        const ground = laid.heaven.find((branch) => branch.id === seat);
+        return ground && { thing: ground, prefix: 'branch' };
+      }
+      return undefined;
+    }
+    const course = laid.courses.find((one) => String(one.number) === seat);
+    if (course) {
+      if (layer === 'upper') return { thing: course.upper, prefix: 'branch' };
+      if (layer === 'lower') return { thing: course.lower, prefix: course.lowerIsStem ? 'stem' : 'branch' };
+      return undefined;
+    }
+    const transmission = laid.transmissions.find((one) => one.position === seat);
+    if (!transmission) return undefined;
+    if (layer === 'branch') return { thing: transmission.branch, prefix: 'branch' };
+    if (layer === 'general') return { thing: transmission.general, prefix: 'general' };
+    if (layer === 'stem' && transmission.hiddenStem) return { thing: transmission.hiddenStem, prefix: 'stem' };
+    return undefined;
+  }
+
+  /** A name on the board in words: its gloss, its hanzi and its reading. */
+  function nameAt(seat: string, layer: string): string | undefined {
+    const at = standing(seat, layer);
+    if (!at) return undefined;
+    return `${t(`label.${at.prefix}.${at.thing.id}` as MessageKey)} ${glyph(at.thing)}`;
+  }
+
+  /** A palace of the ring as a pair says it: its branch. */
+  const seatName = (seat: string): string => nameAt(seat, 'earth') ?? seat;
+
+  /** Where a name stands, after its layer: a palace, a lesson, a transmission. */
+  function seatPlace(seat: string): string {
+    if (lens?.pairSeats.includes(seat)) return t('lens.where.palace', { palace: seatName(seat) });
+    if (['1', '2', '3', '4'].includes(seat)) return t(`label.course.${seat}` as MessageKey);
+    return t(`lens.where.transmission.${seat}` as MessageKey);
+  }
+
+  const held = new HeldLens({ lens: () => lens, t: () => t, nameAt, seatName, seatPlace });
+
   let busy = $state(false);
   let panel: FormPanel | undefined = $state();
 
@@ -83,7 +148,10 @@
     busy = true;
     try {
       const query = momentQuery(asked);
-      await goto(`${page.url.pathname}${query ? `?${query}` : ''}`, {
+      // The lens goes with it: it is in the fragment, and a new board is
+      // looked at the same way.
+      const fragment = held.fragment;
+      await goto(`${page.url.pathname}${query ? `?${query}` : ''}${fragment ? `#${fragment}` : ''}`, {
         replaceState: true,
         noScroll: true,
         keepFocus: true,
@@ -95,6 +163,8 @@
   }
 
 </script>
+
+<svelte:window onclick={held.pressedOutside} onkeydown={held.escaped} />
 
 <PageHead {t} />
 
@@ -144,7 +214,9 @@
             src={plate}
             width={900}
             height={1379}
-            tip={(spot) => sayLayer(spot, t)}
+            tip={held.tip}
+            onpick={held.pick}
+            lens={held.view}
             ondrawn={(drawing) => (aspect = drawing.height / drawing.width)}
           />
         </div>
@@ -152,9 +224,14 @@
         <LayerLegend {t} board="liuren" />
       </div>
       <div class="side">
+        <!-- The circle, the mode and the lens, then the key to the names. -->
+        <LensSide {t} {held} />
         <NameKey {t} groups={data.result?.readings ?? []} />
       </div>
     </div>
+
+    <!-- What the lens draws, said in words, at the page's measure. -->
+    <LensReading {t} {held} {seatName} />
 
     <div>
       <LiurenReading {board} {t} {moment} />

@@ -1,4 +1,4 @@
-import { qizhengBoard, qizhengLabels } from '@shipan/core';
+import { qizhengBoard, qizhengLabels, qizhengLens } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import { qizhengKey } from '@shipan/plate';
 import { json } from '@sveltejs/kit';
@@ -56,6 +56,10 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       // The key to the numerals on the board, in the reader's language, for
       // the page that sets it beside a board drawn without its band.
       key: qizhengKey(board, qizhengLabels(t, board)),
+      // Every relation a reader may ask the board to show, as data: which one
+      // they ask for is chosen on the page and never sent here. See
+      // `lib/lens.ts`.
+      lens: qizhengLens(board),
     });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;

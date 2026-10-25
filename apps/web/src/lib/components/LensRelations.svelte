@@ -12,28 +12,31 @@
 -->
 <script lang="ts">
   import type { MessageKey, Translator } from '@shipan/i18n';
-  import type { LensView } from '$lib/lens';
+  import type { Lens } from '@shipan/core';
+  import { spotOfKey, type LensView } from '$lib/lens';
 
   let {
     t,
+    lens,
     view,
     focusName,
     nameAt,
+    seatPlace,
   }: {
     t: Translator;
+    lens: Lens;
     view: LensView;
     focusName: string | undefined;
     /** A name on the board in words, from where the drawing marks it. */
-    nameAt: (seat: number, layer: string) => string | undefined;
+    nameAt: (seat: string, layer: string, id?: string) => string | undefined;
+    /** Where a name stands, in words: «palace 4», «first lesson». */
+    seatPlace: (seat: string) => string;
   } = $props();
 
   const items = $derived(
     [...view.links]
-      .map((link) => {
-        const [seat, layer] = link.to.split(':') as [string, string];
-        return { seat: Number(seat), layer, relation: link.relation };
-      })
-      .sort((a, b) => a.seat - b.seat),
+      .map((link) => ({ ...spotOfKey(link.to), relation: link.relation }))
+      .sort((a, b) => lens.seats.indexOf(a.seat) - lens.seats.indexOf(b.seat)),
   );
 </script>
 
@@ -44,12 +47,12 @@
       <p>{t('lens.empty')}</p>
     {:else}
       <ul>
-        {#each items as item (`${item.seat}:${item.layer}:${item.relation}`)}
+        {#each items as item (`${item.seat}:${item.layer}:${item.id ?? ''}:${item.relation}`)}
           <li>
-            {nameAt(item.seat, item.layer)}
+            {nameAt(item.seat, item.layer, item.id)}
             <span class="where">({t('lens.at', {
-              layer: t(`label.register.qimen.${item.layer}` as MessageKey),
-              palace: String(item.seat),
+              layer: t(`label.register.${lens.board}.${item.layer}` as MessageKey),
+              where: seatPlace(item.seat),
             })})</span>:
             {t(`lens.relation.${item.relation}` as MessageKey, { thing: focusName })}
           </li>

@@ -8,26 +8,23 @@
  * `docs/refusals.md` § "Where to look first", which is the rule this is.
  *
  * **Every relation is looked up, none is worked out.** The engine hands the
- * page a `QimenLens` beside the chart: every thing with a phase, the five
- * relations for every pair of phases, the facing palaces and the 五合. This
- * reads those tables and computes nothing a source would have to stand
- * behind; the client imports only types from `core`.
+ * page a `Lens` beside the board: its seats and layers, every thing with a
+ * phase, the five relations for every pair of phases, and the board's own
+ * relations as links — on 奇門, 對宮 and 五合. This reads those tables and
+ * computes nothing a source would have to stand behind; the client imports
+ * only types from `core`.
+ *
+ * **Nothing here knows which board it is on.** A seat is a string in the
+ * board's own terms, a layer is whatever the board marks, and both are read
+ * off the descriptor.
  *
  * **Where the reader looked is theirs.** The state lives in the page and in
  * the address's fragment, which no request carries: it never reaches the
  * server, a prompt, or the address the board is shared at.
  */
-import type { Element, LensLayer, LinkId, QimenLens, RelationId } from '@shipan/core';
-
-/** The layers of a 奇門 board the drawing marks, spirits included. */
-export const BOARD_LAYERS = ['heaven', 'earth', 'palace', 'spirit', 'star', 'gate'] as const;
-export type BoardLayer = (typeof BOARD_LAYERS)[number];
-
-/** The layers whose things have a phase, and can stand in a relation. */
-export const PHASE_LAYERS: readonly LensLayer[] = ['heaven', 'earth', 'palace', 'star', 'gate'];
+import type { Element, Lens, LensThing, RelationId } from '@shipan/core';
 
 export const ELEMENTS: readonly Element[] = ['mu', 'huo', 'tu', 'jin', 'shui'];
-export const LINK_IDS: readonly LinkId[] = ['duigong', 'wuhe'];
 
 /**
  * A thing the reader started from, named by what it is and not where it
@@ -35,25 +32,25 @@ export const LINK_IDS: readonly LinkId[] = ['duigong', 'wuhe'];
  * heaven plate, wherever the turn has carried it.
  */
 export interface Focus {
-  layer: LensLayer;
+  layer: string;
   id: string;
 }
 
 export interface LensState {
   /** The kinds of thing kept. Empty keeps every kind. */
-  layers: readonly BoardLayer[];
+  layers: readonly string[];
   /** The phases kept. Empty keeps every phase. */
   phases: readonly Element[];
   /** What the reader started from, if they pressed something. */
   focus?: Focus;
   /**
-   * The palaces pressed by their ground, one or two, by Luoshu number. Never
-   * at the same time as a focus: a name pressed starts from the name, a
+   * The seats pressed by their ground, one or two, in the board's own terms.
+   * Never at the same time as a focus: a name pressed starts from the name, a
    * ground pressed starts a pair.
    */
-  pair?: readonly number[];
+  pair?: readonly string[];
   /** The kinds of thing a focus is related to. */
-  toward: readonly LensLayer[];
+  toward: readonly string[];
   /**
    * The names pressed inside the two palaces of a pair, by where they stand.
    * Only these are compared, and nothing until one is pressed in each.
@@ -62,7 +59,7 @@ export interface LensState {
   /** Whether a focus shows the five relations of the phases. */
   shengke: boolean;
   /** Which of the other relations a focus shows. */
-  links: readonly LinkId[];
+  links: readonly string[];
   /**
    * Whether every control is offered at once. Without it the lens is laid one
    * way at a time — two palaces, one name, or one phase — with one kind or
@@ -105,11 +102,30 @@ export function oneAtATime(state: LensState): LensState {
 /** No lens: the whole board, alike. */
 export const WHOLE: LensState = { layers: [], phases: [], toward: [], shengke: true, links: [], extended: false };
 
-/** Where a thing is on the drawing: the seat and the layer, as the marks say. */
-export type SpotKey = `${number}:${string}`;
-export const keyOf = (seat: number, layer: string): SpotKey => `${seat}:${layer}`;
+/**
+ * Where a thing is on the drawing: the seat and the layer, as the marks say,
+ * and the identifier as well in a layer a seat holds several names in
+ * (`Lens.crowded`). A key without one names the whole layer of a seat, and
+ * lights every name in it.
+ */
+export type SpotKey = `${string}:${string}`;
+export const keyOf = (seat: string, layer: string, id?: string): SpotKey =>
+  id ? `${seat}:${layer}:${id}` : `${seat}:${layer}`;
 
-export type ShownRelation = RelationId | LinkId;
+/** The seat, the layer and, where it carries one, the identifier a key names. None of them holds a colon. */
+export function spotOfKey(key: SpotKey): { seat: string; layer: string; id?: string } {
+  const [seat = '', layer = '', id] = key.split(':');
+  return id ? { seat, layer, id } : { seat, layer };
+}
+const seatOfKey = (key: SpotKey): string => spotOfKey(key).seat;
+
+/** The key of a name on this board: with its identifier where its layer is crowded. */
+export function keyOfThing(lens: Lens, thing: { seat: string; layer: string; id?: string }): SpotKey {
+  return keyOf(thing.seat, thing.layer, lens.crowded.includes(thing.layer) ? thing.id : undefined);
+}
+
+/** One of the five relations of the phases, or a link of the board's own. */
+export type ShownRelation = RelationId | (string & {});
 
 /** One relation drawn, always from the focus to the thing it names. */
 export interface ShownLink {
@@ -126,8 +142,8 @@ export interface LensView {
   lit: ReadonlySet<SpotKey>;
   /** The focus, where there is one on this board. */
   focus?: SpotKey;
-  /** The palaces of a pair, in Luoshu order, where a pair is being laid. */
-  seats: readonly number[];
+  /** The seats of a pair, in the board's order, where a pair is being laid. */
+  seats: readonly string[];
   links: readonly ShownLink[];
 }
 
@@ -145,18 +161,26 @@ export function direction(relation: ShownRelation): 'out' | 'in' | 'none' {
 }
 
 /** The things a focus is, on this board: none if it is not on it. */
-function find(lens: QimenLens, focus: Focus | undefined) {
+function find(lens: Lens, focus: Focus | undefined) {
   if (!focus) return undefined;
   return lens.things.find((thing) => thing.layer === focus.layer && thing.id === focus.id);
 }
 
+/** The thing standing where a key says, if one with a phase does. */
+function thingAt(lens: Lens, key: SpotKey): LensThing | undefined {
+  return lens.things.find((one) => keyOfThing(lens, one) === key);
+}
+
+/** The board's order of its seats, for sorting by it. */
+const seatIndex = (lens: Lens, seat: string): number => lens.seats.indexOf(seat);
+
 /** What the lens leaves lit, and which relations it draws. */
-export function viewOf(lens: QimenLens | undefined, state: LensState): LensView {
+export function viewOf(lens: Lens | undefined, state: LensState): LensView {
   if (!lens) return INACTIVE;
 
   const start = find(lens, state.focus);
   if (start) {
-    const from = keyOf(start.seat, start.layer);
+    const from = keyOfThing(lens, start);
     const links: ShownLink[] = [];
     const kept = (element: Element): boolean => state.phases.length === 0 || state.phases.includes(element);
 
@@ -165,21 +189,22 @@ export function viewOf(lens: QimenLens | undefined, state: LensState): LensView 
         if (thing === start || !state.toward.includes(thing.layer) || !kept(thing.element)) continue;
         links.push({
           from,
-          to: keyOf(thing.seat, thing.layer),
+          to: keyOfThing(lens, thing),
           relation: lens.phases[start.element][thing.element],
         });
       }
     }
-    if (state.links.includes('duigong')) {
-      const across = lens.facing[start.seat];
-      if (across !== undefined) links.push({ from, to: keyOf(across, 'palace'), relation: 'duigong' });
-    }
-    if (state.links.includes('wuhe') && (start.layer === 'heaven' || start.layer === 'earth')) {
-      const partner = lens.wuhe[start.id as keyof QimenLens['wuhe']];
-      for (const thing of lens.things) {
-        if ((thing.layer === 'heaven' || thing.layer === 'earth') && thing.id === partner) {
-          links.push({ from, to: keyOf(thing.seat, thing.layer), relation: 'wuhe' });
-        }
+    // The board's own relations, kind by kind in the order it offers them:
+    // a link between seats reaches a name pressed anywhere in either seat, a
+    // link between things only the thing at one end.
+    for (const relation of lens.linkIds) {
+      if (!state.links.includes(relation)) continue;
+      for (const link of lens.links) {
+        if (link.relation !== relation) continue;
+        const reaches = (end: { seat: string; layer: string; id?: string }) =>
+          link.between === 'seats' ? end.seat === start.seat : keyOfThing(lens, end) === from;
+        const other = reaches(link.a) ? link.b : reaches(link.b) ? link.a : undefined;
+        if (other) links.push({ from, to: keyOfThing(lens, other), relation });
       }
     }
     return {
@@ -197,90 +222,97 @@ export function viewOf(lens: QimenLens | undefined, state: LensState): LensView 
 
   // A filter by kind, by phase, or both. A thing with no phase — a spirit —
   // is kept by its kind alone and never by a phase.
-  const element = new Map(lens.things.map((thing) => [keyOf(thing.seat, thing.layer), thing.element]));
   const lit = new Set<SpotKey>();
-  for (let seat = 1; seat <= 9; seat++) {
-    for (const layer of BOARD_LAYERS) {
-      if (state.layers.length > 0 && !state.layers.includes(layer)) continue;
-      const key = keyOf(seat, layer);
-      if (state.phases.length > 0) {
-        const phase = element.get(key);
-        if (!phase || !state.phases.includes(phase)) continue;
-      }
-      lit.add(key);
+  const ofKind = (layer: string) => state.layers.length === 0 || state.layers.includes(layer);
+  if (state.phases.length > 0) {
+    for (const thing of lens.things) {
+      if (ofKind(thing.layer) && state.phases.includes(thing.element)) lit.add(keyOfThing(lens, thing));
     }
+  } else {
+    for (const seat of lens.seats) for (const layer of lens.layers) if (ofKind(layer)) lit.add(keyOf(seat, layer));
   }
   return { active: true, lit, seats: [], links: [] };
 }
 
 /**
- * Two palaces, and how what stands in one stands to what stands in the other.
+ * Two seats, and how what stands in one stands to what stands in the other.
  *
- * **Neither palace is the reader's.** The relations are drawn as a flow, from
+ * **Neither seat is the reader's.** The relations are drawn as a flow, from
  * the thing that generates or controls to the thing that is generated or
  * controlled, so one line says the relation both ways round; and the two are
- * held in Luoshu order, never in the order they were pressed. Which of two
- * palaces is the asker and which the matter is a reading, and the engine
- * names neither (`docs/refusals.md` § "Who is 主 and who is 客").
+ * held in the board's order — Luoshu order on 奇門 — never in the order they
+ * were pressed. Which of two palaces is the asker and which the matter is a
+ * reading, and the engine names neither (`docs/refusals.md` § "Who is 主 and
+ * who is 客").
  *
  * **Only what the reader pressed is compared**: the names pressed inside
- * the two palaces (`chosen`), every one in one palace against every one in
- * the other, and nothing until a name is pressed in each. 對宮 and 五合 are
- * added where they are asked for and hold. The same relations are tabulated
- * by `pairTable` and said in words under the board.
+ * the two seats (`chosen`), every one in one seat against every one in the
+ * other, and nothing until a name is pressed in each. The board's own links
+ * are added where they are asked for and hold: a link between things where
+ * it joins two names compared, a link between seats where it joins the two.
+ * The same relations are tabulated by `pairTable` and said in words under the
+ * board.
  */
-function pairView(lens: QimenLens, state: LensState): LensView {
-  const seats = [...new Set(state.pair)].sort((a, b) => a - b);
-  const chosen = chosenIn(state, seats);
-  // Each palace whole until a name is pressed in it, and then what was.
+function pairView(lens: Lens, state: LensState): LensView {
+  const seats = pairSeats(lens, state);
+  const chosen = chosenIn(lens, state, seats);
+  // Each seat whole until a name is pressed in it, and then what was.
   const lit = new Set<SpotKey>(chosen);
   for (const seat of seats) {
-    if (chosen.some((key) => key.startsWith(`${seat}:`))) continue;
-    for (const layer of BOARD_LAYERS) lit.add(keyOf(seat, layer));
+    if (chosen.some((key) => seatOfKey(key) === seat)) continue;
+    for (const layer of lens.layers) lit.add(keyOf(seat, layer));
   }
   if (seats.length < 2) return { active: true, lit, seats, links: [] };
 
-  const [a, b] = seats as [number, number];
-  const thing = (key: SpotKey) => {
-    const [seat, layer] = key.split(':');
-    return lens.things.find((one) => one.seat === Number(seat) && one.layer === layer);
-  };
-  const ones = chosen.filter((key) => key.startsWith(`${a}:`));
-  const others = chosen.filter((key) => key.startsWith(`${b}:`));
+  const [a, b] = seats as [string, string];
+  const ones = chosen.filter((key) => seatOfKey(key) === a);
+  const others = chosen.filter((key) => seatOfKey(key) === b);
+  const asked = lens.links.filter((link) => state.links.includes(link.relation));
+  const same = (end: { seat: string; layer: string; id?: string }, key: SpotKey) => keyOfThing(lens, end) === key;
   const links: ShownLink[] = [];
 
   for (const mine of ones) {
     for (const theirs of others) {
-      const one = thing(mine);
-      const other = thing(theirs);
+      const one = thingAt(lens, mine);
+      const other = thingAt(lens, theirs);
       if (!one || !other) continue;
       if (state.shengke) links.push(flow(mine, theirs, lens.phases[one.element][other.element]));
-      const stems = (key: SpotKey) => key.endsWith(':heaven') || key.endsWith(':earth');
-      if (
-        state.links.includes('wuhe') &&
-        stems(mine) &&
-        stems(theirs) &&
-        lens.wuhe[one.id as keyof QimenLens['wuhe']] === other.id
-      ) {
-        links.push({ from: mine, to: theirs, relation: 'wuhe' });
+      for (const relation of lens.linkIds) {
+        const joined = asked.some(
+          (link) =>
+            link.relation === relation &&
+            link.between === 'things' &&
+            ((same(link.a, mine) && same(link.b, theirs)) || (same(link.b, mine) && same(link.a, theirs))),
+        );
+        if (joined) links.push({ from: mine, to: theirs, relation });
       }
     }
   }
-  if (state.links.includes('duigong') && lens.facing[a] === b) {
-    links.push({ from: keyOf(a, 'palace'), to: keyOf(b, 'palace'), relation: 'duigong' });
+  for (const relation of lens.linkIds) {
+    for (const link of asked) {
+      if (link.relation !== relation || link.between !== 'seats') continue;
+      const [first, second] = link.a.seat === a ? [link.a, link.b] : [link.b, link.a];
+      if (first.seat !== a || second.seat !== b) continue;
+      links.push({ from: keyOfThing(lens, first), to: keyOfThing(lens, second), relation });
+    }
   }
   return { active: true, lit, seats, links };
 }
 
-/** The names pressed that stand in the palaces of the pair, in board order. */
-function chosenIn(state: LensState, seats: readonly number[]): SpotKey[] {
+/** The seats of the pair, in the board's order. */
+function pairSeats(lens: Lens, state: LensState): string[] {
+  return [...new Set(state.pair ?? [])].sort((x, y) => seatIndex(lens, x) - seatIndex(lens, y));
+}
+
+/** The names pressed that stand in the seats of the pair, in board order. */
+function chosenIn(lens: Lens, state: LensState, seats: readonly string[]): SpotKey[] {
   const order = (key: SpotKey) => {
-    const [seat, layer] = key.split(':');
-    return Number(seat) * 10 + PHASE_LAYERS.indexOf(layer as LensLayer);
+    const { seat, layer } = spotOfKey(key);
+    return seatIndex(lens, seat) * lens.phased.length + lens.phased.indexOf(layer);
   };
   return (state.chosen ?? [])
-    .filter((key) => seats.includes(Number(key.split(':')[0])))
-    .sort((x, y) => order(x) - order(y));
+    .filter((key) => seats.includes(seatOfKey(key)))
+    .sort((x, y) => order(x) - order(y) || (x < y ? -1 : x > y ? 1 : 0));
 }
 
 /**
@@ -294,11 +326,11 @@ function flow(from: SpotKey, to: SpotKey, relation: RelationId): ShownLink {
   return { from, to, relation };
 }
 
-/** One cell of the table between two palaces. */
+/** One cell of the table between two seats. */
 export interface PairCell {
-  /** The layer of the thing in the row's palace, and of the column's. */
-  row: LensLayer;
-  column: LensLayer;
+  /** Where the name of the row stands, in the first seat, and the column's, in the other. */
+  row: SpotKey;
+  column: SpotKey;
   /** Which way the relation runs: from the row to the column, the other way, or neither. */
   way: 'out' | 'in' | 'none';
   /** The relation, named as the flow: 我生 or 我剋 where it runs, 比和 where it does not. */
@@ -306,23 +338,23 @@ export interface PairCell {
 }
 
 /**
- * Every name pressed in the lower-numbered palace against every name pressed
- * in the other, as a flow. Rows are the first palace's, columns the
- * other's, each in the order of `PHASE_LAYERS`.
+ * Every name pressed in the seat first in the board's order against every
+ * name pressed in the other, as a flow. Rows are the first seat's, columns
+ * the other's, each in the order of the board's `phased` layers.
  */
-export function pairTable(lens: QimenLens, state: LensState): PairCell[] {
-  const seats = [...new Set(state.pair ?? [])].sort((x, y) => x - y);
+export function pairTable(lens: Lens, state: LensState): PairCell[] {
+  const seats = pairSeats(lens, state);
   if (seats.length < 2) return [];
-  const [a, b] = seats as [number, number];
-  const chosen = chosenIn(state, seats);
+  const [a, b] = seats as [string, string];
+  const chosen = chosenIn(lens, state, seats);
   const cells: PairCell[] = [];
-  for (const mine of chosen.filter((key) => key.startsWith(`${a}:`))) {
-    const row = mine.split(':')[1] as LensLayer;
-    const one = lens.things.find((thing) => thing.seat === a && thing.layer === row);
+  for (const mine of chosen.filter((key) => seatOfKey(key) === a)) {
+    const row = mine;
+    const one = thingAt(lens, mine);
     if (!one) continue;
-    for (const theirs of chosen.filter((key) => key.startsWith(`${b}:`))) {
-      const column = theirs.split(':')[1] as LensLayer;
-      const other = lens.things.find((thing) => thing.seat === b && thing.layer === column);
+    for (const theirs of chosen.filter((key) => seatOfKey(key) === b)) {
+      const column = theirs;
+      const other = thingAt(lens, theirs);
       if (!other) continue;
       const relation = lens.phases[one.element][other.element];
       if (relation === 'shengwo') cells.push({ row, column, way: 'in', relation: 'wosheng' });
@@ -334,38 +366,42 @@ export function pairTable(lens: QimenLens, state: LensState): PairCell[] {
 }
 
 /**
- * Pressing a name inside one of the two palaces of a pair: it is compared, or
- * pressed again, it is not. A name with no phase — a spirit — is not one a
- * relation can be drawn to, and nothing happens.
+ * Pressing a name inside one of the two seats of a pair: it is compared, or
+ * pressed again, it is not. A name with no phase — a 奇門 spirit — is not one
+ * a relation can be drawn to, and nothing happens.
  */
-export function pressedInPair(state: LensState, seat: number, layer: string): LensState {
-  if (!(PHASE_LAYERS as readonly string[]).includes(layer)) return state;
-  const key = keyOf(seat, layer);
+export function pressedInPair(lens: Lens, state: LensState, seat: string, layer: string, id?: string): LensState {
+  const crowded = lens.crowded.includes(layer);
+  const thing = lens.things.find(
+    (one) => one.seat === seat && one.layer === layer && (!crowded || one.id === id),
+  );
+  if (!thing) return state;
+  const key = keyOfThing(lens, thing);
   const chosen = state.chosen ?? [];
   const next = chosen.includes(key) ? chosen.filter((one) => one !== key) : [...chosen, key];
   return { ...state, chosen: next.length > 0 ? next : undefined };
 }
 
 /** Whether a press in this seat is a press inside a complete pair. */
-export function inPair(state: LensState, seat: number): boolean {
+export function inPair(state: LensState, seat: string): boolean {
   return (state.pair?.length ?? 0) === 2 && (state.pair ?? []).includes(seat);
 }
 
 /**
- * Pressing the ground of a palace: the first starts a pair, the second
- * completes it, and pressing a palace already in the pair lets go of it. A
- * third palace starts a new pair. A focus is let go of: a name and a pair
+ * Pressing the ground of a seat: the first starts a pair, the second
+ * completes it, and pressing a seat already in the pair lets go of it. A
+ * third seat starts a new pair. A focus is let go of: a name and a pair
  * are two different questions put to the board.
  */
-export function pressedSeat(state: LensState, seat: number): LensState {
+export function pressedSeat(state: LensState, seat: string): LensState {
   const pair = state.pair ?? [];
-  let next: number[];
+  let next: string[];
   if (pair.includes(seat)) next = pair.filter((other) => other !== seat);
   else if (pair.length >= 2) next = [seat];
   else next = [...pair, seat];
   // A pair begins with nothing compared, and a palace let go of takes what
   // was pressed in it with it.
-  const chosen = (state.chosen ?? []).filter((key) => next.includes(Number(key.split(':')[0])));
+  const chosen = (state.chosen ?? []).filter((key) => next.includes(seatOfKey(key)));
   return {
     ...state,
     focus: undefined,
@@ -380,7 +416,10 @@ export function pressedSeat(state: LensState, seat: number): LensState {
  * A fragment and not the query: the query is what the board is a function of,
  * and a lens is not — two readers looking at one board in two ways are
  * looking at one board. A fragment is also never sent with a request.
- * Anything it holds that is not a known value is dropped rather than guessed.
+ * Anything it holds that is not a known value of the board's descriptor is
+ * dropped rather than guessed; with no descriptor — a board that has no lens
+ * yet, or an answer that failed — only the shape of each value is checked, so
+ * that a link stays whole until a board that can read it arrives.
  */
 export function writeLens(state: LensState): string {
   const parts: string[] = [];
@@ -401,35 +440,37 @@ export function writeLens(state: LensState): string {
   return parts.join('&');
 }
 
-export function readLens(fragment: string): LensState {
+export function readLens(fragment: string, lens?: Lens): LensState {
   const fields = new URLSearchParams(fragment.replace(/^#/, ''));
-  const list = <T extends string>(name: string, allowed: readonly T[]): T[] =>
-    (fields.get(name) ?? '')
-      .split(',')
-      .filter((value): value is T => (allowed as readonly string[]).includes(value));
+  const WORD = /^[a-z0-9]+$/;
+  const known = (allowed: readonly string[] | undefined) => (value: string) =>
+    allowed ? allowed.includes(value) : WORD.test(value);
+  const list = (name: string, keep: (value: string) => boolean): string[] =>
+    (fields.get(name) ?? '').split(',').filter((value) => value !== '' && keep(value));
 
+  const isLayer = known(lens?.layers);
+  const isPhased = known(lens?.phased);
+  const isSeat = known(lens?.pairSeats);
   const state: LensState = {
-    layers: list('layers', BOARD_LAYERS),
-    phases: list('phases', ELEMENTS),
-    toward: list('toward', PHASE_LAYERS),
+    layers: list('layers', isLayer),
+    phases: list('phases', (value) => (ELEMENTS as readonly string[]).includes(value)) as Element[],
+    toward: list('toward', isPhased),
     shengke: fields.get('shengke') !== '0',
-    links: list('links', LINK_IDS),
+    links: list('links', known(lens?.linkIds)),
     extended: fields.get('extended') === '1',
   };
   const [layer, id] = (fields.get('focus') ?? '').split('.');
-  if (layer && id && (PHASE_LAYERS as readonly string[]).includes(layer) && /^[a-z0-9]+$/.test(id)) {
-    state.focus = { layer: layer as LensLayer, id };
+  if (layer && id && isPhased(layer) && WORD.test(id)) {
+    state.focus = { layer, id };
   } else {
-    const pair = [...new Set((fields.get('pair') ?? '').split(',').map(Number))]
-      .filter((seat) => Number.isInteger(seat) && seat >= 1 && seat <= 9)
-      .slice(0, 2);
+    const pair = [...new Set((fields.get('pair') ?? '').split(','))].filter((seat) => seat !== '' && isSeat(seat)).slice(0, 2);
     if (pair.length > 0) {
       state.pair = pair;
-      const chosen = (fields.get('chosen') ?? '')
-        .split(',')
-        .filter((key) => /^[1-9]:[a-z]+$/.test(key))
-        .filter((key) => pair.includes(Number(key[0])) && (PHASE_LAYERS as readonly string[]).includes(key.slice(2)))
-        .map((key) => key as SpotKey);
+      const chosen = list('chosen', (key) => {
+        if (!/^[a-z0-9]+:[a-z]+(:[a-z0-9]+)?$/.test(key)) return false;
+        const { seat, layer: at } = spotOfKey(key as SpotKey);
+        return pair.includes(seat) && isPhased(at);
+      }).map((key) => key as SpotKey);
       if (chosen.length > 0) state.chosen = [...new Set(chosen)];
     }
   }
@@ -455,7 +496,7 @@ export function pressed(state: LensState, thing: Focus): LensState {
  * the pressed name's, the names pressed inside a pair, or the phases kept.
  * None when nothing is chosen, and the circle stands whole.
  */
-export function activePhases(lens: QimenLens | undefined, state: LensState): Element[] {
+export function activePhases(lens: Lens | undefined, state: LensState): Element[] {
   if (!lens) return [];
   if (state.focus) {
     const thing = lens.things.find((one) => one.layer === state.focus?.layer && one.id === state.focus?.id);
@@ -463,7 +504,7 @@ export function activePhases(lens: QimenLens | undefined, state: LensState): Ele
   }
   if (state.pair?.length === 2 && state.chosen?.length) {
     const chosen = new Set<string>(state.chosen);
-    return [...new Set(lens.things.filter((one) => chosen.has(keyOf(one.seat, one.layer))).map((one) => one.element))];
+    return [...new Set(lens.things.filter((one) => chosen.has(keyOfThing(lens, one))).map((one) => one.element))];
   }
   return [...state.phases];
 }

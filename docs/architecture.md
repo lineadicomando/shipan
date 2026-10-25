@@ -279,7 +279,7 @@ two boards. The cursor is the only announcement it gets. A sheet has no
 pointer, so in print the same words are set once instead, as an empty seat
 under the board (`LayerLegend`).
 
-The second is **a lens**, on the 奇門 section: the reader keeps a kind of
+The second is **a lens**, on the 奇門 section — the board of an hour and of a day — and on 六壬's, 七政四餘's, 紫微斗數's and 太乙's: the reader keeps a kind of
 name or a phase and the rest of each seat recedes, presses a name and is
 shown how the rest stands to it, or presses the ground of two palaces and is
 shown how they stand to each other — the five relations of the phases, 對宮
@@ -320,7 +320,24 @@ carries out is `docs/refusals.md` § "Where to look first". Three things
 follow from where it runs. **The relations are the engine's**: `/api/qimen`
 answers with `lens` beside the chart — `qimenLens`, every thing with a phase
 and the tables a relation is looked up in — because the client imports only
-types from `core`. **The lens is drawn in the browser and never by `plate`**:
+types from `core`. **The lens knows no board**: what it is handed is a `Lens`
+(`packages/core/src/lens.ts`), the one descriptor every board fills — its
+seats in its own terms and order, its layers as the drawing marks them, every
+thing with a phase, the five relations, and the board's own relations as
+links between two seats (對宮) or two things (五合) — and a section holds the
+lens through `HeldLens` (`lib/held-lens.svelte.ts`), with `LensSide` in the
+column and `LensReading` under the board, saying only how a name and a seat
+are said. A pair is laid on the seats the descriptor names for it
+(`pairSeats`): on 六壬 the twelve palaces of the ring, and not the lessons or
+the transmissions, whose names a lens still keeps and relates; on 太乙 none,
+each seat of the rim holding one god, and the page then offers two ways and
+not three. Where a seat holds
+several names in one layer — the bodies in a palace of the 七政四餘 ring — the
+descriptor says so (`crowded`) and a name is keyed by its identifier as well
+as its seat and layer. On 紫微斗數 a press on the board also goes to the row
+that says what is in the seat, and it stays the row's until the reader takes
+up the lens — a way chosen in the column, or a lens laid — and is the lens's
+after; the buttons the keyboard reaches go to the row either way. **The lens is drawn in the browser and never by `plate`**:
 a drawing is made on the server, and which name somebody pressed is not
 something the server is told, so the receding is an attribute set on the
 marks in the shadow root and the relations are a layer of the page's laid

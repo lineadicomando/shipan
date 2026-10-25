@@ -11,7 +11,7 @@
 
   **The arrows are looked up, not drawn from memory.** Which phase generates
   and which controls which is read from the table the engine handed over with
-  the board (`QimenLens.phases`); only the places round the circle are this
+  the board (`Lens.phases`); only the places round the circle are this
   file's, and those are a layout.
 
   **It lights only what the lens has in it.** The phases of what the reader
@@ -25,7 +25,7 @@
 -->
 <script lang="ts">
   import type { MessageKey, Translator } from '@shipan/i18n';
-  import type { Element, QimenLens } from '@shipan/core';
+  import type { Element, Lens } from '@shipan/core';
 
   let {
     t,
@@ -33,7 +33,7 @@
     active,
   }: {
     t: Translator;
-    lens: QimenLens;
+    lens: Lens;
     /** The phases of what the lens has in it: none, one, or several. */
     active: readonly Element[];
   } = $props();

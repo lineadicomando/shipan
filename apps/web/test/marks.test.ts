@@ -1,4 +1,5 @@
 import { LOCALES, catalogs } from '@shipan/i18n';
+import { DAY_LAYERS, LIUREN_LAYERS, QIMEN_LAYERS, QIZHENG_LAYERS, TAIYI_LAYERS, ZIWEI_LAYERS } from '@shipan/core';
 import { LAYERS, UNITS, type MarkedBoard } from '@shipan/plate';
 import { describe, expect, it } from 'vitest';
 import { GET as qimen } from '../src/routes/api/qimen/plate/+server';
@@ -72,4 +73,34 @@ describe('the marks on the drawings', () => {
       }
     });
   }
+});
+
+describe('the lens on a drawing', () => {
+  it('names the layers of a 奇門 board as the drawing marks them, in the same order', () => {
+    // A lens reads its layers off the engine's descriptor and the drawing
+    // marks its own; a layer the two named differently would be a name the
+    // lens could never light.
+    expect(QIMEN_LAYERS).toEqual(LAYERS.qimen);
+  });
+
+  it('names the layers of a 六壬 board as the drawing marks them, in the same order', () => {
+    expect(LIUREN_LAYERS).toEqual(LAYERS.liuren);
+  });
+
+  it('names the layers of a 七政四餘 board as the drawing marks them, in the same order', () => {
+    expect(QIZHENG_LAYERS).toEqual(LAYERS.qizheng);
+  });
+
+  it('names the layers of a 紫微斗數 board as the drawing marks them, in the same order', () => {
+    expect(ZIWEI_LAYERS).toEqual(LAYERS.ziwei);
+  });
+
+  it('names the layers of a 太乙 board as the drawing marks them, in the same order', () => {
+    expect(TAIYI_LAYERS).toEqual(LAYERS.taiyi);
+  });
+
+  it('names the layers of a board of the day as its drawing marks them', async () => {
+    const svg = await draw(qimen, `${MOMENT}&qimen.system=rijia`);
+    expect([...marked(svg, 'data-layer')].sort()).toEqual([...DAY_LAYERS].sort());
+  });
 });

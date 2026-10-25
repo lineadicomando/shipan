@@ -1,4 +1,4 @@
-import { taiyiBoard } from '@shipan/core';
+import { taiyiBoard, taiyiLens } from '@shipan/core';
 import { json } from '@sveltejs/kit';
 import { readTaiyiOptions, readTaiyiYear, taiyiCacheControl } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
@@ -30,7 +30,9 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
 
     setHeaders({ 'cache-control': taiyiCacheControl(named) });
     const taiyi = taiyiBoard({ year }, readTaiyiOptions(url.searchParams));
-    return json({ taiyi, laidBy: laidBy('taiyi', taiyi.options) });
+    // `lens` is every relation a reader may ask the board to show, in no
+    // language and about nobody, so it is as public as the board.
+    return json({ taiyi, laidBy: laidBy('taiyi', taiyi.options), lens: taiyiLens(taiyi) });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;
     toHttpError(cause);

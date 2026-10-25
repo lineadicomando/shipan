@@ -2,7 +2,12 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { sayLayer } from '$lib/board';
+  import { glyph } from '$lib/glyph';
+  import { HeldLens } from '$lib/held-lens.svelte';
+  import type { QizhengBoard, QizhengLens } from '@shipan/core';
+  import type { MessageKey } from '@shipan/i18n';
+  import LensReading from '$lib/components/LensReading.svelte';
+  import LensSide from '$lib/components/LensSide.svelte';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import FormPanel from '$lib/components/FormPanel.svelte';
   import InlineBoard from '$lib/components/InlineBoard.svelte';
@@ -82,12 +87,54 @@
     void warm.decode().catch(() => {});
   });
 
+  /**
+   * The lens: what the reader asked to see on the board, if anything. The
+   * state, its fragment and what a press does are `HeldLens`'s; what is this
+   * section's is how a name and a palace are said.
+   */
+  const lens = $derived<QizhengLens | undefined>(data.result?.lens);
+
+  type Named = { id: string; hanzi: string; pinyin?: string };
+
+  /** What stands at a seat of the ring in a layer, and the catalog its word is in. */
+  function standing(seat: string, layer: string, id?: string): { thing: Named; prefix: string } | undefined {
+    const laid = board as QizhengBoard | undefined;
+    if (!laid) return undefined;
+    if (layer === 'governor' || layer === 'remainder') {
+      const body = [...laid.governors, ...laid.remainders].find((one) => one.body.id === id)?.body;
+      return body && { thing: body, prefix: 'qizheng' };
+    }
+    const house = laid.houses.find((one) => one.palace.id === seat);
+    if (!house) return undefined;
+    if (layer === 'palace') return { thing: house.ci, prefix: 'ci' };
+    if (layer === 'house') return { thing: house.house, prefix: 'house' };
+    return undefined;
+  }
+
+  /** A name on the board in words: its gloss, its hanzi and its reading. */
+  function nameAt(seat: string, layer: string, id?: string): string | undefined {
+    const at = standing(seat, layer, id);
+    if (!at) return undefined;
+    return `${t(`label.${at.prefix}.${at.thing.id}` as MessageKey)} ${glyph(at.thing)}`;
+  }
+
+  /** A palace of the ring as a pair says it: its 次. */
+  const seatName = (seat: string): string => nameAt(seat, 'palace') ?? seat;
+
+  /** Where a name stands, after its layer: the palace of the ring. */
+  const seatPlace = (seat: string): string => t('lens.where.palace', { palace: seatName(seat) });
+
+  const held = new HeldLens({ lens: () => lens, t: () => t, nameAt, seatName, seatPlace });
+
   async function submit(event: SubmitEvent): Promise<void> {
     event.preventDefault();
     busy = true;
     try {
       const query = momentQuery(asked);
-      await goto(`${page.url.pathname}${query ? `?${query}` : ''}`, {
+      // The lens goes with it: it is in the fragment, and a new board is
+      // looked at the same way.
+      const fragment = held.fragment;
+      await goto(`${page.url.pathname}${query ? `?${query}` : ''}${fragment ? `#${fragment}` : ''}`, {
         replaceState: true,
         noScroll: true,
         keepFocus: true,
@@ -98,6 +145,8 @@
     if (!data.failure && data.result) await panel?.close();
   }
 </script>
+
+<svelte:window onclick={held.pressedOutside} onkeydown={held.escaped} />
 
 <PageHead {t} />
 
@@ -147,7 +196,9 @@
             src={plate}
             width={900}
             height={1450}
-            tip={(spot) => sayLayer(spot, t)}
+            tip={held.tip}
+            onpick={held.pick}
+            lens={held.view}
             ondrawn={(drawing) => (aspect = drawing.height / drawing.width)}
           />
         </div>
@@ -155,9 +206,14 @@
         <LayerLegend {t} board="qizheng" />
       </div>
       <div class="side">
+        <!-- The circle, the mode and the lens, then the key to the names. -->
+        <LensSide {t} {held} />
         <NameKey {t} groups={data.result?.key ?? []} />
       </div>
     </div>
+
+    <!-- What the lens draws, said in words, at the page's measure. -->
+    <LensReading {t} {held} {seatName} />
 
     <div>
       <QizhengReading {board} {t} {moment} />

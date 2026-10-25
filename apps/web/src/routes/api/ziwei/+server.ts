@@ -1,4 +1,4 @@
-import { computeZiwei, ziweiLabels } from '@shipan/core';
+import { computeZiwei, ziweiLabels, ziweiLens } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import { ziweiKey } from '@shipan/plate';
 import { json } from '@sveltejs/kit';
@@ -45,6 +45,10 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       // The key to the numerals on the board, in the reader's language, for
       // the page that sets it beside a board drawn without its band.
       key: ziweiKey(ziwei, ziweiLabels(t)),
+      // Every relation a reader may ask the board to show, as data: which one
+      // they ask for is chosen on the page and never sent here. See
+      // `lib/lens.ts`.
+      lens: ziweiLens(ziwei),
     });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;

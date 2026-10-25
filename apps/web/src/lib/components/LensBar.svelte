@@ -23,13 +23,10 @@
 -->
 <script lang="ts">
   import type { MessageKey, Translator } from '@shipan/i18n';
-  import type { LensLayer, QimenLens } from '@shipan/core';
+  import type { Lens } from '@shipan/core';
   import { glyph } from '$lib/glyph';
   import {
-    BOARD_LAYERS,
     ELEMENTS,
-    LINK_IDS,
-    PHASE_LAYERS,
     WAYS,
     type LensState,
     type ShownRelation,
@@ -48,11 +45,11 @@
     onway,
   }: {
     t: Translator;
-    lens: QimenLens;
+    lens: Lens;
     state: LensState;
     /** The pressed name in words, where one is pressed and on this board. */
     focusName: string | undefined;
-    /** The palaces of a pair in words, where one or two are pressed. */
+    /** The seats of a pair in words, where one or two are pressed. */
     pairSaid: string | undefined;
     /** The way a lens is being laid one at a time, where one was chosen. */
     way: Way | undefined;
@@ -60,7 +57,7 @@
     onway: (next: Way | undefined) => void;
   } = $props();
 
-  const layerWord = (layer: string): string => t(`label.register.qimen.${layer}` as MessageKey);
+  const layerWord = (layer: string): string => t(`label.register.${lens.board}.${layer}` as MessageKey);
 
   /** A toggle in a list: added or taken out, or, one at a time, the only one. */
   function toggle<T>(list: readonly T[], value: T): T[] {
@@ -90,6 +87,13 @@
     (one === 'phase' && state.extended ? 'lens.way.filter' : `lens.way.${one}`) as MessageKey;
 
 
+  /**
+   * The ways this board offers: all three, bar the pair on a board whose
+   * seats hold one name each, where a pair would say again what a name
+   * pressed says (`pairSeats` empty, as on 太乙).
+   */
+  const ways = $derived(WAYS.filter((one) => one !== 'pair' || lens.pairSeats.length > 0));
+
   const focused = $derived(Boolean(state.focus && focusName));
   const paired = $derived(Boolean(state.pair && pairSaid));
   const relating = $derived(focused || state.pair?.length === 2);
@@ -99,19 +103,21 @@
    * its key has no converse two and says each cycle once.
    */
   const KEYED = $derived.by<readonly ShownRelation[]>(() => {
-    const shown: ShownRelation[] = state.pair
-      ? ['wosheng', 'woke', 'bihe', 'duigong', 'wuhe']
-      : ['wosheng', 'shengwo', 'woke', 'kewo', 'bihe', 'duigong', 'wuhe'];
-    return state.extended ? shown : shown.filter((relation) => relation !== 'duigong' && relation !== 'wuhe');
+    const phases: ShownRelation[] = state.pair
+      ? ['wosheng', 'woke', 'bihe']
+      : ['wosheng', 'shengwo', 'woke', 'kewo', 'bihe'];
+    // The board's own relations are offered in the extended mode alone.
+    return state.extended ? [...phases, ...lens.linkIds] : phases;
   });
+  const said = (relation: ShownRelation) => lens.names.relations[relation] as { hanzi: string; pinyin: string };
   const flowWord = (relation: ShownRelation): boolean =>
     Boolean(state.pair) && (relation === 'wosheng' || relation === 'woke' || relation === 'bihe');
 </script>
 
-{#snippet kinds(label: string, chosen: readonly LensLayer[])}
+{#snippet kinds(label: string, chosen: readonly string[])}
   <div class="row" role="group" aria-label={label}>
     <span class="lead">{label}</span>
-    {#each PHASE_LAYERS as layer (layer)}
+    {#each lens.phased as layer (layer)}
       <button
         type="button"
         aria-pressed={chosen.includes(layer)}
@@ -129,12 +135,12 @@
       aria-pressed={state.shengke}
       onclick={() => onchange({ ...state, shengke: !state.shengke })}
     >{t('lens.shengke')}</button>
-    {#each LINK_IDS as link (link)}
+    {#each lens.linkIds as link (link)}
       <button
         type="button"
         aria-pressed={state.links.includes(link)}
         onclick={() => onchange({ ...state, links: toggle(state.links, link) })}
-      >{t(`label.relation.${link}` as MessageKey)} <span class="glyph">{glyph(lens.names.relations[link])}</span></button>
+      >{t(`label.relation.${link}` as MessageKey)} <span class="glyph">{glyph(said(link))}</span></button>
     {/each}
   </div>
 {/snippet}
@@ -167,7 +173,7 @@
             {t(`lens.flow.${relation}` as MessageKey)}
           {:else}
             {t(`label.relation.${relation}` as MessageKey)}
-            <span class="glyph">{glyph(lens.names.relations[relation])}</span>
+            <span class="glyph">{glyph(said(relation))}</span>
           {/if}
         </li>
       {/each}
@@ -181,7 +187,7 @@
          each way, and keeps and combines. -->
     <div class="row" role="group" aria-label={t('lens.choose')}>
       <span class="lead">{t('lens.choose')}</span>
-      {#each WAYS as one (one)}
+      {#each ways as one (one)}
         <button type="button" aria-pressed={way === one} onclick={() => choose(one)}>
           {t(wayKey(one))}
         </button>
@@ -210,7 +216,7 @@
       {#if state.extended}
         <div class="row" role="group" aria-label={t('lens.layers')}>
           <span class="lead">{t('lens.layers')}</span>
-          {#each BOARD_LAYERS as layer (layer)}
+          {#each lens.layers as layer (layer)}
             <button
               type="button"
               aria-pressed={state.layers.includes(layer)}
