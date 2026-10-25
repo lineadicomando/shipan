@@ -89,10 +89,9 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-25
 
-**Version 0.34.0** on the branch `lens-generic`, open since 2026-10-25 and
-carrying the lens to every board a step at a time; `main` is at 0.33.0. The
-branch «lenses» landed on 2026-10-25 and was deleted, as `board-pointer` was
-on 2026-10-18. What `main` carries since 2026-10-15 is of eleven days:
+**Version 0.34.0**, in every manifest. **`main` is checked out and no branch
+is open**: the branch `lens-generic` landed on 2026-10-25 and was deleted, as
+«lenses» was the day before it and `board-pointer` on 2026-10-18. What `main` carries since 2026-10-15 is of eleven days:
 
 - 2026-10-15, surface work: the Qi Men section holds its board in the page
   (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which register a
@@ -350,10 +349,14 @@ why). The code to copy from is the 奇門 hour board:
    the page's type, not a drawing, and the relations a reader would ask for
    there (合, 沖, the ten gods) are a different lens.
 
-**Owed before the next landing, left from this one:** a printed sheet of each
-of the five boards on paper, which was reasoned from the stylesheets and not
-printed; and a look at the consultation, which still shows the full drawings,
-band and all, and takes the new measure.
+**Checked before `lens-generic` landed, 2026-10-25:** every board printed to
+PDF with a lens laid and without one (`google-chrome --headless=new
+--print-to-pdf`), the same number of sheets either way, no arrow and nothing
+faded on paper. The consultation takes the new measure — its board fits the
+window — and still asks the full drawings of 六壬, 七政四餘, 紫微斗數 and 太乙,
+band and all, with no bench and no lens. **Whether the consultation should
+have a bench, and a lens, is the user's to decide**: it is where a board is
+handed over rather than read.
 
 **What to do next, in the order the user has been taking it.** Nothing
 decided is left unbuilt.

@@ -253,20 +253,22 @@ links back to the whole board for its hour, and the hours worth comparing ride
 in the address as a shortlist, so they survive a re-run and can be sent to
 somebody as a link.
 
-**A board can be read through a lens.** On the Qi Men section a reader can
-keep some kinds of name or some phases and let the rest of the board fade. They
-can press a name to see how everything else on the board stands to it in the
-five phases, or press two palaces and then the names inside them to compare
-those names. The relations are computed by the engine and drawn as arrows
-beside the circle of the five phases; which of them to look at is the reader's
-choice, and the page always opens on the whole board. The lens is kept in the
+**A board can be read through a lens.** Every section that draws a board
+has one. A reader can keep some kinds of name or some phases and let the rest
+of the board fade. They can press a name to see how everything else on the
+board stands to it in the five phases. On the boards whose palaces hold
+several names, they can also press two palaces and then the names inside
+them to compare those names. The relations are computed by the engine and
+drawn as arrows beside the circle of the five phases. A name the sources give
+no phase to stays on the board and is related to nothing. Which relations to
+look at is the reader's choice, and the page always opens on the whole board. The lens is kept in the
 part of the address after `#`, which a browser never sends, so where somebody
 looked does not reach the server.
 
 **Every board fits the window.** Each section draws its board as tall as the
 window under the bar with the date, and sets what is used on the board in a
-column beside it: the lens on Qi Men, the key to the numbered names on the
-other boards.
+column beside it: the lens, and on the boards that number their names, the
+key to those numbers.
 
 **And there is a printer.** A stylesheet for paper redraws the board in paper
 colours whichever appearance is on screen, drops the fields and the switches,
