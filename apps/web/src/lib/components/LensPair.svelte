@@ -19,7 +19,7 @@
   import type { MessageKey, Translator } from '@shipan/i18n';
   import type { Lens, RelationId } from '@shipan/core';
   import { glyph } from '$lib/glyph';
-  import { pairTable, spotOfKey, type LensState, type LensView } from '$lib/lens';
+  import { pairTable, spotOfKey, type LensState, type LensView, type SpotKey } from '$lib/lens';
 
   let {
     t,
@@ -35,7 +35,7 @@
     view: LensView;
     /** The lens, for the names pressed inside the pair. */
     state: LensState;
-    nameAt: (seat: string, layer: string) => string | undefined;
+    nameAt: (seat: string, layer: string, id?: string) => string | undefined;
     /** A seat in words, as the heading says it. */
     seatName: (seat: string) => string;
     /** Where a name stands, in words, as a row or a column is headed: «palace 9». */
@@ -44,11 +44,17 @@
 
   const seats = $derived(view.seats);
   const cells = $derived(pairTable(lens, state));
-  const rows = $derived(lens.phased.filter((layer) => cells.some((cell) => cell.row === layer)));
-  const columns = $derived(lens.phased.filter((layer) => cells.some((cell) => cell.column === layer)));
-  const cellOf = (row: string, column: string) => cells.find((cell) => cell.row === row && cell.column === column);
+  // The names compared, each a row or a column, in the order the table gives them.
+  const rows = $derived([...new Set(cells.map((cell) => cell.row))]);
+  const columns = $derived([...new Set(cells.map((cell) => cell.column))]);
+  const cellOf = (row: SpotKey, column: SpotKey) => cells.find((cell) => cell.row === row && cell.column === column);
 
-  const layerWord = (layer: string): string => t(`label.register.${lens.board}.${layer}` as MessageKey);
+  const layerWord = (key: SpotKey): string => t(`label.register.${lens.board}.${spotOfKey(key).layer}` as MessageKey);
+  /** A name compared, in words, from where it stands. */
+  const named = (key: SpotKey): string => {
+    const { seat, layer, id } = spotOfKey(key);
+    return nameAt(seat, layer, id) ?? '';
+  };
 
   /** The relations that are not a cell: the board's own links, where they were drawn. */
   const others = $derived(view.links.filter((link) => lens.linkIds.includes(link.relation)));
@@ -67,7 +73,7 @@
             {#each columns as column (column)}
               <th scope="col">
                 <span>{layerWord(column)} · {seatPlace(b)}</span>
-                <span class="glyph">{nameAt(b, column)}</span>
+                <span class="glyph">{named(column)}</span>
               </th>
             {/each}
           </tr>
@@ -77,12 +83,12 @@
             <tr>
               <th scope="row">
                 <span>{layerWord(row)} · {seatPlace(a)}</span>
-                <span class="glyph">{nameAt(a, row)}</span>
+                <span class="glyph">{named(row)}</span>
               </th>
               {#each columns as column (column)}
                 {@const cell = cellOf(row, column)}
-                {@const one = nameAt(a, row) ?? ''}
-                {@const other = nameAt(b, column) ?? ''}
+                {@const one = named(row)}
+                {@const other = named(column)}
                 <td
                   aria-label={cell
                     ? cell.way === 'in'
@@ -110,7 +116,7 @@
           {@const from = spotOfKey(link.from)}
           {@const to = spotOfKey(link.to)}
           <li>
-            {nameAt(from.seat, from.layer)} · {nameAt(to.seat, to.layer)}:
+            {nameAt(from.seat, from.layer, from.id)} · {nameAt(to.seat, to.layer, to.id)}:
             {t(`label.relation.${link.relation}` as MessageKey)}
             <span class="glyph">{glyph(said(link.relation))}</span>
           </li>

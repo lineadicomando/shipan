@@ -3682,6 +3682,7 @@ independent sources naming the same thing the same way**.
 | a lens on a day: 生剋 | the same five relations, between the day's palaces and gates, a gate taking its home palace's phase as on the hour board | no 日家 text sets a gate against a palace; a test holds each gate's phase to the hour board's |
 | a lens on a day: 對宮 | the Luoshu, as on the hour board | the same four pairs, asserted |
 | a lens on 六壬: 生剋 | the same five relations, between any two names with a phase: the two plates, the lessons, the transmissions | the 賊剋 the board is drawn by: on every 賊剋 board the 初傳 stands over a lesson the lens names in control |
+| a lens on 七政四餘: 生剋 | the same five relations, between any two of the nine bodies with a phase | 《御定五星精義》's 論恩難仇用: twenty cells, five planets by four relations, each matched |
 
 **The three a lens shows are relations and never readings of them.** A reader
 who picks a thing on a board is shown how everything else stands to it
@@ -3710,6 +3711,18 @@ have a phase. The twelve generals have none registered (`docs/notes.md`,
 the rung «—»), so a lens keeps them by their kind and relates them to
 nothing. 六沖 and 六合 between branches are the art's too, and a lens draws
 neither until each has its row.
+
+**On 七政四餘 the lens relates the bodies and nothing else.** The five
+planets and the four remainders have phases (§ "四餘 — four of them, and what
+the fourth is worth"), and the 五星精義 reads its 論恩難仇用 between them by
+the five relations, so `qizhengLens` hands those over between any two of the
+nine. The Sun and the Moon have none. **The palaces have none in the lens
+either, by choice**: the same work gives each palace an owner, but what the
+art reads between a body and its palace is 歸垣 and 廟旺 — whose palace it is
+and how the body fares there — and a 生剋 drawn from a body to its palace's
+owner's phase would be a reading the art does not make. A palace may hold
+several bodies, which is why the descriptor tells names apart by identifier
+on this board (`crowded`).
 
 **The list that tests 門迫 is two cells shorter than the rule.** 《統宗》卷一
 迫 — ctext, and 故宮珍本叢刊 第426冊 page 13 — prints eight lines — 開門臨三四宮（金克木）· 休門臨九宮 · 生門臨一宮 ·
@@ -7424,6 +7437,24 @@ working from a Qing 曆 needs it.
 
 月孛 is the lunar apogee, which is 計都's original definition inherited, and it
 is 水餘.
+
+**Each 餘 has its planet's phase, and one work says so twice** (2026-10-25).
+《御定五星精義》, 故宮珍本叢刊 第423冊 p. 8, 四餘所屬: 「紫炁為木之餘。月孛為水之餘。
+羅睺為火之餘。計都為土之餘」 — transcribed as `W02262`, and read there on the
+plate. The same work's 論恩難仇用, p. 9, names each planet's four relations
+and sets every remainder beside its planet in every row — 「木以水孛為恩。以金為
+難。以土計為仇。以火羅為用」 — which is the four phases again, stated through the
+cycle rather than as a list. Venus has no 餘. The phases the engine carries
+(`QizhengBody.element`) are these; 太陽 and 太陰 carry none. The 論恩難仇用's
+row for the Sun fits no single phase. The row for the Moon — 金 its 恩, 水孛
+its 次恩, 土計 its 難, 火羅 its 仇, 木炁 its 用 — is water's four relations with
+water itself as a second 恩, which reads as a watery Moon; the engine gives
+it no phase on one row's reading, and a lens keeps it by its kind. A second work is located and not read:
+《星度指南》 carries the same four in the 合編's text recovered from its scan,
+which is a finding aid until the plate is read. The same page of the 五星精義
+states whose each palace is (十二宮所屬: 子丑 土, 寅亥 木, 卯戌 火, 辰酉 金, 巳申
+水, 午 the Sun's, 未 the Moon's) and where each governor is at home (七政歸垣);
+neither is in the engine, and neither is registered.
 
 **The three that are computed are computed as mean elements, deliberately.**
 They are 隱曜 — positions rather than bodies, none of them ever observed — and

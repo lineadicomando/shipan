@@ -102,16 +102,27 @@ export function oneAtATime(state: LensState): LensState {
 /** No lens: the whole board, alike. */
 export const WHOLE: LensState = { layers: [], phases: [], toward: [], shengke: true, links: [], extended: false };
 
-/** Where a thing is on the drawing: the seat and the layer, as the marks say. */
+/**
+ * Where a thing is on the drawing: the seat and the layer, as the marks say,
+ * and the identifier as well in a layer a seat holds several names in
+ * (`Lens.crowded`). A key without one names the whole layer of a seat, and
+ * lights every name in it.
+ */
 export type SpotKey = `${string}:${string}`;
-export const keyOf = (seat: string, layer: string): SpotKey => `${seat}:${layer}`;
+export const keyOf = (seat: string, layer: string, id?: string): SpotKey =>
+  id ? `${seat}:${layer}:${id}` : `${seat}:${layer}`;
 
-/** The seat and the layer a key names. A seat may not hold a colon; a layer never does. */
-export function spotOfKey(key: SpotKey): { seat: string; layer: string } {
-  const at = key.lastIndexOf(':');
-  return { seat: key.slice(0, at), layer: key.slice(at + 1) };
+/** The seat, the layer and, where it carries one, the identifier a key names. None of them holds a colon. */
+export function spotOfKey(key: SpotKey): { seat: string; layer: string; id?: string } {
+  const [seat = '', layer = '', id] = key.split(':');
+  return id ? { seat, layer, id } : { seat, layer };
 }
 const seatOfKey = (key: SpotKey): string => spotOfKey(key).seat;
+
+/** The key of a name on this board: with its identifier where its layer is crowded. */
+export function keyOfThing(lens: Lens, thing: { seat: string; layer: string; id?: string }): SpotKey {
+  return keyOf(thing.seat, thing.layer, lens.crowded.includes(thing.layer) ? thing.id : undefined);
+}
 
 /** One of the five relations of the phases, or a link of the board's own. */
 export type ShownRelation = RelationId | (string & {});
@@ -157,8 +168,7 @@ function find(lens: Lens, focus: Focus | undefined) {
 
 /** The thing standing where a key says, if one with a phase does. */
 function thingAt(lens: Lens, key: SpotKey): LensThing | undefined {
-  const { seat, layer } = spotOfKey(key);
-  return lens.things.find((one) => one.seat === seat && one.layer === layer);
+  return lens.things.find((one) => keyOfThing(lens, one) === key);
 }
 
 /** The board's order of its seats, for sorting by it. */
@@ -170,7 +180,7 @@ export function viewOf(lens: Lens | undefined, state: LensState): LensView {
 
   const start = find(lens, state.focus);
   if (start) {
-    const from = keyOf(start.seat, start.layer);
+    const from = keyOfThing(lens, start);
     const links: ShownLink[] = [];
     const kept = (element: Element): boolean => state.phases.length === 0 || state.phases.includes(element);
 
@@ -179,7 +189,7 @@ export function viewOf(lens: Lens | undefined, state: LensState): LensView {
         if (thing === start || !state.toward.includes(thing.layer) || !kept(thing.element)) continue;
         links.push({
           from,
-          to: keyOf(thing.seat, thing.layer),
+          to: keyOfThing(lens, thing),
           relation: lens.phases[start.element][thing.element],
         });
       }
@@ -191,10 +201,10 @@ export function viewOf(lens: Lens | undefined, state: LensState): LensView {
       if (!state.links.includes(relation)) continue;
       for (const link of lens.links) {
         if (link.relation !== relation) continue;
-        const reaches = (end: { seat: string; layer: string }) =>
-          link.between === 'seats' ? end.seat === start.seat : end.seat === start.seat && end.layer === start.layer;
+        const reaches = (end: { seat: string; layer: string; id?: string }) =>
+          link.between === 'seats' ? end.seat === start.seat : keyOfThing(lens, end) === from;
         const other = reaches(link.a) ? link.b : reaches(link.b) ? link.a : undefined;
-        if (other) links.push({ from, to: keyOf(other.seat, other.layer), relation });
+        if (other) links.push({ from, to: keyOfThing(lens, other), relation });
       }
     }
     return {
@@ -212,18 +222,14 @@ export function viewOf(lens: Lens | undefined, state: LensState): LensView {
 
   // A filter by kind, by phase, or both. A thing with no phase — a spirit —
   // is kept by its kind alone and never by a phase.
-  const element = new Map(lens.things.map((thing) => [keyOf(thing.seat, thing.layer), thing.element]));
   const lit = new Set<SpotKey>();
-  for (const seat of lens.seats) {
-    for (const layer of lens.layers) {
-      if (state.layers.length > 0 && !state.layers.includes(layer)) continue;
-      const key = keyOf(seat, layer);
-      if (state.phases.length > 0) {
-        const phase = element.get(key);
-        if (!phase || !state.phases.includes(phase)) continue;
-      }
-      lit.add(key);
+  const ofKind = (layer: string) => state.layers.length === 0 || state.layers.includes(layer);
+  if (state.phases.length > 0) {
+    for (const thing of lens.things) {
+      if (ofKind(thing.layer) && state.phases.includes(thing.element)) lit.add(keyOfThing(lens, thing));
     }
+  } else {
+    for (const seat of lens.seats) for (const layer of lens.layers) if (ofKind(layer)) lit.add(keyOf(seat, layer));
   }
   return { active: true, lit, seats: [], links: [] };
 }
@@ -262,7 +268,7 @@ function pairView(lens: Lens, state: LensState): LensView {
   const ones = chosen.filter((key) => seatOfKey(key) === a);
   const others = chosen.filter((key) => seatOfKey(key) === b);
   const asked = lens.links.filter((link) => state.links.includes(link.relation));
-  const same = (end: { seat: string; layer: string }, key: SpotKey) => keyOf(end.seat, end.layer) === key;
+  const same = (end: { seat: string; layer: string; id?: string }, key: SpotKey) => keyOfThing(lens, end) === key;
   const links: ShownLink[] = [];
 
   for (const mine of ones) {
@@ -287,7 +293,7 @@ function pairView(lens: Lens, state: LensState): LensView {
       if (link.relation !== relation || link.between !== 'seats') continue;
       const [first, second] = link.a.seat === a ? [link.a, link.b] : [link.b, link.a];
       if (first.seat !== a || second.seat !== b) continue;
-      links.push({ from: keyOf(first.seat, first.layer), to: keyOf(second.seat, second.layer), relation });
+      links.push({ from: keyOfThing(lens, first), to: keyOfThing(lens, second), relation });
     }
   }
   return { active: true, lit, seats, links };
@@ -306,7 +312,7 @@ function chosenIn(lens: Lens, state: LensState, seats: readonly string[]): SpotK
   };
   return (state.chosen ?? [])
     .filter((key) => seats.includes(seatOfKey(key)))
-    .sort((x, y) => order(x) - order(y));
+    .sort((x, y) => order(x) - order(y) || (x < y ? -1 : x > y ? 1 : 0));
 }
 
 /**
@@ -320,11 +326,11 @@ function flow(from: SpotKey, to: SpotKey, relation: RelationId): ShownLink {
   return { from, to, relation };
 }
 
-/** One cell of the table between two palaces. */
+/** One cell of the table between two seats. */
 export interface PairCell {
-  /** The layer of the thing in the row's seat, and of the column's. */
-  row: string;
-  column: string;
+  /** Where the name of the row stands, in the first seat, and the column's, in the other. */
+  row: SpotKey;
+  column: SpotKey;
   /** Which way the relation runs: from the row to the column, the other way, or neither. */
   way: 'out' | 'in' | 'none';
   /** The relation, named as the flow: 我生 or 我剋 where it runs, 比和 where it does not. */
@@ -343,11 +349,11 @@ export function pairTable(lens: Lens, state: LensState): PairCell[] {
   const chosen = chosenIn(lens, state, seats);
   const cells: PairCell[] = [];
   for (const mine of chosen.filter((key) => seatOfKey(key) === a)) {
-    const row = spotOfKey(mine).layer;
+    const row = mine;
     const one = thingAt(lens, mine);
     if (!one) continue;
     for (const theirs of chosen.filter((key) => seatOfKey(key) === b)) {
-      const column = spotOfKey(theirs).layer;
+      const column = theirs;
       const other = thingAt(lens, theirs);
       if (!other) continue;
       const relation = lens.phases[one.element][other.element];
@@ -364,9 +370,13 @@ export function pairTable(lens: Lens, state: LensState): PairCell[] {
  * pressed again, it is not. A name with no phase — a 奇門 spirit — is not one
  * a relation can be drawn to, and nothing happens.
  */
-export function pressedInPair(lens: Lens, state: LensState, seat: string, layer: string): LensState {
-  if (!lens.phased.includes(layer)) return state;
-  const key = keyOf(seat, layer);
+export function pressedInPair(lens: Lens, state: LensState, seat: string, layer: string, id?: string): LensState {
+  const crowded = lens.crowded.includes(layer);
+  const thing = lens.things.find(
+    (one) => one.seat === seat && one.layer === layer && (!crowded || one.id === id),
+  );
+  if (!thing) return state;
+  const key = keyOfThing(lens, thing);
   const chosen = state.chosen ?? [];
   const next = chosen.includes(key) ? chosen.filter((one) => one !== key) : [...chosen, key];
   return { ...state, chosen: next.length > 0 ? next : undefined };
@@ -457,7 +467,7 @@ export function readLens(fragment: string, lens?: Lens): LensState {
     if (pair.length > 0) {
       state.pair = pair;
       const chosen = list('chosen', (key) => {
-        if (!/^[a-z0-9]+:[a-z]+$/.test(key)) return false;
+        if (!/^[a-z0-9]+:[a-z]+(:[a-z0-9]+)?$/.test(key)) return false;
         const { seat, layer: at } = spotOfKey(key as SpotKey);
         return pair.includes(seat) && isPhased(at);
       }).map((key) => key as SpotKey);
@@ -494,7 +504,7 @@ export function activePhases(lens: Lens | undefined, state: LensState): Element[
   }
   if (state.pair?.length === 2 && state.chosen?.length) {
     const chosen = new Set<string>(state.chosen);
-    return [...new Set(lens.things.filter((one) => chosen.has(keyOf(one.seat, one.layer))).map((one) => one.element))];
+    return [...new Set(lens.things.filter((one) => chosen.has(keyOfThing(lens, one))).map((one) => one.element))];
   }
   return [...state.phases];
 }

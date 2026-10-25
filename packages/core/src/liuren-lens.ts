@@ -65,6 +65,7 @@ export function liurenLens(board: LiurenBoard): LiurenLens {
     pairSeats: RING,
     layers: LIUREN_LAYERS,
     phased: LIUREN_LENS_LAYERS,
+    crowded: [],
     things,
     phases: phaseTable(),
     linkIds: [],

@@ -140,8 +140,14 @@
     for (const seat of root.querySelectorAll('[data-seat]')) {
       const number = seat.getAttribute('data-seat');
       for (const name of seat.querySelectorAll(':scope > [data-layer]')) {
-        const key = `${number}:${name.getAttribute('data-layer')}` as SpotKey;
-        if (view?.active && view.lit.has(key)) name.setAttribute('data-lens', 'lit');
+        // Lit by its layer in the seat, or — in a layer a seat holds several
+        // names in — by itself.
+        const layer = name.getAttribute('data-layer');
+        const id = name.getAttribute('data-id');
+        const lit =
+          view?.active &&
+          (view.lit.has(`${number}:${layer}` as SpotKey) || (id !== null && view.lit.has(`${number}:${layer}:${id}` as SpotKey)));
+        if (lit) name.setAttribute('data-lens', 'lit');
         else name.removeAttribute('data-lens');
       }
     }
@@ -149,8 +155,10 @@
 
   /** The box of a name on the drawing, in the frame's own pixels. */
   function boxOf(key: SpotKey, origin: DOMRect) {
-    const { seat, layer } = spotOfKey(key);
-    const name = root?.querySelector(`[data-seat="${seat}"] > [data-layer="${layer}"]`);
+    const { seat, layer, id } = spotOfKey(key);
+    const name = root?.querySelector(
+      `[data-seat="${seat}"] > [data-layer="${layer}"]${id ? `[data-id="${id}"]` : ''}`,
+    );
     if (!name) return undefined;
     const box = name.getBoundingClientRect();
     return { x: box.left - origin.left, y: box.top - origin.top, width: box.width, height: box.height };

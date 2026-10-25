@@ -51,15 +51,33 @@ laid on (`pairSeats`), and the list and the table under the board said
 palace 9» where it said «· 9». The seats' names do not collide on 六壬, and
 no `unit` was added.
 
+## 七政四餘
+
+The fourth step: `qizhengLens`, answered by `/api/qizheng`. The roadmap had
+asked for the remainders' phases and the palaces' owners to be registered
+before they were drawn. The phases were already transcribed: 《御定五星精義》's
+四餘所屬, on a page of `W02262` read for other questions, and its 論恩難仇用
+two pages on, which states the same four phases through the cycle and became
+the test. The owners are on the same page (十二宮所屬) and were left out on
+purpose: what the art reads between a body and its palace is 歸垣 and 廟旺,
+and a 生剋 to the owner's phase would be a reading it does not make. So the
+lens relates the nine bodies with a phase and nothing else.
+
+A palace holds several bodies, which the key `seat:layer` could not tell
+apart: the descriptor now names the layers that are crowded, and a name
+there is keyed by its identifier as well. Checking the claim that the
+Sun's and the Moon's rows fit no phase, the Moon's turned out to read as
+water's; it is recorded and left for the user.
+
 ## What it moved
 
-The first step moved nothing a reader sees; the second and third gave the
-board of a day and 六壬 a lens they had not had. The answer of `/api/qimen` moved with the first — its `lens`
+The first step moved nothing a reader sees; the second, third and fourth
+gave the board of a day, 六壬 and 七政四餘 a lens they had not had. The answer of `/api/qimen` moved with the first — its `lens`
 carries `seats`, `layers`, `phased`, `linkIds` and `links` where it carried
 `facing` and `wuhe`, and a seat is a string — so it is 0.34.0 by the first
 of the three questions. The roadmap had said this step would move no version,
 reasoning from the page and not from the answer.
 
-The day's lens and 六壬's ride in the same version: 0.34.0 has not left the branch,
+The lenses of the day, 六壬 and 七政四餘 ride in the same version: 0.34.0 has not left the branch,
 and a version is about what an answer has stopped being since the last one
-shipped. Their three rows are new; the rows phase 71 registered do not move.
+shipped. Their five rows are new; the rows phase 71 registered do not move.

@@ -46,11 +46,13 @@ export interface LensSpot<Layer extends string = string> {
   /** The seat in the board's own terms, as `data-seat` names it. */
   seat: string;
   layer: Layer;
+  /** What stands there, where the layer is one a seat holds several names in (`crowded`). */
+  id?: string;
 }
 
 /** One thing on the board with a phase, addressed as the drawing marks it. */
 export interface LensThing<Layer extends string = string> extends LensSpot<Layer> {
-  /** What stands there: a stem, star, gate, palace, branch identifier. */
+  /** What stands there: a stem, star, gate, palace, branch, body identifier. */
   id: string;
   element: Element;
 }
@@ -87,6 +89,13 @@ export interface Lens<Layer extends string = string, Link extends string = strin
   layers: readonly Layer[];
   /** The layers whose things have a phase, and can stand in a relation. */
   phased: readonly Layer[];
+  /**
+   * The layers a seat may hold several names in — the governors in one
+   * palace of a 七政四餘 ring — where a name is told apart by its identifier
+   * as well as its seat and layer. Empty on a board with one name to a layer
+   * in every seat.
+   */
+  crowded: readonly Layer[];
   /** Every thing on the board that has a phase, seat by seat. */
   things: LensThing<Layer>[];
   /**

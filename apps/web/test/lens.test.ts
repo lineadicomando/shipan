@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { QimenLens } from '@shipan/core';
+import type { Lens, QimenLens } from '@shipan/core';
 import { WHOLE, activePhases, inPair, keyOf, oneAtATime, pairTable, pressedInPair, wayOf, pressed, pressedSeat, readLens, viewOf, writeLens, type LensState } from '../src/lib/lens';
 
 /**
@@ -18,6 +18,7 @@ const LENS: QimenLens = {
   pairSeats: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
   layers: ['heaven', 'earth', 'palace', 'spirit', 'star', 'gate'],
   phased: ['heaven', 'earth', 'palace', 'star', 'gate'],
+  crowded: [],
   things: [
     { seat: '1', layer: 'heaven', id: 'bing', element: 'huo' },
     { seat: '1', layer: 'palace', id: 'kan', element: 'shui' },
@@ -196,11 +197,11 @@ describe('a lens on a 奇門 board', () => {
     });
     // Rows are palace one's — heaven, palace, gate — and columns nine's.
     expect(cells).toHaveLength(6);
-    expect(cells[0]).toEqual({ row: 'heaven', column: 'heaven', way: 'out', relation: 'woke' });
-    expect(cells).toContainEqual({ row: 'gate', column: 'palace', way: 'in', relation: 'woke' });
-    expect(cells).toContainEqual({ row: 'gate', column: 'heaven', way: 'none', relation: 'bihe' });
+    expect(cells[0]).toEqual({ row: '1:heaven', column: '9:heaven', way: 'out', relation: 'woke' });
+    expect(cells).toContainEqual({ row: '1:gate', column: '9:palace', way: 'in', relation: 'woke' });
+    expect(cells).toContainEqual({ row: '1:gate', column: '9:heaven', way: 'none', relation: 'bihe' });
     // 辛 metal in nine generates 坎 water in one: the flow runs from the column.
-    expect(cells).toContainEqual({ row: 'palace', column: 'heaven', way: 'in', relation: 'wosheng' });
+    expect(cells).toContainEqual({ row: '1:palace', column: '9:heaven', way: 'in', relation: 'wosheng' });
   });
 
   it('lets a pressed name and a pair stand in for each other, never together', () => {
@@ -248,5 +249,58 @@ describe('a lens on a 奇門 board', () => {
     expect(activePhases(LENS, { ...WHOLE, pair: ['1', '9'], chosen: ['1:heaven', '9:palace', '9:heaven'] })).toEqual(['huo', 'jin']);
     expect(activePhases(LENS, { ...WHOLE, phases: ['shui'] })).toEqual(['shui']);
     expect(activePhases(undefined, { ...WHOLE, phases: ['shui'] })).toEqual([]);
+  });
+});
+
+/**
+ * A board whose seats hold several names in one layer, as a 七政四餘 palace
+ * holds several bodies: two with a phase and the Sun, which has none, in 子,
+ * and one in 午.
+ */
+const CROWDED: Lens = {
+  board: 'qizheng',
+  seats: ['zi', 'wu'],
+  pairSeats: ['zi', 'wu'],
+  layers: ['palace', 'governor'],
+  phased: ['governor'],
+  crowded: ['governor'],
+  things: [
+    { seat: 'zi', layer: 'governor', id: 'muxing', element: 'mu' },
+    { seat: 'zi', layer: 'governor', id: 'jinxing', element: 'jin' },
+    { seat: 'wu', layer: 'governor', id: 'tuxing', element: 'tu' },
+  ],
+  phases: LENS.phases,
+  linkIds: [],
+  links: [],
+  names: { relations: {} as Lens['names']['relations'], elements: {} as Lens['names']['elements'] },
+};
+
+describe('a lens on a board whose seats hold several names in one layer', () => {
+  it('tells two names of one layer and one seat apart by what they are', () => {
+    const view = viewOf(CROWDED, { ...pressed(WHOLE, { layer: 'governor', id: 'muxing' }), toward: ['governor'] });
+    expect(view.focus).toBe('zi:governor:muxing');
+    expect(view.links).toEqual([
+      { from: 'zi:governor:muxing', to: 'zi:governor:jinxing', relation: 'kewo' },
+      { from: 'zi:governor:muxing', to: 'wu:governor:tuxing', relation: 'woke' },
+    ]);
+  });
+
+  it('keeps a phase by the names that have it, and a kind by the whole layer of every seat', () => {
+    expect([...viewOf(CROWDED, { ...WHOLE, phases: ['jin'] }).lit]).toEqual(['zi:governor:jinxing']);
+    expect([...viewOf(CROWDED, { ...WHOLE, layers: ['governor'] }).lit].sort()).toEqual(['wu:governor', 'zi:governor']);
+  });
+
+  it('compares in a pair the names pressed, each by itself, and nothing with no phase', () => {
+    const both = pressedSeat(pressedSeat(WHOLE, 'wu'), 'zi');
+    // The Sun is in 子 and has no phase: a press on it changes nothing.
+    expect(pressedInPair(CROWDED, both, 'zi', 'governor', 'taiyang')).toEqual(both);
+    // A crowded layer with no name said cannot be pressed into a comparison.
+    expect(pressedInPair(CROWDED, both, 'zi', 'governor')).toEqual(both);
+    const chosen = pressedInPair(CROWDED, pressedInPair(CROWDED, both, 'zi', 'governor', 'jinxing'), 'wu', 'governor', 'tuxing');
+    expect(chosen.chosen).toEqual(['zi:governor:jinxing', 'wu:governor:tuxing']);
+    expect(pairTable(CROWDED, chosen)).toEqual([
+      { row: 'zi:governor:jinxing', column: 'wu:governor:tuxing', way: 'in', relation: 'wosheng' },
+    ]);
+    expect(readLens(`#${writeLens(chosen)}`, CROWDED)).toEqual(chosen);
   });
 });

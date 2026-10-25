@@ -212,7 +212,9 @@ on 2026-10-18. What `main` carries since 2026-10-15 is of eleven days:
   `core`), `qimenLens` its first instance, and the page's lens and its
   wiring knowing no board. Then item 2: the board of a day has its lens
   (`dayLens`), its nine stars kept by kind for want of a registered phase.
-  Then item 3: 六壬 (`liurenLens`), its generals kept by kind. Phase 72. The `lens` that `routes/api/qimen/+server.ts` answers changed shape,
+  Then item 3: 六壬 (`liurenLens`), its generals kept by kind. Then item 4:
+  七政四餘 (`qizhengLens`), the bodies alone, the remainders' phases read
+  from the 五星精義. Phase 72. The `lens` that `routes/api/qimen/+server.ts` answers changed shape,
   which is what moved the version.
 
 `main` is pushed to `origin/main` as of 2026-10-18; the commits of
@@ -306,11 +308,18 @@ why). The code to copy from is the 奇門 hour board:
    alone) and the page a `seatPlace` (where a name stands, in words). The
    十二天將 are kept by kind until 《六壬大全》卷二 is read and registered;
    六沖 and 六合 are the obvious links to add once each has its row.
-4. **七政四餘.** The seven governors have the phases of their planets; the
-   four remainders' phases and the ownership of each 宮 by a governor are
-   transmitted, not derived, and each wants its row before it is drawn. Which
-   relation the art reads between a body and the 宮 it stands in is a reading
-   to locate first (`.claude/skills/shushu/disciplines/qizheng.md`).
+4. **Done on 2026-10-25** (phase 72): 七政四餘 has its lens, `qizhengLens`,
+   the five relations between the nine bodies with a phase. The remainders'
+   phases are registered from 《御定五星精義》's 四餘所屬 (rung 4), and the
+   lens is tested against its 論恩難仇用. The Sun and the Moon have none,
+   and the palaces are given none: what the art reads between a body and its
+   palace is 歸垣 and 廟旺, not 生剋. The descriptor gained `crowded`, a
+   palace holding several bodies. **Two questions left for the user**: the
+   五星精義's row for the Moon reads as water's, so whether 太陰 takes 水 in a
+   lens; and whether 歸垣 (whose palace a body stands in, from the same
+   work's 十二宮所屬 and 七政歸垣, neither registered) is a relation the lens
+   should show, which wants both tables registered first. 《星度指南》's copy
+   of the 四餘所屬 is located in the 合編's recovered text and not read.
 5. **紫微斗數.** Every star's 五行 is transmitted (陰陽五行 in 全書's tables)
    and some are disputed: register before drawing. 三方四正 is the art's own
    structural relation, derived from the twelve seats, and is the obvious

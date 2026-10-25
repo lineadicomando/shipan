@@ -181,6 +181,13 @@ export {
   type LiurenLayer,
   type LiurenLens,
 } from './liuren-lens.js';
+export {
+  QIZHENG_LAYERS,
+  QIZHENG_LENS_LAYERS,
+  qizhengLens,
+  type QizhengLayer,
+  type QizhengLens,
+} from './qizheng-lens.js';
 
 export {
   CI,

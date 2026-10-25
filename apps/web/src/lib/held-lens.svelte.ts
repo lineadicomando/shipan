@@ -45,8 +45,12 @@ export interface HeldLensOptions {
   /** The board's lens, where the answer carried one. */
   lens: () => Lens | undefined;
   t: () => Translator;
-  /** A name on the board in words — its gloss, its hanzi and its reading — from where the drawing marks it. */
-  nameAt: (seat: string, layer: string) => string | undefined;
+  /**
+   * A name on the board in words — its gloss, its hanzi and its reading —
+   * from where the drawing marks it, and by its identifier as well where a
+   * seat holds several names in one layer.
+   */
+  nameAt: (seat: string, layer: string, id?: string) => string | undefined;
   /** A seat in words, as a pair is said: on 奇門, its number and its palace. */
   seatName: (seat: string) => string;
   /**
@@ -88,8 +92,8 @@ export class HeldLens {
     );
     this.focusName = $derived.by(() => {
       if (!this.view.focus) return undefined;
-      const { seat, layer } = spotOfKey(this.view.focus);
-      return options.nameAt(seat, layer);
+      const { seat, layer, id } = spotOfKey(this.view.focus);
+      return options.nameAt(seat, layer, id);
     });
     this.pairSaid = $derived.by(() => {
       const seats = this.view.seats;
@@ -132,7 +136,7 @@ export class HeldLens {
     return writeLens(this.state);
   }
 
-  nameAt = (seat: string, layer: string): string | undefined => this.#options.nameAt(seat, layer);
+  nameAt = (seat: string, layer: string, id?: string): string | undefined => this.#options.nameAt(seat, layer, id);
   seatPlace = (seat: string): string => this.#options.seatPlace(seat);
 
   /**
@@ -154,7 +158,9 @@ export class HeldLens {
     // Inside the two seats of a pair, a name is pressed to be compared and
     // the ground lets the seat go — in either mode.
     if (seat && inPair(this.state, seat)) {
-      this.state = spot.layer ? pressedInPair(lens, this.state, seat, spot.layer) : pressedSeat(this.state, seat);
+      this.state = spot.layer
+        ? pressedInPair(lens, this.state, seat, spot.layer, spot.id)
+        : pressedSeat(this.state, seat);
       return;
     }
     // Laid one way at a time, a press does what that way does: in a pair, a
@@ -168,8 +174,11 @@ export class HeldLens {
       return;
     }
     if (!spot.layer || !spot.id) return;
-    if (!lens.phased.includes(spot.layer)) return;
-    this.state = pressed(this.state, { layer: spot.layer, id: spot.id });
+    // Only a name with a phase can be started from: on 七政四餘 the Sun and
+    // the Moon stand in a layer that has phases and have none themselves.
+    const { layer, id } = spot;
+    if (!lens.things.some((thing) => thing.layer === layer && thing.id === id)) return;
+    this.state = pressed(this.state, { layer, id });
     this.way = 'focus';
   };
 
@@ -199,14 +208,18 @@ export class HeldLens {
     const t = this.#options.t();
     const view = this.view;
     const lens = this.lens;
-    if (lens && view.seats.length === 2 && spot.seat && spot.layer) {
-      const key = keyOf(spot.seat, spot.layer);
-      const name = (at: typeof key) => {
-        const { seat, layer } = spotOfKey(at);
-        return this.#options.nameAt(seat, layer) ?? '';
+    // A name is a key of its layer, or of itself where its layer is crowded.
+    const keys =
+      spot.seat && spot.layer
+        ? [keyOf(spot.seat, spot.layer), ...(spot.id ? [keyOf(spot.seat, spot.layer, spot.id)] : [])]
+        : [];
+    if (lens && view.seats.length === 2 && keys.length > 0) {
+      const name = (at: (typeof keys)[number]) => {
+        const { seat, layer, id } = spotOfKey(at);
+        return this.#options.nameAt(seat, layer, id) ?? '';
       };
       const said = view.links
-        .filter((link) => link.to === key || link.from === key)
+        .filter((link) => keys.includes(link.to) || keys.includes(link.from))
         .map((link) =>
           link.relation === 'wosheng' || link.relation === 'woke' || link.relation === 'bihe'
             ? t(`lens.flow.${link.relation}.said` as MessageKey, { from: name(link.from), to: name(link.to) })
@@ -215,10 +228,9 @@ export class HeldLens {
       if (said.length > 0) return said.join(' · ');
     }
     const focusName = this.focusName;
-    if (view.focus && focusName && spot.seat && spot.layer) {
-      const key = keyOf(spot.seat, spot.layer);
+    if (view.focus && focusName && keys.length > 0) {
       const said = view.links
-        .filter((link) => link.to === key)
+        .filter((link) => keys.includes(link.to))
         .map((link) => t(`lens.relation.${link.relation}` as MessageKey, { thing: focusName }));
       if (said.length > 0) return said.join(' · ');
     }

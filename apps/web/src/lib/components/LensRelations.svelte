@@ -28,7 +28,7 @@
     view: LensView;
     focusName: string | undefined;
     /** A name on the board in words, from where the drawing marks it. */
-    nameAt: (seat: string, layer: string) => string | undefined;
+    nameAt: (seat: string, layer: string, id?: string) => string | undefined;
     /** Where a name stands, in words: «palace 4», «first lesson». */
     seatPlace: (seat: string) => string;
   } = $props();
@@ -47,9 +47,9 @@
       <p>{t('lens.empty')}</p>
     {:else}
       <ul>
-        {#each items as item (`${item.seat}:${item.layer}:${item.relation}`)}
+        {#each items as item (`${item.seat}:${item.layer}:${item.id ?? ''}:${item.relation}`)}
           <li>
-            {nameAt(item.seat, item.layer)}
+            {nameAt(item.seat, item.layer, item.id)}
             <span class="where">({t('lens.at', {
               layer: t(`label.register.${lens.board}.${item.layer}` as MessageKey),
               where: seatPlace(item.seat),
