@@ -402,8 +402,9 @@ A feature crosses several surfaces and has a procedure of its own — see the
 
 ## Consulting, and judging as a practitioner
 
-Reading a board for somebody, or deciding what a source means for the engine
-with the knowledge of the arts themselves, has a skill of its own: `shushu`.
+Reading a board for somebody, teaching an art to a learner, or deciding what
+a source means for the engine with the knowledge of the arts themselves, has a
+skill of its own: `shushu`.
 It carries the arts and points here for the rules.
 
 ## Reviewing what is already there

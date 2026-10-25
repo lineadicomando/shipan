@@ -964,7 +964,9 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
         note: 'form.liuren.guiren.note',
         implemented: true,
         // 《御定六壬直指》's two verses, 陽貴 and 陰貴: this table cell for cell.
-        heldBy: ['zhizhi'],
+        // 《協紀辨方書》卷七's 天乙貴人 起例 seats the same twenty, derived from
+        // the 干德 and its 合 rather than recited.
+        heldBy: ['zhizhi', 'xieji'],
       },
     ],
     default: 'chou',
