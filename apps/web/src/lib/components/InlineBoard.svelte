@@ -73,12 +73,13 @@
    * drawing's own `width` and `height` are its intrinsic size and would
    * otherwise win over the box.
    *
-   * The cursor stays the reader's own over the names: the tip that rises over
-   * one says there is something to find, and a question mark over every name
-   * on the board read as a fault in it.
+   * Over a name the cursor is the hand a link has: a name is pressed to lay
+   * the lens from it, and the hand says so before anything is. A question
+   * mark said the same thing as a doubt, over every name on the board.
    */
   const sheet = $derived(
     ':host { display: block; } svg { display: block; width: 100%; height: auto; }' +
+      (tip ? ' [data-layer] { cursor: pointer; }' : '') +
       // What a lens leaves out recedes, and nothing is made heavier: the
       // ground of each seat stays, so the board keeps its shape.
       ' [data-seat] > * { transition: opacity 0.15s ease-out; }' +

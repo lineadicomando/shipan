@@ -299,9 +299,9 @@ The first thing done with one is saying which layer a name is in —
 `label.register.<board>.<layer>`, through `sayLayer`, set over the name while a
 mouse rests on it or after a tap — because the drawing says it by position
 alone. The keys are scoped by board because one word names different things on
-two boards. The tip itself is the only announcement it gets: the cursor stays
-the reader's own, since a question mark over every name read as a fault in
-the board. A sheet has no
+two boards. The cursor is the only announcement it gets, and it is a link's
+hand, since a name is pressed to lay the lens from it; a question mark over
+every name read as a doubt about the board. A sheet has no
 pointer, so in print the same words are set once instead, as an empty seat
 under the board (`LayerLegend`).
 
