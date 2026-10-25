@@ -89,9 +89,9 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-25
 
-**Version 0.35.0** on the branch `lens-relations`, open since 2026-10-25;
-`main` is at 0.34.0. The branch `lens-generic` landed on 2026-10-25 and was
-deleted, as «lenses» was the day before it and `board-pointer` on 2026-10-18. What `main` carries since 2026-10-15 is of eleven days:
+**Version 0.35.0**, in every manifest. **`main` is checked out and no branch
+is open**: `lens-relations` and `lens-generic` landed on 2026-10-25 and were
+deleted, as «lenses» was the day before and `board-pointer` on 2026-10-18. What `main` carries since 2026-10-15 is of eleven days:
 
 - 2026-10-15, surface work: the Qi Men section holds its board in the page
   (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which register a
