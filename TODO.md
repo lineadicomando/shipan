@@ -228,9 +228,8 @@ deleted, as «lenses» was the day before and `board-pointer` on 2026-10-18. Wha
   and 太乙 and the generals related in the 太乙 lens; and the consultation
   given the bench, the lens and the key, every drawing asked bare. Phase 73.
 
-`main` is pushed to `origin/main` as of 2026-10-18; the commits of
-2026-10-19, 2026-10-20, 2026-10-22, 2026-10-23, 2026-10-24 and 2026-10-25 are
-not pushed, and pushing is the user's call.
+`main` is pushed to `origin/main` as of 2026-10-25, on the user's word;
+pushing is always the user's call.
 `npm test`, `npm run typecheck` and `npm run build` pass on 2026-10-20 with no
 test skipped, and again on 2026-10-22, 2026-10-23, 2026-10-24 and 2026-10-25,
 the last on `main` after `lens-relations` landed. **Run `npm run build` before `npm test`** in
