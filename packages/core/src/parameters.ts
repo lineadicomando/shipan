@@ -609,6 +609,45 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     ],
     default: 'tianpan',
   },
+  spiritPhase: {
+    board: 'qimen',
+    family: 'shijia',
+    // Whether a lens may relate the eight spirits, and by which phase. It
+    // moves nothing on the board. See `docs/sources.md` § "The phases of the
+    // eight spirits".
+    label: 'form.qimen.spiritPhase',
+    values: [
+      {
+        id: 'none',
+        says: 'form.qimen.spiritPhase.none',
+        note: 'form.qimen.spiritPhase.note',
+        implemented: true,
+        // 「八神因是陰性物質…預測中亦不按五行屬性參與生克制化」, 幺學聲 2005 p. 7.
+        heldBy: ['xiandaiyingyong'],
+      },
+      // 「八神所屬之五行：直符即天乙貴神屬土，螣蛇即巳屬火…」, the 奇門秘訣,
+      // 《御定奇門大全》卷四十七, sheet 1086.
+      {
+        id: 'branch',
+        name: { hanzi: '所屬', pinyin: 'suǒshǔ' },
+        says: 'form.qimen.spiritPhase.branch',
+        note: 'form.qimen.spiritPhase.note',
+        implemented: true,
+        heldBy: ['qimenmijue'],
+      },
+      // 「值符者…其體屬火」, 「螣蛇者，丁火之化氣，其實屬陰土」, 九神主論章,
+      // 《奇門遁甲秘笈大全》卷六, read in the 省思堂 woodblock.
+      {
+        id: 'huaqi',
+        name: { hanzi: '化氣', pinyin: 'huàqì' },
+        says: 'form.qimen.spiritPhase.huaqi',
+        note: 'form.qimen.spiritPhase.note',
+        implemented: true,
+        heldBy: ['mijidaquan'],
+      },
+    ],
+    default: 'none',
+  },
   leap: {
     board: 'qimen',
     family: 'shijia',

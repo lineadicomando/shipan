@@ -1521,6 +1521,17 @@ export const it: Record<MessageKey, string> = {
     'dal piatto cielo in un’ora da 甲 jiǎ a 戊 wù, e dal piatto terra in un’ora da 己 jǐ a 癸 guǐ, come nel commento del 《奇門秘訣》 qíménmìjué',
   'form.qimen.spiritSeat.note':
     'Gli altri sette spiriti seguono il primo intorno ai palazzi, nello stesso ordine in entrambe le letture. La prima lettura lo colloca dove sta il capo sul piatto cielo. La seconda fa lo stesso nelle cinque ore il cui tronco va da 甲 jiǎ a 戊 wù; nelle cinque il cui tronco va da 己 jǐ a 癸 guǐ lo colloca dove sta il capo sul piatto terra, e così fa ogni volta che il capo cade sul palazzo centrale. Dove i due posti sono diversi, ogni spirito sta in un altro palazzo.',
+  // Whether the lens may relate the eight spirits by the five phases, and by
+  // which phases. Nothing on the board moves under any of the three.
+  'form.qimen.spiritPhase': 'Nella lente, gli otto spiriti',
+  'form.qimen.spiritPhase.none':
+    'si possono isolare come gruppo e restano senza relazioni, come nel 《奇門遁甲現代應用技術》 qíméndùnjiǎxiàndàiyìngyòngjìshù',
+  'form.qimen.spiritPhase.branch':
+    'prendono la fase del ramo a cui ciascuno corrisponde, come nel 《奇門秘訣》 qíménmìjué',
+  'form.qimen.spiritPhase.huaqi':
+    'prendono le fasi del 《奇門遁甲秘笈大全》 qíméndùnjiǎmìjídàquán, dove 值符 zhífú è fuoco e 螣蛇 téngshé è terra',
+  'form.qimen.spiritPhase.note':
+    'Questa scelta riguarda solo la lente: decide se gli spiriti si possono mettere in relazione con il resto della tavola secondo le cinque fasi, e la tavola resta la stessa. Con la seconda e la terza lettura ogni spirito ha una fase. Le due letture danno la stessa fase a otto dei dieci nomi e si separano su 值符 zhífú e 螣蛇 téngshé.',
   'form.qimen.plate': 'Le stelle e i tronchi sopra i palazzi si muovono',
   'form.qimen.plate.zhuan':
     'girandoli sugli otto palazzi esterni, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
@@ -1924,6 +1935,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.daxian': 'Dove si apre il primo decennio dei grandi limiti.',
   'notes.parameter.spirits': 'Che cosa nomina il quinto e il sesto spirito.',
   'notes.parameter.spiritSeat': 'Da dove comincia l’anello degli otto spiriti.',
+  'notes.parameter.spiritPhase': 'Quale delle cinque fasi ha ciascuno degli otto spiriti, se ne ha una.',
   'notes.parameter.leap': 'Dove il 置閏 zhìrùn ripete il proprio blocco.',
   'notes.parameter.strengths': 'Da che cosa si leggono i cinque stati stagionali.',
   'notes.parameter.earth': 'Dove comincia la stagione della terra.',

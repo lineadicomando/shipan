@@ -226,3 +226,65 @@ describe('the relations a lens may show on a board of the day', () => {
     expect(day.links).toEqual(hour.links.filter((link) => link.relation === 'duigong'));
   });
 });
+
+describe('the phases of the eight spirits, by `spiritPhase`', () => {
+  const castWith = (spiritPhase: ChartOptions['spiritPhase'], date: string, time: string): QimenChart => {
+    const options: ChartOptions = { ...CLOCK, spiritPhase };
+    return computeQimenChart(
+      resolveMoment({ date, time, timezone: 'Asia/Shanghai' }, BEIJING, options, context),
+      options,
+    );
+  };
+  const spirits = (chart: QimenChart) => qimenLens(chart).things.filter((thing) => thing.layer === 'spirit');
+
+  it('gives the spirits no phase by default, and keeps them out of what is related', () => {
+    const lens = qimenLens(castWith('none', '2024-06-15', '14:00'));
+    expect(lens.things.some((thing) => thing.layer === 'spirit')).toBe(false);
+    expect(lens.phased).not.toContain('spirit');
+    expect(lens.layers).toContain('spirit');
+  });
+
+  it("gives each spirit the phase the 奇門秘訣 lists under `branch`, on both dun", () => {
+    // 「八神所屬之五行：直符即天乙貴神屬土，螣蛇即巳屬火，太陰即酉屬金，六合即卯
+    // 屬木，白虎即申屬金一本作勾陳屬土，玄武即子屬水一本作朱雀屬火，九地即坤屬土，
+    // 九天即乾屬金」, 《御定奇門大全》卷四十七, sheet 1086.
+    const expected: Record<string, Element> = {
+      zhifu: 'tu', tengshe: 'huo', taiyin: 'jin', liuhe: 'mu', baihu: 'jin',
+      xuanwu: 'shui', gouchen: 'tu', zhuque: 'huo', jiudi: 'tu', jiutian: 'jin',
+    };
+    // A yang chart and a yin one, so both middle pairs are met.
+    for (const [date, time] of [['2024-03-15', '10:00'], ['2024-09-15', '10:00']] as const) {
+      const chart = castWith('branch', date, time);
+      const found = spirits(chart);
+      expect(found).toHaveLength(8);
+      for (const thing of found) expect(thing.element).toBe(expected[thing.id]);
+      for (const contents of chart.palaces) {
+        if (!contents.spirit) continue;
+        expect(found.find((thing) => thing.seat === String(contents.palace.number))?.id).toBe(contents.spirit.id);
+      }
+      expect(qimenLens(chart).phased).toContain('spirit');
+    }
+  });
+
+  it('parts from `branch` under `huaqi` at 值符 and 螣蛇, and nowhere else', () => {
+    // 「值符者…其體屬火」 and 「螣蛇者，丁火之化氣，其實屬陰土」, 九神主論章,
+    // 《奇門遁甲秘笈大全》卷六.
+    for (const [date, time] of [['2024-03-15', '10:00'], ['2024-09-15', '10:00']] as const) {
+      const branch = spirits(castWith('branch', date, time));
+      const huaqi = spirits(castWith('huaqi', date, time));
+      for (const thing of huaqi) {
+        const other = branch.find((one) => one.id === thing.id) as (typeof branch)[number];
+        if (thing.id === 'zhifu') expect([other.element, thing.element]).toEqual(['tu', 'huo']);
+        else if (thing.id === 'tengshe') expect([other.element, thing.element]).toEqual(['huo', 'tu']);
+        else expect(thing.element).toBe(other.element);
+      }
+    }
+  });
+
+  it('moves nothing on the board', () => {
+    const plain = castWith('none', '2024-06-15', '14:00');
+    for (const value of ['branch', 'huaqi'] as const) {
+      expect(castWith(value, '2024-06-15', '14:00').palaces).toEqual(plain.palaces);
+    }
+  });
+});

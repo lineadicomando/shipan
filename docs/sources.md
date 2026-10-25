@@ -2913,7 +2913,8 @@ The list of the eight spirits and their phases follows on 1086, with 白虎 「�
 the hours is the 歌's own, 「甲乙丙丁戊陽時，神居天上君須知，坐擊全憑天上奇，陰時地下亦如之」,
 on sheet 1103, read at 120 dpi. There the commentary reads the 神 as the 奇 a
 striker sits on, 「天盤上之奇神」, and here it applies the same division to
-the spirits.
+the spirits. The list is read in § "The phases of the eight spirits", where it is
+`spiritPhase: branch`.
 
 **What it moves is the seat and nothing else.** The 陽符 and 陰符 of the
 sentence before are the 符 of the two dun, as 《遁甲演義》 uses the words —
@@ -3705,8 +3706,9 @@ they take there; and **its nine stars have no phase registered**. 太乙 through
 天乙 are not 天蓬 through 天英, no text read here gives them one, and what the
 register holds of them is a fortune each, on which the three texts part (§
 "The 金函玉鏡's own 日家, read on the plate"). So a lens keeps them by their kind and
-relates them to nothing, as it does the 八神, until a text giving their phases
-is read and registered.
+relates them to nothing, until a text giving their phases is read and
+registered — as it did the 八神 until one was (§ "The phases of the eight
+spirits").
 
 **On 六壬 the lens is the art's own relation.** The lessons and the
 transmissions are found by 生剋 between a branch and what it stands on, and
@@ -3785,6 +3787,67 @@ both earth palaces, and it gives 開門 and 驚門, the two gates of metal, both
 palaces of wood. A compiler who knew wood oppresses 二 and 八 under 杜門, and
 that metal oppresses 三 and 四 twice over, has dropped two lines rather than
 excluded two cells. The parenthesised reasons in his own list are the argument.
+
+### The phases of the eight spirits
+
+Read on the plate 2026-10-25. **Three texts, three answers, and every one of
+them a practitioner's**, so it is a parameter — `spiritPhase` — and what it
+moves is only what a lens may relate: no spirit changes seat or name under
+any value, and the drawing leaves the spirits uncoloured under all three.
+
+**`branch` is the 奇門秘訣's.** 《御定奇門大全》卷四十七, sheet 1086, under the
+heading 「八神所屬之五行」, identifies each spirit with a branch or a trigram
+and gives it that one's phase:
+
+> 直符即天乙貴神屬土　螣蛇即巳屬火　太陰即酉屬金　六合即卯屬木　白虎即申屬金
+> 一本作勾陳屬土　玄武即子屬水一本作朱雀屬火　九地即坤屬土　九天即乾屬金
+
+Ten names and not eight: the two notes 「一本作」 give 勾陳 and 朱雀, which are
+the names `spirits` puts at the fifth and sixth seat under yang, so every ring
+this engine lays has a phase for each spirit in it. The notes are a second
+edition's names for the same two seats, read as such, and not a second
+reading of the phases. The page is the same leaf the `spiritSeat: yinshi`
+entry reads its seat from (`texts/qimen/daquan-juan47-seat/s-1086.png`).
+
+**The same eight phases are in a modern manual that refuses them.** 幺學聲
+《奇門遁甲現代應用技術》 (2005), p. 7, a born-digital PDF whose text was read on
+the rendered page: 「八神中值符（天乙貴人）為土；螣蛇為火；太陰為金；六合為木；
+白虎為金；玄武為水；九地為土；九天為金」 — the 奇門秘訣's table, spirit for
+spirit — and then 「八神因是陰性物質，不按陰陽劃分，預測中亦不按五行屬性參與生克
+制化，只代表自身的信息含義，其它書籍里有五行的生克制化，我認為那是作者主觀臆想」.
+So the table has two independent texts and the use of it has one holder on
+each side. That sentence is `spiritPhase: none`, the default: the spirits are a
+kind the lens keeps and never relates, which is what the engine did before
+the parameter existed.
+
+**`huaqi` is 《奇門遁甲秘笈大全》卷六's, the 九神主論章.** Read in the 省思堂
+woodblock, pp. 104–106 of `qimen-dunjia-miji-daquan-shengsitang.pdf` at
+300 dpi (`texts/qimen/miji-jiushen/`), the 版心 reading 奇門大全 卷六 四 to
+六. It gives a nature for each of nine spirits, in the order 值符, 九天, 九地,
+朱雀, 螣蛇, 勾陳, 六合, 白虎, 元武, 太陰:
+
+> 值符者，諸神之元首，九星之領袖…其體屬火
+> 螣蛇者，丁火之化氣，其實屬陰土
+> 九天者，乾金也，其體屬金　九地者，坤土也　朱雀者，南方之火神…屬丙火
+> 勾陳者，中央之陽土也　六合者，甲木之化氣，東方之陰木也　白虎者，庚金也
+> 元武者，水之精也　太陰者，西方之陰金也
+
+It parts from `branch` at two spirits and agrees on eight: 值符 is fire, not
+earth, and 螣蛇 earth, not fire. The ninth, 太常, 「五行之化氣也…遇火則從火，
+遇金則從金」, takes the phase of whatever it meets; it belongs to the nine
+spirits of the flying line, which this engine does not lay, so nothing here
+reads it. The simplified transcription on the shelf
+(`qimen-dunjia-miji-daquan-jianti.txt`) orders the chapter differently and
+agrees on every phase.
+
+**Located and not weighed.** 《奇門探索錄》's 九神五行, in the eight-卷 text
+and in the transcription of the twelve-卷 one on the shelf, gives 直符 fire and 螣蛇 「丁火化氣，
+其實屬陰土」 in the 秘笈大全's words, which makes it a copy until a plate says
+otherwise; 《奇門遁甲統宗》 says of 螣蛇 only 「禀南方之火」, and 張志春
+《神奇之門》 gives 值符 earth and 螣蛇 fire in prose. None of the three moves a
+rung until it is read on the plate.
+
+Last checked 2026-10-25.
 
 ### Transmitted, not derived
 

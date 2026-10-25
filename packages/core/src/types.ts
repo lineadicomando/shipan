@@ -219,6 +219,28 @@ export interface ChartOptions {
   spiritSeat: 'tianpan' | 'yinshi';
 
   /**
+   * Whether the eight spirits have a phase, and which: what a lens may relate
+   * them by. It moves no seat and no name, and nothing on the board but the
+   * lens.
+   *
+   * `none` gives them none, and a lens keeps them by their kind and relates
+   * them to nothing. 幺學聲 《奇門遁甲現代應用技術》 (2005) lists a phase for
+   * each and then refuses it any part in 生剋: 「預測中亦不按五行屬性參與生克
+   * 制化，只代表自身的信息含義」.
+   *
+   * `branch` gives each spirit the phase of the branch or trigram it is
+   * identified with — 直符 is 天乙貴神 and earth, 螣蛇 is 巳 and fire, 太陰 酉
+   * metal, 六合 卯 wood, 白虎 申 metal, 玄武 子 water, 九地 坤 earth, 九天 乾
+   * metal, and in the edition's note 勾陳 earth and 朱雀 fire. The 奇門秘訣's,
+   * 《御定奇門大全》卷四十七, under 「八神所屬之五行」.
+   *
+   * `huaqi` is 《奇門遁甲秘笈大全》卷六's 九神主論章, which parts from it at
+   * two spirits: 值符 is fire, 「其體屬火」, and 螣蛇 earth, 「丁火之化氣，其實
+   * 屬陰土」. The other eight agree.
+   */
+  spiritPhase: 'none' | 'branch' | 'huaqi';
+
+  /**
    * Where the repeated block goes under 置閏.
    *
    * `solstice` is 《奇門遁甲統宗》's placement, which this engine computes: the
@@ -420,6 +442,7 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   earthPlate: 'yuan',
   spirits: 'dun',
   spiritSeat: 'tianpan',
+  spiritPhase: 'none',
   leap: 'solstice',
   strengths: 'season',
   earth: 'quarters',

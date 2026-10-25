@@ -1661,6 +1661,17 @@ export const en = {
     'from the heaven plate at an hour of 甲 jiǎ to 戊 wù, and from the earth plate at an hour of 己 jǐ to 癸 guǐ, as the commentary in 《奇門秘訣》 qíménmìjué has it',
   'form.qimen.spiritSeat.note':
     'The other seven spirits follow the first round the palaces, in the same order under both readings. The first reading seats it where the chief stands on the heaven plate. The second does that at the five hours whose stem is 甲 jiǎ to 戊 wù; at the five whose stem is 己 jǐ to 癸 guǐ, it seats it where the chief stands on the earth plate, and so it does whenever the chief falls on the central palace. Where the two places differ, every spirit stands in another palace.',
+  // Whether the lens may relate the eight spirits by the five phases, and by
+  // which phases. Nothing on the board moves under any of the three.
+  'form.qimen.spiritPhase': 'In the lens, the eight spirits',
+  'form.qimen.spiritPhase.none':
+    'can be picked out as a kind and stand in no relation, as in 《奇門遁甲現代應用技術》 qíméndùnjiǎxiàndàiyìngyòngjìshù',
+  'form.qimen.spiritPhase.branch':
+    'take the phase of the branch each one is identified with, as in 《奇門秘訣》 qíménmìjué',
+  'form.qimen.spiritPhase.huaqi':
+    'take the phases of 《奇門遁甲秘笈大全》 qíméndùnjiǎmìjídàquán, where 值符 zhífú is fire and 螣蛇 téngshé earth',
+  'form.qimen.spiritPhase.note':
+    'This choice is about the lens alone: it decides whether the spirits can be related to the rest of the board by the five phases, and the board stays the same. Under the second and third readings every spirit has a phase. The two readings give the same phase to eight of the ten names and part at 值符 zhífú and 螣蛇 téngshé.',
   // The moving pair against the plate under it. 《金鏡寶鑑》 separates the two in
   // one clause — 其星寄 for the star, 符使不必寄於二 for the 符 and the 使 — so
   // the label asks about the pair and neither value promises a different board.
@@ -2184,6 +2195,7 @@ export const en = {
   'notes.parameter.daxian': 'Where the first decade of the great limits opens.',
   'notes.parameter.spirits': 'What names the fifth and sixth spirits.',
   'notes.parameter.spiritSeat': 'Where the ring of the eight spirits starts.',
+  'notes.parameter.spiritPhase': 'Which phase of the five each of the eight spirits has, if any.',
   'notes.parameter.leap': 'Where 置閏 zhìrùn repeats its block.',
   'notes.parameter.strengths': 'What the five seasonal states are read from.',
   'notes.parameter.earth': 'Where earth’s season begins.',

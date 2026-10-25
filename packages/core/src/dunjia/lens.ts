@@ -4,6 +4,7 @@ import type { Element } from '../types.js';
 import type { QimenChart } from './index.js';
 import type { DayChart } from './rijia.js';
 import { palace } from './palaces.js';
+import type { SpiritId } from './plates.js';
 import { opposite } from './patterns.js';
 import { RELATION_IDS, type RelationId } from './relation.js';
 
@@ -33,14 +34,54 @@ export type QimenLayer = 'heaven' | 'earth' | 'palace' | 'spirit' | 'star' | 'ga
 export const QIMEN_LAYERS: readonly QimenLayer[] = ['heaven', 'earth', 'palace', 'spirit', 'star', 'gate'];
 
 /**
- * The layers whose things have a phase. The eight spirits are not among them:
- * the engine carries no phase for a spirit, and a lens that gave one would be
- * asserting a table nobody has registered — the drawing leaves them
- * uncoloured for the same reason.
+ * The layers whose things always have a phase. The eight spirits are not
+ * among them: whether they have one, and which, is `spiritPhase`, and under
+ * its default they have none — a lens keeps them by their kind and relates
+ * them to nothing. The drawing leaves them uncoloured under every value: what
+ * the parameter gives is a relation to read, not a fact about the board.
  */
 export type LensLayer = Exclude<QimenLayer, 'spirit'>;
 
 export const LENS_LAYERS: readonly LensLayer[] = ['heaven', 'earth', 'palace', 'star', 'gate'];
+
+/** The phased layers when the spirits have a phase, in the board's order. */
+const LENS_LAYERS_WITH_SPIRITS: readonly QimenLayer[] = ['heaven', 'earth', 'palace', 'spirit', 'star', 'gate'];
+
+/**
+ * The phase of each spirit under the two values of `spiritPhase` that give
+ * one. `docs/sources.md` § "The phases of the eight spirits" carries both
+ * readings, read on the plate.
+ *
+ * `branch` is the 奇門秘訣's, each spirit taking the phase of the branch or
+ * trigram it is identified with, 勾陳 and 朱雀 from its edition's note;
+ * `huaqi` is the 秘笈大全's 九神主論章, which parts from it at 值符 and 螣蛇.
+ */
+export const SPIRIT_PHASES: Record<'branch' | 'huaqi', Record<SpiritId, Element>> = {
+  branch: {
+    zhifu: 'tu',
+    tengshe: 'huo',
+    taiyin: 'jin',
+    liuhe: 'mu',
+    gouchen: 'tu',
+    baihu: 'jin',
+    zhuque: 'huo',
+    xuanwu: 'shui',
+    jiudi: 'tu',
+    jiutian: 'jin',
+  },
+  huaqi: {
+    zhifu: 'huo',
+    tengshe: 'tu',
+    taiyin: 'jin',
+    liuhe: 'mu',
+    gouchen: 'tu',
+    baihu: 'jin',
+    zhuque: 'huo',
+    xuanwu: 'shui',
+    jiudi: 'tu',
+    jiutian: 'jin',
+  },
+};
 
 /** A relation between two things that is not one of the five of the phases. */
 export type LinkId = 'duigong' | 'wuhe';
@@ -107,17 +148,28 @@ function wuheLinks(things: readonly LensThing<QimenLayer>[]): LensLink<QimenLaye
   return links;
 }
 
-/** What a lens may show on this chart: its things, and its relations. */
+/**
+ * What a lens may show on this chart: its things, and its relations.
+ *
+ * The spirits are things of the lens only where the chart was cast with a
+ * `spiritPhase` that gives them a phase; under `none` they are a kind the
+ * lens keeps and never relates.
+ */
 export function qimenLens(chart: QimenChart): QimenLens {
   const things: LensThing<QimenLayer>[] = [];
+  const spiritPhase = chart.options.spiritPhase ?? 'none';
+  const phasedSpirits = spiritPhase === 'none' ? undefined : SPIRIT_PHASES[spiritPhase];
   for (const contents of chart.palaces) {
     const seat = String(contents.palace.number);
-    const add = (layer: LensLayer, thing: { id: string; element: Element } | undefined): void => {
+    const add = (layer: QimenLayer, thing: { id: string; element: Element } | undefined): void => {
       if (thing) things.push({ seat, layer, id: thing.id, element: thing.element });
     };
     add('heaven', contents.heaven);
     add('earth', contents.earth);
     add('palace', contents.palace);
+    if (phasedSpirits && contents.spirit) {
+      add('spirit', { id: contents.spirit.id, element: phasedSpirits[contents.spirit.id] });
+    }
     // A star and a gate take the phase of the palace they belong to at rest,
     // as they do for 門宮, 星宮 and the strength.
     add('star', { id: contents.star.id, element: palace(contents.star.home).element });
@@ -128,7 +180,7 @@ export function qimenLens(chart: QimenChart): QimenLens {
     seats: SEATS,
     pairSeats: SEATS,
     layers: QIMEN_LAYERS,
-    phased: LENS_LAYERS,
+    phased: phasedSpirits ? LENS_LAYERS_WITH_SPIRITS : LENS_LAYERS,
     crowded: [],
     things,
     phases: phaseTable(),

@@ -227,6 +227,13 @@ deleted, as «lenses» was the day before and `board-pointer` on 2026-10-18. Wha
   文昌 土 and 始擊 火 where the register had them the other way after 盧央,
   and 太乙 and the generals related in the 太乙 lens; and the consultation
   given the bench, the lens and the key, every drawing asked bare. Phase 73.
+- 2026-10-25, on `main` (0.36.0): the text on every board set at a size it
+  can be read, the key to the names under the board, worded in every entry
+  and receding with the lens; and the phases of the eight spirits, put to the
+  user that day and built on their word as `spiritPhase`: `none`, the default,
+  held by 幺學聲 (2005), `branch` by the 奇門秘訣 (卷四十七, sheet 1086), and
+  `huaqi` by the 秘笈大全's 九神主論章 (卷六, read in the 省思堂 woodblock).
+  Under the two that give a phase the lens relates the spirits. Phase 74.
 
 `main` is pushed to `origin/main` as of 2026-10-25, on the user's word;
 pushing is always the user's call.
@@ -274,7 +281,8 @@ The code:
   the reader pressed, which is framed as theirs.
 - The page computes no relation: it looks each up in what the engine handed
   over. A thing with no registered phase takes no part in a relation and can
-  only be kept by its kind (the 八神 on 奇門).
+  only be kept by its kind (the 十二天將 on 六壬, and the 八神 on 奇門 under
+  `spiritPhase: none`, the default).
 - The lens lives in the fragment, never in the query, a prompt, storage or a
   request. The mode is in the fragment too, and the privacy note's inventory
   of what the browser keeps does not move.
@@ -312,8 +320,8 @@ The code:
 2. **Done on 2026-10-25** (phase 72): the 奇門 board of a day has its lens,
    `dayLens(day)` beside `qimenLens`. Its palaces and gates have a phase, a
    gate its home palace's as on the hour board; **its nine stars have none
-   registered** and are kept by kind only, as the 八神 are, until a text
-   giving them one is read. 對宮 carries over and 五合 does not. Two rows in
+   registered** and are kept by kind only, until a text giving them one is
+   read — as the 八神 were until `spiritPhase` (phase 74). 對宮 carries over and 五合 does not. Two rows in
    the register.
 3. **Done on 2026-10-25** (phase 72): 六壬 has its lens, `liurenLens`, the
    five relations between the two plates, the lessons and the

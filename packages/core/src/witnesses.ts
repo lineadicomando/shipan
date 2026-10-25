@@ -222,6 +222,16 @@ export const WITNESSES = {
     kind: 'modern',
     name: { hanzi: '奇門遁甲開悟之門', pinyin: 'qíméndùnjiǎkāiwùzhīmén' },
   },
+  /**
+   * 幺學聲's manual, which gives each of the eight spirits a phase and refuses
+   * the phases any part in 生剋 — the one text on the shelf to say the spirits
+   * relate to nothing, and to say why.
+   */
+  xiandaiyingyong: {
+    kind: 'modern',
+    name: { hanzi: '奇門遁甲現代應用技術', pinyin: 'qíméndùnjiǎxiàndàiyìngyòngjìshù' },
+    year: 2005,
+  },
   /** 張志春, who defines 拆補 by the term and the 符頭 at once. */
   shenqi: {
     kind: 'modern',

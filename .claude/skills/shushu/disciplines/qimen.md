@@ -267,6 +267,8 @@ Each step names the engine parameter, or says "not modelled".
      - `fixed`;
      - `baihu`;
      - `huwu` (白虎 and 玄武 in both dun, the 大全's tables and fengshui-hacks).
+   - Their phase, for a lens, is `spiritPhase`: `none` (default), `branch`,
+     `huaqi`. It moves no seat and no name.
    - The flying line uses nine spirits, adding 太常 (web lead). Not modelled.
    - A modern convention that names the spirits by the matter is refused
      (`docs/agent-prompt.md`).
@@ -397,11 +399,15 @@ marked ●.
 - ● 空亡 carries 吉凶 both ways (「凶格落空則凶不成」). ● The post horses
   (日馬, 時馬).
 
-**What modern readers add.** 幺學聲 and the abridgement give the eight
-spirits element natures. 幺學聲 himself denies they take part in
-generation and control (「其它書籍里有五行的生克制化，我認為那是作者主觀臆想」).
-Long 類象 lists of things, organs and persons follow. These are a modern
-school's, never the classical texts'.
+**The phases of the spirits are the old texts' too, and they part.** The
+奇門秘訣 (《御定奇門大全》卷四十七, sheet 1086) gives each spirit the phase of
+the branch or trigram it is identified with; the 秘笈大全's 九神主論章 (卷六)
+agrees on eight and makes 值符 fire and 螣蛇 earth. 幺學聲 (2005) gives the
+奇門秘訣's eight and denies they take part in generation and control
+(「其它書籍里有五行的生克制化，我認為那是作者主觀臆想」). That is `spiritPhase`:
+`none`, `branch`, `huaqi`, all read on the plate 2026-10-25. Long 類象 lists
+of things, organs and persons follow in the modern manuals, and those are a
+modern school's.
 
 ## 5. Pitfalls
 

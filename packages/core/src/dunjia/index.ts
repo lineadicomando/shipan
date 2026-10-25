@@ -169,6 +169,7 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     'earthPlate',
     'spirits',
     'spiritSeat',
+    'spiritPhase',
     'strengths',
     'earth',
     'centreTravel',

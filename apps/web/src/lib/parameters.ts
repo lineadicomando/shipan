@@ -239,6 +239,25 @@ export const DIVERGENCES: readonly Divergence[] = [
     notes: { tianpan: 'form.qimen.spiritSeat.note', yinshi: 'form.qimen.spiritSeat.note' },
   },
   {
+    id: 'spiritPhase',
+    board: 'qimen',
+    family: 'shijia',
+    values: ['none', 'branch', 'huaqi'],
+    implemented: ['none', 'branch', 'huaqi'],
+    fallback: 'none',
+    label: 'form.qimen.spiritPhase',
+    says: {
+      none: 'form.qimen.spiritPhase.none',
+      branch: 'form.qimen.spiritPhase.branch',
+      huaqi: 'form.qimen.spiritPhase.huaqi',
+    },
+    notes: {
+      none: 'form.qimen.spiritPhase.note',
+      branch: 'form.qimen.spiritPhase.note',
+      huaqi: 'form.qimen.spiritPhase.note',
+    },
+  },
+  {
     id: 'leap',
     board: 'qimen',
     family: 'shijia',
