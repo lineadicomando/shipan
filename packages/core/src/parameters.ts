@@ -646,7 +646,8 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         heldBy: ['mijidaquan'],
       },
     ],
-    default: 'none',
+    // `branch` since 2026-10-25, on the user's word: the table two texts carry.
+    default: 'branch',
   },
   leap: {
     board: 'qimen',
@@ -781,7 +782,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.dingTomb.qian',
         note: 'form.qimen.dingTomb.note',
         implemented: true,
-        heldBy: ['fuyingjing'],
+        // 「六丙月奇、六丁星奇在六宮」 under 璋曰; and 《金鏡寶鑑》卷一,
+        // 「三奇入墓不可為乙二丙丁到六宮」, with its reason, 「故丁不墓于丑而亦墓于戌」.
+        heldBy: ['fuyingjing', 'jinjingbaojian'],
       },
     ],
     default: 'gen',
@@ -800,8 +803,10 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.yiTomb.kun',
         note: 'form.qimen.yiTomb.note',
         implemented: true,
-        // 「乙奇坤宮」, 「六乙日奇臨二宮」 under 璋曰, 「六乙臨坤請避之」.
-        heldBy: ['tongzong', 'fuyingjing', 'jixionggejie'],
+        // 「乙奇坤宮」, 「六乙日奇臨二宮」 under 璋曰, 「六乙臨坤請避之」, and the
+        // 金鏡寶鑑's 「乙二」. The 統宗's 卷十一 also has 「入墓丁艮乙丙乾」, so
+        // it holds this cell in its 四十格 and the other in a verse.
+        heldBy: ['tongzong', 'fuyingjing', 'jixionggejie', 'jinjingbaojian'],
       },
       {
         id: 'qian',

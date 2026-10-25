@@ -94,7 +94,7 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-25
 
-**Version 0.37.0**, in every manifest. **`main` is checked out and no branch
+**Version 0.38.0**, in every manifest. **`main` is checked out and no branch
 is open.** `origin/main` is `main`, pushed on the user's word on 2026-10-25,
 and 0.37.0 is deployed at https://shipan.it by `ssh shipan.deploy`, which
 runs `srv-deploy shipan` on the server; its output shows the image built,
@@ -161,7 +161,7 @@ The code:
 - The page computes no relation: it looks each up in what the engine handed
   over. A thing with no registered phase takes no part in a relation and can
   only be kept by its kind (the 十二天將 on 六壬, and the 八神 on 奇門 under
-  `spiritPhase: none`, the default).
+  `spiritPhase: none`; the default is `branch` since 2026-10-25).
 - The lens lives in the fragment, never in the query, a prompt, storage or a
   request. The mode is in the fragment too, and the privacy note's inventory
   of what the browser keeps does not move.

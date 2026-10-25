@@ -157,7 +157,7 @@ function wuheLinks(things: readonly LensThing<QimenLayer>[]): LensLink<QimenLaye
  */
 export function qimenLens(chart: QimenChart): QimenLens {
   const things: LensThing<QimenLayer>[] = [];
-  const spiritPhase = chart.options.spiritPhase ?? 'none';
+  const spiritPhase = chart.options.spiritPhase ?? 'branch';
   const phasedSpirits = spiritPhase === 'none' ? undefined : SPIRIT_PHASES[spiritPhase];
   for (const contents of chart.palaces) {
     const seat = String(contents.palace.number);

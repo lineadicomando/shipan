@@ -16,7 +16,9 @@ beforeAll(() => {
 });
 
 const BEIJING: Place = { latitude: 39.9075, longitude: 116.3972, timezone: 'Asia/Shanghai' };
-const CLOCK: ChartOptions = { ...DEFAULT_OPTIONS, trueSolarTime: false, dayBoundary: 'midnight' };
+// `spiritPhase: none` pinned: the tests below describe the board with the
+// spirits outside every relation, and the block on `spiritPhase` lays the rest.
+const CLOCK: ChartOptions = { ...DEFAULT_OPTIONS, trueSolarTime: false, dayBoundary: 'midnight', spiritPhase: 'none' };
 const ELEMENTS: Element[] = ['mu', 'huo', 'tu', 'jin', 'shui'];
 
 function cast(date: string, time: string): QimenChart {

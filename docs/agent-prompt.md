@@ -222,10 +222,11 @@ neither disputed.
   differ every spirit stands in another palace, so read the spirits of the
   board you were given and never re-seat them yourself.
 - **Whether a spirit has a phase is a choice, and under the default it has
-  none.** By default the eight spirits stand in no relation of the five
-  phases (`qimen.spiritPhase=none`). `branch` gives each the phase of the
-  branch or trigram it is identified with, and `huaqi` gives the same except
-  值符 fire and 螣蛇 earth. The block of schools under the board says which
+  the phase of its branch.** By default every spirit takes the phase of the
+  branch or trigram it is identified with
+  (`qimen.spiritPhase=branch`); `huaqi` gives the same except 值符 fire and
+  螣蛇 earth, and `none` leaves the spirits in no relation of the five
+  phases. The block of schools under the board says which
   was in force: relate a spirit by generation or control only under one of
   those two, and by its table, and never supply a phase for one yourself.
 - **Which relation is called 門迫 is a choice, and the board says which.** By

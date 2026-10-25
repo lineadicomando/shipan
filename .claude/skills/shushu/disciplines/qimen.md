@@ -79,7 +79,8 @@ Unmarked = found in this research and not yet on either list.
   `spirits: fixed`.
 - ★ 《奇門遁甲金鏡寶鑑》, 十六卷, 「郁離子伯溫 輯」, bound in 故宮 第426冊. It
   states the turn (「加時干而轉天盤九星」) and holds `centreTravel: travel`,
-  `leap: runyue` and `strengths: star`.
+  `leap: runyue` and `strengths: star`. Its 卷一 (series p. 269) buries 丁 in
+  乾 with a reason of its own, so it holds `dingTomb: qian` and `yiTomb: kun`.
 - ★ 《遁甲符應經》, the 景祐 commission (楊惟德), in three copies. Holds
   `dingTomb: qian`.
 - ★ 《御定奇門大全》, 64 juan, surveyed whole. 景祐秘纂 卷二 is the 符應經's
@@ -268,8 +269,8 @@ Each step names the engine parameter, or says "not modelled".
      - `fixed`;
      - `baihu`;
      - `huwu` (白虎 and 玄武 in both dun, the 大全's tables and fengshui-hacks).
-   - Their phase, for a lens, is `spiritPhase`: `none` (default), `branch`,
-     `huaqi`. It moves no seat and no name.
+   - Their phase, for a lens, is `spiritPhase`: `none`, `branch` (default since
+     2026-10-25), `huaqi`. It moves no seat and no name.
    - The flying line uses nine spirits, adding 太常 (web lead). Not modelled.
    - A modern convention that names the spirits by the matter is refused
      (`docs/agent-prompt.md`).
@@ -571,7 +572,9 @@ that is on the shelf.
   and is not independent) read 「更嫌六乙來臨二，丙丁臨六亦如之」. The register
   names the 統宗 a holder of `dingTomb: gen` on its 四十格 (「丁奇艮宮」). If the
   plate reads as the transcriptions, one work gives 丁 two palaces, as
-  吉凶格解 gives 乙 two. Check the 故宮 第426冊 print.
+  吉凶格解 gives 乙 two. Check the 故宮 第426冊 print. It already divides on
+  乙: 卷十一 has 「入墓丁艮乙丙乾」 at series p. 148 and 「乙奇到坤」 at p. 150
+  (read on the plate 2026-10-25).
 - **The Wikisource 歌 (羅通) puts 乙 in 乾**: 「更兼乙奇來臨六，丁奇臨八亦同時」.
   That is `yiTomb: qian` + `dingTomb: gen`, the 秘笈大全 verse's and 三璋's
   cells. The register's holders for `yiTomb: qian` do not include the 歌. The
@@ -580,7 +583,7 @@ that is on the shelf.
   This is a disagreement between witnesses to one text, so it is settled once
   in the register and is not a new school. All are transcriptions.
 - **武經總要 (1044) buries 丁 in 乾** (「丁為星奇臨六宮天門」). That is
-  `dingTomb: qian`, which the register holds on the 符應經 alone. It is the
+  `dingTomb: qian`, which the register holds on the 符應經 and the 金鏡寶鑑. It is the
   same 景祐 circle, so it is probably the same line (web transcription).
 - **The register's refusal row on 飛盤** says it is "a whole family… not
   separable from `system`". The flying-line texts in §7 fly the **hour**

@@ -210,7 +210,7 @@ export const it: Record<MessageKey, string> = {
   'label.gate.dumen': 'Chiusura',
   'label.gate.jing3men': 'Veduta',
   'label.gate.simen': 'Morte',
-  'label.gate.jing1men': 'Sgomento',
+  'label.gate.jing1men': 'Spavento',
   'label.gate.kaimen': 'Apertura',
   'label.dayStar.taiyi': 'Grande Uno',
   'label.dayStar.sheti': 'Conduttore',
@@ -223,12 +223,12 @@ export const it: Record<MessageKey, string> = {
   'label.dayStar.tianyi': 'Uno celeste',
 
   'label.spirit.zhifu': 'Capo',
-  'label.spirit.tengshe': 'Serpente',
-  'label.spirit.taiyin': 'Luna',
-  'label.spirit.liuhe': 'Unione',
-  'label.spirit.gouchen': 'Uncino',
+  'label.spirit.tengshe': 'Serpente Alato',
+  'label.spirit.taiyin': 'Grande Yin',
+  'label.spirit.liuhe': 'Sei Armonie',
+  'label.spirit.gouchen': 'Schiera Uncinata',
   'label.spirit.baihu': 'Tigre Bianca',
-  'label.spirit.zhuque': 'Fenice Vermiglia',
+  'label.spirit.zhuque': 'Uccello Vermiglio',
   'label.spirit.xuanwu': 'Guerriero Oscuro',
   'label.spirit.jiudi': 'Nove Terre',
   'label.spirit.jiutian': 'Nove Cieli',
@@ -291,7 +291,7 @@ export const it: Record<MessageKey, string> = {
   'label.pattern.menpo': 'porta oppressa',
   'label.pattern.gongpo': 'palazzo oppresso',
   'label.pattern.sanqideshi': 'la meraviglia trova il suo messo',
-  'label.pattern.jixing': 'strumento colpito',
+  'label.pattern.jixing': 'insegna colpita dalla punizione',
   'label.pattern.fuyin': 'la scacchiera è tornata a casa',
   'label.pattern.fanyin': 'la scacchiera si è voltata',
   'label.pattern.wubuyu': 'l’ora che non incontra',
@@ -308,7 +308,7 @@ export const it: Record<MessageKey, string> = {
   'label.pattern.taibaitonggong': 'la stella bianca in un solo palazzo',
   'label.pattern.shangge': 'la barriera superiore',
   'label.pattern.tengsheyaojiao': 'il serpente si contorce',
-  'label.pattern.zhuquetoujiang': 'la fenice si getta nel fiume',
+  'label.pattern.zhuquetoujiang': 'l’uccello vermiglio si getta nel fiume',
   'label.pattern.qinglongtaozou': 'il drago fugge',
   'label.pattern.baihuchangkuang': 'la tigre bianca infuria',
   'label.pattern.qinglongyaoming': 'il drago risplende',
@@ -323,14 +323,14 @@ export const it: Record<MessageKey, string> = {
   'label.pattern.qinglonghuagai': 'il drago sotto il parasole',
   'label.pattern.liyinhaiyang': 'bene per lo yin, danno per lo yang',
   'label.pattern.riqifuyin': 'il sole resta a casa',
-  'label.pattern.qiyishunsui': 'meraviglia e strumento vanno d’accordo',
-  'label.pattern.qiyixiangzuo': 'meraviglia e strumento si aiutano',
+  'label.pattern.qiyishunsui': 'meraviglia e insegna vanno d’accordo',
+  'label.pattern.qiyixiangzuo': 'meraviglia e insegna si aiutano',
   'label.pattern.riqibeixing': 'il sole è punito',
   'label.pattern.riqirudi': 'il sole entra nella terra',
   'label.pattern.huagaifengxingguan': 'il parasole incontra il funzionario delle stelle',
   'label.pattern.riyuebingxing': 'sole e luna camminano insieme',
   'label.pattern.yueqibeishi': 'la luna sfida l’esercito',
-  'label.pattern.yueqizhuque': 'la luna e la fenice',
+  'label.pattern.yueqizhuque': 'la luna e l’uccello vermiglio',
   'label.pattern.dabeiruxing': 'la grande sfida incontra la punizione',
   'label.pattern.moushijiucheng': 'i progetti si compiono',
   'label.pattern.huorutianluo': 'il fuoco entra nel laccio del cielo',
@@ -338,15 +338,15 @@ export const it: Record<MessageKey, string> = {
   'label.pattern.qinglongzhuanguang': 'il drago si volge alla luce',
   'label.pattern.rendunjige': 'l’uomo nascosto, configurazione fausta',
   'label.pattern.xingsuiyuezhuan': 'la stella segue la luna che gira',
-  'label.pattern.qirutaiyin': 'la meraviglia entra nella Luna',
-  'label.pattern.huorugouchen': 'il fuoco entra nell’Uncino',
+  'label.pattern.qirutaiyin': 'la meraviglia entra nel Grande Yin',
+  'label.pattern.huorugouchen': 'il fuoco entra nella Schiera Uncinata',
   'label.pattern.nianyuerishige': 'la barriera di anno, mese, giorno e ora',
-  'label.pattern.zhuqueruyu': 'la fenice va in prigione',
+  'label.pattern.zhuqueruyu': 'l’uccello vermiglio va in prigione',
   'label.pattern.wushenhuhe': 'cinque spiriti uniti',
   'label.pattern.quanyuqinglong': 'il cane incontra il drago',
   'label.pattern.mushen': 'lo spirito della tomba',
   'label.pattern.huobeidihu': 'il fuoco sfida la porta della terra',
-  'label.pattern.zhuquerumu': 'la fenice entra nella tomba',
+  'label.pattern.zhuquerumu': 'l’uccello vermiglio entra nella tomba',
   'label.pattern.dihufenggui': 'la porta della terra incontra un fantasma',
   'label.pattern.ligefanming': 'la barriera del guadagno respinge il nome',
   'label.pattern.youhunrumu': 'l’anima errante entra nella tomba',
@@ -382,8 +382,8 @@ export const it: Record<MessageKey, string> = {
   'label.pattern.tianwangsizhang': 'la rete del cielo tesa sui quattro lati',
   // 《奇門仙機》's 干論, which `stemPairs: xianji` lays; the glosses keep the
   // image of the stem above, as the English ones do. «Due fenici» is 鳳, the
-  // bird itself: 朱雀 is «la fenice» in the configurations above only as the
-  // Vermilion Bird, and the hanzi beside each gloss keep the two apart.
+  // bird itself. 朱雀 is «l’uccello vermiglio» everywhere, as the spirit and
+  // the 六壬 general of that name are, so «fenice» names 鳳 and nothing else.
   'label.pattern.qinglongruyunge': 'il drago entra fra le nuvole',
   'label.pattern.qinglongdemingge': 'il drago trova la luce',
   'label.pattern.qinglongrudi': 'il drago entra nella terra',
@@ -438,7 +438,7 @@ export const it: Record<MessageKey, string> = {
   'label.pattern.tiantingfengyu': 'la corte del cielo incontra la prigione',
   'label.pattern.hutouluowang': 'la tigre finisce nella rete',
   'label.pattern.tianlaofuqi': 'la prigione del cielo nasconde una meraviglia',
-  'label.pattern.taiyinpoyu': 'la Luna spezza la prigione',
+  'label.pattern.taiyinpoyu': 'il Grande Yin spezza la prigione',
   'label.pattern.qinglongruyu': 'il drago va in prigione',
   'label.pattern.tiandixingchong': 'cielo e terra si puniscono e si scontrano',
   'label.pattern.tianlaoyishi': 'la prigione del cielo si appoggia alla forza',
@@ -1592,11 +1592,11 @@ export const it: Record<MessageKey, string> = {
     'sempre dalla carta yin, in entrambi i dun: 白虎 báihǔ e 玄武 xuánwǔ stanno in una carta yang come in una yin, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
   'form.qimen.spiritSeat': 'Il primo degli otto spiriti, 值符 zhífú, si colloca',
   'form.qimen.spiritSeat.tianpan':
-    'dove sta il capo 值符 zhífú sul piatto cielo, a ogni ora, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
+    'dove sta il capo 值符 zhífú sulla tavola di cielo, a ogni ora, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
   'form.qimen.spiritSeat.yinshi':
-    'dal piatto cielo in un’ora da 甲 jiǎ a 戊 wù, e dal piatto terra in un’ora da 己 jǐ a 癸 guǐ, come nel commento del 《奇門秘訣》 qíménmìjué',
+    'dalla tavola di cielo in un’ora da 甲 jiǎ a 戊 wù, e dalla tavola di terra in un’ora da 己 jǐ a 癸 guǐ, come nel commento del 《奇門秘訣》 qíménmìjué',
   'form.qimen.spiritSeat.note':
-    'Gli altri sette spiriti seguono il primo intorno ai palazzi, nello stesso ordine in entrambe le letture. La prima lettura lo colloca dove sta il capo sul piatto cielo. La seconda fa lo stesso nelle cinque ore il cui tronco va da 甲 jiǎ a 戊 wù; nelle cinque il cui tronco va da 己 jǐ a 癸 guǐ lo colloca dove sta il capo sul piatto terra, e così fa ogni volta che il capo cade sul palazzo centrale. Dove i due posti sono diversi, ogni spirito sta in un altro palazzo.',
+    'Gli altri sette spiriti seguono il primo intorno ai palazzi, nello stesso ordine in entrambe le letture. La prima lettura lo colloca dove sta il capo sulla tavola di cielo. La seconda fa lo stesso nelle cinque ore il cui tronco va da 甲 jiǎ a 戊 wù; nelle cinque il cui tronco va da 己 jǐ a 癸 guǐ lo colloca dove sta il capo sulla tavola di terra, e così fa ogni volta che il capo cade sul palazzo centrale. Dove i due posti sono diversi, ogni spirito sta in un altro palazzo.',
   // Whether the lens may relate the eight spirits by the five phases, and by
   // which phases. Nothing on the board moves under any of the three.
   'form.qimen.spiritPhase': 'Nella lente, gli otto spiriti',
@@ -1617,7 +1617,7 @@ export const it: Record<MessageKey, string> = {
     'Le due letture pongono la stella del capo sul palazzo del tronco dell’ora. Si separano sul modo in cui le altre otto la seguono. La prima le porta lungo l’anello degli otto palazzi esterni e lascia il centro dov’è. La seconda le conta per tutti e nove i palazzi nell’ordine del 洛書 luòshū, centro compreso, in avanti in una carta yang e all’indietro in una carta yin. Le porte girano sugli otto sotto entrambe.',
   'form.qimen.system': 'La tavola si posa',
   'form.qimen.system.shijia':
-    'sull’ora, come tavola 時家 shíjiā: un piatto di tronchi, nove stelle, otto porte e otto spiriti',
+    'sull’ora, come tavola 時家 shíjiā: tronchi in cielo e in terra, nove stelle, otto porte e otto spiriti',
   'form.qimen.system.rijia':
     'sul giorno, come tavola 日家 rìjiā: otto porte e nove stelle proprie',
   // The same choice in the bar over the board, where it is changed without
@@ -1626,7 +1626,7 @@ export const it: Record<MessageKey, string> = {
   'form.qimen.system.bar.shijia': 'dell’ora · 時家 shíjiā',
   'form.qimen.system.bar.rijia': 'del giorno · 日家 rìjiā',
   'form.qimen.system.note':
-    'La tavola dell’ora e la tavola del giorno sono due tavole distinte, e hanno in comune le otto porte. La tavola dell’ora posa nove tronchi sui palazzi e muove sopra di essi un secondo piatto di tronchi, nove stelle e otto spiriti. La tavola del giorno è fatta delle otto porte e di nove stelle proprie, la prima delle quali è 太乙 tàiyǐ. Si posa soltanto sul giorno e sulla stagione, quindi tutte le ore di uno stesso giorno hanno la stessa tavola del giorno.',
+    'La tavola dell’ora e la tavola del giorno sono due tavole distinte, e hanno in comune le otto porte. La tavola dell’ora posa nove tronchi sui palazzi, che sono la tavola di terra, e muove sopra di essi i tronchi della tavola di cielo, nove stelle e otto spiriti. La tavola del giorno è fatta delle otto porte e di nove stelle proprie, la prima delle quali è 太乙 tàiyǐ. Si posa soltanto sul giorno e sulla stagione, quindi tutte le ore di uno stesso giorno hanno la stessa tavola del giorno.',
   'form.qimen.dayGates': 'Le altre sette porte seguono 休門 xiūmén',
   'form.qimen.dayGates.fei':
     'volando per gli otto palazzi esterni nell’ordine dei loro numeri, come le dispone il 《金函玉鏡奇門遁甲秘笈全書》 jīnhányùjìngqíméndùnjiǎmìjíquánshū',
@@ -1661,13 +1661,13 @@ export const it: Record<MessageKey, string> = {
     'in uno dei quattro palazzi d’angolo, un angolo per stagione, lettura che il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng riporta come di un altro maestro',
   'form.qimen.centreLodging.note':
     'Il palazzo centrale non ha una direzione e non ha una porta propria. Ciò che il conteggio vi colloca si legge perciò in un altro palazzo, e prende con sé la porta di quel palazzo. Lo scaffale conserva cinque letture di quale palazzo sia. Due delle cinque sono note soltanto da un testo che espone la lettura e poi la contesta.',
-  'form.qimen.earthPlate': 'Il piatto terra si stende',
+  'form.qimen.earthPlate': 'La tavola di terra si stende',
   'form.qimen.earthPlate.yuan':
     'una volta per le sessanta ore di un 元 yuán, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
   'form.qimen.earthPlate.xun':
     'di nuovo all’inizio di ogni decade di ore, come sostiene il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng',
   'form.qimen.earthPlate.note':
-    'Il piatto terra è l’insieme dei nove tronchi posati sui nove palazzi, e tutto il resto della tavola si legge contro di esso. La prima lettura tiene un solo piatto per sessanta ore. La seconda comincia un piatto nuovo ogni dieci ore, dal palazzo in cui quella decade ha inizio. Le due letture condividono quindi il piatto per le prime dieci ore delle sessanta e poggiano su piatti diversi per le altre cinquanta.',
+    'La tavola di terra è l’insieme dei nove tronchi posati sui nove palazzi, e tutto il resto della carta si legge contro di essa. La prima lettura tiene una sola tavola di terra per sessanta ore. La seconda ne comincia una nuova ogni dieci ore, dal palazzo in cui quella decade ha inizio. Le due letture condividono quindi la tavola di terra per le prime dieci ore delle sessanta e poggiano su tavole diverse per le altre cinquanta.',
   'form.qimen.centreTravel':
     'Quando il capo 值符 zhífú e la porta del capo 值使 zhíshǐ cadono sul palazzo centrale, si leggono',
   'form.qimen.centreTravel.stay':
@@ -1684,30 +1684,30 @@ export const it: Record<MessageKey, string> = {
   'form.qimen.dingTomb.gen':
     'nel palazzo di 艮 gèn, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
   'form.qimen.dingTomb.qian':
-    'nel palazzo di 乾 qián, insieme a 丙 bǐng, come nel 《遁甲符應經》 dùnjiǎfúyìngjīng',
+    'nel palazzo di 乾 qián, insieme a 丙 bǐng, come nel 《遁甲符應經》 dùnjiǎfúyìngjīng e nel 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
   'form.qimen.dingTomb.note':
-    'Un tronco è in tomba quando il giro del piatto lo porta nell’unico palazzo in cui la sua forza finisce, e la tavola segna quel palazzo. I due testi concordano sul palazzo di 乙 yǐ e su quello di 丙 bǐng. Per 丁 dīng il primo testo indica 艮 gèn e il secondo indica 乾 qián, dove è in tomba anche 丙 bǐng. La scelta sposta quel solo segno e nient’altro sulla tavola.',
+    'Un tronco è in tomba quando il giro della tavola di cielo lo porta nell’unico palazzo in cui la sua forza finisce, e la tavola segna quel palazzo. Le due letture concordano sul palazzo di 乙 yǐ e su quello di 丙 bǐng. Per 丁 dīng la prima indica 艮 gèn e la seconda indica 乾 qián, dove è in tomba anche 丙 bǐng. La scelta sposta quel solo segno e nient’altro sulla tavola.',
   'form.qimen.yiTomb': 'Il tronco 乙 yǐ è segnato in tomba quando sta',
   'form.qimen.yiTomb.kun':
-    'nel palazzo di 坤 kūn, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng e nel 《遁甲符應經》 dùnjiǎfúyìngjīng',
+    'nel palazzo di 坤 kūn, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng, nel 《遁甲符應經》 dùnjiǎfúyìngjīng e nel 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
   'form.qimen.yiTomb.qian':
     'nel palazzo di 乾 qián, insieme a 丙 bǐng, come nel verso del 《奇門遁甲秘笈大全》 qíméndùnjiǎmìjídàquán',
   'form.qimen.yiTomb.note':
-    'Un tronco è in tomba quando il giro del piatto lo porta nell’unico palazzo in cui la sua forza finisce, e la tavola segna quel palazzo. Quasi tutti i testi mettono la tomba di 乙 yǐ in 坤 kūn. Un verso la mette in 乾 qián, accanto alla tomba di 丙 bǐng, e il commento del 《奇門秘訣》 qíménmìjué sostiene lo stesso palazzo. La scelta sposta quel solo segno e nient’altro sulla tavola.',
+    'Un tronco è in tomba quando il giro della tavola di cielo lo porta nell’unico palazzo in cui la sua forza finisce, e la tavola segna quel palazzo. Quasi tutti i testi mettono la tomba di 乙 yǐ in 坤 kūn. Un verso la mette in 乾 qián, accanto alla tomba di 丙 bǐng, e il commento del 《奇門秘訣》 qíménmìjué sostiene lo stesso palazzo. La scelta sposta quel solo segno e nient’altro sulla tavola.',
   'form.qimen.menpo': 'Il nome 門迫 ménpò spetta a una porta',
   'form.qimen.menpo.menzhigong':
-    'che controlla il palazzo in cui sta, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
+    'che domina il palazzo in cui sta, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
   'form.qimen.menpo.gongzhimen':
-    'che il palazzo in cui sta controlla, come nel 《吉凶格解》 jíxiōnggéjiě, che chiama 宮迫 gōngpò una porta che controlla il proprio palazzo',
+    'che il palazzo in cui sta domina, come nel 《吉凶格解》 jíxiōnggéjiě, che chiama 宮迫 gōngpò una porta che domina il proprio palazzo',
   'form.qimen.menpo.note':
-    'Ogni palazzo dice in che rapporto stanno l’elemento della sua porta e il proprio, e questo rapporto è lo stesso nelle due letture. Le due letture danno il nome 門迫 ménpò a rapporti diversi. La prima lettura lo dà a una porta che controlla il proprio palazzo. La seconda lo dà a una porta controllata dal proprio palazzo, e chiama 宮迫 gōngpò una porta che controlla il proprio palazzo. La scelta sposta quei segni e nient’altro sulla tavola.',
-  'form.qimen.deshi': 'Una meraviglia, 乙 yǐ, 丙 bǐng o 丁 dīng, è segnata 三奇得使 sānqídéshǐ quando sta sul piatto cielo',
+    'Ogni palazzo dice in che rapporto stanno l’elemento della sua porta e il proprio, e questo rapporto è lo stesso nelle due letture. Le due letture danno il nome 門迫 ménpò a rapporti diversi. La prima lettura lo dà a una porta che domina il proprio palazzo. La seconda lo dà a una porta dominata dal proprio palazzo, e chiama 宮迫 gōngpò una porta che domina il proprio palazzo. La scelta sposta quei segni e nient’altro sulla tavola.',
+  'form.qimen.deshi': 'Una meraviglia, 乙 yǐ, 丙 bǐng o 丁 dīng, è segnata 三奇得使 sānqídéshǐ quando sta sulla tavola di cielo',
   'form.qimen.deshi.liuyi':
-    'sopra lo strumento di una delle sue due decadi sul piatto terra, come la abbinano il 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng e il 《遁甲演義》 dùnjiǎ yǎnyì',
+    'sopra l’insegna di una delle sue due decadi sulla tavola di terra, come la abbinano il 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng e il 《遁甲演義》 dùnjiǎ yǎnyì',
   'form.qimen.deshi.zhishi':
     'nel palazzo in cui sta la porta del capo 值使 zhíshǐ, qualunque cosa ci sia sotto, come nel 《奇門遁甲開悟之門》 qíméndùnjiǎkāiwùzhīmén',
   'form.qimen.deshi.note':
-    'Nella prima lettura ogni meraviglia è abbinata a due decadi: 乙 yǐ alle decadi di 甲戌 jiǎxū e 甲午 jiǎwǔ, 丙 bǐng a quelle di 甲子 jiǎzǐ e 甲申 jiǎshēn, 丁 dīng a quelle di 甲辰 jiǎchén e 甲寅 jiǎyín. Il segno compare dove la meraviglia sta sopra lo strumento di una di queste decadi. Nella seconda lettura la decade non conta, e il segno compare ovunque una meraviglia stia nello stesso palazzo della porta del capo. La scelta sposta quel segno e nient’altro sulla tavola.',
+    'Nella prima lettura ogni meraviglia è abbinata a due decadi: 乙 yǐ alle decadi di 甲戌 jiǎxū e 甲午 jiǎwǔ, 丙 bǐng a quelle di 甲子 jiǎzǐ e 甲申 jiǎshēn, 丁 dīng a quelle di 甲辰 jiǎchén e 甲寅 jiǎyín. Il segno compare dove la meraviglia sta sopra l’insegna di una di queste decadi. Nella seconda lettura la decade non conta, e il segno compare ovunque una meraviglia stia nello stesso palazzo della porta del capo. La scelta sposta quel segno e nient’altro sulla tavola.',
   'form.qimen.stemPairs': 'Un tronco sopra il tronco sottostante si nomina',
   'form.qimen.stemPairs.shared': 'solo dove due testi lo nominano allo stesso modo: sedici celle su ottantuno',
   'form.qimen.stemPairs.jinhan':
@@ -1949,7 +1949,7 @@ export const it: Record<MessageKey, string> = {
   'notes.does.ziwei':
     'Dodici seggi contati dal mese lunare e dall’ora, le stelle che il libro vi colloca, e il grado che dà a ciascuna.',
   'notes.does.bazi':
-    'I quattro pilastri letti per esteso: gli steli nascosti, le dieci divinità, i dodici stadi, le immagini del 納音 nàyīn, i cicli di fortuna e un conteggio dei cinque elementi.',
+    'I quattro pilastri letti per esteso: i tronchi nascosti, le dieci divinità, i dodici stadi, le immagini del 納音 nàyīn, i cicli di fortuna e un conteggio dei cinque elementi.',
   'notes.does.almanac':
     'La pagina che un almanacco stampa per una data: l’ufficiale del giorno 建除 jiànchú, la dimora che lo tiene, le dodici divinità, gli orientamenti che l’anno fissa, e i 神煞 shénshà che un giorno porta o non porta.',
   'notes.does.nianming':
@@ -1986,7 +1986,7 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.plate': 'Come si ricava la tavola di cielo.',
   'notes.parameter.centreLodging':
     'Dove alloggia il centro, che non ha direzione, né porta, né spirito propri.',
-  'notes.parameter.earthPlate': 'Ogni quanto si stende di nuovo il piatto terra: una volta per sessanta ore, oppure a ogni decade.',
+  'notes.parameter.earthPlate': 'Ogni quanto si stende di nuovo la tavola di terra: una volta per sessanta ore, oppure a ogni decade.',
   'notes.parameter.system': 'Quale famiglia di carta: dell’ora, del giorno, del mese o dell’anno.',
   'notes.parameter.dayGates':
     'Come le altre sette porte seguono 休門 xiūmén su una tavola del giorno.',
@@ -2427,14 +2427,14 @@ export const it: Record<MessageKey, string> = {
   'prompt.ziwei.brightness':
     'Dove una stella porta un grado (廟, 旺, 得地, 利益, 平和, 不得地, 落陷), il grado è del libro, e dice quanto bene quella stella sieda su quel ramo. Non è un punteggio: non sommare i gradi, non farne una media, non ordinare i seggi secondo essi, e non trasformare 落陷 in una sventura né 廟 in una promessa. Ventuno stelle sono graduate e le altre no; una stella senza grado è una di cui il libro non dice nulla, non una stella debole.',
   'prompt.ziwei.sihua':
-    'Le 四化 (化祿, 化權, 化科, 化忌) sono operate dallo stelo dell’anno di nascita su quattro delle stelle già insediate. Questa tavola usa la tabella che stampa il 《全書》, che si scosta da quelle posteriori a 戊, 庚 e 壬; se conosci un’altra tabella, questa non è quella, e lo scostamento è del libro e non un errore. 化忌 non è una maledizione e 化祿 non è una ricompensa.',
+    'Le 四化 (化祿, 化權, 化科, 化忌) sono operate dal tronco dell’anno di nascita su quattro delle stelle già insediate. Questa tavola usa la tabella che stampa il 《全書》, che si scosta da quelle posteriori a 戊, 庚 e 壬; se conosci un’altra tabella, questa non è quella, e lo scostamento è del libro e non un errore. 化忌 non è una maledizione e 化祿 non è una ricompensa.',
   // La regola della tavola sola, affilata sulla tavola con cui si sovrappone di più.
   'prompt.ziwei.sihua.zuofu':
-    'Le 四化 (化祿, 化權, 化科, 化忌) sono operate dallo stelo dell’anno di nascita su quattro delle stelle già insediate. Questa tavola usa la tabella che stampa il 《全書》 con una casella spostata, come la insegnano due scuole moderne: il 化科 di 壬 cade su 左輔 e non su 天府. Se conosci un’altra tabella, questa non è quella, e lo scostamento è di una scuola e non un errore. 化忌 non è una maledizione e 化祿 non è una ricompensa.',
+    'Le 四化 (化祿, 化權, 化科, 化忌) sono operate dal tronco dell’anno di nascita su quattro delle stelle già insediate. Questa tavola usa la tabella che stampa il 《全書》 con una casella spostata, come la insegnano due scuole moderne: il 化科 di 壬 cade su 左輔 e non su 天府. Se conosci un’altra tabella, questa non è quella, e lo scostamento è di una scuola e non un errore. 化忌 non è una maledizione e 化祿 non è una ricompensa.',
   'prompt.ziwei.sihua.tianxiang':
-    'Le 四化 (化祿, 化權, 化科, 化忌) sono operate dallo stelo dell’anno di nascita su quattro delle stelle già insediate. Questa tavola usa la tabella che stampa il 《全書》 con una casella spostata, come la legge la 占驗派: il 化忌 di 庚 cade su 天相 e non su 天同. Se conosci un’altra tabella, questa non è quella, e lo scostamento è di una scuola e non un errore. 化忌 non è una maledizione e 化祿 non è una ricompensa.',
+    'Le 四化 (化祿, 化權, 化科, 化忌) sono operate dal tronco dell’anno di nascita su quattro delle stelle già insediate. Questa tavola usa la tabella che stampa il 《全書》 con una casella spostata, come la legge la 占驗派: il 化忌 di 庚 cade su 天相 e non su 天同. Se conosci un’altra tabella, questa non è quella, e lo scostamento è di una scuola e non un errore. 化忌 non è una maledizione e 化祿 non è una ricompensa.',
   'prompt.ziwei.substrate':
-    'Questa tavola e un 八字 sono costruiti sulla stessa nascita, e lo stelo dell’anno che qui porta le 四化, 祿存, 天魁 e 天鉞 è lo stesso stelo dell’anno che là porta gli dèi. Se hai entrambe, hai un fatto due volte e non due testimoni. Qui hai una tavola sola: leggi quella.',
+    'Questa tavola e un 八字 sono costruiti sulla stessa nascita, e il tronco dell’anno che qui porta le 四化, 祿存, 天魁 e 天鉞 è lo stesso tronco dell’anno che là porta gli dèi. Se hai entrambe, hai un fatto due volte e non due testimoni. Qui hai una tavola sola: leggi quella.',
   'prompt.ziwei.limits':
     'Dove sono mostrati i 大限, ogni seggio tiene un decennio di anni. Dove si apre la corsa è una delle scuole nominate sotto i pilastri: nel seggio accanto al 命宮, che è la lettura del 《紫微斗數全書》, oppure nel 命宮 stesso, che è quella del 《紫微斗數捷覽》. Leggi i decenni come della scuola che li ha posati. Il 小限 mostra l’età alla quale raggiunge per la prima volta un seggio, tornandovi ogni dodicesimo anno. Questi collocano un tratto di vita sulla tavola. Non datano un evento, e nulla qui dice che cosa vi accadrà.',
   'prompt.ziwei.board': 'La tavola',
@@ -2471,24 +2471,24 @@ export const it: Record<MessageKey, string> = {
     'Dove guardare per tutto questo (l’ordine in cui guardi, mai l’ordine in cui scrivi): dove i corpi si sono radunati e dove il cielo è vuoto, quali di essi stanno sul palazzo in cui è caduto il 命宮 mìnggōng, in quali seggi è finito un raduno, se qualcosa si muove 逆 nì contro il resto, quanto avanti nella propria 宿 xiù stia ciascun corpo. Che cosa significhi un corpo in un dato luogo non è stampato qui e questo motore non ne fornisce nulla: dove un tema attinge a una tradizione per un significato, nomina ciò a cui attingi e di’ di chi è l’insegnamento.',
   'prompt.bazi.heading': 'Leggere una carta Ba Zi',
   'prompt.bazi.role':
-    'Qui sotto sono disposti i quattro pilastri di una nascita, con ciò che se ne legge: il padrone del giorno, i rami vuoti, il dio di ogni pilastro, gli steli nascosti in ogni ramo e lo stadio a cui il padrone del giorno sta nel ramo di ogni pilastro. Sono stati calcolati da un’effemeride e da un calendario, non da te: leggili esattamente come stanno e non aggiungere nulla. Nessun pilastro, nessun dio, nessuno stelo nascosto, nessun ciclo che non sia scritto lì. Se manca qualcosa che ti serve, di’ che manca. **Non aggiungere nulla riguarda i pilastri e non la lettura**: non inventare pilastri né divinità, e poi di’ che cosa sono quelli che ci sono.',
+    'Qui sotto sono disposti i quattro pilastri di una nascita, con ciò che se ne legge: il padrone del giorno, i rami vuoti, il dio di ogni pilastro, i tronchi nascosti in ogni ramo e lo stadio a cui il padrone del giorno sta nel ramo di ogni pilastro. Sono stati calcolati da un’effemeride e da un calendario, non da te: leggili esattamente come stanno e non aggiungere nulla. Nessun pilastro, nessun dio, nessun tronco nascosto, nessun ciclo che non sia scritto lì. Se manca qualcosa che ti serve, di’ che manca. **Non aggiungere nulla riguarda i pilastri e non la lettura**: non inventare pilastri né divinità, e poi di’ che cosa sono quelli che ci sono.',
   'prompt.bazi.yongshen':
     'Ciò che **non** è qui sotto è l’elemento favorevole (用神 yòngshén, 喜用神 xǐyòngshén), e nessuna struttura 格局 géjú è nominata: le scuole si dividono su come li si sceglie, e questo motore non sceglie. La scelta spetta a te, e dove un tema la richiede (come si compensa ciò che manca è questa scelta sotto un altro nome), falla: di’ quale elemento prendi, perché, e con il metodo di chi, come un passo tuo e non come qualcosa che i pilastri ti hanno consegnato.',
   'prompt.bazi.gods':
-    'I dieci dèi 十神 shíshén stampati accanto a ogni pilastro nominano una **relazione con il padrone del giorno**: 正官 zhèngguān è lo stelo che lo controlla in polarità opposta, 食神 shíshén quello che esso produce nella stessa. La tradizione legge anche ciascuno di essi verso le faccende di una vita, e quelle letture sono di una scuola e non di questa trascrizione: dove un tema poggia su uno di essi, porta il significato come un insegnamento che stai nominando (di’ di chi) e non come qualcosa di stampato qui.',
+    'I dieci dèi 十神 shíshén stampati accanto a ogni pilastro nominano una **relazione con il padrone del giorno**: 正官 zhèngguān è il tronco che lo domina in polarità opposta, 食神 shíshén quello che esso produce nella stessa. La tradizione legge anche ciascuno di essi verso le faccende di una vita, e quelle letture sono di una scuola e non di questa trascrizione: dove un tema poggia su uno di essi, porta il significato come un insegnamento che stai nominando (di’ di chi) e non come qualcosa di stampato qui.',
   'prompt.bazi.stages':
     'Lo stadio 十二長生 shí’èrchángshēng accanto a ogni pilastro (長生 chángshēng, 帝旺 dìwàng, 死 sǐ, 墓 mù e gli altri) è una posizione in un ciclo di dodici, chiamata con le fasi di una vita perché è la metafora su cui il ciclo è stato costruito. Non è un’affermazione sulla vita della persona, sulla sua salute o sulla sua durata. 旺 wàng non è una buona notizia e 死 sǐ non è una cattiva notizia.',
   'prompt.bazi.luck':
     'I cicli decennali 大運 dàyùn sono la sequenza di pilastri in cui la vita entra e l’età a cui ciascuno comincia, calcolati dal pilastro del mese e dalla direzione in cui corre il conteggio. Sono una linea del tempo **di pilastri** e non una linea del tempo di eventi: leggili come direzione, cioè per quale elemento un decennio porta e per come sta rispetto a ciò che i pilastri già portano, come un movimento con cui lavorare e mai come un calendario. Non datarvi eventi (non una malattia, non un matrimonio, non una fortuna, non una perdita) e non promettere a nessuno un decennio come quello buono o quello cattivo.',
   'prompt.bazi.distribution':
-    'Il conteggio dei cinque elementi qui sotto è sugli otto caratteri stessi: ogni stelo per il suo elemento, ogni ramo per il proprio. È aritmetica già fatta: non ricontarla, e non pesarla in un punteggio. È il terreno dell’insieme (che cosa abbonda e che cosa manca, e un’assenza pesa quanto un’abbondanza), e come si compensa un’assenza è di nuovo l’elemento favorevole sotto un altro nome: una scelta, compiuta e firmata come dice la regola qui sopra.',
+    'Il conteggio dei cinque elementi qui sotto è sugli otto caratteri stessi: ogni tronco per il suo elemento, ogni ramo per il proprio. È aritmetica già fatta: non ricontarla, e non pesarla in un punteggio. È il terreno dell’insieme (che cosa abbonda e che cosa manca, e un’assenza pesa quanto un’abbondanza), e come si compensa un’assenza è di nuovo l’elemento favorevole sotto un altro nome: una scelta, compiuta e firmata come dice la regola qui sopra.',
   'prompt.bazi.noScore':
     'Non ordinare i pilastri e non ordinare i decenni. Dichiarare il padrone del giorno forte o debole a partire dal conteggio è un passo di diversi metodi, e i metodi non concordano: se lo compi, di’ che lo stai compiendo e di chi è il metodo.',
   'prompt.bazi.board': 'I quattro pilastri',
   'prompt.bazi.opening':
     'Poi situa la nascita, in una o due frasi tue: che cosa ha davanti (una nascita scritta in un calendario, il suo anno, il suo mese, il suo giorno e la sua ora come otto caratteri 八字 bāzì), e quando è stata stesa. Situa e prosegui: nessun paragrafo su che cosa sia l’arte, che cosa sia il destino, o che cosa stai per fare.',
   'prompt.bazi.read':
-    'Dove guardare per tutto questo (l’ordine in cui guardi, mai l’ordine in cui scrivi): procedi all’infuori dal padrone del giorno; quali dei dieci dèi stanno nei quattro pilastri e quali non stanno da nessuna parte; che cosa i rami celano contro ciò che gli steli mostrano; quali rami sono vuoti e se qualcosa della nascita cade in uno di essi; dove il padrone del giorno si trovi nel ciclo dei dodici a ciascun pilastro; le quattro immagini 納音 nàyīn; il conteggio dei cinque elementi; e i decenni, dove sono stampati, come la direzione in cui i pilastri camminano. Di’ che cosa la tradizione ritiene che sia ciascuna cosa che usi, e usala dove porta un tema.',
+    'Dove guardare per tutto questo (l’ordine in cui guardi, mai l’ordine in cui scrivi): procedi all’infuori dal padrone del giorno; quali dei dieci dèi stanno nei quattro pilastri e quali non stanno da nessuna parte; che cosa i rami celano contro ciò che i tronchi mostrano; quali rami sono vuoti e se qualcosa della nascita cade in uno di essi; dove il padrone del giorno si trovi nel ciclo dei dodici a ciascun pilastro; le quattro immagini 納音 nàyīn; il conteggio dei cinque elementi; e i decenni, dove sono stampati, come la direzione in cui i pilastri camminano. Di’ che cosa la tradizione ritiene che sia ciascuna cosa che usi, e usala dove porta un tema.',
   'prompt.taiyi.heading': 'Leggere un quadro Tai Yi',
   'prompt.taiyi.role':
     'Qui sotto è disposto un quadro 太乙神數 tàiyǐshénshù, nel registro dell’anno: 歲計 suìjì. Colloca 太乙 tàiyǐ stesso, che cammina otto palazzi e mai il centro; i due occhi, 文昌 wénchāng in basso e 始擊 shǐjī in alto; 計神 jìshén e 合神 héshén; i due conti e i generali che insediano; la porta di turno; e i circuiti più lunghi. È stato calcolato dal 太乙金鏡式經 tàiyǐ jīnjìngshìjīng (王希明 Wáng Xīmíng, 唐 Táng, c. 730), non da te: leggilo esattamente come sta e non aggiungere nulla. Nessuna posizione, nessun conto, nessuna condizione che non sia scritta lì. Se manca qualcosa che ti serve, di’ che manca.',
@@ -2677,7 +2677,7 @@ export const it: Record<MessageKey, string> = {
   'cli.field.lunarDate': 'la data lunare',
   // Detto una volta, dove chi legge può soppesarlo. Si veda `docs/history/`, fase 23.
   'cli.value.ziweiSource':
-    'collocazioni dal 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr in ogni punto: la trasmissione delle quattordici stelle, non quella delle diciotto, i 十八飛星 shíbāfēixīng che portano 《全集》 quánjí e 《捷覽》 jiélǎn. Le sue tavole si scostano da quelle moderne in quattro luoghi (due stelle slegate dall’ora, una coppia insediata dallo stelo, una divinità presa dall’anno e una delle quattro trasformazioni), e in ognuno si segue questo libro, con lo scostamento registrato',
+    'collocazioni dal 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr in ogni punto: la trasmissione delle quattordici stelle, non quella delle diciotto, i 十八飛星 shíbāfēixīng che portano 《全集》 quánjí e 《捷覽》 jiélǎn. Le sue tavole si scostano da quelle moderne in quattro luoghi (due stelle slegate dall’ora, una coppia insediata dal tronco, una divinità presa dall’anno e una delle quattro trasformazioni), e in ognuno si segue questo libro, con lo scostamento registrato',
   'form.qizheng.ziqi': 'I complementi sono',
   'form.qizheng.ziqi.off': 'tre, senza 紫氣 zǐqì: solo effemeridi',
   'form.qizheng.ziqi.yinianyisu': 'quattro, con 紫氣 zǐqì: una dimora l’anno 一年一宿 yīniányīxiù',
@@ -2764,8 +2764,8 @@ export const it: Record<MessageKey, string> = {
   'cli.field.distribution': 'cinque elementi',
   'cli.field.place': 'luogo',
   'cli.field.pair': 'coppia',
-  'cli.field.earthSeat': 'sul piatto terra',
-  'cli.field.heavenSeat': 'sul piatto cielo',
+  'cli.field.earthSeat': 'sulla tavola di terra',
+  'cli.field.heavenSeat': 'sulla tavola di cielo',
   // 泊宮 — il palazzo in cui il ramo ormeggia, fissato dal ramo soltanto.
   'cli.field.mooring': 'ormeggia in',
   'cli.field.image': 'immagine',
@@ -2814,9 +2814,9 @@ export const it: Record<MessageKey, string> = {
   'cli.value.nothingAnswered':
     'L’intervallo è stato percorso per intero, e la disposizione richiesta non vi compare. Questo dice che non si è presentata, e nient’altro.',
   'cli.value.everyPalace': 'ogni palazzo, nessuna richiesta particolare',
-  // 甲 non sta su nessun piatto, quindi un anno che ne è retto si cerca sotto
-  // lo strumento che ne cela la decade. Detto, mai sostituito in silenzio.
-  'cli.value.concealedUnder': 'cercato sotto {stem}, poiché 甲 jiǎ non sta su alcun piatto',
+  // 甲 non sta su nessuna delle due tavole, quindi un anno che ne è retto si
+  // cerca sotto l'insegna che ne cela la decade. Detto, mai sostituito in silenzio.
+  'cli.value.concealedUnder': 'cercato sotto {stem}, poiché 甲 jiǎ non sta su nessuna delle due tavole',
   // Il centro non ha direzione, né porta, né spirito: ciò che vi cade si legge
   // nel palazzo in cui il centro alloggia.
   'cli.value.readAt': 'si legge in {palace}',

@@ -443,7 +443,7 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   earthPlate: 'yuan',
   spirits: 'dun',
   spiritSeat: 'tianpan',
-  spiritPhase: 'none',
+  spiritPhase: 'branch',
   leap: 'solstice',
   strengths: 'season',
   earth: 'quarters',

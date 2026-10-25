@@ -500,7 +500,8 @@ const STRIKE: Record<string, number> = {
  * which. 《吉凶格解》's closing summary gives 乙 both, 「乙奇入二六」, and no
  * value lays that.
  *
- * 丁 is 艮 in the 統宗's 四十格, 乾 with 丙 in 《遁甲符應經》: `dingTomb`.
+ * 丁 is 艮 in the 統宗's 四十格, 乾 with 丙 in 《遁甲符應經》 and in
+ * 《奇門遁甲金鏡寶鑑》: `dingTomb`.
  */
 const TOMB: Record<string, number> = {
   bing: 6, //  丙 — 乾

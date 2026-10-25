@@ -1827,12 +1827,12 @@ export const en = {
   'form.qimen.dingTomb.gen':
     'in the palace of 艮 gèn, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
   'form.qimen.dingTomb.qian':
-    'in the palace of 乾 qián, with 丙 bǐng, as 《遁甲符應經》 dùnjiǎfúyìngjīng has it',
+    'in the palace of 乾 qián, with 丙 bǐng, as 《遁甲符應經》 dùnjiǎfúyìngjīng and 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn have it',
   'form.qimen.dingTomb.note':
-    'A stem is entombed when the turn of the plate carries it to the one palace where its strength ends, and the board marks that palace. The two texts agree on the palace of 乙 yǐ and on the palace of 丙 bǐng. For 丁 dīng the first text names 艮 gèn and the second names 乾 qián, where 丙 bǐng is entombed too. The choice moves that one mark and nothing else on the board.',
+    'A stem is entombed when the turn of the plate carries it to the one palace where its strength ends, and the board marks that palace. The two readings agree on the palace of 乙 yǐ and on the palace of 丙 bǐng. For 丁 dīng the first names 艮 gèn and the second names 乾 qián, where 丙 bǐng is entombed too. The choice moves that one mark and nothing else on the board.',
   'form.qimen.yiTomb': 'The stem 乙 yǐ is marked entombed when it stands',
   'form.qimen.yiTomb.kun':
-    'in the palace of 坤 kūn, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng and 《遁甲符應經》 dùnjiǎfúyìngjīng have it',
+    'in the palace of 坤 kūn, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng, 《遁甲符應經》 dùnjiǎfúyìngjīng and 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn have it',
   'form.qimen.yiTomb.qian':
     'in the palace of 乾 qián, with 丙 bǐng, as the verse in 《奇門遁甲秘笈大全》 qíméndùnjiǎmìjídàquán has it',
   'form.qimen.yiTomb.note':

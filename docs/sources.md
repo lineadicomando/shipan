@@ -1721,7 +1721,7 @@ under the naming of the spirits alone.
 | `centreTravel: travel` | 《奇門遁甲金鏡寶鑑》 | 「符使不必寄於二」 |
 | `centreLodging: kun`, `centreTravel: stay` | 《遁甲符應經》, beside the 統宗 | 「六戊在五宮，寄坤二」 on a yang board and 「直使在五宮，寄坤二西南」 on a yin one, each worked |
 | `dingTomb: gen` | 《奇門遁甲統宗》, 《吉凶格解》, 《奇門遁甲秘笈大全》, 《奇門秘訣》 | 「丁奇艮宮」, in its 奇門四十格; the verse of 《御定奇門大全》卷五十八, 「更忌丁奇居艮上」, and the same verse in the 秘笈大全, 「丁奇一位臨艮上」; and 三璋 in 奇門秘訣, 「六丁星奇下臨八宮」; added 2026-10-22 |
-| `yiTomb: kun` | 《奇門遁甲統宗》, 《遁甲符應經》, 《吉凶格解》 | 「乙奇坤宮」; 「六乙日奇臨二宮」, under 璋曰; 「六乙臨坤請避之」; added 2026-10-22 |
+| `yiTomb: kun` | 《奇門遁甲統宗》, 《遁甲符應經》, 《吉凶格解》, 《奇門遁甲金鏡寶鑑》 | 「乙奇坤宮」; 「六乙日奇臨二宮」, under 璋曰; 「六乙臨坤請避之」; added 2026-10-22. The 金鏡寶鑑's 卷一, 「乙二」, added 2026-10-25 |
 | `yiTomb: qian` | 《奇門遁甲秘笈大全》, 《奇門秘訣》 | 「乙丙臨乾請避之」, 卷十五's verse, read on the 省思堂 plate; and 三璋's 「六乙日奇下臨六宮」, with 乙 in 二 called 非; added 2026-10-22 |
 | `dayGates: shun`, `dayDun: yang` | 《寶鏡圖》 | sixty day boards, 《御定奇門大全》卷六十一–六十四: the gates turned with the sun every day and the stars the yang count on every day of the cycle; added 2026-10-22 |
 | `deshi: liuyi` | 《奇門遁甲統宗》, 《遁甲符應經》, 《遁甲演義》, 《吉凶格解》 | 「乙奇加甲午甲戌　丙奇加甲子甲申　丁奇加甲寅甲辰」, the 統宗's 四十格; 「甲戌甲午乙為使…」 under 葛洪, and in the 演義 with three cases that lay; added 2026-10-22 |
@@ -1730,7 +1730,7 @@ under the naming of the spirits alone.
 | `menpo: gongzhimen` | 《吉凶格解》 | 「門迫宮制門，宮迫門制宮」, and thirteen cells on each, 《御定奇門大全》卷五十九; added 2026-10-22 |
 | `stemPairs: jinhan` | 《金函玉鏡奇門遁甲秘笈全書》 | 卷二 十干克應訣, the eighty-one set out as its own, read at pp. 30–32 of the 1996 print; added 2026-10-16 |
 | `stemPairs: xianji` | 《奇門仙機》, in 《御定奇門大全》 | the 干論 of 卷十四 and 卷十六, seventy-seven cells read on the plate; added 2026-10-25 |
-| `dingTomb: qian` | 《遁甲符應經》 | 「六丙月奇、六丁星奇在六宮」, under 璋曰, in both copies; and a third copy in the 大全's 景祐秘纂 卷二, 「六丙月奇臨六宮六丁星奇臨六宮」 with a case laying 丁 in 六, read 2026-10-24 |
+| `dingTomb: qian` | 《遁甲符應經》 | 「六丙月奇、六丁星奇在六宮」, under 璋曰, in both copies; and a third copy in the 大全's 景祐秘纂 卷二, 「六丙月奇臨六宮六丁星奇臨六宮」 with a case laying 丁 in 六, read 2026-10-24. 《奇門遁甲金鏡寶鑑》卷一, 「三奇入墓不可為乙二丙丁到六宮」, read on the plate 2026-10-25 |
 | `leap: runyue` | 《奇門遁甲金鏡寶鑑》 | states the placement, works it twice by date, rejects the solstitial one. A work arguing its own reading is its own line |
 | `spiritSeat: tianpan` | 《奇門遁甲統宗》, 《御定奇門大全》 | 卷二's 小值符加大值符法, 「以最上盤之值符加於九星值符所臨之宮」, and 38 of the 39 spirit claims of the 大全's 卷五–十 that tell the seats apart; added 2026-10-20 |
 | `spiritSeat: yinshi` | 《奇門秘訣》 | its commentary on the 煙波釣叟歌, 《御定奇門大全》卷四十七: 「如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符」; added 2026-10-20 |
@@ -2138,6 +2138,37 @@ under 洪, about the hours, and under 璋 only says where. **And the
 passage carries a second thing under the same name**: an hour that is the
 tomb of its own stem, 乙未 and 丙戌, which the 統宗's list files apart as 時墓.
 The engine computes the palace and not the hour.
+
+**A second work buries 丁 in 乾, bound in the volume the 統宗 is in, and the
+統宗 itself buries 乙 there once.** Both were located by a textual note in a
+modern Italian manual, which is a finding aid like every extract here, and
+read on the plate of 故宮珍本叢刊 第426冊 on 2026-10-25. 《奇門遁甲金鏡寶鑑》
+卷一, series p. 269:
+
+> 三奇入墓不可為，乙二，丙丁到六宮。戌為窮火，丑為窮金，窮即墓也……故丁不墓于丑而亦墓于戌
+
+It is not the 符應經 in another copy: the words are its own, and it gives 丁 a
+reason the 符應經 does not, 戌 as the 窮 of fire. So two works carry 丁 in 乾,
+each a check on the other's transcription of the cell, and `dingTomb: qian`
+moves from rung 5 to rung 2. The 金鏡寶鑑 holds `dingTomb: qian` and `yiTomb:
+kun`. Its 卷一~卷四 were swept whole before this, and the cell was not taken
+from them then: the register's sentence that the work has «none for 入墓» was
+true of its 卷之四 and not of the work.
+
+The 統宗's 卷十一 gives 乙 two palaces two pages apart. Series p. 148:
+
+> 入墓丁艮乙丙乾，所謀吉事一無成。……故乙丙到乾為墓，丁陰火長生在酉墓于丑，故丁到艮為墓。
+
+and series p. 150, 「三奇入墓者，乙奇到坤，丙奇到乾，丁奇到艮」, which is its
+四十格's 「乙奇坤宮」 again. One work divides on 乙 inside one juan, as 吉凶格解
+does between its entry and its summary. It stays a holder of `yiTomb: kun`,
+by the 四十格, and is not named a holder of `qian` as well: a text named for
+both values of one axis would lay every combination of the board, which says
+nothing about any of them. No rung moves: the verse family behind `yiTomb:
+qian` has a third statement, inside a work that contradicts it two pages on.
+The simplified transcription on the shelf has one more paragraph,
+「乙木到坤、丙丁火到乾，皆為入墓」 followed by 丁 in 艮; it was not found on the
+leaves of 卷十一 read for this, so it stays a location and not a reading.
 
 **六儀擊刑 is the six of `STRIKE`, stated by the hour and by the palace at
 once.** P. 429, with its glosses in small characters: 「洪曰：六儀擊刑者，謂
@@ -3816,9 +3847,11 @@ the rendered page: 「八神中值符（天乙貴人）為土；螣蛇為火；�
 spirit — and then 「八神因是陰性物質，不按陰陽劃分，預測中亦不按五行屬性參與生克
 制化，只代表自身的信息含義，其它書籍里有五行的生克制化，我認為那是作者主觀臆想」.
 So the table has two independent texts and the use of it has one holder on
-each side. That sentence is `spiritPhase: none`, the default: the spirits are a
-kind the lens keeps and never relates, which is what the engine did before
-the parameter existed.
+each side. That sentence is `spiritPhase: none`: the spirits are a kind the
+lens keeps and never relates, which is what the engine did before the
+parameter existed. **The default is `branch`, since 2026-10-25 on the user's
+word**: the table two texts carry, and a default claims no priority for its
+line over the manual that refuses it.
 
 **`huaqi` is 《奇門遁甲秘笈大全》卷六's, the 九神主論章.** Read in the 省思堂
 woodblock, pp. 104–106 of `qimen-dunjia-miji-daquan-shengsitang.pdf` at
