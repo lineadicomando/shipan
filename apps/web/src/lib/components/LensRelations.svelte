@@ -21,6 +21,7 @@
     view,
     focusName,
     nameAt,
+    seatPlace,
   }: {
     t: Translator;
     lens: Lens;
@@ -28,6 +29,8 @@
     focusName: string | undefined;
     /** A name on the board in words, from where the drawing marks it. */
     nameAt: (seat: string, layer: string) => string | undefined;
+    /** Where a name stands, in words: «palace 4», «first lesson». */
+    seatPlace: (seat: string) => string;
   } = $props();
 
   const items = $derived(
@@ -49,7 +52,7 @@
             {nameAt(item.seat, item.layer)}
             <span class="where">({t('lens.at', {
               layer: t(`label.register.${lens.board}.${item.layer}` as MessageKey),
-              palace: item.seat,
+              where: seatPlace(item.seat),
             })})</span>:
             {t(`lens.relation.${item.relation}` as MessageKey, { thing: focusName })}
           </li>

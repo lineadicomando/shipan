@@ -466,7 +466,13 @@ export const en = {
   'lens.key': 'How the relations are drawn',
   'lens.heading': 'How the rest of the board relates to {thing}',
   'lens.empty': 'Choose which names to relate it to.',
-  'lens.at': '{layer}, palace {palace}',
+  // Where a name stands, after its layer: a palace on either board, and on
+  // 六壬 a lesson or a transmission as well, which are rows and not palaces.
+  'lens.at': '{layer}, {where}',
+  'lens.where.palace': 'palace {palace}',
+  'lens.where.transmission.chu': 'first transmission',
+  'lens.where.transmission.zhong': 'middle transmission',
+  'lens.where.transmission.mo': 'last transmission',
   // Said over a name the lens has drawn a relation to, and in the list under
   // the board: which way the relation runs, between the name the reader
   // started from and this one.

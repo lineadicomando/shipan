@@ -37,15 +37,29 @@ hour board. The gates do — they are the same eight. **The stars do not**:
 register, which holds only a fortune for each. They are kept by kind and
 related to nothing, as the 八神 are. Two rows in the register say so.
 
+## 六壬
+
+The third step: `liurenLens`, answered by `/api/liuren`. The lens is the
+art's own relation here — the lessons and the transmissions are found by
+生剋 — so it shows the five relations between the two plates, the lessons
+and the transmissions; the twelve generals have no phase registered and are
+kept by kind. Two things the first step had not foreseen: names stand in
+seats that are not palaces, so the descriptor says which seats a pair may be
+laid on (`pairSeats`), and the list and the table under the board said
+«palace N» of every name, so a section now says where a name stands
+(`seatPlace`). On 奇門 the pair's table heads its rows «Heaven plate ·
+palace 9» where it said «· 9». The seats' names do not collide on 六壬, and
+no `unit` was added.
+
 ## What it moved
 
-The first step moved nothing a reader sees; the second gave the board of a
-day a lens it had not had. The answer of `/api/qimen` moved with the first — its `lens`
+The first step moved nothing a reader sees; the second and third gave the
+board of a day and 六壬 a lens they had not had. The answer of `/api/qimen` moved with the first — its `lens`
 carries `seats`, `layers`, `phased`, `linkIds` and `links` where it carried
 `facing` and `wuhe`, and a seat is a string — so it is 0.34.0 by the first
 of the three questions. The roadmap had said this step would move no version,
 reasoning from the page and not from the answer.
 
-The day's lens rides in the same version: 0.34.0 has not left the branch,
+The day's lens and 六壬's ride in the same version: 0.34.0 has not left the branch,
 and a version is about what an answer has stopped being since the last one
-shipped. Its two rows are new; the rows phase 71 registered do not move.
+shipped. Their three rows are new; the rows phase 71 registered do not move.

@@ -279,7 +279,7 @@ two boards. The cursor is the only announcement it gets. A sheet has no
 pointer, so in print the same words are set once instead, as an empty seat
 under the board (`LayerLegend`).
 
-The second is **a lens**, on the 奇門 section, on the board of an hour and of a day: the reader keeps a kind of
+The second is **a lens**, on the 奇門 section — the board of an hour and of a day — and on 六壬's: the reader keeps a kind of
 name or a phase and the rest of each seat recedes, presses a name and is
 shown how the rest stands to it, or presses the ground of two palaces and is
 shown how they stand to each other — the five relations of the phases, 對宮
@@ -327,7 +327,9 @@ thing with a phase, the five relations, and the board's own relations as
 links between two seats (對宮) or two things (五合) — and a section holds the
 lens through `HeldLens` (`lib/held-lens.svelte.ts`), with `LensSide` in the
 column and `LensReading` under the board, saying only how a name and a seat
-are said. **The lens is drawn in the browser and never by `plate`**:
+are said. A pair is laid on the seats the descriptor names for it
+(`pairSeats`): on 六壬 the twelve palaces of the ring, and not the lessons or
+the transmissions, whose names a lens still keeps and relates. **The lens is drawn in the browser and never by `plate`**:
 a drawing is made on the server, and which name somebody pressed is not
 something the server is told, so the receding is an attribute set on the
 marks in the shadow root and the relations are a layer of the page's laid

@@ -3681,6 +3681,7 @@ independent sources naming the same thing the same way**.
 | a lens: 五合 | the stem five places on | the 四德, which confirm the pairing cell by cell; and 《金函玉鏡》's own table, which names 辛加丙 and 壬加丁 干合悖師 and 干合蛇刑 |
 | a lens on a day: 生剋 | the same five relations, between the day's palaces and gates, a gate taking its home palace's phase as on the hour board | no 日家 text sets a gate against a palace; a test holds each gate's phase to the hour board's |
 | a lens on a day: 對宮 | the Luoshu, as on the hour board | the same four pairs, asserted |
+| a lens on 六壬: 生剋 | the same five relations, between any two names with a phase: the two plates, the lessons, the transmissions | the 賊剋 the board is drawn by: on every 賊剋 board the 初傳 stands over a lesson the lens names in control |
 
 **The three a lens shows are relations and never readings of them.** A reader
 who picks a thing on a board is shown how everything else stands to it
@@ -3701,6 +3702,14 @@ register holds of them is a fortune each, on which the three texts part (§
 "The 金函玉鏡's own 日家, read on the plate"). So a lens keeps them by their kind and
 relates them to nothing, as it does the 八神, until a text giving their phases
 is read and registered.
+
+**On 六壬 the lens is the art's own relation.** The lessons and the
+transmissions are found by 生剋 between a branch and what it stands on, and
+`liurenLens` hands over the same five relations between any two names that
+have a phase. The twelve generals have none registered (`docs/notes.md`,
+the rung «—»), so a lens keeps them by their kind and relates them to
+nothing. 六沖 and 六合 between branches are the art's too, and a lens draws
+neither until each has its row.
 
 **The list that tests 門迫 is two cells shorter than the rule.** 《統宗》卷一
 迫 — ctext, and 故宮珍本叢刊 第426冊 page 13 — prints eight lines — 開門臨三四宮（金克木）· 休門臨九宮 · 生門臨一宮 ·

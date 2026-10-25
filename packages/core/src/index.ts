@@ -174,6 +174,13 @@ export {
   type Yuejiang,
   type YuejiangId,
 } from './liuren.js';
+export {
+  LIUREN_LAYERS,
+  LIUREN_LENS_LAYERS,
+  liurenLens,
+  type LiurenLayer,
+  type LiurenLens,
+} from './liuren-lens.js';
 
 export {
   CI,

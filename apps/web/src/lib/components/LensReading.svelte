@@ -25,7 +25,7 @@
 
 {#if held.lens && (held.view.focus || held.view.seats.length === 2)}
   <div class="reading">
-    <LensRelations {t} lens={held.lens} view={held.view} focusName={held.focusName} nameAt={held.nameAt} />
-    <LensPair {t} lens={held.lens} view={held.view} state={held.state} nameAt={held.nameAt} {seatName} />
+    <LensRelations {t} lens={held.lens} view={held.view} focusName={held.focusName} nameAt={held.nameAt} seatPlace={held.seatPlace} />
+    <LensPair {t} lens={held.lens} view={held.view} state={held.state} nameAt={held.nameAt} {seatName} seatPlace={held.seatPlace} />
   </div>
 {/if}

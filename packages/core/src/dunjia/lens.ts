@@ -126,6 +126,7 @@ export function qimenLens(chart: QimenChart): QimenLens {
   return {
     board: 'qimen',
     seats: SEATS,
+    pairSeats: SEATS,
     layers: QIMEN_LAYERS,
     phased: LENS_LAYERS,
     things,
@@ -171,6 +172,7 @@ export function dayLens(day: DayChart): DayLens {
   return {
     board: 'qimen',
     seats: SEATS,
+    pairSeats: SEATS,
     layers: DAY_LAYERS,
     phased: DAY_LENS_LAYERS,
     things,

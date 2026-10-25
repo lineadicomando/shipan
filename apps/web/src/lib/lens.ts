@@ -440,7 +440,7 @@ export function readLens(fragment: string, lens?: Lens): LensState {
 
   const isLayer = known(lens?.layers);
   const isPhased = known(lens?.phased);
-  const isSeat = known(lens?.seats);
+  const isSeat = known(lens?.pairSeats);
   const state: LensState = {
     layers: list('layers', isLayer),
     phases: list('phases', (value) => (ELEMENTS as readonly string[]).includes(value)) as Element[],

@@ -1,4 +1,4 @@
-import { liurenBoard } from '@shipan/core';
+import { liurenBoard, liurenLens } from '@shipan/core';
 import { liurenReadings } from '@shipan/plate';
 import { json } from '@sveltejs/kit';
 import { momentIsFixed, readLiurenOptions, readMoment } from '$lib/server/params';
@@ -40,6 +40,10 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
       // How the names on the board are said, for the page that sets the band
       // beside a board drawn without one.
       readings: liurenReadings(board),
+      // Every relation a reader may ask the board to show, as data: which one
+      // they ask for is chosen on the page and never sent here. See
+      // `lib/lens.ts`.
+      lens: liurenLens(board),
     });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;

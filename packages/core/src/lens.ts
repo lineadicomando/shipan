@@ -17,7 +17,10 @@ import { ELEMENT_HANZI, ELEMENT_PINYIN, type Element } from './types.js';
  *
  * - **its seats**, named in its own terms and in the board's order — a Qi Men
  *   palace by its Luoshu number, a seat of a ring by a branch identifier —
- *   the same names the drawing marks its seats with (`data-seat`);
+ *   the same names the drawing marks its seats with (`data-seat`), and among
+ *   them the ones a pair may be laid on. A seat's name is unique on its board
+ *   whatever kind of seat it is; a board whose kinds of seat shared a name
+ *   would have to tell them apart here first;
  * - **its layers**, as the drawing marks them, and among them the ones whose
  *   things have a phase;
  * - **every thing with a phase**, by seat, layer and identifier;
@@ -72,8 +75,14 @@ export interface LensLink<Layer extends string = string, Link extends string = s
 export interface Lens<Layer extends string = string, Link extends string = string> {
   /** The board, as the drawing names itself (`data-board`). */
   board: string;
-  /** Every seat, in the board's order: the order a pair is held in. */
+  /** Every seat a name stands in, in the board's order: the order a pair is held in. */
   seats: readonly string[];
+  /**
+   * The seats a pair may be laid on, by pressing their ground: on 奇門 all
+   * nine palaces, on 六壬 the twelve of the ring and not the lessons or the
+   * transmissions, which are rows read off it.
+   */
+  pairSeats: readonly string[];
   /** Every layer the drawing marks, in the order the board is read. */
   layers: readonly Layer[];
   /** The layers whose things have a phase, and can stand in a relation. */

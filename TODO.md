@@ -212,7 +212,7 @@ on 2026-10-18. What `main` carries since 2026-10-15 is of eleven days:
   `core`), `qimenLens` its first instance, and the page's lens and its
   wiring knowing no board. Then item 2: the board of a day has its lens
   (`dayLens`), its nine stars kept by kind for want of a registered phase.
-  Phase 72. The `lens` that `routes/api/qimen/+server.ts` answers changed shape,
+  Then item 3: 六壬 (`liurenLens`), its generals kept by kind. Phase 72. The `lens` that `routes/api/qimen/+server.ts` answers changed shape,
   which is what moved the version.
 
 `main` is pushed to `origin/main` as of 2026-10-18; the commits of
@@ -291,24 +291,21 @@ why). The code to copy from is the 奇門 hour board:
 **The items, in the order proposed**, each a step of its own on the branch:
 
 1. **Done on 2026-10-25** (phase 72): the lens board-generic, as the table
-   above now describes it. Seats on the ring boards may need the `unit`
-   beside the seat (`marks.ts` says one identifier can name two kinds of seat
-   on one board); the descriptor carries none yet, and the first ring board
-   decides it.
+   above now describes it. A seat's name must be unique on its board; on
+   六壬 the three kinds of seat do not share one, so no `unit` was needed. A
+   board whose kinds of seat share a name would need it first.
 2. **Done on 2026-10-25** (phase 72): the 奇門 board of a day has its lens,
    `dayLens(day)` beside `qimenLens`. Its palaces and gates have a phase, a
    gate its home palace's as on the hour board; **its nine stars have none
    registered** and are kept by kind only, as the 八神 are, until a text
    giving them one is read. 對宮 carries over and 五合 does not. Two rows in
    the register.
-3. **六壬.** The relation the art is made of is 生剋 between branches and
-   stems — the 四課 and the 三傳 are found by it — so the lens is native here:
-   the branches of the two plates, the 四課, the 三傳. **The 十二天將 have no
-   registered phase** (`docs/notes.md`, the rung «—», and the drawing leaves
-   them uncoloured), so they are kept by kind and never related until the
-   lead in `.claude/skills/shushu/disciplines/liuren.md` (《六壬大全》卷二) is read and
-   registered. A pair is two palaces of the ring. The ring's seats are branch
-   identifiers.
+3. **Done on 2026-10-25** (phase 72): 六壬 has its lens, `liurenLens`, the
+   five relations between the two plates, the lessons and the
+   transmissions. The descriptor gained `pairSeats` (a pair on the ring
+   alone) and the page a `seatPlace` (where a name stands, in words). The
+   十二天將 are kept by kind until 《六壬大全》卷二 is read and registered;
+   六沖 and 六合 are the obvious links to add once each has its row.
 4. **七政四餘.** The seven governors have the phases of their planets; the
    four remainders' phases and the ownership of each 宮 by a governor are
    transmitted, not derived, and each wants its row before it is drawn. Which

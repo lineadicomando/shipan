@@ -179,7 +179,10 @@
    * state, its fragment, and what a press does are `HeldLens`'s; what is
    * this section's is how a name and a palace are said.
    */
-  const held = new HeldLens({ lens: () => lens, t: () => t, nameAt, seatName });
+  /** Where a name stands, after its layer: the palace by its number. */
+  const seatPlace = (seat: string): string => t('lens.where.palace', { palace: seat });
+
+  const held = new HeldLens({ lens: () => lens, t: () => t, nameAt, seatName, seatPlace });
 
   let busy = $state(false);
   let panel: FormPanel | undefined = $state();

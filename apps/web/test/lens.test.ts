@@ -15,6 +15,7 @@ import { WHOLE, activePhases, inPair, keyOf, oneAtATime, pairTable, pressedInPai
 const LENS: QimenLens = {
   board: 'qimen',
   seats: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
+  pairSeats: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
   layers: ['heaven', 'earth', 'palace', 'spirit', 'star', 'gate'],
   phased: ['heaven', 'earth', 'palace', 'star', 'gate'],
   things: [

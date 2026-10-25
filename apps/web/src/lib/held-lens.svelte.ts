@@ -49,6 +49,11 @@ export interface HeldLensOptions {
   nameAt: (seat: string, layer: string) => string | undefined;
   /** A seat in words, as a pair is said: on 奇門, its number and its palace. */
   seatName: (seat: string) => string;
+  /**
+   * Where a name stands, said after its layer in the list of relations: on
+   * 奇門 «palace 4», on 六壬 «palace Rat 子 zǐ» or «first lesson».
+   */
+  seatPlace: (seat: string) => string;
 }
 
 /**
@@ -128,6 +133,7 @@ export class HeldLens {
   }
 
   nameAt = (seat: string, layer: string): string | undefined => this.#options.nameAt(seat, layer);
+  seatPlace = (seat: string): string => this.#options.seatPlace(seat);
 
   /**
    * Pressing a name with a phase starts from it, and pressing it again lets
@@ -142,7 +148,9 @@ export class HeldLens {
       this.putAway();
       return;
     }
-    const seat = spot.seat !== undefined && lens.seats.includes(spot.seat) ? spot.seat : undefined;
+    // A seat a pair may be laid on: on 六壬 a palace of the ring, and not a
+    // lesson or a transmission.
+    const seat = spot.seat !== undefined && lens.pairSeats.includes(spot.seat) ? spot.seat : undefined;
     // Inside the two seats of a pair, a name is pressed to be compared and
     // the ground lets the seat go — in either mode.
     if (seat && inPair(this.state, seat)) {
