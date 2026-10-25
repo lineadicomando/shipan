@@ -11,7 +11,10 @@
  * `@shipan/plate` hands them out inside an SVG it carries with it, and
  * that copy answers to a media query alone — which is one appearance short of
  * what this page offers. Same values, so a square drawn in the page and a
- * palace drawn in the picture are the same colour.
+ * palace drawn in the picture are the same colour. The inks are the plate's
+ * `elementInk`, the phases at the strength a glyph is written in; on the page
+ * only the rain uses them, and `apps/web/test/palette.test.ts` holds both
+ * sets to the plate.
  */
 /*
  * `--rule` and `--edge` are both borders and are not interchangeable.
@@ -62,6 +65,11 @@
   --element-tu: #f6f1e6;
   --element-jin: #eff1f4;
   --element-shui: #e9eef3;
+  --element-ink-mu: #2f6b3a;
+  --element-ink-huo: #a5372a;
+  --element-ink-tu: #8a6620;
+  --element-ink-jin: #556170;
+  --element-ink-shui: #2a4c7d;
   color-scheme: light;
 }
 
@@ -84,6 +92,11 @@
     --element-tu: #211d15;
     --element-jin: #191c20;
     --element-shui: #161d24;
+    --element-ink-mu: #87bb8b;
+    --element-ink-huo: #dd8f80;
+    --element-ink-tu: #d0af66;
+    --element-ink-jin: #a6b3c0;
+    --element-ink-shui: #86a9d6;
     color-scheme: dark;
   }
 }
@@ -103,6 +116,11 @@
   --element-tu: #f6f1e6;
   --element-jin: #eff1f4;
   --element-shui: #e9eef3;
+  --element-ink-mu: #2f6b3a;
+  --element-ink-huo: #a5372a;
+  --element-ink-tu: #8a6620;
+  --element-ink-jin: #556170;
+  --element-ink-shui: #2a4c7d;
   color-scheme: light;
 }
 
@@ -121,6 +139,11 @@
   --element-tu: #211d15;
   --element-jin: #191c20;
   --element-shui: #161d24;
+  --element-ink-mu: #87bb8b;
+  --element-ink-huo: #dd8f80;
+  --element-ink-tu: #d0af66;
+  --element-ink-jin: #a6b3c0;
+  --element-ink-shui: #86a9d6;
   color-scheme: dark;
 }
 

@@ -13,12 +13,28 @@
    * carries a ground the text is read off. It draws in the appearance's own
    * tokens rather than in a colour of its own — matrix green against this
    * page's warm paper is the one thing that would make it look like a mistake
-   * rather than a joke.
+   * rather than a joke. With a `phase` the whole rain is written in that
+   * phase's ink, the one a stem of it is written in on a board, and never a
+   * sixth colour. The colour is the reader's choice and not the glyph's — 丙
+   * may fall in water — because a rain that coloured each name by its phase
+   * would be a lesson running behind the page.
    */
   import { onMount } from 'svelte';
   import { ENGINE_NAMES } from '$lib/glyphs';
+  import type { Phase } from '$lib/rain.svelte';
+
+  let { phase = null }: { phase?: Phase | null } = $props();
 
   let canvas = $state<HTMLCanvasElement | null>(null);
+
+  // The canvas stays mounted from one lit setting to the other, so the
+  // change has to be drawn: a running rain would pick it up on its next
+  // frame, and a still one has no next frame.
+  let redraw: (() => void) | null = null;
+  $effect(() => {
+    void phase;
+    redraw?.();
+  });
 
   /** The cell, in CSS pixels. A column is one glyph wide and rows are square. */
   const CELL = 18;
@@ -115,17 +131,19 @@
     };
 
     /**
-     * The two colours are read back out of the stylesheet, not written here.
+     * The colours are read back out of the stylesheet, not written here.
      *
-     * `--ink` and `--edge` are what the page is already set in, so the rain
+     * `--ink` and `--edge`, and the chosen `--element-ink-*`, are what the page is already set in, so the rain
      * follows a reader from light to dark to paper-white without knowing that
      * any of the three exists. Read afresh each frame: the appearance changes
      * under a button, and a colour cached at mount would keep the old one.
      */
     const draw = (): void => {
       const face = getComputedStyle(document.documentElement);
-      const head = face.getPropertyValue('--ink').trim() || '#1a1a1a';
-      const tail = face.getPropertyValue('--edge').trim() || '#8a8378';
+      const ink = face.getPropertyValue('--ink').trim() || '#1a1a1a';
+      const tinted = phase ? face.getPropertyValue(`--element-ink-${phase}`).trim() : '';
+      const head = tinted || ink;
+      const tail = tinted || face.getPropertyValue('--edge').trim() || '#8a8378';
 
       ctx.clearRect(0, 0, width, height);
       ctx.font = `${CELL - 3}px 'Noto Serif CJK SC', 'Songti SC', 'PingFang SC', serif`;
@@ -137,7 +155,8 @@
           const y = (column.row - behind) * CELL;
           if (y < -CELL || y > height) return;
           // The head is the page's own ink; everything behind it fades
-          // through the colour the rules and the frames are drawn in.
+          // through the colour the rules and the frames are drawn in — or,
+          // in a phase, the whole column fades through that phase's ink.
           ctx.fillStyle = behind === 0 ? head : tail;
           ctx.globalAlpha = behind === 0 ? 0.62 : 0.4 * (1 - behind / TRAIL);
           ctx.fillText(glyph, x, y);
@@ -188,12 +207,14 @@
     measure();
     draw();
     start();
+    redraw = draw;
 
     window.addEventListener('resize', refit);
     document.addEventListener('visibilitychange', follow);
     still.addEventListener('change', reconsider);
 
     return () => {
+      redraw = null;
       stop();
       window.removeEventListener('resize', refit);
       document.removeEventListener('visibilitychange', follow);

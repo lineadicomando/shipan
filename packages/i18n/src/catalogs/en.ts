@@ -1570,6 +1570,10 @@ export const en = {
   // carries the whole of what the control is: not the character, which needs
   // no gloss to work as a mark, but what pressing it does to the page.
   'rain.label': 'Glyph rain behind the page',
+  'rain.off': 'off',
+  'rain.ink': 'monochrome',
+  'rain.phase': '{phase} colour',
+  'rain.switch': 'Glyph rain: {current}. Switch to {next}.',
 
   'lang.en': 'English',
   'lang.it': 'Italian',

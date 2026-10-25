@@ -479,14 +479,21 @@ for a capability it would never use would be asked in bad faith.
 ## The one thing here that is not the work
 
 A button in the header — 雨, beside the one for the appearance — and a rain of
-glyphs falls behind the page. The same button puts it away, and `aria-pressed`
-says which way it is set.
+glyphs falls behind the page. A press steps it through its settings, as the
+appearance button steps through its own: off, the page's own ink, then each of
+the five phases' inks in their generating order (`lib/rain.svelte.ts`). The
+label says where it stands and where a press takes it, and the face of the
+button takes the colour the rain is falling in. The phases are the plate's
+`elementInk`, repeated in `app.css` as `--element-ink-*` beside the tints and
+held to the plate by `apps/web/test/palette.test.ts`. The colour is the
+reader's choice and never the glyph's, since a rain that coloured each name by
+its phase would be a lesson running behind the page.
 
 **The glyph is a mark and not a name.** Everywhere else here a hanzi arrives
 with a gloss and a reading, because it is something the engine computed with
 and the reader has to be able to say it; this one stands for what the button
 does, the way the circle beside it stands for how much light the page has.
-What a reader operates it from is `rain.label`, in their own language on the
+What a reader operates it from is `rain.switch`, in their own language on the
 tooltip and to a screen reader.
 
 **It falls in the engine's own vocabulary and in nothing else.** The names are

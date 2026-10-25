@@ -7,7 +7,7 @@
   import RainToggle from '$lib/components/RainToggle.svelte';
   import SectionsNav from '$lib/components/SectionsNav.svelte';
   import { EXTERNAL } from '$lib/external';
-  import { rain } from '$lib/rain.svelte';
+  import { isPhase, rain } from '$lib/rain.svelte';
   import { SOURCE_URL } from '$lib/source';
   import { NAME, PRERELEASE, VERSION } from '$lib/version';
 
@@ -32,11 +32,11 @@
 
 <!-- Mounted only while it falls, so that the page ships with no canvas, no
      loop and no listeners until somebody presses for them. -->
-{#if rain.falling}
-  <GlyphRain />
+{#if rain.mode !== 'off'}
+  <GlyphRain phase={isPhase(rain.mode) ? rain.mode : null} />
 {/if}
 
-<div class="shell" class:veiled={rain.falling}>
+<div class="shell" class:veiled={rain.mode !== 'off'}>
   <header>
     <!-- The wordmark is not the page's title: each section carries its own
          `h1`, so the mark can stay the same on all of them. -->

@@ -1,8 +1,13 @@
 <script lang="ts">
-  import type { Translator } from '@shipan/i18n';
-  import { rain, toggleRain } from '$lib/rain.svelte';
+  import type { MessageKey, Translator } from '@shipan/i18n';
+  import { cycleRain, isPhase, nextRainMode, rain, type RainMode } from '$lib/rain.svelte';
 
   let { t }: { t: Translator } = $props();
+
+  const name = (mode: RainMode): string =>
+    isPhase(mode)
+      ? t('rain.phase', { phase: t(`label.element.${mode}` as MessageKey) })
+      : t(`rain.${mode}` as MessageKey);
 </script>
 
 <!--
@@ -14,14 +19,17 @@
   the way the circle beside it was chosen: rain, for the thing that falls
   behind the page. So no gloss and no pinyin. What a reader operates it from
   is the label, which is in their own language on the tooltip and to a screen
-  reader, and `aria-pressed` says which way it is set.
+  reader, and says where the switch stands and where a press takes it, as
+  the appearance button beside it does: three settings are not a pressed and
+  an unpressed.
 -->
 <button
   type="button"
-  onclick={toggleRain}
-  aria-pressed={rain.falling}
-  aria-label={t('rain.label')}
-  title={t('rain.label')}
+  onclick={cycleRain}
+  data-mode={rain.mode}
+  style:color={isPhase(rain.mode) ? `var(--element-ink-${rain.mode})` : null}
+  aria-label={t('rain.switch', { current: name(rain.mode), next: name(nextRainMode(rain.mode)) })}
+  title="{t('rain.label')}: {name(rain.mode)}"
 >
   <span aria-hidden="true">雨</span>
 </button>
@@ -43,5 +51,7 @@
   button:hover, button:focus-visible { color: var(--ink); background: none; }
   /* Set, once it is on, in the ink the page is read in — the same way the
      current language and the filled circle say where a switch stands. */
-  button[aria-pressed='true'] { color: var(--ink); }
+  button[data-mode='ink'] { color: var(--ink); }
+  /* And in a phase, in that phase's ink, set inline from the mode: the face
+     shows the colour the rain is falling in. */
 </style>

@@ -1480,6 +1480,12 @@ export const it: Record<MessageKey, string> = {
   'scheme.switch': 'Aspetto: {current}. Passa a {next}.',
 
   'rain.label': 'Pioggia di glifi dietro la pagina',
+  'rain.off': 'spenta',
+  'rain.ink': 'monocroma',
+  // «color legno», «color acqua»: the invariable «color» takes the phase as
+  // it stands, so no article has to agree with five nouns of two genders.
+  'rain.phase': 'color {phase}',
+  'rain.switch': 'Pioggia di glifi: {current}. Passa a {next}.',
 
   'lang.en': 'Inglese',
   'lang.it': 'Italiano',
