@@ -1544,6 +1544,11 @@ export const it: Record<MessageKey, string> = {
     'sull’ora, come tavola 時家 shíjiā: un piatto di tronchi, nove stelle, otto porte e otto spiriti',
   'form.qimen.system.rijia':
     'sul giorno, come tavola 日家 rìjiā: otto porte e nove stelle proprie',
+  // The same choice in the bar over the board, where it is changed without
+  // opening the form: short, since an option of a select holds one line.
+  'form.qimen.system.bar': 'Tavola',
+  'form.qimen.system.bar.shijia': 'dell’ora · 時家 shíjiā',
+  'form.qimen.system.bar.rijia': 'del giorno · 日家 rìjiā',
   'form.qimen.system.note':
     'La tavola dell’ora e la tavola del giorno sono due tavole distinte, e hanno in comune le otto porte. La tavola dell’ora posa nove tronchi sui palazzi e muove sopra di essi un secondo piatto di tronchi, nove stelle e otto spiriti. La tavola del giorno è fatta delle otto porte e di nove stelle proprie, la prima delle quali è 太乙 tàiyǐ. Si posa soltanto sul giorno e sulla stagione, quindi tutte le ore di uno stesso giorno hanno la stessa tavola del giorno.',
   'form.qimen.dayGates': 'Le altre sette porte seguono 休門 xiūmén',

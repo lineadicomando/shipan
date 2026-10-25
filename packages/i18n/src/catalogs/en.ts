@@ -1689,6 +1689,11 @@ export const en = {
     'the hour, as a 時家 shíjiā board: a plate of stems, nine stars, eight gates and eight spirits',
   'form.qimen.system.rijia':
     'the day, as a 日家 rìjiā board: eight gates and nine stars of its own',
+  // The same choice in the bar over the board, where it is changed without
+  // opening the form: short, since an option of a select holds one line.
+  'form.qimen.system.bar': 'Board',
+  'form.qimen.system.bar.shijia': 'of the hour · 時家 shíjiā',
+  'form.qimen.system.bar.rijia': 'of the day · 日家 rìjiā',
   'form.qimen.system.note':
     'The board of the hour and the board of the day are two boards, and the eight gates are what they share. The board of the hour sets nine stems on the palaces and moves a second plate of stems, nine stars and eight spirits over them. The board of the day is made of the eight gates and of nine stars of its own, the first of which is 太乙 tàiyǐ. It is laid off the day and the season alone, so every hour of one day has the same board of the day.',
   'form.qimen.dayGates': 'The other seven gates follow 休門 xiūmén',

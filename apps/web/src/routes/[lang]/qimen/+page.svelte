@@ -205,6 +205,21 @@
     if (cast) void show({ ...data.moment, ...step(cast, unit, by) });
   }
 
+  /**
+   * Which family of board is laid, changed from the bar.
+   *
+   * The hour's board and the day's are two boards of one instant, and which
+   * one is on screen is the first thing a reader of this section chooses —
+   * so it stands beside the date rather than inside the form. The options of
+   * the other family drop out of the address on their own (`chosenFields`).
+   */
+  const SYSTEM = 'qimen.system';
+  const system = $derived(data.moment.chosen[SYSTEM] ?? 'shijia');
+  function relay(value: string): void {
+    // The instant as the address had it: a board of now stays a board of now.
+    void show({ ...data.moment, chosen: { ...data.moment.chosen, [SYSTEM]: value } });
+  }
+
   /** The present is what the address says by not saying a date. */
   function now(): void {
     void show({ ...data.moment, date: '', time: '' });
@@ -257,6 +272,13 @@
       onchange={(event) => jump(event.currentTarget.value)}
     />
     {#if where}<span>· {where}</span>{/if}
+    <label class="system">
+      <span>{t('form.qimen.system.bar')}</span>
+      <select value={system} disabled={busy} onchange={(event) => relay(event.currentTarget.value)}>
+        <option value="shijia">{t('form.qimen.system.bar.shijia')}</option>
+        <option value="rijia">{t('form.qimen.system.bar.rijia')}</option>
+      </select>
+    </label>
   {/snippet}
   {#snippet controls()}
     <MomentSteps {t} disabled={busy} {values} onstep={moved} onnow={now} />
@@ -397,6 +419,10 @@
   .paper { display: none; }
   /* In the closed bar, beside text rather than under a label of its own. */
   .day { font-size: 0.9rem; padding: 0.15rem 0.35rem; color: var(--ink); }
+  /* Beside the day, set like it: the two choose which board is on screen. */
+  .system { display: inline-flex; align-items: baseline; gap: 0.4rem; font-size: 0.9rem; color: var(--faint); }
+  .system select { font-size: 0.9rem; padding: 0.15rem 0.35rem; color: var(--ink); }
+  @media print { .system { display: none; } }
   /*
    * One column, and the drawing as large as the reading is wide.
    *
