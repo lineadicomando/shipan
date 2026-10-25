@@ -4,7 +4,7 @@
   import { appearance } from '$lib/appearance.svelte';
   import { glyph } from '$lib/glyph';
   import { HeldLens } from '$lib/held-lens.svelte';
-  import type { PalaceContents, QimenLens } from '@shipan/core';
+  import type { DayLens, QimenLens } from '@shipan/core';
   import type { MessageKey } from '@shipan/i18n';
   import LensReading from '$lib/components/LensReading.svelte';
   import LensSide from '$lib/components/LensSide.svelte';
@@ -144,29 +144,31 @@
     },
   );
 
-  const lens = $derived<QimenLens | undefined>(ofTheDay ? undefined : data.lens);
+  /** The board's lens, of the hour or of the day: each answer carries its own. */
+  const lens = $derived<QimenLens | DayLens | undefined>(data.lens);
 
-  /** The contents of a palace by its Luoshu number. */
-  const at = (seat: string): PalaceContents | undefined =>
-    chart && !ofTheDay
-      ? (chart as { palaces: PalaceContents[] }).palaces.find((cell) => String(cell.palace.number) === seat)
+  /**
+   * The contents of a palace by its Luoshu number, on either board: both lay
+   * nine palaces in the order of their numbers.
+   */
+  const at = (seat: string): Record<string, { id: string; hanzi: string; pinyin?: string } | undefined> | undefined =>
+    chart
+      ? ((chart as { palaces: { palace: { number: number } }[] }).palaces.find(
+          (cell) => String(cell.palace.number) === seat,
+        ) as unknown as Record<string, { id: string; hanzi: string; pinyin?: string } | undefined>)
       : undefined;
 
-  const PREFIX: Record<string, string> = {
-    heaven: 'stem',
-    earth: 'stem',
-    palace: 'palace',
-    star: 'star',
-    gate: 'gate',
-    spirit: 'spirit',
-  };
+  /** The catalog a name is glossed from, by its layer. The day's nine stars are not the hour's. */
+  const prefixOf = (layer: string): string =>
+    layer === 'star' && ofTheDay
+      ? 'dayStar'
+      : ({ heaven: 'stem', earth: 'stem', palace: 'palace', star: 'star', gate: 'gate', spirit: 'spirit' } as Record<string, string>)[layer] ?? layer;
 
   /** A name on the board in words: its gloss, its hanzi and its reading. */
   function nameAt(seat: string, layer: string): string | undefined {
-    const cell = at(seat) as Record<string, { id: string; hanzi: string; pinyin?: string } | undefined> | undefined;
-    const thing = cell?.[layer];
+    const thing = at(seat)?.[layer];
     if (!thing) return undefined;
-    return `${t(`label.${PREFIX[layer]}.${thing.id}` as MessageKey)} ${glyph(thing)}`;
+    return `${t(`label.${prefixOf(layer)}.${thing.id}` as MessageKey)} ${glyph(thing)}`;
   }
 
   /** A palace as a pair says it: its number and its name. */

@@ -3679,6 +3679,8 @@ independent sources naming the same thing the same way**.
 | a lens: 生剋 between any two things | the same five relations, read between a thing and anything in another palace as well as its own | no text tabulates a thing against another palace, so there is no list; the twenty-five cells are asserted against the two cycles, and against 門宮 · 星宮 on every palace |
 | a lens: 對宮 | the Luoshu: the two palaces whose numbers make ten | 反吟, which is read on it — 「天蓬加地天英」, the star facing home |
 | a lens: 五合 | the stem five places on | the 四德, which confirm the pairing cell by cell; and 《金函玉鏡》's own table, which names 辛加丙 and 壬加丁 干合悖師 and 干合蛇刑 |
+| a lens on a day: 生剋 | the same five relations, between the day's palaces and gates, a gate taking its home palace's phase as on the hour board | no 日家 text sets a gate against a palace; a test holds each gate's phase to the hour board's |
+| a lens on a day: 對宮 | the Luoshu, as on the hour board | the same four pairs, asserted |
 
 **The three a lens shows are relations and never readings of them.** A reader
 who picks a thing on a board is shown how everything else stands to it
@@ -3690,6 +3692,15 @@ almanac's, where each 德合 is the 五合 of its 德 and the four tables confir
 it; that a 奇門 board reads it at all is attested for two pairs of the five,
 by name, in a 十干克應 table this engine already lays, and the other three are
 the pairing and no 奇門 text located here naming them.
+
+**The board of a day lends its lens less** (`dayLens`). It has no plate of
+stems, so no 五合; its gates are the hour board's eight and take the phase
+they take there; and **its nine stars have no phase registered**. 太乙 through
+天乙 are not 天蓬 through 天英, no text read here gives them one, and what the
+register holds of them is a fortune each, on which the three texts part (§
+"The 金函玉鏡's own 日家, read on the plate"). So a lens keeps them by their kind and
+relates them to nothing, as it does the 八神, until a text giving their phases
+is read and registered.
 
 **The list that tests 門迫 is two cells shorter than the rule.** 《統宗》卷一
 迫 — ctext, and 故宮珍本叢刊 第426冊 page 13 — prints eight lines — 開門臨三四宮（金克木）· 休門臨九宮 · 生門臨一宮 ·

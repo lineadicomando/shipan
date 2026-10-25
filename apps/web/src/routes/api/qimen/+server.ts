@@ -1,4 +1,4 @@
-import { computeDayChart, computeQimenChart, nianmingOf, qimenLens } from '@shipan/core';
+import { computeDayChart, computeQimenChart, dayLens, nianmingOf, qimenLens } from '@shipan/core';
 import { json } from '@sveltejs/kit';
 import {
   momentIsFixed,
@@ -40,6 +40,8 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
         nianming: null,
         place: label ?? null,
         laidBy: laidBy('qimen', day.options),
+        // The day board's own lens: its palaces and gates, and 對宮.
+        lens: dayLens(day),
       });
     }
 

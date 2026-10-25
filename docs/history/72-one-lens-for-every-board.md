@@ -27,13 +27,25 @@ nothing of which board it is on.
   board. A section says how a name and a seat are said, and holds nothing
   else of the lens.
 
+## The board of a day
+
+The second step, the same day: `dayLens` beside `qimenLens`, answered by
+`/api/qimen` for a day board where it had answered nothing. The roadmap had
+assumed the day's gates and stars took their home palaces' phases as on the
+hour board. The gates do — they are the same eight. **The stars do not**:
+太乙 through 天乙 have no home on the board and no phase in the engine or the
+register, which holds only a fortune for each. They are kept by kind and
+related to nothing, as the 八神 are. Two rows in the register say so.
+
 ## What it moved
 
-Nothing a reader sees. The answer of `/api/qimen` does move — its `lens`
+The first step moved nothing a reader sees; the second gave the board of a
+day a lens it had not had. The answer of `/api/qimen` moved with the first — its `lens`
 carries `seats`, `layers`, `phased`, `linkIds` and `links` where it carried
 `facing` and `wuhe`, and a seat is a string — so it is 0.34.0 by the first
 of the three questions. The roadmap had said this step would move no version,
 reasoning from the page and not from the answer.
 
-The relations are the ones phase 71 registered, and no row of the register
-moves.
+The day's lens rides in the same version: 0.34.0 has not left the branch,
+and a version is about what an answer has stopped being since the last one
+shipped. Its two rows are new; the rows phase 71 registered do not move.

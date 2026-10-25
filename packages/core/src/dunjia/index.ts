@@ -369,6 +369,9 @@ export { horseBranch, horseOf, type Horse } from './horse.js';
 export {
   LENS_LAYERS,
   LENS_RELATION_IDS,
+  DAY_LAYERS,
+  DAY_LENS_LAYERS,
+  dayLens,
   LINKS,
   QIMEN_LAYERS,
   qimenLens,
@@ -376,6 +379,7 @@ export {
   type LensLayer,
   type LinkId,
   type LinkName,
+  type DayLens,
   type QimenLayer,
   type QimenLens,
 } from './lens.js';

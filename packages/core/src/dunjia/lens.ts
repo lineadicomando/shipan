@@ -2,6 +2,7 @@ import { STEMS, type StemId } from '../ganzhi.js';
 import { lensNames, phaseTable, type Lens, type LensLink, type LensName, type LensThing } from '../lens.js';
 import type { Element } from '../types.js';
 import type { QimenChart } from './index.js';
+import type { DayChart } from './rijia.js';
 import { palace } from './palaces.js';
 import { opposite } from './patterns.js';
 import { RELATION_IDS, type RelationId } from './relation.js';
@@ -132,6 +133,51 @@ export function qimenLens(chart: QimenChart): QimenLens {
     linkIds: LINK_IDS,
     links: [...facingLinks(), ...wuheLinks(things)],
     names: lensNames(LINKS),
+  };
+}
+
+/**
+ * The layers of a board of the day, in the order the hour board reads them:
+ * a palace, a star of the day's own nine, a gate. No plate of stems, and so
+ * no 五合.
+ */
+export const DAY_LAYERS: readonly QimenLayer[] = ['palace', 'star', 'gate'];
+
+/**
+ * The layers of a day board whose things have a phase: the palace, and the
+ * gate, which is one of the hour board's eight and takes its home palace's
+ * phase as it does there. **The nine stars of a day have none registered** —
+ * 太乙 through 天乙 are not 天蓬 through 天英, no text read here gives them a
+ * phase, and the register holds only a fortune for each, on which the texts
+ * part — so they are kept by their kind and never related, as the 八神 are.
+ */
+export const DAY_LENS_LAYERS: readonly LensLayer[] = ['palace', 'gate'];
+
+const DAY_LINK_IDS: readonly 'duigong'[] = ['duigong'];
+
+export type DayLens = Lens<QimenLayer, 'duigong'>;
+
+/** What a lens may show on a board of the day: its palaces and gates, and 對宮. */
+export function dayLens(day: DayChart): DayLens {
+  const things: LensThing<QimenLayer>[] = [];
+  const links = facingLinks() as LensLink<QimenLayer, 'duigong'>[];
+  for (const contents of day.palaces) {
+    const seat = String(contents.palace.number);
+    things.push({ seat, layer: 'palace', id: contents.palace.id, element: contents.palace.element });
+    if (contents.gate) {
+      things.push({ seat, layer: 'gate', id: contents.gate.id, element: palace(contents.gate.home).element });
+    }
+  }
+  return {
+    board: 'qimen',
+    seats: SEATS,
+    layers: DAY_LAYERS,
+    phased: DAY_LENS_LAYERS,
+    things,
+    phases: phaseTable(),
+    linkIds: DAY_LINK_IDS,
+    links,
+    names: lensNames({ duigong: LINKS.duigong }),
   };
 }
 

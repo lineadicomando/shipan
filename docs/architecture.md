@@ -279,7 +279,7 @@ two boards. The cursor is the only announcement it gets. A sheet has no
 pointer, so in print the same words are set once instead, as an empty seat
 under the board (`LayerLegend`).
 
-The second is **a lens**, on the 奇門 section: the reader keeps a kind of
+The second is **a lens**, on the 奇門 section, on the board of an hour and of a day: the reader keeps a kind of
 name or a phase and the rest of each seat recedes, presses a name and is
 shown how the rest stands to it, or presses the ground of two palaces and is
 shown how they stand to each other — the five relations of the phases, 對宮

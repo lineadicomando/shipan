@@ -1,7 +1,8 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 import { computeQimenChart, type QimenChart } from '../src/dunjia/index.js';
 import { palace } from '../src/dunjia/palaces.js';
-import { LENS_LAYERS, LINKS, QIMEN_LAYERS, qimenLens, wuhePartner } from '../src/dunjia/lens.js';
+import { DAY_LAYERS, DAY_LENS_LAYERS, LENS_LAYERS, LINKS, QIMEN_LAYERS, dayLens, qimenLens, wuhePartner } from '../src/dunjia/lens.js';
+import { computeDayChart, type DayChart } from '../src/dunjia/rijia.js';
 import { RELATION_IDS, relationOf } from '../src/dunjia/relation.js';
 import { initEphemeris, type EphemerisContext } from '../src/ephemeris.js';
 import { STEMS } from '../src/ganzhi.js';
@@ -160,5 +161,68 @@ describe('the relations a lens may show on a 奇門 board', () => {
       expect(link.hanzi).toMatch(/^\p{Script=Han}+$/u);
       expect(link.pinyin).toMatch(/^[a-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü]+$/);
     }
+  });
+});
+
+describe('the relations a lens may show on a board of the day', () => {
+  const DAY: ChartOptions = { ...CLOCK, system: 'rijia' };
+  const lay = (date: string, options: Partial<ChartOptions> = {}): DayChart =>
+    computeDayChart(
+      resolveMoment({ date, time: '12:00', timezone: 'Asia/Shanghai' }, BEIJING, { ...DAY, ...options }, context),
+      { ...DAY, ...options },
+    );
+
+  it('describes the board as the drawing marks it: a palace, a star and a gate, two with a phase', () => {
+    const lens = dayLens(lay('2024-01-01'));
+    expect(lens.board).toBe('qimen');
+    expect(lens.layers).toEqual(DAY_LAYERS);
+    expect(lens.phased).toEqual(DAY_LENS_LAYERS);
+    // Every layer the day board draws is one the hour board's drawing knows.
+    for (const layer of DAY_LAYERS) expect(QIMEN_LAYERS).toContain(layer);
+    // No plate of stems, so no 五合.
+    expect(lens.linkIds).toEqual(['duigong']);
+    expect(Object.keys(lens.names.relations)).toHaveLength(6);
+  });
+
+  it('lists the palaces and the gates as the board places them, a gate by its home, and no star', () => {
+    for (const [date, options] of [
+      ['2024-01-01', {}],
+      ['2024-08-28', { dayGates: 'zhuan' }],
+      ['2024-08-28', { dayGates: 'shun', dayDun: 'yang' }],
+    ] as const) {
+      const day = lay(date, options);
+      const { things } = dayLens(day);
+      expect(things.some((thing) => thing.layer === 'star')).toBe(false);
+      for (const contents of day.palaces) {
+        const seat = String(contents.palace.number);
+        const here = things.filter((thing) => thing.seat === seat);
+        expect(here.find((thing) => thing.layer === 'palace')).toEqual({
+          seat,
+          layer: 'palace',
+          id: contents.palace.id,
+          element: contents.palace.element,
+        });
+        const gate = here.find((thing) => thing.layer === 'gate');
+        // The centre has no gate on a day board either.
+        expect(gate?.id).toBe(contents.gate?.id);
+        if (contents.gate) expect(gate?.element).toBe(palace(contents.gate.home).element);
+      }
+    }
+  });
+
+  it('gives a gate the phase it has on the board of an hour', () => {
+    // The same eight gates: a gate on the day board stands to a palace as it
+    // would on the hour board, whatever palace it has come to.
+    const hour = qimenLens(cast('2024-06-15', '14:00'));
+    const day = dayLens(lay('2024-06-15'));
+    for (const gate of day.things.filter((thing) => thing.layer === 'gate')) {
+      expect(hour.things.find((thing) => thing.layer === 'gate' && thing.id === gate.id)?.element).toBe(gate.element);
+    }
+  });
+
+  it('links the palaces facing each other as the hour board does', () => {
+    const day = dayLens(lay('2024-01-01'));
+    const hour = qimenLens(cast('2024-06-15', '14:00'));
+    expect(day.links).toEqual(hour.links.filter((link) => link.relation === 'duigong'));
   });
 });

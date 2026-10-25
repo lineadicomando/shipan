@@ -210,7 +210,9 @@ on 2026-10-18. What `main` carries since 2026-10-15 is of eleven days:
 - 2026-10-25, on the branch `lens-generic` (0.34.0): item 1 of § "First: the
   lens on every board" — the lens a descriptor every board fills (`Lens` in
   `core`), `qimenLens` its first instance, and the page's lens and its
-  wiring knowing no board. Phase 72. The `lens` that `routes/api/qimen/+server.ts` answers changed shape,
+  wiring knowing no board. Then item 2: the board of a day has its lens
+  (`dayLens`), its nine stars kept by kind for want of a registered phase.
+  Phase 72. The `lens` that `routes/api/qimen/+server.ts` answers changed shape,
   which is what moved the version.
 
 `main` is pushed to `origin/main` as of 2026-10-18; the commits of
@@ -293,13 +295,12 @@ why). The code to copy from is the 奇門 hour board:
    beside the seat (`marks.ts` says one identifier can name two kinds of seat
    on one board); the descriptor carries none yet, and the first ring board
    decides it.
-2. **The 奇門 board of a day** (`system: rijia`, `DayChart`, `packages/core/src/dunjia/rijia.ts`). Its
-   page already sits on the bench with an empty column (`ofTheDay` in the
-   section) and answers `lens` with nothing. It has eight gates and nine stars
-   of its own and no stem plates; the gates' and stars' phases are their home
-   palaces' as on the hour board, which wants checking against that file
-   before it is assumed. 對宮 carries over; 五合 does not, there being no
-   stems. A `dayLens(day)` beside `qimenLens`, its rows in the register.
+2. **Done on 2026-10-25** (phase 72): the 奇門 board of a day has its lens,
+   `dayLens(day)` beside `qimenLens`. Its palaces and gates have a phase, a
+   gate its home palace's as on the hour board; **its nine stars have none
+   registered** and are kept by kind only, as the 八神 are, until a text
+   giving them one is read. 對宮 carries over and 五合 does not. Two rows in
+   the register.
 3. **六壬.** The relation the art is made of is 生剋 between branches and
    stems — the 四課 and the 三傳 are found by it — so the lens is native here:
    the branches of the two plates, the 四課, the 三傳. **The 十二天將 have no

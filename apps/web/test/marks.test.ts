@@ -1,5 +1,5 @@
 import { LOCALES, catalogs } from '@shipan/i18n';
-import { QIMEN_LAYERS } from '@shipan/core';
+import { DAY_LAYERS, QIMEN_LAYERS } from '@shipan/core';
 import { LAYERS, UNITS, type MarkedBoard } from '@shipan/plate';
 import { describe, expect, it } from 'vitest';
 import { GET as qimen } from '../src/routes/api/qimen/plate/+server';
@@ -81,5 +81,10 @@ describe('the lens on a drawing', () => {
     // marks its own; a layer the two named differently would be a name the
     // lens could never light.
     expect(QIMEN_LAYERS).toEqual(LAYERS.qimen);
+  });
+
+  it('names the layers of a board of the day as its drawing marks them', async () => {
+    const svg = await draw(qimen, `${MOMENT}&qimen.system=rijia`);
+    expect([...marked(svg, 'data-layer')].sort()).toEqual([...DAY_LAYERS].sort());
   });
 });
