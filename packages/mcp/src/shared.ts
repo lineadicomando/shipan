@@ -337,10 +337,10 @@ export const qimenSchema = {
       'What makes one of the three marvels (yi, bing, ding) sanqi deshi, marked auspicious under both rules. Default liuyi: the marvel on the heaven plate over the instrument of one of its two decades on the earth plate (yi over ji or xin, bing over wu or geng, ding over ren or gui), as the Qimen Dunjia Tongzong, the Dunjia Fuyingjing, the Dunjia Yanyi and the Jixiong Gejie pair them. zhishi: the marvel on the heaven plate in the palace the chief gate (zhishi) stands in, whatever is below it, as the Qimen Dunjia Kaiwu zhi Men has it and calls a provisional opinion. Three of the six liuyi cells are also inauspicious stem pairs, and the board marks both. Both values are computed and the chart says which it stands on.',
     ),
   stem_pairs: z
-    .enum(['shared', 'jinhan'])
+    .enum(['shared', 'jinhan', 'xianji'])
     .optional()
     .describe(
-      'Which table of shigan keying (the stem of the heaven plate over the stem below it) names the marks. Default shared: the fourteen cells the texts name alike, which is a convention of this engine and no text\'s table. jinhan: the whole table of the Jinhan Yujing, eighty of its eighty-one cells (the one it calls fuyin is left out, since the board already reports a different fuyin), with a fortune only where that text states one without a condition, so most of its marks carry no fortune. A third table, the Qimen Xianji\'s, is declared and refused. It moves marks and no plate. The lines name most cells differently, so a mark under jinhan is that text\'s name and not the art\'s.',
+      'Which table of shigan keying (the stem of the heaven plate over the stem below it) names the marks. Default shared: the sixteen cells two independent texts name alike, which is a convention of this engine and no text\'s table; two of them carry no fortune. jinhan: the whole table of the Jinhan Yujing, eighty of its eighty-one cells (the one it calls fuyin is left out, since the board already reports a different fuyin), with a fortune only where that text states one without a condition, so most of its marks carry no fortune. xianji: the ganlun of the Qimen Xianji (juan 14 and 16 of the Yuding Qimen Daquan), which names each cell by an image of the stem above; seventy-seven cells, the four its print leaves unnamed or garbled left out, and no fortune of its own, the six names it shares with the default keeping theirs. It moves marks and no plate. The lines name most cells differently, so a mark under jinhan or xianji is that text\'s name and not the art\'s.',
     ),
 };
 
@@ -377,7 +377,7 @@ interface RawInput {
   menpo?: 'menzhigong' | 'gongzhimen' | undefined;
   deshi?: 'liuyi' | 'zhishi' | undefined;
   ding_tomb?: 'gen' | 'qian' | undefined;
-  stem_pairs?: 'shared' | 'jinhan' | undefined;
+  stem_pairs?: 'shared' | 'jinhan' | 'xianji' | undefined;
   shensha?: 'xieji' | undefined;
   born?: string | undefined;
   born_time?: string | undefined;

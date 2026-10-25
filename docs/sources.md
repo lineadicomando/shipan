@@ -1729,7 +1729,7 @@ under the naming of the spirits alone.
 | `menpo: menzhigong` | 《奇門遁甲統宗》, 《遁甲符應經》, 《奇門遁甲秘笈大全》 | 卷一 迫, eleven cells; the 符應經's thirteen cells, under a sentence naming the relation the other way; 「驚開三四休臨九…吉門被迫吉不就」; added 2026-10-22 |
 | `menpo: gongzhimen` | 《吉凶格解》 | 「門迫宮制門，宮迫門制宮」, and thirteen cells on each, 《御定奇門大全》卷五十九; added 2026-10-22 |
 | `stemPairs: jinhan` | 《金函玉鏡奇門遁甲秘笈全書》 | 卷二 十干克應訣, the eighty-one set out as its own, read at pp. 30–32 of the 1996 print; added 2026-10-16 |
-| `stemPairs: xianji` | 《御定奇門大全》 | the 干論 of 奇門仙機, 卷十四–十六, refused until six garbled cells are read |
+| `stemPairs: xianji` | 《奇門仙機》, in 《御定奇門大全》 | the 干論 of 卷十四 and 卷十六, seventy-seven cells read on the plate; added 2026-10-25 |
 | `dingTomb: qian` | 《遁甲符應經》 | 「六丙月奇、六丁星奇在六宮」, under 璋曰, in both copies; and a third copy in the 大全's 景祐秘纂 卷二, 「六丙月奇臨六宮六丁星奇臨六宮」 with a case laying 丁 in 六, read 2026-10-24 |
 | `leap: runyue` | 《奇門遁甲金鏡寶鑑》 | states the placement, works it twice by date, rejects the solstitial one. A work arguing its own reading is its own line |
 | `spiritSeat: tianpan` | 《奇門遁甲統宗》, 《御定奇門大全》 | 卷二's 小值符加大值符法, 「以最上盤之值符加於九星值符所臨之宮」, and 38 of the 39 spirit claims of the 大全's 卷五–十 that tell the seats apart; added 2026-10-20 |
@@ -3952,9 +3952,10 @@ refuses to rasterise a reading no font on the machine can draw.
 
 The table has eighty-one cells: nine stems on the heaven plate over nine on
 the earth plate, 甲 excluded because it never stands on a plate. **The board
-lays fourteen by default**, the cells the lines name alike. Under `stemPairs:
-jinhan` it lays 《金函玉鏡》's table, eighty of the eighty-one, and the other
-sixty-six cells are that text's names and not the art's. Why, is below.
+lays sixteen by default**, the cells two lines name alike. Under `stemPairs:
+jinhan` it lays 《金函玉鏡》's table, eighty of the eighty-one, and under
+`xianji` the 干論 of 《奇門仙機》, seventy-seven; the cells beyond the default
+are each text's names and not the art's. Why, is below.
 
 ### The sources consulted
 
@@ -4473,8 +4474,10 @@ practitioners.** That makes it a parameter and not a refusal: it changes what
 the board shows, and a reader following 《金函玉鏡》 and a reader following the
 仙機 would each say which they follow. `stemPairs` carries it.
 
-- **`shared`, the default**, is the fourteen above. No line lays exactly that
-  table, so the value has no holder and is said to be a convention.
+- **`shared`, the default**, is the fourteen above and, since 2026-10-25, two
+  more cells two lines name alike with no fortune: § "The 干論 read on the
+  plate" below. No line lays exactly that table, so the value has no holder
+  and is said to be a convention.
 - **`jinhan`** is J whole, and has what a value named for a work must show: a
   work that sets the table out as its own 訣, read at an edition and a page,
   every cell transcribed. Eighty cells are laid. **戊 over 戊 is not**: J calls
@@ -4484,10 +4487,10 @@ the board shows, and a reader following 《金函玉鏡》 and a reader followin
   being a variant and not a second name. Two cells were settled on the page:
   乙 over 癸 is 華蓋逢星官, and 己 over 乙 is 墓神, the edition ending the
   sentence there, 「加乙名為墓神。不明，地戶蓬星」.
-- **`xianji`** is the 干論, declared and refused. Its print garbles six cells
-  — 庚加丙 twice and no 庚加丁, 庚加辛 with no name, 丁加巳 where 乙 is wanted,
-  丙加戊 with a rule in place of a name, 己加乙 printed 己甲乙 — and a value is
-  computed when its table can be reconstructed without guessing.
+- **`xianji`** is the 干論. It was declared and refused here, its print
+  garbling six cells, until those were read on the plate on 2026-10-25: it
+  is computed since, on seventy-seven cells, by § "The 干論 read on the
+  plate" below.
 
 **The fortune under `jinhan` is J's, and only where J states one outright.**
 `CLAUDE.md` lets a mark carry a fortune the sources hand down concordantly,
@@ -4501,7 +4504,70 @@ word — 「病者必死，百事不遂」 — the engine does not supply one.
 
 **What the review did not move.** No cell of the default table. 青龍華蓋 is
 still the cell to reach for if a fourth valence is argued, and under `jinhan`
-it carries J's name and no fortune, which is what J gives it.
+it carries J's name and no fortune, which is what J gives it. Since
+2026-10-25 the default lays it too, with no fortune: below.
+
+### The 干論 read on the plate, and seventy-seven cells
+
+Read 2026-10-25, on the user's word of that day for both the reading and the
+two builds it led to. **The six cells the section above called garbled were
+read on the woodblock** of 《御定奇門大全》卷十四 and 卷十六, at 200 dpi and the
+doubtful characters at 500, with the cells around each, and the prose under
+each entry turned out to be the check: an entry ends by naming its own pair
+— 「為丁丙所臨」 under 丁加丙, 「須查丁戊門宮」 under 丁加戊 — so a heading
+can be held to the sentence under it. Renders and the cell list in
+`texts/qimen/daquan-juan14-16-stems/xianji/` and `plate/`.
+
+| as the transcription had it | on the plate |
+|---|---|
+| 己加乙 printed 己甲乙 | **settled**: the prose reads 「再詳己乙所臨」, so the cell is 己 over 乙, 日入地戶 |
+| 丙加戊 with a rule in place of a name | **settled**: the rule 「加直符又為跌穴」 stands in the right column and the name in the left, 奇逢重生, printed with its 生 twice; the 丙 row names every other cell in the same shape, 奇逢華蓋, 奇入明堂 |
+| 庚加辛 with no name | **confirmed**: the entry and its prose are printed and the small characters are not. Nothing to lay |
+| 庚加丙 twice and no 庚加丁 | **not settled**: the first is 太白入熒, 熒 being 丙; the second, 太白受制, names no pair in its prose — 「若奇臨生旺…若庚儀臨生旺」 — and 丁 stands for it only by its place in the run |
+| 丁加巳 where 乙 is wanted | **read otherwise**: the entry is not a cell at all. Its small characters are 丁's 遁, 「逢太[陰]門生門人遁，逢九[地]開休二門為鬼遁」, the shape of the 乙 row's 乙加己逢開門 地遁. So the 丁 row has no plain 丁加乙, and its 丁加甲 玉女奇生, which could be the cell, says 「丁己」 in its prose, where 丁加己 has a name of its own |
+
+Two more were found that the list above did not carry. **乙 over 戊 has no
+entry**: the 乙 row runs 乙乙, 乙丙, 乙丁, then four entries headed 乙加己 —
+two of them 遁 conditioned on a gate, one 日入地鄉 and one 三奇得使 — and
+on to 乙庚. And **甲戊加己 and 甲戊加癸 both read 青龍相合**, as do 甲戊加戊
+and 癸加戊 青龍入地, and 己加乙 and 壬加乙 日入地戶: one name at two cells, the
+shape 天網四張 has in other tables, printed and not a slip anyone can show.
+
+**So the table reconstructs without guessing at seventy-seven cells, and
+`stemPairs: xianji` lays those** — the 干論 its holder as `qimenxianji`, a
+work of its own on the 版心 inside the 大全. The four it does not lay are 乙
+over 戊, 庚 over 辛, 庚 over 丁 and 丁 over 乙. Entries conditioned on a gate
+or a palace are not cells, and 乙加己's 三奇得使 is the mark `deshi` already
+makes. **It carries no fortune of its own**: the 干論's prose was not read
+cell by cell for one, and the entries read here hand the verdict to the gate
+and the palace, 「再詳門宮生剋以分主客」. The six names it shares with the
+default's table — 龍逃走, 白虎猖狂, 朱雀投江, 螣蛇妖嬌, 太白入熒, 青龍燿明 —
+are those configurations, and keep the fortune they carry there. Two names
+are laid as printed against a likely slip: 庚入太白 at 丙 over 庚, 庚 where the
+verse has 熒, and 地戶理光, 理 where 埋 may be meant.
+
+**And two cells joined the default.** The register's rule for `shared` is two
+independent lines naming a cell alike, and the 干論 counts as one since the
+section above. Set against J and 《元靈經》's first two blocks, it gives:
+
+| above + below | J | the 干論 | 《元靈經》 | |
+|---|---|---|---|---|
+| 戊 + 乙 | 青龍合靈 | 青龍入雲格 | 即為青龍入雲之格 | **laid**: 干論 and 元靈經 |
+| 戊 + 癸 | 青龍華蓋 | 青龍相合 | 青龍華蓋格 | **laid**: J and 元靈經 |
+| 乙 + 庚 | 日奇被刑 | 奇合太白 | 日奇受刑 | one character apart, not laid |
+| 乙 + 丙 | 奇儀順遂 | 奇敵明堂 | 奇儀得順格 | a word apart, not laid |
+
+**Neither carries a fortune, and neither needed a fourth valence.** Every
+line hands both verdicts to the gate — J 「門吉事吉，門凶事凶」 and 「吉格者吉
+招福，門凶多乖」, 《元靈經》 「再得三奇、吉門」 and 「門合星吉則吉」 — and since
+`Valence` became optional under `jinhan` a mark can carry none, so 青龍華蓋 is
+laid with what its lines give it and nothing invented. **Under `jinhan` 戊
+over 乙 stays J's 青龍合靈**: the two cells are the default's and not
+`STEM_PAIRS`, which `jinhan` lays as well. **The four cells 《元靈經》 names
+as J does in its third block** — 火入勾陳, 朱雀入獄, 人遁, 奇入太陰 — stay out
+for the reason § "Y's third block is the 丁 row" gives: the transcription on
+the shelf, `texts/qimen/qimen-dunjia-yuanlingjing.txt`, heads that block 丙
+as the mirror did, and no print of the work is held.
 
 ### What is deliberately not imported
 

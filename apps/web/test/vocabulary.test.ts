@@ -9,6 +9,7 @@ import {
   SPIRIT_IDS as ENGINE_SPIRIT_IDS,
   STARS,
   implementedValues,
+  stemPairIds,
   strengthOf,
 } from '@shipan/core';
 import { STRENGTH_MARKS } from '@shipan/plate';
@@ -23,6 +24,7 @@ import {
   PURPOSES,
   SPIRIT_IDS,
   STAR_IDS,
+  STEM_PAIR_TABLES,
   STRENGTHS,
   STRENGTH_KEY,
 } from '../src/lib/vocabulary';
@@ -60,6 +62,14 @@ describe('the identifiers a form offers', () => {
 
   it('are the configurations the engine can report', () => {
     expect([...FORM_PATTERN_IDS]).toEqual([...PATTERN_IDS]);
+  });
+
+  it('offer each table of 十干克應 the names that table lays', () => {
+    // A name offered under a table that never lays it is a scan that finds
+    // nothing and does not say why.
+    for (const table of ['shared', 'jinhan', 'xianji'] as const) {
+      expect([...STEM_PAIR_TABLES[table]].sort(), table).toEqual([...stemPairIds(table)].sort());
+    }
   });
 
   it('pair each purpose with the gate the engine gives it', () => {

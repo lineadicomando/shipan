@@ -359,11 +359,19 @@ export const DIVERGENCES: readonly Divergence[] = [
     board: 'qimen',
     family: 'shijia',
     values: ['shared', 'jinhan', 'xianji'],
-    implemented: ['shared', 'jinhan'],
+    implemented: ['shared', 'jinhan', 'xianji'],
     fallback: 'shared',
     label: 'form.qimen.stemPairs',
-    says: { shared: 'form.qimen.stemPairs.shared', jinhan: 'form.qimen.stemPairs.jinhan' },
-    notes: { shared: 'form.qimen.stemPairs.note', jinhan: 'form.qimen.stemPairs.note' },
+    says: {
+      shared: 'form.qimen.stemPairs.shared',
+      jinhan: 'form.qimen.stemPairs.jinhan',
+      xianji: 'form.qimen.stemPairs.xianji',
+    },
+    notes: {
+      shared: 'form.qimen.stemPairs.note',
+      jinhan: 'form.qimen.stemPairs.note',
+      xianji: 'form.qimen.stemPairs.note',
+    },
   },
   {
     id: 'shensha',

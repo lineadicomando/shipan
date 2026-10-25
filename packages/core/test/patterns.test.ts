@@ -238,9 +238,16 @@ describe('what the configurations are, and are not', () => {
     }
   });
 
-  it('says the fortune of every configuration it reports', () => {
+  it('says the fortune of every configuration it reports, bar two cells no line weighs', () => {
+    // 青龍入雲格 and 青龍華蓋 are laid by the default and every line that
+    // names them hands the verdict to the gate, so they carry none.
+    const unweighed = new Set(['qinglongruyunge', 'qinglonghuagai']);
     for (const date of ['2005-05-05', '2015-08-08', '2022-02-22', '2024-06-15']) {
       for (const pattern of cast(date, '14:00').patterns) {
+        if (pattern.valence === undefined) {
+          expect(unweighed.has(pattern.id), pattern.id).toBe(true);
+          continue;
+        }
         expect(['ji', 'xiong', 'jixiong']).toContain(pattern.valence.id);
         expect(pattern.valence.hanzi).toBeTruthy();
       }

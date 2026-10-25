@@ -879,8 +879,8 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   // 十干克應, the stem above over the stem below. Three lines carry the
   // eighty-one, and they name them differently: a whole table is a line's, and
-  // which one a board lays is a choice. The default is the cells they name
-  // alike, which nobody's table is. See `docs/sources.md` § 十干克應.
+  // which one a board lays is a choice. The default is the sixteen cells two
+  // lines name alike, which nobody's table is. See `docs/sources.md` § 十干克應.
   stemPairs: {
     board: 'qimen',
     family: 'shijia',
@@ -903,8 +903,10 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
       {
         id: 'xianji',
         name: { hanzi: '仙機', pinyin: 'xiānjī' },
-        implemented: false,
-        heldBy: ['qimendaquan'],
+        says: 'form.qimen.stemPairs.xianji',
+        note: 'form.qimen.stemPairs.note',
+        implemented: true,
+        heldBy: ['qimenxianji'],
       },
     ],
     default: 'shared',

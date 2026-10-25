@@ -24,7 +24,7 @@
     PALACES,
     PALACE_OF,
     PATTERN_IDS,
-    JINHAN_PATTERN_IDS,
+    layableUnder,
     PURPOSES,
     SPIRIT_IDS,
     STAR_IDS,
@@ -485,8 +485,8 @@
 
       <p class="group">{t('form.without')}</p>
       <div class="checks">
-        <!-- 《金函玉鏡》's own names are offered only where the board can lay them. -->
-        {#each PATTERN_IDS.filter((id) => asked.chosen['qimen.stemPairs'] === 'jinhan' || !JINHAN_PATTERN_IDS.has(id)) as id}
+        <!-- A table's own names are offered only where the board can lay them. -->
+        {#each PATTERN_IDS.filter((id) => layableUnder(id, asked.chosen['qimen.stemPairs'])) as id}
           <label class="check">
             <input
               type="checkbox"

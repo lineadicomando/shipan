@@ -85,7 +85,8 @@ Unmarked = found in this research and not yet on either list.
 - ★ 《御定奇門大全》, 64 juan, surveyed whole. 景祐秘纂 卷二 is the 符應經's
   卷中 again, with three cases that lay only under `centreStem: host`. It
   carries the hour tables (卷五–十), 遁甲通明鈐 (置閏 dated to the 1240s–60s),
-  奇門仙機, 先天要論, 奇門古本 (年家 on 一七四), 奇門秘訣 (`spiritSeat:
+  奇門仙機 (its 干論, `stemPairs: xianji`, seventy-seven cells read on the
+  plate), 先天要論, 奇門古本 (年家 on 一七四), 奇門秘訣 (`spiritSeat:
   yinshi`), 寶鑑摘要 with 漢陰居士歌 (`centreLodging: dun`), 吉凶格解
   (`menpo: gongzhimen`), and 寶鏡圖 (`dayGates: shun`, `dayDun: yang`).
 - ★ 《奇門遁甲秘笈大全》, 題 劉伯溫, held in 故宮 第427冊, the 省思堂 blocks, a
@@ -390,7 +391,8 @@ marked ●.
 - ● 青龍返首 戊+丙 and 飛鳥跌穴 丙+戊 (吉). 太白入熒 庚+丙 and 熒入太白 丙+庚
   (「白入熒兮賊即來，熒入白兮賊即去」). 大格 庚+癸, 刑格 庚+己, 上格/小格 庚+壬.
   螣蛇夭矯 癸+丁, 朱雀投江 丁+癸, 青龍逃走 乙+辛, 白虎猖狂 辛+乙. Plus the
-  `stemPairs` table.
+  `stemPairs` tables: the default's sixteen, 青龍入雲格 戊+乙 and 青龍華蓋 戊+癸
+  among them with no fortune; 《金函玉鏡》's eighty; the 干論's seventy-seven.
 - 玉女守門 (「三奇遊六儀」, the 值使 over 丁). 天遁, 地遁 and 人遁, and the
   other six 遁 of the manuals. 天三門 and 地四戶. 天網四張: 「六癸」 for the 統宗,
   癸 over the hour stem for 吉凶格解. 伏干, 飛干, 天乙伏宮 and 飛宮. 悖格: 丙

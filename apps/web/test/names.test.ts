@@ -94,6 +94,7 @@ const READINGS: Readonly<Record<string, string>> = {
   大遊: 'dàyóu',
   金函玉鏡: 'jīnhányùjìng',
   十干克應: 'shígānkèyìng',
+  干論: 'gànlùn',
   建除: 'jiànchú',
   神煞: 'shénshà',
   一宮: 'yīgōng',

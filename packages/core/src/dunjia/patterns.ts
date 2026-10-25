@@ -99,7 +99,77 @@ export type PatternId =
   | 'taibairuwang'
   | 'wanggaitianlao'
   | 'fujiantengshe'
-  | 'tianwangsizhang';
+  | 'tianwangsizhang'
+  // 《奇門仙機》's 干論, which only `stemPairs: xianji` lays, bar 青龍入雲格,
+  // which the default lays too. See `XIANJI_PAIRS`.
+  | 'qinglongruyunge'
+  | 'qinglongdemingge'
+  | 'qinglongrudi'
+  | 'qinglongxianghe'
+  | 'qinglongshishi'
+  | 'qinglongxiangqin'
+  | 'qinglongpoyu'
+  | 'qizhongfuqige'
+  | 'qidimingtang'
+  | 'qizhuyunv'
+  | 'rirudixiang'
+  | 'qihetaibai'
+  | 'qishenruyu'
+  | 'qifengluowang'
+  | 'yuezhaocanghai'
+  | 'erfengheming'
+  | 'xingyuehuiguang'
+  | 'qifengchongsheng'
+  | 'qirumingtang'
+  | 'gengrutaibai'
+  | 'qishenshengtai'
+  | 'shenqiyouhai'
+  | 'qifenghuagai'
+  | 'qishenheming'
+  | 'qishenxiangjiao'
+  | 'yunvchenglong'
+  | 'yunvshien'
+  | 'yunvxingsha'
+  | 'yunvfuhu'
+  | 'yunvchenglongyouhai'
+  | 'rirudihu'
+  | 'dihuliguang'
+  | 'mingtangtansheng'
+  | 'mingtangconglu'
+  | 'mingtangchongfeng'
+  | 'mingtangfusha'
+  | 'tiantingdeshi'
+  | 'mingtangbeixing'
+  | 'mingtanghehuagai'
+  | 'taibaitanhe'
+  | 'taibaiyouen'
+  | 'taibaidaxing'
+  | 'taibaichongxing'
+  | 'taibaituiwei'
+  | 'taibaixingrong'
+  | 'tiantingdeming'
+  | 'baihushoushang'
+  | 'longhuzhengqiang'
+  | 'huzuomingtang'
+  | 'hufengtaibai'
+  | 'tiantingzili'
+  | 'tiantingfengyu'
+  | 'hutouluowang'
+  | 'tianlaofuqi'
+  | 'taiyinpoyu'
+  | 'qinglongruyu'
+  | 'tiandixingchong'
+  | 'tianlaoyishi'
+  | 'baihufanyu'
+  | 'tianlaozixing'
+  | 'yinyangchongdi'
+  | 'ruchenjiudi'
+  | 'mingtangfanbei'
+  | 'huagairumingtang'
+  | 'huagaishouen'
+  | 'tianwangchongfan'
+  | 'tianwangyiyu'
+  | 'tianwangchongzhang';
 
 /**
  * The fortune a configuration is transmitted with (吉凶).
@@ -247,6 +317,80 @@ const CONFIGURATIONS: Record<PatternId, { hanzi: string; pinyin: string; valence
   wanggaitianlao: { hanzi: '網蓋天牢', pinyin: 'wǎnggàitiānláo' },
   fujiantengshe: { hanzi: '復見螣蛇', pinyin: 'fùjiànténgshé' },
   tianwangsizhang: { hanzi: '天網四張', pinyin: 'tiānwǎngsìzhāng' },
+  // 《奇門仙機》's 干論, as `stemPairs: xianji` lays it, every name read on
+  // the plate of 《御定奇門大全》卷十四 and 卷十六. None carries a fortune: the
+  // 干論's prose was not read cell by cell for one, and where it was read it
+  // hands the verdict to the gate and the palace — 「再詳門宮生剋以分主客」.
+  // 青龍入雲格 is the default's as well, named alike by 《元靈經》 and with no
+  // fortune there either.
+  qinglongruyunge: { hanzi: '青龍入雲格', pinyin: 'qīnglóngrùyúngé' },
+  qinglongdemingge: { hanzi: '青龍得明格', pinyin: 'qīnglóngdémínggé' },
+  qinglongrudi: { hanzi: '青龍入地', pinyin: 'qīnglóngrùdì' },
+  qinglongxianghe: { hanzi: '青龍相合', pinyin: 'qīnglóngxiānghé' },
+  qinglongshishi: { hanzi: '青龍恃勢', pinyin: 'qīnglóngshìshì' },
+  qinglongxiangqin: { hanzi: '青龍相侵', pinyin: 'qīnglóngxiāngqīn' },
+  qinglongpoyu: { hanzi: '青龍破獄', pinyin: 'qīnglóngpòyù' },
+  qizhongfuqige: { hanzi: '奇中伏奇格', pinyin: 'qízhōngfúqígé' },
+  qidimingtang: { hanzi: '奇敵明堂', pinyin: 'qídímíngtáng' },
+  qizhuyunv: { hanzi: '奇助玉女', pinyin: 'qízhùyùnǚ' },
+  rirudixiang: { hanzi: '日入地鄉', pinyin: 'rìrùdìxiāng' },
+  qihetaibai: { hanzi: '奇合太白', pinyin: 'qíhétàibái' },
+  qishenruyu: { hanzi: '奇神入獄', pinyin: 'qíshénrùyù' },
+  qifengluowang: { hanzi: '奇逢羅網', pinyin: 'qíféngluówǎng' },
+  yuezhaocanghai: { hanzi: '月照倉海', pinyin: 'yuèzhàocānghǎi' },
+  erfengheming: { hanzi: '二鳳和鳴', pinyin: 'èrfènghémíng' },
+  xingyuehuiguang: { hanzi: '星月輝光', pinyin: 'xīngyuèhuīguāng' },
+  qifengchongsheng: { hanzi: '奇逢重生', pinyin: 'qíféngchóngshēng' },
+  qirumingtang: { hanzi: '奇入明堂', pinyin: 'qírùmíngtáng' },
+  gengrutaibai: { hanzi: '庚入太白', pinyin: 'gēngrùtàibái' },
+  qishenshengtai: { hanzi: '奇神生台', pinyin: 'qíshénshēngtái' },
+  shenqiyouhai: { hanzi: '神奇遊海', pinyin: 'shénqíyóuhǎi' },
+  qifenghuagai: { hanzi: '奇逢華蓋', pinyin: 'qífénghuágài' },
+  qishenheming: { hanzi: '奇神合明', pinyin: 'qíshénhémíng' },
+  qishenxiangjiao: { hanzi: '奇神相敎', pinyin: 'qíshénxiāngjiào' },
+  yunvchenglong: { hanzi: '玉女乘龍', pinyin: 'yùnǚchénglóng' },
+  yunvshien: { hanzi: '玉女施恩', pinyin: 'yùnǚshīēn' },
+  yunvxingsha: { hanzi: '玉女刑殺', pinyin: 'yùnǚxíngshā' },
+  yunvfuhu: { hanzi: '玉女伏虎', pinyin: 'yùnǚfúhǔ' },
+  yunvchenglongyouhai: { hanzi: '玉女乘龍遊海', pinyin: 'yùnǚchénglóngyóuhǎi' },
+  rirudihu: { hanzi: '日入地戶', pinyin: 'rìrùdìhù' },
+  dihuliguang: { hanzi: '地戶理光', pinyin: 'dìhùlǐguāng' },
+  mingtangtansheng: { hanzi: '明堂貪生', pinyin: 'míngtángtānshēng' },
+  mingtangconglu: { hanzi: '明堂從祿', pinyin: 'míngtángcónglù' },
+  mingtangchongfeng: { hanzi: '明堂重逢', pinyin: 'míngtángchóngféng' },
+  mingtangfusha: { hanzi: '明堂伏殺', pinyin: 'míngtángfúshā' },
+  tiantingdeshi: { hanzi: '天庭得勢', pinyin: 'tiāntíngdéshì' },
+  mingtangbeixing: { hanzi: '明堂被刑', pinyin: 'míngtángbèixíng' },
+  mingtanghehuagai: { hanzi: '明堂合華蓋', pinyin: 'míngtánghéhuágài' },
+  taibaitanhe: { hanzi: '太白貪合', pinyin: 'tàibáitānhé' },
+  taibaiyouen: { hanzi: '太白遊恩', pinyin: 'tàibáiyóuēn' },
+  taibaidaxing: { hanzi: '太白大刑', pinyin: 'tàibáidàxíng' },
+  taibaichongxing: { hanzi: '太白重刑', pinyin: 'tàibáichóngxíng' },
+  taibaituiwei: { hanzi: '太白退位', pinyin: 'tàibáituìwèi' },
+  taibaixingrong: { hanzi: '太白刑融', pinyin: 'tàibáixíngróng' },
+  tiantingdeming: { hanzi: '天庭得明', pinyin: 'tiāntíngdémíng' },
+  baihushoushang: { hanzi: '白虎受傷', pinyin: 'báihǔshòushāng' },
+  longhuzhengqiang: { hanzi: '龍虎爭强', pinyin: 'lónghǔzhēngqiáng' },
+  huzuomingtang: { hanzi: '虎坐明堂', pinyin: 'hǔzuòmíngtáng' },
+  hufengtaibai: { hanzi: '虎逢太白', pinyin: 'hǔféngtàibái' },
+  tiantingzili: { hanzi: '天庭自利', pinyin: 'tiāntíngzìlì' },
+  tiantingfengyu: { hanzi: '天庭逢獄', pinyin: 'tiāntíngféngyù' },
+  hutouluowang: { hanzi: '虎投羅網', pinyin: 'hǔtóuluówǎng' },
+  tianlaofuqi: { hanzi: '天牢伏奇', pinyin: 'tiānláofúqí' },
+  taiyinpoyu: { hanzi: '太陰破獄', pinyin: 'tàiyīnpòyù' },
+  qinglongruyu: { hanzi: '青龍入獄', pinyin: 'qīnglóngrùyù' },
+  tiandixingchong: { hanzi: '天地刑冲', pinyin: 'tiāndìxíngchōng' },
+  tianlaoyishi: { hanzi: '天牢依勢', pinyin: 'tiānláoyīshì' },
+  baihufanyu: { hanzi: '白虎犯獄', pinyin: 'báihǔfànyù' },
+  tianlaozixing: { hanzi: '天牢自刑', pinyin: 'tiānláozìxíng' },
+  yinyangchongdi: { hanzi: '陰陽重地', pinyin: 'yīnyángchóngdì' },
+  ruchenjiudi: { hanzi: '入沉九地', pinyin: 'rùchénjiǔdì' },
+  mingtangfanbei: { hanzi: '明堂犯悖', pinyin: 'míngtángfànbèi' },
+  huagairumingtang: { hanzi: '華蓋入明堂', pinyin: 'huágàirùmíngtáng' },
+  huagaishouen: { hanzi: '華蓋受恩', pinyin: 'huágàishòuēn' },
+  tianwangchongfan: { hanzi: '天網冲犯', pinyin: 'tiānwǎngchōngfàn' },
+  tianwangyiyu: { hanzi: '天網役獄', pinyin: 'tiānwǎngyìyù' },
+  tianwangchongzhang: { hanzi: '天網重張', pinyin: 'tiānwǎngchóngzhāng' },
 };
 
 /**
@@ -529,8 +673,9 @@ function struckInstruments(earth: ByPalace<Stem>): Pattern[] {
  * 十干克應 — the stem above standing over the stem below.
  *
  * The whole table has eighty-one cells, nine stems over nine, and this holds
- * the fourteen that `stemPairs: shared` lays: the cells that at least two
- * independent lines name the same way. **The rest are not here because the
+ * fourteen of the sixteen that `stemPairs: shared` lays: the cells that at
+ * least two independent lines name the same way and that 《金函玉鏡》 names so
+ * too, laid under `jinhan` as well. The other two are `SHARED_ONLY`. **The rest are not here because the
  * lines name them differently**, so a whole table is one line's and is laid
  * only when a caller asks for that line — `JINHAN_PAIRS` below. Which
  * sources, and what each of these was checked against one by one, is in
@@ -590,6 +735,23 @@ const STEM_PAIRS: readonly { above: string; below: string; id: PatternId }[] = [
   // 青龍返首 above already ships with.
   { above: 'wu', below: 'ding', id: 'qinglongyaoming' },
   { above: 'yi', below: 'ji', id: 'riqiruwu' },
+];
+
+/**
+ * Two more cells the default lays, each named alike by two lines and given no
+ * fortune by either.
+ *
+ * Not in `STEM_PAIRS` because 《金函玉鏡》 is one of the lines that parts at
+ * the first, and `STEM_PAIRS` is laid under `jinhan` as well. At 戊 over 乙
+ * the 仙機's 干論 and 《元靈經》 name 青龍入雲格 where 《金函玉鏡》 names
+ * 青龍合靈; at 戊 over 癸 《金函玉鏡》 and 《元靈經》 name 青龍華蓋 where the
+ * 干論 names 青龍相合. Every line hands the verdict of both to the gate — 「吉格
+ * 者吉招福，門凶多乖」, 「門合星吉則吉」, 「再得三奇、吉門」 — so neither
+ * carries a fortune. `docs/sources.md` § "The sixty-seven, read again".
+ */
+const SHARED_ONLY: readonly { above: string; below: string; id: PatternId }[] = [
+  { above: 'wu', below: 'yi', id: 'qinglongruyunge' },
+  { above: 'wu', below: 'gui', id: 'qinglonghuagai' },
 ];
 
 /**
@@ -679,12 +841,139 @@ const JINHAN_PAIRS: readonly { above: string; below: string; id: PatternId }[] =
   { above: 'gui', below: 'gui', id: 'tianwangsizhang' },
 ];
 
+/**
+ * 《奇門仙機》's 干論, 《御定奇門大全》卷十四 and 卷十六, under `stemPairs: xianji`.
+ *
+ * A line of its own, naming each cell by an image of the stem above — 戊 the
+ * 青龍, 丁 the 玉女, 己 the 明堂, 庚 the 太白, 壬 the 天牢, 癸 the 華蓋 or the
+ * 天網. Read on the plate of the woodblock, sheets 359–414, and laid as
+ * printed: 青龍相合 stands at two cells, and so do 青龍入地 and 日入地戶. The
+ * six names it shares with the verse are the engine's own ids — 龍逃走,
+ * 白虎猖狂, 朱雀投江, 螣蛇妖嬌, 太白入熒, 青龍燿明 — and carry the fortune
+ * those lines give them.
+ *
+ * **Seventy-seven cells, and four are not laid**, because the print names
+ * nothing there that can be read without guessing: 乙 over 戊 has no entry;
+ * 庚 over 辛 has an entry and no name; 庚 over 丁 has none, the run printing
+ * 庚加丙 twice, and its second, 太白受制, names no pair in its prose; and
+ * 丁 over 乙 has none either — 丁加巳 is the rule of 丁's 遁, and 丁加甲
+ * 玉女奇生 says 「丁己」 in its prose. Entries the 干論 conditions on a gate or
+ * a palace — 乙加己逢開門, 丙加直符之己 — are not cells and are not laid; nor is
+ * its 乙加己 三奇得使, which `deshi` marks on its own rule. Two were settled
+ * on the page: 己甲乙 is 己 over 乙, its prose reading 「再詳己乙所臨」, and
+ * 丙 over 戊 is 奇逢重生, printed with its 生 twice. `docs/sources.md` §
+ * "The 干論 read on the plate", and the cells with their sheets in
+ * `texts/qimen/daquan-juan14-16-stems/xianji/cells.tsv`.
+ */
+const XIANJI_PAIRS: readonly { above: string; below: string; id: PatternId }[] = [
+  { above: 'wu', below: 'yi', id: 'qinglongruyunge' }, // 戊加乙 青龍入雲格, 359L
+  { above: 'wu', below: 'bing', id: 'qinglongdemingge' }, // 戊加丙 青龍得明格, 359L
+  { above: 'wu', below: 'ding', id: 'qinglongyaoming' }, // 戊加丁 青龍燿明, 360R
+  { above: 'wu', below: 'wu', id: 'qinglongrudi' }, // 戊加戊 青龍入地, 360R
+  { above: 'wu', below: 'ji', id: 'qinglongxianghe' }, // 戊加己 青龍相合, 360L
+  { above: 'wu', below: 'geng', id: 'qinglongshishi' }, // 戊加庚 青龍恃勢, 360L
+  { above: 'wu', below: 'xin', id: 'qinglongxiangqin' }, // 戊加辛 青龍相侵, 361R
+  { above: 'wu', below: 'ren', id: 'qinglongpoyu' }, // 戊加壬 青龍破獄, 361R
+  { above: 'wu', below: 'gui', id: 'qinglongxianghe' }, // 戊加癸 青龍相合, 361R
+  { above: 'yi', below: 'yi', id: 'qizhongfuqige' }, // 乙加乙 奇中伏奇格, 363L
+  { above: 'yi', below: 'bing', id: 'qidimingtang' }, // 乙加丙 奇敵明堂, 364R
+  { above: 'yi', below: 'ding', id: 'qizhuyunv' }, // 乙加丁 奇助玉女, 364R
+  { above: 'yi', below: 'ji', id: 'rirudixiang' }, // 乙加己 日入地鄉, 364L
+  { above: 'yi', below: 'geng', id: 'qihetaibai' }, // 乙加庚 奇合太白, 365R
+  { above: 'yi', below: 'xin', id: 'qinglongtaozou' }, // 乙加辛 龍逃走, 365L
+  { above: 'yi', below: 'ren', id: 'qishenruyu' }, // 乙加壬 奇神入獄, 366R
+  { above: 'yi', below: 'gui', id: 'qifengluowang' }, // 乙加癸 奇逢羅網, 366L
+  { above: 'bing', below: 'yi', id: 'yuezhaocanghai' }, // 丙加乙 月照倉海, 395L
+  { above: 'bing', below: 'bing', id: 'erfengheming' }, // 丙加丙 二鳳和鳴, 396R
+  { above: 'bing', below: 'ding', id: 'xingyuehuiguang' }, // 丙加丁 星月輝光, 396R
+  { above: 'bing', below: 'wu', id: 'qifengchongsheng' }, // 丙加戊 奇逢重生生, 396L
+  { above: 'bing', below: 'ji', id: 'qirumingtang' }, // 丙加己 奇入明堂, 396L
+  { above: 'bing', below: 'geng', id: 'gengrutaibai' }, // 丙加庚 庚入太白, 397R
+  { above: 'bing', below: 'xin', id: 'qishenshengtai' }, // 丙加辛 奇神生台, 397L
+  { above: 'bing', below: 'ren', id: 'shenqiyouhai' }, // 丙加壬 神奇遊海, 397L
+  { above: 'bing', below: 'gui', id: 'qifenghuagai' }, // 丙加癸 奇逢華蓋, 397L
+  { above: 'ding', below: 'bing', id: 'qishenheming' }, // 丁加丙 奇神合明, 400L
+  { above: 'ding', below: 'ding', id: 'qishenxiangjiao' }, // 丁加丁 奇神相敎, 401R
+  { above: 'ding', below: 'wu', id: 'yunvchenglong' }, // 丁加戊 玉女乘龍, 401R
+  { above: 'ding', below: 'ji', id: 'yunvshien' }, // 丁加己 玉女施恩, 401R
+  { above: 'ding', below: 'geng', id: 'yunvxingsha' }, // 丁加庚 玉女刑殺, 401L
+  { above: 'ding', below: 'xin', id: 'yunvfuhu' }, // 丁加辛 玉女伏虎, 401L
+  { above: 'ding', below: 'ren', id: 'yunvchenglongyouhai' }, // 丁加壬 玉女乘龍遊海, 402R
+  { above: 'ding', below: 'gui', id: 'zhuquetoujiang' }, // 丁加癸 朱雀投江, 402R
+  { above: 'ji', below: 'yi', id: 'rirudihu' }, // 己加乙 日入地戶, 404R
+  { above: 'ji', below: 'bing', id: 'dihuliguang' }, // 己加丙 地戶理光, 404R
+  { above: 'ji', below: 'ding', id: 'mingtangtansheng' }, // 己加丁 明堂貪生, 404L
+  { above: 'ji', below: 'wu', id: 'mingtangconglu' }, // 己加戊 明堂從祿, 405R
+  { above: 'ji', below: 'ji', id: 'mingtangchongfeng' }, // 己加己 明堂重逢, 405R
+  { above: 'ji', below: 'geng', id: 'mingtangfusha' }, // 己加庚 明堂伏殺, 405R
+  { above: 'ji', below: 'xin', id: 'tiantingdeshi' }, // 己加辛 天庭得勢, 405L
+  { above: 'ji', below: 'ren', id: 'mingtangbeixing' }, // 己加壬 明堂被刑, 405L
+  { above: 'ji', below: 'gui', id: 'mingtanghehuagai' }, // 己加癸 明堂合華蓋, 405L
+  { above: 'geng', below: 'yi', id: 'taibaitanhe' }, // 庚加乙 太白貪合, 406L
+  { above: 'geng', below: 'bing', id: 'taibairuying' }, // 庚加丙 太白入熒, 406L
+  { above: 'geng', below: 'wu', id: 'taibaiyouen' }, // 庚加戊 太白遊恩, 407R
+  { above: 'geng', below: 'ji', id: 'taibaidaxing' }, // 庚加己 太白大刑, 407R
+  { above: 'geng', below: 'geng', id: 'taibaichongxing' }, // 庚加庚 太白重刑, 407L
+  { above: 'geng', below: 'ren', id: 'taibaituiwei' }, // 庚加壬 太白退位, 407L
+  { above: 'geng', below: 'gui', id: 'taibaixingrong' }, // 庚加癸 太白刑融, 408R
+  { above: 'xin', below: 'yi', id: 'baihuchangkuang' }, // 辛加乙 白虎猖狂, 408L
+  { above: 'xin', below: 'bing', id: 'tiantingdeming' }, // 辛加丙 天庭得明, 409R
+  { above: 'xin', below: 'ding', id: 'baihushoushang' }, // 辛加丁 白虎受傷, 409R
+  { above: 'xin', below: 'wu', id: 'longhuzhengqiang' }, // 辛加戊 龍虎爭强, 409L
+  { above: 'xin', below: 'ji', id: 'huzuomingtang' }, // 辛加己 虎坐明堂, 409L
+  { above: 'xin', below: 'geng', id: 'hufengtaibai' }, // 辛加庚 虎逢太白, 409L
+  { above: 'xin', below: 'xin', id: 'tiantingzili' }, // 辛加辛 天庭自利, 410R
+  { above: 'xin', below: 'ren', id: 'tiantingfengyu' }, // 辛加壬 天庭逢獄, 410R
+  { above: 'xin', below: 'gui', id: 'hutouluowang' }, // 辛加癸 虎投羅網, 410R
+  { above: 'ren', below: 'yi', id: 'rirudihu' }, // 壬加乙 日入地戶, 411R
+  { above: 'ren', below: 'bing', id: 'tianlaofuqi' }, // 壬加丙 天牢伏奇, 411R
+  { above: 'ren', below: 'ding', id: 'taiyinpoyu' }, // 壬加丁 太陰破獄, 411R
+  { above: 'ren', below: 'wu', id: 'qinglongruyu' }, // 壬加戊 青龍入獄, 411L
+  { above: 'ren', below: 'ji', id: 'tiandixingchong' }, // 壬加己 天地刑冲, 411L
+  { above: 'ren', below: 'geng', id: 'tianlaoyishi' }, // 壬加庚 天牢依勢, 411L
+  { above: 'ren', below: 'xin', id: 'baihufanyu' }, // 壬加辛 白虎犯獄, 411L
+  { above: 'ren', below: 'ren', id: 'tianlaozixing' }, // 壬加壬 天牢自刑, 412R
+  { above: 'ren', below: 'gui', id: 'yinyangchongdi' }, // 壬加癸 陰陽重地, 412R
+  { above: 'gui', below: 'yi', id: 'ruchenjiudi' }, // 癸加乙 入沉九地, 412L
+  { above: 'gui', below: 'bing', id: 'mingtangfanbei' }, // 癸加丙 明堂犯悖, 413R
+  { above: 'gui', below: 'ding', id: 'tengsheyaojiao' }, // 癸加丁 螣蛇妖嬌, 413R
+  { above: 'gui', below: 'wu', id: 'qinglongrudi' }, // 癸加戊 青龍入地, 413L
+  { above: 'gui', below: 'ji', id: 'huagairumingtang' }, // 癸加己 華蓋入明堂, 413L
+  { above: 'gui', below: 'geng', id: 'huagaishouen' }, // 癸加庚 華蓋受恩, 413L
+  { above: 'gui', below: 'xin', id: 'tianwangchongfan' }, // 癸加辛 天網冲犯, 414R
+  { above: 'gui', below: 'ren', id: 'tianwangyiyu' }, // 癸加壬 天網役獄, 414R
+  { above: 'gui', below: 'gui', id: 'tianwangchongzhang' }, // 癸加癸 天網重張, 414R
+];
+
+/** The cells each table lays, keyed by the value of `stemPairs` that lays it. */
+const STEM_PAIR_TABLES: Record<
+  ChartOptions['stemPairs'],
+  readonly { above: string; below: string; id: PatternId }[]
+> = {
+  shared: [...STEM_PAIRS, ...SHARED_ONLY],
+  jinhan: [...STEM_PAIRS, ...JINHAN_PAIRS],
+  xianji: XIANJI_PAIRS,
+};
+
+/**
+ * The configurations a table of 十干克應 can lay, for a surface that offers
+ * them as criteria only where the board asked about can carry them.
+ */
+export function stemPairIds(table: ChartOptions['stemPairs']): readonly PatternId[] {
+  return [...new Set(STEM_PAIR_TABLES[table].map((pair) => pair.id))];
+}
+
+/** Every configuration some table of 十干克應 lays, whichever is in force. */
+export const STEM_PAIR_IDS: readonly PatternId[] = [
+  ...new Set(Object.values(STEM_PAIR_TABLES).flatMap((pairs) => pairs.map((pair) => pair.id))),
+];
+
 function stemPairs(
   earth: ByPalace<Stem>,
   overhead: { palace: number; stem: Stem }[],
   table: ChartOptions['stemPairs'],
 ): Pattern[] {
-  const pairs = table === 'jinhan' ? [...STEM_PAIRS, ...JINHAN_PAIRS] : STEM_PAIRS;
+  const pairs = STEM_PAIR_TABLES[table];
   const found: Pattern[] = [];
   for (const { palace: number, stem: above } of overhead) {
     // The centre is left out: the turn neither moves it nor reaches it, so

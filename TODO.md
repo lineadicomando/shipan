@@ -91,11 +91,11 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-25
 
-**Version 0.36.1**, in every manifest. **`main` is checked out and no branch
+**Version 0.37.0**, in every manifest. **`main` is checked out and no branch
 is open**: `lens-relations` and `lens-generic` landed on 2026-10-25 and were
 deleted, as «lenses» was the day before and `board-pointer` on 2026-10-18.
 Phase 74 is pushed to `origin/main`, on the user's word of 2026-10-25; the
-commit of 0.36.1 after it is not. What `main` carries since 2026-10-15 is of eleven days:
+three commits after it, 0.36.1 to 0.37.0, are not. What `main` carries since 2026-10-15 is of eleven days:
 
 - 2026-10-15, surface work: the Qi Men section holds its board in the page
   (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which register a
@@ -264,8 +264,18 @@ commit of 0.36.1 after it is not. What `main` carries since 2026-10-15 is of ele
   Italian lens strings no longer set a preposition before a name whose gloss
   opens on an article — the name is a subject or follows «con».
 
+- 2026-10-25, on `main` (0.37.0), the first two items of "What to do next",
+  on the user's word, phase 75. The 干論's six garbled cells read on the
+  woodblock, the prose under each entry naming its own pair: two settled,
+  one confirmed empty, one the rule of 丁's 遁, two unreadable, and 乙 over
+  戊 found missing. `stemPairs: xianji` built on the seventy-seven cells the
+  print names, held by `qimenxianji`, no fortune of its own. And `shared`
+  given 青龍入雲格 (戊 over 乙) and 青龍華蓋 (戊 over 癸), each named alike by
+  two lines and weighed by none, so carried with no fortune; the four cells
+  of 《元靈經》's third block stay out. The scan form asks `layableUnder`.
+
 `main` is pushed to `origin/main` as of 2026-10-25, phase 74 included, on the
-user's word; 0.36.1 is not. Pushing is always the user's call.
+user's word; 0.36.1 to 0.37.0 are not. Pushing is always the user's call.
 `npm test`, `npm run typecheck` and `npm run build` pass on 2026-10-20 with no
 test skipped, and again on 2026-10-22, 2026-10-23, 2026-10-24 and 2026-10-25,
 the last on `main` at the end of phase 74. **Run `npm run build` before `npm test`** in
@@ -432,18 +442,13 @@ that sheet nearly blank.
 **What to do next, in the order the user has been taking it.** Nothing
 decided is left unbuilt.
 
-1. **The 十干克應 cells two lines name alike** beyond the fourteen, which
-   the review of 2026-10-16 found and did not take into `shared`: § 1,
-   "Recorded, with no parameter", under 奇門.
-2. **Or `stemPairs: xianji`**: six cells of the 仙機's 干論 read again on the
-   plate, § 1. Its transcription is held, so this is an errand of six looks.
-3. **Or two errands left by 2026-10-22.** 截路空亡 on 寶鏡圖's other
+1. **Two errands left by 2026-10-22.** 截路空亡 on 寶鏡圖's other
    fifty-nine leaves: 癸未's gives it at 子 and 丑 only, where the engine
    marks the 壬 and 癸 hours, four on a 戊 or 癸 day; the hour lines are on
    the leaf after each wheel,
    `texts/qimen/daquan-juan60-baojing/order.txt` gives the sheets. And the scan
    form's `gongpo`, § 5.
-4. **Or a lead from the `shushu` skill.** Each art's file in
+2. **Or a lead from the `shushu` skill.** Each art's file in
    `.claude/skills/shushu/disciplines/` ends on «Leads against the register»:
    passages located on the web or in a shelf transcription that bear on a row,
    none read on a plate. The ones that touch a standing question: the order of
@@ -456,7 +461,7 @@ decided is left unbuilt.
    boundaries no text holds yet (`common/foundations.md`). Each is a reading
    of a file held, bar two: the 楊公忌 passage is in the 華齡 協紀's (下) and
    《星曆考原》卷五 is not on the shelf either.
-5. **Or what the review of 2026-10-23 found and did not fix**, each wanting a
+3. **Or what the review of 2026-10-23 found and did not fix**, each wanting a
    plate or the user's word:
    - 六壬: 涉害 palace-first against 精解 pp. 10–11 (`texts/rules/LR-04.md`),
      which also counts the starting palace and the 寄干; 無親, which 精解
@@ -680,7 +685,12 @@ whether `baojian` holds `spiritSeat: tianpan` beside `tongzong`, since
 None of the 32 cases was found in another work's extract, which locates
 nothing either way.
 
-**Owed a look by the user, and not blocking**: on 2026-10-25, after phase
+**Owed a look by the user, and not blocking**: on 2026-10-25, phase 75's
+sixty-eight glosses `label.pattern.*` of the 干論's names, with the image of
+the stem above kept — 明堂 «the hall of light» · «la sala della luce», 玉女
+«the jade maiden» · «la fanciulla di giada», 二鳳 «two phoenixes» · «due
+fenici» beside 朱雀's «la fenice» — and `form.qimen.stemPairs.xianji`, the
+reworded `.shared` and `.note`, in both catalogs. Also on 2026-10-25, after phase
 74, the Italian `lens.focus` «Punto di partenza: {thing}», `lens.heading`
 and `lens.relation.*` reworded so no preposition stands before a name, and
 the three seams `cli.between.*`, and the four labels rewritten with the
@@ -738,7 +748,7 @@ not a witness**.
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `plate: fei`, `system: yuejia`, `system: nianjia`, `dayDun: liushi`, `leap: runyue`, `strengths: star`, `stemPairs: xianji` |
+| 奇門 | `plate: fei`, `system: yuejia`, `system: nianjia`, `dayDun: liushi`, `leap: runyue`, `strengths: star` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: chunjie` |
@@ -754,7 +764,6 @@ section an art.
 | `system: yuejia`, `system: nianjia` | being built as the day family was. 《遁甲演義》 and the 統宗 state both; on the year they read 一四七 against 遁甲集成 第三冊's 一七四, which will be two values. The 一七四 line has a second copy in 《御定奇門大全》卷二十九, worked for 1648. No table on the shelf to hold either to |
 | `dayDun: liushi` | the 統宗's rule read on the plate for how a 局 is begun. 《御定奇門大全》卷二十九 begins a sixty-day 局 on a 甲 or 己 day, four terms to it, on a 日家 with a plate of stems, which is not the board `rijia` lays: recorded, not weighed |
 | `leap: runyue` | a lineage named for it. 《金鏡寶鑑》 holds it; 《金函玉鏡》 上冊 p. 87 and 下冊 p. 425 print a rule containing both placements, so one rule or two is asked first |
-| `stemPairs: xianji` | the cells the 干論 of 《御定奇門大全》卷十四–十六 prints garbled, read on the plate: 庚加丙 twice and no 庚加丁, 庚加辛 with no name, 丁加巳 where 乙 is wanted, 丙加戊 with a rule in place of a name, 己加乙 printed 己甲乙. Its transcription is in `texts/qimen/daquan-juan14-16-stems/` |
 | `strengths: star` | which of two arrangements from the star it is — 《金鏡寶鑑》卷之四's, or the 《三元經》's that the 符應經, 紀大奎 and the 探索錄 carry — and whether it reaches past the nine stars |
 | `yuejiang: jieqi`, `yuejiang: true` | a text stating either as its own. None found, on the plate or in the extracts |
 | `zhouye: solar` | which rising, and how. One sentence of 《大六壬精解》 and the 協紀's 日出入, neither with a procedure |
@@ -772,16 +781,16 @@ section an art.
 **Recorded, with no parameter** — a divergence the register carries and
 nothing exposes. Only those with something to wait on:
 
-- **奇門.** **十干克應 beyond the fourteen**: about a dozen cells two lines
-  name alike, or nearly, were found by the review of 2026-10-16 and not taken
-  into `shared` — 奇儀順遂 and 日奇被刑 in J and 《元靈經》, 火入勾陳, 朱雀入獄,
-  人遁 and 奇入太陰 in J and the block of 《元靈經》 read as the 丁 row, whose
-  heading is in doubt, and 青龍入雲 at 戊 over 乙 in the 干論 and 《元靈經》
-  against J's 青龍合靈. Several differ by a word, and each would need its
-  fortune argued. `texts/qimen/daquan-juan14-16-stems/compare.tsv` sets the
-  lines side by side. **日奇入霧**, shipped on J and 《元靈經》, is 奇入墓 in J's
-  own line as the 仙機 versifies it. **青龍華蓋** is still the cell for a fourth
-  valence. The 置閏 pin at ten days: the 大全's 遁甲通明鈐 卷十二 states
+- **奇門.** **十干克應 beyond the sixteen**: 火入勾陳, 朱雀入獄, 人遁 and
+  奇入太陰, named alike by J and the block of 《元靈經》 read as the 丁 row,
+  wait on a print of 《元靈經》 giving that block's heading; 奇儀順遂 and
+  日奇被刑, which J and 《元靈經》 name a word or a character apart, on a
+  third line naming either. `texts/qimen/daquan-juan14-16-stems/compare.tsv`
+  sets the lines side by side. **日奇入霧**, shipped on J and 《元靈經》, is
+  奇入墓 in J's own line as the 仙機 versifies it. **The 干論 under
+  `xianji`**: its fortunes, unread cell by cell; 庚 over 丁 and 丁 over 乙, which
+  a second copy of the 仙機 could name; and 庚入太白 and 地戶理光, laid as
+  printed. The 置閏 pin at ten days: the 大全's 遁甲通明鈐 卷十二 states
   「凡過超十日則閏」 and works a case dated here to 1265–66 that lets nine
   pass, where its 卷十三, its 奇門秘訣 卷四十六 and `MAX_CHAOSHEN` intercalate
   at nine. A text stating ten as its own rule, with nothing against it
@@ -878,9 +887,8 @@ with a Tang attribution. None of that platform's files states a provenance.
 been opened far enough to say what it is, and `texts/README.md` has a row
 naming each: 134 files, about 33 700 pages. Most pages have never been read
 on the plate, and none is owed a reading: the shelf is read by question. The
-questions standing ask for **six readings** of files held — the 統宗's rule for `dayDun: liushi`, the 金函玉鏡's
-two pages for `leap: runyue`, the 仙機's six cells for `stemPairs: xianji`,
-《星學大成》's limits and 量天尺 (line 4), 《中國恆星觀測史》 from p. 274
+questions standing ask for **five readings** of files held — the 統宗's rule for `dayDun: liushi`, the 金函玉鏡's
+two pages for `leap: runyue`, 《星學大成》's limits and 量天尺 (line 4), 《中國恆星觀測史》 from p. 274
 (line 5), and 截路空亡 on 寶鏡圖's other leaves — and about thirty small
 errands under "Left open" and "Small and left open". About ten refused values
 wait on files not held (§ 1, "Wanted and not held"), which no reading here
@@ -925,11 +933,10 @@ prose, which a third language pays for and derived text does not. →
   by tests: the MCP schemas in `packages/mcp/src/` and
   `apps/web/src/lib/parameters.ts`. A value added to the engine fails those
   suites until it is added there. **So is the list of configurations**,
-  `PATTERN_IDS` in `apps/web/src/lib/vocabulary.ts`, and the scan form's
-  `JINHAN_PATTERN_IDS` is read off it by position, from `qinglongheling` on:
-  a configuration added after 《金函玉鏡》's would be offered only under
-  `stemPairs: jinhan` until that slice is changed. `gongpo` and `sanqideshi`
-  sit before it and are offered always, though `gongpo` occurs only under
+  `PATTERN_IDS` in `apps/web/src/lib/vocabulary.ts`, and beside it
+  `STEM_PAIR_TABLES`, the names each value of `stemPairs` lays, which the
+  scan form reads through `layableUnder` and a test holds to `stemPairIds`.
+  `gongpo` and `sanqideshi` are no stem pair and are offered always, though `gongpo` occurs only under
   `menpo: gongzhimen`: a scan asked for it under the default finds nothing
   and does not say why. The same filter, keyed on `qimen.menpo`, would fix it.
 - **A configuration may carry no fortune**, since `stemPairs: jinhan`:

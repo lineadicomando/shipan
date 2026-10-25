@@ -107,6 +107,7 @@ phase.
 | 72 | [One lens for every board](72-one-lens-for-every-board.md) | done — the lens a descriptor every board fills, `qimenLens` its first instance; the page's lens and its wiring know no board; every drawn board has a lens |
 | 73 | [What the lens relates](73-what-the-lens-relates.md) | done — 歸垣 and the Moon on 七政四餘, 三方 and 對宮 on 紫微斗數 read on the Ming woodblock, the 五將 read on the plates and related on 太乙, and the consultation on the bench with a lens |
 | 74 | [The phases of the eight spirits](74-the-phases-of-the-eight-spirits.md) | done — the text on the boards readable and the key under them, and `spiritPhase` read on three plates and built: `none`, `branch`, `huaqi` |
+| 75 | [The 干論 on the plate](75-the-ganlun-on-the-plate.md) | done — the six garbled cells of the 仙機's 干論 read on the woodblock and `stemPairs: xianji` built on seventy-seven cells; 青龍入雲格 and 青龍華蓋 added to the default with no fortune; the seams between label and value set by each vernacular |
 
 ## The rest of the record
 

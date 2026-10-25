@@ -355,10 +355,12 @@ export { hexagramOf, hexagramOfSeats, type Hexagram, type Trigram } from './hexa
 export { determineJu, YUAN_HANZI, YUAN_PINYIN, type Ju, type Yuan } from './ju.js';
 export {
   PATTERN_IDS,
+  STEM_PAIR_IDS,
   VALENCE_IDS,
   findPatterns,
   opposite,
   patternName,
+  stemPairIds,
   unmetHour,
   valenceOf,
   type Pattern,
