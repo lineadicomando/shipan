@@ -26,17 +26,17 @@
 
 <div class="mode" role="group" aria-label={t('lens.mode')}>
   <span class="lead">{t('lens.mode')}</span>
-  <button type="button" aria-pressed={!state.expert} onclick={() => onchange(oneAtATime(state))}>
-    {t('lens.mode.beginner')}
+  <button type="button" aria-pressed={!state.extended} onclick={() => onchange(oneAtATime(state))}>
+    {t('lens.mode.basic')}
   </button>
-  <button type="button" aria-pressed={state.expert} onclick={() => onchange({ ...state, expert: true })}>
-    {t('lens.mode.expert')}
+  <button type="button" aria-pressed={state.extended} onclick={() => onchange({ ...state, extended: true })}>
+    {t('lens.mode.extended')}
   </button>
   <button
     type="button"
     class="whole"
     disabled={!laid}
-    onclick={() => onchange({ ...WHOLE, expert: state.expert })}
+    onclick={() => onchange({ ...WHOLE, extended: state.extended })}
   >{t('lens.whole')}</button>
 </div>
 

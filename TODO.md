@@ -236,7 +236,7 @@ why). The code to copy from is the 奇門 hour board:
 | `packages/core/src/dunjia/lens.ts` | `qimenLens(chart)`: every thing with a phase as the drawing marks it (`seat`, `layer`, `id`, `element`), the five relations for every pair of phases, `facing`, `wuhe`, and `names` (hanzi and reading of every relation and phase). Test: `packages/core/test/lens.test.ts` |
 | `docs/sources.md` Tier 3, `docs/sources.tsv` | three rows «a lens: …» beside 門宮 · 星宮. **A relation a lens draws is a quantity**: it needs its row and rung before it is drawn |
 | `apps/web/src/routes/api/qimen/+server.ts` | answers `lens` beside the chart; the client imports only types from `core` |
-| `apps/web/src/lib/lens.ts` | the state (`LensState`: `layers`, `phases`, `focus`, `pair`, `chosen`, `toward`, `shengke`, `links`, `expert`), `viewOf`, `pairTable`, `pressed`, `pressedSeat`, `pressedInPair`, `oneAtATime`, `wayOf`, `activePhases`, and the fragment (`writeLens`, `readLens`). **Qi Men-shaped**: `BOARD_LAYERS`, Luoshu seat numbers, `SpotKey` as `${number}:${string}` |
+| `apps/web/src/lib/lens.ts` | the state (`LensState`: `layers`, `phases`, `focus`, `pair`, `chosen`, `toward`, `shengke`, `links`, `extended`), `viewOf`, `pairTable`, `pressed`, `pressedSeat`, `pressedInPair`, `oneAtATime`, `wayOf`, `activePhases`, and the fragment (`writeLens`, `readLens`). **Qi Men-shaped**: `BOARD_LAYERS`, Luoshu seat numbers, `SpotKey` as `${number}:${string}` |
 | `apps/web/src/lib/arrows.ts` | `layArrows`: straight where clear, bent where an arrow would cross a name or lie on another. Board-agnostic |
 | components | `LensBar` (ways and controls), `LensMode` (mode and «whole board»), `LensLinks` (the arrows over the drawing), `LensRelations` and `LensPair` (the same in words, under the bench), `FiveWheel` (the circle), `NameKey` (the key to a bare drawing's numerals), and `InlineBoard`'s `lens` prop (receding, by `data-lens` on the marks) |
 | `apps/web/src/routes/[lang]/qimen/+page.svelte` | the wiring: fragment ⇄ state, `pick` (a name, a palace's ground, outside the palaces), `putAway`, `pressedOutside`, `escaped` |
@@ -262,9 +262,10 @@ why). The code to copy from is the 奇門 hour board:
 - A pair compares only the names pressed inside its two seats. A seat's
   ground selects it; a name inside a complete pair is put into or taken out of
   the comparison.
-- Two modes, beginner by default. Both choose a way first — «due palazzi · un
-  nome e il resto · una fase» (the expert's third is «tipi e fasi») — and the
-  expert's adds multiple choice, kinds of name, 對宮 and 五合. No paragraph of
+- Two modes, «Base» by default and «Estesa», named for what each offers and
+  never for who might use it. Both choose a way first — «due palazzi · un
+  nome e il resto · una fase» (the extended mode's third is «tipi e fasi») —
+  and the extended adds multiple choice, kinds of name, 對宮 and 五合. No paragraph of
   instructions: each way says what to press.
 - «Tavola intera» beside the mode, always in its place and disabled when
   nothing is laid; also a press on the board outside its seats, a press on the

@@ -173,7 +173,7 @@
    * link can be sent with it and the server never learns of it.
    */
   let lensState = $state<LensState>(WHOLE);
-  /** The way a beginner chose to lay the lens, where one was chosen. */
+  /** The way the reader chose to lay the lens, where one was chosen. */
   let way = $state<Way | undefined>();
   /**
    * The fragment and the state follow each other. An address arriving with a
@@ -248,7 +248,7 @@
     }
     // Laid one way at a time, a press does what that way does: in a pair, a
     // press anywhere in a palace is the palace; with a phase, nothing.
-    const guided = !lensState.expert ? way : undefined;
+    const guided = !lensState.extended ? way : undefined;
     if (guided === 'phase') return;
     if (guided === 'pair' || (!spot.layer && spot.unit === 'palace')) {
       if (guided === 'focus' || !spot.seat) return;
@@ -270,7 +270,7 @@
   /** The whole board again, in the mode the reader was in. */
   function putAway(): void {
     if (!laid) return;
-    lensState = { ...WHOLE, expert: lensState.expert };
+    lensState = { ...WHOLE, extended: lensState.extended };
     way = undefined;
   }
 

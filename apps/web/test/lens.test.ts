@@ -97,10 +97,10 @@ describe('a lens on a 奇門 board', () => {
       toward: ['heaven', 'gate'],
       shengke: false,
       links: ['wuhe'],
-      expert: true,
+      extended: true,
     };
     const fragment = writeLens(state);
-    expect(fragment).toBe('expert=1&phases=huo&focus=heaven.bing&toward=heaven,gate&shengke=0&links=wuhe');
+    expect(fragment).toBe('extended=1&phases=huo&focus=heaven.bing&toward=heaven,gate&shengke=0&links=wuhe');
     expect(readLens(`#${fragment}`)).toEqual(state);
     expect(writeLens(WHOLE)).toBe('');
     // What is not a known value is dropped, never guessed at.
@@ -188,14 +188,14 @@ describe('a lens on a 奇門 board', () => {
     expect(readLens('#pair=3,6&chosen=3:heaven,4:gate,6:spirit').chosen).toEqual(['3:heaven']);
   });
 
-  it('lays a lens one way at a time for a beginner, and keeps nothing behind for either mode', () => {
-    // The beginner's is the mode a page opens in, and it writes nothing: a
+  it('lays a lens one way at a time for a basic mode, and keeps nothing behind for either mode', () => {
+    // The basic mode's is the mode a page opens in, and it writes nothing: a
     // reader who never switches leaves no trace in the address either.
-    expect(WHOLE.expert).toBe(false);
+    expect(WHOLE.extended).toBe(false);
     expect(writeLens(WHOLE)).toBe('');
     const many: LensState = {
       ...WHOLE,
-      expert: true,
+      extended: true,
       layers: ['gate'],
       phases: ['mu', 'huo'],
       toward: ['heaven', 'gate'],
@@ -211,7 +211,7 @@ describe('a lens on a 奇門 board', () => {
     expect(wayOf({ ...WHOLE, pair: [2] })).toBe('pair');
     expect(wayOf({ ...WHOLE, focus: { layer: 'gate', id: 'kaimen' } })).toBe('focus');
     expect(wayOf({ ...WHOLE, phases: ['jin'] })).toBe('phase');
-    expect(wayOf({ ...WHOLE, expert: true, layers: ['gate'] })).toBe('phase');
+    expect(wayOf({ ...WHOLE, extended: true, layers: ['gate'] })).toBe('phase');
   });
 
   it('lights on the circle the phases of what the lens has in it, and nothing else', () => {

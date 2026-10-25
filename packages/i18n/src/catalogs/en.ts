@@ -444,13 +444,15 @@ export const en = {
   'lens.kinds': 'Relations',
   'lens.shengke': 'generation and control',
   'lens.pair.pick': 'Now press, in each of the two palaces, the names to compare. Pressing a name again takes it out of the comparison.',
-  // The two modes of a lens. The beginner's lays it one way at a time and
-  // sets the circle of the five phases beside it; the expert's offers every
-  // control at once. Each way says what pressing does, and nothing about what
-  // a relation means.
+  // The two modes of a lens, named for what each offers and not for who
+  // might use it: a mode called «expert» tells everybody else the board is
+  // not theirs, which is the prejudice the lens is meant to lift. The basic
+  // mode lays the lens one way at a time with one choice in each; the
+  // extended mode offers every control at once. Each way says what pressing
+  // does, and nothing about what a relation means.
   'lens.mode': 'Mode',
-  'lens.mode.beginner': 'Beginner',
-  'lens.mode.expert': 'Expert',
+  'lens.mode.basic': 'Basic',
+  'lens.mode.extended': 'Extended',
   'lens.choose': 'Look at',
   'lens.way.pair': 'two palaces',
   'lens.way.focus': 'one name and the rest',

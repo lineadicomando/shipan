@@ -299,11 +299,12 @@ it is not** — where it would cross a name another arrow points at, or lie on
 one already laid (`layArrows` in `lib/arrows.ts`): the gentlest clear bend is
 kept, the shortest arrows are laid first, and arrows leaving one name may
 meet at it, since a fan reads as a fan. **Two modes, and the reader
-picks.** Both lay the lens one way at a time — two palaces, one name and the
-rest, or what is kept — and the page opens in the beginner's, which keeps one
+picks**, named for what each offers and not for who might use it — «Base» and
+«Estesa». Both lay the lens one way at a time — two palaces, one name and the
+rest, or what is kept — and the page opens in the basic one, which keeps one
 kind or one phase at a time and draws the five relations of the phases alone.
-The expert's keeps and combines as many as are pressed, kinds of name as well
-as phases, and adds 對宮 and 五合. The circle of the five phases (`FiveWheel`)
+The extended one keeps and combines as many as are pressed, kinds of name as
+well as phases, and adds 對宮 and 五合. The circle of the five phases (`FiveWheel`)
 stands over the controls in both, its sentence its accessible name and not a
 caption, and under it the mode and «whole board» (`LensMode`), at the head of
 the column. **Putting the lens away is always at hand**: that button, which

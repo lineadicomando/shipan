@@ -9,12 +9,11 @@
   it keeps leads in the reader's language, and a phase or a relation carries
   its hanzi and its reading beside the word.
 
-  **Two modes, and the reader picks** — in `LensMode`, held over this panel
-  with the circle, beside the button that puts the lens away. The expert's offers everything at
-  once and lets kinds, phases and relations be combined. The beginner's
-  lays the lens one way at a time — two palaces, one name, or one phase —
-  with one kind or one phase chosen at a time and the five relations of the
-  phases alone. The circle of the five phases is not here: it stands over
+  **Two modes, and the reader picks** — in `LensMode`, over this panel with
+  the circle, beside the button that puts the lens away. Both lay the lens
+  one way at a time. The basic mode keeps one kind or one phase at a time and
+  draws the five relations of the phases alone; the extended mode lets kinds,
+  phases and relations be combined, and adds 對宮 and 五合. The circle of the five phases is not here: it stands over
   this panel in both modes, where nothing pressed below it can move it. Which
   mode is in force travels in the fragment with the rest of the lens.
 
@@ -65,7 +64,7 @@
 
   /** A toggle in a list: added or taken out, or, one at a time, the only one. */
   function toggle<T>(list: readonly T[], value: T): T[] {
-    if (!state.expert) return list.includes(value) ? [] : [value];
+    if (!state.extended) return list.includes(value) ? [] : [value];
     return list.includes(value) ? list.filter((item) => item !== value) : [...list, value];
   }
 
@@ -85,10 +84,10 @@
 
   /**
    * The name a way goes by. Kept one phase at a time it is a phase; in the
-   * expert's mode the same way keeps kinds of name as well, and says so.
+   * extended mode the same way keeps kinds of name as well, and says so.
    */
   const wayKey = (one: Way): MessageKey =>
-    (one === 'phase' && state.expert ? 'lens.way.filter' : `lens.way.${one}`) as MessageKey;
+    (one === 'phase' && state.extended ? 'lens.way.filter' : `lens.way.${one}`) as MessageKey;
 
 
   const focused = $derived(Boolean(state.focus && focusName));
@@ -103,7 +102,7 @@
     const shown: ShownRelation[] = state.pair
       ? ['wosheng', 'woke', 'bihe', 'duigong', 'wuhe']
       : ['wosheng', 'shengwo', 'woke', 'kewo', 'bihe', 'duigong', 'wuhe'];
-    return state.expert ? shown : shown.filter((relation) => relation !== 'duigong' && relation !== 'wuhe');
+    return state.extended ? shown : shown.filter((relation) => relation !== 'duigong' && relation !== 'wuhe');
   });
   const flowWord = (relation: ShownRelation): boolean =>
     Boolean(state.pair) && (relation === 'wosheng' || relation === 'woke' || relation === 'bihe');
@@ -178,7 +177,7 @@
 
 <section class="lens" aria-label={t('lens.title')}>
   <div class="controls">
-    <!-- One way at a time, in both modes: the expert's offers more inside
+    <!-- One way at a time, in both modes: the extended mode offers more inside
          each way, and keeps and combines. -->
     <div class="row" role="group" aria-label={t('lens.choose')}>
       <span class="lead">{t('lens.choose')}</span>
@@ -198,7 +197,7 @@
       </div>
       {#if state.pair?.length === 2}
         <p class="hint">{t('lens.pair.pick')}</p>
-        {#if state.expert}{@render relations()}{/if}
+        {#if state.extended}{@render relations()}{/if}
       {/if}
     {:else if way === 'focus' && focused}
       <div class="row">
@@ -206,9 +205,9 @@
         <button type="button" onclick={() => onchange({ ...state, focus: undefined })}>{t('lens.release')}</button>
       </div>
       {@render kinds(t('lens.toward'), state.toward)}
-      {#if state.expert}{@render relations()}{/if}
+      {#if state.extended}{@render relations()}{/if}
     {:else if way === 'phase'}
-      {#if state.expert}
+      {#if state.extended}
         <div class="row" role="group" aria-label={t('lens.layers')}>
           <span class="lead">{t('lens.layers')}</span>
           {#each BOARD_LAYERS as layer (layer)}

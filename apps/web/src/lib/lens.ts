@@ -70,7 +70,7 @@ export interface LensState {
    * It is in the fragment with the rest and kept nowhere else: a reader who
    * never switches leaves nothing behind.
    */
-  expert: boolean;
+  extended: boolean;
 }
 
 /** The three ways a lens is laid when it is laid one at a time. */
@@ -98,12 +98,12 @@ export function oneAtATime(state: LensState): LensState {
     chosen: state.chosen?.length ? state.chosen : undefined,
     shengke: true,
     links: [],
-    expert: false,
+    extended: false,
   };
 }
 
 /** No lens: the whole board, alike. */
-export const WHOLE: LensState = { layers: [], phases: [], toward: [], shengke: true, links: [], expert: false };
+export const WHOLE: LensState = { layers: [], phases: [], toward: [], shengke: true, links: [], extended: false };
 
 /** Where a thing is on the drawing: the seat and the layer, as the marks say. */
 export type SpotKey = `${number}:${string}`;
@@ -384,7 +384,7 @@ export function pressedSeat(state: LensState, seat: number): LensState {
  */
 export function writeLens(state: LensState): string {
   const parts: string[] = [];
-  if (state.expert) parts.push('expert=1');
+  if (state.extended) parts.push('extended=1');
   if (state.layers.length > 0) parts.push(`layers=${state.layers.join(',')}`);
   if (state.phases.length > 0) parts.push(`phases=${state.phases.join(',')}`);
   if (state.focus) {
@@ -414,7 +414,7 @@ export function readLens(fragment: string): LensState {
     toward: list('toward', PHASE_LAYERS),
     shengke: fields.get('shengke') !== '0',
     links: list('links', LINK_IDS),
-    expert: fields.get('expert') === '1',
+    extended: fields.get('extended') === '1',
   };
   const [layer, id] = (fields.get('focus') ?? '').split('.');
   if (layer && id && (PHASE_LAYERS as readonly string[]).includes(layer) && /^[a-z0-9]+$/.test(id)) {
