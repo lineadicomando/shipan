@@ -448,6 +448,7 @@ export const it: Record<MessageKey, string> = {
   'lens.empty': 'Scegli con quali nomi metterlo in relazione.',
   'lens.at': '{layer}, {where}',
   'lens.where.palace': 'palazzo {palace}',
+  'lens.where.seat': 'seggio {seat}',
   'lens.where.transmission.chu': 'prima trasmissione',
   'lens.where.transmission.zhong': 'trasmissione mediana',
   'lens.where.transmission.mo': 'ultima trasmissione',

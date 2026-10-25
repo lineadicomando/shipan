@@ -18,9 +18,10 @@ import { ELEMENT_HANZI, ELEMENT_PINYIN, type Element } from './types.js';
  * - **its seats**, named in its own terms and in the board's order — a Qi Men
  *   palace by its Luoshu number, a seat of a ring by a branch identifier —
  *   the same names the drawing marks its seats with (`data-seat`), and among
- *   them the ones a pair may be laid on. A seat's name is unique on its board
- *   whatever kind of seat it is; a board whose kinds of seat shared a name
- *   would have to tell them apart here first;
+ *   them the ones a pair may be laid on. A seat and a layer together name one
+ *   place: two kinds of seat may share a name — a corner of the 太乙 rim and
+ *   a palace — where their layers do not meet, and a board where they did
+ *   would have to tell the kinds apart here first;
  * - **its layers**, as the drawing marks them, and among them the ones whose
  *   things have a phase;
  * - **every thing with a phase**, by seat, layer and identifier;

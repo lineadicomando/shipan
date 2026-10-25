@@ -3684,6 +3684,7 @@ independent sources naming the same thing the same way**.
 | a lens on 六壬: 生剋 | the same five relations, between any two names with a phase: the two plates, the lessons, the transmissions | the 賊剋 the board is drawn by: on every 賊剋 board the 初傳 stands over a lesson the lens names in control |
 | a lens on 七政四餘: 生剋 | the same five relations, between any two of the nine bodies with a phase | 《御定五星精義》's 論恩難仇用: twenty cells, five planets by four relations, each matched |
 | a lens on 紫微斗數: 生剋 | the same five relations, between any two stars with one phase | no list; the twenty-five cells against the two cycles |
+| a lens on 太乙: 生剋 | the same five relations, between any two of the sixteen gods of the rim | 卷六's sentence naming thirteen gods by how each stands to 高叢 |
 
 **The three a lens shows are relations and never readings of them.** A reader
 who picks a thing on a board is shown how everything else stands to it
@@ -3736,6 +3737,17 @@ against what 「時照三方四正，和合之宮」 holds, and the 全書's 卷
 體用，定三合之源流」; both are located in transcriptions and neither is read on
 a plate, and the Ming 南陽堂 woodblock held here is where the 全書's is to be
 read. A lens draws either after its row.
+
+**On 太乙 the lens relates the sixteen gods, and 卷六 reads them so itself.**
+The phase of each is its seat's (the row of the sixteen above), and the
+sentence that states thirteen of them — 「假今髙叢木，以吕申、大炅同類為旺；以大
+義、地主為相；武徳、太蔟為死；和徳、大武、太陽、天道為囚；大神、大威為休」 —
+names each god by how its phase stands to 高叢's, which is the five relations
+read from one god: the test `taiyiLens` is held to. 太乙 and the four
+generals are roles, and no phase for a role is registered, so they are kept
+by their kind. No pair is laid on this board: each seat of the rim holds one
+god, and the palaces, numbered one seat off the 洛書, hold nothing a lens
+relates.
 
 **The list that tests 門迫 is two cells shorter than the rule.** 《統宗》卷一
 迫 — ctext, and 故宮珍本叢刊 第426冊 page 13 — prints eight lines — 開門臨三四宮（金克木）· 休門臨九宮 · 生門臨一宮 ·

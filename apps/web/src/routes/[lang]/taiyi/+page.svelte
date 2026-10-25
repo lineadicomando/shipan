@@ -2,7 +2,12 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { sayLayer } from '$lib/board';
+  import { glyph } from '$lib/glyph';
+  import { HeldLens } from '$lib/held-lens.svelte';
+  import type { TaiyiBoard, TaiyiLens } from '@shipan/core';
+  import type { MessageKey } from '@shipan/i18n';
+  import LensReading from '$lib/components/LensReading.svelte';
+  import LensSide from '$lib/components/LensSide.svelte';
   import { sayFailure } from '$lib/moment';
   import type { Unit } from '$lib/step';
   import InlineBoard from '$lib/components/InlineBoard.svelte';
@@ -89,6 +94,41 @@
   });
 
   /**
+   * The lens: what the reader asked to see on the board, if anything. The
+   * state, its fragment and what a press does are `HeldLens`'s; what is this
+   * section's is how a god and its seat are said. The words are the page's,
+   * as the key's are (`lib/key.ts`): the endpoint is told no language.
+   */
+  const lens = $derived<TaiyiLens | undefined>(data.result?.lens);
+
+  /** The god on a seat of the rim, where one stands there. */
+  const godAt = (seat: string) =>
+    (board as TaiyiBoard | undefined)?.gods.find((god) =>
+      god.seat.kind === 'branch' ? god.seat.branch.id === seat : god.seat.palace.id === seat,
+    );
+
+  /** A name on the board in words: its gloss, its hanzi and its reading. */
+  function nameAt(seat: string, layer: string): string | undefined {
+    if (layer !== 'god') return undefined;
+    const god = godAt(seat);
+    return god && `${t(`label.taiyishen.${god.id}` as MessageKey)} ${glyph(god)}`;
+  }
+
+  /** A seat of the rim in words: its branch, or its corner. */
+  function seatName(seat: string): string {
+    const god = godAt(seat);
+    if (!god) return seat;
+    return god.seat.kind === 'branch'
+      ? `${t(`label.branch.${god.seat.branch.id}` as MessageKey)} ${glyph(god.seat.branch)}`
+      : `${t(`label.palace.${god.seat.palace.id}` as MessageKey)} ${glyph(god.seat.palace)}`;
+  }
+
+  /** Where a god stands, after its layer: its seat of the rim. */
+  const seatPlace = (seat: string): string => t('lens.where.seat', { seat: seatName(seat) });
+
+  const held = new HeldLens({ lens: () => lens, t: () => t, nameAt, seatName, seatPlace });
+
+  /**
    * Asking is navigating, and the answer arrives as the page's own data.
    *
    * `replaceState`, as on the chart: a year gets stepped a dozen times in a
@@ -98,7 +138,10 @@
   async function show(year: number | ''): Promise<void> {
     busy = true;
     try {
-      await goto(`${page.url.pathname}${year === '' ? '' : `?year=${year}`}`, {
+      // The lens goes with it: it is in the fragment, and a step of the year
+      // is a new board looked at the same way.
+      const fragment = held.fragment;
+      await goto(`${page.url.pathname}${year === '' ? '' : `?year=${year}`}${fragment ? `#${fragment}` : ''}`, {
         replaceState: true,
         noScroll: true,
         keepFocus: true,
@@ -135,6 +178,8 @@
     void show('');
   }
 </script>
+
+<svelte:window onclick={held.pressedOutside} onkeydown={held.escaped} />
 
 <PageHead {t} />
 
@@ -196,7 +241,9 @@
             src={plate}
             width={900}
             height={1360}
-            tip={(spot) => sayLayer(spot, t)}
+            tip={held.tip}
+            onpick={held.pick}
+            lens={held.view}
             ondrawn={(drawing) => (aspect = drawing.height / drawing.width)}
           />
         </div>
@@ -204,9 +251,14 @@
         <LayerLegend {t} board="taiyi" />
       </div>
       <div class="side">
+        <!-- The circle, the mode and the lens, then the key to the names. -->
+        <LensSide {t} {held} />
         <NameKey {t} groups={data.result ? taiyiKeyOf(data.result.taiyi, t) : []} />
       </div>
     </div>
+
+    <!-- What the lens draws, said in words, at the page's measure. -->
+    <LensReading {t} {held} {seatName} />
 
     <div>
       <TaiyiReading {board} {t} />

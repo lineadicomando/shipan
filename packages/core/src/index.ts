@@ -195,6 +195,14 @@ export {
   type ZiweiLayer,
   type ZiweiLens,
 } from './ziwei/lens.js';
+export {
+  TAIYI_LAYERS,
+  TAIYI_LENS_LAYERS,
+  rimSeatOf,
+  taiyiLens,
+  type TaiyiLayer,
+  type TaiyiLens,
+} from './taiyi-lens.js';
 
 export {
   CI,

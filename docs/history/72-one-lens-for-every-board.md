@@ -80,15 +80,28 @@ links; the passages are located in transcriptions only, so they wait for the
 plate. The press was the page's already — a seat pressed went to its row —
 and is shared: the row's until the reader takes up the lens.
 
+## 太乙
+
+The sixth step: `taiyiLens`, answered by `/api/taiyi`. The sixteen gods had
+their phases registered, and 卷六 reads them by the five relations in the
+sentence that states them, which became the test. The roadmap had worried
+about a pair's order under a numbering one seat off the 洛書; the question
+dissolved, since nothing in a palace has a phase and each seat of the rim
+holds one god, so this board lays no pair and the column offers two ways.
+The rim's four corners share their names with four palaces, which the
+descriptor allows because their layers do not meet. The lens has no
+language in it, so it rides in the public answer; the page says the names,
+as it already builds the key.
+
 ## What it moved
 
-The first step moved nothing a reader sees; the four after it gave the board
-of a day, 六壬, 七政四餘 and 紫微斗數 a lens they had not had. The answer of `/api/qimen` moved with the first — its `lens`
+The first step moved nothing a reader sees; the five after it gave the board
+of a day, 六壬, 七政四餘, 紫微斗數 and 太乙 a lens they had not had. The answer of `/api/qimen` moved with the first — its `lens`
 carries `seats`, `layers`, `phased`, `linkIds` and `links` where it carried
 `facing` and `wuhe`, and a seat is a string — so it is 0.34.0 by the first
 of the three questions. The roadmap had said this step would move no version,
 reasoning from the page and not from the answer.
 
-The lenses of the day, 六壬, 七政四餘 and 紫微斗數 ride in the same version: 0.34.0 has not left the branch,
+The lenses of the day, 六壬, 七政四餘, 紫微斗數 and 太乙 ride in the same version: 0.34.0 has not left the branch,
 and a version is about what an answer has stopped being since the last one
-shipped. Their six rows are new; the rows phase 71 registered do not move.
+shipped. Their seven rows are new; the rows phase 71 registered do not move.

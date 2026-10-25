@@ -215,7 +215,8 @@ on 2026-10-18. What `main` carries since 2026-10-15 is of eleven days:
   Then item 3: 六壬 (`liurenLens`), its generals kept by kind. Then item 4:
   七政四餘 (`qizhengLens`), the bodies alone, the remainders' phases read
   from the 五星精義. Then item 5: 紫微斗數 (`ziweiLens`), the stars with one
-  phase, the press shared with the row. Phase 72. The `lens` that `routes/api/qimen/+server.ts` answers changed shape,
+  phase, the press shared with the row. Then item 6: 太乙 (`taiyiLens`), the
+  sixteen gods, no pair. Phase 72. The `lens` that `routes/api/qimen/+server.ts` answers changed shape,
   which is what moved the version.
 
 `main` is pushed to `origin/main` as of 2026-10-18; the commits of
@@ -331,13 +332,18 @@ why). The code to copy from is the 奇門 hour board:
    transcriptions; the 全書's is to be read on the Ming 南陽堂 woodblock held
    in `texts/ziwei/`, then registered, then drawn as links. The 四化 flights
    wait behind them.
-6. **太乙.** The sixteen gods carry `element` in the drawing's type; whether
-   each is registered is to be checked (`.claude/skills/shushu/disciplines/taiyi.md`, «the
-   elements of 文昌 and 始擊 in the 金鏡 against the register's»). The nine
-   palaces are numbered one seat off the 洛書, and every surface says so: a
-   pair's order must follow 太乙's numbering and the page must keep saying it.
-   Its endpoint is told no language, and stays so: the key is built in the
-   page (`lib/key.ts`) and a lens's names must be too.
+6. **Done on 2026-10-25** (phase 72): 太乙 has its lens, `taiyiLens`, the
+   five relations between the sixteen gods, each with its seat's phase
+   (rung 4, 卷六), tested against 卷六's own sentence reading thirteen of
+   them from 高叢. 太乙 and the generals are roles with no phase and are kept
+   by kind. **No pair on this board** (`pairSeats` empty, and the page offers
+   two ways and not three): each seat of the rim holds one god, and the
+   palaces hold nothing a lens relates, so the question of a pair's order
+   under 太乙's numbering does not arise. The lens is in no language and
+   about nobody, so it travels in the endpoint's public answer; its words
+   are the page's. The «elements of 文昌 and 始擊 in the 金鏡» lead stands:
+   文昌 and 始擊 are gods of the rim and take their seat's phase here, and the
+   金鏡's statement of theirs is still to be put against the register's.
 7. **The month board**, when there is one: designed with its lens from the
    start, by the descriptor of item 1.
 8. **八字**, last and only if the user wants it: the four pillars are a grid in

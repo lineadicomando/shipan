@@ -466,10 +466,12 @@ export const en = {
   'lens.key': 'How the relations are drawn',
   'lens.heading': 'How the rest of the board relates to {thing}',
   'lens.empty': 'Choose which names to relate it to.',
-  // Where a name stands, after its layer: a palace on either board, and on
-  // 六壬 a lesson or a transmission as well, which are rows and not palaces.
+  // Where a name stands, after its layer: a palace on most boards, on 六壬 a
+  // lesson or a transmission as well, which are rows and not palaces, and on
+  // 太乙 a seat of the rim.
   'lens.at': '{layer}, {where}',
   'lens.where.palace': 'palace {palace}',
+  'lens.where.seat': 'seat {seat}',
   'lens.where.transmission.chu': 'first transmission',
   'lens.where.transmission.zhong': 'middle transmission',
   'lens.where.transmission.mo': 'last transmission',

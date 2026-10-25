@@ -87,6 +87,13 @@
     (one === 'phase' && state.extended ? 'lens.way.filter' : `lens.way.${one}`) as MessageKey;
 
 
+  /**
+   * The ways this board offers: all three, bar the pair on a board whose
+   * seats hold one name each, where a pair would say again what a name
+   * pressed says (`pairSeats` empty, as on 太乙).
+   */
+  const ways = $derived(WAYS.filter((one) => one !== 'pair' || lens.pairSeats.length > 0));
+
   const focused = $derived(Boolean(state.focus && focusName));
   const paired = $derived(Boolean(state.pair && pairSaid));
   const relating = $derived(focused || state.pair?.length === 2);
@@ -180,7 +187,7 @@
          each way, and keeps and combines. -->
     <div class="row" role="group" aria-label={t('lens.choose')}>
       <span class="lead">{t('lens.choose')}</span>
-      {#each WAYS as one (one)}
+      {#each ways as one (one)}
         <button type="button" aria-pressed={way === one} onclick={() => choose(one)}>
           {t(wayKey(one))}
         </button>
