@@ -1,4 +1,5 @@
 import { liurenBoard } from '@shipan/core';
+import { liurenReadings } from '@shipan/plate';
 import { json } from '@sveltejs/kit';
 import { momentIsFixed, readLiurenOptions, readMoment } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
@@ -36,6 +37,9 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
       liuren: board,
       place: label ?? null,
       laidBy: laidBy('liuren', board.options),
+      // How the names on the board are said, for the page that sets the band
+      // beside a board drawn without one.
+      readings: liurenReadings(board),
     });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;

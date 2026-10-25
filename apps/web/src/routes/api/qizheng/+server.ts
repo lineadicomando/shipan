@@ -1,8 +1,11 @@
-import { qizhengBoard } from '@shipan/core';
+import { qizhengBoard, qizhengLabels } from '@shipan/core';
+import { createTranslator } from '@shipan/i18n';
+import { qizhengKey } from '@shipan/plate';
 import { json } from '@sveltejs/kit';
 import {
   ephemerisContext,
   momentIsFixed,
+  readLocale,
   readMoment,
   readQizhengOptions,
 } from '$lib/server/params';
@@ -28,7 +31,7 @@ import { named } from '$lib/parameters';
  * somebody's date, time and place of birth — which this board, being a 命
  * art, is more likely than the others to have been given.
  */
-export const GET: RequestHandler = ({ url, setHeaders }) => {
+export const GET: RequestHandler = ({ url, request, setHeaders }) => {
   try {
     const { moment, label } = readMoment(url.searchParams);
 
@@ -42,12 +45,17 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
 
     setHeaders({
       'cache-control': momentIsFixed(url.searchParams) ? 'private, max-age=86400' : 'no-store',
+      vary: 'Accept-Language',
     });
+    const t = createTranslator(readLocale(url.searchParams, request.headers.get('accept-language')));
     return json({
       moment,
       qizheng: board,
       place: label ?? null,
       laidBy: laidBy('qizheng', board.options),
+      // The key to the numerals on the board, in the reader's language, for
+      // the page that sets it beside a board drawn without its band.
+      key: qizhengKey(board, qizhengLabels(t, board)),
     });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;

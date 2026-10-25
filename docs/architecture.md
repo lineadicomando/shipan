@@ -130,13 +130,21 @@ there carrying the setup.
 
 The drawing has one of its own and everything read off it has the page's.
 
-`--board` in `app.css` is the first: a picture as wide as the column allows,
-bounded by the window's own height, less a tenth so it does not touch the
-walls. Five sections draw a board at it and the sixth sets the four pillars out
-as a grid at the same width, so a reader who lays one board and then another
-watches nothing resize under an answer that did not change. The caption under a
-drawing takes that measure too — `wide` in `ChartReading` — because the plate of
-four pillars inside it is derived from the drawing's own geometry.
+`--board` in `app.css` is the first, and it is **a height before it is a
+width**: the window, less the bar the board is stepped from (`--above`),
+divided by how much taller than wide the drawing is (`--aspect`). A board is
+read by stepping it, and the steps are in the bar above it, so a board taller
+than the window under that bar is read by scrolling up to step and down to
+look, every time. The nine palaces are a square; the rings of 六壬, 太乙 and
+七政四餘 and the grid of 紫微 are taller and come out narrower, so the boards
+of the six sections are one height and not one width. The proportion is read
+off each drawing when it arrives, since what a board holds under its ring
+moves its height, and each section declares it on its wrapper, which carries
+`board-measure` so the measure is worked out there. The column bounds it too,
+and 30rem is its floor, under which the names in a palace stop being legible:
+a board that cannot fit above that floor is scrolled. The caption under a
+drawing takes the same measure — `wide` in `ChartReading` — because the plate
+of four pillars inside it is derived from the drawing's own geometry.
 
 `.reading`, beside it, is the second: no measure at all. The caption, the
 tables, the notes and the line naming the schools run from one wall of the
@@ -162,6 +170,59 @@ Prose is not what any of this sets. What a reading holds is a caption, a table
 and a note — lines read at a glance, and columns. The one block on a section
 page read through is the introduction over the form, and it keeps a measure by
 being in two columns.
+
+## The bench
+
+**A board is bounded by the window's height, and never by its width.** On any
+screen that lies on its side the square runs out of height first — at
+1366×768, 1920×1080 and 2560×1440 alike — so the width beside it is free, and
+a page that stacks its controls over the board spends the one dimension it is
+short of: the board moves down for every line the controls grow by, and the
+two cannot be seen at once.
+
+So every section that draws a board lays it on a bench — 奇門, 六壬, 太乙,
+七政四餘 and 紫微斗數; the four pillars are a grid in the page's type and the
+consultation shows a board only as the check on what it hands over. On the
+left, the whole board at `--board`. On the right, a column at `--side`
+holding what is used on the board in view: on 奇門 the circle of the five
+phases at the head of the column in both modes, where nothing that grows
+under it can move it, then the lens and the key to its arrows; on the
+other four the key to the names on the board. The steps of the moment stay in
+the bar above, with the date: they choose which board is laid, where the
+column holds how it is looked at, and the two are kept apart. The column
+stands beside the board and scrolls with the page like the board itself —
+it is the board's companion, and a column that followed the reader down the
+page would be one more thing moving — and beside the board, nothing pressed
+in it can move the board.
+It is paid for out of the board's width and not out of the margins: the shell
+stays 72rem, and the board is the narrower for it. Below 64rem, or on a
+window standing upright, the column goes under the board, for the same
+reason it is not over it. What is read off the board — the relations in
+words, the tables, the schools — stays under the bench at the page's
+measure. The rules are `.bench` and `.side` in `app.css`, once.
+
+**The key to a board's names is set beside it, not under it.** 太乙,
+七政四餘 and 紫微斗數 put a numeral beside every name they have no room to
+gloss, and the band under the figure said what each numeral was; 六壬's band
+says how its names are said. Under the figure the band made each drawing
+nearly twice as tall as it was wide, which no window holds. So a section asks
+for its board `bare` — without the band and without the lines naming the
+schools, which the page sets in type under the bench — and the drawing keeps
+its numerals (`band: false`). The key beside it is read off the same
+numbering, by the drawing's own `taiyiKey`, `qizhengKey`, `ziweiKey` and
+`liurenReadings`, so the two cannot disagree: three endpoints hand it over
+beside the board, told the reader's language as they already were, and the
+太乙 page works its own out (`lib/key.ts`), because that endpoint is told no
+language and its year is cached publicly for every reader at once. A drawing
+fetched on its own — the PNG, what the MCP server hands over, a picture saved
+from the page's address without `bare` — keeps its band: it travels without a
+page to key it.
+
+Paper takes the bench as a block: the board, then what the column held. The
+lens stays off it; the key to the names prints under the board, since the
+sheet carries the board drawn the same way. The key to the marks of strength
+is under the 奇門 board on screen as well as on paper, with the marks it
+reads.
 
 ## Paper is the fourth appearance
 
@@ -217,6 +278,55 @@ alone. The keys are scoped by board because one word names different things on
 two boards. The cursor is the only announcement it gets. A sheet has no
 pointer, so in print the same words are set once instead, as an empty seat
 under the board (`LayerLegend`).
+
+The second is **a lens**, on the 奇門 section: the reader keeps a kind of
+name or a phase and the rest of each seat recedes, presses a name and is
+shown how the rest stands to it, or presses the ground of two palaces and is
+shown how they stand to each other — the five relations of the phases, 對宮
+and 五合 (`lib/lens.ts`, `LensBar`, `LensLinks`, `LensRelations`,
+`LensPair`). **A pair is held in Luoshu order and drawn as a flow**, from
+what generates or controls to what is generated or controlled, so every
+relation is said both ways round and neither palace is made the asker's; and
+it compares only the names the reader presses inside the two palaces once
+both are laid, every one in one against every one in the other, and nothing
+until a name is pressed in each.
+**The relations are arrows, and the two cycles are coloured** —
+`--lens-sheng` and `--lens-ke` in `app.css`, a violet and a magenta, hues the
+phases do not use, since colour on a board is the phase's. Each relation
+keeps its stroke as well, so colour is never the only thing telling two
+apart. **An arrow is straight where a straight line is clear and curved where
+it is not** — where it would cross a name another arrow points at, or lie on
+one already laid (`layArrows` in `lib/arrows.ts`): the gentlest clear bend is
+kept, the shortest arrows are laid first, and arrows leaving one name may
+meet at it, since a fan reads as a fan. **Two modes, and the reader
+picks.** Both lay the lens one way at a time — two palaces, one name and the
+rest, or what is kept — and the page opens in the beginner's, which keeps one
+kind or one phase at a time and draws the five relations of the phases alone.
+The expert's keeps and combines as many as are pressed, kinds of name as well
+as phases, and adds 對宮 and 五合. The circle of the five phases (`FiveWheel`)
+stands over the controls in both, its sentence its accessible name and not a
+caption, and under it the mode and «whole board» (`LensMode`), at the head of
+the column. **Putting the lens away is always at hand**: that button, which
+stays in its place and is disabled when there is nothing to put away; a press
+on the board outside its nine palaces; a press on the page's own ground; and
+Escape. A press in the bar the moment is stepped from, in the column, in what
+is read off the board, or on anything that does something of its own keeps
+the lens — a lens is kept across a step of the hour, and a press that selects
+text is not a request for the whole board.
+The mode is in the fragment with the rest of the lens and in no storage, so
+the privacy note's inventory of what the browser keeps does not move. The rule it
+carries out is `docs/refusals.md` § "Where to look first". Three things
+follow from where it runs. **The relations are the engine's**: `/api/qimen`
+answers with `lens` beside the chart — `qimenLens`, every thing with a phase
+and the tables a relation is looked up in — because the client imports only
+types from `core`. **The lens is drawn in the browser and never by `plate`**:
+a drawing is made on the server, and which name somebody pressed is not
+something the server is told, so the receding is an attribute set on the
+marks in the shadow root and the relations are a layer of the page's laid
+over them, in the page's ink. **It lives in the fragment**, `#focus=…`, which
+no request carries; the query string stays what the board is a function of.
+Paper gets the whole board, and the relations drawn are said in words under
+it for a reader who does not see them.
 
 ## Found by a search, and what may never be found
 

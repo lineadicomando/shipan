@@ -453,3 +453,12 @@ export const ELEMENT_HANZI: Record<Element, string> = {
   jin: '金',
   shui: '水',
 };
+
+/** The five phases said aloud, beside `ELEMENT_HANZI`. */
+export const ELEMENT_PINYIN: Record<Element, string> = {
+  mu: 'mù',
+  huo: 'huǒ',
+  tu: 'tǔ',
+  jin: 'jīn',
+  shui: 'shuǐ',
+};

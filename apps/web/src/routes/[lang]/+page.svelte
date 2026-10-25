@@ -250,6 +250,19 @@
   let castInstrument = $state<Instrument | undefined>();
   /** The instrument the answer on screen belongs to, or the field before any. */
   const shown = $derived(castInstrument ?? instrument);
+
+  /**
+   * How much taller than wide the board on screen is, read off the drawing
+   * when it arrives — the figure in `instruments.ts` is the picture's
+   * placeholder, and what a board holds moves its height. `--board` is worked
+   * out from it. Forgotten when the instrument changes, until the next
+   * drawing says.
+   */
+  let drawnAspect = $state<number>();
+  $effect(() => {
+    void shown;
+    drawnAspect = undefined;
+  });
   /**
    * The moment that was cast, held apart from the board.
    *
@@ -1130,7 +1143,12 @@
       other one, which is why the question heads the section: a sheet read by
       somebody who was not here when it was typed begins with what was asked.
     -->
-    <section class="result" class:stale={busy || spent} aria-busy={busy}>
+    <section
+      class="result board-measure"
+      class:stale={busy || spent}
+      aria-busy={busy}
+      style:--aspect={drawnAspect ?? (shown.plate ? shown.plate.height / shown.plate.width : 1)}
+    >
       <header class="posed">
         <!-- Empty under a board of 命, where nothing was asked. The line below
              still says which instant it was laid for, which on paper is the
@@ -1172,6 +1190,7 @@
               width={shown.plate.width}
               height={shown.plate.height}
               tip={(spot) => sayLayer(spot, t)}
+              ondrawn={(drawing) => (drawnAspect = drawing.height / drawing.width)}
             />
           </div>
           <!-- The same board in the light scheme, for paper and nothing else.

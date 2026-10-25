@@ -1,8 +1,33 @@
 <script lang="ts">
-  import { goto, invalidateAll } from '$app/navigation';
+  import { goto, invalidateAll, replaceState } from '$app/navigation';
+  import { untrack } from 'svelte';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { sayLayer } from '$lib/board';
+  import { sayLayer, type BoardSpot } from '$lib/board';
+  import { glyph } from '$lib/glyph';
+  import {
+    PHASE_LAYERS,
+    WHOLE,
+    keyOf,
+    pressed,
+    pressedSeat,
+    pressedInPair,
+    inPair,
+    readLens,
+    viewOf,
+    wayOf,
+    activePhases,
+    writeLens,
+    type Way,
+    type LensState,
+  } from '$lib/lens';
+  import type { LensLayer, PalaceContents, QimenLens } from '@shipan/core';
+  import type { MessageKey } from '@shipan/i18n';
+  import LensBar from '$lib/components/LensBar.svelte';
+  import LensRelations from '$lib/components/LensRelations.svelte';
+  import LensPair from '$lib/components/LensPair.svelte';
+  import FiveWheel from '$lib/components/FiveWheel.svelte';
+  import LensMode from '$lib/components/LensMode.svelte';
   import { carried } from '$lib/parameters';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
   import { step, type Unit, type Wall } from '$lib/step';
@@ -139,6 +164,176 @@
     },
   );
 
+  /**
+   * The lens: what the reader asked to see on the board, if anything.
+   *
+   * Nothing is on when the page opens. It is kept across a step of the hour —
+   * a focus is a thing and follows it to wherever the turn carries it — and
+   * written into the address's fragment, which no request carries, so a
+   * link can be sent with it and the server never learns of it.
+   */
+  let lensState = $state<LensState>(WHOLE);
+  /** The way a beginner chose to lay the lens, where one was chosen. */
+  let way = $state<Way | undefined>();
+  /**
+   * The fragment and the state follow each other. An address arriving with a
+   * fragment of its own — a link pasted over this page, a step back — is read;
+   * a change made here is written. Each side compares before it moves, and the
+   * reading side does not watch the state, so neither undoes the other.
+   */
+  let lensRead = $state(false);
+  $effect(() => {
+    const hash = page.url.hash.replace(/^#/, '');
+    if (hash !== untrack(() => writeLens(lensState))) {
+      lensState = readLens(hash);
+      way = wayOf(lensState) ?? untrack(() => way);
+    }
+    lensRead = true;
+  });
+  $effect(() => {
+    const fragment = writeLens(lensState);
+    if (!lensRead || fragment === untrack(() => page.url.hash.replace(/^#/, ''))) return;
+    replaceState(`${page.url.pathname}${page.url.search}${fragment ? `#${fragment}` : ''}`, page.state);
+  });
+
+  const lens = $derived<QimenLens | undefined>(ofTheDay ? undefined : data.lens);
+  const view = $derived(viewOf(lens, lensState));
+
+  /** The contents of a palace by its Luoshu number. */
+  const at = (seat: number): PalaceContents | undefined =>
+    chart && !ofTheDay ? (chart as { palaces: PalaceContents[] }).palaces.find((cell) => cell.palace.number === seat) : undefined;
+
+  const PREFIX: Record<string, string> = {
+    heaven: 'stem',
+    earth: 'stem',
+    palace: 'palace',
+    star: 'star',
+    gate: 'gate',
+    spirit: 'spirit',
+  };
+
+  /** A name on the board in words: its gloss, its hanzi and its reading. */
+  function nameAt(seat: number, layer: string): string | undefined {
+    const cell = at(seat) as Record<string, { id: string; hanzi: string; pinyin?: string } | undefined> | undefined;
+    const thing = cell?.[layer];
+    if (!thing) return undefined;
+    return `${t(`label.${PREFIX[layer]}.${thing.id}` as MessageKey)} ${glyph(thing)}`;
+  }
+
+  const focusName = $derived.by(() => {
+    if (!view.focus) return undefined;
+    const [seat, layer] = view.focus.split(':') as [string, string];
+    return nameAt(Number(seat), layer);
+  });
+
+  /**
+   * Pressing a name with a phase starts from it, and pressing it again lets
+   * go. Pressing the ground of a palace, where no name is, lays it in a pair.
+   */
+  function pick(spot: BoardSpot | undefined): void {
+    if (!lens) return;
+    // Outside the nine palaces — on the frame, the compass, the branches —
+    // a press puts the lens away.
+    if (!spot?.unit) {
+      putAway();
+      return;
+    }
+    // Inside the two palaces of a pair, a name is pressed to be compared and
+    // the ground lets the palace go — in either mode.
+    if (spot.seat && inPair(lensState, Number(spot.seat))) {
+      lensState = spot.layer
+        ? pressedInPair(lensState, Number(spot.seat), spot.layer)
+        : pressedSeat(lensState, Number(spot.seat));
+      return;
+    }
+    // Laid one way at a time, a press does what that way does: in a pair, a
+    // press anywhere in a palace is the palace; with a phase, nothing.
+    const guided = !lensState.expert ? way : undefined;
+    if (guided === 'phase') return;
+    if (guided === 'pair' || (!spot.layer && spot.unit === 'palace')) {
+      if (guided === 'focus' || !spot.seat) return;
+      lensState = pressedSeat(lensState, Number(spot.seat));
+      way = 'pair';
+      return;
+    }
+    if (!spot.layer || !spot.id) return;
+    if (!(PHASE_LAYERS as readonly string[]).includes(spot.layer)) return;
+    lensState = pressed(lensState, { layer: spot.layer as LensLayer, id: spot.id });
+    way = 'focus';
+  }
+
+  /** Whether a lens is laid at all, so there is something to put away. */
+  const laid = $derived(
+    Boolean(lensState.focus || lensState.pair || lensState.layers.length > 0 || lensState.phases.length > 0),
+  );
+
+  /** The whole board again, in the mode the reader was in. */
+  function putAway(): void {
+    if (!laid) return;
+    lensState = { ...WHOLE, expert: lensState.expert };
+    way = undefined;
+  }
+
+  /**
+   * A press on the page's own ground puts the lens away too — and only there.
+   * Not in the bar the moment is stepped from, since a lens is kept across a
+   * step; not in the column of controls, nor in what is read off the board,
+   * where a press selects text; not on anything that does something of its
+   * own. The board answers for itself through `pick`.
+   */
+  const KEEP = '.screen, .bench > .side, .panel, .reading, header, footer, a, button, input, select, textarea, label, summary, [role="dialog"]';
+  function pressedOutside(event: MouseEvent): void {
+    if (!laid) return;
+    const kept = event
+      .composedPath()
+      .some((node) => node instanceof Element && node.matches(KEEP));
+    if (!kept) putAway();
+  }
+
+  /** Escape puts the lens away, unless it is being typed into something. */
+  function escaped(event: KeyboardEvent): void {
+    if (event.key !== 'Escape' || !laid) return;
+    const target = event.target;
+    if (target instanceof Element && target.closest('input, select, textarea, [role="dialog"]')) return;
+    putAway();
+  }
+
+
+  const pairSaid = $derived.by(() => {
+    const seats = view.seats;
+    const said = (seat: number) => `${seat} ${nameAt(seat, 'palace') ?? ''}`;
+    if (seats.length === 1) return t('lens.pairOne', { a: said(seats[0] as number) });
+    if (seats.length === 2) return t('lens.pair', { a: said(seats[0] as number), b: said(seats[1] as number) });
+    return undefined;
+  });
+
+  /** Over a name a relation is drawn to, the relation; over any other, its layer. */
+  function tipOf(spot: BoardSpot): string | undefined {
+    if (view.seats.length === 2 && spot.seat && spot.layer) {
+      const key = keyOf(Number(spot.seat), spot.layer);
+      const name = (at: string) => {
+        const [seat, layer] = at.split(':') as [string, string];
+        return nameAt(Number(seat), layer) ?? '';
+      };
+      const said = view.links
+        .filter((link) => link.to === key || link.from === key)
+        .map((link) =>
+          link.relation === 'wosheng' || link.relation === 'woke' || link.relation === 'bihe'
+            ? t(`lens.flow.${link.relation}.said` as MessageKey, { from: name(link.from), to: name(link.to) })
+            : `${t(`label.relation.${link.relation}` as MessageKey)} ${glyph(lens!.names.relations[link.relation])}`,
+        );
+      if (said.length > 0) return said.join(' · ');
+    }
+    if (view.focus && focusName && spot.seat && spot.layer) {
+      const key = keyOf(Number(spot.seat), spot.layer);
+      const said = view.links
+        .filter((link) => link.to === key)
+        .map((link) => t(`lens.relation.${link.relation}` as MessageKey, { thing: focusName }));
+      if (said.length > 0) return said.join(' · ');
+    }
+    return sayLayer(spot, t);
+  }
+
   let busy = $state(false);
   let panel: FormPanel | undefined = $state();
 
@@ -156,8 +351,11 @@
     try {
       // Asking the present for the present again is not a navigation, and
       // SvelteKit would rightly do nothing with it. It is still a new chart.
+      // The lens goes with it: it is in the fragment, and a step of the hour
+      // is a new board looked at the same way.
+      const fragment = writeLens(lensState);
       if (target === `${page.url.pathname}${page.url.search}`) await invalidateAll();
-      else await goto(target, { replaceState: true, noScroll: true, keepFocus: true });
+      else await goto(`${target}${fragment ? `#${fragment}` : ''}`, { replaceState: true, noScroll: true, keepFocus: true });
     } finally {
       busy = false;
     }
@@ -189,6 +387,8 @@
     void show({ ...data.moment, date: '', time: '' });
   }
 </script>
+
+<svelte:window onclick={pressedOutside} onkeydown={escaped} />
 
 <PageHead {t} />
 
@@ -254,7 +454,7 @@
     that changed nothing visible for half a second is a press people make
     twice.
   -->
-  <section class="result" class:stale={busy} aria-busy={busy}>
+  <section class="result board-measure" class:stale={busy} aria-busy={busy}>
     <!--
       Which chart this is, on paper and nowhere else.
 
@@ -282,19 +482,63 @@
     <!-- The board and the key to its marks are one thing in this grid: the
          gap between the picture and the reading is two rems, and a legend
          standing in it would belong to neither. -->
-    <div class="board" class:swapped={onPaper}>
-      <div class="screen"><InlineBoard src={plate} width={900} height={900} tip={(spot) => sayLayer(spot, t)} /></div>
-      <!-- The same board in the colours of paper, drawn only where the two
-           differ and shown only by a printer. -->
-      {#if onPaper}
-        <img src={paper} alt="" width="900" height="900" class="paper" />
-      {/if}
-      <!-- Under the picture and above the words: the marks it explains are in
-           the picture, and a key that came after the reading would be found
-           by whoever had already given up on them. -->
-      <!-- The key is to the marks of strength, which a day board has not. -->
-      {#if !ofTheDay}<LayerLegend {t} board="qimen" /><StrengthLegend {t} />{/if}
+    <!--
+      The bench: the board, and beside it what is used while reading it.
+
+      A board is bounded by the height of the window and never by its width,
+      so on a landscape screen the width beside it is free. What stands there
+      is what a reader operates on the board in view — the circle and the
+      lens — in a column beside it, so nothing pressed in it moves the
+      board. On a narrow screen the column
+      goes under the board, for the same reason. What chooses the board, the
+      date and its steps, stays in the bar above: a different errand. See
+      `docs/architecture.md` § "The bench".
+    -->
+    <div class="bench">
+      <div class="board" class:swapped={onPaper}>
+        <div class="screen">
+          <InlineBoard src={plate} width={900} height={900} tip={tipOf} onpick={pick} lens={view} />
+        </div>
+        <!-- The same board in the colours of paper, drawn only where the two
+             differ and shown only by a printer. -->
+        {#if onPaper}
+          <img src={paper} alt="" width="900" height="900" class="paper" />
+        {/if}
+        {#if !ofTheDay}<LayerLegend {t} board="qimen" />{/if}
+        <!-- The key to the marks of strength, under the board whose marks
+             it reads, which a day board has not. -->
+        {#if !ofTheDay}<StrengthLegend {t} />{/if}
+      </div>
+      <div class="side">
+        {#if lens}
+          <!-- The circle over the controls, in both modes, and the mode with
+               the button that puts the lens away under it: at the head of the
+               column, where nothing that grows below them can move them. -->
+          <div class="held">
+            <FiveWheel {t} {lens} active={activePhases(lens, lensState)} />
+            <LensMode {t} state={lensState} onchange={(next) => (lensState = next)} />
+          </div>
+          <LensBar
+            {t}
+            {lens}
+            state={lensState}
+            {focusName}
+            {pairSaid}
+            {way}
+            onchange={(next) => (lensState = next)}
+            onway={(next) => (way = next)}
+          />
+        {/if}
+      </div>
     </div>
+
+    {#if lens && (view.focus || view.seats.length === 2)}
+      <!-- What the lens draws, said in words, at the page's measure. -->
+      <div class="reading">
+        <LensRelations {t} {view} {focusName} {nameAt} />
+        <LensPair {t} {lens} {view} state={lensState} {nameAt} />
+      </div>
+    {/if}
 
     {#if ofTheDay}
       <div class="reading">
@@ -360,6 +604,8 @@
      a grid item will not go below its own min-content otherwise, and the
      picture's is nine hundred pixels. */
   .board { min-inline-size: 0; }
+  .held { display: grid; gap: 0.75rem; }
+  @media print { .held { display: none; } }
   .result, img { transition: opacity 0.15s ease-out; }
   .stale { opacity: 0.5; }
   /*

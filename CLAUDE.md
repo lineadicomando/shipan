@@ -260,6 +260,15 @@ the engine falls back to Moshier, which needs no files.
   left margin nobody can line anything up against. Slack in a table goes to one
   column and is never shared out among them. →
   [`docs/architecture.md`](docs/architecture.md)
+- **A board is bounded by the window's height, so the width beside it is the
+  reader's.** A section lays its board on a bench: the whole board in the
+  window under the bar, and beside it, in a column at `--side`, what is used
+  on it — a lens, the key to its names and marks. The column scrolls with the
+  board and goes under it on a narrow screen, never over it;
+  nothing pressed there may move the board, and what chooses the board — the
+  date and its steps — stays in the bar above. A drawing whose key would make
+  it taller than a window is drawn `bare` and its key set in the column, read
+  off the drawing's own numbering. → [`docs/architecture.md`](docs/architecture.md)
 - **A chart prints, and paper is the fourth appearance** — not light, which is
   a paper-*coloured* screen. Each component says whether it belongs on a
   sheet, and the drawn board is the exception CSS cannot reach. →

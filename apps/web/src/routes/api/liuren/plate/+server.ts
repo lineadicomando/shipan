@@ -36,10 +36,10 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       options,
     );
 
-    const { size, scheme } = readPlateOptions(url.searchParams);
+    const { size, scheme, bare } = readPlateOptions(url.searchParams);
 
     const svg = renderLiurenSvg(board, {
-      schools: divergenceLines('liuren', options, moment.options, t),
+      schools: bare ? [] : divergenceLines('liuren', options, moment.options, t),
       size,
       scheme,
       labels: liurenLabels(t),
@@ -52,7 +52,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       // The twelve branches, the twelve generals and the stems the board turned
       // up, each said aloud under the ring — for the same reason the chart's
       // plate carries them: the picture is the half of this that travels.
-      readings: t('cli.heading.readings'),
+      ...(bare ? {} : { readings: t('cli.heading.readings') }),
     });
 
     setHeaders({

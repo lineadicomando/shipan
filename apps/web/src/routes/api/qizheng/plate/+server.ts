@@ -44,10 +44,10 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       ephemerisContext(),
     );
 
-    const { size, scheme } = readPlateOptions(url.searchParams);
+    const { size, scheme, bare } = readPlateOptions(url.searchParams);
 
     const svg = renderQizhengSvg(board, {
-      schools: divergenceLines('qizheng', options, moment.options, t),
+      schools: bare ? [] : divergenceLines('qizheng', options, moment.options, t),
       size,
       scheme,
       labels: qizhengLabels(t, board),
@@ -57,6 +57,9 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       // way this does, for its own reason — see that endpoint.
       heading: `${moment.input.date} ${moment.input.time} · ${moment.input.timezone}`,
       readings: t('cli.heading.readings'),
+      // Bare, the numerals stay in the board and the key to them is set by
+      // the page beside it, read off the same numbering — see `lib/key.ts`.
+      band: !bare,
     });
 
     setHeaders({

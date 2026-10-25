@@ -45,7 +45,7 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
 
     const board = taiyiBoard({ year }, readTaiyiOptions(url.searchParams));
 
-    const { size, scheme } = readPlateOptions(url.searchParams);
+    const { size, scheme, bare } = readPlateOptions(url.searchParams);
 
     const svg = renderTaiyiSvg(board, {
       size,
@@ -55,9 +55,12 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       // on — no instant, no place, and nobody's birth.
       heading: `${board.year} · ${board.sui.hanzi} ${board.sui.pinyin}`,
       readings: t('cli.heading.readings'),
+      // Bare, the numerals stay in the board and the key to them is set by
+      // the page beside it, read off the same numbering — see `lib/key.ts`.
+      band: !bare,
       // Which readings named the conditions, and who lays them together. No
       // layers: the board stands on a year.
-      schools: divergenceLines('taiyi', board.options, null, t),
+      schools: bare ? [] : divergenceLines('taiyi', board.options, null, t),
     });
 
     setHeaders({

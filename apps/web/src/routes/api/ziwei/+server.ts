@@ -1,6 +1,8 @@
-import { computeZiwei } from '@shipan/core';
+import { computeZiwei, ziweiLabels } from '@shipan/core';
+import { createTranslator } from '@shipan/i18n';
+import { ziweiKey } from '@shipan/plate';
 import { json } from '@sveltejs/kit';
-import { momentIsFixed, readMoment, readZiweiOptions } from '$lib/server/params';
+import { momentIsFixed, readLocale, readMoment, readZiweiOptions } from '$lib/server/params';
 import { isHttpError, toHttpError } from '$lib/server/errors';
 import { laidBy } from '$lib/server/laid';
 import type { RequestHandler } from './$types';
@@ -22,7 +24,7 @@ import type { RequestHandler } from './$types';
  * `private` in a cache, never `public`: the address holds somebody's date,
  * time and place of birth.
  */
-export const GET: RequestHandler = ({ url, setHeaders }) => {
+export const GET: RequestHandler = ({ url, request, setHeaders }) => {
   try {
     const { moment, label } = readMoment(url.searchParams);
 
@@ -32,12 +34,17 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
 
     setHeaders({
       'cache-control': momentIsFixed(url.searchParams) ? 'private, max-age=86400' : 'no-store',
+      vary: 'Accept-Language',
     });
+    const t = createTranslator(readLocale(url.searchParams, request.headers.get('accept-language')));
     return json({
       moment,
       ziwei,
       place: label ?? null,
       laidBy: laidBy('ziwei', ziwei.options),
+      // The key to the numerals on the board, in the reader's language, for
+      // the page that sets it beside a board drawn without its band.
+      key: ziweiKey(ziwei, ziweiLabels(t)),
     });
   } catch (cause) {
     if (isHttpError(cause)) throw cause;

@@ -411,6 +411,71 @@ export const en = {
   'label.relation.kewo': 'controlled',
   'label.relation.woke': 'controlling',
 
+  // The two relations a lens shows besides the five of the phases, said the
+  // way the five are said beside them: one word or two, from the side of the
+  // thing the reader started from.
+  'label.relation.duigong': 'facing palace',
+  'label.relation.wuhe': 'combined stem',
+
+  // A lens on a board: the reader keeps some names, or presses one and is
+  // shown how the rest stands to it. Every line here names what the control
+  // does, and none says what a relation means — that is the reader's. See
+  // `docs/refusals.md` § "Where to look first".
+  'lens.title': 'Lens',
+  'lens.pair': 'Palaces {a} and {b}',
+  'lens.pairOne': 'Palace {a} is chosen. Press a second palace, away from its names.',
+  'lens.pair.heading': 'How palace {a} and palace {b} stand to each other',
+  'lens.pair.caption': '→ means the relation runs from the row to the column, and ← means it runs from the column to the row.',
+  // A cell of that table: the relation as a flow, from whatever generates or
+  // controls to whatever is generated or controlled. Said whole for a screen
+  // reader, since the arrow beside the word is a shape.
+  'lens.flow.wosheng': 'generation',
+  'lens.flow.woke': 'control',
+  'lens.flow.bihe': 'same phase',
+  'lens.flow.wosheng.said': '{from} generates {to}',
+  'lens.flow.woke.said': '{from} controls {to}',
+  'lens.flow.bihe.said': '{from} and {to} are of the same phase',
+  'lens.layers': 'Keep',
+  'lens.phases': 'Keep the phases',
+  'lens.whole': 'Whole board',
+  'lens.focus': 'Starting from {thing}',
+  'lens.release': 'Deselect',
+  'lens.toward': 'Related to',
+  'lens.kinds': 'Relations',
+  'lens.shengke': 'generation and control',
+  'lens.pair.pick': 'Now press, in each of the two palaces, the names to compare. Pressing a name again takes it out of the comparison.',
+  // The two modes of a lens. The beginner's lays it one way at a time and
+  // sets the circle of the five phases beside it; the expert's offers every
+  // control at once. Each way says what pressing does, and nothing about what
+  // a relation means.
+  'lens.mode': 'Mode',
+  'lens.mode.beginner': 'Beginner',
+  'lens.mode.expert': 'Expert',
+  'lens.choose': 'Look at',
+  'lens.way.pair': 'two palaces',
+  'lens.way.focus': 'one name and the rest',
+  'lens.way.phase': 'one phase',
+  'lens.way.filter': 'kinds and phases',
+  'lens.way.filter.said': 'Keep kinds of name and phases, as many as you like, and the rest of the board fades.',
+  'lens.way.pair.said': 'Press two palaces on the board, then press in each of them the names to compare.',
+  'lens.way.focus.said': 'Press a name on the board, then choose which names to relate it to.',
+  'lens.way.phase.said': 'Choose a phase: what belongs to it stays as drawn, and the rest of the board fades.',
+  'lens.wheel': 'In the circle of the five phases, each phase generates the next phase round the circle and controls the phase two places further on.',
+  'lens.key': 'How the relations are drawn',
+  'lens.heading': 'How the rest of the board relates to {thing}',
+  'lens.empty': 'Choose which names to relate it to.',
+  'lens.at': '{layer}, palace {palace}',
+  // Said over a name the lens has drawn a relation to, and in the list under
+  // the board: which way the relation runs, between the name the reader
+  // started from and this one.
+  'lens.relation.wosheng': 'generation, from {thing} to this',
+  'lens.relation.shengwo': 'generation, from this to {thing}',
+  'lens.relation.woke': 'control, from {thing} to this',
+  'lens.relation.kewo': 'control, from this to {thing}',
+  'lens.relation.bihe': 'same phase as {thing}',
+  'lens.relation.duigong': 'the palace facing {thing}',
+  'lens.relation.wuhe': 'the stem {thing} combines with',
+
   // The post horse, and which pillar's branch it was reckoned from. Both are
   // named in the tradition and neither stands for the other.
   'label.horse.day': 'horse of the day',

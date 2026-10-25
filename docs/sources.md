@@ -3676,6 +3676,20 @@ independent sources naming the same thing the same way**.
 | the earth plate | count the instruments and marvels through the Luoshu | all eighteen published arrangements |
 | 旺相休囚死 | the five-phase reckoning against the season | stateable in a sentence and checked against it — and **contradicted in print**, 《奇門遁甲金鏡寶鑑》卷之四 reading the same five relations outward from the star and transposing two pairs, and by the 煙波釣叟歌 as 紀大奎 copies it, which reads them from the star in a second arrangement; see above |
 | 門宮 · 星宮 | the five relations of the phases | 門迫 is one of the five, and a test asserts the two never disagree |
+| a lens: 生剋 between any two things | the same five relations, read between a thing and anything in another palace as well as its own | no text tabulates a thing against another palace, so there is no list; the twenty-five cells are asserted against the two cycles, and against 門宮 · 星宮 on every palace |
+| a lens: 對宮 | the Luoshu: the two palaces whose numbers make ten | 反吟, which is read on it — 「天蓬加地天英」, the star facing home |
+| a lens: 五合 | the stem five places on | the 四德, which confirm the pairing cell by cell; and 《金函玉鏡》's own table, which names 辛加丙 and 壬加丁 干合悖師 and 干合蛇刑 |
+
+**The three a lens shows are relations and never readings of them.** A reader
+who picks a thing on a board is shown how everything else stands to it
+(`qimenLens` in `dunjia/lens.ts`, and `docs/refusals.md` § "Where to look
+first"); the engine hands over the tables and the page looks a relation up.
+What each relation *means* between two palaces is the reader's, and nothing
+here says it. 五合 rests on two checks of different kinds: the pairing is the
+almanac's, where each 德合 is the 五合 of its 德 and the four tables confirm
+it; that a 奇門 board reads it at all is attested for two pairs of the five,
+by name, in a 十干克應 table this engine already lays, and the other three are
+the pairing and no 奇門 text located here naming them.
 
 **The list that tests 門迫 is two cells shorter than the rule.** 《統宗》卷一
 迫 — ctext, and 故宮珍本叢刊 第426冊 page 13 — prints eight lines — 開門臨三四宮（金克木）· 休門臨九宮 · 生門臨一宮 ·

@@ -138,7 +138,7 @@ export function renderQizhengSvg(board: PlateQizheng, options: PlateQizhengOptio
   // Laid out once and measured, because the depth is not the number of names:
   // an entry too wide for its column takes two lines, and the columns are
   // filled to an even number of lines rather than of entries.
-  const bandLines = aloud.length
+  const bandLines = aloud.length && options.band !== false
     ? readingDepth(aloud, { size: reading, maxWidth: ring, columns: COLUMNS })
     : 0;
   const band = bandLines ? size * 0.05 + readingStep * bandLines + size * 0.012 : 0;
@@ -182,7 +182,7 @@ export function renderQizhengSvg(board: PlateQizheng, options: PlateQizhengOptio
   parts.push(...ringOf(board, labels, key, { left: margin, top: ringTop, cell, key: reading }));
   parts.push(...middle(board, labels, { left: margin, top: ringTop, cell }));
 
-  if (aloud.length > 0) {
+  if (bandLines > 0) {
     parts.push(
       ...drawReadingColumns(aloud, options.readings as string, {
         columns: COLUMNS,
@@ -617,4 +617,14 @@ function text(
     `<text x="${round(x)}" y="${round(y)}" font-size="${round(size)}" ` +
     `text-anchor="${anchor}"${cls}>${escape(content)}</text>`
   );
+}
+
+/**
+ * The key to the numerals the board carries, as the band under it lists them:
+ * every name, its reading, its word and its number. For a page that sets the
+ * key beside the board in its own type, with the board drawn `band: false`;
+ * the numbering is the drawing's own, so the two cannot disagree.
+ */
+export function qizhengKey(board: PlateQizheng, labels: PlateQizhengLabels = {}): Said[][] {
+  return numbered(saidOnBoard(board, labels));
 }

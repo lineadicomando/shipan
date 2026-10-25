@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { DEFAULT_ZIWEI_SIZE, renderZiweiSvg } from '../src/ziwei-svg.js';
-import { LONG_SCHOOLS, fitsItsSheet } from './sheet.js';
+import { DEFAULT_ZIWEI_SIZE, renderZiweiSvg, ziweiKey } from '../src/ziwei-svg.js';
+import { LONG_SCHOOLS, fitsItsSheet, keyFaults } from './sheet.js';
 import type { PlateZiwei, PlateZiweiPalace, PlateZiweiSeat } from '../src/types.js';
 
 /**
@@ -373,5 +373,14 @@ describe('renderZiweiSvg', () => {
     const svg = renderZiweiSvg(board());
 
     expect(svg).toMatch(/aria-label="紫微斗數 1984\/4\/5 · 火六局 · 命宮寅 · 身宮未"/);
+  });
+});
+
+describe('the 紫微斗數 drawing without its band', () => {
+  it('keeps its numerals, and the key the page sets beside it is the band it left out', () => {
+    const labels = { star: { 天府: 'the celestial treasury', 陀羅: 'the spinning top' }, house: { ming: 'the life' } };
+    const full = renderZiweiSvg(board(), { labels, readings: 'Said aloud' });
+    const bare = renderZiweiSvg(board(), { labels, readings: 'Said aloud', band: false });
+    expect(keyFaults(full, bare, ziweiKey(board(), labels), 'Said aloud')).toEqual([]);
   });
 });

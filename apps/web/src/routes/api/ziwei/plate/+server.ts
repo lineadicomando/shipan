@@ -39,10 +39,10 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const options = readZiweiOptions(url.searchParams);
 
     const board = computeZiwei(moment, options);
-    const { size, scheme } = readPlateOptions(url.searchParams);
+    const { size, scheme, bare } = readPlateOptions(url.searchParams);
 
     const svg = renderZiweiSvg(board, {
-      schools: divergenceLines('ziwei', options, moment.options, t),
+      schools: bare ? [] : divergenceLines('ziwei', options, moment.options, t),
       size,
       scheme,
       labels: ziweiLabels(t),
@@ -52,6 +52,9 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       // called that day.
       heading: `${moment.input.date} ${moment.input.time} · ${moment.input.timezone}`,
       readings: t('cli.heading.readings'),
+      // Bare, the numerals stay in the board and the key to them is set by
+      // the page beside it, read off the same numbering — see `lib/key.ts`.
+      band: !bare,
     });
 
     setHeaders({

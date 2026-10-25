@@ -12,6 +12,7 @@
   import FormPanel from '$lib/components/FormPanel.svelte';
   import InlineBoard from '$lib/components/InlineBoard.svelte';
   import LayerLegend from '$lib/components/LayerLegend.svelte';
+  import NameKey from '$lib/components/NameKey.svelte';
   import Choice from '$lib/components/Choice.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
@@ -19,6 +20,14 @@
   import Takeaway from '$lib/components/Takeaway.svelte';
 
   let { data } = $props();
+
+  /**
+   * How much taller than wide the drawing is, read off the drawing when it
+   * arrives: what a board holds under its ring moves its height, so the
+   * figure written on the picture is a placeholder. `--board` is worked out
+   * from it, so the whole board stands in the window under the bar.
+   */
+  let aspect = $state(1150 / 900);
   const t = $derived(data.t);
 
   // The fields are edited, so they are state; the address is what they were
@@ -78,7 +87,7 @@
     ),
   );
 
-  const plate = $derived(`/api/ziwei/plate?${address}&scheme=${appearance.current}`);
+  const plate = $derived(`/api/ziwei/plate?${address}&scheme=${appearance.current}&bare=true`);
 
   /**
    * The same board, drawn for paper.
@@ -90,7 +99,7 @@
    * every other drawn board keeps.
    */
   const onPaper = $derived(appearance.current !== 'light');
-  const paper = $derived(`/api/ziwei/plate?${address}&scheme=light`);
+  const paper = $derived(`/api/ziwei/plate?${address}&scheme=light&bare=true`);
 
   /**
    * Which seat the reader is pointing at, by the branch it stands on.
@@ -268,66 +277,74 @@
 {#if result}
   <!-- Spent while the next reading is on its way, rather than swapped without
        warning: see the chart, where the same rule holds. -->
-  <div class="result" class:stale={busy} aria-busy={busy}>
-    <div class="board" class:swapped={onPaper}>
-      <!-- A press on a seat goes to its row, as it did before the board
-           was held in the page; so a tap pins no tip here, and the layer of a
-           name is said to a mouse alone. -->
-      <div class="screen" bind:this={screen}>
-        <InlineBoard
-          src={plate}
-          width={900}
-          height={1150}
-          tip={(spot) => sayLayer(spot, t)}
-          pin={false}
-          onhover={(spot) => (pointed = spot?.seat ?? null)}
-          onpick={(spot) => {
-            if (spot?.seat) go(spot.seat);
-          }}
-          ondrawn={({ width, height, inline }) => {
-            sheet = { width, height };
-            live = inline;
-          }}
-        />
-      </div>
-      {#if onPaper}<img src={paper} alt="" width="900" height="1150" class="paper" />{/if}
-      <LayerLegend {t} board="ziwei" />
+  <div class="result board-measure" class:stale={busy} aria-busy={busy} style:--aspect={aspect}>
+    <!-- The bench: the board, and beside it the key to its names. See
+         `docs/architecture.md` § "The bench". -->
+    <div class="bench">
+      <div class="board" class:swapped={onPaper}>
+        <!-- A press on a seat goes to its row, as it did before the board
+             was held in the page; so a tap pins no tip here, and the layer of a
+             name is said to a mouse alone. -->
+        <div class="screen" bind:this={screen}>
+          <InlineBoard
+            src={plate}
+            width={900}
+            height={1150}
+            tip={(spot) => sayLayer(spot, t)}
+            pin={false}
+            onhover={(spot) => (pointed = spot?.seat ?? null)}
+            onpick={(spot) => {
+              if (spot?.seat) go(spot.seat);
+            }}
+            ondrawn={({ width, height, inline }) => {
+              sheet = { width, height };
+              aspect = height / width;
+              live = inline;
+            }}
+          />
+        </div>
+        {#if onPaper}<img src={paper} alt="" width="900" height="1150" class="paper" />{/if}
+        <LayerLegend {t} board="ziwei" />
 
-      <!--
-        Twelve hit-areas over the picture, and nothing drawn in them.
-
-        A picture cannot be asked what is where, so the seats are laid over it
-        from the geometry `plate` exports. They are buttons rather than bare
-        divs because they do something — they take the reader to the row that
-        says what is in the seat — and because a reader who does not use a
-        mouse has to be able to reach them at all. Once the board is held in
-        the page the pointer passes through them (`through`) and they are the
-        keyboard's.
-      -->
-      {#each overlay as { palace, box } (palace.branch.id)}
         <!--
-          `data-branch` is the half of the pairing the DOM can be asked about
-          and `data-seat` on the table row is the other. Nothing reads either
-          at runtime; they are how the link is inspected when it stops working,
-          and it did — see the note on `overlay` above.
+          Twelve hit-areas over the picture, and nothing drawn in them.
+
+          A picture cannot be asked what is where, so the seats are laid over it
+          from the geometry `plate` exports. They are buttons rather than bare
+          divs because they do something — they take the reader to the row that
+          says what is in the seat — and because a reader who does not use a
+          mouse has to be able to reach them at all. Once the board is held in
+          the page the pointer passes through them (`through`) and they are the
+          keyboard's.
         -->
-        <button
-          type="button"
-          class="seat"
-          class:pointed={pointed === palace.branch.id}
-          class:found={found === palace.branch.id}
-          class:through={live}
-          data-branch={palace.branch.id}
-          style="left: {box.left * 100}%; top: {box.top * 100}%; width: {box.width *
-            100}%; height: {box.height * 100}%"
-          aria-label={t('board.seatLink', { seat: palace.house.hanzi })}
-          onmouseenter={() => (pointed = palace.branch.id)}
-          onmouseleave={() => (pointed = null)}
-          onfocus={() => (pointed = palace.branch.id)}
-          onblur={() => (pointed = null)}
-          onclick={() => go(palace.branch.id)}
-        ></button>
-      {/each}
+        {#each overlay as { palace, box } (palace.branch.id)}
+          <!--
+            `data-branch` is the half of the pairing the DOM can be asked about
+            and `data-seat` on the table row is the other. Nothing reads either
+            at runtime; they are how the link is inspected when it stops working,
+            and it did — see the note on `overlay` above.
+          -->
+          <button
+            type="button"
+            class="seat"
+            class:pointed={pointed === palace.branch.id}
+            class:found={found === palace.branch.id}
+            class:through={live}
+            data-branch={palace.branch.id}
+            style="left: {box.left * 100}%; top: {box.top * 100}%; width: {box.width *
+              100}%; height: {box.height * 100}%"
+            aria-label={t('board.seatLink', { seat: palace.house.hanzi })}
+            onmouseenter={() => (pointed = palace.branch.id)}
+            onmouseleave={() => (pointed = null)}
+            onfocus={() => (pointed = palace.branch.id)}
+            onblur={() => (pointed = null)}
+            onclick={() => go(palace.branch.id)}
+          ></button>
+        {/each}
+      </div>
+      <div class="side">
+        <NameKey {t} groups={result.key ?? []} />
+      </div>
     </div>
 
     <div>

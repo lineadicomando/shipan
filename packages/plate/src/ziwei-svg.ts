@@ -234,7 +234,7 @@ export function renderZiweiSvg(board: PlateZiwei, options: PlateZiweiOptions = {
    * is to lay it out. It is laid out once and measured, not guessed: a guess
    * short by two lines is a band that runs off the sheet.
    */
-  const bandLines = aloud.length
+  const bandLines = aloud.length && options.band !== false
     ? readingDepth(aloud, { size: reading, maxWidth: grid, columns: 3 })
     : 0;
   const band = bandLines ? size * 0.05 + readingStep * bandLines + size * 0.012 : 0;
@@ -280,7 +280,7 @@ export function renderZiweiSvg(board: PlateZiwei, options: PlateZiweiOptions = {
   );
   parts.push(...middle(board, labels, { left: margin, top: gridTop, cell }));
 
-  if (aloud.length > 0) {
+  if (bandLines > 0) {
     const top = gridTop + grid + size * 0.05;
     parts.push(
       ...drawReadingColumns(aloud, options.readings as string, {
@@ -626,4 +626,14 @@ function text(
     `<text x="${round(x)}" y="${round(y)}" font-size="${round(size)}" ` +
     `text-anchor="${anchor}"${cls}>${escape(content)}</text>`
   );
+}
+
+/**
+ * The key to the numerals the board carries, as the band under it lists them:
+ * every name, its reading, its word and its number. For a page that sets the
+ * key beside the board in its own type, with the board drawn `band: false`;
+ * the numbering is the drawing's own, so the two cannot disagree.
+ */
+export function ziweiKey(board: PlateZiwei, labels: PlateZiweiLabels = {}): Said[][] {
+  return numbered(saidOnBoard(board, labels.star ?? {}, labels.house ?? {}));
 }

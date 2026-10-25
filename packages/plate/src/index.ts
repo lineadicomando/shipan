@@ -39,14 +39,15 @@ export {
   type BoardUnit,
   type MarkedBoard,
 } from './marks.js';
-export { renderLiurenSvg, DEFAULT_LIUREN_SIZE } from './liuren-svg.js';
-export { renderQizhengSvg, DEFAULT_QIZHENG_SIZE } from './qizheng-svg.js';
-export { renderTaiyiSvg, DEFAULT_TAIYI_SIZE } from './taiyi-svg.js';
+export { renderLiurenSvg, liurenReadings, DEFAULT_LIUREN_SIZE } from './liuren-svg.js';
+export { renderQizhengSvg, qizhengKey, DEFAULT_QIZHENG_SIZE } from './qizheng-svg.js';
+export { renderTaiyiSvg, taiyiKey, DEFAULT_TAIYI_SIZE } from './taiyi-svg.js';
 export {
   renderZiweiSvg,
   ziweiSeatBoxes,
   DEFAULT_ZIWEI_SIZE,
   type ZiweiSeatBox,
+  ziweiKey,
 } from './ziwei-svg.js';
 export type {
   Named,

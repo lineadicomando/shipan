@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { DEFAULT_QIZHENG_SIZE, renderQizhengSvg } from '../src/qizheng-svg.js';
-import { LONG_SCHOOLS, fitsItsSheet } from './sheet.js';
+import { DEFAULT_QIZHENG_SIZE, qizhengKey, renderQizhengSvg } from '../src/qizheng-svg.js';
+import { LONG_SCHOOLS, fitsItsSheet, keyFaults } from './sheet.js';
 import type { PlatePlacement, PlateQizheng } from '../src/types.js';
 
 /**
@@ -326,5 +326,13 @@ describe('the drawing itself', () => {
   it('carries one scheme when told which, and both when not', () => {
     expect(svg({ scheme: 'light' })).not.toContain('prefers-color-scheme');
     expect(svg()).toContain('prefers-color-scheme');
+  });
+});
+
+describe('the 七政四餘 drawing without its band', () => {
+  it('keeps its numerals, and the key the page sets beside it is the band it left out', () => {
+    const full = svg({ readings: 'Said aloud' });
+    const bare = svg({ readings: 'Said aloud', band: false });
+    expect(keyFaults(full, bare, qizhengKey(BOARD, LABELS), 'Said aloud')).toEqual([]);
   });
 });

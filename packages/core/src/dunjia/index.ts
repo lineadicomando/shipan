@@ -367,6 +367,17 @@ export {
 } from './patterns.js';
 export { horseBranch, horseOf, type Horse } from './horse.js';
 export {
+  LENS_LAYERS,
+  LENS_RELATION_IDS,
+  LINKS,
+  qimenLens,
+  type LensLayer,
+  type LensThing,
+  type LinkId,
+  type LinkName,
+  type QimenLens,
+} from './lens.js';
+export {
   RELATION_IDS,
   relationOf,
   type Relation,

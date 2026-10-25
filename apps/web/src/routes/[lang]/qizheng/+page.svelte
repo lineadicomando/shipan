@@ -7,6 +7,7 @@
   import FormPanel from '$lib/components/FormPanel.svelte';
   import InlineBoard from '$lib/components/InlineBoard.svelte';
   import LayerLegend from '$lib/components/LayerLegend.svelte';
+  import NameKey from '$lib/components/NameKey.svelte';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import Schools from '$lib/components/Schools.svelte';
@@ -16,6 +17,14 @@
   import SubmitButton from '$lib/components/SubmitButton.svelte';
 
   let { data } = $props();
+
+  /**
+   * How much taller than wide the drawing is, read off the drawing when it
+   * arrives: what a board holds under its ring moves its height, so the
+   * figure written on the picture is a placeholder. `--board` is worked out
+   * from it, so the whole board stands in the window under the bar.
+   */
+  let aspect = $state(1450 / 900);
   const t = $derived(data.t);
 
   // svelte-ignore state_referenced_locally
@@ -53,7 +62,7 @@
     ),
   );
 
-  const plate = $derived(`/api/qizheng/plate?${address}&scheme=${appearance.current}`);
+  const plate = $derived(`/api/qizheng/plate?${address}&scheme=${appearance.current}&bare=true`);
 
   /**
    * The same board, drawn for paper.
@@ -65,7 +74,7 @@
    * both other boards draw, for the same reason.
    */
   const onPaper = $derived(appearance.current !== 'light');
-  const paper = $derived(`/api/qizheng/plate?${address}&scheme=light`);
+  const paper = $derived(`/api/qizheng/plate?${address}&scheme=light&bare=true`);
   $effect(() => {
     if (!board || !onPaper) return;
     const warm = new Image();
@@ -128,13 +137,26 @@
 {#if failure}<p class="failure" role="alert">{failure}</p>{/if}
 
 {#if board}
-  <div class="result" class:stale={busy} aria-busy={busy}>
-    <div class="board" class:swapped={onPaper}>
-      <div class="screen">
-        <InlineBoard src={plate} width={900} height={1450} tip={(spot) => sayLayer(spot, t)} />
+  <div class="result board-measure" class:stale={busy} aria-busy={busy} style:--aspect={aspect}>
+    <!-- The bench: the board, and beside it the key to its names. See
+         `docs/architecture.md` § "The bench". -->
+    <div class="bench">
+      <div class="board" class:swapped={onPaper}>
+        <div class="screen">
+          <InlineBoard
+            src={plate}
+            width={900}
+            height={1450}
+            tip={(spot) => sayLayer(spot, t)}
+            ondrawn={(drawing) => (aspect = drawing.height / drawing.width)}
+          />
+        </div>
+        {#if onPaper}<img src={paper} alt="" width="900" height="1450" class="paper" />{/if}
+        <LayerLegend {t} board="qizheng" />
       </div>
-      {#if onPaper}<img src={paper} alt="" width="900" height="1450" class="paper" />{/if}
-      <LayerLegend {t} board="qizheng" />
+      <div class="side">
+        <NameKey {t} groups={data.result?.key ?? []} />
+      </div>
     </div>
 
     <div>

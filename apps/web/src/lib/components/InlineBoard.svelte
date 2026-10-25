@@ -33,9 +33,18 @@
   Hidden from assistive technology, as the picture was with `alt=""`, and the
   tip with it: the board is said in full in the table under it, and a tip
   read aloud would be the sixth time a reader heard which column a name is in.
+
+  **`lens` is what the reader asked to see** (`$lib/lens`): what it keeps
+  stays as drawn and everything else in a seat recedes, the ground of the
+  seat excepted, and the relations of a focus are laid over the drawing by
+  `LensLinks`. Both are applied to the drawing once it is here and to nothing
+  before: the picture is the whole board, which is also what a reader who
+  runs no script is owed. Paper always gets the whole board.
 -->
 <script lang="ts">
   import { sameSpot, spotOf, type BoardSpot } from '$lib/board';
+  import type { LensView, ShownRelation, SpotKey } from '$lib/lens';
+  import LensLinks from './LensLinks.svelte';
 
   let {
     src,
@@ -46,6 +55,7 @@
     onhover,
     onpick,
     ondrawn,
+    lens,
   }: {
     src: string;
     width: number;
@@ -55,6 +65,7 @@
     onhover?: (spot: BoardSpot | undefined) => void;
     onpick?: (spot: BoardSpot | undefined) => void;
     ondrawn?: (drawing: { width: number; height: number; inline: boolean }) => void;
+    lens?: LensView;
   } = $props();
 
   /**
@@ -67,7 +78,13 @@
    */
   const sheet = $derived(
     ':host { display: block; } svg { display: block; width: 100%; height: auto; }' +
-      (tip ? ' [data-layer] { cursor: help; }' : ''),
+      (tip ? ' [data-layer] { cursor: help; }' : '') +
+      // What a lens leaves out recedes, and nothing is made heavier: the
+      // ground of each seat stays, so the board keeps its shape.
+      ' [data-seat] > * { transition: opacity 0.15s ease-out; }' +
+      ' svg.lensed [data-seat] > :not(rect):not([data-lens="lit"]) { opacity: 0.16; }' +
+      ' @media (prefers-reduced-motion: reduce) { [data-seat] > * { transition: none; } }' +
+      ' @media print { svg.lensed [data-seat] > * { opacity: 1; } }',
   );
 
   let frame: HTMLDivElement | undefined = $state();
@@ -107,6 +124,77 @@
       })
       .catch(() => {});
     return () => controller.abort();
+  });
+
+  /**
+   * The lens, set on the drawing as one attribute per name: `lit` or nothing.
+   * Re-applied whenever a new drawing arrives, since the marks are new.
+   */
+  $effect(() => {
+    const view = lens;
+    void drawn;
+    if (!inline || !root) return;
+    const drawing = root.querySelector('svg');
+    if (!drawing) return;
+    drawing.classList.toggle('lensed', view?.active ?? false);
+    for (const seat of root.querySelectorAll('[data-seat]')) {
+      const number = seat.getAttribute('data-seat');
+      for (const name of seat.querySelectorAll(':scope > [data-layer]')) {
+        const key = `${number}:${name.getAttribute('data-layer')}` as SpotKey;
+        if (view?.active && view.lit.has(key)) name.setAttribute('data-lens', 'lit');
+        else name.removeAttribute('data-lens');
+      }
+    }
+  });
+
+  /** The box of a name on the drawing, in the frame's own pixels. */
+  function boxOf(key: SpotKey, origin: DOMRect) {
+    const [seat, layer] = key.split(':');
+    const name = root?.querySelector(`[data-seat="${seat}"] > [data-layer="${layer}"]`);
+    if (!name) return undefined;
+    const box = name.getBoundingClientRect();
+    return { x: box.left - origin.left, y: box.top - origin.top, width: box.width, height: box.height };
+  }
+
+  /** The frame's size, kept so that the relations follow the board when it is resized. */
+  let size = $state({ width: 0, height: 0 });
+  $effect(() => {
+    const target = frame;
+    if (!target) return;
+    const watcher = new ResizeObserver(() => {
+      size = { width: target.clientWidth, height: target.clientHeight };
+    });
+    watcher.observe(target);
+    return () => watcher.disconnect();
+  });
+
+  /** The box of a whole palace, for framing the palaces of a pair. */
+  function seatBox(seat: number, origin: DOMRect) {
+    const group = root?.querySelector(`[data-seat="${seat}"] > rect`);
+    if (!group) return undefined;
+    const box = group.getBoundingClientRect();
+    return { x: box.left - origin.left, y: box.top - origin.top, width: box.width, height: box.height };
+  }
+
+  /** The relations of the focus or of the pair, placed. */
+  const laid = $derived.by(() => {
+    void size;
+    void drawn;
+    if (!lens?.active || !inline || !frame) return undefined;
+    if (lens.links.length === 0 && lens.seats.length === 0) return undefined;
+    const origin = frame.getBoundingClientRect();
+    const focus = lens.focus ? boxOf(lens.focus, origin) : undefined;
+    const seats = lens.seats
+      .map((seat) => seatBox(seat, origin))
+      .filter((box): box is NonNullable<typeof box> => box !== undefined);
+    type Box = NonNullable<ReturnType<typeof boxOf>>;
+    const links: { from: Box; box: Box; relation: ShownRelation }[] = [];
+    for (const link of lens.links) {
+      const from = boxOf(link.from, origin);
+      const box = boxOf(link.to, origin);
+      if (from && box) links.push({ from, box, relation: link.relation });
+    }
+    return { focus, seats, links };
   });
 
   /** What the mouse rests on, and what a finger last tapped. */
@@ -223,6 +311,9 @@
       />
     {/if}
   </div>
+  {#if laid}
+    <LensLinks width={size.width} height={size.height} focus={laid.focus} seats={laid.seats} links={laid.links} />
+  {/if}
   {#if shown}
     <span
       class="tip"
@@ -251,9 +342,12 @@
   .tip {
     position: absolute;
     transform: translate(-50%, calc(-100% - 0.2rem));
-    padding: 0.15rem 0.45rem;
-    border-radius: 0.2rem;
-    font-size: 0.8rem;
+    padding: 0.25rem 0.55rem;
+    border-radius: 0.25rem;
+    /* A step over the words the drawing sets under its names, so that what is
+       said over a name reads as the page speaking and not as one more label
+       of the board's — at the board's measure those are a little under 0.8rem. */
+    font-size: 0.95rem;
     line-height: 1.3;
     /* One line where it fits, and wrapped where the board is narrower than
        the words: `max-content` is as wide as the line, and no wider than the
