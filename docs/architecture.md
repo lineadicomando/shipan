@@ -181,13 +181,13 @@ short of: the board moves down for every line the controls grow by, and the
 two cannot be seen at once.
 
 So every section that draws a board lays it on a bench — 奇門, 六壬, 太乙,
-七政四餘 and 紫微斗數; the four pillars are a grid in the page's type and the
-consultation shows a board only as the check on what it hands over. On the
-left, the whole board at `--board`. On the right, a column at `--side`
-holding what is used on the board in view: on 奇門 the circle of the five
+七政四餘 and 紫微斗數 — and so does the consultation, whatever drawn board it
+lays; the four pillars are a grid in the page's type. Every drawing is asked
+for `bare`. On the left, the whole board at `--board`. On the right, a column
+at `--side` holding what is used on the board in view: the circle of the five
 phases at the head of the column in both modes, where nothing that grows
-under it can move it, then the lens and the key to its arrows; on the
-other four the key to the names on the board. The steps of the moment stay in
+under it can move it, then the lens and the key to its arrows, and on the
+boards that number their names the key to those numbers. The steps of the moment stay in
 the bar above, with the date: they choose which board is laid, where the
 column holds how it is looked at, and the two are kept apart. The column
 stands beside the board and scrolls with the page like the board itself —
@@ -279,7 +279,7 @@ two boards. The cursor is the only announcement it gets. A sheet has no
 pointer, so in print the same words are set once instead, as an empty seat
 under the board (`LayerLegend`).
 
-The second is **a lens**, on the 奇門 section — the board of an hour and of a day — and on 六壬's, 七政四餘's, 紫微斗數's and 太乙's: the reader keeps a kind of
+The second is **a lens**, on every drawn board — 奇門's of an hour and of a day, 六壬's, 七政四餘's, 紫微斗數's and 太乙's — in its section and in the consultation alike: the reader keeps a kind of
 name or a phase and the rest of each seat recedes, presses a name and is
 shown how the rest stands to it, or presses the ground of two palaces and is
 shown how they stand to each other — the five relations of the phases, 對宮
@@ -326,8 +326,9 @@ seats in its own terms and order, its layers as the drawing marks them, every
 thing with a phase, the five relations, and the board's own relations as
 links between two seats (對宮) or two things (五合) — and a section holds the
 lens through `HeldLens` (`lib/held-lens.svelte.ts`), with `LensSide` in the
-column and `LensReading` under the board, saying only how a name and a seat
-are said. A pair is laid on the seats the descriptor names for it
+column and `LensReading` under the board; how a name, a seat and where a
+name stands are said is `lib/lens-words.ts`, one function a board, shared by
+the section and the consultation. A pair is laid on the seats the descriptor names for it
 (`pairSeats`): on 六壬 the twelve palaces of the ring, and not the lessons or
 the transmissions, whose names a lens still keeps and relates; on 太乙 none,
 each seat of the rim holding one god, and the page then offers two ways and

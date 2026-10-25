@@ -137,6 +137,8 @@ describe('a lens on a 奇門 board', () => {
     const fragment = 'pair=3,6&chosen=3:heaven,6:gate&links=duigong';
     expect(writeLens(readLens(`#${fragment}`))).toBe(fragment);
     expect(readLens('#pair=3,6&chosen=3:Heaven;drop').chosen).toBeUndefined();
+    // A role's identifier is camel case, and is read back whole.
+    expect(readLens('#focus=general.hostGeneral&toward=general').focus).toEqual({ layer: 'general', id: 'hostGeneral' });
   });
 
   it("lays a pair by the ground of two palaces, and neither is the reader's", () => {

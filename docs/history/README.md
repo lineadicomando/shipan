@@ -105,6 +105,7 @@ phase.
 | 70 | [景祐秘纂 卷二–四](70-the-jingyou-mizuan.md) | done — the last of the 大全: 卷二 the 符應經's 卷中, whose cases put the 演義 beside the hour tables as a holder of `centreStem: host`; the 大全 read for a 起例 to its end |
 | 71 | [The lens, and the bench](71-the-lens.md) | done — a lens on the 奇門 board, kept, pressed or paired, in two modes, its relations the engine's and its state the reader's; every drawn board whole in the window on a bench, its key beside it |
 | 72 | [One lens for every board](72-one-lens-for-every-board.md) | done — the lens a descriptor every board fills, `qimenLens` its first instance; the page's lens and its wiring know no board; every drawn board has a lens |
+| 73 | [What the lens relates](73-what-the-lens-relates.md) | done — 歸垣 and the Moon on 七政四餘, 三方 and 對宮 on 紫微斗數 read on the Ming woodblock, the 五將 read on the plates and related on 太乙, and the consultation on the bench with a lens |
 
 ## The rest of the record
 

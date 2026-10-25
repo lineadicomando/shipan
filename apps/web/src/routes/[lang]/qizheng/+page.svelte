@@ -2,10 +2,9 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { glyph } from '$lib/glyph';
   import { HeldLens } from '$lib/held-lens.svelte';
+  import { qizhengWords } from '$lib/lens-words';
   import type { QizhengBoard, QizhengLens } from '@shipan/core';
-  import type { MessageKey } from '@shipan/i18n';
   import LensReading from '$lib/components/LensReading.svelte';
   import LensSide from '$lib/components/LensSide.svelte';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
@@ -94,37 +93,10 @@
    */
   const lens = $derived<QizhengLens | undefined>(data.result?.lens);
 
-  type Named = { id: string; hanzi: string; pinyin?: string };
+  /** How the board's names and seats are said, shared with the consultation. */
+  const words = $derived(qizhengWords(board as QizhengBoard | undefined, t));
 
-  /** What stands at a seat of the ring in a layer, and the catalog its word is in. */
-  function standing(seat: string, layer: string, id?: string): { thing: Named; prefix: string } | undefined {
-    const laid = board as QizhengBoard | undefined;
-    if (!laid) return undefined;
-    if (layer === 'governor' || layer === 'remainder') {
-      const body = [...laid.governors, ...laid.remainders].find((one) => one.body.id === id)?.body;
-      return body && { thing: body, prefix: 'qizheng' };
-    }
-    const house = laid.houses.find((one) => one.palace.id === seat);
-    if (!house) return undefined;
-    if (layer === 'palace') return { thing: house.ci, prefix: 'ci' };
-    if (layer === 'house') return { thing: house.house, prefix: 'house' };
-    return undefined;
-  }
-
-  /** A name on the board in words: its gloss, its hanzi and its reading. */
-  function nameAt(seat: string, layer: string, id?: string): string | undefined {
-    const at = standing(seat, layer, id);
-    if (!at) return undefined;
-    return `${t(`label.${at.prefix}.${at.thing.id}` as MessageKey)} ${glyph(at.thing)}`;
-  }
-
-  /** A palace of the ring as a pair says it: its 次. */
-  const seatName = (seat: string): string => nameAt(seat, 'palace') ?? seat;
-
-  /** Where a name stands, after its layer: the palace of the ring. */
-  const seatPlace = (seat: string): string => t('lens.where.palace', { palace: seatName(seat) });
-
-  const held = new HeldLens({ lens: () => lens, t: () => t, nameAt, seatName, seatPlace });
+  const held = new HeldLens({ lens: () => lens, t: () => t, words: () => words });
 
   async function submit(event: SubmitEvent): Promise<void> {
     event.preventDefault();
@@ -213,7 +185,7 @@
     </div>
 
     <!-- What the lens draws, said in words, at the page's measure. -->
-    <LensReading {t} {held} {seatName} />
+    <LensReading {t} {held} />
 
     <div>
       <QizhengReading {board} {t} {moment} />

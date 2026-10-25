@@ -184,7 +184,10 @@ export {
 export {
   QIZHENG_LAYERS,
   QIZHENG_LENS_LAYERS,
+  GUIYUAN,
+  MOON_LENS_PHASE,
   qizhengLens,
+  type QizhengLinkId,
   type QizhengLayer,
   type QizhengLens,
 } from './qizheng-lens.js';
@@ -194,14 +197,17 @@ export {
   ziweiLens,
   type ZiweiLayer,
   type ZiweiLens,
+  type ZiweiLinkId,
 } from './ziwei/lens.js';
 export {
   TAIYI_LAYERS,
   TAIYI_LENS_LAYERS,
+  ROLE_PHASES,
   rimSeatOf,
   taiyiLens,
   type TaiyiLayer,
   type TaiyiLens,
+  type TaiyiRole,
 } from './taiyi-lens.js';
 
 export {

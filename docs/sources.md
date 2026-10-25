@@ -3683,8 +3683,10 @@ independent sources naming the same thing the same way**.
 | a lens on a day: 對宮 | the Luoshu, as on the hour board | the same four pairs, asserted |
 | a lens on 六壬: 生剋 | the same five relations, between any two names with a phase: the two plates, the lessons, the transmissions | the 賊剋 the board is drawn by: on every 賊剋 board the 初傳 stands over a lesson the lens names in control |
 | a lens on 七政四餘: 生剋 | the same five relations, between any two of the nine bodies with a phase | 《御定五星精義》's 論恩難仇用: twenty cells, five planets by four relations, each matched |
+| a lens on 七政四餘: 歸垣 | 七政歸垣, a governor to the palaces it is at home in | 十二宮所屬 on the same page, which gives every palace the same owner |
 | a lens on 紫微斗數: 生剋 | the same five relations, between any two stars with one phase | no list; the twenty-five cells against the two cycles |
-| a lens on 太乙: 生剋 | the same five relations, between any two of the sixteen gods of the rim | 卷六's sentence naming thirteen gods by how each stands to 高叢 |
+| a lens on 紫微斗數: 三方 · 對宮 | the triad four apart, the facing palace six apart | the 全書's 譚星要論 by palace name and 安流祿流羊流陀訣 by branches, which agree |
+| a lens on 太乙: 生剋 | the same five relations, between any two of the sixteen gods of the rim, 太乙 and the generals | 卷六's sentence naming thirteen gods by how each stands to 高叢 |
 
 **The three a lens shows are relations and never readings of them.** A reader
 who picks a thing on a board is shown how everything else stands to it
@@ -3714,15 +3716,18 @@ the rung «—»), so a lens keeps them by their kind and relates them to
 nothing. 六沖 and 六合 between branches are the art's too, and a lens draws
 neither until each has its row.
 
-**On 七政四餘 the lens relates the bodies and nothing else.** The five
+**On 七政四餘 the lens relates the bodies, and draws 歸垣.** The five
 planets and the four remainders have phases (§ "四餘 — four of them, and what
-the fourth is worth"), and the 五星精義 reads its 論恩難仇用 between them by
-the five relations, so `qizhengLens` hands those over between any two of the
-nine. The Sun and the Moon have none. **The palaces have none in the lens
-either, by choice**: the same work gives each palace an owner, but what the
-art reads between a body and its palace is 歸垣 and 廟旺 — whose palace it is
-and how the body fares there — and a 生剋 drawn from a body to its palace's
-owner's phase would be a reading the art does not make. A palace may hold
+the fourth is worth"), the Moon takes water's in the lens alone, and the
+五星精義 reads its 論恩難仇用 between them by the five relations, so
+`qizhengLens` hands those over between any two of the ten. The Sun has none.
+**The palaces have no phase in the lens, by choice**: what the art reads
+between a body and its palace is 歸垣 and 廟旺 — whose palace it is and how
+the body fares there — and a 生剋 drawn from a body to its palace's owner's
+phase would be a reading the art does not make. **歸垣 is drawn instead**, as
+the board's own link: from each governor with a phase to the palace or
+palaces 七政歸垣 gives it, wherever it stands. The remainders have no 垣, and
+the Sun, having no phase, cannot be started from. A palace may hold
 several bodies, which is why the descriptor tells names apart by identifier
 on this board (`crowded`).
 
@@ -3731,23 +3736,44 @@ phase to every star it places bar thirteen, and three it gives two — 天同屬
 貪狼屬水木, 七殺屬火金 — which the book means both of. A relation wants one phase
 at each end, so `ziweiLens` keeps those three by their kind as it does the
 thirteen, rather than pick one. The palaces have none in the lens, the art
-reading a star's grade where it stands. **What the art reads across, 對宮 and
-三方四正, is not drawn yet.** The 續道藏 紫微斗數 says to read a star's phase
-against what 「時照三方四正，和合之宮」 holds, and the 全書's 卷一 to 「分對宮之
-體用，定三合之源流」; both are located in transcriptions and neither is read on
-a plate, and the Ming 南陽堂 woodblock held here is where the 全書's is to be
-read. A lens draws either after its row.
+reading a star's grade where it stands.
 
-**On 太乙 the lens relates the sixteen gods, and 卷六 reads them so itself.**
-The phase of each is its seat's (the row of the sixteen above), and the
-sentence that states thirteen of them — 「假今髙叢木，以吕申、大炅同類為旺；以大
-義、地主為相；武徳、太蔟為死；和徳、大武、太陽、天道為囚；大神、大威為休」 —
-names each god by how its phase stands to 高叢's, which is the five relations
-read from one god: the test `taiyiLens` is held to. 太乙 and the four
-generals are roles, and no phase for a role is registered, so they are kept
-by their kind. No pair is laid on this board: each seat of the rim holds one
-god, and the palaces, numbered one seat off the 洛書, hold nothing a lens
-relates.
+**三方 and 對宮, read on the Ming 南陽堂 woodblock** (2026-10-25; renders and
+the table of passages in `texts/ziwei/quanshu-nanyang-sanfang/`). The 全書
+reads across palaces and never defines the geometry by branch arithmetic;
+it gives it twice, in two parts of the book that agree. **By name**: 卷之五
+譚星要論, PDF 313, 「三看遷移財帛官祿三方星辰刑冲尅破四看福德宮…以福德對財帛宮
+也」 — the 三方 of the life palace are its 財帛 and 官祿 with 遷移 before them,
+and 福德 faces 財帛. **By branches**: 卷之三 安流祿流羊流陀訣, PDF 162, a 小限 in
+亥 with 擎羊 in 卯, 流羊 in 未 and 流陀 in 巳, 「却是三方四正俱見擎羊流羊流陀」 —
+亥's triad and the palace facing it. Under the order the twelve palaces are
+laid in, those are one geometry: **三方, the two palaces of the branch's
+triad, four apart; 對宮, the palace six apart; the two with the palace itself,
+the 三方四正**. 卷之一's 斗數發微論 (PDF 19, not the 太微賦 the transcription
+was thought to be) and 卷之二's 骨髓賦 (PDF 77, 「分對宮之体用定三合之源流」)
+name both, and 卷之四's 子女 (PDF 268) reads the facing palace when a palace is
+empty. One work, rung 4. `ziweiLens` draws both as links between palaces
+(`sanfang`, `duigong`), between the palaces' names; **neither carries a phase
+across**: no passage read reads 生剋 between stars of two palaces, and the one
+phase rule read — 論星辰生尅制化, PDF 162–163 — reads a star against the
+branch of its own palace and against a star 同度 in it. **What the
+transcription had wrong here**: 財帛宮祿 for 財帛官祿 at PDF 313, which turns a
+list of palaces into nonsense; and at PDF 162 it drops the whole clause that
+names the 三方四正 — the case on which this geometry stands. The 續道藏's
+「詳其時照三方四正」 stays located and unread, it being a digital text with no
+plate held.
+
+**On 太乙 the lens relates the sixteen gods and the roles in the palaces,
+and 卷六 reads the gods so itself.** The phase of each god is its seat's (the
+row of the sixteen above), and the sentence that states thirteen of them —
+「假今髙叢木，以吕申、大炅同類為旺；以大義、地主為相；武徳、太蔟為死；和徳、大
+武、太陽、天道為囚；大神、大威為休」 — names each god by how its phase stands to
+高叢's, which is the five relations read from one god: the test `taiyiLens`
+is held to. 太乙 and the four generals take the phases 推五將所主法 gives the
+stars they are the essence of (§ "What is not here", the 五將). No pair is
+laid on this board: the palaces are numbered one seat off the 洛書, an order a
+pair would have to be held in, and a name pressed already relates every role
+to every other.
 
 **The list that tests 門迫 is two cells shorter than the rule.** 《統宗》卷一
 迫 — ctext, and 故宮珍本叢刊 第426冊 page 13 — prints eight lines — 開門臨三四宮（金克木）· 休門臨九宮 · 生門臨一宮 ·
@@ -7470,16 +7496,22 @@ plate. The same work's 論恩難仇用, p. 9, names each planet's four relations
 and sets every remainder beside its planet in every row — 「木以水孛為恩。以金為
 難。以土計為仇。以火羅為用」 — which is the four phases again, stated through the
 cycle rather than as a list. Venus has no 餘. The phases the engine carries
-(`QizhengBody.element`) are these; 太陽 and 太陰 carry none. The 論恩難仇用's
-row for the Sun fits no single phase. The row for the Moon — 金 its 恩, 水孛
-its 次恩, 土計 its 難, 火羅 its 仇, 木炁 its 用 — is water's four relations with
-water itself as a second 恩, which reads as a watery Moon; the engine gives
-it no phase on one row's reading, and a lens keeps it by its kind. A second work is located and not read:
+(`QizhengBody.element`) are these; 太陽 and 太陰 carry none, and the drawing
+inks them so. The 論恩難仇用's row for the Sun fits no single phase. The row
+for the Moon — 金 its 恩, 水孛 its 次恩, 土計 its 難, 火羅 its 仇, 木炁 its 用 —
+is water's four relations with water itself as a second 恩, and **a lens
+relates the Moon as water on that row** (`MOON_LENS_PHASE`), on the user's
+word of 2026-10-25: one row of one work, rung 5, and the engine's body keeps
+no phase, so nothing but the lens reads it. A second work is located and not read:
 《星度指南》 carries the same four in the 合編's text recovered from its scan,
 which is a finding aid until the plate is read. The same page of the 五星精義
 states whose each palace is (十二宮所屬: 子丑 土, 寅亥 木, 卯戌 火, 辰酉 金, 巳申
-水, 午 the Sun's, 未 the Moon's) and where each governor is at home (七政歸垣);
-neither is in the engine, and neither is registered.
+水, 午 the Sun's, 未 the Moon's) and where each governor is at home (七政歸垣:
+「木躔寅亥二宮。火躔卯戌二宮。金躔辰酉二宮。水躔巳申二宮。土躔子丑二宮。日躔午宮。月躔未
+宮。謂之歸垣」). **The two tables give every palace the same owner**, which is
+the check one on the other, and the 所屬 closes on the reason — 「次遠于日者為木
+星，故寅亥二宮屬木。最遠于日者為土星，故子丑二宮屬土」, the order by distance from
+the Sun. Both are in the engine as `GUIYUAN`, for the lens.
 
 **The three that are computed are computed as mean elements, deliberately.**
 They are 隱曜 — positions rather than bodies, none of them ever observed — and
@@ -9469,13 +9501,27 @@ would want the eight states 旺, 相, 胎, 沒, 死, 囚, 休, 廢 that turn wit
 八節 — 盧央 tabulates all eight, on the 洛書's numbers, which he stops to
 warn about in six characters: 「注意不是太乙九宮」.
 
-**The 五行 of the actors, and the planet each stands for.** 太乙 is 木 and the
-歲星, 文昌 火 and the 熒惑, 始擊 土 and the 填星, 主大將 金 and the 太白, 客大將
-水 and the 辰星, the two 參將 taking what their general generates, 計神 火. This
-engine gives an element to each of the sixteen **seats**, which is what 卷六
-states and what the drawing tints a palace by, and none to the **roles** — so
-the 生剋 between the bodies on a board, which is what that table exists for, is
-not computed. It is one table away and it is not there.
+**The 五行 of the actors, and the planet each stands for** (read on the plate
+2026-10-25). 《太乙金鏡式經》卷二 推五將所主法, PDF 17–18 (810-871/872):
+「五將者太乙監將幷上下二目主客大小將也　監將者東方歲星之精受木德之正氣…上目者
+南方熒惑之精受火德之正氣在天為陽號始擊將屬客…下目者中宮鎮星之精受土德之正氣在
+地為陰號文昌將屬主…客大將者北方辰星之精受水德之正氣…主大將者西方太白之精受金德
+之正氣」. So 太乙, the 監將, is 木 and the 歲星; **始擊 火 and the 熒惑; 文昌 土
+and the 鎮星**; 主大將 金 and the 太白; 客大將 水 and the 辰星. 《太乙數統宗大全》
+卷五 明太乙五將分屬五星, series p. 44, opens on 「王希明曰」 and gives the same
+five, three characters slipped and none of them a phase (堅 for 監, 令 before 正氣,
+四月 for 四季), and adds the two 參將, each taking what its general generates —
+主參將 水, 客參將 木 — and 計神 火 on the next page. The two agree cell by cell,
+and the 統宗 is the 金鏡 paraphrased, so the table stands on one text that
+checks itself: planet, direction, phase and season name one element in every
+line. **文昌 火 and 始擊 土, the other way round, is neither plate's.** It
+is 盧央's, 《中國古代星占學》 pp. 472–473, who cites the 《淘金》 for a 文昌 of
+熒惑 and, calling 始擊 地目, gives it the 金鏡's sentence about the 下目; the
+《淘金》 is not held, so whether it diverges or 盧央 slipped is open, and no
+value is named for it. The roles' phases are in the engine for the lens
+(`ROLE_PHASES`), 太乙 and the four generals in their palaces; 文昌 and 始擊
+are on the board as the gods of the rim the counts start from, and keep their
+seats' phases there. Renders in `texts/taiyi/wujiang-elements/`.
 
 **陽九百六, 太乙入卦 and 九宮分野.** Three more chapters of the received layer:
 the two great limits of 4560 and 4320 years, the board read into hexagrams, and

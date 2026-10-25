@@ -442,7 +442,8 @@ export function writeLens(state: LensState): string {
 
 export function readLens(fragment: string, lens?: Lens): LensState {
   const fields = new URLSearchParams(fragment.replace(/^#/, ''));
-  const WORD = /^[a-z0-9]+$/;
+  // An identifier: toneless pinyin, or a role's name in camel case (`hostGeneral`).
+  const WORD = /^[A-Za-z0-9]+$/;
   const known = (allowed: readonly string[] | undefined) => (value: string) =>
     allowed ? allowed.includes(value) : WORD.test(value);
   const list = (name: string, keep: (value: string) => boolean): string[] =>
@@ -467,7 +468,7 @@ export function readLens(fragment: string, lens?: Lens): LensState {
     if (pair.length > 0) {
       state.pair = pair;
       const chosen = list('chosen', (key) => {
-        if (!/^[a-z0-9]+:[a-z]+(:[a-z0-9]+)?$/.test(key)) return false;
+        if (!/^[a-z0-9]+:[a-z]+(:[A-Za-z0-9]+)?$/.test(key)) return false;
         const { seat, layer: at } = spotOfKey(key as SpotKey);
         return pair.includes(seat) && isPhased(at);
       }).map((key) => key as SpotKey);

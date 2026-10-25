@@ -14,11 +14,12 @@
   pair of palaces, where each runs from whichever thing acts.
 
   **Two carriers, so that neither is the only one.** The stroke says the kind
-  — whole for 生, dashed for 剋, dotted for 比和, broken twice for 對宮 and
-  doubled for 五合 — and the two cycles are coloured as well, `--lens-sheng`
-  and `--lens-ke`, in hues the phases do not use: colour on a board is the
-  phase's, and a line in green or red would read as a sixth thing of wood or
-  fire. The other three are in the page's ink. Nothing among them is heavier
+  — whole for 生, dashed for 剋, dotted for 比和, broken twice for 對宮,
+  doubled for 五合, in long dashes for 歸垣 and dash-dot for 三方 — and the two cycles are
+  coloured as well, `--lens-sheng` and `--lens-ke`, in hues the phases do
+  not use: colour on a board is the phase's, and a line in green or red
+  would read as a sixth thing of wood or fire. The rest are in the page's
+  ink. Nothing among them is heavier
   than the rest but what the reader chose, which is framed as theirs.
 
   Hidden from assistive technology and from paper. The same relations are
@@ -38,6 +39,10 @@
         return '1.5 3.5';
       case 'duigong':
         return '10 3 2 3';
+      case 'guiyuan':
+        return '14 4';
+      case 'sanfang':
+        return '6 3 1.5 3';
       default:
         return undefined;
     }

@@ -229,7 +229,8 @@ export const INSTRUMENTS: readonly Instrument[] = [
     takesBirth: true,
     takesGender: true,
     strengths: true,
-    // A square: this board is asked for bare, its bands set in type below it.
+    // A square: every board is asked for bare, and this one's bands are set
+    // in type below it.
     plate: { width: 900, height: 900 },
     option: 'form.instrument.qimen',
     asks: 'form.questionPlaceholder.qimen',
@@ -242,7 +243,7 @@ export const INSTRUMENTS: readonly Instrument[] = [
     takesBirth: false,
     takesGender: false,
     strengths: false,
-    plate: { width: 900, height: 1531 },
+    plate: { width: 900, height: 1379 },
     option: 'form.instrument.liuren',
     asks: 'form.questionPlaceholder.liuren',
     name: { hanzi: '大六壬', pinyin: 'Dà Liù Rén' },
@@ -259,7 +260,7 @@ export const INSTRUMENTS: readonly Instrument[] = [
     takesBirth: false,
     takesGender: false,
     strengths: false,
-    plate: { width: 900, height: 1420 },
+    plate: { width: 900, height: 1360 },
     option: 'form.instrument.taiyi',
     asks: 'form.matterPlaceholder',
     name: { hanzi: '太乙神數', pinyin: 'Tài Yǐ Shén Shù' },
@@ -271,7 +272,7 @@ export const INSTRUMENTS: readonly Instrument[] = [
     takesBirth: false,
     takesGender: false,
     strengths: false,
-    plate: { width: 900, height: 1796 },
+    plate: { width: 900, height: 1450 },
     option: 'form.instrument.qizheng',
     name: { hanzi: '七政四餘', pinyin: 'Qī Zhèng Sì Yú' },
   },
@@ -286,9 +287,9 @@ export const INSTRUMENTS: readonly Instrument[] = [
     takesBirth: false,
     takesGender: true,
     strengths: false,
-    // Taller than it is wide, and that is the band of readings: a board of
-    // this art names forty things and every one of them has to be sayable.
-    plate: { width: 900, height: 1662 },
+    // Taller than it is wide even bare, and its key to forty names is set in
+    // the column beside it.
+    plate: { width: 900, height: 1150 },
     option: 'form.instrument.ziwei',
     name: { hanzi: '紫微斗數', pinyin: 'Zǐ Wēi Dǒu Shù' },
   },

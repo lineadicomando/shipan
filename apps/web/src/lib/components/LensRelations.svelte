@@ -30,7 +30,7 @@
     /** A name on the board in words, from where the drawing marks it. */
     nameAt: (seat: string, layer: string, id?: string) => string | undefined;
     /** Where a name stands, in words: «palace 4», «first lesson». */
-    seatPlace: (seat: string) => string;
+    seatPlace: (seat: string, layer?: string) => string;
   } = $props();
 
   const items = $derived(
@@ -52,7 +52,7 @@
             {nameAt(item.seat, item.layer, item.id)}
             <span class="where">({t('lens.at', {
               layer: t(`label.register.${lens.board}.${item.layer}` as MessageKey),
-              where: seatPlace(item.seat),
+              where: seatPlace(item.seat, item.layer),
             })})</span>:
             {t(`lens.relation.${item.relation}` as MessageKey, { thing: focusName })}
           </li>

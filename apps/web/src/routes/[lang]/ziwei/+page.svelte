@@ -2,10 +2,9 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { appearance } from '$lib/appearance.svelte';
-  import { glyph } from '$lib/glyph';
   import { HeldLens } from '$lib/held-lens.svelte';
+  import { ziweiWords } from '$lib/lens-words';
   import type { ZiweiBoard, ZiweiLens } from '@shipan/core';
-  import type { MessageKey } from '@shipan/i18n';
   import LensReading from '$lib/components/LensReading.svelte';
   import LensSide from '$lib/components/LensSide.svelte';
   import { momentQuery, sayFailure, sayPlace, type MomentInput } from '$lib/moment';
@@ -212,28 +211,10 @@
    */
   const lens = $derived<ZiweiLens | undefined>(result?.lens);
 
-  type Named = { id: string; hanzi: string; pinyin?: string };
+  /** How the board's names and seats are said, shared with the consultation. */
+  const words = $derived(ziweiWords(result?.ziwei as ZiweiBoard | undefined, t));
 
-  /** A name on the board in words: its gloss, its hanzi and its reading. */
-  function nameAt(seat: string, layer: string, id?: string): string | undefined {
-    const palace = (result?.ziwei as ZiweiBoard | undefined)?.palaces.find((one) => one.branch.id === seat);
-    if (!palace) return undefined;
-    let at: { thing: Named; key: string } | undefined;
-    if (layer === 'star' || layer === 'minor') {
-      const star = palace.stars.find((one) => one.star.id === id)?.star;
-      at = star && { thing: star, key: `label.ziwei.${star.id}` };
-    } else if (layer === 'house') at = { thing: palace.house, key: `label.ziweihouse.${palace.house.id}` };
-    else if (layer === 'ground') at = { thing: palace.branch, key: `label.branch.${palace.branch.id}` };
-    return at && `${t(at.key as MessageKey)} ${glyph(at.thing)}`;
-  }
-
-  /** A palace as a pair says it: the seat that fell there. */
-  const seatName = (seat: string): string => nameAt(seat, 'house') ?? seat;
-
-  /** Where a name stands, after its layer: the palace. */
-  const seatPlace = (seat: string): string => t('lens.where.palace', { palace: seatName(seat) });
-
-  const held = new HeldLens({ lens: () => lens, t: () => t, nameAt, seatName, seatPlace });
+  const held = new HeldLens({ lens: () => lens, t: () => t, words: () => words });
 
   /**
    * A press on the board is shared. Until the reader takes up the lens — a
@@ -402,7 +383,7 @@
     </div>
 
     <!-- What the lens draws, said in words, at the page's measure. -->
-    <LensReading {t} {held} {seatName} />
+    <LensReading {t} {held} />
 
     <div>
       <Schools

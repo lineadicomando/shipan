@@ -407,6 +407,8 @@ export const it: Record<MessageKey, string> = {
   // come quelle: una parola o due, dal lato della cosa da cui si è partiti.
   'label.relation.duigong': 'palazzo opposto',
   'label.relation.wuhe': 'tronco unito',
+  'label.relation.guiyuan': 'palazzo di casa',
+  'label.relation.sanfang': 'palazzo della triade',
 
   // Una lente sulla tavola. Ogni riga dice che cosa fa il comando, nessuna che
   // cosa significa una relazione: quello spetta a chi legge.
@@ -459,6 +461,8 @@ export const it: Record<MessageKey, string> = {
   'lens.relation.bihe': 'stessa fase di {thing}',
   'lens.relation.duigong': 'il palazzo opposto a {thing}',
   'lens.relation.wuhe': 'il tronco con cui {thing} si unisce',
+  'lens.relation.guiyuan': 'il palazzo in cui {thing} è di casa',
+  'lens.relation.sanfang': 'un palazzo della triade in cui sta {thing}',
 
   // Il cavallo di posta, e il ramo da cui è calcolato. La tradizione li nomina
   // entrambi e nessuno dei due sta per l'altro.

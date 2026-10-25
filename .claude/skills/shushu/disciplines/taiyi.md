@@ -516,12 +516,10 @@ None of these is a correction. Each says where a reading would look.
    提要 of the 金鏡 says 「《南齊書·高帝紀贊》」. The register (§ "The witness
    that is not a manual"), the `compute_taiyi` description and possibly
    `docs/agent-prompt.md` say 武帝紀. Check 盧央's page for which he wrote.
-2. **The elements and planets of the 五將.** The register (§ "What is not
-   here") gives 文昌 火 熒惑 and 始擊 土 填星. 金鏡 卷二 推五將所主法 reads
-   *(web)* 「上目者南方熒惑之精，受火德…號始擊將屬客」 and 「下目者中宮鎮星之精，
-   受土德…號文昌將屬主」. That is the reverse: 始擊 火, 文昌 土. 監將 is 歲星 木,
-   主大將 太白 金 and 客大將 辰星 水, which agree. The register's table may be
-   the 統宗's as 盧央 gives it. If so, it is a divergence between the works.
+2. **The elements and planets of the 五將** — *settled on the plate
+   2026-10-25*: the 金鏡 卷二 推五將所主法 and the 統宗 卷五 both give 始擊 火
+   熒惑 and 文昌 土 鎮星, as the web text had it; 盧央's reverse is his, after
+   a 《淘金》 not held. See the register § "What is not here".
 3. **"For 太乙's palace no count is named."** The register (§ "陰陽和不和")
    says this. 金鏡 卷六 推陰陽以占厄會 reads *(web)* 「太乙在陽宮筭得奇為重陽厄在火，
    太乙在陰宮筭得偶為重陰厄在水，若主人得主厄，若客得客厄」. That is each party's

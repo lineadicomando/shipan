@@ -7,8 +7,8 @@
  * column beside it through `LensSide`, what is read under it through
  * `LensReading`, and the page through `pressedOutside` and `escaped` on its
  * window. Which board it is on is the descriptor's business (`Lens` in
- * `core`) and the section's, which says a name in words (`nameAt`) and a seat
- * (`seatName`).
+ * `core`), and how its names and seats are said is `lib/lens-words.ts`'s,
+ * shared by a section and the consultation.
  *
  * Nothing is on when the page opens. The lens is kept across a step of the
  * moment — a focus is a thing and follows it to wherever the turn carries it
@@ -24,6 +24,7 @@ import type { Lens } from '@shipan/core';
 import type { MessageKey, Translator } from '@shipan/i18n';
 import { sayLayer, type BoardSpot } from './board';
 import { glyph } from './glyph';
+import type { LensWords } from './lens-words';
 import {
   WHOLE,
   inPair,
@@ -45,19 +46,8 @@ export interface HeldLensOptions {
   /** The board's lens, where the answer carried one. */
   lens: () => Lens | undefined;
   t: () => Translator;
-  /**
-   * A name on the board in words — its gloss, its hanzi and its reading —
-   * from where the drawing marks it, and by its identifier as well where a
-   * seat holds several names in one layer.
-   */
-  nameAt: (seat: string, layer: string, id?: string) => string | undefined;
-  /** A seat in words, as a pair is said: on 奇門, its number and its palace. */
-  seatName: (seat: string) => string;
-  /**
-   * Where a name stands, said after its layer in the list of relations: on
-   * 奇門 «palace 4», on 六壬 «palace Rat 子 zǐ» or «first lesson».
-   */
-  seatPlace: (seat: string) => string;
+  /** How the board's names and seats are said (`lib/lens-words.ts`). */
+  words: () => LensWords;
 }
 
 /**
@@ -93,14 +83,15 @@ export class HeldLens {
     this.focusName = $derived.by(() => {
       if (!this.view.focus) return undefined;
       const { seat, layer, id } = spotOfKey(this.view.focus);
-      return options.nameAt(seat, layer, id);
+      return options.words().nameAt(seat, layer, id);
     });
     this.pairSaid = $derived.by(() => {
       const seats = this.view.seats;
       const t = options.t();
-      if (seats.length === 1) return t('lens.pairOne', { a: options.seatName(seats[0] as string) });
+      const { seatName } = options.words();
+      if (seats.length === 1) return t('lens.pairOne', { a: seatName(seats[0] as string) });
       if (seats.length === 2) {
-        return t('lens.pair', { a: options.seatName(seats[0] as string), b: options.seatName(seats[1] as string) });
+        return t('lens.pair', { a: seatName(seats[0] as string), b: seatName(seats[1] as string) });
       }
       return undefined;
     });
@@ -136,8 +127,10 @@ export class HeldLens {
     return writeLens(this.state);
   }
 
-  nameAt = (seat: string, layer: string, id?: string): string | undefined => this.#options.nameAt(seat, layer, id);
-  seatPlace = (seat: string): string => this.#options.seatPlace(seat);
+  nameAt = (seat: string, layer: string, id?: string): string | undefined =>
+    this.#options.words().nameAt(seat, layer, id);
+  seatName = (seat: string): string => this.#options.words().seatName(seat);
+  seatPlace = (seat: string, layer?: string): string => this.#options.words().seatPlace(seat, layer);
 
   /**
    * Pressing a name with a phase starts from it, and pressing it again lets
@@ -216,7 +209,7 @@ export class HeldLens {
     if (lens && view.seats.length === 2 && keys.length > 0) {
       const name = (at: (typeof keys)[number]) => {
         const { seat, layer, id } = spotOfKey(at);
-        return this.#options.nameAt(seat, layer, id) ?? '';
+        return this.nameAt(seat, layer, id) ?? '';
       };
       const said = view.links
         .filter((link) => keys.includes(link.to) || keys.includes(link.from))
