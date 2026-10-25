@@ -414,6 +414,9 @@ export const it: Record<MessageKey, string> = {
   // cosa significa una relazione: quello spetta a chi legge.
   'lens.title': 'Lente',
   'lens.pair': 'Palazzi {a} e {b}',
+  // The names the lens keeps lit, under the circle of the phases.
+  'lens.gloss.heading': 'I nomi in vista',
+  'lens.gloss.empty': 'Quando premi un nome sulla tavola, o scegli un modo di guardarla, qui compaiono i nomi che restano in vista, con il loro significato e la loro lettura.',
   'lens.pairOne': 'Hai scelto il palazzo {a}. Premi un secondo palazzo in un punto senza nomi.',
   'lens.pair.heading': 'Come stanno fra loro il palazzo {a} e il palazzo {b}',
   'lens.pair.caption': '→ indica che la relazione va dalla riga alla colonna, ← indica che va dalla colonna alla riga.',

@@ -1254,7 +1254,7 @@
         <PillarPlate pillars={chart.board.pillars} {t} />
       {:else if shown.plate}
         <!-- The bench, as in every section: the board whole in the window,
-             and beside it the lens and the key to its names. See
+             beside it the lens, and under it the key to its names. See
              `docs/architecture.md` § "The bench". -->
         <div class="bench">
           <div class="board" class:swapped={onPaper}>
@@ -1285,8 +1285,10 @@
           </div>
           <div class="side">
             <LensSide {t} {held} />
-            <NameKey {t} groups={key} />
           </div>
+          <!-- The key to the names, under the board and outside the column: what
+               grows in the column as the lens is used must move nothing under it. -->
+          <div class="under"><NameKey {t} groups={key} /></div>
         </div>
         <!-- What the lens draws, said in words, at the page's measure. -->
         <LensReading {t} {held} />

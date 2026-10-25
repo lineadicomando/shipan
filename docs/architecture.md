@@ -186,32 +186,37 @@ lays; the four pillars are a grid in the page's type. Every drawing is asked
 for `bare`. On the left, the whole board at `--board`. On the right, a column
 at `--side` holding what is used on the board in view: the circle of the five
 phases at the head of the column in both modes, where nothing that grows
-under it can move it, then the lens and the key to its arrows, and on the
-boards that number their names the key to those numbers. The steps of the moment stay in
+under it can move it, then the names the lens keeps in view, then the lens
+and the key to its arrows. The steps of the moment stay in
 the bar above, with the date: they choose which board is laid, where the
 column holds how it is looked at, and the two are kept apart. The column
 stands beside the board and scrolls with the page like the board itself —
 it is the board's companion, and a column that followed the reader down the
 page would be one more thing moving — and beside the board, nothing pressed
-in it can move the board.
+in it can move the board. Under the board, in the second row of a grid the
+column spans, stands the key to the board's names (`.under`): that row is
+`1fr`, so the column takes what it needs past the board's height there and
+the key is placed by the board alone. The column grows and shrinks as the lens
+is used, and the key, set in it, moved with every press.
 It is paid for out of the board's width and not out of the margins: the shell
 stays 72rem, and the board is the narrower for it. Below 64rem, or on a
 window standing upright, the column goes under the board, for the same
 reason it is not over it. What is read off the board — the relations in
 words, the tables, the schools — stays under the bench at the page's
-measure. The rules are `.bench` and `.side` in `app.css`, once.
+measure. The rules are `.bench`, `.side` and `.under` in `app.css`, once.
 
-**The key to a board's names is set beside it, not under it.** 太乙,
+**The key to a board's names is set in type under the board, not in the
+drawing.** 太乙,
 七政四餘 and 紫微斗數 put a numeral beside every name they have no room to
 gloss, and the band under the figure said what each numeral was; 六壬's and
 奇門's say how their names are said. Under the figure the band made each drawing
 nearly twice as tall as it was wide, which no window holds. So a section asks
 for its board `bare` — without the band and without the lines naming the
 schools, which the page sets in type under the bench — and the drawing keeps
-its numerals (`band: false`). The key beside it is read off the same
+its numerals (`band: false`). The key under it is read off the same
 numbering, by the drawing's own `taiyiKey`, `qizhengKey`, `ziweiKey` and
 `liurenReadings`, so the two cannot disagree: three endpoints hand it over
-beside the board, told the reader's language as they already were, and the
+with the board, told the reader's language as they already were, and the
 太乙 page works its own out (`lib/key.ts`), because that endpoint is told no
 language and its year is cached publicly for every reader at once. 奇門's key
 numbers nothing and is worked out in the page as well (`qimenKeyOf`, beside
@@ -228,8 +233,16 @@ fetched on its own — the PNG, what the MCP server hands over, a picture saved
 from the page's address without `bare` — keeps its band: it travels without a
 page to key it.
 
-Paper takes the bench as a block: the board, then what the column held. The
-lens stays off it; the key to the names prints under the board, since the
+**What the lens keeps in view is glossed in the column** (`LensGloss`), under
+the circle: each name lit by the press — a name, a pair, a kind, a phase —
+with its word, its hanzi and its reading, and nothing about the relations,
+which the circle and `LensReading` name. It is a fixed height and scrolls
+inside, because the mode and the lens's controls stand under it and a list
+that grew with every press would move the button about to be pressed.
+
+Paper takes the bench as a block: the board, then what the column held, then
+the key. The lens and its gloss stay off it; the key to the names prints under
+the board, since the
 sheet carries the board drawn the same way. The key to the marks of strength
 is under the 奇門 board on screen as well as on paper, with the marks it
 reads.

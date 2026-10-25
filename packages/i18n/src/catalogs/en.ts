@@ -425,6 +425,9 @@ export const en = {
   // `docs/refusals.md` § "Where to look first".
   'lens.title': 'Lens',
   'lens.pair': 'Palaces {a} and {b}',
+  // The names the lens keeps lit, under the circle of the phases.
+  'lens.gloss.heading': 'The names in view',
+  'lens.gloss.empty': 'When you press a name on the board, or choose a way of looking at it, the names it keeps in view appear here with their meaning and their reading.',
   'lens.pairOne': 'Palace {a} is chosen. Press a second palace, away from its names.',
   'lens.pair.heading': 'How palace {a} and palace {b} stand to each other',
   'lens.pair.caption': '→ means the relation runs from the row to the column, and ← means it runs from the column to the row.',

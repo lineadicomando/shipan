@@ -175,10 +175,12 @@
         <LayerLegend {t} board="liuren" />
       </div>
       <div class="side">
-        <!-- The circle, the mode and the lens, then the key to the names. -->
+        <!-- The circle, the names in view, the mode and the lens. -->
         <LensSide {t} {held} />
-        <NameKey {t} groups={data.result?.readings ?? []} />
       </div>
+      <!-- The key to the names, under the board and outside the column: what
+           grows in the column as the lens is used must move nothing under it. -->
+      <div class="under"><NameKey {t} groups={data.result?.readings ?? []} /></div>
     </div>
 
     <!-- What the lens draws, said in words, at the page's measure. -->

@@ -183,20 +183,38 @@
 :root { --side: 22rem; }
 
 /*
- * The bench itself: the board, and the column beside it.
+ * The bench itself: the board, the column beside it, and the key under it.
  *
  * One column on a narrow or upright window, the side under the board — never
  * over it, so nothing that grows in it pushes the board down. Two on a wide
  * one lying on its side, the column beside the board and scrolled with the
  * page like the board itself: it is the board's companion, and a column that
  * followed the reader down the page would be one more thing moving. Beside
- * the board, nothing that grows in it can move the board either. On paper the
- * bench is a block, and what the column holds follows the board.
+ * the board, nothing that grows in it can move the board either.
+ *
+ * **The key to the names goes under the board, and the column spans both
+ * rows.** The column grows and shrinks as the lens is used — a mode opens, a
+ * list of relations appears — and a key set under it in the column moved
+ * every time. Under the board, in a second row the column also spans, it is
+ * placed by the board's height alone: the second row is `1fr`, so whatever
+ * the column needs past the board goes there and never into the first. On a
+ * narrow window the key comes last, after the column.
+ *
+ * On paper the bench is a block, and what the column holds follows the board.
  */
 .bench { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); }
 .bench > .side { display: grid; gap: 1.25rem; align-content: start; min-inline-size: 0; }
+.bench > .under { min-inline-size: 0; }
+.bench > .under:empty { display: none; }
 @media (min-width: 64rem) and (orientation: landscape) {
-  .bench { grid-template-columns: minmax(0, 1fr) var(--side); gap: 2rem; align-items: start; }
+  .bench {
+    grid-template-columns: minmax(0, 1fr) var(--side);
+    grid-template-rows: auto 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .bench > .side { grid-column: 2; grid-row: 1 / span 2; }
+  .bench > .under { grid-column: 1; grid-row: 2; }
 }
 @media print {
   .bench { display: block; }

@@ -337,8 +337,10 @@
         <LensSide {t} {held} />
         <!-- How the names are said, where every other board's key stands. A
              board of the day keeps its own at the foot of its reading. -->
-        {#if !ofTheDay}<NameKey {t} groups={qimenKeyOf(chart)} />{/if}
       </div>
+      <!-- The key to the names, under the board and outside the column: what
+           grows in the column as the lens is used must move nothing under it. -->
+      <div class="under">{#if !ofTheDay}<NameKey {t} groups={qimenKeyOf(chart)} />{/if}</div>
     </div>
 
     <!-- What the lens draws, said in words, at the page's measure. -->
