@@ -448,7 +448,7 @@ page of a published book and not a board (`docs/parameters.md`).
 - **A work and an edition are different things.** The rule against naming a value for a recension and the test for an edited edition are in `docs/parameters.md` § "What is not a parameter" and `docs/sources.md` § "What a second copy of one text buys". Do not restate them. Apply them.
 - **Qing taboo forms date a copy.** 玄 (康熙 玄燁) is written 元 or with the last stroke missing, 弘 (乾隆 弘曆) as 宏, 胤 (雍正) without its last stroke, 丘 (孔子, enforced from 雍正) as 邱, 曆 itself often as 歷 or 厤 under 乾隆. So 玄武 appears as 元武, and 天玄 as 天元. In a 奇門 text 元武 is the spirit 玄武, not a «primal» anything. Libraries date prints by these forms. Princeton dates a 康熙 print by its avoided 玄, and notes a supposed 康熙 manuscript of 《遁甲奇門》 that avoids neither 玄 nor 弘 (catalogue, *web*). One avoided character does not date a book: check 刻工, format, 序 and seals as well.
 - **四庫 alterations go beyond taboo.** Passages offensive to the Manchus were changed (胡, 虜, 夷), and 術數 works were sometimes abridged. A 四庫 reading against a Ming print is a two-witness question, not a settled one.
-- **Two copies are one text.** A 故宮 palace manuscript and a 四庫 copy of the same work collate one text. Two works are two readings (`docs/parameters.md` § "Two works are not two copies").
+- **Two copies are one text.** A 故宮 palace manuscript and a 四庫 copy of the same work collate one text. Two works are two readings (`docs/parameters.md` § "What is not a parameter", «Two works are not two copies»).
 
 ### 4.4 Reading a woodblock
 

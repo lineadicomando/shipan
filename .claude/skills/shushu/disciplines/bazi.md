@@ -9,7 +9,8 @@ values and their holders in `docs/parameters.md` and
 characters". This file does not restate them.
 
 Marks: ★ on this project's shelf (`texts/bazi/`, `texts/README.md`);
-☆ wanted and not held (`TODO.md` § 2). `(web transcription)` = read off a web
+☆ wanted and not held: `TODO.md` § 2 "Wanted and not held" where it is
+listed there, otherwise this file's own proposal (§ 7). `(web transcription)` = read off a web
 page during research, a lead and never a witness. `(shelf typesetting)` = read
 in a modern searchable typesetting held on the shelf: also a finding aid. The
 plate has not been consulted for anything quoted here unless the register
@@ -115,7 +116,7 @@ already says so.
 
 - **徐樂吾** Xú Lèwú (1886–1949, 上海): 子平真詮評註, 滴天髓徵義, 滴天髓補註,
   造化元鑰評註, 子平粹言. He systematised the **five ways of taking the 用神**
-  (§ 4.4) and denies separate yin-stem 長生 (§ 3.6).
+  (§ 4.4) and denies separate yin-stem 長生 (§ 3.10).
 - **袁樹珊** Yuán Shùshān (1881–1968, 鎮江): 命理探原, 命譜, and the publisher
   of the 闡微.
 - **韋千里** Wéi Qiānlǐ (1911–1988, 上海 then 香港): 千里命稿, 八字提要, 命學講義.
@@ -214,7 +215,7 @@ Each step names the witness for each reading and the engine parameter, or says
    The engine emits 年月日時.
 7. **藏干 cánggān** (`bazi/hidden-stems.ts`). The engine's sets: 子癸; 丑己癸辛;
    寅甲丙戊; 卯乙; 辰戊乙癸; 巳丙庚戊; 午丁己; 未己丁乙; 申庚壬戊; 酉辛;
-   戌戊辛丁; 亥壬甲. That is twenty-eight stems, with **亥 without 戊** and
+   戌戊辛丁; 亥壬甲. That is twenty-eight stems (`HIDDEN`; checked 2026-10-25), with **亥 without 戊** and
    **午 with 己**. It matches 李雨田's 1947 table (闡微 初學捷徑) and is **not
    modelled** as a parameter. Divergences:
    - **The sets.** 《子平真詮》's 「十二月令人元司令分野表」 (shelf
@@ -306,9 +307,10 @@ Each step names the witness for each reading and the engine parameter, or says
 15. **胎元 tāiyuán** (the month of conception; 《三命通會》 論胎元 counts 300
     days back) and **命宮** (the 子平 命宮 by 加時 to 卯; see the register's
     note on 論坐命宮). Neither is computed.
-16. **神煞**. Not computed on the bazi board. The phase-15 refusal keeps the
-    almanac's 神煞 off the pillars page because 八字 derives the same names
-    differently.
+16. **神煞**. Not computed on the bazi board. The whole almanac line is left off the pillars
+    page (`CalendarAndAlmanac.svelte`, `almanac={false}`; phase 15): 曆注
+    weighs a day as the occasion of an undertaking, a birth is not one, and
+    八字 derives the same 神煞 names otherwise.
     - Most 子平 神煞 are positions in the 三合 or the 祿 (BZ-08): 將星 is the
       仲; 華蓋 the 墓; 驛馬 the 沖 of the 長生; 桃花/咸池 the 沐浴; 羊刃 the
       next branch after the 祿; 文昌 the 祿 of the 食神.
@@ -571,8 +573,9 @@ These are teachings and never transcript facts (`prompt.bazi.gods`).
   - Holders on the shelf: 《三命通會》 卷二 ★ (陽生陰死), 闡微 ★ (任鐵樵
     against it), 《子平真詮》 ★ (沈 for; 徐樂吾 against).
 - **`dayBoundary: zishi` and `yearBoundary: lichun` are still unattributed.**
-  - The corpus's 推年法 (中国古代算命术 p. 59, `W02243`) states 立春 「必须严格」.
-    That is a modern witness to `lichun`; it is not yet in the register.
+  - The corpus's 推年法 (中国古代算命术 p. 59, `CAL-03`, `W02243`) states 立春
+    「必须严格」: a modern witness to `lichun`, not yet in the register, and
+    listed as a lead in `TODO.md` § "What to do next".
   - ☆ 《星平大成》 for `midnight`.
 - **A third 夜子 reading** (the day *and* the hour stem kept on the ending
   day), seen only on web pages. Locate a manual holding it before naming a
@@ -599,6 +602,8 @@ These are teachings and never transcript facts (`prompt.bazi.gods`).
 
 ## 8. Leads against the register
 
+- **`dayBoundary: midnight` and `trueSolarTime: true` have their holder in
+  prose and no row in `sources.tsv`** (`TODO.md`, review of 2026-10-23).
 - **The register's 八字 sections name no witness for the hidden-stem table**,
   and `hidden-stems.ts` calls its list «the common 人元司令 one». Two works on
   the shelf print **人元司令 tables that differ from it**:

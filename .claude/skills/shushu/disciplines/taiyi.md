@@ -450,8 +450,9 @@ same shape per 局 *(web)*:
     and generals (C). `accord` is the eye's test only.
   - `ding`: the 定目, 定算 and its generals (統宗).
   - `patterns`: 掩 擊 迫 囚 關 格 對 杜, each with `subject`, `partner`,
-    `palace`, `kind` (前/後 辰/宮) and, for the seven of 卷三, `valence` 凶 and
-    the 之義 `meaning` (D). This is the input for 五將發.
+    `palace`, `kind` (前/後 辰/宮) and, for the seven of 卷三, `valence` 凶;
+    six carry the 之義 `meaning` (對 has an omen list and none). 杜 carries
+    neither (D). This is the input for 五將發.
   - `gate`: the 30-year 直使. It is not the 三門 of 卷四.
   - `sanji` (with `period`), `wufu`, `dayou`: the circuits (E).
   - `sui`, `liuji`, `yuan`, `ju`, `accumulated`: the reckoning.
@@ -495,7 +496,6 @@ the shelf.
 - **The 時計 and 日計.** kintaiyi has open code for both on four bases. It is
   not a witness, but it is an independent implementation to diff against once
   `ji: shiji` is built, as `lunar-javascript` is for the pillars.
-- **The 五將's elements**: the 金鏡 卷二 推五將所主法 (§ 8). **On the shelf.**
 - **《景祐太乙福應經》** (Song, court): a third lineage for the epoch and the
   conditions, and 楊惟德 is already a witness for 奇門. Not held.
 - **曲安京 1998, 《清華學報》 28.2**, the 甲寅太乙曆: it may answer what the 甲寅
@@ -531,11 +531,11 @@ None of these is a correction. Each says where a reading would look.
    2020) does. It offers four bases: 統宗 10 153 917, 金鏡 1 936 557, 淘金歌
    10 154 193 and 太乙局. It is not a witness. It is the independent
    implementation the sentence says does not exist.
-5. **"`epoch: taojin` … out by a whole 元."** Both web figures for the 淘金歌
-   (10 154 193 and 10 153 977) differ from the 統宗's by 276 and 60 years. In
-   each case that is 12 mod 24 (four palace-steps, 四宮 → 九宮, as 盧央 says),
-   and neither is 72. 盧央's 元 may mean a sexagenary 元. Check his page; the
-   refusal stands either way.
+5. **`epoch: taojin` and 盧央's 元**, *settled 2026-10-23*: the register gives
+   the 元 to 盧央, not to the 元法 of 72. Both web figures for the 淘金歌
+   (10 154 193 and 10 153 977) differ from the 統宗's by 276 and 60, each
+   ≡ 12 mod 24: four palace-steps, consistent with 四宮 → 九宮. The refusal
+   stands.
 6. **"The tables' trouble is older than either copy"** (§ "卷三十一"). The
    Wikisource 《武經總要》 立成 *(web)*, parsed against `taiyiJu`, agrees on
    主算 in 139 of 144 rows, 客算 in 126, and 太乙's palace in 140. In **all

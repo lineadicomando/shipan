@@ -64,7 +64,7 @@ History, as far as the texts reach:
   further recension, not held.
 - 葆和堂 (建陽) Wanli edition, named by a web survey; unverified.
 
-### The other transmission (not computed; `docs/refusals.md` § 十八飛星)
+### The other transmission (not computed; `docs/refusals.md` § "The 十八飛星 placements")
 
 - ★ **《萬曆續道藏》《紫微斗數》**, three juan, GBK text. Eighteen stars off the
   year branch, no 五行局, no 天府.
@@ -153,7 +153,7 @@ implements them, recompute the bureau from the 身宮 or 福德宮 pillar taken 
 — a further board, not a variant.)
 
 **5. 紫微 by bureau and lunar day.** 《全書》 prints five grids; the engine ships
-them as `ZIWEI_BY_DAY`, all 150 cells collated against the 南陽堂 block and the
+them as `ZIWEI_BY_DAY`, all 150 cells (checked against the engine 2026-10-25) collated against the 南陽堂 block and the
 捷覽. The arithmetic carried beside the grids (q = ⌈day/局⌉, r = q·局 − day,
 ±r by parity) is a check, not the text.
 
@@ -220,7 +220,7 @@ branch. Divergences found, none modelled:
   modern boards add; the 中州派 list runs to them and the 將前 / 歲前 rings.
 
 **10. Brightness 廟旺 miàowàng.** 《全書》 卷二 closes on a seven-grade table:
-廟, 旺, 得地, 利益, 平和, 不得地, 落陷; 21 stars graded, 18 in all twelve
+廟, 旺, 得地, 利益, 平和, 不得地, 落陷; 21 stars graded (checked 2026-10-25), 18 in all twelve
 branches, 祿存 / 擎羊 / 陀羅 in eight (they never reach the 四墓, or flank one
 that does not). 卷三's coarse lists agree with it. Other schools use other grade
 sets and tables (iztro ships its own and makes it configurable); none is
@@ -362,9 +362,9 @@ for a birth, no question.
 | `.transform`, `.contested` | 生年四化 under `sihua`; `contested` marks the cell the declared tables part over |
 | `palaces[].body`, `bodyBranch` | 身宮 |
 | `lifeMaster`, `bodyMaster` | 命主 (命宮 branch), 身主 (year branch) |
-| `majorLimit`, `minorLimitAge`, `childLimit` | 大限 under `daxian`, 小限, 童限 — only with `gender` |
+| `majorLimit`, `minorLimitAge`, `childLimit` | 大限 under `daxian` and 小限, only with `gender`; 童限, always |
 | `changsheng`, `boshi` | the 長生 and 博士 rings — only with `gender` |
-| `options` | the five parameters in force; the schools block derives from it |
+| `options` | the parameters in force; the schools block derives from it |
 
 Refused or not done, and where it is argued:
 - 用神-like choice of palace, 格局 ranking, dating, advice — `docs/refusals.md`.

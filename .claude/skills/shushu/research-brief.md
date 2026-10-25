@@ -4,10 +4,12 @@ You are writing one knowledge file of a Claude Code skill for **shipan 式盤**,
 a project in this repository that computes the boards of the Chinese
 calculative arts (奇門遁甲, 大六壬, 太乙神數, 七政四餘, 紫微斗數, 八字, the
 almanac 曆注) and hands them to people and to models. The skill will be used
-by a model acting as an expert in these arts, for two jobs:
+by a model acting as an expert in these arts, for three jobs:
 
 1. **Consulting**: reading a board the engine has laid, for somebody who asked.
-2. **Developing**: deciding how to read a scanned source, what a divergence
+2. **Teaching**: explaining the art to a learner who reads no Chinese, laying
+   its board step by step, and writing handouts that cite their sources.
+3. **Developing**: deciding how to read a scanned source, what a divergence
    between texts means for the engine, which TODO to take up, what new TODO to
    propose, how to review what is there.
 

@@ -425,10 +425,11 @@ quantities to compute and sign as 星學大成/張果星宗's;
 computed, derivable from `houses` and the table § 3.11, start age unknown
 without a 命度.
 
-Refused, and why (`docs/refusals.md`, `TODO.md` § 1): `xiudu: shixian`
-(a table with a citable epoch), `minggong: ascendant` (a holder), `gong: ci`
-(a second copy of three cells, and a decision on its frame); 紫氣 to a degree;
-留; 化曜, 十神, 度主 and the 生剋恩難 layer as doctrine. The prompt
+Refused, and why (`TODO.md` § 1): `xiudu: shixian` (a table with a citable
+epoch), `minggong: ascendant` (a holder), `gong: ci` (a second copy of three
+cells, and a decision on its frame). 紫氣 to a degree: `docs/refusals.md`
+§ "紫氣". 留 (no threshold), 化曜, 十神, 度主 and the 生剋恩難 layer as
+doctrine: `docs/sources.md` § "What is not here" (七政四餘). The prompt
 (`prompt.qizheng.*`) forbids importing aspects and rulerships: read that as
 Western ones — the art's own 宮主 and 照 are fair to use, attributed.
 
@@ -476,8 +477,6 @@ Western ones — the art's own 宮主 and 照 are fair to use, attributed.
 - **身宮, four readings** (§ 3.6) — a parameter when a board carries a 身.
 - **化曜** — one transmission, identical in two compilations; whose year
   boundary (冬至 per 星學大成) is open.
-- **Stale comment**: `ZIQI_ANCHOR`'s doc says the residue «is the reason `off`
-  is still the default»; the default is `yinianyisu`.
 - **Works worth acquiring**: 元史·曆志 (授時曆經); 明史·天文志/曆志;
   清史稿·時憲志; 星平會海; a Ming 七政曆; P.4071 facsimile; 靈臺經 (DZ 288);
   Mak 2014; Niu 2016; Kotyk SPP 282 (free PDF, sino-platonic.org).
@@ -498,9 +497,10 @@ Western ones — the art's own 宮主 and 照 are fair to use, attributed.
 - **«`gong: zhongqi` has no text named»**: 明史 卷25 names it the 西洋之法
   (*web transcription*) — a holder, and an argument that the board's default
   palaces are the 時憲's while its other values are pre-Qing lines.
-- **«No source consulted states [the direction]…» survives in
-  `prompt.qizheng.direction` and the header of `qizheng.ts`**; the register
-  itself has 星學大成 卷三. Add 張果星宗一 (on the shelf) and 杜牧 (852).
+- **人事宮 direction, a second work.** The register, `prompt.qizheng.direction`
+  and the header of `qizheng.ts` stand on 星學大成 卷三 alone. 張果星宗一
+  十二宮例 (on the shelf, 集成 卷567) and 杜牧's epitaph (852, not held) would
+  add a second work and a date.
 - **«三辰通載 is not a second work»** (§ 四餘): 張果星宗十二 introduces it as a
   book with 「各卷經義」, an elementary work it draws on (*web transcription*,
   集成 卷578). It is still one text in two compilations, so the count of

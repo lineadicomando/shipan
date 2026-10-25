@@ -19,6 +19,8 @@ The project's history is a series of readings each «put to the user» and built
 | what goes in `docs/sources.md`, `sources.tsv`, `texts/README.md`, `TODO.md` | buying a file |
 | the version term a commit earns (`docs/architecture.md` § "Which term moves") | changing a catalog gloss the user wrote |
 | proposing a TODO, and where it goes | |
+| in a lesson: the sequence of boards and lenses, starting and stopping the dev server it started, where a handout is saved unless the learner names a place | running `geo:import` (about 215 MB) |
+| | keeping a learning record in memory (the learner's word), and a manual meant to circulate (`common/teaching.md` § 9.3) |
 
 A recommendation is one sentence of what to do and why, the alternatives in a
 line each, and the cost: «yes builds `x: y` held by Z; it moves these marks and

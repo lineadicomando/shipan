@@ -21,7 +21,7 @@ hour and a direction are then sought for it.** The question is neither asked at
 an instant (卜) nor about a birth (命) nor about a year (天): it is a choice
 among instants not yet arrived. A birth enters only as a filter — the person's
 year must not clash with the day (日沖 rìchōng), or must ride a good palace of
-a 奇門 board (§ 4.5).
+a 奇門 board (§ 4.4).
 
 **History in ten lines.**
 
@@ -141,7 +141,8 @@ and not held (`TODO.md`, `texts/README.md` § Still missing).
 
 Every step below is 《協紀辨方書》's unless said; the engine value is
 `shensha: xieji` throughout, and the date grain is fixed (no `dayBoundary`, no
-`trueSolarTime`, no `yearBoundary` reaches it — `docs/parameters.md` § 曆注).
+`trueSolarTime`, no `yearBoundary` reaches it — `docs/parameters.md` § "The
+calendrical layer under every board" and § "The other boards").
 
 1. **The date, on 120°E.** The page is a published artefact: the civil day at
    120°E, not the chart's zone. *Divergence:* none among almanacs; software
@@ -176,7 +177,7 @@ Every step below is 《協紀辨方書》's unless said; the engine value is
 6. **The hours' god**: the same rule one cycle down — 「視其日、其時所履之神」 —
    the 天罡 laid on the *day's* branch. Same twelve, same valence.
 7. **年神 (from the year's branch or stem, turned at 立春's date)**: 26 from
-   卷三 — 太歲, 歲破, 大將軍, 太陰, 黃幡, 豹尾, 喪門, 弔客, 白虎, 病符, 死符, 大煞,
+   卷三 (`YearGodId`) — 太歲, 歲破, 大將軍, 太陰, 黃幡, 豹尾, 喪門, 弔客, 白虎, 病符, 死符, 大煞,
    劫煞 · 災煞 · 歲煞 (the 三煞 sānshà, one rule: 絕 胎 養 of the triad), 大耗, 小耗,
    歲枝德, 歲德 and 歲德合 (stems), 破敗五鬼 (a trigram), 奏書 · 博士 · 力士 · 蠶室
    (corner trigrams), 金神 (several branches). Seats are shared on purpose
@@ -205,8 +206,8 @@ Every step below is 《協紀辨方書》's unless said; the engine value is
       *Divergence on day and night*: 「或以卯酉為限，或以日出入為限……自當以日出入
       為定」 (卷七), and a solstice rule the 考原 attributes to the 通書 —
       「旦晝於冬至後用之……暮夜於夏至後用之」 *(web, unread on a plate)*. The almanac
-      flags both seats and models none of this; `liuren.zhouye` models the first
-      two for 六壬.
+      flags both seats and models none of this; `liuren.zhouye` computes the
+      first for 六壬 (`branch`) and declares and refuses the second (`solar`).
     - **喜神**: 「甲己日艮方寅時，乙庚日乾方戌時，丙辛日坤方申時，丁壬日離方午時，
       戊癸日巽方辰時」, the hour of 丙 by 五虎元. *Divergence:* the old 通書 also
       made 甲日丑時 a 喜神 hour, 「以丑寅皆屬艮」, corrected in 1739 (memorial,
@@ -226,8 +227,9 @@ Every step below is 《協紀辨方書》's unless said; the engine value is
       八祿, 日建 · 日破 · 日合 · 日害 · 日刑, 四大吉時 (the 四煞 sunk in the four
       corners by the 月將), 貴登天門時 (the noble on 乾亥), 九醜, 旬中空亡.
 11. **宜忌**: refused (`docs/sources.md` § 曆注, "What is not here", and the
-    header of `packages/core/src/almanac.ts`; `docs/refusals.md` § "Ordering
-    two hours").
+    header of `packages/core/src/almanac.ts`). `docs/refusals.md` has no entry
+    of its own for it yet (`TODO.md`, review of 2026-10-23); § "Ordering two
+    hours, and dating an outcome" covers only the verdicts built on it.
     The consultant supplies it, attributed (§ 4).
 
 ---
@@ -401,7 +403,7 @@ prompt.
 
 **The scan** — `scanCharts` / `matchRuns` in `scan.ts`, `purposeCriteria` in
 `purposes.ts`; surfaces `scan_moments`, `/api/moments`, `/[lang]/moments`. It
-walks up to 366 days of **hour boards** (`system: rijia` is refused), bisects
+walks up to `MAX_SCAN_DAYS` (366) days of **hour boards** (`system: rijia` is refused), bisects
 every change of hour, day, month or 局 to the minute, and returns runs with the
 palaces that answer `gate`, `star`, `spirit`, `stem`, `directions`,
 `minStrength`, `benming`, `requires`, `excludes`. A purpose expands to a gate,
@@ -500,6 +502,10 @@ Each: what · why · what would settle it · on the shelf or not.
 
 ## 8. Leads against the register
 
+- **臨日's valence.** Shipped `xiong` (`almanac.ts`); the 協紀 overrules the
+  《樞要歷》 and calls it 吉 (華齡 OCR p. 160, memorial p. 13). And the
+  register's 神煞 row still says seven where thirty ship (`sources.tsv`). Both
+  are in `TODO.md`, review of 2026-10-23.
 - **楊公忌.** `docs/sources.md` § 二十八宿值日 records «a check the source
   suggests, which fails»: the 楊公忌 as «the days the count gives 室», laid against
   the engine's 室 days, 2 of 78. The 協紀 卷三十六 *(web transcription)* says the

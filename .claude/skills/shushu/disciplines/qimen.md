@@ -71,8 +71,9 @@ Unmarked = found in this research and not yet on either list.
 - ★ 《奇門遁甲統宗》, the 池本理 line, held four ways: 故宮珍本叢刊 第426冊,
   遁甲集成 第六冊, a simplified transcription, and ctext 卷一, 二, 十, 十二.
   It holds most of the defaults (`plate: zhuan`, `centreLodging: kun`,
-  `method: zhirun`, `leap: solstice`, `spiritSeat: tianpan`, `dingTomb: gen`,
-  `menpo: menzhigong`, `deshi: liuyi`). 卷十二 carries the natal reading the
+  `earthPlate: yuan`, `centreTravel: stay`, `spiritSeat: tianpan`, `dingTomb:
+  gen`, `yiTomb: kun`, `menpo: menzhigong`, `deshi: liuyi`, `leap: solstice`),
+  and `method: zhirun`, which is not one. 卷十二 carries the natal reading the
   engine refuses.
 - ★ 《御定奇門寶鑑》, 六卷, 故宮 第431冊, with a typeset edition and 遁甲集成
   第四冊. The 統宗's 卷二 again. Reports `centreLodging: dun` and holds
@@ -86,16 +87,16 @@ Unmarked = found in this research and not yet on either list.
 - ★ 《御定奇門大全》, 64 juan, surveyed whole. 景祐秘纂 卷二 is the 符應經's
   卷中 again, with three cases that lay only under `centreStem: host`. It
   carries the hour tables (卷五–十), 遁甲通明鈐 (置閏 dated to the 1240s–60s),
-  奇門仙機 (its 干論, `stemPairs: xianji`, seventy-seven cells read on the
-  plate), 先天要論, 奇門古本 (年家 on 一七四), 奇門秘訣 (`spiritSeat:
+  奇門仙機 (its 干論, `stemPairs: xianji`, read on the plate), 先天要論, 奇門古本 (年家 on 一七四), 奇門秘訣 (`spiritSeat:
   yinshi`), 寶鑑摘要 with 漢陰居士歌 (`centreLodging: dun`), 吉凶格解
   (`menpo: gongzhimen`), and 寶鏡圖 (`dayGates: shun`, `dayDun: yang`).
 - ★ 《奇門遁甲秘笈大全》, 題 劉伯溫, held in 故宮 第427冊, the 省思堂 blocks, a
   transcription and 張志春's 詳解. Its 卷十五 verse holds `yiTomb: qian`.
 - ★ 《金函玉鏡奇門遁甲秘笈全書》 (1914 lithograph, reset 1996). `stemPairs:
   jinhan`, and the 日家 of `system: rijia`.
-- ★ 《奇門遁甲折衷》, 甘國壁 (清). Holds `plate: xingfei`, `earthPlate: xun`
-  and `centreLodging: bajie`/`siyu`. It names 顧陵岡池本理 for the turn and
+- ★ 《奇門遁甲折衷》, 甘國壁 (清). Holds `plate: xingfei`, `earthPlate: xun`,
+  `centreLodging: bajie`, `spirits: dun` and `strengths: season`, and reports
+  `centreLodging: dunni` and `siyu`. It names 顧陵岡池本理 for the turn and
   the 坤 lodging, and rejects them.
 - ★ 《紀氏奇門秘書仕學備餘》, 紀大奎 (after 1796). The 歌 with 舊註, 甘氏 and
   池氏, and a sentence rejecting 拆補 (「後人據之拆補者謬也」).
@@ -272,8 +273,9 @@ Each step names the engine parameter, or says "not modelled".
    - Their phase, for a lens, is `spiritPhase`: `none`, `branch` (default since
      2026-10-25), `huaqi`. It moves no seat and no name.
    - The flying line uses nine spirits, adding 太常 (web lead). Not modelled.
-   - A modern convention that names the spirits by the matter is refused
-     (`docs/agent-prompt.md`).
+   - Choosing the name of the middle pair by the matter asked, 《金鏡寶鑑》's
+     「可換虎、武用」, is refused as a licence to read and not a value
+     (`docs/refusals.md` § "The middle pair named by the matter").
 9. **States 旺相休囚死.** By the season (`strengths: season`), or from the
    star (`star`, 金鏡寶鑑's arrangement, refused). A second arrangement read
    from the star belongs to the 《三元經》 that the 符應經, 紀大奎 and the
@@ -297,8 +299,9 @@ Each step names the engine parameter, or says "not modelled".
 
 ## 4. How a board is read
 
-The engine refuses everything in this section. A consultant gives it, and
-says whose reading it is.
+The engine reads none of this section. It lays the configurations marked ●
+and the strengths as facts, and a consultant gives the rest, saying whose
+reading it is.
 
 **What is looked at first.**
 
@@ -395,14 +398,19 @@ marked ●.
   transcription). `zhishi` is 張志春's.
 - ● 青龍返首 戊+丙 and 飛鳥跌穴 丙+戊 (吉). 太白入熒 庚+丙 and 熒入太白 丙+庚
   (「白入熒兮賊即來，熒入白兮賊即去」). 大格 庚+癸, 刑格 庚+己, 上格/小格 庚+壬.
-  螣蛇夭矯 癸+丁, 朱雀投江 丁+癸, 青龍逃走 乙+辛, 白虎猖狂 辛+乙. Plus the
-  `stemPairs` tables: the default's sixteen, 青龍入雲格 戊+乙 and 青龍華蓋 戊+癸
-  among them with no fortune; 《金函玉鏡》's eighty; the 干論's seventy-seven.
+  螣蛇夭矯 癸+丁, 朱雀投江 丁+癸, 青龍逃走 乙+辛, 白虎猖狂 辛+乙. These are
+  laid under `stemPairs: shared` and `jinhan`. `shared` adds 青龍入雲格 戊+乙
+  and 青龍華蓋 戊+癸, with no fortune; `jinhan` adds the rest of 《金函玉鏡》's
+  table. Under `xianji` the 干論's own names stand in its cells instead, and six
+  of them are the verse's ids (龍逃走, 白虎猖狂, 朱雀投江, 螣蛇妖嬌, 太白入熒,
+  青龍燿明), so 青龍返首, 飛鳥跌穴, 大格, 刑格 and 上格 are not marked there.
 - 玉女守門 (「三奇遊六儀」, the 值使 over 丁). 天遁, 地遁 and 人遁, and the
   other six 遁 of the manuals. 天三門 and 地四戶. 天網四張: 「六癸」 for the 統宗,
   癸 over the hour stem for 吉凶格解. 伏干, 飛干, 天乙伏宮 and 飛宮. 悖格: 丙
   over the year, month, day or hour stem or the 值符. 歲月日時格: 庚 over those
-  stems. 三詐 and 五假. 天輔時. None of these is modelled.
+  stems. 三詐 and 五假. 天輔時. None of these is modelled (the 干論 names 癸 over 癸
+  天網四張, and `stemPairs: xianji` marks that one cell; the 格 itself is not
+  modelled).
 - ● 空亡 carries 吉凶 both ways (「凶格落空則凶不成」). ● The post horses
   (日馬, 時馬).
 
@@ -443,8 +451,10 @@ modern school's.
   which may be a third (§8).
 - **門迫's direction.** The name is reversed between 統宗 and 吉凶格解. Read
   the board's `menpo`.
-- **入墓 by the twelve stages.** 乙's stage-tomb is 戌 (乾). The 奇門 tables
-  put it in 坤. Do not "fix" `TOMB`.
+- **入墓 by the twelve stages.** 乙's stage-tomb is 戌 (乾). The 統宗, the
+  符應經 and 吉凶格解 put it in 坤 (`yiTomb: kun`), and the 秘笈大全's verse and
+  奇門秘訣 put it in 乾 (`yiTomb: qian`). Read the board's `yiTomb`, and do not
+  "fix" `YI_TOMB` toward the stages.
 - **English terminology.** "Structure" (Joey Yap) is a 局 or a 格. "Deity"
   is a 八神. "Door" is a 門. "Hour Qi Men" is 時家. "Destiny Qi Men" is a
   natal reading this project refuses. "Imperial Qi Men" is used loosely in
@@ -476,6 +486,9 @@ palace). `computeDayChart` answers `system: rijia`. `scan` walks an interval
 and returns a direction as well as an hour. The tools are
 `compute_qimen_chart`, `draw_qimen_chart` and `scan_moments`, and the
 endpoints are `/api/qimen`, `/text`, `/plate` and `/prompt`.
+`qimenLens` and `dayLens` (`dunjia/lens.ts`) give a lens the things on the
+board with their phases, 對宮 and 五合; the spirits enter it only under a
+`spiritPhase` other than `none`.
 
 **What is refused**, `docs/refusals.md`:
 

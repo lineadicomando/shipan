@@ -63,7 +63,7 @@ Marks: ★ on this project's shelf (`texts/README.md` § liuren and around it);
 | 《大六壬指南》 ★ | 陳公獻, 序 1652 | 卷一 心印賦 增注, 卷二 指掌賦, 卷三 占驗, 卷四 莊公遠's 神煞指南. The 增注 is a 月將 witness in the register |
 | 《大六壬課經集》 ★ | 郭御青 彙輯 | A book of judgement: 畢法賦 with charts, 課格, 物類. It presumes the board |
 | 《官板大六壬神課金口訣》 ★ | 1596 | **A different art.** 四位, not 四課三傳. Held as a boundary marker |
-| 《御定六壬直指》 (+ 析義) ★ | Qing, imperial | `guiren: wei` in two verses; `zhouye: branch`; the 月將 by 中氣 |
+| 《御定六壬直指》 (+ 析義) ★ | Qing, imperial | `guiren: chou` (the opening verse) and `wei` (two verses); `zhouye: branch`; the 月將 by 中氣 |
 | 《六壬經緯》 ★ | 毛志道 (京江鐵甕子) | 卷一 演法, 卷二 定式, 卷三 格局. Holds `zhongqi`, `chou` and `branch` |
 | 《六壬粹言》 ★ | 劉赤江 輯, 1826 | 卷首 寄宮 and 月將 by 中氣, and the 宗門九式. The held copy ends mid-case |
 | 《六壬類聚》 ★ | 紀大奎 (attribution via 精解) | Repertory by subject: 類神, 遁干, 旬空, 應期 |
@@ -237,7 +237,7 @@ Where other witnesses part from it:
 - **`chou`** (default): 甲戊庚 丑/未, 乙己 子/申, 丙丁 亥/酉, 壬癸 巳/卯, 辛 午/寅.
   Holders:
   - 《元女經》 and its line (徐道符, 凌福之, 元軫, 劉日新, 苗公達, per 程樹勳).
-  - 神定經 (旦/暮), 大全, 精解 and 經緯.
+  - 神定經 (旦/暮), 大全, 精解, 經緯 and 直指.
   - The 四庫 提要 calls it the book's 「俗例」.
   - 曹震圭 derives it by laying 甲 on 丑 and running backward.
 - **`wei`**: 甲 未/丑, 乙 申/子, 丙 酉/亥, 丁 亥/酉, 戊庚 丑/未, 己 子/申, 辛 寅/午,
@@ -272,7 +272,8 @@ Where other witnesses part from it:
 - **Caution.** 「晝順夜逆」 in 大全卷一 and 「晝用順貴，夜用逆貴」 on the 金口訣
   volvella name the derivation of the day and night *seat* (順布 from 子,
   逆布 from 申). They are not the direction of the generals.
-- *Not modelled*, and **no row in `docs/sources.tsv`** (§ 8).
+- Computed by this one rule; no divergence is known, and the rule has **no
+  row in `docs/sources.tsv`** (§ 8).
 
 **Where the noble may not sit.** 「貴人天空不乘辰戌」 (大全卷一 l.463; 程樹勳).
 The seat tables already avoid 辰 and 戌.
@@ -449,6 +450,9 @@ convention matters: 大全卷二 gives 太常 「旺四季各十八日」, which
 
 **What it computes.** `liurenBoard` (`packages/core/src/liuren.ts`), with
 `compute_liuren` and `draw_liuren` (MCP), the CLI `liuren`, and `/[lang]/liuren`.
+`liurenLens` (`liuren-lens.ts`) relates by 生剋 the branches of both plates,
+the halves of each lesson and the transmissions with their covering stems; it
+keeps the generals by kind, unrelated.
 
 | Field | Doctrine (§) |
 |---|---|
@@ -457,7 +461,7 @@ convention matters: 大全卷二 gives 太常 「旺四季各十八日」, which
 | `courses[4]` (`upper`, `lower`, `lowerIsStem`, `general`) | 3.4–3.5, 4.2 |
 | `transmissions[3]` (`branch`, `general`, `hiddenStem`, `empty`) | 3.6, 3.8, 4.3 |
 | `rule` (one of nine `LiurenRuleId`) | 3.6 |
-| `keti` (15 ids: yuanshou, zhongshen, zhiyi, shehai, haoshi, tanshe, hushi, dongshe, bieze, bazhuan, ziren, zixin, duchuan, wuyi, jinglan) | 4.8, the 九宗門 shapes only |
+| `keti` (a `KetiId`: the 九宗門 shapes and their named sub-cases) | 4.8, the 九宗門 shapes only |
 | `generals[12]`, `half: day/night` | 3.7, 4.6–4.7 |
 | `unverified` (返吟 only: checked against a text, not a program) | 3.6 (9) |
 | `options` {`yuejiang`, `guiren`, `zhouye`} | 3.2, 3.7 |
@@ -467,8 +471,8 @@ convention matters: 大全卷二 gives 太常 「旺四季各十八日」, which
   procedure (`TODO.md` § 1). § 8 lists the leads.
 - Interpretation is refused: the 用神, ranking, timing, advice
   (`docs/refusals.md`, `purposes.ts`). The 課體 travel as names only.
-- The 十二天將 carry no phase and are drawn in neutral ink. The register has
-  no source for them; § 8 gives one.
+- The 十二天將 carry no phase, are drawn in neutral ink, and the lens relates
+  them to nothing. The register has no source for them; § 8 gives one.
 - No 年命 on this board. No 神煞 (類聚 卷一 and 大全卷一 carry hundreds).
 - No 課體 beyond the nine shapes.
 
@@ -509,7 +513,8 @@ shelf.
    - Read both on the plate. If confirmed this becomes a school parameter
      (e.g. `shehai: depth | palace`), not "recorded".
    - A rough re-implementation (mine, not the engine) parts the two orders on
-     roughly 150–200 of the 1 380 涉害 boards.
+     roughly 150–200 of the 1 380 涉害 boards (rough script, 2026-10-23; not
+     the engine's harness).
 5. **涉害 count.**
    - Starting palace and 寄干 included (精解 ★, 大全卷五 ★, 金匱玉衡經 via 盧央 ★)
      against excluded (engine).
@@ -547,13 +552,16 @@ shelf.
 
 ## 8. Leads against the register
 
-1. **The five phases of the 十二天將 — "a file not held" (`TODO.md`,
-   `sources.tsv` row 41).**
+1. **The five phases of the 十二天將.** `TODO.md` lists 卷二 as held and
+   unread, and the register row («the five-phase assignments of the 十二天將»
+   in `sources.tsv`) still reads «no source is registered».
    - 《六壬大全》 卷二 ★ (論天將) gives each general's 家 and phase:
      「朱雀…位居前二家丙午火」, 「青龍…位居前五家甲寅木」, 「天空…後六家戊戌土」,
      「太常…後四家己未土旺四季各十八日」. Wikisource 四庫本 卷02; the 精校本 ★
      carries it.
    - 神定經 釋天乙 and 心鏡's 天將 list give the same twelve.
+   - 《御定六壬直指》 and 《六壬經緯》 were asked and carry none (`docs/sources.md`
+     § "Whose each value of a 六壬 board is").
    - The ring may be coloured once 卷二 is read on the plate.
 2. **「無親, which no source consulted carries」.**
    - 精解 ★ names it: 「名无亲，即所谓井栏格也」 (`texts/rules/LR-04.md`,
@@ -583,7 +591,7 @@ shelf.
      practice.
    - 星曆考原 卷五 ☆ rules for it explicitly against 曹震圭 (Wikisource; the
      shelf holds 卷一 only, so not yet a held witness).
-   - Neither is in row 44.
+   - Neither is in the `guiren: wei` row of `sources.tsv`.
 6. **`zhouye: solar` — "neither with a procedure".** See § 7.3.
    神定經's sunrise table is a procedure printed in a 六壬 work.
 7. **`yuejiang: true` — "no text states the second at all".** 神定經 states it
