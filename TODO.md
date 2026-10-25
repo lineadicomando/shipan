@@ -9,7 +9,7 @@ down on 2026-10-08, and what it carried before is in
 ## Resuming cold
 
 **Nothing is in progress and no priority is set.** The lens on every drawn
-board, the user's priority of 2026-10-25, is built and landed (phases 71–73):
+board, the user's priority of 2026-10-25, is built and landed (phases 71–74):
 § "The lens on every board" below is the map of its code and the leads it
 left, and is where surface work starts. For a reading, **read this section,
 then pick an item of "What to do next" below, or a line of § 2.** For it read
@@ -91,9 +91,11 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-25
 
-**Version 0.35.0**, in every manifest. **`main` is checked out and no branch
+**Version 0.36.0**, in every manifest. **`main` is checked out and no branch
 is open**: `lens-relations` and `lens-generic` landed on 2026-10-25 and were
-deleted, as «lenses» was the day before and `board-pointer` on 2026-10-18. What `main` carries since 2026-10-15 is of eleven days:
+deleted, as «lenses» was the day before and `board-pointer` on 2026-10-18.
+**`main` is ahead of `origin/main` by the nine commits of phase 74**, not
+pushed: pushing, or squashing them first, is the user's call. What `main` carries since 2026-10-15 is of eleven days:
 
 - 2026-10-15, surface work: the Qi Men section holds its board in the page
   (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which register a
@@ -227,19 +229,34 @@ deleted, as «lenses» was the day before and `board-pointer` on 2026-10-18. Wha
   文昌 土 and 始擊 火 where the register had them the other way after 盧央,
   and 太乙 and the generals related in the 太乙 lens; and the consultation
   given the bench, the lens and the key, every drawing asked bare. Phase 73.
-- 2026-10-25, on `main` (0.36.0): the text on every board set at a size it
-  can be read, the key to the names under the board, worded in every entry
-  and receding with the lens; and the phases of the eight spirits, put to the
-  user that day and built on their word as `spiritPhase`: `none`, the default,
-  held by 幺學聲 (2005), `branch` by the 奇門秘訣 (卷四十七, sheet 1086), and
-  `huaqi` by the 秘笈大全's 九神主論章 (卷六, read in the 省思堂 woodblock).
-  Under the two that give a phase the lens relates the spirits. Phase 74.
+- 2026-10-25, on `main` (0.36.0), surface work and one reading, each step
+  looked at by the user in the browser. Phase 74, nine commits:
+  - the text on every board set at a size it can be read: 奇門's
+    configurations wrap onto as many as three lines at a palace's foot, a
+    crowded 紫微 seat sets its stars in two columns, and a bare drawing leaves
+    out the notes and conditions the page sets in type (太乙's conditions and
+    numbering, 七政四餘's remainders and frame); those notes are full
+    sentences of the page's own (`web.note.*`), and the 八字 decades carry
+    their glyphs;
+  - the key to the names (`NameKey`) under the board, in a row the column
+    spans, worded in every entry (六壬's and 奇門's words supplied by
+    `liurenKeyOf` and `qimenKeyOf`) and receding with the lens (`inView`);
+  - a link's hand as the cursor over a name;
+  - the phases of the eight spirits, put to the user that day and built on
+    their word as `spiritPhase`: `none`, the default, held by 幺學聲 (2005),
+    `branch` by the 奇門秘訣 (卷四十七, sheet 1086), and `huaqi` by the
+    秘笈大全's 九神主論章 (卷六, read in the 省思堂 woodblock). Under the two
+    that give a phase the lens relates the spirits;
+  - the scan's dialog (`PlateDialog`) on a bench with its lens, at the 奇門
+    section's size (`--bench-board`);
+  - the family of 奇門 board (`qimen.system`) chosen from the bar beside the
+    date.
 
-`main` is pushed to `origin/main` as of 2026-10-25, on the user's word;
-pushing is always the user's call.
+`main` was last pushed to `origin/main` on 2026-10-25, after `lens-relations`
+landed and before phase 74; pushing is always the user's call.
 `npm test`, `npm run typecheck` and `npm run build` pass on 2026-10-20 with no
 test skipped, and again on 2026-10-22, 2026-10-23, 2026-10-24 and 2026-10-25,
-the last on `main` after `lens-relations` landed. **Run `npm run build` before `npm test`** in
+the last on `main` at the end of phase 74. **Run `npm run build` before `npm test`** in
 a fresh tree: the MCP and web suites and the shelf's scripts import
 `packages/core/dist`, and a stale `dist` fails them on whatever changed.
 
@@ -247,7 +264,8 @@ a fresh tree: the MCP and web suites and the shelf's scripts import
 
 **Built and landed on 2026-10-25**, the user's priority of that day. Every
 drawn board has a lens and a bench — the 奇門 board of an hour and of a day,
-六壬, 七政四餘, 紫微斗數 and 太乙 — in its section and in the consultation.
+六壬, 七政四餘, 紫微斗數 and 太乙 — in its section and in the consultation, and
+the 奇門 board of an hour in the scan's dialog.
 Surface work on it follows the `new-feature` skill, a branch, one commit a
 step, and the user looking at each step in the browser before the next: every
 decision below was a correction made that way.
@@ -255,8 +273,10 @@ decision below was a correction made that way.
 **Read before changing it, and nothing else:** `docs/refusals.md` § "Where to
 look first" (the rule); `docs/architecture.md` § "A board the page can point
 into" (the lens, from «The second is a lens») and § "The bench" (the layout
-and the measure); `docs/history/71-the-lens.md`, `docs/history/72-one-lens-for-every-board.md`
-and `docs/history/73-what-the-lens-relates.md` (what was decided and reversed, and why).
+and the measure); `docs/history/71-the-lens.md`, `docs/history/72-one-lens-for-every-board.md`,
+`docs/history/73-what-the-lens-relates.md` and
+`docs/history/74-the-phases-of-the-eight-spirits.md` (what was decided and
+reversed, and why).
 The code:
 
 | | |
@@ -266,12 +286,12 @@ The code:
 | `docs/sources.md` Tier 3, `docs/sources.tsv` | a row «a lens: …» for every relation drawn, and the phases they stand on. **A relation a lens draws is a quantity**: it needs its row and rung before it is drawn |
 | every board endpoint under `apps/web/src/routes/api/` | answers `lens` beside the board; the client imports only types from `core`. 太乙's is public, the lens holding no language and nobody |
 | `apps/web/src/lib/lens.ts` | the state (`LensState`: `layers`, `phases`, `focus`, `pair`, `chosen`, `toward`, `shengke`, `links`, `extended`), `viewOf`, `pairTable`, `pressed`, `pressedSeat`, `pressedInPair`, `oneAtATime`, `wayOf`, `activePhases`, and the fragment (`writeLens`, `readLens(fragment, lens)`). Board-agnostic: seats, layers and links are the descriptor's, `SpotKey` is `${string}:${string}` |
-| `apps/web/src/lib/held-lens.svelte.ts` | `HeldLens`: the fragment ⇄ state, `pick`, `putAway`, `pressedOutside`, `escaped`, `tip`, `focusName`, `pairSaid`. A page gives it `lens`, `t` and `words` |
-| `apps/web/src/lib/lens-words.ts` | how each board's names and seats are said — `nameAt(seat, layer, id)`, `seatName(seat)`, `seatPlace(seat, layer)` — one function a board (`qimenWords` … `taiyiWords`), shared by the sections and the consultation |
+| `apps/web/src/lib/held-lens.svelte.ts` | `HeldLens`: the fragment ⇄ state, `pick`, `putAway`, `pressedOutside`, `escaped`, `tip`, `focusName`, `pairSaid`, and `inView`, the hanzi of the names kept lit, which the key under the board recedes by. A page gives it `lens`, `t` and `words` |
+| `apps/web/src/lib/lens-words.ts` | how each board's names and seats are said — `nameAt(seat, layer, id)`, `hanziAt(seat, layer, id)`, `seatName(seat)`, `seatPlace(seat, layer)` — one function a board (`qimenWords` … `taiyiWords`), shared by the sections, the consultation and the scan's dialog |
 | `apps/web/src/lib/arrows.ts` | `layArrows`: straight where clear, bent where an arrow would cross a name or lie on another. Board-agnostic |
-| components | `LensSide` (the column: circle, mode, controls) and `LensReading` (what is said under the board), which hold the rest: `LensBar` (ways and controls), `LensMode` (mode and «whole board»), `LensLinks` (the arrows over the drawing), `LensRelations` and `LensPair` (the same in words, under the bench), `FiveWheel` (the circle), `NameKey` (the key to a bare drawing's numerals), and `InlineBoard`'s `lens` prop (receding, by `data-lens` on the marks) |
-| `apps/web/src/routes/[lang]/qimen/+page.svelte` | a section holding a lens: `qimenWords`, `new HeldLens(…)`, and `held.pick`, `held.tip`, `held.view` on `InlineBoard`. The 紫微 section shares the press with its row (`lensing`); the consultation, `routes/[lang]/+page.svelte`, chooses the words by the board cast and opens the lens whole when the instrument changes |
-| `apps/web/src/app.css` | `--board` (a height: the window less `--above`, over `--aspect`), `--above`, `--side`, `.bench`, `--lens-sheng`, `--lens-ke` |
+| components | `LensSide` (the column: circle, mode, controls) and `LensReading` (what is said under the board), which hold the rest: `LensBar` (ways and controls), `LensMode` (mode and «whole board»), `LensLinks` (the arrows over the drawing), `LensRelations` and `LensPair` (the same in words, under the bench), `FiveWheel` (the circle), `NameKey` (the key to the names under the board, every entry worded, receding by `inView`; its groups from the endpoint, or from `taiyiKeyOf`, `qimenKeyOf` and `liurenKeyOf` in `lib/key.ts`), and `InlineBoard`'s `lens` prop (receding, by `data-lens` on the marks) |
+| `apps/web/src/routes/[lang]/qimen/+page.svelte` | a section holding a lens: `qimenWords`, `new HeldLens(…)`, and `held.pick`, `held.tip`, `held.view` on `InlineBoard`. The 紫微 section shares the press with its row (`lensing`); the consultation, `routes/[lang]/+page.svelte`, chooses the words by the board cast and opens the lens whole when the instrument changes; the scan's `PlateDialog` holds one too, and puts it away when it closes so the scan's address is left as found |
+| `apps/web/src/app.css` | `--board` (a height: the window less `--above`, over `--aspect`), `--above`, `--side`, `--shell` and `--bench-board` (the board's column on a bench, which the scan's dialog draws at), `.bench` with `.side` and `.under` (the column spans the board's row and the key's, the second row `1fr`), `--lens-sheng`, `--lens-ke` |
 | catalogs | `lens.*` (with `lens.where.*`), `label.relation.*` (`duigong`, `wuhe`, `guiyuan`, `sanfang`); the 奇門 copy was reread under the `reader-copy` skill, the strings added on 2026-10-25 were not |
 
 **What was decided, and holds on every board:**
@@ -308,7 +328,13 @@ The code:
 - The bench: the board whole in the window under the bar, the column beside
   it scrolling with the page (not sticky), the circle of the five phases at
   its head, the mode under it, then the lens. The steps of the moment stay in
-  the bar. The key to the marks of strength sits under the board.
+  the bar. The key to the marks of strength sits under the board, and the
+  key to the names under that, outside the column: what grows in the column
+  as the lens is used moves nothing. A gloss of the lit names in the column
+  was tried on 2026-10-25 and taken out the same day for that reason; the key
+  recedes with the board instead.
+- Over a name the cursor is a link's hand (a question mark was tried and
+  dropped).
 - The tip over a name is 0.95rem, a step over the board's own words.
 
 **The items, in the order proposed**, each a step of its own on the branch:
@@ -388,6 +414,12 @@ that sheet nearly blank.
 - 六壬's 六沖 and 六合 between branches, the 十二天將's phases (§ 1, 六壬),
   the 日家's nine stars, and the 紫微 四化 flights: each a relation or a
   phase a lens would draw once it has its row.
+- Under `spiritPhase: branch` or `huaqi` the drawing still leaves the spirits
+  uncoloured, by decision of phase 74: the value is a relation to read, not a
+  fact about the board. 《奇門探索錄》's 九神五行 (the 秘笈大全's words, so
+  likely a copy) and 張志春 《神奇之門》 (the 奇門秘訣's phases in prose) are
+  located in transcription and not weighed: § "The phases of the eight
+  spirits" in `docs/sources.md`.
 
 **What to do next, in the order the user has been taking it.** Nothing
 decided is left unbuilt.
@@ -446,14 +478,19 @@ decided is left unbuilt.
 **On the surface, nothing is owed and nothing is decided next.** What a
 pointer does beyond naming the layer is open; the known faults are the em
 dash of § 5 and the Italian lens strings that do not contract a preposition
-with an article (the leads under § "The lens on every board"). Not looked at in a browser: choosing another hour while the
+with an article (the leads under § "The lens on every board"). On the 奇門
+section the selector of the board's family (2026-10-25) pushes the steps of
+the moment onto a second line of the bar on a 1920-wide window; not looked at
+narrower. Not looked at in a browser: choosing another hour while the
 scan's dialog is open. To take surface work up again, read
 `docs/architecture.md` § "A board the page can point into", then `marks.ts`
 in `packages/plate/src` and `lib/board.ts`; a layer added to a drawing goes
 into `LAYERS` and both catalogs, and `apps/web/test/marks.test.ts` says what
 is missing. Three things learnt checking it by hand: `npm run dev -w
 @shipan/web` serves the built `dist` of the packages and does not see a new
-export until it is restarted; a board's SVG is cached `private` for a day, so
+export, or a changed drawing, until the package is built and the server
+restarted (`pkill -f "node.*vite"`, never `pkill -f vite`, which matches the
+shell running it); a board's SVG is cached `private` for a day, so
 a page reloaded normally can show a drawing from before the change; and a
 page is checked on paper with `google-chrome --headless=new
 --no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf=out.pdf`
@@ -465,6 +502,14 @@ and no package is needed. A section's lens is laid for a check by its
 fragment alone, e.g. `#extended=1&focus=governor.jinxing&toward=governor`.
 
 **Decisions held open, by the user's word, until there is more to decide on:**
+
+- **六壬's lessons and transmissions in the bare drawing.** On 2026-10-25 the
+  user asked for them to come out of the drawing the section shows, since the
+  tables under it repeat them. They were kept: the four lessons and three
+  transmissions are 7 of the 19 seats the lens presses and relates
+  (`liurenLens`), and so are the rows of bodies over the 七政四餘 ring. The
+  user was told and has not answered. Taking them out needs a decision on
+  what the lens does with those seats first.
 
 - **太乙's 月計 · 日計 · 時計: wait, all three** — the user's word of
   2026-10-11, with the options set out and none taken. The 《統宗》 states
@@ -493,10 +538,10 @@ fragment alone, e.g. `#extended=1&focus=governor.jinxing&toward=governor`.
   induced from a table, and the lists are three prints three ways. It waits
   on a sentence stating the rule, in any work.
 
-**Done between 2026-10-11 and 2026-10-24, and nothing is half done.** Each
+**Done between 2026-10-11 and 2026-10-25, and nothing is half done.** Each
 reading and each build of the engine has its section in `docs/sources.md`,
 its row in `docs/sources.tsv` and its line in `texts/README.md`; phases 51 to
-70 in `docs/history/` are the record, and 71 to 73 for the lens of
+70 in `docs/history/` are the record, and 71 to 74 for the lens of
 2026-10-24 and 2026-10-25. The surface work of 2026-10-15 and
 2026-10-18, and the review and the documents of 2026-10-23, have no phase:
 "Where it stands" above and the commits say it.
@@ -627,7 +672,13 @@ whether `baojian` holds `spiritSeat: tianpan` beside `tongzong`, since
 None of the 32 cases was found in another work's extract, which locates
 nothing either way.
 
-**Owed a look by the user, and not blocking**: on 2026-10-25, the lens's
+**Owed a look by the user, and not blocking**: on 2026-10-25, phase 74's
+strings, written under the `reader-copy` skill and read by nobody else —
+`web.note.qizhengFour`, `.qizhengThree`, `.qizhengFrame` and `.taiyiPalaces`,
+the page's own sentences for the notes under those boards;
+`form.qimen.spiritPhase`, its three values, its note and
+`notes.parameter.spiritPhase`; `form.qimen.system.bar` and its two values,
+the selector in the bar — in both catalogs. Also on 2026-10-25, the lens's
 strings added with each board and written without the `reader-copy` skill —
 `lens.where.palace`, `.seat` and `.transmission.*`, `label.relation.guiyuan`
 «home palace» · «palazzo di casa», `label.relation.sanfang` «palace of the
