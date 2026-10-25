@@ -94,8 +94,7 @@ refused», «this list is empty».
 **Version 0.36.0**, in every manifest. **`main` is checked out and no branch
 is open**: `lens-relations` and `lens-generic` landed on 2026-10-25 and were
 deleted, as «lenses» was the day before and `board-pointer` on 2026-10-18.
-**`main` is ahead of `origin/main` by the nine commits of phase 74**, not
-pushed: pushing, or squashing them first, is the user's call. What `main` carries since 2026-10-15 is of eleven days:
+Phase 74 is pushed to `origin/main`, on the user's word of 2026-10-25. What `main` carries since 2026-10-15 is of eleven days:
 
 - 2026-10-15, surface work: the Qi Men section holds its board in the page
   (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which register a
@@ -252,8 +251,8 @@ pushed: pushing, or squashing them first, is the user's call. What `main` carrie
   - the family of 奇門 board (`qimen.system`) chosen from the bar beside the
     date.
 
-`main` was last pushed to `origin/main` on 2026-10-25, after `lens-relations`
-landed and before phase 74; pushing is always the user's call.
+`main` is pushed to `origin/main` as of 2026-10-25, phase 74 included, on the
+user's word; pushing is always the user's call.
 `npm test`, `npm run typecheck` and `npm run build` pass on 2026-10-20 with no
 test skipped, and again on 2026-10-22, 2026-10-23, 2026-10-24 and 2026-10-25,
 the last on `main` at the end of phase 74. **Run `npm run build` before `npm test`** in
