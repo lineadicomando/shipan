@@ -487,7 +487,10 @@ button takes the colour the rain is falling in. The phases are the plate's
 `elementInk`, repeated in `app.css` as `--element-ink-*` beside the tints and
 held to the plate by `apps/web/test/palette.test.ts`. The colour is the
 reader's choice and never the glyph's, since a rain that coloured each name by
-its phase would be a lesson running behind the page.
+its phase would be a lesson running behind the page. One setting is not in
+the round: pressed with Ctrl or ⌘ while the rain is off, it starts in the
+page's ink and moves to the next of the six lit colours every seven seconds,
+until a press puts it away (`rain.turning`).
 
 **The glyph is a mark and not a name.** Everywhere else here a hanzi arrives
 with a gloss and a reading, because it is something the engine computed with

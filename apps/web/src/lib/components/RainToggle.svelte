@@ -25,10 +25,10 @@
 -->
 <button
   type="button"
-  onclick={cycleRain}
+  onclick={(event) => cycleRain(event.ctrlKey || event.metaKey)}
   data-mode={rain.mode}
   style:color={isPhase(rain.mode) ? `var(--element-ink-${rain.mode})` : null}
-  aria-label={t('rain.switch', { current: name(rain.mode), next: name(nextRainMode(rain.mode)) })}
+  aria-label={t('rain.switch', { current: name(rain.mode), next: name(nextRainMode(rain.mode, rain.turning)) })}
   title="{t('rain.label')}: {name(rain.mode)}"
 >
   <span aria-hidden="true">雨</span>
