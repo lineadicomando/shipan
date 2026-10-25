@@ -185,6 +185,17 @@ describe('六儀擊刑, as 《遁甲符應經》 works it', () => {
     expect(idsOf(chart, 'jixing')).toEqual([3]);
   });
 
+  it('strikes the hour at sunrise, with the 直符 nowhere near 卯', () => {
+    // 「以日出時六儀擊刑也」: 丁卯, the decade of 甲子's hour on 卯. The 直符
+    // goes onto 丁 in 兌, so the mark is the hour's and has no palace.
+    const chart = lay('06:00');
+
+    expect(chart.chief.palace.number).toBe(7);
+    const struck = chart.patterns.filter((p) => p.id === 'jixing');
+    expect(struck).toHaveLength(1);
+    expect(struck[0]?.palace).toBeUndefined();
+  });
+
   it('leaves the 己 lying in 坤 alone', () => {
     // The plate of 陽遁一局 has 己 at 二 for all sixty hours, which a reading
     // off the earth plate struck at every one of them.

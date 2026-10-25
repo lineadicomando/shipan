@@ -381,7 +381,9 @@ marked ●.
 - ● 六儀擊刑: 「甲子值符愁向東。戌刑未上申刑虎，寅巳辰辰午刑午」. These are
   the six of `STRIKE`, and 吉凶格解 and 武經總要 agree. What is struck is the
   hour's 直符 where it is carried on the heaven plate (符應經 p. 430,
-  「以甲子直符加六庚於三宮」), never a 儀 lying on the earth plate.
+  「以甲子直符加六庚於三宮」), never a 儀 lying on the earth plate; and, by the
+  same page, the hour whose branch its decade's head punishes (「日出時」, 丁卯),
+  which the engine marks without a palace.
 - ● 三奇入墓 (`dingTomb`, `yiTomb`, §8). 時干入墓: 「戊戌壬辰與壬癸，癸未丁丑亦同凶」
   is not modelled.
 - ● 五不遇時: 「時干來剋日干上」, the hour stem controlling the day stem at

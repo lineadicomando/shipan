@@ -2177,8 +2177,7 @@ once.** P. 429, with its glosses in small characters: 「洪曰：六儀擊刑�
 甲己之日, struck at 日出 and again 「至庚午時，以甲子直符加六庚於三宮，即六儀
 擊刑也」. The 大全's list heads the entry with the palaces in small characters,
 甲子直符三 · 甲戌直符二 · 甲申直符八 · 甲午直符九 · 甲辰直符四 · 甲寅直符四,
-which is the 統宗's line. The engine marks the palace; the hour whose branch is
-the punished one is the same rule read off the clock and is not marked.
+which is the 統宗's line.
 
 **What is struck is the 直符 carried, and the case says so in numbers.** At
 庚午 of 陽遁一局 the earth plate has 戊 at 一 and 庚 at 三, and the 直符 goes
@@ -2190,6 +2189,16 @@ It reads the hour decade's 直符 now, keyed by the decade and not by the stem
 laid, so `earthPlate: xun`, which conceals every 甲 under 戊, still strikes
 甲辰's at 四. Pp. 429–430 read on the plate at the file's native 200 dpi on
 2026-10-25, and `patterns.test.ts` lays the case.
+
+**And the same board is struck by the clock, at an hour the palace never
+reaches.** 「以日出時六儀擊刑也」 is 丁卯, the hour of 甲子's decade that falls on
+卯, and at 丁卯 the 直符 goes onto 丁 in 兌. So 「時加卯」 is read by the hour
+too: each decade has one hour whose branch is the one its head punishes, and
+the engine marks 擊刑 at that hour without a palace, as it marks 五不遇時. One
+mark an hour at most — the palace's where the 直符 is struck there, the
+hour's where it is not — so a prompt never counts the one rule twice. The 統宗's
+and the 大全's lists give the palace alone, and neither speaks against the
+hour; this half stands on the 符應經's case, one witness.
 
 **The lodging at 坤 is worked, in a yang board and in a yin one.** 卷下
 p. 453, under 時加六戊: 「假令立春中陽五局甲己之日戊辰時，此時六戊在五宮，寄

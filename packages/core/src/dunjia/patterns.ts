@@ -493,6 +493,23 @@ const STRIKE: Record<string, number> = {
 };
 
 /**
+ * The branch each decade's head punishes, which is the clock's half of 擊刑.
+ *
+ * The same p. 430 strikes 陽遁一局's 甲子 day twice: 「以日出時六儀擊刑也」 — at
+ * 丁卯, when the 直符 stands in 兌 and nowhere near 卯 — and at 庚午 by the
+ * palace. So 「時加卯」 is read by the hour as well, and each decade has exactly
+ * one hour whose branch is the one its head punishes.
+ */
+const PUNISHED: Record<string, string> = {
+  wu: 'mao', //  甲子 — 子刑卯
+  ji: 'wei', //  甲戌 — 戌刑未
+  geng: 'yin', // 甲申 — 申刑寅
+  xin: 'wu', //  甲午 — 午自刑
+  ren: 'chen', // 甲辰 — 辰自刑
+  gui: 'si', //  甲寅 — 寅刑巳
+};
+
+/**
  * The palace each stem is buried in (入墓).
  *
  * Only these four appear on a plate and have a tomb named for them. The table
@@ -584,7 +601,7 @@ export function findPatterns(input: PatternInput): Pattern[] {
   const above = overhead(input.heaven, input.carried);
   found.push(...tombs(above, input.yiTomb, input.dingTomb));
   found.push(...oppressedGates(input.gates, input.menpo));
-  found.push(...struckInstrument(input.decade, input.chiefAt));
+  found.push(...struckInstrument(input.decade, input.chiefAt, input.hourGanzhi));
   found.push(...stemPairs(input.earth, above, input.stemPairs));
   found.push(...deshi(input.earth, above, input.deshi, input.chiefGateAt));
   found.push(...chanting(input.stars, input.gates));
@@ -672,9 +689,14 @@ function oppressedGates(gates: ByPalace<Gate>, reading: ChartOptions['menpo']): 
   return found;
 }
 
-/** The hour's 直符 carried to where its decade's branch is punished (擊刑). */
-function struckInstrument(instrument: Stem, chiefAt: number): Pattern[] {
-  return STRIKE[instrument.id] === chiefAt ? [mark('jixing', { palace: chiefAt })] : [];
+/**
+ * 擊刑, once an hour at most: in the palace where the hour's 直符 is carried to
+ * its decade's punished branch, or — where it is not — as a mark of the hour
+ * itself, when the hour's branch is that branch.
+ */
+function struckInstrument(instrument: Stem, chiefAt: number, hour: Ganzhi): Pattern[] {
+  if (STRIKE[instrument.id] === chiefAt) return [mark('jixing', { palace: chiefAt })];
+  return PUNISHED[instrument.id] === hour.branch.id ? [mark('jixing')] : [];
 }
 
 /**
