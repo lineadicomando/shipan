@@ -73,12 +73,12 @@
    * drawing's own `width` and `height` are its intrinsic size and would
    * otherwise win over the box.
    *
-   * Where something is said about a name, the cursor says so before anything
-   * is: that is the whole of how a reader learns there is something to find.
+   * The cursor stays the reader's own over the names: the tip that rises over
+   * one says there is something to find, and a question mark over every name
+   * on the board read as a fault in it.
    */
   const sheet = $derived(
     ':host { display: block; } svg { display: block; width: 100%; height: auto; }' +
-      (tip ? ' [data-layer] { cursor: help; }' : '') +
       // What a lens leaves out recedes, and nothing is made heavier: the
       // ground of each seat stays, so the board keeps its shape.
       ' [data-seat] > * { transition: opacity 0.15s ease-out; }' +
