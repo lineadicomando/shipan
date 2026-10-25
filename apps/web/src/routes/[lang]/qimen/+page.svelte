@@ -21,6 +21,8 @@
   import MomentForm from '$lib/components/MomentForm.svelte';
   import MomentSteps from '$lib/components/MomentSteps.svelte';
   import LayerLegend from '$lib/components/LayerLegend.svelte';
+  import NameKey from '$lib/components/NameKey.svelte';
+  import { qimenKeyOf } from '$lib/key';
   import StrengthLegend from '$lib/components/StrengthLegend.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
 
@@ -333,6 +335,9 @@
       <div class="side">
         <!-- The circle, the mode and the lens, from the lens the section holds. -->
         <LensSide {t} {held} />
+        <!-- How the names are said, where every other board's key stands. A
+             board of the day keeps its own at the foot of its reading. -->
+        {#if !ofTheDay}<NameKey {t} groups={qimenKeyOf(chart)} />{/if}
       </div>
     </div>
 
@@ -369,7 +374,7 @@
         the header already lists, and already carries this moment to. A
         signpost to a door in the same room is furniture.
       -->
-      <ChartReading {chart} {t} wide />
+      <ChartReading {chart} {t} wide key={false} />
       <Schools
         {t}
         board="qimen"

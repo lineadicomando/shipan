@@ -386,13 +386,6 @@
     <LensReading {t} {held} />
 
     <div>
-      <Schools
-        {t}
-        board="ziwei"
-        options={result.ziwei.options}
-        layers={result.moment.options}
-        laidBy={result.laidBy}
-      />
       <ZiweiReading
         board={result.ziwei}
         moment={result.moment}
@@ -404,6 +397,15 @@
           mark(branch);
           screen?.scrollIntoView({ block: 'center', behavior: 'smooth' });
         }}
+      />
+      <!-- Which schools laid the board, last, as in every section: after the
+           seats, the calendar and the note on the book they came out of. -->
+      <Schools
+        {t}
+        board="ziwei"
+        options={result.ziwei.options}
+        layers={result.moment.options}
+        laidBy={result.laidBy}
       />
     </div>
   </div>

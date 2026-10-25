@@ -50,7 +50,12 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
     const svg = renderTaiyiSvg(board, {
       size,
       scheme,
-      labels: taiyiLabels(t),
+      // Bare, the page says under the board what the drawing would say under
+      // its grid — the conditions and how the palaces are numbered — in its
+      // own type. Drawn as well, the copy in the picture is a fiftieth of the
+      // board's height and the one nobody reads.
+      labels: bare ? { ...taiyiLabels(t), palaces: undefined } : taiyiLabels(t),
+      conditions: !bare,
       // The year and its pillar, which is the whole of what this board is laid
       // on — no instant, no place, and nobody's birth.
       heading: `${board.year} · ${board.sui.hanzi} ${board.sui.pinyin}`,

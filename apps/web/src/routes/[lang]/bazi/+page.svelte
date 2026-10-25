@@ -154,13 +154,6 @@
     <!-- The four pillars at a glance, then the same four read out in full. -->
     <PillarPlate pillars={result.bazi.pillars} {t} />
     <BaziReading bazi={result.bazi} {t} />
-    <Schools
-      {t}
-      board="bazi"
-      options={result.bazi.options}
-      layers={result.moment.options}
-      laidBy={result.laidBy}
-    />
 
     <!--
       The calendar the pillars were cast from, and here the case is stronger
@@ -175,11 +168,18 @@
 
       The component carries no measure of its own — it is laid out by whatever
       holds it, on the chart at the full width of the page — and here that is
-      the page too: the reading above it and the schools above that both run
-      wall to wall, so the last block under the plate needs no box to keep it
-      on their axis.
+      the page too: the reading above it and the schools below it both run
+      wall to wall, so it needs no box to keep it on their axis.
     -->
     <CalendarAndAlmanac moment={result.moment} {t} almanac={false} />
+    <!-- Which schools laid the pillars, last, as in every section. -->
+    <Schools
+      {t}
+      board="bazi"
+      options={result.bazi.options}
+      layers={result.moment.options}
+      laidBy={result.laidBy}
+    />
   </div>
 {/if}
 

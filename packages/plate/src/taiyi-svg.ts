@@ -154,7 +154,8 @@ export function renderTaiyiSvg(board: PlateTaiyi, options: PlateTaiyiOptions = {
   const grid = size - margin * 2;
   const cell = grid / 5;
 
-  const conditions = board.patterns.length > 0 ? size * 0.028 * (board.patterns.length + 1) : 0;
+  const listed = options.conditions !== false && board.patterns.length > 0;
+  const conditions = listed ? size * 0.028 * (board.patterns.length + 1) : 0;
 
   // The standing line, wrapped: it is a sentence rather than a caption, and a
   // sentence set on one line runs off the sheet in either language and off the
@@ -216,7 +217,7 @@ export function renderTaiyiSvg(board: PlateTaiyi, options: PlateTaiyiOptions = {
   parts.push(...palaces(board, labels, { left: margin, top: gridTop, cell }));
   parts.push(...ring(board, labels, key, { left: margin, top: gridTop, cell }));
 
-  if (board.patterns.length > 0) {
+  if (listed) {
     parts.push(...conditionsOf(board, labels, { size, margin, top: gridTop + grid }));
   }
 

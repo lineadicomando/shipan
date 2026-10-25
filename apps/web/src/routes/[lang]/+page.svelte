@@ -97,7 +97,7 @@
   import NameKey from '$lib/components/NameKey.svelte';
   import { HeldLens } from '$lib/held-lens.svelte';
   import { WHOLE } from '$lib/lens';
-  import { taiyiKeyOf } from '$lib/key';
+  import { qimenKeyOf, taiyiKeyOf } from '$lib/key';
   import {
     liurenWords,
     qimenWords,
@@ -299,7 +299,13 @@
    */
   let castLens = $state<Lens | undefined>();
   let castKey = $state<readonly (readonly Said[])[]>([]);
-  const key = $derived(chart?.id === 'taiyi' ? taiyiKeyOf(chart.board, t) : castKey);
+  const key = $derived(
+    chart?.id === 'taiyi'
+      ? taiyiKeyOf(chart.board, t)
+      : chart?.id === 'qimen'
+        ? qimenKeyOf(chart.board)
+        : castKey,
+  );
 
   /**
    * The lens, as every section holds one: nothing on until the reader asks,
@@ -1320,7 +1326,7 @@
         {:else if chart.id === 'ziwei'}
           <ZiweiReading board={chart.board} {t} moment={castMoment} />
         {:else}
-          <ChartReading chart={chart.board} {t} wide />
+          <ChartReading chart={chart.board} {t} wide key={false} />
         {/if}
         <!-- Which schools laid it, under whichever of the six was laid. One
              line rather than an arm apiece: the board's own options are on the

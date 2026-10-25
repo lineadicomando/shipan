@@ -3040,6 +3040,17 @@ export const en = {
   'cli.field.lodge': 'Lodge of the day',
   'cli.field.dayGod': 'God of the day',
   'web.calendar.heading': 'The calendar',
+  // The notes a page sets under a board's tables. The `cli.value.` lines say
+  // the same things after a label on a terminal, and read as fragments on a
+  // page, where no label stands before them.
+  'web.note.qizhengFour':
+    'This board carries all four remainders. The fourth, 紫氣 zǐqì, is placed in a palace but at no degree: its rate comes from a single work, and its position from a single board printed in 1886. The palace is therefore the whole of its position here.',
+  'web.note.qizhengThree':
+    'This board carries three of the four remainders, each computed from an ephemeris. The fourth, 紫氣 zǐqì, can be placed and is left off by the option chosen for this board: its rate comes from a single work, and its position from a single board printed in 1886.',
+  'web.note.qizhengFrame':
+    'The lodges 宿 xiù begin at their determinative stars, placed at the instant of this board. Their degrees are measured from those stars, and from no published table of 宿度 xiùdù and no fixed epoch.',
+  'web.note.taiyiPalaces':
+    'The palaces are numbered as 太乙 tàiyǐ numbers them, one seat away from the 洛書 luòshū. On this board 一宮 yīgōng is the north-west; in a Qi Men chart it is the north.',
   'web.almanac.heading': 'The page of the almanac',
   'cli.field.jianchu': 'Day officer',
   'cli.field.lunar': 'lunar',

@@ -15,6 +15,11 @@
   where the board has one, then the name and its reading. One list per group,
   in the drawing's order: nothing here ranks.
 
+  A group with no numerals (六壬's, 奇門's) is a run of short pairs and is set
+  as one: several to a line, the name and its reading never parted. Laid out
+  like a numbered list it put each entry in the numeral's two-character column,
+  and every name and every reading went on a line of its own.
+
   On paper as well, under the board: the sheet carries the board drawn the
   same way, so its numerals need the same key.
 -->
@@ -29,7 +34,7 @@
   <section class="key" aria-label={t('cli.heading.readings')}>
     <p class="heading">{t('cli.heading.readings')}</p>
     {#each groups as group, index (index)}
-      <ul>
+      <ul class:plain={group.every((one) => one.index === undefined)}>
         {#each group as one, at (at)}
           <li>
             {#if one.index !== undefined}<span class="number">{one.index}</span>{/if}
@@ -53,6 +58,11 @@
   .entry { display: flex; flex-wrap: wrap; gap: 0 0.5rem; }
   .glyph { color: var(--faint); }
   i { letter-spacing: 0.01em; }
+  .plain { grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr)); gap: 0.15rem 0.75rem; }
+  .plain li { display: block; }
+  .plain .entry { display: inline; }
+  .plain .glyph { color: var(--ink); white-space: nowrap; }
+  .plain i { color: var(--faint); }
   @media print {
     .key { break-inside: auto; }
     ul { columns: 3; display: block; }

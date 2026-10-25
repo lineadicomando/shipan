@@ -129,9 +129,9 @@
        the second answers whoever is holding an almanac open beside this and is
        about to conclude the degrees are wrong. -->
   <p class="note">
-    <Named text={t(carriesZiqi ? 'cli.value.fourRemainders' : 'cli.value.threeRemainders')} />
+    <Named text={t(carriesZiqi ? 'web.note.qizhengFour' : 'web.note.qizhengThree')} />
   </p>
-  <p class="note"><Named text={t('cli.value.qizhengFrame')} /></p>
+  <p class="note"><Named text={t('web.note.qizhengFrame')} /></p>
 </div>
 
 <style>

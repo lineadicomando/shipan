@@ -16,7 +16,7 @@
   import { glyph } from '$lib/glyph';
   import type { MessageKey, Translator } from '@shipan/i18n';
   import type { QimenChart } from '@shipan/core';
-  import { COMPASS_READINGS } from '@shipan/plate';
+  import { qimenKeyOf } from '$lib/key';
   import HexagramTable from './HexagramTable.svelte';
   import PalaceTable from './PalaceTable.svelte';
   import CalendarAndAlmanac from './CalendarAndAlmanac.svelte';
@@ -41,6 +41,12 @@
    * keep in one place is the ju, the horses and the configurations.
    */
   /**
+   * `key` is whether how the names are said is set here, at the foot of the
+   * reading. A page with a bench sets it in the column beside the board
+   * instead, as `NameKey`, where every other board's key stands; the scan's
+   * dialog has no such column and keeps it here.
+   */
+  /**
    * `wide` is whether this reading stands under a board of the page's width.
    *
    * It does in the two sections that give the drawing a page to itself, and
@@ -55,7 +61,8 @@
     t,
     palaces = true,
     wide = false,
-  }: { chart: QimenChart; t: Translator; palaces?: boolean; wide?: boolean } = $props();
+    key = true,
+  }: { chart: QimenChart; t: Translator; palaces?: boolean; wide?: boolean; key?: boolean } = $props();
 
   /** Largest to smallest, as every almanac and the drawing's caption have it. */
   const PILLARS = ['year', 'month', 'day', 'hour'] as const;
@@ -71,32 +78,8 @@
     PILLARS.map((position) => ({ position, ganzhi: chart.moment.pillars[position] })),
   );
 
-  type Name = { hanzi: string; pinyin?: string };
-  /** Each name once, in the order the board meets it. */
-  const once = (names: readonly (Name | undefined)[]): Name[] => {
-    const seen = new Map<string, Name>();
-    for (const name of names) if (name && !seen.has(name.hanzi)) seen.set(name.hanzi, name);
-    return [...seen.values()];
-  };
-  /**
-   * Every name on the board with how it is said, a group to a kind.
-   *
-   * The drawing carried this as a band under the grid, and the pages that set
-   * a reading under the drawing now ask for the board bare: said here it is
-   * text a reader can select, search and have read out, which a picture's is
-   * not. The order is the order a palace is read in — what it was dealt, then
-   * what came to stand over it — and the branches of the frame close it.
-   */
-  const names = $derived(
-    [
-      once(chart.palaces.map((cell) => cell.palace)),
-      once(chart.palaces.flatMap((cell) => [cell.earth, cell.heaven])),
-      once(chart.palaces.map((cell) => cell.star)),
-      once(chart.palaces.map((cell) => cell.gate)),
-      once(chart.palaces.map((cell) => cell.spirit)),
-      [...COMPASS_READINGS],
-    ].filter((group) => group.length > 0),
-  );
+  /** How every name on the board is said: see `qimenKeyOf`. */
+  const names = $derived(qimenKeyOf(chart));
 </script>
 
 <!--
@@ -247,16 +230,18 @@
 {/if}
 
 <!-- How every name on the board is said, a line to a kind. -->
+{#if key}
 <h2>{t('cli.heading.readings')}</h2>
 <div class="names">
   {#each names as group}
     <ul>
       {#each group as name (name.hanzi)}
-        <li><span lang="zh-Hant">{name.hanzi}</span> {name.pinyin ?? ''}</li>
+        <li><span lang="zh-Hant">{name.hanzi}</span> {name.pinyin}</li>
       {/each}
     </ul>
   {/each}
 </div>
+{/if}
 
 <style>
   /* A group to a kind, each a run of short entries that wraps where the
@@ -270,6 +255,7 @@
     grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
     gap: 0.1rem 1rem;
   }
+  .names li { white-space: nowrap; }
   .names li span { color: var(--ink); }
   /*
    * Sized in `em` throughout, so the caller decides how loud this is.

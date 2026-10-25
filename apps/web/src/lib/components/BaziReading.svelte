@@ -154,7 +154,15 @@
     <h2>{t('cli.heading.luck')}</h2>
     <ul class="cycles">
       {#each bazi.luck.cycles as cycle}
-        <li><small>{cycle.startAge}</small> {say(cycle.ganzhi)}</li>
+        <!-- The pair as the table above has it: the words, and under them the
+             glyphs and their reading. -->
+        <li>
+          <small>{cycle.startAge}</small>
+          <span>
+            {say(cycle.ganzhi)}
+            <span class="glyph">{glyph(cycle.ganzhi)}</span>
+          </span>
+        </li>
       {/each}
     </ul>
   {:else}
@@ -185,5 +193,6 @@
     grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
     gap: 0.3rem 1rem;
   }
-  .cycles small { color: var(--faint); margin-right: 0.4rem; }
+  .cycles li { display: flex; align-items: baseline; }
+  .cycles small { color: var(--faint); margin-right: 0.4rem; min-inline-size: 2ch; text-align: end; }
 </style>

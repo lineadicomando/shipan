@@ -208,19 +208,21 @@ describe('renderZiweiSvg', () => {
     expect(svg).not.toContain('the spinning top');
   });
 
-  it('drops the words rather than setting them too small to read', () => {
-    // The fixture's first seat holds eleven names. One word would fit by
-    // count, but the names have shrunk so far to make room for each other
-    // that the word derived from them falls under about eight pixels — a
-    // smear that costs the glyphs their line and gives nothing back. Three
-    // seats in a hundred go without; the band still says every name.
+  it('sets a crowded seat in two columns, so its names and its word stay readable', () => {
+    // The fixture's first seat holds eleven names. In one column they shrank
+    // so far to make room for each other that the word derived from them fell
+    // under about eight pixels and was dropped, and the names themselves came
+    // out at five. In two columns under the glossed lead, the word is kept.
     const svg = renderZiweiSvg(board(), {
       labels: { star: { 紫微: 'the purple tenuity', 天府: 'the celestial treasury' } },
     });
 
-    expect(svg).toContain('紫微');
-    expect(svg).not.toContain('the purple tenuity');
+    expect(svg).toContain('the purple tenuity');
     expect(svg).toContain('the celestial treasury');
+    // No star line in the drawing is set under seven pixels at its own size.
+    const stars = [...svg.matchAll(/<g data-layer="(?:star|minor)"[^>]*>\s*(?:<[^>]*>[^<]*<\/[^>]*>\s*)*?<text[^>]*font-size="([\d.]+)"/g)];
+    expect(stars.length).toBeGreaterThan(0);
+    for (const [, size] of stars) expect(Number(size)).toBeGreaterThanOrEqual(7);
   });
 
   it('says the names aloud under the board when asked, and not otherwise', () => {

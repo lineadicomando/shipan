@@ -574,23 +574,37 @@ function drawCell(
     }),
   );
 
-  // On a line of their own along the foot, centred and small. Anywhere in a
-  // corner they meet either the palace's own number or the next palace's.
+  // Along the foot, centred and small. Anywhere in a corner they meet either
+  // the palace's own number or the next palace's.
+  //
+  // **A line to as many as fit, and up to three lines.** Three configurations
+  // on one line came out at a third of the size of a word in the palace — at
+  // four pixels on screen, a grey thread. The bottom register's words are a
+  // direction and a gate, one short line each, so the foot has room for three
+  // lines under them; past that, the last line takes the rest and shrinks.
+  // The whole of each line is the mark's colour, names included: two colours
+  // on one foot would read as two different things having happened.
   if (marks.length > 0) {
-    parts.push(
-      text(
-        middle,
-        at(geometry.line.marks),
-        // The whole line is the mark's colour, names included: two colours
-        // on one foot would read as two different things having happened.
-        marks.flatMap((mark, index) => [
-          ...(index > 0 ? [{ text: ' · ' }] : []),
-          ...named(mark, labels.pattern, '', ''),
-        ]),
-        geometry.font.word,
-        { className: 'mark', maxWidth: side * 0.9 },
-      ),
-    );
+    const size = geometry.font.word;
+    const room = side * 0.9;
+    const runsOf = (group: PlatePattern[]): Run[] =>
+      group.flatMap((mark, index) => [...(index > 0 ? [{ text: ' · ' }] : []), ...named(mark, labels.pattern, '', '')]);
+    const lines: PlatePattern[][] = [];
+    for (const mark of marks) {
+      const last = lines.at(-1);
+      if (last && (lines.length === 3 || measure(runsOf([...last, mark])) * size <= room)) last.push(mark);
+      else lines.push([mark]);
+    }
+    const step = size * 1.06;
+    const foot = lines.length === 1 ? at(geometry.line.marks) : y + side * 0.975;
+    lines.forEach((group, index) => {
+      parts.push(
+        text(middle, foot - step * (lines.length - 1 - index), runsOf(group), size, {
+          className: 'mark',
+          maxWidth: room,
+        }),
+      );
+    });
   }
 
   return seated(palace.palace.number, parts);

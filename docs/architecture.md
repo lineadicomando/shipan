@@ -203,8 +203,8 @@ measure. The rules are `.bench` and `.side` in `app.css`, once.
 
 **The key to a board's names is set beside it, not under it.** 太乙,
 七政四餘 and 紫微斗數 put a numeral beside every name they have no room to
-gloss, and the band under the figure said what each numeral was; 六壬's band
-says how its names are said. Under the figure the band made each drawing
+gloss, and the band under the figure said what each numeral was; 六壬's and
+奇門's say how their names are said. Under the figure the band made each drawing
 nearly twice as tall as it was wide, which no window holds. So a section asks
 for its board `bare` — without the band and without the lines naming the
 schools, which the page sets in type under the bench — and the drawing keeps
@@ -213,7 +213,17 @@ numbering, by the drawing's own `taiyiKey`, `qizhengKey`, `ziweiKey` and
 `liurenReadings`, so the two cannot disagree: three endpoints hand it over
 beside the board, told the reader's language as they already were, and the
 太乙 page works its own out (`lib/key.ts`), because that endpoint is told no
-language and its year is cached publicly for every reader at once. A drawing
+language and its year is cached publicly for every reader at once. 奇門's key
+numbers nothing and is worked out in the page as well (`qimenKeyOf`, beside
+`taiyiKeyOf`); a key that numbers nothing is set several pairs to a line,
+never a name parted from its reading. `bare` also leaves out what the page
+already sets in type under the bench: 太乙's conditions and the line on how
+its palaces are numbered, 七政四餘's two lines on the remainders and the
+frame. A copy in the picture is a fiftieth of the board's height, and listed
+twice the copy nobody can read is that one. What the lens points at stays
+drawn whatever the page repeats — 六壬's lessons and transmissions, the rows
+over the 七政四餘 ring — because a seat taken out of the drawing is a seat
+the lens can no longer show. A drawing
 fetched on its own — the PNG, what the MCP server hands over, a picture saved
 from the page's address without `bare` — keeps its band: it travels without a
 page to key it.

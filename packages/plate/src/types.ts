@@ -736,4 +736,12 @@ export interface PlateTaiyiOptions {
    * Without `readings` there are no numerals either way.
    */
   band?: boolean;
+  /**
+   * Whether the conditions are listed under the grid. Left out, they are.
+   *
+   * `false` for a page that sets them in its own type beside the drawing,
+   * where they are read at the page's size rather than at a fiftieth of the
+   * board's: listed twice, the copy in the picture is the one nobody can read.
+   */
+  conditions?: boolean;
 }

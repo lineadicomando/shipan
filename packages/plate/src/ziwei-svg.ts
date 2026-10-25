@@ -1,4 +1,4 @@
-import { escape, round } from './fit.js';
+import { escape, fitted, round } from './fit.js';
 import { FONT_STACK, styleSheet } from './palette.js';
 import {
   drawReadingColumns,
@@ -349,6 +349,30 @@ function seats(
 }
 
 /**
+ * The size the star lines of a seat come out at, set in the columns given
+ * under a full-width head.
+ *
+ * A gloss takes about two-thirds of a name's line, so a column is shared out
+ * in those units rather than in names. That is what keeps a seat holding two
+ * stars and two words from setting them at the size of a seat holding four of
+ * each. The width is settled line by line when the lines are drawn: one long
+ * name in a column shrinks alone rather than taking its neighbours with it.
+ */
+function sized<Line extends { gloss?: string | undefined }>(
+  head: readonly Line[],
+  groups: readonly (readonly Line[])[],
+  cell: number,
+  width: number,
+): { head: readonly Line[]; groups: readonly (readonly Line[])[]; width: number; step: number; starSize: number } {
+  const share = (group: readonly Line[]): number =>
+    group.length + group.filter((line) => line.gloss).length * GLOSS_SHARE;
+  const slots = share(head) + Math.max(...groups.map(share));
+  const step = Math.min(cell * 0.135, (cell * 0.62) / slots);
+  const starSize = Math.min(cell * 0.115, step * 0.86);
+  return { head, groups, width, step, starSize };
+}
+
+/**
  * What stands in one cell.
  *
  * The stars first and largest, because they are what the cell is for; the
@@ -410,14 +434,27 @@ function inside(
   });
 
   if (lines.length > 0) {
-    // A gloss takes about two-thirds of a name's line, so the cell is shared
-    // out in those units rather than in names. That is what keeps a seat
-    // holding two stars and two words from setting them at the size of a seat
-    // holding four of each.
-    const glossed = lines.filter((line) => line.gloss).length;
-    const slots = lines.length + glossed * GLOSS_SHARE;
-    const step = Math.min(at.cell * 0.135, (at.cell * 0.62) / slots);
-    const starSize = Math.min(at.cell * 0.115, step * 0.86);
+    // **Two columns where one would set the names too small to read.** A seat
+    // holding ten stars in one column sets each at half the size of a seat
+    // holding four, and the busiest seats came out at four or five pixels — a
+    // grey smear a reader had to find again in the key. Halved into two
+    // columns the lines are twice as tall, and the width is what limits them
+    // instead: a crowded seat is crowded with the short names, three or four
+    // glyphs, which is what makes the halving pay, and the one long name
+    // among them is fitted to its column alone.
+    //
+    // A glossed lead keeps the full width, over both columns: its word is too
+    // long for half a cell, and set in one column it ran under the other.
+    const single = sized([], [lines], at.cell, at.cell - pad * 2);
+    const head = lines[0]?.gloss ? lines.slice(0, 1) : [];
+    const rest = lines.slice(head.length);
+    const half = Math.ceil(rest.length / 2);
+    const paired =
+      rest.length > 4
+        ? sized(head, [rest.slice(0, half), rest.slice(half)], at.cell, (at.cell - pad * 2) / 2)
+        : undefined;
+    const columns = paired && paired.starSize > single.starSize * 1.2 ? paired : single;
+    const { step, starSize } = columns;
     // The 太乙 grid's own ratio, which is this project's precedent for a word
     // under a name: the name at 0.14 of a cell and the word at 0.085 of it.
     // No floor under it — a floor would set a word taller than the line it
@@ -450,20 +487,22 @@ function inside(
     const keySize = Math.min(at.key, starSize);
     const indent = keyed ? ringRoom(keySize) : 0;
 
-    let line_ = at.y + at.cell * 0.29;
-    for (const line of lines) {
+    // One line, and its word under it if it has one; where the next starts.
+    const draw = (line: (typeof lines)[number], left: number, y: number, head = false): number => {
+      let line_ = y;
       const named: string[] = [];
       // Centred on the glyph it keys and drawn at its own size — `over` is
       // what parts those two.
       if (keyed && line.index) {
-        named.push(ringed(line.index, at.x + pad, line_, keySize, starSize));
+        named.push(ringed(line.index, left, line_, keySize, starSize));
       }
-      named.push(text(at.x + pad + indent, line_, line.content, starSize, line.ink, 'start'));
+      const room = (head ? at.cell - pad * 2 : columns.width) - indent - at.cell * 0.02;
+      named.push(text(left + indent, line_, line.content, fitted(line.content, starSize, room), line.ink, 'start'));
       line_ += step;
       if (line.gloss && readable) {
         named.push(
           text(
-            at.x + pad + indent + starSize * 0.3,
+            left + indent + starSize * 0.3,
             line_ - step * 0.28,
             line.gloss,
             glossSize,
@@ -477,7 +516,14 @@ function inside(
       // division; the others are not told apart here, because the name a
       // class goes by would be read as a verdict on the star.
       parts.push(tagged(line.star.starClass === 'main' ? 'star' : 'minor', line.star, named.join('\n')));
-    }
+      return line_;
+    };
+    let top = at.y + at.cell * 0.29;
+    for (const line of columns.head) top = draw(line, at.x + pad, top, true);
+    columns.groups.forEach((group, column) => {
+      let line_ = top;
+      for (const line of group) line_ = draw(line, at.x + pad + column * ((at.cell - pad * 2) / 2), line_);
+    });
   }
 
   // The two lower corners: the ground on the left, the seat's name on the

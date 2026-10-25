@@ -2633,6 +2633,15 @@ export const it: Record<MessageKey, string> = {
   'cli.field.lodge': 'Dimora del giorno',
   'cli.field.dayGod': 'Dio del giorno',
   'web.calendar.heading': 'Il calendario',
+  // The notes a page sets under a board's tables: see `en.ts`.
+  'web.note.qizhengFour':
+    'Questa tavola porta tutti e quattro i complementi. Il quarto, 紫氣 zǐqì, è collocato in un palazzo ma in nessun grado: la sua velocità viene da un’opera sola e la sua posizione da un’unica carta stampata nel 1886. Per questo la tavola ne indica soltanto il palazzo.',
+  'web.note.qizhengThree':
+    'Questa tavola porta tre dei quattro complementi, tutti calcolati da un’effemeride. Il quarto, 紫氣 zǐqì, si può collocare ed è escluso dall’opzione scelta per questa tavola: la sua velocità viene da un’opera sola e la sua posizione da un’unica carta stampata nel 1886.',
+  'web.note.qizhengFrame':
+    'Le dimore 宿 xiù cominciano dalle loro stelle di riferimento, collocate all’istante di questa tavola. I loro gradi si misurano da quelle stelle, senza ricorrere a un’epoca fissa né a una tavola pubblicata di 宿度 xiùdù.',
+  'web.note.taiyiPalaces':
+    'I palazzi sono numerati come li numera il 太乙 tàiyǐ, spostati di un seggio rispetto al 洛書 luòshū. In questa tavola 一宮 yīgōng è il nord-ovest; in una carta di Qi Men è il nord.',
   'web.almanac.heading': 'La pagina dell’almanacco',
   'cli.field.jianchu': 'Ufficiale del giorno',
   'cli.field.lunar': 'lunare',
