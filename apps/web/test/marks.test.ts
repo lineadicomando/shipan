@@ -1,4 +1,5 @@
 import { LOCALES, catalogs } from '@shipan/i18n';
+import { QIMEN_LAYERS } from '@shipan/core';
 import { LAYERS, UNITS, type MarkedBoard } from '@shipan/plate';
 import { describe, expect, it } from 'vitest';
 import { GET as qimen } from '../src/routes/api/qimen/plate/+server';
@@ -72,4 +73,13 @@ describe('the marks on the drawings', () => {
       }
     });
   }
+});
+
+describe('the lens on a drawing', () => {
+  it('names the layers of a 奇門 board as the drawing marks them, in the same order', () => {
+    // A lens reads its layers off the engine's descriptor and the drawing
+    // marks its own; a layer the two named differently would be a name the
+    // lens could never light.
+    expect(QIMEN_LAYERS).toEqual(LAYERS.qimen);
+  });
 });

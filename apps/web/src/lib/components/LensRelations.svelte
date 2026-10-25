@@ -12,28 +12,28 @@
 -->
 <script lang="ts">
   import type { MessageKey, Translator } from '@shipan/i18n';
-  import type { LensView } from '$lib/lens';
+  import type { Lens } from '@shipan/core';
+  import { spotOfKey, type LensView } from '$lib/lens';
 
   let {
     t,
+    lens,
     view,
     focusName,
     nameAt,
   }: {
     t: Translator;
+    lens: Lens;
     view: LensView;
     focusName: string | undefined;
     /** A name on the board in words, from where the drawing marks it. */
-    nameAt: (seat: number, layer: string) => string | undefined;
+    nameAt: (seat: string, layer: string) => string | undefined;
   } = $props();
 
   const items = $derived(
     [...view.links]
-      .map((link) => {
-        const [seat, layer] = link.to.split(':') as [string, string];
-        return { seat: Number(seat), layer, relation: link.relation };
-      })
-      .sort((a, b) => a.seat - b.seat),
+      .map((link) => ({ ...spotOfKey(link.to), relation: link.relation }))
+      .sort((a, b) => lens.seats.indexOf(a.seat) - lens.seats.indexOf(b.seat)),
   );
 </script>
 
@@ -48,8 +48,8 @@
           <li>
             {nameAt(item.seat, item.layer)}
             <span class="where">({t('lens.at', {
-              layer: t(`label.register.qimen.${item.layer}` as MessageKey),
-              palace: String(item.seat),
+              layer: t(`label.register.${lens.board}.${item.layer}` as MessageKey),
+              palace: item.seat,
             })})</span>:
             {t(`lens.relation.${item.relation}` as MessageKey, { thing: focusName })}
           </li>

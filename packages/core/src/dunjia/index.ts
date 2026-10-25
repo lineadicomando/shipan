@@ -370,11 +370,13 @@ export {
   LENS_LAYERS,
   LENS_RELATION_IDS,
   LINKS,
+  QIMEN_LAYERS,
   qimenLens,
+  wuhePartner,
   type LensLayer,
-  type LensThing,
   type LinkId,
   type LinkName,
+  type QimenLayer,
   type QimenLens,
 } from './lens.js';
 export {

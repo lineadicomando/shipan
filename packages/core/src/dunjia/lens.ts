@@ -1,20 +1,13 @@
 import { STEMS, type StemId } from '../ganzhi.js';
-import { ELEMENT_HANZI, ELEMENT_PINYIN, type Element } from '../types.js';
+import { lensNames, phaseTable, type Lens, type LensLink, type LensName, type LensThing } from '../lens.js';
+import type { Element } from '../types.js';
 import type { QimenChart } from './index.js';
 import { palace } from './palaces.js';
 import { opposite } from './patterns.js';
-import { RELATION_IDS, relationName, relationOf, type RelationId } from './relation.js';
+import { RELATION_IDS, type RelationId } from './relation.js';
 
 /**
- * What a reader may ask a 奇門 board to show them, handed over as data.
- *
- * A lens is the reader's: they pick a thing on the board, or a kind of thing,
- * and the page recedes the rest and shows the relations of what they picked
- * (`docs/refusals.md` § "Where to look first"). This module decides none of
- * that. It states, for one chart, **every relation a lens may show**, so the
- * page that draws one looks a relation up and works none out — the client
- * imports only types from `core`, and a relation worked out in the browser
- * would be doctrine without a register.
+ * What a reader may ask a 奇門 board to show them: the board's `Lens`.
  *
  * Three relations, each with its row in `docs/sources.tsv`:
  *
@@ -22,42 +15,37 @@ import { RELATION_IDS, relationName, relationOf, type RelationId } from './relat
  *   phase: the same `relationOf` that gives 門宮 and 星宮, read here between
  *   a thing and something in another palace as well as its own;
  * - **對宮**, the palace facing another across the board, which is the palace
- *   反吟 is read on (`opposite`);
- * - **五合** between stems, 甲己 · 乙庚 · 丙辛 · 丁壬 · 戊癸.
+ *   反吟 is read on (`opposite`): a link between seats, drawn between the two
+ *   palaces' names;
+ * - **五合** between stems, 甲己 · 乙庚 · 丙辛 · 丁壬 · 戊癸: a link between
+ *   two stems of either plate, wherever they stand.
  *
- * Nothing here orders them, and nothing picks one: the table is whole, the
- * same size whichever thing a reader starts from.
+ * A seat is a palace by its Luoshu number, as the drawing marks it.
  */
 
 /**
- * The layers of a 奇門 board whose things have a phase, named as the drawing
- * marks them. The eight spirits are not among them: the engine carries no
- * phase for a spirit, and a lens that gave one would be asserting a table
- * nobody has registered — the drawing leaves them uncoloured for the same
- * reason.
+ * The layers of a 奇門 board, as the drawing marks them, in the order the
+ * board is read.
  */
-export type LensLayer = 'palace' | 'earth' | 'heaven' | 'star' | 'gate';
+export type QimenLayer = 'heaven' | 'earth' | 'palace' | 'spirit' | 'star' | 'gate';
+
+export const QIMEN_LAYERS: readonly QimenLayer[] = ['heaven', 'earth', 'palace', 'spirit', 'star', 'gate'];
+
+/**
+ * The layers whose things have a phase. The eight spirits are not among them:
+ * the engine carries no phase for a spirit, and a lens that gave one would be
+ * asserting a table nobody has registered — the drawing leaves them
+ * uncoloured for the same reason.
+ */
+export type LensLayer = Exclude<QimenLayer, 'spirit'>;
 
 export const LENS_LAYERS: readonly LensLayer[] = ['heaven', 'earth', 'palace', 'star', 'gate'];
-
-/** One thing on the board with a phase, addressed as the drawing marks it. */
-export interface LensThing {
-  /** The Luoshu number of the palace it stands in. */
-  seat: number;
-  layer: LensLayer;
-  /** What stands there: a stem, star, gate or palace identifier. */
-  id: string;
-  element: Element;
-}
 
 /** A relation between two things that is not one of the five of the phases. */
 export type LinkId = 'duigong' | 'wuhe';
 
-export interface LinkName {
+export interface LinkName extends LensName {
   id: LinkId;
-  hanzi: string;
-  /** The relation said aloud, e.g. `duìgōng`. */
-  pinyin: string;
 }
 
 export const LINKS: Record<LinkId, LinkName> = {
@@ -65,50 +53,27 @@ export const LINKS: Record<LinkId, LinkName> = {
   wuhe: { id: 'wuhe', hanzi: '五合', pinyin: 'wǔhé' },
 };
 
-export interface QimenLens {
-  /** Every thing on the board that has a phase, palace by palace. */
-  things: LensThing[];
-  /**
-   * How one phase stands to another, named from the first: `phases.jin.mu`
-   * is 我剋, metal controlling wood. Twenty-five cells, the whole of the
-   * five relations, so that any two things on the board are one lookup.
-   */
-  phases: Record<Element, Record<Element, RelationId>>;
-  /** The palace each faces across the board. The centre faces none. */
-  facing: Record<number, number>;
-  /** The 五合 partner of each stem. */
-  wuhe: Record<StemId, StemId>;
-  /**
-   * The names a lens says its relations and phases by, hanzi and reading.
-   * Carried here because a page holding the lens imports no values from the
-   * engine, and a name is never the page's to write.
-   */
-  names: {
-    relations: Record<RelationId | LinkId, { hanzi: string; pinyin: string }>;
-    elements: Record<Element, { hanzi: string; pinyin: string }>;
-  };
-}
+const LINK_IDS: readonly LinkId[] = ['duigong', 'wuhe'];
 
-const ELEMENTS: readonly Element[] = ['mu', 'huo', 'tu', 'jin', 'shui'];
+export type QimenLens = Lens<QimenLayer, LinkId>;
 
-/** The five relations, laid out once for every pair of phases. */
-function phaseTable(): Record<Element, Record<Element, RelationId>> {
-  const table = {} as Record<Element, Record<Element, RelationId>>;
-  for (const mine of ELEMENTS) {
-    table[mine] = {} as Record<Element, RelationId>;
-    for (const other of ELEMENTS) table[mine][other] = relationOf(mine, other).id;
-  }
-  return table;
-}
+/** The nine palaces, by Luoshu number, as the drawing names its seats. */
+const SEATS: readonly string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-/** The palace facing each of the eight around the centre. */
-function facingTable(): Record<number, number> {
-  const table: Record<number, number> = {};
+/** The two palaces of each pair facing each other across the centre, once. */
+function facingLinks(): LensLink<QimenLayer, LinkId>[] {
+  const links: LensLink<QimenLayer, LinkId>[] = [];
   for (let number = 1; number <= 9; number++) {
     const across = opposite(number);
-    if (across !== undefined) table[number] = across;
+    if (across === undefined || across < number) continue;
+    links.push({
+      relation: 'duigong',
+      between: 'seats',
+      a: { seat: String(number), layer: 'palace' },
+      b: { seat: String(across), layer: 'palace' },
+    });
   }
-  return table;
+  return links;
 }
 
 /**
@@ -116,29 +81,36 @@ function facingTable(): Record<number, number> {
  * 庚. The same pairing `almanac.ts` reads the 德合 by, where the 四德 confirm
  * it cell by cell.
  */
-function wuheTable(): Record<StemId, StemId> {
-  const table = {} as Record<StemId, StemId>;
-  for (const stem of STEMS) table[stem.id] = (STEMS[(stem.index + 5) % 10] as (typeof STEMS)[number]).id;
-  return table;
+export function wuhePartner(stem: StemId): StemId {
+  const index = STEMS.findIndex((one) => one.id === stem);
+  return (STEMS[(index + 5) % 10] as (typeof STEMS)[number]).id;
 }
 
-/** Every relation and every phase, by hanzi and reading. */
-function names(): QimenLens['names'] {
-  const relations = {} as QimenLens['names']['relations'];
-  for (const id of RELATION_IDS) relations[id] = relationName(id);
-  for (const link of Object.values(LINKS)) relations[link.id] = { hanzi: link.hanzi, pinyin: link.pinyin };
-  const elements = {} as QimenLens['names']['elements'];
-  for (const element of ELEMENTS) {
-    elements[element] = { hanzi: ELEMENT_HANZI[element], pinyin: ELEMENT_PINYIN[element] };
+/** Every pair of stems on the two plates that are each other's 五合, once. */
+function wuheLinks(things: readonly LensThing<QimenLayer>[]): LensLink<QimenLayer, LinkId>[] {
+  const stems = things.filter((thing) => thing.layer === 'heaven' || thing.layer === 'earth');
+  const links: LensLink<QimenLayer, LinkId>[] = [];
+  for (let i = 0; i < stems.length; i++) {
+    const one = stems[i] as LensThing<QimenLayer>;
+    for (let j = i + 1; j < stems.length; j++) {
+      const other = stems[j] as LensThing<QimenLayer>;
+      if (wuhePartner(one.id as StemId) !== other.id) continue;
+      links.push({
+        relation: 'wuhe',
+        between: 'things',
+        a: { seat: one.seat, layer: one.layer },
+        b: { seat: other.seat, layer: other.layer },
+      });
+    }
   }
-  return { relations, elements };
+  return links;
 }
 
-/** What a lens may show on this chart: its things, and the three tables. */
+/** What a lens may show on this chart: its things, and its relations. */
 export function qimenLens(chart: QimenChart): QimenLens {
-  const things: LensThing[] = [];
+  const things: LensThing<QimenLayer>[] = [];
   for (const contents of chart.palaces) {
-    const seat = contents.palace.number;
+    const seat = String(contents.palace.number);
     const add = (layer: LensLayer, thing: { id: string; element: Element } | undefined): void => {
       if (thing) things.push({ seat, layer, id: thing.id, element: thing.element });
     };
@@ -150,11 +122,18 @@ export function qimenLens(chart: QimenChart): QimenLens {
     add('star', { id: contents.star.id, element: palace(contents.star.home).element });
     if (contents.gate) add('gate', { id: contents.gate.id, element: palace(contents.gate.home).element });
   }
-  return { things, phases: phaseTable(), facing: facingTable(), wuhe: wuheTable(), names: names() };
+  return {
+    board: 'qimen',
+    seats: SEATS,
+    layers: QIMEN_LAYERS,
+    phased: LENS_LAYERS,
+    things,
+    phases: phaseTable(),
+    linkIds: LINK_IDS,
+    links: [...facingLinks(), ...wuheLinks(things)],
+    names: lensNames(LINKS),
+  };
 }
 
 /** Every relation a lens may name, for a surface that has to offer them all. */
-export const LENS_RELATION_IDS: readonly (RelationId | LinkId)[] = [
-  ...RELATION_IDS,
-  ...(Object.keys(LINKS) as LinkId[]),
-];
+export const LENS_RELATION_IDS: readonly (RelationId | LinkId)[] = [...RELATION_IDS, ...LINK_IDS];

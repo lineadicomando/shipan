@@ -17,9 +17,9 @@
 -->
 <script lang="ts">
   import type { MessageKey, Translator } from '@shipan/i18n';
-  import type { QimenLens } from '@shipan/core';
+  import type { Lens, RelationId } from '@shipan/core';
   import { glyph } from '$lib/glyph';
-  import { PHASE_LAYERS, pairTable, type LensState, type LensView } from '$lib/lens';
+  import { pairTable, spotOfKey, type LensState, type LensView } from '$lib/lens';
 
   let {
     t,
@@ -27,32 +27,35 @@
     view,
     state,
     nameAt,
+    seatName,
   }: {
     t: Translator;
-    lens: QimenLens;
+    lens: Lens;
     view: LensView;
     /** The lens, for the names pressed inside the pair. */
     state: LensState;
-    nameAt: (seat: number, layer: string) => string | undefined;
+    nameAt: (seat: string, layer: string) => string | undefined;
+    /** A seat in words, as the heading says it. */
+    seatName: (seat: string) => string;
   } = $props();
 
   const seats = $derived(view.seats);
   const cells = $derived(pairTable(lens, state));
-  const rows = $derived(PHASE_LAYERS.filter((layer) => cells.some((cell) => cell.row === layer)));
-  const columns = $derived(PHASE_LAYERS.filter((layer) => cells.some((cell) => cell.column === layer)));
+  const rows = $derived(lens.phased.filter((layer) => cells.some((cell) => cell.row === layer)));
+  const columns = $derived(lens.phased.filter((layer) => cells.some((cell) => cell.column === layer)));
   const cellOf = (row: string, column: string) => cells.find((cell) => cell.row === row && cell.column === column);
 
-  const palace = (seat: number): string => `${seat} ${nameAt(seat, 'palace') ?? ''}`;
-  const layerWord = (layer: string): string => t(`label.register.qimen.${layer}` as MessageKey);
+  const layerWord = (layer: string): string => t(`label.register.${lens.board}.${layer}` as MessageKey);
 
-  /** The relations that are not a cell: 對宮 and 五合, where they were drawn. */
-  const others = $derived(view.links.filter((link) => link.relation === 'duigong' || link.relation === 'wuhe'));
+  /** The relations that are not a cell: the board's own links, where they were drawn. */
+  const others = $derived(view.links.filter((link) => lens.linkIds.includes(link.relation)));
+  const said = (relation: RelationId | string) => lens.names.relations[relation] as { hanzi: string; pinyin: string };
 </script>
 
 <div class="pair" aria-live="polite">
   {#if seats.length === 2 && cells.length > 0}
-    {@const [a, b] = seats as [number, number]}
-    <p class="heading">{t('lens.pair.heading', { a: palace(a), b: palace(b) })}</p>
+    {@const [a, b] = seats as [string, string]}
+    <p class="heading">{t('lens.pair.heading', { a: seatName(a), b: seatName(b) })}</p>
     <div class="scroller">
       <table>
         <thead>
@@ -101,12 +104,12 @@
     {#if others.length > 0}
       <ul>
         {#each others as link, index (index)}
-          {@const [fromSeat, fromLayer] = link.from.split(':') as [string, string]}
-          {@const [toSeat, toLayer] = link.to.split(':') as [string, string]}
+          {@const from = spotOfKey(link.from)}
+          {@const to = spotOfKey(link.to)}
           <li>
-            {nameAt(Number(fromSeat), fromLayer)} · {nameAt(Number(toSeat), toLayer)}:
+            {nameAt(from.seat, from.layer)} · {nameAt(to.seat, to.layer)}:
             {t(`label.relation.${link.relation}` as MessageKey)}
-            <span class="glyph">{glyph(lens.names.relations[link.relation])}</span>
+            <span class="glyph">{glyph(said(link.relation))}</span>
           </li>
         {/each}
       </ul>

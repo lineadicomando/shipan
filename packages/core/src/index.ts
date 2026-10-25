@@ -380,7 +380,9 @@ export {
   LENS_RELATION_IDS,
   LINKS,
   opposite,
+  QIMEN_LAYERS,
   qimenLens,
+  wuhePartner,
   relationOf,
   seasonElement,
   strengthOf,
@@ -404,7 +406,6 @@ export {
   type Ju,
   type Horse,
   type LensLayer,
-  type LensThing,
   type LinkId,
   type LinkName,
   type Palace,
@@ -413,6 +414,7 @@ export {
   type Pattern,
   type PatternId,
   type QimenChart,
+  type QimenLayer,
   type QimenLens,
   type Relation,
   type RelationId,
@@ -435,6 +437,15 @@ export {
   type DayStar,
   type DayStarId,
 } from './dunjia/rijia.js';
+export {
+  lensNames,
+  phaseTable,
+  type Lens,
+  type LensLink,
+  type LensName,
+  type LensSpot,
+  type LensThing,
+} from './lens.js';
 
 export {
   DEFAULT_OPTIONS,

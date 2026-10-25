@@ -43,7 +43,7 @@
 -->
 <script lang="ts">
   import { sameSpot, spotOf, type BoardSpot } from '$lib/board';
-  import type { LensView, ShownRelation, SpotKey } from '$lib/lens';
+  import { spotOfKey, type LensView, type ShownRelation, type SpotKey } from '$lib/lens';
   import LensLinks from './LensLinks.svelte';
 
   let {
@@ -149,7 +149,7 @@
 
   /** The box of a name on the drawing, in the frame's own pixels. */
   function boxOf(key: SpotKey, origin: DOMRect) {
-    const [seat, layer] = key.split(':');
+    const { seat, layer } = spotOfKey(key);
     const name = root?.querySelector(`[data-seat="${seat}"] > [data-layer="${layer}"]`);
     if (!name) return undefined;
     const box = name.getBoundingClientRect();
@@ -169,7 +169,7 @@
   });
 
   /** The box of a whole palace, for framing the palaces of a pair. */
-  function seatBox(seat: number, origin: DOMRect) {
+  function seatBox(seat: string, origin: DOMRect) {
     const group = root?.querySelector(`[data-seat="${seat}"] > rect`);
     if (!group) return undefined;
     const box = group.getBoundingClientRect();

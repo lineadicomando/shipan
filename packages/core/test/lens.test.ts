@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from 'vitest';
 import { computeQimenChart, type QimenChart } from '../src/dunjia/index.js';
 import { palace } from '../src/dunjia/palaces.js';
-import { LENS_LAYERS, LINKS, qimenLens } from '../src/dunjia/lens.js';
+import { LENS_LAYERS, LINKS, QIMEN_LAYERS, qimenLens, wuhePartner } from '../src/dunjia/lens.js';
 import { RELATION_IDS, relationOf } from '../src/dunjia/relation.js';
 import { initEphemeris, type EphemerisContext } from '../src/ephemeris.js';
 import { STEMS } from '../src/ganzhi.js';
@@ -42,14 +42,33 @@ describe('the relations a lens may show on a 奇門 board', () => {
     expect(phases.tu.tu).toBe('bihe');
   });
 
-  it('gives each of the eight outer palaces the one facing it, and the centre none', () => {
-    const { facing } = qimenLens(cast('2024-06-15', '14:00'));
-    expect(facing).toEqual({ 1: 9, 2: 8, 3: 7, 4: 6, 6: 4, 7: 3, 8: 2, 9: 1 });
-    expect(facing[5]).toBeUndefined();
+  it('describes the board as the drawing marks it: nine seats, six layers, five with a phase', () => {
+    const lens = qimenLens(cast('2024-06-15', '14:00'));
+    expect(lens.board).toBe('qimen');
+    expect(lens.seats).toEqual(['1', '2', '3', '4', '5', '6', '7', '8', '9']);
+    expect(lens.layers).toEqual(QIMEN_LAYERS);
+    expect(lens.phased).toEqual(LENS_LAYERS);
+    expect(lens.linkIds).toEqual(['duigong', 'wuhe']);
+  });
+
+  it('links each of the eight outer palaces to the one facing it, once, and the centre to none', () => {
+    const { links } = qimenLens(cast('2024-06-15', '14:00'));
+    const facing = links.filter((link) => link.relation === 'duigong');
+    expect(facing.every((link) => link.between === 'seats')).toBe(true);
+    expect(facing.map((link) => [link.a, link.b])).toEqual(
+      [
+        ['1', '9'],
+        ['2', '8'],
+        ['3', '7'],
+        ['4', '6'],
+      ].map(([a, b]) => [
+        { seat: a, layer: 'palace' },
+        { seat: b, layer: 'palace' },
+      ]),
+    );
   });
 
   it('pairs the stems 甲己 · 乙庚 · 丙辛 · 丁壬 · 戊癸, each both ways', () => {
-    const { wuhe } = qimenLens(cast('2024-06-15', '14:00'));
     const pairs = [
       ['jia', 'ji'],
       ['yi', 'geng'],
@@ -58,10 +77,34 @@ describe('the relations a lens may show on a 奇門 board', () => {
       ['wu', 'gui'],
     ] as const;
     for (const [a, b] of pairs) {
-      expect(wuhe[a]).toBe(b);
-      expect(wuhe[b]).toBe(a);
+      expect(wuhePartner(a)).toBe(b);
+      expect(wuhePartner(b)).toBe(a);
     }
-    expect(Object.keys(wuhe)).toHaveLength(STEMS.length);
+    expect(new Set(STEMS.map((stem) => wuhePartner(stem.id))).size).toBe(STEMS.length);
+  });
+
+  it('links every two stems of the plates that are each other\'s 五合, and no others', () => {
+    for (const [date, time] of [
+      ['2024-06-15', '14:00'],
+      ['2024-12-21', '03:30'],
+    ] as const) {
+      const { links, things } = qimenLens(cast(date, time));
+      const stems = things.filter((thing) => thing.layer === 'heaven' || thing.layer === 'earth');
+      const expected = new Set<string>();
+      stems.forEach((one, i) =>
+        stems.forEach((other, j) => {
+          if (i < j && wuhePartner(one.id as never) === other.id) {
+            expected.add(`${one.seat}:${one.layer}-${other.seat}:${other.layer}`);
+          }
+        }),
+      );
+      const found = links
+        .filter((link) => link.relation === 'wuhe')
+        .map((link) => `${link.a.seat}:${link.a.layer}-${link.b.seat}:${link.b.layer}`);
+      expect(found.length).toBe(expected.size);
+      expect(new Set(found)).toEqual(expected);
+      expect(expected.size).toBeGreaterThan(0);
+    }
   });
 
   it('lists every thing that has a phase, as the chart places it, and no spirit', () => {
@@ -75,7 +118,7 @@ describe('the relations a lens may show on a 奇門 board', () => {
       expect(new Set(things.map((thing) => thing.layer))).toEqual(new Set(LENS_LAYERS));
 
       for (const contents of chart.palaces) {
-        const seat = contents.palace.number;
+        const seat = String(contents.palace.number);
         const here = things.filter((thing) => thing.seat === seat);
         const at = (layer: string) => here.find((thing) => thing.layer === layer);
         expect(at('heaven')).toEqual({ seat, layer: 'heaven', id: contents.heaven.id, element: contents.heaven.element });
@@ -98,7 +141,7 @@ describe('the relations a lens may show on a 奇門 board', () => {
     for (const contents of chart.palaces) {
       const ground = contents.palace.element;
       const element = (layer: string) =>
-        things.find((thing) => thing.seat === contents.palace.number && thing.layer === layer)?.element;
+        things.find((thing) => thing.seat === String(contents.palace.number) && thing.layer === layer)?.element;
       expect(phases[element('star') as Element][ground]).toBe(contents.starRelation.id);
       if (contents.gateRelation) {
         expect(phases[element('gate') as Element][ground]).toBe(contents.gateRelation.id);
