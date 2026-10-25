@@ -244,7 +244,7 @@ export const DIVERGENCES: readonly Divergence[] = [
     family: 'shijia',
     values: ['none', 'branch', 'huaqi'],
     implemented: ['none', 'branch', 'huaqi'],
-    fallback: 'none',
+    fallback: 'branch',
     label: 'form.qimen.spiritPhase',
     says: {
       none: 'form.qimen.spiritPhase.none',

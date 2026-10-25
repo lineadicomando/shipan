@@ -2180,6 +2180,17 @@ once.** P. 429, with its glosses in small characters: 「洪曰：六儀擊刑�
 which is the 統宗's line. The engine marks the palace; the hour whose branch is
 the punished one is the same rule read off the clock and is not marked.
 
+**What is struck is the 直符 carried, and the case says so in numbers.** At
+庚午 of 陽遁一局 the earth plate has 戊 at 一 and 庚 at 三, and the 直符 goes
+with 戊 onto the hour's 庚: the palace struck is the one the 直符 is read in on
+the heaven plate, and nothing lying on the earth plate is struck at all. The
+engine had read `STRIKE` off the earth plate, which marked one palace for all
+sixty hours of a 元 — 陽遁一局's 己 in 坤 at every hour, and not this case's 三.
+It reads the hour decade's 直符 now, keyed by the decade and not by the stem
+laid, so `earthPlate: xun`, which conceals every 甲 under 戊, still strikes
+甲辰's at 四. Pp. 429–430 read on the plate at the file's native 200 dpi on
+2026-10-25, and `patterns.test.ts` lays the case.
+
 **The lodging at 坤 is worked, in a yang board and in a yin one.** 卷下
 p. 453, under 時加六戊: 「假令立春中陽五局甲己之日戊辰時，此時六戊在五宮，寄
 坤二，以直符加時干，即六戊臨二宮，出西南方吉」. And p. 460, under 五不擊:

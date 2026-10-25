@@ -164,6 +164,37 @@ describe('旺相休囚死 — how a thing stands to the season', () => {
   });
 });
 
+describe('六儀擊刑, as 《遁甲符應經》 works it', () => {
+  // 「假令陽遁天元一局甲己之日……至庚午時，以甲子直符加六庚於三宮，即六儀擊刑也」,
+  // 遁甲集成 第一冊 p. 430. 2024-01-01 is a 甲子 day in 冬至's 上元, 陽遁一局,
+  // and 11:30 its 庚午 hour.
+  const options: ChartOptions = { ...DEFAULT_OPTIONS, trueSolarTime: false, dayBoundary: 'midnight' };
+  const lay = (time: string) =>
+    computeQimenChart(
+      resolveMoment({ date: '2024-01-01', time, timezone: 'Asia/Shanghai' }, BEIJING, options, context),
+      options,
+    );
+
+  it('strikes the 直符 carried onto 六庚 in the third palace', () => {
+    const chart = lay('11:30');
+
+    expect(chart.ju).toMatchObject({ yang: true, number: 1 });
+    expect(chart.instrument.hanzi).toBe('戊');
+    expect(chart.chief.palace.number).toBe(3);
+    expect(chart.palaces.find((p) => p.palace.number === 3)?.earth.hanzi).toBe('庚');
+    expect(idsOf(chart, 'jixing')).toEqual([3]);
+  });
+
+  it('leaves the 己 lying in 坤 alone', () => {
+    // The plate of 陽遁一局 has 己 at 二 for all sixty hours, which a reading
+    // off the earth plate struck at every one of them.
+    const chart = lay('13:30');
+
+    expect(chart.palaces.find((p) => p.palace.number === 2)?.earth.hanzi).toBe('己');
+    expect(idsOf(chart, 'jixing')).toEqual([]);
+  });
+});
+
 describe('a chart with configurations', () => {
   // 2024-06-15 14:00 in Beijing: the hour is 癸未, in the decade of 甲戌.
   let chart: QimenChart;
@@ -177,10 +208,12 @@ describe('a chart with configurations', () => {
     expect(idsOf(chart, 'kongwang')).toEqual([2, 7]);
   });
 
-  it('finds the instrument struck', () => {
-    // 壬 heads the decade of 甲辰, and 辰 punishes itself in Xun.
-    expect(idsOf(chart, 'jixing')).toEqual([4]);
+  it('strikes the 直符 where it is carried, not a stem the earth plate holds', () => {
+    // 壬 lies in Xun, where 辰 punishes itself, but the hour is 甲戌's: its
+    // 直符 is 己, carried to Kun, which is 未's palace — 「甲戌直符時加未」.
     expect(chart.palaces.find((p) => p.palace.number === 4)?.earth.hanzi).toBe('壬');
+    expect(chart.chief.palace.number).toBe(2);
+    expect(idsOf(chart, 'jixing')).toEqual([2]);
   });
 
   it('sees the whole board come home', () => {

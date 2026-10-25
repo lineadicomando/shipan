@@ -477,6 +477,11 @@ export function opposite(number: number): number | undefined {
  * belonging to the branch that head punishes — 子 punishes 卯, so the
  * instrument of the decade of 甲子 is struck in the palace of 卯. Two of the
  * six punish themselves, and 寅 punishes 巳, which is why 巽 appears twice.
+ *
+ * What is struck is the hour's 直符, carried on the heaven plate, and not an
+ * instrument lying on the earth: 「甲子直符時加卯」, and the worked board of
+ * 《遁甲符應經》 p. 430, 陽遁一局 at 庚午, 「以甲子直符加六庚於三宮，即六儀擊刑也」
+ * — where the earth plate has 戊 at 一 and nothing struck at all.
  */
 const STRIKE: Record<string, number> = {
   wu: 3, //   戊, decade of 甲子 — 子刑卯 → 震
@@ -537,6 +542,14 @@ export interface PatternInput {
   deshi: ChartOptions['deshi'];
   /** The palace the 值使 gate stands in on the gate plate, which `deshi: zhishi` reads. */
   chiefGateAt: number;
+  /**
+   * The instrument the hour's decade conceals its 甲 under on the 元's plate,
+   * which names the decade 擊刑 reads — under `earthPlate: xun` too, where the
+   * plate laid conceals every 甲 under 戊 and the decade is still 甲辰's.
+   */
+  decade: Stem;
+  /** The palace the 直符 is read in on the heaven plate, where 擊刑 strikes it. */
+  chiefAt: number;
   /** Which table of 十干克應 is laid. The caller's to say, as `dingTomb` is. */
   stemPairs: ChartOptions['stemPairs'];
   /**
@@ -571,7 +584,7 @@ export function findPatterns(input: PatternInput): Pattern[] {
   const above = overhead(input.heaven, input.carried);
   found.push(...tombs(above, input.yiTomb, input.dingTomb));
   found.push(...oppressedGates(input.gates, input.menpo));
-  found.push(...struckInstruments(input.earth));
+  found.push(...struckInstrument(input.decade, input.chiefAt));
   found.push(...stemPairs(input.earth, above, input.stemPairs));
   found.push(...deshi(input.earth, above, input.deshi, input.chiefGateAt));
   found.push(...chanting(input.stars, input.gates));
@@ -659,15 +672,9 @@ function oppressedGates(gates: ByPalace<Gate>, reading: ChartOptions['menpo']): 
   return found;
 }
 
-/** Instruments standing where their decade's branch is punished (擊刑). */
-function struckInstruments(earth: ByPalace<Stem>): Pattern[] {
-  const found: Pattern[] = [];
-  for (const [number, stem] of Object.entries(earth)) {
-    if (STRIKE[stem.id] === Number(number)) {
-      found.push(mark('jixing', { palace: Number(number) }));
-    }
-  }
-  return found;
+/** The hour's 直符 carried to where its decade's branch is punished (擊刑). */
+function struckInstrument(instrument: Stem, chiefAt: number): Pattern[] {
+  return STRIKE[instrument.id] === chiefAt ? [mark('jixing', { palace: chiefAt })] : [];
 }
 
 /**

@@ -94,9 +94,9 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-25
 
-**Version 0.38.0**, in every manifest. **`main` is checked out and no branch
+**Version 0.39.0**, in every manifest. **`main` is checked out and no branch
 is open.** `origin/main` is `main`, pushed on the user's word on 2026-10-25,
-and 0.37.0 is deployed at https://shipan.it by `ssh shipan.deploy`, which
+and 0.39.0 is deployed at https://shipan.it by `ssh shipan.deploy`, which
 runs `srv-deploy shipan` on the server; its output shows the image built,
 `docker compose down` and `docker compose up -d`, and the version is checked
 in the footer after. Deploying and pushing are always the user's call.

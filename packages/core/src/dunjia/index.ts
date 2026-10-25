@@ -327,6 +327,8 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
     menpo: options.menpo,
     deshi: options.deshi,
     chiefGateAt: lodge(gateLanding, host),
+    decade: pinned,
+    chiefAt: chiefPalace.number,
     stemPairs: options.stemPairs,
     ...(rides === undefined ? {} : { carried: { palace: rides, stem: earth[5] as Stem } }),
   });
