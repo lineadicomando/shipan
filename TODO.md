@@ -38,7 +38,9 @@ siblings, a test (`packages/core/test/witnesses.test.ts` for a holder); the
 version in every manifest and `package-lock.json`, by the three questions of
 `docs/architecture.md` § "Which term moves": an address that answers
 differently moves the second term, something shipping that none answered for
-the third, a session that ships nothing neither; a phase in `docs/history/`
+the third, a session that ships nothing neither; the tag `v<version>` on the
+commit that moves it, annotated `shipan <version> — <its subject>` and pushed
+with it when the user says push; a phase in `docs/history/`
 with its line in that directory's README; and one commit on `main`. A value
 added to the engine also fails the MCP and web suites until § 5's two lists
 carry it, and its strings go into both catalogs under the `reader-copy`
@@ -93,9 +95,15 @@ refused», «this list is empty».
 ### Where it stands, 2026-10-25
 
 **Version 0.37.0**, in every manifest. **`main` is checked out and no branch
-is open.** `origin/main` stands at phase 74, pushed on the user's word; the
-three commits after it — 0.36.1, the Italian labels, 0.37.0 — are not, and
-pushing is always the user's call. `npm run build`, `npm run typecheck` and
+is open.** `origin/main` is `main`, pushed on the user's word on 2026-10-25,
+and 0.37.0 is deployed at https://shipan.it by `ssh shipan.deploy`, which
+runs `srv-deploy shipan` on the server; its output shows the image built,
+`docker compose down` and `docker compose up -d`, and the version is checked
+in the footer after. Deploying and pushing are always the user's call.
+**Every version has its tag** since 2026-10-25, when the 48 from `v0.3.0` to
+`v0.37.0` were set on the commits that moved the number, dated as those
+commits; `v0.2.0` and `v0.2.1` stayed lightweight. `npm run build`, `npm run
+typecheck` and
 `npm test` pass at the end of phase 75, no test skipped. **Run `npm run
 build` before `npm test`** in a fresh tree: the MCP and web suites and the
 shelf's scripts import `packages/core/dist`, and a stale `dist` fails them on
