@@ -31,6 +31,7 @@
 <script lang="ts">
   import { COLOR_SCHEME_KEY } from '$lib/color-scheme';
   import { EXTERNAL } from '$lib/external';
+  import { INTRO_KEY } from '$lib/intro';
   import { SOURCE_URL } from '$lib/source';
   import PageHead from '$lib/components/PageHead.svelte';
   let { data } = $props();
@@ -134,14 +135,16 @@
       </dl>
 
       <h3>{t('privacy.storage.title')}</h3>
-      <!-- Two things are kept, and they are kept for different reasons: the
-           first because the reader asked for it, the second because the site
-           can be installed. The second is mostly a list of what is *not* in
-           it, which is the half a reader actually wants. -->
+      <!-- Three things are kept, for two different reasons: the first two
+           because the reader asked for them, the last because the site can be
+           installed. The last is mostly a list of what is *not* in it, which
+           is the half a reader actually wants. -->
       <p>{t('privacy.storage.lead')}</p>
       <dl>
         <dt>{t('privacy.storage.scheme')}</dt>
         <dd>{t('privacy.storage.scheme.means', { key: COLOR_SCHEME_KEY })}</dd>
+        <dt>{t('privacy.storage.intro')}</dt>
+        <dd>{t('privacy.storage.intro.means', { key: INTRO_KEY })}</dd>
         <dt>{t('privacy.storage.offline')}</dt>
         <dd>{t('privacy.storage.offline.means')}</dd>
       </dl>

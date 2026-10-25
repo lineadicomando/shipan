@@ -2307,15 +2307,17 @@ export const it: Record<MessageKey, string> = {
     'Su questo sito non gira alcun tracciamento del comportamento né alcuna analitica di terze parti.',
 
   'privacy.storage.title': 'Archiviazione locale e cache',
-  // Le cose sono due, e il numero è il punto della frase: si muove quando si
-  // muove il numero. `docs/architecture.md` applica a un eventuale terzo la
-  // prova che vale qui — se chi legge dovrebbe esserne avvertito — e la
-  // pioggia non la passa.
+  // Three things, and the count is the point of the sentence: it moves when
+  // the number does. `docs/architecture.md` applies the test for another —
+  // whether a reader would have to be told — and the rain fails it.
   'privacy.storage.lead':
-    'Nel tuo browser restano due cose, e di entrambe si può verificare il perché:',
+    'Nel tuo browser restano tre cose, e di ognuna si può verificare il perché:',
   'privacy.storage.scheme': 'L’aspetto che hai scelto',
   'privacy.storage.scheme.means':
     'Chiaro, scuro o automatico, sotto la chiave {key}. Riportare l’aspetto su automatico la cancella.',
+  'privacy.storage.intro': 'Le introduzioni che hai chiuso',
+  'privacy.storage.intro.means':
+    'I nomi delle sezioni di cui hai chiuso i paragrafi iniziali, sotto la chiave {key}, e nient’altro. Riaprirle tutte la cancella.',
   // «carta» e non «grafico»: è la parola che il sito usa dappertutto per
   // quello che posa. E l'elenco è al negativo di proposito — chi legge che un
   // sito si installa e funziona senza rete dà per scontato che si sia tenuto

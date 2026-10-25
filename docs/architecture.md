@@ -508,11 +508,15 @@ not something to put on a sheet. It does not move for a reader who asked for
 `prefers-reduced-motion`, who gets the picture drawn once and no loop at all.
 And it is not remembered: **the privacy note enumerates what is kept in the
 browser, and this does not join the list.** The appearance is stored because a
-reader who wants a dark page wants it before the first paint; this is one press
-away in the header on every page, and a reload puts it back the way the page
-ships. The list is two entries long — the appearance, and the site's own code
-once it has been installed — and the test of anything proposing to be third is
-the one applied here: whether a reader would have to be told.
+reader who wants a dark page wants it before the first paint; so is a folded
+introduction, because a reader who has read a section's two paragraphs once
+should not have to fold them again on every visit (`lib/intro.ts`, applied
+before the paint by `app.html` for the same reason as the appearance). This is
+one press away in the header on every page, and a reload puts it back the way
+the page ships. The list is three entries long — the appearance, the sections
+whose introduction a reader folded, and the site's own code once it has been
+installed — and the test of anything proposing to join it is the one applied
+here: whether a reader would have to be told.
 
 It draws in `--ink` and `--edge`, read back out of the stylesheet each frame,
 so it follows the reader from light to dark without holding a colour of its

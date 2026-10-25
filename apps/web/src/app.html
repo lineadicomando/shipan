@@ -42,6 +42,23 @@
       } catch {
         // Storage refused: the system's appearance stands.
       }
+
+      /*
+       * Whether this section's introduction is folded, for the same reason:
+       * read after hydration, the two paragraphs would show and then collapse
+       * under the reader. The key, the attribute and the name of the
+       * consultation are the ones in `lib/intro.ts`.
+       */
+      try {
+        const folded = (localStorage.getItem('shipan:intro-folded') || '').split(' ');
+        const slug =
+          location.pathname.replace(/\/$/, '').split('/').slice(2).join('/') || 'consult';
+        if (folded.includes(slug)) {
+          document.documentElement.setAttribute('data-intro-folded', '');
+        }
+      } catch {
+        // Storage refused: every introduction is open.
+      }
     </script>
     %sveltekit.head%
   </head>

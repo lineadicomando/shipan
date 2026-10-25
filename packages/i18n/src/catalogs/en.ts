@@ -2549,14 +2549,17 @@ export const en = {
     'No behavioural tracking and no third-party analytics run on this site.',
 
   'privacy.storage.title': 'Local storage and cache',
-  // Two things, and the count is the point of the sentence: it moves when the
-  // number does. `docs/architecture.md` applies the test for a third — whether
-  // a reader would have to be told — and the rain fails it.
+  // Three things, and the count is the point of the sentence: it moves when
+  // the number does. `docs/architecture.md` applies the test for another —
+  // whether a reader would have to be told — and the rain fails it.
   'privacy.storage.lead':
-    'Two things are kept in your browser, and each of them can be checked:',
+    'Three things are kept in your browser, and each of them can be checked:',
   'privacy.storage.scheme': 'The appearance you chose',
   'privacy.storage.scheme.means':
     'Light, dark or automatic, under the key {key}. Setting the appearance back to automatic deletes it.',
+  'privacy.storage.intro': 'The introductions you folded',
+  'privacy.storage.intro.means':
+    'The names of the sections whose opening paragraphs you folded, under the key {key}, and nothing else. Opening them all again deletes it.',
   // Mostly a list of what is *not* in it, which is the half a reader wants:
   // somebody who reads that a site installs and works without a connection
   // reasonably assumes it took a copy of what they did there.
@@ -2564,7 +2567,7 @@ export const en = {
   'privacy.storage.offline.means':
     'The code, the stylesheet and the icons are cached so that the site opens without a connection, along with the page you see when there is none. No board is among them: not a date, not a time, not a place, not a question, not the picture of a board.',
   'privacy.storage.clearing':
-    'You can remove both at any time by clearing the browsing data of your browser, or by uninstalling the site from your device.',
+    'You can remove all three at any time by clearing the browsing data of your browser, or by uninstalling the site from your device.',
 
   'privacy.rights.title': '4. Your rights (Articles 15–22 GDPR)',
   'privacy.rights.none':

@@ -45,7 +45,7 @@ const walk = (dir: string): string[] =>
 describe('the heading a section carries', () => {
   it('writes it in one place, from the registry', () => {
     const intro = markup(readFileSync(join(SRC, 'lib/components/SectionIntro.svelte'), 'utf8'));
-    expect(intro).toContain('<h1>{t(here.heading)}</h1>');
+    expect(intro).toMatch(/<h1>\s*<button[^>]*>\{t\(here\.heading\)\}/);
   });
 
   it('leaves none on the pages themselves', () => {

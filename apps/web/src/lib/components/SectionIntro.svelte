@@ -3,6 +3,7 @@
   import type { Translator } from '@shipan/i18n';
   import { metaOf } from '$lib/meta';
   import { SECTIONS } from '$lib/navigation';
+  import { isFolded, markFolded, setFolded } from '$lib/intro';
   import { layerOfSection } from '$lib/notes';
   import Named from './Named.svelte';
 
@@ -62,6 +63,17 @@
    * decision already taken by the time anything is printed — but a sheet with
    * no line saying which art drew it is a sheet the person receiving it has
    * to identify from the drawing.
+   *
+   * **The heading is also the fold.** A reader who has met the art has read
+   * these paragraphs once and does not need them between the bar and the
+   * form on every visit, so pressing the heading folds them away and leaves
+   * the name standing. Open is the state the page ships in; a fold is kept
+   * per section in the browser — see `lib/intro.ts` and the privacy note —
+   * and applied before the first paint by `app.html`, so a folded section
+   * never opens and then collapses under the reader. The control is the
+   * heading itself rather than a button beside it: its face is the name of
+   * the art in the reader's language, which is the only label a fold over
+   * that art's account could honestly carry.
    */
   let { t }: { t: Translator } = $props();
 
@@ -112,20 +124,53 @@
 
   /** The section this is, for the heading it wears. */
   const here = $derived(SECTIONS.find((section) => section.slug === slug));
+
+  /**
+   * Whether the account is folded. The server always renders it open, and
+   * what `app.html` already decided is read back here once the page is live —
+   * and again on every move to another section, each of which has a fold of
+   * its own. The attribute on `<html>` is what hides the paragraphs; this is
+   * what the button says about them.
+   */
+  let folded = $state(false);
+
+  $effect(() => {
+    folded = isFolded(slug);
+    markFolded(folded);
+  });
+
+  function toggle(): void {
+    folded = !folded;
+    setFolded(slug, folded);
+  }
 </script>
 
 {#if intro}
   <div class="intro">
-    {#if here}<h1>{t(here.heading)}</h1>{/if}
-    {#each intro as paragraph (paragraph)}
-      <!-- The names in it set apart — `Named` is the whole of the rule, and
-           the heading above is what makes the glyphs a reasonable thing to
-           open a paragraph on. -->
-      <p><Named text={t(paragraph)} /></p>
-    {/each}
-    <a href="/{t.locale}/notes/instruments{layer ? `#${layer.id}` : ''}">
-      {layer ? t('intro.computed') : t('intro.computed.all')}
-    </a>
+    {#if here}
+      <!-- The mark is a chevron and names nothing: the button's name is the
+           heading, and `aria-expanded` says which way it is set. -->
+      <h1>
+        <button
+          type="button"
+          aria-expanded={!folded}
+          aria-controls="intro-account"
+          onclick={toggle}
+        >{t(here.heading)}<span class="mark" aria-hidden="true"></span></button>
+      </h1>
+    {/if}
+    <!-- `display: contents`, so the paragraphs stay the grid's own tracks. -->
+    <div id="intro-account" class="account">
+      {#each intro as paragraph (paragraph)}
+        <!-- The names in it set apart — `Named` is the whole of the rule, and
+             the heading above is what makes the glyphs a reasonable thing to
+             open a paragraph on. -->
+        <p><Named text={t(paragraph)} /></p>
+      {/each}
+      <a href="/{t.locale}/notes/instruments{layer ? `#${layer.id}` : ''}">
+        {layer ? t('intro.computed') : t('intro.computed.all')}
+      </a>
+    </div>
   </div>
 {/if}
 
@@ -200,6 +245,65 @@
     font-size: 0.9rem;
     font-weight: 700;
     color: var(--ink);
+  }
+
+  /*
+   * The heading as a control, and still a heading to look at: no border, no
+   * ground, no tint on hover — the site's buttons take one, and a heading
+   * that lit up under the pointer would read as a bar. What says it can be
+   * pressed is the chevron after the name and the pointer over it.
+   */
+  .intro h1 button {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5em;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    text-align: start;
+    cursor: pointer;
+  }
+  .intro h1 button:hover { background: none; }
+
+  /*
+   * A chevron drawn from two borders, in `--faint` until the heading is
+   * aimed at: pointing down while the account is open, along the line once it
+   * is folded. Small, because it is a mark for the fold and not a second
+   * heading; nudged up to sit on the x-height of the name rather than on its
+   * baseline.
+   */
+  .mark {
+    width: 0.38em;
+    height: 0.38em;
+    border-right: 1.5px solid var(--faint);
+    border-bottom: 1.5px solid var(--faint);
+    transform: translateY(-0.2em) rotate(45deg);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .intro h1 button:hover .mark,
+  .intro h1 button:focus-visible .mark { border-color: var(--ink); }
+  .intro h1 button[aria-expanded='false'] .mark {
+    transform: translateY(-0.1em) rotate(-45deg);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mark { transition: none; }
+  }
+
+  /* Without scripts nothing answers the press, so nothing offers one: the
+     heading stands as it did and the account stays open. */
+  :global(html:not([data-js])) .mark { display: none; }
+  :global(html:not([data-js])) .intro h1 button { cursor: auto; }
+
+  .account { display: contents; }
+
+  /* Folded: the name stands alone, and the band under it closes up. On
+     screen only — paper drops the account either way and spaces the heading
+     its own way. */
+  :global(html[data-intro-folded]) .account { display: none; }
+  @media screen {
+    :global(html[data-intro-folded]) .intro h1 { margin-bottom: 0; }
   }
 
   /*
@@ -290,5 +394,6 @@
     .intro p,
     .intro a { display: none; }
     .intro h1 { margin: 0 0 0.6rem; }
+    .mark { display: none; }
   }
 </style>
