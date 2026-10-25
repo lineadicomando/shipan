@@ -425,7 +425,7 @@ describe('every board endpoint yields the instant it was laid for', () => {
       fileURLToPath(new URL('../src/lib/components/PlateDialog.svelte', import.meta.url)),
       'utf8',
     );
-    const taken = /return body\.(\w+) as/.exec(source);
+    const taken = /body\.(\w+) as QimenChart/.exec(source);
     expect(taken, 'PlateDialog should take the board off the body under one name').not.toBeNull();
 
     const { body } = await call(qimen, MOMENT);

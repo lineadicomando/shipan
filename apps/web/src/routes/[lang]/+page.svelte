@@ -1335,7 +1335,7 @@
         {:else if chart.id === 'ziwei'}
           <ZiweiReading board={chart.board} {t} moment={castMoment} />
         {:else}
-          <ChartReading chart={chart.board} {t} wide key={false} />
+          <ChartReading chart={chart.board} {t} wide />
         {/if}
         <!-- Which schools laid it, under whichever of the six was laid. One
              line rather than an arm apiece: the board's own options are on the

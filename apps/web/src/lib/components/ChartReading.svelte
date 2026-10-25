@@ -16,7 +16,6 @@
   import { glyph } from '$lib/glyph';
   import type { MessageKey, Translator } from '@shipan/i18n';
   import type { QimenChart } from '@shipan/core';
-  import { qimenKeyOf } from '$lib/key';
   import HexagramTable from './HexagramTable.svelte';
   import PalaceTable from './PalaceTable.svelte';
   import CalendarAndAlmanac from './CalendarAndAlmanac.svelte';
@@ -41,12 +40,6 @@
    * keep in one place is the ju, the horses and the configurations.
    */
   /**
-   * `key` is whether how the names are said is set here, at the foot of the
-   * reading. A page with a bench sets it in the column beside the board
-   * instead, as `NameKey`, where every other board's key stands; the scan's
-   * dialog has no such column and keeps it here.
-   */
-  /**
    * `wide` is whether this reading stands under a board of the page's width.
    *
    * It does in the two sections that give the drawing a page to itself, and
@@ -61,8 +54,7 @@
     t,
     palaces = true,
     wide = false,
-    key = true,
-  }: { chart: QimenChart; t: Translator; palaces?: boolean; wide?: boolean; key?: boolean } = $props();
+  }: { chart: QimenChart; t: Translator; palaces?: boolean; wide?: boolean } = $props();
 
   /** Largest to smallest, as every almanac and the drawing's caption have it. */
   const PILLARS = ['year', 'month', 'day', 'hour'] as const;
@@ -78,8 +70,6 @@
     PILLARS.map((position) => ({ position, ganzhi: chart.moment.pillars[position] })),
   );
 
-  /** How every name on the board is said: see `qimenKeyOf`. */
-  const names = $derived(qimenKeyOf(chart, t));
 </script>
 
 <!--
@@ -229,34 +219,8 @@
   </ul>
 {/if}
 
-<!-- How every name on the board is said, a line to a kind. -->
-{#if key}
-<h2>{t('cli.heading.readings')}</h2>
-<div class="names">
-  {#each names as group}
-    <ul>
-      {#each group as name (name.hanzi)}
-        <li><span class="word">{name.word}</span> <span lang="zh-Hant">{name.hanzi}</span> {name.pinyin}</li>
-      {/each}
-    </ul>
-  {/each}
-</div>
-{/if}
 
 <style>
-  /* A group to a kind, each a run of short entries that wraps where the
-     measure does: a list to scan, at the size of the notes around it. */
-  .names { display: grid; gap: 0.5rem; font-size: 0.9em; color: var(--faint); }
-  .names ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
-    gap: 0.1rem 1rem;
-  }
-  .names li { white-space: nowrap; }
-  .names .word { color: var(--ink); }
   /*
    * Sized in `em` throughout, so the caller decides how loud this is.
    *

@@ -21,6 +21,11 @@ things in turn.
   column spans, every entry carrying its word beside its hanzi and reading,
   and it recedes with the board when a lens is laid.
 - **The cursor over a name** is a link's hand; it was a question mark.
+- **The scan's board has its lens.** The dialog in which a scan opens one hour
+  lays the board on a bench as the sections do: the lens beside it, the key
+  under it, and the reading that used to stand in the column under both. The
+  lens is put away when the dialog closes, so the scan's address is left as
+  it was found.
 - **The spirits in the lens.** Asked why the spirits took part in no relation,
   the answer was that no phase was registered for them, though the shelf held
   a page giving one.

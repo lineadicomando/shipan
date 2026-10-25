@@ -182,7 +182,8 @@ two cannot be seen at once.
 
 So every section that draws a board lays it on a bench — 奇門, 六壬, 太乙,
 七政四餘 and 紫微斗數 — and so does the consultation, whatever drawn board it
-lays; the four pillars are a grid in the page's type. Every drawing is asked
+lays, and the dialog in which a scan opens the board of one hour
+(`PlateDialog`), enlarged; the four pillars are a grid in the page's type. Every drawing is asked
 for `bare`. On the left, the whole board at `--board`. On the right, a column
 at `--side` holding what is used on the board in view: the circle of the five
 phases at the head of the column in both modes, where nothing that grows

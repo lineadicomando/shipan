@@ -376,7 +376,7 @@
         the header already lists, and already carries this moment to. A
         signpost to a door in the same room is furniture.
       -->
-      <ChartReading {chart} {t} wide key={false} />
+      <ChartReading {chart} {t} wide />
       <Schools
         {t}
         board="qimen"

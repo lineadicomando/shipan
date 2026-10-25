@@ -32,11 +32,16 @@
 -->
 <script lang="ts">
   import type { Translator } from '@shipan/i18n';
-  import type { QimenChart } from '@shipan/core';
-  import { sayLayer } from '$lib/board';
+  import type { QimenChart, QimenLens } from '@shipan/core';
+  import { HeldLens } from '$lib/held-lens.svelte';
+  import { qimenKeyOf } from '$lib/key';
+  import { qimenWords } from '$lib/lens-words';
   import { sayFailure, type Failure } from '$lib/moment';
   import ChartReading from './ChartReading.svelte';
   import InlineBoard from './InlineBoard.svelte';
+  import LensReading from './LensReading.svelte';
+  import LensSide from './LensSide.svelte';
+  import NameKey from './NameKey.svelte';
   import PalaceTable from './PalaceTable.svelte';
   import LayerLegend from './LayerLegend.svelte';
   import StrengthLegend from './StrengthLegend.svelte';
@@ -94,14 +99,33 @@
    * The rule the chart section states and this obeys: a drawing carries the
    * glyphs but not the warnings, so it is never shown on its own. The scan's
    * own row says where the gates and stars stand in the *matched* palace;
-   * this is the whole chart, which is what the answer already contained.
+   * this is the whole chart, which is what the answer already contained —
+   * and the board's lens with it, which the section holds the same way.
    *
    * Asked for from the browser, not from `load`: the drawing beside it is a
    * picture the browser fetches anyway, so there is nothing to be gained by
    * having the server wait on the same answer — and picking an hour must not
    * run the page's `load`, which would rescan the interval.
    */
-  const asked = $derived(read(chart));
+  let found = $state<QimenChart | undefined>();
+  let lens = $state<QimenLens | undefined>();
+  let failure = $state('');
+  $effect(() => {
+    const from = chart;
+    let live = true;
+    read(from)
+      .then((body) => {
+        if (!live) return;
+        found = body.qimen;
+        lens = body.lens;
+      })
+      .catch((error: Error) => {
+        if (live) failure = error.message;
+      });
+    return () => {
+      live = false;
+    };
+  });
 
   /**
    * The board behind the drawing, under the name the endpoint answers with.
@@ -113,11 +137,24 @@
    * line read the old word for a while: the return was `any`, so nothing
    * between here and `found.palaces` had anything to check it against.
    */
-  async function read(from: string): Promise<QimenChart> {
+  async function read(from: string): Promise<{ qimen: QimenChart; lens: QimenLens | undefined }> {
     const response = await fetch(from);
     const body = await response.json();
     if (!response.ok) throw new Error(sayFailure(t, body as Failure));
-    return body.qimen as QimenChart;
+    return { qimen: body.qimen as QimenChart, lens: body.lens as QimenLens | undefined };
+  }
+
+  /**
+   * The lens, as the section holds one: nothing on when the board opens, and
+   * where the reader looked kept in the fragment. It is put away when the
+   * dialog closes, so the scan's own address is left as it was found.
+   */
+  const words = $derived(qimenWords(found, t));
+  const held = new HeldLens({ lens: () => lens, t: () => t, words: () => words });
+
+  function closed(): void {
+    held.putAway();
+    onclosed();
   }
 
 </script>
@@ -152,7 +189,7 @@
   bind:this={dialog}
   class:large
   aria-labelledby={named}
-  onclose={onclosed}
+  onclose={closed}
   onclick={fromBackdrop}
 >
   <div class="box">
@@ -201,20 +238,24 @@
         <!-- A middling chart's shape, to reserve the box with. See the chart
              section, where the same attributes carry the same caveat. -->
         <div class="screen">
-          <InlineBoard src={plate} width={900} height={900} tip={(spot) => sayLayer(spot, t)} />
+          <InlineBoard src={plate} width={900} height={900} tip={held.tip} onpick={held.pick} lens={held.view} />
         </div>
         <LayerLegend {t} board="qimen" />
         <StrengthLegend {t} />
       </div>
+      <!-- The circle, the mode and the lens, beside the board as on a
+           section's bench. Nothing pressed here moves the board. -->
+      <div class="side"><LensSide {t} {held} /></div>
 
-      {#await asked}
-        <p class="note">{t('form.working')}</p>
-      {:then found}
-        <!-- The four pillars are drawn here as they are under a page's board.
-             They fit: the plate asks the room it was given how many columns
-             it can have, and in this column it takes two rows of two rather
-             than four cells nobody could read. -->
-        <div class="said reading"><ChartReading chart={found} {t} palaces={false} /></div>
+      {#if found}
+        <!-- How the names are said, under the board and outside the column,
+             receding with the board when a lens is laid. -->
+        <div class="under"><NameKey {t} groups={qimenKeyOf(found, t)} inView={held.inView} /></div>
+        <!-- What the lens draws, said in words. -->
+        <div class="wide"><LensReading {t} {held} /></div>
+        <!-- The four pillars are drawn here as they are under a page's board,
+             and the reading with them, across the whole dialog. -->
+        <div class="said reading wide"><ChartReading chart={found} {t} palaces={false} /></div>
         <!--
           Under the board and across the whole dialog, never beside it. See
           the note on the two columns below.
@@ -226,12 +267,14 @@
           with a whole chart inside it. The grid gets a plain block; the block
           gets the frame that scrolls.
         -->
-        <div class="palaces">
+        <div class="palaces wide">
           <div class="scroller"><PalaceTable palaces={found.palaces} {t} /></div>
         </div>
-      {:catch failure}
-        <p class="failure" role="alert">{failure.message}</p>
-      {/await}
+      {:else if failure}
+        <p class="failure wide" role="alert">{failure}</p>
+      {:else}
+        <p class="note wide">{t('form.working')}</p>
+      {/if}
     </div>
   </div>
 </dialog>
@@ -347,7 +390,8 @@
    * prevent, one level further out. Given leave to shrink, the item takes the
    * width it is offered and the frame inside it does the scrolling.
    */
-  .palaces { min-inline-size: 0; }
+  .palaces, .side, .under { min-inline-size: 0; }
+  .side { display: grid; gap: 1.25rem; align-content: start; }
   /*
    * Where there is room for a column of words beside a square. Below this the
    * enlargement is the width of the window and nothing else, which on a phone
@@ -364,17 +408,28 @@
    * it needs is the width the dialog already has.
    */
   @media (min-width: 56rem) {
-    dialog.large .body { grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem); }
-    dialog.large .palaces { grid-column: 1 / -1; }
-    /* The item of the grid is the board and its legend together, so what used
-       to be the picture's own placement is the pair's. */
-    dialog.large .board { align-self: start; }
+    /*
+     * The board, and beside it the lens, as a section's bench lays them.
+     *
+     * The column of the lens spans the board's row and the key's, and the
+     * second row is `1fr`: whatever the column grows by as the lens is used
+     * goes there, so the key under the board is placed by the board alone
+     * and never moves. What used to be the column — the pillars and the
+     * configurations — runs under both, across the dialog.
+     */
+    dialog.large .body {
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem);
+      grid-template-rows: auto 1fr;
+    }
+    dialog.large .board { grid-column: 1; grid-row: 1; align-self: start; }
+    dialog.large .side { grid-column: 2; grid-row: 1 / span 2; }
+    dialog.large .under { grid-column: 1; grid-row: 2; }
+    dialog.large .wide { grid-column: 1 / -1; }
     dialog.large .board .screen {
       /* The height budget buys eight sevenths of itself in width: what has to
          fit is everything down to the foot of the board, which is the
          caption's eighth plus the grid's three quarters — see the same sum in
-         the chart section. The list of configurations hangs below that and
-         scrolls with `.body`, which is what `.body` scrolls for. */
+         the chart section. */
       inline-size: min(calc(96vw - 28rem), calc((90vh - 5rem) * 8 / 7));
       block-size: auto;
       max-inline-size: 100%;
