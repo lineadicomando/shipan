@@ -70,12 +70,12 @@ describe('the combination a board stands on', () => {
   });
 
   it('joins a label to its value with the vernacular’s own mark', () => {
-    // The em dash is English punctuation: an Italian drawing takes the colon.
+    // The em dash is English punctuation: an Italian label opens the sentence its value closes.
     const moved = { ...DEFAULT_OPTIONS, method: 'zhirun' } as const;
     const en = divergenceLines('qimen', moved, moved, createTranslator('en'));
     const it = divergenceLines('qimen', moved, moved, createTranslator('it'));
     expect(en.some((line) => line.includes(' — '))).toBe(true);
     expect(it.join('\n')).not.toMatch(/[—–]/);
-    expect(it.some((line) => line.startsWith('Il ju si determina: '))).toBe(true);
+    expect(it.some((line) => line.startsWith('Il ju si determina per blocchi interi'))).toBe(true);
   });
 });

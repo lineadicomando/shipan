@@ -1509,15 +1509,15 @@ export const it: Record<MessageKey, string> = {
   'form.qimen.method.maoshan':
     'dal primo istante del termine, per tratti di cinque: 茅山 máoshān',
   'form.qimen.method.zhirun': 'per blocchi interi, con l’intercalazione: 置閏 zhìrùn',
-  'form.qimen.spirits': 'Il quinto e il sesto spirito sono nominati da',
+  'form.qimen.spirits': 'Il quinto e il sesto spirito prendono il nome',
   'form.qimen.spirits.dun':
-    'la metà dell’anno 陰陽異名 yīnyángyìmíng: 勾陳 gōuchén e 朱雀 zhūquè in una carta yang, 白虎 báihǔ e 玄武 xuánwǔ in una yin',
+    'dalla metà dell’anno 陰陽異名 yīnyángyìmíng: 勾陳 gōuchén e 朱雀 zhūquè in una carta yang, 白虎 báihǔ e 玄武 xuánwǔ in una yin',
   'form.qimen.spirits.fixed':
-    'niente: gli stessi otto nomi stanno in entrambi i dun, come li ha il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
+    'sempre allo stesso modo: gli stessi otto nomi stanno in entrambi i dun, come li ha il 《御定奇門寶鑑》 yùdìngqíménbǎojiàn',
   'form.qimen.spirits.baihu':
-    'la metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
+    'dalla metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
   'form.qimen.spirits.huwu':
-    'niente, con i nomi della carta yin in entrambi i dun: 白虎 báihǔ e 玄武 xuánwǔ stanno in una carta yang come in una yin, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
+    'sempre dalla carta yin, in entrambi i dun: 白虎 báihǔ e 玄武 xuánwǔ stanno in una carta yang come in una yin, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
   'form.qimen.spiritSeat': 'Il primo degli otto spiriti, 值符 zhífú, si colloca',
   'form.qimen.spiritSeat.tianpan':
     'dove sta il capo 值符 zhífú sul piatto cielo, a ogni ora, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
@@ -2489,10 +2489,13 @@ export const it: Record<MessageKey, string> = {
   'cli.combination.unattributedApart':
     'Alcuni dei valori con cui è posata questa tavola sono convenzioni del motore, per le quali non è ancora nominato nessun testo. Gli altri valori non appartengono tutti a uno stesso testo.',
   'cli.combination.and': ' e ',
-  // The colon is the Italian turn for what English makes with a dash: «Il ju
-  // si determina: dal giorno». A value carrying a colon of its own then has
-  // two, which Italian reads as a thing and its explanation.
-  'cli.between.said': ': ',
+  // A space: every Italian label is written as the opening of a sentence its
+  // value closes, «Il ju si determina» + «dal giorno», so the two read as one
+  // sentence. A label is therefore never a question and never ends on a
+  // preposition a value's article would have to contract with.
+  'cli.between.said': ' ',
+  // A solar term and the instant it falls on, «立春 lìchūn, 2026-02-04 10:42».
+  'cli.between.term': ', ',
   // Two things set side by side on a caption, which neither introduces the
   // other: the middle dot the day board's caption already uses.
   'cli.between.items': ' · ',
@@ -2531,7 +2534,7 @@ export const it: Record<MessageKey, string> = {
   'form.instrument.ziwei': 'I seggi in cui una vita è contata',
   'form.instrument.bazi': 'Di che cosa è fatta una vita, all’ora di una nascita',
   'form.instrument.taiyi': 'Come sta un anno, per tutti quelli che ci stanno dentro',
-  'form.liuren.guiren': 'Quale verso insedia il nobile (貴人 guìrén)',
+  'form.liuren.guiren': 'Il verso che insedia il nobile (貴人 guìrén) mette',
   'form.liuren.guiren.chou': '甲 jiǎ con 戊 wù e 庚 gēng, a 丑 chǒu e 未 wèi',
   'form.liuren.guiren.wei': '甲 jiǎ da solo, a 未 wèi e 丑 chǒu',
   'form.liuren.guiren.note': 'Muove i dodici generali e lascia stare le tre trasmissioni.',
@@ -2601,9 +2604,9 @@ export const it: Record<MessageKey, string> = {
   // Detto una volta, dove chi legge può soppesarlo. Si veda `docs/history/`, fase 23.
   'cli.value.ziweiSource':
     'collocazioni dal 《紫微斗數全書》 zǐwēidǒushùquánshū 卷二 juàn èr in ogni punto: la trasmissione delle quattordici stelle, non quella delle diciotto, i 十八飛星 shíbāfēixīng che portano 《全集》 quánjí e 《捷覽》 jiélǎn. Le sue tavole si scostano da quelle moderne in quattro luoghi (due stelle slegate dall’ora, una coppia insediata dallo stelo, una divinità presa dall’anno e una delle quattro trasformazioni), e in ognuno si segue questo libro, con lo scostamento registrato',
-  'form.qizheng.ziqi': 'Se entri 紫氣 zǐqì',
-  'form.qizheng.ziqi.off': 'tre complementi: solo effemeridi',
-  'form.qizheng.ziqi.yinianyisu': 'quattro complementi: una dimora l’anno 一年一宿 yīniányīxiù',
+  'form.qizheng.ziqi': 'I complementi sono',
+  'form.qizheng.ziqi.off': 'tre, senza 紫氣 zǐqì: solo effemeridi',
+  'form.qizheng.ziqi.yinianyisu': 'quattro, con 紫氣 zǐqì: una dimora l’anno 一年一宿 yīniányīxiù',
   'form.qizheng.xiudu': 'Le ventotto dimore cominciano',
   'form.qizheng.xiudu.juxing':
     'alle loro stelle determinative 距星 jùxīng, ciascuna collocata in cielo in questo istante',
@@ -2611,7 +2614,7 @@ export const it: Record<MessageKey, string> = {
     'dove le pone il 授時曆 shòushílì del 1281, portate a questo istante con il metodo di quel calendario',
   'form.qizheng.xiudu.note':
     'Ogni corpo di questa tavola è collocato rispetto alle dimore, perciò il punto in cui una dimora comincia decide in quale dimora sta un corpo e a quale grado. La prima lettura prende ogni confine dalla sua stella, dove la stella sta ora, ed è una costruzione propria del motore. La seconda prende le ampiezze che un calendario misurò lungo l’equatore nel 1281, le porta sull’eclittica con la geometria di quel calendario e le muove come esso dice che si muove il cielo. Le due letture concordano entro un grado circa per le dimore le cui stelle stanno vicino all’eclittica. Distano fino a sette gradi per le dimore le cui stelle ne stanno lontano, perciò un corpo può cadere in una dimora diversa sotto ciascuna.',
-  'form.qizheng.luohou': 'Quale nodo è 羅睺 luóhóu',
+  'form.qizheng.luohou': 'Il corpo 羅睺 luóhóu è',
   'form.qizheng.luohou.descending': 'il nodo discendente: la legge degli astrologi',
   'form.qizheng.luohou.ascending': 'il nodo ascendente: 湯若望 Tāng Ruòwàng e il 時憲曆 shíxiànlì',
   'form.copyStars': 'Copia la tavola',

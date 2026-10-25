@@ -2858,10 +2858,11 @@ export const en = {
   'cli.combination.unattributedApart':
     'Some of the values this board was laid on are conventions of this engine, with no text named for them yet. The other values do not all belong to one text.',
   'cli.combination.and': ' and ',
-  // Between a thing and what is said of it on one line: a school's label and
-  // its value on a drawing, a solar term and its instant. A dash and not a
+  // Between a school's label and its value on a drawing. A dash and not a
   // colon, since several values carry a colon of their own.
   'cli.between.said': ' — ',
+  // Between a solar term and the instant it falls on.
+  'cli.between.term': ' — ',
   // Between two things a caption line sets side by side: the ju and the
   // pillars, the chief and the chief gate.
   'cli.between.items': ' — ',

@@ -21,6 +21,12 @@ describe('catalog parity', () => {
   it('has no empty message', () => {
     for (const [locale, catalog] of Object.entries(catalogs)) {
       for (const [key, message] of Object.entries(catalog)) {
+        // A seam is a mark set between two texts, and a vernacular may set
+        // a space there; it is still never the empty string.
+        if (key.startsWith('cli.between.')) {
+          expect(message, `${locale} / ${key}`).not.toBe('');
+          continue;
+        }
         expect(message.trim(), `${locale} / ${key}`).not.toBe('');
       }
     }

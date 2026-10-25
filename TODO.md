@@ -254,9 +254,13 @@ commit of 0.36.1 after it is not. What `main` carries since 2026-10-15 is of ele
 
 - 2026-10-25, on `main` (0.36.1), the two known faults of the surface: the
   seams the code set with an em dash are catalog keys, `cli.between.said`
-  (a school's label and its value on a drawing, a solar term and its instant:
-  the colon in Italian) and `cli.between.items` (two captions side by side,
-  `captions.between` in `@shipan/plate`: the middle dot in Italian); and the
+  (a school's label and its value on a drawing: a space in Italian, whose
+  labels open the sentence the value closes), `cli.between.term` (a solar
+  term and its instant: a comma) and `cli.between.items` (two captions side
+  by side, `captions.between` in `@shipan/plate`: the middle dot); on the
+  user's word, the four Italian labels that were questions or ended on a
+  preposition rewritten to open a sentence (`form.qimen.spirits`,
+  `form.liuren.guiren`, `form.qizheng.ziqi`, `form.qizheng.luohou`); and the
   Italian lens strings no longer set a preposition before a name whose gloss
   opens on an article — the name is a subject or follows «con».
 
@@ -480,13 +484,9 @@ decided is left unbuilt.
      絕學 holds three works; the `sihua` refusal row unmarked.
 
 **On the surface, nothing is owed and nothing is decided next.** What a
-pointer does beyond naming the layer is open. With the colon as the Italian
-seam, a school's line on a drawing reads «Il quinto e il sesto spirito sono
-nominati da: niente: …» where the label ends on a preposition, and the
-Italian labels are written as the opening of a sentence the value closes,
-which a plain space would join better bar the three that are questions
-(«Quale nodo è 羅睺», «Se entri 紫氣», «Quale verso insedia il nobile»):
-a choice of copy for the user, not a fault. On the 奇門
+pointer does beyond naming the layer is open. An Italian parameter label is
+the opening of a sentence its value closes (`docs/i18n.md`), so a label
+added later is never a question and never ends on a preposition. On the 奇門
 section the selector of the board's family (2026-10-25) pushes the steps of
 the moment onto a second line of the bar on a 1920-wide window; not looked at
 narrower. Not looked at in a browser: choosing another hour while the
@@ -683,7 +683,10 @@ nothing either way.
 **Owed a look by the user, and not blocking**: on 2026-10-25, after phase
 74, the Italian `lens.focus` «Punto di partenza: {thing}», `lens.heading`
 and `lens.relation.*` reworded so no preposition stands before a name, and
-the two seams `cli.between.said` and `.items`. Also on 2026-10-25, phase 74's
+the three seams `cli.between.*`, and the four labels rewritten with the
+values under them: «prendono il nome» + «dalla metà dell’anno …» / «sempre
+allo stesso modo: …», «Il verso che insedia il nobile (貴人 guìrén) mette»,
+«I complementi sono» + «tre, senza 紫氣 zǐqì: …», «Il corpo 羅睺 luóhóu è». Also on 2026-10-25, phase 74's
 strings, written under the `reader-copy` skill and read by nobody else —
 `web.note.qizhengFour`, `.qizhengThree`, `.qizhengFrame` and `.taiyiPalaces`,
 the page's own sentences for the notes under those boards;

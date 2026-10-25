@@ -146,7 +146,7 @@ function timeOf(julianDayUT: number, timezone: string): string {
 
 function term(solarTerm: SolarTerm, timezone: string, t: Translator): string {
   const gloss = named(solarTerm.term, `label.term.${solarTerm.term.id}` as MessageKey, t);
-  return `${gloss}${t('cli.between.said')}${timeOf(solarTerm.julianDayUT, timezone)}`;
+  return `${gloss}${t('cli.between.term')}${timeOf(solarTerm.julianDayUT, timezone)}`;
 }
 
 function lunar(date: LunarDate, t: Translator): string {
@@ -380,7 +380,8 @@ export function divergenceLines(
   t: Translator,
 ): string[] {
   // The seam is the catalog's: an em dash in English, where several glosses
-  // carry a colon of their own, and a colon in Italian, which has no dash.
+  // carry a colon of their own, and a space in Italian, whose labels open a
+  // sentence the value closes.
   const between = t('cli.between.said');
   const lines = saidDivergences(board, options, layers, t).map(
     (row) => `${row.label}${between}${row.said}`,
