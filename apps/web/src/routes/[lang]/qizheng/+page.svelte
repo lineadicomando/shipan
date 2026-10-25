@@ -178,12 +178,12 @@
         <LayerLegend {t} board="qizheng" />
       </div>
       <div class="side">
-        <!-- The circle, the names in view, the mode and the lens. -->
+        <!-- The circle, the mode and the lens. -->
         <LensSide {t} {held} />
       </div>
       <!-- The key to the names, under the board and outside the column: what
            grows in the column as the lens is used must move nothing under it. -->
-      <div class="under"><NameKey {t} groups={data.result?.key ?? []} /></div>
+      <div class="under"><NameKey {t} groups={data.result?.key ?? []} inView={held.inView} /></div>
     </div>
 
     <!-- What the lens draws, said in words, at the page's measure. -->

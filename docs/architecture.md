@@ -186,8 +186,7 @@ lays; the four pillars are a grid in the page's type. Every drawing is asked
 for `bare`. On the left, the whole board at `--board`. On the right, a column
 at `--side` holding what is used on the board in view: the circle of the five
 phases at the head of the column in both modes, where nothing that grows
-under it can move it, then the names the lens keeps in view, then the lens
-and the key to its arrows. The steps of the moment stay in
+under it can move it, then the lens and the key to its arrows. The steps of the moment stay in
 the bar above, with the date: they choose which board is laid, where the
 column holds how it is looked at, and the two are kept apart. The column
 stands beside the board and scrolls with the page like the board itself —
@@ -233,16 +232,18 @@ fetched on its own — the PNG, what the MCP server hands over, a picture saved
 from the page's address without `bare` — keeps its band: it travels without a
 page to key it.
 
-**What the lens keeps in view is glossed in the column** (`LensGloss`), under
-the circle: each name lit by the press — a name, a pair, a kind, a phase —
-with its word, its hanzi and its reading, and nothing about the relations,
-which the circle and `LensReading` name. It is a fixed height and scrolls
-inside, because the mode and the lens's controls stand under it and a list
-that grew with every press would move the button about to be pressed.
+**The key follows the lens, as the board does.** Every entry carries the word
+in the reader's language beside the hanzi and the reading — 六壬's and 奇門's
+supplied by the page (`liurenKeyOf`, `qimenKeyOf`), since those endpoints are
+told no language or carry no key. Where a lens is laid, the entries for the
+names it keeps in view stay as they are and the rest recede, matched on the
+hanzi (`inView` in `HeldLens`). Nothing is added to the column for it: a list
+that grew there with every press would move the controls about to be
+pressed, and the key under the board moves nothing — the reader scrolls to it.
 
 Paper takes the bench as a block: the board, then what the column held, then
-the key. The lens and its gloss stay off it; the key to the names prints under
-the board, since the
+the key. The lens stays off it, and nothing in the key recedes; the key to the
+names prints under the board, since the
 sheet carries the board drawn the same way. The key to the marks of strength
 is under the 奇門 board on screen as well as on paper, with the marks it
 reads.

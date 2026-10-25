@@ -1,7 +1,6 @@
 <!--
   What a lens puts in the column beside a board: the circle of the five
-  phases, the names the lens keeps in view, the mode with «whole board» under
-  it, then the lens's controls.
+  phases, the mode with «whole board» under it, then the lens's controls.
 
   The circle and the mode at the head of the column, in both modes, where
   nothing that grows below them can move them. Held by every section whose
@@ -14,7 +13,6 @@
   import type { HeldLens } from '$lib/held-lens.svelte';
   import FiveWheel from './FiveWheel.svelte';
   import LensBar from './LensBar.svelte';
-  import LensGloss from './LensGloss.svelte';
   import LensMode from './LensMode.svelte';
 
   let { t, held }: { t: Translator; held: HeldLens } = $props();
@@ -24,7 +22,6 @@
   {@const lens = held.lens}
   <div class="held">
     <FiveWheel {t} {lens} active={activePhases(lens, held.state)} />
-    <LensGloss {t} {held} />
     <LensMode {t} state={held.state} onchange={(next) => (held.state = next)} />
   </div>
   <LensBar

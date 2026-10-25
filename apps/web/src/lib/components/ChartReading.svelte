@@ -79,7 +79,7 @@
   );
 
   /** How every name on the board is said: see `qimenKeyOf`. */
-  const names = $derived(qimenKeyOf(chart));
+  const names = $derived(qimenKeyOf(chart, t));
 </script>
 
 <!--
@@ -236,7 +236,7 @@
   {#each names as group}
     <ul>
       {#each group as name (name.hanzi)}
-        <li><span lang="zh-Hant">{name.hanzi}</span> {name.pinyin}</li>
+        <li><span class="word">{name.word}</span> <span lang="zh-Hant">{name.hanzi}</span> {name.pinyin}</li>
       {/each}
     </ul>
   {/each}
@@ -252,11 +252,11 @@
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
     gap: 0.1rem 1rem;
   }
   .names li { white-space: nowrap; }
-  .names li span { color: var(--ink); }
+  .names .word { color: var(--ink); }
   /*
    * Sized in `em` throughout, so the caller decides how loud this is.
    *

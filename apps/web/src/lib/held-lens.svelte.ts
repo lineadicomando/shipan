@@ -73,6 +73,12 @@ export class HeldLens {
   readonly focusName: string | undefined;
   /** The seats of a pair in words, where one or two are pressed. */
   readonly pairSaid: string | undefined;
+  /**
+   * The hanzi of every name the lens keeps in view, where it keeps any: what
+   * the key under the board is matched on, so its entries recede with the
+   * board's. Empty with no lens laid, and then nothing in the key recedes.
+   */
+  readonly inView: ReadonlySet<string>;
 
   constructor(options: HeldLensOptions) {
     this.#options = options;
@@ -94,6 +100,26 @@ export class HeldLens {
         return t('lens.pair', { a: seatName(seats[0] as string), b: seatName(seats[1] as string) });
       }
       return undefined;
+    });
+    this.inView = $derived.by(() => {
+      const view = this.view;
+      const lens = options.lens();
+      const seen = new Set<string>();
+      if (!view.active || !lens) return seen;
+      const { hanziAt } = options.words();
+      for (const key of view.lit) {
+        const { seat, layer, id } = spotOfKey(key);
+        // A key without an identifier is a whole layer of a seat: every name
+        // standing there, or the one name the layer holds.
+        const ids = id
+          ? [id]
+          : lens.things.filter((thing) => thing.seat === seat && thing.layer === layer).map((thing) => thing.id);
+        for (const one of ids.length > 0 ? ids : [undefined]) {
+          const hanzi = hanziAt(seat, layer, one);
+          if (hanzi) seen.add(hanzi);
+        }
+      }
+      return seen;
     });
     /**
      * The fragment and the state follow each other. An address arriving with

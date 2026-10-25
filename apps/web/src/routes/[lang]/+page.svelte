@@ -97,7 +97,7 @@
   import NameKey from '$lib/components/NameKey.svelte';
   import { HeldLens } from '$lib/held-lens.svelte';
   import { WHOLE } from '$lib/lens';
-  import { qimenKeyOf, taiyiKeyOf } from '$lib/key';
+  import { liurenKeyOf, qimenKeyOf, taiyiKeyOf } from '$lib/key';
   import {
     liurenWords,
     qimenWords,
@@ -303,8 +303,10 @@
     chart?.id === 'taiyi'
       ? taiyiKeyOf(chart.board, t)
       : chart?.id === 'qimen'
-        ? qimenKeyOf(chart.board)
-        : castKey,
+        ? qimenKeyOf(chart.board, t)
+        : chart?.id === 'liuren'
+          ? liurenKeyOf(castKey, chart.board, t)
+          : castKey,
   );
 
   /**
@@ -325,7 +327,12 @@
       case 'taiyi':
         return taiyiWords(chart.board, t);
       default:
-        return { nameAt: () => undefined, seatName: (seat) => seat, seatPlace: (seat) => seat };
+        return {
+          nameAt: () => undefined,
+          hanziAt: () => undefined,
+          seatName: (seat) => seat,
+          seatPlace: (seat) => seat,
+        };
     }
   });
   const held = new HeldLens({ lens: () => castLens, t: () => t, words: () => words });
@@ -1288,7 +1295,7 @@
           </div>
           <!-- The key to the names, under the board and outside the column: what
                grows in the column as the lens is used must move nothing under it. -->
-          <div class="under"><NameKey {t} groups={key} /></div>
+          <div class="under"><NameKey {t} groups={key} inView={held.inView} /></div>
         </div>
         <!-- What the lens draws, said in words, at the page's measure. -->
         <LensReading {t} {held} />

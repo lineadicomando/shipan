@@ -34,6 +34,12 @@ export interface LensWords {
    * and a palace — whose layers do not meet.
    */
   seatPlace: (seat: string, layer?: string) => string;
+  /**
+   * The hanzi of a name on the board, from where the drawing marks it — what
+   * the key under the board is matched on, so a name the lens keeps in view
+   * is the entry that stays in view there.
+   */
+  hanziAt: (seat: string, layer: string, id?: string) => string | undefined;
 }
 
 type Named = { id: string; hanzi: string; pinyin?: string };
@@ -63,6 +69,7 @@ export function qimenWords(chart: QimenChart | DayChart | undefined, t: Translat
   };
   return {
     nameAt,
+    hanziAt: (seat, layer) => at(seat)?.[layer]?.hanzi,
     seatName: (seat) => `${seat} ${nameAt(seat, 'palace') ?? ''}`,
     seatPlace: (seat) => t('lens.where.palace', { palace: seat }),
   };
@@ -106,6 +113,7 @@ export function liurenWords(board: LiurenBoard | undefined, t: Translator): Lens
   const seatName = (seat: string): string => nameAt(seat, 'earth') ?? seat;
   return {
     nameAt,
+    hanziAt: (seat, layer) => standing(seat, layer)?.thing.hanzi,
     seatName,
     seatPlace: (seat) => {
       if (onTheRing(seat)) return t('lens.where.palace', { palace: seatName(seat) });
@@ -117,37 +125,55 @@ export function liurenWords(board: LiurenBoard | undefined, t: Translator): Lens
 
 /** The 七政四餘 board: the bodies by their identifier, the palaces of the ring by their 次. */
 export function qizhengWords(board: QizhengBoard | undefined, t: Translator): LensWords {
-  const nameAt = (seat: string, layer: string, id?: string): string | undefined => {
+  const thingAt = (seat: string, layer: string, id?: string): { thing: Named; prefix: string } | undefined => {
     if (!board) return undefined;
     if (layer === 'governor' || layer === 'remainder') {
       const body = [...board.governors, ...board.remainders].find((one) => one.body.id === id)?.body;
-      return body && said(t, `label.qizheng.${body.id}`, body);
+      return body && { thing: body, prefix: 'qizheng' };
     }
     const house = board.houses.find((one) => one.palace.id === seat);
     if (!house) return undefined;
-    if (layer === 'palace') return said(t, `label.ci.${house.ci.id}`, house.ci);
-    if (layer === 'house') return said(t, `label.house.${house.house.id}`, house.house);
+    if (layer === 'palace') return { thing: house.ci, prefix: 'ci' };
+    if (layer === 'house') return { thing: house.house, prefix: 'house' };
     return undefined;
   };
+  const nameAt = (seat: string, layer: string, id?: string): string | undefined => {
+    const at = thingAt(seat, layer, id);
+    return at && said(t, `label.${at.prefix}.${at.thing.id}`, at.thing);
+  };
   const seatName = (seat: string): string => nameAt(seat, 'palace') ?? seat;
-  return { nameAt, seatName, seatPlace: (seat) => t('lens.where.palace', { palace: seatName(seat) }) };
+  return {
+    nameAt,
+    hanziAt: (seat, layer, id) => thingAt(seat, layer, id)?.thing.hanzi,
+    seatName,
+    seatPlace: (seat) => t('lens.where.palace', { palace: seatName(seat) }),
+  };
 }
 
 /** The 紫微斗數 board: the stars by their identifier, a palace by the seat that fell there. */
 export function ziweiWords(board: ZiweiBoard | undefined, t: Translator): LensWords {
-  const nameAt = (seat: string, layer: string, id?: string): string | undefined => {
+  const thingAt = (seat: string, layer: string, id?: string): { thing: Named; prefix: string } | undefined => {
     const palace = board?.palaces.find((one) => one.branch.id === seat);
     if (!palace) return undefined;
     if (layer === 'star' || layer === 'minor') {
       const star = palace.stars.find((one) => one.star.id === id)?.star;
-      return star && said(t, `label.ziwei.${star.id}`, star);
+      return star && { thing: star, prefix: 'ziwei' };
     }
-    if (layer === 'house') return said(t, `label.ziweihouse.${palace.house.id}`, palace.house);
-    if (layer === 'ground') return said(t, `label.branch.${palace.branch.id}`, palace.branch);
+    if (layer === 'house') return { thing: palace.house, prefix: 'ziweihouse' };
+    if (layer === 'ground') return { thing: palace.branch, prefix: 'branch' };
     return undefined;
   };
+  const nameAt = (seat: string, layer: string, id?: string): string | undefined => {
+    const at = thingAt(seat, layer, id);
+    return at && said(t, `label.${at.prefix}.${at.thing.id}`, at.thing);
+  };
   const seatName = (seat: string): string => nameAt(seat, 'house') ?? seat;
-  return { nameAt, seatName, seatPlace: (seat) => t('lens.where.palace', { palace: seatName(seat) }) };
+  return {
+    nameAt,
+    hanziAt: (seat, layer, id) => thingAt(seat, layer, id)?.thing.hanzi,
+    seatName,
+    seatPlace: (seat) => t('lens.where.palace', { palace: seatName(seat) }),
+  };
 }
 
 /** The roles in 太乙's palaces, as the drawing names them, and their hanzi. */
@@ -183,6 +209,10 @@ export function taiyiWords(board: TaiyiBoard | undefined, t: Translator): LensWo
       : said(t, `label.palace.${god.seat.palace.id}`, god.seat.palace);
   };
   return {
+    hanziAt: (seat, layer, id) => {
+      if (layer === 'taiyi' || layer === 'general') return ROLE_NAMES[layer === 'taiyi' ? 'taiyi' : (id ?? '')]?.hanzi;
+      return layer === 'god' ? godAt(seat)?.hanzi : undefined;
+    },
     nameAt: (seat, layer, id) => {
       if (layer === 'taiyi' || layer === 'general') {
         const role = ROLE_NAMES[layer === 'taiyi' ? 'taiyi' : (id ?? '')];

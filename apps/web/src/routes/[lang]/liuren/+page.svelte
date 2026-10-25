@@ -12,6 +12,7 @@
   import InlineBoard from '$lib/components/InlineBoard.svelte';
   import LayerLegend from '$lib/components/LayerLegend.svelte';
   import NameKey from '$lib/components/NameKey.svelte';
+  import { liurenKeyOf } from '$lib/key';
   import MomentForm from '$lib/components/MomentForm.svelte';
   import LiurenReading from '$lib/components/LiurenReading.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
@@ -175,12 +176,16 @@
         <LayerLegend {t} board="liuren" />
       </div>
       <div class="side">
-        <!-- The circle, the names in view, the mode and the lens. -->
+        <!-- The circle, the mode and the lens. -->
         <LensSide {t} {held} />
       </div>
       <!-- The key to the names, under the board and outside the column: what
            grows in the column as the lens is used must move nothing under it. -->
-      <div class="under"><NameKey {t} groups={data.result?.readings ?? []} /></div>
+      <div class="under"><NameKey
+          {t}
+          groups={data.result ? liurenKeyOf(data.result.readings, data.result.liuren, t) : []}
+          inView={held.inView}
+        /></div>
     </div>
 
     <!-- What the lens draws, said in words, at the page's measure. -->
