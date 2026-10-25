@@ -8,8 +8,10 @@ down on 2026-10-08, and what it carried before is in
 
 ## Resuming cold
 
-**Read this section, then pick an item of "What to do next" below, or a line
-of § 2.** For it read three things and no more:
+**Surface work comes first, by the user's word of 2026-10-25: § "First: the
+lens on every board", below, carries everything needed to take it up.** For a
+reading, **read this section, then pick an item of "What to do next" below, or
+a line of § 2.** For it read three things and no more:
 
 1. **what the file is** — `texts/README.md`, one row: grep the filename. It
    has the extent, the page offsets, the way in and what is already read;
@@ -85,11 +87,11 @@ and the renders and a script with it.
 yet read», «unread», «still missing», «none opened», «nobody has», «stays
 refused», «this list is empty».
 
-### Where it stands, 2026-10-24
+### Where it stands, 2026-10-25
 
-**Version 0.32.1**, in every manifest. **`main` is checked out and no branch
-is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
-`main` carry since 2026-10-15 is of nine days:
+**Version 0.33.0**, in every manifest. **`main` is checked out and no branch
+is open**: the branch «lenses» landed on 2026-10-25 and was deleted, as `board-pointer`
+was on 2026-10-18. What `main` carries since 2026-10-15 is of eleven days:
 
 - 2026-10-15, surface work: the Qi Men section holds its board in the page
   (`InlineBoard.svelte`, `spotOf` in `lib/board.ts`) and says which register a
@@ -198,13 +200,138 @@ is open**: `board-pointer` landed on 2026-10-18 and was deleted. What it and
   converse, which is recorded. 卷三–四 work no case that names a 局, and 卷四's
   局 table is printed with slips. Work directory
   `texts/qimen/daquan-juan02-04-jingyou/`.
+- 2026-10-24 and 2026-10-25, surface work (0.33.0): the lens on the 奇門
+  board and the bench under every drawn board, on the branch «lenses», phase
+  71. The rule it carries out went to `main` first, on its own: a reading
+  arises in the person looking, and the surface never chooses where they look
+  (`docs/refusals.md` § "Where to look first"). Carrying the lens to the other
+  boards is the first item of "What to do next".
 
 `main` is pushed to `origin/main` as of 2026-10-18; the commits of
-2026-10-19, 2026-10-20, 2026-10-22, 2026-10-23 and 2026-10-24 are not pushed, and pushing is the user's call.
+2026-10-19, 2026-10-20, 2026-10-22, 2026-10-23, 2026-10-24 and 2026-10-25 are
+not pushed, and pushing is the user's call.
 `npm test`, `npm run typecheck` and `npm run build` pass on 2026-10-20 with no
-test skipped, and again on 2026-10-22, 2026-10-23 and 2026-10-24. **Run `npm run build` before `npm test`** in
+test skipped, and again on 2026-10-22, 2026-10-23, 2026-10-24 and 2026-10-25. **Run `npm run build` before `npm test`** in
 a fresh tree: the MCP and web suites and the shelf's scripts import
 `packages/core/dist`, and a stale `dist` fails them on whatever changed.
+
+### First: the lens on every board
+
+**The user's priority, set on 2026-10-25.** The 奇門 board of an hour has a
+lens and a bench, and the concepts and ways of working settled on it are to be
+carried to every other board: the 奇門 board of a day (日家), the month board
+once there is one, 六壬, 七政四餘, 紫微斗數 and 太乙. Surface work, so the
+procedure is the `new-feature` skill, a branch, one commit a step, and the user
+looking at each step in the browser before the next — every one of the
+decisions below was a correction made that way.
+
+**Read before starting, and nothing else:** `docs/refusals.md` § "Where to look
+first" (the rule); `docs/architecture.md` § "A board the page can point into"
+(the lens, from «The second is a lens») and § "The bench" (the layout and the
+measure); `docs/history/71-the-lens.md` (what was decided and reversed, and
+why). The code to copy from is the 奇門 hour board:
+
+| | |
+|---|---|
+| `packages/core/src/dunjia/lens.ts` | `qimenLens(chart)`: every thing with a phase as the drawing marks it (`seat`, `layer`, `id`, `element`), the five relations for every pair of phases, `facing`, `wuhe`, and `names` (hanzi and reading of every relation and phase). Test: `packages/core/test/lens.test.ts` |
+| `docs/sources.md` Tier 3, `docs/sources.tsv` | three rows «a lens: …» beside 門宮 · 星宮. **A relation a lens draws is a quantity**: it needs its row and rung before it is drawn |
+| `apps/web/src/routes/api/qimen/+server.ts` | answers `lens` beside the chart; the client imports only types from `core` |
+| `apps/web/src/lib/lens.ts` | the state (`LensState`: `layers`, `phases`, `focus`, `pair`, `chosen`, `toward`, `shengke`, `links`, `expert`), `viewOf`, `pairTable`, `pressed`, `pressedSeat`, `pressedInPair`, `oneAtATime`, `wayOf`, `activePhases`, and the fragment (`writeLens`, `readLens`). **Qi Men-shaped**: `BOARD_LAYERS`, Luoshu seat numbers, `SpotKey` as `${number}:${string}` |
+| `apps/web/src/lib/arrows.ts` | `layArrows`: straight where clear, bent where an arrow would cross a name or lie on another. Board-agnostic |
+| components | `LensBar` (ways and controls), `LensMode` (mode and «whole board»), `LensLinks` (the arrows over the drawing), `LensRelations` and `LensPair` (the same in words, under the bench), `FiveWheel` (the circle), `NameKey` (the key to a bare drawing's numerals), and `InlineBoard`'s `lens` prop (receding, by `data-lens` on the marks) |
+| `apps/web/src/routes/[lang]/qimen/+page.svelte` | the wiring: fragment ⇄ state, `pick` (a name, a palace's ground, outside the palaces), `putAway`, `pressedOutside`, `escaped` |
+| `apps/web/src/app.css` | `--board` (a height: the window less `--above`, over `--aspect`), `--above`, `--side`, `.bench`, `--lens-sheng`, `--lens-ke` |
+| catalogs | `lens.*`, `label.relation.duigong`, `label.relation.wuhe`; the copy was reread under the `reader-copy` skill |
+
+**What was decided, and holds on every board:**
+
+- Nothing is lit when a page opens; a lens is an act of the reader's. Kept
+  things stay as drawn and the rest recedes; nothing is made heavier but what
+  the reader pressed, which is framed as theirs.
+- The page computes no relation: it looks each up in what the engine handed
+  over. A thing with no registered phase takes no part in a relation and can
+  only be kept by its kind (the 八神 on 奇門).
+- The lens lives in the fragment, never in the query, a prompt, storage or a
+  request. The mode is in the fragment too, and the privacy note's inventory
+  of what the browser keeps does not move.
+- Arrows only, violet for 生 and magenta for 剋 and each with its stroke, the
+  other relations in ink; curved by `layArrows` where a straight one is not
+  clear. A pair draws every relation as a flow, from what acts to what is
+  acted on, and holds its two seats in the board's order, never the order
+  pressed, so neither is the asker's.
+- A pair compares only the names pressed inside its two seats. A seat's
+  ground selects it; a name inside a complete pair is put into or taken out of
+  the comparison.
+- Two modes, beginner by default. Both choose a way first — «due palazzi · un
+  nome e il resto · una fase» (the expert's third is «tipi e fasi») — and the
+  expert's adds multiple choice, kinds of name, 對宮 and 五合. No paragraph of
+  instructions: each way says what to press.
+- «Tavola intera» beside the mode, always in its place and disabled when
+  nothing is laid; also a press on the board outside its seats, a press on the
+  page's ground, and Escape. Not the bar, the column, the readings or any
+  control.
+- The bench: the board whole in the window under the bar, the column beside
+  it scrolling with the page (not sticky), the circle of the five phases at
+  its head, the mode under it, then the lens. The steps of the moment stay in
+  the bar. The key to the marks of strength sits under the board.
+- The tip over a name is 0.95rem, a step over the board's own words.
+
+**The items, in the order proposed**, each a step of its own on the branch:
+
+1. **Make the lens board-generic before the second board.** A `Lens`
+   descriptor in `core` shared by every board — things with a seat named in the
+   board's own terms (a Luoshu number on 奇門, a branch identifier on the
+   rings, as `marks.ts` already does), a layer, an identifier and a phase; the
+   phase table; and the board's own extra relations as a list of named links —
+   with `qimenLens` its first instance. `lib/lens.ts` then takes the layers and
+   the seats from the descriptor rather than from `BOARD_LAYERS` and Luoshu
+   numbers, `SpotKey` becomes `${string}:${string}`, and the 奇門 page wiring
+   moves into a component every section can hold (the fragment, `pick`,
+   `putAway`, the outside press, Escape). Nothing a reader sees changes, so it
+   moves no version.
+2. **The 奇門 board of a day** (`system: rijia`, `DayChart`, `packages/core/src/dunjia/rijia.ts`). Its
+   page already sits on the bench with an empty column (`ofTheDay` in the
+   section) and answers `lens` with nothing. It has eight gates and nine stars
+   of its own and no stem plates; the gates' and stars' phases are their home
+   palaces' as on the hour board, which wants checking against that file
+   before it is assumed. 對宮 carries over; 五合 does not, there being no
+   stems. A `dayLens(day)` beside `qimenLens`, its rows in the register.
+3. **六壬.** The relation the art is made of is 生剋 between branches and
+   stems — the 四課 and the 三傳 are found by it — so the lens is native here:
+   the branches of the two plates, the 四課, the 三傳. **The 十二天將 have no
+   registered phase** (`docs/notes.md`, the rung «—», and the drawing leaves
+   them uncoloured), so they are kept by kind and never related until the
+   lead in `.claude/skills/shushu/disciplines/liuren.md` (《六壬大全》卷二) is read and
+   registered. A pair is two palaces of the ring. The ring's seats are branch
+   identifiers.
+4. **七政四餘.** The seven governors have the phases of their planets; the
+   four remainders' phases and the ownership of each 宮 by a governor are
+   transmitted, not derived, and each wants its row before it is drawn. Which
+   relation the art reads between a body and the 宮 it stands in is a reading
+   to locate first (`.claude/skills/shushu/disciplines/qizheng.md`).
+5. **紫微斗數.** Every star's 五行 is transmitted (陰陽五行 in 全書's tables)
+   and some are disputed: register before drawing. 三方四正 is the art's own
+   structural relation, derived from the twelve seats, and is the obvious
+   second link kind beside 對宮; the 四化 flights from a seat are a third.
+   The page already holds the board in the page with a press going to the row
+   (`pin={false}`): the lens has to share the press with that.
+6. **太乙.** The sixteen gods carry `element` in the drawing's type; whether
+   each is registered is to be checked (`.claude/skills/shushu/disciplines/taiyi.md`, «the
+   elements of 文昌 and 始擊 in the 金鏡 against the register's»). The nine
+   palaces are numbered one seat off the 洛書, and every surface says so: a
+   pair's order must follow 太乙's numbering and the page must keep saying it.
+   Its endpoint is told no language, and stays so: the key is built in the
+   page (`lib/key.ts`) and a lens's names must be too.
+7. **The month board**, when there is one: designed with its lens from the
+   start, by the descriptor of item 1.
+8. **八字**, last and only if the user wants it: the four pillars are a grid in
+   the page's type, not a drawing, and the relations a reader would ask for
+   there (合, 沖, the ten gods) are a different lens.
+
+**Owed before the next landing, left from this one:** a printed sheet of each
+of the five boards on paper, which was reasoned from the stylesheets and not
+printed; and a look at the consultation, which still shows the full drawings,
+band and all, and takes the new measure.
 
 **What to do next, in the order the user has been taking it.** Nothing
 decided is left unbuilt.
