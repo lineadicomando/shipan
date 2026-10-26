@@ -3314,8 +3314,47 @@ and 玉堂 at 巳, 司命 at 申 and 青龍 at 戌 between them. The ten gods ar
 the engine seats on those hours under `system: rijia`, from 金匱 at 寅 to 明堂
 at 亥. 「丙午時」 is a slip for 戊午: the hours of a
 癸 day run 壬子 to 癸亥. The leaf gives 截路空亡 at 子 and 丑 only, where the
-engine marks it at the 壬 and 癸 hours of the day, 子, 丑, 戌 and 亥. That is one
-leaf, and the other fifty-nine were not read for it.
+engine marks it at the 壬 and 癸 hours of the day, 子, 丑, 戌 and 亥.
+
+**The twelve hours of all sixty leaves were read on 2026-10-26**, and the
+癸未 leaf is the rule of the work and not a slip. Four readers transcribed
+every hour entry from renders at 150 dpi to a brief, each doubtful character
+at 400, into `texts/qimen/daquan-juan60-baojing/hours/`, and
+`scripts/hours.mjs` there sets them beside `dayHoursOf`. 659 entries, twelve
+hours missing where the print skips them.
+
+- **截路空亡 on a 戊 or 癸 day is two hours, 子 and 丑, on all twelve such
+  leaves**: 「壬子癸丑二時截路空亡凶」, and the 壬戌 and 癸亥 entries carry a
+  god and no 截路 — 癸亥's 「壬戌時吉金匱凶五不遇　癸亥時吉天德凶時破」, 1483L,
+  and 癸巳's alike, 1436L, read again on the plate. On the other forty-eight
+  days the leaf names the engine's two hours, bar two slips of the print: 己未
+  writes its pair 壬午癸未 for 壬申癸酉, and 丁酉 prints a 辰 day's hours (below).
+  One entry adds 截路空亡 to an hour the rule does not reach, 辛未's 己亥, which
+  is that day's 旬空 under the wrong name.
+- **So two works part on the hours of 戊 and 癸.** The 歷例 the 協紀 quotes
+  lists 「戊癸日子丑戌亥時」, every 壬 and 癸 hour, and `dayHoursOf` computes it;
+  寶鏡圖 enumerates 子 and 丑 alone, day by day and without stating a rule.
+  The 考原's own list is reported to read 「戊癸日子丑時」 as well, from a web
+  transcription of its 卷五, which is not held: a lead, not a witness. **That is
+  a divergence between practitioners** and not between witnesses to one text,
+  and it is recorded with no parameter (`TODO.md` § 1).
+- **The god each hour treads agrees on 526 hours of 590 read**, the entries
+  sharing two hours left out. Of the 64 that do not, 33 name no god at all —
+  an entry for the noble, 「辛未時天乙貴人吉」 — eleven are 丁酉's, and the
+  rest are single entries the script lists; 丁酉's
+  leaf, 1443L–1444R, prints the hours of a 戊 or 癸 day on a 辰 day's gods from
+  寅 to 亥, whole, which is a block set in the wrong place. **The row stays
+  on rung 4**: 寶鏡圖 is 1780 and the 協紀 1741, and a later compilation laying
+  an imperial almanac's rule is not shown to be independent of it.
+- **五不遇 is not the engine's rule on these leaves.** It stands on 26 hours
+  of 20 days, and 23 of them are hours whose *branch* controls the day's stem
+  — 壬申's 辛丑, 甲辰 and 丁未, 己丑's 丙寅 and 丁卯 — counting 壬寅's 「庚寅」 as
+  the 庚戌 its place says it is; two are the stem rule's and one is neither.
+  Marked on a third of the days, it is a practice seen and not a rule read,
+  and it is not the reading by the day's branch the 協紀's 按 records either.
+- **The noble, 喜神 and the 旬空 are marked here and there**: the noble on 32
+  hours where the engine flags 120, 喜神 once, the void on 38. Nothing is
+  weighed off a mark a leaf may leave out.
 
 **The wheel is the 日家 board.** Its centre holds one star, the ring round
 the centre the eight palace names, the next ring a gate beside each, and the
@@ -3371,7 +3410,7 @@ is the compiler's view of his sources and not a rule either.
 **So the 大全 is surveyed to its end.** Read for a 起例 are 卷一 and 卷五 to
 卷六十四; 景祐秘纂 卷二 to 卷四 followed on 2026-10-24, in the next section.
 
-Last checked 2026-10-22.
+Last checked 2026-10-26.
 
 ### 《御定奇門大全》卷二–四: the rest of 景祐秘纂, which copies the 符應經's 卷中 and the 演義's cases
 
@@ -6748,7 +6787,9 @@ given under the 十二神.
 丙辛日辰巳時，丁壬日寅卯時，戊癸日子丑戌亥時」, and the 考原 beside it gives
 the rule the list is an enumeration of — 「截路空亡，遇壬癸也……如甲己日以五鼠遁
 起甲子，順歷之得壬申癸酉」. The engine computes the rule and the test asserts the
-list, the four hours of 戊 and 癸 included. **It carries no valence**: the 協紀's
+list, the four hours of 戊 and 癸 included. 寶鏡圖 gives 戊 and 癸 two hours, 子 and 丑,
+on every leaf, which is a second reading held by another work: § "《御定奇門大全》卷六十–六十四: 寶鏡圖, which lays a board of the day on each of the sixty days",
+read 2026-10-26. **It carries no valence**: the 協紀's
 own 按 argues the name down, 「若以行路遇水為截，則方之舟之可矣，何截之有」.
 
 **喜神**, leaves 二十一 and 二十二: 「甲己日艮方寅時，乙庚日乾方戌時，丙辛日坤方申時，丁壬日

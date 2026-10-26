@@ -9,10 +9,12 @@ down on 2026-10-08, and what it carried before is in
 ## Resuming cold
 
 **Nothing is in progress and no priority is set.** The lens on every drawn
-board, the user's priority of 2026-10-25, is built and landed (phases 71–74),
-and phase 75 took the first two items of "What to do next" the same day:
+board, the user's priority of 2026-10-25, is built and landed (phases 71–74):
 § "The lens on every board" below is the map of its code and the leads it
-left, and is where surface work starts. For a reading, **read this section,
+left, and is where surface work starts. Phase 75 took the first two items of
+"What to do next" the same day, and phase 76, on 2026-10-26, read the hours
+of 寶鏡圖 and moved no code; the decision it put to the user, a parameter for
+截路空亡, was answered «wait» (§ 1, 曆注). For a reading, **read this section,
 then pick an item of "What to do next" below, or a line of § 2.** For it read
 three things and no more:
 
@@ -92,19 +94,21 @@ and the renders and a script with it.
 yet read», «unread», «still missing», «none opened», «nobody has», «stays
 refused», «this list is empty».
 
-### Where it stands, 2026-10-25
+### Where it stands, 2026-10-26
 
-**Version 0.40.0**, in every manifest. **`main` is checked out and no branch
-is open.** `origin/main` is `main`, pushed on the user's word on 2026-10-25,
-and 0.40.0 is deployed at https://shipan.it by `ssh shipan.deploy`, which
+**Version 0.40.3**, in every manifest. **`main` is checked out and no branch
+is open.** `origin/main` is `28fe2dc`, pushed on the user's word on
+2026-10-25; `main` is ahead of it by phase 76's commit, which moved no
+version and is not pushed. 0.40.3 is deployed at https://shipan.it, and the
+footer of the live site says so (checked 2026-10-26), by `ssh shipan.deploy`, which
 runs `srv-deploy shipan` on the server; its output shows the image built,
 `docker compose down` and `docker compose up -d`, and the version is checked
 in the footer after. Deploying and pushing are always the user's call.
 **Every version has its tag** since 2026-10-25, when the 48 from `v0.3.0` to
 `v0.37.0` were set on the commits that moved the number, dated as those
-commits; `v0.2.0` and `v0.2.1` stayed lightweight. `npm run build`, `npm run
-typecheck` and
-`npm test` pass at the end of phase 75, no test skipped. **Run `npm run
+commits; `v0.2.0` and `v0.2.1` stayed lightweight. `v0.40.0` to `v0.40.3` are
+annotated and pushed. `npm run build`, `npm run typecheck` and `npm test` pass
+at the end of phase 76, no test skipped. **Run `npm run
 build` before `npm test`** in a fresh tree: the MCP and web suites and the
 shelf's scripts import `packages/core/dist`, and a stale `dist` fails them on
 whatever changed.
@@ -117,6 +121,8 @@ a question needs it:
 | phases 51–70, 2026-10-11 to 2026-10-24 | the shelf: the 《統宗》 of 太乙 read by its juan, and 《御定奇門大全》 read from 卷一 to 卷六十四 for a 起例. Built on them: `yearBoundary: dongzhi` of 太乙, `accord`, `ding`, `dayouEye`, `spirits: huwu`, `centreStem`, `stemPairs`, `spiritSeat`, `menpo`, `yiTomb`, `deshi`, `dayGates`, `dayDun`. One line each in `docs/history/README.md` |
 | phases 71–74, 2026-10-24 and 2026-10-25 | the lens on every drawn board, the bench, the key to the names, `spiritPhase`. § "The lens on every board" below is the map of the code |
 | phase 75, 2026-10-25 | the 干論 of 奇門仙機 read on the plate and laid as `stemPairs: xianji`; 青龍入雲格 and 青龍華蓋 added to the default; the seams between a label and its value set by each vernacular (`cli.between.*`), and the Italian parameter labels made the opening of a sentence |
+| no phase, after phase 75, 2026-10-25 | 0.38.0: `spiritPhase` defaults to `branch`, and the Italian catalog renames five spirits after the 六壬 generals of the same name, 驚門 «Spavento», the plates «tavola di cielo» and «tavola di terra», 剋 «domina». 0.39.0: 六儀擊刑 read off the hour's 直符 where it is carried, not off the earth plate. 0.40.0: 擊刑 by the clock as well, at the hour whose branch the decade's head punishes. `guiren: wei` declared held by the 協紀 too. The `shushu` skill teaches, as a third job. 0.40.1: a section's introduction folds under its heading, kept in `localStorage`, and the privacy note lists three things. 0.40.2–0.40.3: the glyph rain in the ink of each phase, and turning through them with Ctrl. Each commit's body is its record |
+| phase 76, 2026-10-26 | the twelve hours of 寶鏡圖's sixty leaves, transcribed and set beside `dayHoursOf`: 截路空亡 at 子 and 丑 only on a 戊 or 癸 day, a second reading recorded with no parameter. Nothing in the code moved |
 | no phase | the board held in the page and the marks of every drawing (`marks.ts`), 2026-10-15 and 2026-10-18; the review of 2026-10-23, whose leftovers are item 3 of "What to do next". The account is § "Where it stands" of `docs/history/roadmap-2026-10-25.md` |
 
 ### The lens on every board
@@ -279,12 +285,9 @@ that sheet nearly blank.
 **What to do next, in the order the user has been taking it.** Nothing
 decided is left unbuilt.
 
-1. **Two errands left by 2026-10-22.** 截路空亡 on 寶鏡圖's other
-   fifty-nine leaves: 癸未's gives it at 子 and 丑 only, where the engine
-   marks the 壬 and 癸 hours, four on a 戊 or 癸 day; the hour lines are on
-   the leaf after each wheel,
-   `texts/qimen/daquan-juan60-baojing/order.txt` gives the sheets. And the scan
-   form's `gongpo`, § 5.
+1. **An errand left by 2026-10-22**: the scan form's `gongpo`, § 5. Its
+   other half, 截路空亡 on 寶鏡圖's sixty leaves, was read on 2026-10-26
+   (phase 76) and is recorded in § 1.
 2. **Or a lead from the `shushu` skill.** Each art's file in
    `.claude/skills/shushu/disciplines/` ends on «Leads against the register»:
    passages located on the web or in a shelf transcription that bear on a row,
@@ -392,6 +395,13 @@ fragment alone, e.g. `#extended=1&focus=governor.jinxing&toward=governor`.
 `docs/sources.md`, its row in `docs/sources.tsv` and its line in
 `texts/README.md`. What each reading left open, small and blocking nothing:
 
+**Left open by the reading of 2026-10-26**, each small and none blocking. In
+寶鏡圖's hours, `texts/qimen/daquan-juan60-baojing/hours/`: 五不遇 on 26 hours
+of 20 days, 23 of them hours whose branch controls the day's stem — a practice
+seen on a third of the days, not stated, and not the 協紀's reading by the
+day's branch; 丁酉's leaf printing a 戊 or 癸 day's hours on a 辰 day's gods; the
+noble, 喜神 and the 旬空 marked on some days only.
+
 **Left open by the reading of 2026-10-24**, each small and none blocking. In
 景祐秘纂 卷二: whether 遁甲集成 第一冊 carries the 38L case, 伏干格 陽五局
 壬申, which marks 庚 over the centre's stem in 坤 — the 演義 works its 伏干格
@@ -407,9 +417,7 @@ no 局 to lay them from, `cases/83-98.tsv`. Everything is in
 吉凶格解's 釋吉格 — the 九遁, 三詐, 五假, 玉女守門 — seen at 50 dpi and not
 read, since the engine computes none of them; 三奇受制 printed 「丙丁臨一」 in
 吉凶格解 and 「丙丁臨九」 in the 秘笈大全's verse, not weighed; and the
-handwritten slip photographed over sheet 1389. In 寶鏡圖: 截路空亡 at two
-hours only, 子 and 丑, on 癸未's leaf, where the engine marks the 壬 and 癸 hours, and
-the other fifty-nine leaves not read for it; the six wheels whose stars part
+handwritten slip photographed over sheet 1389. In 寶鏡圖: the six wheels whose stars part
 in a cell or three, re-read on the plate only for 壬午; 卷六十's almanac.
 
 **Left open by the readings of 2026-10-17**, each small and none blocking:
@@ -443,6 +451,12 @@ nothing either way.
 their writer has read, newest first, all in both catalogs. Those marked
 *reader-copy* were written under that skill; the rest were not.
 
+- **2026-10-25, after phase 75**: `privacy.storage.intro` and `.means`, «Le
+  introduzioni che hai chiuso», and the inventory's opening reworded to three
+  things; `rain.off`, `rain.ink`, `rain.phase` «color {phase}» and
+  `rain.switch`; and the Italian renaming of 0.38.0 — five of the 八神 after the
+  六壬 generals, 驚門 «Spavento», 六儀 «insegna», «tavola di cielo» and «tavola
+  di terra», 剋 «domina», 天干 «tronco» in the 八字 and 紫微 prompts.
 - **2026-10-25, phase 75** (*reader-copy*): the sixty-eight glosses
   `label.pattern.*` of the 干論's names, keeping the image of the stem above —
   明堂 «the hall of light» · «la sala della luce», 玉女 «the jade maiden» · «la
@@ -539,7 +553,11 @@ section an art.
 **Recorded, with no parameter** — a divergence the register carries and
 nothing exposes. Only those with something to wait on:
 
-- **奇門.** **十干克應 beyond the sixteen**: 火入勾陳, 朱雀入獄, 人遁 and
+- **奇門.** **擊刑 by the clock**, the hour whose branch its decade's head
+  punishes, built 2026-10-25 on one witness: 《遁甲符應經》's case at
+  遁甲集成 第一冊 p. 430, 「以日出時六儀擊刑也」. The 統宗's and the 大全's
+  lists give the palace alone and say nothing against the hour; a second text
+  striking by the hour moves the row. **十干克應 beyond the sixteen**: 火入勾陳, 朱雀入獄, 人遁 and
   奇入太陰, named alike by J and the block of 《元靈經》 read as the 丁 row,
   wait on a print of 《元靈經》 giving that block's heading; 奇儀順遂 and
   日奇被刑, which J and 《元靈經》 name a word or a character apart, on a
@@ -586,6 +604,11 @@ nothing exposes. Only those with something to wait on:
   day's as well: the 《統宗》 prints both.
 - **紫微斗數.** The stars 卷二 does not place, 解神 off the month among them;
   王亭之's table at 戊, 庚 and 壬, named and unread.
+- **曆注.** 截路空亡 on a 戊 or 癸 day: the 歷例 the 協紀 quotes gives every
+  壬 and 癸 hour, 子 丑 戌 亥, which the engine marks; 寶鏡圖 gives 子 and 丑 on
+  all twelve such leaves, read 2026-10-26. A parameter on the user's word;
+  《星曆考原》卷五, reported to read 子 and 丑 too, would be a second holder and
+  is not held.
 - **Not yet attributed.** The default of `earth`; who turns the year at 立春
   or at 正月初一 and the day at the 子 hour; the 大運 to the minute; the years
   lived by turns; a second value of `shensha`; the noble of 庚 seated with
@@ -645,9 +668,9 @@ with a Tang attribution. None of that platform's files states a provenance.
 been opened far enough to say what it is, and `texts/README.md` has a row
 naming each: 134 files, about 33 700 pages. Most pages have never been read
 on the plate, and none is owed a reading: the shelf is read by question. The
-questions standing ask for **five readings** of files held — the 統宗's rule for `dayDun: liushi`, the 金函玉鏡's
+questions standing ask for **four readings** of files held — the 統宗's rule for `dayDun: liushi`, the 金函玉鏡's
 two pages for `leap: runyue`, 《星學大成》's limits and 量天尺 (line 4), 《中國恆星觀測史》 from p. 274
-(line 5), and 截路空亡 on 寶鏡圖's other leaves — and about thirty small
+(line 5) — and about thirty small
 errands under "Left open" and "Small and left open". About ten refused values
 wait on files not held (§ 1, "Wanted and not held"), which no reading here
 moves. A new file is identified with the four commands of `docs/scans.md`

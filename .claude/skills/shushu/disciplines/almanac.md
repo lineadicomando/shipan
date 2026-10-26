@@ -216,8 +216,9 @@ calendrical layer under every board" and § "The other boards").
     - **截路空亡**: the 壬 and 癸 hours, by the 考原's rule 「遇壬癸也」, which on
       a 戊 or 癸 day is four (子丑戌亥) — the 協紀 quotes the 歷例's list with all
       four. **The engine marks four.** *Divergence:* the 考原 卷五's own list
-      reads 「戊癸日子丑時」 *(web transcription)*; 寶鏡圖's 癸未 leaf ★ gives
-      子丑 only; the folk verse 「戊癸子丑高聲叫」 *(web)*. Not modelled (§ 7).
+      reads 「戊癸日子丑時」 *(web transcription)*; 寶鏡圖 ★ gives 子丑 only on
+      all twelve 戊 and 癸 leaves (read 2026-10-26, `docs/sources.md`); the
+      folk verse 「戊癸子丑高聲叫」 *(web)*. Recorded, not modelled (§ 7).
     - **五不遇時**: 時干尅日干, same polarity (神煞起例), which strikes twice on
       己 days (乙丑, 乙亥) and 庚 days (丙子, 丙戌); the mnemonic names the first.
       **The engine marks both** (`unmetHour`, `patterns.test.ts`). The 遁甲隱公歌註's
@@ -437,10 +438,13 @@ Each: what · why · what would settle it · on the shelf or not.
   under `docs/parameters.md` is two readings and not an edition question. And
   the parallel with 五不遇 is exact: in both the «one per day, the first in the
   run of ten» transmission meets «every hour the rule strikes», and the engine
-  chose the rule both times. Settle: 寶鏡圖's other 59 leaves ★ (already
-  `TODO.md` § «two errands»), the 考原 卷五 on a plate ☆, the 協紀's 截路 entry
-  on the 四庫 plate ★ (卷七 leaf 四十七, done). For the user: a value, or a
-  recorded variant.
+  chose the rule both times. 寶鏡圖's sixty leaves ★ were read on
+  2026-10-26: 子丑 on every 戊 and 癸 day, so the two-hour reading has a
+  holder on the plate, and `TODO.md` § 1 records it with no parameter. Still
+  open: the 考原 卷五 on a plate ☆, a second holder. For the user: a value, or
+  the recorded variant as it stands. The same leaves mark 五不遇 by the hour's
+  *branch* controlling the day's stem, on a third of the days only: a
+  practice seen, not a rule stated.
 - **《星歷考原》 卷二–六 are transcribed on zh.wikisource** *(web)*. They are not a
   witness, but they say exactly which leaf of a facsimile to look for, and they
   answer leads already open: 天乙's 陽/陰 (`liuren.guiren`, the one thing
