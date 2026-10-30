@@ -107,9 +107,10 @@ refused», «this list is empty».
 **Version 0.41.0**, in every manifest. **`main` is checked out and no branch
 is open.** `origin/main` is `6b0aa7e`, pushed on the user's word on
 2026-10-30 with the tag `v0.41.0`; `main` is ahead of it by commits that
-touch only `TODO.md`, `docs/` and the `shushu` skill and are not pushed:
-`32cb478`, `94be969`, `3c3c0dd` (phase 79), `6e54a59`, and phase 80's
-commit. Phases 79 and 80 change six rows of `docs/sources.tsv`, which the register page (`apps/web/src/routes/[lang]/notes/sources`)
+are not pushed and change no behaviour — `TODO.md`, `docs/`, the `shushu`
+skill, and in phase 80 a doc comment of `packages/core/src/liuren-lens.ts`:
+`32cb478`, `94be969`, `3c3c0dd` (phase 79), `6e54a59`, `7ca46f1` (phase 80)
+and the commit that brought this file up to them. Phases 79 and 80 change six rows of `docs/sources.tsv`, which the register page (`apps/web/src/routes/[lang]/notes/sources`)
 renders, so it is not on the live site until the next version ships. 0.41.0 is deployed at
 https://shipan.it, and the footer of the live site says so (checked
 2026-10-30), by `ssh shipan.deploy`, which runs `srv-deploy shipan` on the
@@ -122,7 +123,7 @@ the footer after. Deploying and pushing are always the user's call.
 `v0.37.0` were set on the commits that moved the number, dated as those
 commits; `v0.2.0` and `v0.2.1` stayed lightweight. `v0.40.0` to `v0.41.0` are
 annotated and pushed. `npm run build`, `npm run typecheck` and `npm test` pass
-at the end of phase 79, no test skipped, and `node texts/todo-check.mjs`
+at the end of phase 80, no test skipped, and `node texts/todo-check.mjs`
 finds every name this file gives. **Run `npm run
 build` before `npm test`** in a fresh tree: the MCP and web suites and the
 shelf's scripts import `packages/core/dist`, and a stale `dist` fails them on
@@ -140,8 +141,8 @@ a question needs it:
 | phase 76, 2026-10-26 | the twelve hours of 寶鏡圖's sixty leaves, transcribed and set beside `dayHoursOf`: 截路空亡 at 子 and 丑 only on a 戊 or 癸 day, a second reading recorded with no parameter. Nothing in the code moved |
 | phase 77, 2026-10-30 | the order of 涉害 read on the plate: `palace` by 陳公獻's 增注 to the 《指掌賦》, `depth` by 《六壬視斯》 through the 精解 and by 《六壬大全》卷五, and the count, which the texts take with the lodged stems and by the kind of control. Measured over the 1 380 boards and put to the user. Nothing in the code moved |
 | phase 78, 2026-10-30 | 0.41.0: `liuren.shehai`, `palace` (the default) or `depth`, and inside `depth` `shehaiFrom`, `next` (the default) or `seat`; the count the texts agree on, the lodged stems and the control by kind, under both. Two witnesses, `shisi` and `zhinan`. A default 六壬 board now says no named text lays its combination whole; under `depth` with `seat` it is the 精解's |
-| phase 80, 2026-10-30 | 《六壬大全》卷二's 十二將釋 read on the page: every general's phase is its 家's, the 奇門秘訣 agreeing on eight; its 總論 judges a general by the branch it rides, which is what the lens does. The row leaves «—» for rung 4. No code moved but a comment |
 | phase 79, 2026-10-30 | 陳公獻's 125 worked cases in the 指南's 卷四, transcribed and laid under both verses: `guiren: chou` on every day-hour case that can tell, the night read by the day seat in 10 of 31, the transmissions agreeing on 124; `shehai: palace` to rung 4. Nothing in the code moved; whether cases make a holder was answered yes |
+| phase 80, 2026-10-30 | 《六壬大全》卷二's 十二將釋 read on the page: every general's phase is its 家's, the 奇門秘訣 agreeing on eight; its 總論 judges a general by the branch it rides, which is what the lens does. The row leaves «—» for rung 4. No code moved but a comment |
 | no phase | the board held in the page and the marks of every drawing (`marks.ts`), 2026-10-15 and 2026-10-18; the review of 2026-10-23, whose leftovers are item 4 of "What to do next". The account is § "Where it stands" of `docs/history/roadmap-2026-10-25.md` |
 
 ### The lens on every board
@@ -330,8 +331,8 @@ that sheet nearly blank.
    - the version: a default 六壬 answer closes on a different sentence, so
      an address answers differently and **the second term moves, to
      0.42.0**, in every manifest and `package-lock.json`, with the tag
-     `v0.42.0` when the user says push. It carries phase 79's register rows
-     to the live site with it;
+     `v0.42.0` when the user says push. It carries the register rows of
+     phases 79 and 80 to the live site with it;
    - a phase 81 in `docs/history/`, its line in that README, this file, one
      commit on `main`.
 
@@ -745,9 +746,10 @@ moves. A new file is identified with the four commands of `docs/scans.md`
 § "What a file is, before what it says", and gets its row before anything
 else.
 
-**Ask.** `texts/bench/run.mjs` runs the worked examples the sources print;
-one 六壬 case disagrees, a 返吟, settled by reading the passage its citation
-names. The bench lays the 精解's cases under the 精解's school, `shehai: depth`
+**Ask.** `texts/bench/run.mjs` runs the worked examples the sources print,
+and none disagrees: the one that did, the 精解's 返吟 無親 at p. 22, was a
+transcription reading its four lessons left to right, corrected on the plate
+on 2026-10-30. A disagreement is read on the plate before it is called one. The bench lays the 精解's cases under the 精解's school, `shehai: depth`
 with `shehaiFrom: seat`, since 2026-10-30. `--uncovered` lists the shapes with no adapter.
 `texts/shelf.py crosswalk --moves` and `--gaps` are leads, never findings.
 《御定奇門真詮》 is 1080 hour boards with no 起例: a bench, if anything, and
