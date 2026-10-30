@@ -60,7 +60,7 @@ Marks: ★ on this project's shelf (`texts/README.md` § liuren and around it);
 | 《畢法賦》 | Southern Song, 凌福之 | The hundred 法 of judgement. In 《六壬大全》 卷十一–十二 ★ and 《課經集》 卷一 ★ |
 | 《六壬斷案》 ☆ | Southern Song, 邵彥和 | Worked cases. The model of 占驗 for later authors |
 | 《六壬大全》 ★ | Ming; 四庫本 12 juan | 卷一 入手法 (the nine rules in verse, which the engine stands on), 貴神, the 64 課目. 卷二 天將, each with 家 and phase. 卷五 課經 with 訂訛, the 課體 defined with worked boards. 卷十一–十二 畢法 |
-| 《大六壬指南》 ★ | 陳公獻, 序 1652 | 卷一 心印賦 增注, 卷二 指掌賦, 卷三 占驗, 卷四 莊公遠's 神煞指南. The 增注 is a 月將 witness in the register |
+| 《大六壬指南》 ★ | 陳公獻, 序 1652 | the 心印賦 增注, the 指掌賦 增注, verse to the end of 卷三; in the shelf's 1990 edition **卷四 is 125 worked cases**, each printing the whole board (sheets 37–68), and 卷五 the 位圖 of 神煞. The 增注 is a 月將 witness in the register, and the cases follow `guiren: chou` on every day-hour case that can tell (`docs/sources.md` § "陳公獻's cases, read for the noble and the day's cut") |
 | 《大六壬課經集》 ★ | 郭御青 彙輯 | A book of judgement: 畢法賦 with charts, 課格, 物類. It presumes the board |
 | 《官板大六壬神課金口訣》 ★ | 1596 | **A different art.** 四位, not 四課三傳. Held as a boundary marker |
 | 《御定六壬直指》 (+ 析義) ★ | Qing, imperial | `guiren: chou` (the opening verse) and `wei` (two verses); `zhouye: branch`; the 月將 by 中氣 |

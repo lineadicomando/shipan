@@ -17,7 +17,9 @@ of 寶鏡圖 and moved no code; the decision it put to the user, a parameter for
 截路空亡, was answered «wait» (§ 1, 曆注). Phase 77, on 2026-10-30, read
 the order of 涉害 on the plate, and phase 78, the same day and on the user's
 word, built it as `liuren.shehai` with `shehaiFrom` inside `depth`, released
-as 0.41.0. For a reading, **read this section, then pick an item of "What to
+as 0.41.0. Phase 79, the same day, read 陳公獻's 125 worked cases for the
+noble and the day's cut, moved no code, and put a question to the user (§
+"Left open by the reading of 2026-10-30", below). For a reading, **read this section, then pick an item of "What to
 do next" below, or a line of § 2.** For it read three things and no more:
 
 1. **what the file is** — `texts/README.md`, one row: grep the filename. It
@@ -128,6 +130,7 @@ a question needs it:
 | phase 75, 2026-10-25 | the 干論 of 奇門仙機 read on the plate and laid as `stemPairs: xianji`; 青龍入雲格 and 青龍華蓋 added to the default; the seams between a label and its value set by each vernacular (`cli.between.*`), and the Italian parameter labels made the opening of a sentence |
 | no phase, after phase 75, 2026-10-25 | 0.38.0: `spiritPhase` defaults to `branch`, and the Italian catalog renames five spirits after the 六壬 generals of the same name, 驚門 «Spavento», the plates «tavola di cielo» and «tavola di terra», 剋 «domina». 0.39.0: 六儀擊刑 read off the hour's 直符 where it is carried, not off the earth plate. 0.40.0: 擊刑 by the clock as well, at the hour whose branch the decade's head punishes. `guiren: wei` declared held by the 協紀 too. The `shushu` skill teaches, as a third job. 0.40.1: a section's introduction folds under its heading, kept in `localStorage`, and the privacy note lists three things. 0.40.2–0.40.3: the glyph rain in the ink of each phase, and turning through them with Ctrl. Each commit's body is its record |
 | phase 76, 2026-10-26 | the twelve hours of 寶鏡圖's sixty leaves, transcribed and set beside `dayHoursOf`: 截路空亡 at 子 and 丑 only on a 戊 or 癸 day, a second reading recorded with no parameter. Nothing in the code moved |
+| phase 79, 2026-10-30 | 陳公獻's 125 worked cases in the 指南's 卷四, transcribed and laid under both verses: `guiren: chou` on every day-hour case that can tell, the night read by the day seat in 10 of 31, the transmissions agreeing on 124; `shehai: palace` to rung 4. Nothing in the code moved |
 | phase 77, 2026-10-30 | the order of 涉害 read on the plate: `palace` by 陳公獻's 增注 to the 《指掌賦》, `depth` by 《六壬視斯》 through the 精解 and by 《六壬大全》卷五, and the count, which the texts take with the lodged stems and by the kind of control. Measured over the 1 380 boards and put to the user. Nothing in the code moved |
 | phase 78, 2026-10-30 | 0.41.0: `liuren.shehai`, `palace` (the default) or `depth`, and inside `depth` `shehaiFrom`, `next` (the default) or `seat`; the count the texts agree on, the lodged stems and the control by kind, under both. Two witnesses, `shisi` and `zhinan`. A default 六壬 board now says no named text lays its combination whole; under `depth` with `seat` it is the 精解's |
 | no phase | the board held in the page and the marks of every drawing (`marks.ts`), 2026-10-15 and 2026-10-18; the review of 2026-10-23, whose leftovers are item 3 of "What to do next". The account is § "Where it stands" of `docs/history/roadmap-2026-10-25.md` |
@@ -404,13 +407,21 @@ from the web, not found on sheets 14 and 18 of the 指南; the 大全卷五's �
 by element harmony on six named days, seen at pdf 130 and not weighed;
 尉山人's 「上克下，取天盤孟仲為驗」, which the 大全 keeps without following;
 the 精解's 察微 and 綴瑕 cases at p. 14, which open alike under every reading
-and were not re-read on the plate. And one with a consequence on every board:
-**a default 六壬 board names no text for its whole combination** since
-0.41.0, because `shehai: palace` is held by 陳公獻 alone and he is not read
-for `guiren: chou` or `zhouye: branch`. His 《大六壬指南》 (`liuren-zhinan.pdf`,
-whose OCR returned neither the 貴人 verse nor the 晝夜 division, which is
-not a negative) is the place to look; a second holder of the grade would do
-as well.
+and were not re-read on the plate. And one with a consequence on every board, read the same day (phase 79) and
+**waiting on the user's word**: **a default 六壬 board names no text for its
+whole combination** since 0.41.0, because `shehai: palace` is held by 陳公獻
+alone. His 《大六壬指南》 states neither the verse nor the cut, on the plate
+as well as in the OCR. Its 125 worked cases follow `guiren: chou` on every
+day-hour case that can tell (41 of 45, none for `wei`), and `zhouye: branch`
+by day always and by night in 21 of 31. The question is whether a run of
+cases makes him a holder, given that the user declined a practice induced
+from a table on 2026-10-15. If it does, `heldBy` gains `zhinan` on `chou` and
+on `branch`, and the default names a text again; if not, a second holder of
+the grade would do as well. The ten nights read by the day seat, nine between
+小滿 and 秋分, are recorded with no value: `docs/sources.md` § "陳公獻's cases,
+read for the noble and the day's cut". Also open there: 50T1, an 八專 board
+printing two generals on 卯; 59B1, which prints both halves on one board; and
+the 39T2 square, which does not rotate.
 
 **Left open by the reading of 2026-10-26**, each small and none blocking. In
 寶鏡圖's hours, `texts/qimen/daquan-juan60-baojing/hours/`: 五不遇 on 26 hours

@@ -6336,6 +6336,87 @@ board» was written of `kinliuren` and `liuren-ts-lib`. What their agreement
 establishes is that the nine rules of 《六壬大全》 were transcribed the same
 way three times; whose those rules are is that book's, and is said here.
 
+### 陳公獻's cases, read for the noble and the day's cut
+
+Read on 2026-10-30, after phase 78. Since 0.41.0 a default 六壬 board names
+no text for its whole combination, because `shehai: palace` is held by 陳公獻
+alone and he had not been read for `guiren` or `zhouye`. His 《大六壬指南》
+(`liuren-zhinan.pdf`) states neither. The 心印賦 增注 on sheet 6 gives the
+月將 and stops. The 指掌賦's commentary on sheet 8 names the noble's places
+and not its seat by stem, though it calls 丑 the noble's 本位 and 未 the
+night noble: 「貴人居丑曰升堂，乃本位屬己丑故也」, 「貴人居未曰列席，蓋未乃
+夜貴，二貴相會」. 卷五's 位圖, sheets 70–73, tabulates thirty-odd 神煞 by stem,
+branch, month and year, and the noble is not among them. These were read on
+the plate. The OCR located them and was not trusted for a negative.
+
+**What the book does have is 卷四: 125 worked cases**, sheets 37 to 68, each
+dated by day and hour and each printing the whole board — the heaven plate
+as a square, the four lessons and the three transmissions, every one with
+its general. A case therefore shows where its author seated the noble. Four
+readers transcribed them to a brief, a sheet range each, and
+`texts/liuren/zhinan-cases/scripts/compare.mjs` lays each case's day, hour
+and 月將 (read off the square) under both verses and both halves of the day.
+Every square was checked against lesson 1 before anything was compared.
+
+**The verse is `chou`'s, without exception.** The two verses part only on
+甲, 乙, 丙, 辛 and 壬, where each swaps a stem's day and night seats. On those
+stems the book has 45 cases at a day hour. Every printed general fits `chou`
+in 41 of them and `wei` in none. Each of the other four misses `chou` by a
+single general, where `wei` misses by up to seven. A day hour never takes the
+night seat: 85 of 85 by day, on every stem, fit the day seat once the six
+single-general slips are set aside.
+
+**The night is not cut as consistently.** Of the 31 night-hour cases that
+fit one seat, 21 take the night seat and 10 take the day seat, at 丑 (three),
+寅 (three), 酉 (two) and 戌 (two). 50B1 says so in its own words at a 戊戌 hour
+of 二月: 「蓋因亥貴作官星臨支」, 亥 being 丙's day seat. No rule tried
+separates the ten from the twenty-one:
+
+- *The sun.* 50B1 is a 戌 hour under 將卯, between 霜降 and 小雪, and 40B1 a
+  寅 hour under 將巳, before 秋分. Both are dark. 63B2 and 65T1 are at 丑,
+  which is dark in every season.
+- *The noble kept off 辰 and 戌* (天羅地網). In five of the ten the night seat
+  would have stood over 辰 or 戌, and in the other five it would not. And 37B1
+  keeps the night seat over 辰.
+- *The season by the 月將.* This comes nearest without being a rule. Nine of
+  the ten fall under 將申 to 將巳, from 小滿 to 秋分, and so do four of the
+  twenty-one. Of the night cases in that stretch, nine take the day seat and
+  four the night seat; outside it, one against seventeen. No text on the
+  shelf states a summer reading of the night, and an hour of 丑 is not lit in
+  summer either.
+
+59B1 is one board printing both halves: lesson 3 puts the noble on 酉, the
+night seat, while the transmissions and the prose follow the day seat
+(「神后蛇鬼臨干發用」). Its square and lessons are those of 47B1, an hour
+earlier and three weeks before, which suggests a board copied and half
+corrected.
+
+**The transmissions, measured for nothing and found anyway.** Under the
+engine's defaults the three transmissions agree with the book's in 122 of
+the 125 cases. Two of the three are misprinted days that the board itself
+corrects. 58B2's lessons stand on 癸未, where its date line prints 丁亥. 60B2's
+generals and lessons are a 丙午 day's, where it prints 戊午, and the two stems
+lodge alike at 巳. Read so, both agree. The third, 50T1, is an 八專 board
+that prints two generals on 卯, which no board can carry. **Two of the cases
+part `shehai: palace` from `depth`**, 49B1 and 51T1, and both open as
+`palace` opens. That is 陳公獻's practice agreeing with his own 增注.
+
+**What this establishes, and what it does not.** The cases are a practice
+read off boards, and the 指南 states neither verse nor cut. The user declined
+to treat a practice induced from a table as a rule on 2026-10-15 (the 太乙
+test of a count by its digits), so **no `heldBy` moves here** without the
+user's word. Recorded as found:
+
+- `guiren: chou` is 陳公獻's practice on every day-hour case that can tell.
+  It already stands on four texts that state it.
+- `zhouye: branch` is his practice by day without exception, and two times
+  in three by night. If the cases make him a holder of anything, it is of
+  `branch` with a minority of nights, most of them between 小滿 and 秋分,
+  read by the day seat, which no value names and no text states.
+- `shehai: palace` holds on both of his boards where it is at issue. Being
+  the same author, that is a single text checking itself: its row moves from
+  rung 5 to rung 4.
+
 ---
 
 ## 曆注 — the almanac's page, and the block its own source refuses
