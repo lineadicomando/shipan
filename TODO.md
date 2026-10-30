@@ -16,9 +16,9 @@ left, and is where surface work starts. Phase 75 took the first two items of
 of 寶鏡圖 and moved no code; the decision it put to the user, a parameter for
 截路空亡, was answered «wait» (§ 1, 曆注). Phase 77, on 2026-10-30, read
 the order of 涉害 on the plate, and phase 78, the same day and on the user's
-word, built it as `liuren.shehai` with `shehaiFrom` inside `depth`. For a reading, **read this section,
-then pick an item of "What to do next" below, or a line of § 2.** For it read
-three things and no more:
+word, built it as `liuren.shehai` with `shehaiFrom` inside `depth`, released
+as 0.41.0. For a reading, **read this section, then pick an item of "What to
+do next" below, or a line of § 2.** For it read three things and no more:
 
 1. **what the file is** — `texts/README.md`, one row: grep the filename. It
    has the extent, the page offsets, the way in and what is already read;
@@ -100,11 +100,15 @@ refused», «this list is empty».
 
 **Version 0.41.0**, in every manifest. **`main` is checked out and no branch
 is open.** `origin/main` is `6b0aa7e`, pushed on the user's word on
-2026-10-30 with the tag `v0.41.0`. 0.41.0 is deployed at https://shipan.it,
-and the footer of the live site says so (checked 2026-10-30), by `ssh shipan.deploy`, which
-runs `srv-deploy shipan` on the server; its output shows the image built,
-`docker compose down` and `docker compose up -d`, and the version is checked
-in the footer after. Deploying and pushing are always the user's call.
+2026-10-30 with the tag `v0.41.0`; `main` is ahead of it by commits that
+touch only `TODO.md` and `docs/` and are not pushed. 0.41.0 is deployed at
+https://shipan.it, and the footer of the live site says so (checked
+2026-10-30), by `ssh shipan.deploy`, which runs `srv-deploy shipan` on the
+server. **That script deploys `origin/main` and nothing local**: it pulls
+`--ff-only` into its own checkout, refuses a dirty tree there, then builds the
+image, `docker compose down` and `docker compose up -d`. So a version is
+pushed, with its tag, before it is deployed, and the version is checked in
+the footer after. Deploying and pushing are always the user's call.
 **Every version has its tag** since 2026-10-25, when the 48 from `v0.3.0` to
 `v0.37.0` were set on the commits that moved the number, dated as those
 commits; `v0.2.0` and `v0.2.1` stayed lightweight. `v0.40.0` to `v0.41.0` are
@@ -123,9 +127,9 @@ a question needs it:
 | phases 71–74, 2026-10-24 and 2026-10-25 | the lens on every drawn board, the bench, the key to the names, `spiritPhase`. § "The lens on every board" below is the map of the code |
 | phase 75, 2026-10-25 | the 干論 of 奇門仙機 read on the plate and laid as `stemPairs: xianji`; 青龍入雲格 and 青龍華蓋 added to the default; the seams between a label and its value set by each vernacular (`cli.between.*`), and the Italian parameter labels made the opening of a sentence |
 | no phase, after phase 75, 2026-10-25 | 0.38.0: `spiritPhase` defaults to `branch`, and the Italian catalog renames five spirits after the 六壬 generals of the same name, 驚門 «Spavento», the plates «tavola di cielo» and «tavola di terra», 剋 «domina». 0.39.0: 六儀擊刑 read off the hour's 直符 where it is carried, not off the earth plate. 0.40.0: 擊刑 by the clock as well, at the hour whose branch the decade's head punishes. `guiren: wei` declared held by the 協紀 too. The `shushu` skill teaches, as a third job. 0.40.1: a section's introduction folds under its heading, kept in `localStorage`, and the privacy note lists three things. 0.40.2–0.40.3: the glyph rain in the ink of each phase, and turning through them with Ctrl. Each commit's body is its record |
-| phase 78, 2026-10-30 | 0.41.0: `liuren.shehai`, `palace` (the default) or `depth`, and inside `depth` `shehaiFrom`, `next` (the default) or `seat`; the count the texts agree on, the lodged stems and the control by kind, under both. Two witnesses, `shisi` and `zhinan`. A default 六壬 board now says no named text lays its combination whole; under `depth` with `seat` it is the 精解's |
-| phase 77, 2026-10-30 | the order of 涉害 read on the plate: `palace` by 陳公獻's 增注 to the 《指掌賦》, `depth` by 《六壬視斯》 through the 精解 and by 《六壬大全》卷五, and the count, which the texts take with the lodged stems and by the kind of control. Measured over the 1 380 boards and put to the user. Nothing in the code moved |
 | phase 76, 2026-10-26 | the twelve hours of 寶鏡圖's sixty leaves, transcribed and set beside `dayHoursOf`: 截路空亡 at 子 and 丑 only on a 戊 or 癸 day, a second reading recorded with no parameter. Nothing in the code moved |
+| phase 77, 2026-10-30 | the order of 涉害 read on the plate: `palace` by 陳公獻's 增注 to the 《指掌賦》, `depth` by 《六壬視斯》 through the 精解 and by 《六壬大全》卷五, and the count, which the texts take with the lodged stems and by the kind of control. Measured over the 1 380 boards and put to the user. Nothing in the code moved |
+| phase 78, 2026-10-30 | 0.41.0: `liuren.shehai`, `palace` (the default) or `depth`, and inside `depth` `shehaiFrom`, `next` (the default) or `seat`; the count the texts agree on, the lodged stems and the control by kind, under both. Two witnesses, `shisi` and `zhinan`. A default 六壬 board now says no named text lays its combination whole; under `depth` with `seat` it is the 精解's |
 | no phase | the board held in the page and the marks of every drawing (`marks.ts`), 2026-10-15 and 2026-10-18; the review of 2026-10-23, whose leftovers are item 3 of "What to do next". The account is § "Where it stands" of `docs/history/roadmap-2026-10-25.md` |
 
 ### The lens on every board
@@ -294,9 +298,8 @@ decided is left unbuilt.
 2. **Or a lead from the `shushu` skill.** Each art's file in
    `.claude/skills/shushu/disciplines/` ends on «Leads against the register»:
    passages located on the web or in a shelf transcription that bear on a row,
-   none read on a plate. The ones that touch a standing question (the order
-   of 涉害 was read and built on 2026-10-30, phases 77–78): the five phases of the 十二天將 in 《六壬大全》卷二, held
-   (`liuren.md`); 截路空亡 at two hours in 《星曆考原》卷五, beside 寶鏡圖's
+   none read on a plate. The ones that touch a standing question: the five
+   phases of the 十二天將 in 《六壬大全》卷二, held (`liuren.md`); 截路空亡 at two hours in 《星曆考原》卷五, beside 寶鏡圖's
    (`almanac.md`); the 楊公忌 check, which the 協紀 says is not the 值日 count
    (`almanac.md`); 洪丕謨 and 盧央 on the shelf for the year and day
    boundaries no text holds yet (`common/foundations.md`). Each is a reading
@@ -400,8 +403,14 @@ the line 「先以寅申巳亥上乘之神為用」 that the `shushu` skill quot
 from the web, not found on sheets 14 and 18 of the 指南; the 大全卷五's 比用
 by element harmony on six named days, seen at pdf 130 and not weighed;
 尉山人's 「上克下，取天盤孟仲為驗」, which the 大全 keeps without following;
-and the 精解's 察微 and 綴瑕 cases at p. 14, which open alike under every
-reading and were not re-read on the plate.
+the 精解's 察微 and 綴瑕 cases at p. 14, which open alike under every reading
+and were not re-read on the plate. And one with a consequence on every board:
+**a default 六壬 board names no text for its whole combination** since
+0.41.0, because `shehai: palace` is held by 陳公獻 alone and he is not read
+for `guiren: chou` or `zhouye: branch`. His 《大六壬指南》 (`liuren-zhinan.pdf`,
+whose OCR returned neither the 貴人 verse nor the 晝夜 division, which is
+not a negative) is the place to look; a second holder of the grade would do
+as well.
 
 **Left open by the reading of 2026-10-26**, each small and none blocking. In
 寶鏡圖's hours, `texts/qimen/daquan-juan60-baojing/hours/`: 五不遇 on 26 hours
@@ -459,6 +468,10 @@ nothing either way.
 their writer has read, newest first, all in both catalogs. Those marked
 *reader-copy* were written under that skill; the rest were not.
 
+- **2026-10-30, phase 78**: `form.liuren.shehai`, its two values and its
+  note, `form.liuren.shehaiFrom` and its two values, and
+  `notes.parameter.shehai` and `.shehaiFrom`. In Italian 剋 is «domìni» there,
+  after «domina», and 涉害 is «guadare il danno», after `label.keti.shehai`.
 - **2026-10-25, after phase 75**: `privacy.storage.intro` and `.means`, «Le
   introduzioni che hai chiuso», and the inventory's opening reworded to three
   things; `rain.off`, `rain.ink`, `rain.phase` «color {phase}» and

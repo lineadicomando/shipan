@@ -5951,12 +5951,12 @@ two of them into something other than what they looked like.
   are three day pillars — 丁卯, 辛卯, 己亥 — where a candidate on a 季 palace
   is much the deeper and both references take it over a shallower 仲.
 
-  **This is a divergence and is left standing as one.** A verse is not a
-  program and its clause order need not be its evaluation order; two
-  implementations that disagree with each other 17.6 % of the time agree here.
-  The engine follows them, this file says it is a choice, and the alternative
-  reading is written down with its score so that changing it is a decision and
-  not a discovery.
+  **It is a parameter, `shehai`, since 2026-10-30**, once each order was
+  found held by a named work: § "The order of 涉害 and what it counts, read on
+  the plate". A verse is not a program and its clause order need not be its
+  evaluation order, so the line above settles neither; the scores against one
+  program weigh neither order against the other either. The default, `palace`,
+  is the grouping the two programs use.
 
 - **井欄, not 無親 — a name the register caught.** The verse names the 返吟
   board that shows no control 井欄: 「無尅别有井欄名」. This engine's `KETI`
@@ -10935,7 +10935,7 @@ reopened, never quietly rewritten.
 | the 涉害 復等 clause | implemented, measured, and dropped: it moves none of the 8 640 boards under any of three readings, because the order of the courses already gives what it asks for. See the 六壬 section |
 | 二十八宿值日's 宜忌 | 《協紀辨方書》卷三十六 辨訛 rejects the lodge-day selection outright as an import: 來自西域, 並不可從. The count may still travel; the doctrine attached to it may not, and the epoch takes its warrant elsewhere |
 | the 宜忌 of the twelve officers | the largest thing in the 協紀 and the clearest refusal here: 宜 and 忌 are advice — ordering days, dating an act — which is `purposes.ts`'s line in a second place |
-| the verse's clause order in 涉害 | 「孟深仲淺季當休」 read as evaluation order scores 98.19 % where the grouping this engine uses scores 99.58 %. Both references take the deeper 季; the divergence is recorded rather than resolved by preference |
+| the verse's clause order in 涉害 | **No longer refused: a parameter since 2026-10-30**, `shehai: palace` or `depth`, each held by a named work — see § "The order of 涉害 and what it counts, read on the plate". What follows is the reason as it stood, left as it was written. 「孟深仲淺季當休」 read as evaluation order scores 98.19 % where the grouping this engine uses scores 99.58 %. Both references take the deeper 季; the divergence is recorded rather than resolved by preference |
 | 紫氣's degree | the body itself is placed, by default, under `ziqi: yinianyisu`; what nothing supplies is a position finer than a palace. **Each half of that placement is one witness.** 《張果星宗》 and the 三辰通載 section the register used to count beside it are one work, read on the plate 2026-09-01, and that work's 總論 gives twenty-nine years where its 算法 gives twenty-eight; the anchor is 《星度指南》's single 1886 chart, good to a palace. Nothing weighs 紫氣's own constant, its two checkable siblings in the same table erring by 0.01 % and 0.11 %. Both halves are rung 5, which is a grade written down rather than a body withheld — the refusal is the degree alone, and the type carries it: 紫氣 arrives as a `PalacePlacement`. See the 四餘 section |
 | 七政四餘 `xiudu` `shixian` · `shoushi` | the boundaries are taken from the 距星 themselves, so no epoch is chosen. The two 曆 tables are declared and refused until one arrives with an epoch that can be cited, and 《曆法通志》's complete eight-曆 table does not. **《授時曆故》 does**: 至元辛巳, said by the work, with the whole 黃道宿次 in its 卷二 and the text's own rule for carrying it — 「依赤道及冬至歲差所在算定 … 各得當時宿度」. So `shoushi` is refused now for a different reason, and a narrower one: **the table checks itself** — the four quadrant sums close against their entries, and against each other on 365.2575, the 曆's own 周天分 — so what is left is transcribing the remaining cells at a resolution that settles them, and giving the option an epoch as well as a table, because the source makes its numbers a function of a moment. `shixian` is where it was. See the frame section |
 | 七政四餘 `minggong` `ascendant` | 立命 by 加時 is what the texts state and gives a palace. The rising degree is a second method, not a sharper reading of the first. `OPTION_NOT_IMPLEMENTED` |
