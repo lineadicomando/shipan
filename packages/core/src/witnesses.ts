@@ -290,6 +290,19 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '御定六壬直指', pinyin: 'yùdìngliùrénzhízhǐ' },
   },
+  /**
+   * 葉悔亭's 《六壬視斯》, whose rule for the three transmissions 《大六壬精解》
+   * transcribes whole, off the 民國元年 江東書局 印本.
+   */
+  shisi: {
+    kind: 'transmitted',
+    name: { hanzi: '六壬視斯', pinyin: 'liùrénshìsī' },
+  },
+  /** 陳公獻's 《大六壬指南》, whose 增注 to the 《指掌賦》 grades 涉害 by the earth palace. */
+  zhinan: {
+    kind: 'transmitted',
+    name: { hanzi: '大六壬指南', pinyin: 'dàliùrénzhǐnán' },
+  },
   /** 曹福倞 and 張月明's compilation, which names the edition of every work it draws on. */
   jingjie: {
     kind: 'modern',

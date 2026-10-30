@@ -2006,6 +2006,8 @@ export const it: Record<MessageKey, string> = {
     'Quando il Sole cambia palazzo, che è ciò che insedia il generale del mese.',
   'notes.parameter.guiren': 'Quale trasmissione del verso insedia il nobile.',
   'notes.parameter.zhouye': 'Dove si taglia il giorno, per i seggi diurno e notturno del nobile.',
+  'notes.parameter.shehai': 'Che cosa viene prima nel 涉害 shèhài: dove un candidato sta, o che cosa incontra tornando a casa.',
+  'notes.parameter.shehaiFrom': 'Con la profondità prima, se si conta il palazzo su cui il candidato sta.',
   'notes.parameter.xiudu': 'Dove cominciano le ventotto dimore 宿 xiù.',
   'notes.parameter.ziqi': 'Se 紫氣 zǐqì entri, e per quale trasmissione.',
   'notes.parameter.luohou':
@@ -2620,6 +2622,16 @@ export const it: Record<MessageKey, string> = {
   'form.liuren.guiren.chou': '甲 jiǎ con 戊 wù e 庚 gēng, a 丑 chǒu e 未 wèi',
   'form.liuren.guiren.wei': '甲 jiǎ da solo, a 未 wèi e 丑 chǒu',
   'form.liuren.guiren.note': 'Muove i dodici generali e lascia stare le tre trasmissioni.',
+  // Il 涉害 sceglie fra più candidati secondo ciò che ciascuno incontra
+  // tornando a casa. Ogni valore dice quale delle due prove viene prima,
+  // perché la divergenza è tutta lì.
+  'form.liuren.shehai': 'Quando più candidati guadano il danno (涉害 shèhài), la prima trasmissione la sceglie',
+  'form.liuren.shehai.palace': 'il palazzo su cui ciascuno sta, e poi i domìni che incontra tornando a casa',
+  'form.liuren.shehai.depth': 'il numero di domìni che ciascuno incontra tornando a casa, e poi il palazzo su cui sta',
+  'form.liuren.shehai.note': 'Cambia le tre trasmissioni al massimo su un quadro di 涉害 shèhài ogni cinque, e nient’altro sul quadro.',
+  'form.liuren.shehaiFrom': 'Quando si contano i domìni del 涉害 shèhài, il palazzo su cui il candidato sta',
+  'form.liuren.shehaiFrom.next': 'resta fuori, e il conto parte dal palazzo successivo',
+  'form.liuren.shehaiFrom.seat': 'si conta anch’esso',
   // Resta «n/a» e non diventa «n/d», che è la sigla italiana.
   //
   // Non è una parola tradotta a metà: è un codice, come lo sono `CC BY 4.0` e

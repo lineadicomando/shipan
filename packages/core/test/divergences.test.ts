@@ -99,7 +99,21 @@ describe('the divergences in force', () => {
       (row) => `${row.parameter.board}.${row.parameter.id}`,
     );
 
-    expect(named).toEqual(['pillars.yearBoundary', 'pillars.dayBoundary', 'liuren.guiren']);
+    expect(named).toEqual([
+      'pillars.yearBoundary',
+      'pillars.dayBoundary',
+      'liuren.guiren',
+      'liuren.shehai',
+    ]);
+  });
+
+  it('name the starting palace of 涉害 only where depth comes first', () => {
+    // Under the grade by palace no count decides, so the second axis is a
+    // choice that board never had to make.
+    const named = divergencesInForce('liuren', { ...DEFAULT_LIUREN_OPTIONS, shehai: 'depth' }).map(
+      (row) => row.parameter.id,
+    );
+    expect(named).toContain('shehaiFrom');
   });
 });
 

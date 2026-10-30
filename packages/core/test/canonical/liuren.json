@@ -386,7 +386,9 @@
     "options": {
       "yuejiang": "zhongqi",
       "guiren": "chou",
-      "zhouye": "branch"
+      "zhouye": "branch",
+      "shehai": "palace",
+      "shehaiFrom": "next"
     },
     "keti": "zhiyi"
   },
@@ -777,7 +779,9 @@
     "options": {
       "yuejiang": "zhongqi",
       "guiren": "chou",
-      "zhouye": "branch"
+      "zhouye": "branch",
+      "shehai": "palace",
+      "shehaiFrom": "next"
     },
     "keti": "zhongshen"
   }

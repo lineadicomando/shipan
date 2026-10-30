@@ -1754,19 +1754,19 @@ describe('the address every board cites', () => {
  * move when a text is read.
  */
 describe('who lays the combination', () => {
-  it('names the text holding every value of a default 六壬 board', async () => {
+  it('says no text lays a default 六壬 board whole', async () => {
+    // 涉害 graded by palace is 陳公獻's, who is not read for the rest.
     const { body } = await call(liuren, MOMENT);
-    const answer = body as { laidBy: { state: string; by: { id: string }[] }; liuren: object };
-    expect(answer.laidBy.state).toBe('together');
-    expect(answer.laidBy.by.map((witness) => witness.id)).toEqual(['jingjie', 'jingwei', 'zhizhi']);
+    const answer = body as { laidBy: { state: string }; liuren: object };
+    expect(answer.laidBy.state).toBe('apart');
     expect(answer.liuren).not.toHaveProperty('laidBy');
   });
 
-  it('narrows to the one text holding a value once it is moved', async () => {
-    const { body } = await call(liuren, `${MOMENT}&liuren.guiren=wei`);
+  it('names the text holding every value once 涉害 is counted its way', async () => {
+    const { body } = await call(liuren, `${MOMENT}&liuren.shehai=depth&liuren.shehaiFrom=seat`);
     const answer = body as { laidBy: { state: string; by: { id: string }[] } };
     expect(answer.laidBy.state).toBe('together');
-    expect(answer.laidBy.by.map((witness) => witness.id)).toEqual(['zhizhi']);
+    expect(answer.laidBy.by.map((witness) => witness.id)).toEqual(['jingjie']);
   });
 
   it('says a value is a convention where no text is named for it', async () => {
@@ -1779,7 +1779,7 @@ describe('who lays the combination', () => {
   });
 
   it('writes a witness out, title and year, so a caller need not look it up', async () => {
-    const { body } = await call(liuren, MOMENT);
+    const { body } = await call(liuren, `${MOMENT}&liuren.shehai=depth&liuren.shehaiFrom=seat`);
     const [witness] = (body as { laidBy: { by: Record<string, unknown>[] } }).laidBy.by;
     expect(witness).toMatchObject({
       kind: 'modern',
@@ -1789,7 +1789,7 @@ describe('who lays the combination', () => {
   });
 
   it('closes the block of schools in a transcript with the same statement', async () => {
-    const { text } = await call(liurenText, MOMENT);
+    const { text } = await call(liurenText, `${MOMENT}&liuren.shehai=depth&liuren.shehaiFrom=seat`);
     expect(text).toContain('This combination of values is laid as one by 大六壬精解');
   });
 });

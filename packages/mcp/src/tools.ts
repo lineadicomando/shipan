@@ -324,6 +324,22 @@ export function registerComputeLiuren(server: McpServer, context: ToolContext): 
             'Which verse seats the 貴人. It moves the twelve generals and never the three ' +
               'transmissions. Default chou.',
           ),
+        shehai: z
+          .enum(['palace', 'depth'])
+          .optional()
+          .describe(
+            'Which comes first in 涉害 shèhài, where several lessons control: palace grades the ' +
+              'candidates by the 孟 · 仲 · 季 of the earth palace they stand on (陳公獻), depth ' +
+              'counts the controls met on the way home first (《六壬視斯》, 《六壬大全》卷五). It ' +
+              'changes the transmissions on at most one 涉害 board in five. Default palace.',
+          ),
+        shehai_from: z
+          .enum(['next', 'seat'])
+          .optional()
+          .describe(
+            'Under shehai depth only: whether the palace a candidate stands on is counted. next ' +
+              'starts one palace on (《六壬大全》卷五), seat counts it too (《六壬視斯》). Default next.',
+          ),
         ...optionSchema,
         lang: langSchema,
       },
@@ -334,6 +350,8 @@ export function registerComputeLiuren(server: McpServer, context: ToolContext): 
         const { moment, label } = resolveInput(args, context);
         const options: LiurenOptions = { ...DEFAULT_LIUREN_OPTIONS };
         if (args.guiren) options.guiren = args.guiren;
+        if (args.shehai) options.shehai = args.shehai;
+        if (args.shehai_from) options.shehaiFrom = args.shehai_from;
 
         const board = liurenBoard(
           { term: moment.solarTerm.term, day: moment.pillars.day, hour: moment.hourBranch },
@@ -860,6 +878,11 @@ export function registerDrawLiuren(server: McpServer, context: ToolContext): voi
         time: timeSchema,
         ...placeSchema,
         guiren: z.enum(['chou', 'wei']).optional().describe('Which verse seats the 貴人.'),
+        shehai: z.enum(['palace', 'depth']).optional().describe('Which comes first in 涉害.'),
+        shehai_from: z
+          .enum(['next', 'seat'])
+          .optional()
+          .describe('Under shehai depth: whether the starting palace is counted.'),
         ...optionSchema,
         size: z.number().int().min(240).max(2048).optional().describe('Side in pixels. Default 900.'),
         lang: langSchema,
@@ -871,6 +894,8 @@ export function registerDrawLiuren(server: McpServer, context: ToolContext): voi
         const { moment } = resolveInput(args, context);
         const options: LiurenOptions = { ...DEFAULT_LIUREN_OPTIONS };
         if (args.guiren) options.guiren = args.guiren;
+        if (args.shehai) options.shehai = args.shehai;
+        if (args.shehai_from) options.shehaiFrom = args.shehai_from;
 
         const board = liurenBoard(
           { term: moment.solarTerm.term, day: moment.pillars.day, hour: moment.hourBranch },

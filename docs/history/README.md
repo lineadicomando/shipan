@@ -111,6 +111,7 @@ phase.
 | 75 | [The 干論 on the plate](75-the-ganlun-on-the-plate.md) | done — the six garbled cells of the 仙機's 干論 read on the woodblock and `stemPairs: xianji` built on seventy-seven cells; 青龍入雲格 and 青龍華蓋 added to the default with no fortune; the seams between label and value set by each vernacular |
 | 76 | [The hours of 寶鏡圖](76-the-hours-of-baojingtu.md) | done — the twelve hours of the sixty leaves transcribed and set beside `dayHoursOf`: 截路空亡 at 子 and 丑 only on a 戊 or 癸 day, a second reading recorded with no parameter; no code moved |
 | 77 | [The order of 涉害](77-the-order-of-shehai.md) | done — the order read on the plate: `palace` by 陳公獻's 增注 to the 《指掌賦》, `depth` by 《六壬視斯》 and 《六壬大全》卷五, the count measured over the 1 380 boards; a parameter put to the user; no code moved |
+| 78 | [涉害 as a school](78-shehai-built.md) | done — `liuren.shehai` (`palace` · `depth`) and `shehaiFrom` inside `depth`, the texts' count under both, the 1 380 boards held to phase 77's readings; a default 六壬 board no longer names a text for its whole combination; 0.41.0 |
 
 ## The rest of the record
 

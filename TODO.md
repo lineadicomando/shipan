@@ -15,8 +15,8 @@ left, and is where surface work starts. Phase 75 took the first two items of
 "What to do next" the same day, and phase 76, on 2026-10-26, read the hours
 of 寶鏡圖 and moved no code; the decision it put to the user, a parameter for
 截路空亡, was answered «wait» (§ 1, 曆注). Phase 77, on 2026-10-30, read
-the order of 涉害 on the plate and moved no code; its decision, a parameter
-`shehai` of 六壬, waits on the user's word (§ 1, 六壬). For a reading, **read this section,
+the order of 涉害 on the plate, and phase 78, the same day and on the user's
+word, built it as `liuren.shehai` with `shehaiFrom` inside `depth`. For a reading, **read this section,
 then pick an item of "What to do next" below, or a line of § 2.** For it read
 three things and no more:
 
@@ -98,10 +98,11 @@ refused», «this list is empty».
 
 ### Where it stands, 2026-10-30
 
-**Version 0.40.3**, in every manifest. **`main` is checked out and no branch
+**Version 0.41.0**, in every manifest. **`main` is checked out and no branch
 is open.** `origin/main` is `28fe2dc`, pushed on the user's word on
-2026-10-25; `main` is ahead of it by the commits of phases 76 and 77, which
-moved no version and are not pushed. 0.40.3 is deployed at https://shipan.it, and the
+2026-10-25; `main` is ahead of it by the commits of phases 76, 77 and 78,
+not pushed. Phase 78's moves the version to 0.41.0, and its tag `v0.41.0` is
+set only when the user says push. 0.40.3 is deployed at https://shipan.it, and the
 footer of the live site says so (checked 2026-10-26), by `ssh shipan.deploy`, which
 runs `srv-deploy shipan` on the server; its output shows the image built,
 `docker compose down` and `docker compose up -d`, and the version is checked
@@ -110,7 +111,7 @@ in the footer after. Deploying and pushing are always the user's call.
 `v0.37.0` were set on the commits that moved the number, dated as those
 commits; `v0.2.0` and `v0.2.1` stayed lightweight. `v0.40.0` to `v0.40.3` are
 annotated and pushed. `npm run build`, `npm run typecheck` and `npm test` pass
-at the end of phase 77, no test skipped. **Run `npm run
+at the end of phase 78, no test skipped. **Run `npm run
 build` before `npm test`** in a fresh tree: the MCP and web suites and the
 shelf's scripts import `packages/core/dist`, and a stale `dist` fails them on
 whatever changed.
@@ -124,6 +125,7 @@ a question needs it:
 | phases 71–74, 2026-10-24 and 2026-10-25 | the lens on every drawn board, the bench, the key to the names, `spiritPhase`. § "The lens on every board" below is the map of the code |
 | phase 75, 2026-10-25 | the 干論 of 奇門仙機 read on the plate and laid as `stemPairs: xianji`; 青龍入雲格 and 青龍華蓋 added to the default; the seams between a label and its value set by each vernacular (`cli.between.*`), and the Italian parameter labels made the opening of a sentence |
 | no phase, after phase 75, 2026-10-25 | 0.38.0: `spiritPhase` defaults to `branch`, and the Italian catalog renames five spirits after the 六壬 generals of the same name, 驚門 «Spavento», the plates «tavola di cielo» and «tavola di terra», 剋 «domina». 0.39.0: 六儀擊刑 read off the hour's 直符 where it is carried, not off the earth plate. 0.40.0: 擊刑 by the clock as well, at the hour whose branch the decade's head punishes. `guiren: wei` declared held by the 協紀 too. The `shushu` skill teaches, as a third job. 0.40.1: a section's introduction folds under its heading, kept in `localStorage`, and the privacy note lists three things. 0.40.2–0.40.3: the glyph rain in the ink of each phase, and turning through them with Ctrl. Each commit's body is its record |
+| phase 78, 2026-10-30 | 0.41.0: `liuren.shehai`, `palace` (the default) or `depth`, and inside `depth` `shehaiFrom`, `next` (the default) or `seat`; the count the texts agree on, the lodged stems and the control by kind, under both. Two witnesses, `shisi` and `zhinan`. A default 六壬 board now says no named text lays its combination whole; under `depth` with `seat` it is the 精解's |
 | phase 77, 2026-10-30 | the order of 涉害 read on the plate: `palace` by 陳公獻's 增注 to the 《指掌賦》, `depth` by 《六壬視斯》 through the 精解 and by 《六壬大全》卷五, and the count, which the texts take with the lodged stems and by the kind of control. Measured over the 1 380 boards and put to the user. Nothing in the code moved |
 | phase 76, 2026-10-26 | the twelve hours of 寶鏡圖's sixty leaves, transcribed and set beside `dayHoursOf`: 截路空亡 at 子 and 丑 only on a 戊 or 癸 day, a second reading recorded with no parameter. Nothing in the code moved |
 | no phase | the board held in the page and the marks of every drawing (`marks.ts`), 2026-10-15 and 2026-10-18; the review of 2026-10-23, whose leftovers are item 3 of "What to do next". The account is § "Where it stands" of `docs/history/roadmap-2026-10-25.md` |
@@ -295,8 +297,7 @@ decided is left unbuilt.
    `.claude/skills/shushu/disciplines/` ends on «Leads against the register»:
    passages located on the web or in a shelf transcription that bear on a row,
    none read on a plate. The ones that touch a standing question (the order
-   of 涉害 was read on 2026-10-30, phase 77, and waits on the user's word,
-   § 1): the five phases of the 十二天將 in 《六壬大全》卷二, held
+   of 涉害 was read and built on 2026-10-30, phases 77–78): the five phases of the 十二天將 in 《六壬大全》卷二, held
    (`liuren.md`); 截路空亡 at two hours in 《星曆考原》卷五, beside 寶鏡圖's
    (`almanac.md`); the 楊公忌 check, which the 協紀 says is not the 值日 count
    (`almanac.md`); 洪丕謨 and 盧央 on the shelf for the year and day
@@ -594,17 +595,7 @@ nothing exposes. Only those with something to wait on:
   and one line; and its 奇墓 gives 乙 both 二 and 六, as 吉凶格解's summary
   does. The half-flown board wants a yin hour worked in any text. The board of a day wants a prompt
   of its own, the scan and the 年命.
-- **六壬.** **The order of 涉害, put to the user on 2026-10-30 and waiting on
-  their word.** Each order has a named holder, read on the plate: `palace`,
-  what the engine computes, by 陳公獻's 增注 to the 《指掌賦》, and `depth`
-  by 《六壬視斯》 (through the 精解) and 《六壬大全》卷五. Under `depth` the
-  starting palace is a second axis, counted by the 視斯 and not by the 大全.
-  The recommendation is to build both values with `palace` the default, which
-  moves no address. Under `palace` the texts' count (lodged stems, and by kind
-  of control) would move no board, so it can be taken at the same time. `depth`
-  opens 192 to 276 of the 1 380 涉害 boards otherwise, and it would turn the
-  bench's failing 涉害 case into an agreement. `docs/sources.md` § "The order
-  of 涉害 and what it counts, read on the plate". The five
+- **六壬.** The five
   phases of the 十二天將: asked of 《御定六壬直指》 and 《六壬經緯》 and not
   found there; 《六壬大全》卷二, which gives each general its phase, is held in
   two modern typesettings (`liuren/liuren-daquan-jingjiao.pdf`,
@@ -697,10 +688,9 @@ moves. A new file is identified with the four commands of `docs/scans.md`
 else.
 
 **Ask.** `texts/bench/run.mjs` runs the worked examples the sources print;
-two 六壬 cases disagree. The 涉害 one was read on 2026-10-30: it is
-《六壬視斯》's order and not a fault, and it stays a disagreement until the
-user rules on `depth` (§ 1). The 返吟 one is settled by reading the passage
-its citation names. `--uncovered` lists the shapes with no adapter.
+one 六壬 case disagrees, a 返吟, settled by reading the passage its citation
+names. The bench lays the 精解's cases under the 精解's school, `shehai: depth`
+with `shehaiFrom: seat`, since 2026-10-30. `--uncovered` lists the shapes with no adapter.
 `texts/shelf.py crosswalk --moves` and `--gaps` are leads, never findings.
 《御定奇門真詮》 is 1080 hour boards with no 起例: a bench, if anything, and
 the 大全's `engine.mjs` already lays the 1080 it would be held to.

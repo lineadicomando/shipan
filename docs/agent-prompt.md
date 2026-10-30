@@ -445,8 +445,11 @@ Not uniformly, and the difference matters when you are asked to justify one.
   that space is finite and nothing was sampled. The **selection among the
   candidates**, which is the 九宗門, is checked against *two* independent
   implementations that agree with each other on only 82 % of boards; where
-  they do agree, this engine agrees with them on 99.7 %. One narrow clause of
-  涉害 is unimplemented and 0.24 % of boards differ because of it. A board
+  they do agree, this engine agrees with them on 99.7 %. The 0.24 % that
+  differ are all 涉害 boards, and the order of 涉害 is a school the board
+  names: `liuren.shehai` grades by the earth palace (`palace`, the default,
+  陳公獻's) or counts depth first (`depth`, 《六壬視斯》's and 《六壬大全》's),
+  and the two open at most one 涉害 board in five otherwise. A board
   drawn by 返吟 carries a line saying its rule rests on something no reference
   covers — which now means *checked against a text and not against something
   that runs*: 《六壬大全》 names every day that rule can draw a board on, and
@@ -591,6 +594,7 @@ GET /api/qimen/text?date=2024-06-15&time=14:00&locationId=1816670
 GET /api/qimen/prompt?date=2024-06-15&time=14:00&locationId=1816670&asked=true
 GET /api/qimen?date=2024-06-15&time=14:00&locationId=1816670&qimen.method=zhirun
 GET /api/liuren?date=2024-06-15&time=14:00&locationId=1816670&liuren.guiren=wei
+GET /api/liuren?date=2024-06-15&time=14:00&locationId=1816670&liuren.shehai=depth&liuren.shehaiFrom=seat
 GET /api/qimen?date=2024-06-15&time=14:00&locationId=1816670&born=1968-03-12&gender=female
 GET /api/qimen?date=2024-06-15&time=14:00&latitude=39.9075&longitude=116.3972&timezone=Asia/Shanghai
 GET /api/qimen?date=2024-06-15&time=14:00&locationId=1816670&latitude=39.8000&longitude=116.6000

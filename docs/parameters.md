@@ -336,6 +336,8 @@ almanac takes none of these at all. Both are below.
 | 六壬 | `yuejiang` | `zhongqi` (太陽過宮 at the 中氣 zhōngqì), `jieqi` (節氣 jiéqì, half a term earlier), `true` (太陽實躔 tàiyángshíchán) | `zhongqi` |
 | 六壬 | `guiren` | `chou` (丑 chǒu and 未, which 甲 shares with 戊庚), `wei` (未 wèi and 丑, with 甲 standing alone) | `chou` |
 | 六壬 | `zhouye` | `branch` (晝 from 卯 to 申), `solar` (actual sunrise and sunset) | `branch` |
+| 六壬 | `shehai` | which comes first in 涉害 shèhài: `palace` (the 孟 · 仲 · 季 of the 地盤 a candidate stands on, then depth inside the grade, the grade 陳公獻's), `depth` (the controls met on the way home, then the palace, as 《六壬視斯》 liùrénshìsī and 《六壬大全》卷五 count) | `palace` |
+| 六壬 | `shehaiFrom` | inside `shehai: depth`, whether the palace a candidate stands on is counted: `next` (the count starts one palace on, as the 大全卷五 counts), `seat` (it counts too, as the 視斯 counts) | `next` |
 | 曆注 | `shensha` | `xieji` (what 《協紀辨方書》 xiéjìbiànfāngshū ratifies in its 卷三 to 卷七, cut to the day and the direction, and to the twelve hours where a board is a day's), later a named lineage | `xieji` |
 | 七政四餘 | `xiudu` | where the 宿 begin: `juxing` (at the 距星 jùxīng, placed at the instant), or a 曆's frame — `shixian` (時憲曆 shíxiànlì), `shoushi` (授時曆 shòushílì, carried from 1281 by that 曆's own method) | `juxing` |
 | 七政四餘 | `ziqi` | whether 紫氣 enters as a fourth 餘: `yinianyisu` (一年一宿 yīniányīxiù), which places it **to a palace and to no degree**, or `off` | `yinianyisu` |

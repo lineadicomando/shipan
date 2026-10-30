@@ -2260,6 +2260,8 @@ export const en = {
     'When the Sun changes palace, which is what seats the general of the month.',
   'notes.parameter.guiren': 'Which transmission of the verse seats the noble.',
   'notes.parameter.zhouye': 'Where the day is cut, for the noble’s day and night seats.',
+  'notes.parameter.shehai': 'Which comes first in 涉害 shèhài: where a candidate stands, or what it meets on its way home.',
+  'notes.parameter.shehaiFrom': 'Under depth first, whether the palace a candidate stands on is counted.',
   'notes.parameter.xiudu': 'Where the twenty-eight lodges 宿 xiù begin.',
   'notes.parameter.ziqi': 'Whether 紫氣 zǐqì enters, and by which transmission.',
   'notes.parameter.luohou':
@@ -3009,6 +3011,16 @@ export const en = {
   'form.liuren.guiren.chou': '甲 jiǎ with 戊 wù and 庚 gēng, at 丑 chǒu and 未 wèi',
   'form.liuren.guiren.wei': '甲 jiǎ apart, at 未 wèi and 丑 chǒu',
   'form.liuren.guiren.note': 'It moves the twelve generals and leaves the three transmissions alone.',
+  // 涉害 is the rule that chooses among several candidates by what each meets on
+  // its way home. The label names the rule with its gloss, and each value says
+  // which of the two tests comes first, since that is the whole divergence.
+  'form.liuren.shehai': 'When several candidates wade the harm (涉害 shèhài), the first transmission is chosen by',
+  'form.liuren.shehai.palace': 'the palace each one stands on, then the controls it meets on its way home',
+  'form.liuren.shehai.depth': 'the controls each one meets on its way home, then the palace it stands on',
+  'form.liuren.shehai.note': 'It changes the three transmissions on at most one 涉害 shèhài board in five, and nothing else on the board.',
+  'form.liuren.shehaiFrom': 'When the controls of 涉害 shèhài are counted, the palace a candidate stands on',
+  'form.liuren.shehaiFrom.next': 'is left out, and the count starts one palace on',
+  'form.liuren.shehaiFrom.seat': 'is counted as well',
   // The mark in a cell of a computed table where the board has nothing to put.
   //
   // **«n/a» and not a dash, because a dash beside hanzi is read as 一.** The

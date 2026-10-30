@@ -938,7 +938,7 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
         id: 'zhongqi',
         name: { hanzi: '中氣', pinyin: 'zhōngqì' },
         implemented: true,
-        heldBy: ['liurendaquan', 'jingjie', 'jingwei', 'zhizhi'],
+        heldBy: ['liurendaquan', 'jingjie', 'jingwei', 'zhizhi', 'zhinan', 'shisi'],
       },
       { id: 'jieqi', name: { hanzi: '節氣', pinyin: 'jiéqì' }, implemented: false },
       { id: 'true', name: { hanzi: '太陽實躔', pinyin: 'tàiyángshíchán' }, implemented: false },
@@ -978,6 +978,53 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
       { id: 'solar', implemented: false },
     ],
     default: 'branch',
+  },
+  shehai: {
+    board: 'liuren',
+    label: 'form.liuren.shehai',
+    values: [
+      {
+        id: 'palace',
+        says: 'form.liuren.shehai.palace',
+        note: 'form.liuren.shehai.note',
+        implemented: true,
+        // 陳公獻's 增注 to the 《指掌賦》, 「涉害取地盤孟仲季發用」: the grade by
+        // the earth palace. Depth inside the grade is the engine's.
+        heldBy: ['zhinan'],
+      },
+      {
+        id: 'depth',
+        says: 'form.liuren.shehai.depth',
+        note: 'form.liuren.shehai.note',
+        implemented: true,
+        // 《六壬視斯》, and 《大六壬精解》 pp. 10–11, which teaches it as its own
+        // rule in the 視斯's words; and 《六壬大全》卷五: the article, the 訂訛,
+        // the 觀月經 and the 袖中金.
+        heldBy: ['shisi', 'jingjie', 'liurendaquan'],
+      },
+    ],
+    default: 'palace',
+  },
+  shehaiFrom: {
+    board: 'liuren',
+    label: 'form.liuren.shehaiFrom',
+    // The count decides only where depth comes first.
+    inside: { id: 'shehai', value: 'depth' },
+    values: [
+      {
+        id: 'next',
+        says: 'form.liuren.shehaiFrom.next',
+        implemented: true,
+        heldBy: ['liurendaquan'],
+      },
+      {
+        id: 'seat',
+        says: 'form.liuren.shehaiFrom.seat',
+        implemented: true,
+        heldBy: ['shisi', 'jingjie'],
+      },
+    ],
+    default: 'next',
   },
 };
 

@@ -291,3 +291,40 @@ describe('the board as a whole', () => {
     }
   });
 });
+
+describe('涉害, under each school', () => {
+  const opening = (t: SolarTermId, d: string, h: string, options?: Partial<LiurenOptions>) =>
+    board(t, d, h, options).transmissions.map((x) => x.branch.hanzi).join('');
+
+  it('grades by the palace by default, as 陳公獻 does', () => {
+    // 正月丁卯日丑時亥將: 丑 on 卯 is a 仲, 亥 on 丑 a 季, and the grade takes 丑.
+    expect(board('yushui', '丁卯', '丑').rule).toBe('shehai');
+    expect(opening('yushui', '丁卯', '丑')).toBe('丑亥酉');
+  });
+
+  it('opens the 視斯\'s and the 大全\'s worked case on depth', () => {
+    // 《大六壬精解》 p. 11 and 《六壬大全》卷五 both open 亥, the deeper: six
+    // against two counting the seat, five against one starting one palace on.
+    expect(opening('yushui', '丁卯', '丑', { shehai: 'depth' })).toBe('亥酉未');
+    expect(opening('yushui', '丁卯', '丑', { shehai: 'depth', shehaiFrom: 'seat' })).toBe('亥酉未');
+  });
+
+  it('opens the 觀月經\'s case on depth, against the palace', () => {
+    // 甲辰日亥將卯時: 子 on 辰 meets four, 戌 on 寅 two; 「用戌者非也」.
+    expect(opening('yushui', '甲辰', '卯').startsWith('戌')).toBe(true);
+    expect(opening('yushui', '甲辰', '卯', { shehai: 'depth' }).startsWith('子')).toBe(true);
+  });
+
+  it('counts what the candidate controls on an 上剋下 board', () => {
+    // 《六壬大全》卷五's 四月庚子日戌時申將: 午加庚 meets 酉 and the 辛 at 戌, two, and
+    // 戌加子 the 癸 at 丑, one. Both orders open 午.
+    for (const shehai of ['palace', 'depth'] as const) {
+      expect(opening('xiaoman', '庚子', '戌', { shehai }).startsWith('午')).toBe(true);
+    }
+  });
+
+  it('asks the starting palace only under depth', () => {
+    // Under the grade no count decides, so the two counts lay one board.
+    expect(opening('yushui', '甲辰', '卯', { shehaiFrom: 'seat' })).toBe(opening('yushui', '甲辰', '卯'));
+  });
+});

@@ -101,6 +101,8 @@ describe('what a form offers', () => {
       'pillars.yearBoundary',
       'pillars.dayBoundary',
       'liuren.guiren',
+      'liuren.shehai',
+      'liuren.shehaiFrom',
     ]);
     expect(offered(undefined).map((row) => row.board)).toEqual(['pillars', 'pillars']);
   });

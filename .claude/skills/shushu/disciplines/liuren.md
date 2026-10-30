@@ -197,14 +197,16 @@ Where other witnesses part from it:
        金匱玉衡經 (via 盧央) all count them.
      - The **starting palace**: the 視斯 and the 金匱玉衡經 count it (亥 on
        丑 at six); the 大全's article, 訂訛 and 觀月經 do not (five).
-     - `liuren.ts`'s `shehai` counts only the branches *after* the start and
-       no lodged stems.
+     - The engine counts the lodged stems, and the starting palace is
+       `shehaiFrom` inside `shehai: depth`: `next` (大全) by default, `seat`
+       (視斯).
    - **(c) Which way the control runs.** What the candidate *controls* on an
      上剋下 board, what *controls it* on a 下賊上 one: the 精解's 今按 at p. 15
-     and the 大全's 庚子 case. The engine always counts what controls it.
-   - Under the engine's order the count never decides (0 of 1 380 boards).
-     Depth first opens 192 to 276 otherwise. A parameter `shehai` waits on
-     the user's word (`TODO.md` § 1, 六壬).
+     and the 大全's 庚子 case. The engine counts so.
+   - Built 2026-10-30 as `liuren.shehai`: `palace` (default, 陳公獻) or
+     `depth` (視斯, 精解, 大全). Under `palace` the count never decides (0 of
+     1 380 boards); `depth` opens 192 to 276 otherwise. When reading a 涉害
+     board, say which order laid it.
 4. **遙剋 yáokè**: no control in the four. 神遙剋日 is 蒿矢 hāoshǐ, and comes
    first; 日遙剋神 is 彈射 tánshè. Ties go by 比. The witnesses agree.
 5. **昴星 mǎoxīng**: 剛日 仰, the upper over 酉 (虎視 hǔshì); 柔日 俯, the
@@ -432,10 +434,10 @@ convention matters: 大全卷二 gives 太常 「旺四季各十八日」, which
   forward by day and backward by night.
 - **辰/日 naming.** In 六壬 「日」 is the day stem and 「辰」 is the day
   *branch*, not the 天罡 辰. 「辰上神」 means the upper over the day branch.
-- **涉害 counts.** Manuals differ on whether the starting palace and the
-  lodged stems count. Two programs agree with each other on only 82.4 % of
-  boards (register). Never report a 涉害 opening as "the" answer without
-  naming the rule.
+- **涉害 is a school.** The order (`liuren.shehai`) and, under depth, the
+  starting palace (`shehaiFrom`) are parameters; the lodged stems count in
+  every text read. Never report a 涉害 opening as "the" answer without
+  naming the order that laid it and that the other exists.
 - **返吟 on 丁未 and 己未.** One source names these boards 井欄 and another
   八專; the transmissions are the same.
 - **Names that vary.**
@@ -468,7 +470,7 @@ keeps the generals by kind, unrelated.
 | `keti` (a `KetiId`: the 九宗門 shapes and their named sub-cases) | 4.8, the 九宗門 shapes only |
 | `generals[12]`, `half: day/night` | 3.7, 4.6–4.7 |
 | `unverified` (返吟 only: checked against a text, not a program) | 3.6 (9) |
-| `options` {`yuejiang`, `guiren`, `zhouye`} | 3.2, 3.7 |
+| `options` {`yuejiang`, `guiren`, `zhouye`, `shehai`, `shehaiFrom`} | 3.2, 3.6 (3), 3.7 |
 
 **Refused, and why.**
 - `yuejiang: jieqi` and `true`, and `zhouye: solar`, each want a holder with a
@@ -482,8 +484,9 @@ keeps the generals by kind, unrelated.
 
 **For the consultant.**
 - Read `rule` and `keti` as the shape, then apply § 4.
-- Name `guiren` as the school that laid the board (the divergences block),
-  and say the other exists. The block prints only a parameter with more than
+- Name `guiren` and `shehai` as the schools that laid the board (the
+  divergences block), and say the others exist; on a 涉害 board name the
+  order, and under `depth` the starting palace. The block prints only a parameter with more than
   one implemented value, so it does not carry `yuejiang`; name that from
   `options` where the reading turns on it.
 - Never re-derive the transmissions (`prompt.liuren.drawn`).
@@ -510,9 +513,8 @@ shelf.
    - 神定經 釋日出沒 (a 崇天曆 sunrise/sunset table by term).
    - 程樹勳 quoting 《六壬心鏡注》.
    - Both ☆. Decide 日出入 against 「星之出沒」 (精解).
-4. **Order of 涉害, and its count.** Read on the plate on 2026-10-30 and
-   put to the user: `shehai: palace | depth`, with the starting palace a
-   second axis under `depth`. See § 3, item 3.
+4. **Order of 涉害, and its count.** Built on 2026-10-30 as `shehai` and
+   `shehaiFrom`. See § 3, item 3.
 5. *(merged into 4.)*
 6. **Direction of the generals.** The rule has witnesses (精解 ★, 增注 ★,
    神定經 ☆) and no row in `docs/sources.tsv`. Add one.

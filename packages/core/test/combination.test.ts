@@ -19,20 +19,21 @@ import {
  */
 describe('the combination a board stands on', () => {
   it('names the text that holds every value in force', () => {
-    // Three texts hold the 中氣, the verse's seats and the branch division.
-    expect(combinationOf('liuren', DEFAULT_LIUREN_OPTIONS)).toEqual({
-      state: 'together',
-      by: ['jingjie', 'jingwei', 'zhizhi'],
-    });
+    // 《大六壬精解》 holds the 中氣, the verse's seats, the branch division, and
+    // 涉害 by depth counting the seat, which it teaches in the 視斯's words.
+    expect(
+      combinationOf('liuren', { ...DEFAULT_LIUREN_OPTIONS, shehai: 'depth', shehaiFrom: 'seat' }),
+    ).toEqual({ state: 'together', by: ['jingjie'] });
   });
 
-  it('narrows to the one text that holds a value once it is moved', () => {
-    // The table that stands 甲 apart is the 直指's two verses and no other
-    // text's, so a board laid on it is that work's alone.
-    expect(combinationOf('liuren', { ...DEFAULT_LIUREN_OPTIONS, guiren: 'wei' })).toEqual({
-      state: 'together',
-      by: ['zhizhi'],
-    });
+  it('says no text lays it where every value has a holder and none holds them all', () => {
+    // The grade by palace is 陳公獻's, who is not read for the noble's verse or
+    // the division of the hours; the three who are grade by depth.
+    expect(combinationOf('liuren', DEFAULT_LIUREN_OPTIONS)).toEqual({ state: 'apart' });
+    // And the table that stands 甲 apart is the 直指's, which does not reach 涉害.
+    expect(
+      combinationOf('liuren', { ...DEFAULT_LIUREN_OPTIONS, shehai: 'depth', guiren: 'wei' }),
+    ).toEqual({ state: 'apart' });
   });
 
   it('counts a parameter nobody could have moved', () => {
@@ -58,9 +59,9 @@ describe('the combination a board stands on', () => {
 
   it('says it in a sentence, with the title written and said', () => {
     const t = createTranslator('en');
-    expect(saidCombination('liuren', DEFAULT_LIUREN_OPTIONS, t)).toBe(
-      'This combination of values is laid as one by 大六壬精解 dàliùrénjīngjiě (1995) and 六壬經緯 liùrénjīngwěi and 御定六壬直指 yùdìngliùrénzhízhǐ.',
-    );
+    expect(
+      saidCombination('liuren', { ...DEFAULT_LIUREN_OPTIONS, shehai: 'depth', shehaiFrom: 'seat' }, t),
+    ).toBe('This combination of values is laid as one by 大六壬精解 dàliùrénjīngjiě (1995).');
   });
 
   it('closes the lines a drawing writes', () => {

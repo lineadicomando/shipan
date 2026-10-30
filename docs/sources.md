@@ -6165,6 +6165,10 @@ data.
 | `yuejiang: zhongqi` | 《六壬大全》, 《大六壬精解》 (1995) | the first in its verse's table; the second states it as its own rule — 「太陽於每月中氣過宮，故月將亦逢中氣而換」 — and is the study through which 陳公獻's 增注 and 《六壬視斯》 reach this register, each named there with its edition |
 | `guiren: chou` | 《六壬大全》, 《大六壬精解》 | the verse with the branches interlined, and the same verse glossed stem by stem |
 | `zhouye: branch` | 《大六壬精解》 | p. 26, with a worked example. 《六壬大全》 and 《大六壬課經集》 use the distinction and define neither half |
+| `shehai: palace` | 陳公獻's 《大六壬指南》 | the 增注 to the 《指掌賦》, 「涉害取地盤孟仲季發用」, read on the plate 2026-10-30. It grades and counts nothing: depth inside the grade is the engine's |
+| `shehai: depth` | 《六壬視斯》, 《大六壬精解》, 《六壬大全》 | the 視斯's rule, which the 精解 teaches in its words at pp. 10–11; the 大全卷五's article, 訂訛, 觀月經 and 袖中金 |
+| `shehaiFrom: next` | 《六壬大全》 | 卷五's article, 訂訛 and 觀月經 start the count one palace on |
+| `shehaiFrom: seat` | 《六壬視斯》, 《大六壬精解》 | the 丁卯 case counted from 丑 itself, six |
 
 **Two works read on the plate, 2026-10-07, for the questions this section left
 open.** Both are in 故宮珍本叢刊 第417冊.
@@ -6226,10 +6230,6 @@ different risings in it, which is not enough to reconstruct a reading from.
 
 **Recorded, with no parameter.**
 
-- **The order of 涉害**, and what it counts. Each order has a named holder
-  since 2026-10-30, and the divergence waits on the user's word for a
-  parameter: § "The order of 涉害 and what it counts, read on the plate"
-  below.
 - **The 末傳 of a 伏吟 taken by 冲** where the punishment returns to the
   opening, which the section above marks as the engine's own clause.
 
@@ -6318,11 +6318,17 @@ cases each text works open as the text has them under its own order: 丁卯
 and 甲辰 to 亥 and 子 under depth, which the engine opens 丑 and 戌. 庚子,
 庚午, 戊辰 and 甲午 open alike under every row.
 
-**So this is a divergence between practitioners and a parameter is owed.**
-Two values of the order, `palace` held by 陳公獻 and `depth` held by the 視斯
-and the 大全卷五, and under `depth` a second axis for the starting palace,
-which those two works part on. It waits on the user's word (`TODO.md` § 1,
-六壬).
+**So it is a divergence between practitioners, and it is a parameter**,
+built on the user's word on 2026-10-30. `shehai` has two values: `palace`,
+the default, held by 陳公獻, and `depth`, held by the 視斯, the 精解 and the
+大全卷五. Inside `depth` a second axis, `shehaiFrom`, takes the starting palace:
+`next` is the 大全's and the default, `seat` is the 視斯's. The count the texts
+agree on, the lodged stems and the direction of the control, is the engine's
+under both values. It moved no board under `palace`, and the six canonical
+boards and every 涉害 board of the space open as they did. The engine under
+each value was held to `variants.mjs` over the 1 380 boards, and it opens
+every one alike under all three readings. The bench lays the 精解's cases by
+the 精解's school, so its 丁卯 case agrees.
 
 **Where the two programs are called witnesses above, they are read as
 checks.** «Where two disagreeing witnesses agree, that is the transmitted

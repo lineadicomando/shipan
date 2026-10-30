@@ -67,12 +67,41 @@ export interface LiurenOptions {
    * consulted here states, and it stays unimplemented until one does.
    */
   zhouye: 'branch' | 'solar';
+
+  /**
+   * Which comes first in 涉害: where a candidate stands, or what it suffered.
+   *
+   * `palace` grades the candidates by the palace of the 地盤 they stand on —
+   * a 孟 (寅申巳亥) before a 仲 (子午卯酉), either before a 季 — and lets
+   * depth decide inside the grade. 陳公獻's 增注 to the 《指掌賦》 holds the
+   * grading, 「涉害取地盤孟仲季發用」, and counts nothing; depth inside the
+   * grade is this engine's. `depth` counts first and lets the palaces break
+   * a tie, 「以受克多者為用。如受克俱多，則以在地盤四孟上者為用」: 《六壬視斯》,
+   * which 《大六壬精解》 transcribes, and 《六壬大全》卷五.
+   *
+   * The two open at most one 涉害 board in five otherwise, and nothing else on
+   * the board moves.
+   */
+  shehai: 'palace' | 'depth';
+
+  /**
+   * Under `shehai: depth`, whether the palace a candidate stands on is counted.
+   *
+   * `next` starts the count one palace on, as the 大全卷五's article, its
+   * 訂訛 and its 觀月經 do: 亥 on 丑 suffers five on the 丁卯 board. `seat`
+   * counts the palace it stands on as well, as 《六壬視斯》 does: six on the
+   * same board. Under `palace` the count never decides, so this is asked only
+   * inside `depth`.
+   */
+  shehaiFrom: 'next' | 'seat';
 }
 
 export const DEFAULT_LIUREN_OPTIONS: LiurenOptions = Object.freeze({
   yuejiang: 'zhongqi',
   guiren: 'chou',
   zhouye: 'branch',
+  shehai: 'palace',
+  shehaiFrom: 'next',
 });
 
 /**
@@ -172,6 +201,11 @@ export const GENERALS: readonly General[] = [
  * palace the centre is read at; the two words name two different detours.
  */
 const LODGING: readonly number[] = [2, 4, 5, 7, 5, 7, 8, 10, 11, 1];
+
+/** The stems lodged at each branch, by branch index. */
+const LODGED: readonly (readonly Stem[])[] = BRANCHES.map((branch) =>
+  STEMS.filter((stem) => LODGING[stem.index] === branch.index),
+);
 
 export function lodgingOf(stem: Stem): Branch {
   return BRANCHES[LODGING[stem.index] as number] as Branch;
@@ -374,7 +408,7 @@ export function liurenBoard(
   const generals = heaven.map(generalOver);
 
   const courses = fourCourses(day, heavenAt, generalOver);
-  const drawn = threeTransmissions({ day, hour, yuejiang, courses, heavenAt, palaceUnder });
+  const drawn = threeTransmissions({ options, day, hour, yuejiang, courses, heavenAt, palaceUnder });
 
   const { empty } = decade(day);
   const emptyBranches = new Set(empty.map((branch) => branch.index));
@@ -441,6 +475,7 @@ interface Drawn {
 }
 
 interface Context {
+  options: LiurenOptions;
   day: Ganzhi;
   hour: Branch;
   yuejiang: Yuejiang;
@@ -516,7 +551,7 @@ function zeike(context: Context): Drawn | undefined {
       keti: robbed.length > 0 ? 'zhongshen' : 'yuanshou',
     };
   }
-  return biyong(context, candidates);
+  return biyong(context, candidates, robbed.length > 0 ? 'zei' : 'ke');
 }
 
 /**
@@ -526,67 +561,78 @@ function zeike(context: Context): Drawn | undefined {
  * is the one taken; where that leaves one candidate the board is 知一, and
  * where it leaves none or several the question passes to 涉害.
  */
-function biyong(context: Context, candidates: readonly Course[]): Drawn {
+function biyong(context: Context, candidates: readonly Course[], kind: 'zei' | 'ke'): Drawn {
   const alike = candidates.filter((course) => course.upper.yang === context.day.stem.yang);
   if (alike.length === 1) {
     const only = alike[0] as Course;
     return { branches: chain(context, only.upper), rule: 'biyong', keti: 'zhiyi' };
   }
-  return shehai(context, alike.length > 1 ? alike : candidates);
+  return shehai(context, alike.length > 1 ? alike : candidates, kind);
 }
 
 /**
  * 涉害 — the deepest wading wins.
  *
  * Each candidate stands somewhere that is not its own palace, and the rule
- * counts what it has to pass through to get home: every palace of the 地盤 on
- * the way whose branch controls it is one harm taken. The one that took most
- * is the 初傳.
+ * counts what lies on its way home, walking the 地盤 forward. **What is
+ * counted is settled by the texts, and they agree**: a palace's branch and
+ * the stems lodged there both count (乙 at 辰, 戊 at 巳, 己 at 未), and the
+ * control runs the way the candidate's own course runs — on a 下賊上 board
+ * what controls the candidate, on an 上剋下 board what the candidate
+ * controls. 《大六壬精解》's 今按 at p. 15 says so, and 《六壬大全》卷五's 庚子
+ * case counts 午加庚 so. The home palace is where the count stops.
  *
- * When the count ties, the tradition breaks it by where the candidates stand
- * rather than by what they suffered — 見機 takes one standing on a 孟 palace
- * (寅申巳亥), and failing that 察微 takes one on a 仲 (子午卯酉).
+ * **Which comes first is a school**, `shehai`. Under `palace` the candidates
+ * are graded by where they stand — 見機 a 孟, then 察微 a 仲 — and depth
+ * decides inside the grade; under `depth` the count decides and the palaces
+ * break a tie. Whether the palace a candidate stands on is counted is the
+ * second divergence, `shehaiFrom`, and it can only decide under `depth`:
+ * under `palace` no count ever moves a board, over the 1 380 涉害 boards of
+ * the space.
  *
- * A tie that survives both is left to the order of the courses, and 《六壬大全》
- * 卷一 has a clause for exactly that — 「復等柔辰剛日宜」. **It was implemented
- * and it moves nothing**: over the whole 8 640-board space, under all three
- * readings of what 辰 and 日 name there, the clause never selects a different
- * course from the one the order of the courses already gives. So it is not
- * carried, because a branch that cannot be taken is not a rule, it is
- * decoration on one.
- *
- * The line above it, 「孟深仲淺季當休」, is a live divergence rather than a
- * settled one. Read in the verse's own order — depth first, the palaces
- * breaking a tie — it scores 98.19 % against the reference where the order
- * implemented here scores 99.58 %. This engine follows the two implementations
- * and not the syntax, which is a choice and is recorded as one in the 六壬
- * section of `docs/sources.md`.
+ * A tie that survives is 綴瑕, 亦名復等: 「陽日取干上神，陰日取支上神」, the
+ * first on the stem's side on a yang day and on the branch's on a yin one.
+ * Under `palace` the order of the courses already gives what it asks for on
+ * every board (the 六壬 section of `docs/sources.md`), and the clause is
+ * applied under both.
  */
-function shehai(context: Context, candidates: readonly Course[]): Drawn {
+function shehai(context: Context, candidates: readonly Course[], kind: 'zei' | 'ke'): Drawn {
+  const { shehai: order, shehaiFrom } = context.options;
+  const first = order === 'depth' && shehaiFrom === 'seat' ? 0 : 1;
+  const counts = (element: Element, course: Course): boolean =>
+    kind === 'zei' ? controls(element, course.upper.element) : controls(course.upper.element, element);
+
   const depth = (course: Course): number => {
     const from = context.palaceUnder(course.upper);
+    const steps = (course.upper.index - from + 12) % 12;
     let harms = 0;
-    // Home is the palace bearing the branch's own name. Walking forward from
-    // where it stands reaches it in the same number of steps for every
-    // candidate; what differs is what lies along the way.
-    for (let step = 1; step <= (course.upper.index - from + 12) % 12; step += 1) {
-      const passed = BRANCHES[(from + step) % 12] as Branch;
-      if (controls(passed.element, course.upper.element)) harms += 1;
+    for (let step = first; step < steps; step += 1) {
+      const passed = (from + step) % 12;
+      if (counts((BRANCHES[passed] as Branch).element, course)) harms += 1;
+      for (const stem of LODGED[passed] as readonly Stem[]) if (counts(stem.element, course)) harms += 1;
     }
     return harms;
   };
+  const grade = (course: Course): number => context.palaceUnder(course.upper) % 3;
+  // 寅申巳亥 are 2 mod 3, 子午卯酉 0, 辰戌丑未 1.
+  const byGrade = (pool: readonly Course[]): readonly Course[] => {
+    for (const wanted of [2, 0]) {
+      const at = pool.filter((course) => grade(course) === wanted);
+      if (at.length > 0) return at;
+    }
+    return pool;
+  };
+  const deepest = (pool: readonly Course[]): readonly Course[] => {
+    const most = Math.max(...pool.map(depth));
+    return pool.filter((course) => depth(course) === most);
+  };
 
-  // 「孟深仲淺季當休」 — where a candidate stands is asked *before* what it
-  // suffered, not after it. A board with a candidate on one of the four 孟
-  // palaces (寅申巳亥) never weighs one standing on a 仲, and one standing on
-  // a 季 is out of the reckoning while either of the others is present. Depth
-  // decides inside that group and not across it.
-  const meng = candidates.filter((course) => context.palaceUnder(course.upper) % 3 === 2);
-  const zhong = candidates.filter((course) => context.palaceUnder(course.upper) % 3 === 0);
-  const pool = meng.length > 0 ? meng : zhong.length > 0 ? zhong : candidates;
-
-  const deepest = Math.max(...pool.map(depth));
-  const chosen = pool.find((course) => depth(course) === deepest) as Course;
+  let pool = order === 'palace' ? deepest(byGrade(candidates)) : byGrade(deepest(candidates));
+  if (pool.length > 1) {
+    const side = pool.filter((course) => (context.day.stem.yang ? course.number <= 2 : course.number >= 3));
+    if (side.length > 0) pool = side;
+  }
+  const chosen = pool[0] as Course;
   return { branches: chain(context, chosen.upper), rule: 'shehai', keti: 'shehai' };
 }
 

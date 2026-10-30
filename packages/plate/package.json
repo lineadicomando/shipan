@@ -1,6 +1,6 @@
 {
   "name": "@shipan/plate",
-  "version": "0.40.3",
+  "version": "0.41.0",
   "description": "The drawing: nine palaces, glyphs, colours, SVG and PNG",
   "license": "AGPL-3.0-or-later",
   "type": "module",
