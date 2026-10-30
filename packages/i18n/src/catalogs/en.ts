@@ -1848,6 +1848,13 @@ export const en = {
     'that the palace it stands in controls, as 《吉凶格解》 jíxiōnggéjiě has it, which names a gate controlling its palace 宮迫 gōngpò',
   'form.qimen.menpo.note':
     'Each palace reports how the element of its gate and its own element stand to each other, and that report is the same under both readings. The two readings give the name 門迫 ménpò to different relations. The first reading gives the name to a gate that controls its palace. The second gives it to a gate that its palace controls, and gives a gate that controls its palace the name 宮迫 gōngpò. The choice moves those marks and nothing else on the board.',
+  'form.qimen.leap': 'Under 置閏 zhìrùn, the repeated block of three ju falls',
+  'form.qimen.leap.solstice':
+    'just before a solstice, in 芒種 mángzhòng or in 大雪 dàxuě, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
+  'form.qimen.leap.runyue':
+    'in the term the year’s leap month 閏月 rùnyuè falls under, as 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn has it',
+  'form.qimen.leap.note':
+    'Under 置閏 zhìrùn each term is served by a block of fifteen days, and a term lasts a little longer than that. Every few years the method repeats one block to keep the blocks with the Sun. The first reading repeats it when the gap has grown past nine days, just before the solstice that follows. The second reading repeats the term the year’s leap month falls under, and repeats it in every year that has a leap month. About once in fifty years two leap months come too close together for the second repeat to fit, most recently from 2017 to 2020. For those years the engine lays the board without the repeat, until a text covers the case. The choice moves the ju of the days around the repeated block.',
   'form.qimen.deshi': 'A marvel, 乙 yǐ, 丙 bǐng or 丁 dīng, is marked 三奇得使 sānqídéshǐ when it stands on the heaven plate',
   'form.qimen.deshi.liuyi':
     'over the instrument of one of its two decades on the earth plate, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng and 《遁甲演義》 dùnjiǎ yǎnyì pair them',

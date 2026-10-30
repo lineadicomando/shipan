@@ -1183,7 +1183,8 @@ not have one: `method` carries 拆補, 置閏 and 茅山, and 置閏 means the �
 placement here without saying so. The engine keeps that placement, which is
 what the runnable reference and the worked example both do; `zhirun.ts` used to
 call 芒種 and 大雪 「the only place the tradition allows it」 and that sentence is
-now false and has been corrected. `TODO.md` § 1 carries the debt.
+now false and has been corrected. The name came as `leap`, and `runyue` is
+computed since 2026-10-30: § "`leap: runyue`, built on 《金鏡寶鑑》 alone" below.
 
 **The passage has a second print and not a second witness, which was
 established the wrong way round first.** 遁甲集成 第四冊 prints this whole block
@@ -1291,6 +1292,38 @@ line so that nobody quotes half of it. Its first paragraph has 「氣先到而�
 of this shelf uses. Read on the plate both times. Nothing is taken from either
 clause; the passage is cited here for the placement and for the threshold, and
 the 又云 is recorded so that a later reader does not find it and think it new.
+
+#### `leap: runyue`, built on 《金鏡寶鑑》 alone
+
+Built 2026-10-30 on the user's word, after the measurement above showed that
+the 金函玉鏡's sentence is a third placement and not this one. **The text is
+read for the procedure as well as for the placement**, series pp. 264–265 on
+the plate: the blocks are counted from the 符頭 one after another, 「起元只從符頭，
+不從節氣，局局挨來」, the drift ahead of the terms is the usual state, 「符頭自合超局
+多，接局正授少」, and the verse puts the repeat wherever the leap month is,
+「閏居何氣重三局，不拘芒種與大雪」. The term a leap month falls under is the 中氣
+of the month it follows, which is what both worked years give: 閏三月 repeats
+穀雨, 閏七月 處暑.
+
+**What the engine adds is an anchor, and it says so.** A count 局局挨來 needs a
+starting block and the text names none. `runyueAssignment` in
+`packages/core/src/zhirun.ts` pins each leap month's term to the 符頭 at or
+before its civil day, nought to fourteen days of 超神, which is the state the
+text calls usual and the state both its years show — 1678's 穀雨 on a 甲午 head
+six days ahead, 1691's 處暑 on a 己酉 head four days ahead — and runs the
+blocks one a term between two pins, serving the first term twice. Both repeats
+then fall inside the leap month itself, 閏三月初九 to 二十三 of 1678 and
+閏七月十一 to 二十五 of 1691, which `packages/core/test/zhirun.test.ts` holds.
+
+**And a case the text does not reach, laid on the user's word.** The leap
+months come a little more often than the drift asks to be paid, 184 against 175
+blocks over 1600–2100, so on 9 of the 183 stretches between two leap months the
+pins leave no room for the repeat: 1645, 1702, 1756, 1808, 1862, 1914, 1968,
+2017 and 2074, each the leap month opening the stretch. A running count from
+one of the text's years would instead fall a block behind the Sun every half
+century. Those stretches are laid without the repeat until a text says what a
+practitioner did there; the type's comment and the form's note say so. The
+scripts are `texts/qimen/jinjing-runyue/`.
 
 ### 《奇門探索錄》, which derives the pin the 統宗 only asserts
 
@@ -1736,7 +1769,7 @@ under the naming of the spirits alone.
 | `stemPairs: jinhan` | 《金函玉鏡奇門遁甲秘笈全書》 | 卷二 十干克應訣, the eighty-one set out as its own, read at pp. 30–32 of the 1996 print; added 2026-10-16 |
 | `stemPairs: xianji` | 《奇門仙機》, in 《御定奇門大全》 | the 干論 of 卷十四 and 卷十六, seventy-seven cells read on the plate; added 2026-10-25 |
 | `dingTomb: qian` | 《遁甲符應經》 | 「六丙月奇、六丁星奇在六宮」, under 璋曰, in both copies; and a third copy in the 大全's 景祐秘纂 卷二, 「六丙月奇臨六宮六丁星奇臨六宮」 with a case laying 丁 in 六, read 2026-10-24. 《奇門遁甲金鏡寶鑑》卷一, 「三奇入墓不可為乙二丙丁到六宮」, read on the plate 2026-10-25 |
-| `leap: runyue` | 《奇門遁甲金鏡寶鑑》 | states the placement, works it twice by date, rejects the solstitial one. A work arguing its own reading is its own line |
+| `leap: runyue` | 《奇門遁甲金鏡寶鑑》 | states the placement, works it twice by date, rejects the solstitial one. A work arguing its own reading is its own line; computed since 2026-10-30, the anchor the engine's (§ "`leap: runyue`, built on 《金鏡寶鑑》 alone") |
 | `spiritSeat: tianpan` | 《奇門遁甲統宗》, 《御定奇門大全》 | 卷二's 小值符加大值符法, 「以最上盤之值符加於九星值符所臨之宮」, and 38 of the 39 spirit claims of the 大全's 卷五–十 that tell the seats apart; added 2026-10-20 |
 | `spiritSeat: yinshi` | 《奇門秘訣》 | its commentary on the 煙波釣叟歌, 《御定奇門大全》卷四十七: 「如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符」; added 2026-10-20 |
 | `centreLodging: dun` | 《漢陰居士歌》 | 「任生艮土寄陰禽…坤寄陽禽」, and a 陰遁三局 board worked on it, 《御定奇門大全》卷五十三; added 2026-10-20, with 《御定奇門寶鑑》 beside it as the reporter |

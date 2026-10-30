@@ -15,7 +15,7 @@ import { jieAfter, jieAt, solarTermAt, type SolarTerm } from './solar-terms.js';
 import { fromJulianDay, resolveTime, type LocalMoment } from './time.js';
 import { trueSolarTime, type TrueSolarTime } from './true-solar.js';
 import type { ChartOptions, Place } from './types.js';
-import { zhirunAssignment, type ZhirunAssignment } from './zhirun.js';
+import { runyueAssignment, zhirunAssignment, type ZhirunAssignment } from './zhirun.js';
 
 export interface Pillars {
   year: Ganzhi;
@@ -72,6 +72,12 @@ export interface Moment {
    * zhirun chart reports itself.
    */
   readonly zhirun: ZhirunAssignment;
+  /**
+   * The same bookkeeping under `leap: runyue`, which repeats a block where
+   * the leap month falls. Deferred and not serialised, like `zhirun`, and
+   * read only by a chart that asks for that value.
+   */
+  readonly runyue: ZhirunAssignment;
   /**
    * The jie that closes the month, which `jie` opened.
    *
@@ -199,6 +205,16 @@ export function resolveMoment(
     }),
   );
   Object.defineProperty(moment, 'zhirun', { get: zhirun, enumerable: false });
+
+  const runyue = deferred(() =>
+    runyueAssignment({
+      day: options.dayBoundary === 'zishi' ? effectiveDay + opensNextDay : effectiveDay,
+      julianDayUT: time.julianDayUT,
+      dayOf: (jd) => localDayNumber(jd, input.timezone),
+      context,
+    }),
+  );
+  Object.defineProperty(moment, 'runyue', { get: runyue, enumerable: false });
 
   const jieEnd = deferred(() => jieAfter(time.julianDayUT, context));
   Object.defineProperty(moment, 'jieEnd', { get: jieEnd, enumerable: false });

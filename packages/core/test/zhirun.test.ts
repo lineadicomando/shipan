@@ -4,7 +4,9 @@ import { initEphemeris, type EphemerisContext } from '../src/ephemeris.js';
 import { dayGanzhi } from '../src/ganzhi.js';
 import { localDayNumber } from '../src/lunar.js';
 import { resolveMoment, type Moment } from '../src/pillars.js';
-import { solarTermsBetween } from '../src/solar-terms.js';
+import { SOLAR_TERMS, solarTermsBetween } from '../src/solar-terms.js';
+
+const SOLAR_TERM_IDS: string[] = SOLAR_TERMS.map((term) => term.id);
 import { DEFAULT_OPTIONS, type ChartOptions, type Place } from '../src/types.js';
 
 let context: EphemerisContext;
@@ -209,5 +211,51 @@ describe('the zhirun method', { timeout: 30_000 }, () => {
     const ju = determineJu(moment, chaibu);
     expect(ju.term.id).toBe(moment.solarTerm.term.id);
     expect(ju.leap).toBe(false);
+  });
+});
+
+describe('the zhirun method with leap: runyue', { timeout: 60_000 }, () => {
+  const RUNYUE: ChartOptions = { ...ZHIRUN, leap: 'runyue' };
+  const at = (date: string) => juAt(date, '12:00', RUNYUE);
+
+  it("repeats the term each of 《奇門遁甲金鏡寶鑑》's two years names", () => {
+    // 「如今戊午年閏三月，當重用穀雨閏三局；辛未年閏七月，當重處暑閏三局也」,
+    // series p. 265. 戊午 is 1678 and 辛未 1691, the two such years that carry
+    // those leap months; each repeat falls inside the leap month itself.
+    expect(at('1678-04-28')).toMatchObject({ term: { id: 'guyu' }, yuan: 'xia', leap: false });
+    expect(at('1678-04-29')).toMatchObject({ term: { id: 'guyu' }, yuan: 'shang', leap: true });
+    expect(at('1678-05-13')).toMatchObject({ term: { id: 'guyu' }, yuan: 'xia', leap: true });
+    expect(at('1678-05-14')).toMatchObject({ term: { id: 'lixia' }, yuan: 'shang', leap: false });
+    expect(at('1691-09-03')).toMatchObject({ term: { id: 'chushu' }, yuan: 'shang', leap: true });
+    expect(at('1691-09-18')).toMatchObject({ term: { id: 'bailu' }, yuan: 'shang', leap: false });
+  });
+
+  it('lays without the repeat where two leap months leave it no room', () => {
+    // 閏六月 of 2017 opens a stretch one block short of its own repeat, the
+    // case the text does not reach; it is laid without one, on the user's
+    // word. 閏四月 of 2020 repeats 小滿 as the rule says.
+    for (let offset = 0; offset < 1050; offset += 5) {
+      const date = new Date(Date.UTC(2017, 5, 1) + offset * 86_400_000).toISOString().slice(0, 10);
+      expect(at(date).leap, date).toBe(false);
+    }
+    expect(at('2020-05-21')).toMatchObject({ term: { id: 'xiaoman' }, yuan: 'shang', leap: true });
+    expect(at('2020-06-05')).toMatchObject({ term: { id: 'mangzhong' }, leap: false });
+  });
+
+  it('runs one term a block, and serves twice only the term a leap month falls under', () => {
+    let previous: Ju | undefined;
+    const start = Date.UTC(2010, 0, 3);
+    for (let offset = 0; offset < 365 * 12; offset += 5) {
+      const date = new Date(start + offset * 86_400_000).toISOString().slice(0, 10);
+      const ju = at(date);
+      if (previous && ju.yuan === 'shang' && previous.yuan === 'xia') {
+        const index = (id: string) => SOLAR_TERM_IDS.indexOf(id);
+        const step = (index(ju.term.id) - index(previous.term.id) + 24) % 24;
+        expect(step, date).toBe(ju.leap ? 0 : 1);
+        // A repeated term is always a 中氣, the one a leap month falls under.
+        if (ju.leap) expect(index(ju.term.id) % 2, date).toBe(1);
+      }
+      previous = ju;
+    }
   });
 });

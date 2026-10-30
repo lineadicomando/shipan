@@ -31,7 +31,7 @@ export interface Ju {
    * under zhirun's 超神 it can be a term that has not yet begun.
    */
   term: { id: SolarTermId; hanzi: string; pinyin: string };
-  /** True inside an intercalated block (閏), which repeats 芒種 or 大雪. */
+  /** True inside an intercalated block (閏): 芒種 or 大雪, or under `leap: runyue` the leap month's term. */
   leap: boolean;
 }
 
@@ -145,7 +145,7 @@ export function determineJu(moment: Moment, options: ChartOptions): Ju {
   const daysIntoTerm = moment.julianDayUT - moment.solarTerm.julianDayUT;
 
   if (options.method === 'zhirun') {
-    const assignment = moment.zhirun;
+    const assignment = options.leap === 'runyue' ? moment.runyue : moment.zhirun;
     const entry = JU_TABLE[assignment.term];
     const definition = SOLAR_TERMS.find((candidate) => candidate.id === assignment.term);
     return {

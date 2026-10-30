@@ -279,3 +279,43 @@ function lunarYearOf(starts: readonly number[], leapIndex: number, index: number
   const reference = fromJulianDay(starts[firstMonthIndex] as number, CALENDAR_ZONE);
   return index >= firstMonthIndex ? reference.year : reference.year - 1;
 }
+
+/**
+ * The new moons opening the leap months of the spans that overlap an interval,
+ * in chronological order.
+ *
+ * The same rule `lunarDate` numbers by, asked the other way round: each span
+ * runs from one month eleven to the next, and a span of thirteen months makes
+ * its first month without a zhongqi intercalary. Read by `leap: runyue`, which
+ * repeats a 置閏 block wherever a leap month falls.
+ */
+export function leapMonthsBetween(
+  from: number,
+  to: number,
+  context: EphemerisContext,
+): number[] {
+  const found: number[] = [];
+  let solstice = winterSolsticeBefore(from, context);
+  while (solstice < to) {
+    const nextSolstice = sunCrossing(270, solstice + 1, context);
+    const eleventh = monthStartContaining(solstice, context);
+    const nextEleventh = monthStartContaining(nextSolstice, context);
+    const starts: number[] = [eleventh];
+    for (;;) {
+      const next = newMoonAfter(starts[starts.length - 1] as number, context);
+      if (calendarDay(next) >= calendarDay(nextEleventh)) break;
+      starts.push(next);
+    }
+    starts.push(nextEleventh);
+    if (starts.length - 1 === 13) {
+      for (let i = 0; i < 13; i += 1) {
+        if (!containsZhongqi(starts[i] as number, starts[i + 1] as number, context)) {
+          found.push(starts[i] as number);
+          break;
+        }
+      }
+    }
+    solstice = nextSolstice;
+  }
+  return found;
+}

@@ -1707,6 +1707,13 @@ export const it: Record<MessageKey, string> = {
     'che il palazzo in cui sta domina, come nel 《吉凶格解》 jíxiōnggéjiě, che chiama 宮迫 gōngpò una porta che domina il proprio palazzo',
   'form.qimen.menpo.note':
     'Ogni palazzo dice in che rapporto stanno l’elemento della sua porta e il proprio, e questo rapporto è lo stesso nelle due letture. Le due letture danno il nome 門迫 ménpò a rapporti diversi. La prima lettura lo dà a una porta che domina il proprio palazzo. La seconda lo dà a una porta dominata dal proprio palazzo, e chiama 宮迫 gōngpò una porta che domina il proprio palazzo. La scelta sposta quei segni e nient’altro sulla tavola.',
+  'form.qimen.leap': 'Sotto il 置閏 zhìrùn, il blocco di tre ju che si ripete cade',
+  'form.qimen.leap.solstice':
+    'appena prima di un solstizio, in 芒種 mángzhòng o in 大雪 dàxuě, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
+  'form.qimen.leap.runyue':
+    'nel termine sotto cui cade il mese intercalare 閏月 rùnyuè dell’anno, come nel 《奇門遁甲金鏡寶鑑》 qíméndùnjiǎjīnjìngbǎojiàn',
+  'form.qimen.leap.note':
+    'Sotto il 置閏 zhìrùn ogni termine è servito da un blocco di quindici giorni, e un termine dura un po’ di più. Ogni qualche anno il metodo ripete un blocco, perché i blocchi restino al passo con il Sole. La prima lettura lo ripete quando lo scarto supera i nove giorni, appena prima del solstizio che segue. La seconda lettura ripete il termine sotto cui cade il mese intercalare, e lo ripete in ogni anno che ha un mese intercalare. Circa una volta ogni cinquant’anni due mesi intercalari sono troppo vicini perché la seconda ripetizione ci stia; l’ultima volta è successo fra il 2017 e il 2020. Per quegli anni il motore stende la tavola senza la ripetizione, finché un testo non tratterà il caso. La scelta sposta i ju dei giorni intorno al blocco ripetuto.',
   'form.qimen.deshi': 'Una meraviglia, 乙 yǐ, 丙 bǐng o 丁 dīng, è segnata 三奇得使 sānqídéshǐ quando sta sulla tavola di cielo',
   'form.qimen.deshi.liuyi':
     'sopra l’insegna di una delle sue due decadi sulla tavola di terra, come la abbinano il 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng e il 《遁甲演義》 dùnjiǎ yǎnyì',

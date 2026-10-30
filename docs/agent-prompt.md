@@ -185,7 +185,10 @@ neither disputed.
   chooses one of the other two. 茅山 reads the same term and takes the yuan
   from the instant that term began instead, which moves the ju about three
   hours in five. 置閏 follows the 符頭 through whole blocks and its ju can
-  belong to a term the Sun has not reached yet — the answer says which. Never
+  belong to a term the Sun has not reached yet — the answer says which. Inside
+  置閏, `leap` (`qimen.leap`) says where its repeated block falls: before a
+  solstice by default, or with `runyue` under the term of the year's leap
+  month, a different series of repeats and so different ju around them. Never
   switch method between charts you are comparing, and never present one
   method's chart as the other's.
 - **A board of the day is another board, and it carries twelve hours that it

@@ -1,5 +1,6 @@
-import { sunCrossing, type EphemerisContext } from './ephemeris.js';
+import { sunCrossing, sunLongitude, type EphemerisContext } from './ephemeris.js';
 import { dayGanzhi } from './ganzhi.js';
+import { leapMonthsBetween } from './lunar.js';
 import { SOLAR_TERMS, type SolarTermId } from './solar-terms.js';
 
 /**
@@ -23,7 +24,10 @@ export interface ZhirunAssignment {
   term: SolarTermId;
   /** 0 upper, 1 middle, 2 lower — the stretch's place in its block. */
   yuanIndex: 0 | 1 | 2;
-  /** True inside an intercalated block, which repeats 芒種 or 大雪. */
+  /**
+   * True inside an intercalated block: 芒種 or 大雪 under `leap: solstice`,
+   * the term the leap month falls under under `leap: runyue`.
+   */
   leap: boolean;
 }
 
@@ -75,14 +79,8 @@ const MAX_CHAOSHEN = 8;
  * window forces one, is the intercalation — it repeats the term before the
  * solstice, 芒種 or 大雪.
  *
- * **Where the repeated block goes is itself contested, and this is one side of
- * it.** 《奇門遁甲統宗》卷一 puts it at the solstices and works it by date;
- * 《奇門遁甲金鏡寶鑑》卷之一 repeats instead whichever term the year's *leap
- * month* falls under, works that twice by date, and calls the solstice
- * placement 「於理法都不是」 — a convenience adopted because the leap month was
- * hard to reckon. That is a divergence between practitioners and `method` has
- * no name for it: 置閏 means the 統宗's placement here without saying so.
- * `docs/sources.md` § 置閏 has both, and `TODO.md` § 1 carries the debt.
+ * This is `leap: solstice`, the 統宗's placement, worked by date in its 卷一.
+ * The other value, 《奇門遁甲金鏡寶鑑》's, is `runyueAssignment` below.
  */
 export function zhirunAssignment(args: {
   /** Julian Day Number the day pillar was read from. */
@@ -178,4 +176,116 @@ function solsticesAround(julianDayUT: number, context: EphemerisContext): Solsti
     }
   }
   return found.sort((a, b) => a.julianDayUT - b.julianDayUT);
+}
+
+/**
+ * Assigns a day to its term under 置閏 with `leap: runyue`.
+ *
+ * 《奇門遁甲金鏡寶鑑》卷之一 counts the blocks one after another from the 符頭
+ * — 「起元只從符頭，不從節氣，局局挨來」 — and repeats a block wherever the
+ * year's leap month falls: 「按是年閏月在何節氣下，即於其節氣中重用三局。如今
+ * 戊午年閏三月，當重用穀雨閏三局」. The term a leap month falls under is the
+ * 中氣 of the month it follows, which is the last 中氣 before it opens:
+ * 閏三月 repeats 穀雨, 閏七月 處暑.
+ *
+ * The count needs an anchor and the text gives none, so each such term is
+ * pinned to the 符頭 at or before its civil day — 超神 of nought to fourteen
+ * days, which the text calls the usual state, 「符頭自合超局多，接局正授少」,
+ * and which both its worked years show. Between two pinned terms the blocks
+ * run one a term, and the first term is served twice.
+ *
+ * **Where the two pins leave no room for the repeat, nothing is repeated.**
+ * The leap months come a little more often than the drift asks to be paid —
+ * 184 against 175 blocks over 1600–2100 — so about once in fifty years a
+ * leap month opens a stretch one block too short for its own repeat: the
+ * last was 閏六月 of 2017, the next 閏六月 of 2074. The text says nothing of
+ * the case, and the engine lays those stretches without the repetition, on
+ * the user's word of 2026-10-30, until a text does; the board carries no
+ * `leap` block there. `docs/sources.md` § 置閏 has the measurement.
+ */
+export function runyueAssignment(args: {
+  /** Julian Day Number the day pillar was read from. */
+  day: number;
+  /** The instant, used only to find the leap months around it. */
+  julianDayUT: number;
+  /** An instant's civil day, in the same reckoning as `day`. */
+  dayOf: (julianDayUT: number) => number;
+  context: EphemerisContext;
+}): ZhirunAssignment {
+  const { day, julianDayUT, dayOf, context } = args;
+
+  const cyclePosition = dayGanzhi(day).index % BLOCK;
+  const blockHead = day - cyclePosition;
+  const yuanIndex = Math.floor(cyclePosition / 5) as 0 | 1 | 2;
+
+  // Leap months come at most 33 lunations apart, so 1300 days on either
+  // side always holds a pin before this block and one after it.
+  const pins = leapMonthsNear(julianDayUT, context).map(
+    (opens) => {
+      // The 中氣 the leap month falls under: the last multiple of 30° the Sun
+      // reached before the month opened.
+      const longitude = Math.floor(sunLongitude(opens, context) / 30) * 30;
+      const instant = sunCrossing(longitude, opens - 40, context);
+      const termDay = dayOf(instant);
+      return {
+        instant,
+        termIndex: SOLAR_TERMS.findIndex((t) => t.longitude === longitude),
+        head: termDay - (dayGanzhi(termDay).index % BLOCK),
+      };
+    },
+  );
+
+  const at = pins.findLastIndex((pin) => pin.head <= blockHead);
+  const pin = pins[at];
+  const next = pins[at + 1];
+  // Unreachable: see the reach above.
+  if (!pin || !next) throw new Error('no leap month found around the moment');
+
+  const n = (blockHead - pin.head) / BLOCK;
+  const blocks = (next.head - pin.head) / BLOCK;
+  // A term lasts 15.22 days on average and never strays far from it, so the
+  // terms between the two pins are their distance over that, rounded.
+  const terms = Math.round((next.instant - pin.instant) / (365.2422 / 24));
+  const repeat = blocks - terms;
+  // The heads sit nought to fourteen days before their terms, and a stretch
+  // gains at most fifteen days on the Sun, so the difference is 0 or 1.
+  if (repeat !== 0 && repeat !== 1) throw new Error(`blocks out of step by ${repeat}`);
+
+  const leap = repeat === 1 && n === 1;
+  const step = repeat === 1 && n >= 1 ? n - 1 : n;
+  const term = SOLAR_TERMS[(pin.termIndex + step) % SOLAR_TERMS.length]?.id as SolarTermId;
+  return { term, yuanIndex, leap };
+}
+
+/** Days to a bucket of the cache below. */
+const BUCKET = 1000;
+
+/** The leap months found so far, by context and by bucket of days. */
+const leapMonthCache = new WeakMap<EphemerisContext, Map<number, number[]>>();
+
+/**
+ * The new moons opening the leap months within 1300 days of an instant.
+ *
+ * Cached by the thousand days, for each ephemeris context: a scan lays a
+ * board an hour, and each would otherwise search seven years of new moons
+ * for the same four or five leap months.
+ */
+function leapMonthsNear(julianDayUT: number, context: EphemerisContext): number[] {
+  let buckets = leapMonthCache.get(context);
+  if (!buckets) leapMonthCache.set(context, (buckets = new Map()));
+  const found: number[] = [];
+  const first = Math.floor((julianDayUT - 1300) / BUCKET);
+  const last = Math.floor((julianDayUT + 1300) / BUCKET);
+  for (let bucket = first; bucket <= last; bucket += 1) {
+    let opens = buckets.get(bucket);
+    if (!opens) {
+      const from = bucket * BUCKET;
+      opens = leapMonthsBetween(from, from + BUCKET, context).filter(
+        (jd) => jd >= from && jd < from + BUCKET,
+      );
+      buckets.set(bucket, opens);
+    }
+    found.push(...opens);
+  }
+  return found;
 }

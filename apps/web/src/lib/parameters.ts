@@ -262,9 +262,12 @@ export const DIVERGENCES: readonly Divergence[] = [
     board: 'qimen',
     family: 'shijia',
     values: ['solstice', 'runyue'],
-    implemented: ['solstice'],
+    implemented: ['solstice', 'runyue'],
     fallback: 'solstice',
     inside: { id: 'method', value: 'zhirun' },
+    label: 'form.qimen.leap',
+    says: { solstice: 'form.qimen.leap.solstice', runyue: 'form.qimen.leap.runyue' },
+    notes: { solstice: 'form.qimen.leap.note', runyue: 'form.qimen.leap.note' },
   },
   {
     id: 'strengths',

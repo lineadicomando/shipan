@@ -215,7 +215,9 @@ Each step names the engine parameter, or says "not modelled".
    - 置閏 zhìrùn (`zhirun`). Whole 符頭 blocks of fifteen days. When the 符頭
      runs ahead of the term (超神 chāoshén) by nine days or more, a block is
      repeated before a solstice (`leap: solstice`, the block at 芒種 or 大雪;
-     `leap: runyue`, under the term of the leap month, refused). Held by the
+     `leap: runyue`, in every year with a leap month, under its 中氣, built
+     2026-10-30 with the anchor the engine's and the stretches with no room
+     for the repeat laid without it). Held by the
      統宗 and the 大全. The pin at nine (`MAX_CHAOSHEN` = 8) is the 統宗's, the
      大全 卷十三's and 奇門秘訣's. The 大全 卷十二 says ten
      (「凡過超十日則閏」): not modelled.

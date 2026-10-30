@@ -26,7 +26,9 @@ day, and that is item 1 below. Phase 80, the same day, read the phases of
 the 十二天將 in 《六壬大全》卷二 and moved no code but a comment. Phase 81, the
 same day, measured 《金函玉鏡》's leap-month 訣例 against the engine's leap
 blocks and found a third placement, not the rule the register had read; it
-puts `leap: runyue` to the user. For a reading, **read this section, then pick an item of "What to
+put `leap: runyue` to the user, who said build, and phase 82 built it the
+same day as 0.42.0, not pushed. Item 1 below is still where a session starts.
+For a reading, **read this section, then pick an item of "What to
 do next" below, or a line of § 2.** For it read three things and no more:
 
 1. **what the file is** — `texts/README.md`, one row: grep the filename. It
@@ -105,16 +107,18 @@ and the renders and a script with it.
 yet read», «unread», «still missing», «none opened», «nobody has», «stays
 refused», «this list is empty».
 
-### Where it stands, 2026-10-30, end of phase 81
+### Where it stands, 2026-10-30, end of phase 82
 
-**Version 0.41.0**, in every manifest. **`main` is checked out and no branch
+**Version 0.42.0**, in every manifest, from phase 82's commit, which is not
+pushed and has no tag yet: `v0.42.0` is set when the user says push. **`main` is checked out and no branch
 is open.** `origin/main` is `6b0aa7e`, pushed on the user's word on
 2026-10-30 with the tag `v0.41.0`; `main` is ahead of it by commits that
 are not pushed and change no behaviour — `TODO.md`, `docs/`, the `shushu`
 skill, and in phase 80 a doc comment of `packages/core/src/liuren-lens.ts`:
 `32cb478`, `94be969`, `3c3c0dd` (phase 79), `6e54a59`, `7ca46f1` (phase 80),
-the commit that brought this file up to them, and phase 81's. Phases 79 to 81 change seven rows of `docs/sources.tsv`, which the register page (`apps/web/src/routes/[lang]/notes/sources`)
-renders, so it is not on the live site until the next version ships. 0.41.0 is deployed at
+the commit that brought this file up to them, and phase 81's; phase 82's
+moves behaviour, `leap: runyue`. Phases 79 to 82 change eight rows of `docs/sources.tsv`, which the register page (`apps/web/src/routes/[lang]/notes/sources`)
+renders, so it is not on the live site until 0.42.0 is deployed. 0.41.0 is deployed at
 https://shipan.it, and the footer of the live site says so (checked
 2026-10-30), by `ssh shipan.deploy`, which runs `srv-deploy shipan` on the
 server. **That script deploys `origin/main` and nothing local**: it pulls
@@ -126,7 +130,7 @@ the footer after. Deploying and pushing are always the user's call.
 `v0.37.0` were set on the commits that moved the number, dated as those
 commits; `v0.2.0` and `v0.2.1` stayed lightweight. `v0.40.0` to `v0.41.0` are
 annotated and pushed. `npm run build`, `npm run typecheck` and `npm test` pass
-at the end of phase 81, no test skipped, and `node texts/todo-check.mjs`
+at the end of phase 82, no test skipped, and `node texts/todo-check.mjs`
 finds every name this file gives. **Run `npm run
 build` before `npm test`** in a fresh tree: the MCP and web suites and the
 shelf's scripts import `packages/core/dist`, and a stale `dist` fails them on
@@ -147,6 +151,7 @@ a question needs it:
 | phase 79, 2026-10-30 | 陳公獻's 125 worked cases in the 指南's 卷四, transcribed and laid under both verses: `guiren: chou` on every day-hour case that can tell, the night read by the day seat in 10 of 31, the transmissions agreeing on 124; `shehai: palace` to rung 4. Nothing in the code moved; whether cases make a holder was answered yes |
 | phase 80, 2026-10-30 | 《六壬大全》卷二's 十二將釋 read on the page: every general's phase is its 家's, the 奇門秘訣 agreeing on eight; its 總論 judges a general by the branch it rides, which is what the lens does. The row leaves «—» for rung 4. No code moved but a comment |
 | phase 81, 2026-10-30 | 《金函玉鏡》上冊 p. 87's 「若其年閏正、二、三、四月者，必閏大雪」 set beside `leap: solstice` over 1600–2100: 184 leap months against 175 blocks, the named term within a year on 55 of 179. A third placement reported unattributed, not one rule with p. 425, which follows `solstice`. `leap: runyue` put to the user. No code moved |
+| phase 82, 2026-10-30 | 0.42.0: `leap: runyue` built on 《金鏡寶鑑》's 閏法, the leap month's 中氣 served twice, each such term pinned to the 符頭 at or before it; its two years, 1678 and 1691, reproduced; the nine stretches of 1600–2100 with no room for the repeat laid without it, on the user's word |
 | no phase | the board held in the page and the marks of every drawing (`marks.ts`), 2026-10-15 and 2026-10-18; the review of 2026-10-23, whose leftovers are item 4 of "What to do next". The account is § "Where it stands" of `docs/history/roadmap-2026-10-25.md` |
 
 ### The lens on every board
@@ -334,10 +339,9 @@ that sheet nearly blank.
      六壬 file, if it says the default has no text;
    - the version: a default 六壬 answer closes on a different sentence, so
      an address answers differently and **the second term moves, to
-     0.42.0**, in every manifest and `package-lock.json`, with the tag
-     `v0.42.0` when the user says push. It carries the register rows of
-     phases 79 to 81 to the live site with it;
-   - a phase 82 in `docs/history/`, its line in that README, this file, one
+     0.43.0**, in every manifest and `package-lock.json`, with the tag
+     `v0.43.0` when the user says push;
+   - a phase 83 in `docs/history/`, its line in that README, this file, one
      commit on `main`.
 
 2. **An errand left by 2026-10-22**: the scan form's `gongpo`, § 5. Its
@@ -594,7 +598,7 @@ not a witness**.
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `plate: fei`, `system: yuejia`, `system: nianjia`, `dayDun: liushi`, `leap: runyue`, `strengths: star` |
+| 奇門 | `plate: fei`, `system: yuejia`, `system: nianjia`, `dayDun: liushi`, `strengths: star` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: chunjie` |
@@ -609,7 +613,6 @@ section an art.
 | `plate: fei` | a text flying the 時家 board's own 起例. None held does; the 折衷 flies the stars and the 儀 and turns the gates, which is computed as a third arrangement. Arrives with a family of `system` |
 | `system: yuejia`, `system: nianjia` | being built as the day family was. 《遁甲演義》 and the 統宗 state both; on the year they read 一四七 against 遁甲集成 第三冊's 一七四, which will be two values. The 一七四 line has a second copy in 《御定奇門大全》卷二十九, worked for 1648. No table on the shelf to hold either to |
 | `dayDun: liushi` | the 統宗's rule read on the plate for how a 局 is begun. 《御定奇門大全》卷二十九 begins a sixty-day 局 on a 甲 or 己 day, four terms to it, on a 日家 with a plate of stems, which is not the board `rijia` lays: recorded, not weighed |
-| `leap: runyue` | the user's word. 《金鏡寶鑑》 holds it, states it, works it over 1678 and 1691 and argues against the other value, which is attribution and transcription; how a build places the block inside the leap month's term is the question it brings. 《金函玉鏡》 上冊 p. 87, measured on 2026-10-30 (phase 81), is a third placement it reports and not this one, and its 下冊 p. 425 follows `solstice` |
 | `strengths: star` | which of two arrangements from the star it is — 《金鏡寶鑑》卷之四's, or the 《三元經》's that the 符應經, 紀大奎 and the 探索錄 carry — and whether it reaches past the nine stars |
 | `yuejiang: jieqi`, `yuejiang: true` | a text stating either as its own. None found, on the plate or in the extracts |
 | `zhouye: solar` | which rising, and how. One sentence of 《大六壬精解》 and the 協紀's 日出入, neither with a procedure |
@@ -741,8 +744,8 @@ with a Tang attribution. None of that platform's files states a provenance.
 been opened far enough to say what it is, and `texts/README.md` has a row
 naming each: 134 files, about 33 700 pages. Most pages have never been read
 on the plate, and none is owed a reading: the shelf is read by question. The
-questions standing ask for **four readings** of files held — the 統宗's rule for `dayDun: liushi`, the 金函玉鏡's
-two pages for `leap: runyue`, 《星學大成》's limits and 量天尺 (line 4), 《中國恆星觀測史》 from p. 274
+questions standing ask for **three readings** of files held — the 統宗's rule for `dayDun: liushi`,
+《星學大成》's limits and 量天尺 (line 4), 《中國恆星觀測史》 from p. 274
 (line 5) — and about thirty small
 errands under "Left open" and "Small and left open". About ten refused values
 wait on files not held (§ 1, "Wanted and not held"), which no reading here

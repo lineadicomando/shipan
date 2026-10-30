@@ -240,6 +240,12 @@ export const qimenSchema = {
     .describe(
       'How the ju of a Qi Men chart is determined, and the most divisive choice in the art. Default chaibu, which reads the ju off the term in force and the yuan off the day: the days run in five-day stretches headed by Jia or Ji (the futou), and where the day pillar stands in that fifteen-day cycle is the yuan. maoshan does not read the day at all — it counts sixty shichen from the instant the term began, then sixty more, and gives the rest of the term to the third yuan. zhirun follows the day\'s futou through whole fifteen-day blocks and pays the drift off with an intercalated Mangzhong or Daxue; its ju can belong to a term the Sun has not reached yet, and the answer says which. Three different schools, not three approximations of one another: chaibu and maoshan disagree about three hours in five.',
     ),
+  leap: z
+    .enum(['solstice', 'runyue'])
+    .optional()
+    .describe(
+      'Where method zhirun repeats a fifteen-day block to pay off its drift; ignored by the other methods. Default solstice: Mangzhong or Daxue, once the drift has passed nine days, as the Qimen Dunjia Tongzong has it. runyue: the zhongqi the year\'s leap month falls under, in every year with a leap month, as the Qimen Dunjia Jinjing Baojian has it; each leap term is anchored to the futou at or before its day. About once in fifty years two leap months stand too close for the repeat to fit (most recently 2017 to 2020): the text does not reach the case, and those years are laid without it. The answer says which block is repeated.',
+    ),
   spirits: z
     .enum(['dun', 'fixed', 'baihu', 'huwu'])
     .optional()
@@ -361,6 +367,7 @@ interface RawInput {
   day_boundary?: 'zishi' | 'midnight' | undefined;
   year_boundary?: 'lichun' | 'chunjie' | 'dongzhi' | undefined;
   method?: 'chaibu' | 'zhirun' | 'maoshan' | undefined;
+  leap?: 'solstice' | 'runyue' | undefined;
   spirits?: 'dun' | 'fixed' | 'baihu' | 'huwu' | undefined;
   spirit_seat?: 'tianpan' | 'yinshi' | undefined;
   spirit_phase?: 'none' | 'branch' | 'huaqi' | undefined;
@@ -416,6 +423,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   refuseOtherFamily(
     {
       method: raw.method,
+      leap: raw.leap,
       spirits: raw.spirits,
       spiritSeat: raw.spirit_seat,
       spiritPhase: raw.spirit_phase,
@@ -442,6 +450,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.day_boundary) options.dayBoundary = raw.day_boundary;
   if (raw.year_boundary) options.yearBoundary = raw.year_boundary;
   if (raw.method) options.method = raw.method;
+  if (raw.leap) options.leap = raw.leap;
   if (raw.spirits) options.spirits = raw.spirits;
   if (raw.spirit_seat) options.spiritSeat = raw.spirit_seat;
   if (raw.spirit_phase) options.spiritPhase = raw.spirit_phase;

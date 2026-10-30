@@ -652,12 +652,21 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   leap: {
     board: 'qimen',
     family: 'shijia',
+    label: 'form.qimen.leap',
     values: [
-      { id: 'solstice', implemented: true, heldBy: ['tongzong', 'qimendaquan'] },
+      {
+        id: 'solstice',
+        says: 'form.qimen.leap.solstice',
+        note: 'form.qimen.leap.note',
+        implemented: true,
+        heldBy: ['tongzong', 'qimendaquan'],
+      },
       {
         id: 'runyue',
         name: { hanzi: '閏月', pinyin: 'rùnyuè' },
-        implemented: false,
+        says: 'form.qimen.leap.runyue',
+        note: 'form.qimen.leap.note',
+        implemented: true,
         heldBy: ['jinjingbaojian'],
       },
     ],

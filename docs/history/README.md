@@ -115,6 +115,7 @@ phase.
 | 79 | [陳公獻's cases](79-chen-gongxian-cases.md) | done — the 125 worked cases of the 指南's 卷四 transcribed and laid under both verses: `chou` on every day-hour case that can tell, the night cut followed two times in three, the transmissions agreeing on 124; `shehai: palace` to rung 4; whether cases make a holder put to the user and answered yes; no code moved |
 | 80 | [The phases of the generals](80-the-phases-of-the-generals.md) | done — 《六壬大全》卷二 read on the page: each of the 十二天將 takes its 家's phase, eight confirmed by the 奇門秘訣; the 總論 judges a general by the branch it rides, as the lens does; the row from «—» to rung 4; no code moved but a comment |
 | 81 | [The leap-month rule](81-the-leap-month-rule.md) | done — 《金函玉鏡》上冊 p. 87 measured against `leap: solstice` over 1600–2100: a third placement it reports, not one rule with its p. 425; the register corrected; `leap: runyue` put to the user; no code moved |
+| 82 | [`leap: runyue` built](82-the-leap-month-built.md) | done — 《金鏡寶鑑》's 閏法 computed, each leap month's 中氣 pinned to the 符頭 at or before it; its two years reproduced; nine stretches of 1600–2100 laid without the repeat on the user's word; 0.42.0 |
 
 ## The rest of the record
 
