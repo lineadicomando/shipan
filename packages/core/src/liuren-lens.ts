@@ -13,10 +13,12 @@ import type { LiurenBoard } from './liuren.js';
  * the day stem — and the branch of each transmission with the stem covering
  * it. One row in `docs/sources.tsv`.
  *
- * **The twelve generals have no phase registered** (`docs/notes.md`, the
- * rung «—»), and the drawing leaves them uncoloured for that reason. A lens
- * keeps them by their kind and relates them to nothing until a text giving
- * their phases is read and registered.
+ * **The twelve generals are related by the branch they ride.** 《六壬大全》卷二
+ * gives each a phase, its 家's, and says in the same breath that a reader
+ * takes the 生剋 from the heaven-plate branch under the general:
+ * 「用者專取天盤乘神決之」. So a lens keeps the generals by their kind, relates
+ * that branch, and the drawing leaves them uncoloured (`docs/sources.md`
+ * § "The phases of the twelve generals, read in 《六壬大全》卷二").
  *
  * **No relation of the board's own yet.** 六沖 and 六合 between branches are
  * the art's, and neither has a row in the register: a lens draws a relation
@@ -32,7 +34,7 @@ export type LiurenLayer = 'general' | 'heaven' | 'earth' | 'upper' | 'lower' | '
 
 export const LIUREN_LAYERS: readonly LiurenLayer[] = ['general', 'heaven', 'earth', 'upper', 'lower', 'branch', 'stem'];
 
-/** Every layer but the generals', which have no phase. */
+/** Every layer but the generals', which are related by the branch they ride. */
 export const LIUREN_LENS_LAYERS: readonly LiurenLayer[] = ['heaven', 'earth', 'upper', 'lower', 'branch', 'stem'];
 
 export type LiurenLens = Lens<LiurenLayer, never>;

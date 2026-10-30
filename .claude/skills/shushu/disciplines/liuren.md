@@ -238,6 +238,13 @@ Where other witnesses part from it:
 
 **3.7 十二天將 and the 貴人 guìrén.** The order is 貴人, 螣蛇, 朱雀, 六合, 勾陳,
 青龍, 天空, 白虎, 太常, 玄武, 太陰, 天后 (神定經: 前一 to 前五, 後一 to 後六).
+Each has a 家 and the 家's phase, 《六壬大全》卷二 read on the page: 貴人 己丑
+土, 螣蛇 丁巳 火, 朱雀 丙午 火, 六合 乙卯 木, 勾陳 戊辰 土, 青龍 甲寅 木, 天空
+戊戌 土, 白虎 庚申 金, 太常 己未 土, 玄武 癸亥 水, 太陰 辛酉 金, 天后 壬子 水.
+The same juan's 總論 judges a general by the branch it rides, 「用者專取天盤乘神
+決之」: the noble on 亥 or 子 is water. Read the 生剋 off that branch and name
+the general's own phase only as the image it lends (陳公獻's 「六合屬震，玄武屬
+水，水雷屯」).
 
 **Which branch seats the noble: `guiren`.**
 - **`chou`** (default): 甲戊庚 丑/未, 乙己 子/申, 丙丁 亥/酉, 壬癸 巳/卯, 辛 午/寅.
@@ -480,8 +487,10 @@ keeps the generals by kind, unrelated.
   procedure (`TODO.md` § 1). § 8 lists the leads.
 - Interpretation is refused: the 用神, ranking, timing, advice
   (`docs/refusals.md`, `purposes.ts`). The 課體 travel as names only.
-- The 十二天將 carry no phase, are drawn in neutral ink, and the lens relates
-  them to nothing. The register has no source for them; § 8 gives one.
+- The 十二天將 are drawn in neutral ink and the lens keeps them by kind,
+  relating the branch each rides: the 大全卷二's practice (§ 3.7), not a
+  missing source. A general related by its own phase would be a value
+  wanting a holder.
 - No 年命 on this board. No 神煞 (類聚 卷一 and 大全卷一 carry hundreds).
 - No 課體 beyond the nine shapes.
 
@@ -557,17 +566,8 @@ shelf.
 
 ## 8. Leads against the register
 
-1. **The five phases of the 十二天將.** `TODO.md` lists 卷二 as held and
-   unread, and the register row («the five-phase assignments of the 十二天將»
-   in `sources.tsv`) still reads «no source is registered».
-   - 《六壬大全》 卷二 ★ (論天將) gives each general's 家 and phase:
-     「朱雀…位居前二家丙午火」, 「青龍…位居前五家甲寅木」, 「天空…後六家戊戌土」,
-     「太常…後四家己未土旺四季各十八日」. Wikisource 四庫本 卷02; the 精校本 ★
-     carries it.
-   - 神定經 釋天乙 and 心鏡's 天將 list give the same twelve.
-   - 《御定六壬直指》 and 《六壬經緯》 were asked and carry none (`docs/sources.md`
-     § "Whose each value of a 六壬 board is").
-   - The ring may be coloured once 卷二 is read on the plate.
+1. *(read on the page on 2026-10-30: § 3.7, and `docs/sources.md` § "The phases
+   of the twelve generals, read in 《六壬大全》卷二".)*
 2. **「無親, which no source consulted carries」.**
    - 精解 ★ names it: 「名无亲，即所谓井栏格也」 (`texts/rules/LR-04.md`,
      W02243 p. 21).

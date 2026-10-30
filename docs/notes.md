@@ -25,7 +25,7 @@ unable to weigh one against another. These are the rungs, **strongest first**.
 | **3** | **Over-determination** — a structure with more constraints than it has freedom, so a wrong answer breaks many things at once and the right one breaks none | the 宿 frame; the direction the twelve 人事宮 are counted in |
 | **4** | **A single text that checks itself** — one witness, exhaustive or redundant about the thing in question | 返吟; 太乙's 立成 of 864 cells; each 德 confirmed by its own 五合 |
 | **5** | **A single text with no check available** | 年命; the 年神 bearings |
-| **—** | **Nothing registered.** The engine carries the quantity and no source stands behind it | the five phases of the 十二天將, which is why the drawing leaves them uncoloured |
+| **—** | **Nothing registered.** The engine carries the quantity and no source stands behind it | the 奇門 centre's stem left in the fifth palace, which is what the engine laid before `centreStem` existed |
 
 **Rung 0 is this page's addition to the five, and the five are unchanged.**
 The ladder as first drawn ordered the evidence for a *rule handed down*, and

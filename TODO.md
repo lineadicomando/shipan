@@ -22,7 +22,8 @@ word, built it as `liuren.shehai` with `shehaiFrom` inside `depth`, released
 as 0.41.0. Phase 79, the same day, read 陳公獻's 125 worked cases for the
 noble and the day's cut and moved no code. The question it put — whether a
 run of worked cases makes him a holder — the user answered **yes** the same
-day, and that is item 1 below. For a reading, **read this section, then pick an item of "What to
+day, and that is item 1 below. Phase 80, the same day, read the phases of
+the 十二天將 in 《六壬大全》卷二 and moved no code but a comment. For a reading, **read this section, then pick an item of "What to
 do next" below, or a line of § 2.** For it read three things and no more:
 
 1. **what the file is** — `texts/README.md`, one row: grep the filename. It
@@ -101,14 +102,14 @@ and the renders and a script with it.
 yet read», «unread», «still missing», «none opened», «nobody has», «stays
 refused», «this list is empty».
 
-### Where it stands, 2026-10-30, end of phase 79
+### Where it stands, 2026-10-30, end of phase 80
 
 **Version 0.41.0**, in every manifest. **`main` is checked out and no branch
 is open.** `origin/main` is `6b0aa7e`, pushed on the user's word on
 2026-10-30 with the tag `v0.41.0`; `main` is ahead of it by commits that
 touch only `TODO.md`, `docs/` and the `shushu` skill and are not pushed:
-`32cb478`, `94be969` and `3c3c0dd`, phase 79. The last changes four rows of
-`docs/sources.tsv`, which the register page (`apps/web/src/routes/[lang]/notes/sources`)
+`32cb478`, `94be969`, `3c3c0dd` (phase 79), `6e54a59`, and phase 80's
+commit. Phases 79 and 80 change six rows of `docs/sources.tsv`, which the register page (`apps/web/src/routes/[lang]/notes/sources`)
 renders, so it is not on the live site until the next version ships. 0.41.0 is deployed at
 https://shipan.it, and the footer of the live site says so (checked
 2026-10-30), by `ssh shipan.deploy`, which runs `srv-deploy shipan` on the
@@ -139,6 +140,7 @@ a question needs it:
 | phase 76, 2026-10-26 | the twelve hours of 寶鏡圖's sixty leaves, transcribed and set beside `dayHoursOf`: 截路空亡 at 子 and 丑 only on a 戊 or 癸 day, a second reading recorded with no parameter. Nothing in the code moved |
 | phase 77, 2026-10-30 | the order of 涉害 read on the plate: `palace` by 陳公獻's 增注 to the 《指掌賦》, `depth` by 《六壬視斯》 through the 精解 and by 《六壬大全》卷五, and the count, which the texts take with the lodged stems and by the kind of control. Measured over the 1 380 boards and put to the user. Nothing in the code moved |
 | phase 78, 2026-10-30 | 0.41.0: `liuren.shehai`, `palace` (the default) or `depth`, and inside `depth` `shehaiFrom`, `next` (the default) or `seat`; the count the texts agree on, the lodged stems and the control by kind, under both. Two witnesses, `shisi` and `zhinan`. A default 六壬 board now says no named text lays its combination whole; under `depth` with `seat` it is the 精解's |
+| phase 80, 2026-10-30 | 《六壬大全》卷二's 十二將釋 read on the page: every general's phase is its 家's, the 奇門秘訣 agreeing on eight; its 總論 judges a general by the branch it rides, which is what the lens does. The row leaves «—» for rung 4. No code moved but a comment |
 | phase 79, 2026-10-30 | 陳公獻's 125 worked cases in the 指南's 卷四, transcribed and laid under both verses: `guiren: chou` on every day-hour case that can tell, the night read by the day seat in 10 of 31, the transmissions agreeing on 124; `shehai: palace` to rung 4. Nothing in the code moved; whether cases make a holder was answered yes |
 | no phase | the board held in the page and the marks of every drawing (`marks.ts`), 2026-10-15 and 2026-10-18; the review of 2026-10-23, whose leftovers are item 4 of "What to do next". The account is § "Where it stands" of `docs/history/roadmap-2026-10-25.md` |
 
@@ -289,8 +291,8 @@ that sheet nearly blank.
 - The 續道藏 紫微斗數's 「詳其時照三方四正」 is a digital text with no plate.
 - 太乙's answer is cached `public` for a week, so a change to its shape —
   the lens's included — reaches a returning reader up to a week late.
-- 六壬's 六沖 and 六合 between branches, the 十二天將's phases (§ 1, 六壬),
-  the 日家's nine stars, and the 紫微 四化 flights: each a relation or a
+- 六壬's 六沖 and 六合 between branches, a general related by its own phase
+  (§ 1, 六壬, which waits on a holder), the 日家's nine stars, and the 紫微 四化 flights: each a relation or a
   phase a lens would draw once it has its row.
 - Under `spiritPhase: branch` or `huaqi` the drawing still leaves the spirits
   uncoloured, by decision of phase 74: the value is a relation to read, not a
@@ -330,7 +332,7 @@ that sheet nearly blank.
      0.42.0**, in every manifest and `package-lock.json`, with the tag
      `v0.42.0` when the user says push. It carries phase 79's register rows
      to the live site with it;
-   - a phase 80 in `docs/history/`, its line in that README, this file, one
+   - a phase 81 in `docs/history/`, its line in that README, this file, one
      commit on `main`.
 
 2. **An errand left by 2026-10-22**: the scan form's `gongpo`, § 5. Its
@@ -339,8 +341,7 @@ that sheet nearly blank.
 3. **Or a lead from the `shushu` skill.** Each art's file in
    `.claude/skills/shushu/disciplines/` ends on «Leads against the register»:
    passages located on the web or in a shelf transcription that bear on a row,
-   none read on a plate. The ones that touch a standing question: the five
-   phases of the 十二天將 in 《六壬大全》卷二, held (`liuren.md`); 截路空亡 at two hours in 《星曆考原》卷五, beside 寶鏡圖's
+   none read on a plate. The ones that touch a standing question: 截路空亡 at two hours in 《星曆考原》卷五, beside 寶鏡圖's
    (`almanac.md`); the 楊公忌 check, which the 協紀 says is not the 值日 count
    (`almanac.md`); 洪丕謨 and 盧央 on the shelf for the year and day
    boundaries no text holds yet (`common/foundations.md`). Each is a reading
@@ -438,6 +439,12 @@ fragment alone, e.g. `#extended=1&focus=governor.jinxing&toward=governor`.
 **Nothing is half done.** Each reading and each build has its section in
 `docs/sources.md`, its row in `docs/sources.tsv` and its line in
 `texts/README.md`. What each reading left open, small and blocking nothing:
+
+**Left open by phase 80**, small and blocking nothing: the 總論 of 《六壬大全》卷二
+calls the five generals before the noble 「水、火、土之神」, where their own
+lines give 火 火 木 土 木, perhaps reading 青龍 as the 「水木神」 its page
+calls it; the 景祐神定經, said on the web to give the twelve with 家 and
+phase, is not on the shelf.
 
 **Left open by the reading of 2026-10-30**, each small and none blocking:
 the line 「先以寅申巳亥上乘之神為用」 that the `shushu` skill quotes for 陳公獻
@@ -647,11 +654,10 @@ nothing exposes. Only those with something to wait on:
   and one line; and its 奇墓 gives 乙 both 二 and 六, as 吉凶格解's summary
   does. The half-flown board wants a yin hour worked in any text. The board of a day wants a prompt
   of its own, the scan and the 年命.
-- **六壬.** The five
-  phases of the 十二天將: asked of 《御定六壬直指》 and 《六壬經緯》 and not
-  found there; 《六壬大全》卷二, which gives each general its phase, is held in
-  two modern typesettings (`liuren/liuren-daquan-jingjiao.pdf`,
-  `liuren/liuren-daquan-juan01-10.pdf`) and not read for it.
+- **六壬.** A general related to the day by its own phase, the 家's that
+  《六壬大全》卷二 gives it, read on 2026-10-30: the same juan's 總論 takes the
+  生剋 from the branch a general rides, which the lens computes, and no text
+  read relates by the general's own. A text doing so names a value beside it.
 - **七政四餘.** The 身 as the Moon or as the degree facing the 命; the 命宮 to
   a lodge and a degree by a 量天尺; the 距星 of 觜 and 參. Which node 羅睺 is:
   《星學大成》 names 天首 and 天尾 and does not say.

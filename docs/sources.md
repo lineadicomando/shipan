@@ -3803,9 +3803,11 @@ spirits").
 **On 六壬 the lens is the art's own relation.** The lessons and the
 transmissions are found by 生剋 between a branch and what it stands on, and
 `liurenLens` hands over the same five relations between any two names that
-have a phase. The twelve generals have none registered (`docs/notes.md`,
-the rung «—»), so a lens keeps them by their kind and relates them to
-nothing. 六沖 and 六合 between branches are the art's too, and a lens draws
+have a phase. The twelve generals have phases registered since 2026-10-30,
+and the text that gives them says a general is judged by the branch it rides
+(§ "The phases of the twelve generals, read in 《六壬大全》卷二"), so a lens
+keeps them by their kind and relates the heaven-plate branch each rides.
+六沖 and 六合 between branches are the art's too, and a lens draws
 neither until each has its row.
 
 **On 七政四餘 the lens relates the bodies, and draws 歸垣.** The five
@@ -6021,9 +6023,12 @@ they name a shape of the board. What the manuals hang on that shape does not
 travel: choosing the 用神, ranking the transmissions, dating an outcome. The
 line is `purposes.ts`'s and falls in the same place.
 
-The **十二天將** carry five-phase assignments the tradition transmits, and the
-drawing leaves them in neutral ink for the reason this whole file exists: no
-source is registered for them here. They stay uncoloured until one is.
+The **十二天將** carry five-phase assignments, registered since 2026-10-30
+from 《六壬大全》卷二 (§ "The phases of the twelve generals, read in
+《六壬大全》卷二" below). The drawing leaves them in neutral ink, and the lens
+relates them to nothing, on that same text's word: a general is judged by
+the branch it rides, 「用者專取天盤乘神決之」, and that branch is already on
+the board in its own colour.
 
 **Four 六壬 volumes reached the shelf on 2026-08-31 and none has been read for
 this.** 故宮珍本叢刊 第419冊 brings 六壬粹言, 六壬經緯 and 六壬類聚, and 第417冊
@@ -6218,9 +6223,9 @@ no rung.
 直指's leaf lists them in order, 一貴人 to 十二天后, and its 天干所屬 and 地支所屬
 give phases to stems and branches only. And 《六壬經緯》 has no juan of 神煞
 where this register expected one: its 卷之二 is 定式, the boards day by day,
-and its 卷之三 is 格局, each by its own 目錄. The five phases of the 十二天將
-are therefore still unregistered, and the two sections that were located for
-them have been read.
+and its 卷之三 is 格局, each by its own 目錄. Neither of the two sections located for
+the five phases of the 十二天將 registers them; 《六壬大全》卷二 does, read on
+2026-10-30 (§ "The phases of the twelve generals, read in 《六壬大全》卷二").
 
 **Three refused values have no holder.** `yuejiang: jieqi` and `yuejiang:
 true`: the 精解 prints the 節 beside the 氣 for every month and endorses
@@ -6418,6 +6423,68 @@ in `parameters.ts` (`TODO.md`, "What to do next"). Recorded as found:
 - `shehai: palace` holds on both of his boards where it is at issue. Being
   the same author, that is a single text checking itself: its row moves from
   rung 5 to rung 4.
+
+### The phases of the twelve generals, read in 《六壬大全》卷二
+
+Read on 2026-10-30, after phase 79, in both typesettings held:
+`liuren-daquan-jingjiao.pdf` on the page (pdf 40–52) and
+`liuren-daquan-juan01-10.pdf` on its text layer, its font drawing as boxes.
+The transcription is `texts/liuren/daquan-juan02-tianjiang/README.md`.
+
+**卷二 gives every general a 家 and a phase, and the phase is always the
+家's.** Each 論 of the 十二將釋 opens on the general's place before or behind
+the noble and its 家:
+
+| general | 家 | phase | | general | 家 | phase |
+|---|---|---|---|---|---|---|
+| 天乙貴人 | 己丑 | 土 | | 天后 (後一) | 壬子 | 水 |
+| 螣蛇 (前一) | 丁巳 | 火 | | 太陰 (後二) | 辛酉 | 金 |
+| 朱雀 (前二) | 丙午 | 火 | | 玄武 (後三) | 癸亥 | 水 |
+| 六合 (前三) | 乙卯 | 木 | | 太常 (後四) | 己未 | 土 |
+| 勾陳 (前四) | 戊辰 | 土 | | 白虎 (後五) | 庚申 | 金 |
+| 青龍 (前五) | 甲寅 | 木 | | 天空 (後六) | 戊戌 | 土 |
+
+The two typesettings agree on all twenty-four cells. Where they part, the
+text settles it: the 卷一到十 puts 天后 「前一」, and the 總論 counts 「一后」
+among the five behind. 《大六壬精解》 prints the 總論 and the 論 of these
+generals in the same words (its p. 248 on), so it is a copy of the 大全 here
+and no second witness.
+
+**An independent text carries the same phases for eight of the twelve.** The
+奇門秘訣's 八神所屬, 《御定奇門大全》卷四十七 sheet 1086 (§ "The phases of the
+eight spirits"), names its spirits as these generals and gives 天乙貴神 土,
+螣蛇 巳 火, 太陰 酉 金, 六合 卯 木, 白虎 申 金, 玄武 子 水, and in its 「一本作」
+notes 勾陳 土 and 朱雀 火. Every phase agrees. 玄武 is seated on 子 there and
+on 癸亥 here, which is the same water. 陳公獻's 增注 to the 《指掌賦》 (sheet 28
+of `liuren-zhinan.pdf`, read on the plate) reads 六合 and 玄武 together as the
+hexagram 屯, 「六合屬震，玄武屬水，水雷屯」, calls the dragon 「東方」, and on
+sheet 29 makes the tiger worse where metal is strong, 「金旺虎愈旺」: the same
+phases again, used for an image and not set against the day. 青龍, 天空,
+太常 and 天后 rest on the 大全 alone, each checked by its own 家.
+
+**The same 總論 says the phases are not what a practitioner relates**:
+
+> 凡壬課吉凶系於天將，五行雖各有所屬，而用者專取天盤乘神決之。如貴人屬土，若乘亥子則屬水矣，生克皆以水論。
+
+Each general has its phase, and whoever reads the board takes the 生剋 from
+the heaven-plate branch the general rides: the noble on 亥 or 子 is water.
+That is what the lens already does: it relates every branch of the heaven
+plate and keeps the generals by their kind. So the engine's behaviour has a
+holder in the text that gives the table, and the generals stay uncoloured on
+the drawing for that text's reason, as the 八神 do on 奇門 under every value
+of `spiritPhase`. No text read relates a general to the day by its own phase
+in 生剋. A value doing that would be a parameter beside the 大全's practice,
+and it waits on a holder.
+
+**Not weighed.** The 總論 calls the five before the noble 「水、火、土之神」,
+where their own lines give 火 火 木 土 木; both typesettings and the 精解 print
+it so. 青龍 is called 「水木神」 on its own page, which may be what the 水
+stands for.
+
+**What moves.** The row «the five-phase assignments of the 十二天將» leaves
+rung «—» for rung 4: eight of the twelve stand on two independent texts and
+four on the 大全's own 家, and the row takes the weaker. Nothing in the code
+moves.
 
 ---
 
