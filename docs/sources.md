@@ -1210,7 +1210,7 @@ and the marvels change hands. That is an argument about the method rather than
 the 「以後人難推閏月」 convenience 《金鏡寶鑑》 accuses the placement of being, and
 it belongs beside the accusation.
 
-#### A third text, and the two placements turn out to be one rule
+#### A third text, which reports a third placement and follows the second
 
 《金函玉鏡奇門遁甲秘笈全書》上冊 pp. 87–88, 超神接氣法 — 中州古籍出版社 1996,
 reset from the 1914 lithograph the 序 of 洪葆榮 dates and signs. Read on the
@@ -1220,23 +1220,27 @@ in doubt.
 > 若其年閏正、二、三、四月者，必閏大雪一氣之候；如閏五、六、七、八、九月者，
 > 必閏芒種一氣之候。
 
-**That is both placements at once.** The repeated block is always one of the
-two terms the 統宗 names — 芒種 or 大雪, the two the polarity turns after — and
-**which** of the two is chosen by the term the year's leap month falls under,
-which is 《金鏡寶鑑》's criterion. Neither text is stating what this one states:
-the 統宗 fixes the pair and says nothing about choosing between them, and
-《金鏡寶鑑》 rejects the pair outright and repeats whatever term the leap month
-sits under. So the shelf's two positions are not two halves of a contradiction
-after all — there is a rule under which each is half right, and it is printed.
-
-**What that does to the parameter is nothing yet, and the reason is the count.**
-`leap` has `solstice` implemented and `runyue` refused, and this reading is a
-third and not a second for either: one witness states it, and the standard is
-two. What it does is change what the two existing values *are* — `solstice`
-turns out to be this rule with the choice suppressed, and `runyue` to be it with
-the pair suppressed — and that is the sort of thing a value's description has to
-say before a third is declared. `TODO.md` § 1 carries the debt with the
-placement.
+**It reads as both placements at once, and measured it is neither.** The
+repeated block is always one of the two terms the 統宗 names — 芒種 or 大雪 —
+and the leap month chooses which, which is 《金鏡寶鑑》's criterion. This file
+read that, on 2026-09-09, as one rule under which each of the shelf's two
+positions is half right, with `solstice` the rule with the choice suppressed
+and `runyue` the rule with the pair suppressed. **That was wrong, and the
+engine shows it**, read 2026-10-30. Over 1600–2100 the leap month comes 184
+times and `leap: solstice` repeats a block 175 times, so the two fire at
+different rates and cannot be one series; and of the 179 leap months the
+sentence covers (the five 閏十 and 閏十一 it says nothing about), the engine
+repeats the term the sentence names within a year before the leap month 27
+times, within a year after it 28 times, and in neither 124 times. 120 of the
+175 blocks fall where no leap month calls them. That is the rate two
+independent series give. As printed, the sentence repeats a block in every
+year with a leap month, at a solstitial term: a third placement, beside the
+statement of the drift the same work makes at p. 425 (below) and not a gloss
+on it. The page opens on 「各有訣例」, and the sentence is one of those 訣例,
+reported unattributed. **So it is a third reading with no holder**, the two
+declared values are what they were, and `runyue` is 《金鏡寶鑑》's alone. The
+page does not say whether 大雪 is the one before the leap month or after it;
+the count above takes both. The scripts are `texts/qimen/jinhan-leap/`.
 
 **The same page carries a threshold this file had not recorded.** Its opening
 sentence is 「夫閏奇者，有過九日而後置閏者，有過十四日而置閏者，各有訣例」: nine
@@ -1273,10 +1277,11 @@ arithmetic root of 置閏 stated as arithmetic, and this engine's rule is the sa
 quantity paid off at the same two terms.
 
 **The placement here is the solstitial one**, 冬夏二至前起閏 and the block at
-芒種 or 大雪 — so within one work p. 425 states the 統宗's placement and p. 87
-states which of the two terms the year's leap month picks. Read together they
-are the one rule the earlier note describes, and it is now the work's own two
-halves rather than an inference laid across two texts.
+芒種 or 大雪, paid off when the drift passes nine days. So the work follows
+`leap: solstice`, and the leap-month
+sentence of p. 87 is a 訣例 it reports beside the one it uses, as it does the
+fourteen-day pin. The two pages do not make one rule: the block falls where
+the drift puts it, and the drift keeps no time with the leap month (above).
 
 **And the page contradicts itself on which way 超 and 接 run**, which is worth a
 line so that nobody quotes half of it. Its first paragraph has 「氣先到而節未到，

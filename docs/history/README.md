@@ -114,6 +114,7 @@ phase.
 | 78 | [涉害 as a school](78-shehai-built.md) | done — `liuren.shehai` (`palace` · `depth`) and `shehaiFrom` inside `depth`, the texts' count under both, the 1 380 boards held to phase 77's readings; a default 六壬 board no longer names a text for its whole combination; 0.41.0 |
 | 79 | [陳公獻's cases](79-chen-gongxian-cases.md) | done — the 125 worked cases of the 指南's 卷四 transcribed and laid under both verses: `chou` on every day-hour case that can tell, the night cut followed two times in three, the transmissions agreeing on 124; `shehai: palace` to rung 4; whether cases make a holder put to the user and answered yes; no code moved |
 | 80 | [The phases of the generals](80-the-phases-of-the-generals.md) | done — 《六壬大全》卷二 read on the page: each of the 十二天將 takes its 家's phase, eight confirmed by the 奇門秘訣; the 總論 judges a general by the branch it rides, as the lens does; the row from «—» to rung 4; no code moved but a comment |
+| 81 | [The leap-month rule](81-the-leap-month-rule.md) | done — 《金函玉鏡》上冊 p. 87 measured against `leap: solstice` over 1600–2100: a third placement it reports, not one rule with its p. 425; the register corrected; `leap: runyue` put to the user; no code moved |
 
 ## The rest of the record
 
