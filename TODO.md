@@ -99,17 +99,15 @@ refused», «this list is empty».
 ### Where it stands, 2026-10-30
 
 **Version 0.41.0**, in every manifest. **`main` is checked out and no branch
-is open.** `origin/main` is `28fe2dc`, pushed on the user's word on
-2026-10-25; `main` is ahead of it by the commits of phases 76, 77 and 78,
-not pushed. Phase 78's moves the version to 0.41.0, and its tag `v0.41.0` is
-set only when the user says push. 0.40.3 is deployed at https://shipan.it, and the
-footer of the live site says so (checked 2026-10-26), by `ssh shipan.deploy`, which
+is open.** `origin/main` is `6b0aa7e`, pushed on the user's word on
+2026-10-30 with the tag `v0.41.0`. 0.41.0 is deployed at https://shipan.it,
+and the footer of the live site says so (checked 2026-10-30), by `ssh shipan.deploy`, which
 runs `srv-deploy shipan` on the server; its output shows the image built,
 `docker compose down` and `docker compose up -d`, and the version is checked
 in the footer after. Deploying and pushing are always the user's call.
 **Every version has its tag** since 2026-10-25, when the 48 from `v0.3.0` to
 `v0.37.0` were set on the commits that moved the number, dated as those
-commits; `v0.2.0` and `v0.2.1` stayed lightweight. `v0.40.0` to `v0.40.3` are
+commits; `v0.2.0` and `v0.2.1` stayed lightweight. `v0.40.0` to `v0.41.0` are
 annotated and pushed. `npm run build`, `npm run typecheck` and `npm test` pass
 at the end of phase 78, no test skipped. **Run `npm run
 build` before `npm test`** in a fresh tree: the MCP and web suites and the
