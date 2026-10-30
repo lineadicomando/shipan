@@ -3,33 +3,16 @@
 **The engine is built; the open edge is the paper.** What holds is in
 [`docs/`](docs/README.md); how it got here is in
 [`docs/history/`](docs/history/README.md), never normative. This file was cut
-down on 2026-10-08, and what it carried before is in
-[`docs/history/roadmap-2026-10-08.md`](docs/history/roadmap-2026-10-08.md).
+down on 2026-10-08, 2026-10-25 and 2026-10-30; what it carried each time is in
+docs/history/roadmap-*date*.md, the last
+[`docs/history/roadmap-2026-10-30.md`](docs/history/roadmap-2026-10-30.md).
 
 ## Resuming cold
 
-**Nothing is in progress. One thing is decided and unbuilt**: item 1 of
-"What to do next" below, a build of two `heldBy` and a test, which is where a
-session starts unless the user says otherwise. The lens on every drawn
-board, the user's priority of 2026-10-25, is built and landed (phases 71–74):
-§ "The lens on every board" below is the map of its code and the leads it
-left, and is where surface work starts. Phase 75 took the first two items of
-"What to do next" the same day, and phase 76, on 2026-10-26, read the hours
-of 寶鏡圖 and moved no code; the decision it put to the user, a parameter for
-截路空亡, was answered «wait» (§ 1, 曆注). Phase 77, on 2026-10-30, read
-the order of 涉害 on the plate, and phase 78, the same day and on the user's
-word, built it as `liuren.shehai` with `shehaiFrom` inside `depth`, released
-as 0.41.0. Phase 79, the same day, read 陳公獻's 125 worked cases for the
-noble and the day's cut and moved no code. The question it put — whether a
-run of worked cases makes him a holder — the user answered **yes** the same
-day, and that is item 1 below. Phase 80, the same day, read the phases of
-the 十二天將 in 《六壬大全》卷二 and moved no code but a comment. Phase 81, the
-same day, measured 《金函玉鏡》's leap-month 訣例 against the engine's leap
-blocks and found a third placement, not the rule the register had read; it
-put `leap: runyue` to the user, who said build, and phase 82 built it the
-same day as 0.42.0, not pushed. Item 1 below is still where a session starts.
-For a reading, **read this section, then pick an item of "What to
-do next" below, or a line of § 2.** For it read three things and no more:
+**Nothing is in progress.** A session starts at item 1 of "What to do next",
+unless the user says otherwise. For a reading, read this section, then pick an
+item of "What to do next" or a line of § 2, and for it read three things and
+no more:
 
 1. **what the file is** — `texts/README.md`, one row: grep the filename. It
    has the extent, the page offsets, the way in and what is already read;
@@ -37,330 +20,103 @@ do next" below, or a line of § 2.** For it read three things and no more:
    work's title, read the section the hit is in;
 3. **what the value needs** — § 1, the row under the value's name.
 
-**Do not open** `docs/sources.tsv` (a test and a surface read it),
-`docs/history/` (why, never what), `texts/rules/`, `texts/crosswalk.tsv`,
-`texts/manifest.json`. [`docs/scans.md`](docs/scans.md) is the method: read it
-once before a first survey.
+**Do not open** `docs/sources.tsv` (a test and a surface read it; grep a row
+and edit it in place), `docs/history/` (why, never what), `texts/rules/`,
+`texts/crosswalk.tsv`, `texts/manifest.json`. **How to read** is
+[`docs/scans.md`](docs/scans.md) (read it once before a first survey) and the
+`shushu` skill's `common/development.md`, whose § "Tools on the shelf, by the
+shape of what is read" names the script for each shape — a table, a run of
+worked cases, drawn boards, a date to find, a rule to measure against the
+engine. **Surface work** starts from `docs/architecture.md` § "A board the
+page can point into" and the `new-feature` skill; checking a page by hand is
+under § "What the dev server is looking at".
 
-**A reading is owed four things**: the argument in `docs/sources.md` with its
-date, the row in `docs/sources.tsv` and its rung (found by grep and edited in
-place, never read through), the row of `texts/README.md`, and this file.
-**A reading that moves the code owes more**: the declaration in
-`packages/core/src/parameters.ts` (`heldBy`, a value, its `implemented`), a
-new witness in `packages/core/src/witnesses.ts`, the row in the table of
-holders in `docs/sources.md` § "Whose each value of a 奇門 board is" and its
-siblings, a test (`packages/core/test/witnesses.test.ts` for a holder); the
-version in every manifest and `package-lock.json`, by the three questions of
-`docs/architecture.md` § "Which term moves": an address that answers
-differently moves the second term, something shipping that none answered for
-the third, a session that ships nothing neither; the tag `v<version>` on the
-commit that moves it, annotated `shipan <version> — <its subject>` and pushed
-with it when the user says push; a phase in `docs/history/`
-with its line in that directory's README; and one commit on `main`. A value
-added to the engine also fails the MCP and web suites until § 5's two lists
-carry it, and its strings go into both catalogs under the `reader-copy`
-skill. `node texts/todo-check.mjs`, after a build, holds every parameter,
-value and path this file names to the code.
+**A reading is owed**: the argument in `docs/sources.md` with its date; its
+row in `docs/sources.tsv` and the rung (`docs/notes.md` § "The ladder of
+evidence"); the row of `texts/README.md`; this file; a phase in
+`docs/history/` with its line in that README; one commit on `main`.
 
-A plate reads at two to four pages a
-minute. A woodblock with no 目錄 is found on tiles of six pages rendered
-small, then read on the page; `texts/contact.py` and `texts/banxin.py` do the
-tiling, and a digit is read beside whatever checks it — a sum, a rate, a
-table already held. **A table too long for one reading** — a 立成, a run of
-drawn boards — is transcribed by readers working to a written brief, a page
-range each, into TSV; the cells that disagree with the engine are then
-looked at on the plate before anything is written up. Five precedents, each
-with its brief and its comparison script: `texts/taiyi/tongzong-juan31-notes/`,
-`texts/taiyi/tongzong-juan32-35-boards/`, for prose rather than cells
-`texts/qimen/daquan-juan05-10-hours/` — whose `engine.mjs` lays all 1080 hours
-of the 時家 board off the engine's step functions under several parameter
-values, and is the generator to reuse for any table of 局 and hours — and, for
-one table set against another, `texts/qimen/daquan-juan14-16-stems/`; for
-drawn diagrams, `texts/qimen/daquan-juan60-baojing/`, whose `scripts/` find
-the drawings by their ink (`wheels.py`), cut each to a disc (`disc.py`), lay
-the engine beside the transcription (`compare.mjs`) and find the day a
-drawing fits when it is not its own (`lag.mjs`). Each
-directory has a README or a brief saying what its files are. A transcriber
-normalises titles it believes misprinted, so a title out of sequence is
-checked on the plate too. **The 大全 is surveyed with three scripts** in
-`texts/qimen/daquan-tools/` (its README says how): `blanks.py` brackets
-juan by their blank half-pages, `edges.py` reads the 版心 to confirm each
-bracket, `tile.py` lays eight sheets to a look for the headings. A passage
-that might hold a 起例 is then read at 170–220 dpi, and a doubtful character
-at 400–500. **A date the engine can find** — a solstice on a
-named day pillar and lunar date — is searched rather than guessed:
-`texts/qimen/daquan-juan11-13-zhirun/` has the scripts, run against the built
-engine. `texts/qimen/daquan-juan43-48-mijue/` does the same through the CLI
-for an undated case, and holds a rule read in prose to the 大全's 101 spirit
-claims of 卷五–十: the pattern for testing a commentator's rule against the
-compilation's own tables. **A run of worked cases** — 假如 … 局 … 時, then
-where things stand — is transcribed to `texts/qimen/daquan-juan49-baojian/cases/BRIEF.md`
-and each case laid with `check/board.mjs <陽|陰><局> <hour>` beside it, which
-prints the board off the engine's step functions with the spirits under both
-seats, `HOST=8` lodging the centre in 艮; read every case by eye against it,
-and each one that bears on a value again on the plate. **Keep scratch scripts in `texts/` from the
-start**: `/tmp` was emptied once in the middle of the session of 2026-10-19,
-and the renders and a script with it.
+**A build owes more**: the declaration in `packages/core/src/parameters.ts`
+(value, `implemented`, `heldBy`, `label`, `says`, `note`); a witness in
+`packages/core/src/witnesses.ts` if new; the holders' table in
+`docs/sources.md` (§ "Whose each value of a … board is"); both catalogs under
+the `reader-copy` skill; `apps/web/src/lib/parameters.ts` and the MCP schema in
+`packages/mcp/src/` (both fail their suites until they carry the value);
+`docs/parameters.md`, `docs/agent-prompt.md` where a model reads it; a test
+holding the value to the source's own cases; the version (below).
 
-**Before the session ends, sweep** `docs/sources.md`, `texts/README.md`,
+**The version** moves by `docs/architecture.md` § "Which term moves": an
+address that answers differently moves the second term, something shipping
+that none answered for the third, nothing shipping neither. The number goes
+into every `package.json` and `package-lock.json` in the commit that earns it.
+On the user's word only: the annotated tag `v<version>`, message
+`shipan <version> — <commit subject>`; `git push origin main` and the tag;
+the deploy, `ssh -tt shipan.deploy`, which runs `srv-deploy shipan` on the
+server and deploys `origin/main` and nothing local, then the version in the
+footer of https://shipan.it.
+
+**Checks.** In a fresh tree `npm run build` comes before `npm test`: the MCP
+and web suites and the shelf's scripts import `packages/core/dist`. Then
+`npm run typecheck`, and `node texts/todo-check.mjs`, which holds every
+parameter, value, path and symbol named in backticks here to the code.
+**Before the session ends**, sweep `docs/sources.md`, `texts/README.md`,
 `docs/provenance.tsv` and this file for sentences the session outlived: «not
 yet read», «unread», «still missing», «none opened», «nobody has», «stays
 refused», «this list is empty».
 
 ### Where it stands, 2026-10-30, end of phase 82
 
-**Version 0.42.0**, in every manifest, from phase 82's commit, which is not
-pushed and has no tag yet: `v0.42.0` is set when the user says push. **`main` is checked out and no branch
-is open.** `origin/main` is `6b0aa7e`, pushed on the user's word on
-2026-10-30 with the tag `v0.41.0`; `main` is ahead of it by commits that
-are not pushed and change no behaviour — `TODO.md`, `docs/`, the `shushu`
-skill, and in phase 80 a doc comment of `packages/core/src/liuren-lens.ts`:
-`32cb478`, `94be969`, `3c3c0dd` (phase 79), `6e54a59`, `7ca46f1` (phase 80),
-the commit that brought this file up to them, and phase 81's; phase 82's
-moves behaviour, `leap: runyue`. Phases 79 to 82 change eight rows of `docs/sources.tsv`, which the register page (`apps/web/src/routes/[lang]/notes/sources`)
-renders, so it is not on the live site until 0.42.0 is deployed. 0.41.0 is deployed at
-https://shipan.it, and the footer of the live site says so (checked
-2026-10-30), by `ssh shipan.deploy`, which runs `srv-deploy shipan` on the
-server. **That script deploys `origin/main` and nothing local**: it pulls
-`--ff-only` into its own checkout, refuses a dirty tree there, then builds the
-image, `docker compose down` and `docker compose up -d`. So a version is
-pushed, with its tag, before it is deployed, and the version is checked in
-the footer after. Deploying and pushing are always the user's call.
-**Every version has its tag** since 2026-10-25, when the 48 from `v0.3.0` to
-`v0.37.0` were set on the commits that moved the number, dated as those
-commits; `v0.2.0` and `v0.2.1` stayed lightweight. `v0.40.0` to `v0.41.0` are
-annotated and pushed. `npm run build`, `npm run typecheck` and `npm test` pass
-at the end of phase 82, no test skipped, and `node texts/todo-check.mjs`
-finds every name this file gives. **Run `npm run
-build` before `npm test`** in a fresh tree: the MCP and web suites and the
-shelf's scripts import `packages/core/dist`, and a stale `dist` fails them on
-whatever changed.
+**Version 0.42.0**, in every manifest, tagged `v0.42.0` and deployed at
+https://shipan.it (footer checked 2026-10-30). `main` is checked out and no
+branch is open; `origin/main` is the release commit `588d7d1`, and `main` is
+ahead of it only by commits that change documents (`git log origin/main..`). Build, typecheck and every suite
+pass, no test skipped.
 
-**What the last fortnight did**, each in its own record — read one only when
-a question needs it:
+The last fortnight, one line a stretch; `docs/history/README.md` has a line a
+phase:
 
 | | |
 |---|---|
-| phases 51–70, 2026-10-11 to 2026-10-24 | the shelf: the 《統宗》 of 太乙 read by its juan, and 《御定奇門大全》 read from 卷一 to 卷六十四 for a 起例. Built on them: `yearBoundary: dongzhi` of 太乙, `accord`, `ding`, `dayouEye`, `spirits: huwu`, `centreStem`, `stemPairs`, `spiritSeat`, `menpo`, `yiTomb`, `deshi`, `dayGates`, `dayDun`. One line each in `docs/history/README.md` |
-| phases 71–74, 2026-10-24 and 2026-10-25 | the lens on every drawn board, the bench, the key to the names, `spiritPhase`. § "The lens on every board" below is the map of the code |
-| phase 75, 2026-10-25 | the 干論 of 奇門仙機 read on the plate and laid as `stemPairs: xianji`; 青龍入雲格 and 青龍華蓋 added to the default; the seams between a label and its value set by each vernacular (`cli.between.*`), and the Italian parameter labels made the opening of a sentence |
-| no phase, after phase 75, 2026-10-25 | 0.38.0: `spiritPhase` defaults to `branch`, and the Italian catalog renames five spirits after the 六壬 generals of the same name, 驚門 «Spavento», the plates «tavola di cielo» and «tavola di terra», 剋 «domina». 0.39.0: 六儀擊刑 read off the hour's 直符 where it is carried, not off the earth plate. 0.40.0: 擊刑 by the clock as well, at the hour whose branch the decade's head punishes. `guiren: wei` declared held by the 協紀 too. The `shushu` skill teaches, as a third job. 0.40.1: a section's introduction folds under its heading, kept in `localStorage`, and the privacy note lists three things. 0.40.2–0.40.3: the glyph rain in the ink of each phase, and turning through them with Ctrl. Each commit's body is its record |
-| phase 76, 2026-10-26 | the twelve hours of 寶鏡圖's sixty leaves, transcribed and set beside `dayHoursOf`: 截路空亡 at 子 and 丑 only on a 戊 or 癸 day, a second reading recorded with no parameter. Nothing in the code moved |
-| phase 77, 2026-10-30 | the order of 涉害 read on the plate: `palace` by 陳公獻's 增注 to the 《指掌賦》, `depth` by 《六壬視斯》 through the 精解 and by 《六壬大全》卷五, and the count, which the texts take with the lodged stems and by the kind of control. Measured over the 1 380 boards and put to the user. Nothing in the code moved |
-| phase 78, 2026-10-30 | 0.41.0: `liuren.shehai`, `palace` (the default) or `depth`, and inside `depth` `shehaiFrom`, `next` (the default) or `seat`; the count the texts agree on, the lodged stems and the control by kind, under both. Two witnesses, `shisi` and `zhinan`. A default 六壬 board now says no named text lays its combination whole; under `depth` with `seat` it is the 精解's |
-| phase 79, 2026-10-30 | 陳公獻's 125 worked cases in the 指南's 卷四, transcribed and laid under both verses: `guiren: chou` on every day-hour case that can tell, the night read by the day seat in 10 of 31, the transmissions agreeing on 124; `shehai: palace` to rung 4. Nothing in the code moved; whether cases make a holder was answered yes |
-| phase 80, 2026-10-30 | 《六壬大全》卷二's 十二將釋 read on the page: every general's phase is its 家's, the 奇門秘訣 agreeing on eight; its 總論 judges a general by the branch it rides, which is what the lens does. The row leaves «—» for rung 4. No code moved but a comment |
-| phase 81, 2026-10-30 | 《金函玉鏡》上冊 p. 87's 「若其年閏正、二、三、四月者，必閏大雪」 set beside `leap: solstice` over 1600–2100: 184 leap months against 175 blocks, the named term within a year on 55 of 179. A third placement reported unattributed, not one rule with p. 425, which follows `solstice`. `leap: runyue` put to the user. No code moved |
-| phase 82, 2026-10-30 | 0.42.0: `leap: runyue` built on 《金鏡寶鑑》's 閏法, the leap month's 中氣 served twice, each such term pinned to the 符頭 at or before it; its two years, 1678 and 1691, reproduced; the nine stretches of 1600–2100 with no room for the repeat laid without it, on the user's word |
-| no phase | the board held in the page and the marks of every drawing (`marks.ts`), 2026-10-15 and 2026-10-18; the review of 2026-10-23, whose leftovers are item 4 of "What to do next". The account is § "Where it stands" of `docs/history/roadmap-2026-10-25.md` |
+| phases 51–70, 2026-10-11 to 2026-10-24 | the 《統宗》 of 太乙 read by its juan, and 《御定奇門大全》 from 卷一 to 卷六十四 for a 起例; ten 奇門 and 太乙 values built on them |
+| phases 71–74, 2026-10-24 and 25 | the lens on every drawn board, the bench, the key to the names, `spiritPhase` |
+| phase 75 and after, 2026-10-25 | `stemPairs: xianji`; 0.38.0–0.40.3 (each commit's body is its record) |
+| phases 76–80, 2026-10-26 to 30 | 寶鏡圖's hours; the order of 涉害, built as `liuren.shehai` (0.41.0); 陳公獻's 125 cases; the phases of the 十二天將 |
+| phases 81–82, 2026-10-30 | 《金函玉鏡》's leap-month 訣例 measured, a third placement; `leap: runyue` built (0.42.0) |
 
-### The lens on every board
-
-**Built and landed on 2026-10-25**, the user's priority of that day. Every
-drawn board has a lens and a bench — the 奇門 board of an hour and of a day,
-六壬, 七政四餘, 紫微斗數 and 太乙 — in its section and in the consultation, and
-the 奇門 board of an hour in the scan's dialog.
-Surface work on it follows the `new-feature` skill, a branch, one commit a
-step, and the user looking at each step in the browser before the next: every
-decision below was a correction made that way.
-
-**Read before changing it, and nothing else:** `docs/refusals.md` § "Where to
-look first" (the rule); `docs/architecture.md` § "A board the page can point
-into" (the lens, from «The second is a lens») and § "The bench" (the layout
-and the measure); `docs/history/71-the-lens.md`, `docs/history/72-one-lens-for-every-board.md`,
-`docs/history/73-what-the-lens-relates.md` and
-`docs/history/74-the-phases-of-the-eight-spirits.md` (what was decided and
-reversed, and why).
-The code:
-
-| | |
-|---|---|
-| `packages/core/src/lens.ts` | `Lens`, the descriptor every board fills: `board`, `seats` (strings, in the board's order), `pairSeats` (where a pair may be laid; empty on 太乙), `layers`, `phased`, `crowded` (layers a seat holds several names in, keyed by identifier as well), `things` (`seat`, `layer`, `id`, `element`), `phases`, `linkIds`, `links` (each `between: 'seats'` or `'things'`), `names`; `phaseTable` and `lensNames` to fill it. A seat and a layer together name one place |
-| one instance a board | `qimenLens` and `dayLens` (`dunjia/lens.ts`: 對宮, 五合), `liurenLens` (`liuren-lens.ts`), `qizhengLens` (`qizheng-lens.ts`: the Moon as water, `GUIYUAN` and 歸垣), `ziweiLens` (`ziwei/lens.ts`: 三方, 對宮), `taiyiLens` (`taiyi-lens.ts`: the gods and `ROLE_PHASES`). Each has its test in `packages/core/test/` (`lens`, `liuren-lens`, `qizheng-lens`, `ziwei-lens`, `taiyi-lens`), held to the transmitted text that reads the board that way where there is one; `apps/web/test/marks.test.ts` holds every board's layers to its drawing's |
-| `docs/sources.md` Tier 3, `docs/sources.tsv` | a row «a lens: …» for every relation drawn, and the phases they stand on. **A relation a lens draws is a quantity**: it needs its row and rung before it is drawn |
-| every board endpoint under `apps/web/src/routes/api/` | answers `lens` beside the board; the client imports only types from `core`. 太乙's is public, the lens holding no language and nobody |
-| `apps/web/src/lib/lens.ts` | the state (`LensState`: `layers`, `phases`, `focus`, `pair`, `chosen`, `toward`, `shengke`, `links`, `extended`), `viewOf`, `pairTable`, `pressed`, `pressedSeat`, `pressedInPair`, `oneAtATime`, `wayOf`, `activePhases`, and the fragment (`writeLens`, `readLens(fragment, lens)`). Board-agnostic: seats, layers and links are the descriptor's, `SpotKey` is `${string}:${string}` |
-| `apps/web/src/lib/held-lens.svelte.ts` | `HeldLens`: the fragment ⇄ state, `pick`, `putAway`, `pressedOutside`, `escaped`, `tip`, `focusName`, `pairSaid`, and `inView`, the hanzi of the names kept lit, which the key under the board recedes by. A page gives it `lens`, `t` and `words` |
-| `apps/web/src/lib/lens-words.ts` | how each board's names and seats are said — `nameAt(seat, layer, id)`, `hanziAt(seat, layer, id)`, `seatName(seat)`, `seatPlace(seat, layer)` — one function a board (`qimenWords` … `taiyiWords`), shared by the sections, the consultation and the scan's dialog |
-| `apps/web/src/lib/arrows.ts` | `layArrows`: straight where clear, bent where an arrow would cross a name or lie on another. Board-agnostic |
-| components | `LensSide` (the column: circle, mode, controls) and `LensReading` (what is said under the board), which hold the rest: `LensBar` (ways and controls), `LensMode` (mode and «whole board»), `LensLinks` (the arrows over the drawing), `LensRelations` and `LensPair` (the same in words, under the bench), `FiveWheel` (the circle), `NameKey` (the key to the names under the board, every entry worded, receding by `inView`; its groups from the endpoint, or from `taiyiKeyOf`, `qimenKeyOf` and `liurenKeyOf` in `lib/key.ts`), and `InlineBoard`'s `lens` prop (receding, by `data-lens` on the marks) |
-| `apps/web/src/routes/[lang]/qimen/+page.svelte` | a section holding a lens: `qimenWords`, `new HeldLens(…)`, and `held.pick`, `held.tip`, `held.view` on `InlineBoard`. The 紫微 section shares the press with its row (`lensing`); the consultation, `routes/[lang]/+page.svelte`, chooses the words by the board cast and opens the lens whole when the instrument changes; the scan's `PlateDialog` holds one too, and puts it away when it closes so the scan's address is left as found |
-| `apps/web/src/app.css` | `--board` (a height: the window less `--above`, over `--aspect`), `--above`, `--side`, `--shell` and `--bench-board` (the board's column on a bench, which the scan's dialog draws at), `.bench` with `.side` and `.under` (the column spans the board's row and the key's, the second row `1fr`), `--lens-sheng`, `--lens-ke` |
-| catalogs | `lens.*` (with `lens.where.*`), `label.relation.*` (`duigong`, `wuhe`, `guiyuan`, `sanfang`); the 奇門 copy was reread under the `reader-copy` skill, the strings added on 2026-10-25 were not |
-
-**What was decided, and holds on every board:**
-
-- Nothing is lit when a page opens; a lens is an act of the reader's. Kept
-  things stay as drawn and the rest recedes; nothing is made heavier but what
-  the reader pressed, which is framed as theirs.
-- The page computes no relation: it looks each up in what the engine handed
-  over. A thing with no registered phase takes no part in a relation and can
-  only be kept by its kind (the 十二天將 on 六壬, and the 八神 on 奇門 under
-  `spiritPhase: none`; the default is `branch` since 2026-10-25).
-- The lens lives in the fragment, never in the query, a prompt, storage or a
-  request. The mode is in the fragment too, and the privacy note's inventory
-  of what the browser keeps does not move.
-- Arrows only, violet for 生 and magenta for 剋 and each with its stroke, the
-  other relations in ink; curved by `layArrows` where a straight one is not
-  clear. A pair draws every relation as a flow, from what acts to what is
-  acted on, and holds its two seats in the board's order, never the order
-  pressed, so neither is the asker's.
-- A pair compares only the names pressed inside its two seats. A seat's
-  ground selects it; a name inside a complete pair is put into or taken out of
-  the comparison.
-- Two modes, «Base» by default and «Estesa», named for what each offers and
-  never for who might use it. Both choose a way first — «due palazzi · un
-  nome e il resto · una fase» (the extended mode's third is «tipi e fasi») —
-  and the extended adds multiple choice, kinds of name, and the board's own
-  relations (對宮 and 五合 on 奇門, 歸垣 on 七政四餘, 三方 and 對宮 on 紫微斗數).
-  A board with no pair seats offers two ways. No paragraph of instructions:
-  each way says what to press.
-- «Tavola intera» beside the mode, always in its place and disabled when
-  nothing is laid; also a press on the board outside its seats, a press on the
-  page's ground, and Escape. Not the bar, the column, the readings or any
-  control.
-- The bench: the board whole in the window under the bar, the column beside
-  it scrolling with the page (not sticky), the circle of the five phases at
-  its head, the mode under it, then the lens. The steps of the moment stay in
-  the bar. The key to the marks of strength sits under the board, and the
-  key to the names under that, outside the column: what grows in the column
-  as the lens is used moves nothing. A gloss of the lit names in the column
-  was tried on 2026-10-25 and taken out the same day for that reason; the key
-  recedes with the board instead.
-- Over a name the cursor is a link's hand (a question mark was tried and
-  dropped).
-- The tip over a name is 0.95rem, a step over the board's own words.
-
-**The items, in the order proposed**, each a step of its own on the branch:
-
-1. **Done on 2026-10-25** (phase 72): the lens board-generic, as the table
-   above describes it. A seat and a layer together name one place, so no
-   `unit` was needed: 太乙's rim corners share their names with four palaces
-   and their layers do not meet. A board where they did would need it.
-2. **Done on 2026-10-25** (phase 72): the 奇門 board of a day has its lens,
-   `dayLens(day)` beside `qimenLens`. Its palaces and gates have a phase, a
-   gate its home palace's as on the hour board; **its nine stars have none
-   registered** and are kept by kind only, until a text giving them one is
-   read — as the 八神 were until `spiritPhase` (phase 74). 對宮 carries over and 五合 does not. Two rows in
-   the register.
-3. **Done on 2026-10-25** (phase 72): 六壬 has its lens, `liurenLens`, the
-   five relations between the two plates, the lessons and the
-   transmissions. The descriptor gained `pairSeats` (a pair on the ring
-   alone) and the page a `seatPlace` (where a name stands, in words). The
-   十二天將 are kept by kind until 《六壬大全》卷二 is read and registered;
-   六沖 and 六合 are the obvious links to add once each has its row.
-4. **Done on 2026-10-25** (phase 72): 七政四餘 has its lens, `qizhengLens`,
-   the five relations between the nine bodies with a phase. The remainders'
-   phases are registered from 《御定五星精義》's 四餘所屬 (rung 4), and the
-   lens is tested against its 論恩難仇用. The Sun and the Moon have none,
-   and the palaces are given none: what the art reads between a body and its
-   palace is 歸垣 and 廟旺, not 生剋. The descriptor gained `crowded`, a
-   palace holding several bodies. Then, on the user's word: the Moon as
-   water in the lens, and 歸垣 drawn as a link (phase 73). 《星度指南》's
-   copy of the 四餘所屬 is located in the 合編's recovered text and not read.
-5. **Done on 2026-10-25** (phase 72): 紫微斗數 has its lens, `ziweiLens`,
-   the five relations between the stars 卷二 gives one phase. The three it
-   gives two (天同, 貪狼, 七殺) and the thirteen it passes over are kept by
-   kind; the palaces are given none. A press on the board goes to the row
-   until the reader takes up the lens (a way chosen, or a lens laid), and to
-   the lens after. 三方 and 對宮 read on the Ming 南陽堂 woodblock and drawn as
-   links (phase 73). The 四化 flights are not drawn.
-6. **Done on 2026-10-25** (phase 72): 太乙 has its lens, `taiyiLens`, the
-   five relations between the sixteen gods, each with its seat's phase
-   (rung 4, 卷六), tested against 卷六's own sentence reading thirteen of
-   them from 高叢. 太乙 and the generals are related too, with the phases
-   of their stars from the 五將 read on the plate (phase 73). **No pair on
-   this board** (`pairSeats` empty, and the page offers two ways and not
-   three); laying one on two palaces is a lead below. The lens is in no
-   language and about nobody, so it travels in the endpoint's public answer;
-   its words are the page's.
-7. **The month board**, when there is one: designed with its lens from the
-   start, by the descriptor of item 1.
-8. **八字**, last and only if the user wants it: the four pillars are a grid in
-   the page's type, not a drawing, and the relations a reader would ask for
-   there (合, 沖, the ten gods) are a different lens.
-
-**Checked before each landing, 2026-10-25:** every board printed to
-PDF with a lens laid and without one (`google-chrome --headless=new
---print-to-pdf`), the same number of sheets either way, no arrow and nothing
-faded on paper. The consultation printed too, a board laid in it over the
-DevTools protocol and printed to PDF: every board now starts on the first
-sheet, its height capped at 21cm, where 六壬's and 七政四餘's used to leave
-that sheet nearly blank.
-
-**Leads the lens left, none of them decided:**
-
-- 論星辰生尅制化 (全書 卷之三, PDF 162–163, read on the plate) reads a star's
-  phase against the branch of its own palace and against a star 同度 — so a
-  紫微 palace's ground could take its branch's phase in the lens, rung 4 on
-  that passage. Its last clause on the plate is odd, 「土入金鄉為受制」, where
-  the cycle has earth generating metal; the transcription prints 木鄉.
-- 太乙's palaces now hold phased roles, so a pair could be laid on two
-  palaces; its order would have to be 太乙's numbering, one seat off the 洛書.
-- The 《淘金》, which 盧央 cites for a 文昌 of 熒惑, is not on the shelf.
-- The 續道藏 紫微斗數's 「詳其時照三方四正」 is a digital text with no plate.
-- 太乙's answer is cached `public` for a week, so a change to its shape —
-  the lens's included — reaches a returning reader up to a week late.
-- 六壬's 六沖 and 六合 between branches, a general related by its own phase
-  (§ 1, 六壬, which waits on a holder), the 日家's nine stars, and the 紫微 四化 flights: each a relation or a
-  phase a lens would draw once it has its row.
-- Under `spiritPhase: branch` or `huaqi` the drawing still leaves the spirits
-  uncoloured, by decision of phase 74: the value is a relation to read, not a
-  fact about the board. 《奇門探索錄》's 九神五行 (the 秘笈大全's words, so
-  likely a copy) and 張志春 《神奇之門》 (the 奇門秘訣's phases in prose) are
-  located in transcription and not weighed: § "The phases of the eight
-  spirits" in `docs/sources.md`.
-
-**What to do next, in the order the user has been taking it.**
+## What to do next, in the order the user has been taking it
 
 1. **Decided and unbuilt: 陳公獻 holds `guiren: chou` and `zhouye: branch`**
-   — the user's word of 2026-10-30, after phase 79, that a run of worked
-   cases makes a holder where it is unanimous on the question. 卷四's cases
-   are: `chou` on 41 of the 45 day-hour cases that can tell and `wei` on
-   none, and the day seat at every day hour. The ten nights read by the day
-   seat are a minority recorded with no value, and do not stop `branch`.
-   The argument is `docs/sources.md` § "陳公獻's cases, read for the noble
-   and the day's cut". To build it:
+   — the user's word of 2026-10-30, that a run of worked cases makes a holder
+   where it is unanimous on the question. The argument is `docs/sources.md`
+   § "陳公獻's cases, read for the noble and the day's cut". To build it:
    - `packages/core/src/parameters.ts`: `zhinan` added to `heldBy` of
      `guiren` `chou` and of `zhouye` `branch`. It already holds
      `yuejiang: zhongqi` and `shehai: palace`, so `combinationOf('liuren',
      DEFAULT_LIUREN_OPTIONS)` becomes `{ state: 'together', by: ['zhinan'] }`
      and a default 六壬 board names a text for its whole combination again;
-   - `packages/core/test/combination.test.ts` line 32, which expects
-     `apart`, and any test that pins the sentence `format.ts` writes from it
-     (run the suites: the MCP and web ones print the transcript);
-   - `docs/sources.md`: the table of § "Whose each value of a 六壬 board
-     is", the rows `guiren: chou` and `zhouye: branch`, adding 陳公獻's
-     cases; the last paragraph of § "陳公獻's cases…", which says the
-     `heldBy` waits; and the phase 78 sentence elsewhere that a default
-     board names no text, if it is stated as present (grep «names no
-     text»). `docs/sources.tsv` rows `guiren: chou` and `zhouye: branch`:
-     the holder named in `stands_on`; the rung stays 2. The `shushu` skill's
-     六壬 file, if it says the default has no text;
-   - the version: a default 六壬 answer closes on a different sentence, so
-     an address answers differently and **the second term moves, to
-     0.43.0**, in every manifest and `package-lock.json`, with the tag
-     `v0.43.0` when the user says push;
-   - a phase 83 in `docs/history/`, its line in that README, this file, one
-     commit on `main`.
-
-2. **An errand left by 2026-10-22**: the scan form's `gongpo`, § 5. Its
-   other half, 截路空亡 on 寶鏡圖's sixty leaves, was read on 2026-10-26
-   (phase 76) and is recorded in § 1.
-3. **Or a lead from the `shushu` skill.** Each art's file in
-   `.claude/skills/shushu/disciplines/` ends on «Leads against the register»:
-   passages located on the web or in a shelf transcription that bear on a row,
-   none read on a plate. The ones that touch a standing question: 截路空亡 at two hours in 《星曆考原》卷五, beside 寶鏡圖's
-   (`almanac.md`); the 楊公忌 check, which the 協紀 says is not the 值日 count
-   (`almanac.md`); 洪丕謨 and 盧央 on the shelf for the year and day
-   boundaries no text holds yet (`common/foundations.md`). Each is a reading
-   of a file held, bar two: the 楊公忌 passage is in the 華齡 協紀's (下) and
-   《星曆考原》卷五 is not on the shelf either.
-4. **Or what the review of 2026-10-23 found and did not fix**, each wanting a
-   plate or the user's word:
-   - 六壬: 無親, which 精解
-     names, closed as unnamed; no row for the direction of the generals, the
-     遁干, or 無依, 自任, 自信, 虎視, 冬蛇掩目.
+   - `packages/core/test/combination.test.ts` line 32, which expects `apart`,
+     and any test pinning the sentence `format.ts` writes from it (the MCP
+     and web suites print the transcript);
+   - `docs/sources.md`: the table of § "Whose each value of a 六壬 board is",
+     rows `guiren: chou` and `zhouye: branch`; the last paragraph of
+     § "陳公獻's cases…", which says the `heldBy` waits; any sentence stating
+     as present that a default board names no text (grep «names no text»).
+     `docs/sources.tsv`, the same two rows: the holder in `stands_on`, the
+     rung stays 2. The `shushu` 六壬 file, if it says the default has no text;
+   - a default 六壬 answer closes on a different sentence: **0.43.0**;
+   - phase 83 in `docs/history/`, this file, one commit.
+2. **The scan form's `gongpo`**, § 5.
+3. **A lead from the `shushu` skill**: each art's file in
+   `.claude/skills/shushu/disciplines/` ends on «Leads against the register»,
+   none read on a plate. Those touching a standing question: 截路空亡 at two
+   hours in 《星曆考原》卷五, beside 寶鏡圖's (`almanac.md`, file not held); the
+   楊公忌 check, which the 協紀 says is not the 值日 count (`almanac.md`, in the
+   華齡 協紀's 下 volume); 洪丕謨 and 盧央 on the shelf for the year and day
+   boundaries no text holds yet (`common/foundations.md`).
+4. **What the review of 2026-10-23 found and did not fix**, each wanting a
+   plate or the user's word; rechecked against the code 2026-10-30:
+   - 六壬: 無親, which the 精解 names, closed as unnamed; no row for the
+     direction of the generals, the 遁干, or 無依, 自任, 自信, 虎視, 冬蛇掩目.
    - 曆注: 臨日 carried `xiong`, where the 協紀 overrules the 《樞要歷》 and
      calls it 吉 (華齡 OCR pdf p. 160, memorial p. 13); 十二神 at rung 4 on a
      7 300-day check; the 神煞 row still says seven; 宜忌 refused with no
@@ -369,222 +125,100 @@ that sheet nearly blank.
      `dongzhi` turns the 大運 for six weeks with no witness; no row for
      `dayBoundary: midnight`.
    - 奇門: no row for `spirits: fixed`, `spirits: baihu`,
-     `centreTravel: travel`; the 入墓 row's rung against its now-split axis;
-     the 統宗's and the 秘笈大全 卷一's copies of the 入墓 歌 on the plate;
-     the 飛盤 and 日家 refusal rows and the 十干克應 one (a second witness
-     asked for, 70 for 67).
+     `centreTravel: travel`; the 入墓 row's rung against its split axis; the
+     統宗's and the 秘笈大全 卷一's copies of the 入墓 歌 on the plate; the 飛盤
+     and 日家 refusal rows and the 十干克應 one (a second witness asked for,
+     70 for 67).
    - 七政: `luohou: ascending` with no `heldBy` and no row; the 三辰通載
      described two ways; `minggong: yuejiang`'s 三命通會 lays on the month's
      palace and would part from the Sun's under `gong: ci`.
-   - 太乙: no row for 陽宮/陰宮; 《齊書》 likely 《南齊書》; kintaiyi (MIT) exists against «nothing open
-     computes this board»; `ji: yueji`/`shiji` «being built» against «wait».
+   - 太乙: no row for 陽宮/陰宮; 《齊書》 likely 《南齊書》; kintaiyi (MIT)
+     exists against `docs/agent-prompt.md`'s «nothing open computes this
+     board».
    - 紫微: no row for `yearBoundary: lichun`; the five phases row's rung;
      「辨生剋制化以定窮通」 is 斗數準繩's and not the 太微賦's; 第五冊 of the
      絕學 holds three works; the `sihua` refusal row unmarked.
+5. **The lens, when it moves again**: the month board, designed with its lens
+   from the start; 八字 last and only if the user wants it, the relations
+   there (合, 沖, the ten gods) being a different lens. Leads, none decided:
+   論星辰生尅制化 (全書 卷之三, PDF 162–163) gives a 紫微 palace's ground its
+   branch's phase, rung 4, its last clause odd on the plate (「土入金鄉」, the
+   transcription 木鄉); a pair on 太乙's palaces, in 太乙's numbering; 六壬's
+   六沖 and 六合, a general by its own phase (§ 1), the 日家's nine stars and
+   the 紫微 四化 flights, each once it has its row; 太乙's answer is cached
+   `public` for a week, so a change to its shape reaches a returning reader
+   late. On the 奇門 section the family selector pushes the moment's steps to
+   a second line of the bar at 1920 wide; not looked at narrower, nor choosing
+   another hour with the scan's dialog open.
 
-**On the surface, nothing is owed and nothing is decided next.** What a
-pointer does beyond naming the layer is open. An Italian parameter label is
-the opening of a sentence its value closes (`docs/i18n.md`), so a label
-added later is never a question and never ends on a preposition. On the 奇門
-section the selector of the board's family (2026-10-25) pushes the steps of
-the moment onto a second line of the bar on a 1920-wide window; not looked at
-narrower. Not looked at in a browser: choosing another hour while the
-scan's dialog is open. To take surface work up again, read
-`docs/architecture.md` § "A board the page can point into", then `marks.ts`
-in `packages/plate/src` and `lib/board.ts`; a layer added to a drawing goes
-into `LAYERS` and both catalogs, and `apps/web/test/marks.test.ts` says what
-is missing. Three things learnt checking it by hand: `npm run dev -w
-@shipan/web` serves the built `dist` of the packages and does not see a new
-export, or a changed drawing, until the package is built and the server
-restarted (`pkill -f "node.*vite"`, never `pkill -f vite`, which matches the
-shell running it); a board's SVG is cached `private` for a day, so
-a page reloaded normally can show a drawing from before the change; and a
-page is checked on paper with `google-chrome --headless=new
---no-pdf-header-footer --virtual-time-budget=8000 --print-to-pdf=out.pdf`
-against the dev server, which is how the blank first sheet and the sheets
-cut short were found. The consultation lays nothing until a press, so it is
-printed by driving Chrome over the DevTools protocol (`--remote-debugging-port`,
-fill the form, press, print to PDF); Node's built-in WebSocket is enough
-and no package is needed. A section's lens is laid for a check by its
-fragment alone, e.g. `#extended=1&focus=governor.jinxing&toward=governor`.
+## Decisions held open, by the user's word, until there is more to decide on
 
-**Decisions held open, by the user's word, until there is more to decide on:**
-
-- **六壬's lessons and transmissions in the bare drawing.** On 2026-10-25 the
-  user asked for them to come out of the drawing the section shows, since the
-  tables under it repeat them. They were kept: the four lessons and three
-  transmissions are 7 of the 19 seats the lens presses and relates
-  (`liurenLens`), and so are the rows of bodies over the 七政四餘 ring. The
-  user was told and has not answered. Taking them out needs a decision on
+- **六壬's lessons and transmissions in the bare drawing.** The user asked on
+  2026-10-25 for them to come out of the section's drawing, the tables under
+  it repeating them. They were kept: they are 7 of the 19 seats `liurenLens`
+  presses and relates, as are the rows of bodies over the 七政四餘 ring. The
+  user was told and has not answered; taking them out needs a decision on
   what the lens does with those seats first.
+- **太乙's 月計 · 日計 · 時計: wait, all three** — 2026-10-11. The hour's count
+  is read and would build (from the epoch, the 局 from the 干支 of day and
+  hour, 陰局 after 夏至), reached by argument and eight undated boards; the
+  day's does not, its 上元第一紀 standing 120 or 240 days from its own count;
+  the month's was read as a procedure only. Any of them is a second input type
+  (an instant and a zone where `taiyiBoard` takes a year), a `dayBoundary`
+  under the board's name, a ruling on `gate`, `sanji`, `wufu`, `dayou` and
+  `ding`, and a line in `lib/cacheable.ts`.
+- **`gong: ci`**: the table is read, three cells of twelve miscopied; not
+  built until a second copy gives those three.
+- **囚 and 格 on the dated boards of 卷七: rung 5** — 2026-10-14. Reopened only
+  by a source that moves it, not by the same boards read again.
+- **The test of a count by its digits: not built** — 2026-10-15. It waits on
+  a sentence stating the rule, in any work.
+- **截路空亡 on a 戊 or 癸 day: wait** — 2026-10-26 (§ 1, 曆注).
 
-- **太乙's 月計 · 日計 · 時計: wait, all three** — the user's word of
-  2026-10-11, with the options set out and none taken. The 《統宗》 states
-  each as a procedure and the three stand unalike. The hour's count is read
-  and would build: from the epoch, the 局 following from the 干支 of the day
-  and of the hour, 陰局 after 夏至. It was reached by argument and by eight
-  undated boards agreeing, which is why it waits too. The day's does not
-  build: the 甲子 the work dates as 上元第一紀 stands 120 days, or 240, from
-  where its own count puts it. The month's was read as a procedure and no
-  further. Building any of them is a second input type — an instant and a
-  zone where `taiyiBoard` takes a year — a `dayBoundary` under the board's
-  name, a ruling on `gate`, `sanji`, `wufu`, `dayou` and `ding`, which have
-  counts of the year only, and a line in `lib/cacheable.ts`.
-- **`gong: ci`.** The table is read, with three cells of twelve miscopied.
-  Not built until a second copy gives those three.
-- **囚 and 格 on the dated boards of 卷七: the row stays on rung 5** — the
-  user's word of 2026-10-14. Four boards name 囚 where the engine names it
-  and one names 格, and the dispute that holds the row there is about subjects
-  those cases do not reach. Reopened only by a source that moves it, not by
-  the same boards read again. `docs/sources.md` § "Whose each value of a 太乙
-  board is", under "The rest of 卷七".
-- **The test of a count by its digits: not built** — the user's word of
-  2026-10-15. The 《統宗》卷三十一 立成 labels every count by it and the 金鏡
-  quotes it as 王希明's lists, so it would be a value of a parameter beside
-  the eye's test that `accord` computes; but the labels are a practice
-  induced from a table, and the lists are three prints three ways. It waits
-  on a sentence stating the rule, in any work.
+## Left open by the readings, small and blocking nothing
 
-**Nothing is half done.** Each reading and each build has its section in
-`docs/sources.md`, its row in `docs/sources.tsv` and its line in
-`texts/README.md`. What each reading left open, small and blocking nothing:
+Each reading's errands, newest first; the full wording is in
+`docs/history/roadmap-2026-10-30.md`.
 
-**Left open by phase 80**, small and blocking nothing: the 總論 of 《六壬大全》卷二
-calls the five generals before the noble 「水、火、土之神」, where their own
-lines give 火 火 木 土 木, perhaps reading 青龍 as the 「水木神」 its page
-calls it; the 景祐神定經, said on the web to give the twelve with 家 and
-phase, is not on the shelf.
+- **Phase 80**: the 總論 of 《六壬大全》卷二 calls the five generals before the
+  noble 「水、火、土之神」 where their lines give 火 火 木 土 木; the 景祐神定經
+  is not on the shelf.
+- **Phases 77–79**: 「先以寅申巳亥上乘之神為用」, quoted by the `shushu` skill
+  for 陳公獻 from the web, not found on sheets 14 and 18 of the 指南; the
+  大全卷五's 比用 by element harmony, pdf 130, not weighed; 尉山人's
+  「上克下，取天盤孟仲為驗」; the 精解's 察微 and 綴瑕 at p. 14, not re-read on
+  the plate; the ten nights 陳公獻 reads by the day seat, recorded with no
+  value; 50T1, 59B1 and the 39T2 square.
+- **2026-10-26**, 寶鏡圖's hours (`texts/qimen/daquan-juan60-baojing/hours/`):
+  五不遇 on 26 hours of 20 days, 23 of them by the hour's branch against the
+  day's stem; 丁酉's leaf; the noble, 喜神 and 旬空 marked on some days only.
+- **2026-10-24**, 景祐秘纂 (`texts/qimen/daquan-juan02-04-jingyou/`): the 38L
+  case against 遁甲集成 第一冊; 33L and 35L's 直使; whether 卷之二下's 諸凶格 is
+  吉凶格解's summary copied; the wheels of 46L and 47R; 卷四's five undated
+  直符 passages.
+- **2026-10-22**: 吉凶格解's 釋吉格, seen at 50 dpi; 三奇受制 「丙丁臨一」
+  against the 秘笈大全's 「臨九」; the slip over sheet 1389; 寶鏡圖's six wheels
+  parting in a cell or three, and 卷六十's almanac.
+- **2026-10-17 to 20**, the 大全: 先天要論's 穀雨 and 霜降 局 and 陽遁二局's
+  值符歌; 奇門古本's 雜占 hours; which of the 大全 and 《奇門探索錄》 carries the
+  other; 奇門秘訣's 卷四十三 opening and 卷四十六 sheets 1064–1069, seen at 50
+  dpi; the commentary at sheet 1103; 寶鑑摘要's 陽二局 丙午 case, the four
+  cases splitting on the spirits' seat, the note at sheet 1299L, and whether
+  `baojian` holds `spiritSeat: tianpan`.
 
-**Left open by the reading of 2026-10-30**, each small and none blocking:
-the line 「先以寅申巳亥上乘之神為用」 that the `shushu` skill quotes for 陳公獻
-from the web, not found on sheets 14 and 18 of the 指南; the 大全卷五's 比用
-by element harmony on six named days, seen at pdf 130 and not weighed;
-尉山人's 「上克下，取天盤孟仲為驗」, which the 大全 keeps without following;
-the 精解's 察微 and 綴瑕 cases at p. 14, which open alike under every reading
-and were not re-read on the plate. The one with a consequence on every board, that a default 六壬 board names no
-text for its whole combination since 0.41.0, was read the same day (phase 79)
-and decided: item 1 of "What to do next". Left open by phase 79, each small
-and none blocking: the ten nights 陳公獻 reads by the day seat, nine between
-小滿 and 秋分, recorded with no value and no text stating any such rule; 50T1, an 八專 board
-printing two generals on 卯; 59B1, which prints both halves on one board; and
-the 39T2 square, which does not rotate.
-
-**Left open by the reading of 2026-10-26**, each small and none blocking. In
-寶鏡圖's hours, `texts/qimen/daquan-juan60-baojing/hours/`: 五不遇 on 26 hours
-of 20 days, 23 of them hours whose branch controls the day's stem — a practice
-seen on a third of the days, not stated, and not the 協紀's reading by the
-day's branch; 丁酉's leaf printing a 戊 or 癸 day's hours on a 辰 day's gods; the
-noble, 喜神 and the 旬空 marked on some days only.
-
-**Left open by the reading of 2026-10-24**, each small and none blocking. In
-景祐秘纂 卷二: whether 遁甲集成 第一冊 carries the 38L case, 伏干格 陽五局
-壬申, which marks 庚 over the centre's stem in 坤 — the 演義 works its 伏干格
-on a 甲申 day and reads otherwise, p. 951; the cases of 33L and 35L, which name
-景門 the 直使 where the engine has 生門 and 傷門, garbled round it; and whether
-卷之二下's 諸凶格 list is 吉凶格解's closing summary copied, which its 奇墓 and
-天網四張 suggest and nobody set side by side. Not transcribed: the wheels of 46L
-and 47R. In 卷四: five passages naming an hour and where its 直符 stands, with
-no 局 to lay them from, `cases/83-98.tsv`. Everything is in
-`texts/qimen/daquan-juan02-04-jingyou/`.
-
-**Left open by the reading of 2026-10-22**, each small and none blocking:
-吉凶格解's 釋吉格 — the 九遁, 三詐, 五假, 玉女守門 — seen at 50 dpi and not
-read, since the engine computes none of them; 三奇受制 printed 「丙丁臨一」 in
-吉凶格解 and 「丙丁臨九」 in the 秘笈大全's verse, not weighed; and the
-handwritten slip photographed over sheet 1389. In 寶鏡圖: the six wheels whose stars part
-in a cell or three, re-read on the plate only for 壬午; 卷六十's almanac.
-
-**Left open by the readings of 2026-10-17**, each small and none blocking:
-in 先天要論, the terms 穀雨 and 霜降, whose 局 numbers fall on another
-sheet from their heading and were not looked for, and 陽遁二局's 值符歌
-sending 辛 to 巽 and the centre in one line; in 奇門古本, the 雜占's worked
-hours, not held to the engine; and which of the 大全 and 《奇門探索錄》
-carries the other, since the 大全 holds two of the 探索錄卷三's chapters.
-
-**Left open by the reading of 2026-10-19**, each small and none blocking:
-in 奇門秘訣, 卷四十三's opening 奇門大小將辨, which names the 起例 of 奇門 and
-六壬 in its first line and was seen only at 50 dpi — it reads as the 大將 and
-副將 of an army, not as a board; 卷四十六's leaves on 直使 and on laying the
-六儀 and 三奇, sheets 1064–1069, seen at 50 dpi and not read; and the
-commentary under 「甲乙丙丁戊陽時」, sheet 1103, read at 120 dpi only.
-
-**Left open by the readings of 2026-10-20**, each small and none blocking:
-in 寶鑑摘要, the case 陽二局 丙午 on sheet 1269L, 「六庚加地盤九宮」, which no
-value lays (庚 stands over 坎); the four cases that split on the seat of the
-spirits fall 庚 and 辛 for `tianpan`, 壬 and 癸 for `yinshi`, too few for a
-rule and recorded as they fall; 卷五十四's 出兵方 divides the hours the
-奇門秘訣's way, 「陽時宜從天盤直符下出兵，陰時宜從地盤直符下出兵」, for a
-direction and not a seat; the 漢陰居士歌's 置閏 「凡遁九日或十日」, the count
-unsaid; a cursive note beside 占援兵 on sheet 1299L, too small at 170 dpi; and
-whether `baojian` holds `spiritSeat: tianpan` beside `tongzong`, since
-《御定奇門寶鑑》卷二 is the 統宗's 卷二 and was not read there for this rule.
-None of the 32 cases was found in another work's extract, which locates
-nothing either way.
-
-**Owed a look by the user, and not blocking**: catalog strings nobody but
-their writer has read, newest first, all in both catalogs. Those marked
-*reader-copy* were written under that skill; the rest were not.
-
-- **2026-10-30, phase 78**: `form.liuren.shehai`, its two values and its
-  note, `form.liuren.shehaiFrom` and its two values, and
-  `notes.parameter.shehai` and `.shehaiFrom`. In Italian 剋 is «domìni» there,
-  after «domina», and 涉害 is «guadare il danno», after `label.keti.shehai`.
-- **2026-10-25, after phase 75**: `privacy.storage.intro` and `.means`, «Le
-  introduzioni che hai chiuso», and the inventory's opening reworded to three
-  things; `rain.off`, `rain.ink`, `rain.phase` «color {phase}» and
-  `rain.switch`; and the Italian renaming of 0.38.0 — five of the 八神 after the
-  六壬 generals, 驚門 «Spavento», 六儀 «insegna», «tavola di cielo» and «tavola
-  di terra», 剋 «domina», 天干 «tronco» in the 八字 and 紫微 prompts.
-- **2026-10-25, phase 75** (*reader-copy*): the sixty-eight glosses
-  `label.pattern.*` of the 干論's names, keeping the image of the stem above —
-  明堂 «the hall of light» · «la sala della luce», 玉女 «the jade maiden» · «la
-  fanciulla di giada», 二鳳 «two phoenixes» · «due fenici» beside 朱雀's «la
-  fenice»; `form.qimen.stemPairs.xianji`, and `.shared` and `.note` reworded.
-- **2026-10-25, after phase 74** (*reader-copy*): the Italian `lens.focus`
-  «Punto di partenza: {thing}», `lens.heading` and `lens.relation.*`,
-  reworded so no preposition stands before a name; the three seams
-  `cli.between.*`; and four labels rewritten with the values under them —
-  «prendono il nome» + «dalla metà dell’anno …» / «sempre allo stesso modo:
-  …», «Il verso che insedia il nobile (貴人 guìrén) mette», «I complementi
-  sono» + «tre, senza 紫氣 zǐqì: …», «Il corpo 羅睺 luóhóu è».
-- **2026-10-25, phase 74** (*reader-copy*): `web.note.qizhengFour`,
-  `.qizhengThree`, `.qizhengFrame` and `.taiyiPalaces`, the page's own
-  sentences for the notes under those boards; `form.qimen.spiritPhase`, its
-  three values, its note and `notes.parameter.spiritPhase`;
-  `form.qimen.system.bar` and its two values, the selector in the bar.
-- **2026-10-25, phases 72–73**: the lens's strings added with each board —
-  `lens.where.palace`, `.seat` and `.transmission.*`,
-  `label.relation.guiyuan` «home palace» · «palazzo di casa»,
-  `label.relation.sanfang` «palace of the triad» · «palazzo della triade»,
-  and `lens.relation.guiyuan` and `.sanfang`.
-- **2026-10-22** (*reader-copy*): glosses invented for names no catalog had —
-  `label.pattern.gongpo` «palace oppressed» · «palazzo oppresso»,
-  `label.pattern.sanqideshi` «a marvel finds its envoy» · «la meraviglia trova
-  il suo messo» — and the strings of `form.qimen.menpo`, `yiTomb`, `deshi`,
-  `dayDun` and `dayGates.shun`, with `dayGates.note` reworded.
-- **2026-10-20**: `form.qimen.spiritSeat`, its two values, its note and
-  `notes.parameter.spiritSeat`; `form.qimen.centreLodging.dun` and
-  `form.qimen.centreLodging.note` reworded («Two of the five», «Due delle
-  cinque»).
-- **2026-10-18**: the words a tip and the printed key say for each layer,
-  `label.register.liuren.*`, `.qizheng.*`, `.taiyi.*` and `.ziwei.*` — the
-  longest are «Ciò di cui il palazzo è interrogato» and «Numero del palazzo,
-  nel conto di questa tavola» — and the captions `form.layerLegend.seat` and
-  `form.layerLegend.rim`.
-- **2026-10-16**: `form.taiyi.dayouEye`, its two values and its note, and
-  `notes.parameter.dayouEye`; `form.qimen.stemPairs`, its values, its note
-  and `notes.parameter.stemPairs`; the sixty-five glosses `label.pattern.*` of
-  《金函玉鏡》's names, where 華蓋 is «the parasol» because 天蓬 is already
-  the Canopy.
-- **2026-10-15**: `label.taiyipattern.du`, «shutting in» and «chiusura»;
-  `label.taiyi.dingEye` and `dingCount`, «the fixed eye / count» and
-  «l’occhio / il conto fisso»; `cli.field.taiyiCounts` shortened to «the
-  counts» and «i conti»; the sentences on 杜 and on the 定算 added to
-  `prompt.taiyi.conditions` and `prompt.taiyi.counts`.
-- **2026-10-11**: `form.taiyi.yearBoundary` and its three values,
-  `label.taiyi.accord`, `label.taiyiaccord.*`, the sentence on 和 in
-  `prompt.taiyi.counts`, and the two `form.taiyi.wenchangTaiyi` lines
-  reworded.
+**Owed a look by the user, not blocking**: catalog strings nobody but their
+writer has read, in both catalogs, newest first; the archive lists them with
+their glosses. 2026-10-30: `form.qimen.leap` and its values and note,
+*reader-copy*. Phase 78: `form.liuren.shehai`, `form.liuren.shehaiFrom`,
+`notes.parameter.shehai`. 0.38.0: the privacy note's storage lines, the
+glyph rain's, and the Italian renamings (five 八神 after the 六壬 generals,
+驚門 «Spavento», 六儀 «insegna», the two plates, 剋 «domina»). Phase 75: the
+sixty-eight `label.pattern.*` of the 干論, *reader-copy*. Phases 72–74: the
+lens's strings, `lens.where.*`, `label.relation.*`, `web.note.qizheng*` and
+`.taiyiPalaces`, `form.qimen.spiritPhase`, `form.qimen.system.bar`.
+2026-10-11 to 22: `form.qimen.menpo`, `yiTomb`, `deshi`, `dayDun`,
+`dayGates`, `spiritSeat`, `centreLodging`, `stemPairs`; `form.taiyi.*`;
+`label.register.*`; `label.pattern.*` of 《金函玉鏡》.
 
 ## 1. Parameters that are declared and refused
 
@@ -620,9 +254,9 @@ section an art.
 | `gong: ci` | a second copy for 女, 井 and 張 of 《星學大成》卷一's 宿度過宮之圖 — the 《元史·曆志》 has the 曆's own — and a decision on what it computes under the default frame |
 | `minggong: ascendant` | a holder. A second method and not a second reading |
 | `epoch: taojin` | 《太乙淘金歌》, not held; known through 盧央, who sets evidence against it |
-| `ji: yueji` | being built: a board that takes an instant |
+| `ji: yueji` | the user's word, «wait» ("Decisions held open"); read as a procedure. A board that takes an instant |
 | `ji: riji` | which anchor: the 《統宗》's count puts 25 February 1510 on 局 25 and its dated note on 局 1, a 盈差 of 120 or 240 apart. A dated 日計 board, in any work. `docs/sources.md` § "《太乙數統宗大全》卷二 again" |
-| `ji: shiji` | being built. The hours run from the epoch and the 盈差 does not reach them; whether a day's hours open at 子初 or 子正 is asked first |
+| `ji: shiji` | the user's word, «wait» ("Decisions held open"). The hours run from the epoch and the 盈差 does not reach them; whether a day's hours open at 子初 or 子正 is asked first |
 | `yearBoundary: chunjie` | a holder. The default has none either |
 | `geChong: chong` | the rule as a sentence. 盧央's board for 940 shows it of 始擊; the 《統宗》卷七 states 格 by the facing palace alone, and on its 589 board adds a 格 of the 太歲, p. 69 |
 | `leapMonth: current`, `leapMonth: split` | a manual stating either. A program computes one |
@@ -716,7 +350,7 @@ later.
 |---|---|---|
 | 1 | **A dated 日計 board, or the 盈差 of the day explained**: what `ji: riji` waits on | not in the 《統宗》 where it was looked for: 卷三十六 to p. 392, 卷四 p. 41 and 卷十八 whole were read on 2026-10-11 and every board is entered by its 局, and the 144 drawn boards of 卷三十二–三十五, read on 2026-10-15, are entered by their 局 and five 干支 with no year. Left in that work: the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
 | 2 | the lists of 上和 · 次和 · 下和, which three prints give three ways, and which count is read against 太乙's palace | the notes of the 《統宗》卷三十一 立成 were read on 2026-10-15: its table labels every count by its digits, ungraded, and none against 太乙's palace — so it answers neither question. A copy of the 金鏡 that is not the 四庫's, or a work quoting 王希明's lists: none held. The 金鏡 卷二 leaves 9–10, the 《統宗》卷六 pp. 54–56 and 盧央 pp. 477–479 were read on 2026-10-11 |
-| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets at 600 dpi, two book-pages to a sheet, right one first, each juan opening on a left page and located by the 版心 (`texts/qimen/daquan-tools/`). **Read for a 起例, and one found that the engine did not compute, `spiritSeat: yinshi` since 2026-10-20**: the 目錄; 卷一 of 景祐秘纂; 卷五–十, the eighteen 局 hour by hour (sheets 114–268); 卷十一–十三, 遁甲通明鈐, which states 置閏 at two pins (269–345); 卷十四–十六, 奇門仙機, omens and two stem tables, the tables transcribed (346–416); 卷十七–二十四, 先天要論, which states 置閏 and the ordinary 局 and carries the 探索錄's 符經 (417–588); 卷二十五 of the 符應經, with 卷二十六–二十七 only at sheets 607, 615–620, 631, 637; 卷二十八–三十二, 奇門古本, whose 卷二十九 states the 年家 on 一七四 with the 集成's epoch chain (659–759); 卷三十三–三十八, 乾坤變異錄, omens of the sky and the ground (760–893); 卷三十九–四十二, 禽遁秘訣陰符經, a juan earlier than the 目錄 has it, which is 演禽 and whose 遁甲 run in 卷四十 states the ordinary 起例 (894–982); 卷四十三–四十八, 奇門秘訣, a juan shorter than the 目錄 has it, whose commentary on the 煙波釣叟歌 states the ordinary 局 and 置閏 at nine, and seats the eight spirits from the earth-plate 直符 at a 己 to 癸 hour, which the 大全's own 卷五–十 do not follow and the engine computes as `spiritSeat: yinshi` (983–1116); 卷四十九–五十七, 寶鑑摘要, the 統宗's 起例 again and a book of 占 whose 32 cases the engine lays, with 漢陰居士歌 holding `centreLodging: dun` (1117–1302); 卷五十八–五十九, 吉凶格解, the 格 one by one and no 起例, whose 入墓 verse holds `dingTomb: gen` and whose 門迫 names the converse relation (1303–1364); 卷六十–六十四, 寶鏡圖, a day almanac and sixty day boards that lay the 日家's yang count every day and turn the gates with the sun (1365–1485); 景祐秘纂 卷二–四, the 符應經's 卷中 and verse, whose cases put the 演義 among the holders of `centreStem: host` (31–113). `docs/sources.md` has a section for each, titled by the juan. **The 大全 is read for a 起例 from 卷一 to 卷六十四**, and has nothing left to read for one. The 目錄's juan numbers have been wrong four times, so each work is bracketed on the 版心 before it is read |
+| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`, 1485 sheets: **read for a 起例 from 卷一 to 卷六十四**, with nothing left to read for one; it found `spiritSeat: yinshi`. Each work in it has a section of `docs/sources.md` titled by its juan, and the sheet ranges are its row in `texts/README.md`. Its 目錄's juan numbers were wrong four times, so a work is bracketed on the 版心 before it is read. Kept as the map of the file for a question put to it later |
 | 4 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
 | 5 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 
@@ -764,6 +398,7 @@ the 大全's `engine.mjs` already lays the 1080 it would be held to.
 
 **Where the state is kept**: `docs/sources.md` what is read,
 `docs/provenance.tsv` what is held, `texts/README.md` what each file is.
+
 
 ## 3. What a reading may not claim
 

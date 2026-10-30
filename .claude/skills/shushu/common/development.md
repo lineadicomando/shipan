@@ -28,8 +28,8 @@ no plate».
 
 ## Before anything: where the work stands
 
-`TODO.md` § "Resuming cold", then § 2. That section says what to read and
-what not to open. Do not start from `docs/history/`.
+`TODO.md` § "Resuming cold", then "What to do next" and § 2. That section
+says what to read and what not to open. Do not start from `docs/history/`.
 
 ## Taking up a reading
 
@@ -40,12 +40,68 @@ what not to open. Do not start from `docs/history/`.
 2. **What the file is** before what it says: its row in `texts/README.md`; for
    a new file, the four commands of `docs/scans.md` § "What a file is, before
    what it says".
-3. **How to read it**: `docs/scans.md` owns the method. The precedents in
-   `TODO.md` § "Resuming cold" say which tool fits which shape: a table, a run
-   of worked cases, a run of drawn boards, prose with a 起例.
-4. **What it is owed when done**: the four things of `TODO.md` § "Resuming
-   cold" — argument with date, register row and rung, shelf row, roadmap — and
-   a phase in `docs/history/`, and one commit.
+3. **How to read it**: `docs/scans.md` owns the method. § "Tools on the
+   shelf, by the shape of what is read" below says which tool fits which
+   shape: a table, a run of worked cases, a run of drawn boards, prose with a
+   起例, a rule measured against the engine.
+4. **What it is owed when done**: the list in `TODO.md` § "Resuming cold" —
+   argument with date, register row and rung, shelf row, roadmap, a phase in
+   `docs/history/` — and one commit.
+
+## Tools on the shelf, by the shape of what is read
+
+All of it is in `texts/`, local and gitignored; each directory named here has
+a README or a brief saying what its files are. **Keep scratch scripts in
+`texts/` from the start**: `/tmp` was emptied once in the middle of a session,
+and the renders and a script with it. **Run `npm run build` first**: the
+scripts import `packages/core/dist`, and a stale `dist` answers for code that
+is no longer there.
+
+- **Pace.** A plate reads at two to four pages a minute. A passage that might
+  hold a 起例 is read at 170–220 dpi, a doubtful character at 400–500. A digit
+  is read beside whatever checks it — a sum, a rate, a table already held.
+- **A woodblock with no 目錄** is found on tiles of six pages rendered small,
+  then read on the page: `texts/contact.py`, `texts/banxin.py`. The 《御定奇門大全》
+  is surveyed with `texts/qimen/daquan-tools/` — `blanks.py` brackets juan by
+  their blank half-pages, `edges.py` reads the 版心 to confirm each bracket,
+  `tile.py` lays eight sheets to a look for the headings. A 目錄 can be wrong
+  about its own book: bracket on the 版心.
+- **A table too long for one reading** — a 立成, a run of drawn boards — is
+  transcribed by readers working to a written brief, a page range each, into
+  TSV; the cells that disagree with the engine are then looked at on the plate
+  before anything is written up. A transcriber normalises titles it believes
+  misprinted, so a title out of sequence is checked on the plate too.
+  Precedents, each with its brief and its comparison script:
+  `texts/taiyi/tongzong-juan31-notes/`, `texts/taiyi/tongzong-juan32-35-boards/`;
+  for prose rather than cells `texts/qimen/daquan-juan05-10-hours/`, whose
+  `engine.mjs` lays all 1080 hours of the 時家 board off the engine's step
+  functions under several parameter values and is the generator to reuse for
+  any table of 局 and hours; for one table set against another
+  `texts/qimen/daquan-juan14-16-stems/`.
+- **Drawn diagrams**: `texts/qimen/daquan-juan60-baojing/scripts/` find the
+  drawings by their ink (`wheels.py`), cut each to a disc (`disc.py`), lay the
+  engine beside the transcription (`compare.mjs`) and find the day a drawing
+  fits when it is not its own (`lag.mjs`).
+- **A date the engine can find** — a solstice on a named day pillar and lunar
+  date — is searched rather than guessed: `texts/qimen/daquan-juan11-13-zhirun/`,
+  run against the built engine. `texts/qimen/daquan-juan43-48-mijue/` does the
+  same through the CLI for an undated case, and holds a commentator's rule
+  tested against the compilation's own tables (101 spirit claims of 卷五–十).
+- **A run of worked cases** — 假如 … 局 … 時, then where things stand — is
+  transcribed to `texts/qimen/daquan-juan49-baojian/cases/BRIEF.md` and each
+  case laid with `check/board.mjs <陽|陰><局> <hour>`, which prints the board
+  off the engine's step functions with the spirits under both seats (`HOST=8`
+  lodges the centre in 艮); each case is read by eye against it, and each that
+  bears on a value again on the plate. For 六壬, `texts/bench/run.mjs` runs the
+  worked examples the sources print, and `--uncovered` lists the shapes with
+  no adapter.
+- **A stated rule measured against the engine** over centuries rather than
+  sampled: `texts/qimen/jinhan-leap/` (where `leap: solstice` repeats against
+  where a leap month falls, 1600–2100) and `texts/qimen/jinjing-runyue/`
+  (whether one anchoring of a running count holds). A walk over five hundred
+  years a day at a time takes minutes: split it by century and run the parts
+  side by side.
+- **Leads, never findings**: `texts/shelf.py crosswalk --moves` and `--gaps`.
 
 ## Weighing what was read
 

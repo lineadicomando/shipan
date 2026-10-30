@@ -68,6 +68,20 @@ two versions of the same message.
 The tests are not affected: `npm test` builds along the way, and every test
 that reads a catalog reads the source.
 
+**Checking a page by hand** has three traps and two tools. A dev server
+started before a package was rebuilt does not see a new export or a changed
+drawing until it is restarted — `pkill -f "node.*vite"`, never
+`pkill -f vite`, which matches the shell running it. A board's SVG is cached
+`private` for a day, so a page reloaded normally can show a drawing from
+before the change. And a section's lens is laid for a check by its fragment
+alone, e.g. `#extended=1&focus=governor.jinxing&toward=governor`. Paper is
+checked with `google-chrome --headless=new --no-pdf-header-footer
+--virtual-time-budget=8000 --print-to-pdf=out.pdf` against the dev server,
+which is how a blank first sheet and sheets cut short were found; the
+consultation lays nothing until a press, so it is printed by driving Chrome
+over the DevTools protocol (`--remote-debugging-port`, fill the form, press,
+print to PDF), for which Node's built-in WebSocket is enough.
+
 ## Inside `core`
 
 ```
