@@ -263,7 +263,10 @@ Where other witnesses part from it:
 - `guiren` moves the generals and never the 三傳.
 
 **Day or night half: `zhouye`.**
-- **`branch`** (卯–申 晝, 酉–寅 夜; implemented): 精解, 經緯 and 直指.
+- **`branch`** (卯–申 晝, 酉–寅 夜; implemented): 精解, 經緯 and 直指; and
+  陳公獻's 125 cases in the 指南, decided 2026-10-30 and not yet in `heldBy`
+  (TODO.md, "What to do next" 1). His cases read 10 of 31 nights by the day
+  seat, nine of them between 小滿 and 秋分.
 - **`solar`** (refused): 精解 「古來亦有…准星之出沒或日之出沒而分晝夜者」. 程樹勳:
   「貴人治旦暮，或以日出為旦，用陽貴；日入為暮，用陰貴。或以卯至申…」, quoting
   《六壬心鏡注》 「用晝夜長短分旦暮」. 神定經 釋日出沒 tabulates sunrise and
@@ -517,10 +520,17 @@ shelf.
    `shehaiFrom`. See § 3, item 3.
 5. *(merged into 4.)*
 6. **Direction of the generals.** The rule has witnesses (精解 ★, 增注 ★,
-   神定經 ☆) and no row in `docs/sources.tsv`. Add one.
+   神定經 ☆) and no row in `docs/sources.tsv`. Add one. 陳公獻's 125 cases
+   lay the generals the engine's way wherever the noble's seat is right
+   (`texts/liuren/zhinan-cases/`), which is his practice beside his 增注.
 7. **The 通書 clause 「冬至後用之 / 夏至後用之」** on 陽/陰貴 (星曆考原 卷五 ☆,
    協紀 卷七 ★). Read 卷七 to see whether it repeats the clause and whether it
-   is a seasonal divider (a candidate `zhouye` value).
+   is a seasonal divider (a candidate `zhouye` value). 陳公獻's cases are
+   the one practice on the shelf that looks seasonal: nine of the ten nights
+   he reads by the day seat (陽貴) fall between 小滿 and 秋分, against one of
+   eighteen outside. That runs the other way from 「陰貴…夏至後」, so it is a
+   lead for a rule and not a witness to the 通書's (`docs/sources.md` §
+   "陳公獻's cases, read for the noble and the day's cut").
 8. **The 比用 by element harmony** in 大全卷五 (六 named days). Check on the
    plate whether it is a doctrine or a gloss; a possible divergence of 比.
 9. **課體 beyond the nine.** 大全卷一 課目 (64) and 卷五's definitions ★, and

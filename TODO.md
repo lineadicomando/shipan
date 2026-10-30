@@ -8,7 +8,9 @@ down on 2026-10-08, and what it carried before is in
 
 ## Resuming cold
 
-**Nothing is in progress and no priority is set.** The lens on every drawn
+**Nothing is in progress. One thing is decided and unbuilt**: item 1 of
+"What to do next" below, a build of two `heldBy` and a test, which is where a
+session starts unless the user says otherwise. The lens on every drawn
 board, the user's priority of 2026-10-25, is built and landed (phases 71–74):
 § "The lens on every board" below is the map of its code and the leads it
 left, and is where surface work starts. Phase 75 took the first two items of
@@ -18,8 +20,9 @@ of 寶鏡圖 and moved no code; the decision it put to the user, a parameter for
 the order of 涉害 on the plate, and phase 78, the same day and on the user's
 word, built it as `liuren.shehai` with `shehaiFrom` inside `depth`, released
 as 0.41.0. Phase 79, the same day, read 陳公獻's 125 worked cases for the
-noble and the day's cut, moved no code, and put a question to the user (§
-"Left open by the reading of 2026-10-30", below). For a reading, **read this section, then pick an item of "What to
+noble and the day's cut and moved no code. The question it put — whether a
+run of worked cases makes him a holder — the user answered **yes** the same
+day, and that is item 1 below. For a reading, **read this section, then pick an item of "What to
 do next" below, or a line of § 2.** For it read three things and no more:
 
 1. **what the file is** — `texts/README.md`, one row: grep the filename. It
@@ -98,12 +101,15 @@ and the renders and a script with it.
 yet read», «unread», «still missing», «none opened», «nobody has», «stays
 refused», «this list is empty».
 
-### Where it stands, 2026-10-30
+### Where it stands, 2026-10-30, end of phase 79
 
 **Version 0.41.0**, in every manifest. **`main` is checked out and no branch
 is open.** `origin/main` is `6b0aa7e`, pushed on the user's word on
 2026-10-30 with the tag `v0.41.0`; `main` is ahead of it by commits that
-touch only `TODO.md` and `docs/` and are not pushed. 0.41.0 is deployed at
+touch only `TODO.md`, `docs/` and the `shushu` skill and are not pushed:
+`32cb478`, `94be969` and `3c3c0dd`, phase 79. The last changes four rows of
+`docs/sources.tsv`, which the register page (`apps/web/src/routes/[lang]/notes/sources`)
+renders, so it is not on the live site until the next version ships. 0.41.0 is deployed at
 https://shipan.it, and the footer of the live site says so (checked
 2026-10-30), by `ssh shipan.deploy`, which runs `srv-deploy shipan` on the
 server. **That script deploys `origin/main` and nothing local**: it pulls
@@ -115,7 +121,8 @@ the footer after. Deploying and pushing are always the user's call.
 `v0.37.0` were set on the commits that moved the number, dated as those
 commits; `v0.2.0` and `v0.2.1` stayed lightweight. `v0.40.0` to `v0.41.0` are
 annotated and pushed. `npm run build`, `npm run typecheck` and `npm test` pass
-at the end of phase 78, no test skipped. **Run `npm run
+at the end of phase 79, no test skipped, and `node texts/todo-check.mjs`
+finds every name this file gives. **Run `npm run
 build` before `npm test`** in a fresh tree: the MCP and web suites and the
 shelf's scripts import `packages/core/dist`, and a stale `dist` fails them on
 whatever changed.
@@ -130,10 +137,10 @@ a question needs it:
 | phase 75, 2026-10-25 | the 干論 of 奇門仙機 read on the plate and laid as `stemPairs: xianji`; 青龍入雲格 and 青龍華蓋 added to the default; the seams between a label and its value set by each vernacular (`cli.between.*`), and the Italian parameter labels made the opening of a sentence |
 | no phase, after phase 75, 2026-10-25 | 0.38.0: `spiritPhase` defaults to `branch`, and the Italian catalog renames five spirits after the 六壬 generals of the same name, 驚門 «Spavento», the plates «tavola di cielo» and «tavola di terra», 剋 «domina». 0.39.0: 六儀擊刑 read off the hour's 直符 where it is carried, not off the earth plate. 0.40.0: 擊刑 by the clock as well, at the hour whose branch the decade's head punishes. `guiren: wei` declared held by the 協紀 too. The `shushu` skill teaches, as a third job. 0.40.1: a section's introduction folds under its heading, kept in `localStorage`, and the privacy note lists three things. 0.40.2–0.40.3: the glyph rain in the ink of each phase, and turning through them with Ctrl. Each commit's body is its record |
 | phase 76, 2026-10-26 | the twelve hours of 寶鏡圖's sixty leaves, transcribed and set beside `dayHoursOf`: 截路空亡 at 子 and 丑 only on a 戊 or 癸 day, a second reading recorded with no parameter. Nothing in the code moved |
-| phase 79, 2026-10-30 | 陳公獻's 125 worked cases in the 指南's 卷四, transcribed and laid under both verses: `guiren: chou` on every day-hour case that can tell, the night read by the day seat in 10 of 31, the transmissions agreeing on 124; `shehai: palace` to rung 4. Nothing in the code moved |
 | phase 77, 2026-10-30 | the order of 涉害 read on the plate: `palace` by 陳公獻's 增注 to the 《指掌賦》, `depth` by 《六壬視斯》 through the 精解 and by 《六壬大全》卷五, and the count, which the texts take with the lodged stems and by the kind of control. Measured over the 1 380 boards and put to the user. Nothing in the code moved |
 | phase 78, 2026-10-30 | 0.41.0: `liuren.shehai`, `palace` (the default) or `depth`, and inside `depth` `shehaiFrom`, `next` (the default) or `seat`; the count the texts agree on, the lodged stems and the control by kind, under both. Two witnesses, `shisi` and `zhinan`. A default 六壬 board now says no named text lays its combination whole; under `depth` with `seat` it is the 精解's |
-| no phase | the board held in the page and the marks of every drawing (`marks.ts`), 2026-10-15 and 2026-10-18; the review of 2026-10-23, whose leftovers are item 3 of "What to do next". The account is § "Where it stands" of `docs/history/roadmap-2026-10-25.md` |
+| phase 79, 2026-10-30 | 陳公獻's 125 worked cases in the 指南's 卷四, transcribed and laid under both verses: `guiren: chou` on every day-hour case that can tell, the night read by the day seat in 10 of 31, the transmissions agreeing on 124; `shehai: palace` to rung 4. Nothing in the code moved; whether cases make a holder was answered yes |
+| no phase | the board held in the page and the marks of every drawing (`marks.ts`), 2026-10-15 and 2026-10-18; the review of 2026-10-23, whose leftovers are item 4 of "What to do next". The account is § "Where it stands" of `docs/history/roadmap-2026-10-25.md` |
 
 ### The lens on every board
 
@@ -292,13 +299,44 @@ that sheet nearly blank.
   located in transcription and not weighed: § "The phases of the eight
   spirits" in `docs/sources.md`.
 
-**What to do next, in the order the user has been taking it.** Nothing
-decided is left unbuilt.
+**What to do next, in the order the user has been taking it.**
 
-1. **An errand left by 2026-10-22**: the scan form's `gongpo`, § 5. Its
+1. **Decided and unbuilt: 陳公獻 holds `guiren: chou` and `zhouye: branch`**
+   — the user's word of 2026-10-30, after phase 79, that a run of worked
+   cases makes a holder where it is unanimous on the question. 卷四's cases
+   are: `chou` on 41 of the 45 day-hour cases that can tell and `wei` on
+   none, and the day seat at every day hour. The ten nights read by the day
+   seat are a minority recorded with no value, and do not stop `branch`.
+   The argument is `docs/sources.md` § "陳公獻's cases, read for the noble
+   and the day's cut". To build it:
+   - `packages/core/src/parameters.ts`: `zhinan` added to `heldBy` of
+     `guiren` `chou` and of `zhouye` `branch`. It already holds
+     `yuejiang: zhongqi` and `shehai: palace`, so `combinationOf('liuren',
+     DEFAULT_LIUREN_OPTIONS)` becomes `{ state: 'together', by: ['zhinan'] }`
+     and a default 六壬 board names a text for its whole combination again;
+   - `packages/core/test/combination.test.ts` line 32, which expects
+     `apart`, and any test that pins the sentence `format.ts` writes from it
+     (run the suites: the MCP and web ones print the transcript);
+   - `docs/sources.md`: the table of § "Whose each value of a 六壬 board
+     is", the rows `guiren: chou` and `zhouye: branch`, adding 陳公獻's
+     cases; the last paragraph of § "陳公獻's cases…", which says the
+     `heldBy` waits; and the phase 78 sentence elsewhere that a default
+     board names no text, if it is stated as present (grep «names no
+     text»). `docs/sources.tsv` rows `guiren: chou` and `zhouye: branch`:
+     the holder named in `stands_on`; the rung stays 2. The `shushu` skill's
+     六壬 file, if it says the default has no text;
+   - the version: a default 六壬 answer closes on a different sentence, so
+     an address answers differently and **the second term moves, to
+     0.42.0**, in every manifest and `package-lock.json`, with the tag
+     `v0.42.0` when the user says push. It carries phase 79's register rows
+     to the live site with it;
+   - a phase 80 in `docs/history/`, its line in that README, this file, one
+     commit on `main`.
+
+2. **An errand left by 2026-10-22**: the scan form's `gongpo`, § 5. Its
    other half, 截路空亡 on 寶鏡圖's sixty leaves, was read on 2026-10-26
    (phase 76) and is recorded in § 1.
-2. **Or a lead from the `shushu` skill.** Each art's file in
+3. **Or a lead from the `shushu` skill.** Each art's file in
    `.claude/skills/shushu/disciplines/` ends on «Leads against the register»:
    passages located on the web or in a shelf transcription that bear on a row,
    none read on a plate. The ones that touch a standing question: the five
@@ -308,7 +346,7 @@ decided is left unbuilt.
    boundaries no text holds yet (`common/foundations.md`). Each is a reading
    of a file held, bar two: the 楊公忌 passage is in the 華齡 協紀's (下) and
    《星曆考原》卷五 is not on the shelf either.
-3. **Or what the review of 2026-10-23 found and did not fix**, each wanting a
+4. **Or what the review of 2026-10-23 found and did not fix**, each wanting a
    plate or the user's word:
    - 六壬: 無親, which 精解
      names, closed as unnamed; no row for the direction of the generals, the
@@ -407,19 +445,11 @@ from the web, not found on sheets 14 and 18 of the 指南; the 大全卷五's �
 by element harmony on six named days, seen at pdf 130 and not weighed;
 尉山人's 「上克下，取天盤孟仲為驗」, which the 大全 keeps without following;
 the 精解's 察微 and 綴瑕 cases at p. 14, which open alike under every reading
-and were not re-read on the plate. And one with a consequence on every board, read the same day (phase 79) and
-**waiting on the user's word**: **a default 六壬 board names no text for its
-whole combination** since 0.41.0, because `shehai: palace` is held by 陳公獻
-alone. His 《大六壬指南》 states neither the verse nor the cut, on the plate
-as well as in the OCR. Its 125 worked cases follow `guiren: chou` on every
-day-hour case that can tell (41 of 45, none for `wei`), and `zhouye: branch`
-by day always and by night in 21 of 31. The question is whether a run of
-cases makes him a holder, given that the user declined a practice induced
-from a table on 2026-10-15. If it does, `heldBy` gains `zhinan` on `chou` and
-on `branch`, and the default names a text again; if not, a second holder of
-the grade would do as well. The ten nights read by the day seat, nine between
-小滿 and 秋分, are recorded with no value: `docs/sources.md` § "陳公獻's cases,
-read for the noble and the day's cut". Also open there: 50T1, an 八專 board
+and were not re-read on the plate. The one with a consequence on every board, that a default 六壬 board names no
+text for its whole combination since 0.41.0, was read the same day (phase 79)
+and decided: item 1 of "What to do next". Left open by phase 79, each small
+and none blocking: the ten nights 陳公獻 reads by the day seat, nine between
+小滿 and 秋分, recorded with no value and no text stating any such rule; 50T1, an 八專 board
 printing two generals on 卯; 59B1, which prints both halves on one board; and
 the 39T2 square, which does not rotate.
 

@@ -6402,17 +6402,19 @@ part `shehai: palace` from `depth`**, 49B1 and 51T1, and both open as
 `palace` opens. That is 陳公獻's practice agreeing with his own 增注.
 
 **What this establishes, and what it does not.** The cases are a practice
-read off boards, and the 指南 states neither verse nor cut. The user declined
-to treat a practice induced from a table as a rule on 2026-10-15 (the 太乙
-test of a count by its digits), so **no `heldBy` moves here** without the
-user's word. Recorded as found:
+read off boards, and the 指南 states neither verse nor cut. On 2026-10-15 the
+user declined to treat a practice induced from a table as a rule (the 太乙
+test of a count by its digits). **For a run of worked cases unanimous on the
+question, the user's word of 2026-10-30 is that it makes a holder**, so
+陳公獻 holds `guiren: chou` and `zhouye: branch`. That is decided and not yet
+in `parameters.ts` (`TODO.md`, "What to do next"). Recorded as found:
 
 - `guiren: chou` is 陳公獻's practice on every day-hour case that can tell.
   It already stands on four texts that state it.
 - `zhouye: branch` is his practice by day without exception, and two times
-  in three by night. If the cases make him a holder of anything, it is of
-  `branch` with a minority of nights, most of them between 小滿 and 秋分,
-  read by the day seat, which no value names and no text states.
+  in three by night. What he holds is `branch`, with a minority of nights,
+  most of them between 小滿 and 秋分, read by the day seat, which no value
+  names and no text states.
 - `shehai: palace` holds on both of his boards where it is at issue. Being
   the same author, that is a single text checking itself: its row moves from
   rung 5 to rung 4.

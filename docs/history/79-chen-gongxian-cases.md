@@ -34,3 +34,6 @@ text checking itself; the 指南's row of `texts/README.md`; `TODO.md`. No code
 moved and the version did not. Whether worked cases make 陳公獻 a holder of
 `guiren: chou` and `zhouye: branch`, which would let a default board name
 one text for its whole combination, was put to the user.
+
+The user answered the same day: a run of worked cases unanimous on the
+question makes a holder. Nothing was built in this phase on that answer.
