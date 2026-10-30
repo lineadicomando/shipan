@@ -179,28 +179,32 @@ Where other witnesses part from it:
    - *Not modelled*; recorded in § 7.
 3. **涉害 shèhài**: several candidates, all or none matching. Three sub-questions,
    each with witnesses:
+   Read on the plate on 2026-10-30; `docs/sources.md` § "The order of 涉害
+   and what it counts, read on the plate" is the argument and the measurement.
    - **(a) The order.**
+     - *Depth, then 孟, then 仲, then 日上 or 辰上*: 《六壬視斯》 ★, which
+       《大六壬精解》 pp. 10–11 transcribes whole (its p. 1 says so), and
+       《六壬大全》卷五 ★: the 課體's article (「不論孟仲季」), 訂訛, 觀月經,
+       袖中金.
      - *Depth alone, ties to 日上 on a 剛日 and 辰上 on a 柔日*: 《金匱經》
-       quoted in 神定經 (「俱比俱不比，以涉害深者為用。涉害復等…剛日用日上神…柔日用辰上神」),
-       and 《心鏡》 涉害第三 (web transcriptions).
-     - *Depth, then 孟, then 仲, then 日上 or 辰上*: 《六壬大全》卷五 訂訛
-       (見機 「渉害俱深則取四孟上神」, 察微, 綴瑕 亦名復等), and 精解 ★, OCR
-       lines 1018–1136.
-     - *孟 then 仲, no count*: 陳公獻's 增注 ★ (web transcription; the shelf
-       OCR is unreadable there): 「先以寅申巳亥上乘之神為用…若孟神上無克賊則以子午卯酉上乘之神為用」.
+       quoted in 神定經, and 《心鏡》 涉害第三 (web transcriptions).
+     - *By the earth palace, no count*: 陳公獻's 增注 to the 《指掌賦》 ★,
+       `liuren-zhinan.pdf` sheet 18: 「涉害取地盤孟仲季發用」.
      - *Palace first, depth inside the group*: the engine and both runnable
-       references. "Recorded" in the register.
+       references. The depth step inside is the engine's own.
    - **(b) What is counted.**
-     - 精解 and 大全卷五 count the **starting palace** and the **寄干**
-       lodged along the way. Example: 亥 on 丑 takes 丑, 辰, 巳's 戊, 未, 未's
-       己 and 戌, six in all.
-     - 金匱玉衡經 does the same, via 盧央 (LR-04).
+     - The **寄干** lodged along the way: the 視斯, the 大全卷五 and the
+       金匱玉衡經 (via 盧央) all count them.
+     - The **starting palace**: the 視斯 and the 金匱玉衡經 count it (亥 on
+       丑 at six); the 大全's article, 訂訛 and 觀月經 do not (five).
      - `liuren.ts`'s `shehai` counts only the branches *after* the start and
        no lodged stems.
-   - **(c) The 上剋下 case.** 精解's 今按 (OCR, garbled) appears to count what
-     the upper *controls* for 上剋下 and what *controls it* for 下賊上. To be
-     read on the plate.
-   - All three: *not modelled*.
+   - **(c) Which way the control runs.** What the candidate *controls* on an
+     上剋下 board, what *controls it* on a 下賊上 one: the 精解's 今按 at p. 15
+     and the 大全's 庚子 case. The engine always counts what controls it.
+   - Under the engine's order the count never decides (0 of 1 380 boards).
+     Depth first opens 192 to 276 otherwise. A parameter `shehai` waits on
+     the user's word (`TODO.md` § 1, 六壬).
 4. **遙剋 yáokè**: no control in the four. 神遙剋日 is 蒿矢 hāoshǐ, and comes
    first; 日遙剋神 is 彈射 tánshè. Ties go by 比. The witnesses agree.
 5. **昴星 mǎoxīng**: 剛日 仰, the upper over 酉 (虎視 hǔshì); 柔日 俯, the
@@ -506,21 +510,10 @@ shelf.
    - 神定經 釋日出沒 (a 崇天曆 sunrise/sunset table by term).
    - 程樹勳 quoting 《六壬心鏡注》.
    - Both ☆. Decide 日出入 against 「星之出沒」 (精解).
-4. **Order of 涉害.**
-   - 精解 ★ (its 涉害 section, worked case 正月丁卯日 丑時 亥將 → 亥) and
-     大全卷五 訂訛 ★ (both typesettings) hold depth first.
-   - 陳公獻's 增注 ★ holds palace first.
-   - Read both on the plate. If confirmed this becomes a school parameter
-     (e.g. `shehai: depth | palace`), not "recorded".
-   - A rough re-implementation (mine, not the engine) parts the two orders on
-     roughly 150–200 of the 1 380 涉害 boards (rough script, 2026-10-23; not
-     the engine's harness).
-5. **涉害 count.**
-   - Starting palace and 寄干 included (精解 ★, 大全卷五 ★, 金匱玉衡經 via 盧央 ★)
-     against excluded (engine).
-   - On my rough script it moves nothing under the palace-first order and
-     about a dozen boards under depth-first. Verify with the engine's own
-     harness.
+4. **Order of 涉害, and its count.** Read on the plate on 2026-10-30 and
+   put to the user: `shehai: palace | depth`, with the starting palace a
+   second axis under `depth`. See § 3, item 3.
+5. *(merged into 4.)*
 6. **Direction of the generals.** The rule has witnesses (精解 ★, 增注 ★,
    神定經 ☆) and no row in `docs/sources.tsv`. Add one.
 7. **The 通書 clause 「冬至後用之 / 夏至後用之」** on 陽/陰貴 (星曆考原 卷五 ☆,
@@ -570,20 +563,8 @@ shelf.
    - It also heads 「返吟亦名無依」, which supports the engine's `wuyi` for
      返吟 with a control.
    - 陳公獻's 增注 (web transcription): 「乃名無依（無親、井欄）」.
-3. **"The order of 涉害: a text holding either reading by name" (TODO).**
-   - 精解 ★ and 大全卷五 ★ hold depth first, with worked boards the engine
-     contradicts:
-     - 正月丁卯日 亥將 丑時: 精解 and 大全 open 亥, the engine opens 丑
-       (run 2026-10-23).
-     - 甲辰日 亥將 卯時 (觀月經 note): 「當以神后發用…用戌者非也」, but the
-       engine opens 戌.
-   - 增注 ★ holds palace first. 《金匱經》 and 心鏡 ☆ hold depth with no
-     palace step.
-   - The row reads `recorded` and should become a parameter with holders.
-   - **The 丁卯 case is probably the bench's failing 涉害.**
-4. **The 涉害 count.** The register describes the count as walking "forward
-   to the home palace" and is silent on the starting palace and the 寄干,
-   which 精解 ★ and 大全卷五 ★ both count.
+3. *(settled on the plate on 2026-10-30: § 3, item 3.)*
+4. *(the same.)*
 5. **`guiren: wei` holders.**
    - 《六壬大全》卷一 ★ (the 貴神 passage after the 課目) carries the
      derivation and calls it 「其說甚有理而近不用」. That is the 大全

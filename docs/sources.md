@@ -6226,13 +6226,103 @@ different risings in it, which is not enough to reconstruct a reading from.
 
 **Recorded, with no parameter.**
 
-- **The order of 涉害.** 「孟深仲淺季當休」 read as an order of evaluation, and
-  the grouping both runnable references use, lay different transmissions on a
-  few boards in a thousand. One is a reading of a verse and the other is what
-  two programs do; no text or manual is named for either as its own. The row
-  of the three transmissions reads `recorded`.
+- **The order of 涉害**, and what it counts. Each order has a named holder
+  since 2026-10-30, and the divergence waits on the user's word for a
+  parameter: § "The order of 涉害 and what it counts, read on the plate"
+  below.
 - **The 末傳 of a 伏吟 taken by 冲** where the punishment returns to the
   opening, which the section above marks as the engine's own clause.
+
+### The order of 涉害 and what it counts, read on the plate
+
+Read on 2026-10-30, on four plates and one collation. Until that day the
+register held that «no text or manual is named for either order as its own».
+Each order now has a holder, and they part on one board in five of the 1 380
+涉害 boards.
+
+**Depth first is 《六壬視斯》's**, which 葉悔亭 (Qing) wrote and the 精解
+transcribes. 《大六壬精解》 p. 1 (pdf 21), read on the plate, says that the
+section on the three transmissions is that work's whole: 「"三傳起例"即"宗門
+九課入式起例"一節之歌、釋則全部錄自《六壬視斯》，但在某些地方加入了必要的按語」.
+Its 編著採用書目 names the copy as the 民國元年 上海江東書局 印本. The rule at
+pp. 10–11 (pdf 30–31), read on the plate: 「各就所克之處，由地盤涉歸本家，以受
+克多者為用。如受克俱多，則以在地盤四孟上者為用。如無孟，則取仲上者。如又俱相等，
+則陽日取干上神，陰日取支上神」. Depth decides, and the palaces break a tie.
+The worked case, 正月丁卯日丑時亥將, counts 丑 on 卯 at two (卯, and the 乙
+lodged at 辰) and 亥 on 丑 at six (丑, 辰, the 戊 at 巳, 未, the 己 at 未, 戌),
+and opens 亥, which stands on a 季 against 丑's 仲. It is the bench's failing
+涉害 case, and it fails because the engine follows the other order.
+
+**《六壬大全》卷五 holds depth first under three names of its own**, read on the
+精校本's page (pdf 128–131) and collated against the 卷一到十 typesetting
+(pdf 48–50, on its text layer: that file's font renders as boxes). The
+課體's own article: 「不論孟仲季，比用止取涉度害克位之最深者，故名涉害」, and the
+same 丁卯 case worked to 亥 under 「若論仲季」. The 《訂訛》: 「以涉害深者為用」,
+then 見機 「涉害俱深則四孟上神發用」, 察微 「無孟則取仲上神發用」, and 綴瑕,
+亦名復等, for a tie that survives both. The 《觀月經》's note on 甲辰日亥將卯時
+takes 子 on 辰 at four over 戌 on 寅 at two, 「用戌者非也」. The 《袖中金》: 「遇地
+所克深多者，即起用傳。若所克俱多，先取孟神，如無，即取仲神」. The same juan
+quotes one dissent and keeps it without following it: 「尉山人云：上克下，取天
+盤孟仲為驗，存之」. That one asks the 天盤 and only for an 上剋下 board, so it
+is neither of the two orders here.
+
+**Palace first is 陳公獻's**, in his 增注 to the 《大六壬九天玄女指掌賦》, read
+on the plate of `liuren-zhinan.pdf` sheet 18: 「涉害取地盤孟仲季發用，涉四孟乃
+見機課，涉仲季乃察微課是也。涉害比用復等，則剛用日，柔用辰」. That sentence
+grades by the earth palace and counts nothing. Depth inside the group, which
+the engine computes, is the engine's own, and so is what the two runnable
+references do. The web transcription the `shushu` skill quoted for him,
+「先以寅申巳亥上乘之神為用」, was not found on sheets 14 and 18; it may stand
+elsewhere in the 指南, and the sentence above is the one read. Sheet 14, the
+《心印賦》's own line 「涉害之深者曰見機」, names the deep case and states no
+order.
+
+**The two verses are the same line read two ways.** The 精解 prints 「涉害由來
+是本家，路途多克最堪夸。孟深仲淺季無取，復尋柔辰剛日查」, and the 大全 卷一
+「涉害行來本家止，路逢多尅為用取，孟深仲淺季當休」. Both works gloss
+「孟深仲淺」 in prose as the tie-break after depth. The engine read it as a
+grouping that comes before depth. A verse does not settle which, and each
+order is now held by the prose of a named work.
+
+**What is counted is three questions, and the texts settle two of them.**
+
+- *The lodged stems.* The 視斯 and the 大全 both count a stem lodged at a
+  palace passed (乙 at 辰, 戊 at 巳, 己 at 未), and so does the 金匱玉衡經's
+  case through 盧央 (`texts/rules/LR-04.md`). The engine counts branches only.
+- *Which way the control runs.* On an 上剋下 board the candidate's count is
+  what it controls on the way, and on a 下賊上 board what controls it. The 精解's
+  今按 at p. 15 says so: 「其為上克下，應以上者查所克地盤之神。其為下賊上，應以上者
+  查受克於地盤之神」. So does the 大全's 庚子 case, 午加庚 counting 酉 and 辛,
+  without the note. The engine always counts what controls the candidate.
+- *The starting palace.* Here the texts part. The 視斯 counts the palace the
+  candidate stands on (卯 for 丑, 丑 for 亥), and so does the 金匱玉衡經
+  (寅 for 辰 on 寅). The 大全's article, its 訂訛 and its 觀月經 start one
+  palace on (one and five for the same 丁卯 case).
+
+**Measured over the whole space**, by
+`texts/liuren/jingjie-shehai/scripts/variants.mjs` against the built engine.
+The script's copy of the engine's order reproduces the engine on all 1 380
+涉害 boards. Then:
+
+| order | count | boards opened otherwise than the engine |
+|---|---|---|
+| palace first | the engine's, the 大全's or the 視斯's | **0** |
+| depth first | the engine's (branches only, by what controls) | 192 |
+| depth first | the 大全's (lodged stems, by kind, start excluded) | 204 |
+| depth first | the 視斯's (lodged stems, by kind, start included) | 276 |
+
+**Under the engine's order the count never decides**, so the engine could
+take the count the texts agree on without moving one address. Under depth
+first the starting palace parts the 大全 from the 視斯 on 72 boards. The
+cases each text works open as the text has them under its own order: 丁卯
+and 甲辰 to 亥 and 子 under depth, which the engine opens 丑 and 戌. 庚子,
+庚午, 戊辰 and 甲午 open alike under every row.
+
+**So this is a divergence between practitioners and a parameter is owed.**
+Two values of the order, `palace` held by 陳公獻 and `depth` held by the 視斯
+and the 大全卷五, and under `depth` a second axis for the starting palace,
+which those two works part on. It waits on the user's word (`TODO.md` § 1,
+六壬).
 
 **Where the two programs are called witnesses above, they are read as
 checks.** «Where two disagreeing witnesses agree, that is the transmitted
