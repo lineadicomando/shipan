@@ -64,12 +64,12 @@ parameter, value, path and symbol named in backticks here to the code.
 yet read», «unread», «still missing», «none opened», «nobody has», «stays
 refused», «this list is empty».
 
-### Where it stands, 2026-10-30, end of phase 82
+### Where it stands, 2026-10-31, end of phase 84
 
-**Version 0.42.0**, in every manifest, tagged `v0.42.0` and deployed at
-https://shipan.it (footer checked 2026-10-30). `main` is checked out and no
-branch is open; `origin/main` is the release commit `588d7d1`, and `main` is
-ahead of it only by commits that change documents (`git log origin/main..`). Build, typecheck and every suite
+**Version 0.43.0**, in every manifest, committed on `main` and not yet
+tagged, pushed or deployed: that waits on the user's word. https://shipan.it
+carries 0.42.0 (footer checked 2026-10-30); `origin/main` is `588d7d1`.
+`main` is checked out and no branch is open. Build, typecheck and every suite
 pass, no test skipped.
 
 The last fortnight, one line a stretch; `docs/history/README.md` has a line a
@@ -82,37 +82,32 @@ phase:
 | phase 75 and after, 2026-10-25 | `stemPairs: xianji`; 0.38.0–0.40.3 (each commit's body is its record) |
 | phases 76–80, 2026-10-26 to 30 | 寶鏡圖's hours; the order of 涉害, built as `liuren.shehai` (0.41.0); 陳公獻's 125 cases; the phases of the 十二天將 |
 | phases 81–82, 2026-10-30 | 《金函玉鏡》's leap-month 訣例 measured, a third placement; `leap: runyue` built (0.42.0) |
+| phases 83–84, 2026-10-31 | 陳公獻 holds `guiren: chou` and `zhouye: branch` by his cases; a default 六壬 board names the 指南 for its whole combination (0.43.0); 洪丕謨 and 盧央 read for the pillars' two defaults, put to the user |
 
 ## What to do next, in the order the user has been taking it
 
-1. **Decided and unbuilt: 陳公獻 holds `guiren: chou` and `zhouye: branch`**
-   — the user's word of 2026-10-30, that a run of worked cases makes a holder
-   where it is unanimous on the question. The argument is `docs/sources.md`
-   § "陳公獻's cases, read for the noble and the day's cut". To build it:
-   - `packages/core/src/parameters.ts`: `zhinan` added to `heldBy` of
-     `guiren` `chou` and of `zhouye` `branch`. It already holds
-     `yuejiang: zhongqi` and `shehai: palace`, so `combinationOf('liuren',
-     DEFAULT_LIUREN_OPTIONS)` becomes `{ state: 'together', by: ['zhinan'] }`
-     and a default 六壬 board names a text for its whole combination again;
-   - `packages/core/test/combination.test.ts` line 32, which expects `apart`,
-     and any test pinning the sentence `format.ts` writes from it (the MCP
-     and web suites print the transcript);
-   - `docs/sources.md`: the table of § "Whose each value of a 六壬 board is",
-     rows `guiren: chou` and `zhouye: branch`; the last paragraph of
-     § "陳公獻's cases…", which says the `heldBy` waits; any sentence stating
-     as present that a default board names no text (grep «names no text»).
-     `docs/sources.tsv`, the same two rows: the holder in `stands_on`, the
-     rung stays 2. The `shushu` 六壬 file, if it says the default has no text;
-   - a default 六壬 answer closes on a different sentence: **0.43.0**;
-   - phase 83 in `docs/history/`, this file, one commit.
+1. **For the user's word: do 洪丕謨 and 盧央 hold the pillars' two
+   defaults?** Read on the plate 2026-10-31, `docs/sources.md` § "The year
+   turned at 立春 and the day at the 子 hour". 洪丕謨's 《中國古代算命術》
+   p. 59 states `yearBoundary: lichun` as the procedure of its chapter, both
+   directions worked, the chapter closing on a whole board; 盧央's
+   《中國古代星占學》 p. 24 states `dayBoundary: zishi`, 「一日是从子时起」,
+   and works six days, as a historian describing the count. **Recommended:
+   yes to 洪丕謨, a `modern` witness for `lichun`; and 盧央 held back**, a
+   study describing a count being what CLAUDE.md calls a summary rather than a
+   line's manual, until the user says a study that states and works a rule
+   counts. Yes moves `heldBy` in `packages/core/src/parameters.ts`, a witness
+   in `packages/core/src/witnesses.ts`, the calendrical holders in
+   `docs/sources.md`, the line closing the pillars' block (from «no text
+   named» for a value to «no text holds them together» once both are held),
+   and the version's second term; no plate.
 2. **The scan form's `gongpo`**, § 5.
 3. **A lead from the `shushu` skill**: each art's file in
    `.claude/skills/shushu/disciplines/` ends on «Leads against the register»,
    none read on a plate. Those touching a standing question: 截路空亡 at two
    hours in 《星曆考原》卷五, beside 寶鏡圖's (`almanac.md`, file not held); the
    楊公忌 check, which the 協紀 says is not the 值日 count (`almanac.md`, in the
-   華齡 協紀's 下 volume); 洪丕謨 and 盧央 on the shelf for the year and day
-   boundaries no text holds yet (`common/foundations.md`).
+   華齡 協紀's 下 volume).
 4. **What the review of 2026-10-23 found and did not fix**, each wanting a
    plate or the user's word; rechecked against the code 2026-10-30:
    - 六壬: 無親, which the 精解 names, closed as unnamed; no row for the
@@ -319,15 +314,17 @@ nothing exposes. Only those with something to wait on:
   all twelve such leaves, read 2026-10-26. A parameter on the user's word;
   《星曆考原》卷五, reported to read 子 and 丑 too, would be a second holder and
   is not held.
-- **Not yet attributed.** The default of `earth`; who turns the year at 立春
-  or at 正月初一 and the day at the 子 hour; the 大運 to the minute; the years
+- **Not yet attributed.** The default of `earth`; who turns the year at
+  正月初一 (立春 and the 子 hour are read and wait on item 1 of "What to do
+  next"); the 大運 to the minute; the years
   lived by turns; a second value of `shensha`; the noble of 庚 seated with
   辛's.
 
 **Asked and not found, so not asked of the same works again**: a 日計 or
 時計 board with a date on it, of 《太乙金鏡式經》卷六 and 卷九 and of the
 《統宗》卷四, 卷十八 and 卷三十六; the holders of
-the day and year boundaries, of 《三命通會》卷二 and 《命理新論》; the five phases
+the day and year boundaries, of 《三命通會》卷二 and 《命理新論》, of
+《淵海子平》卷一's 起例, and the day's of 洪丕謨's 第三章; the five phases
 of the 十二天將 and a general turned at the 節, of 《御定六壬直指》卷上 and
 《六壬經緯》卷一–三; a rule for which node 羅睺 is and an epoch for the 積日, of
 《星學大成》. The extracts returned nothing for a leap month split at its

@@ -1754,12 +1754,19 @@ describe('the address every board cites', () => {
  * move when a text is read.
  */
 describe('who lays the combination', () => {
-  it('says no text lays a default 六壬 board whole', async () => {
-    // 涉害 graded by palace is 陳公獻's, who is not read for the rest.
+  it('names 陳公獻 for a default 六壬 board, outside the board itself', async () => {
+    // His 增注 grades 涉害 by palace; his 125 cases lay the rest.
     const { body } = await call(liuren, MOMENT);
-    const answer = body as { laidBy: { state: string }; liuren: object };
-    expect(answer.laidBy.state).toBe('apart');
+    const answer = body as { laidBy: { state: string; by: { id: string }[] }; liuren: object };
+    expect(answer.laidBy.state).toBe('together');
+    expect(answer.laidBy.by.map((witness) => witness.id)).toEqual(['zhinan']);
     expect(answer.liuren).not.toHaveProperty('laidBy');
+  });
+
+  it('says no text lays it where none holds every value', async () => {
+    // The table that stands 甲 apart is the 直指's, which does not reach 涉害.
+    const { body } = await call(liuren, `${MOMENT}&liuren.guiren=wei&liuren.shehai=depth`);
+    expect((body as { laidBy: { state: string } }).laidBy.state).toBe('apart');
   });
 
   it('names the text holding every value once 涉害 is counted its way', async () => {

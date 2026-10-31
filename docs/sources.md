@@ -132,8 +132,8 @@ The day pillar turns at midnight, and the hour from 23:00 keeps the day that
 is ending while its own stem is read from the day that is coming. That is
 `dayBoundary: midnight` exactly, the hour's stem included, which
 `packages/core/src/types.ts` already says is not in dispute between the two
-values. `dayBoundary: zishi`, the default, stays unattributed: this manual
-argues against it without naming who holds it.
+values. `dayBoundary: zishi`, the default, is not this manual's: it argues
+against it without naming who holds it (盧央 states it, below).
 
 **The four boards the chapter works, laid again.** 第三節 casts four births
 and prints the eight characters of each. Three are the engine's under the
@@ -156,8 +156,8 @@ reading, held by this manual and worked by it, and it is declared and computed
 as `yearBoundary: dongzhi`: one pillar moved for the six weeks between the
 solstice and 立春, and nothing else. Laid again, the board is the book's.
 
-`yearBoundary: lichun`, the default, and `yearBoundary: chunjie` stay
-unattributed. This manual says of the *seasons* that 「命理學向來…均是以立春為
+`yearBoundary: lichun`, the default, and `yearBoundary: chunjie` are not
+this manual's (洪丕謨 states `lichun`, below). This manual says of the *seasons* that 「命理學向來…均是以立春為
 春首」 and then turns the year somewhere else, which is a caution about reading
 a sentence on spring as a sentence on the year.
 
@@ -183,6 +183,62 @@ palace a month; there it is the palace the Sun stands in, which changes at the
 中氣 in the middle of a month. The two agree for the first half of every month
 and part for the second. That is a divergence recorded with no parameter: it
 belongs to how the Sun's palace is found and not to 加時.
+
+**The year turned at 立春 and the day at the 子 hour, read on the plate
+2026-10-31.** Both defaults stood unattributed, and the two works that answer
+were on the shelf and had never been asked: the `shushu` skill located them
+and `texts/rules/CAL-03` and `CAL-06` transcribed them, which is a finding aid
+and not a reading.
+
+洪丕謨 and 姜玉珍, 《中國古代算命術》 (修訂本, 上海人民出版社 1991), 第三章
+四柱算命的具體方法, 第一節 怎樣排八字, p. 59 (pdf 74; the PDF runs fifteen
+pages ahead of the print), under 推年法:
+
+> 推年不管用什么方法，都必须严格划定以农历的立春作为一年的界限。比如正月立春
+> 后生的，用本年干支；虽然生在正月，可时间却在立春之前（还没到立春），那末就得
+> 算到上年出生，而用上一年的干支作为年柱。同样道理，虽然同是出生在农历十二月
+> 的，可是立春前生的用本年干支，立春后生的就要划到下一年去了。
+
+That is `yearBoundary: lichun` stated as the chapter's rule, with both
+directions worked, in a chapter that teaches the procedure of laying the
+pillars from the year to the hour and closes on a whole board (p. 63). It says
+the moment is 立春 and not whether it is the term's day or its instant, and
+「时间却在立春之前」 leans to the instant without saying so; the engine's
+instant is not contradicted. The page after sets the month by the 節 as
+strictly, 「推月则严格以节作为界限」, with a 1986 case born on the day of 驚蟄
+inside 正月. **The same chapter does not cut the day.** Its 推時法, p. 62,
+gives the 子 hour as 「半夜23点—1点钟」 and starts a 甲 or 己 day's hours at
+甲子, which is the hour's stem and is the same under `dayBoundary: zishi` and
+`midnight` (`packages/core/src/types.ts`); which calendar day a birth at 23:30
+belongs to, it does not say.
+
+盧央, 《中國古代星占學》 (中國科學技術出版社 2007), 第一章 干支通說, p. 24
+(pdf 42), after a table setting the twelve 辰 against the clock, 子 at 23—1:
+
+> 以干支纪时的方法与干支纪月的方法相仿。由于一日是从子时起（23h～1h），到亥时
+> 结束。所以从干支周的第一天甲子日起，子时就是甲子时……第二日乙丑日，接着乙亥
+> 排就是丙子时。
+
+and so through six days, 己巳 coming back to 甲子. That is the day itself
+running from 23:00, which is `dayBoundary: zishi`: the 子 hour opens the day
+and belongs to it whole. It is a modern study describing the count, not a
+manual of a line teaching it, and the page before dates hours named by 干支
+to 「唐代星命家之言」 without naming one.
+
+**What the two make, and what is put to the user.** 洪丕謨's chapter is a
+procedure with its own worked board, which is what a holder shows; 盧央 states
+the rule and works it, as a historian of the art and not as one of its
+practitioners. Neither is declared in `packages/core/src/witnesses.ts`, and
+whether either holds its value is the user's to decide (`TODO.md`, "What to do
+next"). Declared, the pillars of a default board would name a holder for every
+value in force, and the line under them would say no text holds them together,
+since 《命理新論》 holds the true solar time and turns the day at midnight.
+
+**Asked of 《淵海子平》 and not answered there.** Its 卷一 起例, leaves 10 and
+11 (故宮 422 p. 7), were read on the plate for `texts/rules/CAL-04` and
+`CAL-05`. 論年上起月例 counts the months from 寅 under the year's stem and
+names no term, and 論日上起時例, 「其法以甲己日從子上起甲子」, is the hour's
+stem again. The rest of the work was not asked.
 
 ---
 
@@ -6206,8 +6262,8 @@ data.
 | Value | Held by | What the attribution rests on |
 |---|---|---|
 | `yuejiang: zhongqi` | 《六壬大全》, 《大六壬精解》 (1995) | the first in its verse's table; the second states it as its own rule — 「太陽於每月中氣過宮，故月將亦逢中氣而換」 — and is the study through which 陳公獻's 增注 and 《六壬視斯》 reach this register, each named there with its edition |
-| `guiren: chou` | 《六壬大全》, 《大六壬精解》 | the verse with the branches interlined, and the same verse glossed stem by stem |
-| `zhouye: branch` | 《大六壬精解》 | p. 26, with a worked example. 《六壬大全》 and 《大六壬課經集》 use the distinction and define neither half |
+| `guiren: chou` | 《六壬大全》, 《大六壬精解》; 陳公獻's 《大六壬指南》 | the verse with the branches interlined, and the same verse glossed stem by stem; 陳公獻 states no verse, and his 125 cases seat the noble by this one on every day-hour case that can tell (§ "陳公獻's cases, read for the noble and the day's cut") |
+| `zhouye: branch` | 《大六壬精解》; 陳公獻's 《大六壬指南》 | p. 26, with a worked example. 《六壬大全》 and 《大六壬課經集》 use the distinction and define neither half. 陳公獻 states no cut, and his cases follow this one by day without exception and two nights in three |
 | `shehai: palace` | 陳公獻's 《大六壬指南》 | the 增注 to the 《指掌賦》, 「涉害取地盤孟仲季發用」, read on the plate 2026-10-30. It grades and counts nothing: depth inside the grade is the engine's |
 | `shehai: depth` | 《六壬視斯》, 《大六壬精解》, 《六壬大全》 | the 視斯's rule, which the 精解 teaches in its words at pp. 10–11; the 大全卷五's article, 訂訛, 觀月經 and 袖中金 |
 | `shehaiFrom: next` | 《六壬大全》 | 卷五's article, 訂訛 and 觀月經 start the count one palace on |
@@ -6381,9 +6437,9 @@ way three times; whose those rules are is that book's, and is said here.
 
 ### 陳公獻's cases, read for the noble and the day's cut
 
-Read on 2026-10-30, after phase 78. Since 0.41.0 a default 六壬 board names
-no text for its whole combination, because `shehai: palace` is held by 陳公獻
-alone and he had not been read for `guiren` or `zhouye`. His 《大六壬指南》
+Read on 2026-10-30, after phase 78, because `shehai: palace` is held by
+陳公獻 alone, and until he was read for `guiren` and `zhouye` a default 六壬
+board named no text for its whole combination. His 《大六壬指南》
 (`liuren-zhinan.pdf`) states neither. The 心印賦 增注 on sheet 6 gives the
 月將 and stops. The 指掌賦's commentary on sheet 8 names the noble's places
 and not its seat by stem, though it calls 丑 the noble's 本位 and 未 the
@@ -6449,8 +6505,10 @@ read off boards, and the 指南 states neither verse nor cut. On 2026-10-15 the
 user declined to treat a practice induced from a table as a rule (the 太乙
 test of a count by its digits). **For a run of worked cases unanimous on the
 question, the user's word of 2026-10-30 is that it makes a holder**, so
-陳公獻 holds `guiren: chou` and `zhouye: branch`. That is decided and not yet
-in `parameters.ts` (`TODO.md`, "What to do next"). Recorded as found:
+陳公獻 holds `guiren: chou` and `zhouye: branch`, in `parameters.ts` since
+2026-10-31 (0.43.0). He already held `yuejiang: zhongqi` and `shehai: palace`,
+so a default 六壬 board is laid whole by the 指南 and its transcript says so.
+Recorded as found:
 
 - `guiren: chou` is 陳公獻's practice on every day-hour case that can tell.
   It already stands on four texts that state it.

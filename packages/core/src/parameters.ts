@@ -964,7 +964,9 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
         says: 'form.liuren.guiren.chou',
         note: 'form.liuren.guiren.note',
         implemented: true,
-        heldBy: ['liurendaquan', 'jingjie', 'jingwei', 'zhizhi'],
+        // 陳公獻's 125 cases in 《大六壬指南》卷四 seat the noble by this verse
+        // on every day-hour case that can tell, and state no verse.
+        heldBy: ['liurendaquan', 'jingjie', 'jingwei', 'zhizhi', 'zhinan'],
       },
       {
         id: 'wei',
@@ -983,7 +985,15 @@ export const LIUREN_PARAMETERS: ParameterSet<LiurenOptions> = {
   zhouye: {
     board: 'liuren',
     values: [
-      { id: 'branch', implemented: true, heldBy: ['jingjie', 'jingwei', 'zhizhi'] },
+      {
+        id: 'branch',
+        implemented: true,
+        // 陳公獻's cases cut by the hour's branch by day without exception and
+        // two nights in three: a practice read off boards, held by the user's
+        // word of 2026-10-30 that a run of cases unanimous on the question
+        // makes a holder.
+        heldBy: ['jingjie', 'jingwei', 'zhizhi', 'zhinan'],
+      },
       { id: 'solar', implemented: false },
     ],
     default: 'branch',

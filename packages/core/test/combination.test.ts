@@ -26,11 +26,17 @@ describe('the combination a board stands on', () => {
     ).toEqual({ state: 'together', by: ['jingjie'] });
   });
 
+  it('names 陳公獻 for the default, whose cases lay every value in force', () => {
+    // The grade by palace is his 增注's; the 中氣, the verse's seats and the
+    // branch division are his 125 cases' practice.
+    expect(combinationOf('liuren', DEFAULT_LIUREN_OPTIONS)).toEqual({
+      state: 'together',
+      by: ['zhinan'],
+    });
+  });
+
   it('says no text lays it where every value has a holder and none holds them all', () => {
-    // The grade by palace is 陳公獻's, who is not read for the noble's verse or
-    // the division of the hours; the three who are grade by depth.
-    expect(combinationOf('liuren', DEFAULT_LIUREN_OPTIONS)).toEqual({ state: 'apart' });
-    // And the table that stands 甲 apart is the 直指's, which does not reach 涉害.
+    // The table that stands 甲 apart is the 直指's, which does not reach 涉害.
     expect(
       combinationOf('liuren', { ...DEFAULT_LIUREN_OPTIONS, shehai: 'depth', guiren: 'wei' }),
     ).toEqual({ state: 'apart' });
