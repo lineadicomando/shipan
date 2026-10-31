@@ -133,7 +133,8 @@ is ending while its own stem is read from the day that is coming. That is
 `dayBoundary: midnight` exactly, the hour's stem included, which
 `packages/core/src/types.ts` already says is not in dispute between the two
 values. `dayBoundary: zishi`, the default, is not this manual's: it argues
-against it without naming who holds it (盧央 states it, below).
+against it without naming who holds it (盧央 describes it, below, and holds
+nothing).
 
 **The four boards the chapter works, laid again.** 第三節 casts four births
 and prints the eight characters of each. Three are the engine's under the
@@ -157,7 +158,7 @@ as `yearBoundary: dongzhi`: one pillar moved for the six weeks between the
 solstice and 立春, and nothing else. Laid again, the board is the book's.
 
 `yearBoundary: lichun`, the default, and `yearBoundary: chunjie` are not
-this manual's (洪丕謨 states `lichun`, below). This manual says of the *seasons* that 「命理學向來…均是以立春為
+this manual's (洪丕謨 holds `lichun`, below). This manual says of the *seasons* that 「命理學向來…均是以立春為
 春首」 and then turns the year somewhere else, which is a caution about reading
 a sentence on spring as a sentence on the year.
 
@@ -225,14 +226,15 @@ and belongs to it whole. It is a modern study describing the count, not a
 manual of a line teaching it, and the page before dates hours named by 干支
 to 「唐代星命家之言」 without naming one.
 
-**What the two make, and what is put to the user.** 洪丕謨's chapter is a
-procedure with its own worked board, which is what a holder shows; 盧央 states
-the rule and works it, as a historian of the art and not as one of its
-practitioners. Neither is declared in `packages/core/src/witnesses.ts`, and
-whether either holds its value is the user's to decide (`TODO.md`, "What to do
-next"). Declared, the pillars of a default board would name a holder for every
-value in force, and the line under them would say no text holds them together,
-since 《命理新論》 holds the true solar time and turns the day at midnight.
+**What the two make, decided 2026-10-31.** 洪丕謨's chapter is a procedure
+with its own worked board, which is what a holder shows: on the user's word it
+holds `yearBoundary: lichun`, declared as `suanmingshu`, a `modern` witness.
+盧央 states the rule and works it as a historian describing the count and not
+as a line teaching it, which is what CLAUDE.md calls a summary: he is recorded
+and holds nothing, and `dayBoundary: zishi` stays the one value in force with
+no text named. The pillars' block therefore closes on a convention, with no
+text holding the other two together, 《命理新論》 casting by true solar time
+and turning the day at midnight.
 
 **Asked of 《淵海子平》 and not answered there.** Its 卷一 起例, leaves 10 and
 11 (故宮 422 p. 7), were read on the plate for `texts/rules/CAL-04` and

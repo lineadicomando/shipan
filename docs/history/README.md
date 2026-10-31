@@ -118,6 +118,7 @@ phase.
 | 82 | [`leap: runyue` built](82-the-leap-month-built.md) | done — 《金鏡寶鑑》's 閏法 computed, each leap month's 中氣 pinned to the 符頭 at or before it; its two years reproduced; nine stretches of 1600–2100 laid without the repeat on the user's word; 0.42.0 |
 | 83 | [陳公獻 holds](83-chen-gongxian-holds.md) | done — `zhinan` holds `guiren: chou` and `zhouye: branch` by its cases, on the user's word of 2026-10-30; a default 六壬 board is laid whole by the 指南 again; 0.43.0 |
 | 84 | [The pillars' defaults read](84-the-pillars-boundaries-read.md) | done — 洪丕謨 p. 59 states the year turned at 立春, 盧央 p. 24 the day from the 子 hour; 《淵海子平》's 起例 neither; whether they hold put to the user; no code moved |
+| 85 | [The year held](85-the-year-held.md) | done — `suanmingshu` holds `yearBoundary: lichun`; 盧央 recorded and holding nothing; the pillars' block closes on a convention with nothing held together; released as 0.43.0 |
 
 ## The rest of the record
 

@@ -270,6 +270,12 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '三命通會', pinyin: 'sānmìngtōnghuì' },
   },
+  /** 洪丕謨 and 姜玉珍's manual, whose 推年法 turns the year at 立春 with both directions worked. */
+  suanmingshu: {
+    kind: 'modern',
+    name: { hanzi: '中國古代算命術', pinyin: 'zhōngguógǔdàisuànmìngshù' },
+    year: 1991,
+  },
   /** 吳俊民's modern 子平 treatise, which casts by true solar time and turns the day at midnight. */
   xinlun: {
     kind: 'modern',

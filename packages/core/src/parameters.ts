@@ -497,6 +497,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         name: { hanzi: '立春', pinyin: 'lìchūn' },
         says: 'form.pillars.yearBoundary.lichun',
         implemented: true,
+        // 「推年…都必須嚴格劃定以農曆的立春作為一年的界限」, 《中國古代算命術》
+        // p. 59, a birth before 立春 in 正月 and one after it in 十二月 worked.
+        heldBy: ['suanmingshu'],
       },
       {
         id: 'chunjie',

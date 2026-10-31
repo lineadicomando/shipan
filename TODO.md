@@ -86,29 +86,14 @@ phase:
 
 ## What to do next, in the order the user has been taking it
 
-1. **For the user's word: do 洪丕謨 and 盧央 hold the pillars' two
-   defaults?** Read on the plate 2026-10-31, `docs/sources.md` § "The year
-   turned at 立春 and the day at the 子 hour". 洪丕謨's 《中國古代算命術》
-   p. 59 states `yearBoundary: lichun` as the procedure of its chapter, both
-   directions worked, the chapter closing on a whole board; 盧央's
-   《中國古代星占學》 p. 24 states `dayBoundary: zishi`, 「一日是从子时起」,
-   and works six days, as a historian describing the count. **Recommended:
-   yes to 洪丕謨, a `modern` witness for `lichun`; and 盧央 held back**, a
-   study describing a count being what CLAUDE.md calls a summary rather than a
-   line's manual, until the user says a study that states and works a rule
-   counts. Yes moves `heldBy` in `packages/core/src/parameters.ts`, a witness
-   in `packages/core/src/witnesses.ts`, the calendrical holders in
-   `docs/sources.md`, the line closing the pillars' block (from «no text
-   named» for a value to «no text holds them together» once both are held),
-   and the version's second term; no plate.
-2. **The scan form's `gongpo`**, § 5.
-3. **A lead from the `shushu` skill**: each art's file in
+1. **The scan form's `gongpo`**, § 5.
+2. **A lead from the `shushu` skill**: each art's file in
    `.claude/skills/shushu/disciplines/` ends on «Leads against the register»,
    none read on a plate. Those touching a standing question: 截路空亡 at two
    hours in 《星曆考原》卷五, beside 寶鏡圖's (`almanac.md`, file not held); the
    楊公忌 check, which the 協紀 says is not the 值日 count (`almanac.md`, in the
    華齡 協紀's 下 volume).
-4. **What the review of 2026-10-23 found and did not fix**, each wanting a
+3. **What the review of 2026-10-23 found and did not fix**, each wanting a
    plate or the user's word; rechecked against the code 2026-10-30:
    - 六壬: 無親, which the 精解 names, closed as unnamed; no row for the
      direction of the generals, the 遁干, or 無依, 自任, 自信, 虎視, 冬蛇掩目.
@@ -133,7 +118,7 @@ phase:
    - 紫微: no row for `yearBoundary: lichun`; the five phases row's rung;
      「辨生剋制化以定窮通」 is 斗數準繩's and not the 太微賦's; 第五冊 of the
      絕學 holds three works; the `sihua` refusal row unmarked.
-5. **The lens, when it moves again**: the month board, designed with its lens
+4. **The lens, when it moves again**: the month board, designed with its lens
    from the start; 八字 last and only if the user wants it, the relations
    there (合, 沖, the ten gods) being a different lens. Leads, none decided:
    論星辰生尅制化 (全書 卷之三, PDF 162–163) gives a 紫微 palace's ground its
@@ -315,8 +300,7 @@ nothing exposes. Only those with something to wait on:
   《星曆考原》卷五, reported to read 子 and 丑 too, would be a second holder and
   is not held.
 - **Not yet attributed.** The default of `earth`; who turns the year at
-  正月初一 (立春 and the 子 hour are read and wait on item 1 of "What to do
-  next"); the 大運 to the minute; the years
+  正月初一 and the day at the 子 hour (盧央 describes it and holds nothing); the 大運 to the minute; the years
   lived by turns; a second value of `shensha`; the noble of 庚 seated with
   辛's.
 

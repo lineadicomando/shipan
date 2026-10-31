@@ -59,6 +59,17 @@ describe('the combination a board stands on', () => {
     });
   });
 
+  it('says the pillars stand on a convention once their year has a holder', () => {
+    // 《中國古代算命術》 turns the year at 立春 and 《命理新論》 casts by true
+    // solar time; the day turned at the 子 hour is named by no text, and no
+    // text holds the other two together.
+    expect(combinationOf('pillars', {})).toEqual({
+      state: 'unattributed',
+      attributed: true,
+      together: [],
+    });
+  });
+
   it('answers nothing for a board with no parameter of its own', () => {
     expect(combinationOf('nothing', {})).toBeUndefined();
   });

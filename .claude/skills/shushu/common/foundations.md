@@ -176,7 +176,7 @@ behind it.
 
 | Value | Who holds it | Where it applies |
 |---|---|---|
-| `lichun` — at the instant λ☉ = 315° | Every almanac that prints four pillars (`docs/parameters.md`); 洪丕謨 《中國古代算命術》 p. 59 ★ explicitly: 「推年不管用什么方法，都必須嚴格劃定以農曆的立春作為一年的界限」, with both directions worked (`CAL-03`). Read on the plate 2026-10-31 (`docs/sources.md` § "The year turned at 立春 and the day at the 子 hour"); declaring it held waits on the user's word | the pillars' default |
+| `lichun` — at the instant λ☉ = 315° | Every almanac that prints four pillars (`docs/parameters.md`); 洪丕謨 《中國古代算命術》 p. 59 ★ explicitly: 「推年不管用什么方法，都必須嚴格劃定以農曆的立春作為一年的界限」, with both directions worked (`CAL-03`). Read on the plate 2026-10-31 and declared its holder, `suanmingshu` (`docs/sources.md` § "The year turned at 立春 and the day at the 子 hour") | the pillars' default |
 | `chunjie` — at 正月初一 | The civil convention: GB/T 33661 §6.1.1 ties the year's 干支 to the 農曆年 (1984-02-02 to 1985-02-19 is 甲子年) ★, `CAL-03`; and the reckoning that fits a board counted on lunar months | `ziwei.yearBoundary` defaults to it, and `docs/parameters.md` § "Rows that are not like the others" argues why |
 | `dongzhi` — at the winter solstice | 《命理新論》 第九章 ★, with a worked chart: the year pillar alone moves and the month pillar stays (`docs/sources.md` § Tier 1). For 太乙, 《太乙數統宗大全》 counts its year from one 冬至 to the next (`taiyi.yearBoundary: dongzhi`) | pillars and 太乙 |
 
@@ -203,7 +203,7 @@ it lives.
 
 | Value | What it does | Who holds it |
 |---|---|---|
-| `zishi` | The day pillar turns at 23:00 local, the start of the 子 hour. The whole 子 hour belongs to the coming day | 盧央 p. 24 ★ states it, 「一日是从子时起（23h～1h）」, and works six days, read on the plate 2026-10-31; a study describing the count, so whether it holds the value waits on the user's word. Most modern Taiwanese and mainland 子平 practice (*web*, unweighed) |
+| `zishi` | The day pillar turns at 23:00 local, the start of the 子 hour. The whole 子 hour belongs to the coming day | 盧央 p. 24 ★ states it, 「一日是从子时起（23h～1h）」, and works six days, read on the plate 2026-10-31; a study describing the count, recorded and holding nothing (the user's word, 2026-10-31). No text holds this value yet. Most modern Taiwanese and mainland 子平 practice (*web*, unweighed) |
 | `midnight` | The day turns at 00:00. From 23:00 to 24:00 is the **夜子 yèzǐ** (晚子): its day pillar is the day that is ending, and its hour stem is read from the coming day. From 00:00 to 01:00 is the **早子** | 《命理新論》 第九章 ★: 「早子應用本日子時的天干，夜子應用明日子時的天干…以半夜正子…為前後兩日的交換點」, with worked charts for both halves. The engine's `midnight` computes the hour stem exactly this way |
 
 **Older evidence, unweighed.** The calendar's own day, as opposed to the 干支
