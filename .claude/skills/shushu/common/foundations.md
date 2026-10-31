@@ -14,7 +14,7 @@ moves a rung. Where this file and the register disagree, the register stands
 and the disagreement is listed in § 7.
 
 Marks: ★ is on this project's shelf (`texts/README.md`), ☆ is wanted and not
-held (`TODO.md` § 2). The transcribed corpus `texts/rules/CAL-01` to `CAL-13`
+held (`docs/open.md` § "The shelf"). The transcribed corpus `texts/rules/CAL-01` to `CAL-13`
 (in Italian, imported 2026-08-31) is the project's own finding aid for most of
 §§ 1–2, and is cited by rule number.
 

@@ -1,7 +1,7 @@
 # Documentation
 
 **Everything in this directory describes the project as it is now.** How it
-got here is in [`history/`](history/README.md); what is not built yet is in
+got here is in [`history/`](history/README.md); what to do next is in
 `TODO.md`. Keeping those three apart is the whole arrangement: a reader —
 or an agent — must be able to tell at a glance whether a page binds them.
 
@@ -17,6 +17,7 @@ or an agent — must be able to tell at a glance whether a page binds them.
 | [`notes.md`](notes.md) | what this project claims and how the claim is kept honest: the ladder a quantity is weighed on, the corpus that is a finding aid and not the register, derived against written, and the date a written entry shows |
 | [`agent-prompt.md`](agent-prompt.md) | the contract a model calling this project has to read first — through MCP or through the REST API |
 | [`sources.tsv`](sources.tsv) | the register as a table: one row a quantity, the rung it stands on, what it was checked against, and the section of `sources.md` that argues it |
+| [`open.md`](open.md) | every question standing open — what each refused value waits on, what is recorded with no parameter, the shelf's lines, the readings' errands — with what would answer it. `TODO.md` orders it |
 | [`provenance.tsv`](provenance.tsv) | every file this project was read off that came from the network: URL, revision, date taken, sha256 |
 
 `CLAUDE.md` at the root holds the rules that bind any change, one line each,

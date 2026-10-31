@@ -9,7 +9,7 @@ values and their holders in `docs/parameters.md` and
 characters". This file does not restate them.
 
 Marks: ★ on this project's shelf (`texts/bazi/`, `texts/README.md`);
-☆ wanted and not held: `TODO.md` § 2 "Wanted and not held" where it is
+☆ wanted and not held: `docs/open.md` § "The shelf", "Wanted and not held" where it is
 listed there, otherwise this file's own proposal (§ 7). `(web transcription)` = read off a web
 page during research, a lead and never a witness. `(shelf typesetting)` = read
 in a modern searchable typesetting held on the shelf: also a finding aid. The
@@ -574,8 +574,8 @@ These are teachings and never transcript facts (`prompt.bazi.gods`).
     against it), 《子平真詮》 ★ (沈 for; 徐樂吾 against).
 - **`dayBoundary: zishi` and `yearBoundary: lichun` are still unattributed.**
   - The corpus's 推年法 (中国古代算命术 p. 59, `CAL-03`, `W02243`) states 立春
-    「必须严格」: a modern witness to `lichun`, not yet in the register, and
-    listed as a lead in `TODO.md` § "What to do next".
+    「必须严格」: read on the plate 2026-10-31, and the holder of `lichun`
+    (`suanmingshu`).
   - ☆ 《星平大成》 for `midnight`.
 - **A third 夜子 reading** (the day *and* the hour stem kept on the ending
   day), seen only on web pages. Locate a manual holding it before naming a
@@ -603,7 +603,7 @@ These are teachings and never transcript facts (`prompt.bazi.gods`).
 ## 8. Leads against the register
 
 - **`dayBoundary: midnight` and `trueSolarTime: true` have their holder in
-  prose and no row in `sources.tsv`** (`TODO.md`, review of 2026-10-23).
+  prose and no row in `sources.tsv`** (`docs/open.md`, review of 2026-10-23).
 - **The register's 八字 sections name no witness for the hidden-stem table**,
   and `hidden-stems.ts` calls its list «the common 人元司令 one». Two works on
   the shelf print **人元司令 tables that differ from it**:

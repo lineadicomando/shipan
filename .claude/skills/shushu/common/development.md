@@ -28,15 +28,15 @@ no plate».
 
 ## Before anything: where the work stands
 
-`TODO.md` § "Resuming cold", then "What to do next" and § 2. That section
-says what to read and what not to open. Do not start from `docs/history/`.
+`TODO.md` § "Resuming cold", then "What to do next". That section says what
+to read and what not to open; every standing question is `docs/open.md`. Do not start from `docs/history/`.
 
 ## Taking up a reading
 
-1. **Which.** The order in `TODO.md` ("What to do next"), then § 2. A reading
-   is worth taking when it can move something: a refused value in § 1, a
-   recorded divergence, a rung. A sweep of a book for its own sake is not
-   one (§ 2: «nothing here is a sweep of a book»).
+1. **Which.** The order in `TODO.md` ("What to do next"), then
+   `docs/open.md` § "The shelf". A reading is worth taking when it can move
+   something: a refused value, a recorded divergence, a rung. A sweep of a
+   book for its own sake is not one.
 2. **What the file is** before what it says: its row in `texts/README.md`; for
    a new file, the four commands of `docs/scans.md` § "What a file is, before
    what it says".
@@ -45,8 +45,8 @@ says what to read and what not to open. Do not start from `docs/history/`.
    shape: a table, a run of worked cases, a run of drawn boards, prose with a
    起例, a rule measured against the engine.
 4. **What it is owed when done**: the list in `TODO.md` § "Resuming cold" —
-   argument with date, register row and rung, shelf row, roadmap, a phase in
-   `docs/history/` — and one commit.
+   argument with date, register row and rung, shelf row, `docs/open.md` and
+   `TODO.md`, a phase in `docs/history/` — and one commit.
 
 ## Tools on the shelf, by the shape of what is read
 
@@ -172,15 +172,16 @@ the value to the source's own cases where it has any.
 A TODO earns its line when it names **the question, the source that would
 settle it, and whether that source is on the shelf**. Where it goes:
 
-| it is | it goes in `TODO.md` |
+| it is | it goes in |
 |---|---|
-| a refused value and what it waits on | § 1, both tables |
-| a divergence the register records and nothing exposes | § 1, "Recorded, with no parameter" |
-| a named section of a held file to read | § 2, the shelf table |
-| a small doubt a reading left | "Left open by the reading of …" |
-| a file wanted | § 2, "Wanted and not held" |
-| a surface or code fault | § 5 |
-| something to stay refused | § 6, with its entry in `docs/refusals.md` |
+| a refused value | `TODO.md` § 1, and what it waits on in `docs/open.md` § "What each refused value waits on" |
+| a divergence the register records and nothing exposes | `docs/open.md` § "Recorded, with no parameter" |
+| a named section of a held file to read | `docs/open.md` § "The shelf" |
+| a small doubt a reading left | `docs/open.md` § "Left open by the readings" |
+| a file wanted | `docs/open.md` § "The shelf", "Wanted and not held" |
+| a surface or code fault | `docs/open.md` § "Surfaces and code" |
+| something to stay refused | its entry in `docs/refusals.md` |
+| the next thing to do | `TODO.md` § "What to do next", in the user's order |
 
 Proposals a practitioner should look for: a doctrine the arts teach that the
 engine neither computes nor refuses (each discipline file's section 7 lists

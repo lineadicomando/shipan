@@ -260,6 +260,12 @@ had already been filed as a second witness to a rule the register carries. The
 test is cheapest exactly where it matters most — on the section a file was
 opened *for*, since that is the section somebody will quote.
 
+**A digit read alone is a digit unread.** A constant printed in characters is
+read against whatever the page prints beside it — a rate, a sum, a worked
+case — before it is used: 月孛's 大數 stood misread for five weeks, and the
+rate printed beside it was the check (`docs/sources.md` § "《星學大成》卷十四 to 卷二十二: the 三辰通載, with a
+reckoning for each of the four 餘").
+
 **A book's own 目錄 is a witness to it and can be wrong about it**, which is
 the same rule one level down: it is a description, written by somebody, of the
 thing it sits in front of. 《協紀辨方書》卷七's contents leaf prints 八錄 for a

@@ -64,7 +64,7 @@ a 奇門 board (§ 4.4).
 ## 2. Texts and lineages
 
 ★ on this project's shelf (`texts/README.md` § almanac and § qimen); ☆ wanted
-and not held (`TODO.md`, `texts/README.md` § Still missing).
+and not held (`docs/open.md`, `texts/README.md` § Still missing).
 
 **The standard and its predecessor**
 
@@ -86,7 +86,7 @@ and not held (`TODO.md`, `texts/README.md` § Still missing).
   用事宜忌. A finding aid that says exactly which leaf to look for (§ 7).
 - 曹震圭 《曆事明原》 (Yuan): reached only through the 考原 and the 協紀.
 
-**The 通書 line** (none held; all ☆ in the sense of § 7, none yet in `TODO.md`)
+**The 通書 line** (none held; all ☆ in the sense of § 7, none yet in `docs/open.md`)
 
 - 《三曆撮要》 (南宋, anon.); 《新刊陰陽寶鑑剋擇通書》 (Yuan, 前集五卷 後集五卷 —
   建除 宜忌 in 後集卷三); 熊宗立 《類編曆法通書大全》 30 juan (adds 叢辰), 《鰲頭通書》;
@@ -229,7 +229,7 @@ calendrical layer under every board" and § "The other boards").
       corners by the 月將), 貴登天門時 (the noble on 乾亥), 九醜, 旬中空亡.
 11. **宜忌**: refused (`docs/sources.md` § 曆注, "What is not here", and the
     header of `packages/core/src/almanac.ts`). `docs/refusals.md` has no entry
-    of its own for it yet (`TODO.md`, review of 2026-10-23); § "Ordering two
+    of its own for it yet (`docs/open.md`, review of 2026-10-23); § "Ordering two
     hours, and dating an outcome" covers only the verdicts built on it.
     The consultant supplies it, attributed (§ 4).
 
@@ -440,7 +440,7 @@ Each: what · why · what would settle it · on the shelf or not.
   run of ten» transmission meets «every hour the rule strikes», and the engine
   chose the rule both times. 寶鏡圖's sixty leaves ★ were read on
   2026-10-26: 子丑 on every 戊 and 癸 day, so the two-hour reading has a
-  holder on the plate, and `TODO.md` § 1 records it with no parameter. Still
+  holder on the plate, and `docs/open.md` records it with no parameter. Still
   open: the 考原 卷五 on a plate ☆, a second holder. For the user: a value, or
   the recorded variant as it stands. The same leaves mark 五不遇 by the hour's
   *branch* controlling the day's stem, on a third of the days only: a
@@ -509,7 +509,7 @@ Each: what · why · what would settle it · on the shelf or not.
 - **臨日's valence.** Shipped `xiong` (`almanac.ts`); the 協紀 overrules the
   《樞要歷》 and calls it 吉 (華齡 OCR p. 160, memorial p. 13). And the
   register's 神煞 row still says seven where thirty ship (`sources.tsv`). Both
-  are in `TODO.md`, review of 2026-10-23.
+  are in `docs/open.md`, review of 2026-10-23.
 - **楊公忌.** `docs/sources.md` § 二十八宿值日 records «a check the source
   suggests, which fails»: the 楊公忌 as «the days the count gives 室», laid against
   the engine's 室 days, 2 of 78. The 協紀 卷三十六 *(web transcription)* says the

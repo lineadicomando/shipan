@@ -14,7 +14,7 @@ correct-looking fix from being wrong.
 | `CLAUDE.md` | the rules that bind any change. Here |
 | [`docs/`](docs/README.md) | **the project as it is now**: architecture, parameters, sources, refusals, readings, i18n, what is claimed |
 | [`docs/history/`](docs/history/README.md) | **how it got here.** Never normative. Never rewritten to match the present |
-| [`TODO.md`](TODO.md) | what is not built yet |
+| [`TODO.md`](TODO.md) | what to do next, and how to resume; every open question is [`docs/open.md`](docs/open.md) |
 | [`README.md`](README.md) | what this is, for somebody arriving |
 | [`design/logo/`](design/logo/README.md) | the name, why it was cut, and the marks that carry it |
 

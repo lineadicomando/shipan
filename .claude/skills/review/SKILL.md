@@ -107,6 +107,7 @@ level 4 should be.
 
 It does not. What a pass discovered belongs in exactly one of three places:
 `docs/` if it is a fact about the present that was wrong or missing,
-`docs/history/` if it is the record of a decision this pass forced, `TODO.md`
-if it is not built yet. A file called `review-2026-09.md` is none of those and
+`docs/history/` if it is the record of a decision this pass forced,
+`docs/open.md` if it is an open question, with a line in `TODO.md` if it is
+next. A file called `review-2026-09.md` is none of those and
 is where findings go to be forgotten.

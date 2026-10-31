@@ -24,8 +24,9 @@ by a model acting as an expert in these arts, for three jobs:
 - `docs/sources.md` — grep your art's name; read the sections on it, at least
   the one titled "Whose each value of a … board is". This is the register: what
   the project has established on the plate.
-- `TODO.md` — the lines on your art (§ 1 refused values, "Recorded, with no
-  parameter", § 2 the shelf).
+- `TODO.md` § 1, the refused values, and `docs/open.md`, the lines on your
+  art (what each refused value waits on, "Recorded, with no parameter", the
+  shelf).
 - `texts/README.md` — grep for your art's works: which files are on the shelf.
 - `docs/refusals.md` — what the engine refuses to compute, and why.
 
@@ -77,7 +78,7 @@ repository. Sections, in this order:
    attributed author, editions, and what it is used for; modern lineages and
    manuals in Chinese and in English. Mark with ★ the ones on this project's
    shelf (from `texts/README.md`), and with ☆ the ones the project wants and
-   does not hold (from `TODO.md`).
+   does not hold (from `docs/open.md`).
 3. **How a board is laid (起例)** — step by step, and at every step where
    practitioners diverge: who holds which reading, and **the engine parameter
    that models it** (`qimen.centreLodging: dun`), or "not modelled" if none.

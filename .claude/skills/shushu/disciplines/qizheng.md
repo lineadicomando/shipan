@@ -51,7 +51,7 @@ History, attributed:
 
 ## 2. Texts and lineages
 
-★ on the shelf (`texts/README.md`); ☆ wanted and not held (`TODO.md`, or the
+★ on the shelf (`texts/README.md`); ☆ wanted and not held (`docs/open.md`, or the
 "Still missing" list of `texts/README.md`).
 
 **Primary compilations**
@@ -226,7 +226,7 @@ seven) and 弱宮 (兄 奴 疾 遷 貌, five) per 琴堂/張果星宗.
 
 ### 3.6 身宮 shēngōng
 
-Not modelled; recorded in `TODO.md` with two readings, and there are four:
+Not modelled; recorded in `docs/open.md` with two readings, and there are four:
 - the Moon's palace: 張果星宗一 「月為身星…月躔某度即身之度主也」; 「諸星家
   俱以太陰為身」 (星學大成 卷四); 星學大成 卷三十 論身宮;
 - the degree facing the 命: 萬民英 in 星盤或問 (卷四; the same dialogue is

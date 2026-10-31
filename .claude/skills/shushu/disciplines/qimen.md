@@ -59,7 +59,7 @@ traditional characters.
 
 ## 2. Texts and lineages
 
-★ = on the shelf (`texts/README.md`). ☆ = wanted and not held (`TODO.md`).
+★ = on the shelf (`texts/README.md`). ☆ = wanted and not held (`docs/open.md`).
 Unmarked = found in this research and not yet on either list.
 
 **Classical and imperial**

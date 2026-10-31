@@ -51,7 +51,7 @@ plate and moves no rung.
 ## 2. Texts and lineages
 
 ★ = on this project's shelf (`texts/README.md`, `texts/taiyi/`, `texts/shushu/`).
-☆ = wanted and not held (`TODO.md` § 2).
+☆ = wanted and not held (`docs/open.md` § "The shelf").
 
 **The two lineages the engine follows.** These are two works, not two copies
 (register § "Whose each value of a 太乙 board is"):
@@ -86,7 +86,7 @@ plate and moves no rung.
   versions of the 寶鑑, "essentially the same content". The other two are a
   Ming manuscript in 中國基本古籍庫 and a 20-juan facsimile edited by 謝路軍
   and collated by 李德潤. Whether the shelf copy and the 寶鑑 are one recension
-  is still listed as open in `TODO.md` § 2: see § 8.
+  is still listed as open in `docs/open.md` § "The shelf": see § 8.
 - ★ **盧央, 《中國古代星占學》**, 中國科學技術出版社 2007, 第五章 太乙式
   (`shushu/zhongguo-gudai-xingzhanxue.pdf`, PDF = print + 18). A historian's
   study, not a manual. It works six dated boards and weighs three 上元積年
@@ -101,7 +101,7 @@ plate and moves no rung.
   time, and the 上海大成書局 《太乙神數》 (1922) reprints it. `epoch: taojin`
   is named for it and refused. A web transcription is summarised in § 4 and § 8.
 - **《武經總要》後集 卷十九–二十**, 太乙定主客勝負陽局立成 / 陰局立成, 1044, on
-  Wikisource. **Not on the shelf, and not in `TODO.md`.** It is a third 立成
+  Wikisource. **Not on the shelf, and not in `docs/open.md`.** It is a third 立成
   of all 144 局, three centuries older than the 統宗 and outside the 大典
   reconstitution of the 金鏡. See § 7 and § 8.
 - 《景祐太乙福應經》, 楊惟德, 十卷 (a 北京大學圖書館 copy is digitised). Not held.
@@ -164,7 +164,7 @@ Register sections are cited as §. Parameters are `TaiyiOptions` in
    - 甲寅 epochs. The 三基 run from 「上元甲寅」 (285 011 at 724). The 金鏡's
      大遊 is also printed 「置上元甲寅所求積年」 *(web transcription, 卷五)*,
      while the engine counts it on the 13 331 count. 曲安京 reconstructs a
-     甲寅太乙曆. The heading 甲寅 on 統宗 p. 110 is open (`TODO.md` § 2).
+     甲寅太乙曆. The heading 甲寅 on 統宗 p. 110 is open (`docs/open.md` § "The shelf").
 3. **局 jú, 紀 jì, 元 yuán.**
    - 積年 mod 360 is the 周紀. Mod 60 gives the 太歲 and the 紀 (`liuji`).
      Mod 72 gives the 局 (`ju`).
@@ -543,7 +543,7 @@ None of these is a correction. Each says where a reading would look.
    prints 「十」 beside a 大將 in 二宮, so 32 with two numerals lost in the
    transcription. Its 參將 follow ×3 mod 10 in all but a handful of parsed
    cells. It writes 杜 at every count of 25 (about 24 cells), with 「不利，宜固守」.
-   That is a fortune `TODO.md` says no source gives. Its 和/不和 labels follow
+   That is a fortune `docs/open.md` says no source gives. Its 和/不和 labels follow
    none of the three tests cleanly on a first pass. Parsing code and outputs
    were kept outside the repository.
 7. **The 統宗's apparatus is 授時 or 庚午元曆.** The register cites 錢大昕

@@ -43,7 +43,7 @@ History, as far as the texts reach:
 ## 2. Texts and lineages
 
 ★ on this project's shelf (`texts/README.md` § ziwei, § juexue). ☆ named in
-`TODO.md` as wanted or unread. Unmarked: found in research, not held.
+`docs/open.md` as wanted or unread. Unmarked: found in research, not held.
 
 ### The fourteen-star board (what the engine computes)
 
@@ -197,7 +197,7 @@ agrees on 甲乙丙丁己辛癸. The contested cells:
 | 戊 科 | 右弼 | 《全書》 and everyone but 王亭之 |
 | 戊 科 | 太陽 | 王亭之 (web): 左輔 and 右弼, being 輔曜, never transform |
 
-Not modelled: 王亭之's table (戊 and 庚), ☆ in `TODO.md`. The engine marks the
+Not modelled: 王亭之's table (戊 and 庚), ☆ in `docs/open.md`. The engine marks the
 cell the declared tables part over (`ZiweiSeat.contested`) on whichever side is
 in force.
 
@@ -427,7 +427,7 @@ Refused or not done, and where it is argued:
   reads 恭鑑老人's 北派 as 太陰 科 · 天同 忌 and gives 天相 to the 占驗派 of the
   same volume. Either the web conflates the two parts of 第七冊, or another 北派
   exists; check before `tianxiang`'s `heldBy` is cited outside the register.
-- **王亭之 at 壬.** The register and `TODO.md` file 王亭之's departures at «戊,
+- **王亭之 at 壬.** The register and `docs/open.md` file 王亭之's departures at «戊,
   庚 and 壬» (from Han). Two web sources give his 壬 as 天府 — the 《全書》
   reading — so he would be a holder of `quanshu`'s contested cell, departing
   from 陸斌兆's table at 壬 rather than from 《全書》.

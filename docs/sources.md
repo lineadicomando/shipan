@@ -3433,7 +3433,7 @@ hours missing where the print skips them.
   The 考原's own list is reported to read 「戊癸日子丑時」 as well, from a web
   transcription of its 卷五, which is not held: a lead, not a witness. **That is
   a divergence between practitioners** and not between witnesses to one text,
-  and it is recorded with no parameter (`TODO.md` § 1).
+  and it is recorded with no parameter (`docs/open.md`).
 - **The god each hour treads agrees on 526 hours of 590 read**, the entries
   sharing two hours left out. Of the 64 that do not, 33 name no god at all —
   an entry for the noble, 「辛未時天乙貴人吉」 — eleven are 丁酉's, and the
@@ -5082,7 +5082,7 @@ that the compiler who prints it most fully calls 諸說紛紜 and 後人附會�
 parameter value names a school somebody follows. **The one text here that
 states these boards most fully is the one that says they are not what the art
 is about**, and this engine is not in a position to pick a school out of a set
-its own best witness disowns. `TODO.md` § 1 carries what would change it: not
+its own best witness disowns. `docs/open.md` carries what would change it: not
 another statement of the method, of which there are now plenty, but a lineage
 that holds one of them.
 
@@ -5136,7 +5136,7 @@ printed beside it: 「至九星轉運，陽用飛星，陰用伏宮退一法，*
 and the work separates it from its neighbour and forbids using one for the
 other. It is an overlay on a laid board, which is what the two sentences
 suggested and is now established instead of suspected. `plate: fei` does not
-move on it, and the clause under that value in `TODO.md` can be written with
+move on it, and the clause under that value in `docs/open.md` can be written with
 a reason.
 
 **And the chapter carries a laying procedure that does fly, which is a
@@ -5626,7 +5626,7 @@ it is one line out of that stretch. From the extract, so a lead and marked:
 
 #### The lineages that hold one reading, and the fifth family
 
-`TODO.md` § 1 says what would move these values: not another statement of the
+`docs/open.md` says what would move these values: not another statement of the
 method but a lineage holding one of them. Two are on this shelf and neither has
 been weighed. Both are 張志春's line, both are extracts, and they are recorded
 here as leads with the register's reason for keeping a lead written down.
@@ -11358,7 +11358,7 @@ reports it, and a holder found later takes the reporter's place.
 the value stays refused until the line is found to hold one.
 
 **A divergence is in one of three states**, and
-[`TODO.md`](../TODO.md) § 1 says which.
+[`TODO.md`](../TODO.md) § 1 and [`open.md`](open.md) say which.
 
 | | When |
 |---|---|
@@ -11442,7 +11442,7 @@ stands on that text.
 at two to four plate-pages a minute cannot be re-read at every arrival, and a
 rule that asks for it is a rule that gets skipped.
 
-1. **What is standing?** `TODO.md` § 1 says, per refused value, what would
+1. **What is standing?** `docs/open.md` says, per refused value, what would
    move it — a school holding 艮, a text flying the hour board, a lineage
    holding one reading, a 授時 table printing 參, an epoch for 紫氣. Those
    clauses are the query put to the arrival, and they stay there rather than

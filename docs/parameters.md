@@ -46,7 +46,8 @@ Once an editorial settlement is named as the thing that is *not* a parameter, a
 convention this engine follows and another living tradition does not stops
 being able to hide behind the same word. If two practitioners would draw
 different boards, the divergence owes a parameter, whatever else is true about
-it. `TODO.md` § 1 carries what that costs today.
+it. `TODO.md` § 1 lists what that costs today, and `docs/open.md` what each
+refused value waits on.
 
 **This section settles what a disagreement between witnesses becomes, and the
 other half of the question is not here.** What an *agreement* between them is
@@ -75,7 +76,8 @@ The audit that followed the narrowing put every admission of divergence in
 Most of what the audit met was the rule already working. The 用神 mapping is
 refused in `scan.ts` in as many words; 六壬's 課體 reports nothing where the
 sources disagree; `leapMonth`, `huoling` and `centreLodging` each carry their
-alternatives declared and refused. What it found is in `TODO.md` § 1.
+alternatives declared and refused. What it found is in `TODO.md` § 1 and
+`docs/open.md`.
 
 ## What a school value must show
 

@@ -7,7 +7,7 @@ difference is listed in § 8. The project's rules are in `CLAUDE.md`, and are
 not repeated here.
 
 Marks: ★ on this project's shelf (`texts/README.md` § liuren and around it);
-☆ wanted by `TODO.md` or proposed here and not held.
+☆ wanted by `docs/open.md` or proposed here and not held.
 
 ---
 
@@ -271,9 +271,8 @@ the general's own phase only as the image it lends (陳公獻's 「六合屬震�
 
 **Day or night half: `zhouye`.**
 - **`branch`** (卯–申 晝, 酉–寅 夜; implemented): 精解, 經緯 and 直指; and
-  陳公獻's 125 cases in the 指南, decided 2026-10-30 and not yet in `heldBy`
-  (TODO.md, "What to do next" 1). His cases read 10 of 31 nights by the day
-  seat, nine of them between 小滿 and 秋分.
+  陳公獻's 125 cases in the 指南, in `heldBy` since 2026-10-31. His cases
+  read 10 of 31 nights by the day seat, nine of them between 小滿 and 秋分.
 - **`solar`** (refused): 精解 「古來亦有…准星之出沒或日之出沒而分晝夜者」. 程樹勳:
   「貴人治旦暮，或以日出為旦，用陽貴；日入為暮，用陰貴。或以卯至申…」, quoting
   《六壬心鏡注》 「用晝夜長短分旦暮」. 神定經 釋日出沒 tabulates sunrise and
