@@ -2,8 +2,10 @@
   import type { MessageKey, Translator } from '@shipan/i18n';
 
   /**
-   * The four pillars drawn the way the Qi Men board is: one square each,
-   * tinted by the phase of its stem, read top to bottom.
+   * The four pillars drawn the way the Qi Men board is: a column each, read
+   * top to bottom. Beside a board, one square to a pillar tinted by its stem;
+   * as the Four Pillars' own board, three rows — the stems, the branches and
+   * what the branches conceal — each half tinted by its own element.
    *
    * Hour, day, month, year from the left, which is where a chart written by
    * hand puts them: four columns right to left with the year at the right
@@ -34,10 +36,15 @@
     position: string;
     ganzhi: {
       stem: { id: string; hanzi: string; pinyin?: string; element: string };
-      branch: { id: string; hanzi: string; pinyin?: string };
+      branch: { id: string; hanzi: string; pinyin?: string; element?: string };
     };
     stemGod?: { id: string } | null;
     stage?: { id: string };
+    /** 藏干, strongest first: the order is the only mark of rank. */
+    hidden?: readonly {
+      stem: { stem: { id: string; hanzi: string; pinyin?: string; element: string } };
+      god: { id: string };
+    }[];
   }
 
   /**
@@ -105,13 +112,24 @@
   word under the glyph cannot be read.
 -->
 <div class="frame">
-<div class="plate" class:bare={!full} class:wide={!full && wide}>
-  {#each drawn as pillar (pillar.position)}
-    <div class="cell" style="--element: var(--element-{pillar.ganzhi.stem.element})">
-      <div class="registers">
-        <!-- The pillar names itself in the corner, as a palace does. -->
-        <p class="corner">{t(`cli.column.${pillar.position}` as MessageKey)}</p>
-        {#if full}
+<div class="plate" class:full class:bare={!full} class:wide={!full && wide}>
+  {#if full}
+    <!--
+      The Four Pillars in three rows: the stems, the branches, and under them
+      what the branches conceal. A row is one kind of thing read across four
+      columns, so a reader comparing the four stems reads one line and not
+      four boxes; and each half of a pillar takes the tint of its own element,
+      where one square had dressed the branch in the stem's.
+    -->
+    <!-- The name of each pillar heads its column, on a row of its own and
+         outside the tint: it names the three cells under it, and set in the
+         corner of one of them it read as the name of that cell alone. -->
+    {#each drawn as pillar (pillar.position)}
+      <p class="cell head">{t(`cli.column.${pillar.position}` as MessageKey)}</p>
+    {/each}
+    {#each drawn as pillar (pillar.position)}
+      <div class="cell stem" style="--element: var(--element-{pillar.ganzhi.stem.element})">
+        <div class="registers">
           <!-- The day pillar has no god: it is the day master, the point every
                other god is measured from, and it says so instead. -->
           <p class="god">
@@ -121,21 +139,76 @@
               {t('cli.field.dayMaster')}
             {/if}
           </p>
-        {/if}
-        {@render register(
-          pillar.ganzhi.stem,
-          t(`label.stem.${pillar.ganzhi.stem.id}` as MessageKey),
-        )}
-        {@render register(
-          pillar.ganzhi.branch,
-          t(`label.branch.${pillar.ganzhi.branch.id}` as MessageKey),
-        )}
-        {#if pillar.stage}
-          <p class="stage">{t(`label.stage.${pillar.stage.id}` as MessageKey)}</p>
-        {/if}
+          {@render register(
+            pillar.ganzhi.stem,
+            t(`label.stem.${pillar.ganzhi.stem.id}` as MessageKey),
+          )}
+        </div>
       </div>
-    </div>
-  {/each}
+    {/each}
+    {#each drawn as pillar (pillar.position)}
+      <div
+        class="cell branch"
+        style="--element: var(--element-{pillar.ganzhi.branch.element ?? pillar.ganzhi.stem.element})"
+      >
+        <div class="registers">
+          {@render register(
+            pillar.ganzhi.branch,
+            t(`label.branch.${pillar.ganzhi.branch.id}` as MessageKey),
+          )}
+          {#if pillar.stage}
+            <p class="stage">{t(`label.stage.${pillar.stage.id}` as MessageKey)}</p>
+          {/if}
+        </div>
+      </div>
+    {/each}
+  {:else}
+    {#each drawn as pillar (pillar.position)}
+      <div class="cell" style="--element: var(--element-{pillar.ganzhi.stem.element})">
+        <div class="registers">
+          <!-- The pillar names itself in the corner, as a palace does. -->
+          <p class="corner">{t(`cli.column.${pillar.position}` as MessageKey)}</p>
+          {@render register(
+            pillar.ganzhi.stem,
+            t(`label.stem.${pillar.ganzhi.stem.id}` as MessageKey),
+          )}
+          {@render register(
+            pillar.ganzhi.branch,
+            t(`label.branch.${pillar.ganzhi.branch.id}` as MessageKey),
+          )}
+        </div>
+      </div>
+    {/each}
+  {/if}
+  <!--
+    藏干, as a band of its own under the squares rather than inside them.
+
+    Three stems, each with its word, its reading and its god, do not fit a
+    quarter of a square, and a square stretched to hold them would carry the
+    board past the window's height. So the band takes the columns the pillars
+    stand in and as much height as it needs.
+
+    Strongest first, top to bottom, every stem at one size. The rank is a
+    fact the engine computes, but set larger, the 本氣 would tell the reader
+    where to look before they looked anywhere. The order says it, and the
+    caption says that the order says it, as the table below does.
+  -->
+  {#if full && drawn.some((pillar) => pillar.hidden?.length)}
+    <p class="caption">{t('cli.column.hidden')} <small>{t('cli.value.byWeight')}</small></p>
+    {#each drawn as pillar (pillar.position)}
+      <div class="band">
+        {#each pillar.hidden ?? [] as concealed (concealed.stem.stem.id)}
+          <div class="concealed" style="--element: var(--element-{concealed.stem.stem.element})">
+            {@render register(
+              concealed.stem.stem,
+              t(`label.stem.${concealed.stem.stem.id}` as MessageKey),
+            )}
+            <p class="god">{t(`label.god.${concealed.god.id}` as MessageKey)}</p>
+          </div>
+        {/each}
+      </div>
+    {/each}
+  {/if}
 </div>
 </div>
 
@@ -344,6 +417,66 @@
   .stage { margin-top: auto; font-size: 8cqw; color: var(--faint); }
 
   /*
+   * The three rows of the Four Pillars: each cell as tall as what it holds,
+   * the type still measured against its width, under a row naming the
+   * columns. The rules between columns start again on every row, and a rule
+   * runs between one row and the next.
+   */
+  .full .cell { aspect-ratio: auto; }
+  .full .cell:nth-child(4n + 1) { border-left: 0; }
+  .full .stem,
+  .full .branch { border-top: 1px solid var(--rule); }
+  .full .head {
+    padding: 0.4rem 0.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: var(--ground);
+  }
+  .full .registers { position: static; padding: 4cqw 3cqw; gap: 1.5cqw; }
+  .full .branch .registers { padding-block: 5cqw 4cqw; }
+
+  /*
+   * The band of 藏干: a row across the four columns, under a rule, with a
+   * caption spanning it. The type is a shade under the squares', since a
+   * concealed stem is read after the stem that stands over it.
+   */
+  .caption {
+    grid-column: 1 / -1;
+    padding: 0.35rem 0.6rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8rem;
+    color: var(--faint);
+  }
+  .caption small { margin-inline-start: 0.4em; font-size: inherit; }
+  /*
+   * Each stem as tall as what it holds, so that the stems of one rank stand
+   * on one line across the four columns: the first line is the four 本氣.
+   * Stretched to fill the column, a lone 本氣 sat level with nobody.
+   */
+  .band {
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+  .caption + .band { border-left: 0; }
+  .concealed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1cqw;
+    padding: 3cqw;
+    text-align: center;
+    background: var(--element, var(--ground));
+    border-bottom: 1px solid var(--rule);
+  }
+  .band .word { font-size: 9cqw; }
+  .band .glyph { font-size: 8cqw; }
+  .band .god { font-size: 7.5cqw; }
+
+  /*
    * Paper, where the square comes off.
    *
    * Four squares are one figure, so a page break may not pass through them:
@@ -378,6 +511,7 @@
     .plate:not(.bare):not(.wide) { inline-size: 100%; }
     .cell { aspect-ratio: auto; }
     .registers,
+    .full .registers,
     .wide .registers {
       position: static;
       justify-content: flex-start;
@@ -393,6 +527,12 @@
     .word { font-size: 0.95rem; }
     .glyph { font-size: 0.8rem; }
     .stage { font-size: 0.7rem; }
+    .full .head { font-size: 0.8rem; padding: 0.25rem; }
+    /* The band is in the flow already; only its type leaves the container. */
+    .concealed { padding: 0.3rem; gap: 0.1rem; }
+    .band .word { font-size: 0.8rem; }
+    .band .glyph { font-size: 0.7rem; }
+    .band .god { font-size: 0.65rem; }
     /* The caption to a board, which stays a caption. */
     .bare .word { font-size: 0.85rem; }
     .bare .glyph { font-size: 0.72rem; }
