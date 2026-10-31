@@ -5,6 +5,15 @@
    * The four pillars drawn the way the Qi Men board is: one square each,
    * tinted by the phase of its stem, read top to bottom.
    *
+   * Hour, day, month, year from the left, which is where a chart written by
+   * hand puts them: four columns right to left with the year at the right
+   * edge, as the drawn 課 of a Liu Ren board are. Only the figure turns. The
+   * tables under it and the text a pillar is spoken in keep year first, in the
+   * order the pillars are derived — the month off the year's stem, the hour
+   * off the day's — and in the order a European page is read. Where the plate
+   * falls back to two columns the same reversal reads hour and day above,
+   * month and year below.
+   *
    * It says nothing the table below does not, and that is the point — four
    * squares are taken in at a glance where a table has to be read row by
    * row. The table stays because it is what carries the detail, and what a
@@ -60,6 +69,9 @@
    * of the chart. See `ChartReading`, where the same line is held.
    */
   const full = $derived(pillars.some((pillar) => pillar.stage !== undefined));
+
+  /** The year at the right edge: see above. A copy, since the caller's are read-only. */
+  const drawn = $derived([...pillars].reverse());
 </script>
 
 <!--
@@ -94,7 +106,7 @@
 -->
 <div class="frame">
 <div class="plate" class:bare={!full} class:wide={!full && wide}>
-  {#each pillars as pillar (pillar.position)}
+  {#each drawn as pillar (pillar.position)}
     <div class="cell" style="--element: var(--element-{pillar.ganzhi.stem.element})">
       <div class="registers">
         <!-- The pillar names itself in the corner, as a palace does. -->
