@@ -294,7 +294,10 @@ Each step names the engine parameter, or says "not modelled".
     - `rijia` is computed: eight gates three days to a palace skipping the
       centre, and the nine 太乙 stars one palace a day. `dayGates` takes
       `fei`, `zhuan` or `shun`. `dayDun` takes `solstice` or `yang`;
-      `liushi` is refused.
+      `liushi` is refused. The 統宗's 又法日奇門起例 it was declared on, read
+      on the plate 2026-11-02, divides a different day board: sixty-day 局 of
+      the hour board's stems and stars, 陽 一七四 and 陰 九三六 (二 in the
+      統宗's prints), laid 「法亦同於年奇」.
     - `yuejia` and `nianjia` are refused. The year family's three 元 are
       一四七 for the 演義 and the 統宗, and 一七四 for 遁甲集成 第三冊 and the
       大全's 奇門古本.

@@ -63,7 +63,7 @@ sweep `docs/sources.md`, `texts/README.md`, `docs/provenance.tsv`,
 read», «unread», «still missing», «none opened», «nobody has», «stays
 refused», «stays unattributed», «not yet in», «this list is empty».
 
-## Where it stands, 2026-10-31, end of phase 85
+## Where it stands, 2026-11-02, end of phase 86
 
 **Version 0.43.0**, in every manifest, tagged `v0.43.0` and deployed at
 https://shipan.it (footer checked 2026-10-31). `main` is checked out, no
@@ -78,20 +78,30 @@ typecheck and every suite pass, no test skipped.
 | phases 76–80, 2026-10-26 to 30 | 寶鏡圖's hours; `liuren.shehai` (0.41.0); 陳公獻's 125 cases; the phases of the 十二天將 |
 | phases 81–82, 2026-10-30 | 《金函玉鏡》's leap-month 訣例; `leap: runyue` (0.42.0) |
 | phases 83–85, 2026-10-31 | 陳公獻 holds `guiren: chou` and `zhouye: branch`, so a default 六壬 board names the 指南 whole; 洪丕謨 holds `yearBoundary: lichun`; 盧央 read and holding nothing (0.43.0) |
+| phase 86, 2026-11-02 | the 統宗's sixty-day 局 read on the plate in three copies: it lays a day board with a plate of stems, not `rijia`'s; put to the user, no code moved |
 
 ## What to do next, in the order the user has been taking it
 
-1. **The scan form's `gongpo`**: offered always, found only under
+1. **`dayDun: liushi`, on the user's word** (phase 86). The 統宗's rule lays a
+   day board with a plate of stems, 「法亦同於年奇」, and `liushi` is declared
+   on `rijia`'s board, which the rule does not divide. Recommended: withdraw
+   the value from `dayDun`, and record the stems day board in `docs/open.md`
+   § "Recorded, with no parameter" with its two readings, the 統宗's and the
+   古本's. That removes one refused value and moves `parameters.ts`, both
+   catalogs, `apps/web/src/lib/parameters.ts`, the MCP schema,
+   `test/rijia.test.ts` and `docs/parameters.md`. The alternative is keeping
+   it refused with its ground restated.
+2. **The scan form's `gongpo`**: offered always, found only under
    `menpo: gongzhimen`, so a scan under the default finds nothing and does
    not say why. A filter like `layableUnder`'s for `stemPairs`, keyed on
    `qimen.menpo`, would fix it (`docs/open.md` § "Surfaces and code").
-2. **A lead from the `shushu` skill** (`docs/open.md` § "Leads from the
+3. **A lead from the `shushu` skill** (`docs/open.md` § "Leads from the
    `shushu` skill"): 截路空亡 in 《星曆考原》卷五, and the 楊公忌 check in the
    華齡 協紀's 下 volume. Neither file is held.
-3. **The review of 2026-10-23**, a line an art, each wanting a plate or the
+4. **The review of 2026-10-23**, a line an art, each wanting a plate or the
    user's word (`docs/open.md` § "The review of 2026-10-23"). Several are a
    missing row in `docs/sources.tsv` and can be written from what is read.
-4. **The lens, when it moves again**: the month board, designed with its
+5. **The lens, when it moves again**: the month board, designed with its
    lens; 八字 last and only if the user wants it (`docs/open.md` § "The lens,
    when it moves again").
 

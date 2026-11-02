@@ -20,7 +20,7 @@ a work already held is not a witness.
 |---|---|
 | `plate: fei` | a text flying the 時家 board's own 起例. None held does; the 折衷 flies the stars and the 儀 and turns the gates, which is computed as a third arrangement. Arrives with a family of `system` |
 | `system: yuejia`, `system: nianjia` | being built as the day family was. 《遁甲演義》 and the 統宗 state both; on the year they read 一四七 against 遁甲集成 第三冊's 一七四, which will be two values. The 一七四 line has a second copy in 《御定奇門大全》卷二十九, worked for 1648. No table on the shelf to hold either to |
-| `dayDun: liushi` | the 統宗's rule read on the plate for how a 局 is begun. 《御定奇門大全》卷二十九 begins a sixty-day 局 on a 甲 or 己 day, four terms to it, on a 日家 with a plate of stems, which is not the board `rijia` lays: recorded, not weighed |
+| `dayDun: liushi` | **the user's word.** The 統宗's rule was read on the plate on 2026-11-02 in three copies (`docs/sources.md` § "The 統宗's sixty-day 局, read on the plate, which lays another board"). It divides a day board laid with a plate of stems, 「法亦同於年奇」, and not the board `rijia` lays, so as declared the value has no holder. Withdraw it, keep it refused, or move it to a stems day board of its own, which 《御定奇門大全》卷二十九's 古本 states too, beginning its 局 on 甲 or 己 by the terms |
 | `strengths: star` | which of two arrangements from the star it is — 《金鏡寶鑑》卷之四's, or the 《三元經》's that the 符應經, 紀大奎 and the 探索錄 carry — and whether it reaches past the nine stars |
 | `yuejiang: jieqi`, `yuejiang: true` | a text stating either as its own. None found, on the plate or in the extracts |
 | `zhouye: solar` | which rising, and how. One sentence of 《大六壬精解》 and the 協紀's 日出入, neither with a procedure |
@@ -155,8 +155,7 @@ with a Tang attribution. None of that platform's files states a provenance.
 been opened far enough to say what it is, and `texts/README.md` has a row
 naming each: 134 files, about 33 700 pages. Most pages have never been read
 on the plate, and none is owed a reading: the shelf is read by question. The
-questions standing ask for **three readings** of files held — the 統宗's rule for `dayDun: liushi`,
-《星學大成》's limits and 量天尺 (line 4), 《中國恆星觀測史》 from p. 274
+questions standing ask for **two readings** of files held — 《星學大成》's limits and 量天尺 (line 4), 《中國恆星觀測史》 from p. 274
 (line 5) — and about thirty small
 errands under "Left open by the readings" and "Small and left open". About ten refused values
 wait on files not held ("What each refused value waits on", and "Wanted and not held" above), which no reading here
@@ -218,6 +217,10 @@ hours in 《星曆考原》卷五, beside 寶鏡圖's (`almanac.md`, file not he
 Each reading's errands, newest first; the full wording is in
 `docs/history/roadmap-2026-10-30.md`.
 
+- **Phase 86**: whether the leap of the 統宗's sixty-day 局 lays the last 局
+  before the solstice twice, which 「如時奇」 implies and does not say; the 寶鑑's
+  三 against the 統宗's 二 for the second 甲子 of 夏至, preferred and not
+  settled by a fourth copy.
 - **Phases 84–85**: 洪丕謨 turns the year at 立春 without saying whether at
   the term's day or its instant; 《淵海子平》 was asked in 卷一's 起例 only;
   `dayBoundary: zishi` has no holder, 盧央 describing it and 沈義方's
