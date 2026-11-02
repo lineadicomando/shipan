@@ -286,7 +286,7 @@ export const qimenSchema = {
     .enum(['solstice', 'yang'])
     .optional()
     .describe(
-      'Under system rijia only: where the year of a board of the day divides into its yang and yin halves. Default solstice: at the winter and summer solstices, and the yin half counts the stars (and the turned gates) the other way. yang: the year is not divided, and every day is laid with the yang count, one board to each day of the sixty all year, as the Baojing Tu prints them. A third reading, sixty days to a ju, is declared and refused.',
+      'Under system rijia only: where the year of a board of the day divides into its yang and yin halves. Default solstice: at the winter and summer solstices, and the yin half counts the stars (and the turned gates) the other way. yang: the year is not divided, and every day is laid with the yang count, one board to each day of the sixty all year, as the Qimen Dunjia Tongzong states and the Baojing Tu prints them.',
     ),
   centre_lodging: z
     .enum(['kun', 'dun', 'dunni', 'bajie', 'siyu'])

@@ -1646,7 +1646,7 @@ export const it: Record<MessageKey, string> = {
   'form.qimen.dayDun.solstice':
     'si divide a 冬至 dōngzhì e a 夏至 xiàzhì in una metà yang e una metà yin, come nel 《金函玉鏡奇門遁甲秘笈全書》 jīnhányùjìngqíméndùnjiǎmìjíquánshū',
   'form.qimen.dayDun.yang':
-    'non si divide, e ogni giorno si posa come un giorno yang, come le sessanta tavole del 《寶鏡圖》 bǎojìngtú',
+    'non si divide, e ogni giorno si posa come un giorno yang, come prescrive il 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng e come sono le sessanta tavole del 《寶鏡圖》 bǎojìngtú',
   'form.qimen.dayDun.note':
     'Nella metà yang le nove stelle avanzano di un palazzo ogni giorno, e nella metà yin arretrano di un palazzo. Con la prima lettura la tavola di un giorno dipende quindi dalla stagione oltre che dal giorno. Con la seconda lettura dipende solo dal giorno, e ciascuno dei sessanta giorni ha una sola tavola per tutto l’anno.',
   'form.qimen.earth': 'La stagione della terra è',

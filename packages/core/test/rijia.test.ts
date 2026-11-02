@@ -320,11 +320,20 @@ describe('the board of a day', () => {
     expect(seats(yang)).not.toEqual(seats(yin));
   });
 
-  it('carries the options that laid it, and refuses the half it does not compute', () => {
+  it('carries the options that laid it', () => {
     expect(lay('2024-01-01', '12:00').options).toMatchObject({ system: 'rijia', dayGates: 'fei' });
-    expect(() => lay('2024-01-01', '12:00', { dayDun: 'liushi' })).toThrowError(
-      expect.objectContaining({ code: 'OPTION_NOT_IMPLEMENTED' }),
-    );
+  });
+
+  it('lays the 統宗’s 附日奇門起例 under dayDun: yang, in the yin half as well', () => {
+    // 「其起九星八門之法，不必復分陰遁陽遁。凡甲子日天蓬起艮八宮…乙丑日天蓬起離九…
+    // 甲子日休門起坎一，三日順轉一宮，不入中五」: 2024-08-28 is a 甲子 after 夏至.
+    const jiazi = lay('2024-08-28', '12:00', { dayDun: 'yang' });
+    const yichou = lay('2024-08-29', '12:00', { dayDun: 'yang' });
+    expect(jiazi.moment.pillars.day.hanzi).toBe('甲子');
+    expect(yichou.moment.pillars.day.hanzi).toBe('乙丑');
+    expect([jiazi.taiyi.number, yichou.taiyi.number]).toEqual([8, 9]);
+    expect([jiazi.rest.number, yichou.rest.number]).toEqual([1, 1]);
+    expect(lay('2024-08-31', '12:00', { dayDun: 'yang' }).rest.number).toBe(2);
   });
 
   it('is not what the hour board’s function answers, nor the other way about', () => {

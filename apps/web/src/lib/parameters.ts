@@ -180,7 +180,7 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'dayDun',
     board: 'qimen',
     family: 'rijia',
-    values: ['solstice', 'liushi', 'yang'],
+    values: ['solstice', 'yang'],
     implemented: ['solstice', 'yang'],
     fallback: 'solstice',
     label: 'form.qimen.dayDun',

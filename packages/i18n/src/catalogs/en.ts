@@ -1785,7 +1785,7 @@ export const en = {
   'form.qimen.dayDun.solstice':
     'divides at 冬至 dōngzhì and 夏至 xiàzhì into a yang half and a yin half, as 《金函玉鏡奇門遁甲秘笈全書》 jīnhányùjìngqíméndùnjiǎmìjíquánshū has it',
   'form.qimen.dayDun.yang':
-    'does not divide, and every day is laid as a yang day, as the sixty boards of 《寶鏡圖》 bǎojìngtú are',
+    'does not divide, and every day is laid as a yang day, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng states and as the sixty boards of 《寶鏡圖》 bǎojìngtú are',
   'form.qimen.dayDun.note':
     'In the yang half the nine stars move one palace on each day, and in the yin half they move one palace back. Under the first reading the board of a day therefore depends on the season as well as on the day. Under the second reading the board depends on the day alone, so each of the sixty days has one board all year.',
   'form.qimen.earth': 'The season of earth is',

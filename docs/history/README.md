@@ -120,6 +120,7 @@ phase.
 | 84 | [The pillars' defaults read](84-the-pillars-boundaries-read.md) | done — 洪丕謨 p. 59 states the year turned at 立春, 盧央 p. 24 the day from the 子 hour; 《淵海子平》's 起例 neither; whether they hold put to the user; no code moved |
 | 85 | [The year held](85-the-year-held.md) | done — `suanmingshu` holds `yearBoundary: lichun`; 盧央 recorded and holding nothing; the pillars' block closes on a convention with nothing held together; released as 0.43.0 |
 | 86 | [The sixty-day 局 read](86-the-sixty-day-ju-read.md) | done — the 統宗's 又法日奇門起例 read on four plates; its 局 lay a day board with a plate of stems and not `rijia`'s; `dayDun: liushi` put to the user; no code moved |
+| 87 | [`liushi` withdrawn](87-the-sixty-day-ju-withdrawn.md) | done — how the value had entered, traced; the 統宗's first day method read on the plate, 「不必復分陰遁陽遁」, so it holds `dayDun: yang`; `liushi` withdrawn and the stems day board recorded; 0.44.0 |
 
 ## The rest of the record
 

@@ -73,7 +73,7 @@ Unmarked = found in this research and not yet on either list.
   It holds most of the defaults (`plate: zhuan`, `centreLodging: kun`,
   `earthPlate: yuan`, `centreTravel: stay`, `spiritSeat: tianpan`, `dingTomb:
   gen`, `yiTomb: kun`, `menpo: menzhigong`, `deshi: liuyi`, `leap: solstice`),
-  and `method: zhirun`, which is not one. 卷十二 carries the natal reading the
+  and `method: zhirun` and `dayDun: yang`, which are not. 卷十二 carries the natal reading the
   engine refuses.
 - ★ 《御定奇門寶鑑》, 六卷, 故宮 第431冊, with a typeset edition and 遁甲集成
   第四冊. The 統宗's 卷二 again. Reports `centreLodging: dun` and holds
@@ -293,11 +293,12 @@ Each step names the engine parameter, or says "not modelled".
 12. **Other families** (`system`):
     - `rijia` is computed: eight gates three days to a palace skipping the
       centre, and the nine 太乙 stars one palace a day. `dayGates` takes
-      `fei`, `zhuan` or `shun`. `dayDun` takes `solstice` or `yang`;
-      `liushi` is refused. The 統宗's 又法日奇門起例 it was declared on, read
-      on the plate 2026-11-02, divides a different day board: sixty-day 局 of
-      the hour board's stems and stars, 陽 一七四 and 陰 九三六 (二 in the
-      統宗's prints), laid 「法亦同於年奇」.
+      `fei`, `zhuan` or `shun`. `dayDun` takes `solstice` or `yang`, and
+      `yang` is the 統宗's stated rule, 「其起九星八門之法，不必復分陰遁陽遁」,
+      as well as 寶鏡圖's practice. The 統宗's 又法日奇門起例 divides a
+      different day board: sixty-day 局 of the hour board's stems and stars,
+      陽 一七四 and 陰 九三六 (二 in the 統宗's prints), laid 「法亦同於年奇」,
+      which is recorded and not computed.
     - `yuejia` and `nianjia` are refused. The year family's three 元 are
       一四七 for the 演義 and the 統宗, and 一七四 for 遁甲集成 第三冊 and the
       大全's 奇門古本.

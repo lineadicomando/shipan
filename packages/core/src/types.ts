@@ -136,11 +136,11 @@ export interface ChartOptions {
   /**
    * Where a day board's year divides into its yang and yin halves.
    *
-   * `solstice` at 冬至 and 夏至. `liushi`, sixty days to a 局, is the 統宗's
-   * and is refused. `yang` does not divide it: every day is counted as yang,
-   * one board to a day of the sixty all year, as 寶鏡圖 prints them.
+   * `solstice` at 冬至 and 夏至. `yang` does not divide it: every day is
+   * counted as yang, one board to a day of the sixty all year, as the 統宗
+   * states, 「其起九星八門之法，不必復分陰遁陽遁」, and 寶鏡圖 prints them.
    */
-  dayDun: 'solstice' | 'liushi' | 'yang';
+  dayDun: 'solstice' | 'yang';
 
   /**
    * Where the centre lodges (寄宮).

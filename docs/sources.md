@@ -1820,6 +1820,7 @@ under the naming of the spirits alone.
 | `yiTomb: kun` | 《奇門遁甲統宗》, 《遁甲符應經》, 《吉凶格解》, 《奇門遁甲金鏡寶鑑》 | 「乙奇坤宮」; 「六乙日奇臨二宮」, under 璋曰; 「六乙臨坤請避之」; added 2026-10-22. The 金鏡寶鑑's 卷一, 「乙二」, added 2026-10-25 |
 | `yiTomb: qian` | 《奇門遁甲秘笈大全》, 《奇門秘訣》 | 「乙丙臨乾請避之」, 卷十五's verse, read on the 省思堂 plate; and 三璋's 「六乙日奇下臨六宮」, with 乙 in 二 called 非; added 2026-10-22 |
 | `dayGates: shun`, `dayDun: yang` | 《寶鏡圖》 | sixty day boards, 《御定奇門大全》卷六十一–六十四: the gates turned with the sun every day and the stars the yang count on every day of the cycle; added 2026-10-22 |
+| `dayDun: yang` | 《奇門遁甲統宗》 | 卷二 附日奇門起例: 「其起九星八門之法，不必復分陰遁陽遁」, then the stars from 艮八 on 甲子 forward and 休門 from 坎一 three days to a palace; read on the 故宮 plate p. 20 and the 寶鑑's p. 43; added 2026-11-02 |
 | `deshi: liuyi` | 《奇門遁甲統宗》, 《遁甲符應經》, 《遁甲演義》, 《吉凶格解》 | 「乙奇加甲午甲戌　丙奇加甲子甲申　丁奇加甲寅甲辰」, the 統宗's 四十格; 「甲戌甲午乙為使…」 under 葛洪, and in the 演義 with three cases that lay; added 2026-10-22 |
 | `deshi: zhishi` | 《奇門遁甲開悟之門》 | 「只要門盤是值使門，就為三奇得使」, p. 120, the author's own 初步意見; added 2026-10-22 |
 | `menpo: menzhigong` | 《奇門遁甲統宗》, 《遁甲符應經》, 《奇門遁甲秘笈大全》 | 卷一 迫, eleven cells; the 符應經's thirteen cells, under a sentence naming the relation the other way; 「驚開三四休臨九…吉門被迫吉不就」; added 2026-10-22 |
@@ -2853,10 +2854,8 @@ with 六儀 laid backward and 三奇 forward. 處暑 to 寒露 is 陰遁三局, 
 大雪 is 陰遁六局. Each 局 is four terms and sixty days. That is a 日家 laid with
 a plate of stems, which is not the board `system: rijia` lays: that board is
 the 太乙 nine stars and 休門 three days to a palace. It is a statement of how a
-sixty-day 局 is begun, which is what `dayDun: liushi` waits on from the 統宗.
-But it is another work, and it is about a board this engine does not lay.
-Recorded, not weighed. **The 統宗's own rule, read on 2026-11-02, is about
-the same board**, a day laid with a plate of stems, and begins its 局 on a
+sixty-day 局 is begun, on a board this engine does not lay. **The 統宗's own
+rule, read on 2026-11-02, is about the same board**, a day laid with a plate of stems, and begins its 局 on a
 甲子 with a leap: § "The 統宗's sixty-day 局, read on the plate, which lays
 another board".
 
@@ -3491,8 +3490,7 @@ other twenty it is the day before's.**
 **So 寶鏡圖 lays one board to a day, and never two.** It prints the sixty
 days once, with no 陽遁 and 陰遁, and every wheel it prints is the yang count.
 The engine divides the day board's year at the solstices under `dayDun:
-solstice` and at sixty-day 局 under `liushi`, and under either it lays the
-yin count for half the year. And it turns the gates the way no value does: with
+solstice`, and lays the yin count for half the year. And it turns the gates the way no value does: with
 the sun every day. Two readings. The first is a
 `dayDun` that does not divide the year, and the second a third value of
 `dayGates`. Both are attributed and transcribed: sixty boards, in one work,
@@ -5600,10 +5598,10 @@ What the table prints beside its gates and stars — the god each of the twelve
 hours treads, 貴人, 截路空亡, 五不遇時 and the 喜神方 — is carried on the board
 and is not the family's: it is the almanac's, stated in 《協紀辨方書》卷七, and
 § "The twelve hours of a day, which 卷七 states" is where it is argued. The
-closing 「大吉時為…」 is a verdict and stays out on any reading. **`dayDun: liushi`**, sixty
-days to a 局 with the half following the 局, was declared on the 統宗's word
-and is refused. Its rule was read on the plate on 2026-11-02, and it lays
-another board: § "The 統宗's sixty-day 局, read on the plate" below.
+closing 「大吉時為…」 is a verdict and stays out on any reading. **No value
+divides this board into sixty-day 局.** The 統宗's rule that makes such 局 lays
+another board, and the 統宗's own rule for this board divides nothing: both in
+§ "The 統宗's sixty-day 局, read on the plate" below.
 
 **Its own 陽/陰 boundary is the solstices**, 「每年從冬至節開始，到翌年交夏至節
 止，為陽」, which is 遁甲演義's rule and not the 統宗's sixty-days-to-a-局. That is
@@ -5611,10 +5609,8 @@ a third reading on the anchor above and it stands with 《奇門探索錄》.
 
 #### The 統宗's sixty-day 局, read on the plate, which lays another board
 
-`dayDun: liushi` was declared on 2026-10-07 from the transcription of
-《奇門遁甲統宗》卷二, never from the plate. The passage is 又法日奇門起例, the
-second of the juan's three day methods, and it was read on 2026-11-02 in every
-copy the shelf holds:
+《奇門遁甲統宗》卷二's 又法日奇門起例, the second of the juan's three day
+methods, was read on 2026-11-02 in every copy the shelf holds:
 
 | | where | the second 甲子 of 夏至 |
 |---|---|---|
@@ -5653,9 +5649,8 @@ board's plate of stems, with nine stars from 天蓬 and the eight gates from 休
 laid one board to a day. `rijia` lays the 太乙 nine one palace a day and 休門
 three days to a palace with no plate of stems: that is 附日奇門起例, the first
 of the three methods. **So the 統宗 divides a day board's year into sixty-day
-局, but the board it divides is a different one.** As declared, `liushi` is
-a value of `dayDun` on the `rijia` board, and no text on this shelf divides that
-board that way. 《御定奇門大全》卷二十九's 奇門古本 is the second work to state
+局, but the board it divides is a different one.** No text on this shelf
+divides the `rijia` board that way. 《御定奇門大全》卷二十九's 奇門古本 is the second work to state
 the stems board (sheet 682, § "《御定奇門大全》卷二十八–三十二"). It gives the
 same 陽遁 一 · 七 · 四 and 陰遁 九 · 三 · 六, but begins each 局 on a 甲 or 己
 day and keys it to four solar terms, with no leap. So the stems day board has
@@ -5672,11 +5667,38 @@ commonest loss a block suffers. The two 統宗 prints agree on 二, but they sha
 one line of descent, so their agreement is one witness. If the board is ever
 built, the 局 is 三 and this paragraph is where the choice is argued.
 
-**What moves.** No code moves, and the rung of the `rijia` row stays at 4: its
-quantities are untouched. What changes is the ground under `dayDun: liushi`.
-The 統宗 holds a sixty-day division of a day board, but not of the board the
-value belongs to. Whether the value stays, is withdrawn, or moves to a stems
-day board of its own is a parameter decision, put to the user on 2026-11-02.
+**And the 統宗's rule for the `rijia` board does not divide its year.** The
+first of the three methods, 附日奇門起例, was read on the same plates, the 故宮
+統宗 at series p. 20, upper block, at 600 dpi, and the 寶鑑 at p. 43. The
+quotation of it in § "The second work, which breaks the tie and then argues
+against itself" had passed over one sentence with an ellipsis:
+
+> 冬至後用陽遁，夏至後用陰遁。子午日用二局……丑未日用六局，寅申日用一局，卯酉日用
+> 八局，辰戌日用四局，巳亥日用九局。其起九星八門之法，不必復分陰遁陽遁。凡甲子日，
+> 天蓬起艮八宮，芮在離九，順飛九宮；乙丑日天蓬起離九，天芮在坎一，一日順移。其八門
+> 則甲子日休門起坎一，三日順轉一宮，不入中五。
+
+The half and the 局 by the day's branch are for something the passage does not
+lay out further. **The stars and the gates are not divided**: the stars begin
+at 艮 on every 甲子 and go forward one palace a day, and 休門 begins at 坎 and
+goes forward three days to a palace, all year. That is what the engine lays
+under `dayDun: yang`, and the 統宗 holds that value. It names the nine stars
+from 天蓬, as the hour board does, where the engine lays the 太乙 nine of the
+金函玉鏡: the seats are the same and the names are not, which is the 統宗
+standing with the other witnesses on the motion and apart from them on the
+names. `test/rijia.test.ts` holds `yang` to its 甲子 and 乙丑 on a day of the
+yin half.
+
+**What holds.** `dayDun` has two values. `yang` is held by the 統宗, which
+states it as a rule, and by 寶鏡圖, which lays it on sixty boards: two works,
+and the row in `docs/sources.tsv` stands at rung 2. A sixty-day division of the
+`rijia` board has no holder on this shelf. One question about the boundary is
+still open on this board: whether the count running when a solstice passes is
+finished at its 癸亥 or dropped on the solstice day, as the engine drops it
+under `solstice`. The 金函玉鏡's 「命起甲子順逆行」, 卷二十 p. 413, is where to
+read for it, with the lines around it. The stems day board is recorded in
+`docs/open.md` § "Recorded, with no parameter", with its two readings. Decided
+on the user's word, 2026-11-02.
 
 Last checked 2026-11-02.
 

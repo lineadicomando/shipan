@@ -457,21 +457,16 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         // 「冬至艮宮夏坤地」, 卷二十; 「每年從冬至節開始，到翌年交夏至節止，為陽」.
         heldBy: ['jinhan', 'rijiaqimen'],
       },
-      // Sixty days to a 局, the half following the 局 and not the term.
-      {
-        id: 'liushi',
-        name: { hanzi: '六十日一局', pinyin: 'liùshírìyījú' },
-        implemented: false,
-        heldBy: ['tongzong'],
-      },
-      // One board to a day all year, every one the yang count: 寶鏡圖.
+      // One board to a day all year, every one the yang count: the 統宗's
+      // 附日奇門起例 states it, 「其起九星八門之法，不必復分陰遁陽遁」, and
+      // 寶鏡圖 lays it.
       {
         id: 'yang',
         name: { hanzi: '陽遁', pinyin: 'yángdùn' },
         says: 'form.qimen.dayDun.yang',
         note: 'form.qimen.dayDun.note',
         implemented: true,
-        heldBy: ['baojingtu'],
+        heldBy: ['tongzong', 'baojingtu'],
       },
     ],
     default: 'solstice',
