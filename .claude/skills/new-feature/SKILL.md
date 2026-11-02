@@ -81,6 +81,20 @@ change.
    name it — see `docs/history/26-the-frame-a-caller-reads.md` for why that
    string is the one surface a checklist kept missing.
 
+## A value of a parameter, built on a reading
+
+Narrower than a feature and with a fixed list: the value in
+`packages/core/src/parameters.ts` (`implemented`, `heldBy`, `label`, `says`,
+`note`); a witness in `packages/core/src/witnesses.ts` if the holder is new;
+the holders' table in `docs/sources.md` (§ "Whose each value of a … board
+is"); both catalogs, under the `reader-copy` skill;
+`apps/web/src/lib/parameters.ts` and the MCP schema in `packages/mcp/src/`,
+both of whose suites fail until they carry the value; `docs/parameters.md`,
+and `docs/agent-prompt.md` where a model reads it; `TODO.md` § 1, which a test
+holds to the declaration; a test holding the value to the source's own cases;
+and the version, by `docs/architecture.md` § "Which term moves" and §
+"Releasing".
+
 ## The commit
 
 **One, for the whole feature.** The history up to the readings under the board

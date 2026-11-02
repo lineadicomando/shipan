@@ -729,3 +729,13 @@ which is the kind a version has to name.
 session is enough, and a commit that moves seven manifests and nothing else is
 exactly the commit that cannot stand up alone. There is no changelog either:
 what changed is `docs/history/`'s subject and what holds is `docs/`'s.
+
+### Releasing
+
+The number goes into the `version` field of every `package.json` — the root
+and the six workspaces — and into `package-lock.json`, which repeats it eight
+times, in the commit that earns it. **What follows is done on the user's word
+only**: the annotated tag `v<version>`, whose message is `shipan <version> —
+<commit subject>`; `git push origin main` and then the tag; `ssh -tt
+shipan.deploy`, which builds and restarts `origin/main` and nothing local; and
+last the footer of https://shipan.it, which has to read the new number.

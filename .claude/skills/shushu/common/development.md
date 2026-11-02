@@ -44,9 +44,12 @@ to read and what not to open; every standing question is `docs/open.md`. Do not 
    shelf, by the shape of what is read" below says which tool fits which
    shape: a table, a run of worked cases, a run of drawn boards, prose with a
    起例, a rule measured against the engine.
-4. **What it is owed when done**: the list in `TODO.md` § "Resuming cold" —
-   argument with date, register row and rung, shelf row, `docs/open.md` and
-   `TODO.md`, a phase in `docs/history/` — and one commit.
+4. **What it is owed when done**: the argument in `docs/sources.md`, dated;
+   its row in `docs/sources.tsv` with the rung (`docs/notes.md` § "The ladder
+   of evidence"); the file's row in `texts/README.md`; the lines it settles or
+   opens in `docs/open.md`, and `TODO.md`; the art's file here where it says
+   otherwise (sections 3, 6, 7, 8); a phase in `docs/history/` with its line in
+   that README; one commit on `main`.
 
 ## Tools on the shelf, by the shape of what is read
 
