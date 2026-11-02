@@ -124,8 +124,9 @@ Unmarked = found in this research and not yet on either list.
   《遁甲奇門秘傳要旨》, 《明抄奇門陰遁書》, and 《李衛公奇門心法》 (with a Tang
   attribution).
 
-**The flying lineage (飛盤 fēipán)**, none of it on the shelf, all of it
-web leads:
+**The flying lineage (飛盤 fēipán)**. Three of its works arrived on
+2026-11-02 and are unread (`docs/open.md` § "The shelf", lines 7–9); what
+follows is still web leads:
 
 - 《奇門法竅》, 錫孟樨 Xī Mèngxī (or 錫孟穉), 同治九年 (1870), circulated in
   manuscript. A web article gives it 飛盤 placement with 「八門不入中宮」 and
@@ -140,8 +141,9 @@ web leads:
   under both dun; the nine spirits reverse under yin (web transcription,
   qimenpai.com, annotated by 李開元). Its companions are 《奇門樞要》 and
   《衍象》.
-- 《奇門旨歸》, 朱浩文, 光緒九年 (1883). Said to work twenty-five 飛盤 cases
-  (web transcription, PTT).
+- 《奇門旨歸》, 朱浩文, 光緒十九年 (1893), 匯源堂刻本: the date is on its
+  title page, in the 四庫未收書輯刊 facsimile now held. Said to work 飛盤
+  cases, and sold as 「布門輪宮，飛星定局」, which would be `xingfei`.
 
 **Modern Chinese manuals**
 
@@ -541,13 +543,13 @@ that is on the shelf.
 
 - **`plate: fei` on the hour board.** 《奇門法竅》 (錫孟樨 1870), 《奇門遁甲鳴法》
   (1871) and 《奇門旨歸》 (1883) are attributed 時家 飛盤 texts with dates, and
-  the last works cases. They are the first candidates for TODO's «a text
-  flying the 時家 board's own 起例». Settled by: the 新文豐 珍本術數叢書
-  《遁甲演義外一種》 (1995) for the 法竅, and any print of the 鳴法 and the
-  旨歸. Not on the shelf.
+  the last works cases. They are the first candidates for «a text flying the
+  時家 board's own 起例». **All three are held since 2026-11-02**: the 法竅
+  in 鄭同's 2011 點校 and a 抄本 reprint, the 鳴法 as photographs of the
+  遼圖 manuscript, the 旨歸 in the 四庫未收書輯刊. Unread.
 - **A ninth spirit (太常) and a ninth gate** belong to the flying line. They
   would arrive with `plate: fei` as values of `spirits` and of the gate count.
-  Settled by: the 鳴法. Not held.
+  Settled by: the 鳴法, held and unread.
 - **An older holder for `method: chaibu`.** 《奇門法竅》 is reported to accept
   拆補 (1870), against 張志春 (1999) as the only holder. 紀大奎's rejection
   shows 拆補 was practised by c. 1800. Settled by: the 法竅. Not held.

@@ -18,7 +18,7 @@ a work already held is not a witness.
 
 | | waits on |
 |---|---|
-| `plate: fei` | a text flying the 時家 board's own 起例. None held does; the 折衷 flies the stars and the 儀 and turns the gates, which is computed as a third arrangement. Thought to arrive with `system: nianjia` and `yuejia`, which the review of 2026-11-02 doubts: both holders turn the star plate there (§ "年家 and 月家, commissioned", step 1) |
+| `plate: fei` | a text flying the 時家 board's own 起例. **One has arrived, unread**: 《奇門法竅》 (錫孟樨, 自序 1870), whose 卷二 論飛宮 flies the stars 蓬芮沖輔禽心柱任英 and the gates 休死傷杜開驚生景 through the nine, and whose 論直使 takes the 直使 from a 《真授秘集》, forward over eight in the yang and back in the yin, 「不入中五」 (located in the transcription; line 7 of § "The shelf"). The 折衷's stars-flown, gates-turned board is computed as `xingfei`. Thought to arrive with `system: nianjia` and `yuejia`, which the review of 2026-11-02 doubts: both holders turn the star plate there (§ "年家 and 月家, commissioned", step 1) |
 | `system: yuejia`, `system: nianjia` | **commissioned on the user's word, 2026-11-02**: § "年家 and 月家, commissioned" below carries the steps. 《遁甲演義》 and the 統宗 state both. The year's three 元 are 一四七 for those two and 一七四 for 遁甲集成 第三冊 and 《御定奇門大全》卷二十九 (worked for 1648). The month's are 孟 一 · 仲 七 · 季 四 for the 演義 and 仲 一 · 孟 四 · 季 七 for the 統宗 (read on the plate at 150 dpi). Tables to hold the 一七四 year to: 遁甲集成 第三冊 pp. 1160–1216 |
 | `strengths: star` | which of two arrangements from the star it is — 《金鏡寶鑑》卷之四's, or the 《三元經》's that the 符應經, 紀大奎 and the 探索錄 carry — and whether it reaches past the nine stars |
 | `yuejiang: jieqi`, `yuejiang: true` | a text stating either as its own. None found, on the plate or in the extracts |
@@ -199,6 +199,9 @@ later.
 | 4 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
 | 5 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 | 6 | where a 日家 count running at a solstice ends: finished at its 癸亥, or dropped on the solstice day as `dayDun: solstice` drops it | 《金函玉鏡》下冊, `qimen/jinhan-yujing-2.pdf`, 卷二十 p. 413, 「冬至艮宮夏坤地，命起甲子順逆行」 and the lines around it; read so far for the anchor only |
+| 7 | **the arrivals of 2026-11-02, put to the questions standing.** `plate: fei`; whether the 法竅 holds `centreLodging: siyu`, today only reported by the 折衷 (論寄宮: 「立春寄艮用生門，立夏寄巽用杜門，立秋寄坤用死門，立冬寄乾用開門」); the eight spirits flown 「按八卦方位」 (論八神), against `spirits`; 論超接置閏 and 論拆局補局 against `method` and `leap`; the 1080 hours of 卷七–八 as a bench | 《奇門法竅》, `qimen/qimen-faqiao-hualing.pdf` (華齡 2011, 點校), checked where doubtful against the 抄本 reprint `qimen/qimen-faqiao-chaoben.pdf`; located through `qimen/qimen-faqiao.utf8.txt` |
+| 8 | the 鳴法's flight, which the web reports as gates 「休死傷杜中開驚生景」 with 「中五無門」 and nine spirits; a second holder for `plate: fei`, or a second reading of it | `qimen/qimen-mingfa-liaotu.pdf`, photographs of the 遼圖 manuscript |
+| 9 | the 旨歸's board, sold as 「布門輪宮，飛星定局」: a second holder for `plate: xingfei`, and its 24 worked cases | `qimen/qimen-zhigui-siku-weishou.pdf`, 匯源堂 1893 in the 四庫未收書輯刊 |
 
 **Small and left open**: in the 符應經, the note in small characters under
 the title at 遁甲集成 第三冊 p. 1136, and 玉女守門 as two tables in two
@@ -222,10 +225,11 @@ with a Tang attribution. None of that platform's files states a provenance.
 
 **What is left to read, measured 2026-10-24.** Every file on the shelf has
 been opened far enough to say what it is, and `texts/README.md` has a row
-naming each: 134 files, about 33 700 pages. Most pages have never been read
+naming each: 134 files, about 33 700 pages, and the nine that arrived on
+2026-11-02 have theirs. Most pages have never been read
 on the plate, and none is owed a reading: the shelf is read by question. The
-questions standing ask for **three readings** of files held — 《星學大成》's limits and 量天尺 (line 4), 《中國恆星觀測史》 from p. 274
-(line 5), the 金函玉鏡's 日家 boundary (line 6) — and about thirty small
+questions standing ask for **six readings** of files held — 《星學大成》's limits and 量天尺 (line 4), 《中國恆星觀測史》 from p. 274
+(line 5), the 金函玉鏡's 日家 boundary (line 6), and the three arrivals of 2026-11-02 (lines 7–9) — and about thirty small
 errands under "Left open by the readings" and "Small and left open". About ten refused values
 wait on files not held ("What each refused value waits on", and "Wanted and not held" above), which no reading here
 moves. A new file is identified with the four commands of `docs/scans.md`

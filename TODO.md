@@ -47,17 +47,21 @@ The phases are listed in `docs/history/README.md`.
    `docs/open.md` § "年家 and 月家, commissioned": two plate checks, then a
    reading (phase 88), then the board, the parameters, the tests from the
    sources' cases, and the surfaces.
-2. **The scan form's `gongpo`**: offered always, found only under
+2. **The three 飛盤 works that arrived on 2026-11-02**, for `plate: fei`
+   first: 《奇門法竅》, 《奇門遁甲鳴法》, 《奇門旨歸》, each with its row in
+   `texts/README.md` and its question in `docs/open.md` § "The shelf", lines
+   7–9. The 法竅 states the flight in its 卷二 論飛宮 and is read first.
+3. **The scan form's `gongpo`**: offered always, found only under
    `menpo: gongzhimen`, so a scan under the default finds nothing and says
    nothing. A filter like `layableUnder`'s for `stemPairs`, keyed on
    `qimen.menpo` (`docs/open.md` § "Surfaces and code").
-3. **A lead from the `shushu` skill** (`docs/open.md` § "Leads from the
+4. **A lead from the `shushu` skill** (`docs/open.md` § "Leads from the
    `shushu` skill"): 截路空亡 in 《星曆考原》卷五, the 楊公忌 check in the 華齡
    協紀's 下 volume. Neither file is held.
-4. **The review of 2026-10-23**, a line an art, each wanting a plate or the
+5. **The review of 2026-10-23**, a line an art, each wanting a plate or the
    user's word (`docs/open.md` § "The review of 2026-10-23"). Several are a
    missing row in `docs/sources.tsv`, writable from what is read.
-5. **The lens, when it moves again**: the month board, designed with its
+6. **The lens, when it moves again**: the month board, designed with its
    lens; 八字 last and only if the user wants it (`docs/open.md` § "The lens,
    when it moves again").
 
