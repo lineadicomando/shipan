@@ -18,7 +18,7 @@ a work already held is not a witness.
 
 | | waits on |
 |---|---|
-| `plate: fei` | a text flying the 時家 board's own 起例. **One has arrived, unread**: 《奇門法竅》 (錫孟樨, 自序 1870), whose 卷二 論飛宮 flies the stars 蓬芮沖輔禽心柱任英 and the gates 休死傷杜開驚生景 through the nine, and whose 論直使 takes the 直使 from a 《真授秘集》, forward over eight in the yang and back in the yin, 「不入中五」 (located in the transcription; line 7 of § "The shelf"). The 折衷's stars-flown, gates-turned board is computed as `xingfei`. `system: nianjia` and `yuejia` do not need it: both holders turn the heaven plate there, read on the plate 2026-11-05 (`docs/sources.md` § "年家 and 月家 on the plate: the heaven plate is turned") |
+| `plate: fei` | **the user's word, and no longer a text.** 《奇門法竅》 (錫孟樨, 1870) states the board, draws 36 boards on it and tabulates its 1080 hours, read on the plate 2026-11-05: the earth plate carried whole to the hour stem in both 遁, the gates carried over the eight with the 直使 counted through the nine and halting before 五, a 旬首 in 五 taking the lodging's gate, the centre lodged 艮 under 陽 and 坤 under 陰 on every printed board, the spirits `fixed`'s eight round the 卦 (`docs/sources.md` § "《奇門法竅》: the hour board flown whole, stated, drawn and tabulated"). One witness on rung 4. Building it wants a ruling on what `centreLodging` means on a flown board, since the work prints `dunni` and argues `siyu`. The 折衷's stars-flown, gates-turned board is computed as `xingfei`. `system: nianjia` and `yuejia` do not need it: both holders turn the heaven plate there, read on the plate 2026-11-05 (`docs/sources.md` § "年家 and 月家 on the plate: the heaven plate is turned") |
 | `system: yuejia` | **commissioned on the user's word, 2026-11-02**: § "年家 and 月家, commissioned" below carries the steps. 《遁甲演義》 and the 統宗 state it, and both turn the heaven plate. The month's three 元 are 孟 一 · 仲 七 · 季 四 for the 演義 and 仲 一 · 孟 四 · 季 七 for the 統宗 (read on the plate 2026-11-05). The board is `layOnPillar` in `packages/core/src/dunjia/nianjia.ts` called on the month pillar |
 | `strengths: star` | which of two arrangements from the star it is — 《金鏡寶鑑》卷之四's, or the 《三元經》's that the 符應經, 紀大奎 and the 探索錄 carry — and whether it reaches past the nine stars |
 | `yuejiang: jieqi`, `yuejiang: true` | a text stating either as its own. None found, on the plate or in the extracts |
@@ -170,7 +170,7 @@ later.
 | 4 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
 | 5 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 | 6 | where a 日家 count running at a solstice ends: finished at its 癸亥, or dropped on the solstice day as `dayDun: solstice` drops it | 《金函玉鏡》下冊, `qimen/jinhan-yujing-2.pdf`, 卷二十 p. 413, 「冬至艮宮夏坤地，命起甲子順逆行」 and the lines around it; read so far for the anchor only |
-| 7 | **the arrivals of 2026-11-02, put to the questions standing.** `plate: fei`; whether the 法竅 holds `centreLodging: siyu`, today only reported by the 折衷 (論寄宮: 「立春寄艮用生門，立夏寄巽用杜門，立秋寄坤用死門，立冬寄乾用開門」); the eight spirits flown 「按八卦方位」 (論八神), against `spirits`; 論超接置閏 and 論拆局補局 against `method` and `leap`; the 1080 hours of 卷七–八 as a bench | 《奇門法竅》, `qimen/qimen-faqiao-hualing.pdf` (華齡 2011, 點校), checked where doubtful against the 抄本 reprint `qimen/qimen-faqiao-chaoben.pdf`; located through `qimen/qimen-faqiao.utf8.txt` |
+| 7 | **the rest of 《奇門法竅》**, read for `plate: fei` on 2026-11-05: 論超接置閏 and 論拆局補局 against `method` and `leap`; 論中五's gate by the eight 節 against `centreLodging: bajie`; the eleven 乙丑 drawings and the 排宮 figures not read; the 格 of the 1080 hours of 卷七–八 against a board laid by the engine, once `fei` is built | 《奇門法竅》, `qimen/qimen-faqiao-hualing.pdf` (華齡 2011, 點校; printed page = PDF − 21), checked where doubtful against the 抄本 reprint `qimen/qimen-faqiao-chaoben.pdf`; located through `qimen/qimen-faqiao.utf8.txt`; tools in `qimen/faqiao-juan2/` |
 | 8 | the 鳴法's flight, which the web reports as gates 「休死傷杜中開驚生景」 with 「中五無門」 and nine spirits; a second holder for `plate: fei`, or a second reading of it | `qimen/qimen-mingfa-liaotu.pdf`, photographs of the 遼圖 manuscript |
 | 9 | the 旨歸's board, sold as 「布門輪宮，飛星定局」: a second holder for `plate: xingfei`, and its 24 worked cases | `qimen/qimen-zhigui-siku-weishou.pdf`, 匯源堂 1893 in the 四庫未收書輯刊 |
 
@@ -249,6 +249,15 @@ hours in 《星曆考原》卷五, beside 寶鏡圖's (`almanac.md`, file not he
 
 Each reading's errands, newest first; the full wording of those before phase
 83 is in `docs/history/roadmap-2026-10-30.md`.
+
+- **Phase 90**: 《奇門法竅》's drawings fly the yin heaven plate as a
+  translation, every star one way with its stem, where `flownPlates` reverses
+  the order under 陰 for `xingfei`; the 折衷 works no yin hour, so its sheet 67
+  「陰遁逆飛」 wants re-reading against the arrangement the 法竅 draws. Inside
+  the 法竅: 陰遁九局 丙子's 生門 on 坤二 (rule: 乾六), 陽遁五局 庚寅's 星門伏,
+  陰遁五局 戊辰 and 陰遁七局 戊子 · 庚寅's 門反, 陽遁四局 乙丑's 「門休」 in both
+  copies and 壬辰's 「巽離 伏門」 (華齡 p. 198, not seen on the 抄本); the 直符
+  of a 旬首 in 五 named 禽 on the drawings and the lodging's star in the tables.
 
 - **Phases 88–89**: the 統宗's 附月奇門起例 prints 「年以月建」 where 「皆以」,
   as in its year's sentence, is what the sense wants, and its 上元's 元 is

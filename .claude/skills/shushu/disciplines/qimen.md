@@ -125,15 +125,16 @@ Unmarked = found in this research and not yet on either list.
   attribution).
 
 **The flying lineage (飛盤 fēipán)**. Three of its works arrived on
-2026-11-02 and are unread (`docs/open.md` § "The shelf", lines 7–9); what
-follows is still web leads:
+2026-11-02; the 法竅 was read on the plate on 2026-11-05 and the other two are
+unread (`docs/open.md` § "The shelf", lines 7–9):
 
 - 《奇門法竅》, 錫孟樨 Xī Mèngxī (or 錫孟穉), 同治九年 (1870), circulated in
-  manuscript. A web article gives it 飛盤 placement with 「八門不入中宮」 and
-  says it accepts 拆補 (web transcription, PTT threeprogram). The
-  qimenpai.com text of its 卷一 has 「直符隨時干而行」, 「直使分順逆隨宮而行」,
-  and an 間宮之法 to reconcile 飛 with 排 (web transcription). Printed by
-  新文豐 in 珍本術數叢書 (1995), bound with 《遁甲演義》 (CiNii BA65339246).
+  manuscript. **Read**: it flies the 時家 board whole, states it, draws 36
+  boards on it and tabulates its 1080 hours — the holder `plate: fei` waited
+  on (`docs/sources.md` § "《奇門法竅》: the hour board flown whole, stated,
+  drawn and tabulated"). Whether it accepts 拆補, as a web article says, is
+  not yet read (論超接置閏, 論拆局補局). Printed by 新文豐 in 珍本術數叢書
+  (1995), bound with 《遁甲演義》 (CiNii BA65339246).
 - 《奇門遁甲鳴法》, preface by 龍伏山人 (矯延僖 in one account), 同治辛未
   (1871). Claims descent from 峨眉山 宏農道人 and 天真子, and further back from
   陶仲文 and a 《黃石公奇門七十二局》. Gates fly through nine in the order
@@ -256,9 +257,12 @@ Each step names the engine parameter, or says "not modelled".
    own, every spirit there, read with the 值使門) are not modelled.
 6. **The heaven plate.** Under 轉 zhuàn (`plate: zhuan`), the 值符 star with
    its 儀 goes to the palace of the hour's stem (「值符常遣加時干」), and the
-   ring of eight turns. Under 飛 (`fei`, refused), every layer flies through
-   nine in 洛書 order. The 折衷's hybrid, stars and 儀 flown and gates turned,
-   is `xingfei`. If the hour's stem is 甲, it is read as its 儀.
+   ring of eight turns. Under 飛 (`fei`, refused, held by the 法竅), the earth
+   plate is carried whole to the hour stem through nine in 洛書 order, in both
+   遁 the same way, and the gates are carried over the eight outer palaces.
+   The 折衷's hybrid, stars and 儀 flown and gates turned, is `xingfei`, and
+   under 陰 it reverses the order of the stars, which the 法竅's drawings do
+   not (a lead, `docs/open.md`). If the hour's stem is 甲, it is read as its 儀.
 7. **The gates.** The 值使 counts from its palace by the hours of the decade
    (「值使順逆遁宮去」; 武經總要 「以直事加時宮」), forward under yang and
    backward under yin through the nine numbers, lodging when it reaches 五.
@@ -458,7 +462,8 @@ modern school's.
 - **Spirit names.** 白虎/玄武 against 勾陳/朱雀 and 太常 differ between
   books and apps. That is the `spirits` axis, not an error.
 - **"Nine gates" in 飛盤.** Wikipedia and apps say 飛宮 adds a 中門. The
-  鳴法 page says 「中五無門」. Do not assume.
+  鳴法 page says 「中五無門」, and the 法竅 has none: its 直使 never stands in
+  五, and on the hour it would, it waits on the palace before. Do not assume.
 - **天禽 and 芮禽.** A board drawn without a centre cell prints 天芮禽
   together under every lodging convention. That shows nothing about the
   convention (register).
@@ -556,13 +561,18 @@ that is on the shelf.
   the last works cases. They are the first candidates for «a text flying the
   時家 board's own 起例». **All three are held since 2026-11-02**: the 法竅
   in 鄭同's 2011 點校 and a 抄本 reprint, the 鳴法 as photographs of the
-  遼圖 manuscript, the 旨歸 in the 四庫未收書輯刊. Unread.
+  遼圖 manuscript, the 旨歸 in the 四庫未收書輯刊. **The 法竅 was read on
+  2026-11-05 and is that text**, on rung 4; building `fei` is put to the
+  user. The 鳴法 would be a second holder or a second reading; unread.
 - **A ninth spirit (太常) and a ninth gate** belong to the flying line. They
   would arrive with `plate: fei` as values of `spirits` and of the gate count.
-  Settled by: the 鳴法, held and unread.
+  Not the 法竅's: its drawings carry eight spirits and eight gates, and its
+  論八神 names 「加太常飛九宮」 only as a 坊本 practice it rejects. Settled by:
+  the 鳴法, held and unread.
 - **An older holder for `method: chaibu`.** 《奇門法竅》 is reported to accept
   拆補 (1870), against 張志春 (1999) as the only holder. 紀大奎's rejection
-  shows 拆補 was practised by c. 1800. Settled by: the 法竅. Not held.
+  shows 拆補 was practised by c. 1800. Settled by: the 法竅's 論超接置閏 and
+  論拆局補局, held since 2026-11-02 and not yet read for it.
 - **`method: yinpan` (陰盤, 王鳳麟).** A named modern practice with a
   stateable rule. Whether it is a 定局 method of the 時家 board or a board of
   its own (it uses the lunar month and day) is a design question. Settled by:

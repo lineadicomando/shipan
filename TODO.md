@@ -33,10 +33,11 @@ user says otherwise.
   `docs/sources.md`, `texts/README.md`, `docs/open.md` and this file for
   sentences the session outlived («unread», «still missing», «stays refused»…).
 
-## Where it stands, 2026-11-05, end of phase 89
+## Where it stands, 2026-11-05, end of phase 90
 
 **0.45.0**, tagged `v0.45.0` and deployed at https://shipan.it (footer
-checked 2026-11-05). `main` checked out and pushed, no branch open. Build,
+checked 2026-11-05). `main` checked out, phase 90 (a reading) committed and
+not pushed, no branch open. Build,
 typecheck and every suite pass. The phases are listed in
 `docs/history/README.md`.
 
@@ -46,10 +47,13 @@ typecheck and every suite pass. The phases are listed in
    with the year, which is built (phase 89). The month is the same board on
    the month pillar, `layOnPillar` already shared. Four steps, each with its
    sources, in `docs/open.md` § "年家 and 月家, commissioned".
-2. **The three 飛盤 works that arrived on 2026-11-02**, for `plate: fei`
-   first: 《奇門法竅》, 《奇門遁甲鳴法》, 《奇門旨歸》, each with its row in
-   `texts/README.md` and its question in `docs/open.md` § "The shelf", lines
-   7–9. The 法竅 states the flight in its 卷二 論飛宮 and is read first.
+2. **`plate: fei`, which has its holder**: 《奇門法竅》 was read on the plate
+   on 2026-11-05 (phase 90) and lays the hour board flown whole, stated,
+   drawn on 36 boards and tabulated over 1080 hours; building it waits on the
+   user's word, with a ruling on `centreLodging` there (the work prints
+   `dunni` and argues `siyu`). What is left of it, and the 鳴法 and the 旨歸,
+   are lines 7–9 of `docs/open.md` § "The shelf". The script predict.mjs in
+   `texts/qimen/faqiao-juan2/` is the board to test a build against.
 3. **The scan form's `gongpo`**: offered always, found only under
    `menpo: gongzhimen`, so a scan under the default finds nothing and says
    nothing. A filter like `layableUnder`'s for `stemPairs`, keyed on
