@@ -128,6 +128,7 @@ phase.
 | 92 | [the form fills the lodging](92-the-form-fills-the-lodging.md) | done — choosing 飛盤 in a form fills `centreLodging: dunni`, `fills` on the web declaration; 0.46.1 |
 | 93 | [the rest of the 法竅](93-the-rest-of-the-faqiao.md) | done — 《奇門法竅》 read to the end bar its 排宮 figures: 拆補 stated and worked, the month's 元 in the 統宗's order, a flown day board, all eighteen 乙丑 drawings, the tables' 格 holding the carried plate and the 入墓 cells; three values gain a holder; 0.47.0 |
 | 94 | [the 法竅's 排宮 figures](94-the-faqiao-paigong-figures.md) | done — the eighteen 乙丑 排宮 figures read cell by cell: the flown board on two discs cut to turn, agreeing with the engine at every palace, the 直使 waiting as on the flown drawings; nothing built, no term moves |
+| 95 | [the 鳴法](95-the-mingfa.md) | done — 《奇門遁甲鳴法》's 第一章 and worked case read on the manuscript: the 法竅's heaven plate, but gates and spirits flown through nine and nothing lodged, 34 cells fitting; a second 飛盤 school recorded and put to the user, not built |
 
 ## The rest of the record
 

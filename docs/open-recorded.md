@@ -19,8 +19,18 @@ of [`docs/open.md`](open.md), and held to the code with it by
     and on where the 統宗's leap goes (`docs/sources.md` § "The 統宗's sixty-day
     局, read on the plate, which lays another board").
   - **The yin flight of `xingfei`**: `flownPlates` reverses the stars under 陰,
-    and the 法竅 draws them carried as one; the 折衷 works no yin hour, so its
-    sheet 67 「陰遁逆飛」 wants re-reading, or a yin hour worked in any text.
+    and the 法竅 draws them carried as one, as does the 鳴法's 陰遁二局 丙午
+    (「八門九星無分陰陽皆要須順去」); the 折衷 works no yin hour, so its sheet 67
+    「陰遁逆飛」 wants re-reading, or a yin hour worked in a text of its line.
+  - **飛盤's gates, spirits and centre, two ways**: 《奇門遁甲鳴法》 flies the
+    gates through nine seats with a gateless 五 the 直使 may stand on
+    (「直使為五人罕知」), flies nine spirits, 太常 among them, 陽 forward and 陰
+    back from the 直符, and lodges nothing (「何必寄宮艮坤矣」). The 法竅,
+    which `plate: fei` computes, carries eight gates over eight, turns eight
+    fixed spirits round the 卦 and lodges by the solstice. Each is attributed
+    and transcribed, and the 鳴法's rule is worked on two boards whose 34
+    cells all fit (`docs/sources.md` § "《奇門遁甲鳴法》"). Three axes under
+    `plate: fei`, waiting on the user's word.
   - **擊刑 by the clock** stands on one witness, the 符應經's case at 遁甲集成
     第一冊 p. 430; a second text striking by the hour moves the row.
   - **十干克應 beyond the sixteen**: 火入勾陳, 朱雀入獄, 人遁 and 奇入太陰, named

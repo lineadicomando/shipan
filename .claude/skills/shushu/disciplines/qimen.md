@@ -125,8 +125,8 @@ Unmarked = found in this research and not yet on either list.
   attribution).
 
 **The flying lineage (飛盤 fēipán)**. Three of its works arrived on
-2026-11-02; the 法竅 was read on the plate on 2026-11-05, whole, and the other
-two are unread (`docs/open.md` § "The shelf", lines 7–8):
+2026-11-02; the 法竅 and the 鳴法 were read on the plate on 2026-11-05, and
+the 旨歸 is unread (`docs/open.md` § "The shelf", line 7):
 
 - 《奇門法竅》, 錫孟樨 Xī Mèngxī (or 錫孟穉), 同治九年 (1870), circulated in
   manuscript. **Read**: it flies the 時家 board whole, states it, draws 36
@@ -139,13 +139,16 @@ two are unread (`docs/open.md` § "The shelf", lines 7–8):
   the same board set on two paper discs cut to turn, the gate one disc puts
   on 五 taken from the other (§ "《奇門法竅》's 排宮 figures"). Printed by 新文豐 in 珍本術數叢書
   (1995), bound with 《遁甲演義》 (CiNii BA65339246).
-- 《奇門遁甲鳴法》, preface by 龍伏山人 (矯延僖 in one account), 同治辛未
-  (1871). Claims descent from 峨眉山 宏農道人 and 天真子, and further back from
-  陶仲文 and a 《黃石公奇門七十二局》. Gates fly through nine in the order
-  「休死傷杜中開驚生景」, with 「中五無門」 as a stand-in; stars fly forward
-  under both dun; the nine spirits reverse under yin (web transcription,
-  qimenpai.com, annotated by 李開元). Its companions are 《奇門樞要》 and
-  《衍象》.
+- 《奇門遁甲鳴法》, 龍伏山人 撰, preface 同治辛未 (1871), the copy headed
+  矯文彥本; claims descent from 峨眉山 宏農道人. **Read** (卷上 第一章, on the
+  plate): the heaven plate is the 法竅's, carried whole in both 遁, but the
+  gates fly through nine seats — 「八門休死傷與杜，五開驚生景俱足」, 五 a seat
+  with no gate — and the 直使 may stand in the centre (「直使為五人罕知」); nine
+  spirits, 太常 among them, fly 陽 forward and 陰 back from the 直符; nothing is
+  lodged (「何必寄宮艮坤矣」). Worked on 陰遁二局 and 陽遁二局 丙午, both drawn
+  (§ "《奇門遁甲鳴法》"). The order 「休死傷杜中開驚生景」 the web quotes is the
+  modern annotator's (李開元), not the manuscript's. Its companions are
+  《奇門樞要》 and 《衍象》.
 - 《奇門旨歸》, 朱浩文, 光緒十九年 (1893), 匯源堂刻本: the date is on its
   title page, in the 四庫未收書輯刊 facsimile now held. Said to work 飛盤
   cases, and sold as 「布門輪宮，飛星定局」, which would be `xingfei`.
@@ -275,7 +278,8 @@ Each step names the engine parameter, or says "not modelled".
    The other seven follow round the eight. Under `fei` the eight are carried
    along the outer palaces in the order of their numbers, and the 值使 never
    stands in 五: the hour it would, it stays on the palace before (the 法竅's
-   drawings and tables). The 鳴法's gates fly through nine (web lead).
+   drawings and tables). The 鳴法's gates fly through nine with a gateless 五,
+   and its 直使 may stand there: a second school, not built (`docs/open-recorded.md`).
 8. **The spirits.** 值符 螣蛇 太陰 六合 then the middle pair, then 九地 九天.
    They run forward under yang and backward under yin (煙波:
    「值符前三六合位，太陰之神在前二。後一宮中為九天，後二之神為九地」).
@@ -469,9 +473,10 @@ modern school's.
   on whose lunar calendar it uses.
 - **Spirit names.** 白虎/玄武 against 勾陳/朱雀 and 太常 differ between
   books and apps. That is the `spirits` axis, not an error.
-- **"Nine gates" in 飛盤.** Wikipedia and apps say 飛宮 adds a 中門. The
-  鳴法 page says 「中五無門」, and the 法竅 has none: its 直使 never stands in
-  五, and on the hour it would, it waits on the palace before. Do not assume.
+- **"Nine gates" in 飛盤.** Wikipedia and apps say 飛宮 adds a 中門. Neither
+  manuscript held does: the 鳴法 flies eight gates and a gateless seat 五
+  through nine, and its 直使 may stand on 五; the 法竅 carries eight over eight,
+  and its 直使 waits on the palace before. Two schools, not one with a gap.
 - **天禽 and 芮禽.** A board drawn without a centre cell prints 天芮禽
   together under every lodging convention. That shows nothing about the
   convention (register).
@@ -571,12 +576,17 @@ that is on the shelf.
   in 鄭同's 2011 點校 and a 抄本 reprint, the 鳴法 as photographs of the
   遼圖 manuscript, the 旨歸 in the 四庫未收書輯刊. **The 法竅 was read on
   2026-11-05 and is that text**, on rung 4, and `fei` is built on it. The
-  鳴法 would be a second holder or a second reading; unread.
-- **A ninth spirit (太常) and a ninth gate** belong to the flying line. They
-  would arrive with `plate: fei` as values of `spirits` and of the gate count.
-  Not the 法竅's: its drawings carry eight spirits and eight gates, and its
-  論八神 names 「加太常飛九宮」 only as a 坊本 practice it rejects. Settled by:
-  the 鳴法, held and unread.
+  鳴法, read the same day, is a second holder of its heaven plate and a
+  second reading of its gates, spirits and centre: next line.
+- **A ninth spirit (太常) and a ninth gate seat** belong to the flying line,
+  and the 鳴法 states and works both (2026-11-05): nine spirits flown from the
+  直符, 陽 forward and 陰 back; nine gate seats, 五 among them with no gate,
+  the 直使 counted through all nine; nothing lodged. Not the 法竅's: its
+  drawings carry eight spirits and eight gates, and its 論八神 names
+  「加太常飛九宮」 only as a 坊本 practice it rejects. So they are values under
+  `plate: fei` of three axes, the spirits, the gate seats and the lodging,
+  each held by one manuscript, and they wait on the user's word
+  (`docs/open-recorded.md`).
 - **`method: yinpan` (陰盤, 王鳳麟).** A named modern practice with a
   stateable rule. Whether it is a 定局 method of the 時家 board or a board of
   its own (it uses the lunar month and day) is a design question. Settled by:

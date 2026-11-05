@@ -2693,6 +2693,91 @@ Nothing is left of the 法竅 for the questions this register asks.
 
 Last checked 2026-11-05.
 
+### 《奇門遁甲鳴法》: the same heaven plate, and the gates and spirits flown through nine
+
+《奇門遁甲鳴法》, 龍伏山人 撰 (「遼東 龍伏山人 撰」 at the head of 卷上), the
+preface dated 「同治辛未仲冬五日」 (1871), and headed 「矯文彥本」. It is held as
+photographs of the Liaoning Library manuscript (its stamp is on the first
+leaf), sixty openings printed two to a page as 附錄二 of a modern book
+(`texts/README.md`). Read on the plate 2026-11-05, at the photographs' own
+resolution, about 440 dpi of the page: the preface, the 目錄, and 卷上
+第一章, which is where the board is laid (openings 3–8 of the file's 60). It
+also has the worked case and its two diagrams, and a survey of the rest. The
+transcription and the script are in `texts/qimen/mingfa/` (`cases.tsv`,
+`scripts/cases.mjs`). The web transcription on qimenpai.com (李開元's
+annotated text) was used as a finding aid. **The order 「休死傷杜中開驚生景」 it
+is known by is 李開元's 起例 note, and not the manuscript's.** The manuscript
+reads 「八門休死傷與杜，五開驚生景俱足」.
+
+**What it states.** The verses of 第一章, each with the copyist's prose under
+it:
+
+- 「陽遁順儀奇逆布，陰遁逆儀奇順行」, glossed 「總以掉法戊己庚辛壬癸丁丙乙飛宮而佈」.
+- 「九神順逆隨遁轉」: 「九神者即直符騰蛇太陰六合勾陳太常朱雀九地九天也，陽遁順飛，
+  陰遁逆飛，與奇儀無殊」. 勾陳 and 朱雀 may be read as 白虎 and 玄武 「因其事而用之」,
+  and 「不必泥於陽遁用勾陳朱雀，陰遁用白虎玄武」. 卷下's 奇格章 lists the 陰 ring as
+  「符蛇陰合虎常武地天」.
+- 「八門九星順宮馳」 and 「九宮無逆是根基」, with the gloss
+  「八門者休死傷杜五開驚生景也」. And: 「然八門九星無分陰陽皆要須順去，何謂也，
+  蓋以九宮無逆，八門九星出自九宮之使焉」.
+- 「八門九星飛排定，五隨五佈向六七」 and 「中宮蓋皆無直符使，直使為五人罕知」.
+- 「總然八門臨在五，何必寄宮艮坤矣」, glossed 「八門九星皆要隨宮飛排，若臨五宮，
+  蓋即自五佈去而向六七」. The next leaf adds 「中宮五皇極雖無門使，則當以五為直使
+  而逐往飛之，若天子巡狩百官從之，是用杜秋寄坤直使用開之謬語可耳」.
+- 「值符加於時干上，值使加之在時支」.
+
+So the nine stars, the 奇儀 and the gates are each carried whole through the
+nine palaces, in the same direction in both 遁. The gates are nine seats in
+the order of their homes, 五 among them and carrying no gate. The 直使 is
+counted through all nine and may stand in the centre. The nine spirits fly
+forward under 陽 and back under 陰 from the 直符's palace. Nothing is lodged.
+
+**What it works.** 「假如陰遁二局甲辰壬用丙午時，則地盤丙字加在四宮，即將甲辰壬加於
+其上，是謂直符加時干也；再自地盤七宮甲辰壬逆巳午時，午字在五中宮，即將驚門加之，
+是謂直使加時支也。若陽遁二局則不然，而以甲辰壬加地盤九宮丙上，開加地盤八宮」.
+Each 遁 gets a diagram drawn south-up, star, stem, gate and spirit at each of
+the eight outer palaces. The 陽 diagram has the centre too: 芮戊, 傷, 太常.
+The 陰 diagram draws the earth plate in its middle in place of the centre,
+whose 驚 is the text's. **All 34 cells agree with the rule above**: the heaven
+plate is the engine's `carriedPlates`, the gates are the nine seats carried
+by the 直使's count, and the spirits are the nine flown from the 直符. Under 陰,
+驚門 is in 五 and the gateless 五 stands on 震. That is exactly the hour the
+法竅's 直使 waits on 乾 instead (§ "《奇門法竅》: the hour board flown whole,
+stated, drawn and tabulated").
+
+**What it is, as a witness.** Attribution and transcription: the rule is
+stated in the work's own verses, glossed, and worked twice. There is one copy,
+and the modern book that prints the photographs is not identified in the file.
+The web text marks readings of a 王本 and of 李開元's own copy against this
+one, and none of them touches the clauses quoted here. 卷上 第一章 is all of
+it that lays a board. 第二章 to 卷下's 第七章 read a board, and the last 20 of the
+file's 60 openings are talismans and spells.
+
+**What it moves.**
+
+- **The heaven plate of `plate: fei` has a second text.** It is independent
+  of the 法竅 by its stated descent (峨眉山 宏農道人, against the 法竅's
+  《真授秘集》), and carries the plate whole in both 遁. The 陰 diagram is a
+  carried plate, every star in order one palace on, which bears on
+  `docs/open-recorded.md`'s line on the yin flight of `xingfei`. It does not
+  settle that line, the 折衷 being another work.
+- **The gates and the spirits part from the 法竅's.** They are flown through
+  nine with a gateless 五, against carried over eight with 五 never reached.
+  The spirits are nine, 太常 among them, flown through nine, against the
+  fixed eight round the 卦. The centre is never lodged, against lodged by the
+  solstice. These are divergences between practitioners, each attributed and
+  transcribed, so each is a parameter waiting to be declared. No value is
+  built: that takes the user's word (`docs/open-recorded.md`).
+- **The 局** is stated in words as 拆補 at the 交節 instant: 「交氣正時為心法，
+  折補之局是妙機」, and 「以交節氣之時為準而拘甲己子午卯酉為類」. But its example,
+  「如乙丑日亥時交節…為中局」, is not yet reconciled with that reading, so
+  `method: chaibu` does not name it (`docs/open-errands.md`).
+- 第一章's 日課, 月法, 年依運 and 世從會 lay boards of a day, a month, a year
+  and an age on the twelve branches. That is a family of its own, recorded and
+  not read further.
+
+Last checked 2026-11-05.
+
 ### 《御定奇門大全》卷五–十, the eighteen 局 hour by hour
 
 Read 2026-10-16 on the plate, sheets 114–268, two book-pages to the sheet and

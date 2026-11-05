@@ -10,6 +10,13 @@ spare takes one. Part of [`docs/open.md`](open.md), held to the code with it by
 Each reading's errands, newest first, from phase 86; the earlier ones are in
 `docs/history/roadmap-2026-11-05.md` and `docs/history/roadmap-2026-10-30.md`.
 
+- **Phase 95**, inside 《奇門遁甲鳴法》: the 認局 passage's example, 「如乙丑日亥時交節…
+  為中局」, against the 拆補 the same passage states, before `method: chaibu`
+  names the work; the 陰 diagram's centre, not drawn; 第一章's 日課 · 月法 · 年依運
+  · 世從會, a family read only far enough to name it.
+
+- **Phase 94**, inside 《奇門法竅》's 排宮 figures: 陰遁一局 乙丑's 景 for 英 on 坎一.
+
 - **Phase 93**, inside 《奇門法竅》: 陰遁九局 丁丑's baleful half (p. 239), which
   fits no hour of its 局; 陽遁五局 丁丑, short in the finding aid, and four
   刑格 and 小格 cells the board lays and the finding aid leaves unmarked, none
