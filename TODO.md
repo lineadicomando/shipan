@@ -25,20 +25,20 @@ user says otherwise.
 - **Do not open** `docs/sources.tsv` (grep a row, edit it in place),
   `docs/history/`, `texts/rules/`, `texts/crosswalk.tsv`,
   `texts/manifest.json`.
-- **Checks**: in a fresh tree `npm run build` first (the MCP and web suites
-  and the shelf's scripts import `packages/core/dist`), then `npm test`,
-  `npm run typecheck`, `node texts/todo-check.mjs` (holds every backticked
-  name here and in `docs/open.md` to the code). Before ending, sweep
+- **Checks**: with no `node_modules`, `npm ci`, which keeps the lockfile.
+  Then `npm run build` (the MCP and web suites and the shelf's scripts import
+  `packages/core/dist`), `npm test`, `npm run typecheck`, and
+  `node texts/todo-check.mjs`, which holds every backticked name here and in
+  `docs/open.md` to the code and sees only files git tracks. Before ending, sweep
   `docs/sources.md`, `texts/README.md`, `docs/open.md` and this file for
   sentences the session outlived («unread», «still missing», «stays refused»…).
 
 ## Where it stands, 2026-11-05, end of phase 89
 
-**0.45.0** on `main`, not tagged and not deployed; **0.44.0** is tagged
-`v0.44.0` and deployed at https://shipan.it (footer checked 2026-11-02).
-`main` checked out, no branch open; `main` is ahead of `origin/main` by the
-year board. Build, typecheck and every suite pass.
-The phases are listed in `docs/history/README.md`.
+**0.45.0**, tagged `v0.45.0` and deployed at https://shipan.it (footer
+checked 2026-11-05). `main` checked out and pushed, no branch open. Build,
+typecheck and every suite pass. The phases are listed in
+`docs/history/README.md`.
 
 ## What to do next, in the order the user has been taking it
 

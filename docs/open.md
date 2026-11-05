@@ -194,27 +194,16 @@ it, carry the second title and the file on the shelf the first.
 大全》, 《遁甲奇門秘傳要旨》, 《明抄奇門陰遁書》 and 《李衛公奇門心法》, the last
 with a Tang attribution. None of that platform's files states a provenance.
 
-**What is left to read, measured 2026-10-24.** Every file on the shelf has
-been opened far enough to say what it is, and `texts/README.md` has a row
-naming each: 134 files, about 33 700 pages, and the nine that arrived on
-2026-11-02 have theirs. Most pages have never been read
-on the plate, and none is owed a reading: the shelf is read by question. The
-questions standing ask for **six readings** of files held — 《星學大成》's limits and 量天尺 (line 4), 《中國恆星觀測史》 from p. 274
-(line 5), the 金函玉鏡's 日家 boundary (line 6), and the three arrivals of 2026-11-02 (lines 7–9) — and about thirty small
-errands under "Left open by the readings" and "Small and left open". About ten refused values
-wait on files not held ("What each refused value waits on", and "Wanted and not held" above), which no reading here
-moves. A new file is identified with the four commands of `docs/scans.md`
-§ "What a file is, before what it says", and gets its row before anything
-else.
-
-**Ask.** `texts/bench/run.mjs` runs the worked examples the sources print,
-and none disagrees: the one that did, the 精解's 返吟 無親 at p. 22, was a
-transcription reading its four lessons left to right, corrected on the plate
-on 2026-10-30. A disagreement is read on the plate before it is called one. The bench lays the 精解's cases under the 精解's school, `shehai: depth`
-with `shehaiFrom: seat`, since 2026-10-30. `--uncovered` lists the shapes with no adapter.
-`texts/shelf.py crosswalk --moves` and `--gaps` are leads, never findings.
-《御定奇門真詮》 is 1080 hour boards with no 起例: a bench, if anything, and
-the 大全's `engine.mjs` already lays the 1080 it would be held to.
+**What is left to read.** Every file on the shelf has a row in
+`texts/README.md`, and the shelf is read by question: no page is owed a
+reading. The readings standing are lines 4–9 above, and the small errands
+are "Left open by the readings" and "Small and left open". The refused values
+that wait on files not held are in "What each refused value waits on" and
+"Wanted and not held". A new file gets its row first, by the four commands of
+`docs/scans.md` § "What a file is, before what it says". The tools (the
+bench, the crosswalk, the 1080-hour `engine.mjs`) are in the `shushu` skill's
+`common/development.md`; a disagreement is read on the plate before it is
+called one.
 
 **Where the state is kept**: `docs/sources.md` what is read,
 `docs/provenance.tsv` what is held, `texts/README.md` what each file is.
@@ -258,8 +247,13 @@ hours in 《星曆考原》卷五, beside 寶鏡圖's (`almanac.md`, file not he
 
 ## Left open by the readings, small and blocking nothing
 
-Each reading's errands, newest first; the full wording is in
-`docs/history/roadmap-2026-10-30.md`.
+Each reading's errands, newest first; the full wording of those before phase
+83 is in `docs/history/roadmap-2026-10-30.md`.
+
+- **Phases 88–89**: the 統宗's 附月奇門起例 prints 「年以月建」 where 「皆以」,
+  as in its year's sentence, is what the sense wants, and its 上元's 元 is
+  broken on the print (故宮 p. 20). The year board's 「審其方向，得奇門到者吉」
+  is recorded and not computed.
 
 - **Phase 86**: the 寶鑑's 三 against the 統宗's 二 for the second 甲子 of
   夏至, preferred and not settled by a fourth copy.
@@ -311,8 +305,8 @@ lens's strings, `lens.where.*`, `label.relation.*`, `web.note.qizheng*` and
 
 ## The lens, when it moves again
 
-The month board, designed with its lens
-from the start; 八字 last and only if the user wants it, the relations
+The year board has no lens (the 奇門 endpoint answers it with none), and the month
+board is to be designed with its lens from the start; 八字 last and only if the user wants it, the relations
 there (合, 沖, the ten gods) being a different lens. Leads, none decided:
 論星辰生尅制化 (全書 卷之三, PDF 162–163) gives a 紫微 palace's ground its
 branch's phase, rung 4, its last clause odd on the plate (「土入金鄉」, the
