@@ -351,6 +351,83 @@ export function flownPlates(
 }
 
 /**
+ * The heaven plate and the nine stars of 《奇門法竅》's 飛盤: the earth plate
+ * carried whole.
+ *
+ * 「以蓬星加坎一宮順排……集為一層，此一局地盤星符定矣……其天盤亦如地盤之法」:
+ * the heaven plate is the earth plate gathered into one layer, stars with their
+ * stems, and set down with the 值符 on the hour stem's palace. Every star moves
+ * the same number of palaces along the Luoshu numbers, the centre among them,
+ * under yang and under yin alike — which is where this parts from
+ * `flownPlates`, whose yin flight takes the stars in reverse. The work's yin
+ * drawings settle it: 陰遁五局 乙丑 has 英 with 癸 on 坎, 蓬 with 壬 on 坤, 輔 with
+ * 己 in the centre and 禽 with 戊 on 乾.
+ */
+export function carriedPlates(
+  earth: ByPalace<Stem>,
+  instrument: Stem,
+  hourStem: Stem,
+): { heaven: ByPalace<Stem>; stars: ByPalace<Star> } {
+  const shift = palaceOf(earth, hourStem) - palaceOf(earth, instrument);
+  const heaven: ByPalace<Stem> = {};
+  const stars: ByPalace<Star> = {};
+  for (const star of STARS) {
+    const palace = ((((star.home - 1 + shift) % 9) + 9) % 9) + 1;
+    stars[palace] = star;
+    heaven[palace] = earth[star.home] as Stem;
+  }
+  return { heaven, stars };
+}
+
+/** The eight outer palaces in their numbers, which 飛盤's gates are carried along. */
+const OUTER: readonly number[] = [1, 2, 3, 4, 6, 7, 8, 9];
+
+/**
+ * Where 《奇門法竅》's 直使 stands: counted, and never in the centre.
+ *
+ * From the instrument's palace one palace an hour through the nine Luoshu
+ * numbers, up under yang and down under yin, as the turned board counts it.
+ * 「不入中五」: the hour the count would land on the centre it stays on the
+ * palace before — 陽遁四局 and 陰遁六局 乙丑 are drawn with every gate at home,
+ * and the tables of 卷七–八 mark the gates that way on 1027 of their 1080
+ * hours. When the instrument is itself in the centre the 直使 is the host's
+ * gate and stands at the host, and the first hour steps out to 六 or to 四:
+ * 陽遁五局 乙丑 puts 生門 on 乾六, 陰遁五局 乙丑 死門 on 巽四.
+ */
+export function carriedGatePalace(
+  earth: ByPalace<Stem>,
+  instrument: Stem,
+  hourGanzhi: Ganzhi,
+  yang: boolean,
+  host: number,
+): number {
+  const flight = yang ? FLIGHT_ASCENDING : FLIGHT_DESCENDING;
+  const from = palaceOf(earth, instrument);
+  const within = hourGanzhi.index % 10;
+  const landing = step(flight, from, within);
+  if (landing !== 5) return landing;
+  return from === 5 ? host : step(flight, from, within - 1);
+}
+
+/**
+ * The eight gates of 《奇門法竅》's 飛盤, carried over the eight outer palaces.
+ *
+ * 「陽遁休死傷杜開驚生景，順飛八宮，不入中五；陰遁依景生驚開杜傷死休，逆飛八宮」:
+ * each gate moves as many outer palaces along their numbers as the 直使 has
+ * moved from its own, so the eight keep the order of their homes and the
+ * centre is passed over — 「中宮無門」.
+ */
+export function carriedGatePlate(chief: Gate, chiefPalace: number): ByPalace<Gate> {
+  const shift = OUTER.indexOf(chiefPalace) - OUTER.indexOf(chief.home);
+  const plate: ByPalace<Gate> = {};
+  for (const gate of GATES) {
+    const at = OUTER[(((OUTER.indexOf(gate.home) + shift) % 8) + 8) % 8] as number;
+    plate[at] = gate;
+  }
+  return plate;
+}
+
+/**
  * The star standing over the instrument's palace: the chief (值符).
  *
  * Not lodged. When the instrument sits in the centre the chief is 天禽, and

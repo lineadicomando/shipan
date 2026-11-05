@@ -265,10 +265,10 @@ export const qimenSchema = {
       'Whether the eight spirits have a phase of the five, and which. It moves nothing on the board — no seat, no name — and only says whether a spirit can be related to the rest by generation and control. none: the spirits stand in no relation, as Yao Xuesheng\'s Qimen Dunjia Xiandai Yingyong Jishu teaches, giving each a phase and refusing it any part in generation and control. Default branch: each spirit takes the phase of the branch or trigram it is identified with, as the Qimen Mijue in juan 47 of the Yuding Qimen Daquan lists them: zhifu earth, tengshe fire, taiyin metal, liuhe wood, baihu metal, xuanwu water, jiudi earth, jiutian metal, gouchen earth, zhuque fire. huaqi is the Qimen Dunjia Miji Daquan\'s, juan 6, which agrees on eight and makes zhifu fire and tengshe earth. The chart says which it stands on.',
     ),
   plate: z
-    .enum(['zhuan', 'xingfei'])
+    .enum(['zhuan', 'fei', 'xingfei'])
     .optional()
     .describe(
-      'How the stars and the heaven stems are moved. Default zhuan: turned round the eight outer palaces, the centre left where it is, as the Qimen Dunjia Tongzong has it. xingfei: flown through all nine palaces in Luoshu order, forward in a yang chart and back in a yin one, while the gates still turn, as the Qimen Dunjia Zhezhong holds. Under both the chief star is set on the palace of the hour stem; every other star and stem above the palaces can stand somewhere else.',
+      'How the stars, the heaven stems and the gates are moved. Default zhuan: stars and gates turned round the eight outer palaces, the centre left where it is, as the Qimen Dunjia Tongzong has it. fei: the whole earth plate, stars with their stems, carried through all nine palaces in Luoshu order by the same number of palaces in a yang chart and a yin one, and the gates carried along the eight outer palaces in the order of their numbers, the chief gate counted one palace an hour and never standing in the centre: in the hour it would land there it stays on the palace before, as the Qimen Faqiao states, draws and tabulates. xingfei: the stars flown through all nine palaces, forward in a yang chart and back in a yin one, while the gates still turn, as the Qimen Dunjia Zhezhong holds. Under all three the chief star is set on the palace of the hour stem; every other star, stem and gate can stand somewhere else. centre_travel has nothing to move under fei and is not reported there.',
     ),
   system: z
     .enum(['shijia', 'rijia', 'nianjia'])
@@ -377,7 +377,7 @@ interface RawInput {
   spirits?: 'dun' | 'fixed' | 'baihu' | 'huwu' | undefined;
   spirit_seat?: 'tianpan' | 'yinshi' | undefined;
   spirit_phase?: 'none' | 'branch' | 'huaqi' | undefined;
-  plate?: 'zhuan' | 'xingfei' | undefined;
+  plate?: 'zhuan' | 'fei' | 'xingfei' | undefined;
   system?: 'shijia' | 'rijia' | 'nianjia' | undefined;
   day_gates?: 'fei' | 'zhuan' | 'shun' | undefined;
   day_dun?: 'solstice' | 'yang' | undefined;

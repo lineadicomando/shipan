@@ -786,7 +786,6 @@ describe('GET /api/qimen', () => {
    */
   it('refuses every declared value it does not compute, and not only the two it reads by hand', async () => {
     for (const [parameter, value] of [
-      ['qimen.plate', 'fei'],
       ['qimen.system', 'yuejia'],
       ['qimen.strengths', 'star'],
     ] as const) {
@@ -795,6 +794,17 @@ describe('GET /api/qimen', () => {
       expect(status, parameter).toBe(501);
       expect(body, parameter).toMatchObject({ code: 'OPTION_NOT_IMPLEMENTED' });
     }
+  });
+
+  it('lays 飛盤 now that it is computed, and says so under the board', async () => {
+    const { status, body } = await call(qimen, `${MOMENT}&qimen.plate=fei`);
+    expect(status).toBe(200);
+    const { qimen: board } = body as {
+      qimen: { options: object; palaces: { palace: { number: number }; gate?: unknown }[] };
+    };
+    expect(board.options).toMatchObject({ plate: 'fei' });
+    // The centre is never given a gate under 飛盤.
+    expect(board.palaces.find((p) => p.palace.number === 5)?.gate).toBeUndefined();
   });
 
   it('answers the board of a day under the same name, with a shape of its own', async () => {

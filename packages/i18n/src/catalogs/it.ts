@@ -1614,13 +1614,15 @@ export const it: Record<MessageKey, string> = {
     'prendono le fasi del 《奇門遁甲秘笈大全》 qíméndùnjiǎmìjídàquán, dove 值符 zhífú è fuoco e 螣蛇 téngshé è terra',
   'form.qimen.spiritPhase.note':
     'Questa scelta riguarda solo la lente: decide se gli spiriti si possono mettere in relazione con il resto della tavola secondo le cinque fasi, e la tavola resta la stessa. Con la seconda e la terza lettura ogni spirito ha una fase. Le due letture danno la stessa fase a otto dei dieci nomi e si separano su 值符 zhífú e 螣蛇 téngshé.',
-  'form.qimen.plate': 'Le stelle e i tronchi sopra i palazzi si muovono',
+  'form.qimen.plate': 'Le stelle, i tronchi e le porte sopra i palazzi si muovono',
   'form.qimen.plate.zhuan':
     'girandoli sugli otto palazzi esterni, come nel 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng',
+  'form.qimen.plate.fei':
+    'portando l’intera tavola di terra, stelle e tronchi insieme, per tutti e nove i palazzi, e le porte per gli otto esterni, come nel 《奇門法竅》 qíménfǎqiào',
   'form.qimen.plate.xingfei':
-    'facendoli volare per tutti e nove i palazzi mentre le porte continuano a girare, come sostiene il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng',
+    'facendo volare stelle e tronchi per tutti e nove i palazzi mentre le porte continuano a girare, come sostiene il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng',
   'form.qimen.plate.note':
-    'Le due letture pongono la stella del capo sul palazzo del tronco dell’ora. Si separano sul modo in cui le altre otto la seguono. La prima le porta lungo l’anello degli otto palazzi esterni e lascia il centro dov’è. La seconda le conta per tutti e nove i palazzi nell’ordine del 洛書 luòshū, centro compreso, in avanti in una carta yang e all’indietro in una carta yin. Le porte girano sugli otto sotto entrambe.',
+    'Le tre letture pongono la stella del capo sul palazzo del tronco dell’ora. Si separano sul modo in cui il resto la segue. La prima fa girare stelle e porte lungo l’anello degli otto palazzi esterni e lascia il centro dov’è. La seconda conta le stelle per tutti e nove i palazzi nell’ordine del 洛書 luòshū, centro compreso, in avanti in una carta yang e all’indietro in una carta yin, e fa girare le porte sugli otto. La terza sposta ogni stella dello stesso numero di palazzi in entrambe le metà dell’anno, e sposta le porte lungo gli otto palazzi esterni nell’ordine dei loro numeri. La sua porta del capo non sta mai al centro: nell’ora in cui ci arriverebbe, resta dov’era.',
   'form.qimen.system': 'La tavola si posa',
   'form.qimen.system.shijia':
     'sull’ora, come tavola 時家 shíjiā: tronchi in cielo e in terra, nove stelle, otto porte e otto spiriti',
@@ -2006,7 +2008,7 @@ export const it: Record<MessageKey, string> = {
   'notes.noParameters':
     'Questo strato non ha divergenze proprie: si calcola interamente dallo strato calendariale, e i parametri che lo spostano sono quelli elencati qui sopra.',
   'notes.parameter.method': 'Come si stabilisce il ju.',
-  'notes.parameter.plate': 'Come si ricava la tavola di cielo.',
+  'notes.parameter.plate': 'Come si muovono la tavola di cielo e le porte.',
   'notes.parameter.centreLodging':
     'Dove alloggia il centro, che non ha direzione, né porta, né spirito propri.',
   'notes.parameter.earthPlate': 'Ogni quanto si stende di nuovo la tavola di terra: una volta per sessanta ore, oppure a ogni decade.',

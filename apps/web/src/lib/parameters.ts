@@ -64,7 +64,7 @@ export interface Divergence {
    * place, and a control that changed nothing would read as a choice where
    * none is left.
    */
-  readonly inside?: { readonly id: string; readonly value: string };
+  readonly inside?: { readonly id: string; readonly value: string | readonly string[] };
   /**
    * The family of 奇門 a divergence belongs to — the engine's `family`. A day
    * board has no plate to turn and the hour board no gates of a day, so each
@@ -125,11 +125,19 @@ export const DIVERGENCES: readonly Divergence[] = [
     board: 'qimen',
     family: 'shijia',
     values: ['zhuan', 'fei', 'xingfei'],
-    implemented: ['zhuan', 'xingfei'],
+    implemented: ['zhuan', 'fei', 'xingfei'],
     fallback: 'zhuan',
     label: 'form.qimen.plate',
-    says: { zhuan: 'form.qimen.plate.zhuan', xingfei: 'form.qimen.plate.xingfei' },
-    notes: { zhuan: 'form.qimen.plate.note', xingfei: 'form.qimen.plate.note' },
+    says: {
+      zhuan: 'form.qimen.plate.zhuan',
+      fei: 'form.qimen.plate.fei',
+      xingfei: 'form.qimen.plate.xingfei',
+    },
+    notes: {
+      zhuan: 'form.qimen.plate.note',
+      fei: 'form.qimen.plate.note',
+      xingfei: 'form.qimen.plate.note',
+    },
   },
   {
     id: 'centreLodging',
@@ -337,6 +345,7 @@ export const DIVERGENCES: readonly Divergence[] = [
     implemented: ['stay', 'travel'],
     fallback: 'stay',
     label: 'form.qimen.centreTravel',
+    inside: { id: 'plate', value: ['zhuan', 'xingfei'] },
     says: {
       stay: 'form.qimen.centreTravel.stay',
       travel: 'form.qimen.centreTravel.travel',
@@ -828,8 +837,14 @@ export function chosenFields(chosen: Chosen): Record<string, string | undefined>
 /** Whether a divergence is shown at all, given what else is set. */
 export function shown(row: Divergence, chosen: Chosen): boolean {
   if (!readsOn(row, chosen[named(row.board, 'system')] ?? 'shijia')) return false;
+  return insideHolds(row, chosen[named(row.board, row.inside?.id ?? '')]);
+}
+
+/** Whether the value a divergence's outer one stands on is one it lives inside. */
+function insideHolds(row: Divergence, chosen: unknown): boolean {
   if (!row.inside) return true;
-  return chosen[named(row.board, row.inside.id)] === row.inside.value;
+  const { value } = row.inside;
+  return typeof value === 'string' ? chosen === value : value.includes(chosen as string);
 }
 
 /**
@@ -886,7 +901,7 @@ export function inForce(
     if (LAYERS.includes(row.board) && under === undefined) continue;
     if (row.implemented.length < 2) continue;
     const bag = row.board === 'pillars' ? (under ?? {}) : own;
-    if (row.inside && bag[row.inside.id] !== row.inside.value) continue;
+    if (row.inside && !insideHolds(row, bag[row.inside.id])) continue;
     if (!readsOn(row, String(bag.system ?? 'shijia'))) continue;
 
     const from = LAYERS.includes(row.board) ? (under ?? {}) : own;

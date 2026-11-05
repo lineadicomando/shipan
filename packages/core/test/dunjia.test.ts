@@ -436,8 +436,8 @@ describe('no school is implicit', () => {
     expect(ju('zhirun')).toMatchObject({ yang: false, number: 9, yuan: 'shang' });
   });
 
-  it('refuses a plate and a system it does not implement', () => {
-    // These two exist in the type before they exist in the engine, so that
+  it('refuses a strength and a system it does not implement', () => {
+    // These exist in the type before they exist in the engine, so that
     // adding them will not break the input model. Ignoring them instead of
     // refusing would hand back a zhuan shijia chart under another name.
     const moment = resolveMoment(
@@ -448,7 +448,7 @@ describe('no school is implicit', () => {
     );
 
     const unimplemented: Array<Partial<ChartOptions>> = [
-      { plate: 'fei' },
+      { strengths: 'star' },
       { system: 'rijia' },
       { system: 'yuejia' },
       { system: 'nianjia' },

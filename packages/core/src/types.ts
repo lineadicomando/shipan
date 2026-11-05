@@ -41,7 +41,10 @@ export interface ChartOptions {
    * stars and the 奇儀 are flown through nine palaces and the eight gates are
    * turned round eight, on the hour board. 《奇門遁甲折衷》 argues it from
    * 《極深研幾賦》 — 「星有九必當飛九宮，門有八只可行八面」 — and works two
-   * hours of it. `fei`, which flies the gates as well, is refused.
+   * hours of it. `fei` flies the gates as well: 《奇門法竅》 carries the earth
+   * plate whole to the hour stem in both dun and the eight gates over the
+   * eight outer palaces, its 直使 waiting before the centre rather than
+   * entering it, and draws and tabulates the board hour by hour.
    */
   plate: 'zhuan' | 'fei' | 'xingfei';
 

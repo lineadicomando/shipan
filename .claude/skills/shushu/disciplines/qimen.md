@@ -241,9 +241,11 @@ Each step names the engine parameter, or says "not modelled".
    - `kun`, both dun at 坤 (統宗, 寶鑑卷二 「陽遁陰遁俱寄坤宮」, 符應經).
      武經總要: 「天禽中五寄坤二宮」 (web transcription).
    - `dun`, yang 坤 and yin 艮 (漢陰居士歌; the 寶鑑 reports it).
-   - `dunni`, the reverse (the 折衷 quoting 三才發秘 and a 元經).
+   - `dunni`, the reverse (the 折衷 quoting 三才發秘 and a 元經; every board the
+     法竅 prints).
    - `bajie`, through all eight palaces by term.
-   - `siyu`, through the four corners.
+   - `siyu`, through the four corners. The 法竅's 論寄宮 also goes round the
+     corners, a season on (立春 艮, 立夏 巽, 立秋 坤, 立冬 乾): not computed.
 
    When the count lands in the centre, the 甲辰 decade takes 天禽 and 死門
    (「甲辰在中宮，寄於坤二，天禽為符，死門為使」).
@@ -257,7 +259,7 @@ Each step names the engine parameter, or says "not modelled".
    own, every spirit there, read with the 值使門) are not modelled.
 6. **The heaven plate.** Under 轉 zhuàn (`plate: zhuan`), the 值符 star with
    its 儀 goes to the palace of the hour's stem (「值符常遣加時干」), and the
-   ring of eight turns. Under 飛 (`fei`, refused, held by the 法竅), the earth
+   ring of eight turns. Under 飛 (`fei`, held by the 法竅), the earth
    plate is carried whole to the hour stem through nine in 洛書 order, in both
    遁 the same way, and the gates are carried over the eight outer palaces.
    The 折衷's hybrid, stars and 儀 flown and gates turned, is `xingfei`, and
@@ -266,8 +268,10 @@ Each step names the engine parameter, or says "not modelled".
 7. **The gates.** The 值使 counts from its palace by the hours of the decade
    (「值使順逆遁宮去」; 武經總要 「以直事加時宮」), forward under yang and
    backward under yin through the nine numbers, lodging when it reaches 五.
-   The other seven follow round the eight. In the flying line, the 鳴法's
-   gates fly through nine (web lead).
+   The other seven follow round the eight. Under `fei` the eight are carried
+   along the outer palaces in the order of their numbers, and the 值使 never
+   stands in 五: the hour it would, it stays on the palace before (the 法竅's
+   drawings and tables). The 鳴法's gates fly through nine (web lead).
 8. **The spirits.** 值符 螣蛇 太陰 六合 then the middle pair, then 九地 九天.
    They run forward under yang and backward under yin (煙波:
    「值符前三六合位，太陰之神在前二。後一宮中為九天，後二之神為九地」).
@@ -562,8 +566,8 @@ that is on the shelf.
   時家 board's own 起例». **All three are held since 2026-11-02**: the 法竅
   in 鄭同's 2011 點校 and a 抄本 reprint, the 鳴法 as photographs of the
   遼圖 manuscript, the 旨歸 in the 四庫未收書輯刊. **The 法竅 was read on
-  2026-11-05 and is that text**, on rung 4; building `fei` is put to the
-  user. The 鳴法 would be a second holder or a second reading; unread.
+  2026-11-05 and is that text**, on rung 4, and `fei` is built on it. The
+  鳴法 would be a second holder or a second reading; unread.
 - **A ninth spirit (太常) and a ninth gate** belong to the flying line. They
   would arrive with `plate: fei` as values of `spirits` and of the gate count.
   Not the 法竅's: its drawings carry eight spirits and eight gates, and its

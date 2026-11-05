@@ -16,6 +16,9 @@ import {
   chiefGatePalace,
   chiefStar,
   flownPlates,
+  carriedGatePalace,
+  carriedGatePlate,
+  carriedPlates,
   decadeInstrument,
   earthPlate,
   gatePlate,
@@ -214,10 +217,16 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   // concealing it stands in. That is what 遁甲 names.
   const hourStem = hourGanzhi.stem.id === 'jia' ? instrument : hourGanzhi.stem;
 
-  // Turned round the ring of eight, the centre left where it is; or flown
-  // through all nine as the 折衷 has it, the gates still turned below.
+  // Turned round the ring of eight, the centre left where it is; flown
+  // through all nine as the 折衷 has it, the gates still turned below; or the
+  // earth plate carried whole as the 法竅 has it, the gates carried too.
+  const carried = options.plate === 'fei';
   const flown =
-    options.plate === 'xingfei' ? flownPlates(earth, instrument, hourStem, ju.yang) : undefined;
+    options.plate === 'xingfei'
+      ? flownPlates(earth, instrument, hourStem, ju.yang)
+      : carried
+        ? carriedPlates(earth, instrument, hourStem)
+        : undefined;
   const heaven = flown?.heaven ?? heavenPlate(earth, instrument, hourStem, host);
   const stars = flown?.stars ?? starPlate(earth, instrument, hourStem, host);
 
@@ -235,12 +244,17 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   const chiefLanding = palaceOf(earth, hourStem);
 
   const gate = chiefGate(earth, instrument, host);
-  const gateLanding = chiefGatePalace(earth, instrument, hourGanzhi, ju.yang);
+  // Under 飛盤 the count never stands in the centre, so its landing is its seat.
+  const gateLanding = carried
+    ? carriedGatePalace(earth, instrument, hourGanzhi, ju.yang, host)
+    : chiefGatePalace(earth, instrument, hourGanzhi, ju.yang);
   // The eight gates ring from the lodged seat whatever the option says, and so
   // do the spirits, which lodge inside `spiritPlate`. Neither ring has a place
   // for the centre: what `centreTravel` moves is where the pair is *reported*,
   // never where the other seven stand.
-  const gates = gatePlate(gate, lodge(gateLanding, host));
+  const gates = carried
+    ? carriedGatePlate(gate, gateLanding)
+    : gatePlate(gate, lodge(gateLanding, host));
   // 「如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符」: under
   // `spiritSeat: yinshi` the ring starts from the instrument's palace on the
   // earth plate at a 己 to 癸 hour, and at any hour the heaven-plate 值符

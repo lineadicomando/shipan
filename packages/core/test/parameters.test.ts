@@ -149,17 +149,17 @@ describe('the parameters the engine declares', () => {
 
 describe('what refuses an option the engine does not compute', () => {
   it('says which values are computed, in the order they are declared', () => {
-    const options: ChartOptions = { ...DEFAULT_OPTIONS, plate: 'fei' };
+    const options: ChartOptions = { ...DEFAULT_OPTIONS, strengths: 'star' };
 
     try {
-      requireImplemented(CHART_PARAMETERS, options, 'plate');
-      expect.unreachable('a plate the engine does not turn should be refused');
+      requireImplemented(CHART_PARAMETERS, options, 'strengths');
+      expect.unreachable('a strength the engine does not weigh should be refused');
     } catch (error) {
       expect((error as { code: string }).code).toBe('OPTION_NOT_IMPLEMENTED');
       expect((error as { params: Record<string, string> }).params).toEqual({
-        option: 'plate',
-        value: 'fei',
-        implemented: 'zhuan, xingfei',
+        option: 'strengths',
+        value: 'star',
+        implemented: 'season',
       });
     }
   });

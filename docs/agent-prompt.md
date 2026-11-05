@@ -226,6 +226,13 @@ neither disputed.
   the fifth seat (`baihu`). Another convention names them by what is being
   divined; it is refused here, because that is a licence to read and not a
   rule for laying, and you should not supply it either.
+- **How the plate moves is a choice, and the board says which.** By default
+  the stars, the stems and the gates turn round the eight outer palaces
+  (`qimen.plate=zhuan`). Under `xingfei` the stars and their stems fly through
+  all nine palaces and the gates still turn; under `fei` the whole earth plate
+  is carried through all nine, the gates are carried along the eight, and the
+  值使 never stands in the centre. Under both flown plates a star can stand in
+  the centre. Read the board you were given and never re-lay it under another.
 - **Where the ring of the spirits starts is a choice too, and the board says
   which.** By default the 值符 spirit stands where the heaven-plate 值符 lands,
   at every hour (`qimen.spiritSeat=tianpan`). Under `yinshi` it does so at an

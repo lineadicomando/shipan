@@ -210,7 +210,7 @@ dunjia's.**
 | Parameter | Values | Default |
 |---|---|---|
 | `method` | `chaibu` (拆補 chāibǔ), `zhirun` (置閏 zhìrùn), `maoshan` (茅山 máoshān) | `chaibu` |
-| `plate` | `zhuan` (轉盤 zhuànpán), `fei` (飛盤 fēipán), `xingfei` (星飛門轉 xīngfēiménzhuàn — the stars and the 儀 flown, the gates turned) | `zhuan` |
+| `plate` | `zhuan` (轉盤 zhuànpán), `fei` (飛盤 fēipán — the earth plate carried whole and the gates carried over the eight, as 《奇門法竅》 lays it), `xingfei` (星飛門轉 xīngfēiménzhuàn — the stars and the 儀 flown, the gates turned) | `zhuan` |
 | `centreLodging` | where the centre is read: `kun` (寄坤二 always), `dun` (陽遁寄二 · 陰遁寄八), `dunni` (陽遁寄八 · 陰遁寄二), `bajie` (八節 bājié — through all eight palaces, three terms to each), `siyu` (四隅 sìyú — through the four corners, six terms to each) | `kun` |
 | `earthPlate` | how often the earth plate is laid: `yuan` (元 yuán — once for sixty hours), `xun` (旬 xún — anew at every decade, 六戊還原) | `yuan` |
 | `system` | which family, each a board of its own: `shijia` (時家 shíjiā), `rijia` (日家 rìjiā), `nianjia` (年家 niánjiā — the hour board's procedure laid on the year pillar, always 陰遁), later `yuejia` (月家 yuèjiā) | `shijia` |
@@ -223,7 +223,7 @@ dunjia's.**
 | `leap` | where 置閏 repeats its block — inside 置閏: `solstice` (芒種 or 大雪), `runyue` (閏月 rùnyuè, the term the year's leap month falls under, in every year with one; each such term pinned to the 符頭 at or before it, and a stretch with no room for the repeat laid without it) | `solstice` |
 | `strengths` | what 旺相休囚死 are read from: `season`, `star` | `season` |
 | `earth` | where earth's season begins: `quarters` (the four closing months entire), `eighteen` (their last eighteen days, as 《大六壬精解》 states of the phases) | `quarters` |
-| `centreTravel` | where the 值符 zhífú and the 值使 zhíshǐ are read when the count puts them on the centre: `stay` (lodged out to 坤, as 《御定奇門寶鑑》 has it), `travel` (in the fifth palace, as 《奇門遁甲金鏡寶鑑》 has it) | `stay` |
+| `centreTravel` | where the 值符 zhífú and the 值使 zhíshǐ are read when the count puts them on the centre, under `plate: zhuan` and `xingfei`: `stay` (lodged out to 坤, as 《御定奇門寶鑑》 has it), `travel` (in the fifth palace, as 《奇門遁甲金鏡寶鑑》 has it) | `stay` |
 | `centreStem` | where the centre's stem stands on the heaven plate once the plate has turned, on the turned plate only: `centre` (in the fifth palace), `host` (with the stem of the palace the centre lodges in, wherever that stem goes, as 《御定奇門大全》's hour tables read it) | `centre` |
 | `dingTomb` | the palace 丁 is buried in, for 入墓: `gen` (艮 gèn, as 《奇門遁甲統宗》 has it), `qian` (乾 qián, with 丙, as 《遁甲符應經》 and 《奇門遁甲金鏡寶鑑》 have it) | `gen` |
 | `yiTomb` | the palace 乙 is buried in, for 入墓: `kun` (坤 kūn, as 《奇門遁甲統宗》, 《遁甲符應經》, 《吉凶格解》 and 《奇門遁甲金鏡寶鑑》 have it), `qian` (乾 qián, with 丙, as the verse in 《奇門遁甲秘笈大全》 has it and 奇門秘訣's 三璋 argues) | `kun` |
@@ -267,6 +267,21 @@ order of their own, forward under yang and back under yin, each carrying the
 stem its own palace holds on the earth plate. Nothing lodges, so
 `centreLodging` reaches the stars and the stems no longer and still says where
 a gate or a spirit is read when its count falls on the centre.
+
+**`plate: fei` carries the earth plate whole, and the gates never reach the
+centre.** 《奇門法竅》 gathers the earth plate into one layer, stars with their
+stems, and sets it down with the 值符 on the hour stem's palace, so every star
+moves the same number of palaces in both dun — which is where it parts from
+`xingfei` under yin. The eight gates are carried the same way along the eight
+outer palaces. The 值使 is counted from the 旬首's palace one palace an hour
+through the nine Luoshu numbers and 「不入中五」: the hour it would land on the
+centre it stays on the palace before, which is how the work's drawings and
+its 1080 tabulated hours lay it. A 旬首 in the centre gives the 值使 its host's
+gate, and `centreLodging` names the host; the spirits start from the host when
+the 值符 lands there. Nothing is left for `centreTravel` to move, and it is not
+reported under `fei`. The work's own boards lodge by `dunni`, which the line
+under a board names it for; its 論寄宮 argues a reading this engine does not
+compute, the four corners by the four 立 (`docs/open.md`).
 
 **A family is a board and not a setting of the hour board.** `system: rijia`
 is answered by `computeDayChart` with a type of its own: eight gates, nine

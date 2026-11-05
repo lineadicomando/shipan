@@ -234,6 +234,15 @@ export const WITNESSES = {
     name: { hanzi: '奇門遁甲折衷', pinyin: 'qíméndùnjiǎzhézhōng' },
   },
   /**
+   * 錫孟樨's 《奇門法竅》, which flies the hour board whole — stars, 儀 and gates —
+   * and draws and tabulates it hour by hour.
+   */
+  faqiao: {
+    kind: 'transmitted',
+    name: { hanzi: '奇門法竅', pinyin: 'qíménfǎqiào' },
+    year: 1870,
+  },
+  /**
    * 張志春's second 奇門 book, which makes 三奇得使 a 奇 with the 值使 gate and
    * calls that its own provisional opinion against the transmitted pairing.
    */

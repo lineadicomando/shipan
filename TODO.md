@@ -33,11 +33,11 @@ user says otherwise.
   `docs/sources.md`, `texts/README.md`, `docs/open.md` and this file for
   sentences the session outlived («unread», «still missing», «stays refused»…).
 
-## Where it stands, 2026-11-05, end of phase 90
+## Where it stands, 2026-11-05, end of phase 91
 
-**0.45.0**, tagged `v0.45.0` and deployed at https://shipan.it (footer
-checked 2026-11-05). `main` checked out, phase 90 (a reading) committed and
-not pushed, no branch open. Build,
+**0.45.0** tagged `v0.45.0` and deployed at https://shipan.it (footer
+checked 2026-11-05). `main` checked out; phases 90 and 91 committed and not
+pushed, **0.46.0 not tagged or deployed**; no branch open. Build,
 typecheck and every suite pass. The phases are listed in
 `docs/history/README.md`.
 
@@ -47,13 +47,11 @@ typecheck and every suite pass. The phases are listed in
    with the year, which is built (phase 89). The month is the same board on
    the month pillar, `layOnPillar` already shared. Four steps, each with its
    sources, in `docs/open.md` § "年家 and 月家, commissioned".
-2. **`plate: fei`, which has its holder**: 《奇門法竅》 was read on the plate
-   on 2026-11-05 (phase 90) and lays the hour board flown whole, stated,
-   drawn on 36 boards and tabulated over 1080 hours; building it waits on the
-   user's word, with a ruling on `centreLodging` there (the work prints
-   `dunni` and argues `siyu`). What is left of it, and the 鳴法 and the 旨歸,
-   are lines 7–9 of `docs/open.md` § "The shelf". The script predict.mjs in
-   `texts/qimen/faqiao-juan2/` is the board to test a build against.
+2. **The rest of the three 飛盤 works**: `plate: fei` is built on 《奇門法竅》
+   (phase 91). What is left of that work — its 超接 and 拆補 against `method`
+   and `leap`, its tables' 格 against the engine's board — and the 鳴法 and
+   the 旨歸 are lines 7–9 of `docs/open.md` § "The shelf". The 法竅's lodging
+   by the four 立 is recorded with no parameter there.
 3. **The scan form's `gongpo`**: offered always, found only under
    `menpo: gongzhimen`, so a scan under the default finds nothing and says
    nothing. A filter like `layableUnder`'s for `stemPairs`, keyed on
@@ -97,7 +95,7 @@ What each waits on is `docs/open.md` § "What each refused value waits on".
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `plate: fei`, `system: yuejia`, `strengths: star` |
+| 奇門 | `system: yuejia`, `strengths: star` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `minggong: ascendant`, `gong: ci` |
 | 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: chunjie` |

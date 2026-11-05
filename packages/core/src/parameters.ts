@@ -179,9 +179,11 @@ export interface Parameter<V> {
    * 拆補 or 茅山 nothing is repeated and where the repetition goes decides
    * nothing. Reported beside those boards it would name a choice the method
    * never had to make. `centreStem` divides the turned plate the same way,
-   * since nothing lodges on the flown one.
+   * since nothing lodges on the flown one, and `centreTravel` both plates
+   * whose 直使 can reach the centre, which 飛盤's never does. A list names
+   * every value the divergence is in force under.
    */
-  readonly inside?: { readonly id: string; readonly value: string };
+  readonly inside?: { readonly id: string; readonly value: string | readonly string[] };
   /**
    * The family of 奇門 a parameter belongs to, where it belongs to one.
    *
@@ -260,9 +262,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   plate: {
     board: 'qimen',
     family: 'shijia',
-    // How what stands over the palaces is moved. Two readings are computed and
-    // each is a board somebody lays whole; 飛盤, where the gates fly as well,
-    // waits on a text flying the hour board's own 起例.
+    // How what stands over the palaces is moved. Three readings are computed
+    // and each is a board somebody lays: turned, flown whole, or flown above
+    // and turned below.
     label: 'form.qimen.plate',
     values: [
       {
@@ -274,7 +276,17 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         // 《御定奇門大全》卷五–十 turns it in every one of its 1080 hours.
         heldBy: ['tongzong', 'qimendaquan'],
       },
-      { id: 'fei', name: { hanzi: '飛盤', pinyin: 'fēipán' }, implemented: false },
+      // The earth plate carried whole to the hour stem, the gates carried over
+      // the eight and their 直使 waiting before the centre: 《奇門法竅》's, stated
+      // in 卷二 and 卷五, drawn on 36 boards and tabulated over 1080 hours.
+      {
+        id: 'fei',
+        name: { hanzi: '飛盤', pinyin: 'fēipán' },
+        says: 'form.qimen.plate.fei',
+        note: 'form.qimen.plate.note',
+        implemented: true,
+        heldBy: ['faqiao'],
+      },
       // The stars and the 儀 flown, the gates turned: the 折衷's, argued from
       // 《極深研幾賦》 and worked hour by hour in its own pages.
       {
@@ -317,12 +329,14 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         heldBy: ['hanyinjushi'],
         reportedBy: ['baojian'],
       },
-      // Yang to 艮, yin to 坤: 「元經又謂陽遁寄艮，陰遁寄坤」, as the 折衷 quotes.
+      // Yang to 艮, yin to 坤: 「元經又謂陽遁寄艮，陰遁寄坤」, as the 折衷 quotes,
+      // and every board the 法竅 prints — 「中五寄艮」, 「中五寄坤」.
       {
         id: 'dunni',
         says: 'form.qimen.centreLodging.dunni',
         note: 'form.qimen.centreLodging.note',
         implemented: true,
+        heldBy: ['faqiao'],
         reportedBy: ['zhezhong'],
       },
       // Through the eight palaces with the eight 節, three terms to each.
@@ -335,7 +349,8 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         heldBy: ['zhezhong'],
       },
       // Through the four corners with the four seasons: 耕山陳氏's, which the
-      // 折衷 sets out and finds too narrow.
+      // 折衷 sets out and finds too narrow. The 法竅's 論寄宮 goes round the same
+      // corners a season on — 立春 艮, 立夏 巽, 立秋 坤, 立冬 乾 — and is not this.
       {
         id: 'siyu',
         name: { hanzi: '四隅', pinyin: 'sìyú' },
@@ -753,8 +768,10 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     // Where the 值符 and the 值使 are read when the count puts them on the
     // centre, and nothing else: 《金鏡寶鑑》 states the pair apart from the
     // star in one clause — 其星寄 against 符使不必寄於二 — so neither value
-    // moves a plate. See `docs/sources.md`.
+    // moves a plate. See `docs/sources.md`. Not under 飛盤, whose 值符 stands
+    // in the centre as a star among nine and whose 直使 never comes there.
     label: 'form.qimen.centreTravel',
+    inside: { id: 'plate', value: ['zhuan', 'xingfei'] },
     values: [
       {
         id: 'stay',
@@ -1707,6 +1724,14 @@ export function refuseOtherFamily(
  * that it is derived from the declaration rather than written per board, is
  * how a school landing later gets said without anybody remembering to say it.
  */
+/** Whether a divergence nested `inside` another stands in force on this bag. */
+function insideHolds(parameter: ParameterEntry, bag: Record<string, unknown>): boolean {
+  if (!parameter.inside) return true;
+  const { id, value } = parameter.inside;
+  const chosen = bag[id];
+  return typeof value === 'string' ? chosen === value : value.includes(chosen as string);
+}
+
 export function divergencesInForce(
   board: string,
   options: object,
@@ -1728,7 +1753,7 @@ export function divergencesInForce(
     if (parameter.board !== board && parameter.board !== 'pillars') continue;
     if (parameter.board === 'pillars' && layers === null) continue;
     if (implementedValues(parameter).length < 2) continue;
-    if (parameter.inside && bag[parameter.inside.id] !== parameter.inside.value) continue;
+    if (!insideHolds(parameter, bag)) continue;
     if (!readsOn(parameter, String(bag.system ?? 'shijia'))) continue;
 
     // Read out of the bag the parameter belongs to, and never out of both.
@@ -1791,7 +1816,7 @@ export function combinationOf(board: string, options: object): Combination | und
 
   for (const parameter of PARAMETERS) {
     if (parameter.board !== board) continue;
-    if (parameter.inside && bag[parameter.inside.id] !== parameter.inside.value) continue;
+    if (!insideHolds(parameter, bag)) continue;
     if (!readsOn(parameter, String(bag.system ?? 'shijia'))) continue;
 
     const chosen = bag[parameter.id] ?? parameter.default;

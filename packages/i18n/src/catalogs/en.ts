@@ -1751,13 +1751,15 @@ export const en = {
   // The moving pair against the plate under it. 《金鏡寶鑑》 separates the two in
   // one clause — 其星寄 for the star, 符使不必寄於二 for the 符 and the 使 — so
   // the label asks about the pair and neither value promises a different board.
-  'form.qimen.plate': 'The stars and the stems above the palaces are moved',
+  'form.qimen.plate': 'The stars, the stems and the gates above the palaces are moved',
   'form.qimen.plate.zhuan':
     'by turning them round the eight outer palaces, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng has it',
+  'form.qimen.plate.fei':
+    'by carrying the whole earth plate, stars and stems together, through all nine palaces, and the gates through the eight outer ones, as 《奇門法竅》 qíménfǎqiào has it',
   'form.qimen.plate.xingfei':
-    'by flying them through all nine palaces while the gates still turn, as 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng holds',
+    'by flying the stars and the stems through all nine palaces while the gates still turn, as 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng holds',
   'form.qimen.plate.note':
-    'Both readings set the chief star on the palace of the hour’s stem. They part over how the other eight follow it. The first carries them round the ring of eight outer palaces and leaves the centre where it is. The second counts them on through all nine palaces in the order of the 洛書 luòshū, the centre included, forward in a yang chart and back in a yin one. The gates turn round the eight under both.',
+    'All three readings set the chief star on the palace of the hour’s stem. They part over how the rest follow it. The first turns the stars and the gates round the ring of eight outer palaces and leaves the centre where it is. The second counts the stars on through all nine palaces in the order of the 洛書 luòshū, the centre included, forward in a yang chart and back in a yin one, and turns the gates round the eight. The third moves every star the same number of palaces in both halves of the year, and moves the gates along the eight outer palaces in the order of their numbers. Its chief gate never stands in the centre: in the hour it would reach it, it stays where it was.',
   // The family, and the two things a day board is asked. A family is a board
   // of its own, so the first of these says what each is made of.
   'form.qimen.system': 'The board is laid off',
@@ -2260,7 +2262,7 @@ export const en = {
   'notes.noParameters':
     'This layer has no divergence of its own: it is computed entirely from the calendrical layer, and the parameters that move it are the ones listed above.',
   'notes.parameter.method': 'How the ju is established.',
-  'notes.parameter.plate': 'How the heaven plate is derived.',
+  'notes.parameter.plate': 'How the heaven plate and the gates are moved.',
   'notes.parameter.centreLodging':
     'Where the centre lodges, having no direction, no gate and no spirit of its own.',
   'notes.parameter.earthPlate': 'How often the earth plate is laid anew: once for sixty hours, or at every decade of them.',

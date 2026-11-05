@@ -869,9 +869,9 @@ describe('the flags the declaration gives', () => {
   });
 
   it('hands a declared and refused value to the engine, which refuses it by name', async () => {
-    const code = await run(['qimen', ...MOMENT, '--plate', 'fei', '--lang', 'en']);
+    const code = await run(['qimen', ...MOMENT, '--strengths', 'star', '--lang', 'en']);
     expect(code).toBe(1);
-    expect(err).toContain('fei');
+    expect(err).toContain('star');
   });
 
   it('prints the board of a day, which has gates and stars and no plate of stems', async () => {
