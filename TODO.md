@@ -33,11 +33,11 @@ user says otherwise.
   `docs/sources.md`, `texts/README.md`, `docs/open.md` and this file for
   sentences the session outlived («unread», «still missing», «stays refused»…).
 
-## Where it stands, 2026-11-05, end of phase 91
+## Where it stands, 2026-11-05, end of phase 92
 
 **0.45.0** tagged `v0.45.0` and deployed at https://shipan.it (footer
-checked 2026-11-05). `main` checked out; phases 90 and 91 committed and not
-pushed, **0.46.0 not tagged or deployed**; no branch open. Build,
+checked 2026-11-05). `main` checked out; phases 90 to 92 committed and not
+pushed, **0.46.1 not tagged or deployed**; no branch open. Build,
 typecheck and every suite pass. The phases are listed in
 `docs/history/README.md`.
 

@@ -6,7 +6,16 @@
   import type { Location } from '$lib/moment';
   import LocationSearch from './LocationSearch.svelte';
 
-  import { ofLayer, offered, offeredValues, shown, wire, type Chosen, type Divergence } from '$lib/parameters';
+  import {
+    choose,
+    ofLayer,
+    offered,
+    offeredValues,
+    shown,
+    wire,
+    type Chosen,
+    type Divergence,
+  } from '$lib/parameters';
 
   let {
     t,
@@ -196,7 +205,7 @@
       said: t(said),
     }))}
     chosen={value}
-    onchoose={(option) => (chosen = { ...chosen, [name]: option })}
+    onchoose={(option) => (chosen = choose(row, option, chosen))}
     note={note ? t(note, { [row.id]: value }) : undefined}
   />
 {/snippet}

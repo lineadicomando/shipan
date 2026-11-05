@@ -150,6 +150,13 @@ leaves the form is still the fields: the reader sees what was set and can move
 any one of them afterwards. Nothing downstream of the form ever receives the
 name of the bundle.
 
+**The one the form carries today is 飛盤's.** Choosing `plate: fei` fills
+`centreLodging: dunni`, the lodging every board 《奇門法竅》 prints, because a
+parameter has one default for every plate and `kun` is the default; the
+address then says both, and the reader can move the lodging back. It is
+`fills` on the row in `apps/web/src/lib/parameters.ts`, and a test holds every
+value it fills to one the engine computes.
+
 ## A declared default is not a hidden school
 
 Every row here has a default and has to: an address naming no method still

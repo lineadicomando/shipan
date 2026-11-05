@@ -8,6 +8,7 @@ import {
   belongsTo,
   carried,
   chosenFields,
+  choose,
   inForce,
   named,
   offered,
@@ -139,6 +140,35 @@ describe('what a form offers', () => {
     expect(shown(leap!, { 'qimen.method': 'zhirun' })).toBe(true);
     expect(shown(leap!, { 'qimen.method': 'chaibu' })).toBe(false);
     expect(shown(leap!, { 'qimen.method': 'maoshan' })).toBe(false);
+  });
+
+  it('hides where the centre is read under 飛盤, which nothing reaches there', () => {
+    const travel = DIVERGENCES.find((row) => row.id === 'centreTravel')!;
+    expect(shown(travel, { 'qimen.plate': 'zhuan' })).toBe(true);
+    expect(shown(travel, { 'qimen.plate': 'xingfei' })).toBe(true);
+    expect(shown(travel, { 'qimen.plate': 'fei' })).toBe(false);
+  });
+
+  it('fills the lodging the 法竅 prints when 飛盤 is chosen, and leaves it to the reader after', () => {
+    const plate = DIVERGENCES.find((row) => row.id === 'plate')!;
+    const flown = choose(plate, 'fei', { 'qimen.plate': 'zhuan', 'qimen.centreLodging': 'kun' });
+    expect(flown).toMatchObject({ 'qimen.plate': 'fei', 'qimen.centreLodging': 'dunni' });
+    // What leaves the form is the fields: the lodging is written into the address.
+    expect(chosenFields(flown)).toMatchObject({ 'qimen.centreLodging': 'dunni' });
+    // Choosing another plate undoes nothing the reader can see and move.
+    expect(choose(plate, 'zhuan', flown)['qimen.centreLodging']).toBe('dunni');
+  });
+
+  it('fills only values the engine computes, of divergences on the same board', () => {
+    for (const row of DIVERGENCES) {
+      for (const [value, fills] of Object.entries(row.fills ?? {})) {
+        expect(row.implemented, `${row.id}: ${value}`).toContain(value);
+        for (const [id, filled] of Object.entries(fills)) {
+          const target = DIVERGENCES.find((other) => other.board === row.board && other.id === id);
+          expect(target?.implemented, `${row.id} fills ${id}`).toContain(filled);
+        }
+      }
+    }
   });
 
   /**

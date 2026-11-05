@@ -125,6 +125,7 @@ phase.
 | 89 | [the board of a year](89-the-year-board.md) | done — `system: nianjia` built as the hour board's procedure on the year pillar, `yearYuan` on 一四七 or 一七四, four hour parameters shared through a `family` list; CLI, API, MCP, section and drawing; 0.45.0 |
 | 90 | [the 法竅 flies the hour board](90-the-faqiao-flies-the-hour-board.md) | done — 《奇門法竅》 read on the plate for `plate: fei`: a holder that states, draws and tabulates the flown board; the 直使 halts before 五; the yin plate a translation; nothing built |
 | 91 | [the flown hour board](91-the-flown-board.md) | done — `plate: fei` built on 《奇門法竅》, the 值使 waiting before 五; `centreTravel` not reported under it; the 法竅 a holder of `centreLodging: dunni`, and not of `siyu` as phase 90 said; 0.46.0 |
+| 92 | [the form fills the lodging](92-the-form-fills-the-lodging.md) | done — choosing 飛盤 in a form fills `centreLodging: dunni`, `fills` on the web declaration; 0.46.1 |
 
 ## The rest of the record
 

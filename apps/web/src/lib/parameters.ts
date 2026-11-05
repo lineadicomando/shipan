@@ -79,6 +79,30 @@ export interface Divergence {
    * option that can only come back a 501 is not a choice.
    */
   readonly refusedOn?: Partial<Record<Family, readonly string[]>>;
+  /**
+   * What choosing a value fills in elsewhere on the form, by the work that
+   * holds the value: 飛盤 is 《奇門法竅》's, and every board that work prints
+   * lodges the centre by `dunni`.
+   *
+   * A bundle at the surface, which `docs/parameters.md` § "A school is axes,
+   * never a bundle" allows and `core` refuses: what leaves the form is still
+   * the fields, each written into the address, and the reader can move any of
+   * them afterwards. Filled once, when the value is chosen, and never undone
+   * behind the reader's back when another is.
+   */
+  readonly fills?: Readonly<Record<string, Readonly<Record<string, string>>>>;
+}
+
+/**
+ * The chosen values after a reader picks `option` for `row`, with what that
+ * value `fills` written in beside it under the board's own names.
+ */
+export function choose(row: Divergence, option: string, chosen: Chosen): Chosen {
+  const next: Record<string, string> = { ...chosen, [wire(row)]: option };
+  for (const [id, value] of Object.entries(row.fills?.[option] ?? {})) {
+    next[named(row.board, id)] = value;
+  }
+  return next;
 }
 
 /** The values a form offers for a divergence, given the family in force. */
@@ -138,6 +162,7 @@ export const DIVERGENCES: readonly Divergence[] = [
       fei: 'form.qimen.plate.note',
       xingfei: 'form.qimen.plate.note',
     },
+    fills: { fei: { centreLodging: 'dunni' } },
   },
   {
     id: 'centreLodging',
