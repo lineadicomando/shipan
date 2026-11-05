@@ -86,7 +86,7 @@ plate and moves no rung.
   versions of the 寶鑑, "essentially the same content". The other two are a
   Ming manuscript in 中國基本古籍庫 and a 20-juan facsimile edited by 謝路軍
   and collated by 李德潤. Whether the shelf copy and the 寶鑑 are one recension
-  is still listed as open in `docs/open.md` § "The shelf": see § 8.
+  is still listed as open in `docs/open-errands.md`: see § 8.
 - ★ **盧央, 《中國古代星占學》**, 中國科學技術出版社 2007, 第五章 太乙式
   (`shushu/zhongguo-gudai-xingzhanxue.pdf`, PDF = print + 18). A historian's
   study, not a manual. It works six dated boards and weighs three 上元積年
@@ -164,7 +164,7 @@ Register sections are cited as §. Parameters are `TaiyiOptions` in
    - 甲寅 epochs. The 三基 run from 「上元甲寅」 (285 011 at 724). The 金鏡's
      大遊 is also printed 「置上元甲寅所求積年」 *(web transcription, 卷五)*,
      while the engine counts it on the 13 331 count. 曲安京 reconstructs a
-     甲寅太乙曆. The heading 甲寅 on 統宗 p. 110 is open (`docs/open.md` § "The shelf").
+     甲寅太乙曆. The heading 甲寅 on 統宗 p. 110 is open (`docs/open-errands.md`).
 3. **局 jú, 紀 jì, 元 yuán.**
    - 積年 mod 360 is the 周紀. Mod 60 gives the 太歲 and the 紀 (`liuji`).
      Mod 72 gives the 局 (`ju`).
@@ -543,7 +543,7 @@ None of these is a correction. Each says where a reading would look.
    prints 「十」 beside a 大將 in 二宮, so 32 with two numerals lost in the
    transcription. Its 參將 follow ×3 mod 10 in all but a handful of parsed
    cells. It writes 杜 at every count of 25 (about 24 cells), with 「不利，宜固守」.
-   That is a fortune `docs/open.md` says no source gives. Its 和/不和 labels follow
+   That is a fortune `docs/open-recorded.md` says no source gives. Its 和/不和 labels follow
    none of the three tests cleanly on a first pass. Parsing code and outputs
    were kept outside the repository.
 7. **The 統宗's apparatus is 授時 or 庚午元曆.** The register cites 錢大昕

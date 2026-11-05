@@ -24,9 +24,9 @@ by a model acting as an expert in these arts, for three jobs:
 - `docs/sources.md` — grep your art's name; read the sections on it, at least
   the one titled "Whose each value of a … board is". This is the register: what
   the project has established on the plate.
-- `TODO.md` § 1, the refused values, and `docs/open.md`, the lines on your
-  art (what each refused value waits on, "Recorded, with no parameter", the
-  shelf).
+- `TODO.md` § 1, the refused values, and `docs/open.md` and
+  `docs/open-recorded.md`, the lines on your art (what each refused value waits
+  on, what is recorded with no parameter, the shelf).
 - `texts/README.md` — grep for your art's works: which files are on the shelf.
 - `docs/refusals.md` — what the engine refuses to compute, and why.
 

@@ -440,7 +440,7 @@ Each: what · why · what would settle it · on the shelf or not.
   run of ten» transmission meets «every hour the rule strikes», and the engine
   chose the rule both times. 寶鏡圖's sixty leaves ★ were read on
   2026-10-26: 子丑 on every 戊 and 癸 day, so the two-hour reading has a
-  holder on the plate, and `docs/open.md` records it with no parameter. Still
+  holder on the plate, and `docs/open-recorded.md` records it with no parameter. Still
   open: the 考原 卷五 on a plate ☆, a second holder. For the user: a value, or
   the recorded variant as it stands. The same leaves mark 五不遇 by the hour's
   *branch* controlling the day's stem, on a third of the days only: a

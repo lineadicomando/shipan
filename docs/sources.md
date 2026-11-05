@@ -2462,7 +2462,7 @@ list, palace by palace, exactly that ring.
   what `plate: xingfei` lays; under 陰 it is not, because `flownPlates` reads
   the 折衷's 「陰遁逆飛」 as the order of the stars reversed. The 折衷 works no
   yin hour, so the two works are not shown to disagree: this is a lead
-  against that reading, filed in `docs/open.md`.
+  against that reading, filed in `docs/open-recorded.md`.
 - **The 直使 does not enter the centre: it waits.** It is counted from the
   旬首's palace one palace an hour through the nine Luoshu numbers, 陽 forward
   and 陰 back, and the hour it would land on 五 it stays on the palace before.
@@ -2586,7 +2586,7 @@ on 坎 and 休門 on 兌; and 夏至上元 陰遁九局 丁卯, 「天上丁卯�
 乾, 「丙奇到中宮，休門到兌」. Both are the hour board's carried plate and
 carried gates read on the day pillar, checked by hand palace by palace (the
 華齡 punctuation runs the first list one item out: 「加震，丁乾、丙兌、乙艮…癸
-寄艮」). It is a third statement of the day board `docs/open.md` records with
+寄艮」). It is a third statement of the day board `docs/open-recorded.md` records with
 no parameter, and the first flown.
 
 **The other eleven 乙丑 drawings agree with the engine palace by palace**,
@@ -3640,7 +3640,7 @@ hours missing where the print skips them.
   The 考原's own list is reported to read 「戊癸日子丑時」 as well, from a web
   transcription of its 卷五, which is not held: a lead, not a witness. **That is
   a divergence between practitioners** and not between witnesses to one text,
-  and it is recorded with no parameter (`docs/open.md`).
+  and it is recorded with no parameter (`docs/open-recorded.md`).
 - **The god each hour treads agrees on 526 hours of 590 read**, the entries
   sharing two hours left out. Of the 64 that do not, 33 name no god at all —
   an entry for the noble, 「辛未時天乙貴人吉」 — eleven are 丁酉's, and the
@@ -5996,7 +5996,7 @@ still open on this board: whether the count running when a solstice passes is
 finished at its 癸亥 or dropped on the solstice day, as the engine drops it
 under `solstice`. The 金函玉鏡's 「命起甲子順逆行」, 卷二十 p. 413, is where to
 read for it, with the lines around it. The stems day board is recorded in
-`docs/open.md` § "Recorded, with no parameter", with its two readings. Decided
+`docs/open-recorded.md`, with its two readings. Decided
 on the user's word, 2026-11-02.
 
 Last checked 2026-11-02.

@@ -3,9 +3,12 @@
 The questions a reading or a build would answer. **The state of what is
 unanswered**: a commit that settles a line removes it and adds what it leaves
 open. Read a section, not the file. Order is `TODO.md`; what is established,
-`docs/sources.md`; each file on the shelf, `texts/README.md`. Backticked
-names are held to the code by `node texts/todo-check.mjs`. What was dropped
-is in `docs/history/roadmap-2026-11-05.md`.
+`docs/sources.md`; each file on the shelf, `texts/README.md`. Two files beside
+this one hold what a next step seldom needs: `docs/open-recorded.md`, the
+divergences the register carries with no parameter, and `docs/open-errands.md`,
+the small errands. Backticked names in all three are held to the code by
+`node texts/todo-check.mjs`. What was dropped is in
+`docs/history/roadmap-2026-11-05-phase93.md` and the roadmaps before it.
 
 ## What each refused value waits on
 
@@ -70,103 +73,21 @@ What is left is the month, and the section goes when it is built.
 遁甲集成 第三冊 tables, pp. 1160–1216, against `yearYuan: yiqisi`, cell by
 cell; a canonical year board in `packages/core/test/canonical/`; and a lens.
 
-## Recorded, with no parameter
-
-A divergence the register carries and nothing exposes. Only those with
-something to wait on.
-
-- **奇門.**
-  - **The centre lodged at the corner its season begins in**: 立春 艮, 立夏 巽,
-    立秋 坤, 立冬 乾, 《奇門法竅》's 論寄宮, which its 例言 says it did not print.
-    Not `centreLodging: siyu`, whose corners are 《三才發秘》's a season off.
-    One statement and no board; a value wants the user's word.
-  - **A day board laid with a plate of stems**, sixty days to a 局, 陽遁 一 · 七
-    · 四 and 陰遁 九 · 三 · 六, 「法亦同於年奇」: the 統宗's 又法日奇門起例 (each 局
-    on a 甲子, 超接 and a leap past thirty-odd days) against the 大全's 奇門古本
-    (a 甲 or 己 day by the terms). 《奇門法竅》's 論日奇法 is a third statement,
-    flown, 「或超或接，或拆或補」, with two days worked, and puts its gates in a
-    《選擇金鏡》 not held. A family of its own; waits on the user's wish
-    and on where the 統宗's leap goes (`docs/sources.md` § "The 統宗's sixty-day
-    局, read on the plate, which lays another board").
-  - **The yin flight of `xingfei`**: `flownPlates` reverses the stars under 陰,
-    and the 法竅 draws them carried as one; the 折衷 works no yin hour, so its
-    sheet 67 「陰遁逆飛」 wants re-reading, or a yin hour worked in any text.
-  - **擊刑 by the clock** stands on one witness, the 符應經's case at 遁甲集成
-    第一冊 p. 430; a second text striking by the hour moves the row.
-  - **十干克應 beyond the sixteen**: 火入勾陳, 朱雀入獄, 人遁 and 奇入太陰, named
-    alike by J and the block of 《元靈經》 read as the 丁 row, wait on a print
-    giving that block's heading; 奇儀順遂 and 日奇被刑, a word or a character
-    apart, on a third line (`texts/qimen/daquan-juan14-16-stems/compare.tsv`).
-    日奇入霧 is 奇入墓 in J's own line as the 仙機 versifies it.
-  - **The 干論 under `xianji`**: its fortunes, unread cell by cell; 庚 over 丁 and
-    丁 over 乙, which a second copy could name; 庚入太白 and 地戶理光, as printed.
-  - **The 置閏 pin at ten days**: the 大全's 遁甲通明鈐 卷十二 states 「凡過超十日則
-    閏」 and works a case (1265–66) letting nine pass, where its 卷十三, 奇門秘訣
-    卷四十六 and `MAX_CHAOSHEN` intercalate at nine. Waits on a text stating ten
-    as its own rule.
-  - **Which of the two stems in 坤 a stem coming to it stands over**: the
-    符應經 marks a 格 by the centre's, and 景祐秘纂 卷二's 伏干格 陽五局 壬申 (38L)
-    is the same line of copies; a second witness names it.
-  - **Recorded and not computed**: the 演義's condition 「如遇本旬直符同臨其上，
-    方可用之而吉也」; 宮迫 without 門迫 in 景祐秘纂 卷之二下 (the default's cells of
-    `menpo` under the other value's name) and its 奇墓 giving 乙 both 二 and 六.
-  - **The board of a day** wants a prompt of its own, the scan and the 年命.
-- **六壬.** A general related to the day by its own phase, the 家's that
-  《六壬大全》卷二 gives it, read on 2026-10-30: the same juan's 總論 takes the
-  生剋 from the branch a general rides, which the lens computes, and no text
-  read relates by the general's own. A text doing so names a value beside it.
-- **七政四餘.** The 身 as the Moon or as the degree facing the 命; the 命宮 to
-  a lodge and a degree by a 量天尺; the 距星 of 觜 and 參. Which node 羅睺 is:
-  《星學大成》 names 天首 and 天尾 and does not say.
-- **太乙.** Two of the three tests of 陰陽和不和: 太乙's palace against a
-  count, where no count is named, and 王希明's lists, which three prints give
-  three ways. The eye's test is computed. The 太歲 as a body of 格, on the
-  《統宗》's 589 board. A fortune or a sentence for 杜, which is computed
-  since 2026-10-15 on the word of the 立成 of 卷三十一 and carries neither.
-  Whether the 計大將 of the 定算 is read off the tens, as 卷四's one case
-  reads 三十二, or off the units, as 133 of the 144 boards draw it: the
-  engine follows the boards. 陰局 after 夏至 as the hour's alone or the
-  day's as well: the 《統宗》 prints both.
-- **紫微斗數.** The stars 卷二 does not place, 解神 off the month among them;
-  王亭之's table at 戊, 庚 and 壬, named and unread.
-- **曆注.** 截路空亡 on a 戊 or 癸 day: the 歷例 the 協紀 quotes gives every
-  壬 and 癸 hour, 子 丑 戌 亥, which the engine marks; 寶鏡圖 gives 子 and 丑 on
-  all twelve such leaves, read 2026-10-26. A parameter on the user's word;
-  《星曆考原》卷五, reported to read 子 and 丑 too, would be a second holder and
-  is not held.
-- **Not yet attributed.** The default of `earth`; who turns the year at
-  正月初一 and the day at the 子 hour (盧央 describes it and holds nothing); the 大運 to the minute; the years
-  lived by turns; a second value of `shensha`; the noble of 庚 seated with
-  辛's.
-
-**Asked and not found, so not asked of the same works again**: a 日計 or
-時計 board with a date on it, of 《太乙金鏡式經》卷六 and 卷九 and of the
-《統宗》卷四, 卷十八 and 卷三十六; the holders of
-the day and year boundaries, of 《三命通會》卷二 and 《命理新論》, of
-《淵海子平》卷一's 起例, and the day's of 洪丕謨's 第三章; the five phases
-of the 十二天將 and a general turned at the 節, of 《御定六壬直指》卷上 and
-《六壬經緯》卷一–三; a rule for which node 羅睺 is and an epoch for the 積日, of
-《星學大成》. The extracts returned nothing for a leap month split at its
-middle or for 羅睺 as the ascending node, which is a date and not a negative.
-
 ## The shelf
 
 **In order.** Each is a named section; nothing here is a sweep of a book.
-Lines 1 and 2 are 太乙 and three files, each with its own offset: the
-《統宗》, `taiyi/taiyi-shu-tongzong-daquan-gugong.pdf`, PDF page = series
-page + 4, every juan opening on a 目錄 of its own; the 金鏡,
-`taiyi/taiyi-jinjing-shijing-skqs.pdf`, PDF page = 四庫 printed page − 854;
-盧央's 《中國古代星占學》, `shushu/zhongguo-gudai-xingzhanxue.pdf`, PDF page =
-printed page + 18. Lines 1 and 2 have nothing left to read on this shelf and
-stand first because a decision waits on each. Line 3 has nothing left to read
-for a 起例 either, and stays as the map of the file for a question put to it
-later.
+Lines 1–3 have nothing left to read on these files and stand for a decision
+or as a map. The 太乙 files' offsets: the 《統宗》,
+`taiyi/taiyi-shu-tongzong-daquan-gugong.pdf`, PDF = series page + 4, each
+juan with its own 目錄; the 金鏡, `taiyi/taiyi-jinjing-shijing-skqs.pdf`,
+PDF = 四庫 printed page − 854; 盧央's 《中國古代星占學》,
+`shushu/zhongguo-gudai-xingzhanxue.pdf`, PDF = printed page + 18.
 
 | | what would move | where |
 |---|---|---|
-| 1 | **A dated 日計 board, or the 盈差 of the day explained**: what `ji: riji` waits on | not in the 《統宗》: 卷四 p. 41, 卷十八 and 卷三十六 to p. 392 (read 2026-10-11) and the 144 boards of 卷三十二–三十五 (2026-10-15) are entered by 局 with no year. Left in it: the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
-| 2 | the lists of 上和 · 次和 · 下和, three ways in three prints, and which count is read against 太乙's palace | the 《統宗》卷三十一 立成 answers neither (2026-10-15); the 金鏡 卷二 leaves 9–10, the 《統宗》卷六 pp. 54–56 and 盧央 pp. 477–479 were read (2026-10-11). Wants a 金鏡 not the 四庫's, or a work quoting 王希明's lists: none held |
-| 3 | a 起例 variant | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`: read for one from 卷一 to 卷六十四, nothing left (it found `spiritSeat: yinshi`). Kept as the map of the file: each work has a section of `docs/sources.md` titled by its juan, the sheet ranges are its row in `texts/README.md`, and a work is bracketed on the 版心, its 目錄 being wrong four times |
+| 1 | a dated 日計 board, or the 盈差 of the day explained: what `ji: riji` waits on | not in the 《統宗》 (卷四, 卷十八, 卷三十六 and the 144 boards of 卷三十二–三十五 read, 2026-10-11 and 10-15); left there only the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
+| 2 | the lists of 上和 · 次和 · 下和, three ways in three prints, and which count is read against 太乙's palace | none held answers it (金鏡 卷二, 《統宗》卷六 and 卷三十一, 盧央 pp. 477–479 read). Wants a 金鏡 not the 四庫's, or a work quoting 王希明's lists |
+| 3 | a 起例 variant: none found in 卷一–六十四 (it found `spiritSeat: yinshi`); kept as the map of the file | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`: each work's section of `docs/sources.md` is titled by its juan, the sheet ranges are its row in `texts/README.md`, and a work is bracketed on the 版心, its 目錄 being wrong four times |
 | 4 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
 | 5 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 | 6 | where a 日家 count running at a solstice ends: finished at its 癸亥, or dropped on the solstice day as `dayDun: solstice` drops it | 《金函玉鏡》下冊, `qimen/jinhan-yujing-2.pdf`, 卷二十 p. 413, 「冬至艮宮夏坤地，命起甲子順逆行」 and the lines around it; read so far for the anchor only |
@@ -174,29 +95,15 @@ later.
 | 8 | the 鳴法's flight, which the web reports as gates 「休死傷杜中開驚生景」 with 「中五無門」 and nine spirits; a second holder for `plate: fei`, or a second reading of it | `qimen/qimen-mingfa-liaotu.pdf`, photographs of the 遼圖 manuscript |
 | 9 | the 旨歸's board, sold as 「布門輪宮，飛星定局」: a second holder for `plate: xingfei`, and its 24 worked cases | `qimen/qimen-zhigui-siku-weishou.pdf`, 匯源堂 1893 in the 四庫未收書輯刊 |
 
-**Small and left open**: in the 符應經, the note in small characters under
-the title at 遁甲集成 第三冊 p. 1136, and 玉女守門 as two tables in two
-copies; in 《星學大成》, the figures of 起大限. In the 《統宗》: the lunar
-constants of 卷二, one damaged, and its 朓朒 leaves pp. 22–27, seen and not
-read; the rest of 推四神太乙立成歷, p. 108, to collate; the reign printed
-for 1444 in the list of gates; two characters of the note under the heading
-at p. 193; the case of 釋提執, which breaks off at the foot of p. 70, and
-the board under 釋擊, p. 68, which is another 局's; 者 or 考 closing a column at p. 29; the
-character lost before 天時's 申 at p. 395, and which text 盧央 followed for
-his 寅; what the 甲寅 heading the 天目's two figures at p. 110 is; and whether that work and the
-《太乙統宗寶鑑》 the engine names its witness for are one recension —
-`taiyitongzong` in `packages/core/src/witnesses.ts`, and the catalogs with
-it, carry the second title and the file on the shelf the first.
-
 **Wanted and not held**: the 《元史·曆志》; 《太乙淘金歌》; 沈義方's
 《星平大成》, a lead for the day turned at midnight; a second dated chart with
 炁 on it. Judged worth having on guoxueziyuan.com and not bought: 《宮藏奇門
 大全》, 《遁甲奇門秘傳要旨》, 《明抄奇門陰遁書》 and 《李衛公奇門心法》, the last
 with a Tang attribution. None of that platform's files states a provenance.
 
-**What is left to read**: lines 4–9 above, and the errands of "Left open by
-the readings" and "Small and left open". No page is owed a reading; the
-tools are in the `shushu` skill's `common/development.md`.
+**What is left to read**: lines 4–9 above, and the errands in
+`docs/open-errands.md`. No page is owed a reading; the tools are in the
+`shushu` skill's `common/development.md`.
 
 **Where the state is kept**: `docs/sources.md` what is read,
 `docs/provenance.tsv` what is held, `texts/README.md` what each file is.
@@ -204,7 +111,7 @@ tools are in the `shushu` skill's `common/development.md`.
 ## The review of 2026-10-23, what it found and did not fix
 
 Each wants a plate or the user's word; rechecked against the code and the
-register 2026-10-31.
+register 2026-10-31 and 2026-11-05.
 
 - 六壬: 無親, which the 精解 names, closed as unnamed; no row for the
   direction of the generals, the 遁干, or 無依, 自任, 自信, 虎視, 冬蛇掩目.
@@ -216,10 +123,11 @@ register 2026-10-31.
   `dongzhi` turns the 大運 for six weeks with no witness; no row for
   `dayBoundary: midnight`.
 - 奇門: no row for `spirits: fixed`, `spirits: baihu`,
-  `centreTravel: travel`; the 入墓 row's rung against its split axis; the
-  統宗's and the 秘笈大全 卷一's copies of the 入墓 歌 on the plate; the 飛盤
-  and 日家 refusal rows and the 十干克應 one (a second witness asked for,
-  70 for 67).
+  `centreTravel: travel`; the 入墓 row (rung 4 since 2026-11-05) carrying
+  two axes that each part; the 統宗's and the 秘笈大全 卷一's copies of the
+  入墓 歌 on the plate; the 日家 refusal row, and the 飛盤 one now that
+  `plate: fei` is built; the 十干克應 row (a second witness asked for, 70 for
+  67).
 - 七政: `luohou: ascending` with no `heldBy` and no row; the 三辰通載
   described two ways; `minggong: yuejiang`'s 三命通會 lays on the month's
   palace and would part from the Sun's under `gong: ci`.
@@ -237,49 +145,6 @@ the register», none read on a plate. Those touching a standing question: 截路
 hours in 《星曆考原》卷五, beside 寶鏡圖's (`almanac.md`, file not held); the
 楊公忌 check, which the 協紀 says is not the 值日 count (`almanac.md`, in the
 華齡 協紀's 下 volume).
-
-## Left open by the readings, small and blocking nothing
-
-Each reading's errands, newest first, from phase 86; the earlier ones are in
-`docs/history/roadmap-2026-11-05.md` and `docs/history/roadmap-2026-10-30.md`.
-
-- **Phase 93**, inside 《奇門法竅》: 陰遁九局 丁丑's baleful half (p. 239), which
-  fits no hour of its 局; 陽遁五局 丁丑, short in the finding aid, and four
-  刑格 and 小格 cells the board lays and the finding aid leaves unmarked, none
-  looked at on the plate; 陽遁三局 乙丑's centre, blank on the print; 論拆局補局's
-  「計三十五日」 and 「二十四日己未…作白露上局」 (p. 21), and a worked case whose
-  two halves are two years; the 抄本 not compared at any of these.
-
-- **Phases 90–92**, inside 《奇門法竅》: 陰遁九局 丙子's 生門 on 坤二 (rule:
-  乾六); 陽遁五局 庚寅's 星門伏; 陰遁五局 戊辰's and 陰遁七局 戊子 · 庚寅's 門反;
-  陽遁四局 乙丑's 「門休」 in both copies and 壬辰's 「巽離 伏門」 (華齡 p. 198, not
-  seen on the 抄本); the 直符 of a 旬首 in 五, 禽 on the drawings and the
-  lodging's star in the tables.
-
-- **Phases 88–89**: the 統宗's 附月奇門起例 prints 「年以月建」 where 「皆以」,
-  as in its year's sentence, is what the sense wants, and its 上元's 元 is
-  broken on the print (故宮 p. 20). The year board's 「審其方向，得奇門到者吉」
-  is recorded and not computed.
-
-- **Phase 86**: the 寶鑑's 三 against the 統宗's 二 for the second 甲子 of
-  夏至, preferred and not settled by a fourth copy.
-
-## Catalog strings owed a look by the user
-
-Read by nobody but their writer, both catalogs, newest first, none blocking
-(glosses in `docs/history/roadmap-2026-10-30.md`). 2026-11-05:
-`form.qimen.plate` and its values and note, `notes.parameter.plate`.
-2026-10-30: `form.qimen.leap` and its values and note,
-*reader-copy*. Phase 78: `form.liuren.shehai`, `form.liuren.shehaiFrom`,
-`notes.parameter.shehai`. 0.38.0: the privacy note's storage lines, the
-glyph rain's, and the Italian renamings (five 八神 after the 六壬 generals,
-驚門 «Spavento», 六儀 «insegna», the two plates, 剋 «domina»). Phase 75: the
-sixty-eight `label.pattern.*` of the 干論, *reader-copy*. Phases 72–74: the
-lens's strings, `lens.where.*`, `label.relation.*`, `web.note.qizheng*` and
-`.taiyiPalaces`, `form.qimen.spiritPhase`, `form.qimen.system.bar`.
-2026-10-11 to 22: `form.qimen.menpo`, `yiTomb`, `deshi`, `dayDun`,
-`dayGates`, `spiritSeat`, `centreLodging`, `stemPairs`; `form.taiyi.*`;
-`label.register.*`; `label.pattern.*` of 《金函玉鏡》.
 
 ## The lens, when it moves again
 

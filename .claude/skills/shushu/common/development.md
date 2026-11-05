@@ -178,9 +178,9 @@ settle it, and whether that source is on the shelf**. Where it goes:
 | it is | it goes in |
 |---|---|
 | a refused value | `TODO.md` § 1, and what it waits on in `docs/open.md` § "What each refused value waits on" |
-| a divergence the register records and nothing exposes | `docs/open.md` § "Recorded, with no parameter" |
+| a divergence the register records and nothing exposes | `docs/open-recorded.md` |
 | a named section of a held file to read | `docs/open.md` § "The shelf" |
-| a small doubt a reading left | `docs/open.md` § "Left open by the readings" |
+| a small doubt a reading left | `docs/open-errands.md` § "Left open by the readings" |
 | a file wanted | `docs/open.md` § "The shelf", "Wanted and not held" |
 | a surface or code fault | `docs/open.md` § "Surfaces and code" |
 | something to stay refused | its entry in `docs/refusals.md` |

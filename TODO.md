@@ -2,56 +2,55 @@
 
 What a session needs to resume, and nothing more. What holds is
 [`docs/`](docs/README.md); every open question is
-[`docs/open.md`](docs/open.md); the past is
-[`docs/history/`](docs/history/README.md), never normative. Cut six times,
-each time whole to a roadmap file in `docs/history/`, the last
-[`docs/history/roadmap-2026-11-05.md`](docs/history/roadmap-2026-11-05.md).
+[`docs/open.md`](docs/open.md), with [`docs/open-recorded.md`](docs/open-recorded.md)
+and [`docs/open-errands.md`](docs/open-errands.md) beside it; the past is
+[`docs/history/`](docs/history/README.md), never normative. Cut seven times,
+each time whole to a roadmap there, the last
+[`docs/history/roadmap-2026-11-05-phase93.md`](docs/history/roadmap-2026-11-05-phase93.md).
 
 ## Resuming cold
 
 **Nothing is in progress.** Start at item 1 below unless the user says
-otherwise.
+otherwise. Read a section of `docs/open.md`, not the file.
 
 - **A reading**: the file's row in `texts/README.md` (grep the filename), the
   work's section in `docs/sources.md` (grep its title; thousands of lines),
   the question's line in `docs/open.md`. Method: `docs/scans.md` once, and the
   `shushu` skill's `common/development.md`, which lists what a reading owes.
 - **A build**: the `new-feature` skill, § "A value of a parameter, built on a
-  reading" for a value; surface work starts from `docs/architecture.md` § "A
-  board the page can point into".
+  reading"; surface work starts from `docs/architecture.md` § "A board the
+  page can point into".
 - **Version and release**: `docs/architecture.md` § "Which term moves" and §
   "Releasing". Tag, push and deploy on the user's word only.
 - **Do not open** `docs/sources.tsv` (grep a row, edit in place),
   `docs/history/`, `texts/rules/`, `texts/crosswalk.tsv`, `texts/manifest.json`.
-- **Checks**: `npm ci` if there is no `node_modules`; then `npm run build`
-  (the MCP and web suites and the shelf's scripts import `packages/core/dist`),
-  `npm test`, `npm run typecheck`, and `node texts/todo-check.mjs`, which holds
-  every backticked name here and in `docs/open.md` to the files git tracks.
-  Before ending, sweep `docs/sources.md`, `texts/README.md`, `docs/open.md`
-  and this file for sentences the session outlived («unread», «stays
-  refused»…).
+- **Checks**: `npm ci` if there is no `node_modules`; `npm run build` first
+  (the MCP and web suites and the shelf's scripts import `packages/core/dist`);
+  then `npm test`, `npm run typecheck`, and `node texts/todo-check.mjs`, which
+  holds every backticked name here and in the three open-question files to the
+  code. Before ending, sweep `docs/sources.md`, `texts/README.md`, the
+  three open-question files and this file for sentences the session outlived
+  («unread», «stays refused»…).
 
 ## Where it stands, 2026-11-05, end of phase 93
 
-**0.47.0** on `main`, committed and not tagged, pushed or deployed (0.46.1 is
-what https://shipan.it runs). No branch open; build, typecheck and every suite
-pass. Phases: `docs/history/README.md`.
+**0.47.0** on `main`, committed, not tagged, pushed or deployed: the site runs
+0.46.1. No branch open; build, typecheck and every suite pass.
 
 ## What to do next, in the order the user has been taking it
 
 1. **月家, `system: yuejia`**, commissioned 2026-11-02: the year board
-   (phase 89) on the month pillar, `layOnPillar` shared. Steps and sources:
-   `docs/open.md` § "年家 and 月家, commissioned".
-2. **The rest of the 飛盤 works**: 《奇門法竅》 is read to the end bar its 排宮
-   figures (phase 93). Left: the 鳴法, the 旨歸, and those figures — lines
-   7–9 of `docs/open.md` § "The shelf".
+   (phase 89) on the month pillar, `layOnPillar` shared. Steps, sources and
+   the 法竅's evidence: `docs/open.md` § "年家 and 月家, commissioned".
+2. **The rest of the 飛盤 works**: the 鳴法, the 旨歸, and the 法竅's 排宮
+   figures — lines 7–9 of `docs/open.md` § "The shelf".
 3. **The scan form's `gongpo`**: offered always, found only under
    `menpo: gongzhimen`, so a scan under the default finds nothing and says
    nothing. A filter like `layableUnder`'s, keyed on `qimen.menpo`.
-4. **Two leads from the `shushu` skill**, neither file held: 截路空亡 in
-   《星曆考原》卷五, the 楊公忌 check in the 華齡 協紀's 下 volume.
-5. **The review of 2026-10-23**, a line an art (`docs/open.md`); several are a
-   missing row in `docs/sources.tsv`, writable from what is read.
+4. **Two leads**, neither file held: `docs/open.md` § "Leads from the `shushu`
+   skill".
+5. **The review of 2026-10-23**: `docs/open.md`; several lines are a missing
+   row in `docs/sources.tsv`, writable from what is read.
 6. **The lens, when it moves again**: the month board designed with its lens;
    八字 last and only if the user wants it.
 

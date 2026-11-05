@@ -266,7 +266,7 @@ Each step names the engine parameter, or says "not modelled".
    遁 the same way, and the gates are carried over the eight outer palaces.
    The 折衷's hybrid, stars and 儀 flown and gates turned, is `xingfei`, and
    under 陰 it reverses the order of the stars, which the 法竅's drawings do
-   not (a lead, `docs/open.md`). If the hour's stem is 甲, it is read as its 儀.
+   not (a lead, `docs/open-recorded.md`). If the hour's stem is 甲, it is read as its 儀.
 7. **The gates.** The 值使 counts from its palace by the hours of the decade
    (「值使順逆遁宮去」; 武經總要 「以直事加時宮」), forward under yang and
    backward under yin through the nine numbers, lodging when it reaches 五.
