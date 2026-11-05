@@ -18,8 +18,8 @@ a work already held is not a witness.
 
 | | waits on |
 |---|---|
-| `plate: fei` | a text flying the 時家 board's own 起例. **One has arrived, unread**: 《奇門法竅》 (錫孟樨, 自序 1870), whose 卷二 論飛宮 flies the stars 蓬芮沖輔禽心柱任英 and the gates 休死傷杜開驚生景 through the nine, and whose 論直使 takes the 直使 from a 《真授秘集》, forward over eight in the yang and back in the yin, 「不入中五」 (located in the transcription; line 7 of § "The shelf"). The 折衷's stars-flown, gates-turned board is computed as `xingfei`. Thought to arrive with `system: nianjia` and `yuejia`, which the review of 2026-11-02 doubts: both holders turn the star plate there (§ "年家 and 月家, commissioned", step 1) |
-| `system: yuejia`, `system: nianjia` | **commissioned on the user's word, 2026-11-02**: § "年家 and 月家, commissioned" below carries the steps. 《遁甲演義》 and the 統宗 state both. The year's three 元 are 一四七 for those two and 一七四 for 遁甲集成 第三冊 and 《御定奇門大全》卷二十九 (worked for 1648). The month's are 孟 一 · 仲 七 · 季 四 for the 演義 and 仲 一 · 孟 四 · 季 七 for the 統宗 (read on the plate at 150 dpi). Tables to hold the 一七四 year to: 遁甲集成 第三冊 pp. 1160–1216 |
+| `plate: fei` | a text flying the 時家 board's own 起例. **One has arrived, unread**: 《奇門法竅》 (錫孟樨, 自序 1870), whose 卷二 論飛宮 flies the stars 蓬芮沖輔禽心柱任英 and the gates 休死傷杜開驚生景 through the nine, and whose 論直使 takes the 直使 from a 《真授秘集》, forward over eight in the yang and back in the yin, 「不入中五」 (located in the transcription; line 7 of § "The shelf"). The 折衷's stars-flown, gates-turned board is computed as `xingfei`. `system: nianjia` and `yuejia` do not need it: both holders turn the heaven plate there, read on the plate 2026-11-05 (`docs/sources.md` § "年家 and 月家 on the plate: the heaven plate is turned") |
+| `system: yuejia`, `system: nianjia` | **commissioned on the user's word, 2026-11-02**: § "年家 and 月家, commissioned" below carries the steps. 《遁甲演義》 and the 統宗 state both. The year's three 元 are 一四七 for those two and 一七四 for 遁甲集成 第三冊 and 《御定奇門大全》卷二十九 (worked for 1648). The month's are 孟 一 · 仲 七 · 季 四 for the 演義 and 仲 一 · 孟 四 · 季 七 for the 統宗 (read on the plate 2026-11-05). Tables to hold the 一七四 year to: 遁甲集成 第三冊 pp. 1160–1216 |
 | `strengths: star` | which of two arrangements from the star it is — 《金鏡寶鑑》卷之四's, or the 《三元經》's that the 符應經, 紀大奎 and the 探索錄 carry — and whether it reaches past the nine stars |
 | `yuejiang: jieqi`, `yuejiang: true` | a text stating either as its own. None found, on the plate or in the extracts |
 | `zhouye: solar` | which rising, and how. One sentence of 《大六壬精解》 and the 協紀's 日出入, neither with a procedure |
@@ -43,22 +43,10 @@ Holders: 《遁甲演義》卷一 and 《奇門遁甲統宗》卷二, both alrea
 steps, in order; a step done leaves this list, and the section goes when both
 are built.
 
-1. **Two plate checks, before any code.** (a) 《遁甲演義》卷一, the 四庫
-   plate (`texts/qimen/dunjia-yanyi-skqs.pdf`, PDF p. 4): whether the
-   star plate is *turned*, 「將甲頭直符之星，逐年干轉，直使隨年支逆飛」
-   and 「逐地下月干，轉符上之門，為直使，隨月支飛泊」, so far read only in
-   `dunjia-yanyi-wikisource.wikitext`. The 統宗 says 加 on its plate
-   (故宮 p. 19, the 乙丑 case). If both turn, the boards are the 時家
-   procedure on another pillar and **`plate: fei` is not needed**; correct
-   `docs/sources.md` § "The three systems the same juan states", whose
-   «these boards fly» rests on 「逆飛六儀」, which lays the earth plate
-   as the 時家 does too. (b) The 統宗's 附月奇門起例, 中元's 局 at 600
-   dpi: 故宮 統宗 series p. 20, upper block, PDF p. 24 of
-   `texts/qimen/qimen-dunjia-tongzong-daquan-gugong.pdf` (render already
-   in `texts/qimen/tongzong-liushi/hi-024.png`). Read at 150 dpi as 四.
-   Write both up as a reading (phase 88).
-2. **The board, as the sources lay it.** 陰遁 always. The 局 is from the
-   元; the 旬首 of the year or month pillar gives 直符 and 直使. The 直符
+1. **The board, as the sources lay it.** It is the 時家 procedure on another
+   pillar, read on both holders' plates (`docs/sources.md` § "年家 and 月家 on
+   the plate: the heaven plate is turned"), so `plate: fei` has no part in
+   it. 陰遁 always. The 局 is from the 元; the 旬首 of the year or month pillar gives 直符 and 直使. The 直符
    goes to the palace of the pillar's stem on the earth plate, and the
    直使 to the branch's palace, counted from the 旬首 through the nine,
    backward. The eight spirits run from the 直符 逆 (統宗, year). The year
@@ -67,26 +55,26 @@ are built.
    第三冊, 「康熙二十三年交上元」), so 1864, 2044…; 1984 opens a 下元
    (張志春). Reuse the 時家 step functions: see how
    `texts/qimen/daquan-juan05-10-hours/engine.mjs` lays a board off them.
-3. **Parameters, under the board's name, each value named for its rule.**
+2. **Parameters, under the board's name, each value named for its rule.**
    The year's three 元: 一四七 (演義, 統宗) and 一七四 (遁甲集成 第三冊;
    《御定奇門大全》卷二十九 a copy). The month's three 元, by the branch of
    the 甲/己 year that opens a five-year 元: 孟 一 · 仲 七 · 季 四 (演義)
    and 仲 一 · 孟 四 · 季 七 (統宗). The 統宗's 又法月奇門起例 is a third
    (甲己加四仲月為上元…, 陽 after 冬至 and 陰 after 夏至): declare it, and
-   refuse it unless step 2 also covers it. The month is 陰: 徐昂's 陽 is a
+   refuse it unless step 1 also covers it. The month is 陰: 徐昂's 陽 is a
    lone parenthesis (`docs/sources.md`, the 遁甲釋要 section).
    The row in § "What each refused value waits on" above goes when they are built.
-4. **Tests from the sources' own cases.** Year: the 演義's
+3. **Tests from the sources' own cases.** Year: the 演義's
    「自嘉靖四十三年甲子起杜門，十年一移，萬曆甲午年移休」 (1564 中元 杜門,
    1594 休門); the 統宗's 乙丑 case (天蓬 at 坤二, 休門 at 離九, 陰遁一局); the
    古本's 順治五年 戊子 (1648: 死門 at 兌七, 天芮 at 巽四) under 一七四;
    遁甲集成 第三冊's 年家定局 tables, pp. 1160–1216, as a bench for 一七四.
    Month: the 演義's two dates, the 十一月 of 1563 and of 1613 (both 甲子 months,
    休門 at 坎), **do not fit the 三元 board**: they fall in different 元.
-   They fit 「三個月一移」, a gate three months to a palace (600 months is
-   25 rounds of eight). Read that clause on the plate before using either
-   date. It may be a second month layer, as the 日家 has two.
-5. **Surfaces**, by the `new-feature` skill. Remaining decisions:
+   They fit 「三箇月一移」, on the 四庫 plate as transcribed: a gate three
+   months to a palace (600 months is 25 rounds of eight), a second month layer
+   beside the board, as the 日家 has two. Neither date tests the board.
+4. **Surfaces**, by the `new-feature` skill. Remaining decisions:
    - whether a year or month board is cacheable `public` like 太乙's
      (it holds nobody's data) or `private` like a chart (`lib/cacheable.ts`);
    - whether the consultation offers them (`needs` in `apps/web/src/lib/instruments.ts`);

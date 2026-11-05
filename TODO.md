@@ -32,7 +32,7 @@ user says otherwise.
   `docs/sources.md`, `texts/README.md`, `docs/open.md` and this file for
   sentences the session outlived («unread», «still missing», «stays refused»…).
 
-## Where it stands, 2026-11-02, end of phase 87
+## Where it stands, 2026-11-05, end of phase 88
 
 **0.44.0**, tagged `v0.44.0` and deployed at https://shipan.it (footer
 checked 2026-11-02). `main` checked out, no branch open; `main` may be ahead
@@ -43,10 +43,11 @@ The phases are listed in `docs/history/README.md`.
 
 1. **年家 and 月家, `system: nianjia` and `system: yuejia`**: commissioned
    on the user's word, 2026-11-02. Both are built as values of the `qimen`
-   board's `system`, **the year first**. Five steps, each with its sources, in
-   `docs/open.md` § "年家 and 月家, commissioned": two plate checks, then a
-   reading (phase 88), then the board, the parameters, the tests from the
-   sources' cases, and the surfaces.
+   board's `system`, **the year first**. The plate checks are done (phase 88):
+   both holders turn the heaven plate, so the boards are the 時家 procedure on
+   the year or month pillar and need no `plate: fei`. Four steps remain, each
+   with its sources, in `docs/open.md` § "年家 and 月家, commissioned": the
+   board, the parameters, the tests from the sources' cases, and the surfaces.
 2. **The three 飛盤 works that arrived on 2026-11-02**, for `plate: fei`
    first: 《奇門法竅》, 《奇門遁甲鳴法》, 《奇門旨歸》, each with its row in
    `texts/README.md` and its question in `docs/open.md` § "The shelf", lines

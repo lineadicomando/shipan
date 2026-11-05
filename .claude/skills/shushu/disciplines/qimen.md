@@ -301,9 +301,13 @@ Each step names the engine parameter, or says "not modelled".
       different day board: sixty-day 局 of the hour board's stems and stars,
       陽 一七四 and 陰 九三六 (二 in the 統宗's prints), laid 「法亦同於年奇」,
       which is recorded and not computed.
-    - `yuejia` and `nianjia` are refused. The year family's three 元 are
-      一四七 for the 演義 and the 統宗, and 一七四 for 遁甲集成 第三冊 and the
-      大全's 奇門古本.
+    - `yuejia` and `nianjia` are refused, and commissioned (2026-11-02). The
+      year family's three 元 are 一四七 for the 演義 and the 統宗, and 一七四
+      for 遁甲集成 第三冊 and the 大全's 奇門古本. Both holders **turn** the
+      heaven plate on the year and the month (「逐年干轉」, 「即以天盤直符加之」,
+      read on the plate 2026-11-05), so these boards are the 時家 procedure
+      on another pillar and `plate` is separate from `system`. Of the
+      families only the 日家 flies its stars.
 
 ## 4. How a board is read
 
@@ -610,11 +614,6 @@ that is on the shelf.
 - **武經總要 (1044) buries 丁 in 乾** (「丁為星奇臨六宮天門」). That is
   `dingTomb: qian`, which the register holds on the 符應經 and the 金鏡寶鑑. It is the
   same 景祐 circle, so it is probably the same line (web transcription).
-- **The register's refusal row on 飛盤** says it is "a whole family… not
-  separable from `system`". The flying-line texts in §7 fly the **hour**
-  board, so the coupling `plate`↔`system` may not hold for 飛盤 generally,
-  only for 《遁甲演義》's families. TODO's own wording already allows this.
-  The refusal row's reason may want re-reading when one arrives.
 - **幺學聲's 三奇得使 may not be `zhishi`.** He writes 「天盤乙、丙、丁加臨地盤值使門」
   (shelf transcription): a 奇 over the earth-plate palace of the 值使 gate.
   開悟之門 instead puts the 奇 in the palace where the 值使 gate stands now
