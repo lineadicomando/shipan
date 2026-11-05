@@ -122,6 +122,7 @@ phase.
 | 86 | [The sixty-day 局 read](86-the-sixty-day-ju-read.md) | done — the 統宗's 又法日奇門起例 read on four plates; its 局 lay a day board with a plate of stems and not `rijia`'s; `dayDun: liushi` put to the user; no code moved |
 | 87 | [`liushi` withdrawn](87-the-sixty-day-ju-withdrawn.md) | done — how the value had entered, traced; the 統宗's first day method read on the plate, 「不必復分陰遁陽遁」, so it holds `dayDun: yang`; `liushi` withdrawn and the stems day board recorded; 0.44.0 |
 | 88 | [年家 and 月家 turned](88-the-families-turned.md) | done — the 演義's 年家 and 月家 read on the 四庫 plate, 「逐年干轉」 and 「逐地下月干轉」, and the 統宗's 附月 起例, 中元 四局, 「即以天盤直符加之」: both families turned, so `plate: fei` is not needed for them; the register's «these boards fly» corrected to the 日家 alone |
+| 89 | [the board of a year](89-the-year-board.md) | done — `system: nianjia` built as the hour board's procedure on the year pillar, `yearYuan` on 一四七 or 一七四, four hour parameters shared through a `family` list; CLI, API, MCP, section and drawing; 0.45.0 |
 
 ## The rest of the record
 

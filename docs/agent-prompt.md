@@ -207,6 +207,16 @@ neither disputed.
   the prompt, the scan and `born` refuse this family by name, since each is
   written against a plate of stems. `draw_qimen_chart` draws the board and
   喜神's bearing on its palace, and leaves the hours to the answer.
+- **A board of the year is the hour board's procedure, laid on the year
+  pillar.** With `system: nianjia` (`qimen.system=nianjia` over REST) the
+  answer has the hour board's plates, stars, gates and spirits, always in the
+  yin half, with the year pillar where the hour pillar stood and the 局 taken
+  from the sixty-year period the year stands in. `yearYuan` says which 局 each
+  period takes, 一四七 or 一七四, and the board names it. Every day of one year
+  has the same board. It carries no strengths, no configurations, no post
+  horses and no birth: its holders lay none of them, and a configuration read
+  off it would be an hour board's name given to a year. The prompt, the scan
+  and `born` refuse this family by name, as they refuse the day's.
 - **The eight spirits are named four ways and the board says which.** The ring
   is the same ring under all four — same star, same gate, same stem, same
   palace — and what parts them is which fact names the fifth and sixth seats:
@@ -541,7 +551,7 @@ prompt — it was in one once, and what a model did with it was recite it.
 | | |
 |---|---|
 | `search_location` | a name → candidates with coordinates and zone. Always first when you have a name |
-| `compute_qimen_chart` | the nine palaces, the plates, the configurations, how each star and gate stands to its palace, and both post horses — 日馬 and 時馬, never one of the two. With `born`, also a 年命: the birth placed *inside* this chart. With `system: rijia`, the board of the day instead, and its twelve hours beside it |
+| `compute_qimen_chart` | the nine palaces, the plates, the configurations, how each star and gate stands to its palace, and both post horses — 日馬 and 時馬, never one of the two. With `born`, also a 年命: the birth placed *inside* this chart. With `system: rijia`, the board of the day instead, and its twelve hours beside it; with `system: nianjia`, the board of the year, its plates, stars, gates and spirits |
 | `compute_bazi` | the four pillars, read out. `gender` only affects the luck cycles |
 | `compute_liuren` | the 大六壬 board — the other 式, laid on the same instant and answering the same shape of question. Lay it for the moment of the asking, never for a birth |
 | `compute_ziwei` | the 紫微斗數 board — the twelve seats counted from a birth, with 紫微 and the thirteen that hang off it, the auxiliaries, the 四化, the brightness grades, the two masters and the limits. **Nothing on it is in the sky**: do not read planets, aspects or transits into it |

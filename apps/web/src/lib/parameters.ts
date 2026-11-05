@@ -68,9 +68,33 @@ export interface Divergence {
   /**
    * The family of 奇門 a divergence belongs to — the engine's `family`. A day
    * board has no plate to turn and the hour board no gates of a day, so each
-   * is offered, and named under a board, with its own family alone.
+   * is offered, and named under a board, with its own family alone. A list
+   * where two families read it: the year board is the hour's procedure.
    */
-  readonly family?: 'shijia' | 'rijia';
+  readonly family?: Family | readonly Family[];
+  /**
+   * Values a family reads the divergence without and the engine refuses there:
+   * `centreLodging: bajie` and `siyu` lodge the centre by a term, and a board
+   * of the year has none. The form leaves them out under that family, since an
+   * option that can only come back a 501 is not a choice.
+   */
+  readonly refusedOn?: Partial<Record<Family, readonly string[]>>;
+}
+
+/** The values a form offers for a divergence, given the family in force. */
+export function offeredValues(row: Divergence, chosen: Chosen): [string, MessageKey][] {
+  const family = (chosen[named(row.board, 'system')] ?? 'shijia') as Family;
+  const refused = row.refusedOn?.[family] ?? [];
+  return Object.entries(row.says ?? {}).filter(([value]) => !refused.includes(value));
+}
+
+/** The families of 奇門, as the engine's `Family`. */
+export type Family = 'shijia' | 'rijia' | 'nianjia';
+
+/** Whether a divergence is read on the board a `system` lays: the engine's `readsOn`. */
+export function readsOn(row: Pick<Divergence, 'family'>, system: string): boolean {
+  if (row.family === undefined) return true;
+  return typeof row.family === 'string' ? row.family === system : row.family.includes(system as Family);
 }
 
 /**
@@ -110,7 +134,8 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'centreLodging',
     board: 'qimen',
-    family: 'shijia',
+    family: ['shijia', 'nianjia'],
+    refusedOn: { nianjia: ['bajie', 'siyu'] },
     values: ['kun', 'dun', 'dunni', 'bajie', 'siyu'],
     implemented: ['kun', 'dun', 'dunni', 'bajie', 'siyu'],
     fallback: 'kun',
@@ -148,14 +173,19 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'system',
     board: 'qimen',
     values: ['shijia', 'rijia', 'yuejia', 'nianjia'],
-    implemented: ['shijia', 'rijia'],
+    implemented: ['shijia', 'rijia', 'nianjia'],
     fallback: 'shijia',
     label: 'form.qimen.system',
     says: {
       shijia: 'form.qimen.system.shijia',
       rijia: 'form.qimen.system.rijia',
+      nianjia: 'form.qimen.system.nianjia',
     },
-    notes: { shijia: 'form.qimen.system.note', rijia: 'form.qimen.system.note' },
+    notes: {
+      shijia: 'form.qimen.system.note',
+      rijia: 'form.qimen.system.note',
+      nianjia: 'form.qimen.system.note',
+    },
   },
   {
     id: 'dayGates',
@@ -188,6 +218,17 @@ export const DIVERGENCES: readonly Divergence[] = [
     notes: { solstice: 'form.qimen.dayDun.note', yang: 'form.qimen.dayDun.note' },
   },
   {
+    id: 'yearYuan',
+    board: 'qimen',
+    family: 'nianjia',
+    values: ['yisiqi', 'yiqisi'],
+    implemented: ['yisiqi', 'yiqisi'],
+    fallback: 'yisiqi',
+    label: 'form.qimen.yearYuan',
+    says: { yisiqi: 'form.qimen.yearYuan.yisiqi', yiqisi: 'form.qimen.yearYuan.yiqisi' },
+    notes: { yisiqi: 'form.qimen.yearYuan.note', yiqisi: 'form.qimen.yearYuan.note' },
+  },
+  {
     id: 'yearBoundary',
     board: 'pillars',
     values: ['lichun', 'chunjie', 'dongzhi'],
@@ -215,7 +256,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'spirits',
     board: 'qimen',
-    family: 'shijia',
+    family: ['shijia', 'nianjia'],
     values: ['dun', 'fixed', 'baihu', 'huwu'],
     implemented: ['dun', 'fixed', 'baihu', 'huwu'],
     fallback: 'dun',
@@ -291,7 +332,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'centreTravel',
     board: 'qimen',
-    family: 'shijia',
+    family: ['shijia', 'nianjia'],
     values: ['stay', 'travel'],
     implemented: ['stay', 'travel'],
     fallback: 'stay',
@@ -304,7 +345,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'centreStem',
     board: 'qimen',
-    family: 'shijia',
+    family: ['shijia', 'nianjia'],
     values: ['centre', 'host'],
     implemented: ['centre', 'host'],
     fallback: 'centre',
@@ -739,7 +780,7 @@ export function offered(board?: string, families = false): readonly Divergence[]
  * read it off an address that carried it there.
  */
 function ofFamilies(row: Divergence): boolean {
-  return (row.board === 'qimen' && row.id === 'system') || row.family === 'rijia';
+  return (row.board === 'qimen' && row.id === 'system') || !readsOn(row, 'shijia');
 }
 
 /** What a reader has chosen, keyed by the name each one travels under. */
@@ -776,6 +817,9 @@ export function chosenFields(chosen: Chosen): Record<string, string | undefined>
     // server refuses a 奇門 option of the other family by name.
     if (!shown(row, chosen)) continue;
     const value = chosen[wire(row)];
+    // A value the family in force refuses is one the form no longer offers.
+    const family = (chosen[named(row.board, 'system')] ?? 'shijia') as Family;
+    if (value && row.refusedOn?.[family]?.includes(value)) continue;
     if (value && value !== row.fallback) fields[wire(row)] = value;
   }
   return fields;
@@ -783,7 +827,7 @@ export function chosenFields(chosen: Chosen): Record<string, string | undefined>
 
 /** Whether a divergence is shown at all, given what else is set. */
 export function shown(row: Divergence, chosen: Chosen): boolean {
-  if (row.family && (chosen[named(row.board, 'system')] ?? 'shijia') !== row.family) return false;
+  if (!readsOn(row, chosen[named(row.board, 'system')] ?? 'shijia')) return false;
   if (!row.inside) return true;
   return chosen[named(row.board, row.inside.id)] === row.inside.value;
 }
@@ -843,7 +887,7 @@ export function inForce(
     if (row.implemented.length < 2) continue;
     const bag = row.board === 'pillars' ? (under ?? {}) : own;
     if (row.inside && bag[row.inside.id] !== row.inside.value) continue;
-    if (row.family && (bag.system ?? 'shijia') !== row.family) continue;
+    if (!readsOn(row, String(bag.system ?? 'shijia'))) continue;
 
     const from = LAYERS.includes(row.board) ? (under ?? {}) : own;
     const value = String(from[row.id] ?? row.fallback);

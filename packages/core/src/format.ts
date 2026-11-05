@@ -3,6 +3,7 @@ import type { Almanac, YearGodSeat } from './almanac.js';
 import { ELEMENTS, type Bazi } from './bazi/index.js';
 import { palace, YUAN_HANZI, YUAN_PINYIN, type QimenChart } from './dunjia/index.js';
 import type { DayChart } from './dunjia/rijia.js';
+import type { YearChart } from './dunjia/nianjia.js';
 import { BRANCHES, type Ganzhi } from './ganzhi.js';
 import type { LunarDate } from './lunar.js';
 import {
@@ -537,6 +538,72 @@ export function formatDayChart(chart: DayChart, t: Translator): string {
   ].join('\n');
 }
 
+/**
+ * The board of a year: the year, its 元, the ju, the chief, and the nine
+ * palaces in two tables.
+ *
+ * Two tables and not the hour board's four, because the year board carries
+ * what its holders lay and no more: no strengths, there being no season to
+ * weigh a star against, and no hexagrams or configurations, which are the
+ * hour board's.
+ */
+export function formatYearChart(chart: YearChart, t: Translator): string {
+  const yuan = named(chart.yuan, `label.yuan.${chart.yuan.id}` as MessageKey, t);
+  const where = (cell: YearChart['palaces'][number], full: boolean): string =>
+    full
+      ? `${cell.palace.number} ${named(cell.palace, `label.palace.${cell.palace.id}` as MessageKey, t)}`
+      : `${cell.palace.number} ${glyph(cell.palace)}`;
+  return [
+    `${t('cli.heading.qimenYear')}`,
+    ...table(
+      [
+        [t('cli.field.yearPillar'), ganzhi(chart.year, t)],
+        [t('cli.field.yearPeriod'), t('cli.value.yearPeriod', { yuan, year: String(chart.yuan.opened) })],
+        [t('cli.field.ju'), `${t('cli.value.yinDun')} ${chart.ju.number}`],
+        [
+          t('cli.field.instrument'),
+          named(chart.instrument, `label.stem.${chart.instrument.id}` as MessageKey, t),
+        ],
+        [
+          t('cli.field.chief'),
+          `${named(chart.chief.star, `label.star.${chart.chief.star.id}` as MessageKey, t)} → ` +
+            `${named(chart.chief.palace, `label.palace.${chart.chief.palace.id}` as MessageKey, t)}`,
+        ],
+        [
+          t('cli.field.chiefGate'),
+          `${named(chart.chiefGate.gate, `label.gate.${chart.chiefGate.gate.id}` as MessageKey, t)} → ` +
+            `${named(chart.chiefGate.palace, `label.palace.${chart.chiefGate.palace.id}` as MessageKey, t)}`,
+        ],
+      ],
+      4,
+    ),
+    '',
+    `${t('cli.heading.palaces')}`,
+    ...table([
+      [t('cli.column.palace'), t('cli.column.earth'), t('cli.column.heaven')],
+      ...chart.palaces.map((cell) => [
+        where(cell, true),
+        named(cell.earth, `label.stem.${cell.earth.id}` as MessageKey, t),
+        named(cell.heaven, `label.stem.${cell.heaven.id}` as MessageKey, t),
+      ]),
+    ]),
+    ...lodging(chart, t),
+    '',
+    `${t('cli.heading.standing')}`,
+    ...table([
+      [t('cli.column.palace'), t('cli.column.star'), t('cli.column.gate'), t('cli.column.spirit')],
+      ...chart.palaces.map((cell) => [
+        where(cell, false),
+        named(cell.star, `label.star.${cell.star.id}` as MessageKey, t),
+        cell.gate ? named(cell.gate, `label.gate.${cell.gate.id}` as MessageKey, t) : t('cli.none'),
+        cell.spirit
+          ? named(cell.spirit, `label.spirit.${cell.spirit.id}` as MessageKey, t)
+          : t('cli.none'),
+      ]),
+    ]),
+  ].join('\n');
+}
+
 /** The Qi Men chart: the ju, the chief, and the nine palaces. */
 export function formatQimenChart(chart: QimenChart, t: Translator): string {
   const dun = chart.ju.yang ? t('cli.value.yangDun') : t('cli.value.yinDun');
@@ -751,10 +818,11 @@ export function formatQimenChart(chart: QimenChart, t: Translator): string {
  * nothing else left the reader to know that from somewhere other than the
  * chart.
  */
-function lodging(chart: QimenChart, t: Translator): string[] {
-  const host = chart.palaces.find((cell) => cell.lodged);
+function lodging(chart: QimenChart | YearChart, t: Translator): string[] {
+  const palaces: readonly (QimenChart | YearChart)['palaces'][number][] = chart.palaces;
+  const host = palaces.find((cell) => cell.lodged);
   if (!host?.lodged) return [];
-  const where = (cell: QimenChart['palaces'][number]): string =>
+  const where = (cell: (QimenChart | YearChart)['palaces'][number]): string =>
     `${cell.palace.number} ${named(cell.palace, `label.palace.${cell.palace.id}` as MessageKey, t)}`;
 
   const lines = [
@@ -764,7 +832,7 @@ function lodging(chart: QimenChart, t: Translator): string[] {
     })}`,
   ];
   // And where it rode the turn, under `centreStem: host`.
-  const rode = chart.palaces.find((cell) => cell.heavenLodged);
+  const rode = palaces.find((cell) => cell.heavenLodged);
   if (rode?.heavenLodged) {
     lines.push(
       `  ${t('cli.field.heavenLodged', {

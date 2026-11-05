@@ -1,4 +1,11 @@
-import { computeDayChart, computeQimenChart, dayLens, nianmingOf, qimenLens } from '@shipan/core';
+import {
+  computeDayChart,
+  computeQimenChart,
+  computeYearChart,
+  dayLens,
+  nianmingOf,
+  qimenLens,
+} from '@shipan/core';
 import { json } from '@sveltejs/kit';
 import {
   momentIsFixed,
@@ -42,6 +49,20 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
         laidBy: laidBy('qimen', day.options),
         // The day board's own lens: its palaces and gates, and 對宮.
         lens: dayLens(day),
+      });
+    }
+
+    // The board of the year: the hour's procedure on the year pillar, with no
+    // lens of its own yet. A birth goes to the hour board's function, as above.
+    if (moment.options.system === 'nianjia' && !url.searchParams.has('born')) {
+      const year = computeYearChart(moment, moment.options);
+      setHeaders({ 'cache-control': cache });
+      return json({
+        qimen: year,
+        nianming: null,
+        place: label ?? null,
+        laidBy: laidBy('qimen', year.options),
+        lens: null,
       });
     }
 

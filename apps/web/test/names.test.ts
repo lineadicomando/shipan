@@ -128,6 +128,13 @@ const READINGS: Readonly<Record<string, string>> = {
   科: 'kē',
   忌: 'jì',
   餘: 'yú',
+  // The three sixty-year periods of a board of the year, said where `yearYuan`
+  // is offered. The engine carries them as two tables and not as named pairs.
+  上元: 'shàngyuán',
+  中元: 'zhōngyuán',
+  下元: 'xiàyuán',
+  // The series whose 第三冊 binds the tables `yearYuan: yiqisi` is named for.
+  遁甲集成: 'dùnjiǎ jíchéng',
   卜: 'bǔ',
   命: 'mìng',
   天: 'tiān',

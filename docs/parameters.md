@@ -213,9 +213,10 @@ dunjia's.**
 | `plate` | `zhuan` (轉盤 zhuànpán), `fei` (飛盤 fēipán), `xingfei` (星飛門轉 xīngfēiménzhuàn — the stars and the 儀 flown, the gates turned) | `zhuan` |
 | `centreLodging` | where the centre is read: `kun` (寄坤二 always), `dun` (陽遁寄二 · 陰遁寄八), `dunni` (陽遁寄八 · 陰遁寄二), `bajie` (八節 bājié — through all eight palaces, three terms to each), `siyu` (四隅 sìyú — through the four corners, six terms to each) | `kun` |
 | `earthPlate` | how often the earth plate is laid: `yuan` (元 yuán — once for sixty hours), `xun` (旬 xún — anew at every decade, 六戊還原) | `yuan` |
-| `system` | which family, each a board of its own: `shijia` (時家 shíjiā), `rijia` (日家 rìjiā), later `yuejia` (月家 yuèjiā), `nianjia` (年家 niánjiā) | `shijia` |
+| `system` | which family, each a board of its own: `shijia` (時家 shíjiā), `rijia` (日家 rìjiā), `nianjia` (年家 niánjiā — the hour board's procedure laid on the year pillar, always 陰遁), later `yuejia` (月家 yuèjiā) | `shijia` |
 | `dayGates` | how the seven other gates follow 休門 on a day board — under `system: rijia`: `fei` (飛 fēi — flown through the eight in the order of their numbers), `zhuan` (轉 zhuàn — turned round the eight, the way changing with the day's stem), `shun` (順 shùn — turned round the eight with the sun every day, as 《寶鏡圖》 lays them) | `fei` |
 | `dayDun` | where a day board's year divides — under `system: rijia`: `solstice` (二至 èrzhì), `yang` (陽遁 yángdùn — not at all, every day laid as yang, as 《奇門遁甲統宗》 states and 《寶鏡圖》 prints its sixty) | `solstice` |
+| `yearYuan` | which 局 the three 元 of a year board take, sixty years each from a 上元 opened in 1684 — under `system: nianjia`: `yisiqi` (一四七 yīsìqī — 一, 四, 七, as 《遁甲演義》 and 《奇門遁甲統宗》 give them), `yiqisi` (一七四 yīqīsì — 一, 七, 四, the 年家奇門定局 of 遁甲集成 第三冊 and the 大全's 奇門古本) | `yisiqi` |
 | `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat), `huwu` (虎武 hǔwǔ — 白虎 fifth and 玄武 sixth in both dun, as 《御定奇門大全》's hour tables name them) | `dun` |
 | `spiritSeat` | where the first spirit is seated, which the other seven follow round: `tianpan` (天盤 tiānpán — where the heaven-plate 值符 lands, at every hour, as 《御定奇門大全》's hour tables lay it), `yinshi` (陰時 yīnshí — from the earth-plate 值符 at a 己 to 癸 hour, and whenever the 值符 lands in the centre, as the 奇門秘訣's commentary has it) | `tianpan` |
 | `spiritPhase` | whether the eight spirits have a phase, which only a lens reads — no seat or name moves: `none` (the spirits stand in no relation, as 幺學聲's 《奇門遁甲現代應用技術》 teaches), `branch` (所屬 suǒshǔ — each the phase of the branch or trigram it is identified with, as the 奇門秘訣 lists them), `huaqi` (化氣 huàqì — the 秘笈大全's 九神主論章, which makes 值符 fire and 螣蛇 earth and agrees on the other eight) | `branch` |
@@ -285,6 +286,17 @@ on sixty boards that have no yin half, which is `dayDun: yang`. The twelve hours
 are read off the day pillar under `shensha`, and stand on this board because
 every hour of the day shares it.
 
+**The year board shares its parameters with the hour board, because it is the
+hour board's procedure.** `system: nianjia` is answered by `computeYearChart`,
+which lays the earth plate of a 陰遁 局, turns the heaven plate to the year's
+stem and counts the 直使 by its branch, with the same step functions the hour
+board calls. So the four parameters that say how a turned plate treats its
+centre and names its spirits are read on both, and `family` lists the two:
+`centreLodging`, `centreTravel`, `centreStem`, `spirits`. `centreLodging: bajie`
+and `siyu` are refused there, both lodging the centre by a term a year has
+none of. It reads `yearYuan` of its own, and nothing that places a
+configuration, a strength or a seat by the hour.
+
 **年命 does not follow `earthPlate`, and that is a limit stated rather than a
 choice made.** A birth in a 甲 year is looked up under the 儀 its decade pins —
 甲子戊, 甲戌己 — which is 《遁甲演義》's rule and the only one this engine has
@@ -298,14 +310,13 @@ closed.** A modern lineage on the shelf adds 分家 fēnjiā, a board of the min
 nothing here is written as though four were the end of it, for the reason the
 vernaculars are not written as two.
 
-**And a value of it is not the hour board reground.** The families other than
-the hour, the day's built and the month's and the year's refused, are flown
-where the 時家 is turned, which is why `system` and `plate` move
-together — and each also carries **its own ring of nine stars**: 天蓬 through
-天英 for the hour, the 太乙 nine (太乙, 攝提, 軒轅, 招搖, 天符, 青龍, 咸池,
-太陰, 天乙) for the day in the witnesses that print any, the 紫白 for the year
-and the month in the one exposition that tabulates them. **And the day family's
-ring does not move with its gates**: the gates hold three days to a palace and
+**And the day's value of it is not the hour board reground.** The day family
+is flown where the 時家 is turned and carries **its own ring of nine stars**,
+the 太乙 nine (太乙, 攝提, 軒轅, 招搖, 天符, 青龍, 咸池, 太陰, 天乙) in the
+witnesses that print any. The year family is turned, and carries 天蓬 through
+天英 as the hour does: both holders say so on the plate, and `plate` is no part
+of it (`docs/sources.md` § "年家 and 月家 on the plate: the heaven plate is
+turned"). **And the day family's ring does not move with its gates**: the gates hold three days to a palace and
 skip the centre, the nine stars take one palace a day and go through it, so one
 board there is two motions. It carries layers the hour family has not, and
 intercalates on a different count. The table above has one column of values and

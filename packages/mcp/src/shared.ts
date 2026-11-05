@@ -271,10 +271,10 @@ export const qimenSchema = {
       'How the stars and the heaven stems are moved. Default zhuan: turned round the eight outer palaces, the centre left where it is, as the Qimen Dunjia Tongzong has it. xingfei: flown through all nine palaces in Luoshu order, forward in a yang chart and back in a yin one, while the gates still turn, as the Qimen Dunjia Zhezhong holds. Under both the chief star is set on the palace of the hour stem; every other star and stem above the palaces can stand somewhere else.',
     ),
   system: z
-    .enum(['shijia', 'rijia'])
+    .enum(['shijia', 'rijia', 'nianjia'])
     .optional()
     .describe(
-      'Which family of Qi Men board, and each is a board of its own. Default shijia, the board of the hour: a plate of stems, nine stars, eight gates and eight spirits, and everything else this tool describes. rijia is the board of the day: eight gates and nine stars of its own, the first of them taiyi, with no stems, no chief and no spirits. It is laid off the day pillar and the season alone, so every hour of one day has the same one; beside it come the twelve hours of that day, each with the god it treads and what the stem of the day puts on it — the Heavenly Noble, the road cut off, the hour that does not meet, the spirit of joy and its bearing — which are names from the almanac and order no hour above another. The board reads day_gates and day_dun and none of method, plate, spirits, spirit_seat, spirit_phase, centre_lodging, earth, earth_plate, centre_travel or centre_stem. The answer has a different shape under each.',
+      'Which family of Qi Men board, and each is a board of its own. Default shijia, the board of the hour: a plate of stems, nine stars, eight gates and eight spirits, and everything else this tool describes. rijia is the board of the day: eight gates and nine stars of its own, the first of them taiyi, with no stems, no chief and no spirits. It is laid off the day pillar and the season alone, so every hour of one day has the same one; beside it come the twelve hours of that day, each with the god it treads and what the stem of the day puts on it — the Heavenly Noble, the road cut off, the hour that does not meet, the spirit of joy and its bearing — which are names from the almanac and order no hour above another. The board reads day_gates and day_dun and none of method, plate, spirits, spirit_seat, spirit_phase, centre_lodging, earth, earth_plate, centre_travel or centre_stem. nianjia is the board of the year: the board of the hour laid on the year pillar, always in the yin half, its ju taken from the sixty-year period the year stands in. It has the two plates of stems, nine stars, eight gates and eight spirits, and no strengths, no configurations, no post horses and no birth. It reads year_yuan and, of the hour board\'s, centre_lodging (kun, dun or dunni), centre_travel, centre_stem and spirits. The answer has a different shape under each.',
     ),
   day_gates: z
     .enum(['fei', 'zhuan', 'shun'])
@@ -287,6 +287,12 @@ export const qimenSchema = {
     .optional()
     .describe(
       'Under system rijia only: where the year of a board of the day divides into its yang and yin halves. Default solstice: at the winter and summer solstices, and the yin half counts the stars (and the turned gates) the other way. yang: the year is not divided, and every day is laid with the yang count, one board to each day of the sixty all year, as the Qimen Dunjia Tongzong states and the Baojing Tu prints them.',
+    ),
+  year_yuan: z
+    .enum(['yisiqi', 'yiqisi'])
+    .optional()
+    .describe(
+      'Under system nianjia only: which ju each sixty-year period of a board of the year takes, the round of a hundred and eighty years opening an upper period in 1684. Default yisiqi: the upper, middle and lower periods on yin boards 1, 4 and 7, as the Dunjia Yanyi and the Qimen Dunjia Tongzong give them. yiqisi: on 1, 7 and 4, as the Nianjia Qimen Dingju tables bound in the Dunjia Jicheng give them and the Yuding Qimen Daquan works 1648 on.',
     ),
   centre_lodging: z
     .enum(['kun', 'dun', 'dunni', 'bajie', 'siyu'])
@@ -372,9 +378,10 @@ interface RawInput {
   spirit_seat?: 'tianpan' | 'yinshi' | undefined;
   spirit_phase?: 'none' | 'branch' | 'huaqi' | undefined;
   plate?: 'zhuan' | 'xingfei' | undefined;
-  system?: 'shijia' | 'rijia' | undefined;
+  system?: 'shijia' | 'rijia' | 'nianjia' | undefined;
   day_gates?: 'fei' | 'zhuan' | 'shun' | undefined;
   day_dun?: 'solstice' | 'yang' | undefined;
+  year_yuan?: 'yisiqi' | 'yiqisi' | undefined;
   centre_lodging?: 'kun' | 'dun' | 'dunni' | 'bajie' | 'siyu' | undefined;
   earth?: 'quarters' | 'eighteen' | undefined;
   earth_plate?: 'yuan' | 'xun' | undefined;
@@ -431,6 +438,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
       system: raw.system,
       dayGates: raw.day_gates,
       dayDun: raw.day_dun,
+      yearYuan: raw.year_yuan,
       centreLodging: raw.centre_lodging,
       earth: raw.earth,
       earthPlate: raw.earth_plate,
@@ -458,6 +466,7 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.system) options.system = raw.system;
   if (raw.day_gates) options.dayGates = raw.day_gates;
   if (raw.day_dun) options.dayDun = raw.day_dun;
+  if (raw.year_yuan) options.yearYuan = raw.year_yuan;
   if (raw.centre_lodging) options.centreLodging = raw.centre_lodging;
   if (raw.earth) options.earth = raw.earth;
   if (raw.earth_plate) options.earthPlate = raw.earth_plate;

@@ -403,7 +403,7 @@ function configurations(chart: PlateChart): Entry[] {
   const entries: Entry[] = [];
   const byId = new Map<string, Entry>();
 
-  for (const pattern of chart.patterns) {
+  for (const pattern of chart.patterns ?? []) {
     let entry = byId.get(pattern.id);
     if (!entry) {
       entry = { pattern, palaces: [] };
@@ -456,7 +456,7 @@ function saidOnBoard(chart: PlateChart, compass: PlateDirections | undefined): S
 /** Which configurations fell where, so a palace can be marked with them. */
 function markedPalaces(chart: PlateChart): Map<number, PlatePattern[]> {
   const marks = new Map<number, PlatePattern[]>();
-  for (const pattern of chart.patterns) {
+  for (const pattern of chart.patterns ?? []) {
     if (pattern.palace === undefined) continue;
     marks.set(pattern.palace, [...(marks.get(pattern.palace) ?? []), pattern]);
   }

@@ -141,6 +141,15 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '遁甲演義', pinyin: 'dùnjiǎyǎnyì' },
   },
+  /**
+   * The 年家奇門定局 bound in 遁甲集成 第三冊, pp. 1160–1216: one board to an 元
+   * of the year family, 「以一七四為法」, dated 康熙二十三年 (1684). Whose they
+   * are is not established; the volume's own leaves name no work over them.
+   */
+  nianjiadingju: {
+    kind: 'transmitted',
+    name: { hanzi: '年家奇門定局', pinyin: 'niánjiāqíméndìngjú' },
+  },
   /** 楊維德's 《遁甲符應經》, which works the lodging at 坤 in both dun and buries 丁 with 丙. */
   fuyingjing: {
     kind: 'transmitted',

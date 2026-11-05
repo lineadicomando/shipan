@@ -18,7 +18,7 @@
  */
 import { COMPASS_READINGS, taiyiKey, type PlateTaiyi, type Said } from '@shipan/plate';
 import type { MessageKey, Translator } from '@shipan/i18n';
-import type { LiurenBoard, QimenChart } from '@shipan/core';
+import type { LiurenBoard, QimenChart, YearChart } from '@shipan/core';
 
 export function taiyiKeyOf(board: PlateTaiyi, t: Translator): Said[][] {
   const god = Object.fromEntries(
@@ -59,7 +59,7 @@ const BRANCH_IDS = ['zi', 'chou', 'yin', 'mao', 'chen', 'si', 'wu', 'wei', 'shen
  * of the frame close it. Nothing is numbered: the board names each thing in
  * full, so this says what a name means and how it sounds, not which one it is.
  */
-export function qimenKeyOf(chart: QimenChart, t: Translator): Said[][] {
+export function qimenKeyOf(chart: QimenChart | YearChart, t: Translator): Said[][] {
   return [
     once(t, 'palace', chart.palaces.map((cell) => cell.palace)),
     once(t, 'stem', chart.palaces.flatMap((cell) => [cell.earth, cell.heaven])),

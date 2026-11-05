@@ -12,6 +12,7 @@
   import { step, type Unit, type Wall } from '$lib/step';
   import ChartReading from '$lib/components/ChartReading.svelte';
   import DayReading from '$lib/components/DayReading.svelte';
+  import YearReading from '$lib/components/YearReading.svelte';
   import PageHead from '$lib/components/PageHead.svelte';
   import Schools from '$lib/components/Schools.svelte';
   import SectionIntro from '$lib/components/SectionIntro.svelte';
@@ -48,6 +49,8 @@
    * apart. The drawing is asked of one address for both.
    */
   const ofTheDay = $derived(data.chart?.options.system === 'rijia');
+  /** Whether it is a board of the year: the hour's grid, with nothing weighed. */
+  const ofTheYear = $derived(data.chart?.options.system === 'nianjia');
   const failure = $derived(data.failure ? sayFailure(t, data.failure) : '');
 
   /**
@@ -277,6 +280,7 @@
       <select value={system} disabled={busy} onchange={(event) => relay(event.currentTarget.value)}>
         <option value="shijia">{t('form.qimen.system.bar.shijia')}</option>
         <option value="rijia">{t('form.qimen.system.bar.rijia')}</option>
+        <option value="nianjia">{t('form.qimen.system.bar.nianjia')}</option>
       </select>
     </label>
   {/snippet}
@@ -352,7 +356,7 @@
         {#if !ofTheDay}<LayerLegend {t} board="qimen" />{/if}
         <!-- The key to the marks of strength, under the board whose marks
              it reads, which a day board has not. -->
-        {#if !ofTheDay}<StrengthLegend {t} />{/if}
+        {#if !ofTheDay && !ofTheYear}<StrengthLegend {t} />{/if}
       </div>
       <div class="side">
         <!-- The circle, the mode and the lens, from the lens the section holds. -->
@@ -368,7 +372,18 @@
     <!-- What the lens draws, said in words, at the page's measure. -->
     <LensReading {t} {held} />
 
-    {#if ofTheDay}
+    {#if ofTheYear}
+      <div class="reading">
+        <YearReading {chart} {t} />
+        <Schools
+          {t}
+          board="qimen"
+          options={chart.options}
+          layers={chart.moment.options}
+          laidBy={data.laidBy}
+        />
+      </div>
+    {:else if ofTheDay}
       <div class="reading">
         <DayReading {chart} {t} />
         <Schools

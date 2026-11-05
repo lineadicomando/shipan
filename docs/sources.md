@@ -1833,7 +1833,9 @@ under the naming of the spirits alone.
 | `spiritSeat: yinshi` | 《奇門秘訣》 | its commentary on the 煙波釣叟歌, 《御定奇門大全》卷四十七: 「如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符」; added 2026-10-20 |
 | `centreLodging: dun` | 《漢陰居士歌》 | 「任生艮土寄陰禽…坤寄陽禽」, and a 陰遁三局 board worked on it, 《御定奇門大全》卷五十三; added 2026-10-20, with 《御定奇門寶鑑》 beside it as the reporter |
 | `strengths: star` | 《奇門遁甲金鏡寶鑑》卷之四 | tabulates the five states outward from each of the nine stars |
-| `system: rijia`, `yuejia`, `nianjia` | 《遁甲演義》, 《奇門遁甲統宗》 | each states the three families; they part on the 年家's three 元, which is two readings and will be two values |
+| `system: rijia`, `yuejia`, `nianjia` | 《遁甲演義》, 《奇門遁甲統宗》 | each states the three families; they part on the 年家's three 元, which is two readings and two values of `yearYuan` |
+| `yearYuan: yisiqi` | 《遁甲演義》, 《奇門遁甲統宗》 | 「上元六十年以陰遁一局加之，中元六十年以陰遁四局加之，下元六十年以陰遁七局加之」, on the 四庫 plate; the 統宗's 附年奇門起例 in the same order, 故宮 p. 19; added 2026-11-05 |
+| `yearYuan: yiqisi` | 《年家奇門定局》, 《御定奇門大全》 | the tables of 遁甲集成 第三冊, 「以一七四為法」, pp. 1160–1216; the 大全's 奇門古本, 卷二十九 sheet 682, working 順治五年 on it; added 2026-11-05 |
 
 **`centreLodging: dun` is reported, not held, and the two reports do not
 describe one reading.** This paragraph said on 2026-10-07 that they agree on
@@ -4972,6 +4974,12 @@ better-printed would be this engine choosing a school in silence. **The errand
 this phase most wanted is finished, and it finished as a negative**, which is
 a documented outcome and not a lesser one.
 
+**The disagreement has since become two values, which is what it was**: two
+lines laying the same three numbers in two orders are two schools, and
+`system: nianjia` is computed under `yearYuan: yisiqi` and `yiqisi`, on the
+user's word, 2026-11-05 (§ "年家 and 月家 on the plate: the heaven plate is
+turned").
+
 **Whose the tables are is not established, and it does not have to be.** They
 stand under no title leaf this survey found: 《遁甲符應經》 opens at the volume's
 p. 1136 and its 天象分野圖 closes at p. 1159, and p. 1160 begins the 年家 with no
@@ -5095,6 +5103,11 @@ is about**, and this engine is not in a position to pick a school out of a set
 its own best witness disowns. `docs/open.md` carries what would change it: not
 another statement of the method, of which there are now plenty, but a lineage
 that holds one of them.
+
+**The user's word of 2026-11-02 moved it**: a compiler's note disowning a
+layer his own juan states does not block a value whose text is attributed and
+transcribed. The year is computed since 2026-11-05 as `system: nianjia`; the
+month is commissioned (`docs/open.md` § "年家 and 月家, commissioned").
 
 **And its day family intercalates on a different count.** 「凡甲子符頭超過三十日
 有奇，即宜置閏」 — thirty-odd days of 超神 before the leap, where the hour
@@ -5264,6 +5277,14 @@ does test the board: 1564 opens a 中元 on 陰遁四局, 甲子戊 stands at �
 「十年一移」 is the 旬首 changing.
 
 Read on the plate 2026-11-05.
+
+**The year is built on this reading** as `system: nianjia`, 2026-11-05:
+`computeYearChart` lays the hour board's steps on the year pillar, and
+`yearYuan` carries the two orders of the three 元. Neither holder says where
+the centre lodges on this board, so it reads the hour board's
+`centreLodging`, and `bajie` and `siyu` are refused there for want of a term.
+`test/nianjia.test.ts` lays the 統宗's 甲子 and 乙丑, the 演義's 1564 and 1594
+and the 奇門古本's 1648 as written.
 
 #### The same text in four places, and what that does to the count
 

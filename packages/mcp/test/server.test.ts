@@ -267,6 +267,46 @@ describe('compute_qimen_chart', () => {
     );
   });
 
+  it('lays the board of a year when that family is asked for, as the 統宗 works 乙丑', async () => {
+    // 1865 is 乙丑 in a 上元: 天蓬 to 坤二, 休門 to 離九.
+    const text = await call('compute_qimen_chart', {
+      ...BEIJING,
+      date: '1865-06-01',
+      time: '12:00',
+      system: 'nianjia',
+      lang: 'en',
+    });
+    expect(text).toContain('Qi Men board of the year');
+    expect(text).toContain('年家 niánjiā');
+    expect(text).toContain('乙丑 yǐchǒu');
+    expect(text).toMatch(/chief\s+\S+ 天蓬 tiānpéng → southwest/);
+    expect(text).toMatch(/chief gate\s+\S+ 休門 xiūmén → south/);
+    // Nothing weighed: a year has no season.
+    expect(text).not.toContain('How each stands');
+
+    const other = await call('compute_qimen_chart', {
+      ...BEIJING,
+      date: '1648-06-01',
+      time: '12:00',
+      system: 'nianjia',
+      year_yuan: 'yiqisi',
+      lang: 'en',
+    });
+    expect(other).toContain('yin dun 4');
+  });
+
+  it('refuses an option of the day board beside the board of a year, by its name here', async () => {
+    const text = await failing('compute_qimen_chart', {
+      ...BEIJING,
+      system: 'nianjia',
+      day_gates: 'zhuan',
+      lang: 'en',
+    });
+    expect(text).toContain(
+      translate('en', 'core.error.OPTION_NOT_READ', { option: 'day_gates', system: 'nianjia' }),
+    );
+  });
+
   it('casts a chart for a place and a moment', async () => {
     // 茅山, which is the school the verified chart for this instant belongs
     // to: 陽遁九局. → `docs/history/40-the-default-was-maoshan.md`

@@ -825,6 +825,46 @@ describe('GET /api/qimen', () => {
     expect((turned.body as Day).qimen.options.dayGates).toBe('zhuan');
   });
 
+  it('answers the board of a year under the same name, privately, in its words and drawn', async () => {
+    type Year = {
+      qimen: {
+        options: Record<string, string>;
+        year: { hanzi: string };
+        yuan: { id: string; opened: number };
+        ju: { yang: boolean; number: number };
+        palaces: { starStrength?: unknown; spirit?: unknown }[];
+        patterns?: unknown;
+      };
+      lens: unknown;
+    };
+    // 2024 is 甲辰, in the 下元 that opened in 1984: 陰遁七局 under 一四七.
+    const answered = await call(qimen, `${MOMENT}&qimen.system=nianjia`);
+    const body = answered.body as Year;
+    expect(answered.status).toBe(200);
+    expect(answered.headers['cache-control']).toMatch(/^private/);
+    expect(body.qimen.options).toMatchObject({ system: 'nianjia', yearYuan: 'yisiqi' });
+    expect(body.qimen.year.hanzi).toBe('甲辰');
+    expect(body.qimen.yuan).toMatchObject({ id: 'xia', opened: 1984 });
+    expect(body.qimen.ju).toEqual({ yang: false, number: 7 });
+    // Nothing weighed and nothing named: its holders lay neither.
+    expect(body.qimen.palaces.every((cell) => cell.starStrength === undefined)).toBe(true);
+    expect(body.qimen.patterns).toBeUndefined();
+    expect(body.lens).toBeNull();
+
+    const other = await call(qimen, `${MOMENT}&qimen.system=nianjia&qimen.yearYuan=yiqisi`);
+    expect((other.body as Year).qimen.ju.number).toBe(4);
+
+    const words = await call(text_, `${MOMENT}&qimen.system=nianjia&lang=en`);
+    expect(words.status).toBe(200);
+    expect(words.text).toContain('Qi Men board of the year');
+    expect(words.headers['cache-control']).toMatch(/^private/);
+
+    const drawn = await call(plate, `${MOMENT}&qimen.system=nianjia&lang=en`);
+    expect(drawn.status).toBe(200);
+    expect(drawn.text.startsWith('<svg')).toBe(true);
+    expect(drawn.text).toContain('甲辰');
+  });
+
   it('refuses an option of the other family by the name it travels under', async () => {
     const day = await call(qimen, `${MOMENT}&qimen.system=rijia&qimen.plate=xingfei`);
     expect(day.status).toBe(400);

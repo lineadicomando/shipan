@@ -3,6 +3,7 @@ import {
   chartLabels,
   computeDayChart,
   computeQimenChart,
+  computeYearChart,
   divergenceLines,
   sayGanzhi,
 } from '@shipan/core';
@@ -61,6 +62,35 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
             .map((pair) => `${sayGanzhi(pair, t)} ${pair.hanzi}`)
             .join(' / '),
           ...(bare ? {} : { readings: t('cli.heading.readings') }),
+        },
+      });
+      setHeaders(headers);
+      return new Response(svg, { headers: { 'content-type': 'image/svg+xml; charset=utf-8' } });
+    }
+
+    // The board of the year is drawn as the hour's is, being the hour's
+    // procedure: the same grid, with no marks of strength and no list of
+    // configurations, neither of which its holders lay.
+    if (moment.options.system === 'nianjia') {
+      const year = computeYearChart(moment, moment.options);
+      const { size, scheme, bare } = readPlateOptions(url.searchParams);
+      const labels = chartLabels(t);
+      const yuan = `${t(`label.yuan.${year.yuan.id}` as MessageKey)} ${year.yuan.hanzi}`;
+      const svg = renderChartSvg(year, {
+        schools: bare ? [] : divergenceLines('qimen', year.options, moment.options, t),
+        size,
+        scheme,
+        labels,
+        compass: labels.direction,
+        captions: {
+          between: t('cli.between.items'),
+          ju: `${t('cli.value.yinDun')} ${year.ju.number} · ${yuan}`,
+          pillars: `${sayGanzhi(year.year, t)} ${year.year.hanzi}`,
+          ...(bare ? {} : {
+            chief: `${t('cli.field.chief')} ${labels.star[year.chief.star.id]} ${year.chief.star.hanzi}`,
+            chiefGate: `${t('cli.field.chiefGate')} ${labels.gate[year.chiefGate.gate.id]} ${year.chiefGate.gate.hanzi}`,
+            readings: t('cli.heading.readings'),
+          }),
         },
       });
       setHeaders(headers);

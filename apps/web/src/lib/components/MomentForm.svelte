@@ -6,7 +6,7 @@
   import type { Location } from '$lib/moment';
   import LocationSearch from './LocationSearch.svelte';
 
-  import { ofLayer, offered, shown, wire, type Chosen, type Divergence } from '$lib/parameters';
+  import { ofLayer, offered, offeredValues, shown, wire, type Chosen, type Divergence } from '$lib/parameters';
 
   let {
     t,
@@ -191,7 +191,7 @@
   {@const note = row.notes?.[value]}
   <Choice
     ask={t(row.label!)}
-    values={Object.entries(row.says!).map(([option, said]) => ({
+    values={offeredValues(row, chosen).map(([option, said]) => ({
       value: option,
       said: t(said),
     }))}

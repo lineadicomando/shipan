@@ -190,8 +190,12 @@ export interface Parameter<V> {
    * the hour board's method beside a day board would report a choice that
    * board was never laid by. Absent on `system` itself and on every other
    * art's parameters.
+   *
+   * **A list where two families read one parameter.** The year board is the
+   * hour board's procedure on another pillar, so how a turned plate treats its
+   * centre and names its spirits is read on both; `readsOn` is the one test.
    */
-  readonly family?: 'shijia' | 'rijia';
+  readonly family?: Family | readonly Family[];
   readonly values: readonly ParameterValue<V>[];
   /** What the engine assumes when a caller says nothing. */
   readonly default: V;
@@ -286,7 +290,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   centreLodging: {
     board: 'qimen',
-    family: 'shijia',
+    family: ['shijia', 'nianjia'],
     // Five readings of which palace the centre is read in. Three are held and
     // two are known only from a text that sets the reading out and argues
     // it down, which `reportedBy` says and a board laid on one of them repeats.
@@ -372,8 +376,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   system: {
     board: 'qimen',
-    // What the board is laid off: the hour, or the day. Each is a board of its
-    // own with its own stars, and they share the eight gates and nothing else.
+    // What the board is laid off: the hour, the day or the year. The day is a
+    // board of its own with its own stars, sharing the eight gates and nothing
+    // else; the year is the hour's procedure laid on the year pillar.
     label: 'form.qimen.system',
     values: [
       {
@@ -401,7 +406,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
       {
         id: 'nianjia',
         name: { hanzi: '年家', pinyin: 'niánjiā' },
-        implemented: false,
+        says: 'form.qimen.system.nianjia',
+        note: 'form.qimen.system.note',
+        implemented: true,
         heldBy: ['yanyi', 'tongzong'],
       },
     ],
@@ -471,6 +478,36 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     ],
     default: 'solstice',
   },
+  yearYuan: {
+    board: 'qimen',
+    family: 'nianjia',
+    // Which 局 the three 元 of a year board take. Two lines lay the same three
+    // numbers in two orders. `docs/sources.md` § "The three systems the same
+    // juan states, and what they are made of".
+    label: 'form.qimen.yearYuan',
+    values: [
+      {
+        id: 'yisiqi',
+        name: { hanzi: '一四七', pinyin: 'yīsìqī' },
+        says: 'form.qimen.yearYuan.yisiqi',
+        note: 'form.qimen.yearYuan.note',
+        implemented: true,
+        // 「上元六十年以陰遁一局加之，中元六十年以陰遁四局加之，下元六十年以陰遁七局加之」;
+        // the 統宗's 附年奇門起例 in the same order.
+        heldBy: ['yanyi', 'tongzong'],
+      },
+      {
+        id: 'yiqisi',
+        name: { hanzi: '一七四', pinyin: 'yīqīsì' },
+        says: 'form.qimen.yearYuan.yiqisi',
+        note: 'form.qimen.yearYuan.note',
+        implemented: true,
+        // 「以一七四為法」, and the 大全's 奇門古本 working 順治五年 on it.
+        heldBy: ['nianjiadingju', 'qimendaquan'],
+      },
+    ],
+    default: 'yisiqi',
+  },
   trueSolarTime: {
     board: 'pillars',
     // The one parameter here whose values are not identifiers. They carry no
@@ -537,7 +574,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   spirits: {
     board: 'qimen',
-    family: 'shijia',
+    family: ['shijia', 'nianjia'],
     // Three readings of one ring, parting at two seats and only in the name.
     // What is *not* a value here is the fourth answer — the names following
     // what is being divined — which is a licence to read: see
@@ -712,7 +749,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   centreTravel: {
     board: 'qimen',
-    family: 'shijia',
+    family: ['shijia', 'nianjia'],
     // Where the 值符 and the 值使 are read when the count puts them on the
     // centre, and nothing else: 《金鏡寶鑑》 states the pair apart from the
     // star in one clause — 其星寄 against 符使不必寄於二 — so neither value
@@ -738,7 +775,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   centreStem: {
     board: 'qimen',
-    family: 'shijia',
+    family: ['shijia', 'nianjia'],
     // Whether the centre's stem rides the heaven plate with its host's. Nothing
     // lodges on the flown plate, so this divides the turned one alone. See
     // `docs/sources.md` § "《御定奇門大全》卷五–十, the eighteen 局 hour by hour".
@@ -1515,6 +1552,28 @@ export const NIANMING_PARAMETERS: ParameterSet<NianmingOptions> = {
 };
 
 /** A parameter with its own name on it, for a caller reading the lot. */
+/** The families of 奇門 a parameter can belong to: the boards `system` lays. */
+export type Family = 'shijia' | 'rijia' | 'nianjia';
+
+/**
+ * Whether a parameter is read on the board a `system` lays.
+ *
+ * True of every parameter that names no family, and of one that names this
+ * family among its own.
+ */
+export function readsOn(parameter: Pick<ParameterEntry, 'family'>, system: string): boolean {
+  const { family } = parameter;
+  if (family === undefined) return true;
+  return typeof family === 'string' ? family === system : family.includes(system as Family);
+}
+
+/** The families a parameter names, as a list. Empty where it names none. */
+export function familiesOf(parameter: Pick<ParameterEntry, 'family'>): readonly Family[] {
+  const { family } = parameter;
+  if (family === undefined) return [];
+  return typeof family === 'string' ? [family] : family;
+}
+
 export interface ParameterEntry extends Parameter<string | boolean> {
   /** The key it is passed under, which is its name everywhere it is written. */
   readonly id: string;
@@ -1616,12 +1675,12 @@ export function refuseOtherFamily(
   name: (parameter: ParameterEntry) => string = (parameter) => parameter.id,
 ): void {
   const system = String(given.system ?? CHART_PARAMETERS.system.default);
-  const families = new Set(PARAMETERS.map((parameter) => parameter.family));
-  if (!families.has(system as ParameterEntry['family'])) return;
+  const families = new Set(PARAMETERS.flatMap((parameter) => familiesOf(parameter)));
+  if (!families.has(system as Family)) return;
 
   for (const parameter of PARAMETERS) {
     if (parameter.board !== 'qimen' || parameter.family === undefined) continue;
-    if (parameter.family === system || given[parameter.id] === undefined) continue;
+    if (readsOn(parameter, system) || given[parameter.id] === undefined) continue;
     throw new ChartError('OPTION_NOT_READ', { option: name(parameter), system });
   }
 }
@@ -1670,7 +1729,7 @@ export function divergencesInForce(
     if (parameter.board === 'pillars' && layers === null) continue;
     if (implementedValues(parameter).length < 2) continue;
     if (parameter.inside && bag[parameter.inside.id] !== parameter.inside.value) continue;
-    if (parameter.family && (bag.system ?? 'shijia') !== parameter.family) continue;
+    if (!readsOn(parameter, String(bag.system ?? 'shijia'))) continue;
 
     // Read out of the bag the parameter belongs to, and never out of both.
     // `yearBoundary` is the pillars' and 紫微斗數's at once, and a board that
@@ -1733,7 +1792,7 @@ export function combinationOf(board: string, options: object): Combination | und
   for (const parameter of PARAMETERS) {
     if (parameter.board !== board) continue;
     if (parameter.inside && bag[parameter.inside.id] !== parameter.inside.value) continue;
-    if (parameter.family && (bag.system ?? 'shijia') !== parameter.family) continue;
+    if (!readsOn(parameter, String(bag.system ?? 'shijia'))) continue;
 
     const chosen = bag[parameter.id] ?? parameter.default;
     const value = parameter.values.find((candidate) => candidate.id === chosen);

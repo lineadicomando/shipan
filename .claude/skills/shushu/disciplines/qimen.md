@@ -301,13 +301,16 @@ Each step names the engine parameter, or says "not modelled".
       different day board: sixty-day 局 of the hour board's stems and stars,
       陽 一七四 and 陰 九三六 (二 in the 統宗's prints), laid 「法亦同於年奇」,
       which is recorded and not computed.
-    - `yuejia` and `nianjia` are refused, and commissioned (2026-11-02). The
-      year family's three 元 are 一四七 for the 演義 and the 統宗, and 一七四
-      for 遁甲集成 第三冊 and the 大全's 奇門古本. Both holders **turn** the
+    - `nianjia` is built (2026-11-05): the 時家 procedure on the year
+      pillar, 陰遁 always, `computeYearChart`. `yearYuan` takes the three 元
+      on 一四七 (`yisiqi`, the 演義 and the 統宗) or 一七四 (`yiqisi`, 遁甲集成
+      第三冊 and the 大全's 奇門古本), from a 上元 opened in 1684. It reads the
+      hour board's `centreLodging` (not `bajie` or `siyu`), `centreTravel`,
+      `centreStem` and `spirits`, and carries no strengths, configurations or
+      horses. `yuejia` is refused and commissioned. Both holders **turn** the
       heaven plate on the year and the month (「逐年干轉」, 「即以天盤直符加之」,
-      read on the plate 2026-11-05), so these boards are the 時家 procedure
-      on another pillar and `plate` is separate from `system`. Of the
-      families only the 日家 flies its stars.
+      read on the plate 2026-11-05), so `plate` is separate from `system`. Of
+      the families only the 日家 flies its stars.
 
 ## 4. How a board is read
 
@@ -494,7 +497,7 @@ modern school's.
 - `options`, and `laidBy` beside it over REST.
 
 With `born` it also places a 年命 (本命 and 行年, palaces, 納音 against the
-palace). `computeDayChart` answers `system: rijia`. `scan` walks an interval
+palace). `computeDayChart` answers `system: rijia`, `computeYearChart` `system: nianjia`. `scan` walks an interval
 and returns a direction as well as an hour. The tools are
 `compute_qimen_chart`, `draw_qimen_chart` and `scan_moments`, and the
 endpoints are `/api/qimen`, `/text`, `/plate` and `/prompt`.
@@ -512,6 +515,9 @@ board with their phases, 對宮 and 五合; the spirits enter it only under a
 - a natal Qi Men chart (統宗 卷十二; Joey Yap's *Destiny Analysis* is the
   modern form);
 - anything 卷十一 says after a hexagram's name;
+- a board of the year (`system: nianjia`) in a prompt, a scan, a 年命 or the
+  consultation: refused by name, as the day's (`docs/refusals.md` § "A board
+  of the year, anywhere but on its own page");
 - a board of the day (`system: rijia`) in a prompt, a scan or a 年命: each
   refuses the family by name, and the day table's 大吉時 and graded palaces
   stay out;

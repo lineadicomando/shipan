@@ -20,6 +20,7 @@ import {
 } from '@shipan/i18n';
 import { computeBazi, type Gender } from './bazi/index.js';
 import { computeDayChart } from './dunjia/rijia.js';
+import { computeYearChart } from './dunjia/nianjia.js';
 import {
   GATES,
   PATTERN_IDS,
@@ -72,6 +73,7 @@ import {
   baziReadingPrompt,
   chartTranscript,
   dayTranscript,
+  yearTranscript,
   liurenReadingPrompt,
   qizhengReadingPrompt,
   readingPrompt,
@@ -698,8 +700,8 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
     return parts.join('\n');
   }
 
-  // A family is a board of its own. The day's is laid and printed; a birth, a
-  // question and a prompt are the hour board's, whose function refuses the
+  // A family is a board of its own. The day's and the year's are laid and
+  // printed; a birth, a question and a prompt are the hour board's, whose function refuses the
   // family by name when one of them is asked of it.
   if (
     chartOptions.system === 'rijia' &&
@@ -710,6 +712,17 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
     const day = computeDayChart(moment, chartOptions);
     if (options.json) return JSON.stringify(day, null, 2);
     return [dayTranscript(moment, day, t), '', formatAlmanac(moment.almanac, t)].join('\n');
+  }
+  // The year's is printed without the almanac, whose page is a day's.
+  if (
+    chartOptions.system === 'nianjia' &&
+    !options.born &&
+    !options.prompt &&
+    options.ask === undefined
+  ) {
+    const year = computeYearChart(moment, chartOptions);
+    if (options.json) return JSON.stringify(year, null, 2);
+    return yearTranscript(moment, year, t);
   }
 
   const chart = computeQimenChart(moment, chartOptions);

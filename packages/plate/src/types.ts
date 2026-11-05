@@ -20,7 +20,8 @@ export interface PlateChart {
   chief: { star: { hanzi: string }; palace: { number: number } };
   chiefGate: { gate: { hanzi: string }; palace: { number: number } };
   palaces: readonly PlatePalace[];
-  patterns: readonly PlatePattern[];
+  /** Absent on a board of the year, whose holders name no configuration. */
+  patterns?: readonly PlatePattern[] | undefined;
   moment: {
     local: string;
     pillars: {
@@ -73,7 +74,11 @@ export interface PlatePalace {
   earth: Named;
   heaven: Named;
   star: Named;
-  starStrength: Named;
+  /**
+   * How the star stands to the season. Absent on a board of the year, which
+   * has no season to weigh a star against: the star is drawn without a mark.
+   */
+  starStrength?: Named | undefined;
   gate?: Named | undefined;
   gateStrength?: Named | undefined;
   spirit?: Named | undefined;

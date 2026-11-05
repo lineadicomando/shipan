@@ -2,12 +2,14 @@ import type { Translator } from '@shipan/i18n';
 import type { Bazi } from './bazi/index.js';
 import type { QimenChart } from './dunjia/index.js';
 import type { DayChart } from './dunjia/rijia.js';
+import type { YearChart } from './dunjia/nianjia.js';
 import {
   formatBazi,
   formatLiuren,
   formatMoment,
   formatNianming,
   formatDayChart,
+  formatYearChart,
   formatQimenChart,
   formatQizheng,
   formatZiwei,
@@ -182,6 +184,31 @@ export function dayTranscript(
     }),
     '',
     formatDayChart(chart, t),
+    ...(warnings ? ['', warnings] : []),
+    ...(extra.source ? ['', `  ${t('prompt.source', { url: extra.source })}`] : []),
+  ].join('\n');
+}
+
+/**
+ * A board of the year said in full, as `dayTranscript` says the day's.
+ *
+ * Without a 年命 and without the almanac: a year board is laid off the year
+ * pillar alone, and the day's page belongs to a day.
+ */
+export function yearTranscript(
+  moment: Moment,
+  chart: YearChart,
+  t: Translator,
+  extra: { source?: string } = {},
+): string {
+  const warnings = formatWarnings(moment, t);
+  return [
+    formatMoment(moment, t, {
+      almanac: false,
+      divergences: { board: 'qimen', options: chart.options },
+    }),
+    '',
+    formatYearChart(chart, t),
     ...(warnings ? ['', warnings] : []),
     ...(extra.source ? ['', `  ${t('prompt.source', { url: extra.source })}`] : []),
   ].join('\n');

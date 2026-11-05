@@ -114,7 +114,11 @@ export interface ChartOptions {
    * A family is a board of its own and not the hour board reground. `rijia`
    * lays eight gates and nine stars of its own off the day and has no plate of
    * stems, so it is answered by `computeDayChart` and reads `dayGates` and
-   * `dayDun` where the hour board reads everything else here.
+   * `dayDun` where the hour board reads everything else here. `nianjia` is the
+   * hour board's procedure laid on the year pillar, always 陰遁, and is
+   * answered by `computeYearChart`: it reads `yearYuan` and, of the hour
+   * board's, the four that say how a turned plate treats its centre and names
+   * its spirits — `centreLodging`, `centreTravel`, `centreStem`, `spirits`.
    */
   system: 'shijia' | 'rijia' | 'yuejia' | 'nianjia';
 
@@ -141,6 +145,18 @@ export interface ChartOptions {
    * states, 「其起九星八門之法，不必復分陰遁陽遁」, and 寶鏡圖 prints them.
    */
   dayDun: 'solstice' | 'yang';
+
+  /**
+   * Which 局 each 元 of a year board takes, in a round of a hundred and eighty
+   * years. `system: nianjia` alone; always 陰遁.
+   *
+   * `yisiqi` lays the 上元 on 一局, the 中元 on 四局 and the 下元 on 七局:
+   * 《遁甲演義》卷一, 「上元六十年以陰遁一局加之，中元六十年以陰遁四局加之，下元六十年
+   * 以陰遁七局加之」, and 《奇門遁甲統宗》卷二's 附年奇門起例 in the same order.
+   * `yiqisi` lays them on 一, 七 and 四: the 年家定局 of 遁甲集成 第三冊,
+   * 「以一七四為法」, and 《御定奇門大全》卷二十九's 奇門古本, which works 1648 on it.
+   */
+  yearYuan: 'yisiqi' | 'yiqisi';
 
   /**
    * Where the centre lodges (寄宮).
@@ -439,6 +455,7 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   system: 'shijia',
   dayGates: 'fei',
   dayDun: 'solstice',
+  yearYuan: 'yisiqi',
   centreLodging: 'kun',
   earthPlate: 'yuan',
   spirits: 'dun',

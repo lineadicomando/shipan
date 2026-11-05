@@ -2,8 +2,10 @@ import {
   chartTranscript,
   computeDayChart,
   computeQimenChart,
+  computeYearChart,
   dayTranscript,
   nianmingOf,
+  yearTranscript,
 } from '@shipan/core';
 import { createTranslator } from '@shipan/i18n';
 import {
@@ -42,6 +44,17 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       setHeaders(headers);
       return new Response(
         dayTranscript(moment, day, createTranslator(locale), {
+          source: pageAddress(url, locale, 'qimen', laidAt(moment)),
+        }),
+        { headers: { 'content-type': 'text/plain; charset=utf-8' } },
+      );
+    }
+
+    if (moment.options.system === 'nianjia' && !url.searchParams.has('born')) {
+      const year = computeYearChart(moment, moment.options);
+      setHeaders(headers);
+      return new Response(
+        yearTranscript(moment, year, createTranslator(locale), {
           source: pageAddress(url, locale, 'qimen', laidAt(moment)),
         }),
         { headers: { 'content-type': 'text/plain; charset=utf-8' } },

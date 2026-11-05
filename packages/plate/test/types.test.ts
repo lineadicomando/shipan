@@ -1,6 +1,7 @@
 import {
   computeDayChart,
   computeQimenChart,
+  computeYearChart,
   initEphemeris,
   liurenBoard,
   qizhengBoard,
@@ -145,7 +146,8 @@ describe('the redeclared shape', () => {
       expect(typeof palace.earth.hanzi).toBe('string');
       expect(typeof palace.heaven.hanzi).toBe('string');
       expect(typeof palace.star.hanzi).toBe('string');
-      expect(typeof palace.starStrength.hanzi).toBe('string');
+      // The hour board weighs every star; a board of the year weighs none.
+      expect(typeof palace.starStrength?.hanzi).toBe('string');
     }
   });
 
@@ -167,7 +169,23 @@ describe('the redeclared shape', () => {
       if (palace.spirit) expect(palace.spirit.pinyin).toMatch(/\S/);
     }
 
-    for (const pattern of plate.patterns) expect(pattern.pinyin).toMatch(/\S/);
+    for (const pattern of plate.patterns ?? []) expect(pattern.pinyin).toMatch(/\S/);
+  });
+
+  it('takes a board of the year as the chart it draws, without a cast', () => {
+    const options = { ...DEFAULT_OPTIONS, system: 'nianjia' as const, trueSolarTime: false };
+    const year = computeYearChart(
+      resolveMoment(
+        { date: '2024-06-15', time: '14:00', timezone: 'Asia/Shanghai' },
+        { latitude: 39.9075, longitude: 116.3972, timezone: 'Asia/Shanghai' },
+        options,
+        initEphemeris(),
+      ),
+      options,
+    );
+    const plate: PlateChart = year;
+    expect(plate.palaces).toHaveLength(9);
+    expect(plate.palaces.every((palace) => palace.starStrength === undefined)).toBe(true);
   });
 
   it('names the five phases the way the palette keys them', () => {
