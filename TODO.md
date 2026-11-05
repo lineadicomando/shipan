@@ -31,10 +31,10 @@ otherwise.
   and this file for sentences the session outlived («unread», «stays
   refused»…).
 
-## Where it stands, 2026-11-05, end of phase 92
+## Where it stands, 2026-11-05, end of phase 93
 
-**0.46.1**, tagged `v0.46.1` and deployed at https://shipan.it (footer
-checked). `main` pushed, no branch open; build, typecheck and every suite
+**0.47.0** on `main`, committed and not tagged, pushed or deployed (0.46.1 is
+what https://shipan.it runs). No branch open; build, typecheck and every suite
 pass. Phases: `docs/history/README.md`.
 
 ## What to do next, in the order the user has been taking it
@@ -42,9 +42,9 @@ pass. Phases: `docs/history/README.md`.
 1. **月家, `system: yuejia`**, commissioned 2026-11-02: the year board
    (phase 89) on the month pillar, `layOnPillar` shared. Steps and sources:
    `docs/open.md` § "年家 and 月家, commissioned".
-2. **The rest of the 飛盤 works**: `plate: fei` is built on 《奇門法竅》 (phase
-   91). Left: that work's 超接 and 拆補 and its tables' 格 against the
-   engine; the 鳴法; the 旨歸 — lines 7–9 of `docs/open.md` § "The shelf".
+2. **The rest of the 飛盤 works**: 《奇門法竅》 is read to the end bar its 排宮
+   figures (phase 93). Left: the 鳴法, the 旨歸, and those figures — lines
+   7–9 of `docs/open.md` § "The shelf".
 3. **The scan form's `gongpo`**: offered always, found only under
    `menpo: gongzhimen`, so a scan under the default finds nothing and says
    nothing. A filter like `layableUnder`'s, keyed on `qimen.menpo`.

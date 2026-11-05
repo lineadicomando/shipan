@@ -132,8 +132,10 @@ unread (`docs/open.md` § "The shelf", lines 7–9):
   manuscript. **Read**: it flies the 時家 board whole, states it, draws 36
   boards on it and tabulates its 1080 hours — the holder `plate: fei` waited
   on (`docs/sources.md` § "《奇門法竅》: the hour board flown whole, stated,
-  drawn and tabulated"). Whether it accepts 拆補, as a web article says, is
-  not yet read (論超接置閏, 論拆局補局). Printed by 新文豐 in 珍本術數叢書
+  drawn and tabulated"). It holds 拆補, stated three times and worked
+  twice, and its tables hold 乙 in 坤 and 丁 in 艮 for 入墓 (§ "《奇門法竅》
+  again"). Its 論月奇法 gives the month's 元 in the 統宗's order, flown, and
+  its 論日奇法 a flown day board of sixty days to a 局. Printed by 新文豐 in 珍本術數叢書
   (1995), bound with 《遁甲演義》 (CiNii BA65339246).
 - 《奇門遁甲鳴法》, preface by 龍伏山人 (矯延僖 in one account), 同治辛未
   (1871). Claims descent from 峨眉山 宏農道人 and 天真子, and further back from
@@ -213,8 +215,8 @@ Each step names the engine parameter, or says "not modelled".
    - 拆補 chāibǔ (`chaibu`, default). The term in force at the instant, and
      the 元 from the day's 符頭 fútóu: 甲 or 己 on 子午卯酉 gives 上元, on
      寅申巳亥 中元, on 辰戌丑未 下元 (「甲己在仲為上局，孟為中局季下元」). Held by
-     張志春. 紀大奎 rejects it by name. 《奇門法竅》 is said to accept it
-     (web lead, §7).
+     張志春 and 《奇門法竅》 (1870), 「專以交節之時刻日支而定三元，以甲、己為
+     符頭」. 紀大奎 rejects it by name.
    - 置閏 zhìrùn (`zhirun`). Whole 符頭 blocks of fifteen days. When the 符頭
      runs ahead of the term (超神 chāoshén) by nine days or more, a block is
      repeated before a solstice (`leap: solstice`, the block at 芒種 or 大雪;
@@ -573,10 +575,6 @@ that is on the shelf.
   Not the 法竅's: its drawings carry eight spirits and eight gates, and its
   論八神 names 「加太常飛九宮」 only as a 坊本 practice it rejects. Settled by:
   the 鳴法, held and unread.
-- **An older holder for `method: chaibu`.** 《奇門法竅》 is reported to accept
-  拆補 (1870), against 張志春 (1999) as the only holder. 紀大奎's rejection
-  shows 拆補 was practised by c. 1800. Settled by: the 法竅's 論超接置閏 and
-  論拆局補局, held since 2026-11-02 and not yet read for it.
 - **`method: yinpan` (陰盤, 王鳳麟).** A named modern practice with a
   stateable rule. Whether it is a 定局 method of the 時家 board or a board of
   its own (it uses the lunar month and day) is a design question. Settled by:

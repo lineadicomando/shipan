@@ -50,7 +50,12 @@ What is left is the month, and the section goes when it is built.
    (統宗). The 統宗's 又法月奇門起例 is a third (甲己加四仲月為上元…, 陽 after
    冬至 and 陰 after 夏至): declare it, and refuse it unless step 1 also covers
    it. The month is 陰: 徐昂's 陽 is a lone parenthesis (`docs/sources.md`, the
-   遁甲釋要 section). The family list of `centreLodging`, `centreTravel`,
+   遁甲釋要 section). **《奇門法竅》's 論月奇法 states the 統宗's order** and
+   enumerates its twenty years an 元, calling 子午卯酉 「四孟」 where its own
+   卷七 calls them 四仲: name the values by their branches, so `faqiao` can
+   join `tongzong` without the labels deciding. It lays the month flown,
+   「與年奇同」, which is `plate: fei` and not the turned board step 1 builds
+   (`docs/sources.md` § "《奇門法竅》 again"). The family list of `centreLodging`, `centreTravel`,
    `centreStem` and `spirits` gains `yuejia`.
 3. **Tests from the sources' own cases.** The 統宗's 附月 起例 works none.
    The 演義's two dates, the 十一月 of 1563 and of 1613 (both 甲子 months,
@@ -78,7 +83,9 @@ something to wait on.
   - **A day board laid with a plate of stems**, sixty days to a 局, 陽遁 一 · 七
     · 四 and 陰遁 九 · 三 · 六, 「法亦同於年奇」: the 統宗's 又法日奇門起例 (each 局
     on a 甲子, 超接 and a leap past thirty-odd days) against the 大全's 奇門古本
-    (a 甲 or 己 day by the terms). A family of its own; waits on the user's wish
+    (a 甲 or 己 day by the terms). 《奇門法竅》's 論日奇法 is a third statement,
+    flown, 「或超或接，或拆或補」, with two days worked, and puts its gates in a
+    《選擇金鏡》 not held. A family of its own; waits on the user's wish
     and on where the 統宗's leap goes (`docs/sources.md` § "The 統宗's sixty-day
     局, read on the plate, which lays another board").
   - **The yin flight of `xingfei`**: `flownPlates` reverses the stars under 陰,
@@ -163,7 +170,7 @@ later.
 | 4 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
 | 5 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 | 6 | where a 日家 count running at a solstice ends: finished at its 癸亥, or dropped on the solstice day as `dayDun: solstice` drops it | 《金函玉鏡》下冊, `qimen/jinhan-yujing-2.pdf`, 卷二十 p. 413, 「冬至艮宮夏坤地，命起甲子順逆行」 and the lines around it; read so far for the anchor only |
-| 7 | **the rest of 《奇門法竅》**, read for `plate: fei` on 2026-11-05 and built on: 論超接置閏 and 論拆局補局 against `method` and `leap`; 論中五's gate by the eight 節 against `centreLodging: bajie`; the eleven 乙丑 drawings and the 排宮 figures not read; the 格 of the 1080 hours of 卷七–八 against the engine's `fei` board | 《奇門法竅》, `qimen/qimen-faqiao-hualing.pdf` (華齡 2011, 點校; printed page = PDF − 21), checked where doubtful against the 抄本 reprint `qimen/qimen-faqiao-chaoben.pdf`; located through `qimen/qimen-faqiao.utf8.txt`; tools in `qimen/faqiao-juan2/` |
+| 7 | **《奇門法竅》's 排宮 figures**, the eighteen circles of 卷五 with an empty 間 among nine gate seats: what the 直使 does on them, against the 排宮間宮直使圖說. Everything else the work was held for is read (2026-11-05): `docs/sources.md` § "《奇門法竅》 again" | `qimen/qimen-faqiao-hualing.pdf`, PDF 138–146 and 156–164 (printed page = PDF − 21); tools in `qimen/faqiao-juan2/` |
 | 8 | the 鳴法's flight, which the web reports as gates 「休死傷杜中開驚生景」 with 「中五無門」 and nine spirits; a second holder for `plate: fei`, or a second reading of it | `qimen/qimen-mingfa-liaotu.pdf`, photographs of the 遼圖 manuscript |
 | 9 | the 旨歸's board, sold as 「布門輪宮，飛星定局」: a second holder for `plate: xingfei`, and its 24 worked cases | `qimen/qimen-zhigui-siku-weishou.pdf`, 匯源堂 1893 in the 四庫未收書輯刊 |
 
@@ -235,6 +242,13 @@ hours in 《星曆考原》卷五, beside 寶鏡圖's (`almanac.md`, file not he
 
 Each reading's errands, newest first, from phase 86; the earlier ones are in
 `docs/history/roadmap-2026-11-05.md` and `docs/history/roadmap-2026-10-30.md`.
+
+- **Phase 93**, inside 《奇門法竅》: 陰遁九局 丁丑's baleful half (p. 239), which
+  fits no hour of its 局; 陽遁五局 丁丑, short in the finding aid, and four
+  刑格 and 小格 cells the board lays and the finding aid leaves unmarked, none
+  looked at on the plate; 陽遁三局 乙丑's centre, blank on the print; 論拆局補局's
+  「計三十五日」 and 「二十四日己未…作白露上局」 (p. 21), and a worked case whose
+  two halves are two years; the 抄本 not compared at any of these.
 
 - **Phases 90–92**, inside 《奇門法竅》: 陰遁九局 丙子's 生門 on 坤二 (rule:
   乾六); 陽遁五局 庚寅's 星門伏; 陰遁五局 戊辰's and 陰遁七局 戊子 · 庚寅's 門反;

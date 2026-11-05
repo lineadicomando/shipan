@@ -126,6 +126,7 @@ phase.
 | 90 | [the 法竅 flies the hour board](90-the-faqiao-flies-the-hour-board.md) | done — 《奇門法竅》 read on the plate for `plate: fei`: a holder that states, draws and tabulates the flown board; the 直使 halts before 五; the yin plate a translation; nothing built |
 | 91 | [the flown hour board](91-the-flown-board.md) | done — `plate: fei` built on 《奇門法竅》, the 值使 waiting before 五; `centreTravel` not reported under it; the 法竅 a holder of `centreLodging: dunni`, and not of `siyu` as phase 90 said; 0.46.0 |
 | 92 | [the form fills the lodging](92-the-form-fills-the-lodging.md) | done — choosing 飛盤 in a form fills `centreLodging: dunni`, `fills` on the web declaration; 0.46.1 |
+| 93 | [the rest of the 法竅](93-the-rest-of-the-faqiao.md) | done — 《奇門法竅》 read to the end bar its 排宮 figures: 拆補 stated and worked, the month's 元 in the 統宗's order, a flown day board, all eighteen 乙丑 drawings, the tables' 格 holding the carried plate and the 入墓 cells; three values gain a holder; 0.47.0 |
 
 ## The rest of the record
 

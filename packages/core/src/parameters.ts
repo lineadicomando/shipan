@@ -237,7 +237,10 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         says: 'form.qimen.method.chaibu',
         note: 'cli.note.method',
         implemented: true,
-        heldBy: ['shenqi'],
+        // The 法竅 states it three times and works two cases: the term changes
+        // at its instant, the 元 is the day's 符頭 — 「專以交節之時刻日支而定三元，
+        // 以甲、己為符頭」 (卷二 論時奇法).
+        heldBy: ['shenqi', 'faqiao'],
       },
       {
         id: 'zhirun',
@@ -834,8 +837,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         implemented: true,
         // The 統宗's 四十格, 「丁奇艮宮」; the 吉凶格解's verse, 「更忌丁奇居艮上」,
         // 《御定奇門大全》卷五十八; the same verse in the 秘笈大全, 「丁奇一位臨艮
-        // 上」; and 奇門秘訣's 三璋, 「六丁星奇下臨八宮」.
-        heldBy: ['tongzong', 'jixionggejie', 'mijidaquan', 'qimenmijue'],
+        // 上」; 奇門秘訣's 三璋, 「六丁星奇下臨八宮」; and the 法竅's tables of
+        // 卷七–八, which mark 奇墓 where 丁 stands over 艮 and never over 乾.
+        heldBy: ['tongzong', 'jixionggejie', 'mijidaquan', 'qimenmijue', 'faqiao'],
       },
       {
         id: 'qian',
@@ -866,8 +870,9 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
         implemented: true,
         // 「乙奇坤宮」, 「六乙日奇臨二宮」 under 璋曰, 「六乙臨坤請避之」, and the
         // 金鏡寶鑑's 「乙二」. The 統宗's 卷十一 also has 「入墓丁艮乙丙乾」, so
-        // it holds this cell in its 四十格 and the other in a verse.
-        heldBy: ['tongzong', 'fuyingjing', 'jixionggejie', 'jinjingbaojian'],
+        // it holds this cell in its 四十格 and the other in a verse. The 法竅's
+        // tables mark 奇墓 where 乙 stands over 坤 and never over 乾.
+        heldBy: ['tongzong', 'fuyingjing', 'jixionggejie', 'jinjingbaojian', 'faqiao'],
       },
       {
         id: 'qian',

@@ -2516,11 +2516,116 @@ independent; the 華齡 edition does not name its base. So `plate: fei` has a
 holder on rung 4 — one text, checked by its own 36 drawings and 1080 hours —
 and nothing that runs lays the board. **Built on the user's word, 2026-11-05**:
 `carriedPlates`, `carriedGatePalace` and `carriedGatePlate`, held by
-`test/feipan.test.ts` to the seven 乙丑 drawings read, the five hours the 圖說
+`test/feipan.test.ts` to the 乙丑 drawings (all eighteen since the next section), the five hours the 圖說
 works and eight table hours; `centreTravel` is not reported under it, having
-nothing to move. **Not read**: 論超接置閏 and 論拆局補局 against `method` and `leap`, the
-eleven other 乙丑 drawings, the 排宮 figures, and the patterns of the tables
-against a board laid by the engine.
+nothing to move. The rest of the work was read the same day: next section.
+
+Last checked 2026-11-05.
+
+### 《奇門法竅》 again: the 局, the families, the other drawings, and the tables' 格
+
+Read on the plate 2026-11-05, in the same 華齡 edition (itself set in
+simplified characters): 卷二 pp. 20–25 (論中宮 to 論時奇法), 卷六's 遁甲論
+p. 145, the eleven 乙丑 drawings of 卷五 the section above left, one 排宮
+figure, and the 格 of the 1080 hours of 卷七–八, held to the engine's board
+off the finding aid and looked at on the plate where they part.
+`texts/qimen/faqiao-juan2/` holds the scripts: `ge.mjs` tallies what stands
+under each 格 name, `pairs.mjs` and `tomb.mjs` count the other way, `which.mjs`
+finds the hour a stray entry fits, `chaibu/years.mjs` dates the worked case,
+`rows.mjs` prints a drawing's row.
+
+**The 局 is `method: chaibu`, stated three times and worked twice.**
+論超接置閏 sets aside 「諸家所論超接置閏，隱約其詞，斷難遵守」 for the
+時憲書: 「以交節之日，視何甲、己符頭，分元定局」, and 「遇閏之年，仍以交節符
+首分之，而置閏即在其中，若無閏月，則無閏奇也」 — no separate 置閏. 論拆局補局
+works it by the quarter-hour: at a 立春 falling 「丙子丑正一刻」 the hours of
+丙子 before the instant are still 大寒下元, those after it 立春下局 under the
+甲戌 符頭, until 己卯 opens 立春上元; at a 白露 「己酉寅初三刻」 the 子 and 丑
+hours of 己酉 are 處暑上局, 「己酉上局符頭統領」. 論時奇法 says it in one
+sentence — 「專以交節之時刻日支而定三元，以甲、己為符頭，五日一換元」 — and
+卷六's 遁甲論 works a 冬至 on 丁未: 甲辰 to 丙午 stay 大雪下元, 丁未 takes
+冬至下元 under the 甲辰 符頭, 己酉 opens 冬至上元. That is what `chaibu`
+computes: the term in force at the instant, the 元 off the day's 符頭. So the
+work is a holder of the default, attributed and transcribed, and `heldBy`
+names it. It says nothing that bears on `leap`, which is inside 置閏. **The
+worked case is not one year**: no 丙申 year has 立春 on 正月初八 丙子, and the
+two halves fit different years by their day pillars (立春 on 丙子 with 雨水
+on 辛卯: 1665, 1768, 1871; 白露 on 己酉 with 秋分 on 甲子 and 處暑 on 甲午:
+1756, 1859) and none by their hours. It illustrates a procedure. Two
+misprints on p. 21: 「計三十五日」 for thirty-five hours, and 「二十四日己未…作
+白露上局」 where 己未 heads the 下元.
+
+**論中五 is the 南華道人 passage the 折衷 quotes, and not a new holder of
+`centreLodging: bajie`.** 「天禽雖寄二宮，重借死門以配之，實則隨局更使，至冬至三
+氣則寄休門，立春三氣則寄生門…立冬三氣則寄開門」 is the 折衷's sheet 42 in its
+own words (「世傳五禽寄於二宮，重借死門以配之」, 「所為隨局更使也」), extended to the
+eight 節. The work states three lodgings — 論寄宮's four corners by the four
+立, 論中五's eight 節, and 卷六's 「陽遁冬至寄艮，陰遁夏至寄坤」 — and prints the
+third. The row for `bajie` does not move.
+
+**The year and the month are laid flown, and the month's three 元 are the
+統宗's.** 論年奇法 is the 演義's 年家 clause reworded, down to its date —
+「按嘉靖四十三年甲子起杜門，十年一移，至萬曆甲午年移休」 — and ends 「上中下三局即
+陰遁一四七三局飛布法也」: `yearYuan: yisiqi`, a copy and not a holder.
+論月奇法 is not the 演義's. It enumerates the twenty years of each 元: the
+five-year spans opened by 甲子, 甲午, 己卯 and 己酉 are 「上元一局起坎宮」, those by
+甲寅, 甲申, 己巳 and 己亥 「中元四局起巽宮」, those by 甲辰, 甲戌, 己丑 and 己未 「下元
+七局起兌宮」, and 「其飛布天地二盤之法與年奇同」. By the branch that is 子午卯酉
+一 · 寅申巳亥 四 · 辰戌丑未 七, which is the 統宗's order (仲 一 · 孟 四 · 季 七).
+**Its labels are the other way round** — 「四孟子午卯酉」, 「四仲寅申巳亥」 — where
+卷七's 遁甲三元歌 in the same work has 「子午卯酉為四仲，寅申巳亥為四孟」; the
+enumeration decides. A value of the month's 元 is named for its rule and not
+for 孟 or 仲, so this slip cannot point it the wrong way.
+
+**論日奇法 lays the day board of sixty days to a 局, flown**: 「陽遁用一七四三局，
+陰遁用九三六三局…一元統四氣，三元共十二氣」, 「有符先節後之分…或超或接，或拆或補」,
+「以授時曆為準，惟不用五子元遁也」, and 「門法入於《選擇金鏡》前編」, a work not
+held. It works two days: 冬至上元 陽遁一局 庚子, the day's 庚 at 震三 on the
+earth plate, the 甲午 直符 辛 carried onto it, 「天上庚子日在坤」, 杜門 the 直使
+on 坎 and 休門 on 兌; and 夏至上元 陰遁九局 丁卯, 「天上丁卯日在乾六宮」, 景門 on
+乾, 「丙奇到中宮，休門到兌」. Both are the hour board's carried plate and
+carried gates read on the day pillar, checked by hand palace by palace (the
+華齡 punctuation runs the first list one item out: 「加震，丁乾、丙兌、乙艮…癸
+寄艮」). It is a third statement of the day board `docs/open.md` records with
+no parameter, and the first flown.
+
+**The other eleven 乙丑 drawings agree with the engine palace by palace**,
+star, stem, gate and spirit, in both 遁: 陽遁 二 · 三 · 七 · 八 · 九 and 陰遁
+一 · 二 · 三 · 七 · 八 · 九 (PDF 130–137, 147–155). 陽遁三局's centre is left blank
+on the print. With the seven above, all eighteen are in `test/feipan.test.ts`.
+**The 排宮 figures are another object**, seen at 陽遁二局 乙丑 (PDF 139) and not
+read cell by cell: the nine palaces round a circle in their numbers, the
+centre among them, and the gates on nine seats with an empty 間 — the
+different use of the 直使 the 例言 announces for 「排宮圖內」.
+
+**The tables' 格 over-determine the carried heaven plate.** Each hour lists
+the 格 palace by palace, the auspicious and then the baleful. The nine whose
+name is a pair of stems — 大格, 小格, 刑格, 白入熒, 熒入白, 逃走, 猖狂, 投江, 妖蹻 —
+fall on 972 palace-hours of the engine's board, 486 of them yin, and the
+tables mark the name on 964. Of the eight left, two are 陰遁九局 丁丑,
+whose baleful half — 「兌熒入白，乾逃走，巽大格」 — puts three names on pairs
+the board does not lay there and fits no hour of its 局 (read on the plate,
+p. 239); two are 陽遁五局 丁丑, whose entry is short in the finding aid; and
+four are 刑格 and 小格 cells. Those six were not looked at on the plate. The finding aid reads 白入熒 at
+陽遁五局 丁亥 and 陰遁六局 丙申 where the plate has 熒入白 (pp. 216, 253): the
+華齡 sets a three-character name in two columns, and a transcriber can unravel
+it either way. The spirits the 詐 and 假 need are where the fixed ring puts
+them — 真詐 太陰 on 68 of 68 marks, 休詐 六合 on 53 of 54, 重詐 九地 on 71 of
+72 — and 擊刑 stands on the six palaces of the six decades, 震 坤 艮 離 巽 巽,
+on 106 of 107. **And the tombs are `yiTomb: kun` and `dingTomb: gen`**: 乙 over
+坤 is marked 奇墓 on 114 of the 120 hours the board puts it there, 丙 over 乾 on
+117 of 120, 丁 over 艮 on 114 of 120; 乙 over 乾 and 丁 over 乾, 120 hours each,
+are never marked. 卷二's 論奇門定向 knows the other reading as a saying —
+「如丙乙奇到乾，合而言之，則曰入墓，然丙乙入戌而不墓」 — and argues the direction
+out of it; the tables settle what the work marks. Both values name it in
+`heldBy`.
+
+**What this moves.** `method: chaibu`, `yiTomb: kun` and `dingTomb: gen` gain a
+holder; the tombs' row rises to rung 4, a single text exhaustive about the
+cells in question; `plate: fei`'s row gains the eighteen drawings and the 格.
+Nothing is built, and no value is lifted. For the 月家 commissioned in
+`docs/open.md`, the 統宗's order of the month's 元 has a second statement,
+and the month laid flown has a holder if `plate` is ever offered there.
 
 Last checked 2026-11-05.
 
