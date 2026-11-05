@@ -125,8 +125,8 @@ Unmarked = found in this research and not yet on either list.
   attribution).
 
 **The flying lineage (飛盤 fēipán)**. Three of its works arrived on
-2026-11-02; the 法竅 was read on the plate on 2026-11-05 and the other two are
-unread (`docs/open.md` § "The shelf", lines 7–9):
+2026-11-02; the 法竅 was read on the plate on 2026-11-05, whole, and the other
+two are unread (`docs/open.md` § "The shelf", lines 7–8):
 
 - 《奇門法竅》, 錫孟樨 Xī Mèngxī (or 錫孟穉), 同治九年 (1870), circulated in
   manuscript. **Read**: it flies the 時家 board whole, states it, draws 36
@@ -135,7 +135,9 @@ unread (`docs/open.md` § "The shelf", lines 7–9):
   drawn and tabulated"). It holds 拆補, stated three times and worked
   twice, and its tables hold 乙 in 坤 and 丁 in 艮 for 入墓 (§ "《奇門法竅》
   again"). Its 論月奇法 gives the month's 元 in the 統宗's order, flown, and
-  its 論日奇法 a flown day board of sixty days to a 局. Printed by 新文豐 in 珍本術數叢書
+  its 論日奇法 a flown day board of sixty days to a 局. Its 排宮 figures are
+  the same board set on two paper discs cut to turn, the gate one disc puts
+  on 五 taken from the other (§ "《奇門法竅》's 排宮 figures"). Printed by 新文豐 in 珍本術數叢書
   (1995), bound with 《遁甲演義》 (CiNii BA65339246).
 - 《奇門遁甲鳴法》, preface by 龍伏山人 (矯延僖 in one account), 同治辛未
   (1871). Claims descent from 峨眉山 宏農道人 and 天真子, and further back from

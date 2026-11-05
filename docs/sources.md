@@ -2596,7 +2596,8 @@ on the print. With the seven above, all eighteen are in `test/feipan.test.ts`.
 **The 排宮 figures are another object**, seen at 陽遁二局 乙丑 (PDF 139) and not
 read cell by cell: the nine palaces round a circle in their numbers, the
 centre among them, and the gates on nine seats with an empty 間 — the
-different use of the 直使 the 例言 announces for 「排宮圖內」.
+different use of the 直使 the 例言 announces for 「排宮圖內」. Read whole the
+same day, they lay this same board by turning two discs: next section.
 
 **The tables' 格 over-determine the carried heaven plate.** Each hour lists
 the 格 palace by palace, the auspicious and then the baleful. The nine whose
@@ -2626,6 +2627,69 @@ cells in question; `plate: fei`'s row gains the eighteen drawings and the 格.
 Nothing is built, and no value is lifted. For the 月家 commissioned in
 `docs/open.md`, the 統宗's order of the month's 元 has a second statement,
 and the month laid flown has a holder if `plate` is ever offered there.
+
+Last checked 2026-11-05.
+
+### 《奇門法竅》's 排宮 figures: the flown board, set on discs that turn
+
+Read on the plate 2026-11-05, in the 華齡 edition: 卷一's 例言 (p. 二, PDF 6),
+卷五's 排宮間宮直使圖說 (p. 106, PDF 127; `texts/README.md` had it in 卷四), and
+the eighteen 乙丑 figures of 卷五, PDF 138–146 under 陽 and 156–164 under 陰,
+cell by cell. Their 甲子 figures were looked at for the two headed 禽星直符,
+陽遁五局 「生門直使」 and 陰遁五局 「死門直使」, as the flown drawings head them.
+The transcription and the script that holds it to the engine are in
+`texts/qimen/faqiao-paigong/`: `paigong-yichou.tsv`, `scripts/check.mjs`, and
+`scripts/sectors.py`, which cuts a disc into its nine palaces, each turned
+upright.
+
+**The 例言 says what the two kinds of figure are.** 「奇門十八局為子房所定，其間
+飛布之法，未能詳述，故坊本將飛宮之圖誤作活盤推用，以致星門紊亂。今按陰陽順逆之法，
+演定飛宮排宮九局圖式，以明其輪轉推布之訣」: the trade prints took the flown figure
+for a 活盤 (a plate that turns), and the work prints the nine 局 twice, as 飛宮
+and as 排宮, to show both how the board is turned (輪轉) and how it is laid
+(推布). And of the gates: 「奇門直使飛排兩宮用法不同，今於排宮圖內立有間宮之法，
+上下二盤剪活輔補用之，庶六十時八門皆可值其使矣」. The two discs are to be cut out
+so they turn (剪活), and the one supplies what the other cannot place. The
+finding aid reads 端 for 專 in the sentence before (「奇門八神專行卦序，於排宮之法
+不甚符合」) and 兩 for 二 here.
+
+**What a figure is.** Four rings round an empty middle, the nine palaces in
+the order of their numbers with 五 among them. The outer ring is fixed: each
+palace with its star, gate, number, 卦 and stem. Inside it come a ring of
+gates, the heaven ring (each star with the 儀 it carries), and a second ring
+of gates. The disc is printed turned, with the 局's own palace at the
+bottom, and runs the other way round under 陰. **Each gate ring is one cycle
+of nine seats**, 休 死 傷 杜 開 驚 生 景 and an empty 間, laid along the nine
+numbers, and on every 乙丑 figure the two rings are that cycle one seat apart.
+The 圖說 says why there are two: 「惟中盤直使，因有逾六逾四之訣，輪至中宮，則直使
+間隔不能置其宮，今擬另備一盤以補之」. Its worked hour is 陽遁一局 乙丑: 「休門在
+二宮，死門在三宮，傷門在四宮，中宮無門，即用上盤杜門補置於六宮，則杜門即逾於六宮
+矣」. The gate one disc would set on 五 is taken from the other, on the far
+side of the centre.
+
+**The figures agree with the engine's `plate: fei` board on all eighteen.**
+The heaven ring is the carried plate at every palace, star and stem. The
+eight gates the engine lays over the outer palaces stand, each, on one of the
+two rings at that palace. Where a ring shows 間 the other ring has the gate,
+and the eight read off the two discs are the eight carried in order. The two
+figures that decide the 直使 decide it as the flown drawings do. 陽遁四局
+and 陰遁六局 乙丑, whose 直使 would be counted onto 五, read every gate at
+home: the 直使 waits, and the disc that sets it on 五 is the one put aside.
+陽遁五局 and 陰遁五局 乙丑 put 生門 on 乾六 and 死門 on 巽四. So 「逾六逾四」 is
+how a gate passes the centre on the turned discs. It is not a second place
+for the 直使, and **the 「用法不同」 of the 例言 is a device and not a board**:
+the 排宮 figure is the 飛宮 figure made into a volvelle. One cell disagrees:
+陰遁一局 乙丑 cuts 景 for the star 英 on 坎一, 景 being the gate whose home is
+英's palace.
+
+**What this moves.** `plate: fei`'s row gains the eighteen figures as a
+second presentation of the board in the same work. That is one text checked
+by itself again, so the rung stays at 4. Nothing is built and no value is
+lifted, and `test/feipan.test.ts` gains nothing, the 乙丑 boards being the
+ones it already holds. In this work 排宮 is not 轉盤: the 圖說 calls its flown
+boards 「排宮之圖」 too, and the modern pairing 排宮法又稱轉盤 is
+《圖解奇門遁甲大全》's and not the 法竅's.
+Nothing is left of the 法竅 for the questions this register asks.
 
 Last checked 2026-11-05.
 
