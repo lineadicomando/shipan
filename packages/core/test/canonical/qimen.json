@@ -140,6 +140,8 @@
       "options": {
         "method": "chaibu",
         "plate": "zhuan",
+        "gateSeats": "eight",
+        "spiritRing": "eight",
         "trueSolarTime": true,
         "yearBoundary": "lichun",
         "dayBoundary": "zishi",
@@ -2047,6 +2049,8 @@
     "options": {
       "method": "chaibu",
       "plate": "zhuan",
+      "gateSeats": "eight",
+      "spiritRing": "eight",
       "trueSolarTime": true,
       "yearBoundary": "lichun",
       "dayBoundary": "zishi",
@@ -2212,6 +2216,8 @@
       "options": {
         "method": "chaibu",
         "plate": "zhuan",
+        "gateSeats": "eight",
+        "spiritRing": "eight",
         "trueSolarTime": true,
         "yearBoundary": "lichun",
         "dayBoundary": "zishi",
@@ -4090,6 +4096,8 @@
     "options": {
       "method": "chaibu",
       "plate": "zhuan",
+      "gateSeats": "eight",
+      "spiritRing": "eight",
       "trueSolarTime": true,
       "yearBoundary": "lichun",
       "dayBoundary": "zishi",

@@ -49,12 +49,12 @@ describe('the identifiers a form offers', () => {
     expect([...STAR_IDS]).toEqual(ids(STARS));
   });
 
-  it('are every spirit the engine can show, which is ten and not eight', () => {
+  it('are every spirit the engine can show, which is eleven and not eight', () => {
     expect([...SPIRIT_IDS]).toEqual([...ENGINE_SPIRIT_IDS]);
 
     // Because a chart shows eight of them and which eight depends on the dun.
     // Offering one plate's worth would make baihu unaskable for half the year.
-    expect(SPIRIT_IDS).toHaveLength(10);
+    expect(SPIRIT_IDS).toHaveLength(11);
     for (const spirit of [...SPIRITS_YANG, ...SPIRITS_YIN]) {
       expect(SPIRIT_IDS).toContain(spirit.id);
     }

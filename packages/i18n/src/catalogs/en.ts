@@ -214,6 +214,7 @@ export const en = {
   'label.gate.simen': 'Death',
   'label.gate.jing1men': 'Shock',
   'label.gate.kaimen': 'Open',
+  'label.gate.zhong': 'Centre',
   // The nine stars a board of the day lays. They are not the hour board's
   // nine, and four of them share a name with something on another board —
   // 太陰 with a spirit, 青龍 and 天乙 with a general, 太乙 with an art — which
@@ -238,6 +239,7 @@ export const en = {
   'label.spirit.xuanwu': 'Dark Warrior',
   'label.spirit.jiudi': 'Nine Earth',
   'label.spirit.jiutian': 'Nine Heaven',
+  'label.spirit.taichang': 'Great Constant',
 
   'label.term.lichun': 'start of spring',
   'label.term.yushui': 'rain water',
@@ -1730,7 +1732,7 @@ export const en = {
     'nothing, with the names of a yin chart in both dun: 白虎 báihǔ and 玄武 xuánwǔ stand in a yang chart as they do in a yin one, as the hour tables of 《御定奇門大全》 yùdìngqíméndàquán have them',
   // Where the ring of the eight starts, which is all the two readings part
   // over: the order and the names are the line above.
-  'form.qimen.spiritSeat': 'The first of the eight spirits, 值符 zhífú, is seated',
+  'form.qimen.spiritSeat': 'The first of the spirits, 值符 zhífú, is seated',
   'form.qimen.spiritSeat.tianpan':
     'where the chief 值符 zhífú stands on the heaven plate, at every hour, as the hour tables of 《御定奇門大全》 yùdìngqíméndàquán have it',
   'form.qimen.spiritSeat.yinshi':
@@ -1739,7 +1741,7 @@ export const en = {
     'The other seven spirits follow the first round the palaces, in the same order under both readings. The first reading seats it where the chief stands on the heaven plate. The second does that at the five hours whose stem is 甲 jiǎ to 戊 wù; at the five whose stem is 己 jǐ to 癸 guǐ, it seats it where the chief stands on the earth plate, and so it does whenever the chief falls on the central palace. Where the two places differ, every spirit stands in another palace.',
   // Whether the lens may relate the eight spirits by the five phases, and by
   // which phases. Nothing on the board moves under any of the three.
-  'form.qimen.spiritPhase': 'In the lens, the eight spirits',
+  'form.qimen.spiritPhase': 'In the lens, the spirits',
   'form.qimen.spiritPhase.none':
     'can be picked out as a kind and stand in no relation, as in 《奇門遁甲現代應用技術》 qíméndùnjiǎxiàndàiyìngyòngjìshù',
   'form.qimen.spiritPhase.branch':
@@ -1762,9 +1764,23 @@ export const en = {
     'All three readings set the chief star on the palace of the hour’s stem. They part over how the rest follow it. The first turns the stars and the gates round the ring of eight outer palaces and leaves the centre where it is. The second counts the stars on through all nine palaces in the order of the 洛書 luòshū, the centre included, forward in a yang chart and back in a yin one, and turns the gates round the eight. The third moves every star the same number of palaces in both halves of the year, and moves the gates along the eight outer palaces in the order of their numbers. Its chief gate never stands in the centre: in the hour it would reach it, it stays where it was.',
   // The family, and the two things a day board is asked. A family is a board
   // of its own, so the first of these says what each is made of.
+  // Two 飛盤 parting over the gates and over the spirits. Both questions are
+  // asked only under `plate: fei`, and each value names the texts that hold it.
+  'form.qimen.gateSeats': 'On the flying plate, the gates are carried',
+  'form.qimen.gateSeats.eight':
+    'over the eight outer palaces, and the chief gate never stands in the centre, as 《奇門法竅》 qíménfǎqiào has it',
+  'form.qimen.gateSeats.nine':
+    'over all nine palaces, with 中 zhōng, the centre, as a ninth gate the chief gate can stand on, as 《奇門遁甲鳴法》 qíméndùnjiǎmíngfǎ and 《奇門旨歸》 qíménzhǐguī have it',
+  'form.qimen.gateSeats.note':
+    'Under both readings the gates keep the order of their home palaces and move as many palaces as the chief gate has moved. With eight gates the central palace has no gate. With nine gates every palace has one, and when the spirits are nine as well, the central palace is not lodged anywhere.',
+  'form.qimen.spiritRing': 'On the flying plate, the spirits',
+  'form.qimen.spiritRing.eight':
+    'are eight, laid round the eight outer palaces from the chief spirit, as 《奇門法竅》 qíménfǎqiào has it',
+  'form.qimen.spiritRing.nine':
+    'are nine, with 太常 tàicháng among them, flown through all nine palaces from the chief spirit, as 《奇門遁甲鳴法》 qíméndùnjiǎmíngfǎ and 《奇門旨歸》 qíménzhǐguī have it',
   'form.qimen.system': 'The board is laid off',
   'form.qimen.system.shijia':
-    'the hour, as a 時家 shíjiā board: a plate of stems, nine stars, eight gates and eight spirits',
+    'the hour, as a 時家 shíjiā board: a plate of stems, nine stars, and eight gates and eight spirits, or nine of each on one flying plate',
   'form.qimen.system.rijia':
     'the day, as a 日家 rìjiā board: eight gates and nine stars of its own',
   'form.qimen.system.nianjia':
@@ -2263,6 +2279,8 @@ export const en = {
     'This layer has no divergence of its own: it is computed entirely from the calendrical layer, and the parameters that move it are the ones listed above.',
   'notes.parameter.method': 'How the ju is established.',
   'notes.parameter.plate': 'How the heaven plate and the gates are moved.',
+  'notes.parameter.gateSeats': 'On the flying plate, whether the gates have eight seats or nine.',
+  'notes.parameter.spiritRing': 'On the flying plate, whether the spirits are eight laid round the palaces or nine flown through them.',
   'notes.parameter.centreLodging':
     'Where the centre lodges, having no direction, no gate and no spirit of its own.',
   'notes.parameter.earthPlate': 'How often the earth plate is laid anew: once for sixty hours, or at every decade of them.',
@@ -2300,8 +2318,8 @@ export const en = {
   'notes.parameter.huoling': 'How 火星 huǒxīng and 鈴星 língxīng are placed.',
   'notes.parameter.daxian': 'Where the first decade of the great limits opens.',
   'notes.parameter.spirits': 'What names the fifth and sixth spirits.',
-  'notes.parameter.spiritSeat': 'Where the ring of the eight spirits starts.',
-  'notes.parameter.spiritPhase': 'Which phase of the five each of the eight spirits has, if any.',
+  'notes.parameter.spiritSeat': 'Where the ring of the spirits starts.',
+  'notes.parameter.spiritPhase': 'Which phase of the five each spirit has, if any.',
   'notes.parameter.leap': 'Where 置閏 zhìrùn repeats its block.',
   'notes.parameter.strengths': 'What the five seasonal states are read from.',
   'notes.parameter.earth': 'Where earth’s season begins.',

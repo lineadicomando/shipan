@@ -1836,6 +1836,8 @@ under the naming of the spirits alone.
 | `system: rijia`, `yuejia`, `nianjia` | 《遁甲演義》, 《奇門遁甲統宗》 | each states the three families; they part on the 年家's three 元, which is two readings and two values of `yearYuan` |
 | `yearYuan: yisiqi` | 《遁甲演義》, 《奇門遁甲統宗》 | 「上元六十年以陰遁一局加之，中元六十年以陰遁四局加之，下元六十年以陰遁七局加之」, on the 四庫 plate; the 統宗's 附年奇門起例 in the same order, 故宮 p. 19; added 2026-11-05 |
 | `plate: fei`, `centreLodging: dunni` | 《奇門法竅》 | the earth plate carried whole and the gates carried over the eight, stated in 卷二 and 卷五, drawn on 36 boards and tabulated over 1080 hours, every printed board lodging 「中五寄艮」 under 陽 and 「中五寄坤」 under 陰; § "《奇門法竅》: the hour board flown whole, stated, drawn and tabulated"; added 2026-11-05 |
+| `gateSeats: eight`, `spiritRing: eight` | 《奇門法竅》 | 「陽遁休死傷杜開驚生景，順飛八宮，不入中五」 and 「八神不用飛宮」, 卷二 論直使 and 論八神, on every drawing of 卷五; added 2026-11-06 |
+| `gateSeats: nine`, `spiritRing: nine` | 《奇門遁甲鳴法》, 《奇門旨歸》 | the 鳴法's 「八門休死傷與杜，五開驚生景俱足」, 「直使為五人罕知」 and 「九神…陽遁順飛，陰遁逆飛」, worked on two drawn hours; the 旨歸's 1080 drawn boards, 中 the ninth gate and 太常 the sixth spirit; § "《奇門旨歸》: the 鳴法's board, drawn for all 1080 hours"; added 2026-11-06 |
 | `yearYuan: yiqisi` | 《年家奇門定局》, 《御定奇門大全》 | the tables of 遁甲集成 第三冊, 「以一七四為法」, pp. 1160–1216; the 大全's 奇門古本, 卷二十九 sheet 682, working 順治五年 on it; added 2026-11-05 |
 
 **`centreLodging: dun` is reported, not held, and the two reports do not
@@ -2766,8 +2768,10 @@ file's 60 openings are talismans and spells.
   The spirits are nine, 太常 among them, flown through nine, against the
   fixed eight round the 卦. The centre is never lodged, against lodged by the
   solstice. These are divergences between practitioners, each attributed and
-  transcribed, so each is a parameter waiting to be declared. No value is
-  built: that takes the user's word (`docs/open-recorded.md`).
+  transcribed, so each is a parameter. **Built 2026-11-06** as two axes,
+  `gateSeats` and `spiritRing`, once the 旨歸 had been read beside it: the
+  lodging is no third axis, nothing being lodged when both are `nine`
+  (§ "《奇門旨歸》").
 - **The 局** is stated in words as 拆補 at the 交節 instant: 「交氣正時為心法，
   折補之局是妙機」, and 「以交節氣之時為準而拘甲己子午卯酉為類」. But its example,
   「如乙丑日亥時交節…為中局」, is not yet reconciled with that reading, so
@@ -2865,6 +2869,11 @@ third text. `docs/open-recorded.md`'s yin flight of `xingfei` gains another
 yin plate carried as one, which still does not settle the 折衷's reading. The
 line under 飛盤 in `docs/open-recorded.md`, two ways of gates, spirits and
 centre, now stands as two schools with 1080 boards behind one of them.
+**Built on the user's word, 2026-11-06**, as two axes under `plate: fei`,
+`gateSeats` and `spiritRing`, each `nine` held by both texts:
+`test/ninefold.test.ts` holds them to the 鳴法's two drawn hours and to
+twenty-two of the 旨歸's boards, one 丙戌 of every 局 and four hours chosen
+for where the 使 stands.
 
 Last checked 2026-11-06.
 

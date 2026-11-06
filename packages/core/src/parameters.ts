@@ -303,6 +303,63 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     ],
     default: 'zhuan',
   },
+  gateSeats: {
+    board: 'qimen',
+    family: 'shijia',
+    // Two 飛盤 parting over the gates: eight carried over eight, the 直使 never
+    // in the centre, or nine seats carried over nine with 中 the fifth. See
+    // `docs/sources.md` § "《奇門遁甲鳴法》" and § "《奇門旨歸》".
+    label: 'form.qimen.gateSeats',
+    inside: { id: 'plate', value: 'fei' },
+    values: [
+      {
+        id: 'eight',
+        says: 'form.qimen.gateSeats.eight',
+        note: 'form.qimen.gateSeats.note',
+        implemented: true,
+        // 「陽遁休死傷杜開驚生景，順飛八宮，不入中五」, 卷二 論直使, drawn on 36
+        // boards and marked over the 1080 hours of 卷七–八.
+        heldBy: ['faqiao'],
+      },
+      {
+        id: 'nine',
+        says: 'form.qimen.gateSeats.nine',
+        note: 'form.qimen.gateSeats.note',
+        implemented: true,
+        // 「八門休死傷與杜，五開驚生景俱足」 and 「直使為五人罕知」, worked on two
+        // drawn hours; and 1080 drawn boards with 中 the ninth gate.
+        heldBy: ['mingfa', 'zhigui'],
+      },
+    ],
+    default: 'eight',
+  },
+  spiritRing: {
+    board: 'qimen',
+    family: 'shijia',
+    // Two 飛盤 parting over the spirits: eight round the 卦, or nine flown
+    // through the nine palaces with 太常 the sixth. The names of the middle
+    // pair are `spirits` under both.
+    label: 'form.qimen.spiritRing',
+    inside: { id: 'plate', value: 'fei' },
+    values: [
+      {
+        id: 'eight',
+        says: 'form.qimen.spiritRing.eight',
+        implemented: true,
+        // 「八神不用飛宮」, 卷二 論八神, and every drawing of 卷五.
+        heldBy: ['faqiao'],
+      },
+      {
+        id: 'nine',
+        says: 'form.qimen.spiritRing.nine',
+        implemented: true,
+        // 「九神順逆隨遁轉…陽遁順飛，陰遁逆飛」, and the same nine flown on the
+        // 旨歸's 1080 boards.
+        heldBy: ['mingfa', 'zhigui'],
+      },
+    ],
+    default: 'eight',
+  },
   centreLodging: {
     board: 'qimen',
     family: ['shijia', 'nianjia'],

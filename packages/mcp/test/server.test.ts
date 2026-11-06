@@ -632,10 +632,12 @@ describe('scan_moments', () => {
       .properties['spirit'];
 
     // baihu stands only in a yin chart. A schema built from the yang plate
-    // would make it unaskable for half the charts of the year.
+    // would make it unaskable for half the charts of the year. taichang stands
+    // only on a 飛盤 board laid with nine spirits.
     expect(spirit?.enum).toContain('baihu');
     expect(spirit?.enum).toContain('gouchen');
-    expect(spirit?.enum).toHaveLength(10);
+    expect(spirit?.enum).toContain('taichang');
+    expect(spirit?.enum).toHaveLength(11);
   });
 
   it('says that nothing answered rather than returning an empty table', async () => {

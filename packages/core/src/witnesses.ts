@@ -243,6 +243,25 @@ export const WITNESSES = {
     year: 1870,
   },
   /**
+   * 龍伏山人's manuscript, preface 1871, held as photographs of the Liaoning
+   * Library copy: the nine gate seats and the nine spirits flown, worked on
+   * 陰遁二局 and 陽遁二局 丙午.
+   */
+  mingfa: {
+    kind: 'transmitted',
+    name: { hanzi: '奇門遁甲鳴法', pinyin: 'qíméndùnjiǎmíngfǎ' },
+    year: 1871,
+  },
+  /**
+   * 朱浩文's compilation, 敘 1883, printed 1893: its 起例 credited to 甘氏, and
+   * 1080 boards drawn on the 鳴法's rule.
+   */
+  zhigui: {
+    kind: 'transmitted',
+    name: { hanzi: '奇門旨歸', pinyin: 'qíménzhǐguī' },
+    year: 1893,
+  },
+  /**
    * 張志春's second 奇門 book, which makes 三奇得使 a 奇 with the 值使 gate and
    * calls that its own provisional opinion against the transmitted pairing.
    */

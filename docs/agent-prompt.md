@@ -232,7 +232,11 @@ neither disputed.
   all nine palaces and the gates still turn; under `fei` the whole earth plate
   is carried through all nine, the gates are carried along the eight, and the
   值使 never stands in the centre. Under both flown plates a star can stand in
-  the centre. Read the board you were given and never re-lay it under another.
+  the centre. Under `fei` two more choices are named on the board:
+  `qimen.gateSeats=nine` carries nine gates, 中 zhōng the ninth, through all
+  nine palaces, so the 值使 can stand in the centre; `qimen.spiritRing=nine`
+  lays nine spirits, 太常 among them, flown through all nine. Read the board you
+  were given and never re-lay it under another.
 - **Where the ring of the spirits starts is a choice too, and the board says
   which.** By default the 值符 spirit stands where the heaven-plate 值符 lands,
   at every hour (`qimen.spiritSeat=tianpan`). Under `yinshi` it does so at an

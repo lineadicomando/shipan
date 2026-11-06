@@ -49,6 +49,34 @@ export interface ChartOptions {
   plate: 'zhuan' | 'fei' | 'xingfei';
 
   /**
+   * How many seats the gates of 飛盤 are carried over. Read under `plate: fei`
+   * and nowhere else.
+   *
+   * `eight` is 《奇門法竅》's: the eight gates carried over the eight outer
+   * palaces, the 直使 waiting on the palace before the centre the hour its
+   * count would reach it. `nine` is 《奇門遁甲鳴法》's and 《奇門旨歸》's: nine
+   * seats in their home order, 休死傷杜中開驚生景, the fifth a gate the 旨歸
+   * prints as 「中」 and the 鳴法 as 五 with no gate, all nine carried by the
+   * 直使 counted through the nine palaces — 「直使為五人罕知」 — so 中 and the
+   * 直使 may stand anywhere, the centre included.
+   */
+  gateSeats: 'eight' | 'nine';
+
+  /**
+   * How many spirits 飛盤 lays, and how. Read under `plate: fei` and nowhere
+   * else.
+   *
+   * `eight` is 《奇門法竅》's: the ring of eight round the 卦 from the 直符's
+   * palace, 「不用飛宮」, started from the lodging when the 直符 is in the
+   * centre. `nine` is 《奇門遁甲鳴法》's and 《奇門旨歸》's: 太常 seated between
+   * the fifth and the sixth, and the nine flown through the nine palaces from
+   * the 直符's, forward under yang and back under yin — 「九神…陽遁順飛，陰遁
+   * 逆飛，與奇儀無殊」. Which names the middle pair takes is `spirits`, under
+   * both.
+   */
+  spiritRing: 'eight' | 'nine';
+
+  /**
    * How often the earth plate is laid anew.
    *
    * `yuan` lays one plate for the sixty hours of a 元, the six 儀 pinned to
@@ -452,6 +480,8 @@ export interface ChartOptions {
 export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   method: 'chaibu',
   plate: 'zhuan',
+  gateSeats: 'eight',
+  spiritRing: 'eight',
   trueSolarTime: true,
   yearBoundary: 'lichun',
   dayBoundary: 'zishi',

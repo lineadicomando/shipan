@@ -218,6 +218,8 @@ dunjia's.**
 |---|---|---|
 | `method` | `chaibu` (拆補 chāibǔ), `zhirun` (置閏 zhìrùn), `maoshan` (茅山 máoshān) | `chaibu` |
 | `plate` | `zhuan` (轉盤 zhuànpán), `fei` (飛盤 fēipán — the earth plate carried whole and the gates carried over the eight, as 《奇門法竅》 lays it), `xingfei` (星飛門轉 xīngfēiménzhuàn — the stars and the 儀 flown, the gates turned) | `zhuan` |
+| `gateSeats` | under `plate: fei` only: `eight` (the eight gates carried over the eight outer palaces, as 《奇門法竅》 lays them), `nine` (nine seats with 中 zhōng the fifth, carried over all nine, as 《奇門遁甲鳴法》 and 《奇門旨歸》 lay them) | `eight` |
+| `spiritRing` | under `plate: fei` only: `eight` (round the eight outer palaces, as 《奇門法竅》 lays them), `nine` (太常 tàicháng the sixth, flown through all nine, as 《奇門遁甲鳴法》 and 《奇門旨歸》 lay them) | `eight` |
 | `centreLodging` | where the centre is read: `kun` (寄坤二 always), `dun` (陽遁寄二 · 陰遁寄八), `dunni` (陽遁寄八 · 陰遁寄二), `bajie` (八節 bājié — through all eight palaces, three terms to each), `siyu` (四隅 sìyú — through the four corners, six terms to each) | `kun` |
 | `earthPlate` | how often the earth plate is laid: `yuan` (元 yuán — once for sixty hours), `xun` (旬 xún — anew at every decade, 六戊還原) | `yuan` |
 | `system` | which family, each a board of its own: `shijia` (時家 shíjiā), `rijia` (日家 rìjiā), `nianjia` (年家 niánjiā — the hour board's procedure laid on the year pillar, always 陰遁), later `yuejia` (月家 yuèjiā) | `shijia` |
@@ -289,6 +291,21 @@ the 值符 lands there. Nothing is left for `centreTravel` to move, and it is no
 reported under `fei`. The work's own boards lodge by `dunni`, which the line
 under a board names it for; its 論寄宮 argues a reading this engine does not
 compute, the four corners by the four 立 (`docs/open.md`).
+
+**A second 飛盤 parts from the first over the gates and the spirits, and they
+are two axes.** 《奇門遁甲鳴法》 and 《奇門旨歸》 carry the same heaven plate the
+法竅 does, and then lay nine gate seats — 休 死 傷 杜 中 開 驚 生 景, the 中 a
+gate the 旨歸 prints and a seat the 鳴法 calls 五 — carried by the 值使 counted
+through all nine, so the 值使 may stand in the centre; and nine spirits, 太常
+seated after the fifth, flown from the 值符's palace forward under yang and
+back under yin. That is `gateSeats: nine` and `spiritRing: nine`, each held by
+both texts, and each read under `plate: fei` alone. **They are two parameters
+and not a school's name**, because the two divide independently in principle
+and a board laid with one and not the other is computable; the line under such
+a board says that no text lays the combination. Under both at `nine` nothing
+is read at a host — 「何必寄宮艮坤矣」 — so `centreLodging` marks no palace,
+though it is still named. 太常 has no phase in either reading of
+`spiritPhase`, and a lens that phases the spirits leaves it out.
 
 **A family is a board and not a setting of the hour board.** `system: rijia`
 is answered by `computeDayChart` with a type of its own: eight gates, nine

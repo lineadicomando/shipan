@@ -37,12 +37,12 @@ export const STAR_IDS = [
 ] as const;
 
 /**
- * Ten, not eight.
+ * Eleven, not eight.
  *
  * A chart shows eight spirits, but which eight depends on the dun: 勾陳 and
  * 朱雀 stand in a yang chart and never in a yin one, 白虎 and 玄武 the other
  * way about. A form offering only one plate's worth makes 白虎 unaskable for
- * half the charts of the year.
+ * half the charts of the year. 太常 is the ninth of `spiritRing: nine`.
  */
 export const SPIRIT_IDS = [
   'zhifu',
@@ -55,6 +55,7 @@ export const SPIRIT_IDS = [
   'xuanwu',
   'jiudi',
   'jiutian',
+  'taichang',
 ] as const;
 
 export const PATTERN_IDS = [

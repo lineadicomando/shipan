@@ -212,6 +212,7 @@ export const it: Record<MessageKey, string> = {
   'label.gate.simen': 'Morte',
   'label.gate.jing1men': 'Spavento',
   'label.gate.kaimen': 'Apertura',
+  'label.gate.zhong': 'Centro',
   'label.dayStar.taiyi': 'Grande Uno',
   'label.dayStar.sheti': 'Conduttore',
   'label.dayStar.xuanyuan': 'Timone del carro',
@@ -232,6 +233,7 @@ export const it: Record<MessageKey, string> = {
   'label.spirit.xuanwu': 'Guerriero Oscuro',
   'label.spirit.jiudi': 'Nove Terre',
   'label.spirit.jiutian': 'Nove Cieli',
+  'label.spirit.taichang': 'Grande Costante',
 
   'label.term.lichun': 'inizio della primavera',
   'label.term.yushui': 'acque di pioggia',
@@ -1596,7 +1598,7 @@ export const it: Record<MessageKey, string> = {
     'dalla metà dell’anno, ma con 白虎 báihǔ tenuto al quinto seggio nella carta yang: la tavola del 《奇門遁甲全局》 qíméndùnjiǎquánjú',
   'form.qimen.spirits.huwu':
     'sempre dalla carta yin, in entrambi i dun: 白虎 báihǔ e 玄武 xuánwǔ stanno in una carta yang come in una yin, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
-  'form.qimen.spiritSeat': 'Il primo degli otto spiriti, 值符 zhífú, si colloca',
+  'form.qimen.spiritSeat': 'Il primo degli spiriti, 值符 zhífú, si colloca',
   'form.qimen.spiritSeat.tianpan':
     'dove sta il capo 值符 zhífú sulla tavola di cielo, a ogni ora, come nelle tavole orarie del 《御定奇門大全》 yùdìngqíméndàquán',
   'form.qimen.spiritSeat.yinshi':
@@ -1605,7 +1607,7 @@ export const it: Record<MessageKey, string> = {
     'Gli altri sette spiriti seguono il primo intorno ai palazzi, nello stesso ordine in entrambe le letture. La prima lettura lo colloca dove sta il capo sulla tavola di cielo. La seconda fa lo stesso nelle cinque ore il cui tronco va da 甲 jiǎ a 戊 wù; nelle cinque il cui tronco va da 己 jǐ a 癸 guǐ lo colloca dove sta il capo sulla tavola di terra, e così fa ogni volta che il capo cade sul palazzo centrale. Dove i due posti sono diversi, ogni spirito sta in un altro palazzo.',
   // Whether the lens may relate the eight spirits by the five phases, and by
   // which phases. Nothing on the board moves under any of the three.
-  'form.qimen.spiritPhase': 'Nella lente, gli otto spiriti',
+  'form.qimen.spiritPhase': 'Nella lente, gli spiriti',
   'form.qimen.spiritPhase.none':
     'si possono isolare come gruppo e restano senza relazioni, come nel 《奇門遁甲現代應用技術》 qíméndùnjiǎxiàndàiyìngyòngjìshù',
   'form.qimen.spiritPhase.branch':
@@ -1623,9 +1625,21 @@ export const it: Record<MessageKey, string> = {
     'facendo volare stelle e tronchi per tutti e nove i palazzi mentre le porte continuano a girare, come sostiene il 《奇門遁甲折衷》 qíméndùnjiǎzhézhōng',
   'form.qimen.plate.note':
     'Le tre letture pongono la stella del capo sul palazzo del tronco dell’ora. Si separano sul modo in cui il resto la segue. La prima fa girare stelle e porte lungo l’anello degli otto palazzi esterni e lascia il centro dov’è. La seconda conta le stelle per tutti e nove i palazzi nell’ordine del 洛書 luòshū, centro compreso, in avanti in una carta yang e all’indietro in una carta yin, e fa girare le porte sugli otto. La terza sposta ogni stella dello stesso numero di palazzi in entrambe le metà dell’anno, e sposta le porte lungo gli otto palazzi esterni nell’ordine dei loro numeri. La sua porta del capo non sta mai al centro: nell’ora in cui ci arriverebbe, resta dov’era.',
+  'form.qimen.gateSeats': 'Sulla tavola volante, le porte si portano',
+  'form.qimen.gateSeats.eight':
+    'sugli otto palazzi esterni, e la porta del capo non sta mai al centro, come nel 《奇門法竅》 qíménfǎqiào',
+  'form.qimen.gateSeats.nine':
+    'su tutti e nove i palazzi, con 中 zhōng, il centro, come nona porta su cui può stare anche la porta del capo, come nel 《奇門遁甲鳴法》 qíméndùnjiǎmíngfǎ e nel 《奇門旨歸》 qíménzhǐguī',
+  'form.qimen.gateSeats.note':
+    'In entrambe le letture le porte conservano l’ordine dei loro palazzi di casa e si spostano di tanti palazzi quanti ne ha percorsi la porta del capo. Con otto porte il palazzo centrale resta senza porta. Con nove porte ogni palazzo ne ha una, e quando anche gli spiriti sono nove il palazzo centrale non viene alloggiato in nessun altro palazzo.',
+  'form.qimen.spiritRing': 'Sulla tavola volante, gli spiriti',
+  'form.qimen.spiritRing.eight':
+    'sono otto, disposti intorno agli otto palazzi esterni a partire dallo spirito del capo, come nel 《奇門法竅》 qíménfǎqiào',
+  'form.qimen.spiritRing.nine':
+    'sono nove, tra cui 太常 tàicháng, e volano per tutti e nove i palazzi a partire dallo spirito del capo, come nel 《奇門遁甲鳴法》 qíméndùnjiǎmíngfǎ e nel 《奇門旨歸》 qíménzhǐguī',
   'form.qimen.system': 'La tavola si posa',
   'form.qimen.system.shijia':
-    'sull’ora, come tavola 時家 shíjiā: tronchi in cielo e in terra, nove stelle, otto porte e otto spiriti',
+    'sull’ora, come tavola 時家 shíjiā: tronchi in cielo e in terra, nove stelle, e otto porte e otto spiriti, oppure nove porte e nove spiriti su una delle tavole volanti',
   'form.qimen.system.rijia':
     'sul giorno, come tavola 日家 rìjiā: otto porte e nove stelle proprie',
   'form.qimen.system.nianjia':
@@ -2009,6 +2023,8 @@ export const it: Record<MessageKey, string> = {
     'Questo strato non ha divergenze proprie: si calcola interamente dallo strato calendariale, e i parametri che lo spostano sono quelli elencati qui sopra.',
   'notes.parameter.method': 'Come si stabilisce il ju.',
   'notes.parameter.plate': 'Come si muovono la tavola di cielo e le porte.',
+  'notes.parameter.gateSeats': 'Sulla tavola volante, se le porte hanno otto posti o nove.',
+  'notes.parameter.spiritRing': 'Sulla tavola volante, se gli spiriti sono otto disposti intorno ai palazzi o nove che volano attraverso di essi.',
   'notes.parameter.centreLodging':
     'Dove alloggia il centro, che non ha direzione, né porta, né spirito propri.',
   'notes.parameter.earthPlate': 'Ogni quanto si stende di nuovo la tavola di terra: una volta per sessanta ore, oppure a ogni decade.',
@@ -2046,8 +2062,8 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.huoling': 'Come si collocano 火星 huǒxīng e 鈴星 língxīng.',
   'notes.parameter.daxian': 'Dove si apre il primo decennio dei grandi limiti.',
   'notes.parameter.spirits': 'Che cosa nomina il quinto e il sesto spirito.',
-  'notes.parameter.spiritSeat': 'Da dove comincia l’anello degli otto spiriti.',
-  'notes.parameter.spiritPhase': 'Quale delle cinque fasi ha ciascuno degli otto spiriti, se ne ha una.',
+  'notes.parameter.spiritSeat': 'Da dove comincia l’anello degli spiriti.',
+  'notes.parameter.spiritPhase': 'Quale delle cinque fasi ha ciascuno spirito, se ne ha una.',
   'notes.parameter.leap': 'Dove il 置閏 zhìrùn ripete il proprio blocco.',
   'notes.parameter.strengths': 'Da che cosa si leggono i cinque stati stagionali.',
   'notes.parameter.earth': 'Dove comincia la stagione della terra.',

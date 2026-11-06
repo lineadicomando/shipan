@@ -281,7 +281,8 @@ Each step names the engine parameter, or says "not modelled".
    along the outer palaces in the order of their numbers, and the 值使 never
    stands in 五: the hour it would, it stays on the palace before (the 法竅's
    drawings and tables). The 鳴法's gates fly through nine with a gateless 五,
-   and its 直使 may stand there: a second school, not built (`docs/open-recorded.md`).
+   and its 直使 may stand there: `gateSeats: nine`, with 中 named as the 旨歸
+   prints it, and nine spirits flown with 太常, `spiritRing: nine`.
 8. **The spirits.** 值符 螣蛇 太陰 六合 then the middle pair, then 九地 九天.
    They run forward under yang and backward under yin (煙波:
    「值符前三六合位，太陰之神在前二。後一宮中為九天，後二之神為九地」).
@@ -586,10 +587,11 @@ that is on the shelf.
   the 直使 counted through all nine; nothing lodged. Not the 法竅's: its
   drawings carry eight spirits and eight gates, and its 論八神 names
   「加太常飛九宮」 only as a 坊本 practice it rejects. So they are values under
-  `plate: fei` of three axes, the spirits, the gate seats and the lodging.
+  `plate: fei` of two axes, the gate seats and the spirits; nothing lodges
+  when both are nine.
   The 旨歸 (read 2026-11-06) draws the 鳴法's rule for all 1080 hours, so
-  that school has two independent texts (rung 2). Commissioned 2026-11-06
-  (`docs/open-recorded.md`).
+  that school has two independent texts (rung 2). **Built 2026-11-06**:
+  `gateSeats: nine` and `spiritRing: nine`, read under `plate: fei` alone.
 - **`method: yinpan` (陰盤, 王鳳麟).** A named modern practice with a
   stateable rule. Whether it is a 定局 method of the 時家 board or a board of
   its own (it uses the lunar month and day) is a design question. Settled by:

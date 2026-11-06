@@ -60,7 +60,8 @@ export interface Gate {
 
 export type GateId =
   | 'xiumen' | 'shengmen' | 'shangmen' | 'dumen'
-  | 'jing3men' | 'simen' | 'jing1men' | 'kaimen';
+  | 'jing3men' | 'simen' | 'jing1men' | 'kaimen'
+  | 'zhong';
 
 /** At rest, in the order the gates are always recited and always laid out. */
 export const GATES: readonly Gate[] = [
@@ -74,6 +75,19 @@ export const GATES: readonly Gate[] = [
   { id: 'kaimen', hanzi: '開門', pinyin: 'kāimén', home: 6 },
 ];
 
+/**
+ * The ninth seat of the gates under `gateSeats: nine`, at home in the centre.
+ *
+ * Not one of the eight, and never laid by any board but that one: it exists
+ * because 《奇門旨歸》 prints it as a gate on every one of its 1080 boards —
+ * 「休死傷杜中開驚生景」, the 中 with a 使 beside it when it is the 直使 — and
+ * 《奇門遁甲鳴法》 counts the 直使 onto it, 「直使為五」, though it calls the
+ * seat 五 and says it has no gate. Named as the print names it, by the one
+ * character, and kept out of `GATES` so that nothing iterating the eight
+ * finds a ninth.
+ */
+export const CENTRE_GATE: Gate = { id: 'zhong', hanzi: '中', pinyin: 'zhōng', home: 5 };
+
 export interface Spirit {
   id: SpiritId;
   hanzi: string;
@@ -84,7 +98,7 @@ export interface Spirit {
 export type SpiritId =
   | 'zhifu' | 'tengshe' | 'taiyin' | 'liuhe'
   | 'gouchen' | 'baihu' | 'zhuque' | 'xuanwu'
-  | 'jiudi' | 'jiutian';
+  | 'jiudi' | 'jiutian' | 'taichang';
 
 /**
  * The eight spirits, in the order they are laid out from the chief.
@@ -178,13 +192,14 @@ export function spiritRing(yang: boolean, spirits: ChartOptions['spirits']): rea
 }
 
 /**
- * Every spirit a chart can show, which is ten and not eight.
+ * Every spirit a chart can show, which is eleven and not eight.
  *
  * A chart shows eight, but *which* eight depends on the dun: 勾陳 and 朱雀
  * stand in a yang chart and never in a yin one, 白虎 and 玄武 the other way
  * about. A surface offering only the yang list makes 白虎 unaskable for half
  * the charts of the year, which is why this list exists rather than either
- * plate serving as one.
+ * plate serving as one. 太常 stands only on a board laid under
+ * `spiritRing: nine`.
  */
 export const SPIRIT_IDS: readonly SpiritId[] = [
   'zhifu',
@@ -197,7 +212,17 @@ export const SPIRIT_IDS: readonly SpiritId[] = [
   'xuanwu',
   'jiudi',
   'jiutian',
+  'taichang',
 ];
+
+/**
+ * The ninth spirit, seated under `spiritRing: nine` between the middle pair.
+ *
+ * 「九神者即直符騰蛇太陰六合勾陳太常朱雀九地九天也」, 《奇門遁甲鳴法》 卷上; the
+ * same nine in 《奇門旨歸》 卷一's 九神五行, 「太常 土」. 《奇門法竅》 names
+ * 「加太常飛九宮」 only as a trade print's practice it rejects.
+ */
+export const TAICHANG: Spirit = { id: 'taichang', hanzi: '太常', pinyin: 'tàicháng' };
 
 /**
  * The order the stems are laid down on the earth plate: the six instruments,
@@ -424,6 +449,70 @@ export function carriedGatePlate(chief: Gate, chiefPalace: number): ByPalace<Gat
     const at = OUTER[(((OUTER.indexOf(gate.home) + shift) % 8) + 8) % 8] as number;
     plate[at] = gate;
   }
+  return plate;
+}
+
+const nineFrom = (n: number): number => ((((n - 1) % 9) + 9) % 9) + 1;
+
+/**
+ * Where the 直使 stands under `gateSeats: nine`: counted, and the centre among
+ * the palaces it may stand on.
+ *
+ * From the instrument's palace one palace an hour through the nine Luoshu
+ * numbers, up under yang and down under yin, and nothing lodged:
+ * 「再自地盤七宮甲辰壬逆巳午時，午字在五中宮，即將驚門加之」, 《奇門遁甲鳴法》's
+ * worked 陰遁二局 丙午. 《奇門旨歸》 prints the 使 where this puts it on 1077 of
+ * the 1078 boards that print one.
+ */
+export function ninefoldGatePalace(
+  earth: ByPalace<Stem>,
+  instrument: Stem,
+  hourGanzhi: Ganzhi,
+  yang: boolean,
+): number {
+  return nineFrom(palaceOf(earth, instrument) + (yang ? 1 : -1) * (hourGanzhi.index % 10));
+}
+
+/** The gate of the instrument's palace under `gateSeats: nine`, the centre's 中 included. */
+export function ninefoldChiefGate(earth: ByPalace<Stem>, instrument: Stem): Gate {
+  const home = palaceOf(earth, instrument);
+  return home === 5 ? CENTRE_GATE : (GATES.find((gate) => gate.home === home) as Gate);
+}
+
+/**
+ * The nine gate seats under `gateSeats: nine`, carried whole.
+ *
+ * 「八門九星無分陰陽皆要須順去…蓋以九宮無逆」: the nine keep the order of their
+ * homes, 休 死 傷 杜 中 開 驚 生 景 on palaces one to nine, and every one moves as
+ * many palaces along the numbers as the 直使 has moved from its own. The board
+ * has a gate in every palace.
+ */
+export function ninefoldGatePlate(chief: Gate, chiefPalace: number): ByPalace<Gate> {
+  const shift = chiefPalace - chief.home;
+  const plate: ByPalace<Gate> = {};
+  for (const gate of [...GATES, CENTRE_GATE]) plate[nineFrom(gate.home + shift)] = gate;
+  return plate;
+}
+
+/**
+ * The nine spirits under `spiritRing: nine`, flown.
+ *
+ * The eight of `spirits` with 太常 seated after the fifth, laid through the
+ * nine palaces in their numbers from the 直符's: forward under yang, back
+ * under yin, and the centre among them — 「九神順逆隨遁轉…陽遁順飛，陰遁逆飛」.
+ * 《奇門旨歸》's 1080 boards lay 9608 of 9637 legible cells this way.
+ */
+export function ninefoldSpiritPlate(
+  chiefPalace: number,
+  yang: boolean,
+  naming: ChartOptions['spirits'] = 'dun',
+): ByPalace<Spirit> {
+  const eight = spiritRing(yang, naming);
+  const nine = [...eight.slice(0, 5), TAICHANG, ...eight.slice(5)];
+  const plate: ByPalace<Spirit> = {};
+  nine.forEach((spirit, i) => {
+    plate[nineFrom(chiefPalace + (yang ? i : -i))] = spirit;
+  });
   return plate;
 }
 

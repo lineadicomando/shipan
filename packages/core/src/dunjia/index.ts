@@ -17,6 +17,10 @@ import {
   chiefStar,
   flownPlates,
   carriedGatePalace,
+  ninefoldChiefGate,
+  ninefoldGatePalace,
+  ninefoldGatePlate,
+  ninefoldSpiritPlate,
   carriedGatePlate,
   carriedPlates,
   decadeInstrument,
@@ -243,18 +247,26 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   // falls on. Either can be the fifth, which is the whole of `centreTravel`.
   const chiefLanding = palaceOf(earth, hourStem);
 
-  const gate = chiefGate(earth, instrument, host);
-  // Under 飛盤 the count never stands in the centre, so its landing is its seat.
-  const gateLanding = carried
-    ? carriedGatePalace(earth, instrument, hourGanzhi, ju.yang, host)
-    : chiefGatePalace(earth, instrument, hourGanzhi, ju.yang);
+  // Under 飛盤 the gates have eight seats or nine. Over eight the count never
+  // stands in the centre, so its landing is its seat; over nine the centre is
+  // one of the seats, and nothing lodges.
+  const ninefoldGates = carried && options.gateSeats === 'nine';
+  const ninefoldSpirits = carried && options.spiritRing === 'nine';
+  const gate = ninefoldGates ? ninefoldChiefGate(earth, instrument) : chiefGate(earth, instrument, host);
+  const gateLanding = ninefoldGates
+    ? ninefoldGatePalace(earth, instrument, hourGanzhi, ju.yang)
+    : carried
+      ? carriedGatePalace(earth, instrument, hourGanzhi, ju.yang, host)
+      : chiefGatePalace(earth, instrument, hourGanzhi, ju.yang);
   // The eight gates ring from the lodged seat whatever the option says, and so
   // do the spirits, which lodge inside `spiritPlate`. Neither ring has a place
   // for the centre: what `centreTravel` moves is where the pair is *reported*,
   // never where the other seven stand.
-  const gates = carried
-    ? carriedGatePlate(gate, gateLanding)
-    : gatePlate(gate, lodge(gateLanding, host));
+  const gates = ninefoldGates
+    ? ninefoldGatePlate(gate, gateLanding)
+    : carried
+      ? carriedGatePlate(gate, gateLanding)
+      : gatePlate(gate, lodge(gateLanding, host));
   // 「如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符」: under
   // `spiritSeat: yinshi` the ring starts from the instrument's palace on the
   // earth plate at a 己 to 癸 hour, and at any hour the heaven-plate 值符
@@ -263,7 +275,9 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   const fromEarth =
     options.spiritSeat === 'yinshi' && (hourGanzhi.stem.index >= 5 || chiefLanding === 5);
   const spiritSeat = fromEarth ? palaceOf(earth, instrument) : chiefLanding;
-  const spirits = spiritPlate(spiritSeat, ju.yang, options.spirits, host);
+  const spirits = ninefoldSpirits
+    ? ninefoldSpiritPlate(spiritSeat, ju.yang, options.spirits)
+    : spiritPlate(spiritSeat, ju.yang, options.spirits, host);
 
   // 「行活局，符使不必寄於二，徑排入中宮」 — on the turning board the 符 and the
   // 使 need not lodge at 坤二 but go into the fifth palace itself. The clause
@@ -282,7 +296,7 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
   const chiefPalace = palace(
     travels || flown !== undefined ? chiefLanding : lodge(chiefLanding, host),
   );
-  const gatePalace = palace(travels ? gateLanding : lodge(gateLanding, host));
+  const gatePalace = palace(travels || ninefoldGates ? gateLanding : lodge(gateLanding, host));
 
   // Read off the moment's closing 節 only where the reading asks for it.
   const season = seasonAt(
@@ -316,13 +330,15 @@ export function computeQimenChart(moment: Moment, options: ChartOptions): QimenC
       // The gate's home trigram above, this palace's below. Read off the same
       // `home` the element and the relation above are read off, so the three
       // can never disagree about which trigram the gate is of.
-      const figure = hexagramOfSeats(gateHere.home, current.number);
+      // 中 has no trigram of its own, so it makes no figure.
+      const figure = gateHere.home === 5 ? undefined : hexagramOfSeats(gateHere.home, current.number);
       if (figure) contents.hexagram = figure;
     }
     if (spiritHere) contents.spirit = spiritHere;
     // Read off `lodge` rather than off the constant, so that the palace named
     // here and the palace the chief gate is read at can never come apart.
-    if (current.number !== 5 && host === current.number) {
+    // Under nine gates and nine spirits nothing is read at a host: 「何必寄宮艮坤矣」.
+    if (current.number !== 5 && host === current.number && !(ninefoldGates && ninefoldSpirits)) {
       contents.lodged = earth[5] as Stem;
     }
     if (rides === current.number) contents.heavenLodged = earth[5] as Stem;

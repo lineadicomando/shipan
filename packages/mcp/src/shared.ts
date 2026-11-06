@@ -270,6 +270,18 @@ export const qimenSchema = {
     .describe(
       'How the stars, the heaven stems and the gates are moved. Default zhuan: stars and gates turned round the eight outer palaces, the centre left where it is, as the Qimen Dunjia Tongzong has it. fei: the whole earth plate, stars with their stems, carried through all nine palaces in Luoshu order by the same number of palaces in a yang chart and a yin one, and the gates carried along the eight outer palaces in the order of their numbers, the chief gate counted one palace an hour and never standing in the centre: in the hour it would land there it stays on the palace before, as the Qimen Faqiao states, draws and tabulates. xingfei: the stars flown through all nine palaces, forward in a yang chart and back in a yin one, while the gates still turn, as the Qimen Dunjia Zhezhong holds. Under all three the chief star is set on the palace of the hour stem; every other star, stem and gate can stand somewhere else. centre_travel has nothing to move under fei and is not reported there.',
     ),
+  gate_seats: z
+    .enum(['eight', 'nine'])
+    .optional()
+    .describe(
+      'Under plate fei only: how many seats the gates are carried over. Default eight: the eight gates carried along the eight outer palaces, the chief gate never in the centre, as the Qimen Faqiao has it. nine: nine seats in their home order, rest, death, harm, block, zhong (the centre, 中), open, shock, life, view, carried by the chief gate counted one palace an hour through all nine, so the chief gate and zhong may stand anywhere, the centre included, as the Qimen Dunjia Mingfa states and works and the Qimen Zhigui draws for all 1080 hours. Under any other plate it moves nothing and is not reported.',
+    ),
+  spirit_ring: z
+    .enum(['eight', 'nine'])
+    .optional()
+    .describe(
+      'Under plate fei only: how many spirits, and how they are laid. Default eight: the eight round the eight outer palaces from the chief, as the Qimen Faqiao has it. nine: taichang (太常) seated after the fifth, and the nine flown through all nine palaces from the chief, forward in a yang chart and back in a yin one, as the Qimen Dunjia Mingfa and the Qimen Zhigui have it. Which names the middle pair takes is still spirits. When gate_seats and spirit_ring are both nine, the centre is lodged nowhere. Under any other plate it moves nothing and is not reported.',
+    ),
   system: z
     .enum(['shijia', 'rijia', 'nianjia'])
     .optional()
@@ -378,6 +390,8 @@ interface RawInput {
   spirit_seat?: 'tianpan' | 'yinshi' | undefined;
   spirit_phase?: 'none' | 'branch' | 'huaqi' | undefined;
   plate?: 'zhuan' | 'fei' | 'xingfei' | undefined;
+  gate_seats?: 'eight' | 'nine' | undefined;
+  spirit_ring?: 'eight' | 'nine' | undefined;
   system?: 'shijia' | 'rijia' | 'nianjia' | undefined;
   day_gates?: 'fei' | 'zhuan' | 'shun' | undefined;
   day_dun?: 'solstice' | 'yang' | undefined;
@@ -435,6 +449,8 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
       spiritSeat: raw.spirit_seat,
       spiritPhase: raw.spirit_phase,
       plate: raw.plate,
+      gateSeats: raw.gate_seats,
+      spiritRing: raw.spirit_ring,
       system: raw.system,
       dayGates: raw.day_gates,
       dayDun: raw.day_dun,
@@ -463,6 +479,8 @@ export function resolveInput(raw: RawInput, context: ToolContext): ResolvedInput
   if (raw.spirit_seat) options.spiritSeat = raw.spirit_seat;
   if (raw.spirit_phase) options.spiritPhase = raw.spirit_phase;
   if (raw.plate) options.plate = raw.plate;
+  if (raw.gate_seats) options.gateSeats = raw.gate_seats;
+  if (raw.spirit_ring) options.spiritRing = raw.spirit_ring;
   if (raw.system) options.system = raw.system;
   if (raw.day_gates) options.dayGates = raw.day_gates;
   if (raw.day_dun) options.dayDun = raw.day_dun;

@@ -56,7 +56,9 @@ const LENS_LAYERS_WITH_SPIRITS: readonly QimenLayer[] = ['heaven', 'earth', 'pal
  * trigram it is identified with, 勾陳 and 朱雀 from its edition's note;
  * `huaqi` is the 秘笈大全's 九神主論章, which parts from it at 值符 and 螣蛇.
  */
-export const SPIRIT_PHASES: Record<'branch' | 'huaqi', Record<SpiritId, Element>> = {
+// 太常, the ninth spirit of `spiritRing: nine`, has no phase in either text, and
+// a lens that phases the spirits leaves it out rather than give it one.
+export const SPIRIT_PHASES: Record<'branch' | 'huaqi', Record<Exclude<SpiritId, 'taichang'>, Element>> = {
   branch: {
     zhifu: 'tu',
     tengshe: 'huo',
@@ -167,7 +169,7 @@ export function qimenLens(chart: QimenChart): QimenLens {
     add('heaven', contents.heaven);
     add('earth', contents.earth);
     add('palace', contents.palace);
-    if (phasedSpirits && contents.spirit) {
+    if (phasedSpirits && contents.spirit && contents.spirit.id !== 'taichang') {
       add('spirit', { id: contents.spirit.id, element: phasedSpirits[contents.spirit.id] });
     }
     // A star and a gate take the phase of the palace they belong to at rest,
