@@ -8689,6 +8689,44 @@ argument and no rung: each row already stood on a stronger check than one
 more text. The register names the work beside each, and so does `heldBy`
 for `minggong: yuejiang`.
 
+**And the 量天尺 is a ruler of an era, which 《星度指南》 says in words and works
+on a case.** Read 2026-11-06 in the typeset edition, `qizheng/xingdu-zhinan.pdf`,
+第二篇 星盤起法 and 第七篇 演命式例. The ruler is the twelve palaces laid side
+by side, a column of degrees to each, and degrees in one row are 同絡:
+「同絡之度，即量天尺中，卯宮氐初度與辰宮直行相貫串之度即是」. It is cut anew as
+the lodges move, and a chart takes the one nearest its year: 「再查生年最近之量天尺
+（如同治生用同治尺，光緒生用光緒尺）」, 「此尺載在七政四餘曆」. The work prints
+its own, 同治甲子黃道新尺歌 of 1864 — 「翼八軫角起自辰，角八亢氐卯里存…星四張翼巳宮輪」
+— whose palaces are cut at the 中氣 in lodges of 360 degrees. On that ruler the
+row is simply the distance into the palace: 氐初 is thirteen degrees into 卯,
+and thirteen degrees into 辰 is 軫四, the 命度 its case prints. **The engine
+reproduces the case on its own default board.** For 1886-11-06 寅時 at
+Beijing it puts the Sun 13.36° into 卯 and the 命 in 辰, and 13.36° into 辰 is
+軫 4.2° under `xiudu: juxing`. The book's 起大限 counts back to the 中氣 and
+not along the degrees — 「查曆書逆尋至霜降中氣止…計歷十三日四時，折為四歲尚多
+一百六十日…又加起限十歲」 — and the engine puts 霜降 at 10-23 19:39, thirteen
+days and 8.4 hours before. Its limits then run year by year and degree by
+degree, 巳 from sixteen, 午 from twenty-six, 未 from thirty-seven, 申 from
+fifty-two, as 相貌 10, 福德 11 and 官祿 15 give. The picture of the chart in
+this edition is a Moira rendering of 2009 and not the 1941 串度表, which it
+does not reproduce, so it witnesses nothing.
+
+**What that makes of the 量天尺 for this engine.** Under `gong: zhongqi` the
+ruler is derived, not transcribed: a row is a distance into the palace, and
+the 命度 is the degree at the Sun's distance into the 命宮, in whichever frame
+`xiudu` lays. Under `gong: ci`, with palaces from 27 to 33 degrees, a row
+needs a rule — by fraction, by the 度, or by a printed ruler — and the
+《張果星宗》's 欽天監校正 table is the text that would say which. Its first
+column reads 危十, 女二, 斗三, 尾二, 氐初, 軫九, 張十, 柳三, 井七, 畢五, 胃二
+and 奎初. Ten of those are a degree or so before the 授時 table's openings,
+which looks like the same 次 carried by precession to the 欽天監's day; 危 and
+張 stand further back and may be misread. All of it was read on the plate at
+the limit of the scan, and the layout of the rest is not yet understood. **Two counts of the start are on the shelf**: degrees
+from the 命度 to the 相貌 boundary, three to a year (《張果星宗》 定限度法,
+《御定五星精義》 起大限法, 《星學大成》 起大限), and days from the 中氣 to the
+birth, three to a year (《星度指南》). The Sun's daily motion parts them by a
+few hundredths, which can move a boundary by a year.
+
 **And one collation by the way.** On djvu p. 29, 諸曆黃道宿度 tabulates the
 ecliptic widths under 統天, 開禧, 會天 and 授時. Its 授時 參 reads
 十度二十八分, the width `SHOUSHI_XIUDU` carries from its quadrant's sum and

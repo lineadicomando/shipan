@@ -133,6 +133,7 @@ phase.
 | 97 | [the ninefold 飛盤](97-the-ninefold-flying-plate.md) | done — `gateSeats` and `spiritRing` under `plate: fei` lay the 鳴法's and the 旨歸's board: nine gates with 中 the ninth, nine spirits flown with 太常, nothing lodged; 0.48.0 |
 | 98 | [the limits and the second wheel](98-the-limits-and-the-second-wheel.md) | done — 《星學大成》卷三 起大限 and the 《張果星宗》's limits read on the plate; a second copy of the 宿度過宮 wheel gives the three cells `gong: ci` waited on, put to the user; the 量天尺 located in 卷569; nothing shipped |
 | 99 | [the palaces in the lodges](99-the-palaces-in-the-lodges.md) | done — `gong: ci` built on the two copies of the 授時 宿度過宮 wheel, the 次 riding the lodges in whichever frame `xiudu` lays; 0.49.0 |
+| 100 | [the ruler of an era](100-the-ruler-of-an-era.md) | done — the 量天尺 found derived under `gong: zhongqi`, 《星度指南》's 丙戌 命度 and start reproduced by the engine; the 張果星宗's table wanted only for `gong: ci`; nothing shipped |
 
 ## The rest of the record
 

@@ -33,7 +33,7 @@ otherwise. Read a section of `docs/open.md`, not the file.
   three open-question files and this file for sentences the session outlived
   («unread», «not built», «not tagged»…).
 
-## Where it stands, 2026-11-06, end of phase 99
+## Where it stands, 2026-11-06, end of phase 100
 
 **0.49.0** on `main`, not tagged, not pushed, not deployed:
 https://shipan.it runs 0.48.0, tagged `v0.48.0`. No branch open; build,
@@ -67,7 +67,9 @@ the 量天尺's transcription (`docs/open.md` § "The shelf", line 1).
   input type, a `dayBoundary` under the board's name, a ruling on `gate`,
   `sanji`, `wufu`, `dayou` and `ding`, and a line in `lib/cacheable.ts`.
 - **The limits of a 七政四餘 life, and the 命度: wait for the 量天尺's
-  transcription** (2026-11-06).
+  transcription** (2026-11-06). Phase 100 found the ruler derived under
+  `gong: zhongqi`, with 《星度指南》's case reproduced, and wanted only for
+  `gong: ci`: put to the user whether the limits wait.
 - **囚 and 格 on the dated boards of 卷七: rung 5** (2026-10-14).
 - **The test of a count by its digits: not built** (2026-10-15).
 - **截路空亡 on a 戊 or 癸 day: wait** (2026-10-26).
