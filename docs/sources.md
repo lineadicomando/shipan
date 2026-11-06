@@ -5558,7 +5558,7 @@ that holds one of them.
 **The user's word of 2026-11-02 moved it**: a compiler's note disowning a
 layer his own juan states does not block a value whose text is attributed and
 transcribed. The year is computed since 2026-11-05 as `system: nianjia`; the
-month is commissioned (`docs/open.md` § "年家 and 月家, commissioned").
+month is commissioned (`docs/open.md` § "月家, commissioned").
 
 **And its day family intercalates on a different count.** 「凡甲子符頭超過三十日
 有奇，即宜置閏」 — thirty-odd days of 超神 before the leap, where the hour

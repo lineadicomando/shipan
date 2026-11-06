@@ -1,14 +1,14 @@
 # What stands open
 
-The questions a reading or a build would answer. **The state of what is
-unanswered**: a commit that settles a line removes it and adds what it leaves
-open. Read a section, not the file. Order is `TODO.md`; what is established,
-`docs/sources.md`; each file on the shelf, `texts/README.md`. Two files beside
-this one hold what a next step seldom needs: `docs/open-recorded.md`, the
-divergences the register carries with no parameter, and `docs/open-errands.md`,
-the small errands. Backticked names in all three are held to the code by
-`node texts/todo-check.mjs`. What was dropped is in
-`docs/history/roadmap-2026-11-06-phase97.md` and the roadmaps before it.
+The questions a reading or a build would answer. A commit that settles a line
+removes it and adds what it leaves open. Read a section, not the file. The
+order is `TODO.md`; what is established is `docs/sources.md`; each file on the
+shelf is `texts/README.md`. Beside this file, `docs/open-recorded.md` holds
+the divergences the register carries with no parameter, and
+`docs/open-errands.md` the small errands, the review of 2026-10-23 and the
+lens's leads. `node texts/todo-check.mjs` holds the backticked names in all
+three to the code. What was dropped is in
+`docs/history/roadmap-2026-11-06-phase101.md` and the roadmaps before it.
 
 ## What each refused value waits on
 
@@ -20,7 +20,7 @@ a work already held is not a witness.
 
 | | waits on |
 |---|---|
-| `system: yuejia` | **commissioned on the user's word, 2026-11-02**: the steps are § "年家 and 月家, commissioned" below |
+| `system: yuejia` | **commissioned on the user's word, 2026-11-02**: the steps are § "月家, commissioned" below |
 | `strengths: star` | which of two arrangements from the star it is — 《金鏡寶鑑》卷之四's, or the 《三元經》's that the 符應經, 紀大奎 and the 探索錄 carry — and whether it reaches past the nine stars |
 | `yuejiang: jieqi`, `yuejiang: true` | a text stating either as its own. None found, on the plate or in the extracts |
 | `zhouye: solar` | which rising, and how. One sentence of 《大六壬精解》 and the 協紀's 日出入, neither with a procedure |
@@ -34,14 +34,13 @@ a work already held is not a witness.
 | `geChong: chong` | the rule as a sentence. 盧央's board for 940 shows it of 始擊; the 《統宗》卷七 states 格 by the facing palace alone, and on its 589 board adds a 格 of the 太歲, p. 69 |
 | `leapMonth: current`, `leapMonth: split` | a manual stating either. A program computes one |
 
-## 年家 and 月家, commissioned
+## 月家, commissioned
 
-On the user's word, 2026-11-02: both are built as values of the `qimen` board's
-`system`, beside `shijia` and `rijia`, **the year first**. The 統宗's 按
-disowning the families (「諸說紛紜……非奇門所急也」) does not block them.
-Holders: 《遁甲演義》卷一 and 《奇門遁甲統宗》卷二, both already in `heldBy`.
-**The year is built** (`system: nianjia`, `yearYuan`, 2026-11-05, phase 89).
-What is left is the month, and the section goes when it is built.
+On the user's word, 2026-11-02: a value of the `qimen` board's `system`,
+beside `shijia`, `rijia` and `nianjia` (built 2026-11-05, phase 89). The
+統宗's 按 disowning the families (「諸說紛紜……非奇門所急也」) does not block
+it. Holders: 《遁甲演義》卷一 and 《奇門遁甲統宗》卷二, both already in
+`heldBy`. The section goes when the month is built.
 
 1. **The board.** `layOnPillar` in `packages/core/src/dunjia/nianjia.ts`, on
    the month pillar cut at the 節: 陰遁, the 旬首 of the month pillar for
@@ -51,26 +50,26 @@ What is left is the month, and the section goes when it is built.
    The month's three 元: 孟 一 · 仲 七 · 季 四 (演義) and 仲 一 · 孟 四 · 季 七
    (統宗). The 統宗's 又法月奇門起例 is a third (甲己加四仲月為上元…, 陽 after
    冬至 and 陰 after 夏至): declare it, and refuse it unless step 1 also covers
-   it. The month is 陰: 徐昂's 陽 is a lone parenthesis (`docs/sources.md`, the
-   遁甲釋要 section). **《奇門法竅》's 論月奇法 states the 統宗's order** and
-   enumerates its twenty years an 元, calling 子午卯酉 「四孟」 where its own
-   卷七 calls them 四仲: name the values by their branches, so `faqiao` can
-   join `tongzong` without the labels deciding. It lays the month flown,
-   「與年奇同」, which is `plate: fei` and not the turned board step 1 builds
-   (`docs/sources.md` § "《奇門法竅》 again"). The family list of `centreLodging`, `centreTravel`,
-   `centreStem` and `spirits` gains `yuejia`.
+   it. The month is 陰; 徐昂's 陽 is a lone parenthesis (`docs/sources.md`,
+   the 遁甲釋要 section). **《奇門法竅》's 論月奇法 states the 統宗's order**,
+   calling 子午卯酉 「四孟」 where its own 卷七 calls them 四仲: name the values
+   by their branches, so `faqiao` can join `tongzong` without the labels
+   deciding. It lays the month flown, 「與年奇同」, which is `plate: fei` and
+   not the turned board step 1 builds (`docs/sources.md` § "《奇門法竅》
+   again"). The family list of `centreLodging`, `centreTravel`, `centreStem`
+   and `spirits` gains `yuejia`.
 3. **Tests from the sources' own cases.** The 統宗's 附月 起例 works none.
    The 演義's two dates, the 十一月 of 1563 and of 1613 (both 甲子 months,
-   休門 at 坎), **do not fit the 三元 board**: they fall in different 元.
-   They fit 「三箇月一移」, on the 四庫 plate as transcribed: a gate three
-   months to a palace (600 months is 25 rounds of eight), a second month layer
-   beside the board, as the 日家 has two. Neither date tests the board.
+   休門 at 坎), **do not fit the 三元 board**: they fall in different 元. They
+   fit 「三箇月一移」, a gate three months to a palace (600 months is 25
+   rounds of eight), a second month layer beside the board, as the 日家 has
+   two. Neither date tests the board.
 4. **Surfaces**, as the year's: the same section, `private`, not offered by
    the consultation, the hour's drawing with nothing weighed.
 
-**Left open by the year, for when it moves again**: a bench of the
-遁甲集成 第三冊 tables, pp. 1160–1216, against `yearYuan: yiqisi`, cell by
-cell; a canonical year board in `packages/core/test/canonical/`; and a lens.
+**Left open by the year**: a bench of the 遁甲集成 第三冊 tables, pp.
+1160–1216, against `yearYuan: yiqisi`, cell by cell; a canonical year board
+in `packages/core/test/canonical/`; and a lens.
 
 ## The shelf
 
@@ -96,37 +95,6 @@ with a Tang attribution. None of that platform's files states a provenance.
 **Where the state is kept**: `docs/sources.md` what is read,
 `docs/provenance.tsv` what is held, `texts/README.md` what each file is.
 
-## The review of 2026-10-23, what it found and did not fix
-
-Each wants a plate or the user's word; rechecked against the code and the
-register 2026-10-31 and 2026-11-05.
-
-- 六壬: 無親, which the 精解 names, closed as unnamed; no row for the
-  direction of the generals, the 遁干, or 無依, 自任, 自信, 虎視, 冬蛇掩目.
-- 曆注: 臨日 carried `xiong`, where the 協紀 overrules the 《樞要歷》 and
-  calls it 吉 (華齡 OCR pdf p. 160, memorial p. 13); 十二神 at rung 4 on a
-  7 300-day check; the 神煞 row still says seven; 宜忌 refused with no
-  entry in `docs/refusals.md`; a second 喜神 rule in 卷七 leaf 47.
-- 八字: yin-stem 長生 is a school (任鐵樵) the prompt does not sign;
-  `dongzhi` turns the 大運 for six weeks with no witness; no row for
-  `dayBoundary: midnight`.
-- 奇門: no row for `spirits: fixed`, `spirits: baihu`,
-  `centreTravel: travel`; the 入墓 row (rung 4 since 2026-11-05) carrying
-  two axes that each part; the 統宗's and the 秘笈大全 卷一's copies of the
-  入墓 歌 on the plate; the 日家 refusal row, and the 飛盤 one in
-  `docs/sources.md`'s table, which `plate: fei`, `gateSeats` and `spiritRing`
-  now compute; the 十干克應 row (a second witness asked for, 70 for
-  67).
-- 七政: `luohou: ascending` with no `heldBy` and no row; the 三辰通載
-  described two ways; `minggong: yuejiang`'s 三命通會 lays on the month's
-  palace and would part from the Sun's under `gong: ci`.
-- 太乙: no row for 陽宮/陰宮; 《齊書》 likely 《南齊書》; kintaiyi (MIT)
-  exists against `docs/agent-prompt.md`'s «nothing open computes this
-  board».
-- 紫微: no row for `yearBoundary: lichun`; the five phases row's rung;
-  「辨生剋制化以定窮通」 is 斗數準繩's and not the 太微賦's; 第五冊 of the
-  絕學 holds three works; the `sihua` refusal row unmarked.
-
 ## Leads from the `shushu` skill
 
 Each art's file in `.claude/skills/shushu/disciplines/` ends on «Leads against
@@ -134,23 +102,6 @@ the register», none read on a plate. Those touching a standing question: 截路
 hours in 《星曆考原》卷五, beside 寶鏡圖's (`almanac.md`, file not held); the
 楊公忌 check, which the 協紀 says is not the 值日 count (`almanac.md`, in the
 華齡 協紀's 下 volume).
-
-## The lens, when it moves again
-
-The year board has no lens (the 奇門 endpoint answers it with none), and the month
-board is to be designed with its lens from the start; 八字 last and only if the user wants it, the relations
-there (合, 沖, the ten gods) being a different lens. Leads, none decided:
-論星辰生尅制化 (全書 卷之三, PDF 162–163) gives a 紫微 palace's ground its
-branch's phase, rung 4, its last clause odd on the plate (「土入金鄉」, the
-transcription 木鄉); a pair on 太乙's palaces, in 太乙's numbering; 六壬's
-六沖 and 六合, a general by its own phase ("Recorded, with no parameter"), the 日家's nine stars and
-the 紫微 四化 flights, each once it has its row; a phase for 太常, which
-`spiritRing: nine` lays and a phased lens leaves out — 《奇門旨歸》卷一's
-九神五行 (PDF 18) gives one to each of the nine, not read for this; 太乙's answer is cached
-`public` for a week, so a change to its shape reaches a returning reader
-late. On the 奇門 section the family selector pushes the moment's steps to
-a second line of the bar at 1920 wide; not looked at narrower, nor choosing
-another hour with the scan's dialog open.
 
 ## Surfaces and code
 
