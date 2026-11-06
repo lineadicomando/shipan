@@ -581,6 +581,16 @@ export const DIVERGENCES: readonly Divergence[] = [
     notes: { zhongqi: 'form.qizheng.gong.note', ci: 'form.qizheng.gong.note' },
   },
   {
+    id: 'qixian',
+    board: 'qizheng',
+    values: ['du', 'ri'],
+    implemented: ['du', 'ri'],
+    fallback: 'du',
+    label: 'form.qizheng.qixian',
+    says: { du: 'form.qizheng.qixian.du', ri: 'form.qizheng.qixian.ri' },
+    notes: { du: 'form.qizheng.qixian.note', ri: 'form.qizheng.qixian.note' },
+  },
+  {
     id: 'geHost',
     board: 'taiyi',
     values: ['ke', 'zhuke'],

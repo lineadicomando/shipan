@@ -33,15 +33,15 @@ otherwise. Read a section of `docs/open.md`, not the file.
   three open-question files and this file for sentences the session outlived
   («unread», «not built», «not tagged»…).
 
-## Where it stands, 2026-11-06, end of phase 100
+## Where it stands, 2026-11-06, end of phase 101
 
-**0.49.0** on `main`, not tagged, not pushed, not deployed:
-https://shipan.it runs 0.48.0, tagged `v0.48.0`. No branch open; build,
+**0.50.0** on `main`, not tagged, not pushed, not deployed:
+https://shipan.it runs 0.49.0, tagged `v0.49.0`. No branch open; build,
 typecheck and every suite pass. The shelf's three 飛盤 works are read and
-built (phases 94–97); what they left is errands. Phase 98 read the shelf's
-first line, the limits of a 七政四餘 life, and phase 99 built what it
-unlocked, `gong: ci`. The limits and the 命度 wait, by the user's word, on
-the 量天尺's transcription (`docs/open.md` § "The shelf", line 1).
+built (phases 94–97); what they left is errands. Phases 98 to 101 read the
+limits of a 七政四餘 life and built `gong: ci`, the 命度 and the 大限 with
+`qixian`. Under `gong: ci` the limits wait on the 量天尺 (`docs/open.md` §
+"The shelf", line 1).
 
 ## What to do next, in the order the user has been taking it
 
@@ -66,10 +66,6 @@ the 量天尺's transcription (`docs/open.md` § "The shelf", line 1).
 - **太乙's 月計 · 日計 · 時計: wait, all three** (2026-10-11). Each is a second
   input type, a `dayBoundary` under the board's name, a ruling on `gate`,
   `sanji`, `wufu`, `dayou` and `ding`, and a line in `lib/cacheable.ts`.
-- **The limits of a 七政四餘 life, and the 命度: wait for the 量天尺's
-  transcription** (2026-11-06). Phase 100 found the ruler derived under
-  `gong: zhongqi`, with 《星度指南》's case reproduced, and wanted only for
-  `gong: ci`: put to the user whether the limits wait.
 - **囚 and 格 on the dated boards of 卷七: rung 5** (2026-10-14).
 - **The test of a count by its digits: not built** (2026-10-15).
 - **截路空亡 on a 戊 or 癸 day: wait** (2026-10-26).

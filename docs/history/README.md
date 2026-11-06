@@ -134,6 +134,7 @@ phase.
 | 98 | [the limits and the second wheel](98-the-limits-and-the-second-wheel.md) | done — 《星學大成》卷三 起大限 and the 《張果星宗》's limits read on the plate; a second copy of the 宿度過宮 wheel gives the three cells `gong: ci` waited on, put to the user; the 量天尺 located in 卷569; nothing shipped |
 | 99 | [the palaces in the lodges](99-the-palaces-in-the-lodges.md) | done — `gong: ci` built on the two copies of the 授時 宿度過宮 wheel, the 次 riding the lodges in whichever frame `xiudu` lays; 0.49.0 |
 | 100 | [the ruler of an era](100-the-ruler-of-an-era.md) | done — the 量天尺 found derived under `gong: zhongqi`, 《星度指南》's 丙戌 命度 and start reproduced by the engine; the 張果星宗's table wanted only for `gong: ci`; nothing shipped |
+| 101 | [the limits of a life](101-the-limits-of-a-life.md) | done — the 命度 and the 大限 from 相貌 to 夫妻 under `gong: zhongqi`, with `qixian` (`du` by degrees, `ri` by days to the 中氣), held to 《星度指南》's 丙戌 case; 0.50.0 |
 
 ## The rest of the record
 

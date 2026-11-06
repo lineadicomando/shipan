@@ -73,6 +73,14 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '張果星宗', pinyin: 'zhāngguǒxīngzōng' },
   },
+  /**
+   * 《御定五星精義》, the imperial edition in the 故宮珍本叢刊, whose 起大限法 opens
+   * the limits three degrees to a year from the 命度.
+   */
+  wuxingjingyi: {
+    kind: 'transmitted',
+    name: { hanzi: '御定五星精義', pinyin: 'yùdìngwǔxīngjīngyì' },
+  },
   /** 《星度指南》, whose one dated board anchors 紫氣 and shows which node is 羅睺. */
   xingduzhinan: {
     kind: 'transmitted',

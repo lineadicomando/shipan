@@ -1042,6 +1042,14 @@ function ziweiPalaceRow(palace: ZiweiPalace, t: Translator): string[] {
   ];
 }
 
+/**
+ * An age in years from the birth: whole where the count gave a whole year, to
+ * a tenth where it gave a fraction, since `qixian: ri` counts days.
+ */
+function age(years: number): string {
+  return Number.isInteger(years) ? String(years) : years.toFixed(1);
+}
+
 export function formatQizheng(board: QizhengBoard, t: Translator): string {
   const lines = [t('cli.heading.qizheng')];
 
@@ -1075,9 +1083,26 @@ export function formatQizheng(board: QizhengBoard, t: Translator): string {
     ),
   );
 
+  // The 命度 under the palace of the life it belongs to: a lodge and a degree,
+  // said as a body's are.
+  if (board.mingdu) {
+    lines.push(
+      ...table(
+        [
+          [
+            t('cli.field.mingdu'),
+            `${glyph(board.mingdu.lodge)} ${degrees(board.mingdu.lodgeDegree)}  ` +
+              `${glyph(board.mingdu.palace)} ${degrees(board.mingdu.palaceDegree)}`,
+          ],
+        ],
+        4,
+      ),
+    );
+  }
+
   // The twelve are a labelling of the twelve palaces and are printed as one:
   // the palace first, since that is what a body was already placed in, and
-  // the name of the house after it.
+  // the name of the house after it, and the years its limit holds after that.
   lines.push(
     '',
     `  ${t('cli.field.houses')}`,
@@ -1085,10 +1110,20 @@ export function formatQizheng(board: QizhengBoard, t: Translator): string {
       board.houses.map((seat) => [
         glyph(seat.palace),
         named(seat.house, `label.house.${seat.house.id}` as MessageKey, t),
+        seat.limit ? `${age(seat.limit.from)}–${age(seat.limit.to)}` : '',
       ]),
       2,
-    ).map((line) => `  ${line}`),
+    ).map((line) => `  ${line}`.trimEnd()),
   );
+  if (board.limitStart !== null) {
+    lines.push(
+      '',
+      `  ${t('cli.field.limits', { start: age(board.limitStart) })}`,
+      `  ${t('cli.value.limitYears')}`,
+    );
+  } else {
+    lines.push('', `  ${t('cli.value.noLimits')}`);
+  }
 
   // Both said on the page and not in a document: a reader counting the
   // remainders is owed the reason where they are counting, and the frame is

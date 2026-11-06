@@ -662,6 +662,8 @@ export function qizhengReadingPrompt(
     // Where the palaces are cut follows the board too, and is said only when
     // it is the older cut: the default is what a model already assumes.
     ...(board.options.gong === 'ci' ? [`- ${t('prompt.qizheng.gong.ci')}`] : []),
+    // The limits are explained only where the board carries them.
+    ...(board.limitStart !== null ? [`- ${t('prompt.qizheng.limits')}`] : []),
     '',
     t('prompt.names'),
     '',

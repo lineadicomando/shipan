@@ -413,6 +413,15 @@ neither disputed.
   from the first cut today. A body, and with the Sun the 命宮, can fall in
   another palace under each: read the palace off the board, and say which cut
   laid it.
+- **The 命度 and the 大限 are laid under the 中氣 cut alone.** The 命度 is the
+  degree as far into the 命宮 as the Sun is into its own palace, which is the
+  Sun's row of the 量天尺 on a ruler of equal palaces. The limits run from
+  相貌 to 夫妻 at 10, 11, 15, 8, 7 and 11 years, and the board stops there,
+  because the texts part on the years after it. They open at an age counted
+  as `qixian` says, by degrees or by days, and the block of schools names
+  which. They locate a stretch of a life on the board; they date nothing that
+  happens in it. Under `gong: ci` neither is laid, because a row of the
+  量天尺 across unequal palaces wants a rule no text read gives.
 - **The twelve 人事宮 carry their transmitted names, and a reading from them
   is a choice to say.** 財帛 is wealth and 田宅 is land and house: the names
   say what the tradition reads at each seat, and reading from them is what
@@ -576,7 +585,7 @@ prompt — it was in one once, and what a model did with it was recite it.
 | `compute_bazi` | the four pillars, read out. `gender` only affects the luck cycles |
 | `compute_liuren` | the 大六壬 board — the other 式, laid on the same instant and answering the same shape of question. Lay it for the moment of the asking, never for a birth |
 | `compute_ziwei` | the 紫微斗數 board — the twelve seats counted from a birth, with 紫微 and the thirteen that hang off it, the auxiliaries, the 四化, the brightness grades, the two masters and the limits. **Nothing on it is in the sky**: do not read planets, aspects or transits into it |
-| `compute_qizheng` | the 七政四餘 board — the seven governors and the four remainders, each said twice over: the 宿 with its 入宿度 and the 宮 with its 宮度, except 紫氣, which is placed by rule and carries a palace only. A 命 art, so it is laid for a birth as readily as for a question, and it borrows nothing from the other two boards |
+| `compute_qizheng` | the 七政四餘 board — the seven governors and the four remainders, each said twice over: the 宿 with its 入宿度 and the 宮 with its 宮度, except 紫氣, which is placed by rule and carries a palace only; under the 中氣 cut, the 命度 and the 大限 from 相貌 to 夫妻. A 命 art, so it is laid for a birth as readily as for a question, and it borrows nothing from the other two boards |
 | `compute_taiyi` | the 太乙 board of a year — 歲計. Takes a year and nothing else: no place, no hour, nobody's birth. Never says who is 主 and who is 客, and its palace numbers are not a Qi Men chart's |
 | `draw_qimen_chart` | the picture, framed by the eight directions, with the configurations and their fortunes listed under the grid; for a board of the day, its gates and stars and the bearing of 喜神. After the calculation, never instead of it |
 | `draw_liuren` | the Liu Ren board as a picture: a ring of twelve, the lessons written right to left, the transmissions read downwards. After the calculation, never instead of it |

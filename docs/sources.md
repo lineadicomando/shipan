@@ -8600,8 +8600,8 @@ is either two numerals miscopied or a table nobody else on the shelf states.
 One copy cannot tell the two apart. **Its thirteen is not reproduced
 either.** Taking 翼十 in 巳 to the same fraction of 丑 puts the 命 eleven or
 twelve degrees into its palace, which makes fourteen. The table that decides
-is the 量天尺, located below and not transcribed. Nothing here is computed,
-so nothing moves.
+is the 量天尺, located below and not transcribed. The limits this engine
+computes since 2026-11-06 follow the two works and not the case, as below.
 
 **The 張果星宗 casts the limits on thirty degrees to a palace, and says
 so.** 卷569, 定行限度法, djvu p. 45:
@@ -8726,6 +8726,20 @@ from the 命度 to the 相貌 boundary, three to a year (《張果星宗》 定�
 《御定五星精義》 起大限法, 《星學大成》 起大限), and days from the 中氣 to the
 birth, three to a year (《星度指南》). The Sun's daily motion parts them by a
 few hundredths, which can move a boundary by a year.
+
+**What the engine computes, since 2026-11-06, on the user's word.** Under
+`gong: zhongqi` the board carries the 命度 and the 大限. The 命度 is the point
+as far into the 命宮 as the Sun is into its palace, the row of a ruler of
+equal palaces. The limits are the 命宮 from the birth, then 相貌, 福德, 官祿,
+遷移, 疾厄 and 夫妻 at 10, 11, 15, 8, 7 and 11 years, where every text read
+agrees; the board stops there, since 《張果星宗》 gives 奴僕, 男女 and 田宅
+four and a half years each and 《御定五星精義》 gives 五, 四 and 四. The age
+they open at is `qixian`: `du`, ten and a whole year for every three degrees
+or part of three, held by 《張果星宗》, 《御定五星精義》 and 《星學大成》; and
+`ri`, ten and a year for every three days back to the 中氣, held by
+《星度指南》. Under `gong: ci` neither is laid. `packages/core/test/limits.test.ts`
+holds both to the 丙戌 case: 軫四, thirteen days and four 時, and the entries
+in the sixteenth, twenty-sixth, thirty-seventh and fifty-second year.
 
 **And one collation by the way.** On djvu p. 29, 諸曆黃道宿度 tabulates the
 ecliptic widths under 統天, 開禧, 會天 and 授時. Its 授時 參 reads
@@ -9227,6 +9241,8 @@ shoushi`.
 | `ziqi: yinianyisu` | 《張果星宗》, 《星度指南》 | the rate from the first's 算法, which its own 總論 contradicts by a year; the anchor from the second's one dated board, good to a palace |
 | `luohou: descending` | 《星度指南》 | the same board, 羅 in 亥 and 計 in 巳. The section calls it «the art's convention» and names no other text for it |
 | `minggong: yuejiang` | 《星學大成》, 《三命通會》, 《張果星宗》 | 起立命 in the first and 安命度法 in the third, each with a case on the Sun's palace; the second lays the hour on the month's palace |
+| `qixian: du` | 《張果星宗》, 《御定五星精義》, 《星學大成》 | 定限度法, 起大限法 and 起大限, each counting three degrees to a year from the 命度 with ten added |
+| `qixian: ri` | 《星度指南》 | 起大限法 and the 丙戌 case, counting three days to a year from the 中氣 with ten added |
 | `gong: ci` | 《星學大成》, 《張果星宗》 | the 授時 宿度過宮 wheel, printed in both and read on the plate in both, eight cells agreeing to the 秒; each work opens the limits on it |
 
 **Not yet attributed.** `luohou: ascending` is computed and is put on 湯若望

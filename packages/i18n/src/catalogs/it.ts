@@ -2051,6 +2051,7 @@ export const it: Record<MessageKey, string> = {
     'Quale nodo porta il nome 羅睺 luóhóu, e all’altro tocca 計都 jìdū.',
   'notes.parameter.minggong': 'Come si trova il palazzo del sé.',
   'notes.parameter.gong': 'Dove si tagliano i dodici palazzi.',
+  'notes.parameter.qixian': 'Come si conta l’età a cui si aprono i grandi limiti.',
   'notes.parameter.epoch': 'Da quale 上元積年 shàngyuánjīnián corre il conto.',
   'notes.parameter.ji': 'In quale registro si posa la tavola.',
   'notes.parameter.geHost': 'Per i corpi di chi si segna la condizione 格 gé.',
@@ -2513,6 +2514,8 @@ export const it: Record<MessageKey, string> = {
     'In quale 宿 xiù si trovi un corpo, e a quale grado, è misurato contro le ampiezze che il 授時曆 shòushílì del 1281 dà alle dimore lungo l’equatore, portate all’eclittica e all’istante di questo quadro con il metodo di quel calendario, come lo espone il 授時曆故 shòushílìgù. È la tavola di un calendario e non il cielo di questo istante: per le dimore le cui stelle stanno lontane dall’eclittica può scostarsi di parecchi gradi da dove quelle stelle sono ora, quindi un corpo vicino a un confine può cadere, secondo le stelle, in un’altra dimora. Pesala come la cornice di quel calendario, e pesala dove un grado sta facendo un lavoro in ciò che scrivi, non in una sezione a sé prima che la lettura cominci.',
   'prompt.qizheng.gong.ci':
     'I dodici palazzi di questo quadro sono i 次 cì. Ciascuno si apre alla dimora e al grado che gli dà la tavola del 授時曆 shòushílì, come la stampano il 星學大成 xīngxuédàchéng e il 張果星宗 zhāngguǒxīngzōng; si muovono quindi con le dimore e sono disuguali, larghi fra 27 e 33 gradi. Distano circa mezzo palazzo dai palazzi tagliati ai 中氣 zhōngqì, che usa la maggior parte dei quadri moderni, e con questo taglio il palazzo della vita segue il palazzo del Sole. Leggi i palazzi come li dispone questo taglio, e dillo dove un palazzo sta facendo un lavoro in ciò che scrivi, non in una sezione a sé.',
+  'prompt.qizheng.limits':
+    'Dove sono mostrati i 大限 dàxiàn, ogni seggio da 相貌 xiàngmào a 夫妻 fūqī tiene un tratto di anni, dopo che il 命宮 mìnggōng ha tenuto i primi: dieci, undici, quindici, otto, sette e undici, su cui concordano tutti i testi letti. La tavola si ferma lì perché sugli anni dei seggi successivi i testi si separano. L’età a cui si apre la corsa si conta come dice la scuola nominata sotto i pilastri: in gradi dal 命度 mìngdù, oppure in giorni dal 中氣 zhōngqì prima della nascita. Il 命度 è il grado del 命宮 sulla riga del Sole nel 量天尺 liàngtiānchǐ, cioè tanto dentro il 命宮 quanto il Sole è dentro il proprio palazzo. Questi collocano un tratto di vita sulla tavola. Non datano un evento, e nulla qui dice che cosa vi accadrà.',
   'prompt.qizheng.board': 'Il quadro',
   'prompt.qizheng.opening':
     'Poi situa la nascita, in una o due frasi tue: che cosa ha davanti (una nascita scritta in cielo, il sole, la luna, i cinque pianeti e i corpi d’ombra contro le ventotto 宿 xiù in cui il cielo cinese è tagliato) e quando è stata stesa. Situa e prosegui: nessun paragrafo su che cosa sia l’arte, che cosa sia il destino, o che cosa stai per fare.',
@@ -2690,6 +2693,7 @@ export const it: Record<MessageKey, string> = {
   'cli.column.motion': 'corre',
   'cli.column.house': 'palazzo di',
   'cli.column.standing': 'vi sta',
+  'cli.column.qizhengLimit': 'grande limite, età',
   'cli.column.seat': 'seggio',
   // Il nome accessibile delle dodici aree sensibili sovrapposte al
   // disegno. Non portano testo proprio — il seggio sta sotto, sulla
@@ -2718,6 +2722,8 @@ export const it: Record<MessageKey, string> = {
   'cli.field.remainders': 'i complementi',
   'cli.field.minggong': 'palazzo della vita',
   'cli.field.houses': 'i dodici palazzi',
+  'cli.field.mingdu': 'grado della vita 命度 mìngdù',
+  'cli.field.limits': 'i grandi limiti 大限 dàxiàn si aprono a {start} anni',
 
   'cli.heading.ziwei': 'La tavola di Zi Wei Dou Shu',
   // Detto nella trascrizione perché è un dato che ha mosso la tavola: gira il
@@ -2751,6 +2757,11 @@ export const it: Record<MessageKey, string> = {
   'form.qizheng.luohou': 'Il corpo 羅睺 luóhóu è',
   'form.qizheng.luohou.descending': 'il nodo discendente: la legge degli astrologi',
   'form.qizheng.luohou.ascending': 'il nodo ascendente: 湯若望 Tāng Ruòwàng e il 時憲曆 shíxiànlì',
+  'form.qizheng.qixian': 'L’età a cui si aprono i grandi limiti si conta',
+  'form.qizheng.qixian.du': 'in gradi dal grado della vita 命度 mìngdù, tre per anno',
+  'form.qizheng.qixian.ri': 'in giorni dal 中氣 zhōngqì prima della nascita, tre per anno',
+  'form.qizheng.qixian.note':
+    'Entrambi i conti aggiungono dieci anni e danno un anno ogni tre, ed entrambi valgono solo quando i palazzi sono tagliati ai 中氣 zhōngqì. Il primo conta i gradi fra il grado della vita e il bordo del palazzo seguente, come lo enunciano il 張果星宗 zhāngguǒxīngzōng e il 御定五星精義 yùdìngwǔxīngjīngyì, e dà un anno intero, da undici a venti. Il secondo conta i giorni a ritroso fino al 中氣, come lo svolge il 星度指南 xīngdùzhǐnán, e dà una frazione d’anno. Il Sole percorre poco più o poco meno di un grado al giorno, perciò i due conti possono aprire i limiti a un anno di distanza.',
   'form.qizheng.gong': 'I dodici palazzi sono tagliati',
   'form.qizheng.gong.zhongqi': 'ai 中氣 zhōngqì: ogni trenta gradi del cammino del Sole, dall’equinozio di primavera',
   'form.qizheng.gong.ci': 'nelle dimore, come i 次 cì: dove la tavola del 授時曆 shòushílì apre ciascun palazzo',
@@ -2767,6 +2778,12 @@ export const it: Record<MessageKey, string> = {
     'tre, non quattro: 紫氣 zǐqì si può collocare ed è lasciato fuori qui, con la velocità che poggia su un’opera sola e la posizione su un’unica carta del 1886, dove questi tre sono calcolati da un’effemeride',
   // Detto una volta sotto una tavola il cui quadro non ha nulla di pubblicato
   // contro cui essere verificato. Vedi `docs/history/`, fase 16.
+  // Gli anni sono detti una volta, sotto la tabella, così una colonna di età
+  // non ha bisogno di un'intestazione; e l'arresto dopo 夫妻 è detto dove si vede.
+  'cli.value.limitYears':
+    'le età sono anni dalla nascita; i limiti arrivano fino a 夫妻 fūqī, l’ultimo palazzo sui cui anni concordano tutti i testi letti',
+  'cli.value.noLimits':
+    'nessun grado della vita e nessun grande limite su questa tavola: si dispongono solo quando i palazzi sono tagliati ai 中氣 zhōngqì',
   'cli.value.qizhengFrame':
     'le dimore cominciano alle loro stelle di riferimento, collocate a questo istante; nessuna tavola di 宿度 xiùdù e nessuna epoca vi entra',
 

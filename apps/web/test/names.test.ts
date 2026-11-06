@@ -88,6 +88,8 @@ const READINGS: Readonly<Record<string, string>> = {
   十八飛星: 'shíbāfēixīng',
   宿: 'xiù',
   宿度: 'xiùdù',
+  命度: 'mìngdù',
+  夫妻: 'fūqī',
   // The divisor of a 定度法, which prose names where it says what a rate
   // stands on. No board seats it, so the engine cannot say it.
   大數: 'dàshù',

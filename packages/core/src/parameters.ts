@@ -1263,6 +1263,32 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
     ],
     default: 'zhongqi',
   },
+  qixian: {
+    board: 'qizheng',
+    label: 'form.qizheng.qixian',
+    values: [
+      // 定限度法 「如命躔星五度，在星盤中午宮第五行上，則是十五歲行限」; 起大限法
+      // 「隔三度以內為十一歲出限」; 起大限 「交三度起一歲」.
+      {
+        id: 'du',
+        name: { hanzi: '度', pinyin: 'dù' },
+        says: 'form.qizheng.qixian.du',
+        note: 'form.qizheng.qixian.note',
+        implemented: true,
+        heldBy: ['xingzong', 'wuxingjingyi', 'xingxuedacheng'],
+      },
+      // 「查曆書逆尋至霜降中氣止…計歷十三日四時，折為四歲尚多一百六十日」.
+      {
+        id: 'ri',
+        name: { hanzi: '日', pinyin: 'rì' },
+        says: 'form.qizheng.qixian.ri',
+        note: 'form.qizheng.qixian.note',
+        implemented: true,
+        heldBy: ['xingduzhinan'],
+      },
+    ],
+    default: 'du',
+  },
 };
 
 export const TAIYI_PARAMETERS: ParameterSet<TaiyiOptions> = {

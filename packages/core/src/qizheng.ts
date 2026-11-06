@@ -2,6 +2,7 @@ import { LODGES, type Lodge, type LodgeId } from './almanac.js';
 import {
   bodyPosition,
   starLongitude,
+  sunCrossing,
   type EphemerisBody,
   type EphemerisContext,
 } from './ephemeris.js';
@@ -127,6 +128,26 @@ export interface QizhengOptions {
    * 紫氣 is a palace counted from a palace, and is not moved by the cut.
    */
   gong: 'zhongqi' | 'ci';
+
+  /**
+   * How the age the 大限 opens at is counted, three to a year and ten added.
+   *
+   * `du` counts degrees from the 命度 back to the edge of the 相貌宮, and a
+   * part of three counts as a whole: 《張果星宗》 卷567 定限度法 and
+   * 《御定五星精義》 起大限法 state it — 「隔三度以內為十一歲出限…隔三十度以內則
+   * 為二十歲出限」 — and 《星學大成》卷三 起大限 counts it on the 宿. It gives a
+   * whole year, eleven to twenty.
+   *
+   * `ri` counts days from the 中氣 before the birth, as 《星度指南》 does —
+   * 「查曆書逆尋至霜降中氣止…計歷十三日四時，折為四歲尚多一百六十日…又加起限
+   * 十歲」 — and gives a fraction of a year. The Sun runs a little faster or
+   * slower than a degree a day, so the two can part by a year.
+   *
+   * Read only under `gong: zhongqi`. Under `gong: ci` no 命度 is laid and no
+   * limit is counted, because a row of the 量天尺 across palaces of unequal
+   * width wants a rule no text read gives.
+   */
+  qixian: 'du' | 'ri';
 }
 
 export const DEFAULT_QIZHENG_OPTIONS: QizhengOptions = Object.freeze({
@@ -135,6 +156,7 @@ export const DEFAULT_QIZHENG_OPTIONS: QizhengOptions = Object.freeze({
   luohou: 'descending',
   minggong: 'yuejiang',
   gong: 'zhongqi',
+  qixian: 'du',
 });
 
 export type GovernorId =
@@ -327,7 +349,27 @@ export interface HouseSeat {
   house: House;
   palace: Branch;
   ci: Ci;
+  /**
+   * The ages, in years from the birth, this seat's 大限 runs between.
+   *
+   * The 命宮 holds the years before the first limit. 相貌 to 妻妾 follow at
+   * 10, 11, 15, 8, 7 and 11 years, as 《張果星宗》, 《御定五星精義》 and
+   * 《星度指南》 all give them. The other five are null: there the witnesses
+   * part, 奴僕 four and a half years in one and five in another. All twelve
+   * are null under `gong: ci`.
+   */
+  limit: { from: number; to: number } | null;
 }
+
+/** The years each 大限 holds, from 相貌, where the witnesses agree. */
+export const LIMIT_YEARS: readonly { house: HouseId; years: number }[] = [
+  { house: 'xiangmao', years: 10 },
+  { house: 'fude', years: 11 },
+  { house: 'guanlu', years: 15 },
+  { house: 'qianyi', years: 8 },
+  { house: 'jie', years: 7 },
+  { house: 'fuqi', years: 11 },
+];
 
 /**
  * A palace of the ring and nothing finer, which is all some rules give.
@@ -407,6 +449,20 @@ export interface QizhengBoard {
   remainders: readonly Placement[];
   /** 命宮, which under 加時 is a palace and carries no degree. */
   minggong: { palace: Branch; ci: Ci };
+  /**
+   * 命度, the degree of the 命宮 that stands on the Sun's row of the 量天尺.
+   *
+   * Under `gong: zhongqi` a row is a distance into the palace, so this is the
+   * point as far into the 命宮 as the Sun is into its own palace:
+   * 《星度指南》's 「同絡之度」, and its case, 氐初 in 卯 to 軫四 in 辰. Null
+   * under `gong: ci`.
+   */
+  mingdu: Standing | null;
+  /**
+   * The age the first 大限 opens at, counted as `qixian` says. A whole year
+   * under `du`, a fraction under `ri`. Null under `gong: ci`.
+   */
+  limitStart: number | null;
   /**
    * The twelve 人事宮, numbered from the 命宮, each on the palace it fell on.
    *
@@ -493,6 +549,11 @@ export function ziqiLongitude(julianDayUT: number): number {
   );
 }
 
+/** The longitude a palace opens at under the 中氣 cut. */
+function palaceOpening(palace: Branch): number {
+  return mod12(10 - palace.index) * 30;
+}
+
 /** The palace a longitude falls in: every thirtieth degree, running backwards. */
 function palaceOfLongitude(longitude: number): Branch {
   const index = (10 - Math.floor(longitude / 30) + 12) % 12;
@@ -575,7 +636,7 @@ export function qizhengBoard(
   options: QizhengOptions,
   context: EphemerisContext,
 ): QizhengBoard {
-  requireImplemented(QIZHENG_PARAMETERS, options, 'xiudu', 'ziqi', 'minggong', 'gong', 'luohou');
+  requireImplemented(QIZHENG_PARAMETERS, options, 'xiudu', 'ziqi', 'minggong', 'gong', 'luohou', 'qixian');
 
   const { julianDay, hour } = request;
   // The stars themselves, placed at the instant, or the 授時曆's lodges
@@ -642,9 +703,36 @@ export function qizhengBoard(
   // 夫妻 lands opposite 命, 田宅 a quarter turn along where the sky is
   // deepest, 官祿 where it is highest. See `HOUSES` for why this direction and
   // not the other.
+  // The 命度 and the limits, under the 中氣 cut alone. The Sun's distance into
+  // its palace is the row of the 量天尺, and the same row in the 命宮 is the
+  // 命度; the distance from there back to the edge of the 相貌宮 is the same
+  // number again, which is what `du` counts.
+  let mingdu: Standing | null = null;
+  let limitStart: number | null = null;
+  if (options.gong === 'zhongqi') {
+    const row = sun.palaceDegree;
+    mingdu = standingOf(palaceOpening(minggongPalace) + row, boundaries);
+    if (options.qixian === 'ri') {
+      const zhongqi = sunCrossing(sun.longitude - row, julianDay - 33, context);
+      limitStart = 10 + (julianDay - zhongqi) / 3;
+    } else {
+      limitStart = 10 + Math.max(1, Math.ceil(row / 3));
+    }
+  }
+
+  const limits = new Map<HouseId, { from: number; to: number }>();
+  if (limitStart !== null) {
+    limits.set('ming', { from: 0, to: limitStart });
+    let from = limitStart;
+    for (const { house, years } of LIMIT_YEARS) {
+      limits.set(house, { from, to: from + years });
+      from += years;
+    }
+  }
+
   const houses = HOUSES.map((house, number) => {
     const palace = BRANCHES[mod12(minggongPalace.index - number)] as Branch;
-    return { house, palace, ci: CI[palace.index] as Ci };
+    return { house, palace, ci: CI[palace.index] as Ci, limit: limits.get(house.id) ?? null };
   });
 
   return {
@@ -652,6 +740,8 @@ export function qizhengBoard(
     governors,
     remainders,
     minggong: { palace: minggongPalace, ci: CI[minggongPalace.index] as Ci },
+    mingdu,
+    limitStart,
     houses,
     options,
   };

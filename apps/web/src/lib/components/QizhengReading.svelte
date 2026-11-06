@@ -35,6 +35,10 @@
   const carriesZiqi = $derived(board.remainders.some((one) => one.body.id === 'ziqi'));
 
   const degrees = (value: number): string => `${value.toFixed(2)}°`;
+
+  /** An age in years: whole where the count gave a whole year, else to a tenth. */
+  const age = (years: number): string =>
+    Number.isInteger(years) ? String(years) : years.toFixed(1);
 </script>
 
 <div class="reading">
@@ -42,6 +46,12 @@
     {t('cli.field.minggong')}:
     <strong>{t(`label.ci.${board.minggong.ci.id}` as MessageKey)}</strong>
     <span class="glyph">{glyph(board.minggong.palace)} · {glyph(board.minggong.ci)}</span>
+    {#if board.mingdu}
+      <br />
+      <Named text={t('cli.field.mingdu')} />:
+      <span class="glyph">{glyph(board.mingdu.lodge)}</span>
+      <span class="deg">{degrees(board.mingdu.lodgeDegree)}</span>
+    {/if}
   </p>
 
   <h2>{t('cli.field.governors')}</h2>
@@ -92,6 +102,7 @@
           <th scope="col">{t('cli.column.palace')}</th>
           <th scope="col">{t('cli.column.house')}</th>
           <th scope="col">{t('cli.column.standing')}</th>
+          <th scope="col">{t('cli.column.qizhengLimit')}</th>
         </tr>
       </thead>
       <tbody>
@@ -112,6 +123,7 @@
                 {position > 0 ? ' · ' : ''}<span class="glyph">{glyph(one.body)}</span>
               {/each}
             </td>
+            <td class="deg">{seat.limit ? `${age(seat.limit.from)}–${age(seat.limit.to)}` : ''}</td>
           </tr>
         {/each}
       </tbody>
@@ -132,6 +144,16 @@
     <Named text={t(carriesZiqi ? 'web.note.qizhengFour' : 'web.note.qizhengThree')} />
   </p>
   <p class="note"><Named text={t('web.note.qizhengFrame')} /></p>
+  <!-- Where the limits open, and why they stop where they stop, said under
+       the table that shows them; or, under the other cut, why there are none. -->
+  {#if board.limitStart !== null}
+    <p class="note">
+      <Named text={t('cli.field.limits', { start: age(board.limitStart) })} />;
+      <Named text={t('cli.value.limitYears')} />
+    </p>
+  {:else}
+    <p class="note"><Named text={t('cli.value.noLimits')} /></p>
+  {/if}
 </div>
 
 <style>

@@ -626,7 +626,12 @@ describe('the register weighs what a board hands out', () => {
       governors: ['the places of the seven governors'],
       remainders: ['四餘 — 羅睺, 計都, 月孛', '紫氣 — the fourth 餘, placed to a palace and to no degree'],
       minggong: ['命宮 by 立命 加時'],
-      houses: ['the twelve 人事宮'],
+      houses: ['the twelve 人事宮', 'the 大限: the years from 相貌 to 夫妻, and the age they open at by degrees'],
+      mingdu: ["命度, the degree of the 命宮 on the Sun's row of the 量天尺"],
+      limitStart: [
+        'the 大限: the years from 相貌 to 夫妻, and the age they open at by degrees',
+        "the 大限's opening age by days from the 中氣",
+      ],
     },
   };
 

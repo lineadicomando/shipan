@@ -317,7 +317,12 @@ board through the pillars. Not modelled.
   year (星學大成 卷三; 張果星宗一 「以生年支加在命宮，逆數至太歲宮」), turning
   at the birthday. 月限 from the 小限. 童限 before the 大限 (張果星宗 says the
   小限 and 童限 「未聞果老言也，惟鄭希誠…」).
-- Engine: none of it. The order is the check on the 人事宮 direction.
+- Engine, since 2026-11-06, under `gong: zhongqi` only: `mingdu` (the
+  Sun's distance into its palace, laid in the 命宮, 《星度指南》's 同絡) and
+  `limit` on each `HouseSeat` for 命 and 相貌 to 夫妻; `qixian: du` (degrees,
+  張果星宗 and 御定) or `ri` (days to the 中氣, 星度指南). 奴僕 onward is left
+  open, where the witnesses part. 小限, 月限, 童限 and 限度主 are not computed.
+  The order is the check on the 人事宮 direction.
 
 ## 4. How a board is read
 
@@ -430,9 +435,8 @@ from `palace`; 度主 → from `lodge`; 命度 and 身 → not given
 → from the year stem in the pillars. The tables of §§ 3.7–3.8 are web
 transcriptions with no register entry: leads to read on the plate, not
 quantities to compute and sign as 星學大成/張果星宗's;
-順逆 → `motion`, and 留 is refused (no threshold; `speed` travels); 限 → not
-computed, derivable from `houses` and the table § 3.11, start age unknown
-without a 命度.
+順逆 → `motion`, and 留 is refused (no threshold; `speed` travels); 限 → `mingdu`,
+`limitStart` and `HouseSeat.limit` under `gong: zhongqi`, as § 3.11 says.
 
 Refused, and why (`TODO.md` § 1): `xiudu: shixian` (a table with a citable
 epoch), `minggong: ascendant` (a holder). 紫氣 to a degree: `docs/refusals.md`

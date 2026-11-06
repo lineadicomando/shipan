@@ -2307,6 +2307,7 @@ export const en = {
     'Which node bears the name 羅睺 luóhóu, the other taking 計都 jìdū.',
   'notes.parameter.minggong': 'How the palace of the self is found.',
   'notes.parameter.gong': 'Where the twelve palaces are cut.',
+  'notes.parameter.qixian': 'How the age the great limits open at is counted.',
   'notes.parameter.epoch': 'Which 上元積年 shàngyuánjīnián the count runs from.',
   'notes.parameter.ji': 'Which register the board is laid in.',
   'notes.parameter.geHost': 'Whose bodies the condition 格 gé is marked for.',
@@ -2833,6 +2834,8 @@ export const en = {
     'Which 宿 xiù a body is in, and at what degree, is measured against the widths the 授時曆 shòushílì of 1281 gives the lodges along the equator, carried to the ecliptic and to the instant of this board by that calendar’s own method, as the 授時曆故 shòushílìgù sets it out. That is a calendar’s table and not the sky at this instant: for the lodges whose stars lie far from the ecliptic it can stand several degrees from where those stars are now, so a body near a boundary may sit in another lodge by the stars. Weigh it as that calendar’s frame, and weigh it where a degree is doing work in what you write, not in a section of its own before the reading starts.',
   'prompt.qizheng.gong.ci':
     'The twelve palaces on this board are the 次 cì. Each opens at the lodge and degree the 授時曆 shòushílì table gives it, as the 星學大成 xīngxuédàchéng and the 張果星宗 zhāngguǒxīngzōng print it, so they move with the lodges and are unequal, between 27 and 33 degrees wide. They stand about half a palace from the palaces cut at the 中氣 zhōngqì, which most modern boards use, and the palace of the self follows the Sun’s palace under this cut. Read the palaces as this cut lays them, and say so where a palace is doing work in what you write, not in a section of its own.',
+  'prompt.qizheng.limits':
+    'Where the 大限 dàxiàn are shown, each seat from 相貌 xiàngmào to 夫妻 fūqī holds a stretch of years, after the 命宮 mìnggōng has held the first: ten, eleven, fifteen, eight, seven and eleven, which every text read agrees on. The board stops there because the texts part on the years of the seats after it. The age the run opens at is counted as the school named under the pillars says: in degrees from the 命度 mìngdù, or in days from the 中氣 zhōngqì before the birth. The 命度 is the degree of the 命宮 on the Sun’s row of the 量天尺 liàngtiānchǐ, which is as far into the 命宮 as the Sun is into its own palace. These locate a stretch of life on the board. They do not date an event, and nothing here says what will happen in one.',
   'prompt.qizheng.board': 'The board',
   // In the model's own words, situating and nothing else: the frame a reading
   // needs is where and when, and anything more is preamble.
@@ -3090,6 +3093,7 @@ export const en = {
   'cli.column.motion': 'running',
   'cli.column.house': 'palace of',
   'cli.column.standing': 'standing there',
+  'cli.column.qizhengLimit': 'great limit, ages',
   'cli.column.seat': 'seat',
   // The accessible name of the twelve hit-areas laid over the drawing.
   // They carry no text of their own — the seat is under them, on the
@@ -3121,6 +3125,8 @@ export const en = {
   'cli.field.remainders': 'the remainders',
   'cli.field.minggong': 'palace of the life',
   'cli.field.houses': 'the twelve palaces',
+  'cli.field.mingdu': 'degree of the life 命度 mìngdù',
+  'cli.field.limits': 'the great limits 大限 dàxiàn open at {start} years',
 
   'cli.heading.ziwei': 'The Zi Wei Dou Shu board',
   // Said in the transcript because it is an input that moved the board: it
@@ -3154,6 +3160,11 @@ export const en = {
   'form.qizheng.luohou': 'Which node is 羅睺 luóhóu',
   'form.qizheng.luohou.descending': 'the descending node: the astrologers’ law',
   'form.qizheng.luohou.ascending': 'the ascending node: 湯若望 Tāng Ruòwàng and the 時憲曆 shíxiànlì',
+  'form.qizheng.qixian': 'The age the great limits open at is counted',
+  'form.qizheng.qixian.du': 'in degrees from the degree of the life 命度 mìngdù, three to a year',
+  'form.qizheng.qixian.ri': 'in days from the 中氣 zhōngqì before the birth, three to a year',
+  'form.qizheng.qixian.note':
+    'Both counts add ten years and give one year for every three, and both are used only when the palaces are cut at the 中氣 zhōngqì. The first counts the degrees between the degree of the life and the edge of the next palace, as the 張果星宗 zhāngguǒxīngzōng and the 御定五星精義 yùdìngwǔxīngjīngyì state it, and gives a whole year from eleven to twenty. The second counts the days back to the 中氣, as the 星度指南 xīngdùzhǐnán works it, and gives a fraction of a year. The Sun covers a little more or a little less than a degree a day, so the two counts can open the limits a year apart.',
   'form.qizheng.gong': 'The twelve palaces are cut',
   'form.qizheng.gong.zhongqi': 'at the 中氣 zhōngqì: every thirty degrees of the Sun’s path, from the spring equinox',
   'form.qizheng.gong.ci': 'in the lodges, as the 次 cì: where the 授時曆 shòushílì table opens each palace',
@@ -3170,6 +3181,12 @@ export const en = {
     'three, not four: 紫氣 zǐqì can be placed and is left out here, its rate resting on one work and its position on a single board of 1886, where these three are computed from an ephemeris',
   // Said once under a board whose frame nothing published can be held
   // against. See `docs/history/` phase 16.
+  // The years are said once, under the table, so a column of ages needs no
+  // heading of its own; and the stop after 夫妻 is said where it is seen.
+  'cli.value.limitYears':
+    'ages are years from the birth; the limits are given as far as 夫妻 fūqī, the last palace whose years every text read agrees on',
+  'cli.value.noLimits':
+    'no degree of the life and no great limits on this board: they are laid only when the palaces are cut at the 中氣 zhōngqì',
   'cli.value.qizhengFrame':
     'the lodges begin at their determinative stars, placed at this instant; no table of 宿度 xiùdù and no epoch enters',
 

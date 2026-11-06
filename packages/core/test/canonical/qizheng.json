@@ -498,6 +498,42 @@
         }
       }
     },
+    "mingdu": {
+      "longitude": 111.7544839692249,
+      "lodge": {
+        "id": "jing",
+        "hanzi": "井",
+        "pinyin": "jǐng",
+        "planet": {
+          "hanzi": "木",
+          "pinyin": "mù"
+        }
+      },
+      "lodgeDegree": 16.897420071902744,
+      "palace": {
+        "index": 7,
+        "id": "wei",
+        "hanzi": "未",
+        "pinyin": "wèi",
+        "element": "tu",
+        "yang": false
+      },
+      "ci": {
+        "id": "chunshou",
+        "hanzi": "鶉首",
+        "pinyin": "chúnshǒu",
+        "branch": {
+          "index": 7,
+          "id": "wei",
+          "hanzi": "未",
+          "pinyin": "wèi",
+          "element": "tu",
+          "yang": false
+        }
+      },
+      "palaceDegree": 21.754483969224907
+    },
+    "limitStart": 18,
     "houses": [
       {
         "house": {
@@ -525,6 +561,10 @@
             "element": "tu",
             "yang": false
           }
+        },
+        "limit": {
+          "from": 0,
+          "to": 18
         }
       },
       {
@@ -553,7 +593,8 @@
             "element": "huo",
             "yang": true
           }
-        }
+        },
+        "limit": null
       },
       {
         "house": {
@@ -581,7 +622,8 @@
             "element": "huo",
             "yang": false
           }
-        }
+        },
+        "limit": null
       },
       {
         "house": {
@@ -609,7 +651,8 @@
             "element": "tu",
             "yang": true
           }
-        }
+        },
+        "limit": null
       },
       {
         "house": {
@@ -637,7 +680,8 @@
             "element": "mu",
             "yang": false
           }
-        }
+        },
+        "limit": null
       },
       {
         "house": {
@@ -665,7 +709,8 @@
             "element": "mu",
             "yang": true
           }
-        }
+        },
+        "limit": null
       },
       {
         "house": {
@@ -693,6 +738,10 @@
             "element": "tu",
             "yang": false
           }
+        },
+        "limit": {
+          "from": 69,
+          "to": 80
         }
       },
       {
@@ -721,6 +770,10 @@
             "element": "shui",
             "yang": true
           }
+        },
+        "limit": {
+          "from": 62,
+          "to": 69
         }
       },
       {
@@ -749,6 +802,10 @@
             "element": "shui",
             "yang": false
           }
+        },
+        "limit": {
+          "from": 54,
+          "to": 62
         }
       },
       {
@@ -777,6 +834,10 @@
             "element": "tu",
             "yang": true
           }
+        },
+        "limit": {
+          "from": 39,
+          "to": 54
         }
       },
       {
@@ -805,6 +866,10 @@
             "element": "jin",
             "yang": false
           }
+        },
+        "limit": {
+          "from": 28,
+          "to": 39
         }
       },
       {
@@ -833,6 +898,10 @@
             "element": "jin",
             "yang": true
           }
+        },
+        "limit": {
+          "from": 18,
+          "to": 28
         }
       }
     ],
@@ -841,7 +910,8 @@
       "ziqi": "yinianyisu",
       "luohou": "descending",
       "minggong": "yuejiang",
-      "gong": "zhongqi"
+      "gong": "zhongqi",
+      "qixian": "du"
     }
   },
   "2026-10-15, two 逆行": {
@@ -1343,6 +1413,42 @@
         }
       }
     },
+    "mingdu": {
+      "longitude": 291.8220634090642,
+      "lodge": {
+        "id": "dou",
+        "hanzi": "斗",
+        "pinyin": "dǒu",
+        "planet": {
+          "hanzi": "木",
+          "pinyin": "mù"
+        }
+      },
+      "lodgeDegree": 11.265066961910293,
+      "palace": {
+        "index": 1,
+        "id": "chou",
+        "hanzi": "丑",
+        "pinyin": "chǒu",
+        "element": "tu",
+        "yang": false
+      },
+      "ci": {
+        "id": "xingji",
+        "hanzi": "星紀",
+        "pinyin": "xīngjì",
+        "branch": {
+          "index": 1,
+          "id": "chou",
+          "hanzi": "丑",
+          "pinyin": "chǒu",
+          "element": "tu",
+          "yang": false
+        }
+      },
+      "palaceDegree": 21.822063409064185
+    },
+    "limitStart": 18,
     "houses": [
       {
         "house": {
@@ -1370,6 +1476,10 @@
             "element": "tu",
             "yang": false
           }
+        },
+        "limit": {
+          "from": 0,
+          "to": 18
         }
       },
       {
@@ -1398,7 +1508,8 @@
             "element": "shui",
             "yang": true
           }
-        }
+        },
+        "limit": null
       },
       {
         "house": {
@@ -1426,7 +1537,8 @@
             "element": "shui",
             "yang": false
           }
-        }
+        },
+        "limit": null
       },
       {
         "house": {
@@ -1454,7 +1566,8 @@
             "element": "tu",
             "yang": true
           }
-        }
+        },
+        "limit": null
       },
       {
         "house": {
@@ -1482,7 +1595,8 @@
             "element": "jin",
             "yang": false
           }
-        }
+        },
+        "limit": null
       },
       {
         "house": {
@@ -1510,7 +1624,8 @@
             "element": "jin",
             "yang": true
           }
-        }
+        },
+        "limit": null
       },
       {
         "house": {
@@ -1538,6 +1653,10 @@
             "element": "tu",
             "yang": false
           }
+        },
+        "limit": {
+          "from": 69,
+          "to": 80
         }
       },
       {
@@ -1566,6 +1685,10 @@
             "element": "huo",
             "yang": true
           }
+        },
+        "limit": {
+          "from": 62,
+          "to": 69
         }
       },
       {
@@ -1594,6 +1717,10 @@
             "element": "huo",
             "yang": false
           }
+        },
+        "limit": {
+          "from": 54,
+          "to": 62
         }
       },
       {
@@ -1622,6 +1749,10 @@
             "element": "tu",
             "yang": true
           }
+        },
+        "limit": {
+          "from": 39,
+          "to": 54
         }
       },
       {
@@ -1650,6 +1781,10 @@
             "element": "mu",
             "yang": false
           }
+        },
+        "limit": {
+          "from": 28,
+          "to": 39
         }
       },
       {
@@ -1678,6 +1813,10 @@
             "element": "mu",
             "yang": true
           }
+        },
+        "limit": {
+          "from": 18,
+          "to": 28
         }
       }
     ],
@@ -1686,7 +1825,8 @@
       "ziqi": "yinianyisu",
       "luohou": "descending",
       "minggong": "yuejiang",
-      "gong": "zhongqi"
+      "gong": "zhongqi",
+      "qixian": "du"
     }
   }
 }
