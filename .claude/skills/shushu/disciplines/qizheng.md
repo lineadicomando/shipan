@@ -195,7 +195,7 @@ chúnwěi (雙女), 午 鶉火 chúnhuǒ (獅子), 未 鶉首 chúnshǒu (巨蟹
 - **立命 by 加時** — the birth hour laid on the Sun's palace, counted to 卯:
   星學大成 卷三 起立命; **張果星宗一 安命度法** 「以生時加太陽宮，順數遇卯，即是
   命宮也。如太陽在子宮，酉時生人，以酉時加在子宮，順數到午遇卯即是命宮也。蓋日出
-  在卯」 (集成 卷567, *web transcription*). Engine: `minggong: yuejiang`
+  在卯」 (集成 卷567, read on the plate 2026-11-06). Engine: `minggong: yuejiang`
   (`heldBy: xingxuedacheng, santong`). 星學大成 卷四 看星節要 writes 「以生時
   加在太陽度上**逆數**至卯」 for the same act — the wording differs, the count
   does not; do not read it as a second rule.
@@ -302,6 +302,13 @@ board through the pillars. Not modelled.
   age set by the 命度's place in its palace — 11 to 20 (張果星宗一 定限度法;
   星學大成 「交三度起一歲」, 「九歲以前在童限」). 「命宮十五年者乃古之法，則不可
   拘執」 (張果星宗). 洞微限, 竹羅三限 and 百六 variants: 卷七.
+  **Read on the plate 2026-11-06**: 星學大成 卷三 起大限 (「交三度起一歲」 from
+  女二 for a 命 in 子) and its case, whose ages give 福德 10 and 遷移 9 where
+  張果星宗 卷567 年分訣 and 卷569 定行限度法 give 11 and 8. The latter casts
+  every palace as thirty degrees crossed at a fixed rate, 相貌 3° a year,
+  官祿 2°, 福德 and 妻妾 2.727°… The 量天尺 is 卷569's 授時過宮度 table, at
+  集成 第468冊 djvu p. 45, not transcribed (register § "《星學大成》卷三
+  起大限's figures…").
 - 限度: the lodge the limit is passing through; its 度主 is the limit's ruler
   (張果星宗十六 限度主論; 卷583 限度).
 - 小限: one palace a year against the branches, from the 命宮 at the birth
@@ -426,8 +433,9 @@ computed, derivable from `houses` and the table § 3.11, start age unknown
 without a 命度.
 
 Refused, and why (`TODO.md` § 1): `xiudu: shixian` (a table with a citable
-epoch), `minggong: ascendant` (a holder), `gong: ci` (a second copy of three
-cells, and a decision on its frame). 紫氣 to a degree: `docs/refusals.md`
+epoch), `minggong: ascendant` (a holder), `gong: ci` (the second copy of the three
+cells is read since 2026-11-06, the 集成's 度數所在過宮圖; what is left is the
+user's word and a decision on its frame). 紫氣 to a degree: `docs/refusals.md`
 § "紫氣". 留 (no threshold), 化曜, 十神, 度主 and the 生剋恩難 layer as
 doctrine: `docs/sources.md` § "What is not here" (七政四餘). The prompt
 (`prompt.qizheng.*`) forbids importing aspects and rulerships: read that as
@@ -467,13 +475,16 @@ Western ones — the art's own 宮主 and 照 are fair to use, attributed.
 - **人事宮 direction**: 張果星宗一 十二宮例 (★ 卷567) states it with an example;
   杜牧's epitaph (樊川文集 卷六ff., not held) fixes it in 852. 星學大成 卷三
   already states it (register § 人事十二宮); 張果星宗 would be a second work.
-- **`minggong: yuejiang`, a second holder**: 張果星宗一 安命度法 (★). Same
-  rule, on the Sun's palace.
+- **`minggong: yuejiang`, a second holder**: 張果星宗一 安命度法, read on the
+  plate 2026-11-06 and in the register; `heldBy` does not name it yet
+  (`docs/open.md` § "Surfaces and code").
 - **`minggong` third reading**: 萬民英 卷六 安命論, sunrise corrected by
   season (★ vol. 809, 卷六 first leaf). Decide whether it is a holder for
   `ascendant` or a value of its own.
-- **命度 by 量天尺 / 對度**: 星學大成 卷三, 張果星宗一, 臺曆 (卷六). A table of
-  對度 is what is missing; TODO § 2 line 4 already names the 量天尺.
+- **命度 by 量天尺 / 對度**: 星學大成 卷三, 張果星宗一, 臺曆 (卷六). The table
+  is located, 張果星宗三 授時過宮度 (集成 第468冊 djvu p. 45), and wants a
+  transcription to a reader's brief: `docs/open.md` § "The shelf", line 1.
+  With it the 大限 could be computed: thirty degrees a palace, a rate each.
 - **身宮, four readings** (§ 3.6) — a parameter when a board carries a 身.
 - **化曜** — one transmission, identical in two compilations; whose year
   boundary (冬至 per 星學大成) is open.
@@ -497,10 +508,9 @@ Western ones — the art's own 宮主 and 照 are fair to use, attributed.
 - **«`gong: zhongqi` has no text named»**: 明史 卷25 names it the 西洋之法
   (*web transcription*) — a holder, and an argument that the board's default
   palaces are the 時憲's while its other values are pre-Qing lines.
-- **人事宮 direction, a second work.** The register, `prompt.qizheng.direction`
-  and the header of `qizheng.ts` stand on 星學大成 卷三 alone. 張果星宗一
-  十二宮例 (on the shelf, 集成 卷567) and 杜牧's epitaph (852, not held) would
-  add a second work and a date.
+- **人事宮 direction, a date.** 張果星宗一 十二宮例 was read on the plate on
+  2026-11-06 and is the second work (「逆數輪轉」, with a case). 杜牧's
+  epitaph (852, not held) would add a date.
 - **«三辰通載 is not a second work»** (§ 四餘): 張果星宗十二 introduces it as a
   book with 「各卷經義」, an elementary work it draws on (*web transcription*,
   集成 卷578). It is still one text in two compilations, so the count of

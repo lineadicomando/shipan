@@ -33,12 +33,15 @@ otherwise. Read a section of `docs/open.md`, not the file.
   three open-question files and this file for sentences the session outlived
   («unread», «not built», «not tagged»…).
 
-## Where it stands, 2026-11-06, end of phase 97
+## Where it stands, 2026-11-06, end of phase 98
 
 **0.48.0** on `main`, tagged `v0.48.0` (and `v0.47.0` on its own commit),
 pushed and deployed: https://shipan.it runs 0.48.0. No branch open; build,
 typecheck and every suite pass. The shelf's three 飛盤 works are read and
-built (phases 94–97); what they left is errands.
+built (phases 94–97); what they left is errands. Phase 98 read the shelf's
+first line, the limits of a 七政四餘 life, and shipped nothing: the 量天尺 is
+located and waits on a transcription (`docs/open.md` § "The shelf", line
+1), and `gong: ci` waits on the user's word.
 
 ## What to do next, in the order the user has been taking it
 
@@ -64,6 +67,8 @@ built (phases 94–97); what they left is errands.
   input type, a `dayBoundary` under the board's name, a ruling on `gate`,
   `sanji`, `wufu`, `dayou` and `ding`, and a line in `lib/cacheable.ts`.
 - **`gong: ci`**: not until a second copy gives the three miscopied cells.
+  **It has, on 2026-11-06**: the 《張果星宗》's 度數所在過宮圖 in the 集成.
+  Put to the user with what the value computes under `xiudu: juxing`.
 - **囚 and 格 on the dated boards of 卷七: rung 5** (2026-10-14).
 - **The test of a count by its digits: not built** (2026-10-15).
 - **截路空亡 on a 戊 or 癸 day: wait** (2026-10-26).

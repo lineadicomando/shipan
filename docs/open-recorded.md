@@ -48,7 +48,8 @@ of [`docs/open.md`](open.md), and held to the code with it by
   生剋 from the branch a general rides, which the lens computes, and no text
   read relates by the general's own. A text doing so names a value beside it.
 - **七政四餘.** The 身 as the Moon or as the degree facing the 命; the 命宮 to
-  a lodge and a degree by a 量天尺; the 距星 of 觜 and 參. Which node 羅睺 is:
+  a lodge and a degree by a 量天尺, whose table is located in the 《張果星宗》's
+  卷569 and not transcribed; the 距星 of 觜 and 參. Which node 羅睺 is:
   《星學大成》 names 天首 and 天尾 and does not say.
 - **太乙.** Two of the three tests of 陰陽和不和: 太乙's palace against a
   count, where no count is named, and 王希明's lists, which three prints give

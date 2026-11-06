@@ -25,7 +25,7 @@ a work already held is not a witness.
 | `yuejiang: jieqi`, `yuejiang: true` | a text stating either as its own. None found, on the plate or in the extracts |
 | `zhouye: solar` | which rising, and how. One sentence of 《大六壬精解》 and the 協紀's 日出入, neither with a procedure |
 | `xiudu: shixian` | a table with an epoch that can be cited |
-| `gong: ci` | a second copy for 女, 井 and 張 of 《星學大成》卷一's 宿度過宮之圖 — the 《元史·曆志》 has the 曆's own — and a decision on what it computes under the default frame |
+| `gong: ci` | the user's word. The second copy is read (2026-11-06): the 《張果星宗》's 度數所在過宮圖 gives 女, 井 and 張 as the symmetry bounded them, and both works cast the limits by these boundaries. What is left is a decision on what the value computes under the default frame |
 | `minggong: ascendant` | a holder. A second method and not a second reading |
 | `epoch: taojin` | 《太乙淘金歌》, not held; known through 盧央, who sets evidence against it |
 | `ji: yueji` | the user's word, «wait» (`TODO.md`, "Decisions held open"); read as a procedure. A board that takes an instant |
@@ -80,7 +80,7 @@ sweep of a book. A file's offsets and map are its row in `texts/README.md`.
 
 | | what would move | where |
 |---|---|---|
-| 1 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
+| 1 | the 量天尺 itself, which the 命度, the 對度 and the age a limit opens at are read off, and whether 《星學大成》's worked 大限 (13, 23, 33, 48 …) is a miscopy or a second table of years | 《張果星宗》 in the 集成, `qizheng/gujin-tushu-jicheng-xingmingbu-468.djvu`, 卷569, djvu p. 45: 授時過宮度, a row of thirty degrees for each palace, and 逐年行限度法 beside it, some four hundred cells for a reader's brief. 《星學大成》's own limits, 洞微限 and 百六限 in 卷八–十三, would answer the second half. Read so far: `docs/sources.md` § "《星學大成》卷三 起大限's figures, and the 張果星宗's tables of the limits and the 量天尺" |
 | 2 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
 | 3 | where a 日家 count running at a solstice ends: finished at its 癸亥, or dropped on the solstice day as `dayDun: solstice` drops it | 《金函玉鏡》下冊, `qimen/jinhan-yujing-2.pdf`, 卷二十 p. 413, 「冬至艮宮夏坤地，命起甲子順逆行」 and the lines around it; read so far for the anchor only |
 
@@ -169,6 +169,10 @@ another hour with the scan's dialog open.
   eight `GATES`, and `CENTRE_GATE` stands outside them, so a scan under
   `gateSeats: nine` cannot ask for it. 太常 is offered (`SPIRIT_IDS`, eleven)
   and found only under `spiritRing: nine`, silently otherwise, as `gongpo`.
+- **`heldBy` for `minggong: yuejiang` does not name the 《張果星宗》**, whose
+  安命度法 states it on the Sun's palace with a worked case, read on
+  2026-11-06. Adding it changes what the declaration block says about the
+  canonical 七政四餘 board, so it rides with the next commit that ships.
 - **A configuration may carry no fortune**, since `stemPairs: jinhan`:
   `Pattern.valence` and `valenceOf` are optional, and every surface prints the
   mark without one. A surface added later has to do the same.

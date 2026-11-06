@@ -131,6 +131,7 @@ phase.
 | 95 | [the 鳴法](95-the-mingfa.md) | done — 《奇門遁甲鳴法》's 第一章 and worked case read on the manuscript: the 法竅's heaven plate, but gates and spirits flown through nine and nothing lodged, 34 cells fitting; a second 飛盤 school recorded and put to the user, not built |
 | 96 | [the 旨歸](96-the-zhigui.md) | done — 《奇門旨歸》's 起例 read and its 1080 drawn boards transcribed by nine readers and held to the 鳴法's rule, cell by cell; that school rises to rung 2 and is commissioned |
 | 97 | [the ninefold 飛盤](97-the-ninefold-flying-plate.md) | done — `gateSeats` and `spiritRing` under `plate: fei` lay the 鳴法's and the 旨歸's board: nine gates with 中 the ninth, nine spirits flown with 太常, nothing lodged; 0.48.0 |
+| 98 | [the limits and the second wheel](98-the-limits-and-the-second-wheel.md) | done — 《星學大成》卷三 起大限 and the 《張果星宗》's limits read on the plate; a second copy of the 宿度過宮 wheel gives the three cells `gong: ci` waited on, put to the user; the 量天尺 located in 卷569; nothing shipped |
 
 ## The rest of the record
 

@@ -48,7 +48,8 @@ Each reading's errands, newest first, from phase 86; the earlier ones are in
 
 In the 符應經, the note in small characters under
 the title at 遁甲集成 第三冊 p. 1136, and 玉女守門 as two tables in two
-copies; in 《星學大成》, the figures of 起大限. In the 《統宗》: the lunar
+copies; in the 集成's 度數所在過宮圖, 井's 分 and 畢's 秒, at the limit of
+the scan. In the 《統宗》: the lunar
 constants of 卷二, one damaged, and its 朓朒 leaves pp. 22–27, seen and not
 read; the rest of 推四神太乙立成歷, p. 108, to collate; the reign printed
 for 1444 in the list of gates; two characters of the note under the heading

@@ -8363,6 +8363,9 @@ below, takes the 命 to a lodge and a degree off a 量天尺, which is casting i
 the lodges, which is a decision about what the value computes under `xiudu:
 juxing`. The second copy is not far: the
 授時's own 黃道十二次宿度 is in the 《元史·曆志》, which is not held.
+The second copy arrived on 2026-11-06 by another road, the 《張果星宗》's
+copy of the same wheel in the 集成: § "《星學大成》卷三 起大限's figures, and
+the 張果星宗's tables of the limits and the 量天尺".
 
 **And the leaves after the wheels are dignities.** Leaves 5 to 8: 星辰分野所屬
 廟旺喜樂之圖, which names the twelve 宮 as 白羊 to 雙魚 beside the branches
@@ -8424,7 +8427,9 @@ the 時, a 時 to a 旬, which is the count 《三命通會》 gives and no fine
 starts a man at 丙寅 forward and a woman at 壬申 back. 起大限 is headed 「琴堂
 洞微皆同」 and opens the limits from the degree of the 命, with a table of
 童限 by lodge and one case worked from a Sun at 翼十度; its figures were not
-collated. The 月限 follow, and a note on reading the 日宿. None of the limits
+collated. They have been since, and the «table» is a rule of three degrees to
+a year: § "《星學大成》卷三 起大限's figures, and the 張果星宗's tables of the
+limits and the 量天尺". The 月限 follow, and a note on reading the 日宿. None of the limits
 is computed.
 
 **Still not reached**: which node 羅睺 is and where 紫氣 is put. The leaves
@@ -8559,6 +8564,130 @@ aside: one compilation carrying both.
 lodges, which are the wheels of 卷一.
 
 Last checked 2026-10-08.
+
+### 《星學大成》卷三 起大限's figures, and the 張果星宗's tables of the limits and the 量天尺
+
+Read on the plate on 2026-11-06. 《星學大成》卷三 leaves 24 verso to 25,
+the volume's p. 339 (djvu p. 344), at the file's full resolution; and in the
+《古今圖書集成》's 《張果星宗》, 第468冊 (`W02275`), 卷567 張果星宗一 on djvu
+pp. 22–29 and 卷569 張果星宗三 on djvu pp. 38–46. Each 集成 page is three
+half-leaves, and 卷567 opens on 之一一葉.
+
+**起大限 is short, and its case is the only figure in it.** Leaves 24
+verso to 25:
+
+> 起大限（琴堂洞微皆同）命宮十五為例，以太陽正處為中度，遇交宮隨宮交三度起一歲。
+> 如立命在子，女二女三女四共三度起十一歲，女五女六女七共三度起十二歲，女八女九
+> 女十起十三歲，後照此順推。如八月十四日太陽在巳翼十度，照量天尺本行下推，即十
+> 三歲出童限入寅，二十三卯，三十三辰，四十八巳，五十七午，六十四未，七十五申之例。
+
+So the 命宮 holds the first years, and the 大限 proper begins at eleven to
+twenty, a year later for every three degrees between the 命's degree and the
+end of its palace. **The 子 palace is counted from 女二**, which is the
+reading § "《星學大成》卷一" bounded for the miscopied 女一度三十八秒 of its
+own wheel, and the copy below gives in full.
+
+**The case runs one year off the 張果星宗 at two boundaries, and the two
+cancel.** It enters 寅 at thirteen, so the 命 is in 丑 and 寅 is 相貌. Its
+spans are 相貌 10, 福德 10, 官祿 15, 遷移 9, 疾厄 7 and 妻妾 11. The
+《張果星宗》 states 福德 11 and 遷移 8 twice, in verse in 卷567's 年分訣
+(「命宮十五貌宮十，福德妻宮十一詳，官祿十五最高位，遷移止有八年糧，疾厄七兮…財帛兄弟五年強，田宅子孫并奴僕，四年之半定毫芒」) and as rates in 卷569's
+定行限度法 (below). 《御定五星精義》, which names 「果老五星」 as its source,
+gives the same eleven and eight (`QZ-07` on the shelf). Under that table the
+case's ages would be 23, 34, 49, 57, 64, 75. The print has 三十三 and
+四十八, read twice at full resolution, and every other age matches. So the case
+is either two numerals miscopied or a table nobody else on the shelf states.
+One copy cannot tell the two apart. **Its thirteen is not reproduced
+either.** Taking 翼十 in 巳 to the same fraction of 丑 puts the 命 eleven or
+twelve degrees into its palace, which makes fourteen. The table that decides
+is the 量天尺, located below and not transcribed. Nothing here is computed,
+so nothing moves.
+
+**The 張果星宗 casts the limits on thirty degrees to a palace, and says
+so.** 卷569, 定行限度法, djvu p. 45:
+
+> 百秒為一分，百分為一度。相貌限管十年，一年行三度，四個月行一度。官祿限管十五年，
+> 一年行二度，六個月行一度。福德、妻妾每限管十一年，一年行二度七十二分七秒，四個月
+> 十二日行一度。遷移限管八年，一年行三度七十五分，三個月零六日行一度。疾厄限管七
+> 年，一年行四度二十八分五十秒，二個月二十四日行一度。奴僕、男女、田宅每限管四年
+> 半，一年行六度六十分六秒，一個月二十四日行一度。兄弟、財帛每限管五年，一年行六
+> 度，兩個月行一度。
+
+Every rate is thirty degrees over the palace's years: 30 ⁄ 11 is 2.7273,
+30 ⁄ 7 is 4.2857 and 30 ⁄ 4½ is 6.6667. The three printed seconds are the
+hand's truncations of those, and the 分 of the last reads 六十 where the
+quotient gives 六十六. 卷567's 定限度法 casts on the same scale:
+「以命度在某宮第幾行，則知某歲行限也。如命躔星五度，在星盤中午宮第五行上，
+則是十五歲行限…如命躔張十一十二十三度，則是二十歲行限矣。大抵行限早以十一歲起，
+行限遲即二十歲止。以星盤度數上起限更便，以量天尺九難」. That passage closes on
+九難 as printed. Laid on the 授時 boundaries, 星五 falls in 午's fifth three
+degrees and 張十一 to 十三 in its tenth, as the passage says.
+
+**The 量天尺 is a table, and this compilation prints it.** Immediately after
+定行限度法 on djvu p. 45 come two grids. The first is 逐年行限度法, headed
+欽天監校正 and read 「橫看」, with degrees one to thirty against the ages in
+each palace. The second is 授時過宮度, a row for each of 子限 to 亥限 giving
+the lodge and degree at each of the palace's thirty, with small characters
+beside many cells. It is what 「照量天尺本行下推」 and the 對度 of 卷567's
+安命度法 (「如太陽躔子宮虛六度，對著午宮星五度」) read across. Neither grid
+was transcribed: they are some four hundred cells, a reader's job with a
+brief. djvu p. 46 holds blank 逐年行度 forms, a palace to a block.
+
+**And 卷567 prints the 星學大成's wheel a second time.** djvu p. 28 (之一四葉),
+度數所在過宮圖, under the 圖說 the 星學大成 prints between its own wheels:
+「度數過宮周天三百六十五度四分度之一，分配十二宮，其過宮分秒具于圖中，百秒為一
+分，百分為一度」. Its spokes were turned upright and read. The three cells
+that § "《星學大成》卷一" set aside read:
+
+| 宮 | 《星學大成》卷一 | 《張果星宗》, 集成 卷567 |
+|---|---|---|
+| 子 | 女一度三十八秒 | 女二度六分三十八秒 |
+| 未 | 井九度三十四分九十四秒 | 井八度三十四分九十四秒 |
+| 巳 | 張十四度三十六分六秒 | 張十五度二十六分六秒 |
+
+These are the readings the symmetry argued: a 二 read 一 with its 分 dropped,
+an 八 written 九, and 十五度二十 written 十四度三十. The scan is at the limit
+of the resolution at 井's 分, where the 三 is confirmed by the other copy and
+by the closure. 柳, 胃, 奎, 危, 斗, 尾, 氐 and 軫 agree with the 星學大成 to
+the 秒, and 畢 is not legible past its 分. With the three cells as read, the
+six pairs of facing palaces close within a hundredth of a 度: 30.71, 28.66,
+28.30, 30.02, 32.24 and 32.70. The verse 度數所在 on djvu p. 22 says the same
+at the 度 — 「女二虛危同在子…井八鬼柳俱在未，柳三星張午位迎，張十五分翼軫巳」 —
+and every one of its twelve is the 授時 boundary taken down to the 度, bar 斗四
+for 斗三度七十六分.
+
+**What that moves.** A second copy settles the text and moves no rung. The
+twelve cells of the 授時 宿度過宮 are now read in two copies: eight of them
+agree to the 秒, and 畢 to the 分. This is the condition `TODO.md` holds `gong: ci` on,
+by the user's word, and it is met. What the row in § "What is refused, and
+why" also asked was whether a work casts by these boundaries. Both works do,
+for the limits: 起大限's 女二 and 定限度法's rows of 午. The third question,
+what `gong: ci` computes when the lodges are laid by `xiudu: juxing`, is a
+design question and is not answered by a text. The lift is put to the user.
+
+**And 卷567's 起例 confirm two rows that stood on the 星學大成 alone.** djvu
+p. 23, read on the plate. 十二宮例 names the twelve, 命宮 to 相貌, and states
+the direction with a case: 「凡定十二宮者逆數輪轉，如命宮在寅，財帛在丑，兄弟在子，
+田宅在亥，男女在戌，奴僕在酉，妻妾在申，疾厄在未，餘同此」. That is the order
+the engine counts, from a second work. 安命度法 states the 命宮 on the Sun's
+palace: 「以生時加太陽宮順數遇卯，即是命宮也。如太陽在子宮，酉時生人，以酉時加在
+子宮，順數到午遇卯，即是命宮也。蓋日出在卯，故以卯為命宮」. That is `minggong:
+yuejiang`, worked to the palace the engine gives. The same leaf gives the 命度
+by facing degrees, 「以太陽之度對著命宮之度，即是命度也。如太陽躔子宮虛六度，
+對著午宮星五度，即為命度；如日躔女三度，對著午宮柳四度是也」. Both pairs sit
+at the same place in palaces that face each other and are equal in width, so
+they cannot tell a 量天尺 by fraction from one by degree. Confirming moves the
+argument and no rung: each row already stood on a stronger check than one
+more text. The register names the work beside each. `heldBy` in
+`packages/core/src/parameters.ts` does not yet, and it is an errand.
+
+**And one collation by the way.** On djvu p. 29, 諸曆黃道宿度 tabulates the
+ecliptic widths under 統天, 開禧, 會天 and 授時. Its 授時 參 reads
+十度二十八分, the width `SHOUSHI_XIUDU` carries from its quadrant's sum and
+the 星學大成's wheel prints. That makes a third print, and like the second
+it moves no rung.
+
+Last checked 2026-11-06.
 
 ### 觜 and 參, which is the finding
 
@@ -11831,7 +11960,7 @@ reopened, never quietly rewritten.
 | 紫氣's degree | the body itself is placed, by default, under `ziqi: yinianyisu`; what nothing supplies is a position finer than a palace. **Each half of that placement is one witness.** 《張果星宗》 and the 三辰通載 section the register used to count beside it are one work, read on the plate 2026-09-01, and that work's 總論 gives twenty-nine years where its 算法 gives twenty-eight; the anchor is 《星度指南》's single 1886 chart, good to a palace. Nothing weighs 紫氣's own constant, its two checkable siblings in the same table erring by 0.01 % and 0.11 %. Both halves are rung 5, which is a grade written down rather than a body withheld — the refusal is the degree alone, and the type carries it: 紫氣 arrives as a `PalacePlacement`. See the 四餘 section |
 | 七政四餘 `xiudu` `shixian` · `shoushi` | the boundaries are taken from the 距星 themselves, so no epoch is chosen. The two 曆 tables are declared and refused until one arrives with an epoch that can be cited, and 《曆法通志》's complete eight-曆 table does not. **《授時曆故》 does**: 至元辛巳, said by the work, with the whole 黃道宿次 in its 卷二 and the text's own rule for carrying it — 「依赤道及冬至歲差所在算定 … 各得當時宿度」. So `shoushi` is refused now for a different reason, and a narrower one: **the table checks itself** — the four quadrant sums close against their entries, and against each other on 365.2575, the 曆's own 周天分 — so what is left is transcribing the remaining cells at a resolution that settles them, and giving the option an epoch as well as a table, because the source makes its numbers a function of a moment. `shixian` is where it was. See the frame section |
 | 七政四餘 `minggong` `ascendant` | 立命 by 加時 is what the texts state and gives a palace. The rising degree is a second method, not a sharper reading of the first. `OPTION_NOT_IMPLEMENTED` |
-| 七政四餘 `gong` `ci` | the 次 as stretches of 宿度: the table is on the shelf since 2026-10-08, 《星學大成》卷一's 宿度過宮之圖 in the 授時 frame, with three of its twelve cells miscopied and bounded by the table's own symmetry. Refused still, for those three and for the work's 起例 being unread |
+| 七政四餘 `gong` `ci` | the 次 as stretches of 宿度: the table is on the shelf since 2026-10-08, 《星學大成》卷一's 宿度過宮之圖 in the 授時 frame, and since 2026-11-06 in a second copy, the 《張果星宗》's 度數所在過宮圖, which gives the three cells the first miscopies as its symmetry bounded them. Both works cast the limits by these boundaries. Refused still, by the user's word, until the lift is ruled on with what the value computes under `xiudu: juxing` — see § "《星學大成》卷三 起大限's figures, and the 張果星宗's tables of the limits and the 量天尺" |
 | 留 | a station is a threshold on the daily motion and no source consulted states one. The speed travels in the output instead |
 | 紫微斗數 `huoling` `hour` | **No longer refused: computed since 2026-10-07.** The standard this row turned on no longer asks two transmitted witnesses of a value held by a line; the manual it names was read again for whose the reading is — see § "Whose each value of a 紫微斗數 board is". What follows is the reading as it stood, left as it was written. the widespread practice counts 火星 and 鈴星 on from the year's seats by the birth hour. No verse in 卷二 does, and agreement with a reference that does falls to exactly the quarter of a sample whose hour offset is zero. **It now has a witness and it is the wrong kind**: 《中國絕學》第六冊 p. 406 prints it whole — 「年支爲丑、巳、酉時：由卯宮起子時，順行一宮加一時辰，……數到生時之宮位安火星。由戌宮起子時，……安鈴星」 — with a diagram of the count. What that settles is how narrow the divergence is: 丑巳酉 seats 火星 on 卯 and 鈴星 on 戌 in the manual and in `HUOLING` alike, so the two readings share every seat and part only on whether the hour is counted on from it. A 1986 school manual is one modern witness where the standard asks for two transmitted ones, so the value stays refused with `OPTION_NOT_IMPLEMENTED` — but not any longer for want of anybody stating it. Read on the plate 2026-08-27. **A third transmitted recension has since been asked and is silent too**: the Ming 南陽堂 block's 安火鈴二星訣 gives the four seats and stops. Silence is not a statement — both readings share the seats — so what this adds is that nobody transmitted the count, in three recensions now instead of two. Read on the plate 2026-08-28 |
 | 紫微斗數 `leapMonth` `current` · `split` | 「凡有閏月俱要依此為例」 counts a leap month as the one after it. The other two readings are other schools' and neither is in this book |
