@@ -659,6 +659,9 @@ export function qizhengReadingPrompt(
     // recites neither will read both as fact.
     `- ${t('prompt.qizheng.direction')}`,
     `- ${t(board.options.xiudu === 'shoushi' ? 'prompt.qizheng.frame.shoushi' : 'prompt.qizheng.frame')}`,
+    // Where the palaces are cut follows the board too, and is said only when
+    // it is the older cut: the default is what a model already assumes.
+    ...(board.options.gong === 'ci' ? [`- ${t('prompt.qizheng.gong.ci')}`] : []),
     '',
     t('prompt.names'),
     '',

@@ -183,8 +183,10 @@ chúnwěi (雙女), 午 鶉火 chúnhuǒ (獅子), 未 鶉首 chúnshǒu (巨蟹
   之大端也」; before it 「宮有一定之宿，宿有常居之宮…宮與星仍舊不易」 (*web
   transcription*). Kotyk (SPP 282 p. 24) instead dates a 中氣-cut tropical
   zodiac to c. 806. The two disagree.
-- at fixed lodge degrees: `gong: ci`, refused. 授時 黃道十二次宿度 — 星學大成
-  卷一 宿度過宮之圖 (nine cells read, three bounded) and its verse 約二十八宿
+- at fixed lodge degrees: `gong: ci`, computed since 2026-11-06
+  (`SHOUSHI_CI_ENTRY`, counted from each lodge in the frame `xiudu` lays). 授時
+  黃道十二次宿度 — 星學大成 卷一 宿度過宮之圖 (three cells miscopied), read again
+  in 張果星宗一's 度數所在過宮圖 (集成 卷567), which gives all twelve; 星學大成's verse 約二十八宿
   過宮度數歌 (「氐一過卯尾三寅…張十四巳軫九辰」, rounded); 元史 卷54; 張果星宗
   三's 欽天監校正授時過宮度圖 (an image; plate only).
 - modern 赤道恆星制: palaces fixed to the stars, equinox drifting into 亥.
@@ -433,9 +435,7 @@ computed, derivable from `houses` and the table § 3.11, start age unknown
 without a 命度.
 
 Refused, and why (`TODO.md` § 1): `xiudu: shixian` (a table with a citable
-epoch), `minggong: ascendant` (a holder), `gong: ci` (the second copy of the three
-cells is read since 2026-11-06, the 集成's 度數所在過宮圖; what is left is the
-user's word and a decision on its frame). 紫氣 to a degree: `docs/refusals.md`
+epoch), `minggong: ascendant` (a holder). 紫氣 to a degree: `docs/refusals.md`
 § "紫氣". 留 (no threshold), 化曜, 十神, 度主 and the 生剋恩難 layer as
 doctrine: `docs/sources.md` § "What is not here" (七政四餘). The prompt
 (`prompt.qizheng.*`) forbids importing aspects and rulerships: read that as
@@ -443,12 +443,12 @@ Western ones — the art's own 宮主 and 照 are fair to use, attributed.
 
 ## 7. Open questions and candidate TODOs
 
-- **`gong: ci`, the three cells.** 元史 卷54 黃道十二次宿度 (*web
-  transcription*) gives 女 二度六分三十八秒, 井 八度三十四分九十四秒, 張 十五度
-  二十六分六秒 — the three the register bounded by symmetry (女 ≈ 2.06, 井 ≈
-  8.34, 張 ≈ 15.26) — and the other nine as the wheel reads them. Settles on
-  the plate of 元史 (☆ not held); a second route on the shelf: 張果星宗三's
-  欽天監校正授時過宮度圖, 集成 卷569 (第468冊), an image to be read.
+- **`gong: ci`, a third copy.** Built on 2026-11-06 from two copies of the
+  wheel. 元史 卷54 黃道十二次宿度 (*web transcription*) gives the same three
+  cells, 女 二度六分三十八秒, 井 八度三十四分九十四秒, 張 十五度二十六分六秒;
+  the plate (☆ not held) would be a third copy and moves no rung. 星學大成's
+  verse reads 張十四巳 (*web transcription*), with its own wheel's miscopy:
+  check it on the plate.
 - **The 授時 參, a second copy.** 元史 卷54 黃道宿度 prints 參 十度二十八分 (*web
   transcription*); the shelf has it on 星學大成's wheel. 元史, not held.
 - **What `gong`'s default stands on.** 明史 卷25 calls 中氣過宮 the 西洋之法

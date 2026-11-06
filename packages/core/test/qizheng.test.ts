@@ -538,7 +538,6 @@ describe('the options it does not implement', () => {
   const refused: [keyof QizhengOptions, string][] = [
     ['xiudu', 'shixian'],
     ['minggong', 'ascendant'],
-    ['gong', 'ci'],
   ];
 
   it.each(refused)('refuses %s = %s rather than substituting one', (option, value) => {

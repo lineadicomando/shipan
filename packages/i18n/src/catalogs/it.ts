@@ -2511,6 +2511,8 @@ export const it: Record<MessageKey, string> = {
     'In quale 宿 xiù si trovi un corpo, e a quale grado, è misurato dalle stelle determinative 距星 jùxīng stesse, collocate all’istante di questo quadro. Non si copia la tavola di alcun 曆 lì e non si assume alcuna epoca, il che è ciò che rende la cornice giusta nell’undicesimo secolo come nel ventitreesimo, e significa anche che non c’è nulla di pubblicato contro cui verificarla. Sta su una sovradeterminazione: ventotto ampiezze ciascuna con una forma trasmessa, un anello che deve chiudersi su 360°, e 觜 zī come un ago di un grado che solo la coppia giusta di stelle infila. Pesala per questo, e non come una tavola che qualcuno ha stampato, e pesala dove un grado sta facendo un lavoro in ciò che scrivi, non in una sezione a sé prima che la lettura cominci.',
   'prompt.qizheng.frame.shoushi':
     'In quale 宿 xiù si trovi un corpo, e a quale grado, è misurato contro le ampiezze che il 授時曆 shòushílì del 1281 dà alle dimore lungo l’equatore, portate all’eclittica e all’istante di questo quadro con il metodo di quel calendario, come lo espone il 授時曆故 shòushílìgù. È la tavola di un calendario e non il cielo di questo istante: per le dimore le cui stelle stanno lontane dall’eclittica può scostarsi di parecchi gradi da dove quelle stelle sono ora, quindi un corpo vicino a un confine può cadere, secondo le stelle, in un’altra dimora. Pesala come la cornice di quel calendario, e pesala dove un grado sta facendo un lavoro in ciò che scrivi, non in una sezione a sé prima che la lettura cominci.',
+  'prompt.qizheng.gong.ci':
+    'I dodici palazzi di questo quadro sono i 次 cì. Ciascuno si apre alla dimora e al grado che gli dà la tavola del 授時曆 shòushílì, come la stampano il 星學大成 xīngxuédàchéng e il 張果星宗 zhāngguǒxīngzōng; si muovono quindi con le dimore e sono disuguali, larghi fra 27 e 33 gradi. Distano circa mezzo palazzo dai palazzi tagliati ai 中氣 zhōngqì, che usa la maggior parte dei quadri moderni, e con questo taglio il palazzo della vita segue il palazzo del Sole. Leggi i palazzi come li dispone questo taglio, e dillo dove un palazzo sta facendo un lavoro in ciò che scrivi, non in una sezione a sé.',
   'prompt.qizheng.board': 'Il quadro',
   'prompt.qizheng.opening':
     'Poi situa la nascita, in una o due frasi tue: che cosa ha davanti (una nascita scritta in cielo, il sole, la luna, i cinque pianeti e i corpi d’ombra contro le ventotto 宿 xiù in cui il cielo cinese è tagliato) e quando è stata stesa. Situa e prosegui: nessun paragrafo su che cosa sia l’arte, che cosa sia il destino, o che cosa stai per fare.',
@@ -2749,6 +2751,11 @@ export const it: Record<MessageKey, string> = {
   'form.qizheng.luohou': 'Il corpo 羅睺 luóhóu è',
   'form.qizheng.luohou.descending': 'il nodo discendente: la legge degli astrologi',
   'form.qizheng.luohou.ascending': 'il nodo ascendente: 湯若望 Tāng Ruòwàng e il 時憲曆 shíxiànlì',
+  'form.qizheng.gong': 'I dodici palazzi sono tagliati',
+  'form.qizheng.gong.zhongqi': 'ai 中氣 zhōngqì: ogni trenta gradi del cammino del Sole, dall’equinozio di primavera',
+  'form.qizheng.gong.ci': 'nelle dimore, come i 次 cì: dove la tavola del 授時曆 shòushílì apre ciascun palazzo',
+  'form.qizheng.gong.note':
+    'Il primo taglio segue le stagioni e dà dodici palazzi uguali. Il secondo segue le stelle: ogni palazzo si apre a una dimora e a un grado che il 星學大成 xīngxuédàchéng e il 張果星宗 zhāngguǒxīngzōng stampano entrambi, perciò i palazzi sono larghi fra 27 e 33 gradi. Oggi i due tagli distano circa quindici gradi, mezzo palazzo; un corpo può quindi cadere in un palazzo diverso sotto ciascuno, e con il Sole anche il palazzo della vita.',
   'form.copyStars': 'Copia la tavola',
   'form.qizheng.luohou.note':
     'Scambia i due nomi e non muove altro: i due nodi sono i capi di una sola linea, a mezzo giro l’uno dall’altro. Il default è quello che gli astrologi hanno tenuto, che è il rovescio della convenzione indiana.',

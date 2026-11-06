@@ -2831,6 +2831,8 @@ export const en = {
     'Which 宿 xiù a body is in, and at what degree, is measured from the determinative stars 距星 jùxīng themselves, placed at the instant of this board. No 曆 lì’s table is copied and no epoch is assumed, which is what makes the frame right in the eleventh century and the twenty-third alike — and it also means there is nothing published to check it against. It stands on over-determination: twenty-eight widths each with a transmitted shape, a ring that must close on 360°, and 觜 zī as a one-degree needle only the right pair of stars threads. Weigh it as that, and not as a table somebody printed — and weigh it where a degree is doing work in what you write, not in a section of its own before the reading starts.',
   'prompt.qizheng.frame.shoushi':
     'Which 宿 xiù a body is in, and at what degree, is measured against the widths the 授時曆 shòushílì of 1281 gives the lodges along the equator, carried to the ecliptic and to the instant of this board by that calendar’s own method, as the 授時曆故 shòushílìgù sets it out. That is a calendar’s table and not the sky at this instant: for the lodges whose stars lie far from the ecliptic it can stand several degrees from where those stars are now, so a body near a boundary may sit in another lodge by the stars. Weigh it as that calendar’s frame, and weigh it where a degree is doing work in what you write, not in a section of its own before the reading starts.',
+  'prompt.qizheng.gong.ci':
+    'The twelve palaces on this board are the 次 cì. Each opens at the lodge and degree the 授時曆 shòushílì table gives it, as the 星學大成 xīngxuédàchéng and the 張果星宗 zhāngguǒxīngzōng print it, so they move with the lodges and are unequal, between 27 and 33 degrees wide. They stand about half a palace from the palaces cut at the 中氣 zhōngqì, which most modern boards use, and the palace of the self follows the Sun’s palace under this cut. Read the palaces as this cut lays them, and say so where a palace is doing work in what you write, not in a section of its own.',
   'prompt.qizheng.board': 'The board',
   // In the model's own words, situating and nothing else: the frame a reading
   // needs is where and when, and anything more is preamble.
@@ -3152,6 +3154,11 @@ export const en = {
   'form.qizheng.luohou': 'Which node is 羅睺 luóhóu',
   'form.qizheng.luohou.descending': 'the descending node: the astrologers’ law',
   'form.qizheng.luohou.ascending': 'the ascending node: 湯若望 Tāng Ruòwàng and the 時憲曆 shíxiànlì',
+  'form.qizheng.gong': 'The twelve palaces are cut',
+  'form.qizheng.gong.zhongqi': 'at the 中氣 zhōngqì: every thirty degrees of the Sun’s path, from the spring equinox',
+  'form.qizheng.gong.ci': 'in the lodges, as the 次 cì: where the 授時曆 shòushílì table opens each palace',
+  'form.qizheng.gong.note':
+    'The first cut follows the seasons and gives twelve equal palaces. The second follows the stars: each palace opens at a lodge and a degree that the 星學大成 xīngxuédàchéng and the 張果星宗 zhāngguǒxīngzōng both print, so the palaces are between 27 and 33 degrees wide. Today the two cuts stand about fifteen degrees apart, half a palace, so a body, and with the Sun the palace of the self, can fall in a different palace under each.',
   'form.copyStars': 'Copy the board',
   'form.qizheng.luohou.note':
     'It swaps the two names and moves nothing else: the two nodes are the ends of one line, half a turn apart. The default is what the astrologers kept, which is the reverse of the Indian convention.',

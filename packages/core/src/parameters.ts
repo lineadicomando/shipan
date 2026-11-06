@@ -1233,7 +1233,7 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
         id: 'yuejiang',
         name: { hanzi: '月將', pinyin: 'yuèjiàng' },
         implemented: true,
-        heldBy: ['xingxuedacheng', 'santong'],
+        heldBy: ['xingxuedacheng', 'santong', 'xingzong'],
       },
       { id: 'ascendant', implemented: false },
     ],
@@ -1241,9 +1241,25 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
   },
   gong: {
     board: 'qizheng',
+    label: 'form.qizheng.gong',
     values: [
-      { id: 'zhongqi', name: { hanzi: '中氣', pinyin: 'zhōngqì' }, implemented: true },
-      { id: 'ci', name: { hanzi: '次', pinyin: 'cì' }, implemented: false },
+      {
+        id: 'zhongqi',
+        name: { hanzi: '中氣', pinyin: 'zhōngqì' },
+        says: 'form.qizheng.gong.zhongqi',
+        note: 'form.qizheng.gong.note',
+        implemented: true,
+      },
+      // The 授時 宿度過宮 table, printed in both works and read on the plate
+      // in both; each opens the limits on it. See `SHOUSHI_CI_ENTRY`.
+      {
+        id: 'ci',
+        name: { hanzi: '次', pinyin: 'cì' },
+        says: 'form.qizheng.gong.ci',
+        note: 'form.qizheng.gong.note',
+        implemented: true,
+        heldBy: ['xingxuedacheng', 'xingzong'],
+      },
     ],
     default: 'zhongqi',
   },

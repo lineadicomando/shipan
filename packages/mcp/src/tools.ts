@@ -439,6 +439,18 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
           .describe(
             'Where the twenty-eight lodges begin, which decides the lodge and the degree of every body. Default juxing: each boundary taken from its determinative star as placed at this instant, which is this engine\'s own construction and no calendar\'s. shoushi: the lodges of the Shoushi calendar of 1281, carried to the instant by that calendar\'s own method from its equatorial widths and its rate of precession. The two agree to about a degree for lodges whose stars lie near the ecliptic and stand up to seven degrees apart for those that lie far from it, so a body can fall in a different lodge under each: say which frame the board was laid in.',
           ),
+        gong: z
+          .enum(['zhongqi', 'ci'])
+          .optional()
+          .describe(
+            'Where the twelve palaces are cut. Default zhongqi: every thirty degrees of the ' +
+              'Sun’s longitude, from the spring equinox, twelve equal palaces. ci: the older 次, ' +
+              'each palace opened at the lodge and degree the Shoushi calendar’s table gives it, ' +
+              'as the Xingxue Dacheng and the Zhang Guo Xingzong print it; the palaces then move ' +
+              'with the lodges and are 27 to 33 degrees wide. The two cuts stand about fifteen ' +
+              'degrees apart today, so a body and the 命宮 can fall in another palace: say which ' +
+              'cut the board was laid with.',
+          ),
         luohou: z
           .enum(['descending', 'ascending'])
           .optional()
@@ -467,6 +479,7 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
         if (args.xiudu) options.xiudu = args.xiudu;
         if (args.luohou) options.luohou = args.luohou;
         if (args.ziqi) options.ziqi = args.ziqi;
+        if (args.gong) options.gong = args.gong;
 
         const board = qizhengBoard(
           { julianDay: moment.julianDayUT, hour: moment.hourBranch },

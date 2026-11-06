@@ -401,9 +401,18 @@ neither disputed.
   somewhere in particular.
 - **The 宿 boundaries are stars, not a table.** They are the 距星 placed at
   the instant of the chart, so they move with precession and match no printed
-  table exactly. Do not attribute them to 《時憲曆》 or to 《授時曆》; those are
-  declared options and both are refused. A degree of 入宿度 quoted here will
-  differ a little from an almanac's, and the reason is not an error.
+  table exactly. Do not attribute them to 《時憲曆》 or to 《授時曆》: the first
+  is declared and refused, and the second is laid only under `xiudu: shoushi`,
+  which the block of schools names. A degree of 入宿度 quoted here will differ
+  a little from an almanac's, and the reason is not an error.
+- **The twelve palaces are cut at the 中氣 by default, and at the 次 when
+  asked.** Under `gong: zhongqi` each is thirty degrees, counted from the
+  spring equinox. Under `gong: ci` each opens at the lodge and degree of the
+  授時 table that 《星學大成》 and 《張果星宗》 both print, so the palaces move
+  with the lodges, run 27 to 33 degrees wide, and stand about fifteen degrees
+  from the first cut today. A body, and with the Sun the 命宮, can fall in
+  another palace under each: read the palace off the board, and say which cut
+  laid it.
 - **The twelve 人事宮 carry their transmitted names, and a reading from them
   is a choice to say.** 財帛 is wealth and 田宅 is land and house: the names
   say what the tradition reads at each seat, and reading from them is what
@@ -545,9 +554,10 @@ it is: a published astronomical fact, an agreement with something that runs, or 
 transmitted text read and quoted. Do not describe the third as though it were the
 first.
 
-**Two of these lines are not only here**, and the exception says where the
-boundary runs. The direction the twelve 人事宮 are numbered in, and the frame
-the 宿 are cut by, travel *inside* the 七政四餘 prompt as well — because that
+**Three of these lines are not only here**, and the exception says where the
+boundary runs. The direction the twelve 人事宮 are numbered in, the frame the
+宿 are cut by, and, on a board laid with `gong: ci`, where its palaces are cut,
+travel *inside* the 七政四餘 prompt as well — because that
 prompt already spends a paragraph on how the twelve seats are read, and a
 bound on a quantity that arrives with the instruction governing it is part of
 that instruction. Everything else on this

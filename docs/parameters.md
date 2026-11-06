@@ -395,7 +395,7 @@ almanac takes none of these at all. Both are below.
 | 七政四餘 | `ziqi` | whether 紫氣 enters as a fourth 餘: `yinianyisu` (一年一宿 yīniányīxiù), which places it **to a palace and to no degree**, or `off` | `yinianyisu` |
 | 七政四餘 | `luohou` | which node is 羅睺: `descending` (the 星命 law), `ascending` (湯若望 and the 時憲曆) | `descending` |
 | 七政四餘 | `minggong` | `yuejiang` (立命 by 加時, the hour laid on the palace of the 月將 yuèjiàng), `ascendant` (the true rising degree) | `yuejiang` |
-| 七政四餘 | `gong` | where the twelve 宮 are cut: `zhongqi` (太陽過宮 at the 中氣 zhōngqì), `ci` (the 次 cì as stretches of 宿度) | `zhongqi` |
+| 七政四餘 | `gong` | where the twelve 宮 are cut: `zhongqi` (太陽過宮 at the 中氣 zhōngqì, thirty degrees each), `ci` (the 次 cì, each opened at the lodge and degree of the 授時 宿度過宮 table that 《星學大成》 and 《張果星宗》 print, counted in whichever frame `xiudu` lays) | `zhongqi` |
 | 太乙 | `epoch` | which 上元積年 the count runs from: `jinjing` (《太乙金鏡式經》 tàiyǐjīnjìngshìjīng), `taojin` (《太乙淘金歌》 tàiyǐtáojīngē, which puts 太乙 in another palace, and refused) | `jinjing` |
 | 太乙 | `ji` | which register the board is laid in: `nianji` (歲計 suìjì, which is what both witnesses call it), `yueji` (月計 yuèjì), `riji` (日計 rìjì), `shiji` (時計 shíjì) | `nianji` |
 | 太乙 | `geHost` | whose bodies the condition 格 is marked for: `ke` (客 kè — the guest's eye and generals alone, as 《太乙金鏡式經》 has it), `zhuke` (主客 zhǔkè — the host's generals as well, as the 《統宗》 has it) | `ke` |

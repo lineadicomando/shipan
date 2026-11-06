@@ -7,7 +7,7 @@ import {
 } from './ephemeris.js';
 import { BRANCHES, type Branch } from './ganzhi.js';
 import { QIZHENG_PARAMETERS, requireImplemented } from './parameters.js';
-import { shoushiBoundaries } from './shoushi.js';
+import { SHOUSHI_CIRCLE, SHOUSHI_CI_ENTRY, shoushiBoundaries } from './shoushi.js';
 import type { Element } from './types.js';
 
 /**
@@ -114,12 +114,17 @@ export interface QizhengOptions {
    * at the 中氣; no 七政四餘 text is named in `docs/sources.md` for cutting
    * the palaces there.
    *
-   * `ci` would take the older definition, where a 次 is a stretch of 宿度 —
-   * 星紀 from 斗十二度 to 女七度 — and so rides the stars rather than the
-   * seasons. The two were the same thing once and precession has parted them
-   * by weeks. It is declared and refused: the stretches come from 《星學大成》
-   * 卷一's 宿度過宮之圖, which is on the shelf with three of its twelve cells
-   * miscopied, and the work's 起例 is still unread.
+   * `ci` takes the older definition, where a 次 is a stretch of 宿度, and so
+   * rides the stars rather than the seasons. Each palace is entered at the
+   * lodge and degree the 授時 table `SHOUSHI_CI_ENTRY` gives — 星紀 at 斗三度
+   * 七十六分八十五秒 — counted from that lodge's opening in whichever frame
+   * `xiudu` lays. The palaces are unequal on the ecliptic, from about 28 to
+   * about 33 degrees, because they were cut equal on the equator. The two cuts
+   * were one thing once, and precession has parted them by weeks. 《星學大成》
+   * 卷一 and 《張果星宗》 卷567 print the table, and both works open the limits
+   * on it.
+   *
+   * 紫氣 is a palace counted from a palace, and is not moved by the cut.
    */
   gong: 'zhongqi' | 'ci';
 }
@@ -347,7 +352,10 @@ export interface Standing extends PalaceStanding {
   lodge: Lodge;
   /** 入宿度 — degrees past that 宿's 距星. */
   lodgeDegree: number;
-  /** 宮度 — degrees into the palace, 0 to 30. */
+  /**
+   * 宮度 — degrees into the palace: 0 to 30 under `gong: zhongqi`, and up to
+   * the palace's own width under `gong: ci`.
+   */
   palaceDegree: number;
 }
 
@@ -500,7 +508,11 @@ function palaceOfLongitude(longitude: number): Branch {
  * a longitude has exactly one nearest boundary behind it, wherever the stars
  * have drifted to.
  */
-export function standingOf(longitude: number, boundaries: readonly number[]): Standing {
+export function standingOf(
+  longitude: number,
+  boundaries: readonly number[],
+  palaceEntries?: readonly number[],
+): Standing {
   let lodgeIndex = 0;
   let lodgeDegree = Number.POSITIVE_INFINITY;
   boundaries.forEach((boundary, index) => {
@@ -511,15 +523,44 @@ export function standingOf(longitude: number, boundaries: readonly number[]): St
     }
   });
 
-  const palace = palaceOfLongitude(longitude);
+  // The palace, by the same rule: the entry nearest behind. With no entries
+  // the palaces are every thirtieth degree of longitude.
+  let palace = palaceOfLongitude(longitude);
+  let palaceDegree = longitude % 30;
+  if (palaceEntries) {
+    palaceDegree = Number.POSITIVE_INFINITY;
+    palaceEntries.forEach((entry, index) => {
+      const past = mod360(longitude - entry);
+      if (past < palaceDegree) {
+        palace = BRANCHES[index] as Branch;
+        palaceDegree = past;
+      }
+    });
+  }
   return {
     longitude,
     lodge: LODGES[lodgeIndex] as Lodge,
     lodgeDegree,
     palace,
     ci: CI[palace.index] as Ci,
-    palaceDegree: longitude % 30,
+    palaceDegree,
   };
+}
+
+/**
+ * Where each palace is entered under `gong: ci`, as longitudes indexed by
+ * branch, 子 first.
+ *
+ * Each entry is a lodge's opening in the frame laid, plus the 授時 table's
+ * 度 turned into degrees of a circle of 360. The 次 ride the lodges, so the
+ * frame `xiudu` lays decides where they fall: by the stars themselves, or by
+ * the 授時曆's own lodges carried to the instant.
+ */
+export function ciEntries(boundaries: readonly number[]): readonly number[] {
+  return SHOUSHI_CI_ENTRY.map(({ lodge, du }) => {
+    const index = LODGES.findIndex((one) => one.id === lodge);
+    return mod360((boundaries[index] as number) + (du * 360) / SHOUSHI_CIRCLE);
+  });
 }
 
 /**
@@ -542,8 +583,9 @@ export function qizhengBoard(
   // aligned with `LODGES`, and everything below reads it the same.
   const boundaries =
     options.xiudu === 'shoushi' ? shoushiBoundaries(julianDay) : lodgeBoundaries(julianDay, context);
+  const entries = options.gong === 'ci' ? ciEntries(boundaries) : undefined;
   const place = (body: QizhengBody, longitude: number, speed: number): DegreePlacement => ({
-    ...standingOf(longitude, boundaries),
+    ...standingOf(longitude, boundaries, entries),
     body,
     speed,
     motion: speed < 0 ? 'ni' : 'shun',
@@ -570,7 +612,11 @@ export function qizhengBoard(
     place(REMAINDERS.yuebei, apogee.longitude, apogee.speed),
   ];
 
-  // 紫氣 enters last and enters as a palace. The count the surfaces print —
+  // 紫氣 enters last and enters as a palace. That palace is counted from the
+  // palace its anchor board printed, a step every twenty-eight twelfths of a
+  // year, so it is the same under either `gong`: a count is not moved by
+  // where the palaces are cut.
+  // The count the surfaces print —
   // 三餘 or 四餘 — follows this array rather than a constant, so a board laid
   // with it switched off says three and means it.
   if (options.ziqi === 'yinianyisu') {

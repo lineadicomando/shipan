@@ -64,7 +64,11 @@ export const WITNESSES = {
     kind: 'transmitted',
     name: { hanzi: '太乙金鏡式經', pinyin: 'tàiyǐjīnjìngshìjīng' },
   },
-  /** 《張果星宗》, whose 算法 gives 紫氣 its rate. */
+  /**
+   * 《張果星宗》, in the 古今圖書集成: its 算法 gives 紫氣 its rate, its 安命度法
+   * lays the 命宮 on the Sun's palace, and its 度數所在過宮圖 cuts the palaces in
+   * 宿度.
+   */
   xingzong: {
     kind: 'transmitted',
     name: { hanzi: '張果星宗', pinyin: 'zhāngguǒxīngzōng' },

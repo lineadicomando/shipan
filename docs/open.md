@@ -25,7 +25,6 @@ a work already held is not a witness.
 | `yuejiang: jieqi`, `yuejiang: true` | a text stating either as its own. None found, on the plate or in the extracts |
 | `zhouye: solar` | which rising, and how. One sentence of 《大六壬精解》 and the 協紀's 日出入, neither with a procedure |
 | `xiudu: shixian` | a table with an epoch that can be cited |
-| `gong: ci` | the user's word. The second copy is read (2026-11-06): the 《張果星宗》's 度數所在過宮圖 gives 女, 井 and 張 as the symmetry bounded them, and both works cast the limits by these boundaries. What is left is a decision on what the value computes under the default frame |
 | `minggong: ascendant` | a holder. A second method and not a second reading |
 | `epoch: taojin` | 《太乙淘金歌》, not held; known through 盧央, who sets evidence against it |
 | `ji: yueji` | the user's word, «wait» (`TODO.md`, "Decisions held open"); read as a procedure. A board that takes an instant |
@@ -169,10 +168,6 @@ another hour with the scan's dialog open.
   eight `GATES`, and `CENTRE_GATE` stands outside them, so a scan under
   `gateSeats: nine` cannot ask for it. 太常 is offered (`SPIRIT_IDS`, eleven)
   and found only under `spiritRing: nine`, silently otherwise, as `gongpo`.
-- **`heldBy` for `minggong: yuejiang` does not name the 《張果星宗》**, whose
-  安命度法 states it on the Sun's palace with a worked case, read on
-  2026-11-06. Adding it changes what the declaration block says about the
-  canonical 七政四餘 board, so it rides with the next commit that ships.
 - **A configuration may carry no fortune**, since `stemPairs: jinhan`:
   `Pattern.valence` and `valenceOf` are optional, and every surface prints the
   mark without one. A surface added later has to do the same.

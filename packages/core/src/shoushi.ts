@@ -265,3 +265,34 @@ export const SHOUSHI_EPOCH = {
   /** 歲差, in 度 of the equator a year. */
   precession: 0.015,
 } as const;
+
+/**
+ * 黃道宿度過宮 — where each of the twelve palaces is entered, as a lodge and a
+ * degree past that lodge's determinative star, in the 授時 frame.
+ *
+ * The wheel 宿度過宮之圖 is printed twice on the shelf: 《星學大成》卷一, and
+ * 《張果星宗》 卷567's 度數所在過宮圖 in the 古今圖書集成, both read on the
+ * plate. Eight cells agree to the 秒 and 畢 agrees to the 分. Three are
+ * miscopied in the first and read in the second as the table's own symmetry
+ * requires: 女二度六分三十八秒, 井八度三十四分九十四秒, 張十五度二十六分六秒.
+ * With those, the six pairs of facing palaces have equal widths on the
+ * ecliptic to a hundredth of a 度, which is what palaces equal on the equator
+ * must give.
+ *
+ * Indexed by branch, 子 first. Degrees are 度 of a circle of 365.2575, written
+ * as the text writes them.
+ */
+export const SHOUSHI_CI_ENTRY: readonly { lodge: LodgeId; du: number }[] = [
+  { lodge: 'nv', du: 2.0638 }, // 子 玄枵
+  { lodge: 'dou', du: 3.7685 }, // 丑 星紀
+  { lodge: 'wei3', du: 3.0115 }, // 寅 析木
+  { lodge: 'di', du: 1.1452 }, // 卯 大火
+  { lodge: 'zhen', du: 10.0797 }, // 辰 壽星
+  { lodge: 'zhang', du: 15.2606 }, // 巳 鶉尾
+  { lodge: 'liu', du: 3.868 }, // 午 鶉火
+  { lodge: 'jing', du: 8.3494 }, // 未 鶉首
+  { lodge: 'bi18', du: 6.8805 }, // 申 實沈
+  { lodge: 'wei4', du: 3.7456 }, // 酉 大梁
+  { lodge: 'kui', du: 1.7363 }, // 戌 降婁
+  { lodge: 'wei1', du: 12.6491 }, // 亥 娵訾
+];

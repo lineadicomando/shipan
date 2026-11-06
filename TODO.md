@@ -33,15 +33,15 @@ otherwise. Read a section of `docs/open.md`, not the file.
   three open-question files and this file for sentences the session outlived
   («unread», «not built», «not tagged»…).
 
-## Where it stands, 2026-11-06, end of phase 98
+## Where it stands, 2026-11-06, end of phase 99
 
-**0.48.0** on `main`, tagged `v0.48.0` (and `v0.47.0` on its own commit),
-pushed and deployed: https://shipan.it runs 0.48.0. No branch open; build,
+**0.49.0** on `main`, not tagged, not pushed, not deployed:
+https://shipan.it runs 0.48.0, tagged `v0.48.0`. No branch open; build,
 typecheck and every suite pass. The shelf's three 飛盤 works are read and
 built (phases 94–97); what they left is errands. Phase 98 read the shelf's
-first line, the limits of a 七政四餘 life, and shipped nothing: the 量天尺 is
-located and waits on a transcription (`docs/open.md` § "The shelf", line
-1), and `gong: ci` waits on the user's word.
+first line, the limits of a 七政四餘 life, and phase 99 built what it
+unlocked, `gong: ci`. The limits and the 命度 wait, by the user's word, on
+the 量天尺's transcription (`docs/open.md` § "The shelf", line 1).
 
 ## What to do next, in the order the user has been taking it
 
@@ -66,9 +66,8 @@ located and waits on a transcription (`docs/open.md` § "The shelf", line
 - **太乙's 月計 · 日計 · 時計: wait, all three** (2026-10-11). Each is a second
   input type, a `dayBoundary` under the board's name, a ruling on `gate`,
   `sanji`, `wufu`, `dayou` and `ding`, and a line in `lib/cacheable.ts`.
-- **`gong: ci`**: not until a second copy gives the three miscopied cells.
-  **It has, on 2026-11-06**: the 《張果星宗》's 度數所在過宮圖 in the 集成.
-  Put to the user with what the value computes under `xiudu: juxing`.
+- **The limits of a 七政四餘 life, and the 命度: wait for the 量天尺's
+  transcription** (2026-11-06).
 - **囚 and 格 on the dated boards of 卷七: rung 5** (2026-10-14).
 - **The test of a count by its digits: not built** (2026-10-15).
 - **截路空亡 on a 戊 or 癸 day: wait** (2026-10-26).
@@ -92,7 +91,7 @@ What each waits on: `docs/open.md` § "What each refused value waits on".
 |---|---|
 | 奇門 | `system: yuejia`, `strengths: star` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
-| 七政四餘 | `xiudu: shixian`, `minggong: ascendant`, `gong: ci` |
+| 七政四餘 | `xiudu: shixian`, `minggong: ascendant` |
 | 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: chunjie` |
 | 紫微斗數 | `leapMonth: current`, `leapMonth: split` |
 

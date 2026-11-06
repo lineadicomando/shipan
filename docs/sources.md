@@ -8663,7 +8663,15 @@ by the user's word, and it is met. What the row in § "What is refused, and
 why" also asked was whether a work casts by these boundaries. Both works do,
 for the limits: 起大限's 女二 and 定限度法's rows of 午. The third question,
 what `gong: ci` computes when the lodges are laid by `xiudu: juxing`, is a
-design question and is not answered by a text. The lift is put to the user.
+design question and is not answered by a text. **The user lifted the refusal
+the same day**, and it was settled as the 次 riding the lodges. Each palace
+opens at the table's lodge and degree, turned into degrees of 360, from that
+lodge's opening in whichever frame `xiudu` lays. At the table's epoch, under
+`xiudu: shoushi`, that gives the table back and the facing palaces equal to a
+hundredth of a degree. Today the 次 stand about fifteen degrees past the
+palaces cut at the 中氣, and they are between 27 and 33 degrees wide.
+`packages/core/test/ci.test.ts` holds the value to the table, to 起大限's 女二,
+and to 定限度法's rows of 午.
 
 **And 卷567's 起例 confirm two rows that stood on the 星學大成 alone.** djvu
 p. 23, read on the plate. 十二宮例 names the twelve, 命宮 to 相貌, and states
@@ -8678,8 +8686,8 @@ by facing degrees, 「以太陽之度對著命宮之度，即是命度也。如�
 at the same place in palaces that face each other and are equal in width, so
 they cannot tell a 量天尺 by fraction from one by degree. Confirming moves the
 argument and no rung: each row already stood on a stronger check than one
-more text. The register names the work beside each. `heldBy` in
-`packages/core/src/parameters.ts` does not yet, and it is an errand.
+more text. The register names the work beside each, and so does `heldBy`
+for `minggong: yuejiang`.
 
 **And one collation by the way.** On djvu p. 29, 諸曆黃道宿度 tabulates the
 ecliptic widths under 統天, 開禧, 會天 and 授時. Its 授時 參 reads
@@ -9180,6 +9188,8 @@ shoushi`.
 | `xiudu: shoushi` | 《授時曆故》, 黃宗羲 | 卷二 carries the 黃道宿次 at 至元辛巳, twenty-seven lodges of twenty-eight on this print, the quadrants closing on their own sums |
 | `ziqi: yinianyisu` | 《張果星宗》, 《星度指南》 | the rate from the first's 算法, which its own 總論 contradicts by a year; the anchor from the second's one dated board, good to a palace |
 | `luohou: descending` | 《星度指南》 | the same board, 羅 in 亥 and 計 in 巳. The section calls it «the art's convention» and names no other text for it |
+| `minggong: yuejiang` | 《星學大成》, 《三命通會》, 《張果星宗》 | 起立命 in the first and 安命度法 in the third, each with a case on the Sun's palace; the second lays the hour on the month's palace |
+| `gong: ci` | 《星學大成》, 《張果星宗》 | the 授時 宿度過宮 wheel, printed in both and read on the plate in both, eight cells agreeing to the 秒; each work opens the limits on it |
 
 **Not yet attributed.** `luohou: ascending` is computed and is put on 湯若望
 and the 時憲曆 with no text on the shelf named for it. `minggong: yuejiang` is
@@ -9187,10 +9197,9 @@ quoted — 「以生時加在太陽所在之宮，順數至卯，即是命宮」
 unnamed; since 2026-10-08 it has a text, 《星學大成》卷三 起立命, which is
 declared its holder. `gong: zhongqi` has no text named on this board at all and gains a
 row saying so. `ziqi: off`, `xiudu: shixian` and `minggong: ascendant` have no
-holder named either. `gong: ci` has a table since 2026-10-08, in 《星學大成》
-卷一, nine boundaries of twelve read and checked; no holder is declared on it
-until the work's 起例 is read. → § "《星學大成》卷一, which opens on the 授時
-lodges and the twelve 宮 cut in them".
+holder named either. `gong: ci` is computed since 2026-11-06 and has its row
+in the table above. → § "《星學大成》卷三 起大限's figures, and the 張果星宗's
+tables of the limits and the 量天尺".
 
 **Recorded, with no parameter.** Which star is the 距星 of 觜 and which of 參:
 the Tang and Song assignments, the order the Jesuits printed and the 《儀象
@@ -11960,7 +11969,7 @@ reopened, never quietly rewritten.
 | 紫氣's degree | the body itself is placed, by default, under `ziqi: yinianyisu`; what nothing supplies is a position finer than a palace. **Each half of that placement is one witness.** 《張果星宗》 and the 三辰通載 section the register used to count beside it are one work, read on the plate 2026-09-01, and that work's 總論 gives twenty-nine years where its 算法 gives twenty-eight; the anchor is 《星度指南》's single 1886 chart, good to a palace. Nothing weighs 紫氣's own constant, its two checkable siblings in the same table erring by 0.01 % and 0.11 %. Both halves are rung 5, which is a grade written down rather than a body withheld — the refusal is the degree alone, and the type carries it: 紫氣 arrives as a `PalacePlacement`. See the 四餘 section |
 | 七政四餘 `xiudu` `shixian` · `shoushi` | the boundaries are taken from the 距星 themselves, so no epoch is chosen. The two 曆 tables are declared and refused until one arrives with an epoch that can be cited, and 《曆法通志》's complete eight-曆 table does not. **《授時曆故》 does**: 至元辛巳, said by the work, with the whole 黃道宿次 in its 卷二 and the text's own rule for carrying it — 「依赤道及冬至歲差所在算定 … 各得當時宿度」. So `shoushi` is refused now for a different reason, and a narrower one: **the table checks itself** — the four quadrant sums close against their entries, and against each other on 365.2575, the 曆's own 周天分 — so what is left is transcribing the remaining cells at a resolution that settles them, and giving the option an epoch as well as a table, because the source makes its numbers a function of a moment. `shixian` is where it was. See the frame section |
 | 七政四餘 `minggong` `ascendant` | 立命 by 加時 is what the texts state and gives a palace. The rising degree is a second method, not a sharper reading of the first. `OPTION_NOT_IMPLEMENTED` |
-| 七政四餘 `gong` `ci` | the 次 as stretches of 宿度: the table is on the shelf since 2026-10-08, 《星學大成》卷一's 宿度過宮之圖 in the 授時 frame, and since 2026-11-06 in a second copy, the 《張果星宗》's 度數所在過宮圖, which gives the three cells the first miscopies as its symmetry bounded them. Both works cast the limits by these boundaries. Refused still, by the user's word, until the lift is ruled on with what the value computes under `xiudu: juxing` — see § "《星學大成》卷三 起大限's figures, and the 張果星宗's tables of the limits and the 量天尺" |
+| 七政四餘 `gong` `ci` | **No longer refused: computed since 2026-11-06**, on the second copy of the 授時 宿度過宮 wheel, the 《張果星宗》's 度數所在過宮圖, and on the user's word. Each palace opens at the table's lodge and degree, counted in whichever frame `xiudu` lays. See § "《星學大成》卷三 起大限's figures, and the 張果星宗's tables of the limits and the 量天尺". What follows is the reason as it stood, left as it was written: the table is on the shelf since 2026-10-08, 《星學大成》卷一's 宿度過宮之圖 in the 授時 frame, with three of its twelve cells miscopied and bounded by the table's own symmetry. Refused still, for those three and for the work's 起例 being unread |
 | 留 | a station is a threshold on the daily motion and no source consulted states one. The speed travels in the output instead |
 | 紫微斗數 `huoling` `hour` | **No longer refused: computed since 2026-10-07.** The standard this row turned on no longer asks two transmitted witnesses of a value held by a line; the manual it names was read again for whose the reading is — see § "Whose each value of a 紫微斗數 board is". What follows is the reading as it stood, left as it was written. the widespread practice counts 火星 and 鈴星 on from the year's seats by the birth hour. No verse in 卷二 does, and agreement with a reference that does falls to exactly the quarter of a sample whose hour offset is zero. **It now has a witness and it is the wrong kind**: 《中國絕學》第六冊 p. 406 prints it whole — 「年支爲丑、巳、酉時：由卯宮起子時，順行一宮加一時辰，……數到生時之宮位安火星。由戌宮起子時，……安鈴星」 — with a diagram of the count. What that settles is how narrow the divergence is: 丑巳酉 seats 火星 on 卯 and 鈴星 on 戌 in the manual and in `HUOLING` alike, so the two readings share every seat and part only on whether the hour is counted on from it. A 1986 school manual is one modern witness where the standard asks for two transmitted ones, so the value stays refused with `OPTION_NOT_IMPLEMENTED` — but not any longer for want of anybody stating it. Read on the plate 2026-08-27. **A third transmitted recension has since been asked and is silent too**: the Ming 南陽堂 block's 安火鈴二星訣 gives the four seats and stops. Silence is not a statement — both readings share the seats — so what this adds is that nobody transmitted the count, in three recensions now instead of two. Read on the plate 2026-08-28 |
 | 紫微斗數 `leapMonth` `current` · `split` | 「凡有閏月俱要依此為例」 counts a leap month as the one after it. The other two readings are other schools' and neither is in this book |
