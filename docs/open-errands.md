@@ -63,7 +63,12 @@ it, carry the second title and the file on the shelf the first.
 ## Catalog strings owed a look by the user
 
 Read by nobody but their writer, both catalogs, newest first, none blocking
-(glosses in `docs/history/roadmap-2026-10-30.md`). 2026-11-05:
+(glosses in `docs/history/roadmap-2026-10-30.md`). 2026-11-06:
+`form.qimen.gateSeats` and its values and note, `form.qimen.spiritRing` and
+its values, `notes.parameter.gateSeats` and `.spiritRing`, `label.gate.zhong`,
+`label.spirit.taichang`, and the counts of spirits taken out of
+`form.qimen.spiritSeat`, `form.qimen.spiritPhase`, `form.qimen.system.shijia`
+and their `notes.parameter.*`. 2026-11-05:
 `form.qimen.plate` and its values and note, `notes.parameter.plate`.
 2026-10-30: `form.qimen.leap` and its values and note,
 *reader-copy*. Phase 78: `form.liuren.shehai`, `form.liuren.shehaiFrom`,

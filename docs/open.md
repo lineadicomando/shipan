@@ -8,7 +8,7 @@ this one hold what a next step seldom needs: `docs/open-recorded.md`, the
 divergences the register carries with no parameter, and `docs/open-errands.md`,
 the small errands. Backticked names in all three are held to the code by
 `node texts/todo-check.mjs`. What was dropped is in
-`docs/history/roadmap-2026-11-05-phase93.md` and the roadmaps before it.
+`docs/history/roadmap-2026-11-06-phase97.md` and the roadmaps before it.
 
 ## What each refused value waits on
 
@@ -75,22 +75,14 @@ cell; a canonical year board in `packages/core/test/canonical/`; and a lens.
 
 ## The shelf
 
-**In order.** Each is a named section; nothing here is a sweep of a book.
-Lines 1–3 have nothing left to read on these files and stand for a decision
-or as a map. The 太乙 files' offsets: the 《統宗》,
-`taiyi/taiyi-shu-tongzong-daquan-gugong.pdf`, PDF = series page + 4, each
-juan with its own 目錄; the 金鏡, `taiyi/taiyi-jinjing-shijing-skqs.pdf`,
-PDF = 四庫 printed page − 854; 盧央's 《中國古代星占學》,
-`shushu/zhongguo-gudai-xingzhanxue.pdf`, PDF = printed page + 18.
+**In order.** Each is a named section of a held file; nothing here is a
+sweep of a book. A file's offsets and map are its row in `texts/README.md`.
 
 | | what would move | where |
 |---|---|---|
-| 1 | a dated 日計 board, or the 盈差 of the day explained: what `ji: riji` waits on | not in the 《統宗》 (卷四, 卷十八, 卷三十六 and the 144 boards of 卷三十二–三十五 read, 2026-10-11 and 10-15); left there only the 命法 of 卷三十七–四十, which takes a birth. Otherwise a work not held |
-| 2 | the lists of 上和 · 次和 · 下和, three ways in three prints, and which count is read against 太乙's palace | none held answers it (金鏡 卷二, 《統宗》卷六 and 卷三十一, 盧央 pp. 477–479 read). Wants a 金鏡 not the 四庫's, or a work quoting 王希明's lists |
-| 3 | a 起例 variant: none found in 卷一–六十四 (it found `spiritSeat: yinshi`); kept as the map of the file | 《御定奇門大全》, `qimen/yuding-qimen-daquan.pdf`: each work's section of `docs/sources.md` is titled by its juan, the sheet ranges are its row in `texts/README.md`, and a work is bracketed on the 版心, its 目錄 being wrong four times |
-| 4 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
-| 5 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
-| 6 | where a 日家 count running at a solstice ends: finished at its 癸亥, or dropped on the solstice day as `dayDun: solstice` drops it | 《金函玉鏡》下冊, `qimen/jinhan-yujing-2.pdf`, 卷二十 p. 413, 「冬至艮宮夏坤地，命起甲子順逆行」 and the lines around it; read so far for the anchor only |
+| 1 | the limits of a 七政四餘 life, and the 量天尺 | 《星學大成》, SKQS vol. 809: read are 卷一 leaves 1–8, 卷三's 運限起例, 卷四 leaves 1–7 and the four 算法 of the 餘. The juan are mapped in `docs/sources.md` § "《星學大成》卷四 星盤或問, and the map of the other juan" |
+| 2 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
+| 3 | where a 日家 count running at a solstice ends: finished at its 癸亥, or dropped on the solstice day as `dayDun: solstice` drops it | 《金函玉鏡》下冊, `qimen/jinhan-yujing-2.pdf`, 卷二十 p. 413, 「冬至艮宮夏坤地，命起甲子順逆行」 and the lines around it; read so far for the anchor only |
 
 **Wanted and not held**: the 《元史·曆志》; 《太乙淘金歌》; 沈義方's
 《星平大成》, a lead for the day turned at midnight; a second dated chart with
@@ -98,7 +90,7 @@ PDF = 四庫 printed page − 854; 盧央's 《中國古代星占學》,
 大全》, 《遁甲奇門秘傳要旨》, 《明抄奇門陰遁書》 and 《李衛公奇門心法》, the last
 with a Tang attribution. None of that platform's files states a provenance.
 
-**What is left to read**: lines 4–6 above, and the errands in
+**What is left to read**: lines 1–3 above, and the errands in
 `docs/open-errands.md`. No page is owed a reading; the tools are in the
 `shushu` skill's `common/development.md`.
 
@@ -122,8 +114,9 @@ register 2026-10-31 and 2026-11-05.
 - 奇門: no row for `spirits: fixed`, `spirits: baihu`,
   `centreTravel: travel`; the 入墓 row (rung 4 since 2026-11-05) carrying
   two axes that each part; the 統宗's and the 秘笈大全 卷一's copies of the
-  入墓 歌 on the plate; the 日家 refusal row, and the 飛盤 one now that
-  `plate: fei` is built; the 十干克應 row (a second witness asked for, 70 for
+  入墓 歌 on the plate; the 日家 refusal row, and the 飛盤 one in
+  `docs/sources.md`'s table, which `plate: fei`, `gateSeats` and `spiritRing`
+  now compute; the 十干克應 row (a second witness asked for, 70 for
   67).
 - 七政: `luohou: ascending` with no `heldBy` and no row; the 三辰通載
   described two ways; `minggong: yuejiang`'s 三命通會 lays on the month's
@@ -152,7 +145,9 @@ there (合, 沖, the ten gods) being a different lens. Leads, none decided:
 branch's phase, rung 4, its last clause odd on the plate (「土入金鄉」, the
 transcription 木鄉); a pair on 太乙's palaces, in 太乙's numbering; 六壬's
 六沖 and 六合, a general by its own phase ("Recorded, with no parameter"), the 日家's nine stars and
-the 紫微 四化 flights, each once it has its row; 太乙's answer is cached
+the 紫微 四化 flights, each once it has its row; a phase for 太常, which
+`spiritRing: nine` lays and a phased lens leaves out — 《奇門旨歸》卷一's
+九神五行 (PDF 18) gives one to each of the nine, not read for this; 太乙's answer is cached
 `public` for a week, so a change to its shape reaches a returning reader
 late. On the 奇門 section the family selector pushes the moment's steps to
 a second line of the bar at 1920 wide; not looked at narrower, nor choosing
@@ -170,6 +165,10 @@ another hour with the scan's dialog open.
   `gongpo` and `sanqideshi` are no stem pair and are offered always, though `gongpo` occurs only under
   `menpo: gongzhimen`: a scan asked for it under the default finds nothing
   and does not say why. The same filter, keyed on `qimen.menpo`, would fix it.
+  **The gate 中 is the other way about**: `GATE_IDS` mirrors the engine's
+  eight `GATES`, and `CENTRE_GATE` stands outside them, so a scan under
+  `gateSeats: nine` cannot ask for it. 太常 is offered (`SPIRIT_IDS`, eleven)
+  and found only under `spiritRing: nine`, silently otherwise, as `gongpo`.
 - **A configuration may carry no fortune**, since `stemPairs: jinhan`:
   `Pattern.valence` and `valenceOf` are optional, and every surface prints the
   mark without one. A surface added later has to do the same.

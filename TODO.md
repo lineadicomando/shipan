@@ -4,9 +4,9 @@ What a session needs to resume, and nothing more. What holds is
 [`docs/`](docs/README.md); every open question is
 [`docs/open.md`](docs/open.md), with [`docs/open-recorded.md`](docs/open-recorded.md)
 and [`docs/open-errands.md`](docs/open-errands.md) beside it; the past is
-[`docs/history/`](docs/history/README.md), never normative. Cut seven times,
+[`docs/history/`](docs/history/README.md), never normative. Cut eight times,
 each time whole to a roadmap there, the last
-[`docs/history/roadmap-2026-11-05-phase93.md`](docs/history/roadmap-2026-11-05-phase93.md).
+[`docs/history/roadmap-2026-11-06-phase97.md`](docs/history/roadmap-2026-11-06-phase97.md).
 
 ## Resuming cold
 
@@ -16,10 +16,11 @@ otherwise. Read a section of `docs/open.md`, not the file.
 - **A reading**: the file's row in `texts/README.md` (grep the filename), the
   work's section in `docs/sources.md` (grep its title; thousands of lines),
   the question's line in `docs/open.md`. Method: `docs/scans.md` once, and the
-  `shushu` skill's `common/development.md`, which lists what a reading owes.
+  `shushu` skill's `common/development.md`, which lists what a reading owes
+  and the tools on the shelf.
 - **A build**: the `new-feature` skill, § "A value of a parameter, built on a
   reading"; surface work starts from `docs/architecture.md` § "A board the
-  page can point into".
+  page can point into". A new parameter's shape is put to the user first.
 - **Version and release**: `docs/architecture.md` § "Which term moves" and §
   "Releasing". Tag, push and deploy on the user's word only.
 - **Do not open** `docs/sources.tsv` (grep a row, edit in place),
@@ -30,29 +31,28 @@ otherwise. Read a section of `docs/open.md`, not the file.
   holds every backticked name here and in the three open-question files to the
   code. Before ending, sweep `docs/sources.md`, `texts/README.md`, the
   three open-question files and this file for sentences the session outlived
-  («unread», «stays refused»…).
+  («unread», «not built», «not tagged»…).
 
 ## Where it stands, 2026-11-06, end of phase 97
 
-**0.48.0** on `main`, committed, not tagged, pushed or deployed: the site runs
-0.46.1. No branch open; build, typecheck and every suite pass.
+**0.48.0** on `main`, tagged `v0.48.0` (and `v0.47.0` on its own commit),
+pushed and deployed: https://shipan.it runs 0.48.0. No branch open; build,
+typecheck and every suite pass. The shelf's three 飛盤 works are read and
+built (phases 94–97); what they left is errands.
 
 ## What to do next, in the order the user has been taking it
 
 1. **月家, `system: yuejia`**, commissioned 2026-11-02: the year board
    (phase 89) on the month pillar, `layOnPillar` shared. Steps, sources and
    the 法竅's evidence: `docs/open.md` § "年家 and 月家, commissioned".
-2. **The 飛盤 works are read and built** (phases 94–97): `gateSeats` and
-   `spiritRing` under `plate: fei` lay the 鳴法's and the 旨歸's board. What is
-   left of them is errands (`docs/open-errands.md`).
-3. **The scan form's `gongpo`**: offered always, found only under
-   `menpo: gongzhimen`, so a scan under the default finds nothing and says
-   nothing. A filter like `layableUnder`'s, keyed on `qimen.menpo`.
-4. **Two leads**, neither file held: `docs/open.md` § "Leads from the `shushu`
+2. **The scan form's two unaskable or silent criteria**: `gongpo` is offered
+   always and found only under `menpo: gongzhimen`; the gate 中 is laid under
+   `gateSeats: nine` and not offered. `docs/open.md` § "Surfaces and code".
+3. **Two leads**, neither file held: `docs/open.md` § "Leads from the `shushu`
    skill".
-5. **The review of 2026-10-23**: `docs/open.md`; several lines are a missing
+4. **The review of 2026-10-23**: `docs/open.md`; several lines are a missing
    row in `docs/sources.tsv`, writable from what is read.
-6. **The lens, when it moves again**: the month board designed with its lens;
+5. **The lens, when it moves again**: the month board designed with its lens;
    八字 last and only if the user wants it.
 
 ## Decisions held open, by the user's word
@@ -73,7 +73,9 @@ unanimous on a question makes a holder (2026-10-30); a study describing a
 count does not (2026-10-31); a compiler's note disowning a layer his own juan
 states does not block a value whose text is attributed and transcribed
 (2026-11-02); a parameter has one default for every board it reads on, and a
-form may fill a field from a value (`fills`, 2026-11-05).
+form may fill a field from a value (`fills`, 2026-11-05); two schools parting
+on two things are two axes, and a name follows the print that carries it
+(`gateSeats`, `spiritRing`, 中, 2026-11-06).
 
 ## 1. Parameters that are declared and refused
 

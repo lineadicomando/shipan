@@ -73,7 +73,12 @@ of [`docs/open.md`](open.md), and held to the code with it by
 
 **Asked and not found, so not asked of the same works again**: a 日計 or
 時計 board with a date on it, of 《太乙金鏡式經》卷六 and 卷九 and of the
-《統宗》卷四, 卷十八 and 卷三十六; the holders of
+《統宗》卷四, 卷十八, 卷三十六 and the 144 boards of 卷三十二–三十五, whose only
+part left unread, the 命法 of 卷三十七–四十, takes a birth; the lists of 上和 ·
+次和 · 下和 and the count read against 太乙's palace, of 金鏡 卷二, 《統宗》卷六
+and 卷三十一 and 盧央 pp. 477–479, which want a 金鏡 not the 四庫's or a work
+quoting 王希明's lists; a 起例 variant, of 《御定奇門大全》卷一–六十四, which
+found `spiritSeat: yinshi`; the holders of
 the day and year boundaries, of 《三命通會》卷二 and 《命理新論》, of
 《淵海子平》卷一's 起例, and the day's of 洪丕謨's 第三章; the five phases
 of the 十二天將 and a general turned at the 節, of 《御定六壬直指》卷上 and
