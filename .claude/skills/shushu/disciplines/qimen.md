@@ -125,8 +125,7 @@ Unmarked = found in this research and not yet on either list.
   attribution).
 
 **The flying lineage (飛盤 fēipán)**. Three of its works arrived on
-2026-11-02; the 法竅 and the 鳴法 were read on the plate on 2026-11-05, and
-the 旨歸 is unread (`docs/open.md` § "The shelf", line 7):
+2026-11-02, and all three were read on the plate on 2026-11-05 and 06:
 
 - 《奇門法竅》, 錫孟樨 Xī Mèngxī (or 錫孟穉), 同治九年 (1870), circulated in
   manuscript. **Read**: it flies the 時家 board whole, states it, draws 36
@@ -149,9 +148,12 @@ the 旨歸 is unread (`docs/open.md` § "The shelf", line 7):
   (§ "《奇門遁甲鳴法》"). The order 「休死傷杜中開驚生景」 the web quotes is the
   modern annotator's (李開元), not the manuscript's. Its companions are
   《奇門樞要》 and 《衍象》.
-- 《奇門旨歸》, 朱浩文, 光緒十九年 (1893), 匯源堂刻本: the date is on its
-  title page, in the 四庫未收書輯刊 facsimile now held. Said to work 飛盤
-  cases, and sold as 「布門輪宮，飛星定局」, which would be `xingfei`.
+- 《奇門旨歸》, 朱浩文, 敘 1883, print 光緒十九年 (1893), 匯源堂刻本, in the
+  四庫未收書輯刊. **Read**: its 起例 is credited to 甘氏 (「甘氏異傳秘訣歌」),
+  and its 卷十四–三十一 draw all 1080 hours on the 鳴法's rule — nine gates
+  with 「中」 the ninth, carried by the 直使 through nine; nine spirits flown,
+  白虎 and 元武 under 陰; nothing lodged (§ "《奇門旨歸》"). Not `xingfei`,
+  whatever its blurb says: the gates fly too.
 
 **Modern Chinese manuals**
 
@@ -570,7 +572,7 @@ Each line gives what it is, why it matters, what would settle it, and whether
 that is on the shelf.
 
 - **`plate: fei` on the hour board.** 《奇門法竅》 (錫孟樨 1870), 《奇門遁甲鳴法》
-  (1871) and 《奇門旨歸》 (1883) are attributed 時家 飛盤 texts with dates, and
+  (1871) and 《奇門旨歸》 (1883/1893) are attributed 時家 飛盤 texts with dates, and
   the last works cases. They are the first candidates for «a text flying the
   時家 board's own 起例». **All three are held since 2026-11-02**: the 法竅
   in 鄭同's 2011 點校 and a 抄本 reprint, the 鳴法 as photographs of the
@@ -584,8 +586,9 @@ that is on the shelf.
   the 直使 counted through all nine; nothing lodged. Not the 法竅's: its
   drawings carry eight spirits and eight gates, and its 論八神 names
   「加太常飛九宮」 only as a 坊本 practice it rejects. So they are values under
-  `plate: fei` of three axes, the spirits, the gate seats and the lodging,
-  each held by one manuscript, and they wait on the user's word
+  `plate: fei` of three axes, the spirits, the gate seats and the lodging.
+  The 旨歸 (read 2026-11-06) draws the 鳴法's rule for all 1080 hours, so
+  that school has two independent texts (rung 2). Commissioned 2026-11-06
   (`docs/open-recorded.md`).
 - **`method: yinpan` (陰盤, 王鳳麟).** A named modern practice with a
   stateable rule. Whether it is a 定局 method of the 時家 board or a board of

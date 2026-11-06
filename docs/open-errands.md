@@ -10,6 +10,12 @@ spare takes one. Part of [`docs/open.md`](open.md), held to the code with it by
 Each reading's errands, newest first, from phase 86; the earlier ones are in
 `docs/history/roadmap-2026-11-05.md` and `docs/history/roadmap-2026-10-30.md`.
 
+- **Phase 96**, inside 《奇門旨歸》: 超神接氣折補閏局法, read once and not
+  reconciled clause by clause before `method: chaibu` names it; 陽七局 丁卯's
+  plate (乙丑's, PDF 118) and 陰九局 戊辰's stars (four palaces on, PDF 143);
+  the stars of the other boards, not transcribed; the single cells cut twice
+  (`texts/qimen/zhigui/scripts/check.mjs --list`).
+
 - **Phase 95**, inside 《奇門遁甲鳴法》: the 認局 passage's example, 「如乙丑日亥時交節…
   為中局」, against the 拆補 the same passage states, before `method: chaibu`
   names the work; the 陰 diagram's centre, not drawn; 第一章's 日課 · 月法 · 年依運

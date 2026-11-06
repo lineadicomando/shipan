@@ -2778,6 +2778,96 @@ file's 60 openings are talismans and spells.
 
 Last checked 2026-11-05.
 
+### 《奇門旨歸》: the 鳴法's board, drawn for all 1080 hours
+
+《奇門旨歸》三十八卷, 楚北興國 朱浩文 (星源) 述, held as the 匯源堂 print of
+光緒十九年 (1893) in 《四庫未收書輯刊》 肆輯 第27冊. Its 敘 is dated 光緒九年
+(1883), which is where the `shushu` skill's earlier date comes from. Read on
+the plate 2026-11-05 and 06: the 總目 (PDF 11–14), 卷一 (PDF 16–20), 卷二's
+三盤三元合論, 超神接氣折補閏局法 and 甘氏異傳秘訣歌 (PDF 22–24). The 1080 drawn
+boards of 卷十四–三十一 (PDF 70–213) were transcribed. Nine readers worked
+to a brief, each 局 at the scan's own resolution, recording heaven stem,
+gate, 使 and spirit for every palace. The cells were then held to a rule by a
+script, and every board that parted as a whole was looked at on the plate.
+Brief, transcription and scripts are in `texts/qimen/zhigui/` (`boards/`,
+`scripts/check.mjs`, `scripts/which.mjs`).
+
+**How the work is built.** Each 局 is a juan of its own: a 目錄 block, then
+sixty boards four to a block, 陽一 to 陽九 in 卷十四–二十二 and 陰九 to 陰一 in
+卷二十三–三十一. Each board is drawn south up. A palace gives the heaven
+stem, star and spirit on one line, the gate in large type, a 使 beside the
+直使, and the earth plate under it. The gates are nine, 「中」 among them: 卷一's
+八門五行 lists 「休死傷杜中開驚生景」, the 中 「寄 陽死 陰生」. The spirits are
+nine, 值符 騰蛇 太陰 六合 勾陳 太常 朱雀 九地 九天, and 卷一 notes that 白虎 and
+元武 stand for 勾陳 and 朱雀 「夏至後陰遁逆佈」. Every 陰 board prints 白 and 元
+in those two seats, and no 陽 board does.
+
+**What it states.** The 甘氏異傳秘訣歌 is credited to 甘氏 as 「異傳」:
+
+- 「符使之宮順逆飛。陽遁符一飛二黑，陰遁符九逆艮馳。如此九星飛九宮」.
+- 「十時飛遍還原位」.
+- 「八門專主飛何處，陽順陰逆九宮飛」.
+- 「值使十時歸本位，有時超五理當然」.
+- 「符禽居中皆原位」.
+
+It flies the stars, the 符使 and the gates through nine. The line
+「九星順逆不相同」, with its 「蓬芮沖輔禽循順，英任柱心禽逆行」, reads at first as
+a reversed yin order of the stars. The boards do not lay one: every star
+printed stands beside the stem it carries from its home.
+
+**What the boards lay.** The heaven plate is the earth plate carried whole to
+the hour stem, in both 遁. The gates are the nine seats in their home order,
+carried by the 直使 counted from the 旬首's palace through all nine, forward
+under 陽 and back under 陰, so 中 and the 直使 may stand anywhere, the centre
+included. The spirits are nine, flown from the 直符's palace, 陽 forward and
+陰 back. Nothing is lodged. That is the 鳴法's rule (previous section)
+exactly, with 「中」 named where the 鳴法 has a gateless 五. Over the 1080
+boards (one set aside, below):
+
+- **Heaven stems**: 9601 of 9621 legible cells agree.
+- **Gates**: 9689 of 9701.
+- **Spirits**: 9608 of 9637.
+- **使**: on the counted palace on 1077 of the 1078 boards that print one.
+  The exception, 陰九局 壬寅, prints two 使, and one of them is on that palace.
+
+Nearly every cell that parts is one character cut twice on its board, with
+the character it displaced missing. Seven boards first transcribed against
+the rule were read again on the plate, and the print agrees with the rule on
+all seven. The readers had mirrored, swapped or displaced cells, and the
+transcription is corrected. **One board is the cutter's**: 陽七局 丁卯
+(PDF 118) carries its own gates but the stems, stars and spirits of 乙丑
+beside it, line for line. 陰九局 戊辰 (PDF 143) prints its stems at home, as
+the rule has them, and its stars four palaces on. On 陰九局 甲子, another
+hour whose stems stand at home, the stars stand with their stems. The stars
+were not transcribed beyond these: that the star travels with its stem rests
+on the dozen boards read whole on the plate, and on the top line printing
+the two together.
+
+**The 局** is argued in 超神接氣折補閏局法: 「節之上元不可錯用下節之上元」;
+「節氣先到…符頭未到其候，尚是下元，當折本節局以接之，謂之接氣」; 「芒種大雪後置閏者
+非也」; and 「如知折補之法者…超神接氣置閏盡包含無遺矣」, marked 「本甘氏」. That reads
+as 拆補 against 置閏, but the passage was read once and not reconciled clause
+by clause, so `method: chaibu` does not name it (`docs/open-errands.md`).
+
+**What it is, as a witness.** Attribution and transcription: a 起例 credited
+to 甘氏 and set out in a song, and 1080 boards that lay it. It is a second
+text for the 鳴法's rule and is not a copy of it: other wording, other
+lineage (甘氏 against 峨眉山 宏農道人), and the 中 named as a gate. The two
+agree on every cell the 鳴法 works. **It is not a holder of
+`plate: xingfei`**: the sale's 「布門輪宮，飛星定局」 is the 敘's description,
+and the boards fly the gates as well as the stars.
+
+**What this moves.** The 鳴法's row (gates and spirits through nine, the
+centre never lodged) gains a second, independent text and rises from rung 4
+to rung 2, the 旨歸's boards being besides a check of the over-determined
+kind on its own transcription. The `plate: fei` row's heaven plate has a
+third text. `docs/open-recorded.md`'s yin flight of `xingfei` gains another
+yin plate carried as one, which still does not settle the 折衷's reading. The
+line under 飛盤 in `docs/open-recorded.md`, two ways of gates, spirits and
+centre, now stands as two schools with 1080 boards behind one of them.
+
+Last checked 2026-11-06.
+
 ### 《御定奇門大全》卷五–十, the eighteen 局 hour by hour
 
 Read 2026-10-16 on the plate, sheets 114–268, two book-pages to the sheet and

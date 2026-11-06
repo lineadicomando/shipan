@@ -32,10 +32,10 @@ otherwise. Read a section of `docs/open.md`, not the file.
   three open-question files and this file for sentences the session outlived
   («unread», «stays refused»…).
 
-## Where it stands, 2026-11-05, end of phase 95
+## Where it stands, 2026-11-06, end of phase 96
 
 **0.47.0** on `main`, committed, not tagged, pushed or deployed: the site runs
-0.46.1. Phases 94 and 95 are readings and move no version. No branch open; build,
+0.46.1. Phases 94–96 are readings and move no version. No branch open; build,
 typecheck and every suite pass.
 
 ## What to do next, in the order the user has been taking it
@@ -43,10 +43,11 @@ typecheck and every suite pass.
 1. **月家, `system: yuejia`**, commissioned 2026-11-02: the year board
    (phase 89) on the month pillar, `layOnPillar` shared. Steps, sources and
    the 法竅's evidence: `docs/open.md` § "年家 and 月家, commissioned".
-2. **The rest of the 飛盤 works**: the 旨歸, line 7 of `docs/open.md` §
-   "The shelf". The 法竅 is read to the end (phase 94). The 鳴法 is read
-   (phase 95): a second 飛盤 school, gates and spirits flown through nine, put
-   to the user in `docs/open-recorded.md` and not built.
+2. **The second 飛盤 school, commissioned 2026-11-06**: the gates through nine
+   seats, nine spirits flown and nothing lodged, held by the 鳴法 and the
+   旨歸 (rung 2). Three axes under `plate: fei`: `docs/open-recorded.md`, and
+   the argument in `docs/sources.md` § "《奇門旨歸》". The shelf's 飛盤 works
+   are all read (phases 94–96).
 3. **The scan form's `gongpo`**: offered always, found only under
    `menpo: gongzhimen`, so a scan under the default finds nothing and says
    nothing. A filter like `layableUnder`'s, keyed on `qimen.menpo`.
