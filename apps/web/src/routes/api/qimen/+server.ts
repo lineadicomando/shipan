@@ -54,8 +54,8 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
     }
 
     // The board of the year or of the month: the hour's procedure on that
-    // pillar, with no lens of its own yet. A birth goes to the hour board's
-    // function, as above.
+    // pillar, and the hour board's lens over the same six layers. A birth
+    // goes to the hour board's function, as above.
     if (
       (moment.options.system === 'nianjia' || moment.options.system === 'yuejia') &&
       !url.searchParams.has('born')
@@ -70,7 +70,7 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
         nianming: null,
         place: label ?? null,
         laidBy: laidBy('qimen', year.options),
-        lens: null,
+        lens: qimenLens(year),
       });
     }
 

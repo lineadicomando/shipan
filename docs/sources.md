@@ -4343,6 +4343,14 @@ it; that a 奇門 board reads it at all is attested for two pairs of the five,
 by name, in a 十干克應 table this engine already lays, and the other three are
 the pairing and no 奇門 text located here naming them.
 
+**The boards of a year and of a month lend it whole** (`qimenLens`). They are
+the hour's procedure laid on a pillar, with the same two plates of stems, the
+same nine stars, eight gates and eight spirits, and nothing a lens reads is
+the hour's own: a stem's phase is its stem's, a star's and a gate's their home
+palace's, a spirit's what `spiritPhase` gives, which reads on these boards for
+that reason. What the hour board weighs against a season, which a year has
+none of, a lens never read.
+
 **The board of a day lends its lens less** (`dayLens`). It has no plate of
 stems, so no 五合; its gates are the hour board's eight and take the phase
 they take there; and **its nine stars have no phase registered**. 太乙 through

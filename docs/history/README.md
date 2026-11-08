@@ -138,6 +138,7 @@ phase.
 | 102 | [the ruler transcribed](102-the-ruler-transcribed.md) | done — the 《張果星宗》's 量天尺 transcribed blind by four readers: one ruler printed twice, a palace walked from its far end, a column a thirtieth of the palace, the ages counting columns; then laid under `gong: ci` on the user's word, `qixian: du` counting thirtieths and `ri` left null; 0.51.0 |
 | 103 | [the shelf read out](103-the-shelf-read-out.md) | done — 潘鼐's account of 郭守敬's catalogue, reporting the 黃道十二次宿度 in a Ming manuscript not held, and the 金函玉鏡's 日家 anchor, which does not say where a running count ends; the shelf's table empty; nothing shipped |
 | 104 | [the month family](104-the-month-family.md) | done — `system: yuejia` on the month pillar, `monthYuan` named for the branches (`ziwu` the 統宗's and the 法竅's, default; `yinshen` the 演義's; `yuejian` declared and refused), no lens; 0.52.0 |
+| 105 | [the lens of the pillar boards](105-the-lens-of-the-pillar-boards.md) | done — `qimenLens` on the year and month boards, `spiritPhase` read on both; 0.53.0 |
 
 ## The rest of the record
 

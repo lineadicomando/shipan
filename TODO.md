@@ -30,28 +30,19 @@ otherwise. Read a section of a file, not the file.
   code. Before ending, sweep `docs/sources.md`, `texts/README.md`, the
   open-question files and this file for sentences the session outlived.
 
-## Where it stands, 2026-11-08, end of phase 104
+## Where it stands, 2026-11-08, end of phase 105
 
-**0.52.0** on `main`, committed and **not tagged, pushed or deployed**:
+**0.53.0** on `main`, committed and **not tagged, pushed or deployed**:
 https://shipan.it still runs 0.50.0, the last tag is `v0.50.0`, and 0.51.0
-was never tagged. Build, typecheck and every suite pass. Since the tag:
-phase 102 lays the 命度 and the 大限 under `gong: ci` (`qixian: du` by
-thirtieths, `ri` null there); phase 103 read the shelf's last two lines;
-phase 104 built the 月家, `system: yuejia`, with `monthYuan`.
+and 0.52.0 were never tagged. Build, typecheck and every suite pass. Since
+the tag: phase 102 lays the 命度 and the 大限 under `gong: ci` (`qixian: du`
+by thirtieths, `ri` null there); phase 103 read the shelf's last two lines;
+phase 104 built the 月家, `system: yuejia`, with `monthYuan`; phase 105 lays
+`qimenLens` on the year and month boards, `spiritPhase` read on both.
 
 ## What to do next, in the user's order
 
-1. **The lens of the year and month boards, first** (the user's word,
-   2026-11-08). `apps/web/src/routes/api/qimen/+server.ts` answers both with
-   a null `lens`; the hour board's is `qimenLens` and the day's `dayLens`, in
-   `packages/core/src/dunjia/lens.ts`. `qimenLens` reads only `palaces` and
-   `spiritPhase`, so it fits `YearChart` and `MonthChart` but for one
-   question to put to the user: `spiritPhase` is read on the hour board
-   alone, so whether these boards' spirits take a phase, and which, is
-   undecided. Shape the lens with the user, then the surfaces: the section
-   (`YearReading.svelte` serves both), `docs/architecture.md`, and the lens
-   table in the `shushu` skill's `common/teaching.md` § 6.3.
-2. **What the year and month boards left**:
+1. **What the year and month boards left**:
    - a canonical board of each in `packages/core/test/canonical/` (the
      fascicle holds the hour board only);
    - the 遁甲集成 第三冊's 年家 and 月家 tables, pp. 1160–1216, set against
@@ -61,18 +52,18 @@ phase 104 built the 月家, `system: yuejia`, with `monthYuan`.
      not laid: a reading, then a question for the user;
    - the month laid flown, as 《奇門法竅》's 論月奇法 lays it, only if `plate`
      is ever offered on a board on a pillar.
-3. **The scan form's two silent criteria**: `gongpo` is offered always and
+2. **The scan form's two silent criteria**: `gongpo` is offered always and
    found only under `menpo: gongzhimen`, and the gate 中 is laid under
    `gateSeats: nine` and cannot be asked for. `docs/open.md` § "Surfaces and
    code".
-4. **The shelf** names no section today; files wanted are `docs/open.md` §
+3. **The shelf** names no section today; files wanted are `docs/open.md` §
    "The shelf", and what readings left is `docs/open-errands.md` § "Left
    open by the readings".
-5. **Two leads**, neither file held: `docs/open.md` § "Leads from the
+4. **Two leads**, neither file held: `docs/open.md` § "Leads from the
    `shushu` skill".
-6. **The review of 2026-10-23**: `docs/open-errands.md` § "The review of
+5. **The review of 2026-10-23**: `docs/open-errands.md` § "The review of
    2026-10-23"; several lines are a missing row in `docs/sources.tsv`.
-7. **The lens elsewhere**: `docs/open-errands.md` § "When the lens moves
+6. **The lens elsewhere**: `docs/open-errands.md` § "When the lens moves
    again"; 八字 last, and only if the user wants it.
 
 ## Decisions held open, by the user's word
@@ -94,6 +85,8 @@ phase 104 built the 月家, `system: yuejia`, with `monthYuan`.
 - Two schools parting on two things are two axes, and a name follows the
   print that carries it (2026-11-06); a value is named for its rule and not
   for a label a holder swaps (`monthYuan`, 2026-11-08).
+- A parameter about a thing reads wherever that thing is laid, with the
+  same default: `spiritPhase` on the year and month boards (2026-11-08).
 - A quantity derivable under one value and not under another is built where
   it can be and left null where it cannot, saying why (the 大限 under
   `gong: ci` with `qixian: ri`, 2026-11-08).

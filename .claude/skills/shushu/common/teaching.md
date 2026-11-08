@@ -361,14 +361,15 @@ As checked on 2026-10-25:
 |---|---|---|---|
 | `qimen` | heaven, earth, palace, spirit, star, gate | the palaces `1`–`9` | duigong, wuhe |
 | `qimen` with `qimen.system=rijia` | palace, star, gate | the palaces `1`–`9` | duigong |
+| `qimen` with `qimen.system=nianjia` or `yuejia` | as the hour's, checked 2026-11-08 | the palaces `1`–`9` | duigong, wuhe |
 | `liuren` | general, heaven, earth, upper, lower, branch, stem | the twelve branches `zi`…`hai` | none |
 | `qizheng` | palace, governor, remainder, house, lodge, motion | the twelve branches | guiyuan |
 | `ziwei` | rings, star, minor, ground, house | the twelve branches | sanfang, duigong |
 | `taiyi` | eye, number, taiyi, general, seat, god | none: no pair way | none |
 
 Only the phased layers can be a focus, be `toward`, or be `chosen` (`phased`
-in the descriptor the curl above prints). On the hour 奇門 that is every
-layer, `spirit` included unless `qimen.spiritPhase: none`; on 六壬 every layer but
+in the descriptor the curl above prints). On the hour, year and month 奇門
+that is every layer, `spirit` included unless `qimen.spiritPhase: none`; on 六壬 every layer but
 `general`; on 七政四餘 `governor` and `remainder`; on 太乙 `taiyi`, `general`
 and `god`; on 紫微斗數 `star` and `minor`; on the day 奇門 `palace` and
 `gate`.

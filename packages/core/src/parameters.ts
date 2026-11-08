@@ -762,7 +762,10 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   spiritPhase: {
     board: 'qimen',
-    family: 'shijia',
+    // The year's and the month's boards lay the hour's eight spirits, and a
+    // spirit's phase is the spirit's and not the hour's: the parameter reads
+    // wherever those eight are laid (the user's word, 2026-11-08).
+    family: ['shijia', 'yuejia', 'nianjia'],
     // Whether a lens may relate the eight spirits, and by which phase. It
     // moves nothing on the board. See `docs/sources.md` § "The phases of the
     // eight spirits".

@@ -360,8 +360,9 @@ the privacy note's inventory of what the browser keeps does not move. The rule i
 carries out is `docs/refusals.md` § "Where to look first". Three things
 follow from where it runs. **The relations are the engine's**: `/api/qimen`
 answers with `lens` beside the chart — `qimenLens`, every thing with a phase
-and the tables a relation is looked up in — because the client imports only
-types from `core`. **The lens knows no board**: what it is handed is a `Lens`
+and the tables a relation is looked up in, on the boards of the hour, the year
+and the month alike, and `dayLens` on the day's — because the client imports
+only types from `core`. **The lens knows no board**: what it is handed is a `Lens`
 (`packages/core/src/lens.ts`), the one descriptor every board fills — its
 seats in its own terms and order, its layers as the drawing marks them, every
 thing with a phase, the five relations, and the board's own relations as

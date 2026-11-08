@@ -11,7 +11,7 @@ one. Part of [`docs/open.md`](open.md), held to the code with it by
 Each reading's errands, newest first, from phase 97. Those of phases 94 to 96
 are in `docs/history/roadmap-2026-11-08-phase104.md`, and the earlier ones in
 the roadmaps before it. What the year and month boards left is `TODO.md`,
-items 1 and 2.
+item 1.
 
 - **Phase 103**, the shelf's last two lines. Where a 日家 count running at a
   solstice ends, finished at its 癸亥 or dropped on the solstice day as
@@ -77,7 +77,7 @@ register 2026-10-31, 2026-11-05 and 2026-11-06.
 
 ## When the lens moves again
 
-The year and month boards come first, as `TODO.md` item 1. 八字 last and
+The year and month boards have it since phase 105. 八字 last and
 only if the user wants it, the relations
 there (合, 沖, the ten gods) being a different lens. Leads, none decided:
 論星辰生尅制化 (全書 卷之三, PDF 162–163) gives a 紫微 palace's ground its

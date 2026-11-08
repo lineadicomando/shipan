@@ -3,6 +3,7 @@ import { computeQimenChart, type QimenChart } from '../src/dunjia/index.js';
 import { palace } from '../src/dunjia/palaces.js';
 import { DAY_LAYERS, DAY_LENS_LAYERS, LENS_LAYERS, LINKS, QIMEN_LAYERS, dayLens, qimenLens, wuhePartner } from '../src/dunjia/lens.js';
 import { computeDayChart, type DayChart } from '../src/dunjia/rijia.js';
+import { computeMonthChart, computeYearChart, type MonthChart, type YearChart } from '../src/dunjia/nianjia.js';
 import { RELATION_IDS, relationOf } from '../src/dunjia/relation.js';
 import { initEphemeris, type EphemerisContext } from '../src/ephemeris.js';
 import { STEMS } from '../src/ganzhi.js';
@@ -289,4 +290,73 @@ describe('the phases of the eight spirits, by `spiritPhase`', () => {
       expect(castWith(value, '2024-06-15', '14:00').palaces).toEqual(plain.palaces);
     }
   });
+});
+
+describe('the lens of a board of the year and of the month', () => {
+  const layWith = (
+    system: 'nianjia' | 'yuejia',
+    spiritPhase: ChartOptions['spiritPhase'],
+    date: string,
+  ): YearChart | MonthChart => {
+    const options: ChartOptions = { ...CLOCK, system, spiritPhase };
+    const moment = resolveMoment({ date, time: '12:00', timezone: 'Asia/Shanghai' }, BEIJING, options, context);
+    return system === 'yuejia' ? computeMonthChart(moment, options) : computeYearChart(moment, options);
+  };
+
+  for (const system of ['nianjia', 'yuejia'] as const) {
+    describe(system, () => {
+      it("reads the board's six layers as the hour board's lens does, with no plate weighed", () => {
+        const lens = qimenLens(layWith(system, 'none', '2024-06-15'));
+        expect(lens.board).toBe('qimen');
+        expect(lens.seats).toEqual(['1', '2', '3', '4', '5', '6', '7', '8', '9']);
+        expect(lens.layers).toEqual(QIMEN_LAYERS);
+        expect(lens.phased).toEqual(LENS_LAYERS);
+        expect(lens.linkIds).toEqual(['duigong', 'wuhe']);
+      });
+
+      it('lists every stem, palace, star and gate where the board lays it, a star and a gate by their home', () => {
+        const chart = layWith(system, 'none', '2024-06-15');
+        const { things } = qimenLens(chart);
+        for (const contents of chart.palaces) {
+          const seat = String(contents.palace.number);
+          const at = (layer: string) => things.find((thing) => thing.seat === seat && thing.layer === layer);
+          expect(at('heaven')).toMatchObject({ id: contents.heaven.id, element: contents.heaven.element });
+          expect(at('earth')).toMatchObject({ id: contents.earth.id, element: contents.earth.element });
+          expect(at('palace')).toMatchObject({ id: contents.palace.id, element: contents.palace.element });
+          expect(at('star')).toMatchObject({ id: contents.star.id, element: palace(contents.star.home).element });
+          if (contents.gate) {
+            expect(at('gate')).toMatchObject({ id: contents.gate.id, element: palace(contents.gate.home).element });
+          } else expect(at('gate')).toBeUndefined();
+        }
+      });
+
+      it('links the palaces facing each other as the hour board does, and the plates by 五合', () => {
+        const chart = layWith(system, 'none', '2024-06-15');
+        const lens = qimenLens(chart);
+        const hour = qimenLens(cast('2024-06-15', '14:00'));
+        expect(lens.links.filter((link) => link.relation === 'duigong')).toEqual(
+          hour.links.filter((link) => link.relation === 'duigong'),
+        );
+        for (const link of lens.links.filter((one) => one.relation === 'wuhe')) {
+          const stemAt = (end: { seat: string; layer: string }) =>
+            lens.things.find((thing) => thing.seat === end.seat && thing.layer === end.layer)?.id;
+          expect(wuhePartner(stemAt(link.a) as never)).toBe(stemAt(link.b));
+        }
+      });
+
+      it('relates the spirits by `spiritPhase`, which reads on this board as on the hour', () => {
+        const chart = layWith(system, 'branch', '2024-06-15');
+        const lens = qimenLens(chart);
+        expect(lens.phased).toContain('spirit');
+        const found = lens.things.filter((thing) => thing.layer === 'spirit');
+        expect(found).toHaveLength(8);
+        const huaqi = qimenLens(layWith(system, 'huaqi', '2024-06-15')).things.filter(
+          (thing) => thing.layer === 'spirit',
+        );
+        expect(huaqi.find((thing) => thing.id === 'zhifu')?.element).toBe('huo');
+        expect(found.find((thing) => thing.id === 'zhifu')?.element).toBe('tu');
+        expect(layWith(system, 'huaqi', '2024-06-15').palaces).toEqual(chart.palaces);
+      });
+    });
+  }
 });

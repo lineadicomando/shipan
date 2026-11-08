@@ -332,7 +332,10 @@ which lays the earth plate of a 陰遁 局, turns the heaven plate to the year's
 stem and counts the 直使 by its branch, with the same step functions the hour
 board calls. So the four parameters that say how a turned plate treats its
 centre and names its spirits are read on both, and `family` lists the two:
-`centreLodging`, `centreTravel`, `centreStem`, `spirits`. `centreLodging: bajie`
+`centreLodging`, `centreTravel`, `centreStem`, `spirits`. `spiritPhase` is
+read on both as well, a spirit's phase being the spirit's and not the hour's:
+it moves nothing on the board, and the lens `qimenLens` lays on it relates
+the spirits as it does on the hour's. `centreLodging: bajie`
 and `siyu` are refused there, both lodging the centre by a term a year has
 none of. It reads `yearYuan` of its own, and nothing that places a
 configuration, a strength or a seat by the hour. **The month board is the

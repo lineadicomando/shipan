@@ -529,8 +529,9 @@ and returns a direction as well as an hour. The tools are
 `compute_qimen_chart`, `draw_qimen_chart` and `scan_moments`, and the
 endpoints are `/api/qimen`, `/text`, `/plate` and `/prompt`.
 `qimenLens` and `dayLens` (`dunjia/lens.ts`) give a lens the things on the
-board with their phases, 對宮 and 五合; the spirits enter it only under a
-`spiritPhase` other than `none`.
+board with their phases, 對宮 and 五合; `qimenLens` serves the hour, year and
+month boards alike, and the spirits enter it only under a `spiritPhase` other
+than `none`, which reads on all three.
 
 **What is refused**, `docs/refusals.md`:
 

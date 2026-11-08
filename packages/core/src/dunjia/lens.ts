@@ -3,6 +3,7 @@ import { lensNames, phaseTable, type Lens, type LensLink, type LensName, type Le
 import type { Element } from '../types.js';
 import type { QimenChart } from './index.js';
 import type { DayChart } from './rijia.js';
+import type { MonthChart, YearChart } from './nianjia.js';
 import { palace } from './palaces.js';
 import type { SpiritId } from './plates.js';
 import { opposite } from './patterns.js';
@@ -153,11 +154,16 @@ function wuheLinks(things: readonly LensThing<QimenLayer>[]): LensLink<QimenLaye
 /**
  * What a lens may show on this chart: its things, and its relations.
  *
+ * The board of an hour, and the boards of a year and of a month, which are
+ * the hour's procedure laid on a pillar and carry the same six layers: the
+ * lens reads only what stands in each palace, never what the hour board
+ * weighs against a season.
+ *
  * The spirits are things of the lens only where the chart was cast with a
  * `spiritPhase` that gives them a phase; under `none` they are a kind the
  * lens keeps and never relates.
  */
-export function qimenLens(chart: QimenChart): QimenLens {
+export function qimenLens(chart: QimenChart | YearChart | MonthChart): QimenLens {
   const things: LensThing<QimenLayer>[] = [];
   const spiritPhase = chart.options.spiritPhase ?? 'branch';
   const phasedSpirits = spiritPhase === 'none' ? undefined : SPIRIT_PHASES[spiritPhase];

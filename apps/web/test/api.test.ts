@@ -859,7 +859,10 @@ describe('GET /api/qimen', () => {
     // Nothing weighed and nothing named: its holders lay neither.
     expect(body.qimen.palaces.every((cell) => cell.starStrength === undefined)).toBe(true);
     expect(body.qimen.patterns).toBeUndefined();
-    expect(body.lens).toBeNull();
+    // The hour board's lens, over the same six layers, the spirits phased by
+    // `spiritPhase`'s default.
+    expect(body.lens).toMatchObject({ board: 'qimen', linkIds: ['duigong', 'wuhe'] });
+    expect((body.lens as { phased: string[] }).phased).toContain('spirit');
 
     const other = await call(qimen, `${MOMENT}&qimen.system=nianjia&qimen.yearYuan=yiqisi`);
     expect((other.body as Year).qimen.ju.number).toBe(4);
@@ -896,7 +899,7 @@ describe('GET /api/qimen', () => {
     expect(body.qimen.month.hanzi).toBe('庚午');
     expect(body.qimen.yuan).toMatchObject({ id: 'xia', opened: 2024, opener: { hanzi: '甲辰' } });
     expect(body.qimen.ju).toEqual({ yang: false, number: 7 });
-    expect(body.lens).toBeNull();
+    expect(body.lens).toMatchObject({ board: 'qimen', linkIds: ['duigong', 'wuhe'] });
 
     const other = await call(qimen, `${MOMENT}&qimen.system=yuejia&qimen.monthYuan=yinshen`);
     expect((other.body as Month).qimen.ju.number).toBe(4);

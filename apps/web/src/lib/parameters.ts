@@ -352,7 +352,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'spiritPhase',
     board: 'qimen',
-    family: 'shijia',
+    family: ['shijia', 'yuejia', 'nianjia'],
     values: ['none', 'branch', 'huaqi'],
     implemented: ['none', 'branch', 'huaqi'],
     fallback: 'branch',
