@@ -1,14 +1,11 @@
 # What stands open
 
-The questions a reading or a build would answer. A commit that settles a line
-removes it and adds what it leaves open. Read a section, not the file. The
-order is `TODO.md`; what is established is `docs/sources.md`; each file on the
-shelf is `texts/README.md`. Beside this file, `docs/open-recorded.md` holds
-the divergences the register carries with no parameter, and
-`docs/open-errands.md` the small errands, the review of 2026-10-23 and the
-lens's leads. `node texts/todo-check.mjs` holds the backticked names in all
-three to the code. What was dropped is in
-`docs/history/roadmap-2026-11-08-phase104.md` and the roadmaps before it.
+The questions a reading or a build would answer; a commit that settles a line
+removes it. The order is `TODO.md`; what is established is `docs/sources.md`;
+each file on the shelf is `texts/README.md`. `docs/open-recorded.md` holds the
+divergences the register carries with no parameter, `docs/open-errands.md` the
+small errands. `node texts/todo-check.mjs` holds the backticked names of all
+three to the code. What was dropped is in the roadmaps under `docs/history/`.
 
 ## What each refused value waits on
 
@@ -63,20 +60,18 @@ hours in 《星曆考原》卷五, beside 寶鏡圖's (`almanac.md`, file not he
 
 ## Surfaces and code
 
-- **Two lists are written a parameter at a time** and held to the declaration
-  by tests: the MCP schemas in `packages/mcp/src/` and
-  `apps/web/src/lib/parameters.ts`. A value added to the engine fails those
-  suites until it is added there. **So is the list of configurations**,
-  `PATTERN_IDS` in `apps/web/src/lib/vocabulary.ts`, and beside it
-  `STEM_PAIR_TABLES`, the names each value of `stemPairs` lays, which the
-  scan form reads through `layableUnder` and a test holds to `stemPairIds`.
-  `gongpo` and `sanqideshi` are no stem pair and are offered always, though `gongpo` occurs only under
-  `menpo: gongzhimen`: a scan asked for it under the default finds nothing
-  and does not say why. The same filter, keyed on `qimen.menpo`, would fix it.
-  **The gate 中 is the other way about**: `GATE_IDS` mirrors the engine's
-  eight `GATES`, and `CENTRE_GATE` stands outside them, so a scan under
-  `gateSeats: nine` cannot ask for it. 太常 is offered (`SPIRIT_IDS`, eleven)
-  and found only under `spiritRing: nine`, silently otherwise, as `gongpo`.
+- **The scan form has silent criteria.** `gongpo` is offered always
+  (`PATTERN_IDS` in `apps/web/src/lib/vocabulary.ts`) and occurs only under
+  `menpo: gongzhimen`; the filter `layableUnder` applies for `stemPairs`
+  (`STEM_PAIR_TABLES`), and the same keyed on `qimen.menpo` would fix it. 太常
+  (`SPIRIT_IDS`) is offered and found only under `spiritRing: nine`. The gate
+  中 the other way about: `GATE_IDS` mirrors the engine's eight `GATES`, and
+  `CENTRE_GATE` stands outside them, so a scan under `gateSeats: nine` cannot
+  ask for it.
+- **Three lists are written by hand** and held to the declaration by tests:
+  the MCP schemas in `packages/mcp/src/`, `apps/web/src/lib/parameters.ts`, and
+  `PATTERN_IDS` with `STEM_PAIR_TABLES` (held to `stemPairIds`). A value added
+  to the engine fails those suites until it is added there.
 - **A configuration may carry no fortune**, since `stemPairs: jinhan`:
   `Pattern.valence` and `valenceOf` are optional, and every surface prints the
   mark without one. A surface added later has to do the same.
@@ -99,3 +94,8 @@ hours in 《星曆考原》卷五, beside 寶鏡圖's (`almanac.md`, file not he
   that also holds a hanzi, so two registers of one drawing are set unalike.
   It wants a text engine, or a resvg resolving a font stack a character at a
   time. No surface asks for a PNG. `familiesByScript` in `png.ts`.
+- **The 奇門 section's bar** wraps the moment's steps to a second line at
+  1920 wide with the family selector in it; not looked at narrower, nor
+  choosing another hour with the scan's dialog open.
+- **太乙's answer is cached `public` for a week**, so a change to its shape
+  reaches a returning reader late.

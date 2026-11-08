@@ -5562,14 +5562,14 @@ that the compiler who prints it most fully calls 諸說紛紜 and 後人附會�
 parameter value names a school somebody follows. **The one text here that
 states these boards most fully is the one that says they are not what the art
 is about**, and this engine is not in a position to pick a school out of a set
-its own best witness disowns. `docs/open.md` carries what would change it: not
-another statement of the method, of which there are now plenty, but a lineage
-that holds one of them.
+its own best witness disowns. What would have changed it was not another
+statement of the method, of which there are now plenty, but a lineage that
+holds one of them.
 
 **The user's word of 2026-11-02 moved it**: a compiler's note disowning a
 layer his own juan states does not block a value whose text is attributed and
-transcribed. The year is computed since 2026-11-05 as `system: nianjia`; the
-month is commissioned (`docs/open.md` § "月家, commissioned").
+transcribed. The year is computed since 2026-11-05 as `system: nianjia`, and
+the month since 2026-11-08 as `system: yuejia`.
 
 **And its day family intercalates on a different count.** 「凡甲子符頭超過三十日
 有奇，即宜置閏」 — thirty-odd days of 超神 before the leap, where the hour
@@ -5620,9 +5620,8 @@ printed beside it: 「至九星轉運，陽用飛星，陰用伏宮退一法，*
 九星轉運 does no more than read a year and a month off a chart already standing,
 and the work separates it from its neighbour and forbids using one for the
 other. It is an overlay on a laid board, which is what the two sentences
-suggested and is now established instead of suspected. `plate: fei` does not
-move on it, and the clause under that value in `docs/open.md` can be written with
-a reason.
+suggested and is now established instead of suspected, and `plate: fei` does
+not move on it.
 
 **And the chapter carries a laying procedure that does fly, which is a
 different gain.** 起訣, p. 35, lays a board on the hour: 「其法照二至後三元陰陽
@@ -6309,8 +6308,8 @@ it is one line out of that stretch. From the extract, so a lead and marked:
 
 #### The lineages that hold one reading, and the fifth family
 
-`docs/open.md` says what would move these values: not another statement of the
-method but a lineage holding one of them. Two are on this shelf and neither has
+What would move these values was not another statement of the method but a
+lineage holding one of them, until the user's word of 2026-11-02. Two are on this shelf and neither has
 been weighed. Both are 張志春's line, both are extracts, and they are recorded
 here as leads with the register's reason for keeping a lead written down.
 

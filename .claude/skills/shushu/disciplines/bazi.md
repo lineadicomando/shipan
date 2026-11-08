@@ -603,7 +603,7 @@ These are teachings and never transcript facts (`prompt.bazi.gods`).
 ## 8. Leads against the register
 
 - **`dayBoundary: midnight` and `trueSolarTime: true` have their holder in
-  prose and no row in `sources.tsv`** (`docs/open.md`, review of 2026-10-23).
+  prose and no row in `sources.tsv`** (`docs/open-errands.md` § "The review of 2026-10-23").
 - **The register's 八字 sections name no witness for the hidden-stem table**,
   and `hidden-stems.ts` calls its list «the common 人元司令 one». Two works on
   the shelf print **人元司令 tables that differ from it**:

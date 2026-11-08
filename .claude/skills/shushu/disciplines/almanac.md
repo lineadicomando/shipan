@@ -229,7 +229,7 @@ calendrical layer under every board" and § "The other boards").
       corners by the 月將), 貴登天門時 (the noble on 乾亥), 九醜, 旬中空亡.
 11. **宜忌**: refused (`docs/sources.md` § 曆注, "What is not here", and the
     header of `packages/core/src/almanac.ts`). `docs/refusals.md` has no entry
-    of its own for it yet (`docs/open.md`, review of 2026-10-23); § "Ordering two
+    of its own for it yet (`docs/open-errands.md` § "The review of 2026-10-23"); § "Ordering two
     hours, and dating an outcome" covers only the verdicts built on it.
     The consultant supplies it, attributed (§ 4).
 
@@ -509,7 +509,7 @@ Each: what · why · what would settle it · on the shelf or not.
 - **臨日's valence.** Shipped `xiong` (`almanac.ts`); the 協紀 overrules the
   《樞要歷》 and calls it 吉 (華齡 OCR p. 160, memorial p. 13). And the
   register's 神煞 row still says seven where thirty ship (`sources.tsv`). Both
-  are in `docs/open.md`, review of 2026-10-23.
+  are in `docs/open-errands.md` § "The review of 2026-10-23".
 - **楊公忌.** `docs/sources.md` § 二十八宿值日 records «a check the source
   suggests, which fails»: the 楊公忌 as «the days the count gives 室», laid against
   the engine's 室 days, 2 of 78. The 協紀 卷三十六 *(web transcription)* says the

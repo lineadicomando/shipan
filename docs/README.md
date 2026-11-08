@@ -17,7 +17,7 @@ or an agent — must be able to tell at a glance whether a page binds them.
 | [`notes.md`](notes.md) | what this project claims and how the claim is kept honest: the ladder a quantity is weighed on, the corpus that is a finding aid and not the register, derived against written, and the date a written entry shows |
 | [`agent-prompt.md`](agent-prompt.md) | the contract a model calling this project has to read first — through MCP or through the REST API |
 | [`sources.tsv`](sources.tsv) | the register as a table: one row a quantity, the rung it stands on, what it was checked against, and the section of `sources.md` that argues it |
-| [`open.md`](open.md) | every question standing open — what each refused value waits on, the commissioned 月家, the shelf's lines, the leads, surfaces and code — with what would answer it. `TODO.md` orders it |
+| [`open.md`](open.md) | every question standing open — what each refused value waits on, the shelf's lines, the leads, surfaces and code — with what would answer it. `TODO.md` orders it |
 | [`open-recorded.md`](open-recorded.md) | the divergences the register carries and nothing exposes, and what was asked of a work and not found there. Part of `open.md` |
 | [`open-errands.md`](open-errands.md) | the small errands: cells and characters to look at again, the review of 2026-10-23, the lens's leads, and catalog strings for the user to read. Part of `open.md` |
 | [`provenance.tsv`](provenance.tsv) | every file this project was read off that came from the network: URL, revision, date taken, sha256 |

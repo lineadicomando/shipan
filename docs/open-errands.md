@@ -1,17 +1,13 @@
 # Errands
 
-Small doubts the readings left, cells and characters to look at again, what
-the review of 2026-10-23 found and did not fix, the lens's leads, and strings
-for the user to read. None blocks anything; a session with time to spare takes
-one. Part of [`docs/open.md`](open.md), held to the code with it by
-`node texts/todo-check.mjs`.
+Small doubts the readings left, cells and characters to look at again, the
+review of 2026-10-23, the lens's leads, and strings for the user to read. None
+blocks anything. Part of [`docs/open.md`](open.md), held to the code with it.
 
 ## Left open by the readings
 
-Each reading's errands, newest first, from phase 97. Those of phases 94 to 96
-are in `docs/history/roadmap-2026-11-08-phase104.md`, and the earlier ones in
-the roadmaps before it. What the year and month boards left is `TODO.md`,
-item 1.
+Each reading's errands, newest first; older ones are in the roadmaps under
+`docs/history/`. What the year and month boards left is `TODO.md`, item 1.
 
 - **Phase 103**, the shelf's last two lines. Where a 日家 count running at a
   solstice ends, finished at its 癸亥 or dropped on the solstice day as
@@ -75,37 +71,26 @@ register 2026-10-31, 2026-11-05 and 2026-11-06.
   「辨生剋制化以定窮通」 is 斗數準繩's and not the 太微賦's; 第五冊 of the
   絕學 holds three works; the `sihua` refusal row unmarked.
 
-## When the lens moves again
+## The lens elsewhere
 
-The year and month boards have it since phase 105. 八字 last and
-only if the user wants it, the relations
-there (合, 沖, the ten gods) being a different lens. Leads, none decided:
+Every board but 八字 has one; 八字 last and only if the user wants it, its
+relations (合, 沖, the ten gods) being a different lens. Leads, none decided:
 論星辰生尅制化 (全書 卷之三, PDF 162–163) gives a 紫微 palace's ground its
 branch's phase, rung 4, its last clause odd on the plate (「土入金鄉」, the
 transcription 木鄉); a pair on 太乙's palaces, in 太乙's numbering; 六壬's
-六沖 and 六合, a general by its own phase ("Recorded, with no parameter"), the 日家's nine stars and
-the 紫微 四化 flights, each once it has its row; a phase for 太常, which
-`spiritRing: nine` lays and a phased lens leaves out — 《奇門旨歸》卷一's
-九神五行 (PDF 18) gives one to each of the nine, not read for this; 太乙's answer is cached
-`public` for a week, so a change to its shape reaches a returning reader
-late. On the 奇門 section the family selector pushes the moment's steps to
-a second line of the bar at 1920 wide; not looked at narrower, nor choosing
-another hour with the scan's dialog open.
+六沖 and 六合, a general by its own phase (`docs/open-recorded.md`), the
+日家's nine stars and the 紫微 四化 flights, each once it has its row; a phase
+for 太常, which `spiritRing: nine` lays and a phased lens leaves out —
+《奇門旨歸》卷一's 九神五行 (PDF 18) gives one to each of the nine, not read
+for this.
 
 ## Catalog strings owed a look by the user
 
-Read by nobody but their writer, both catalogs, newest first, none blocking.
-Older ones, and the glosses, are in `docs/history/roadmap-2026-11-08-phase104.md`
-and the roadmaps before it. 2026-11-08, phase 104: `form.qimen.system.yuejia`,
-`form.qimen.system.bar.yuejia`, the month's sentence added to
+Read by nobody but their writer, both catalogs, none blocking; older ones and
+the glosses are in `docs/history/roadmap-2026-11-08-phase105.md` and the
+roadmaps before it. Phase 104 (2026-11-08): `form.qimen.system.yuejia`,
+`form.qimen.system.bar.yuejia`, the month's sentence in
 `form.qimen.system.note`, `form.qimen.monthYuan` and its values and note,
 `notes.parameter.monthYuan`, `cli.heading.qimenMonth`, `cli.field.monthPillar`,
-`cli.field.monthPeriod`, `cli.value.monthPeriod`. 2026-11-08, phase 102:
+`cli.field.monthPeriod`, `cli.value.monthPeriod`. Phase 102:
 `form.qizheng.qixian.note` and `prompt.qizheng.limits`, rewritten.
-2026-11-06, phases 99 and 101: `form.qizheng.gong` and its values and note,
-`form.qizheng.qixian` and its values, `notes.parameter.qixian`,
-`cli.field.mingdu`, `cli.field.limits`, `cli.value.limitYears`,
-`cli.value.noLimits`, `cli.column.qizhengLimit`, `prompt.qizheng.gong.ci`.
-2026-11-06, phase 97: `form.qimen.gateSeats` and its values and note,
-`form.qimen.spiritRing` and its values, `notes.parameter.gateSeats` and
-`.spiritRing`, `label.gate.zhong`, `label.spirit.taichang`.

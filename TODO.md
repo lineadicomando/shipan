@@ -1,24 +1,24 @@
 # What is not built yet
 
 What a session needs to resume, and nothing more. What holds is
-[`docs/`](docs/README.md). The open questions are [`docs/open.md`](docs/open.md),
-with [`docs/open-recorded.md`](docs/open-recorded.md) and
-[`docs/open-errands.md`](docs/open-errands.md) beside it. The past is
-[`docs/history/`](docs/history/README.md), never normative. This file has
-been cut ten times, each archived whole there; the last is
-[`docs/history/roadmap-2026-11-08-phase104.md`](docs/history/roadmap-2026-11-08-phase104.md).
+[`docs/`](docs/README.md); the open questions are [`docs/open.md`](docs/open.md),
+[`docs/open-recorded.md`](docs/open-recorded.md) and
+[`docs/open-errands.md`](docs/open-errands.md); the past is
+[`docs/history/`](docs/history/README.md), never normative. Each cut of this
+file is archived whole there, the last in
+[`docs/history/roadmap-2026-11-08-phase105.md`](docs/history/roadmap-2026-11-08-phase105.md).
 
 ## Resuming cold
 
 **Nothing is in progress.** Start at item 1 below unless the user says
 otherwise. Read a section of a file, not the file.
 
-- **A build**: the `new-feature` skill. Surface work starts from
+- **A build**: the `new-feature` skill; surface work starts from
   `docs/architecture.md` § "A board the page can point into". Put a new
   parameter's or a lens's shape to the user first.
 - **A reading**: the file's row in `texts/README.md` (grep the filename), the
-  work's section in `docs/sources.md` (grep its title), `docs/scans.md` for
-  the method, and the `shushu` skill's `common/development.md`.
+  work's section in `docs/sources.md` (grep its title), `docs/scans.md`, and
+  the `shushu` skill's `common/development.md`.
 - **Version and release**: `docs/architecture.md` § "Which term moves" and §
   "Releasing". Tag, push and deploy only on the user's word.
 - **Do not open** `docs/sources.tsv` (grep a row, edit in place),
@@ -32,13 +32,9 @@ otherwise. Read a section of a file, not the file.
 
 ## Where it stands, 2026-11-08, end of phase 105
 
-**0.53.0** on `main`, committed and **not tagged, pushed or deployed**:
-https://shipan.it still runs 0.50.0, the last tag is `v0.50.0`, and 0.51.0
-and 0.52.0 were never tagged. Build, typecheck and every suite pass. Since
-the tag: phase 102 lays the 命度 and the 大限 under `gong: ci` (`qixian: du`
-by thirtieths, `ri` null there); phase 103 read the shelf's last two lines;
-phase 104 built the 月家, `system: yuejia`, with `monthYuan`; phase 105 lays
-`qimenLens` on the year and month boards, `spiritPhase` read on both.
+**0.53.0**, tagged `v0.53.0`, pushed and deployed: https://shipan.it reads
+`shipan 0.53.0 (alpha)`. Nothing is committed past it. Build, typecheck and
+every suite pass.
 
 ## What to do next, in the user's order
 
@@ -52,19 +48,16 @@ phase 104 built the 月家, `system: yuejia`, with `monthYuan`; phase 105 lays
      not laid: a reading, then a question for the user;
    - the month laid flown, as 《奇門法竅》's 論月奇法 lays it, only if `plate`
      is ever offered on a board on a pillar.
-2. **The scan form's two silent criteria**: `gongpo` is offered always and
-   found only under `menpo: gongzhimen`, and the gate 中 is laid under
-   `gateSeats: nine` and cannot be asked for. `docs/open.md` § "Surfaces and
-   code".
-3. **The shelf** names no section today; files wanted are `docs/open.md` §
-   "The shelf", and what readings left is `docs/open-errands.md` § "Left
-   open by the readings".
+2. **The scan form's silent criteria**: `docs/open.md` § "Surfaces and code",
+   first line.
+3. **The shelf** names no section today: `docs/open.md` § "The shelf", and
+   `docs/open-errands.md` § "Left open by the readings".
 4. **Two leads**, neither file held: `docs/open.md` § "Leads from the
    `shushu` skill".
 5. **The review of 2026-10-23**: `docs/open-errands.md` § "The review of
    2026-10-23"; several lines are a missing row in `docs/sources.tsv`.
-6. **The lens elsewhere**: `docs/open-errands.md` § "When the lens moves
-   again"; 八字 last, and only if the user wants it.
+6. **The lens elsewhere**: `docs/open-errands.md` § "The lens elsewhere";
+   八字 last, and only if the user wants it.
 
 ## Decisions held open, by the user's word
 
@@ -81,19 +74,19 @@ phase 104 built the 月家, `system: yuejia`, with `monthYuan`; phase 105 lays
 - A compiler's note disowning a layer his own juan states does not block a
   value whose text is attributed and transcribed (2026-11-02).
 - A parameter has one default for every board it reads on, and a form may
-  fill a field from a value (`fills`, 2026-11-05).
+  fill a field from a value (`fills`, 2026-11-05); a parameter about a thing
+  reads wherever that thing is laid (`spiritPhase` on the year and month
+  boards, 2026-11-08).
 - Two schools parting on two things are two axes, and a name follows the
   print that carries it (2026-11-06); a value is named for its rule and not
   for a label a holder swaps (`monthYuan`, 2026-11-08).
-- A parameter about a thing reads wherever that thing is laid, with the
-  same default: `spiritPhase` on the year and month boards (2026-11-08).
 - A quantity derivable under one value and not under another is built where
   it can be and left null where it cannot, saying why (the 大限 under
   `gong: ci` with `qixian: ri`, 2026-11-08).
 
 ## 1. Parameters that are declared and refused
 
-Each throws `OPTION_NOT_IMPLEMENTED` or `METHOD_NOT_IMPLEMENTED`.
+Each throws `OPTION_NOT_IMPLEMENTED` or `METHOD_NOT_IMPLEMENTED`;
 `apps/web/test/docs.test.ts` holds this table to `parameters.ts` both ways.
 What each waits on: `docs/open.md` § "What each refused value waits on".
 
