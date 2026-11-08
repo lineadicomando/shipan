@@ -8,18 +8,10 @@ one. Part of [`docs/open.md`](open.md), held to the code with it by
 
 ## Left open by the readings
 
-Each reading's errands, newest first, from phase 94. Those of phases 86 to 93
-are in `docs/history/roadmap-2026-11-06-phase101.md`, and the earlier ones in
-`docs/history/roadmap-2026-11-05.md` and `docs/history/roadmap-2026-10-30.md`.
-
-- **Phase 104**, the month built (`system: yuejia`). Left by the month: the
-  演義's 「自嘉靖四十二年十一月甲子起休門在坎三箇月一移」, a second month layer
-  of a gate three months to a palace, not laid; the month laid flown, which
-  《奇門法竅》's 論月奇法 does (「其飛布天地二盤之法與年奇同」), if `plate` is ever
-  offered on a board on a pillar; a canonical month board; a lens. Left by the
-  year, carried over: a bench of the 遁甲集成 第三冊 tables, pp. 1160–1216,
-  against `yearYuan: yiqisi`, cell by cell; a canonical year board in
-  `packages/core/test/canonical/`; and a lens.
+Each reading's errands, newest first, from phase 97. Those of phases 94 to 96
+are in `docs/history/roadmap-2026-11-08-phase104.md`, and the earlier ones in
+the roadmaps before it. What the year and month boards left is `TODO.md`,
+items 1 and 2.
 
 - **Phase 103**, the shelf's last two lines. Where a 日家 count running at a
   solstice ends, finished at its 癸亥 or dropped on the solstice day as
@@ -34,19 +26,6 @@ are in `docs/history/roadmap-2026-11-06-phase101.md`, and the earlier ones in
   may settle; 《星學大成》's verse 約二十八宿過宮度數歌, reported as 「張十四巳」,
   against its own wheel's miscopy, on the plate; 定限度法's 「以量天尺九難」 as
   printed; the 張果星宗's 年分訣 「共六六」, not construed.
-
-- **Phase 96**, inside 《奇門旨歸》: 超神接氣折補閏局法, read once and not
-  reconciled clause by clause before `method: chaibu` names it; 陽七局 丁卯's
-  plate (乙丑's, PDF 118) and 陰九局 戊辰's stars (four palaces on, PDF 143);
-  the stars of the other boards, not transcribed; the single cells cut twice
-  (`texts/qimen/zhigui/scripts/check.mjs --list`).
-
-- **Phase 95**, inside 《奇門遁甲鳴法》: the 認局 passage's example, 「如乙丑日亥時交節…
-  為中局」, against the 拆補 the same passage states, before `method: chaibu`
-  names the work; the 陰 diagram's centre, not drawn; 第一章's 日課 · 月法 · 年依運
-  · 世從會, a family read only far enough to name it.
-
-- **Phase 94**, inside 《奇門法竅》's 排宮 figures: 陰遁一局 乙丑's 景 for 英 on 坎一.
 
 ## Small, inside works already read
 
@@ -98,10 +77,8 @@ register 2026-10-31, 2026-11-05 and 2026-11-06.
 
 ## When the lens moves again
 
-The year and month boards have no lens (the 奇門 endpoint answers both with
-none); the month was built on 2026-11-08 without the lens this page had
-planned for it, which is the first thing to put to the user when the lens
-moves again. 八字 last and only if the user wants it, the relations
+The year and month boards come first, as `TODO.md` item 1. 八字 last and
+only if the user wants it, the relations
 there (合, 沖, the ten gods) being a different lens. Leads, none decided:
 論星辰生尅制化 (全書 卷之三, PDF 162–163) gives a 紫微 palace's ground its
 branch's phase, rung 4, its last clause odd on the plate (「土入金鄉」, the
@@ -117,18 +94,18 @@ another hour with the scan's dialog open.
 
 ## Catalog strings owed a look by the user
 
-Read by nobody but their writer, both catalogs, newest first, none blocking
-(glosses in `docs/history/roadmap-2026-10-30.md`; strings before
-2026-10-30 in `docs/history/roadmap-2026-11-06-phase101.md`). 2026-11-06,
-phases 99 and 101: `form.qizheng.gong` and its values and note,
-`form.qizheng.qixian` and its values and note, `notes.parameter.qixian`,
+Read by nobody but their writer, both catalogs, newest first, none blocking.
+Older ones, and the glosses, are in `docs/history/roadmap-2026-11-08-phase104.md`
+and the roadmaps before it. 2026-11-08, phase 104: `form.qimen.system.yuejia`,
+`form.qimen.system.bar.yuejia`, the month's sentence added to
+`form.qimen.system.note`, `form.qimen.monthYuan` and its values and note,
+`notes.parameter.monthYuan`, `cli.heading.qimenMonth`, `cli.field.monthPillar`,
+`cli.field.monthPeriod`, `cli.value.monthPeriod`. 2026-11-08, phase 102:
+`form.qizheng.qixian.note` and `prompt.qizheng.limits`, rewritten.
+2026-11-06, phases 99 and 101: `form.qizheng.gong` and its values and note,
+`form.qizheng.qixian` and its values, `notes.parameter.qixian`,
 `cli.field.mingdu`, `cli.field.limits`, `cli.value.limitYears`,
-`cli.value.noLimits`, `cli.column.qizhengLimit`, `prompt.qizheng.gong.ci`,
-`prompt.qizheng.limits`. 2026-11-06, phase 97:
-`form.qimen.gateSeats` and its values and note, `form.qimen.spiritRing` and
-its values, `notes.parameter.gateSeats` and `.spiritRing`, `label.gate.zhong`,
-`label.spirit.taichang`, and the counts of spirits taken out of
-`form.qimen.spiritSeat`, `form.qimen.spiritPhase`, `form.qimen.system.shijia`
-and their `notes.parameter.*`. 2026-11-05:
-`form.qimen.plate` and its values and note, `notes.parameter.plate`.
-2026-10-30: `form.qimen.leap` and its values and note, *reader-copy*.
+`cli.value.noLimits`, `cli.column.qizhengLimit`, `prompt.qizheng.gong.ci`.
+2026-11-06, phase 97: `form.qimen.gateSeats` and its values and note,
+`form.qimen.spiritRing` and its values, `notes.parameter.gateSeats` and
+`.spiritRing`, `label.gate.zhong`, `label.spirit.taichang`.

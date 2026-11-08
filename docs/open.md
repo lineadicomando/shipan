@@ -8,7 +8,7 @@ the divergences the register carries with no parameter, and
 `docs/open-errands.md` the small errands, the review of 2026-10-23 and the
 lens's leads. `node texts/todo-check.mjs` holds the backticked names in all
 three to the code. What was dropped is in
-`docs/history/roadmap-2026-11-06-phase101.md` and the roadmaps before it.
+`docs/history/roadmap-2026-11-08-phase104.md` and the roadmaps before it.
 
 ## What each refused value waits on
 
