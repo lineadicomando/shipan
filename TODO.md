@@ -34,7 +34,7 @@ otherwise, and read a section of `docs/open.md`, not the whole file.
   `docs/sources.md`, `texts/README.md`, the open-question files and this file
   for sentences the session outlived («unread», «not built», «not tagged»…).
 
-## Where it stands, 2026-11-08, end of phase 102
+## Where it stands, 2026-11-08, end of phase 103
 
 **0.50.0** on `main`, tagged `v0.50.0`, pushed and deployed: https://shipan.it
 runs 0.50.0. No branch is open, and build, typecheck and every suite pass.
@@ -42,7 +42,8 @@ Phases 98 to 101 read the limits of a 七政四餘 life and built `gong: ci`, th
 命度 and the 大限 with `qixian`. Phase 102 read the 量天尺 of the 《張果星宗》
 as a ruler by fraction and, on the user's word, lays both under `gong: ci`
 with `qixian: du` counting thirtieths of the 命宮; `qixian: ri` leaves the
-limits null there. 0.51.0, on `main`, not tagged.
+limits null there. 0.51.0, on `main`, not tagged. Phase 103 read the
+shelf's last two lines, and nothing moved in the engine.
 
 ## What to do next, in the order the user has been taking it
 
@@ -53,8 +54,9 @@ limits null there. 0.51.0, on `main`, not tagged.
    found only under `menpo: gongzhimen`, and the gate 中 is laid under
    `gateSeats: nine` and cannot be asked for. `docs/open.md` § "Surfaces and
    code".
-3. **The shelf**, two named sections of files held: `docs/open.md` § "The
-   shelf".
+3. **The shelf** holds no named section today (phase 103 read the last two);
+   what a reading left is `docs/open-errands.md` § "Left open by the
+   readings", and the files wanted are `docs/open.md` § "The shelf".
 4. **Two leads**, neither file held: `docs/open.md` § "Leads from the `shushu`
    skill".
 5. **The review of 2026-10-23**: `docs/open-errands.md` § "The review of

@@ -75,19 +75,15 @@ in `packages/core/test/canonical/`; and a lens.
 
 **In order.** Each is a named section of a held file; nothing here is a
 sweep of a book. A file's offsets and map are its row in `texts/README.md`.
+No line stands today: the last two were read on 2026-11-08 (phase 103).
 
-| | what would move | where |
-|---|---|---|
-| 1 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
-| 2 | where a 日家 count running at a solstice ends: finished at its 癸亥, or dropped on the solstice day as `dayDun: solstice` drops it | 《金函玉鏡》下冊, `qimen/jinhan-yujing-2.pdf`, 卷二十 p. 413, 「冬至艮宮夏坤地，命起甲子順逆行」 and the lines around it; read so far for the anchor only |
-
-**Wanted and not held**: the 《元史·曆志》; 《太乙淘金歌》; 沈義方's
+**Wanted and not held**: the 《元史·曆志》; the Ming manuscript 《三垣列舍入宿去極集》 in the 《天文匯鈔》, 北京圖書館, which 潘鼐 reports opens on the 黃道十二次宿度 as the 授時曆經 gives it (a third copy of the table `gong: ci` stands on, which would settle cells and move no rung); 《太乙淘金歌》; 沈義方's
 《星平大成》, a lead for the day turned at midnight; a second dated chart with
 炁 on it. Judged worth having on guoxueziyuan.com and not bought: 《宮藏奇門
 大全》, 《遁甲奇門秘傳要旨》, 《明抄奇門陰遁書》 and 《李衛公奇門心法》, the last
 with a Tang attribution. None of that platform's files states a provenance.
 
-**What is left to read**: lines 1–2 above, and the errands in
+**What is left to read**: the errands in
 `docs/open-errands.md`. No page is owed a reading; the tools are in the
 `shushu` skill's `common/development.md`.
 

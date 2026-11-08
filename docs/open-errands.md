@@ -12,6 +12,13 @@ Each reading's errands, newest first, from phase 94. Those of phases 86 to 93
 are in `docs/history/roadmap-2026-11-06-phase101.md`, and the earlier ones in
 `docs/history/roadmap-2026-11-05.md` and `docs/history/roadmap-2026-10-30.md`.
 
+- **Phase 103**, the shelf's last two lines. Where a 日家 count running at a
+  solstice ends, finished at its 癸亥 or dropped on the solstice day as
+  `dayDun: solstice` drops it: the 金函玉鏡's 卷二十 p. 413 states the anchor
+  and not the boundary, and no other held text has been named for it. 潘鼐's
+  report that the Ming 《三垣列舍入宿去極集》 opens on the 授時曆經's
+  黃道十二次宿度, in a manuscript not held.
+
 - **Phases 98–100**, inside 《星學大成》 and the 集成's 《張果星宗》:
   whether 《星學大成》卷三 起大限's case (福德 10, 遷移 9, opening at 13) is two
   numerals miscopied or another table, which its 洞微限 and 百六限 (卷八–十三)

@@ -6242,8 +6242,14 @@ and the row in `docs/sources.tsv` stands at rung 2. A sixty-day division of the
 `rijia` board has no holder on this shelf. One question about the boundary is
 still open on this board: whether the count running when a solstice passes is
 finished at its 癸亥 or dropped on the solstice day, as the engine drops it
-under `solstice`. The 金函玉鏡's 「命起甲子順逆行」, 卷二十 p. 413, is where to
-read for it, with the lines around it. The stems day board is recorded in
+under `solstice`. The 金函玉鏡's 「命起甲子順逆行」, 卷二十 p. 413, was read
+for it on the page on 2026-11-08, with pp. 412 and 414 around it, and **it
+does not say**. The verse fixes where the count stands: 甲子 on 艮 from 冬至
+going forward and on 坤 from 夏至 going back. The edition's modern gloss says
+the same, 「起甲于陽遁順推、陰遁逆推」. Neither says what becomes of the count
+already running when the solstice passes. Before the verse come the meanings
+of the gates, and after it the meanings of the nine stars. So the question
+has no text on this shelf, and it stands in `docs/open-errands.md`. The stems day board is recorded in
 `docs/open-recorded.md`, with its two readings. Decided
 on the user's word, 2026-11-02.
 
@@ -8273,7 +8279,33 @@ third thing, which nobody on the shelf lays a board on and this engine does
 not declare. The divergence of the two 距星 stays recorded with no parameter,
 and has a modern study's identification of its 至元 side.
 
-Last checked 2026-10-08.
+**(二) and (三), read 2026-11-08**, printed pp. 274–281 on PDF 283–290 at
+110 dpi, with section 三 (from p. 282, each star of the catalogue named
+against the modern catalogues) seen small. (二) 郭守敬星表鈎沉 traces the
+catalogue through 梅文鼎, who owned it and lost it, and through 徐發's
+周天星度合表. It ends on a Ming manuscript in the 北京圖書館, 《三垣列舍入宿去極集》
+in the 《天文匯鈔》, which 潘鼐 takes for an incomplete copy of 郭守敬's
+《新測二十八舍雜座諸星入宿去極》: 1373 stars drawn, 741 of them with a
+入宿度 and a 去極度. **He reports that it opens on the twenty-eight widths
+and on 「黃道十二次宿度」, 「各次入宿度、分、秒亦均與"授時曆經"上相同標題一節
+所載完全一致」.** That is the table `gong: ci` stands on, said by a modern
+scholar to stand in two Yuan places beside the two 星命 prints on the shelf.
+It is a report and not a transcription: the study prints neither table, so
+it moves no rung and settles no cell. The manuscript is wanted, and so is
+the 《元史·曆志》 it collates with (`docs/open.md` § "The shelf").
+
+(三) measures the catalogue. On 90 stars sampled, 表74, pp. 278–280, puts
+the 去極度 at a mean error of 18′ and the 入宿度 at 13′.1, with a systematic
+error he reads as an instrument's polar axis set slightly askew. Four of its
+rows touch 觜 and 參, as he identifies them: 觜北星 λ Ori at 觜 0 度 20 分,
+觜東南星 φ² Ori at 觜 0 度 50 分, 伐南星 ι Ori at 參 1 度 and 廁東南星 γ Lep at
+參 4 度 70 分. A 觜 measured from φ¹ Ori, with λ Ori a fifth of a 度 inside
+it, and an ι Ori one 度 into a 參 measured from δ Ori, fit his φ¹ and δ. That
+is his identification seen from the catalogue's own entries, and it is still
+his: the entries are the manuscript's and the stars are his. It leaves the
+recorded divergence where it was.
+
+Last checked 2026-11-08.
 
 ### 《星學大成》卷一, which opens on the 授時 lodges and the twelve 宮 cut in them
 
