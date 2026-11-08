@@ -34,13 +34,15 @@ otherwise, and read a section of `docs/open.md`, not the whole file.
   `docs/sources.md`, `texts/README.md`, the open-question files and this file
   for sentences the session outlived («unread», «not built», «not tagged»…).
 
-## Where it stands, 2026-11-06, end of phase 101
+## Where it stands, 2026-11-08, end of phase 102
 
 **0.50.0** on `main`, tagged `v0.50.0`, pushed and deployed: https://shipan.it
 runs 0.50.0. No branch is open, and build, typecheck and every suite pass.
 Phases 98 to 101 read the limits of a 七政四餘 life and built `gong: ci`, the
-命度 and the 大限 with `qixian`. Under `gong: ci` the limits wait on the
-量天尺 (`docs/open.md` § "The shelf", line 1).
+命度 and the 大限 with `qixian`. Phase 102 read the 量天尺 of the 《張果星宗》
+as a ruler by fraction and, on the user's word, lays both under `gong: ci`
+with `qixian: du` counting thirtieths of the 命宮; `qixian: ri` leaves the
+limits null there. 0.51.0, on `main`, not tagged.
 
 ## What to do next, in the order the user has been taking it
 
@@ -51,7 +53,7 @@ Phases 98 to 101 read the limits of a 七政四餘 life and built `gong: ci`, th
    found only under `menpo: gongzhimen`, and the gate 中 is laid under
    `gateSeats: nine` and cannot be asked for. `docs/open.md` § "Surfaces and
    code".
-3. **The shelf**, three named sections of files held: `docs/open.md` § "The
+3. **The shelf**, two named sections of files held: `docs/open.md` § "The
    shelf".
 4. **Two leads**, neither file held: `docs/open.md` § "Leads from the `shushu`
    skill".

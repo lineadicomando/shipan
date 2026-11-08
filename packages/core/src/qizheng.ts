@@ -143,9 +143,14 @@ export interface QizhengOptions {
    * 十歲」 — and gives a fraction of a year. The Sun runs a little faster or
    * slower than a degree a day, so the two can part by a year.
    *
-   * Read only under `gong: zhongqi`. Under `gong: ci` no 命度 is laid and no
-   * limit is counted, because a row of the 量天尺 across palaces of unequal
-   * width wants a rule no text read gives.
+   * Under `gong: ci` the palaces are unequal, and `du` counts thirtieths of
+   * the 命宮 rather than degrees: the 《張果星宗》's 量天尺, 卷569 授時過宮度,
+   * lays every palace in thirty columns, each a thirtieth of it, and its ages
+   * count those columns three to a year, twenty to eleven, alike for all
+   * twelve. `ri` is not counted there and the limits are left null: its text
+   * cuts the palaces at the 中氣, where a palace and the days since its 中氣
+   * are one span, and under the 次 they part by some fifteen degrees with no
+   * text saying which the count follows.
    */
   qixian: 'du' | 'ri';
 }
@@ -452,15 +457,18 @@ export interface QizhengBoard {
   /**
    * 命度, the degree of the 命宮 that stands on the Sun's row of the 量天尺.
    *
-   * Under `gong: zhongqi` a row is a distance into the palace, so this is the
-   * point as far into the 命宮 as the Sun is into its own palace:
-   * 《星度指南》's 「同絡之度」, and its case, 氐初 in 卯 to 軫四 in 辰. Null
-   * under `gong: ci`.
+   * A row is a share of the palace, so this is the point the same share into
+   * the 命宮 as the Sun is into its own palace. Under `gong: zhongqi` every
+   * palace is thirty degrees and the share is a distance: 《星度指南》's
+   * 「同絡之度」, and its case, 氐初 in 卯 to 軫四 in 辰. Under `gong: ci` the
+   * palaces are unequal and the share is a fraction: the 《張果星宗》's
+   * 授時過宮度, a column to a thirtieth of each palace.
    */
-  mingdu: Standing | null;
+  mingdu: Standing;
   /**
    * The age the first 大限 opens at, counted as `qixian` says. A whole year
-   * under `du`, a fraction under `ri`. Null under `gong: ci`.
+   * under `du`, a fraction under `ri`. Null under `gong: ci` with `qixian: ri`,
+   * which no text counts across the 次.
    */
   limitStart: number | null;
   /**
@@ -703,21 +711,29 @@ export function qizhengBoard(
   // 夫妻 lands opposite 命, 田宅 a quarter turn along where the sky is
   // deepest, 官祿 where it is highest. See `HOUSES` for why this direction and
   // not the other.
-  // The 命度 and the limits, under the 中氣 cut alone. The Sun's distance into
-  // its palace is the row of the 量天尺, and the same row in the 命宮 is the
-  // 命度; the distance from there back to the edge of the 相貌宮 is the same
-  // number again, which is what `du` counts.
-  let mingdu: Standing | null = null;
+  // The 命度 and the limits. The row of the 量天尺 is the share of its palace
+  // the Sun has crossed, in thirtieths, and the same row in the 命宮 is the
+  // 命度; the thirtieths from there back to the edge of the 相貌宮 are the
+  // same number again, which is what `du` counts. Under the 中氣 cut a
+  // thirtieth is a degree.
+  const width = (palace: Branch): number =>
+    entries
+      ? mod360((entries[mod12(palace.index - 1)] as number) - (entries[palace.index] as number))
+      : 30;
+  const opening = (palace: Branch): number =>
+    entries ? (entries[palace.index] as number) : palaceOpening(palace);
+  const row = (sun.palaceDegree / width(sun.palace)) * 30;
+  const mingdu: Standing = standingOf(
+    opening(minggongPalace) + (row / 30) * width(minggongPalace),
+    boundaries,
+    entries,
+  );
   let limitStart: number | null = null;
-  if (options.gong === 'zhongqi') {
-    const row = sun.palaceDegree;
-    mingdu = standingOf(palaceOpening(minggongPalace) + row, boundaries);
-    if (options.qixian === 'ri') {
-      const zhongqi = sunCrossing(sun.longitude - row, julianDay - 33, context);
-      limitStart = 10 + (julianDay - zhongqi) / 3;
-    } else {
-      limitStart = 10 + Math.max(1, Math.ceil(row / 3));
-    }
+  if (options.qixian === 'du') {
+    limitStart = 10 + Math.max(1, Math.ceil(row / 3));
+  } else if (options.gong === 'zhongqi') {
+    const zhongqi = sunCrossing(sun.longitude - sun.palaceDegree, julianDay - 33, context);
+    limitStart = 10 + (julianDay - zhongqi) / 3;
   }
 
   const limits = new Map<HouseId, { from: number; to: number }>();

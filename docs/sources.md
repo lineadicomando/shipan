@@ -8600,7 +8600,8 @@ is either two numerals miscopied or a table nobody else on the shelf states.
 One copy cannot tell the two apart. **Its thirteen is not reproduced
 either.** Taking 翼十 in 巳 to the same fraction of 丑 puts the 命 eleven or
 twelve degrees into its palace, which makes fourteen. The table that decides
-is the 量天尺, located below and not transcribed. The limits this engine
+is the 量天尺, located below and transcribed on 2026-11-08, in § "The 量天尺 of
+the 張果星宗, transcribed", where the fourteen stands. The limits this engine
 computes since 2026-11-06 follow the two works and not the case, as below.
 
 **The 張果星宗 casts the limits on thirty degrees to a palace, and says
@@ -8721,7 +8722,11 @@ column reads 危十, 女二, 斗三, 尾二, 氐初, 軫九, 張十, 柳三, 井
 and 奎初. Ten of those are a degree or so before the 授時 table's openings,
 which looks like the same 次 carried by precession to the 欽天監's day; 危 and
 張 stand further back and may be misread. All of it was read on the plate at
-the limit of the scan, and the layout of the rest is not yet understood. **Two counts of the start are on the shelf**: degrees
+the limit of the scan, and the layout of the rest is not yet understood.
+**That reading of the first column was wrong, and so was the precession it
+suggested**: transcribed in full on 2026-11-08, the column is the far end of
+each palace and not its opening, and the table is the 授時 table's own
+ruler. See § "The 量天尺 of the 張果星宗, transcribed" below. **Two counts of the start are on the shelf**: degrees
 from the 命度 to the 相貌 boundary, three to a year (《張果星宗》 定限度法,
 《御定五星精義》 起大限法, 《星學大成》 起大限), and days from the 中氣 to the
 birth, three to a year (《星度指南》). The Sun's daily motion parts them by a
@@ -8737,7 +8742,8 @@ four and a half years each and 《御定五星精義》 gives 五, 四 and 四. 
 they open at is `qixian`: `du`, ten and a whole year for every three degrees
 or part of three, held by 《張果星宗》, 《御定五星精義》 and 《星學大成》; and
 `ri`, ten and a year for every three days back to the 中氣, held by
-《星度指南》. Under `gong: ci` neither is laid. `packages/core/test/limits.test.ts`
+《星度指南》. Under `gong: ci` the 命度 and `du` are laid by fraction, as § "The
+量天尺 of the 張果星宗, transcribed" says. `packages/core/test/limits.test.ts`
 holds both to the 丙戌 case: 軫四, thirteen days and four 時, and the entries
 in the sixteenth, twenty-sixth, thirty-seventh and fifty-second year.
 
@@ -8748,6 +8754,113 @@ the 星學大成's wheel prints. That makes a third print, and like the second
 it moves no rung.
 
 Last checked 2026-11-06.
+
+### The 量天尺 of the 張果星宗, transcribed
+
+Read on 2026-11-08: 《古今圖書集成》 第468冊 (`W02275`), 卷569 張果星宗三, djvu
+p. 45, everything below 定行限度法. Four readers worked blind to one another
+from a written brief, one block each, at the page's full resolution. The
+cells where the two copies of the ruler part were then read on the plate.
+The brief, the transcriptions and the scripts are in
+`texts/qizheng/ltc/`.
+
+**What the page holds.** The lower two thirds of the page hold three tables.
+The middle band carries the title 逐年行限度法 and 欽天監校正 and holds two
+of them. On its right is a calendar read 橫看: seven rows of palaces grouped
+by their years (相貌十年, 官祿十五年, 福德 and 夫妻 十一年, 遷移八年, 疾厄七年,
+奴僕, 男女 and 田宅 四年半, 兄弟 and 財帛 五年), thirty columns 一度 to 三十度,
+and in each cell the date a degree is entered and left, a year to every so
+many degrees. It is 定行限度法's rates written out, and it was transcribed and
+not checked on the plate. On the band's left, with its last sixteen columns
+set in the lower band's right-hand third, is a table of thirty columns 一度 to
+三十度 and twenty-one rows. Twelve are labelled 子命 to 亥命 and hold a lodge
+and degree, and nine are labelled 相貌限 to 田宅限 and hold ages. The lower
+band's other two thirds are 授時過宮度 itself: twelve rows 子限 to 亥限 and
+thirty columns of lodge and degree, with small characters beside many cells.
+Those are planet names (木, 火, 土, 金, 水, 羅, 計, 孛, 炁), which look like the
+rulers of the degrees and are transcribed and not construed. **The 子命 rows
+and the 子限 rows are one ruler printed twice**. They are read here as two
+copies, and they part on a handful of cells: column 1 of 寅, 卯 and 未 (斗一
+or 斗二, 尾一 or 尾二, 柳二 or 柳三, one stroke each), and 子 at column 21,
+where 授時過宮度 reads 虛初 on the plate and the other copy 女十一. Each
+alternative is the neighbouring degree, and none moves what follows.
+
+**A row is a palace, walked from its far end.** Column 1 is the degree
+furthest from the next branch, and column 30 is the degree the palace is
+entered from: 子 runs 危十一, 危十 … 危一, 虛九 … 虛初, 女十 … 女二. Column 30
+is the 授時 opening taken down to the 度 in eleven palaces of twelve: 女二,
+斗三, 尾三, 氐一, 軫十, 張十五, 井八, 畢六, 胃三, 奎一 and 危十二. In the
+twelfth, 午 ends on 柳四 and the 柳三 that straddles the boundary is given to
+未. The limits walk the same way, from the 命 toward 相貌, so a column's
+number counts the degrees still to be crossed.
+
+**A column is a thirtieth of the palace, written as the whole degree it
+falls in.** Inside a lodge a row steps one 度 a column. At a lodge's edge it
+skips a degree or repeats one, so that it comes back onto thirty equal parts
+of the palace. A narrow palace repeats a degree: 寅, 28.30 wide, has 斗一
+twice in one copy, and 未 has 鬼一 twice. A wide one drops the degree a
+lodge's edge cuts: 辰, 32.25 wide, has no 亢初, 角初 or 軫十八. Measured against
+the 授時 palaces of `SHOUSHI_CI_ENTRY`, the whole degree in 331 of the 355
+legible cells overlaps the thirtieth it stands for. The other 24 are within
+0.86 of a degree of it, and most of those are one run of 奎 in 戌. A row
+counted by whole degrees from either end of the palace overlaps in about 240
+cells and strays up to 2.4 degrees. So **the ruler is by fraction**: the
+answer to the question § "《星學大成》卷三 起大限's figures…" left open. The
+facing rows the 命度 is read across are the same column in two palaces, a
+row of the 量天尺 being one column of the table.
+
+**The ages count columns, and they count them the same way in every
+palace.** The nine lower rows are printed in every third column, 2, 5, 8 …
+29, and stand for that column and its two neighbours. They do not depend on
+the palace: one set serves all twelve. 相貌 opens at twenty in columns 1–3
+and comes down one year each group to eleven in columns 28–30. That is
+`qixian: du`, ten and a year for every three degrees or part of three, with
+the degree being a thirtieth of the 命宮. Across the rows the years are 相貌
+10, 福德 11, 官祿 15, 遷移 8, 疾厄 7 and 妻妾 11, the six the engine lays.
+Then come **奴僕 5 and 男女 4**, the 五 and 四 of 《御定五星精義》, where the
+same page's calendar labels both 四年半, as 年分訣 and 定行限度法 do. 田宅
+opens at 91 to 82 and nothing closes it. So the 張果星宗 as the 集成 prints it
+parts from itself after 夫妻. The 四年半 is stated three times. The 5 and 4
+are carried by one table, and they keep its ages whole.
+
+**Set against the work's own cases, it is within a degree.** 定限度法's 星五
+is column 16 of 午, which gives 十五歲 as the passage says. Its 張十一 to
+十三 are columns 4 to 2: twenty for the last two, and nineteen for 張十一,
+which stands in the next group. 安命度法's two 對度 pairs fall one column
+apart on the table, both in the same direction: 虛六 is column 15 of 子 and
+星五 column 16 of 午, and 女三 is column 29 of 子 and 柳四 column 30 of 午.
+A degree is the table's own resolution, and the passage reads off 「星盤」, not
+off this ruler.
+
+**And 《星學大成》卷三 起大限's case is not reproduced by it.** Its Sun at 翼十
+in 巳 is column 19 of 巳 in both copies. Column 19 of 丑 is 斗十四, and the
+ages give that column fourteen, not the case's 十三. So the fourteen this
+register computed for the case on 2026-11-06 is the table's figure as well,
+and the case stays recorded and not followed.
+
+**What it moves.** The question the shelf held open for `gong: ci` is
+answered by a text, and the answer is a rule the engine can compute. One
+table in two copies on one page is one witness. It is the 《張果星宗》's, and
+the 集成's heading 欽天監校正 says only who corrected the print. 《星學大成》's
+洞微限 and 百六限 remain the place a second work might state the rule in
+words.
+
+**What the engine computes, since 2026-11-08, on the user's word.** Under
+`gong: ci` the board carries the 命度 and, under `qixian: du`, the 大限. The
+命度 is the point at the same fraction of the 命宮 as the Sun is of its own
+palace, and `du` counts thirtieths of the 命宮, three to a year. Under
+`gong: zhongqi` a thirtieth is a degree, so nothing laid under the default
+moves. `qixian: ri` is not counted under `gong: ci` and the limits are left
+null. Its one text, 《星度指南》, cuts its palaces at the 中氣, where the days
+since the 中氣 and the Sun's way into its palace are one span. Under the 次
+they part by some fifteen degrees, and no text read says which the count
+follows. `packages/core/test/limits.test.ts` holds the 授時 palaces of
+`SHOUSHI_CI_ENTRY` to all 357 cells read, each within 0.9 of a 度 of its
+thirtieth. It also holds the board's 命度 and opening age to the table's
+columns and ages, at the table's epoch under `xiudu: shoushi`, for every
+hour.
+
+Last checked 2026-11-08.
 
 ### 觜 and 參, which is the finding
 

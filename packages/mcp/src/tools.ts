@@ -409,8 +409,8 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
         '(宿) it falls in with the degrees past that lodge’s determinative star (入宿度), and ' +
         'the palace of the twelve (次) with the degrees into it (宮度). It also reports 順 or ' +
         '逆 from the daily motion, the 命宮 by 立命加時, and the twelve 人事宮 numbered from ' +
-        'it. Under the default cut it also gives the 命度 and the 大限 from 相貌 to 夫妻, as ' +
-        'ages: stretches of a life, which date nothing that happens in them. ' +
+        'it. It also gives the 命度 and the 大限 from 相貌 to 夫妻, as ages: stretches of a ' +
+        'life, which date nothing that happens in them. ' +
         'Unlike Qi Men and Liu Ren this is a 命 art, so it is laid for a birth as readily as ' +
         'for a question — but it is its own board and borrows nothing from theirs. ' +
         'Three things to state when reporting it. **The fourth remainder is not measured like ' +
@@ -460,8 +460,9 @@ export function registerComputeQizheng(server: McpServer, context: ToolContext):
               'to a year. Default du: degrees from the 命度 to the edge of the next palace, a ' +
               'whole year from eleven to twenty, as the Zhang Guo Xingzong and the Yuding Wuxing ' +
               'Jingyi state it. ri: days from the 中氣 before the birth, a fraction of a year, as ' +
-              'the Xingdu Zhinan works it. Read only when the palaces are cut at the 中氣; under ' +
-              'gong ci no 命度 and no limit is laid.',
+              'the Xingdu Zhinan works it. Under gong ci the palaces are unequal and du counts ' +
+              'thirtieths of the 命宮, as the Zhang Guo Xingzong’s table does; ri is read only ' +
+              'when the palaces are cut at the 中氣, and under gong ci it leaves the limits unlaid.',
           ),
         luohou: z
           .enum(['descending', 'ascending'])

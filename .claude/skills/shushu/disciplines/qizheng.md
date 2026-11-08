@@ -309,8 +309,11 @@ board through the pillars. Not modelled.
   張果星宗 卷567 年分訣 and 卷569 定行限度法 give 11 and 8. The latter casts
   every palace as thirty degrees crossed at a fixed rate, 相貌 3° a year,
   官祿 2°, 福德 and 妻妾 2.727°… The 量天尺 is 卷569's 授時過宮度 table, at
-  集成 第468冊 djvu p. 45, not transcribed (register § "《星學大成》卷三
-  起大限's figures…").
+  集成 第468冊 djvu p. 45, **transcribed 2026-11-08**: a palace walked from
+  its far end in thirty columns, each a thirtieth of the 授時 palace written
+  as the whole degree it falls in; its ages count those columns, three to a
+  year, and give 奴僕 5 and 男女 4 (register § "The 量天尺 of the 張果星宗,
+  transcribed").
 - 限度: the lodge the limit is passing through; its 度主 is the limit's ruler
   (張果星宗十六 限度主論; 卷583 限度).
 - 小限: one palace a year against the branches, from the 命宮 at the birth
@@ -485,10 +488,10 @@ Western ones — the art's own 宮主 and 照 are fair to use, attributed.
 - **`minggong` third reading**: 萬民英 卷六 安命論, sunrise corrected by
   season (★ vol. 809, 卷六 first leaf). Decide whether it is a holder for
   `ascendant` or a value of its own.
-- **命度 by 量天尺 / 對度**: 星學大成 卷三, 張果星宗一, 臺曆 (卷六). The table
-  is located, 張果星宗三 授時過宮度 (集成 第468冊 djvu p. 45), and wants a
-  transcription to a reader's brief: `docs/open.md` § "The shelf", line 1.
-  With it the 大限 could be computed: thirty degrees a palace, a rate each.
+- **命度 by 量天尺 / 對度**: 星學大成 卷三, 張果星宗一, 臺曆 (卷六). Built under both
+  cuts since 2026-11-08: under `gong: ci` by fraction, as the 張果星宗三
+  授時過宮度 lays it, with `qixian: du` counting thirtieths of the 命宮 and
+  `qixian: ri` left unlaid.
 - **身宮, four readings** (§ 3.6) — a parameter when a board carries a 身.
 - **化曜** — one transmission, identical in two compilations; whose year
   boundary (冬至 per 星學大成) is open.

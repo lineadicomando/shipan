@@ -135,6 +135,7 @@ phase.
 | 99 | [the palaces in the lodges](99-the-palaces-in-the-lodges.md) | done — `gong: ci` built on the two copies of the 授時 宿度過宮 wheel, the 次 riding the lodges in whichever frame `xiudu` lays; 0.49.0 |
 | 100 | [the ruler of an era](100-the-ruler-of-an-era.md) | done — the 量天尺 found derived under `gong: zhongqi`, 《星度指南》's 丙戌 命度 and start reproduced by the engine; the 張果星宗's table wanted only for `gong: ci`; nothing shipped |
 | 101 | [the limits of a life](101-the-limits-of-a-life.md) | done — the 命度 and the 大限 from 相貌 to 夫妻 under `gong: zhongqi`, with `qixian` (`du` by degrees, `ri` by days to the 中氣), held to 《星度指南》's 丙戌 case; 0.50.0 |
+| 102 | [the ruler transcribed](102-the-ruler-transcribed.md) | done — the 《張果星宗》's 量天尺 transcribed blind by four readers: one ruler printed twice, a palace walked from its far end, a column a thirtieth of the palace, the ages counting columns; then laid under `gong: ci` on the user's word, `qixian: du` counting thirtieths and `ri` left null; 0.51.0 |
 
 ## The rest of the record
 

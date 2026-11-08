@@ -1268,7 +1268,8 @@ export const QIZHENG_PARAMETERS: ParameterSet<QizhengOptions> = {
     label: 'form.qizheng.qixian',
     values: [
       // 定限度法 「如命躔星五度，在星盤中午宮第五行上，則是十五歲行限」; 起大限法
-      // 「隔三度以內為十一歲出限」; 起大限 「交三度起一歲」.
+      // 「隔三度以內為十一歲出限」; 起大限 「交三度起一歲」. Under `gong: ci`
+      // the 張果星宗's 卷569 table counts its thirty columns, twenty to eleven.
       {
         id: 'du',
         name: { hanzi: '度', pinyin: 'dù' },

@@ -47,11 +47,11 @@ of [`docs/open.md`](open.md), and held to the code with it by
   《六壬大全》卷二 gives it, read on 2026-10-30: the same juan's 總論 takes the
   生剋 from the branch a general rides, which the lens computes, and no text
   read relates by the general's own. A text doing so names a value beside it.
-- **七政四餘.** The 身 as the Moon or as the degree facing the 命; the 命度
-  and the 大限 under `gong: ci`, which want the 量天尺 located in the
-  《張果星宗》's 卷569 and not transcribed; the 大限 past 夫妻, where 《張果星宗》
-  gives 奴僕, 男女 and 田宅 four and a half years each and 《御定五星精義》 five,
-  four and four; the 小限, 月限 and 童限; the 距星 of 觜 and 參. Which node 羅睺 is:
+- **七政四餘.** The 身 as the Moon or as the degree facing the 命; the 大限 under
+  `gong: ci` with `qixian: ri`, which no text counts across the 次; the 大限 past 夫妻, where 《張果星宗》 gives 奴僕, 男女 and 田宅
+  four and a half years each in words and in its calendar, and five and four
+  for the first two in its table of ages, and 《御定五星精義》 five, four and
+  four; the 小限, 月限 and 童限; the 距星 of 觜 and 參. Which node 羅睺 is:
   《星學大成》 names 天首 and 天尾 and does not say.
 - **太乙.** Two of the three tests of 陰陽和不和: 太乙's palace against a
   count, where no count is named, and 王希明's lists, which three prints give

@@ -413,15 +413,18 @@ neither disputed.
   from the first cut today. A body, and with the Sun the 命宮, can fall in
   another palace under each: read the palace off the board, and say which cut
   laid it.
-- **The 命度 and the 大限 are laid under the 中氣 cut alone.** The 命度 is the
-  degree as far into the 命宮 as the Sun is into its own palace, which is the
-  Sun's row of the 量天尺 on a ruler of equal palaces. The limits run from
+- **The 命度 and the 大限 are laid under both cuts.** The 命度 is the point
+  the same share into the 命宮 as the Sun is into its own palace, which is
+  the Sun's row of the 量天尺: a distance in degrees when the palaces are
+  equal, and a fraction under `gong: ci`, where 《張果星宗》 卷569's table lays
+  each palace in thirty columns, a column to a thirtieth. The limits run from
   相貌 to 夫妻 at 10, 11, 15, 8, 7 and 11 years, and the board stops there,
   because the texts part on the years after it. They open at an age counted
   as `qixian` says, by degrees or by days, and the block of schools names
   which. They locate a stretch of a life on the board; they date nothing that
-  happens in it. Under `gong: ci` neither is laid, because a row of the
-  量天尺 across unequal palaces wants a rule no text read gives.
+  happens in it. Under `gong: ci`, `du` counts thirtieths of the 命宮, and
+  `ri`, whose text cuts the palaces at the 中氣, is not counted: the 命度 is
+  laid and the limits are not.
 - **The twelve 人事宮 carry their transmitted names, and a reading from them
   is a choice to say.** 財帛 is wealth and 田宅 is land and house: the names
   say what the tradition reads at each seat, and reading from them is what

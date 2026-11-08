@@ -78,9 +78,8 @@ sweep of a book. A file's offsets and map are its row in `texts/README.md`.
 
 | | what would move | where |
 |---|---|---|
-| 1 | the 量天尺 for `gong: ci` only: how a row runs across palaces of unequal width. Under `gong: zhongqi` the ruler is derived, a row being a distance into the palace, and 《星度指南》's 丙戌 case is reproduced by the engine (`docs/sources.md` § "《星學大成》卷三 起大限's figures, and the 張果星宗's tables of the limits and the 量天尺") | 《張果星宗》 in the 集成, `qizheng/gujin-tushu-jicheng-xingmingbu-468.djvu`, 卷569, djvu p. 45: the 欽天監校正 授時過宮度, twelve palaces by thirty, at the limit of the scan's resolution and with its layout not yet understood. 《星學大成》's 洞微限 and 百六限, 卷八–十三, may say the same in words |
-| 2 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
-| 3 | where a 日家 count running at a solstice ends: finished at its 癸亥, or dropped on the solstice day as `dayDun: solstice` drops it | 《金函玉鏡》下冊, `qimen/jinhan-yujing-2.pdf`, 卷二十 p. 413, 「冬至艮宮夏坤地，命起甲子順逆行」 and the lines around it; read so far for the anchor only |
+| 1 | 郭守敬's lost star catalogue | 《中國恆星觀測史》 第七章第一節二 (二), from p. 274, unread past p. 275; a stencil at 92 dpi |
+| 2 | where a 日家 count running at a solstice ends: finished at its 癸亥, or dropped on the solstice day as `dayDun: solstice` drops it | 《金函玉鏡》下冊, `qimen/jinhan-yujing-2.pdf`, 卷二十 p. 413, 「冬至艮宮夏坤地，命起甲子順逆行」 and the lines around it; read so far for the anchor only |
 
 **Wanted and not held**: the 《元史·曆志》; 《太乙淘金歌》; 沈義方's
 《星平大成》, a lead for the day turned at midnight; a second dated chart with
@@ -88,7 +87,7 @@ sweep of a book. A file's offsets and map are its row in `texts/README.md`.
 大全》, 《遁甲奇門秘傳要旨》, 《明抄奇門陰遁書》 and 《李衛公奇門心法》, the last
 with a Tang attribution. None of that platform's files states a provenance.
 
-**What is left to read**: lines 1–3 above, and the errands in
+**What is left to read**: lines 1–2 above, and the errands in
 `docs/open-errands.md`. No page is owed a reading; the tools are in the
 `shushu` skill's `common/development.md`.
 
