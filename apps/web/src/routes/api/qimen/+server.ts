@@ -1,6 +1,7 @@
 import {
   computeDayChart,
   computeQimenChart,
+  computeMonthChart,
   computeYearChart,
   dayLens,
   nianmingOf,
@@ -52,10 +53,17 @@ export const GET: RequestHandler = ({ url, setHeaders }) => {
       });
     }
 
-    // The board of the year: the hour's procedure on the year pillar, with no
-    // lens of its own yet. A birth goes to the hour board's function, as above.
-    if (moment.options.system === 'nianjia' && !url.searchParams.has('born')) {
-      const year = computeYearChart(moment, moment.options);
+    // The board of the year or of the month: the hour's procedure on that
+    // pillar, with no lens of its own yet. A birth goes to the hour board's
+    // function, as above.
+    if (
+      (moment.options.system === 'nianjia' || moment.options.system === 'yuejia') &&
+      !url.searchParams.has('born')
+    ) {
+      const year =
+        moment.options.system === 'yuejia'
+          ? computeMonthChart(moment, moment.options)
+          : computeYearChart(moment, moment.options);
       setHeaders({ 'cache-control': cache });
       return json({
         qimen: year,

@@ -786,7 +786,7 @@ describe('GET /api/qimen', () => {
    */
   it('refuses every declared value it does not compute, and not only the two it reads by hand', async () => {
     for (const [parameter, value] of [
-      ['qimen.system', 'yuejia'],
+      ['qimen.system=yuejia&qimen.monthYuan', 'yuejian'],
       ['qimen.strengths', 'star'],
     ] as const) {
       const { status, body } = await call(qimen, `${MOMENT}&${parameter}=${value}`);
@@ -873,6 +873,41 @@ describe('GET /api/qimen', () => {
     expect(drawn.status).toBe(200);
     expect(drawn.text.startsWith('<svg')).toBe(true);
     expect(drawn.text).toContain('甲辰');
+  });
+
+  it('answers the board of a month the same way, on the month pillar', async () => {
+    type Month = {
+      qimen: {
+        options: Record<string, string>;
+        month: { hanzi: string };
+        year: { hanzi: string };
+        yuan: { id: string; opened: number; opener: { hanzi: string } };
+        ju: { yang: boolean; number: number };
+      };
+      lens: unknown;
+    };
+    // 2024-06-15 is in the month 庚午 of 甲辰, a year that opens its own five
+    // on 辰: 下元, 陰遁七局 under the 統宗's order and 四局 under the 演義's.
+    const answered = await call(qimen, `${MOMENT}&qimen.system=yuejia`);
+    const body = answered.body as Month;
+    expect(answered.status).toBe(200);
+    expect(answered.headers['cache-control']).toMatch(/^private/);
+    expect(body.qimen.options).toMatchObject({ system: 'yuejia', monthYuan: 'ziwu' });
+    expect(body.qimen.month.hanzi).toBe('庚午');
+    expect(body.qimen.yuan).toMatchObject({ id: 'xia', opened: 2024, opener: { hanzi: '甲辰' } });
+    expect(body.qimen.ju).toEqual({ yang: false, number: 7 });
+    expect(body.lens).toBeNull();
+
+    const other = await call(qimen, `${MOMENT}&qimen.system=yuejia&qimen.monthYuan=yinshen`);
+    expect((other.body as Month).qimen.ju.number).toBe(4);
+
+    const words = await call(text_, `${MOMENT}&qimen.system=yuejia&lang=en`);
+    expect(words.status).toBe(200);
+    expect(words.text).toContain('Qi Men board of the month');
+
+    const drawn = await call(plate, `${MOMENT}&qimen.system=yuejia&lang=en`);
+    expect(drawn.status).toBe(200);
+    expect(drawn.text).toContain('庚午');
   });
 
   it('refuses an option of the other family by the name it travels under', async () => {
@@ -1075,7 +1110,7 @@ describe('every board refuses the values it declares and does not compute', () =
           `${wire(row)}=${value}`,
           handler,
           // Asked of the family that reads it, or it is refused as the other's.
-          `${query}${row.family === 'rijia' ? '&qimen.system=rijia' : ''}&${wire(row)}=${value}`,
+          `${query}${typeof row.family === 'string' && row.family !== 'shijia' ? `&qimen.system=${row.family}` : ''}&${wire(row)}=${value}`,
         ]),
     ),
   );

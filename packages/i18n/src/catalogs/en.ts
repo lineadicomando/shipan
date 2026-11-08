@@ -1783,6 +1783,8 @@ export const en = {
     'the hour, as a 時家 shíjiā board: a plate of stems, nine stars, and eight gates and eight spirits, or nine of each on one flying plate',
   'form.qimen.system.rijia':
     'the day, as a 日家 rìjiā board: eight gates and nine stars of its own',
+  'form.qimen.system.yuejia':
+    'the month, as a 月家 yuèjiā board: the board of the hour laid on the month pillar, always in the yin half',
   'form.qimen.system.nianjia':
     'the year, as a 年家 niánjiā board: the board of the hour laid on the year pillar, always in the yin half',
   // The same choice in the bar over the board, where it is changed without
@@ -1790,9 +1792,10 @@ export const en = {
   'form.qimen.system.bar': 'Board',
   'form.qimen.system.bar.shijia': 'of the hour · 時家 shíjiā',
   'form.qimen.system.bar.rijia': 'of the day · 日家 rìjiā',
+  'form.qimen.system.bar.yuejia': 'of the month · 月家 yuèjiā',
   'form.qimen.system.bar.nianjia': 'of the year · 年家 niánjiā',
   'form.qimen.system.note':
-    'The board of the hour and the board of the day are two boards, and the eight gates are what they share. The board of the hour sets nine stems on the palaces and moves a second plate of stems, nine stars and eight spirits over them. The board of the day is made of the eight gates and of nine stars of its own, the first of which is 太乙 tàiyǐ. It is laid off the day and the season alone, so every hour of one day has the same board of the day. The board of the year is laid the way the board of the hour is laid, with the year pillar in place of the hour pillar. It always counts as a board of the yin half, and its number comes from the sixty-year period the year stands in, so every day of one year has the same board of the year.',
+    'The board of the hour and the board of the day are two boards, and the eight gates are what they share. The board of the hour sets nine stems on the palaces and moves a second plate of stems, nine stars and eight spirits over them. The board of the day is made of the eight gates and of nine stars of its own, the first of which is 太乙 tàiyǐ. It is laid off the day and the season alone, so every hour of one day has the same board of the day. The board of the year is laid the way the board of the hour is laid, with the year pillar in place of the hour pillar. It always counts as a board of the yin half, and its number comes from the sixty-year period the year stands in, so every day of one year has the same board of the year. The board of the month is laid in the same way on the month pillar, and its number comes from the five years the month falls in, so every day of one month has the same board of the month.',
   'form.qimen.dayGates': 'The other seven gates follow 休門 xiūmén',
   'form.qimen.dayGates.fei':
     'by flying through the eight outer palaces in the order of their numbers, as 《金函玉鏡奇門遁甲秘笈全書》 jīnhányùjìngqíméndùnjiǎmìjíquánshū lays them',
@@ -1816,6 +1819,13 @@ export const en = {
     'boards 1, 7 and 4, as the 年家奇門定局 niánjiāqíméndìngjú tables of 遁甲集成 dùnjiǎ jíchéng give them',
   'form.qimen.yearYuan.note':
     'A round of a hundred and eighty years is divided into three periods of sixty years: the upper 上元 shàngyuán, the middle 中元 zhōngyuán and the lower 下元 xiàyuán. An upper period opened in 1684, so the period from 1984 to 2043 is a lower one. Both readings lay the upper period on board 1. They give the middle and lower periods the same two numbers in opposite order, so the two readings lay different boards in a hundred and twenty years of every hundred and eighty.',
+  'form.qimen.monthYuan': 'The five years a board of the month falls in take',
+  'form.qimen.monthYuan.ziwu':
+    'board 1 when they open on a year of 子 zǐ, 午 wǔ, 卯 mǎo or 酉 yǒu, board 4 on a year of 寅 yín, 申 shēn, 巳 sì or 亥 hài, and board 7 on a year of 辰 chén, 戌 xū, 丑 chǒu or 未 wèi, as 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng and 《奇門法竅》 qíménfǎqiào give them',
+  'form.qimen.monthYuan.yinshen':
+    'board 1 when they open on a year of 寅 yín, 申 shēn, 巳 sì or 亥 hài, board 7 on a year of 子 zǐ, 午 wǔ, 卯 mǎo or 酉 yǒu, and board 4 on a year of 辰 chén, 戌 xū, 丑 chǒu or 未 wèi, as 《遁甲演義》 dùnjiǎ yǎnyì gives them',
+  'form.qimen.monthYuan.note':
+    'A board of the month counts the years in periods of five, sixty months each, and every period opens on a year whose stem is 甲 jiǎ or 己 jǐ. The branch of that opening year decides which board the five years take. Each reading gives each group of four branches a different board from the other reading, so the two readings never lay the same board of the month.',
   'form.qimen.earth': 'The season of earth is',
   'form.qimen.earth.quarters': 'the whole of each month that closes a season',
   'form.qimen.earth.eighteen':
@@ -2291,6 +2301,8 @@ export const en = {
   'notes.parameter.dayDun': 'Where the year of a board of the day divides into its two halves.',
   'notes.parameter.yearYuan':
     'Which board each sixty-year period of a board of the year takes.',
+  'notes.parameter.monthYuan':
+    'Which board the five years a board of the month falls in take.',
   'notes.parameter.trueSolarTime': 'Whether clock time is corrected to the Sun at the place.',
   'notes.parameter.yearBoundary': 'Where the counted year begins.',
   'notes.parameter.dayBoundary': 'Where the day turns over.',
@@ -2961,6 +2973,7 @@ export const en = {
   'cli.heading.qimen': 'Qi Men chart',
   'cli.heading.qimenDay': 'Qi Men board of the day',
   'cli.heading.qimenYear': 'Qi Men board of the year',
+  'cli.heading.qimenMonth': 'Qi Men board of the month',
   'cli.heading.dayHours': 'Twelve hours of the day',
   'cli.heading.palaces': 'Nine palaces',
   'cli.heading.standing': 'What stands in each',
@@ -3243,6 +3256,9 @@ export const en = {
   'cli.field.yearPillar': 'year',
   'cli.field.yearPeriod': 'sixty-year period',
   'cli.value.yearPeriod': '{yuan}, opened in {year}',
+  'cli.field.monthPillar': 'month',
+  'cli.field.monthPeriod': 'five-year period',
+  'cli.value.monthPeriod': '{yuan}, opened by the year {opener} in {year}',
   'cli.field.dayGate': 'gate of the three days',
   'cli.field.dayStar': 'star of the day',
   'cli.field.xishen': 'spirit of joy',

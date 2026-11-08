@@ -14,9 +14,11 @@ import {
   computeBazi,
   DAY_STARS,
   computeDayChart,
+  computeMonthChart,
   computeYearChart,
   computeQimenChart,
   formatDayChart,
+  formatMonthChart,
   formatYearChart,
   formatBazi,
   formatLiuren,
@@ -202,16 +204,23 @@ export function registerComputeQimenChart(server: McpServer, context: ToolContex
               .join('\n'),
           );
         }
-        // The board of the year, the hour's procedure on the year pillar.
-        if (moment.options.system === 'nianjia' && args.born === undefined) {
-          const year = computeYearChart(moment, moment.options);
+        // The board of the year or of the month, the hour's procedure on that
+        // pillar.
+        if (
+          (moment.options.system === 'nianjia' || moment.options.system === 'yuejia') &&
+          args.born === undefined
+        ) {
+          const year =
+            moment.options.system === 'yuejia'
+              ? computeMonthChart(moment, moment.options)
+              : computeYearChart(moment, moment.options);
           return ok(
             [
               `${t('cli.field.place')}: ${label}`,
               '',
               formatMoment(moment, t, { divergences: { board: 'qimen', options: year.options } }),
               '',
-              formatYearChart(year, t),
+              'month' in year ? formatMonthChart(year, t) : formatYearChart(year, t),
               formatWarnings(moment, t),
             ]
               .filter((part) => part !== '')
@@ -864,9 +873,14 @@ export function registerDrawQimenChart(server: McpServer, context: ToolContext):
             }),
           );
         }
-        // The board of the year, on the hour's grid with nothing weighed.
-        if (moment.options.system === 'nianjia') {
-          const year = computeYearChart(moment, moment.options);
+        // The board of the year or of the month, on the hour's grid with nothing
+        // weighed.
+        if (moment.options.system === 'nianjia' || moment.options.system === 'yuejia') {
+          const year =
+            moment.options.system === 'yuejia'
+              ? computeMonthChart(moment, moment.options)
+              : computeYearChart(moment, moment.options);
+          const laidOn = 'month' in year ? year.month : year.year;
           return ok(
             renderChartSvg(year, {
               size: args.size ?? 900,
@@ -876,7 +890,7 @@ export function registerDrawQimenChart(server: McpServer, context: ToolContext):
               captions: {
                 between: t('cli.between.items'),
                 ju: `${t('cli.value.yinDun')} ${year.ju.number} · ${t(`label.yuan.${year.yuan.id}` as MessageKey)} ${year.yuan.hanzi}`,
-                pillars: `${sayGanzhi(year.year, t)} ${year.year.hanzi}`,
+                pillars: `${sayGanzhi(laidOn, t)} ${laidOn.hanzi}`,
                 chief: `${t('cli.field.chief')} ${labels.star[year.chief.star.id]} ${year.chief.star.hanzi}`,
                 chiefGate: `${t('cli.field.chiefGate')} ${labels.gate[year.chiefGate.gate.id]} ${year.chiefGate.gate.hanzi}`,
                 readings: t('cli.heading.readings'),

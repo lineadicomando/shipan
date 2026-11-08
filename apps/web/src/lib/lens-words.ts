@@ -13,6 +13,7 @@
  */
 import type {
   DayChart,
+  MonthChart,
   YearChart,
   LiurenBoard,
   QimenChart,
@@ -49,7 +50,7 @@ type Named = { id: string; hanzi: string; pinyin?: string };
 const said = (t: Translator, key: string, thing: Named): string => `${t(key as MessageKey)} ${glyph(thing)}`;
 
 /** The 奇門 board of an hour or of a day: nine palaces by their Luoshu number. */
-export function qimenWords(chart: QimenChart | DayChart | YearChart | undefined, t: Translator): LensWords {
+export function qimenWords(chart: QimenChart | DayChart | YearChart | MonthChart | undefined, t: Translator): LensWords {
   const ofTheDay = chart?.options.system === 'rijia';
   const PREFIX: Record<string, string> = {
     heaven: 'stem',

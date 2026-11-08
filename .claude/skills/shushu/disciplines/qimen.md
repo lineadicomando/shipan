@@ -326,7 +326,13 @@ Each step names the engine parameter, or says "not modelled".
       第三冊 and the 大全's 奇門古本), from a 上元 opened in 1684. It reads the
       hour board's `centreLodging` (not `bajie` or `siyu`), `centreTravel`,
       `centreStem` and `spirits`, and carries no strengths, configurations or
-      horses. `yuejia` is refused and commissioned. Both holders **turn** the
+      horses. `yuejia` is built (2026-11-08) the same way on the month
+      pillar, `computeMonthChart`: its 局 comes from the five years opened
+      by a 甲 or 己 year, by that year's branch, and `monthYuan` takes the
+      統宗's order (`ziwu`, 子午卯酉 一 · 寅申巳亥 四 · 辰戌丑未 七, with the
+      法竅) or the 演義's (`yinshen`, 寅申巳亥 一 · 子午卯酉 七 · 辰戌丑未 四);
+      the 統宗's rule by the month pillar (`yuejian`) names no 局 and is
+      refused. Both holders **turn** the
       heaven plate on the year and the month (「逐年干轉」, 「即以天盤直符加之」,
       read on the plate 2026-11-05), so `plate` is separate from `system`. Of
       the families only the 日家 flies its stars.

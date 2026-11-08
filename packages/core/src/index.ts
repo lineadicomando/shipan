@@ -324,6 +324,7 @@ export {
   saidDivergences,
   formatNianming,
   formatDayChart,
+  formatMonthChart,
   formatYearChart,
   formatQimenChart,
   formatQizheng,
@@ -481,9 +482,13 @@ export {
   type DayStarId,
 } from './dunjia/rijia.js';
 export {
+  computeMonthChart,
   computeYearChart,
+  monthYuanOf,
   pillarYear,
   yearYuanOf,
+  type MonthChart,
+  type MonthYuan,
   type YearChart,
   type YearPalace,
   type YearYuan,

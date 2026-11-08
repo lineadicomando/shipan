@@ -1,6 +1,7 @@
 import {
   computeDayChart,
   computeQimenChart,
+  computeMonthChart,
   computeYearChart,
   initEphemeris,
   liurenBoard,
@@ -186,6 +187,21 @@ describe('the redeclared shape', () => {
     const plate: PlateChart = year;
     expect(plate.palaces).toHaveLength(9);
     expect(plate.palaces.every((palace) => palace.starStrength === undefined)).toBe(true);
+  });
+
+  it('takes a board of the month as the chart it draws, as it takes the year', () => {
+    const options = { ...DEFAULT_OPTIONS, system: 'yuejia' as const, trueSolarTime: false };
+    const month = computeMonthChart(
+      resolveMoment(
+        { date: '2024-06-15', time: '14:00', timezone: 'Asia/Shanghai' },
+        { latitude: 39.9075, longitude: 116.3972, timezone: 'Asia/Shanghai' },
+        options,
+        initEphemeris(),
+      ),
+      options,
+    );
+    const plate: PlateChart = month;
+    expect(plate.palaces).toHaveLength(9);
   });
 
   it('names the five phases the way the palette keys them', () => {

@@ -34,7 +34,7 @@ otherwise, and read a section of `docs/open.md`, not the whole file.
   `docs/sources.md`, `texts/README.md`, the open-question files and this file
   for sentences the session outlived («unread», «not built», «not tagged»…).
 
-## Where it stands, 2026-11-08, end of phase 103
+## Where it stands, 2026-11-08, end of phase 104
 
 **0.50.0** on `main`, tagged `v0.50.0`, pushed and deployed: https://shipan.it
 runs 0.50.0. No branch is open, and build, typecheck and every suite pass.
@@ -42,28 +42,27 @@ Phases 98 to 101 read the limits of a 七政四餘 life and built `gong: ci`, th
 命度 and the 大限 with `qixian`. Phase 102 read the 量天尺 of the 《張果星宗》
 as a ruler by fraction and, on the user's word, lays both under `gong: ci`
 with `qixian: du` counting thirtieths of the 命宮; `qixian: ri` leaves the
-limits null there. 0.51.0, on `main`, not tagged. Phase 103 read the
-shelf's last two lines, and nothing moved in the engine.
+limits null there. Phase 103 read the shelf's last two lines, and nothing
+moved in the engine. Phase 104 built the 月家, `system: yuejia`, with
+`monthYuan`. 0.52.0, on `main`, not tagged; 0.51.0 was never tagged either.
 
 ## What to do next, in the order the user has been taking it
 
-1. **月家, `system: yuejia`**, commissioned 2026-11-02: the year board
-   (phase 89) laid on the month pillar, sharing `layOnPillar`. Steps, sources
-   and the 法竅's evidence: `docs/open.md` § "月家, commissioned".
-2. **The scan form's two silent criteria**: `gongpo` is offered always and
+1. **The scan form's two silent criteria**: `gongpo` is offered always and
    found only under `menpo: gongzhimen`, and the gate 中 is laid under
    `gateSeats: nine` and cannot be asked for. `docs/open.md` § "Surfaces and
    code".
-3. **The shelf** holds no named section today (phase 103 read the last two);
+2. **The shelf** holds no named section today (phase 103 read the last two);
    what a reading left is `docs/open-errands.md` § "Left open by the
    readings", and the files wanted are `docs/open.md` § "The shelf".
-4. **Two leads**, neither file held: `docs/open.md` § "Leads from the `shushu`
+3. **Two leads**, neither file held: `docs/open.md` § "Leads from the `shushu`
    skill".
-5. **The review of 2026-10-23**: `docs/open-errands.md` § "The review of
+4. **The review of 2026-10-23**: `docs/open-errands.md` § "The review of
    2026-10-23". Several lines are a missing row in `docs/sources.tsv`,
    writable from what is already read.
-6. **The lens, when it moves again**: the month board is designed with its
-   lens; 八字 last, and only if the user wants it. `docs/open-errands.md` §
+5. **The lens, when it moves again**: the year and month boards have none,
+   and the month was built without the one planned for it; 八字 last, and
+   only if the user wants it. `docs/open-errands.md` §
    "When the lens moves again".
 
 ## Decisions held open, by the user's word
@@ -99,7 +98,7 @@ What each waits on: `docs/open.md` § "What each refused value waits on".
 
 | Board | Refused today |
 |---|---|
-| 奇門 | `system: yuejia`, `strengths: star` |
+| 奇門 | `monthYuan: yuejian`, `strengths: star` |
 | 六壬 | `yuejiang: jieqi`, `yuejiang: true`, `zhouye: solar` |
 | 七政四餘 | `xiudu: shixian`, `minggong: ascendant` |
 | 太乙 | `geChong: chong`, `epoch: taojin`, `ji: yueji`, `ji: riji`, `ji: shiji`, `yearBoundary: chunjie` |

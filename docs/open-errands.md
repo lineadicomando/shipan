@@ -12,6 +12,15 @@ Each reading's errands, newest first, from phase 94. Those of phases 86 to 93
 are in `docs/history/roadmap-2026-11-06-phase101.md`, and the earlier ones in
 `docs/history/roadmap-2026-11-05.md` and `docs/history/roadmap-2026-10-30.md`.
 
+- **Phase 104**, the month built (`system: yuejia`). Left by the month: the
+  演義's 「自嘉靖四十二年十一月甲子起休門在坎三箇月一移」, a second month layer
+  of a gate three months to a palace, not laid; the month laid flown, which
+  《奇門法竅》's 論月奇法 does (「其飛布天地二盤之法與年奇同」), if `plate` is ever
+  offered on a board on a pillar; a canonical month board; a lens. Left by the
+  year, carried over: a bench of the 遁甲集成 第三冊 tables, pp. 1160–1216,
+  against `yearYuan: yiqisi`, cell by cell; a canonical year board in
+  `packages/core/test/canonical/`; and a lens.
+
 - **Phase 103**, the shelf's last two lines. Where a 日家 count running at a
   solstice ends, finished at its 癸亥 or dropped on the solstice day as
   `dayDun: solstice` drops it: the 金函玉鏡's 卷二十 p. 413 states the anchor
@@ -89,8 +98,10 @@ register 2026-10-31, 2026-11-05 and 2026-11-06.
 
 ## When the lens moves again
 
-The year board has no lens (the 奇門 endpoint answers it with none), and the month
-board is to be designed with its lens from the start; 八字 last and only if the user wants it, the relations
+The year and month boards have no lens (the 奇門 endpoint answers both with
+none); the month was built on 2026-11-08 without the lens this page had
+planned for it, which is the first thing to put to the user when the lens
+moves again. 八字 last and only if the user wants it, the relations
 there (合, 沖, the ten gods) being a different lens. Leads, none decided:
 論星辰生尅制化 (全書 卷之三, PDF 162–163) gives a 紫微 palace's ground its
 branch's phase, rung 4, its last clause odd on the plate (「土入金鄉」, the

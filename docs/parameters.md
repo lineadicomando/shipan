@@ -222,9 +222,10 @@ dunjia's.**
 | `spiritRing` | under `plate: fei` only: `eight` (round the eight outer palaces, as 《奇門法竅》 lays them), `nine` (太常 tàicháng the sixth, flown through all nine, as 《奇門遁甲鳴法》 and 《奇門旨歸》 lay them) | `eight` |
 | `centreLodging` | where the centre is read: `kun` (寄坤二 always), `dun` (陽遁寄二 · 陰遁寄八), `dunni` (陽遁寄八 · 陰遁寄二), `bajie` (八節 bājié — through all eight palaces, three terms to each), `siyu` (四隅 sìyú — through the four corners, six terms to each) | `kun` |
 | `earthPlate` | how often the earth plate is laid: `yuan` (元 yuán — once for sixty hours), `xun` (旬 xún — anew at every decade, 六戊還原) | `yuan` |
-| `system` | which family, each a board of its own: `shijia` (時家 shíjiā), `rijia` (日家 rìjiā), `nianjia` (年家 niánjiā — the hour board's procedure laid on the year pillar, always 陰遁), later `yuejia` (月家 yuèjiā) | `shijia` |
+| `system` | which family, each a board of its own: `shijia` (時家 shíjiā), `rijia` (日家 rìjiā), `yuejia` (月家 yuèjiā — the same procedure laid on the month pillar, always 陰遁), `nianjia` (年家 niánjiā — the hour board's procedure laid on the year pillar, always 陰遁) | `shijia` |
 | `dayGates` | how the seven other gates follow 休門 on a day board — under `system: rijia`: `fei` (飛 fēi — flown through the eight in the order of their numbers), `zhuan` (轉 zhuàn — turned round the eight, the way changing with the day's stem), `shun` (順 shùn — turned round the eight with the sun every day, as 《寶鏡圖》 lays them) | `fei` |
 | `dayDun` | where a day board's year divides — under `system: rijia`: `solstice` (二至 èrzhì), `yang` (陽遁 yángdùn — not at all, every day laid as yang, as 《奇門遁甲統宗》 states and 《寶鏡圖》 prints its sixty) | `solstice` |
+| `monthYuan` | which 局 a month board takes, by the branch of the 甲 or 己 year that opens the five years it falls in — under `system: yuejia`: `ziwu` (子午卯酉 zǐwǔmǎoyǒu — five years opened on 子午卯酉 on 一, on 寅申巳亥 on 四, on 辰戌丑未 on 七, as 《奇門遁甲統宗》 and 《奇門法竅》 give them), `yinshen` (寅申巳亥 yínshēnsìhài — 寅申巳亥 on 一, 子午卯酉 on 七, 辰戌丑未 on 四, as 《遁甲演義》 gives them), `yuejian` (月建 yuèjiàn — the 元 from the month pillar, 陽 after 冬至 and 陰 after 夏至, the 統宗's second rule; refused, naming no 局) | `ziwu` |
 | `yearYuan` | which 局 the three 元 of a year board take, sixty years each from a 上元 opened in 1684 — under `system: nianjia`: `yisiqi` (一四七 yīsìqī — 一, 四, 七, as 《遁甲演義》 and 《奇門遁甲統宗》 give them), `yiqisi` (一七四 yīqīsì — 一, 七, 四, the 年家奇門定局 of 遁甲集成 第三冊 and the 大全's 奇門古本) | `yisiqi` |
 | `spirits` | what names the middle pair: `dun` (陰陽異名 yīnyángyìmíng — the half of the year), `fixed` (the eight stand in both dun), `baihu` (白虎 báihǔ at the fifth seat), `huwu` (虎武 hǔwǔ — 白虎 fifth and 玄武 sixth in both dun, as 《御定奇門大全》's hour tables name them) | `dun` |
 | `spiritSeat` | where the first spirit is seated, which the other seven follow round: `tianpan` (天盤 tiānpán — where the heaven-plate 值符 lands, at every hour, as 《御定奇門大全》's hour tables lay it), `yinshi` (陰時 yīnshí — from the earth-plate 值符 at a 己 to 癸 hour, and whenever the 值符 lands in the centre, as the 奇門秘訣's commentary has it) | `tianpan` |
@@ -334,7 +335,9 @@ centre and names its spirits are read on both, and `family` lists the two:
 `centreLodging`, `centreTravel`, `centreStem`, `spirits`. `centreLodging: bajie`
 and `siyu` are refused there, both lodging the centre by a term a year has
 none of. It reads `yearYuan` of its own, and nothing that places a
-configuration, a strength or a seat by the hour.
+configuration, a strength or a seat by the hour. **The month board is the
+same procedure on the month pillar**, `computeMonthChart`, and reads what the
+year reads, with `monthYuan` in place of `yearYuan`.
 
 **年命 does not follow `earthPlate`, and that is a limit stated rather than a
 choice made.** A birth in a 甲 year is looked up under the 儀 its decade pins —

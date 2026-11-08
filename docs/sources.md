@@ -1833,7 +1833,10 @@ under the naming of the spirits alone.
 | `spiritSeat: yinshi` | 《奇門秘訣》 | its commentary on the 煙波釣叟歌, 《御定奇門大全》卷四十七: 「如遇己庚辛壬癸五時為陰者，看地盤直符坐何宮，即於何宮起直符」; added 2026-10-20 |
 | `centreLodging: dun` | 《漢陰居士歌》 | 「任生艮土寄陰禽…坤寄陽禽」, and a 陰遁三局 board worked on it, 《御定奇門大全》卷五十三; added 2026-10-20, with 《御定奇門寶鑑》 beside it as the reporter |
 | `strengths: star` | 《奇門遁甲金鏡寶鑑》卷之四 | tabulates the five states outward from each of the nine stars |
-| `system: rijia`, `yuejia`, `nianjia` | 《遁甲演義》, 《奇門遁甲統宗》 | each states the three families; they part on the 年家's three 元, which is two readings and two values of `yearYuan` |
+| `system: rijia`, `yuejia`, `nianjia` | 《遁甲演義》, 《奇門遁甲統宗》 | each states the three families; they part on the 年家's three 元 and on the 月家's, which is two readings each and two values of `yearYuan` and of `monthYuan` |
+| `system: yuejia` | 《奇門法竅》 | 論月奇法, the month's twenty years of each 元 enumerated and 「其飛布天地二盤之法與年奇同」; added 2026-11-08 |
+| `monthYuan: ziwu` | 《奇門遁甲統宗》, 《奇門法竅》 | the 統宗's 附月奇門起例, 「甲子至戊辰…為上[元]二十年用陰遁一局　己巳至癸酉…為中元二十年用陰遁四局　甲戌至戊寅…為下元二十年用陰遁七局」, 故宮 p. 20; the 法竅's 論月奇法 enumerating the same spans; added 2026-11-08 |
+| `monthYuan: yinshen` | 《遁甲演義》 | 「甲己遇四孟為上元。在一宮起甲子。甲己遇四仲為中元。在七宮起甲子。甲己遇四季為下元。在四宮起甲子」, on the 四庫 plate; added 2026-11-08 |
 | `yearYuan: yisiqi` | 《遁甲演義》, 《奇門遁甲統宗》 | 「上元六十年以陰遁一局加之，中元六十年以陰遁四局加之，下元六十年以陰遁七局加之」, on the 四庫 plate; the 統宗's 附年奇門起例 in the same order, 故宮 p. 19; added 2026-11-05 |
 | `plate: fei`, `centreLodging: dunni` | 《奇門法竅》 | the earth plate carried whole and the gates carried over the eight, stated in 卷二 and 卷五, drawn on 36 boards and tabulated over 1080 hours, every printed board lodging 「中五寄艮」 under 陽 and 「中五寄坤」 under 陰; § "《奇門法竅》: the hour board flown whole, stated, drawn and tabulated"; added 2026-11-05 |
 | `gateSeats: eight`, `spiritRing: eight` | 《奇門法竅》 | 「陽遁休死傷杜開驚生景，順飛八宮，不入中五」 and 「八神不用飛宮」, 卷二 論直使 and 論八神, on every drawing of 卷五; added 2026-11-06 |
@@ -5736,6 +5739,28 @@ the centre lodges on this board, so it reads the hour board's
 `centreLodging`, and `bajie` and `siyu` are refused there for want of a term.
 `test/nianjia.test.ts` lays the 統宗's 甲子 and 乙丑, the 演義's 1564 and 1594
 and the 奇門古本's 1648 as written.
+
+**The month is built on the same reading** as `system: yuejia`, 2026-11-08,
+on the user's word of 2026-11-02 and with `monthYuan` shaped and defaulted on
+the user's word the day it was built. `computeMonthChart` calls `layOnPillar`
+with the month pillar, cut at the 節, on a 陰遁 局 taken from the five years
+the month falls in: the 甲 or 己 year that opens them, by its branch.
+`monthYuan` carries the two orders, named for the branches because 《奇門法竅》
+labels 子午卯酉 「四孟」 where its own 卷七 calls them 四仲: `ziwu` is the
+統宗's 子午卯酉 一 · 寅申巳亥 四 · 辰戌丑未 七, which the 法竅 enumerates, and
+`yinshen` the 演義's 寅申巳亥 一 · 子午卯酉 七 · 辰戌丑未 四. The two lay a
+different board in every month. **The 統宗 has a third rule, and it is
+declared and refused.** Its leaf after 又法日奇門起例, series p. 20, lower
+block, carries a heading printed 「又法日奇門起例」 a second time over a text that
+is about the month: 「甲己加四仲月為上元，加四孟月為中元，加四季月為下元，亦冬至
+用陽遁，夏至用陰遁」, continued on p. 21. It takes the 元 from the month pillar
+and uses both 遁, and it names no 局, so `monthYuan: yuejian` is declared and
+refused for want of one. Neither holder works a month board through. The
+統宗's sentence closes 「與年奇門同」, so `test/yuejia.test.ts` lays its 甲子
+and 乙丑 of the year on the months 甲子 and 乙丑 of 1988–89, in the five 甲子
+opened, and holds the sixty years to both enumerations. The 遁甲集成 第三冊's
+月家 tables, beside the 年家 ones at pp. 1160–1216, are not yet set against
+either value.
 
 #### The same text in four places, and what that does to the count
 

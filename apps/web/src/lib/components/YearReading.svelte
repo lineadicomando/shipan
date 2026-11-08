@@ -1,6 +1,7 @@
 <!--
-  A board of the year said in full: the year it was laid on, its sixty-year
-  period, the 局, the chief and its gate, and the nine palaces.
+  A board of the year or of the month said in full: the pillar it was laid on,
+  the period that gave its 局, the 局, the chief and its gate, and the nine
+  palaces.
 
   The words under the drawing, as `ChartReading` is to the hour board's. One
   table where the hour board's has several: the year board carries what its
@@ -10,10 +11,10 @@
 <script lang="ts">
   import { glyph } from '$lib/glyph';
   import type { MessageKey, Translator } from '@shipan/i18n';
-  import type { YearChart } from '@shipan/core';
+  import type { MonthChart, YearChart } from '@shipan/core';
 
   /** The board as data, not as a type: see `ChartReading`. */
-  let { chart, t }: { chart: YearChart; t: Translator } = $props();
+  let { chart, t }: { chart: YearChart | MonthChart; t: Translator } = $props();
 
   const gloss = (prefix: string, id: string): string => t(`label.${prefix}.${id}` as MessageKey);
   /** The palace the centre lodges in, where its stem is read. */
@@ -22,17 +23,34 @@
 
 <!-- What the board was laid off, as the caption the ju is to an hour board. -->
 <div class="cast">
-  <p class="year">
-    {t('cli.field.yearPillar')}
-    <span class="glyph">{glyph(chart.year)}</span>
-    · {t('cli.value.yinDun')} {chart.ju.number}
-  </p>
-  <p class="period">
-    {t('cli.value.yearPeriod', {
-      yuan: `${gloss('yuan', chart.yuan.id)} ${glyph(chart.yuan)}`,
-      year: String(chart.yuan.opened),
-    })}
-  </p>
+  {#if 'month' in chart}
+    <p class="year">
+      {t('cli.field.monthPillar')}
+      <span class="glyph">{glyph(chart.month)}</span>
+      · {t('cli.field.yearPillar')}
+      <span class="glyph">{glyph(chart.year)}</span>
+      · {t('cli.value.yinDun')} {chart.ju.number}
+    </p>
+    <p class="period">
+      {t('cli.value.monthPeriod', {
+        yuan: `${gloss('yuan', chart.yuan.id)} ${glyph(chart.yuan)}`,
+        opener: glyph(chart.yuan.opener),
+        year: String(chart.yuan.opened),
+      })}
+    </p>
+  {:else}
+    <p class="year">
+      {t('cli.field.yearPillar')}
+      <span class="glyph">{glyph(chart.year)}</span>
+      · {t('cli.value.yinDun')} {chart.ju.number}
+    </p>
+    <p class="period">
+      {t('cli.value.yearPeriod', {
+        yuan: `${gloss('yuan', chart.yuan.id)} ${glyph(chart.yuan)}`,
+        year: String(chart.yuan.opened),
+      })}
+    </p>
+  {/if}
 </div>
 
 <dl class="anchors">

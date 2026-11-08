@@ -150,6 +150,8 @@ export interface ChartOptions {
    * answered by `computeYearChart`: it reads `yearYuan` and, of the hour
    * board's, the four that say how a turned plate treats its centre and names
    * its spirits — `centreLodging`, `centreTravel`, `centreStem`, `spirits`.
+   * `yuejia` is the same procedure laid on the month pillar, answered by
+   * `computeMonthChart`, and reads `monthYuan` where the year reads `yearYuan`.
    */
   system: 'shijia' | 'rijia' | 'yuejia' | 'nianjia';
 
@@ -188,6 +190,26 @@ export interface ChartOptions {
    * 「以一七四為法」, and 《御定奇門大全》卷二十九's 奇門古本, which works 1648 on it.
    */
   yearYuan: 'yisiqi' | 'yiqisi';
+
+  /**
+   * Which 局 a month board takes, by the five years it falls in. `system:
+   * yuejia` alone; always 陰遁. A 元 of the month is five years, sixty months,
+   * opened by a 甲 or a 己 year, and the branch of that year decides the 局.
+   * The values are named for the branches and not for 孟 and 仲, which one
+   * holder labels the other way round.
+   *
+   * `ziwu` lays the five years opened on 子午卯酉 on 一局, those on 寅申巳亥 on
+   * 四局 and those on 辰戌丑未 on 七局: 《奇門遁甲統宗》卷二 附月奇門起例,
+   * 「甲子至戊辰…為上元二十年用陰遁一局，己巳至癸酉…為中元二十年用陰遁四局，
+   * 甲戌至戊寅…為下元二十年用陰遁七局」, and 《奇門法竅》's 論月奇法 enumerating
+   * the same twenty years of each. `yinshen` lays those on 寅申巳亥 on 一局,
+   * 子午卯酉 on 七局 and 辰戌丑未 on 四局: 《遁甲演義》卷一, 「甲己遇四孟為上元。
+   * 在一宮起甲子。甲己遇四仲為中元。在七宮起甲子。甲己遇四季為下元。在四宮起甲子」.
+   * `yuejian` takes the 元 from the month pillar itself, 陽 after 冬至 and 陰
+   * after 夏至: the 統宗's second rule, 「甲己加四仲月為上元，加四孟月為中元，加四季月
+   * 為下元，亦冬至用陽遁，夏至用陰遁」, which names no 局 and is refused.
+   */
+  monthYuan: 'ziwu' | 'yinshen' | 'yuejian';
 
   /**
    * Where the centre lodges (寄宮).
@@ -489,6 +511,7 @@ export const DEFAULT_OPTIONS: ChartOptions = Object.freeze({
   dayGates: 'fei',
   dayDun: 'solstice',
   yearYuan: 'yisiqi',
+  monthYuan: 'ziwu',
   centreLodging: 'kun',
   earthPlate: 'yuan',
   spirits: 'dun',

@@ -364,19 +364,22 @@ two hours" is why none of that is here. A noble is flagged on both its
 branches and the mark says neither 陽貴 nor 陰貴, the tables parting over
 which is which; whether one counts in an hour of the night is the reader's.
 
-## A board of the year, anywhere but on its own page
+## A board of the year or of the month, anywhere but on its own page
 
 *Asked by:* whoever has just laid one and wants it read, scanned or met by a
 birth.
 
-`system: nianjia` is laid, printed, drawn and copied by the same surfaces as
+`system: nianjia` and `system: yuejia` are laid, printed, drawn and copied by the same surfaces as
 the day board, and refused by the same three: the prompt, the scan and the
 年命. The board is the hour board's procedure, so the refusal is not that the
 plate is missing. A prompt tells a model how an hour board's configurations,
 strengths and horses are read, and this board carries none of them; a scan
 walks hours, and a year has one board; a 年命 placed on a year board is a
-birth set inside the board of its own year, which no holder works. The
-consultation does not offer the board, on the user's word of 2026-11-05.
+birth set inside the board of its own year, which no holder works. A month
+board is refused the same three for the same reasons, the month being one
+board a month as the year is one a year. The consultation offers neither, on
+the user's word of 2026-11-05 for the year and as the commission of
+2026-11-02 asked for the month.
 
 ## The middle pair named by the matter
 

@@ -217,6 +217,14 @@ neither disputed.
   horses and no birth: its holders lay none of them, and a configuration read
   off it would be an hour board's name given to a year. The prompt, the scan
   and `born` refuse this family by name, as they refuse the day's.
+- **A board of the month is the same procedure on the month pillar.** With
+  `system: yuejia` the answer is shaped as the year's, with the month pillar,
+  cut at the 節, where the year pillar stood, the year beside it, and the 局
+  taken from the five years, opened by a 甲 or 己 year, that the month falls
+  in. `monthYuan` says which 局 each branch of the opening year takes, by the
+  統宗 (`ziwu`, the default) or by the 演義 (`yinshen`), and the board names
+  it; the two never lay the same board. Every day of one month has the same
+  board, and it carries what the year's carries and no more.
 - **The eight spirits are named four ways and the board says which.** The ring
   is the same ring under all four — same star, same gate, same stem, same
   palace — and what parts them is which fact names the fifth and sixth seats:

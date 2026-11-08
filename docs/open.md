@@ -20,7 +20,7 @@ a work already held is not a witness.
 
 | | waits on |
 |---|---|
-| `system: yuejia` | **commissioned on the user's word, 2026-11-02**: the steps are § "月家, commissioned" below |
+| `monthYuan: yuejian` | the 局 of each 元 under the 統宗's second month rule, 「甲己加四仲月為上元…亦冬至用陽遁，夏至用陰遁」, which names none; a text working a month board by it |
 | `strengths: star` | which of two arrangements from the star it is — 《金鏡寶鑑》卷之四's, or the 《三元經》's that the 符應經, 紀大奎 and the 探索錄 carry — and whether it reaches past the nine stars |
 | `yuejiang: jieqi`, `yuejiang: true` | a text stating either as its own. None found, on the plate or in the extracts |
 | `zhouye: solar` | which rising, and how. One sentence of 《大六壬精解》 and the 協紀's 日出入, neither with a procedure |
@@ -33,43 +33,6 @@ a work already held is not a witness.
 | `yearBoundary: chunjie` | a holder. The default has none either |
 | `geChong: chong` | the rule as a sentence. 盧央's board for 940 shows it of 始擊; the 《統宗》卷七 states 格 by the facing palace alone, and on its 589 board adds a 格 of the 太歲, p. 69 |
 | `leapMonth: current`, `leapMonth: split` | a manual stating either. A program computes one |
-
-## 月家, commissioned
-
-On the user's word, 2026-11-02: a value of the `qimen` board's `system`,
-beside `shijia`, `rijia` and `nianjia` (built 2026-11-05, phase 89). The
-統宗's 按 disowning the families (「諸說紛紜……非奇門所急也」) does not block
-it. Holders: 《遁甲演義》卷一 and 《奇門遁甲統宗》卷二, both already in
-`heldBy`. The section goes when the month is built.
-
-1. **The board.** `layOnPillar` in `packages/core/src/dunjia/nianjia.ts`, on
-   the month pillar cut at the 節: 陰遁, the 旬首 of the month pillar for
-   直符 and 直使, 「逐地下月干轉」 and 「隨月支飛泊」. The 元 is the five-year
-   span opened by a 甲 or 己 year, by that year's branch.
-2. **Parameters, under the board's name, each value named for its rule.**
-   The month's three 元: 孟 一 · 仲 七 · 季 四 (演義) and 仲 一 · 孟 四 · 季 七
-   (統宗). The 統宗's 又法月奇門起例 is a third (甲己加四仲月為上元…, 陽 after
-   冬至 and 陰 after 夏至): declare it, and refuse it unless step 1 also covers
-   it. The month is 陰; 徐昂's 陽 is a lone parenthesis (`docs/sources.md`,
-   the 遁甲釋要 section). **《奇門法竅》's 論月奇法 states the 統宗's order**,
-   calling 子午卯酉 「四孟」 where its own 卷七 calls them 四仲: name the values
-   by their branches, so `faqiao` can join `tongzong` without the labels
-   deciding. It lays the month flown, 「與年奇同」, which is `plate: fei` and
-   not the turned board step 1 builds (`docs/sources.md` § "《奇門法竅》
-   again"). The family list of `centreLodging`, `centreTravel`, `centreStem`
-   and `spirits` gains `yuejia`.
-3. **Tests from the sources' own cases.** The 統宗's 附月 起例 works none.
-   The 演義's two dates, the 十一月 of 1563 and of 1613 (both 甲子 months,
-   休門 at 坎), **do not fit the 三元 board**: they fall in different 元. They
-   fit 「三箇月一移」, a gate three months to a palace (600 months is 25
-   rounds of eight), a second month layer beside the board, as the 日家 has
-   two. Neither date tests the board.
-4. **Surfaces**, as the year's: the same section, `private`, not offered by
-   the consultation, the hour's drawing with nothing weighed.
-
-**Left open by the year**: a bench of the 遁甲集成 第三冊 tables, pp.
-1160–1216, against `yearYuan: yiqisi`, cell by cell; a canonical year board
-in `packages/core/test/canonical/`; and a lens.
 
 ## The shelf
 

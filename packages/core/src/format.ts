@@ -3,7 +3,7 @@ import type { Almanac, YearGodSeat } from './almanac.js';
 import { ELEMENTS, type Bazi } from './bazi/index.js';
 import { palace, YUAN_HANZI, YUAN_PINYIN, type QimenChart } from './dunjia/index.js';
 import type { DayChart } from './dunjia/rijia.js';
-import type { YearChart } from './dunjia/nianjia.js';
+import type { MonthChart, YearChart } from './dunjia/nianjia.js';
 import { BRANCHES, type Ganzhi } from './ganzhi.js';
 import type { LunarDate } from './lunar.js';
 import {
@@ -549,16 +549,48 @@ export function formatDayChart(chart: DayChart, t: Translator): string {
  */
 export function formatYearChart(chart: YearChart, t: Translator): string {
   const yuan = named(chart.yuan, `label.yuan.${chart.yuan.id}` as MessageKey, t);
+  return formatPillarBoard(chart, t, t('cli.heading.qimenYear'), [
+    [t('cli.field.yearPillar'), ganzhi(chart.year, t)],
+    [t('cli.field.yearPeriod'), t('cli.value.yearPeriod', { yuan, year: String(chart.yuan.opened) })],
+  ]);
+}
+
+/**
+ * The board of a month: the month, the year whose five it falls in, and the
+ * rest as the year's, the two being one procedure on two pillars.
+ */
+export function formatMonthChart(chart: MonthChart, t: Translator): string {
+  const yuan = named(chart.yuan, `label.yuan.${chart.yuan.id}` as MessageKey, t);
+  return formatPillarBoard(chart, t, t('cli.heading.qimenMonth'), [
+    [t('cli.field.monthPillar'), ganzhi(chart.month, t)],
+    [t('cli.field.yearPillar'), ganzhi(chart.year, t)],
+    [
+      t('cli.field.monthPeriod'),
+      t('cli.value.monthPeriod', {
+        yuan,
+        opener: ganzhi(chart.yuan.opener, t),
+        year: String(chart.yuan.opened),
+      }),
+    ],
+  ]);
+}
+
+/** What a board laid on a pillar prints under the rows that say which pillar. */
+function formatPillarBoard(
+  chart: YearChart | MonthChart,
+  t: Translator,
+  heading: string,
+  cast: string[][],
+): string {
   const where = (cell: YearChart['palaces'][number], full: boolean): string =>
     full
       ? `${cell.palace.number} ${named(cell.palace, `label.palace.${cell.palace.id}` as MessageKey, t)}`
       : `${cell.palace.number} ${glyph(cell.palace)}`;
   return [
-    `${t('cli.heading.qimenYear')}`,
+    heading,
     ...table(
       [
-        [t('cli.field.yearPillar'), ganzhi(chart.year, t)],
-        [t('cli.field.yearPeriod'), t('cli.value.yearPeriod', { yuan, year: String(chart.yuan.opened) })],
+        ...cast,
         [t('cli.field.ju'), `${t('cli.value.yinDun')} ${chart.ju.number}`],
         [
           t('cli.field.instrument'),
@@ -818,7 +850,7 @@ export function formatQimenChart(chart: QimenChart, t: Translator): string {
  * nothing else left the reader to know that from somewhere other than the
  * chart.
  */
-function lodging(chart: QimenChart | YearChart, t: Translator): string[] {
+function lodging(chart: QimenChart | YearChart | MonthChart, t: Translator): string[] {
   const palaces: readonly (QimenChart | YearChart)['palaces'][number][] = chart.palaces;
   const host = palaces.find((cell) => cell.lodged);
   if (!host?.lodged) return [];

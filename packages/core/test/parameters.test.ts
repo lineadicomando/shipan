@@ -249,13 +249,14 @@ describe('what refuses an option of the other family of 奇門', () => {
     expect(refusal({ system: 'shijia', dayDun: 'solstice' })?.code).toBe('OPTION_NOT_READ');
   });
 
-  it('passes what each family reads, an option left unsaid, and a family not yet laid', () => {
+  it('passes what each family reads, and an option left unsaid', () => {
     expect(refusal({ system: 'rijia', dayGates: 'zhuan', method: undefined })).toBeUndefined();
     expect(refusal({ method: 'zhirun', plate: 'xingfei' })).toBeUndefined();
     // Every board's options travel in one bag, and only 奇門's are a family's.
     expect(refusal({ system: 'rijia', trueSolarTime: false, guiren: 'wei' })).toBeUndefined();
-    // Refused as a family by `requireImplemented`, which names that refusal.
-    expect(refusal({ system: 'yuejia', method: 'zhirun' })).toBeUndefined();
+    // The month reads what the year reads, with its own 元 in place of the year's.
+    expect(refusal({ system: 'yuejia', monthYuan: 'yinshen', centreLodging: 'dun' })).toBeUndefined();
+    expect(refusal({ system: 'yuejia', yearYuan: 'yiqisi' })).toMatchObject({ code: 'OPTION_NOT_READ' });
   });
 });
 

@@ -49,8 +49,13 @@
    * apart. The drawing is asked of one address for both.
    */
   const ofTheDay = $derived(data.chart?.options.system === 'rijia');
-  /** Whether it is a board of the year: the hour's grid, with nothing weighed. */
-  const ofTheYear = $derived(data.chart?.options.system === 'nianjia');
+  /**
+   * Whether it is a board of the year or of the month: the hour's grid laid on
+   * a pillar, with nothing weighed.
+   */
+  const ofTheYear = $derived(
+    data.chart?.options.system === 'nianjia' || data.chart?.options.system === 'yuejia',
+  );
   const failure = $derived(data.failure ? sayFailure(t, data.failure) : '');
 
   /**
@@ -280,6 +285,7 @@
       <select value={system} disabled={busy} onchange={(event) => relay(event.currentTarget.value)}>
         <option value="shijia">{t('form.qimen.system.bar.shijia')}</option>
         <option value="rijia">{t('form.qimen.system.bar.rijia')}</option>
+        <option value="yuejia">{t('form.qimen.system.bar.yuejia')}</option>
         <option value="nianjia">{t('form.qimen.system.bar.nianjia')}</option>
       </select>
     </label>

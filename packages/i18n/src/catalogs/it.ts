@@ -1642,6 +1642,8 @@ export const it: Record<MessageKey, string> = {
     'sull’ora, come tavola 時家 shíjiā: tronchi in cielo e in terra, nove stelle, e otto porte e otto spiriti, oppure nove porte e nove spiriti su una delle tavole volanti',
   'form.qimen.system.rijia':
     'sul giorno, come tavola 日家 rìjiā: otto porte e nove stelle proprie',
+  'form.qimen.system.yuejia':
+    'sul mese, come tavola 月家 yuèjiā: la tavola dell’ora posata sul pilastro del mese, sempre nella metà yin',
   'form.qimen.system.nianjia':
     'sull’anno, come tavola 年家 niánjiā: la tavola dell’ora posata sul pilastro dell’anno, sempre nella metà yin',
   // The same choice in the bar over the board, where it is changed without
@@ -1649,9 +1651,10 @@ export const it: Record<MessageKey, string> = {
   'form.qimen.system.bar': 'Tavola',
   'form.qimen.system.bar.shijia': 'dell’ora · 時家 shíjiā',
   'form.qimen.system.bar.rijia': 'del giorno · 日家 rìjiā',
+  'form.qimen.system.bar.yuejia': 'del mese · 月家 yuèjiā',
   'form.qimen.system.bar.nianjia': 'dell’anno · 年家 niánjiā',
   'form.qimen.system.note':
-    'La tavola dell’ora e la tavola del giorno sono due tavole distinte, e hanno in comune le otto porte. La tavola dell’ora posa nove tronchi sui palazzi, che sono la tavola di terra, e muove sopra di essi i tronchi della tavola di cielo, nove stelle e otto spiriti. La tavola del giorno è fatta delle otto porte e di nove stelle proprie, la prima delle quali è 太乙 tàiyǐ. Si posa soltanto sul giorno e sulla stagione, quindi tutte le ore di uno stesso giorno hanno la stessa tavola del giorno. La tavola dell’anno si posa come la tavola dell’ora, con il pilastro dell’anno al posto del pilastro dell’ora. Conta sempre come una tavola della metà yin, e il suo numero viene dal periodo di sessant’anni in cui cade l’anno; quindi tutti i giorni di uno stesso anno hanno la stessa tavola dell’anno.',
+    'La tavola dell’ora e la tavola del giorno sono due tavole distinte, e hanno in comune le otto porte. La tavola dell’ora posa nove tronchi sui palazzi, che sono la tavola di terra, e muove sopra di essi i tronchi della tavola di cielo, nove stelle e otto spiriti. La tavola del giorno è fatta delle otto porte e di nove stelle proprie, la prima delle quali è 太乙 tàiyǐ. Si posa soltanto sul giorno e sulla stagione, quindi tutte le ore di uno stesso giorno hanno la stessa tavola del giorno. La tavola dell’anno si posa come la tavola dell’ora, con il pilastro dell’anno al posto del pilastro dell’ora. Conta sempre come una tavola della metà yin, e il suo numero viene dal periodo di sessant’anni in cui cade l’anno; quindi tutti i giorni di uno stesso anno hanno la stessa tavola dell’anno. La tavola del mese si posa allo stesso modo sul pilastro del mese, e il suo numero viene dai cinque anni in cui cade il mese; quindi tutti i giorni di uno stesso mese hanno la stessa tavola del mese.',
   'form.qimen.dayGates': 'Le altre sette porte seguono 休門 xiūmén',
   'form.qimen.dayGates.fei':
     'volando per gli otto palazzi esterni nell’ordine dei loro numeri, come le dispone il 《金函玉鏡奇門遁甲秘笈全書》 jīnhányùjìngqíméndùnjiǎmìjíquánshū',
@@ -1675,6 +1678,13 @@ export const it: Record<MessageKey, string> = {
     'le tavole 1, 7 e 4, come le danno le tabelle 年家奇門定局 niánjiāqíméndìngjú del 遁甲集成 dùnjiǎ jíchéng',
   'form.qimen.yearYuan.note':
     'Un giro di centottant’anni si divide in tre periodi di sessant’anni: il superiore 上元 shàngyuán, il medio 中元 zhōngyuán e l’inferiore 下元 xiàyuán. Un periodo superiore si è aperto nel 1684, quindi il periodo dal 1984 al 2043 è inferiore. Le due letture posano entrambe il periodo superiore sulla tavola 1. Ai periodi medio e inferiore danno gli stessi due numeri in ordine inverso, quindi le due letture posano tavole diverse in centoventi anni su centottanta.',
+  'form.qimen.monthYuan': 'I cinque anni in cui cade una tavola del mese prendono',
+  'form.qimen.monthYuan.ziwu':
+    'la tavola 1 quando si aprono su un anno di 子 zǐ, 午 wǔ, 卯 mǎo o 酉 yǒu, la tavola 4 su un anno di 寅 yín, 申 shēn, 巳 sì o 亥 hài, e la tavola 7 su un anno di 辰 chén, 戌 xū, 丑 chǒu o 未 wèi, come le danno il 《奇門遁甲統宗》 qíméndùnjiǎtǒngzōng e il 《奇門法竅》 qíménfǎqiào',
+  'form.qimen.monthYuan.yinshen':
+    'la tavola 1 quando si aprono su un anno di 寅 yín, 申 shēn, 巳 sì o 亥 hài, la tavola 7 su un anno di 子 zǐ, 午 wǔ, 卯 mǎo o 酉 yǒu, e la tavola 4 su un anno di 辰 chén, 戌 xū, 丑 chǒu o 未 wèi, come le dà il 《遁甲演義》 dùnjiǎ yǎnyì',
+  'form.qimen.monthYuan.note':
+    'Una tavola del mese conta gli anni in periodi di cinque, sessanta mesi ciascuno, e ogni periodo si apre su un anno il cui tronco è 甲 jiǎ o 己 jǐ. Il ramo di quell’anno d’apertura decide quale tavola prendono i cinque anni. Ciascuna lettura dà a ciascun gruppo di quattro rami una tavola diversa da quella dell’altra lettura, quindi le due letture non posano mai la stessa tavola del mese.',
   'form.qimen.earth': 'La stagione della terra è',
   'form.qimen.earth.quarters': 'l’intero mese che chiude ciascuna stagione',
   'form.qimen.earth.eighteen':
@@ -2034,6 +2044,8 @@ export const it: Record<MessageKey, string> = {
   'notes.parameter.dayDun': 'Dove l’anno di una tavola del giorno si divide nelle sue due metà.',
   'notes.parameter.yearYuan':
     'Quale tavola prende ciascun periodo di sessant’anni di una tavola dell’anno.',
+  'notes.parameter.monthYuan':
+    'Quale tavola prendono i cinque anni in cui cade una tavola del mese.',
   'notes.parameter.trueSolarTime':
     'Se l’ora dell’orologio venga corretta sul Sole del luogo.',
   'notes.parameter.yearBoundary': 'Dove comincia l’anno contato.',
@@ -2592,6 +2604,7 @@ export const it: Record<MessageKey, string> = {
   'cli.heading.qimen': 'Carta Qi Men',
   'cli.heading.qimenDay': 'Tavola Qi Men del giorno',
   'cli.heading.qimenYear': 'Tavola Qi Men dell’anno',
+  'cli.heading.qimenMonth': 'Tavola Qi Men del mese',
   'cli.heading.dayHours': 'Dodici ore del giorno',
   'cli.heading.palaces': 'Nove palazzi',
   'cli.heading.standing': 'Che cosa vi sta',
@@ -2839,6 +2852,9 @@ export const it: Record<MessageKey, string> = {
   'cli.field.yearPillar': 'anno',
   'cli.field.yearPeriod': 'periodo di sessant’anni',
   'cli.value.yearPeriod': '{yuan}, aperto nel {year}',
+  'cli.field.monthPillar': 'mese',
+  'cli.field.monthPeriod': 'periodo di cinque anni',
+  'cli.value.monthPeriod': '{yuan}, aperto dall’anno {opener} nel {year}',
   'cli.field.dayGate': 'porta dei tre giorni',
   'cli.field.dayStar': 'stella del giorno',
   'cli.field.xishen': 'spirito della gioia',

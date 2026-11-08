@@ -193,9 +193,10 @@ export interface Parameter<V> {
    * board was never laid by. Absent on `system` itself and on every other
    * art's parameters.
    *
-   * **A list where two families read one parameter.** The year board is the
-   * hour board's procedure on another pillar, so how a turned plate treats its
-   * centre and names its spirits is read on both; `readsOn` is the one test.
+   * **A list where several families read one parameter.** The year and month
+   * boards are the hour board's procedure on another pillar, so how a turned
+   * plate treats its centre and names its spirits is read on all three;
+   * `readsOn` is the one test.
    */
   readonly family?: Family | readonly Family[];
   readonly values: readonly ParameterValue<V>[];
@@ -362,7 +363,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   centreLodging: {
     board: 'qimen',
-    family: ['shijia', 'nianjia'],
+    family: ['shijia', 'yuejia', 'nianjia'],
     // Five readings of which palace the centre is read in. Three are held and
     // two are known only from a text that sets the reading out and argues
     // it down, which `reportedBy` says and a board laid on one of them repeats.
@@ -475,8 +476,10 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
       {
         id: 'yuejia',
         name: { hanzi: '月家', pinyin: 'yuèjiā' },
-        implemented: false,
-        heldBy: ['yanyi', 'tongzong'],
+        says: 'form.qimen.system.yuejia',
+        note: 'form.qimen.system.note',
+        implemented: true,
+        heldBy: ['yanyi', 'tongzong', 'faqiao'],
       },
       {
         id: 'nianjia',
@@ -583,6 +586,44 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
     ],
     default: 'yisiqi',
   },
+  monthYuan: {
+    board: 'qimen',
+    family: 'yuejia',
+    // Which 局 a month board takes, by the branch of the 甲 or 己 year that
+    // opens its five. Named for the branches: 《奇門法竅》 calls 子午卯酉 「四孟」
+    // where its own 卷七 calls them 四仲. `docs/sources.md` § "年家 and 月家 on
+    // the plate: the heaven plate is turned".
+    label: 'form.qimen.monthYuan',
+    values: [
+      {
+        id: 'ziwu',
+        name: { hanzi: '子午卯酉', pinyin: 'zǐwǔmǎoyǒu' },
+        says: 'form.qimen.monthYuan.ziwu',
+        note: 'form.qimen.monthYuan.note',
+        implemented: true,
+        // 「甲子至戊辰…為上元二十年用陰遁一局，己巳至癸酉…為中元二十年用陰遁四局」;
+        // 論月奇法, 「上元一局起坎宮」 for the spans opened by 甲子, 甲午, 己卯, 己酉.
+        heldBy: ['tongzong', 'faqiao'],
+      },
+      {
+        id: 'yinshen',
+        name: { hanzi: '寅申巳亥', pinyin: 'yínshēnsìhài' },
+        says: 'form.qimen.monthYuan.yinshen',
+        note: 'form.qimen.monthYuan.note',
+        implemented: true,
+        // 「甲己遇四孟為上元。在一宮起甲子。甲己遇四仲為中元。在七宮起甲子」.
+        heldBy: ['yanyi'],
+      },
+      {
+        id: 'yuejian',
+        name: { hanzi: '月建', pinyin: 'yuèjiàn' },
+        // 「甲己加四仲月為上元…亦冬至用陽遁，夏至用陰遁」: no 局 is named.
+        implemented: false,
+        heldBy: ['tongzong'],
+      },
+    ],
+    default: 'ziwu',
+  },
   trueSolarTime: {
     board: 'pillars',
     // The one parameter here whose values are not identifiers. They carry no
@@ -649,7 +690,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   spirits: {
     board: 'qimen',
-    family: ['shijia', 'nianjia'],
+    family: ['shijia', 'yuejia', 'nianjia'],
     // Three readings of one ring, parting at two seats and only in the name.
     // What is *not* a value here is the fourth answer — the names following
     // what is being divined — which is a licence to read: see
@@ -824,7 +865,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   centreTravel: {
     board: 'qimen',
-    family: ['shijia', 'nianjia'],
+    family: ['shijia', 'yuejia', 'nianjia'],
     // Where the 值符 and the 值使 are read when the count puts them on the
     // centre, and nothing else: 《金鏡寶鑑》 states the pair apart from the
     // star in one clause — 其星寄 against 符使不必寄於二 — so neither value
@@ -852,7 +893,7 @@ export const CHART_PARAMETERS: ParameterSet<ChartOptions> = {
   },
   centreStem: {
     board: 'qimen',
-    family: ['shijia', 'nianjia'],
+    family: ['shijia', 'yuejia', 'nianjia'],
     // Whether the centre's stem rides the heaven plate with its host's. Nothing
     // lodges on the flown plate, so this divides the turned one alone. See
     // `docs/sources.md` § "《御定奇門大全》卷五–十, the eighteen 局 hour by hour".
@@ -1675,7 +1716,7 @@ export const NIANMING_PARAMETERS: ParameterSet<NianmingOptions> = {
 
 /** A parameter with its own name on it, for a caller reading the lot. */
 /** The families of 奇門 a parameter can belong to: the boards `system` lays. */
-export type Family = 'shijia' | 'rijia' | 'nianjia';
+export type Family = 'shijia' | 'rijia' | 'yuejia' | 'nianjia';
 
 /**
  * Whether a parameter is read on the board a `system` lays.

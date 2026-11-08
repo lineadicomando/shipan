@@ -1,4 +1,4 @@
-import type { Ganzhi, Stem } from '../ganzhi.js';
+import { ganzhiOf, type Ganzhi, type Stem } from '../ganzhi.js';
 import type { Moment } from '../pillars.js';
 import type { ChartOptions } from '../types.js';
 import { CHART_PARAMETERS, requireImplemented } from '../parameters.js';
@@ -217,8 +217,8 @@ export function layOnPillar(
  * `bajie` and `siyu` lodge the centre by the term, and a year has none; laying
  * the year under either would be choosing a term for it.
  */
-export function requireOnPillar(options: ChartOptions): void {
-  requireImplemented(CHART_PARAMETERS, options, 'system', 'centreLodging', 'spirits', 'centreTravel', 'centreStem', 'yearYuan');
+export function requireOnPillar(options: ChartOptions, own: 'yearYuan' | 'monthYuan' = 'yearYuan'): void {
+  requireImplemented(CHART_PARAMETERS, options, 'system', 'centreLodging', 'spirits', 'centreTravel', 'centreStem', own);
   if (options.centreLodging === 'bajie' || options.centreLodging === 'siyu') {
     throw new ChartError('OPTION_NOT_IMPLEMENTED', {
       option: 'centreLodging',
@@ -250,4 +250,117 @@ export function computeYearChart(moment: Moment, options: ChartOptions): YearCha
   const { stem, ...board } = layOnPillar(year, number, options);
 
   return { moment, year, yuan, yearStem: stem, ...board, options };
+}
+
+/**
+ * The month family, 月家奇門: the same procedure laid on the month pillar.
+ *
+ * 《遁甲演義》卷一: 「凡推月奇門先審其年在何一元內　依前布門飛奇　次就其年遁月建係某
+ * 甲頭直符逐地下月干轉　符上之門為直使　隨月支飛泊」. The 統宗卷二 附月奇門起例 closes
+ * on the year's sentence, 「看月建之支臨於地盤何宮　即以天盤值使加之　看月建之干臨於
+ * 地盤何宮　即以天盤直符加之　與年奇門同」. So `layOnPillar` with the month pillar,
+ * on a 局 of the 陰遁 the five years decide. → `docs/sources.md` § "年家 and 月家
+ * on the plate: the heaven plate is turned"
+ *
+ * The 演義's clause 「自嘉靖四十二年十一月甲子起休門在坎三箇月一移」 is not this
+ * board: its two dates fall in different 元, and fit a gate moved three months
+ * to a palace, a second layer the engine does not lay.
+ */
+
+/** The 元 a month stands in: the five years opened by a 甲 or a 己 year. */
+export interface MonthYuan {
+  id: Yuan;
+  hanzi: string;
+  pinyin: string;
+  /** The 甲 or 己 year that opened the five, as a proleptic Gregorian year. */
+  opened: number;
+  /** That year's pillar, whose branch decides the 元. */
+  opener: Ganzhi;
+}
+
+/**
+ * The 元 and the 局 of each branch group, by `monthYuan`, in the order
+ * 子午卯酉 · 寅申巳亥 · 辰戌丑未.
+ */
+const MONTH_YUAN: Record<'ziwu' | 'yinshen', readonly { yuan: Yuan; ju: number }[]> = {
+  ziwu: [
+    { yuan: 'shang', ju: 1 },
+    { yuan: 'zhong', ju: 4 },
+    { yuan: 'xia', ju: 7 },
+  ],
+  yinshen: [
+    { yuan: 'zhong', ju: 7 },
+    { yuan: 'shang', ju: 1 },
+    { yuan: 'xia', ju: 4 },
+  ],
+};
+
+/**
+ * Which of the three groups a branch is in: 子午卯酉 0, 寅申巳亥 1, 辰戌丑未 2.
+ * By the branch's index, 子 being 0: the 仲 are the multiples of three, the 孟
+ * one short of one, the 季 one past.
+ */
+const branchGroup = (branchIndex: number): number => [0, 2, 1][branchIndex % 3] as number;
+
+/** A board of the month family. */
+export interface MonthChart {
+  moment: Moment;
+  /** The month pillar the board is laid on, cut at the 節. */
+  month: Ganzhi;
+  /** The year pillar whose five years decide the 局. */
+  year: Ganzhi;
+  /** The 元 of five years it stands in. */
+  yuan: MonthYuan;
+  /** Always 陰遁: the 統宗's 「用陰遁一局」, and the 演義's formula, its 年家's. */
+  ju: { yang: false; number: number };
+  /** The instrument concealing 甲 for the month's decade (符首). */
+  instrument: Stem;
+  /** The month's stem, or the instrument standing in for it when it is 甲. */
+  monthStem: Stem;
+  /** The chief and its palace (值符), reported as `centreTravel` says. */
+  chief: { star: Star; palace: Palace };
+  /** The chief gate and where it came to rest (值使). */
+  chiefGate: { gate: Gate; palace: Palace };
+  /** The nine palaces, in Luoshu order. */
+  palaces: YearPalace[];
+  /** The options this board was laid with. */
+  options: ChartOptions;
+}
+
+/** The 元 of five years a year pillar stands in, as `monthYuan` names it. */
+export function monthYuanOf(
+  year: number,
+  pillar: Ganzhi,
+  rule: 'ziwu' | 'yinshen',
+): MonthYuan & { ju: number } {
+  const back = pillar.index % 5;
+  const openerIndex = pillar.index - back;
+  const opener = ganzhiOf(openerIndex);
+  const { yuan, ju } = MONTH_YUAN[rule][branchGroup(opener.branch.index)] as { yuan: Yuan; ju: number };
+  return { id: yuan, hanzi: YUAN_HANZI[yuan], pinyin: YUAN_PINYIN[yuan], opened: year - back, opener, ju };
+}
+
+/**
+ * Lays the board of a month.
+ *
+ * Off the month pillar and the year that places it in five, and off nothing
+ * else the moment carries: the day and the hour move nothing here.
+ */
+export function computeMonthChart(moment: Moment, options: ChartOptions): MonthChart {
+  if (options.system !== 'yuejia') {
+    throw new ChartError('OPTION_NOT_IMPLEMENTED', {
+      option: 'system',
+      value: options.system,
+      implemented: 'yuejia',
+    });
+  }
+  requireOnPillar(options, 'monthYuan');
+  // `requireOnPillar` has refused `yuejian`, which names no 局.
+  const rule = options.monthYuan as 'ziwu' | 'yinshen';
+
+  const { month, year } = moment.pillars;
+  const { ju: number, ...yuan } = monthYuanOf(pillarYear(moment), year, rule);
+  const { stem, ...board } = layOnPillar(month, number, options);
+
+  return { moment, month, year, yuan, monthStem: stem, ...board, options };
 }

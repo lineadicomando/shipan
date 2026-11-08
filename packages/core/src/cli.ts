@@ -20,7 +20,7 @@ import {
 } from '@shipan/i18n';
 import { computeBazi, type Gender } from './bazi/index.js';
 import { computeDayChart } from './dunjia/rijia.js';
-import { computeYearChart } from './dunjia/nianjia.js';
+import { computeMonthChart, computeYearChart } from './dunjia/nianjia.js';
 import {
   GATES,
   PATTERN_IDS,
@@ -700,8 +700,8 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
     return parts.join('\n');
   }
 
-  // A family is a board of its own. The day's and the year's are laid and
-  // printed; a birth, a question and a prompt are the hour board's, whose function refuses the
+  // A family is a board of its own. The day's, the month's and the year's are
+  // laid and printed; a birth, a question and a prompt are the hour board's, whose function refuses the
   // family by name when one of them is asked of it.
   if (
     chartOptions.system === 'rijia' &&
@@ -723,6 +723,17 @@ async function execute(command: Command, options: Options, locale: Locale): Prom
     const year = computeYearChart(moment, chartOptions);
     if (options.json) return JSON.stringify(year, null, 2);
     return yearTranscript(moment, year, t);
+  }
+  // And the month's, the same procedure on the month pillar.
+  if (
+    chartOptions.system === 'yuejia' &&
+    !options.born &&
+    !options.prompt &&
+    options.ask === undefined
+  ) {
+    const month = computeMonthChart(moment, chartOptions);
+    if (options.json) return JSON.stringify(month, null, 2);
+    return yearTranscript(moment, month, t);
   }
 
   const chart = computeQimenChart(moment, chartOptions);

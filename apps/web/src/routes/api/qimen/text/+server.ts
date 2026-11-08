@@ -2,6 +2,7 @@ import {
   chartTranscript,
   computeDayChart,
   computeQimenChart,
+  computeMonthChart,
   computeYearChart,
   dayTranscript,
   nianmingOf,
@@ -50,8 +51,14 @@ export const GET: RequestHandler = ({ url, request, setHeaders }) => {
       );
     }
 
-    if (moment.options.system === 'nianjia' && !url.searchParams.has('born')) {
-      const year = computeYearChart(moment, moment.options);
+    if (
+      (moment.options.system === 'nianjia' || moment.options.system === 'yuejia') &&
+      !url.searchParams.has('born')
+    ) {
+      const year =
+        moment.options.system === 'yuejia'
+          ? computeMonthChart(moment, moment.options)
+          : computeYearChart(moment, moment.options);
       setHeaders(headers);
       return new Response(
         yearTranscript(moment, year, createTranslator(locale), {

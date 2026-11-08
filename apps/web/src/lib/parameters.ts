@@ -69,13 +69,14 @@ export interface Divergence {
    * The family of 奇門 a divergence belongs to — the engine's `family`. A day
    * board has no plate to turn and the hour board no gates of a day, so each
    * is offered, and named under a board, with its own family alone. A list
-   * where two families read it: the year board is the hour's procedure.
+   * where several families read it: the year and month boards are the hour's
+   * procedure.
    */
   readonly family?: Family | readonly Family[];
   /**
    * Values a family reads the divergence without and the engine refuses there:
    * `centreLodging: bajie` and `siyu` lodge the centre by a term, and a board
-   * of the year has none. The form leaves them out under that family, since an
+   * of the year or of the month has none. The form leaves them out under that family, since an
    * option that can only come back a 501 is not a choice.
    */
   readonly refusedOn?: Partial<Record<Family, readonly string[]>>;
@@ -113,7 +114,7 @@ export function offeredValues(row: Divergence, chosen: Chosen): [string, Message
 }
 
 /** The families of 奇門, as the engine's `Family`. */
-export type Family = 'shijia' | 'rijia' | 'nianjia';
+export type Family = 'shijia' | 'rijia' | 'yuejia' | 'nianjia';
 
 /** Whether a divergence is read on the board a `system` lays: the engine's `readsOn`. */
 export function readsOn(row: Pick<Divergence, 'family'>, system: string): boolean {
@@ -190,8 +191,8 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'centreLodging',
     board: 'qimen',
-    family: ['shijia', 'nianjia'],
-    refusedOn: { nianjia: ['bajie', 'siyu'] },
+    family: ['shijia', 'yuejia', 'nianjia'],
+    refusedOn: { yuejia: ['bajie', 'siyu'], nianjia: ['bajie', 'siyu'] },
     values: ['kun', 'dun', 'dunni', 'bajie', 'siyu'],
     implemented: ['kun', 'dun', 'dunni', 'bajie', 'siyu'],
     fallback: 'kun',
@@ -229,17 +230,19 @@ export const DIVERGENCES: readonly Divergence[] = [
     id: 'system',
     board: 'qimen',
     values: ['shijia', 'rijia', 'yuejia', 'nianjia'],
-    implemented: ['shijia', 'rijia', 'nianjia'],
+    implemented: ['shijia', 'rijia', 'yuejia', 'nianjia'],
     fallback: 'shijia',
     label: 'form.qimen.system',
     says: {
       shijia: 'form.qimen.system.shijia',
       rijia: 'form.qimen.system.rijia',
+      yuejia: 'form.qimen.system.yuejia',
       nianjia: 'form.qimen.system.nianjia',
     },
     notes: {
       shijia: 'form.qimen.system.note',
       rijia: 'form.qimen.system.note',
+      yuejia: 'form.qimen.system.note',
       nianjia: 'form.qimen.system.note',
     },
   },
@@ -285,6 +288,17 @@ export const DIVERGENCES: readonly Divergence[] = [
     notes: { yisiqi: 'form.qimen.yearYuan.note', yiqisi: 'form.qimen.yearYuan.note' },
   },
   {
+    id: 'monthYuan',
+    board: 'qimen',
+    family: 'yuejia',
+    values: ['ziwu', 'yinshen', 'yuejian'],
+    implemented: ['ziwu', 'yinshen'],
+    fallback: 'ziwu',
+    label: 'form.qimen.monthYuan',
+    says: { ziwu: 'form.qimen.monthYuan.ziwu', yinshen: 'form.qimen.monthYuan.yinshen' },
+    notes: { ziwu: 'form.qimen.monthYuan.note', yinshen: 'form.qimen.monthYuan.note' },
+  },
+  {
     id: 'yearBoundary',
     board: 'pillars',
     values: ['lichun', 'chunjie', 'dongzhi'],
@@ -312,7 +326,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'spirits',
     board: 'qimen',
-    family: ['shijia', 'nianjia'],
+    family: ['shijia', 'yuejia', 'nianjia'],
     values: ['dun', 'fixed', 'baihu', 'huwu'],
     implemented: ['dun', 'fixed', 'baihu', 'huwu'],
     fallback: 'dun',
@@ -388,7 +402,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'centreTravel',
     board: 'qimen',
-    family: ['shijia', 'nianjia'],
+    family: ['shijia', 'yuejia', 'nianjia'],
     values: ['stay', 'travel'],
     implemented: ['stay', 'travel'],
     fallback: 'stay',
@@ -402,7 +416,7 @@ export const DIVERGENCES: readonly Divergence[] = [
   {
     id: 'centreStem',
     board: 'qimen',
-    family: ['shijia', 'nianjia'],
+    family: ['shijia', 'yuejia', 'nianjia'],
     values: ['centre', 'host'],
     implemented: ['centre', 'host'],
     fallback: 'centre',
