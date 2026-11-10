@@ -352,6 +352,15 @@ button:hover { background: var(--tint); }
 input[type='checkbox'], input[type='radio'] { accent-color: var(--ink); }
 
 /*
+ * A box never yields its width to the words beside it.
+ *
+ * Every label here sets its control and its words in a flex row, and a flex
+ * item shrinks by default: an answer long enough to wrap took its room from
+ * the radio too, so a column of options drew its marks at three sizes.
+ */
+input[type='checkbox'], input[type='radio'] { flex-shrink: 0; }
+
+/*
  * Said to whoever cannot see the page, and to nobody else.
  *
  * The nav names the section that is open and marks it `aria-current`, so a
