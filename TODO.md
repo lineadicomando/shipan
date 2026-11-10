@@ -30,11 +30,12 @@ otherwise. Read a section of a file, not the file.
   code. Before ending, sweep `docs/sources.md`, `texts/README.md`, the
   open-question files and this file for sentences the session outlived.
 
-## Where it stands, 2026-11-08, end of phase 105
+## Where it stands, 2026-11-10
 
-**0.53.0**, tagged `v0.53.0`, pushed and deployed: https://shipan.it reads
-`shipan 0.53.0 (alpha)`. Nothing is committed past it. Build, typecheck and
-every suite pass.
+**0.54.0**, tagged `v0.54.0`, pushed and deployed: https://shipan.it reads
+`shipan 0.54.0 (alpha)`. Nothing is committed past it. Build, typecheck and
+every suite pass. The 奇門 section sets the Four Pillars' plate over its board
+(`docs/architecture.md` § "The bench").
 
 ## What to do next, in the user's order
 

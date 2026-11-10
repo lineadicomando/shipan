@@ -13,8 +13,12 @@
   import CalendarAndAlmanac from './CalendarAndAlmanac.svelte';
   import PillarPlate from './PillarPlate.svelte';
 
-  /** The board as data, not as a type: see `ChartReading`. */
-  let { chart, t }: { chart: DayChart; t: Translator } = $props();
+  /**
+   * The board as data, not as a type: see `ChartReading`, and for `pillars`
+   * too — the section sets the Four Pillars' plate over the board.
+   */
+  let { chart, t, pillars = true }: { chart: DayChart; t: Translator; pillars?: boolean } =
+    $props();
 
   const PILLARS = ['year', 'month', 'day', 'hour'] as const;
   const squares = $derived(
@@ -35,7 +39,7 @@
     {gloss('term', chart.term.id)}
     <span class="glyph">{chart.term.hanzi} {chart.term.pinyin}</span>
   </p>
-  <PillarPlate pillars={squares} {t} wide />
+  {#if pillars}<PillarPlate pillars={squares} {t} wide />{/if}
   <CalendarAndAlmanac moment={chart.moment} {t} />
 </div>
 

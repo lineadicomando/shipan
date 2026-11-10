@@ -65,7 +65,13 @@ async function open(load: Load, address: string, places: Record<string, unknown>
             { status: 400 },
           );
     }
-    return Response.json({ qimen: { ju: 'a chart' }, bazi: { pillars: [] }, taiyi: { ju: 49 } });
+    // A chart says the instant it was cast for, which is what the 奇門 page
+    // asks the pillars of: «now» resolved once, by the endpoint.
+    return Response.json({
+      qimen: { ju: 'a chart', moment: { input: { date: '1984-03-12', time: '07:30:00' } } },
+      bazi: { pillars: [] },
+      taiyi: { ju: 49 },
+    });
   };
 
   const data = (await load({
@@ -183,6 +189,21 @@ describe('the Qi Men page', () => {
     const { urls } = await open(qimen, '/en?date=1984-03-12&trueSolarTime=false&dayBoundary=midnight');
 
     expect(urls[0]).toBe('/api/qimen?date=1984-03-12&trueSolarTime=false&dayBoundary=midnight&lang=en');
+  });
+
+  it('asks the pillars over the board of the instant the chart was cast for', async () => {
+    // Pinned to the cast instant, and under the layers the two boards share:
+    // a day boundary dropped here would set over the board a day pillar it
+    // was not cast on. What only 奇門 reads stays behind.
+    const { data, urls } = await open(
+      qimen,
+      '/en?trueSolarTime=false&dayBoundary=midnight&qimen.method=maoshan',
+    );
+
+    expect(urls).toContain(
+      '/api/bazi?date=1984-03-12&time=07%3A30%3A00&trueSolarTime=false&dayBoundary=midnight&lang=en',
+    );
+    expect(data.bazi).toEqual({ pillars: [] });
   });
 });
 

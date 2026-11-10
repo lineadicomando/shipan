@@ -207,7 +207,14 @@ column holds how it is looked at, and the two are kept apart. The column
 stands beside the board and scrolls with the page like the board itself —
 it is the board's companion, and a column that followed the reader down the
 page would be one more thing moving — and beside the board, nothing pressed
-in it can move the board. Under the board, in the second row of a grid the
+in it can move the board. One section sets something over its board: 奇門
+lays the Four Pillars' plate of the instant there (`PillarPlate`, whole — the
+gods, the stages, what the branches conceal) at the width of the drawing's
+frame, which is 0.86 of the paper (`margin - compass.band` in `geometry.ts`),
+and draws the pairs nowhere else on the page. Its board therefore starts lower
+than its column, and the column is held under the top of the window while the
+pillars scroll past and let go where the frame reaches it (`lead` in the
+section's page); from there it scrolls with the board, as everywhere. Under the board, in the second row of a grid the
 column spans, stands the key to the board's names (`.under`): that row is
 `1fr`, so the column takes what it needs past the board's height there and
 the key is placed by the board alone. The column grows and shrinks as the lens

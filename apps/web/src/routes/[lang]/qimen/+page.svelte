@@ -26,6 +26,7 @@
   import { qimenKeyOf } from '$lib/key';
   import StrengthLegend from '$lib/components/StrengthLegend.svelte';
   import SubmitButton from '$lib/components/SubmitButton.svelte';
+  import PillarPlate from '$lib/components/PillarPlate.svelte';
 
   let { data } = $props();
   const t = $derived(data.t);
@@ -167,6 +168,18 @@
 
   let busy = $state(false);
   let panel: FormPanel | undefined = $state();
+  /**
+   * How far the column beside the board travels before it lets go.
+   *
+   * The pillars stand over the board, so the board starts lower than the
+   * column does. The column is held under the top of the window while they
+   * scroll past, and released where the frame of the drawing reaches it: the
+   * height of the pillars, and then the 0.07 of the paper the frame stands in
+   * from its top edge (`margin - compass.band` in `geometry.ts`).
+   */
+  let pillarsHeight = $state(0);
+  let paperWidth = $state(0);
+  const lead = $derived(pillarsHeight + paperWidth * 0.07);
 
   /**
    * Asking is navigating, and the answer arrives as the page's own data.
@@ -351,7 +364,18 @@
     -->
     <div class="bench">
       <div class="board" class:swapped={onPaper}>
-        <div class="screen">
+        <!--
+          The Four Pillars of the instant, over the board and at the width of
+          its frame: the plate of the 八字 section, whole — the gods, the
+          stages, what the branches conceal. It replaces the bare pairs the
+          readings below used to carry, so the pillars are on the page once.
+        -->
+        {#if data.bazi}
+          <div class="pillars" bind:clientHeight={pillarsHeight}>
+            <PillarPlate pillars={data.bazi.pillars} {t} />
+          </div>
+        {/if}
+        <div class="screen" bind:clientWidth={paperWidth}>
           <InlineBoard src={plate} width={900} height={900} tip={held.tip} onpick={held.pick} lens={held.view} />
         </div>
         <!-- The same board in the colours of paper, drawn only where the two
@@ -364,9 +388,14 @@
              it reads, which a day board has not. -->
         {#if !ofTheDay && !ofTheYear}<StrengthLegend {t} />{/if}
       </div>
-      <div class="side">
+      <div class="side" style:--lead="{lead}px">
+        <!-- Held under the top of the window while the pillars scroll past,
+             and let go where the board's frame reaches it: see `lead`. -->
+        <div class="held">
         <!-- The circle, the mode and the lens, from the lens the section holds. -->
         <LensSide {t} {held} />
+        </div>
+        <div class="lead" aria-hidden="true"></div>
         <!-- How the names are said, where every other board's key stands. A
              board of the day keeps its own at the foot of its reading. -->
       </div>
@@ -391,7 +420,7 @@
       </div>
     {:else if ofTheDay}
       <div class="reading">
-        <DayReading {chart} {t} />
+        <DayReading {chart} {t} pillars={false} />
         <Schools
           {t}
           board="qimen"
@@ -419,7 +448,7 @@
         the header already lists, and already carries this moment to. A
         signpost to a door in the same room is furniture.
       -->
-      <ChartReading {chart} {t} wide />
+      <ChartReading {chart} {t} wide pillars={false} />
       <Schools
         {t}
         board="qimen"
@@ -457,6 +486,29 @@
      a grid item will not go below its own min-content otherwise, and the
      picture's is nine hundred pixels. */
   .board { min-inline-size: 0; }
+  /*
+   * The pillars at the width of the board's frame.
+   *
+   * The frame of directions stands 0.07 of the paper in from each edge
+   * (`margin - compass.band` in `geometry.ts`), so the plate takes 0.86 of
+   * the board and meets the frame edge to edge. `flow-root`, so the plate's
+   * own margin is inside the height `lead` measures.
+   */
+  .pillars { display: flow-root; }
+  .pillars :global(.plate) { inline-size: calc(var(--board) * 0.86); }
+  .held { display: grid; gap: 1.25rem; align-content: start; }
+  .lead { display: none; }
+  @media (min-width: 64rem) and (orientation: landscape) {
+    .held { position: sticky; top: 1rem; }
+    /* Less the gap `.side` sets between its children. */
+    .lead { display: block; block-size: calc(var(--lead) - 1.25rem); }
+  }
+  @media print {
+    .held { position: static; }
+    .lead { display: none; }
+    /* The board on paper is `min(100%, 17cm)`: see below. */
+    .pillars :global(.plate) { inline-size: calc(min(100%, 17cm) * 0.86); }
+  }
   .result, img { transition: opacity 0.15s ease-out; }
   .stale { opacity: 0.5; }
   /*

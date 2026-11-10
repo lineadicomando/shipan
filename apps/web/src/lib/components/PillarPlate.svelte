@@ -50,7 +50,7 @@
   /**
    * `wide` is whether these four stand under a board of the page's width.
    *
-   * Where they do — the chart section and the consultation — they take that
+   * Where they do — the consultation — they take that
    * width themselves and are dressed to rhyme with the drawing above: the
    * name leads and the word follows under it, as in a palace, in the ink the
    * board writes its names in. Two grids one above the other, at one measure,
@@ -69,11 +69,11 @@
    * Whether these squares are the Four Pillars' or a chart's.
    *
    * The stage is the tell, and it is the right one: the twelve stages, the
-   * ten gods and the day master are all read off a chart of a birth by the
-   * other method, and they arrive together or not at all. Beside a Qi Men
-   * board none of them is shown — not because the room is short, but because
-   * a reader who found them there would take a whole second method for part
-   * of the chart. See `ChartReading`, where the same line is held.
+   * ten gods and the day master are all read off the pillars by the 八字
+   * method, and they arrive together or not at all. They arrive in the 八字
+   * section, and over the board in the 奇門 one, which sets this plate whole
+   * at the width of the board's frame; the bare pairs are what the
+   * consultation and the scan's dialog draw. See `ChartReading`.
    */
   const full = $derived(pillars.some((pillar) => pillar.stage !== undefined));
 

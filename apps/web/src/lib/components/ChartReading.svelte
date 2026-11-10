@@ -49,12 +49,25 @@
    * are a column beside the board and a heading centred in a column is a
    * heading that has lost its left edge.
    */
+  /**
+   * `pillars` is whether the four pairs are drawn here, or the caller's.
+   *
+   * The 奇門 section sets the Four Pillars' own plate over its board, whole,
+   * and the pairs drawn again under it would be the same four twice.
+   */
   let {
     chart,
     t,
     palaces = true,
     wide = false,
-  }: { chart: QimenChart; t: Translator; palaces?: boolean; wide?: boolean } = $props();
+    pillars = true,
+  }: {
+    chart: QimenChart;
+    t: Translator;
+    palaces?: boolean;
+    wide?: boolean;
+    pillars?: boolean;
+  } = $props();
 
   /** Largest to smallest, as every almanac and the drawing's caption have it. */
   const PILLARS = ['year', 'month', 'day', 'hour'] as const;
@@ -112,13 +125,12 @@
   it can have, so the same four fit the page under a board and the column of
   the scan's dialog beside one.
 
-  The pair and nothing beside it. What a pillar conceals, which god it is and
-  where it stands in the twelve stages are the Four Pillars' questions, and
-  they are answered in that section — putting them here would let a reader
-  take a whole second method for part of the chart. The link under the board
-  leads there, with this same instant in its address.
+  The pair and nothing beside it, where this is drawn — the consultation and
+  the scan's dialog. The 奇門 section draws the Four Pillars' own plate over
+  its board instead, with the gods, the stages and what the branches conceal,
+  and asks this for none (`pillars`).
 -->
-<PillarPlate pillars={squares} {t} {wide} />
+{#if pillars}<PillarPlate pillars={squares} {t} {wide} />{/if}
 
 <!--
   The calendar the chart was cast from, and the almanac page it was read

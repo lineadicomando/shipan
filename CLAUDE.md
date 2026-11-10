@@ -262,7 +262,8 @@ the engine falls back to Moshier, which needs no files.
   [`docs/architecture.md`](docs/architecture.md)
 - **A board is bounded by the window's height, so the width beside it is the
   reader's.** A section lays its board on a bench: the whole board in the
-  window under the bar, and beside it, in a column at `--side`, what is used
+  window under the bar (on 奇門, under the Four Pillars' plate set over it),
+  and beside it, in a column at `--side`, what is used
   on it — a lens and its controls. The column scrolls with the board and goes
   under it on a narrow screen, never over it; nothing pressed there may move
   the board or anything under it, and what chooses the board — the date and
