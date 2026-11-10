@@ -3,10 +3,9 @@
 What a session needs to resume, and nothing more. What holds is
 [`docs/`](docs/README.md); the open questions are [`docs/open.md`](docs/open.md),
 [`docs/open-recorded.md`](docs/open-recorded.md) and
-[`docs/open-errands.md`](docs/open-errands.md); the past is
-[`docs/history/`](docs/history/README.md), never normative. Each cut of this
-file is archived whole there, the last in
-[`docs/history/roadmap-2026-11-08-phase105.md`](docs/history/roadmap-2026-11-08-phase105.md).
+[`docs/open-errands.md`](docs/open-errands.md). Each cut of this file is
+archived whole in [`docs/history/`](docs/history/README.md), never normative,
+the last in `docs/history/roadmap-2026-11-10-phase106.md`.
 
 ## Resuming cold
 
@@ -33,9 +32,7 @@ otherwise. Read a section of a file, not the file.
 ## Where it stands, 2026-11-10
 
 **0.54.0**, tagged `v0.54.0`, pushed and deployed: https://shipan.it reads
-`shipan 0.54.0 (alpha)`. Nothing is committed past it. Build, typecheck and
-every suite pass. The 奇門 section sets the Four Pillars' plate over its board
-(`docs/architecture.md` § "The bench").
+`shipan 0.54.0 (alpha)`. Build, typecheck and every suite pass.
 
 ## What to do next, in the user's order
 
@@ -60,30 +57,10 @@ every suite pass. The 奇門 section sets the Four Pillars' plate over its board
 6. **The lens elsewhere**: `docs/open-errands.md` § "The lens elsewhere";
    八字 last, and only if the user wants it.
 
-## Decisions held open, by the user's word
+## Held on the user's word
 
-- **六壬's lessons and transmissions in the bare drawing** (2026-10-25): kept,
-  being 7 of the 19 seats `liurenLens` presses.
-- **太乙's 月計 · 日計 · 時計: wait, all three** (2026-10-11).
-- **囚 and 格 on the dated boards of 卷七: rung 5** (2026-10-14).
-- **The test of a count by its digits: not built** (2026-10-15).
-- **截路空亡 on a 戊 or 癸 day: wait** (2026-10-26).
-
-**Standing answers, applied rather than asked again**:
-- A run of worked cases unanimous on a question makes a holder (2026-10-30);
-  a study describing a count does not (2026-10-31).
-- A compiler's note disowning a layer his own juan states does not block a
-  value whose text is attributed and transcribed (2026-11-02).
-- A parameter has one default for every board it reads on, and a form may
-  fill a field from a value (`fills`, 2026-11-05); a parameter about a thing
-  reads wherever that thing is laid (`spiritPhase` on the year and month
-  boards, 2026-11-08).
-- Two schools parting on two things are two axes, and a name follows the
-  print that carries it (2026-11-06); a value is named for its rule and not
-  for a label a holder swaps (`monthYuan`, 2026-11-08).
-- A quantity derivable under one value and not under another is built where
-  it can be and left null where it cannot, saying why (the 大限 under
-  `gong: ci` with `qixian: ri`, 2026-11-08).
+What is held open and what is answered once are `docs/open.md` § "Held on the
+user's word": read it before proposing a value, a default or a refusal.
 
 ## 1. Parameters that are declared and refused
 

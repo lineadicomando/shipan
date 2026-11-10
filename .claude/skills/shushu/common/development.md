@@ -14,7 +14,7 @@ The project's history is a series of readings each «put to the user» and built
 |---|---|
 | which reading to take next from `TODO.md`, unless the user named one | a new value of a parameter, a new default, a new parameter |
 | how to read a file: survey, resolution, transcription brief, readers | lifting or adding a refusal (`docs/refusals.md`) |
-| whether a passage is a copy, a witness or neither | anything under «Decisions held open, by the user's word» in `TODO.md` |
+| whether a passage is a copy, a witness or neither | anything under «Held on the user's word» in `docs/open.md` |
 | the rung a reading stands on (`docs/notes.md` § "The ladder of evidence") | pushing, tagging, opening or landing a branch |
 | what goes in `docs/sources.md`, `sources.tsv`, `texts/README.md`, `TODO.md` | buying a file |
 | the version term a commit earns (`docs/architecture.md` § "Which term moves") | changing a catalog gloss the user wrote |

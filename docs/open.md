@@ -24,12 +24,41 @@ a work already held is not a witness.
 | `xiudu: shixian` | a table with an epoch that can be cited |
 | `minggong: ascendant` | a holder. A second method and not a second reading |
 | `epoch: taojin` | 《太乙淘金歌》, not held; known through 盧央, who sets evidence against it |
-| `ji: yueji` | the user's word, «wait» (`TODO.md`, "Decisions held open"); read as a procedure. A board that takes an instant |
+| `ji: yueji` | the user's word, «wait» (§ "Held on the user's word"); read as a procedure. A board that takes an instant |
 | `ji: riji` | which anchor: the 《統宗》's count puts 25 February 1510 on 局 25 and its dated note on 局 1, a 盈差 of 120 or 240 apart. A dated 日計 board, in any work. `docs/sources.md` § "《太乙數統宗大全》卷二 again" |
-| `ji: shiji` | the user's word, «wait» (`TODO.md`, "Decisions held open"). The hours run from the epoch and the 盈差 does not reach them; whether a day's hours open at 子初 or 子正 is asked first |
+| `ji: shiji` | the user's word, «wait» (§ "Held on the user's word"). The hours run from the epoch and the 盈差 does not reach them; whether a day's hours open at 子初 or 子正 is asked first |
 | `yearBoundary: chunjie` | a holder. The default has none either |
 | `geChong: chong` | the rule as a sentence. 盧央's board for 940 shows it of 始擊; the 《統宗》卷七 states 格 by the facing palace alone, and on its 589 board adds a 格 of the 太歲, p. 69 |
 | `leapMonth: current`, `leapMonth: split` | a manual stating either. A program computes one |
+
+## Held on the user's word
+
+**Waiting, and not to be proposed again until the user moves them**:
+- **六壬's lessons and transmissions in the bare drawing** (2026-10-25): kept,
+  being 7 of the 19 seats `liurenLens` presses.
+- **太乙's 月計 · 日計 · 時計: wait, all three** (2026-10-11).
+- **囚 and 格 on the dated boards of 卷七: rung 5** (2026-10-14).
+- **The test of a count by its digits: not built** (2026-10-15).
+- **截路空亡 on a 戊 or 癸 day: wait** (2026-10-26).
+
+**Answered once, and applied rather than asked again**:
+- A run of worked cases unanimous on a question makes a holder (2026-10-30);
+  a study describing a count does not (2026-10-31).
+- A compiler's note disowning a layer his own juan states does not block a
+  value whose text is attributed and transcribed (2026-11-02).
+- A parameter has one default for every board it reads on, and a form may
+  fill a field from a value (`fills`, 2026-11-05); a parameter about a thing
+  reads wherever that thing is laid (`spiritPhase` on the year and month
+  boards, 2026-11-08).
+- Two schools parting on two things are two axes, and a name follows the
+  print that carries it (2026-11-06); a value is named for its rule and not
+  for a label a holder swaps (`monthYuan`, 2026-11-08).
+- A quantity derivable under one value and not under another is built where
+  it can be and left null where it cannot, saying why (the 大限 under
+  `gong: ci` with `qixian: ri`, 2026-11-08).
+- The 八字 section's plate stands whole over the 奇門 board, at the width of
+  its frame, and the column beside the board is held until the frame reaches
+  it (2026-11-10): `docs/architecture.md` § "The bench".
 
 ## The shelf
 
