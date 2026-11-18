@@ -79,7 +79,9 @@ relations (合, 沖, the ten gods) being a different lens. Leads, none decided:
 branch's phase, rung 4, its last clause odd on the plate (「土入金鄉」, the
 transcription 木鄉); a pair on 太乙's palaces, in 太乙's numbering; 六壬's
 六沖 and 六合, a general by its own phase (`docs/open-recorded.md`), the
-日家's nine stars and the 紫微 四化 flights, each once it has its row; a phase
+日家's nine stars and the 紫微 四化 flights, each once it has its row (寶鏡圖,
+the one work here printing an element by a day star, prints its gate's:
+`docs/sources.md` § "《御定奇門大全》卷六十–六十四"); a phase
 for 太常, which `spiritRing: nine` lays and a phased lens leaves out —
 《奇門旨歸》卷一's 九神五行 (PDF 18) gives one to each of the nine, not read
 for this.

@@ -3913,7 +3913,7 @@ hours missing where the print skips them.
 **The wheel is the 日家 board.** Its centre holds one star, the ring round
 the centre the eight palace names, the next ring a gate beside each, and the
 outer ring a star beside each, the stars each with a small 吉 or 凶 and an
-element printed in it. The nine stars are the 日家's, 太乙 to 天乙, and the
+element printed in it, the element being the gate's (below). The nine stars are the 日家's, 太乙 to 天乙, and the
 gates are the eight. `texts/qimen/daquan-juan60-baojing/scripts/compare.mjs`
 lays every day off the engine's step functions and sets the wheels beside it.
 
@@ -3955,6 +3955,18 @@ gates as `dayGates: shun` and the undivided year as `dayDun: yang`, both held
 by 寶鏡圖, which enters `WITNESSES` as `baojingtu`. The forty wheels whose
 rings are their own day's are a test fixture, `packages/core/test/rijia/baojingtu.tsv`:
 the gates are held to it whole, and the stars bar the six wheels named above.
+
+**The element printed in a star's cell is its gate's, and the stars get no
+phase from it.** Each outer star carries, between its two characters, an
+element over its 吉 or 凶, and that element is the phase of the gate on the
+same radius and not of the star: on 癸未 (1420L) all eight follow the gate —
+開 金, 休 水, 生 土, 傷 木, 杜 木, 景 火, 死 土, 驚 金 — and one star changes element
+with its gate from day to day, 攝提 金 under 開 on 癸未 and 水 under 休 on 乙丑
+(1386L), 太乙 木 under 杜 and 火 under 景. The readers' notes of 2026-10-22
+record the same on other wheels, with a few cells printed against their gate,
+and a 震 whose gate is missing still carries the 金 that 開 would. So this
+work does not give the nine stars of a day a phase, and the lens keeps them by
+their kind as before. Read on the plate 2026-11-18, two wheels whole.
 Under `shun` with `dayDun: solstice` the yin half mirrors 休門's walk as
 `zhuan` does, which is the engine's construction: the work shows no yin half. The 跋 says of the 術士 that
 「其說炫人耳目以致混淆不清」 and that it gathered them into one volume, which
@@ -3963,7 +3975,7 @@ is the compiler's view of his sources and not a rule either.
 **So the 大全 is surveyed to its end.** Read for a 起例 are 卷一 and 卷五 to
 卷六十四; 景祐秘纂 卷二 to 卷四 followed on 2026-10-24, in the next section.
 
-Last checked 2026-10-26.
+Last checked 2026-11-18.
 
 ### 《御定奇門大全》卷二–四: the rest of 景祐秘纂, which copies the 符應經's 卷中 and the 演義's cases
 
